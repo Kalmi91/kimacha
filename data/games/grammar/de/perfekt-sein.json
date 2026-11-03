@@ -1,0 +1,1126 @@
+{
+  "schema": 2,
+  "topic": "perfekt-sein",
+  "level": "A1",
+  "title": {
+    "en": "Perfect tense with sein",
+    "es": "Pretérito perfecto con sein"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "Some verbs form the Perfekt with sein instead of haben: ich bin gegangen, wir sind gefahren. They are verbs of movement from one place to another (gehen, fahren, kommen, laufen, reisen, ankommen), verbs of a change of state (aufstehen, aufwachen) and the verb sein itself (ich bin gewesen). All other verbs keep haben. English and Spanish use one helper for everything (have, haber), and Hungarian uses none, so with each new verb ask yourself: do I move to somewhere, or do I change my state?",
+        "es": "Algunos verbos forman el Perfekt con sein en lugar de haben: ich bin gegangen, wir sind gefahren. Son verbos de movimiento de un lugar a otro (gehen, fahren, kommen, laufen, reisen, ankommen), verbos de cambio de estado (aufstehen, aufwachen) y el propio verbo sein (ich bin gewesen). Todos los demás verbos siguen con haben. El inglés y el español usan un solo auxiliar para todo (have, haber), y el húngaro ninguno, así que con cada verbo nuevo pregúntate: ¿me muevo hacia algún lugar o cambio de estado?"
+      }
+    },
+    {
+      "kind": "table",
+      "id": "perfekt-sein-muster",
+      "title": {
+        "en": "sein + participle",
+        "es": "sein + participio"
+      },
+      "header": [
+        {
+          "en": "Pronoun",
+          "es": "Pronombre"
+        },
+        {
+          "en": "sein",
+          "es": "sein"
+        },
+        {
+          "en": "Partizip II",
+          "es": "Partizip II"
+        }
+      ],
+      "rows": [
+        [
+          "ich",
+          "bin",
+          "gegangen"
+        ],
+        [
+          "du",
+          "bist",
+          "gegangen"
+        ],
+        [
+          "er/sie/es",
+          "ist",
+          "gegangen"
+        ],
+        [
+          "wir",
+          "sind",
+          "gegangen"
+        ],
+        [
+          "ihr",
+          "seid",
+          "gegangen"
+        ],
+        [
+          "sie/Sie",
+          "sind",
+          "gegangen"
+        ]
+      ],
+      "noTableDeck": true
+    },
+    {
+      "kind": "table",
+      "id": "partizip-sein",
+      "title": {
+        "en": "Participles and helper verbs",
+        "es": "Participios y verbos auxiliares"
+      },
+      "header": [
+        {
+          "en": "Infinitive",
+          "es": "Infinitivo"
+        },
+        {
+          "en": "Partizip II",
+          "es": "Partizip II"
+        },
+        {
+          "en": "Hilfsverb",
+          "es": "Hilfsverb"
+        }
+      ],
+      "rows": [
+        [
+          "gehen",
+          "gegangen",
+          "sein"
+        ],
+        [
+          "fahren",
+          "gefahren",
+          "sein"
+        ],
+        [
+          "kommen",
+          "gekommen",
+          "sein"
+        ],
+        [
+          "laufen",
+          "gelaufen",
+          "sein"
+        ],
+        [
+          "reisen",
+          "gereist",
+          "sein"
+        ],
+        [
+          "ankommen",
+          "angekommen",
+          "sein"
+        ],
+        [
+          "zurückkommen",
+          "zurückgekommen",
+          "sein"
+        ],
+        [
+          "aussteigen",
+          "ausgestiegen",
+          "sein"
+        ],
+        [
+          "aufstehen",
+          "aufgestanden",
+          "sein"
+        ],
+        [
+          "aufwachen",
+          "aufgewacht",
+          "sein"
+        ],
+        [
+          "sein",
+          "gewesen",
+          "sein"
+        ],
+        [
+          "machen",
+          "gemacht",
+          "haben"
+        ],
+        [
+          "essen",
+          "gegessen",
+          "haben"
+        ],
+        [
+          "sehen",
+          "gesehen",
+          "haben"
+        ],
+        [
+          "schlafen",
+          "geschlafen",
+          "haben"
+        ],
+        [
+          "arbeiten",
+          "gearbeitet",
+          "haben"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "When to use sein",
+        "es": "Cuándo usar sein"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "Movement from A to B: gehen, fahren, kommen, laufen, reisen, ankommen. A place or a direction is usually named in the sentence.",
+            "es": "Movimiento de A a B: gehen, fahren, kommen, laufen, reisen, ankommen. Normalmente se nombra un lugar o una dirección en la oración."
+          },
+          "examples": [
+            {
+              "es": "Ich bin nach Berlin gefahren.",
+              "tr": {
+                "en": "I traveled to Berlin.",
+                "es": "Viajé a Berlín."
+              }
+            },
+            {
+              "es": "Anna ist zur Schule gegangen.",
+              "tr": {
+                "en": "Anna went to school.",
+                "es": "Anna fue a la escuela."
+              }
+            },
+            {
+              "es": "Wir sind nach Hause gekommen.",
+              "tr": {
+                "en": "We came home.",
+                "es": "Llegamos a casa."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Change of state: the subject is in a new situation afterwards, for example aufstehen (lying, then standing) and aufwachen (asleep, then awake).",
+            "es": "Cambio de estado: después el sujeto está en una situación nueva, por ejemplo aufstehen (acostado, luego de pie) y aufwachen (dormido, luego despierto)."
+          },
+          "examples": [
+            {
+              "es": "Ich bin um sieben Uhr aufgestanden.",
+              "tr": {
+                "en": "I got up at seven.",
+                "es": "Me levanté a las siete."
+              }
+            },
+            {
+              "es": "Paul ist früh aufgewacht.",
+              "tr": {
+                "en": "Paul woke up early.",
+                "es": "Paul se despertó temprano."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "The verb sein itself also takes sein: ich bin gewesen. In everyday speech you will often hear the simple past war for this, which comes later in the course.",
+            "es": "El propio verbo sein también lleva sein: ich bin gewesen. En el habla cotidiana a menudo se oye el pretérito war, que viene más adelante en el curso."
+          },
+          "examples": [
+            {
+              "es": "Wir sind am Wochenende in Berlin gewesen.",
+              "tr": {
+                "en": "We were in Berlin at the weekend.",
+                "es": "El fin de semana estuvimos en Berlín."
+              }
+            },
+            {
+              "es": "Wo bist du gewesen?",
+              "tr": {
+                "en": "Where have you been?",
+                "es": "¿Dónde estuviste?"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Everything else takes haben, also verbs of movement with an object, and verbs of staying or doing without a goal (schlafen, arbeiten, machen).",
+            "es": "Todo lo demás lleva haben, también los verbos de movimiento con complemento, y los verbos de estar o hacer sin destino (schlafen, arbeiten, machen)."
+          },
+          "examples": [
+            {
+              "es": "Paul hat das Auto gefahren.",
+              "tr": {
+                "en": "Paul drove the car.",
+                "es": "Paul manejó el carro."
+              }
+            },
+            {
+              "es": "Ich habe gut geschlafen.",
+              "tr": {
+                "en": "I slept well.",
+                "es": "Dormí bien."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Typical contexts: weekend and vacation. Time words stand before the verb or in the middle, and the participle stays at the end.",
+            "es": "Contextos típicos: el fin de semana y las vacaciones. Las palabras de tiempo van antes del verbo o en medio, y el participio se queda al final."
+          },
+          "examples": [
+            {
+              "es": "Am Wochenende sind wir nach Hamburg gefahren.",
+              "tr": {
+                "en": "At the weekend we drove to Hamburg.",
+                "es": "El fin de semana fuimos a Hamburgo en carro."
+              }
+            },
+            {
+              "es": "Im Urlaub sind wir viel gelaufen.",
+              "tr": {
+                "en": "On vacation we walked a lot.",
+                "es": "En las vacaciones caminamos mucho."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "A quick test",
+        "es": "Una prueba rápida"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "Ask yourself: do I go from A to B, or do I change my state? Then use sein.",
+            "es": "Pregúntate: ¿voy de A a B, o cambio de estado? Entonces usa sein."
+          },
+          "examples": [
+            {
+              "es": "Ich bin zur Arbeit gelaufen.",
+              "tr": {
+                "en": "I ran to work.",
+                "es": "Corrí al trabajo."
+              }
+            },
+            {
+              "es": "Wir sind in Hamburg angekommen.",
+              "tr": {
+                "en": "We arrived in Hamburg.",
+                "es": "Llegamos a Hamburgo."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "If neither is true, use haben. With the same verb the helper can change: with an object, fahren takes haben.",
+            "es": "Si ninguna de las dos es verdad, usa haben. Con el mismo verbo el auxiliar puede cambiar: con complemento, fahren lleva haben."
+          },
+          "examples": [
+            {
+              "es": "Anna hat gestern gearbeitet.",
+              "tr": {
+                "en": "Anna worked yesterday.",
+                "es": "Anna trabajó ayer."
+              }
+            },
+            {
+              "es": "Paul hat das Auto gefahren.",
+              "tr": {
+                "en": "Paul drove the car.",
+                "es": "Paul manejó el carro."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Same verb, two helpers",
+        "es": "El mismo verbo, dos auxiliares"
+      },
+      "pairs": [
+        {
+          "a": "Ich bin nach Berlin gefahren.",
+          "b": "Ich habe das Auto gefahren.",
+          "note": {
+            "en": "Without an object, fahren is a trip to a place and takes sein. With an object (das Auto) you drive something, and fahren takes haben.",
+            "es": "Sin complemento, fahren es un viaje a un lugar y lleva sein. Con complemento (das Auto) manejas algo, y fahren lleva haben."
+          },
+          "examples": [
+            {
+              "es": "Wir sind mit dem Bus gefahren.",
+              "tr": {
+                "en": "We took the bus.",
+                "es": "Fuimos en camión."
+              }
+            },
+            {
+              "es": "Paul hat den Bus gefahren.",
+              "tr": {
+                "en": "Paul drove the bus.",
+                "es": "Paul manejó el camión."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Ich habe lange geschlafen.",
+          "b": "Ich bin früh aufgestanden.",
+          "note": {
+            "en": "schlafen is a state with no goal, so haben. aufstehen is a change from lying to standing, so sein.",
+            "es": "schlafen es un estado sin destino, así que haben. aufstehen es un cambio de acostado a de pie, así que sein."
+          },
+          "examples": [
+            {
+              "es": "Anna hat bis acht Uhr geschlafen.",
+              "tr": {
+                "en": "Anna slept until eight.",
+                "es": "Anna durmió hasta las ocho."
+              }
+            },
+            {
+              "es": "Anna ist um acht Uhr aufgestanden.",
+              "tr": {
+                "en": "Anna got up at eight.",
+                "es": "Anna se levantó a las ocho."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: gehen, fahren and kommen never take haben (not Ich habe gegangen, but Ich bin gegangen). The helper does not depend on the person, only on the verb. Learn the participles with the verb, because they are irregular (gegangen, gefahren, gekommen, gelaufen) and not like gegeht or gefahrt. Separable verbs keep ge- in the middle (angekommen, aufgestanden). Other verbs with sein, such as bleiben, werden and fliegen, come in the A2 course.",
+        "es": "Trampas clásicas: gehen, fahren y kommen nunca llevan haben (no Ich habe gegangen, sino Ich bin gegangen). El auxiliar no depende de la persona, solo del verbo. Aprende los participios junto con el verbo, porque son irregulares (gegangen, gefahren, gekommen, gelaufen) y no como gegeht o gefahrt. Los verbos separables conservan ge- en medio (angekommen, aufgestanden). Otros verbos con sein, como bleiben, werden y fliegen, vienen en el curso A2."
+      }
+    }
+  ],
+  "speak": {
+    "en": "Some verbs form the Perfekt with «sein». These are verbs of movement from one place to another, «Ich bin nach Berlin gefahren», «Anna ist zur Schule gegangen», «Wir sind nach Hause gekommen». Verbs of a change of state also take «sein», «Ich bin um sieben Uhr aufgestanden». And «sein» itself: «Ich bin gewesen». All other verbs take «haben»: «Ich habe gut geschlafen». Compare «Ich bin nach Berlin gefahren» and «Ich habe das Auto gefahren».",
+    "es": "Algunos verbos forman el Perfekt con «sein». Son verbos de movimiento de un lugar a otro, «Ich bin nach Berlin gefahren», «Anna ist zur Schule gegangen», «Wir sind nach Hause gekommen». Los verbos de cambio de estado también llevan «sein», «Ich bin um sieben Uhr aufgestanden». Y el propio «sein»: «Ich bin gewesen». Todos los demás verbos llevan «haben»: «Ich habe gut geschlafen». Compara «Ich bin nach Berlin gefahren» e «Ich habe das Auto gefahren»."
+  },
+  "items": [
+    {
+      "id": "perfekt-sein-c01",
+      "sentence": "Gestern ___ ich nach Berlin gefahren.",
+      "options": [
+        "habe",
+        "hat",
+        "bin"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "fahren to a place is a movement from A to B, so the helper is sein, and for ich it is bin.",
+        "es": "fahren hacia un lugar es un movimiento de A a B, así que el auxiliar es sein, y para ich es bin."
+      },
+      "wrong": {
+        "habe": {
+          "en": "habe is the helper of most verbs, but a trip to a place is a movement and takes sein.",
+          "es": "habe es el auxiliar de la mayoría de los verbos, pero un viaje a un lugar es un movimiento y lleva sein."
+        },
+        "hat": {
+          "en": "hat is a form of haben for er, sie and es. Here the subject is ich and the helper is sein: bin.",
+          "es": "hat es una forma de haben para er, sie y es. Aquí el sujeto es ich y el auxiliar es sein: bin."
+        }
+      },
+      "examples": [
+        "Ich bin nach Hause gegangen.",
+        "Gestern bin ich in Hamburg angekommen."
+      ],
+      "tr": {
+        "en": "Yesterday I traveled to Berlin.",
+        "es": "Ayer viajé a Berlín."
+      }
+    },
+    {
+      "id": "perfekt-sein-f01",
+      "kind": "form",
+      "verb": "Partizip II",
+      "person": "gehen",
+      "answer": "gegangen",
+      "table": "partizip-sein"
+    },
+    {
+      "id": "perfekt-sein-c02",
+      "sentence": "Anna ___ zur Schule gegangen.",
+      "options": [
+        "hat",
+        "ist",
+        "sind"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "gehen to a place takes sein, and for one person (she) the form is ist.",
+        "es": "gehen hacia un lugar lleva sein, y para una persona (ella) la forma es ist."
+      },
+      "wrong": {
+        "hat": {
+          "en": "hat belongs to haben. gehen is a verb of movement and takes sein.",
+          "es": "hat es de haben. gehen es un verbo de movimiento y lleva sein."
+        },
+        "sind": {
+          "en": "sind is the form for wir and sie (they). Anna is one person, so you need ist.",
+          "es": "sind es la forma de wir y sie (ellos). Anna es una persona, así que necesitas ist."
+        }
+      },
+      "examples": [
+        "Paul ist zur Arbeit gegangen.",
+        "Die Kinder sind zur Schule gegangen."
+      ],
+      "tr": {
+        "en": "Anna went to school.",
+        "es": "Anna fue a la escuela."
+      }
+    },
+    {
+      "id": "perfekt-sein-f02",
+      "kind": "form",
+      "verb": "Partizip II",
+      "person": "fahren",
+      "answer": "gefahren",
+      "table": "partizip-sein"
+    },
+    {
+      "id": "perfekt-sein-c03",
+      "sentence": "Wir ___ gestern spät nach Hause gekommen.",
+      "options": [
+        "sind",
+        "haben",
+        "ist"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "kommen is a movement to a place and takes sein; for wir the form is sind.",
+        "es": "kommen es un movimiento hacia un lugar y lleva sein; para wir la forma es sind."
+      },
+      "wrong": {
+        "haben": {
+          "en": "haben is the helper for verbs without movement to a place. kommen nach Hause is a movement and takes sein.",
+          "es": "haben es el auxiliar de los verbos sin movimiento hacia un lugar. kommen nach Hause es un movimiento y lleva sein."
+        },
+        "ist": {
+          "en": "ist is the form for one person (er, sie, es). The subject here is wir, so the form is sind.",
+          "es": "ist es la forma para una persona (er, sie, es). El sujeto aquí es wir, así que la forma es sind."
+        }
+      },
+      "examples": [
+        "Wir sind um acht Uhr gekommen.",
+        "Sie sind früh nach Hause gekommen."
+      ],
+      "tr": {
+        "en": "Yesterday we came home late.",
+        "es": "Ayer llegamos tarde a casa."
+      }
+    },
+    {
+      "id": "perfekt-sein-f03",
+      "kind": "form",
+      "verb": "Hilfsverb",
+      "person": "gehen",
+      "answer": "sein",
+      "table": "partizip-sein"
+    },
+    {
+      "id": "perfekt-sein-w01",
+      "kind": "why",
+      "es": "Ich bin nach Berlin gefahren.",
+      "target": "bin",
+      "tr": {
+        "en": "I traveled to Berlin.",
+        "es": "Viajé a Berlín."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "sein: fahren to a place is a movement from A to B",
+            "es": "sein: fahren hacia un lugar es un movimiento de A a B"
+          }
+        },
+        {
+          "text": {
+            "en": "haben: haben is the helper of all verbs",
+            "es": "haben: haben es el auxiliar de todos los verbos"
+          },
+          "wrong": {
+            "en": "haben is used for most verbs, but verbs of movement from A to B (gehen, fahren, kommen) take sein.",
+            "es": "haben se usa con la mayoría de los verbos, pero los verbos de movimiento de A a B (gehen, fahren, kommen) llevan sein."
+          }
+        },
+        {
+          "text": {
+            "en": "sein, because ich is always followed by bin",
+            "es": "sein, porque ich siempre va seguido de bin"
+          },
+          "wrong": {
+            "en": "The helper depends on the verb, not on the person. Ich habe gegessen takes haben, Ich bin gefahren takes sein.",
+            "es": "El auxiliar depende del verbo, no de la persona. Ich habe gegessen lleva haben, Ich bin gefahren lleva sein."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "perfekt-sein-c04",
+      "sentence": "Paul ___ das Auto gefahren.",
+      "options": [
+        "ist",
+        "sind",
+        "hat"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "With an object (das Auto) fahren means to drive something. Then it takes haben, and for Paul the form is hat.",
+        "es": "Con un complemento (das Auto) fahren significa manejar algo. Entonces lleva haben, y para Paul la forma es hat."
+      },
+      "wrong": {
+        "ist": {
+          "en": "ist would be right without an object (Paul ist nach Berlin gefahren). With das Auto as the object, the helper is haben.",
+          "es": "ist sería correcto sin complemento (Paul ist nach Berlin gefahren). Con das Auto como complemento, el auxiliar es haben."
+        },
+        "sind": {
+          "en": "sind is the form for wir and sie (they). Paul is one person, and the helper here is haben, so hat.",
+          "es": "sind es la forma de wir y sie (ellos). Paul es una persona, y el auxiliar aquí es haben, así que hat."
+        }
+      },
+      "examples": [
+        "Anna hat das Auto gekauft.",
+        "Ich habe den Bus gefahren."
+      ],
+      "tr": {
+        "en": "Paul drove the car.",
+        "es": "Paul manejó el carro."
+      }
+    },
+    {
+      "id": "perfekt-sein-f04",
+      "kind": "form",
+      "verb": "Partizip II",
+      "person": "kommen",
+      "answer": "gekommen",
+      "table": "partizip-sein"
+    },
+    {
+      "id": "perfekt-sein-c05",
+      "sentence": "Ich bin um sieben Uhr ___.",
+      "options": [
+        "aufgestehen",
+        "aufgestanden",
+        "geaufstanden"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "aufstehen is irregular and separable: the prefix auf- stays in front, ge- goes in the middle and the stem changes to stand: aufgestanden.",
+        "es": "aufstehen es irregular y separable: el prefijo auf- se queda delante, ge- va en medio y la raíz cambia a stand: aufgestanden."
+      },
+      "wrong": {
+        "aufgestehen": {
+          "en": "The stem of this verb changes in the participle (steh- becomes stand-). aufgestehen keeps the infinitive stem.",
+          "es": "La raíz de este verbo cambia en el participio (steh- pasa a stand-). aufgestehen conserva la raíz del infinitivo."
+        },
+        "geaufstanden": {
+          "en": "ge- never goes in front of a separable prefix. It stands in the middle: auf + ge + standen.",
+          "es": "ge- nunca va delante de un prefijo separable. Va en medio: auf + ge + standen."
+        }
+      },
+      "examples": [
+        "Anna ist früh aufgestanden.",
+        "Wir sind am Sonntag spät aufgestanden."
+      ],
+      "tr": {
+        "en": "I got up at seven o'clock.",
+        "es": "Me levanté a las siete."
+      }
+    },
+    {
+      "id": "perfekt-sein-f05",
+      "kind": "form",
+      "verb": "Partizip II",
+      "person": "laufen",
+      "answer": "gelaufen",
+      "table": "partizip-sein"
+    },
+    {
+      "id": "perfekt-sein-c06",
+      "sentence": "Wir sind nach Spanien ___.",
+      "options": [
+        "gereist",
+        "gereisen",
+        "gereis"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "reisen is regular, so the participle is ge- + stem + -t: gereist. The stem already ends in s, so you just add -t.",
+        "es": "reisen es regular, así que el participio es ge- + raíz + -t: gereist. La raíz ya termina en s, así que solo se añade -t."
+      },
+      "wrong": {
+        "gereisen": {
+          "en": "The ending -en is for irregular verbs (gegangen). reisen is regular and ends in -t.",
+          "es": "La terminación -en es para los verbos irregulares (gegangen). reisen es regular y termina en -t."
+        },
+        "gereis": {
+          "en": "gereis lacks the ending. A regular participle ends in -t: gereist.",
+          "es": "gereis no tiene la terminación. Un participio regular termina en -t: gereist."
+        }
+      },
+      "examples": [
+        "Paul ist nach Mexiko gereist.",
+        "Wir sind viel gereist."
+      ],
+      "tr": {
+        "en": "We traveled to Spain.",
+        "es": "Viajamos a España."
+      }
+    },
+    {
+      "id": "perfekt-sein-f06",
+      "kind": "form",
+      "verb": "Hilfsverb",
+      "person": "essen",
+      "answer": "haben",
+      "table": "partizip-sein"
+    },
+    {
+      "id": "perfekt-sein-w02",
+      "kind": "why",
+      "es": "Ich habe das Auto gefahren.",
+      "target": "habe",
+      "tr": {
+        "en": "I drove the car.",
+        "es": "Manejé el carro."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "sein, as always with fahren",
+            "es": "sein, como siempre con fahren"
+          },
+          "wrong": {
+            "en": "fahren takes sein only when you travel to a place. With an object, das Auto, you drive something and the helper is haben.",
+            "es": "fahren lleva sein solo cuando viajas a un lugar. Con un complemento, das Auto, manejas algo y el auxiliar es haben."
+          }
+        },
+        {
+          "text": {
+            "en": "haben: with an object, fahren means to drive something",
+            "es": "haben: con un complemento, fahren significa manejar algo"
+          }
+        },
+        {
+          "text": {
+            "en": "haben, because Auto is neuter",
+            "es": "haben, porque Auto es neutro"
+          },
+          "wrong": {
+            "en": "The gender of the noun does not decide the helper verb. The object is what turns fahren into a haben verb.",
+            "es": "El género del sustantivo no decide el auxiliar. Lo que convierte a fahren en un verbo con haben es el complemento."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "perfekt-sein-c07",
+      "sentence": "Der Zug ist um acht Uhr ___.",
+      "options": [
+        "geankommen",
+        "ankommen",
+        "angekommen"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "ankommen is separable: an- stays in front and ge- goes in the middle: angekommen.",
+        "es": "ankommen es separable: an- se queda delante y ge- va en medio: angekommen."
+      },
+      "wrong": {
+        "geankommen": {
+          "en": "ge- does not stand before the prefix an-. It goes between prefix and stem: an + ge + kommen.",
+          "es": "ge- no va antes del prefijo an-. Va entre el prefijo y la raíz: an + ge + kommen."
+        },
+        "ankommen": {
+          "en": "ankommen is the infinitive. After ist, at the end, you need the participle angekommen.",
+          "es": "ankommen es el infinitivo. Después de ist, al final, necesitas el participio angekommen."
+        }
+      },
+      "examples": [
+        "Wir sind in Hamburg angekommen.",
+        "Anna ist spät angekommen."
+      ],
+      "tr": {
+        "en": "The train arrived at eight o'clock.",
+        "es": "El tren llegó a las ocho."
+      }
+    },
+    {
+      "id": "perfekt-sein-f07",
+      "kind": "form",
+      "verb": "Partizip II",
+      "person": "reisen",
+      "answer": "gereist",
+      "table": "partizip-sein"
+    },
+    {
+      "id": "perfekt-sein-c08",
+      "sentence": "Paul ist früh ___.",
+      "options": [
+        "aufgewacht",
+        "aufgewachen",
+        "aufwacht"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "aufwachen is regular and separable: auf-, ge- in the middle and -t, aufgewacht. It describes a change of state, so the helper is sein.",
+        "es": "aufwachen es regular y separable: auf-, ge- en medio y -t, aufgewacht. Describe un cambio de estado, así que el auxiliar es sein."
+      },
+      "wrong": {
+        "aufgewachen": {
+          "en": "The ending -en is for irregular verbs. aufwachen is regular and its participle ends in -t.",
+          "es": "La terminación -en es para los verbos irregulares. aufwachen es regular y su participio termina en -t."
+        },
+        "aufwacht": {
+          "en": "aufwacht is the present tense (er wacht auf). The participle needs ge- in the middle: aufgewacht.",
+          "es": "aufwacht parece el presente (er wacht auf). El participio necesita ge- en medio: aufgewacht."
+        }
+      },
+      "examples": [
+        "Ich bin um sechs Uhr aufgewacht.",
+        "Die Kinder sind spät aufgewacht."
+      ],
+      "tr": {
+        "en": "Paul woke up early.",
+        "es": "Paul se despertó temprano."
+      }
+    },
+    {
+      "id": "perfekt-sein-f08",
+      "kind": "form",
+      "verb": "Partizip II",
+      "person": "ankommen",
+      "answer": "angekommen",
+      "table": "partizip-sein"
+    },
+    {
+      "id": "perfekt-sein-c09",
+      "sentence": "Wo ___ du gewesen?",
+      "options": [
+        "hast",
+        "bist",
+        "ist"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The verb sein forms its Perfekt with sein. For du the form is bist: Wo bist du gewesen?",
+        "es": "El verbo sein forma su Perfekt con sein. Para du la forma es bist: Wo bist du gewesen?"
+      },
+      "wrong": {
+        "hast": {
+          "en": "hast is the form of haben. sein is an exception and takes sein, not haben, as its helper.",
+          "es": "hast es la forma de haben. sein es una excepción y lleva sein, no haben, como auxiliar."
+        },
+        "ist": {
+          "en": "ist is the form for er, sie and es. With du you need bist.",
+          "es": "ist es la forma de er, sie y es. Con du necesitas bist."
+        }
+      },
+      "examples": [
+        "Wo seid ihr gewesen?",
+        "Ich bin im Park gewesen."
+      ],
+      "tr": {
+        "en": "Where have you been?",
+        "es": "¿Dónde estuviste?"
+      }
+    },
+    {
+      "id": "perfekt-sein-f09",
+      "kind": "form",
+      "verb": "Hilfsverb",
+      "person": "aufwachen",
+      "answer": "sein",
+      "table": "partizip-sein"
+    },
+    {
+      "id": "perfekt-sein-w03",
+      "kind": "why",
+      "es": "Paul ist früh aufgewacht.",
+      "target": "ist",
+      "tr": {
+        "en": "Paul woke up early.",
+        "es": "Paul se despertó temprano."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "sein, because Paul is a man",
+            "es": "sein, porque Paul es un hombre"
+          },
+          "wrong": {
+            "en": "The gender of the subject does not matter. Verbs of movement and of change of state take sein for every subject.",
+            "es": "El género del sujeto no importa. Los verbos de movimiento y de cambio de estado llevan sein con cualquier sujeto."
+          }
+        },
+        {
+          "text": {
+            "en": "haben: aufwachen is a normal verb without movement",
+            "es": "haben: aufwachen es un verbo normal sin movimiento"
+          },
+          "wrong": {
+            "en": "Verbs that describe a change of state (aufwachen, aufstehen) also take sein, even without a change of place.",
+            "es": "Los verbos que describen un cambio de estado (aufwachen, aufstehen) también llevan sein, aun sin cambio de lugar."
+          }
+        },
+        {
+          "text": {
+            "en": "sein: aufwachen is a change of state (asleep, then awake)",
+            "es": "sein: aufwachen es un cambio de estado (dormido, luego despierto)"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "perfekt-sein-c10",
+      "sentence": "Am Wochenende ___ wir in Berlin gewesen.",
+      "options": [
+        "sind",
+        "haben",
+        "seid"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "sein takes sein as its helper. For wir the form is sind: Wir sind in Berlin gewesen.",
+        "es": "sein lleva sein como auxiliar. Para wir la forma es sind: Wir sind in Berlin gewesen."
+      },
+      "wrong": {
+        "haben": {
+          "en": "haben is not the helper of sein. The Perfekt of sein uses sein itself: Wir sind gewesen.",
+          "es": "haben no es el auxiliar de sein. El Perfekt de sein usa el propio sein: Wir sind gewesen."
+        },
+        "seid": {
+          "en": "seid is the form for ihr, several friends. For wir the form is sind.",
+          "es": "seid es la forma de ihr, varios amigos. Para wir la forma es sind."
+        }
+      },
+      "examples": [
+        "Wir sind im Urlaub gewesen.",
+        "Im Sommer sind wir am Meer gewesen."
+      ],
+      "tr": {
+        "en": "At the weekend we were in Berlin.",
+        "es": "El fin de semana estuvimos en Berlín."
+      }
+    },
+    {
+      "id": "perfekt-sein-f10",
+      "kind": "form",
+      "verb": "Partizip II",
+      "person": "aufstehen",
+      "answer": "aufgestanden",
+      "table": "partizip-sein"
+    },
+    {
+      "id": "perfekt-sein-c11",
+      "sentence": "Ich ___ gestern lange geschlafen.",
+      "options": [
+        "bin",
+        "habe",
+        "hat"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "schlafen is not a movement and not a change of state, so the helper is haben: Ich habe lange geschlafen.",
+        "es": "schlafen no es un movimiento ni un cambio de estado, así que el auxiliar es haben: Ich habe lange geschlafen."
+      },
+      "wrong": {
+        "bin": {
+          "en": "bin would need a verb of movement or change of state, like gehen or aufstehen. Sleeping is a state with no goal.",
+          "es": "bin necesitaría un verbo de movimiento o de cambio de estado, como gehen o aufstehen. Dormir es un estado sin destino."
+        },
+        "hat": {
+          "en": "hat is the form of haben for er, sie and es. With ich the form is habe.",
+          "es": "hat es la forma de haben para er, sie y es. Con ich la forma es habe."
+        }
+      },
+      "examples": [
+        "Ich habe gut geschlafen.",
+        "Paul hat bis acht Uhr geschlafen."
+      ],
+      "tr": {
+        "en": "Yesterday I slept for a long time.",
+        "es": "Ayer dormí mucho."
+      }
+    },
+    {
+      "id": "perfekt-sein-f11",
+      "kind": "form",
+      "verb": "Partizip II",
+      "person": "sein",
+      "answer": "gewesen",
+      "table": "partizip-sein"
+    },
+    {
+      "id": "perfekt-sein-c12",
+      "sentence": "Anna ___ gestern im Büro gearbeitet.",
+      "options": [
+        "hat",
+        "ist",
+        "sind"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "arbeiten is an activity without a goal, so it takes haben, and for Anna the form is hat.",
+        "es": "arbeiten es una actividad sin destino, así que lleva haben, y para Anna la forma es hat."
+      },
+      "wrong": {
+        "ist": {
+          "en": "ist would be the helper of a movement or a change of state. Working in an office is neither.",
+          "es": "ist sería el auxiliar de un movimiento o de un cambio de estado. Trabajar en una oficina no es ninguno de los dos."
+        },
+        "sind": {
+          "en": "sind is the form for wir and sie (they), and it belongs to sein. Anna works, so the helper is haben: hat.",
+          "es": "sind es la forma de wir y sie (ellos), y es de sein. Anna trabaja, así que el auxiliar es haben: hat."
+        }
+      },
+      "examples": [
+        "Paul hat gestern gearbeitet.",
+        "Wir haben heute viel gearbeitet."
+      ],
+      "tr": {
+        "en": "Anna worked in the office yesterday.",
+        "es": "Ayer Anna trabajó en la oficina."
+      }
+    },
+    {
+      "id": "perfekt-sein-f12",
+      "kind": "form",
+      "verb": "Hilfsverb",
+      "person": "schlafen",
+      "answer": "haben",
+      "table": "partizip-sein"
+    },
+    {
+      "id": "perfekt-sein-c13",
+      "sentence": "Die Kinder sind nach Hause ___.",
+      "options": [
+        "gelauft",
+        "gelaufen",
+        "laufen"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "laufen is irregular: ge- + stem + -en gives gelaufen. Going home on foot is a movement, so the helper is sein.",
+        "es": "laufen es irregular: ge- + raíz + -en da gelaufen. Ir a casa caminando es un movimiento, así que el auxiliar es sein."
+      },
+      "wrong": {
+        "gelauft": {
+          "en": "gelauft uses the regular ending -t. laufen is irregular and its participle ends in -en.",
+          "es": "gelauft usa la terminación regular -t. laufen es irregular y su participio termina en -en."
+        },
+        "laufen": {
+          "en": "laufen is the infinitive. After sind, at the end, you need the participle gelaufen.",
+          "es": "laufen es el infinitivo. Después de sind, al final, necesitas el participio gelaufen."
+        }
+      },
+      "examples": [
+        "Ich bin zur Schule gelaufen.",
+        "Wir sind im Park gelaufen."
+      ],
+      "tr": {
+        "en": "The children ran home.",
+        "es": "Los niños corrieron a casa."
+      }
+    },
+    {
+      "id": "perfekt-sein-c14",
+      "sentence": "Ich bin gestern zur Arbeit ___.",
+      "options": [
+        "gegehen",
+        "gegangt",
+        "gegangen"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "gehen is irregular and its stem changes: the participle is gegangen.",
+        "es": "gehen es irregular y su raíz cambia: el participio es gegangen."
+      },
+      "wrong": {
+        "gegehen": {
+          "en": "gegehen keeps the stem of the infinitive. The participle of gehen is irregular: gegangen.",
+          "es": "gegehen conserva la raíz del infinitivo. El participio de gehen es irregular: gegangen."
+        },
+        "gegangt": {
+          "en": "gegangt mixes the changed stem with the regular ending -t. The participle of gehen ends in -en: gegangen.",
+          "es": "gegangt mezcla la raíz cambiada con la terminación regular -t. El participio de gehen termina en -en: gegangen."
+        }
+      },
+      "examples": [
+        "Paul ist nach Hause gegangen.",
+        "Wir sind zum Bahnhof gegangen."
+      ],
+      "tr": {
+        "en": "Yesterday I went to work.",
+        "es": "Ayer fui al trabajo."
+      }
+    },
+    {
+      "id": "perfekt-sein-w04",
+      "kind": "why",
+      "es": "Wo bist du gewesen?",
+      "target": "bist",
+      "tr": {
+        "en": "Where have you been?",
+        "es": "¿Dónde estuviste?"
+      },
+      "options": [
+        {
+          "text": {
+            "en": "sein as the helper: sein is an exception to the movement rule",
+            "es": "sein como auxiliar: sein es una excepción a la regla del movimiento"
+          }
+        },
+        {
+          "text": {
+            "en": "haben as the helper: there is no movement in sein",
+            "es": "haben como auxiliar: en sein no hay movimiento"
+          },
+          "wrong": {
+            "en": "Ich habe gewesen is wrong. Even without movement, the verb sein forms its Perfekt with sein: Ich bin gewesen.",
+            "es": "Ich habe gewesen es incorrecto. Aun sin movimiento, el verbo sein forma su Perfekt con sein: Ich bin gewesen."
+          }
+        },
+        {
+          "text": {
+            "en": "bist is the present tense, so this is not a Perfekt",
+            "es": "bist es el presente, así que esto no es un Perfekt"
+          },
+          "wrong": {
+            "en": "bist is only the helper here. The participle gewesen at the end makes the sentence a Perfekt: Where have you been?",
+            "es": "bist es solo el auxiliar aquí. El participio gewesen al final hace de la oración un Perfekt: ¿Dónde estuviste?"
+          }
+        }
+      ],
+      "correctIndex": 0
+    }
+  ]
+}

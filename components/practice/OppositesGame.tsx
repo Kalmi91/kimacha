@@ -48,7 +48,7 @@ export default function OppositesGame() {
   const headId = state ? currentWordId(state) : undefined;
   const item = round && headId ? round.items.find((i) => i.id === headId) : undefined;
   const question = state && headId ? state.questions[headId] : undefined;
-  const word = item ? oppositeText(item) : '';
+  const word = item ? oppositeText(item, target) : '';
   const picked = state?.picked ?? null;
   const turn = state?.turn ?? 0;
 
@@ -98,7 +98,7 @@ export default function OppositesGame() {
   };
 
   const answered = picked !== null;
-  const answerText = oppositeText(findPcicItem(question.answer)!);
+  const answerText = oppositeText(findPcicItem(question.answer)!, target);
   const position = oppositesPosition(state, round.items.length);
   return (
     <GameFrame
@@ -123,7 +123,7 @@ export default function OppositesGame() {
         </Card>
         <View style={styles.options}>
           {question.options.map((id, i) => {
-            const label = oppositeText(findPcicItem(id)!);
+            const label = oppositeText(findPcicItem(id)!, target);
             const isAnswer = id === question.answer;
             const isWrongPick = answered && id === picked && !isAnswer;
             const fill = answered && isAnswer ? colors.successFill : isWrongPick ? colors.danger : colors.card;

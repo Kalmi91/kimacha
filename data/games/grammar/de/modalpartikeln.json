@@ -1,0 +1,1039 @@
+{
+  "schema": 2,
+  "topic": "modalpartikeln",
+  "level": "C1",
+  "title": {
+    "en": "Modal particles: doch, mal, ja, eben",
+    "es": "Partículas modales: doch, mal, ja, eben"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "Modal particles are short, unstressed words in the middle of a sentence: ja, doch, mal, denn, eben, halt, wohl, schon, aber, eigentlich, nur, ruhig. They add a colour to what you say: friendliness, surprise, impatience, resignation, shared knowledge. They have no direct translation, so English uses tone of voice, just or really, and Spanish and Hungarian use words like pues, hombre, hát, csak or ugye. They belong to spoken and informal German and are rare in formal writing. They stand after the finite verb and the pronoun subject, never in first position, and the same word can also be an adverb or an answer with a different meaning.",
+        "es": "Las partículas modales son palabras cortas y átonas en medio de una oración: ja, doch, mal, denn, eben, halt, wohl, schon, aber, eigentlich, nur, ruhig. Añaden un matiz a lo que dices: amabilidad, sorpresa, impaciencia, resignación, conocimiento compartido. No tienen traducción directa, por eso el inglés usa el tono de voz, just o really, y el español y el húngaro usan palabras como pues, hombre, hát, csak o ugye. Pertenecen al alemán hablado e informal y son raras en la escritura formal. Van después del verbo conjugado y del sujeto pronominal, nunca en primera posición, y la misma palabra también puede ser un adverbio o una respuesta con otro significado."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "modalpartikeln-liste",
+      "title": {
+        "en": "Which particle fits the intention?",
+        "es": "¿Qué partícula encaja con la intención?"
+      },
+      "header": [
+        {
+          "en": "Sentence with a gap",
+          "es": "Oración con un hueco"
+        },
+        {
+          "en": "Partikel",
+          "es": "Partikel"
+        }
+      ],
+      "rows": [
+        [
+          "Du weißt ___, dass ich müde bin. (gemeinsames Wissen)",
+          "ja"
+        ],
+        [
+          "Komm ___ mit! (Einladung)",
+          "doch"
+        ],
+        [
+          "Das habe ich dir ___ gesagt! (Erinnerung)",
+          "doch"
+        ],
+        [
+          "Kannst du ___ kommen? (höfliche Bitte)",
+          "mal"
+        ],
+        [
+          "Komm ___ her! (freundlicher Befehl)",
+          "mal"
+        ],
+        [
+          "Wie heißt du ___? (Interesse)",
+          "denn"
+        ],
+        [
+          "Das ist ___ so. (nicht zu ändern)",
+          "eben"
+        ],
+        [
+          "Er ist ___ krank. (Vermutung)",
+          "wohl"
+        ],
+        [
+          "Das wird ___ gehen. (Beruhigung)",
+          "schon"
+        ],
+        [
+          "Das ist ___ schön! (Überraschung)",
+          "aber"
+        ],
+        [
+          "Du kannst ___ anfangen. (Erlaubnis)",
+          "ruhig"
+        ],
+        [
+          "Was machst du ___ hier? (neugierig gefragt)",
+          "eigentlich"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Shared knowledge, reminder, resignation: ja, doch, eben",
+        "es": "Conocimiento compartido, recordatorio, resignación: ja, doch, eben"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "ja marks something as already known to both: you know this, I know this. In an exclamation it can also express a surprise: Das ist ja schön!",
+            "es": "ja marca algo como ya conocido por ambos: tú lo sabes, yo lo sé. En una exclamación también puede expresar sorpresa: Das ist ja schön!"
+          },
+          "examples": [
+            {
+              "es": "Du weißt ja, dass ich Kaffee mag.",
+              "tr": {
+                "en": "You know that I like coffee.",
+                "es": "Ya sabes que me gusta el café."
+              }
+            },
+            {
+              "es": "Das ist ja interessant!",
+              "tr": {
+                "en": "Well, that is interesting!",
+                "es": "¡Vaya, qué interesante!"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "doch reminds somebody of something they should know, contradicts an expectation or encourages: Komm doch mit! eben and halt express resignation, it is just so.",
+            "es": "doch recuerda algo que el otro debería saber, contradice una expectativa o anima: Komm doch mit! eben y halt expresan resignación: así son las cosas."
+          },
+          "examples": [
+            {
+              "es": "Das habe ich dir doch gesagt!",
+              "tr": {
+                "en": "But I told you that!",
+                "es": "¡Pero si te lo dije!"
+              }
+            },
+            {
+              "es": "Das ist eben so.",
+              "tr": {
+                "en": "That is just how it is.",
+                "es": "Así son las cosas."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Softening and interest: mal, denn, eigentlich",
+        "es": "Suavizar e interesarse: mal, denn, eigentlich"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "mal softens a request or an order and makes it friendly: Komm mal her! It does not mean once here. denn in a question shows interest and sounds friendly: Wie heißt du denn?",
+            "es": "mal suaviza una petición o una orden y la hace amable: Komm mal her! Aquí no significa una vez. denn en una pregunta muestra interés y suena amable: Wie heißt du denn?"
+          },
+          "examples": [
+            {
+              "es": "Kannst du mal das Fenster aufmachen?",
+              "tr": {
+                "en": "Can you open the window, please?",
+                "es": "¿Puedes abrir la ventana, por favor?"
+              }
+            },
+            {
+              "es": "Was machst du denn da?",
+              "tr": {
+                "en": "What are you doing there?",
+                "es": "¿Qué estás haciendo ahí?"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "eigentlich turns a question into a casual remark (by the way, actually) or weakens a statement. It is also an ordinary adverb that means actually.",
+            "es": "eigentlich convierte una pregunta en un comentario casual (por cierto, en realidad) o debilita una afirmación. También es un adverbio normal que significa en realidad."
+          },
+          "examples": [
+            {
+              "es": "Was machst du eigentlich hier?",
+              "tr": {
+                "en": "What are you actually doing here?",
+                "es": "¿Qué haces tú aquí, por cierto?"
+              }
+            },
+            {
+              "es": "Wie spät ist es eigentlich?",
+              "tr": {
+                "en": "By the way, what time is it?",
+                "es": "Por cierto, ¿qué hora es?"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Assumption, reassurance, surprise, permission, warning: wohl, schon, aber, ruhig, nur",
+        "es": "Suposición, tranquilidad, sorpresa, permiso, advertencia: wohl, schon, aber, ruhig, nur"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "wohl says that you assume something: Er ist wohl krank. schon reassures: Das wird schon gehen. aber in an exclamation adds a surprise: Das ist aber schön!",
+            "es": "wohl dice que supones algo: Er ist wohl krank. schon tranquiliza: Das wird schon gehen. aber en una exclamación añade sorpresa: Das ist aber schön!"
+          },
+          "examples": [
+            {
+              "es": "Er kommt nicht. Er ist wohl krank.",
+              "tr": {
+                "en": "He is not coming. He is probably sick.",
+                "es": "Él no viene. Probablemente está enfermo."
+              }
+            },
+            {
+              "es": "Keine Angst, das wird schon gehen.",
+              "tr": {
+                "en": "Do not worry, it will work out.",
+                "es": "No tengas miedo, ya va a salir bien."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "ruhig gives permission or encouragement: Du kannst ruhig anfangen. nur expresses a warning or a wish: Sei nur vorsichtig! Hätte ich nur mehr Zeit!",
+            "es": "ruhig da permiso o ánimo: Du kannst ruhig anfangen. nur expresa una advertencia o un deseo: Sei nur vorsichtig! Hätte ich nur mehr Zeit!"
+          },
+          "examples": [
+            {
+              "es": "Du kannst ruhig anfangen.",
+              "tr": {
+                "en": "You can go ahead and start.",
+                "es": "Puedes empezar tranquilamente."
+              }
+            },
+            {
+              "es": "Hätte ich nur mehr Zeit!",
+              "tr": {
+                "en": "If only I had more time!",
+                "es": "¡Ojalá tuviera más tiempo!"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Particle, answer or adverb?",
+        "es": "¿Partícula, respuesta o adverbio?"
+      },
+      "pairs": [
+        {
+          "a": "Komm doch mit!",
+          "b": "Kommst du nicht mit? Doch!",
+          "note": {
+            "en": "As a particle doch is unstressed and stands inside the sentence. As an answer it stands alone at the front, is stressed, and contradicts a negative question.",
+            "es": "Como partícula doch es átona y va dentro de la oración. Como respuesta va sola al principio, es tónica y contradice una pregunta negativa."
+          },
+          "examples": [
+            {
+              "es": "Komm doch mal her!",
+              "tr": {
+                "en": "Come over here, why don't you!",
+                "es": "¡Anda, ven acá!"
+              }
+            },
+            {
+              "es": "Hast du keine Zeit? Doch, ich habe Zeit.",
+              "tr": {
+                "en": "Do you have no time? Yes, I do have time.",
+                "es": "¿No tienes tiempo? Sí, sí tengo tiempo."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Ich bin schon da.",
+          "b": "Das wird schon gehen.",
+          "note": {
+            "en": "schon in the first sentence is an adverb and means already. In the second sentence it is a particle that reassures, and it is unstressed.",
+            "es": "schon en la primera oración es un adverbio y significa ya. En la segunda oración es una partícula que tranquiliza, y es átona."
+          },
+          "examples": [
+            {
+              "es": "Ich habe schon gegessen.",
+              "tr": {
+                "en": "I have already eaten.",
+                "es": "Ya comí."
+              }
+            },
+            {
+              "es": "Das ist schon in Ordnung.",
+              "tr": {
+                "en": "That is all right, really.",
+                "es": "Eso está bien, de verdad."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: putting a particle in first position (*Doch komm mit! sounds like the answer); stressing it so that it becomes an adverb; using too many particles in one sentence; using them in formal writing. Combinations have a fixed order: Komm doch mal her! (doch before mal), not *Komm mal doch her! Do not translate them word by word. Learn them in whole sentences and listen for the tone.",
+        "es": "Trampas clásicas: poner una partícula en primera posición (*Doch komm mit! suena como la respuesta); acentuarla de modo que se vuelva un adverbio; usar demasiadas partículas en una oración; usarlas en la escritura formal. Las combinaciones tienen un orden fijo: Komm doch mal her! (doch antes de mal), no *Komm mal doch her! No las traduzcas palabra por palabra. Apréndelas en oraciones completas y escucha el tono."
+      }
+    }
+  ],
+  "speak": {
+    "en": "Modal particles are short unstressed words that give a sentence a colour. «Ja» marks something both people know: «Du weißt ja, dass ich Kaffee mag». «Doch» reminds or encourages: «Komm doch mit!». «Mal» makes a request friendly: «Kannst du mal das Fenster aufmachen?». «Denn» shows interest in a question: «Wie heißt du denn?». «Eben» expresses resignation: «Das ist eben so». «Wohl» expresses an assumption, «schon» reassures, «aber» adds surprise. These words stand in the middle of the sentence and are mostly spoken, not written.",
+    "es": "Las partículas modales son palabras cortas y átonas que dan un matiz a una oración. «Ja» marca algo que ambas personas saben: «Du weißt ja, dass ich Kaffee mag». «Doch» recuerda o anima: «Komm doch mit!». «Mal» hace amable una petición: «Kannst du mal das Fenster aufmachen?». «Denn» muestra interés en una pregunta: «Wie heißt du denn?». «Eben» expresa resignación: «Das ist eben so». «Wohl» expresa una suposición, «schon» tranquiliza, «aber» añade sorpresa. Estas palabras van en medio de la oración y se usan sobre todo al hablar, no al escribir."
+  },
+  "items": [
+    {
+      "id": "modalpartikeln-c01",
+      "sentence": "Wie heißt du ___?",
+      "options": [
+        "mal",
+        "denn",
+        "ja"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "denn in a question shows friendly interest: Wie heißt du denn? It softens the question.",
+        "es": "denn en una pregunta muestra un interés amable: Wie heißt du denn? Suaviza la pregunta."
+      },
+      "wrong": {
+        "mal": {
+          "en": "mal softens requests and orders (Komm mal her!). In a W-question about a name it does not fit the meaning.",
+          "es": "mal suaviza peticiones y órdenes (Komm mal her!). En una pregunta con palabra interrogativa sobre un nombre no encaja con el sentido."
+        },
+        "ja": {
+          "en": "ja marks shared knowledge. You ask the name because you do not know it, so ja would be odd.",
+          "es": "ja marca conocimiento compartido. Preguntas el nombre porque no lo sabes, así que ja sería extraño."
+        }
+      },
+      "examples": [
+        "Was machst du denn da?",
+        "Wo wohnst du denn?"
+      ],
+      "tr": {
+        "en": "And what is your name, then?",
+        "es": "¿Y cómo te llamas?"
+      }
+    },
+    {
+      "id": "modalpartikeln-f01",
+      "kind": "form",
+      "verb": "Partikel",
+      "person": "Du weißt ___, dass ich müde bin. (gemeinsames Wissen)",
+      "answer": "ja",
+      "table": "modalpartikeln-liste",
+      "accept": [
+        "doch"
+      ]
+    },
+    {
+      "id": "modalpartikeln-c02",
+      "sentence": "Kannst du ___ das Fenster aufmachen?",
+      "options": [
+        "mal",
+        "schon",
+        "wohl"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "mal softens a request and makes it friendly: Kannst du mal das Fenster aufmachen?",
+        "es": "mal suaviza una petición y la hace amable: Kannst du mal das Fenster aufmachen?"
+      },
+      "wrong": {
+        "schon": {
+          "en": "schon reassures (Das wird schon gehen) or means already. It does not soften a request.",
+          "es": "schon tranquiliza (Das wird schon gehen) o significa ya. No suaviza una petición."
+        },
+        "wohl": {
+          "en": "wohl expresses an assumption (Er ist wohl krank). In a request it would sound like a guess.",
+          "es": "wohl expresa una suposición (Er ist wohl krank). En una petición sonaría como una conjetura."
+        }
+      },
+      "examples": [
+        "Gib mir mal das Buch, bitte.",
+        "Sag mal, wie spät ist es?"
+      ],
+      "tr": {
+        "en": "Can you open the window, please?",
+        "es": "¿Puedes abrir la ventana, por favor?"
+      }
+    },
+    {
+      "id": "modalpartikeln-f02",
+      "kind": "form",
+      "verb": "Partikel",
+      "person": "Komm ___ mit! (Einladung)",
+      "answer": "doch",
+      "accept": [
+        "mal"
+      ],
+      "table": "modalpartikeln-liste"
+    },
+    {
+      "id": "modalpartikeln-c03",
+      "sentence": "Du weißt ___, dass ich keinen Kaffee mag.",
+      "options": [
+        "eben",
+        "ja",
+        "mal"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "ja marks something both people already know: you know that I do not like coffee.",
+        "es": "ja marca algo que ambas personas ya saben: sabes que no me gusta el café."
+      },
+      "wrong": {
+        "eben": {
+          "en": "eben expresses resignation (Das ist eben so). It does not remind somebody of shared knowledge.",
+          "es": "eben expresa resignación (Das ist eben so). No recuerda un conocimiento compartido."
+        },
+        "mal": {
+          "en": "mal softens requests. In a statement about what somebody knows it does not fit.",
+          "es": "mal suaviza peticiones. En una afirmación sobre lo que alguien sabe no encaja."
+        }
+      },
+      "examples": [
+        "Du bist ja müde.",
+        "Er mag ja keinen Fisch."
+      ],
+      "tr": {
+        "en": "You know that I do not like coffee.",
+        "es": "Ya sabes que no me gusta el café."
+      }
+    },
+    {
+      "id": "modalpartikeln-f03",
+      "kind": "form",
+      "verb": "Partikel",
+      "person": "Kannst du ___ kommen? (höfliche Bitte)",
+      "answer": "mal",
+      "table": "modalpartikeln-liste"
+    },
+    {
+      "id": "modalpartikeln-w01",
+      "kind": "why",
+      "es": "Kannst du mal das Fenster aufmachen?",
+      "target": "mal",
+      "tr": {
+        "en": "Can you open the window, please?",
+        "es": "¿Puedes abrir la ventana, por favor?"
+      },
+      "options": [
+        {
+          "text": {
+            "en": "A particle that softens the request and makes it friendly",
+            "es": "Una partícula que suaviza la petición y la hace amable"
+          }
+        },
+        {
+          "text": {
+            "en": "The word for once: open the window one time",
+            "es": "La palabra para una vez: abre la ventana una vez"
+          },
+          "wrong": {
+            "en": "Here mal is unstressed and does not count times. The word for counting is einmal.",
+            "es": "Aquí mal es átono y no cuenta veces. La palabra para contar es einmal."
+          }
+        },
+        {
+          "text": {
+            "en": "A particle of doubt: perhaps you can open the window",
+            "es": "Una partícula de duda: quizá puedas abrir la ventana"
+          },
+          "wrong": {
+            "en": "mal does not express doubt. A guess would be wohl, and the request here is clear and friendly.",
+            "es": "mal no expresa duda. Una conjetura sería wohl, y la petición aquí es clara y amable."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "modalpartikeln-c04",
+      "sentence": "Du hast Zeit? Dann komm ___ mit!",
+      "options": [
+        "ja",
+        "wohl",
+        "doch"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "doch encourages: you have time, so come along! Komm doch mit! sounds friendly and a bit insistent.",
+        "es": "doch anima: tienes tiempo, ¡así que ven con nosotros! Komm doch mit! suena amable y un poco insistente."
+      },
+      "wrong": {
+        "ja": {
+          "en": "ja would mark shared knowledge and does not encourage. In an order it would sound odd.",
+          "es": "ja marcaría conocimiento compartido y no anima. En una orden sonaría extraño."
+        },
+        "wohl": {
+          "en": "wohl expresses a guess. An invitation is not a guess, so wohl does not fit.",
+          "es": "wohl expresa una conjetura. Una invitación no es una conjetura, así que wohl no encaja."
+        }
+      },
+      "examples": [
+        "Komm doch zu uns!",
+        "Sag doch etwas!"
+      ],
+      "tr": {
+        "en": "You have time? Then come along!",
+        "es": "¿Tienes tiempo? ¡Entonces ven con nosotros!"
+      }
+    },
+    {
+      "id": "modalpartikeln-f04",
+      "kind": "form",
+      "verb": "Partikel",
+      "person": "Wie heißt du ___? (Interesse)",
+      "answer": "denn",
+      "table": "modalpartikeln-liste",
+      "accept": [
+        "eigentlich"
+      ]
+    },
+    {
+      "id": "modalpartikeln-c05",
+      "sentence": "Das Wetter ist schlecht, das ist ___ so.",
+      "options": [
+        "denn",
+        "mal",
+        "eben"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "eben expresses resignation: it is just so, nothing can be done. halt would work too.",
+        "es": "eben expresa resignación: así son las cosas, no se puede hacer nada. halt también funcionaría."
+      },
+      "wrong": {
+        "denn": {
+          "en": "denn belongs to questions and shows interest. This is a statement of resignation.",
+          "es": "denn pertenece a las preguntas y muestra interés. Esto es una afirmación de resignación."
+        },
+        "mal": {
+          "en": "mal softens requests and orders. A statement about the weather does not contain a request.",
+          "es": "mal suaviza peticiones y órdenes. Una afirmación sobre el clima no contiene una petición."
+        }
+      },
+      "examples": [
+        "Es ist eben so.",
+        "Das ist halt das Leben."
+      ],
+      "tr": {
+        "en": "The weather is bad, that is just how it is.",
+        "es": "El clima está feo, así son las cosas."
+      }
+    },
+    {
+      "id": "modalpartikeln-f05",
+      "kind": "form",
+      "verb": "Partikel",
+      "person": "Das ist ___ so. (nicht zu ändern)",
+      "answer": "eben",
+      "accept": [
+        "halt"
+      ],
+      "table": "modalpartikeln-liste"
+    },
+    {
+      "id": "modalpartikeln-c06",
+      "sentence": "Er kommt nicht. Er ist ___ krank.",
+      "options": [
+        "wohl",
+        "aber",
+        "nur"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "wohl says that the speaker assumes something: he is probably sick.",
+        "es": "wohl dice que el hablante supone algo: probablemente está enfermo."
+      },
+      "wrong": {
+        "aber": {
+          "en": "aber in a statement adds surprise or contrast (Das ist aber schön!). It does not express an assumption.",
+          "es": "aber en una afirmación añade sorpresa o contraste (Das ist aber schön!). No expresa una suposición."
+        },
+        "nur": {
+          "en": "nur expresses a warning or a wish, or means only. It does not mean probably.",
+          "es": "nur expresa una advertencia o un deseo, o significa solo. No significa probablemente."
+        }
+      },
+      "examples": [
+        "Sie ist wohl müde.",
+        "Das stimmt wohl."
+      ],
+      "tr": {
+        "en": "He is not coming. He is probably sick.",
+        "es": "Él no viene. Probablemente está enfermo."
+      }
+    },
+    {
+      "id": "modalpartikeln-f06",
+      "kind": "form",
+      "verb": "Partikel",
+      "person": "Er ist ___ krank. (Vermutung)",
+      "answer": "wohl",
+      "table": "modalpartikeln-liste"
+    },
+    {
+      "id": "modalpartikeln-w02",
+      "kind": "why",
+      "es": "Er ist wohl krank.",
+      "target": "wohl",
+      "tr": {
+        "en": "He is probably sick.",
+        "es": "Probablemente está enfermo."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "The adverb well, as in gut",
+            "es": "El adverbio bien, como en gut"
+          },
+          "wrong": {
+            "en": "Unstressed in the middle of the sentence, wohl is a particle, not the adverb well. Good health would be gesund.",
+            "es": "Átono en medio de la oración, wohl es una partícula, no el adverbio bien. La buena salud sería gesund."
+          }
+        },
+        {
+          "text": {
+            "en": "A particle of assumption: the speaker thinks it is probably so",
+            "es": "Una partícula de suposición: el hablante piensa que probablemente es así"
+          }
+        },
+        {
+          "text": {
+            "en": "A particle of certainty: he is definitely sick",
+            "es": "Una partícula de certeza: está enfermo con seguridad"
+          },
+          "wrong": {
+            "en": "wohl does not express certainty. It only says that the speaker assumes it; for certainty one says bestimmt or sicher.",
+            "es": "wohl no expresa certeza. Solo dice que el hablante lo supone; para la certeza se dice bestimmt o sicher."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "modalpartikeln-c07",
+      "sentence": "Keine Angst, das wird ___ gehen.",
+      "options": [
+        "schon",
+        "ja",
+        "denn"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "schon reassures: do not worry, it will work out. It is unstressed and stands inside the sentence.",
+        "es": "schon tranquiliza: no te preocupes, va a salir bien. Es átono y va dentro de la oración."
+      },
+      "wrong": {
+        "ja": {
+          "en": "ja would remind of shared knowledge. A reassurance about the future does not rely on that.",
+          "es": "ja recordaría un conocimiento compartido. Una tranquilización sobre el futuro no se basa en eso."
+        },
+        "denn": {
+          "en": "denn belongs to questions. This sentence is a statement, so denn does not fit.",
+          "es": "denn pertenece a las preguntas. Esta oración es una afirmación, así que denn no encaja."
+        }
+      },
+      "examples": [
+        "Das schaffst du schon.",
+        "Er kommt schon noch."
+      ],
+      "tr": {
+        "en": "Do not worry, it will work out.",
+        "es": "No tengas miedo, ya va a salir bien."
+      }
+    },
+    {
+      "id": "modalpartikeln-f07",
+      "kind": "form",
+      "verb": "Partikel",
+      "person": "Das wird ___ gehen. (Beruhigung)",
+      "answer": "schon",
+      "table": "modalpartikeln-liste"
+    },
+    {
+      "id": "modalpartikeln-c08",
+      "sentence": "Das ist ___ schön! Danke!",
+      "options": [
+        "aber",
+        "mal",
+        "wohl"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "aber in an exclamation adds surprise: that is really beautiful, I did not expect it.",
+        "es": "aber en una exclamación añade sorpresa: eso es realmente bonito, no lo esperaba."
+      },
+      "wrong": {
+        "mal": {
+          "en": "mal softens requests. In an exclamation of delight it does not fit.",
+          "es": "mal suaviza peticiones. En una exclamación de alegría no encaja."
+        },
+        "wohl": {
+          "en": "wohl expresses a guess. Here the speaker sees the present and is not guessing.",
+          "es": "wohl expresa una conjetura. Aquí el hablante ve el regalo y no está suponiendo."
+        }
+      },
+      "examples": [
+        "Das ist aber nett von dir!",
+        "Du bist aber groß geworden!"
+      ],
+      "tr": {
+        "en": "That is really beautiful! Thanks!",
+        "es": "¡Eso es muy bonito! ¡Gracias!"
+      }
+    },
+    {
+      "id": "modalpartikeln-f08",
+      "kind": "form",
+      "verb": "Partikel",
+      "person": "Das ist ___ schön! (Überraschung)",
+      "answer": "aber",
+      "table": "modalpartikeln-liste",
+      "accept": [
+        "ja"
+      ]
+    },
+    {
+      "id": "modalpartikeln-c09",
+      "sentence": "Du kannst ___ anfangen. Ich komme gleich.",
+      "options": [
+        "denn",
+        "ruhig",
+        "eben"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "ruhig gives permission and encouragement: go ahead and start, there is no need to wait for me.",
+        "es": "ruhig da permiso y ánimo: empieza tranquilamente, no hace falta esperarme."
+      },
+      "wrong": {
+        "denn": {
+          "en": "denn belongs to questions and shows interest. The sentence is a statement that allows something.",
+          "es": "denn pertenece a las preguntas y muestra interés. La oración es una afirmación que permite algo."
+        },
+        "eben": {
+          "en": "eben expresses resignation. Here the speaker is not resigned, but friendly and relaxed.",
+          "es": "eben expresa resignación. Aquí el hablante no está resignado, sino amable y relajado."
+        }
+      },
+      "examples": [
+        "Du kannst ruhig fragen.",
+        "Sie können ruhig kommen."
+      ],
+      "tr": {
+        "en": "You can go ahead and start. I will be there soon.",
+        "es": "Puedes empezar tranquilamente. Ya voy."
+      }
+    },
+    {
+      "id": "modalpartikeln-f09",
+      "kind": "form",
+      "verb": "Partikel",
+      "person": "Du kannst ___ anfangen. (Erlaubnis)",
+      "answer": "ruhig",
+      "table": "modalpartikeln-liste"
+    },
+    {
+      "id": "modalpartikeln-w03",
+      "kind": "why",
+      "es": "Kommst du nicht mit? Doch, ich komme.",
+      "target": "Doch",
+      "tr": {
+        "en": "Are you not coming? Yes, I am coming.",
+        "es": "¿No vienes? Sí, sí voy."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "A modal particle that softens the sentence",
+            "es": "Una partícula modal que suaviza la oración"
+          },
+          "wrong": {
+            "en": "Here Doch stands first and is stressed. A particle would be unstressed and inside the sentence.",
+            "es": "Aquí Doch va primero y es tónico. Una partícula sería átona y estaría dentro de la oración."
+          }
+        },
+        {
+          "text": {
+            "en": "The same as Ja, only more polite",
+            "es": "Lo mismo que Ja, solo que más cortés"
+          },
+          "wrong": {
+            "en": "Ja and Doch are not the same. After a negative question, Ja would be ambiguous, while Doch clearly contradicts.",
+            "es": "Ja y Doch no son lo mismo. Después de una pregunta negativa, Ja sería ambiguo, mientras que Doch contradice claramente."
+          }
+        },
+        {
+          "text": {
+            "en": "An answer that contradicts a negative question",
+            "es": "Una respuesta que contradice una pregunta negativa"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "modalpartikeln-c10",
+      "sentence": "Kommst du nicht mit? ___, ich komme.",
+      "options": [
+        "Ja",
+        "Doch",
+        "Schon"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Doch is the answer that contradicts a negative question: yes, I do come. Here it stands first and is stressed.",
+        "es": "Doch es la respuesta que contradice una pregunta negativa: sí, sí voy. Aquí va primero y es tónica."
+      },
+      "wrong": {
+        "Ja": {
+          "en": "Ja after a negative question is ambiguous: it could mean yes, I am not coming. Doch is clear.",
+          "es": "Ja después de una pregunta negativa es ambiguo: podría significar sí, no voy. Doch es claro."
+        },
+        "Schon": {
+          "en": "Schon means already or reassures inside a sentence. It is not an answer to a negative question.",
+          "es": "Schon significa ya o tranquiliza dentro de una oración. No es una respuesta a una pregunta negativa."
+        }
+      },
+      "examples": [
+        "Hast du keinen Hunger? Doch, ich habe Hunger.",
+        "Ist er nicht da? Doch, er ist da."
+      ],
+      "tr": {
+        "en": "Are you not coming along? Yes, I am coming.",
+        "es": "¿No vienes con nosotros? Sí, sí voy."
+      }
+    },
+    {
+      "id": "modalpartikeln-f10",
+      "kind": "form",
+      "verb": "Partikel",
+      "person": "Was machst du ___ hier? (neugierig gefragt)",
+      "answer": "eigentlich",
+      "table": "modalpartikeln-liste",
+      "accept": [
+        "denn"
+      ]
+    },
+    {
+      "id": "modalpartikeln-c11",
+      "sentence": "Was machst du ___ hier?",
+      "options": [
+        "schon",
+        "ruhig",
+        "eigentlich"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "eigentlich turns the question into a casual remark: by the way, what are you doing here?",
+        "es": "eigentlich convierte la pregunta en un comentario casual: por cierto, ¿qué haces tú aquí?"
+      },
+      "wrong": {
+        "schon": {
+          "en": "schon would mean already and would change the question to a different meaning.",
+          "es": "schon significaría ya y cambiaría la pregunta a otro significado."
+        },
+        "ruhig": {
+          "en": "ruhig gives permission and does not fit a question about what somebody is doing.",
+          "es": "ruhig da permiso y no encaja en una pregunta sobre lo que alguien hace."
+        }
+      },
+      "examples": [
+        "Wie spät ist es eigentlich?",
+        "Wo wohnst du eigentlich?"
+      ],
+      "tr": {
+        "en": "What are you actually doing here?",
+        "es": "¿Qué haces tú aquí, por cierto?"
+      }
+    },
+    {
+      "id": "modalpartikeln-f11",
+      "kind": "form",
+      "verb": "Partikel",
+      "person": "Das habe ich dir ___ gesagt! (Erinnerung)",
+      "answer": "doch",
+      "accept": [
+        "ja"
+      ],
+      "table": "modalpartikeln-liste"
+    },
+    {
+      "id": "modalpartikeln-c12",
+      "sentence": "Mensch, das habe ich dir ___ gesagt!",
+      "options": [
+        "doch",
+        "mal",
+        "ruhig"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "doch reminds the other person of something he should know: but I told you that!",
+        "es": "doch recuerda al otro algo que debería saber: ¡pero si te lo dije!"
+      },
+      "wrong": {
+        "mal": {
+          "en": "mal softens a request. This is a reproach about the past, so mal does not fit.",
+          "es": "mal suaviza una petición. Esto es un reproche sobre el pasado, así que mal no encaja."
+        },
+        "ruhig": {
+          "en": "ruhig gives permission. A reproach about something already said has nothing to allow.",
+          "es": "ruhig da permiso. Un reproche sobre algo ya dicho no tiene nada que permitir."
+        }
+      },
+      "examples": [
+        "Ich habe es dir doch erklärt.",
+        "Du weißt doch, dass ich arbeite."
+      ],
+      "tr": {
+        "en": "Man, I told you that!",
+        "es": "¡Hombre, pero si te lo dije!"
+      }
+    },
+    {
+      "id": "modalpartikeln-f12",
+      "kind": "form",
+      "verb": "Partikel",
+      "person": "Komm ___ her! (freundlicher Befehl)",
+      "answer": "mal",
+      "accept": [
+        "doch"
+      ],
+      "table": "modalpartikeln-liste"
+    },
+    {
+      "id": "modalpartikeln-c13",
+      "sentence": "Komm ___ mal her!",
+      "options": [
+        "denn",
+        "wohl",
+        "doch"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The usual combination is doch mal, with doch first: Komm doch mal her! It is a friendly, a bit insistent invitation.",
+        "es": "La combinación usual es doch mal, con doch primero: Komm doch mal her! Es una invitación amable y algo insistente."
+      },
+      "wrong": {
+        "denn": {
+          "en": "denn belongs to questions. In a request with an imperative it does not fit.",
+          "es": "denn pertenece a las preguntas. En una petición con imperativo no encaja."
+        },
+        "wohl": {
+          "en": "wohl expresses a guess and would be odd in an imperative sentence.",
+          "es": "wohl expresa una conjetura y sería extraño en una oración imperativa."
+        }
+      },
+      "examples": [
+        "Sag doch mal etwas.",
+        "Komm doch mal mit."
+      ],
+      "tr": {
+        "en": "Come over here, why don't you!",
+        "es": "¡Anda, ven acá!"
+      }
+    },
+    {
+      "id": "modalpartikeln-c14",
+      "sentence": "Hätte ich ___ mehr Zeit!",
+      "options": [
+        "eben",
+        "nur",
+        "ruhig"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "nur expresses a wish: if only I had more time. With the Konjunktiv II hätte it sounds like a sigh.",
+        "es": "nur expresa un deseo: ojalá tuviera más tiempo. Con el Konjunktiv II hätte suena como un suspiro."
+      },
+      "wrong": {
+        "eben": {
+          "en": "eben expresses resignation with something real (Das ist eben so). It does not form a wish.",
+          "es": "eben expresa resignación con algo real (Das ist eben so). No forma un deseo."
+        },
+        "ruhig": {
+          "en": "ruhig gives permission and does not belong to a wish with hätte.",
+          "es": "ruhig da permiso y no pertenece a un deseo con hätte."
+        }
+      },
+      "examples": [
+        "Wäre er nur hier!",
+        "Wenn ich nur wüsste!"
+      ],
+      "tr": {
+        "en": "If only I had more time!",
+        "es": "¡Ojalá tuviera más tiempo!"
+      }
+    },
+    {
+      "id": "modalpartikeln-w04",
+      "kind": "why",
+      "es": "Du weißt ja, dass ich Kaffee mag.",
+      "target": "ja",
+      "tr": {
+        "en": "You know that I like coffee.",
+        "es": "Ya sabes que me gusta el café."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "The answer yes to a question",
+            "es": "La respuesta sí a una pregunta"
+          },
+          "wrong": {
+            "en": "Here ja is unstressed and stands inside a statement. It does not answer any question.",
+            "es": "Aquí ja es átono y está dentro de una afirmación. No responde a ninguna pregunta."
+          }
+        },
+        {
+          "text": {
+            "en": "A particle that marks the information as known to both people",
+            "es": "Una partícula que marca la información como conocida por ambos"
+          }
+        },
+        {
+          "text": {
+            "en": "A tag question that asks for confirmation",
+            "es": "Una pregunta de confirmación que pide acuerdo"
+          },
+          "wrong": {
+            "en": "A tag question would ask the other person whether it is true. This ja states that the other person knows it already.",
+            "es": "Una pregunta de confirmación le preguntaría al otro si es verdad. Este ja afirma que el otro ya lo sabe."
+          }
+        }
+      ],
+      "correctIndex": 1
+    }
+  ]
+}

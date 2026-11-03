@@ -8,7 +8,7 @@ const hu: typeof en = {
     next: 'Tovább',
     typeSentence: 'Írd be a mondatot',
     // the grey placeholder of the answer input field, with the name of the target language.
-    typeIn: (lang: string): string => (lang === 'es' ? 'Írd be spanyolul' : lang === 'hu' ? 'Írd be magyarul' : 'Írd be angolul'),
+    typeIn: (lang: string): string => (lang === 'es' ? 'Írd be spanyolul' : lang === 'hu' ? 'Írd be magyarul' : lang === 'de' ? 'Írd be németül' : 'Írd be angolul'),
   },
   done: {
     streak: 'nap egymás után',
@@ -194,7 +194,7 @@ const hu: typeof en = {
       micRetry: 'A mikrofon most nem működött. Koppints rá újra, vagy írd be.',
       heard: (text: string) => `Ezt hallottam: „${text}”`,
       model: (answer: string) => `Jó válasz: ${answer}`,
-      answerHint: 'Válaszolj spanyolul',
+      answerHint: (lang: string): string => (lang === 'de' ? 'Válaszolj németül' : 'Válaszolj spanyolul'),
       done: 'Szituáció kész',
       partScore: (part: string, n: number, total: number) => `${part}: ${n} / ${total}`,
       again: 'Újra',

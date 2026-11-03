@@ -77,6 +77,22 @@ describe('matching kinds', () => {
     expect(r.items[1].label).toBe('two heard');
   });
 
+  it('match_pool with allowNone: the answer "none" (button 0) is a right answer for a prompt without a fitting option', () => {
+    const t: MockTask = {
+      ...base('m', 'reading'),
+      kind: 'match_pool',
+      prompts: [{ id: 'p1', text: 'one' }, { id: 'p2', text: 'two' }],
+      options: [{ id: 'a', text: 'Option A' }, { id: 'b', text: 'Option B' }],
+      answer: { p1: 'a', p2: 'none' },
+      unique: true,
+      allowNone: true,
+    };
+    expect(flags(t, { p1: 'a', p2: 'none' })).toEqual([true, true]);
+    expect(flags(t, { p1: 'none', p2: 'b' })).toEqual([false, false]);
+    expect(flags(t, { p1: 'a' })).toEqual([true, false]);
+    expect(run(t, { p1: 'none', p2: 'b' }).items.map((i) => [i.given, i.expected])).toEqual([['0', 'Option A'], ['Option B', '0']]);
+  });
+
   it('gapped_text: the fragment id per gap number, in gap order', () => {
     const t: MockTask = {
       ...base('g', 'reading'),
@@ -178,6 +194,34 @@ describe('essay', () => {
     expect(r).toMatchObject({ correct: 3, total: 3 });
     expect(flags(essay, { choice: 'a', text: text(12, 'bamo') })).toEqual([true, false, true]);
     expect(flags(essay, { choice: 'b', text: text(6, 'kemo') })).toEqual([true, true]);
+  });
+
+  it('German typed without umlauts: ue / ae / oe for ü / ä / ö (and ss for ß) match the folded keywords, in German exams only', () => {
+    const de: MockTask = {
+      ...base('e', 'writing'),
+      kind: 'essay',
+      choices: [
+        {
+          id: 'a',
+          title: 'A',
+          prompt: 'Schreiben Sie ueber Ihren Urlaub und erklaeren Sie, warum er so schoen war.',
+          minWords: 10,
+          maxWords: 20,
+          points: [
+            { id: 'p1', label: 'Frühstück', keywords: ['frühstück'] },
+            { id: 'p2', label: 'Straße', keywords: ['straße'] },
+            { id: 'p3', label: 'schön', keywords: ['schön'] },
+            { id: 'p4', label: 'Quelle', keywords: ['quelle'] },
+          ],
+        },
+      ],
+    };
+    const scoreDe = (words: string[], target?: 'de' | 'es') => scoreMockTask(de, { choice: 'a', text: [...words, ...distinctWords(12 - words.length, 100)].join(' ') }, { target }).items.map((i) => i.ok);
+    expect(scoreDe(['Frühstück', 'Straße', 'schön', 'Quelle'], 'de')).toEqual([true, true, true, true, true]);
+    expect(scoreDe(['Fruehstueck', 'Strasse', 'schoen', 'Quelle'], 'de')).toEqual([true, true, true, true, true]);
+    expect(scoreDe(['FRUEHSTUECK', 'Strasse', 'SCHOEN', 'Quelle'], 'de')).toEqual([true, true, true, true, true]);
+    expect(scoreDe(['Fruehstueck', 'Strasse', 'schoen', 'Quelle'], 'es')).toEqual([false, true, false, true, true]);
+    expect(scoreDe(['Fruehstueck', 'Strasse', 'schoen', 'Quelle'])).toEqual([false, true, false, true, true]);
   });
 
   it('no choice yet: the first task is scored and nothing is earned', () => {

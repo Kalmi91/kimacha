@@ -1,6 +1,7 @@
 import { pickDayRolloverMessage } from '@/lib/dayRollover';
 import en from '@/lib/i18n/en';
 import es from '@/lib/i18n/es';
+import de from '@/lib/i18n/de';
 
 // the midnight celebration. The pool is picked at random (repeats are
 // wanted), and every line has to carry the finished day's numbers.
@@ -27,8 +28,8 @@ describe('pickDayRolloverMessage', () => {
 
   // Kimacha Play: single en-es pair; `es` is now just the
   // usage-toast subset, not a full UI translation.
-  it('every shipped line uses both placeholders, in en and es', () => {
-    for (const strings of [en, es]) {
+  it('every shipped line uses both placeholders, in en, es and de', () => {
+    for (const strings of [en, es, de]) {
       expect(strings.usage.dayRollover.length).toBeGreaterThan(1);
       for (const line of strings.usage.dayRollover) {
         expect(line).toContain('{min}');

@@ -10,9 +10,15 @@ import type { Level } from '@/data/words';
 import type { GrammarGapItem, GrammarMarkItem } from '../games/content';
 
 // (the name is historical: the app has two content languages now, English and Spanish)
-// A lesson field is written in English and Spanish; a Hungarian text may follow (optional), and every display falls
+// A lesson field is written in English and Spanish; a Hungarian or German text may follow (optional), and every display falls
 // back to English with `field[lang] ?? field.en`.
-export type Lang4 = Record<'en' | 'es', string> & { hu?: string };
+export type Lang4 = Record<'en' | 'es', string> & { hu?: string; de?: string };
+
+/**
+ * The language a lesson is explained in: the learner's own (the pair's source). `en` / `es` are authored in every lesson,
+ * `hu` / `de` come from the sidecar overlays (lib/grammar/overlay.ts); read a text as `field[contentLang] ?? field.en`.
+ */
+export type ContentLang = 'en' | 'es' | 'hu' | 'de';
 
 // The tenses of the tense drill (8 + the 4 added later). The order here is the
 // source of TENSE_IDS, do not swap it.
@@ -48,29 +54,32 @@ export const TENSE_IDS: readonly TenseId[] = [
 // The tense name shown on the badge; `es` is the Spanish grammatical term, the others
 // are the everyday name (as in the syllabus topic titles).
 export const TENSE_NAMES: Record<TenseId, Lang4> = {
-  presente: { en: 'present tense', es: 'Presente', hu: 'jelen idő' },
-  indefinido: { en: 'preterite', es: 'Pretérito perfecto simple', hu: 'befejezett múlt' },
-  imperfecto: { en: 'imperfect', es: 'Pretérito imperfecto', hu: 'folyamatos múlt' },
-  perfecto: { en: 'present perfect', es: 'Pretérito perfecto compuesto', hu: 'összetett múlt' },
-  'futuro-simple': { en: 'simple future', es: 'Futuro simple', hu: 'egyszerű jövő idő' },
-  'ir-a': { en: '"ir a" future', es: 'Ir a + infinitivo', hu: '„ir a” jövő idő' },
-  condicional: { en: 'conditional', es: 'Condicional simple', hu: 'feltételes mód' },
+  presente: { en: 'present tense', es: 'Presente', hu: 'jelen idő', de: 'Präsens' },
+  indefinido: { en: 'preterite', es: 'Pretérito perfecto simple', hu: 'befejezett múlt', de: 'Indefinido (abgeschlossene Vergangenheit)' },
+  imperfecto: { en: 'imperfect', es: 'Pretérito imperfecto', hu: 'folyamatos múlt', de: 'Imperfecto (andauernde Vergangenheit)' },
+  perfecto: { en: 'present perfect', es: 'Pretérito perfecto compuesto', hu: 'összetett múlt', de: 'Perfekt' },
+  'futuro-simple': { en: 'simple future', es: 'Futuro simple', hu: 'egyszerű jövő idő', de: 'Futur I' },
+  'ir-a': { en: '"ir a" future', es: 'Ir a + infinitivo', hu: '„ir a” jövő idő', de: '„ir a“-Futur' },
+  condicional: { en: 'conditional', es: 'Condicional simple', hu: 'feltételes mód', de: 'Konditional' },
   'subjuntivo-presente': {
     en: 'present subjunctive',
     es: 'Presente de subjuntivo',
     hu: 'jelen idejű kötőmód',
+    de: 'Subjuntivo (Präsens)',
   },
-  'imperativo-negativo': { en: 'negative imperative', es: 'Imperativo negativo', hu: 'tagadó felszólító mód' },
-  pluscuamperfecto: { en: 'past perfect', es: 'Pretérito pluscuamperfecto', hu: 'régmúlt' },
+  'imperativo-negativo': { en: 'negative imperative', es: 'Imperativo negativo', hu: 'tagadó felszólító mód', de: 'verneinter Imperativ' },
+  pluscuamperfecto: { en: 'past perfect', es: 'Pretérito pluscuamperfecto', hu: 'régmúlt', de: 'Plusquamperfekt' },
   'subjuntivo-perfecto': {
     en: 'present perfect subjunctive',
     es: 'Pretérito perfecto de subjuntivo',
     hu: 'összetett múlt idejű kötőmód',
+    de: 'Subjuntivo (Perfekt)',
   },
   'futuro-condicional-perfecto': {
     en: 'future perfect and conditional perfect',
     es: 'Futuro perfecto y condicional perfecto',
     hu: 'befejezett jövő idő és feltételes múlt',
+    de: 'Futur II und Konditional II',
   },
 };
 

@@ -14,18 +14,18 @@ type VerbClass = 'ar' | 'er' | 'ir';
 // also feed isConjugationTable's person detection, so the two places do not
 // drift apart.
 const PERSON_GLOSS: Record<string, Lang4> = {
-  yo: { en: 'I', es: 'yo', hu: 'én' },
-  'tú': { en: 'you', es: 'tú', hu: 'te' },
-  usted: { en: 'you (formal)', es: 'usted', hu: 'ön (udvarias)' },
-  ustedes: { en: 'you all', es: 'ustedes', hu: 'önök' },
-  'él/ella': { en: 'he / she', es: 'él/ella', hu: 'ő' },
-  'él/ella/usted': { en: 'he / she / you (formal)', es: 'él/ella/usted', hu: 'ő / ön' },
-  nosotros: { en: 'we', es: 'nosotros', hu: 'mi' },
-  'nosotros/nosotras': { en: 'we', es: 'nosotros/nosotras', hu: 'mi' },
-  vosotros: { en: 'you all (Spain)', es: 'vosotros', hu: 'ti (Spanyolország)' },
-  'vosotros/vosotras': { en: 'you all (Spain)', es: 'vosotros/vosotras', hu: 'ti (Spanyolország)' },
-  'ellos/ellas': { en: 'they', es: 'ellos/ellas', hu: 'ők' },
-  'ellos/ellas/ustedes': { en: 'they / you all', es: 'ellos/ellas/ustedes', hu: 'ők / önök' },
+  yo: { en: 'I', es: 'yo', hu: 'én', de: 'ich' },
+  'tú': { en: 'you', es: 'tú', hu: 'te', de: 'du' },
+  usted: { en: 'you (formal)', es: 'usted', hu: 'ön (udvarias)', de: 'Sie (formell)' },
+  ustedes: { en: 'you all', es: 'ustedes', hu: 'önök', de: 'ihr / Sie' },
+  'él/ella': { en: 'he / she', es: 'él/ella', hu: 'ő', de: 'er / sie' },
+  'él/ella/usted': { en: 'he / she / you (formal)', es: 'él/ella/usted', hu: 'ő / ön', de: 'er / sie / Sie' },
+  nosotros: { en: 'we', es: 'nosotros', hu: 'mi', de: 'wir' },
+  'nosotros/nosotras': { en: 'we', es: 'nosotros/nosotras', hu: 'mi', de: 'wir' },
+  vosotros: { en: 'you all (Spain)', es: 'vosotros', hu: 'ti (Spanyolország)', de: 'ihr (Spanien)' },
+  'vosotros/vosotras': { en: 'you all (Spain)', es: 'vosotros/vosotras', hu: 'ti (Spanyolország)', de: 'ihr (Spanien)' },
+  'ellos/ellas': { en: 'they', es: 'ellos/ellas', hu: 'ők', de: 'sie' },
+  'ellos/ellas/ustedes': { en: 'they / you all', es: 'ellos/ellas/ustedes', hu: 'ők / önök', de: 'sie / ihr / Sie' },
 };
 
 function normalizePerson(label: string): string {
@@ -34,7 +34,7 @@ function normalizePerson(label: string): string {
 
 // A faint gloss next to the person, in the learner's language (contentLang). '' for an unknown
 // label (no gloss line), we do not guess.
-export function personGloss(label: string, contentLang: 'en' | 'es' | 'hu'): string {
+export function personGloss(label: string, contentLang: 'en' | 'es' | 'hu' | 'de'): string {
   const entry = PERSON_GLOSS[normalizePerson(label)];
   return entry ? (entry[contentLang] ?? entry.en) : '';
 }

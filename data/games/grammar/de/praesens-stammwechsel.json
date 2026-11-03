@@ -1,0 +1,1164 @@
+{
+  "schema": 2,
+  "topic": "praesens-stammwechsel",
+  "level": "A1",
+  "title": {
+    "en": "Present tense: stem-changing verbs",
+    "es": "Presente: verbos con cambio de raíz"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "Some very common verbs change the vowel of their stem, but only in the du-form and in the er/sie/es-form. There are three changes: a becomes ä (fahren, du fährst), e becomes i (sprechen, du sprichst) and e becomes ie (sehen, du siehst). ich, wir, ihr and sie/Sie keep the vowel of the infinitive. There is no rule that tells you which verbs change, so you learn them as a list. English has no such change.",
+        "es": "Algunos verbos muy frecuentes cambian la vocal de la raíz, pero solo en la forma de du y en la de er/sie/es. Hay tres cambios: a pasa a ä (fahren, du fährst), e pasa a i (sprechen, du sprichst) y e pasa a ie (sehen, du siehst). ich, wir, ihr y sie/Sie conservan la vocal del infinitivo. No hay una regla que diga qué verbos cambian, así que se aprenden en una lista. Ojo: en español el cambio (pensar, pienso) afecta a otras personas; en alemán solo cambian du y er/sie/es."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "stammwechsel-a",
+      "title": {
+        "en": "a becomes ä",
+        "es": "a pasa a ä"
+      },
+      "header": [
+        {
+          "en": "Pronoun",
+          "es": "Pronombre"
+        },
+        {
+          "en": "fahren",
+          "es": "fahren"
+        },
+        {
+          "en": "schlafen",
+          "es": "schlafen"
+        },
+        {
+          "en": "laufen",
+          "es": "laufen"
+        },
+        {
+          "en": "tragen",
+          "es": "tragen"
+        }
+      ],
+      "rows": [
+        [
+          "ich",
+          "fahre",
+          "schlafe",
+          "laufe",
+          "trage"
+        ],
+        [
+          "du",
+          "fährst",
+          "schläfst",
+          "läufst",
+          "trägst"
+        ],
+        [
+          "er/sie/es",
+          "fährt",
+          "schläft",
+          "läuft",
+          "trägt"
+        ],
+        [
+          "wir",
+          "fahren",
+          "schlafen",
+          "laufen",
+          "tragen"
+        ],
+        [
+          "ihr",
+          "fahrt",
+          "schlaft",
+          "lauft",
+          "tragt"
+        ],
+        [
+          "sie/Sie",
+          "fahren",
+          "schlafen",
+          "laufen",
+          "tragen"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "stammwechsel-e-i",
+      "title": {
+        "en": "e becomes i",
+        "es": "e pasa a i"
+      },
+      "header": [
+        {
+          "en": "Pronoun",
+          "es": "Pronombre"
+        },
+        {
+          "en": "sprechen",
+          "es": "sprechen"
+        },
+        {
+          "en": "essen",
+          "es": "essen"
+        },
+        {
+          "en": "helfen",
+          "es": "helfen"
+        },
+        {
+          "en": "nehmen",
+          "es": "nehmen"
+        }
+      ],
+      "rows": [
+        [
+          "ich",
+          "spreche",
+          "esse",
+          "helfe",
+          "nehme"
+        ],
+        [
+          "du",
+          "sprichst",
+          "isst",
+          "hilfst",
+          "nimmst"
+        ],
+        [
+          "er/sie/es",
+          "spricht",
+          "isst",
+          "hilft",
+          "nimmt"
+        ],
+        [
+          "wir",
+          "sprechen",
+          "essen",
+          "helfen",
+          "nehmen"
+        ],
+        [
+          "ihr",
+          "sprecht",
+          "esst",
+          "helft",
+          "nehmt"
+        ],
+        [
+          "sie/Sie",
+          "sprechen",
+          "essen",
+          "helfen",
+          "nehmen"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "stammwechsel-ie-irregulaer",
+      "title": {
+        "en": "e becomes ie, and two irregular verbs",
+        "es": "e pasa a ie, y dos verbos irregulares"
+      },
+      "header": [
+        {
+          "en": "Pronoun",
+          "es": "Pronombre"
+        },
+        {
+          "en": "sehen",
+          "es": "sehen"
+        },
+        {
+          "en": "lesen",
+          "es": "lesen"
+        },
+        {
+          "en": "wissen",
+          "es": "wissen"
+        },
+        {
+          "en": "werden",
+          "es": "werden"
+        }
+      ],
+      "rows": [
+        [
+          "ich",
+          "sehe",
+          "lese",
+          "weiß",
+          "werde"
+        ],
+        [
+          "du",
+          "siehst",
+          "liest",
+          "weißt",
+          "wirst"
+        ],
+        [
+          "er/sie/es",
+          "sieht",
+          "liest",
+          "weiß",
+          "wird"
+        ],
+        [
+          "wir",
+          "sehen",
+          "lesen",
+          "wissen",
+          "werden"
+        ],
+        [
+          "ihr",
+          "seht",
+          "lest",
+          "wisst",
+          "werdet"
+        ],
+        [
+          "sie/Sie",
+          "sehen",
+          "lesen",
+          "wissen",
+          "werden"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "The three changes and the exceptions",
+        "es": "Los tres cambios y las excepciones"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "a becomes ä: fahren, schlafen, laufen, tragen, waschen. Only du and er/sie/es change.",
+            "es": "a pasa a ä: fahren, schlafen, laufen, tragen, waschen. Solo cambian du y er/sie/es."
+          },
+          "examples": [
+            {
+              "es": "Du fährst nach Hamburg.",
+              "tr": {
+                "en": "You are going to Hamburg.",
+                "es": "Vas a Hamburgo."
+              }
+            },
+            {
+              "es": "Anna schläft gut.",
+              "tr": {
+                "en": "Anna sleeps well.",
+                "es": "Anna duerme bien."
+              }
+            },
+            {
+              "es": "Paul läuft schnell.",
+              "tr": {
+                "en": "Paul runs fast.",
+                "es": "Paul corre rápido."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "e becomes i: sprechen, essen, geben, helfen, nehmen, treffen. The verb nehmen also doubles the m: du nimmst, er nimmt. essen gives du isst and er isst, both with only one s sound before the t.",
+            "es": "e pasa a i: sprechen, essen, geben, helfen, nehmen, treffen. El verbo nehmen además duplica la m: du nimmst, er nimmt. essen da du isst y er isst, las dos con un solo sonido s antes de la t."
+          },
+          "examples": [
+            {
+              "es": "Du sprichst gut Deutsch.",
+              "tr": {
+                "en": "You speak German well.",
+                "es": "Hablas bien alemán."
+              }
+            },
+            {
+              "es": "Paul isst Suppe.",
+              "tr": {
+                "en": "Paul eats soup.",
+                "es": "Paul come sopa."
+              }
+            },
+            {
+              "es": "Anna hilft Paul.",
+              "tr": {
+                "en": "Anna helps Paul.",
+                "es": "Anna ayuda a Paul."
+              }
+            },
+            {
+              "es": "Du nimmst Tee.",
+              "tr": {
+                "en": "You take tea.",
+                "es": "Tomas té."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "e becomes ie: sehen and lesen. The du-form of lesen is liest, like the er-form, with one s sound before the t.",
+            "es": "e pasa a ie: sehen y lesen. La forma de du de lesen es liest, igual que la de er, con un solo sonido s antes de la t."
+          },
+          "examples": [
+            {
+              "es": "Du siehst das Haus.",
+              "tr": {
+                "en": "You see the house.",
+                "es": "Ves la casa."
+              }
+            },
+            {
+              "es": "Anna liest ein Buch.",
+              "tr": {
+                "en": "Anna reads a book.",
+                "es": "Anna lee un libro."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "ich, wir, ihr and sie/Sie keep the stem of the infinitive, so there is no change at all. Only the endings are the ones you know.",
+            "es": "ich, wir, ihr y sie/Sie conservan la raíz del infinitivo, así que no hay ningún cambio. Solo las terminaciones son las que ya conoces."
+          },
+          "examples": [
+            {
+              "es": "Ich esse Brot.",
+              "tr": {
+                "en": "I eat bread.",
+                "es": "Como pan."
+              }
+            },
+            {
+              "es": "Wir sprechen Deutsch.",
+              "tr": {
+                "en": "We speak German.",
+                "es": "Hablamos alemán."
+              }
+            },
+            {
+              "es": "Ihr lest ein Buch.",
+              "tr": {
+                "en": "You all read a book.",
+                "es": "Ustedes leen un libro."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "wissen (to know) and werden (to become) are irregular in the singular: ich weiß, du weißt, er weiß and ich werde, du wirst, er wird. At this level werden is only used with an adjective or a noun.",
+            "es": "wissen (saber) y werden (volverse, llegar a ser) son irregulares en singular: ich weiß, du weißt, er weiß e ich werde, du wirst, er wird. En este nivel werden solo se usa con un adjetivo o un sustantivo."
+          },
+          "examples": [
+            {
+              "es": "Du weißt das.",
+              "tr": {
+                "en": "You know that.",
+                "es": "Sabes eso."
+              }
+            },
+            {
+              "es": "Es wird kalt.",
+              "tr": {
+                "en": "It is getting cold.",
+                "es": "Está haciendo frío."
+              }
+            },
+            {
+              "es": "Anna wird Lehrerin.",
+              "tr": {
+                "en": "Anna is becoming a teacher.",
+                "es": "Anna se hace maestra."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Where the vowel changes and where it does not",
+        "es": "Dónde cambia la vocal y dónde no"
+      },
+      "pairs": [
+        {
+          "a": "Er fährt nach Köln.",
+          "b": "Wir fahren nach Köln.",
+          "note": {
+            "en": "er has the umlaut: fährt. wir has the vowel of the infinitive: fahren. Only du and er/sie/es change.",
+            "es": "er lleva diéresis: fährt. wir conserva la vocal del infinitivo: fahren. Solo cambian du y er/sie/es."
+          },
+          "examples": [
+            {
+              "es": "Du schläfst gut.",
+              "tr": {
+                "en": "You sleep well.",
+                "es": "Duermes bien."
+              }
+            },
+            {
+              "es": "Wir schlafen gut.",
+              "tr": {
+                "en": "We sleep well.",
+                "es": "Dormimos bien."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Du siehst das Haus.",
+          "b": "Ihr seht das Haus.",
+          "note": {
+            "en": "du changes the vowel to ie: siehst. ihr keeps the stem and adds -t: seht, without the i.",
+            "es": "du cambia la vocal a ie: siehst. ihr conserva la raíz y añade -t: seht, sin la i."
+          },
+          "examples": [
+            {
+              "es": "Du liest ein Buch.",
+              "tr": {
+                "en": "You read a book.",
+                "es": "Lees un libro."
+              }
+            },
+            {
+              "es": "Ihr lest ein Buch.",
+              "tr": {
+                "en": "You all read a book.",
+                "es": "Ustedes leen un libro."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: do not make the verb regular (not du sprechst but du sprichst, not er fahrt but er fährt). Do not change the vowel in ich, wir, ihr and sie/Sie (not ich isse, not wir nimmen). The ihr-form has no change either: ihr sprecht, ihr fahrt. And remember wissen is not können: Ich weiß is I know a fact.",
+        "es": "Trampas clásicas: no hagas regular el verbo (no du sprechst sino du sprichst, no er fahrt sino er fährt). No cambies la vocal en ich, wir, ihr y sie/Sie (no ich isse, no wir nimmen). La forma de ihr tampoco cambia: ihr sprecht, ihr fahrt. Y recuerda que Ich weiß significa «sé» un dato."
+      }
+    }
+  ],
+  "speak": {
+    "en": "Some verbs change their vowel, but only for du and for er, sie, es. Say «ich fahre», but «du fährst» and «er fährt». Say «ich spreche», but «du sprichst». Say «ich sehe», but «du siehst», and «er liest» for lesen. For wir, ihr and sie the vowel stays: «wir fahren», «ihr sprecht». The verb wissen is special: «ich weiß», «du weißt».",
+    "es": "Algunos verbos cambian la vocal, pero solo con du y con er, sie, es. Di «ich fahre», pero «du fährst» y «er fährt». Di «ich spreche», pero «du sprichst». Di «ich sehe», pero «du siehst», y «er liest» para lesen. Con wir, ihr y sie la vocal se queda: «wir fahren», «ihr sprecht». El verbo wissen es especial: «ich weiß», «du weißt»."
+  },
+  "items": [
+    {
+      "id": "praesens-stammwechsel-c01",
+      "sentence": "Du ___ nach Hamburg.",
+      "options": [
+        "fährst",
+        "fahrst",
+        "fahrt"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "fahren changes a to ä in the du-form: du fährst.",
+        "es": "fahren cambia a por ä en la forma de du: du fährst."
+      },
+      "wrong": {
+        "fahrst": {
+          "en": "fahrst is the regular form without the umlaut. The verb fahren is a stem-changing verb, so you need fährst.",
+          "es": "fahrst es la forma regular sin diéresis. El verbo fahren cambia la raíz, así que necesitas fährst."
+        },
+        "fahrt": {
+          "en": "fahrt is the form for ihr. With du you need fährst.",
+          "es": "fahrt es la forma de ihr. Con du necesitas fährst."
+        }
+      },
+      "examples": [
+        "Du fährst nach Köln.",
+        "Du fährst nach Berlin."
+      ],
+      "tr": {
+        "en": "You are going to Hamburg.",
+        "es": "Vas a Hamburgo."
+      }
+    },
+    {
+      "id": "praesens-stammwechsel-f01",
+      "kind": "form",
+      "verb": "fahren",
+      "person": "du",
+      "answer": "fährst",
+      "table": "stammwechsel-a"
+    },
+    {
+      "id": "praesens-stammwechsel-c02",
+      "sentence": "Anna ___ gut.",
+      "options": [
+        "schlaft",
+        "schläft",
+        "schlafen"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "schlafen changes a to ä in the er/sie/es-form: Anna schläft.",
+        "es": "schlafen cambia a por ä en la forma de er/sie/es: Anna schläft."
+      },
+      "wrong": {
+        "schlaft": {
+          "en": "schlaft is the form for ihr. For Anna, one person, you need schläft.",
+          "es": "schlaft es la forma de ihr. Para Anna, una persona, necesitas schläft."
+        },
+        "schlafen": {
+          "en": "schlafen is the infinitive and the form for wir and sie (they). Anna is one person, so you need schläft.",
+          "es": "schlafen es el infinitivo y la forma de wir y de sie (ellos). Anna es una persona, así que necesitas schläft."
+        }
+      },
+      "examples": [
+        "Paul schläft gut.",
+        "Das Kind schläft heute."
+      ],
+      "tr": {
+        "en": "Anna sleeps well.",
+        "es": "Anna duerme bien."
+      }
+    },
+    {
+      "id": "praesens-stammwechsel-f02",
+      "kind": "form",
+      "verb": "sprechen",
+      "person": "er/sie/es",
+      "answer": "spricht",
+      "table": "stammwechsel-e-i"
+    },
+    {
+      "id": "praesens-stammwechsel-c03",
+      "sentence": "Paul ___ Deutsch.",
+      "options": [
+        "sprechst",
+        "sprecht",
+        "spricht"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "sprechen changes e to i in the er-form: Paul spricht Deutsch.",
+        "es": "sprechen cambia e por i en la forma de er: Paul spricht Deutsch."
+      },
+      "wrong": {
+        "sprechst": {
+          "en": "sprechst is the regular form, but sprechen changes its vowel, and it is also the du-form, not the form for Paul. You need spricht.",
+          "es": "sprechst es la forma regular, pero sprechen cambia la vocal, y además es la forma de du, no la de Paul. Necesitas spricht."
+        },
+        "sprecht": {
+          "en": "sprecht is the form for ihr, several friends. For Paul, one person, you need spricht.",
+          "es": "sprecht es la forma de ihr, varios amigos. Para Paul, una persona, necesitas spricht."
+        }
+      },
+      "examples": [
+        "Anna spricht Spanisch.",
+        "Er spricht gut Deutsch."
+      ],
+      "tr": {
+        "en": "Paul speaks German.",
+        "es": "Paul habla alemán."
+      }
+    },
+    {
+      "id": "praesens-stammwechsel-f03",
+      "kind": "form",
+      "verb": "sehen",
+      "person": "du",
+      "answer": "siehst",
+      "table": "stammwechsel-ie-irregulaer"
+    },
+    {
+      "id": "praesens-stammwechsel-w01",
+      "kind": "why",
+      "es": "Du fährst nach Hamburg.",
+      "target": "fährst",
+      "tr": {
+        "en": "You are going to Hamburg.",
+        "es": "Vas a Hamburgo."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "a becomes ä in the du-form and in the er/sie/es-form of fahren",
+            "es": "a pasa a ä en la forma de du y en la de er/sie/es de fahren"
+          }
+        },
+        {
+          "text": {
+            "en": "The vowel changes in every person of the verb",
+            "es": "La vocal cambia en todas las personas del verbo"
+          },
+          "wrong": {
+            "en": "The change happens only in du and er/sie/es. ich fahre, wir fahren, ihr fahrt and sie fahren keep the a.",
+            "es": "El cambio ocurre solo en du y er/sie/es. ich fahre, wir fahren, ihr fahrt y sie fahren conservan la a."
+          }
+        },
+        {
+          "text": {
+            "en": "ä is the umlaut of the plural, as in Haus and Häuser",
+            "es": "ä es la diéresis del plural, como en Haus y Häuser"
+          },
+          "wrong": {
+            "en": "The plural umlaut belongs to nouns. Here the umlaut is a feature of the du-form and the er-form of this verb.",
+            "es": "La diéresis del plural pertenece a los sustantivos. Aquí la diéresis es un rasgo de la forma de du y de er de este verbo."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "praesens-stammwechsel-c04",
+      "sentence": "Du ___ Suppe.",
+      "options": [
+        "esst",
+        "isst",
+        "esse"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "essen changes e to i in the du-form: du isst. The ending -st and the stem s merge, so there is only one s before the t.",
+        "es": "essen cambia e por i en la forma de du: du isst. La terminación -st y la s de la raíz se funden, así que hay una sola s antes de la t."
+      },
+      "wrong": {
+        "esst": {
+          "en": "esst is the form for ihr. With du you need isst.",
+          "es": "esst es la forma de ihr. Con du necesitas isst."
+        },
+        "esse": {
+          "en": "esse is the ich-form. The subject here is du, so the form is isst.",
+          "es": "esse es la forma de ich. El sujeto aquí es du, así que la forma es isst."
+        }
+      },
+      "examples": [
+        "Du isst Brot.",
+        "Du isst Fisch."
+      ],
+      "tr": {
+        "en": "You eat soup.",
+        "es": "Comes sopa."
+      }
+    },
+    {
+      "id": "praesens-stammwechsel-f04",
+      "kind": "form",
+      "verb": "schlafen",
+      "person": "ihr",
+      "answer": "schlaft",
+      "table": "stammwechsel-a"
+    },
+    {
+      "id": "praesens-stammwechsel-c05",
+      "sentence": "Ich ___ Brot.",
+      "options": [
+        "esse",
+        "isse",
+        "isst"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The vowel changes only in du and er/sie/es. In the ich-form the stem stays: ich esse.",
+        "es": "La vocal cambia solo en du y er/sie/es. En la forma de ich la raíz se queda: ich esse."
+      },
+      "wrong": {
+        "isse": {
+          "en": "isse changes the vowel in the ich-form, but ich never changes the stem vowel. The form is esse.",
+          "es": "isse cambia la vocal en la forma de ich, pero ich nunca cambia la vocal de la raíz. La forma es esse."
+        },
+        "isst": {
+          "en": "isst is the form for du and er/sie/es. With ich the form is esse.",
+          "es": "isst es la forma de du y de er/sie/es. Con ich la forma es esse."
+        }
+      },
+      "examples": [
+        "Ich esse Fisch.",
+        "Ich esse Obst."
+      ],
+      "tr": {
+        "en": "I eat bread.",
+        "es": "Como pan."
+      }
+    },
+    {
+      "id": "praesens-stammwechsel-f05",
+      "kind": "form",
+      "verb": "essen",
+      "person": "du",
+      "answer": "isst",
+      "table": "stammwechsel-e-i"
+    },
+    {
+      "id": "praesens-stammwechsel-c06",
+      "sentence": "Er ___ ein Buch.",
+      "options": [
+        "lest",
+        "lesst",
+        "liest"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "lesen changes e to ie in the er-form: er liest.",
+        "es": "lesen cambia e por ie en la forma de er: er liest."
+      },
+      "wrong": {
+        "lest": {
+          "en": "lest is the form for ihr, with no vowel change. For er you need liest.",
+          "es": "lest es la forma de ihr, sin cambio de vocal. Para er necesitas liest."
+        },
+        "lesst": {
+          "en": "lesst does not exist. The s of the stem and the ending -st merge, and the vowel changes: du liest, er liest.",
+          "es": "lesst no existe. La s de la raíz y la terminación -st se funden, y la vocal cambia: du liest, er liest."
+        }
+      },
+      "examples": [
+        "Anna liest ein Buch.",
+        "Paul liest die Zeitung."
+      ],
+      "tr": {
+        "en": "He reads a book.",
+        "es": "Él lee un libro."
+      }
+    },
+    {
+      "id": "praesens-stammwechsel-f06",
+      "kind": "form",
+      "verb": "lesen",
+      "person": "ihr",
+      "answer": "lest",
+      "table": "stammwechsel-ie-irregulaer"
+    },
+    {
+      "id": "praesens-stammwechsel-w02",
+      "kind": "why",
+      "es": "Er liest ein Buch.",
+      "target": "liest",
+      "tr": {
+        "en": "He reads a book.",
+        "es": "Él lee un libro."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "liest is regular: stem les- plus -t",
+            "es": "liest es regular: raíz les- más -t"
+          },
+          "wrong": {
+            "en": "The regular form would be lest. lesen changes its vowel, so the er-form is liest.",
+            "es": "La forma regular sería lest. lesen cambia la vocal, así que la forma de er es liest."
+          }
+        },
+        {
+          "text": {
+            "en": "e becomes i, like in sprechen: spricht",
+            "es": "e pasa a i, como en sprechen: spricht"
+          },
+          "wrong": {
+            "en": "Not every verb with e becomes i. lesen and sehen change e to ie: liest, sieht. You learn the change with each verb.",
+            "es": "No todos los verbos con e pasan a i. lesen y sehen cambian e por ie: liest, sieht. El cambio se aprende con cada verbo."
+          }
+        },
+        {
+          "text": {
+            "en": "e becomes ie in the er-form of lesen",
+            "es": "e pasa a ie en la forma de er de lesen"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "praesens-stammwechsel-c07",
+      "sentence": "Du ___ das Haus.",
+      "options": [
+        "sehst",
+        "siehst",
+        "seht"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "sehen changes e to ie in the du-form: du siehst.",
+        "es": "sehen cambia e por ie en la forma de du: du siehst."
+      },
+      "wrong": {
+        "sehst": {
+          "en": "sehst is the regular form. sehen changes its vowel, so you need siehst.",
+          "es": "sehst es la forma regular. sehen cambia la vocal, así que necesitas siehst."
+        },
+        "seht": {
+          "en": "seht is the form for ihr. With du you need siehst.",
+          "es": "seht es la forma de ihr. Con du necesitas siehst."
+        }
+      },
+      "examples": [
+        "Du siehst die Katze.",
+        "Du siehst das Auto."
+      ],
+      "tr": {
+        "en": "You see the house.",
+        "es": "Ves la casa."
+      }
+    },
+    {
+      "id": "praesens-stammwechsel-f07",
+      "kind": "form",
+      "verb": "laufen",
+      "person": "er/sie/es",
+      "answer": "läuft",
+      "table": "stammwechsel-a"
+    },
+    {
+      "id": "praesens-stammwechsel-c08",
+      "sentence": "Wir ___ Tee.",
+      "options": [
+        "nehmen",
+        "nimmt",
+        "nimmen"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The vowel changes only in du and er/sie/es. With wir the verb keeps its stem: wir nehmen.",
+        "es": "La vocal cambia solo en du y er/sie/es. Con wir el verbo conserva su raíz: wir nehmen."
+      },
+      "wrong": {
+        "nimmt": {
+          "en": "nimmt is the form for er/sie/es. With wir you need nehmen.",
+          "es": "nimmt es la forma de er/sie/es. Con wir necesitas nehmen."
+        },
+        "nimmen": {
+          "en": "nimmen does not exist. The i stem only appears in nimmst and nimmt. With wir the form is nehmen.",
+          "es": "nimmen no existe. La raíz con i solo aparece en nimmst y nimmt. Con wir la forma es nehmen."
+        }
+      },
+      "examples": [
+        "Wir nehmen Milch.",
+        "Wir nehmen Kaffee."
+      ],
+      "tr": {
+        "en": "We take tea.",
+        "es": "Tomamos té."
+      }
+    },
+    {
+      "id": "praesens-stammwechsel-f08",
+      "kind": "form",
+      "verb": "helfen",
+      "person": "er/sie/es",
+      "answer": "hilft",
+      "table": "stammwechsel-e-i"
+    },
+    {
+      "id": "praesens-stammwechsel-c09",
+      "sentence": "Du ___ Anna.",
+      "options": [
+        "helfst",
+        "hilft",
+        "hilfst"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "helfen changes e to i in the du-form: du hilfst Anna.",
+        "es": "helfen cambia e por i en la forma de du: du hilfst Anna."
+      },
+      "wrong": {
+        "helfst": {
+          "en": "helfst is the regular form. helfen changes its vowel, so you need hilfst.",
+          "es": "helfst es la forma regular. helfen cambia la vocal, así que necesitas hilfst."
+        },
+        "hilft": {
+          "en": "hilft is the form for er/sie/es. With du you need hilfst.",
+          "es": "hilft es la forma de er/sie/es. Con du necesitas hilfst."
+        }
+      },
+      "examples": [
+        "Du hilfst Paul.",
+        "Du hilfst Lukas."
+      ],
+      "tr": {
+        "en": "You help Anna.",
+        "es": "Ayudas a Anna."
+      }
+    },
+    {
+      "id": "praesens-stammwechsel-f09",
+      "kind": "form",
+      "verb": "wissen",
+      "person": "er/sie/es",
+      "answer": "weiß",
+      "table": "stammwechsel-ie-irregulaer"
+    },
+    {
+      "id": "praesens-stammwechsel-w03",
+      "kind": "why",
+      "es": "Ich esse Brot.",
+      "target": "esse",
+      "tr": {
+        "en": "I eat bread.",
+        "es": "Como pan."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "The vowel also changes in ich: isse",
+            "es": "La vocal también cambia en ich: isse"
+          },
+          "wrong": {
+            "en": "The change happens only in du and er/sie/es. The ich-form keeps the stem vowel: esse.",
+            "es": "El cambio ocurre solo en du y er/sie/es. La forma de ich conserva la vocal de la raíz: esse."
+          }
+        },
+        {
+          "text": {
+            "en": "essen is a regular verb, so the vowel never changes",
+            "es": "essen es un verbo regular, así que la vocal nunca cambia"
+          },
+          "wrong": {
+            "en": "essen does change its vowel: du isst, er isst. Only ich, wir, ihr and sie keep the e.",
+            "es": "essen sí cambia la vocal: du isst, er isst. Solo ich, wir, ihr y sie conservan la e."
+          }
+        },
+        {
+          "text": {
+            "en": "ich keeps the vowel of the infinitive, so there is no change",
+            "es": "ich conserva la vocal del infinitivo, así que no hay cambio"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "praesens-stammwechsel-c10",
+      "sentence": "Anna ___ eine Jacke.",
+      "options": [
+        "trägt",
+        "tragt",
+        "tragen"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "tragen changes a to ä in the er/sie/es-form: Anna trägt eine Jacke.",
+        "es": "tragen cambia a por ä en la forma de er/sie/es: Anna trägt eine Jacke."
+      },
+      "wrong": {
+        "tragt": {
+          "en": "tragt is the form for ihr. For Anna, one person, you need trägt.",
+          "es": "tragt es la forma de ihr. Para Anna, una persona, necesitas trägt."
+        },
+        "tragen": {
+          "en": "tragen is the infinitive and the form for wir and sie (they). Anna is one person, so you need trägt.",
+          "es": "tragen es el infinitivo y la forma de wir y de sie (ellos). Anna es una persona, así que necesitas trägt."
+        }
+      },
+      "examples": [
+        "Paul trägt eine Jacke.",
+        "Anna trägt eine Brille."
+      ],
+      "tr": {
+        "en": "Anna is wearing a jacket.",
+        "es": "Anna lleva una chamarra."
+      }
+    },
+    {
+      "id": "praesens-stammwechsel-f10",
+      "kind": "form",
+      "verb": "tragen",
+      "person": "du",
+      "answer": "trägst",
+      "table": "stammwechsel-a"
+    },
+    {
+      "id": "praesens-stammwechsel-c11",
+      "sentence": "Du ___ das.",
+      "options": [
+        "weiß",
+        "weißt",
+        "wisst"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "wissen is irregular: ich weiß, du weißt, er weiß. The du-form has -st after the ß.",
+        "es": "wissen es irregular: ich weiß, du weißt, er weiß. La forma de du lleva -st después de la ß."
+      },
+      "wrong": {
+        "weiß": {
+          "en": "weiß is the form for ich and er/sie/es. With du you need weißt.",
+          "es": "weiß es la forma de ich y de er/sie/es. Con du necesitas weißt."
+        },
+        "wisst": {
+          "en": "wisst is the form for ihr. With du you need weißt.",
+          "es": "wisst es la forma de ihr. Con du necesitas weißt."
+        }
+      },
+      "examples": [
+        "Du weißt viel.",
+        "Er weiß das."
+      ],
+      "tr": {
+        "en": "You know that.",
+        "es": "Sabes eso."
+      }
+    },
+    {
+      "id": "praesens-stammwechsel-f11",
+      "kind": "form",
+      "verb": "nehmen",
+      "person": "du",
+      "answer": "nimmst",
+      "table": "stammwechsel-e-i"
+    },
+    {
+      "id": "praesens-stammwechsel-c12",
+      "sentence": "Es ___ kalt.",
+      "options": [
+        "wirst",
+        "werden",
+        "wird"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "werden is irregular: es wird. With an adjective like kalt it means to become: Es wird kalt.",
+        "es": "werden es irregular: es wird. Con un adjetivo como kalt significa «volverse»: Es wird kalt."
+      },
+      "wrong": {
+        "wirst": {
+          "en": "wirst is the form for du. The subject here is es, so you need wird.",
+          "es": "wirst es la forma de du. El sujeto aquí es es, así que necesitas wird."
+        },
+        "werden": {
+          "en": "werden is the form for wir and sie (they). The subject here is es, so you need wird.",
+          "es": "werden es la forma de wir y de sie (ellos). El sujeto aquí es es, así que necesitas wird."
+        }
+      },
+      "examples": [
+        "Es wird heiß.",
+        "Das Wetter wird schlecht."
+      ],
+      "tr": {
+        "en": "It is getting cold.",
+        "es": "Está haciendo frío."
+      }
+    },
+    {
+      "id": "praesens-stammwechsel-f12",
+      "kind": "form",
+      "verb": "werden",
+      "person": "du",
+      "answer": "wirst",
+      "table": "stammwechsel-ie-irregulaer"
+    },
+    {
+      "id": "praesens-stammwechsel-c13",
+      "sentence": "Ihr ___ Deutsch.",
+      "options": [
+        "sprecht",
+        "sprichst",
+        "spricht"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The vowel changes only in du and er/sie/es. The ihr-form keeps the stem: ihr sprecht.",
+        "es": "La vocal cambia solo en du y er/sie/es. La forma de ihr conserva la raíz: ihr sprecht."
+      },
+      "wrong": {
+        "sprichst": {
+          "en": "sprichst is the du-form. With ihr the stem keeps the e and the ending is -t.",
+          "es": "sprichst es la forma de du. Con ihr la raíz conserva la e y la terminación es -t."
+        },
+        "spricht": {
+          "en": "spricht is the form for er/sie/es. With ihr the form is sprecht.",
+          "es": "spricht es la forma de er/sie/es. Con ihr la forma es sprecht."
+        }
+      },
+      "examples": [
+        "Ihr sprecht gut.",
+        "Ihr sprecht Spanisch."
+      ],
+      "tr": {
+        "en": "You all speak German.",
+        "es": "Ustedes hablan alemán."
+      }
+    },
+    {
+      "id": "praesens-stammwechsel-c14",
+      "sentence": "Paul ___ Anna das Buch.",
+      "options": [
+        "gebt",
+        "gibt",
+        "gebst"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "geben changes e to i in the er-form: Paul gibt Anna das Buch.",
+        "es": "geben cambia e por i en la forma de er: Paul gibt Anna das Buch."
+      },
+      "wrong": {
+        "gebt": {
+          "en": "gebt is the form for ihr. For Paul, one person, you need gibt.",
+          "es": "gebt es la forma de ihr. Para Paul, una persona, necesitas gibt."
+        },
+        "gebst": {
+          "en": "gebst does not exist. The du-form is gibst, and for Paul you need gibt.",
+          "es": "gebst no existe. La forma de du es gibst, y para Paul necesitas gibt."
+        }
+      },
+      "examples": [
+        "Anna gibt Paul das Geld.",
+        "Er gibt Anna das Buch."
+      ],
+      "tr": {
+        "en": "Paul gives Anna the book.",
+        "es": "Paul le da a Anna el libro."
+      }
+    },
+    {
+      "id": "praesens-stammwechsel-w04",
+      "kind": "why",
+      "es": "Es wird kalt.",
+      "target": "wird",
+      "tr": {
+        "en": "It is getting cold.",
+        "es": "Está haciendo frío."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "wird is the passive, as in English is done",
+            "es": "wird es la voz pasiva, como is done en inglés"
+          },
+          "wrong": {
+            "en": "The passive is a later topic. Here wird with the adjective kalt simply means becomes: Es wird kalt.",
+            "es": "La voz pasiva es un tema posterior. Aquí wird con el adjetivo kalt significa simplemente «se vuelve»: Es wird kalt."
+          }
+        },
+        {
+          "text": {
+            "en": "wird is the future, like English will",
+            "es": "wird es el futuro, como will en inglés"
+          },
+          "wrong": {
+            "en": "It looks like will, but with an adjective or a noun werden means to become. Es wird kalt is it gets cold.",
+            "es": "Se parece a will, pero con un adjetivo o un sustantivo werden significa «volverse». Es wird kalt es «hace más frío»."
+          }
+        },
+        {
+          "text": {
+            "en": "wird is the irregular er/sie/es-form of werden, meaning to become",
+            "es": "wird es la forma irregular de er/sie/es de werden, que significa «volverse»"
+          }
+        }
+      ],
+      "correctIndex": 2
+    }
+  ]
+}

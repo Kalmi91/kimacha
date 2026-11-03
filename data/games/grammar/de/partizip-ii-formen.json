@@ -1,0 +1,1152 @@
+{
+  "schema": 2,
+  "topic": "partizip-ii-formen",
+  "level": "A2",
+  "title": {
+    "en": "The participle: more verbs in the perfect",
+    "es": "El participio: más verbos en perfecto"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "The Perfekt is haben or sein in second place plus the participle (Partizip II) at the end. The participle has five patterns: ge-...-t for regular verbs (gemacht), ge-...-en for irregular ones (gegessen), a small mixed group that changes the stem but keeps -t (gebracht, gedacht, gewusst, gekannt), ge- in the middle of separable verbs (eingekauft, angerufen), and no ge- for verbs with an unstressed prefix or ending in -ieren (bekommen, verstanden, telefoniert). In speech, the Perfekt is the normal past tense: Gestern habe ich Freunde getroffen.",
+        "es": "El Perfekt es haben o sein en segundo lugar más el participio (Partizip II) al final. El participio tiene cinco patrones: ge-...-t en los verbos regulares (gemacht), ge-...-en en los irregulares (gegessen), un grupo pequeño mixto que cambia la raíz pero conserva -t (gebracht, gedacht, gewusst, gekannt), ge- en medio en los verbos separables (eingekauft, angerufen), y sin ge- en los verbos con un prefijo átono o terminados en -ieren (bekommen, verstanden, telefoniert). En el habla, el Perfekt es el pasado normal: Gestern habe ich Freunde getroffen."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "partizip-II",
+      "title": {
+        "en": "Participles of common verbs",
+        "es": "Participios de verbos frecuentes"
+      },
+      "header": [
+        {
+          "en": "Infinitive",
+          "es": "Infinitivo"
+        },
+        {
+          "en": "Partizip II",
+          "es": "Partizip II"
+        }
+      ],
+      "rows": [
+        [
+          "machen",
+          "gemacht"
+        ],
+        [
+          "arbeiten",
+          "gearbeitet"
+        ],
+        [
+          "kaufen",
+          "gekauft"
+        ],
+        [
+          "bestellen",
+          "bestellt"
+        ],
+        [
+          "bezahlen",
+          "bezahlt"
+        ],
+        [
+          "besuchen",
+          "besucht"
+        ],
+        [
+          "telefonieren",
+          "telefoniert"
+        ],
+        [
+          "studieren",
+          "studiert"
+        ],
+        [
+          "passieren",
+          "passiert"
+        ],
+        [
+          "essen",
+          "gegessen"
+        ],
+        [
+          "schreiben",
+          "geschrieben"
+        ],
+        [
+          "nehmen",
+          "genommen"
+        ],
+        [
+          "finden",
+          "gefunden"
+        ],
+        [
+          "treffen",
+          "getroffen"
+        ],
+        [
+          "bekommen",
+          "bekommen"
+        ],
+        [
+          "vergessen",
+          "vergessen"
+        ],
+        [
+          "verstehen",
+          "verstanden"
+        ],
+        [
+          "bringen",
+          "gebracht"
+        ],
+        [
+          "denken",
+          "gedacht"
+        ],
+        [
+          "wissen",
+          "gewusst"
+        ],
+        [
+          "kennen",
+          "gekannt"
+        ],
+        [
+          "einkaufen",
+          "eingekauft"
+        ],
+        [
+          "anrufen",
+          "angerufen"
+        ],
+        [
+          "aufmachen",
+          "aufgemacht"
+        ],
+        [
+          "mitbringen",
+          "mitgebracht"
+        ],
+        [
+          "fernsehen",
+          "ferngesehen"
+        ],
+        [
+          "anziehen",
+          "angezogen"
+        ],
+        [
+          "bleiben",
+          "geblieben"
+        ],
+        [
+          "werden",
+          "geworden"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "partizip-typen",
+      "title": {
+        "en": "The five patterns",
+        "es": "Los cinco patrones"
+      },
+      "header": [
+        {
+          "en": "Infinitive",
+          "es": "Infinitivo"
+        },
+        {
+          "en": "Participle",
+          "es": "Participio"
+        },
+        {
+          "en": "Where is ge-?",
+          "es": "¿Dónde está ge-?"
+        }
+      ],
+      "rows": [
+        [
+          "arbeiten",
+          "gearbeitet",
+          "vorne"
+        ],
+        [
+          "schreiben",
+          "geschrieben",
+          "vorne"
+        ],
+        [
+          "bringen",
+          "gebracht",
+          "vorne"
+        ],
+        [
+          "einkaufen",
+          "eingekauft",
+          "in der Mitte"
+        ],
+        [
+          "bekommen",
+          "bekommen",
+          "ohne ge-"
+        ],
+        [
+          "telefonieren",
+          "telefoniert",
+          "ohne ge-"
+        ]
+      ],
+      "noTableDeck": true
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Regular, irregular and mixed verbs",
+        "es": "Verbos regulares, irregulares y mixtos"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "Regular verbs add ge- and -t (-et after t or d). Irregular verbs add ge- and -en and often change the stem. You have to learn the participle with the verb.",
+            "es": "Los verbos regulares añaden ge- y -t (-et después de t o d). Los irregulares añaden ge- y -en y a menudo cambian la raíz. Hay que aprender el participio junto con el verbo."
+          },
+          "examples": [
+            {
+              "es": "Ich habe viel gearbeitet.",
+              "tr": {
+                "en": "I worked a lot.",
+                "es": "Trabajé mucho."
+              }
+            },
+            {
+              "es": "Wir haben Pizza gegessen.",
+              "tr": {
+                "en": "We ate pizza.",
+                "es": "Comimos pizza."
+              }
+            },
+            {
+              "es": "Anna hat Paul gefunden.",
+              "tr": {
+                "en": "Anna found Paul.",
+                "es": "Anna encontró a Paul."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Four common verbs are mixed: the stem changes like an irregular verb, but the ending is regular -t. They are bringen, denken, wissen and kennen.",
+            "es": "Cuatro verbos frecuentes son mixtos: la raíz cambia como en un verbo irregular, pero la terminación es la regular -t. Son bringen, denken, wissen y kennen."
+          },
+          "examples": [
+            {
+              "es": "Paul hat das Essen gebracht.",
+              "tr": {
+                "en": "Paul brought the food.",
+                "es": "Paul trajo la comida."
+              }
+            },
+            {
+              "es": "Ich habe das nicht gewusst.",
+              "tr": {
+                "en": "I did not know that.",
+                "es": "No lo sabía."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Separable, inseparable and -ieren verbs",
+        "es": "Verbos separables, inseparables y en -ieren"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "Separable verbs keep the prefix in front and put ge- in the middle: einkaufen, eingekauft. The stressed prefix an-, auf-, mit-, fern- and so on is separable.",
+            "es": "Los verbos separables conservan el prefijo delante y ponen ge- en medio: einkaufen, eingekauft. Los prefijos tónicos como an-, auf-, mit- y fern- son separables."
+          },
+          "examples": [
+            {
+              "es": "Ich habe Anna angerufen.",
+              "tr": {
+                "en": "I called Anna.",
+                "es": "Le llamé a Anna."
+              }
+            },
+            {
+              "es": "Anna hat Kuchen mitgebracht.",
+              "tr": {
+                "en": "Anna brought cake.",
+                "es": "Anna trajo pastel."
+              }
+            },
+            {
+              "es": "Wir haben gestern Abend ferngesehen.",
+              "tr": {
+                "en": "We watched TV last night.",
+                "es": "Ayer en la noche vimos la tele."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Verbs with an unstressed prefix (be-, ver-, er-, ent-) and verbs in -ieren take no ge-. The participle of bekommen and vergessen is the same as the infinitive.",
+            "es": "Los verbos con un prefijo átono (be-, ver-, er-, ent-) y los verbos en -ieren no llevan ge-. El participio de bekommen y vergessen es igual al infinitivo."
+          },
+          "examples": [
+            {
+              "es": "Er hat sein Handy vergessen.",
+              "tr": {
+                "en": "He forgot his phone.",
+                "es": "Se le olvidó su celular."
+              }
+            },
+            {
+              "es": "Wir haben ein Taxi bestellt.",
+              "tr": {
+                "en": "We ordered a taxi.",
+                "es": "Pedimos un taxi."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Helper verb, negation and questions",
+        "es": "Verbo auxiliar, negación y preguntas"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "The helper is haben for most verbs and sein for movement from A to B and for a change of state (gehen, fahren, aufstehen), and also for sein, bleiben, werden and passieren.",
+            "es": "El auxiliar es haben para la mayoría de los verbos y sein para el movimiento de A a B y para un cambio de estado (gehen, fahren, aufstehen), y también para sein, bleiben, werden y passieren."
+          },
+          "examples": [
+            {
+              "es": "Wir sind zu Hause geblieben.",
+              "tr": {
+                "en": "We stayed at home.",
+                "es": "Nos quedamos en casa."
+              }
+            },
+            {
+              "es": "Es ist gestern passiert.",
+              "tr": {
+                "en": "It happened yesterday.",
+                "es": "Pasó ayer."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "nicht stands before the participle, and in a question the helper comes first. The participle always stays at the very end.",
+            "es": "nicht va antes del participio, y en una pregunta el auxiliar va primero. El participio siempre se queda al final de todo."
+          },
+          "examples": [
+            {
+              "es": "Ich habe den Film nicht gesehen.",
+              "tr": {
+                "en": "I did not see the movie.",
+                "es": "No vi la película."
+              }
+            },
+            {
+              "es": "Hast du schon gegessen?",
+              "tr": {
+                "en": "Have you eaten yet?",
+                "es": "¿Ya comiste?"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Easy to mix up",
+        "es": "Fáciles de confundir"
+      },
+      "pairs": [
+        {
+          "a": "Ich habe es gewusst.",
+          "b": "Ich habe ihn gekannt.",
+          "note": {
+            "en": "Both verbs mean to know, and both are mixed verbs. wissen is for facts (es gewusst), kennen is for people and places you are acquainted with (ihn gekannt).",
+            "es": "Los dos verbos significan «saber» o «conocer», y los dos son mixtos. wissen es para hechos (es gewusst), kennen es para personas y lugares con los que se está familiarizado (ihn gekannt)."
+          },
+          "examples": [
+            {
+              "es": "Ich weiß die Antwort.",
+              "tr": {
+                "en": "I know the answer.",
+                "es": "Sé la respuesta."
+              }
+            },
+            {
+              "es": "Ich kenne den Lehrer.",
+              "tr": {
+                "en": "I know the teacher.",
+                "es": "Conozco al maestro."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Ich habe eingekauft.",
+          "b": "Ich habe bezahlt.",
+          "note": {
+            "en": "ein- is a separable prefix, so ge- goes in the middle (eingekauft). be- is an inseparable prefix, so there is no ge- at all (bezahlt).",
+            "es": "ein- es un prefijo separable, así que ge- va en medio (eingekauft). be- es un prefijo inseparable, así que no hay ge- (bezahlt)."
+          },
+          "examples": [
+            {
+              "es": "Anna hat die Tür aufgemacht.",
+              "tr": {
+                "en": "Anna opened the door.",
+                "es": "Anna abrió la puerta."
+              }
+            },
+            {
+              "es": "Anna hat die Rechnung bezahlt.",
+              "tr": {
+                "en": "Anna paid the bill.",
+                "es": "Anna pagó la cuenta."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: do not use the English or Spanish simple past in German speech (not Ich ging, but Ich bin gegangen). Do not put regular endings on irregular verbs (not gegehen, gefahrt). Do not add ge- where there is none (not gebesucht, gestudiert, geverstanden). Remember that the stem of the mixed verbs changes (gebracht, gedacht, gewusst, gekannt). Do not forget the helper sein for movement and change (Ich bin geblieben, Es ist passiert). And keep the participle at the very end, also with nicht and in questions.",
+        "es": "Trampas clásicas: no uses el pretérito simple del inglés ni del español en el habla alemana (no Ich ging, sino Ich bin gegangen). No pongas terminaciones regulares a los verbos irregulares (no gegehen, gefahrt). No agregues ge- donde no va (no gebesucht, gestudiert, geverstanden). Recuerda que la raíz de los verbos mixtos cambia (gebracht, gedacht, gewusst, gekannt). No olvides el auxiliar sein para movimiento y cambio (Ich bin geblieben, Es ist passiert). Y mantén el participio al final de todo, también con nicht y en preguntas."
+      }
+    }
+  ],
+  "speak": {
+    "en": "The participle has five patterns. Regular verbs have «ge» and «t»: «gemacht». Irregular verbs have «ge» and «en»: «gegessen». Four mixed verbs change the stem but keep the «t»: «gebracht», «gedacht», «gewusst», «gekannt». Separable verbs put «ge» in the middle: «eingekauft», «angerufen». Verbs with an unstressed prefix or in «ieren» have no «ge»: «bekommen», «verstanden», «telefoniert». The helper is «haben», but «sein» for movement and change: «Ich bin geblieben». In speech, the Perfekt is the normal past: «Gestern habe ich Freunde getroffen».",
+    "es": "El participio tiene cinco patrones. Los verbos regulares llevan «ge» y «t»: «gemacht». Los irregulares llevan «ge» y «en»: «gegessen». Cuatro verbos mixtos cambian la raíz pero conservan la «t»: «gebracht», «gedacht», «gewusst», «gekannt». Los verbos separables ponen «ge» en medio: «eingekauft», «angerufen». Los verbos con un prefijo átono o en «ieren» no llevan «ge»: «bekommen», «verstanden», «telefoniert». El auxiliar es «haben», pero «sein» para movimiento y cambio: «Ich bin geblieben». En el habla, el Perfekt es el pasado normal: «Gestern habe ich Freunde getroffen»."
+  },
+  "items": [
+    {
+      "id": "partizip-ii-formen-c01",
+      "sentence": "Gestern habe ich Freunde ___.",
+      "options": [
+        "getroffen",
+        "getreffen",
+        "getrofft"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "treffen is irregular: the stem changes and the participle ends in -en, getroffen.",
+        "es": "treffen es irregular: la raíz cambia y el participio termina en -en, getroffen."
+      },
+      "wrong": {
+        "getreffen": {
+          "en": "getreffen keeps the stem of the infinitive. The participle of treffen changes the vowel: getroffen.",
+          "es": "getreffen conserva la raíz del infinitivo. El participio de treffen cambia la vocal: getroffen."
+        },
+        "getrofft": {
+          "en": "getrofft uses the stem change with the regular ending -t. treffen is irregular and its participle ends in -en.",
+          "es": "getrofft usa el cambio de raíz con la terminación regular -t. treffen es irregular y su participio termina en -en."
+        }
+      },
+      "examples": [
+        "Ich habe Anna in der Stadt getroffen.",
+        "Wir haben Paul am Montag getroffen."
+      ],
+      "tr": {
+        "en": "Yesterday I met friends.",
+        "es": "Ayer me encontré con unos amigos."
+      }
+    },
+    {
+      "id": "partizip-ii-formen-f01",
+      "kind": "form",
+      "verb": "Partizip II",
+      "person": "bringen",
+      "answer": "gebracht",
+      "table": "partizip-II"
+    },
+    {
+      "id": "partizip-ii-formen-c02",
+      "sentence": "Ich habe das nicht ___.",
+      "options": [
+        "gewisst",
+        "gewusst",
+        "gewust"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "wissen is a mixed verb: the stem changes (wiss- to wuss-) and the ending is -t, so the participle is gewusst.",
+        "es": "wissen es un verbo mixto: la raíz cambia (wiss- a wuss-) y la terminación es -t, así que el participio es gewusst."
+      },
+      "wrong": {
+        "gewisst": {
+          "en": "gewisst keeps the stem wiss- as in a regular verb. The stem of wissen changes in the participle.",
+          "es": "gewisst conserva la raíz wiss- como en un verbo regular. La raíz de wissen cambia en el participio."
+        },
+        "gewust": {
+          "en": "gewust lacks the ending: the participle of wissen has a double s and ends in -t, gewusst.",
+          "es": "gewust no tiene la terminación: el participio de wissen tiene una doble s y termina en -t, gewusst."
+        }
+      },
+      "examples": [
+        "Ich habe die Antwort gewusst.",
+        "Paul hat es nicht gewusst."
+      ],
+      "tr": {
+        "en": "I did not know that.",
+        "es": "No lo sabía."
+      }
+    },
+    {
+      "id": "partizip-ii-formen-f02",
+      "kind": "form",
+      "verb": "Partizip II",
+      "person": "denken",
+      "answer": "gedacht",
+      "table": "partizip-II"
+    },
+    {
+      "id": "partizip-ii-formen-c03",
+      "sentence": "Ich habe ihn gut ___.",
+      "options": [
+        "gekennt",
+        "kannt",
+        "gekannt"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "kennen is a mixed verb: the stem changes (kenn- to kann-) and the ending is -t, so the participle is gekannt.",
+        "es": "kennen es un verbo mixto: la raíz cambia (kenn- a kann-) y la terminación es -t, así que el participio es gekannt."
+      },
+      "wrong": {
+        "gekennt": {
+          "en": "gekennt keeps the stem kenn- of a regular verb. kennen changes its stem in the participle.",
+          "es": "gekennt conserva la raíz kenn- de un verbo regular. kennen cambia su raíz en el participio."
+        },
+        "kannt": {
+          "en": "kannt lacks the prefix ge-. The participle of kennen is a normal one with ge-: gekannt.",
+          "es": "kannt no tiene el prefijo ge-. El participio de kennen es normal, con ge-: gekannt."
+        }
+      },
+      "examples": [
+        "Wir haben den Lehrer gut gekannt.",
+        "Anna hat die Stadt nicht gekannt."
+      ],
+      "tr": {
+        "en": "I knew him well.",
+        "es": "Lo conocía bien."
+      }
+    },
+    {
+      "id": "partizip-ii-formen-f03",
+      "kind": "form",
+      "verb": "Partizip II",
+      "person": "wissen",
+      "answer": "gewusst",
+      "table": "partizip-II"
+    },
+    {
+      "id": "partizip-ii-formen-w01",
+      "kind": "why",
+      "es": "Ich habe das Wort verstanden.",
+      "target": "verstanden",
+      "tr": {
+        "en": "I understood the word.",
+        "es": "Entendí la palabra."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Verbs with an unstressed prefix (be-, ver-, er-) take no ge-",
+            "es": "Los verbos con un prefijo átono (be-, ver-, er-) no llevan ge-"
+          }
+        },
+        {
+          "text": {
+            "en": "ge- is missing by mistake: geverstanden",
+            "es": "falta ge- por error: geverstanden"
+          },
+          "wrong": {
+            "en": "ge- is not added to verbs that start with be-, ver-, er-, ent-. The participle is verstanden.",
+            "es": "ge- no se añade a los verbos que empiezan con be-, ver-, er-, ent-. El participio es verstanden."
+          }
+        },
+        {
+          "text": {
+            "en": "verstanden is a regular participle: ver- + stem + -t",
+            "es": "verstanden es un participio regular: ver- + raíz + -t"
+          },
+          "wrong": {
+            "en": "verstehen is irregular: the stem changes (steh- to stand-) and the ending is -en.",
+            "es": "verstehen es irregular: la raíz cambia (steh- a stand-) y la terminación es -en."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "partizip-ii-formen-c04",
+      "sentence": "Paul hat das Essen ___.",
+      "options": [
+        "gebracht",
+        "gebringt",
+        "bringt"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "bringen is a mixed verb: the stem changes (bring- to brach-) and the ending is -t, so the participle is gebracht.",
+        "es": "bringen es un verbo mixto: la raíz cambia (bring- a brach-) y la terminación es -t, así que el participio es gebracht."
+      },
+      "wrong": {
+        "gebringt": {
+          "en": "gebringt keeps the stem bring- of a regular verb. bringen changes its stem in the participle.",
+          "es": "gebringt conserva la raíz bring- de un verbo regular. bringen cambia su raíz en el participio."
+        },
+        "bringt": {
+          "en": "bringt is the present tense (er bringt). The participle also needs ge- and the changed stem: gebracht.",
+          "es": "bringt es el presente (er bringt). El participio también necesita ge- y la raíz cambiada: gebracht."
+        }
+      },
+      "examples": [
+        "Anna hat den Kuchen gebracht.",
+        "Ich habe das Geschenk gebracht."
+      ],
+      "tr": {
+        "en": "Paul brought the food.",
+        "es": "Paul trajo la comida."
+      }
+    },
+    {
+      "id": "partizip-ii-formen-f04",
+      "kind": "form",
+      "verb": "Partizip II",
+      "person": "kennen",
+      "answer": "gekannt",
+      "table": "partizip-II"
+    },
+    {
+      "id": "partizip-ii-formen-c05",
+      "sentence": "Ich habe an dich ___.",
+      "options": [
+        "gedenkt",
+        "gedacht",
+        "gedachen"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "denken is a mixed verb: the stem changes (denk- to dach-) and the ending is -t, so the participle is gedacht.",
+        "es": "denken es un verbo mixto: la raíz cambia (denk- a dach-) y la terminación es -t, así que el participio es gedacht."
+      },
+      "wrong": {
+        "gedenkt": {
+          "en": "gedenkt keeps the stem denk- of a regular verb. denken changes its stem in the participle.",
+          "es": "gedenkt conserva la raíz denk- de un verbo regular. denken cambia su raíz en el participio."
+        },
+        "gedachen": {
+          "en": "gedachen takes the changed stem but the ending -en of irregular verbs. denken is a mixed verb, so the ending is -t: gedacht.",
+          "es": "gedachen toma la raíz cambiada pero la terminación -en de los verbos irregulares. denken es un verbo mixto, así que la terminación es -t: gedacht."
+        }
+      },
+      "examples": [
+        "Anna hat an Paul gedacht.",
+        "Wir haben an euch gedacht."
+      ],
+      "tr": {
+        "en": "I thought of you.",
+        "es": "Pensé en ti."
+      }
+    },
+    {
+      "id": "partizip-ii-formen-f05",
+      "kind": "form",
+      "verb": "Partizip II",
+      "person": "nehmen",
+      "answer": "genommen",
+      "table": "partizip-II"
+    },
+    {
+      "id": "partizip-ii-formen-c06",
+      "sentence": "Wir haben ein Taxi ___.",
+      "options": [
+        "gebestellt",
+        "bestelt",
+        "bestellt"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "bestellen starts with the unstressed prefix be-, so the participle has no ge-: bestellt.",
+        "es": "bestellen empieza con el prefijo átono be-, así que el participio no lleva ge-: bestellt."
+      },
+      "wrong": {
+        "gebestellt": {
+          "en": "Verbs with the prefix be- take no ge-. The participle is bestellt, not gebestellt.",
+          "es": "Los verbos con el prefijo be- no llevan ge-. El participio es bestellt, no gebestellt."
+        },
+        "bestelt": {
+          "en": "bestelt has only one l. The stem is bestell-, and the participle ends in -t: bestellt.",
+          "es": "bestelt tiene una sola l. La raíz es bestell-, y el participio termina en -t: bestellt."
+        }
+      },
+      "examples": [
+        "Ich habe einen Tisch bestellt.",
+        "Paul hat Pizza bestellt."
+      ],
+      "tr": {
+        "en": "We ordered a taxi.",
+        "es": "Pedimos un taxi."
+      }
+    },
+    {
+      "id": "partizip-ii-formen-f06",
+      "kind": "form",
+      "verb": "Partizip II",
+      "person": "finden",
+      "answer": "gefunden",
+      "table": "partizip-II"
+    },
+    {
+      "id": "partizip-ii-formen-w02",
+      "kind": "why",
+      "es": "Ich habe das nicht gewusst.",
+      "target": "gewusst",
+      "tr": {
+        "en": "I did not know that.",
+        "es": "No lo sabía."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "gewissen: all irregular verbs end in -en",
+            "es": "gewissen: todos los verbos irregulares terminan en -en"
+          },
+          "wrong": {
+            "en": "A small group (bringen, denken, wissen, kennen) changes the stem like irregular verbs but takes the regular ending -t.",
+            "es": "Un grupo pequeño (bringen, denken, wissen, kennen) cambia la raíz como los verbos irregulares pero lleva la terminación regular -t."
+          }
+        },
+        {
+          "text": {
+            "en": "gewisst: wissen is a regular verb",
+            "es": "gewisst: wissen es un verbo regular"
+          },
+          "wrong": {
+            "en": "The stem of wissen changes in the participle (wiss- becomes wuss-), so it is not a regular verb.",
+            "es": "La raíz de wissen cambia en el participio (wiss- pasa a wuss-), así que no es un verbo regular."
+          }
+        },
+        {
+          "text": {
+            "en": "Mixed verbs change the stem and keep the ending -t: wissen, gewusst",
+            "es": "Los verbos mixtos cambian la raíz y conservan la terminación -t: wissen, gewusst"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "partizip-ii-formen-c07",
+      "sentence": "Ich habe die Rechnung noch nicht ___.",
+      "options": [
+        "bezahlt",
+        "gebezahlt",
+        "bezahlen"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "bezahlen starts with the unstressed prefix be-, so the participle has no ge-: bezahlt. noch nicht stands before it.",
+        "es": "bezahlen empieza con el prefijo átono be-, así que el participio no lleva ge-: bezahlt. noch nicht va antes."
+      },
+      "wrong": {
+        "gebezahlt": {
+          "en": "ge- is not added to verbs that start with be-. The participle is bezahlt.",
+          "es": "ge- no se añade a los verbos que empiezan con be-. El participio es bezahlt."
+        },
+        "bezahlen": {
+          "en": "bezahlen is the infinitive. In the Perfekt you need the participle bezahlt at the end.",
+          "es": "bezahlen es el infinitivo. En el Perfekt necesitas el participio bezahlt al final."
+        }
+      },
+      "examples": [
+        "Wir haben das Essen bezahlt.",
+        "Anna hat noch nicht bezahlt."
+      ],
+      "tr": {
+        "en": "I have not paid the bill yet.",
+        "es": "Todavía no he pagado la cuenta."
+      }
+    },
+    {
+      "id": "partizip-ii-formen-f07",
+      "kind": "form",
+      "verb": "Partizip II",
+      "person": "verstehen",
+      "answer": "verstanden",
+      "table": "partizip-II"
+    },
+    {
+      "id": "partizip-ii-formen-c08",
+      "sentence": "Hast du das Wort ___?",
+      "options": [
+        "geverstanden",
+        "verstehen",
+        "verstanden"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "verstehen has the unstressed prefix ver- and is irregular: no ge-, the stem changes, and the ending is -en: verstanden.",
+        "es": "verstehen tiene el prefijo átono ver- y es irregular: sin ge-, la raíz cambia, y la terminación es -en: verstanden."
+      },
+      "wrong": {
+        "geverstanden": {
+          "en": "Verbs with the prefix ver- take no ge-. The participle is verstanden, not geverstanden.",
+          "es": "Los verbos con el prefijo ver- no llevan ge-. El participio es verstanden, no geverstanden."
+        },
+        "verstehen": {
+          "en": "verstehen is the infinitive. At the end of a Perfekt question you need the participle verstanden.",
+          "es": "verstehen es el infinitivo. Al final de una pregunta en Perfekt necesitas el participio verstanden."
+        }
+      },
+      "examples": [
+        "Ich habe die Frage verstanden.",
+        "Habt ihr den Lehrer verstanden?"
+      ],
+      "tr": {
+        "en": "Did you understand the word?",
+        "es": "¿Entendiste la palabra?"
+      }
+    },
+    {
+      "id": "partizip-ii-formen-f08",
+      "kind": "form",
+      "verb": "Partizip II",
+      "person": "bekommen",
+      "answer": "bekommen",
+      "table": "partizip-II"
+    },
+    {
+      "id": "partizip-ii-formen-c09",
+      "sentence": "Er hat sein Handy ___.",
+      "options": [
+        "vergessen",
+        "gevergessen",
+        "vergesst"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "vergessen has the unstressed prefix ver- and is irregular: no ge-, and the participle is the same as the infinitive, vergessen.",
+        "es": "vergessen tiene el prefijo átono ver- y es irregular: sin ge-, y el participio es igual al infinitivo, vergessen."
+      },
+      "wrong": {
+        "gevergessen": {
+          "en": "Verbs with the prefix ver- take no ge-. The participle is vergessen, not gevergessen.",
+          "es": "Los verbos con el prefijo ver- no llevan ge-. El participio es vergessen, no gevergessen."
+        },
+        "vergesst": {
+          "en": "vergesst is a present tense form (ihr vergesst). The participle ends in -en.",
+          "es": "vergesst es una forma del presente (ihr vergesst). El participio termina en -en."
+        }
+      },
+      "examples": [
+        "Anna hat den Schlüssel vergessen.",
+        "Ich habe das Geld vergessen."
+      ],
+      "tr": {
+        "en": "He forgot his phone.",
+        "es": "Se le olvidó su celular."
+      }
+    },
+    {
+      "id": "partizip-ii-formen-f09",
+      "kind": "form",
+      "verb": "Partizip II",
+      "person": "telefonieren",
+      "answer": "telefoniert",
+      "table": "partizip-II"
+    },
+    {
+      "id": "partizip-ii-formen-w03",
+      "kind": "why",
+      "es": "Ich habe Anna angerufen.",
+      "target": "angerufen",
+      "tr": {
+        "en": "I called Anna.",
+        "es": "Le llamé a Anna."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "No ge-, because the prefix an- is inseparable",
+            "es": "Sin ge-, porque el prefijo an- es inseparable"
+          },
+          "wrong": {
+            "en": "an- is a separable prefix. Only be-, ver-, er-, ent-, zer- and similar prefixes are inseparable.",
+            "es": "an- es un prefijo separable. Solo be-, ver-, er-, ent-, zer- y prefijos similares son inseparables."
+          }
+        },
+        {
+          "text": {
+            "en": "ge- goes first: geanrufen",
+            "es": "ge- va primero: geanrufen"
+          },
+          "wrong": {
+            "en": "ge- never stands in front of a separable prefix. It goes between prefix and stem.",
+            "es": "ge- nunca va delante de un prefijo separable. Va entre el prefijo y la raíz."
+          }
+        },
+        {
+          "text": {
+            "en": "Separable verbs put ge- between the prefix and the stem: an + ge + rufen",
+            "es": "Los verbos separables ponen ge- entre el prefijo y la raíz: an + ge + rufen"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "partizip-ii-formen-c10",
+      "sentence": "Wir haben gestern Abend ___.",
+      "options": [
+        "gefernsehen",
+        "ferngesehen",
+        "fernsehen"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "fernsehen is separable and irregular: fern- stays in front, ge- goes in the middle, and sehen becomes gesehen: ferngesehen.",
+        "es": "fernsehen es separable e irregular: fern- se queda delante, ge- va en medio, y sehen pasa a gesehen: ferngesehen."
+      },
+      "wrong": {
+        "gefernsehen": {
+          "en": "ge- does not stand in front of a separable prefix. It goes in the middle: fern + ge + sehen.",
+          "es": "ge- no va delante de un prefijo separable. Va en medio: fern + ge + sehen."
+        },
+        "fernsehen": {
+          "en": "fernsehen is the infinitive. At the end of the Perfekt sentence you need the participle ferngesehen.",
+          "es": "fernsehen es el infinitivo. Al final de la oración en Perfekt necesitas el participio ferngesehen."
+        }
+      },
+      "examples": [
+        "Paul hat gestern ferngesehen.",
+        "Wir haben nicht ferngesehen."
+      ],
+      "tr": {
+        "en": "We watched TV last night.",
+        "es": "Ayer en la noche vimos la tele."
+      }
+    },
+    {
+      "id": "partizip-ii-formen-f10",
+      "kind": "form",
+      "verb": "Partizip II",
+      "person": "fernsehen",
+      "answer": "ferngesehen",
+      "table": "partizip-II"
+    },
+    {
+      "id": "partizip-ii-formen-c11",
+      "sentence": "Anna hat die Tür ___.",
+      "options": [
+        "aufmacht",
+        "aufgemacht",
+        "geaufmacht"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "aufmachen is separable: auf- stays in front, ge- goes in the middle, and the ending is -t: aufgemacht.",
+        "es": "aufmachen es separable: auf- se queda delante, ge- va en medio, y la terminación es -t: aufgemacht."
+      },
+      "wrong": {
+        "aufmacht": {
+          "en": "aufmacht looks like the present tense (er macht auf). The participle needs ge- in the middle.",
+          "es": "aufmacht parece el presente (er macht auf). El participio necesita ge- en medio."
+        },
+        "geaufmacht": {
+          "en": "ge- never stands in front of a separable prefix. It goes between prefix and stem: auf + ge + macht.",
+          "es": "ge- nunca va delante de un prefijo separable. Va entre el prefijo y la raíz: auf + ge + macht."
+        }
+      },
+      "examples": [
+        "Ich habe das Fenster aufgemacht.",
+        "Paul hat die Tür zugemacht."
+      ],
+      "tr": {
+        "en": "Anna opened the door.",
+        "es": "Anna abrió la puerta."
+      }
+    },
+    {
+      "id": "partizip-ii-formen-f11",
+      "kind": "form",
+      "verb": "Partizip II",
+      "person": "mitbringen",
+      "answer": "mitgebracht",
+      "table": "partizip-II"
+    },
+    {
+      "id": "partizip-ii-formen-c12",
+      "sentence": "Wir ___ gestern ins Kino gegangen.",
+      "options": [
+        "sind",
+        "haben",
+        "hat"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "gehen is a movement from A to B, so the helper is sein, and for wir the form is sind.",
+        "es": "gehen es un movimiento de A a B, así que el auxiliar es sein, y para wir la forma es sind."
+      },
+      "wrong": {
+        "haben": {
+          "en": "haben is the helper of most verbs, but gehen is a verb of movement and takes sein.",
+          "es": "haben es el auxiliar de la mayoría de los verbos, pero gehen es un verbo de movimiento y lleva sein."
+        },
+        "hat": {
+          "en": "hat is a form of haben for er, sie and es. The subject here is wir, and the helper is sein: sind.",
+          "es": "hat es una forma de haben para er, sie y es. El sujeto aquí es wir, y el auxiliar es sein: sind."
+        }
+      },
+      "examples": [
+        "Wir sind nach Hause gefahren.",
+        "Paul und Anna sind geblieben."
+      ],
+      "tr": {
+        "en": "Yesterday we went to the movies.",
+        "es": "Ayer fuimos al cine."
+      }
+    },
+    {
+      "id": "partizip-ii-formen-f12",
+      "kind": "form",
+      "verb": "Partizip II",
+      "person": "anziehen",
+      "answer": "angezogen",
+      "table": "partizip-II"
+    },
+    {
+      "id": "partizip-ii-formen-c13",
+      "sentence": "Paul ___ das Buch nicht gelesen.",
+      "options": [
+        "ist",
+        "hat",
+        "sind"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "lesen is neither a movement nor a change of state, so the helper is haben, and for Paul it is hat. nicht stands before the participle.",
+        "es": "lesen no es un movimiento ni un cambio de estado, así que el auxiliar es haben, y para Paul es hat. nicht va antes del participio."
+      },
+      "wrong": {
+        "ist": {
+          "en": "ist is the helper of verbs of movement and change, like gehen. lesen takes haben.",
+          "es": "ist es el auxiliar de verbos de movimiento y cambio, como gehen. lesen lleva haben."
+        },
+        "sind": {
+          "en": "sind is the form for wir and sie (they), and it belongs to sein. Paul is one person, and lesen takes haben: hat.",
+          "es": "sind es la forma de wir y sie (ellos), y es de sein. Paul es una persona, y lesen lleva haben: hat."
+        }
+      },
+      "examples": [
+        "Anna hat den Brief nicht geschrieben.",
+        "Ich habe das nicht gesehen."
+      ],
+      "tr": {
+        "en": "Paul has not read the book.",
+        "es": "Paul no ha leído el libro."
+      }
+    },
+    {
+      "id": "partizip-ii-formen-c14",
+      "sentence": "Gestern habe ich Pizza ___ und Kaffee getrunken.",
+      "options": [
+        "essen",
+        "isst",
+        "gegessen"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The helper habe serves both verbs. The first participle, gegessen, stays before und, and the second, getrunken, stays at the end.",
+        "es": "El auxiliar habe sirve para los dos verbos. El primer participio, gegessen, se queda antes de und, y el segundo, getrunken, al final."
+      },
+      "wrong": {
+        "essen": {
+          "en": "essen is the infinitive. After the helper habe you need a participle, here gegessen.",
+          "es": "essen es el infinitivo. Después del auxiliar habe necesitas un participio, aquí gegessen."
+        },
+        "isst": {
+          "en": "isst is the present tense (er isst). In the Perfekt the verb is a participle: gegessen.",
+          "es": "isst es el presente (er isst). En el Perfekt el verbo es un participio: gegessen."
+        }
+      },
+      "examples": [
+        "Ich habe Brot gegessen und Wasser getrunken.",
+        "Wir haben gekocht und gegessen."
+      ],
+      "tr": {
+        "en": "Yesterday I ate pizza and drank coffee.",
+        "es": "Ayer comí pizza y tomé café."
+      }
+    },
+    {
+      "id": "partizip-ii-formen-w04",
+      "kind": "why",
+      "es": "Es ist gestern passiert.",
+      "target": "passiert",
+      "tr": {
+        "en": "It happened yesterday.",
+        "es": "Pasó ayer."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Verbs ending in -ieren take no ge-",
+            "es": "Los verbos que terminan en -ieren no llevan ge-"
+          }
+        },
+        {
+          "text": {
+            "en": "gepassiert: every participle needs ge-",
+            "es": "gepassiert: todo participio necesita ge-"
+          },
+          "wrong": {
+            "en": "Verbs ending in -ieren (passieren, studieren, telefonieren) are an exception: the participle is passiert.",
+            "es": "Los verbos que terminan en -ieren (passieren, studieren, telefonieren) son una excepción: el participio es passiert."
+          }
+        },
+        {
+          "text": {
+            "en": "passiert follows the mixed pattern, like gebracht",
+            "es": "passiert sigue el patrón mixto, como gebracht"
+          },
+          "wrong": {
+            "en": "Mixed verbs change their stem and keep ge-. passieren is a regular verb in -ieren with no stem change.",
+            "es": "Los verbos mixtos cambian la raíz y conservan ge-. passieren es un verbo regular en -ieren sin cambio de raíz."
+          }
+        }
+      ],
+      "correctIndex": 0
+    }
+  ]
+}

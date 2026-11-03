@@ -176,3 +176,39 @@ describe('gradePcicAnswer, Hungarian answers (lang "hu")', () => {
     expect(gradeSentenceAnswer('eszem otthon', 'Én eszem otthon', false, 'hu').match).not.toBe('exact');
   });
 });
+
+describe('gradePcicAnswer, German (de)', () => {
+  it('takes ss for ß and the vowel plus e for an umlaut while accents are forgiven', () => {
+    expect(gradePcicAnswer('die Strasse', 'die Straße', false, 'de').match).toBe('exact');
+    expect(gradePcicAnswer('schoen', 'schön', false, 'de').match).toBe('exact');
+    expect(gradePcicAnswer('das Maedchen', 'das Mädchen', false, 'de').match).toBe('exact');
+    expect(gradePcicAnswer('gross', 'groß', false, 'de').match).toBe('exact');
+  });
+
+  it('still takes the bare vowel for an umlaut as an accent-only slip', () => {
+    const grade = gradePcicAnswer('schon', 'schön', false, 'de');
+    expect(grade).toMatchObject({ match: 'near', accentOnly: true });
+    expect(suggestedGrade(grade)).toBe('good');
+  });
+
+  it('grades ß and the umlauts as spelling once strict accents is on', () => {
+    expect(gradePcicAnswer('die Strasse', 'die Straße', true, 'de').match).not.toBe('exact');
+    expect(gradePcicAnswer('schoen', 'schön', true, 'de').match).not.toBe('exact');
+    expect(gradePcicAnswer('die Straße', 'die Straße', true, 'de').match).toBe('exact');
+  });
+
+  it('the digraph reading does not make a different word right', () => {
+    expect(gradePcicAnswer('neu', 'neue', false, 'de').match).toBe('wrong');
+    expect(gradePcicAnswer('der Hund', 'der Hut', false, 'de').match).not.toBe('exact');
+  });
+
+  it('accepts every " / " alternative of a German card', () => {
+    expect(gradePcicAnswer('der Platz', 'der Ort / der Platz', false, 'de').match).toBe('exact');
+    expect(gradePcicAnswer('Platz', 'der Ort / der Platz', false, 'de').match).not.toBe('exact');
+  });
+
+  it('does not drop a leading subject pronoun in a German sentence (Spanish rule only)', () => {
+    expect(gradeSentenceAnswer('trinke Wasser.', 'Ich trinke Wasser.', false, 'de').match).not.toBe('exact');
+    expect(gradeSentenceAnswer('Ich trinke Wasser.', 'Ich trinke Wasser.', false, 'de').match).toBe('exact');
+  });
+});

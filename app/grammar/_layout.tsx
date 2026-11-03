@@ -7,6 +7,8 @@ export default function GrammarLayout() {
     <Stack screenOptions={{ headerShown: false }}>
       {/* the random grammar round; the static route comes before [topic]. */}
       <Stack.Screen name="random" />
+      {/* the German tense drill. */}
+      <Stack.Screen name="tense-drill" />
       <Stack.Screen name="[topic]" />
       {/* the table-deck practice screen. */}
       <Stack.Screen name="deck/[topic]" />

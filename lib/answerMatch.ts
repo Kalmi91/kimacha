@@ -17,6 +17,12 @@ export interface MatchOptions {
    * but typing the other article is correct too (la guardia).
    */
   eitherArticle?: boolean;
+  /**
+   * German only: the umlaut and the ß are the thing being graded (a grammar form drill: Vater / Väter, schon / schön),
+   * so dropping the dots is never forgiven, whatever the accent switch says. While accents are forgiven the typewriter
+   * digraphs still count (Vaeter, Strasse); with strict accents on only the real letters do.
+   */
+  keepUmlauts?: boolean;
 }
 
 const ARTICLE_SWAP: Record<string, string> = { el: 'la', la: 'el', los: 'las', las: 'los' };
@@ -60,13 +66,60 @@ function normalizeKeepingAccents(text: string): string[] {
 // the same word, and an adjective ending is exactly what this card grades.
 const DE_DIGRAPH: Record<string, string> = { 'ä': 'ae', 'ö': 'oe', 'ü': 'ue' };
 
-function germanReadings(text: string): string[] {
+export function germanReadings(text: string): string[] {
   const bare = text.normalize('NFC').replace(/ß/g, 'ss');
   const digraph = bare.replace(/[äöü]/gi, (ch) => {
     const mapped = DE_DIGRAPH[ch.toLowerCase()];
     return ch === ch.toLowerCase() ? mapped : mapped.charAt(0).toUpperCase() + mapped.slice(1);
   });
   return digraph === bare ? [bare] : [bare, digraph];
+}
+
+/**
+ * Austrian and Swiss German words that are true equivalents of a standard (Germany) headword. The deck keeps the
+ * standard word as the headword and on the reveal; a learner who types the regional word (der Paradeiser for die
+ * Tomate) is right too. Key: the standard word lower-case, without article, gloss or plural note. Value: the
+ * regional answers, each with its own article (a noun keeps ITS gender: der Paradeiser, not die). Only pairs that
+ * mean the same thing in that region; AT = Austria, CH = Switzerland (also southern Germany where noted).
+ */
+export const deRegionalVariants: Record<string, string[]> = {
+  januar: ['der Jänner'], // AT
+  februar: ['der Feber'], // AT
+  tomate: ['der Paradeiser'], // AT
+  kartoffel: ['der Erdapfel'], // AT
+  blumenkohl: ['der Karfiol'], // AT
+  aprikose: ['die Marille'], // AT
+  quark: ['der Topfen'], // AT
+  sahne: ['das Obers', 'das Schlagobers', 'der Rahm'], // AT, CH (Rahm)
+  brötchen: ['die Semmel'], // AT, Bavaria
+  tüte: ['das Sackerl'], // AT
+  plastiktüte: ['das Plastiksackerl'], // AT
+  meerrettich: ['der Kren'], // AT
+  aubergine: ['die Melanzani'], // AT
+  'grüne bohne': ['die Fisole'], // AT
+  'grüne bohnen': ['die Fisolen'], // AT
+  fahrrad: ['das Velo'], // CH
+  bürgersteig: ['das Trottoir'], // CH
+  gehweg: ['das Trottoir'], // CH
+  handy: ['das Natel'], // CH
+  eis: ['die Glace'], // CH, ice cream
+  hähnchen: ['das Poulet'], // CH
+  hallo: ['grüezi', 'servus', 'grüß Gott'], // CH, AT, southern Germany
+  'dieses jahr': ['heuer'], // AT, southern Germany
+  krankenhaus: ['das Spital'], // AT, CH
+  stuhl: ['der Sessel'], // AT
+  schrank: ['der Kasten'], // AT
+  treppe: ['die Stiege'], // AT
+  bonbon: ['das Zuckerl'], // AT
+  parken: ['parkieren'], // CH
+};
+
+const DE_ARTICLE = /^(?:der|die|das)\s+/i;
+
+/** The regional (Austrian/Swiss) answers that stand for the standard German `answer`; empty for most words. */
+export function germanRegionalVariants(answer: string): string[] {
+  const key = withoutGloss(answer).toLowerCase().replace(DE_ARTICLE, '').trim();
+  return deRegionalVariants[key] ?? [];
 }
 
 /**
@@ -94,6 +147,9 @@ function normalizeHungarian(text: string): string[] {
 
 function normalizedForms(text: string, opts: MatchOptions): string[][] {
   if (opts.lang === 'hu') return [normalizeHungarian(text)];
+  if (opts.lang === 'de' && opts.keepUmlauts) {
+    return (opts.strictAccents ? [text] : germanReadings(text)).map(normalizeKeepingAccents);
+  }
   const readings = opts.lang ? ALTERNATE_READINGS[opts.lang] : undefined;
   if (readings && !opts.strictAccents) {
     return readings(text).map((reading) => normalizeWords(reading, false));
@@ -171,12 +227,16 @@ function answerCandidates(correct: string): string[] {
 export function strictAnswerMatch(answer: string, correct: string, opts: MatchOptions = {}): boolean {
   const answerForms = normalizedForms(answer, opts);
   const candidates = answerCandidates(correct);
-  // The Spanish article swap (el/la) is for Spanish answers only.
-  if (opts.eitherArticle && opts.lang !== 'hu') {
+  // The Spanish article swap (el/la) is for Spanish answers only (German articles are part of the word: der/die/das never swap).
+  if (opts.eitherArticle && opts.lang !== 'hu' && opts.lang !== 'de') {
     for (const c of [...candidates]) {
       const swapped = withSwappedArticle(c);
       if (swapped) candidates.push(swapped);
     }
+  }
+  // German: the Austrian/Swiss word counts for the standard headword (the reveal still shows the standard one).
+  if (opts.lang === 'de') {
+    for (const c of [...candidates]) candidates.push(...germanRegionalVariants(c));
   }
   return candidates.some((candidate) =>
     normalizedForms(candidate, opts).some((c) => {

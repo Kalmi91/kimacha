@@ -28,6 +28,13 @@ const FUNCTION_WORDS: Record<PcicTarget, ReadonlySet<string>> = {
     'vagy', 'vagyunk', 'vagytok', 'vannak', 'volt', 'itt', 'ott', 'meg', 'el', 'ki', 'be', 'fel', 'le', 'már', 'még',
     'nagyon', 'ez', 'az', 'ezt', 'azt',
   ]),
+  de: new Set([
+    'der', 'die', 'das', 'den', 'dem', 'des', 'ein', 'eine', 'einen', 'einem', 'einer', 'und', 'oder', 'aber', 'nicht',
+    'kein', 'keine', 'ich', 'du', 'er', 'sie', 'es', 'wir', 'ihr', 'mich', 'dich', 'ihn', 'uns', 'euch', 'mein', 'meine',
+    'dein', 'deine', 'sein', 'seine', 'ist', 'bin', 'bist', 'sind', 'seid', 'war', 'hat', 'habe', 'hast', 'haben', 'in',
+    'im', 'an', 'am', 'auf', 'zu', 'zum', 'zur', 'mit', 'von', 'vom', 'für', 'aus', 'bei', 'nach', 'hier', 'da', 'dort',
+    'sehr', 'auch', 'noch', 'schon', 'dies', 'diese',
+  ]),
 };
 
 const startOf = (e: SentenceEntry): string => (tileWords(e.target)[0] ?? '').toLowerCase();

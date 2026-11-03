@@ -1,0 +1,1065 @@
+{
+  "schema": 2,
+  "topic": "n-deklination",
+  "level": "B2",
+  "title": {
+    "en": "Weak masculine nouns (n-declension)",
+    "es": "Sustantivos masculinos débiles (declinación en -n)"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "A small group of masculine nouns takes -n or -en in every case except the nominative singular: der Student, den Studenten, dem Studenten, des Studenten. The plural ends in -n or -en as well. Most masculine nouns do not change at all (der Hund, den Hund), so you have to know this group. English and Spanish nouns never change by case, and in Hungarian the ending -t marks every accusative, but in German the accusative and dative of these nouns are marked on the noun itself, not only on the article.",
+        "es": "Un pequeño grupo de sustantivos masculinos toma -n o -en en todos los casos menos en el nominativo singular: der Student, den Studenten, dem Studenten, des Studenten. El plural también termina en -n o -en. La mayoría de los sustantivos masculinos no cambian en absoluto (der Hund, den Hund), así que hay que conocer este grupo. Los sustantivos del inglés y del español nunca cambian según el caso, y en húngaro la terminación -t marca todo acusativo, pero en alemán el acusativo y el dativo de estos sustantivos se marcan en el propio sustantivo, no solo en el artículo."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "n-deklination-formen",
+      "title": {
+        "en": "Four weak nouns in all cases",
+        "es": "Cuatro sustantivos débiles en todos los casos"
+      },
+      "header": [
+        {
+          "en": "Case",
+          "es": "Caso"
+        },
+        {
+          "en": "der Student",
+          "es": "der Student"
+        },
+        {
+          "en": "der Kollege",
+          "es": "der Kollege"
+        },
+        {
+          "en": "der Herr",
+          "es": "der Herr"
+        },
+        {
+          "en": "der Mensch",
+          "es": "der Mensch"
+        }
+      ],
+      "rows": [
+        [
+          "Nominativ",
+          "der Student",
+          "der Kollege",
+          "der Herr",
+          "der Mensch"
+        ],
+        [
+          "Akkusativ",
+          "den Studenten",
+          "den Kollegen",
+          "den Herrn",
+          "den Menschen"
+        ],
+        [
+          "Dativ",
+          "dem Studenten",
+          "dem Kollegen",
+          "dem Herrn",
+          "dem Menschen"
+        ],
+        [
+          "Genitiv",
+          "des Studenten",
+          "des Kollegen",
+          "des Herrn",
+          "des Menschen"
+        ],
+        [
+          "Plural",
+          "die Studenten",
+          "die Kollegen",
+          "die Herren",
+          "die Menschen"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "n-deklination-gemischt",
+      "title": {
+        "en": "Mixed nouns: -ns in the genitive",
+        "es": "Sustantivos mixtos: -ns en el genitivo"
+      },
+      "header": [
+        {
+          "en": "Case",
+          "es": "Caso"
+        },
+        {
+          "en": "der Name",
+          "es": "der Name"
+        },
+        {
+          "en": "der Buchstabe",
+          "es": "der Buchstabe"
+        },
+        {
+          "en": "das Herz",
+          "es": "das Herz"
+        }
+      ],
+      "rows": [
+        [
+          "Nominativ",
+          "der Name",
+          "der Buchstabe",
+          "das Herz"
+        ],
+        [
+          "Akkusativ",
+          "den Namen",
+          "den Buchstaben",
+          "das Herz"
+        ],
+        [
+          "Dativ",
+          "dem Namen",
+          "dem Buchstaben",
+          "dem Herzen"
+        ],
+        [
+          "Genitiv",
+          "des Namens",
+          "des Buchstabens",
+          "des Herzens"
+        ],
+        [
+          "Plural",
+          "die Namen",
+          "die Buchstaben",
+          "die Herzen"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Which nouns, which cases",
+        "es": "Qué sustantivos, qué casos"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "Typical members are masculine nouns for people and animals that end in -e (der Junge, der Kollege, der Kunde, der Affe) and foreign nouns for people on -ent, -ist, -ant (der Student, der Polizist, der Tourist, der Praktikant). A few common nouns belong too: der Herr, der Mensch, der Nachbar, der Bär.",
+            "es": "Son típicos los sustantivos masculinos de personas y animales que terminan en -e (der Junge, der Kollege, der Kunde, der Affe) y los sustantivos extranjeros de personas en -ent, -ist, -ant (der Student, der Polizist, der Tourist, der Praktikant). También pertenecen algunos sustantivos comunes: der Herr, der Mensch, der Nachbar, der Bär."
+          },
+          "examples": [
+            {
+              "es": "Ich kenne den Studenten.",
+              "tr": {
+                "en": "I know the student.",
+                "es": "Conozco al estudiante."
+              }
+            },
+            {
+              "es": "Wir helfen dem Kunden.",
+              "tr": {
+                "en": "We help the customer.",
+                "es": "Ayudamos al cliente."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "The accusative, dative and genitive singular and the whole plural take -n or -en. The genitive of these nouns is -en as well, not -s: das Auto des Nachbarn, not des Nachbars.",
+            "es": "El acusativo, el dativo y el genitivo singular y todo el plural toman -n o -en. El genitivo de estos sustantivos también es -en, no -s: das Auto des Nachbarn, no des Nachbars."
+          },
+          "examples": [
+            {
+              "es": "Das ist das Auto meines Nachbarn.",
+              "tr": {
+                "en": "That is my neighbor's car.",
+                "es": "Ese es el carro de mi vecino."
+              }
+            },
+            {
+              "es": "Die Touristen kommen aus vielen Ländern.",
+              "tr": {
+                "en": "The tourists come from many countries.",
+                "es": "Los turistas vienen de muchos países."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Special forms: der Herr takes only -n in the singular (den Herrn) but -en in the plural (die Herren). A few mixed nouns add -ns in the genitive (des Namens, des Buchstabens), and das Herz is the only neuter (dem Herzen, des Herzens).",
+            "es": "Formas especiales: der Herr toma solo -n en singular (den Herrn) pero -en en plural (die Herren). Algunos sustantivos mixtos añaden -ns en el genitivo (des Namens, des Buchstabens), y das Herz es el único neutro (dem Herzen, des Herzens)."
+          },
+          "examples": [
+            {
+              "es": "Ich möchte Herrn Müller sprechen.",
+              "tr": {
+                "en": "I would like to speak to Mr. Müller.",
+                "es": "Quisiera hablar con el señor Müller."
+              }
+            },
+            {
+              "es": "Ich kenne seinen Namen nicht.",
+              "tr": {
+                "en": "I do not know his name.",
+                "es": "No conozco su nombre."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "n-deklination-muster",
+      "title": {
+        "en": "How to recognize the group",
+        "es": "Cómo reconocer el grupo"
+      },
+      "header": [
+        {
+          "en": "Ending",
+          "es": "Terminación"
+        },
+        {
+          "en": "Examples",
+          "es": "Ejemplos"
+        }
+      ],
+      "rows": [
+        [
+          "-e",
+          "der Junge, der Kollege, der Kunde, der Affe"
+        ],
+        [
+          "-ent",
+          "der Student, der Präsident"
+        ],
+        [
+          "-ist",
+          "der Polizist, der Tourist"
+        ],
+        [
+          "-ant",
+          "der Praktikant"
+        ],
+        [
+          "others",
+          "der Herr, der Mensch, der Nachbar, der Bär"
+        ]
+      ],
+      "noTableDeck": true
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Weak noun or normal masculine noun?",
+        "es": "¿Sustantivo débil o masculino normal?"
+      },
+      "pairs": [
+        {
+          "a": "Ich sehe den Studenten.",
+          "b": "Ich sehe den Hund.",
+          "note": {
+            "en": "Most masculine nouns stay the same after den (den Hund, den Lehrer, den Tisch). Only the weak group adds -n or -en (den Studenten).",
+            "es": "La mayoría de los sustantivos masculinos no cambian después de den (den Hund, den Lehrer, den Tisch). Solo el grupo débil añade -n o -en (den Studenten)."
+          },
+          "examples": [
+            {
+              "es": "Wir sehen den Lehrer.",
+              "tr": {
+                "en": "We see the teacher.",
+                "es": "Vemos al maestro."
+              }
+            },
+            {
+              "es": "Wir sehen den Touristen.",
+              "tr": {
+                "en": "We see the tourist.",
+                "es": "Vemos al turista."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Wir danken dem Herrn.",
+          "b": "Wir danken den Herren.",
+          "note": {
+            "en": "Singular and plural of Herr differ in the oblique cases: dem Herrn is one man, den Herren are several. The article shows the number too.",
+            "es": "El singular y el plural de Herr se distinguen en los casos oblicuos: dem Herrn es un hombre, den Herren son varios. El artículo también muestra el número."
+          },
+          "examples": [
+            {
+              "es": "Ich helfe dem Herrn.",
+              "tr": {
+                "en": "I help the gentleman.",
+                "es": "Ayudo al señor."
+              }
+            },
+            {
+              "es": "Ich helfe den Herren.",
+              "tr": {
+                "en": "I help the gentlemen.",
+                "es": "Ayudo a los señores."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: leaving the noun unchanged after den, dem or des (*Ich kenne den Student); adding the normal genitive -s (*des Nachbars is wrong, des Nachbarn is right); and using -en for every masculine noun (den Hund, not *den Hunden). Learn the nouns with their accusative: der Student, -en. The nominative singular never changes, and a few mixed nouns such as der Name add -ns in the genitive.",
+        "es": "Trampas clásicas: dejar el sustantivo sin cambios después de den, dem o des (*Ich kenne den Student); añadir el genitivo normal -s (*des Nachbars es incorrecto, des Nachbarn es correcto); y usar -en para todos los sustantivos masculinos (den Hund, no *den Hunden). Aprende los sustantivos con su acusativo: der Student, -en. El nominativo singular nunca cambia, y unos pocos sustantivos mixtos como der Name añaden -ns en el genitivo."
+      }
+    }
+  ],
+  "speak": {
+    "en": "A small group of masculine nouns takes «-n» or «-en» in every case except the nominative singular. We say «der Student», but «Ich kenne den Studenten» and «Wir helfen dem Studenten». The genitive is «des Studenten», and the plural is «die Studenten». Typical members are people and animals ending in «-e», for example «der Junge» and «der Kollege», and foreign words on «-ist» and «-ent», for example «der Polizist». Remember «der Herr» with «den Herrn» and «die Herren», and «der Name» with «des Namens».",
+    "es": "Un pequeño grupo de sustantivos masculinos toma «-n» o «-en» en todos los casos menos en el nominativo singular. Decimos «der Student», pero «Ich kenne den Studenten» y «Wir helfen dem Studenten». El genitivo es «des Studenten», y el plural es «die Studenten». Son típicas las personas y los animales que terminan en «-e», por ejemplo «der Junge» y «der Kollege», y las palabras extranjeras en «-ist» y «-ent», por ejemplo «der Polizist». Recuerda «der Herr» con «den Herrn» y «die Herren», y «der Name» con «des Namens»."
+  },
+  "items": [
+    {
+      "id": "n-deklination-c01",
+      "sentence": "Ich kenne den ___ schon lange.",
+      "options": [
+        "Student",
+        "Studenten",
+        "Students"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Student belongs to the n-declension. In the accusative singular it takes -en: den Studenten.",
+        "es": "Student pertenece a la declinación en -n. En el acusativo singular toma -en: den Studenten."
+      },
+      "wrong": {
+        "Student": {
+          "en": "Student without an ending is only the nominative. As the object after den, the noun also needs -en.",
+          "es": "Student sin terminación es solo el nominativo. Como complemento después de den, el sustantivo también necesita -en."
+        },
+        "Students": {
+          "en": "The ending -s is not used for this noun in German (it is an English habit). The weak ending is -en.",
+          "es": "La terminación -s no se usa para este sustantivo en alemán (es un hábito del inglés). La terminación débil es -en."
+        }
+      },
+      "examples": [
+        "Wir fragen den Studenten.",
+        "Ich sehe den Studenten im Park."
+      ],
+      "tr": {
+        "en": "I have known the student for a long time.",
+        "es": "Conozco al estudiante desde hace mucho."
+      }
+    },
+    {
+      "id": "n-deklination-f01",
+      "kind": "form",
+      "verb": "der Student",
+      "person": "Akkusativ",
+      "answer": "den Studenten",
+      "accept": [
+        "Studenten"
+      ],
+      "table": "n-deklination-formen"
+    },
+    {
+      "id": "n-deklination-c02",
+      "sentence": "Wir helfen dem ___ bei der Arbeit.",
+      "options": [
+        "Kollegen",
+        "Kollege",
+        "Kollegens"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "helfen takes the dative. Kollege is a weak noun, so the dative singular ends in -n: dem Kollegen.",
+        "es": "helfen lleva dativo. Kollege es un sustantivo débil, así que el dativo singular termina en -n: dem Kollegen."
+      },
+      "wrong": {
+        "Kollege": {
+          "en": "Kollege is the nominative. After dem the dative needs the weak ending -n: Kollegen.",
+          "es": "Kollege es el nominativo. Después de dem el dativo necesita la terminación débil -n: Kollegen."
+        },
+        "Kollegens": {
+          "en": "Kollegens has the genitive-like -ns, which only a few mixed nouns take (des Namens). Kollege takes only -n.",
+          "es": "Kollegens tiene el -ns del genitivo, que solo toman unos pocos sustantivos mixtos (des Namens). Kollege toma solo -n."
+        }
+      },
+      "examples": [
+        "Ich schreibe dem Kollegen eine Nachricht.",
+        "Er dankt dem Kunden."
+      ],
+      "tr": {
+        "en": "We help the colleague with the work.",
+        "es": "Ayudamos al colega con el trabajo."
+      }
+    },
+    {
+      "id": "n-deklination-f02",
+      "kind": "form",
+      "verb": "der Kollege",
+      "person": "Dativ",
+      "answer": "dem Kollegen",
+      "accept": [
+        "Kollegen"
+      ],
+      "table": "n-deklination-formen"
+    },
+    {
+      "id": "n-deklination-c03",
+      "sentence": "Das ist das Auto meines ___.",
+      "options": [
+        "Nachbar",
+        "Nachbars",
+        "Nachbarn"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Nachbar is a weak noun. Its genitive singular ends in -n, not in the normal masculine -s: des Nachbarn.",
+        "es": "Nachbar es un sustantivo débil. Su genitivo singular termina en -n, no en el -s normal del masculino: des Nachbarn."
+      },
+      "wrong": {
+        "Nachbar": {
+          "en": "Nachbar without an ending is the nominative. The genitive after meines needs the ending -n.",
+          "es": "Nachbar sin terminación es el nominativo. El genitivo después de meines necesita la terminación -n."
+        },
+        "Nachbars": {
+          "en": "Nachbars follows the pattern of normal masculine nouns (des Lehrers). Weak nouns take -n or -en instead of -s.",
+          "es": "Nachbars sigue el patrón de los sustantivos masculinos normales (des Lehrers). Los sustantivos débiles toman -n o -en en lugar de -s."
+        }
+      },
+      "examples": [
+        "Das ist das Haus meines Kollegen.",
+        "Das ist das Fahrrad des Jungen."
+      ],
+      "tr": {
+        "en": "That is my neighbor's car.",
+        "es": "Ese es el carro de mi vecino."
+      }
+    },
+    {
+      "id": "n-deklination-f03",
+      "kind": "form",
+      "verb": "der Herr",
+      "person": "Akkusativ",
+      "answer": "den Herrn",
+      "accept": [
+        "Herrn"
+      ],
+      "table": "n-deklination-formen"
+    },
+    {
+      "id": "n-deklination-w01",
+      "kind": "why",
+      "es": "Ich kenne den Studenten.",
+      "target": "Studenten",
+      "tr": {
+        "en": "I know the student.",
+        "es": "Conozco al estudiante."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Plural: there is more than one student",
+            "es": "Plural: hay más de un estudiante"
+          },
+          "wrong": {
+            "en": "A plural would have the article die: Ich kenne die Studenten. The article den shows an accusative singular masculine.",
+            "es": "Un plural llevaría el artículo die: Ich kenne die Studenten. El artículo den muestra un acusativo singular masculino."
+          }
+        },
+        {
+          "text": {
+            "en": "n-declension: masculine nouns on -ent take -en in every case except the nominative singular",
+            "es": "declinación en -n: los sustantivos masculinos en -ent toman -en en todos los casos menos en el nominativo singular"
+          }
+        },
+        {
+          "text": {
+            "en": "Accusative: only the article changes, the noun stays the same",
+            "es": "Acusativo: solo cambia el artículo, el sustantivo se queda igual"
+          },
+          "wrong": {
+            "en": "That is true for most masculine nouns (den Hund). Student belongs to the weak group and takes -en as well.",
+            "es": "Eso es cierto para la mayoría de los sustantivos masculinos (den Hund). Student pertenece al grupo débil y toma también -en."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "n-deklination-c04",
+      "sentence": "Er fragt den ___ nach dem Weg.",
+      "options": [
+        "Polizist",
+        "Polizisten",
+        "Polizists"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Words on -ist are weak nouns. fragen takes the accusative, so the noun needs -en: den Polizisten.",
+        "es": "Las palabras en -ist son sustantivos débiles. fragen lleva acusativo, así que el sustantivo necesita -en: den Polizisten."
+      },
+      "wrong": {
+        "Polizist": {
+          "en": "Polizist without an ending is the nominative. As the object after den, the weak noun needs -en.",
+          "es": "Polizist sin terminación es el nominativo. Como complemento después de den, el sustantivo débil necesita -en."
+        },
+        "Polizists": {
+          "en": "The normal genitive ending -s does not apply here, and the accusative takes no -s at all. The weak ending is -en.",
+          "es": "La terminación normal del genitivo -s no se aplica aquí, y el acusativo no toma -s en absoluto. La terminación débil es -en."
+        }
+      },
+      "examples": [
+        "Der Mann fragt den Touristen.",
+        "Wir sehen den Polizisten."
+      ],
+      "tr": {
+        "en": "He asks the police officer for directions.",
+        "es": "Le pregunta al policía por el camino."
+      }
+    },
+    {
+      "id": "n-deklination-f04",
+      "kind": "form",
+      "verb": "der Mensch",
+      "person": "Genitiv",
+      "answer": "des Menschen",
+      "accept": [
+        "Menschen"
+      ],
+      "table": "n-deklination-formen"
+    },
+    {
+      "id": "n-deklination-c05",
+      "sentence": "Die ___ kommen aus vielen Ländern.",
+      "options": [
+        "Tourist",
+        "Touristens",
+        "Touristen"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The plural of Tourist ends in -en: die Touristen. The verb kommen is plural too.",
+        "es": "El plural de Tourist termina en -en: die Touristen. El verbo kommen también está en plural."
+      },
+      "wrong": {
+        "Tourist": {
+          "en": "Tourist is the singular. The verb kommen and the article die show a plural, so you need Touristen.",
+          "es": "Tourist es el singular. El verbo kommen y el artículo die muestran un plural, así que necesitas Touristen."
+        },
+        "Touristens": {
+          "en": "Touristens does not exist as a plural. The plural of weak nouns ends in -en, without an extra -s.",
+          "es": "Touristens no existe como plural. El plural de los sustantivos débiles termina en -en, sin una -s adicional."
+        }
+      },
+      "examples": [
+        "Die Studenten lernen Deutsch.",
+        "Die Kollegen arbeiten viel."
+      ],
+      "tr": {
+        "en": "The tourists come from many countries.",
+        "es": "Los turistas vienen de muchos países."
+      }
+    },
+    {
+      "id": "n-deklination-f05",
+      "kind": "form",
+      "verb": "der Student",
+      "person": "Plural",
+      "answer": "die Studenten",
+      "accept": [
+        "Studenten"
+      ],
+      "table": "n-deklination-formen"
+    },
+    {
+      "id": "n-deklination-c06",
+      "sentence": "Ich möchte ___ Müller sprechen.",
+      "options": [
+        "Herr",
+        "Herrn",
+        "Herren"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "sprechen with a person takes the accusative here. Herr takes only -n in the singular: Herrn Müller.",
+        "es": "sprechen con una persona lleva aquí el acusativo. Herr toma solo -n en singular: Herrn Müller."
+      },
+      "wrong": {
+        "Herr": {
+          "en": "Herr is the nominative (Herr Müller kommt). As the object of möchte sprechen, the noun needs -n.",
+          "es": "Herr es el nominativo (Herr Müller kommt). Como complemento de möchte sprechen, el sustantivo necesita -n."
+        },
+        "Herren": {
+          "en": "Herren is the plural. Here we speak to one man, Mr. Müller, so the singular Herrn is needed.",
+          "es": "Herren es el plural. Aquí hablamos con un hombre, el señor Müller, así que se necesita el singular Herrn."
+        }
+      },
+      "examples": [
+        "Ich kenne Herrn Schmidt.",
+        "Wir sehen Herrn Weber."
+      ],
+      "tr": {
+        "en": "I would like to speak to Mr. Müller.",
+        "es": "Quisiera hablar con el señor Müller."
+      }
+    },
+    {
+      "id": "n-deklination-f06",
+      "kind": "form",
+      "verb": "der Name",
+      "person": "Genitiv",
+      "answer": "des Namens",
+      "accept": [
+        "Namens"
+      ],
+      "table": "n-deklination-gemischt"
+    },
+    {
+      "id": "n-deklination-w02",
+      "kind": "why",
+      "es": "Wir helfen dem Herrn.",
+      "target": "Herrn",
+      "tr": {
+        "en": "We help the gentleman.",
+        "es": "Ayudamos al señor."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Herren: the plural form",
+            "es": "Herren: la forma del plural"
+          },
+          "wrong": {
+            "en": "Herren is the plural (den Herren). The article dem shows a singular dative, so the noun is Herrn.",
+            "es": "Herren es el plural (den Herren). El artículo dem muestra un dativo singular, así que el sustantivo es Herrn."
+          }
+        },
+        {
+          "text": {
+            "en": "Herr: masculine nouns stay the same in the dative",
+            "es": "Herr: los sustantivos masculinos no cambian en el dativo"
+          },
+          "wrong": {
+            "en": "Most do, but Herr belongs to the n-declension and takes an ending in the dative singular.",
+            "es": "La mayoría sí, pero Herr pertenece a la declinación en -n y toma una terminación en el dativo singular."
+          }
+        },
+        {
+          "text": {
+            "en": "n-declension of Herr: a special case with only -n in the singular",
+            "es": "declinación en -n de Herr: un caso especial con solo -n en singular"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "n-deklination-c07",
+      "sentence": "Er hilft jedem ___.",
+      "options": [
+        "Menschen",
+        "Mensch",
+        "Menschens"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "helfen takes the dative, and Mensch is a weak noun. The dative singular ends in -en: jedem Menschen.",
+        "es": "helfen lleva dativo, y Mensch es un sustantivo débil. El dativo singular termina en -en: jedem Menschen."
+      },
+      "wrong": {
+        "Mensch": {
+          "en": "Mensch without an ending is the nominative. After jedem (dative) the noun needs -en.",
+          "es": "Mensch sin terminación es el nominativo. Después de jedem (dativo) el sustantivo necesita -en."
+        },
+        "Menschens": {
+          "en": "Menschens is not a form of this noun. Only the genitive of a few mixed nouns ends in -ns, not Mensch.",
+          "es": "Menschens no es una forma de este sustantivo. Solo el genitivo de unos pocos sustantivos mixtos termina en -ns, no Mensch."
+        }
+      },
+      "examples": [
+        "Sie hilft dem Menschen.",
+        "Er dankt jedem Kunden."
+      ],
+      "tr": {
+        "en": "He helps every person.",
+        "es": "Él ayuda a todas las personas."
+      }
+    },
+    {
+      "id": "n-deklination-f07",
+      "kind": "form",
+      "verb": "der Herr",
+      "person": "Plural",
+      "answer": "die Herren",
+      "accept": [
+        "Herren"
+      ],
+      "table": "n-deklination-formen"
+    },
+    {
+      "id": "n-deklination-c08",
+      "sentence": "Die Mutter liebt ihren ___.",
+      "options": [
+        "Junge",
+        "Jungen",
+        "Jungem"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Junge is a weak noun. As an accusative object after ihren, it takes -n: ihren Jungen.",
+        "es": "Junge es un sustantivo débil. Como complemento de acusativo después de ihren, toma -n: ihren Jungen."
+      },
+      "wrong": {
+        "Junge": {
+          "en": "Junge without -n is the nominative. As the object of liebt, the weak noun needs -n.",
+          "es": "Junge sin -n es el nominativo. Como complemento de liebt, el sustantivo débil necesita -n."
+        },
+        "Jungem": {
+          "en": "Nouns do not take adjective-like endings such as -em. Weak nouns have -n or -en in all oblique cases.",
+          "es": "Los sustantivos no toman terminaciones como las de los adjetivos, por ejemplo -em. Los sustantivos débiles tienen -n o -en en todos los casos oblicuos."
+        }
+      },
+      "examples": [
+        "Der Vater sieht den Jungen.",
+        "Sie fragt den Jungen."
+      ],
+      "tr": {
+        "en": "The mother loves her boy.",
+        "es": "La madre quiere a su hijo."
+      }
+    },
+    {
+      "id": "n-deklination-f08",
+      "kind": "form",
+      "verb": "der Kollege",
+      "person": "Genitiv",
+      "answer": "des Kollegen",
+      "accept": [
+        "Kollegen"
+      ],
+      "table": "n-deklination-formen"
+    },
+    {
+      "id": "n-deklination-c09",
+      "sentence": "Ich kenne seinen ___ nicht.",
+      "options": [
+        "Name",
+        "Namen",
+        "Namens"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Name is a mixed noun. In the accusative it takes -n: seinen Namen. The -ns appears only in the genitive.",
+        "es": "Name es un sustantivo mixto. En el acusativo toma -n: seinen Namen. La terminación -ns aparece solo en el genitivo."
+      },
+      "wrong": {
+        "Name": {
+          "en": "Name without an ending is the nominative. As the object of kenne, it needs the weak ending -n.",
+          "es": "Name sin terminación es el nominativo. Como complemento de kenne, necesita la terminación débil -n."
+        },
+        "Namens": {
+          "en": "Namens is the genitive (des Namens). Here the name is the object of kenne, so it is an accusative: Namen.",
+          "es": "Namens es el genitivo (des Namens). Aquí el nombre es el complemento de kenne, así que es un acusativo: Namen."
+        }
+      },
+      "examples": [
+        "Wie ist sein Name?",
+        "Ich vergesse deinen Namen nie."
+      ],
+      "tr": {
+        "en": "I do not know his name.",
+        "es": "No conozco su nombre."
+      }
+    },
+    {
+      "id": "n-deklination-f09",
+      "kind": "form",
+      "verb": "das Herz",
+      "person": "Dativ",
+      "answer": "dem Herzen",
+      "accept": [
+        "Herzen"
+      ],
+      "table": "n-deklination-gemischt"
+    },
+    {
+      "id": "n-deklination-w03",
+      "kind": "why",
+      "es": "Das ist das Auto meines Nachbarn.",
+      "target": "Nachbarn",
+      "tr": {
+        "en": "That is my neighbor's car.",
+        "es": "Ese es el carro de mi vecino."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "genitive singular of a weak noun: -n instead of -s",
+            "es": "genitivo singular de un sustantivo débil: -n en lugar de -s"
+          }
+        },
+        {
+          "text": {
+            "en": "Normal masculine genitive: -s, as in des Lehrers",
+            "es": "genitivo masculino normal: -s, como en des Lehrers"
+          },
+          "wrong": {
+            "en": "Normal masculine nouns do take -s, but Nachbar is a weak noun. It takes -n in the genitive: des Nachbarn.",
+            "es": "Los sustantivos masculinos normales sí toman -s, pero Nachbar es un sustantivo débil. Toma -n en el genitivo: des Nachbarn."
+          }
+        },
+        {
+          "text": {
+            "en": "Plural genitive: several neighbors",
+            "es": "genitivo plural: varios vecinos"
+          },
+          "wrong": {
+            "en": "The article meines shows a singular. A plural genitive would be der Nachbarn with the article der.",
+            "es": "El artículo meines muestra un singular. Un genitivo plural sería der Nachbarn con el artículo der."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "n-deklination-c10",
+      "sentence": "Ich kenne die Bedeutung deines ___ nicht.",
+      "options": [
+        "Namens",
+        "Namen",
+        "Names"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The genitive of Name is des Namens: deines Namens. This noun adds -ns in the genitive.",
+        "es": "El genitivo de Name es des Namens: deines Namens. Este sustantivo añade -ns en el genitivo."
+      },
+      "wrong": {
+        "Namen": {
+          "en": "Namen is the accusative, dative and plural form. The genitive singular needs the extra -s: Namens.",
+          "es": "Namen es la forma del acusativo, del dativo y del plural. El genitivo singular necesita la -s adicional: Namens."
+        },
+        "Names": {
+          "en": "Names would follow the normal masculine genitive (des Hundes). But Name is a mixed noun and has Namens.",
+          "es": "Names seguiría el genitivo masculino normal (des Hundes). Pero Name es un sustantivo mixto y tiene Namens."
+        }
+      },
+      "examples": [
+        "Ich kenne die Bedeutung des Buchstabens nicht.",
+        "Das ist der Klang seines Namens."
+      ],
+      "tr": {
+        "en": "I do not know the meaning of your name.",
+        "es": "No conozco el significado de tu nombre."
+      }
+    },
+    {
+      "id": "n-deklination-f10",
+      "kind": "form",
+      "verb": "der Mensch",
+      "person": "Dativ",
+      "answer": "dem Menschen",
+      "accept": [
+        "Menschen"
+      ],
+      "table": "n-deklination-formen"
+    },
+    {
+      "id": "n-deklination-c11",
+      "sentence": "Im Zoo sehen wir den ___.",
+      "options": [
+        "Bär",
+        "Bärs",
+        "Bären"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Bär is a weak noun for an animal. The accusative takes -en: den Bären.",
+        "es": "Bär es un sustantivo débil de un animal. El acusativo toma -en: den Bären."
+      },
+      "wrong": {
+        "Bär": {
+          "en": "Bär is the nominative. As an object after den, the weak noun needs -en.",
+          "es": "Bär es el nominativo. Como complemento después de den, el sustantivo débil necesita -en."
+        },
+        "Bärs": {
+          "en": "Bärs is not a form of this noun. Weak nouns use -en, not -s, in the oblique cases.",
+          "es": "Bärs no es una forma de este sustantivo. Los sustantivos débiles usan -en, no -s, en los casos oblicuos."
+        }
+      },
+      "examples": [
+        "Der Junge sieht den Löwen.",
+        "Wir sehen den Affen."
+      ],
+      "tr": {
+        "en": "At the zoo we see the bear.",
+        "es": "En el zoológico vemos al oso."
+      }
+    },
+    {
+      "id": "n-deklination-f11",
+      "kind": "form",
+      "verb": "der Buchstabe",
+      "person": "Genitiv",
+      "answer": "des Buchstabens",
+      "accept": [
+        "Buchstabens"
+      ],
+      "table": "n-deklination-gemischt"
+    },
+    {
+      "id": "n-deklination-c12",
+      "sentence": "Ich frage den ___ nach dem Preis.",
+      "options": [
+        "Verkäufers",
+        "Verkäufern",
+        "Verkäufer"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Verkäufer is a normal masculine noun, not a weak one. It stays the same in the accusative: den Verkäufer.",
+        "es": "Verkäufer es un sustantivo masculino normal, no uno débil. Se queda igual en el acusativo: den Verkäufer."
+      },
+      "wrong": {
+        "Verkäufers": {
+          "en": "Verkäufers is the genitive (des Verkäufers). The question asks the seller, so the noun is an accusative object.",
+          "es": "Verkäufers es el genitivo (des Verkäufers). La pregunta se dirige al vendedor, así que el sustantivo es un complemento de acusativo."
+        },
+        "Verkäufern": {
+          "en": "Verkäufern is the dative plural. Here we ask one seller, and nouns on -er are not weak nouns.",
+          "es": "Verkäufern es el dativo plural. Aquí le preguntamos a un vendedor, y los sustantivos en -er no son sustantivos débiles."
+        }
+      },
+      "examples": [
+        "Wir fragen den Lehrer.",
+        "Ich kenne den Mann."
+      ],
+      "tr": {
+        "en": "I ask the salesperson about the price.",
+        "es": "Le pregunto al vendedor por el precio."
+      }
+    },
+    {
+      "id": "n-deklination-f12",
+      "kind": "form",
+      "verb": "der Name",
+      "person": "Akkusativ",
+      "answer": "den Namen",
+      "accept": [
+        "Namen"
+      ],
+      "table": "n-deklination-gemischt"
+    },
+    {
+      "id": "n-deklination-c13",
+      "sentence": "Wir sehen den ___ im Park.",
+      "options": [
+        "Hund",
+        "Hunden",
+        "Hunds"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Hund is not a weak noun. Most masculine nouns stay the same in the accusative; only the article changes: den Hund.",
+        "es": "Hund no es un sustantivo débil. La mayoría de los sustantivos masculinos se quedan igual en el acusativo; solo cambia el artículo: den Hund."
+      },
+      "wrong": {
+        "Hunden": {
+          "en": "Hunden is the dative plural (mit den Hunden). Here the dog is one animal and the object of sehen.",
+          "es": "Hunden es el dativo plural (mit den Hunden). Aquí el perro es un animal y el complemento de sehen."
+        },
+        "Hunds": {
+          "en": "Hunds is a rare variant of the genitive. An accusative object does not take any ending.",
+          "es": "Hunds es una variante rara del genitivo. Un complemento de acusativo no toma ninguna terminación."
+        }
+      },
+      "examples": [
+        "Ich sehe den Tisch.",
+        "Er hat den Hund gern."
+      ],
+      "tr": {
+        "en": "We see the dog in the park.",
+        "es": "Vemos al perro en el parque."
+      }
+    },
+    {
+      "id": "n-deklination-c14",
+      "sentence": "Ich danke dir von ganzem ___.",
+      "options": [
+        "Herzen",
+        "Herz",
+        "Herzens"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Herz is the only neuter weak noun. After von (dative) it takes -en: von ganzem Herzen.",
+        "es": "Herz es el único sustantivo neutro débil. Después de von (dativo) toma -en: von ganzem Herzen."
+      },
+      "wrong": {
+        "Herz": {
+          "en": "Herz is the nominative and accusative. After von, the dative needs the ending -en.",
+          "es": "Herz es el nominativo y el acusativo. Después de von, el dativo necesita la terminación -en."
+        },
+        "Herzens": {
+          "en": "Herzens is the genitive (des Herzens). After the preposition von you need the dative: Herzen.",
+          "es": "Herzens es el genitivo (des Herzens). Después de la preposición von necesitas el dativo: Herzen."
+        }
+      },
+      "examples": [
+        "Sie lacht von Herzen.",
+        "Er hat ein gutes Herz."
+      ],
+      "tr": {
+        "en": "I thank you from the bottom of my heart.",
+        "es": "Te agradezco de todo corazón."
+      }
+    },
+    {
+      "id": "n-deklination-w04",
+      "kind": "why",
+      "es": "Ich kenne die Bedeutung deines Namens nicht.",
+      "target": "Namens",
+      "tr": {
+        "en": "I do not know the meaning of your name.",
+        "es": "No conozco el significado de tu nombre."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Weak noun like der Student: genitive -en",
+            "es": "sustantivo débil como der Student: genitivo -en"
+          },
+          "wrong": {
+            "en": "Name belongs to a small mixed group. In the genitive it takes -ns, not only -n: des Namens.",
+            "es": "Name pertenece a un pequeño grupo mixto. En el genitivo toma -ns, no solo -n: des Namens."
+          }
+        },
+        {
+          "text": {
+            "en": "Normal masculine noun: genitive -s, as in des Names",
+            "es": "sustantivo masculino normal: genitivo -s, como en des Names"
+          },
+          "wrong": {
+            "en": "The form des Names is wrong. The noun already ends in -e, and the mixed group uses the ending -ns.",
+            "es": "La forma des Names es incorrecta. El sustantivo ya termina en -e, y el grupo mixto usa la terminación -ns."
+          }
+        },
+        {
+          "text": {
+            "en": "mixed noun: the genitive singular ends in -ns",
+            "es": "sustantivo mixto: el genitivo singular termina en -ns"
+          }
+        }
+      ],
+      "correctIndex": 2
+    }
+  ]
+}

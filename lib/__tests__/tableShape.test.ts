@@ -127,5 +127,8 @@ describe('personGloss', () => {
     expect(personGloss('Tú', 'en')).toBe('you');
     expect(personGloss('ellos/ellas', 'hu')).toBe('ők');
     expect(personGloss('no person', 'hu')).toBe('');
+    expect(personGloss('yo', 'de')).toBe('ich');
+    expect(personGloss('usted', 'de')).toBe('Sie (formell)');
+    expect(personGloss('no person', 'de')).toBe('');
   });
 });

@@ -1,0 +1,1016 @@
+{
+  "schema": 2,
+  "topic": "passiversatz-zustandspassiv",
+  "level": "B2",
+  "title": {
+    "en": "Alternatives to the passive and the state passive",
+    "es": "Alternativas a la pasiva y la pasiva de estado"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "The state passive (Zustandspassiv) is formed with sein + Partizip II and describes a result: Das Fenster ist geöffnet means the window is open now. The action passive with werden says that something is happening: Das Fenster wird geöffnet. German also has several ways to express a passive meaning without werden: man + active verb, sich lassen + infinitive, sein + zu + infinitive, and adjectives on -bar. They are common in written language, instructions and reports. English it is closed and Spanish está cerrada work like the state passive, and Hungarian says nyitva van or ki van töltve.",
+        "es": "La pasiva de estado (Zustandspassiv) se forma con sein + Partizip II y describe un resultado: Das Fenster ist geöffnet significa que la ventana está abierta ahora. La pasiva de acción con werden dice que algo está ocurriendo: Das Fenster wird geöffnet. El alemán también tiene varias formas de expresar un sentido pasivo sin werden: man + verbo activo, sich lassen + infinitivo, sein + zu + infinitivo y adjetivos en -bar. Son comunes en la lengua escrita, en instrucciones y en informes. El inglés it is closed y el español está cerrada funcionan como la pasiva de estado, y el húngaro dice nyitva van o ki van töltve."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "zustand-vorgang",
+      "title": {
+        "en": "Action or state",
+        "es": "Acción o estado"
+      },
+      "header": [
+        {
+          "en": "Subject / verb",
+          "es": "Sujeto / verbo"
+        },
+        {
+          "en": "Vorgang (werden)",
+          "es": "Vorgang (werden)"
+        },
+        {
+          "en": "Zustand (sein)",
+          "es": "Zustand (sein)"
+        }
+      ],
+      "rows": [
+        [
+          "Fenster / öffnen",
+          "wird geöffnet",
+          "ist geöffnet"
+        ],
+        [
+          "Tür / schließen",
+          "wird geschlossen",
+          "ist geschlossen"
+        ],
+        [
+          "Essen / kochen",
+          "wird gekocht",
+          "ist gekocht"
+        ],
+        [
+          "Zimmer / reinigen",
+          "wird gereinigt",
+          "ist gereinigt"
+        ],
+        [
+          "Brief / schreiben",
+          "wird geschrieben",
+          "ist geschrieben"
+        ],
+        [
+          "Auto / reparieren",
+          "wird repariert",
+          "ist repariert"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "bar-adjektive",
+      "title": {
+        "en": "Adjectives on -bar",
+        "es": "Adjetivos en -bar"
+      },
+      "header": [
+        {
+          "en": "Verb",
+          "es": "Verbo"
+        },
+        {
+          "en": "Adjektiv auf -bar",
+          "es": "Adjektiv auf -bar"
+        }
+      ],
+      "rows": [
+        [
+          "lösen",
+          "lösbar"
+        ],
+        [
+          "erreichen",
+          "erreichbar"
+        ],
+        [
+          "essen",
+          "essbar"
+        ],
+        [
+          "trinken",
+          "trinkbar"
+        ],
+        [
+          "waschen",
+          "waschbar"
+        ],
+        [
+          "lesen",
+          "lesbar"
+        ],
+        [
+          "bezahlen",
+          "bezahlbar"
+        ],
+        [
+          "machen",
+          "machbar"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "passiv-varianten",
+      "title": {
+        "en": "Five ways to say the same",
+        "es": "Cinco formas de decir lo mismo"
+      },
+      "header": [
+        {
+          "en": "Variant",
+          "es": "Variante"
+        },
+        {
+          "en": "Example",
+          "es": "Ejemplo"
+        }
+      ],
+      "rows": [
+        [
+          "Passiv mit können",
+          "Das Problem kann gelöst werden."
+        ],
+        [
+          "man + Aktiv",
+          "Man kann das Problem lösen."
+        ],
+        [
+          "sich lassen",
+          "Das Problem lässt sich lösen."
+        ],
+        [
+          "sein + zu",
+          "Das Problem ist zu lösen."
+        ],
+        [
+          "-bar",
+          "Das Problem ist lösbar."
+        ]
+      ],
+      "noTableDeck": true
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "State or action: ist or wird?",
+        "es": "Estado o acción: ¿ist o wird?"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "sein + participle: the result is there, the action is over. werden + participle: the action is in progress. Compare: ist geöffnet (it is open) and wird geöffnet (someone is opening it).",
+            "es": "sein + participio: el resultado está ahí, la acción terminó. werden + participio: la acción está en curso. Compara: ist geöffnet (está abierto) y wird geöffnet (alguien lo está abriendo)."
+          },
+          "examples": [
+            {
+              "es": "Das Geschäft ist geöffnet, wir können einkaufen.",
+              "tr": {
+                "en": "The shop is open, we can shop.",
+                "es": "La tienda está abierta, podemos comprar."
+              }
+            },
+            {
+              "es": "Das Fenster wird gerade geöffnet.",
+              "tr": {
+                "en": "The window is being opened right now.",
+                "es": "La ventana se está abriendo ahora mismo."
+              }
+            },
+            {
+              "es": "Das Essen wird gekocht, es dauert noch zehn Minuten.",
+              "tr": {
+                "en": "The food is being cooked, it will take ten more minutes.",
+                "es": "La comida se está cocinando, tarda diez minutos más."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "The contrast set of one verb: ist gebaut (state), wird gebaut (process), wurde gebaut (past process), ist gebaut worden (it has happened).",
+            "es": "El juego de contrastes de un verbo: ist gebaut (estado), wird gebaut (proceso), wurde gebaut (proceso pasado), ist gebaut worden (ya ocurrió)."
+          },
+          "examples": [
+            {
+              "es": "Das Haus ist gebaut. Jetzt können wir dort wohnen.",
+              "tr": {
+                "en": "The house is built. Now we can live there.",
+                "es": "La casa está construida. Ahora podemos vivir allí."
+              }
+            },
+            {
+              "es": "Das Haus wird gerade gebaut.",
+              "tr": {
+                "en": "The house is being built right now.",
+                "es": "La casa se está construyendo ahora mismo."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Other ways to avoid the passive",
+        "es": "Otras formas de evitar la pasiva"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "man + active verb: the doer is general. sich lassen + infinitive: it can be done. sein + zu + infinitive: it can or must be done. Adjectives on -bar: it can be done.",
+            "es": "man + verbo activo: el agente es general. sich lassen + infinitivo: se puede hacer. sein + zu + infinitivo: se puede o se debe hacer. Adjetivos en -bar: se puede hacer."
+          },
+          "examples": [
+            {
+              "es": "Hier spricht man Deutsch.",
+              "tr": {
+                "en": "German is spoken here.",
+                "es": "Aquí se habla alemán."
+              }
+            },
+            {
+              "es": "Das Problem lässt sich leicht lösen.",
+              "tr": {
+                "en": "The problem can be solved easily.",
+                "es": "El problema se puede resolver fácilmente."
+              }
+            },
+            {
+              "es": "Die Rechnung ist bis Freitag zu bezahlen.",
+              "tr": {
+                "en": "The bill must be paid by Friday.",
+                "es": "La factura debe pagarse antes del viernes."
+              }
+            },
+            {
+              "es": "Der Text ist kaum lesbar.",
+              "tr": {
+                "en": "The text is hardly legible.",
+                "es": "El texto apenas es legible."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "sich lassen or sein + zu?",
+        "es": "¿sich lassen o sein + zu?"
+      },
+      "pairs": [
+        {
+          "a": "Das Problem lässt sich lösen.",
+          "b": "Das Problem ist zu lösen.",
+          "note": {
+            "en": "sich lassen says that something can be done. sein + zu can mean can be done or must be done, and the meaning depends on the context. A negative form (ist nicht zu lösen) means cannot be solved.",
+            "es": "sich lassen dice que algo puede hacerse. sein + zu puede significar puede hacerse o debe hacerse, y el significado depende del contexto. Una forma negativa (ist nicht zu lösen) significa no puede resolverse."
+          },
+          "examples": [
+            {
+              "es": "Das Fenster lässt sich nicht öffnen.",
+              "tr": {
+                "en": "The window cannot be opened.",
+                "es": "La ventana no se puede abrir."
+              }
+            },
+            {
+              "es": "Die Rechnung ist sofort zu bezahlen.",
+              "tr": {
+                "en": "The bill must be paid at once.",
+                "es": "La factura debe pagarse de inmediato."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: ist geöffnet is a state, not the action (the action is wird geöffnet). Do not mix up the state passive with the Perfekt of the action passive: ist geöffnet (state) is not the same as ist geöffnet worden (it has been opened). With sich lassen the verb stays in the infinitive: Das lässt sich lösen, not Das lässt sich gelöst. With sein + zu the zu comes before the infinitive: Das ist zu lösen. -bar adjectives are made from a verb stem: lösbar, erreichbar, not lösenbar. Use man only when the doer is general.",
+        "es": "Trampas clásicas: ist geöffnet es un estado, no la acción (la acción es wird geöffnet). No confundas la pasiva de estado con el Perfekt de la pasiva de acción: ist geöffnet (estado) no es lo mismo que ist geöffnet worden (se ha abierto). Con sich lassen el verbo se queda en infinitivo: Das lässt sich lösen, no Das lässt sich gelöst. Con sein + zu el zu va antes del infinitivo: Das ist zu lösen. Los adjetivos en -bar se hacen de una raíz verbal: lösbar, erreichbar, no lösenbar. Usa man solo cuando el agente es general."
+      }
+    }
+  ],
+  "speak": {
+    "en": "The state passive is built with «sein» and the participle and describes a result: «Das Fenster ist geöffnet.» The action passive uses «werden»: «Das Fenster wird geöffnet.» There are alternatives to the passive. With «man»: «Hier spricht man Deutsch.» With «sich lassen»: «Das Problem lässt sich lösen.» With «sein» and «zu»: «Die Rechnung ist bis Freitag zu bezahlen.» And with adjectives on «bar»: «Der Text ist kaum lesbar.»",
+    "es": "La pasiva de estado se forma con «sein» y el participio y describe un resultado: «Das Fenster ist geöffnet.» La pasiva de acción usa «werden»: «Das Fenster wird geöffnet.» Hay alternativas a la pasiva. Con «man»: «Hier spricht man Deutsch.» Con «sich lassen»: «Das Problem lässt sich lösen.» Con «sein» y «zu»: «Die Rechnung ist bis Freitag zu bezahlen.» Y con adjetivos en «bar»: «Der Text ist kaum lesbar.»"
+  },
+  "items": [
+    {
+      "id": "passiversatz-zustandspassiv-c01",
+      "sentence": "Das Geschäft ___ geöffnet, wir können einkaufen.",
+      "options": [
+        "wird",
+        "ist",
+        "wurde"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The shop is open now, a result, so the state passive is used: ist geöffnet.",
+        "es": "La tienda está abierta ahora, un resultado, así que se usa la pasiva de estado: ist geöffnet."
+      },
+      "wrong": {
+        "wird": {
+          "en": "wird geöffnet would mean that someone is opening the shop at this moment. But we can already shop.",
+          "es": "wird geöffnet significaría que alguien está abriendo la tienda en este momento. Pero ya podemos comprar."
+        },
+        "wurde": {
+          "en": "wurde geöffnet describes an opening in the past and not the present state that the sentence needs.",
+          "es": "wurde geöffnet describe una apertura en el pasado y no el estado presente que necesita la oración."
+        }
+      },
+      "examples": [
+        "Die Tür ist geöffnet, ihr könnt kommen.",
+        "Das Restaurant ist geschlossen."
+      ],
+      "tr": {
+        "en": "The shop is open, we can shop.",
+        "es": "La tienda está abierta, podemos comprar."
+      }
+    },
+    {
+      "id": "passiversatz-zustandspassiv-f01",
+      "kind": "form",
+      "verb": "Vorgang (werden)",
+      "person": "Fenster / öffnen",
+      "answer": "wird geöffnet",
+      "table": "zustand-vorgang"
+    },
+    {
+      "id": "passiversatz-zustandspassiv-c02",
+      "sentence": "Das Fenster ___ gerade geöffnet.",
+      "options": [
+        "ist",
+        "war",
+        "wird"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "gerade shows that the action is happening now, so the action passive is used: wird geöffnet.",
+        "es": "gerade muestra que la acción ocurre ahora, así que se usa la pasiva de acción: wird geöffnet."
+      },
+      "wrong": {
+        "ist": {
+          "en": "ist geöffnet describes the finished state. With gerade the process is still going on.",
+          "es": "ist geöffnet describe el estado terminado. Con gerade el proceso todavía continúa."
+        },
+        "war": {
+          "en": "war geöffnet looks back at a state in the past. It does not fit gerade, which refers to now.",
+          "es": "war geöffnet mira hacia atrás a un estado del pasado. No encaja con gerade, que se refiere a ahora."
+        }
+      },
+      "examples": [
+        "Der Brief wird gerade geschrieben.",
+        "Das Zimmer wird gerade gereinigt."
+      ],
+      "tr": {
+        "en": "The window is being opened right now.",
+        "es": "La ventana se está abriendo ahora mismo."
+      }
+    },
+    {
+      "id": "passiversatz-zustandspassiv-f02",
+      "kind": "form",
+      "verb": "Adjektiv auf -bar",
+      "person": "lösen",
+      "answer": "lösbar",
+      "table": "bar-adjektive"
+    },
+    {
+      "id": "passiversatz-zustandspassiv-c03",
+      "sentence": "Die Tür ___ geschlossen. Wir kommen nicht ins Haus.",
+      "options": [
+        "ist",
+        "wird",
+        "wurde"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The door is locked now, and the result stops us: the state passive ist geschlossen.",
+        "es": "La puerta está cerrada ahora, y el resultado nos detiene: la pasiva de estado ist geschlossen."
+      },
+      "wrong": {
+        "wird": {
+          "en": "wird geschlossen means the door is being closed at this moment, which is an action, not the reason.",
+          "es": "wird geschlossen significa que la puerta se está cerrando en este momento, lo que es una acción, no la razón."
+        },
+        "wurde": {
+          "en": "wurde geschlossen names a closing in the past. The sentence talks about the situation now.",
+          "es": "wurde geschlossen nombra un cierre en el pasado. La oración habla de la situación ahora."
+        }
+      },
+      "examples": [
+        "Das Fenster ist geschlossen.",
+        "Die Bank ist geschlossen."
+      ],
+      "tr": {
+        "en": "The door is closed. We cannot get in.",
+        "es": "La puerta está cerrada. No podemos entrar."
+      }
+    },
+    {
+      "id": "passiversatz-zustandspassiv-f03",
+      "kind": "form",
+      "verb": "Zustand (sein)",
+      "person": "Fenster / öffnen",
+      "answer": "ist geöffnet",
+      "table": "zustand-vorgang"
+    },
+    {
+      "id": "passiversatz-zustandspassiv-w01",
+      "kind": "why",
+      "es": "Das Fenster ist geöffnet.",
+      "target": "ist",
+      "tr": {
+        "en": "The window is open.",
+        "es": "La ventana está abierta."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "ist + participle is the state passive: it describes the result, not an action",
+            "es": "ist + participio es la pasiva de estado: describe el resultado, no una acción"
+          }
+        },
+        {
+          "text": {
+            "en": "ist geöffnet is the Perfekt of an action: someone has opened it",
+            "es": "ist geöffnet es el Perfekt de una acción: alguien la ha abierto"
+          },
+          "wrong": {
+            "en": "The Perfekt of the action passive needs worden: ist geöffnet worden. Without worden the form describes a state.",
+            "es": "El Perfekt de la pasiva de acción necesita worden: ist geöffnet worden. Sin worden la forma describe un estado."
+          }
+        },
+        {
+          "text": {
+            "en": "ist is a mistake, because the passive always needs werden",
+            "es": "ist es un error, porque la pasiva siempre necesita werden"
+          },
+          "wrong": {
+            "en": "The action passive uses werden, but the state passive correctly uses sein. Both exist and mean different things.",
+            "es": "La pasiva de acción usa werden, pero la pasiva de estado usa correctamente sein. Las dos existen y significan cosas distintas."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "passiversatz-zustandspassiv-c04",
+      "sentence": "Das Essen ___ gekocht. Es dauert noch zehn Minuten.",
+      "options": [
+        "ist",
+        "wird",
+        "war"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "It takes ten more minutes, so the cooking is still going on: the action passive wird gekocht.",
+        "es": "Tarda diez minutos más, así que la cocción continúa: la pasiva de acción wird gekocht."
+      },
+      "wrong": {
+        "ist": {
+          "en": "ist gekocht says the food is ready. But the sentence says it takes ten more minutes.",
+          "es": "ist gekocht dice que la comida está lista. Pero la oración dice que tarda diez minutos más."
+        },
+        "war": {
+          "en": "war gekocht looks back at a past state. The sentence is about the present process.",
+          "es": "war gekocht mira hacia atrás a un estado pasado. La oración trata del proceso presente."
+        }
+      },
+      "examples": [
+        "Das Fenster wird gerade geputzt.",
+        "Das Brot wird gebacken, es riecht gut."
+      ],
+      "tr": {
+        "en": "The food is being cooked. It will take ten more minutes.",
+        "es": "La comida se está cocinando. Tarda diez minutos más."
+      }
+    },
+    {
+      "id": "passiversatz-zustandspassiv-f04",
+      "kind": "form",
+      "verb": "Adjektiv auf -bar",
+      "person": "erreichen",
+      "answer": "erreichbar",
+      "table": "bar-adjektive"
+    },
+    {
+      "id": "passiversatz-zustandspassiv-c05",
+      "sentence": "Das Problem ___ sich leicht lösen.",
+      "options": [
+        "lässt",
+        "lasst",
+        "lassen"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "sich lassen + infinitive means can be done. The subject Das Problem is singular, so: lässt sich lösen.",
+        "es": "sich lassen + infinitivo significa que se puede hacer. El sujeto Das Problem es singular, así que: lässt sich lösen."
+      },
+      "wrong": {
+        "lasst": {
+          "en": "lasst is the form for ihr. The subject here is a thing in the singular.",
+          "es": "lasst es la forma de ihr. El sujeto aquí es una cosa en singular."
+        },
+        "lassen": {
+          "en": "lassen is plural. Das Problem is one thing, so the verb is lässt.",
+          "es": "lassen es plural. Das Problem es una cosa, así que el verbo es lässt."
+        }
+      },
+      "examples": [
+        "Das Fenster lässt sich öffnen.",
+        "Der Text lässt sich lesen."
+      ],
+      "tr": {
+        "en": "The problem can be solved easily.",
+        "es": "El problema se puede resolver fácilmente."
+      }
+    },
+    {
+      "id": "passiversatz-zustandspassiv-f05",
+      "kind": "form",
+      "verb": "Vorgang (werden)",
+      "person": "Tür / schließen",
+      "answer": "wird geschlossen",
+      "table": "zustand-vorgang"
+    },
+    {
+      "id": "passiversatz-zustandspassiv-c06",
+      "sentence": "Das Problem ist leicht ___.",
+      "options": [
+        "lösen zu",
+        "gelöst zu",
+        "zu lösen"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "sein + zu + infinitive means can be done: ist leicht zu lösen. The zu stands before the infinitive.",
+        "es": "sein + zu + infinitivo significa que se puede hacer: ist leicht zu lösen. El zu va antes del infinitivo."
+      },
+      "wrong": {
+        "lösen zu": {
+          "en": "lösen zu puts zu behind the infinitive. In German zu always stands in front of it.",
+          "es": "lösen zu pone zu detrás del infinitivo. En alemán zu va siempre delante."
+        },
+        "gelöst zu": {
+          "en": "gelöst is a participle. After zu an infinitive is needed, not a participle.",
+          "es": "gelöst es un participio. Después de zu se necesita un infinitivo, no un participio."
+        }
+      },
+      "examples": [
+        "Die Aufgabe ist leicht zu machen.",
+        "Das Buch ist schwer zu finden."
+      ],
+      "tr": {
+        "en": "The problem is easy to solve.",
+        "es": "El problema es fácil de resolver."
+      }
+    },
+    {
+      "id": "passiversatz-zustandspassiv-f06",
+      "kind": "form",
+      "verb": "Adjektiv auf -bar",
+      "person": "essen",
+      "answer": "essbar",
+      "table": "bar-adjektive"
+    },
+    {
+      "id": "passiversatz-zustandspassiv-w02",
+      "kind": "why",
+      "es": "Das Fenster wird geöffnet.",
+      "target": "wird",
+      "tr": {
+        "en": "The window is being opened.",
+        "es": "La ventana se está abriendo."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "wird geöffnet describes the result: the window is open",
+            "es": "wird geöffnet describe el resultado: la ventana está abierta"
+          },
+          "wrong": {
+            "en": "The result is expressed with ist geöffnet. wird geöffnet describes the action that is going on.",
+            "es": "El resultado se expresa con ist geöffnet. wird geöffnet describe la acción que está en curso."
+          }
+        },
+        {
+          "text": {
+            "en": "wird geöffnet is the future: the window will be opened",
+            "es": "wird geöffnet es el futuro: la ventana será abierta"
+          },
+          "wrong": {
+            "en": "The future passive needs a second werden at the end (wird geöffnet werden). Here the action is in progress now.",
+            "es": "La pasiva en futuro necesita un segundo werden al final (wird geöffnet werden). Aquí la acción está en curso ahora."
+          }
+        },
+        {
+          "text": {
+            "en": "wird geöffnet is the action passive: someone is doing it now",
+            "es": "wird geöffnet es la pasiva de acción: alguien lo está haciendo ahora"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "passiversatz-zustandspassiv-c07",
+      "sentence": "Man kann die Hose waschen: Sie ist ___.",
+      "options": [
+        "gewaschen",
+        "waschbar",
+        "wäschbar"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "An adjective on -bar expresses that it can be done: waschbar (washable).",
+        "es": "Un adjetivo en -bar expresa que se puede hacer: waschbar (lavable)."
+      },
+      "wrong": {
+        "gewaschen": {
+          "en": "gewaschen is the state passive: it has been washed already. The sentence says it can be washed.",
+          "es": "gewaschen es la pasiva de estado: ya ha sido lavada. La oración dice que se puede lavar."
+        },
+        "wäschbar": {
+          "en": "wäschbar does not exist. The -bar adjective keeps the stem vowel of the verb: waschbar.",
+          "es": "wäschbar no existe. El adjetivo en -bar conserva la vocal de la raíz del verbo: waschbar."
+        }
+      },
+      "examples": [
+        "Der Weg ist leicht erreichbar.",
+        "Das Wasser ist trinkbar."
+      ],
+      "tr": {
+        "en": "You can wash the trousers: they are washable.",
+        "es": "Se pueden lavar los pantalones: son lavables."
+      }
+    },
+    {
+      "id": "passiversatz-zustandspassiv-f07",
+      "kind": "form",
+      "verb": "Zustand (sein)",
+      "person": "Essen / kochen",
+      "answer": "ist gekocht",
+      "table": "zustand-vorgang"
+    },
+    {
+      "id": "passiversatz-zustandspassiv-c08",
+      "sentence": "Hier wird Deutsch gesprochen: Hier ___ man Deutsch.",
+      "options": [
+        "sprechen",
+        "gesprochen",
+        "spricht"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "With man the verb is active and in the er/sie/es form: spricht man.",
+        "es": "Con man el verbo es activo y está en la forma er/sie/es: spricht man."
+      },
+      "wrong": {
+        "sprechen": {
+          "en": "sprechen is the infinitive or the plural form. man always takes the singular: spricht.",
+          "es": "sprechen es el infinitivo o la forma plural. man lleva siempre el singular: spricht."
+        },
+        "gesprochen": {
+          "en": "gesprochen is the participle and belongs to the passive. With man the verb is in the active.",
+          "es": "gesprochen es el participio y pertenece a la pasiva. Con man el verbo está en activa."
+        }
+      },
+      "examples": [
+        "Hier darf man nicht rauchen.",
+        "Hier isst man gut."
+      ],
+      "tr": {
+        "en": "German is spoken here: here people speak German.",
+        "es": "Aquí se habla alemán: aquí uno habla alemán."
+      }
+    },
+    {
+      "id": "passiversatz-zustandspassiv-f08",
+      "kind": "form",
+      "verb": "Adjektiv auf -bar",
+      "person": "waschen",
+      "answer": "waschbar",
+      "table": "bar-adjektive"
+    },
+    {
+      "id": "passiversatz-zustandspassiv-c09",
+      "sentence": "Das Haus ___ gebaut. Jetzt können wir dort wohnen.",
+      "options": [
+        "wird",
+        "wurde",
+        "ist"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The building is finished and we can move in. The result is meant: ist gebaut.",
+        "es": "La construcción está terminada y podemos mudarnos. Se habla del resultado: ist gebaut."
+      },
+      "wrong": {
+        "wird": {
+          "en": "wird gebaut means the building is in progress. But we can already move in.",
+          "es": "wird gebaut significa que la construcción está en curso. Pero ya podemos mudarnos."
+        },
+        "wurde": {
+          "en": "wurde gebaut tells about the building in the past, not about the present state of the house.",
+          "es": "wurde gebaut cuenta la construcción en el pasado, no el estado presente de la casa."
+        }
+      },
+      "examples": [
+        "Das Essen ist fertig gekocht.",
+        "Der Brief ist geschrieben."
+      ],
+      "tr": {
+        "en": "The house is built. Now we can live there.",
+        "es": "La casa está construida. Ahora podemos vivir allí."
+      }
+    },
+    {
+      "id": "passiversatz-zustandspassiv-f09",
+      "kind": "form",
+      "verb": "Vorgang (werden)",
+      "person": "Zimmer / reinigen",
+      "answer": "wird gereinigt",
+      "table": "zustand-vorgang"
+    },
+    {
+      "id": "passiversatz-zustandspassiv-w03",
+      "kind": "why",
+      "es": "Das Problem lässt sich lösen.",
+      "target": "lässt",
+      "tr": {
+        "en": "The problem can be solved.",
+        "es": "El problema se puede resolver."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "lässt means to let someone do something: the problem lets someone act",
+            "es": "lässt significa dejar que alguien haga algo: el problema deja que alguien actúe"
+          },
+          "wrong": {
+            "en": "With sich the verb lassen expresses a possibility with a passive meaning. It does not describe a person who lets someone act.",
+            "es": "Con sich el verbo lassen expresa una posibilidad con sentido pasivo. No describe a una persona que deja actuar a alguien."
+          }
+        },
+        {
+          "text": {
+            "en": "lässt sich + infinitive means can be done, a possibility with a passive meaning",
+            "es": "lässt sich + infinitivo significa que se puede hacer, una posibilidad con sentido pasivo"
+          }
+        },
+        {
+          "text": {
+            "en": "lässt sich is reflexive, so the problem solves itself",
+            "es": "lässt sich es reflexivo, así que el problema se resuelve solo"
+          },
+          "wrong": {
+            "en": "The sich here is part of the pattern and does not mean that the problem acts by itself. Someone can solve it.",
+            "es": "El sich aquí es parte del patrón y no significa que el problema actúe por sí solo. Alguien puede resolverlo."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "passiversatz-zustandspassiv-c10",
+      "sentence": "Der Text ist kaum ___.",
+      "options": [
+        "lesbar",
+        "gelesen",
+        "lesen"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "kaum (hardly) goes with a possibility. The -bar adjective lesbar means can be read.",
+        "es": "kaum (apenas) va con una posibilidad. El adjetivo en -bar lesbar significa que se puede leer."
+      },
+      "wrong": {
+        "gelesen": {
+          "en": "gelesen is the state passive: it has been read. kaum does not fit a finished action.",
+          "es": "gelesen es la pasiva de estado: ha sido leído. kaum no encaja con una acción terminada."
+        },
+        "lesen": {
+          "en": "lesen is the infinitive. After ist the sentence needs an adjective or a participle, or zu lesen.",
+          "es": "lesen es el infinitivo. Después de ist la oración necesita un adjetivo o un participio, o zu lesen."
+        }
+      },
+      "examples": [
+        "Der Weg ist leicht erreichbar.",
+        "Das Haus ist kaum bezahlbar."
+      ],
+      "tr": {
+        "en": "The text is hardly legible.",
+        "es": "El texto apenas es legible."
+      }
+    },
+    {
+      "id": "passiversatz-zustandspassiv-f10",
+      "kind": "form",
+      "verb": "Adjektiv auf -bar",
+      "person": "lesen",
+      "answer": "lesbar",
+      "table": "bar-adjektive"
+    },
+    {
+      "id": "passiversatz-zustandspassiv-c11",
+      "sentence": "Das Auto ___ sich nicht mehr reparieren.",
+      "options": [
+        "kann",
+        "wird",
+        "lässt"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "sich lassen + infinitive means can be done. With nicht mehr: it can no longer be repaired.",
+        "es": "sich lassen + infinitivo significa que se puede hacer. Con nicht mehr: ya no se puede reparar."
+      },
+      "wrong": {
+        "kann": {
+          "en": "kann sich would mean that the car can repair itself. The sentence needs the passive meaning.",
+          "es": "kann sich significaría que el carro puede repararse solo. La oración necesita el sentido pasivo."
+        },
+        "wird": {
+          "en": "wird sich would be a future with a reflexive verb. It does not express a possibility.",
+          "es": "wird sich sería un futuro con un verbo reflexivo. No expresa una posibilidad."
+        }
+      },
+      "examples": [
+        "Die Tür lässt sich nicht öffnen.",
+        "Das Buch lässt sich gut lesen."
+      ],
+      "tr": {
+        "en": "The car can no longer be repaired.",
+        "es": "El carro ya no se puede reparar."
+      }
+    },
+    {
+      "id": "passiversatz-zustandspassiv-f11",
+      "kind": "form",
+      "verb": "Zustand (sein)",
+      "person": "Auto / reparieren",
+      "answer": "ist repariert",
+      "table": "zustand-vorgang"
+    },
+    {
+      "id": "passiversatz-zustandspassiv-c12",
+      "sentence": "Die Rechnung ist bis Freitag ___.",
+      "options": [
+        "bezahlen zu",
+        "zu bezahlen",
+        "bezahlt zu"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "sein + zu + infinitive can express an obligation: the bill must be paid by Friday.",
+        "es": "sein + zu + infinitivo puede expresar una obligación: la factura debe pagarse antes del viernes."
+      },
+      "wrong": {
+        "bezahlen zu": {
+          "en": "bezahlen zu puts zu behind the infinitive. In German zu stands in front of the infinitive.",
+          "es": "bezahlen zu pone zu detrás del infinitivo. En alemán zu va delante del infinitivo."
+        },
+        "bezahlt zu": {
+          "en": "bezahlt is a participle. After zu you need the infinitive, not the participle.",
+          "es": "bezahlt es un participio. Después de zu necesitas el infinitivo, no el participio."
+        }
+      },
+      "examples": [
+        "Das Formular ist sofort auszufüllen.",
+        "Die Hausaufgabe ist bis Montag zu machen."
+      ],
+      "tr": {
+        "en": "The bill must be paid by Friday.",
+        "es": "La factura debe pagarse antes del viernes."
+      }
+    },
+    {
+      "id": "passiversatz-zustandspassiv-f12",
+      "kind": "form",
+      "verb": "Adjektiv auf -bar",
+      "person": "bezahlen",
+      "answer": "bezahlbar",
+      "table": "bar-adjektive"
+    },
+    {
+      "id": "passiversatz-zustandspassiv-c13",
+      "sentence": "Das Wasser kann man trinken: Es ist ___.",
+      "options": [
+        "trinkbar",
+        "getrunken",
+        "trinkend"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The -bar adjective trinkbar means that the water can be drunk.",
+        "es": "El adjetivo en -bar trinkbar significa que el agua se puede beber."
+      },
+      "wrong": {
+        "getrunken": {
+          "en": "getrunken is a participle and would mean the water has been drunk already.",
+          "es": "getrunken es un participio y significaría que el agua ya ha sido bebida."
+        },
+        "trinkend": {
+          "en": "trinkend is the participle that describes someone drinking. It does not mean drinkable.",
+          "es": "trinkend es el participio que describe a alguien que bebe. No significa potable."
+        }
+      },
+      "examples": [
+        "Das Obst ist essbar.",
+        "Der Weg ist erreichbar."
+      ],
+      "tr": {
+        "en": "You can drink the water: it is drinkable.",
+        "es": "Se puede beber el agua: es potable."
+      }
+    },
+    {
+      "id": "passiversatz-zustandspassiv-c14",
+      "sentence": "Das ist leicht zu machen: Das kann leicht ___ werden.",
+      "options": [
+        "gemacht",
+        "machen",
+        "gemachte"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The passive with a modal verb needs the participle before werden: gemacht werden.",
+        "es": "La pasiva con un verbo modal necesita el participio antes de werden: gemacht werden."
+      },
+      "wrong": {
+        "machen": {
+          "en": "machen is the infinitive. In kann ... werden the main verb is the participle.",
+          "es": "machen es el infinitivo. En kann ... werden el verbo principal es el participio."
+        },
+        "gemachte": {
+          "en": "gemachte has an adjective ending. In the verb bracket the participle has no ending.",
+          "es": "gemachte lleva una terminación de adjetivo. En el paréntesis verbal el participio no lleva terminación."
+        }
+      },
+      "examples": [
+        "Das kann leicht gelöst werden.",
+        "Das muss bezahlt werden."
+      ],
+      "tr": {
+        "en": "That is easy to do: that can easily be done.",
+        "es": "Eso es fácil de hacer: eso puede hacerse fácilmente."
+      }
+    },
+    {
+      "id": "passiversatz-zustandspassiv-w04",
+      "kind": "why",
+      "es": "Das Wasser ist trinkbar.",
+      "target": "trinkbar",
+      "tr": {
+        "en": "The water is drinkable.",
+        "es": "El agua es potable."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "-bar means that the action is finished: the water has been drunk",
+            "es": "-bar significa que la acción terminó: el agua ha sido bebida"
+          },
+          "wrong": {
+            "en": "A finished action is expressed by the state passive (ist getrunken). -bar expresses that something can be done.",
+            "es": "Una acción terminada se expresa con la pasiva de estado (ist getrunken). -bar expresa que algo puede hacerse."
+          }
+        },
+        {
+          "text": {
+            "en": "trinkbar is a noun for a place where you drink, like a bar",
+            "es": "trinkbar es un sustantivo para un lugar donde se bebe, como un bar"
+          },
+          "wrong": {
+            "en": "trinkbar is written in lower case and used after ist. It is an adjective, not a noun.",
+            "es": "trinkbar se escribe en minúscula y se usa después de ist. Es un adjetivo, no un sustantivo."
+          }
+        },
+        {
+          "text": {
+            "en": "-bar makes an adjective from a verb stem and means can be done",
+            "es": "-bar forma un adjetivo a partir de una raíz verbal y significa que se puede hacer"
+          }
+        }
+      ],
+      "correctIndex": 2
+    }
+  ]
+}

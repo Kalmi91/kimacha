@@ -18,7 +18,7 @@ jest.mock('@/lib/neuralModels', () => ({
   useNeuralState: () => mockState,
 }));
 
-const stateWith = (installed: Record<string, boolean>, engines = { es: 'piper', en: 'piper', hu: 'piper' }) => ({
+const stateWith = (installed: Record<string, boolean>, engines = { es: 'piper', en: 'piper', hu: 'piper', de: 'piper' }) => ({
   supported: true,
   ready: true,
   enabled: true,
@@ -48,14 +48,14 @@ beforeEach(() => {
 afterEach(() => alertSpy.mockRestore());
 
 describe('BetterVoiceRows: the size question', () => {
-  it('the first download asks with the real size (both packs and six voices), and only the confirm starts it', () => {
+  it('the first download asks with the real size (both packs and eight voices), and only the confirm starts it', () => {
     mockState = stateWith({});
     const view = show();
-    expect(view.getByText('Download (562 MB)')).toBeTruthy(); // the label counts the packs too
+    expect(view.getByText('Download (602 MB)')).toBeTruthy(); // the label counts the packs too
     fireEvent.press(view.getByTestId('settings-better-voice-download'));
     expect(alertSpy).toHaveBeenCalledTimes(1);
     expect(alertSpy.mock.calls[0][0]).toBe('Download the better voice?');
-    expect(alertSpy.mock.calls[0][1]).toContain('562 MB');
+    expect(alertSpy.mock.calls[0][1]).toContain('602 MB');
     expect(mockDownload).not.toHaveBeenCalled();
     lastButtons(alertSpy).find(b => b.text === 'Cancel')?.onPress?.();
     expect(mockDownload).not.toHaveBeenCalled();
@@ -84,7 +84,7 @@ describe('BetterVoiceRows: the size question', () => {
   });
 
   it('a choice that needs nothing from the net goes straight through', () => {
-    mockState = stateWith({ ...allPiper, [PACK_KEY]: true, [SENTENCES_KEY]: true, kokoro: true }, { es: 'kokoro', en: 'piper', hu: 'piper' });
+    mockState = stateWith({ ...allPiper, [PACK_KEY]: true, [SENTENCES_KEY]: true, kokoro: true }, { es: 'kokoro', en: 'piper', hu: 'piper', de: 'piper' });
     expect(NEURAL_MODELS.kokoro.bytes).toBeGreaterThan(0);
     const view = show();
     fireEvent.press(view.getByTestId('settings-better-voice-es-piper'));

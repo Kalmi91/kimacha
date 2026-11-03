@@ -118,7 +118,7 @@ export function lessonTestUnlocked(lesson: GrammarTopicData, rows: Row[], topicI
 
 export type LessonTestView =
   | { card: 'choice'; heading: string; text: string; options: string[]; correctIndex: number }
-  | { card: 'type'; prompt: string; hint?: string; answer: string; accept?: string[]; sentence: boolean }
+  | { card: 'type'; prompt: string; hint?: string; answer: string; accept?: string[]; sentence: boolean; keepUmlauts?: boolean }
   | { card: 'tiles'; prompt: string; answerTokens: string[]; sentence: string }
   | { card: 'match'; pairs: { left: string; right: string }[] };
 
@@ -196,7 +196,16 @@ function toQuestion(r: GrammarRoundItem, ctx: Ctx): LessonTestQuestion | null {
     return {
       id: item.id,
       kind,
-      view: { card: 'type', prompt, hint: s.grammar.formHint, answer: item.answer, accept: item.accept, sentence: false },
+      view: {
+        card: 'type',
+        prompt,
+        hint: s.grammar.formHint,
+        answer: item.answer,
+        accept: item.accept,
+        sentence: false,
+        // German: the umlaut and the ß of the inflected form are the thing asked (Väter), like in the form drill.
+        ...(ctx.learnedLang === 'de' ? { keepUmlauts: true } : {}),
+      },
       review: { question: prompt, answer: item.answer },
     };
   }

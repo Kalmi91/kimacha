@@ -1,0 +1,1030 @@
+{
+  "schema": 2,
+  "topic": "demonstrativ-welcher-dieser",
+  "level": "A2",
+  "title": {
+    "en": "dieser, welcher, jeder: der-words",
+    "es": "dieser, welcher, jeder: der-words"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "The words dieser (this), welcher (which), jeder (every) and mancher (some) take exactly the endings of the definite article: der Pullover, dieser Pullover; den Pullover, diesen Pullover; dem Pullover, diesem Pullover. They are called der-words. The adjective that follows ends in -e or -en as after the article (dieser neue Pullover). For \"that one\" you can also use the pronoun der, die, das, which stands alone and is stressed: Wie findest du den Pullover? Den finde ich schön.",
+        "es": "Las palabras dieser (este), welcher (cuál), jeder (cada) y mancher (algunos) llevan exactamente las terminaciones del artículo definido: der Pullover, dieser Pullover; den Pullover, diesen Pullover; dem Pullover, diesem Pullover. Se llaman der-words. El adjetivo que sigue termina en -e o -en como después del artículo (dieser neue Pullover). Para \"ese\" también puedes usar el pronombre der, die, das, que va solo y con énfasis: Wie findest du den Pullover? Den finde ich schön."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "dieser",
+      "title": {
+        "en": "dieser in three cases",
+        "es": "dieser en tres casos"
+      },
+      "header": [
+        {
+          "en": "Gender",
+          "es": "Género"
+        },
+        {
+          "en": "Nominativ",
+          "es": "Nominativ"
+        },
+        {
+          "en": "Akkusativ",
+          "es": "Akkusativ"
+        },
+        {
+          "en": "Dativ",
+          "es": "Dativ"
+        }
+      ],
+      "rows": [
+        [
+          "maskulin",
+          "dieser Pullover",
+          "diesen Pullover",
+          "diesem Pullover"
+        ],
+        [
+          "feminin",
+          "diese Tasche",
+          "diese Tasche",
+          "dieser Tasche"
+        ],
+        [
+          "neutral",
+          "dieses Hemd",
+          "dieses Hemd",
+          "diesem Hemd"
+        ],
+        [
+          "Plural",
+          "diese Schuhe",
+          "diese Schuhe",
+          "diesen Schuhen"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "welcher",
+      "title": {
+        "en": "welcher in three cases",
+        "es": "welcher en tres casos"
+      },
+      "header": [
+        {
+          "en": "Gender",
+          "es": "Género"
+        },
+        {
+          "en": "Nominativ",
+          "es": "Nominativ"
+        },
+        {
+          "en": "Akkusativ",
+          "es": "Akkusativ"
+        },
+        {
+          "en": "Dativ",
+          "es": "Dativ"
+        }
+      ],
+      "rows": [
+        [
+          "maskulin",
+          "welcher Mann",
+          "welchen Mann",
+          "welchem Mann"
+        ],
+        [
+          "feminin",
+          "welche Frau",
+          "welche Frau",
+          "welcher Frau"
+        ],
+        [
+          "neutral",
+          "welches Kind",
+          "welches Kind",
+          "welchem Kind"
+        ],
+        [
+          "Plural",
+          "welche Kinder",
+          "welche Kinder",
+          "welchen Kindern"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "der-woerter-liste",
+      "title": {
+        "en": "The der-words",
+        "es": "Los der-words"
+      },
+      "header": [
+        {
+          "en": "Word",
+          "es": "Palabra"
+        },
+        {
+          "en": "Example",
+          "es": "Ejemplo"
+        }
+      ],
+      "rows": [
+        [
+          "dieser",
+          "Dieser Pullover ist schön."
+        ],
+        [
+          "welcher",
+          "Welche Tasche gefällt dir?"
+        ],
+        [
+          "jeder",
+          "Jedes Kind hat ein Buch."
+        ],
+        [
+          "mancher",
+          "Manche Leute kommen später."
+        ],
+        [
+          "alle",
+          "Alle Kinder spielen im Garten."
+        ]
+      ],
+      "noTableDeck": true
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "How to use the der-words",
+        "es": "Cómo usar los der-words"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "dieser points to something near you or something just mentioned. The ending shows gender and case, exactly as in the article.",
+            "es": "dieser señala algo cercano o algo que se acaba de mencionar. La terminación muestra el género y el caso, exactamente como en el artículo."
+          },
+          "examples": [
+            {
+              "es": "Ich nehme diesen Pullover.",
+              "tr": {
+                "en": "I take this sweater.",
+                "es": "Me llevo este suéter."
+              }
+            },
+            {
+              "es": "Wir wohnen in diesem Haus.",
+              "tr": {
+                "en": "We live in this house.",
+                "es": "Vivimos en esta casa."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "welcher asks \"which one\" out of a group. It has the same endings. The answer is often dieser or the pronoun der, die, das.",
+            "es": "welcher pregunta \"cuál\" dentro de un grupo. Tiene las mismas terminaciones. La respuesta suele ser dieser o el pronombre der, die, das."
+          },
+          "examples": [
+            {
+              "es": "Welche Tasche gefällt dir?",
+              "tr": {
+                "en": "Which bag do you like?",
+                "es": "¿Cuál bolsa te gusta?"
+              }
+            },
+            {
+              "es": "Mit welchem Bus fährst du?",
+              "tr": {
+                "en": "Which bus do you take?",
+                "es": "¿En cuál autobús vas?"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "jeder means \"every\" and is singular: jedes Kind, jeder Tag. For the plural use alle: alle Kinder. After alle the verb is plural too.",
+            "es": "jeder significa \"cada\" y es singular: jedes Kind, jeder Tag. Para el plural usa alle: alle Kinder. Después de alle el verbo también va en plural."
+          },
+          "examples": [
+            {
+              "es": "Jedes Kind hat ein Buch.",
+              "tr": {
+                "en": "Every child has a book.",
+                "es": "Cada niño tiene un libro."
+              }
+            },
+            {
+              "es": "Alle Kinder spielen im Garten.",
+              "tr": {
+                "en": "All the children play in the garden.",
+                "es": "Todos los niños juegan en el jardín."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "The pronoun der, die, das replaces a noun you already mentioned. It has the forms of the article and comes first in the sentence, stressed. The verb follows in position two.",
+            "es": "El pronombre der, die, das sustituye a un sustantivo ya mencionado. Tiene las formas del artículo y va primero en la oración, con énfasis. El verbo sigue en la posición dos."
+          },
+          "examples": [
+            {
+              "es": "Wie findest du den Pullover? Den finde ich schön.",
+              "tr": {
+                "en": "How do you like the sweater? I think it is nice.",
+                "es": "¿Qué te parece el suéter? Ese me gusta."
+              }
+            },
+            {
+              "es": "Wie findest du die Schuhe? Die sind teuer.",
+              "tr": {
+                "en": "How do you like the shoes? They are expensive.",
+                "es": "¿Qué te parecen los zapatos? Esos son caros."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "welcher or was für ein",
+        "es": "welcher o was für ein"
+      },
+      "pairs": [
+        {
+          "a": "Welchen Film siehst du?",
+          "b": "Was für einen Film siehst du?",
+          "note": {
+            "en": "welcher asks which one out of a known group. was für ein asks what kind. After was für the ending is that of ein, and für does not change the case.",
+            "es": "welcher pregunta cuál dentro de un grupo conocido. was für ein pregunta qué clase. Después de was für la terminación es la de ein, y für no cambia el caso."
+          },
+          "examples": [
+            {
+              "es": "Welches Hemd kaufst du?",
+              "tr": {
+                "en": "Which shirt are you buying?",
+                "es": "¿Cuál camisa compras?"
+              }
+            },
+            {
+              "es": "Was für ein Hemd suchst du?",
+              "tr": {
+                "en": "What kind of shirt are you looking for?",
+                "es": "¿Qué tipo de camisa buscas?"
+              }
+            }
+          ]
+        },
+        {
+          "a": "Dieser Pullover ist teuer.",
+          "b": "Der da ist billig.",
+          "note": {
+            "en": "dieser is the word with a noun after it. der, die, das alone replaces the noun. hier and da show which one.",
+            "es": "dieser es la palabra con un sustantivo detrás. der, die, das solo sustituye al sustantivo. hier y da muestran cuál."
+          },
+          "examples": [
+            {
+              "es": "Diese Tasche hier ist neu.",
+              "tr": {
+                "en": "This bag here is new.",
+                "es": "Esta bolsa de aquí es nueva."
+              }
+            },
+            {
+              "es": "Die da ist alt.",
+              "tr": {
+                "en": "That one there is old.",
+                "es": "Esa de allá es vieja."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Do not leave the ending off: not dieser Pullover in every case, but diesen Pullover in the accusative and diesem Pullover in the dative. English learners: this and that both map to dieser or to der da; German has no general word that never changes. Spanish learners: este and ese both go with dieser or with der da, aquel is jener and rare. Hungarian learners: ez and az change with the case in your language too (ezt, ennek), and so does dieser, but the German ending also shows the gender: dieser Pullover, diese Tasche, dieses Hemd. After dieser and welcher the adjective takes -e or -en like after der: dieser neue Pullover, mit diesem neuen Pullover.",
+        "es": "No dejes la terminación: no dieser Pullover en todos los casos, sino diesen Pullover en acusativo y diesem Pullover en dativo. Para quien habla inglés: this y that se traducen con dieser o con der da; el alemán no tiene una palabra general que nunca cambie. Para quien habla español: este y ese van con dieser o con der da, aquel es jener y es raro. Para quien habla húngaro: ez y az también cambian por caso en tu idioma (ezt, ennek), y dieser también, pero la terminación alemana muestra además el género: dieser Pullover, diese Tasche, dieses Hemd. Después de dieser y welcher el adjetivo lleva -e o -en como después de der: dieser neue Pullover, mit diesem neuen Pullover."
+      }
+    }
+  ],
+  "speak": {
+    "en": "The words «dieser», «welcher» and «jeder» take the endings of the definite article. «Dieser Pullover» is nominative, «diesen Pullover» is accusative, «diesem Pullover» is dative. With «welcher» you ask which one: «Welche Tasche gefällt dir?» With «was für ein» you ask what kind: «Was für einen Film siehst du?» The pronoun «der», «die», «das» replaces a noun you already mentioned: «Wie findest du den Pullover?» «Den finde ich schön.»",
+    "es": "Las palabras «dieser», «welcher» y «jeder» llevan las terminaciones del artículo definido. «Dieser Pullover» es nominativo, «diesen Pullover» es acusativo, «diesem Pullover» es dativo. Con «welcher» preguntas cuál: «Welche Tasche gefällt dir?» Con «was für ein» preguntas qué clase: «Was für einen Film siehst du?» El pronombre «der», «die», «das» sustituye a un sustantivo ya mencionado: «Wie findest du den Pullover?» «Den finde ich schön.»"
+  },
+  "items": [
+    {
+      "id": "demonstrativ-welcher-dieser-c01",
+      "sentence": "___ Pullover ist schön.",
+      "options": [
+        "Dieser",
+        "Diesen",
+        "Diesem"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Pullover is masculine and the subject, so dieser has the nominative ending of der: Dieser Pullover.",
+        "es": "Pullover es masculino y el sujeto, así que dieser lleva la terminación del nominativo de der: Dieser Pullover."
+      },
+      "wrong": {
+        "Diesen": {
+          "en": "Diesen is the accusative (den). The pullover is the subject here, so it is nominative.",
+          "es": "Diesen es el acusativo (den). El suéter es aquí el sujeto, o sea, nominativo."
+        },
+        "Diesem": {
+          "en": "Diesem is the dative (dem). Nothing in the sentence asks for the dative, ist schön only needs the subject.",
+          "es": "Diesem es el dativo (dem). Nada en la oración pide el dativo, ist schön solo necesita el sujeto."
+        }
+      },
+      "examples": [
+        "Dieser Mann ist nett.",
+        "Dieser Tisch ist alt."
+      ],
+      "tr": {
+        "en": "This sweater is nice.",
+        "es": "Este suéter es bonito."
+      }
+    },
+    {
+      "id": "demonstrativ-welcher-dieser-f01",
+      "kind": "form",
+      "verb": "Akkusativ",
+      "person": "maskulin",
+      "answer": "diesen Pullover",
+      "table": "dieser"
+    },
+    {
+      "id": "demonstrativ-welcher-dieser-c02",
+      "sentence": "Ich nehme ___ Pullover.",
+      "options": [
+        "dieser",
+        "diesem",
+        "diesen"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The pullover is the object of nehmen, so it is accusative masculine: diesen, like den.",
+        "es": "El suéter es el objeto de nehmen, así que está en acusativo masculino: diesen, como den."
+      },
+      "wrong": {
+        "dieser": {
+          "en": "dieser is the nominative (der). After nehmen the pullover is the object, not the subject.",
+          "es": "dieser es el nominativo (der). Después de nehmen el suéter es el objeto, no el sujeto."
+        },
+        "diesem": {
+          "en": "diesem is the dative (dem). nehmen takes the accusative.",
+          "es": "diesem es el dativo (dem). nehmen lleva acusativo."
+        }
+      },
+      "examples": [
+        "Ich kaufe diesen Hut.",
+        "Ich sehe diesen Mann."
+      ],
+      "tr": {
+        "en": "I take this sweater.",
+        "es": "Me llevo este suéter."
+      }
+    },
+    {
+      "id": "demonstrativ-welcher-dieser-f02",
+      "kind": "form",
+      "verb": "Akkusativ",
+      "person": "maskulin",
+      "answer": "welchen Mann",
+      "table": "welcher"
+    },
+    {
+      "id": "demonstrativ-welcher-dieser-c03",
+      "sentence": "Wir wohnen in ___ Haus.",
+      "options": [
+        "dieses",
+        "diesem",
+        "diesen"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "wo? with in takes the dative, and Haus is neuter: in diesem Haus, like in dem Haus.",
+        "es": "wo? con in lleva dativo, y Haus es neutro: in diesem Haus, como in dem Haus."
+      },
+      "wrong": {
+        "dieses": {
+          "en": "dieses is the nominative or accusative neuter (das). After in with wo? you need the dative.",
+          "es": "dieses es el nominativo o acusativo neutro (das). Después de in con wo? necesitas el dativo."
+        },
+        "diesen": {
+          "en": "diesen is masculine accusative or dative plural. Haus is neuter and singular.",
+          "es": "diesen es acusativo masculino o dativo plural. Haus es neutro y singular."
+        }
+      },
+      "examples": [
+        "Sie arbeitet in diesem Büro.",
+        "Er sitzt in diesem Auto."
+      ],
+      "tr": {
+        "en": "We live in this house.",
+        "es": "Vivimos en esta casa."
+      }
+    },
+    {
+      "id": "demonstrativ-welcher-dieser-f03",
+      "kind": "form",
+      "verb": "Dativ",
+      "person": "feminin",
+      "answer": "dieser Tasche",
+      "table": "dieser"
+    },
+    {
+      "id": "demonstrativ-welcher-dieser-w01",
+      "kind": "why",
+      "es": "Ich nehme diesen Pullover.",
+      "target": "diesen",
+      "tr": {
+        "en": "I take this sweater.",
+        "es": "Me llevo este suéter."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "dieser has the endings of the article: masculine accusative -en, like den",
+            "es": "dieser tiene las terminaciones del artículo: acusativo masculino -en, como den"
+          }
+        },
+        {
+          "text": {
+            "en": "dieser always ends in -en after a verb",
+            "es": "dieser termina siempre en -en después de un verbo"
+          },
+          "wrong": {
+            "en": "The ending does not depend on the verb alone but on gender and case. A feminine object would be diese Tasche.",
+            "es": "La terminación no depende solo del verbo, sino del género y el caso. Un objeto femenino sería diese Tasche."
+          }
+        },
+        {
+          "text": {
+            "en": "-en shows the plural",
+            "es": "-en muestra el plural"
+          },
+          "wrong": {
+            "en": "Pullover is singular. Here -en marks the masculine accusative, as in den Pullover.",
+            "es": "Pullover es singular. Aquí -en marca el acusativo masculino, como en den Pullover."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "demonstrativ-welcher-dieser-c04",
+      "sentence": "Wie findest du ___ Tasche?",
+      "options": [
+        "diesen",
+        "diese",
+        "dieser"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Tasche is feminine, and the accusative feminine is the same as the nominative: diese, like die.",
+        "es": "Tasche es femenino, y el acusativo femenino es igual al nominativo: diese, como die."
+      },
+      "wrong": {
+        "diesen": {
+          "en": "diesen is the masculine accusative (den). Tasche is feminine.",
+          "es": "diesen es el acusativo masculino (den). Tasche es femenino."
+        },
+        "dieser": {
+          "en": "dieser is the feminine dative or the masculine nominative. Here Tasche is the object, so it is accusative.",
+          "es": "dieser es el dativo femenino o el nominativo masculino. Aquí Tasche es el objeto, o sea, acusativo."
+        }
+      },
+      "examples": [
+        "Wie findest du diese Jacke?",
+        "Ich mag diese Lampe."
+      ],
+      "tr": {
+        "en": "How do you like this bag?",
+        "es": "¿Qué te parece esta bolsa?"
+      }
+    },
+    {
+      "id": "demonstrativ-welcher-dieser-f04",
+      "kind": "form",
+      "verb": "Dativ",
+      "person": "feminin",
+      "answer": "welcher Frau",
+      "table": "welcher"
+    },
+    {
+      "id": "demonstrativ-welcher-dieser-c05",
+      "sentence": "Ich spreche mit ___ Frau.",
+      "options": [
+        "diese",
+        "diesen",
+        "dieser"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "mit asks for the dative, and the dative feminine is dieser, like der: mit dieser Frau.",
+        "es": "mit pide el dativo, y el dativo femenino es dieser, como der: mit dieser Frau."
+      },
+      "wrong": {
+        "diese": {
+          "en": "diese is the nominative or accusative feminine (die). After mit you need the dative.",
+          "es": "diese es el nominativo o acusativo femenino (die). Después de mit necesitas el dativo."
+        },
+        "diesen": {
+          "en": "diesen is the masculine accusative or the dative plural. Frau is feminine singular.",
+          "es": "diesen es el acusativo masculino o el dativo plural. Frau es femenino singular."
+        }
+      },
+      "examples": [
+        "Ich gehe mit dieser Freundin.",
+        "Er wohnt bei dieser Familie."
+      ],
+      "tr": {
+        "en": "I am talking with this woman.",
+        "es": "Hablo con esta mujer."
+      }
+    },
+    {
+      "id": "demonstrativ-welcher-dieser-f05",
+      "kind": "form",
+      "verb": "Nominativ",
+      "person": "neutral",
+      "answer": "dieses Hemd",
+      "table": "dieser"
+    },
+    {
+      "id": "demonstrativ-welcher-dieser-c06",
+      "sentence": "___ Kind hat ein Buch.",
+      "options": [
+        "Jeder",
+        "Jedes",
+        "Jede"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Kind is neuter, so jeder takes the neuter ending: Jedes Kind, like das Kind.",
+        "es": "Kind es neutro, así que jeder lleva la terminación neutra: Jedes Kind, como das Kind."
+      },
+      "wrong": {
+        "Jeder": {
+          "en": "Jeder is masculine (jeder Mann). Kind is neuter, so the ending must be -es.",
+          "es": "Jeder es masculino (jeder Mann). Kind es neutro, así que la terminación debe ser -es."
+        },
+        "Jede": {
+          "en": "Jede is feminine (jede Frau). Kind is neuter, not feminine, even if the child is a girl.",
+          "es": "Jede es femenino (jede Frau). Kind es neutro, no femenino, aunque el niño sea una niña."
+        }
+      },
+      "examples": [
+        "Jeder Tag ist anders.",
+        "Jede Woche kommt sie."
+      ],
+      "tr": {
+        "en": "Every child has a book.",
+        "es": "Cada niño tiene un libro."
+      }
+    },
+    {
+      "id": "demonstrativ-welcher-dieser-f06",
+      "kind": "form",
+      "verb": "Dativ",
+      "person": "neutral",
+      "answer": "welchem Kind",
+      "table": "welcher"
+    },
+    {
+      "id": "demonstrativ-welcher-dieser-w02",
+      "kind": "why",
+      "es": "Welche Tasche gefällt dir?",
+      "target": "Welche",
+      "tr": {
+        "en": "Which bag do you like?",
+        "es": "¿Cuál bolsa te gusta?"
+      },
+      "options": [
+        {
+          "text": {
+            "en": "welch- never changes, like the English which",
+            "es": "welch- nunca cambia, como el which del inglés"
+          },
+          "wrong": {
+            "en": "welcher is a der-word and takes the endings of the article: welcher, welche, welches, welchen.",
+            "es": "welcher es un der-word y lleva las terminaciones del artículo: welcher, welche, welches, welchen."
+          }
+        },
+        {
+          "text": {
+            "en": "Tasche is feminine, so welcher takes the ending of die: welche",
+            "es": "Tasche es femenino, así que welcher lleva la terminación de die: welche"
+          }
+        },
+        {
+          "text": {
+            "en": "Tasche is a plural noun here",
+            "es": "Tasche es aquí un sustantivo plural"
+          },
+          "wrong": {
+            "en": "Tasche is singular, and gefällt is the singular verb form. The plural would be Welche Taschen gefallen dir?",
+            "es": "Tasche es singular, y gefällt es la forma verbal singular. El plural sería Welche Taschen gefallen dir?"
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "demonstrativ-welcher-dieser-c07",
+      "sentence": "___ Tasche gefällt dir?",
+      "options": [
+        "Welche",
+        "Welcher",
+        "Welches"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Tasche is feminine and the subject of gefällt, so welcher takes the feminine ending: Welche Tasche.",
+        "es": "Tasche es femenino y el sujeto de gefällt, así que welcher lleva la terminación femenina: Welche Tasche."
+      },
+      "wrong": {
+        "Welcher": {
+          "en": "Welcher is masculine (welcher Pullover). Tasche is feminine.",
+          "es": "Welcher es masculino (welcher Pullover). Tasche es femenino."
+        },
+        "Welches": {
+          "en": "Welches is neuter (welches Hemd). Tasche is feminine.",
+          "es": "Welches es neutro (welches Hemd). Tasche es femenino."
+        }
+      },
+      "examples": [
+        "Welche Jacke gefällt dir?",
+        "Welche Lampe ist neu?"
+      ],
+      "tr": {
+        "en": "Which bag do you like?",
+        "es": "¿Cuál bolsa te gusta?"
+      }
+    },
+    {
+      "id": "demonstrativ-welcher-dieser-f07",
+      "kind": "form",
+      "verb": "Dativ",
+      "person": "Plural",
+      "answer": "diesen Schuhen",
+      "table": "dieser"
+    },
+    {
+      "id": "demonstrativ-welcher-dieser-c08",
+      "sentence": "___ Hemd kaufst du?",
+      "options": [
+        "Welche",
+        "Welchen",
+        "Welches"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Hemd is neuter, and the accusative neuter is the same as the nominative: Welches Hemd.",
+        "es": "Hemd es neutro, y el acusativo neutro es igual al nominativo: Welches Hemd."
+      },
+      "wrong": {
+        "Welche": {
+          "en": "Welche is feminine or plural (welche Tasche, welche Hemden). Hemd is neuter singular.",
+          "es": "Welche es femenino o plural (welche Tasche, welche Hemden). Hemd es neutro singular."
+        },
+        "Welchen": {
+          "en": "Welchen is the masculine accusative (welchen Pullover). Hemd is neuter.",
+          "es": "Welchen es el acusativo masculino (welchen Pullover). Hemd es neutro."
+        }
+      },
+      "examples": [
+        "Welches Buch liest du?",
+        "Welches Auto kaufst du?"
+      ],
+      "tr": {
+        "en": "Which shirt are you buying?",
+        "es": "¿Cuál camisa compras?"
+      }
+    },
+    {
+      "id": "demonstrativ-welcher-dieser-f08",
+      "kind": "form",
+      "verb": "Nominativ",
+      "person": "maskulin",
+      "answer": "welcher Mann",
+      "table": "welcher"
+    },
+    {
+      "id": "demonstrativ-welcher-dieser-c09",
+      "sentence": "Mit ___ Bus fährst du?",
+      "options": [
+        "welchem",
+        "welchen",
+        "welcher"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "mit asks for the dative, and Bus is masculine: mit welchem Bus, like mit dem Bus.",
+        "es": "mit pide el dativo, y Bus es masculino: mit welchem Bus, como mit dem Bus."
+      },
+      "wrong": {
+        "welchen": {
+          "en": "welchen is the masculine accusative. After mit the dative is required, not the accusative.",
+          "es": "welchen es el acusativo masculino. Después de mit se requiere el dativo, no el acusativo."
+        },
+        "welcher": {
+          "en": "welcher is the masculine nominative or the feminine dative. Bus is masculine and after mit it is dative.",
+          "es": "welcher es el nominativo masculino o el dativo femenino. Bus es masculino y después de mit está en dativo."
+        }
+      },
+      "examples": [
+        "Mit welchem Zug kommst du?",
+        "In welchem Hotel wohnst du?"
+      ],
+      "tr": {
+        "en": "Which bus do you take?",
+        "es": "¿En cuál autobús vas?"
+      }
+    },
+    {
+      "id": "demonstrativ-welcher-dieser-f09",
+      "kind": "form",
+      "verb": "Dativ",
+      "person": "maskulin",
+      "answer": "diesem Pullover",
+      "table": "dieser"
+    },
+    {
+      "id": "demonstrativ-welcher-dieser-w03",
+      "kind": "why",
+      "es": "Den finde ich schön.",
+      "target": "Den",
+      "tr": {
+        "en": "I think that one is nice.",
+        "es": "Ese me parece bonito."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Den is the dative and replaces a person",
+            "es": "Den es el dativo y sustituye a una persona"
+          },
+          "wrong": {
+            "en": "Den is accusative here. The dative masculine would be dem. finden takes the accusative.",
+            "es": "Den es aquí acusativo. El dativo masculino sería dem. finden lleva acusativo."
+          }
+        },
+        {
+          "text": {
+            "en": "Den is the pronoun der in the accusative: it replaces a masculine noun already mentioned",
+            "es": "Den es el pronombre der en acusativo: sustituye a un sustantivo masculino ya mencionado"
+          }
+        },
+        {
+          "text": {
+            "en": "Den is the article of a new noun that follows",
+            "es": "Den es el artículo de un sustantivo nuevo que sigue"
+          },
+          "wrong": {
+            "en": "No noun follows Den. It stands alone and replaces the noun den Pullover, which was already named.",
+            "es": "Ningún sustantivo sigue a Den. Está solo y sustituye al sustantivo den Pullover, que ya fue nombrado."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "demonstrativ-welcher-dieser-c10",
+      "sentence": "Was für ___ Hund hast du?",
+      "options": [
+        "ein",
+        "einen",
+        "einem"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "hast takes the accusative, and Hund is masculine. After was für the ending is that of ein: einen Hund.",
+        "es": "hast lleva acusativo, y Hund es masculino. Después de was für la terminación es la de ein: einen Hund."
+      },
+      "wrong": {
+        "ein": {
+          "en": "ein is the masculine nominative. Hund is the object of hast, so the accusative einen is needed.",
+          "es": "ein es el nominativo masculino. Hund es el objeto de hast, así que se necesita el acusativo einen."
+        },
+        "einem": {
+          "en": "einem is the dative. hast does not take the dative, and für does not change the case after was.",
+          "es": "einem es el dativo. hast no lleva dativo, y für no cambia el caso después de was."
+        }
+      },
+      "examples": [
+        "Was für einen Film siehst du?",
+        "Was für ein Auto hast du?"
+      ],
+      "tr": {
+        "en": "What kind of dog do you have?",
+        "es": "¿Qué tipo de perro tienes?"
+      }
+    },
+    {
+      "id": "demonstrativ-welcher-dieser-f10",
+      "kind": "form",
+      "verb": "Dativ",
+      "person": "Plural",
+      "answer": "welchen Kindern",
+      "table": "welcher"
+    },
+    {
+      "id": "demonstrativ-welcher-dieser-c11",
+      "sentence": "Wie findest du den Pullover? ___ finde ich schön.",
+      "options": [
+        "Der",
+        "Dem",
+        "Den"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The pronoun repeats the masculine accusative object, so it is Den, and it stands first for emphasis.",
+        "es": "El pronombre repite el objeto masculino en acusativo, así que es Den, y va primero para dar énfasis."
+      },
+      "wrong": {
+        "Der": {
+          "en": "Der is the nominative. Here the pullover is the object of finde, so it is accusative.",
+          "es": "Der es el nominativo. Aquí el suéter es el objeto de finde, o sea, acusativo."
+        },
+        "Dem": {
+          "en": "Dem is the dative. finden takes the accusative object.",
+          "es": "Dem es el dativo. finden lleva un objeto en acusativo."
+        }
+      },
+      "examples": [
+        "Den Mann kenne ich nicht.",
+        "Den Film sehe ich gern."
+      ],
+      "tr": {
+        "en": "How do you like the sweater? I think that one is nice.",
+        "es": "¿Qué te parece el suéter? Ese me parece bonito."
+      }
+    },
+    {
+      "id": "demonstrativ-welcher-dieser-f11",
+      "kind": "form",
+      "verb": "Nominativ",
+      "person": "Plural",
+      "answer": "diese Schuhe",
+      "table": "dieser"
+    },
+    {
+      "id": "demonstrativ-welcher-dieser-c12",
+      "sentence": "Wie findest du die Schuhe? ___ sind teuer.",
+      "options": [
+        "Die",
+        "Den",
+        "Der"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The pronoun is the subject of sind and plural, so it has the form of the plural article: Die.",
+        "es": "El pronombre es el sujeto de sind y está en plural, así que tiene la forma del artículo plural: Die."
+      },
+      "wrong": {
+        "Den": {
+          "en": "Den is the masculine accusative or the dative plural with a noun. It cannot stand alone as the subject of sind.",
+          "es": "Den es el acusativo masculino o el dativo plural con un sustantivo. No puede estar solo como sujeto de sind."
+        },
+        "Der": {
+          "en": "Der is the masculine nominative or the feminine dative. Shoes are plural, so the subject is Die.",
+          "es": "Der es el nominativo masculino o el dativo femenino. Los zapatos están en plural, así que el sujeto es Die."
+        }
+      },
+      "examples": [
+        "Die Tasche ist neu. Die ist schön.",
+        "Wie findest du die Hose? Die ist billig."
+      ],
+      "tr": {
+        "en": "How do you like the shoes? Those are expensive.",
+        "es": "¿Qué te parecen los zapatos? Esos son caros."
+      }
+    },
+    {
+      "id": "demonstrativ-welcher-dieser-f12",
+      "kind": "form",
+      "verb": "Akkusativ",
+      "person": "neutral",
+      "answer": "welches Kind",
+      "table": "welcher"
+    },
+    {
+      "id": "demonstrativ-welcher-dieser-c13",
+      "sentence": "___ Kinder spielen im Garten.",
+      "options": [
+        "Jeder",
+        "Alle",
+        "Jedes"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Kinder is plural, and jeder is only singular, so the plural word alle fits: Alle Kinder.",
+        "es": "Kinder es plural, y jeder solo es singular, así que encaja la palabra plural alle: Alle Kinder."
+      },
+      "wrong": {
+        "Jeder": {
+          "en": "Jeder is masculine singular and cannot stand with a plural noun. You would say Jeder Junge.",
+          "es": "Jeder es masculino singular y no puede ir con un sustantivo plural. Dirías Jeder Junge."
+        },
+        "Jedes": {
+          "en": "Jedes is neuter singular (jedes Kind). Kinder is plural.",
+          "es": "Jedes es neutro singular (jedes Kind). Kinder es plural."
+        }
+      },
+      "examples": [
+        "Alle Leute warten auf den Bus.",
+        "Alle Bücher sind neu."
+      ],
+      "tr": {
+        "en": "All the children play in the garden.",
+        "es": "Todos los niños juegan en el jardín."
+      }
+    },
+    {
+      "id": "demonstrativ-welcher-dieser-c14",
+      "sentence": "Ich helfe ___ Kindern.",
+      "options": [
+        "diesen",
+        "diese",
+        "dieser"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "helfen takes the dative, and the dative plural of dieser is diesen. The noun gets an -n: Kindern.",
+        "es": "helfen lleva dativo, y el dativo plural de dieser es diesen. El sustantivo recibe una -n: Kindern."
+      },
+      "wrong": {
+        "diese": {
+          "en": "diese is the plural nominative or accusative (die Kinder). helfen requires the dative.",
+          "es": "diese es el nominativo o acusativo plural (die Kinder). helfen requiere el dativo."
+        },
+        "dieser": {
+          "en": "dieser is the masculine nominative or the feminine dative. A plural noun like Kindern needs diesen.",
+          "es": "dieser es el nominativo masculino o el dativo femenino. Un sustantivo plural como Kindern necesita diesen."
+        }
+      },
+      "examples": [
+        "Wir helfen diesen Leuten.",
+        "Er hilft diesen Frauen."
+      ],
+      "tr": {
+        "en": "I help these children.",
+        "es": "Ayudo a estos niños."
+      }
+    },
+    {
+      "id": "demonstrativ-welcher-dieser-w04",
+      "kind": "why",
+      "es": "Mit welchem Bus fährst du?",
+      "target": "welchem",
+      "tr": {
+        "en": "Which bus do you take?",
+        "es": "¿En cuál autobús vas?"
+      },
+      "options": [
+        {
+          "text": {
+            "en": "mit takes the dative, and the masculine dative of a der-word ends in -em",
+            "es": "mit lleva dativo, y el dativo masculino de un der-word termina en -em"
+          }
+        },
+        {
+          "text": {
+            "en": "The ending is -en, as after an article before an adjective",
+            "es": "La terminación es -en, como después de un artículo antes de un adjetivo"
+          },
+          "wrong": {
+            "en": "That -en belongs to the adjective after the article. welcher itself is a der-word and takes the article ending -em in the masculine dative.",
+            "es": "Esa -en pertenece al adjetivo después del artículo. welcher mismo es un der-word y lleva la terminación del artículo -em en el dativo masculino."
+          }
+        },
+        {
+          "text": {
+            "en": "welcher stays in the nominative because it is a question",
+            "es": "welcher se queda en nominativo porque es una pregunta"
+          },
+          "wrong": {
+            "en": "A question word does not change the case. The preposition mit decides: dative, so welchem.",
+            "es": "Una palabra interrogativa no cambia el caso. La preposición mit decide: dativo, así que welchem."
+          }
+        }
+      ],
+      "correctIndex": 0
+    }
+  ]
+}

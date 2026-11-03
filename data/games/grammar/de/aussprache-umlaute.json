@@ -1,0 +1,1180 @@
+{
+  "schema": 2,
+  "topic": "aussprache-umlaute",
+  "level": "A1",
+  "title": {
+    "en": "Sounds and spelling: umlauts, ß, ch, sch",
+    "es": "Sonidos y escritura: diéresis, ß, ch, sch"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "German is written almost the way it sounds, so a handful of rules takes you a long way. The vowels ä, ö and ü carry two dots (umlauts) and are sounds of their own: schon (already) and schön (beautiful) are different words. The letter ß is a sharp s. And every noun starts with a capital letter: der Hund, das Haus.",
+        "es": "El alemán se escribe casi como suena, así que unas pocas reglas te llevan lejos. Las vocales ä, ö y ü llevan dos puntos (diéresis) y son sonidos propios: schon («ya») y schön («bonito») son palabras distintas. La letra ß es una s fuerte. Y todos los sustantivos empiezan con mayúscula: der Hund, das Haus."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "umlaut-ersatz",
+      "title": {
+        "en": "Umlauts and ß, and what to write without them",
+        "es": "Diéresis y ß, y qué escribir si no las tienes"
+      },
+      "header": [
+        {
+          "en": "Writing",
+          "es": "Escritura"
+        },
+        {
+          "en": "ä",
+          "es": "ä"
+        },
+        {
+          "en": "ö",
+          "es": "ö"
+        },
+        {
+          "en": "ü",
+          "es": "ü"
+        },
+        {
+          "en": "ß",
+          "es": "ß"
+        }
+      ],
+      "rows": [
+        [
+          "Ersatz",
+          "ae",
+          "oe",
+          "ue",
+          "ss"
+        ],
+        [
+          "Beispiel",
+          "Bär",
+          "schön",
+          "Tür",
+          "Straße"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "Vowels and consonants",
+        "es": "Vocales y consonantes"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "ä, ö and ü are separate vowels, and they change the word. ä sounds like a long e (Käse). ö is an e said with rounded lips (schön). ü is an ee said with rounded lips, like the u in French tu (Tür).",
+            "es": "ä, ö y ü son vocales distintas y cambian la palabra. La ä suena como una e larga (Käse). La ö es una e dicha con los labios redondeados (schön). La ü es una i dicha con los labios redondeados, como la u del francés tu (Tür)."
+          },
+          "examples": [
+            {
+              "es": "Das Wetter ist schön.",
+              "tr": {
+                "en": "The weather is nice.",
+                "es": "El clima está bonito."
+              }
+            },
+            {
+              "es": "Ich esse Käse.",
+              "tr": {
+                "en": "I eat cheese.",
+                "es": "Como queso."
+              }
+            },
+            {
+              "es": "Ich bin müde.",
+              "tr": {
+                "en": "I am tired.",
+                "es": "Estoy cansado."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "A vowel before one consonant is usually long (Name, Tag); before two consonants it is short (Mutter, Wasser, kommen). A double consonant tells you: the vowel before it is short. ie is always one long i.",
+            "es": "Una vocal antes de una sola consonante suele ser larga (Name, Tag); antes de dos consonantes es corta (Mutter, Wasser, kommen). La consonante doble te avisa: la vocal anterior es corta. ie es siempre una i larga."
+          },
+          "examples": [
+            {
+              "es": "Die Mutter kommt aus Mexiko.",
+              "tr": {
+                "en": "The mother comes from Mexico.",
+                "es": "La mamá viene de México."
+              }
+            },
+            {
+              "es": "Das Wasser ist kalt.",
+              "tr": {
+                "en": "The water is cold.",
+                "es": "El agua está fría."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "ei sounds like the English word eye (Wein, zwei). ie is a long ee (Bier, vier). eu and äu sound like oy (Euro, Häuser). Be careful: the two letters ei and ie are the opposite of what they look like in English.",
+            "es": "ei suena como la palabra inglesa eye, o «ai» (Wein, zwei). ie es una i larga (Bier, vier). eu y äu suenan como «oi» (Euro, Häuser). Cuidado: ei e ie suenan al revés de lo que parecen en inglés."
+          },
+          "examples": [
+            {
+              "es": "Ich trinke Wein.",
+              "tr": {
+                "en": "I drink wine.",
+                "es": "Tomo vino."
+              }
+            },
+            {
+              "es": "Ich trinke Bier.",
+              "tr": {
+                "en": "I drink beer.",
+                "es": "Tomo cerveza."
+              }
+            },
+            {
+              "es": "Das kostet vier Euro.",
+              "tr": {
+                "en": "That costs four euros.",
+                "es": "Eso cuesta cuatro euros."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "ch has two sounds. After a, o, u and au it is rough, made at the back of the mouth (Buch, auch). After e, i, ä, ö, ü, l, n, r it is a soft hiss (ich, Milch). sch is sh (Schule). At the start of a word, sp and st sound like shp and sht (Sport, Stein).",
+            "es": "ch tiene dos sonidos. Después de a, o, u y au es áspero, en el fondo de la boca (Buch, auch). Después de e, i, ä, ö, ü, l, n, r es un siseo suave (ich, Milch). sch es «sh» (Schule). Al inicio de palabra, sp y st suenan como «shp» y «sht» (Sport, Stein)."
+          },
+          "examples": [
+            {
+              "es": "Ich lerne in der Schule.",
+              "tr": {
+                "en": "I study at school.",
+                "es": "Aprendo en la escuela."
+              }
+            },
+            {
+              "es": "Ich spreche Deutsch.",
+              "tr": {
+                "en": "I speak German.",
+                "es": "Hablo alemán."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "z is ts (Zimmer). v sounds like f in German words (Vater, viel), and w sounds like v (Wasser, wohnen). j is y (ja). An s before a vowel is soft, like z (Sonne). At the end of a word b, d, g sound like p, t, k, but you still write b, d, g (Hund).",
+            "es": "z es «ts» (Zimmer). v suena como f en las palabras alemanas (Vater, viel), y w suena como v (Wasser, wohnen). j es «y» (ja). Una s antes de vocal es suave, como z (Sonne). Al final de la palabra b, d, g suenan como p, t, k, pero se escribe b, d, g (Hund)."
+          },
+          "examples": [
+            {
+              "es": "Das Zimmer ist klein.",
+              "tr": {
+                "en": "The room is small.",
+                "es": "La habitación es pequeña."
+              }
+            },
+            {
+              "es": "Der Vater wohnt in Berlin.",
+              "tr": {
+                "en": "The father lives in Berlin.",
+                "es": "El papá vive en Berlín."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "laut-gruppen",
+      "title": {
+        "en": "Letter groups and example words",
+        "es": "Grupos de letras y palabras de ejemplo"
+      },
+      "header": [
+        {
+          "en": "Letters",
+          "es": "Letras"
+        },
+        {
+          "en": "Example",
+          "es": "Ejemplo"
+        },
+        {
+          "en": "Example",
+          "es": "Ejemplo"
+        }
+      ],
+      "rows": [
+        [
+          "ei",
+          "Wein",
+          "zwei"
+        ],
+        [
+          "ie",
+          "Bier",
+          "vier"
+        ],
+        [
+          "eu / äu",
+          "Euro",
+          "Häuser"
+        ],
+        [
+          "ch (ach)",
+          "Buch",
+          "auch"
+        ],
+        [
+          "ch (ich)",
+          "ich",
+          "Milch"
+        ],
+        [
+          "sch",
+          "Schule",
+          "Fisch"
+        ],
+        [
+          "sp / st",
+          "Sport",
+          "Stein"
+        ],
+        [
+          "z",
+          "Zimmer",
+          "Zeit"
+        ],
+        [
+          "v / w",
+          "Vater",
+          "Wasser"
+        ],
+        [
+          "j",
+          "ja",
+          "Juli"
+        ]
+      ],
+      "noTableDeck": true
+    },
+    {
+      "kind": "table",
+      "id": "umlaut-plural",
+      "title": {
+        "en": "Umlauts in the plural",
+        "es": "La diéresis en el plural"
+      },
+      "header": [
+        {
+          "en": "Form",
+          "es": "Forma"
+        },
+        {
+          "en": "Mann",
+          "es": "Mann"
+        },
+        {
+          "en": "Apfel",
+          "es": "Apfel"
+        },
+        {
+          "en": "Buch",
+          "es": "Buch"
+        },
+        {
+          "en": "Haus",
+          "es": "Haus"
+        },
+        {
+          "en": "Vater",
+          "es": "Vater"
+        },
+        {
+          "en": "Bruder",
+          "es": "Bruder"
+        }
+      ],
+      "rows": [
+        [
+          "Singular",
+          "der Mann",
+          "der Apfel",
+          "das Buch",
+          "das Haus",
+          "der Vater",
+          "der Bruder"
+        ],
+        [
+          "Plural",
+          "die Männer",
+          "die Äpfel",
+          "die Bücher",
+          "die Häuser",
+          "die Väter",
+          "die Brüder"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "zahlwoerter",
+      "title": {
+        "en": "Number words 1 to 12",
+        "es": "Los números del 1 al 12"
+      },
+      "header": [
+        {
+          "en": "Number",
+          "es": "Número"
+        },
+        {
+          "en": "Zahlwort",
+          "es": "Zahlwort"
+        }
+      ],
+      "rows": [
+        [
+          "1",
+          "eins"
+        ],
+        [
+          "2",
+          "zwei"
+        ],
+        [
+          "3",
+          "drei"
+        ],
+        [
+          "4",
+          "vier"
+        ],
+        [
+          "5",
+          "fünf"
+        ],
+        [
+          "6",
+          "sechs"
+        ],
+        [
+          "7",
+          "sieben"
+        ],
+        [
+          "8",
+          "acht"
+        ],
+        [
+          "9",
+          "neun"
+        ],
+        [
+          "10",
+          "zehn"
+        ],
+        [
+          "11",
+          "elf"
+        ],
+        [
+          "12",
+          "zwölf"
+        ]
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Which letter?",
+        "es": "¿Qué letra?"
+      },
+      "pairs": [
+        {
+          "a": "Ich bin schon hier.",
+          "b": "Das Haus ist schön.",
+          "note": {
+            "en": "o and ö make two different words: schon means already, schön means beautiful.",
+            "es": "o y ö forman dos palabras distintas: schon significa «ya», schön significa «bonito»."
+          },
+          "examples": [
+            {
+              "es": "Ich bin schon müde.",
+              "tr": {
+                "en": "I am already tired.",
+                "es": "Ya estoy cansado."
+              }
+            },
+            {
+              "es": "Der Tag ist schön.",
+              "tr": {
+                "en": "The day is nice.",
+                "es": "El día está bonito."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Ich heiße Anna.",
+          "b": "Das Wasser ist nass.",
+          "note": {
+            "en": "ß comes after a long vowel or a diphthong (heißen, groß, Straße). ss comes after a short vowel (nass, Wasser).",
+            "es": "ß va después de una vocal larga o de un diptongo (heißen, groß, Straße). ss va después de una vocal corta (nass, Wasser)."
+          },
+          "examples": [
+            {
+              "es": "Die Straße ist groß.",
+              "tr": {
+                "en": "The street is big.",
+                "es": "La calle es grande."
+              }
+            },
+            {
+              "es": "Das Wasser ist kalt.",
+              "tr": {
+                "en": "The water is cold.",
+                "es": "El agua está fría."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "No umlaut key? On a phone, hold down a, o or u. On a keyboard without them you can write ae, oe, ue and ss (Tuer, Strasse): people will understand, but in a normal text, and in an exam, write the real letters. Never write a plain u for ü or a plain o for ö: that is another word. And do not forget the capital letter on nouns.",
+        "es": "¿No tienes la tecla de la diéresis? En el celular mantén presionada la a, la o o la u. En un teclado sin ellas puedes escribir ae, oe, ue y ss (Tuer, Strasse): te entenderán, pero en un texto normal, y en un examen, escribe las letras de verdad. No escribas una u simple por ü ni una o simple por ö: es otra palabra. Y no olvides la mayúscula en los sustantivos."
+      }
+    }
+  ],
+  "speak": {
+    "en": "Three German vowels carry two dots: «ä», «ö» and «ü». They are sounds of their own, so «schon» and «schön» are two different words. The letter «ß» comes after a long vowel, as in «Straße», and a double s comes after a short vowel, as in «Wasser». The group «ei» sounds like eye, as in «Wein». The group «ie» is a long ee, as in «Bier». The group «sch» sounds like sh, as in «Schule». And every noun starts with a capital letter: «der Hund», «das Haus».",
+    "es": "Tres vocales alemanas llevan dos puntos: «ä», «ö» y «ü». Son sonidos propios, así que «schon» y «schön» son dos palabras distintas. La letra «ß» va después de una vocal larga, como en «Straße», y la doble s va después de una vocal corta, como en «Wasser». El grupo «ei» suena como «ai», como en «Wein». El grupo «ie» es una i larga, como en «Bier». El grupo «sch» suena como la ch de «chico» pero sin la t, como en «Schule». Y todos los sustantivos empiezan con mayúscula: «der Hund», «das Haus»."
+  },
+  "items": [
+    {
+      "id": "aussprache-umlaute-c01",
+      "sentence": "Das Wetter ist heute ___.",
+      "options": [
+        "schon",
+        "schön",
+        "shön"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The weather is nice, and nice is schön: an ö with two dots after sch. The dots make it a different word.",
+        "es": "El clima está bonito, y «bonito» es schön: una ö con dos puntos después de sch. Los puntos cambian la palabra."
+      },
+      "wrong": {
+        "schon": {
+          "en": "Without the dots, schon means already, so the sentence would say the weather is already: schon and schön are different words.",
+          "es": "Sin los puntos, schon significa «ya», así que la frase diría que el clima ya: schon y schön son palabras distintas."
+        },
+        "shön": {
+          "en": "German never writes the sound sh as sh. It writes sch, so shön is not a German word.",
+          "es": "El alemán nunca escribe el sonido «sh» como sh. Lo escribe sch, así que shön no es una palabra alemana."
+        }
+      },
+      "examples": [
+        "Das Haus ist schön.",
+        "Der Tag ist schön."
+      ],
+      "tr": {
+        "en": "The weather is nice today.",
+        "es": "Hoy hace buen tiempo."
+      }
+    },
+    {
+      "id": "aussprache-umlaute-f01",
+      "kind": "form",
+      "verb": "Zahlwort",
+      "person": "2",
+      "answer": "zwei",
+      "table": "zahlwoerter"
+    },
+    {
+      "id": "aussprache-umlaute-c02",
+      "sentence": "Ich esse Brot und ___.",
+      "options": [
+        "Kase",
+        "Kese",
+        "Käse"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Cheese is Käse. The ä gives the long e sound, and the two dots are part of the spelling.",
+        "es": "El queso es Käse. La ä da el sonido de e larga, y los dos puntos son parte de la escritura."
+      },
+      "wrong": {
+        "Kase": {
+          "en": "Without the dots the a would be a plain a, like in Vater, and the word would sound different. Käse needs the ä.",
+          "es": "Sin los puntos la a sería una a normal, como en Vater, y la palabra sonaría distinto. Käse necesita la ä."
+        },
+        "Kese": {
+          "en": "Kese is how the word sounds, but the long e sound of this word is written with ä, not with e.",
+          "es": "Kese es como suena la palabra, pero el sonido de e larga de esta palabra se escribe con ä, no con e."
+        }
+      },
+      "examples": [
+        "Der Käse ist gut.",
+        "Wir essen Käse."
+      ],
+      "tr": {
+        "en": "I eat bread and cheese.",
+        "es": "Como pan y queso."
+      }
+    },
+    {
+      "id": "aussprache-umlaute-f02",
+      "kind": "form",
+      "verb": "Mann",
+      "person": "Plural",
+      "answer": "die Männer",
+      "accept": [
+        "Männer"
+      ],
+      "table": "umlaut-plural"
+    },
+    {
+      "id": "aussprache-umlaute-c03",
+      "sentence": "Die ___ ist offen.",
+      "options": [
+        "Tür",
+        "Tur",
+        "Tüer"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Door is Tür. The ü is the whole vowel, an ee said with rounded lips.",
+        "es": "Puerta es Tür. La ü es la vocal completa, una i dicha con los labios redondeados."
+      },
+      "wrong": {
+        "Tur": {
+          "en": "Without the dots the u sounds like oo, and Tur is not the word for door. Tür needs the two dots.",
+          "es": "Sin los puntos sería una u normal, y Tur no es la palabra para puerta. Tür necesita los dos puntos."
+        },
+        "Tüer": {
+          "en": "There is no extra e in the word: the ü already is the vowel. Tuer is only the stand-in spelling without the umlaut key.",
+          "es": "La palabra no lleva una e extra: la ü ya es la vocal. Tuer es solo la escritura sustituta sin la tecla de diéresis."
+        }
+      },
+      "examples": [
+        "Die Tür ist zu.",
+        "Die Tür ist klein."
+      ],
+      "tr": {
+        "en": "The door is open.",
+        "es": "La puerta está abierta."
+      }
+    },
+    {
+      "id": "aussprache-umlaute-f03",
+      "kind": "form",
+      "verb": "ä",
+      "person": "Ersatz",
+      "answer": "ae",
+      "table": "umlaut-ersatz"
+    },
+    {
+      "id": "aussprache-umlaute-w01",
+      "kind": "why",
+      "es": "Ich heiße Anna.",
+      "target": "heiße",
+      "tr": {
+        "en": "My name is Anna.",
+        "es": "Me llamo Anna."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "ss: a short vowel comes before the sharp s",
+            "es": "ss: antes de la s fuerte hay una vocal corta"
+          },
+          "wrong": {
+            "en": "With this rule you would write heisse, but ei is a long diphthong, so the sharp s is written ß.",
+            "es": "Con esta regla escribirías heisse, pero ei es un diptongo largo, así que la s fuerte se escribe ß."
+          }
+        },
+        {
+          "text": {
+            "en": "ß: a long vowel or a diphthong comes before the sharp s",
+            "es": "ß: antes de la s fuerte hay una vocal larga o un diptongo"
+          }
+        },
+        {
+          "text": {
+            "en": "s: a single s between two vowels",
+            "es": "s: una sola s entre dos vocales"
+          },
+          "wrong": {
+            "en": "A single s between two vowels is soft, like z, so the word would sound like heyzeh instead of heyseh.",
+            "es": "Una sola s entre dos vocales es suave, como z, así que la palabra sonaría con una z sonora y no con s fuerte."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "aussprache-umlaute-c04",
+      "sentence": "Ich ___ Anna.",
+      "options": [
+        "heisse",
+        "heiße",
+        "heise"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "After the diphthong ei the sharp s is written ß: heißen. So: Ich heiße Anna.",
+        "es": "Después del diptongo ei la s fuerte se escribe ß: heißen. Así: Ich heiße Anna."
+      },
+      "wrong": {
+        "heisse": {
+          "en": "heisse is how the word is written in Switzerland or without an ß key. In Germany the standard is heiße, because ß follows a long diphthong.",
+          "es": "heisse es como se escribe en Suiza o sin tecla ß. En Alemania el estándar es heiße, porque ß va después de un diptongo largo."
+        },
+        "heise": {
+          "en": "A single s between two vowels is soft, like z, so heise would sound like heyzeh. The sharp sound needs ß.",
+          "es": "Una sola s entre dos vocales es suave, como z, así que heise sonaría con una z sonora y no con s fuerte. El sonido fuerte necesita ß."
+        }
+      },
+      "examples": [
+        "Wie heißt du?",
+        "Er heißt Paul."
+      ],
+      "tr": {
+        "en": "My name is Anna.",
+        "es": "Me llamo Anna."
+      }
+    },
+    {
+      "id": "aussprache-umlaute-f04",
+      "kind": "form",
+      "verb": "Zahlwort",
+      "person": "4",
+      "answer": "vier",
+      "table": "zahlwoerter"
+    },
+    {
+      "id": "aussprache-umlaute-c05",
+      "sentence": "Das ___ ist kalt.",
+      "options": [
+        "Waser",
+        "Waßer",
+        "Wasser"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "After a short vowel the sharp s is doubled: Wasser. The w is said like v.",
+        "es": "Después de una vocal corta la s fuerte se duplica: Wasser. La w se pronuncia como v."
+      },
+      "wrong": {
+        "Waser": {
+          "en": "With one s the a would be long and the s soft, like vah-zer. A short a is shown by the double s.",
+          "es": "Con una sola s la a sería larga y la s suave, como una z: «váa-zer». La a corta se marca con la s doble."
+        },
+        "Waßer": {
+          "en": "ß only stands after a long vowel or a diphthong. The a in Wasser is short, so it is written ss.",
+          "es": "La ß solo va después de una vocal larga o de un diptongo. La a de Wasser es corta, así que se escribe ss."
+        }
+      },
+      "examples": [
+        "Ich trinke Wasser.",
+        "Das Wasser ist gut."
+      ],
+      "tr": {
+        "en": "The water is cold.",
+        "es": "El agua está fría."
+      }
+    },
+    {
+      "id": "aussprache-umlaute-f05",
+      "kind": "form",
+      "verb": "Apfel",
+      "person": "Plural",
+      "answer": "die Äpfel",
+      "accept": [
+        "Äpfel"
+      ],
+      "table": "umlaut-plural"
+    },
+    {
+      "id": "aussprache-umlaute-c06",
+      "sentence": "Ich ___ Deutsch.",
+      "options": [
+        "spreche",
+        "schpreche",
+        "sbreche"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "At the start of a word sp sounds like shp, but it is written sp: sprechen.",
+        "es": "Al inicio de una palabra sp suena como «shp», pero se escribe sp: sprechen."
+      },
+      "wrong": {
+        "schpreche": {
+          "en": "German writes this sound sp, not schp, although you hear shp. The same is true for st: Stein sounds like sht.",
+          "es": "El alemán escribe este sonido sp, no schp, aunque oigas «shp». Lo mismo vale para st: Stein suena «sht»."
+        },
+        "sbreche": {
+          "en": "The p of sp is written p. A b would be a different sound, and the word sbreche does not exist.",
+          "es": "La p de sp se escribe p. Una b sería otro sonido, y la palabra sbreche no existe."
+        }
+      },
+      "examples": [
+        "Ich spreche Spanisch.",
+        "Wir sprechen Englisch."
+      ],
+      "tr": {
+        "en": "I speak German.",
+        "es": "Hablo alemán."
+      }
+    },
+    {
+      "id": "aussprache-umlaute-f06",
+      "kind": "form",
+      "verb": "Zahlwort",
+      "person": "5",
+      "answer": "fünf",
+      "table": "zahlwoerter"
+    },
+    {
+      "id": "aussprache-umlaute-w02",
+      "kind": "why",
+      "es": "Das Wasser ist kalt.",
+      "target": "Wasser",
+      "tr": {
+        "en": "The water is cold.",
+        "es": "El agua está fría."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "ß: a long vowel comes before the sharp s",
+            "es": "ß: antes de la s fuerte hay una vocal larga"
+          },
+          "wrong": {
+            "en": "The a in Wasser is short, and ß only follows a long vowel or a diphthong, so this rule does not fit.",
+            "es": "La a de Wasser es corta, y la ß solo va después de una vocal larga o de un diptongo, así que esta regla no encaja."
+          }
+        },
+        {
+          "text": {
+            "en": "s: one s is enough for the sharp sound",
+            "es": "s: una s basta para el sonido fuerte"
+          },
+          "wrong": {
+            "en": "One s between vowels is soft, like z. The double s is what makes the sharp sound after a short vowel.",
+            "es": "Una s entre vocales es suave, como z. La s doble es lo que da el sonido fuerte después de una vocal corta."
+          }
+        },
+        {
+          "text": {
+            "en": "ss: a short vowel comes before the sharp s",
+            "es": "ss: antes de la s fuerte hay una vocal corta"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "aussprache-umlaute-c07",
+      "sentence": "Ich trinke ein ___.",
+      "options": [
+        "Beir",
+        "Bier",
+        "Bire"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The long ee sound is written ie: Bier, like vier and sieben.",
+        "es": "El sonido de i larga se escribe ie: Bier, igual que vier y sieben."
+      },
+      "wrong": {
+        "Beir": {
+          "en": "Beir turns the letters round. ei sounds like eye, so this would sound like byer. The long ee is written ie.",
+          "es": "Beir invierte las letras. ei suena como «ai», así que esto sonaría «bair». La i larga se escribe ie."
+        },
+        "Bire": {
+          "en": "A single i before one consonant is usually short. The long ee in this word is written ie, as in vier.",
+          "es": "Una i sola antes de una consonante suele ser corta. La i larga de esta palabra se escribe ie, como en vier."
+        }
+      },
+      "examples": [
+        "Das Bier ist kalt.",
+        "Wir trinken Bier."
+      ],
+      "tr": {
+        "en": "I drink a beer.",
+        "es": "Tomo una cerveza."
+      }
+    },
+    {
+      "id": "aussprache-umlaute-f07",
+      "kind": "form",
+      "verb": "ß",
+      "person": "Ersatz",
+      "answer": "ss",
+      "table": "umlaut-ersatz"
+    },
+    {
+      "id": "aussprache-umlaute-c08",
+      "sentence": "Ich trinke ein Glas ___.",
+      "options": [
+        "Wien",
+        "Wain",
+        "Wein"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Wine is Wein: ei sounds like eye. Wien is the city of Vienna.",
+        "es": "El vino es Wein: ei suena como «ai». Wien es la ciudad de Viena."
+      },
+      "wrong": {
+        "Wien": {
+          "en": "Wien with ie is the city of Vienna, so the glass would hold a city. For the drink you write ei.",
+          "es": "Wien con ie es la ciudad de Viena, así que el vaso contendría una ciudad. Para la bebida se escribe ei."
+        },
+        "Wain": {
+          "en": "The eye sound is almost always written ei in German (Wein, zwei, Eis). ai appears in only a few words, such as Mai.",
+          "es": "El sonido «ai» casi siempre se escribe ei en alemán (Wein, zwei, Eis). ai aparece solo en pocas palabras, como Mai."
+        }
+      },
+      "examples": [
+        "Der Wein ist gut.",
+        "Ich trinke Wein."
+      ],
+      "tr": {
+        "en": "I drink a glass of wine.",
+        "es": "Tomo una copa de vino."
+      }
+    },
+    {
+      "id": "aussprache-umlaute-f08",
+      "kind": "form",
+      "verb": "Buch",
+      "person": "Plural",
+      "answer": "die Bücher",
+      "accept": [
+        "Bücher"
+      ],
+      "table": "umlaut-plural"
+    },
+    {
+      "id": "aussprache-umlaute-c09",
+      "sentence": "Das ___ ist klein.",
+      "options": [
+        "Zimmer",
+        "Simmer",
+        "Cimmer"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The ts sound is written z: Zimmer. The double m shows that the i is short.",
+        "es": "El sonido «ts» se escribe z: Zimmer. La m doble muestra que la i es corta."
+      },
+      "wrong": {
+        "Simmer": {
+          "en": "An s before a vowel is soft, like an English z. It does not make the ts sound, which is written z.",
+          "es": "Una s antes de vocal es suave, como una z inglesa. No da el sonido «ts», que se escribe z."
+        },
+        "Cimmer": {
+          "en": "German uses c almost only inside ch and ck. The ts sound is written z, so Cimmer is not a German word.",
+          "es": "El alemán usa la c casi solo dentro de ch y ck. El sonido «ts» se escribe z, así que Cimmer no es una palabra alemana."
+        }
+      },
+      "examples": [
+        "Das Zimmer ist groß.",
+        "Wir haben ein Zimmer."
+      ],
+      "tr": {
+        "en": "The room is small.",
+        "es": "La habitación es pequeña."
+      }
+    },
+    {
+      "id": "aussprache-umlaute-f09",
+      "kind": "form",
+      "verb": "Zahlwort",
+      "person": "7",
+      "answer": "sieben",
+      "table": "zahlwoerter"
+    },
+    {
+      "id": "aussprache-umlaute-w03",
+      "kind": "why",
+      "es": "Der Hund ist groß.",
+      "target": "Hund",
+      "tr": {
+        "en": "The dog is big.",
+        "es": "El perro es grande."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "d: write d at the end, although it sounds like t",
+            "es": "d: se escribe d al final, aunque suene como t"
+          }
+        },
+        {
+          "text": {
+            "en": "t: write the word as it sounds",
+            "es": "t: escribe la palabra como suena"
+          },
+          "wrong": {
+            "en": "German spelling follows the family of the word, not only the sound: the plural Hunde has a clear d, so the singular keeps d.",
+            "es": "La escritura alemana sigue a la familia de la palabra, no solo al sonido: el plural Hunde tiene una d clara, así que el singular conserva la d."
+          }
+        },
+        {
+          "text": {
+            "en": "dt: a double letter for a hard end",
+            "es": "dt: una letra doble para un final duro"
+          },
+          "wrong": {
+            "en": "dt appears in only a few words, such as Stadt; Hund is written with a simple d.",
+            "es": "dt aparece solo en pocas palabras, como Stadt; Hund se escribe con una d simple."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "aussprache-umlaute-c10",
+      "sentence": "Der ___ kocht heute.",
+      "options": [
+        "Fater",
+        "Vater",
+        "Water"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Father is Vater. In this word the v sounds like f, but it is written v, as in viel and vier.",
+        "es": "Papá es Vater. En esta palabra la v suena como f, pero se escribe v, igual que en viel y vier."
+      },
+      "wrong": {
+        "Fater": {
+          "en": "German does write f for the f sound in many words (Familie, Freund), but Vater keeps the v spelling.",
+          "es": "El alemán sí escribe f para el sonido f en muchas palabras (Familie, Freund), pero Vater conserva la v."
+        },
+        "Water": {
+          "en": "The German w sounds like v, so Water would sound like vater and look like the English word water. The father is Vater.",
+          "es": "La w alemana suena como v, así que Water sonaría «váter» y parecería la palabra inglesa water. El papá es Vater."
+        }
+      },
+      "examples": [
+        "Der Vater ist nett.",
+        "Wir haben viel Zeit."
+      ],
+      "tr": {
+        "en": "The father is cooking today.",
+        "es": "El papá cocina hoy."
+      }
+    },
+    {
+      "id": "aussprache-umlaute-f10",
+      "kind": "form",
+      "verb": "ü",
+      "person": "Ersatz",
+      "answer": "ue",
+      "table": "umlaut-ersatz"
+    },
+    {
+      "id": "aussprache-umlaute-c11",
+      "sentence": "Das ist ein ___.",
+      "options": [
+        "Buk",
+        "Buh",
+        "Buch"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Book is Buch. After u the ch is the rough sound made at the back of the mouth.",
+        "es": "Libro es Buch. Después de u la ch es el sonido áspero del fondo de la boca."
+      },
+      "wrong": {
+        "Buk": {
+          "en": "The k is a hard stop, but this word ends in the rough ch sound after u, which is written ch.",
+          "es": "La k es una oclusiva dura, pero esta palabra termina en el sonido áspero ch después de u, que se escribe ch."
+        },
+        "Buh": {
+          "en": "An h at the end of a syllable is not pronounced, so Buh would end in a long u. The rough sound needs ch.",
+          "es": "Una h al final de sílaba no se pronuncia, así que Buh terminaría en una u larga. El sonido áspero necesita ch."
+        }
+      },
+      "examples": [
+        "Das Buch ist neu.",
+        "Ich lese ein Buch."
+      ],
+      "tr": {
+        "en": "That is a book.",
+        "es": "Eso es un libro."
+      }
+    },
+    {
+      "id": "aussprache-umlaute-f11",
+      "kind": "form",
+      "verb": "Haus",
+      "person": "Plural",
+      "answer": "die Häuser",
+      "accept": [
+        "Häuser"
+      ],
+      "table": "umlaut-plural"
+    },
+    {
+      "id": "aussprache-umlaute-c12",
+      "sentence": "Ich gehe in die ___.",
+      "options": [
+        "Schule",
+        "Sule",
+        "Shule"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The sh sound is written sch: Schule. The u is long, the e at the end is a short weak sound.",
+        "es": "El sonido «sh» se escribe sch: Schule. La u es larga, la e final es un sonido corto y débil."
+      },
+      "wrong": {
+        "Sule": {
+          "en": "A single s before a vowel is soft, like z, so Sule would sound like zoole. The sh sound needs sch.",
+          "es": "Una s sola antes de vocal es suave, como z, así que Sule sonaría «zule». El sonido «sh» necesita sch."
+        },
+        "Shule": {
+          "en": "German never writes sh. The letters s, c and h together, sch, make the sh sound.",
+          "es": "El alemán nunca escribe sh. Las letras s, c y h juntas, sch, forman el sonido «sh»."
+        }
+      },
+      "examples": [
+        "Die Schule ist groß.",
+        "Ich lerne in der Schule."
+      ],
+      "tr": {
+        "en": "I go to school.",
+        "es": "Voy a la escuela."
+      }
+    },
+    {
+      "id": "aussprache-umlaute-f12",
+      "kind": "form",
+      "verb": "Zahlwort",
+      "person": "12",
+      "answer": "zwölf",
+      "table": "zahlwoerter"
+    },
+    {
+      "id": "aussprache-umlaute-c13",
+      "sentence": "Der ___ ist groß.",
+      "options": [
+        "Hunt",
+        "Hund",
+        "hund"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Dog is Hund: a capital H, because it is a noun, and a d at the end, although you hear t.",
+        "es": "Perro es Hund: con H mayúscula, porque es un sustantivo, y con d al final, aunque oigas t."
+      },
+      "wrong": {
+        "Hunt": {
+          "en": "The word sounds like hunt, but it is written with d. The plural Hunde shows the d, where you can hear it.",
+          "es": "La palabra suena como «junt», pero se escribe con d. El plural Hunde muestra la d, donde sí se oye."
+        },
+        "hund": {
+          "en": "All nouns start with a capital letter in German, even in the middle of a sentence: der Hund.",
+          "es": "En alemán todos los sustantivos empiezan con mayúscula, incluso en medio de la frase: der Hund."
+        }
+      },
+      "examples": [
+        "Der Hund ist klein.",
+        "Das Kind ist hier."
+      ],
+      "tr": {
+        "en": "The dog is big.",
+        "es": "El perro es grande."
+      }
+    },
+    {
+      "id": "aussprache-umlaute-c14",
+      "sentence": "Das kostet zehn ___.",
+      "options": [
+        "Oiro",
+        "Äuro",
+        "Euro"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The oy sound is written eu in Euro, and it is a noun, so it has a capital letter.",
+        "es": "El sonido «oi» se escribe eu en Euro, y es un sustantivo, así que lleva mayúscula."
+      },
+      "wrong": {
+        "Oiro": {
+          "en": "oi is an English spelling. German writes the oy sound as eu or äu.",
+          "es": "oi es una escritura inglesa. El alemán escribe el sonido «oi» como eu o äu."
+        },
+        "Äuro": {
+          "en": "äu is used in words related to au words (Haus, Häuser). Euro is a loan word and keeps the spelling eu.",
+          "es": "äu se usa en palabras relacionadas con palabras con au (Haus, Häuser). Euro es un préstamo y conserva la escritura eu."
+        }
+      },
+      "examples": [
+        "Der Kaffee kostet drei Euro.",
+        "Das Auto ist neu."
+      ],
+      "tr": {
+        "en": "That costs ten euros.",
+        "es": "Eso cuesta diez euros."
+      }
+    },
+    {
+      "id": "aussprache-umlaute-w04",
+      "kind": "why",
+      "es": "Das Wetter ist schön.",
+      "target": "schön",
+      "tr": {
+        "en": "The weather is nice.",
+        "es": "El clima está bonito."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "o: the two dots are only decoration",
+            "es": "o: los dos puntos son solo decoración"
+          },
+          "wrong": {
+            "en": "The dots are never decoration: schon (no dots) means already, which does not fit the sentence.",
+            "es": "Los puntos nunca son decoración: schon (sin puntos) significa «ya», lo cual no encaja en la frase."
+          }
+        },
+        {
+          "text": {
+            "en": "ö: the two dots make another vowel and another word",
+            "es": "ö: los dos puntos forman otra vocal y otra palabra"
+          }
+        },
+        {
+          "text": {
+            "en": "oe: always write oe for ö",
+            "es": "oe: siempre se escribe oe en lugar de ö"
+          },
+          "wrong": {
+            "en": "oe is only a stand-in when you cannot type ö. In a normal text you write the real letter ö.",
+            "es": "oe es solo una sustitución cuando no puedes escribir ö. En un texto normal escribes la letra ö."
+          }
+        }
+      ],
+      "correctIndex": 1
+    }
+  ]
+}

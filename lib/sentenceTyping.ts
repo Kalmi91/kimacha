@@ -22,8 +22,8 @@ function variants(entry: SentenceEntry, target: PcicTarget): string[][] {
   const out: string[][] = [];
   for (const alt of pcicAlternatives(entry.target)) {
     out.push(sentenceTokens(alt, target));
-    // dropping the subject pronoun is a Spanish rule
-    const short = target === 'hu' ? null : withoutLeadingSubjectPronoun(alt);
+    // dropping the subject pronoun is a Spanish rule (German drops none)
+    const short = target === 'hu' || target === 'de' ? null : withoutLeadingSubjectPronoun(alt);
     if (short) out.push(sentenceTokens(short, target));
   }
   return out.filter((v) => v.length > 0);

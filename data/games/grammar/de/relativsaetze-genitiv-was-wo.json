@@ -1,0 +1,1037 @@
+{
+  "schema": 2,
+  "topic": "relativsaetze-genitiv-was-wo",
+  "level": "B2",
+  "title": {
+    "en": "Relative clauses: dessen, deren, was, wo, wer",
+    "es": "Oraciones de relativo: dessen, deren, was, wo, wer"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "Besides der, die, das and the pronouns with prepositions, relative clauses at B2 use four more words. The genitive dessen (masculine and neuter) and deren (feminine and plural) mean whose and are followed by a noun without an article. was refers to alles, etwas, nichts, to a superlative like das Beste, or to a whole sentence. wo replaces a preposition plus pronoun for places, and wer ... der says whoever. The verb is always at the end of the relative clause, and the comma is obligatory. English whose and Spanish cuyo both become dessen or deren, but the German word follows the owner, not the owned noun.",
+        "es": "Además de der, die, das y de los pronombres con preposición, las oraciones de relativo en el nivel B2 usan cuatro palabras más. El genitivo dessen (masculino y neutro) y deren (femenino y plural) significan cuyo y van seguidos de un sustantivo sin artículo. was se refiere a alles, etwas, nichts, a un superlativo como das Beste, o a toda una oración. wo reemplaza a una preposición más pronombre para lugares, y wer ... der dice quien. El verbo siempre va al final de la oración de relativo, y la coma es obligatoria. El inglés whose y el español cuyo se convierten en dessen o deren, pero la palabra alemana sigue al poseedor, no al sustantivo poseído."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "relativpronomen-formen",
+      "title": {
+        "en": "The relative pronoun in all cases",
+        "es": "El pronombre relativo en todos los casos"
+      },
+      "header": [
+        {
+          "en": "Case",
+          "es": "Caso"
+        },
+        {
+          "en": "maskulin",
+          "es": "maskulin"
+        },
+        {
+          "en": "feminin",
+          "es": "feminin"
+        },
+        {
+          "en": "neutral",
+          "es": "neutral"
+        },
+        {
+          "en": "Plural",
+          "es": "Plural"
+        }
+      ],
+      "rows": [
+        [
+          "Nominativ",
+          "der",
+          "die",
+          "das",
+          "die"
+        ],
+        [
+          "Akkusativ",
+          "den",
+          "die",
+          "das",
+          "die"
+        ],
+        [
+          "Dativ",
+          "dem",
+          "der",
+          "dem",
+          "denen"
+        ],
+        [
+          "Genitiv",
+          "dessen",
+          "deren",
+          "dessen",
+          "deren"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "relativwort-was-wo",
+      "title": {
+        "en": "Which relative word after which word?",
+        "es": "¿Qué palabra relativa después de qué palabra?"
+      },
+      "header": [
+        {
+          "en": "Word before the clause",
+          "es": "Palabra antes de la oración"
+        },
+        {
+          "en": "Relativwort",
+          "es": "Relativwort"
+        }
+      ],
+      "rows": [
+        [
+          "alles",
+          "was"
+        ],
+        [
+          "etwas",
+          "was"
+        ],
+        [
+          "nichts",
+          "was"
+        ],
+        [
+          "vieles",
+          "was"
+        ],
+        [
+          "das Beste",
+          "was"
+        ],
+        [
+          "die Stadt",
+          "wo"
+        ],
+        [
+          "der Ort",
+          "wo"
+        ],
+        [
+          "Berlin",
+          "wo"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "dessen and deren: whose",
+        "es": "dessen y deren: cuyo"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "The relative pronoun replaces the article of the owned noun. dessen is for a masculine or neuter owner, deren for a feminine or plural owner, and the noun follows without an article. The gender of the owner decides, not the gender of the owned noun.",
+            "es": "El pronombre relativo reemplaza al artículo del sustantivo poseído. dessen es para un poseedor masculino o neutro, deren para un poseedor femenino o plural, y el sustantivo sigue sin artículo. Decide el género del poseedor, no el del sustantivo poseído."
+          },
+          "examples": [
+            {
+              "es": "Der Mann, dessen Auto kaputt ist, wartet.",
+              "tr": {
+                "en": "The man whose car is broken is waiting.",
+                "es": "El hombre cuyo carro está descompuesto espera."
+              }
+            },
+            {
+              "es": "Die Frau, deren Tochter Ärztin ist, wohnt hier.",
+              "tr": {
+                "en": "The woman whose daughter is a doctor lives here.",
+                "es": "La mujer cuya hija es doctora vive aquí."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "The owned noun keeps the case it has in the relative clause. It can be the subject or an object: die Frau, deren Kinder wir kennen. The pronoun itself never changes.",
+            "es": "El sustantivo poseído conserva el caso que tiene en la oración de relativo. Puede ser sujeto o complemento: die Frau, deren Kinder wir kennen. El pronombre en sí nunca cambia."
+          },
+          "examples": [
+            {
+              "es": "Das Kind, dessen Mutter arbeitet, ist im Garten.",
+              "tr": {
+                "en": "The child whose mother works is in the garden.",
+                "es": "El niño cuya madre trabaja está en el jardín."
+              }
+            },
+            {
+              "es": "Das ist die Frau, deren Kinder wir kennen.",
+              "tr": {
+                "en": "That is the woman whose children we know.",
+                "es": "Esa es la mujer cuyos hijos conocemos."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "was and wo",
+        "es": "was y wo"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "After alles, etwas, nichts, vieles and after a neuter superlative like das Beste, the relative word is was, not das. was also refers to a whole sentence before it.",
+            "es": "Después de alles, etwas, nichts, vieles y después de un superlativo neutro como das Beste, la palabra relativa es was, no das. was también se refiere a toda una oración anterior."
+          },
+          "examples": [
+            {
+              "es": "Das ist alles, was ich weiß.",
+              "tr": {
+                "en": "That is everything I know.",
+                "es": "Eso es todo lo que sé."
+              }
+            },
+            {
+              "es": "Er kommt zu spät, was mich ärgert.",
+              "tr": {
+                "en": "He arrives late, which annoys me.",
+                "es": "Él llega tarde, lo cual me molesta."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "wo is a relative adverb for places (and sometimes times). After names of cities and countries it is the only choice, because they have no article: Berlin, wo ich wohne. After words like Stadt or Haus you can also say in der or in dem.",
+            "es": "wo es un adverbio relativo para lugares (y a veces tiempos). Después de nombres de ciudades y países es la única opción, porque no llevan artículo: Berlin, wo ich wohne. Después de palabras como Stadt o Haus también puedes decir in der o in dem."
+          },
+          "examples": [
+            {
+              "es": "Ich wohne in Berlin, wo ich auch arbeite.",
+              "tr": {
+                "en": "I live in Berlin, where I also work.",
+                "es": "Vivo en Berlín, donde también trabajo."
+              }
+            },
+            {
+              "es": "Das ist die Stadt, wo ich geboren bin.",
+              "tr": {
+                "en": "That is the city where I was born.",
+                "es": "Esa es la ciudad donde nací."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "wer ... der and prepositions",
+        "es": "wer ... der y preposiciones"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "wer starts a clause that is the subject of the whole sentence and means whoever. The main clause often picks it up with der. With a preposition, the preposition stands in front of the pronoun, and the pronoun takes the case of the preposition. The formal alternative welcher is rare.",
+            "es": "wer inicia una oración que es el sujeto de toda la frase y significa quien. La oración principal a menudo lo retoma con der. Con una preposición, la preposición va delante del pronombre, y el pronombre toma el caso de la preposición. La alternativa formal welcher es rara."
+          },
+          "examples": [
+            {
+              "es": "Wer das sagt, der lügt.",
+              "tr": {
+                "en": "Whoever says that is lying.",
+                "es": "Quien dice eso, miente."
+              }
+            },
+            {
+              "es": "Die Stadt, in der ich wohne, ist klein.",
+              "tr": {
+                "en": "The city in which I live is small.",
+                "es": "La ciudad en la que vivo es pequeña."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "das or was? wo or in der?",
+        "es": "¿das o was? ¿wo o in der?"
+      },
+      "pairs": [
+        {
+          "a": "Das ist das Buch, das ich lese.",
+          "b": "Das ist alles, was ich lese.",
+          "note": {
+            "en": "After a noun with an article, the relative pronoun is der, die or das. After alles, etwas, nichts, vieles it is was.",
+            "es": "Después de un sustantivo con artículo, el pronombre relativo es der, die o das. Después de alles, etwas, nichts, vieles es was."
+          },
+          "examples": [
+            {
+              "es": "Das ist das Beste, was ich kenne.",
+              "tr": {
+                "en": "That is the best I know.",
+                "es": "Eso es lo mejor que conozco."
+              }
+            },
+            {
+              "es": "Ich habe nichts, was ich dir geben kann.",
+              "tr": {
+                "en": "I have nothing that I can give you.",
+                "es": "No tengo nada que pueda darte."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Die Stadt, wo ich wohne, ist klein.",
+          "b": "Die Stadt, in der ich wohne, ist klein.",
+          "note": {
+            "en": "Both are correct and mean the same. wo is shorter and a little more spoken; in der is the standard written form. With a city name only wo works.",
+            "es": "Ambas son correctas y significan lo mismo. wo es más corta y un poco más hablada; in der es la forma escrita estándar. Con el nombre de una ciudad solo funciona wo."
+          },
+          "examples": [
+            {
+              "es": "Das Haus, wo wir wohnen, ist alt.",
+              "tr": {
+                "en": "The house where we live is old.",
+                "es": "La casa donde vivimos es vieja."
+              }
+            },
+            {
+              "es": "Das Haus, in dem wir wohnen, ist alt.",
+              "tr": {
+                "en": "The house in which we live is old.",
+                "es": "La casa en la que vivimos es vieja."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: using das after alles or nichts (*alles, das ich weiß instead of alles, was ich weiß); putting an article after dessen or deren (*dessen das Auto); choosing dessen or deren by the gender of the owned noun instead of the owner (die Frau, deren Auto, because Frau is feminine); using in wo or a preposition before wo (*in wo). And do not forget the comma and the verb at the end of the relative clause.",
+        "es": "Trampas clásicas: usar das después de alles o nichts (*alles, das ich weiß en lugar de alles, was ich weiß); poner un artículo después de dessen o deren (*dessen das Auto); elegir dessen o deren según el género del sustantivo poseído en lugar del poseedor (die Frau, deren Auto, porque Frau es femenino); usar in wo o una preposición antes de wo (*in wo). Y no olvides la coma ni el verbo al final de la oración de relativo."
+      }
+    }
+  ],
+  "speak": {
+    "en": "There are four more relative words to learn. The genitive «dessen» and «deren» mean whose: «Der Mann, dessen Auto kaputt ist, wartet», and «Die Frau, deren Tochter Ärztin ist, wohnt hier». The word follows the owner, and no article comes after it. After «alles», «etwas» and «nichts» you say «was»: «Das ist alles, was ich weiß». For places you can say «wo»: «Ich wohne in Berlin, wo ich auch arbeite». And «wer» means whoever: «Wer das sagt, der lügt».",
+    "es": "Hay cuatro palabras relativas más que aprender. El genitivo «dessen» y «deren» significa cuyo: «Der Mann, dessen Auto kaputt ist, wartet», y «Die Frau, deren Tochter Ärztin ist, wohnt hier». La palabra sigue al poseedor, y después no va artículo. Después de «alles», «etwas» y «nichts» se dice «was»: «Das ist alles, was ich weiß». Para lugares puedes decir «wo»: «Ich wohne in Berlin, wo ich auch arbeite». Y «wer» significa quien: «Wer das sagt, der lügt»."
+  },
+  "items": [
+    {
+      "id": "relativsaetze-genitiv-was-wo-c01",
+      "sentence": "Der Mann, ___ Auto kaputt ist, wartet.",
+      "options": [
+        "dessen",
+        "deren",
+        "dem"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The owner is der Mann, masculine, so the genitive relative pronoun is dessen. No article follows: dessen Auto.",
+        "es": "El poseedor es der Mann, masculino, así que el pronombre relativo de genitivo es dessen. No sigue artículo: dessen Auto."
+      },
+      "wrong": {
+        "deren": {
+          "en": "deren is for a feminine or plural owner. The owner here is the masculine Mann, so you need dessen.",
+          "es": "deren es para un poseedor femenino o plural. El poseedor aquí es el masculino Mann, así que necesitas dessen."
+        },
+        "dem": {
+          "en": "dem is the dative. It would mean to whom and does not express possession; dessen shows whose car it is.",
+          "es": "dem es el dativo. Significaría a quien y no expresa posesión; dessen muestra de quién es el carro."
+        }
+      },
+      "examples": [
+        "Der Junge, dessen Vater arbeitet, spielt hier.",
+        "Der Lehrer, dessen Buch ich lese, ist nett."
+      ],
+      "tr": {
+        "en": "The man whose car is broken is waiting.",
+        "es": "El hombre cuyo carro está descompuesto espera."
+      }
+    },
+    {
+      "id": "relativsaetze-genitiv-was-wo-f01",
+      "kind": "form",
+      "verb": "maskulin",
+      "person": "Genitiv",
+      "answer": "dessen",
+      "table": "relativpronomen-formen"
+    },
+    {
+      "id": "relativsaetze-genitiv-was-wo-c02",
+      "sentence": "Die Frau, ___ Tochter Ärztin ist, wohnt hier.",
+      "options": [
+        "dessen",
+        "deren",
+        "der"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The owner is die Frau, feminine, so the genitive relative pronoun is deren. The noun follows without an article.",
+        "es": "La poseedora es die Frau, femenino, así que el pronombre relativo de genitivo es deren. El sustantivo sigue sin artículo."
+      },
+      "wrong": {
+        "dessen": {
+          "en": "dessen is for a masculine or neuter owner. The owner is feminine here, even though other words may differ.",
+          "es": "dessen es para un poseedor masculino o neutro. La poseedora aquí es femenina, aunque otras palabras sean distintas."
+        },
+        "der": {
+          "en": "der is the dative feminine or the nominative masculine. To say whose daughter you need the genitive deren.",
+          "es": "der es el dativo femenino o el nominativo masculino. Para decir de quién es la hija necesitas el genitivo deren."
+        }
+      },
+      "examples": [
+        "Die Frau, deren Sohn Lehrer ist, kommt aus Berlin.",
+        "Die Mutter, deren Kind schläft, liest."
+      ],
+      "tr": {
+        "en": "The woman whose daughter is a doctor lives here.",
+        "es": "La mujer cuya hija es doctora vive aquí."
+      }
+    },
+    {
+      "id": "relativsaetze-genitiv-was-wo-f02",
+      "kind": "form",
+      "verb": "Relativwort",
+      "person": "alles",
+      "answer": "was",
+      "table": "relativwort-was-wo"
+    },
+    {
+      "id": "relativsaetze-genitiv-was-wo-c03",
+      "sentence": "Das Kind, ___ Mutter arbeitet, ist im Garten.",
+      "options": [
+        "deren",
+        "dem",
+        "dessen"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Kind is neuter, so the owner needs dessen: das Kind, dessen Mutter. Remember that das Kind is neuter, not feminine.",
+        "es": "Kind es neutro, así que el poseedor necesita dessen: das Kind, dessen Mutter. Recuerda que das Kind es neutro, no femenino."
+      },
+      "wrong": {
+        "deren": {
+          "en": "deren would fit a feminine or plural owner. das Kind is neuter, even though a child can be a girl.",
+          "es": "deren iría con un poseedor femenino o plural. das Kind es neutro, aunque un niño puede ser una niña."
+        },
+        "dem": {
+          "en": "dem is a dative form. It would mean to whom, not whose mother, so it does not express possession.",
+          "es": "dem es una forma de dativo. Significaría a quien, no de quién es la madre, así que no expresa posesión."
+        }
+      },
+      "examples": [
+        "Das Mädchen, dessen Bruder spielt, lacht.",
+        "Das Kind, dessen Hund schläft, ist klein."
+      ],
+      "tr": {
+        "en": "The child whose mother works is in the garden.",
+        "es": "El niño cuya madre trabaja está en el jardín."
+      }
+    },
+    {
+      "id": "relativsaetze-genitiv-was-wo-f03",
+      "kind": "form",
+      "verb": "feminin",
+      "person": "Genitiv",
+      "answer": "deren",
+      "table": "relativpronomen-formen"
+    },
+    {
+      "id": "relativsaetze-genitiv-was-wo-w01",
+      "kind": "why",
+      "es": "Die Frau, deren Auto kaputt ist, wartet.",
+      "target": "deren",
+      "tr": {
+        "en": "The woman whose car is broken is waiting.",
+        "es": "La mujer cuyo carro está descompuesto espera."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "dessen, because Auto is neuter",
+            "es": "dessen, porque Auto es neutro"
+          },
+          "wrong": {
+            "en": "The pronoun follows the owner (die Frau), not the owned noun. So it is deren, even though Auto is neuter.",
+            "es": "El pronombre sigue al poseedor (die Frau), no al sustantivo poseído. Por eso es deren, aunque Auto es neutro."
+          }
+        },
+        {
+          "text": {
+            "en": "deren, because the owner die Frau is feminine; the genitive shows possession",
+            "es": "deren, porque la poseedora die Frau es femenino; el genitivo muestra posesión"
+          }
+        },
+        {
+          "text": {
+            "en": "die, the nominative feminine, because Frau is the subject",
+            "es": "die, el nominativo femenino, porque Frau es el sujeto"
+          },
+          "wrong": {
+            "en": "die would introduce a relative clause about the woman herself. To say whose car it is you need the genitive deren.",
+            "es": "die introduciría una oración de relativo sobre la mujer misma. Para decir de quién es el carro necesitas el genitivo deren."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "relativsaetze-genitiv-was-wo-c04",
+      "sentence": "Die Nachbarn, ___ Kinder laut sind, wohnen oben.",
+      "options": [
+        "dessen",
+        "denen",
+        "deren"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Nachbarn is plural, so the genitive relative pronoun is deren: die Nachbarn, deren Kinder.",
+        "es": "Nachbarn es plural, así que el pronombre relativo de genitivo es deren: die Nachbarn, deren Kinder."
+      },
+      "wrong": {
+        "dessen": {
+          "en": "dessen is for a masculine or neuter owner in the singular. The owners here are several neighbors.",
+          "es": "dessen es para un poseedor masculino o neutro en singular. Los poseedores aquí son varios vecinos."
+        },
+        "denen": {
+          "en": "denen is the dative plural (die Nachbarn, denen wir helfen). It does not show possession.",
+          "es": "denen es el dativo plural (die Nachbarn, denen wir helfen). No muestra posesión."
+        }
+      },
+      "examples": [
+        "Die Leute, deren Auto kaputt ist, warten.",
+        "Die Gäste, deren Zimmer klein ist, sind müde."
+      ],
+      "tr": {
+        "en": "The neighbors whose children are loud live upstairs.",
+        "es": "Los vecinos cuyos hijos son ruidosos viven arriba."
+      }
+    },
+    {
+      "id": "relativsaetze-genitiv-was-wo-f04",
+      "kind": "form",
+      "verb": "Relativwort",
+      "person": "die Stadt",
+      "answer": "wo",
+      "table": "relativwort-was-wo"
+    },
+    {
+      "id": "relativsaetze-genitiv-was-wo-c05",
+      "sentence": "Das ist alles, ___ ich weiß.",
+      "options": [
+        "das",
+        "was",
+        "dass"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "After alles the relative word is was, not das: alles, was ich weiß.",
+        "es": "Después de alles la palabra relativa es was, no das: alles, was ich weiß."
+      },
+      "wrong": {
+        "das": {
+          "en": "das is the relative pronoun after a neuter noun with an article (das Buch, das ...). Alles is not such a noun, so was is used.",
+          "es": "das es el pronombre relativo después de un sustantivo neutro con artículo (das Buch, das ...). Alles no es un sustantivo así, por eso se usa was."
+        },
+        "dass": {
+          "en": "dass is a conjunction (that) and has a different spelling and function. It does not refer back to alles.",
+          "es": "dass es una conjunción (que) y tiene otra ortografía y otra función. No se refiere a alles."
+        }
+      },
+      "examples": [
+        "Das ist alles, was er sagt.",
+        "Wir haben alles, was wir brauchen."
+      ],
+      "tr": {
+        "en": "That is everything I know.",
+        "es": "Eso es todo lo que sé."
+      }
+    },
+    {
+      "id": "relativsaetze-genitiv-was-wo-f05",
+      "kind": "form",
+      "verb": "neutral",
+      "person": "Genitiv",
+      "answer": "dessen",
+      "table": "relativpronomen-formen"
+    },
+    {
+      "id": "relativsaetze-genitiv-was-wo-c06",
+      "sentence": "Ich habe nichts, ___ ich dir geben kann.",
+      "options": [
+        "das",
+        "wo",
+        "was"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "nichts is followed by was: nichts, was ich dir geben kann. The verb kann stands at the end.",
+        "es": "nichts va seguido de was: nichts, was ich dir geben kann. El verbo kann va al final."
+      },
+      "wrong": {
+        "das": {
+          "en": "das needs a neuter noun before it, such as das Geschenk. nichts is not a noun with an article, so was is used.",
+          "es": "das necesita un sustantivo neutro antes, como das Geschenk. nichts no es un sustantivo con artículo, por eso se usa was."
+        },
+        "wo": {
+          "en": "wo refers to a place or a time. nichts is neither, so the clause cannot start with wo.",
+          "es": "wo se refiere a un lugar o a un tiempo. nichts no es ninguno de los dos, así que la oración no puede empezar con wo."
+        }
+      },
+      "examples": [
+        "Er sagt nichts, was ich nicht weiß.",
+        "Ich kenne nichts, was schöner ist."
+      ],
+      "tr": {
+        "en": "I have nothing that I can give you.",
+        "es": "No tengo nada que pueda darte."
+      }
+    },
+    {
+      "id": "relativsaetze-genitiv-was-wo-f06",
+      "kind": "form",
+      "verb": "Relativwort",
+      "person": "nichts",
+      "answer": "was",
+      "table": "relativwort-was-wo"
+    },
+    {
+      "id": "relativsaetze-genitiv-was-wo-w02",
+      "kind": "why",
+      "es": "Das ist alles, was ich weiß.",
+      "target": "was",
+      "tr": {
+        "en": "That is everything I know.",
+        "es": "Eso es todo lo que sé."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "was after alles, etwas and nichts",
+            "es": "was después de alles, etwas y nichts"
+          }
+        },
+        {
+          "text": {
+            "en": "das, because alles is neuter",
+            "es": "das, porque alles es neutro"
+          },
+          "wrong": {
+            "en": "alles is not a noun with an article. After alles, etwas and nichts the relative word is was, not das.",
+            "es": "alles no es un sustantivo con artículo. Después de alles, etwas y nichts la palabra relativa es was, no das."
+          }
+        },
+        {
+          "text": {
+            "en": "wo, because alles includes all places",
+            "es": "wo, porque alles incluye todos los lugares"
+          },
+          "wrong": {
+            "en": "wo refers to a place or a time. alles means all things in general, so wo does not fit.",
+            "es": "wo se refiere a un lugar o a un tiempo. alles significa todas las cosas en general, así que wo no encaja."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "relativsaetze-genitiv-was-wo-c07",
+      "sentence": "Das ist das Beste, ___ ich kenne.",
+      "options": [
+        "was",
+        "das",
+        "wo"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "After a neuter superlative like das Beste, the relative word is was: das Beste, was ich kenne.",
+        "es": "Después de un superlativo neutro como das Beste, la palabra relativa es was: das Beste, was ich kenne."
+      },
+      "wrong": {
+        "das": {
+          "en": "das would be right after a concrete neuter noun like das Buch. After the nominalised superlative das Beste, was is used.",
+          "es": "das sería correcto después de un sustantivo neutro concreto como das Buch. Después del superlativo sustantivado das Beste se usa was."
+        },
+        "wo": {
+          "en": "wo is for places and times. das Beste is not a place, so wo does not fit.",
+          "es": "wo es para lugares y tiempos. das Beste no es un lugar, así que wo no encaja."
+        }
+      },
+      "examples": [
+        "Das ist das Schönste, was ich sehe.",
+        "Das ist das Wichtigste, was er weiß."
+      ],
+      "tr": {
+        "en": "That is the best I know.",
+        "es": "Eso es lo mejor que conozco."
+      }
+    },
+    {
+      "id": "relativsaetze-genitiv-was-wo-f07",
+      "kind": "form",
+      "verb": "Plural",
+      "person": "Genitiv",
+      "answer": "deren",
+      "table": "relativpronomen-formen"
+    },
+    {
+      "id": "relativsaetze-genitiv-was-wo-c08",
+      "sentence": "Er kommt zu spät, ___ mich ärgert.",
+      "options": [
+        "das",
+        "wo",
+        "was"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The relative clause refers to the whole sentence before it (he arrives late). For a whole sentence the relative word is was.",
+        "es": "La oración de relativo se refiere a toda la oración anterior (él llega tarde). Para una oración completa la palabra relativa es was."
+      },
+      "wrong": {
+        "das": {
+          "en": "das would refer to a neuter noun in the first part. There is no such noun, so das cannot be the relative pronoun.",
+          "es": "das se referiría a un sustantivo neutro de la primera parte. No hay tal sustantivo, así que das no puede ser el pronombre relativo."
+        },
+        "wo": {
+          "en": "wo would need a place or a time word before it. Here the clause refers to an event, so wo does not fit.",
+          "es": "wo necesitaría una palabra de lugar o de tiempo antes. Aquí la oración se refiere a un suceso, así que wo no encaja."
+        }
+      },
+      "examples": [
+        "Sie hilft mir, was mich freut.",
+        "Es regnet, was ich nicht mag."
+      ],
+      "tr": {
+        "en": "He arrives late, which annoys me.",
+        "es": "Él llega tarde, lo cual me molesta."
+      }
+    },
+    {
+      "id": "relativsaetze-genitiv-was-wo-f08",
+      "kind": "form",
+      "verb": "Relativwort",
+      "person": "Berlin",
+      "answer": "wo",
+      "table": "relativwort-was-wo"
+    },
+    {
+      "id": "relativsaetze-genitiv-was-wo-c09",
+      "sentence": "Ich wohne in Berlin, ___ ich auch arbeite.",
+      "options": [
+        "wo",
+        "was",
+        "dessen"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Berlin is a city name without an article, so only wo works as a relative word for the place: Berlin, wo ich arbeite.",
+        "es": "Berlin es el nombre de una ciudad sin artículo, así que solo wo funciona como palabra relativa de lugar: Berlin, wo ich arbeite."
+      },
+      "wrong": {
+        "was": {
+          "en": "was refers to alles, nichts or a whole sentence. Berlin is a place, and for a place wo is used.",
+          "es": "was se refiere a alles, nichts o a toda una oración. Berlin es un lugar, y para un lugar se usa wo."
+        },
+        "dessen": {
+          "en": "dessen means whose and needs a noun right after it. Here no noun follows, so it cannot be right.",
+          "es": "dessen significa cuyo y necesita un sustantivo justo después. Aquí no sigue ningún sustantivo, así que no puede ser correcto."
+        }
+      },
+      "examples": [
+        "Wir fahren nach München, wo wir arbeiten.",
+        "Er kommt aus Wien, wo seine Familie wohnt."
+      ],
+      "tr": {
+        "en": "I live in Berlin, where I also work.",
+        "es": "Vivo en Berlín, donde también trabajo."
+      }
+    },
+    {
+      "id": "relativsaetze-genitiv-was-wo-f09",
+      "kind": "form",
+      "verb": "Plural",
+      "person": "Dativ",
+      "answer": "denen",
+      "table": "relativpronomen-formen"
+    },
+    {
+      "id": "relativsaetze-genitiv-was-wo-w03",
+      "kind": "why",
+      "es": "Ich wohne in Berlin, wo ich auch arbeite.",
+      "target": "wo",
+      "tr": {
+        "en": "I live in Berlin, where I also work.",
+        "es": "Vivo en Berlín, donde también trabajo."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "was, because the clause refers to the whole sentence",
+            "es": "was, porque la oración se refiere a toda la frase"
+          },
+          "wrong": {
+            "en": "was would refer to a whole statement. The clause here refers to a place, Berlin, so a place word is needed.",
+            "es": "was se referiría a una declaración completa. La oración aquí se refiere a un lugar, Berlin, así que se necesita una palabra de lugar."
+          }
+        },
+        {
+          "text": {
+            "en": "dessen, because the city belongs to the speaker",
+            "es": "dessen, porque la ciudad pertenece al hablante"
+          },
+          "wrong": {
+            "en": "dessen means whose and needs a noun right after it. Here the clause continues with ich.",
+            "es": "dessen significa cuyo y necesita un sustantivo justo después. Aquí la oración sigue con ich."
+          }
+        },
+        {
+          "text": {
+            "en": "wo, a relative adverb for a place; a city name has no article, so in der is impossible",
+            "es": "wo, un adverbio relativo de lugar; un nombre de ciudad no lleva artículo, así que in der es imposible"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "relativsaetze-genitiv-was-wo-c10",
+      "sentence": "Das ist die Stadt, ___ ich geboren bin.",
+      "options": [
+        "was",
+        "wo",
+        "dessen"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "wo works as a relative adverb after a place noun like die Stadt. It replaces in der: die Stadt, wo ich geboren bin.",
+        "es": "wo funciona como adverbio relativo después de un sustantivo de lugar como die Stadt. Reemplaza a in der: die Stadt, wo ich geboren bin."
+      },
+      "wrong": {
+        "was": {
+          "en": "was is not used after a feminine noun like die Stadt. It belongs after alles, nichts or a whole sentence.",
+          "es": "was no se usa después de un sustantivo femenino como die Stadt. Va después de alles, nichts o de toda una oración."
+        },
+        "dessen": {
+          "en": "dessen means whose and needs a noun after it. Here the clause continues with ich, so it does not fit.",
+          "es": "dessen significa cuyo y necesita un sustantivo después. Aquí la oración sigue con ich, así que no encaja."
+        }
+      },
+      "examples": [
+        "Das ist das Haus, wo er wohnt.",
+        "Das ist der Ort, wo wir uns treffen."
+      ],
+      "tr": {
+        "en": "That is the city where I was born.",
+        "es": "Esa es la ciudad donde nací."
+      }
+    },
+    {
+      "id": "relativsaetze-genitiv-was-wo-f10",
+      "kind": "form",
+      "verb": "maskulin",
+      "person": "Dativ",
+      "answer": "dem",
+      "table": "relativpronomen-formen"
+    },
+    {
+      "id": "relativsaetze-genitiv-was-wo-c11",
+      "sentence": "Wer das sagt, ___ lügt.",
+      "options": [
+        "der",
+        "was",
+        "dessen"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The wer-clause is the subject of the sentence, and the main clause often picks it up with der: Wer das sagt, der lügt.",
+        "es": "La oración con wer es el sujeto de la frase, y la oración principal a menudo la retoma con der: Wer das sagt, der lügt."
+      },
+      "wrong": {
+        "was": {
+          "en": "was refers to things (alles, nichts) or to a whole sentence. Here we talk about a person, so was does not fit.",
+          "es": "was se refiere a cosas (alles, nichts) o a toda una oración. Aquí hablamos de una persona, así que was no encaja."
+        },
+        "dessen": {
+          "en": "dessen means whose and would need a noun after it. Here the verb lügt follows directly.",
+          "es": "dessen significa cuyo y necesitaría un sustantivo después. Aquí el verbo lügt sigue directamente."
+        }
+      },
+      "examples": [
+        "Wer nicht kommt, der verliert.",
+        "Wer viel liest, der lernt viel."
+      ],
+      "tr": {
+        "en": "Whoever says that is lying.",
+        "es": "Quien dice eso, miente."
+      }
+    },
+    {
+      "id": "relativsaetze-genitiv-was-wo-f11",
+      "kind": "form",
+      "verb": "feminin",
+      "person": "Dativ",
+      "answer": "der",
+      "table": "relativpronomen-formen"
+    },
+    {
+      "id": "relativsaetze-genitiv-was-wo-c12",
+      "sentence": "Das ist der Freund, mit ___ ich arbeite.",
+      "options": [
+        "den",
+        "dem",
+        "dessen"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "mit takes the dative, and the masculine dative relative pronoun is dem: der Freund, mit dem ich arbeite.",
+        "es": "mit lleva dativo, y el pronombre relativo masculino de dativo es dem: der Freund, mit dem ich arbeite."
+      },
+      "wrong": {
+        "den": {
+          "en": "den is the masculine accusative. After mit you need the dative, so den is wrong.",
+          "es": "den es el acusativo masculino. Después de mit se necesita el dativo, así que den es incorrecto."
+        },
+        "dessen": {
+          "en": "dessen is the genitive and means whose. Here the preposition mit asks for the dative pronoun dem.",
+          "es": "dessen es el genitivo y significa cuyo. Aquí la preposición mit pide el pronombre de dativo dem."
+        }
+      },
+      "examples": [
+        "Die Frau, mit der ich arbeite, ist nett.",
+        "Das Kind, mit dem er spielt, lacht."
+      ],
+      "tr": {
+        "en": "That is the friend with whom I work.",
+        "es": "Ese es el amigo con quien trabajo."
+      }
+    },
+    {
+      "id": "relativsaetze-genitiv-was-wo-f12",
+      "kind": "form",
+      "verb": "maskulin",
+      "person": "Akkusativ",
+      "answer": "den",
+      "table": "relativpronomen-formen"
+    },
+    {
+      "id": "relativsaetze-genitiv-was-wo-c13",
+      "sentence": "Die Frau, deren Kinder wir kennen, ___ hier.",
+      "options": [
+        "wohnt",
+        "wohnen",
+        "wohne"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The subject of the main clause is die Frau, singular, so the verb is wohnt. The relative clause is only inserted in between.",
+        "es": "El sujeto de la oración principal es die Frau, singular, así que el verbo es wohnt. La oración de relativo solo está insertada en medio."
+      },
+      "wrong": {
+        "wohnen": {
+          "en": "wohnen would fit the plural Kinder, which stands inside the relative clause. The verb of the main clause agrees with die Frau.",
+          "es": "wohnen iría con el plural Kinder, que está dentro de la oración de relativo. El verbo de la oración principal concuerda con die Frau."
+        },
+        "wohne": {
+          "en": "wohne is the form for ich. The subject here is die Frau, so the ending must be -t.",
+          "es": "wohne es la forma de ich. El sujeto aquí es die Frau, así que la terminación debe ser -t."
+        }
+      },
+      "examples": [
+        "Der Mann, dessen Auto kaputt ist, wartet hier.",
+        "Das Kind, dessen Mutter arbeitet, spielt hier."
+      ],
+      "tr": {
+        "en": "The woman whose children we know lives here.",
+        "es": "La mujer cuyos hijos conocemos vive aquí."
+      }
+    },
+    {
+      "id": "relativsaetze-genitiv-was-wo-c14",
+      "sentence": "Die Stadt, in ___ ich wohne, ist klein.",
+      "options": [
+        "der",
+        "die",
+        "wo"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "After in (place, dative) the feminine relative pronoun is der: die Stadt, in der ich wohne.",
+        "es": "Después de in (lugar, dativo) el pronombre relativo femenino es der: die Stadt, in der ich wohne."
+      },
+      "wrong": {
+        "die": {
+          "en": "die is the nominative or accusative feminine. After the place preposition in the dative is needed: der.",
+          "es": "die es el nominativo o acusativo femenino. Después de la preposición de lugar in se necesita el dativo: der."
+        },
+        "wo": {
+          "en": "wo replaces the whole group in der. You cannot put in in front of wo; use either in der or wo alone.",
+          "es": "wo reemplaza todo el grupo in der. No se puede poner in delante de wo; usa o bien in der o bien wo solo."
+        }
+      },
+      "examples": [
+        "Das Haus, in dem ich wohne, ist alt.",
+        "Die Schule, in der wir lernen, ist groß."
+      ],
+      "tr": {
+        "en": "The city in which I live is small.",
+        "es": "La ciudad en la que vivo es pequeña."
+      }
+    },
+    {
+      "id": "relativsaetze-genitiv-was-wo-w04",
+      "kind": "why",
+      "es": "Wer das sagt, der lügt.",
+      "target": "der",
+      "tr": {
+        "en": "Whoever says that is lying.",
+        "es": "Quien dice eso, miente."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "A pronoun in the main clause that picks up the wer-clause",
+            "es": "Un pronombre en la oración principal que retoma la oración con wer"
+          }
+        },
+        {
+          "text": {
+            "en": "A relative pronoun for a noun before it, like der Mann, der ...",
+            "es": "Un pronombre relativo para un sustantivo anterior, como der Mann, der ..."
+          },
+          "wrong": {
+            "en": "There is no noun before it. The wer-clause stands alone as the subject, and der in the main clause repeats it.",
+            "es": "No hay un sustantivo antes. La oración con wer está sola como sujeto, y der en la oración principal la repite."
+          }
+        },
+        {
+          "text": {
+            "en": "The article of a noun that follows",
+            "es": "El artículo de un sustantivo que sigue"
+          },
+          "wrong": {
+            "en": "No noun follows der here. The verb lügt comes next, so der is a pronoun, not an article.",
+            "es": "Aquí no sigue ningún sustantivo a der. Sigue el verbo lügt, así que der es un pronombre, no un artículo."
+          }
+        }
+      ],
+      "correctIndex": 0
+    }
+  ]
+}

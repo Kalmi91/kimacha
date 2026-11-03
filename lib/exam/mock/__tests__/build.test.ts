@@ -2,15 +2,15 @@
 // (data/words-open in the es direction, data/words/en in the en direction). The task set is made of the level's
 // words; the same seed gives the same exam (part-by-part saving resumes from it).
 
-import { pcicItemsForLevel, setPcicTarget, type PcicItem } from '@/data/pcic';
+import { pcicItemsForLevel, setPcicTarget, type PcicItem, type PcicTarget } from '@/data/pcic';
 import { AVERAGE_PASS_PCT, getMockBlueprint, mockAvailable, MOCK_LEVELS, TOTAL_PASS_POINTS } from '../blueprint';
 import { buildMockExam, mockExamSignature, sentenceWords, singleWordForm } from '../build';
-import { DEFAULT_PLAYS, type MockExam, type MockLevel, type MockTarget, type MockTask } from '../types';
+import { DEFAULT_PLAYS, type MockExam, type MockLevel, type MockTask } from '../types';
 import { mockTaskItemCount } from '../types';
 
 afterAll(() => setPcicTarget('es'));
 
-function exam(target: MockTarget, level: MockLevel, seed = 1) {
+function exam(target: PcicTarget, level: MockLevel, seed = 1) {
   setPcicTarget(target);
   const items = pcicItemsForLevel(level);
   // No authored files: A1 / A2 are made of the words, and the speaking paper stays the placeholder reserve (the real speaking

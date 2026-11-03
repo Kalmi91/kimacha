@@ -1,0 +1,1064 @@
+{
+  "schema": 2,
+  "topic": "modalverben-praesens",
+  "level": "A1",
+  "title": {
+    "en": "Modal verbs: können, müssen, wollen, möchten",
+    "es": "Verbos modales: können, müssen, wollen, möchten"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "Modal verbs say whether you can, must, want, may or should do something. The six common ones are können, müssen, wollen, dürfen, sollen and möchten. The modal is the conjugated verb in second position, and the second verb stands at the very end as an infinitive: Ich kann gut schwimmen. In the singular most modals change their vowel (kann, muss, darf, will), and ich and er/sie/es have no ending: ich kann, er kann.",
+        "es": "Los verbos modales dicen si puedes, debes, quieres, tienes permiso o se espera que hagas algo. Los seis más comunes son können, müssen, wollen, dürfen, sollen y möchten. El modal es el verbo conjugado en segunda posición, y el segundo verbo va al final como infinitivo: Ich kann gut schwimmen. En singular la mayoría de los modales cambian la vocal (kann, muss, darf, will), y ich y er/sie/es no llevan terminación: ich kann, er kann."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "modalverben-a",
+      "title": {
+        "en": "können, müssen, wollen",
+        "es": "können, müssen, wollen"
+      },
+      "header": [
+        {
+          "en": "Pronoun",
+          "es": "Pronombre"
+        },
+        {
+          "en": "können",
+          "es": "können"
+        },
+        {
+          "en": "müssen",
+          "es": "müssen"
+        },
+        {
+          "en": "wollen",
+          "es": "wollen"
+        }
+      ],
+      "rows": [
+        [
+          "ich",
+          "kann",
+          "muss",
+          "will"
+        ],
+        [
+          "du",
+          "kannst",
+          "musst",
+          "willst"
+        ],
+        [
+          "er/sie/es",
+          "kann",
+          "muss",
+          "will"
+        ],
+        [
+          "wir",
+          "können",
+          "müssen",
+          "wollen"
+        ],
+        [
+          "ihr",
+          "könnt",
+          "müsst",
+          "wollt"
+        ],
+        [
+          "sie/Sie",
+          "können",
+          "müssen",
+          "wollen"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "modalverben-b",
+      "title": {
+        "en": "dürfen, sollen, möchten",
+        "es": "dürfen, sollen, möchten"
+      },
+      "header": [
+        {
+          "en": "Pronoun",
+          "es": "Pronombre"
+        },
+        {
+          "en": "dürfen",
+          "es": "dürfen"
+        },
+        {
+          "en": "sollen",
+          "es": "sollen"
+        },
+        {
+          "en": "möchten",
+          "es": "möchten"
+        }
+      ],
+      "rows": [
+        [
+          "ich",
+          "darf",
+          "soll",
+          "möchte"
+        ],
+        [
+          "du",
+          "darfst",
+          "sollst",
+          "möchtest"
+        ],
+        [
+          "er/sie/es",
+          "darf",
+          "soll",
+          "möchte"
+        ],
+        [
+          "wir",
+          "dürfen",
+          "sollen",
+          "möchten"
+        ],
+        [
+          "ihr",
+          "dürft",
+          "sollt",
+          "möchtet"
+        ],
+        [
+          "sie/Sie",
+          "dürfen",
+          "sollen",
+          "möchten"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "The bracket and the six meanings",
+        "es": "El paréntesis y los seis significados"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "The modal is in second position, the other verb is at the end of the sentence and does not change. There is no zu before it.",
+            "es": "El modal está en segunda posición, el otro verbo está al final de la oración y no cambia. No lleva zu delante."
+          },
+          "examples": [
+            {
+              "es": "Ich kann gut schwimmen.",
+              "tr": {
+                "en": "I can swim well.",
+                "es": "Sé nadar bien."
+              }
+            },
+            {
+              "es": "Wir können Fußball spielen.",
+              "tr": {
+                "en": "We can play soccer.",
+                "es": "Podemos jugar fútbol."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "können means ability or possibility, müssen means necessity.",
+            "es": "können significa capacidad o posibilidad, müssen significa necesidad."
+          },
+          "examples": [
+            {
+              "es": "Anna kann gut singen.",
+              "tr": {
+                "en": "Anna can sing well.",
+                "es": "Anna canta bien."
+              }
+            },
+            {
+              "es": "Du musst Deutsch lernen.",
+              "tr": {
+                "en": "You have to learn German.",
+                "es": "Tienes que aprender alemán."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "wollen is a strong wish, and möchten is the polite way to say what you would like. Use möchten when you order something. Do not use wollen as the future: ich will means I want.",
+            "es": "wollen es un deseo fuerte, y möchten es la forma educada de decir lo que te gustaría. Usa möchten al pedir algo. No uses wollen como futuro: ich will significa «quiero»."
+          },
+          "examples": [
+            {
+              "es": "Ich will schlafen.",
+              "tr": {
+                "en": "I want to sleep.",
+                "es": "Quiero dormir."
+              }
+            },
+            {
+              "es": "Ich möchte einen Kaffee.",
+              "tr": {
+                "en": "I would like a coffee.",
+                "es": "Quisiera un café."
+              }
+            },
+            {
+              "es": "Wir möchten Suppe.",
+              "tr": {
+                "en": "We would like soup.",
+                "es": "Queremos sopa."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "dürfen means permission, sollen means that someone else wants it, for example a doctor or a teacher.",
+            "es": "dürfen significa permiso, sollen significa que otra persona lo quiere, por ejemplo un médico o un maestro."
+          },
+          "examples": [
+            {
+              "es": "Das Kind darf Fußball spielen.",
+              "tr": {
+                "en": "The child may play soccer.",
+                "es": "El niño puede jugar fútbol."
+              }
+            },
+            {
+              "es": "Du sollst Wasser trinken.",
+              "tr": {
+                "en": "You should drink water.",
+                "es": "Debes tomar agua."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "After a verb of movement the second verb can be left out: the place says it all.",
+            "es": "Después de un verbo de movimiento se puede omitir el segundo verbo: el lugar lo dice todo."
+          },
+          "examples": [
+            {
+              "es": "Ich muss nach Hause.",
+              "tr": {
+                "en": "I have to go home.",
+                "es": "Tengo que ir a casa."
+              }
+            },
+            {
+              "es": "Anna will nach Berlin.",
+              "tr": {
+                "en": "Anna wants to go to Berlin.",
+                "es": "Anna quiere ir a Berlín."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "In a question the modal comes first. For a negation put nicht before the infinitive or at the end.",
+            "es": "En una pregunta el modal va primero. Para negar, pon nicht antes del infinitivo o al final."
+          },
+          "examples": [
+            {
+              "es": "Kannst du Deutsch sprechen?",
+              "tr": {
+                "en": "Can you speak German?",
+                "es": "¿Sabes hablar alemán?"
+              }
+            },
+            {
+              "es": "Ich kann heute nicht kommen.",
+              "tr": {
+                "en": "I cannot come today.",
+                "es": "Hoy no puedo venir."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Pairs to keep apart",
+        "es": "Parejas que hay que distinguir"
+      },
+      "pairs": [
+        {
+          "a": "Ich will einen Kaffee.",
+          "b": "Ich möchte einen Kaffee.",
+          "note": {
+            "en": "Both mean I want a coffee. will sounds direct and a bit rude when you order. möchte is polite and normal in a café.",
+            "es": "Las dos significan «quiero un café». will suena directo y algo grosero al pedir. möchte es educado y normal en un café."
+          },
+          "examples": [
+            {
+              "es": "Ich möchte Tee.",
+              "tr": {
+                "en": "I would like tea.",
+                "es": "Quisiera té."
+              }
+            },
+            {
+              "es": "Ich will nach Hause.",
+              "tr": {
+                "en": "I want to go home.",
+                "es": "Quiero ir a casa."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Du musst nicht arbeiten.",
+          "b": "Du darfst nicht arbeiten.",
+          "note": {
+            "en": "müssen nicht means you do not have to: it is not necessary. dürfen nicht means you must not: it is forbidden. English must not is dürfen nicht.",
+            "es": "müssen nicht significa «no tienes que»: no es necesario. dürfen nicht significa «no debes, está prohibido». El inglés must not es dürfen nicht."
+          },
+          "examples": [
+            {
+              "es": "Wir müssen nicht kommen.",
+              "tr": {
+                "en": "We do not have to come.",
+                "es": "No tenemos que venir."
+              }
+            },
+            {
+              "es": "Wir dürfen nicht kommen.",
+              "tr": {
+                "en": "We must not come.",
+                "es": "No nos está permitido venir."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: no zu after a modal verb (Ich kann schwimmen, not Ich kann zu schwimmen). The second verb stays an infinitive at the end (Ich muss arbeiten, not Ich muss arbeite). ich and er/sie/es have no ending (ich kann, not ich kanne). ich will means I want, not I will. And können is not wissen: Ich kann Deutsch sprechen is about ability, Ich weiß it is about knowing a fact.",
+        "es": "Trampas clásicas: no hay zu después de un verbo modal (Ich kann schwimmen, no Ich kann zu schwimmen). El segundo verbo se queda en infinitivo al final (Ich muss arbeiten, no Ich muss arbeite). ich y er/sie/es no llevan terminación (ich kann, no ich kanne). ich will significa «quiero», no «voy a». Y können no es wissen: Ich kann Deutsch sprechen habla de capacidad, Ich weiß de saber un dato."
+      }
+    }
+  ],
+  "speak": {
+    "en": "Modal verbs say what you can, must or want to do. The modal is in second place, and the other verb goes to the end: «Ich kann gut schwimmen». With ich and er there is no ending: «ich kann», «er kann». Use «möchte» to order politely: «Ich möchte einen Kaffee». Remember that «ich will» means I want: «Ich will schlafen». And there is no zu: «Ich muss arbeiten».",
+    "es": "Los verbos modales dicen lo que puedes, debes o quieres hacer. El modal está en segundo lugar, y el otro verbo va al final: «Ich kann gut schwimmen». Con ich y er no hay terminación: «ich kann», «er kann». Usa «möchte» para pedir con educación: «Ich möchte einen Kaffee». Recuerda que «ich will» significa quiero, y no voy a: «Ich will schlafen». Y no hay zu: «Ich muss arbeiten»."
+  },
+  "items": [
+    {
+      "id": "modalverben-praesens-c01",
+      "sentence": "Ich ___ gut schwimmen.",
+      "options": [
+        "kann",
+        "kannst",
+        "können"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "With ich the form of können is kann, with no ending: Ich kann gut schwimmen.",
+        "es": "Con ich la forma de können es kann, sin terminación: Ich kann gut schwimmen."
+      },
+      "wrong": {
+        "kannst": {
+          "en": "kannst is the form for du. With ich the form is kann.",
+          "es": "kannst es la forma de du. Con ich la forma es kann."
+        },
+        "können": {
+          "en": "können is the form for wir and sie (they). With ich the form is kann.",
+          "es": "können es la forma de wir y de sie (ellos). Con ich la forma es kann."
+        }
+      },
+      "examples": [
+        "Ich kann gut singen.",
+        "Ich kann gut kochen."
+      ],
+      "tr": {
+        "en": "I can swim well.",
+        "es": "Sé nadar bien."
+      }
+    },
+    {
+      "id": "modalverben-praesens-f01",
+      "kind": "form",
+      "verb": "können",
+      "person": "ich",
+      "answer": "kann",
+      "table": "modalverben-a"
+    },
+    {
+      "id": "modalverben-praesens-c02",
+      "sentence": "Du ___ heute arbeiten.",
+      "options": [
+        "muss",
+        "musst",
+        "müsst"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "With du the form of müssen is musst: Du musst heute arbeiten.",
+        "es": "Con du la forma de müssen es musst: Du musst heute arbeiten."
+      },
+      "wrong": {
+        "muss": {
+          "en": "muss is the form for ich and er/sie/es. With du you need the ending -st: musst.",
+          "es": "muss es la forma de ich y de er/sie/es. Con du necesitas la terminación -st: musst."
+        },
+        "müsst": {
+          "en": "müsst is the form for ihr. With du the vowel stays u: musst.",
+          "es": "müsst es la forma de ihr. Con du la vocal se queda u: musst."
+        }
+      },
+      "examples": [
+        "Du musst Deutsch lernen.",
+        "Du musst nach Hause."
+      ],
+      "tr": {
+        "en": "You have to work today.",
+        "es": "Hoy tienes que trabajar."
+      }
+    },
+    {
+      "id": "modalverben-praesens-f02",
+      "kind": "form",
+      "verb": "dürfen",
+      "person": "ich",
+      "answer": "darf",
+      "table": "modalverben-b"
+    },
+    {
+      "id": "modalverben-praesens-c03",
+      "sentence": "Anna ___ nach Hause.",
+      "options": [
+        "willst",
+        "wollen",
+        "will"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "With Anna (er/sie/es) wollen has no ending: Anna will nach Hause. After nach Hause the second verb can be left out.",
+        "es": "Con Anna (er/sie/es) wollen no lleva terminación: Anna will nach Hause. Después de nach Hause se puede omitir el segundo verbo."
+      },
+      "wrong": {
+        "willst": {
+          "en": "willst is the form for du. Anna is one person, a she, so the form is will.",
+          "es": "willst es la forma de du. Anna es una persona, una ella, así que la forma es will."
+        },
+        "wollen": {
+          "en": "wollen is the form for wir and sie (they). One person like Anna takes will.",
+          "es": "wollen es la forma de wir y de sie (ellos). Una persona como Anna lleva will."
+        }
+      },
+      "examples": [
+        "Paul will nach Berlin.",
+        "Er will nach Hause."
+      ],
+      "tr": {
+        "en": "Anna wants to go home.",
+        "es": "Anna quiere ir a casa."
+      }
+    },
+    {
+      "id": "modalverben-praesens-f03",
+      "kind": "form",
+      "verb": "müssen",
+      "person": "du",
+      "answer": "musst",
+      "table": "modalverben-a"
+    },
+    {
+      "id": "modalverben-praesens-w01",
+      "kind": "why",
+      "es": "Ich kann gut schwimmen.",
+      "target": "schwimmen",
+      "tr": {
+        "en": "I can swim well.",
+        "es": "Sé nadar bien."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "The second verb is an infinitive at the end of the sentence",
+            "es": "El segundo verbo es un infinitivo al final de la oración"
+          }
+        },
+        {
+          "text": {
+            "en": "The second verb takes the ending of ich: schwimme",
+            "es": "El segundo verbo lleva la terminación de ich: schwimme"
+          },
+          "wrong": {
+            "en": "Only the modal verb is conjugated. The ending belongs to kann, and schwimmen stays an infinitive.",
+            "es": "Solo el verbo modal se conjuga. La conjugación pertenece a kann, y schwimmen se queda en infinitivo."
+          }
+        },
+        {
+          "text": {
+            "en": "The second verb needs zu, as in English to swim",
+            "es": "El segundo verbo necesita zu, como to swim en inglés"
+          },
+          "wrong": {
+            "en": "After a modal verb the infinitive stands alone with no zu: Ich kann schwimmen, not Ich kann zu schwimmen.",
+            "es": "Después de un verbo modal el infinitivo va solo, sin zu: Ich kann schwimmen, no Ich kann zu schwimmen."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "modalverben-praesens-c04",
+      "sentence": "Wir ___ Fußball spielen.",
+      "options": [
+        "kann",
+        "können",
+        "könnt"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "With wir the form of können is können, the same as the infinitive: Wir können Fußball spielen.",
+        "es": "Con wir la forma de können es können, igual que el infinitivo: Wir können Fußball spielen."
+      },
+      "wrong": {
+        "kann": {
+          "en": "kann is the form for ich and er/sie/es. With wir you need können.",
+          "es": "kann es la forma de ich y de er/sie/es. Con wir necesitas können."
+        },
+        "könnt": {
+          "en": "könnt is the form for ihr. With wir you need können.",
+          "es": "könnt es la forma de ihr. Con wir necesitas können."
+        }
+      },
+      "examples": [
+        "Wir können Tennis spielen.",
+        "Wir können gut kochen."
+      ],
+      "tr": {
+        "en": "We can play soccer.",
+        "es": "Podemos jugar fútbol."
+      }
+    },
+    {
+      "id": "modalverben-praesens-f04",
+      "kind": "form",
+      "verb": "sollen",
+      "person": "du",
+      "answer": "sollst",
+      "table": "modalverben-b"
+    },
+    {
+      "id": "modalverben-praesens-c05",
+      "sentence": "Ihr ___ hier warten.",
+      "options": [
+        "müsst",
+        "musst",
+        "müssen"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "With ihr the form of müssen is müsst: Ihr müsst hier warten.",
+        "es": "Con ihr la forma de müssen es müsst: Ihr müsst hier warten."
+      },
+      "wrong": {
+        "musst": {
+          "en": "musst is the form for du, one friend. With ihr, several friends, you need müsst.",
+          "es": "musst es la forma de du, un amigo. Con ihr, varios amigos, necesitas müsst."
+        },
+        "müssen": {
+          "en": "müssen is the form for wir and sie (they). With ihr you need müsst.",
+          "es": "müssen es la forma de wir y de sie (ellos). Con ihr necesitas müsst."
+        }
+      },
+      "examples": [
+        "Ihr müsst nach Hause.",
+        "Ihr müsst heute arbeiten."
+      ],
+      "tr": {
+        "en": "You all have to wait here.",
+        "es": "Ustedes tienen que esperar aquí."
+      }
+    },
+    {
+      "id": "modalverben-praesens-f05",
+      "kind": "form",
+      "verb": "wollen",
+      "person": "er/sie/es",
+      "answer": "will",
+      "table": "modalverben-a"
+    },
+    {
+      "id": "modalverben-praesens-c06",
+      "sentence": "Ich ___ einen Kaffee, bitte.",
+      "options": [
+        "möchtest",
+        "möchten",
+        "möchte"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "möchte is the polite form for ordering: Ich möchte einen Kaffee, bitte.",
+        "es": "möchte es la forma educada para pedir: Ich möchte einen Kaffee, bitte."
+      },
+      "wrong": {
+        "möchtest": {
+          "en": "möchtest is the form for du. With ich the form is möchte.",
+          "es": "möchtest es la forma de du. Con ich la forma es möchte."
+        },
+        "möchten": {
+          "en": "möchten is the form for wir and sie (they). With ich the form is möchte.",
+          "es": "möchten es la forma de wir y de sie (ellos). Con ich la forma es möchte."
+        }
+      },
+      "examples": [
+        "Ich möchte einen Tee, bitte.",
+        "Wir möchten Suppe, bitte."
+      ],
+      "tr": {
+        "en": "I would like a coffee, please.",
+        "es": "Quisiera un café, por favor."
+      }
+    },
+    {
+      "id": "modalverben-praesens-f06",
+      "kind": "form",
+      "verb": "möchten",
+      "person": "er/sie/es",
+      "answer": "möchte",
+      "table": "modalverben-b"
+    },
+    {
+      "id": "modalverben-praesens-w02",
+      "kind": "why",
+      "es": "Ich möchte einen Kaffee.",
+      "target": "möchte",
+      "tr": {
+        "en": "I would like a coffee.",
+        "es": "Quisiera un café."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "möchte means must: it gives an order",
+            "es": "möchte significa «debo»: da una orden"
+          },
+          "wrong": {
+            "en": "möchte expresses a wish, not an obligation. For necessity you need müssen.",
+            "es": "möchte expresa un deseo, no una obligación. Para la necesidad necesitas müssen."
+          }
+        },
+        {
+          "text": {
+            "en": "möchte is the polite form for a wish, for example when you order",
+            "es": "möchte es la forma educada para un deseo, por ejemplo al pedir"
+          }
+        },
+        {
+          "text": {
+            "en": "möchte is the future, I will have a coffee",
+            "es": "möchte es el futuro, «tomaré un café»"
+          },
+          "wrong": {
+            "en": "German has no future built with möchte. The word says that you would like something, now.",
+            "es": "El alemán no forma el futuro con möchte. La palabra dice que quisieras algo, ahora."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "modalverben-praesens-c07",
+      "sentence": "Kannst du Deutsch ___?",
+      "options": [
+        "sprichst",
+        "sprechen",
+        "spricht"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "After a modal verb the second verb is an infinitive at the end: Kannst du Deutsch sprechen?",
+        "es": "Después de un verbo modal el segundo verbo es un infinitivo al final: Kannst du Deutsch sprechen?"
+      },
+      "wrong": {
+        "sprichst": {
+          "en": "sprichst is the du-form. The second verb after a modal does not take a personal ending, it stays an infinitive.",
+          "es": "sprichst es la forma de du. El segundo verbo después de un modal no lleva terminación personal, se queda en infinitivo."
+        },
+        "spricht": {
+          "en": "spricht is the er-form. The second verb after a modal stays an infinitive: sprechen.",
+          "es": "spricht es la forma de er. El segundo verbo después de un modal se queda en infinitivo: sprechen."
+        }
+      },
+      "examples": [
+        "Kannst du gut kochen?",
+        "Kannst du Spanisch sprechen?"
+      ],
+      "tr": {
+        "en": "Can you speak German?",
+        "es": "¿Sabes hablar alemán?"
+      }
+    },
+    {
+      "id": "modalverben-praesens-f07",
+      "kind": "form",
+      "verb": "können",
+      "person": "wir",
+      "answer": "können",
+      "table": "modalverben-a"
+    },
+    {
+      "id": "modalverben-praesens-c08",
+      "sentence": "Paul muss heute ___.",
+      "options": [
+        "arbeiten",
+        "arbeitet",
+        "arbeite"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The second verb stands at the end of the sentence as an infinitive: Paul muss heute arbeiten.",
+        "es": "El segundo verbo va al final de la oración como infinitivo: Paul muss heute arbeiten."
+      },
+      "wrong": {
+        "arbeitet": {
+          "en": "arbeitet is a conjugated form. After the modal muss the second verb does not take an ending.",
+          "es": "arbeitet es una forma conjugada. Después del modal muss el segundo verbo no lleva terminación."
+        },
+        "arbeite": {
+          "en": "arbeite is the ich-form. The subject here is Paul, and the second verb after a modal never takes an ending anyway.",
+          "es": "arbeite es la forma de ich. El sujeto aquí es Paul, y el segundo verbo después de un modal nunca lleva terminación."
+        }
+      },
+      "examples": [
+        "Paul muss heute lernen.",
+        "Anna muss heute kochen."
+      ],
+      "tr": {
+        "en": "Paul has to work today.",
+        "es": "Paul tiene que trabajar hoy."
+      }
+    },
+    {
+      "id": "modalverben-praesens-f08",
+      "kind": "form",
+      "verb": "dürfen",
+      "person": "ihr",
+      "answer": "dürft",
+      "table": "modalverben-b"
+    },
+    {
+      "id": "modalverben-praesens-c09",
+      "sentence": "Hier ___ du schlafen.",
+      "options": [
+        "darf",
+        "dürft",
+        "darfst"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "dürfen means permission. With du the form is darfst: Hier darfst du schlafen.",
+        "es": "dürfen significa permiso. Con du la forma es darfst: Hier darfst du schlafen."
+      },
+      "wrong": {
+        "darf": {
+          "en": "darf is the form for ich and er/sie/es. With du you need the ending -st: darfst.",
+          "es": "darf es la forma de ich y de er/sie/es. Con du necesitas la terminación -st: darfst."
+        },
+        "dürft": {
+          "en": "dürft is the form for ihr. With du the vowel stays a: darfst.",
+          "es": "dürft es la forma de ihr. Con du la vocal se queda a: darfst."
+        }
+      },
+      "examples": [
+        "Hier darfst du essen.",
+        "Hier darf Anna schlafen."
+      ],
+      "tr": {
+        "en": "You may sleep here.",
+        "es": "Aquí puedes dormir."
+      }
+    },
+    {
+      "id": "modalverben-praesens-f09",
+      "kind": "form",
+      "verb": "müssen",
+      "person": "ihr",
+      "answer": "müsst",
+      "table": "modalverben-a"
+    },
+    {
+      "id": "modalverben-praesens-w03",
+      "kind": "why",
+      "es": "Du musst nicht arbeiten.",
+      "target": "musst",
+      "tr": {
+        "en": "You do not have to work.",
+        "es": "No tienes que trabajar."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "musst nicht means that it is forbidden",
+            "es": "musst nicht significa que está prohibido"
+          },
+          "wrong": {
+            "en": "Forbidden is dürfen nicht: Du darfst nicht arbeiten. müssen nicht only says it is not necessary.",
+            "es": "Prohibido es dürfen nicht: Du darfst nicht arbeiten. müssen nicht solo dice que no es necesario."
+          }
+        },
+        {
+          "text": {
+            "en": "musst nicht means that it is not necessary",
+            "es": "musst nicht significa que no es necesario"
+          }
+        },
+        {
+          "text": {
+            "en": "The du-form is müsst, as with ihr",
+            "es": "La forma de du es müsst, como con ihr"
+          },
+          "wrong": {
+            "en": "müsst is the ihr-form. In the singular the vowel stays u and du takes -st: musst.",
+            "es": "müsst es la forma de ihr. En singular la vocal se queda u y du lleva -st: musst."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "modalverben-praesens-c10",
+      "sentence": "Paul ___ Wasser trinken.",
+      "options": [
+        "soll",
+        "sollst",
+        "sollt"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "With Paul (er/sie/es) sollen has no ending: Paul soll Wasser trinken.",
+        "es": "Con Paul (er/sie/es) sollen no lleva terminación: Paul soll Wasser trinken."
+      },
+      "wrong": {
+        "sollst": {
+          "en": "sollst is the form for du. Paul is one person, a he, so the form is soll.",
+          "es": "sollst es la forma de du. Paul es una persona, un él, así que la forma es soll."
+        },
+        "sollt": {
+          "en": "sollt is the form for ihr, several friends. One person like Paul takes soll.",
+          "es": "sollt es la forma de ihr, varios amigos. Una persona como Paul lleva soll."
+        }
+      },
+      "examples": [
+        "Anna soll Wasser trinken.",
+        "Das Kind soll schlafen."
+      ],
+      "tr": {
+        "en": "Paul should drink water.",
+        "es": "Paul debe tomar agua."
+      }
+    },
+    {
+      "id": "modalverben-praesens-f10",
+      "kind": "form",
+      "verb": "sollen",
+      "person": "wir",
+      "answer": "sollen",
+      "table": "modalverben-b"
+    },
+    {
+      "id": "modalverben-praesens-c11",
+      "sentence": "Paul ist Sänger. Er ___ sehr gut singen.",
+      "options": [
+        "muss",
+        "kann",
+        "darf"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The sentence says Paul is a singer, so it is about ability: Er kann sehr gut singen.",
+        "es": "La oración dice que Paul es cantante, así que habla de capacidad: Er kann sehr gut singen."
+      },
+      "wrong": {
+        "muss": {
+          "en": "muss expresses necessity. Being a singer does not make singing well a necessity here, the sentence is about ability.",
+          "es": "muss expresa necesidad. Ser cantante no hace del cantar bien una necesidad aquí, la oración habla de capacidad."
+        },
+        "darf": {
+          "en": "darf expresses permission. The sentence does not talk about permission but about ability.",
+          "es": "darf expresa permiso. La oración no habla de permiso sino de capacidad."
+        }
+      },
+      "examples": [
+        "Anna kann sehr gut kochen.",
+        "Er kann sehr gut schwimmen."
+      ],
+      "tr": {
+        "en": "Paul is a singer. He can sing very well.",
+        "es": "Paul es cantante. Sabe cantar muy bien."
+      }
+    },
+    {
+      "id": "modalverben-praesens-f11",
+      "kind": "form",
+      "verb": "wollen",
+      "person": "du",
+      "answer": "willst",
+      "table": "modalverben-a"
+    },
+    {
+      "id": "modalverben-praesens-c12",
+      "sentence": "Wir ___ nicht kommen. Wir sind krank.",
+      "options": [
+        "müssen",
+        "sollen",
+        "können"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Being ill is the reason why it is not possible, so you need können: Wir können nicht kommen.",
+        "es": "Estar enfermo es la razón por la que no es posible, así que necesitas können: Wir können nicht kommen."
+      },
+      "wrong": {
+        "müssen": {
+          "en": "müssen nicht would mean we do not have to come. That does not match the reason that we are ill.",
+          "es": "müssen nicht significaría que no tenemos que venir. Eso no coincide con la razón de que estamos enfermos."
+        },
+        "sollen": {
+          "en": "sollen nicht would mean we are told not to come. The sentence gives illness as the reason, so you need können.",
+          "es": "sollen nicht significaría que nos dicen que no vengamos. La oración da la enfermedad como razón, así que necesitas können."
+        }
+      },
+      "examples": [
+        "Wir können heute nicht arbeiten.",
+        "Ich kann nicht kommen."
+      ],
+      "tr": {
+        "en": "We cannot come. We are sick.",
+        "es": "No podemos venir. Estamos enfermos."
+      }
+    },
+    {
+      "id": "modalverben-praesens-f12",
+      "kind": "form",
+      "verb": "möchten",
+      "person": "du",
+      "answer": "möchtest",
+      "table": "modalverben-b"
+    },
+    {
+      "id": "modalverben-praesens-c13",
+      "sentence": "Ich kann heute ___ kommen.",
+      "options": [
+        "nicht",
+        "kein",
+        "keine"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The verb is negated with nicht, which goes before the infinitive at the end: Ich kann heute nicht kommen.",
+        "es": "El verbo se niega con nicht, que va antes del infinitivo final: Ich kann heute nicht kommen."
+      },
+      "wrong": {
+        "kein": {
+          "en": "kein needs a noun after it. Here the verb is negated, so you need nicht.",
+          "es": "kein necesita un sustantivo detrás. Aquí se niega el verbo, así que necesitas nicht."
+        },
+        "keine": {
+          "en": "keine needs a noun after it. Here the verb is negated, so you need nicht.",
+          "es": "keine necesita un sustantivo detrás. Aquí se niega el verbo, así que necesitas nicht."
+        }
+      },
+      "examples": [
+        "Ich kann nicht schlafen.",
+        "Wir können heute nicht lernen."
+      ],
+      "tr": {
+        "en": "I cannot come today.",
+        "es": "Hoy no puedo venir."
+      }
+    },
+    {
+      "id": "modalverben-praesens-c14",
+      "sentence": "Was ___ du heute machen?",
+      "options": [
+        "will",
+        "willst",
+        "wollt"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "With du the form of wollen is willst: Was willst du heute machen?",
+        "es": "Con du la forma de wollen es willst: Was willst du heute machen?"
+      },
+      "wrong": {
+        "will": {
+          "en": "will is the form for ich and er/sie/es. With du you need the ending -st: willst.",
+          "es": "will es la forma de ich y de er/sie/es. Con du necesitas la terminación -st: willst."
+        },
+        "wollt": {
+          "en": "wollt is the form for ihr. With du you need willst.",
+          "es": "wollt es la forma de ihr. Con du necesitas willst."
+        }
+      },
+      "examples": [
+        "Was willst du essen?",
+        "Was willst du kaufen?"
+      ],
+      "tr": {
+        "en": "What do you want to do today?",
+        "es": "¿Qué quieres hacer hoy?"
+      }
+    },
+    {
+      "id": "modalverben-praesens-w04",
+      "kind": "why",
+      "es": "Anna will nach Hause.",
+      "target": "will",
+      "tr": {
+        "en": "Anna wants to go home.",
+        "es": "Anna quiere ir a casa."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "will is the future, like English will",
+            "es": "will es el futuro, como will en inglés"
+          },
+          "wrong": {
+            "en": "will looks like the English word, but it is wollen: it means wants. The future is something else.",
+            "es": "will se parece a la palabra inglesa, pero es wollen: significa «quiere». El futuro es otra cosa."
+          }
+        },
+        {
+          "text": {
+            "en": "will needs -t for er/sie/es: willt",
+            "es": "will necesita -t para er/sie/es: willt"
+          },
+          "wrong": {
+            "en": "Modal verbs have no ending in ich and er/sie/es: ich will, Anna will, not willt.",
+            "es": "Los verbos modales no llevan terminación en ich y er/sie/es: ich will, Anna will, no willt."
+          }
+        },
+        {
+          "text": {
+            "en": "will is wollen for er/sie/es, without an ending, and it means wants",
+            "es": "will es wollen para er/sie/es, sin terminación, y significa «quiere»"
+          }
+        }
+      ],
+      "correctIndex": 2
+    }
+  ]
+}

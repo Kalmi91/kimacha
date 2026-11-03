@@ -1,0 +1,271 @@
+{
+  "target": "de",
+  "level": "B2",
+  "paper": "speaking",
+  "forms": [
+    {
+      "id": "f1",
+      "tasks": [
+        {
+          "skill": "speaking",
+          "kind": "speaking",
+          "instruction": "Halten Sie einen kurzen Vortrag zu einem der beiden Themen. Sie haben 15 Minuten Zeit zur Vorbereitung und können Notizen machen. Am Ende stellt der Prüfer Ihnen Fragen.",
+          "prepSeconds": 900,
+          "talkMinutes": [4, 4],
+          "choices": [
+            {
+              "id": "a",
+              "title": "Soziale Medien im Alltag junger Menschen",
+              "prompt": "Halten Sie einen Vortrag über das Thema „Soziale Medien im Alltag junger Menschen“.",
+              "bullets": ["Einleitung: Thema und Aufbau", "Ihre eigene Erfahrung", "Die Situation in Ihrem Heimatland", "Vor- und Nachteile", "Schluss und Dank"],
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Bitte beginnen Sie jetzt mit Ihrem Vortrag. Sie haben vier Minuten Zeit.",
+                  "minWords": 85,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Leitet das Thema ein und nennt den Aufbau",
+                      "keywords": ["mein thema", "ich spreche", "zuerst", "erstens", "zum thema", "in meinem vortrag", "ich mochte euch", "ich werde"]
+                    },
+                    {
+                      "id": "p2",
+                      "label": "Berichtet von der eigenen Erfahrung",
+                      "keywords": ["ich benutze", "ich nutze", "ich habe", "bei mir", "jeden tag", "instagram", "whatsapp", "ich verbringe", "ich poste", "meine erfahrung"]
+                    },
+                    {
+                      "id": "p3",
+                      "label": "Berichtet von der Situation im Heimatland",
+                      "keywords": ["in meinem land", "in meiner heimat", "bei uns", "in deutschland", "die meisten", "viele menschen", "in spanien", "in ungarn", "in mexiko"]
+                    },
+                    {
+                      "id": "p4",
+                      "label": "Nennt Vor- und Nachteile und schließt ab",
+                      "keywords": ["vorteil", "nachteil", "einerseits", "andererseits", "zum schluss", "abschliessend", "zusammenfassend", "vielen dank fur"]
+                    }
+                  ],
+                  "model": "Mein Thema ist die Rolle sozialer Medien im Alltag junger Menschen. Zuerst spreche ich über meine eigene Erfahrung, danach über die Situation in meinem Land, und zum Schluss nenne ich Vorteile und Nachteile. Ich nutze selbst jeden Tag WhatsApp und verbringe etwa zwei Stunden am Handy. Bei uns in meiner Heimat sind soziale Medien für fast alle Jugendlichen ein fester Teil des Lebens. Einerseits halten sie den Kontakt zu Freunden und Familie, andererseits kosten sie viel Zeit und können unter Druck setzen. Zusammenfassend meine ich, dass es auf das richtige Maß ankommt. Vielen Dank für Ihre Aufmerksamkeit."
+                },
+                {
+                  "id": "t2",
+                  "ask": "Danke für Ihren Vortrag. Sie haben erwähnt, dass soziale Medien auch Druck erzeugen können. Können Sie dafür ein Beispiel nennen?",
+                  "minWords": 20,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Nennt ein konkretes Beispiel für Druck",
+                      "keywords": ["beispielsweise", "vergleichen", "likes", "schonheitsideal", "perfekt", "fotos", "freunde", "unsicher", "mobbing"]
+                    }
+                  ],
+                  "model": "Zum Beispiel vergleichen sich viele Jugendliche mit perfekten Fotos anderer Menschen und werden dadurch unsicher. Wer wenige Likes bekommt, fühlt sich schnell schlechter."
+                },
+                {
+                  "id": "t3",
+                  "ask": "Würden Sie Eltern empfehlen, die Nutzung ihrer Kinder zu begrenzen? Wie würden Sie das begründen?",
+                  "minWords": 20,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Äußert einen Rat und begründet ihn",
+                      "keywords": ["ich wurde empfehlen", "ich empfehle", "eltern sollten", "zeitlimit", "altersgrenze", "regeln", "gesprach", "bildschirmzeit", "deshalb"]
+                    }
+                  ],
+                  "model": "Ich würde Eltern empfehlen, gemeinsam mit den Kindern feste Regeln zu vereinbaren, zum Beispiel ein Zeitlimit am Abend, weil Schlaf und Schule sonst leiden."
+                }
+              ]
+            },
+            {
+              "id": "b",
+              "title": "Ehrenamtliche Arbeit",
+              "prompt": "Halten Sie einen Vortrag über das Thema „Ehrenamtliche Arbeit“.",
+              "bullets": ["Einleitung: Thema und Aufbau", "Ihre eigene Erfahrung", "Die Situation in Ihrem Heimatland", "Vor- und Nachteile", "Schluss und Dank"],
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Bitte beginnen Sie jetzt mit Ihrem Vortrag. Sie haben vier Minuten Zeit.",
+                  "minWords": 85,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Leitet das Thema ein und nennt den Aufbau",
+                      "keywords": ["mein thema", "ich spreche", "zuerst", "erstens", "zum thema", "in meinem vortrag", "ich mochte euch", "ich werde"]
+                    },
+                    {
+                      "id": "p2",
+                      "label": "Berichtet von der eigenen Erfahrung",
+                      "keywords": ["ich habe geholfen", "ich arbeite", "ich war", "bei mir", "in einem verein", "tafel", "tierheim", "freiwillig", "ich engagiere", "meine erfahrung"]
+                    },
+                    {
+                      "id": "p3",
+                      "label": "Berichtet von der Situation im Heimatland",
+                      "keywords": ["in meinem land", "in meiner heimat", "bei uns", "in deutschland", "die meisten", "viele menschen", "in spanien", "in ungarn", "in mexiko"]
+                    },
+                    {
+                      "id": "p4",
+                      "label": "Nennt Vor- und Nachteile und schließt ab",
+                      "keywords": ["vorteil", "nachteil", "einerseits", "andererseits", "zum schluss", "abschliessend", "zusammenfassend", "vielen dank fur"]
+                    }
+                  ],
+                  "model": "Mein Thema ist die ehrenamtliche Arbeit. Zuerst spreche ich über meine eigene Erfahrung, danach über die Situation in meinem Land, und zum Schluss nenne ich Vorteile und Nachteile. Ich habe zwei Jahre lang freiwillig in einem Tierheim geholfen und am Wochenende Hunde ausgeführt. Bei uns in meiner Heimat engagieren sich vor allem ältere Menschen und Studenten in Vereinen. Einerseits lernt man neue Leute kennen und hilft anderen, andererseits bekommt man kein Geld und braucht viel Zeit. Zusammenfassend halte ich das Ehrenamt für sehr wertvoll. Vielen Dank für Ihre Aufmerksamkeit."
+                },
+                {
+                  "id": "t2",
+                  "ask": "Danke für Ihren Vortrag. Warum, glauben Sie, engagieren sich nicht mehr junge Menschen freiwillig?",
+                  "minWords": 20,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Nennt einen Grund",
+                      "keywords": ["keine zeit", "zeitmangel", "studium", "beruf", "geld", "stress", "unbekannt", "informiert", "wissen nicht", "angebote"]
+                    }
+                  ],
+                  "model": "Ich glaube, viele junge Menschen haben wegen Studium und Beruf einfach keine Zeit. Außerdem wissen sie oft nicht, welche Angebote es überhaupt gibt."
+                },
+                {
+                  "id": "t3",
+                  "ask": "Sollte der Staat Menschen für ehrenamtliche Arbeit belohnen, zum Beispiel mit Steuervorteilen?",
+                  "minWords": 20,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Äußert eine Meinung und begründet sie",
+                      "keywords": ["belohnung", "anerkennung", "rentenpunkte", "gerecht", "deshalb"]
+                    }
+                  ],
+                  "model": "Ich finde, dass eine kleine Anerkennung gerecht wäre, zum Beispiel in Form von Steuervorteilen, weil das Ehrenamt der ganzen Gesellschaft nützt und viele Menschen motiviert."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "speaking",
+          "kind": "speaking",
+          "instruction": "Diskutieren Sie mit dem Prüfer über eine Frage. Wählen Sie ein Thema, vertreten Sie Ihre Position und reagieren Sie auf die Argumente des Prüfers.",
+          "talkMinutes": [5, 5],
+          "choices": [
+            {
+              "id": "a",
+              "title": "Autofreie Innenstädte",
+              "prompt": "Diskussion: Sollten private Autos aus den Innenstädten verbannt werden?",
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Ich möchte mit Ihnen über eine Frage diskutieren: Sollten private Autos aus den Innenstädten verbannt werden? Wie sehen Sie das?",
+                  "minWords": 25,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Bezieht Stellung zur Frage",
+                      "keywords": ["ich bin dafur", "ich bin dagegen", "abgase", "larm"]
+                    }
+                  ],
+                  "model": "Ich bin dafür, dass private Autos aus den Innenstädten verschwinden, denn dort leiden die Menschen unter Abgasen und Lärm. Die Stadt wäre viel angenehmer, wenn Straßen für Fußgänger und Radfahrer da wären."
+                },
+                {
+                  "id": "t2",
+                  "ask": "Ich verstehe Ihre Position, aber viele Geschäfte fürchten, dass ihnen dann die Kunden fehlen. Was sagen Sie dazu?",
+                  "minWords": 25,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Reagiert auf das Gegenargument mit einem eigenen Argument",
+                      "keywords": ["fussgangerzone", "lieferverkehr", "umsatz", "ich sehe das anders", "im gegenteil", "studien", "zeigen"]
+                    }
+                  ],
+                  "model": "Ich sehe das anders: Studien zeigen oft, dass Kunden in autofreien Zonen länger bleiben und mehr einkaufen. Die Geschäfte können zudem ihre Lieferungen weiterhin am frühen Morgen bekommen, deshalb entsteht kein großes Problem."
+                },
+                {
+                  "id": "t3",
+                  "ask": "Haben Sie persönlich schon einmal erlebt, wie eine Stadt ohne Autos funktioniert? Erzählen Sie davon.",
+                  "minWords": 25,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Nennt ein Beispiel oder eine Erfahrung",
+                      "keywords": ["ich habe erlebt", "ich war", "in meiner stadt", "in kopenhagen", "in meinem land", "fahrrad", "strassenbahn", "erfahrung"]
+                    }
+                  ],
+                  "model": "Ich habe das in Kopenhagen erlebt, wo ich letztes Jahr eine Woche war. Fast alle fuhren mit dem Fahrrad, die Straßen waren ruhig, und trotzdem waren die Cafés und Läden voll. Das war eine gute Erfahrung."
+                },
+                {
+                  "id": "t4",
+                  "ask": "Gibt es vielleicht einen Kompromiss, mit dem beide Seiten leben könnten?",
+                  "minWords": 25,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Macht einen Kompromissvorschlag oder fasst zusammen",
+                      "keywords": ["ich schlage vor", "zum beispiel nur", "am wochenende", "bestimmte zonen", "anwohner", "parkhauser", "zusammenfassend", "tagsuber"]
+                    }
+                  ],
+                  "model": "Ein Kompromiss könnte sein, dass die Innenstadt nur tagsüber autofrei ist und Anwohner weiterhin zufahren dürfen. Ich schlage vor, zuerst bestimmte Zonen auszuprobieren und danach zu entscheiden."
+                }
+              ]
+            },
+            {
+              "id": "b",
+              "title": "Steuer auf ungesundes Essen",
+              "prompt": "Diskussion: Sollte der Staat ungesunde Lebensmittel stärker besteuern?",
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Ich möchte mit Ihnen über diese Frage diskutieren: Sollte der Staat ungesunde Lebensmittel wie Süßigkeiten und Limonaden stärker besteuern? Was meinen Sie?",
+                  "minWords": 25,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Bezieht Stellung zur Frage",
+                      "keywords": ["ich bin dafur", "ich bin dagegen", "steuer", "gesundheit", "ubergewicht", "zucker"]
+                    }
+                  ],
+                  "model": "Ich bin dafür, denn Zucker ist eine der Hauptursachen für Übergewicht und viele Krankheiten. Eine höhere Steuer würde die Hersteller dazu bringen, gesündere Produkte zu entwickeln, und die Menschen kaufen weniger davon."
+                },
+                {
+                  "id": "t2",
+                  "ask": "Kritiker sagen, dass vor allem Menschen mit wenig Geld darunter leiden würden. Wie sehen Sie das?",
+                  "minWords": 25,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Reagiert auf das Gegenargument mit einem eigenen Argument",
+                      "keywords": ["arme", "einkommen", "ungerecht", "ich verstehe", "allerdings", "gunstiger", "obst", "gemuse"]
+                    }
+                  ],
+                  "model": "Ich verstehe diese Sorge, aber man könnte mit den Einnahmen gesundes Essen wie Obst und Gemüse günstiger machen. Dann würden Menschen mit wenig Geld sogar profitieren, und die Steuer wäre nicht ungerecht."
+                },
+                {
+                  "id": "t3",
+                  "ask": "Kennen Sie ein Beispiel aus Ihrem Land oder einem anderen Land, in dem so etwas schon eingeführt wurde?",
+                  "minWords": 25,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Nennt ein Beispiel oder eine Erfahrung",
+                      "keywords": ["in mexiko", "in ungarn", "in grossbritannien", "zuckersteuer", "limonaden", "seit", "erfahrung"]
+                    }
+                  ],
+                  "model": "In Mexiko wurde vor einigen Jahren eine Steuer auf Limonaden eingeführt. Danach haben die Leute weniger davon gekauft, und die Einnahmen sollten unter anderem für sauberes Trinkwasser verwendet werden."
+                },
+                {
+                  "id": "t4",
+                  "ask": "Welche anderen Maßnahmen könnten Ihrer Meinung nach helfen, damit sich die Menschen gesünder ernähren?",
+                  "minWords": 25,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Macht einen Kompromissvorschlag oder fasst zusammen",
+                      "keywords": ["aufklarung", "schule", "werbung", "kantine", "ich schlage vor", "kochkurse", "kennzeichnung", "ampel", "ausserdem", "zusatzlich"]
+                    }
+                  ],
+                  "model": "Außerdem sollten Schulen und Kantinen gesündere Gerichte anbieten, und die Werbung für Süßigkeiten für Kinder sollte begrenzt werden. Ich schlage vor, dazu auch eine klare Kennzeichnung auf den Verpackungen einzuführen."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,980 @@
+{
+  "schema": 2,
+  "topic": "plusquamperfekt",
+  "level": "B2",
+  "title": {
+    "en": "The past perfect (Plusquamperfekt)",
+    "es": "El pluscuamperfecto (Plusquamperfekt)"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "The Plusquamperfekt is the past before the past. It is formed with the Präteritum of haben or sein (hatte, war) and the Partizip II: Ich hatte gegessen. Er war gegangen. It names the action that was finished first, while the later action stays in the Präteritum: Nachdem er gegessen hatte, ging er spazieren. The choice of haben or sein is the same as in the Perfekt. English had eaten and Spanish había comido work in the same way, and Hungarian usually just says már (already) with the simple past.",
+        "es": "El Plusquamperfekt es el pasado antes del pasado. Se forma con el Präteritum de haben o sein (hatte, war) y el Partizip II: Ich hatte gegessen. Er war gegangen. Nombra la acción que terminó primero, mientras que la acción posterior se queda en Präteritum: Nachdem er gegessen hatte, ging er spazieren. La elección de haben o sein es la misma que en el Perfekt. El inglés had eaten y el español había comido funcionan igual, y el húngaro suele decir simplemente már (ya) con el pasado simple."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "plusquamperfekt-formen",
+      "title": {
+        "en": "The Plusquamperfekt of two verbs",
+        "es": "El Plusquamperfekt de dos verbos"
+      },
+      "header": [
+        {
+          "en": "Person",
+          "es": "Persona"
+        },
+        {
+          "en": "haben (gemacht)",
+          "es": "haben (gemacht)"
+        },
+        {
+          "en": "sein (gegangen)",
+          "es": "sein (gegangen)"
+        }
+      ],
+      "rows": [
+        [
+          "ich",
+          "hatte gemacht",
+          "war gegangen"
+        ],
+        [
+          "du",
+          "hattest gemacht",
+          "warst gegangen"
+        ],
+        [
+          "er/sie/es",
+          "hatte gemacht",
+          "war gegangen"
+        ],
+        [
+          "wir",
+          "hatten gemacht",
+          "waren gegangen"
+        ],
+        [
+          "ihr",
+          "hattet gemacht",
+          "wart gegangen"
+        ],
+        [
+          "sie/Sie",
+          "hatten gemacht",
+          "waren gegangen"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "plusquamperfekt-verben",
+      "title": {
+        "en": "Which auxiliary verb",
+        "es": "Qué verbo auxiliar"
+      },
+      "header": [
+        {
+          "en": "Infinitive",
+          "es": "Infinitivo"
+        },
+        {
+          "en": "Hilfsverb",
+          "es": "Hilfsverb"
+        },
+        {
+          "en": "Plusquamperfekt (er)",
+          "es": "Plusquamperfekt (er)"
+        }
+      ],
+      "rows": [
+        [
+          "essen",
+          "hatte",
+          "hatte gegessen"
+        ],
+        [
+          "ankommen",
+          "war",
+          "war angekommen"
+        ],
+        [
+          "sehen",
+          "hatte",
+          "hatte gesehen"
+        ],
+        [
+          "fahren",
+          "war",
+          "war gefahren"
+        ],
+        [
+          "arbeiten",
+          "hatte",
+          "hatte gearbeitet"
+        ],
+        [
+          "bleiben",
+          "war",
+          "war geblieben"
+        ],
+        [
+          "aufstehen",
+          "war",
+          "war aufgestanden"
+        ],
+        [
+          "anfangen",
+          "hatte",
+          "hatte angefangen"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "When to use it: the earlier of two past events",
+        "es": "Cuándo usarlo: el primero de dos hechos pasados"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "The Plusquamperfekt marks what happened first. The later event is in the Präteritum (or in the Perfekt in speech). The connectors nachdem, als, bevor and sobald often introduce the pair, and words like schon, bereits, vorher and zuvor help.",
+            "es": "El Plusquamperfekt marca lo que ocurrió primero. El hecho posterior está en Präteritum (o en Perfekt al hablar). Los conectores nachdem, als, bevor y sobald suelen introducir el par, y palabras como schon, bereits, vorher y zuvor ayudan."
+          },
+          "examples": [
+            {
+              "es": "Nachdem er gegessen hatte, ging er spazieren.",
+              "tr": {
+                "en": "After he had eaten, he went for a walk.",
+                "es": "Después de haber comido, salió a caminar."
+              }
+            },
+            {
+              "es": "Als ich ankam, war der Zug schon abgefahren.",
+              "tr": {
+                "en": "When I arrived, the train had already left.",
+                "es": "Cuando llegué, el tren ya había salido."
+              }
+            },
+            {
+              "es": "Sie hatte vorher schon einmal in Wien gewohnt.",
+              "tr": {
+                "en": "She had lived in Vienna once before.",
+                "es": "Ella ya había vivido una vez en Viena."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "With bevor the order is reversed: the main clause is the earlier event. A flashback in a story also uses the Plusquamperfekt: you tell what had happened before the scene.",
+            "es": "Con bevor el orden se invierte: la oración principal es el hecho anterior. Una retrospección en un relato también usa el Plusquamperfekt: cuentas lo que había pasado antes de la escena."
+          },
+          "examples": [
+            {
+              "es": "Bevor ich ins Bett ging, hatte ich die Tür geschlossen.",
+              "tr": {
+                "en": "Before I went to bed, I had closed the door.",
+                "es": "Antes de acostarme, había cerrado la puerta."
+              }
+            },
+            {
+              "es": "Gestern kam Paul nach Hause. Er hatte lange gearbeitet.",
+              "tr": {
+                "en": "Yesterday Paul came home. He had worked for a long time.",
+                "es": "Ayer Paul llegó a casa. Había trabajado mucho tiempo."
+              }
+            },
+            {
+              "es": "Er erzählte, dass er in Köln gewohnt hatte.",
+              "tr": {
+                "en": "He told us that he had lived in Cologne.",
+                "es": "Contó que había vivido en Colonia."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "In subordinate clauses and in speech",
+        "es": "En oraciones subordinadas y al hablar"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "In a subordinate clause the auxiliary stands at the very end, after the participle: weil er nichts gegessen hatte. In everyday speech many Germans use the Perfekt for both events. In writing and in stories the Plusquamperfekt is the clear choice.",
+            "es": "En una oración subordinada el auxiliar va al final del todo, después del participio: weil er nichts gegessen hatte. En el habla cotidiana muchos alemanes usan el Perfekt para los dos hechos. En la escritura y en los relatos el Plusquamperfekt es la opción clara."
+          },
+          "examples": [
+            {
+              "es": "Er war müde, weil er nichts gegessen hatte.",
+              "tr": {
+                "en": "He was tired because he had not eaten anything.",
+                "es": "Estaba cansado porque no había comido nada."
+              }
+            },
+            {
+              "es": "Nachdem sie nach Berlin gezogen war, suchte sie eine Wohnung.",
+              "tr": {
+                "en": "After she had moved to Berlin, she looked for an apartment.",
+                "es": "Después de haberse mudado a Berlín, buscó un departamento."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Perfekt or Plusquamperfekt?",
+        "es": "¿Perfekt o Plusquamperfekt?"
+      },
+      "pairs": [
+        {
+          "a": "Ich habe gegessen.",
+          "b": "Ich hatte gegessen.",
+          "note": {
+            "en": "The Perfekt looks back from now: the action is finished and the result matters today. The Plusquamperfekt looks back from a point in the past: it was finished before something else happened.",
+            "es": "El Perfekt mira hacia atrás desde ahora: la acción terminó y el resultado importa hoy. El Plusquamperfekt mira hacia atrás desde un punto del pasado: terminó antes de que ocurriera otra cosa."
+          },
+          "examples": [
+            {
+              "es": "Ich habe gegessen, jetzt bin ich satt.",
+              "tr": {
+                "en": "I have eaten, now I am full.",
+                "es": "Ya comí, ahora estoy lleno."
+              }
+            },
+            {
+              "es": "Ich hatte gegessen, als er anrief.",
+              "tr": {
+                "en": "I had eaten when he called.",
+                "es": "Yo había comido cuando él llamó."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: use hatte or war, not the present of haben or sein (not Er hat gegessen gehabt). Choose the auxiliary as in the Perfekt: hatte with eat, see, work, begin; war with movement and change of state such as ankommen, fahren, aufstehen, bleiben. After nachdem put the earlier action in the Plusquamperfekt and the later one in the Präteritum, not both in the Präteritum. In a subordinate clause the auxiliary goes last (weil er nichts gegessen hatte). The Plusquamperfekt needs an earlier point of reference: do not use it for a single event.",
+        "es": "Trampas clásicas: usa hatte o war, no el presente de haben o sein (no Er hat gegessen gehabt). Elige el auxiliar como en el Perfekt: hatte con comer, ver, trabajar, empezar; war con movimiento y cambio de estado como ankommen, fahren, aufstehen, bleiben. Después de nachdem pon la acción anterior en Plusquamperfekt y la posterior en Präteritum, no las dos en Präteritum. En una oración subordinada el auxiliar va al final (weil er nichts gegessen hatte). El Plusquamperfekt necesita un punto de referencia anterior: no lo uses para un hecho aislado."
+      }
+    }
+  ],
+  "speak": {
+    "en": "The Plusquamperfekt is the past before the past. It is built with «hatte» or «war» and the participle: «Ich hatte gegessen», «Er war gegangen.» The earlier action is in the Plusquamperfekt, the later one in the Präteritum: «Nachdem er gegessen hatte, ging er spazieren.» In a subordinate clause the auxiliary goes last: «Er war müde, weil er nichts gegessen hatte.»",
+    "es": "El Plusquamperfekt es el pasado antes del pasado. Se forma con «hatte» o «war» y el participio: «Ich hatte gegessen», «Er war gegangen.» La acción anterior está en Plusquamperfekt, la posterior en Präteritum: «Nachdem er gegessen hatte, ging er spazieren.» En una oración subordinada el auxiliar va al final: «Er war müde, weil er nichts gegessen hatte.»"
+  },
+  "items": [
+    {
+      "id": "plusquamperfekt-c01",
+      "sentence": "Nachdem er gegessen ___, ging er spazieren.",
+      "options": [
+        "hat",
+        "hatte",
+        "hätte"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The eating happened first and the walk second, so the first action is in the Plusquamperfekt: gegessen hatte.",
+        "es": "Comer ocurrió primero y el paseo después, así que la primera acción está en Plusquamperfekt: gegessen hatte."
+      },
+      "wrong": {
+        "hat": {
+          "en": "hat is the present of haben and makes a Perfekt. The main clause ging is in the Präteritum, so the earlier action needs hatte.",
+          "es": "hat es el presente de haben y forma un Perfekt. La oración principal ging está en Präteritum, así que la acción anterior necesita hatte."
+        },
+        "hätte": {
+          "en": "hätte is the Konjunktiv II and expresses an unreal situation. A real event in the past uses hatte.",
+          "es": "hätte es el Konjunktiv II y expresa una situación irreal. Un hecho real en el pasado usa hatte."
+        }
+      },
+      "examples": [
+        "Nachdem sie gearbeitet hatte, ging sie nach Hause.",
+        "Nachdem wir gelernt hatten, spielten wir."
+      ],
+      "tr": {
+        "en": "After he had eaten, he went for a walk.",
+        "es": "Después de haber comido, salió a caminar."
+      }
+    },
+    {
+      "id": "plusquamperfekt-f01",
+      "kind": "form",
+      "verb": "haben (gemacht)",
+      "person": "ich",
+      "answer": "hatte gemacht",
+      "table": "plusquamperfekt-formen"
+    },
+    {
+      "id": "plusquamperfekt-c02",
+      "sentence": "Als ich ankam, ___ der Zug schon abgefahren.",
+      "options": [
+        "war",
+        "ist",
+        "hatte"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "abfahren is a verb of movement, so the Plusquamperfekt uses war: war abgefahren.",
+        "es": "abfahren es un verbo de movimiento, así que el Plusquamperfekt usa war: war abgefahren."
+      },
+      "wrong": {
+        "ist": {
+          "en": "ist is the present and makes a Perfekt. The sentence tells a past story with ankam, so the train had already left: war.",
+          "es": "ist es el presente y forma un Perfekt. La oración cuenta una historia pasada con ankam, así que el tren ya había salido: war."
+        },
+        "hatte": {
+          "en": "hatte is the auxiliary for verbs like essen. abfahren changes place, so it uses sein.",
+          "es": "hatte es el auxiliar para verbos como essen. abfahren cambia de lugar, así que usa sein."
+        }
+      },
+      "examples": [
+        "Als wir ankamen, war er schon gegangen.",
+        "Als sie kam, war der Bus schon gefahren."
+      ],
+      "tr": {
+        "en": "When I arrived, the train had already left.",
+        "es": "Cuando llegué, el tren ya había salido."
+      }
+    },
+    {
+      "id": "plusquamperfekt-f02",
+      "kind": "form",
+      "verb": "Plusquamperfekt (er)",
+      "person": "ankommen",
+      "answer": "war angekommen",
+      "table": "plusquamperfekt-verben"
+    },
+    {
+      "id": "plusquamperfekt-c03",
+      "sentence": "Als wir kamen, ___ der Film schon angefangen.",
+      "options": [
+        "war",
+        "ist",
+        "hatte"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "anfangen takes haben in the Perfekt, so the Plusquamperfekt is hatte angefangen.",
+        "es": "anfangen lleva haben en el Perfekt, así que el Plusquamperfekt es hatte angefangen."
+      },
+      "wrong": {
+        "war": {
+          "en": "war would need a verb that changes place or state. anfangen does not, so it uses haben.",
+          "es": "war necesitaría un verbo que cambie de lugar o de estado. anfangen no lo hace, así que usa haben."
+        },
+        "ist": {
+          "en": "ist is the present and makes a Perfekt. The sentence tells what had already happened earlier.",
+          "es": "ist es el presente y forma un Perfekt. La oración cuenta lo que ya había ocurrido antes."
+        }
+      },
+      "examples": [
+        "Als ich kam, hatte er schon gegessen.",
+        "Als sie anrief, hatte ich schon geschlafen."
+      ],
+      "tr": {
+        "en": "When we arrived, the film had already started.",
+        "es": "Cuando llegamos, la película ya había empezado."
+      }
+    },
+    {
+      "id": "plusquamperfekt-f03",
+      "kind": "form",
+      "verb": "sein (gegangen)",
+      "person": "du",
+      "answer": "warst gegangen",
+      "table": "plusquamperfekt-formen"
+    },
+    {
+      "id": "plusquamperfekt-w01",
+      "kind": "why",
+      "es": "Nachdem er gegessen hatte, ging er spazieren.",
+      "target": "hatte",
+      "tr": {
+        "en": "After he had eaten, he went for a walk.",
+        "es": "Después de haber comido, salió a caminar."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "hatte is the Präteritum of haben and says that he owned something",
+            "es": "hatte es el Präteritum de haben y dice que él poseía algo"
+          },
+          "wrong": {
+            "en": "Here hatte is only an auxiliary, together with gegessen. It does not mean that he owned something.",
+            "es": "Aquí hatte es solo un auxiliar, junto con gegessen. No significa que él poseía algo."
+          }
+        },
+        {
+          "text": {
+            "en": "hatte + participle: the Plusquamperfekt marks the action that was finished first",
+            "es": "hatte + participio: el Plusquamperfekt marca la acción que terminó primero"
+          }
+        },
+        {
+          "text": {
+            "en": "hatte is a Konjunktiv form and shows that the meal is only imagined",
+            "es": "hatte es una forma de Konjunktiv y muestra que la comida es solo imaginada"
+          },
+          "wrong": {
+            "en": "The Konjunktiv II is hätte, with an umlaut. hatte is a plain past tense for a real event.",
+            "es": "El Konjunktiv II es hätte, con diéresis. hatte es un pretérito para un hecho real."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "plusquamperfekt-c04",
+      "sentence": "Er war müde, weil er am Tag davor nichts gegessen ___.",
+      "options": [
+        "hatte",
+        "hat",
+        "war"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "In the weil clause the auxiliary stands at the very end: gegessen hatte. essen takes haben.",
+        "es": "En la oración con weil el auxiliar va al final del todo: gegessen hatte. essen lleva haben."
+      },
+      "wrong": {
+        "hat": {
+          "en": "hat is the present. The sentence starts with war, a past tense, so the earlier reason needs hatte.",
+          "es": "hat es el presente. La oración empieza con war, un tiempo pasado, así que la razón anterior necesita hatte."
+        },
+        "war": {
+          "en": "war is the auxiliary for movement verbs. essen is not one, it takes haben.",
+          "es": "war es el auxiliar de los verbos de movimiento. essen no lo es, lleva haben."
+        }
+      },
+      "examples": [
+        "Sie war froh, weil sie gut geschlafen hatte.",
+        "Ich war satt, weil ich viel gegessen hatte."
+      ],
+      "tr": {
+        "en": "He was tired because he had not eaten anything the day before.",
+        "es": "Estaba cansado porque el día anterior no había comido nada."
+      }
+    },
+    {
+      "id": "plusquamperfekt-f04",
+      "kind": "form",
+      "verb": "Plusquamperfekt (er)",
+      "person": "essen",
+      "answer": "hatte gegessen",
+      "table": "plusquamperfekt-verben"
+    },
+    {
+      "id": "plusquamperfekt-c05",
+      "sentence": "Sie hatte vorher schon einmal in Wien ___.",
+      "options": [
+        "wohnen",
+        "wohnte",
+        "gewohnt"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "hatte needs the Partizip II to form the Plusquamperfekt: hatte gewohnt.",
+        "es": "hatte necesita el Partizip II para formar el Plusquamperfekt: hatte gewohnt."
+      },
+      "wrong": {
+        "wohnen": {
+          "en": "wohnen is the infinitive. After the auxiliary hatte you need the participle.",
+          "es": "wohnen es el infinitivo. Después del auxiliar hatte necesitas el participio."
+        },
+        "wohnte": {
+          "en": "wohnte is a Präteritum form. A Präteritum cannot follow hatte; it is the participle that is needed.",
+          "es": "wohnte es una forma de Präteritum. Un Präteritum no puede ir después de hatte; se necesita el participio."
+        }
+      },
+      "examples": [
+        "Er hatte schon einmal in Köln gearbeitet.",
+        "Wir hatten vorher in Wien gelebt."
+      ],
+      "tr": {
+        "en": "She had lived in Vienna once before.",
+        "es": "Ella ya había vivido una vez en Viena."
+      }
+    },
+    {
+      "id": "plusquamperfekt-f05",
+      "kind": "form",
+      "verb": "haben (gemacht)",
+      "person": "wir",
+      "answer": "hatten gemacht",
+      "table": "plusquamperfekt-formen"
+    },
+    {
+      "id": "plusquamperfekt-c06",
+      "sentence": "Wir ___ schon gegangen, als er anrief.",
+      "options": [
+        "hatten",
+        "waren",
+        "haben"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "gehen is a verb of movement, so the Plusquamperfekt uses sein: waren gegangen.",
+        "es": "gehen es un verbo de movimiento, así que el Plusquamperfekt usa sein: waren gegangen."
+      },
+      "wrong": {
+        "hatten": {
+          "en": "hatten would go with a verb like essen. gehen forms its perfect tenses with sein.",
+          "es": "hatten iría con un verbo como essen. gehen forma sus tiempos perfectos con sein."
+        },
+        "haben": {
+          "en": "haben is the present. The sentence is in the past, and the going came before the call.",
+          "es": "haben es el presente. La oración está en pasado, y la salida ocurrió antes de la llamada."
+        }
+      },
+      "examples": [
+        "Wir waren schon zu Hause, als es regnete.",
+        "Er war schon gefahren, als ich kam."
+      ],
+      "tr": {
+        "en": "We had already left when he called.",
+        "es": "Ya nos habíamos ido cuando él llamó."
+      }
+    },
+    {
+      "id": "plusquamperfekt-f06",
+      "kind": "form",
+      "verb": "Hilfsverb",
+      "person": "fahren",
+      "answer": "war",
+      "table": "plusquamperfekt-verben"
+    },
+    {
+      "id": "plusquamperfekt-w02",
+      "kind": "why",
+      "es": "Als ich ankam, war der Zug schon abgefahren.",
+      "target": "war",
+      "tr": {
+        "en": "When I arrived, the train had already left.",
+        "es": "Cuando llegué, el tren ya había salido."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "war: abfahren is a verb of movement, so it forms the perfect tenses with sein",
+            "es": "war: abfahren es un verbo de movimiento, así que forma los tiempos perfectos con sein"
+          }
+        },
+        {
+          "text": {
+            "en": "hatte: every Plusquamperfekt uses hatte",
+            "es": "hatte: todo Plusquamperfekt usa hatte"
+          },
+          "wrong": {
+            "en": "The auxiliary depends on the verb: hatte for most verbs, war for verbs of movement and change of state.",
+            "es": "El auxiliar depende del verbo: hatte para la mayoría de los verbos, war para verbos de movimiento y cambio de estado."
+          }
+        },
+        {
+          "text": {
+            "en": "war is the normal Präteritum of sein, so the train was somewhere",
+            "es": "war es el Präteritum normal de sein, así que el tren estaba en algún lugar"
+          },
+          "wrong": {
+            "en": "Together with the participle abgefahren, war is an auxiliary, not the verb sein. The train had left.",
+            "es": "Junto con el participio abgefahren, war es un auxiliar, no el verbo sein. El tren había salido."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "plusquamperfekt-c07",
+      "sentence": "Nachdem wir gegessen hatten, ___ wir spazieren.",
+      "options": [
+        "gingen",
+        "gehen",
+        "waren gegangen"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The walk is the later action, so it is in the Präteritum: gingen. The earlier action has the Plusquamperfekt.",
+        "es": "El paseo es la acción posterior, así que está en Präteritum: gingen. La acción anterior lleva el Plusquamperfekt."
+      },
+      "wrong": {
+        "gehen": {
+          "en": "gehen is the present. The nachdem clause is in the past, so the main clause also needs a past tense.",
+          "es": "gehen es el presente. La oración con nachdem está en pasado, así que la principal también necesita un tiempo pasado."
+        },
+        "waren gegangen": {
+          "en": "waren gegangen would make the walk the earlier action, but the walk comes after the meal.",
+          "es": "waren gegangen haría del paseo la acción anterior, pero el paseo viene después de la comida."
+        }
+      },
+      "examples": [
+        "Nachdem sie gelernt hatte, spielte sie.",
+        "Nachdem er gekommen war, aßen wir."
+      ],
+      "tr": {
+        "en": "After we had eaten, we went for a walk.",
+        "es": "Después de haber comido, salimos a caminar."
+      }
+    },
+    {
+      "id": "plusquamperfekt-f07",
+      "kind": "form",
+      "verb": "sein (gegangen)",
+      "person": "ihr",
+      "answer": "wart gegangen",
+      "table": "plusquamperfekt-formen"
+    },
+    {
+      "id": "plusquamperfekt-c08",
+      "sentence": "Als ich ins Bett ging, ___ ich die Tür schon geschlossen.",
+      "options": [
+        "habe",
+        "hatte",
+        "war"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "With als and the word schon, closing the door came before going to bed, so hatte geschlossen.",
+        "es": "Con als y la palabra schon, cerrar la puerta ocurrió antes de acostarme, así que hatte geschlossen."
+      },
+      "wrong": {
+        "habe": {
+          "en": "habe makes a Perfekt, which does not fit the Präteritum ging and does not mark the earlier action clearly.",
+          "es": "habe forma un Perfekt, que no encaja con el Präteritum ging y no marca claramente la acción anterior."
+        },
+        "war": {
+          "en": "war is the auxiliary of movement verbs. schließen takes haben.",
+          "es": "war es el auxiliar de los verbos de movimiento. schließen lleva haben."
+        }
+      },
+      "examples": [
+        "Bevor er kam, hatte ich gekocht.",
+        "Bevor wir gingen, hatten wir gegessen."
+      ],
+      "tr": {
+        "en": "When I went to bed, I had already closed the door.",
+        "es": "Cuando me acosté, ya había cerrado la puerta."
+      }
+    },
+    {
+      "id": "plusquamperfekt-f08",
+      "kind": "form",
+      "verb": "Plusquamperfekt (er)",
+      "person": "aufstehen",
+      "answer": "war aufgestanden",
+      "table": "plusquamperfekt-verben"
+    },
+    {
+      "id": "plusquamperfekt-c09",
+      "sentence": "Er erzählte, dass er vor dem Umzug lange in Köln gewohnt ___.",
+      "options": [
+        "hat",
+        "wohnt",
+        "hatte"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The living in Cologne came before the telling, so the Plusquamperfekt is used: gewohnt hatte.",
+        "es": "Vivir en Colonia ocurrió antes del relato, así que se usa el Plusquamperfekt: gewohnt hatte."
+      },
+      "wrong": {
+        "hat": {
+          "en": "hat is the present of haben. The main verb erzählte is in the past, so the earlier action needs hatte.",
+          "es": "hat es el presente de haben. El verbo principal erzählte está en pasado, así que la acción anterior necesita hatte."
+        },
+        "wohnt": {
+          "en": "wohnt is a present tense and does not say that the living was over before the telling.",
+          "es": "wohnt es un presente y no dice que vivir allí había terminado antes del relato."
+        }
+      },
+      "examples": [
+        "Sie sagte, dass sie lange gewartet hatte.",
+        "Er wusste, dass wir schon gegessen hatten."
+      ],
+      "tr": {
+        "en": "He said that before the move he had lived in Cologne for a long time.",
+        "es": "Contó que antes de la mudanza había vivido mucho tiempo en Colonia."
+      }
+    },
+    {
+      "id": "plusquamperfekt-f09",
+      "kind": "form",
+      "verb": "haben (gemacht)",
+      "person": "ihr",
+      "answer": "hattet gemacht",
+      "table": "plusquamperfekt-formen"
+    },
+    {
+      "id": "plusquamperfekt-w03",
+      "kind": "why",
+      "es": "Er war müde, weil er nichts gegessen hatte.",
+      "target": "hatte",
+      "tr": {
+        "en": "He was tired because he had not eaten anything.",
+        "es": "Estaba cansado porque no había comido nada."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "hatte stays in position 2, as in a main clause",
+            "es": "hatte se queda en la posición 2, como en una oración principal"
+          },
+          "wrong": {
+            "en": "In a subordinate clause with weil the conjugated verb goes to the very end. Here that is the auxiliary hatte.",
+            "es": "En una oración subordinada con weil el verbo conjugado va al final del todo. Aquí es el auxiliar hatte."
+          }
+        },
+        {
+          "text": {
+            "en": "hatte comes before the participle, because the auxiliary always stands first",
+            "es": "hatte va antes del participio, porque el auxiliar va siempre primero"
+          },
+          "wrong": {
+            "en": "In a subordinate clause the order is reversed: participle first, auxiliary last, gegessen hatte.",
+            "es": "En una oración subordinada el orden se invierte: primero el participio, al final el auxiliar, gegessen hatte."
+          }
+        },
+        {
+          "text": {
+            "en": "hatte is last because the weil clause sends the conjugated verb to the end",
+            "es": "hatte va al final porque la oración con weil manda el verbo conjugado al final"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "plusquamperfekt-c10",
+      "sentence": "Gestern kam Paul nach Hause. Er ___ vorher lange gearbeitet.",
+      "options": [
+        "hatte",
+        "hat",
+        "war"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The working came before Paul got home, so a flashback uses the Plusquamperfekt: hatte gearbeitet.",
+        "es": "Trabajar ocurrió antes de que Paul llegara a casa, así que una retrospección usa el Plusquamperfekt: hatte gearbeitet."
+      },
+      "wrong": {
+        "hat": {
+          "en": "hat makes a Perfekt, which mixes with the Präteritum kam and does not mark a flashback.",
+          "es": "hat forma un Perfekt, que se mezcla con el Präteritum kam y no marca una retrospección."
+        },
+        "war": {
+          "en": "war is the auxiliary for movement verbs. arbeiten takes haben.",
+          "es": "war es el auxiliar de los verbos de movimiento. arbeiten lleva haben."
+        }
+      },
+      "examples": [
+        "Gestern regnete es. Es hatte lange nicht geregnet.",
+        "Heute kam Anna. Sie hatte gut geschlafen."
+      ],
+      "tr": {
+        "en": "Yesterday Paul came home. Before that he had worked for a long time.",
+        "es": "Ayer Paul llegó a casa. Antes había trabajado mucho tiempo."
+      }
+    },
+    {
+      "id": "plusquamperfekt-f10",
+      "kind": "form",
+      "verb": "Hilfsverb",
+      "person": "sehen",
+      "answer": "hatte",
+      "table": "plusquamperfekt-verben"
+    },
+    {
+      "id": "plusquamperfekt-c11",
+      "sentence": "Nachdem er den Brief ___ hatte, rief er an.",
+      "options": [
+        "lesen",
+        "las",
+        "gelesen"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The auxiliary hatte stands at the end of the nachdem clause, and before it comes the participle: gelesen hatte.",
+        "es": "El auxiliar hatte va al final de la oración con nachdem, y delante va el participio: gelesen hatte."
+      },
+      "wrong": {
+        "lesen": {
+          "en": "lesen is the infinitive. The Plusquamperfekt needs the participle gelesen before hatte.",
+          "es": "lesen es el infinitivo. El Plusquamperfekt necesita el participio gelesen antes de hatte."
+        },
+        "las": {
+          "en": "las is a Präteritum form. A Präteritum cannot stand with the auxiliary hatte.",
+          "es": "las es una forma de Präteritum. Un Präteritum no puede ir con el auxiliar hatte."
+        }
+      },
+      "examples": [
+        "Nachdem sie den Text geschrieben hatte, schlief sie.",
+        "Nachdem er das Buch gekauft hatte, ging er nach Hause."
+      ],
+      "tr": {
+        "en": "After he had read the letter, he called.",
+        "es": "Después de haber leído la carta, llamó."
+      }
+    },
+    {
+      "id": "plusquamperfekt-f11",
+      "kind": "form",
+      "verb": "sein (gegangen)",
+      "person": "sie/Sie",
+      "answer": "waren gegangen",
+      "table": "plusquamperfekt-formen"
+    },
+    {
+      "id": "plusquamperfekt-c12",
+      "sentence": "Nachdem sie nach Berlin ___ war, suchte sie eine Wohnung.",
+      "options": [
+        "ziehen",
+        "gezogen",
+        "zog"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "ziehen in the sense of moving to a place forms its perfect tenses with sein: gezogen war.",
+        "es": "ziehen en el sentido de mudarse a un lugar forma sus tiempos perfectos con sein: gezogen war."
+      },
+      "wrong": {
+        "ziehen": {
+          "en": "ziehen is the infinitive. With the auxiliary war you need the participle gezogen.",
+          "es": "ziehen es el infinitivo. Con el auxiliar war necesitas el participio gezogen."
+        },
+        "zog": {
+          "en": "zog is the Präteritum and cannot stand with the auxiliary war. The participle is needed.",
+          "es": "zog es el Präteritum y no puede ir con el auxiliar war. Se necesita el participio."
+        }
+      },
+      "examples": [
+        "Nachdem er nach Köln gezogen war, fand er Arbeit.",
+        "Nachdem wir gefahren waren, schliefen wir."
+      ],
+      "tr": {
+        "en": "After she had moved to Berlin, she looked for an apartment.",
+        "es": "Después de haberse mudado a Berlín, buscó un departamento."
+      }
+    },
+    {
+      "id": "plusquamperfekt-f12",
+      "kind": "form",
+      "verb": "Plusquamperfekt (er)",
+      "person": "bleiben",
+      "answer": "war geblieben",
+      "table": "plusquamperfekt-verben"
+    },
+    {
+      "id": "plusquamperfekt-c13",
+      "sentence": "Ich war müde, denn ich hatte nicht ___.",
+      "options": [
+        "schlafen",
+        "schlief",
+        "geschlafen"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "After the auxiliary hatte comes the participle: geschlafen. The sleeping was missing before I was tired.",
+        "es": "Después del auxiliar hatte viene el participio: geschlafen. La falta de sueño vino antes del cansancio."
+      },
+      "wrong": {
+        "schlafen": {
+          "en": "schlafen is the infinitive. The Plusquamperfekt needs the participle after hatte.",
+          "es": "schlafen es el infinitivo. El Plusquamperfekt necesita el participio después de hatte."
+        },
+        "schlief": {
+          "en": "schlief is the Präteritum. A Präteritum cannot follow the auxiliary hatte.",
+          "es": "schlief es el Präteritum. Un Präteritum no puede ir después del auxiliar hatte."
+        }
+      },
+      "examples": [
+        "Er war traurig, denn er hatte verloren.",
+        "Wir waren satt, denn wir hatten gegessen."
+      ],
+      "tr": {
+        "en": "I was tired, because I had not slept.",
+        "es": "Estaba cansado, porque no había dormido."
+      }
+    },
+    {
+      "id": "plusquamperfekt-c14",
+      "sentence": "Er ___ zu Hause geblieben, weil es regnete.",
+      "options": [
+        "war",
+        "hatte",
+        "ist"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "bleiben takes sein, so the Plusquamperfekt is war geblieben. It happened before the moment of speaking.",
+        "es": "bleiben lleva sein, así que el Plusquamperfekt es war geblieben. Ocurrió antes del momento en que se habla."
+      },
+      "wrong": {
+        "hatte": {
+          "en": "hatte would go with haben verbs. bleiben forms its perfect tenses with sein.",
+          "es": "hatte iría con verbos con haben. bleiben forma sus tiempos perfectos con sein."
+        },
+        "ist": {
+          "en": "ist makes a Perfekt. In the story the staying at home lies further back in the past.",
+          "es": "ist forma un Perfekt. En el relato quedarse en casa está más atrás en el pasado."
+        }
+      },
+      "examples": [
+        "Sie war zu Hause geblieben, weil es regnete.",
+        "Wir waren hier geblieben, weil er schlief."
+      ],
+      "tr": {
+        "en": "He had stayed at home because it was raining.",
+        "es": "Se había quedado en casa porque llovía."
+      }
+    },
+    {
+      "id": "plusquamperfekt-w04",
+      "kind": "why",
+      "es": "Nachdem sie nach Berlin gezogen war, suchte sie eine Wohnung.",
+      "target": "suchte",
+      "tr": {
+        "en": "After she had moved to Berlin, she looked for an apartment.",
+        "es": "Después de haberse mudado a Berlín, buscó un departamento."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "suchte should be hatte gesucht, because after nachdem both verbs take the Plusquamperfekt",
+            "es": "suchte debería ser hatte gesucht, porque después de nachdem los dos verbos van en Plusquamperfekt"
+          },
+          "wrong": {
+            "en": "Only the earlier action is in the Plusquamperfekt. The later one stays in the Präteritum, so the order stays clear.",
+            "es": "Solo la acción anterior está en Plusquamperfekt. La posterior se queda en Präteritum, para que el orden quede claro."
+          }
+        },
+        {
+          "text": {
+            "en": "suchte stays in the Präteritum: the later action carries the story forward",
+            "es": "suchte se queda en Präteritum: la acción posterior hace avanzar el relato"
+          }
+        },
+        {
+          "text": {
+            "en": "suchte is a Präteritum because the word nachdem requires it",
+            "es": "suchte es un Präteritum porque la palabra nachdem lo exige"
+          },
+          "wrong": {
+            "en": "nachdem does not require a tense by itself. The tense follows the order of the events: the later action is in the Präteritum.",
+            "es": "nachdem no exige un tiempo por sí solo. El tiempo sigue el orden de los hechos: la acción posterior está en Präteritum."
+          }
+        }
+      ],
+      "correctIndex": 1
+    }
+  ]
+}

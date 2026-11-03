@@ -1,0 +1,415 @@
+{
+  "target": "de",
+  "level": "A1",
+  "paper": "speaking",
+  "forms": [
+    {
+      "id": "f1",
+      "tasks": [
+        {
+          "skill": "speaking",
+          "kind": "speaking",
+          "instruction": "Stellen Sie sich dem Prüfer vor. Sprechen Sie über die Punkte auf der Karte.",
+          "talkMinutes": [1, 2],
+          "choices": [
+            {
+              "id": "a",
+              "title": "Sich vorstellen",
+              "prompt": "Sie lernen den Prüfer kennen. Sagen Sie, wer Sie sind.",
+              "bullets": ["Name", "Land", "Alter", "Wohnort", "Beruf oder Schule", "Sprachen", "Hobby oder Familie"],
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Guten Tag! Sie können beginnen, wenn Sie bereit sind.",
+                  "minWords": 30,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Sagt den Namen oder das Herkunftsland",
+                      "keywords": ["mein name", "ich heisse", "ich komme", "aus mexiko", "aus ungarn", "aus spanien", "aus den usa", "ich bin aus", "kolumbien", "argentinien"]
+                    },
+                    {
+                      "id": "p2",
+                      "label": "Sagt das Alter oder den Wohnort",
+                      "keywords": ["jahre alt", "ich bin dreissig", "ich wohne", "in berlin", "in munchen", "in hamburg", "in koln", "in leipzig"]
+                    },
+                    {
+                      "id": "p3",
+                      "label": "Spricht über Beruf oder Schule",
+                      "keywords": ["ich arbeite", "ich bin student", "ich bin lehrer", "ich lerne", "ich studiere", "im buro", "als ingenieur", "beruf"]
+                    },
+                    {
+                      "id": "p4",
+                      "label": "Spricht über Sprachen, Hobby oder Familie",
+                      "keywords": ["ich spreche", "sprachen", "spanisch", "englisch", "mein hobby", "ich spiele", "familie", "schwester", "bruder", "meine eltern"]
+                    }
+                  ],
+                  "model": "Mein Name ist María López, ich komme aus Mexiko. Ich bin dreißig Jahre alt und wohne in Berlin. Ich arbeite in einem Büro und lerne am Abend Deutsch. Ich spreche Spanisch, Englisch und ein bisschen Deutsch. Mein Hobby ist Tanzen, und ich habe eine Schwester."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "speaking",
+          "kind": "speaking",
+          "instruction": "Sie bekommen Wortkarten zu einem Thema. Stellen Sie zu Ihrer Karte eine Frage und antworten Sie auf die Frage des Prüfers.",
+          "talkMinutes": [2, 3],
+          "choices": [
+            {
+              "id": "a",
+              "title": "Essen und Trinken",
+              "prompt": "Thema: Essen und Trinken. Zu jeder Ihrer Wortkarten stellen Sie dem Prüfer eine Frage. Der Prüfer hat andere Karten und fragt auch Sie.",
+              "bullets": ["Frühstück", "Obst", "Kuchen"],
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Ihre Wortkarte heißt Frühstück. Stellen Sie mir eine Frage zu diesem Wort.",
+                  "minWords": 4,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Stellt eine Frage zum Frühstück",
+                      "keywords": ["was essen sie", "was isst du", "essen sie", "isst du", "fruhstucken sie", "fruhstuckst du", "trinken sie", "trinkst du"]
+                    }
+                  ],
+                  "model": "Was essen Sie zum Frühstück?"
+                },
+                {
+                  "id": "t2",
+                  "ask": "Ich esse zum Frühstück Brot und Käse. Jetzt ziehe ich eine Karte: Getränk. Was trinken Sie am liebsten?",
+                  "minWords": 4,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Sagt, was sie am liebsten trinkt",
+                      "keywords": ["ich trinke", "kaffee", "orangensaft", "wasser", "milch", "saft", "cola", "bier"]
+                    }
+                  ],
+                  "model": "Ich trinke gern Tee mit Milch."
+                },
+                {
+                  "id": "t3",
+                  "ask": "Ihre nächste Wortkarte heißt Obst. Stellen Sie mir eine Frage.",
+                  "minWords": 4,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Stellt eine Frage zum Obst",
+                      "keywords": ["essen sie gern", "isst du gern", "mogen sie", "magst du", "kaufen sie", "kaufst du", "welches obst", "was fur obst"]
+                    }
+                  ],
+                  "model": "Essen Sie gern Obst?"
+                },
+                {
+                  "id": "t4",
+                  "ask": "Ich esse jeden Tag einen Apfel. Meine Karte heißt Restaurant. Gehen Sie oft ins Restaurant?",
+                  "minWords": 4,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Antwortet auf die Frage",
+                      "keywords": ["ich gehe", "wir gehen", "am wochenende", "mit meiner familie", "mit freunden", "einmal im monat", "jeden samstag", "nicht oft"]
+                    }
+                  ],
+                  "model": "Ich gehe am Wochenende mit Freunden."
+                },
+                {
+                  "id": "t5",
+                  "ask": "Ihre letzte Wortkarte heißt Kuchen. Stellen Sie mir eine Frage.",
+                  "minWords": 4,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Stellt eine Frage zum Kuchen",
+                      "keywords": ["essen sie gern", "isst du gern", "mogen sie", "magst du", "backen sie", "backst du", "kaufen sie", "wie oft"]
+                    }
+                  ],
+                  "model": "Backen Sie gern Kuchen?"
+                },
+                {
+                  "id": "t6",
+                  "ask": "Am Sonntag gibt es bei mir oft Kuchen. Meine letzte Karte heißt Mittagessen. Was essen Sie am Mittag?",
+                  "minWords": 4,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Sagt, was sie mittags isst",
+                      "keywords": ["ich esse", "suppe", "salat", "nudeln", "reis", "fleisch", "kartoffeln", "brot mit"]
+                    }
+                  ],
+                  "model": "Ich esse Suppe und Salat."
+                }
+              ]
+            },
+            {
+              "id": "b",
+              "title": "Freizeit",
+              "prompt": "Thema: Freizeit. Zu jeder Ihrer Wortkarten stellen Sie dem Prüfer eine Frage. Der Prüfer hat andere Karten und fragt auch Sie.",
+              "bullets": ["Sport", "Wochenende", "Freunde"],
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Ihre Wortkarte heißt Sport. Stellen Sie mir eine Frage zu diesem Wort.",
+                  "minWords": 4,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Stellt eine Frage zum Sport",
+                      "keywords": ["machen sie", "machst du", "spielen sie", "spielst du", "welchen sport", "welche sportart", "treiben sie", "treibst du"]
+                    }
+                  ],
+                  "model": "Machst du gern Sport?"
+                },
+                {
+                  "id": "t2",
+                  "ask": "Ich spiele gern Fußball. Meine Karte heißt Musik. Hören Sie gern Musik?",
+                  "minWords": 4,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Antwortet auf die Frage",
+                      "keywords": ["ja ich", "nein ich", "ich hore", "ich mag", "popmusik", "rockmusik", "klassische musik", "radio"]
+                    }
+                  ],
+                  "model": "Ja, ich höre gern Popmusik."
+                },
+                {
+                  "id": "t3",
+                  "ask": "Ihre nächste Wortkarte heißt Wochenende. Stellen Sie mir eine Frage.",
+                  "minWords": 4,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Stellt eine Frage zum Wochenende",
+                      "keywords": ["was machen sie", "was machst du", "haben sie", "hast du", "gehen sie", "gehst du", "fahren sie", "fahrst du"]
+                    }
+                  ],
+                  "model": "Was machst du am Wochenende?"
+                },
+                {
+                  "id": "t4",
+                  "ask": "Am Wochenende gehe ich oft in den Park. Meine Karte heißt Kino. Gehen Sie gern ins Kino?",
+                  "minWords": 4,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Antwortet auf die Frage",
+                      "keywords": ["ja ich", "nein ich", "ich gehe", "ich sehe", "film", "filme", "mit freunden", "nicht oft"]
+                    }
+                  ],
+                  "model": "Ja, ich gehe gern ins Kino."
+                },
+                {
+                  "id": "t5",
+                  "ask": "Ihre letzte Wortkarte heißt Freunde. Stellen Sie mir eine Frage.",
+                  "minWords": 4,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Stellt eine Frage zu den Freunden",
+                      "keywords": ["hast du", "haben sie", "treffen sie", "triffst du", "wie viele", "wo wohnen", "was machen sie", "was machst du"]
+                    }
+                  ],
+                  "model": "Haben Sie viele Freunde?"
+                },
+                {
+                  "id": "t6",
+                  "ask": "Ich treffe meine Freunde am Samstag. Meine letzte Karte heißt Fernsehen. Sehen Sie oft fern?",
+                  "minWords": 4,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Antwortet auf die Frage",
+                      "keywords": ["ich sehe", "ich schaue", "nicht oft", "jeden abend", "am abend", "nachrichten", "filme", "serien"]
+                    }
+                  ],
+                  "model": "Ja, ich sehe jeden Abend fern."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "speaking",
+          "kind": "speaking",
+          "instruction": "Sie bekommen Bittekarten. Formulieren Sie eine Bitte an den Prüfer. Danach bittet der Prüfer Sie um etwas: Antworten Sie.",
+          "talkMinutes": [3, 4],
+          "follows": 2,
+          "choices": [
+            {
+              "id": "a",
+              "title": "Essen und Trinken",
+              "prompt": "Bitten zu Hause und im Restaurant. Sie formulieren drei Bitten, und Sie antworten auf drei Bitten des Prüfers.",
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Karte: Fenster zumachen. Wir sitzen in der Küche, und es ist kalt. Formulieren Sie eine Bitte.",
+                  "minWords": 4,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Formuliert eine höfliche Bitte",
+                      "keywords": ["machen sie bitte", "mach bitte", "konnen sie", "kannst du", "konnten sie", "machst du", "das fenster", "zumachen bitte"]
+                    }
+                  ],
+                  "model": "Kannst du bitte das Fenster zumachen?"
+                },
+                {
+                  "id": "t2",
+                  "ask": "Ich habe Durst. Können Sie mir bitte ein Glas Wasser geben?",
+                  "minWords": 3,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Reagiert auf die Bitte",
+                      "keywords": ["ja gern", "ja klar", "ja naturlich", "nein leider", "tut mir leid", "leider nicht", "hier ist", "bitte sehr"]
+                    }
+                  ],
+                  "model": "Ja, gern. Hier ist das Wasser."
+                },
+                {
+                  "id": "t3",
+                  "ask": "Karte: Speisekarte. Sie sind im Restaurant, und ich bin der Kellner. Formulieren Sie eine Bitte.",
+                  "minWords": 4,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Formuliert eine höfliche Bitte",
+                      "keywords": ["bringen sie mir", "konnen sie mir", "kann ich bitte", "ich mochte bitte", "ich hatte gern", "geben sie mir", "haben sie", "bringen sie"]
+                    }
+                  ],
+                  "model": "Können Sie mir bitte die Speisekarte bringen?"
+                },
+                {
+                  "id": "t4",
+                  "ask": "Meine Tasche ist schwer. Können Sie mir bitte helfen?",
+                  "minWords": 3,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Reagiert auf die Bitte",
+                      "keywords": ["ja gern", "ja klar", "ja naturlich", "nein leider", "tut mir leid", "leider nicht", "ich helfe", "kein problem"]
+                    }
+                  ],
+                  "model": "Ja, klar. Ich helfe Ihnen gern."
+                },
+                {
+                  "id": "t5",
+                  "ask": "Karte: Tisch für zwei Personen. Sie rufen im Restaurant an, und ich bin der Kellner. Formulieren Sie eine Bitte.",
+                  "minWords": 4,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Formuliert eine höfliche Bitte",
+                      "keywords": ["einen tisch", "ich mochte bitte", "ich mochte einen", "ich hatte gern", "konnen sie", "kann ich", "haben sie", "reservieren sie", "tisch reservieren"]
+                    }
+                  ],
+                  "model": "Ich möchte bitte einen Tisch für zwei Personen reservieren."
+                },
+                {
+                  "id": "t6",
+                  "ask": "Mein Handy ist leer. Können Sie mir bitte Ihr Handy geben?",
+                  "minWords": 3,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Reagiert auf die Bitte",
+                      "keywords": ["ja gern", "ja klar", "ja naturlich", "nein leider", "tut mir leid", "leider nicht", "hier ist", "bitte sehr"]
+                    }
+                  ],
+                  "model": "Ja, klar. Hier ist mein Handy."
+                }
+              ]
+            },
+            {
+              "id": "b",
+              "title": "Freizeit",
+              "prompt": "Bitten im Alltag und in der Freizeit. Sie formulieren drei Bitten, und Sie antworten auf drei Bitten des Prüfers.",
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Karte: Musik leiser. Wir sind zusammen im Zimmer, und die Musik ist sehr laut. Formulieren Sie eine Bitte.",
+                  "minWords": 4,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Formuliert eine höfliche Bitte",
+                      "keywords": ["machen sie bitte", "mach bitte", "konnen sie", "kannst du", "machst du", "konntest du", "konnten sie", "leiser machen"]
+                    }
+                  ],
+                  "model": "Kannst du bitte die Musik leiser machen?"
+                },
+                {
+                  "id": "t2",
+                  "ask": "Ich möchte morgen ins Schwimmbad gehen. Kommen Sie bitte mit?",
+                  "minWords": 3,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Reagiert auf die Bitte",
+                      "keywords": ["ja gern", "ja klar", "ja naturlich", "nein leider", "tut mir leid", "leider nicht", "ich komme", "gute idee"]
+                    }
+                  ],
+                  "model": "Ja, gern. Ich komme mit."
+                },
+                {
+                  "id": "t3",
+                  "ask": "Karte: Stift. Im Deutschkurs haben Sie keinen Stift, und ich bin Ihr Nachbar. Formulieren Sie eine Bitte.",
+                  "minWords": 4,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Formuliert eine höfliche Bitte",
+                      "keywords": ["konnen sie mir", "kannst du mir", "haben sie einen", "hast du einen", "geben sie mir", "gib mir", "leihen sie", "leihst du"]
+                    }
+                  ],
+                  "model": "Kannst du mir bitte einen Stift leihen?"
+                },
+                {
+                  "id": "t4",
+                  "ask": "Ich suche den Bahnhof. Können Sie mir bitte den Weg zeigen?",
+                  "minWords": 3,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Reagiert auf die Bitte",
+                      "keywords": ["ja gern", "ja klar", "ja naturlich", "nein leider", "tut mir leid", "leider nicht", "gehen sie", "geradeaus", "links", "rechts"]
+                    }
+                  ],
+                  "model": "Ja, gern. Gehen Sie geradeaus und dann links."
+                },
+                {
+                  "id": "t5",
+                  "ask": "Karte: Fotos machen. Wir sind im Park, und die Sonne scheint. Formulieren Sie eine Bitte.",
+                  "minWords": 4,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Formuliert eine höfliche Bitte",
+                      "keywords": ["konnen sie", "kannst du", "machen sie bitte", "mach bitte", "ein foto", "ein bild", "fotografieren sie", "fotografierst du"]
+                    }
+                  ],
+                  "model": "Kannst du bitte ein Foto von mir machen?"
+                },
+                {
+                  "id": "t6",
+                  "ask": "Ich möchte am Samstag Fußball spielen. Spielen Sie bitte mit?",
+                  "minWords": 3,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Reagiert auf die Bitte",
+                      "keywords": ["ja gern", "ja klar", "ja naturlich", "nein leider", "tut mir leid", "leider nicht", "ich spiele", "keine zeit"]
+                    }
+                  ],
+                  "model": "Ja, gern. Ich spiele mit."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

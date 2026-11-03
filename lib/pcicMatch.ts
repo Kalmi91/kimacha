@@ -5,6 +5,7 @@
 // matters grammatically, so it is
 // wrong, not near, even if the edit distance is only 1.
 
+import { germanReadings, germanRegionalVariants } from './answerMatch';
 import { levenshtein } from './levenshtein';
 import { stripTrailingPunct } from './charDiff';
 import type { Sm2Grade } from './sm2';
@@ -96,7 +97,9 @@ function isAccentOnlyDiff(a: string, b: string): boolean {
 //
 // `lang` is the language of `target`. Hungarian accents are phonemic (kor/kór, öt/őt), so for 'hu' an
 // accent-only difference is always wrong, whatever the Settings switch says, and the Spanish ¿ ¡ marks
-// are not Hungarian punctuation. Other languages keep their behaviour.
+// are not Hungarian punctuation. German also writes ß as ss and an umlaut as its vowel plus e (Straße /
+// Strasse, schön / schoen); while accents are forgiven either spelling is right, with strict accents on the ß
+// and the umlaut are the spelling being graded. Other languages keep their behaviour.
 export function gradePcicAnswer(typed: string, target: string, strictAccents = false, lang?: string): PcicGrade {
   const hu = lang === 'hu';
   const norm = hu ? normalizeHu : normalize;
@@ -106,6 +109,26 @@ export function gradePcicAnswer(typed: string, target: string, strictAccents = f
   for (const alt of alternatives) {
     if (stripTrailingPunct(norm(alt)) === typedNorm) {
       return { match: 'exact', best: alt };
+    }
+  }
+
+  // German: an Austrian/Swiss word is right for the standard one; the reveal keeps the standard word.
+  if (lang === 'de') {
+    const typedForms = strictAccents ? [typedNorm] : germanReadings(typedNorm);
+    for (const alt of alternatives) {
+      for (const regional of germanRegionalVariants(alt)) {
+        const regionalNorm = stripTrailingPunct(norm(regional));
+        const forms = strictAccents ? [regionalNorm] : germanReadings(regionalNorm);
+        if (typedForms.some((r) => forms.includes(r))) return { match: 'exact', best: alt };
+      }
+    }
+  }
+
+  if (lang === 'de' && !strictAccents) {
+    const typedReadings = germanReadings(typedNorm);
+    for (const alt of alternatives) {
+      const altReadings = germanReadings(stripTrailingPunct(norm(alt)));
+      if (typedReadings.some((reading) => altReadings.includes(reading))) return { match: 'exact', best: alt };
     }
   }
 
@@ -171,8 +194,8 @@ const GRADE_RANK: Record<PcicGrade['match'], number> = { exact: 2, near: 1, wron
  */
 export function gradeSentenceAnswer(typed: string, target: string, strictAccents = false, lang?: string): PcicGrade {
   const full = gradePcicAnswer(typed, target, strictAccents, lang);
-  // The dropped subject pronoun is a Spanish rule (Hungarian has its own pro-drop; not modelled here).
-  const short = lang === 'hu' ? null : withoutLeadingSubjectPronoun(target);
+  // The dropped subject pronoun is a Spanish rule (Hungarian has its own pro-drop; not modelled here; German drops none).
+  const short = lang === 'hu' || lang === 'de' ? null : withoutLeadingSubjectPronoun(target);
   if (!short) return full;
   const alt = gradePcicAnswer(typed, short, strictAccents, lang);
   return GRADE_RANK[alt.match] > GRADE_RANK[full.match] ? { ...alt, best: target } : full;

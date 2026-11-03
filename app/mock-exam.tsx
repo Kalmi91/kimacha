@@ -114,8 +114,8 @@ export default function MockExamScreen() {
       setTarget(tgt);
       setLevel(lvl);
       setLearned(new Set(cards.filter(isExamLearned).map((c) => c.itemId)));
-      // No dictionary check for hu: a Hungarian word has too many inflected forms for a word list (the other sense checks stay).
-      setLexicon(tgt === 'hu' ? undefined : buildLexicon(PCIC_LEVELS.flatMap((l) => pcicItemsForLevel(l)), tgt));
+      // No dictionary check for hu and de: a Hungarian word has too many inflected forms and a German text too many compounds for a word list (the other sense checks stay).
+      setLexicon(tgt === 'hu' || tgt === 'de' ? undefined : buildLexicon(PCIC_LEVELS.flatMap((l) => pcicItemsForLevel(l)), tgt));
       setSource(src);
       setCanSpeak(hasVoiceFor(speechLang(tgt)));
       setSaved(resumable);
@@ -326,7 +326,7 @@ export default function MockExamScreen() {
                     : s.paperLine(p.name, p.minutes, p.tasks.length, p.points)}
               </Text>
             ))}
-            <Text style={[styles.line, { color: colors.text }]}>{rule.kind === 'groups' ? s.passRule(rule.groups[0].needed, rule.groups[0].of) : rule.kind === 'total' ? s.passRuleTotal(rule.needed, rule.of) : rule.kind === 'scale' ? s.passRuleScale(rule.needed) : s.passRuleAverage(rule.passPct)}</Text>
+            <Text style={[styles.line, { color: colors.text }]}>{rule.kind === 'groups' ? s.passRule(rule.groups[0].needed, rule.groups[0].of) : rule.kind === 'total' ? s.passRuleTotal(rule.needed, rule.of) : rule.kind === 'scale' ? s.passRuleScale(rule.needed) : rule.each ? s.passRuleEach(rule.passPct) : s.passRuleAverage(rule.passPct)}</Text>
             <Text style={[styles.note, { color: colors.textMuted }]}>{mockIsFullLength(level) ? s.fullNote : s.shortNote}</Text>
           </>,
         )}

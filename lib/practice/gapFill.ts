@@ -16,7 +16,7 @@ import openB2 from '@/data/words-open/b2.json';
 import openC1 from '@/data/words-open/c1.json';
 import { addDays, type Sm2Card } from '@/lib/sm2';
 import { activeSourceFor } from '@/lib/languagePair';
-import { exampleIn, wordIn } from '@/lib/pcicItemText';
+import { GERMAN_ARTICLE_RE, exampleIn, wordIn } from '@/lib/pcicItemText';
 
 /** A word counts as freshly learned (Words tab) when it was first asked within this many days. */
 export const PRACTICE_RECENT_DAYS = 7;
@@ -57,7 +57,8 @@ export function openGapInfo(itemId: string): GapSourceInfo | undefined {
   return openInfo.get(itemId);
 }
 
-const WORD = /[A-Za-zÁÉÍÓÖŐÚÜŰÑáéíóöőúüűñ]+/g;
+// letters of the four languages (ä Ä ß for German)
+const WORD = /[A-Za-zÁÉÍÓÖŐÚÜŰÑÄáéíóöőúüűñäß]+/g;
 
 interface Gap {
   before: string;
@@ -87,6 +88,15 @@ export function gapByWord(sentence: string, headword: string): Gap | null {
   return word ? cut(sentence, word.index!, word.index! + word[0].length) : null;
 }
 
+// The forms of a German headword that can stand in a sentence as they are: every alternative of "der Ort / der Platz"
+// without its article, reflexive "sich" or bracketed gloss (the noun is capitalised in the sentence, the match ignores case).
+function germanForms(headword: string): string[] {
+  return headword
+    .split(' / ')
+    .map((alt) => alt.replace(/\([^)]*\)/g, ' ').trim().replace(GERMAN_ARTICLE_RE, '').replace(/^sich\s+/i, '').trim())
+    .filter(Boolean);
+}
+
 /** The task of one word, or null when it has no usable sentence. */
 export function gapTaskFor(
   item: PcicItem,
@@ -98,9 +108,12 @@ export function gapTaskFor(
   const translation = exampleIn(item, source)?.trim();
   if (!sentence || !translation) return null;
   const known = info(item.id);
+  const headword = wordIn(item, target) ?? '';
   const gap = target === 'es'
     ? (known ? gapByLemma(sentence, known) : null)
-    : gapByWord(sentence, (wordIn(item, target) ?? '').replace(/^to\s+/i, ''));
+    : target === 'de'
+      ? germanForms(headword).map((form) => gapByWord(sentence, form)).find((g) => g !== null) ?? null
+      : gapByWord(sentence, headword.replace(/^to\s+/i, ''));
   if (!gap) return null;
   return {
     itemId: item.id,

@@ -1,0 +1,1068 @@
+{
+  "schema": 2,
+  "topic": "nominativ-akkusativ",
+  "level": "A1",
+  "title": {
+    "en": "Nominative and accusative",
+    "es": "Nominativo y acusativo"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "The nominative is the case of the subject, the one who does something: Der Hund schläft. The accusative is the case of the direct object, the person or thing the action is aimed at: Ich sehe den Hund. In the accusative only masculine nouns change: der becomes den, ein becomes einen, kein becomes keinen. Feminine, neuter and plural nouns look the same in both cases. Names never change.",
+        "es": "El nominativo es el caso del sujeto, el que hace algo: Der Hund schläft. El acusativo es el caso del complemento directo, la persona o cosa a la que se dirige la acción: Ich sehe den Hund. En el acusativo solo cambian los sustantivos masculinos: der pasa a den, ein pasa a einen, kein pasa a keinen. Los sustantivos femeninos, neutros y plurales son iguales en los dos casos. Los nombres propios nunca cambian. El alemán no usa la «a» personal del español."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "kasus-bestimmt",
+      "title": {
+        "en": "The definite article in two cases",
+        "es": "El artículo determinado en dos casos"
+      },
+      "header": [
+        {
+          "en": "Case",
+          "es": "Caso"
+        },
+        {
+          "en": "maskulin",
+          "es": "maskulin"
+        },
+        {
+          "en": "feminin",
+          "es": "feminin"
+        },
+        {
+          "en": "neutral",
+          "es": "neutral"
+        },
+        {
+          "en": "Plural",
+          "es": "Plural"
+        }
+      ],
+      "rows": [
+        [
+          "Nominativ",
+          "der",
+          "die",
+          "das",
+          "die"
+        ],
+        [
+          "Akkusativ",
+          "den",
+          "die",
+          "das",
+          "die"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "kasus-unbestimmt",
+      "title": {
+        "en": "The indefinite article in two cases",
+        "es": "El artículo indeterminado en dos casos"
+      },
+      "header": [
+        {
+          "en": "Case",
+          "es": "Caso"
+        },
+        {
+          "en": "maskulin",
+          "es": "maskulin"
+        },
+        {
+          "en": "feminin",
+          "es": "feminin"
+        },
+        {
+          "en": "neutral",
+          "es": "neutral"
+        }
+      ],
+      "rows": [
+        [
+          "Nominativ",
+          "ein",
+          "eine",
+          "ein"
+        ],
+        [
+          "Akkusativ",
+          "einen",
+          "eine",
+          "ein"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "nomen-akkusativ",
+      "title": {
+        "en": "Nouns as an object",
+        "es": "Sustantivos como complemento"
+      },
+      "header": [
+        {
+          "en": "Noun",
+          "es": "Sustantivo"
+        },
+        {
+          "en": "bestimmt",
+          "es": "bestimmt"
+        },
+        {
+          "en": "unbestimmt",
+          "es": "unbestimmt"
+        }
+      ],
+      "rows": [
+        [
+          "der Hund",
+          "den Hund",
+          "einen Hund"
+        ],
+        [
+          "der Tisch",
+          "den Tisch",
+          "einen Tisch"
+        ],
+        [
+          "die Katze",
+          "die Katze",
+          "eine Katze"
+        ],
+        [
+          "die Tasche",
+          "die Tasche",
+          "eine Tasche"
+        ],
+        [
+          "das Auto",
+          "das Auto",
+          "ein Auto"
+        ],
+        [
+          "das Buch",
+          "das Buch",
+          "ein Buch"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Subject and object",
+        "es": "Sujeto y complemento"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "The subject is the nominative. You find it with the question wer or was: who or what does something?",
+            "es": "El sujeto es el nominativo. Se encuentra con la pregunta wer o was: ¿quién o qué hace algo?"
+          },
+          "examples": [
+            {
+              "es": "Der Hund schläft.",
+              "tr": {
+                "en": "The dog is sleeping.",
+                "es": "El perro duerme."
+              }
+            },
+            {
+              "es": "Die Katze trinkt Milch.",
+              "tr": {
+                "en": "The cat drinks milk.",
+                "es": "El gato toma leche."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "The direct object is the accusative. You find it with the question wen or was: whom or what does somebody see, buy or need?",
+            "es": "El complemento directo es el acusativo. Se encuentra con la pregunta wen o was: ¿a quién o qué ve, compra o necesita alguien?"
+          },
+          "examples": [
+            {
+              "es": "Ich sehe den Hund.",
+              "tr": {
+                "en": "I see the dog.",
+                "es": "Veo al perro."
+              }
+            },
+            {
+              "es": "Anna kauft einen Tisch.",
+              "tr": {
+                "en": "Anna buys a table.",
+                "es": "Anna compra una mesa."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Only the masculine changes. Feminine, neuter and plural nouns keep the same article.",
+            "es": "Solo cambia el masculino. Los sustantivos femeninos, neutros y plurales conservan el mismo artículo."
+          },
+          "examples": [
+            {
+              "es": "Ich habe einen Bruder.",
+              "tr": {
+                "en": "I have a brother.",
+                "es": "Tengo un hermano."
+              }
+            },
+            {
+              "es": "Ich habe eine Schwester.",
+              "tr": {
+                "en": "I have a sister.",
+                "es": "Tengo una hermana."
+              }
+            },
+            {
+              "es": "Ich habe ein Kind.",
+              "tr": {
+                "en": "I have a child.",
+                "es": "Tengo un hijo."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Common verbs with an accusative object: haben, sehen, brauchen, kaufen, essen, trinken, lesen, mögen, suchen, finden, nehmen.",
+            "es": "Verbos frecuentes con complemento en acusativo: haben, sehen, brauchen, kaufen, essen, trinken, lesen, mögen, suchen, finden, nehmen."
+          },
+          "examples": [
+            {
+              "es": "Paul sucht den Bahnhof.",
+              "tr": {
+                "en": "Paul is looking for the train station.",
+                "es": "Paul busca la estación de trenes."
+              }
+            },
+            {
+              "es": "Wir brauchen einen Arzt.",
+              "tr": {
+                "en": "We need a doctor.",
+                "es": "Necesitamos un médico."
+              }
+            },
+            {
+              "es": "Anna liest ein Buch.",
+              "tr": {
+                "en": "Anna is reading a book.",
+                "es": "Anna lee un libro."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Names do not change, and kein follows ein: keinen for a masculine object. The word order stays the same: the verb is in second position.",
+            "es": "Los nombres no cambian, y kein sigue a ein: keinen para un complemento masculino. El orden de las palabras es el mismo: el verbo está en segunda posición."
+          },
+          "examples": [
+            {
+              "es": "Ich sehe Anna.",
+              "tr": {
+                "en": "I see Anna.",
+                "es": "Veo a Anna."
+              }
+            },
+            {
+              "es": "Ich habe keinen Bruder.",
+              "tr": {
+                "en": "I do not have a brother.",
+                "es": "No tengo hermano."
+              }
+            },
+            {
+              "es": "Heute kauft Anna einen Tisch.",
+              "tr": {
+                "en": "Today Anna buys a table.",
+                "es": "Hoy Anna compra una mesa."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "The same noun in two roles",
+        "es": "El mismo sustantivo en dos funciones"
+      },
+      "pairs": [
+        {
+          "a": "Der Hund schläft.",
+          "b": "Ich sehe den Hund.",
+          "note": {
+            "en": "In the first sentence the dog does something, so it is the subject: der. In the second sentence the dog is seen, so it is the object: den.",
+            "es": "En la primera oración el perro hace algo, así que es el sujeto: der. En la segunda el perro es visto, así que es el complemento: den."
+          },
+          "examples": [
+            {
+              "es": "Der Bus kommt.",
+              "tr": {
+                "en": "The bus is coming.",
+                "es": "El camión viene."
+              }
+            },
+            {
+              "es": "Ich nehme den Bus.",
+              "tr": {
+                "en": "I take the bus.",
+                "es": "Tomo el camión."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Die Katze trinkt Milch.",
+          "b": "Ich sehe die Katze.",
+          "note": {
+            "en": "A feminine noun has the same article in both roles. You see the role only from the meaning and the verb.",
+            "es": "Un sustantivo femenino tiene el mismo artículo en las dos funciones. La función solo se ve por el significado y el verbo."
+          },
+          "examples": [
+            {
+              "es": "Die Schule beginnt.",
+              "tr": {
+                "en": "The school is starting.",
+                "es": "La escuela empieza."
+              }
+            },
+            {
+              "es": "Ich suche die Schule.",
+              "tr": {
+                "en": "I am looking for the school.",
+                "es": "Busco la escuela."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: do not keep der after verbs like sehen, kaufen or brauchen when the noun is masculine (Ich sehe den Hund, not Ich sehe der Hund). Do not add -en to feminine or neuter articles (eine Katze, ein Auto stay the same). Names and plurals do not change. And do not look for a special ending on the noun, it is only the article that changes.",
+        "es": "Trampas clásicas: no conserves der después de verbos como sehen, kaufen o brauchen cuando el sustantivo es masculino (Ich sehe den Hund, no Ich sehe der Hund). No añadas -en a los artículos femeninos o neutros (eine Katze, ein Auto no cambian). Los nombres y los plurales no cambian. Y no busques una terminación especial en el sustantivo: solo cambia el artículo."
+      }
+    }
+  ],
+  "speak": {
+    "en": "The subject is in the nominative, and the object is in the accusative. Only masculine nouns change. Say «Der Hund schläft», but «Ich sehe den Hund». Say «Anna kauft einen Tisch». Feminine and neuter nouns stay the same: «Ich habe eine Schwester», «Ich habe ein Kind». Names do not change: «Ich sehe Anna». And kein follows ein: «Ich habe keinen Bruder».",
+    "es": "El sujeto está en nominativo, y el complemento está en acusativo. Solo cambian los sustantivos masculinos. Di «Der Hund schläft», pero «Ich sehe den Hund». Di «Anna kauft einen Tisch». Los sustantivos femeninos y neutros no cambian: «Ich habe eine Schwester», «Ich habe ein Kind». Los nombres no cambian: «Ich sehe Anna». Y kein sigue a ein: «Ich habe keinen Bruder»."
+  },
+  "items": [
+    {
+      "id": "nominativ-akkusativ-c01",
+      "sentence": "Ich sehe ___ Hund.",
+      "options": [
+        "den",
+        "der",
+        "die"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Hund is masculine and is the object of sehen, so der becomes den: Ich sehe den Hund.",
+        "es": "Hund es masculino y es el complemento de sehen, así que der pasa a den: Ich sehe den Hund."
+      },
+      "wrong": {
+        "der": {
+          "en": "der is the nominative, the form for the subject. Here the dog is seen, so you need den.",
+          "es": "der es el nominativo, la forma del sujeto. Aquí al perro lo ven, así que necesitas den."
+        },
+        "die": {
+          "en": "die is for feminine nouns and for the plural. Hund is masculine, so you need den.",
+          "es": "die es para sustantivos femeninos y para el plural. Hund es masculino, así que necesitas den."
+        }
+      },
+      "examples": [
+        "Ich sehe den Bus.",
+        "Ich sehe den Tisch."
+      ],
+      "tr": {
+        "en": "I see the dog.",
+        "es": "Veo al perro."
+      }
+    },
+    {
+      "id": "nominativ-akkusativ-f01",
+      "kind": "form",
+      "verb": "maskulin",
+      "person": "Akkusativ",
+      "answer": "den",
+      "table": "kasus-bestimmt"
+    },
+    {
+      "id": "nominativ-akkusativ-c02",
+      "sentence": "Paul kauft ___ Tisch.",
+      "options": [
+        "ein",
+        "einen",
+        "eine"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Tisch is masculine and is the object of kaufen, so ein becomes einen: Paul kauft einen Tisch.",
+        "es": "Tisch es masculino y es el complemento de kaufen, así que ein pasa a einen: Paul kauft einen Tisch."
+      },
+      "wrong": {
+        "ein": {
+          "en": "ein is the nominative form for the subject. As the object, a masculine noun needs einen.",
+          "es": "ein es la forma del nominativo para el sujeto. Como complemento, un sustantivo masculino necesita einen."
+        },
+        "eine": {
+          "en": "eine is for feminine nouns. Tisch is masculine, so you need einen.",
+          "es": "eine es para sustantivos femeninos. Tisch es masculino, así que necesitas einen."
+        }
+      },
+      "examples": [
+        "Anna kauft einen Stuhl.",
+        "Ich kaufe einen Schrank."
+      ],
+      "tr": {
+        "en": "Paul buys a table.",
+        "es": "Paul compra una mesa."
+      }
+    },
+    {
+      "id": "nominativ-akkusativ-f02",
+      "kind": "form",
+      "verb": "maskulin",
+      "person": "Akkusativ",
+      "answer": "einen",
+      "table": "kasus-unbestimmt"
+    },
+    {
+      "id": "nominativ-akkusativ-c03",
+      "sentence": "___ Hund schläft.",
+      "options": [
+        "Den",
+        "Die",
+        "Der"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Hund is the subject here: it is the dog that sleeps. The subject is in the nominative, so you need Der.",
+        "es": "Hund es el sujeto aquí: es el perro quien duerme. El sujeto está en nominativo, así que necesitas Der."
+      },
+      "wrong": {
+        "Den": {
+          "en": "Den is the accusative, the form for an object. Nobody is acting on the dog here, it is the subject.",
+          "es": "Den es el acusativo, la forma del complemento. Nadie actúa sobre el perro aquí, es el sujeto."
+        },
+        "Die": {
+          "en": "Die is for feminine nouns and the plural. Hund is masculine, so the subject form is Der.",
+          "es": "Die es para sustantivos femeninos y el plural. Hund es masculino, así que la forma del sujeto es Der."
+        }
+      },
+      "examples": [
+        "Der Bus kommt.",
+        "Der Tisch ist neu."
+      ],
+      "tr": {
+        "en": "The dog is sleeping.",
+        "es": "El perro duerme."
+      }
+    },
+    {
+      "id": "nominativ-akkusativ-f03",
+      "kind": "form",
+      "verb": "bestimmt",
+      "person": "der Hund",
+      "answer": "den Hund",
+      "table": "nomen-akkusativ"
+    },
+    {
+      "id": "nominativ-akkusativ-w01",
+      "kind": "why",
+      "es": "Ich sehe den Hund.",
+      "target": "den",
+      "tr": {
+        "en": "I see the dog.",
+        "es": "Veo al perro."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Hund is masculine and the object, so der becomes den",
+            "es": "Hund es masculino y el complemento, así que der pasa a den"
+          }
+        },
+        {
+          "text": {
+            "en": "den is the plural article",
+            "es": "den es el artículo plural"
+          },
+          "wrong": {
+            "en": "The plural article is die. den is the masculine accusative singular here.",
+            "es": "El artículo plural es die. den es aquí el acusativo masculino singular."
+          }
+        },
+        {
+          "text": {
+            "en": "den is used because a dog is a living being",
+            "es": "den se usa porque un perro es un ser vivo"
+          },
+          "wrong": {
+            "en": "The case depends on the role in the sentence and on the gender, not on whether something is alive. die Katze stays die.",
+            "es": "El caso depende de la función en la oración y del género, no de si algo está vivo. die Katze se queda en die."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "nominativ-akkusativ-c04",
+      "sentence": "Anna sucht ___ Bahnhof.",
+      "options": [
+        "der",
+        "den",
+        "das"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Bahnhof is masculine and is the object of suchen, so der becomes den: Anna sucht den Bahnhof.",
+        "es": "Bahnhof es masculino y es el complemento de suchen, así que der pasa a den: Anna sucht den Bahnhof."
+      },
+      "wrong": {
+        "der": {
+          "en": "der is the nominative. Here the station is searched for, so it is the object and needs den.",
+          "es": "der es el nominativo. Aquí se busca la estación, así que es el complemento y necesita den."
+        },
+        "das": {
+          "en": "das is for neuter nouns. Bahnhof is masculine, so you need den.",
+          "es": "das es para sustantivos neutros. Bahnhof es masculino, así que necesitas den."
+        }
+      },
+      "examples": [
+        "Paul sucht den Arzt.",
+        "Ich suche den Schlüssel."
+      ],
+      "tr": {
+        "en": "Anna is looking for the train station.",
+        "es": "Anna busca la estación de trenes."
+      }
+    },
+    {
+      "id": "nominativ-akkusativ-f04",
+      "kind": "form",
+      "verb": "maskulin",
+      "person": "Nominativ",
+      "answer": "der",
+      "table": "kasus-bestimmt"
+    },
+    {
+      "id": "nominativ-akkusativ-c05",
+      "sentence": "Ich habe ___ Katze.",
+      "options": [
+        "eine",
+        "einen",
+        "ein"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Katze is feminine, and feminine nouns do not change in the accusative: Ich habe eine Katze.",
+        "es": "Katze es femenino, y los sustantivos femeninos no cambian en acusativo: Ich habe eine Katze."
+      },
+      "wrong": {
+        "einen": {
+          "en": "einen is only for masculine objects. Katze is feminine, so the article stays eine.",
+          "es": "einen es solo para complementos masculinos. Katze es femenino, así que el artículo se queda en eine."
+        },
+        "ein": {
+          "en": "ein is for neuter nouns and the masculine subject. Katze is feminine, so you need eine.",
+          "es": "ein es para sustantivos neutros y el sujeto masculino. Katze es femenino, así que necesitas eine."
+        }
+      },
+      "examples": [
+        "Ich habe eine Schwester.",
+        "Wir haben eine Tasche."
+      ],
+      "tr": {
+        "en": "I have a cat.",
+        "es": "Tengo un gato."
+      }
+    },
+    {
+      "id": "nominativ-akkusativ-f05",
+      "kind": "form",
+      "verb": "feminin",
+      "person": "Akkusativ",
+      "answer": "eine",
+      "table": "kasus-unbestimmt"
+    },
+    {
+      "id": "nominativ-akkusativ-c06",
+      "sentence": "Wir brauchen ___ Arzt.",
+      "options": [
+        "ein",
+        "eine",
+        "einen"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Arzt is masculine and is the object of brauchen, so ein becomes einen: Wir brauchen einen Arzt.",
+        "es": "Arzt es masculino y es el complemento de brauchen, así que ein pasa a einen: Wir brauchen einen Arzt."
+      },
+      "wrong": {
+        "ein": {
+          "en": "ein would be the subject form. As the object, a masculine noun needs einen.",
+          "es": "ein sería la forma del sujeto. Como complemento, un sustantivo masculino necesita einen."
+        },
+        "eine": {
+          "en": "eine is for feminine nouns. Arzt is masculine, so you need einen.",
+          "es": "eine es para sustantivos femeninos. Arzt es masculino, así que necesitas einen."
+        }
+      },
+      "examples": [
+        "Ich brauche einen Stuhl.",
+        "Wir brauchen einen Lehrer."
+      ],
+      "tr": {
+        "en": "We need a doctor.",
+        "es": "Necesitamos un médico."
+      }
+    },
+    {
+      "id": "nominativ-akkusativ-f06",
+      "kind": "form",
+      "verb": "unbestimmt",
+      "person": "der Tisch",
+      "answer": "einen Tisch",
+      "table": "nomen-akkusativ"
+    },
+    {
+      "id": "nominativ-akkusativ-w02",
+      "kind": "why",
+      "es": "Anna kauft eine Tasche.",
+      "target": "eine",
+      "tr": {
+        "en": "Anna buys a bag.",
+        "es": "Anna compra una bolsa."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "eine becomes einen, like ein becomes einen",
+            "es": "eine pasa a einen, como ein pasa a einen"
+          },
+          "wrong": {
+            "en": "Only the masculine ein becomes einen. A feminine noun keeps eine in the accusative.",
+            "es": "Solo el masculino ein pasa a einen. Un sustantivo femenino conserva eine en el acusativo."
+          }
+        },
+        {
+          "text": {
+            "en": "eine is the nominative, so an object cannot use it",
+            "es": "eine es el nominativo, así que un complemento no puede usarlo"
+          },
+          "wrong": {
+            "en": "eine is both the nominative and the accusative of feminine nouns. The same form works for subject and object.",
+            "es": "eine es a la vez el nominativo y el acusativo de los sustantivos femeninos. La misma forma sirve para sujeto y complemento."
+          }
+        },
+        {
+          "text": {
+            "en": "Feminine nouns do not change in the accusative, so it stays eine",
+            "es": "Los sustantivos femeninos no cambian en acusativo, así que se queda eine"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "nominativ-akkusativ-c07",
+      "sentence": "Ich lese ___ Buch.",
+      "options": [
+        "einen",
+        "ein",
+        "eine"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Buch is neuter, and neuter nouns do not change in the accusative: Ich lese ein Buch.",
+        "es": "Buch es neutro, y los sustantivos neutros no cambian en acusativo: Ich lese ein Buch."
+      },
+      "wrong": {
+        "einen": {
+          "en": "einen is only for masculine objects. Buch is neuter, so the article stays ein.",
+          "es": "einen es solo para complementos masculinos. Buch es neutro, así que el artículo se queda en ein."
+        },
+        "eine": {
+          "en": "eine is for feminine nouns. Buch is neuter, so you need ein.",
+          "es": "eine es para sustantivos femeninos. Buch es neutro, así que necesitas ein."
+        }
+      },
+      "examples": [
+        "Anna liest ein Buch.",
+        "Wir kaufen ein Auto."
+      ],
+      "tr": {
+        "en": "I am reading a book.",
+        "es": "Estoy leyendo un libro."
+      }
+    },
+    {
+      "id": "nominativ-akkusativ-f07",
+      "kind": "form",
+      "verb": "feminin",
+      "person": "Akkusativ",
+      "answer": "die",
+      "table": "kasus-bestimmt"
+    },
+    {
+      "id": "nominativ-akkusativ-c08",
+      "sentence": "Anna sieht ___ Katze.",
+      "options": [
+        "die",
+        "den",
+        "das"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Katze is feminine, and the feminine article die does not change in the accusative: Anna sieht die Katze.",
+        "es": "Katze es femenino, y el artículo femenino die no cambia en acusativo: Anna sieht die Katze."
+      },
+      "wrong": {
+        "den": {
+          "en": "den is only for masculine objects. Katze is feminine, so the article stays die.",
+          "es": "den es solo para complementos masculinos. Katze es femenino, así que el artículo se queda en die."
+        },
+        "das": {
+          "en": "das is for neuter nouns. Katze is feminine, so you need die.",
+          "es": "das es para sustantivos neutros. Katze es femenino, así que necesitas die."
+        }
+      },
+      "examples": [
+        "Ich sehe die Schule.",
+        "Paul sieht die Tasche."
+      ],
+      "tr": {
+        "en": "Anna sees the cat.",
+        "es": "Anna ve al gato."
+      }
+    },
+    {
+      "id": "nominativ-akkusativ-f08",
+      "kind": "form",
+      "verb": "neutral",
+      "person": "Akkusativ",
+      "answer": "ein",
+      "table": "kasus-unbestimmt"
+    },
+    {
+      "id": "nominativ-akkusativ-c09",
+      "sentence": "Ich nehme ___ Bus.",
+      "options": [
+        "der",
+        "die",
+        "den"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Bus is masculine and is the object of nehmen, so der becomes den: Ich nehme den Bus.",
+        "es": "Bus es masculino y es el complemento de nehmen, así que der pasa a den: Ich nehme den Bus."
+      },
+      "wrong": {
+        "der": {
+          "en": "der is the nominative, the form for the subject. As the object, Bus needs den.",
+          "es": "der es el nominativo, la forma del sujeto. Como complemento, Bus necesita den."
+        },
+        "die": {
+          "en": "die is for feminine nouns and the plural. Bus is masculine, so you need den.",
+          "es": "die es para sustantivos femeninos y el plural. Bus es masculino, así que necesitas den."
+        }
+      },
+      "examples": [
+        "Wir nehmen den Zug.",
+        "Anna nimmt den Bus."
+      ],
+      "tr": {
+        "en": "I take the bus.",
+        "es": "Tomo el camión."
+      }
+    },
+    {
+      "id": "nominativ-akkusativ-f09",
+      "kind": "form",
+      "verb": "bestimmt",
+      "person": "die Katze",
+      "answer": "die Katze",
+      "table": "nomen-akkusativ"
+    },
+    {
+      "id": "nominativ-akkusativ-w03",
+      "kind": "why",
+      "es": "Der Hund schläft.",
+      "target": "Der",
+      "tr": {
+        "en": "The dog is sleeping.",
+        "es": "El perro duerme."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Hund is the subject, so it takes the nominative der",
+            "es": "Hund es el sujeto, así que lleva el nominativo der"
+          }
+        },
+        {
+          "text": {
+            "en": "Der is used because it is the first word",
+            "es": "Der se usa porque es la primera palabra"
+          },
+          "wrong": {
+            "en": "The case does not depend on the position. A masculine subject takes der at any place in the sentence.",
+            "es": "El caso no depende de la posición. Un sujeto masculino lleva der en cualquier lugar de la oración."
+          }
+        },
+        {
+          "text": {
+            "en": "Der is the masculine accusative",
+            "es": "Der es el acusativo masculino"
+          },
+          "wrong": {
+            "en": "The masculine accusative is den. der is the nominative, the form for the subject.",
+            "es": "El acusativo masculino es den. der es el nominativo, la forma del sujeto."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "nominativ-akkusativ-c10",
+      "sentence": "___ Kind liest ein Buch.",
+      "options": [
+        "Das",
+        "Den",
+        "Die"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Kind is neuter and is the subject here, so you use the nominative Das: Das Kind liest ein Buch.",
+        "es": "Kind es neutro y es el sujeto aquí, así que se usa el nominativo Das: Das Kind liest ein Buch."
+      },
+      "wrong": {
+        "Den": {
+          "en": "Den is only for masculine objects. Kind is neuter and the subject, so you need Das.",
+          "es": "Den es solo para complementos masculinos. Kind es neutro y el sujeto, así que necesitas Das."
+        },
+        "Die": {
+          "en": "Die is for feminine nouns and the plural. Kind is neuter, so you need Das.",
+          "es": "Die es para sustantivos femeninos y el plural. Kind es neutro, así que necesitas Das."
+        }
+      },
+      "examples": [
+        "Das Auto ist neu.",
+        "Das Kind schläft."
+      ],
+      "tr": {
+        "en": "The child is reading a book.",
+        "es": "El niño lee un libro."
+      }
+    },
+    {
+      "id": "nominativ-akkusativ-f10",
+      "kind": "form",
+      "verb": "Plural",
+      "person": "Akkusativ",
+      "answer": "die",
+      "table": "kasus-bestimmt"
+    },
+    {
+      "id": "nominativ-akkusativ-c11",
+      "sentence": "Ich habe ___ Bruder.",
+      "options": [
+        "kein",
+        "keinen",
+        "keine"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "kein follows ein. Bruder is masculine and is the object of haben, so kein becomes keinen: Ich habe keinen Bruder.",
+        "es": "kein sigue a ein. Bruder es masculino y es el complemento de haben, así que kein pasa a keinen: Ich habe keinen Bruder."
+      },
+      "wrong": {
+        "kein": {
+          "en": "kein is the subject form, as in Das ist kein Bruder. As the object of haben, a masculine noun needs keinen.",
+          "es": "kein es la forma del sujeto, como en Das ist kein Bruder. Como complemento de haben, un sustantivo masculino necesita keinen."
+        },
+        "keine": {
+          "en": "keine is for feminine nouns and the plural. Bruder is masculine, so you need keinen.",
+          "es": "keine es para sustantivos femeninos y el plural. Bruder es masculino, así que necesitas keinen."
+        }
+      },
+      "examples": [
+        "Ich habe keinen Hund.",
+        "Wir haben keinen Tisch."
+      ],
+      "tr": {
+        "en": "I do not have a brother.",
+        "es": "No tengo hermano."
+      }
+    },
+    {
+      "id": "nominativ-akkusativ-f11",
+      "kind": "form",
+      "verb": "maskulin",
+      "person": "Nominativ",
+      "answer": "ein",
+      "table": "kasus-unbestimmt"
+    },
+    {
+      "id": "nominativ-akkusativ-c12",
+      "sentence": "Paul besucht ___ Lehrer.",
+      "options": [
+        "der",
+        "die",
+        "den"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Lehrer is masculine and is the object of besuchen, so der becomes den: Paul besucht den Lehrer.",
+        "es": "Lehrer es masculino y es el complemento de besuchen, así que der pasa a den: Paul besucht den Lehrer."
+      },
+      "wrong": {
+        "der": {
+          "en": "der is the nominative. Here the teacher is visited, so it is the object and needs den.",
+          "es": "der es el nominativo. Aquí se visita al maestro, así que es el complemento y necesita den."
+        },
+        "die": {
+          "en": "die is for feminine nouns and the plural. Lehrer is masculine, so you need den.",
+          "es": "die es para sustantivos femeninos y el plural. Lehrer es masculino, así que necesitas den."
+        }
+      },
+      "examples": [
+        "Anna besucht den Arzt.",
+        "Ich besuche den Lehrer."
+      ],
+      "tr": {
+        "en": "Paul visits the teacher.",
+        "es": "Paul visita al maestro."
+      }
+    },
+    {
+      "id": "nominativ-akkusativ-f12",
+      "kind": "form",
+      "verb": "unbestimmt",
+      "person": "das Auto",
+      "answer": "ein Auto",
+      "table": "nomen-akkusativ"
+    },
+    {
+      "id": "nominativ-akkusativ-c13",
+      "sentence": "Der Mann sieht ___ Frau.",
+      "options": [
+        "die",
+        "den",
+        "der"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Frau is feminine, and die does not change in the accusative: Der Mann sieht die Frau. Der Mann is the subject.",
+        "es": "Frau es femenino, y die no cambia en acusativo: Der Mann sieht die Frau. Der Mann es el sujeto."
+      },
+      "wrong": {
+        "den": {
+          "en": "den is only for masculine objects. Frau is feminine, so the article stays die.",
+          "es": "den es solo para complementos masculinos. Frau es femenino, así que el artículo se queda en die."
+        },
+        "der": {
+          "en": "der is the masculine nominative. Frau is feminine, so you need die.",
+          "es": "der es el nominativo masculino. Frau es femenino, así que necesitas die."
+        }
+      },
+      "examples": [
+        "Die Frau sieht die Katze.",
+        "Der Lehrer sieht die Schule."
+      ],
+      "tr": {
+        "en": "The man sees the woman.",
+        "es": "El hombre ve a la mujer."
+      }
+    },
+    {
+      "id": "nominativ-akkusativ-c14",
+      "sentence": "Ich finde ___ Schlüssel.",
+      "options": [
+        "der",
+        "den",
+        "das"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Schlüssel is masculine and is the object of finden, so der becomes den: Ich finde den Schlüssel.",
+        "es": "Schlüssel es masculino y es el complemento de finden, así que der pasa a den: Ich finde den Schlüssel."
+      },
+      "wrong": {
+        "der": {
+          "en": "der is the nominative, the form for the subject. As the object, Schlüssel needs den.",
+          "es": "der es el nominativo, la forma del sujeto. Como complemento, Schlüssel necesita den."
+        },
+        "das": {
+          "en": "das is for neuter nouns. Schlüssel is masculine, so you need den.",
+          "es": "das es para sustantivos neutros. Schlüssel es masculino, así que necesitas den."
+        }
+      },
+      "examples": [
+        "Paul findet den Schlüssel.",
+        "Wir finden den Bahnhof."
+      ],
+      "tr": {
+        "en": "I find the key.",
+        "es": "Encuentro la llave."
+      }
+    },
+    {
+      "id": "nominativ-akkusativ-w04",
+      "kind": "why",
+      "es": "Ich sehe Anna.",
+      "target": "Anna",
+      "tr": {
+        "en": "I see Anna.",
+        "es": "Veo a Anna."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Anna needs an ending in the accusative: Annan",
+            "es": "Anna necesita una terminación en acusativo: Annan"
+          },
+          "wrong": {
+            "en": "Names do not change in the accusative. Anna stays Anna, whether she is the subject or the object.",
+            "es": "Los nombres no cambian en acusativo. Anna se queda Anna, sea sujeto o complemento."
+          }
+        },
+        {
+          "text": {
+            "en": "Anna needs the article die: die Anna",
+            "es": "Anna necesita el artículo die: die Anna"
+          },
+          "wrong": {
+            "en": "In standard German a name stands without an article. The article die does not belong to it here.",
+            "es": "En alemán estándar un nombre va sin artículo. El artículo die no le corresponde aquí."
+          }
+        },
+        {
+          "text": {
+            "en": "Names do not change in the accusative",
+            "es": "Los nombres no cambian en acusativo"
+          }
+        }
+      ],
+      "correctIndex": 2
+    }
+  ]
+}

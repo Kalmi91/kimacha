@@ -1,0 +1,1083 @@
+{
+  "schema": 2,
+  "topic": "komposita-wortbildung",
+  "level": "A2",
+  "title": {
+    "en": "Compound nouns and word building",
+    "es": "Sustantivos compuestos y formación de palabras"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "German builds long nouns by putting short ones together: das Haus + die Tür = die Haustür. The last part is the base word. It decides the gender and the plural, the first part only says what kind (a door of a house). Sometimes a linking letter sits between the parts: -s- (Geburtstag), -n- (Küchentisch), -e- or none. German also builds words with endings: -ung, -heit, -keit and -schaft make feminine nouns, -er makes a person (der Lehrer), -in the woman (die Lehrerin), -chen a small neuter noun (das Mädchen).",
+        "es": "El alemán construye sustantivos largos juntando otros cortos: das Haus + die Tür = die Haustür. La última parte es la palabra base. Esta decide el género y el plural, la primera parte solo dice qué clase es (una puerta de casa). A veces hay una letra de enlace entre las partes: -s- (Geburtstag), -n- (Küchentisch), -e- o ninguna. El alemán también forma palabras con terminaciones: -ung, -heit, -keit y -schaft forman sustantivos femeninos, -er forma una persona (der Lehrer), -in la mujer (die Lehrerin), -chen un sustantivo neutro pequeño (das Mädchen)."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "wortbildung",
+      "title": {
+        "en": "Parts and compound nouns",
+        "es": "Partes y sustantivos compuestos"
+      },
+      "header": [
+        {
+          "en": "Parts",
+          "es": "Partes"
+        },
+        {
+          "en": "Kompositum",
+          "es": "Kompositum"
+        },
+        {
+          "en": "Artikel",
+          "es": "Artikel"
+        }
+      ],
+      "rows": [
+        [
+          "das Haus + die Tür",
+          "die Haustür",
+          "die"
+        ],
+        [
+          "der Tisch + die Lampe",
+          "die Tischlampe",
+          "die"
+        ],
+        [
+          "die Küche + der Tisch",
+          "der Küchentisch",
+          "der"
+        ],
+        [
+          "die Geburt + der Tag",
+          "der Geburtstag",
+          "der"
+        ],
+        [
+          "die Schule + das Buch",
+          "das Schulbuch",
+          "das"
+        ],
+        [
+          "die Arbeit + das Zimmer",
+          "das Arbeitszimmer",
+          "das"
+        ],
+        [
+          "die Hand + die Tasche",
+          "die Handtasche",
+          "die"
+        ],
+        [
+          "das Auto + der Schlüssel",
+          "der Autoschlüssel",
+          "der"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "suffixe",
+      "title": {
+        "en": "Endings and their gender",
+        "es": "Terminaciones y su género"
+      },
+      "header": [
+        {
+          "en": "Ending",
+          "es": "Terminación"
+        },
+        {
+          "en": "Artikel",
+          "es": "Artikel"
+        },
+        {
+          "en": "Beispiel",
+          "es": "Beispiel"
+        }
+      ],
+      "rows": [
+        [
+          "-ung",
+          "die",
+          "die Wohnung"
+        ],
+        [
+          "-heit",
+          "die",
+          "die Gesundheit"
+        ],
+        [
+          "-keit",
+          "die",
+          "die Neuigkeit"
+        ],
+        [
+          "-schaft",
+          "die",
+          "die Mannschaft"
+        ],
+        [
+          "-er",
+          "der",
+          "der Lehrer"
+        ],
+        [
+          "-in",
+          "die",
+          "die Lehrerin"
+        ],
+        [
+          "-chen",
+          "das",
+          "das Mädchen"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "wortfamilie",
+      "title": {
+        "en": "From verb to noun",
+        "es": "Del verbo al sustantivo"
+      },
+      "header": [
+        {
+          "en": "Verb",
+          "es": "Verbo"
+        },
+        {
+          "en": "Noun",
+          "es": "Sustantivo"
+        }
+      ],
+      "rows": [
+        [
+          "wohnen",
+          "die Wohnung"
+        ],
+        [
+          "fahren",
+          "der Fahrer"
+        ],
+        [
+          "verkaufen",
+          "der Verkäufer"
+        ],
+        [
+          "essen",
+          "das Essen"
+        ],
+        [
+          "arbeiten",
+          "die Arbeit"
+        ]
+      ],
+      "noTableDeck": true
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "How compounds work",
+        "es": "Cómo funcionan los compuestos"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "The last part gives the article and the plural. The first part may have another gender: die Schule is feminine, but das Schulbuch is neuter because of das Buch.",
+            "es": "La última parte da el artículo y el plural. La primera parte puede tener otro género: die Schule es femenino, pero das Schulbuch es neutro por das Buch."
+          },
+          "examples": [
+            {
+              "es": "Die Haustür ist braun.",
+              "tr": {
+                "en": "The front door is brown.",
+                "es": "La puerta de la casa es café."
+              }
+            },
+            {
+              "es": "Das Schulbuch ist neu.",
+              "tr": {
+                "en": "The school book is new.",
+                "es": "El libro de la escuela es nuevo."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Only the last part takes the plural ending: die Handtasche, die Handtaschen. The first part never changes.",
+            "es": "Solo la última parte lleva la terminación del plural: die Handtasche, die Handtaschen. La primera parte nunca cambia."
+          },
+          "examples": [
+            {
+              "es": "Ich habe zwei Handtaschen.",
+              "tr": {
+                "en": "I have two handbags.",
+                "es": "Tengo dos bolsos."
+              }
+            },
+            {
+              "es": "Wir brauchen drei Autoschlüssel.",
+              "tr": {
+                "en": "We need three car keys.",
+                "es": "Necesitamos tres llaves de carro."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Between the parts there is often a linking letter: -s- after Geburt and Arbeit, -n- after Küche and Blume. You have to learn it with the word.",
+            "es": "Entre las partes suele haber una letra de enlace: -s- después de Geburt y Arbeit, -n- después de Küche y Blume. Hay que aprenderla con la palabra."
+          },
+          "examples": [
+            {
+              "es": "Heute ist mein Geburtstag.",
+              "tr": {
+                "en": "Today is my birthday.",
+                "es": "Hoy es mi cumpleaños."
+              }
+            },
+            {
+              "es": "Der Küchentisch ist alt.",
+              "tr": {
+                "en": "The kitchen table is old.",
+                "es": "La mesa de la cocina es vieja."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "The endings decide the gender: -ung, -heit, -keit and -schaft are feminine, -chen is neuter. The infinitive of a verb can become a neuter noun: essen, das Essen.",
+            "es": "Las terminaciones deciden el género: -ung, -heit, -keit y -schaft son femeninas, -chen es neutra. El infinitivo de un verbo puede convertirse en un sustantivo neutro: essen, das Essen."
+          },
+          "examples": [
+            {
+              "es": "Die Wohnung ist klein.",
+              "tr": {
+                "en": "The apartment is small.",
+                "es": "El departamento es pequeño."
+              }
+            },
+            {
+              "es": "Das Essen ist fertig.",
+              "tr": {
+                "en": "The food is ready.",
+                "es": "La comida está lista."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "The prefix un- makes the opposite (freundlich, unfreundlich). The ending -los means \"without\" (kostenlos), and -voll means \"full of\" (liebevoll). Understand these first, you do not need to use them yet.",
+            "es": "El prefijo un- forma el contrario (freundlich, unfreundlich). La terminación -los significa \"sin\" (kostenlos), y -voll significa \"lleno de\" (liebevoll). Primero entiéndelos, todavía no necesitas usarlos."
+          },
+          "examples": [
+            {
+              "es": "Der Kellner ist unfreundlich.",
+              "tr": {
+                "en": "The waiter is unfriendly.",
+                "es": "El mesero es poco amable."
+              }
+            },
+            {
+              "es": "Das Wasser ist kostenlos.",
+              "tr": {
+                "en": "The water is free.",
+                "es": "El agua es gratis."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Which part decides",
+        "es": "Qué parte decide"
+      },
+      "pairs": [
+        {
+          "a": "Die Schule ist groß.",
+          "b": "Das Schulbuch ist neu.",
+          "note": {
+            "en": "The gender of the first part does not count. In Schulbuch the last part is das Buch, so the whole word is neuter.",
+            "es": "El género de la primera parte no cuenta. En Schulbuch la última parte es das Buch, así que la palabra entera es neutra."
+          },
+          "examples": [
+            {
+              "es": "Die Hand ist kalt.",
+              "tr": {
+                "en": "The hand is cold.",
+                "es": "La mano está fría."
+              }
+            },
+            {
+              "es": "Der Handschuh ist neu.",
+              "tr": {
+                "en": "The glove is new.",
+                "es": "El guante es nuevo."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Ich habe ein Buch.",
+          "b": "Ich habe ein Schulbuch.",
+          "note": {
+            "en": "The compound is more exact than the single word. German writes it as one word, English and Spanish often use two words or \"de\".",
+            "es": "El compuesto es más exacto que la palabra simple. El alemán lo escribe como una sola palabra, el inglés y el español suelen usar dos palabras o \"de\"."
+          },
+          "examples": [
+            {
+              "es": "Das ist ein Tisch.",
+              "tr": {
+                "en": "This is a table.",
+                "es": "Esta es una mesa."
+              }
+            },
+            {
+              "es": "Das ist ein Küchentisch.",
+              "tr": {
+                "en": "This is a kitchen table.",
+                "es": "Esta es una mesa de cocina."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Write the compound as one word: not Wohn Zimmer or Küche Tisch, but Wohnzimmer and Küchentisch. Always take the article from the last part: das Schulbuch, not die Schulbuch. English learners: German puts the first part before the second, like \"kitchen table\". Spanish learners: where you say mesa de cocina, German uses one word: Küchentisch. Hungarian learners: the compound also exists in your language, but the linking letters and the gender are new. And watch the plural: only the last part changes.",
+        "es": "Escribe el compuesto como una sola palabra: no Wohn Zimmer ni Küche Tisch, sino Wohnzimmer y Küchentisch. Toma siempre el artículo de la última parte: das Schulbuch, no die Schulbuch. Para quien habla inglés: el alemán pone la primera parte antes de la segunda, como en \"kitchen table\". Para quien habla español: donde dices mesa de cocina, el alemán usa una sola palabra: Küchentisch. Para quien habla húngaro: el compuesto también existe en tu idioma, pero las letras de enlace y el género son nuevos. Y cuidado con el plural: solo cambia la última parte."
+      }
+    }
+  ],
+  "speak": {
+    "en": "German joins short nouns into long ones: «das Haus» and «die Tür» give «die Haustür». The last part decides the article and the plural. «Das Schulbuch» is neuter, because «das Buch» is neuter, although «die Schule» is feminine. Sometimes a linking letter sits between the parts: «der Geburtstag», «der Küchentisch». Some endings tell the gender: «die Wohnung», «die Gesundheit» and «die Mannschaft» are feminine, and «das Mädchen» is neuter. Write a compound as one word.",
+    "es": "El alemán une sustantivos cortos en otros largos: «das Haus» y «die Tür» dan «die Haustür». La última parte decide el artículo y el plural. «Das Schulbuch» es neutro, porque «das Buch» es neutro, aunque «die Schule» es femenino. A veces hay una letra de enlace entre las partes: «der Geburtstag», «der Küchentisch». Algunas terminaciones dicen el género: «die Wohnung», «die Gesundheit» y «die Mannschaft» son femeninos, y «das Mädchen» es neutro. Escribe un compuesto como una sola palabra."
+  },
+  "items": [
+    {
+      "id": "komposita-wortbildung-c01",
+      "sentence": "Das ist ___ Haustür.",
+      "options": [
+        "der",
+        "die",
+        "das"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The last part Tür is feminine, so the whole word is die Haustür, although Haus is neuter.",
+        "es": "La última parte Tür es femenina, así que la palabra entera es die Haustür, aunque Haus es neutro."
+      },
+      "wrong": {
+        "der": {
+          "en": "der is masculine. The article comes from the last part, and Tür is feminine, not masculine.",
+          "es": "der es masculino. El artículo viene de la última parte, y Tür es femenino, no masculino."
+        },
+        "das": {
+          "en": "das would follow the first part Haus. But the last part decides, and Tür is feminine.",
+          "es": "das seguiría la primera parte Haus. Pero decide la última parte, y Tür es femenino."
+        }
+      },
+      "examples": [
+        "Die Haustür ist braun.",
+        "Die Handtasche ist neu."
+      ],
+      "tr": {
+        "en": "That is the front door.",
+        "es": "Esa es la puerta de la casa."
+      }
+    },
+    {
+      "id": "komposita-wortbildung-f01",
+      "kind": "form",
+      "verb": "Kompositum",
+      "person": "das Haus + die Tür",
+      "answer": "die Haustür",
+      "accept": [
+        "Haustür"
+      ],
+      "table": "wortbildung"
+    },
+    {
+      "id": "komposita-wortbildung-c02",
+      "sentence": "___ Autoschlüssel liegt auf dem Tisch.",
+      "options": [
+        "Der",
+        "Die",
+        "Das"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The last part Schlüssel is masculine, so the compound is der Autoschlüssel.",
+        "es": "La última parte Schlüssel es masculina, así que el compuesto es der Autoschlüssel."
+      },
+      "wrong": {
+        "Die": {
+          "en": "Die is feminine or plural. Schlüssel is masculine, and the compound takes its gender from Schlüssel.",
+          "es": "Die es femenino o plural. Schlüssel es masculino, y el compuesto toma su género de Schlüssel."
+        },
+        "Das": {
+          "en": "Das is neuter, like das Auto. But the first part does not decide the article, the last one does.",
+          "es": "Das es neutro, como das Auto. Pero la primera parte no decide el artículo, lo decide la última."
+        }
+      },
+      "examples": [
+        "Der Küchentisch ist neu.",
+        "Der Geburtstag ist am Montag."
+      ],
+      "tr": {
+        "en": "The car key is on the table.",
+        "es": "La llave del carro está en la mesa."
+      }
+    },
+    {
+      "id": "komposita-wortbildung-f02",
+      "kind": "form",
+      "verb": "Artikel",
+      "person": "-ung",
+      "answer": "die",
+      "table": "suffixe"
+    },
+    {
+      "id": "komposita-wortbildung-c03",
+      "sentence": "Wo ist ___ Arbeitszimmer?",
+      "options": [
+        "der",
+        "die",
+        "das"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The last part Zimmer is neuter, so the compound is das Arbeitszimmer, although die Arbeit is feminine.",
+        "es": "La última parte Zimmer es neutra, así que el compuesto es das Arbeitszimmer, aunque die Arbeit es femenino."
+      },
+      "wrong": {
+        "der": {
+          "en": "der is masculine. Zimmer is neuter, and the compound follows Zimmer.",
+          "es": "der es masculino. Zimmer es neutro, y el compuesto sigue a Zimmer."
+        },
+        "die": {
+          "en": "die would follow the first part Arbeit, which is feminine. But the last part Zimmer decides, and it is neuter.",
+          "es": "die seguiría la primera parte Arbeit, que es femenina. Pero decide la última parte Zimmer, y es neutra."
+        }
+      },
+      "examples": [
+        "Das Wohnzimmer ist groß.",
+        "Das Schlafzimmer ist klein."
+      ],
+      "tr": {
+        "en": "Where is the study?",
+        "es": "¿Dónde está el estudio?"
+      }
+    },
+    {
+      "id": "komposita-wortbildung-f03",
+      "kind": "form",
+      "verb": "Artikel",
+      "person": "der Tisch + die Lampe",
+      "answer": "die",
+      "table": "wortbildung"
+    },
+    {
+      "id": "komposita-wortbildung-w01",
+      "kind": "why",
+      "es": "Die Haustür ist braun.",
+      "target": "Haustür",
+      "tr": {
+        "en": "The front door is brown.",
+        "es": "La puerta de la casa es café."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "The first part decides: das Haus makes it das Haustür",
+            "es": "La primera parte decide: das Haus lo convierte en das Haustür"
+          },
+          "wrong": {
+            "en": "The first part only describes what kind of door it is. The gender and the article come from the last part, die Tür.",
+            "es": "La primera parte solo describe qué clase de puerta es. El género y el artículo vienen de la última parte, die Tür."
+          }
+        },
+        {
+          "text": {
+            "en": "The last part Tür is feminine and decides the article: die",
+            "es": "La última parte Tür es femenina y decide el artículo: die"
+          }
+        },
+        {
+          "text": {
+            "en": "All compounds are feminine",
+            "es": "Todos los compuestos son femeninos"
+          },
+          "wrong": {
+            "en": "Compounds have all three genders: der Küchentisch, die Haustür, das Schulbuch. The last part decides each time.",
+            "es": "Los compuestos tienen los tres géneros: der Küchentisch, die Haustür, das Schulbuch. Decide cada vez la última parte."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "komposita-wortbildung-c04",
+      "sentence": "Wir kaufen einen ___.",
+      "options": [
+        "Küchetisch",
+        "Küchentisch",
+        "Küchestisch"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "After Küche, which ends in -e, the linking letter is -n-: Küchentisch.",
+        "es": "Después de Küche, que termina en -e, la letra de enlace es -n-: Küchentisch."
+      },
+      "wrong": {
+        "Küchetisch": {
+          "en": "This joins the parts without a linking letter. After Küche the word needs -n- between the parts.",
+          "es": "Esto une las partes sin letra de enlace. Después de Küche la palabra necesita -n- entre las partes."
+        },
+        "Küchestisch": {
+          "en": "The linking -s- belongs to other words like Geburtstag. After Küche you need -n-, not -s-.",
+          "es": "El -s- de enlace pertenece a otras palabras como Geburtstag. Después de Küche necesitas -n-, no -s-."
+        }
+      },
+      "examples": [
+        "Wir haben einen Küchenschrank.",
+        "Ich sehe einen Blumenladen."
+      ],
+      "tr": {
+        "en": "We buy a kitchen table.",
+        "es": "Compramos una mesa de cocina."
+      }
+    },
+    {
+      "id": "komposita-wortbildung-f04",
+      "kind": "form",
+      "verb": "Kompositum",
+      "person": "die Küche + der Tisch",
+      "answer": "der Küchentisch",
+      "accept": [
+        "Küchentisch"
+      ],
+      "table": "wortbildung"
+    },
+    {
+      "id": "komposita-wortbildung-c05",
+      "sentence": "Heute ist mein ___.",
+      "options": [
+        "Geburtentag",
+        "Geburttag",
+        "Geburtstag"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Geburt takes the linking letter -s-: Geburtstag.",
+        "es": "Geburt lleva la letra de enlace -s-: Geburtstag."
+      },
+      "wrong": {
+        "Geburtentag": {
+          "en": "-en- would be a plural-like link, which does not belong to this word. The common form is Geburtstag.",
+          "es": "-en- sería un enlace parecido al plural, que no pertenece a esta palabra. La forma común es Geburtstag."
+        },
+        "Geburttag": {
+          "en": "This has no linking letter. The word is spoken and written with -s-: Geburtstag.",
+          "es": "Esto no tiene letra de enlace. La palabra se dice y se escribe con -s-: Geburtstag."
+        }
+      },
+      "examples": [
+        "Der Geburtstag ist am Sonntag.",
+        "Das Arbeitszimmer ist klein."
+      ],
+      "tr": {
+        "en": "Today is my birthday.",
+        "es": "Hoy es mi cumpleaños."
+      }
+    },
+    {
+      "id": "komposita-wortbildung-f05",
+      "kind": "form",
+      "verb": "Artikel",
+      "person": "-chen",
+      "answer": "das",
+      "table": "suffixe"
+    },
+    {
+      "id": "komposita-wortbildung-c06",
+      "sentence": "___ Wohnung ist klein.",
+      "options": [
+        "Das",
+        "Die",
+        "Der"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Nouns ending in -ung are always feminine: die Wohnung.",
+        "es": "Los sustantivos que terminan en -ung son siempre femeninos: die Wohnung."
+      },
+      "wrong": {
+        "Das": {
+          "en": "das is for neuter nouns. -ung nouns are not neuter, they are feminine.",
+          "es": "das es para sustantivos neutros. Los sustantivos en -ung no son neutros, son femeninos."
+        },
+        "Der": {
+          "en": "der is for masculine nouns. The ending -ung always means feminine.",
+          "es": "der es para sustantivos masculinos. La terminación -ung significa siempre femenino."
+        }
+      },
+      "examples": [
+        "Die Zeitung ist neu.",
+        "Die Übung ist leicht."
+      ],
+      "tr": {
+        "en": "The apartment is small.",
+        "es": "El departamento es pequeño."
+      }
+    },
+    {
+      "id": "komposita-wortbildung-f06",
+      "kind": "form",
+      "verb": "Artikel",
+      "person": "die Geburt + der Tag",
+      "answer": "der",
+      "table": "wortbildung"
+    },
+    {
+      "id": "komposita-wortbildung-w02",
+      "kind": "why",
+      "es": "Das Arbeitszimmer ist klein.",
+      "target": "Arbeitszimmer",
+      "tr": {
+        "en": "The study is small.",
+        "es": "El estudio es pequeño."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "The s is the plural ending of Arbeit",
+            "es": "La s es la terminación del plural de Arbeit"
+          },
+          "wrong": {
+            "en": "The plural of Arbeit is not Arbeits. The -s- is only a linking letter that makes the compound easier to say.",
+            "es": "El plural de Arbeit no es Arbeits. La -s- es solo una letra de enlace que facilita decir el compuesto."
+          }
+        },
+        {
+          "text": {
+            "en": "The s is a linking letter between the parts, and the last part Zimmer gives the article das",
+            "es": "La s es una letra de enlace entre las partes, y la última parte Zimmer da el artículo das"
+          }
+        },
+        {
+          "text": {
+            "en": "The s makes the word masculine",
+            "es": "La s vuelve masculina la palabra"
+          },
+          "wrong": {
+            "en": "A linking letter has no influence on the gender. Zimmer is neuter, so the word is das Arbeitszimmer.",
+            "es": "Una letra de enlace no influye en el género. Zimmer es neutro, así que la palabra es das Arbeitszimmer."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "komposita-wortbildung-c07",
+      "sentence": "___ Mädchen spielt im Garten.",
+      "options": [
+        "Der",
+        "Die",
+        "Das"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Nouns ending in -chen are always neuter, even for a girl: das Mädchen.",
+        "es": "Los sustantivos que terminan en -chen son siempre neutros, incluso para una niña: das Mädchen."
+      },
+      "wrong": {
+        "Der": {
+          "en": "der is masculine. A noun in -chen is never masculine.",
+          "es": "der es masculino. Un sustantivo en -chen nunca es masculino."
+        },
+        "Die": {
+          "en": "die would follow the natural sex of the girl. But the ending -chen decides the gender, and it is always neuter.",
+          "es": "die seguiría el sexo natural de la niña. Pero la terminación -chen decide el género, y siempre es neutro."
+        }
+      },
+      "examples": [
+        "Das Brötchen ist frisch.",
+        "Das Kätzchen schläft."
+      ],
+      "tr": {
+        "en": "The girl plays in the garden.",
+        "es": "La niña juega en el jardín."
+      }
+    },
+    {
+      "id": "komposita-wortbildung-f07",
+      "kind": "form",
+      "verb": "Kompositum",
+      "person": "die Schule + das Buch",
+      "answer": "das Schulbuch",
+      "accept": [
+        "Schulbuch"
+      ],
+      "table": "wortbildung"
+    },
+    {
+      "id": "komposita-wortbildung-c08",
+      "sentence": "___ Gesundheit ist wichtig.",
+      "options": [
+        "Die",
+        "Der",
+        "Das"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Nouns ending in -heit are always feminine: die Gesundheit.",
+        "es": "Los sustantivos que terminan en -heit son siempre femeninos: die Gesundheit."
+      },
+      "wrong": {
+        "Der": {
+          "en": "der is masculine. The ending -heit marks a feminine noun.",
+          "es": "der es masculino. La terminación -heit marca un sustantivo femenino."
+        },
+        "Das": {
+          "en": "das is neuter. Words in -heit and -keit are feminine.",
+          "es": "das es neutro. Las palabras en -heit y -keit son femeninas."
+        }
+      },
+      "examples": [
+        "Die Neuigkeit ist gut.",
+        "Die Krankheit ist schwer."
+      ],
+      "tr": {
+        "en": "Health is important.",
+        "es": "La salud es importante."
+      }
+    },
+    {
+      "id": "komposita-wortbildung-f08",
+      "kind": "form",
+      "verb": "Artikel",
+      "person": "-er",
+      "answer": "der",
+      "table": "suffixe"
+    },
+    {
+      "id": "komposita-wortbildung-c09",
+      "sentence": "Er fährt einen Bus. Er ist ___.",
+      "options": [
+        "Fahrer",
+        "Fahrung",
+        "Fahrchen"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The ending -er turns a verb into the person who does it: fahren, der Fahrer.",
+        "es": "La terminación -er convierte un verbo en la persona que lo hace: fahren, der Fahrer."
+      },
+      "wrong": {
+        "Fahrung": {
+          "en": "-ung makes a thing or a process (wohnen, die Wohnung), not a person. A word like Fahrung does not exist here.",
+          "es": "-ung forma una cosa o un proceso (wohnen, die Wohnung), no una persona. Una palabra como Fahrung no existe aquí."
+        },
+        "Fahrchen": {
+          "en": "-chen makes a small neuter noun (das Brötchen). It does not name a person who drives.",
+          "es": "-chen forma un sustantivo neutro pequeño (das Brötchen). No nombra a una persona que conduce."
+        }
+      },
+      "examples": [
+        "Er ist Verkäufer.",
+        "Sie ist Lehrerin."
+      ],
+      "tr": {
+        "en": "He drives a bus. He is a driver.",
+        "es": "Él conduce un autobús. Él es conductor."
+      }
+    },
+    {
+      "id": "komposita-wortbildung-f09",
+      "kind": "form",
+      "verb": "Artikel",
+      "person": "die Arbeit + das Zimmer",
+      "answer": "das",
+      "table": "wortbildung"
+    },
+    {
+      "id": "komposita-wortbildung-w03",
+      "kind": "why",
+      "es": "Die Wohnung ist klein.",
+      "target": "Wohnung",
+      "tr": {
+        "en": "The apartment is small.",
+        "es": "El departamento es pequeño."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Nouns ending in -ung are always feminine",
+            "es": "Los sustantivos que terminan en -ung son siempre femeninos"
+          }
+        },
+        {
+          "text": {
+            "en": "Nouns ending in -ung are neuter, like das Essen",
+            "es": "Los sustantivos que terminan en -ung son neutros, como das Essen"
+          },
+          "wrong": {
+            "en": "das Essen is the plain infinitive used as a noun. The ending -ung always makes a feminine noun.",
+            "es": "das Essen es el infinitivo simple usado como sustantivo. La terminación -ung forma siempre un sustantivo femenino."
+          }
+        },
+        {
+          "text": {
+            "en": "Wohnung is feminine because wohnen is a verb",
+            "es": "Wohnung es femenino porque wohnen es un verbo"
+          },
+          "wrong": {
+            "en": "The gender does not come from the fact that it was a verb. It comes from the ending -ung, and the infinitive without -ung (das Wohnen) would be neuter.",
+            "es": "El género no viene de que fuera un verbo. Viene de la terminación -ung, y el infinitivo sin -ung (das Wohnen) sería neutro."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "komposita-wortbildung-c10",
+      "sentence": "Sie wohnt hier. Das ist ihre ___.",
+      "options": [
+        "Wohner",
+        "Wohnheit",
+        "Wohnung"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The verb wohnen gives the feminine noun die Wohnung with -ung, and ihre fits a feminine word.",
+        "es": "El verbo wohnen da el sustantivo femenino die Wohnung con -ung, y ihre encaja con una palabra femenina."
+      },
+      "wrong": {
+        "Wohner": {
+          "en": "Wohner would be masculine (a person who lives somewhere), but ihre needs a feminine word.",
+          "es": "Wohner sería masculino (una persona que vive en algún lugar), pero ihre necesita una palabra femenina."
+        },
+        "Wohnheit": {
+          "en": "Wohnheit is not a normal German word. The -heit ending is added to adjectives (gesund, die Gesundheit), not to this verb.",
+          "es": "Wohnheit no es una palabra normal del alemán. La terminación -heit se añade a adjetivos (gesund, die Gesundheit), no a este verbo."
+        }
+      },
+      "examples": [
+        "Die Zeitung ist neu.",
+        "Das ist meine Wohnung."
+      ],
+      "tr": {
+        "en": "She lives here. That is her apartment.",
+        "es": "Ella vive aquí. Ese es su departamento."
+      }
+    },
+    {
+      "id": "komposita-wortbildung-f10",
+      "kind": "form",
+      "verb": "Kompositum",
+      "person": "die Arbeit + das Zimmer",
+      "answer": "das Arbeitszimmer",
+      "accept": [
+        "Arbeitszimmer"
+      ],
+      "table": "wortbildung"
+    },
+    {
+      "id": "komposita-wortbildung-c11",
+      "sentence": "Das ___ ist fertig.",
+      "options": [
+        "Essen",
+        "Esser",
+        "Essung"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The infinitive essen becomes a neuter noun: das Essen, \"the food, the meal\".",
+        "es": "El infinitivo essen se convierte en un sustantivo neutro: das Essen, \"la comida\"."
+      },
+      "wrong": {
+        "Esser": {
+          "en": "der Esser would be a person who eats. The sentence says that something is ready, so it means the meal.",
+          "es": "der Esser sería una persona que come. La oración dice que algo está listo, así que se refiere a la comida."
+        },
+        "Essung": {
+          "en": "Essung does not exist. The noun for the meal is made from the plain infinitive.",
+          "es": "Essung no existe. El sustantivo para la comida se forma con el infinitivo simple."
+        }
+      },
+      "examples": [
+        "Das Lesen ist schön.",
+        "Das Essen ist gut."
+      ],
+      "tr": {
+        "en": "The food is ready.",
+        "es": "La comida está lista."
+      }
+    },
+    {
+      "id": "komposita-wortbildung-f11",
+      "kind": "form",
+      "verb": "Artikel",
+      "person": "-schaft",
+      "answer": "die",
+      "table": "suffixe"
+    },
+    {
+      "id": "komposita-wortbildung-c12",
+      "sentence": "Der Kellner ist nicht freundlich. Er ist ___.",
+      "options": [
+        "unfreundlich",
+        "freundlos",
+        "freundlich"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The prefix un- makes the opposite: freundlich, unfreundlich.",
+        "es": "El prefijo un- forma el contrario: freundlich, unfreundlich."
+      },
+      "wrong": {
+        "freundlos": {
+          "en": "-los means \"without\", so freundlos would mean without friends. For the opposite of freundlich you use un-.",
+          "es": "-los significa \"sin\", así que freundlos significaría sin amigos. Para el contrario de freundlich se usa un-."
+        },
+        "freundlich": {
+          "en": "freundlich says the opposite of the first sentence. The waiter is not friendly, so you need the negative form.",
+          "es": "freundlich dice lo contrario de la primera oración. El mesero no es amable, así que necesitas la forma negativa."
+        }
+      },
+      "examples": [
+        "Das Wasser ist kostenlos.",
+        "Der Mann ist unfreundlich."
+      ],
+      "tr": {
+        "en": "The waiter is not friendly. He is unfriendly.",
+        "es": "El mesero no es amable. Es poco amable."
+      }
+    },
+    {
+      "id": "komposita-wortbildung-f12",
+      "kind": "form",
+      "verb": "Artikel",
+      "person": "-keit",
+      "answer": "die",
+      "table": "suffixe"
+    },
+    {
+      "id": "komposita-wortbildung-c13",
+      "sentence": "___ Schulbuch ist neu.",
+      "options": [
+        "Die",
+        "Der",
+        "Das"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The last part Buch is neuter, so the compound is das Schulbuch, although die Schule is feminine.",
+        "es": "La última parte Buch es neutra, así que el compuesto es das Schulbuch, aunque die Schule es femenino."
+      },
+      "wrong": {
+        "Die": {
+          "en": "Die follows the first part Schule. The article of a compound comes from the last part, Buch.",
+          "es": "Die sigue la primera parte Schule. El artículo de un compuesto viene de la última parte, Buch."
+        },
+        "Der": {
+          "en": "Der is masculine. Neither Schule nor Buch is masculine.",
+          "es": "Der es masculino. Ni Schule ni Buch son masculinos."
+        }
+      },
+      "examples": [
+        "Das Lehrbuch ist alt.",
+        "Das Kochbuch ist neu."
+      ],
+      "tr": {
+        "en": "The school book is new.",
+        "es": "El libro de la escuela es nuevo."
+      }
+    },
+    {
+      "id": "komposita-wortbildung-c14",
+      "sentence": "Ich habe zwei ___.",
+      "options": [
+        "Händetaschen",
+        "Handtaschen",
+        "Handtäschen"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Only the last part takes the plural: die Handtasche, die Handtaschen.",
+        "es": "Solo la última parte lleva el plural: die Handtasche, die Handtaschen."
+      },
+      "wrong": {
+        "Händetaschen": {
+          "en": "This puts the plural on the first part. The first part never changes in a compound.",
+          "es": "Esto pone el plural en la primera parte. La primera parte nunca cambia en un compuesto."
+        },
+        "Handtäschen": {
+          "en": "This is a diminutive with -chen and an umlaut, a small bag. It is not the plural of Handtasche.",
+          "es": "Esto es un diminutivo con -chen y diéresis, un bolso pequeño. No es el plural de Handtasche."
+        }
+      },
+      "examples": [
+        "Wir haben drei Haustüren.",
+        "Sie kauft zwei Schulbücher."
+      ],
+      "tr": {
+        "en": "I have two handbags.",
+        "es": "Tengo dos bolsos."
+      }
+    },
+    {
+      "id": "komposita-wortbildung-w04",
+      "kind": "why",
+      "es": "Das Mädchen spielt im Garten.",
+      "target": "Mädchen",
+      "tr": {
+        "en": "The girl plays in the garden.",
+        "es": "La niña juega en el jardín."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "A girl is female, so the article is die",
+            "es": "Una niña es femenina, así que el artículo es die"
+          },
+          "wrong": {
+            "en": "The grammatical gender does not follow the sex of the person. The ending -chen decides.",
+            "es": "El género gramatical no sigue el sexo de la persona. Decide la terminación -chen."
+          }
+        },
+        {
+          "text": {
+            "en": "-chen is masculine, like many other words in -en",
+            "es": "-chen es masculino, como muchas otras palabras en -en"
+          },
+          "wrong": {
+            "en": "Words in -chen are not masculine. They are small things and always neuter, for example das Brötchen.",
+            "es": "Las palabras en -chen no son masculinas. Son cosas pequeñas y siempre neutras, por ejemplo das Brötchen."
+          }
+        },
+        {
+          "text": {
+            "en": "The ending -chen makes a neuter noun, whatever the meaning",
+            "es": "La terminación -chen forma un sustantivo neutro, sea cual sea el significado"
+          }
+        }
+      ],
+      "correctIndex": 2
+    }
+  ]
+}

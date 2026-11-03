@@ -1,0 +1,1074 @@
+{
+  "schema": 2,
+  "topic": "praepositionen-akkusativ",
+  "level": "A1",
+  "title": {
+    "en": "Prepositions with the accusative",
+    "es": "Preposiciones con acusativo"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "Five common prepositions are always followed by the accusative: durch (through), für (for), gegen (against, around a time), ohne (without) and um (around, at a time). You can remember them as the group durch, für, gegen, ohne, um. After them only the masculine article changes: der becomes den, ein becomes einen. Feminine, neuter and plural nouns look the same as in the nominative. Das Geschenk ist für den Lehrer.",
+        "es": "Cinco preposiciones frecuentes van siempre seguidas del acusativo: durch (a través de), für (para, por), gegen (contra, alrededor de una hora), ohne (sin) y um (alrededor de, a una hora). Se pueden recordar como el grupo durch, für, gegen, ohne, um. Después de ellas solo cambia el artículo masculino: der pasa a den, ein pasa a einen. Los sustantivos femeninos, neutros y plurales son iguales que en nominativo. Das Geschenk ist für den Lehrer. En alemán für cubre tanto por como para del español."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "akk-artikel",
+      "title": {
+        "en": "The five prepositions with the article",
+        "es": "Las cinco preposiciones con el artículo"
+      },
+      "header": [
+        {
+          "en": "Preposition",
+          "es": "Preposición"
+        },
+        {
+          "en": "maskulin",
+          "es": "maskulin"
+        },
+        {
+          "en": "feminin",
+          "es": "feminin"
+        },
+        {
+          "en": "neutral",
+          "es": "neutral"
+        },
+        {
+          "en": "Plural",
+          "es": "Plural"
+        }
+      ],
+      "rows": [
+        [
+          "durch",
+          "durch den",
+          "durch die",
+          "durch das",
+          "durch die"
+        ],
+        [
+          "für",
+          "für den",
+          "für die",
+          "für das",
+          "für die"
+        ],
+        [
+          "gegen",
+          "gegen den",
+          "gegen die",
+          "gegen das",
+          "gegen die"
+        ],
+        [
+          "ohne",
+          "ohne den",
+          "ohne die",
+          "ohne das",
+          "ohne die"
+        ],
+        [
+          "um",
+          "um den",
+          "um die",
+          "um das",
+          "um die"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "akk-fuer-ohne",
+      "title": {
+        "en": "für and ohne with nouns",
+        "es": "für y ohne con sustantivos"
+      },
+      "header": [
+        {
+          "en": "Noun",
+          "es": "Sustantivo"
+        },
+        {
+          "en": "für",
+          "es": "für"
+        },
+        {
+          "en": "ohne",
+          "es": "ohne"
+        }
+      ],
+      "rows": [
+        [
+          "der Lehrer",
+          "für den Lehrer",
+          "ohne den Lehrer"
+        ],
+        [
+          "die Familie",
+          "für die Familie",
+          "ohne die Familie"
+        ],
+        [
+          "das Kind",
+          "für das Kind",
+          "ohne das Kind"
+        ],
+        [
+          "die Kinder",
+          "für die Kinder",
+          "ohne die Kinder"
+        ],
+        [
+          "der Hund",
+          "für den Hund",
+          "ohne den Hund"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "akk-durch-um",
+      "title": {
+        "en": "durch and um with nouns",
+        "es": "durch y um con sustantivos"
+      },
+      "header": [
+        {
+          "en": "Noun",
+          "es": "Sustantivo"
+        },
+        {
+          "en": "durch",
+          "es": "durch"
+        },
+        {
+          "en": "um",
+          "es": "um"
+        }
+      ],
+      "rows": [
+        [
+          "der Park",
+          "durch den Park",
+          "um den Park"
+        ],
+        [
+          "die Stadt",
+          "durch die Stadt",
+          "um die Stadt"
+        ],
+        [
+          "das Haus",
+          "durch das Haus",
+          "um das Haus"
+        ],
+        [
+          "der Tisch",
+          "durch den Tisch",
+          "um den Tisch"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "What each preposition means",
+        "es": "Qué significa cada preposición"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "für means for: a benefit or a purpose. With a person it says who gets something. The pronoun forms für mich and für dich are useful chunks.",
+            "es": "für significa «para»: un beneficio o un propósito. Con una persona dice quién recibe algo. Las formas con pronombre für mich y für dich son frases útiles."
+          },
+          "examples": [
+            {
+              "es": "Das Geschenk ist für den Lehrer.",
+              "tr": {
+                "en": "The present is for the teacher.",
+                "es": "El regalo es para el maestro."
+              }
+            },
+            {
+              "es": "Das ist für dich.",
+              "tr": {
+                "en": "That is for you.",
+                "es": "Eso es para ti."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "ohne means without. Before a bare noun there is no article at all.",
+            "es": "ohne significa «sin». Delante de un sustantivo sin artículo no hay ningún artículo."
+          },
+          "examples": [
+            {
+              "es": "Ich trinke Kaffee ohne Zucker.",
+              "tr": {
+                "en": "I drink coffee without sugar.",
+                "es": "Tomo café sin azúcar."
+              }
+            },
+            {
+              "es": "Wir gehen ohne den Hund.",
+              "tr": {
+                "en": "We are going without the dog.",
+                "es": "Vamos sin el perro."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "durch means through: a way through a space or a place.",
+            "es": "durch significa «a través de»: un camino que atraviesa un espacio o un lugar."
+          },
+          "examples": [
+            {
+              "es": "Wir gehen durch den Park.",
+              "tr": {
+                "en": "We walk through the park.",
+                "es": "Caminamos por el parque."
+              }
+            },
+            {
+              "es": "Der Bus fährt durch die Stadt.",
+              "tr": {
+                "en": "The bus goes through the city.",
+                "es": "El camión pasa por la ciudad."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "um means around a place, and also at a clock time. gegen means against, and with a time it means about or around.",
+            "es": "um significa «alrededor de» un lugar, y también «a» una hora. gegen significa «contra», y con una hora significa «hacia» o «alrededor de»."
+          },
+          "examples": [
+            {
+              "es": "Das Haus ist um die Ecke.",
+              "tr": {
+                "en": "The house is around the corner.",
+                "es": "La casa está a la vuelta de la esquina."
+              }
+            },
+            {
+              "es": "Wir fahren um acht Uhr.",
+              "tr": {
+                "en": "We leave at eight o'clock.",
+                "es": "Salimos a las ocho."
+              }
+            },
+            {
+              "es": "Anna kommt gegen Abend.",
+              "tr": {
+                "en": "Anna comes toward evening.",
+                "es": "Anna viene hacia la tarde."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "With das the prepositions durch, für and um are often shortened in speech: durchs, fürs, ums.",
+            "es": "Con das las preposiciones durch, für y um se abrevian a menudo al hablar: durchs, fürs, ums."
+          },
+          "examples": [
+            {
+              "es": "Der Bus fährt durchs Dorf.",
+              "tr": {
+                "en": "The bus goes through the village.",
+                "es": "El camión pasa por el pueblo."
+              }
+            },
+            {
+              "es": "Wir gehen ums Haus.",
+              "tr": {
+                "en": "We walk around the house.",
+                "es": "Caminamos alrededor de la casa."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Two pairs that look alike",
+        "es": "Dos parejas que se parecen"
+      },
+      "pairs": [
+        {
+          "a": "Das ist für den Lehrer.",
+          "b": "Ich gehe ohne den Lehrer.",
+          "note": {
+            "en": "Both prepositions take the accusative, so the masculine noun gets den in both. Only the meaning is different: for or without.",
+            "es": "Las dos preposiciones llevan acusativo, así que el sustantivo masculino lleva den en las dos. Solo cambia el significado: «para» o «sin»."
+          },
+          "examples": [
+            {
+              "es": "Das Buch ist für den Arzt.",
+              "tr": {
+                "en": "The book is for the doctor.",
+                "es": "El libro es para el médico."
+              }
+            },
+            {
+              "es": "Wir lernen ohne den Lehrer.",
+              "tr": {
+                "en": "We learn without the teacher.",
+                "es": "Aprendemos sin el maestro."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Wir fahren um acht Uhr.",
+          "b": "Wir fahren gegen acht Uhr.",
+          "note": {
+            "en": "um gives an exact time. gegen gives an approximate time, around eight.",
+            "es": "um da una hora exacta. gegen da una hora aproximada, hacia las ocho."
+          },
+          "examples": [
+            {
+              "es": "Der Film beginnt um neun Uhr.",
+              "tr": {
+                "en": "The film starts at nine o'clock.",
+                "es": "La película empieza a las nueve."
+              }
+            },
+            {
+              "es": "Anna kommt gegen neun Uhr.",
+              "tr": {
+                "en": "Anna comes around nine o'clock.",
+                "es": "Anna viene hacia las nueve."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: after durch, für, gegen, ohne and um the nominative is wrong (für den Lehrer, not für der Lehrer). Do not use the dative here, the dative group is different (mit, nach, aus, bei, zu). Spanish speakers: für covers both por and para. English speakers: für is for, not with. Remember ohne with a bare noun has no article: ohne Zucker.",
+        "es": "Trampas clásicas: después de durch, für, gegen, ohne y um el nominativo es incorrecto (für den Lehrer, no für der Lehrer). No uses el dativo aquí, el grupo del dativo es otro (mit, nach, aus, bei, zu). Para hispanohablantes: für cubre tanto por como para. Recuerda que ohne con un sustantivo sin artículo no lleva artículo: ohne Zucker."
+      }
+    }
+  ],
+  "speak": {
+    "en": "Five prepositions always take the accusative: durch, für, gegen, ohne and um. Only the masculine article changes: «Das Geschenk ist für den Lehrer». Say «Ich trinke Kaffee ohne Zucker», and «Wir gehen durch den Park». Use um for an exact time: «Wir fahren um acht Uhr». Use gegen for an approximate time: «Anna kommt gegen Abend». Before das the short forms are common: «Der Bus fährt durchs Dorf».",
+    "es": "Cinco preposiciones llevan siempre acusativo: durch, für, gegen, ohne y um. Solo cambia el artículo masculino: «Das Geschenk ist für den Lehrer». Di «Ich trinke Kaffee ohne Zucker», y «Wir gehen durch den Park». Usa um para una hora exacta: «Wir fahren um acht Uhr». Usa gegen para una hora aproximada: «Anna kommt gegen Abend». Delante de das son comunes las formas cortas: «Der Bus fährt durchs Dorf»."
+  },
+  "items": [
+    {
+      "id": "praepositionen-akkusativ-c01",
+      "sentence": "Das Geschenk ist ___ den Lehrer.",
+      "options": [
+        "für",
+        "ohne",
+        "durch"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The present is meant for the teacher, so you need für, the preposition for a benefit: für den Lehrer.",
+        "es": "El regalo es para el maestro, así que necesitas für, la preposición del beneficio: für den Lehrer."
+      },
+      "wrong": {
+        "ohne": {
+          "en": "ohne means without. The present is not given without the teacher, it is meant for him, so you need für.",
+          "es": "ohne significa «sin». El regalo no es sin el maestro, es para él, así que necesitas für."
+        },
+        "durch": {
+          "en": "durch means through a place. A present is not passed through a teacher here, so you need für.",
+          "es": "durch significa «a través de» un lugar. Aquí el regalo no pasa por el maestro, así que necesitas für."
+        }
+      },
+      "examples": [
+        "Das Buch ist für den Arzt.",
+        "Das Geld ist für den Bus."
+      ],
+      "tr": {
+        "en": "The present is for the teacher.",
+        "es": "El regalo es para el maestro."
+      }
+    },
+    {
+      "id": "praepositionen-akkusativ-f01",
+      "kind": "form",
+      "verb": "maskulin",
+      "person": "ohne",
+      "answer": "ohne den",
+      "table": "akk-artikel"
+    },
+    {
+      "id": "praepositionen-akkusativ-c02",
+      "sentence": "Ich trinke Kaffee ___ Zucker.",
+      "options": [
+        "für",
+        "ohne",
+        "um"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The coffee has no sugar, so you need ohne: Ich trinke Kaffee ohne Zucker.",
+        "es": "El café no lleva azúcar, así que necesitas ohne: Ich trinke Kaffee ohne Zucker."
+      },
+      "wrong": {
+        "für": {
+          "en": "für means for. The sentence says the coffee has no sugar, so you need ohne.",
+          "es": "für significa «para». La oración dice que el café no lleva azúcar, así que necesitas ohne."
+        },
+        "um": {
+          "en": "um means around or at a time. It does not fit coffee and sugar, so you need ohne.",
+          "es": "um significa «alrededor de» o «a» una hora. No encaja con café y azúcar, así que necesitas ohne."
+        }
+      },
+      "examples": [
+        "Ich esse Suppe ohne Brot.",
+        "Wir trinken Tee ohne Milch."
+      ],
+      "tr": {
+        "en": "I drink coffee without sugar.",
+        "es": "Tomo café sin azúcar."
+      }
+    },
+    {
+      "id": "praepositionen-akkusativ-f02",
+      "kind": "form",
+      "verb": "für",
+      "person": "der Lehrer",
+      "answer": "für den Lehrer",
+      "table": "akk-fuer-ohne"
+    },
+    {
+      "id": "praepositionen-akkusativ-c03",
+      "sentence": "Der Bus fährt ___ die Stadt.",
+      "options": [
+        "gegen",
+        "ohne",
+        "durch"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The bus travels through the city, so you need durch: durch die Stadt.",
+        "es": "El camión atraviesa la ciudad, así que necesitas durch: durch die Stadt."
+      },
+      "wrong": {
+        "gegen": {
+          "en": "gegen means against. A bus does not drive against a city, it drives through it, so you need durch.",
+          "es": "gegen significa «contra». Un camión no va contra una ciudad, la atraviesa, así que necesitas durch."
+        },
+        "ohne": {
+          "en": "ohne means without. The bus does not drive without the city, so you need durch.",
+          "es": "ohne significa «sin». El camión no va sin la ciudad, así que necesitas durch."
+        }
+      },
+      "examples": [
+        "Wir gehen durch die Stadt.",
+        "Der Zug fährt durch die Stadt."
+      ],
+      "tr": {
+        "en": "The bus goes through the city.",
+        "es": "El camión pasa por la ciudad."
+      }
+    },
+    {
+      "id": "praepositionen-akkusativ-f03",
+      "kind": "form",
+      "verb": "durch",
+      "person": "der Park",
+      "answer": "durch den Park",
+      "table": "akk-durch-um"
+    },
+    {
+      "id": "praepositionen-akkusativ-w01",
+      "kind": "why",
+      "es": "Das Geschenk ist für den Lehrer.",
+      "target": "den",
+      "tr": {
+        "en": "The present is for the teacher.",
+        "es": "El regalo es para el maestro."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "für always takes the accusative, so the masculine der becomes den",
+            "es": "für lleva siempre acusativo, así que el masculino der pasa a den"
+          }
+        },
+        {
+          "text": {
+            "en": "den, because Lehrer is plural",
+            "es": "den, porque Lehrer es plural"
+          },
+          "wrong": {
+            "en": "Lehrer is singular here. The plural article is die. den comes from the masculine accusative after für.",
+            "es": "Lehrer es singular aquí. El artículo plural es die. den viene del acusativo masculino después de für."
+          }
+        },
+        {
+          "text": {
+            "en": "für takes the dative: dem Lehrer",
+            "es": "für lleva dativo: dem Lehrer"
+          },
+          "wrong": {
+            "en": "für is on the accusative list: durch, für, gegen, ohne, um. The dative list is different: mit, nach, aus, bei, zu.",
+            "es": "für está en la lista del acusativo: durch, für, gegen, ohne, um. La lista del dativo es otra: mit, nach, aus, bei, zu."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "praepositionen-akkusativ-c04",
+      "sentence": "Das Haus ist ___ die Ecke.",
+      "options": [
+        "für",
+        "um",
+        "durch"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "um die Ecke is the fixed phrase for around the corner.",
+        "es": "um die Ecke es la expresión fija para «a la vuelta de la esquina»."
+      },
+      "wrong": {
+        "für": {
+          "en": "für means for. The phrase for around the corner is um die Ecke.",
+          "es": "für significa «para». La expresión para «a la vuelta de la esquina» es um die Ecke."
+        },
+        "durch": {
+          "en": "durch means through. The house is not inside the corner, it is around it, so you need um.",
+          "es": "durch significa «a través de». La casa no está dentro de la esquina, está a la vuelta, así que necesitas um."
+        }
+      },
+      "examples": [
+        "Die Schule ist um die Ecke.",
+        "Der Bahnhof ist um die Ecke."
+      ],
+      "tr": {
+        "en": "The house is around the corner.",
+        "es": "La casa está a la vuelta de la esquina."
+      }
+    },
+    {
+      "id": "praepositionen-akkusativ-f04",
+      "kind": "form",
+      "verb": "feminin",
+      "person": "für",
+      "answer": "für die",
+      "table": "akk-artikel"
+    },
+    {
+      "id": "praepositionen-akkusativ-c05",
+      "sentence": "Anna kommt ___ Abend.",
+      "options": [
+        "gegen",
+        "für",
+        "durch"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "gegen with a time of day means around or towards: Anna kommt gegen Abend.",
+        "es": "gegen con una hora del día significa «hacia»: Anna kommt gegen Abend."
+      },
+      "wrong": {
+        "für": {
+          "en": "für means for. It does not give a time of day, so you need gegen.",
+          "es": "für significa «para». No da una hora del día, así que necesitas gegen."
+        },
+        "durch": {
+          "en": "durch means through a place. It does not give a time of day, so you need gegen.",
+          "es": "durch significa «a través de» un lugar. No da una hora del día, así que necesitas gegen."
+        }
+      },
+      "examples": [
+        "Paul kommt gegen Abend.",
+        "Ich komme gegen neun Uhr."
+      ],
+      "tr": {
+        "en": "Anna comes toward evening.",
+        "es": "Anna viene hacia la tarde."
+      }
+    },
+    {
+      "id": "praepositionen-akkusativ-f05",
+      "kind": "form",
+      "verb": "ohne",
+      "person": "das Kind",
+      "answer": "ohne das Kind",
+      "table": "akk-fuer-ohne"
+    },
+    {
+      "id": "praepositionen-akkusativ-c06",
+      "sentence": "Wir gehen durch ___ Park.",
+      "options": [
+        "der",
+        "die",
+        "den"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Park is masculine, and durch takes the accusative, so der becomes den: durch den Park.",
+        "es": "Park es masculino, y durch lleva acusativo, así que der pasa a den: durch den Park."
+      },
+      "wrong": {
+        "der": {
+          "en": "der is the nominative. After durch you need the accusative, and for a masculine noun that is den.",
+          "es": "der es el nominativo. Después de durch necesitas el acusativo, y para un sustantivo masculino eso es den."
+        },
+        "die": {
+          "en": "die is for feminine nouns and the plural. Park is masculine, so you need den.",
+          "es": "die es para sustantivos femeninos y el plural. Park es masculino, así que necesitas den."
+        }
+      },
+      "examples": [
+        "Wir gehen durch den Wald.",
+        "Anna läuft durch den Park."
+      ],
+      "tr": {
+        "en": "We walk through the park.",
+        "es": "Caminamos por el parque."
+      }
+    },
+    {
+      "id": "praepositionen-akkusativ-f06",
+      "kind": "form",
+      "verb": "um",
+      "person": "das Haus",
+      "answer": "um das Haus",
+      "table": "akk-durch-um"
+    },
+    {
+      "id": "praepositionen-akkusativ-w02",
+      "kind": "why",
+      "es": "Wir fahren um acht Uhr.",
+      "target": "um",
+      "tr": {
+        "en": "We leave at eight o'clock.",
+        "es": "Salimos a las ocho."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "um is used for approximate times",
+            "es": "um se usa para horas aproximadas"
+          },
+          "wrong": {
+            "en": "For approximate times German uses gegen. um names an exact clock time.",
+            "es": "Para horas aproximadas el alemán usa gegen. um nombra una hora exacta del reloj."
+          }
+        },
+        {
+          "text": {
+            "en": "um is used for an exact clock time",
+            "es": "um se usa para una hora exacta del reloj"
+          }
+        },
+        {
+          "text": {
+            "en": "um means for, as in Ich fahre um acht",
+            "es": "um significa «para», como en Ich fahre um acht"
+          },
+          "wrong": {
+            "en": "für means for. um with a clock time means at: um acht Uhr is at eight o'clock.",
+            "es": "für significa «para». um con una hora del reloj significa «a»: um acht Uhr es «a las ocho»."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "praepositionen-akkusativ-c07",
+      "sentence": "Das Buch ist für ___ Kind.",
+      "options": [
+        "den",
+        "das",
+        "die"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Kind is neuter, and neuter nouns do not change after für: für das Kind.",
+        "es": "Kind es neutro, y los sustantivos neutros no cambian después de für: für das Kind."
+      },
+      "wrong": {
+        "den": {
+          "en": "den is only for masculine nouns. Kind is neuter, so you need das.",
+          "es": "den es solo para sustantivos masculinos. Kind es neutro, así que necesitas das."
+        },
+        "die": {
+          "en": "die is for feminine nouns and the plural. Kind is neuter, so you need das.",
+          "es": "die es para sustantivos femeninos y el plural. Kind es neutro, así que necesitas das."
+        }
+      },
+      "examples": [
+        "Das Geschenk ist für das Kind.",
+        "Das Bett ist für das Baby."
+      ],
+      "tr": {
+        "en": "The book is for the child.",
+        "es": "El libro es para el niño."
+      }
+    },
+    {
+      "id": "praepositionen-akkusativ-f07",
+      "kind": "form",
+      "verb": "neutral",
+      "person": "um",
+      "answer": "um das",
+      "table": "akk-artikel"
+    },
+    {
+      "id": "praepositionen-akkusativ-c08",
+      "sentence": "Ich gehe ohne ___ Hund.",
+      "options": [
+        "den",
+        "der",
+        "das"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Hund is masculine, and ohne takes the accusative, so der becomes den: ohne den Hund.",
+        "es": "Hund es masculino, y ohne lleva acusativo, así que der pasa a den: ohne den Hund."
+      },
+      "wrong": {
+        "der": {
+          "en": "der is the nominative. After ohne you need the accusative, and for a masculine noun that is den.",
+          "es": "der es el nominativo. Después de ohne necesitas el acusativo, y para un sustantivo masculino eso es den."
+        },
+        "das": {
+          "en": "das is for neuter nouns. Hund is masculine, so you need den.",
+          "es": "das es para sustantivos neutros. Hund es masculino, así que necesitas den."
+        }
+      },
+      "examples": [
+        "Wir gehen ohne den Lehrer.",
+        "Anna kommt ohne den Hund."
+      ],
+      "tr": {
+        "en": "I am going without the dog.",
+        "es": "Voy sin el perro."
+      }
+    },
+    {
+      "id": "praepositionen-akkusativ-f08",
+      "kind": "form",
+      "verb": "für",
+      "person": "die Familie",
+      "answer": "für die Familie",
+      "table": "akk-fuer-ohne"
+    },
+    {
+      "id": "praepositionen-akkusativ-c09",
+      "sentence": "Der Film beginnt ___ acht Uhr.",
+      "options": [
+        "durch",
+        "ohne",
+        "um"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "A clock time takes um: Der Film beginnt um acht Uhr.",
+        "es": "Una hora del reloj lleva um: Der Film beginnt um acht Uhr."
+      },
+      "wrong": {
+        "durch": {
+          "en": "durch means through a place. It does not give a clock time, so you need um.",
+          "es": "durch significa «a través de» un lugar. No da una hora del reloj, así que necesitas um."
+        },
+        "ohne": {
+          "en": "ohne means without. It does not give a clock time, so you need um.",
+          "es": "ohne significa «sin». No da una hora del reloj, así que necesitas um."
+        }
+      },
+      "examples": [
+        "Der Zug kommt um neun Uhr an.",
+        "Wir essen um zwölf Uhr."
+      ],
+      "tr": {
+        "en": "The film starts at eight o'clock.",
+        "es": "La película empieza a las ocho."
+      }
+    },
+    {
+      "id": "praepositionen-akkusativ-f09",
+      "kind": "form",
+      "verb": "durch",
+      "person": "die Stadt",
+      "answer": "durch die Stadt",
+      "table": "akk-durch-um"
+    },
+    {
+      "id": "praepositionen-akkusativ-w03",
+      "kind": "why",
+      "es": "Der Bus fährt durchs Dorf.",
+      "target": "durchs",
+      "tr": {
+        "en": "The bus goes through the village.",
+        "es": "El camión pasa por el pueblo."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "durchs is durch den, because Dorf is masculine",
+            "es": "durchs es durch den, porque Dorf es masculino"
+          },
+          "wrong": {
+            "en": "Dorf is neuter: das Dorf. The short form durchs stands for durch das, not for durch den.",
+            "es": "Dorf es neutro: das Dorf. La forma corta durchs corresponde a durch das, no a durch den."
+          }
+        },
+        {
+          "text": {
+            "en": "durchs is a dative short form, like zum",
+            "es": "durchs es una forma corta del dativo, como zum"
+          },
+          "wrong": {
+            "en": "zum is zu dem, a dative form. durch always takes the accusative, so durchs is durch das.",
+            "es": "zum es zu dem, una forma del dativo. durch lleva siempre acusativo, así que durchs es durch das."
+          }
+        },
+        {
+          "text": {
+            "en": "durchs is the short form of durch das, because Dorf is neuter",
+            "es": "durchs es la forma corta de durch das, porque Dorf es neutro"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "praepositionen-akkusativ-c10",
+      "sentence": "Das Auto fährt ___ die Wand.",
+      "options": [
+        "gegen",
+        "für",
+        "ohne"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The car hits the wall, so you need gegen, which means against: gegen die Wand.",
+        "es": "El carro choca con la pared, así que necesitas gegen, que significa «contra»: gegen die Wand."
+      },
+      "wrong": {
+        "für": {
+          "en": "für means for. A car does not drive for a wall, it drives against it, so you need gegen.",
+          "es": "für significa «para». Un carro no va para una pared, va contra ella, así que necesitas gegen."
+        },
+        "ohne": {
+          "en": "ohne means without. The sentence is about hitting the wall, so you need gegen.",
+          "es": "ohne significa «sin». La oración trata de chocar con la pared, así que necesitas gegen."
+        }
+      },
+      "examples": [
+        "Das Kind läuft gegen die Tür.",
+        "Der Ball fliegt gegen die Wand."
+      ],
+      "tr": {
+        "en": "The car drives into the wall.",
+        "es": "El carro choca contra la pared."
+      }
+    },
+    {
+      "id": "praepositionen-akkusativ-f10",
+      "kind": "form",
+      "verb": "Plural",
+      "person": "durch",
+      "answer": "durch die",
+      "table": "akk-artikel"
+    },
+    {
+      "id": "praepositionen-akkusativ-c11",
+      "sentence": "Das ist ein Geschenk ___ mich.",
+      "options": [
+        "ohne",
+        "für",
+        "um"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "für mich means for me. The pronoun mich is the accusative of ich: Das ist ein Geschenk für mich.",
+        "es": "für mich significa «para mí». El pronombre mich es el acusativo de ich: Das ist ein Geschenk für mich."
+      },
+      "wrong": {
+        "ohne": {
+          "en": "ohne mich would mean without me, which does not fit a present that is given to me. You need für.",
+          "es": "ohne mich significaría «sin mí», lo cual no encaja con un regalo que me dan. Necesitas für."
+        },
+        "um": {
+          "en": "um mich means around me. A present is not around me, it is for me, so you need für.",
+          "es": "um mich significa «a mi alrededor». Un regalo no está a mi alrededor, es para mí, así que necesitas für."
+        }
+      },
+      "examples": [
+        "Das Buch ist für dich.",
+        "Das Geschenk ist für uns."
+      ],
+      "tr": {
+        "en": "That is a present for me.",
+        "es": "Ese es un regalo para mí."
+      }
+    },
+    {
+      "id": "praepositionen-akkusativ-f11",
+      "kind": "form",
+      "verb": "ohne",
+      "person": "der Hund",
+      "answer": "ohne den Hund",
+      "table": "akk-fuer-ohne"
+    },
+    {
+      "id": "praepositionen-akkusativ-c12",
+      "sentence": "Der Bus fährt ___ Dorf.",
+      "options": [
+        "durch",
+        "durchen",
+        "durchs"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Dorf is neuter, so durch das becomes the short form durchs: Der Bus fährt durchs Dorf.",
+        "es": "Dorf es neutro, así que durch das se convierte en la forma corta durchs: Der Bus fährt durchs Dorf."
+      },
+      "wrong": {
+        "durch": {
+          "en": "durch alone leaves the article out, but the neuter noun Dorf needs das, or the short form durchs.",
+          "es": "durch solo omite el artículo, pero el sustantivo neutro Dorf necesita das, o la forma corta durchs."
+        },
+        "durchen": {
+          "en": "durchen does not exist. The short form of durch das is durchs.",
+          "es": "durchen no existe. La forma corta de durch das es durchs."
+        }
+      },
+      "examples": [
+        "Wir gehen durchs Haus.",
+        "Das Licht kommt durchs Fenster."
+      ],
+      "tr": {
+        "en": "The bus goes through the village.",
+        "es": "El camión pasa por el pueblo."
+      }
+    },
+    {
+      "id": "praepositionen-akkusativ-f12",
+      "kind": "form",
+      "verb": "um",
+      "person": "der Tisch",
+      "answer": "um den Tisch",
+      "table": "akk-durch-um"
+    },
+    {
+      "id": "praepositionen-akkusativ-c13",
+      "sentence": "Wir gehen ___ Haus.",
+      "options": [
+        "ums",
+        "um",
+        "um den"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Haus is neuter, so um das becomes the short form ums: Wir gehen ums Haus.",
+        "es": "Haus es neutro, así que um das se convierte en la forma corta ums: Wir gehen ums Haus."
+      },
+      "wrong": {
+        "um": {
+          "en": "um alone leaves the article out, but the neuter noun Haus needs das, or the short form ums.",
+          "es": "um solo omite el artículo, pero el sustantivo neutro Haus necesita das, o la forma corta ums."
+        },
+        "um den": {
+          "en": "um den is for a masculine noun. Haus is neuter, so you need um das, or the short form ums.",
+          "es": "um den es para un sustantivo masculino. Haus es neutro, así que necesitas um das, o la forma corta ums."
+        }
+      },
+      "examples": [
+        "Das Kind läuft ums Haus.",
+        "Der Hund läuft ums Auto."
+      ],
+      "tr": {
+        "en": "We walk around the house.",
+        "es": "Caminamos alrededor de la casa."
+      }
+    },
+    {
+      "id": "praepositionen-akkusativ-c14",
+      "sentence": "Das Geschenk ist für ___ Familie.",
+      "options": [
+        "der",
+        "die",
+        "den"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Familie is feminine, and feminine nouns do not change after für: für die Familie.",
+        "es": "Familie es femenino, y los sustantivos femeninos no cambian después de für: für die Familie."
+      },
+      "wrong": {
+        "der": {
+          "en": "der is the masculine nominative. Familie is feminine, so you need die.",
+          "es": "der es el nominativo masculino. Familie es femenino, así que necesitas die."
+        },
+        "den": {
+          "en": "den is only for masculine nouns. Familie is feminine, so you need die.",
+          "es": "den es solo para sustantivos masculinos. Familie es femenino, así que necesitas die."
+        }
+      },
+      "examples": [
+        "Das Buch ist für die Schule.",
+        "Das ist für die Familie."
+      ],
+      "tr": {
+        "en": "The present is for the family.",
+        "es": "El regalo es para la familia."
+      }
+    },
+    {
+      "id": "praepositionen-akkusativ-w04",
+      "kind": "why",
+      "es": "Anna kommt gegen Abend.",
+      "target": "gegen",
+      "tr": {
+        "en": "Anna comes toward evening.",
+        "es": "Anna viene hacia la tarde."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "gegen means against, so Anna is against the evening",
+            "es": "gegen significa «contra», así que Anna está contra la tarde"
+          },
+          "wrong": {
+            "en": "gegen can mean against, but with a time of day it means about or around. The sentence says when Anna arrives.",
+            "es": "gegen puede significar «contra», pero con una hora del día significa «hacia». La oración dice cuándo llega Anna."
+          }
+        },
+        {
+          "text": {
+            "en": "gegen with a time of day means about or around",
+            "es": "gegen con una hora del día significa «hacia»"
+          }
+        },
+        {
+          "text": {
+            "en": "gegen is the same as um: exactly at that time",
+            "es": "gegen es lo mismo que um: exactamente a esa hora"
+          },
+          "wrong": {
+            "en": "um gives an exact clock time. gegen is less exact, around that time.",
+            "es": "um da una hora exacta del reloj. gegen es menos exacto, hacia esa hora."
+          }
+        }
+      ],
+      "correctIndex": 1
+    }
+  ]
+}

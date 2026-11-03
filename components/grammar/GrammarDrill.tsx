@@ -22,7 +22,7 @@ import {
   type GrammarMarkItem,
   type GrammarTopicData,
 } from '@/lib/games/content';
-import { type LessonBlock } from '@/lib/grammar/lessonTypes';
+import { type ContentLang, type LessonBlock } from '@/lib/grammar/lessonTypes';
 import { markTokens } from '@/lib/games/grammarMark';
 import { speak } from '@/lib/speech';
 import { speechLang } from '@/lib/languages';
@@ -193,11 +193,10 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
     setCombo(comboRef.current);
     if (!wasCorrect && miss && !missRef.current) missRef.current = miss;
   };
-  // the Settings accent-strictness switch, fetched once, only if the
-  // round has a transform item (the other branches don't need it).
+  // the Settings accent-strictness switch, fetched once, only if the round needs it (transform, dictation, a German form:
+  // there it decides whether the digraph spelling counts for the umlaut and the ß).
   const { strictAccents, refresh } = useLearner();
-  // dictation uses the accent setting too.
-  const hasTransform = kinds.includes('transform') || kinds.includes('dictation');
+  const hasTransform = kinds.includes('transform') || kinds.includes('dictation') || (kinds.includes('form') && learnedLang === 'de');
   useEffect(() => {
     if (!hasTransform) return;
     refresh(['strictAccents']).catch(() => {
@@ -298,8 +297,9 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
             key={roundItem.item.id}
             item={roundItem.item}
             table={findFormTable(topic, roundItem.item.table)}
-            contentLang={contentLang as 'en' | 'es'}
+            contentLang={contentLang as ContentLang}
             learnedLang={learnedLang}
+            strictAccents={strictAccents}
             colors={colors}
             s={s}
             onDone={completeItem}
@@ -309,7 +309,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
             key={roundItem.item.id}
             item={roundItem.item}
             learnedLang={learnedLang}
-            contentLang={contentLang as 'en' | 'es'}
+            contentLang={contentLang as ContentLang}
             colors={colors}
             s={s}
             onDone={completeItem}
@@ -319,7 +319,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
             key={roundItem.item.id}
             item={roundItem.item}
             learnedLang={learnedLang}
-            contentLang={contentLang as 'en' | 'es'}
+            contentLang={contentLang as ContentLang}
             onDone={completeItem}
           />
         ) : isOrderItem(roundItem.item) ? (
@@ -327,7 +327,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
             key={roundItem.item.id}
             item={roundItem.item}
             learnedLang={learnedLang}
-            contentLang={contentLang as 'en' | 'es'}
+            contentLang={contentLang as ContentLang}
             onDone={completeItem}
           />
         ) : isDictationItem(roundItem.item) ? (
@@ -335,7 +335,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
             key={roundItem.item.id}
             item={roundItem.item}
             learnedLang={learnedLang}
-            contentLang={contentLang as 'en' | 'es'}
+            contentLang={contentLang as ContentLang}
             strictAccents={strictAccents}
             onDone={completeItem}
           />
@@ -343,7 +343,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
           <TransformDrillItem
             key={roundItem.item.id}
             item={roundItem.item}
-            contentLang={contentLang as 'en' | 'es'}
+            contentLang={contentLang as ContentLang}
             strictAccents={strictAccents}
             colors={colors}
             s={s}
@@ -397,7 +397,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
   // has no `tense` field (lessonTypes.ts).
   const badgeTense = !marking && !isMarkItem(current.item) ? current.item.tense : undefined;
   // the sentence's translation in the UI language (if the item has a `tr`).
-  const choiceTr = current.item.tr ? (current.item.tr[contentLang as 'en' | 'es'] ?? current.item.tr.en) : undefined;
+  const choiceTr = current.item.tr ? (current.item.tr[contentLang as ContentLang] ?? current.item.tr.en) : undefined;
 
   // Neo-brutalist: the sentence in a box, the gap a b-filled block,
   // the answers in a 2x2 grid, the right one = fill + tick,

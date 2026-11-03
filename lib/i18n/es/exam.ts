@@ -50,7 +50,7 @@ const es: typeof en = {
     skillPracticeSentences: 'Practica oraciones',
     introSpeaking: (n: number) => `Expresión oral: ${n} ${n === 1 ? 'pregunta' : 'preguntas'}`,
     skillSpeaking: 'Expresión oral',
-    speakTranslate: (lang: string): string => (lang === 'es' ? 'Dilo en español' : lang === 'hu' ? 'Dilo en húngaro' : 'Dilo en inglés'),
+    speakTranslate: (lang: string): string => (lang === 'es' ? 'Dilo en español' : lang === 'hu' ? 'Dilo en húngaro' : lang === 'de' ? 'Dilo en alemán' : 'Dilo en inglés'),
     speakRepeat: 'Léelo en voz alta',
     speakHint: 'Toca el micrófono del teclado y di la oración. Tus palabras aparecen en el cuadro.',
     speakPlaceholder: 'Aquí aparecen tus palabras',
@@ -94,6 +94,7 @@ const es: typeof en = {
     passRuleTotal: (needed: number, of: number) => `Para aprobar: al menos ${needed} de ${of} puntos en total. Una destreza puede compensar a otra.`,
     passRuleAverage: (pct: number) =>
       `Para aprobar: un promedio de alrededor del ${pct}% entre las destrezas. Este puntaje mínimo es una estimación, el examen real no publica uno.`,
+    passRuleEach: (pct: number) => `Para aprobar: al menos ${pct}% en cada destreza, como en cada módulo del examen real. Una destreza fuerte no compensa una débil.`,
     passRuleScale: (needed: number) =>
       `Para aprobar: un promedio de al menos ${needed} puntos en la escala del examen. Tu puntaje en la escala aquí es una estimación a partir de tus puntos.`,
     shortNote: 'Más corto que el examen real, los puntos se escalan. El reloj es el real.',
@@ -160,6 +161,8 @@ const es: typeof en = {
       `Grupo ${i}: ${points} / ${of}, mínimo ${needed}, ${passed ? 'aprobado' : 'no aprobado'}${provisional ? ' (provisional)' : ''}`,
     totalLine: (points: number, of: number, needed: number, passed: boolean, provisional: boolean) =>
       `Total: ${points} / ${of}, mínimo ${needed}, ${passed ? 'aprobado' : 'no aprobado'}${provisional ? ' (provisional)' : ''}`,
+    eachLine: (passPct: number, below: string[], passed: boolean, provisional: boolean) =>
+      `Cada destreza necesita al menos ${passPct}%: ${passed ? 'aprobado' : `no aprobado${below.length > 0 ? ` (por debajo de ${passPct}%: ${below.join(', ')})` : ''}`}${provisional ? ' (provisional)' : ''}`,
     averageLine: (pct: number, passPct: number, passed: boolean, provisional: boolean) =>
       `Promedio de las destrezas: ${pct}%, mínimo aproximado ${passPct}% (estimación), ${passed ? 'aprobado' : 'no aprobado'}${provisional ? ' (provisional)' : ''}`,
     checkAnswers: 'Revisar respuestas',
@@ -177,6 +180,8 @@ const es: typeof en = {
     mockClipText: (n: number) => `Texto ${n}`,
     mockHintMatch: 'Relaciona cada elemento con una opción. Toca una letra para elegirla, tócala otra vez para quitarla. Una opción se puede usar más de una vez.',
     mockHintMatchUnique: 'Relaciona cada elemento con una opción distinta. Toca una letra para elegirla; si ya está en uso, pasa aquí. Algunas opciones no hacen falta.',
+    mockHintMatchNone:
+      'Relaciona cada elemento con una opción distinta. Toca una letra para elegirla; si ya está en uso, pasa aquí. Toca 0 si ninguna opción encaja. Algunas opciones no hacen falta.',
     mockShowMore: 'Mostrar más',
     mockShowLess: 'Mostrar menos',
     mockHintGapped: 'Elige el fragmento que encaja en cada hueco numerado. Cada fragmento encaja en un solo hueco, y sobran algunos fragmentos.',
@@ -219,7 +224,7 @@ const es: typeof en = {
     speakNoVoice: 'No hay una voz de este idioma instalada en este dispositivo. Lee la pregunta del examinador en la pantalla.',
     speakAnswerPlaceholder: 'Tu respuesta',
     speakAnswerHint: (lang: string) =>
-      `Habla con el micrófono del teclado o escribe. Pon el teclado en ${lang === 'es' ? 'español' : 'inglés'} para que te entienda.`,
+      `Habla con el micrófono del teclado o escribe. Pon el teclado en ${lang === 'es' ? 'español' : lang === 'hu' ? 'húngaro' : lang === 'de' ? 'alemán' : 'inglés'} para que te entienda.`,
     speakWords: (n: number, min: number) => `${n} ${n === 1 ? 'palabra' : 'palabras'}, intenta llegar al menos a ${min}`,
     speakNextQuestion: 'Siguiente pregunta',
     speakPrevQuestion: 'Pregunta anterior',

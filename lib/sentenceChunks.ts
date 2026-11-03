@@ -6,16 +6,31 @@
 // simply built whole (no natural shorter sentence, or a short one).
 
 import chunkData from '@/data/sentences/chunks.json';
+import chunkDataDe from '@/data/sentences/chunks-de.json';
+import chunkDataDeA2 from '@/data/sentences/chunks-de-a2.json';
+import chunkDataDeB1 from '@/data/sentences/chunks-de-b1.json';
+import chunkDataDeB2c1 from '@/data/sentences/chunks-de-b2c1.json';
 import type { PcicTarget } from '@/data/pcic';
+import { activeSourceFor } from '@/lib/languagePair';
 import { tileWords } from '@/lib/sentenceCards';
 
-/** One step: `source` is its English (the prompt), `target` the Spanish sentence to build. */
+/** One step: `source` is its prompt (English for the Spanish deck, the learner's language for the German one), `target` the sentence to build. */
 export interface SentenceChunk {
   source: string;
   target: string;
 }
 
 const CHUNKS = chunkData as Record<string, { es: string; en: string }[]>;
+// The German deck's steps (data/sentences/chunks-de.json, keyed by the deck item id "d<id>"): the German sentence and its
+// prompt in each of the three languages a German learner can come from.
+type DeSteps = Record<string, { de: string; en: string; es: string; hu: string }[]>;
+// One file per level written in its own pass (A1 in chunks-de.json, then A2, B1, B2 + C1); the keys never overlap.
+const CHUNKS_DE: DeSteps = {
+  ...(chunkDataDe as DeSteps),
+  ...(chunkDataDeA2 as DeSteps),
+  ...(chunkDataDeB1 as DeSteps),
+  ...(chunkDataDeB2c1 as DeSteps),
+};
 
 const words = (sentence: string): string[] => tileWords(sentence).map((w) => w.toLowerCase());
 
@@ -38,11 +53,20 @@ export function partFitsSentence(part: string, sentence: string): boolean {
 }
 
 /**
- * The shorter sentences of the item's example sentence, or undefined (none written, the other direction, or the data no
- * longer fits the sentence, see partFitsSentence). Only the Spanish direction.
+ * The shorter sentences of the item's example sentence, or undefined (none written, the English and Hungarian directions, or the data no
+ * longer fits the sentence, see partFitsSentence). The Spanish and the German direction.
  */
 export function chunksFor(itemId: string, target: PcicTarget, sentence: string): SentenceChunk[] | undefined {
+  if (target === 'de') {
+    const source = activeSourceFor('de');
+    const german = CHUNKS_DE[itemId];
+    if (!german || german.length === 0 || source === 'de') return undefined;
+    if (!german.every((p) => p[source] && partFitsSentence(p.de, sentence))) return undefined;
+    return german.map((p) => ({ source: p[source], target: p.de }));
+  }
   if (target !== 'es') return undefined;
+  // the Spanish steps are prompted in English: a German learner gets the sentence built whole
+  if (activeSourceFor('es') === 'de') return undefined;
   const parts = CHUNKS[itemId];
   if (!parts || parts.length === 0) return undefined;
   if (!parts.every((p) => partFitsSentence(p.es, sentence))) return undefined;

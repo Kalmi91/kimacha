@@ -8,8 +8,8 @@
 
 import type { PcicItem, PcicTarget } from '@/data/pcic';
 import { activeSourceFor } from '@/lib/languagePair';
-import { wordIn } from '@/lib/pcicItemText';
-import { gradePcicAnswer, pcicAlternatives, suggestedGrade } from '@/lib/pcicMatch';
+import { firstForm, wordIn } from '@/lib/pcicItemText';
+import { gradePcicAnswer, suggestedGrade } from '@/lib/pcicMatch';
 import type { GameLogic } from '@/lib/practice/gameRound';
 
 export const DICTATION_MODE = 'dictation';
@@ -78,12 +78,15 @@ export function nextDictation(state: DictationState): DictationState {
 /** The word in the learned language (with its article), what is read aloud, and what it means. */
 export function dictationWord(item: PcicItem, target: PcicTarget): { answer: string; say: string; meaning: string } {
   const answer = wordIn(item, target) ?? '';
-  return { answer, say: pcicAlternatives(answer)[0] ?? answer, meaning: wordIn(item, activeSourceFor(target)) ?? '' };
+  return { answer, say: firstForm(answer, target), meaning: wordIn(item, activeSourceFor(target)) ?? '' };
 }
 
-/** Graded like the Words tab's typing card (accent switch included); an empty typing is never right. */
-export function isDictationRight(typed: string, answer: string, strictAccents: boolean): boolean {
-  return typed.trim() !== '' && suggestedGrade(gradePcicAnswer(typed, answer, strictAccents)) === 'good';
+/**
+ * Graded like the Words tab's typing card (accent switch included); an empty typing is never right. For German (`target`)
+ * ss for ß and ae / oe / ue for the umlauts are right too while the strict-accents switch is off.
+ */
+export function isDictationRight(typed: string, answer: string, strictAccents: boolean, target?: PcicTarget): boolean {
+  return typed.trim() !== '' && suggestedGrade(gradePcicAnswer(typed, answer, strictAccents, target === 'de' ? 'de' : undefined)) === 'good';
 }
 
 const isIds = (x: unknown, allowed: ReadonlySet<string>): x is string[] =>

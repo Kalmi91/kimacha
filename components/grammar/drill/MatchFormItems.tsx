@@ -3,7 +3,7 @@ import { Pressable, TextInput, View } from 'react-native';
 import { Text } from '@/components/KText';
 import Colors from '@/constants/Colors';
 import { t } from '@/lib/i18n';
-import { type FormItem, type LessonBlock, type MatchItem } from '@/lib/grammar/lessonTypes';
+import { type ContentLang, type FormItem, type LessonBlock, type MatchItem } from '@/lib/grammar/lessonTypes';
 import { speak } from '@/lib/speech';
 import SpeakButton from '@/components/SpeakButton';
 import { speechLang } from '@/lib/languages';
@@ -199,14 +199,17 @@ export function FormDrillItem({
   table,
   contentLang,
   learnedLang,
+  strictAccents = false,
   colors,
   s,
   onDone,
 }: {
   item: FormItem;
   table: Extract<LessonBlock, { kind: 'table' }> | undefined;
-  contentLang: 'en' | 'es';
+  contentLang: ContentLang;
   learnedLang: string;
+  /** The Settings accent switch: for German it decides whether the typewriter digraphs (ae, oe, ue, ss) still count; the dots never come off. */
+  strictAccents?: boolean;
   colors: (typeof Colors)['light'];
   s: ReturnType<typeof t>;
   onDone: (correct: boolean) => void;
@@ -226,10 +229,14 @@ export function FormDrillItem({
   const check = () => {
     const targets = [item.answer, ...(item.accept ?? [])];
     // Hungarian: the word cards' rule (accents are phonemic, öt/őt, never forgiven; case and punctuation are).
+    // German: the umlaut and the ß are the grammar point (Vater / Väter), so they are never dropped; the accent switch only
+    // decides whether the digraph spelling (Vaeter, Strasse) is taken for the real letters.
     const ok =
       learnedLang === 'hu'
         ? targets.some((c) => strictAnswerMatch(value, c, { lang: 'hu' }))
-        : targets.some((c) => value.trim().toLowerCase() === c.trim().toLowerCase());
+        : learnedLang === 'de'
+          ? targets.some((c) => strictAnswerMatch(value, c, { lang: 'de', keepUmlauts: true, strictAccents }))
+          : targets.some((c) => value.trim().toLowerCase() === c.trim().toLowerCase());
     setCorrect(ok);
     setChecked(true);
     // the correct form is spoken after Check, after right and wrong answers alike, as on the

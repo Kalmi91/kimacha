@@ -52,7 +52,7 @@ export default {
     // spoken item dictated with the keyboard's microphone.
     introSpeaking: (n: number) => `Speaking: ${n} ${n === 1 ? 'question' : 'questions'}`,
     skillSpeaking: 'Speaking',
-    speakTranslate: (lang: string): string => (lang === 'es' ? 'Say it in Spanish' : lang === 'hu' ? 'Say it in Hungarian' : 'Say it in English'),
+    speakTranslate: (lang: string): string => (lang === 'es' ? 'Say it in Spanish' : lang === 'hu' ? 'Say it in Hungarian' : lang === 'de' ? 'Say it in German' : 'Say it in English'),
     speakRepeat: 'Read it aloud',
     speakHint: 'Tap the microphone on your keyboard and say the sentence. Your words appear in the box.',
     speakPlaceholder: 'Your spoken words appear here',
@@ -100,6 +100,7 @@ export default {
     passRuleTotal: (needed: number, of: number) => `To pass: at least ${needed} of ${of} points in total. One skill can make up for another.`,
     passRuleAverage: (pct: number) =>
       `To pass: an average of about ${pct}% across the skills. This pass line is an estimate, the real exam does not publish one.`,
+    passRuleEach: (pct: number) => `To pass: at least ${pct}% in every skill, as in each module of the real exam. A strong skill cannot make up for a weak one.`,
     passRuleScale: (needed: number) =>
       `To pass: an average of at least ${needed} points on the exam scale. Your scale score here is an estimate from your raw points.`,
     shortNote: 'Shorter than the real exam, points are scaled. The clock is the real one.',
@@ -166,6 +167,8 @@ export default {
       `Group ${i}: ${points} / ${of}, needed ${needed}, ${passed ? 'passed' : 'not passed'}${provisional ? ' (provisional)' : ''}`,
     totalLine: (points: number, of: number, needed: number, passed: boolean, provisional: boolean) =>
       `Total: ${points} / ${of}, needed ${needed}, ${passed ? 'passed' : 'not passed'}${provisional ? ' (provisional)' : ''}`,
+    eachLine: (passPct: number, below: string[], passed: boolean, provisional: boolean) =>
+      `Every skill needs at least ${passPct}%: ${passed ? 'passed' : `not passed${below.length > 0 ? ` (under ${passPct}%: ${below.join(', ')})` : ''}`}${provisional ? ' (provisional)' : ''}`,
     averageLine: (pct: number, passPct: number, passed: boolean, provisional: boolean) =>
       `Average of the skills: ${pct}%, needed about ${passPct}% (estimate), ${passed ? 'passed' : 'not passed'}${provisional ? ' (provisional)' : ''}`,
     checkAnswers: 'Check answers',
@@ -183,6 +186,8 @@ export default {
     mockClipText: (n: number) => `Text ${n}`,
     mockHintMatch: 'Match each item with an option. Tap a letter to choose it, tap it again to clear it. An option can be used more than once.',
     mockHintMatchUnique: 'Match each item with a different option. Tap a letter to choose it; if it is already used, it moves here. Some options are not needed.',
+    mockHintMatchNone:
+      'Match each item with a different option. Tap a letter to choose it; if it is already used, it moves here. Tap 0 if no option fits. Some options are not needed.',
     mockShowMore: 'Show more',
     mockShowLess: 'Show less',
     mockHintGapped: 'Choose the fragment that fits each numbered gap. Each fragment fits one gap only, and some fragments are not needed.',
@@ -226,7 +231,7 @@ export default {
     speakAnswerPlaceholder: 'Your answer',
     // the microphone of the keyboard listens in the keyboard's language, so the hint names the language to switch it to.
     speakAnswerHint: (lang: string) =>
-      `Speak with your keyboard's microphone, or type. Set the keyboard to ${lang === 'es' ? 'Spanish' : 'English'} so it understands you.`,
+      `Speak with your keyboard's microphone, or type. Set the keyboard to ${lang === 'es' ? 'Spanish' : lang === 'hu' ? 'Hungarian' : lang === 'de' ? 'German' : 'English'} so it understands you.`,
     speakWords: (n: number, min: number) => `${n} ${n === 1 ? 'word' : 'words'}, aim for at least ${min}`,
     speakNextQuestion: 'Next question',
     speakPrevQuestion: 'Previous question',

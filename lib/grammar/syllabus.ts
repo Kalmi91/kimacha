@@ -16,6 +16,7 @@ import { getGrammarTopic, getGrammarTopicIds, grammarKindCounts, type GrammarKin
 import type { Level } from '@/data/words';
 import { EN_SYLLABUS, EN_UNITS } from './syllabusEn';
 import { withHuTitles, type HuTitles } from './huOverlay';
+import { withOverlayTitles, type OverlaySyllabus } from './overlay';
 
 export interface SyllabusTopic {
   id: string;
@@ -224,6 +225,86 @@ const GRAMMAR_TIER: Record<string, GrammarTier> = {
   'szoalkotas-ige': 'full',
   szokapcsolatok: 'exam',
   'hivatalos-stilus': 'exam',
+  // --- German course, A1 ---
+  'aussprache-umlaute': 'core',
+  'personalpronomen-sein': 'core-plus',
+  'praesens-regelmaessig': 'core-plus',
+  'artikel-genus': 'exam',
+  'plural-nomen': 'core',
+  'haben-es-gibt': 'core-plus',
+  'verbposition-v2': 'core-plus',
+  'fragen-ja-nein-w': 'core',
+  'negation-nicht-kein': 'core',
+  'konjunktionen-und-aber': 'core',
+  'praesens-stammwechsel': 'core-plus',
+  'modalverben-praesens': 'core-plus',
+  'trennbare-verben': 'core-plus',
+  'imperativ': 'core',
+  'gern-lieber': 'core',
+  'nominativ-akkusativ': 'core-plus',
+  'possessivartikel': 'core',
+  'praepositionen-akkusativ': 'exam',
+  'praepositionen-dativ': 'core',
+  'zahlen-uhrzeit-datum': 'core',
+  'praepositionen-zeit-ort': 'core',
+  'wo-woher-wohin': 'core',
+  'perfekt-haben': 'core-plus',
+  'perfekt-sein': 'core',
+  // --- German course, A2 ---
+  'dativ-artikel': 'core-plus',
+  'personalpronomen-akk-dativ': 'core-plus',
+  'verben-mit-dativ': 'exam',
+  'objekte-reihenfolge': 'exam',
+  'wechselpraepositionen': 'core-plus',
+  'positionsverben': 'exam',
+  'partizip-ii-formen': 'core-plus',
+  'praeteritum-sein-haben': 'core',
+  'praeteritum-modalverben': 'core',
+  'nebensatz-weil-dass': 'core-plus',
+  'nebensatz-wenn-ob': 'core',
+  'konnektoren-deshalb': 'exam',
+  'adjektivdeklination-nom-akk': 'core',
+  'adjektivdeklination-dativ': 'core',
+  'komparativ-superlativ': 'core',
+  'reflexive-verben': 'core-plus',
+  'demonstrativ-welcher-dieser': 'exam',
+  'indefinitpronomen': 'exam',
+  'komposita-wortbildung': 'full',
+  // --- German course, B1 ---
+  'praeteritum-schwache-starke': 'core-plus',
+  'futur-i': 'exam',
+  'konjunktiv-ii-wuensche-hoeflichkeit': 'core-plus',
+  'konjunktiv-ii-irreale-saetze': 'core',
+  'passiv-praesens': 'exam',
+  'passiv-modalverben': 'exam',
+  'relativsaetze-nom-akk': 'core',
+  'relativsaetze-dativ-praep': 'exam',
+  'nebensatz-temporal': 'core',
+  'nebensatz-obwohl-damit': 'exam',
+  'infinitiv-mit-zu': 'exam',
+  'genitiv': 'exam',
+  'adjektivdeklination-vollstaendig': 'core',
+  'verben-mit-praepositionen': 'core-plus',
+  'konnektoren-adverbial': 'core',
+  'mittelfeld-tekamolo': 'exam',
+  // --- German course, B2 ---
+  'plusquamperfekt': 'exam',
+  'passiv-alle-zeiten': 'exam',
+  'passiversatz-zustandspassiv': 'exam',
+  'konjunktiv-i-indirekte-rede': 'core',
+  'konjunktiv-ii-vergangenheit': 'core',
+  'partizipien-als-adjektive': 'exam',
+  'n-deklination': 'full',
+  'nominalisierung': 'exam',
+  'nebensaetze-b2': 'exam',
+  'relativsaetze-genitiv-was-wo': 'exam',
+  // --- German course, C1 ---
+  'nominalstil-verbalstil': 'exam',
+  'funktionsverbgefuege': 'exam',
+  'erweiterte-partizipialattribute': 'exam',
+  'modalpartikeln': 'full',
+  'modalverben-vermutung': 'exam',
+  'konjunktiv-irreale-vergleiche': 'exam',
 };
 
 export function getGrammarTier(topicId: string): GrammarTier {
@@ -253,7 +334,12 @@ function spanishSyllabus(): SyllabusData {
     const data: SyllabusData = require('@/data/grammar/syllabus.json');
     // The Hungarian titles and blurbs (data/games/grammar-hu/syllabus.json) become the `hu` of title / blurb.
     const hu: { es: { units: HuTitles; topics: HuTitles } } = require('@/data/games/grammar-hu/syllabus.json');
-    syllabusData = { units: withHuTitles(data.units, hu.es.units), topics: withHuTitles(data.topics, hu.es.topics) };
+    // The German ones (data/games/grammar-de/syllabus.json) become the `de` of title / blurb.
+    const de: OverlaySyllabus = require('@/data/games/grammar-de/syllabus.json');
+    syllabusData = {
+      units: withOverlayTitles(withHuTitles(data.units, hu.es.units), 'de', de.es.units),
+      topics: withOverlayTitles(withHuTitles(data.topics, hu.es.topics), 'de', de.es.topics),
+    };
   }
   return syllabusData;
 }
@@ -275,30 +361,51 @@ export const SYLLABUS_LEVELS: Level[] = ['A1', 'A2', 'B1', 'B2', 'C1'];
  */
 export const GRAMMAR_PROGRESS_KEY = 'grammar-course';
 
-// Language key: 'es' (default) = the Spanish syllabus (data/grammar/syllabus.json, plus the Hungarian `hu` titles);
+// Language key: 'es' (default) = the Spanish syllabus (data/grammar/syllabus.json, plus the Hungarian `hu` and German `de` titles);
 // 'en' = the English syllabus from the English topic tree (lib/grammar/syllabusEn.ts);
-// 'hu' = the Hungarian course (data/grammar/syllabus-hu.json, A1 to C1, explanations in en / es).
+// 'hu' = the Hungarian course (data/grammar/syllabus-hu.json, A1 to C1, explanations in en / es, German titles optional);
+// 'de' = the German course (data/grammar/syllabus-de.json, A1 to C1, 75 topics, explanations in en / es, Hungarian titles
+//        in the file itself). A topic of it whose lesson file is not written yet shows the "coming soon" badge like any other.
 const EN_SYLLABUS_LEVELS: Level[] = ['A1', 'A2', 'B1', 'B2', 'C1'];
 const HU_SYLLABUS_LEVELS: Level[] = ['A1', 'A2', 'B1', 'B2', 'C1'];
+const DE_SYLLABUS_LEVELS: Level[] = ['A1', 'A2', 'B1', 'B2', 'C1'];
 
 let huSyllabusData: SyllabusData | null = null;
 
 function hungarianSyllabus(): SyllabusData {
-  if (!huSyllabusData) huSyllabusData = require('@/data/grammar/syllabus-hu.json');
+  if (!huSyllabusData) {
+    const data: SyllabusData = require('@/data/grammar/syllabus-hu.json');
+    // German titles for the Hungarian course are optional (the `hu` section of data/games/grammar-de/syllabus.json).
+    const de: OverlaySyllabus = require('@/data/games/grammar-de/syllabus.json');
+    huSyllabusData = de.hu
+      ? { units: withOverlayTitles(data.units, 'de', de.hu.units), topics: withOverlayTitles(data.topics, 'de', de.hu.topics) }
+      : data;
+  }
   return huSyllabusData!;
 }
 
+let deSyllabusData: SyllabusData | null = null;
+
+/** The German course's syllabus: the titles and blurbs already carry `en`, `es` and `hu` (a German speaker never takes this course). */
+function germanSyllabus(): SyllabusData {
+  if (!deSyllabusData) deSyllabusData = require('@/data/grammar/syllabus-de.json') as SyllabusData;
+  return deSyllabusData;
+}
+
 function syllabusOf(lang: string): SyllabusTopic[] {
+  if (lang === 'de') return germanSyllabus().topics;
   if (lang === 'hu') return hungarianSyllabus().topics;
   return lang === 'en' ? EN_SYLLABUS : getGrammarSyllabus();
 }
 
 function unitsOf(lang: string): SyllabusUnit[] {
+  if (lang === 'de') return germanSyllabus().units;
   if (lang === 'hu') return hungarianSyllabus().units;
   return lang === 'en' ? EN_UNITS : getGrammarUnits();
 }
 
 export function syllabusLevels(lang = 'es'): Level[] {
+  if (lang === 'de') return DE_SYLLABUS_LEVELS;
   if (lang === 'hu') return HU_SYLLABUS_LEVELS;
   return lang === 'en' ? EN_SYLLABUS_LEVELS : SYLLABUS_LEVELS;
 }

@@ -1,0 +1,911 @@
+{
+ "es": {
+  "units": {
+   "a1-nombre": "Nomen, Artikel, Adjektive",
+   "a1-presente": "Das Präsens",
+   "a1-ser-estar": "Ser, estar, hay",
+   "a1-pronombres": "Pronomen und Demonstrativpronomen",
+   "a1-frase": "Fragen, Verneinung, Gefallen",
+   "a1-cantidad": "Menge, Zeit, Präpositionen",
+   "a2-pasado": "Die Vergangenheitsformen",
+   "a2-futuro": "Zukunft und Imperativ",
+   "a2-pronombres": "Objektpronomen",
+   "a2-verbos": "Verbpaare, die man verwechselt",
+   "a2-comparar": "Vergleich und Menge",
+   "b1-subjuntivo": "Der Subjuntivo",
+   "b1-condicional": "Konditional und Bedingungssätze",
+   "b1-estructuras": "Relativsätze, unpersönliche Formen, Verbgefüge",
+   "b2-subjuntivo": "Der Subjuntivo für Fortgeschrittene",
+   "b2-oraciones": "Satzverbindungen und das Passiv",
+   "c1-matices": "Nuancen und Sprachregister"
+  },
+  "topics": {
+   "clases-de-palabras": {
+    "title": "Wortarten: was ist was",
+    "blurb": "Nomen, Verb, Adjektiv, Adverb: woran du sie erkennst und warum das wichtig ist."
+   },
+   "sustantivo-numero": {
+    "title": "Nomen: Genus und Plural",
+    "blurb": "-o maskulin, -a feminin, und wie der Plural gebildet wird."
+   },
+   "articulos-genero": {
+    "title": "Artikel: el, la, un, una",
+    "blurb": "Bestimmte und unbestimmte Artikel, im Genus angeglichen."
+   },
+   "adjetivo-concordancia": {
+    "title": "Adjektivangleichung",
+    "blurb": "Das Adjektiv übernimmt Genus und Numerus des Nomens und steht danach."
+   },
+   "presente-regular": {
+    "title": "Präsens: regelmäßige Verben",
+    "blurb": "Die Endungen -ar, -er, -ir in allen sechs Personen."
+   },
+   "presente-irregular": {
+    "title": "Präsens: unregelmäßige Verben",
+    "blurb": "tener, venir, ir, hacer, salir, poner, decir, saber."
+   },
+   "verbos-diptongo": {
+    "title": "Verben mit Stammwechsel: e→ie, o→ue, e→i",
+    "blurb": "querer, poder, pedir: Der Stamm ändert sich, die Endung nicht."
+   },
+   "perifrasis-modales": {
+    "title": "Tener que, poder, querer + Infinitiv",
+    "blurb": "Müssen, können, wollen: zwei Verben hintereinander, das zweite nicht konjugiert."
+   },
+   "tener-expresiones": {
+    "title": "Tener: Hunger, Kälte, Alter und mehr",
+    "blurb": "Tener hambre, sed, frío, sueño, miedo, prisa, razón, X años: wo das Englische to be benutzt."
+   },
+   "ser-estar": {
+    "title": "Ser oder estar?",
+    "blurb": "Eine dauerhafte Eigenschaft oder ein momentaner Zustand."
+   },
+   "hay-estar": {
+    "title": "Hay oder está?",
+    "blurb": "Etwas existiert, oder wo ein bekanntes Ding ist."
+   },
+   "tu-usted": {
+    "title": "Tú, usted, ustedes: mit wem du sprichst",
+    "blurb": "Subjektpronomen, wann du in Mexiko tú oder usted sagst, und warum ustedes die einzige Pluralform von „du“ und „Sie“ ist."
+   },
+   "posesivos": {
+    "title": "Possessivbegleiter: mi, tu, su, nuestro",
+    "blurb": "Es richtet sich nach der besessenen Sache, nicht nach dem Besitzer."
+   },
+   "demostrativos": {
+    "title": "Demonstrativa: este, ese, aquel",
+    "blurb": "Drei Entfernungen: hier, da, dort drüben."
+   },
+   "pronombres-od": {
+    "title": "Direktes Objekt: me, te, lo, la, nos, los, las",
+    "blurb": "Das Pronomen steht VOR dem Verb: Te amo. ¿El libro? Lo tengo."
+   },
+   "pronombres-oi": {
+    "title": "Indirektes Objekt: me, te, le, nos, les",
+    "blurb": "Wem du es gibst oder sagst: le doy el libro, te digo la verdad."
+   },
+   "quien-a-quien": {
+    "title": "Wer wem: te amo, me das",
+    "blurb": "Die Endung sagt, wer handelt, das Pronomen, wem."
+   },
+   "interrogativos": {
+    "title": "Fragewörter",
+    "blurb": "qué, quién, dónde, cuándo, cómo, cuánto, por qué."
+   },
+   "negacion": {
+    "title": "Verneinung: no, nada, nunca, nadie",
+    "blurb": "Das Spanische benutzt eine doppelte Verneinung, und das ist richtig."
+   },
+   "conectores-basicos": {
+    "title": "Und, oder, aber, weil, also",
+    "blurb": "Zwei Gedanken verbinden: y/e, o/u, pero, porque, por eso, entonces."
+   },
+   "gustar": {
+    "title": "Die Struktur von gustar",
+    "blurb": "Nicht „ich mag es“, sondern „es gefällt mir“."
+   },
+   "ir-a-infinitivo": {
+    "title": "Nahe Zukunft: ir a + Infinitiv",
+    "blurb": "Voy a comer: die Zukunft, die man wirklich spricht."
+   },
+   "muy-mucho": {
+    "title": "Muy oder mucho?",
+    "blurb": "Muy vor einem Adjektiv, mucho bei einem Nomen oder nach einem Verb."
+   },
+   "numeros-hora-fecha": {
+    "title": "Zahlen, Uhrzeit, Datum",
+    "blurb": "Son las tres, el 5 de mayo, a las ocho y media."
+   },
+   "preposiciones-basicas": {
+    "title": "Grundpräpositionen: a, de, en, con, por",
+    "blurb": "Mit den Verschmelzungen a + el = al und de + el = del."
+   },
+   "lugar-direcciones": {
+    "title": "Wo ist es: encima, detrás, enfrente, rechts, links",
+    "blurb": "Encima de, debajo de, detrás de, enfrente de, a la izquierda, a la derecha."
+   },
+   "indefinido-regular": {
+    "title": "Indefinido: regelmäßige Verben",
+    "blurb": "Hablé, comí, viví: die abgeschlossene Vergangenheit."
+   },
+   "indefinido-irregular": {
+    "title": "Indefinido: unregelmäßige Verben",
+    "blurb": "fui, tuve, hice, dije, estuve, pude, quise."
+   },
+   "indefinido-cambios-raiz": {
+    "title": "Indefinido: Stammwechsel (pidió, durmió, leyó, oyó)",
+    "blurb": "pidió, durmió, leyó, oyó: der Vokalwechsel in der dritten Person."
+   },
+   "indefinido-10-verbos": {
+    "title": "Indefinido, die 10 häufigsten Verben",
+    "blurb": "Umschreibübung vom Präsens ins Indefinido mit den 10 häufigsten Verben."
+   },
+   "imperfecto": {
+    "title": "Das Imperfekt",
+    "blurb": "Hablaba, comía: Gewohnheit, Hintergrund, Beschreibung."
+   },
+   "indefinido-imperfecto": {
+    "title": "Indefinido oder Imperfekt?",
+    "blurb": "Die Wahl zwischen den beiden Vergangenheiten, an Kontrastpaaren."
+   },
+   "haber-impersonal-tiempos": {
+    "title": "Es gab, es wird geben: había, hubo, habrá, habría",
+    "blurb": "Hay in anderen Zeiten: es gab, es wird geben, es gäbe."
+   },
+   "perfecto": {
+    "title": "Das Perfekt",
+    "blurb": "He comido: heute, diese Woche, noch nicht."
+   },
+   "perfecto-vs-indefinido": {
+    "title": "Perfekt oder Indefinido?",
+    "blurb": "Ayer comí, esta semana he comido: abgeschlossene Zeit oder Zeit, die noch läuft."
+   },
+   "estar-gerundio": {
+    "title": "Gerade jetzt: estar + Gerundium",
+    "blurb": "Estoy comiendo: was gerade jetzt geschieht."
+   },
+   "hace-desde-hace": {
+    "title": "Wie lange: hace, desde hace, llevar",
+    "blurb": "Hace dos años que vivo aquí, vivo aquí desde hace dos años: was früher begann und noch andauert."
+   },
+   "futuro-simple": {
+    "title": "Das einfache Futur",
+    "blurb": "Hablaré, comeré: Versprechen, Vorhersage, Vermutung."
+   },
+   "marcadores-temporales": {
+    "title": "Zeitangaben: welches Wort, welche Zeit",
+    "blurb": "Ayer, hace dos años, antes, esta semana, mañana: Das Wort verrät dir die Zeitform."
+   },
+   "imperativo-afirmativo": {
+    "title": "Imperativ: bejaht",
+    "blurb": "Habla, come, ven, haz: bitten und anweisen."
+   },
+   "imperativo-negativo": {
+    "title": "Imperativ: verneint",
+    "blurb": "No hables, no comas: Die Verneinung benutzt den Subjuntivo."
+   },
+   "combinacion-pronombres": {
+    "title": "Zwei Pronomen zusammen: se lo doy",
+    "blurb": "Die Reihenfolge ist fest, und le wird zu se."
+   },
+   "pronombres-preposicion": {
+    "title": "Pronomen nach Präposition: para mí, contigo",
+    "blurb": "Para mí, contigo, entre tú y yo: Nach einer Präposition hat das Pronomen eine eigene Form."
+   },
+   "verbos-reflexivos": {
+    "title": "Reflexive Verben",
+    "blurb": "Me levanto, se llama: Das Pronomen verweist auf den Handelnden zurück."
+   },
+   "verbos-como-gustar": {
+    "title": "Verben wie gustar: encantar, doler, faltar",
+    "blurb": "Me encanta, me duele, me falta: Die Sache ist das Subjekt, die Person das Pronomen."
+   },
+   "imperativo-pronombres": {
+    "title": "Imperativ mit Pronomen: dímelo, no me lo digas",
+    "blurb": "Dímelo, siéntate: Im Bejahten hängt sich das Pronomen an, im Verneinten steht es davor."
+   },
+   "comparativos-superlativos": {
+    "title": "Komparativ und Superlativ",
+    "blurb": "Más que, menos que, tan como, el más, -ísimo."
+   },
+   "indefinidos": {
+    "title": "Indefinitpronomen: algo, alguien, algún",
+    "blurb": "Und ihre verneinten Gegenstücke: nada, nadie, ningún."
+   },
+   "por-para": {
+    "title": "Por oder para?",
+    "blurb": "Grund oder Zweck, die im Deutschen oft beide mit „für“ oder „wegen“ vermischt werden."
+   },
+   "diminutivos": {
+    "title": "Verkleinerungsformen: -ito, -cito, -ecito",
+    "blurb": "Casita, cafecito, ahorita: klein, herzlich, höflich."
+   },
+   "numerales-ordinales": {
+    "title": "Ordnungszahlen: primero, segundo, tercer",
+    "blurb": "El primer piso, la tercera vez, el primero de mayo."
+   },
+   "saber-conocer": {
+    "title": "Saber oder conocer?",
+    "blurb": "Eine Tatsache wissen oder jemanden kennen."
+   },
+   "pedir-preguntar": {
+    "title": "Pedir oder preguntar?",
+    "blurb": "Um etwas BITTEN oder eine Frage stellen."
+   },
+   "llevar-traer-ir-venir": {
+    "title": "Llevar, traer, ir, venir",
+    "blurb": "Der Standpunkt des Sprechers entscheidet, welches Verb."
+   },
+   "subjuntivo-presente-forma": {
+    "title": "Subjuntivo Präsens: die Formen",
+    "blurb": "Hable, coma, viva: die vertauschten Endungen."
+   },
+   "subjuntivo-disparadores": {
+    "title": "Was den Subjuntivo auslöst",
+    "blurb": "Wunsch, Gefühl, Zweifel, verneinte Meinung."
+   },
+   "ojala-quizas": {
+    "title": "Ojalá, quizás, tal vez",
+    "blurb": "Hoffnung und Unsicherheit ausdrücken."
+   },
+   "temporales-subjuntivo": {
+    "title": "Cuando + Subjuntivo",
+    "blurb": "Zeitsätze in der Zukunft: cuando llegues, nicht llegas."
+   },
+   "subjuntivo-relativo": {
+    "title": "Subjuntivo im Relativsatz",
+    "blurb": "Busco un departamento que tenga balcón: unbekannter Bezugspunkt, Subjuntivo."
+   },
+   "condicional-simple": {
+    "title": "Das Konditional",
+    "blurb": "Hablaría: Höflichkeit, Rat, Annahme."
+   },
+   "condicionales-tipo1": {
+    "title": "Si + Präsens: reale Bedingung",
+    "blurb": "Si tengo tiempo, voy: was wirklich geschehen kann."
+   },
+   "pluscuamperfecto": {
+    "title": "Das Plusquamperfekt",
+    "blurb": "Había comido: was vor einer anderen Vergangenheit geschah."
+   },
+   "relativos": {
+    "title": "Relativpronomen: que, quien, donde",
+    "blurb": "Zwei Sätze mit einem Wort verbinden."
+   },
+   "se-impersonal-pasiva": {
+    "title": "Se: unpersönlich und Passiv",
+    "blurb": "Se habla español, se venden casas."
+   },
+   "se-accidental": {
+    "title": "Se me olvidó: das unbeabsichtigte se",
+    "blurb": "Se me cayó, se nos acabó: Die Sache „hat es getan“, du hast es nur erlebt."
+   },
+   "verbos-pronominales": {
+    "title": "Pronominale Verben: darse cuenta, olvidarse, acordarse, quejarse, parecerse",
+    "blurb": "Me doy cuenta, se queja: Das Pronomen gehört zum Verb, niemand tut es sich selbst an."
+   },
+   "perifrasis": {
+    "title": "Verbalperiphrasen",
+    "blurb": "Empezar a, acabar de, volver a, seguir + Gerundium."
+   },
+   "por-para-avanzado": {
+    "title": "Por und para: fortgeschritten",
+    "blurb": "Feste Wendungen und die wirklich schwierigen Fälle."
+   },
+   "verbos-preposicion": {
+    "title": "Verben mit fester Präposition",
+    "blurb": "Pensar en, soñar con, depender de: Das Verb bestimmt die Präposition."
+   },
+   "estar-participio": {
+    "title": "Estar + Partizip: der Zustand als Ergebnis",
+    "blurb": "La puerta está abierta: der Zustand als Ergebnis, mit einem Partizip, das sich dem Subjekt angleicht."
+   },
+   "subjuntivo-imperfecto": {
+    "title": "Subjuntivo Imperfekt",
+    "blurb": "Hablara / hablase: Wünsche und Bedingungen in der Vergangenheit."
+   },
+   "subjuntivo-perfecto": {
+    "title": "Zusammengesetzter Subjuntivo",
+    "blurb": "Haya hablado, hubiera hablado."
+   },
+   "condicionales-tipo2-3": {
+    "title": "Irreale Bedingungen: si tuviera, si hubiera",
+    "blurb": "Was nicht stimmt, und was nicht mehr sein kann."
+   },
+   "estilo-indirecto": {
+    "title": "Indirekte Rede",
+    "blurb": "Dijo que venía: die Zeitverschiebung."
+   },
+   "pasiva-ser-participio": {
+    "title": "Passiv: ser + Partizip",
+    "blurb": "Und warum es im Spanischen seltener ist als im Deutschen und im Englischen."
+   },
+   "concesivas": {
+    "title": "Konzessivsätze: aunque, a pesar de",
+    "blurb": "Aunque mit Indikativ oder Subjuntivo, mit unterschiedlicher Bedeutung."
+   },
+   "finales-causales": {
+    "title": "Zweck und Grund: para que, porque, ya que",
+    "blurb": "Para que + Subjuntivo, porque + Indikativ."
+   },
+   "oraciones-consecutivas": {
+    "title": "Konsekutivsätze: tan ... que, así que, por eso",
+    "blurb": "Tan cansado que, tanto trabajo que, así que: was daraus wurde."
+   },
+   "lo-neutro": {
+    "title": "Das neutrale lo",
+    "blurb": "Lo importante, lo que dijiste, lo bien que canta."
+   },
+   "gerundio-participio-construcciones": {
+    "title": "Konstruktionen mit Gerundium und Partizip",
+    "blurb": "Siendo, hecho esto, llevar + Gerundium."
+   },
+   "verbos-de-cambio": {
+    "title": "Verben der Veränderung",
+    "blurb": "Ponerse, volverse, hacerse, quedarse, llegar a ser: wie etwas zu etwas anderem wird."
+   },
+   "futuro-condicional-perfecto": {
+    "title": "Futur II und Konditional II",
+    "blurb": "Habré terminado, habría dicho."
+   },
+   "probabilidad-con-tiempos": {
+    "title": "Wahrscheinlichkeit durch Zeiten",
+    "blurb": "Serán las tres: die Zukunft als Vermutung."
+   },
+   "relativos-complejos": {
+    "title": "Komplexe Relativsätze",
+    "blurb": "El cual, cuyo, en el que: das schriftliche Register."
+   },
+   "leismo-laismo": {
+    "title": "Leísmo und laísmo",
+    "blurb": "Was akzeptiert ist und was als Fehler gilt."
+   },
+   "marcadores-discursivos": {
+    "title": "Diskursmarker",
+    "blurb": "Sin embargo, por lo tanto, en cuanto a."
+   }
+  }
+ },
+ "en": {
+  "units": {
+   "A1.1": "Erste Schritte",
+   "A1.2": "Menschen und Dinge",
+   "A1.3": "Körper und Kleidung",
+   "A1.4": "Zuhause und Welt",
+   "A1.5": "Fähigkeiten und Arbeit",
+   "A1.6": "Fragen und Routinen",
+   "A2.1": "Die Vergangenheit",
+   "A2.2": "Zukunft und Pläne",
+   "A2.3": "Erfahrung",
+   "A2.4": "Vergleiche",
+   "A2.5": "Pflicht und Arbeit",
+   "B1.5": "Zeitformen im Detail",
+   "B1.6": "Zukunft und Bedingungen",
+   "B1.7": "Modalverben",
+   "B1.8": "Strukturen",
+   "B2.1": "Zeit und Fähigkeit",
+   "B2.2": "Bedingungen und Wünsche",
+   "B2.3": "Passiv und Berichten",
+   "B2.4": "Strukturen",
+   "C1.1": "Betonung und Wortstellung",
+   "C1.2": "Verben und Strukturen",
+   "C1.3": "Register und Stil",
+   "C1.4": "Wortgebrauch"
+  },
+  "topics": {
+   "basic_verbs": {
+    "title": "Grundverben"
+   },
+   "to_be": {
+    "title": "To be (am/is/are)"
+   },
+   "articles": {
+    "title": "Artikel (a/an/the)"
+   },
+   "present_simple": {
+    "title": "Present Simple"
+   },
+   "plurals": {
+    "title": "Plural"
+   },
+   "this_that": {
+    "title": "This und That"
+   },
+   "possessives": {
+    "title": "Possessivbegleiter (my/your)"
+   },
+   "there_is_are": {
+    "title": "There is / There are (es gibt)"
+   },
+   "prepositions": {
+    "title": "Präpositionen (in/on/under)"
+   },
+   "have_got": {
+    "title": "Have got"
+   },
+   "can_ability": {
+    "title": "Can (Fähigkeit)"
+   },
+   "question_words": {
+    "title": "Fragewörter"
+   },
+   "present_continuous": {
+    "title": "Present Continuous"
+   },
+   "past_simple_regular": {
+    "title": "Past Simple: regelmäßig"
+   },
+   "past_simple_irregular": {
+    "title": "Past Simple: unregelmäßig"
+   },
+   "going_to": {
+    "title": "Zukunft: Going to"
+   },
+   "will": {
+    "title": "Zukunft: Will"
+   },
+   "present_perfect": {
+    "title": "Present Perfect"
+   },
+   "comparatives": {
+    "title": "Komparativ"
+   },
+   "superlatives": {
+    "title": "Superlativ"
+   },
+   "must_have_to": {
+    "title": "Must und Have to"
+   },
+   "present_perfect_vs_past": {
+    "title": "Present Perfect oder Past Simple"
+   },
+   "present_perfect_continuous": {
+    "title": "Present Perfect Continuous"
+   },
+   "past_continuous": {
+    "title": "Past Continuous"
+   },
+   "past_perfect": {
+    "title": "Past Perfect"
+   },
+   "used_to": {
+    "title": "Vergangene Gewohnheiten: Used to"
+   },
+   "will_vs_going_to": {
+    "title": "Will oder Going to"
+   },
+   "first_conditional": {
+    "title": "First Conditional"
+   },
+   "second_conditional": {
+    "title": "Second Conditional"
+   },
+   "modals_obligation_advice": {
+    "title": "Pflicht, Rat und Verbot"
+   },
+   "modals_deduction": {
+    "title": "Schlussfolgerung: Must, Might, Can't"
+   },
+   "passive_voice": {
+    "title": "Das Passiv"
+   },
+   "defining_relative_clauses": {
+    "title": "Bestimmende Relativsätze"
+   },
+   "reported_speech": {
+    "title": "Indirekte Rede"
+   },
+   "gerund_vs_infinitive": {
+    "title": "Gerund oder Infinitiv"
+   },
+   "question_tags": {
+    "title": "Question Tags"
+   },
+   "past_perfect_continuous": {
+    "title": "Past Perfect Continuous"
+   },
+   "future_continuous_perfect": {
+    "title": "Future Continuous und Future Perfect"
+   },
+   "ability_past": {
+    "title": "Fähigkeit in der Vergangenheit"
+   },
+   "third_conditional": {
+    "title": "Third Conditional"
+   },
+   "wish_if_only": {
+    "title": "Wünsche: Wish und If only"
+   },
+   "conditional_connectors": {
+    "title": "Bedingungs-Konnektoren"
+   },
+   "passive_advanced": {
+    "title": "Das Passiv für Fortgeschrittene"
+   },
+   "causative_have": {
+    "title": "Have / Get something done"
+   },
+   "reporting_verbs": {
+    "title": "Berichtsverben"
+   },
+   "non_defining_relative": {
+    "title": "Nicht bestimmende Relativsätze"
+   },
+   "quantifiers": {
+    "title": "Mengenwörter"
+   },
+   "comparison_advanced": {
+    "title": "Vergleiche für Fortgeschrittene"
+   },
+   "linking_contrast": {
+    "title": "Gegensatz: Although, Despite, However"
+   },
+   "purpose_result": {
+    "title": "Zweck und Folge"
+   },
+   "phrasal_verbs": {
+    "title": "Phrasal Verbs"
+   },
+   "negative_inversion": {
+    "title": "Inversion nach Verneinung"
+   },
+   "cleft_sentences": {
+    "title": "Spaltsätze"
+   },
+   "conditional_inversion": {
+    "title": "Inversion in Bedingungssätzen"
+   },
+   "subjunctive_hypothetical": {
+    "title": "Konjunktiv und hypothetische Formen"
+   },
+   "verb_patterns_advanced": {
+    "title": "Verbmuster für Fortgeschrittene"
+   },
+   "participle_clauses": {
+    "title": "Partizipialsätze"
+   },
+   "reduced_relative": {
+    "title": "Verkürzte Relativsätze"
+   },
+   "nominalization": {
+    "title": "Nominalisierung"
+   },
+   "hedging_language": {
+    "title": "Abschwächende Sprache (Hedging)"
+   },
+   "discourse_markers": {
+    "title": "Diskursmarker"
+   },
+   "ellipsis_substitution": {
+    "title": "Auslassung und Ersetzung"
+   },
+   "phrasal_verbs_c1": {
+    "title": "Phrasal Verbs: C1"
+   }
+  }
+ },
+ "hu": {
+  "units": {
+   "hangok": "Laute und Vokalharmonie",
+   "alapok": "Die Grundlagen",
+   "jelen": "Das Präsens",
+   "helyek": "Orte",
+   "birtoklas": "Besitz",
+   "kerdes": "Fragen, Verneinung, Zahlen",
+   "mindennap": "Alltagssätze",
+   "mult-jovo": "Vergangenheit, Zukunft, Präfixe",
+   "modok": "Befehle, Höflichkeit, Möglichkeit",
+   "osszetett": "Längere Sätze",
+   "igealakok": "Verbformen",
+   "szerkezetek": "Satzmuster",
+   "nevszok": "Nomen und Pronomen",
+   "feltetel": "Bedingungen und indirekte Rede",
+   "mellekmondatok": "Nebensätze",
+   "kifejezes": "Ausdruck und Stil",
+   "szovegepites": "Komplexe Sätze bauen",
+   "szokincs": "Wortbildung und feste Wendungen"
+  },
+  "topics": {
+   "kiejtes-abc": {
+    "title": "Laute und Buchstaben: das ungarische ABC",
+    "blurb": "Kurze und lange Vokale, Buchstabengruppen wie cs, sz, zs, gy, ny und die Betonung der ersten Silbe."
+   },
+   "hangrend": {
+    "title": "Vokalharmonie: -ban oder -ben?",
+    "blurb": "Warum Endungen zwei oder drei Formen haben: -ban/-ben, -hoz/-hez/-höz."
+   },
+   "lenni-van": {
+    "title": "Sein: vagyok, vagy, van",
+    "blurb": "Das Verb lenni: vagyok, vagy, van, und wann die 3. Person wegfällt."
+   },
+   "nevelok": {
+    "title": "Artikel: a, az, egy",
+    "blurb": "a / az vor einem Vokal, egy und wann kein Artikel steht; es gibt kein grammatisches Geschlecht."
+   },
+   "szemelyes-nevmasok": {
+    "title": "Personalpronomen: én, te, ő",
+    "blurb": "én, te, ő, mi, ti, ők, die höfliche Form Ön / Önök und das Weglassen des Pronomens; ő heißt er und sie."
+   },
+   "tobbes-szam": {
+    "title": "Plural: -k (házak, almák)",
+    "blurb": "Der Plural -k mit seinem Bindevokal (-ok, -ek, -ök, -ak) und der Singular nach Zahlwörtern."
+   },
+   "jelen-alanyi": {
+    "title": "Präsens: tanulok, tanulsz, tanul",
+    "blurb": "Präsensendungen regelmäßiger Verben: -ok/-ek/-ök, -sz, -unk/-ünk, -tok/-tek/-tök, -nak/-nek."
+   },
+   "ik-igek": {
+    "title": "ik-Verben: lakik, dolgozik, eszik, iszik",
+    "blurb": "ik-Verben wie lakik, dolgozik, eszik, iszik und ihre 1. Person -om/-em/-öm in gepflegter Sprache."
+   },
+   "targyrag": {
+    "title": "Die Objektendung -t",
+    "blurb": "Das Akkusativ-t mit Bindevokalen (almát, kenyeret) sowie engem, téged, őt."
+   },
+   "jelen-targyas": {
+    "title": "Bestimmte Konjugation: látom, látod, látja",
+    "blurb": "Die bestimmte Konjugation bei bestimmtem Objekt: látok egy kutyát, aber látom a kutyát."
+   },
+   "lak-lek": {
+    "title": "Ich → du: -lak / -lek (szeretlek)",
+    "blurb": "-lak/-lek, wenn ich dich oder euch zum Objekt habe: szeretlek, látlak, várlak titeket."
+   },
+   "belso-helyhatarozok": {
+    "title": "Im Inneren eines Ortes: -ban/-ben, -ba/-be, -ból/-ből",
+    "blurb": "Die Fälle des Inneren: -ban/-ben (wo), -ba/-be (wohin), -ból/-ből (woher)."
+   },
+   "felszini-helyhatarozok": {
+    "title": "Auf und an Orten: -on/-en/-ön, -ra/-re, -ról/-ről",
+    "blurb": "Die Fälle der Oberfläche: -on/-en/-ön (wo), -ra/-re (wohin), -ról/-ről (woher) und Städtenamen."
+   },
+   "kozelsegi-helyhatarozok": {
+    "title": "In der Nähe von jemandem: -nál, -hoz, -tól",
+    "blurb": "Die Fälle der Nähe: -nál/-nél (bei jemandem), -hoz/-hez/-höz (zu), -tól/-től (von)."
+   },
+   "birtokos-szemelyjelek": {
+    "title": "Mein, dein, sein: házam, házad, háza",
+    "blurb": "Besitzendungen: házam, házad, háza, házunk, házatok, házuk."
+   },
+   "nekem-van": {
+    "title": "Haben: nekem van",
+    "blurb": "„Haben“ als nekem van / neked nincs, mit nekem, neked, neki, nekünk, nektek, nekik."
+   },
+   "birtokos-szerkezet": {
+    "title": "Besitz: Anna háza",
+    "blurb": "Besitzer und Besitz: Anna háza, a fiú anyja, a tanárnak a könyve."
+   },
+   "kerdoszavak": {
+    "title": "Fragewörter: ki, mi, hol, mikor",
+    "blurb": "ki, mi, hol, hová, honnan, mikor, hogyan, miért und wo das Fragewort steht."
+   },
+   "tagadas": {
+    "title": "Verneinen: nem, nincs, senki, semmi",
+    "blurb": "nem, nincs/nincsenek, sem / se... se, senki, semmi, sehol."
+   },
+   "szamok-ido": {
+    "title": "Zahlen, Uhrzeit, Tage und Daten",
+    "blurb": "Zahlen, Hány óra van?, -kor, Tage und Monate sowie Daten wie május elsején."
+   },
+   "fonevi-igenev": {
+    "title": "Infinitiv: akarok, tudok, kell, fogok",
+    "blurb": "Der Infinitiv auf -ni mit akar, tud, szeret, kell, lehet, szabad, fog."
+   },
+   "val-vel": {
+    "title": "Mit, per: -val / -vel",
+    "blurb": "-val/-vel (mit, mittels) und wie es sich angleicht: busszal, Péterrel, velem."
+   },
+   "reszes-eset": {
+    "title": "Zu / für jemanden: -nak / -nek",
+    "blurb": "-nak/-nek für den, der etwas bekommt: ad, mond, küld, segít, ír; neki, nekem."
+   },
+   "melleknev": {
+    "title": "Adjektive: nagy, kicsi, piros",
+    "blurb": "Adjektive vor dem Nomen (a nagy házak) und als Prädikat (A házak nagyok), milyen?, Farben."
+   },
+   "mult-ido": {
+    "title": "Die Vergangenheit: láttam, voltam, ment",
+    "blurb": "Die Vergangenheit auf -t / -tt (láttam, láttam a filmet) sowie voltam, ment, jött, evett, ivott."
+   },
+   "jovo-ido": {
+    "title": "Die Zukunft: Holnap megyek, fogok, leszek",
+    "blurb": "Die Zukunft: Präsens plus Zeitangabe, fog + Infinitiv und lesz."
+   },
+   "igekotok": {
+    "title": "Verbpräfixe: be-, ki-, meg-, el-...",
+    "blurb": "Die Präfixe meg-, el-, ki-, be-, fel-, le-, át-, vissza-, haza-: Richtung und Abschluss."
+   },
+   "igekoto-szorend": {
+    "title": "Stellung des Verbpräfixes: Nem megyek el",
+    "blurb": "Wo das Präfix steht: Nem megyek el. Mikor mész el? El akarok menni."
+   },
+   "felszolito-mod": {
+    "title": "Befehle und Bitten: menj, gyere, egyél",
+    "blurb": "Befehle und Bitten mit -j: menj, gyere, egyél, nézd meg; höflich Jöjjön be!"
+   },
+   "felteteles-mod": {
+    "title": "Würde und möchte: szeretnék, kérnék, lenne",
+    "blurb": "Der Konditional auf -na/-ne, -nék: szeretnék, kérnék, lenne; Ha lenne időm, elmennék."
+   },
+   "hat-het": {
+    "title": "Können und dürfen: -hat / -het",
+    "blurb": "-hat/-het für Möglichkeit und Erlaubnis: Bejöhetek? Itt lehet parkolni?"
+   },
+   "fokozas": {
+    "title": "Vergleichen: -bb, leg-, mint",
+    "blurb": "Die Steigerung: -bb, leg-...-bb, mint; jó → jobb, sok → több, szép → szebb."
+   },
+   "nevutok": {
+    "title": "Postpositionen: alatt, mellett, előtt",
+    "blurb": "Die Postpositionen alatt, fölött, előtt, mögött, mellett, között, után, nélkül, felé, auch mit Pronomen."
+   },
+   "mutato-nevmasok": {
+    "title": "Dieser und jener: ez, az, itt, ide",
+    "blurb": "ez / az mit Kasusendungen (ebben a házban, azt a könyvet), ilyen / olyan, itt / ott, ide / oda."
+   },
+   "kotoszavak": {
+    "title": "Bindewörter: és, de, vagy, mert, hogy, ha",
+    "blurb": "és, de, vagy, mert, hogy, ha, amikor, ezért, pedig und das Komma vor hogy, mert, ha."
+   },
+   "vonatkozo-nevmasok": {
+    "title": "Relativwörter: aki, ami, ahol",
+    "blurb": "aki, ami, amely, ahol, amikor, ahova, auch mit Endungen: akinek, amit, amiben."
+   },
+   "szorend-fokusz": {
+    "title": "Wortstellung und Fokus",
+    "blurb": "Das betonte Element steht direkt vor dem Verb: Péter jött, nem Anna."
+   },
+   "ul-ul-kent": {
+    "title": "Sprachen und „als“: -ul/-ül, -ként",
+    "blurb": "-ul/-ül (magyarul, jól, rosszul) und -ként (tanárként): Beszélsz magyarul?"
+   },
+   "ido-hatarozok": {
+    "title": "Zeit: -kor, -ig, óta, múlva, ezelőtt",
+    "blurb": "Die Zeitangaben -ig, óta, múlva, ezelőtt, -kor; mikor, meddig, mióta."
+   },
+   "mennyiseg": {
+    "title": "Menge: sok, kevés, néhány, minden, -szor",
+    "blurb": "sok, kevés, néhány, minden mit einem Nomen im Singular; háromszor, hányszor?"
+   },
+   "szemelyragos-inf": {
+    "title": "Ich muss gehen: nekem mennem kell",
+    "blurb": "Nekem mennem kell: Der Infinitiv bekommt nach kell, lehet, szabad die Personalendung."
+   },
+   "rendhagyo-igek": {
+    "title": "Unregelmäßige Verben: teszek, vettem, alszom, megyek",
+    "blurb": "tesz, vesz, visz, hisz, lesz, alszik, megy, jön in allen Personen und ihre Imperative: tegyél, vegyél, vigyél."
+   },
+   "targyas-ragozas-2": {
+    "title": "Bestimmte Konjugation, knifflige Stämme: olvassa, nézzük, veszi, issza",
+    "blurb": "Knifflige bestimmte Stämme: olvassa, hozza, nézi, főzi, kéri, javítja, issza."
+   },
+   "hat-het-idok": {
+    "title": "Ich durfte, ich konnte: -hat/-het in der Vergangenheit und im Konditional",
+    "blurb": "-hat/-het in der Vergangenheit und im Konditional: mehettem, elmehetnék; tud vs -hat/-het."
+   },
+   "muvelteto": {
+    "title": "Etwas machen lassen: levágatom, megjavíttatom, íratott",
+    "blurb": "Etwas machen lassen: levágatom a hajam, megjavíttatom a telefont (-at/-et, -tat/-tet)."
+   },
+   "visszahato-igek": {
+    "title": "Mich selbst und einander: magam, egymás, mosakodik",
+    "blurb": "Reflexiv und wechselseitig: mosakodik, megmosom magam, egymás, saját."
+   },
+   "befejezett-folyamatos": {
+    "title": "Abgeschlossen oder noch im Gang: olvastam vs elolvastam",
+    "blurb": "Der Aspekt mit Präfixen: olvastam vs elolvastam, megettem, szoktam + Infinitiv, éppen."
+   },
+   "igekoto-elvalas": {
+    "title": "Stellung des Präfixes: Hívd fel! Fel kell hívnom",
+    "blurb": "Wo das Präfix steht: Hívd fel! Ne hívd fel! Fel kell hívnom. Szeretném felhívni."
+   },
+   "nekem-tetszik": {
+    "title": "Es gefällt mir: Nekem tetszik, Hiányzol, Fáj a fejem",
+    "blurb": "Verben, bei denen die erlebende Person im Dativ steht: tetszik, hiányzik, fáj, kell, jól esik, eszembe jut."
+   },
+   "vonzatok": {
+    "title": "Das Verb entscheidet: gondolok rá, bízom benne",
+    "blurb": "Der Kasus, den ein Verb verlangt: gondol valamire, vár valakire, fél valamitől, bízik valakiben."
+   },
+   "ert-va-ve": {
+    "title": "Für, zu, bis: pénzért, orvossá, a sarokig",
+    "blurb": "-ért (für), -vá/-vé nach válik und tesz sowie lesz: pénzért, boldoggá tesz, orvos lesz."
+   },
+   "allapot-van": {
+    "title": "Die Tür ist abgeschlossen: be van zárva",
+    "blurb": "Der Zustand mit van + -va/-ve: nyitva van, be van zárva, el van intézve."
+   },
+   "szemelyragos-esetek": {
+    "title": "Über mich, zu dir, von ihr: rólam, hozzád, tőle",
+    "blurb": "Kasusendungen mit Person: bennem, rólam, hozzám, tőle, érte."
+   },
+   "birtok-tobbes": {
+    "title": "Meine Bücher, deine Freunde: könyveim, barátaid",
+    "blurb": "Mehrere besessene Dinge: házaim, házai, házaink; a fiú könyvei vs a fiúk könyve."
+   },
+   "onallo-birtok": {
+    "title": "Meins, deins, Péters: az enyém, a tiéd, Péteré",
+    "blurb": "enyém, tiéd, övé, miénk; Péteré; Kié ez? und a saját házam."
+   },
+   "hatarozatlan-nevmasok": {
+    "title": "Jemand, jeder Beliebige, niemand: valaki, bárki, senki",
+    "blurb": "valaki, valami, bárki, mindenki, senki, soha: Nem látok senkit."
+   },
+   "torzsvaltozas": {
+    "title": "Wechselnde Stämme: levél → levelet, ló → lovat",
+    "blurb": "Wechselnde Stämme: levél → levelet, kéz → kezet, tükör → tükröt, tó → tavat, ló → lovat."
+   },
+   "felteteles-mult": {
+    "title": "Wenn ich es gewusst hätte: tudtam volna, elmentem volna",
+    "blurb": "Der Konditional der Vergangenheit mit volna: Ha tudtam volna, elmentem volna. Bárcsak ott lettem volna!"
+   },
+   "hogy-felszolito": {
+    "title": "Ich will, dass du kommst: azt akarom, hogy gyere",
+    "blurb": "Die -j-Form nach hogy: Azt akarom, hogy gyere. Kérem, hogy segítsen."
+   },
+   "fuggo-beszed": {
+    "title": "Sie hat gesagt, dass sie zu Hause ist: azt mondta, hogy otthon van",
+    "blurb": "Die indirekte Rede: Azt mondta, hogy otthon van. Megkérdezte, hogy jövök-e."
+   },
+   "oksag-cel": {
+    "title": "Weil, deshalb, damit: mert, ezért, azért... hogy",
+    "blurb": "Grund, Folge, Zweck: mert, mivel, ezért, miatt, azért..., hogy, nehogy."
+   },
+   "engedmeny": {
+    "title": "Obwohl es regnete, gingen wir: bár, mégis, annak ellenére",
+    "blurb": "Einräumung und Gegensatz: bár, habár, mégis, viszont, annak ellenére, hogy."
+   },
+   "ido-mellekmondat": {
+    "title": "Wenn, bevor, nachdem, während: amikor, mielőtt, miután, amíg",
+    "blurb": "Zeitsätze: amikor, mielőtt, miután, amíg, mialatt, mióta, mihelyt."
+   },
+   "azt-amit": {
+    "title": "Worum ich gebeten habe: azt, amit kértem",
+    "blurb": "Paare mit einem Relativwort: azt, amit; ott, ahol; olyan, amilyen; annyi, amennyi."
+   },
+   "fokusz-reszecskek": {
+    "title": "Nur Péter kam: csak, is, sem",
+    "blurb": "Fokuswörter: csak, is, nemcsak... hanem... is, még, már, éppen; Péter az, aki elment."
+   },
+   "melleknevi-igenev": {
+    "title": "Dolgozó ember, megírt levél: Partizipien als Adjektive",
+    "blurb": "Adjektivische Partizipien: dolgozó ember, megírt levél, megoldandó feladat, olvasható."
+   },
+   "hatarozoi-igenev": {
+    "title": "Nevetve mondta, hazaérve felhívlak: Adverbialpartizipien",
+    "blurb": "Das Adverbialpartizip auf -va/-ve: nevetve mondta, hazaérve felhívlak; -ván/-vén."
+   },
+   "kepzok": {
+    "title": "Neue Wörter aus alten: olvas, olvasás, olvasó",
+    "blurb": "Wortbildende Suffixe: -ás/-és, -ság/-ség, -talan/-telen, -s, -i, -beli, -nyi."
+   },
+   "magazas": {
+    "title": "Höflich und förmlich: Ön, tetszik, Tudna segíteni?",
+    "blurb": "Der förmliche Stil: Ön, tetszik + Infinitiv, Parancsoljon, Tudna segíteni?"
+   },
+   "igenevi-szerkezetek": {
+    "title": "Partizipialkonstruktionen: a könyvet olvasó fiú",
+    "blurb": "Partizipialkonstruktionen statt Relativsätzen: a könyvet olvasó fiú, a tegnap megírt levél."
+   },
+   "szenvedo-szerkezetek": {
+    "title": "Das Auto wurde repariert: megjavították az autót",
+    "blurb": "Passivische Bedeutung ohne Passiv: Megjavították az autót, becsukódott, Itt nem lehet dohányozni."
+   },
+   "szovegkotok": {
+    "title": "Gedanken verbinden: ugyanakkor, tehát, vagyis",
+    "blurb": "Konnektoren im Text: ugyanakkor, ráadásul, ezzel szemben, vagyis, egyrészt..., másrészt..."
+   },
+   "szoalkotas-ige": {
+    "title": "Verben bilden: gyorsít, gyorsul, olvasgat, vacsorázik",
+    "blurb": "Verbbildung: gyorsít vs gyorsul, olvasgat, nézeget, vacsorázik, telefonál."
+   },
+   "szokapcsolatok": {
+    "title": "Feste Wendungen: részt vesz, szükségem van",
+    "blurb": "Kollokationen: részt vesz, figyelembe vesz, szükségem van rá, kedvem van; Sprichwörter."
+   },
+   "hivatalos-stilus": {
+    "title": "Amtliches Schreiben: Tisztelt Hölgyem/Uram!",
+    "blurb": "Amtliches Schreiben: Tisztelt Hölgyem/Uram!, Ezúton szeretném jelezni, hogy..., Üdvözlettel."
+   }
+  }
+ }
+}

@@ -5,13 +5,13 @@
 // A round is the 8 words of lib/practice/gameRound.ts. Per word: a right letter jumps into its place, a wrong one is a
 // mistake (counter +1, the screen shakes it) and changes nothing else. Finished with 0 mistakes = one half (credited by the
 // screen); with mistakes = no half; Skip = the solution is shown, no half. A mistake never sends the word back a step.
-// Score = words finished with 0 mistakes. An accented letter is its own tile (á is not a). The article of a Spanish noun
-// is fixed text before the places, not a tile; spaces and punctuation in a phrase are fixed too.
+// Score = words finished with 0 mistakes. An accented letter is its own tile (á is not a, ä is not a, ß is its own letter).
+// The article of a Spanish or German noun is fixed text before the places, not a tile (a German noun keeps its capital);
+// spaces and punctuation in a phrase are fixed too.
 
 import type { PcicItem, PcicTarget } from '@/data/pcic';
 import { activeSourceFor } from '@/lib/languagePair';
-import { wordIn } from '@/lib/pcicItemText';
-import { pcicAlternatives } from '@/lib/pcicMatch';
+import { GERMAN_ARTICLE_RE, firstForm, wordIn } from '@/lib/pcicItemText';
 import type { GameLogic } from '@/lib/practice/gameRound';
 
 export const SCRAMBLE_MODE = 'scramble';
@@ -47,7 +47,7 @@ export interface ScrambleChar {
 }
 
 export interface ScrambleWord {
-  /** The article of a Spanish noun without its space ("la"), or ''. */
+  /** The article of a Spanish or German noun without its space ("la", "die"), or ''. */
   article: string;
   chars: ScrambleChar[];
   /** The letters in the order of the places. */
@@ -60,8 +60,8 @@ export interface ScrambleWord {
 /** The word in the learned language split into article, places and fixed characters (the first of its alternatives). */
 export function scrambleWord(item: PcicItem, target: PcicTarget): ScrambleWord {
   const written = wordIn(item, target) ?? '';
-  const say = (pcicAlternatives(written)[0] ?? written).normalize('NFC').trim();
-  const articleMatch = target === 'es' ? ARTICLE_RE.exec(say) : null;
+  const say = firstForm(written, target).normalize('NFC');
+  const articleMatch = target === 'es' ? ARTICLE_RE.exec(say) : target === 'de' ? GERMAN_ARTICLE_RE.exec(say) : null;
   const rest = articleMatch ? say.slice(articleMatch[0].length) : say;
   const letters: string[] = [];
   const chars: ScrambleChar[] = Array.from(rest).map((ch) => {

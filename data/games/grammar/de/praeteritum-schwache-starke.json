@@ -1,0 +1,1105 @@
+{
+  "schema": 2,
+  "topic": "praeteritum-schwache-starke",
+  "level": "B1",
+  "title": {
+    "en": "The simple past (Präteritum)",
+    "es": "El pretérito simple (Präteritum)"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "The Präteritum is the simple past, one word without an auxiliary: Ich machte, er ging. Weak verbs add -te to the stem (machen, machte). Strong verbs change their vowel and add no ending in ich and er/sie/es (gehen, ging). Mixed verbs change the vowel and add -te (bringen, brachte). German uses the Präteritum mostly in writing: stories, reports, news. In speech people prefer the Perfekt, except for sein, haben and the modal verbs (war, hatte, konnte), and a few frequent verbs like gab, ging, kam.",
+        "es": "El Präteritum es el pretérito, una sola palabra sin auxiliar: Ich machte, er ging. Los verbos débiles añaden -te a la raíz (machen, machte). Los verbos fuertes cambian la vocal y no llevan terminación en ich y er/sie/es (gehen, ging). Los verbos mixtos cambian la vocal y añaden -te (bringen, brachte). El alemán usa el Präteritum sobre todo por escrito: cuentos, informes, noticias. Al hablar se prefiere el Perfekt, salvo con sein, haben y los verbos modales (war, hatte, konnte), y unos pocos verbos frecuentes como gab, ging, kam."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "praeteritum-schwach",
+      "title": {
+        "en": "Weak verbs: stem + -te",
+        "es": "Verbos débiles: raíz + -te"
+      },
+      "header": [
+        {
+          "en": "Infinitive",
+          "es": "Infinitivo"
+        },
+        {
+          "en": "ich/er",
+          "es": "ich/er"
+        },
+        {
+          "en": "du",
+          "es": "du"
+        },
+        {
+          "en": "wir",
+          "es": "wir"
+        }
+      ],
+      "rows": [
+        [
+          "machen",
+          "machte",
+          "machtest",
+          "machten"
+        ],
+        [
+          "arbeiten",
+          "arbeitete",
+          "arbeitetest",
+          "arbeiteten"
+        ],
+        [
+          "kaufen",
+          "kaufte",
+          "kauftest",
+          "kauften"
+        ],
+        [
+          "lernen",
+          "lernte",
+          "lerntest",
+          "lernten"
+        ],
+        [
+          "wohnen",
+          "wohnte",
+          "wohntest",
+          "wohnten"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "praeteritum-stark",
+      "title": {
+        "en": "Strong verbs: new vowel",
+        "es": "Verbos fuertes: vocal nueva"
+      },
+      "header": [
+        {
+          "en": "Infinitive",
+          "es": "Infinitivo"
+        },
+        {
+          "en": "ich/er",
+          "es": "ich/er"
+        },
+        {
+          "en": "du",
+          "es": "du"
+        },
+        {
+          "en": "wir",
+          "es": "wir"
+        }
+      ],
+      "rows": [
+        [
+          "gehen",
+          "ging",
+          "gingst",
+          "gingen"
+        ],
+        [
+          "kommen",
+          "kam",
+          "kamst",
+          "kamen"
+        ],
+        [
+          "sehen",
+          "sah",
+          "sahst",
+          "sahen"
+        ],
+        [
+          "trinken",
+          "trank",
+          "trankst",
+          "tranken"
+        ],
+        [
+          "schreiben",
+          "schrieb",
+          "schriebst",
+          "schrieben"
+        ],
+        [
+          "fahren",
+          "fuhr",
+          "fuhrst",
+          "fuhren"
+        ],
+        [
+          "nehmen",
+          "nahm",
+          "nahmst",
+          "nahmen"
+        ],
+        [
+          "geben",
+          "gab",
+          "gabst",
+          "gaben"
+        ],
+        [
+          "bleiben",
+          "blieb",
+          "bliebst",
+          "blieben"
+        ],
+        [
+          "finden",
+          "fand",
+          "fandest",
+          "fanden"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "praeteritum-gemischt",
+      "title": {
+        "en": "Mixed verbs: new vowel + -te",
+        "es": "Verbos mixtos: vocal nueva + -te"
+      },
+      "header": [
+        {
+          "en": "Infinitive",
+          "es": "Infinitivo"
+        },
+        {
+          "en": "ich/er",
+          "es": "ich/er"
+        },
+        {
+          "en": "du",
+          "es": "du"
+        },
+        {
+          "en": "wir",
+          "es": "wir"
+        }
+      ],
+      "rows": [
+        [
+          "bringen",
+          "brachte",
+          "brachtest",
+          "brachten"
+        ],
+        [
+          "denken",
+          "dachte",
+          "dachtest",
+          "dachten"
+        ],
+        [
+          "wissen",
+          "wusste",
+          "wusstest",
+          "wussten"
+        ],
+        [
+          "kennen",
+          "kannte",
+          "kanntest",
+          "kannten"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "How the endings work",
+        "es": "Cómo funcionan las terminaciones"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "Weak verbs: stem + -te, -test, -te, -ten, -tet, -ten. If the stem ends in -t or -d, an e is inserted: arbeitete, arbeitetest.",
+            "es": "Verbos débiles: raíz + -te, -test, -te, -ten, -tet, -ten. Si la raíz termina en -t o -d, se intercala una e: arbeitete, arbeitetest."
+          },
+          "examples": [
+            {
+              "es": "Sie machte einen Kuchen.",
+              "tr": {
+                "en": "She made a cake.",
+                "es": "Ella hizo un pastel."
+              }
+            },
+            {
+              "es": "Er arbeitete den ganzen Tag.",
+              "tr": {
+                "en": "He worked all day.",
+                "es": "Él trabajó todo el día."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Strong verbs have no ending in ich and er/sie/es. The du form ends in -st (-est after d or t: du fandest), the wir form in -en. You have to learn the new vowel with the verb.",
+            "es": "Los verbos fuertes no llevan terminación en ich y er/sie/es. La forma de du termina en -st (-est después de d o t: du fandest), la de wir en -en. Hay que aprender la vocal nueva con el verbo."
+          },
+          "examples": [
+            {
+              "es": "Er ging nach Hause.",
+              "tr": {
+                "en": "He went home.",
+                "es": "Él se fue a casa."
+              }
+            },
+            {
+              "es": "Du kamst zu spät.",
+              "tr": {
+                "en": "You came too late.",
+                "es": "Llegaste demasiado tarde."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Mixed verbs change the vowel and also take the weak ending -te. The most frequent ones are bringen, denken, wissen and kennen.",
+            "es": "Los verbos mixtos cambian la vocal y además llevan la terminación débil -te. Los más frecuentes son bringen, denken, wissen y kennen."
+          },
+          "examples": [
+            {
+              "es": "Er brachte mir ein Buch.",
+              "tr": {
+                "en": "He brought me a book.",
+                "es": "Él me trajo un libro."
+              }
+            },
+            {
+              "es": "Ich wusste die Antwort nicht.",
+              "tr": {
+                "en": "I did not know the answer.",
+                "es": "No sabía la respuesta."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "A separable verb splits in the Präteritum like in the present: the verb is in position two and the prefix goes to the end.",
+            "es": "Un verbo separable se separa en el Präteritum como en el presente: el verbo va en la posición dos y el prefijo al final."
+          },
+          "examples": [
+            {
+              "es": "Ich stand um sieben Uhr auf.",
+              "tr": {
+                "en": "I got up at seven o’clock.",
+                "es": "Me levanté a las siete."
+              }
+            },
+            {
+              "es": "Der Zug kam um acht Uhr an.",
+              "tr": {
+                "en": "The train arrived at eight o’clock.",
+                "es": "El tren llegó a las ocho."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "sein, haben and the modal verbs almost always use the Präteritum, in speech too: war, hatte, konnte, wollte, musste.",
+            "es": "sein, haben y los verbos modales casi siempre usan el Präteritum, también al hablar: war, hatte, konnte, wollte, musste."
+          },
+          "examples": [
+            {
+              "es": "Gestern war ich im Kino.",
+              "tr": {
+                "en": "Yesterday I was at the cinema.",
+                "es": "Ayer estuve en el cine."
+              }
+            },
+            {
+              "es": "Wir hatten keine Zeit.",
+              "tr": {
+                "en": "We had no time.",
+                "es": "No tuvimos tiempo."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Perfekt or Präteritum",
+        "es": "Perfekt o Präteritum"
+      },
+      "pairs": [
+        {
+          "a": "Gestern habe ich einen Film gesehen.",
+          "b": "Gestern sah ich einen Film.",
+          "note": {
+            "en": "Both mean the same. The Perfekt sounds natural in a conversation, the Präteritum in a written story or report.",
+            "es": "Los dos significan lo mismo. El Perfekt suena natural en una conversación, el Präteritum en un cuento o informe escrito."
+          },
+          "examples": [
+            {
+              "es": "Er hat ein Brot gekauft.",
+              "tr": {
+                "en": "He has bought a piece of bread.",
+                "es": "Él compró un pan."
+              }
+            },
+            {
+              "es": "Er kaufte ein Brot.",
+              "tr": {
+                "en": "He bought a piece of bread.",
+                "es": "Él compró un pan."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Ich bin müde gewesen.",
+          "b": "Ich war müde.",
+          "note": {
+            "en": "With sein the Präteritum is the normal choice, also in speech. The Perfekt of sein sounds heavy.",
+            "es": "Con sein el Präteritum es la opción normal, también al hablar. El Perfekt de sein suena pesado."
+          },
+          "examples": [
+            {
+              "es": "Ich war gestern zu Hause.",
+              "tr": {
+                "en": "I was at home yesterday.",
+                "es": "Ayer estuve en casa."
+              }
+            },
+            {
+              "es": "Er hatte Hunger.",
+              "tr": {
+                "en": "He was hungry.",
+                "es": "Él tenía hambre."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Do not add -te to a strong verb: not gehte or sahte, but ging and sah. English learners: -ed is not a rule for all verbs here, learn the strong ones with their new vowel. Spanish learners: German has only one simple past, it covers both pretérito and imperfecto. Hungarian learners: your language has one past tense, but German has two, Perfekt for speech and Präteritum for writing. And do not forget the -e- in arbeitete and the -st in du kamst.",
+        "es": "No añadas -te a un verbo fuerte: no gehte ni sahte, sino ging y sah. Para quien habla inglés: -ed no es una regla para todos los verbos aquí, aprende los fuertes con su vocal nueva. Para quien habla español: el alemán solo tiene un pasado simple, que cubre el pretérito y el imperfecto. Para quien habla húngaro: tu idioma tiene un solo tiempo pasado, pero el alemán tiene dos, Perfekt para hablar y Präteritum para escribir. Y no olvides la -e- en arbeitete y la -st en du kamst."
+      }
+    }
+  ],
+  "speak": {
+    "en": "The Präteritum is the simple past. Weak verbs add «te» to the stem: «machen», «machte». Strong verbs change the vowel and have no ending in the first and third person: «gehen», «ging». With «du» the ending is «st»: «du gingst». Mixed verbs change the vowel and add «te»: «bringen», «brachte». The Präteritum is mostly used in writing. In speech you use the Perfekt, but «sein», «haben» and the modal verbs stay in the Präteritum: «Ich war müde.»",
+    "es": "El Präteritum es el pretérito. Los verbos débiles añaden «te» a la raíz: «machen», «machte». Los verbos fuertes cambian la vocal y no tienen terminación en la primera y la tercera persona: «gehen», «ging». Con «du» la terminación es «st»: «du gingst». Los verbos mixtos cambian la vocal y añaden «te»: «bringen», «brachte». El Präteritum se usa sobre todo por escrito. Al hablar se usa el Perfekt, pero «sein», «haben» y los verbos modales se quedan en Präteritum: «Ich war müde.»"
+  },
+  "items": [
+    {
+      "id": "praeteritum-schwache-starke-c01",
+      "sentence": "Gestern ___ ich Brot.",
+      "options": [
+        "kaufte",
+        "kaufe",
+        "gekauft"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "kaufen is a weak verb: stem + -te. The Präteritum of ich is kaufte.",
+        "es": "kaufen es un verbo débil: raíz + -te. El Präteritum de ich es kaufte."
+      },
+      "wrong": {
+        "kaufe": {
+          "en": "kaufe is the present tense. Gestern points to the past, so you need the Präteritum kaufte.",
+          "es": "kaufe es el presente. Gestern señala el pasado, así que necesitas el Präteritum kaufte."
+        },
+        "gekauft": {
+          "en": "gekauft is the participle for the Perfekt and needs habe: Ich habe Brot gekauft. Alone it cannot be the verb here.",
+          "es": "gekauft es el participio para el Perfekt y necesita habe: Ich habe Brot gekauft. Solo no puede ser el verbo aquí."
+        }
+      },
+      "examples": [
+        "Sie kaufte ein Kleid.",
+        "Er lernte gestern Deutsch."
+      ],
+      "tr": {
+        "en": "Yesterday I bought bread.",
+        "es": "Ayer compré pan."
+      }
+    },
+    {
+      "id": "praeteritum-schwache-starke-f01",
+      "kind": "form",
+      "verb": "ich/er",
+      "person": "machen",
+      "answer": "machte",
+      "table": "praeteritum-schwach"
+    },
+    {
+      "id": "praeteritum-schwache-starke-c02",
+      "sentence": "Gestern ___ er nach Hause.",
+      "options": [
+        "gehte",
+        "gegangen",
+        "ging"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "gehen is a strong verb: the vowel changes and er has no ending. The Präteritum is ging.",
+        "es": "gehen es un verbo fuerte: la vocal cambia y er no lleva terminación. El Präteritum es ging."
+      },
+      "wrong": {
+        "gehte": {
+          "en": "gehte treats gehen as a weak verb. It is strong, so it changes its vowel: ging.",
+          "es": "gehte trata gehen como un verbo débil. Es fuerte, así que cambia la vocal: ging."
+        },
+        "gegangen": {
+          "en": "gegangen is the participle and needs ist: Er ist nach Hause gegangen. It cannot stand alone as the verb.",
+          "es": "gegangen es el participio y necesita ist: Er ist nach Hause gegangen. No puede estar solo como verbo."
+        }
+      },
+      "examples": [
+        "Sie kam um acht Uhr.",
+        "Er sah einen Film."
+      ],
+      "tr": {
+        "en": "Yesterday he went home.",
+        "es": "Ayer él se fue a casa."
+      }
+    },
+    {
+      "id": "praeteritum-schwache-starke-f02",
+      "kind": "form",
+      "verb": "ich/er",
+      "person": "gehen",
+      "answer": "ging",
+      "table": "praeteritum-stark"
+    },
+    {
+      "id": "praeteritum-schwache-starke-c03",
+      "sentence": "Wir ___ gestern ins Kino.",
+      "options": [
+        "ging",
+        "gingen",
+        "gehten"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "wir takes the ending -en in the strong Präteritum: gingen.",
+        "es": "wir lleva la terminación -en en el Präteritum fuerte: gingen."
+      },
+      "wrong": {
+        "ging": {
+          "en": "ging is the form for ich and er/sie/es without an ending. wir needs -en.",
+          "es": "ging es la forma para ich y er/sie/es sin terminación. wir necesita -en."
+        },
+        "gehten": {
+          "en": "gehten makes gehen weak. It is a strong verb with the stem ging-.",
+          "es": "gehten convierte gehen en un verbo débil. Es un verbo fuerte con la raíz ging-."
+        }
+      },
+      "examples": [
+        "Wir kamen spät an.",
+        "Wir sahen den Film."
+      ],
+      "tr": {
+        "en": "We went to the cinema yesterday.",
+        "es": "Ayer fuimos al cine."
+      }
+    },
+    {
+      "id": "praeteritum-schwache-starke-f03",
+      "kind": "form",
+      "verb": "du",
+      "person": "arbeiten",
+      "answer": "arbeitetest",
+      "table": "praeteritum-schwach"
+    },
+    {
+      "id": "praeteritum-schwache-starke-w01",
+      "kind": "why",
+      "es": "Er ging nach Hause.",
+      "target": "ging",
+      "tr": {
+        "en": "He went home.",
+        "es": "Él se fue a casa."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "gehen is a strong verb: the vowel changes and er has no ending",
+            "es": "gehen es un verbo fuerte: la vocal cambia y er no lleva terminación"
+          }
+        },
+        {
+          "text": {
+            "en": "Every verb adds -te in the Präteritum: gehte",
+            "es": "Todo verbo añade -te en el Präteritum: gehte"
+          },
+          "wrong": {
+            "en": "Only weak verbs add -te. Strong verbs like gehen change their vowel instead.",
+            "es": "Solo los verbos débiles añaden -te. Los verbos fuertes como gehen cambian la vocal."
+          }
+        },
+        {
+          "text": {
+            "en": "ging is the Perfekt of gehen",
+            "es": "ging es el Perfekt de gehen"
+          },
+          "wrong": {
+            "en": "The Perfekt has two parts: ist gegangen. ging is one word and is the Präteritum.",
+            "es": "El Perfekt tiene dos partes: ist gegangen. ging es una sola palabra y es el Präteritum."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "praeteritum-schwache-starke-c04",
+      "sentence": "Du ___ gestern zu spät.",
+      "options": [
+        "kamt",
+        "kam",
+        "kamst"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "In the strong Präteritum du ends in -st: kamst.",
+        "es": "En el Präteritum fuerte du termina en -st: kamst."
+      },
+      "wrong": {
+        "kamt": {
+          "en": "kamt is the form for ihr. With du you need -st.",
+          "es": "kamt es la forma para ihr. Con du necesitas -st."
+        },
+        "kam": {
+          "en": "kam is the form for ich and er/sie/es. The du form is not bare, it ends in -st.",
+          "es": "kam es la forma para ich y er/sie/es. La forma de du no queda sin terminación, termina en -st."
+        }
+      },
+      "examples": [
+        "Du sahst den Film.",
+        "Du bliebst zu Hause."
+      ],
+      "tr": {
+        "en": "You came too late yesterday.",
+        "es": "Ayer llegaste demasiado tarde."
+      }
+    },
+    {
+      "id": "praeteritum-schwache-starke-f04",
+      "kind": "form",
+      "verb": "du",
+      "person": "kommen",
+      "answer": "kamst",
+      "table": "praeteritum-stark"
+    },
+    {
+      "id": "praeteritum-schwache-starke-c05",
+      "sentence": "Gestern ___ sie einen Brief.",
+      "options": [
+        "schrieb",
+        "schreibte",
+        "schreibt"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "schreiben is strong: the vowel changes and sie has no ending. The Präteritum is schrieb.",
+        "es": "schreiben es fuerte: la vocal cambia y sie no lleva terminación. El Präteritum es schrieb."
+      },
+      "wrong": {
+        "schreibte": {
+          "en": "schreibte is a typical mistake with -te. schreiben is strong and changes its vowel.",
+          "es": "schreibte es un error típico con -te. schreiben es fuerte y cambia la vocal."
+        },
+        "schreibt": {
+          "en": "schreibt is the present tense (er schreibt). Gestern needs the past tense.",
+          "es": "schreibt es el presente (er schreibt). Gestern necesita el pasado."
+        }
+      },
+      "examples": [
+        "Er schrieb eine Nachricht.",
+        "Sie trank Tee."
+      ],
+      "tr": {
+        "en": "Yesterday she wrote a letter.",
+        "es": "Ayer ella escribió una carta."
+      }
+    },
+    {
+      "id": "praeteritum-schwache-starke-f05",
+      "kind": "form",
+      "verb": "ich/er",
+      "person": "bringen",
+      "answer": "brachte",
+      "table": "praeteritum-gemischt"
+    },
+    {
+      "id": "praeteritum-schwache-starke-c06",
+      "sentence": "Ich ___ gestern ein Brot.",
+      "options": [
+        "esse",
+        "aßte",
+        "aß"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "essen is strong: the vowel changes and ich has no ending. The Präteritum is aß.",
+        "es": "essen es fuerte: la vocal cambia y ich no lleva terminación. El Präteritum es aß."
+      },
+      "wrong": {
+        "esse": {
+          "en": "esse is the present tense. Gestern needs the past tense.",
+          "es": "esse es el presente. Gestern necesita el pasado."
+        },
+        "aßte": {
+          "en": "aßte adds the weak ending -te to a strong verb. essen has the Präteritum aß, without an ending.",
+          "es": "aßte añade la terminación débil -te a un verbo fuerte. essen tiene el Präteritum aß, sin terminación."
+        }
+      },
+      "examples": [
+        "Er aß einen Apfel.",
+        "Wir aßen zu Abend."
+      ],
+      "tr": {
+        "en": "Yesterday I ate a piece of bread.",
+        "es": "Ayer comí un pan."
+      }
+    },
+    {
+      "id": "praeteritum-schwache-starke-f06",
+      "kind": "form",
+      "verb": "wir",
+      "person": "kaufen",
+      "answer": "kauften",
+      "table": "praeteritum-schwach"
+    },
+    {
+      "id": "praeteritum-schwache-starke-w02",
+      "kind": "why",
+      "es": "Sie machte einen Kuchen.",
+      "target": "machte",
+      "tr": {
+        "en": "She made a cake.",
+        "es": "Ella hizo un pastel."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "machen changes its vowel like a strong verb: mochte",
+            "es": "machen cambia la vocal como un verbo fuerte: mochte"
+          },
+          "wrong": {
+            "en": "machen is weak and keeps its vowel. mochte belongs to the verb mögen.",
+            "es": "machen es débil y conserva la vocal. mochte pertenece al verbo mögen."
+          }
+        },
+        {
+          "text": {
+            "en": "machte is the Perfekt of machen",
+            "es": "machte es el Perfekt de machen"
+          },
+          "wrong": {
+            "en": "The Perfekt is hat gemacht, with two words. machte is a single word and the Präteritum.",
+            "es": "El Perfekt es hat gemacht, con dos palabras. machte es una sola palabra y es el Präteritum."
+          }
+        },
+        {
+          "text": {
+            "en": "machen is a weak verb: the Präteritum is stem + -te",
+            "es": "machen es un verbo débil: el Präteritum es raíz + -te"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "praeteritum-schwache-starke-c07",
+      "sentence": "Gestern ___ er mir ein Buch.",
+      "options": [
+        "bringte",
+        "brachte",
+        "brachtet"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "bringen is a mixed verb: the vowel changes and the weak ending -te is added: brachte.",
+        "es": "bringen es un verbo mixto: la vocal cambia y se añade la terminación débil -te: brachte."
+      },
+      "wrong": {
+        "bringte": {
+          "en": "bringte keeps the vowel of the infinitive. The mixed verb bringen changes it to brachte.",
+          "es": "bringte conserva la vocal del infinitivo. El verbo mixto bringen la cambia a brachte."
+        },
+        "brachtet": {
+          "en": "brachtet is the form for ihr. With er the form is brachte.",
+          "es": "brachtet es la forma para ihr. Con er la forma es brachte."
+        }
+      },
+      "examples": [
+        "Sie brachte einen Kuchen.",
+        "Ich dachte an dich."
+      ],
+      "tr": {
+        "en": "Yesterday he brought me a book.",
+        "es": "Ayer él me trajo un libro."
+      }
+    },
+    {
+      "id": "praeteritum-schwache-starke-f07",
+      "kind": "form",
+      "verb": "wir",
+      "person": "sehen",
+      "answer": "sahen",
+      "table": "praeteritum-stark"
+    },
+    {
+      "id": "praeteritum-schwache-starke-c08",
+      "sentence": "Gestern ___ ich die Antwort nicht.",
+      "options": [
+        "wisste",
+        "wusste",
+        "weiß"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "wissen is a mixed verb: the Präteritum is wusste.",
+        "es": "wissen es un verbo mixto: el Präteritum es wusste."
+      },
+      "wrong": {
+        "wisste": {
+          "en": "wisste keeps the vowel of the infinitive. The Präteritum of wissen has a u: wusste.",
+          "es": "wisste conserva la vocal del infinitivo. El Präteritum de wissen lleva una u: wusste."
+        },
+        "weiß": {
+          "en": "weiß is the present tense. Gestern needs the past tense wusste.",
+          "es": "weiß es el presente. Gestern necesita el pasado wusste."
+        }
+      },
+      "examples": [
+        "Er wusste das nicht.",
+        "Wir kannten ihn gut."
+      ],
+      "tr": {
+        "en": "Yesterday I did not know the answer.",
+        "es": "Ayer no sabía la respuesta."
+      }
+    },
+    {
+      "id": "praeteritum-schwache-starke-f08",
+      "kind": "form",
+      "verb": "ich/er",
+      "person": "trinken",
+      "answer": "trank",
+      "table": "praeteritum-stark"
+    },
+    {
+      "id": "praeteritum-schwache-starke-c09",
+      "sentence": "Ich ___ gestern um sieben Uhr auf.",
+      "options": [
+        "stand",
+        "stehte",
+        "aufstand"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "aufstehen is separable: the verb part stand is in position two and auf goes to the end.",
+        "es": "aufstehen es separable: la parte verbal stand va en la posición dos y auf va al final."
+      },
+      "wrong": {
+        "stehte": {
+          "en": "stehte makes stehen weak. The verb is strong: stand.",
+          "es": "stehte convierte stehen en débil. El verbo es fuerte: stand."
+        },
+        "aufstand": {
+          "en": "The prefix auf cannot stay in front of the verb in a main clause. It goes to the end of the sentence.",
+          "es": "El prefijo auf no puede quedarse delante del verbo en una oración principal. Va al final de la oración."
+        }
+      },
+      "examples": [
+        "Der Zug kam um acht Uhr an.",
+        "Wir standen früh auf."
+      ],
+      "tr": {
+        "en": "Yesterday I got up at seven o’clock.",
+        "es": "Ayer me levanté a las siete."
+      }
+    },
+    {
+      "id": "praeteritum-schwache-starke-f09",
+      "kind": "form",
+      "verb": "du",
+      "person": "wissen",
+      "answer": "wusstest",
+      "table": "praeteritum-gemischt"
+    },
+    {
+      "id": "praeteritum-schwache-starke-w03",
+      "kind": "why",
+      "es": "Er kam zu spät.",
+      "target": "kam",
+      "tr": {
+        "en": "He came too late.",
+        "es": "Él llegó demasiado tarde."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Every er-form needs an ending: kamte",
+            "es": "Toda forma de er necesita una terminación: kamte"
+          },
+          "wrong": {
+            "en": "Strong verbs have no ending in ich and er/sie/es. kamte would mix strong and weak.",
+            "es": "Los verbos fuertes no llevan terminación en ich y er/sie/es. kamte mezclaría fuerte y débil."
+          }
+        },
+        {
+          "text": {
+            "en": "Strong verbs have no ending in ich and er/sie/es",
+            "es": "Los verbos fuertes no llevan terminación en ich y er/sie/es"
+          }
+        },
+        {
+          "text": {
+            "en": "kam has no ending because er is plural",
+            "es": "kam no tiene terminación porque er es plural"
+          },
+          "wrong": {
+            "en": "er is singular. The missing ending is a feature of the strong verbs, not of the plural.",
+            "es": "er es singular. La falta de terminación es una característica de los verbos fuertes, no del plural."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "praeteritum-schwache-starke-c10",
+      "sentence": "Es war einmal ein Mann. Er ___ zwei Söhne.",
+      "options": [
+        "habe",
+        "hat",
+        "hatte"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "A story told in the past uses the Präteritum: hatte. haben is also Präteritum in speech.",
+        "es": "Un cuento en pasado usa el Präteritum: hatte. haben también va en Präteritum al hablar."
+      },
+      "wrong": {
+        "habe": {
+          "en": "habe is the present tense of ich. The story is in the past and the subject is er.",
+          "es": "habe es el presente de ich. El cuento está en pasado y el sujeto es er."
+        },
+        "hat": {
+          "en": "hat is the present tense. The first sentence is in the past (war), so the story continues in the past.",
+          "es": "hat es el presente. La primera oración está en pasado (war), así que el cuento sigue en pasado."
+        }
+      },
+      "examples": [
+        "Sie hatte eine Katze.",
+        "Der König hatte ein Schloss."
+      ],
+      "tr": {
+        "en": "Once upon a time there was a man. He had two sons.",
+        "es": "Había una vez un hombre. Tenía dos hijos."
+      }
+    },
+    {
+      "id": "praeteritum-schwache-starke-f10",
+      "kind": "form",
+      "verb": "du",
+      "person": "fahren",
+      "answer": "fuhrst",
+      "table": "praeteritum-stark"
+    },
+    {
+      "id": "praeteritum-schwache-starke-c11",
+      "sentence": "Gestern ___ ich im Kino.",
+      "options": [
+        "war",
+        "bin",
+        "habe"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "sein is almost always in the Präteritum, in speech too: Ich war.",
+        "es": "sein casi siempre va en Präteritum, también al hablar: Ich war."
+      },
+      "wrong": {
+        "bin": {
+          "en": "bin is the present tense. Gestern needs the past tense, and the Perfekt of sein (bin gewesen) sounds heavy.",
+          "es": "bin es el presente. Gestern necesita el pasado, y el Perfekt de sein (bin gewesen) suena pesado."
+        },
+        "habe": {
+          "en": "habe is the auxiliary of haben. sein does not go with habe, and here no participle follows.",
+          "es": "habe es el auxiliar de haben. sein no va con habe, y aquí no sigue ningún participio."
+        }
+      },
+      "examples": [
+        "Sie war gestern krank.",
+        "Wir waren in Berlin."
+      ],
+      "tr": {
+        "en": "Yesterday I was at the cinema.",
+        "es": "Ayer estuve en el cine."
+      }
+    },
+    {
+      "id": "praeteritum-schwache-starke-f11",
+      "kind": "form",
+      "verb": "ich/er",
+      "person": "lernen",
+      "answer": "lernte",
+      "table": "praeteritum-schwach"
+    },
+    {
+      "id": "praeteritum-schwache-starke-c12",
+      "sentence": "Gestern ___ der Zug um acht Uhr an.",
+      "options": [
+        "ankam",
+        "kommt",
+        "kam"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "ankommen is separable. In the Präteritum the verb is kam in position two and an goes to the end.",
+        "es": "ankommen es separable. En el Präteritum el verbo es kam en la posición dos y an va al final."
+      },
+      "wrong": {
+        "ankam": {
+          "en": "ankam keeps the prefix in front of the verb. In a main clause it has to go to the end.",
+          "es": "ankam deja el prefijo delante del verbo. En una oración principal tiene que ir al final."
+        },
+        "kommt": {
+          "en": "kommt is the present tense. Gestern tells about the past, so the Präteritum is needed.",
+          "es": "kommt es el presente. Gestern habla del pasado, así que se necesita el Präteritum."
+        }
+      },
+      "examples": [
+        "Er stand früh auf.",
+        "Sie rief mich an."
+      ],
+      "tr": {
+        "en": "Yesterday the train arrived at eight o’clock.",
+        "es": "Ayer el tren llegó a las ocho."
+      }
+    },
+    {
+      "id": "praeteritum-schwache-starke-f12",
+      "kind": "form",
+      "verb": "wir",
+      "person": "schreiben",
+      "answer": "schrieben",
+      "table": "praeteritum-stark"
+    },
+    {
+      "id": "praeteritum-schwache-starke-c13",
+      "sentence": "Er ___ gestern den ganzen Tag.",
+      "options": [
+        "arbeitete",
+        "arbeite",
+        "arbeitte"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The stem arbeit- ends in -t, so an e is inserted before -te: arbeitete.",
+        "es": "La raíz arbeit- termina en -t, así que se intercala una e antes de -te: arbeitete."
+      },
+      "wrong": {
+        "arbeite": {
+          "en": "arbeite is the present tense (ich arbeite). Gestern needs the Präteritum.",
+          "es": "arbeite es el presente (ich arbeite). Gestern necesita el Präteritum."
+        },
+        "arbeitte": {
+          "en": "This writes the t twice. The stem keeps one t and the connecting vowel e is added: arbeitete.",
+          "es": "Esto escribe la t dos veces. La raíz conserva una t y se añade la vocal de enlace e: arbeitete."
+        }
+      },
+      "examples": [
+        "Sie arbeitete im Büro.",
+        "Ich wartete eine Stunde."
+      ],
+      "tr": {
+        "en": "Yesterday he worked all day.",
+        "es": "Ayer él trabajó todo el día."
+      }
+    },
+    {
+      "id": "praeteritum-schwache-starke-c14",
+      "sentence": "Wir ___ den Film gestern.",
+      "options": [
+        "sehten",
+        "sahen",
+        "sahst"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "sehen is strong: the vowel changes to a, and wir takes -en: sahen.",
+        "es": "sehen es fuerte: la vocal cambia a a, y wir lleva -en: sahen."
+      },
+      "wrong": {
+        "sehten": {
+          "en": "sehten treats sehen as a weak verb. It is strong and changes its vowel.",
+          "es": "sehten trata sehen como un verbo débil. Es fuerte y cambia la vocal."
+        },
+        "sahst": {
+          "en": "sahst is the form for du. The subject wir needs sahen.",
+          "es": "sahst es la forma para du. El sujeto wir necesita sahen."
+        }
+      },
+      "examples": [
+        "Wir kamen spät an.",
+        "Sie sahen einen Film."
+      ],
+      "tr": {
+        "en": "We saw the film yesterday.",
+        "es": "Ayer vimos la película."
+      }
+    },
+    {
+      "id": "praeteritum-schwache-starke-w04",
+      "kind": "why",
+      "es": "Gestern war ich im Kino.",
+      "target": "war",
+      "tr": {
+        "en": "Yesterday I was at the cinema.",
+        "es": "Ayer estuve en el cine."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "The Präteritum is only for writing, so it should be bin gewesen",
+            "es": "El Präteritum es solo para escribir, así que debería ser bin gewesen"
+          },
+          "wrong": {
+            "en": "sein is the exception: war is normal in speech, and bin gewesen sounds heavy.",
+            "es": "sein es la excepción: war es normal al hablar, y bin gewesen suena pesado."
+          }
+        },
+        {
+          "text": {
+            "en": "sein, haben and the modals stay in the Präteritum in speech too",
+            "es": "sein, haben y los modales se quedan en Präteritum también al hablar"
+          }
+        },
+        {
+          "text": {
+            "en": "war is the Perfekt of sein",
+            "es": "war es el Perfekt de sein"
+          },
+          "wrong": {
+            "en": "The Perfekt of sein has two words: bin gewesen. war is one word and the Präteritum.",
+            "es": "El Perfekt de sein tiene dos palabras: bin gewesen. war es una palabra y es el Präteritum."
+          }
+        }
+      ],
+      "correctIndex": 1
+    }
+  ]
+}

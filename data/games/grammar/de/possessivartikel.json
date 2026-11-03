@@ -1,0 +1,1078 @@
+{
+  "schema": 2,
+  "topic": "possessivartikel",
+  "level": "A1",
+  "title": {
+    "en": "Possessive articles: mein, dein, sein",
+    "es": "Artículos posesivos: mein, dein, sein"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "Possessive articles say who something belongs to: mein Bruder, dein Auto, ihre Tasche. They work in two steps. The stem depends on the owner: ich gives mein, du gives dein, wir gives unser. The ending depends on the thing that is owned, exactly as with ein and kein: nothing for masculine and neuter, -e for feminine and plural, and -en for a masculine object in the accusative. So meine Schwester has -e because Schwester is feminine, whoever the owner is.",
+        "es": "Los artículos posesivos dicen a quién pertenece algo: mein Bruder, dein Auto, ihre Tasche. Funcionan en dos pasos. La raíz depende del poseedor: ich da mein, du da dein, wir da unser. La terminación depende de lo poseído, igual que con ein y kein: nada para masculino y neutro, -e para femenino y plural, y -en para un complemento masculino en acusativo. Así meine Schwester lleva -e porque Schwester es femenino, sea quien sea el poseedor. En alemán no existe el «su» ambiguo: sein, ihr e Ihr distinguen al poseedor."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "possessiv",
+      "title": {
+        "en": "The possessive articles in the nominative",
+        "es": "Los artículos posesivos en nominativo"
+      },
+      "header": [
+        {
+          "en": "Owner",
+          "es": "Poseedor"
+        },
+        {
+          "en": "maskulin",
+          "es": "maskulin"
+        },
+        {
+          "en": "feminin",
+          "es": "feminin"
+        },
+        {
+          "en": "neutral",
+          "es": "neutral"
+        },
+        {
+          "en": "Plural",
+          "es": "Plural"
+        }
+      ],
+      "rows": [
+        [
+          "ich",
+          "mein",
+          "meine",
+          "mein",
+          "meine"
+        ],
+        [
+          "du",
+          "dein",
+          "deine",
+          "dein",
+          "deine"
+        ],
+        [
+          "er/es",
+          "sein",
+          "seine",
+          "sein",
+          "seine"
+        ],
+        [
+          "sie (Singular)",
+          "ihr",
+          "ihre",
+          "ihr",
+          "ihre"
+        ],
+        [
+          "wir",
+          "unser",
+          "unsere",
+          "unser",
+          "unsere"
+        ],
+        [
+          "ihr",
+          "euer",
+          "eure",
+          "euer",
+          "eure"
+        ],
+        [
+          "sie (Plural)",
+          "ihr",
+          "ihre",
+          "ihr",
+          "ihre"
+        ],
+        [
+          "Sie",
+          "Ihr",
+          "Ihre",
+          "Ihr",
+          "Ihre"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "possessiv-akkusativ",
+      "title": {
+        "en": "A masculine noun as subject and as object",
+        "es": "Un sustantivo masculino como sujeto y como complemento"
+      },
+      "header": [
+        {
+          "en": "Owner",
+          "es": "Poseedor"
+        },
+        {
+          "en": "Nominativ",
+          "es": "Nominativ"
+        },
+        {
+          "en": "Akkusativ",
+          "es": "Akkusativ"
+        }
+      ],
+      "rows": [
+        [
+          "ich",
+          "mein",
+          "meinen"
+        ],
+        [
+          "du",
+          "dein",
+          "deinen"
+        ],
+        [
+          "er/es",
+          "sein",
+          "seinen"
+        ],
+        [
+          "sie",
+          "ihr",
+          "ihren"
+        ],
+        [
+          "wir",
+          "unser",
+          "unseren"
+        ],
+        [
+          "ihr",
+          "euer",
+          "euren"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "How possessive articles work",
+        "es": "Cómo funcionan los artículos posesivos"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "The stem follows the owner. You use mein for ich, dein for du, sein for er and es, ihr for sie, unser for wir, euer for ihr, ihr for they and Ihr for the formal Sie.",
+            "es": "La raíz sigue al poseedor. Se usa mein para ich, dein para du, sein para er y es, ihr para sie, unser para wir, euer para ihr, ihr para ellos e Ihr para el Sie formal."
+          },
+          "examples": [
+            {
+              "es": "Das ist mein Bruder.",
+              "tr": {
+                "en": "That is my brother.",
+                "es": "Ese es mi hermano."
+              }
+            },
+            {
+              "es": "Ist das dein Auto?",
+              "tr": {
+                "en": "Is that your car?",
+                "es": "¿Ese es tu carro?"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "The ending follows the owned noun, as with ein: no ending for masculine and neuter, -e for feminine and plural.",
+            "es": "La terminación sigue al sustantivo poseído, como con ein: sin terminación para masculino y neutro, -e para femenino y plural."
+          },
+          "examples": [
+            {
+              "es": "Meine Schwester wohnt in Berlin.",
+              "tr": {
+                "en": "My sister lives in Berlin.",
+                "es": "Mi hermana vive en Berlín."
+              }
+            },
+            {
+              "es": "Das ist mein Kind.",
+              "tr": {
+                "en": "That is my child.",
+                "es": "Ese es mi hijo."
+              }
+            },
+            {
+              "es": "Meine Eltern sind hier.",
+              "tr": {
+                "en": "My parents are here.",
+                "es": "Mis padres están aquí."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "In the accusative a masculine object gets -en: meinen, deinen, seinen. Feminine, neuter and plural nouns do not change.",
+            "es": "En acusativo un complemento masculino lleva -en: meinen, deinen, seinen. Los sustantivos femeninos, neutros y plurales no cambian."
+          },
+          "examples": [
+            {
+              "es": "Ich besuche meinen Vater.",
+              "tr": {
+                "en": "I visit my father.",
+                "es": "Visito a mi papá."
+              }
+            },
+            {
+              "es": "Ich liebe meine Mutter.",
+              "tr": {
+                "en": "I love my mother.",
+                "es": "Amo a mi mamá."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Be careful with sein and ihr. They follow the owner, not the noun: Paul has seine Schwester, Anna has ihre Schwester.",
+            "es": "Cuidado con sein e ihr. Siguen al poseedor, no al sustantivo: Paul tiene seine Schwester, Anna tiene ihre Schwester."
+          },
+          "examples": [
+            {
+              "es": "Paul sucht seinen Schlüssel.",
+              "tr": {
+                "en": "Paul is looking for his key.",
+                "es": "Paul busca su llave."
+              }
+            },
+            {
+              "es": "Anna sucht ihren Schlüssel.",
+              "tr": {
+                "en": "Anna is looking for her key.",
+                "es": "Anna busca su llave."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "euer loses its second e before an ending: eure Tasche, euren Hund. unser keeps it: unsere Katze, unseren Hund. Without an ending: unser Haus, euer Haus.",
+            "es": "euer pierde la segunda e delante de una terminación: eure Tasche, euren Hund. unser la conserva: unsere Katze, unseren Hund. Sin terminación: unser Haus, euer Haus."
+          },
+          "examples": [
+            {
+              "es": "Wir haben unseren Hund.",
+              "tr": {
+                "en": "We have our dog.",
+                "es": "Tenemos a nuestro perro."
+              }
+            },
+            {
+              "es": "Wo ist eure Tasche?",
+              "tr": {
+                "en": "Where is your bag? (several people)",
+                "es": "¿Dónde está su bolsa? (varias personas)"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "ihr means her or their, and the formal Ihr is written with a capital letter. Use Ihr with a person you address with Sie.",
+            "es": "ihr significa «su» de ella o de ellos, y el Ihr formal se escribe con mayúscula. Usa Ihr con una persona a la que tratas de Sie."
+          },
+          "examples": [
+            {
+              "es": "Anna und Paul lieben ihre Kinder.",
+              "tr": {
+                "en": "Anna and Paul love their children.",
+                "es": "Anna y Paul aman a sus hijos."
+              }
+            },
+            {
+              "es": "Wie ist Ihr Name?",
+              "tr": {
+                "en": "What is your name? (formal)",
+                "es": "¿Cómo se llama usted?"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Two things to keep apart",
+        "es": "Dos cosas que hay que distinguir"
+      },
+      "pairs": [
+        {
+          "a": "Paul liebt seine Schwester.",
+          "b": "Anna liebt ihre Schwester.",
+          "note": {
+            "en": "The stem sein or ihr depends on the owner: Paul is a man, Anna is a woman. The ending -e comes from Schwester in both sentences.",
+            "es": "La raíz sein o ihr depende del poseedor: Paul es un hombre, Anna es una mujer. La terminación -e viene de Schwester en las dos oraciones."
+          },
+          "examples": [
+            {
+              "es": "Paul sucht seinen Hund.",
+              "tr": {
+                "en": "Paul is looking for his dog.",
+                "es": "Paul busca a su perro."
+              }
+            },
+            {
+              "es": "Anna sucht ihren Hund.",
+              "tr": {
+                "en": "Anna is looking for her dog.",
+                "es": "Anna busca a su perro."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Das ist mein Bruder.",
+          "b": "Das ist meine Schwester.",
+          "note": {
+            "en": "The stem is the same because the owner is the same, ich. The ending changes because Bruder is masculine and Schwester is feminine.",
+            "es": "La raíz es la misma porque el poseedor es el mismo, ich. La terminación cambia porque Bruder es masculino y Schwester es femenino."
+          },
+          "examples": [
+            {
+              "es": "Das ist dein Buch.",
+              "tr": {
+                "en": "That is your book.",
+                "es": "Ese es tu libro."
+              }
+            },
+            {
+              "es": "Das ist deine Tasche.",
+              "tr": {
+                "en": "That is your bag.",
+                "es": "Esa es tu bolsa."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: the ending depends on the owned noun, not on the owner (meine Schwester, even if a man says it). sein is his and ihr is her, as the owner decides. Do not forget -en for a masculine object (Ich sehe meinen Bruder, not Ich sehe mein Bruder). Remember that euer loses its second e (eure, euren), while unser keeps it (unsere, unseren). And write the formal Ihr with a capital letter.",
+        "es": "Trampas clásicas: la terminación depende del sustantivo poseído, no del poseedor (meine Schwester, aunque lo diga un hombre). sein es «su» de él e ihr es «su» de ella, según decide el poseedor. No olvides -en para un complemento masculino (Ich sehe meinen Bruder, no Ich sehe mein Bruder). Recuerda que euer pierde la segunda e (eure, euren), mientras que unser la conserva (unsere, unseren). Y escribe el Ihr formal con mayúscula."
+      }
+    }
+  ],
+  "speak": {
+    "en": "Possessive articles show who owns something. The stem depends on the owner: «mein», «dein», «sein», «ihr», «unser», «euer». The ending depends on the thing owned, like with ein: «mein Bruder», «meine Schwester», «mein Kind». A masculine object takes -en: «Ich besuche meinen Vater». Say «Paul sucht seinen Schlüssel», but «Anna sucht ihren Schlüssel». And to a person you address formally, say «Wie ist Ihr Name?»",
+    "es": "Los artículos posesivos muestran de quién es algo. La raíz depende del poseedor: «mein», «dein», «sein», «ihr», «unser», «euer». La terminación depende de lo poseído, como con ein: «mein Bruder», «meine Schwester», «mein Kind». Un complemento masculino lleva -en: «Ich besuche meinen Vater». Di «Paul sucht seinen Schlüssel», pero «Anna sucht ihren Schlüssel». Y a una persona a quien tratas de usted, dile «Wie ist Ihr Name?»"
+  },
+  "items": [
+    {
+      "id": "possessivartikel-c01",
+      "sentence": "Das ist ___ Bruder.",
+      "options": [
+        "mein",
+        "meine",
+        "meinen"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Bruder is masculine and the subject here, so mein has no ending: Das ist mein Bruder.",
+        "es": "Bruder es masculino y aquí es el sujeto, así que mein no lleva terminación: Das ist mein Bruder."
+      },
+      "wrong": {
+        "meine": {
+          "en": "meine is for feminine nouns and the plural. Bruder is masculine, so you need mein.",
+          "es": "meine es para sustantivos femeninos y el plural. Bruder es masculino, así que necesitas mein."
+        },
+        "meinen": {
+          "en": "meinen is for a masculine object in the accusative. Here Bruder is the subject, so you need mein.",
+          "es": "meinen es para un complemento masculino en acusativo. Aquí Bruder es el sujeto, así que necesitas mein."
+        }
+      },
+      "examples": [
+        "Das ist mein Vater.",
+        "Das ist mein Freund."
+      ],
+      "tr": {
+        "en": "That is my brother.",
+        "es": "Ese es mi hermano."
+      }
+    },
+    {
+      "id": "possessivartikel-f01",
+      "kind": "form",
+      "verb": "feminin",
+      "person": "ich",
+      "answer": "meine",
+      "table": "possessiv"
+    },
+    {
+      "id": "possessivartikel-c02",
+      "sentence": "___ Schwester wohnt in Berlin.",
+      "options": [
+        "Mein",
+        "Meine",
+        "Meinen"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Schwester is feminine, so the possessive takes -e: Meine Schwester wohnt in Berlin.",
+        "es": "Schwester es femenino, así que el posesivo lleva -e: Meine Schwester wohnt in Berlin."
+      },
+      "wrong": {
+        "Mein": {
+          "en": "Mein has no ending and is for masculine and neuter nouns. Schwester is feminine, so you need Meine.",
+          "es": "Mein no lleva terminación y es para sustantivos masculinos y neutros. Schwester es femenino, así que necesitas Meine."
+        },
+        "Meinen": {
+          "en": "Meinen is for a masculine object in the accusative. Here Schwester is the subject and feminine, so you need Meine.",
+          "es": "Meinen es para un complemento masculino en acusativo. Aquí Schwester es el sujeto y es femenino, así que necesitas Meine."
+        }
+      },
+      "examples": [
+        "Meine Mutter wohnt hier.",
+        "Meine Katze schläft."
+      ],
+      "tr": {
+        "en": "My sister lives in Berlin.",
+        "es": "Mi hermana vive en Berlín."
+      }
+    },
+    {
+      "id": "possessivartikel-f02",
+      "kind": "form",
+      "verb": "Akkusativ",
+      "person": "ich",
+      "answer": "meinen",
+      "table": "possessiv-akkusativ"
+    },
+    {
+      "id": "possessivartikel-c03",
+      "sentence": "Ich besuche ___ Vater.",
+      "options": [
+        "mein",
+        "meine",
+        "meinen"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Vater is masculine and is the object of besuchen, so mein becomes meinen: Ich besuche meinen Vater.",
+        "es": "Vater es masculino y es el complemento de besuchen, así que mein pasa a meinen: Ich besuche meinen Vater."
+      },
+      "wrong": {
+        "mein": {
+          "en": "mein is the subject form. As the object of besuchen, a masculine noun needs meinen.",
+          "es": "mein es la forma del sujeto. Como complemento de besuchen, un sustantivo masculino necesita meinen."
+        },
+        "meine": {
+          "en": "meine is for feminine nouns and the plural. Vater is masculine, so you need meinen.",
+          "es": "meine es para sustantivos femeninos y el plural. Vater es masculino, así que necesitas meinen."
+        }
+      },
+      "examples": [
+        "Ich liebe meinen Bruder.",
+        "Ich sehe meinen Freund."
+      ],
+      "tr": {
+        "en": "I visit my father.",
+        "es": "Visito a mi papá."
+      }
+    },
+    {
+      "id": "possessivartikel-f03",
+      "kind": "form",
+      "verb": "maskulin",
+      "person": "du",
+      "answer": "dein",
+      "table": "possessiv"
+    },
+    {
+      "id": "possessivartikel-w01",
+      "kind": "why",
+      "es": "Meine Schwester wohnt in Berlin.",
+      "target": "Meine",
+      "tr": {
+        "en": "My sister lives in Berlin.",
+        "es": "Mi hermana vive en Berlín."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "The ending -e matches the feminine noun Schwester, not the owner",
+            "es": "La terminación -e corresponde al sustantivo femenino Schwester, no al poseedor"
+          }
+        },
+        {
+          "text": {
+            "en": "meine, because the owner ich is a woman",
+            "es": "meine, porque el poseedor ich es una mujer"
+          },
+          "wrong": {
+            "en": "The owner can be anyone: a man also says meine Schwester. The ending depends on the noun Schwester, which is feminine.",
+            "es": "El poseedor puede ser cualquiera: un hombre también dice meine Schwester. La terminación depende del sustantivo Schwester, que es femenino."
+          }
+        },
+        {
+          "text": {
+            "en": "meine, because Schwester is plural",
+            "es": "meine, porque Schwester es plural"
+          },
+          "wrong": {
+            "en": "Schwester is singular here. The ending -e comes from the feminine gender, as in eine Schwester.",
+            "es": "Schwester es singular aquí. La terminación -e viene del género femenino, como en eine Schwester."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "possessivartikel-c04",
+      "sentence": "Ist das ___ Auto, Anna?",
+      "options": [
+        "deine",
+        "dein",
+        "deinen"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Anna is addressed with du, so the stem is dein-. Auto is neuter, so there is no ending: Ist das dein Auto, Anna?",
+        "es": "A Anna se le habla con du, así que la raíz es dein-. Auto es neutro, así que no hay terminación: Ist das dein Auto, Anna?"
+      },
+      "wrong": {
+        "deine": {
+          "en": "deine is for feminine nouns and the plural. Auto is neuter, so you need dein.",
+          "es": "deine es para sustantivos femeninos y el plural. Auto es neutro, así que necesitas dein."
+        },
+        "deinen": {
+          "en": "deinen is for a masculine object in the accusative. Auto is neuter, so you need dein.",
+          "es": "deinen es para un complemento masculino en acusativo. Auto es neutro, así que necesitas dein."
+        }
+      },
+      "examples": [
+        "Ist das dein Buch, Paul?",
+        "Ist das dein Kind?"
+      ],
+      "tr": {
+        "en": "Is that your car, Anna?",
+        "es": "¿Ese es tu carro, Anna?"
+      }
+    },
+    {
+      "id": "possessivartikel-f04",
+      "kind": "form",
+      "verb": "Akkusativ",
+      "person": "du",
+      "answer": "deinen",
+      "table": "possessiv-akkusativ"
+    },
+    {
+      "id": "possessivartikel-c05",
+      "sentence": "Paul sucht ___ Schlüssel.",
+      "options": [
+        "seinen",
+        "ihren",
+        "sein"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The owner is Paul, a man, so the stem is sein-. Schlüssel is a masculine object, so you add -en: seinen.",
+        "es": "El poseedor es Paul, un hombre, así que la raíz es sein-. Schlüssel es un complemento masculino, así que se añade -en: seinen."
+      },
+      "wrong": {
+        "ihren": {
+          "en": "ihren has the stem of a female owner or of more owners. Paul is one man, so the stem is sein-.",
+          "es": "ihren tiene la raíz de una poseedora o de varios poseedores. Paul es un solo hombre, así que la raíz es sein-."
+        },
+        "sein": {
+          "en": "sein has the right stem but no ending. As a masculine object Schlüssel needs -en: seinen.",
+          "es": "sein tiene la raíz correcta pero no lleva terminación. Como complemento masculino, Schlüssel necesita -en: seinen."
+        }
+      },
+      "examples": [
+        "Paul sucht seinen Hund.",
+        "Paul liebt seinen Bruder."
+      ],
+      "tr": {
+        "en": "Paul is looking for his key.",
+        "es": "Paul busca su llave."
+      }
+    },
+    {
+      "id": "possessivartikel-f05",
+      "kind": "form",
+      "verb": "neutral",
+      "person": "wir",
+      "answer": "unser",
+      "table": "possessiv"
+    },
+    {
+      "id": "possessivartikel-c06",
+      "sentence": "Anna sucht ___ Tasche.",
+      "options": [
+        "seine",
+        "ihren",
+        "ihre"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The owner is Anna, a woman, so the stem is ihr-. Tasche is feminine, so the ending is -e: ihre Tasche.",
+        "es": "La poseedora es Anna, una mujer, así que la raíz es ihr-. Tasche es femenino, así que la terminación es -e: ihre Tasche."
+      },
+      "wrong": {
+        "seine": {
+          "en": "seine has the stem of a male owner. Anna is a woman, so the stem is ihr-.",
+          "es": "seine tiene la raíz de un poseedor masculino. Anna es una mujer, así que la raíz es ihr-."
+        },
+        "ihren": {
+          "en": "ihren is for a masculine object. Tasche is feminine, so the ending is -e: ihre.",
+          "es": "ihren es para un complemento masculino. Tasche es femenino, así que la terminación es -e: ihre."
+        }
+      },
+      "examples": [
+        "Anna liebt ihre Katze.",
+        "Anna sucht ihre Schwester."
+      ],
+      "tr": {
+        "en": "Anna is looking for her bag.",
+        "es": "Anna busca su bolsa."
+      }
+    },
+    {
+      "id": "possessivartikel-f06",
+      "kind": "form",
+      "verb": "Akkusativ",
+      "person": "sie",
+      "answer": "ihren",
+      "table": "possessiv-akkusativ"
+    },
+    {
+      "id": "possessivartikel-w02",
+      "kind": "why",
+      "es": "Ich besuche meinen Vater.",
+      "target": "meinen",
+      "tr": {
+        "en": "I visit my father.",
+        "es": "Visito a mi papá."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Vater is masculine and the object, so mein becomes meinen",
+            "es": "Vater es masculino y complemento, así que mein pasa a meinen"
+          }
+        },
+        {
+          "text": {
+            "en": "meinen, because the owner ich is a man",
+            "es": "meinen, porque el poseedor ich es un hombre"
+          },
+          "wrong": {
+            "en": "The owner does not decide the ending. A woman also says meinen Vater. The ending comes from the masculine noun and its role.",
+            "es": "El poseedor no decide la terminación. Una mujer también dice meinen Vater. La terminación viene del sustantivo masculino y de su función."
+          }
+        },
+        {
+          "text": {
+            "en": "meinen is the plural form",
+            "es": "meinen es la forma plural"
+          },
+          "wrong": {
+            "en": "The plural is meine, as in meine Eltern. meinen belongs to a masculine singular object.",
+            "es": "El plural es meine, como en meine Eltern. meinen corresponde a un complemento masculino singular."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "possessivartikel-c07",
+      "sentence": "Paul liebt ___ Schwester.",
+      "options": [
+        "ihre",
+        "seine",
+        "sein"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The owner is Paul, a man, so the stem is sein-. Schwester is feminine, so the ending is -e: seine Schwester.",
+        "es": "El poseedor es Paul, un hombre, así que la raíz es sein-. Schwester es femenino, así que la terminación es -e: seine Schwester."
+      },
+      "wrong": {
+        "ihre": {
+          "en": "ihre has the stem of a female owner. Paul is a man, so the stem is sein-.",
+          "es": "ihre tiene la raíz de una poseedora. Paul es un hombre, así que la raíz es sein-."
+        },
+        "sein": {
+          "en": "sein has the right stem but no ending. Schwester is feminine, so you need -e: seine.",
+          "es": "sein tiene la raíz correcta pero no lleva terminación. Schwester es femenino, así que necesitas -e: seine."
+        }
+      },
+      "examples": [
+        "Paul liebt seine Mutter.",
+        "Paul sucht seine Tasche."
+      ],
+      "tr": {
+        "en": "Paul loves his sister.",
+        "es": "Paul quiere a su hermana."
+      }
+    },
+    {
+      "id": "possessivartikel-f07",
+      "kind": "form",
+      "verb": "Plural",
+      "person": "ihr",
+      "answer": "eure",
+      "table": "possessiv"
+    },
+    {
+      "id": "possessivartikel-c08",
+      "sentence": "Wir haben ___ Hund.",
+      "options": [
+        "unseren",
+        "unser",
+        "unsere"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The owner is wir, so the stem is unser-. Hund is a masculine object, so you add -en: unseren.",
+        "es": "El poseedor es wir, así que la raíz es unser-. Hund es un complemento masculino, así que se añade -en: unseren."
+      },
+      "wrong": {
+        "unser": {
+          "en": "unser has the right stem but no ending. As a masculine object Hund needs -en: unseren.",
+          "es": "unser tiene la raíz correcta pero no lleva terminación. Como complemento masculino, Hund necesita -en: unseren."
+        },
+        "unsere": {
+          "en": "unsere is for feminine nouns and the plural. Hund is masculine, so you need unseren.",
+          "es": "unsere es para sustantivos femeninos y el plural. Hund es masculino, así que necesitas unseren."
+        }
+      },
+      "examples": [
+        "Wir haben unseren Tisch.",
+        "Wir sehen unseren Lehrer."
+      ],
+      "tr": {
+        "en": "We have our dog.",
+        "es": "Tenemos a nuestro perro."
+      }
+    },
+    {
+      "id": "possessivartikel-f08",
+      "kind": "form",
+      "verb": "Akkusativ",
+      "person": "wir",
+      "answer": "unseren",
+      "table": "possessiv-akkusativ"
+    },
+    {
+      "id": "possessivartikel-c09",
+      "sentence": "Kinder, wo ist ___ Tasche?",
+      "options": [
+        "euer",
+        "euere",
+        "eure"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The owner is ihr, several children, so the stem is euer-. Tasche is feminine, so you add -e and the e drops: eure Tasche.",
+        "es": "El poseedor es ihr, varios niños, así que la raíz es euer-. Tasche es femenino, así que se añade -e y la e se pierde: eure Tasche."
+      },
+      "wrong": {
+        "euer": {
+          "en": "euer has no ending and is for masculine and neuter nouns. Tasche is feminine, so you need eure.",
+          "es": "euer no lleva terminación y es para sustantivos masculinos y neutros. Tasche es femenino, así que necesitas eure."
+        },
+        "euere": {
+          "en": "euere keeps the second e, but with an ending the stem loses it: eure.",
+          "es": "euere conserva la segunda e, pero con una terminación la raíz la pierde: eure."
+        }
+      },
+      "examples": [
+        "Kinder, wo ist eure Katze?",
+        "Wo sind eure Eltern?"
+      ],
+      "tr": {
+        "en": "Children, where is your bag?",
+        "es": "Niños, ¿dónde está su bolsa?"
+      }
+    },
+    {
+      "id": "possessivartikel-f09",
+      "kind": "form",
+      "verb": "feminin",
+      "person": "er/es",
+      "answer": "seine",
+      "table": "possessiv"
+    },
+    {
+      "id": "possessivartikel-w03",
+      "kind": "why",
+      "es": "Anna sucht ihren Schlüssel.",
+      "target": "ihren",
+      "tr": {
+        "en": "Anna is looking for her key.",
+        "es": "Anna busca su llave."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "sein-, because Schlüssel is masculine",
+            "es": "sein-, porque Schlüssel es masculino"
+          },
+          "wrong": {
+            "en": "The stem depends on the owner, not on the noun. Anna is a woman, so the stem is ihr-. The masculine noun only gives the ending -en.",
+            "es": "La raíz depende del poseedor, no del sustantivo. Anna es una mujer, así que la raíz es ihr-. El sustantivo masculino solo da la terminación -en."
+          }
+        },
+        {
+          "text": {
+            "en": "ihr- because the owner Anna is a woman, and -en because Schlüssel is a masculine object",
+            "es": "ihr- porque la poseedora Anna es una mujer, y -en porque Schlüssel es un complemento masculino"
+          }
+        },
+        {
+          "text": {
+            "en": "ihren, because Schlüssel is feminine like Anna",
+            "es": "ihren, porque Schlüssel es femenino como Anna"
+          },
+          "wrong": {
+            "en": "Schlüssel is masculine: der Schlüssel. Anna being a woman only explains the stem ihr-.",
+            "es": "Schlüssel es masculino: der Schlüssel. Que Anna sea una mujer solo explica la raíz ihr-."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "possessivartikel-c10",
+      "sentence": "Ist das ___ Auto, Kinder?",
+      "options": [
+        "euer",
+        "eure",
+        "euren"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The owner is ihr and Auto is neuter, so there is no ending: euer Auto.",
+        "es": "El poseedor es ihr y Auto es neutro, así que no hay terminación: euer Auto."
+      },
+      "wrong": {
+        "eure": {
+          "en": "eure is for feminine nouns and the plural. Auto is neuter, so you need euer.",
+          "es": "eure es para sustantivos femeninos y el plural. Auto es neutro, así que necesitas euer."
+        },
+        "euren": {
+          "en": "euren is for a masculine object in the accusative. Auto is neuter, so you need euer.",
+          "es": "euren es para un complemento masculino en acusativo. Auto es neutro, así que necesitas euer."
+        }
+      },
+      "examples": [
+        "Ist das euer Haus, Kinder?",
+        "Ist das euer Buch?"
+      ],
+      "tr": {
+        "en": "Is that your car, children?",
+        "es": "¿Ese es su carro, niños?"
+      }
+    },
+    {
+      "id": "possessivartikel-f10",
+      "kind": "form",
+      "verb": "Akkusativ",
+      "person": "ihr",
+      "answer": "euren",
+      "table": "possessiv-akkusativ"
+    },
+    {
+      "id": "possessivartikel-c11",
+      "sentence": "Frau Müller, wie ist ___ Name?",
+      "options": [
+        "Dein",
+        "Ihr",
+        "Euer"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Frau Müller is addressed with Sie, so you use the formal Ihr, written with a capital letter: Wie ist Ihr Name?",
+        "es": "A Frau Müller se le habla con Sie, así que se usa el Ihr formal, escrito con mayúscula: Wie ist Ihr Name?"
+      },
+      "wrong": {
+        "Dein": {
+          "en": "Dein is for a person you address with du, such as a friend. Frau Müller is addressed with Sie.",
+          "es": "Dein es para una persona a la que tratas con du, como un amigo. A Frau Müller se le habla con Sie."
+        },
+        "Euer": {
+          "en": "Euer is for several friends you address with ihr. Frau Müller is one person, addressed with Sie.",
+          "es": "Euer es para varios amigos a los que tratas con ihr. Frau Müller es una persona a quien tratas de Sie."
+        }
+      },
+      "examples": [
+        "Wie ist Ihre Adresse?",
+        "Wie ist Ihre Telefonnummer?"
+      ],
+      "tr": {
+        "en": "Ms Müller, what is your name?",
+        "es": "Señora Müller, ¿cómo se llama usted?"
+      }
+    },
+    {
+      "id": "possessivartikel-f11",
+      "kind": "form",
+      "verb": "maskulin",
+      "person": "sie (Singular)",
+      "answer": "ihr",
+      "table": "possessiv"
+    },
+    {
+      "id": "possessivartikel-c12",
+      "sentence": "Wir lieben ___ Kinder.",
+      "options": [
+        "unser",
+        "unseren",
+        "unsere"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Kinder is plural, so the possessive takes -e, and in the accusative the plural does not change: unsere Kinder.",
+        "es": "Kinder es plural, así que el posesivo lleva -e, y en acusativo el plural no cambia: unsere Kinder."
+      },
+      "wrong": {
+        "unser": {
+          "en": "unser has no ending and is for masculine and neuter singular nouns. Kinder is plural, so you need unsere.",
+          "es": "unser no lleva terminación y es para sustantivos masculinos y neutros en singular. Kinder es plural, así que necesitas unsere."
+        },
+        "unseren": {
+          "en": "unseren is only for a masculine singular object. The plural Kinder takes unsere.",
+          "es": "unseren es solo para un complemento masculino en singular. El plural Kinder lleva unsere."
+        }
+      },
+      "examples": [
+        "Wir lieben unsere Eltern.",
+        "Wir sehen unsere Kinder."
+      ],
+      "tr": {
+        "en": "We love our children.",
+        "es": "Amamos a nuestros hijos."
+      }
+    },
+    {
+      "id": "possessivartikel-f12",
+      "kind": "form",
+      "verb": "Nominativ",
+      "person": "ihr",
+      "answer": "euer",
+      "table": "possessiv-akkusativ"
+    },
+    {
+      "id": "possessivartikel-c13",
+      "sentence": "Anna und Paul lieben ___ Kinder.",
+      "options": [
+        "ihre",
+        "seine",
+        "unsere"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The owners are Anna and Paul, two people, so the stem is ihr-, meaning their. Kinder is plural, so the ending is -e: ihre Kinder.",
+        "es": "Los poseedores son Anna y Paul, dos personas, así que la raíz es ihr-, que significa «sus». Kinder es plural, así que la terminación es -e: ihre Kinder."
+      },
+      "wrong": {
+        "seine": {
+          "en": "seine has the stem of one male owner. The owners here are two people, so the stem is ihr-.",
+          "es": "seine tiene la raíz de un poseedor masculino. Los poseedores aquí son dos personas, así que la raíz es ihr-."
+        },
+        "unsere": {
+          "en": "unsere would mean our. Anna and Paul are talking about their own children, seen from outside, so you need ihre.",
+          "es": "unsere significaría «nuestros». Anna y Paul se ven desde fuera, así que necesitas ihre."
+        }
+      },
+      "examples": [
+        "Sie lieben ihre Eltern.",
+        "Anna und Paul sehen ihre Katze."
+      ],
+      "tr": {
+        "en": "Anna and Paul love their children.",
+        "es": "Anna y Paul aman a sus hijos."
+      }
+    },
+    {
+      "id": "possessivartikel-c14",
+      "sentence": "Du hast ___ Buch, Anna.",
+      "options": [
+        "deine",
+        "dein",
+        "deinen"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The owner is du and Buch is neuter, so there is no ending: dein Buch.",
+        "es": "El poseedor es du y Buch es neutro, así que no hay terminación: dein Buch."
+      },
+      "wrong": {
+        "deine": {
+          "en": "deine is for feminine nouns and the plural. Buch is neuter, so you need dein.",
+          "es": "deine es para sustantivos femeninos y el plural. Buch es neutro, así que necesitas dein."
+        },
+        "deinen": {
+          "en": "deinen is for a masculine object. Buch is neuter, so you need dein.",
+          "es": "deinen es para un complemento masculino. Buch es neutro, así que necesitas dein."
+        }
+      },
+      "examples": [
+        "Du hast dein Handy, Paul.",
+        "Du hast dein Geld."
+      ],
+      "tr": {
+        "en": "You have your book, Anna.",
+        "es": "Tienes tu libro, Anna."
+      }
+    },
+    {
+      "id": "possessivartikel-w04",
+      "kind": "why",
+      "es": "Anna und Paul lieben ihre Kinder.",
+      "target": "ihre",
+      "tr": {
+        "en": "Anna and Paul love their children.",
+        "es": "Anna y Paul aman a sus hijos."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "ihre means her, because Anna is a woman",
+            "es": "ihre significa «su» de ella, porque Anna es una mujer"
+          },
+          "wrong": {
+            "en": "Here the owners are Anna and Paul together, so ihr- means their. The ending -e comes from the plural Kinder.",
+            "es": "Aquí los poseedores son Anna y Paul juntos, así que ihr- significa «su» de ellos. La terminación -e viene del plural Kinder."
+          }
+        },
+        {
+          "text": {
+            "en": "ihre is the formal Ihre, as with Sie",
+            "es": "ihre es el Ihre formal, como con Sie"
+          },
+          "wrong": {
+            "en": "The formal Ihre is written with a capital letter and is used for a person you address with Sie. This sentence talks about Anna and Paul.",
+            "es": "El Ihre formal se escribe con mayúscula y se usa para una persona a quien tratas de Sie. Esta oración habla de Anna y Paul."
+          }
+        },
+        {
+          "text": {
+            "en": "ihr- means their because there are several owners, and -e matches the plural Kinder",
+            "es": "ihr- significa «su» de ellos porque hay varios poseedores, y -e corresponde al plural Kinder"
+          }
+        }
+      ],
+      "correctIndex": 2
+    }
+  ]
+}

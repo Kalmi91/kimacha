@@ -126,8 +126,8 @@ describe('Spanish grammar syllabus (default lang) is unchanged', () => {
     expect(lessonCoverage('es').planned).toBe(GRAMMAR_SYLLABUS.length);
     expect(syllabusTopic('presente-regular')?.level).toBe('A1');
     expect(syllabusTopic('to_be')).toBeUndefined();
-    // The Hungarian `hu` titles / blurbs are an addition on top (huSyllabus.test.ts); the en / es text is what is fingerprinted.
-    const withoutHu = JSON.stringify([GRAMMAR_UNITS, GRAMMAR_SYLLABUS], (key, value) => (key === 'hu' ? undefined : value));
+    // The Hungarian `hu` and German `de` titles / blurbs are an addition on top (huSyllabus.test.ts, deOverlay.test.ts); the en / es text is what is fingerprinted.
+    const withoutHu = JSON.stringify([GRAMMAR_UNITS, GRAMMAR_SYLLABUS], (key, value) => (key === 'hu' || key === 'de' ? undefined : value));
     const fingerprint = createHash('sha1').update(withoutHu).digest('hex');
     expect({ units: GRAMMAR_UNITS.length, topics: GRAMMAR_SYLLABUS.length, fingerprint }).toEqual({
       units: 17,
@@ -142,7 +142,10 @@ describe('Hungarian grammar syllabus (lang = hu) keeps its size and content fing
     expect(syllabusLevels('hu')).toEqual(['A1', 'A2', 'B1', 'B2', 'C1']);
     const units = syllabusLevels('hu').flatMap((l) => unitsForLevel(l, 'hu'));
     const topics = syllabusLevels('hu').flatMap((l) => syllabusForLevel(l, 'hu'));
-    const fingerprint = createHash('sha1').update(JSON.stringify([units, topics])).digest('hex');
+    // The German `de` titles / blurbs are an addition on top (deOverlay.test.ts); the en / es text is what is fingerprinted.
+    const fingerprint = createHash('sha1')
+      .update(JSON.stringify([units, topics], (key, value) => (key === 'de' ? undefined : value)))
+      .digest('hex');
     expect({ units: units.length, topics: topics.length, fingerprint }).toEqual({ units: 18, topics: 75, fingerprint: '50982448983dc6ace3566cad4d466dddf93ba412' });
     expect(syllabusTopic('lenni-van')).toBeUndefined();
     expect(syllabusTopic('lenni-van', 'en')).toBeUndefined();

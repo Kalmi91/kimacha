@@ -10,7 +10,7 @@ import { t } from '@/lib/i18n';
 import { speechLang } from '@/lib/languages';
 import { DAILY_XP_GOAL } from '@/lib/dailyXp';
 import { suggestedGrade } from '@/lib/pcicMatch';
-import { ARTICLE_OPTIONS, articlePickerApplies, articleRowAppliesForPos, type ArticlePick } from '@/lib/articlePicker';
+import { articleOptionsFor, articlePickerApplies, articleRowAppliesForPos, type ArticlePick } from '@/lib/articlePicker';
 import { LEARNING_STEPS } from '@/lib/sm2';
 import { PCIC_NEW_BONUS_STEP, PCIC_NEW_BONUS_STEPS, countFinishedToday, dayProgressPercent, finishedInBatch } from '@/lib/pcicSession';
 import { posOf } from '@/lib/pcicPos';
@@ -363,6 +363,8 @@ export default function PcicCardView({
   // posOf runs only for es as the target language (the
   // rule/corpus is built on Spanish word forms, it makes no sense for English as the target).
   const pos = target === 'es' ? posOf(currentItem) : null;
+  // German decks carry the part of speech on the card itself: only a noun (or an unknown) gets the der / die / das row.
+  const rowPos = target === 'de' ? (currentItem.pos ? { pos: currentItem.pos } : null) : pos;
 
   const hasNote = !!currentItem.note || !!currentItem.image;
   const noteOpen = hasNote && noteOpenFor === currentItem.id;
@@ -486,12 +488,12 @@ export default function PcicCardView({
           {/* article button row from the Learn tab, ⊘ is the default.
               Addition: on PCIC the chip already shows when it is not a noun, so the
               row appears only for noun/unknown part of speech (lib/articlePicker.ts).
-              It appears only for es as the target language. */}
-          {target === 'es' &&
+              It appears for the languages with an article set (es, de). */}
+          {articleOptionsFor(target).length > 0 &&
             articlePickerApplies(target, currentItem.kind !== 'sentence', answerText) &&
-            articleRowAppliesForPos(pos) && (
+            articleRowAppliesForPos(rowPos) && (
             <View style={styles.articleRow}>
-              {([...ARTICLE_OPTIONS, ''] as ArticlePick[]).map((opt) => {
+              {([...articleOptionsFor(target), ''] as ArticlePick[]).map((opt) => {
                 const active = articlePick === opt;
                 if (g.brutal) {
                   return (

@@ -13,10 +13,11 @@ const ALLOWED_LICENSE = /^(CC0|Public domain|CC BY (\d\.\d)|CC BY-SA (\d\.\d))$/
 const EXPECTED_KEYS = [
   'es-a2-1', 'es-a2-2', 'es-b1-1', 'es-b1-2', 'es-b2-1', 'es-b2-2',
   'en-a1-1', 'en-a1-2', 'en-b1-1', 'en-b1-2', 'en-b2-1', 'en-b2-2', 'en-c1-1', 'en-c1-2', 'en-c1-3',
+  'de-a2-1', 'de-a2-2', 'de-b1-1', 'de-b1-2', 'de-b2-1',
 ];
 
 describe('data/exams/mock/photos.json speaking-task photos', () => {
-  it('has exactly the 15 planned keys', () => {
+  it('has exactly the 20 planned keys', () => {
     expect(entries.map(([key]) => key).sort()).toEqual([...EXPECTED_KEYS].sort());
   });
 

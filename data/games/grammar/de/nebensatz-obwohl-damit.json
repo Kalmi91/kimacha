@@ -1,0 +1,1011 @@
+{
+  "schema": 2,
+  "topic": "nebensatz-obwohl-damit",
+  "level": "B1",
+  "title": {
+    "en": "obwohl, damit, um ... zu, sodass",
+    "es": "obwohl, damit, um ... zu, sodass"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "These connectors say why, for what purpose or with what result something happens. obwohl (although) shows a contrast. damit (so that) gives a purpose when the two clauses have different subjects. um ... zu + infinitive gives a purpose when the subject is the same. sodass or so ... dass (so that, so ... that) gives a result. All clauses with obwohl, damit, sodass and dass send the conjugated verb to the end.",
+        "es": "Estos conectores dicen por qué, para qué o con qué resultado ocurre algo. obwohl (aunque) muestra un contraste. damit (para que) da una finalidad cuando las dos oraciones tienen sujetos distintos. um ... zu + infinitivo da una finalidad cuando el sujeto es el mismo. sodass o so ... dass (de modo que, tan ... que) da un resultado. Todas las oraciones con obwohl, damit, sodass y dass mandan el verbo conjugado al final."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "konjunktionen-uebersicht",
+      "title": {
+        "en": "Which connector for which meaning",
+        "es": "Qué conector para qué significado"
+      },
+      "header": [
+        {
+          "en": "Meaning",
+          "es": "Significado"
+        },
+        {
+          "en": "Konjunktion",
+          "es": "Konjunktion"
+        }
+      ],
+      "rows": [
+        [
+          "Grund",
+          "weil"
+        ],
+        [
+          "aber doch",
+          "obwohl"
+        ],
+        [
+          "Ziel, andere Person",
+          "damit"
+        ],
+        [
+          "Folge",
+          "sodass"
+        ],
+        [
+          "Inhalt",
+          "dass"
+        ],
+        [
+          "Zeit, vorher",
+          "bevor"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "obwohl or weil?",
+        "es": "¿obwohl o weil?"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "weil gives the reason that fits the main clause. obwohl gives something that you would not expect: the main clause happens anyway. After both the verb goes to the end.",
+            "es": "weil da la razón que encaja con la oración principal. obwohl da algo que no se esperaría: la oración principal ocurre de todos modos. Después de ambos el verbo va al final."
+          },
+          "examples": [
+            {
+              "es": "Ich bleibe zu Hause, weil ich krank bin.",
+              "tr": {
+                "en": "I stay at home because I am sick.",
+                "es": "Me quedo en casa porque estoy enfermo."
+              }
+            },
+            {
+              "es": "Ich gehe spazieren, obwohl es regnet.",
+              "tr": {
+                "en": "I go for a walk although it is raining.",
+                "es": "Salgo a caminar aunque llueve."
+              }
+            },
+            {
+              "es": "Er geht zur Arbeit, obwohl er krank ist.",
+              "tr": {
+                "en": "He goes to work although he is sick.",
+                "es": "Va a trabajar aunque está enfermo."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "When the obwohl clause comes first, the next verb follows right after the comma, as with every subordinate clause at the start.",
+            "es": "Cuando la oración con obwohl va primero, el verbo siguiente va justo después de la coma, como en toda subordinada al principio."
+          },
+          "examples": [
+            {
+              "es": "Obwohl es regnet, gehen wir spazieren.",
+              "tr": {
+                "en": "Although it is raining, we go for a walk.",
+                "es": "Aunque llueve, salimos a caminar."
+              }
+            },
+            {
+              "es": "Obwohl er viel arbeitet, hat er wenig Geld.",
+              "tr": {
+                "en": "Although he works a lot, he has little money.",
+                "es": "Aunque trabaja mucho, tiene poco dinero."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "um-zu-formen",
+      "title": {
+        "en": "The infinitive with zu after um",
+        "es": "El infinitivo con zu después de um"
+      },
+      "header": [
+        {
+          "en": "Infinitive",
+          "es": "Infinitivo"
+        },
+        {
+          "en": "mit zu",
+          "es": "mit zu"
+        }
+      ],
+      "rows": [
+        [
+          "kaufen",
+          "zu kaufen"
+        ],
+        [
+          "lernen",
+          "zu lernen"
+        ],
+        [
+          "arbeiten",
+          "zu arbeiten"
+        ],
+        [
+          "besuchen",
+          "zu besuchen"
+        ],
+        [
+          "aufstehen",
+          "aufzustehen"
+        ],
+        [
+          "einkaufen",
+          "einzukaufen"
+        ],
+        [
+          "anrufen",
+          "anzurufen"
+        ],
+        [
+          "mitkommen",
+          "mitzukommen"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "damit or um ... zu?",
+        "es": "¿damit o um ... zu?"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "Same subject in both parts: um ... zu + infinitive at the end (no new subject). Different subjects: damit + a full clause with its own subject and the verb at the end.",
+            "es": "Mismo sujeto en las dos partes: um ... zu + infinitivo al final (sin sujeto nuevo). Sujetos distintos: damit + una oración completa con su propio sujeto y el verbo al final."
+          },
+          "examples": [
+            {
+              "es": "Ich lerne Deutsch, um in Berlin zu arbeiten.",
+              "tr": {
+                "en": "I am learning German in order to work in Berlin.",
+                "es": "Aprendo alemán para trabajar en Berlín."
+              }
+            },
+            {
+              "es": "Ich spreche langsam, damit du mich verstehst.",
+              "tr": {
+                "en": "I speak slowly so that you understand me.",
+                "es": "Hablo despacio para que me entiendas."
+              }
+            },
+            {
+              "es": "Ich arbeite viel, damit meine Kinder studieren können.",
+              "tr": {
+                "en": "I work a lot so that my children can study.",
+                "es": "Trabajo mucho para que mis hijos puedan estudiar."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "With um ... zu the zu stands directly before the infinitive. With a separable verb zu goes between the prefix and the stem, written as one word. The infinitive comes last, and a comma is usual before um.",
+            "es": "Con um ... zu, el zu va justo antes del infinitivo. Con un verbo separable, zu va entre el prefijo y la raíz, escrito en una sola palabra. El infinitivo va al final, y es habitual una coma antes de um."
+          },
+          "examples": [
+            {
+              "es": "Ich fahre nach Köln, um Anna zu besuchen.",
+              "tr": {
+                "en": "I am going to Cologne to visit Anna.",
+                "es": "Voy a Colonia para visitar a Anna."
+              }
+            },
+            {
+              "es": "Ich gehe in die Stadt, um einzukaufen.",
+              "tr": {
+                "en": "I am going into town to shop.",
+                "es": "Voy al centro para hacer compras."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "sodass and so ... dass: the result",
+        "es": "sodass y so ... dass: el resultado"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "sodass names the consequence of the main clause. With so + adjective you can also split it: so ... dass. The verb of the dass-clause is at the end.",
+            "es": "sodass nombra la consecuencia de la oración principal. Con so + adjetivo también puedes separarlo: so ... dass. El verbo de la oración con dass va al final."
+          },
+          "examples": [
+            {
+              "es": "Es regnet stark, sodass wir zu Hause bleiben.",
+              "tr": {
+                "en": "It is raining hard, so we stay at home.",
+                "es": "Llueve fuerte, de modo que nos quedamos en casa."
+              }
+            },
+            {
+              "es": "Er ist so müde, dass er im Bus schläft.",
+              "tr": {
+                "en": "He is so tired that he sleeps on the bus.",
+                "es": "Está tan cansado que se duerme en el autobús."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "damit or dass?",
+        "es": "¿damit o dass?"
+      },
+      "pairs": [
+        {
+          "a": "damit",
+          "b": "dass",
+          "note": {
+            "en": "damit gives the purpose (what for?). dass introduces the content after verbs like hoffen, wissen, sagen. The Hungarian hogy and the Spanish que cover both, so ask: is it a purpose?",
+            "es": "damit da la finalidad (¿para qué?). dass introduce el contenido después de verbos como hoffen, wissen, sagen. El húngaro hogy y el español que cubren los dos, así que pregunta: ¿es una finalidad?"
+          },
+          "examples": [
+            {
+              "es": "Ich schreibe es auf, damit du es siehst.",
+              "tr": {
+                "en": "I write it down so that you see it.",
+                "es": "Lo escribo para que lo veas."
+              }
+            },
+            {
+              "es": "Ich hoffe, dass du kommst.",
+              "tr": {
+                "en": "I hope that you are coming.",
+                "es": "Espero que vengas."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: obwohl is not the same as weil. It gives a contrast, and it needs the verb at the end (not Obwohl er ist müde). Do not use damit when the subject is the same and a simple infinitive works: Ich lerne, um zu arbeiten, not Ich lerne, damit ich arbeite. With um ... zu the zu stands before the infinitive, and inside a separable verb (einzukaufen). Never use zu after a modal verb. Do not translate in order to with für: use um ... zu. The trap for English speakers is although versus despite: obwohl starts a clause with a verb, but trotz (next lessons) takes a noun.",
+        "es": "Trampas clásicas: obwohl no es lo mismo que weil. Da un contraste y necesita el verbo al final (no Obwohl er ist müde). No uses damit cuando el sujeto es el mismo y basta un infinitivo: Ich lerne, um zu arbeiten, no Ich lerne, damit ich arbeite. Con um ... zu, el zu va antes del infinitivo, y dentro de un verbo separable (einzukaufen). Nunca uses zu después de un verbo modal. No traduzcas in order to con für: usa um ... zu. La trampa para los hablantes de inglés es although frente a despite: obwohl inicia una oración con verbo, pero trotz (en las lecciones siguientes) lleva un sustantivo."
+      }
+    }
+  ],
+  "speak": {
+    "en": "The word «obwohl» shows a contrast, and the verb goes to the end: «Ich gehe spazieren, obwohl es regnet.» For a purpose with the same subject, use «um» and «zu»: «Ich lerne Deutsch, um in Berlin zu arbeiten.» With different subjects, use «damit»: «Ich spreche langsam, damit du mich verstehst.» For a result, use «sodass» or «so, dass»: «Er ist so müde, dass er im Bus schläft.»",
+    "es": "La palabra «obwohl» muestra un contraste, y el verbo va al final: «Ich gehe spazieren, obwohl es regnet.» Para una finalidad con el mismo sujeto, usa «um» y «zu»: «Ich lerne Deutsch, um in Berlin zu arbeiten.» Con sujetos distintos, usa «damit»: «Ich spreche langsam, damit du mich verstehst.» Para un resultado, usa «sodass» o «so, dass»: «Er ist so müde, dass er im Bus schläft.»"
+  },
+  "items": [
+    {
+      "id": "nebensatz-obwohl-damit-c01",
+      "sentence": "Ich gehe spazieren, ___ es regnet.",
+      "options": [
+        "weil",
+        "obwohl",
+        "damit"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Rain would normally keep you inside. A walk in spite of the rain is a contrast: obwohl.",
+        "es": "La lluvia normalmente te dejaría en casa. Un paseo a pesar de la lluvia es un contraste: obwohl."
+      },
+      "wrong": {
+        "weil": {
+          "en": "weil would make the rain the reason for the walk. That is not what the sentence means.",
+          "es": "weil haría de la lluvia la razón del paseo. No es lo que significa la oración."
+        },
+        "damit": {
+          "en": "damit gives a purpose, what the walk is for. The rain is not a purpose of anything.",
+          "es": "damit da una finalidad, para qué es el paseo. La lluvia no es la finalidad de nada."
+        }
+      },
+      "examples": [
+        "Ich arbeite, obwohl ich müde bin.",
+        "Wir gehen raus, obwohl es kalt ist."
+      ],
+      "tr": {
+        "en": "I go for a walk although it is raining.",
+        "es": "Salgo a caminar aunque llueve."
+      }
+    },
+    {
+      "id": "nebensatz-obwohl-damit-f01",
+      "kind": "form",
+      "verb": "Konjunktion",
+      "person": "Grund",
+      "answer": "weil",
+      "table": "konjunktionen-uebersicht"
+    },
+    {
+      "id": "nebensatz-obwohl-damit-c02",
+      "sentence": "Ich bleibe zu Hause, ___ ich krank bin.",
+      "options": [
+        "obwohl",
+        "damit",
+        "weil"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Being sick is the reason for staying at home, so the connector is weil.",
+        "es": "Estar enfermo es la razón para quedarse en casa, así que el conector es weil."
+      },
+      "wrong": {
+        "obwohl": {
+          "en": "obwohl would mean you stay at home although you are sick. That is a strange contrast.",
+          "es": "obwohl significaría que te quedas en casa aunque estás enfermo. Es un contraste extraño."
+        },
+        "damit": {
+          "en": "damit would give a purpose with a new subject. Being sick is not a purpose, it is a reason.",
+          "es": "damit daría una finalidad con un sujeto nuevo. Estar enfermo no es una finalidad, es una razón."
+        }
+      },
+      "examples": [
+        "Er schläft, weil er müde ist.",
+        "Wir bleiben hier, weil es regnet."
+      ],
+      "tr": {
+        "en": "I stay at home because I am sick.",
+        "es": "Me quedo en casa porque estoy enfermo."
+      }
+    },
+    {
+      "id": "nebensatz-obwohl-damit-f02",
+      "kind": "form",
+      "verb": "mit zu",
+      "person": "kaufen",
+      "answer": "zu kaufen",
+      "table": "um-zu-formen"
+    },
+    {
+      "id": "nebensatz-obwohl-damit-c03",
+      "sentence": "Er geht zur Arbeit, obwohl er ___.",
+      "options": [
+        "krank ist",
+        "ist krank",
+        "krank"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "After obwohl the conjugated verb goes to the end: obwohl er krank ist.",
+        "es": "Después de obwohl el verbo conjugado va al final: obwohl er krank ist."
+      },
+      "wrong": {
+        "ist krank": {
+          "en": "ist krank keeps the verb in second position as in a main clause. In an obwohl clause the verb moves to the end.",
+          "es": "ist krank deja el verbo en segunda posición como en una oración principal. En una oración con obwohl el verbo pasa al final."
+        },
+        "krank": {
+          "en": "krank alone has no verb, so the clause is incomplete. A subordinate clause needs a conjugated verb at the end.",
+          "es": "krank solo no tiene verbo, así que la oración está incompleta. Una oración subordinada necesita un verbo conjugado al final."
+        }
+      },
+      "examples": [
+        "Sie kommt, obwohl sie müde ist.",
+        "Ich lerne, obwohl ich keine Lust habe."
+      ],
+      "tr": {
+        "en": "He goes to work although he is sick.",
+        "es": "Va a trabajar aunque está enfermo."
+      }
+    },
+    {
+      "id": "nebensatz-obwohl-damit-f03",
+      "kind": "form",
+      "verb": "Konjunktion",
+      "person": "aber doch",
+      "answer": "obwohl",
+      "table": "konjunktionen-uebersicht"
+    },
+    {
+      "id": "nebensatz-obwohl-damit-w01",
+      "kind": "why",
+      "es": "Ich gehe spazieren, obwohl es regnet.",
+      "target": "obwohl",
+      "tr": {
+        "en": "I go for a walk although it is raining.",
+        "es": "Salgo a caminar aunque llueve."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "obwohl shows a contrast: the main clause happens in spite of the other",
+            "es": "obwohl muestra un contraste: la oración principal ocurre a pesar de la otra"
+          }
+        },
+        {
+          "text": {
+            "en": "obwohl gives the reason, like weil",
+            "es": "obwohl da la razón, como weil"
+          },
+          "wrong": {
+            "en": "weil gives the reason. obwohl gives the opposite: something that would normally stop the action.",
+            "es": "weil da la razón. obwohl da lo contrario: algo que normalmente detendría la acción."
+          }
+        },
+        {
+          "text": {
+            "en": "obwohl is followed by the verb in second position, as in a main clause",
+            "es": "obwohl va seguido del verbo en segunda posición, como en una oración principal"
+          },
+          "wrong": {
+            "en": "obwohl starts a subordinate clause, so its verb goes to the end: obwohl es regnet.",
+            "es": "obwohl inicia una oración subordinada, así que su verbo va al final: obwohl es regnet."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "nebensatz-obwohl-damit-c04",
+      "sentence": "Ich spreche langsam, ___ du mich verstehst.",
+      "options": [
+        "damit",
+        "um",
+        "obwohl"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The subjects differ (ich speaks, du understands) and the clause states a purpose: damit.",
+        "es": "Los sujetos son distintos (yo hablo, tú entiendes) y la oración indica una finalidad: damit."
+      },
+      "wrong": {
+        "um": {
+          "en": "um needs an infinitive with zu and the same subject. Here du is a different person with its own verb.",
+          "es": "um necesita un infinitivo con zu y el mismo sujeto. Aquí du es otra persona con su propio verbo."
+        },
+        "obwohl": {
+          "en": "obwohl would say that you speak slowly although you understand. That reverses the meaning.",
+          "es": "obwohl diría que hablas despacio aunque entiendes. Eso invierte el significado."
+        }
+      },
+      "examples": [
+        "Ich schreibe es auf, damit du es siehst.",
+        "Sie spricht laut, damit alle sie hören."
+      ],
+      "tr": {
+        "en": "I speak slowly so that you understand me.",
+        "es": "Hablo despacio para que me entiendas."
+      }
+    },
+    {
+      "id": "nebensatz-obwohl-damit-f04",
+      "kind": "form",
+      "verb": "mit zu",
+      "person": "aufstehen",
+      "answer": "aufzustehen",
+      "table": "um-zu-formen"
+    },
+    {
+      "id": "nebensatz-obwohl-damit-c05",
+      "sentence": "Ich lerne Deutsch, ___ in Berlin zu arbeiten.",
+      "options": [
+        "damit",
+        "um",
+        "weil"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The subject is the same (ich learns, ich works), so you use um ... zu with an infinitive.",
+        "es": "El sujeto es el mismo (yo aprendo, yo trabajo), así que se usa um ... zu con un infinitivo."
+      },
+      "wrong": {
+        "damit": {
+          "en": "damit would need a full clause with a subject and a verb at the end. Here an infinitive with zu follows.",
+          "es": "damit necesitaría una oración completa con sujeto y verbo al final. Aquí sigue un infinitivo con zu."
+        },
+        "weil": {
+          "en": "weil also needs a full clause with a conjugated verb. It would give a reason, not a purpose.",
+          "es": "weil también necesita una oración completa con verbo conjugado. Daría una razón, no una finalidad."
+        }
+      },
+      "examples": [
+        "Ich spare Geld, um ein Auto zu kaufen.",
+        "Sie lernt viel, um Ärztin zu werden."
+      ],
+      "tr": {
+        "en": "I am learning German in order to work in Berlin.",
+        "es": "Aprendo alemán para trabajar en Berlín."
+      }
+    },
+    {
+      "id": "nebensatz-obwohl-damit-f05",
+      "kind": "form",
+      "verb": "Konjunktion",
+      "person": "Ziel, andere Person",
+      "answer": "damit",
+      "table": "konjunktionen-uebersicht"
+    },
+    {
+      "id": "nebensatz-obwohl-damit-c06",
+      "sentence": "Ich fahre nach Köln, um Anna ___.",
+      "options": [
+        "besuchen zu",
+        "besucht",
+        "zu besuchen"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "In um ... zu the zu stands directly before the infinitive: zu besuchen.",
+        "es": "En um ... zu, el zu va justo antes del infinitivo: zu besuchen."
+      },
+      "wrong": {
+        "besuchen zu": {
+          "en": "besuchen zu has zu after the infinitive. In German the zu always comes first.",
+          "es": "besuchen zu pone zu después del infinitivo. En alemán el zu va siempre primero."
+        },
+        "besucht": {
+          "en": "besucht is a participle or a form for er. The pattern um ... zu needs an infinitive with zu.",
+          "es": "besucht es un participio o una forma para er. El patrón um ... zu necesita un infinitivo con zu."
+        }
+      },
+      "examples": [
+        "Ich gehe in die Stadt, um Brot zu kaufen.",
+        "Er kommt, um uns zu helfen."
+      ],
+      "tr": {
+        "en": "I am going to Cologne to visit Anna.",
+        "es": "Voy a Colonia para visitar a Anna."
+      }
+    },
+    {
+      "id": "nebensatz-obwohl-damit-f06",
+      "kind": "form",
+      "verb": "mit zu",
+      "person": "einkaufen",
+      "answer": "einzukaufen",
+      "table": "um-zu-formen"
+    },
+    {
+      "id": "nebensatz-obwohl-damit-w02",
+      "kind": "why",
+      "es": "Ich lerne Deutsch, um in Berlin zu arbeiten.",
+      "target": "um",
+      "tr": {
+        "en": "I am learning German in order to work in Berlin.",
+        "es": "Aprendo alemán para trabajar en Berlín."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "um ... zu: a purpose with the same subject uses an infinitive with zu",
+            "es": "um ... zu: una finalidad con el mismo sujeto usa un infinitivo con zu"
+          }
+        },
+        {
+          "text": {
+            "en": "damit: a purpose always needs damit and a full clause",
+            "es": "damit: una finalidad siempre necesita damit y una oración completa"
+          },
+          "wrong": {
+            "en": "With the same subject um ... zu is the normal and shorter form. damit is for two different subjects.",
+            "es": "Con el mismo sujeto um ... zu es la forma normal y más corta. damit es para dos sujetos distintos."
+          }
+        },
+        {
+          "text": {
+            "en": "um: the zu is not needed, because um alone is enough",
+            "es": "um: el zu no hace falta, porque um solo basta"
+          },
+          "wrong": {
+            "en": "um always goes with zu before the infinitive. Without zu the structure is wrong.",
+            "es": "um va siempre con zu antes del infinitivo. Sin zu la estructura es incorrecta."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "nebensatz-obwohl-damit-c07",
+      "sentence": "Ich gehe in die Stadt, um ___.",
+      "options": [
+        "einzukaufen",
+        "zu einkaufen",
+        "einkaufen zu"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "einkaufen is separable, so zu goes between the prefix and the stem, in one word: einzukaufen.",
+        "es": "einkaufen es separable, así que zu va entre el prefijo y la raíz, en una palabra: einzukaufen."
+      },
+      "wrong": {
+        "zu einkaufen": {
+          "en": "zu einkaufen puts zu in front of a separable verb. With a separable verb zu must move inside the verb.",
+          "es": "zu einkaufen pone zu delante de un verbo separable. Con un verbo separable, zu debe ir dentro del verbo."
+        },
+        "einkaufen zu": {
+          "en": "einkaufen zu puts zu after the verb. In German zu is never placed behind the infinitive.",
+          "es": "einkaufen zu pone zu después del verbo. En alemán zu nunca se coloca detrás del infinitivo."
+        }
+      },
+      "examples": [
+        "Ich stehe früh auf, um aufzuräumen.",
+        "Er geht zum Telefon, um anzurufen."
+      ],
+      "tr": {
+        "en": "I am going into town to shop.",
+        "es": "Voy al centro para hacer compras."
+      }
+    },
+    {
+      "id": "nebensatz-obwohl-damit-f07",
+      "kind": "form",
+      "verb": "Konjunktion",
+      "person": "Folge",
+      "answer": "sodass",
+      "table": "konjunktionen-uebersicht"
+    },
+    {
+      "id": "nebensatz-obwohl-damit-c08",
+      "sentence": "Es regnet stark, ___ wir zu Hause bleiben.",
+      "options": [
+        "damit",
+        "sodass",
+        "obwohl"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Staying home is the result of the strong rain, so the connector is sodass.",
+        "es": "Quedarse en casa es el resultado de la lluvia fuerte, así que el conector es sodass."
+      },
+      "wrong": {
+        "damit": {
+          "en": "damit expresses a purpose. The rain does not fall so that we stay at home, so damit does not fit.",
+          "es": "damit expresa una finalidad. La lluvia no cae para que nos quedemos en casa, así que damit no encaja."
+        },
+        "obwohl": {
+          "en": "obwohl would say that we stay at home in spite of the rain. The sentence says the rain is the cause.",
+          "es": "obwohl diría que nos quedamos en casa a pesar de la lluvia. La oración dice que la lluvia es la causa."
+        }
+      },
+      "examples": [
+        "Er schläft schlecht, sodass er müde ist.",
+        "Es ist spät, sodass wir gehen."
+      ],
+      "tr": {
+        "en": "It is raining hard, so we stay at home.",
+        "es": "Llueve fuerte, de modo que nos quedamos en casa."
+      }
+    },
+    {
+      "id": "nebensatz-obwohl-damit-f08",
+      "kind": "form",
+      "verb": "mit zu",
+      "person": "anrufen",
+      "answer": "anzurufen",
+      "table": "um-zu-formen"
+    },
+    {
+      "id": "nebensatz-obwohl-damit-c09",
+      "sentence": "Er ist so müde, ___ er im Bus schläft.",
+      "options": [
+        "damit",
+        "obwohl",
+        "dass"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "so + adjective prepares a result, and the result clause starts with dass: so müde, dass ...",
+        "es": "so + adjetivo prepara un resultado, y la oración de resultado empieza con dass: so müde, dass ..."
+      },
+      "wrong": {
+        "damit": {
+          "en": "damit gives a purpose. Nobody is tired so that he sleeps on the bus; sleeping is the result.",
+          "es": "damit da una finalidad. Nadie está cansado para dormirse en el autobús; dormir es el resultado."
+        },
+        "obwohl": {
+          "en": "obwohl would show a contrast, as if he were tired but sleeps anyway. The sentence says tiredness causes sleep.",
+          "es": "obwohl mostraría un contraste, como si estuviera cansado pero durmiera de todos modos. La oración dice que el cansancio causa el sueño."
+        }
+      },
+      "examples": [
+        "Sie ist so froh, dass sie singt.",
+        "Das Essen ist so gut, dass ich noch einmal esse."
+      ],
+      "tr": {
+        "en": "He is so tired that he sleeps on the bus.",
+        "es": "Está tan cansado que se duerme en el autobús."
+      }
+    },
+    {
+      "id": "nebensatz-obwohl-damit-f09",
+      "kind": "form",
+      "verb": "Konjunktion",
+      "person": "Inhalt",
+      "answer": "dass",
+      "table": "konjunktionen-uebersicht"
+    },
+    {
+      "id": "nebensatz-obwohl-damit-w03",
+      "kind": "why",
+      "es": "Ich spreche langsam, damit du mich verstehst.",
+      "target": "damit",
+      "tr": {
+        "en": "I speak slowly so that you understand me.",
+        "es": "Hablo despacio para que me entiendas."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "damit: the subjects differ (ich and du), so a full clause with its own subject is needed",
+            "es": "damit: los sujetos son distintos (ich y du), así que se necesita una oración completa con su propio sujeto"
+          }
+        },
+        {
+          "text": {
+            "en": "damit: purpose always uses damit and never um ... zu",
+            "es": "damit: la finalidad siempre usa damit y nunca um ... zu"
+          },
+          "wrong": {
+            "en": "Purpose with the same subject uses um ... zu. damit is only needed when the two parts have different subjects.",
+            "es": "La finalidad con el mismo sujeto usa um ... zu. damit solo hace falta cuando las dos partes tienen sujetos distintos."
+          }
+        },
+        {
+          "text": {
+            "en": "damit: it is the same as dass and the verb stays in position 2",
+            "es": "damit: es lo mismo que dass y el verbo se queda en la posición 2"
+          },
+          "wrong": {
+            "en": "damit starts a subordinate clause, so the verb goes to the end. And damit gives a purpose, while dass gives a content.",
+            "es": "damit inicia una oración subordinada, así que el verbo va al final. Y damit da una finalidad, mientras que dass da un contenido."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "nebensatz-obwohl-damit-c10",
+      "sentence": "Ich hoffe, ___ du kommst.",
+      "options": [
+        "damit",
+        "dass",
+        "obwohl"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "hoffen is followed by the content of the hope, and that content is introduced by dass.",
+        "es": "hoffen va seguido del contenido de la esperanza, y ese contenido se introduce con dass."
+      },
+      "wrong": {
+        "damit": {
+          "en": "damit gives a purpose and would answer what for. Hoping does not have a purpose, it has a content.",
+          "es": "damit da una finalidad y respondería para qué. Esperar no tiene una finalidad, tiene un contenido."
+        },
+        "obwohl": {
+          "en": "obwohl introduces a contrast. After hoffen the next clause tells what you hope, not a contradiction.",
+          "es": "obwohl introduce un contraste. Después de hoffen la oración siguiente dice lo que esperas, no una contradicción."
+        }
+      },
+      "examples": [
+        "Ich weiß, dass du Zeit hast.",
+        "Er sagt, dass es regnet."
+      ],
+      "tr": {
+        "en": "I hope that you are coming.",
+        "es": "Espero que vengas."
+      }
+    },
+    {
+      "id": "nebensatz-obwohl-damit-f10",
+      "kind": "form",
+      "verb": "mit zu",
+      "person": "besuchen",
+      "answer": "zu besuchen",
+      "table": "um-zu-formen"
+    },
+    {
+      "id": "nebensatz-obwohl-damit-c11",
+      "sentence": "Obwohl ich gestern lange gearbeitet ___, bin ich nicht müde.",
+      "options": [
+        "habe",
+        "hatte",
+        "bin"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The Perfekt of arbeiten uses haben, and the auxiliary stands at the end of the obwohl clause: gearbeitet habe.",
+        "es": "El Perfekt de arbeiten usa haben, y el auxiliar va al final de la oración con obwohl: gearbeitet habe."
+      },
+      "wrong": {
+        "hatte": {
+          "en": "hatte would make a past perfect. The sentence talks about yesterday and today, so the Perfekt with habe is right.",
+          "es": "hatte formaría un pluscuamperfecto. La oración habla de ayer y de hoy, así que el Perfekt con habe es correcto."
+        },
+        "bin": {
+          "en": "bin is the auxiliary for movement. arbeiten is not a verb of movement, so it takes haben.",
+          "es": "bin es el auxiliar de movimiento. arbeiten no es un verbo de movimiento, así que lleva haben."
+        }
+      },
+      "examples": [
+        "Obwohl wir viel gelernt haben, sind wir nicht fertig.",
+        "Obwohl er gegessen hat, hat er Hunger."
+      ],
+      "tr": {
+        "en": "Although I worked for a long time yesterday, I am not tired.",
+        "es": "Aunque ayer trabajé mucho tiempo, no estoy cansado."
+      }
+    },
+    {
+      "id": "nebensatz-obwohl-damit-f11",
+      "kind": "form",
+      "verb": "Konjunktion",
+      "person": "Zeit, vorher",
+      "answer": "bevor",
+      "table": "konjunktionen-uebersicht"
+    },
+    {
+      "id": "nebensatz-obwohl-damit-c12",
+      "sentence": "___ er viel arbeitet, hat er wenig Geld.",
+      "options": [
+        "Weil",
+        "Damit",
+        "Obwohl"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Working a lot should bring money, but he has little. That is a contrast: Obwohl.",
+        "es": "Trabajar mucho debería dar dinero, pero tiene poco. Es un contraste: Obwohl."
+      },
+      "wrong": {
+        "Weil": {
+          "en": "Weil would make working a lot the reason for having little money. That is not the usual logic.",
+          "es": "Weil haría de trabajar mucho la razón de tener poco dinero. Esa no es la lógica habitual."
+        },
+        "Damit": {
+          "en": "Damit would state a purpose with a second subject. Having little money is not a purpose.",
+          "es": "Damit expresaría una finalidad con un segundo sujeto. Tener poco dinero no es una finalidad."
+        }
+      },
+      "examples": [
+        "Obwohl es kalt ist, trägt sie keine Jacke.",
+        "Obwohl er müde ist, arbeitet er."
+      ],
+      "tr": {
+        "en": "Although he works a lot, he has little money.",
+        "es": "Aunque trabaja mucho, tiene poco dinero."
+      }
+    },
+    {
+      "id": "nebensatz-obwohl-damit-f12",
+      "kind": "form",
+      "verb": "mit zu",
+      "person": "mitkommen",
+      "answer": "mitzukommen",
+      "table": "um-zu-formen"
+    },
+    {
+      "id": "nebensatz-obwohl-damit-c13",
+      "sentence": "Obwohl es regnet, ___ spazieren.",
+      "options": [
+        "wir gehen",
+        "gehen wir",
+        "gehen"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The obwohl clause fills position 1, so the verb comes next, before its subject: gehen wir.",
+        "es": "La oración con obwohl ocupa la posición 1, así que el verbo va a continuación, antes de su sujeto: gehen wir."
+      },
+      "wrong": {
+        "wir gehen": {
+          "en": "wir gehen starts with the subject, but after a first clause the verb must be next.",
+          "es": "wir gehen empieza con el sujeto, pero después de una primera oración el verbo debe ir a continuación."
+        },
+        "gehen": {
+          "en": "gehen alone has no subject. A main clause needs wir after the verb: gehen wir.",
+          "es": "gehen solo no tiene sujeto. Una oración principal necesita wir después del verbo: gehen wir."
+        }
+      },
+      "examples": [
+        "Obwohl er müde ist, arbeitet er weiter.",
+        "Obwohl es kalt ist, gehen wir raus."
+      ],
+      "tr": {
+        "en": "Although it is raining, we go for a walk.",
+        "es": "Aunque llueve, salimos a caminar."
+      }
+    },
+    {
+      "id": "nebensatz-obwohl-damit-c14",
+      "sentence": "Ich arbeite viel, damit meine Kinder studieren ___.",
+      "options": [
+        "kann",
+        "könnt",
+        "können"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The subject of the damit clause is meine Kinder, plural, so the modal verb is können, and it stands last.",
+        "es": "El sujeto de la oración con damit es meine Kinder, plural, así que el verbo modal es können, y va al final."
+      },
+      "wrong": {
+        "kann": {
+          "en": "kann is the singular form for ich, er, sie and es. The children are plural.",
+          "es": "kann es la forma singular de ich, er, sie y es. Los hijos son plural."
+        },
+        "könnt": {
+          "en": "könnt is the form for ihr. The children are talked about, not addressed, so it is können.",
+          "es": "könnt es la forma de ihr. Se habla de los hijos, no se les habla a ellos, así que es können."
+        }
+      },
+      "examples": [
+        "Ich helfe dir, damit du früher fertig bist.",
+        "Wir sprechen langsam, damit er uns verstehen kann."
+      ],
+      "tr": {
+        "en": "I work a lot so that my children can study.",
+        "es": "Trabajo mucho para que mis hijos puedan estudiar."
+      }
+    },
+    {
+      "id": "nebensatz-obwohl-damit-w04",
+      "kind": "why",
+      "es": "Er ist so müde, dass er im Bus schläft.",
+      "target": "dass",
+      "tr": {
+        "en": "He is so tired that he sleeps on the bus.",
+        "es": "Está tan cansado que se duerme en el autobús."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "dass gives a purpose, like damit",
+            "es": "dass da una finalidad, como damit"
+          },
+          "wrong": {
+            "en": "A purpose says what an action is for. Here sleeping on the bus is only the consequence of being tired.",
+            "es": "Una finalidad dice para qué sirve una acción. Aquí dormirse en el autobús es solo la consecuencia de estar cansado."
+          }
+        },
+        {
+          "text": {
+            "en": "so ... dass: the result of the strong adjective (so müde, dass ...)",
+            "es": "so ... dass: el resultado del adjetivo fuerte (so müde, dass ...)"
+          }
+        },
+        {
+          "text": {
+            "en": "dass gives the content of a verb like hoffen or wissen",
+            "es": "dass da el contenido de un verbo como hoffen o wissen"
+          },
+          "wrong": {
+            "en": "There is no verb like hoffen or wissen in front of dass here. so + adjective prepares the dass clause, which gives the result.",
+            "es": "Aquí no hay un verbo como hoffen o wissen delante de dass. so + adjetivo prepara la oración con dass, que da el resultado."
+          }
+        }
+      ],
+      "correctIndex": 1
+    }
+  ]
+}

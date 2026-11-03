@@ -1,0 +1,230 @@
+{
+  "target": "de",
+  "level": "C1",
+  "paper": "reading",
+  "forms": [
+    {
+      "id": "f1",
+      "tasks": [
+        {
+          "skill": "reading",
+          "kind": "cloze",
+          "instruction": "Lesen Sie den Text und wählen Sie für jede Lücke (1 bis 8) das passende Wort a, b, c oder d.",
+          "title": "Wenn die Nacht nicht mehr dunkel wird",
+          "text": "In den meisten Städten Europas ist der Sternenhimmel kaum noch zu sehen. Straßenlaternen, beleuchtete Fassaden und Werbetafeln {{1}} dafür, dass es auch um Mitternacht nie wirklich finster wird. Forscher sprechen von Lichtverschmutzung und {{2}} davor, dass sie weitreichende Folgen hat.\n\nBesonders betroffen sind Tiere. Zugvögel, die sich am Magnetfeld der Erde und an den Sternen {{3}}, verlieren in hell erleuchteten Gebieten die Orientierung und prallen gegen Hochhäuser. Auch Fledermäuse und Amphibien meiden beleuchtete Bereiche, wodurch ihre Lebensräume kleiner werden. Insekten umkreisen Lampen, bis sie erschöpft sind, und stehen damit anderen Arten nicht mehr als Nahrung zur {{4}}. Auch für den Menschen bleibt das künstliche Licht nicht {{5}}: Wer abends viel Kunstlicht ausgesetzt ist, schläft schlechter, weil der Körper weniger Melatonin bildet. Entsprechend nehmen die Beschwerden von Anwohnern zu, deren Schlafzimmer von Straßenlampen erhellt werden.\n\nDabei ließe sich das Problem mit relativ einfachen Mitteln lösen, {{6}} die Städte bereit wären, etwas zu ändern. Lampen, die das Licht nur nach unten strahlen, verringern die Blendung und den Energieverbrauch zugleich. Mehrere Städte lassen Gebäude nach Mitternacht abdunkeln oder haben Straßenlaternen mit Bewegungsmeldern {{7}}. Die Bürger akzeptieren das meist, wenn sie sich dabei sicher fühlen. Deshalb setzen manche Gemeinden auf warmes, gelbliches Licht, das die Augen weniger {{8}} als das kühle Weiß moderner LED-Lampen.",
+          "gaps": [
+            {
+              "options": ["führen", "bewirken", "bringen", "sorgen"],
+              "correct": 3
+            },
+            {
+              "options": ["warnen", "raten", "befürchten", "schützen"],
+              "correct": 0
+            },
+            {
+              "options": ["beteiligen", "ergeben", "einigen", "orientieren"],
+              "correct": 3
+            },
+            {
+              "options": ["Nutzung", "Verfügung", "Lieferung", "Aufnahme"],
+              "correct": 1
+            },
+            {
+              "options": ["erfolglos", "wehrlos", "folgenlos", "zeitlos"],
+              "correct": 2
+            },
+            {
+              "options": ["obwohl", "seitdem", "sofern", "sodass"],
+              "correct": 2
+            },
+            {
+              "options": ["ausgestattet", "ersetzt", "versorgt", "besetzt"],
+              "correct": 0
+            },
+            {
+              "options": ["beleuchtet", "verfärbt", "blendet", "erwärmt"],
+              "correct": 2
+            }
+          ]
+        },
+        {
+          "skill": "reading",
+          "kind": "passage_mc",
+          "instruction": "Lesen Sie den Text und die Aufgaben 1 bis 7 dazu. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+          "title": "Morgen fange ich an: Warum wir aufschieben",
+          "text": "Jeder kennt das: Die Steuererklärung liegt seit Wochen auf dem Schreibtisch, aber die Wohnung hat nie so ordentlich ausgesehen wie am Tag vor der Abgabe der Seminararbeit. Was nach Faulheit aussieht, nennen Psychologen Prokrastination, und sie ist weit verbreitet. Nach Schätzungen der Universität Münster leidet etwa jeder fünfte Erwachsene und fast die Hälfte aller Studierenden regelmäßig darunter.\n\nLange galt das Aufschieben als Problem schlechten Zeitmanagements. Neuere Studien zeichnen ein anderes Bild. Die Psychologin Dr. Franziska Bernd sagt: „Wer prokrastiniert, hat meist kein Zeitproblem, sondern ein Gefühlsproblem.“ Aufgaben, die Angst, Langeweile oder Selbstzweifel auslösen, werden gemieden, weil das Gehirn kurzfristige Erleichterung höher gewichtet als langfristigen Nutzen. Dieser Mechanismus hat sich in der Evolution bewährt, in einer Arbeitswelt mit Abgabefristen wird er zur Falle. Hinzu kommt ein Teufelskreis: Wer eine Aufgabe aufschiebt, fühlt sich schuldig, und genau dieses Gefühl macht den nächsten Anlauf noch schwerer.\n\nDass das nicht folgenlos bleibt, zeigen Untersuchungen zu Stress und Gesundheit. Chronische Aufschieber schlafen schlechter, berichten häufiger von Kopfschmerzen und neigen zu Erkältungen, vermutlich, weil das schlechte Gewissen dauerhaft Stress auslöst. Bernd warnt jedoch vor einer Pathologisierung: „Gelegentliches Aufschieben ist normal und manchmal sogar sinnvoll. Wer eine E-Mail nicht im Zorn schreibt, sondern erst am nächsten Morgen, hat womöglich richtig gehandelt.“\n\nWas hilft? Der klassische Rat, große Aufgaben in kleine Schritte zu zerlegen, funktioniert nach Bernds Erfahrung nur bei einem Teil der Betroffenen. Besser belegt sei die Methode der „Wenn-dann-Pläne“: Man legt im Voraus fest, wann und wo man anfängt, etwa „Wenn ich morgen um acht den Rechner einschalte, öffne ich zuerst das Dokument“. Dadurch muss man im entscheidenden Moment nicht mehr entscheiden. Eine Rolle spielt auch das Umfeld: Offene Büros mit ständigen Unterbrechungen und Benachrichtigungen auf dem Handy erschweren es, den ersten Schritt zu tun. Auch Freundlichkeit mit sich selbst scheint zu wirken: In einem Experiment lernten Studierende, die sich nach einem missglückten ersten Versuch nicht selbst beschimpften, vor der nächsten Prüfung deutlich mehr als jene, die sich Vorwürfe machten.\n\nSkeptisch äußert sich der Arbeitsforscher Prof. Jens Albrecht. Er hält die Debatte für überzogen. „Viele sogenannte Aufschieber arbeiten einfach in Rhythmen, die nicht zu starren Bürozeiten passen“, sagt er. „Wer zwei Tage lang scheinbar nichts tut und dann in einer Nacht Hervorragendes leistet, ist nicht unbedingt krank.“ Albrecht plädiert dafür, Teams mehr Freiheit bei der Einteilung ihrer Arbeit zu geben. Er verweist auf Beispiele aus der Kreativbranche, in der eine flexible Zeiteinteilung längst üblich sei und Teams damit gute Erfahrungen gemacht hätten. Bernd widerspricht nur teilweise: Dauerhaft funktioniere das nur, wenn die Betroffenen nicht unter ihrem Verhalten litten. Und genau das sei bei vielen der Fall.",
+          "questions": [
+            {
+              "stem": "Wie erklärt Dr. Bernd die Ursache des Aufschiebens?",
+              "options": [
+                "Betroffene können ihre Zeit schlecht einteilen und unterschätzen den Aufwand.",
+                "Man weicht unangenehmen Gefühlen aus, die eine Aufgabe auslöst.",
+                "Betroffene überschätzen die Dauer einer Aufgabe und scheuen deshalb den Anfang."
+              ],
+              "correct": 1
+            },
+            {
+              "stem": "Warum wird der beschriebene Mechanismus heute zum Problem?",
+              "options": ["Er entwickelte sich erst durch die moderne Büroarbeit mit Abgabefristen.", "Er verleitet dazu, Aufgaben trotz fester Abgabetermine zu meiden.", "Er löst bei Betroffenen starke Angst vor Fristen aus."],
+              "correct": 1
+            },
+            {
+              "stem": "Wie beurteilt Bernd gelegentliches Aufschieben?",
+              "options": ["Es ist ein erstes Zeichen einer Störung.", "Es kann in manchen Situationen sinnvoll sein.", "Es sollte durch feste Pläne ganz vermieden werden."],
+              "correct": 1
+            },
+            {
+              "stem": "Was ist über die gesundheitlichen Folgen chronischen Aufschiebens bekannt?",
+              "options": ["Sie wurden bisher kaum wissenschaftlich untersucht.", "Sie treten vor allem bei Studierenden vor Prüfungen auf.", "Sie hängen vermutlich mit dem dauerhaften Stress zusammen."],
+              "correct": 2
+            },
+            {
+              "stem": "Was zeigt das erwähnte Experiment mit Studierenden?",
+              "options": [
+                "Wer sich nach einem Fehler nicht kritisiert, bereitet sich besser vor.",
+                "Wer sich Vorwürfe macht, lernt gründlicher für die nächste Prüfung.",
+                "Wer früh mit dem Lernen beginnt, schneidet in der Prüfung besser ab."
+              ],
+              "correct": 0
+            },
+            {
+              "stem": "Wie bewertet Bernd den Rat, Aufgaben in kleine Schritte zu teilen?",
+              "options": ["Er ist die wirksamste bekannte Methode.", "Er hilft nicht allen Betroffenen.", "Er ist wissenschaftlich widerlegt."],
+              "correct": 1
+            },
+            {
+              "stem": "Worin unterscheiden sich die Positionen von Albrecht und Bernd?",
+              "options": [
+                "Albrecht hält das Aufschieben für eine Krankheit, Bernd für einen Arbeitsstil.",
+                "Albrecht fordert mehr Kontrolle durch Vorgesetzte, Bernd mehr Freiheit für die Teams.",
+                "Albrecht sieht viele Aufschieber nicht als Problemfall, Bernd verweist auf deren Leidensdruck."
+              ],
+              "correct": 2
+            }
+          ]
+        },
+        {
+          "skill": "reading",
+          "kind": "cloze",
+          "instruction": "Lesen Sie den Kommentar. In jede Lücke (1 bis 8) passt genau einer der drei Sätze a, b oder c. Wählen Sie den Satz, der inhaltlich und sprachlich am besten passt.",
+          "title": "Bargeld abschaffen? Besser nicht",
+          "text": "Wer heute an der Supermarktkasse die Geldbörse zückt, wirkt fast wie ein Relikt aus vergangener Zeit. {{1}} Immer mehr Geschäfte bieten ausschließlich Kartenzahlung an, und in manchen Ländern ist Bargeld praktisch aus dem Alltag verschwunden.\n\nDiese Entwicklung wird häufig als Fortschritt gefeiert, doch sie hat eine Kehrseite. {{2}} Das gilt besonders für ältere Menschen, die mit Smartphones und Apps nicht aufgewachsen sind.\n\nHinzu kommt der Datenschutz. {{3}} Bargeld dagegen hinterlässt keine Spuren: Niemand erfährt, wo man ein Buch gekauft oder eine Spende gegeben hat. Wer hingegen digital bezahlt, hinterlässt Daten bei Banken, Zahlungsdienstleistern und oft auch bei Online-Händlern.\n\nAuch die Sicherheit der Versorgung sollte man nicht vergessen. {{4}} In solchen Momenten ist man froh, wenn man noch ein paar Scheine im Portemonnaie hat.\n\nBefürworter des bargeldlosen Zahlens führen an, Bargeld sei teuer und fördere die Schwarzarbeit. {{5}} Wer Missbrauch bekämpfen will, sollte daher gezielt gegen Kriminalität vorgehen, statt die Freiheit aller Bürger einzuschränken.\n\nNiemand muss Bargeld lieben, um es zu verteidigen. {{6}} Ein Land, das beides erlaubt, ist widerstandsfähiger und freier als eines, das sich auf einen einzigen Weg festlegt.\n\nDie Politik sollte deshalb dafür sorgen, dass Händler Bargeld weiterhin annehmen müssen. {{7}} Und sie sollte sicherstellen, dass auch auf dem Land immer ein Geldautomat in der Nähe ist. Das betrifft vor allem kleine Läden, die oft zu wenig Kundschaft für teure Kartenterminals haben.\n\nAm Ende geht es nicht um Nostalgie, sondern um Wahlfreiheit. {{8}}",
+          "gaps": [
+            {
+              "options": [
+                "Tatsächlich ist die Zahl der Geldautomaten in Deutschland seit Jahren konstant geblieben.",
+                "Die meisten Bankkunden begleichen ihre Rechnungen zu Hause noch immer per Überweisung.",
+                "Mobiles Bezahlen per Smartphone ist für viele inzwischen bequemer, schneller und selbstverständlicher als der Griff zum Schein."
+              ],
+              "correct": 2
+            },
+            {
+              "options": [
+                "Denn wer nicht digital bezahlen kann oder will, wird schleichend vom Alltag ausgeschlossen.",
+                "Zahlreiche Studien belegen, dass Menschen mit Karte im Schnitt weniger Geld ausgeben.",
+                "Die Banken verdienen an jeder Kartenzahlung nur einen minimalen Betrag."
+              ],
+              "correct": 0
+            },
+            {
+              "options": [
+                "Die meisten Verbraucher sind mit dem Schutz ihrer Daten bei der Bank zufrieden.",
+                "Jede digitale Zahlung erzeugt Informationen darüber, was jemand kauft, wann und wo.",
+                "Datenschutzbeauftragte fordern deshalb einheitliche Regeln für ganz Europa."
+              ],
+              "correct": 1
+            },
+            {
+              "options": [
+                "Viele Geschäfte nehmen Bargeld ohnehin nur noch widerwillig an.",
+                "Bei einem Stromausfall oder einer Störung im Netz funktionieren weder Kartenlesegeräte noch Geldautomaten.",
+                "Die Kosten für den Druck der Banknoten tragen die Zentralbanken."
+              ],
+              "correct": 1
+            },
+            {
+              "options": [
+                "Allerdings zeigen Umfragen, dass gerade Jugendliche das Bargeld besonders schätzen.",
+                "Beide Behauptungen wurden bereits im 19. Jahrhundert aufgestellt.",
+                "Dieser Einwand ist nicht völlig unberechtigt, rechtfertigt aber keinen Zwang, auf eine bewährte Zahlungsform zu verzichten."
+              ],
+              "correct": 2
+            },
+            {
+              "options": [
+                "Schließlich haben auch die Erfinder der Kreditkarte nie das Ende des Münzgelds gefordert.",
+                "Deshalb sollten Verbraucher ihre Karten möglichst im Portemonnaie lassen.",
+                "Es genügt die Erkenntnis, dass Vielfalt bei den Zahlungsmitteln ein Wert an sich ist."
+              ],
+              "correct": 2
+            },
+            {
+              "options": [
+                "Ein Verbot von Kartenzahlungen wäre dagegen die beste Lösung.",
+                "Gleichzeitig kann sie digitale Angebote fördern, ohne sie zur einzigen Möglichkeit zu machen.",
+                "Dies hat die Europäische Union inzwischen für alle Mitgliedsstaaten untersagt."
+              ],
+              "correct": 1
+            },
+            {
+              "options": [
+                "Wer jederzeit zwischen Karte, Handy und Schein wählen kann, behält die Kontrolle über sein Geld.",
+                "Es bleibt abzuwarten, wie viele Bürger künftig überhaupt noch sparen werden.",
+                "Deshalb steht die Abschaffung des Bargelds auf der Tagesordnung der nächsten Konferenz."
+              ],
+              "correct": 0
+            }
+          ]
+        },
+        {
+          "skill": "reading",
+          "kind": "match_pool",
+          "instruction": "Lesen Sie die Aussagen 1 bis 7 und die sechs Texte A bis F. Welcher Text passt zu welcher Aussage? Sie können einen Text mehrmals wählen.",
+          "prompts": [
+            { "id": "24", "text": "Wer fordert, dass Lehrkräfte gründlich geschult werden, bevor die Technik breit eingesetzt wird?" },
+            { "id": "25", "text": "Wer sieht die Möglichkeit, Aufgaben an das Leistungsniveau einzelner Schüler anzupassen?" },
+            { "id": "26", "text": "Wer rät dazu, Prüfungen so zu gestalten, dass Täuschung schwerer wird?" },
+            { "id": "27", "text": "Wer macht sich Gedanken über den Schutz persönlicher Daten von Schülern?" },
+            { "id": "28", "text": "Wer legt Wert darauf, dass Kinder weiterhin von Hand schreiben?" },
+            { "id": "29", "text": "Wer berichtet, dass er die Antworten eines Programms immer überprüft?" },
+            { "id": "30", "text": "Wer glaubt, dass ein Verbot der Programme wenig bringen würde?" }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "title": "Text A, Lehrerin",
+              "text": "In meiner Klasse sitzen Kinder, die in Mathematik schon weit sind, und andere, die noch mit den Grundlagen kämpfen. Mit Programmen, die Aufgaben automatisch auf das Niveau jedes Einzelnen zuschneiden, kann ich endlich beiden gerecht werden. Ich sehe das nicht als Ersatz für meinen Unterricht, sondern als Werkzeug, das mir Zeit schenkt, sodass ich mich mehr um die Schüler kümmern kann, die gerade Hilfe brauchen."
+            },
+            {
+              "id": "b",
+              "title": "Text B, Gymnasiallehrer",
+              "text": "Wer glaubt, man könne die Programme einfach verbieten, macht sich etwas vor: Die Schüler haben sie ohnehin auf dem Handy. Sinnvoller ist es, die Prüfungsformen zu verändern. Wenn Texte nur noch zu Hause entstehen, kann niemand sagen, wer sie geschrieben hat. Mündliche Teile und Aufgaben, die vor Ort gelöst werden, machen Täuschung dagegen schwer und zeigen, was ein Schüler wirklich versteht."
+            },
+            {
+              "id": "c",
+              "title": "Text C, Mutter",
+              "text": "Mein Sohn ist zehn und verbringt schon genug Zeit vor Bildschirmen. Ich habe nichts gegen Technik, aber ich will, dass er weiterhin mit der Hand schreibt, selbst Sätze bildet und sich mit Fehlern auseinandersetzt. Das Gehirn lernt durch Anstrengung. Wenn ein Programm ihm jedes Mal die fertige Lösung liefert, geht genau das verloren, was Schule eigentlich leisten soll."
+            },
+            {
+              "id": "d",
+              "title": "Text D, Schulleiter",
+              "text": "Bevor wir neue Programme anschaffen, müssen wir klären, was mit den Daten unserer Schüler passiert. Viele Anbieter sitzen im Ausland, und wir wissen nicht genau, wo die Eingaben gespeichert werden. Dazu kommen die Kosten: Lizenzen für hunderte Schüler sind für einen kleinen Schulhaushalt kaum zu stemmen. Solange diese Fragen offen sind, bleibe ich zurückhaltend."
+            },
+            {
+              "id": "e",
+              "title": "Text E, Oberstufenschüler",
+              "text": "Ich benutze solche Programme, wenn ich einen Stoff nicht verstehe, zum Beispiel in Physik. Dann lasse ich mir etwas in einfachen Worten erklären. Aber ich glaube nicht alles, was dort steht. Neulich war eine Jahreszahl falsch, und ich hätte es fast übernommen. Seitdem schlage ich jede wichtige Angabe in einem Buch oder auf einer seriösen Seite noch einmal nach."
+            },
+            {
+              "id": "f",
+              "title": "Text F, Bildungsforscherin",
+              "text": "Über die langfristigen Wirkungen auf das Lernen wissen wir erstaunlich wenig, denn die Technik ist zu neu für aussagekräftige Studien. Entscheidend wird sein, ob Lehrkräfte darauf vorbereitet sind. Eine Fortbildung von zwei Nachmittagen reicht nicht aus. Ohne eine solide Schulung riskieren wir, dass teure Geräte im Schrank liegen oder falsch eingesetzt werden."
+            }
+          ],
+          "answer": { "24": "f", "25": "a", "26": "b", "27": "d", "28": "c", "29": "e", "30": "b" },
+          "unique": false
+        }
+      ]
+    }
+  ]
+}

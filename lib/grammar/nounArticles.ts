@@ -93,6 +93,7 @@ function whyText(n: ArticleNoun): Lang4 {
       en: `«${x}» is feminine, but before a stressed a- the singular takes «el»: el ${x} (plural: las ${x}s).`,
       es: `«${x}» es femenino, pero ante «a» tónica el singular lleva «el»: el ${x} (plural: las ${x}s).`,
       hu: `«${x}» nőnemű, de hangsúlyos a- előtt az egyes szám «el» névelőt kap: el ${x} (többes szám: las ${x}s).`,
+      de: `„${x}“ ist feminin, aber vor betontem a- steht im Singular „el“: el ${x} (Plural: las ${x}s).`,
     };
   }
   if (a === 'el' && /o$/.test(x)) {
@@ -100,6 +101,7 @@ function whyText(n: ArticleNoun): Lang4 {
       en: `«${x}» ends in -o, so it is masculine: el ${x}.`,
       es: `«${x}» acaba en -o: es masculino, el ${x}.`,
       hu: `«${x}» -o végű, ezért hímnemű: el ${x}.`,
+      de: `„${x}“ endet auf -o, deshalb ist es maskulin: el ${x}.`,
     };
   }
   if (a === 'el' && /a$/.test(x)) {
@@ -107,6 +109,7 @@ function whyText(n: ArticleNoun): Lang4 {
       en: `«${x}» ends in -a but is masculine: el ${x}.`,
       es: `«${x}» acaba en -a pero es masculino: el ${x}.`,
       hu: `«${x}» -a végű, mégis hímnemű: el ${x}.`,
+      de: `„${x}“ endet auf -a, ist aber maskulin: el ${x}.`,
     };
   }
   if (a === 'la' && /(ción|sión|dad|tad)$/.test(x)) {
@@ -114,6 +117,7 @@ function whyText(n: ArticleNoun): Lang4 {
       en: `Words ending in -ción, -sión, -dad, -tad are feminine: la ${x}.`,
       es: `Las palabras en -ción, -sión, -dad y -tad son femeninas: la ${x}.`,
       hu: `A -ción, -sión, -dad, -tad végű szavak nőneműek: la ${x}.`,
+      de: `Wörter auf -ción, -sión, -dad, -tad sind feminin: la ${x}.`,
     };
   }
   if (a === 'la' && /a$/.test(x)) {
@@ -121,12 +125,14 @@ function whyText(n: ArticleNoun): Lang4 {
       en: `«${x}» ends in -a, so it is feminine: la ${x}.`,
       es: `«${x}» acaba en -a: es femenino, la ${x}.`,
       hu: `«${x}» -a végű, ezért nőnemű: la ${x}.`,
+      de: `„${x}“ endet auf -a, deshalb ist es feminin: la ${x}.`,
     };
   }
   return {
     en: `The correct form is ${a} ${x}. Always learn a noun together with its article.`,
     es: `La forma correcta es ${a} ${x}. Aprende siempre el sustantivo junto con su artículo.`,
     hu: `A helyes alak: ${a} ${x}. A főnevet mindig a névelőjével együtt tanuld meg.`,
+    de: `Die richtige Form ist ${a} ${x}. Lerne ein Nomen immer zusammen mit seinem Artikel.`,
   };
 }
 
@@ -136,6 +142,7 @@ function wrongText(n: ArticleNoun, wrongArticle: 'el' | 'la'): Lang4 {
     en: `«${wrongArticle} ${x}» is not correct; the right form is ${a} ${x}.`,
     es: `«${wrongArticle} ${x}» no es correcto; lo correcto es ${a} ${x}.`,
     hu: `«${wrongArticle} ${x}» nem helyes; a jó alak: ${a} ${x}.`,
+    de: `„${wrongArticle} ${x}“ ist nicht richtig; die richtige Form ist ${a} ${x}.`,
   };
 }
 
@@ -161,4 +168,159 @@ export function articleNounItems(): GrammarGapItem[] {
 export function withArticleNouns<T extends LessonV2>(lesson: T): T {
   if (lesson.topic !== ARTICLE_LESSON_ID) return lesson;
   return { ...lesson, items: [...lesson.items, ...articleNounItems()] };
+}
+
+// ---------------------------------------------------------------------------
+// The German course: the same task for the artikel-genus lesson, "___ Hund" -> der / die / das, from the nouns of the
+// German deck (data/words/de, all levels). Built at runtime like the Spanish one, so a deck expansion gets in by itself.
+// ---------------------------------------------------------------------------
+
+export const ARTICLE_LESSON_ID_DE = 'artikel-genus';
+
+/** The lessons that carry the article task (articulos-genero in the Spanish course, artikel-genus in the German one). */
+export function isArticleLesson(topicId: string): boolean {
+  return topicId === ARTICLE_LESSON_ID || topicId === ARTICLE_LESSON_ID_DE;
+}
+
+export type GermanArticle = 'der' | 'die' | 'das';
+
+interface DeCard {
+  id: number;
+  level: string;
+  pos?: string;
+  de: string;
+  es: string;
+  en: string;
+  hu: string;
+  sentence_de?: string;
+}
+
+export interface ArticleNounDe {
+  id: string; // `d${card id}`, unique across levels
+  noun: string; // the noun without an article: "Hund"
+  article: GermanArticle;
+  /** the meaning of the noun in the interface language (English, Spanish or Hungarian); visible after the answer. */
+  tr: Lang4;
+  sentence?: string;
+}
+
+let cacheDe: ArticleNounDe[] | null = null;
+
+/**
+ * All singular nouns of the German deck with their article. The first alternative of a headword counts ("das Haus / das
+ * Zuhause" -> Haus); plural-only (die Leute (Pl.)), several-word and der/die cards are left out, and so is a noun that
+ * stands with two articles (nothing in the gap would say which one is meant).
+ */
+export function articleNounsDe(): ArticleNounDe[] {
+  if (cacheDe) return cacheDe;
+  // required here, not imported: the deck stays unparsed until the German article task is first asked for
+  const files: DeCard[][] = [
+    require('@/data/words/de/a1.json'),
+    require('@/data/words/de/a2.json'),
+    require('@/data/words/de/b1.json'),
+    require('@/data/words/de/b2.json'),
+    require('@/data/words/de/c1.json'),
+  ];
+  const articlesOf = new Map<string, Set<GermanArticle>>();
+  const picked: ArticleNounDe[] = [];
+  for (const cards of files) {
+    for (const w of cards) {
+      if (w.pos !== 'noun') continue;
+      const m = w.de.split(' / ')[0].trim().match(/^(der|die|das) ([^\s/]+)$/);
+      if (!m) continue;
+      const noun = m[2];
+      articlesOf.set(noun, (articlesOf.get(noun) ?? new Set()).add(m[1] as GermanArticle));
+      picked.push({
+        id: `d${w.id}`,
+        noun,
+        article: m[1] as GermanArticle,
+        tr: { en: w.en, es: w.es, ...(w.hu ? { hu: w.hu } : {}) },
+        sentence: w.sentence_de || undefined,
+      });
+    }
+  }
+  const seen = new Set<string>();
+  cacheDe = picked.filter((n) => {
+    if (articlesOf.get(n.noun)!.size > 1 || seen.has(n.noun)) return false;
+    seen.add(n.noun);
+    return true;
+  });
+  return cacheDe;
+}
+
+// The weekdays, months and seasons are masculine; the reliable endings point to one article.
+const DER_TIME = new Set([
+  'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag', 'Sonntag', 'Januar', 'Februar', 'März', 'April', 'Mai', 'Juni',
+  'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember', 'Frühling', 'Sommer', 'Herbst', 'Winter',
+]);
+const DIE_ENDING = /(ung|heit|keit|schaft|tion|sion|tät|erei)$/;
+const DAS_ENDING = /(chen|lein)$/;
+
+function whyTextDe(n: ArticleNounDe): Lang4 {
+  const { noun: x, article: a } = n;
+  if (a === 'der' && DER_TIME.has(x)) {
+    return {
+      en: `Days of the week, months and seasons are masculine: der ${x}.`,
+      es: `Los días de la semana, los meses y las estaciones son masculinos: der ${x}.`,
+      hu: `A hét napjai, a hónapok és az évszakok hímneműek: der ${x}.`,
+      de: `Wochentage, Monate und Jahreszeiten sind maskulin: der ${x}.`,
+    };
+  }
+  if (a === 'die' && DIE_ENDING.test(x)) {
+    const ending = x.match(DIE_ENDING)![1];
+    return {
+      en: `Nouns ending in -${ending} are feminine: die ${x}.`,
+      es: `Los sustantivos que acaban en -${ending} son femeninos: die ${x}.`,
+      hu: `A -${ending} végű főnevek nőneműek: die ${x}.`,
+      de: `Nomen auf -${ending} sind feminin: die ${x}.`,
+    };
+  }
+  if (a === 'das' && DAS_ENDING.test(x)) {
+    const ending = x.match(DAS_ENDING)![1];
+    return {
+      en: `Nouns ending in -${ending} are neuter: das ${x}.`,
+      es: `Los sustantivos que acaban en -${ending} son neutros: das ${x}.`,
+      hu: `A -${ending} végű főnevek semlegesneműek: das ${x}.`,
+      de: `Nomen auf -${ending} sind neutral: das ${x}.`,
+    };
+  }
+  return {
+    en: `The correct form is ${a} ${x}. Always learn a noun together with its article.`,
+    es: `La forma correcta es ${a} ${x}. Aprende siempre el sustantivo junto con su artículo.`,
+    hu: `A helyes alak: ${a} ${x}. A főnevet mindig a névelőjével együtt tanuld meg.`,
+    de: `Die richtige Form ist ${a} ${x}. Lerne ein Nomen immer zusammen mit seinem Artikel.`,
+  };
+}
+
+function wrongTextDe(n: ArticleNounDe, wrongArticle: GermanArticle): Lang4 {
+  const { noun: x, article: a } = n;
+  return {
+    en: `«${wrongArticle} ${x}» is not correct; the right form is ${a} ${x}.`,
+    es: `«${wrongArticle} ${x}» no es correcto; lo correcto es ${a} ${x}.`,
+    hu: `«${wrongArticle} ${x}» nem helyes; a jó alak: ${a} ${x}.`,
+    de: `„${wrongArticle} ${x}“ ist nicht richtig; die richtige Form ist ${a} ${x}.`,
+  };
+}
+
+const DE_ARTICLES: GermanArticle[] = ['der', 'die', 'das'];
+
+/** The items of the der / die / das chooser: "___ Hund" -> der. Members of the `article` set of GrammarGapItem. */
+export function articleNounItemsDe(): GrammarGapItem[] {
+  return articleNounsDe().map((n) => ({
+    id: `art-n-${n.id}`,
+    set: 'article',
+    sentence: `___ ${n.noun}`,
+    options: [...DE_ARTICLES],
+    correct: DE_ARTICLES.indexOf(n.article),
+    why: whyTextDe(n),
+    wrong: Object.fromEntries(DE_ARTICLES.filter((a) => a !== n.article).map((a) => [a, wrongTextDe(n, a)])),
+    examples: n.sentence ? [n.sentence] : [],
+    tr: n.tr,
+  }));
+}
+
+/** Adds all nouns of the German deck to the artikel-genus lesson as a der / die / das task; does not touch other lessons. */
+export function withArticleNounsDe<T extends LessonV2>(lesson: T): T {
+  if (lesson.topic !== ARTICLE_LESSON_ID_DE) return lesson;
+  return { ...lesson, items: [...lesson.items, ...articleNounItemsDe()] };
 }

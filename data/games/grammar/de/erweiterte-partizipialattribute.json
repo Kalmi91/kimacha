@@ -1,0 +1,990 @@
+{
+  "schema": 2,
+  "topic": "erweiterte-partizipialattribute",
+  "level": "C1",
+  "title": {
+    "en": "Extended participle phrases before the noun",
+    "es": "Grupos participiales extendidos antes del sustantivo"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "German can put the content of a whole relative clause between the article and the noun by turning the verb into a participle: die von der Stadt geplante Brücke means die Brücke, die von der Stadt geplant wurde. All the information (who, where, since when) stands in front of the participle, and the participle carries the adjective ending right before the noun. The Partizip I (-d) is active and simultaneous, the Partizip II is passive or completed, and zu plus Partizip I means that something must or can be done. This is typical of scientific, legal and news texts. English and Spanish put the information after the noun (the author living in Berlin), but Hungarian has the same order as German (a Berlinben élő író).",
+        "es": "El alemán puede colocar el contenido de toda una oración de relativo entre el artículo y el sustantivo convirtiendo el verbo en participio: die von der Stadt geplante Brücke significa die Brücke, die von der Stadt geplant wurde. Toda la información (quién, dónde, desde cuándo) va delante del participio, y el participio lleva la terminación del adjetivo justo antes del sustantivo. El Partizip I (-d) es activo y simultáneo, el Partizip II es pasivo o completado, y zu más Partizip I significa que algo debe o puede hacerse. Esto es típico de textos científicos, jurídicos y periodísticos. El inglés y el español colocan la información después del sustantivo (the author living in Berlin), pero el húngaro tiene el mismo orden que el alemán (a Berlinben élő író)."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "erweiterte-attribute-partizipien",
+      "title": {
+        "en": "The three participle forms",
+        "es": "Las tres formas de participio"
+      },
+      "header": [
+        {
+          "en": "Verb",
+          "es": "Verbo"
+        },
+        {
+          "en": "Partizip I",
+          "es": "Partizip I"
+        },
+        {
+          "en": "Partizip II",
+          "es": "Partizip II"
+        },
+        {
+          "en": "zu + Partizip I",
+          "es": "zu + Partizip I"
+        }
+      ],
+      "rows": [
+        [
+          "lösen",
+          "lösend",
+          "gelöst",
+          "zu lösend"
+        ],
+        [
+          "planen",
+          "planend",
+          "geplant",
+          "zu planend"
+        ],
+        [
+          "bauen",
+          "bauend",
+          "gebaut",
+          "zu bauend"
+        ],
+        [
+          "lesen",
+          "lesend",
+          "gelesen",
+          "zu lesend"
+        ],
+        [
+          "prüfen",
+          "prüfend",
+          "geprüft",
+          "zu prüfend"
+        ],
+        [
+          "schreiben",
+          "schreibend",
+          "geschrieben",
+          "zu schreibend"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "erweiterte-attribute-umformung",
+      "title": {
+        "en": "Relative clause and participle phrase",
+        "es": "Oración de relativo y grupo participial"
+      },
+      "header": [
+        {
+          "en": "Relative clause",
+          "es": "Oración de relativo"
+        },
+        {
+          "en": "Participle phrase",
+          "es": "Grupo participial"
+        }
+      ],
+      "rows": [
+        [
+          "die Brücke, die von der Stadt geplant wurde",
+          "die von der Stadt geplante Brücke"
+        ],
+        [
+          "der Lehrer, der in Berlin lebt",
+          "der in Berlin lebende Lehrer"
+        ],
+        [
+          "das Haus, das im letzten Jahr gebaut wurde",
+          "das im letzten Jahr gebaute Haus"
+        ],
+        [
+          "ein Problem, das leicht gelöst werden kann",
+          "ein leicht zu lösendes Problem"
+        ],
+        [
+          "die Preise, die seit Jahren steigen",
+          "die seit Jahren steigenden Preise"
+        ]
+      ],
+      "noTableDeck": true
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Three kinds of participle attributes",
+        "es": "Tres tipos de atributos participiales"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "Partizip I: an active action that happens at the same time. Everything that belongs to the verb stands in front of it: der in Berlin lebende Lehrer, die seit Jahren steigenden Preise.",
+            "es": "Partizip I: una acción activa que ocurre al mismo tiempo. Todo lo que pertenece al verbo va delante: der in Berlin lebende Lehrer, die seit Jahren steigenden Preise."
+          },
+          "examples": [
+            {
+              "es": "Der in Berlin lebende Lehrer schreibt ein Buch.",
+              "tr": {
+                "en": "The teacher living in Berlin is writing a book.",
+                "es": "El maestro que vive en Berlín escribe un libro."
+              }
+            },
+            {
+              "es": "Die seit Jahren steigenden Preise machen uns Sorgen.",
+              "tr": {
+                "en": "The prices that have been rising for years worry us.",
+                "es": "Los precios que suben desde hace años nos preocupan."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Partizip II: a passive or completed meaning. The agent appears with von, the time or place as a prepositional phrase: die von der Stadt geplante Brücke, das im letzten Jahr gebaute Haus.",
+            "es": "Partizip II: un sentido pasivo o completado. El agente aparece con von, el tiempo o el lugar como grupo preposicional: die von der Stadt geplante Brücke, das im letzten Jahr gebaute Haus."
+          },
+          "examples": [
+            {
+              "es": "Die von der Stadt geplante Brücke ist fertig.",
+              "tr": {
+                "en": "The bridge planned by the city is finished.",
+                "es": "El puente planeado por la ciudad está terminado."
+              }
+            },
+            {
+              "es": "Das im letzten Jahr gebaute Haus ist schön.",
+              "tr": {
+                "en": "The house built last year is beautiful.",
+                "es": "La casa construida el año pasado es bonita."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "zu plus Partizip I: something that must or can be done. It replaces a passive with müssen or können: ein leicht zu lösendes Problem is a problem that can easily be solved.",
+            "es": "zu más Partizip I: algo que debe o puede hacerse. Reemplaza a un pasivo con müssen o können: ein leicht zu lösendes Problem es un problema que se puede resolver fácilmente."
+          },
+          "examples": [
+            {
+              "es": "Das ist ein leicht zu lösendes Problem.",
+              "tr": {
+                "en": "That is an easily solvable problem.",
+                "es": "Ese es un problema fácil de resolver."
+              }
+            },
+            {
+              "es": "Hier sind die zu lesenden Bücher.",
+              "tr": {
+                "en": "Here are the books to be read.",
+                "es": "Aquí están los libros que hay que leer."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Reading strategy: find the article, jump to the participle right before the noun, then go back and read the extension from left to right. The participle takes the adjective ending of the whole noun phrase, also after mit dem, des or without an article.",
+            "es": "Estrategia de lectura: busca el artículo, salta al participio justo antes del sustantivo, y luego vuelve y lee la ampliación de izquierda a derecha. El participio lleva la terminación del adjetivo de todo el grupo nominal, también después de mit dem, des o sin artículo."
+          },
+          "examples": [
+            {
+              "es": "Er spricht mit dem in Berlin lebenden Lehrer.",
+              "tr": {
+                "en": "He is talking with the teacher who lives in Berlin.",
+                "es": "Él habla con el maestro que vive en Berlín."
+              }
+            },
+            {
+              "es": "Die Lösung des seit Jahren bestehenden Problems ist wichtig.",
+              "tr": {
+                "en": "The solution of the problem that has existed for years is important.",
+                "es": "La solución del problema que existe desde hace años es importante."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Relative clause or participle phrase?",
+        "es": "¿Oración de relativo o grupo participial?"
+      },
+      "pairs": [
+        {
+          "a": "Der Lehrer, der in Berlin lebt, schreibt ein Buch.",
+          "b": "Der in Berlin lebende Lehrer schreibt ein Buch.",
+          "note": {
+            "en": "The relative clause is clear and spoken. The participle phrase is more compact and more written, but everything stands before the noun.",
+            "es": "La oración de relativo es clara y hablada. El grupo participial es más compacto y más escrito, pero todo va antes del sustantivo."
+          },
+          "examples": [
+            {
+              "es": "Die Brücke, die gebaut wurde, ist fertig.",
+              "tr": {
+                "en": "The bridge that was built is finished.",
+                "es": "El puente que se construyó está terminado."
+              }
+            },
+            {
+              "es": "Die gebaute Brücke ist fertig.",
+              "tr": {
+                "en": "The built bridge is finished.",
+                "es": "El puente construido está terminado."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Das Problem ist gelöst.",
+          "b": "Das Problem ist zu lösen.",
+          "note": {
+            "en": "Partizip II says that the problem has already been solved. zu plus infinitive says that it still has to be or can be solved. The same difference appears in attributes: das gelöste Problem and das zu lösende Problem.",
+            "es": "El Partizip II dice que el problema ya fue resuelto. zu más infinitivo dice que todavía debe o puede resolverse. La misma diferencia aparece en los atributos: das gelöste Problem y das zu lösende Problem."
+          },
+          "examples": [
+            {
+              "es": "Das gelöste Problem ist kein Thema mehr.",
+              "tr": {
+                "en": "The solved problem is no longer an issue.",
+                "es": "El problema resuelto ya no es un tema."
+              }
+            },
+            {
+              "es": "Das zu lösende Problem ist schwer.",
+              "tr": {
+                "en": "The problem to be solved is hard.",
+                "es": "El problema que hay que resolver es difícil."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: putting the participle after the noun as in English (*der Lehrer lebende in Berlin). Forgetting the adjective ending (*die geplant Brücke). Mixing the participles: Partizip I for something that is finished (*die planende Brücke) or Partizip II for something that is still going on. Making the extension too long: keep your own sentences to one or two extensions, and when you read, go back to the relative clause to understand.",
+        "es": "Trampas clásicas: colocar el participio después del sustantivo como en inglés (*der Lehrer lebende in Berlin). Olvidar la terminación del adjetivo (*die geplant Brücke). Mezclar los participios: Partizip I para algo terminado (*die planende Brücke) o Partizip II para algo que sigue en curso. Hacer la ampliación demasiado larga: en tus propias frases usa una o dos ampliaciones, y al leer vuelve a la oración de relativo para entender."
+      }
+    }
+  ],
+  "speak": {
+    "en": "German can put a whole relative clause before the noun. You take a participle and place all the information in front of it. «Die von der Stadt geplante Brücke» means «die Brücke, die von der Stadt geplant wurde». With the Partizip I the action is active and happens at the same time: «der in Berlin lebende Lehrer». With the Partizip II the meaning is passive or finished: «das im letzten Jahr gebaute Haus». With «zu» and the Partizip I something must or can be done: «ein leicht zu lösendes Problem». The participle takes the adjective ending. When you read, look for the article first and then for the participle before the noun.",
+    "es": "El alemán puede colocar toda una oración de relativo antes del sustantivo. Se toma un participio y se coloca toda la información delante de él. «Die von der Stadt geplante Brücke» significa «die Brücke, die von der Stadt geplant wurde». Con el Partizip I la acción es activa y ocurre al mismo tiempo: «der in Berlin lebende Lehrer». Con el Partizip II el sentido es pasivo o terminado: «das im letzten Jahr gebaute Haus». Con «zu» y el Partizip I algo debe o puede hacerse: «ein leicht zu lösendes Problem». El participio lleva la terminación del adjetivo. Al leer, busca primero el artículo y luego el participio antes del sustantivo."
+  },
+  "items": [
+    {
+      "id": "erweiterte-partizipialattribute-c01",
+      "sentence": "Die ___ Brücke ist fertig.",
+      "options": [
+        "von der Stadt geplante",
+        "von der Stadt planende",
+        "geplante von der Stadt"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The bridge was planned by the city: a passive meaning, so Partizip II. All the information stands in front of the participle, which comes right before the noun.",
+        "es": "El puente fue planeado por la ciudad: un sentido pasivo, así que Partizip II. Toda la información va delante del participio, que está justo antes del sustantivo."
+      },
+      "wrong": {
+        "von der Stadt planende": {
+          "en": "planende is the active Partizip I and would mean that the bridge itself plans something. A bridge is planned, so Partizip II is needed.",
+          "es": "planende es el Partizip I activo y significaría que el puente mismo planea algo. Un puente es planeado, así que se necesita el Partizip II."
+        },
+        "geplante von der Stadt": {
+          "en": "The participle must stand right before the noun, with the extension in front of it. Here the order is reversed.",
+          "es": "El participio debe ir justo antes del sustantivo, con la ampliación delante. Aquí el orden está invertido."
+        }
+      },
+      "examples": [
+        "Die vom Lehrer geschriebene Aufgabe ist schwer.",
+        "Der von allen gelesene Brief ist lang."
+      ],
+      "tr": {
+        "en": "The bridge planned by the city is finished.",
+        "es": "El puente planeado por la ciudad está terminado."
+      }
+    },
+    {
+      "id": "erweiterte-partizipialattribute-f01",
+      "kind": "form",
+      "verb": "Partizip I",
+      "person": "lesen",
+      "answer": "lesend",
+      "table": "erweiterte-attribute-partizipien"
+    },
+    {
+      "id": "erweiterte-partizipialattribute-c02",
+      "sentence": "Der ___ Lehrer schreibt ein Buch.",
+      "options": [
+        "in Berlin gelebte",
+        "in Berlin lebende",
+        "in Berlin zu lebende"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The teacher lives in Berlin now: an active action at the same time, so Partizip I with -d plus the ending: lebende.",
+        "es": "El maestro vive ahora en Berlín: una acción activa y simultánea, así que Partizip I con -d más la terminación: lebende."
+      },
+      "wrong": {
+        "in Berlin gelebte": {
+          "en": "gelebte is a Partizip II and would describe a past life, not a person who lives there now.",
+          "es": "gelebte es un Partizip II y describiría una vida pasada, no una persona que vive allí ahora."
+        },
+        "in Berlin zu lebende": {
+          "en": "zu lebende would mean that somebody has to live in Berlin. That is not the meaning here.",
+          "es": "zu lebende significaría que alguien tiene que vivir en Berlín. Ese no es el sentido aquí."
+        }
+      },
+      "examples": [
+        "Der in Wien arbeitende Mann ist mein Onkel.",
+        "Das im Garten spielende Kind ist klein."
+      ],
+      "tr": {
+        "en": "The teacher living in Berlin is writing a book.",
+        "es": "El maestro que vive en Berlín escribe un libro."
+      }
+    },
+    {
+      "id": "erweiterte-partizipialattribute-f02",
+      "kind": "form",
+      "verb": "Partizip II",
+      "person": "lösen",
+      "answer": "gelöst",
+      "table": "erweiterte-attribute-partizipien"
+    },
+    {
+      "id": "erweiterte-partizipialattribute-c03",
+      "sentence": "Das im letzten Jahr ___ Haus ist schön.",
+      "options": [
+        "bauende",
+        "zu bauende",
+        "gebaute"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The house was built by somebody, and the building is finished: passive and completed, so Partizip II: gebaute.",
+        "es": "La casa fue construida por alguien, y la construcción está terminada: pasivo y completado, así que Partizip II: gebaute."
+      },
+      "wrong": {
+        "bauende": {
+          "en": "bauende is the active Partizip I and would mean a house that builds something. A house is built.",
+          "es": "bauende es el Partizip I activo y significaría una casa que construye algo. Una casa es construida."
+        },
+        "zu bauende": {
+          "en": "zu bauende would mean a house that still has to be built. The phrase im letzten Jahr shows that it is already finished.",
+          "es": "zu bauende significaría una casa que todavía debe construirse. La frase im letzten Jahr muestra que ya está terminada."
+        }
+      },
+      "examples": [
+        "Das im Mai gebaute Haus ist neu.",
+        "Die im Büro geschriebene Nachricht ist lang."
+      ],
+      "tr": {
+        "en": "The house built last year is beautiful.",
+        "es": "La casa construida el año pasado es bonita."
+      }
+    },
+    {
+      "id": "erweiterte-partizipialattribute-f03",
+      "kind": "form",
+      "verb": "zu + Partizip I",
+      "person": "lösen",
+      "answer": "zu lösend",
+      "table": "erweiterte-attribute-partizipien"
+    },
+    {
+      "id": "erweiterte-partizipialattribute-w01",
+      "kind": "why",
+      "es": "Die von der Stadt geplante Brücke ist fertig.",
+      "target": "geplante",
+      "tr": {
+        "en": "The bridge planned by the city is finished.",
+        "es": "El puente planeado por la ciudad está terminado."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Partizip I: the bridge is planning something",
+            "es": "Partizip I: el puente planea algo"
+          },
+          "wrong": {
+            "en": "Partizip I (planende) is active. A bridge does not plan, it is planned, so a passive participle is needed.",
+            "es": "El Partizip I (planende) es activo. Un puente no planea, es planeado, así que se necesita un participio pasivo."
+          }
+        },
+        {
+          "text": {
+            "en": "Partizip II: passive and finished, the city planned the bridge",
+            "es": "Partizip II: pasivo y terminado, la ciudad planeó el puente"
+          }
+        },
+        {
+          "text": {
+            "en": "zu + Partizip I: the bridge still has to be planned",
+            "es": "zu + Partizip I: el puente todavía debe planearse"
+          },
+          "wrong": {
+            "en": "zu planende would mean that the planning is still to be done. The sentence says that the bridge is already finished.",
+            "es": "zu planende significaría que la planificación todavía debe hacerse. La oración dice que el puente ya está terminado."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "erweiterte-partizipialattribute-c04",
+      "sentence": "Das ist ein leicht zu ___ Problem.",
+      "options": [
+        "lösende",
+        "lösender",
+        "lösendes"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The participle takes the adjective ending of the noun phrase. Problem is neuter, after ein the nominative is -es: ein zu lösendes Problem.",
+        "es": "El participio lleva la terminación del adjetivo del grupo nominal. Problem es neutro, y después de ein el nominativo es -es: ein zu lösendes Problem."
+      },
+      "wrong": {
+        "lösende": {
+          "en": "lösende is the ending after der, die, das or in the plural. After ein, the neuter nominative needs -es.",
+          "es": "lösende es la terminación después de der, die, das o en plural. Después de ein, el nominativo neutro necesita -es."
+        },
+        "lösender": {
+          "en": "lösender is a masculine nominative ending. Problem is neuter, so it needs -es.",
+          "es": "lösender es una terminación de nominativo masculino. Problem es neutro, así que necesita -es."
+        }
+      },
+      "examples": [
+        "Das ist ein schwer zu lesendes Buch.",
+        "Das ist ein leicht zu bauendes Haus."
+      ],
+      "tr": {
+        "en": "That is an easily solvable problem.",
+        "es": "Ese es un problema fácil de resolver."
+      }
+    },
+    {
+      "id": "erweiterte-partizipialattribute-f04",
+      "kind": "form",
+      "verb": "Partizip I",
+      "person": "schreiben",
+      "answer": "schreibend",
+      "table": "erweiterte-attribute-partizipien"
+    },
+    {
+      "id": "erweiterte-partizipialattribute-c05",
+      "sentence": "Hier sind die zu ___ Bücher.",
+      "options": [
+        "lesenden",
+        "lesende",
+        "gelesenen"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The books must be read: zu plus Partizip I. After die in the plural the adjective ending is -en: die zu lesenden Bücher.",
+        "es": "Los libros deben leerse: zu más Partizip I. Después de die en plural la terminación del adjetivo es -en: die zu lesenden Bücher."
+      },
+      "wrong": {
+        "lesende": {
+          "en": "lesende is the ending without an article or after ein in the feminine. After die in the plural you need -en.",
+          "es": "lesende es la terminación sin artículo o después de eine en femenino. Después de die en plural necesitas -en."
+        },
+        "gelesenen": {
+          "en": "gelesenen is a Partizip II and would describe books that have already been read. The sentence needs books that still have to be read.",
+          "es": "gelesenen es un Partizip II y describiría libros que ya fueron leídos. La oración necesita libros que todavía hay que leer."
+        }
+      },
+      "examples": [
+        "Das sind die zu prüfenden Aufgaben.",
+        "Wo sind die zu schreibenden Briefe?"
+      ],
+      "tr": {
+        "en": "Here are the books to be read.",
+        "es": "Aquí están los libros que hay que leer."
+      }
+    },
+    {
+      "id": "erweiterte-partizipialattribute-f05",
+      "kind": "form",
+      "verb": "Partizip II",
+      "person": "planen",
+      "answer": "geplant",
+      "table": "erweiterte-attribute-partizipien"
+    },
+    {
+      "id": "erweiterte-partizipialattribute-c06",
+      "sentence": "Er spricht mit dem in Berlin ___ Lehrer.",
+      "options": [
+        "lebenden",
+        "lebende",
+        "lebender"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "mit takes the dative. After dem the masculine dative ending of the participle is -en: mit dem in Berlin lebenden Lehrer.",
+        "es": "mit lleva dativo. Después de dem la terminación de dativo masculino del participio es -en: mit dem in Berlin lebenden Lehrer."
+      },
+      "wrong": {
+        "lebende": {
+          "en": "lebende is the nominative ending after der. After mit dem you need the dative ending -en.",
+          "es": "lebende es la terminación del nominativo después de der. Después de mit dem necesitas la terminación de dativo -en."
+        },
+        "lebender": {
+          "en": "lebender is the nominative after ein. After the dative article dem the ending is weak: -en.",
+          "es": "lebender es el nominativo después de ein. Después del artículo de dativo dem la terminación es débil: -en."
+        }
+      },
+      "examples": [
+        "Sie spricht mit dem im Büro arbeitenden Mann.",
+        "Wir helfen dem wartenden Kind."
+      ],
+      "tr": {
+        "en": "He talks with the teacher who lives in Berlin.",
+        "es": "Él habla con el maestro que vive en Berlín."
+      }
+    },
+    {
+      "id": "erweiterte-partizipialattribute-f06",
+      "kind": "form",
+      "verb": "zu + Partizip I",
+      "person": "lesen",
+      "answer": "zu lesend",
+      "table": "erweiterte-attribute-partizipien"
+    },
+    {
+      "id": "erweiterte-partizipialattribute-w02",
+      "kind": "why",
+      "es": "Der in Berlin lebende Lehrer schreibt ein Buch.",
+      "target": "lebende",
+      "tr": {
+        "en": "The teacher living in Berlin is writing a book.",
+        "es": "El maestro que vive en Berlín escribe un libro."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Partizip I: an active action that is going on now (-d)",
+            "es": "Partizip I: una acción activa que está ocurriendo ahora (-d)"
+          }
+        },
+        {
+          "text": {
+            "en": "Partizip II: a finished action",
+            "es": "Partizip II: una acción terminada"
+          },
+          "wrong": {
+            "en": "The Partizip II gelebte would describe a life that is over. The teacher lives in Berlin now.",
+            "es": "El Partizip II gelebte describiría una vida que terminó. El maestro vive ahora en Berlín."
+          }
+        },
+        {
+          "text": {
+            "en": "zu + Partizip I: somebody has to live in Berlin",
+            "es": "zu + Partizip I: alguien tiene que vivir en Berlín"
+          },
+          "wrong": {
+            "en": "zu lebende would add a duty. The sentence only says where the teacher lives.",
+            "es": "zu lebende añadiría un deber. La oración solo dice dónde vive el maestro."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "erweiterte-partizipialattribute-c07",
+      "sentence": "Ich lese das gestern ___ Buch.",
+      "options": [
+        "kaufende",
+        "gekaufte",
+        "zu kaufende"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The book was bought yesterday: finished and passive, so Partizip II with the ending -e after das: das gestern gekaufte Buch.",
+        "es": "El libro fue comprado ayer: terminado y pasivo, así que Partizip II con la terminación -e después de das: das gestern gekaufte Buch."
+      },
+      "wrong": {
+        "kaufende": {
+          "en": "kaufende is the active Partizip I and would mean a book that buys something.",
+          "es": "kaufende es el Partizip I activo y significaría un libro que compra algo."
+        },
+        "zu kaufende": {
+          "en": "zu kaufende would mean a book that still has to be bought. The word gestern says that it is already bought.",
+          "es": "zu kaufende significaría un libro que todavía debe comprarse. La palabra gestern dice que ya fue comprado."
+        }
+      },
+      "examples": [
+        "Ich sehe das gestern geschriebene Buch.",
+        "Das gestern gebaute Haus ist groß."
+      ],
+      "tr": {
+        "en": "I am reading the book bought yesterday.",
+        "es": "Estoy leyendo el libro comprado ayer."
+      }
+    },
+    {
+      "id": "erweiterte-partizipialattribute-f07",
+      "kind": "form",
+      "verb": "Partizip II",
+      "person": "bauen",
+      "answer": "gebaut",
+      "table": "erweiterte-attribute-partizipien"
+    },
+    {
+      "id": "erweiterte-partizipialattribute-c08",
+      "sentence": "Der gleich ___ Zug fährt nach Berlin.",
+      "options": [
+        "abgefahrene",
+        "abfahrende",
+        "abzufahrende"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The train will leave in a moment: an active action at the same time. Partizip I of abfahren is abfahrend, with -e after der: der gleich abfahrende Zug.",
+        "es": "El tren va a salir en un momento: una acción activa y simultánea. El Partizip I de abfahren es abfahrend, con -e después de der: der gleich abfahrende Zug."
+      },
+      "wrong": {
+        "abgefahrene": {
+          "en": "abgefahrene would describe a train that has already left. gleich shows that it has not left yet.",
+          "es": "abgefahrene describiría un tren que ya salió. gleich muestra que todavía no ha salido."
+        },
+        "abzufahrende": {
+          "en": "abzufahrende would mean a train that must depart, a passive duty. The train itself departs, so it is active.",
+          "es": "abzufahrende significaría un tren que debe partir, un deber pasivo. El tren mismo parte, así que es activo."
+        }
+      },
+      "examples": [
+        "Der gleich ankommende Zug ist voll.",
+        "Die gerade laufende Sendung ist gut."
+      ],
+      "tr": {
+        "en": "The train that is about to leave goes to Berlin.",
+        "es": "El tren que está por salir va a Berlín."
+      }
+    },
+    {
+      "id": "erweiterte-partizipialattribute-f08",
+      "kind": "form",
+      "verb": "Partizip I",
+      "person": "bauen",
+      "answer": "bauend",
+      "table": "erweiterte-attribute-partizipien"
+    },
+    {
+      "id": "erweiterte-partizipialattribute-c09",
+      "sentence": "Das Problem ist noch offen. Es ist ein ___ Problem.",
+      "options": [
+        "gelöstes",
+        "lösendes",
+        "zu lösendes"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The problem is still open: it has to be solved. That is zu plus Partizip I with the ending -es: ein zu lösendes Problem.",
+        "es": "El problema sigue abierto: debe resolverse. Eso es zu más Partizip I con la terminación -es: ein zu lösendes Problem."
+      },
+      "wrong": {
+        "gelöstes": {
+          "en": "gelöstes would mean that the problem has already been solved, which contradicts the word offen.",
+          "es": "gelöstes significaría que el problema ya fue resuelto, lo que contradice la palabra offen."
+        },
+        "lösendes": {
+          "en": "lösendes is active and would mean that the problem solves something. A problem is solved by someone.",
+          "es": "lösendes es activo y significaría que el problema resuelve algo. Un problema es resuelto por alguien."
+        }
+      },
+      "examples": [
+        "Das ist ein noch zu lesendes Buch.",
+        "Die zu prüfende Frage ist wichtig."
+      ],
+      "tr": {
+        "en": "The problem is still open. It is a problem to be solved.",
+        "es": "El problema sigue abierto. Es un problema que hay que resolver."
+      }
+    },
+    {
+      "id": "erweiterte-partizipialattribute-f09",
+      "kind": "form",
+      "verb": "zu + Partizip I",
+      "person": "prüfen",
+      "answer": "zu prüfend",
+      "table": "erweiterte-attribute-partizipien"
+    },
+    {
+      "id": "erweiterte-partizipialattribute-w03",
+      "kind": "why",
+      "es": "Das ist ein leicht zu lösendes Problem.",
+      "target": "lösendes",
+      "tr": {
+        "en": "That is an easily solvable problem.",
+        "es": "Ese es un problema fácil de resolver."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Partizip I: the problem solves something",
+            "es": "Partizip I: el problema resuelve algo"
+          },
+          "wrong": {
+            "en": "Without zu, lösendes would be active and mean a problem that solves something. A problem is solved by somebody.",
+            "es": "Sin zu, lösendes sería activo y significaría un problema que resuelve algo. Un problema es resuelto por alguien."
+          }
+        },
+        {
+          "text": {
+            "en": "Partizip II: the problem has been solved",
+            "es": "Partizip II: el problema fue resuelto"
+          },
+          "wrong": {
+            "en": "gelöstes would say that the problem is already solved. leicht zu lösen refers to what can be done.",
+            "es": "gelöstes diría que el problema ya está resuelto. leicht zu lösen se refiere a lo que se puede hacer."
+          }
+        },
+        {
+          "text": {
+            "en": "zu + Partizip I: a passive with the meaning can be solved",
+            "es": "zu + Partizip I: un pasivo con el sentido de puede resolverse"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "erweiterte-partizipialattribute-c10",
+      "sentence": "Sie liest ein ___ Buch.",
+      "options": [
+        "von ihrem Vater schenkendes",
+        "geschenktes von ihrem Vater",
+        "von ihrem Vater geschenktes"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The extension stands in front of the participle, and the participle stands right before the noun: ein von ihrem Vater geschenktes Buch.",
+        "es": "La ampliación va delante del participio, y el participio va justo antes del sustantivo: ein von ihrem Vater geschenktes Buch."
+      },
+      "wrong": {
+        "von ihrem Vater schenkendes": {
+          "en": "schenkendes is the active Partizip I and would mean that the book gives a present. The book was given.",
+          "es": "schenkendes es el Partizip I activo y significaría que el libro regala algo. El libro fue regalado."
+        },
+        "geschenktes von ihrem Vater": {
+          "en": "The order is wrong. The participle must come last, right before the noun Buch.",
+          "es": "El orden es incorrecto. El participio debe ir al final, justo antes del sustantivo Buch."
+        }
+      },
+      "examples": [
+        "Er liest einen von seinem Freund geschriebenen Brief.",
+        "Sie hat ein von der Firma gebautes Haus."
+      ],
+      "tr": {
+        "en": "She is reading a book given by her father.",
+        "es": "Ella lee un libro regalado por su padre."
+      }
+    },
+    {
+      "id": "erweiterte-partizipialattribute-f10",
+      "kind": "form",
+      "verb": "Partizip II",
+      "person": "prüfen",
+      "answer": "geprüft",
+      "table": "erweiterte-attribute-partizipien"
+    },
+    {
+      "id": "erweiterte-partizipialattribute-c11",
+      "sentence": "Die Brücke, ___ von der Stadt geplant wurde, ist fertig.",
+      "options": [
+        "die",
+        "das",
+        "den"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The relative clause is the long form of die von der Stadt geplante Brücke. Brücke is feminine and the subject of wurde geplant: die.",
+        "es": "La oración de relativo es la forma larga de die von der Stadt geplante Brücke. Brücke es femenino y sujeto de wurde geplant: die."
+      },
+      "wrong": {
+        "das": {
+          "en": "das is the neuter relative pronoun. Brücke is feminine, so the pronoun must be die.",
+          "es": "das es el pronombre relativo neutro. Brücke es femenino, así que el pronombre debe ser die."
+        },
+        "den": {
+          "en": "den is the masculine accusative. Brücke is feminine, and it is the subject of the passive verb.",
+          "es": "den es el acusativo masculino. Brücke es femenino, y es el sujeto del verbo pasivo."
+        }
+      },
+      "examples": [
+        "Das Haus, das gebaut wurde, ist groß.",
+        "Die Frage, die gestellt wurde, ist schwer."
+      ],
+      "tr": {
+        "en": "The bridge that was planned by the city is finished.",
+        "es": "El puente que fue planeado por la ciudad está terminado."
+      }
+    },
+    {
+      "id": "erweiterte-partizipialattribute-f11",
+      "kind": "form",
+      "verb": "Partizip II",
+      "person": "schreiben",
+      "answer": "geschrieben",
+      "table": "erweiterte-attribute-partizipien"
+    },
+    {
+      "id": "erweiterte-partizipialattribute-c12",
+      "sentence": "Wir sprechen mit den im Büro ___ Kollegen.",
+      "options": [
+        "arbeitende",
+        "arbeitenden",
+        "arbeitender"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "mit takes the dative, and the dative plural after den ends in -en: mit den im Büro arbeitenden Kollegen.",
+        "es": "mit lleva dativo, y el dativo plural después de den termina en -en: mit den im Büro arbeitenden Kollegen."
+      },
+      "wrong": {
+        "arbeitende": {
+          "en": "arbeitende is the nominative or accusative plural without an article. After den (dative plural) you need -en.",
+          "es": "arbeitende es el nominativo o acusativo plural sin artículo. Después de den (dativo plural) necesitas -en."
+        },
+        "arbeitender": {
+          "en": "arbeitender is a masculine singular nominative. The noun Kollegen is plural, and the article den shows the dative plural.",
+          "es": "arbeitender es un nominativo masculino singular. El sustantivo Kollegen es plural, y el artículo den muestra el dativo plural."
+        }
+      },
+      "examples": [
+        "Wir helfen den im Garten arbeitenden Kindern.",
+        "Er dankt den hier wohnenden Leuten."
+      ],
+      "tr": {
+        "en": "We talk with the colleagues working in the office.",
+        "es": "Hablamos con los colegas que trabajan en la oficina."
+      }
+    },
+    {
+      "id": "erweiterte-partizipialattribute-f12",
+      "kind": "form",
+      "verb": "zu + Partizip I",
+      "person": "planen",
+      "answer": "zu planend",
+      "table": "erweiterte-attribute-partizipien"
+    },
+    {
+      "id": "erweiterte-partizipialattribute-c13",
+      "sentence": "Die Lösung des seit Jahren ___ Problems ist wichtig.",
+      "options": [
+        "bestehende",
+        "bestehendes",
+        "bestehenden"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The genitive singular neuter after des takes -en on the adjective: des seit Jahren bestehenden Problems.",
+        "es": "El genitivo singular neutro después de des lleva -en en el adjetivo: des seit Jahren bestehenden Problems."
+      },
+      "wrong": {
+        "bestehende": {
+          "en": "bestehende is a nominative ending after der, die, das. After des (genitive) the ending is -en.",
+          "es": "bestehende es una terminación de nominativo después de der, die, das. Después de des (genitivo) la terminación es -en."
+        },
+        "bestehendes": {
+          "en": "bestehendes is the strong ending without an article. After des the weak ending -en follows.",
+          "es": "bestehendes es la terminación fuerte sin artículo. Después de des sigue la terminación débil -en."
+        }
+      },
+      "examples": [
+        "Die Lösung des bestehenden Problems ist einfach.",
+        "Der Preis des gebauten Hauses ist hoch."
+      ],
+      "tr": {
+        "en": "The solution of the problem that has existed for years is important.",
+        "es": "La solución del problema que existe desde hace años es importante."
+      }
+    },
+    {
+      "id": "erweiterte-partizipialattribute-c14",
+      "sentence": "Wir suchen in Berlin ___ Mitarbeiter.",
+      "options": [
+        "lebenden",
+        "lebende",
+        "lebender"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Without an article, the adjective carries the strong ending. In the accusative plural that is -e: lebende Mitarbeiter.",
+        "es": "Sin artículo, el adjetivo lleva la terminación fuerte. En el acusativo plural es -e: lebende Mitarbeiter."
+      },
+      "wrong": {
+        "lebenden": {
+          "en": "lebenden is the weak ending after an article (die lebenden Mitarbeiter). Without an article you need -e.",
+          "es": "lebenden es la terminación débil después de un artículo (die lebenden Mitarbeiter). Sin artículo necesitas -e."
+        },
+        "lebender": {
+          "en": "lebender is a masculine singular ending. Mitarbeiter is plural here, so the strong plural ending is -e.",
+          "es": "lebender es una terminación masculina singular. Mitarbeiter es aquí plural, así que la terminación fuerte del plural es -e."
+        }
+      },
+      "examples": [
+        "Wir suchen im Büro arbeitende Leute.",
+        "Sie braucht in Wien lebende Freunde."
+      ],
+      "tr": {
+        "en": "We are looking for employees living in Berlin.",
+        "es": "Buscamos empleados que vivan en Berlín."
+      }
+    },
+    {
+      "id": "erweiterte-partizipialattribute-w04",
+      "kind": "why",
+      "es": "Wir sprechen mit den im Büro arbeitenden Kollegen.",
+      "target": "arbeitenden",
+      "tr": {
+        "en": "We talk with the colleagues working in the office.",
+        "es": "Hablamos con los colegas que trabajan en la oficina."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "The ending is part of the Partizip I: arbeitend always ends in -en",
+            "es": "La terminación es parte del Partizip I: arbeitend siempre termina en -en"
+          },
+          "wrong": {
+            "en": "The Partizip I ends in -d: arbeitend. The -en is the adjective ending that comes after it.",
+            "es": "El Partizip I termina en -d: arbeitend. La -en es la terminación del adjetivo que viene después."
+          }
+        },
+        {
+          "text": {
+            "en": "The participle takes the normal adjective ending: dative plural after den is -en",
+            "es": "El participio lleva la terminación normal del adjetivo: el dativo plural después de den es -en"
+          }
+        },
+        {
+          "text": {
+            "en": "The ending -en is the infinitive ending of arbeiten",
+            "es": "La terminación -en es la terminación del infinitivo de arbeiten"
+          },
+          "wrong": {
+            "en": "arbeiten is the infinitive. The attribute is the participle arbeitend plus the adjective ending -en.",
+            "es": "arbeiten es el infinitivo. El atributo es el participio arbeitend más la terminación de adjetivo -en."
+          }
+        }
+      ],
+      "correctIndex": 1
+    }
+  ]
+}

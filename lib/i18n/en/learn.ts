@@ -10,7 +10,7 @@ export default {
     next: 'Next',
     typeSentence: 'Type the sentence',
     // the grey placeholder of the answer input field, with the name of the target language.
-    typeIn: (lang: string): string => (lang === 'es' ? 'Type in Spanish' : lang === 'hu' ? 'Type in Hungarian' : 'Type in English'),
+    typeIn: (lang: string): string => (lang === 'es' ? 'Type in Spanish' : lang === 'hu' ? 'Type in Hungarian' : lang === 'de' ? 'Type in German' : 'Type in English'),
   },
   done: {
     // Play cut: the Learn tab (Done screen) is gone, this
@@ -225,7 +225,7 @@ export default {
       micRetry: 'The microphone did not work this time. Tap it again, or type it.',
       heard: (text: string) => `I heard: “${text}”`,
       model: (answer: string) => `A good answer: ${answer}`,
-      answerHint: 'Answer in Spanish',
+      answerHint: (lang: string): string => (lang === 'de' ? 'Answer in German' : 'Answer in Spanish'),
       done: 'Situation done',
       partScore: (part: string, n: number, total: number) => `${part}: ${n} / ${total}`,
       again: 'Again',

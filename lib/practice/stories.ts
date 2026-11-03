@@ -3,25 +3,29 @@
 // learner knows all of it: every sentence passes the same "never an unknown word in a sentence" gate as the Sentences tab
 // (lib/knownSentence.ts) and the card of each sentence's word is learned. Of those, the story with the most due words wins
 // (a tie: the data order), the story of the previous round goes last. Each target language has its own file (es stories.json,
-// en stories-en.json, hu stories-hu.json): the sentence text is the target-language field, the translation and the true/false
+// en stories-en.json, hu stories-hu.json, de stories-de.json): the sentence text is the target-language field, the translation and the true/false
 // statements are the field of the learner's native language (the active source, lib/languagePair.ts). Without a usable story
 // lib/practice/reading.ts builds the text from the due words' own example sentences. Pure logic, no I/O.
+// The stories are offered by what the learner knows, not by level: a learner who knows too little of the deck is offered no story and
+// then gets the text of example sentences, or the empty state of the Practice tab.
 
 import type { PcicItem, PcicLevel, PcicTarget } from '@/data/pcic';
 import storiesData from '@/data/practice/stories.json';
+import storiesDeData from '@/data/practice/stories-de.json';
 import storiesEnData from '@/data/practice/stories-en.json';
 import storiesHuData from '@/data/practice/stories-hu.json';
 import { isSentenceKnownIn } from '@/lib/knownSentence';
 import { activeSourceFor, type Lang } from '@/lib/languagePair';
 import { learnedEntryOf } from '@/lib/sentenceCards';
 import { gapByWord, practiceCandidates } from './gapFill';
-import { meaningOf, type ReadingDeps, type ReadingWord } from './reading';
+import { meaningOf, readingLevelFor, type ReadingDeps, type ReadingWord } from './reading';
 
-/** One sentence of a story: its text per language, and the card it practises (`word`: `o<order>`, `e<id>` or `h<id>`) as written in the target-language text (`form`). */
+/** One sentence of a story: its text per language, and the card it practises (`word`: `o<order>`, `e<id>`, `h<id>` or `d<id>`) as written in the target-language text (`form`). */
 export interface StorySentence {
   es?: string;
   en?: string;
   hu?: string;
+  de?: string;
   word: string;
   form: string;
 }
@@ -34,11 +38,19 @@ export interface Story {
   false_en?: string[];
   false_es?: string[];
   false_hu?: string[];
+  false_de?: string[];
 }
 
 export const STORIES: Story[] = storiesData as Story[];
 
-const STORIES_BY_TARGET: Record<PcicTarget, readonly Story[]> = { es: STORIES, en: storiesEnData as Story[], hu: storiesHuData as Story[] };
+// Every target has its own file; the learner's language only picks the translation and the true/false statements (`de` as a source
+// reads the `de` and `false_de` fields the Spanish, English and Hungarian files carry).
+const STORIES_BY_TARGET: Record<PcicTarget, readonly Story[]> = {
+  es: STORIES,
+  en: storiesEnData as Story[],
+  hu: storiesHuData as Story[],
+  de: storiesDeData as Story[],
+};
 
 /** The stories of a target language (none when it has none). */
 export function storiesFor(target: PcicTarget): readonly Story[] {
@@ -77,10 +89,11 @@ export function storyWords(story: Story, findItem: (id: string) => PcicItem | un
 export function pickStory(deps: ReadingDeps, known: ReadonlySet<string>, stories: readonly Story[] = storiesFor(deps.target)): { story: Story; words: ReadingWord[] } | null {
   const target = deps.target;
   const cardOf = new Map(deps.cards.map((c) => [c.itemId, c]));
+  const levelFor = readingLevelFor(deps);
   const due = new Set(practiceCandidates(deps.cards, deps.today).map((c) => c.itemId));
   const usable: { story: Story; words: ReadingWord[]; score: number; index: number }[] = [];
   stories.forEach((story, index) => {
-    if (!story.sentences.every((s) => isSentenceKnownIn(s[target] ?? '', target, known))) return;
+    if (!story.sentences.every((s) => isSentenceKnownIn(s[target] ?? '', target, known, levelFor(s.word)))) return;
     if (!story.sentences.every((s) => cardOf.has(s.word) && learnedEntryOf(cardOf.get(s.word)!, target, deps.findItem))) return;
     const words = storyWords(story, deps.findItem, target);
     if (words) usable.push({ story, words, score: words.filter((w) => due.has(w.itemId)).length, index });

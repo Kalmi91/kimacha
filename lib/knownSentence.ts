@@ -5,6 +5,9 @@
 // preposition, conjunction). A pure module: no database, no corpus import.
 
 import { CORPUS_NAMES } from '@/lib/corpusNames';
+import { deTokenize, germanEntryForms } from '@/lib/deEntryForms';
+import { isKnownCompound } from '@/lib/deCompounds';
+import { deCompoundNumber, type DeLevel } from '@/lib/deForms';
 import { enDegreeForms, enForms, enPlurals } from '@/lib/enForms';
 import { gerundForms } from '@/lib/esGerunds';
 import { esFeminine, esPlural, esSuperlativeForms } from '@/lib/esInflect';
@@ -13,11 +16,12 @@ import { occupationFeminine } from '@/lib/esOccupations';
 import { participleForms } from '@/lib/esParticiples';
 import { HU_CLOSED_CLASS, huRecognises, huStemKeys } from '@/lib/huForms';
 import { conjugate, TENSES, type Tense } from '@/lib/games/conjugate';
+import { deStructuresAbove } from '@/lib/grammar/deTenseGate';
 import { detectStructures, tokenize, type Structure } from '@/lib/grammar/tenseGate';
 import { capitalizedWords } from '@/lib/properNames';
 import type { Sm2Card } from '@/lib/sm2';
 
-export type KnownLang = 'es' | 'en' | 'hu';
+export type KnownLang = 'es' | 'en' | 'hu' | 'de';
 
 /** The unlockable tenses: the six tenses of `conjugate` + the subjunctive imperfecto. */
 export type ResolvedTense = Tense | 'subjuntivo_imperfecto';
@@ -33,6 +37,8 @@ interface KnownContext {
   learned: Iterable<string | LearnedEntry>;
   /** Spanish only: the tenses unlocked by the grammar lessons. */
   tenses?: ReadonlySet<ResolvedTense>;
+  /** German only: the level whose grammar the learner has reached (no German grammar lesson unlocks tenses). Default A1. */
+  level?: DeLevel;
 }
 
 // Closed word classes (2026-11-02): determiners, pronouns, prepositions, conjunctions, modal verbs and
@@ -79,6 +85,44 @@ const EN_CLOSED_CLASS = [
   'what', 'who', 'whom', 'whose', 'which', 'where', 'why', 'how', 'there', 'here', 'yes',
 ];
 
+// German closed classes (2026-11-02): articles, personal / possessive / demonstrative / indefinite / interrogative
+// pronouns and determiners, prepositions with their contractions, the da- / wo- compounds, conjunctions and the degree words
+// sehr / mehr / weniger / so. All case, gender and number forms are listed; a content word (noun, verb, adjective,
+// adverb) never goes here: those are learned one by one (lib/deForms.ts derives their forms).
+function withEndings(stems: string[], endings: string[]): string[] {
+  return stems.flatMap((stem) => endings.map((end) => `${stem}${end}`));
+}
+const DE_CLOSED_CLASS: string[] = [
+  'der', 'die', 'das', 'den', 'dem', 'des', 'ein', 'eine', 'einen', 'einem', 'einer', 'eines',
+  // personal and reflexive pronouns, indefinite pronouns
+  'ich', 'du', 'er', 'sie', 'es', 'wir', 'ihr', 'mich', 'dich', 'ihn', 'uns', 'euch', 'mir', 'dir', 'ihm', 'ihnen', 'sich',
+  'man', 'selbst', 'etwas', 'nichts', 'jemand', 'niemand', 'jemanden', 'niemanden', 'jemandem', 'niemandem',
+  // possessives, kein, demonstratives, quantifiers (every gender, case and number)
+  ...withEndings(['mein', 'dein', 'sein', 'ihr', 'unser', 'euer', 'kein'], ['', 'e', 'en', 'em', 'er', 'es']),
+  'eure', 'euren', 'eurem', 'eurer', 'eures',
+  ...withEndings(['dies', 'jed', 'welch', 'manch', 'solch', 'jen', 'all', 'ander', 'einig', 'beid'], ['er', 'e', 'es', 'en', 'em']),
+  'dies', 'alles', 'viel', 'viele', 'vielen', 'vieler', 'vielem', 'wenig', 'wenige', 'wenigen', 'weniger', 'mehrere', 'mehreren', 'mehrerer',
+  'andere', 'beide', 'beiden',
+  // question words
+  'wer', 'wen', 'wem', 'wessen', 'was', 'wo', 'wohin', 'woher', 'wann', 'wie', 'warum', 'wieso', 'weshalb', 'wozu',
+  // prepositions and their contractions
+  'ab', 'an', 'auf', 'aus', 'außer', 'bei', 'bis', 'durch', 'entlang', 'für', 'gegen', 'gegenüber', 'hinter', 'in', 'innerhalb',
+  'außerhalb', 'mit', 'nach', 'neben', 'ohne', 'seit', 'statt', 'anstatt', 'trotz', 'über', 'um', 'unter', 'von', 'vor', 'während',
+  'wegen', 'zu', 'zwischen', 'gemäß', 'laut', 'per', 'pro',
+  'im', 'am', 'zum', 'zur', 'vom', 'beim', 'ins', 'ans', 'aufs', 'ums', 'fürs', 'durchs', 'übers', 'vors', 'hinters', 'vorm', 'hinterm',
+  'überm', 'unterm', 'übern', 'untern',
+  // da- / wo- compounds
+  ...withEndings(['da', 'wo'], ['ran', 'rauf', 'raus', 'rin', 'rüber', 'rum', 'runter', 'von', 'vor', 'zu', 'gegen', 'durch', 'mit', 'für', 'bei', 'nach', 'zwischen', 'hinter', 'neben']),
+  'hierbei', 'hierfür', 'hiermit', 'hierzu', 'deshalb', 'deswegen',
+  // conjunctions and the negation
+  'und', 'oder', 'aber', 'denn', 'sondern', 'dass', 'ob', 'weil', 'wenn', 'als', 'obwohl', 'bevor', 'nachdem', 'damit', 'sobald',
+  'falls', 'solange', 'sodass', 'indem', 'sowie', 'sowohl', 'weder', 'entweder', 'nicht',
+  // degree words
+  'sehr', 'mehr', 'so', 'plus', 'minus',
+  // possessive pronouns on their own
+  'meins', 'deins', 'seins', 'ihrs', 'unsers', 'eures',
+];
+
 // Free words: contain no verb, the learner does not have to learn them separately.
 const FREE_WORDS: Record<KnownLang, ReadonlySet<string>> = {
   es: new Set([
@@ -88,6 +132,7 @@ const FREE_WORDS: Record<KnownLang, ReadonlySet<string>> = {
   ]),
   en: new Set(['the', 'a', 'an', 'of', 'to', 'in', 'on', 'and', 'or', ...EN_CLOSED_CLASS]),
   hu: new Set(['a', 'az', 'egy', 'és', 'is', 'de', 'vagy', 'hogy', 'nem', 'meg', 'el', 'ki', 'be', ...HU_CLOSED_CLASS]),
+  de: new Set(DE_CLOSED_CLASS),
 };
 
 // What tenseGate recognises but the unlocked tenses (ResolvedTense) do not cover:
@@ -337,14 +382,28 @@ function addHungarian(known: Set<string>, entry: LearnedEntry) {
   for (const key of huStemKeys(entry.text, entry.pos)) known.add(key);
 }
 
+function addGerman(known: Set<string>, entry: LearnedEntry, level: DeLevel) {
+  for (const token of deTokenize(entry.text.trim())) known.add(token);
+  const { plain, split, compound } = germanEntryForms(entry, level);
+  for (const form of plain) known.add(form);
+  for (const key of compound) known.add(key);
+  // a finite form that stands apart from its detached prefix: only together with that prefix in the sentence
+  for (const { form, prefix } of split) {
+    known.add(`${form}>${prefix}`);
+    known.add(prefix);
+  }
+}
+
 /** All accepted (lowercase) tokens from the learned words. */
 export function knownTokens(lang: KnownLang, ctx: KnownContext): Set<string> {
   const known = new Set<string>(FREE_WORDS[lang]);
   const tenses = ctx.tenses ?? new Set<ResolvedTense>();
+  const level = ctx.level ?? 'A1';
   for (const raw of ctx.learned) {
     const entry = entryOf(raw);
     if (lang === 'es') addSpanish(known, entry, tenses);
     else if (lang === 'hu') addHungarian(known, entry);
+    else if (lang === 'de') addGerman(known, entry, level);
     else addEnglish(known, entry);
   }
   return known;
@@ -353,6 +412,7 @@ export function knownTokens(lang: KnownLang, ctx: KnownContext): Set<string> {
 /** The (lowercase) tokens of a sentence, the way the gate reads it. */
 export function sentenceTokens(sentence: string, lang: KnownLang): string[] {
   if (lang === 'hu') return huTokenize(sentence);
+  if (lang === 'de') return deTokenize(sentence);
   return lang === 'es' ? tokenize(sentence) : enTokenize(sentence);
 }
 
@@ -378,6 +438,12 @@ function listedNames(lang: KnownLang): ReadonlySet<string> {
 function nameTokens(sentence: string, lang: KnownLang): Set<string> {
   const names = new Set<string>();
   const listed = listedNames(lang);
+  // German capitalises every noun: a capital says nothing about a name. Only the listed names (the words the German and the
+  // English sentence of a card write the same, scripts/gen-corpus-names.mjs) are free, at the start of a sentence as well.
+  if (lang === 'de') {
+    for (const { word } of capitalizedWords(sentence)) for (const token of sentenceTokens(word, lang)) if (listed.has(token)) names.add(token);
+    return names;
+  }
   for (const { word, initial } of capitalizedWords(sentence)) {
     for (const token of sentenceTokens(word, lang)) {
       const stem = lang === 'en' ? enStem(token) : undefined;
@@ -387,26 +453,79 @@ function nameTokens(sentence: string, lang: KnownLang): Set<string> {
   return names;
 }
 
-function isKnownToken(token: string, lang: KnownLang, known: ReadonlySet<string>, names: ReadonlySet<string>): boolean {
+function isKnownToken(
+  token: string,
+  lang: KnownLang,
+  known: ReadonlySet<string>,
+  names: ReadonlySet<string>,
+  prefixes: ReadonlySet<string> = NO_PREFIXES,
+  capitals: ReadonlySet<string> = NO_PREFIXES,
+): boolean {
   if (known.has(token) || names.has(token)) return true;
   if (lang === 'hu') return huRecognises(token, known);
+  if (lang === 'de') {
+    // a number, or a finite form of a separable verb together with its detached prefix ("stehe ... auf")
+    if (/^\d+$/.test(token) || [...prefixes].some((prefix) => prefix !== token && known.has(`${token}>${prefix}`))) return true;
+    const number = deCompoundNumber(token);
+    if (number !== null) return (number[0] === 'ein' || known.has(number[0])) && known.has(number[1]);
+    // a noun (written with a capital) made only of learned nouns: Kind + Zimmer
+    return capitals.has(token) && isKnownCompound(token, known);
+  }
   if (lang !== 'en') return false;
   const stem = enStem(token);
   return stem !== undefined && (known.has(stem) || names.has(stem));
 }
 
+const NO_PREFIXES: ReadonlySet<string> = new Set();
+
+/** The (lowercase) tokens a German sentence writes with a capital (nouns, and the first word of a sentence). */
+function capitalTokens(sentence: string): Set<string> {
+  const out = new Set<string>();
+  for (const { word } of capitalizedWords(sentence)) for (const token of deTokenize(word)) out.add(token);
+  return out;
+}
+// What may close a German clause besides its end: a detached prefix stands last ("Ich stehe auf und gehe...", "Ich fange an zu arbeiten").
+const DE_CLAUSE_JOINERS: ReadonlySet<string> = new Set(['und', 'oder', 'aber', 'denn', 'sondern', 'zu']);
+
+/**
+ * The words of a German sentence that can be a detached verb prefix: the ones that close a clause (before a comma, a full stop, the
+ * end, or a joining word). "steht auf dem Tisch" has none ("auf" is followed by "dem"), "Ich stehe um sieben Uhr auf." has "auf".
+ */
+export function detachedPrefixes(sentence: string): Set<string> {
+  const out = new Set<string>();
+  const chunks = sentence.split(/\s+/).filter(Boolean);
+  chunks.forEach((chunk, i) => {
+    const word = deTokenize(chunk).pop();
+    if (!word) return;
+    const next = chunks[i + 1] ? deTokenize(chunks[i + 1])[0] : undefined;
+    if (/[,;:.!?]["”»)]*$/.test(chunk) || i === chunks.length - 1 || (next !== undefined && DE_CLAUSE_JOINERS.has(next))) out.add(word);
+  });
+  return out;
+}
+
+/** The keys under which the owners of a sentence token are stored: the token itself, and (German) each "form>prefix" pair it can make. */
+export function ownerKeys(token: string, lang: KnownLang, prefixes: ReadonlySet<string>): string[] {
+  return lang === 'de' ? [token, ...[...prefixes].filter((p) => p !== token).map((p) => `${token}>${p}`)] : [token];
+}
+
 /** The tokens of the sentence that the gate does not accept. Empty = every word is known. */
 export function unknownTokens(sentence: string, lang: KnownLang, ctx: KnownContext): string[] {
-  const known = knownTokens(lang, ctx);
+  return unknownTokensIn(sentence, lang, knownTokens(lang, ctx));
+}
+
+/** The same over an already built `knownTokens` set. */
+export function unknownTokensIn(sentence: string, lang: KnownLang, known: ReadonlySet<string>): string[] {
   const names = nameTokens(sentence, lang);
-  return sentenceTokens(sentence, lang).filter((token) => !isKnownToken(token, lang, known, names));
+  const prefixes = lang === 'de' ? detachedPrefixes(sentence) : NO_PREFIXES;
+  const capitals = lang === 'de' ? capitalTokens(sentence) : NO_PREFIXES;
+  return sentenceTokens(sentence, lang).filter((token) => !isKnownToken(token, lang, known, names, prefixes, capitals));
 }
 
 /**
  * The same gate over an already built `knownTokens` set (many sentences against one learned
  * vocabulary: the Sentences tab checks the whole corpus without rebuilding the set each time).
  */
-export function isSentenceKnownIn(sentence: string, lang: KnownLang, known: ReadonlySet<string>): boolean {
+export function isSentenceKnownIn(sentence: string, lang: KnownLang, known: ReadonlySet<string>, level: DeLevel = 'A1'): boolean {
   if (!sentence.trim()) return false;
   if (lang === 'es') {
     for (const structure of detectStructures(sentence)) {
@@ -414,14 +533,19 @@ export function isSentenceKnownIn(sentence: string, lang: KnownLang, known: Read
     }
   }
   const names = nameTokens(sentence, lang);
-  return sentenceTokens(sentence, lang).every((token) => isKnownToken(token, lang, known, names));
+  const prefixes = lang === 'de' ? detachedPrefixes(sentence) : NO_PREFIXES;
+  const capitals = lang === 'de' ? capitalTokens(sentence) : NO_PREFIXES;
+  if (!sentenceTokens(sentence, lang).every((token) => isKnownToken(token, lang, known, names, prefixes, capitals))) return false;
+  // German has no grammar lesson that unlocks a tense: the learner's level decides (never a tense above it)
+  return lang !== 'de' || deStructuresAbove(sentence, level).length === 0;
 }
 
 /**
  * Only a sentence whose every word is learned or free may land on a sentence card,
  * and (for Spanish) which does not use a structure the grammar has not yet taught:
- * a compound tense or an imperative.
+ * a compound tense or an imperative. German: no tense or structure above `ctx.level`.
  */
 export function isSentenceKnown(sentence: string, lang: KnownLang, ctx: KnownContext): boolean {
-  return isSentenceKnownIn(sentence, lang, knownTokens(lang, ctx));
+  return isSentenceKnownIn(sentence, lang, knownTokens(lang, ctx), ctx.level ?? 'A1');
 }
+

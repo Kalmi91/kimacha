@@ -150,9 +150,9 @@ export class DbCore implements DB {
     const row = await this.store.readSettings(pair, ['pcic_level']);
     // A level name chosen in an older build and since removed (e.g. "A1+") falls back to the default.
     if (row?.pcic_level && (PCIC_LEVELS as string[]).includes(row.pcic_level)) return row.pcic_level as PcicLevel;
-    // for es→en only A1 has content (for now), and the Hungarian target has only A1 content;
-    // every other pair falls back to the old B1 default (because of the existing "b1-..." progress).
-    return pair.endsWith('-en') || pair.endsWith('-hu') ? 'A1' : DEFAULT_PCIC_LEVEL;
+    // Only a Spanish target falls back to the old B1 default (the existing "b1-..." progress of the first en-es installs);
+    // every other target (en, hu, de) starts at A1, so a learner who switches to a new pair in Settings starts at the beginning.
+    return pair.endsWith('-es') ? DEFAULT_PCIC_LEVEL : 'A1';
   }
 
   // Whether the active pair ALREADY has an explicitly chosen level (the

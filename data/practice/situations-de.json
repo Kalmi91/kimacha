@@ -1,0 +1,4001 @@
+[
+  {
+    "id": "a1-familie",
+    "target": "de",
+    "level": "A1",
+    "title": { "en": "Family lunch", "es": "Comida familiar", "hu": "Családi ebéd", "de": "Familienessen" },
+    "setting": {
+      "en": "Sunday lunch, your aunt asks you.",
+      "es": "Comida del domingo, tu tía te pregunta.",
+      "hu": "Vasárnapi ebéd, a nagynénéd kérdez.",
+      "de": "Sonntagsessen, deine Tante fragt dich."
+    },
+    "words": [
+      { "de": "haben", "forms": ["habe", "hast"], "en": "to have", "es": "tener", "hu": "van (valakinek)" },
+      { "de": "du", "forms": ["du"], "en": "you", "es": "tú", "hu": "te" },
+      { "de": "die Geschwister (Pl.)", "forms": ["Geschwister"], "en": "siblings", "es": "los hermanos", "hu": "testvérek" },
+      { "de": "ja", "forms": ["ja"], "en": "yes", "es": "sí", "hu": "igen" },
+      { "de": "nein", "forms": ["nein"], "en": "no", "es": "no", "hu": "nem" },
+      { "de": "ich", "forms": ["ich"], "en": "I", "es": "yo", "hu": "én" },
+      { "de": "ein", "forms": ["ein", "eine", "einen"], "en": "a, one", "es": "un, una", "hu": "egy" },
+      { "de": "der Bruder", "forms": ["Bruder", "Brüder"], "en": "brother", "es": "el hermano", "hu": "fiútestvér" },
+      { "de": "die Schwester", "forms": ["Schwester", "Schwestern"], "en": "sister", "es": "la hermana", "hu": "lánytestvér" },
+      { "de": "und", "forms": ["und"], "en": "and", "es": "y", "hu": "és" },
+      { "de": "kein", "forms": ["keine"], "en": "no, not any", "es": "ningún, ninguna", "hu": "nincs (főnév előtt)" },
+      { "de": "zwei", "forms": ["zwei"], "en": "two", "es": "dos", "hu": "kettő" },
+      { "de": "wo", "forms": ["wo"], "en": "where", "es": "dónde", "hu": "hol" },
+      { "de": "wohnen", "forms": ["wohnen"], "en": "to live (somewhere)", "es": "vivir", "hu": "lakni" },
+      { "de": "dein", "forms": ["dein", "deine"], "en": "your", "es": "tu, tus", "hu": "a te …-d" },
+      { "de": "mein", "forms": ["mein", "meine"], "en": "my", "es": "mi, mis", "hu": "az én …-m" },
+      { "de": "die Eltern (Pl.)", "forms": ["Eltern"], "en": "parents", "es": "los padres", "hu": "szülők" },
+      { "de": "in", "forms": ["in"], "en": "in", "es": "en", "hu": "-ban, -ben" },
+      { "de": "Ungarn", "forms": ["Ungarn"], "en": "Hungary", "es": "Hungría", "hu": "Magyarország" },
+      { "de": "Deutschland", "forms": ["Deutschland"], "en": "Germany", "es": "Alemania", "hu": "Németország" },
+      { "de": "er", "forms": ["er"], "en": "he", "es": "él", "hu": "ő (férfi)" },
+      { "de": "sie", "forms": ["sie"], "en": "they (also: she)", "es": "ellos, ellas (también: ella)", "hu": "ők (egy nőre: ő)" },
+      { "de": "wie", "forms": ["wie"], "en": "how", "es": "cómo", "hu": "hogyan" },
+      { "de": "sein", "forms": ["ist"], "en": "to be", "es": "ser, estar", "hu": "lenni" },
+      { "de": "alt", "forms": ["alt"], "en": "old", "es": "viejo", "hu": "idős, régi" },
+      { "de": "das Jahr", "forms": ["Jahre"], "en": "year", "es": "año", "hu": "év" },
+      { "de": "dreißig", "forms": ["dreißig"], "en": "thirty", "es": "treinta", "hu": "harminc" }
+    ],
+    "patterns": [
+      {
+        "title": {
+          "en": "Ich habe + ein / eine / einen + noun",
+          "es": "Ich habe + ein / eine / einen + sustantivo",
+          "hu": "Ich habe + ein / eine / einen + főnév",
+          "de": "Ich habe + ein / eine / einen + Nomen"
+        },
+        "example": "Ich habe einen Bruder und eine Schwester.",
+        "en": "What you have is in the accusative: der Bruder becomes einen Bruder, die Schwester becomes eine Schwester.",
+        "es": "Lo que tienes va en acusativo: der Bruder pasa a einen Bruder, die Schwester pasa a eine Schwester.",
+        "hu": "Ami neked van, az tárgyesetbe kerül: der Bruder → einen Bruder, die Schwester → eine Schwester."
+      },
+      {
+        "title": {
+          "en": "Hast du …? → Ja, ich habe … / Nein, ich habe keine …",
+          "es": "Hast du …? → Ja, ich habe … / Nein, ich habe keine …",
+          "hu": "Hast du …? → Ja, ich habe … / Nein, ich habe keine …",
+          "de": "Hast du …? → Ja, ich habe … / Nein, ich habe keine …"
+        },
+        "example": "Hast du Geschwister? Nein, ich habe keine Geschwister.",
+        "en": "To say you have none, put keine before the noun: Ich habe keine Geschwister.",
+        "es": "Para decir que no tienes ninguno, pon keine delante del sustantivo: Ich habe keine Geschwister.",
+        "hu": "Ha nincs, a főnév elé keine kerül: Ich habe keine Geschwister (nincsenek testvéreim)."
+      },
+      {
+        "title": {
+          "en": "Wie alt ist …? → … ist … Jahre alt",
+          "es": "Wie alt ist …? → … ist … Jahre alt",
+          "hu": "Wie alt ist …? → … ist … Jahre alt",
+          "de": "Wie alt ist …? → … ist … Jahre alt"
+        },
+        "example": "Mein Bruder ist dreißig Jahre alt.",
+        "en": "Age uses sein: he is thirty years old.",
+        "es": "La edad se dice con sein: er ist dreißig Jahre alt (tiene treinta años).",
+        "hu": "A kort a sein igével mondod: er ist dreißig Jahre alt (harmincéves)."
+      }
+    ],
+    "distractors": ["hast", "ist"],
+    "lines": [
+      {
+        "speaker": "other",
+        "de": "Hast du Geschwister?",
+        "es": "¿Tienes hermanos?",
+        "hu": "Van testvéred?",
+        "en": "Do you have any siblings?",
+        "answers": [
+          "Ja, ich habe einen Bruder und eine Schwester.",
+          "Ja, ich habe einen Bruder.",
+          "Ja, ich habe eine Schwester.",
+          "Ja, ich habe zwei Brüder.",
+          "Ja, ich habe zwei Schwestern.",
+          "Nein, ich habe keine Geschwister.",
+          "Ich habe einen Bruder und eine Schwester.",
+          "Ich habe einen Bruder.",
+          "Ich habe eine Schwester.",
+          "Ich habe keine Geschwister.",
+          "Ja, ich habe zwei Brüder und eine Schwester."
+        ]
+      },
+      {
+        "speaker": "me",
+        "de": "Ja, ich habe einen Bruder und eine Schwester.",
+        "es": "Sí, tengo un hermano y una hermana.",
+        "hu": "Igen, van egy fiútestvérem és egy lánytestvérem.",
+        "en": "Yes, I have a brother and a sister.",
+        "gap": "habe"
+      },
+      {
+        "speaker": "other",
+        "de": "Wo wohnen deine Eltern?",
+        "es": "¿Dónde viven tus papás?",
+        "hu": "Hol élnek a szüleid?",
+        "en": "Where do your parents live?",
+        "answers": [
+          "Meine Eltern wohnen in Ungarn.",
+          "Sie wohnen in Ungarn.",
+          "Meine Eltern wohnen in Deutschland.",
+          "Sie wohnen in Deutschland."
+        ]
+      },
+      {
+        "speaker": "me",
+        "de": "Meine Eltern wohnen in Ungarn.",
+        "es": "Mis papás viven en Hungría.",
+        "hu": "A szüleim Magyarországon élnek.",
+        "en": "My parents live in Hungary.",
+        "gap": "wohnen"
+      },
+      {
+        "speaker": "other",
+        "de": "Wie alt ist dein Bruder?",
+        "es": "¿Cuántos años tiene tu hermano?",
+        "hu": "Hány éves a fiútestvéred?",
+        "en": "How old is your brother?",
+        "answers": ["Mein Bruder ist dreißig Jahre alt.", "Er ist dreißig Jahre alt.", "Er ist dreißig.", "Mein Bruder ist dreißig."]
+      },
+      {
+        "speaker": "me",
+        "de": "Mein Bruder ist dreißig Jahre alt.",
+        "es": "Mi hermano tiene treinta años.",
+        "hu": "A fiútestvérem harmincéves.",
+        "en": "My brother is thirty years old.",
+        "gap": "Jahre"
+      }
+    ],
+    "build": [1, 3, 5]
+  },
+  {
+    "id": "a1-baeckerei",
+    "target": "de",
+    "level": "A1",
+    "title": {
+      "en": "At the bakery",
+      "es": "En la panadería",
+      "hu": "A pékségben",
+      "de": "In der Bäckerei"
+    },
+    "setting": {
+      "en": "You buy bread rolls and bread. The seller is a stranger, so you say Sie.",
+      "es": "Compras panecillos y pan. La vendedora es una desconocida, por eso se usa Sie.",
+      "hu": "Zsemlét és kenyeret veszel. Az eladó idegen, ezért Sie a megszólítás.",
+      "de": "Du kaufst Brötchen und Brot. Die Verkäuferin ist fremd, deshalb sagst du Sie."
+    },
+    "words": [
+      {
+        "de": "der Tag",
+        "forms": ["Tag"],
+        "en": "day",
+        "es": "el día",
+        "hu": "nap"
+      },
+      {
+        "de": "gut",
+        "forms": ["guten"],
+        "en": "good, well",
+        "es": "bueno, bien",
+        "hu": "jó"
+      },
+      {
+        "de": "mögen",
+        "forms": ["möchten", "möchte"],
+        "en": "to like (möchte = would like)",
+        "es": "querer, gustar (möchte = quisiera)",
+        "hu": "szeretni (möchte = szeretnék)"
+      },
+      {
+        "de": "vier",
+        "forms": ["vier"],
+        "en": "four",
+        "es": "cuatro",
+        "hu": "négy"
+      },
+      {
+        "de": "das Brötchen",
+        "forms": ["Brötchen"],
+        "en": "the bread roll",
+        "es": "el panecillo",
+        "hu": "a zsemle"
+      },
+      {
+        "de": "bitte",
+        "forms": ["bitte"],
+        "en": "please",
+        "es": "por favor",
+        "hu": "kérem"
+      },
+      {
+        "de": "auch",
+        "forms": ["auch"],
+        "en": "also, too",
+        "es": "también / asimismo",
+        "hu": "is, szintén"
+      },
+      {
+        "de": "das Brot",
+        "forms": ["Brot"],
+        "en": "bread",
+        "es": "el pan",
+        "hu": "kenyér"
+      },
+      {
+        "de": "nehmen",
+        "forms": ["nehme"],
+        "en": "to take",
+        "es": "llevar, tomar",
+        "hu": "venni, elvenni"
+      },
+      {
+        "de": "ja",
+        "forms": ["ja"],
+        "en": "yes",
+        "es": "sí",
+        "hu": "igen"
+      },
+      {
+        "de": "nein",
+        "forms": ["nein"],
+        "en": "no",
+        "es": "no",
+        "hu": "nem"
+      },
+      {
+        "de": "danke",
+        "forms": ["danke"],
+        "en": "thank you",
+        "es": "gracias",
+        "hu": "köszönöm"
+      },
+      {
+        "de": "sein",
+        "forms": ["sind", "ist"],
+        "en": "to be",
+        "es": "ser, estar",
+        "hu": "lenni"
+      },
+      {
+        "de": "fünf",
+        "forms": ["fünf"],
+        "en": "five",
+        "es": "cinco",
+        "hu": "öt"
+      },
+      {
+        "de": "der Euro",
+        "forms": ["Euro"],
+        "en": "the euro",
+        "es": "el euro",
+        "hu": "az euró"
+      },
+      {
+        "de": "hier",
+        "forms": ["hier"],
+        "en": "here",
+        "es": "aquí",
+        "hu": "itt"
+      },
+      {
+        "de": "zwei",
+        "forms": ["zwei"],
+        "en": "two",
+        "es": "dos",
+        "hu": "kettő"
+      },
+      {
+        "de": "was",
+        "forms": ["was"],
+        "en": "what",
+        "es": "qué",
+        "hu": "mi, mit"
+      },
+      {
+        "de": "sie",
+        "forms": ["sie"],
+        "en": "she, they (Sie = you, formal)",
+        "es": "ella, ellos (Sie = usted)",
+        "hu": "ő, ők (Sie = Ön)"
+      },
+      {
+        "de": "ich",
+        "forms": ["ich"],
+        "en": "I",
+        "es": "yo",
+        "hu": "én"
+      },
+      {
+        "de": "ein",
+        "forms": ["ein"],
+        "en": "a, one",
+        "es": "un, una",
+        "hu": "egy"
+      },
+      {
+        "de": "der",
+        "forms": ["das"],
+        "en": "the",
+        "es": "el, la, los, las",
+        "hu": "a, az"
+      }
+    ],
+    "patterns": [
+      {
+        "title": {
+          "en": "Ich möchte + Menge + Ware, bitte.",
+          "es": "Ich möchte + Menge + Ware, bitte.",
+          "hu": "Ich möchte + Menge + Ware, bitte.",
+          "de": "Ich möchte + Menge + Ware, bitte."
+        },
+        "example": "Ich möchte vier Brötchen, bitte.",
+        "en": "Ich möchte means \"I would like\" and is the polite way to order. Say what you want at the end and add bitte.",
+        "es": "Ich möchte significa \"quisiera\" y es la forma cortés de pedir. Di al final lo que quieres y añade bitte.",
+        "hu": "Az Ich möchte jelentése \"szeretnék\", ez az udvarias kérés. A kívánt dolgot a végére mondod, és hozzáteszed: bitte."
+      },
+      {
+        "title": {
+          "en": "Ich nehme … / Das sind … Euro.",
+          "es": "Ich nehme … / Das sind … Euro.",
+          "hu": "Ich nehme … / Das sind … Euro.",
+          "de": "Ich nehme … / Das sind … Euro."
+        },
+        "example": "Ja, ich nehme auch ein Brot.",
+        "en": "With Ich nehme you decide: you take it. A price is said with Das sind … Euro.",
+        "es": "Con Ich nehme decides: te lo llevas. El precio se dice con Das sind … Euro.",
+        "hu": "Az Ich nehme azt jelenti, hogy döntesz: elveszed. Az árat így mondják: Das sind … Euro."
+      }
+    ],
+    "distractors": ["möchte", "sind"],
+    "lines": [
+      {
+        "speaker": "other",
+        "de": "Guten Tag! Was möchten Sie?",
+        "es": "¡Buenos días! ¿Qué desea?",
+        "hu": "Jó napot! Mit szeretne?",
+        "en": "Good day! What would you like?",
+        "answers": [
+          "Ich möchte vier Brötchen, bitte.",
+          "Vier Brötchen, bitte.",
+          "Ich möchte zwei Brötchen, bitte.",
+          "Ich möchte ein Brot, bitte.",
+          "Ein Brot, bitte.",
+          "Ich nehme vier Brötchen.",
+          "Ich nehme ein Brot."
+        ]
+      },
+      {
+        "speaker": "me",
+        "de": "Ich möchte vier Brötchen, bitte.",
+        "es": "Quiero cuatro panecillos, por favor.",
+        "hu": "Kérek négy zsemlét, kérem.",
+        "en": "I would like four bread rolls, please.",
+        "gap": "Brötchen"
+      },
+      {
+        "speaker": "other",
+        "de": "Möchten Sie auch ein Brot?",
+        "es": "¿Quiere también un pan?",
+        "hu": "Kér egy kenyeret is?",
+        "en": "Would you like a loaf of bread as well?",
+        "answers": [
+          "Ja, ich nehme auch ein Brot.",
+          "Ja, ich nehme ein Brot.",
+          "Ja, bitte.",
+          "Ja, ein Brot, bitte.",
+          "Nein, danke.",
+          "Nein, danke, das ist alles.",
+          "Ja, bitte, ein Brot."
+        ]
+      },
+      {
+        "speaker": "me",
+        "de": "Ja, ich nehme auch ein Brot.",
+        "es": "Sí, también me llevo un pan.",
+        "hu": "Igen, egy kenyeret is elviszek.",
+        "en": "Yes, I will take a loaf of bread too.",
+        "gap": "nehme"
+      },
+      {
+        "speaker": "other",
+        "de": "Das sind fünf Euro.",
+        "es": "Son cinco euros.",
+        "hu": "Ez öt euró.",
+        "en": "That is five euros.",
+        "answers": ["Hier sind fünf Euro, bitte.", "Hier sind fünf Euro.", "Hier, bitte.", "Bitte, fünf Euro.", "Hier, fünf Euro."]
+      },
+      {
+        "speaker": "me",
+        "de": "Hier sind fünf Euro, bitte.",
+        "es": "Aquí tiene cinco euros, por favor.",
+        "hu": "Tessék, öt euró.",
+        "en": "Here are five euros, please.",
+        "gap": "Euro"
+      }
+    ],
+    "build": [1, 3, 5]
+  },
+  {
+    "id": "a1-weg",
+    "target": "de",
+    "level": "A1",
+    "title": {
+      "en": "Asking the way",
+      "es": "Preguntar el camino",
+      "hu": "Útbaigazítás kérése",
+      "de": "Nach dem Weg fragen"
+    },
+    "setting": {
+      "en": "In the street a stranger asks you where the station is. You say Sie.",
+      "es": "En la calle un desconocido te pregunta dónde está la estación. Le hablas de Sie.",
+      "hu": "Az utcán egy idegen azt kérdezi, hol van az állomás. Sie-vel szólítod meg.",
+      "de": "Auf der Straße fragt dich ein Fremder nach dem Bahnhof. Du sagst Sie."
+    },
+    "words": [
+      {
+        "de": "Entschuldigung",
+        "forms": ["Entschuldigung"],
+        "en": "excuse me",
+        "es": "disculpe",
+        "hu": "elnézést"
+      },
+      {
+        "de": "der Bahnhof",
+        "forms": ["Bahnhof"],
+        "en": "station",
+        "es": "la estación",
+        "hu": "állomás"
+      },
+      {
+        "de": "sein",
+        "forms": ["ist"],
+        "en": "to be",
+        "es": "ser, estar",
+        "hu": "lenni"
+      },
+      {
+        "de": "gehen",
+        "forms": ["gehen"],
+        "en": "to go (on foot)",
+        "es": "ir (a pie)",
+        "hu": "menni (gyalog)"
+      },
+      {
+        "de": "hier",
+        "forms": ["hier"],
+        "en": "here",
+        "es": "aquí",
+        "hu": "itt"
+      },
+      {
+        "de": "geradeaus",
+        "forms": ["geradeaus"],
+        "en": "straight ahead",
+        "es": "todo recto",
+        "hu": "egyenesen"
+      },
+      {
+        "de": "links",
+        "forms": ["links"],
+        "en": "left (side)",
+        "es": "la izquierda",
+        "hu": "bal (oldal)"
+      },
+      {
+        "de": "rechts",
+        "forms": ["rechts"],
+        "en": "right (side)",
+        "es": "la derecha",
+        "hu": "jobb (oldal)"
+      },
+      {
+        "de": "weit",
+        "forms": ["weit"],
+        "en": "far",
+        "es": "lejos",
+        "hu": "messze"
+      },
+      {
+        "de": "dort",
+        "forms": ["dort"],
+        "en": "there",
+        "es": "allí",
+        "hu": "ott"
+      },
+      {
+        "de": "ja",
+        "forms": ["ja"],
+        "en": "yes",
+        "es": "sí",
+        "hu": "igen"
+      },
+      {
+        "de": "nein",
+        "forms": ["nein"],
+        "en": "no",
+        "es": "no",
+        "hu": "nem"
+      },
+      {
+        "de": "danke",
+        "forms": ["danke"],
+        "en": "thank you",
+        "es": "gracias",
+        "hu": "köszönöm"
+      },
+      {
+        "de": "schön",
+        "forms": ["schön"],
+        "en": "nice (danke schön = thank you very much; bitte schön = you are welcome)",
+        "es": "bonito (danke schön = muchas gracias; bitte schön = de nada)",
+        "hu": "szép (danke schön = köszönöm szépen; bitte schön = szívesen)"
+      },
+      {
+        "de": "bitte",
+        "forms": ["bitte"],
+        "en": "please",
+        "es": "por favor",
+        "hu": "kérem"
+      },
+      {
+        "de": "wo",
+        "forms": ["wo"],
+        "en": "where",
+        "es": "dónde",
+        "hu": "hol"
+      },
+      {
+        "de": "der",
+        "forms": ["der"],
+        "en": "the",
+        "es": "el, la, los, las",
+        "hu": "a, az"
+      },
+      {
+        "de": "sie",
+        "forms": ["sie"],
+        "en": "she, they (Sie = you, formal)",
+        "es": "ella, ellos (Sie = usted)",
+        "hu": "ő, ők (Sie = Ön)"
+      },
+      {
+        "de": "oder",
+        "forms": ["oder"],
+        "en": "or",
+        "es": "o",
+        "hu": "vagy"
+      },
+      {
+        "de": "nicht",
+        "forms": ["nicht"],
+        "en": "not",
+        "es": "no",
+        "hu": "nem"
+      }
+    ],
+    "patterns": [
+      {
+        "title": {
+          "en": "Sie gehen + Richtung.",
+          "es": "Sie gehen + Richtung.",
+          "hu": "Sie gehen + Richtung.",
+          "de": "Sie gehen + Richtung."
+        },
+        "example": "Sie gehen hier geradeaus.",
+        "en": "To give directions to a stranger, use Sie gehen and then the direction: geradeaus, links, rechts.",
+        "es": "Para indicar el camino a un desconocido, usa Sie gehen y luego la dirección: geradeaus, links, rechts.",
+        "hu": "Idegennek így adsz útbaigazítást: Sie gehen, utána az irány: geradeaus, links, rechts."
+      },
+      {
+        "title": {
+          "en": "Ist der Bahnhof …? → Der Bahnhof ist …",
+          "es": "Ist der Bahnhof …? → Der Bahnhof ist …",
+          "hu": "Ist der Bahnhof …? → Der Bahnhof ist …",
+          "de": "Ist der Bahnhof …? → Der Bahnhof ist …"
+        },
+        "example": "Der Bahnhof ist rechts.",
+        "en": "A question with ist starts with the verb. The answer repeats it: Der Bahnhof ist rechts.",
+        "es": "Una pregunta con ist empieza por el verbo. La respuesta lo repite: Der Bahnhof ist rechts.",
+        "hu": "Az ist-tel kezdődő kérdés az igével indul. A válasz is az ist-et használja: Der Bahnhof ist rechts."
+      }
+    ],
+    "distractors": ["links", "hier"],
+    "lines": [
+      {
+        "speaker": "other",
+        "de": "Entschuldigung, wo ist der Bahnhof?",
+        "es": "Disculpe, ¿dónde está la estación?",
+        "hu": "Elnézést, hol van az állomás?",
+        "en": "Excuse me, where is the station?",
+        "answers": [
+          "Sie gehen hier geradeaus.",
+          "Gehen Sie hier geradeaus.",
+          "Gehen Sie geradeaus.",
+          "Der Bahnhof ist hier geradeaus.",
+          "Der Bahnhof ist dort rechts.",
+          "Der Bahnhof ist dort links.",
+          "Dort geradeaus.",
+          "Hier geradeaus."
+        ]
+      },
+      {
+        "speaker": "me",
+        "de": "Sie gehen hier geradeaus.",
+        "es": "Usted sigue derecho por aquí.",
+        "hu": "Itt egyenesen megy tovább.",
+        "en": "You go straight ahead here.",
+        "gap": "geradeaus"
+      },
+      {
+        "speaker": "other",
+        "de": "Ist der Bahnhof links oder rechts?",
+        "es": "¿La estación está a la izquierda o a la derecha?",
+        "hu": "Az állomás balra van vagy jobbra?",
+        "en": "Is the station on the left or on the right?",
+        "answers": [
+          "Der Bahnhof ist rechts.",
+          "Rechts.",
+          "Er ist rechts.",
+          "Der Bahnhof ist links.",
+          "Links.",
+          "Er ist links."
+        ]
+      },
+      {
+        "speaker": "me",
+        "de": "Der Bahnhof ist rechts.",
+        "es": "La estación está a la derecha.",
+        "hu": "Az állomás jobbra van.",
+        "en": "The station is on the right.",
+        "gap": "rechts"
+      },
+      {
+        "speaker": "other",
+        "de": "Ist der Bahnhof weit?",
+        "es": "¿Está lejos la estación?",
+        "hu": "Messze van az állomás?",
+        "en": "Is the station far?",
+        "answers": [
+          "Nein, der Bahnhof ist nicht weit.",
+          "Nein, er ist nicht weit.",
+          "Nein, nicht weit.",
+          "Ja, der Bahnhof ist weit.",
+          "Ja, er ist weit."
+        ]
+      },
+      {
+        "speaker": "me",
+        "de": "Nein, der Bahnhof ist nicht weit.",
+        "es": "No, la estación no está lejos.",
+        "hu": "Nem, az állomás nincs messze.",
+        "en": "No, the station is not far.",
+        "gap": "weit"
+      },
+      {
+        "speaker": "other",
+        "de": "Danke schön!",
+        "es": "¡Muchas gracias!",
+        "hu": "Köszönöm szépen!",
+        "en": "Thank you very much!",
+        "answers": ["Bitte schön!", "Bitte!", "Bitte sehr!"]
+      },
+      {
+        "speaker": "me",
+        "de": "Bitte schön!",
+        "es": "¡De nada!",
+        "hu": "Szívesen!",
+        "en": "You are welcome!"
+      }
+    ],
+    "build": [1, 3, 5]
+  },
+  {
+    "id": "a1-cafe",
+    "target": "de",
+    "level": "A1",
+    "title": {
+      "en": "Ordering in a café",
+      "es": "Pedir en un café",
+      "hu": "Rendelés a kávézóban",
+      "de": "Im Café bestellen"
+    },
+    "setting": {
+      "en": "You sit down in a café and order. The waiter is a stranger, so you say Sie.",
+      "es": "Te sientas en un café y pides. El mesero es un desconocido, por eso se usa Sie.",
+      "hu": "Leülsz egy kávézóban, és rendelsz. A pincér idegen, ezért Sie a megszólítás.",
+      "de": "Du setzt dich in ein Café und bestellst. Der Kellner ist fremd, deshalb sagst du Sie."
+    },
+    "words": [
+      {
+        "de": "hallo",
+        "forms": ["Hallo"],
+        "en": "hello, hi",
+        "es": "hola",
+        "hu": "szia"
+      },
+      {
+        "de": "trinken",
+        "forms": ["trinken", "trinke"],
+        "en": "to drink",
+        "es": "beber",
+        "hu": "inni"
+      },
+      {
+        "de": "der Kaffee",
+        "forms": ["Kaffee"],
+        "en": "coffee",
+        "es": "el café",
+        "hu": "kávé"
+      },
+      {
+        "de": "der Tee",
+        "forms": ["Tee"],
+        "en": "tea",
+        "es": "el té",
+        "hu": "tea"
+      },
+      {
+        "de": "bitte",
+        "forms": ["bitte"],
+        "en": "please",
+        "es": "por favor",
+        "hu": "kérem"
+      },
+      {
+        "de": "mögen",
+        "forms": ["möchten", "möchte"],
+        "en": "to like (möchte = would like)",
+        "es": "querer, gustar (möchte = quisiera)",
+        "hu": "szeretni (möchte = szeretnék)"
+      },
+      {
+        "de": "auch",
+        "forms": ["auch"],
+        "en": "also, too",
+        "es": "también / asimismo",
+        "hu": "is, szintén"
+      },
+      {
+        "de": "essen",
+        "forms": ["essen", "esse"],
+        "en": "to eat",
+        "es": "comer",
+        "hu": "enni"
+      },
+      {
+        "de": "ja",
+        "forms": ["ja"],
+        "en": "yes",
+        "es": "sí",
+        "hu": "igen"
+      },
+      {
+        "de": "nein",
+        "forms": ["nein"],
+        "en": "no",
+        "es": "no",
+        "hu": "nem"
+      },
+      {
+        "de": "danke",
+        "forms": ["danke"],
+        "en": "thank you",
+        "es": "gracias",
+        "hu": "köszönöm"
+      },
+      {
+        "de": "das Brötchen",
+        "forms": ["Brötchen"],
+        "en": "the bread roll",
+        "es": "el panecillo",
+        "hu": "a zsemle"
+      },
+      {
+        "de": "die Milch",
+        "forms": ["Milch"],
+        "en": "milk",
+        "es": "la leche",
+        "hu": "tej"
+      },
+      {
+        "de": "kosten",
+        "forms": ["kostet"],
+        "en": "to cost",
+        "es": "costar",
+        "hu": "kerülni (valamibe)"
+      },
+      {
+        "de": "vier",
+        "forms": ["vier"],
+        "en": "four",
+        "es": "cuatro",
+        "hu": "négy"
+      },
+      {
+        "de": "der Euro",
+        "forms": ["Euro"],
+        "en": "the euro",
+        "es": "el euro",
+        "hu": "az euró"
+      },
+      {
+        "de": "fünf",
+        "forms": ["fünf"],
+        "en": "five",
+        "es": "cinco",
+        "hu": "öt"
+      },
+      {
+        "de": "sein",
+        "forms": ["sind"],
+        "en": "to be",
+        "es": "ser, estar",
+        "hu": "lenni"
+      },
+      {
+        "de": "hier",
+        "forms": ["hier"],
+        "en": "here",
+        "es": "aquí",
+        "hu": "itt"
+      },
+      {
+        "de": "was",
+        "forms": ["was"],
+        "en": "what",
+        "es": "qué",
+        "hu": "mi, mit"
+      },
+      {
+        "de": "sie",
+        "forms": ["sie"],
+        "en": "she, they (Sie = you, formal)",
+        "es": "ella, ellos (Sie = usted)",
+        "hu": "ő, ők (Sie = Ön)"
+      },
+      {
+        "de": "ich",
+        "forms": ["ich"],
+        "en": "I",
+        "es": "yo",
+        "hu": "én"
+      },
+      {
+        "de": "ein",
+        "forms": ["einen", "ein"],
+        "en": "a, one",
+        "es": "un, una",
+        "hu": "egy"
+      },
+      {
+        "de": "etwas",
+        "forms": ["etwas"],
+        "en": "something",
+        "es": "algo",
+        "hu": "valami"
+      },
+      {
+        "de": "ohne",
+        "forms": ["ohne"],
+        "en": "without",
+        "es": "sin",
+        "hu": "nélkül"
+      },
+      {
+        "de": "der",
+        "forms": ["das"],
+        "en": "the",
+        "es": "el, la, los, las",
+        "hu": "a, az"
+      }
+    ],
+    "patterns": [
+      {
+        "title": {
+          "en": "Ich trinke + Getränk. / Ich esse + Essen.",
+          "es": "Ich trinke + Getränk. / Ich esse + Essen.",
+          "hu": "Ich trinke + Getränk. / Ich esse + Essen.",
+          "de": "Ich trinke + Getränk. / Ich esse + Essen."
+        },
+        "example": "Ich trinke einen Kaffee, bitte.",
+        "en": "Say what you drink with trinken and what you eat with essen. After a masculine noun, ein becomes einen: einen Kaffee.",
+        "es": "Lo que bebes va con trinken y lo que comes con essen. Ante un sustantivo masculino ein pasa a einen: einen Kaffee.",
+        "hu": "Amit iszol, az trinken, amit eszel, az essen. Hímnemű főnév előtt az ein einen lesz: einen Kaffee."
+      },
+      {
+        "title": {
+          "en": "… ohne + Nomen",
+          "es": "… ohne + Nomen",
+          "hu": "… ohne + Nomen",
+          "de": "… ohne + Nomen"
+        },
+        "example": "Ich trinke Kaffee ohne Milch.",
+        "en": "Ohne means \"without\" and is followed by the noun directly: ohne Milch.",
+        "es": "Ohne significa \"sin\" y va seguido directamente del sustantivo: ohne Milch.",
+        "hu": "Az ohne jelentése \"nélkül\", közvetlenül a főnév követi: ohne Milch."
+      }
+    ],
+    "distractors": ["trinke", "kostet"],
+    "lines": [
+      {
+        "speaker": "other",
+        "de": "Hallo! Was trinken Sie?",
+        "es": "¡Hola! ¿Qué va a tomar?",
+        "hu": "Üdvözlöm! Mit iszik?",
+        "en": "Hello! What are you having to drink?",
+        "answers": [
+          "Ich trinke einen Kaffee, bitte.",
+          "Einen Kaffee, bitte.",
+          "Ich möchte einen Kaffee, bitte.",
+          "Ich trinke einen Tee, bitte.",
+          "Einen Tee, bitte.",
+          "Ich möchte Milch, bitte.",
+          "Ich möchte einen Kaffee."
+        ]
+      },
+      {
+        "speaker": "me",
+        "de": "Ich trinke einen Kaffee, bitte.",
+        "es": "Voy a tomar un café, por favor.",
+        "hu": "Egy kávét kérek.",
+        "en": "I will have a coffee, please.",
+        "gap": "Kaffee"
+      },
+      {
+        "speaker": "other",
+        "de": "Möchten Sie auch etwas essen?",
+        "es": "¿Desea comer algo también?",
+        "hu": "Szeretne enni is valamit?",
+        "en": "Would you like something to eat as well?",
+        "answers": [
+          "Ja, ich esse ein Brötchen.",
+          "Ja, ein Brötchen, bitte.",
+          "Ja, ich möchte ein Brötchen.",
+          "Nein, danke.",
+          "Nein, ich esse nichts.",
+          "Nein, danke, nichts."
+        ]
+      },
+      {
+        "speaker": "me",
+        "de": "Ja, ich esse ein Brötchen.",
+        "es": "Sí, voy a comer un panecillo.",
+        "hu": "Igen, eszem egy zsemlét.",
+        "en": "Yes, I will eat a bread roll.",
+        "gap": "esse"
+      },
+      {
+        "speaker": "other",
+        "de": "Möchten Sie Milch?",
+        "es": "¿Desea leche?",
+        "hu": "Kér tejet?",
+        "en": "Would you like milk?",
+        "answers": [
+          "Nein, danke. Ich trinke Kaffee ohne Milch.",
+          "Nein, danke.",
+          "Nein, ohne Milch, bitte.",
+          "Ja, bitte."
+        ]
+      },
+      {
+        "speaker": "me",
+        "de": "Nein, danke. Ich trinke Kaffee ohne Milch.",
+        "es": "No, gracias. Tomo el café sin leche.",
+        "hu": "Nem, köszönöm. A kávét tej nélkül iszom.",
+        "en": "No, thank you. I drink coffee without milk.",
+        "gap": "Milch"
+      },
+      {
+        "speaker": "other",
+        "de": "Das kostet vier Euro.",
+        "es": "Son cuatro euros.",
+        "hu": "Ez négy euró.",
+        "en": "That is four euros.",
+        "answers": ["Hier sind fünf Euro.", "Hier sind fünf Euro, bitte.", "Hier, bitte."]
+      },
+      {
+        "speaker": "me",
+        "de": "Hier sind fünf Euro.",
+        "es": "Aquí tiene cinco euros.",
+        "hu": "Tessék, öt euró.",
+        "en": "Here are five euros."
+      }
+    ],
+    "build": [1, 3, 5]
+  },
+  {
+    "id": "a2-arzt",
+    "target": "de",
+    "level": "A2",
+    "title": {
+      "en": "Doctor appointment",
+      "es": "Cita con el médico",
+      "hu": "Orvosi időpont",
+      "de": "Arzttermin"
+    },
+    "setting": {
+      "en": "You call a doctor's office because you have a headache. On the phone you say Sie.",
+      "es": "Llamas a un consultorio porque te duele la cabeza. Por teléfono se usa Sie.",
+      "hu": "Felhívod az orvosi rendelőt, mert fáj a fejed. Telefonon Sie a megszólítás.",
+      "de": "Du rufst eine Arztpraxis an, weil du Kopfschmerzen hast. Am Telefon sagst du Sie."
+    },
+    "words": [
+      {
+        "de": "die Praxis",
+        "forms": ["Praxis"],
+        "en": "doctor's office",
+        "es": "el consultorio",
+        "hu": "rendelő"
+      },
+      {
+        "de": "gut",
+        "forms": ["guten", "gut"],
+        "en": "good, well",
+        "es": "bueno, bien",
+        "hu": "jó"
+      },
+      {
+        "de": "der Tag",
+        "forms": ["Tag"],
+        "en": "day",
+        "es": "el día",
+        "hu": "nap"
+      },
+      {
+        "de": "können",
+        "forms": ["kann", "können", "konnte"],
+        "en": "can, to be able to",
+        "es": "poder",
+        "hu": "tudni, képesnek lenni"
+      },
+      {
+        "de": "tun",
+        "forms": ["tun"],
+        "en": "to do",
+        "es": "hacer",
+        "hu": "tenni"
+      },
+      {
+        "de": "haben",
+        "forms": ["habe", "haben"],
+        "en": "to have",
+        "es": "tener",
+        "hu": "van (valakinek)"
+      },
+      {
+        "de": "die Kopfschmerzen (Pl.)",
+        "forms": ["Kopfschmerzen"],
+        "en": "headache",
+        "es": "el dolor de cabeza",
+        "hu": "a fejfájás"
+      },
+      {
+        "de": "brauchen",
+        "forms": ["brauche"],
+        "en": "to need",
+        "es": "necesitar",
+        "hu": "szüksége lenni (valamire)"
+      },
+      {
+        "de": "der Termin",
+        "forms": ["Termin"],
+        "en": "the appointment",
+        "es": "la cita",
+        "hu": "az időpont"
+      },
+      {
+        "de": "bitte",
+        "forms": ["bitte"],
+        "en": "please",
+        "es": "por favor",
+        "hu": "kérem"
+      },
+      {
+        "de": "gestern",
+        "forms": ["gestern"],
+        "en": "yesterday",
+        "es": "ayer",
+        "hu": "tegnap"
+      },
+      {
+        "de": "heute",
+        "forms": ["heute"],
+        "en": "today",
+        "es": "hoy",
+        "hu": "ma"
+      },
+      {
+        "de": "schlafen",
+        "forms": ["schlafen"],
+        "en": "to sleep",
+        "es": "dormir",
+        "hu": "aludni"
+      },
+      {
+        "de": "auch",
+        "forms": ["auch"],
+        "en": "also, too",
+        "es": "también / asimismo",
+        "hu": "is, szintén"
+      },
+      {
+        "de": "das Fieber",
+        "forms": ["Fieber"],
+        "en": "the fever",
+        "es": "la fiebre",
+        "hu": "a láz"
+      },
+      {
+        "de": "nein",
+        "forms": ["nein"],
+        "en": "no",
+        "es": "no",
+        "hu": "nem"
+      },
+      {
+        "de": "ja",
+        "forms": ["ja"],
+        "en": "yes",
+        "es": "sí",
+        "hu": "igen"
+      },
+      {
+        "de": "nur",
+        "forms": ["nur"],
+        "en": "only (adv.), solely",
+        "es": "solamente",
+        "hu": "csak, kizárólag"
+      },
+      {
+        "de": "die Uhr",
+        "forms": ["Uhr"],
+        "en": "o'clock, clock",
+        "es": "hora (en punto), reloj",
+        "hu": "óra (pontosan), óra (tárgy)"
+      },
+      {
+        "de": "drei",
+        "forms": ["drei"],
+        "en": "three",
+        "es": "tres",
+        "hu": "három"
+      },
+      {
+        "de": "kommen",
+        "forms": ["kommen"],
+        "en": "to come",
+        "es": "venir",
+        "hu": "jönni"
+      },
+      {
+        "de": "danke",
+        "forms": ["danke"],
+        "en": "thank you",
+        "es": "gracias",
+        "hu": "köszönöm"
+      },
+      {
+        "de": "sein",
+        "forms": ["ist"],
+        "en": "to be",
+        "es": "ser, estar",
+        "hu": "lenni"
+      },
+      {
+        "de": "was",
+        "forms": ["was"],
+        "en": "what",
+        "es": "qué",
+        "hu": "mi, mit"
+      },
+      {
+        "de": "ich",
+        "forms": ["ich"],
+        "en": "I",
+        "es": "yo",
+        "hu": "én"
+      },
+      {
+        "de": "für",
+        "forms": ["für"],
+        "en": "for",
+        "es": "para",
+        "hu": "-ért, számára"
+      },
+      {
+        "de": "sie",
+        "forms": ["sie"],
+        "en": "she, they (Sie = you, formal)",
+        "es": "ella, ellos (Sie = usted)",
+        "hu": "ő, ők (Sie = Ön)"
+      },
+      {
+        "de": "und",
+        "forms": ["und"],
+        "en": "and",
+        "es": "y",
+        "hu": "és"
+      },
+      {
+        "de": "ein",
+        "forms": ["einen"],
+        "en": "a, one",
+        "es": "un, una",
+        "hu": "egy"
+      },
+      {
+        "de": "seit",
+        "forms": ["seit"],
+        "en": "since",
+        "es": "desde",
+        "hu": "óta"
+      },
+      {
+        "de": "wann",
+        "forms": ["wann"],
+        "en": "when",
+        "es": "cuándo",
+        "hu": "mikor"
+      },
+      {
+        "de": "nicht",
+        "forms": ["nicht"],
+        "en": "not",
+        "es": "no",
+        "hu": "nem"
+      },
+      {
+        "de": "kein",
+        "forms": ["kein"],
+        "en": "no, not any",
+        "es": "ningún, ninguna",
+        "hu": "nincs (főnév előtt)"
+      },
+      {
+        "de": "um",
+        "forms": ["um"],
+        "en": "at (time), around, about",
+        "es": "a (hora), alrededor de, sobre",
+        "hu": "-kor, körül"
+      }
+    ],
+    "patterns": [
+      {
+        "title": {
+          "en": "Ich habe + Beschwerde und brauche + Akkusativ.",
+          "es": "Ich habe + Beschwerde und brauche + Akkusativ.",
+          "hu": "Ich habe + Beschwerde und brauche + Akkusativ.",
+          "de": "Ich habe + Beschwerde und brauche + Akkusativ."
+        },
+        "example": "Ich habe Kopfschmerzen und brauche einen Termin.",
+        "en": "Complaints are named with Ich habe …. What you need is in the accusative: der Termin becomes einen Termin.",
+        "es": "Los malestares se dicen con Ich habe …. Lo que necesitas va en acusativo: der Termin pasa a einen Termin.",
+        "hu": "A panaszt az Ich habe … szerkezettel mondod. Amire szükséged van, az tárgyesetben áll: der Termin → einen Termin."
+      },
+      {
+        "title": {
+          "en": "Seit wann …? → Seit gestern.",
+          "es": "Seit wann …? → Seit gestern.",
+          "hu": "Seit wann …? → Seit gestern.",
+          "de": "Seit wann …? → Seit gestern."
+        },
+        "example": "Seit gestern. Ich konnte nicht schlafen.",
+        "en": "Seit wann asks how long something has been going on. Answer with seit and a point in time. Konnte is the past of kann.",
+        "es": "Seit wann pregunta desde cuándo dura algo. Responde con seit y un momento. Konnte es el pasado de kann.",
+        "hu": "A Seit wann azt kérdezi, mióta tart valami. A válasz seit + időpont. A konnte a kann múlt ideje."
+      }
+    ],
+    "distractors": ["konnte", "habe"],
+    "lines": [
+      {
+        "speaker": "other",
+        "de": "Praxis, guten Tag. Was kann ich für Sie tun?",
+        "es": "Consultorio, buenos días. ¿En qué puedo ayudarle?",
+        "hu": "Rendelő, jó napot kívánok. Miben segíthetek?",
+        "en": "Doctor's office, good day. What can I do for you?",
+        "answers": [
+          "Ich habe Kopfschmerzen und brauche einen Termin.",
+          "Ich habe Kopfschmerzen.",
+          "Ich brauche einen Termin.",
+          "Ich brauche einen Termin, bitte."
+        ]
+      },
+      {
+        "speaker": "me",
+        "de": "Ich habe Kopfschmerzen und brauche einen Termin.",
+        "es": "Me duele la cabeza y necesito una cita.",
+        "hu": "Fáj a fejem, és időpontra van szükségem.",
+        "en": "I have a headache and need an appointment.",
+        "gap": "brauche"
+      },
+      {
+        "speaker": "other",
+        "de": "Seit wann haben Sie Kopfschmerzen?",
+        "es": "¿Desde cuándo le duele la cabeza?",
+        "hu": "Mióta fáj a feje?",
+        "en": "Since when have you had a headache?",
+        "answers": [
+          "Seit gestern. Ich konnte nicht schlafen.",
+          "Seit gestern.",
+          "Seit heute.",
+          "Seit gestern. Ich kann nicht schlafen."
+        ]
+      },
+      {
+        "speaker": "me",
+        "de": "Seit gestern. Ich konnte nicht schlafen.",
+        "es": "Desde ayer. No pude dormir.",
+        "hu": "Tegnap óta. Nem tudtam aludni.",
+        "en": "Since yesterday. I could not sleep.",
+        "gap": "gestern"
+      },
+      {
+        "speaker": "other",
+        "de": "Haben Sie auch Fieber?",
+        "es": "¿Tiene también fiebre?",
+        "hu": "Lázas is?",
+        "en": "Do you have a fever as well?",
+        "answers": [
+          "Nein, ich habe kein Fieber.",
+          "Nein.",
+          "Nein, ich habe kein Fieber, nur Kopfschmerzen.",
+          "Ja, ich habe auch Fieber."
+        ]
+      },
+      {
+        "speaker": "me",
+        "de": "Nein, ich habe kein Fieber.",
+        "es": "No, no tengo fiebre.",
+        "hu": "Nem, nincs lázam.",
+        "en": "No, I do not have a fever.",
+        "gap": "Fieber"
+      },
+      {
+        "speaker": "other",
+        "de": "Können Sie heute um drei Uhr kommen?",
+        "es": "¿Puede venir hoy a las tres?",
+        "hu": "El tud jönni ma háromra?",
+        "en": "Can you come today at three o'clock?",
+        "answers": [
+          "Ja, ich kann um drei Uhr kommen. Danke!",
+          "Ja, das ist gut. Danke!",
+          "Ja, ich kann kommen.",
+          "Ja, um drei Uhr ist gut.",
+          "Nein, ich kann heute nicht kommen.",
+          "Ja, um drei Uhr kann ich."
+        ]
+      },
+      {
+        "speaker": "me",
+        "de": "Ja, ich kann um drei Uhr kommen. Danke!",
+        "es": "Sí, puedo ir a las tres. ¡Gracias!",
+        "hu": "Igen, háromra el tudok jönni. Köszönöm!",
+        "en": "Yes, I can come at three o'clock. Thank you!"
+      }
+    ],
+    "build": [1, 3, 7]
+  },
+  {
+    "id": "a2-wohnung",
+    "target": "de",
+    "level": "A2",
+    "title": {
+      "en": "Viewing a flat",
+      "es": "Ver un departamento",
+      "hu": "Lakás megtekintése",
+      "de": "Wohnung besichtigen"
+    },
+    "setting": {
+      "en": "You are looking at a flat and the landlord shows it to you. You say Sie.",
+      "es": "Estás viendo un departamento y el dueño te lo enseña. Le hablas de Sie.",
+      "hu": "Egy lakást nézel meg, és a tulajdonos mutatja meg. Sie-vel szólítod.",
+      "de": "Du besichtigst eine Wohnung und der Vermieter zeigt sie dir. Du sagst Sie."
+    },
+    "words": [
+      {
+        "de": "die Wohnung",
+        "forms": ["Wohnung"],
+        "en": "flat, apartment",
+        "es": "el departamento",
+        "hu": "a lakás"
+      },
+      {
+        "de": "gefallen",
+        "forms": ["gefällt"],
+        "en": "to like (be pleasing)",
+        "es": "gustar",
+        "hu": "tetszeni (valakinek)"
+      },
+      {
+        "de": "die Küche",
+        "forms": ["Küche"],
+        "en": "the kitchen",
+        "es": "la cocina",
+        "hu": "a konyha"
+      },
+      {
+        "de": "sein",
+        "forms": ["ist"],
+        "en": "to be",
+        "es": "ser, estar",
+        "hu": "lenni"
+      },
+      {
+        "de": "groß",
+        "forms": ["groß"],
+        "en": "big, large",
+        "es": "grande",
+        "hu": "nagy"
+      },
+      {
+        "de": "haben",
+        "forms": ["haben", "habe"],
+        "en": "to have",
+        "es": "tener",
+        "hu": "van (valakinek)"
+      },
+      {
+        "de": "der Balkon",
+        "forms": ["Balkon"],
+        "en": "balcony",
+        "es": "el balcón",
+        "hu": "az erkély"
+      },
+      {
+        "de": "sehen",
+        "forms": ["gesehen"],
+        "en": "to see",
+        "es": "ver",
+        "hu": "látni"
+      },
+      {
+        "de": "schön",
+        "forms": ["schön"],
+        "en": "pretty, nice",
+        "es": "bonito / lindo",
+        "hu": "szép, kedves"
+      },
+      {
+        "de": "ja",
+        "forms": ["ja"],
+        "en": "yes",
+        "es": "sí",
+        "hu": "igen"
+      },
+      {
+        "de": "nein",
+        "forms": ["nein"],
+        "en": "no",
+        "es": "no",
+        "hu": "nem"
+      },
+      {
+        "de": "noch",
+        "forms": ["noch"],
+        "en": "still, yet",
+        "es": "todavía",
+        "hu": "még, még mindig"
+      },
+      {
+        "de": "auch",
+        "forms": ["auch"],
+        "en": "also, too",
+        "es": "también / asimismo",
+        "hu": "is, szintén"
+      },
+      {
+        "de": "die Frage",
+        "forms": ["Fragen"],
+        "en": "question",
+        "es": "la pregunta",
+        "hu": "kérdés"
+      },
+      {
+        "de": "ruhig",
+        "forms": ["ruhig"],
+        "en": "calm, quiet",
+        "es": "tranquilo",
+        "hu": "nyugodt, csendes"
+      },
+      {
+        "de": "mögen",
+        "forms": ["möchten", "möchte"],
+        "en": "to like (möchte = would like)",
+        "es": "querer, gustar (möchte = quisiera)",
+        "hu": "szeretni (möchte = szeretnék)"
+      },
+      {
+        "de": "nehmen",
+        "forms": ["nehmen", "nehme"],
+        "en": "to take",
+        "es": "llevar, tomar",
+        "hu": "venni, elvenni"
+      },
+      {
+        "de": "gut",
+        "forms": ["gut"],
+        "en": "good, well",
+        "es": "bueno, bien",
+        "hu": "jó"
+      },
+      {
+        "de": "danke",
+        "forms": ["danke"],
+        "en": "thank you",
+        "es": "gracias",
+        "hu": "köszönöm"
+      },
+      {
+        "de": "bitte",
+        "forms": ["bitte"],
+        "en": "please",
+        "es": "por favor",
+        "hu": "kérem"
+      },
+      {
+        "de": "wie",
+        "forms": ["wie"],
+        "en": "how",
+        "es": "cómo",
+        "hu": "hogyan"
+      },
+      {
+        "de": "ihnen",
+        "forms": ["ihnen"],
+        "en": "to you (formal), to them",
+        "es": "le, les (a usted, a ustedes)",
+        "hu": "Önnek, nekik"
+      },
+      {
+        "de": "der",
+        "forms": ["die", "den"],
+        "en": "the",
+        "es": "el, la, los, las",
+        "hu": "a, az"
+      },
+      {
+        "de": "sie",
+        "forms": ["sie"],
+        "en": "she, they (Sie = you, formal)",
+        "es": "ella, ellos (Sie = usted)",
+        "hu": "ő, ők (Sie = Ön)"
+      },
+      {
+        "de": "mir",
+        "forms": ["mir"],
+        "en": "to me",
+        "es": "me, a mí",
+        "hu": "nekem"
+      },
+      {
+        "de": "sehr",
+        "forms": ["sehr"],
+        "en": "very",
+        "es": "muy",
+        "hu": "nagyon"
+      },
+      {
+        "de": "ich",
+        "forms": ["ich"],
+        "en": "I",
+        "es": "yo",
+        "hu": "én"
+      },
+      {
+        "de": "ihn",
+        "forms": ["ihn"],
+        "en": "him, it (accusative)",
+        "es": "lo",
+        "hu": "őt, azt"
+      },
+      {
+        "de": "er",
+        "forms": ["er"],
+        "en": "he, it",
+        "es": "él",
+        "hu": "ő (férfi), az"
+      }
+    ],
+    "patterns": [
+      {
+        "title": {
+          "en": "Haben Sie … gesehen? → Ich habe … gesehen.",
+          "es": "Haben Sie … gesehen? → Ich habe … gesehen.",
+          "hu": "Haben Sie … gesehen? → Ich habe … gesehen.",
+          "de": "Haben Sie … gesehen? → Ich habe … gesehen."
+        },
+        "example": "Ja, ich habe ihn gesehen.",
+        "en": "The Perfekt is haben + the participle at the end: ich habe gesehen. Ihn replaces der Balkon.",
+        "es": "El Perfekt es haben + participio al final: ich habe gesehen. Ihn sustituye a der Balkon.",
+        "hu": "A Perfekt a haben + a mondat végére kerülő igenév: ich habe gesehen. Az ihn a der Balkon helyett áll."
+      },
+      {
+        "title": {
+          "en": "… gefällt mir.",
+          "es": "… gefällt mir.",
+          "hu": "… gefällt mir.",
+          "de": "… gefällt mir."
+        },
+        "example": "Sie gefällt mir sehr.",
+        "en": "Gefallen works the other way round: the thing is the subject and you are mir. Die Wohnung gefällt mir = I like the flat.",
+        "es": "Gefallen funciona al revés: la cosa es el sujeto y tú eres mir. Die Wohnung gefällt mir = me gusta el departamento.",
+        "hu": "A gefallen fordítva működik: a dolog az alany, te pedig a mir. Die Wohnung gefällt mir = tetszik a lakás."
+      }
+    ],
+    "distractors": ["ruhig", "schön"],
+    "lines": [
+      {
+        "speaker": "other",
+        "de": "Wie gefällt Ihnen die Wohnung?",
+        "es": "¿Qué le parece el departamento?",
+        "hu": "Hogy tetszik a lakás?",
+        "en": "How do you like the flat?",
+        "answers": [
+          "Sie gefällt mir sehr. Die Küche ist groß.",
+          "Sie gefällt mir sehr.",
+          "Sie gefällt mir gut.",
+          "Die Wohnung gefällt mir sehr.",
+          "Die Küche ist groß."
+        ]
+      },
+      {
+        "speaker": "me",
+        "de": "Sie gefällt mir sehr. Die Küche ist groß.",
+        "es": "Me gusta mucho. La cocina es grande.",
+        "hu": "Nagyon tetszik. A konyha nagy.",
+        "en": "I like it a lot. The kitchen is big.",
+        "gap": "gefällt"
+      },
+      {
+        "speaker": "other",
+        "de": "Haben Sie auch den Balkon gesehen?",
+        "es": "¿Ya vio también el balcón?",
+        "hu": "Látta az erkélyt is?",
+        "en": "Have you seen the balcony too?",
+        "answers": [
+          "Ja, ich habe ihn gesehen. Er ist schön.",
+          "Ja, ich habe den Balkon gesehen.",
+          "Ja, er ist schön.",
+          "Nein, ich habe den Balkon noch nicht gesehen."
+        ]
+      },
+      {
+        "speaker": "me",
+        "de": "Ja, ich habe ihn gesehen. Er ist schön.",
+        "es": "Sí, ya lo vi. Es bonito.",
+        "hu": "Igen, láttam. Szép.",
+        "en": "Yes, I have seen it. It is nice.",
+        "gap": "gesehen"
+      },
+      {
+        "speaker": "other",
+        "de": "Haben Sie noch Fragen?",
+        "es": "¿Tiene más preguntas?",
+        "hu": "Van még kérdése?",
+        "en": "Do you have any more questions?",
+        "answers": [
+          "Ja. Ist die Wohnung ruhig?",
+          "Ja, ist die Wohnung ruhig?",
+          "Nein, ich habe keine Fragen.",
+          "Nein, danke."
+        ]
+      },
+      {
+        "speaker": "me",
+        "de": "Ja. Ist die Wohnung ruhig?",
+        "es": "Sí. ¿El departamento es tranquilo?",
+        "hu": "Igen. Csendes a lakás?",
+        "en": "Yes. Is the flat quiet?"
+      },
+      {
+        "speaker": "other",
+        "de": "Ja, sie ist sehr ruhig. Möchten Sie die Wohnung nehmen?",
+        "es": "Sí, es muy tranquilo. ¿Quiere quedarse con el departamento?",
+        "hu": "Igen, nagyon csendes. Szeretné kivenni a lakást?",
+        "en": "Yes, it is very quiet. Would you like to take the flat?",
+        "answers": ["Ja, ich möchte die Wohnung nehmen.", "Ja, ich nehme die Wohnung.", "Ja, bitte.", "Nein, danke.", "Ja, ich nehme sie."]
+      },
+      {
+        "speaker": "me",
+        "de": "Ja, ich möchte die Wohnung nehmen.",
+        "es": "Sí, quiero quedarme con el departamento.",
+        "hu": "Igen, ki szeretném venni a lakást.",
+        "en": "Yes, I would like to take the flat.",
+        "gap": "nehmen"
+      }
+    ],
+    "build": [1, 3, 7]
+  },
+  {
+    "id": "a2-zugticket",
+    "target": "de",
+    "level": "A2",
+    "title": {
+      "en": "Train ticket at the counter",
+      "es": "Boleto de tren en la taquilla",
+      "hu": "Vonatjegy a pénztárnál",
+      "de": "Zugticket am Schalter"
+    },
+    "setting": {
+      "en": "You buy a train ticket at the station counter. You say Sie to the clerk.",
+      "es": "Compras un boleto de tren en la taquilla de la estación. Al empleado le hablas de Sie.",
+      "hu": "Vonatjegyet veszel az állomás pénztáránál. A pénztárost Sie-vel szólítod.",
+      "de": "Du kaufst am Bahnhofsschalter ein Zugticket. Zum Angestellten sagst du Sie."
+    },
+    "words": [
+      {
+        "de": "der Tag",
+        "forms": ["Tag"],
+        "en": "day",
+        "es": "el día",
+        "hu": "nap"
+      },
+      {
+        "de": "gut",
+        "forms": ["guten"],
+        "en": "good, well",
+        "es": "bueno, bien",
+        "hu": "jó"
+      },
+      {
+        "de": "mögen",
+        "forms": ["möchten", "möchte"],
+        "en": "to like (möchte = would like)",
+        "es": "querer, gustar (möchte = quisiera)",
+        "hu": "szeretni (möchte = szeretnék)"
+      },
+      {
+        "de": "fahren",
+        "forms": ["fahren", "fahre"],
+        "en": "to go, to travel, to drive",
+        "es": "ir, viajar (en vehículo)",
+        "hu": "utazni, menni (járművel)"
+      },
+      {
+        "de": "Berlin",
+        "forms": ["Berlin"],
+        "en": "Berlin",
+        "es": "Berlin",
+        "hu": "Berlin"
+      },
+      {
+        "de": "bitte",
+        "forms": ["bitte"],
+        "en": "please",
+        "es": "por favor",
+        "hu": "kérem"
+      },
+      {
+        "de": "morgen",
+        "forms": ["morgen", "Morgen"],
+        "en": "tomorrow (as a noun: morning)",
+        "es": "mañana",
+        "hu": "holnap (főnévként: reggel)"
+      },
+      {
+        "de": "früh",
+        "forms": ["früh"],
+        "en": "early",
+        "es": "temprano",
+        "hu": "korán"
+      },
+      {
+        "de": "acht",
+        "forms": ["acht"],
+        "en": "eight",
+        "es": "ocho",
+        "hu": "nyolc"
+      },
+      {
+        "de": "die Uhr",
+        "forms": ["Uhr"],
+        "en": "o'clock, clock",
+        "es": "hora (en punto), reloj",
+        "hu": "óra (pontosan), óra (tárgy)"
+      },
+      {
+        "de": "der Sonntag",
+        "forms": ["Sonntag"],
+        "en": "Sunday",
+        "es": "el domingo",
+        "hu": "vasárnap"
+      },
+      {
+        "de": "wieder",
+        "forms": ["wieder"],
+        "en": "again",
+        "es": "otra vez",
+        "hu": "megint"
+      },
+      {
+        "de": "auch",
+        "forms": ["auch"],
+        "en": "also, too",
+        "es": "también / asimismo",
+        "hu": "is, szintén"
+      },
+      {
+        "de": "zurück",
+        "forms": ["zurück"],
+        "en": "back (direction)",
+        "es": "de vuelta",
+        "hu": "vissza"
+      },
+      {
+        "de": "ja",
+        "forms": ["ja"],
+        "en": "yes",
+        "es": "sí",
+        "hu": "igen"
+      },
+      {
+        "de": "nein",
+        "forms": ["nein"],
+        "en": "no",
+        "es": "no",
+        "hu": "nem"
+      },
+      {
+        "de": "kosten",
+        "forms": ["kostet"],
+        "en": "to cost",
+        "es": "costar",
+        "hu": "kerülni (valamibe)"
+      },
+      {
+        "de": "fünfzig",
+        "forms": ["fünfzig"],
+        "en": "fifty",
+        "es": "cincuenta",
+        "hu": "ötven"
+      },
+      {
+        "de": "der Euro",
+        "forms": ["Euro"],
+        "en": "the euro",
+        "es": "el euro",
+        "hu": "az euró"
+      },
+      {
+        "de": "bezahlen",
+        "forms": ["bezahlen", "bezahle"],
+        "en": "to pay",
+        "es": "pagar",
+        "hu": "fizetni"
+      },
+      {
+        "de": "bar",
+        "forms": ["bar"],
+        "en": "cash",
+        "es": "en efectivo",
+        "hu": "készpénzben"
+      },
+      {
+        "de": "die Karte",
+        "forms": ["Karte"],
+        "en": "card (bank card)",
+        "es": "la tarjeta",
+        "hu": "a kártya"
+      },
+      {
+        "de": "wohin",
+        "forms": ["wohin"],
+        "en": "where to",
+        "es": "a dónde",
+        "hu": "hová"
+      },
+      {
+        "de": "sie",
+        "forms": ["sie"],
+        "en": "she, they (Sie = you, formal)",
+        "es": "ella, ellos (Sie = usted)",
+        "hu": "ő, ők (Sie = Ön)"
+      },
+      {
+        "de": "ich",
+        "forms": ["ich"],
+        "en": "I",
+        "es": "yo",
+        "hu": "én"
+      },
+      {
+        "de": "nach",
+        "forms": ["nach"],
+        "en": "to (a city), after",
+        "es": "a (una ciudad), después de",
+        "hu": "-ba/-be (város), után"
+      },
+      {
+        "de": "wann",
+        "forms": ["wann"],
+        "en": "when",
+        "es": "cuándo",
+        "hu": "mikor"
+      },
+      {
+        "de": "um",
+        "forms": ["um"],
+        "en": "at (time), around, about",
+        "es": "a (hora), alrededor de, sobre",
+        "hu": "-kor, körül"
+      },
+      {
+        "de": "am",
+        "forms": ["am"],
+        "en": "on (a day), at the",
+        "es": "el (día), en el",
+        "hu": "-n (napon)"
+      },
+      {
+        "de": "der",
+        "forms": ["das"],
+        "en": "the",
+        "es": "el, la, los, las",
+        "hu": "a, az"
+      },
+      {
+        "de": "oder",
+        "forms": ["oder"],
+        "en": "or",
+        "es": "o",
+        "hu": "vagy"
+      },
+      {
+        "de": "mit",
+        "forms": ["mit"],
+        "en": "with",
+        "es": "con",
+        "hu": "-val/-vel"
+      }
+    ],
+    "patterns": [
+      {
+        "title": {
+          "en": "Wohin möchten Sie fahren? → Ich möchte nach … fahren.",
+          "es": "Wohin möchten Sie fahren? → Ich möchte nach … fahren.",
+          "hu": "Wohin möchten Sie fahren? → Ich möchte nach … fahren.",
+          "de": "Wohin möchten Sie fahren? → Ich möchte nach … fahren."
+        },
+        "example": "Ich möchte nach Berlin fahren.",
+        "en": "Möchte takes a second verb at the end of the sentence in the infinitive: Ich möchte nach Berlin fahren. Cities go with nach.",
+        "es": "Möchte lleva un segundo verbo en infinitivo al final de la oración: Ich möchte nach Berlin fahren. Las ciudades van con nach.",
+        "hu": "A möchte mellett a második ige a mondat végén főnévi igenévben áll: Ich möchte nach Berlin fahren. A városok nach-chal állnak."
+      },
+      {
+        "title": {
+          "en": "Bezahlen Sie bar oder mit Karte?",
+          "es": "Bezahlen Sie bar oder mit Karte?",
+          "hu": "Bezahlen Sie bar oder mit Karte?",
+          "de": "Bezahlen Sie bar oder mit Karte?"
+        },
+        "example": "Ich bezahle mit Karte.",
+        "en": "With mit you name the way of paying: mit Karte (by card). Bar means \"in cash\".",
+        "es": "Con mit dices la forma de pagar: mit Karte (con tarjeta). Bar significa \"en efectivo\".",
+        "hu": "A mit-tel mondod meg a fizetés módját: mit Karte (kártyával). A bar jelentése \"készpénzben\"."
+      }
+    ],
+    "distractors": ["bar", "fahre"],
+    "lines": [
+      {
+        "speaker": "other",
+        "de": "Guten Tag! Wohin möchten Sie fahren?",
+        "es": "¡Buenos días! ¿A dónde desea ir?",
+        "hu": "Jó napot! Hová szeretne utazni?",
+        "en": "Good day! Where would you like to go?",
+        "answers": ["Ich möchte nach Berlin fahren.", "Nach Berlin, bitte.", "Ich fahre nach Berlin.", "Ich möchte nach Berlin, bitte."]
+      },
+      {
+        "speaker": "me",
+        "de": "Ich möchte nach Berlin fahren.",
+        "es": "Quiero ir a Berlín.",
+        "hu": "Berlinbe szeretnék utazni.",
+        "en": "I would like to go to Berlin."
+      },
+      {
+        "speaker": "other",
+        "de": "Wann möchten Sie fahren?",
+        "es": "¿Cuándo desea viajar?",
+        "hu": "Mikor szeretne utazni?",
+        "en": "When would you like to travel?",
+        "answers": [
+          "Morgen früh um acht Uhr, bitte.",
+          "Morgen um acht Uhr.",
+          "Ich möchte morgen früh fahren.",
+          "Morgen früh, bitte.",
+          "Morgen früh um acht, bitte."
+        ]
+      },
+      {
+        "speaker": "me",
+        "de": "Morgen früh um acht Uhr, bitte.",
+        "es": "Mañana temprano, a las ocho, por favor.",
+        "hu": "Holnap korán reggel nyolckor, kérem.",
+        "en": "Tomorrow morning at eight o'clock, please.",
+        "gap": "früh"
+      },
+      {
+        "speaker": "other",
+        "de": "Fahren Sie auch wieder zurück?",
+        "es": "¿También regresa?",
+        "hu": "Vissza is utazik?",
+        "en": "Are you also travelling back?",
+        "answers": [
+          "Ja, am Sonntag fahre ich zurück.",
+          "Ja, am Sonntag.",
+          "Ja, ich fahre am Sonntag zurück.",
+          "Nein, ich fahre nicht zurück."
+        ]
+      },
+      {
+        "speaker": "me",
+        "de": "Ja, am Sonntag fahre ich zurück.",
+        "es": "Sí, regreso el domingo.",
+        "hu": "Igen, vasárnap utazom vissza.",
+        "en": "Yes, I am going back on Sunday.",
+        "gap": "zurück"
+      },
+      {
+        "speaker": "other",
+        "de": "Das kostet fünfzig Euro. Bezahlen Sie bar oder mit Karte?",
+        "es": "Son cincuenta euros. ¿Paga en efectivo o con tarjeta?",
+        "hu": "Ez ötven euró. Készpénzzel fizet vagy kártyával?",
+        "en": "That costs fifty euros. Do you pay in cash or by card?",
+        "answers": ["Ich bezahle mit Karte.", "Mit Karte, bitte.", "Ich bezahle bar.", "Bar, bitte."]
+      },
+      {
+        "speaker": "me",
+        "de": "Ich bezahle mit Karte.",
+        "es": "Pago con tarjeta.",
+        "hu": "Kártyával fizetek.",
+        "en": "I will pay by card.",
+        "gap": "Karte"
+      }
+    ],
+    "build": [1, 3, 7]
+  },
+  {
+    "id": "b1-hotel",
+    "target": "de",
+    "level": "B1",
+    "title": {
+      "en": "Complaint at the hotel",
+      "es": "Queja en el hotel",
+      "hu": "Panasz a szállodában",
+      "de": "Beschwerde im Hotel"
+    },
+    "setting": {
+      "en": "Your hotel room is too loud. You speak to the receptionist and say Sie.",
+      "es": "El cuarto de tu hotel es muy ruidoso. Hablas con el recepcionista y le dices Sie.",
+      "hu": "A szállodai szobád túl zajos. A recepcióssal beszélsz, és Sie-vel szólítod.",
+      "de": "Dein Hotelzimmer ist zu laut. Du sprichst mit dem Mitarbeiter an der Rezeption und sagst Sie."
+    },
+    "words": [
+      {
+        "de": "der Abend",
+        "forms": ["Abend"],
+        "en": "evening",
+        "es": "la tarde, la noche",
+        "hu": "az este"
+      },
+      {
+        "de": "gut",
+        "forms": ["guten", "gut"],
+        "en": "good, well",
+        "es": "bueno, bien",
+        "hu": "jó"
+      },
+      {
+        "de": "können",
+        "forms": ["kann", "konnte"],
+        "en": "can, to be able to",
+        "es": "poder",
+        "hu": "tudni, képesnek lenni"
+      },
+      {
+        "de": "helfen",
+        "forms": ["helfen"],
+        "en": "to help",
+        "es": "ayudar",
+        "hu": "segíteni"
+      },
+      {
+        "de": "ja",
+        "forms": ["ja"],
+        "en": "yes",
+        "es": "sí",
+        "hu": "igen"
+      },
+      {
+        "de": "leider",
+        "forms": ["leider"],
+        "en": "unfortunately",
+        "es": "por desgracia",
+        "hu": "sajnos"
+      },
+      {
+        "de": "das Zimmer",
+        "forms": ["Zimmer"],
+        "en": "the room",
+        "es": "la habitación",
+        "hu": "a szoba"
+      },
+      {
+        "de": "bekommen",
+        "forms": ["bekommen"],
+        "en": "to get, to receive",
+        "es": "recibir, conseguir",
+        "hu": "kapni"
+      },
+      {
+        "de": "haben",
+        "forms": ["habe"],
+        "en": "to have",
+        "es": "tener",
+        "hu": "van (valakinek)"
+      },
+      {
+        "de": "sein",
+        "forms": ["ist", "wäre", "sein"],
+        "en": "to be",
+        "es": "ser, estar",
+        "hu": "lenni"
+      },
+      {
+        "de": "laut",
+        "forms": ["laut"],
+        "en": "loud",
+        "es": "ruidoso",
+        "hu": "hangos"
+      },
+      {
+        "de": "das Problem",
+        "forms": ["Problem"],
+        "en": "problem",
+        "es": "el problema",
+        "hu": "probléma, gond"
+      },
+      {
+        "de": "gestern",
+        "forms": ["gestern"],
+        "en": "yesterday",
+        "es": "ayer",
+        "hu": "tegnap"
+      },
+      {
+        "de": "schlafen",
+        "forms": ["schlafen"],
+        "en": "to sleep",
+        "es": "dormir",
+        "hu": "aludni"
+      },
+      {
+        "de": "kaum",
+        "forms": ["kaum"],
+        "en": "hardly, barely",
+        "es": "apenas / difícilmente",
+        "hu": "alig"
+      },
+      {
+        "de": "werden",
+        "forms": ["würden", "wird"],
+        "en": "to become (würden = would, wird = is being)",
+        "es": "volverse (würden = haría, wird = es / será)",
+        "hu": "válni vmivé (würden = -nánk, wird = -ódik)"
+      },
+      {
+        "de": "geben",
+        "forms": ["geben"],
+        "en": "to give",
+        "es": "dar",
+        "hu": "adni"
+      },
+      {
+        "de": "in Ordnung",
+        "forms": ["Ordnung"],
+        "en": "okay, in order",
+        "es": "de acuerdo, en orden",
+        "hu": "rendben, rendben van"
+      },
+      {
+        "de": "sollen",
+        "forms": ["sollte"],
+        "en": "should, ought to",
+        "es": "deber",
+        "hu": "kellene, kell"
+      },
+      {
+        "de": "ruhig",
+        "forms": ["ruhig", "ruhiger"],
+        "en": "calm, quiet",
+        "es": "tranquilo",
+        "hu": "nyugodt, csendes"
+      },
+      {
+        "de": "natürlich",
+        "forms": ["natürlich"],
+        "en": "of course",
+        "es": "por supuesto",
+        "hu": "természetesen"
+      },
+      {
+        "de": "der Schlüssel",
+        "forms": ["Schlüssel"],
+        "en": "key",
+        "es": "la llave",
+        "hu": "kulcs"
+      },
+      {
+        "de": "sofort",
+        "forms": ["sofort"],
+        "en": "immediately, right away",
+        "es": "de inmediato",
+        "hu": "azonnal"
+      },
+      {
+        "de": "bringen",
+        "forms": ["gebracht"],
+        "en": "to bring",
+        "es": "traer",
+        "hu": "hozni"
+      },
+      {
+        "de": "danke",
+        "forms": ["danke"],
+        "en": "thank you",
+        "es": "gracias",
+        "hu": "köszönöm"
+      },
+      {
+        "de": "die Hilfe",
+        "forms": ["Hilfe"],
+        "en": "the help",
+        "es": "la ayuda",
+        "hu": "a segítség"
+      },
+      {
+        "de": "Verzeihung",
+        "forms": ["Verzeihung"],
+        "en": "sorry, excuse me",
+        "es": "perdón, disculpe",
+        "hu": "bocsánat, elnézést"
+      },
+      {
+        "de": "ich",
+        "forms": ["ich"],
+        "en": "I",
+        "es": "yo",
+        "hu": "én"
+      },
+      {
+        "de": "ihnen",
+        "forms": ["ihnen"],
+        "en": "to you (formal), to them",
+        "es": "le, les (a usted, a ustedes)",
+        "hu": "Önnek, nekik"
+      },
+      {
+        "de": "der",
+        "forms": ["das", "der"],
+        "en": "the",
+        "es": "el, la, los, las",
+        "hu": "a, az"
+      },
+      {
+        "de": "sehr",
+        "forms": ["sehr"],
+        "en": "very",
+        "es": "muy",
+        "hu": "nagyon"
+      },
+      {
+        "de": "seit",
+        "forms": ["seit"],
+        "en": "since",
+        "es": "desde",
+        "hu": "óta"
+      },
+      {
+        "de": "wann",
+        "forms": ["wann"],
+        "en": "when",
+        "es": "cuándo",
+        "hu": "mikor"
+      },
+      {
+        "de": "so",
+        "forms": ["so"],
+        "en": "so, like that",
+        "es": "así",
+        "hu": "így, olyan"
+      },
+      {
+        "de": "wir",
+        "forms": ["wir"],
+        "en": "we",
+        "es": "nosotros",
+        "hu": "mi"
+      },
+      {
+        "de": "ein",
+        "forms": ["ein"],
+        "en": "a, one",
+        "es": "un, una",
+        "hu": "egy"
+      },
+      {
+        "de": "ander",
+        "forms": ["anderes"],
+        "en": "other, another",
+        "es": "otro",
+        "hu": "másik"
+      },
+      {
+        "de": "in",
+        "forms": ["in"],
+        "en": "in, in the",
+        "es": "en, en el",
+        "hu": "-ban/-ben"
+      },
+      {
+        "de": "aber",
+        "forms": ["aber"],
+        "en": "but",
+        "es": "pero",
+        "hu": "de, viszont"
+      },
+      {
+        "de": "für",
+        "forms": ["für"],
+        "en": "for",
+        "es": "para",
+        "hu": "-ért, számára"
+      },
+      {
+        "de": "ihr",
+        "forms": ["ihre"],
+        "en": "your (formal), her, their",
+        "es": "su",
+        "hu": "az Ön …-a, az ő …-a"
+      }
+    ],
+    "patterns": [
+      {
+        "title": {
+          "en": "… Zimmer, das … habe, ist …",
+          "es": "… Zimmer, das … habe, ist …",
+          "hu": "… Zimmer, das … habe, ist …",
+          "de": "… Zimmer, das … habe, ist …"
+        },
+        "example": "Das Zimmer, das ich bekommen habe, ist sehr laut.",
+        "en": "A relative clause with das describes the noun. The conjugated verb goes to the end: das ich bekommen habe.",
+        "es": "Una oración de relativo con das describe al sustantivo. El verbo conjugado va al final: das ich bekommen habe.",
+        "hu": "A das-sal induló vonatkozó mellékmondat jellemzi a főnevet. A ragozott ige a végére kerül: das ich bekommen habe."
+      },
+      {
+        "title": {
+          "en": "Wir würden … / Das wäre …",
+          "es": "Wir würden … / Das wäre …",
+          "hu": "Wir würden … / Das wäre …",
+          "de": "Wir würden … / Das wäre …"
+        },
+        "example": "Wir würden Ihnen ein anderes Zimmer geben. Wäre das in Ordnung?",
+        "en": "Würden + infinitive and wäre make polite, careful offers and answers (Konjunktiv II): Das wäre gut.",
+        "es": "Würden + infinitivo y wäre sirven para ofrecer y responder con cortesía (Konjunktiv II): Das wäre gut.",
+        "hu": "A würden + főnévi igenév és a wäre udvarias ajánlatot és választ fejez ki (Konjunktiv II): Das wäre gut."
+      },
+      {
+        "title": {
+          "en": "Der Schlüssel wird … gebracht.",
+          "es": "Der Schlüssel wird … gebracht.",
+          "hu": "Der Schlüssel wird … gebracht.",
+          "de": "Der Schlüssel wird … gebracht."
+        },
+        "example": "Der Schlüssel wird Ihnen sofort gebracht.",
+        "en": "The passive is werden + participle: the key is brought (by someone we do not name).",
+        "es": "La pasiva es werden + participio: la llave es traída (por alguien que no se nombra).",
+        "hu": "A szenvedő szerkezet werden + igenév: a kulcsot elhozzák (ki, azt nem mondjuk)."
+      }
+    ],
+    "distractors": ["kaum", "sofort"],
+    "lines": [
+      {
+        "speaker": "other",
+        "de": "Guten Abend! Kann ich Ihnen helfen?",
+        "es": "¡Buenas noches! ¿Puedo ayudarle?",
+        "hu": "Jó estét! Segíthetek?",
+        "en": "Good evening! Can I help you?",
+        "answers": [
+          "Ja, leider. Das Zimmer, das ich bekommen habe, ist sehr laut.",
+          "Ja, ich habe ein Problem.",
+          "Ja, das Zimmer ist sehr laut.",
+          "Ja, ich habe ein Problem. Das Zimmer ist sehr laut."
+        ]
+      },
+      {
+        "speaker": "me",
+        "de": "Ja, leider. Das Zimmer, das ich bekommen habe, ist sehr laut.",
+        "es": "Sí, por desgracia. El cuarto que me dieron es muy ruidoso.",
+        "hu": "Igen, sajnos. A szoba, amit kaptam, nagyon zajos.",
+        "en": "Yes, unfortunately. The room I got is very loud.",
+        "gap": "laut"
+      },
+      {
+        "speaker": "other",
+        "de": "Verzeihung! Seit wann ist das so?",
+        "es": "¡Una disculpa! ¿Desde cuándo es así?",
+        "hu": "Elnézést! Mióta van ez így?",
+        "en": "I am sorry! Since when has it been like that?",
+        "answers": [
+          "Seit gestern Abend. Ich konnte kaum schlafen.",
+          "Seit gestern Abend.",
+          "Seit gestern.",
+          "Seit gestern Abend. Ich konnte nicht schlafen."
+        ]
+      },
+      {
+        "speaker": "me",
+        "de": "Seit gestern Abend. Ich konnte kaum schlafen.",
+        "es": "Desde anoche. Casi no pude dormir.",
+        "hu": "Tegnap este óta. Alig tudtam aludni.",
+        "en": "Since last night. I could hardly sleep."
+      },
+      {
+        "speaker": "other",
+        "de": "Wir würden Ihnen ein anderes Zimmer geben. Wäre das in Ordnung?",
+        "es": "Le daríamos otro cuarto. ¿Le parecería bien?",
+        "hu": "Adnánk Önnek egy másik szobát. Megfelelne ez?",
+        "en": "We would give you another room. Would that be all right?",
+        "answers": [
+          "Ja, das wäre gut. Das Zimmer sollte aber ruhiger sein.",
+          "Ja, das wäre gut.",
+          "Ja, das wäre in Ordnung.",
+          "Ja, danke. Das wäre sehr gut.",
+          "Ja, das Zimmer sollte aber ruhig sein."
+        ]
+      },
+      {
+        "speaker": "me",
+        "de": "Ja, das wäre gut. Das Zimmer sollte aber ruhiger sein.",
+        "es": "Sí, eso sería bueno. Pero el cuarto debería ser más tranquilo.",
+        "hu": "Igen, az jó lenne. A szobának viszont csendesebbnek kellene lennie.",
+        "en": "Yes, that would be good. But the room should be quieter.",
+        "gap": "wäre"
+      },
+      {
+        "speaker": "other",
+        "de": "Natürlich. Der Schlüssel wird Ihnen sofort gebracht.",
+        "es": "Por supuesto. Enseguida le llevan la llave.",
+        "hu": "Természetesen. A kulcsot azonnal elhozzák Önnek.",
+        "en": "Of course. The key will be brought to you right away.",
+        "answers": ["Danke für Ihre Hilfe.", "Danke.", "Danke für Ihre Hilfe.", "Das ist sehr gut, danke."]
+      },
+      {
+        "speaker": "me",
+        "de": "Danke für Ihre Hilfe.",
+        "es": "Gracias por su ayuda.",
+        "hu": "Köszönöm a segítségét.",
+        "en": "Thank you for your help.",
+        "gap": "Hilfe"
+      }
+    ],
+    "build": [1, 5, 7]
+  },
+  {
+    "id": "b1-vorstellung",
+    "target": "de",
+    "level": "B1",
+    "title": {
+      "en": "Short job interview",
+      "es": "Entrevista de trabajo breve",
+      "hu": "Rövid állásinterjú",
+      "de": "Vorstellungsgespräch kurz"
+    },
+    "setting": {
+      "en": "You introduce yourself in a short job interview. You say Sie to the interviewer.",
+      "es": "Te presentas en una breve entrevista de trabajo. Al entrevistador le dices Sie.",
+      "hu": "Bemutatkozol egy rövid állásinterjún. Az interjúztatót Sie-vel szólítod.",
+      "de": "Du stellst dich in einem kurzen Vorstellungsgespräch vor. Zur Gesprächspartnerin sagst du Sie."
+    },
+    "words": [
+      {
+        "de": "der Tag",
+        "forms": ["Tag"],
+        "en": "day",
+        "es": "el día",
+        "hu": "nap"
+      },
+      {
+        "de": "gut",
+        "forms": ["guten"],
+        "en": "good, well",
+        "es": "bueno, bien",
+        "hu": "jó"
+      },
+      {
+        "de": "erzählen",
+        "forms": ["Erzählen"],
+        "en": "to tell, to talk about",
+        "es": "contar, relatar",
+        "hu": "mesélni, elmondani"
+      },
+      {
+        "de": "bitte",
+        "forms": ["bitte"],
+        "en": "please",
+        "es": "por favor",
+        "hu": "kérem"
+      },
+      {
+        "de": "kurz",
+        "forms": ["kurz"],
+        "en": "short (length)",
+        "es": "corto",
+        "hu": "rövid"
+      },
+      {
+        "de": "arbeiten",
+        "forms": ["arbeiten", "arbeite"],
+        "en": "to work",
+        "es": "trabajar",
+        "hu": "dolgozni"
+      },
+      {
+        "de": "das Jahr",
+        "forms": ["Jahren"],
+        "en": "year",
+        "es": "el año",
+        "hu": "év"
+      },
+      {
+        "de": "drei",
+        "forms": ["drei"],
+        "en": "three",
+        "es": "tres",
+        "hu": "három"
+      },
+      {
+        "de": "die Verkäuferin",
+        "forms": ["Verkäuferin"],
+        "en": "saleswoman, shop assistant",
+        "es": "la vendedora",
+        "hu": "az eladó (nő)"
+      },
+      {
+        "de": "das Geschäft",
+        "forms": ["Geschäft"],
+        "en": "shop, store",
+        "es": "la tienda",
+        "hu": "bolt"
+      },
+      {
+        "de": "sein",
+        "forms": ["bin", "ist"],
+        "en": "to be",
+        "es": "ser, estar",
+        "hu": "lenni"
+      },
+      {
+        "de": "mögen",
+        "forms": ["möchten"],
+        "en": "to like (möchten = would like)",
+        "es": "querer, gustar (möchten = quisieran)",
+        "hu": "szeretni (möchten = szeretnének)"
+      },
+      {
+        "de": "suchen",
+        "forms": ["suche"],
+        "en": "to look for, to search",
+        "es": "buscar",
+        "hu": "keresni"
+      },
+      {
+        "de": "neu",
+        "forms": ["neue"],
+        "en": "new",
+        "es": "nuevo",
+        "hu": "új"
+      },
+      {
+        "de": "die Stelle",
+        "forms": ["Stelle"],
+        "en": "job, position",
+        "es": "el puesto de trabajo",
+        "hu": "az állás"
+      },
+      {
+        "de": "passen",
+        "forms": ["passt"],
+        "en": "to suit, to fit",
+        "es": "quedar bien, convenir",
+        "hu": "illeni, megfelelni"
+      },
+      {
+        "de": "die Firma",
+        "forms": ["Firma"],
+        "en": "the company",
+        "es": "la empresa",
+        "hu": "a cég"
+      },
+      {
+        "de": "bekannt",
+        "forms": ["bekannt"],
+        "en": "well-known",
+        "es": "conocido",
+        "hu": "ismert"
+      },
+      {
+        "de": "die Sprache",
+        "forms": ["Sprachen"],
+        "en": "language",
+        "es": "el idioma",
+        "hu": "nyelv"
+      },
+      {
+        "de": "sprechen",
+        "forms": ["sprechen", "spreche"],
+        "en": "to speak, to talk",
+        "es": "hablar",
+        "hu": "beszélni"
+      },
+      {
+        "de": "ungarisch",
+        "forms": ["Ungarisch"],
+        "en": "Hungarian",
+        "es": "húngaro",
+        "hu": "magyar"
+      },
+      {
+        "de": "deutsch",
+        "forms": ["Deutsch"],
+        "en": "German",
+        "es": "el alemán",
+        "hu": "német (nyelv)"
+      },
+      {
+        "de": "englisch",
+        "forms": ["Englisch"],
+        "en": "English",
+        "es": "el inglés",
+        "hu": "angol (nyelv)"
+      },
+      {
+        "de": "lernen",
+        "forms": ["lerne"],
+        "en": "to learn",
+        "es": "aprender",
+        "hu": "tanulni"
+      },
+      {
+        "de": "gerade",
+        "forms": ["gerade"],
+        "en": "at the moment",
+        "es": "ahora, en este momento",
+        "hu": "épp most, jelenleg"
+      },
+      {
+        "de": "werden",
+        "forms": ["würden", "würde"],
+        "en": "to become (würde = would)",
+        "es": "volverse (würde = haría)",
+        "hu": "válni vmivé (würde = -nék)"
+      },
+      {
+        "de": "anfangen",
+        "forms": ["anfangen"],
+        "en": "to begin, to start",
+        "es": "empezar",
+        "hu": "elkezdeni, kezdeni"
+      },
+      {
+        "de": "schon",
+        "forms": ["schon"],
+        "en": "already",
+        "es": "ya",
+        "hu": "már"
+      },
+      {
+        "de": "morgen",
+        "forms": ["morgen"],
+        "en": "tomorrow (as a noun: morning)",
+        "es": "mañana",
+        "hu": "holnap (főnévként: reggel)"
+      },
+      {
+        "de": "gleich",
+        "forms": ["gleich"],
+        "en": "right away, at once",
+        "es": "enseguida",
+        "hu": "azonnal"
+      },
+      {
+        "de": "sie",
+        "forms": ["sie"],
+        "en": "she, they (Sie = you, formal)",
+        "es": "ella, ellos (Sie = usted)",
+        "hu": "ő, ők (Sie = Ön)"
+      },
+      {
+        "de": "etwas",
+        "forms": ["etwas"],
+        "en": "something",
+        "es": "algo",
+        "hu": "valami"
+      },
+      {
+        "de": "über",
+        "forms": ["über"],
+        "en": "about, over",
+        "es": "sobre, acerca de",
+        "hu": "-ról/-ről, felett"
+      },
+      {
+        "de": "sich",
+        "forms": ["sich"],
+        "en": "oneself, himself, herself",
+        "es": "se, sí",
+        "hu": "magát"
+      },
+      {
+        "de": "ich",
+        "forms": ["ich"],
+        "en": "I",
+        "es": "yo",
+        "hu": "én"
+      },
+      {
+        "de": "seit",
+        "forms": ["seit"],
+        "en": "since",
+        "es": "desde",
+        "hu": "óta"
+      },
+      {
+        "de": "als",
+        "forms": ["als"],
+        "en": "as, when",
+        "es": "como, cuando",
+        "hu": "mint, -ként"
+      },
+      {
+        "de": "in",
+        "forms": ["in"],
+        "en": "in, in the",
+        "es": "en, en el",
+        "hu": "-ban/-ben"
+      },
+      {
+        "de": "ein",
+        "forms": ["einem", "eine"],
+        "en": "a, one",
+        "es": "un, una",
+        "hu": "egy"
+      },
+      {
+        "de": "warum",
+        "forms": ["warum"],
+        "en": "why",
+        "es": "por qué",
+        "hu": "miért"
+      },
+      {
+        "de": "bei",
+        "forms": ["bei"],
+        "en": "at, with (a firm)",
+        "es": "en, con (una empresa)",
+        "hu": "-nál/-nél"
+      },
+      {
+        "de": "uns",
+        "forms": ["uns"],
+        "en": "us, to us",
+        "es": "nos",
+        "hu": "minket, nekünk"
+      },
+      {
+        "de": "der",
+        "forms": ["die"],
+        "en": "the",
+        "es": "el, la, los, las",
+        "hu": "a, az"
+      },
+      {
+        "de": "zu",
+        "forms": ["zu"],
+        "en": "to, at",
+        "es": "a, hacia",
+        "hu": "-hoz/-hez"
+      },
+      {
+        "de": "mir",
+        "forms": ["mir"],
+        "en": "to me",
+        "es": "me, a mí",
+        "hu": "nekem"
+      },
+      {
+        "de": "und",
+        "forms": ["und"],
+        "en": "and",
+        "es": "y",
+        "hu": "és"
+      },
+      {
+        "de": "ihr",
+        "forms": ["ihre"],
+        "en": "your (formal), her, their",
+        "es": "su",
+        "hu": "az Ön …-a, az ő …-a"
+      },
+      {
+        "de": "sehr",
+        "forms": ["sehr"],
+        "en": "very",
+        "es": "muy",
+        "hu": "nagyon"
+      },
+      {
+        "de": "welch",
+        "forms": ["welche"],
+        "en": "which",
+        "es": "qué, cuál",
+        "hu": "melyik, milyen"
+      },
+      {
+        "de": "wann",
+        "forms": ["wann"],
+        "en": "when",
+        "es": "cuándo",
+        "hu": "mikor"
+      }
+    ],
+    "patterns": [
+      {
+        "title": {
+          "en": "Ich suche eine Stelle, die … passt.",
+          "es": "Ich suche eine Stelle, die … passt.",
+          "hu": "Ich suche eine Stelle, die … passt.",
+          "de": "Ich suche eine Stelle, die … passt."
+        },
+        "example": "Ich suche eine Stelle, die zu mir passt.",
+        "en": "In a relative clause with die the verb comes last: eine Stelle, die zu mir passt.",
+        "es": "En una oración de relativo con die el verbo va al final: eine Stelle, die zu mir passt.",
+        "hu": "A die-vel induló vonatkozó mellékmondatban az ige a végén áll: eine Stelle, die zu mir passt."
+      },
+      {
+        "title": {
+          "en": "Ich würde + Infinitiv",
+          "es": "Ich würde + Infinitiv",
+          "hu": "Ich würde + Infinitiv",
+          "de": "Ich würde + Infinitiv"
+        },
+        "example": "Ich würde schon morgen anfangen.",
+        "en": "Würde + infinitive says what you would do, politely and without a promise. The infinitive stands at the end.",
+        "es": "Würde + infinitivo dice lo que harías, con cortesía y sin comprometerte. El infinitivo va al final.",
+        "hu": "A würde + főnévi igenév udvariasan megmondja, mit tennél, kötelezettség nélkül. Az infinitivus a végére kerül."
+      }
+    ],
+    "distractors": ["bekannt", "spreche"],
+    "lines": [
+      {
+        "speaker": "other",
+        "de": "Guten Tag! Erzählen Sie bitte kurz etwas über sich.",
+        "es": "¡Buenos días! Cuénteme brevemente algo sobre usted.",
+        "hu": "Jó napot! Mesélje el röviden, kicsoda Ön.",
+        "en": "Good day! Please tell me briefly about yourself.",
+        "answers": [
+          "Ich arbeite seit drei Jahren als Verkäuferin in einem Geschäft.",
+          "Ich arbeite seit drei Jahren in einem Geschäft.",
+          "Ich arbeite als Verkäuferin.",
+          "Ich bin Verkäuferin."
+        ]
+      },
+      {
+        "speaker": "me",
+        "de": "Ich arbeite seit drei Jahren als Verkäuferin in einem Geschäft.",
+        "es": "Trabajo desde hace tres años como vendedora en una tienda.",
+        "hu": "Három éve dolgozom eladóként egy üzletben.",
+        "en": "I have worked as a saleswoman in a shop for three years.",
+        "gap": "Verkäuferin"
+      },
+      {
+        "speaker": "other",
+        "de": "Warum möchten Sie bei uns arbeiten?",
+        "es": "¿Por qué quiere trabajar con nosotros?",
+        "hu": "Miért szeretne nálunk dolgozni?",
+        "en": "Why would you like to work with us?",
+        "answers": [
+          "Ich suche eine Stelle, die zu mir passt, und Ihre Firma ist sehr bekannt.",
+          "Ich suche eine neue Stelle.",
+          "Ihre Firma ist sehr bekannt.",
+          "Ich suche eine Stelle, die zu mir passt."
+        ]
+      },
+      {
+        "speaker": "me",
+        "de": "Ich suche eine Stelle, die zu mir passt, und Ihre Firma ist sehr bekannt.",
+        "es": "Busco un trabajo que me quede bien, y su empresa es muy conocida.",
+        "hu": "Olyan állást keresek, ami nekem való, és az Önök cége nagyon ismert.",
+        "en": "I am looking for a job that suits me, and your company is very well known.",
+        "gap": "passt"
+      },
+      {
+        "speaker": "other",
+        "de": "Welche Sprachen sprechen Sie?",
+        "es": "¿Qué idiomas habla?",
+        "hu": "Milyen nyelveket beszél?",
+        "en": "Which languages do you speak?",
+        "answers": [
+          "Ich spreche Ungarisch und Deutsch, und ich lerne gerade Englisch.",
+          "Ich spreche Ungarisch und Deutsch.",
+          "Ich spreche Ungarisch, Deutsch und Englisch."
+        ]
+      },
+      {
+        "speaker": "me",
+        "de": "Ich spreche Ungarisch und Deutsch, und ich lerne gerade Englisch.",
+        "es": "Hablo húngaro y alemán, y ahora estoy aprendiendo inglés.",
+        "hu": "Beszélek magyarul és németül, és jelenleg angolul tanulok.",
+        "en": "I speak Hungarian and German, and I am learning English at the moment.",
+        "gap": "lerne"
+      },
+      {
+        "speaker": "other",
+        "de": "Wann würden Sie bei uns anfangen?",
+        "es": "¿Cuándo empezaría con nosotros?",
+        "hu": "Mikor kezdene nálunk?",
+        "en": "When would you start with us?",
+        "answers": ["Ich würde schon morgen anfangen.", "Ich würde morgen anfangen.", "Ich würde gleich anfangen."]
+      },
+      {
+        "speaker": "me",
+        "de": "Ich würde schon morgen anfangen.",
+        "es": "Yo empezaría ya mañana.",
+        "hu": "Már holnap kezdenék.",
+        "en": "I would start as early as tomorrow."
+      }
+    ],
+    "build": [1, 3, 7]
+  },
+  {
+    "id": "b2-mietvertrag",
+    "target": "de",
+    "level": "B2",
+    "title": {
+      "en": "Discussing the lease",
+      "es": "Hablar del contrato de renta",
+      "hu": "A bérleti szerződés megbeszélése",
+      "de": "Mietvertrag besprechen"
+    },
+    "setting": {
+      "en": "You and the landlord go through the lease before you sign it. You say Sie.",
+      "es": "Con el dueño repasas el contrato de renta antes de firmarlo. Le hablas de Sie.",
+      "hu": "A bérbeadóval átbeszélitek a bérleti szerződést, mielőtt aláírod. Sie-vel szólítod.",
+      "de": "Du gehst mit der Vermieterin den Mietvertrag durch, bevor du unterschreibst. Du sagst Sie."
+    },
+    "words": [
+      {
+        "de": "haben",
+        "forms": ["haben", "habe", "hat", "hatte"],
+        "en": "to have",
+        "es": "tener",
+        "hu": "van (valakinek)"
+      },
+      {
+        "de": "der Vertrag",
+        "forms": ["Vertrag"],
+        "en": "the contract",
+        "es": "el contrato",
+        "hu": "a szerződés"
+      },
+      {
+        "de": "schon",
+        "forms": ["schon"],
+        "en": "already",
+        "es": "ya",
+        "hu": "már"
+      },
+      {
+        "de": "lesen",
+        "forms": ["gelesen"],
+        "en": "to read",
+        "es": "leer",
+        "hu": "olvasni"
+      },
+      {
+        "de": "ja",
+        "forms": ["ja"],
+        "en": "yes",
+        "es": "sí",
+        "hu": "igen"
+      },
+      {
+        "de": "noch",
+        "forms": ["noch"],
+        "en": "still, yet",
+        "es": "todavía",
+        "hu": "még, még mindig"
+      },
+      {
+        "de": "die Frage",
+        "forms": ["Frage"],
+        "en": "question",
+        "es": "la pregunta",
+        "hu": "kérdés"
+      },
+      {
+        "de": "die Kaution",
+        "forms": ["Kaution"],
+        "en": "deposit (for a flat)",
+        "es": "el depósito (de la renta)",
+        "hu": "a kaució"
+      },
+      {
+        "de": "natürlich",
+        "forms": ["Natürlich"],
+        "en": "of course",
+        "es": "por supuesto",
+        "hu": "természetesen"
+      },
+      {
+        "de": "gehen",
+        "forms": ["geht"],
+        "en": "to go, to walk (es geht um = it is about)",
+        "es": "ir, caminar (es geht um = se trata de)",
+        "hu": "menni, gyalogolni (es geht um = arról szól)"
+      },
+      {
+        "de": "stehen",
+        "forms": ["steht"],
+        "en": "to stand; (in a text) to say",
+        "es": "estar de pie; (en un texto) decir",
+        "hu": "állni; (szövegben) szerepelni"
+      },
+      {
+        "de": "der Umzug",
+        "forms": ["Umzug"],
+        "en": "move (to a new home)",
+        "es": "la mudanza",
+        "hu": "a költözés"
+      },
+      {
+        "de": "zurückgeben",
+        "forms": ["zurückgegeben"],
+        "en": "to give back, to return (an item)",
+        "es": "devolver",
+        "hu": "visszaadni, visszavinni"
+      },
+      {
+        "de": "werden",
+        "forms": ["wird", "werde"],
+        "en": "to become (wird = is being, werde = Konjunktiv I)",
+        "es": "volverse (wird = es / será, werde = Konjunktiv I)",
+        "hu": "válni vmivé (wird = -ódik, werde = Konjunktiv I)"
+      },
+      {
+        "de": "hier",
+        "forms": ["hier"],
+        "en": "here",
+        "es": "aquí",
+        "hu": "itt"
+      },
+      {
+        "de": "fünf",
+        "forms": ["fünf"],
+        "en": "five",
+        "es": "cinco",
+        "hu": "öt"
+      },
+      {
+        "de": "das Jahr",
+        "forms": ["Jahre"],
+        "en": "year",
+        "es": "el año",
+        "hu": "év"
+      },
+      {
+        "de": "wohnen",
+        "forms": ["gewohnt"],
+        "en": "to live",
+        "es": "vivir",
+        "hu": "élni, lakni"
+      },
+      {
+        "de": "bekommen",
+        "forms": ["bekommen"],
+        "en": "to get, to receive",
+        "es": "recibir, conseguir",
+        "hu": "kapni"
+      },
+      {
+        "de": "drei",
+        "forms": ["drei"],
+        "en": "three",
+        "es": "tres",
+        "hu": "három"
+      },
+      {
+        "de": "der Monat",
+        "forms": ["Monaten"],
+        "en": "month",
+        "es": "el mes",
+        "hu": "hónap"
+      },
+      {
+        "de": "sein",
+        "forms": ["ist"],
+        "en": "to be",
+        "es": "ser, estar",
+        "hu": "lenni"
+      },
+      {
+        "de": "in Ordnung",
+        "forms": ["Ordnung"],
+        "en": "okay, in order",
+        "es": "de acuerdo, en orden",
+        "hu": "rendben, rendben van"
+      },
+      {
+        "de": "die Familie",
+        "forms": ["Familie"],
+        "en": "family",
+        "es": "la familia",
+        "hu": "család"
+      },
+      {
+        "de": "der Kollege",
+        "forms": ["Kollege"],
+        "en": "colleague",
+        "es": "el colega",
+        "hu": "a kolléga"
+      },
+      {
+        "de": "sagen",
+        "forms": ["gesagt"],
+        "en": "to say, to tell",
+        "es": "decir",
+        "hu": "mondani"
+      },
+      {
+        "de": "die Miete",
+        "forms": ["Miete"],
+        "en": "rent",
+        "es": "la renta",
+        "hu": "a lakbér"
+      },
+      {
+        "de": "lang",
+        "forms": ["lang"],
+        "en": "long",
+        "es": "largo",
+        "hu": "hosszú"
+      },
+      {
+        "de": "erhöhen",
+        "forms": ["erhöht"],
+        "en": "to raise, to increase",
+        "es": "aumentar, subir",
+        "hu": "emelni"
+      },
+      {
+        "de": "auch",
+        "forms": ["auch"],
+        "en": "also, too",
+        "es": "también / asimismo",
+        "hu": "is, szintén"
+      },
+      {
+        "de": "mögen",
+        "forms": ["möchten", "möchte"],
+        "en": "to like (möchte = would like)",
+        "es": "querer, gustar (möchte = quisiera)",
+        "hu": "szeretni (möchte = szeretnék)"
+      },
+      {
+        "de": "jetzt",
+        "forms": ["jetzt"],
+        "en": "now",
+        "es": "ahora",
+        "hu": "most"
+      },
+      {
+        "de": "unterschreiben",
+        "forms": ["unterschreiben", "unterschreibe"],
+        "en": "to sign",
+        "es": "firmar",
+        "hu": "aláírni"
+      },
+      {
+        "de": "sie",
+        "forms": ["sie"],
+        "en": "she, they (Sie = you, formal)",
+        "es": "ella, ellos (Sie = usted)",
+        "hu": "ő, ők (Sie = Ön)"
+      },
+      {
+        "de": "der",
+        "forms": ["den", "die", "dem", "das"],
+        "en": "the",
+        "es": "el, la, los, las",
+        "hu": "a, az"
+      },
+      {
+        "de": "aber",
+        "forms": ["aber"],
+        "en": "but",
+        "es": "pero",
+        "hu": "de, viszont"
+      },
+      {
+        "de": "ich",
+        "forms": ["ich"],
+        "en": "I",
+        "es": "yo",
+        "hu": "én"
+      },
+      {
+        "de": "ein",
+        "forms": ["eine"],
+        "en": "a, one",
+        "es": "un, una",
+        "hu": "egy"
+      },
+      {
+        "de": "zu",
+        "forms": ["zur"],
+        "en": "to, at",
+        "es": "a, hacia",
+        "hu": "-hoz/-hez"
+      },
+      {
+        "de": "worum",
+        "forms": ["worum"],
+        "en": "what about",
+        "es": "de qué",
+        "hu": "miről"
+      },
+      {
+        "de": "es",
+        "forms": ["es"],
+        "en": "it",
+        "es": "ello, lo",
+        "hu": "az"
+      },
+      {
+        "de": "denn",
+        "forms": ["denn"],
+        "en": "(filler) then, after all",
+        "es": "pues, entonces",
+        "hu": "hát, ugyanis"
+      },
+      {
+        "de": "in",
+        "forms": ["im", "in"],
+        "en": "in, in the",
+        "es": "en, en el",
+        "hu": "-ban/-ben"
+      },
+      {
+        "de": "dass",
+        "forms": ["dass"],
+        "en": "that (conjunction)",
+        "es": "que",
+        "hu": "hogy"
+      },
+      {
+        "de": "nach",
+        "forms": ["nach"],
+        "en": "to (a city), after",
+        "es": "a (una ciudad), después de",
+        "hu": "-ba/-be (város), után"
+      },
+      {
+        "de": "so",
+        "forms": ["so"],
+        "en": "so, like that",
+        "es": "así",
+        "hu": "így, olyan"
+      },
+      {
+        "de": "vor",
+        "forms": ["vor"],
+        "en": "ago, before, in front of",
+        "es": "hace, antes de, delante de",
+        "hu": "ezelőtt, előtt"
+      },
+      {
+        "de": "ihnen",
+        "forms": ["ihnen"],
+        "en": "to you (formal), to them",
+        "es": "le, les (a usted, a ustedes)",
+        "hu": "Önnek, nekik"
+      },
+      {
+        "de": "und",
+        "forms": ["und"],
+        "en": "and",
+        "es": "y",
+        "hu": "és"
+      },
+      {
+        "de": "für",
+        "forms": ["für"],
+        "en": "for",
+        "es": "para",
+        "hu": "-ért, számára"
+      },
+      {
+        "de": "mein",
+        "forms": ["mein"],
+        "en": "my",
+        "es": "mi, mis",
+        "hu": "az én …-m"
+      },
+      {
+        "de": "nicht",
+        "forms": ["nicht"],
+        "en": "not",
+        "es": "no",
+        "hu": "nem"
+      }
+    ],
+    "patterns": [
+      {
+        "title": {
+          "en": "… steht, dass … zurückgegeben wird.",
+          "es": "… steht, dass … zurückgegeben wird.",
+          "hu": "… steht, dass … zurückgegeben wird.",
+          "de": "… steht, dass … zurückgegeben wird."
+        },
+        "example": "Im Vertrag steht, dass die Kaution nach dem Umzug zurückgegeben wird.",
+        "en": "After dass the verb goes to the end. In the passive that means participle + wird: zurückgegeben wird.",
+        "es": "Tras dass el verbo va al final. En la pasiva eso significa participio + wird: zurückgegeben wird.",
+        "hu": "A dass után az ige a végére kerül. Szenvedő szerkezetben ez igenév + wird: zurückgegeben wird."
+      },
+      {
+        "title": {
+          "en": "Er hat gesagt, die Miete werde … erhöht.",
+          "es": "Er hat gesagt, die Miete werde … erhöht.",
+          "hu": "Er hat gesagt, die Miete werde … erhöht.",
+          "de": "Er hat gesagt, die Miete werde … erhöht."
+        },
+        "example": "Mein Kollege hat gesagt, die Miete werde drei Jahre lang nicht erhöht.",
+        "en": "Konjunktiv I (werde instead of wird) shows reported speech: you only repeat what someone else said, without vouching for it.",
+        "es": "El Konjunktiv I (werde en vez de wird) marca el discurso indirecto: repites lo que dijo otro sin garantizarlo.",
+        "hu": "A Konjunktiv I (werde a wird helyett) a függő beszédet jelzi: csak megismétled, amit más mondott, anélkül hogy kezeskednél érte."
+      },
+      {
+        "title": {
+          "en": "Sie hatte … gewohnt.",
+          "es": "Sie hatte … gewohnt.",
+          "hu": "Sie hatte … gewohnt.",
+          "de": "Sie hatte … gewohnt."
+        },
+        "example": "Die Familie vor Ihnen hatte hier fünf Jahre gewohnt.",
+        "en": "The Plusquamperfekt (hatte + participle) tells what had already happened before another moment in the past.",
+        "es": "El Plusquamperfekt (hatte + participio) dice lo que ya había pasado antes de otro momento del pasado.",
+        "hu": "A Plusquamperfekt (hatte + igenév) azt mondja meg, mi történt meg egy másik múltbeli időpont előtt."
+      }
+    ],
+    "distractors": ["gelesen", "erhöht"],
+    "lines": [
+      {
+        "speaker": "other",
+        "de": "Haben Sie den Vertrag schon gelesen?",
+        "es": "¿Ya leyó el contrato?",
+        "hu": "Elolvasta már a szerződést?",
+        "en": "Have you already read the contract?",
+        "answers": [
+          "Ja, aber ich habe noch eine Frage zur Kaution.",
+          "Ja, ich habe den Vertrag gelesen.",
+          "Ja, ich habe ihn gelesen.",
+          "Ja, aber ich habe noch eine Frage."
+        ]
+      },
+      {
+        "speaker": "me",
+        "de": "Ja, aber ich habe noch eine Frage zur Kaution.",
+        "es": "Sí, pero todavía tengo una pregunta sobre el depósito.",
+        "hu": "Igen, de még lenne egy kérdésem a kaucióval kapcsolatban.",
+        "en": "Yes, but I still have a question about the deposit.",
+        "gap": "Kaution"
+      },
+      {
+        "speaker": "other",
+        "de": "Natürlich. Worum geht es denn?",
+        "es": "Claro. ¿De qué se trata?",
+        "hu": "Természetesen. Miről van szó?",
+        "en": "Of course. What is it about?",
+        "answers": [
+          "Im Vertrag steht, dass die Kaution nach dem Umzug zurückgegeben wird.",
+          "Es geht um die Kaution.",
+          "Es geht um die Kaution. Sie wird nach dem Umzug zurückgegeben."
+        ]
+      },
+      {
+        "speaker": "me",
+        "de": "Im Vertrag steht, dass die Kaution nach dem Umzug zurückgegeben wird.",
+        "es": "En el contrato dice que el depósito se devuelve después de la mudanza.",
+        "hu": "A szerződésben az áll, hogy a kauciót a költözés után visszaadják.",
+        "en": "The contract says that the deposit is returned after the move.",
+        "gap": "zurückgegeben"
+      },
+      {
+        "speaker": "other",
+        "de": "Ja, so steht es im Vertrag. Die Familie vor Ihnen hatte hier fünf Jahre gewohnt und hat die Kaution nach drei Monaten bekommen. Ist das für Sie in Ordnung?",
+        "es": "Sí, así dice el contrato. La familia anterior había vivido aquí cinco años y recibió el depósito después de tres meses. ¿Le parece bien?",
+        "hu": "Igen, a szerződésben így áll. Az előző család öt évig lakott itt, és három hónap után kapta meg a kauciót. Megfelel ez Önnek?",
+        "en": "Yes, that is what the contract says. The family before you had lived here for five years and got the deposit after three months. Is that all right with you?",
+        "answers": [
+          "Ja, in Ordnung. Mein Kollege hat gesagt, die Miete werde drei Jahre lang nicht erhöht.",
+          "Ja, das ist in Ordnung.",
+          "Ja, das ist in Ordnung. Aber ich habe noch eine Frage."
+        ]
+      },
+      {
+        "speaker": "me",
+        "de": "Ja, in Ordnung. Mein Kollege hat gesagt, die Miete werde drei Jahre lang nicht erhöht.",
+        "es": "Sí, de acuerdo. Mi colega dijo que la renta no se aumentaría durante tres años.",
+        "hu": "Igen, rendben. A kollégám azt mondta, hogy három évig nem emelik a bérleti díjat.",
+        "en": "Yes, that is fine. My colleague said that the rent would not be raised for three years."
+      },
+      {
+        "speaker": "other",
+        "de": "Das steht auch im Vertrag. Möchten Sie jetzt unterschreiben?",
+        "es": "Eso también está en el contrato. ¿Quiere firmar ahora?",
+        "hu": "Ez is benne van a szerződésben. Szeretne most aláírni?",
+        "en": "That is in the contract too. Would you like to sign now?",
+        "answers": [
+          "Ja, ich unterschreibe den Vertrag.",
+          "Ja, jetzt unterschreibe ich den Vertrag.",
+          "Ja, ich möchte jetzt unterschreiben.",
+          "Ja, ich unterschreibe jetzt."
+        ]
+      },
+      {
+        "speaker": "me",
+        "de": "Ja, ich unterschreibe den Vertrag.",
+        "es": "Sí, firmo el contrato.",
+        "hu": "Igen, aláírom a szerződést.",
+        "en": "Yes, I will sign the contract.",
+        "gap": "unterschreibe"
+      }
+    ],
+    "build": [1, 3, 7]
+  },
+  {
+    "id": "b2-reklamation",
+    "target": "de",
+    "level": "B2",
+    "title": {
+      "en": "Complaint by phone",
+      "es": "Reclamación por teléfono",
+      "hu": "Reklamáció telefonon",
+      "de": "Reklamation am Telefon"
+    },
+    "setting": {
+      "en": "A computer you ordered does not work, so you call customer service. You say Sie.",
+      "es": "Una computadora que pediste no funciona, así que llamas al servicio al cliente. Le hablas de Sie.",
+      "hu": "Az általad rendelt számítógép nem működik, ezért felhívod az ügyfélszolgálatot. Sie-vel szólítod.",
+      "de": "Ein bestellter Computer funktioniert nicht, deshalb rufst du den Kundenservice an. Du sagst Sie."
+    },
+    "words": [
+      {
+        "de": "der Tag",
+        "forms": ["Tag", "Tagen"],
+        "en": "day",
+        "es": "el día",
+        "hu": "nap"
+      },
+      {
+        "de": "gut",
+        "forms": ["Guten"],
+        "en": "good, well",
+        "es": "bueno, bien",
+        "hu": "jó"
+      },
+      {
+        "de": "können",
+        "forms": ["kann"],
+        "en": "can, to be able to",
+        "es": "poder",
+        "hu": "tudni, képesnek lenni"
+      },
+      {
+        "de": "helfen",
+        "forms": ["helfen"],
+        "en": "to help",
+        "es": "ayudar",
+        "hu": "segíteni"
+      },
+      {
+        "de": "haben",
+        "forms": ["haben", "habe", "hatte"],
+        "en": "to have",
+        "es": "tener",
+        "hu": "van (valakinek)"
+      },
+      {
+        "de": "die Woche",
+        "forms": ["Wochen"],
+        "en": "week",
+        "es": "la semana",
+        "hu": "hét"
+      },
+      {
+        "de": "bestellen",
+        "forms": ["bestellt"],
+        "en": "to order",
+        "es": "pedir, encargar",
+        "hu": "rendelni"
+      },
+      {
+        "de": "der Computer",
+        "forms": ["Computer"],
+        "en": "computer",
+        "es": "la computadora",
+        "hu": "számítógép"
+      },
+      {
+        "de": "sein",
+        "forms": ["ist", "sei"],
+        "en": "to be",
+        "es": "ser, estar",
+        "hu": "lenni"
+      },
+      {
+        "de": "kaputt",
+        "forms": ["kaputt"],
+        "en": "broken",
+        "es": "roto",
+        "hu": "elromlott"
+      },
+      {
+        "de": "Verzeihung",
+        "forms": ["Verzeihung"],
+        "en": "sorry, excuse me",
+        "es": "perdón, disculpe",
+        "hu": "bocsánat, elnézést"
+      },
+      {
+        "de": "werden",
+        "forms": ["wurde", "wird"],
+        "en": "to become (wurde = was, wird = is being)",
+        "es": "volverse (wurde = fue, wird = es / será)",
+        "hu": "válni vmivé (wurde = -ódott, wird = -ódik)"
+      },
+      {
+        "de": "liefern",
+        "forms": ["geliefert"],
+        "en": "to deliver",
+        "es": "entregar (a domicilio)",
+        "hu": "kiszállítani / házhoz szállítani"
+      },
+      {
+        "de": "der Montag",
+        "forms": ["Montag"],
+        "en": "Monday",
+        "es": "el lunes",
+        "hu": "hétfő"
+      },
+      {
+        "de": "funktionieren",
+        "forms": ["funktioniert"],
+        "en": "to function, to work (machine)",
+        "es": "funcionar",
+        "hu": "működni"
+      },
+      {
+        "de": "die Rechnung",
+        "forms": ["Rechnung"],
+        "en": "invoice, bill",
+        "es": "la factura",
+        "hu": "a számla"
+      },
+      {
+        "de": "noch",
+        "forms": ["noch"],
+        "en": "still, yet",
+        "es": "todavía",
+        "hu": "még, még mindig"
+      },
+      {
+        "de": "ja",
+        "forms": ["ja"],
+        "en": "yes",
+        "es": "sí",
+        "hu": "igen"
+      },
+      {
+        "de": "nein",
+        "forms": ["nein"],
+        "en": "no",
+        "es": "no",
+        "hu": "nem"
+      },
+      {
+        "de": "mögen",
+        "forms": ["möchte"],
+        "en": "to like (möchte = would like)",
+        "es": "querer, gustar (möchte = quisiera)",
+        "hu": "szeretni (möchte = szeretnék)"
+      },
+      {
+        "de": "neu",
+        "forms": ["neues"],
+        "en": "new",
+        "es": "nuevo",
+        "hu": "új"
+      },
+      {
+        "de": "das Gerät",
+        "forms": ["Gerät"],
+        "en": "device, appliance",
+        "es": "el aparato",
+        "hu": "készülék"
+      },
+      {
+        "de": "das Geld",
+        "forms": ["Geld"],
+        "en": "money",
+        "es": "el dinero",
+        "hu": "pénz"
+      },
+      {
+        "de": "zurück",
+        "forms": ["zurück"],
+        "en": "back (direction)",
+        "es": "de vuelta",
+        "hu": "vissza"
+      },
+      {
+        "de": "die Kollegin",
+        "forms": ["Kollegin"],
+        "en": "colleague (f.)",
+        "es": "la colega",
+        "hu": "a kolléganő"
+      },
+      {
+        "de": "sagen",
+        "forms": ["sagt"],
+        "en": "to say, to tell",
+        "es": "decir",
+        "hu": "mondani"
+      },
+      {
+        "de": "wahrscheinlich",
+        "forms": ["wahrscheinlich"],
+        "en": "probably",
+        "es": "probablemente",
+        "hu": "valószínűleg"
+      },
+      {
+        "de": "prüfen",
+        "forms": ["geprüft"],
+        "en": "to check, to review",
+        "es": "revisar",
+        "hu": "átnézni, ellenőrizni"
+      },
+      {
+        "de": "bekommen",
+        "forms": ["bekommen"],
+        "en": "to get, to receive",
+        "es": "recibir, conseguir",
+        "hu": "kapni"
+      },
+      {
+        "de": "drei",
+        "forms": ["drei"],
+        "en": "three",
+        "es": "tres",
+        "hu": "három"
+      },
+      {
+        "de": "die Antwort",
+        "forms": ["Antwort"],
+        "en": "answer",
+        "es": "la respuesta",
+        "hu": "a válasz"
+      },
+      {
+        "de": "in Ordnung",
+        "forms": ["Ordnung"],
+        "en": "okay, in order",
+        "es": "de acuerdo, en orden",
+        "hu": "rendben, rendben van"
+      },
+      {
+        "de": "hoffen",
+        "forms": ["gehofft"],
+        "en": "to hope",
+        "es": "esperar (tener esperanza)",
+        "hu": "remélni"
+      },
+      {
+        "de": "das Problem",
+        "forms": ["Problem"],
+        "en": "problem",
+        "es": "el problema",
+        "hu": "probléma, gond"
+      },
+      {
+        "de": "schnell",
+        "forms": ["schneller"],
+        "en": "fast, quick",
+        "es": "rápido / veloz",
+        "hu": "gyors"
+      },
+      {
+        "de": "lösen",
+        "forms": ["gelöst"],
+        "en": "to solve",
+        "es": "resolver",
+        "hu": "megoldani"
+      },
+      {
+        "de": "dauern",
+        "forms": ["dauert"],
+        "en": "to take (time), to last",
+        "es": "tardar, durar",
+        "hu": "tartani"
+      },
+      {
+        "de": "lang",
+        "forms": ["lang"],
+        "en": "long",
+        "es": "largo",
+        "hu": "hosszú"
+      },
+      {
+        "de": "zwei",
+        "forms": ["zwei"],
+        "en": "two",
+        "es": "dos",
+        "hu": "kettő"
+      },
+      {
+        "de": "wie",
+        "forms": ["wie"],
+        "en": "how",
+        "es": "cómo",
+        "hu": "hogyan"
+      },
+      {
+        "de": "ich",
+        "forms": ["ich"],
+        "en": "I",
+        "es": "yo",
+        "hu": "én"
+      },
+      {
+        "de": "ihnen",
+        "forms": ["ihnen"],
+        "en": "to you (formal), to them",
+        "es": "le, les (a usted, a ustedes)",
+        "hu": "Önnek, nekik"
+      },
+      {
+        "de": "vor",
+        "forms": ["vor"],
+        "en": "ago, before, in front of",
+        "es": "hace, antes de, delante de",
+        "hu": "ezelőtt, előtt"
+      },
+      {
+        "de": "ein",
+        "forms": ["einen", "ein", "eine"],
+        "en": "a, one",
+        "es": "un, una",
+        "hu": "egy"
+      },
+      {
+        "de": "aber",
+        "forms": ["aber"],
+        "en": "but",
+        "es": "pero",
+        "hu": "de, viszont"
+      },
+      {
+        "de": "er",
+        "forms": ["er"],
+        "en": "he, it",
+        "es": "él",
+        "hu": "ő (férfi), az"
+      },
+      {
+        "de": "wann",
+        "forms": ["wann"],
+        "en": "when",
+        "es": "cuándo",
+        "hu": "mikor"
+      },
+      {
+        "de": "der",
+        "forms": ["der", "die", "das"],
+        "en": "the",
+        "es": "el, la, los, las",
+        "hu": "a, az"
+      },
+      {
+        "de": "am",
+        "forms": ["am"],
+        "en": "on (a day), at the",
+        "es": "el (día), en el",
+        "hu": "-n (napon)"
+      },
+      {
+        "de": "nicht",
+        "forms": ["nicht"],
+        "en": "not",
+        "es": "no",
+        "hu": "nem"
+      },
+      {
+        "de": "sie",
+        "forms": ["sie"],
+        "en": "she, they (Sie = you, formal)",
+        "es": "ella, ellos (Sie = usted)",
+        "hu": "ő, ők (Sie = Ön)"
+      },
+      {
+        "de": "oder",
+        "forms": ["oder"],
+        "en": "or",
+        "es": "o",
+        "hu": "vagy"
+      },
+      {
+        "de": "mein",
+        "forms": ["mein", "meine"],
+        "en": "my",
+        "es": "mi, mis",
+        "hu": "az én …-m"
+      },
+      {
+        "de": "und",
+        "forms": ["und"],
+        "en": "and",
+        "es": "y",
+        "hu": "és"
+      },
+      {
+        "de": "in",
+        "forms": ["in"],
+        "en": "in, in the",
+        "es": "en, en el",
+        "hu": "-ban/-ben"
+      },
+      {
+        "de": "dass",
+        "forms": ["dass"],
+        "en": "that (conjunction)",
+        "es": "que",
+        "hu": "hogy"
+      }
+    ],
+    "patterns": [
+      {
+        "title": {
+          "en": "Er wurde … geliefert.",
+          "es": "Er wurde … geliefert.",
+          "hu": "Er wurde … geliefert.",
+          "de": "Er wurde … geliefert."
+        },
+        "example": "Er wurde am Montag geliefert, aber er funktioniert nicht.",
+        "en": "The Präteritum passive is wurde + participle: er wurde geliefert = it was delivered. The participle stands at the end.",
+        "es": "La pasiva en pretérito es wurde + participio: er wurde geliefert = fue entregado. El participio va al final.",
+        "hu": "A múlt idejű szenvedő szerkezet wurde + igenév: er wurde geliefert = kiszállították. Az igenév a végén áll."
+      },
+      {
+        "title": {
+          "en": "Meine Kollegin sagt, der Computer sei …",
+          "es": "Meine Kollegin sagt, der Computer sei …",
+          "hu": "Meine Kollegin sagt, der Computer sei …",
+          "de": "Meine Kollegin sagt, der Computer sei …"
+        },
+        "example": "Meine Kollegin sagt, der Computer sei wahrscheinlich kaputt.",
+        "en": "Konjunktiv I (sei instead of ist) marks reported speech, typical when you pass on what someone else claims.",
+        "es": "El Konjunktiv I (sei en vez de ist) marca el discurso indirecto, típico cuando transmites lo que afirma otra persona.",
+        "hu": "A Konjunktiv I (sei az ist helyett) a függő beszédet jelzi, amikor azt adod tovább, amit más állít."
+      },
+      {
+        "title": {
+          "en": "Ich hatte gehofft, dass … gelöst wird.",
+          "es": "Ich hatte gehofft, dass … gelöst wird.",
+          "hu": "Ich hatte gehofft, dass … gelöst wird.",
+          "de": "Ich hatte gehofft, dass … gelöst wird."
+        },
+        "example": "Ich hatte gehofft, dass das Problem schneller gelöst wird.",
+        "en": "Hatte + participle (Plusquamperfekt) shows an expectation from before; the dass clause is in the passive: gelöst wird.",
+        "es": "Hatte + participio (Plusquamperfekt) muestra una expectativa anterior; la oración con dass va en pasiva: gelöst wird.",
+        "hu": "A hatte + igenév (Plusquamperfekt) korábbi várakozást fejez ki; a dass-mellékmondat szenvedő: gelöst wird."
+      }
+    ],
+    "distractors": ["geliefert", "geprüft"],
+    "lines": [
+      {
+        "speaker": "other",
+        "de": "Guten Tag, wie kann ich Ihnen helfen?",
+        "es": "Buenos días, ¿en qué puedo ayudarle?",
+        "hu": "Jó napot, miben segíthetek?",
+        "en": "Good day, how can I help you?",
+        "answers": [
+          "Ich habe vor zwei Wochen einen Computer bestellt, aber er ist kaputt.",
+          "Ich habe einen Computer bestellt, aber er ist kaputt.",
+          "Ich habe ein Problem mit dem Computer.",
+          "Mein Computer ist kaputt."
+        ]
+      },
+      {
+        "speaker": "me",
+        "de": "Ich habe vor zwei Wochen einen Computer bestellt, aber er ist kaputt.",
+        "es": "Hace dos semanas pedí una computadora, pero está descompuesta.",
+        "hu": "Két hete rendeltem egy számítógépet, de elromlott.",
+        "en": "I ordered a computer two weeks ago, but it is broken.",
+        "gap": "bestellt"
+      },
+      {
+        "speaker": "other",
+        "de": "Verzeihung! Wann wurde der Computer geliefert?",
+        "es": "¡Una disculpa! ¿Cuándo se entregó la computadora?",
+        "hu": "Elnézést! Mikor szállították ki a számítógépet?",
+        "en": "I am sorry! When was the computer delivered?",
+        "answers": [
+          "Er wurde am Montag geliefert, aber er funktioniert nicht.",
+          "Er wurde am Montag geliefert.",
+          "Er wurde vor zwei Wochen geliefert.",
+          "Am Montag."
+        ]
+      },
+      {
+        "speaker": "me",
+        "de": "Er wurde am Montag geliefert, aber er funktioniert nicht.",
+        "es": "Se entregó el lunes, pero no funciona.",
+        "hu": "Hétfőn szállították ki, de nem működik.",
+        "en": "It was delivered on Monday, but it does not work."
+      },
+      {
+        "speaker": "other",
+        "de": "Haben Sie die Rechnung noch?",
+        "es": "¿Todavía tiene la factura?",
+        "hu": "Megvan még a számla?",
+        "en": "Do you still have the invoice?",
+        "answers": [
+          "Ja, die Rechnung habe ich noch. Ich möchte ein neues Gerät oder mein Geld zurück.",
+          "Ja, ich habe die Rechnung noch.",
+          "Ja, die Rechnung habe ich noch.",
+          "Ja. Ich möchte mein Geld zurück.",
+          "Ja. Ich möchte ein neues Gerät."
+        ]
+      },
+      {
+        "speaker": "me",
+        "de": "Ja, die Rechnung habe ich noch. Ich möchte ein neues Gerät oder mein Geld zurück.",
+        "es": "Sí, todavía tengo la factura. Quiero un aparato nuevo o que me devuelvan mi dinero.",
+        "hu": "Igen, a számla megvan. Új készüléket szeretnék, vagy a pénzemet vissza.",
+        "en": "Yes, I still have the invoice. I would like a new device or my money back.",
+        "gap": "Rechnung"
+      },
+      {
+        "speaker": "other",
+        "de": "Meine Kollegin sagt, der Computer sei wahrscheinlich kaputt. Er wird geprüft, und Sie bekommen in drei Tagen eine Antwort. Ist das in Ordnung?",
+        "es": "Mi colega dice que la computadora probablemente está descompuesta. La van a revisar y en tres días recibirá una respuesta. ¿Le parece bien?",
+        "hu": "A kollégám szerint a számítógép valószínűleg elromlott. Megvizsgáljuk, és három napon belül választ kap. Megfelel ez Önnek?",
+        "en": "My colleague says the computer is probably broken. It will be checked, and you will get an answer in three days. Is that all right?",
+        "answers": [
+          "Nein, ich hatte gehofft, dass das Problem schneller gelöst wird.",
+          "Nein, das dauert zu lang.",
+          "Ja, das ist in Ordnung.",
+          "Nein, das ist nicht in Ordnung."
+        ]
+      },
+      {
+        "speaker": "me",
+        "de": "Nein, ich hatte gehofft, dass das Problem schneller gelöst wird.",
+        "es": "No, esperaba que el problema se resolviera más rápido.",
+        "hu": "Nem, azt reméltem, hogy a problémát gyorsabban megoldják.",
+        "en": "No, I had hoped that the problem would be solved faster.",
+        "gap": "gelöst"
+      }
+    ],
+    "build": [1, 5, 7]
+  }
+]

@@ -10,7 +10,7 @@
 import type { PcicLevel, PcicTarget } from '@/data/pcic';
 import { foldedTokens } from './writing';
 
-// The practice exam has Spanish, English and Hungarian papers (hu: A1 / A2 speaking only, B1-C1 four papers).
+// The practice exam has Spanish, English, Hungarian and German papers (hu / de: A1 / A2 speaking only, B1-C1 four papers).
 export type MockTarget = PcicTarget;
 export type MockLevel = PcicLevel;
 /** `use` = Use of English: its own skill in the English B2 / C1 exams (the examiner scores it apart from reading). */
@@ -157,7 +157,12 @@ export interface MockMatchPoolTask extends MockTaskBase, MockPlays, MockMarks {
   options: { id: string; title?: string; text: string }[];
   answer: Record<string, string>;
   unique: boolean;
+  /** An extra "none of the options fits" button (shown as 0); the answer of a prompt without a matching option is `MATCH_NONE`. */
+  allowNone?: boolean;
 }
+
+/** The answer value of a match_pool prompt for which no option fits (Goethe B1 Lesen Teil 3: "0"). */
+export const MATCH_NONE = 'none';
 
 /** A text with `{{1}}`..`{{n}}` gaps and fragments (gaps + extra) to put back; the answer maps the gap number to a fragment id. */
 export interface MockGappedTextTask extends MockTaskBase, MockPlays, MockMarks {
@@ -316,7 +321,7 @@ export interface MockGroup {
 export type MockRule =
   | { kind: 'groups'; groups: MockGroup[] }
   | { kind: 'total'; needed: number; of: number }
-  | { kind: 'average'; passPct: number; approximate: true }
+  | { kind: 'average'; passPct: number; approximate: true; each?: true }
   | { kind: 'scale'; needed: number; approximate: true; skills: Partial<Record<MockSkill, { officialMax: number; anchors: [raw: number, scale: number][] }>> };
 
 export interface MockExam {
@@ -355,8 +360,8 @@ export type MockAnswers = Record<string, MockTaskAnswer>;
 /** The default number of plays of a recorded task. */
 export const DEFAULT_PLAYS = 2;
 
-/** The word that leads a task's instruction on the paper: "TAREA 2." (es), "PART 2." (en), "FELADAT 2." (hu). */
-export const TASK_WORD: Record<MockTarget, string> = { es: 'TAREA', en: 'PART', hu: 'FELADAT' };
+/** The word that leads a task's instruction on the paper: "TAREA 2." (es), "PART 2." (en), "FELADAT 2." (hu), "TEIL 2." (de). */
+export const TASK_WORD: Record<MockTarget, string> = { es: 'TAREA', en: 'PART', hu: 'FELADAT', de: 'TEIL' }; // de: the Goethe papers number Lesen / Hören / Sprechen by "Teil"
 
 /** The leading "<TASK_WORD> n." of an instruction (any language), to strip before the paper numbers its tasks. */
 export const TASK_PREFIX = new RegExp(`^(${Object.values(TASK_WORD).join('|')}) \\d+\\.\\s*`);

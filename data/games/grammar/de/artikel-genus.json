@@ -1,0 +1,1100 @@
+{
+  "schema": 2,
+  "topic": "artikel-genus",
+  "level": "A1",
+  "title": {
+    "en": "Articles and gender: der, die, das, ein, eine",
+    "es": "Artículos y género: der, die, das, ein, eine"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "Every German noun has one of three genders: masculine (der), feminine (die) or neuter (das). The gender usually has nothing to do with the meaning: das Mädchen is neuter, die Sonne is feminine, der Mond is masculine. So learn every noun together with its article. In the plural the article is always die. The indefinite article (a, an) is ein for der and das words and eine for die words.",
+        "es": "Todo sustantivo alemán tiene uno de tres géneros: masculino (der), femenino (die) o neutro (das). El género normalmente no tiene que ver con el significado: das Mädchen es neutro, die Sonne es femenino, der Mond es masculino. Por eso aprende cada sustantivo junto con su artículo. En plural el artículo es siempre die. El artículo indefinido (un, una) es ein para las palabras der y das, y eine para las palabras die."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "artikel-tabelle",
+      "title": {
+        "en": "The articles and the pronouns",
+        "es": "Los artículos y los pronombres"
+      },
+      "header": [
+        {
+          "en": "Gender",
+          "es": "Género"
+        },
+        {
+          "en": "bestimmt",
+          "es": "bestimmt"
+        },
+        {
+          "en": "unbestimmt",
+          "es": "unbestimmt"
+        },
+        {
+          "en": "Pronomen",
+          "es": "Pronomen"
+        }
+      ],
+      "rows": [
+        [
+          "maskulin",
+          "der",
+          "ein",
+          "er"
+        ],
+        [
+          "feminin",
+          "die",
+          "eine",
+          "sie"
+        ],
+        [
+          "neutral",
+          "das",
+          "ein",
+          "es"
+        ],
+        [
+          "Plural",
+          "die",
+          "-",
+          "sie"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "How the articles work",
+        "es": "Cómo funcionan los artículos"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "The definite article (the) is der, die or das. The indefinite article (a) is ein or eine. They show the gender of the noun, and the verb does not change.",
+            "es": "El artículo definido (el, la) es der, die o das. El indefinido (un, una) es ein o eine. Muestran el género del sustantivo, y el verbo no cambia."
+          },
+          "examples": [
+            {
+              "es": "Der Tisch ist neu.",
+              "tr": {
+                "en": "The table is new.",
+                "es": "La mesa es nueva."
+              }
+            },
+            {
+              "es": "Die Lampe ist neu.",
+              "tr": {
+                "en": "The lamp is new.",
+                "es": "La lámpara es nueva."
+              }
+            },
+            {
+              "es": "Das Buch ist neu.",
+              "tr": {
+                "en": "The book is new.",
+                "es": "El libro es nuevo."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "You can replace a noun with a pronoun, and the pronoun follows the gender: der Tisch becomes er, die Lampe becomes sie, das Buch becomes es. This is true for things too, not only for people.",
+            "es": "Puedes sustituir un sustantivo por un pronombre, y el pronombre sigue el género: der Tisch pasa a er, die Lampe pasa a sie, das Buch pasa a es. Esto vale también para las cosas, no solo para las personas."
+          },
+          "examples": [
+            {
+              "es": "Der Tisch ist neu. Er ist braun.",
+              "tr": {
+                "en": "The table is new. It is brown.",
+                "es": "La mesa es nueva. Es café."
+              }
+            },
+            {
+              "es": "Die Lampe ist neu. Sie ist rot.",
+              "tr": {
+                "en": "The lamp is new. It is red.",
+                "es": "La lámpara es nueva. Es roja."
+              }
+            },
+            {
+              "es": "Das Buch ist alt. Es ist gut.",
+              "tr": {
+                "en": "The book is old. It is good.",
+                "es": "El libro es viejo. Es bueno."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "The indefinite article introduces something new: Da ist ein Tisch. Then the definite article takes over: Der Tisch ist neu.",
+            "es": "El artículo indefinido presenta algo nuevo: Da ist ein Tisch. Después sigue el definido: Der Tisch ist neu."
+          },
+          "examples": [
+            {
+              "es": "Da ist eine Lampe. Die Lampe ist schön.",
+              "tr": {
+                "en": "There is a lamp. The lamp is beautiful.",
+                "es": "Allí hay una lámpara. La lámpara es bonita."
+              }
+            },
+            {
+              "es": "Da ist ein Hund. Der Hund ist klein.",
+              "tr": {
+                "en": "There is a dog. The dog is small.",
+                "es": "Allí hay un perro. El perro es pequeño."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "nomen-artikel",
+      "title": {
+        "en": "Nouns with their articles",
+        "es": "Sustantivos con sus artículos"
+      },
+      "header": [
+        {
+          "en": "Noun",
+          "es": "Sustantivo"
+        },
+        {
+          "en": "Artikel",
+          "es": "Artikel"
+        }
+      ],
+      "rows": [
+        [
+          "Tisch",
+          "der"
+        ],
+        [
+          "Lampe",
+          "die"
+        ],
+        [
+          "Buch",
+          "das"
+        ],
+        [
+          "Hund",
+          "der"
+        ],
+        [
+          "Katze",
+          "die"
+        ],
+        [
+          "Kind",
+          "das"
+        ],
+        [
+          "Zeitung",
+          "die"
+        ],
+        [
+          "Lehrer",
+          "der"
+        ],
+        [
+          "Lehrerin",
+          "die"
+        ],
+        [
+          "Mädchen",
+          "das"
+        ],
+        [
+          "Auto",
+          "das"
+        ],
+        [
+          "Tasche",
+          "die"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "genus-hinweise",
+      "title": {
+        "en": "Hints from the ending",
+        "es": "Pistas por la terminación"
+      },
+      "header": [
+        {
+          "en": "Hint",
+          "es": "Pista"
+        },
+        {
+          "en": "Article",
+          "es": "Artículo"
+        },
+        {
+          "en": "Example",
+          "es": "Ejemplo"
+        },
+        {
+          "en": "Example",
+          "es": "Ejemplo"
+        }
+      ],
+      "rows": [
+        [
+          "-ung, -ion",
+          "die",
+          "die Zeitung",
+          "die Wohnung"
+        ],
+        [
+          "-in (woman)",
+          "die",
+          "die Lehrerin",
+          "die Freundin"
+        ],
+        [
+          "-e (many)",
+          "die",
+          "die Lampe",
+          "die Tasche"
+        ],
+        [
+          "-chen",
+          "das",
+          "das Mädchen",
+          "das Brötchen"
+        ],
+        [
+          "-er (man)",
+          "der",
+          "der Lehrer",
+          "der Computer"
+        ],
+        [
+          "day, month, season",
+          "der",
+          "der Montag",
+          "der Sommer"
+        ]
+      ],
+      "noTableDeck": true
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "When there is no article",
+        "es": "Cuándo no hay artículo"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "No article after sein before a profession or a nationality: Ich bin Lehrer. And none before names, countries without gender or things you do not count (Ich trinke Kaffee).",
+            "es": "Sin artículo después de sein ante una profesión o una nacionalidad: Ich bin Lehrer. Y tampoco ante nombres, países o cosas que no se cuentan (Ich trinke Kaffee)."
+          },
+          "examples": [
+            {
+              "es": "Ich bin Lehrer.",
+              "tr": {
+                "en": "I am a teacher.",
+                "es": "Soy maestro."
+              }
+            },
+            {
+              "es": "Ich trinke Kaffee.",
+              "tr": {
+                "en": "I drink coffee.",
+                "es": "Tomo café."
+              }
+            },
+            {
+              "es": "Anna kommt aus Spanien.",
+              "tr": {
+                "en": "Anna comes from Spain.",
+                "es": "Anna viene de España."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Gender is not the same everywhere",
+        "es": "El género no es igual en todas partes"
+      },
+      "pairs": [
+        {
+          "a": "Die Sonne ist heiß.",
+          "b": "Der Mond ist hell.",
+          "note": {
+            "en": "In German the sun is feminine and the moon is masculine. In Spanish it is the other way round (el sol, la luna). Never translate the gender from your language.",
+            "es": "En alemán el sol es femenino y la luna es masculina. En español es al revés (el sol, la luna). Nunca traslades el género desde tu idioma."
+          },
+          "examples": [
+            {
+              "es": "Die Sonne scheint.",
+              "tr": {
+                "en": "The sun is shining.",
+                "es": "El sol brilla."
+              }
+            },
+            {
+              "es": "Der Mond scheint.",
+              "tr": {
+                "en": "The moon is shining.",
+                "es": "La luna brilla."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Das Mädchen heißt Lena.",
+          "b": "Die Frau heißt Lena.",
+          "note": {
+            "en": "das Mädchen is neuter because of the ending -chen, although the girl is female. A woman is die Frau. The ending decides here, not the sex.",
+            "es": "das Mädchen es neutro por la terminación -chen, aunque la niña sea femenina. Una mujer es die Frau. Aquí decide la terminación, no el sexo."
+          },
+          "examples": [
+            {
+              "es": "Das Mädchen ist klein.",
+              "tr": {
+                "en": "The girl is small.",
+                "es": "La niña es pequeña."
+              }
+            },
+            {
+              "es": "Die Frau ist nett.",
+              "tr": {
+                "en": "The woman is nice.",
+                "es": "La mujer es amable."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Do not learn Tisch, learn der Tisch. Write the nouns in three colours (blue der, red die, green das) and say the article aloud with the noun. Do not guess the gender from the meaning or from your own language: das Mädchen, die Sonne, der Mond. In the plural the article is always die. And a noun always has a capital letter.",
+        "es": "No aprendas Tisch, aprende der Tisch. Escribe los sustantivos en tres colores (azul der, rojo die, verde das) y di el artículo en voz alta con el sustantivo. No adivines el género por el significado ni por tu idioma: das Mädchen, die Sonne, der Mond. En plural el artículo es siempre die. Y un sustantivo siempre lleva mayúscula."
+      }
+    }
+  ],
+  "speak": {
+    "en": "Every German noun has a gender: «der» for masculine, «die» for feminine and «das» for neuter. In the plural the article is always «die». The indefinite article is «ein» for «der» and «das» words, and «eine» for «die» words. The gender does not follow the meaning: «das Mädchen» is neuter, and «die Sonne» is feminine. So learn every noun together with its article. Then you can replace the noun with «er», «sie» or «es»: «der Tisch» becomes «er», «die Lampe» becomes «sie», «das Buch» becomes «es».",
+    "es": "Todo sustantivo alemán tiene un género: «der» para el masculino, «die» para el femenino y «das» para el neutro. En plural el artículo es siempre «die». El artículo indefinido es «ein» para las palabras «der» y «das», y «eine» para las palabras «die». El género no sigue el significado: «das Mädchen» es neutro, y «die Sonne» es femenino. Por eso aprende cada sustantivo junto con su artículo. Así puedes sustituir el sustantivo por «er», «sie» o «es»: «der Tisch» pasa a «er», «die Lampe» pasa a «sie», «das Buch» pasa a «es»."
+  },
+  "items": [
+    {
+      "id": "artikel-genus-c01",
+      "sentence": "___ Tisch ist braun.",
+      "options": [
+        "Die",
+        "Der",
+        "Das"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Tisch is masculine: der Tisch.",
+        "es": "Tisch es masculino: der Tisch."
+      },
+      "wrong": {
+        "Die": {
+          "en": "die is for feminine words (die Lampe) and for the plural. The table is der Tisch.",
+          "es": "die es para palabras femeninas (die Lampe) y para el plural. La mesa es der Tisch."
+        },
+        "Das": {
+          "en": "das is for neuter words (das Buch). Tisch is not neuter, it is masculine.",
+          "es": "das es para palabras neutras (das Buch). Tisch no es neutro, es masculino."
+        }
+      },
+      "examples": [
+        "Der Tisch ist neu.",
+        "Der Stuhl ist braun."
+      ],
+      "tr": {
+        "en": "The table is brown.",
+        "es": "La mesa es café."
+      }
+    },
+    {
+      "id": "artikel-genus-f01",
+      "kind": "form",
+      "verb": "bestimmt",
+      "person": "maskulin",
+      "answer": "der",
+      "table": "artikel-tabelle"
+    },
+    {
+      "id": "artikel-genus-c02",
+      "sentence": "Da ist ___ Lampe.",
+      "options": [
+        "ein",
+        "eine",
+        "der"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Lampe is feminine, so the indefinite article is eine: eine Lampe.",
+        "es": "Lampe es femenino, así que el artículo indefinido es eine: eine Lampe."
+      },
+      "wrong": {
+        "ein": {
+          "en": "ein is for masculine and neuter words (ein Tisch, ein Buch). A feminine word needs eine.",
+          "es": "ein es para palabras masculinas y neutras (ein Tisch, ein Buch). Una palabra femenina necesita eine."
+        },
+        "der": {
+          "en": "der is the masculine definite article, and Lampe is feminine. After Da ist something new is named, so an indefinite article fits.",
+          "es": "der es el artículo definido masculino, y Lampe es femenino. Después de Da ist se nombra algo nuevo, así que encaja un artículo indefinido."
+        }
+      },
+      "examples": [
+        "Da ist eine Tasche.",
+        "Das ist eine Katze."
+      ],
+      "tr": {
+        "en": "There is a lamp.",
+        "es": "Allí hay una lámpara."
+      }
+    },
+    {
+      "id": "artikel-genus-f02",
+      "kind": "form",
+      "verb": "Artikel",
+      "person": "Katze",
+      "answer": "die",
+      "table": "nomen-artikel"
+    },
+    {
+      "id": "artikel-genus-c03",
+      "sentence": "Das Buch ist alt. ___ ist braun.",
+      "options": [
+        "Er",
+        "Sie",
+        "Es"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Buch is neuter (das Buch), so the pronoun is es. It follows the noun, not the idea of a thing.",
+        "es": "Buch es neutro (das Buch), así que el pronombre es es. Sigue al sustantivo, no a la idea de una cosa."
+      },
+      "wrong": {
+        "Er": {
+          "en": "er replaces masculine nouns such as der Tisch. The book is das Buch, neuter.",
+          "es": "er sustituye a sustantivos masculinos como der Tisch. El libro es das Buch, neutro."
+        },
+        "Sie": {
+          "en": "sie replaces feminine nouns such as die Lampe. The book is neuter, so it is not sie.",
+          "es": "sie sustituye a sustantivos femeninos como die Lampe. El libro es neutro, así que no es sie."
+        }
+      },
+      "examples": [
+        "Es ist neu.",
+        "Es ist gut."
+      ],
+      "tr": {
+        "en": "The book is old. It is brown.",
+        "es": "El libro es viejo. Es café."
+      }
+    },
+    {
+      "id": "artikel-genus-f03",
+      "kind": "form",
+      "verb": "unbestimmt",
+      "person": "feminin",
+      "answer": "eine",
+      "table": "artikel-tabelle"
+    },
+    {
+      "id": "artikel-genus-w01",
+      "kind": "why",
+      "es": "Das Mädchen heißt Lena.",
+      "target": "Mädchen",
+      "tr": {
+        "en": "The girl is called Lena.",
+        "es": "La niña se llama Lena."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Female people are always feminine: die",
+            "es": "Las personas femeninas son siempre femeninas: die"
+          },
+          "wrong": {
+            "en": "The gender of a noun does not follow the sex. Mädchen ends in -chen, and -chen words are always neuter.",
+            "es": "El género de un sustantivo no sigue al sexo. Mädchen termina en -chen, y las palabras en -chen son siempre neutras."
+          }
+        },
+        {
+          "text": {
+            "en": "The ending -chen makes every noun neuter: das",
+            "es": "La terminación -chen vuelve neutro todo sustantivo: das"
+          }
+        },
+        {
+          "text": {
+            "en": "Names of children are masculine: der",
+            "es": "Los nombres de niños son masculinos: der"
+          },
+          "wrong": {
+            "en": "There is no rule that children are masculine. The ending -chen decides, and it gives neuter.",
+            "es": "No hay ninguna regla que haga masculinos a los niños. Decide la terminación -chen, y esa da neutro."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "artikel-genus-c04",
+      "sentence": "Die Zeitung ist neu. ___ ist gut.",
+      "options": [
+        "Sie",
+        "Er",
+        "Es"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Zeitung is feminine (die Zeitung), so the pronoun is sie. At the start of a sentence it is written Sie.",
+        "es": "Zeitung es femenino (die Zeitung), así que el pronombre es sie. Al inicio de la frase se escribe Sie."
+      },
+      "wrong": {
+        "Er": {
+          "en": "er is for masculine nouns (der Tisch, der Computer). A newspaper is die Zeitung.",
+          "es": "er es para sustantivos masculinos (der Tisch, der Computer). Un periódico es die Zeitung."
+        },
+        "Es": {
+          "en": "es is for neuter nouns (das Buch). Zeitung ends in -ung, which is always feminine.",
+          "es": "es es para sustantivos neutros (das Buch). Zeitung termina en -ung, que siempre es femenino."
+        }
+      },
+      "examples": [
+        "Sie ist alt.",
+        "Sie ist groß."
+      ],
+      "tr": {
+        "en": "The newspaper is new. It is good.",
+        "es": "El periódico es nuevo. Es bueno."
+      }
+    },
+    {
+      "id": "artikel-genus-f04",
+      "kind": "form",
+      "verb": "Artikel",
+      "person": "Hund",
+      "answer": "der",
+      "table": "nomen-artikel"
+    },
+    {
+      "id": "artikel-genus-c05",
+      "sentence": "Der Computer ist neu. ___ ist schnell.",
+      "options": [
+        "Es",
+        "Sie",
+        "Er"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Computer is masculine (der Computer), so the pronoun is er.",
+        "es": "Computer es masculino (der Computer), así que el pronombre es er."
+      },
+      "wrong": {
+        "Es": {
+          "en": "You might say it in English, but German uses the gender: es is for neuter nouns. A computer is der Computer.",
+          "es": "En inglés se diría it, pero el alemán usa el género: es es para sustantivos neutros. Una computadora es der Computer."
+        },
+        "Sie": {
+          "en": "sie is for feminine nouns such as die Lampe. Computer is masculine.",
+          "es": "sie es para sustantivos femeninos como die Lampe. Computer es masculino."
+        }
+      },
+      "examples": [
+        "Er ist alt.",
+        "Er ist schön."
+      ],
+      "tr": {
+        "en": "The computer is new. It is fast.",
+        "es": "La computadora es nueva. Es rápida."
+      }
+    },
+    {
+      "id": "artikel-genus-f05",
+      "kind": "form",
+      "verb": "Pronomen",
+      "person": "neutral",
+      "answer": "es",
+      "table": "artikel-tabelle"
+    },
+    {
+      "id": "artikel-genus-c06",
+      "sentence": "___ Mädchen heißt Lena.",
+      "options": [
+        "Der",
+        "Die",
+        "Das"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Words ending in -chen are always neuter, even for a girl: das Mädchen.",
+        "es": "Las palabras que terminan en -chen son siempre neutras, aun para una niña: das Mädchen."
+      },
+      "wrong": {
+        "Der": {
+          "en": "der is for masculine words. Mädchen is not masculine, the ending -chen makes it neuter.",
+          "es": "der es para palabras masculinas. Mädchen no es masculino, la terminación -chen lo hace neutro."
+        },
+        "Die": {
+          "en": "You might expect die for a girl, but the ending -chen decides: Mädchen is das Mädchen.",
+          "es": "Podrías esperar die para una niña, pero decide la terminación -chen: Mädchen es das Mädchen."
+        }
+      },
+      "examples": [
+        "Das Mädchen ist klein.",
+        "Das Brötchen ist gut."
+      ],
+      "tr": {
+        "en": "The girl is called Lena.",
+        "es": "La niña se llama Lena."
+      }
+    },
+    {
+      "id": "artikel-genus-f06",
+      "kind": "form",
+      "verb": "Artikel",
+      "person": "Kind",
+      "answer": "das",
+      "table": "nomen-artikel"
+    },
+    {
+      "id": "artikel-genus-w02",
+      "kind": "why",
+      "es": "Die Zeitung ist neu.",
+      "target": "Zeitung",
+      "tr": {
+        "en": "The newspaper is new.",
+        "es": "El periódico es nuevo."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Nouns ending in -ung are always feminine: die",
+            "es": "Los sustantivos en -ung son siempre femeninos: die"
+          }
+        },
+        {
+          "text": {
+            "en": "Things are neuter: das",
+            "es": "Las cosas son neutras: das"
+          },
+          "wrong": {
+            "en": "Things can have any gender: der Tisch, die Lampe, das Buch. For Zeitung the ending -ung decides: feminine.",
+            "es": "Las cosas pueden tener cualquier género: der Tisch, die Lampe, das Buch. En Zeitung decide la terminación -ung: femenino."
+          }
+        },
+        {
+          "text": {
+            "en": "Nouns ending in -ung are masculine: der",
+            "es": "Los sustantivos en -ung son masculinos: der"
+          },
+          "wrong": {
+            "en": "The opposite is true: -ung words are feminine, like die Wohnung and die Übung.",
+            "es": "Es al revés: las palabras en -ung son femeninas, como die Wohnung y die Übung."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "artikel-genus-c07",
+      "sentence": "Da ist ___ Auto.",
+      "options": [
+        "eine",
+        "ein",
+        "der"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Auto is neuter (das Auto), so the indefinite article is ein: ein Auto.",
+        "es": "Auto es neutro (das Auto), así que el artículo indefinido es ein: ein Auto."
+      },
+      "wrong": {
+        "eine": {
+          "en": "eine is for feminine words (eine Lampe). A neuter word like Auto takes ein.",
+          "es": "eine es para palabras femeninas (eine Lampe). Una palabra neutra como Auto lleva ein."
+        },
+        "der": {
+          "en": "der is a masculine definite article. Auto is neuter, and the sentence names something new.",
+          "es": "der es un artículo definido masculino. Auto es neutro, y la frase nombra algo nuevo."
+        }
+      },
+      "examples": [
+        "Das ist ein Auto.",
+        "Da ist ein Haus."
+      ],
+      "tr": {
+        "en": "There is a car.",
+        "es": "Allí hay un carro."
+      }
+    },
+    {
+      "id": "artikel-genus-f07",
+      "kind": "form",
+      "verb": "bestimmt",
+      "person": "feminin",
+      "answer": "die",
+      "table": "artikel-tabelle"
+    },
+    {
+      "id": "artikel-genus-c08",
+      "sentence": "___ Wohnung ist klein.",
+      "options": [
+        "Die",
+        "Der",
+        "Das"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Nouns ending in -ung are always feminine: die Wohnung.",
+        "es": "Los sustantivos que terminan en -ung son siempre femeninos: die Wohnung."
+      },
+      "wrong": {
+        "Der": {
+          "en": "der is for masculine words. A noun in -ung is never masculine, so the article is die.",
+          "es": "der es para palabras masculinas. Un sustantivo en -ung nunca es masculino, así que el artículo es die."
+        },
+        "Das": {
+          "en": "das is for neuter words. The ending -ung is a clear hint for feminine: die Wohnung.",
+          "es": "das es para palabras neutras. La terminación -ung es una pista clara de femenino: die Wohnung."
+        }
+      },
+      "examples": [
+        "Die Zeitung ist neu.",
+        "Die Wohnung ist schön."
+      ],
+      "tr": {
+        "en": "The apartment is small.",
+        "es": "El departamento es pequeño."
+      }
+    },
+    {
+      "id": "artikel-genus-f08",
+      "kind": "form",
+      "verb": "Artikel",
+      "person": "Zeitung",
+      "answer": "die",
+      "table": "nomen-artikel"
+    },
+    {
+      "id": "artikel-genus-c09",
+      "sentence": "___ Sommer ist heiß.",
+      "options": [
+        "Der",
+        "Die",
+        "Das"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Seasons, months and days are masculine: der Sommer, der Juli, der Montag.",
+        "es": "Las estaciones, los meses y los días son masculinos: der Sommer, der Juli, der Montag."
+      },
+      "wrong": {
+        "Die": {
+          "en": "die is for feminine words. Seasons are all masculine, so you say der Sommer.",
+          "es": "die es para palabras femeninas. Las estaciones son todas masculinas, por eso se dice der Sommer."
+        },
+        "Das": {
+          "en": "das is for neuter words. Seasons are not neuter, they are masculine: der Sommer.",
+          "es": "das es para palabras neutras. Las estaciones no son neutras, son masculinas: der Sommer."
+        }
+      },
+      "examples": [
+        "Der Winter ist kalt.",
+        "Der Juli ist heiß."
+      ],
+      "tr": {
+        "en": "The summer is hot.",
+        "es": "El verano es caluroso."
+      }
+    },
+    {
+      "id": "artikel-genus-f09",
+      "kind": "form",
+      "verb": "unbestimmt",
+      "person": "maskulin",
+      "answer": "ein",
+      "table": "artikel-tabelle"
+    },
+    {
+      "id": "artikel-genus-w03",
+      "kind": "why",
+      "es": "Der Sommer ist heiß.",
+      "target": "Sommer",
+      "tr": {
+        "en": "The summer is hot.",
+        "es": "El verano es caluroso."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Nouns ending in -er are feminine",
+            "es": "Los sustantivos en -er son femeninos"
+          },
+          "wrong": {
+            "en": "Nouns in -er are mostly masculine (der Lehrer, der Computer), not feminine.",
+            "es": "Los sustantivos en -er son casi siempre masculinos (der Lehrer, der Computer), no femeninos."
+          }
+        },
+        {
+          "text": {
+            "en": "Seasons are neuter",
+            "es": "Las estaciones son neutras"
+          },
+          "wrong": {
+            "en": "No season is neuter. Seasons, months and days are all masculine.",
+            "es": "Ninguna estación es neutra. Las estaciones, los meses y los días son todos masculinos."
+          }
+        },
+        {
+          "text": {
+            "en": "Seasons, months and days are masculine: der",
+            "es": "Las estaciones, los meses y los días son masculinos: der"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "artikel-genus-c10",
+      "sentence": "Da ist ___ Tür.",
+      "options": [
+        "eine",
+        "ein",
+        "das"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Tür is feminine (die Tür), so it takes eine: eine Tür.",
+        "es": "Tür es femenino (die Tür), así que lleva eine: eine Tür."
+      },
+      "wrong": {
+        "ein": {
+          "en": "ein is for masculine and neuter nouns. Tür is feminine and needs eine.",
+          "es": "ein es para sustantivos masculinos y neutros. Tür es femenino y necesita eine."
+        },
+        "das": {
+          "en": "das is the neuter definite article, and Tür is feminine. The sentence introduces a new door, so the indefinite article fits.",
+          "es": "das es el artículo definido neutro, y Tür es femenino. La frase presenta una puerta nueva, así que encaja el artículo indefinido."
+        }
+      },
+      "examples": [
+        "Da ist eine Katze.",
+        "Das ist eine Tür."
+      ],
+      "tr": {
+        "en": "There is a door.",
+        "es": "Allí hay una puerta."
+      }
+    },
+    {
+      "id": "artikel-genus-f10",
+      "kind": "form",
+      "verb": "Artikel",
+      "person": "Lehrer",
+      "answer": "der",
+      "table": "nomen-artikel"
+    },
+    {
+      "id": "artikel-genus-c11",
+      "sentence": "Da ist ___ Stuhl.",
+      "options": [
+        "eine",
+        "die",
+        "ein"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Stuhl is masculine (der Stuhl), so the indefinite article is ein: ein Stuhl.",
+        "es": "Stuhl es masculino (der Stuhl), así que el artículo indefinido es ein: ein Stuhl."
+      },
+      "wrong": {
+        "eine": {
+          "en": "eine is only for feminine words (eine Lampe). A masculine word like Stuhl takes ein.",
+          "es": "eine es solo para palabras femeninas (eine Lampe). Una palabra masculina como Stuhl lleva ein."
+        },
+        "die": {
+          "en": "die is a feminine definite article. Stuhl is masculine, and the sentence introduces something new.",
+          "es": "die es un artículo definido femenino. Stuhl es masculino, y la frase presenta algo nuevo."
+        }
+      },
+      "examples": [
+        "Da ist ein Tisch.",
+        "Das ist ein Stuhl."
+      ],
+      "tr": {
+        "en": "There is a chair.",
+        "es": "Allí hay una silla."
+      }
+    },
+    {
+      "id": "artikel-genus-f11",
+      "kind": "form",
+      "verb": "Pronomen",
+      "person": "feminin",
+      "answer": "sie",
+      "table": "artikel-tabelle"
+    },
+    {
+      "id": "artikel-genus-c12",
+      "sentence": "___ Sonne ist heiß.",
+      "options": [
+        "Der",
+        "Die",
+        "Das"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Sonne is feminine: die Sonne. It ends in -e, a common sign of feminine nouns.",
+        "es": "Sonne es femenino: die Sonne. Termina en -e, una señal común de los sustantivos femeninos."
+      },
+      "wrong": {
+        "Der": {
+          "en": "In Spanish the sun is masculine (el sol), but in German it is feminine. Do not copy the gender from your language.",
+          "es": "En español el sol es masculino (el sol), pero en alemán es femenino. No copies el género de tu idioma."
+        },
+        "Das": {
+          "en": "das is for neuter words such as das Buch. The sun is die Sonne, feminine.",
+          "es": "das es para palabras neutras como das Buch. El sol es die Sonne, femenino."
+        }
+      },
+      "examples": [
+        "Die Sonne scheint.",
+        "Die Lampe ist rot."
+      ],
+      "tr": {
+        "en": "The sun is hot.",
+        "es": "El sol está caliente."
+      }
+    },
+    {
+      "id": "artikel-genus-f12",
+      "kind": "form",
+      "verb": "Artikel",
+      "person": "Auto",
+      "answer": "das",
+      "table": "nomen-artikel"
+    },
+    {
+      "id": "artikel-genus-c13",
+      "sentence": "___ Mond ist hell.",
+      "options": [
+        "Die",
+        "Das",
+        "Der"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Mond is masculine: der Mond. The moon is masculine in German, although la luna is feminine in Spanish.",
+        "es": "Mond es masculino: der Mond. La luna es masculina en alemán, aunque en español sea femenina."
+      },
+      "wrong": {
+        "Die": {
+          "en": "die would be the feminine article, as in Spanish la luna. In German the moon is der Mond.",
+          "es": "die sería el artículo femenino, como en español la luna. En alemán la luna es der Mond."
+        },
+        "Das": {
+          "en": "das is for neuter words. Mond is not neuter, it is masculine: der Mond.",
+          "es": "das es para palabras neutras. Mond no es neutro, es masculino: der Mond."
+        }
+      },
+      "examples": [
+        "Der Mond scheint.",
+        "Der Tag ist hell."
+      ],
+      "tr": {
+        "en": "The moon is bright.",
+        "es": "La luna está brillante."
+      }
+    },
+    {
+      "id": "artikel-genus-c14",
+      "sentence": "Das ist ___ Fenster.",
+      "options": [
+        "ein",
+        "eine",
+        "der"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Fenster is neuter (das Fenster), so the indefinite article is ein: ein Fenster.",
+        "es": "Fenster es neutro (das Fenster), así que el artículo indefinido es ein: ein Fenster."
+      },
+      "wrong": {
+        "eine": {
+          "en": "eine is for feminine words. Fenster is neuter, so it takes ein.",
+          "es": "eine es para palabras femeninas. Fenster es neutro, así que lleva ein."
+        },
+        "der": {
+          "en": "der is a masculine definite article. Fenster is neuter, and here we name a window as a new thing.",
+          "es": "der es un artículo definido masculino. Fenster es neutro, y aquí nombramos una ventana como algo nuevo."
+        }
+      },
+      "examples": [
+        "Das ist ein Haus.",
+        "Das ist ein Fenster."
+      ],
+      "tr": {
+        "en": "That is a window.",
+        "es": "Eso es una ventana."
+      }
+    },
+    {
+      "id": "artikel-genus-w04",
+      "kind": "why",
+      "es": "Das Buch ist alt. Es ist braun.",
+      "target": "Es",
+      "tr": {
+        "en": "The book is old. It is brown.",
+        "es": "El libro es viejo. Es café."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "er replaces every thing",
+            "es": "er sustituye a toda cosa"
+          },
+          "wrong": {
+            "en": "er only replaces masculine nouns. The pronoun depends on the gender of the noun, not on whether it is a thing.",
+            "es": "er solo sustituye a sustantivos masculinos. El pronombre depende del género del sustantivo, no de si es una cosa."
+          }
+        },
+        {
+          "text": {
+            "en": "es replaces a neuter noun, here das Buch",
+            "es": "es sustituye a un sustantivo neutro, aquí das Buch"
+          }
+        },
+        {
+          "text": {
+            "en": "sie replaces everything that is written",
+            "es": "sie sustituye a todo lo que está escrito"
+          },
+          "wrong": {
+            "en": "sie replaces feminine nouns such as die Zeitung. The book is das Buch, so it is es.",
+            "es": "sie sustituye a sustantivos femeninos como die Zeitung. El libro es das Buch, así que es es."
+          }
+        }
+      ],
+      "correctIndex": 1
+    }
+  ]
+}

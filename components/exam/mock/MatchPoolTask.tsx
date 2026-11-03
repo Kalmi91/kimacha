@@ -3,7 +3,7 @@ import { Pressable, Text, View } from 'react-native';
 
 import Colors from '@/constants/Colors';
 import { Card } from '@/components/grammar/Brutal';
-import type { MockMatchPoolTask } from '@/lib/exam/mock/types';
+import { MATCH_NONE, type MockMatchPoolTask } from '@/lib/exam/mock/types';
 import { t } from '@/lib/i18n';
 import { useTheme } from '@/lib/ThemeContext';
 import { MockChips } from './MockChoice';
@@ -18,6 +18,8 @@ import { useMockAudio } from './useMockAudio';
 /** A text longer than this folds to three lines on its card. */
 const FOLD_AT = 200;
 
+const NONE_LABEL = { [MATCH_NONE]: '0' } as const;
+
 export default function MatchPoolTask({ task, answer, onAnswer, target, canSpeak, glossary }: MockKindProps<MockMatchPoolTask>) {
   const { theme } = useTheme();
   const colors = Colors[theme];
@@ -25,19 +27,20 @@ export default function MatchPoolTask({ task, answer, onAnswer, target, canSpeak
   const audio = useMockAudio(target, task.plays);
   const [open, setOpen] = useState<Record<string, boolean>>({});
   const optionIds = task.options.map((o) => o.id);
-  const used = new Set(task.prompts.map((p) => answer[p.id]).filter((v): v is string => typeof v === 'string'));
+  const chipKeys = task.allowNone ? [...optionIds, MATCH_NONE] : optionIds;
+  const used = new Set(task.prompts.map((p) => answer[p.id]).filter((v): v is string => typeof v === 'string' && v !== MATCH_NONE));
 
   const choose = (promptId: string, optionId: string) => {
     if (answer[promptId] === optionId) {
       onAnswer(promptId, null);
       return;
     }
-    if (task.unique) for (const p of task.prompts) if (p.id !== promptId && answer[p.id] === optionId) onAnswer(p.id, null);
+    if (task.unique && optionId !== MATCH_NONE) for (const p of task.prompts) if (p.id !== promptId && answer[p.id] === optionId) onAnswer(p.id, null);
     onAnswer(promptId, optionId);
   };
 
   return (
-    <MockTaskFrame instruction={task.instruction} hint={task.unique ? s.mockHintMatchUnique : s.mockHintMatch} glossary={glossary}>
+    <MockTaskFrame instruction={task.instruction} hint={task.allowNone ? s.mockHintMatchNone : task.unique ? s.mockHintMatchUnique : s.mockHintMatch} glossary={glossary}>
       {task.options.map((opt, i) => {
         const long = opt.text.length > FOLD_AT;
         const unfolded = !!open[opt.id];
@@ -70,7 +73,8 @@ export default function MatchPoolTask({ task, answer, onAnswer, target, canSpeak
             </Text>
           )}
           <MockChips
-            keys={optionIds}
+            keys={chipKeys}
+            labels={task.allowNone ? NONE_LABEL : undefined}
             picked={answer[prompt.id]}
             taken={task.unique ? used : undefined}
             onPick={(optionId) => choose(prompt.id, optionId)}

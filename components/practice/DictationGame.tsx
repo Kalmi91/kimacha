@@ -85,7 +85,7 @@ export default function DictationGame() {
       const text = typed.trim();
       if (state.checked || !text) return;
       Keyboard.dismiss();
-      const right = isDictationRight(text, word.answer, strictAccents);
+      const right = isDictationRight(text, word.answer, strictAccents, target);
       // the verdict is saved first: a round that is left and resumed shows it again and never credits twice
       game.update(checkDictation(state, text, right));
       try {

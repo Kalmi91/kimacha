@@ -17,7 +17,8 @@
 
 import type { PcicItem, PcicTarget } from '@/data/pcic';
 import { isSentenceKnownIn, knownTokens, type ResolvedTense } from '@/lib/knownSentence';
-import { learnedEntries, learnedEntryOf, sentencePair } from '@/lib/sentenceCards';
+import { learnedEntries, learnedEntryOf, learnerLevel, sentenceLevel, sentencePair } from '@/lib/sentenceCards';
+import type { DeLevel } from '@/lib/deForms';
 import { activeSourceFor } from '@/lib/languagePair';
 import { wordIn } from '@/lib/pcicItemText';
 import type { Sm2Card } from '@/lib/sm2';
@@ -66,6 +67,8 @@ export interface ReadingDeps {
   /** The tenses unlocked by the grammar lessons (only matters with Spanish as the target language). */
   tenses?: ReadonlySet<ResolvedTense>;
   findItem: (id: string) => PcicItem | undefined;
+  /** The deck level of an item (German only: the learner's grammar level decides which tenses a sentence may use). */
+  levelOf?: (id: string) => string | undefined;
   today: string;
   info?: (itemId: string) => GapSourceInfo | undefined;
   /** Card ids of the round this one replaces: they go to the end of the candidates (kept, not dropped), so a new round differs. */
@@ -102,10 +105,18 @@ function shuffled<T>(list: readonly T[], random: () => number): T[] {
   return out;
 }
 
+/** German: the level a sentence of `itemId` is held to (the learner's, never above its card's own); other targets have no such level. */
+export function readingLevelFor(deps: Pick<ReadingDeps, 'target' | 'cards' | 'levelOf'>): (itemId: string) => DeLevel | undefined {
+  if (deps.target !== 'de') return () => undefined;
+  const learner = learnerLevel(deps.cards, deps.levelOf);
+  return (itemId) => sentenceLevel(learner, itemId, deps.levelOf);
+}
+
 /** The words of the text: see the header. `known` = the gate's token set of the learner's learned words. */
 export function pickReadingWords(deps: ReadingDeps, known: ReadonlySet<string>): ReadingWord[] {
   const seen = new Set<string>();
   const out: ReadingWord[] = [];
+  const levelFor = readingLevelFor(deps);
   // The cards do not change between two rounds (a reading gives no progress), so without this the same words
   // would come again: the previous round's words go last, and only fill up when there are too few other ones.
   const candidates = practiceCandidates(deps.cards, deps.today);
@@ -114,7 +125,7 @@ export function pickReadingWords(deps: ReadingDeps, known: ReadonlySet<string>):
   for (const card of ordered) {
     const item = deps.findItem(card.itemId);
     const word = item ? readingWordFor(item, deps.target, deps.info) : null;
-    if (!word || !isSentenceKnownIn(word.sentence, deps.target, known)) continue;
+    if (!word || !isSentenceKnownIn(word.sentence, deps.target, known, levelFor(card.itemId))) continue;
     // the same sentence under two words counts once
     const key = word.sentence.trim().toLowerCase();
     if (seen.has(key)) continue;
@@ -160,6 +171,7 @@ export function buildQuestions(words: ReadingWord[], deps: ReadingDeps, known: R
   const inText = new Set(words.map((w) => w.itemId));
   const sentencesInText = new Set(words.map((w) => w.sentence.trim().toLowerCase()));
   const translationsInText = words.map((w) => w.translation);
+  const levelFor = readingLevelFor(deps);
 
   // other known sentences that are not in the text (each statement once), in random order
   const falseSeen = new Set<string>();
@@ -168,7 +180,7 @@ export function buildQuestions(words: ReadingWord[], deps: ReadingDeps, known: R
     const pair = sentencePair(item, deps.target);
     if (!pair || sentencesInText.has(pair.target.trim().toLowerCase())) return false;
     if (translationsInText.some((t) => same(t, pair.source)) || falseSeen.has(pair.source.trim().toLowerCase())) return false;
-    if (!isSentenceKnownIn(pair.target, deps.target, known)) return false;
+    if (!isSentenceKnownIn(pair.target, deps.target, known, levelFor(item.id))) return false;
     falseSeen.add(pair.source.trim().toLowerCase());
     return true;
   });
@@ -246,7 +258,11 @@ export function resolveSet(
 
 /** The whole round, or null when fewer than READING_MIN_WORDS sentences can be made (the empty state). */
 export function buildReadingSet(deps: ReadingDeps): ReadingSet | null {
-  const known = knownTokens(deps.target, { learned: learnedEntries(deps.cards, deps.target, deps.findItem), tenses: deps.tenses });
+  const known = knownTokens(deps.target, {
+    learned: learnedEntries(deps.cards, deps.target, deps.findItem),
+    tenses: deps.tenses,
+    level: deps.target === 'de' ? learnerLevel(deps.cards, deps.levelOf) : undefined,
+  });
   const picked = pickStory(deps, known);
   if (picked) {
     const set = resolveSet(picked.words, buildQuestions(picked.words, deps, known, picked.story), deps.findItem, deps.target, picked.story);

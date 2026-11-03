@@ -27,6 +27,7 @@ import {
   SENTENCES_KEY,
   SENTENCE_PACK_DIR,
   SENTENCE_PACK_URL,
+  isPiperOnly,
   itemBytes,
   normalizeEngines,
   normalizeSpeakers,
@@ -193,7 +194,7 @@ function loadEngines(lang: NeuralLang): void {
     }
     update({}); // the engine is ready now
     // The language's other engine is not needed any more (the old choice, or the stand-in while this one loaded).
-    if (lang !== 'hu' && state.engines[lang] === engine) {
+    if (!isPiperOnly(lang) && state.engines[lang] === engine) {
       const other: NeuralEngine = engine === 'piper' ? 'kokoro' : 'piper';
       loadedLangs.delete(`${lang}:${other}`); // choosing it again loads it again
       await releaseNeuralPair(lang, other);
@@ -228,7 +229,7 @@ export function neuralEngineFor(lang: NeuralLang): NeuralEngine | null {
   const chosen = state.engines[lang];
   if (isNeuralReady(lang, chosen)) return chosen;
   const other: NeuralEngine = chosen === 'piper' ? 'kokoro' : 'piper';
-  if (lang !== 'hu' && isNeuralReady(lang, other)) return other;
+  if (!isPiperOnly(lang) && isNeuralReady(lang, other)) return other;
   return null;
 }
 
@@ -267,7 +268,7 @@ export async function setNeuralEnabled(enabled: boolean): Promise<void> {
   }
 }
 
-// A language's sentence engine (hu is always Piper). Kokoro that is not installed starts its download.
+// A language's sentence engine (hu and de are always Piper). Kokoro that is not installed starts its download.
 export async function setNeuralEngine(lang: NeuralLang, engine: NeuralEngine): Promise<void> {
   const next = normalizeEngines({ ...state.engines, [lang]: engine });
   if (next[lang] === state.engines[lang]) return;

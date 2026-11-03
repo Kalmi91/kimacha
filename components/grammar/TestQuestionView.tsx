@@ -33,6 +33,7 @@ export default function TestQuestionView({
           sentence={v.sentence}
           targetLang={learnedLang}
           strictAccents={strictAccents}
+          keepUmlauts={v.keepUmlauts}
           instant={instant}
           onDone={onDone}
         />

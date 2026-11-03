@@ -1,0 +1,1191 @@
+{
+  "schema": 2,
+  "topic": "praepositionen-zeit-ort",
+  "level": "A1",
+  "title": {
+    "en": "Prepositions of time and place: am, im, um, in, bei",
+    "es": "Preposiciones de tiempo y lugar: am, im, um, in, bei"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "Small prepositions say when and where. For time, German splits exactly as English does: um like at (um acht Uhr), am like on (am Montag, am Abend) and im like in (im Mai, im Winter); a span counted from now takes in (in zwei Wochen). For place, in means inside, an means at the edge or at a point, auf means on a surface or in an open public place, and bei means at somebody's place. am, im and beim are short for an dem, in dem and bei dem.",
+        "es": "Las preposiciones pequeñas dicen cuándo y dónde. Para el tiempo, el alemán distingue lo mismo que el inglés: um para la hora (um acht Uhr, «a las ocho»), am para días y partes del día (am Montag, «el lunes»; am Abend, «en la noche») e im para meses y estaciones (im Mai, «en mayo»); un plazo contado desde ahora lleva in (in zwei Wochen, «dentro de dos semanas»). Para el lugar, in significa dentro, an en el borde o en un punto, auf encima de una superficie o en un lugar público abierto, y bei en casa o en el negocio de alguien. am, im y beim son la forma corta de an dem, in dem y bei dem."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "zeitpraepositionen",
+      "title": {
+        "en": "Time words and their preposition",
+        "es": "Palabras de tiempo y su preposición"
+      },
+      "header": [
+        {
+          "en": "Time",
+          "es": "Tiempo"
+        },
+        {
+          "en": "Präposition",
+          "es": "Präposition"
+        }
+      ],
+      "rows": [
+        [
+          "acht Uhr",
+          "um"
+        ],
+        [
+          "Montag",
+          "am"
+        ],
+        [
+          "Abend",
+          "am"
+        ],
+        [
+          "Wochenende",
+          "am"
+        ],
+        [
+          "Mai",
+          "im"
+        ],
+        [
+          "Winter",
+          "im"
+        ],
+        [
+          "zwei Wochen",
+          "in"
+        ],
+        [
+          "Nacht",
+          "in der"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Time: um, am, im, in",
+        "es": "Tiempo: um, am, im, in"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "um goes with a clock time. Think of English at: at eight, um acht Uhr.",
+            "es": "um va con una hora del reloj. Piensa en «a las»: a las ocho, um acht Uhr."
+          },
+          "examples": [
+            {
+              "es": "Der Film beginnt um acht Uhr.",
+              "tr": {
+                "en": "The film starts at eight o'clock.",
+                "es": "La película empieza a las ocho."
+              }
+            },
+            {
+              "es": "Wir essen um halb eins.",
+              "tr": {
+                "en": "We eat at half past twelve.",
+                "es": "Comemos a las doce y media."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "am goes with days, parts of the day, the weekend and a full date (am Montag, am Morgen, am Wochenende, am 5. Mai). The one exception is in der Nacht.",
+            "es": "am va con días, partes del día, el fin de semana y una fecha completa (am Montag, am Morgen, am Wochenende, am 5. Mai). La única excepción es in der Nacht."
+          },
+          "examples": [
+            {
+              "es": "Am Montag habe ich Unterricht.",
+              "tr": {
+                "en": "On Monday I have class.",
+                "es": "El lunes tengo clase."
+              }
+            },
+            {
+              "es": "Am Wochenende bin ich zu Hause.",
+              "tr": {
+                "en": "At the weekend I am at home.",
+                "es": "El fin de semana estoy en casa."
+              }
+            },
+            {
+              "es": "In der Nacht schlafen die Kinder.",
+              "tr": {
+                "en": "At night the children sleep.",
+                "es": "En la noche los niños duermen."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "im goes with months and seasons: im Mai, im Winter. English uses in here, too.",
+            "es": "im va con meses y estaciones: im Mai, im Winter. En español también se dice «en»."
+          },
+          "examples": [
+            {
+              "es": "Mein Geburtstag ist im Mai.",
+              "tr": {
+                "en": "My birthday is in May.",
+                "es": "Mi cumpleaños es en mayo."
+              }
+            },
+            {
+              "es": "Im Winter ist es kalt.",
+              "tr": {
+                "en": "In winter it is cold.",
+                "es": "En invierno hace frío."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "in goes with a span of time counted from now (in zwei Wochen = two weeks from now). nach and vor with the dative mean after and before.",
+            "es": "in va con un plazo contado desde ahora (in zwei Wochen = dentro de dos semanas). nach y vor con dativo significan «después de» y «antes de»."
+          },
+          "examples": [
+            {
+              "es": "Der Zug kommt in zehn Minuten.",
+              "tr": {
+                "en": "The train arrives in ten minutes.",
+                "es": "El tren llega en diez minutos."
+              }
+            },
+            {
+              "es": "Nach der Arbeit gehe ich nach Hause.",
+              "tr": {
+                "en": "After work I go home.",
+                "es": "Después del trabajo me voy a casa."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "von ... bis ... names a period from a start to an end.",
+            "es": "von ... bis ... nombra un periodo desde un inicio hasta un final."
+          },
+          "examples": [
+            {
+              "es": "Ich arbeite von Montag bis Freitag.",
+              "tr": {
+                "en": "I work from Monday to Friday.",
+                "es": "Trabajo de lunes a viernes."
+              }
+            },
+            {
+              "es": "Anna ist von Mai bis Juli in Berlin.",
+              "tr": {
+                "en": "Anna is in Berlin from May to July.",
+                "es": "Anna está en Berlín de mayo a julio."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "ortspraepositionen",
+      "title": {
+        "en": "Places and their preposition",
+        "es": "Lugares y su preposición"
+      },
+      "header": [
+        {
+          "en": "Place",
+          "es": "Lugar"
+        },
+        {
+          "en": "Präposition",
+          "es": "Präposition"
+        }
+      ],
+      "rows": [
+        [
+          "Büro",
+          "im"
+        ],
+        [
+          "Schule",
+          "in der"
+        ],
+        [
+          "Supermarkt",
+          "im"
+        ],
+        [
+          "Bahnhof",
+          "am"
+        ],
+        [
+          "Haltestelle",
+          "an der"
+        ],
+        [
+          "Strand",
+          "am"
+        ],
+        [
+          "Straße",
+          "auf der"
+        ],
+        [
+          "Markt",
+          "auf dem"
+        ],
+        [
+          "Arzt",
+          "beim"
+        ],
+        [
+          "Anna",
+          "bei"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Place: in, an, auf, bei",
+        "es": "Lugar: in, an, auf, bei"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "in means inside a room, a building, a city or a country: im Büro, in der Schule, in Berlin.",
+            "es": "in significa dentro de una habitación, un edificio, una ciudad o un país: im Büro, in der Schule, in Berlin."
+          },
+          "examples": [
+            {
+              "es": "Mein Vater ist im Büro.",
+              "tr": {
+                "en": "My father is in the office.",
+                "es": "Mi papá está en la oficina."
+              }
+            },
+            {
+              "es": "Die Kinder sind in der Schule.",
+              "tr": {
+                "en": "The children are at school.",
+                "es": "Los niños están en la escuela."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "an means at the edge or at one point: at the water, at a window, at a stop.",
+            "es": "an significa en el borde o en un punto: junto al agua, a la ventana, en una parada."
+          },
+          "examples": [
+            {
+              "es": "Wir warten an der Haltestelle.",
+              "tr": {
+                "en": "We are waiting at the bus stop.",
+                "es": "Esperamos en la parada."
+              }
+            },
+            {
+              "es": "Die Kinder spielen am Strand.",
+              "tr": {
+                "en": "The children play on the beach.",
+                "es": "Los niños juegan en la playa."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "auf means on top of a surface or in an open public place: auf dem Tisch, auf der Straße, auf dem Markt.",
+            "es": "auf significa encima de una superficie o en un lugar público abierto: auf dem Tisch, auf der Straße, auf dem Markt."
+          },
+          "examples": [
+            {
+              "es": "Das Buch ist auf dem Tisch.",
+              "tr": {
+                "en": "The book is on the table.",
+                "es": "El libro está sobre la mesa."
+              }
+            },
+            {
+              "es": "Ich bin auf dem Markt.",
+              "tr": {
+                "en": "I am at the market.",
+                "es": "Estoy en el mercado."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "bei means at somebody's place or business: bei Anna, beim Arzt, beim Bäcker. The fixed phrase zu Hause means at home.",
+            "es": "bei significa en casa o en el negocio de alguien: bei Anna, beim Arzt, beim Bäcker. La expresión fija zu Hause significa «en casa»."
+          },
+          "examples": [
+            {
+              "es": "Ich bin heute bei Anna.",
+              "tr": {
+                "en": "Today I am at Anna's.",
+                "es": "Hoy estoy en casa de Anna."
+              }
+            },
+            {
+              "es": "Meine Mutter ist beim Arzt.",
+              "tr": {
+                "en": "My mother is at the doctor's.",
+                "es": "Mi mamá está con el médico."
+              }
+            },
+            {
+              "es": "Am Sonntag sind wir zu Hause.",
+              "tr": {
+                "en": "On Sunday we are at home.",
+                "es": "El domingo estamos en casa."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "kontraktionen",
+      "title": {
+        "en": "Short forms",
+        "es": "Formas cortas"
+      },
+      "header": [
+        {
+          "en": "Long form",
+          "es": "Forma larga"
+        },
+        {
+          "en": "Short form",
+          "es": "Forma corta"
+        }
+      ],
+      "rows": [
+        [
+          "an dem",
+          "am"
+        ],
+        [
+          "in dem",
+          "im"
+        ],
+        [
+          "bei dem",
+          "beim"
+        ],
+        [
+          "von dem",
+          "vom"
+        ]
+      ],
+      "noTableDeck": true
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Which preposition?",
+        "es": "¿Qué preposición?"
+      },
+      "pairs": [
+        {
+          "a": "um acht Uhr",
+          "b": "am Montag",
+          "note": {
+            "en": "um answers the question what time (a clock time); am answers which day or which part of the day. Do not mix them up: not am acht Uhr, not um Montag.",
+            "es": "um responde a «¿a qué hora?» (una hora del reloj); am responde a «¿qué día?» o «¿qué parte del día?». No los mezcles: no am acht Uhr, no um Montag."
+          },
+          "examples": [
+            {
+              "es": "Um neun Uhr lerne ich Deutsch.",
+              "tr": {
+                "en": "At nine o'clock I study German.",
+                "es": "A las nueve estudio alemán."
+              }
+            },
+            {
+              "es": "Am Freitag lerne ich Deutsch.",
+              "tr": {
+                "en": "On Friday I study German.",
+                "es": "El viernes estudio alemán."
+              }
+            }
+          ]
+        },
+        {
+          "a": "im Mai",
+          "b": "in zwei Wochen",
+          "note": {
+            "en": "Both use in, but im Mai names a month on the calendar, while in zwei Wochen counts from today. The month takes the article (in dem = im), the span does not.",
+            "es": "Las dos usan in, pero im Mai nombra un mes del calendario, mientras que in zwei Wochen cuenta desde hoy. El mes lleva artículo (in dem = im); el plazo no."
+          },
+          "examples": [
+            {
+              "es": "Im Juli habe ich Urlaub.",
+              "tr": {
+                "en": "In July I am on vacation.",
+                "es": "En julio tengo vacaciones."
+              }
+            },
+            {
+              "es": "In zwei Wochen habe ich Urlaub.",
+              "tr": {
+                "en": "In two weeks I am on vacation.",
+                "es": "Dentro de dos semanas tengo vacaciones."
+              }
+            }
+          ]
+        },
+        {
+          "a": "am Abend",
+          "b": "in der Nacht",
+          "note": {
+            "en": "Most parts of the day take am (am Morgen, am Mittag, am Abend). Nacht is the exception: in der Nacht.",
+            "es": "La mayoría de las partes del día llevan am (am Morgen, am Mittag, am Abend). Nacht es la excepción: in der Nacht."
+          },
+          "examples": [
+            {
+              "es": "Am Abend sind wir zu Hause.",
+              "tr": {
+                "en": "In the evening we are at home.",
+                "es": "En la noche estamos en casa."
+              }
+            },
+            {
+              "es": "In der Nacht ist es ruhig.",
+              "tr": {
+                "en": "At night it is quiet.",
+                "es": "Por la noche hay tranquilidad."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: do not translate word for word (not in Montag, not am acht Uhr, not im zwei Wochen). A weekday takes am, a month takes im, a clock time takes um. For people and their places use bei, not in (beim Arzt, not im Arzt). And remember the contractions: am, im, beim are the normal spoken and written forms.",
+        "es": "Trampas clásicas: no traduzcas palabra por palabra (no in Montag, no am acht Uhr, no im zwei Wochen). Un día de la semana lleva am, un mes lleva im, una hora del reloj lleva um. Para personas y sus negocios usa bei, no in (beim Arzt, no im Arzt). Y recuerda las contracciones: am, im, beim son las formas normales, habladas y escritas."
+      }
+    }
+  ],
+  "speak": {
+    "en": "Small words tell you when and where. For clock times use «um», «um acht Uhr». For days and parts of the day use «am», «am Montag», «am Abend». For months and seasons use «im», «im Mai», «im Winter». A span counted from now takes «in», «in zwei Wochen». For places, «in» means inside, «im Büro». «An» means at the edge or at a stop, «an der Haltestelle». «Auf» means on a surface, «auf der Straße». And «bei» means at somebody's place, «beim Arzt».",
+    "es": "Las palabras pequeñas dicen cuándo y dónde. Para la hora usa «um», «um acht Uhr». Para días y partes del día usa «am», «am Montag», «am Abend». Para meses y estaciones usa «im», «im Mai», «im Winter». Un plazo contado desde ahora lleva «in», «in zwei Wochen». Para el lugar, «in» significa dentro, «im Büro». «An» significa en el borde o en una parada, «an der Haltestelle». «Auf» significa encima de una superficie, «auf der Straße». Y «bei» significa en casa de alguien, «beim Arzt»."
+  },
+  "items": [
+    {
+      "id": "praepositionen-zeit-ort-c01",
+      "sentence": "Der Film beginnt ___ acht Uhr.",
+      "options": [
+        "um",
+        "am",
+        "im"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "A clock time takes um: um acht Uhr.",
+        "es": "Una hora del reloj lleva um: um acht Uhr."
+      },
+      "wrong": {
+        "am": {
+          "en": "am is for days and parts of the day (am Montag, am Abend), not for a clock time.",
+          "es": "am es para días y partes del día (am Montag, am Abend), no para una hora del reloj."
+        },
+        "im": {
+          "en": "im is for months and seasons (im Mai, im Winter). A clock time needs um.",
+          "es": "im es para meses y estaciones (im Mai, im Winter). Una hora del reloj necesita um."
+        }
+      },
+      "examples": [
+        "Der Zug kommt um neun Uhr.",
+        "Wir essen um halb eins."
+      ],
+      "tr": {
+        "en": "The film starts at eight o'clock.",
+        "es": "La película empieza a las ocho."
+      }
+    },
+    {
+      "id": "praepositionen-zeit-ort-f01",
+      "kind": "form",
+      "verb": "Präposition",
+      "person": "Montag",
+      "answer": "am",
+      "table": "zeitpraepositionen"
+    },
+    {
+      "id": "praepositionen-zeit-ort-c02",
+      "sentence": "Ich habe ___ Montag Unterricht.",
+      "options": [
+        "im",
+        "am",
+        "um"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Days of the week take am (short for an dem): am Montag.",
+        "es": "Los días de la semana llevan am (forma corta de an dem): am Montag."
+      },
+      "wrong": {
+        "im": {
+          "en": "im is for months and seasons (im Mai). A weekday needs am.",
+          "es": "im es para meses y estaciones (im Mai). Un día de la semana necesita am."
+        },
+        "um": {
+          "en": "um is only for clock times (um acht Uhr). A day of the week takes am.",
+          "es": "um es solo para horas del reloj (um acht Uhr). Un día de la semana lleva am."
+        }
+      },
+      "examples": [
+        "Am Dienstag habe ich Zeit.",
+        "Am Freitag kommt Anna."
+      ],
+      "tr": {
+        "en": "I have class on Monday.",
+        "es": "Tengo clase el lunes."
+      }
+    },
+    {
+      "id": "praepositionen-zeit-ort-f02",
+      "kind": "form",
+      "verb": "Präposition",
+      "person": "Büro",
+      "answer": "im",
+      "table": "ortspraepositionen"
+    },
+    {
+      "id": "praepositionen-zeit-ort-c03",
+      "sentence": "Mein Geburtstag ist ___ Mai.",
+      "options": [
+        "um",
+        "am",
+        "im"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Months take im (short for in dem): im Mai.",
+        "es": "Los meses llevan im (forma corta de in dem): im Mai."
+      },
+      "wrong": {
+        "um": {
+          "en": "um is for clock times (um acht Uhr). A month is not a clock time.",
+          "es": "um es para horas del reloj (um acht Uhr). Un mes no es una hora del reloj."
+        },
+        "am": {
+          "en": "am is for days and full dates (am Montag, am 5. Mai), but the month alone takes im.",
+          "es": "am es para días y fechas completas (am Montag, am 5. Mai), pero el mes solo lleva im."
+        }
+      },
+      "examples": [
+        "Mein Bruder hat im Juli Geburtstag.",
+        "Im Dezember ist es kalt."
+      ],
+      "tr": {
+        "en": "My birthday is in May.",
+        "es": "Mi cumpleaños es en mayo."
+      }
+    },
+    {
+      "id": "praepositionen-zeit-ort-f03",
+      "kind": "form",
+      "verb": "Präposition",
+      "person": "acht Uhr",
+      "answer": "um",
+      "table": "zeitpraepositionen"
+    },
+    {
+      "id": "praepositionen-zeit-ort-w01",
+      "kind": "why",
+      "es": "Ich habe am Montag Unterricht.",
+      "target": "am",
+      "tr": {
+        "en": "I have class on Monday.",
+        "es": "Tengo clase el lunes."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "um + day, because um is the preposition for every time word",
+            "es": "um + día, porque um es la preposición de toda palabra de tiempo"
+          },
+          "wrong": {
+            "en": "um is only for clock times (um acht Uhr). A day of the week is not a clock time.",
+            "es": "um es solo para horas del reloj (um acht Uhr). Un día de la semana no es una hora del reloj."
+          }
+        },
+        {
+          "text": {
+            "en": "am (an dem) + day or part of the day",
+            "es": "am (an dem) + día o parte del día"
+          }
+        },
+        {
+          "text": {
+            "en": "im (in dem) + day, because Montag is masculine",
+            "es": "im (in dem) + día, porque Montag es masculino"
+          },
+          "wrong": {
+            "en": "im is for months and seasons (im Mai, im Winter). The gender of Montag does not decide it: every weekday takes am.",
+            "es": "im es para meses y estaciones (im Mai, im Winter). El género de Montag no decide: todos los días de la semana llevan am."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "praepositionen-zeit-ort-c04",
+      "sentence": "Heute bin ich ___ Anna.",
+      "options": [
+        "bei",
+        "in",
+        "auf"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "To be at somebody's place, German uses bei: bei Anna.",
+        "es": "Para estar en casa de alguien, el alemán usa bei: bei Anna."
+      },
+      "wrong": {
+        "in": {
+          "en": "in means inside a room or a building. A person is not a place you can be inside of, so you need bei.",
+          "es": "in significa dentro de una habitación o un edificio. Una persona no es un lugar en el que se pueda estar dentro, así que necesitas bei."
+        },
+        "auf": {
+          "en": "auf is for surfaces and open places (auf dem Tisch, auf der Straße). Somebody's home or visit takes bei.",
+          "es": "auf es para superficies y lugares abiertos (auf dem Tisch, auf der Straße). La casa o la visita de alguien lleva bei."
+        }
+      },
+      "examples": [
+        "Wir sind heute bei Paul.",
+        "Ich lerne bei Anna."
+      ],
+      "tr": {
+        "en": "Today I am at Anna's.",
+        "es": "Hoy estoy en casa de Anna."
+      }
+    },
+    {
+      "id": "praepositionen-zeit-ort-f04",
+      "kind": "form",
+      "verb": "Präposition",
+      "person": "Schule",
+      "answer": "in der",
+      "table": "ortspraepositionen"
+    },
+    {
+      "id": "praepositionen-zeit-ort-c05",
+      "sentence": "Meine Schwester kommt ___ zwei Wochen.",
+      "options": [
+        "am",
+        "in",
+        "um"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "A span counted from now takes in: in zwei Wochen means two weeks from today.",
+        "es": "Un plazo contado desde ahora lleva in: in zwei Wochen significa dentro de dos semanas."
+      },
+      "wrong": {
+        "am": {
+          "en": "am is for a named day or part of the day, not for a number of weeks counted from now.",
+          "es": "am es para un día con nombre o una parte del día, no para un número de semanas contado desde ahora."
+        },
+        "um": {
+          "en": "um is only for clock times (um acht Uhr). Two weeks are a span of time, so you need in.",
+          "es": "um es solo para horas del reloj (um acht Uhr). Dos semanas son un plazo, así que necesitas in."
+        }
+      },
+      "examples": [
+        "Der Bus kommt in fünf Minuten.",
+        "In drei Stunden haben wir Zeit."
+      ],
+      "tr": {
+        "en": "My sister is coming in two weeks.",
+        "es": "Mi hermana viene dentro de dos semanas."
+      }
+    },
+    {
+      "id": "praepositionen-zeit-ort-f05",
+      "kind": "form",
+      "verb": "Präposition",
+      "person": "Mai",
+      "answer": "im",
+      "table": "zeitpraepositionen"
+    },
+    {
+      "id": "praepositionen-zeit-ort-c06",
+      "sentence": "Wir essen ___ Abend Pizza.",
+      "options": [
+        "am",
+        "im",
+        "um"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Parts of the day take am: am Morgen, am Mittag, am Abend.",
+        "es": "Las partes del día llevan am: am Morgen, am Mittag, am Abend."
+      },
+      "wrong": {
+        "im": {
+          "en": "im is for months and seasons. A part of the day takes am.",
+          "es": "im es para meses y estaciones. Una parte del día lleva am."
+        },
+        "um": {
+          "en": "um is for exact clock times (um acht Uhr). Abend is a part of the day, not a time on the clock.",
+          "es": "um es para horas exactas del reloj (um acht Uhr). Abend es una parte del día, no una hora del reloj."
+        }
+      },
+      "examples": [
+        "Am Morgen trinke ich Kaffee.",
+        "Am Nachmittag spielen die Kinder im Park."
+      ],
+      "tr": {
+        "en": "In the evening we eat pizza.",
+        "es": "En la noche comemos pizza."
+      }
+    },
+    {
+      "id": "praepositionen-zeit-ort-f06",
+      "kind": "form",
+      "verb": "Präposition",
+      "person": "Haltestelle",
+      "answer": "an der",
+      "table": "ortspraepositionen"
+    },
+    {
+      "id": "praepositionen-zeit-ort-w02",
+      "kind": "why",
+      "es": "Mein Geburtstag ist im Mai.",
+      "target": "im",
+      "tr": {
+        "en": "My birthday is in May.",
+        "es": "Mi cumpleaños es en mayo."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "am + month, as with days",
+            "es": "am + mes, como con los días"
+          },
+          "wrong": {
+            "en": "am works with days and parts of the day (am Montag, am Abend). Months and seasons take im.",
+            "es": "am funciona con días y partes del día (am Montag, am Abend). Los meses y las estaciones llevan im."
+          }
+        },
+        {
+          "text": {
+            "en": "in + month, with no article",
+            "es": "in + mes, sin artículo"
+          },
+          "wrong": {
+            "en": "in without an article is used for a span counted from now (in zwei Wochen). The month Mai takes in dem, written im.",
+            "es": "in sin artículo se usa para un plazo contado desde ahora (in zwei Wochen). El mes Mai lleva in dem, escrito im."
+          }
+        },
+        {
+          "text": {
+            "en": "im (in dem) + month or season",
+            "es": "im (in dem) + mes o estación"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "praepositionen-zeit-ort-c07",
+      "sentence": "Es ist ruhig ___ der Nacht.",
+      "options": [
+        "um",
+        "am",
+        "in"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Nacht is the exception among the parts of the day: it says in der Nacht, not am Nacht.",
+        "es": "Nacht es la excepción entre las partes del día: se dice in der Nacht, no am Nacht."
+      },
+      "wrong": {
+        "um": {
+          "en": "um is for exact clock times (um zwei Uhr). With Nacht the fixed phrase is in der Nacht.",
+          "es": "um es para horas exactas del reloj (um zwei Uhr). Con Nacht la expresión fija es in der Nacht."
+        },
+        "am": {
+          "en": "am (an dem) cannot stand before der, and Nacht is the exception to the am rule for parts of the day.",
+          "es": "am (an dem) no puede ir antes de der, y Nacht es la excepción a la regla de am para las partes del día."
+        }
+      },
+      "examples": [
+        "In der Nacht schlafe ich.",
+        "Es ist dunkel in der Nacht."
+      ],
+      "tr": {
+        "en": "It is quiet at night.",
+        "es": "Está tranquilo en la noche."
+      }
+    },
+    {
+      "id": "praepositionen-zeit-ort-f07",
+      "kind": "form",
+      "verb": "Präposition",
+      "person": "zwei Wochen",
+      "answer": "in",
+      "table": "zeitpraepositionen"
+    },
+    {
+      "id": "praepositionen-zeit-ort-c08",
+      "sentence": "Ich arbeite ___ Montag bis Freitag.",
+      "options": [
+        "von",
+        "vor",
+        "nach"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "A period with a start and an end is von ... bis ...: von Montag bis Freitag.",
+        "es": "Un periodo con inicio y final es von ... bis ...: von Montag bis Freitag."
+      },
+      "wrong": {
+        "vor": {
+          "en": "vor means before (vor dem Essen). It does not start a period that ends with bis.",
+          "es": "vor significa «antes de» (vor dem Essen). No inicia un periodo que termina con bis."
+        },
+        "nach": {
+          "en": "nach means after (nach der Arbeit). For a period with bis you need von.",
+          "es": "nach significa «después de» (nach der Arbeit). Para un periodo con bis necesitas von."
+        }
+      },
+      "examples": [
+        "Ich lerne von zehn bis zwölf Uhr.",
+        "Anna ist von Mai bis Juli in Berlin."
+      ],
+      "tr": {
+        "en": "I work from Monday to Friday.",
+        "es": "Trabajo de lunes a viernes."
+      }
+    },
+    {
+      "id": "praepositionen-zeit-ort-f08",
+      "kind": "form",
+      "verb": "Präposition",
+      "person": "Straße",
+      "answer": "auf der",
+      "table": "ortspraepositionen"
+    },
+    {
+      "id": "praepositionen-zeit-ort-c09",
+      "sentence": "Mein Vater arbeitet ___ Büro.",
+      "options": [
+        "am",
+        "in",
+        "im"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Inside a room or building you use in, and with the neuter noun Büro it becomes im (in dem).",
+        "es": "Dentro de una habitación o un edificio se usa in, y con el sustantivo neutro Büro se convierte en im (in dem)."
+      },
+      "wrong": {
+        "am": {
+          "en": "am (an dem) means at the edge of something, for example am Strand. Working inside an office is in.",
+          "es": "am (an dem) significa en el borde de algo, por ejemplo am Strand. Trabajar dentro de una oficina es in."
+        },
+        "in": {
+          "en": "in is the right idea, but the noun needs its article: in dem Büro, written im Büro. in Büro alone is not correct.",
+          "es": "in es la idea correcta, pero el sustantivo necesita su artículo: in dem Büro, escrito im Büro. in Büro solo no es correcto."
+        }
+      },
+      "examples": [
+        "Ich bin im Supermarkt.",
+        "Die Kinder sind im Park."
+      ],
+      "tr": {
+        "en": "My father works at the office.",
+        "es": "Mi papá trabaja en la oficina."
+      }
+    },
+    {
+      "id": "praepositionen-zeit-ort-f09",
+      "kind": "form",
+      "verb": "Präposition",
+      "person": "Nacht",
+      "answer": "in der",
+      "table": "zeitpraepositionen"
+    },
+    {
+      "id": "praepositionen-zeit-ort-w03",
+      "kind": "why",
+      "es": "Der Film beginnt um acht Uhr.",
+      "target": "um",
+      "tr": {
+        "en": "The film starts at eight o'clock.",
+        "es": "La película empieza a las ocho."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "um + clock time",
+            "es": "um + hora del reloj"
+          }
+        },
+        {
+          "text": {
+            "en": "am + clock time, because the film is on one day",
+            "es": "am + hora del reloj, porque la película es en un día"
+          },
+          "wrong": {
+            "en": "am is for days and parts of the day, not for clock times. The clock time acht Uhr takes um.",
+            "es": "am es para días y partes del día, no para horas del reloj. La hora acht Uhr lleva um."
+          }
+        },
+        {
+          "text": {
+            "en": "in + clock time, for a point in the near future",
+            "es": "in + hora del reloj, para un punto en el futuro cercano"
+          },
+          "wrong": {
+            "en": "in names a span counted from now (in zwei Stunden), not a fixed clock time. A fixed clock time is um.",
+            "es": "in nombra un plazo contado desde ahora (in zwei Stunden), no una hora fija del reloj. Una hora fija del reloj es um."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "praepositionen-zeit-ort-c10",
+      "sentence": "Das Wasser ist ___ der Flasche.",
+      "options": [
+        "auf",
+        "in",
+        "an"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Something inside a container is in: in der Flasche.",
+        "es": "Algo dentro de un recipiente está in: in der Flasche."
+      },
+      "wrong": {
+        "auf": {
+          "en": "auf means on top of a surface. Water inside a bottle is not on it but in it.",
+          "es": "auf significa encima de una superficie. El agua dentro de una botella no está encima, sino dentro."
+        },
+        "an": {
+          "en": "an means at the edge or side of something (an der Wand). Water inside a bottle is in der Flasche.",
+          "es": "an significa en el borde o al lado de algo (an der Wand). El agua dentro de una botella está in der Flasche."
+        }
+      },
+      "examples": [
+        "Das Handy ist in der Tasche.",
+        "Die Milch ist im Kühlschrank."
+      ],
+      "tr": {
+        "en": "The water is in the bottle.",
+        "es": "El agua está en la botella."
+      }
+    },
+    {
+      "id": "praepositionen-zeit-ort-f10",
+      "kind": "form",
+      "verb": "Präposition",
+      "person": "Arzt",
+      "answer": "beim",
+      "table": "ortspraepositionen"
+    },
+    {
+      "id": "praepositionen-zeit-ort-c11",
+      "sentence": "Die Kinder spielen ___ Strand.",
+      "options": [
+        "am",
+        "im",
+        "um"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Places at the water take an: am Strand, am Meer, am See, am Fluss.",
+        "es": "Los lugares junto al agua llevan an: am Strand, am Meer, am See, am Fluss."
+      },
+      "wrong": {
+        "im": {
+          "en": "im (in dem) means inside something. You are at the beach, not inside it, so you need am.",
+          "es": "im (in dem) significa dentro de algo. Estás en la playa, no dentro de ella, así que necesitas am."
+        },
+        "um": {
+          "en": "um is for clock times and does not describe a place here. A place at the water takes an, here am.",
+          "es": "um es para horas del reloj y aquí no describe un lugar. Un lugar junto al agua lleva an, aquí am."
+        }
+      },
+      "examples": [
+        "Wir sind am Meer.",
+        "Das Hotel ist am See."
+      ],
+      "tr": {
+        "en": "The children are playing on the beach.",
+        "es": "Los niños juegan en la playa."
+      }
+    },
+    {
+      "id": "praepositionen-zeit-ort-f11",
+      "kind": "form",
+      "verb": "Präposition",
+      "person": "Wochenende",
+      "answer": "am",
+      "table": "zeitpraepositionen"
+    },
+    {
+      "id": "praepositionen-zeit-ort-c12",
+      "sentence": "Ich warte ___ der Haltestelle.",
+      "options": [
+        "in",
+        "auf",
+        "an"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "You stand at a stop, at one point: an der Haltestelle.",
+        "es": "Estás de pie en una parada, en un punto: an der Haltestelle."
+      },
+      "wrong": {
+        "in": {
+          "en": "in means inside a room or a building. A bus stop is a point where you stand, not a room, so you need an.",
+          "es": "in significa dentro de una habitación o un edificio. Una parada es un punto donde estás de pie, no una habitación, así que necesitas an."
+        },
+        "auf": {
+          "en": "auf means on a surface or in an open public place (auf der Straße). At a bus stop the usual preposition is an.",
+          "es": "auf significa encima de una superficie o en un lugar público abierto (auf der Straße). En una parada la preposición habitual es an."
+        }
+      },
+      "examples": [
+        "Paul steht an der Tür.",
+        "Der Tisch steht am Fenster."
+      ],
+      "tr": {
+        "en": "I am waiting at the bus stop.",
+        "es": "Espero en la parada."
+      }
+    },
+    {
+      "id": "praepositionen-zeit-ort-f12",
+      "kind": "form",
+      "verb": "Präposition",
+      "person": "Markt",
+      "answer": "auf dem",
+      "table": "ortspraepositionen"
+    },
+    {
+      "id": "praepositionen-zeit-ort-c13",
+      "sentence": "Der Hund läuft ___ der Straße.",
+      "options": [
+        "bei",
+        "auf",
+        "am"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Streets, squares and markets are open public places and take auf: auf der Straße.",
+        "es": "Las calles, las plazas y los mercados son lugares públicos abiertos y llevan auf: auf der Straße."
+      },
+      "wrong": {
+        "bei": {
+          "en": "bei is for being at a person or a business (bei Anna, beim Arzt), not for a street.",
+          "es": "bei es para estar en casa o en el negocio de alguien (bei Anna, beim Arzt), no para una calle."
+        },
+        "am": {
+          "en": "am is short for an dem, but Straße is feminine (an der). And an der Straße would mean next to the street, not on it.",
+          "es": "am es la forma corta de an dem, pero Straße es femenino (an der). Y an der Straße significaría «junto a la calle», no «en la calle»."
+        }
+      },
+      "examples": [
+        "Die Kinder spielen auf der Straße.",
+        "Wir sind auf dem Markt."
+      ],
+      "tr": {
+        "en": "The dog is running on the street.",
+        "es": "El perro corre en la calle."
+      }
+    },
+    {
+      "id": "praepositionen-zeit-ort-c14",
+      "sentence": "Anna ist heute ___ Arzt.",
+      "options": [
+        "im",
+        "beim",
+        "am"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "At a person's office or business you use bei, and bei dem is shortened to beim: beim Arzt.",
+        "es": "En el consultorio o negocio de una persona se usa bei, y bei dem se acorta a beim: beim Arzt."
+      },
+      "wrong": {
+        "im": {
+          "en": "im would put you inside the doctor, who is a person. For a visit at a doctor, a baker or a friend, German uses bei.",
+          "es": "im te pondría dentro del médico, que es una persona. Para una visita al médico, al panadero o a un amigo, el alemán usa bei."
+        },
+        "am": {
+          "en": "am means at the edge or at the water (am Strand). It does not describe a visit at somebody's place.",
+          "es": "am significa en el borde o junto al agua (am Strand). No describe una visita en casa o en el negocio de alguien."
+        }
+      },
+      "examples": [
+        "Paul ist beim Bäcker.",
+        "Meine Mutter ist beim Arzt."
+      ],
+      "tr": {
+        "en": "Anna is at the doctor's today.",
+        "es": "Hoy Anna está con el médico."
+      }
+    },
+    {
+      "id": "praepositionen-zeit-ort-w04",
+      "kind": "why",
+      "es": "Meine Mutter ist beim Arzt.",
+      "target": "beim",
+      "tr": {
+        "en": "My mother is at the doctor's.",
+        "es": "Mi mamá está con el médico."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "im (in dem): the doctor's office is a room",
+            "es": "im (in dem): el consultorio es una habitación"
+          },
+          "wrong": {
+            "en": "The noun is Arzt, a person, not a room. With people and their business German uses bei, not in.",
+            "es": "El sustantivo es Arzt, una persona, no una habitación. Con personas y su negocio el alemán usa bei, no in."
+          }
+        },
+        {
+          "text": {
+            "en": "beim (bei dem): you are at a person's place or business",
+            "es": "beim (bei dem): estás en casa o en el negocio de una persona"
+          }
+        },
+        {
+          "text": {
+            "en": "am (an dem): the doctor is at the edge of something",
+            "es": "am (an dem): el médico está en el borde de algo"
+          },
+          "wrong": {
+            "en": "am means at the edge or at the water (am Strand). It does not describe a visit at somebody's place.",
+            "es": "am significa en el borde o junto al agua (am Strand). No describe una visita en casa o en el negocio de alguien."
+          }
+        }
+      ],
+      "correctIndex": 1
+    }
+  ]
+}

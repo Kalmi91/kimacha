@@ -27,6 +27,7 @@ export default {
     progressChange: (from: number | null, to: number) => (from === null ? `${to}%` : `${from}% → ${to}%`),
     oneMoreRound: 'one more round',
     soonLong: 'This lesson has not been written yet. It is on the list, and the rest of the level is already open.',
+    noCourse: 'There is no German grammar course yet. It is on the way.',
     footNote: 'The whole grammar of the language, A1 to C1, in teaching order. Lessons marked "coming" are planned, not written yet.',
     ruleLabel: 'The rule',
     examplesLabel: 'Examples',
@@ -74,6 +75,8 @@ export default {
     runProgress: (done: number, total: number, pct: number) => `${done}/${total} · ${pct}%`,
     // button of the el / la article-chooser task (only where such a set exists).
     startArticle: (n: number) => `El or la? (${n})`,
+    // the same for the German course (der / die / das).
+    startArticleDe: (n: number) => `Der, die or das? (${n})`,
     // temporary, new task kinds (error finder, word order, dictation).
     startSpot: (n: number) => `Spot the mistake (${n})`,
     startOrder: (n: number) => `Word order (${n})`,
@@ -86,6 +89,33 @@ export default {
     dictationHint: 'Listen and type what you hear',
     dictationPlay: 'Play',
     dictationSlow: 'Slower',
+  },
+  // app/grammar/tense-drill.tsx: the German tense drill (type the verb form for a person and a tense).
+  tenseDrill: {
+    start: 'Tense drill',
+    blurb: 'Type the verb form: present, perfect, preterite, future, Konjunktiv II',
+    title: 'German tenses',
+    levelLabel: 'Level',
+    tenseLabel: 'Tense',
+    mixed: 'All tenses of the level',
+    tenseNames: { praesens: 'Präsens', perfekt: 'Perfekt', praeteritum: 'Präteritum', futur1: 'Futur I', konjunktiv2: 'Konjunktiv II' },
+    tenseHints: {
+      praesens: 'present',
+      perfekt: 'haben / sein + Partizip II',
+      praeteritum: 'simple past',
+      futur1: 'werden + infinitive',
+      konjunktiv2: 'würde + infinitive, hätte, wäre, könnte',
+    },
+    begin: 'Start the round',
+    caption: 'Type the form, with the pronoun',
+    ownHint: 'This verb has a Konjunktiv II of its own too',
+    progress: (done: number, total: number) => `${done} / ${total}`,
+    resultTitle: (right: number, total: number) => `${right} of ${total} right`,
+    again: 'Another round',
+    changeChoice: 'Change level or tense',
+    backToCourse: 'Back to the course',
+    yourAnswer: 'Your answer',
+    empty: 'No verbs for this choice yet.',
   },
   // app/grammar/random.tsx: the random grammar round (check, practice, re-check; or a full check).
   randomRound: {

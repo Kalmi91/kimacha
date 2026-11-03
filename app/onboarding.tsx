@@ -16,10 +16,10 @@ import { ActionButton } from '@/components/grammar/Themed';
 import { OnboardingIntro, OnboardingThemeStep } from '@/components/OnboardingSteps';
 
 // Onboarding asks for the direction in two steps, only for the supported pairs
-// (lib/languages.ts supportedPairs): "I speak" (the source: English, Español, Magyar), then "I learn"
-// (the targets that pair list allows for that source, two each). The first choice also decides the UI
+// (lib/languages.ts supportedPairs): "I speak" (the source: English, Español, Magyar, Deutsch), then "I learn"
+// (the targets that pair list allows for that source, the other three). The first choice also decides the UI
 // language (setLanguage to the source language), so the second step, the "Welcome" and the level-picker
-// steps already appear in it (a source without UI strings yet falls back to English). An existing installation never sees this screen
+// steps already appear in it (a source without UI strings yet, German, falls back to English). An existing installation never sees this screen
 // (app/_layout.tsx decides based on getOnboarding()), so the picker does not show up there.
 export default function OnboardingScreen() {
   const { theme } = useTheme();

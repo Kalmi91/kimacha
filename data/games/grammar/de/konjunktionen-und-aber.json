@@ -1,0 +1,1021 @@
+{
+  "schema": 2,
+  "topic": "konjunktionen-und-aber",
+  "level": "A1",
+  "title": {
+    "en": "Joining sentences: und, aber, oder, denn",
+    "es": "Unir frases: und, aber, oder, denn"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "The words und, aber, oder, denn and sondern join two words or two sentences. They stand outside the sentence, in position 0, so they do not change the word order: after them the sentence keeps its normal order, with the verb in second place. You write a comma before aber, denn and sondern. denn means because and works just like und: the verb stays second. The other word for because, weil, sends the verb to the end, and it comes later in the course.",
+        "es": "Las palabras und, aber, oder, denn y sondern unen dos palabras o dos oraciones. Están fuera de la oración, en la posición 0, así que no cambian el orden de las palabras: después de ellas la oración conserva su orden normal, con el verbo en segundo lugar. Antes de aber, denn y sondern se escribe una coma. denn significa «porque» y funciona igual que und: el verbo se queda en segundo lugar. La otra palabra para «porque», weil, manda el verbo al final, y viene más adelante en el curso."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "konjunktionen",
+      "title": {
+        "en": "The five connecting words",
+        "es": "Las cinco palabras de enlace"
+      },
+      "header": [
+        {
+          "en": "Meaning",
+          "es": "Significado"
+        },
+        {
+          "en": "Konjunktion",
+          "es": "Konjunktion"
+        },
+        {
+          "en": "Beispiel",
+          "es": "Beispiel"
+        }
+      ],
+      "rows": [
+        [
+          "Addition",
+          "und",
+          "Anna kocht und Paul spielt Musik."
+        ],
+        [
+          "Gegensatz",
+          "aber",
+          "Ich bin müde, aber ich arbeite."
+        ],
+        [
+          "Alternative",
+          "oder",
+          "Trinkst du Tee oder Kaffee?"
+        ],
+        [
+          "Grund",
+          "denn",
+          "Ich lerne Deutsch, denn ich wohne in Berlin."
+        ],
+        [
+          "Korrektur",
+          "sondern",
+          "Das ist kein Hund, sondern eine Katze."
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "konjunktion-satz",
+      "title": {
+        "en": "The second clause after the connecting word",
+        "es": "La segunda oración después de la palabra de enlace"
+      },
+      "header": [
+        {
+          "en": "Conjunction + verb",
+          "es": "Conjunción + verbo"
+        },
+        {
+          "en": "ich",
+          "es": "ich"
+        },
+        {
+          "en": "du",
+          "es": "du"
+        },
+        {
+          "en": "wir",
+          "es": "wir"
+        }
+      ],
+      "rows": [
+        [
+          "denn + wohnen",
+          "denn ich wohne",
+          "denn du wohnst",
+          "denn wir wohnen"
+        ],
+        [
+          "aber + arbeiten",
+          "aber ich arbeite",
+          "aber du arbeitest",
+          "aber wir arbeiten"
+        ],
+        [
+          "und + kommen",
+          "und ich komme",
+          "und du kommst",
+          "und wir kommen"
+        ],
+        [
+          "oder + gehen",
+          "oder ich gehe",
+          "oder du gehst",
+          "oder wir gehen"
+        ],
+        [
+          "denn + lernen",
+          "denn ich lerne",
+          "denn du lernst",
+          "denn wir lernen"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "What each word does",
+        "es": "Qué hace cada palabra"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "und (Addition) adds something, oder (Alternative) offers a choice. They join words or sentences, and usually there is no comma. If the subject is the same in both parts, you can leave it out the second time.",
+            "es": "und (Addition) añade algo, oder (Alternative) ofrece una opción. Unen palabras u oraciones, y normalmente no llevan coma. Si el sujeto es el mismo en las dos partes, se puede omitir la segunda vez."
+          },
+          "examples": [
+            {
+              "es": "Anna und Paul wohnen in Köln.",
+              "tr": {
+                "en": "Anna and Paul live in Cologne.",
+                "es": "Anna y Paul viven en Colonia."
+              }
+            },
+            {
+              "es": "Ich koche und höre Musik.",
+              "tr": {
+                "en": "I cook and listen to music.",
+                "es": "Cocino y escucho música."
+              }
+            },
+            {
+              "es": "Trinkst du Tee oder Kaffee?",
+              "tr": {
+                "en": "Do you drink tea or coffee?",
+                "es": "¿Tomas té o café?"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "aber (Gegensatz) means but and always has a comma before it. It adds a contrast to what came before.",
+            "es": "aber (Gegensatz) significa «pero» y siempre lleva una coma antes. Añade un contraste a lo anterior."
+          },
+          "examples": [
+            {
+              "es": "Ich bin müde, aber ich arbeite.",
+              "tr": {
+                "en": "I am tired, but I work.",
+                "es": "Estoy cansado, pero trabajo."
+              }
+            },
+            {
+              "es": "Das Brot ist gut, aber teuer.",
+              "tr": {
+                "en": "The bread is good, but expensive.",
+                "es": "El pan es bueno, pero caro."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "denn (Grund) gives the reason and has a comma before it. After denn the order is subject, verb, as in any statement.",
+            "es": "denn (Grund) da la razón y lleva una coma antes. Después de denn el orden es sujeto, verbo, como en cualquier oración enunciativa."
+          },
+          "examples": [
+            {
+              "es": "Ich lerne Deutsch, denn ich wohne in Berlin.",
+              "tr": {
+                "en": "I am learning German, because I live in Berlin.",
+                "es": "Aprendo alemán porque vivo en Berlín."
+              }
+            },
+            {
+              "es": "Anna ist müde, denn sie arbeitet viel.",
+              "tr": {
+                "en": "Anna is tired, because she works a lot.",
+                "es": "Anna está cansada porque trabaja mucho."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "sondern (Korrektur) comes after a negation and corrects it: not this, but that. It also has a comma before it.",
+            "es": "sondern (Korrektur) viene después de una negación y la corrige: no esto, sino aquello. También lleva una coma antes."
+          },
+          "examples": [
+            {
+              "es": "Das ist kein Hund, sondern eine Katze.",
+              "tr": {
+                "en": "That is not a dog, but a cat.",
+                "es": "Eso no es un perro, sino un gato."
+              }
+            },
+            {
+              "es": "Ich wohne nicht in Köln, sondern in Berlin.",
+              "tr": {
+                "en": "I do not live in Cologne, but in Berlin.",
+                "es": "No vivo en Colonia, sino en Berlín."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "The connecting word is in position 0. The next element is in position 1, and the verb stays in position 2. So after und you can see an inversion.",
+            "es": "La palabra de enlace está en la posición 0. El siguiente elemento está en la posición 1, y el verbo se queda en la posición 2. Por eso después de und puede haber una inversión."
+          },
+          "examples": [
+            {
+              "es": "Heute lerne ich Deutsch, und morgen lerne ich Spanisch.",
+              "tr": {
+                "en": "Today I learn German, and tomorrow I learn Spanish.",
+                "es": "Hoy aprendo alemán, y mañana aprendo español."
+              }
+            },
+            {
+              "es": "Ich bin müde, aber heute arbeite ich.",
+              "tr": {
+                "en": "I am tired, but today I work.",
+                "es": "Estoy cansado, pero hoy trabajo."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Pairs that are easy to mix up",
+        "es": "Parejas fáciles de confundir"
+      },
+      "pairs": [
+        {
+          "a": "Das ist kein Hund, sondern eine Katze.",
+          "b": "Ich wohne in Berlin, aber ich arbeite in Köln.",
+          "note": {
+            "en": "sondern needs a negation before it and replaces the wrong part. aber just adds a contrast and needs no negation.",
+            "es": "sondern necesita una negación antes y reemplaza la parte equivocada. aber solo añade un contraste y no necesita negación."
+          },
+          "examples": [
+            {
+              "es": "Ich arbeite nicht, sondern ich lerne.",
+              "tr": {
+                "en": "I am not working, I am studying.",
+                "es": "No trabajo, sino que estudio."
+              }
+            },
+            {
+              "es": "Ich arbeite, aber ich bin müde.",
+              "tr": {
+                "en": "I work, but I am tired.",
+                "es": "Trabajo, pero estoy cansado."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Ich lerne Deutsch, denn ich wohne in Berlin.",
+          "b": "Ich lerne Deutsch und wohne in Berlin.",
+          "note": {
+            "en": "denn gives a reason, so the second part explains the first. und only adds a second fact, and here the subject ich is left out.",
+            "es": "denn da una razón, así que la segunda parte explica la primera. und solo añade un segundo dato, y aquí se omite el sujeto ich."
+          },
+          "examples": [
+            {
+              "es": "Paul ist müde, denn er arbeitet viel.",
+              "tr": {
+                "en": "Paul is tired, because he works a lot.",
+                "es": "Paul está cansado porque trabaja mucho."
+              }
+            },
+            {
+              "es": "Paul ist müde und arbeitet viel.",
+              "tr": {
+                "en": "Paul is tired and works a lot.",
+                "es": "Paul está cansado y trabaja mucho."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: after denn, aber and und the verb stays in second place (denn ich wohne in Berlin, not denn ich in Berlin wohne). Do not use weil yet, its word order is different. Use sondern only after a negation, otherwise use aber. Put a comma before aber, denn and sondern, but normally not before und and oder.",
+        "es": "Trampas clásicas: después de denn, aber y und el verbo se queda en segundo lugar (denn ich wohne in Berlin, no denn ich in Berlin wohne). No uses weil todavía, su orden de palabras es distinto. Usa sondern solo después de una negación, en los demás casos usa aber. Pon una coma antes de aber, denn y sondern, pero normalmente no antes de und y oder. Español: pero es aber y sino es sondern."
+      }
+    }
+  ],
+  "speak": {
+    "en": "The words und, aber, oder, denn and sondern join sentences. They do not change the word order. Say «Ich bin müde, aber ich arbeite». After denn the verb stays in second place: «Ich lerne Deutsch, denn ich wohne in Berlin». Use sondern after a negation: «Das ist kein Hund, sondern eine Katze». And «Trinkst du Tee oder Kaffee?» offers a choice.",
+    "es": "Las palabras und, aber, oder, denn y sondern unen oraciones. No cambian el orden de las palabras. Di «Ich bin müde, aber ich arbeite». Después de denn el verbo se queda en segundo lugar: «Ich lerne Deutsch, denn ich wohne in Berlin». Usa sondern después de una negación: «Das ist kein Hund, sondern eine Katze». Y «Trinkst du Tee oder Kaffee?» ofrece una opción."
+  },
+  "items": [
+    {
+      "id": "konjunktionen-und-aber-c01",
+      "sentence": "Anna ___ Paul wohnen in Köln.",
+      "options": [
+        "und",
+        "aber",
+        "denn"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "und adds one person to another: Anna und Paul wohnen in Köln.",
+        "es": "und añade una persona a otra: Anna und Paul wohnen in Köln."
+      },
+      "wrong": {
+        "aber": {
+          "en": "aber would set the two names against each other, as if they were opposites. Here both live in Cologne, so you need und.",
+          "es": "aber pondría los dos nombres en oposición, como si fueran contrarios. Aquí los dos viven en Colonia, así que necesitas und."
+        },
+        "denn": {
+          "en": "denn introduces a reason and starts a new clause. Here two names are joined, so you need und.",
+          "es": "denn introduce una razón y comienza una nueva oración. Aquí se unen dos nombres, así que necesitas und."
+        }
+      },
+      "examples": [
+        "Paul und Anna arbeiten in Berlin.",
+        "Ich und du wohnen in Köln."
+      ],
+      "tr": {
+        "en": "Anna and Paul live in Cologne.",
+        "es": "Anna y Paul viven en Colonia."
+      }
+    },
+    {
+      "id": "konjunktionen-und-aber-f01",
+      "kind": "form",
+      "verb": "Konjunktion",
+      "person": "Addition",
+      "answer": "und",
+      "table": "konjunktionen"
+    },
+    {
+      "id": "konjunktionen-und-aber-c02",
+      "sentence": "Trinkst du Tee ___ Kaffee?",
+      "options": [
+        "denn",
+        "oder",
+        "sondern"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "oder offers a choice between two things: Trinkst du Tee oder Kaffee?",
+        "es": "oder ofrece una opción entre dos cosas: Trinkst du Tee oder Kaffee?"
+      },
+      "wrong": {
+        "denn": {
+          "en": "denn gives a reason and needs a full clause after it. Tee and Kaffee are two things to choose from, so you need oder.",
+          "es": "denn da una razón y necesita una oración completa después. Tee y Kaffee son dos cosas para elegir, así que necesitas oder."
+        },
+        "sondern": {
+          "en": "sondern only comes after a negation. This question has no negation, so you need oder.",
+          "es": "sondern solo viene después de una negación. Esta pregunta no tiene negación, así que necesitas oder."
+        }
+      },
+      "examples": [
+        "Kommst du heute oder morgen?",
+        "Wohnst du in Köln oder in Berlin?"
+      ],
+      "tr": {
+        "en": "Do you drink tea or coffee?",
+        "es": "¿Tomas té o café?"
+      }
+    },
+    {
+      "id": "konjunktionen-und-aber-f02",
+      "kind": "form",
+      "verb": "ich",
+      "person": "denn + wohnen",
+      "answer": "denn ich wohne",
+      "table": "konjunktion-satz"
+    },
+    {
+      "id": "konjunktionen-und-aber-c03",
+      "sentence": "Das Auto ist alt, ___ es ist sehr schön.",
+      "options": [
+        "denn",
+        "sondern",
+        "aber"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The second part is a nice surprise after the word alt, so it is a contrast and needs aber.",
+        "es": "La segunda parte es una sorpresa agradable después de la palabra alt, así que es un contraste y necesita aber."
+      },
+      "wrong": {
+        "denn": {
+          "en": "denn would say that the car is old because it is beautiful, which makes no sense. The sentence contrasts two ideas, so you need aber.",
+          "es": "denn diría que el carro es viejo porque es bonito, lo cual no tiene sentido. La oración contrasta dos ideas, así que necesitas aber."
+        },
+        "sondern": {
+          "en": "sondern only comes after a negation. There is no negation here, so you need aber.",
+          "es": "sondern solo viene después de una negación. Aquí no hay negación, así que necesitas aber."
+        }
+      },
+      "examples": [
+        "Das Haus ist klein, aber schön.",
+        "Das Essen ist gut, aber es ist teuer."
+      ],
+      "tr": {
+        "en": "The car is old, but it is very beautiful.",
+        "es": "El carro es viejo, pero es muy bonito."
+      }
+    },
+    {
+      "id": "konjunktionen-und-aber-f03",
+      "kind": "form",
+      "verb": "Konjunktion",
+      "person": "Gegensatz",
+      "answer": "aber",
+      "table": "konjunktionen"
+    },
+    {
+      "id": "konjunktionen-und-aber-w01",
+      "kind": "why",
+      "es": "Ich lerne Deutsch, denn ich wohne in Berlin.",
+      "target": "wohne",
+      "tr": {
+        "en": "I am learning German, because I live in Berlin.",
+        "es": "Aprendo alemán porque vivo en Berlín."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "After denn the verb stays in second place, as in a normal sentence",
+            "es": "Después de denn el verbo se queda en segundo lugar, como en una oración normal"
+          }
+        },
+        {
+          "text": {
+            "en": "After denn the verb goes to the end of the clause",
+            "es": "Después de denn el verbo va al final de la oración"
+          },
+          "wrong": {
+            "en": "That is the order after weil, which you learn later. denn does not change the word order, so the verb stays in second place.",
+            "es": "Ese es el orden después de weil, que verás más adelante. denn no cambia el orden de las palabras, así que el verbo se queda en segundo lugar."
+          }
+        },
+        {
+          "text": {
+            "en": "After denn the verb comes first",
+            "es": "Después de denn el verbo va primero"
+          },
+          "wrong": {
+            "en": "The verb comes first only in a yes/no question. After denn the clause is a statement, so the subject comes first: denn ich wohne.",
+            "es": "El verbo va primero solo en una pregunta de sí o no. Después de denn la oración es enunciativa, así que el sujeto va primero: denn ich wohne."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "konjunktionen-und-aber-c04",
+      "sentence": "Ich bin müde, ___ ich arbeite viel.",
+      "options": [
+        "oder",
+        "denn",
+        "sondern"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The second part is the reason for being tired, so you need denn: Ich bin müde, denn ich arbeite viel.",
+        "es": "La segunda parte es la razón del cansancio, así que necesitas denn: Ich bin müde, denn ich arbeite viel."
+      },
+      "wrong": {
+        "oder": {
+          "en": "oder offers a choice. Being tired or working a lot is not a choice here, the second part explains the first, so you need denn.",
+          "es": "oder ofrece una opción. Estar cansado o trabajar mucho no es una opción aquí, la segunda parte explica la primera, así que necesitas denn."
+        },
+        "sondern": {
+          "en": "sondern only comes after a negation. There is no negation here, and the second part gives a reason, so you need denn.",
+          "es": "sondern solo viene después de una negación. Aquí no hay negación, y la segunda parte da una razón, así que necesitas denn."
+        }
+      },
+      "examples": [
+        "Paul geht nach Hause, denn er ist krank.",
+        "Anna kocht, denn sie hat Hunger."
+      ],
+      "tr": {
+        "en": "I am tired because I work a lot.",
+        "es": "Estoy cansado porque trabajo mucho."
+      }
+    },
+    {
+      "id": "konjunktionen-und-aber-f04",
+      "kind": "form",
+      "verb": "du",
+      "person": "aber + arbeiten",
+      "answer": "aber du arbeitest",
+      "table": "konjunktion-satz"
+    },
+    {
+      "id": "konjunktionen-und-aber-c05",
+      "sentence": "Das ist kein Hund, ___ eine Katze.",
+      "options": [
+        "sondern",
+        "aber",
+        "denn"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "After the negation kein Hund the right thing is named with sondern: not a dog, but a cat.",
+        "es": "Después de la negación kein Hund lo correcto se introduce con sondern: no un perro, sino un gato."
+      },
+      "wrong": {
+        "aber": {
+          "en": "aber adds a contrast but does not replace the negated word. To correct kein Hund with eine Katze you need sondern.",
+          "es": "aber añade un contraste pero no reemplaza la palabra negada. Para corregir kein Hund con eine Katze necesitas sondern."
+        },
+        "denn": {
+          "en": "denn introduces a reason and needs a full clause. eine Katze is no reason, it is the correction, so you need sondern.",
+          "es": "denn introduce una razón y necesita una oración completa. eine Katze no es una razón, es la corrección, así que necesitas sondern."
+        }
+      },
+      "examples": [
+        "Das ist kein Tisch, sondern ein Stuhl.",
+        "Das ist keine Suppe, sondern Tee."
+      ],
+      "tr": {
+        "en": "That is not a dog, but a cat.",
+        "es": "Eso no es un perro, sino un gato."
+      }
+    },
+    {
+      "id": "konjunktionen-und-aber-f05",
+      "kind": "form",
+      "verb": "Konjunktion",
+      "person": "Alternative",
+      "answer": "oder",
+      "table": "konjunktionen"
+    },
+    {
+      "id": "konjunktionen-und-aber-c06",
+      "sentence": "Ich wohne nicht in Köln, ___ in Berlin.",
+      "options": [
+        "aber",
+        "oder",
+        "sondern"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The first part is negated (nicht in Köln), and the second part gives the correct place, so you need sondern.",
+        "es": "La primera parte está negada (nicht in Köln), y la segunda parte da el lugar correcto, así que necesitas sondern."
+      },
+      "wrong": {
+        "aber": {
+          "en": "aber does not fit because in Berlin replaces the negated place nicht in Köln. After such a correction you need sondern.",
+          "es": "aber no encaja porque in Berlin reemplaza el lugar negado nicht in Köln. Después de una corrección así necesitas sondern."
+        },
+        "oder": {
+          "en": "oder offers a choice. Here the sentence corrects a wrong place, so you need sondern.",
+          "es": "oder ofrece una opción. Aquí la oración corrige un lugar equivocado, así que necesitas sondern."
+        }
+      },
+      "examples": [
+        "Ich arbeite nicht in Köln, sondern in Hamburg.",
+        "Anna kommt nicht aus Berlin, sondern aus Köln."
+      ],
+      "tr": {
+        "en": "I do not live in Cologne, but in Berlin.",
+        "es": "No vivo en Colonia, sino en Berlín."
+      }
+    },
+    {
+      "id": "konjunktionen-und-aber-f06",
+      "kind": "form",
+      "verb": "wir",
+      "person": "und + kommen",
+      "answer": "und wir kommen",
+      "table": "konjunktion-satz"
+    },
+    {
+      "id": "konjunktionen-und-aber-w02",
+      "kind": "why",
+      "es": "Das ist kein Hund, sondern eine Katze.",
+      "target": "sondern",
+      "tr": {
+        "en": "That is not a dog, but a cat.",
+        "es": "Eso no es un perro, sino un gato."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "aber, because the two parts contrast",
+            "es": "aber, porque las dos partes contrastan"
+          },
+          "wrong": {
+            "en": "aber adds a contrast but does not correct anything. When the first part is negated and the second part replaces it, you need sondern.",
+            "es": "aber añade un contraste pero no corrige nada. Cuando la primera parte está negada y la segunda la reemplaza, necesitas sondern."
+          }
+        },
+        {
+          "text": {
+            "en": "sondern, because it corrects the negated part",
+            "es": "sondern, porque corrige la parte negada"
+          }
+        },
+        {
+          "text": {
+            "en": "denn, because the second part is a reason",
+            "es": "denn, porque la segunda parte es una razón"
+          },
+          "wrong": {
+            "en": "denn introduces a reason with a full clause. eine Katze is not a reason, it is the correct answer, so you need sondern.",
+            "es": "denn introduce una razón con una oración completa. eine Katze no es una razón, es la respuesta correcta, así que necesitas sondern."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "konjunktionen-und-aber-c07",
+      "sentence": "Ich wohne in Berlin, ___ ich arbeite in Köln.",
+      "options": [
+        "sondern",
+        "aber",
+        "denn"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The two facts are in contrast: living in one city, working in another. There is no negation, so you need aber.",
+        "es": "Los dos datos están en contraste: vivir en una ciudad y trabajar en otra. No hay negación, así que necesitas aber."
+      },
+      "wrong": {
+        "sondern": {
+          "en": "sondern needs a negation before it. The first part is not negated, so you need aber.",
+          "es": "sondern necesita una negación antes. La primera parte no está negada, así que necesitas aber."
+        },
+        "denn": {
+          "en": "denn would say that you live in Berlin because you work in Cologne. The sentence contrasts the two cities, so you need aber.",
+          "es": "denn diría que vives en Berlín porque trabajas en Colonia. La oración contrasta las dos ciudades, así que necesitas aber."
+        }
+      },
+      "examples": [
+        "Ich wohne in Köln, aber ich arbeite in Hamburg.",
+        "Anna wohnt hier, aber sie arbeitet dort."
+      ],
+      "tr": {
+        "en": "I live in Berlin, but I work in Cologne.",
+        "es": "Vivo en Berlín, pero trabajo en Colonia."
+      }
+    },
+    {
+      "id": "konjunktionen-und-aber-f07",
+      "kind": "form",
+      "verb": "Konjunktion",
+      "person": "Grund",
+      "answer": "denn",
+      "table": "konjunktionen"
+    },
+    {
+      "id": "konjunktionen-und-aber-c08",
+      "sentence": "Ich lerne Deutsch, denn ___ in Berlin.",
+      "options": [
+        "ich wohne",
+        "wohne ich",
+        "ich wohnst"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "After denn the clause has the normal order: subject, verb. So you say denn ich wohne in Berlin.",
+        "es": "Después de denn la oración tiene el orden normal: sujeto, verbo. Por eso se dice denn ich wohne in Berlin."
+      },
+      "wrong": {
+        "wohne ich": {
+          "en": "wohne ich turns the order around, but denn is in position 0 and the subject stays in position 1. The order is ich wohne.",
+          "es": "wohne ich invierte el orden, pero denn está en la posición 0 y el sujeto se queda en la posición 1. El orden es ich wohne."
+        },
+        "ich wohnst": {
+          "en": "The order is right, but wohnst is the du-form. With ich the verb is wohne.",
+          "es": "El orden es correcto, pero wohnst es la forma de du. Con ich el verbo es wohne."
+        }
+      },
+      "examples": [
+        "Anna lernt Deutsch, denn sie wohnt in Köln.",
+        "Wir lernen Deutsch, denn wir wohnen in Berlin."
+      ],
+      "tr": {
+        "en": "I am learning German, because I live in Berlin.",
+        "es": "Aprendo alemán porque vivo en Berlín."
+      }
+    },
+    {
+      "id": "konjunktionen-und-aber-f08",
+      "kind": "form",
+      "verb": "du",
+      "person": "oder + gehen",
+      "answer": "oder du gehst",
+      "table": "konjunktion-satz"
+    },
+    {
+      "id": "konjunktionen-und-aber-c09",
+      "sentence": "Heute lerne ich Deutsch, und morgen ___ Spanisch.",
+      "options": [
+        "ich lerne",
+        "lerne",
+        "lerne ich"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "und is in position 0, morgen in position 1, so the verb comes next and the subject follows: und morgen lerne ich Spanisch.",
+        "es": "und está en la posición 0, morgen en la posición 1, así que el verbo viene después y el sujeto lo sigue: und morgen lerne ich Spanisch."
+      },
+      "wrong": {
+        "ich lerne": {
+          "en": "ich lerne puts the verb in third place after und morgen. The verb must be second: morgen lerne ich.",
+          "es": "ich lerne pone el verbo en tercer lugar después de und morgen. El verbo debe ser el segundo: morgen lerne ich."
+        },
+        "lerne": {
+          "en": "lerne alone leaves out the subject, but the subject changes from the first part and must be said again: lerne ich.",
+          "es": "lerne solo omite el sujeto, pero aquí hay que decirlo otra vez: lerne ich."
+        }
+      },
+      "examples": [
+        "Ich arbeite heute, und morgen arbeitet Paul.",
+        "Heute koche ich, und dann spielen wir Musik."
+      ],
+      "tr": {
+        "en": "Today I learn German, and tomorrow I learn Spanish.",
+        "es": "Hoy aprendo alemán, y mañana aprendo español."
+      }
+    },
+    {
+      "id": "konjunktionen-und-aber-f09",
+      "kind": "form",
+      "verb": "Konjunktion",
+      "person": "Korrektur",
+      "answer": "sondern",
+      "table": "konjunktionen"
+    },
+    {
+      "id": "konjunktionen-und-aber-w03",
+      "kind": "why",
+      "es": "Ich koche und höre Musik.",
+      "target": "höre",
+      "tr": {
+        "en": "I cook and listen to music.",
+        "es": "Cocino y escucho música."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "The subject must be repeated after und",
+            "es": "El sujeto debe repetirse después de und"
+          },
+          "wrong": {
+            "en": "You may repeat it (Ich koche und ich höre Musik), but with the same subject you can leave it out, so the repeat is not a rule.",
+            "es": "Se puede repetir (Ich koche und ich höre Musik), pero con el mismo sujeto se puede omitir, así que repetirlo no es una regla."
+          }
+        },
+        {
+          "text": {
+            "en": "Without the subject the verb must be the infinitive hören",
+            "es": "Sin el sujeto el verbo debe ser el infinitivo hören"
+          },
+          "wrong": {
+            "en": "The omitted subject is still ich, and the verb keeps the ich-ending: höre. The infinitive is not used.",
+            "es": "El sujeto omitido sigue siendo ich, y el verbo conserva la terminación de ich: höre. No se usa el infinitivo."
+          }
+        },
+        {
+          "text": {
+            "en": "The subject ich is not repeated, and the verb still agrees with it",
+            "es": "El sujeto ich no se repite, y el verbo sigue concordando con él"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "konjunktionen-und-aber-c10",
+      "sentence": "Ich koche und ___ Musik.",
+      "options": [
+        "höre",
+        "hörst",
+        "hören"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "When the subject is the same, you may leave it out after und. The omitted subject is ich, so the verb is höre.",
+        "es": "Cuando el sujeto es el mismo, se puede omitir después de und. El sujeto omitido es ich, así que el verbo es höre."
+      },
+      "wrong": {
+        "hörst": {
+          "en": "hörst is the du-form. The omitted subject is still ich, so the verb must be höre.",
+          "es": "hörst es la forma de du. El sujeto omitido sigue siendo ich, así que el verbo debe ser höre."
+        },
+        "hören": {
+          "en": "hören is the form for wir and sie (they). With the omitted subject ich the verb is höre.",
+          "es": "hören es la forma de wir y de sie (ellos). Con el sujeto omitido ich el verbo es höre."
+        }
+      },
+      "examples": [
+        "Wir kochen und spielen Musik.",
+        "Anna wohnt in Köln und arbeitet in Berlin."
+      ],
+      "tr": {
+        "en": "I cook and listen to music.",
+        "es": "Cocino y escucho música."
+      }
+    },
+    {
+      "id": "konjunktionen-und-aber-f10",
+      "kind": "form",
+      "verb": "wir",
+      "person": "denn + lernen",
+      "answer": "denn wir lernen",
+      "table": "konjunktion-satz"
+    },
+    {
+      "id": "konjunktionen-und-aber-c11",
+      "sentence": "Das Brot ist gut, ___ teuer.",
+      "options": [
+        "denn",
+        "aber",
+        "oder"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The second word is a contrast to gut, so you need aber: gut, aber teuer.",
+        "es": "La segunda palabra contrasta con gut, así que necesitas aber: gut, aber teuer."
+      },
+      "wrong": {
+        "denn": {
+          "en": "denn needs a full clause with a subject and a verb after it. teuer is only one word, and it is a contrast, so you need aber.",
+          "es": "denn necesita una oración completa con sujeto y verbo. teuer es solo una palabra, y es un contraste, así que necesitas aber."
+        },
+        "oder": {
+          "en": "oder offers a choice. gut and teuer are not alternatives here, they are in contrast, so you need aber.",
+          "es": "oder ofrece una opción. gut y teuer no son alternativas aquí, están en contraste, así que necesitas aber."
+        }
+      },
+      "examples": [
+        "Die Suppe ist heiß, aber gut.",
+        "Das Haus ist klein, aber schön."
+      ],
+      "tr": {
+        "en": "The bread is good, but expensive.",
+        "es": "El pan es bueno, pero caro."
+      }
+    },
+    {
+      "id": "konjunktionen-und-aber-f11",
+      "kind": "form",
+      "verb": "ich",
+      "person": "aber + arbeiten",
+      "answer": "aber ich arbeite",
+      "table": "konjunktion-satz"
+    },
+    {
+      "id": "konjunktionen-und-aber-c12",
+      "sentence": "Kommst du heute ___ morgen?",
+      "options": [
+        "denn",
+        "aber",
+        "oder"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The question offers a choice between two days, so you need oder.",
+        "es": "La pregunta ofrece una opción entre dos días, así que necesitas oder."
+      },
+      "wrong": {
+        "denn": {
+          "en": "denn introduces a reason with a full clause. heute and morgen are two days to choose from, so you need oder.",
+          "es": "denn introduce una razón con una oración completa. heute y morgen son dos días para elegir, así que necesitas oder."
+        },
+        "aber": {
+          "en": "aber would make the days a contrast, as if one were against the other. The question asks which day, so you need oder.",
+          "es": "aber haría de los días un contraste, como si uno fuera contrario al otro. La pregunta es cuál día, así que necesitas oder."
+        }
+      },
+      "examples": [
+        "Gehst du nach Hause oder nach Köln?",
+        "Trinkst du Wasser oder Milch?"
+      ],
+      "tr": {
+        "en": "Are you coming today or tomorrow?",
+        "es": "¿Vienes hoy o mañana?"
+      }
+    },
+    {
+      "id": "konjunktionen-und-aber-f12",
+      "kind": "form",
+      "verb": "du",
+      "person": "und + kommen",
+      "answer": "und du kommst",
+      "table": "konjunktion-satz"
+    },
+    {
+      "id": "konjunktionen-und-aber-c13",
+      "sentence": "Ich bin müde, aber heute ___.",
+      "options": [
+        "arbeite ich",
+        "ich arbeite",
+        "arbeiten ich"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "aber is in position 0, heute in position 1, so the verb comes next and the subject follows: aber heute arbeite ich.",
+        "es": "aber está en la posición 0, heute en la posición 1, así que el verbo viene después y el sujeto lo sigue: aber heute arbeite ich."
+      },
+      "wrong": {
+        "ich arbeite": {
+          "en": "ich arbeite would put the verb in third place after aber heute. The verb must be second: heute arbeite ich.",
+          "es": "ich arbeite pondría el verbo en tercer lugar después de aber heute. El verbo debe ser el segundo: heute arbeite ich."
+        },
+        "arbeiten ich": {
+          "en": "The order is right, but arbeiten is the form for wir and sie (they). With ich the verb is arbeite.",
+          "es": "El orden es correcto, pero arbeiten es la forma de wir y de sie (ellos). Con ich el verbo es arbeite."
+        }
+      },
+      "examples": [
+        "Anna ist krank, aber heute kommt sie.",
+        "Wir sind müde, aber heute lernen wir."
+      ],
+      "tr": {
+        "en": "I am tired, but today I work.",
+        "es": "Estoy cansado, pero hoy trabajo."
+      }
+    },
+    {
+      "id": "konjunktionen-und-aber-c14",
+      "sentence": "Paul geht nach Hause, denn ___ müde.",
+      "options": [
+        "ist er",
+        "er ist",
+        "er bist"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "After denn the order is subject, verb: denn er ist müde. Paul is a he, so the subject is er.",
+        "es": "Después de denn el orden es sujeto, verbo: denn er ist müde. Paul es un él, así que el sujeto es er."
+      },
+      "wrong": {
+        "ist er": {
+          "en": "ist er turns the order around, but denn is in position 0, so the subject stays first: er ist.",
+          "es": "ist er invierte el orden, pero denn está en la posición 0, así que el sujeto va primero: er ist."
+        },
+        "er bist": {
+          "en": "The order is right, but bist is the du-form of sein. With er the verb is ist.",
+          "es": "El orden es correcto, pero bist es la forma de du de sein. Con er el verbo es ist."
+        }
+      },
+      "examples": [
+        "Anna kocht, denn sie hat Hunger.",
+        "Ich gehe nach Hause, denn ich bin müde."
+      ],
+      "tr": {
+        "en": "Paul goes home because he is tired.",
+        "es": "Paul se va a casa porque está cansado."
+      }
+    },
+    {
+      "id": "konjunktionen-und-aber-w04",
+      "kind": "why",
+      "es": "Heute lerne ich Deutsch, und morgen lerne ich Spanisch.",
+      "target": "morgen",
+      "tr": {
+        "en": "Today I learn German, and tomorrow I learn Spanish.",
+        "es": "Hoy aprendo alemán, y mañana aprendo español."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "und is in position 1 and morgen in position 2",
+            "es": "und está en la posición 1 y morgen en la posición 2"
+          },
+          "wrong": {
+            "en": "und does not count as a position. If it did, the verb would be third, but the verb must be second after morgen.",
+            "es": "und no cuenta como una posición. Si contara, el verbo sería el tercero, pero el verbo debe ser el segundo después de morgen."
+          }
+        },
+        {
+          "text": {
+            "en": "und stands in position 0, so morgen is position 1 and the verb follows",
+            "es": "und está en la posición 0, así que morgen es la posición 1 y el verbo lo sigue"
+          }
+        },
+        {
+          "text": {
+            "en": "morgen always has to come after the subject",
+            "es": "morgen siempre tiene que ir después del sujeto"
+          },
+          "wrong": {
+            "en": "morgen can open a clause. Then the subject follows the verb, as in morgen lerne ich.",
+            "es": "morgen puede abrir una oración. Entonces el sujeto va después del verbo, como en morgen lerne ich."
+          }
+        }
+      ],
+      "correctIndex": 1
+    }
+  ]
+}

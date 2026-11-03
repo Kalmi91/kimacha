@@ -28,8 +28,11 @@ import {
   buildTraps,
   fillBank,
   fillGaps,
+  headwordOf,
   isSituationOpen,
+  lineText,
   nextSituation,
+  patternExplanation,
   parseSituation,
   questionLines,
   savedSituation,
@@ -64,10 +67,11 @@ export default function SituationGame() {
   const g = useGrammarColors();
   const s = t();
   const sx = s.practiceTab.situations;
-  const source = activeSourceFor('es');
   const { refresh } = useLearner();
   const [loaded, setLoaded] = useState(false);
   const [target, setTarget] = useState<PcicTarget>('es');
+  // the learner's language (the texts around the dialogue); the dialogue itself is in the target language
+  const source = activeSourceFor(target);
   const [situation, setSituation] = useState<Situation | null>(null);
   const [state, setState] = useState<SituationState | null>(null);
   const [micOk, setMicOk] = useState(true);
@@ -88,12 +92,13 @@ export default function SituationGame() {
     const { target: dir } = await refresh(['direction']);
     if (shownTarget.current === dir) return;
     let set: ReadonlySet<string> = new Set();
-    if (dir === 'es') {
+    if (dir === 'es' || dir === 'de') {
       const cards = dropOrphanCards(await db.getPcicCards(), (id) => findPcicItem(id) !== undefined);
-      const rows = await db.getGameProgress(GRAMMAR_PROGRESS_KEY);
-      set = knownTokens('es', {
-        learned: learnedEntries(cards, 'es', findPcicItem),
-        tenses: resolvedTensesFromLessons(doneGrammarTopicProgress('es', rows).keys()),
+      // the unlocked tenses only matter for Spanish (German inflection is not modelled by the gate)
+      const rows = dir === 'es' ? await db.getGameProgress(GRAMMAR_PROGRESS_KEY) : [];
+      set = knownTokens(dir, {
+        learned: learnedEntries(cards, dir, findPcicItem),
+        tenses: dir === 'es' ? resolvedTensesFromLessons(doneGrammarTopicProgress('es', rows).keys()) : undefined,
       });
     }
     const open = situationsFor(dir).filter((x) => isSituationOpen(x, set));
@@ -133,22 +138,25 @@ export default function SituationGame() {
     return state.step === 'questions' ? questionLines(situation)[state.index] : -1;
   })();
   const line = situation && lineIndex >= 0 ? situation.lines[lineIndex] : null;
-  const asking = state?.step === 'questions' && !state.done && line ? line.es : null;
+  const asking = situation && state?.step === 'questions' && !state.done && line ? lineText(situation, line) : null;
   // the question is read aloud when it comes up
   useEffect(() => {
-    if (asking) speak(asking, speechLang('es'));
-  }, [asking]);
+    if (asking) speak(asking, speechLang(target));
+  }, [asking, target]);
 
   // What was said (the recognizer's final result) or typed is judged.
   const submitSpoken = (text: string) => {
     if (!situation || !state || !line || state.done || !text.trim()) return;
     Keyboard.dismiss();
     // Say it wants the number of the line, Questions take any number
-    const match = matchSpoken(text, state.step === 'questions' ? (line.answers ?? []) : [line.es], { anyNumber: state.step === 'questions' });
+    const match = matchSpoken(text, state.step === 'questions' ? (line.answers ?? []) : [lineText(situation, line)], {
+      anyNumber: state.step === 'questions',
+      lang: situation.target,
+    });
     setHeard({ text, match });
     apply(answerSituation(state, situation, match.right));
   };
-  const rec = useRecognizer(speechLang('es'), submitSpoken);
+  const rec = useRecognizer(speechLang(target), submitSpoken);
   // A typed answer closes the microphone: a result that is still on its way must not land on the next line.
   const submitTyped = (text: string) => {
     rec.abort();
@@ -167,7 +175,7 @@ export default function SituationGame() {
 
   const say = (text: string) => {
     stopSpeaking();
-    speak(text, speechLang('es'));
+    speak(text, speechLang(target));
   };
   const goNext = () => {
     stopSpeaking();
@@ -224,13 +232,13 @@ export default function SituationGame() {
   const bank = step === 'fill' ? fillBank(situation, state.seed) : [];
   const usedBank = new Set<number>();
   for (const gap of gaps.slice(0, state.index)) {
-    const at = bank.findIndex((w, n) => w === gap.word.toLowerCase() && !usedBank.has(n));
+    const at = bank.findIndex((w, n) => w.toLowerCase() === gap.word.toLowerCase() && !usedBank.has(n));
     if (at >= 0) usedBank.add(at);
   }
   const pickWord = (n: number) => {
     const open = gaps[state.index];
     if (!open || state.done || usedBank.has(n)) return;
-    const right = bank[n] === open.word.toLowerCase();
+    const right = bank[n].toLowerCase() === open.word.toLowerCase();
     setFlash(right ? null : n);
     apply(answerSituation(state, situation, right));
   };
@@ -266,7 +274,7 @@ export default function SituationGame() {
       </>
     ) : undefined;
 
-  const word = step === 'words' ? situation.words.find((w) => w.es === state.words[state.index]) : undefined;
+  const word = step === 'words' ? situation.words.find((w) => headwordOf(situation, w) === state.words[state.index]) : undefined;
   const pattern = step === 'patterns' ? situation.patterns[state.index] : undefined;
 
   return (
@@ -284,8 +292,8 @@ export default function SituationGame() {
 
         {word && (
           <Card {...card}>
-            <Text testID="situations-card-word" style={[styles.big, { color: colors.text }]}>{word.es}</Text>
-            <SpeakButton testID="situations-speak" accessibilityLabel={sx.listen} onPress={() => say(word.es)} style={styles.speakBtn} iconStyle={styles.speakIcon} />
+            <Text testID="situations-card-word" style={[styles.big, { color: colors.text }]}>{headwordOf(situation, word)}</Text>
+            <SpeakButton testID="situations-speak" accessibilityLabel={sx.listen} onPress={() => say(headwordOf(situation, word))} style={styles.speakBtn} iconStyle={styles.speakIcon} />
             <Text testID="situations-card-meaning" style={[styles.meaning, { color: colors.textMuted }]}>{word[source]}</Text>
           </Card>
         )}
@@ -295,7 +303,7 @@ export default function SituationGame() {
         {pattern && (
           <Card {...card}>
             <Text testID="situations-card-pattern" style={[styles.big, { color: colors.text }]}>{pattern.title[source]}</Text>
-            <Text testID="situations-card-explanation" style={[styles.meaning, { color: colors.textMuted }]}>{source === 'hu' ? pattern.hu : pattern.en}</Text>
+            <Text testID="situations-card-explanation" style={[styles.meaning, { color: colors.textMuted }]}>{patternExplanation(pattern, source)}</Text>
             <Text testID="situations-card-example" style={[styles.lineText, { color: colors.text }]}>{pattern.example}</Text>
             <SpeakButton testID="situations-speak" accessibilityLabel={sx.listen} onPress={() => say(pattern.example)} style={styles.speakBtn} iconStyle={styles.speakIcon} />
           </Card>
@@ -306,13 +314,14 @@ export default function SituationGame() {
           <Card {...card}>
             {situation.lines.map((l, i) => {
               const gapNo = gaps.findIndex((x) => x.line === i);
-              const parts = l.gap ? gapByWord(l.es, l.gap) : null;
+              const text = lineText(situation, l);
+              const parts = l.gap ? gapByWord(text, l.gap) : null;
               const filled = gapNo >= 0 && gapNo < state.index;
               return (
                 <View key={i} testID={`situations-line-${i}`} style={styles.lineRow}>
                   <Text style={[styles.speaker, { color: colors.textMuted }]}>{speaker(l)}</Text>
                   <Text style={[styles.lineText, styles.lineBody, { color: colors.text }]}>
-                    {parts ? parts.before : l.es}
+                    {parts ? parts.before : text}
                     {parts && (
                       <Text style={{ color: filled ? colors.success : gapNo === state.index ? colors.tint : colors.tabIconDefault, fontWeight: fontWeight.bold }}>
                         {filled ? parts.answer : BLANK}
@@ -331,9 +340,9 @@ export default function SituationGame() {
             <EasySentenceCard
               key={state.index}
               sourceSentence={line[source]}
-              targetWords={tileWords(line.es)}
+              targetWords={tileWords(lineText(situation, line))}
               trapWords={buildTraps(situation, lineIndex, state.seed)}
-              speechLocale={speechLang('es')}
+              speechLocale={speechLang(target)}
               onResult={(right) => apply(answerSituation(state, situation, right))}
             />
           </View>
@@ -343,10 +352,10 @@ export default function SituationGame() {
           <>
             <Card {...card}>
               <Text style={[styles.speaker, { color: colors.textMuted }]}>{speaker(line)}</Text>
-              <Text testID="situations-line-text" style={[styles.big, { color: colors.text }]}>{line.es}</Text>
+              <Text testID="situations-line-text" style={[styles.big, { color: colors.text }]}>{lineText(situation, line)}</Text>
               <Text style={[styles.meaning, { color: colors.textMuted }]}>{line[source]}</Text>
-              <SpeakButton testID="situations-listen" accessibilityLabel={sx.listen} onPress={() => say(line.es)} style={styles.speakBtn} iconStyle={styles.speakIcon} />
-              {step === 'questions' && !state.done && <Text style={[styles.hint, { color: colors.textMuted }]}>{sx.answerHint}</Text>}
+              <SpeakButton testID="situations-listen" accessibilityLabel={sx.listen} onPress={() => say(lineText(situation, line))} style={styles.speakBtn} iconStyle={styles.speakIcon} />
+              {step === 'questions' && !state.done && <Text style={[styles.hint, { color: colors.textMuted }]}>{sx.answerHint(target)}</Text>}
             </Card>
             {step === 'questions' && state.wrong > 0 && line.answers && (
               <Text testID="situations-model" style={[styles.model, { color: colors.success }]}>{sx.model(line.answers[0])}</Text>
@@ -374,7 +383,7 @@ export default function SituationGame() {
               <TextInput
                 testID="situations-type-input"
                 style={[styles.input, { color: colors.text, borderColor: colors.tabIconDefault }, themedInputStyle(g)]}
-                placeholder={s.card.typeIn('es')}
+                placeholder={s.card.typeIn(target)}
                 placeholderTextColor={colors.tabIconDefault}
                 value={typed}
                 onChangeText={setTyped}

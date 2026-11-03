@@ -9,12 +9,14 @@
 // so a keyword crammed into a word or two does not earn a point either. A long, good answer still gets everything.
 
 import type { PcicItem } from '@/data/pcic';
+import { exampleIn, wordIn } from '@/lib/pcicItemText';
 import type { MockFormField, MockTarget } from './types';
 
 /** Comparison without case and accents for the keywords. */
 export function fold(text: string): string {
   return text
     .toLowerCase()
+    .replace(/ß/g, 'ss')
     .normalize('NFD')
     .replace(/[̀-ͯ]/g, '')
     .replace(/[‘’]/g, "'")
@@ -47,6 +49,7 @@ const VOWELS = /[aeiouy]/;
 
 // Keyboard rows: 4 adjacent keys ("asdf", "qwer", "zxcv", also reversed) are not a word.
 const ROWS = ['qwertyuiop', 'asdfghjkl', 'zxcvbnm'];
+// "wert" is left out: it is the German word Wert (bewerten, wertvoll, empfehlenswert ...), not a keyboard mash.
 const KEY_RUNS = ROWS.flatMap((row) => {
   const out: string[] = [];
   for (let i = 0; i + 4 <= row.length; i++) {
@@ -54,13 +57,17 @@ const KEY_RUNS = ROWS.flatMap((row) => {
     out.push(run, [...run].reverse().join(''));
   }
   return out;
-});
+}).filter((run) => run !== 'wert');
 
-/** Nonsense word: with no vowels (3+ letters), the same letter 4+ times, 6+ consonants in a row, or 4 adjacent keys. */
+// German digraph clusters count as one letter: "Gesellschaft", "Handschrift" and "Landschaft" are real words, not 6+ consonants in a row.
+// st too: "selbstständig" and "Rechtsstreit" (b-s-t-s-t, t-s-s-t-r) are real words.
+const CLUSTER = /tsch|sch|ch|ck|ph|th|ng|pf|st/g;
+
+/** Nonsense word: with no vowels (3+ letters), the same letter 4+ times, 6+ consonants in a row (sch, ch, ck, ... count as one), or 4 adjacent keys. */
 export function isNonsenseToken(tok: string): boolean {
   if (tok.length >= 3 && !VOWELS.test(tok)) return true;
   if (/([a-z])\1{3,}/.test(tok)) return true;
-  if (/[^aeiouy']{6,}/.test(tok)) return true;
+  if (/[^aeiouy']{6,}/.test(tok.replace(CLUSTER, 'x'))) return true;
   return KEY_RUNS.some((run) => tok.includes(run));
 }
 
@@ -71,6 +78,8 @@ const FREE: Record<MockTarget, string> = {
   en: 'the be to of and a in that have i it for not on with he as you do at this but his by from they we say her she or an will my one all would there their what so up out if about who get which go me when make can like time no just him know take people into year your good some could them see other than then now look only come its over think also back after use two how our work first well way even new want because any these give day most us is are was were am been has had does did said went made got very much more here where why yes hello thanks please today tomorrow yesterday live name',
   // hu is not checked against a dictionary (see app/mock-exam.tsx: an agglutinative language has too many inflected forms for a word list), so this is only the table's entry.
   hu: 'a az egy es de hogy nem is meg el ki be fel le van volt lesz ez az ezt azt itt ott igen koszonom szia',
+  // de is not checked against a dictionary either (see app/mock-exam.tsx: compounds), so this is only the table's entry.
+  de: 'der die das den dem des ein eine einen einem einer und oder aber nicht ist sind bin bist ich du er sie es wir ihr mit von zu in auf fur an im am zum zur bei nach aus ja nein bitte danke hallo guten tag morgen abend heute gestern wenn weil dass auch noch sehr hier da dort mein dein sein unser name',
 };
 
 const stripPunct = /[¿?¡!.,;:()"«»/]/g;
@@ -79,7 +88,7 @@ const stripPunct = /[¿?¡!.,;:()"«»/]/g;
 export function buildLexicon(items: PcicItem[], target: MockTarget): Set<string> {
   const lex = new Set<string>(FREE[target].split(' '));
   for (const it of items) {
-    const forms = target === 'es' ? [it.es, it.exampleEs] : target === 'hu' ? [it.hu, it.exampleHu] : [it.en, it.exampleEn];
+    const forms = [wordIn(it, target), exampleIn(it, target)];
     for (const text of forms) {
       if (!text) continue;
       for (const tok of foldedTokens(text.replace(stripPunct, ' '))) lex.add(tok);

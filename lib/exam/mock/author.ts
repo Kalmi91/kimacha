@@ -58,12 +58,26 @@ const INSTRUCTIONS: Record<MockTarget, Record<MockInstructionKind, string>> = {
     listen_fill: 'Néhány mondatot fog hallani. Ezeket {times} hallja. Írja be a hiányzó szót.',
     dictation: 'Egy szöveget fog hallani. Ezt {times} hallja. Írja le pontosan úgy, ahogy hallja.',
   },
+  // de: the A1 / A2 papers of the German exam are speaking only (nothing is generated), so these are not shown today; they keep the table complete.
+  de: {
+    read_mc: 'Lesen Sie die Texte und wählen Sie die richtige Lösung.',
+    match: 'Lesen Sie die Sätze und ordnen Sie jedem Satz die passende Bedeutung zu. Es gibt mehr Bedeutungen als Sätze.',
+    true_false: 'Lesen Sie den Text. Sind die Sätze richtig (✓) oder falsch (✗)?',
+    gap_mc: 'Ergänzen Sie die Sätze. Wählen Sie für jede Lücke die richtige Lösung.',
+    gap_type: 'Ergänzen Sie die Sätze mit je einem Wort.',
+    listen_mc: 'Sie hören einige Sätze. Sie hören jeden Satz {times}. Wählen Sie die richtige Lösung.',
+    listen_match: 'Sie hören einige Sätze. Ordnen Sie jedem Satz die passende Bedeutung zu. Es gibt mehr Bedeutungen als Sätze.',
+    listen_dialogue: 'Sie hören ein Gespräch. Sie hören es {times}. Beantworten Sie die Fragen.',
+    listen_fill: 'Sie hören einige Sätze. Sie hören jeden Satz {times}. Schreiben Sie das fehlende Wort.',
+    dictation: 'Sie hören einen Text. Sie hören ihn {times}. Schreiben Sie ihn genau so auf, wie Sie ihn hören.',
+  },
 };
 
 const TIMES: Record<MockTarget, Record<number, string>> = {
   es: { 1: 'una vez', 2: 'dos veces' },
   en: { 1: 'once', 2: 'twice' },
   hu: { 1: 'egyszer', 2: 'kétszer' },
+  de: { 1: 'einmal', 2: 'zweimal' },
 };
 
 /** The task number on the paper: in Spanish "TAREA 2.", in English "PART 2.", in Hungarian "FELADAT 2."; for a recorded task, the number of plays. */

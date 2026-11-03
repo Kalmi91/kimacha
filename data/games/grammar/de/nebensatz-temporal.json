@@ -1,0 +1,1064 @@
+{
+  "schema": 2,
+  "topic": "nebensatz-temporal",
+  "level": "B1",
+  "title": {
+    "en": "Time clauses: als, wenn, bevor, nachdem, während, seit",
+    "es": "Oraciones temporales: als, wenn, bevor, nachdem, während, seit"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "A time clause says when something happens. It starts with a conjunction and the conjugated verb goes to the end: Wenn ich Zeit habe, gehe ich ins Kino. English and Spanish use one word for when (when, cuando), but German needs to choose: als for one event or period in the past, wenn for everything repeated and for the present and the future. The other conjunctions say the order of the actions: bevor (before), nachdem (after), während (at the same time), seit (since), bis (until), sobald (as soon as), solange (as long as).",
+        "es": "Una oración temporal dice cuándo ocurre algo. Empieza con una conjunción y el verbo conjugado va al final: Wenn ich Zeit habe, gehe ich ins Kino. El inglés y el español usan una sola palabra para cuando (when, cuando), pero el alemán obliga a elegir: als para un hecho o un período del pasado, wenn para todo lo repetido y para el presente y el futuro. Las otras conjunciones dicen el orden de las acciones: bevor (antes de que), nachdem (después de que), während (mientras), seit (desde), bis (hasta que), sobald (en cuanto), solange (mientras, mientras que dure)."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "zeit-konjunktionen",
+      "title": {
+        "en": "Time conjunctions",
+        "es": "Conjunciones temporales"
+      },
+      "header": [
+        {
+          "en": "Meaning",
+          "es": "Significado"
+        },
+        {
+          "en": "Konjunktion",
+          "es": "Konjunktion"
+        }
+      ],
+      "rows": [
+        [
+          "vorher",
+          "bevor"
+        ],
+        [
+          "nachher",
+          "nachdem"
+        ],
+        [
+          "zur gleichen Zeit",
+          "während"
+        ],
+        [
+          "einmal früher",
+          "als"
+        ],
+        [
+          "jedes Mal",
+          "wenn"
+        ],
+        [
+          "ab dann bis jetzt",
+          "seit"
+        ],
+        [
+          "bis dann",
+          "bis"
+        ],
+        [
+          "sofort danach",
+          "sobald"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "als or wenn?",
+        "es": "¿als o wenn?"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "als: one event or one period in the past. It never refers to the present or the future.",
+            "es": "als: un hecho o un período del pasado. Nunca se refiere al presente ni al futuro."
+          },
+          "examples": [
+            {
+              "es": "Als ich zwölf war, zog ich nach Köln.",
+              "tr": {
+                "en": "When I was twelve, I moved to Cologne.",
+                "es": "Cuando tenía doce años, me mudé a Colonia."
+              }
+            },
+            {
+              "es": "Als ich ankam, sah ich Anna.",
+              "tr": {
+                "en": "When I arrived, I saw Anna.",
+                "es": "Cuando llegué, vi a Anna."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "wenn: repeated actions (every time), and all present and future statements. In the past, jedes Mal and immer show repetition.",
+            "es": "wenn: acciones repetidas (cada vez) y todo lo que está en presente o futuro. En el pasado, jedes Mal e immer indican repetición."
+          },
+          "examples": [
+            {
+              "es": "Wenn ich Zeit habe, gehe ich ins Kino.",
+              "tr": {
+                "en": "When I have time, I go to the cinema.",
+                "es": "Cuando tengo tiempo, voy al cine."
+              }
+            },
+            {
+              "es": "Jedes Mal, wenn ich in Köln war, besuchte ich Anna.",
+              "tr": {
+                "en": "Every time I was in Cologne, I visited Anna.",
+                "es": "Cada vez que estaba en Colonia, visitaba a Anna."
+              }
+            },
+            {
+              "es": "Wenn ich morgen frei habe, besuche ich dich.",
+              "tr": {
+                "en": "When I am off tomorrow, I will visit you.",
+                "es": "Cuando mañana tenga el día libre, te visitaré."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "The other time conjunctions",
+        "es": "Las otras conjunciones temporales"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "bevor: the main action comes first. nachdem: the nachdem clause comes first, and its verb is in the Perfekt when the main clause is in the present.",
+            "es": "bevor: la acción principal ocurre primero. nachdem: la oración con nachdem ocurre primero, y su verbo está en Perfekt cuando la oración principal está en presente."
+          },
+          "examples": [
+            {
+              "es": "Ich putze die Zähne, bevor ich ins Bett gehe.",
+              "tr": {
+                "en": "I brush my teeth before I go to bed.",
+                "es": "Me lavo los dientes antes de ir a la cama."
+              }
+            },
+            {
+              "es": "Nachdem ich gegessen habe, gehe ich spazieren.",
+              "tr": {
+                "en": "After I have eaten, I go for a walk.",
+                "es": "Después de comer, salgo a caminar."
+              }
+            },
+            {
+              "es": "Nachdem ich nach Hause gekommen bin, esse ich.",
+              "tr": {
+                "en": "After I have come home, I eat.",
+                "es": "Después de llegar a casa, como."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "während: both actions at the same time. seit: starts in the past and lasts until now. bis: the end point. sobald: immediately after. solange: as long as.",
+            "es": "während: las dos acciones al mismo tiempo. seit: empieza en el pasado y dura hasta ahora. bis: el punto final. sobald: inmediatamente después. solange: mientras dure."
+          },
+          "examples": [
+            {
+              "es": "Ich höre Musik, während ich koche.",
+              "tr": {
+                "en": "I listen to music while I cook.",
+                "es": "Escucho música mientras cocino."
+              }
+            },
+            {
+              "es": "Seit ich in Berlin wohne, lerne ich Deutsch.",
+              "tr": {
+                "en": "Since I have lived in Berlin, I have been learning German.",
+                "es": "Desde que vivo en Berlín, aprendo alemán."
+              }
+            },
+            {
+              "es": "Ich warte hier, bis du kommst.",
+              "tr": {
+                "en": "I will wait here until you come.",
+                "es": "Espero aquí hasta que vengas."
+              }
+            },
+            {
+              "es": "Ich rufe dich an, sobald ich angekommen bin.",
+              "tr": {
+                "en": "I will call you as soon as I have arrived.",
+                "es": "Te llamo en cuanto haya llegado."
+              }
+            },
+            {
+              "es": "Ich bleibe zu Hause, solange ich krank bin.",
+              "tr": {
+                "en": "I stay at home as long as I am sick.",
+                "es": "Me quedo en casa mientras esté enfermo."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "verb-ende",
+      "title": {
+        "en": "The verb at the end of the clause",
+        "es": "El verbo al final de la oración"
+      },
+      "header": [
+        {
+          "en": "Subject / verb",
+          "es": "Sujeto / verbo"
+        },
+        {
+          "en": "Präsens",
+          "es": "Präsens"
+        },
+        {
+          "en": "Perfekt",
+          "es": "Perfekt"
+        }
+      ],
+      "rows": [
+        [
+          "ich / essen",
+          "esse",
+          "gegessen habe"
+        ],
+        [
+          "du / kommen",
+          "kommst",
+          "gekommen bist"
+        ],
+        [
+          "er / arbeiten",
+          "arbeitet",
+          "gearbeitet hat"
+        ],
+        [
+          "wir / gehen",
+          "gehen",
+          "gegangen sind"
+        ],
+        [
+          "ihr / lernen",
+          "lernt",
+          "gelernt habt"
+        ],
+        [
+          "sie (Pl.) / fahren",
+          "fahren",
+          "gefahren sind"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Word order: which clause comes first",
+        "es": "Orden de las palabras: qué oración va primero"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "The time clause can stand first or second. If it stands first, it fills position 1 of the whole sentence, so the main verb comes right after the comma and before its subject.",
+            "es": "La oración temporal puede ir primero o segundo. Si va primero, ocupa la posición 1 de toda la oración, así que el verbo principal va justo después de la coma y antes de su sujeto."
+          },
+          "examples": [
+            {
+              "es": "Wenn ich müde bin, gehe ich ins Bett.",
+              "tr": {
+                "en": "When I am tired, I go to bed.",
+                "es": "Cuando estoy cansado, me voy a la cama."
+              }
+            },
+            {
+              "es": "Ich gehe ins Bett, wenn ich müde bin.",
+              "tr": {
+                "en": "I go to bed when I am tired.",
+                "es": "Me voy a la cama cuando estoy cansado."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "A separable verb stays in one piece at the end of the clause. wann is a question word, not a conjunction: Ich weiß nicht, wann er kommt.",
+            "es": "Un verbo separable se queda en una pieza al final de la oración. wann es una palabra interrogativa, no una conjunción: Ich weiß nicht, wann er kommt."
+          },
+          "examples": [
+            {
+              "es": "Bevor ich abends ausgehe, dusche ich.",
+              "tr": {
+                "en": "Before I go out in the evening, I take a shower.",
+                "es": "Antes de salir por la noche, me ducho."
+              }
+            },
+            {
+              "es": "Ich weiß nicht, wann er kommt.",
+              "tr": {
+                "en": "I do not know when he is coming.",
+                "es": "No sé cuándo viene."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Three words for when",
+        "es": "Tres palabras para cuando"
+      },
+      "pairs": [
+        {
+          "a": "als / wenn",
+          "b": "wann",
+          "note": {
+            "en": "als and wenn are conjunctions that start a clause. wann is only a question word (when?) and never connects two clauses, even in an indirect question it only asks for the time.",
+            "es": "als y wenn son conjunciones que inician una oración. wann es solo una palabra interrogativa (¿cuándo?) y nunca une dos oraciones; incluso en una pregunta indirecta solo pregunta por el tiempo."
+          },
+          "examples": [
+            {
+              "es": "Wann kommst du? Wenn ich Zeit habe.",
+              "tr": {
+                "en": "When are you coming? When I have time.",
+                "es": "¿Cuándo vienes? Cuando tenga tiempo."
+              }
+            },
+            {
+              "es": "Ich frage, wann du kommst.",
+              "tr": {
+                "en": "I am asking when you are coming.",
+                "es": "Pregunto cuándo vienes."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: one word for when does not work in German. Use als for one past event, wenn for repetition, present and future. wann is only for questions. The verb goes to the end of the time clause (not Wenn ich habe Zeit). When the time clause comes first, the next verb follows directly (Wenn ich müde bin, gehe ich, not ich gehe). After nachdem use the Perfekt for the earlier action when the main clause is in the present, and choose the auxiliary haben or sein as always. seit and seitdem both work, and bis is not the same as seit.",
+        "es": "Trampas clásicas: una sola palabra para cuando no funciona en alemán. Usa als para un hecho del pasado, wenn para repetición, presente y futuro. wann es solo para preguntas. El verbo va al final de la oración temporal (no Wenn ich habe Zeit). Cuando la oración temporal va primero, el verbo siguiente va de inmediato (Wenn ich müde bin, gehe ich, no ich gehe). Después de nachdem usa el Perfekt para la acción anterior cuando la oración principal está en presente, y elige el auxiliar haben o sein como siempre. seit y seitdem sirven los dos, y bis no es lo mismo que seit."
+      }
+    }
+  ],
+  "speak": {
+    "en": "A time clause says when something happens, and the verb goes to the end. Use «als» for one event in the past: «Als ich zwölf war, zog ich nach Köln.» Use «wenn» for repetition, the present and the future: «Wenn ich Zeit habe, gehe ich ins Kino.» Then there are «bevor», «nachdem», «während», «seit» and «bis». After «nachdem» use the Perfekt: «Nachdem ich gegessen habe, gehe ich spazieren.»",
+    "es": "Una oración temporal dice cuándo ocurre algo, y el verbo va al final. Usa «als» para un hecho del pasado: «Als ich zwölf war, zog ich nach Köln.» Usa «wenn» para la repetición, el presente y el futuro: «Wenn ich Zeit habe, gehe ich ins Kino.» Además están «bevor», «nachdem», «während», «seit» y «bis». Después de «nachdem» usa el Perfekt: «Nachdem ich gegessen habe, gehe ich spazieren.»"
+  },
+  "items": [
+    {
+      "id": "nebensatz-temporal-c01",
+      "sentence": "___ ich zwölf war, zog ich nach Köln.",
+      "options": [
+        "Wenn",
+        "Als",
+        "Wann"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Moving to Cologne happened once in the past, so the conjunction is als.",
+        "es": "Mudarse a Colonia ocurrió una vez en el pasado, así que la conjunción es als."
+      },
+      "wrong": {
+        "Wenn": {
+          "en": "Wenn is for repeated actions and for the present or the future. One event in the past needs Als.",
+          "es": "Wenn es para acciones repetidas y para el presente o el futuro. Un hecho único del pasado necesita Als."
+        },
+        "Wann": {
+          "en": "Wann is a question word (when?). It cannot start a time clause that gives information.",
+          "es": "Wann es una palabra interrogativa (¿cuándo?). No puede iniciar una oración temporal que da información."
+        }
+      },
+      "examples": [
+        "Als ich klein war, wohnte ich in Wien.",
+        "Als er ankam, regnete es."
+      ],
+      "tr": {
+        "en": "When I was twelve, I moved to Cologne.",
+        "es": "Cuando tenía doce años, me mudé a Colonia."
+      }
+    },
+    {
+      "id": "nebensatz-temporal-f01",
+      "kind": "form",
+      "verb": "Konjunktion",
+      "person": "vorher",
+      "answer": "bevor",
+      "table": "zeit-konjunktionen"
+    },
+    {
+      "id": "nebensatz-temporal-c02",
+      "sentence": "___ ich morgen Zeit habe, besuche ich dich.",
+      "options": [
+        "Als",
+        "Seit",
+        "Wenn"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The sentence talks about tomorrow, the future, so the conjunction is wenn.",
+        "es": "La oración habla de mañana, el futuro, así que la conjunción es wenn."
+      },
+      "wrong": {
+        "Als": {
+          "en": "Als is only for one event in the past. Tomorrow has not happened yet, so you need Wenn.",
+          "es": "Als es solo para un hecho del pasado. Mañana todavía no ha ocurrido, así que necesitas Wenn."
+        },
+        "Seit": {
+          "en": "Seit means since and looks back from now to a starting point in the past. It does not fit tomorrow.",
+          "es": "Seit significa desde y mira desde ahora hacia un punto de partida en el pasado. No encaja con mañana."
+        }
+      },
+      "examples": [
+        "Wenn ich frei habe, gehe ich schwimmen.",
+        "Wenn es regnet, bleibe ich zu Hause."
+      ],
+      "tr": {
+        "en": "When I have time tomorrow, I will visit you.",
+        "es": "Cuando mañana tenga tiempo, te visitaré."
+      }
+    },
+    {
+      "id": "nebensatz-temporal-f02",
+      "kind": "form",
+      "verb": "Perfekt",
+      "person": "ich / essen",
+      "answer": "gegessen habe",
+      "table": "verb-ende"
+    },
+    {
+      "id": "nebensatz-temporal-c03",
+      "sentence": "Jedes Mal, ___ ich in Köln war, besuchte ich Anna.",
+      "options": [
+        "wenn",
+        "als",
+        "wann"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Jedes Mal shows that the action repeated, so even in the past you use wenn.",
+        "es": "Jedes Mal muestra que la acción se repitió, así que incluso en el pasado se usa wenn."
+      },
+      "wrong": {
+        "als": {
+          "en": "als is for one single event. Here every visit is a repetition, so als does not fit.",
+          "es": "als es para un solo hecho. Aquí cada visita es una repetición, así que als no encaja."
+        },
+        "wann": {
+          "en": "wann is a question word. It cannot connect Jedes Mal with the clause ich in Köln war.",
+          "es": "wann es una palabra interrogativa. No puede unir Jedes Mal con la oración ich in Köln war."
+        }
+      },
+      "examples": [
+        "Immer wenn es regnete, blieb ich zu Hause.",
+        "Jedes Mal, wenn ich kam, kochte sie."
+      ],
+      "tr": {
+        "en": "Every time I was in Cologne, I visited Anna.",
+        "es": "Cada vez que estaba en Colonia, visitaba a Anna."
+      }
+    },
+    {
+      "id": "nebensatz-temporal-f03",
+      "kind": "form",
+      "verb": "Konjunktion",
+      "person": "nachher",
+      "answer": "nachdem",
+      "table": "zeit-konjunktionen"
+    },
+    {
+      "id": "nebensatz-temporal-w01",
+      "kind": "why",
+      "es": "Als ich klein war, wohnte ich in Köln.",
+      "target": "Als",
+      "tr": {
+        "en": "When I was small, I lived in Cologne.",
+        "es": "Cuando era pequeño, vivía en Colonia."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "wenn: wenn is the normal word for when, in every tense",
+            "es": "wenn: wenn es la palabra normal para cuando, en todos los tiempos"
+          },
+          "wrong": {
+            "en": "wenn covers repetition and the present and future. A single period in the past, like my childhood, takes als.",
+            "es": "wenn cubre la repetición y el presente y futuro. Un solo período del pasado, como mi infancia, lleva als."
+          }
+        },
+        {
+          "text": {
+            "en": "als: it is one period in the past, not a repetition",
+            "es": "als: es un solo período del pasado, no una repetición"
+          }
+        },
+        {
+          "text": {
+            "en": "wann: wann introduces a time clause with new information",
+            "es": "wann: wann introduce una oración temporal con información nueva"
+          },
+          "wrong": {
+            "en": "wann is only a question word. It asks for a time and never starts a statement like this one.",
+            "es": "wann es solo una palabra interrogativa. Pregunta por un tiempo y nunca inicia una afirmación como esta."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "nebensatz-temporal-c04",
+      "sentence": "Ich putze die Zähne, ___ ich ins Bett gehe.",
+      "options": [
+        "nachdem",
+        "bevor",
+        "während"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "First I brush my teeth, then I go to bed. The main action comes first, so the conjunction is bevor.",
+        "es": "Primero me lavo los dientes, luego me voy a la cama. La acción principal ocurre primero, así que la conjunción es bevor."
+      },
+      "wrong": {
+        "nachdem": {
+          "en": "nachdem would say that you brush your teeth after you have gone to bed. That is not what is meant.",
+          "es": "nachdem diría que te lavas los dientes después de haberte ido a la cama. No es lo que se quiere decir."
+        },
+        "während": {
+          "en": "während means at the same time. You do not brush your teeth while you are going to bed.",
+          "es": "während significa al mismo tiempo. No te lavas los dientes mientras te acuestas."
+        }
+      },
+      "examples": [
+        "Bevor ich esse, wasche ich die Hände.",
+        "Ich rufe dich an, bevor ich komme."
+      ],
+      "tr": {
+        "en": "I brush my teeth before I go to bed.",
+        "es": "Me lavo los dientes antes de ir a la cama."
+      }
+    },
+    {
+      "id": "nebensatz-temporal-f04",
+      "kind": "form",
+      "verb": "Präsens",
+      "person": "du / kommen",
+      "answer": "kommst",
+      "table": "verb-ende"
+    },
+    {
+      "id": "nebensatz-temporal-c05",
+      "sentence": "Nachdem ich gegessen ___, gehe ich spazieren.",
+      "options": [
+        "habe",
+        "hatte",
+        "bin"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The first action is finished, so it is in the Perfekt, and the main clause is in the present. essen takes haben: habe.",
+        "es": "La primera acción ya terminó, así que está en Perfekt, y la oración principal está en presente. essen lleva haben: habe."
+      },
+      "wrong": {
+        "hatte": {
+          "en": "hatte would make a past perfect, which tells a story in the past. The main clause here is in the present.",
+          "es": "hatte formaría un pluscuamperfecto, que narra algo en el pasado. La oración principal aquí está en presente."
+        },
+        "bin": {
+          "en": "bin is the auxiliary for movement and change of state. The verb essen always uses haben.",
+          "es": "bin es el auxiliar para movimiento y cambio de estado. El verbo essen usa siempre haben."
+        }
+      },
+      "examples": [
+        "Nachdem ich gearbeitet habe, esse ich.",
+        "Nachdem wir gelernt haben, spielen wir."
+      ],
+      "tr": {
+        "en": "After I have eaten, I go for a walk.",
+        "es": "Después de comer, salgo a caminar."
+      }
+    },
+    {
+      "id": "nebensatz-temporal-f05",
+      "kind": "form",
+      "verb": "Konjunktion",
+      "person": "zur gleichen Zeit",
+      "answer": "während",
+      "table": "zeit-konjunktionen"
+    },
+    {
+      "id": "nebensatz-temporal-c06",
+      "sentence": "Nachdem ich nach Hause gekommen ___, esse ich.",
+      "options": [
+        "hatte",
+        "habe",
+        "bin"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "kommen is a verb of movement, so the Perfekt uses sein: gekommen bin. The auxiliary stands last.",
+        "es": "kommen es un verbo de movimiento, así que el Perfekt usa sein: gekommen bin. El auxiliar va al final."
+      },
+      "wrong": {
+        "hatte": {
+          "en": "hatte is past perfect and would need war with kommen. The main clause is in the present, so use the Perfekt.",
+          "es": "hatte es pluscuamperfecto y con kommen necesitaría war. La oración principal está en presente, así que usa el Perfekt."
+        },
+        "habe": {
+          "en": "habe is the wrong auxiliary. kommen forms its Perfekt with sein, not with haben.",
+          "es": "habe es el auxiliar equivocado. kommen forma su Perfekt con sein, no con haben."
+        }
+      },
+      "examples": [
+        "Nachdem ich angekommen bin, rufe ich dich an.",
+        "Nachdem er gegangen ist, esse ich."
+      ],
+      "tr": {
+        "en": "After I have come home, I eat.",
+        "es": "Después de llegar a casa, como."
+      }
+    },
+    {
+      "id": "nebensatz-temporal-f06",
+      "kind": "form",
+      "verb": "Perfekt",
+      "person": "du / kommen",
+      "answer": "gekommen bist",
+      "table": "verb-ende"
+    },
+    {
+      "id": "nebensatz-temporal-w02",
+      "kind": "why",
+      "es": "Jedes Mal, wenn ich komme, kocht Anna.",
+      "target": "wenn",
+      "tr": {
+        "en": "Every time I come, Anna is cooking.",
+        "es": "Cada vez que llego, Anna está cocinando."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "als: als is the usual word for when",
+            "es": "als: als es la palabra habitual para cuando"
+          },
+          "wrong": {
+            "en": "als is only for one event in the past. This sentence is in the present and it repeats, so als cannot be used.",
+            "es": "als es solo para un hecho del pasado. Esta oración está en presente y se repite, así que no se puede usar als."
+          }
+        },
+        {
+          "text": {
+            "en": "wenn: the action repeats every time, and wenn is for repetition and the present",
+            "es": "wenn: la acción se repite cada vez, y wenn es para la repetición y el presente"
+          }
+        },
+        {
+          "text": {
+            "en": "wann: wann is the German word for when",
+            "es": "wann: wann es la palabra alemana para cuando"
+          },
+          "wrong": {
+            "en": "wann is only used in questions about the time. It cannot join two clauses.",
+            "es": "wann se usa solo en preguntas sobre el tiempo. No puede unir dos oraciones."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "nebensatz-temporal-c07",
+      "sentence": "Ich höre Musik, ___ ich koche.",
+      "options": [
+        "bis",
+        "während",
+        "bevor"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Listening to music and cooking happen at the same time, so the conjunction is während.",
+        "es": "Escuchar música y cocinar ocurren al mismo tiempo, así que la conjunción es während."
+      },
+      "wrong": {
+        "bis": {
+          "en": "bis marks the end point of an action, like waiting until someone comes. Cooking is not an end point.",
+          "es": "bis marca el punto final de una acción, como esperar hasta que alguien llegue. Cocinar no es un punto final."
+        },
+        "bevor": {
+          "en": "bevor would mean that you listen to music first and cook afterwards. The sentence says both happen together.",
+          "es": "bevor significaría que primero escuchas música y después cocinas. La oración dice que las dos cosas ocurren juntas."
+        }
+      },
+      "examples": [
+        "Ich lese, während ich warte.",
+        "Er singt, während er arbeitet."
+      ],
+      "tr": {
+        "en": "I listen to music while I cook.",
+        "es": "Escucho música mientras cocino."
+      }
+    },
+    {
+      "id": "nebensatz-temporal-f07",
+      "kind": "form",
+      "verb": "Konjunktion",
+      "person": "einmal früher",
+      "answer": "als",
+      "table": "zeit-konjunktionen"
+    },
+    {
+      "id": "nebensatz-temporal-c08",
+      "sentence": "___ ich in Berlin wohne, lerne ich Deutsch.",
+      "options": [
+        "Bis",
+        "Als",
+        "Seit"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The living in Berlin started in the past and continues now, so the conjunction is Seit.",
+        "es": "Vivir en Berlín empezó en el pasado y continúa ahora, así que la conjunción es Seit."
+      },
+      "wrong": {
+        "Bis": {
+          "en": "Bis names the end of a time, as in wait until you come. Here the living goes on, so it does not fit.",
+          "es": "Bis nombra el final de un tiempo, como en espera hasta que vengas. Aquí el vivir continúa, así que no encaja."
+        },
+        "Als": {
+          "en": "Als is for one finished event in the past. Living in Berlin is a state that lasts until now.",
+          "es": "Als es para un hecho único y terminado del pasado. Vivir en Berlín es un estado que dura hasta ahora."
+        }
+      },
+      "examples": [
+        "Seit ich Deutsch lerne, lese ich viel.",
+        "Seit er hier arbeitet, ist er froh."
+      ],
+      "tr": {
+        "en": "Since I have lived in Berlin, I have been learning German.",
+        "es": "Desde que vivo en Berlín, aprendo alemán."
+      }
+    },
+    {
+      "id": "nebensatz-temporal-f08",
+      "kind": "form",
+      "verb": "Perfekt",
+      "person": "er / arbeiten",
+      "answer": "gearbeitet hat",
+      "table": "verb-ende"
+    },
+    {
+      "id": "nebensatz-temporal-c09",
+      "sentence": "Ich warte hier, ___ du kommst.",
+      "options": [
+        "bis",
+        "seit",
+        "bevor"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The waiting ends when you come, so the conjunction is bis (until).",
+        "es": "La espera termina cuando vienes, así que la conjunción es bis (hasta que)."
+      },
+      "wrong": {
+        "seit": {
+          "en": "seit looks back to a starting point in the past. Waiting for a future arrival needs bis.",
+          "es": "seit mira hacia un punto de partida en el pasado. Esperar una llegada futura necesita bis."
+        },
+        "bevor": {
+          "en": "bevor means that the main action happens before the other one. You wait until he comes, not before.",
+          "es": "bevor significa que la acción principal ocurre antes de la otra. Esperas hasta que viene, no antes."
+        }
+      },
+      "examples": [
+        "Ich bleibe hier, bis du anrufst.",
+        "Wir warten, bis der Zug kommt."
+      ],
+      "tr": {
+        "en": "I will wait here until you come.",
+        "es": "Espero aquí hasta que vengas."
+      }
+    },
+    {
+      "id": "nebensatz-temporal-f09",
+      "kind": "form",
+      "verb": "Konjunktion",
+      "person": "jedes Mal",
+      "answer": "wenn",
+      "table": "zeit-konjunktionen"
+    },
+    {
+      "id": "nebensatz-temporal-w03",
+      "kind": "why",
+      "es": "Nachdem ich gegessen habe, gehe ich spazieren.",
+      "target": "habe",
+      "tr": {
+        "en": "After I have eaten, I go for a walk.",
+        "es": "Después de comer, salgo a caminar."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "habe is last because ich is the subject of the clause",
+            "es": "habe va al final porque ich es el sujeto de la oración"
+          },
+          "wrong": {
+            "en": "The subject does not decide the position. The conjugated verb goes last because nachdem starts a subordinate clause.",
+            "es": "El sujeto no decide la posición. El verbo conjugado va al final porque nachdem inicia una oración subordinada."
+          }
+        },
+        {
+          "text": {
+            "en": "habe is the Perfekt: the eating is finished before the walk, and the auxiliary stands last",
+            "es": "habe es el Perfekt: la comida termina antes del paseo, y el auxiliar va al final"
+          }
+        },
+        {
+          "text": {
+            "en": "habe is a present tense, so eating and walking happen at the same time",
+            "es": "habe es un presente, así que comer y pasear ocurren al mismo tiempo"
+          },
+          "wrong": {
+            "en": "habe is only the auxiliary of the Perfekt, with gegessen. The Perfekt shows that the eating is finished. For the same time you would use während.",
+            "es": "habe es solo el auxiliar del Perfekt, con gegessen. El Perfekt muestra que la comida terminó. Para el mismo tiempo usarías während."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "nebensatz-temporal-c10",
+      "sentence": "Ich rufe dich an, ___ ich angekommen bin.",
+      "options": [
+        "solange",
+        "sobald",
+        "seit"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The call follows right after the arrival, so the conjunction is sobald (as soon as).",
+        "es": "La llamada sigue de inmediato a la llegada, así que la conjunción es sobald (en cuanto)."
+      },
+      "wrong": {
+        "solange": {
+          "en": "solange means for as long as something lasts. Arriving is a moment, not a period.",
+          "es": "solange significa mientras algo dure. Llegar es un momento, no un período."
+        },
+        "seit": {
+          "en": "seit looks back in time from now. The call is in the future, after the arrival.",
+          "es": "seit mira hacia atrás en el tiempo desde ahora. La llamada es en el futuro, después de la llegada."
+        }
+      },
+      "examples": [
+        "Sobald ich Zeit habe, komme ich.",
+        "Ich schreibe dir, sobald ich zu Hause bin."
+      ],
+      "tr": {
+        "en": "I will call you as soon as I have arrived.",
+        "es": "Te llamo en cuanto haya llegado."
+      }
+    },
+    {
+      "id": "nebensatz-temporal-f10",
+      "kind": "form",
+      "verb": "Perfekt",
+      "person": "wir / gehen",
+      "answer": "gegangen sind",
+      "table": "verb-ende"
+    },
+    {
+      "id": "nebensatz-temporal-c11",
+      "sentence": "Wenn ich müde bin, ___ ins Bett.",
+      "options": [
+        "gehe ich",
+        "ich gehe",
+        "ich gehen"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The wenn clause fills position 1, so the main verb comes next: gehe ich.",
+        "es": "La oración con wenn ocupa la posición 1, así que el verbo principal va a continuación: gehe ich."
+      },
+      "wrong": {
+        "ich gehe": {
+          "en": "ich gehe puts the subject first, but the verb must stand in position 2 after the whole wenn clause.",
+          "es": "ich gehe pone primero el sujeto, pero el verbo debe estar en la posición 2 después de toda la oración con wenn."
+        },
+        "ich gehen": {
+          "en": "ich gehen has the infinitive instead of the form for ich, and the order is wrong too. The verb comes first: gehe ich.",
+          "es": "ich gehen tiene el infinitivo en lugar de la forma de ich, y el orden también es incorrecto. El verbo va primero: gehe ich."
+        }
+      },
+      "examples": [
+        "Wenn es regnet, bleibe ich zu Hause.",
+        "Wenn du kommst, koche ich."
+      ],
+      "tr": {
+        "en": "When I am tired, I go to bed.",
+        "es": "Cuando estoy cansado, me voy a la cama."
+      }
+    },
+    {
+      "id": "nebensatz-temporal-f11",
+      "kind": "form",
+      "verb": "Konjunktion",
+      "person": "sofort danach",
+      "answer": "sobald",
+      "table": "zeit-konjunktionen"
+    },
+    {
+      "id": "nebensatz-temporal-c12",
+      "sentence": "Bevor ich abends ___, dusche ich.",
+      "options": [
+        "gehe aus",
+        "ausgehe",
+        "ausgehen"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "In a subordinate clause the separable verb stays in one piece at the end: ausgehe.",
+        "es": "En una oración subordinada el verbo separable se queda en una pieza al final: ausgehe."
+      },
+      "wrong": {
+        "gehe aus": {
+          "en": "gehe aus splits the verb as in a main clause. After bevor the verb goes to the end without splitting.",
+          "es": "gehe aus separa el verbo como en una oración principal. Después de bevor el verbo va al final sin separarse."
+        },
+        "ausgehen": {
+          "en": "ausgehen is the infinitive. The verb must be conjugated for ich: ausgehe.",
+          "es": "ausgehen es el infinitivo. El verbo debe estar conjugado para ich: ausgehe."
+        }
+      },
+      "examples": [
+        "Bevor ich einkaufe, esse ich.",
+        "Sobald ich aufstehe, trinke ich Kaffee."
+      ],
+      "tr": {
+        "en": "Before I go out in the evening, I take a shower.",
+        "es": "Antes de salir por la noche, me ducho."
+      }
+    },
+    {
+      "id": "nebensatz-temporal-f12",
+      "kind": "form",
+      "verb": "Perfekt",
+      "person": "ihr / lernen",
+      "answer": "gelernt habt",
+      "table": "verb-ende"
+    },
+    {
+      "id": "nebensatz-temporal-c13",
+      "sentence": "Ich weiß nicht, ___ er kommt.",
+      "options": [
+        "wenn",
+        "als",
+        "wann"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The sentence asks for the time of his coming, so you need the question word wann.",
+        "es": "La oración pregunta por la hora de su llegada, así que necesitas la palabra interrogativa wann."
+      },
+      "wrong": {
+        "wenn": {
+          "en": "wenn would mean if or whenever. Here nobody knows the time, so it is an indirect question with wann.",
+          "es": "wenn significaría si o cada vez que. Aquí nadie sabe la hora, así que es una pregunta indirecta con wann."
+        },
+        "als": {
+          "en": "als connects a clause to a past event. It does not ask for a time, so it does not fit after weiß nicht.",
+          "es": "als une una oración con un hecho pasado. No pregunta por la hora, así que no encaja después de weiß nicht."
+        }
+      },
+      "examples": [
+        "Ich weiß nicht, wann der Zug fährt.",
+        "Weißt du, wann sie kommt?"
+      ],
+      "tr": {
+        "en": "I do not know when he is coming.",
+        "es": "No sé cuándo viene."
+      }
+    },
+    {
+      "id": "nebensatz-temporal-c14",
+      "sentence": "Ich bleibe zu Hause, ___ ich krank bin.",
+      "options": [
+        "bevor",
+        "nachdem",
+        "solange"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "I stay at home for the whole time that I am sick: solange (as long as).",
+        "es": "Me quedo en casa todo el tiempo que estoy enfermo: solange (mientras dure)."
+      },
+      "wrong": {
+        "bevor": {
+          "en": "bevor means that staying home happens before being sick. That makes no sense here.",
+          "es": "bevor significa que quedarse en casa ocurre antes de estar enfermo. Eso no tiene sentido aquí."
+        },
+        "nachdem": {
+          "en": "nachdem would need a finished action in the Perfekt, like nachdem ich krank geworden bin. Here the sickness lasts.",
+          "es": "nachdem necesitaría una acción terminada en Perfekt, como nachdem ich krank geworden bin. Aquí la enfermedad dura."
+        }
+      },
+      "examples": [
+        "Ich bleibe hier, solange es regnet.",
+        "Ich helfe dir, solange ich Zeit habe."
+      ],
+      "tr": {
+        "en": "I stay at home as long as I am sick.",
+        "es": "Me quedo en casa mientras esté enfermo."
+      }
+    },
+    {
+      "id": "nebensatz-temporal-w04",
+      "kind": "why",
+      "es": "Wenn ich müde bin, gehe ich ins Bett.",
+      "target": "gehe",
+      "tr": {
+        "en": "When I am tired, I go to bed.",
+        "es": "Cuando estoy cansado, me voy a la cama."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "gehe is first because the sentence is a question",
+            "es": "gehe va primero porque la oración es una pregunta"
+          },
+          "wrong": {
+            "en": "This sentence is a statement. A question would have a question mark and a different structure.",
+            "es": "Esta oración es una afirmación. Una pregunta tendría un signo de interrogación y otra estructura."
+          }
+        },
+        {
+          "text": {
+            "en": "gehe stays after ich: the wenn clause does not count",
+            "es": "gehe se queda después de ich: la oración con wenn no cuenta"
+          },
+          "wrong": {
+            "en": "The whole wenn clause counts as the first element of the sentence, so the verb is already in position 2 and the subject follows it.",
+            "es": "Toda la oración con wenn cuenta como el primer elemento de la oración, así que el verbo ya está en la posición 2 y el sujeto lo sigue."
+          }
+        },
+        {
+          "text": {
+            "en": "gehe is in position 2: the wenn clause fills position 1",
+            "es": "gehe está en la posición 2: la oración con wenn ocupa la posición 1"
+          }
+        }
+      ],
+      "correctIndex": 2
+    }
+  ]
+}

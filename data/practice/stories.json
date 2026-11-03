@@ -3,520 +3,560 @@
     "id": "a1-comida",
     "level": "A1",
     "sentences": [
-      { "es": "Es la hora de la comida en mi casa.", "en": "It is mealtime at my house.", "hu": "Nálunk ebédidő van.", "word": "o26", "form": "comida" },
-      { "es": "Mi madre hace pan y huevos.", "en": "My mother makes bread and eggs.", "hu": "Anyám kenyeret és tojást készít.", "word": "o132", "form": "huevos" },
-      { "es": "Mi hermano tiene hambre y quiere comer.", "en": "My brother is hungry and wants to eat.", "hu": "A bátyám éhes, és enni akar.", "word": "o17", "form": "hambre" },
-      { "es": "Mi hermano bebe agua y yo bebo leche.", "en": "My brother drinks water and I drink milk.", "hu": "A bátyám vizet iszik, én pedig tejet.", "word": "o30", "form": "leche" },
-      { "es": "Todos estamos felices en la casa.", "en": "We are all happy in the house.", "hu": "Mindannyian boldogok vagyunk otthon.", "word": "o10", "form": "felices" }
+      { "es": "Es la hora de la comida en mi casa.", "en": "It is mealtime at my house.", "hu": "Nálunk ebédidő van.", "de": "Bei mir zu Hause ist Essenszeit.", "word": "o26", "form": "comida" },
+      { "es": "Mi madre hace pan y huevos.", "en": "My mother makes bread and eggs.", "hu": "Anyám kenyeret és tojást készít.", "de": "Meine Mutter macht Brot und Eier.", "word": "o132", "form": "huevos" },
+      { "es": "Mi hermano tiene hambre y quiere comer.", "en": "My brother is hungry and wants to eat.", "hu": "A bátyám éhes, és enni akar.", "de": "Mein Bruder hat Hunger und will essen.", "word": "o17", "form": "hambre" },
+      { "es": "Mi hermano bebe agua y yo bebo leche.", "en": "My brother drinks water and I drink milk.", "hu": "A bátyám vizet iszik, én pedig tejet.", "de": "Mein Bruder trinkt Wasser und ich trinke Milch.", "word": "o30", "form": "leche" },
+      { "es": "Todos estamos felices en la casa.", "en": "We are all happy in the house.", "hu": "Mindannyian boldogok vagyunk otthon.", "de": "Wir sind alle glücklich zu Hause.", "word": "o10", "form": "felices" }
     ],
     "false_en": ["My mother does not make bread and eggs.", "My brother drinks milk and I drink water."],
-    "false_hu": ["Anyám nem készít kenyeret és tojást.", "A bátyám tejet iszik, én pedig vizet."]
+    "false_hu": ["Anyám nem készít kenyeret és tojást.", "A bátyám tejet iszik, én pedig vizet."],
+    "false_de": ["Meine Mutter macht kein Brot und keine Eier.", "Mein Bruder trinkt Milch und ich trinke Wasser."]
   },
   {
     "id": "a1-tienda",
     "level": "A1",
     "sentences": [
-      { "es": "Hoy estoy en la tienda con mi padre.", "en": "Today I am at the store with my father.", "hu": "Ma a boltban vagyok az apámmal.", "word": "o119", "form": "tienda" },
-      { "es": "Mi padre quiere comprar pan y fruta.", "en": "My father wants to buy bread and fruit.", "hu": "Apám kenyeret és gyümölcsöt akar venni.", "word": "o144", "form": "comprar" },
-      { "es": "El pan es caro, pero la fruta es barata.", "en": "The bread is expensive, but the fruit is cheap.", "hu": "A kenyér drága, de a gyümölcs olcsó.", "word": "o136", "form": "barata" },
-      { "es": "Mi padre da dinero a una mujer.", "en": "My father gives money to a woman.", "hu": "Apám pénzt ad egy nőnek.", "word": "o123", "form": "dinero" },
-      { "es": "Ahora tenemos pan y fruta en casa.", "en": "Now we have bread and fruit at home.", "hu": "Most kenyerünk és gyümölcsünk van otthon.", "word": "o27", "form": "pan" }
+      { "es": "Hoy estoy en la tienda con mi padre.", "en": "Today I am at the store with my father.", "hu": "Ma a boltban vagyok az apámmal.", "de": "Heute bin ich mit meinem Vater im Geschäft.", "word": "o119", "form": "tienda" },
+      { "es": "Mi padre quiere comprar pan y fruta.", "en": "My father wants to buy bread and fruit.", "hu": "Apám kenyeret és gyümölcsöt akar venni.", "de": "Mein Vater will Brot und Obst kaufen.", "word": "o144", "form": "comprar" },
+      { "es": "El pan es caro, pero la fruta es barata.", "en": "The bread is expensive, but the fruit is cheap.", "hu": "A kenyér drága, de a gyümölcs olcsó.", "de": "Das Brot ist teuer, aber das Obst ist billig.", "word": "o136", "form": "barata" },
+      { "es": "Mi padre da dinero a una mujer.", "en": "My father gives money to a woman.", "hu": "Apám pénzt ad egy nőnek.", "de": "Mein Vater gibt einer Frau Geld.", "word": "o123", "form": "dinero" },
+      { "es": "Ahora tenemos pan y fruta en casa.", "en": "Now we have bread and fruit at home.", "hu": "Most kenyerünk és gyümölcsünk van otthon.", "de": "Jetzt haben wir Brot und Obst zu Hause.", "word": "o27", "form": "pan" }
     ],
     "false_en": ["The fruit is expensive.", "I am at the store with my mother."],
-    "false_hu": ["A gyümölcs drága.", "Az anyámmal vagyok a boltban."]
+    "false_hu": ["A gyümölcs drága.", "Az anyámmal vagyok a boltban."],
+    "false_de": ["Das Obst ist teuer.", "Ich bin mit meiner Mutter im Geschäft."]
   },
   {
     "id": "a1-escuela",
     "level": "A1",
     "sentences": [
-      { "es": "Mi hijo está en la escuela hoy.", "en": "My son is at school today.", "hu": "A fiam ma az iskolában van.", "word": "o118", "form": "escuela" },
-      { "es": "Él lee un libro en español.", "en": "He reads a book in Spanish.", "hu": "Spanyolul olvas egy könyvet.", "word": "o145", "form": "lee" },
-      { "es": "El libro tiene una palabra difícil.", "en": "The book has a difficult word.", "hu": "A könyvben van egy nehéz szó.", "word": "o140", "form": "difícil" },
-      { "es": "Su amigo le ayuda.", "en": "His friend helps him.", "hu": "A barátja segít neki.", "word": "o148", "form": "ayuda" },
-      { "es": "Ahora la palabra es fácil y él está feliz.", "en": "Now the word is easy and he is happy.", "hu": "Most könnyű a szó, és ő boldog.", "word": "o139", "form": "fácil" }
+      { "es": "Mi hijo está en la escuela hoy.", "en": "My son is at school today.", "hu": "A fiam ma az iskolában van.", "de": "Mein Sohn ist heute in der Schule.", "word": "o118", "form": "escuela" },
+      { "es": "Él lee un libro en español.", "en": "He reads a book in Spanish.", "hu": "Spanyolul olvas egy könyvet.", "de": "Er liest ein Buch auf Spanisch.", "word": "o145", "form": "lee" },
+      { "es": "El libro tiene una palabra difícil.", "en": "The book has a difficult word.", "hu": "A könyvben van egy nehéz szó.", "de": "In dem Buch steht ein schwieriges Wort.", "word": "o140", "form": "difícil" },
+      { "es": "Su amigo le ayuda.", "en": "His friend helps him.", "hu": "A barátja segít neki.", "de": "Sein Freund hilft ihm.", "word": "o148", "form": "ayuda" },
+      { "es": "Ahora la palabra es fácil y él está feliz.", "en": "Now the word is easy and he is happy.", "hu": "Most könnyű a szó, és ő boldog.", "de": "Jetzt ist das Wort leicht und er ist glücklich.", "word": "o139", "form": "fácil" }
     ],
     "false_en": ["He reads a book in English.", "His friend does not help him."],
-    "false_hu": ["Angolul olvas egy könyvet.", "A barátja nem segít neki."]
+    "false_hu": ["Angolul olvas egy könyvet.", "A barátja nem segít neki."],
+    "false_de": ["Er liest ein Buch auf Englisch.", "Sein Freund hilft ihm nicht."]
   },
   {
     "id": "a1-perro",
     "level": "A1",
     "sentences": [
-      { "es": "Tengo un perro y un gato en mi casa.", "en": "I have a dog and a cat in my house.", "hu": "Otthon van egy kutyám és egy macskám.", "word": "o112", "form": "perro" },
-      { "es": "El perro es grande y el gato es pequeño.", "en": "The dog is big and the cat is small.", "hu": "A kutya nagy, a macska pedig kicsi.", "word": "o60", "form": "grande" },
-      { "es": "Los dos comen carne y beben agua.", "en": "Both of them eat meat and drink water.", "hu": "Mindketten húst esznek és vizet isznak.", "word": "o130", "form": "carne" },
-      { "es": "Hoy no veo al gato en la casa.", "en": "Today I do not see the cat in the house.", "hu": "Ma nem látom a macskát otthon.", "word": "o78", "form": "veo" },
-      { "es": "Mi hijo dice que el gato está aquí.", "en": "My son says that the cat is here.", "hu": "A fiam azt mondja, hogy a macska itt van.", "word": "o110", "form": "hijo" }
+      { "es": "Tengo un perro y un gato en mi casa.", "en": "I have a dog and a cat in my house.", "hu": "Otthon van egy kutyám és egy macskám.", "de": "Ich habe einen Hund und eine Katze bei mir zu Hause.", "word": "o112", "form": "perro" },
+      { "es": "El perro es grande y el gato es pequeño.", "en": "The dog is big and the cat is small.", "hu": "A kutya nagy, a macska pedig kicsi.", "de": "Der Hund ist groß und die Katze ist klein.", "word": "o60", "form": "grande" },
+      { "es": "Los dos comen carne y beben agua.", "en": "Both of them eat meat and drink water.", "hu": "Mindketten húst esznek és vizet isznak.", "de": "Beide fressen Fleisch und trinken Wasser.", "word": "o130", "form": "carne" },
+      { "es": "Hoy no veo al gato en la casa.", "en": "Today I do not see the cat in the house.", "hu": "Ma nem látom a macskát otthon.", "de": "Heute sehe ich die Katze nicht im Haus.", "word": "o78", "form": "veo" },
+      { "es": "Mi hijo dice que el gato está aquí.", "en": "My son says that the cat is here.", "hu": "A fiam azt mondja, hogy a macska itt van.", "de": "Mein Sohn sagt, dass die Katze hier ist.", "word": "o110", "form": "hijo" }
     ],
     "false_en": ["The cat is big and the dog is small.", "My son says that the cat is not here."],
-    "false_hu": ["A macska nagy, a kutya pedig kicsi.", "A fiam azt mondja, hogy a macska nincs itt."]
+    "false_hu": ["A macska nagy, a kutya pedig kicsi.", "A fiam azt mondja, hogy a macska nincs itt."],
+    "false_de": ["Die Katze ist groß und der Hund ist klein.", "Mein Sohn sagt, dass die Katze nicht hier ist."]
   },
   {
     "id": "a1-trabajo",
     "level": "A1",
     "sentences": [
-      { "es": "Mi padre trabaja en la ciudad.", "en": "My father works in the city.", "hu": "Apám a városban dolgozik.", "word": "o49", "form": "trabaja" },
-      { "es": "Hoy llega a casa muy tarde.", "en": "Today he gets home very late.", "hu": "Ma nagyon későn ér haza.", "word": "o149", "form": "llega" },
-      { "es": "Está muy cansado, pero habla con la familia.", "en": "He is very tired, but he talks with the family.", "hu": "Nagyon fáradt, de beszélget a családdal.", "word": "o69", "form": "cansado" },
-      { "es": "Mi madre le da café y pan.", "en": "My mother gives him coffee and bread.", "hu": "Anyám kávét és kenyeret ad neki.", "word": "o28", "form": "café" },
-      { "es": "Ahora él está bien y habla con su hijo.", "en": "Now he is fine and talks with his son.", "hu": "Most jól van, és a fiával beszélget.", "word": "o3", "form": "bien" }
+      { "es": "Mi padre trabaja en la ciudad.", "en": "My father works in the city.", "hu": "Apám a városban dolgozik.", "de": "Mein Vater arbeitet in der Stadt.", "word": "o49", "form": "trabaja" },
+      { "es": "Hoy llega a casa muy tarde.", "en": "Today he gets home very late.", "hu": "Ma nagyon későn ér haza.", "de": "Heute kommt er sehr spät nach Hause.", "word": "o149", "form": "llega" },
+      { "es": "Está muy cansado, pero habla con la familia.", "en": "He is very tired, but he talks with the family.", "hu": "Nagyon fáradt, de beszélget a családdal.", "de": "Er ist sehr müde, aber er spricht mit der Familie.", "word": "o69", "form": "cansado" },
+      { "es": "Mi madre le da café y pan.", "en": "My mother gives him coffee and bread.", "hu": "Anyám kávét és kenyeret ad neki.", "de": "Meine Mutter gibt ihm Kaffee und Brot.", "word": "o28", "form": "café" },
+      { "es": "Ahora él está bien y habla con su hijo.", "en": "Now he is fine and talks with his son.", "hu": "Most jól van, és a fiával beszélget.", "de": "Jetzt geht es ihm gut und er spricht mit seinem Sohn.", "word": "o3", "form": "bien" }
     ],
     "false_en": ["My father works in the house.", "My father does not talk with his son."],
-    "false_hu": ["Apám otthon dolgozik.", "Apám nem beszélget a fiával."]
+    "false_hu": ["Apám otthon dolgozik.", "Apám nem beszélget a fiával."],
+    "false_de": ["Mein Vater arbeitet im Haus.", "Mein Vater spricht nicht mit seinem Sohn."]
   },
   {
     "id": "a1-visita",
     "level": "A1",
     "sentences": [
-      { "es": "Mi amigo viene a mi casa hoy.", "en": "My friend comes to my house today.", "hu": "A barátom ma eljön hozzám.", "word": "o40", "form": "amigo" },
-      { "es": "Yo abro la puerta y digo hola.", "en": "I open the door and say hello.", "hu": "Kinyitom az ajtót, és köszönök.", "word": "o147", "form": "abro" },
-      { "es": "Tenemos tiempo y hablamos mucho.", "en": "We have time and we talk a lot.", "hu": "Van időnk, és sokat beszélgetünk.", "word": "o22", "form": "tiempo" },
-      { "es": "Mi amigo quiere café con leche.", "en": "My friend wants coffee with milk.", "hu": "A barátom tejeskávét szeretne.", "word": "o23", "form": "quiere" },
-      { "es": "Yo hago el café y él está muy feliz.", "en": "I make the coffee and he is very happy.", "hu": "Én főzöm a kávét, ő pedig nagyon boldog.", "word": "o76", "form": "hago" }
+      { "es": "Mi amigo viene a mi casa hoy.", "en": "My friend comes to my house today.", "hu": "A barátom ma eljön hozzám.", "de": "Mein Freund kommt heute zu mir nach Hause.", "word": "o40", "form": "amigo" },
+      { "es": "Yo abro la puerta y digo hola.", "en": "I open the door and say hello.", "hu": "Kinyitom az ajtót, és köszönök.", "de": "Ich öffne die Tür und sage hallo.", "word": "o147", "form": "abro" },
+      { "es": "Tenemos tiempo y hablamos mucho.", "en": "We have time and we talk a lot.", "hu": "Van időnk, és sokat beszélgetünk.", "de": "Wir haben Zeit und reden viel.", "word": "o22", "form": "tiempo" },
+      { "es": "Mi amigo quiere café con leche.", "en": "My friend wants coffee with milk.", "hu": "A barátom tejeskávét szeretne.", "de": "Mein Freund möchte Kaffee mit Milch.", "word": "o23", "form": "quiere" },
+      { "es": "Yo hago el café y él está muy feliz.", "en": "I make the coffee and he is very happy.", "hu": "Én főzöm a kávét, ő pedig nagyon boldog.", "de": "Ich mache den Kaffee und er ist sehr glücklich.", "word": "o76", "form": "hago" }
     ],
     "false_en": ["My friend comes to my house tomorrow.", "My friend wants tea with milk."],
-    "false_hu": ["A barátom holnap jön hozzám.", "A barátom tejes teát szeretne."]
+    "false_hu": ["A barátom holnap jön hozzám.", "A barátom tejes teát szeretne."],
+    "false_de": ["Mein Freund kommt morgen zu mir nach Hause.", "Mein Freund möchte Tee mit Milch."]
   },
   {
     "id": "a1-noche",
     "level": "A1",
     "sentences": [
-      { "es": "Es de noche y estoy muy cansado.", "en": "It is night and I am very tired.", "hu": "Éjszaka van, és nagyon fáradt vagyok.", "word": "o55", "form": "noche" },
-      { "es": "Yo leo un libro en la cama.", "en": "I read a book in bed.", "hu": "Egy könyvet olvasok az ágyban.", "word": "o124", "form": "libro" },
-      { "es": "Mi madre abre la puerta y me dice: buenas noches.", "en": "My mother opens the door and says to me: good night.", "hu": "Anyám kinyitja az ajtót, és azt mondja nekem: jó éjszakát.", "word": "o117", "form": "puerta" },
-      { "es": "Yo quiero leer más, pero mañana tengo trabajo.", "en": "I want to read more, but tomorrow I have work.", "hu": "Többet akarok olvasni, de holnap dolgozom.", "word": "o50", "form": "trabajo" },
-      { "es": "Por eso no leo más y estoy bien en la cama.", "en": "So I do not read any more and I am fine in bed.", "hu": "Ezért nem olvasok többet, és jól vagyok az ágyban.", "word": "o116", "form": "cama" }
+      { "es": "Es de noche y estoy muy cansado.", "en": "It is night and I am very tired.", "hu": "Éjszaka van, és nagyon fáradt vagyok.", "de": "Es ist Nacht und ich bin sehr müde.", "word": "o55", "form": "noche" },
+      { "es": "Yo leo un libro en la cama.", "en": "I read a book in bed.", "hu": "Egy könyvet olvasok az ágyban.", "de": "Ich lese ein Buch im Bett.", "word": "o124", "form": "libro" },
+      { "es": "Mi madre abre la puerta y me dice: buenas noches.", "en": "My mother opens the door and says to me: good night.", "hu": "Anyám kinyitja az ajtót, és azt mondja nekem: jó éjszakát.", "de": "Meine Mutter öffnet die Tür und sagt zu mir: Gute Nacht.", "word": "o117", "form": "puerta" },
+      { "es": "Yo quiero leer más, pero mañana tengo trabajo.", "en": "I want to read more, but tomorrow I have work.", "hu": "Többet akarok olvasni, de holnap dolgozom.", "de": "Ich möchte noch mehr lesen, aber morgen muss ich arbeiten.", "word": "o50", "form": "trabajo" },
+      { "es": "Por eso no leo más y estoy bien en la cama.", "en": "So I do not read any more and I am fine in bed.", "hu": "Ezért nem olvasok többet, és jól vagyok az ágyban.", "de": "Deshalb lese ich nicht mehr und es geht mir gut im Bett.", "word": "o116", "form": "cama" }
     ],
     "false_en": ["I read a magazine in bed.", "My mother does not open the door."],
-    "false_hu": ["Egy magazint olvasok az ágyban.", "Anyám nem nyitja ki az ajtót."]
+    "false_hu": ["Egy magazint olvasok az ágyban.", "Anyám nem nyitja ki az ajtót."],
+    "false_de": ["Ich lese eine Zeitschrift im Bett.", "Meine Mutter öffnet die Tür nicht."]
   },
   {
     "id": "a1-ciudad",
     "level": "A1",
     "sentences": [
-      { "es": "Hoy estoy en la ciudad con mi hermano.", "en": "Today I am in the city with my brother.", "hu": "Ma a városban vagyok a bátyámmal.", "word": "o51", "form": "ciudad" },
-      { "es": "La ciudad es muy grande y bonita.", "en": "The city is very big and pretty.", "hu": "A város nagyon nagy és szép.", "word": "o134", "form": "bonita" },
-      { "es": "Vemos calles y tiendas nuevas.", "en": "We see new streets and stores.", "hu": "Új utcákat és boltokat látunk.", "word": "o120", "form": "calles" },
-      { "es": "Mi hermano compra un teléfono nuevo.", "en": "My brother buys a new phone.", "hu": "A bátyám új telefont vesz.", "word": "o122", "form": "teléfono" },
-      { "es": "Es caro, pero él tiene dinero y está feliz.", "en": "It is expensive, but he has money and is happy.", "hu": "Drága, de van pénze, és boldog.", "word": "o135", "form": "caro" }
+      { "es": "Hoy estoy en la ciudad con mi hermano.", "en": "Today I am in the city with my brother.", "hu": "Ma a városban vagyok a bátyámmal.", "de": "Heute bin ich mit meinem Bruder in der Stadt.", "word": "o51", "form": "ciudad" },
+      { "es": "La ciudad es muy grande y bonita.", "en": "The city is very big and pretty.", "hu": "A város nagyon nagy és szép.", "de": "Die Stadt ist sehr groß und schön.", "word": "o134", "form": "bonita" },
+      { "es": "Vemos calles y tiendas nuevas.", "en": "We see new streets and stores.", "hu": "Új utcákat és boltokat látunk.", "de": "Wir sehen neue Straßen und Geschäfte.", "word": "o120", "form": "calles" },
+      { "es": "Mi hermano compra un teléfono nuevo.", "en": "My brother buys a new phone.", "hu": "A bátyám új telefont vesz.", "de": "Mein Bruder kauft ein neues Handy.", "word": "o122", "form": "teléfono" },
+      { "es": "Es caro, pero él tiene dinero y está feliz.", "en": "It is expensive, but he has money and is happy.", "hu": "Drága, de van pénze, és boldog.", "de": "Es ist teuer, aber er hat Geld und ist glücklich.", "word": "o135", "form": "caro" }
     ],
     "false_en": ["My brother buys a new book.", "We do not see any stores."],
-    "false_hu": ["A bátyám új könyvet vesz.", "Nem látunk egyetlen boltot sem."]
+    "false_hu": ["A bátyám új könyvet vesz.", "Nem látunk egyetlen boltot sem."],
+    "false_de": ["Mein Bruder kauft ein neues Buch.", "Wir sehen keine Geschäfte."]
   },
   {
     "id": "a1-enfermo",
     "level": "A1",
     "sentences": [
-      { "es": "Mi hijo está enfermo hoy.", "en": "My son is sick today.", "hu": "A fiam ma beteg.", "word": "o142", "form": "enfermo" },
-      { "es": "Tiene frío y está en la cama.", "en": "He is cold and is in bed.", "hu": "Fázik, és az ágyban van.", "word": "o138", "form": "frío" },
-      { "es": "Mi madre le da agua caliente.", "en": "My mother gives him hot water.", "hu": "Anyám meleg vizet ad neki.", "word": "o137", "form": "caliente" },
-      { "es": "Yo llamo por teléfono a mi padre.", "en": "I call my father on the phone.", "hu": "Felhívom az apámat telefonon.", "word": "o89", "form": "llamo" },
-      { "es": "Mi padre viene a la casa y ayuda mucho.", "en": "My father comes home and helps a lot.", "hu": "Apám hazajön, és sokat segít.", "word": "o80", "form": "viene" }
+      { "es": "Mi hijo está enfermo hoy.", "en": "My son is sick today.", "hu": "A fiam ma beteg.", "de": "Mein Sohn ist heute krank.", "word": "o142", "form": "enfermo" },
+      { "es": "Tiene frío y está en la cama.", "en": "He is cold and is in bed.", "hu": "Fázik, és az ágyban van.", "de": "Ihm ist kalt und er liegt im Bett.", "word": "o138", "form": "frío" },
+      { "es": "Mi madre le da agua caliente.", "en": "My mother gives him hot water.", "hu": "Anyám meleg vizet ad neki.", "de": "Meine Mutter gibt ihm heißes Wasser.", "word": "o137", "form": "caliente" },
+      { "es": "Yo llamo por teléfono a mi padre.", "en": "I call my father on the phone.", "hu": "Felhívom az apámat telefonon.", "de": "Ich rufe meinen Vater an.", "word": "o89", "form": "llamo" },
+      { "es": "Mi padre viene a la casa y ayuda mucho.", "en": "My father comes home and helps a lot.", "hu": "Apám hazajön, és sokat segít.", "de": "Mein Vater kommt nach Hause und hilft viel.", "word": "o80", "form": "viene" }
     ],
     "false_en": ["My son is at school today.", "My mother gives him cold milk."],
-    "false_hu": ["A fiam ma az iskolában van.", "Anyám hideg tejet ad neki."]
+    "false_hu": ["A fiam ma az iskolában van.", "Anyám hideg tejet ad neki."],
+    "false_de": ["Mein Sohn ist heute in der Schule.", "Meine Mutter gibt ihm kalte Milch."]
   },
   {
     "id": "a1-semana",
     "level": "A1",
     "sentences": [
-      { "es": "Mi madre trabaja cinco días en la semana.", "en": "My mother works five days a week.", "hu": "Anyám hetente öt napot dolgozik.", "word": "o133", "form": "semana" },
-      { "es": "Hoy ella no trabaja y está en casa.", "en": "Today she does not work and is at home.", "hu": "Ma nem dolgozik, otthon van.", "word": "o52", "form": "Hoy" },
-      { "es": "Ella hace la comida para la familia.", "en": "She makes the meal for the family.", "hu": "Ő főz a családnak.", "word": "o41", "form": "familia" },
-      { "es": "Mi padre y yo ayudamos mucho.", "en": "My father and I help a lot.", "hu": "Apám és én sokat segítünk.", "word": "o148", "form": "ayudamos" },
-      { "es": "Es un día muy bueno.", "en": "It is a very good day.", "hu": "Ez egy nagyon jó nap.", "word": "o53", "form": "día" }
+      { "es": "Mi madre trabaja cinco días en la semana.", "en": "My mother works five days a week.", "hu": "Anyám hetente öt napot dolgozik.", "de": "Meine Mutter arbeitet fünf Tage in der Woche.", "word": "o133", "form": "semana" },
+      { "es": "Hoy ella no trabaja y está en casa.", "en": "Today she does not work and is at home.", "hu": "Ma nem dolgozik, otthon van.", "de": "Heute arbeitet sie nicht und ist zu Hause.", "word": "o52", "form": "Hoy" },
+      { "es": "Ella hace la comida para la familia.", "en": "She makes the meal for the family.", "hu": "Ő főz a családnak.", "de": "Sie kocht das Essen für die Familie.", "word": "o41", "form": "familia" },
+      { "es": "Mi padre y yo ayudamos mucho.", "en": "My father and I help a lot.", "hu": "Apám és én sokat segítünk.", "de": "Mein Vater und ich helfen viel.", "word": "o148", "form": "ayudamos" },
+      { "es": "Es un día muy bueno.", "en": "It is a very good day.", "hu": "Ez egy nagyon jó nap.", "de": "Es ist ein sehr guter Tag.", "word": "o53", "form": "día" }
     ],
     "false_en": ["My mother works seven days a week.", "My father does not help."],
-    "false_hu": ["Anyám hetente hét napot dolgozik.", "Apám nem segít."]
+    "false_hu": ["Anyám hetente hét napot dolgozik.", "Apám nem segít."],
+    "false_de": ["Meine Mutter arbeitet sieben Tage in der Woche.", "Mein Vater hilft nicht."]
   },
   {
     "id": "a1-libro",
     "level": "A1",
     "sentences": [
-      { "es": "Quiero un libro nuevo en español.", "en": "I want a new book in Spanish.", "hu": "Egy új, spanyol nyelvű könyvet szeretnék.", "word": "o67", "form": "nuevo" },
-      { "es": "Estoy en la tienda con mi amigo.", "en": "I am at the store with my friend.", "hu": "A barátommal a boltban vagyok.", "word": "o119", "form": "tienda" },
-      { "es": "El libro es bonito, pero muy caro.", "en": "The book is pretty, but very expensive.", "hu": "A könyv szép, de nagyon drága.", "word": "o124", "form": "libro" },
-      { "es": "No tengo mucho dinero, y mi amigo me ayuda.", "en": "I do not have much money, and my friend helps me.", "hu": "Nincs sok pénzem, és a barátom segít nekem.", "word": "o123", "form": "dinero" },
-      { "es": "Compro el libro y estoy muy feliz.", "en": "I buy the book and I am very happy.", "hu": "Megveszem a könyvet, és nagyon boldog vagyok.", "word": "o144", "form": "Compro" }
+      { "es": "Quiero un libro nuevo en español.", "en": "I want a new book in Spanish.", "hu": "Egy új, spanyol nyelvű könyvet szeretnék.", "de": "Ich möchte ein neues Buch auf Spanisch.", "word": "o67", "form": "nuevo" },
+      { "es": "Estoy en la tienda con mi amigo.", "en": "I am at the store with my friend.", "hu": "A barátommal a boltban vagyok.", "de": "Ich bin mit meinem Freund im Geschäft.", "word": "o119", "form": "tienda" },
+      { "es": "El libro es bonito, pero muy caro.", "en": "The book is pretty, but very expensive.", "hu": "A könyv szép, de nagyon drága.", "de": "Das Buch ist schön, aber sehr teuer.", "word": "o124", "form": "libro" },
+      { "es": "No tengo mucho dinero, y mi amigo me ayuda.", "en": "I do not have much money, and my friend helps me.", "hu": "Nincs sok pénzem, és a barátom segít nekem.", "de": "Ich habe nicht viel Geld, und mein Freund hilft mir.", "word": "o123", "form": "dinero" },
+      { "es": "Compro el libro y estoy muy feliz.", "en": "I buy the book and I am very happy.", "hu": "Megveszem a könyvet, és nagyon boldog vagyok.", "de": "Ich kaufe das Buch und bin sehr glücklich.", "word": "o144", "form": "Compro" }
     ],
     "false_en": ["The book is cheap.", "My friend does not help me with the money."],
-    "false_hu": ["A könyv olcsó.", "A barátom nem segít nekem a pénzzel."]
+    "false_hu": ["A könyv olcsó.", "A barátom nem segít nekem a pénzzel."],
+    "false_de": ["Das Buch ist billig.", "Mein Freund hilft mir nicht mit dem Geld."]
   },
   {
     "id": "a1-hermano",
     "level": "A1",
     "sentences": [
-      { "es": "Mi hermano tiene un problema con el teléfono.", "en": "My brother has a problem with the phone.", "hu": "A bátyámnak problémája van a telefonnal.", "word": "o129", "form": "problema" },
-      { "es": "El teléfono es viejo y está mal.", "en": "The phone is old and it is not working well.", "hu": "A telefon régi, és nem működik jól.", "word": "o68", "form": "viejo" },
-      { "es": "Él necesita un teléfono nuevo.", "en": "He needs a new phone.", "hu": "Új telefonra van szüksége.", "word": "o143", "form": "necesita" },
-      { "es": "Pero no tiene dinero para eso.", "en": "But he does not have money for that.", "hu": "De nincs rá pénze.", "word": "o16", "form": "tiene" },
-      { "es": "Yo le doy el dinero y él compra el teléfono.", "en": "I give him the money and he buys the phone.", "hu": "Én odaadom neki a pénzt, ő pedig megveszi a telefont.", "word": "o81", "form": "doy" }
+      { "es": "Mi hermano tiene un problema con el teléfono.", "en": "My brother has a problem with the phone.", "hu": "A bátyámnak problémája van a telefonnal.", "de": "Mein Bruder hat ein Problem mit dem Handy.", "word": "o129", "form": "problema" },
+      { "es": "El teléfono es viejo y está mal.", "en": "The phone is old and it is not working well.", "hu": "A telefon régi, és nem működik jól.", "de": "Das Handy ist alt und funktioniert nicht gut.", "word": "o68", "form": "viejo" },
+      { "es": "Él necesita un teléfono nuevo.", "en": "He needs a new phone.", "hu": "Új telefonra van szüksége.", "de": "Er braucht ein neues Handy.", "word": "o143", "form": "necesita" },
+      { "es": "Pero no tiene dinero para eso.", "en": "But he does not have money for that.", "hu": "De nincs rá pénze.", "de": "Aber dafür hat er kein Geld.", "word": "o16", "form": "tiene" },
+      { "es": "Yo le doy el dinero y él compra el teléfono.", "en": "I give him the money and he buys the phone.", "hu": "Én odaadom neki a pénzt, ő pedig megveszi a telefont.", "de": "Ich gebe ihm das Geld und er kauft das Handy.", "word": "o81", "form": "doy" }
     ],
     "false_en": ["My brother does not have a problem with the phone.", "My brother has a lot of money."],
-    "false_hu": ["A bátyámnak nincs problémája a telefonnal.", "A bátyámnak sok pénze van."]
+    "false_hu": ["A bátyámnak nincs problémája a telefonnal.", "A bátyámnak sok pénze van."],
+    "false_de": ["Mein Bruder hat kein Problem mit dem Handy.", "Mein Bruder hat viel Geld."]
   },
   {
     "id": "a1-playa",
     "level": "A1",
     "sentences": [
-      { "es": "En verano estamos en la playa con la familia.", "en": "In summer we are at the beach with the family.", "hu": "Nyáron a családdal a tengerparton vagyunk.", "word": "o391", "form": "playa" },
-      { "es": "Hace calor y el sol es fuerte.", "en": "It is hot and the sun is strong.", "hu": "Meleg van, és erős a nap.", "word": "o652", "form": "calor" },
-      { "es": "Mis hijos nadan en el mar.", "en": "My children swim in the sea.", "hu": "A gyerekeim úsznak a tengerben.", "word": "o1020", "form": "nadan" },
-      { "es": "Yo como un helado y bebo agua.", "en": "I eat an ice cream and drink water.", "hu": "Én fagylaltot eszem, és vizet iszom.", "word": "o655", "form": "helado" },
-      { "es": "Después todos estamos cansados, pero muy felices.", "en": "Afterwards we are all tired, but very happy.", "hu": "Utána mindannyian fáradtak vagyunk, de nagyon boldogok.", "word": "o69", "form": "cansados" }
+      { "es": "En verano estamos en la playa con la familia.", "en": "In summer we are at the beach with the family.", "hu": "Nyáron a családdal a tengerparton vagyunk.", "de": "Im Sommer sind wir mit der Familie am Strand.", "word": "o391", "form": "playa" },
+      { "es": "Hace calor y el sol es fuerte.", "en": "It is hot and the sun is strong.", "hu": "Meleg van, és erős a nap.", "de": "Es ist heiß und die Sonne ist stark.", "word": "o652", "form": "calor" },
+      { "es": "Mis hijos nadan en el mar.", "en": "My children swim in the sea.", "hu": "A gyerekeim úsznak a tengerben.", "de": "Meine Kinder schwimmen im Meer.", "word": "o1020", "form": "nadan" },
+      { "es": "Yo como un helado y bebo agua.", "en": "I eat an ice cream and drink water.", "hu": "Én fagylaltot eszem, és vizet iszom.", "de": "Ich esse ein Eis und trinke Wasser.", "word": "o655", "form": "helado" },
+      { "es": "Después todos estamos cansados, pero muy felices.", "en": "Afterwards we are all tired, but very happy.", "hu": "Utána mindannyian fáradtak vagyunk, de nagyon boldogok.", "de": "Danach sind wir alle müde, aber sehr glücklich.", "word": "o69", "form": "cansados" }
     ],
-    "false_en": ["In winter we are at the beach.","I eat a cookie and drink water."],
-    "false_hu": ["Télen a tengerparton vagyunk.", "Egy sütit eszem, és vizet iszom."]
+    "false_en": ["In winter we are at the beach.", "I eat a cookie and drink water."],
+    "false_hu": ["Télen a tengerparton vagyunk.", "Egy sütit eszem, és vizet iszom."],
+    "false_de": ["Im Winter sind wir am Strand.", "Ich esse einen Keks und trinke Wasser."]
   },
   {
     "id": "a1-restaurante",
     "level": "A1",
     "sentences": [
-      { "es": "Mi amigo y yo estamos en un restaurante.", "en": "My friend and I are in a restaurant.", "hu": "A barátom és én egy étteremben vagyunk.", "word": "o256", "form": "restaurante" },
-      { "es": "Tenemos una mesa y vemos el menú.", "en": "We have a table and we look at the menu.", "hu": "Van egy asztalunk, és nézzük az étlapot.", "word": "o115", "form": "mesa" },
-      { "es": "Yo quiero pollo y mi amigo quiere sopa.", "en": "I want chicken and my friend wants soup.", "hu": "Én csirkét szeretnék, a barátom pedig levest.", "word": "o262", "form": "pollo" },
-      { "es": "La comida es muy buena.", "en": "The food is very good.", "hu": "Az étel nagyon jó.", "word": "o26", "form": "comida" },
-      { "es": "Después llega la cuenta y no es cara.", "en": "Afterwards the bill arrives and it is not expensive.", "hu": "Utána jön a számla, és nem drága.", "word": "o625", "form": "cuenta" }
+      { "es": "Mi amigo y yo estamos en un restaurante.", "en": "My friend and I are in a restaurant.", "hu": "A barátom és én egy étteremben vagyunk.", "de": "Mein Freund und ich sind in einem Restaurant.", "word": "o256", "form": "restaurante" },
+      { "es": "Tenemos una mesa y vemos el menú.", "en": "We have a table and we look at the menu.", "hu": "Van egy asztalunk, és nézzük az étlapot.", "de": "Wir haben einen Tisch und schauen auf die Speisekarte.", "word": "o115", "form": "mesa" },
+      { "es": "Yo quiero pollo y mi amigo quiere sopa.", "en": "I want chicken and my friend wants soup.", "hu": "Én csirkét szeretnék, a barátom pedig levest.", "de": "Ich möchte Hähnchen und mein Freund möchte Suppe.", "word": "o262", "form": "pollo" },
+      { "es": "La comida es muy buena.", "en": "The food is very good.", "hu": "Az étel nagyon jó.", "de": "Das Essen ist sehr gut.", "word": "o26", "form": "comida" },
+      { "es": "Después llega la cuenta y no es cara.", "en": "Afterwards the bill arrives and it is not expensive.", "hu": "Utána jön a számla, és nem drága.", "de": "Danach kommt die Rechnung und sie ist nicht teuer.", "word": "o625", "form": "cuenta" }
     ],
     "false_en": ["My friend wants chicken.", "We are in a restaurant with my mother."],
-    "false_hu": ["A barátom csirkét szeretne.", "Az anyámmal vagyunk egy étteremben."]
+    "false_hu": ["A barátom csirkét szeretne.", "Az anyámmal vagyunk egy étteremben."],
+    "false_de": ["Mein Freund möchte Hähnchen.", "Wir sind mit meiner Mutter in einem Restaurant."]
   },
   {
     "id": "a1-parque",
     "level": "A1",
     "sentences": [
-      { "es": "Hoy hace sol y estamos en el parque.", "en": "Today it is sunny and we are in the park.", "hu": "Ma süt a nap, és a parkban vagyunk.", "word": "o254", "form": "parque" },
-      { "es": "Los niños corren con una pelota.", "en": "The children run with a ball.", "hu": "A gyerekek labdával futkosnak.", "word": "o1003", "form": "pelota" },
-      { "es": "Mi perro corre mucho.", "en": "My dog runs a lot.", "hu": "A kutyám sokat szalad.", "word": "o112", "form": "perro" },
-      { "es": "Yo leo mi libro y bebo agua.", "en": "I read my book and drink water.", "hu": "Én a könyvemet olvasom, és vizet iszom.", "word": "o124", "form": "libro" },
-      { "es": "Después tenemos hambre y comemos en casa.", "en": "Afterwards we are hungry and eat at home.", "hu": "Utána éhesek vagyunk, és otthon eszünk.", "word": "o17", "form": "hambre" }
+      { "es": "Hoy hace sol y estamos en el parque.", "en": "Today it is sunny and we are in the park.", "hu": "Ma süt a nap, és a parkban vagyunk.", "de": "Heute scheint die Sonne und wir sind im Park.", "word": "o254", "form": "parque" },
+      { "es": "Los niños corren con una pelota.", "en": "The children run with a ball.", "hu": "A gyerekek labdával futkosnak.", "de": "Die Kinder rennen mit einem Ball.", "word": "o1003", "form": "pelota" },
+      { "es": "Mi perro corre mucho.", "en": "My dog runs a lot.", "hu": "A kutyám sokat szalad.", "de": "Mein Hund rennt viel.", "word": "o112", "form": "perro" },
+      { "es": "Yo leo mi libro y bebo agua.", "en": "I read my book and drink water.", "hu": "Én a könyvemet olvasom, és vizet iszom.", "de": "Ich lese mein Buch und trinke Wasser.", "word": "o124", "form": "libro" },
+      { "es": "Después tenemos hambre y comemos en casa.", "en": "Afterwards we are hungry and eat at home.", "hu": "Utána éhesek vagyunk, és otthon eszünk.", "de": "Danach haben wir Hunger und essen zu Hause.", "word": "o17", "form": "hambre" }
     ],
     "false_en": ["The children run with a cat.", "My dog does not run."],
-    "false_hu": ["A gyerekek egy macskával futkosnak.", "A kutyám nem szalad."]
+    "false_hu": ["A gyerekek egy macskával futkosnak.", "A kutyám nem szalad."],
+    "false_de": ["Die Kinder rennen mit einer Katze.", "Mein Hund rennt nicht."]
   },
   {
     "id": "a1-mercado",
     "level": "A1",
     "sentences": [
-      { "es": "Mi madre está en el mercado hoy.", "en": "My mother is at the market today.", "hu": "Anyám ma a piacon van.", "word": "o257", "form": "mercado" },
-      { "es": "Un hombre vende fruta y verdura.", "en": "A man sells fruit and vegetables.", "hu": "Egy férfi gyümölcsöt és zöldséget árul.", "word": "o238", "form": "vende" },
-      { "es": "La fruta es muy bonita y barata.", "en": "The fruit is very pretty and cheap.", "hu": "A gyümölcs nagyon szép és olcsó.", "word": "o131", "form": "fruta" },
-      { "es": "Mi madre compra arroz, huevos y verdura.", "en": "My mother buys rice, eggs and vegetables.", "hu": "Anyám rizst, tojást és zöldséget vesz.", "word": "o936", "form": "arroz" },
-      { "es": "Ella da diez pesos al hombre.", "en": "She gives ten pesos to the man.", "hu": "Ő tíz pesót ad a férfinak.", "word": "o890", "form": "pesos" }
+      { "es": "Mi madre está en el mercado hoy.", "en": "My mother is at the market today.", "hu": "Anyám ma a piacon van.", "de": "Meine Mutter ist heute auf dem Markt.", "word": "o257", "form": "mercado" },
+      { "es": "Un hombre vende fruta y verdura.", "en": "A man sells fruit and vegetables.", "hu": "Egy férfi gyümölcsöt és zöldséget árul.", "de": "Ein Mann verkauft Obst und Gemüse.", "word": "o238", "form": "vende" },
+      { "es": "La fruta es muy bonita y barata.", "en": "The fruit is very pretty and cheap.", "hu": "A gyümölcs nagyon szép és olcsó.", "de": "Das Obst ist sehr schön und billig.", "word": "o131", "form": "fruta" },
+      { "es": "Mi madre compra arroz, huevos y verdura.", "en": "My mother buys rice, eggs and vegetables.", "hu": "Anyám rizst, tojást és zöldséget vesz.", "de": "Meine Mutter kauft Reis, Eier und Gemüse.", "word": "o936", "form": "arroz" },
+      { "es": "Ella da diez pesos al hombre.", "en": "She gives ten pesos to the man.", "hu": "Ő tíz pesót ad a férfinak.", "de": "Sie gibt dem Mann zehn Pesos.", "word": "o890", "form": "pesos" }
     ],
-    "false_en": ["My mother is at the market tomorrow.","She gives fifty pesos to the man."],
-    "false_hu": ["Anyám holnap a piacon van.", "Ő ötven pesót ad a férfinak."]
+    "false_en": ["My mother is at the market tomorrow.", "She gives fifty pesos to the man."],
+    "false_hu": ["Anyám holnap a piacon van.", "Ő ötven pesót ad a férfinak."],
+    "false_de": ["Meine Mutter ist morgen auf dem Markt.", "Sie gibt dem Mann fünfzig Pesos."]
   },
   {
     "id": "a1-viaje",
     "level": "A1",
     "sentences": [
-      { "es": "Mi familia y yo viajamos en tren.", "en": "My family and I travel by train.", "hu": "A családommal vonattal utazunk.", "word": "o230", "form": "viajamos" },
-      { "es": "El viaje es largo, pero mi hermano está feliz.", "en": "The trip is long, but my brother is happy.", "hu": "Az út hosszú, de a bátyám boldog.", "word": "o259", "form": "viaje" },
-      { "es": "Llegamos a la ciudad por la noche.", "en": "We arrive in the city at night.", "hu": "Éjszaka érkezünk a városba.", "word": "o149", "form": "Llegamos" },
-      { "es": "Estamos en un hotel muy bonito.", "en": "We are in a very nice hotel.", "hu": "Egy nagyon szép szállodában vagyunk.", "word": "o255", "form": "hotel" },
-      { "es": "Mañana vemos la ciudad.", "en": "Tomorrow we see the city.", "hu": "Holnap megnézzük a várost.", "word": "o51", "form": "ciudad" }
+      { "es": "Mi familia y yo viajamos en tren.", "en": "My family and I travel by train.", "hu": "A családommal vonattal utazunk.", "de": "Meine Familie und ich reisen mit dem Zug.", "word": "o230", "form": "viajamos" },
+      { "es": "El viaje es largo, pero mi hermano está feliz.", "en": "The trip is long, but my brother is happy.", "hu": "Az út hosszú, de a bátyám boldog.", "de": "Die Reise ist lang, aber mein Bruder ist glücklich.", "word": "o259", "form": "viaje" },
+      { "es": "Llegamos a la ciudad por la noche.", "en": "We arrive in the city at night.", "hu": "Éjszaka érkezünk a városba.", "de": "Wir kommen in der Nacht in der Stadt an.", "word": "o149", "form": "Llegamos" },
+      { "es": "Estamos en un hotel muy bonito.", "en": "We are in a very nice hotel.", "hu": "Egy nagyon szép szállodában vagyunk.", "de": "Wir sind in einem sehr schönen Hotel.", "word": "o255", "form": "hotel" },
+      { "es": "Mañana vemos la ciudad.", "en": "Tomorrow we see the city.", "hu": "Holnap megnézzük a várost.", "de": "Morgen sehen wir die Stadt.", "word": "o51", "form": "ciudad" }
     ],
     "false_en": ["We travel by car.", "We arrive in the city in the morning."],
-    "false_hu": ["Autóval utazunk.", "Reggel érkezünk a városba."]
+    "false_hu": ["Autóval utazunk.", "Reggel érkezünk a városba."],
+    "false_de": ["Wir reisen mit dem Auto.", "Wir kommen am Morgen in der Stadt an."]
   },
   {
     "id": "a1-cine",
     "level": "A1",
     "sentences": [
-      { "es": "El domingo estoy en el cine con mis amigos.", "en": "On Sunday I am at the movies with my friends.", "hu": "Vasárnap a barátaimmal moziban vagyok.", "word": "o632", "form": "cine" },
-      { "es": "La película es a las ocho.", "en": "The movie is at eight.", "hu": "A film nyolckor van.", "word": "o284", "form": "película" },
-      { "es": "Mi amiga llega tarde.", "en": "My friend arrives late.", "hu": "A barátnőm későn érkezik.", "word": "o4382", "form": "amiga" },
-      { "es": "Compramos agua y chocolate.", "en": "We buy water and chocolate.", "hu": "Vizet és csokoládét veszünk.", "word": "o634", "form": "chocolate" },
-      { "es": "La película es muy buena y estamos felices.", "en": "The movie is very good and we are happy.", "hu": "A film nagyon jó, és boldogok vagyunk.", "word": "o62", "form": "buena" }
+      { "es": "El domingo estoy en el cine con mis amigos.", "en": "On Sunday I am at the movies with my friends.", "hu": "Vasárnap a barátaimmal moziban vagyok.", "de": "Am Sonntag bin ich mit meinen Freunden im Kino.", "word": "o632", "form": "cine" },
+      { "es": "La película es a las ocho.", "en": "The movie is at eight.", "hu": "A film nyolckor van.", "de": "Der Film beginnt um acht Uhr.", "word": "o284", "form": "película" },
+      { "es": "Mi amiga llega tarde.", "en": "My friend arrives late.", "hu": "A barátnőm későn érkezik.", "de": "Meine Freundin kommt zu spät.", "word": "o4382", "form": "amiga" },
+      { "es": "Compramos agua y chocolate.", "en": "We buy water and chocolate.", "hu": "Vizet és csokoládét veszünk.", "de": "Wir kaufen Wasser und Schokolade.", "word": "o634", "form": "chocolate" },
+      { "es": "La película es muy buena y estamos felices.", "en": "The movie is very good and we are happy.", "hu": "A film nagyon jó, és boldogok vagyunk.", "de": "Der Film ist sehr gut und wir sind glücklich.", "word": "o62", "form": "buena" }
     ],
     "false_en": ["The movie is at ten.", "We buy coffee and bread."],
-    "false_hu": ["A film tízkor van.", "Kávét és kenyeret veszünk."]
+    "false_hu": ["A film tízkor van.", "Kávét és kenyeret veszünk."],
+    "false_de": ["Der Film beginnt um zehn Uhr.", "Wir kaufen Kaffee und Brot."]
   },
   {
     "id": "a1-lluvia",
     "level": "A1",
     "sentences": [
-      { "es": "Hoy la lluvia es fuerte en la ciudad.", "en": "Today the rain is heavy in the city.", "hu": "Ma erős az eső a városban.", "word": "o988", "form": "lluvia" },
-      { "es": "Hace frío y yo llevo un abrigo.", "en": "It is cold and I am wearing a coat.", "hu": "Hideg van, és kabát van rajtam.", "word": "o669", "form": "abrigo" },
-      { "es": "Mi madre tiene un paraguas grande.", "en": "My mother has a big umbrella.", "hu": "Anyámnak van egy nagy esernyője.", "word": "o690", "form": "paraguas" },
-      { "es": "Estamos en casa y bebemos café caliente.", "en": "We are at home and drink hot coffee.", "hu": "Otthon vagyunk, és forró kávét iszunk.", "word": "o28", "form": "café" },
-      { "es": "Me gusta la lluvia, pero hoy quiero estar en casa.", "en": "I like the rain, but today I want to be at home.", "hu": "Szeretem az esőt, de ma otthon akarok lenni.", "word": "o88", "form": "gusta" }
+      { "es": "Hoy la lluvia es fuerte en la ciudad.", "en": "Today the rain is heavy in the city.", "hu": "Ma erős az eső a városban.", "de": "Heute regnet es stark in der Stadt.", "word": "o988", "form": "lluvia" },
+      { "es": "Hace frío y yo llevo un abrigo.", "en": "It is cold and I am wearing a coat.", "hu": "Hideg van, és kabát van rajtam.", "de": "Es ist kalt und ich trage einen Mantel.", "word": "o669", "form": "abrigo" },
+      { "es": "Mi madre tiene un paraguas grande.", "en": "My mother has a big umbrella.", "hu": "Anyámnak van egy nagy esernyője.", "de": "Meine Mutter hat einen großen Regenschirm.", "word": "o690", "form": "paraguas" },
+      { "es": "Estamos en casa y bebemos café caliente.", "en": "We are at home and drink hot coffee.", "hu": "Otthon vagyunk, és forró kávét iszunk.", "de": "Wir sind zu Hause und trinken heißen Kaffee.", "word": "o28", "form": "café" },
+      { "es": "Me gusta la lluvia, pero hoy quiero estar en casa.", "en": "I like the rain, but today I want to be at home.", "hu": "Szeretem az esőt, de ma otthon akarok lenni.", "de": "Ich mag den Regen, aber heute möchte ich zu Hause sein.", "word": "o88", "form": "gusta" }
     ],
     "false_en": ["Today it is hot in the city.", "My mother does not have an umbrella."],
-    "false_hu": ["Ma meleg van a városban.", "Anyámnak nincs esernyője."]
+    "false_hu": ["Ma meleg van a városban.", "Anyámnak nincs esernyője."],
+    "false_de": ["Heute ist es heiß in der Stadt.", "Meine Mutter hat keinen Regenschirm."]
   },
   {
     "id": "a1-cena",
     "level": "A1",
     "sentences": [
-      { "es": "Mi mamá cocina la cena.", "en": "My mom cooks dinner.", "hu": "Anyukám főzi a vacsorát.", "word": "o226", "form": "cocina" },
-      { "es": "Hace pollo con arroz.", "en": "She makes chicken with rice.", "hu": "Csirkét készít rizzsel.", "word": "o262", "form": "pollo" },
-      { "es": "Mi papá llega a la casa a las siete.", "en": "My dad gets home at seven.", "hu": "Apukám hét órakor ér haza.", "word": "o696", "form": "papá" },
-      { "es": "Mi hermana tiene hambre y quiere comer.", "en": "My sister is hungry and wants to eat.", "hu": "A húgom éhes, és enni akar.", "word": "o4368", "form": "hermana" },
-      { "es": "Todos comemos en la mesa y la cena está muy buena.", "en": "We all eat at the table and the dinner is very good.", "hu": "Mindannyian az asztalnál eszünk, és a vacsora nagyon finom.", "word": "o261", "form": "cena" }
+      { "es": "Mi mamá cocina la cena.", "en": "My mom cooks dinner.", "hu": "Anyukám főzi a vacsorát.", "de": "Meine Mama kocht das Abendessen.", "word": "o226", "form": "cocina" },
+      { "es": "Hace pollo con arroz.", "en": "She makes chicken with rice.", "hu": "Csirkét készít rizzsel.", "de": "Sie macht Hähnchen mit Reis.", "word": "o262", "form": "pollo" },
+      { "es": "Mi papá llega a la casa a las siete.", "en": "My dad gets home at seven.", "hu": "Apukám hét órakor ér haza.", "de": "Mein Papa kommt um sieben Uhr nach Hause.", "word": "o696", "form": "papá" },
+      { "es": "Mi hermana tiene hambre y quiere comer.", "en": "My sister is hungry and wants to eat.", "hu": "A húgom éhes, és enni akar.", "de": "Meine Schwester hat Hunger und will essen.", "word": "o4368", "form": "hermana" },
+      { "es": "Todos comemos en la mesa y la cena está muy buena.", "en": "We all eat at the table and the dinner is very good.", "hu": "Mindannyian az asztalnál eszünk, és a vacsora nagyon finom.", "de": "Wir essen alle am Tisch und das Abendessen ist sehr gut.", "word": "o261", "form": "cena" }
     ],
     "false_en": ["My mom makes fish with rice.", "My dad gets home at nine."],
-    "false_hu": ["Anyukám halat készít rizzsel.", "Apukám kilenckor ér haza."]
+    "false_hu": ["Anyukám halat készít rizzsel.", "Apukám kilenckor ér haza."],
+    "false_de": ["Meine Mama macht Fisch mit Reis.", "Mein Papa kommt um neun Uhr nach Hause."]
   },
   {
     "id": "a2-cumpleanos",
     "level": "A2",
     "sentences": [
-      { "es": "Ayer fue el cumpleaños de mi hermana.", "en": "Yesterday was my sister's birthday.", "hu": "Tegnap volt a nővérem születésnapja.", "word": "o751", "form": "cumpleaños" },
-      { "es": "Mis padres compraron un pastel grande en la tienda.", "en": "My parents bought a big cake at the store.", "hu": "A szüleim vettek egy nagy tortát a boltban.", "word": "o698", "form": "pastel" },
-      { "es": "Muchos invitados llegaron a la casa por la tarde.", "en": "Many guests arrived at the house in the afternoon.", "hu": "Sok vendég érkezett a házhoz délután.", "word": "o1153", "form": "invitados" },
-      { "es": "Yo le di un regalo bonito y ella me abrazó.", "en": "I gave her a pretty gift and she hugged me.", "hu": "Adtam neki egy szép ajándékot, ő pedig megölelt.", "word": "o694", "form": "regalo" },
-      { "es": "Todos cantamos y ella se puso muy feliz con la sorpresa.", "en": "We all sang and she became very happy with the surprise.", "hu": "Mindannyian énekeltünk, ő pedig nagyon boldog lett a meglepetéstől.", "word": "o1151", "form": "sorpresa" }
+      { "es": "Ayer fue el cumpleaños de mi hermana.", "en": "Yesterday was my sister's birthday.", "hu": "Tegnap volt a nővérem születésnapja.", "de": "Gestern war der Geburtstag meiner Schwester.", "word": "o751", "form": "cumpleaños" },
+      { "es": "Mis padres compraron un pastel grande en la tienda.", "en": "My parents bought a big cake at the store.", "hu": "A szüleim vettek egy nagy tortát a boltban.", "de": "Meine Eltern haben im Geschäft einen großen Kuchen gekauft.", "word": "o698", "form": "pastel" },
+      { "es": "Muchos invitados llegaron a la casa por la tarde.", "en": "Many guests arrived at the house in the afternoon.", "hu": "Sok vendég érkezett a házhoz délután.", "de": "Viele Gäste sind am Nachmittag zu uns nach Hause gekommen.", "word": "o1153", "form": "invitados" },
+      { "es": "Yo le di un regalo bonito y ella me abrazó.", "en": "I gave her a pretty gift and she hugged me.", "hu": "Adtam neki egy szép ajándékot, ő pedig megölelt.", "de": "Ich habe ihr ein schönes Geschenk gegeben und sie hat mich umarmt.", "word": "o694", "form": "regalo" },
+      { "es": "Todos cantamos y ella se puso muy feliz con la sorpresa.", "en": "We all sang and she became very happy with the surprise.", "hu": "Mindannyian énekeltünk, ő pedig nagyon boldog lett a meglepetéstől.", "de": "Wir haben alle gesungen und sie hat sich sehr über die Überraschung gefreut.", "word": "o1151", "form": "sorpresa" }
     ],
     "false_en": ["Yesterday was my brother's birthday.", "My parents made a big cake at home."],
-    "false_hu": ["Tegnap a bátyám születésnapja volt.", "A szüleim otthon készítettek egy nagy tortát."]
+    "false_hu": ["Tegnap a bátyám születésnapja volt.", "A szüleim otthon készítettek egy nagy tortát."],
+    "false_de": ["Gestern war der Geburtstag meines Bruders.", "Meine Eltern haben zu Hause einen großen Kuchen gebacken."]
   },
   {
     "id": "a2-mudanza",
     "level": "A2",
     "sentences": [
-      { "es": "El sábado fue el día de la mudanza.", "en": "Saturday was moving day.", "hu": "Szombaton volt a költözés napja.", "word": "o2900", "form": "mudanza" },
-      { "es": "Mi madre puso la ropa en una maleta grande.", "en": "My mother put the clothes in a big suitcase.", "hu": "Anyám egy nagy bőröndbe tette a ruhákat.", "word": "o699", "form": "maleta" },
-      { "es": "Nuestro departamento nuevo está cerca del parque.", "en": "Our new apartment is near the park.", "hu": "Az új lakásunk a park közelében van.", "word": "o714", "form": "departamento" },
-      { "es": "Un vecino simpático nos ayudó con la mesa.", "en": "A friendly neighbor helped us with the table.", "hu": "Egy kedves szomszéd segített nekünk az asztallal.", "word": "o385", "form": "vecino" },
-      { "es": "Por la noche cenamos en la cocina y estábamos muy cansados.", "en": "At night we had dinner in the kitchen and we were very tired.", "hu": "Este a konyhában vacsoráztunk, és nagyon fáradtak voltunk.", "word": "o269", "form": "cocina" }
+      { "es": "El sábado fue el día de la mudanza.", "en": "Saturday was moving day.", "hu": "Szombaton volt a költözés napja.", "de": "Am Samstag war Umzugstag.", "word": "o2900", "form": "mudanza" },
+      { "es": "Mi madre puso la ropa en una maleta grande.", "en": "My mother put the clothes in a big suitcase.", "hu": "Anyám egy nagy bőröndbe tette a ruhákat.", "de": "Meine Mutter hat die Kleidung in einen großen Koffer gepackt.", "word": "o699", "form": "maleta" },
+      { "es": "Nuestro departamento nuevo está cerca del parque.", "en": "Our new apartment is near the park.", "hu": "Az új lakásunk a park közelében van.", "de": "Unsere neue Wohnung ist in der Nähe vom Park.", "word": "o714", "form": "departamento" },
+      { "es": "Un vecino simpático nos ayudó con la mesa.", "en": "A friendly neighbor helped us with the table.", "hu": "Egy kedves szomszéd segített nekünk az asztallal.", "de": "Ein netter Nachbar hat uns mit dem Tisch geholfen.", "word": "o385", "form": "vecino" },
+      { "es": "Por la noche cenamos en la cocina y estábamos muy cansados.", "en": "At night we had dinner in the kitchen and we were very tired.", "hu": "Este a konyhában vacsoráztunk, és nagyon fáradtak voltunk.", "de": "Am Abend haben wir in der Küche gegessen und waren sehr müde.", "word": "o269", "form": "cocina" }
     ],
     "false_en": ["Moving day was on Monday.", "Our new apartment is far from the park."],
-    "false_hu": ["A költözés hétfőn volt.", "Az új lakásunk messze van a parktól."]
+    "false_hu": ["A költözés hétfőn volt.", "Az új lakásunk messze van a parktól."],
+    "false_de": ["Am Montag war Umzugstag.", "Unsere neue Wohnung ist weit weg vom Park."]
   },
   {
     "id": "a2-aeropuerto",
     "level": "A2",
     "sentences": [
-      { "es": "Llegué al aeropuerto dos horas antes del vuelo.", "en": "I arrived at the airport two hours before the flight.", "hu": "Két órával a járat előtt érkeztem a repülőtérre.", "word": "o713", "form": "aeropuerto" },
-      { "es": "Le di mi pasaporte a la señora.", "en": "I gave my passport to the lady.", "hu": "Odaadtam az útlevelemet a hölgynek.", "word": "o1132", "form": "pasaporte" },
-      { "es": "Mi equipaje era muy pesado y tuve que pagar más.", "en": "My luggage was very heavy and I had to pay more.", "hu": "A poggyászom nagyon nehéz volt, és többet kellett fizetnem.", "word": "o1131", "form": "equipaje" },
-      { "es": "Mientras esperaba, miré los aviones por la ventana.", "en": "While I waited, I watched the planes through the window.", "hu": "Amíg vártam, a repülőket néztem az ablakon át.", "word": "o748", "form": "aviones" },
-      { "es": "Mi asiento era cómodo y el viaje fue corto.", "en": "My seat was comfortable and the trip was short.", "hu": "Az ülésem kényelmes volt, és az út rövid volt.", "word": "o1135", "form": "asiento" }
+      { "es": "Llegué al aeropuerto dos horas antes del vuelo.", "en": "I arrived at the airport two hours before the flight.", "hu": "Két órával a járat előtt érkeztem a repülőtérre.", "de": "Ich bin zwei Stunden vor dem Flug am Flughafen angekommen.", "word": "o713", "form": "aeropuerto" },
+      { "es": "Le di mi pasaporte a la señora.", "en": "I gave my passport to the lady.", "hu": "Odaadtam az útlevelemet a hölgynek.", "de": "Ich habe der Dame meinen Pass gegeben.", "word": "o1132", "form": "pasaporte" },
+      { "es": "Mi equipaje era muy pesado y tuve que pagar más.", "en": "My luggage was very heavy and I had to pay more.", "hu": "A poggyászom nagyon nehéz volt, és többet kellett fizetnem.", "de": "Mein Gepäck war sehr schwer und ich musste mehr bezahlen.", "word": "o1131", "form": "equipaje" },
+      { "es": "Mientras esperaba, miré los aviones por la ventana.", "en": "While I waited, I watched the planes through the window.", "hu": "Amíg vártam, a repülőket néztem az ablakon át.", "de": "Während ich gewartet habe, habe ich durch das Fenster die Flugzeuge angeschaut.", "word": "o748", "form": "aviones" },
+      { "es": "Mi asiento era cómodo y el viaje fue corto.", "en": "My seat was comfortable and the trip was short.", "hu": "Az ülésem kényelmes volt, és az út rövid volt.", "de": "Mein Sitz war bequem und die Reise war kurz.", "word": "o1135", "form": "asiento" }
     ],
     "false_en": ["I arrived at the airport ten minutes before the flight.", "My luggage was very light."],
-    "false_hu": ["Tíz perccel a járat előtt érkeztem a repülőtérre.", "A poggyászom nagyon könnyű volt."]
+    "false_hu": ["Tíz perccel a járat előtt érkeztem a repülőtérre.", "A poggyászom nagyon könnyű volt."],
+    "false_de": ["Ich bin zehn Minuten vor dem Flug am Flughafen angekommen.", "Mein Gepäck war sehr leicht."]
   },
   {
     "id": "a2-receta",
     "level": "A2",
     "sentences": [
-      { "es": "Ayer quise hacer una receta nueva.", "en": "Yesterday I wanted to make a new recipe.", "hu": "Tegnap egy új receptet akartam elkészíteni.", "word": "o722", "form": "receta" },
-      { "es": "Compré harina y mantequilla en el mercado.", "en": "I bought flour and butter at the market.", "hu": "Lisztet és vajat vettem a piacon.", "word": "o1688", "form": "harina" },
-      { "es": "Primero batí los huevos con una taza de azúcar.", "en": "First I beat the eggs with a cup of sugar.", "hu": "Először felvertem a tojásokat egy csésze cukorral.", "word": "o761", "form": "taza" },
-      { "es": "Luego metí el pastel en el horno durante una hora.", "en": "Then I put the cake in the oven for an hour.", "hu": "Aztán egy órára betettem a tortát a sütőbe.", "word": "o1109", "form": "horno" },
-      { "es": "El pastel salió delicioso y mi familia lo comió.", "en": "The cake came out delicious and my family ate it.", "hu": "A torta finomra sikerült, és a családom megette.", "word": "o910", "form": "delicioso" }
+      { "es": "Ayer quise hacer una receta nueva.", "en": "Yesterday I wanted to make a new recipe.", "hu": "Tegnap egy új receptet akartam elkészíteni.", "de": "Gestern wollte ich ein neues Rezept ausprobieren.", "word": "o722", "form": "receta" },
+      { "es": "Compré harina y mantequilla en el mercado.", "en": "I bought flour and butter at the market.", "hu": "Lisztet és vajat vettem a piacon.", "de": "Ich habe auf dem Markt Mehl und Butter gekauft.", "word": "o1688", "form": "harina" },
+      { "es": "Primero batí los huevos con una taza de azúcar.", "en": "First I beat the eggs with a cup of sugar.", "hu": "Először felvertem a tojásokat egy csésze cukorral.", "de": "Zuerst habe ich die Eier mit einer Tasse Zucker verrührt.", "word": "o761", "form": "taza" },
+      { "es": "Luego metí el pastel en el horno durante una hora.", "en": "Then I put the cake in the oven for an hour.", "hu": "Aztán egy órára betettem a tortát a sütőbe.", "de": "Dann habe ich den Kuchen für eine Stunde in den Ofen geschoben.", "word": "o1109", "form": "horno" },
+      { "es": "El pastel salió delicioso y mi familia lo comió.", "en": "The cake came out delicious and my family ate it.", "hu": "A torta finomra sikerült, és a családom megette.", "de": "Der Kuchen ist köstlich geworden und meine Familie hat ihn gegessen.", "word": "o910", "form": "delicioso" }
     ],
     "false_en": ["I bought milk and eggs at the market.", "I put the cake in the oven for ten minutes."],
-    "false_hu": ["Tejet és tojást vettem a piacon.", "Tíz percre tettem be a tortát a sütőbe."]
+    "false_hu": ["Tejet és tojást vettem a piacon.", "Tíz percre tettem be a tortát a sütőbe."],
+    "false_de": ["Ich habe auf dem Markt Milch und Eier gekauft.", "Ich habe den Kuchen für zehn Minuten in den Ofen geschoben."]
   },
   {
     "id": "a2-partido",
     "level": "A2",
     "sentences": [
-      { "es": "El domingo fuimos al estadio con mis amigos.", "en": "On Sunday we went to the stadium with my friends.", "hu": "Vasárnap a stadionba mentünk a barátaimmal.", "word": "o1126", "form": "estadio" },
-      { "es": "Nuestro equipo era pequeño, pero muy fuerte.", "en": "Our team was small, but very strong.", "hu": "A csapatunk kicsi volt, de nagyon erős.", "word": "o859", "form": "equipo" },
-      { "es": "El jugador número diez metió un gol.", "en": "Player number ten scored a goal.", "hu": "A tízes számú játékos gólt lőtt.", "word": "o1753", "form": "jugador" },
-      { "es": "Todos gritamos con alegría.", "en": "We all shouted with joy.", "hu": "Mindannyian örömmel kiabáltunk.", "word": "o2284", "form": "alegría" },
-      { "es": "Después ganamos y todos fuimos a cenar.", "en": "Afterwards we won and we all went to have dinner.", "hu": "Utána nyertünk, és mindannyian elmentünk vacsorázni.", "word": "o232", "form": "ganamos" }
+      { "es": "El domingo fuimos al estadio con mis amigos.", "en": "On Sunday we went to the stadium with my friends.", "hu": "Vasárnap a stadionba mentünk a barátaimmal.", "de": "Am Sonntag sind wir mit meinen Freunden ins Stadion gegangen.", "word": "o1126", "form": "estadio" },
+      { "es": "Nuestro equipo era pequeño, pero muy fuerte.", "en": "Our team was small, but very strong.", "hu": "A csapatunk kicsi volt, de nagyon erős.", "de": "Unsere Mannschaft war klein, aber sehr stark.", "word": "o859", "form": "equipo" },
+      { "es": "El jugador número diez metió un gol.", "en": "Player number ten scored a goal.", "hu": "A tízes számú játékos gólt lőtt.", "de": "Der Spieler mit der Nummer zehn hat ein Tor geschossen.", "word": "o1753", "form": "jugador" },
+      { "es": "Todos gritamos con alegría.", "en": "We all shouted with joy.", "hu": "Mindannyian örömmel kiabáltunk.", "de": "Wir haben alle vor Freude gejubelt.", "word": "o2284", "form": "alegría" },
+      { "es": "Después ganamos y todos fuimos a cenar.", "en": "Afterwards we won and we all went to have dinner.", "hu": "Utána nyertünk, és mindannyian elmentünk vacsorázni.", "de": "Danach haben wir gewonnen und sind alle zum Abendessen gegangen.", "word": "o232", "form": "ganamos" }
     ],
     "false_en": ["On Sunday we went to the park with my friends.", "Then we lost and went home."],
-    "false_hu": ["Vasárnap a parkba mentünk a barátaimmal.", "Aztán vesztettünk, és hazamentünk."]
+    "false_hu": ["Vasárnap a parkba mentünk a barátaimmal.", "Aztán vesztettünk, és hazamentünk."],
+    "false_de": ["Am Sonntag sind wir mit meinen Freunden in den Park gegangen.", "Dann haben wir verloren und sind nach Hause gegangen."]
   },
   {
     "id": "b1-entrevista",
     "level": "B1",
     "sentences": [
-      { "es": "Ayer mandé mi currículum para una vacante en una empresa.", "en": "Yesterday I sent my résumé for a job opening at a company.", "hu": "Tegnap elküldtem az önéletrajzomat egy meghirdetett állásra egy cégnél.", "word": "o3061", "form": "vacante" },
-      { "es": "Hoy tuve una entrevista con el gerente de la empresa.", "en": "Today I had an interview with the manager of the company.", "hu": "Ma interjúm volt a cég menedzserével.", "word": "o1276", "form": "entrevista" },
-      { "es": "Me preguntó por mi experiencia y por mis objetivos.", "en": "He asked me about my experience and my goals.", "hu": "Kérdezett a tapasztalataimról és a céljaimról.", "word": "o375", "form": "objetivos" },
-      { "es": "Le enseñé mi certificado y él dijo que era excelente.", "en": "I showed him my certificate and he said it was excellent.", "hu": "Megmutattam neki a bizonyítványomat, ő pedig azt mondta, hogy kiváló.", "word": "o1863", "form": "certificado" },
-      { "es": "Finalmente me dieron el puesto y lloré de emoción.", "en": "Finally they gave me the position and I cried with emotion.", "hu": "Végül megkaptam az állást, és meghatottságomban elsírtam magam.", "word": "o1861", "form": "puesto" }
+      { "es": "Ayer mandé mi currículum para una vacante en una empresa.", "en": "Yesterday I sent my résumé for a job opening at a company.", "hu": "Tegnap elküldtem az önéletrajzomat egy meghirdetett állásra egy cégnél.", "de": "Gestern habe ich meinen Lebenslauf für eine freie Stelle in einem Unternehmen geschickt.", "word": "o3061", "form": "vacante" },
+      { "es": "Hoy tuve una entrevista con el gerente de la empresa.", "en": "Today I had an interview with the manager of the company.", "hu": "Ma interjúm volt a cég menedzserével.", "de": "Heute hatte ich ein Vorstellungsgespräch mit dem Manager des Unternehmens.", "word": "o1276", "form": "entrevista" },
+      { "es": "Me preguntó por mi experiencia y por mis objetivos.", "en": "He asked me about my experience and my goals.", "hu": "Kérdezett a tapasztalataimról és a céljaimról.", "de": "Er hat mich nach meiner Erfahrung und nach meinen Zielen gefragt.", "word": "o375", "form": "objetivos" },
+      { "es": "Le enseñé mi certificado y él dijo que era excelente.", "en": "I showed him my certificate and he said it was excellent.", "hu": "Megmutattam neki a bizonyítványomat, ő pedig azt mondta, hogy kiváló.", "de": "Ich habe ihm mein Zertifikat gezeigt und er hat gesagt, dass es ausgezeichnet ist.", "word": "o1863", "form": "certificado" },
+      { "es": "Finalmente me dieron el puesto y lloré de emoción.", "en": "Finally they gave me the position and I cried with emotion.", "hu": "Végül megkaptam az állást, és meghatottságomban elsírtam magam.", "de": "Am Ende haben sie mir die Stelle gegeben und ich habe vor Rührung geweint.", "word": "o1861", "form": "puesto" }
     ],
     "false_en": ["I sent my résumé a month ago.", "In the end they did not give me the position."],
-    "false_hu": ["Az önéletrajzomat egy hónapja küldtem el.", "A végén nem kaptam meg az állást."]
+    "false_hu": ["Az önéletrajzomat egy hónapja küldtem el.", "A végén nem kaptam meg az állást."],
+    "false_de": ["Ich habe meinen Lebenslauf vor einem Monat geschickt.", "Am Ende haben sie mir die Stelle nicht gegeben."]
   },
   {
     "id": "b1-tramite",
     "level": "B1",
     "sentences": [
-      { "es": "Hoy por la mañana fui a una oficina para hacer un trámite.", "en": "This morning I went to an office to take care of some paperwork.", "hu": "Ma reggel elmentem egy hivatalba ügyet intézni.", "word": "o2904", "form": "trámite" },
-      { "es": "Llevé mi acta de nacimiento y un comprobante de domicilio.", "en": "I brought my birth certificate and a proof of address.", "hu": "Magammal vittem a születési anyakönyvi kivonatomat és egy lakcímigazolást.", "word": "o2909", "form": "comprobante" },
-      { "es": "Esperé una hora frente a la ventanilla.", "en": "I waited an hour in front of the window.", "hu": "Egy órát vártam az ügyfélablak előtt.", "word": "o2910", "form": "ventanilla" },
-      { "es": "El empleado revisó mis papeles y dijo que faltaba una copia.", "en": "The clerk checked my papers and said a copy was missing.", "hu": "Az ügyintéző átnézte a papírjaimat, és azt mondta, hogy hiányzik egy másolat.", "word": "o1882", "form": "empleado" },
-      { "es": "Por suerte, hicieron la copia ahí mismo y el resto del proceso no fue tardado.", "en": "Luckily, they made the copy right there and the rest of the process was not slow.", "hu": "Szerencsére a másolatot helyben elkészítették, és az ügyintézés további része nem tartott sokáig.", "word": "o4476", "form": "tardado" }
+      { "es": "Hoy por la mañana fui a una oficina para hacer un trámite.", "en": "This morning I went to an office to take care of some paperwork.", "hu": "Ma reggel elmentem egy hivatalba ügyet intézni.", "de": "Heute Morgen bin ich zu einem Amt gegangen, um eine Formalität zu erledigen.", "word": "o2904", "form": "trámite" },
+      { "es": "Llevé mi acta de nacimiento y un comprobante de domicilio.", "en": "I brought my birth certificate and a proof of address.", "hu": "Magammal vittem a születési anyakönyvi kivonatomat és egy lakcímigazolást.", "de": "Ich habe meine Geburtsurkunde und einen Wohnsitznachweis mitgebracht.", "word": "o2909", "form": "comprobante" },
+      { "es": "Esperé una hora frente a la ventanilla.", "en": "I waited an hour in front of the window.", "hu": "Egy órát vártam az ügyfélablak előtt.", "de": "Ich habe eine Stunde vor dem Schalter gewartet.", "word": "o2910", "form": "ventanilla" },
+      { "es": "El empleado revisó mis papeles y dijo que faltaba una copia.", "en": "The clerk checked my papers and said a copy was missing.", "hu": "Az ügyintéző átnézte a papírjaimat, és azt mondta, hogy hiányzik egy másolat.", "de": "Der Angestellte hat meine Unterlagen geprüft und gesagt, dass eine Kopie fehlt.", "word": "o1882", "form": "empleado" },
+      { "es": "Por suerte, hicieron la copia ahí mismo y el resto del proceso no fue tardado.", "en": "Luckily, they made the copy right there and the rest of the process was not slow.", "hu": "Szerencsére a másolatot helyben elkészítették, és az ügyintézés további része nem tartott sokáig.", "de": "Zum Glück haben sie die Kopie gleich dort gemacht, und der Rest des Vorgangs hat nicht lange gedauert.", "word": "o4476", "form": "tardado" }
     ],
     "false_en": ["I went to the office in the afternoon.", "I waited only five minutes at the window."],
-    "false_hu": ["Délután mentem el a hivatalba.", "Csak öt percet vártam az ügyfélablaknál."]
+    "false_hu": ["Délután mentem el a hivatalba.", "Csak öt percet vártam az ügyfélablaknál."],
+    "false_de": ["Ich bin am Nachmittag zum Amt gegangen.", "Ich habe nur fünf Minuten am Schalter gewartet."]
   },
   {
     "id": "b1-averia",
     "level": "B1",
     "sentences": [
-      { "es": "El sábado mi coche tuvo una avería en la carretera.", "en": "On Saturday my car broke down on the highway.", "hu": "Szombaton lerobbant az autóm az országúton.", "word": "o2449", "form": "avería" },
-      { "es": "Primero el coche se apagó y después ya no arrancó.", "en": "First the car shut off and then it would not start anymore.", "hu": "Először lefulladt az autó, aztán már nem indult be.", "word": "o1791", "form": "arrancó" },
-      { "es": "Llamé a una grúa desde mi teléfono.", "en": "I called a tow truck from my phone.", "hu": "Felhívtam egy autómentőt a telefonomról.", "word": "o2230", "form": "grúa" },
-      { "es": "El mecánico revisó el coche y descubrió el problema.", "en": "The mechanic checked the car and discovered the problem.", "hu": "A szerelő átvizsgálta az autót, és rájött a hibára.", "word": "o1239", "form": "revisó" },
-      { "es": "Pagué al mecánico y llegué a casa con mucho cansancio.", "en": "I paid the mechanic and got home very tired.", "hu": "Kifizettem a szerelőt, és nagyon fáradtan értem haza.", "word": "o2454", "form": "cansancio" }
+      { "es": "El sábado mi coche tuvo una avería en la carretera.", "en": "On Saturday my car broke down on the highway.", "hu": "Szombaton lerobbant az autóm az országúton.", "de": "Am Samstag hatte mein Auto auf der Landstraße eine Panne.", "word": "o2449", "form": "avería" },
+      { "es": "Primero el coche se apagó y después ya no arrancó.", "en": "First the car shut off and then it would not start anymore.", "hu": "Először lefulladt az autó, aztán már nem indult be.", "de": "Zuerst ist das Auto ausgegangen und dann ist es nicht mehr angesprungen.", "word": "o1791", "form": "arrancó" },
+      { "es": "Llamé a una grúa desde mi teléfono.", "en": "I called a tow truck from my phone.", "hu": "Felhívtam egy autómentőt a telefonomról.", "de": "Ich habe mit meinem Handy einen Abschleppwagen gerufen.", "word": "o2230", "form": "grúa" },
+      { "es": "El mecánico revisó el coche y descubrió el problema.", "en": "The mechanic checked the car and discovered the problem.", "hu": "A szerelő átvizsgálta az autót, és rájött a hibára.", "de": "Der Mechaniker hat das Auto untersucht und das Problem gefunden.", "word": "o1239", "form": "revisó" },
+      { "es": "Pagué al mecánico y llegué a casa con mucho cansancio.", "en": "I paid the mechanic and got home very tired.", "hu": "Kifizettem a szerelőt, és nagyon fáradtan értem haza.", "de": "Ich habe den Mechaniker bezahlt und bin sehr müde nach Hause gekommen.", "word": "o2454", "form": "cansancio" }
     ],
     "false_en": ["My car broke down on Sunday.", "I fixed the car myself."],
-    "false_hu": ["Vasárnap robbant le az autóm.", "Magam szereltem meg az autót."]
+    "false_hu": ["Vasárnap robbant le az autóm.", "Magam szereltem meg az autót."],
+    "false_de": ["Mein Auto hatte am Sonntag eine Panne.", "Ich habe das Auto selbst repariert."]
   },
   {
     "id": "b1-pedido",
     "level": "B1",
     "sentences": [
-      { "es": "Compré un teléfono por internet y pagué el envío.", "en": "I bought a phone online and paid for the shipping.", "hu": "Vettem egy telefont az interneten, és kifizettem a szállítási díjat.", "word": "o4107", "form": "envío" },
-      { "es": "El paquete llegó tarde y la pantalla estaba rota.", "en": "The package arrived late and the screen was broken.", "hu": "A csomag későn érkezett, és a kijelző el volt törve.", "word": "o783", "form": "pantalla" },
-      { "es": "Escribí una queja y solicité un reembolso.", "en": "I wrote a complaint and requested a refund.", "hu": "Panaszt írtam, és visszatérítést kértem.", "word": "o4502", "form": "reembolso" },
-      { "es": "La empresa me dijo que la garantía cubre el producto.", "en": "The company told me that the warranty covers the product.", "hu": "A cég azt mondta nekem, hogy a garancia fedezi a terméket.", "word": "o2478", "form": "garantía" },
-      { "es": "Después de una semana, la devolución llegó a mi tarjeta.", "en": "After a week, the refund reached my card.", "hu": "Egy hét után megérkezett a visszatérítés a kártyámra.", "word": "o4105", "form": "devolución" }
+      { "es": "Compré un teléfono por internet y pagué el envío.", "en": "I bought a phone online and paid for the shipping.", "hu": "Vettem egy telefont az interneten, és kifizettem a szállítási díjat.", "de": "Ich habe im Internet ein Handy gekauft und den Versand bezahlt.", "word": "o4107", "form": "envío" },
+      { "es": "El paquete llegó tarde y la pantalla estaba rota.", "en": "The package arrived late and the screen was broken.", "hu": "A csomag későn érkezett, és a kijelző el volt törve.", "de": "Das Paket ist spät angekommen und der Bildschirm war kaputt.", "word": "o783", "form": "pantalla" },
+      { "es": "Escribí una queja y solicité un reembolso.", "en": "I wrote a complaint and requested a refund.", "hu": "Panaszt írtam, és visszatérítést kértem.", "de": "Ich habe eine Beschwerde geschrieben und eine Rückerstattung beantragt.", "word": "o4502", "form": "reembolso" },
+      { "es": "La empresa me dijo que la garantía cubre el producto.", "en": "The company told me that the warranty covers the product.", "hu": "A cég azt mondta nekem, hogy a garancia fedezi a terméket.", "de": "Das Unternehmen hat mir gesagt, dass die Garantie das Produkt abdeckt.", "word": "o2478", "form": "garantía" },
+      { "es": "Después de una semana, la devolución llegó a mi tarjeta.", "en": "After a week, the refund reached my card.", "hu": "Egy hét után megérkezett a visszatérítés a kártyámra.", "de": "Nach einer Woche ist die Rückerstattung auf meiner Karte angekommen.", "word": "o4105", "form": "devolución" }
     ],
     "false_en": ["The package arrived early.", "The company did not answer my complaint."],
-    "false_hu": ["A csomag korán érkezett meg.", "A cég nem válaszolt a panaszomra."]
+    "false_hu": ["A csomag korán érkezett meg.", "A cég nem válaszolt a panaszomra."],
+    "false_de": ["Das Paket ist früh angekommen.", "Das Unternehmen hat meine Beschwerde nicht beantwortet."]
   },
   {
     "id": "b1-excursion",
     "level": "B1",
     "sentences": [
-      { "es": "El sábado hicimos una excursión al cerro con mis amigos.", "en": "On Saturday we went on a hike to the hill with my friends.", "hu": "Szombaton kirándultunk a dombra a barátaimmal.", "word": "o3517", "form": "excursión" },
-      { "es": "Caminamos por un sendero entre los árboles.", "en": "We walked along a trail among the trees.", "hu": "Egy ösvényen sétáltunk a fák között.", "word": "o4352", "form": "sendero" },
-      { "es": "Desde el mirador vimos el río y todo el pueblo.", "en": "From the lookout we saw the river and the whole town.", "hu": "A kilátóból láttuk a folyót és az egész falut.", "word": "o3586", "form": "mirador" },
-      { "es": "Por la tarde llegamos al campamento y preparamos la cena.", "en": "In the afternoon we reached the camp and made dinner.", "hu": "Délután megérkeztünk a táborhelyre, és vacsorát készítettünk.", "word": "o3569", "form": "campamento" },
-      { "es": "Por la noche hicimos una fogata y hablamos hasta tarde.", "en": "At night we made a campfire and talked until late.", "hu": "Éjjel tüzet raktunk, és későig beszélgettünk.", "word": "o2188", "form": "fogata" }
+      { "es": "El sábado hicimos una excursión al cerro con mis amigos.", "en": "On Saturday we went on a hike to the hill with my friends.", "hu": "Szombaton kirándultunk a dombra a barátaimmal.", "de": "Am Samstag haben wir mit meinen Freunden einen Ausflug auf den Hügel gemacht.", "word": "o3517", "form": "excursión" },
+      { "es": "Caminamos por un sendero entre los árboles.", "en": "We walked along a trail among the trees.", "hu": "Egy ösvényen sétáltunk a fák között.", "de": "Wir sind auf einem Pfad zwischen den Bäumen gewandert.", "word": "o4352", "form": "sendero" },
+      { "es": "Desde el mirador vimos el río y todo el pueblo.", "en": "From the lookout we saw the river and the whole town.", "hu": "A kilátóból láttuk a folyót és az egész falut.", "de": "Vom Aussichtspunkt aus haben wir den Fluss und das ganze Dorf gesehen.", "word": "o3586", "form": "mirador" },
+      { "es": "Por la tarde llegamos al campamento y preparamos la cena.", "en": "In the afternoon we reached the camp and made dinner.", "hu": "Délután megérkeztünk a táborhelyre, és vacsorát készítettünk.", "de": "Am Nachmittag sind wir am Zeltplatz angekommen und haben das Abendessen vorbereitet.", "word": "o3569", "form": "campamento" },
+      { "es": "Por la noche hicimos una fogata y hablamos hasta tarde.", "en": "At night we made a campfire and talked until late.", "hu": "Éjjel tüzet raktunk, és későig beszélgettünk.", "de": "In der Nacht haben wir ein Lagerfeuer gemacht und bis spät geredet.", "word": "o2188", "form": "fogata" }
     ],
     "false_en": ["We went to the beach with my friends.", "We did not make a fire at night."],
-    "false_hu": ["A barátaimmal a tengerpartra mentünk.", "Éjjel nem raktunk tüzet."]
+    "false_hu": ["A barátaimmal a tengerpartra mentünk.", "Éjjel nem raktunk tüzet."],
+    "false_de": ["Wir sind mit meinen Freunden an den Strand gefahren.", "In der Nacht haben wir kein Feuer gemacht."]
   },
   {
     "id": "b2-contrato",
     "level": "B2",
     "sentences": [
-      { "es": "Busqué durante semanas hasta que por fin pude alquilar un departamento.", "en": "I searched for weeks until I was finally able to rent an apartment.", "hu": "Hetekig kerestem, mire végre ki tudtam bérelni egy lakást.", "word": "o840", "form": "alquilar" },
-      { "es": "El dueño me explicó cada parte del contrato y revisó mis documentos.", "en": "The owner explained every part of the contract and checked my documents.", "hu": "A tulajdonos elmagyarázta a szerződés minden részét, és átnézte az irataimat.", "word": "o832", "form": "documentos" },
-      { "es": "Como el precio era razonable, firmé el contrato ese mismo día.", "en": "Since the price was reasonable, I signed the contract that same day.", "hu": "Mivel az ár ésszerű volt, még aznap aláírtam a szerződést.", "word": "o837", "form": "firmé" },
-      { "es": "El plazo del contrato era de un año, y yo quería vivir ahí más tiempo.", "en": "The term of the contract was one year, and I wanted to live there longer.", "hu": "A szerződés időtartama egy év volt, én pedig hosszabb ideig akartam ott lakni.", "word": "o1438", "form": "plazo" },
-      { "es": "Ahora vivo cerca de mi trabajo y estoy muy satisfecho con la decisión.", "en": "Now I live near my work and I am very satisfied with the decision.", "hu": "Most a munkahelyem közelében lakom, és nagyon elégedett vagyok a döntéssel.", "word": "o590", "form": "satisfecho" }
+      { "es": "Busqué durante semanas hasta que por fin pude alquilar un departamento.", "en": "I searched for weeks until I was finally able to rent an apartment.", "hu": "Hetekig kerestem, mire végre ki tudtam bérelni egy lakást.", "de": "Ich habe wochenlang gesucht, bis ich endlich eine Wohnung mieten konnte.", "word": "o840", "form": "alquilar" },
+      { "es": "El dueño me explicó cada parte del contrato y revisó mis documentos.", "en": "The owner explained every part of the contract and checked my documents.", "hu": "A tulajdonos elmagyarázta a szerződés minden részét, és átnézte az irataimat.", "de": "Der Eigentümer hat mir jeden Teil des Vertrags erklärt und meine Unterlagen geprüft.", "word": "o832", "form": "documentos" },
+      { "es": "Como el precio era razonable, firmé el contrato ese mismo día.", "en": "Since the price was reasonable, I signed the contract that same day.", "hu": "Mivel az ár ésszerű volt, még aznap aláírtam a szerződést.", "de": "Da der Preis angemessen war, habe ich den Vertrag noch am selben Tag unterschrieben.", "word": "o837", "form": "firmé" },
+      { "es": "El plazo del contrato era de un año, y yo quería vivir ahí más tiempo.", "en": "The term of the contract was one year, and I wanted to live there longer.", "hu": "A szerződés időtartama egy év volt, én pedig hosszabb ideig akartam ott lakni.", "de": "Die Laufzeit des Vertrags betrug ein Jahr, und ich wollte dort länger wohnen.", "word": "o1438", "form": "plazo" },
+      { "es": "Ahora vivo cerca de mi trabajo y estoy muy satisfecho con la decisión.", "en": "Now I live near my work and I am very satisfied with the decision.", "hu": "Most a munkahelyem közelében lakom, és nagyon elégedett vagyok a döntéssel.", "de": "Jetzt wohne ich in der Nähe meiner Arbeit und bin mit der Entscheidung sehr zufrieden.", "word": "o590", "form": "satisfecho" }
     ],
     "false_en": ["I thought the price was too high.", "The term of the contract was three years."],
-    "false_hu": ["Szerintem túl magas volt az ár.", "A szerződés időtartama három év volt."]
+    "false_hu": ["Szerintem túl magas volt az ár.", "A szerződés időtartama három év volt."],
+    "false_de": ["Ich fand den Preis zu hoch.", "Die Laufzeit des Vertrags betrug drei Jahre."]
   },
   {
     "id": "b2-huelga",
     "level": "B2",
     "sentences": [
-      { "es": "Mi tío trabaja en una fábrica y el sindicato anunció una huelga.", "en": "My uncle works in a factory and the union announced a strike.", "hu": "A nagybátyám egy gyárban dolgozik, és a szakszervezet sztrájkot hirdetett.", "word": "o4580", "form": "huelga" },
-      { "es": "Los trabajadores querían un salario más alto y mejores condiciones.", "en": "The workers wanted a higher salary and better conditions.", "hu": "A munkások magasabb fizetést és jobb körülményeket akartak.", "word": "o535", "form": "salario" },
-      { "es": "Al principio, la empresa rechazó la propuesta de los trabajadores.", "en": "At first, the company rejected the workers' proposal.", "hu": "A cég eleinte elutasította a munkások javaslatát.", "word": "o513", "form": "propuesta" },
-      { "es": "Después de tres días de negociación, la empresa y el sindicato firmaron un acuerdo.", "en": "After three days of negotiation, the company and the union signed an agreement.", "hu": "Három nap tárgyalás után a cég és a szakszervezet megállapodást írt alá.", "word": "o2042", "form": "negociación" },
-      { "es": "Mi tío quería regresar al trabajo con la esperanza de que las cosas mejoraran.", "en": "My uncle wanted to go back to work, hoping that things would get better.", "hu": "A nagybátyám vissza akart menni dolgozni abban a reményben, hogy a dolgok jobbra fordulnak.", "word": "o517", "form": "esperanza" }
+      { "es": "Mi tío trabaja en una fábrica y el sindicato anunció una huelga.", "en": "My uncle works in a factory and the union announced a strike.", "hu": "A nagybátyám egy gyárban dolgozik, és a szakszervezet sztrájkot hirdetett.", "de": "Mein Onkel arbeitet in einer Fabrik und die Gewerkschaft hat einen Streik angekündigt.", "word": "o4580", "form": "huelga" },
+      { "es": "Los trabajadores querían un salario más alto y mejores condiciones.", "en": "The workers wanted a higher salary and better conditions.", "hu": "A munkások magasabb fizetést és jobb körülményeket akartak.", "de": "Die Arbeiter wollten einen höheren Lohn und bessere Bedingungen.", "word": "o535", "form": "salario" },
+      { "es": "Al principio, la empresa rechazó la propuesta de los trabajadores.", "en": "At first, the company rejected the workers' proposal.", "hu": "A cég eleinte elutasította a munkások javaslatát.", "de": "Am Anfang hat das Unternehmen den Vorschlag der Arbeiter abgelehnt.", "word": "o513", "form": "propuesta" },
+      { "es": "Después de tres días de negociación, la empresa y el sindicato firmaron un acuerdo.", "en": "After three days of negotiation, the company and the union signed an agreement.", "hu": "Három nap tárgyalás után a cég és a szakszervezet megállapodást írt alá.", "de": "Nach drei Tagen Verhandlungen haben das Unternehmen und die Gewerkschaft eine Vereinbarung unterzeichnet.", "word": "o2042", "form": "negociación" },
+      { "es": "Mi tío quería regresar al trabajo con la esperanza de que las cosas mejoraran.", "en": "My uncle wanted to go back to work, hoping that things would get better.", "hu": "A nagybátyám vissza akart menni dolgozni abban a reményben, hogy a dolgok jobbra fordulnak.", "de": "Mein Onkel wollte wieder arbeiten gehen, in der Hoffnung, dass sich die Dinge verbessern würden.", "word": "o517", "form": "esperanza" }
     ],
     "false_en": ["The negotiation lasted a whole month.", "The company accepted the proposal at once."],
-    "false_hu": ["A tárgyalás egy egész hónapig tartott.", "A cég azonnal elfogadta a javaslatot."]
+    "false_hu": ["A tárgyalás egy egész hónapig tartott.", "A cég azonnal elfogadta a javaslatot."],
+    "false_de": ["Die Verhandlung hat einen ganzen Monat gedauert.", "Das Unternehmen hat den Vorschlag sofort angenommen."]
   },
   {
     "id": "b2-teletrabajo",
     "level": "B2",
     "sentences": [
-      { "es": "Desde el año pasado, mi prima hace teletrabajo desde su casa.", "en": "Since last year, my cousin has been working from home.", "hu": "Tavaly óta az unokatestvérem otthonról dolgozik.", "word": "o4603", "form": "teletrabajo" },
-      { "es": "Cada mañana tiene una videoconferencia con todo su equipo.", "en": "Every morning she has a video call with her whole team.", "hu": "Minden reggel videóhívása van az egész csapatával.", "word": "o4604", "form": "videoconferencia" },
-      { "es": "Al principio fue difícil configurar su computadora nueva.", "en": "At first it was hard to set up her new computer.", "hu": "Eleinte nehéz volt beállítani az új számítógépét.", "word": "o4658", "form": "configurar" },
-      { "es": "Ahora dice que lo mejor es no perder tiempo en el tráfico.", "en": "Now she says the best thing is not wasting time in traffic.", "hu": "Most azt mondja, a legjobb, hogy nem veszít időt a forgalomban.", "word": "o824", "form": "tráfico" },
-      { "es": "Si pudiera elegir, buscaría un equilibrio entre la casa y la oficina.", "en": "If she could choose, she would look for a balance between home and the office.", "hu": "Ha választhatna, egyensúlyt keresne az otthon és az iroda között.", "word": "o1412", "form": "equilibrio" }
+      { "es": "Desde el año pasado, mi prima hace teletrabajo desde su casa.", "en": "Since last year, my cousin has been working from home.", "hu": "Tavaly óta az unokatestvérem otthonról dolgozik.", "de": "Seit letztem Jahr arbeitet meine Cousine im Homeoffice.", "word": "o4603", "form": "teletrabajo" },
+      { "es": "Cada mañana tiene una videoconferencia con todo su equipo.", "en": "Every morning she has a video call with her whole team.", "hu": "Minden reggel videóhívása van az egész csapatával.", "de": "Jeden Morgen hat sie eine Videokonferenz mit ihrem ganzen Team.", "word": "o4604", "form": "videoconferencia" },
+      { "es": "Al principio fue difícil configurar su computadora nueva.", "en": "At first it was hard to set up her new computer.", "hu": "Eleinte nehéz volt beállítani az új számítógépét.", "de": "Am Anfang war es schwierig, ihren neuen Computer einzurichten.", "word": "o4658", "form": "configurar" },
+      { "es": "Ahora dice que lo mejor es no perder tiempo en el tráfico.", "en": "Now she says the best thing is not wasting time in traffic.", "hu": "Most azt mondja, a legjobb, hogy nem veszít időt a forgalomban.", "de": "Jetzt sagt sie, das Beste sei, keine Zeit im Verkehr zu verlieren.", "word": "o824", "form": "tráfico" },
+      { "es": "Si pudiera elegir, buscaría un equilibrio entre la casa y la oficina.", "en": "If she could choose, she would look for a balance between home and the office.", "hu": "Ha választhatna, egyensúlyt keresne az otthon és az iroda között.", "de": "Wenn sie wählen könnte, würde sie ein Gleichgewicht zwischen Zuhause und Büro suchen.", "word": "o1412", "form": "equilibrio" }
     ],
     "false_en": ["She works in an office every day.", "She never has meetings with her team."],
-    "false_hu": ["Minden nap irodában dolgozik.", "Soha nincs megbeszélése a csapatával."]
+    "false_hu": ["Minden nap irodában dolgozik.", "Soha nincs megbeszélése a csapatával."],
+    "false_de": ["Sie arbeitet jeden Tag in einem Büro.", "Sie hat nie Besprechungen mit ihrem Team."]
   },
   {
     "id": "b2-investigacion",
     "level": "B2",
     "sentences": [
-      { "es": "Mi hermana participa en una investigación sobre el sueño de los estudiantes.", "en": "My sister takes part in a research project about the sleep of students.", "hu": "A nővérem részt vesz egy kutatásban a diákok alvásáról.", "word": "o532", "form": "investigación" },
-      { "es": "Su hipótesis es que los estudiantes descansan poco porque usan mucho el celular.", "en": "Her hypothesis is that students rest little because they use their cell phones a lot.", "hu": "A feltételezése az, hogy a diákok keveset pihennek, mert sokat használják a mobiltelefonjukat.", "word": "o2028", "form": "hipótesis" },
-      { "es": "Para comprobar su idea, ella y su equipo analizaron las respuestas de cien personas.", "en": "To check her idea, she and her team analyzed the answers of a hundred people.", "hu": "Hogy ellenőrizze az ötletét, a csapatával együtt elemezte száz ember válaszait.", "word": "o482", "form": "analizaron" },
-      { "es": "El resultado fue interesante: dormir poco afecta la memoria y el humor.", "en": "The result was interesting: sleeping little affects memory and mood.", "hu": "Az eredmény érdekes volt: a kevés alvás rontja a memóriát és a hangulatot.", "word": "o1336", "form": "afecta" },
-      { "es": "La conclusión del estudio fue clara, pero ella quiere hacer más pruebas.", "en": "The conclusion of the study was clear, but she wants to do more tests.", "hu": "A tanulmány következtetése egyértelmű volt, de több tesztet akar végezni.", "word": "o2002", "form": "conclusión" }
+      { "es": "Mi hermana participa en una investigación sobre el sueño de los estudiantes.", "en": "My sister takes part in a research project about the sleep of students.", "hu": "A nővérem részt vesz egy kutatásban a diákok alvásáról.", "de": "Meine Schwester nimmt an einem Forschungsprojekt über den Schlaf von Studenten teil.", "word": "o532", "form": "investigación" },
+      { "es": "Su hipótesis es que los estudiantes descansan poco porque usan mucho el celular.", "en": "Her hypothesis is that students rest little because they use their cell phones a lot.", "hu": "A feltételezése az, hogy a diákok keveset pihennek, mert sokat használják a mobiltelefonjukat.", "de": "Ihre Hypothese ist, dass sich Studenten wenig erholen, weil sie ihr Handy viel benutzen.", "word": "o2028", "form": "hipótesis" },
+      { "es": "Para comprobar su idea, ella y su equipo analizaron las respuestas de cien personas.", "en": "To check her idea, she and her team analyzed the answers of a hundred people.", "hu": "Hogy ellenőrizze az ötletét, a csapatával együtt elemezte száz ember válaszait.", "de": "Um ihre Idee zu überprüfen, haben sie und ihr Team die Antworten von hundert Personen analysiert.", "word": "o482", "form": "analizaron" },
+      { "es": "El resultado fue interesante: dormir poco afecta la memoria y el humor.", "en": "The result was interesting: sleeping little affects memory and mood.", "hu": "Az eredmény érdekes volt: a kevés alvás rontja a memóriát és a hangulatot.", "de": "Das Ergebnis war interessant: Wenig Schlaf beeinträchtigt das Gedächtnis und die Stimmung.", "word": "o1336", "form": "afecta" },
+      { "es": "La conclusión del estudio fue clara, pero ella quiere hacer más pruebas.", "en": "The conclusion of the study was clear, but she wants to do more tests.", "hu": "A tanulmány következtetése egyértelmű volt, de több tesztet akar végezni.", "de": "Die Schlussfolgerung der Studie war klar, aber sie möchte noch mehr Tests machen.", "word": "o2002", "form": "conclusión" }
     ],
     "false_en": ["The study was about the food of old people.", "The result showed that sleep does not matter."],
-    "false_hu": ["A tanulmány az idősek ételéről szólt.", "Az eredmény szerint az alvás nem számít."]
+    "false_hu": ["A tanulmány az idősek ételéről szólt.", "Az eredmény szerint az alvás nem számít."],
+    "false_de": ["Die Studie handelte vom Essen älterer Menschen.", "Das Ergebnis hat gezeigt, dass Schlaf keine Rolle spielt."]
   },
   {
     "id": "b2-asamblea",
     "level": "B2",
     "sentences": [
-      { "es": "El domingo hubo una asamblea en mi edificio para hablar de un problema grave.", "en": "On Sunday there was a meeting in my building to talk about a serious problem.", "hu": "Vasárnap közgyűlés volt az épületünkben egy komoly probléma megbeszélésére.", "word": "o2593", "form": "asamblea" },
-      { "es": "Los vecinos discutieron durante una hora sobre el presupuesto para reparar la fachada.", "en": "The neighbors argued for an hour about the budget to repair the facade.", "hu": "A szomszédok egy órán át vitatkoztak a homlokzat javításának költségvetéséről.", "word": "o857", "form": "presupuesto" },
-      { "es": "Un vecino criticó la propuesta, pero otro vecino quiso defender la idea con buenos argumentos.", "en": "One neighbor criticized the proposal, but another neighbor wanted to defend the idea with good arguments.", "hu": "Egy szomszéd bírálta a javaslatot, de egy másik szomszéd jó érvekkel meg akarta védeni az ötletet.", "word": "o496", "form": "criticó" },
-      { "es": "El administrador quería que todos votaran por la solución más barata.", "en": "The manager wanted everyone to vote for the cheapest solution.", "hu": "A házkezelő azt szerette volna, hogy mindenki a legolcsóbb megoldásra szavazzon.", "word": "o4575", "form": "administrador" },
-      { "es": "Al final, la mayoría aceptó pagar un poco más cada mes.", "en": "In the end, the majority accepted paying a little more each month.", "hu": "Végül a többség elfogadta, hogy havonta egy kicsivel többet fizet.", "word": "o1430", "form": "mayoría" }
+      { "es": "El domingo hubo una asamblea en mi edificio para hablar de un problema grave.", "en": "On Sunday there was a meeting in my building to talk about a serious problem.", "hu": "Vasárnap közgyűlés volt az épületünkben egy komoly probléma megbeszélésére.", "de": "Am Sonntag gab es in meinem Gebäude eine Versammlung, um über ein ernstes Problem zu sprechen.", "word": "o2593", "form": "asamblea" },
+      { "es": "Los vecinos discutieron durante una hora sobre el presupuesto para reparar la fachada.", "en": "The neighbors argued for an hour about the budget to repair the facade.", "hu": "A szomszédok egy órán át vitatkoztak a homlokzat javításának költségvetéséről.", "de": "Die Nachbarn haben eine Stunde lang über das Budget für die Reparatur der Fassade diskutiert.", "word": "o857", "form": "presupuesto" },
+      { "es": "Un vecino criticó la propuesta, pero otro vecino quiso defender la idea con buenos argumentos.", "en": "One neighbor criticized the proposal, but another neighbor wanted to defend the idea with good arguments.", "hu": "Egy szomszéd bírálta a javaslatot, de egy másik szomszéd jó érvekkel meg akarta védeni az ötletet.", "de": "Ein Nachbar hat den Vorschlag kritisiert, aber ein anderer Nachbar wollte die Idee mit guten Argumenten verteidigen.", "word": "o496", "form": "criticó" },
+      { "es": "El administrador quería que todos votaran por la solución más barata.", "en": "The manager wanted everyone to vote for the cheapest solution.", "hu": "A házkezelő azt szerette volna, hogy mindenki a legolcsóbb megoldásra szavazzon.", "de": "Der Verwalter wollte, dass alle für die billigste Lösung stimmen.", "word": "o4575", "form": "administrador" },
+      { "es": "Al final, la mayoría aceptó pagar un poco más cada mes.", "en": "In the end, the majority accepted paying a little more each month.", "hu": "Végül a többség elfogadta, hogy havonta egy kicsivel többet fizet.", "de": "Am Ende hat die Mehrheit zugestimmt, jeden Monat etwas mehr zu zahlen.", "word": "o1430", "form": "mayoría" }
     ],
     "false_en": ["The neighbors agreed on everything in five minutes.", "The meeting was on Saturday morning."],
-    "false_hu": ["A szomszédok öt perc alatt mindenben megegyeztek.", "A közgyűlés szombat reggel volt."]
+    "false_hu": ["A szomszédok öt perc alatt mindenben megegyeztek.", "A közgyűlés szombat reggel volt."],
+    "false_de": ["Die Nachbarn haben sich in fünf Minuten über alles geeinigt.", "Die Versammlung war am Samstagmorgen."]
   },
   {
     "id": "c1-reunion",
     "level": "C1",
     "sentences": [
-      { "es": "Mi vecina del tercer piso mandó una convocatoria a todos los vecinos del edificio.", "en": "My neighbor on the third floor sent out a call for a meeting to everyone in the building.", "hu": "A harmadik emeleti szomszédom összehívó levelet küldött az épület összes lakójának.", "word": "o3199", "form": "convocatoria" },
-      { "es": "Ella quería que revisáramos la normativa del edificio, porque había mucho ruido por la noche.", "en": "She wanted us to review the building rules, because there was a lot of noise at night.", "hu": "Azt akarta, hogy nézzük át a ház szabályzatát, mert éjszaka sok volt a zaj.", "word": "o3220", "form": "normativa" },
-      { "es": "En la reunión hubo una discrepancia fuerte entre los vecinos nuevos y los mayores.", "en": "At the meeting there was a strong disagreement between the new neighbors and the older ones.", "hu": "A gyűlésen erős nézeteltérés volt az új és az idősebb szomszédok között.", "word": "o2618", "form": "discrepancia" },
-      { "es": "Después de dos horas, por fin llegamos a un consenso sobre los horarios de la música.", "en": "After two hours we finally reached a consensus about the times for music.", "hu": "Két óra után végre megegyezésre jutottunk a zenélés időpontjairól.", "word": "o2003", "form": "consenso" },
-      { "es": "Todos firmaron el convenio, y por la noche el edificio estuvo tranquilo.", "en": "Everyone signed the agreement, and at night the building was quiet.", "hu": "Mindenki aláírta a megállapodást, és éjszaka csendes volt a ház.", "word": "o2610", "form": "convenio" }
+      { "es": "Mi vecina del tercer piso mandó una convocatoria a todos los vecinos del edificio.", "en": "My neighbor on the third floor sent out a call for a meeting to everyone in the building.", "hu": "A harmadik emeleti szomszédom összehívó levelet küldött az épület összes lakójának.", "de": "Meine Nachbarin aus dem dritten Stock hat alle Nachbarn im Haus zu einer Versammlung eingeladen.", "word": "o3199", "form": "convocatoria" },
+      { "es": "Ella quería que revisáramos la normativa del edificio, porque había mucho ruido por la noche.", "en": "She wanted us to review the building rules, because there was a lot of noise at night.", "hu": "Azt akarta, hogy nézzük át a ház szabályzatát, mert éjszaka sok volt a zaj.", "de": "Sie wollte, dass wir die Hausordnung überprüfen, weil es nachts viel Lärm gab.", "word": "o3220", "form": "normativa" },
+      { "es": "En la reunión hubo una discrepancia fuerte entre los vecinos nuevos y los mayores.", "en": "At the meeting there was a strong disagreement between the new neighbors and the older ones.", "hu": "A gyűlésen erős nézeteltérés volt az új és az idősebb szomszédok között.", "de": "Bei der Versammlung gab es eine starke Meinungsverschiedenheit zwischen den neuen und den älteren Nachbarn.", "word": "o2618", "form": "discrepancia" },
+      { "es": "Después de dos horas, por fin llegamos a un consenso sobre los horarios de la música.", "en": "After two hours we finally reached a consensus about the times for music.", "hu": "Két óra után végre megegyezésre jutottunk a zenélés időpontjairól.", "de": "Nach zwei Stunden sind wir endlich zu einem Konsens über die Zeiten für Musik gekommen.", "word": "o2003", "form": "consenso" },
+      { "es": "Todos firmaron el convenio, y por la noche el edificio estuvo tranquilo.", "en": "Everyone signed the agreement, and at night the building was quiet.", "hu": "Mindenki aláírta a megállapodást, és éjszaka csendes volt a ház.", "de": "Alle haben die Vereinbarung unterschrieben, und in der Nacht war es im Haus ruhig.", "word": "o2610", "form": "convenio" }
     ],
     "false_en": ["The neighbor lived on the first floor.", "The meeting ended without any agreement."],
-    "false_hu": ["A szomszéd az első emeleten lakott.", "A gyűlés megegyezés nélkül ért véget."]
+    "false_hu": ["A szomszéd az első emeleten lakott.", "A gyűlés megegyezés nélkül ért véget."],
+    "false_de": ["Die Nachbarin wohnte im ersten Stock.", "Die Versammlung endete ohne jede Einigung."]
   },
   {
     "id": "c1-litigio",
     "level": "C1",
     "sentences": [
-      { "es": "Mi tío sufrió un accidente de coche y tuvo un litigio con la compañía de seguros.", "en": "My uncle had a car accident and had a legal dispute with the insurance company.", "hu": "A nagybátyám autóbalesetet szenvedett, és pere volt a biztosítóval.", "word": "o3213", "form": "litigio" },
-      { "es": "Un perito revisó el coche y escribió un informe muy minucioso.", "en": "An expert examined the car and wrote a very thorough report.", "hu": "Egy szakértő megvizsgálta az autót, és nagyon alapos jelentést írt.", "word": "o4571", "form": "perito" },
-      { "es": "El abogado presentó el expediente completo ante el juez.", "en": "The lawyer submitted the complete file to the judge.", "hu": "Az ügyvéd benyújtotta a teljes aktát a bíró elé.", "word": "o3812", "form": "expediente" },
-      { "es": "El fallo llegó un año después y fue favorable para mi tío.", "en": "The ruling came a year later and was favorable for my uncle.", "hu": "Az ítélet egy évvel később érkezett, és kedvező volt a nagybátyámnak.", "word": "o3813", "form": "fallo" },
-      { "es": "La compañía tuvo que pagar una indemnización de cien mil pesos.", "en": "The company had to pay compensation of one hundred thousand pesos.", "hu": "A cégnek százezer peso kártérítést kellett fizetnie.", "word": "o2644", "form": "indemnización" }
+      { "es": "Mi tío sufrió un accidente de coche y tuvo un litigio con la compañía de seguros.", "en": "My uncle had a car accident and had a legal dispute with the insurance company.", "hu": "A nagybátyám autóbalesetet szenvedett, és pere volt a biztosítóval.", "de": "Mein Onkel hatte einen Autounfall und einen Rechtsstreit mit der Versicherungsgesellschaft.", "word": "o3213", "form": "litigio" },
+      { "es": "Un perito revisó el coche y escribió un informe muy minucioso.", "en": "An expert examined the car and wrote a very thorough report.", "hu": "Egy szakértő megvizsgálta az autót, és nagyon alapos jelentést írt.", "de": "Ein Gutachter hat das Auto untersucht und einen sehr gründlichen Bericht geschrieben.", "word": "o4571", "form": "perito" },
+      { "es": "El abogado presentó el expediente completo ante el juez.", "en": "The lawyer submitted the complete file to the judge.", "hu": "Az ügyvéd benyújtotta a teljes aktát a bíró elé.", "de": "Der Anwalt hat dem Richter die vollständige Akte vorgelegt.", "word": "o3812", "form": "expediente" },
+      { "es": "El fallo llegó un año después y fue favorable para mi tío.", "en": "The ruling came a year later and was favorable for my uncle.", "hu": "Az ítélet egy évvel később érkezett, és kedvező volt a nagybátyámnak.", "de": "Das Urteil kam ein Jahr später und fiel zugunsten meines Onkels aus.", "word": "o3813", "form": "fallo" },
+      { "es": "La compañía tuvo que pagar una indemnización de cien mil pesos.", "en": "The company had to pay compensation of one hundred thousand pesos.", "hu": "A cégnek százezer peso kártérítést kellett fizetnie.", "de": "Die Versicherungsgesellschaft musste eine Entschädigung von hunderttausend Pesos zahlen.", "word": "o2644", "form": "indemnización" }
     ],
     "false_en": ["My uncle had a motorcycle accident.", "The judge decided against my uncle."],
-    "false_hu": ["A nagybátyám motorbalesetet szenvedett.", "A bíró a nagybátyám ellen döntött."]
+    "false_hu": ["A nagybátyám motorbalesetet szenvedett.", "A bíró a nagybátyám ellen döntött."],
+    "false_de": ["Mein Onkel hatte einen Motorradunfall.", "Der Richter hat gegen meinen Onkel entschieden."]
   },
   {
     "id": "c1-despliegue",
     "level": "C1",
     "sentences": [
-      { "es": "Mi equipo preparó el cronograma del proyecto para entregar la nueva aplicación.", "en": "My team prepared the project schedule to deliver the new app.", "hu": "A csapatom elkészítette a projekt ütemtervét az új alkalmazás átadásához.", "word": "o4597", "form": "cronograma" },
-      { "es": "Un algoritmo nuevo calculaba los precios de forma automática.", "en": "A new algorithm calculated the prices automatically.", "hu": "Egy új algoritmus automatikusan számolta ki az árakat.", "word": "o4640", "form": "algoritmo" },
-      { "es": "Antes del despliegue descubrimos un error grave y lo solucionamos con un parche.", "en": "Before the deployment we discovered a serious bug and solved it with a patch.", "hu": "A telepítés előtt felfedeztünk egy súlyos hibát, és egy javítócsomaggal megoldottuk.", "word": "o4641", "form": "despliegue" },
-      { "es": "Por la noche el sistema tenía que sincronizar los datos de las tiendas.", "en": "At night the system had to synchronize the data of the stores.", "hu": "Éjszaka a rendszernek szinkronizálnia kellett az üzletek adatait.", "word": "o4660", "form": "sincronizar" },
-      { "es": "Al día siguiente el jefe recibió el entregable final y nos felicitó.", "en": "The next day the boss received the final deliverable and congratulated us.", "hu": "Másnap a főnök megkapta a végső leadandót, és gratulált nekünk.", "word": "o4596", "form": "entregable" }
+      { "es": "Mi equipo preparó el cronograma del proyecto para entregar la nueva aplicación.", "en": "My team prepared the project schedule to deliver the new app.", "hu": "A csapatom elkészítette a projekt ütemtervét az új alkalmazás átadásához.", "de": "Mein Team hat den Zeitplan des Projekts erstellt, um die neue App auszuliefern.", "word": "o4597", "form": "cronograma" },
+      { "es": "Un algoritmo nuevo calculaba los precios de forma automática.", "en": "A new algorithm calculated the prices automatically.", "hu": "Egy új algoritmus automatikusan számolta ki az árakat.", "de": "Ein neuer Algorithmus berechnete die Preise automatisch.", "word": "o4640", "form": "algoritmo" },
+      { "es": "Antes del despliegue descubrimos un error grave y lo solucionamos con un parche.", "en": "Before the deployment we discovered a serious bug and solved it with a patch.", "hu": "A telepítés előtt felfedeztünk egy súlyos hibát, és egy javítócsomaggal megoldottuk.", "de": "Vor dem Deployment haben wir einen schwerwiegenden Fehler entdeckt und mit einem Patch behoben.", "word": "o4641", "form": "despliegue" },
+      { "es": "Por la noche el sistema tenía que sincronizar los datos de las tiendas.", "en": "At night the system had to synchronize the data of the stores.", "hu": "Éjszaka a rendszernek szinkronizálnia kellett az üzletek adatait.", "de": "In der Nacht musste das System die Daten der Geschäfte synchronisieren.", "word": "o4660", "form": "sincronizar" },
+      { "es": "Al día siguiente el jefe recibió el entregable final y nos felicitó.", "en": "The next day the boss received the final deliverable and congratulated us.", "hu": "Másnap a főnök megkapta a végső leadandót, és gratulált nekünk.", "de": "Am nächsten Tag hat der Chef das endgültige Deliverable erhalten und uns gratuliert.", "word": "o4596", "form": "entregable" }
     ],
     "false_en": ["My team prepared a schedule for a restaurant.", "The boss did not congratulate the team."],
-    "false_hu": ["A csapatom egy étterem ütemtervét készítette el.", "A főnök nem gratulált a csapatnak."]
+    "false_hu": ["A csapatom egy étterem ütemtervét készítette el.", "A főnök nem gratulált a csapatnak."],
+    "false_de": ["Mein Team hat einen Zeitplan für ein Restaurant erstellt.", "Der Chef hat dem Team nicht gratuliert."]
   },
   {
     "id": "c1-herencia",
     "level": "C1",
     "sentences": [
-      { "es": "Mi abuela dejó un testamento antes de morir.", "en": "My grandmother left a will before she died.", "hu": "A nagymamám végrendeletet hagyott hátra, mielőtt meghalt.", "word": "o4485", "form": "testamento" },
-      { "es": "Su patrimonio era pequeño: una casa vieja y un terreno cerca del río.", "en": "Her estate was small: an old house and a plot of land near the river.", "hu": "A vagyona kicsi volt: egy régi ház és egy telek a folyó mellett.", "word": "o1411", "form": "patrimonio" },
-      { "es": "Mi tía alegó que la casa era suya, pero no tenía ninguna prueba.", "en": "My aunt claimed that the house was hers, but she had no proof.", "hu": "A nagynéném azt állította, hogy a ház az övé, de nem volt semmilyen bizonyítéka.", "word": "o3136", "form": "alegó" },
-      { "es": "Mi madre quiso evitar un enfrentamiento y habló con ella con tranquilidad.", "en": "My mother wanted to avoid a confrontation and spoke to her calmly.", "hu": "Anyám el akarta kerülni az összetűzést, és nyugodtan beszélt vele.", "word": "o2624", "form": "enfrentamiento" },
-      { "es": "Al final repartimos todo por igual y guardamos el legado de mi abuela: sus recetas.", "en": "In the end we divided everything equally and kept my grandmother's legacy: her recipes.", "hu": "Végül mindent egyenlően elosztottunk, és megőriztük a nagymamám örökségét: a receptjeit.", "word": "o3212", "form": "legado" }
+      { "es": "Mi abuela dejó un testamento antes de morir.", "en": "My grandmother left a will before she died.", "hu": "A nagymamám végrendeletet hagyott hátra, mielőtt meghalt.", "de": "Meine Großmutter hat vor ihrem Tod ein Testament hinterlassen.", "word": "o4485", "form": "testamento" },
+      { "es": "Su patrimonio era pequeño: una casa vieja y un terreno cerca del río.", "en": "Her estate was small: an old house and a plot of land near the river.", "hu": "A vagyona kicsi volt: egy régi ház és egy telek a folyó mellett.", "de": "Ihr Vermögen war klein: ein altes Haus und ein Grundstück in der Nähe des Flusses.", "word": "o1411", "form": "patrimonio" },
+      { "es": "Mi tía alegó que la casa era suya, pero no tenía ninguna prueba.", "en": "My aunt claimed that the house was hers, but she had no proof.", "hu": "A nagynéném azt állította, hogy a ház az övé, de nem volt semmilyen bizonyítéka.", "de": "Meine Tante behauptete, das Haus gehöre ihr, aber sie hatte keinerlei Beweise.", "word": "o3136", "form": "alegó" },
+      { "es": "Mi madre quiso evitar un enfrentamiento y habló con ella con tranquilidad.", "en": "My mother wanted to avoid a confrontation and spoke to her calmly.", "hu": "Anyám el akarta kerülni az összetűzést, és nyugodtan beszélt vele.", "de": "Meine Mutter wollte eine Konfrontation vermeiden und hat in Ruhe mit ihr gesprochen.", "word": "o2624", "form": "enfrentamiento" },
+      { "es": "Al final repartimos todo por igual y guardamos el legado de mi abuela: sus recetas.", "en": "In the end we divided everything equally and kept my grandmother's legacy: her recipes.", "hu": "Végül mindent egyenlően elosztottunk, és megőriztük a nagymamám örökségét: a receptjeit.", "de": "Am Ende haben wir alles zu gleichen Teilen aufgeteilt und das Vermächtnis meiner Großmutter bewahrt: ihre Rezepte.", "word": "o3212", "form": "legado" }
     ],
     "false_en": ["My grandmother left no will.", "My aunt had clear proof."],
-    "false_hu": ["A nagymamám nem hagyott végrendeletet.", "A nagynéném egyértelmű bizonyítékkal rendelkezett."]
+    "false_hu": ["A nagymamám nem hagyott végrendeletet.", "A nagynéném egyértelmű bizonyítékkal rendelkezett."],
+    "false_de": ["Meine Großmutter hat kein Testament hinterlassen.", "Meine Tante hatte klare Beweise."]
   },
   {
     "id": "c1-investigacion",
     "level": "C1",
     "sentences": [
-      { "es": "Mi hermana emprendió una investigación sobre el agua de nuestro barrio.", "en": "My sister undertook a research project about the water in our neighborhood.", "hu": "A nővérem kutatásba kezdett a környékünk vizéről.", "word": "o2581", "form": "emprendió" },
-      { "es": "Su hallazgo más importante fue que las casas del barrio no recibían agua limpia.", "en": "Her most important finding was that the houses in the neighborhood did not receive clean water.", "hu": "A legfontosabb felfedezése az volt, hogy a környék házai nem kaptak tiszta vizet.", "word": "o2047", "form": "hallazgo" },
-      { "es": "Algunos vecinos dijeron que el resultado era controvertido y querían más pruebas.", "en": "Some neighbors said the result was controversial and wanted more evidence.", "hu": "Néhány szomszéd azt mondta, hogy az eredmény vitatott, és több bizonyítékot akartak.", "word": "o2663", "form": "controvertido" },
-      { "es": "Entonces ella corroboró los datos con nuevos análisis en el laboratorio.", "en": "So she confirmed the data with new analyses in the laboratory.", "hu": "Ekkor megerősítette az adatokat új elemzésekkel a laboratóriumban.", "word": "o3144", "form": "corroboró" },
-      { "es": "Por fin el gobierno de la ciudad decidió implementar un plan de limpieza.", "en": "Finally the city government decided to implement a cleanup plan.", "hu": "Végül a város vezetése úgy döntött, hogy bevezet egy tisztítási tervet.", "word": "o1972", "form": "implementar" }
+      { "es": "Mi hermana emprendió una investigación sobre el agua de nuestro barrio.", "en": "My sister undertook a research project about the water in our neighborhood.", "hu": "A nővérem kutatásba kezdett a környékünk vizéről.", "de": "Meine Schwester hat ein Forschungsprojekt über das Wasser in unserem Viertel begonnen.", "word": "o2581", "form": "emprendió" },
+      { "es": "Su hallazgo más importante fue que las casas del barrio no recibían agua limpia.", "en": "Her most important finding was that the houses in the neighborhood did not receive clean water.", "hu": "A legfontosabb felfedezése az volt, hogy a környék házai nem kaptak tiszta vizet.", "de": "Ihr wichtigster Befund war, dass die Häuser im Viertel kein sauberes Wasser erhielten.", "word": "o2047", "form": "hallazgo" },
+      { "es": "Algunos vecinos dijeron que el resultado era controvertido y querían más pruebas.", "en": "Some neighbors said the result was controversial and wanted more evidence.", "hu": "Néhány szomszéd azt mondta, hogy az eredmény vitatott, és több bizonyítékot akartak.", "de": "Einige Nachbarn sagten, das Ergebnis sei umstritten, und wollten mehr Beweise.", "word": "o2663", "form": "controvertido" },
+      { "es": "Entonces ella corroboró los datos con nuevos análisis en el laboratorio.", "en": "So she confirmed the data with new analyses in the laboratory.", "hu": "Ekkor megerősítette az adatokat új elemzésekkel a laboratóriumban.", "de": "Daraufhin hat sie die Daten mit neuen Analysen im Labor bestätigt.", "word": "o3144", "form": "corroboró" },
+      { "es": "Por fin el gobierno de la ciudad decidió implementar un plan de limpieza.", "en": "Finally the city government decided to implement a cleanup plan.", "hu": "Végül a város vezetése úgy döntött, hogy bevezet egy tisztítási tervet.", "de": "Schließlich hat die Stadtregierung beschlossen, einen Reinigungsplan umzusetzen.", "word": "o1972", "form": "implementar" }
     ],
     "false_en": ["My sister did research about the air in our neighborhood.", "The city government refused to do anything."],
-    "false_hu": ["A nővérem a környékünk levegőjéről végzett kutatást.", "A város vezetése nem volt hajlandó semmit sem tenni."]
+    "false_hu": ["A nővérem a környékünk levegőjéről végzett kutatást.", "A város vezetése nem volt hajlandó semmit sem tenni."],
+    "false_de": ["Meine Schwester hat ein Forschungsprojekt über die Luft in unserem Viertel gemacht.", "Die Stadtregierung hat sich geweigert, etwas zu tun."]
   }
 ]

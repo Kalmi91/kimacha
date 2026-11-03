@@ -1,0 +1,126 @@
+{
+  "target": "de",
+  "level": "B1",
+  "paper": "writing",
+  "forms": [
+    {
+      "id": "f1",
+      "tasks": [
+        {
+          "skill": "writing",
+          "kind": "essay",
+          "marks": 2,
+          "instruction": "Sie haben eine Nachricht von einem Freund bekommen. Schreiben Sie ihm eine Antwort von etwa 80 Wörtern. Schreiben Sie zu allen drei Punkten und achten Sie auf Anrede und Gruß.",
+          "choices": [
+            {
+              "id": "t1",
+              "title": "Antwort auf die Nachricht eines Freundes",
+              "prompt": "Antworten Sie Max: Sagen Sie, ob Sie am Samstag helfen können, und warum (nicht). Geben Sie einen Tipp für den Transporter. Machen Sie einen Vorschlag, was Sie nach dem Umzug zusammen unternehmen können.",
+              "input": "Hallo!\nStell dir vor, ich habe endlich eine neue Wohnung gefunden! Ich ziehe am Samstag, den 12., um. Hast du an dem Tag Zeit zum Helfen? Außerdem brauche ich noch einen Transporter und weiß nicht, wo ich einen günstig leihen kann. Hast du einen Tipp?\nLiebe Grüße\nMax",
+              "minWords": 80,
+              "maxWords": 100,
+              "points": [
+                {
+                  "id": "p1",
+                  "label": "Sagt, ob sie am Samstag helfen kann, und nennt einen Grund",
+                  "keywords": ["ich helfe", "ich komme", "gern helfen", "kann leider", "leider nicht", "keine zeit", "habe schon", "muss arbeiten", "bin verreist", "gerne"]
+                },
+                {
+                  "id": "p2",
+                  "label": "Gibt einen Tipp für den Transporter",
+                  "keywords": ["transporter", "autovermietung", "leihen", "mieten", "baumarkt", "internet", "preis", "billig", "gunstig", "bekannte"]
+                },
+                {
+                  "id": "p3",
+                  "label": "Macht einen Vorschlag für die Zeit nach dem Umzug",
+                  "keywords": ["nach dem umzug", "wir konnten", "wie ware", "lass uns", "einweihung", "essen gehen", "feiern", "kino", "grillen", "treffen"]
+                },
+                {
+                  "id": "p4",
+                  "label": "Schreibt Anrede und Gruß",
+                  "keywords": ["hallo max", "lieber max", "hi max", "viele grusse", "liebe grusse", "bis bald", "bis samstag", "dein", "deine"]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "writing",
+          "kind": "essay",
+          "marks": 2,
+          "instruction": "Sie lesen in einem Internetforum die Frage unten. Schreiben Sie dazu Ihre Meinung (etwa 80 Wörter).",
+          "choices": [
+            {
+              "id": "t2",
+              "title": "Meinung im Forum",
+              "prompt": "Schreiben Sie Ihre Meinung zu der Frage im Forum. Begründen Sie Ihre Meinung und geben Sie ein Beispiel aus Ihrer Erfahrung.",
+              "input": "Forum „Reisen und Freizeit“\nThema: Im Urlaub das Handy ausschalten?\nIn diesem Sommer fahre ich zum ersten Mal ohne Handy in den Urlaub. Meine Freunde finden das verrückt. Was meint ihr: Ist es eine gute Idee, im Urlaub nicht erreichbar zu sein, oder ist das heute gar nicht mehr möglich? Ich freue mich auf eure Antworten.\nJonas",
+              "minWords": 80,
+              "maxWords": 100,
+              "points": [
+                {
+                  "id": "p1",
+                  "label": "Sagt klar, was sie über die Frage denkt",
+                  "keywords": ["meiner meinung", "ich finde", "ich denke", "ich glaube", "ich bin dafur", "ich bin dagegen", "gute idee", "schlechte idee", "meiner ansicht"]
+                },
+                {
+                  "id": "p2",
+                  "label": "Gibt mindestens einen Grund",
+                  "keywords": ["weil", "deshalb", "denn", "erholen", "entspannen", "stress", "ruhe", "wichtig", "sicherheit", "notfall"]
+                },
+                {
+                  "id": "p3",
+                  "label": "Nennt ein Beispiel aus der eigenen Erfahrung",
+                  "keywords": ["zum beispiel", "letztes jahr", "im urlaub", "ich habe", "bei mir", "einmal", "als ich", "meine freunde", "erfahrung"]
+                },
+                {
+                  "id": "p4",
+                  "label": "Schließt mit einem Rat oder einem Gruß ab",
+                  "keywords": ["mein rat", "ich wunsche", "viel spass", "viel erfolg", "probier", "versuch", "gute reise", "schonen urlaub", "viele grusse"]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "writing",
+          "kind": "essay",
+          "marks": 1,
+          "instruction": "Sie können nächste Woche nicht zum Deutschkurs kommen. Schreiben Sie an Ihre Kursleiterin eine kurze, höfliche Nachricht (etwa 40 Wörter). Schreiben Sie zu allen drei Punkten.",
+          "choices": [
+            {
+              "id": "t3",
+              "title": "Nachricht an die Kursleiterin",
+              "prompt": "Schreiben Sie an Frau Schmidt: Entschuldigen Sie sich und nennen Sie den Grund. Bitten Sie um die Hausaufgaben und das Material der nächsten Woche. Beenden Sie die Nachricht höflich.",
+              "input": "Sie besuchen einen Deutschkurs an der Volkshochschule. Der Kurs findet jeden Dienstag und Donnerstag von 18 bis 20 Uhr statt. Ihre Kursleiterin heißt Frau Schmidt. Nächste Woche müssen Sie wegen einer Geschäftsreise verreisen.",
+              "minWords": 40,
+              "maxWords": 60,
+              "points": [
+                {
+                  "id": "p1",
+                  "label": "Entschuldigt sich und nennt den Grund",
+                  "keywords": ["entschuldigung", "tut mir leid", "leider", "ich kann nicht", "geschaftsreise", "verreisen", "dienstreise", "komme nicht"]
+                },
+                {
+                  "id": "p2",
+                  "label": "Bittet um Hausaufgaben oder Material",
+                  "keywords": ["hausaufgaben", "material", "arbeitsblatt", "schicken", "bitte senden", "konnten sie mir", "konnen sie mir", "unterlagen", "per e-mail"]
+                },
+                {
+                  "id": "p3",
+                  "label": "Verwendet eine höfliche Anrede",
+                  "keywords": ["sehr geehrte frau", "liebe frau", "guten tag", "sehr geehrte", "hallo frau"]
+                },
+                {
+                  "id": "p4",
+                  "label": "Beendet die Nachricht höflich",
+                  "keywords": ["mit freundlichen grussen", "viele grusse", "freundliche grusse", "vielen dank", "danke im voraus", "herzlichen dank", "beste grusse"]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -42,7 +42,7 @@ type Props = {
   onClose: () => void;
 };
 
-export default function LevelPickerSheet({ visible, active, cards, colors, title, target, exam, onPlacement, onSelect, onClose }: Props) {
+export default function LevelPickerSheet({ visible, active, cards, colors, title, exam, onPlacement, onSelect, onClose }: Props) {
   const s = t();
   const today = localDateString();
   const g = useGrammarColors();
@@ -93,7 +93,7 @@ export default function LevelPickerSheet({ visible, active, cards, colors, title
                     onGrammar={examRow.onGrammar}
                   />
                 )}
-                {target === 'en' && total === 0 && (
+                {total === 0 && (
                   <Text style={[styles.noWordsYet, { color: colors.tabIconDefault }]}>{s.wordList.empty}</Text>
                 )}
               </View>

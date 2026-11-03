@@ -8,7 +8,7 @@ beforeEach(() => setSpeakerChoices({ ...DEFAULT_SPEAKERS }));
 
 describe('voicePreference', () => {
   it('starts on Automatic: no preferred person in any language', () => {
-    expect(getSpeakerChoices()).toEqual({ es: 'auto', en: 'auto', hu: 'auto' });
+    expect(getSpeakerChoices()).toEqual({ es: 'auto', en: 'auto', hu: 'auto', de: 'auto' });
     expect(preferredGender('es')).toBeUndefined();
     expect(preferredGender('en')).toBeUndefined();
     expect(preferredGender('hu')).toBeUndefined();

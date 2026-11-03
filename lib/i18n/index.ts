@@ -1,10 +1,11 @@
 import en from './en';
 import es from './es';
 import hu from './hu';
+import de from './de';
 
 type Strings = typeof en;
 
-const LANGS: Record<string, Strings> = { en, es, hu };
+const LANGS: Record<string, Strings> = { en, es, hu, de };
 
 let current: Strings = en;
 let currentCode = 'en';

@@ -11,7 +11,7 @@ import { accentColor, themedInkEdgeStyle } from '@/components/grammar/Themed';
 import { speak } from '@/lib/speech';
 import { t } from '@/lib/i18n';
 import { speechLang } from '@/lib/languages';
-import type { ExamplePair, Lang4, LessonBlock } from '@/lib/grammar/lessonTypes';
+import type { ContentLang, ExamplePair, Lang4, LessonBlock } from '@/lib/grammar/lessonTypes';
 import { isConjugationTable, personGloss, splitStemEnding, verbClassOf, verbColumnColor } from '@/lib/grammar/tableShape';
 import { groupTableRuns, type TableBlock } from '@/lib/grammar/tableGroups';
 
@@ -20,6 +20,8 @@ import { groupTableRuns, type TableBlock } from '@/lib/grammar/tableGroups';
 const LEGEND_CAPTION: Lang4 = {
   en: 'Each row is one person; each colour is one verb.',
   es: 'Cada fila es una persona, cada color es un verbo.',
+  hu: 'Minden sor egy személy, minden szín egy ige.',
+  de: 'Jede Zeile ist eine Person, jede Farbe ist ein Verb.',
 };
 
 // renderer for the LessonV2 body blocks. The JSON
@@ -28,7 +30,7 @@ const LEGEND_CAPTION: Lang4 = {
 
 interface Props {
   blocks: LessonBlock[];
-  contentLang: 'en' | 'es';
+  contentLang: ContentLang;
   learnedLang: string;
 }
 

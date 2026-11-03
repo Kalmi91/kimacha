@@ -1,0 +1,1044 @@
+{
+  "schema": 2,
+  "topic": "komparativ-superlativ",
+  "level": "A2",
+  "title": {
+    "en": "Comparison: bigger, biggest",
+    "es": "Comparación: más grande, el más grande"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "German compares in three steps: the base form (groß), the comparative with -er (größer) and the superlative with am ... -sten (am größten). Many short adjectives get an umlaut (alt, älter, am ältesten). After a comparative you say als (größer als), after an equal comparison wie (so groß wie). German does not put a word like English \"more\" or Spanish \"más\" in front of the adjective (not mehr groß): it adds the ending to the adjective itself.",
+        "es": "El alemán compara en tres pasos: la forma base (groß), el comparativo con -er (größer) y el superlativo con am ... -sten (am größten). Muchos adjetivos cortos reciben diéresis (alt, älter, am ältesten). Después de un comparativo se dice als (größer als), después de una comparación de igualdad wie (so groß wie). No existe \"más grande\" con una palabra aparte: el alemán añade la terminación al adjetivo mismo."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "komparativ",
+      "title": {
+        "en": "Regular comparison",
+        "es": "Comparación regular"
+      },
+      "header": [
+        {
+          "en": "Base form",
+          "es": "Forma base"
+        },
+        {
+          "en": "Komparativ",
+          "es": "Komparativ"
+        },
+        {
+          "en": "Superlativ",
+          "es": "Superlativ"
+        }
+      ],
+      "rows": [
+        [
+          "klein",
+          "kleiner",
+          "am kleinsten"
+        ],
+        [
+          "schnell",
+          "schneller",
+          "am schnellsten"
+        ],
+        [
+          "alt",
+          "älter",
+          "am ältesten"
+        ],
+        [
+          "groß",
+          "größer",
+          "am größten"
+        ],
+        [
+          "jung",
+          "jünger",
+          "am jüngsten"
+        ],
+        [
+          "kalt",
+          "kälter",
+          "am kältesten"
+        ],
+        [
+          "warm",
+          "wärmer",
+          "am wärmsten"
+        ],
+        [
+          "nett",
+          "netter",
+          "am nettesten"
+        ],
+        [
+          "teuer",
+          "teurer",
+          "am teuersten"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "komparativ-unregelmaessig",
+      "title": {
+        "en": "Irregular comparison",
+        "es": "Comparación irregular"
+      },
+      "header": [
+        {
+          "en": "Base form",
+          "es": "Forma base"
+        },
+        {
+          "en": "Komparativ",
+          "es": "Komparativ"
+        },
+        {
+          "en": "Superlativ",
+          "es": "Superlativ"
+        }
+      ],
+      "rows": [
+        [
+          "gut",
+          "besser",
+          "am besten"
+        ],
+        [
+          "viel",
+          "mehr",
+          "am meisten"
+        ],
+        [
+          "gern",
+          "lieber",
+          "am liebsten"
+        ],
+        [
+          "hoch",
+          "höher",
+          "am höchsten"
+        ],
+        [
+          "nah",
+          "näher",
+          "am nächsten"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "komparativ-regeln",
+      "title": {
+        "en": "Spelling rules",
+        "es": "Reglas de escritura"
+      },
+      "header": [
+        {
+          "en": "Rule",
+          "es": "Regla"
+        },
+        {
+          "en": "Example",
+          "es": "Ejemplo"
+        }
+      ],
+      "rows": [
+        [
+          "+ -er, am + -sten",
+          "klein, kleiner, am kleinsten"
+        ],
+        [
+          "a, o, u > ä, ö, ü",
+          "alt, älter, am ältesten"
+        ],
+        [
+          "-d, -t, -s, -ß, -z: am + -esten",
+          "nett, netter, am nettesten"
+        ],
+        [
+          "teuer: e entfällt",
+          "teuer, teurer, am teuersten"
+        ],
+        [
+          "unregelmäßig",
+          "gut, besser, am besten"
+        ]
+      ],
+      "noTableDeck": true
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "How to use the three forms",
+        "es": "Cómo usar las tres formas"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "Use the comparative with als to compare two things. For two things that are equal use so ... wie.",
+            "es": "Usa el comparativo con als para comparar dos cosas. Para dos cosas iguales usa so ... wie."
+          },
+          "examples": [
+            {
+              "es": "Mein Bruder ist älter als ich.",
+              "tr": {
+                "en": "My brother is older than I am.",
+                "es": "Mi hermano es mayor que yo."
+              }
+            },
+            {
+              "es": "Anna ist so groß wie ihr Bruder.",
+              "tr": {
+                "en": "Anna is as tall as her brother.",
+                "es": "Anna es tan alta como su hermano."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "The superlative after sein or another verb is am + adjective + -sten. It compares one thing with all the others.",
+            "es": "El superlativo después de sein o de otro verbo es am + adjetivo + -sten. Compara una cosa con todas las demás."
+          },
+          "examples": [
+            {
+              "es": "Im Sommer ist es am wärmsten.",
+              "tr": {
+                "en": "In summer it is the warmest.",
+                "es": "En verano hace más calor."
+              }
+            },
+            {
+              "es": "Dieser Pullover ist am schönsten.",
+              "tr": {
+                "en": "This sweater is the most beautiful.",
+                "es": "Este suéter es el más bonito."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "In front of a noun comparative and superlative take the normal adjective endings: der größere Hund, das schnellste Auto.",
+            "es": "Delante de un sustantivo el comparativo y el superlativo llevan las terminaciones normales del adjetivo: der größere Hund, das schnellste Auto."
+          },
+          "examples": [
+            {
+              "es": "Das ist das schnellste Auto von allen.",
+              "tr": {
+                "en": "That is the fastest car of all.",
+                "es": "Ese es el carro más rápido de todos."
+              }
+            },
+            {
+              "es": "Er hat einen jüngeren Bruder als ich.",
+              "tr": {
+                "en": "He has a younger brother than I do.",
+                "es": "Él tiene un hermano menor que yo."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "A few very common words are irregular. Learn them as small sets: gut, besser, am besten; viel, mehr, am meisten; gern, lieber, am liebsten; hoch, höher, am höchsten; nah, näher, am nächsten.",
+            "es": "Unas pocas palabras muy comunes son irregulares. Aprende los conjuntos pequeños: gut, besser, am besten; viel, mehr, am meisten; gern, lieber, am liebsten; hoch, höher, am höchsten; nah, näher, am nächsten."
+          },
+          "examples": [
+            {
+              "es": "Ich trinke lieber Tee als Kaffee.",
+              "tr": {
+                "en": "I prefer tea to coffee.",
+                "es": "Prefiero el té al café."
+              }
+            },
+            {
+              "es": "Der Berg ist höher als das Haus.",
+              "tr": {
+                "en": "The mountain is higher than the house.",
+                "es": "La montaña es más alta que la casa."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "als and wie",
+        "es": "als y wie"
+      },
+      "pairs": [
+        {
+          "a": "Anna ist so groß wie Tom.",
+          "b": "Anna ist größer als Tom.",
+          "note": {
+            "en": "wie compares things that are equal, after so + base form. als follows a comparative.",
+            "es": "wie compara cosas iguales, después de so + forma base. als va después de un comparativo."
+          },
+          "examples": [
+            {
+              "es": "Das Brot ist so teuer wie der Käse.",
+              "tr": {
+                "en": "The bread is as expensive as the cheese.",
+                "es": "El pan es tan caro como el queso."
+              }
+            },
+            {
+              "es": "Das Brot ist billiger als der Käse.",
+              "tr": {
+                "en": "The bread is cheaper than the cheese.",
+                "es": "El pan es más barato que el queso."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Der Zug ist am schnellsten.",
+          "b": "Das ist der schnellste Zug.",
+          "note": {
+            "en": "After a verb the superlative is am + -sten. In front of a noun it has the article and the normal ending: der schnellste Zug.",
+            "es": "Después de un verbo el superlativo es am + -sten. Delante de un sustantivo lleva artículo y la terminación normal: der schnellste Zug."
+          },
+          "examples": [
+            {
+              "es": "Dieser Bus ist am langsamsten.",
+              "tr": {
+                "en": "This bus is the slowest.",
+                "es": "Este autobús es el más lento."
+              }
+            },
+            {
+              "es": "Das ist der langsamste Bus.",
+              "tr": {
+                "en": "That is the slowest bus.",
+                "es": "Ese es el autobús más lento."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Do not say mehr groß or am bestesten: German has only the endings -er and -sten, and gut becomes besser and am besten. Do not use wie after a comparative: not größer wie, but größer als. Do not forget the umlaut in alt, groß, jung, kalt, warm, lang: älter, größer, jünger. After -d, -t, -s, -ß and -z add an e in the superlative: am ältesten, am nettesten (the one exception here is groß: am größten). And for \"than\" always use als.",
+        "es": "No digas mehr groß ni am bestesten: el alemán solo tiene las terminaciones -er y -sten, y gut pasa a besser y am besten. No uses wie después de un comparativo: no größer wie, sino größer als. No olvides la diéresis en alt, groß, jung, kalt, warm, lang: älter, größer, jünger. Después de -d, -t, -s, -ß y -z añade una e en el superlativo: am ältesten, am nettesten (la excepción aquí es groß: am größten). Y para \"que\" usa siempre als."
+      }
+    }
+  ],
+  "speak": {
+    "en": "German compares with endings. The comparative ends in «er»: «klein», «kleiner». The superlative uses «am» and «sten»: «am kleinsten». Many short words get an umlaut: «alt», «älter», «am ältesten». After the comparative you say «als»: «Mein Bruder ist älter als ich.» For equal things you say «so» and «wie»: «Anna ist so groß wie Tom.» Learn the irregular ones: «gut», «besser», «am besten», and «gern», «lieber», «am liebsten».",
+    "es": "El alemán compara con terminaciones. El comparativo termina en «er»: «klein», «kleiner». El superlativo usa «am» y «sten»: «am kleinsten». Muchas palabras cortas reciben diéresis: «alt», «älter», «am ältesten». Después del comparativo se dice «als»: «Mein Bruder ist älter als ich.» Para cosas iguales se dice «so» y «wie»: «Anna ist so groß wie Tom.» Aprende las irregulares: «gut», «besser», «am besten», y «gern», «lieber», «am liebsten»."
+  },
+  "items": [
+    {
+      "id": "komparativ-superlativ-c01",
+      "sentence": "Mein Bruder ist ___ als ich.",
+      "options": [
+        "älter",
+        "alt",
+        "am ältesten"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "als follows a comparative, and alt becomes älter with an umlaut: älter als.",
+        "es": "als va después de un comparativo, y alt pasa a älter con diéresis: älter als."
+      },
+      "wrong": {
+        "alt": {
+          "en": "The base form is used for equal things (so alt wie). With als you need the comparative älter.",
+          "es": "La forma base se usa para cosas iguales (so alt wie). Con als necesitas el comparativo älter."
+        },
+        "am ältesten": {
+          "en": "The superlative compares one with all the others. With als, only two things are compared, so the comparative fits.",
+          "es": "El superlativo compara uno con todos los demás. Con als solo se comparan dos cosas, así que encaja el comparativo."
+        }
+      },
+      "examples": [
+        "Meine Schwester ist jünger als ich.",
+        "Der Hund ist größer als die Katze."
+      ],
+      "tr": {
+        "en": "My brother is older than I am.",
+        "es": "Mi hermano es mayor que yo."
+      }
+    },
+    {
+      "id": "komparativ-superlativ-f01",
+      "kind": "form",
+      "verb": "Komparativ",
+      "person": "klein",
+      "answer": "kleiner",
+      "table": "komparativ"
+    },
+    {
+      "id": "komparativ-superlativ-c02",
+      "sentence": "Anna ist so groß ___ ihr Bruder.",
+      "options": [
+        "wie",
+        "als",
+        "wenn"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "After so + base form, an equal comparison takes wie: so groß wie.",
+        "es": "Después de so + forma base, una comparación de igualdad lleva wie: so groß wie."
+      },
+      "wrong": {
+        "als": {
+          "en": "als follows a comparative (größer als). After so groß the word is wie.",
+          "es": "als va después de un comparativo (größer als). Después de so groß la palabra es wie."
+        },
+        "wenn": {
+          "en": "wenn means \"if\" or \"whenever\" and starts a subordinate clause. It does not compare two things.",
+          "es": "wenn significa \"si\" o \"cada vez que\" y abre una subordinada. No compara dos cosas."
+        }
+      },
+      "examples": [
+        "Tom ist so alt wie ich.",
+        "Das Brot ist so teuer wie der Käse."
+      ],
+      "tr": {
+        "en": "Anna is as tall as her brother.",
+        "es": "Anna es tan alta como su hermano."
+      }
+    },
+    {
+      "id": "komparativ-superlativ-f02",
+      "kind": "form",
+      "verb": "Superlativ",
+      "person": "alt",
+      "answer": "am ältesten",
+      "table": "komparativ"
+    },
+    {
+      "id": "komparativ-superlativ-c03",
+      "sentence": "Der Zug ist ___ als der Bus.",
+      "options": [
+        "schnell",
+        "am schnellsten",
+        "schneller"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "als needs the comparative: schneller als.",
+        "es": "als necesita el comparativo: schneller als."
+      },
+      "wrong": {
+        "schnell": {
+          "en": "The base form does not fit with als. It is used with so ... wie (so schnell wie).",
+          "es": "La forma base no encaja con als. Se usa con so ... wie (so schnell wie)."
+        },
+        "am schnellsten": {
+          "en": "The superlative needs a group of three or more and no als. Here two things are compared.",
+          "es": "El superlativo necesita un grupo de tres o más y no lleva als. Aquí se comparan dos cosas."
+        }
+      },
+      "examples": [
+        "Das Flugzeug ist schneller als der Zug.",
+        "Der Bus ist langsamer als das Auto."
+      ],
+      "tr": {
+        "en": "The train is faster than the bus.",
+        "es": "El tren es más rápido que el autobús."
+      }
+    },
+    {
+      "id": "komparativ-superlativ-f03",
+      "kind": "form",
+      "verb": "Komparativ",
+      "person": "groß",
+      "answer": "größer",
+      "table": "komparativ"
+    },
+    {
+      "id": "komparativ-superlativ-w01",
+      "kind": "why",
+      "es": "Mein Bruder ist älter als ich.",
+      "target": "als",
+      "tr": {
+        "en": "My brother is older than I am.",
+        "es": "Mi hermano es mayor que yo."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "als is used for equal things: so alt als ich",
+            "es": "als se usa para cosas iguales: so alt als ich"
+          },
+          "wrong": {
+            "en": "Equal things use wie: so alt wie ich. als belongs after a comparative like älter.",
+            "es": "Las cosas iguales usan wie: so alt wie ich. als va después de un comparativo como älter."
+          }
+        },
+        {
+          "text": {
+            "en": "als follows a comparative and means \"than\"",
+            "es": "als va después de un comparativo y significa \"que\""
+          }
+        },
+        {
+          "text": {
+            "en": "als gives a reason, like weil",
+            "es": "als da una razón, como weil"
+          },
+          "wrong": {
+            "en": "weil gives a reason. Here als only connects the two things that are compared.",
+            "es": "weil da una razón. Aquí als solo une las dos cosas que se comparan."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "komparativ-superlativ-c04",
+      "sentence": "Im Sommer ist es ___.",
+      "options": [
+        "am wärmsten",
+        "wärmer",
+        "warm"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The sentence compares summer with all the other seasons, so the superlative with am is needed: am wärmsten.",
+        "es": "La oración compara el verano con todas las demás estaciones, así que se necesita el superlativo con am: am wärmsten."
+      },
+      "wrong": {
+        "wärmer": {
+          "en": "The comparative would need a second thing with als (wärmer als im Winter). Here nothing is named for comparison.",
+          "es": "El comparativo necesitaría una segunda cosa con als (wärmer als im Winter). Aquí no se nombra nada para comparar."
+        },
+        "warm": {
+          "en": "warm only says that it is warm. It does not say that summer is the warmest season.",
+          "es": "warm solo dice que hace calor. No dice que el verano es la estación más cálida."
+        }
+      },
+      "examples": [
+        "Im Winter ist es am kältesten.",
+        "Im August ist es am heißesten."
+      ],
+      "tr": {
+        "en": "In summer it is the warmest.",
+        "es": "En verano hace más calor."
+      }
+    },
+    {
+      "id": "komparativ-superlativ-f04",
+      "kind": "form",
+      "verb": "Komparativ",
+      "person": "gut",
+      "answer": "besser",
+      "table": "komparativ-unregelmaessig"
+    },
+    {
+      "id": "komparativ-superlativ-c05",
+      "sentence": "Das Auto ist teuer, aber das Haus ist ___.",
+      "options": [
+        "teuerer",
+        "teurer",
+        "am teuersten"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "teuer loses its e in the comparative: teurer.",
+        "es": "teuer pierde la e en el comparativo: teurer."
+      },
+      "wrong": {
+        "teuerer": {
+          "en": "The ending -er drops the e of teuer in the comparative. teuerer is a typical spelling mistake.",
+          "es": "La terminación -er hace que teuer pierda la e en el comparativo. teuerer es un error de escritura típico."
+        },
+        "am teuersten": {
+          "en": "The superlative compares one thing with several. The sentence compares two things only.",
+          "es": "El superlativo compara una cosa con varias. La oración compara solo dos cosas."
+        }
+      },
+      "examples": [
+        "Der Fisch ist teurer als das Brot.",
+        "Die Jacke ist teurer als die Hose."
+      ],
+      "tr": {
+        "en": "The car is expensive, but the house is more expensive.",
+        "es": "El carro es caro, pero la casa es más cara."
+      }
+    },
+    {
+      "id": "komparativ-superlativ-f05",
+      "kind": "form",
+      "verb": "Superlativ",
+      "person": "jung",
+      "answer": "am jüngsten",
+      "table": "komparativ"
+    },
+    {
+      "id": "komparativ-superlativ-c06",
+      "sentence": "Dieses Buch ist ___ als das Buch dort.",
+      "options": [
+        "guter",
+        "besser",
+        "am besten"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "gut is irregular: the comparative is besser, not guter.",
+        "es": "gut es irregular: el comparativo es besser, no guter."
+      },
+      "wrong": {
+        "guter": {
+          "en": "guter is not a form of gut in the comparison. The regular -er ending does not work for gut.",
+          "es": "guter no es una forma de gut en la comparación. La terminación regular -er no funciona con gut."
+        },
+        "am besten": {
+          "en": "am besten is the superlative and cannot stand with als. For two books use besser als.",
+          "es": "am besten es el superlativo y no puede ir con als. Para dos libros usa besser als."
+        }
+      },
+      "examples": [
+        "Dieser Film ist besser als der Film dort.",
+        "Mein Auto ist besser als dein Auto."
+      ],
+      "tr": {
+        "en": "This book is better than the book over there.",
+        "es": "Este libro es mejor que el libro de allá."
+      }
+    },
+    {
+      "id": "komparativ-superlativ-f06",
+      "kind": "form",
+      "verb": "Komparativ",
+      "person": "kalt",
+      "answer": "kälter",
+      "table": "komparativ"
+    },
+    {
+      "id": "komparativ-superlativ-w02",
+      "kind": "why",
+      "es": "Dieser Pullover ist am schönsten.",
+      "target": "am",
+      "tr": {
+        "en": "This sweater is the most beautiful.",
+        "es": "Este suéter es el más bonito."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "am shows the comparative, like als",
+            "es": "am muestra el comparativo, como als"
+          },
+          "wrong": {
+            "en": "The comparative ends in -er and is followed by als. am ... -sten forms the superlative.",
+            "es": "El comparativo termina en -er y va seguido de als. am ... -sten forma el superlativo."
+          }
+        },
+        {
+          "text": {
+            "en": "am is the preposition an + dem and shows a place",
+            "es": "am es la preposición an + dem y muestra un lugar"
+          },
+          "wrong": {
+            "en": "Here am has no place meaning. With an adjective ending in -sten it is part of the superlative.",
+            "es": "Aquí am no tiene sentido de lugar. Con un adjetivo que termina en -sten forma parte del superlativo."
+          }
+        },
+        {
+          "text": {
+            "en": "am + adjective + -sten is the superlative after sein",
+            "es": "am + adjetivo + -sten es el superlativo después de sein"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "komparativ-superlativ-c07",
+      "sentence": "Ich esse ___ Obst als Fleisch.",
+      "options": [
+        "viel",
+        "mehr",
+        "am meisten"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "viel is irregular: the comparative is mehr. With als: mehr Obst als Fleisch.",
+        "es": "viel es irregular: el comparativo es mehr. Con als: mehr Obst als Fleisch."
+      },
+      "wrong": {
+        "viel": {
+          "en": "viel is the base form. With als you need the comparative mehr.",
+          "es": "viel es la forma base. Con als necesitas el comparativo mehr."
+        },
+        "am meisten": {
+          "en": "am meisten is the superlative. Two kinds of food are compared here, so the comparative mehr is right.",
+          "es": "am meisten es el superlativo. Aquí se comparan dos tipos de comida, así que el comparativo mehr es correcto."
+        }
+      },
+      "examples": [
+        "Ich trinke mehr Wasser als Saft.",
+        "Er hat mehr Zeit als ich."
+      ],
+      "tr": {
+        "en": "I eat more fruit than meat.",
+        "es": "Como más fruta que carne."
+      }
+    },
+    {
+      "id": "komparativ-superlativ-f07",
+      "kind": "form",
+      "verb": "Superlativ",
+      "person": "viel",
+      "answer": "am meisten",
+      "table": "komparativ-unregelmaessig"
+    },
+    {
+      "id": "komparativ-superlativ-c08",
+      "sentence": "Ich trinke ___ Tee als Kaffee.",
+      "options": [
+        "lieber",
+        "gern",
+        "am liebsten"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "gern is irregular: the comparative is lieber. It says what you prefer: lieber Tee als Kaffee.",
+        "es": "gern es irregular: el comparativo es lieber. Dice lo que prefieres: lieber Tee als Kaffee."
+      },
+      "wrong": {
+        "gern": {
+          "en": "gern is the base form: Ich trinke gern Tee. It cannot be used with als to compare.",
+          "es": "gern es la forma base: Ich trinke gern Tee. No se puede usar con als para comparar."
+        },
+        "am liebsten": {
+          "en": "am liebsten is the superlative: what you like best of all. With als you compare only two things.",
+          "es": "am liebsten es el superlativo: lo que más te gusta de todo. Con als solo comparas dos cosas."
+        }
+      },
+      "examples": [
+        "Ich lese lieber ein Buch als eine Zeitung.",
+        "Sie spielt lieber Fußball als Basketball."
+      ],
+      "tr": {
+        "en": "I prefer to drink tea rather than coffee.",
+        "es": "Prefiero tomar té que café."
+      }
+    },
+    {
+      "id": "komparativ-superlativ-f08",
+      "kind": "form",
+      "verb": "Superlativ",
+      "person": "nett",
+      "answer": "am nettesten",
+      "table": "komparativ"
+    },
+    {
+      "id": "komparativ-superlativ-c09",
+      "sentence": "In meiner Familie ist mein Vater ___.",
+      "options": [
+        "älter",
+        "am altesten",
+        "am ältesten"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "He is older than everyone else in the family, so the superlative is needed: am ältesten, with an umlaut and an extra e after d.",
+        "es": "Es mayor que todos los demás en la familia, así que se necesita el superlativo: am ältesten, con diéresis y una e extra después de d."
+      },
+      "wrong": {
+        "älter": {
+          "en": "The comparative needs a second thing with als. The sentence compares the father with the whole family.",
+          "es": "El comparativo necesitaría una segunda cosa con als. La oración compara al papá con toda la familia."
+        },
+        "am altesten": {
+          "en": "The umlaut is missing: alt becomes älter and am ältesten. Without the ä the form is wrong.",
+          "es": "Falta la diéresis: alt pasa a älter y am ältesten. Sin la ä la forma es incorrecta."
+        }
+      },
+      "examples": [
+        "In meiner Klasse ist Tom am jüngsten.",
+        "Im Haus ist der Hund am ältesten."
+      ],
+      "tr": {
+        "en": "In my family my father is the oldest.",
+        "es": "En mi familia mi papá es el mayor."
+      }
+    },
+    {
+      "id": "komparativ-superlativ-f09",
+      "kind": "form",
+      "verb": "Komparativ",
+      "person": "teuer",
+      "answer": "teurer",
+      "table": "komparativ"
+    },
+    {
+      "id": "komparativ-superlativ-w03",
+      "kind": "why",
+      "es": "Der Berg ist höher als das Haus.",
+      "target": "höher",
+      "tr": {
+        "en": "The mountain is higher than the house.",
+        "es": "La montaña es más alta que la casa."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "The comparative is regular: hoch + er = hocher",
+            "es": "El comparativo es regular: hoch + er = hocher"
+          },
+          "wrong": {
+            "en": "hoch is irregular. The c drops and the vowel gets an umlaut, so hocher does not exist.",
+            "es": "hoch es irregular. La c desaparece y la vocal lleva diéresis, así que hocher no existe."
+          }
+        },
+        {
+          "text": {
+            "en": "hoch is irregular: the c drops and the vowel takes an umlaut",
+            "es": "hoch es irregular: la c desaparece y la vocal lleva diéresis"
+          }
+        },
+        {
+          "text": {
+            "en": "höher is the superlative because of the umlaut",
+            "es": "höher es el superlativo por la diéresis"
+          },
+          "wrong": {
+            "en": "The umlaut does not make a superlative. The superlative is am höchsten. höher with als is the comparative.",
+            "es": "La diéresis no forma un superlativo. El superlativo es am höchsten. höher con als es el comparativo."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "komparativ-superlativ-c10",
+      "sentence": "Sie ist ___ von allen.",
+      "options": [
+        "am nettsten",
+        "am nettesten",
+        "am netteren"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "nett ends in -t, so an e is added before -sten: am nettesten.",
+        "es": "nett termina en -t, así que se añade una e antes de -sten: am nettesten."
+      },
+      "wrong": {
+        "am nettsten": {
+          "en": "After -t the superlative needs the extra e to be pronounced: nettsten is wrong, nettesten is right.",
+          "es": "Después de -t el superlativo necesita la e extra para poder pronunciarse: nettsten es incorrecto, nettesten es correcto."
+        },
+        "am netteren": {
+          "en": "-eren mixes comparative and superlative. The superlative always ends in -sten, here -esten.",
+          "es": "-eren mezcla comparativo y superlativo. El superlativo siempre termina en -sten, aquí -esten."
+        }
+      },
+      "examples": [
+        "Er ist am nettesten.",
+        "Dieser Tag ist am heißesten."
+      ],
+      "tr": {
+        "en": "She is the nicest of all.",
+        "es": "Ella es la más amable de todas."
+      }
+    },
+    {
+      "id": "komparativ-superlativ-f10",
+      "kind": "form",
+      "verb": "Komparativ",
+      "person": "gern",
+      "answer": "lieber",
+      "table": "komparativ-unregelmaessig"
+    },
+    {
+      "id": "komparativ-superlativ-c11",
+      "sentence": "Das ist das ___ Auto von allen.",
+      "options": [
+        "schnellere",
+        "schnellste",
+        "schnellsten"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "\"Of all\" asks for the superlative, and after das the ending is -e: das schnellste Auto.",
+        "es": "\"De todos\" pide el superlativo, y después de das la terminación es -e: das schnellste Auto."
+      },
+      "wrong": {
+        "schnellere": {
+          "en": "This is the comparative. \"Of all\" compares one thing with many, so the superlative is needed.",
+          "es": "Este es el comparativo. \"De todos\" compara una cosa con muchas, así que se necesita el superlativo."
+        },
+        "schnellsten": {
+          "en": "The superlative is right, but the ending is wrong. After das in the nominative the ending is -e, not -en.",
+          "es": "El superlativo es correcto, pero la terminación está mal. Después de das en nominativo la terminación es -e, no -en."
+        }
+      },
+      "examples": [
+        "Das ist der größte Hund von allen.",
+        "Das ist die schönste Stadt von allen."
+      ],
+      "tr": {
+        "en": "That is the fastest car of all.",
+        "es": "Ese es el carro más rápido de todos."
+      }
+    },
+    {
+      "id": "komparativ-superlativ-f11",
+      "kind": "form",
+      "verb": "Superlativ",
+      "person": "hoch",
+      "answer": "am höchsten",
+      "table": "komparativ-unregelmaessig"
+    },
+    {
+      "id": "komparativ-superlativ-c12",
+      "sentence": "Er hat einen ___ Bruder als ich.",
+      "options": [
+        "jüngsten",
+        "jünger",
+        "jüngeren"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "als signals a comparative, and in front of the masculine accusative the ending is -en: einen jüngeren Bruder.",
+        "es": "als señala un comparativo, y delante del acusativo masculino la terminación es -en: einen jüngeren Bruder."
+      },
+      "wrong": {
+        "jüngsten": {
+          "en": "This is a superlative. With als two people are compared, so the comparative is needed.",
+          "es": "Este es un superlativo. Con als se comparan dos personas, así que se necesita el comparativo."
+        },
+        "jünger": {
+          "en": "The comparative is right, but in front of a noun it needs an ending, like every adjective. The masculine accusative takes -en.",
+          "es": "El comparativo es correcto, pero delante de un sustantivo necesita una terminación, como todo adjetivo. El acusativo masculino lleva -en."
+        }
+      },
+      "examples": [
+        "Sie hat eine ältere Schwester.",
+        "Wir haben ein größeres Haus als ihr."
+      ],
+      "tr": {
+        "en": "He has a younger brother than I do.",
+        "es": "Él tiene un hermano menor que yo."
+      }
+    },
+    {
+      "id": "komparativ-superlativ-f12",
+      "kind": "form",
+      "verb": "Superlativ",
+      "person": "warm",
+      "answer": "am wärmsten",
+      "table": "komparativ"
+    },
+    {
+      "id": "komparativ-superlativ-c13",
+      "sentence": "Im Winter ist es ___ als im Herbst.",
+      "options": [
+        "kalter",
+        "am kältesten",
+        "kälter"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "als needs the comparative, and kalt takes an umlaut: kälter als.",
+        "es": "als necesita el comparativo, y kalt lleva diéresis: kälter als."
+      },
+      "wrong": {
+        "kalter": {
+          "en": "The umlaut is missing. kalt becomes kälter in the comparative, like alt becomes älter.",
+          "es": "Falta la diéresis. kalt pasa a kälter en el comparativo, como alt pasa a älter."
+        },
+        "am kältesten": {
+          "en": "The superlative does not go with als. Two seasons are compared, so the comparative kälter is right.",
+          "es": "El superlativo no va con als. Se comparan dos estaciones, así que el comparativo kälter es correcto."
+        }
+      },
+      "examples": [
+        "Im Februar ist es kälter als im Oktober.",
+        "Der Winter ist kälter als der Herbst."
+      ],
+      "tr": {
+        "en": "In winter it is colder than in autumn.",
+        "es": "En invierno hace más frío que en otoño."
+      }
+    },
+    {
+      "id": "komparativ-superlativ-c14",
+      "sentence": "Der Berg ist ___ als das Haus.",
+      "options": [
+        "höher",
+        "hoch",
+        "am höchsten"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "hoch is irregular: the c drops and the vowel gets an umlaut, so the comparative is höher.",
+        "es": "hoch es irregular: la c desaparece y la vocal lleva diéresis, así que el comparativo es höher."
+      },
+      "wrong": {
+        "hoch": {
+          "en": "hoch is the base form and is used with so ... wie (so hoch wie). With als the comparative höher is needed.",
+          "es": "hoch es la forma base y se usa con so ... wie (so hoch wie). Con als se necesita el comparativo höher."
+        },
+        "am höchsten": {
+          "en": "am höchsten is the superlative, for one thing against many. Here a mountain and a house are compared.",
+          "es": "am höchsten es el superlativo, para una cosa frente a muchas. Aquí se comparan una montaña y una casa."
+        }
+      },
+      "examples": [
+        "Der Baum ist höher als das Haus.",
+        "Das Haus ist höher als die Garage."
+      ],
+      "tr": {
+        "en": "The mountain is higher than the house.",
+        "es": "La montaña es más alta que la casa."
+      }
+    },
+    {
+      "id": "komparativ-superlativ-w04",
+      "kind": "why",
+      "es": "Ich trinke lieber Tee als Kaffee.",
+      "target": "lieber",
+      "tr": {
+        "en": "I prefer to drink tea rather than coffee.",
+        "es": "Prefiero tomar té que café."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "lieber is the irregular comparative of gern",
+            "es": "lieber es el comparativo irregular de gern"
+          }
+        },
+        {
+          "text": {
+            "en": "lieber is the superlative of gern",
+            "es": "lieber es el superlativo de gern"
+          },
+          "wrong": {
+            "en": "The superlative of gern is am liebsten. lieber is the comparative and goes with als.",
+            "es": "El superlativo de gern es am liebsten. lieber es el comparativo y va con als."
+          }
+        },
+        {
+          "text": {
+            "en": "lieber is the regular comparative of gern: gern + er",
+            "es": "lieber es el comparativo regular de gern: gern + er"
+          },
+          "wrong": {
+            "en": "The regular form gerner does not exist. gern is one of the irregular words: gern, lieber, am liebsten.",
+            "es": "La forma regular gerner no existe. gern es una de las palabras irregulares: gern, lieber, am liebsten."
+          }
+        }
+      ],
+      "correctIndex": 0
+    }
+  ]
+}

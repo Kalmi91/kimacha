@@ -1,0 +1,240 @@
+{
+  "target": "de",
+  "level": "B1",
+  "paper": "reading",
+  "forms": [
+    {
+      "id": "f1",
+      "tasks": [
+        {
+          "skill": "reading",
+          "kind": "passage_mc",
+          "instruction": "Lesen Sie den Text und die Aufgaben 1 bis 6 dazu. Sind die Aussagen richtig oder falsch? Kreuzen Sie an.",
+          "title": "E-Mail von Lena",
+          "text": "Betreff: Neues Leben in Leipzig\n\nHallo Sven,\n\nendlich komme ich dazu, dir zu schreiben! Seit drei Wochen wohne ich jetzt in Leipzig, und es gefällt mir viel besser, als ich gedacht hatte. Meine Wohnung liegt im dritten Stock eines alten Hauses, hat zwei Zimmer und einen kleinen Balkon. Leider gibt es keinen Aufzug, aber ich nehme das als Sport. Die Miete ist mit 480 Euro für diese Stadt günstig, und bis zur Haltestelle der Straßenbahn sind es nur fünf Minuten zu Fuß.\n\nDie Arbeit in der neuen Firma macht mir Spaß. Ich arbeite in einem Team von acht Leuten, die alle sehr nett sind. Am Anfang war es anstrengend, weil ich so viele neue Namen und Programme lernen musste. Jetzt kenne ich schon fast alles. Montags und freitags darf ich zu Hause arbeiten, das ist ein großer Vorteil.\n\nNur meine Freunde fehlen mir ein bisschen. Deshalb möchte ich dich fragen: Hast du am Wochenende vom 14. und 15. Mai Zeit? Dann veranstalte ich eine kleine Einweihungsparty. Du kannst bei mir übernachten, das Sofa ist ziemlich bequem. Wenn du mit dem Zug kommst, hole ich dich am Hauptbahnhof ab. Vielleicht bringst du Jana mit, ich habe sie schon so lange nicht gesehen. Sag mir bitte bis nächsten Sonntag Bescheid, damit ich genug einkaufen kann.\n\nViele Grüße\nLena",
+          "questions": [
+            {
+              "stem": "Lena wohnt seit drei Wochen in Leipzig.",
+              "options": ["richtig", "falsch"],
+              "correct": 0
+            },
+            {
+              "stem": "Lenas Wohnung hat einen Aufzug.",
+              "options": ["richtig", "falsch"],
+              "correct": 1
+            },
+            {
+              "stem": "Lena findet die Miete für Leipzig zu hoch.",
+              "options": ["richtig", "falsch"],
+              "correct": 1
+            },
+            {
+              "stem": "Lena darf an zwei Tagen in der Woche von zu Hause arbeiten.",
+              "options": ["richtig", "falsch"],
+              "correct": 0
+            },
+            {
+              "stem": "Sven muss für das Wochenende ein Hotelzimmer buchen.",
+              "options": ["richtig", "falsch"],
+              "correct": 1
+            },
+            {
+              "stem": "Sven soll Lena bis nächsten Sonntag antworten.",
+              "options": ["richtig", "falsch"],
+              "correct": 0
+            }
+          ]
+        },
+        {
+          "skill": "reading",
+          "kind": "clips_mc",
+          "instruction": "Lesen Sie die zwei Texte aus der Zeitung und die Aufgaben 1 bis 6 dazu. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+          "clips": [
+            {
+              "text": "Mehr Platz für Fahrräder in Rotenbach\n\nDer Stadtrat von Rotenbach hat gestern beschlossen, bis zum Jahr 2027 zwölf Kilometer neue Radwege zu bauen. Das Projekt kostet rund 3,2 Millionen Euro. Ein Teil des Geldes kommt vom Land, den Rest bezahlt die Stadt aus ihrem Haushalt.\n\nBesonders auf der Hauptstraße soll es sicherer werden: Dort fahren jeden Tag Tausende Radfahrer zwischen den Wohngebieten und dem Bahnhof, und es gibt immer wieder Unfälle. Die neuen Radwege werden deshalb breiter und getrennt vom Autoverkehr gebaut.\n\nNicht alle sind begeistert. Einige Geschäftsleute fürchten, dass ihre Kunden nicht mehr mit dem Auto vorfahren können, weil Parkplätze wegfallen. Der Bürgermeister versteht diese Sorge, ist aber sicher, dass die Geschäfte profitieren: „Wer mit dem Rad kommt, hält öfter an und kauft spontan ein.“\n\nEine Umfrage der Stadt zeigt, dass 62 Prozent der Einwohner mehr Radwege wünschen. Die Bauarbeiten beginnen im Herbst.",
+              "questions": [
+                {
+                  "stem": "Was hat der Stadtrat beschlossen?",
+                  "options": ["Die Hauptstraße wird für Autos gesperrt.", "Die Stadt kauft Fahrräder für alle Schüler.", "Die Stadt baut in den nächsten Jahren neue Radwege."],
+                  "correct": 2
+                },
+                {
+                  "stem": "Warum sind einige Geschäftsleute gegen das Projekt?",
+                  "options": ["Sie glauben, dass es weniger Parkplätze für Kunden gibt.", "Sie finden die Radwege zu teuer und wollen das Geld lieber für Straßen ausgeben.", "Sie haben Angst vor dem Lärm der Bauarbeiten im Herbst."],
+                  "correct": 0
+                },
+                {
+                  "stem": "Was zeigt die Umfrage der Stadt?",
+                  "options": ["Die Hälfte der Einwohner fährt täglich Rad.", "Die meisten Einwohner wollen mehr Radwege.", "Viele Einwohner finden die Hauptstraße zu laut."],
+                  "correct": 1
+                }
+              ]
+            },
+            {
+              "text": "Bibliothek jetzt länger geöffnet\n\nAb nächster Woche bleibt die Stadtbibliothek donnerstags und freitags bis 22 Uhr geöffnet. Bisher schloss sie schon um 18 Uhr. Die Bibliotheksleiterin, Frau Köhler, erklärt, warum: „Viele Studenten und Schüler beklagen sich, dass sie zu Hause keinen ruhigen Platz zum Lernen haben. Bei uns finden sie Tische, Steckdosen und kostenloses WLAN.“\n\nDamit am Abend genug Personal da ist, hat die Bibliothek drei neue Mitarbeiter eingestellt, die im Schichtdienst arbeiten. Für die Besucher ändert sich sonst nichts: Der Ausweis kostet weiterhin 12 Euro im Jahr, Kinder und Jugendliche zahlen nichts.\n\nFrau Köhler bittet allerdings um etwas Rücksicht. Im ersten Stock gilt künftig am Abend eine „Stille Zone“, in der weder telefoniert noch gesprochen werden darf. Wer sich unterhalten möchte, kann das im Erdgeschoss tun, wo ein kleines Café eingerichtet wird. Es soll im Juni eröffnen.",
+              "questions": [
+                {
+                  "stem": "Warum verlängert die Bibliothek ihre Öffnungszeiten?",
+                  "options": ["Junge Leute brauchen abends einen ruhigen Lernplatz.", "Die Leiterin will mehr Mitarbeiter einstellen.", "Es kommen mehr Touristen in die Stadt."],
+                  "correct": 0
+                },
+                {
+                  "stem": "Was bleibt für die Besucher gleich?",
+                  "options": ["Die Zahl der Mitarbeiter am Abend und am Wochenende.", "Der Preis für den Bibliotheksausweis.", "Die Lautstärke im ganzen Haus."],
+                  "correct": 1
+                },
+                {
+                  "stem": "Was gilt künftig am Abend im ersten Stock?",
+                  "options": ["Dort muss man leise sein.", "Dort kann man Kaffee trinken.", "Dort dürfen nur Schüler lernen."],
+                  "correct": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "reading",
+          "kind": "match_pool",
+          "instruction": "Lesen Sie die Situationen 1 bis 7 und die Anzeigen a bis j. Welche Anzeige passt zu welcher Situation? Jede Anzeige können Sie nur einmal verwenden. Nicht alle Anzeigen passen. Für eine Situation gibt es keine passende Anzeige: Wählen Sie 0.",
+          "prompts": [
+            { "id": "13", "text": "Marta ist vor Kurzem aus Spanien nach Deutschland gezogen. Sie möchte ihr Deutsch verbessern, aber keinen Kurs besuchen." },
+            { "id": "14", "text": "Tim zieht nächste Woche um und hat viele schwere Möbel. Er sucht jemanden, der ihm beim Tragen hilft." },
+            { "id": "15", "text": "Familie Özdemir räumt gerade das Kinderzimmer auf. Kleidung und Spielzeug, aus denen die Kinder herausgewachsen sind, möchte sie am Sonntag gern verkaufen." },
+            { "id": "16", "text": "Jana studiert und sucht ein Zimmer in einer Wohngemeinschaft. Sie hat eine Katze und möchte sie mitbringen." },
+            { "id": "17", "text": "Das Fahrrad von Herrn Weber ist kaputt. Er braucht es schon morgen wieder für den Weg zur Arbeit." },
+            { "id": "18", "text": "Elif möchte nicht den ganzen Tag arbeiten und sucht eine Teilzeitstelle. Sie spricht gut Deutsch und hat gern Kontakt zu Menschen." },
+            { "id": "19", "text": "Herr Yilmaz hat einen Laptop, der nicht mehr startet. Er möchte ihn noch diese Woche reparieren lassen und sucht dafür eine Werkstatt." }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "title": "Fahrradwerkstatt Pedal",
+              "text": "Reparaturen schnell und günstig! Wir reparieren alle Fahrradtypen, meistens noch am selben Tag. Gebrauchte Räder gibt es ab 60 Euro. Montag bis Samstag von 9 bis 18 Uhr in der Gartenstraße 12."
+            },
+            {
+              "id": "b",
+              "title": "Sprachcafé Linde",
+              "text": "Deutsch sprechen ohne Stress! Jeden Mittwochabend treffen sich Menschen aus aller Welt zum Plaudern bei Kaffee und Kuchen. Kein Kurs, kein Test, kein Eintritt. Kommen Sie einfach um 19 Uhr vorbei."
+            },
+            {
+              "id": "c",
+              "title": "Umzugshilfe",
+              "text": "Umzug geplant? Zwei kräftige Studenten helfen beim Tragen und Transportieren, auch bei schweren Möbeln. Stundenpreis 15 Euro pro Person, einen Transporter vermieten wir auf Wunsch. Telefon: 0171 5550192."
+            },
+            {
+              "id": "d",
+              "title": "Kochkurs „Pasta frisch“",
+              "text": "Lernen Sie, wie man Nudeln selbst macht. Samstag um 15 Uhr in einer kleinen Gruppe, alle Zutaten sind im Preis von 35 Euro enthalten. Anmeldung bis Donnerstag in der Volkshochschule."
+            },
+            {
+              "id": "e",
+              "title": "Nachhilfe Mathematik",
+              "text": "Mathe verstehen statt auswendig lernen! Eine erfahrene Lehrerin gibt Nachhilfe für Schüler der Klassen 7 bis 10, bei Ihnen zu Hause oder online. Die erste Stunde ist kostenlos."
+            },
+            {
+              "id": "f",
+              "title": "Zahnarztpraxis Dr. Brandt",
+              "text": "Wir suchen eine freundliche Mitarbeiterin für unsere Anmeldung, 20 Stunden pro Woche, ab sofort. Sie sollten gut Deutsch sprechen und gern mit Menschen arbeiten. Bewerbung bitte per E-Mail."
+            },
+            {
+              "id": "g",
+              "title": "Flohmarkt am See",
+              "text": "Jeden ersten Sonntag im Monat von 8 bis 15 Uhr. Stände für Privatleute kosten 10 Euro. Kinderkleidung, Bücher und Spielzeug sind besonders beliebt. Kaffee und Kuchen gibt es vor Ort."
+            },
+            {
+              "id": "h",
+              "title": "Wanderverein Harzfreunde",
+              "text": "Gemeinsam unterwegs: Tageswanderung im Harz am 18. Mai. Abfahrt um 7 Uhr mit dem Bus, Rückkehr gegen 20 Uhr. Mittelschwere Strecke, etwa 15 Kilometer. Hunde können leider nicht mitgenommen werden."
+            },
+            {
+              "id": "i",
+              "title": "Fitnessstudio FitPlus",
+              "text": "Jetzt anmelden und zwei Monate gratis trainieren! Moderne Geräte, Kurse von Yoga bis Spinning und eine große Sauna. Auch Anfänger sind bei uns willkommen, unsere Trainer beraten Sie persönlich. Der Vertrag ist monatlich kündbar."
+            },
+            {
+              "id": "j",
+              "title": "WG sucht Mitbewohner",
+              "text": "Unser Zimmer (16 Quadratmeter, möbliert) ist ab 1. Juni frei. Miete 320 Euro warm. Wir sind drei Studenten, kochen oft zusammen und freuen uns über Haustiere. Besichtigung jederzeit möglich."
+            }
+          ],
+          "answer": { "13": "b", "14": "c", "15": "g", "16": "j", "17": "a", "18": "f", "19": "none" },
+          "unique": true,
+          "allowNone": true
+        },
+        {
+          "skill": "reading",
+          "kind": "passage_mc",
+          "instruction": "Lesen Sie die Beiträge aus einem Internetforum und die Aufgaben 1 bis 7. Ist die Person der Meinung, dass man in einer Großstadt gut ohne Auto leben kann? Kreuzen Sie ja oder nein an.",
+          "title": "Forum: Leben ohne Auto in der Großstadt?",
+          "text": "Anna: Ich habe mein Auto vor zwei Jahren verkauft und vermisse es kein bisschen. Bus und Bahn fahren alle paar Minuten, und fürs Einkaufen nehme ich das Lastenrad. Ich spare jeden Monat viel Geld.\n\nBen: Das funktioniert nur, wenn man im Zentrum wohnt. Ich wohne am Stadtrand und arbeite im Schichtdienst. Nachts fährt kein Bus mehr, also brauche ich mein Auto jeden Tag.\n\nChiara: Mit zwei kleinen Kindern geht es für uns nicht ohne Auto. Ich bringe sie morgens zur Kita, danach muss ich schnell zur Arbeit. Mit den öffentlichen Verkehrsmitteln würde ich fast doppelt so lange brauchen.\n\nDavid: Für mich ist es eine Frage der Gewohnheit. Ich gehe fast alles zu Fuß, und für längere Strecken leihe ich mir ein Auto aus. Das ist billiger, und ich muss mich nicht um Reparaturen kümmern.\n\nEmre: Ich verstehe die ganze Aufregung nicht. Wenn die Wege kurz sind, braucht man wirklich kein Auto. Bei uns in der Stadt braucht man es nur für den Urlaub.\n\nFiona: In meinem Viertel gibt es kaum Radwege, und die Straßenbahn ist ständig überfüllt. Solange das so ist, bleibe ich beim Auto, auch wenn die Parkplatzsuche mich nervt.\n\nGeorg: Ich bin Rentner und gehe gern zu Fuß. Ärzte, Läden und Park sind in zehn Minuten erreichbar. Ein Auto würde mich nur Geld und Nerven kosten.",
+          "questions": [
+            {
+              "stem": "Anna: Kann man in einer Großstadt gut ohne Auto leben?",
+              "options": ["ja", "nein"],
+              "correct": 0
+            },
+            {
+              "stem": "Ben: Kann man in einer Großstadt gut ohne Auto leben?",
+              "options": ["ja", "nein"],
+              "correct": 1
+            },
+            {
+              "stem": "Chiara: Kann man in einer Großstadt gut ohne Auto leben?",
+              "options": ["ja", "nein"],
+              "correct": 1
+            },
+            {
+              "stem": "David: Kann man in einer Großstadt gut ohne Auto leben?",
+              "options": ["ja", "nein"],
+              "correct": 0
+            },
+            {
+              "stem": "Emre: Kann man in einer Großstadt gut ohne Auto leben?",
+              "options": ["ja", "nein"],
+              "correct": 0
+            },
+            {
+              "stem": "Fiona: Kann man in einer Großstadt gut ohne Auto leben?",
+              "options": ["ja", "nein"],
+              "correct": 1
+            },
+            {
+              "stem": "Georg: Kann man in einer Großstadt gut ohne Auto leben?",
+              "options": ["ja", "nein"],
+              "correct": 0
+            }
+          ]
+        },
+        {
+          "skill": "reading",
+          "kind": "passage_mc",
+          "instruction": "Lesen Sie den Text und die Aufgaben 1 bis 4 dazu. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+          "title": "Informationen für Kursteilnehmer der Volkshochschule",
+          "text": "Liebe Kursteilnehmerinnen und Kursteilnehmer,\n\nbitte lesen Sie die folgenden Hinweise sorgfältig durch.\n\nAnmeldung und Gebühren: Die Kursgebühr überweisen Sie bitte spätestens eine Woche vor dem ersten Termin. Erst danach ist Ihr Platz sicher. Wenn Sie nicht bezahlen, geben wir den Platz an die nächste Person auf der Warteliste.\n\nAbmeldung: Sie können sich bis sieben Tage vor Kursbeginn kostenlos abmelden. Danach müssen wir leider die Hälfte der Gebühr berechnen. Wer nach dem ersten Kurstag aufhört, bekommt kein Geld zurück, es sei denn, er ist krank und bringt ein ärztliches Attest mit.\n\nTeilnahmebescheinigung: Eine Bescheinigung erhalten alle, die an mindestens 80 Prozent der Termine teilgenommen haben. Bitte tragen Sie sich deshalb bei jedem Besuch in die Anwesenheitsliste ein.\n\nGebäude: Fahrräder können im Hof abgestellt werden. Im Haus ist das Rauchen nicht erlaubt. Getränke dürfen Sie in die Kursräume mitnehmen, Essen jedoch nicht. Im Erdgeschoss finden Sie einen Automaten für Kaffee und Tee.\n\nWir wünschen Ihnen viel Freude und Erfolg!",
+          "questions": [
+            {
+              "stem": "Wann ist der Kursplatz sicher?",
+              "options": ["Wenn man sich auf die Warteliste setzen lässt.", "Wenn man am ersten Kurstag kommt.", "Wenn die Gebühr rechtzeitig bezahlt ist."],
+              "correct": 2
+            },
+            {
+              "stem": "Was passiert bei einer Abmeldung drei Tage vor dem Kursbeginn?",
+              "options": ["Man muss einen Teil der Gebühr bezahlen.", "Man bekommt das ganze Geld zurück.", "Man darf den Kurs später nachholen."],
+              "correct": 0
+            },
+            {
+              "stem": "Wer bekommt eine Teilnahmebescheinigung?",
+              "options": ["Wer die Gebühr als Erster bezahlt hat.", "Wer fast immer anwesend war.", "Wer einen ärztlichen Nachweis vorlegt."],
+              "correct": 1
+            },
+            {
+              "stem": "Was ist in den Kursräumen erlaubt?",
+              "options": ["Man darf ein Fahrrad abstellen.", "Man darf etwas zu trinken mitbringen.", "Man darf eine Kleinigkeit essen."],
+              "correct": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

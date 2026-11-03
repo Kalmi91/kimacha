@@ -23,6 +23,11 @@ const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const out = join(root, 'lib', 'corpusNames.ts');
 const check = process.argv.includes('--check');
 const LANGS = ['es', 'en', 'hu'];
+// German capitalises every noun, so a capital inside a sentence says nothing about a name. A German name is a capitalised
+// word that the German sentence of a card and the English sentence of the same card write the same way (Anna, Tom, John,
+// Péter, London: an English noun is lower case inside a sentence, a German noun is not), never in lower case anywhere in the
+// German corpus, plus the country and city names below that the German sentences use and that are no headword of the deck.
+const DE_PLACES = ['Spanien', 'Ungarn', 'England', 'Europa', 'Deutschland', 'Österreich', 'Mexiko', 'Frankreich', 'Italien', 'Amerika', 'Berlin', 'Budapest', 'Madrid', 'London', 'Wien', 'Paris'];
 
 // same rule as lib/properNames.ts
 const OPENER = /["“«¿¡(‘'[]/;
@@ -63,19 +68,53 @@ scan(join(root, 'data', 'words'));
 scan(join(root, 'data', 'words-open'));
 scan(join(root, 'data', 'practice'));
 
+function germanNames() {
+  const lowerDe = new Set();
+  const lowerEn = new Set();
+  const pairs = [];
+  const headwords = new Set();
+  const dir = join(root, 'data', 'words', 'de');
+  for (const name of existsSync(dir) ? readdirSync(dir).sort() : []) {
+    if (!name.endsWith('.json')) continue;
+    for (const card of JSON.parse(readFileSync(join(dir, name), 'utf8'))) {
+      if (typeof card.sentence_de !== 'string' || typeof card.sentence_en !== 'string') continue;
+      pairs.push([card.sentence_de, card.sentence_en]);
+      for (const token of String(card.de).toLowerCase().split(/[^a-zäöüßé]+/)) if (token) headwords.add(token);
+    }
+  }
+  for (const [de, en] of pairs) {
+    for (const w of words(de)) if (!w.capital) lowerDe.add(w.word.toLowerCase());
+    for (const w of words(en)) if (!w.capital) lowerEn.add(w.word.toLowerCase());
+  }
+  const found = new Set();
+  for (const [de, en] of pairs) {
+    const englishCapitals = new Set(words(en).filter((w) => w.capital && !w.initial).map((w) => w.word.toLowerCase()));
+    for (const w of words(de)) {
+      const key = w.word.toLowerCase();
+      if (!w.capital || w.initial || key.length < 2 || lowerDe.has(key) || lowerEn.has(key) || key.split(/[^a-zäöüßé]+/).some((piece) => headwords.has(piece))) continue;
+      if (englishCapitals.has(key)) found.add(key);
+    }
+    for (const w of words(de)) {
+      const place = DE_PLACES.find((p) => p.toLowerCase() === w.word.toLowerCase());
+      if (place && w.capital && !headwords.has(place.toLowerCase())) found.add(place.toLowerCase());
+    }
+  }
+  return [...found].sort(byCode);
+}
+
 const quote = (s) => (s.includes("'") ? JSON.stringify(s) : `'${s}'`);
 const byCode = (a, b) => (a < b ? -1 : a > b ? 1 : 0);
-const lines = LANGS.map((lang) => {
+const lines = LANGS.concat(['de']).map((lang) => {
   const inside = new Set();
   const lower = new Set();
-  for (const sentence of sentences[lang]) {
+  for (const sentence of sentences[lang] ?? []) {
     for (const w of words(sentence)) {
       const key = w.word.toLowerCase();
       if (!w.capital) lower.add(key);
       else if (!w.initial) inside.add(key);
     }
   }
-  const names = [...inside].filter((n) => !lower.has(n) && n.length > 1).sort(byCode);
+  const names = lang === 'de' ? germanNames() : [...inside].filter((n) => !lower.has(n) && n.length > 1).sort(byCode);
   const rows = [];
   let row = '  ';
   for (const n of names) {
@@ -95,7 +134,7 @@ const content = [
   `// The words the corpus writes with a capital INSIDE a sentence and never in lowercase, per language (lowercased).`,
   `// lib/knownSentence.ts takes a capitalised word at the start of a sentence as a name only when it is here.`,
   ``,
-  `export const CORPUS_NAMES: Record<'es' | 'en' | 'hu', string[]> = {`,
+  `export const CORPUS_NAMES: Record<'es' | 'en' | 'hu' | 'de', string[]> = {`,
   ...lines.flat(),
   `};`,
   ``,

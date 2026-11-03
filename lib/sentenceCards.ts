@@ -5,7 +5,8 @@
 
 import type { PcicItem, PcicTarget } from '@/data/pcic';
 import { nearMissDistractors } from '@/lib/distractors';
-import { isLearnedCard, isSentenceKnown, type LearnedEntry, type ResolvedTense } from '@/lib/knownSentence';
+import { asDeLevel, deLevelRank, minDeLevel, type DeLevel } from '@/lib/deForms';
+import { isLearnedCard, isSentenceKnownIn, knownTokens, type LearnedEntry, type ResolvedTense } from '@/lib/knownSentence';
 import { posOf } from '@/lib/pcicPos';
 import { activeSourceFor } from '@/lib/languagePair';
 import { exampleIn, wordIn } from '@/lib/pcicItemText';
@@ -36,8 +37,30 @@ export interface SentenceDeps {
   /** The tenses unlocked by the grammar lessons (only matters with Spanish as the target language). */
   tenses?: ReadonlySet<ResolvedTense>;
   findItem: (id: string) => PcicItem | undefined;
+  /** The deck level of an item ("A1" ... "C1"): German has no grammar lesson that unlocks tenses, the learner's level decides. */
+  levelOf?: (id: string) => string | undefined;
   /** Source of the trap tiles: the target-language words of the current level. */
   vocab: () => string[];
+}
+
+/**
+ * German: the grammar level the learner has reached = the highest deck level among the learned cards (A1 at least). Tenses
+ * and structures above it are never offered (lib/grammar/deTenseGate.ts); a sentence is further held to the level of its own item.
+ */
+export function learnerLevel(cards: Iterable<Sm2Card>, levelOf?: (id: string) => string | undefined): DeLevel {
+  let best: DeLevel = 'A1';
+  for (const card of cards) {
+    if (!isLearnedCard(card)) continue;
+    const level = asDeLevel(levelOf?.(card.itemId));
+    if (level && deLevelRank(level) > deLevelRank(best)) best = level;
+  }
+  return best;
+}
+
+/** The level a sentence of `itemId` is held to: the learner's, and no higher than its own item's. */
+export function sentenceLevel(learner: DeLevel, itemId: string, levelOf?: (id: string) => string | undefined): DeLevel {
+  const own = asDeLevel(levelOf?.(itemId));
+  return own ? minDeLevel(learner, own) : learner;
 }
 
 /** From the learned cards, the vocabulary of the gate: target-language form + part of speech. */
@@ -109,11 +132,13 @@ export function nextSentenceStep(
   const recent = [...state.recent, newItemId];
   if (recent.length < NEW_WORDS_PER_SENTENCE) return { state: { ...state, recent }, card: null };
 
-  const ctx = { learned: learnedEntries(deps.cards, deps.target, deps.findItem), tenses: deps.tenses };
+  const cards = [...deps.cards];
+  const level = deps.target === 'de' ? learnerLevel(cards, deps.levelOf) : undefined;
+  const known = knownTokens(deps.target, { learned: learnedEntries(cards, deps.target, deps.findItem), tenses: deps.tenses, level });
   for (const id of recent) {
     const item = deps.findItem(id);
     const pair = item ? sentencePair(item, deps.target) : null;
-    if (!pair || !isSentenceKnown(pair.target, deps.target, ctx)) continue;
+    if (!pair || !isSentenceKnownIn(pair.target, deps.target, known, level && sentenceLevel(level, id, deps.levelOf))) continue;
     const other: SentenceKind = state.next === 'tiles' ? 'typing' : 'tiles';
     if (state.next === 'typing') {
       return { state: { recent: [], next: other }, card: { kind: 'typing', itemId: id, ...pair } };

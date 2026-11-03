@@ -1,0 +1,1045 @@
+{
+  "schema": 2,
+  "topic": "konjunktiv-i-indirekte-rede",
+  "level": "B2",
+  "title": {
+    "en": "Reported speech and Konjunktiv I",
+    "es": "El estilo indirecto y el Konjunktiv I"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "Reported speech tells what someone else said or claims, without quoting the words. In news and formal writing German marks it with Konjunktiv I: the stem of the infinitive plus -e, -est, -e, -en, -et, -en (er komme, sie habe, es gebe). The mood itself says \"this is their statement\", so German does not shift the tense back like English (said he was). In everyday speech the plain indicative is fine; Konjunktiv I is what you read in newspapers and hear in the news.",
+        "es": "El estilo indirecto cuenta lo que otra persona dijo o afirma, sin citar sus palabras. En las noticias y en la escritura formal el alemán lo marca con el Konjunktiv I: la raíz del infinitivo más -e, -est, -e, -en, -et, -en (er komme, sie habe, es gebe). El modo mismo dice «esta es su afirmación», así que el alemán no retrocede el tiempo como el inglés (said he was). En la conversación diaria basta el indicativo; el Konjunktiv I es lo que lees en los periódicos y oyes en las noticias."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "konjunktiv-i-formen",
+      "title": {
+        "en": "Konjunktiv I of four important verbs",
+        "es": "Konjunktiv I de cuatro verbos importantes"
+      },
+      "header": [
+        {
+          "en": "Person",
+          "es": "Persona"
+        },
+        {
+          "en": "sein",
+          "es": "sein"
+        },
+        {
+          "en": "haben",
+          "es": "haben"
+        },
+        {
+          "en": "kommen",
+          "es": "kommen"
+        },
+        {
+          "en": "können",
+          "es": "können"
+        }
+      ],
+      "rows": [
+        [
+          "ich",
+          "sei",
+          "habe",
+          "komme",
+          "könne"
+        ],
+        [
+          "du",
+          "seist",
+          "habest",
+          "kommest",
+          "könnest"
+        ],
+        [
+          "er/sie/es",
+          "sei",
+          "habe",
+          "komme",
+          "könne"
+        ],
+        [
+          "wir",
+          "seien",
+          "haben",
+          "kommen",
+          "können"
+        ],
+        [
+          "ihr",
+          "seiet",
+          "habet",
+          "kommet",
+          "könnet"
+        ],
+        [
+          "sie/Sie",
+          "seien",
+          "haben",
+          "kommen",
+          "können"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "When and how to use Konjunktiv I",
+        "es": "Cuándo y cómo usar el Konjunktiv I"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "Use it for what someone else says, thinks or claims, mostly in news, reports and formal texts. Typical introducing verbs: sagen, behaupten, meinen, berichten, erklären. The clause follows main-clause order (Er sagt, er sei krank) or takes dass with the verb at the end (Er sagt, dass er krank sei). In practice you meet mainly the er/sie/es form.",
+            "es": "Úsalo para lo que otra persona dice, piensa o afirma, sobre todo en noticias, informes y textos formales. Verbos introductorios típicos: sagen, behaupten, meinen, berichten, erklären. La oración sigue el orden de una oración principal (Er sagt, er sei krank) o lleva dass con el verbo al final (Er sagt, dass er krank sei). En la práctica verás sobre todo la forma er/sie/es."
+          },
+          "examples": [
+            {
+              "es": "Der Minister erklärt, er habe keine Zeit.",
+              "tr": {
+                "en": "The minister explains that he has no time.",
+                "es": "El ministro explica que no tiene tiempo."
+              }
+            },
+            {
+              "es": "Die Zeitung berichtet, dass viele Leute krank seien.",
+              "tr": {
+                "en": "The newspaper reports that many people are sick.",
+                "es": "El periódico informa de que muchas personas están enfermas."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "The tense of the quote is kept, there is no backshift. A present quote stays in the present (er komme), a past quote becomes sei or habe plus Partizip II (er sei gekommen, sie habe gesagt) and a future quote becomes werde plus infinitive (er werde kommen).",
+            "es": "El tiempo de la cita se mantiene, no hay retroceso. Una cita en presente sigue en presente (er komme), una cita en pasado pasa a sei o habe más Partizip II (er sei gekommen, sie habe gesagt) y una cita en futuro pasa a werde más infinitivo (er werde kommen)."
+          },
+          "examples": [
+            {
+              "es": "Sie sagte, sie habe die Nachricht gelesen.",
+              "tr": {
+                "en": "She said she had read the message.",
+                "es": "Ella dijo que había leído el mensaje."
+              }
+            },
+            {
+              "es": "Er sagte, er werde bald anrufen.",
+              "tr": {
+                "en": "He said he would call soon.",
+                "es": "Él dijo que llamaría pronto."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Pronouns and place or time words follow the point of view of the reporter: ich becomes er or sie, mein becomes sein or ihr, hier becomes dort, heute becomes an diesem Tag.",
+            "es": "Los pronombres y las palabras de lugar o de tiempo siguen el punto de vista de quien relata: ich pasa a er o sie, mein pasa a sein o ihr, hier pasa a dort, heute pasa a an diesem Tag."
+          },
+          "examples": [
+            {
+              "es": "Sie sagte, ihr Bruder sei dort gewesen.",
+              "tr": {
+                "en": "She said her brother had been there.",
+                "es": "Ella dijo que su hermano había estado allí."
+              }
+            },
+            {
+              "es": "Er sagte, er sei an diesem Tag zu Hause geblieben.",
+              "tr": {
+                "en": "He said he had stayed at home that day.",
+                "es": "Él dijo que se había quedado en casa ese día."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "A yes/no question becomes an ob-clause (Sie fragte, ob er komme). A question with a question word keeps the word and sends the verb to the end (Er fragte, wann der Zug komme). A request or an order is reported with sollen (Der Arzt sagt, ich solle mehr schlafen).",
+            "es": "Una pregunta de sí o no se convierte en una oración con ob (Sie fragte, ob er komme). Una pregunta con palabra interrogativa mantiene la palabra y manda el verbo al final (Er fragte, wann der Zug komme). Una petición o una orden se relata con sollen (Der Arzt sagt, ich solle mehr schlafen)."
+          },
+          "examples": [
+            {
+              "es": "Sie fragte, ob er komme.",
+              "tr": {
+                "en": "She asked whether he was coming.",
+                "es": "Ella preguntó si él venía."
+              }
+            },
+            {
+              "es": "Der Arzt sagt, ich solle mehr schlafen.",
+              "tr": {
+                "en": "The doctor says I should sleep more.",
+                "es": "El doctor dice que debo dormir más."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "konjunktiv-i-zeiten",
+      "title": {
+        "en": "Direct speech and reported speech",
+        "es": "Estilo directo y estilo indirecto"
+      },
+      "header": [
+        {
+          "en": "Direct speech",
+          "es": "Estilo directo"
+        },
+        {
+          "en": "Reported speech",
+          "es": "Estilo indirecto"
+        }
+      ],
+      "rows": [
+        [
+          "Er sagt: „Ich komme.“",
+          "Er sagt, er komme."
+        ],
+        [
+          "Er sagt: „Ich bin gekommen.“",
+          "Er sagt, er sei gekommen."
+        ],
+        [
+          "Er sagt: „Ich werde kommen.“",
+          "Er sagt, er werde kommen."
+        ],
+        [
+          "Sie fragt: „Hast du Zeit?“",
+          "Sie fragt, ob er Zeit habe."
+        ],
+        [
+          "Der Arzt sagt: „Schlafen Sie mehr!“",
+          "Der Arzt sagt, ich solle mehr schlafen."
+        ]
+      ],
+      "noTableDeck": true
+    },
+    {
+      "kind": "table",
+      "id": "konjunktiv-i-ersatz",
+      "title": {
+        "en": "When Konjunktiv I looks like the indicative",
+        "es": "Cuando el Konjunktiv I se parece al indicativo"
+      },
+      "header": [
+        {
+          "en": "Looks like the indicative",
+          "es": "Se parece al indicativo"
+        },
+        {
+          "en": "Replacement (Konjunktiv II)",
+          "es": "Sustituto (Konjunktiv II)"
+        }
+      ],
+      "rows": [
+        [
+          "sie haben",
+          "sie hätten"
+        ],
+        [
+          "ich habe",
+          "ich hätte"
+        ],
+        [
+          "wir kommen",
+          "wir kämen"
+        ],
+        [
+          "sie können",
+          "sie könnten"
+        ],
+        [
+          "wir sollen",
+          "wir sollten"
+        ],
+        [
+          "sie sagen",
+          "sie würden sagen"
+        ]
+      ],
+      "noTableDeck": true
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Konjunktiv I, Konjunktiv II or indicative?",
+        "es": "¿Konjunktiv I, Konjunktiv II o indicativo?"
+      },
+      "pairs": [
+        {
+          "a": "Er sagt, er habe Zeit.",
+          "b": "Sie sagen, sie hätten Zeit.",
+          "note": {
+            "en": "Use Konjunktiv I when its form differs from the indicative (er habe, not er hat). When it looks the same (sie haben), take the Konjunktiv II (sie hätten) or würde plus infinitive, so the report stays visible.",
+            "es": "Usa el Konjunktiv I cuando su forma se distingue del indicativo (er habe, no er hat). Cuando es igual (sie haben), toma el Konjunktiv II (sie hätten) o würde más infinitivo, para que se note que es un relato."
+          },
+          "examples": [
+            {
+              "es": "Die Kinder sagen, sie seien müde.",
+              "tr": {
+                "en": "The children say they are tired.",
+                "es": "Los niños dicen que están cansados."
+              }
+            },
+            {
+              "es": "Die Eltern sagen, sie hätten Hunger.",
+              "tr": {
+                "en": "The parents say they are hungry.",
+                "es": "Los padres dicen que tienen hambre."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Er sagt, er komme morgen.",
+          "b": "Er sagt, dass er morgen kommt.",
+          "note": {
+            "en": "Konjunktiv I is the formal and written choice, typical for news. In everyday speech the indicative is normal and not wrong, often with dass.",
+            "es": "El Konjunktiv I es la opción formal y escrita, típica de las noticias. En la conversación diaria el indicativo es normal y no está mal, a menudo con dass."
+          },
+          "examples": [
+            {
+              "es": "Der Chef sagt, die Firma habe keine Probleme.",
+              "tr": {
+                "en": "The boss says the company has no problems.",
+                "es": "El jefe dice que la empresa no tiene problemas."
+              }
+            },
+            {
+              "es": "Meine Freundin sagt, dass sie keine Zeit hat.",
+              "tr": {
+                "en": "My friend says she has no time.",
+                "es": "Mi amiga dice que no tiene tiempo."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: writing the indicative in a news report (ist, hat) where Konjunktiv I is expected; using Konjunktiv I when it equals the indicative (sie haben) instead of hätten; shifting the tense back like English (*Er sagte, er war krank) instead of er sei krank; and forgetting that pronouns and places change (hier becomes dort). The tense of the introducing verb does not matter: Er sagt and Er sagte both take er sei.",
+        "es": "Trampas clásicas: escribir el indicativo en una noticia (ist, hat) donde se espera el Konjunktiv I; usar el Konjunktiv I cuando es igual al indicativo (sie haben) en lugar de hätten; retroceder el tiempo como en inglés (*Er sagte, er war krank) en lugar de er sei krank; y olvidar que los pronombres y los lugares cambian (hier pasa a dort). El tiempo del verbo introductorio no importa: Er sagt y Er sagte llevan er sei."
+      }
+    }
+  ],
+  "speak": {
+    "en": "Reported speech in German uses «Konjunktiv I». You take the stem of the infinitive and add the endings: «er komme», «sie habe», «es gebe». For «sein» the forms are «ich sei», «er sei» and «sie seien». If the form looks exactly like the indicative, for example «sie haben», you take the Konjunktiv II instead: «sie hätten». The tense of the quote is kept, there is no backshift: «Er sagte, er sei krank» and «Sie sagt, sie habe keine Zeit». Pronouns and place words follow the reporter, so «hier» becomes «dort».",
+    "es": "El estilo indirecto en alemán usa el «Konjunktiv I». Tomas la raíz del infinitivo y añades las terminaciones: «er komme», «sie habe», «es gebe». Para «sein» las formas son «ich sei», «er sei» y «sie seien». Si la forma es igual que el indicativo, por ejemplo «sie haben», tomas el Konjunktiv II: «sie hätten». El tiempo de la cita se mantiene, no hay retroceso: «Er sagte, er sei krank» y «Sie sagt, sie habe keine Zeit». Los pronombres y las palabras de lugar siguen a quien relata, así que «hier» pasa a «dort»."
+  },
+  "items": [
+    {
+      "id": "konjunktiv-i-indirekte-rede-c01",
+      "sentence": "Die Zeitung berichtet, der Mann ___ gestern in Berlin gewesen.",
+      "options": [
+        "ist",
+        "sei",
+        "wäre"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "A news report passes on a claim without confirming it, so it uses Konjunktiv I. The form sei differs from the indicative ist, so it is the right one.",
+        "es": "Una noticia transmite una afirmación sin confirmarla, así que usa el Konjunktiv I. La forma sei se distingue del indicativo ist, así que es la correcta."
+      },
+      "wrong": {
+        "ist": {
+          "en": "ist is the plain indicative. It states the claim as a fact, which is not what a newspaper does when it only reports what somebody says.",
+          "es": "ist es el indicativo simple. Presenta la afirmación como un hecho, y un periódico no hace eso cuando solo relata lo que alguien dice."
+        },
+        "wäre": {
+          "en": "wäre is Konjunktiv II. It is only the substitute when Konjunktiv I looks like the indicative, but sei is clearly different from ist.",
+          "es": "wäre es Konjunktiv II. Solo es el sustituto cuando el Konjunktiv I se parece al indicativo, pero sei se distingue claramente de ist."
+        }
+      },
+      "examples": [
+        "Der Chef sagt, der Zug sei schon weg.",
+        "Sie meint, ihr Bruder sei krank."
+      ],
+      "tr": {
+        "en": "The newspaper reports that the man was in Berlin yesterday.",
+        "es": "El periódico informa de que el hombre estuvo ayer en Berlín."
+      }
+    },
+    {
+      "id": "konjunktiv-i-indirekte-rede-f01",
+      "kind": "form",
+      "verb": "sein",
+      "person": "ich",
+      "answer": "sei",
+      "table": "konjunktiv-i-formen"
+    },
+    {
+      "id": "konjunktiv-i-indirekte-rede-c02",
+      "sentence": "Der Chef erklärt, die Firma ___ keine Probleme.",
+      "options": [
+        "habe",
+        "hat",
+        "hätte"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The boss is quoted, so Konjunktiv I is used. For die Firma (sie) the form habe differs from the indicative hat.",
+        "es": "Se cita al jefe, así que se usa el Konjunktiv I. Para die Firma (sie) la forma habe se distingue del indicativo hat."
+      },
+      "wrong": {
+        "hat": {
+          "en": "hat is the indicative. It would present the words of the boss as a fact instead of as his statement.",
+          "es": "hat es el indicativo. Presentaría las palabras del jefe como un hecho y no como su declaración."
+        },
+        "hätte": {
+          "en": "hätte is Konjunktiv II. It is only the substitute when Konjunktiv I looks like the indicative, and habe does not look like hat.",
+          "es": "hätte es Konjunktiv II. Solo sustituye cuando el Konjunktiv I se parece al indicativo, y habe no se parece a hat."
+        }
+      },
+      "examples": [
+        "Er behauptet, er habe viel Arbeit.",
+        "Sie sagt, sie habe keinen Hunger."
+      ],
+      "tr": {
+        "en": "The boss explains that the company has no problems.",
+        "es": "El jefe explica que la empresa no tiene problemas."
+      }
+    },
+    {
+      "id": "konjunktiv-i-indirekte-rede-f02",
+      "kind": "form",
+      "verb": "haben",
+      "person": "er/sie/es",
+      "answer": "habe",
+      "table": "konjunktiv-i-formen"
+    },
+    {
+      "id": "konjunktiv-i-indirekte-rede-c03",
+      "sentence": "Er behauptet, er ___ den Mann nicht.",
+      "options": [
+        "kennt",
+        "kennen",
+        "kenne"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The Konjunktiv I of kennen is kenne (stem kenn- plus -e). It differs from the indicative kennt, so it marks the claim as reported.",
+        "es": "El Konjunktiv I de kennen es kenne (raíz kenn- más -e). Se distingue del indicativo kennt, así que marca la afirmación como relatada."
+      },
+      "wrong": {
+        "kennt": {
+          "en": "kennt is the indicative. After behaupten, a formal report prefers Konjunktiv I, which shows that this is only his claim.",
+          "es": "kennt es el indicativo. Después de behaupten, un relato formal prefiere el Konjunktiv I, que muestra que es solo su afirmación."
+        },
+        "kennen": {
+          "en": "kennen is the form for wir and sie (they). The subject here is er, so the ending is -e: er kenne.",
+          "es": "kennen es la forma de wir y sie (ellos). El sujeto aquí es er, así que la terminación es -e: er kenne."
+        }
+      },
+      "examples": [
+        "Sie meint, er kenne die Stadt gut.",
+        "Der Mann sagt, er kenne den Weg."
+      ],
+      "tr": {
+        "en": "He claims that he does not know the man.",
+        "es": "Él afirma que no conoce al hombre."
+      }
+    },
+    {
+      "id": "konjunktiv-i-indirekte-rede-f03",
+      "kind": "form",
+      "verb": "sein",
+      "person": "du",
+      "answer": "seist",
+      "table": "konjunktiv-i-formen"
+    },
+    {
+      "id": "konjunktiv-i-indirekte-rede-w01",
+      "kind": "why",
+      "es": "Er sagt, er habe keine Zeit.",
+      "target": "habe",
+      "tr": {
+        "en": "He says he has no time.",
+        "es": "Él dice que no tiene tiempo."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Konjunktiv I: reported speech, a form that differs from the indicative hat",
+            "es": "Konjunktiv I: estilo indirecto, una forma que se distingue del indicativo hat"
+          }
+        },
+        {
+          "text": {
+            "en": "Konjunktiv II: an unreal or doubtful case, as in er hätte",
+            "es": "Konjunktiv II: un caso irreal o dudoso, como en er hätte"
+          },
+          "wrong": {
+            "en": "Konjunktiv II hätte would express an unreal or doubtful situation. Here someone only reports what the man says, and the Konjunktiv I habe is available.",
+            "es": "El Konjunktiv II hätte expresaría una situación irreal o dudosa. Aquí solo se relata lo que dice el hombre, y el Konjunktiv I habe está disponible."
+          }
+        },
+        {
+          "text": {
+            "en": "Indikativ: a plain statement of fact",
+            "es": "Indikativ: una afirmación simple de un hecho"
+          },
+          "wrong": {
+            "en": "The indicative would be hat. habe is a different form, and exactly that difference marks the statement as reported.",
+            "es": "El indicativo sería hat. habe es una forma distinta, y justo esa diferencia marca la afirmación como relatada."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "konjunktiv-i-indirekte-rede-c04",
+      "sentence": "Die Kinder sagen, sie ___ müde.",
+      "options": [
+        "sind",
+        "seien",
+        "wären"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "For sie (plural) the Konjunktiv I of sein is seien, which differs from sind. So the Konjunktiv I is the right choice here.",
+        "es": "Para sie (plural) el Konjunktiv I de sein es seien, que se distingue de sind. Por eso aquí es correcto el Konjunktiv I."
+      },
+      "wrong": {
+        "sind": {
+          "en": "sind is the indicative. Since seien is a different form, a formal report marks the statement with Konjunktiv I.",
+          "es": "sind es el indicativo. Como seien es una forma distinta, un relato formal marca la afirmación con el Konjunktiv I."
+        },
+        "wären": {
+          "en": "wären is Konjunktiv II. It is only the substitute when Konjunktiv I and indicative are the same, but sein has its own form, seien.",
+          "es": "wären es Konjunktiv II. Solo es el sustituto cuando el Konjunktiv I y el indicativo son iguales, pero sein tiene su propia forma, seien."
+        }
+      },
+      "examples": [
+        "Die Gäste meinen, sie seien zufrieden.",
+        "Die Kollegen sagen, sie seien fertig."
+      ],
+      "tr": {
+        "en": "The children say they are tired.",
+        "es": "Los niños dicen que están cansados."
+      }
+    },
+    {
+      "id": "konjunktiv-i-indirekte-rede-f04",
+      "kind": "form",
+      "verb": "kommen",
+      "person": "er/sie/es",
+      "answer": "komme",
+      "table": "konjunktiv-i-formen"
+    },
+    {
+      "id": "konjunktiv-i-indirekte-rede-c05",
+      "sentence": "Die Eltern sagen, sie ___ keine Zeit.",
+      "options": [
+        "haben",
+        "hätte",
+        "hätten"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The Konjunktiv I of haben for sie (plural) is haben, the same as the indicative. Then the Konjunktiv II hätten takes over, so the report stays visible.",
+        "es": "El Konjunktiv I de haben para sie (plural) es haben, igual que el indicativo. Entonces lo reemplaza el Konjunktiv II hätten, para que se note el relato."
+      },
+      "wrong": {
+        "haben": {
+          "en": "haben is both the indicative and the Konjunktiv I here. Nothing shows that this is reported speech, so Konjunktiv II hätten is used.",
+          "es": "haben es aquí tanto el indicativo como el Konjunktiv I. Nada muestra que es estilo indirecto, así que se usa el Konjunktiv II hätten."
+        },
+        "hätte": {
+          "en": "hätte is the singular form (ich, er, sie, es). The subject sie is plural here, so the form needs the ending -n: hätten.",
+          "es": "hätte es la forma del singular (ich, er, sie, es). El sujeto sie es aquí plural, así que la forma necesita la terminación -n: hätten."
+        }
+      },
+      "examples": [
+        "Meine Kollegen meinen, sie hätten genug Geld.",
+        "Die Leute sagen, sie hätten Hunger."
+      ],
+      "tr": {
+        "en": "The parents say they have no time.",
+        "es": "Los padres dicen que no tienen tiempo."
+      }
+    },
+    {
+      "id": "konjunktiv-i-indirekte-rede-f05",
+      "kind": "form",
+      "verb": "sein",
+      "person": "er/sie/es",
+      "answer": "sei",
+      "table": "konjunktiv-i-formen"
+    },
+    {
+      "id": "konjunktiv-i-indirekte-rede-c06",
+      "sentence": "Der Zeuge sagt, er ___ zu Hause geblieben.",
+      "options": [
+        "sei",
+        "habe",
+        "werde"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The quote was in the Perfekt (Ich bin zu Hause geblieben), so Konjunktiv I keeps the pattern: sei plus Partizip II. bleiben takes sein.",
+        "es": "La cita estaba en Perfekt (Ich bin zu Hause geblieben), así que el Konjunktiv I mantiene el esquema: sei más Partizip II. bleiben usa sein."
+      },
+      "wrong": {
+        "habe": {
+          "en": "bleiben forms its Perfekt with sein, not with haben. The auxiliary stays the same as in the Perfekt, so you need sei: er sei geblieben.",
+          "es": "bleiben forma su Perfekt con sein, no con haben. El auxiliar es el mismo que en el Perfekt, así que necesitas sei: er sei geblieben."
+        },
+        "werde": {
+          "en": "werde plus a participle is not a past tense. werde marks the future (er werde bleiben), but this report is about the past.",
+          "es": "werde más un participio no es un tiempo pasado. werde marca el futuro (er werde bleiben), pero este relato trata del pasado."
+        }
+      },
+      "examples": [
+        "Sie sagt, sie sei gestern früh aufgestanden.",
+        "Er meint, er sei zu spät gekommen."
+      ],
+      "tr": {
+        "en": "The witness says he stayed at home.",
+        "es": "El testigo dice que se quedó en casa."
+      }
+    },
+    {
+      "id": "konjunktiv-i-indirekte-rede-f06",
+      "kind": "form",
+      "verb": "können",
+      "person": "er/sie/es",
+      "answer": "könne",
+      "table": "konjunktiv-i-formen"
+    },
+    {
+      "id": "konjunktiv-i-indirekte-rede-w02",
+      "kind": "why",
+      "es": "Sie sagen, sie hätten keine Zeit.",
+      "target": "hätten",
+      "tr": {
+        "en": "They say they have no time.",
+        "es": "Ellos dicen que no tienen tiempo."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Konjunktiv I: the stem hab- plus the ending -en",
+            "es": "Konjunktiv I: la raíz hab- más la terminación -en"
+          },
+          "wrong": {
+            "en": "The Konjunktiv I of haben for sie is haben, not hätten. hätten belongs to a different mood, the Konjunktiv II.",
+            "es": "El Konjunktiv I de haben para sie es haben, no hätten. hätten pertenece a otro modo, el Konjunktiv II."
+          }
+        },
+        {
+          "text": {
+            "en": "Konjunktiv II as a substitute: Konjunktiv I haben would look like the indicative",
+            "es": "Konjunktiv II como sustituto: el Konjunktiv I haben se parecería al indicativo"
+          }
+        },
+        {
+          "text": {
+            "en": "Plusquamperfekt: the past before another past",
+            "es": "Plusquamperfekt: el pasado anterior a otro pasado"
+          },
+          "wrong": {
+            "en": "The Plusquamperfekt needs hatten plus a participle (sie hatten gehabt). hätten alone is a mood form, not a past tense.",
+            "es": "El Plusquamperfekt necesita hatten más un participio (sie hatten gehabt). hätten solo es una forma de modo, no un tiempo pasado."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "konjunktiv-i-indirekte-rede-c07",
+      "sentence": "Der Chef sagt, die Lehrerin ___ nächste Woche kommen.",
+      "options": [
+        "wird",
+        "werde",
+        "wäre"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "A plan for the future is reported with werde plus infinitive, the Konjunktiv I of werden. It differs from the indicative wird.",
+        "es": "Un plan futuro se relata con werde más infinitivo, el Konjunktiv I de werden. Se distingue del indicativo wird."
+      },
+      "wrong": {
+        "wird": {
+          "en": "wird is the indicative future. In a formal report the plan is presented as the statement of the boss, so werde is used.",
+          "es": "wird es el futuro de indicativo. En un relato formal el plan se presenta como declaración del jefe, así que se usa werde."
+        },
+        "wäre": {
+          "en": "wäre kommen is not possible: wäre needs a participle or an adjective. The future is formed with werden plus the infinitive.",
+          "es": "wäre kommen no es posible: wäre necesita un participio o un adjetivo. El futuro se forma con werden más el infinitivo."
+        }
+      },
+      "examples": [
+        "Er sagt, er werde morgen anrufen.",
+        "Sie meint, es werde bald regnen."
+      ],
+      "tr": {
+        "en": "The boss says the teacher will come next week.",
+        "es": "El jefe dice que la maestra vendrá la próxima semana."
+      }
+    },
+    {
+      "id": "konjunktiv-i-indirekte-rede-f07",
+      "kind": "form",
+      "verb": "sein",
+      "person": "wir",
+      "answer": "seien",
+      "table": "konjunktiv-i-formen"
+    },
+    {
+      "id": "konjunktiv-i-indirekte-rede-c08",
+      "sentence": "Er sagt: „Meine Frau ist krank.“ Er sagt, ___ Frau sei krank.",
+      "options": [
+        "seine",
+        "meine",
+        "deine"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "In reported speech the pronouns follow the point of view of the reporter: the speaker said meine Frau, you report seine Frau.",
+        "es": "En el estilo indirecto los pronombres siguen el punto de vista de quien relata: el hablante dijo meine Frau, tú relatas seine Frau."
+      },
+      "wrong": {
+        "meine": {
+          "en": "meine stays from the direct speech. In the report the speaker is er, so the possessive follows: seine Frau.",
+          "es": "meine se queda del estilo directo. En el relato el hablante es er, así que el posesivo lo sigue: seine Frau."
+        },
+        "deine": {
+          "en": "deine refers to the person you are talking to. Nobody addresses a du here; the man speaks about his own wife: seine.",
+          "es": "deine se refiere a la persona con quien hablas. Aquí nadie habla con un du; el hombre habla de su propia esposa: seine."
+        }
+      },
+      "examples": [
+        "Sie sagt, ihr Mann sei zu Hause.",
+        "Er sagt, sein Auto sei kaputt."
+      ],
+      "tr": {
+        "en": "He says: \"My wife is sick.\" He says his wife is sick.",
+        "es": "Él dice: «Mi esposa está enferma». Él dice que su esposa está enferma."
+      }
+    },
+    {
+      "id": "konjunktiv-i-indirekte-rede-f08",
+      "kind": "form",
+      "verb": "haben",
+      "person": "du",
+      "answer": "habest",
+      "table": "konjunktiv-i-formen"
+    },
+    {
+      "id": "konjunktiv-i-indirekte-rede-c09",
+      "sentence": "Der Journalist fragte, ___ der Minister Zeit habe.",
+      "options": [
+        "dass",
+        "ob",
+        "wenn"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "A yes/no question becomes ob plus a clause with the verb at the end. dass introduces a statement, not a question.",
+        "es": "Una pregunta de sí o no se convierte en ob más una oración con el verbo al final. dass introduce una afirmación, no una pregunta."
+      },
+      "wrong": {
+        "dass": {
+          "en": "dass introduces a reported statement (Er sagte, dass ...). The journalist asked a yes/no question, so you need ob.",
+          "es": "dass introduce una afirmación relatada (Er sagte, dass ...). El periodista hizo una pregunta de sí o no, así que necesitas ob."
+        },
+        "wenn": {
+          "en": "wenn means if in the sense of when or on condition. A reported yes/no question uses ob, which means whether.",
+          "es": "wenn significa si en el sentido de cuando o con la condición de. Una pregunta de sí o no relatada usa ob, que significa si (o no)."
+        }
+      },
+      "examples": [
+        "Sie fragte, ob er komme.",
+        "Er wollte wissen, ob es Probleme gebe."
+      ],
+      "tr": {
+        "en": "The journalist asked whether the minister had time.",
+        "es": "El periodista preguntó si el ministro tenía tiempo."
+      }
+    },
+    {
+      "id": "konjunktiv-i-indirekte-rede-f09",
+      "kind": "form",
+      "verb": "sein",
+      "person": "sie/Sie",
+      "answer": "seien",
+      "table": "konjunktiv-i-formen"
+    },
+    {
+      "id": "konjunktiv-i-indirekte-rede-w03",
+      "kind": "why",
+      "es": "Er sagte, er sei gestern zu Hause geblieben.",
+      "target": "sei",
+      "tr": {
+        "en": "He said he had stayed at home yesterday.",
+        "es": "Él dijo que se había quedado en casa ayer."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Präteritum war: the report is in the past, so the tense shifts back",
+            "es": "Präteritum war: el relato está en pasado, así que el tiempo retrocede"
+          },
+          "wrong": {
+            "en": "War is an indicative form. Reported speech does not shift back to the past; sei plus Partizip II already shows that the quote was about the past.",
+            "es": "War es una forma de indicativo. El estilo indirecto no retrocede al pasado; sei más Partizip II ya muestra que la cita hablaba del pasado."
+          }
+        },
+        {
+          "text": {
+            "en": "Konjunktiv II wäre: the introducing verb sagte is in the past",
+            "es": "Konjunktiv II wäre: el verbo introductorio sagte está en pasado"
+          },
+          "wrong": {
+            "en": "The tense of the introducing verb does not change the mood. Konjunktiv I sei stays, because it differs from the indicative ist.",
+            "es": "El tiempo del verbo introductorio no cambia el modo. El Konjunktiv I sei se mantiene, porque se distingue del indicativo ist."
+          }
+        },
+        {
+          "text": {
+            "en": "Konjunktiv I Perfekt: sei plus Partizip II, the tense of the quote is kept",
+            "es": "Konjunktiv I Perfekt: sei más Partizip II, el tiempo de la cita se mantiene"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "konjunktiv-i-indirekte-rede-c10",
+      "sentence": "Der Chef sagt, wir ___ zu Hause bleiben.",
+      "options": [
+        "sollen",
+        "solle",
+        "sollten"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "A request is reported with sollen. For wir the Konjunktiv I would be sollen, the same as the indicative, so the Konjunktiv II sollten is used.",
+        "es": "Una petición se relata con sollen. Para wir el Konjunktiv I sería sollen, igual que el indicativo, así que se usa el Konjunktiv II sollten."
+      },
+      "wrong": {
+        "sollen": {
+          "en": "sollen is the Konjunktiv I for wir, but it looks exactly like the indicative. Nothing marks the report, so sollten is used.",
+          "es": "sollen es el Konjunktiv I para wir, pero es idéntico al indicativo. Nada marca el relato, así que se usa sollten."
+        },
+        "solle": {
+          "en": "solle is the singular form (ich, er, sie, es). With wir the verb needs a plural form.",
+          "es": "solle es la forma del singular (ich, er, sie, es). Con wir el verbo necesita una forma de plural."
+        }
+      },
+      "examples": [
+        "Der Arzt sagt, ich solle mehr schlafen.",
+        "Sie sagt, wir sollten leise sein."
+      ],
+      "tr": {
+        "en": "The boss says we should stay at home.",
+        "es": "El jefe dice que debemos quedarnos en casa."
+      }
+    },
+    {
+      "id": "konjunktiv-i-indirekte-rede-f10",
+      "kind": "form",
+      "verb": "kommen",
+      "person": "du",
+      "answer": "kommest",
+      "table": "konjunktiv-i-formen"
+    },
+    {
+      "id": "konjunktiv-i-indirekte-rede-c11",
+      "sentence": "Er behauptet, er ___ die Antwort.",
+      "options": [
+        "wisse",
+        "weiß",
+        "wusste"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "wissen has the irregular Konjunktiv I wisse. It differs from the indicative weiß, so it marks the claim as reported.",
+        "es": "wissen tiene el Konjunktiv I irregular wisse. Se distingue del indicativo weiß, así que marca la afirmación como relatada."
+      },
+      "wrong": {
+        "weiß": {
+          "en": "weiß is the indicative. The claim is only reported, so Konjunktiv I wisse is used and the speaker does not vouch for it.",
+          "es": "weiß es el indicativo. La afirmación solo se relata, así que se usa el Konjunktiv I wisse y quien relata no responde por ella."
+        },
+        "wusste": {
+          "en": "wusste is the Präteritum. The tense of the quote is kept, and the quote is in the present, so there is no backshift to the past.",
+          "es": "wusste es el Präteritum. El tiempo de la cita se mantiene, y la cita está en presente, así que no hay retroceso al pasado."
+        }
+      },
+      "examples": [
+        "Sie sagt, sie wisse den Weg nicht.",
+        "Er meint, er wisse alles besser."
+      ],
+      "tr": {
+        "en": "He claims that he knows the answer.",
+        "es": "Él afirma que sabe la respuesta."
+      }
+    },
+    {
+      "id": "konjunktiv-i-indirekte-rede-f11",
+      "kind": "form",
+      "verb": "können",
+      "person": "ich",
+      "answer": "könne",
+      "table": "konjunktiv-i-formen"
+    },
+    {
+      "id": "konjunktiv-i-indirekte-rede-c12",
+      "sentence": "Die Frau sagt, sie ___ nicht schwimmen.",
+      "options": [
+        "kann",
+        "könnte",
+        "könne"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The Konjunktiv I of können is könne (stem könn- plus -e). For sie it differs from the indicative kann.",
+        "es": "El Konjunktiv I de können es könne (raíz könn- más -e). Para sie se distingue del indicativo kann."
+      },
+      "wrong": {
+        "kann": {
+          "en": "kann is the indicative. A formal report uses the Konjunktiv I könne, which marks the words as her statement.",
+          "es": "kann es el indicativo. Un relato formal usa el Konjunktiv I könne, que marca las palabras como su declaración."
+        },
+        "könnte": {
+          "en": "könnte is Konjunktiv II and sounds like a possibility or an unreal case (she could). Reported speech first uses könne.",
+          "es": "könnte es Konjunktiv II y suena a posibilidad o a caso irreal (ella podría). El estilo indirecto usa primero könne."
+        }
+      },
+      "examples": [
+        "Er sagt, er könne gut kochen.",
+        "Sie meint, sie könne morgen nicht kommen."
+      ],
+      "tr": {
+        "en": "The woman says she cannot swim.",
+        "es": "La mujer dice que no sabe nadar."
+      }
+    },
+    {
+      "id": "konjunktiv-i-indirekte-rede-f12",
+      "kind": "form",
+      "verb": "kommen",
+      "person": "wir",
+      "answer": "kommen",
+      "table": "konjunktiv-i-formen"
+    },
+    {
+      "id": "konjunktiv-i-indirekte-rede-c13",
+      "sentence": "Sie fragte, wann der Zug ___.",
+      "options": [
+        "kommt",
+        "komme",
+        "kommen"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "A question with a question word keeps the word and sends the verb to the end. In a formal report the verb is Konjunktiv I: komme.",
+        "es": "Una pregunta con palabra interrogativa mantiene la palabra y manda el verbo al final. En un relato formal el verbo está en Konjunktiv I: komme."
+      },
+      "wrong": {
+        "kommt": {
+          "en": "kommt is the indicative. It is common in speech, but a formal report uses the Konjunktiv I komme.",
+          "es": "kommt es el indicativo. Es común en la lengua hablada, pero un relato formal usa el Konjunktiv I komme."
+        },
+        "kommen": {
+          "en": "kommen is the plural form (wir, sie). The subject der Zug is singular, so the Konjunktiv I ending is -e.",
+          "es": "kommen es la forma del plural (wir, sie). El sujeto der Zug es singular, así que la terminación del Konjunktiv I es -e."
+        }
+      },
+      "examples": [
+        "Er fragte, wo sie wohne.",
+        "Sie wollte wissen, wie er heiße."
+      ],
+      "tr": {
+        "en": "She asked when the train would arrive.",
+        "es": "Ella preguntó cuándo llegaba el tren."
+      }
+    },
+    {
+      "id": "konjunktiv-i-indirekte-rede-c14",
+      "sentence": "Der Chef sagt, es ___ keine Probleme.",
+      "options": [
+        "gebe",
+        "gibt",
+        "gäbe"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "es gibt becomes es gebe in Konjunktiv I. The form gebe differs from the indicative gibt.",
+        "es": "es gibt pasa a es gebe en Konjunktiv I. La forma gebe se distingue del indicativo gibt."
+      },
+      "wrong": {
+        "gibt": {
+          "en": "gibt is the indicative. A formal report marks the statement of the boss with the Konjunktiv I gebe.",
+          "es": "gibt es el indicativo. Un relato formal marca la declaración del jefe con el Konjunktiv I gebe."
+        },
+        "gäbe": {
+          "en": "gäbe is Konjunktiv II. It suggests an unreal or doubtful situation. In reported speech Konjunktiv I gebe comes first.",
+          "es": "gäbe es Konjunktiv II. Sugiere una situación irreal o dudosa. En el estilo indirecto primero va el Konjunktiv I gebe."
+        }
+      },
+      "examples": [
+        "Er sagt, es gebe genug Platz.",
+        "Sie meint, es gebe noch Tickets."
+      ],
+      "tr": {
+        "en": "The boss says there are no problems.",
+        "es": "El jefe dice que no hay problemas."
+      }
+    },
+    {
+      "id": "konjunktiv-i-indirekte-rede-w04",
+      "kind": "why",
+      "es": "Er sagte, sie sei dort gewesen.",
+      "target": "dort",
+      "tr": {
+        "en": "He said she had been there.",
+        "es": "Él dijo que ella había estado allí."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "The place word follows the reporter: hier in the quote becomes dort",
+            "es": "La palabra de lugar sigue a quien relata: hier en la cita pasa a dort"
+          }
+        },
+        {
+          "text": {
+            "en": "Konjunktiv I requires the adverb dort",
+            "es": "El Konjunktiv I exige el adverbio dort"
+          },
+          "wrong": {
+            "en": "Konjunktiv I does not demand special adverbs. dort appears only because the place of the quote is no longer the place of the reporter.",
+            "es": "El Konjunktiv I no exige adverbios especiales. dort aparece solo porque el lugar de la cita ya no es el lugar de quien relata."
+          }
+        },
+        {
+          "text": {
+            "en": "dort is the unchanged word of the direct speech",
+            "es": "dort es la palabra sin cambios del estilo directo"
+          },
+          "wrong": {
+            "en": "The original statement had hier (Sie war hier), not dort. From the point of view of the reporter, hier turns into dort.",
+            "es": "La declaración original decía hier (Sie war hier), no dort. Desde el punto de vista de quien relata, hier se convierte en dort."
+          }
+        }
+      ],
+      "correctIndex": 0
+    }
+  ]
+}

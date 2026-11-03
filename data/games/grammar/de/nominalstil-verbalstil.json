@@ -1,0 +1,1007 @@
+{
+  "schema": 2,
+  "topic": "nominalstil-verbalstil",
+  "level": "C1",
+  "title": {
+    "en": "Nominal style and verbal style",
+    "es": "Estilo nominal y estilo verbal"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "The same information can be packed into a clause with a verb (verbal style: weil er krank ist) or into a noun phrase (nominal style: wegen seiner Krankheit). The nominal style is dense, impersonal and abstract, and you find it in reports, minutes, official letters and scientific texts. The verbal style is clearer and closer to speech. At C1 you should be able to change from one to the other and to decide which one fits the text. The change is mostly a matter of the right preposition and the right case: wegen, trotz and während take the genitive, bei, nach and vor the dative, durch and ohne the accusative.",
+        "es": "La misma información se puede condensar en una oración con verbo (estilo verbal: weil er krank ist) o en un grupo nominal (estilo nominal: wegen seiner Krankheit). El estilo nominal es denso, impersonal y abstracto, y lo encuentras en informes, actas, cartas oficiales y textos científicos. El estilo verbal es más claro y más cercano al habla. En el nivel C1 debes poder pasar de uno al otro y decidir cuál encaja con el texto. El cambio es sobre todo cuestión de la preposición correcta y del caso correcto: wegen, trotz y während llevan genitivo, bei, nach y vor dativo, durch y ohne acusativo."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "nominalstil-praepositionen",
+      "title": {
+        "en": "From conjunction to preposition",
+        "es": "De la conjunción a la preposición"
+      },
+      "header": [
+        {
+          "en": "Clause with",
+          "es": "Oración con"
+        },
+        {
+          "en": "Präposition",
+          "es": "Präposition"
+        },
+        {
+          "en": "Kasus",
+          "es": "Kasus"
+        }
+      ],
+      "rows": [
+        [
+          "weil",
+          "wegen",
+          "Genitiv"
+        ],
+        [
+          "obwohl",
+          "trotz",
+          "Genitiv"
+        ],
+        [
+          "wenn",
+          "bei",
+          "Dativ"
+        ],
+        [
+          "während",
+          "während",
+          "Genitiv"
+        ],
+        [
+          "nachdem",
+          "nach",
+          "Dativ"
+        ],
+        [
+          "bevor",
+          "vor",
+          "Dativ"
+        ],
+        [
+          "indem",
+          "durch",
+          "Akkusativ"
+        ],
+        [
+          "ohne dass",
+          "ohne",
+          "Akkusativ"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "From clause to noun phrase",
+        "es": "De la oración al grupo nominal"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "The conjunction becomes a preposition, the verb of the clause becomes a noun, and the subject becomes a possessive or a genitive. weil er krank ist becomes wegen seiner Krankheit, and weil das Wetter schlecht ist becomes wegen des schlechten Wetters. Formal writing also uses aufgrund and infolge for a reason.",
+            "es": "La conjunción se convierte en preposición, el verbo de la oración se convierte en sustantivo, y el sujeto se convierte en un posesivo o un genitivo. weil er krank ist pasa a wegen seiner Krankheit, y weil das Wetter schlecht ist pasa a wegen des schlechten Wetters. La escritura formal también usa aufgrund e infolge para una razón."
+          },
+          "examples": [
+            {
+              "es": "Er ist krank. Wegen seiner Krankheit bleibt er zu Hause.",
+              "tr": {
+                "en": "He is sick. Because of his illness he stays at home.",
+                "es": "Está enfermo. Por su enfermedad se queda en casa."
+              }
+            },
+            {
+              "es": "Wegen des schlechten Wetters fällt das Konzert aus.",
+              "tr": {
+                "en": "Because of the bad weather the concert is canceled.",
+                "es": "Por el mal tiempo se cancela el concierto."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Contrast, condition and time follow the same pattern: obwohl becomes trotz, wenn becomes bei, nachdem becomes nach, bevor becomes vor and während stays während.",
+            "es": "El contraste, la condición y el tiempo siguen el mismo patrón: obwohl pasa a trotz, wenn pasa a bei, nachdem pasa a nach, bevor pasa a vor y während sigue siendo während."
+          },
+          "examples": [
+            {
+              "es": "Trotz des Regens gehen wir spazieren.",
+              "tr": {
+                "en": "In spite of the rain we go for a walk.",
+                "es": "A pesar de la lluvia salimos a caminar."
+              }
+            },
+            {
+              "es": "Bei Problemen rufen Sie uns bitte an.",
+              "tr": {
+                "en": "In case of problems, please call us.",
+                "es": "En caso de problemas, llámenos por favor."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Means and absence use durch (accusative) and ohne (accusative). The verb becomes a noun, often with a genitive attribute: the object of the verb turns into the genitive.",
+            "es": "El medio y la ausencia usan durch (acusativo) y ohne (acusativo). El verbo se convierte en sustantivo, a menudo con un atributo en genitivo: el complemento del verbo pasa a genitivo."
+          },
+          "examples": [
+            {
+              "es": "Er löst das Problem durch harte Arbeit.",
+              "tr": {
+                "en": "He solves the problem through hard work.",
+                "es": "Él resuelve el problema con trabajo duro."
+              }
+            },
+            {
+              "es": "Nach der Veröffentlichung der Studie gab es Streit.",
+              "tr": {
+                "en": "After the publication of the study there was an argument.",
+                "es": "Después de la publicación del estudio hubo una discusión."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "nominalstil-beispiele",
+      "title": {
+        "en": "Verbal style and nominal style side by side",
+        "es": "Estilo verbal y estilo nominal lado a lado"
+      },
+      "header": [
+        {
+          "en": "Verbal style",
+          "es": "Estilo verbal"
+        },
+        {
+          "en": "Nominal style",
+          "es": "Estilo nominal"
+        }
+      ],
+      "rows": [
+        [
+          "Weil das Wetter schlecht ist, bleiben wir hier.",
+          "Wegen des schlechten Wetters bleiben wir hier."
+        ],
+        [
+          "Obwohl er krank ist, arbeitet er.",
+          "Trotz seiner Krankheit arbeitet er."
+        ],
+        [
+          "Wenn Probleme auftreten, rufen Sie uns an.",
+          "Bei Problemen rufen Sie uns an."
+        ],
+        [
+          "Nachdem er angekommen war, rief er an.",
+          "Nach seiner Ankunft rief er an."
+        ],
+        [
+          "Er löst das Problem, indem er hart arbeitet.",
+          "Er löst das Problem durch harte Arbeit."
+        ],
+        [
+          "Bevor wir essen, waschen wir die Hände.",
+          "Vor dem Essen waschen wir die Hände."
+        ]
+      ],
+      "noTableDeck": true
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Effect and limits",
+        "es": "Efecto y límites"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "The nominal style saves words and sounds objective, which fits reports and minutes. But it hides who does what, and long chains of genitives are hard to read. In speech and in clear explanations the verbal style is the better choice.",
+            "es": "El estilo nominal ahorra palabras y suena objetivo, lo que encaja con informes y actas. Pero oculta quién hace qué, y las cadenas largas de genitivos son difíciles de leer. En el habla y en explicaciones claras es mejor el estilo verbal."
+          },
+          "examples": [
+            {
+              "es": "Die Beschreibung der Veränderung der Lage ist schwer zu lesen.",
+              "tr": {
+                "en": "The description of the change of the situation is hard to read.",
+                "es": "La descripción del cambio de la situación es difícil de leer."
+              }
+            },
+            {
+              "es": "Wir beschreiben, wie sich die Lage verändert.",
+              "tr": {
+                "en": "We describe how the situation changes.",
+                "es": "Describimos cómo cambia la situación."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Which reason word?",
+        "es": "¿Qué palabra de razón?"
+      },
+      "pairs": [
+        {
+          "a": "Er fehlt, weil er krank ist.",
+          "b": "Er fehlt wegen seiner Krankheit.",
+          "note": {
+            "en": "Both say the same. The clause is personal and clear; the noun phrase is shorter and more formal.",
+            "es": "Ambas dicen lo mismo. La oración es personal y clara; el grupo nominal es más corto y más formal."
+          },
+          "examples": [
+            {
+              "es": "Wir bleiben hier, weil es regnet.",
+              "tr": {
+                "en": "We stay here because it is raining.",
+                "es": "Nos quedamos aquí porque llueve."
+              }
+            },
+            {
+              "es": "Wir bleiben hier wegen des Regens.",
+              "tr": {
+                "en": "We stay here because of the rain.",
+                "es": "Nos quedamos aquí por la lluvia."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Wegen seiner Hilfe kamen wir zu spät.",
+          "b": "Dank seiner Hilfe kamen wir pünktlich.",
+          "note": {
+            "en": "wegen is neutral or negative. dank names a positive reason and takes the dative or genitive.",
+            "es": "wegen es neutral o negativo. dank nombra una razón positiva y lleva dativo o genitivo."
+          },
+          "examples": [
+            {
+              "es": "Dank der Hilfe haben wir es geschafft.",
+              "tr": {
+                "en": "Thanks to the help we made it.",
+                "es": "Gracias a la ayuda lo logramos."
+              }
+            },
+            {
+              "es": "Wegen der Arbeit schläft er wenig.",
+              "tr": {
+                "en": "Because of work he sleeps little.",
+                "es": "Por el trabajo duerme poco."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: wrong case after the preposition (wegen, trotz, während take the genitive: wegen des Wetters, not wegen dem Wetter in writing; bei, nach, vor take the dative; durch and ohne the accusative). Forgetting to turn the verb into a noun (*wegen er krank ist). Keeping the subject as a pronoun in the nominative instead of a possessive (*wegen er Krankheit). And stacking too many genitives; then go back to a clause.",
+        "es": "Trampas clásicas: caso incorrecto después de la preposición (wegen, trotz, während llevan genitivo: wegen des Wetters, no wegen dem Wetter en la escritura; bei, nach, vor llevan dativo; durch y ohne acusativo). Olvidar convertir el verbo en sustantivo (*wegen er krank ist). Mantener el sujeto como pronombre en nominativo en lugar de un posesivo (*wegen er Krankheit). Y apilar demasiados genitivos; entonces vuelve a una oración."
+      }
+    }
+  ],
+  "speak": {
+    "en": "The same idea can be said with a clause or with a noun phrase. The verbal style says «weil er krank ist». The nominal style says «wegen seiner Krankheit». The conjunction becomes a preposition: «obwohl» becomes «trotz», «wenn» becomes «bei», «nachdem» becomes «nach», «indem» becomes «durch». The cases are important: «wegen» and «trotz» take the genitive, «bei» and «nach» take the dative, «durch» takes the accusative. Use the nominal style in reports and minutes, but not in every sentence.",
+    "es": "La misma idea se puede decir con una oración o con un grupo nominal. El estilo verbal dice «weil er krank ist». El estilo nominal dice «wegen seiner Krankheit». La conjunción se convierte en preposición: «obwohl» pasa a «trotz», «wenn» pasa a «bei», «nachdem» pasa a «nach», «indem» pasa a «durch». Los casos son importantes: «wegen» y «trotz» llevan genitivo, «bei» y «nach» llevan dativo, «durch» lleva acusativo. Usa el estilo nominal en informes y actas, pero no en todas las frases."
+  },
+  "items": [
+    {
+      "id": "nominalstil-verbalstil-c01",
+      "sentence": "Er ist krank. ___ bleibt er zu Hause.",
+      "options": [
+        "Trotz seiner Krankheit",
+        "Wegen seiner Krankheit",
+        "Nach seiner Krankheit"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The illness is the reason for staying at home. wegen is the noun form of weil and takes the genitive: wegen seiner Krankheit.",
+        "es": "La enfermedad es la razón para quedarse en casa. wegen es la forma nominal de weil y lleva genitivo: wegen seiner Krankheit."
+      },
+      "wrong": {
+        "Trotz seiner Krankheit": {
+          "en": "Trotz would express a contrast: he stays at home in spite of being sick. That makes no sense.",
+          "es": "Trotz expresaría un contraste: se queda en casa a pesar de estar enfermo. Eso no tiene sentido."
+        },
+        "Nach seiner Krankheit": {
+          "en": "Nach would express time (after his illness). Here the illness is the cause of staying at home now.",
+          "es": "Nach expresaría tiempo (después de su enfermedad). Aquí la enfermedad es la causa de quedarse ahora en casa."
+        }
+      },
+      "examples": [
+        "Wegen des Wetters bleiben wir hier.",
+        "Wegen der Arbeit schläft er wenig."
+      ],
+      "tr": {
+        "en": "He is sick. Because of his illness he stays at home.",
+        "es": "Está enfermo. Por su enfermedad se queda en casa."
+      }
+    },
+    {
+      "id": "nominalstil-verbalstil-f01",
+      "kind": "form",
+      "verb": "Präposition",
+      "person": "weil",
+      "answer": "wegen",
+      "accept": [
+        "aufgrund",
+        "infolge"
+      ],
+      "table": "nominalstil-praepositionen"
+    },
+    {
+      "id": "nominalstil-verbalstil-c02",
+      "sentence": "Es regnet. Wir gehen ___ spazieren.",
+      "options": [
+        "trotz des Regens",
+        "wegen des Regens",
+        "nach des Regens"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "We go for a walk although it rains. trotz is the noun form of obwohl and takes the genitive: trotz des Regens.",
+        "es": "Salimos a caminar aunque llueve. trotz es la forma nominal de obwohl y lleva genitivo: trotz des Regens."
+      },
+      "wrong": {
+        "wegen des Regens": {
+          "en": "wegen would make the rain the reason for the walk. The rain is rather an obstacle, so the contrast word trotz fits.",
+          "es": "wegen haría de la lluvia la razón del paseo. La lluvia es más bien un obstáculo, así que encaja la palabra de contraste trotz."
+        },
+        "nach des Regens": {
+          "en": "nach takes the dative, not the genitive, and it would express time. The form nach des Regens is not correct.",
+          "es": "nach lleva dativo, no genitivo, y expresaría tiempo. La forma nach des Regens no es correcta."
+        }
+      },
+      "examples": [
+        "Trotz seiner Müdigkeit arbeitet er weiter.",
+        "Trotz der Kälte gehen wir schwimmen."
+      ],
+      "tr": {
+        "en": "It is raining. We go for a walk in spite of the rain.",
+        "es": "Llueve. Salimos a caminar a pesar de la lluvia."
+      }
+    },
+    {
+      "id": "nominalstil-verbalstil-f02",
+      "kind": "form",
+      "verb": "Kasus",
+      "person": "weil",
+      "answer": "Genitiv",
+      "table": "nominalstil-praepositionen"
+    },
+    {
+      "id": "nominalstil-verbalstil-c03",
+      "sentence": "Bei ___ rufen Sie uns bitte an.",
+      "options": [
+        "Problemen",
+        "Probleme",
+        "Problems"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "bei takes the dative, and the dative plural of Problem ends in -n: bei Problemen.",
+        "es": "bei lleva dativo, y el dativo plural de Problem termina en -n: bei Problemen."
+      },
+      "wrong": {
+        "Probleme": {
+          "en": "Probleme is the nominative or accusative plural. After bei the dative plural with -n is needed.",
+          "es": "Probleme es el nominativo o acusativo plural. Después de bei se necesita el dativo plural con -n."
+        },
+        "Problems": {
+          "en": "Problems has an English-style -s. German does not form the plural of this word that way.",
+          "es": "Problems tiene una -s al estilo inglés. El alemán no forma así el plural de esta palabra."
+        }
+      },
+      "examples": [
+        "Bei Regen bleiben wir hier.",
+        "Bei Fragen rufen Sie bitte an."
+      ],
+      "tr": {
+        "en": "In case of problems, please call us.",
+        "es": "En caso de problemas, llámenos por favor."
+      }
+    },
+    {
+      "id": "nominalstil-verbalstil-f03",
+      "kind": "form",
+      "verb": "Präposition",
+      "person": "obwohl",
+      "answer": "trotz",
+      "table": "nominalstil-praepositionen"
+    },
+    {
+      "id": "nominalstil-verbalstil-w01",
+      "kind": "why",
+      "es": "Wegen seiner Krankheit bleibt er zu Hause.",
+      "target": "Wegen",
+      "tr": {
+        "en": "Because of his illness he stays at home.",
+        "es": "Por su enfermedad se queda en casa."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "A reason: wegen is the noun form of weil",
+            "es": "Una razón: wegen es la forma nominal de weil"
+          }
+        },
+        {
+          "text": {
+            "en": "A contrast: wegen is the noun form of obwohl",
+            "es": "Un contraste: wegen es la forma nominal de obwohl"
+          },
+          "wrong": {
+            "en": "The noun form of obwohl is trotz. The illness is the reason for staying at home, not an obstacle.",
+            "es": "La forma nominal de obwohl es trotz. La enfermedad es la razón para quedarse en casa, no un obstáculo."
+          }
+        },
+        {
+          "text": {
+            "en": "A time: wegen is the noun form of nachdem",
+            "es": "Un tiempo: wegen es la forma nominal de nachdem"
+          },
+          "wrong": {
+            "en": "The noun form of nachdem is nach. wegen does not express time, it gives the cause.",
+            "es": "La forma nominal de nachdem es nach. wegen no expresa tiempo, da la causa."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "nominalstil-verbalstil-c04",
+      "sentence": "Wegen des schlechten ___ fällt das Konzert aus.",
+      "options": [
+        "Wetter",
+        "Wettern",
+        "Wetters"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "wegen takes the genitive, and the masculine and neuter nouns add -s or -es in the genitive: des schlechten Wetters.",
+        "es": "wegen lleva genitivo, y los sustantivos masculinos y neutros añaden -s o -es en el genitivo: des schlechten Wetters."
+      },
+      "wrong": {
+        "Wetter": {
+          "en": "Wetter without an ending is the nominative or accusative. After des the genitive -s is needed.",
+          "es": "Wetter sin terminación es el nominativo o acusativo. Después de des se necesita el -s del genitivo."
+        },
+        "Wettern": {
+          "en": "Wettern looks like a dative plural, but this noun has no such plural, and the sentence is singular.",
+          "es": "Wettern parece un dativo plural, pero este sustantivo no tiene tal plural, y la oración está en singular."
+        }
+      },
+      "examples": [
+        "Wegen des Regens bleiben wir hier.",
+        "Wegen des Urlaubs ist das Büro zu."
+      ],
+      "tr": {
+        "en": "Because of the bad weather the concert is canceled.",
+        "es": "Por el mal tiempo se cancela el concierto."
+      }
+    },
+    {
+      "id": "nominalstil-verbalstil-f04",
+      "kind": "form",
+      "verb": "Kasus",
+      "person": "obwohl",
+      "answer": "Genitiv",
+      "table": "nominalstil-praepositionen"
+    },
+    {
+      "id": "nominalstil-verbalstil-c05",
+      "sentence": "Wegen ___ Verspätung kommt er zu spät.",
+      "options": [
+        "die",
+        "dem",
+        "der"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "wegen takes the genitive, and the feminine genitive article is der: wegen der Verspätung.",
+        "es": "wegen lleva genitivo, y el artículo femenino de genitivo es der: wegen der Verspätung."
+      },
+      "wrong": {
+        "die": {
+          "en": "die is the nominative or accusative feminine. After wegen the genitive der is needed.",
+          "es": "die es el nominativo o acusativo femenino. Después de wegen se necesita el genitivo der."
+        },
+        "dem": {
+          "en": "dem is masculine or neuter dative. Verspätung is feminine, and wegen takes the genitive in writing.",
+          "es": "dem es dativo masculino o neutro. Verspätung es femenino, y wegen lleva genitivo en la escritura."
+        }
+      },
+      "examples": [
+        "Wegen der Arbeit schläft er wenig.",
+        "Wegen der Kinder bleiben wir zu Hause."
+      ],
+      "tr": {
+        "en": "Because of the delay he arrives late.",
+        "es": "Por el retraso llega tarde."
+      }
+    },
+    {
+      "id": "nominalstil-verbalstil-f05",
+      "kind": "form",
+      "verb": "Präposition",
+      "person": "wenn",
+      "answer": "bei",
+      "table": "nominalstil-praepositionen"
+    },
+    {
+      "id": "nominalstil-verbalstil-c06",
+      "sentence": "Er löst das Problem ___ harte Arbeit.",
+      "options": [
+        "wegen",
+        "trotz",
+        "durch"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The hard work is the means by which he solves the problem. durch is the noun form of indem and takes the accusative: durch harte Arbeit.",
+        "es": "El trabajo duro es el medio con el que resuelve el problema. durch es la forma nominal de indem y lleva acusativo: durch harte Arbeit."
+      },
+      "wrong": {
+        "wegen": {
+          "en": "wegen takes the genitive (wegen harter Arbeit) and gives a reason. The form harte Arbeit shows an accusative, which fits durch.",
+          "es": "wegen lleva genitivo (wegen harter Arbeit) y da una razón. La forma harte Arbeit muestra un acusativo, que encaja con durch."
+        },
+        "trotz": {
+          "en": "trotz expresses a contrast and takes the genitive. The hard work is not an obstacle but the way to the solution.",
+          "es": "trotz expresa un contraste y lleva genitivo. El trabajo duro no es un obstáculo sino el camino a la solución."
+        }
+      },
+      "examples": [
+        "Er verdient Geld durch Arbeit.",
+        "Man lernt durch Lesen."
+      ],
+      "tr": {
+        "en": "He solves the problem through hard work.",
+        "es": "Él resuelve el problema con trabajo duro."
+      }
+    },
+    {
+      "id": "nominalstil-verbalstil-f06",
+      "kind": "form",
+      "verb": "Kasus",
+      "person": "wenn",
+      "answer": "Dativ",
+      "table": "nominalstil-praepositionen"
+    },
+    {
+      "id": "nominalstil-verbalstil-w02",
+      "kind": "why",
+      "es": "Trotz des Regens gehen wir spazieren.",
+      "target": "Regens",
+      "tr": {
+        "en": "In spite of the rain we go for a walk.",
+        "es": "A pesar de la lluvia salimos a caminar."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Nominative: Regen is the subject",
+            "es": "Nominativo: Regen es el sujeto"
+          },
+          "wrong": {
+            "en": "Regen is not the subject of the sentence, wir is. A preposition decides the case of the noun after it.",
+            "es": "Regen no es el sujeto de la oración, lo es wir. Una preposición decide el caso del sustantivo que sigue."
+          }
+        },
+        {
+          "text": {
+            "en": "Genitive: trotz takes the genitive, and masculine nouns add -s",
+            "es": "Genitivo: trotz lleva genitivo, y los sustantivos masculinos añaden -s"
+          }
+        },
+        {
+          "text": {
+            "en": "Dative: trotz takes the dative, as in trotz dem Regen",
+            "es": "Dativo: trotz lleva dativo, como en trotz dem Regen"
+          },
+          "wrong": {
+            "en": "In careful writing trotz takes the genitive. The dative is only heard in speech. The ending -s of Regens shows the genitive here.",
+            "es": "En la escritura cuidada trotz lleva genitivo. El dativo solo se oye en el habla. La terminación -s de Regens muestra aquí el genitivo."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "nominalstil-verbalstil-c07",
+      "sentence": "Während ___ Urlaubs bleibt das Büro geschlossen.",
+      "options": [
+        "dem",
+        "des",
+        "den"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "während as a preposition takes the genitive. The masculine genitive article is des, and Urlaub gets the ending -s: während des Urlaubs.",
+        "es": "während como preposición lleva genitivo. El artículo masculino de genitivo es des, y Urlaub recibe la terminación -s: während des Urlaubs."
+      },
+      "wrong": {
+        "dem": {
+          "en": "dem is the dative. In spoken German you sometimes hear it, but the noun Urlaubs already shows the genitive here.",
+          "es": "dem es el dativo. En el alemán hablado a veces se oye, pero el sustantivo Urlaubs ya muestra aquí el genitivo."
+        },
+        "den": {
+          "en": "den is the masculine accusative or the dative plural. It does not fit the genitive Urlaubs.",
+          "es": "den es el acusativo masculino o el dativo plural. No encaja con el genitivo Urlaubs."
+        }
+      },
+      "examples": [
+        "Während des Tages arbeitet er viel.",
+        "Während der Woche ist das Büro offen."
+      ],
+      "tr": {
+        "en": "During the vacation the office stays closed.",
+        "es": "Durante las vacaciones la oficina permanece cerrada."
+      }
+    },
+    {
+      "id": "nominalstil-verbalstil-f07",
+      "kind": "form",
+      "verb": "Präposition",
+      "person": "nachdem",
+      "answer": "nach",
+      "table": "nominalstil-praepositionen"
+    },
+    {
+      "id": "nominalstil-verbalstil-c08",
+      "sentence": "Nach der ___ der Studie gab es Streit.",
+      "options": [
+        "Veröffentlichung",
+        "Veröffentlichen",
+        "Veröffentlicht"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The verb veröffentlichen becomes the noun die Veröffentlichung, and the object of the verb becomes a genitive: der Studie.",
+        "es": "El verbo veröffentlichen se convierte en el sustantivo die Veröffentlichung, y el complemento del verbo pasa a genitivo: der Studie."
+      },
+      "wrong": {
+        "Veröffentlichen": {
+          "en": "Veröffentlichen is the infinitive noun and is neuter. After the feminine article der you need the noun on -ung.",
+          "es": "Veröffentlichen es el infinitivo sustantivado y es neutro. Después del artículo femenino der necesitas el sustantivo en -ung."
+        },
+        "Veröffentlicht": {
+          "en": "Veröffentlicht is a participle or a verb form. After the article der a noun is needed, not a verb.",
+          "es": "Veröffentlicht es un participio o una forma verbal. Después del artículo der se necesita un sustantivo, no un verbo."
+        }
+      },
+      "examples": [
+        "Nach der Ankunft des Zuges gehen wir.",
+        "Nach der Entscheidung des Chefs bleiben wir."
+      ],
+      "tr": {
+        "en": "After the publication of the study there was an argument.",
+        "es": "Después de la publicación del estudio hubo una discusión."
+      }
+    },
+    {
+      "id": "nominalstil-verbalstil-f08",
+      "kind": "form",
+      "verb": "Kasus",
+      "person": "indem",
+      "answer": "Akkusativ",
+      "table": "nominalstil-praepositionen"
+    },
+    {
+      "id": "nominalstil-verbalstil-c09",
+      "sentence": "Die Veröffentlichung ___ Studie war ein Erfolg.",
+      "options": [
+        "der",
+        "die",
+        "den"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The object of the verb becomes a genitive attribute after the noun. Studie is feminine, so the genitive article is der.",
+        "es": "El complemento del verbo pasa a ser un atributo en genitivo después del sustantivo. Studie es femenino, así que el artículo de genitivo es der."
+      },
+      "wrong": {
+        "die": {
+          "en": "die would be the nominative or accusative. The noun phrase after Veröffentlichung needs the genitive.",
+          "es": "die sería el nominativo o acusativo. El grupo nominal después de Veröffentlichung necesita el genitivo."
+        },
+        "den": {
+          "en": "den is the masculine accusative. Studie is feminine, and the attribute needs the genitive der.",
+          "es": "den es el acusativo masculino. Studie es femenino, y el atributo necesita el genitivo der."
+        }
+      },
+      "examples": [
+        "Die Ankunft des Gastes war spät.",
+        "Die Lösung der Aufgabe war einfach."
+      ],
+      "tr": {
+        "en": "The publication of the study was a success.",
+        "es": "La publicación del estudio fue un éxito."
+      }
+    },
+    {
+      "id": "nominalstil-verbalstil-f09",
+      "kind": "form",
+      "verb": "Präposition",
+      "person": "bevor",
+      "answer": "vor",
+      "table": "nominalstil-praepositionen"
+    },
+    {
+      "id": "nominalstil-verbalstil-w03",
+      "kind": "why",
+      "es": "Bei Problemen rufen Sie uns bitte an.",
+      "target": "Problemen",
+      "tr": {
+        "en": "In case of problems, please call us.",
+        "es": "En caso de problemas, llámenos por favor."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Accusative plural: bei takes the accusative, so there is no ending",
+            "es": "Acusativo plural: bei lleva acusativo, así que no hay terminación"
+          },
+          "wrong": {
+            "en": "bei never takes the accusative. It always takes the dative, and the dative plural adds -n.",
+            "es": "bei nunca lleva acusativo. Siempre lleva dativo, y el dativo plural añade -n."
+          }
+        },
+        {
+          "text": {
+            "en": "Dative plural: bei takes the dative, and the dative plural adds -n",
+            "es": "Dativo plural: bei lleva dativo, y el dativo plural añade -n"
+          }
+        },
+        {
+          "text": {
+            "en": "Genitive plural: the genitive adds -n to every noun",
+            "es": "Genitivo plural: el genitivo añade -n a todos los sustantivos"
+          },
+          "wrong": {
+            "en": "The genitive plural has no extra ending, and bei does not take the genitive. The -n marks the dative plural.",
+            "es": "El genitivo plural no tiene terminación adicional, y bei no lleva genitivo. La -n marca el dativo plural."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "nominalstil-verbalstil-c10",
+      "sentence": "Bei ___ Regen bleiben wir zu Hause.",
+      "options": [
+        "starkem",
+        "starken",
+        "starker"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "bei takes the dative. Regen is masculine and has no article, so the adjective carries the dative ending -em: bei starkem Regen.",
+        "es": "bei lleva dativo. Regen es masculino y no tiene artículo, así que el adjetivo lleva la terminación de dativo -em: bei starkem Regen."
+      },
+      "wrong": {
+        "starken": {
+          "en": "starken is the ending after an article (bei dem starken Regen). Without an article the adjective needs -em.",
+          "es": "starken es la terminación después de un artículo (bei dem starken Regen). Sin artículo el adjetivo necesita -em."
+        },
+        "starker": {
+          "en": "starker is a nominative masculine or genitive/dative feminine ending. After bei and before Regen you need -em.",
+          "es": "starker es una terminación de nominativo masculino o de genitivo/dativo femenino. Después de bei y antes de Regen necesitas -em."
+        }
+      },
+      "examples": [
+        "Bei schlechtem Wetter bleiben wir hier.",
+        "Bei großer Kälte bleiben wir zu Hause."
+      ],
+      "tr": {
+        "en": "In heavy rain we stay at home.",
+        "es": "Con lluvia fuerte nos quedamos en casa."
+      }
+    },
+    {
+      "id": "nominalstil-verbalstil-f10",
+      "kind": "form",
+      "verb": "Kasus",
+      "person": "während",
+      "answer": "Genitiv",
+      "table": "nominalstil-praepositionen"
+    },
+    {
+      "id": "nominalstil-verbalstil-c11",
+      "sentence": "Dank ___ Hilfe haben wir es geschafft.",
+      "options": [
+        "seine",
+        "seiner",
+        "seinen"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "dank names a positive reason and takes the dative or genitive. For the feminine noun Hilfe both give seiner.",
+        "es": "dank nombra una razón positiva y lleva dativo o genitivo. Para el sustantivo femenino Hilfe ambos dan seiner."
+      },
+      "wrong": {
+        "seine": {
+          "en": "seine is the nominative or accusative feminine. dank needs the dative or genitive, so seiner is needed.",
+          "es": "seine es el nominativo o acusativo femenino. dank necesita el dativo o genitivo, así que se necesita seiner."
+        },
+        "seinen": {
+          "en": "seinen is a masculine accusative or a dative plural. Hilfe is feminine singular, so seinen does not fit.",
+          "es": "seinen es un acusativo masculino o un dativo plural. Hilfe es femenino singular, así que seinen no encaja."
+        }
+      },
+      "examples": [
+        "Dank der Hilfe sind wir pünktlich.",
+        "Dank seiner Arbeit haben wir Erfolg."
+      ],
+      "tr": {
+        "en": "Thanks to his help we made it.",
+        "es": "Gracias a su ayuda lo logramos."
+      }
+    },
+    {
+      "id": "nominalstil-verbalstil-f11",
+      "kind": "form",
+      "verb": "Präposition",
+      "person": "indem",
+      "answer": "durch",
+      "table": "nominalstil-praepositionen"
+    },
+    {
+      "id": "nominalstil-verbalstil-c12",
+      "sentence": "Er hat Erfolg ___ seiner Hilfe.",
+      "options": [
+        "trotz",
+        "ohne",
+        "dank"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "His help is a positive reason for the success. dank names a positive reason: dank seiner Hilfe.",
+        "es": "Su ayuda es una razón positiva para el éxito. dank nombra una razón positiva: dank seiner Hilfe."
+      },
+      "wrong": {
+        "trotz": {
+          "en": "trotz would say that he is successful in spite of the help. That is not the intended meaning.",
+          "es": "trotz diría que tiene éxito a pesar de la ayuda. Ese no es el sentido que se quiere."
+        },
+        "ohne": {
+          "en": "ohne takes the accusative (ohne seine Hilfe). With seiner Hilfe it does not fit, and it would mean without.",
+          "es": "ohne lleva acusativo (ohne seine Hilfe). Con seiner Hilfe no encaja, y significaría sin."
+        }
+      },
+      "examples": [
+        "Dank deiner Arbeit sind wir fertig.",
+        "Er ist dank seiner Familie glücklich."
+      ],
+      "tr": {
+        "en": "He is successful thanks to his help.",
+        "es": "Él tiene éxito gracias a su ayuda."
+      }
+    },
+    {
+      "id": "nominalstil-verbalstil-f12",
+      "kind": "form",
+      "verb": "Präposition",
+      "person": "ohne dass",
+      "answer": "ohne",
+      "table": "nominalstil-praepositionen"
+    },
+    {
+      "id": "nominalstil-verbalstil-c13",
+      "sentence": "Er fehlt, ___ er krank ist.",
+      "options": [
+        "weil",
+        "wegen",
+        "trotz"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The clause has its own subject and verb at the end (er krank ist), so it needs a conjunction: weil. wegen and trotz are prepositions.",
+        "es": "La oración tiene su propio sujeto y verbo al final (er krank ist), así que necesita una conjunción: weil. wegen y trotz son preposiciones."
+      },
+      "wrong": {
+        "wegen": {
+          "en": "wegen is a preposition and must be followed by a noun phrase (wegen seiner Krankheit), not by a clause with a verb.",
+          "es": "wegen es una preposición y debe ir seguida de un grupo nominal (wegen seiner Krankheit), no de una oración con verbo."
+        },
+        "trotz": {
+          "en": "trotz is also a preposition and expresses a contrast. Before a clause with er krank ist you need a conjunction.",
+          "es": "trotz también es una preposición y expresa un contraste. Antes de una oración con er krank ist necesitas una conjunción."
+        }
+      },
+      "examples": [
+        "Er bleibt hier, weil es regnet.",
+        "Wir fahren nicht, weil er arbeitet."
+      ],
+      "tr": {
+        "en": "He is absent because he is sick.",
+        "es": "Él falta porque está enfermo."
+      }
+    },
+    {
+      "id": "nominalstil-verbalstil-c14",
+      "sentence": "Trotz seiner Krankheit arbeitet er. ___ er krank ist, arbeitet er.",
+      "options": [
+        "Weil",
+        "Nachdem",
+        "Obwohl"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "trotz in the noun phrase corresponds to the conjunction obwohl in the clause: Obwohl er krank ist, arbeitet er.",
+        "es": "trotz en el grupo nominal corresponde a la conjunción obwohl en la oración: Obwohl er krank ist, arbeitet er."
+      },
+      "wrong": {
+        "Weil": {
+          "en": "Weil would give a reason and say that he works because he is sick. The first sentence expresses a contrast.",
+          "es": "Weil daría una razón y diría que trabaja porque está enfermo. La primera oración expresa un contraste."
+        },
+        "Nachdem": {
+          "en": "Nachdem expresses time (after he was sick). The first sentence has trotz, which is not about time.",
+          "es": "Nachdem expresa tiempo (después de estar enfermo). La primera oración tiene trotz, que no trata del tiempo."
+        }
+      },
+      "examples": [
+        "Obwohl es regnet, gehen wir spazieren.",
+        "Obwohl er müde ist, arbeitet er."
+      ],
+      "tr": {
+        "en": "In spite of his illness he works. Although he is sick, he works.",
+        "es": "A pesar de su enfermedad trabaja. Aunque está enfermo, trabaja."
+      }
+    },
+    {
+      "id": "nominalstil-verbalstil-w04",
+      "kind": "why",
+      "es": "Er löst das Problem durch harte Arbeit.",
+      "target": "harte",
+      "tr": {
+        "en": "He solves the problem through hard work.",
+        "es": "Él resuelve el problema con trabajo duro."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Dative: durch takes the dative, so the ending would be -er",
+            "es": "Dativo: durch lleva dativo, así que la terminación sería -er"
+          },
+          "wrong": {
+            "en": "durch always takes the accusative, never the dative. The feminine accusative without an article has the ending -e: harte Arbeit.",
+            "es": "durch siempre lleva acusativo, nunca dativo. El acusativo femenino sin artículo tiene la terminación -e: harte Arbeit."
+          }
+        },
+        {
+          "text": {
+            "en": "Accusative: durch takes the accusative, and a feminine noun without an article gets -e",
+            "es": "Acusativo: durch lleva acusativo, y un sustantivo femenino sin artículo recibe -e"
+          }
+        },
+        {
+          "text": {
+            "en": "No ending: an adjective before a noun stays unchanged after a preposition",
+            "es": "Sin terminación: un adjetivo antes de un sustantivo no cambia después de una preposición"
+          },
+          "wrong": {
+            "en": "An adjective before a noun always needs an ending, also after a preposition. Here it is -e.",
+            "es": "Un adjetivo antes de un sustantivo siempre necesita una terminación, también después de una preposición. Aquí es -e."
+          }
+        }
+      ],
+      "correctIndex": 1
+    }
+  ]
+}

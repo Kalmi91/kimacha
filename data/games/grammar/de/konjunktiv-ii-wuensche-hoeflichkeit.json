@@ -1,0 +1,1086 @@
+{
+  "schema": 2,
+  "topic": "konjunktiv-ii-wuensche-hoeflichkeit",
+  "level": "B1",
+  "title": {
+    "en": "Konjunktiv II: wishes, advice and polite requests",
+    "es": "Konjunktiv II: deseos, consejos y peticiones corteses"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "The Konjunktiv II is the mood for politeness, wishes and advice. The most important forms are hätte, wäre, würde, könnte, müsste, sollte and dürfte. For many verbs you make it from the Präteritum stem with an umlaut (war, wäre; hatte, hätte; konnte, könnte). For all other verbs speakers use würde + infinitive at the end. It sounds softer than the present tense: Könnten Sie mir helfen? is a polite request, Ich hätte gern einen Kaffee a polite wish, Du solltest mehr schlafen friendly advice.",
+        "es": "El Konjunktiv II es el modo de la cortesía, los deseos y los consejos. Las formas más importantes son hätte, wäre, würde, könnte, müsste, sollte y dürfte. Para muchos verbos se forma con la raíz del Präteritum y diéresis (war, wäre; hatte, hätte; konnte, könnte). Para todos los demás verbos se usa würde + infinitivo al final. Suena más suave que el presente: Könnten Sie mir helfen? es una petición cortés, Ich hätte gern einen Kaffee un deseo cortés, Du solltest mehr schlafen un consejo amable."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "konjunktiv-ii",
+      "title": {
+        "en": "From the Präteritum to the Konjunktiv II",
+        "es": "Del Präteritum al Konjunktiv II"
+      },
+      "header": [
+        {
+          "en": "Infinitive",
+          "es": "Infinitivo"
+        },
+        {
+          "en": "Präteritum",
+          "es": "Präteritum"
+        },
+        {
+          "en": "Konjunktiv II",
+          "es": "Konjunktiv II"
+        }
+      ],
+      "rows": [
+        [
+          "sein",
+          "war",
+          "wäre"
+        ],
+        [
+          "haben",
+          "hatte",
+          "hätte"
+        ],
+        [
+          "können",
+          "konnte",
+          "könnte"
+        ],
+        [
+          "müssen",
+          "musste",
+          "müsste"
+        ],
+        [
+          "dürfen",
+          "durfte",
+          "dürfte"
+        ],
+        [
+          "sollen",
+          "sollte",
+          "sollte"
+        ],
+        [
+          "wollen",
+          "wollte",
+          "wollte"
+        ],
+        [
+          "werden",
+          "wurde",
+          "würde"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "konjunktiv-ii-formen",
+      "title": {
+        "en": "The Konjunktiv II of four verbs",
+        "es": "El Konjunktiv II de cuatro verbos"
+      },
+      "header": [
+        {
+          "en": "Person",
+          "es": "Persona"
+        },
+        {
+          "en": "sein",
+          "es": "sein"
+        },
+        {
+          "en": "haben",
+          "es": "haben"
+        },
+        {
+          "en": "können",
+          "es": "können"
+        },
+        {
+          "en": "werden",
+          "es": "werden"
+        }
+      ],
+      "rows": [
+        [
+          "ich",
+          "wäre",
+          "hätte",
+          "könnte",
+          "würde"
+        ],
+        [
+          "du",
+          "wärst",
+          "hättest",
+          "könntest",
+          "würdest"
+        ],
+        [
+          "er/sie/es",
+          "wäre",
+          "hätte",
+          "könnte",
+          "würde"
+        ],
+        [
+          "wir",
+          "wären",
+          "hätten",
+          "könnten",
+          "würden"
+        ],
+        [
+          "ihr",
+          "wärt",
+          "hättet",
+          "könntet",
+          "würdet"
+        ],
+        [
+          "sie/Sie",
+          "wären",
+          "hätten",
+          "könnten",
+          "würden"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "konjunktiv-ii-gebrauch",
+      "title": {
+        "en": "What the Konjunktiv II is used for",
+        "es": "Para qué se usa el Konjunktiv II"
+      },
+      "header": [
+        {
+          "en": "Use",
+          "es": "Uso"
+        },
+        {
+          "en": "Example",
+          "es": "Ejemplo"
+        }
+      ],
+      "rows": [
+        [
+          "Bitte",
+          "Könnten Sie mir helfen?"
+        ],
+        [
+          "Wunsch",
+          "Ich hätte gern einen Kaffee."
+        ],
+        [
+          "Rat",
+          "Du solltest mehr schlafen."
+        ],
+        [
+          "Vorschlag",
+          "Wir könnten ins Kino gehen."
+        ],
+        [
+          "Hoffnung",
+          "Wenn ich doch mehr Zeit hätte!"
+        ]
+      ],
+      "noTableDeck": true
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Where you use it",
+        "es": "Dónde se usa"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "For polite requests use könnte or würde. The main verb is an infinitive at the end. The tone is much softer than Kannst du ...?",
+            "es": "Para peticiones corteses usa könnte o würde. El verbo principal es un infinitivo al final. El tono es mucho más suave que Kannst du ...?"
+          },
+          "examples": [
+            {
+              "es": "Könnten Sie mir bitte helfen?",
+              "tr": {
+                "en": "Could you please help me?",
+                "es": "¿Podría ayudarme, por favor?"
+              }
+            },
+            {
+              "es": "Würden Sie bitte das Fenster öffnen?",
+              "tr": {
+                "en": "Would you please open the window?",
+                "es": "¿Podría abrir la ventana, por favor?"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "For wishes use hätte gern and wäre gern. Ich möchte (from mögen) is the polite fixed form for wishes, much softer than Ich will.",
+            "es": "Para deseos usa hätte gern y wäre gern. Ich möchte (de mögen) es la forma fija cortés para deseos, mucho más suave que Ich will."
+          },
+          "examples": [
+            {
+              "es": "Ich hätte gern einen Tee.",
+              "tr": {
+                "en": "I would like a tea.",
+                "es": "Quisiera un té."
+              }
+            },
+            {
+              "es": "Ich möchte bitte ein Wasser.",
+              "tr": {
+                "en": "I would like a water, please.",
+                "es": "Quisiera un agua, por favor."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "For advice use sollte, or An deiner Stelle würde ich ... For a suggestion use könnte: Wir könnten ...",
+            "es": "Para consejos usa sollte, o An deiner Stelle würde ich ... Para una sugerencia usa könnte: Wir könnten ..."
+          },
+          "examples": [
+            {
+              "es": "Du solltest mehr Wasser trinken.",
+              "tr": {
+                "en": "You should drink more water.",
+                "es": "Deberías tomar más agua."
+              }
+            },
+            {
+              "es": "An deiner Stelle würde ich zum Arzt gehen.",
+              "tr": {
+                "en": "In your place I would go to the doctor.",
+                "es": "En tu lugar yo iría al médico."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "With most verbs speakers use würde + infinitive instead of a special form: ich würde gehen is more usual than ich ginge. In everyday speech mainly sein, haben and the modal verbs keep their own forms.",
+            "es": "Con la mayoría de los verbos se usa würde + infinitivo en lugar de una forma especial: ich würde gehen es más habitual que ich ginge. En el habla diaria sobre todo sein, haben y los verbos modales conservan sus propias formas."
+          },
+          "examples": [
+            {
+              "es": "Ich würde gern nach Berlin fahren.",
+              "tr": {
+                "en": "I would like to go to Berlin.",
+                "es": "Me gustaría ir a Berlín."
+              }
+            },
+            {
+              "es": "Er würde gern mehr lernen.",
+              "tr": {
+                "en": "He would like to learn more.",
+                "es": "A él le gustaría aprender más."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "A wish that cannot come true: Wenn ich doch mehr Zeit hätte! The wenn clause ends with the Konjunktiv II verb, and doch makes it a sigh.",
+            "es": "Un deseo que no se puede cumplir: Wenn ich doch mehr Zeit hätte! La oración con wenn termina con el verbo en Konjunktiv II, y doch la vuelve un suspiro."
+          },
+          "examples": [
+            {
+              "es": "Wenn ich doch mehr Zeit hätte!",
+              "tr": {
+                "en": "If only I had more time!",
+                "es": "¡Si tan solo tuviera más tiempo!"
+              }
+            },
+            {
+              "es": "Wenn er doch hier wäre!",
+              "tr": {
+                "en": "If only he were here!",
+                "es": "¡Si tan solo estuviera aquí!"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Present or Konjunktiv II",
+        "es": "Presente o Konjunktiv II"
+      },
+      "pairs": [
+        {
+          "a": "Kannst du mir helfen?",
+          "b": "Könntest du mir helfen?",
+          "note": {
+            "en": "Both ask for help. The second sounds more polite and careful.",
+            "es": "Los dos piden ayuda. El segundo suena más cortés y cuidadoso."
+          },
+          "examples": [
+            {
+              "es": "Kannst du das Fenster öffnen?",
+              "tr": {
+                "en": "Can you open the window?",
+                "es": "¿Puedes abrir la ventana?"
+              }
+            },
+            {
+              "es": "Könntest du das Fenster öffnen?",
+              "tr": {
+                "en": "Could you open the window?",
+                "es": "¿Podrías abrir la ventana?"
+              }
+            }
+          ]
+        },
+        {
+          "a": "Er konnte kommen.",
+          "b": "Er könnte kommen.",
+          "note": {
+            "en": "konnte is a fact in the past. könnte is a possibility or a suggestion. The umlaut makes the difference.",
+            "es": "konnte es un hecho en el pasado. könnte es una posibilidad o una sugerencia. La diéresis marca la diferencia."
+          },
+          "examples": [
+            {
+              "es": "Wir konnten gestern nicht kommen.",
+              "tr": {
+                "en": "We could not come yesterday.",
+                "es": "Ayer no pudimos venir."
+              }
+            },
+            {
+              "es": "Wir könnten morgen kommen.",
+              "tr": {
+                "en": "We could come tomorrow.",
+                "es": "Podríamos venir mañana."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Do not forget the umlaut: könnte is polite, konnte is past. English learners: \"would\" is würde + infinitive, but \"will\" and \"want\" are different (not Ich will gern, but Ich möchte gern). \"Could\" is könnte, \"should\" is sollte. Spanish learners: the condicional (me gustaría, podría) is würde + infinitive or hätte, könnte. Hungarian learners: -nék, -nál, -na correspond to würde, hätte, wäre, könnte. Do not use the past participle with würde (not würde gegangen), but the infinitive at the end: würde gehen.",
+        "es": "No olvides la diéresis: könnte es cortés, konnte es pasado. Para quien habla inglés: \"would\" es würde + infinitivo, pero \"will\" y \"want\" son distintos (no Ich will gern, sino Ich möchte gern). \"Could\" es könnte, \"should\" es sollte. Para quien habla español: el condicional (me gustaría, podría) es würde + infinitivo o hätte, könnte. Para quien habla húngaro: -nék, -nál, -na corresponden a würde, hätte, wäre, könnte. No uses el participio con würde (no würde gegangen), sino el infinitivo al final: würde gehen."
+      }
+    }
+  ],
+  "speak": {
+    "en": "The Konjunktiv II makes requests, wishes and advice polite. «Könnten Sie mir helfen?» is a polite request. «Ich hätte gern einen Kaffee» is a polite wish. «Du solltest mehr schlafen» is advice. The forms come from the Präteritum with an umlaut: «war», «wäre»; «hatte», «hätte»; «konnte», «könnte». For most other verbs you say «würde» and the infinitive: «Ich würde gern nach Berlin fahren.» A wish that cannot come true is: «Wenn ich doch mehr Zeit hätte!»",
+    "es": "El Konjunktiv II hace corteses las peticiones, los deseos y los consejos. «Könnten Sie mir helfen?» es una petición cortés. «Ich hätte gern einen Kaffee» es un deseo cortés. «Du solltest mehr schlafen» es un consejo. Las formas vienen del Präteritum con diéresis: «war», «wäre»; «hatte», «hätte»; «konnte», «könnte». Para la mayoría de los demás verbos se dice «würde» y el infinitivo: «Ich würde gern nach Berlin fahren.» Un deseo que no se puede cumplir es: «Wenn ich doch mehr Zeit hätte!»"
+  },
+  "items": [
+    {
+      "id": "konjunktiv-ii-wuensche-hoeflichkeit-c01",
+      "sentence": "Entschuldigung, ___ Sie mir bitte helfen?",
+      "options": [
+        "Konnten",
+        "Könnten",
+        "Kannst"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The polite request uses the Konjunktiv II of können: könnten, with an umlaut.",
+        "es": "La petición cortés usa el Konjunktiv II de können: könnten, con diéresis."
+      },
+      "wrong": {
+        "Konnten": {
+          "en": "Konnten is the Präteritum and means \"were able to\". Without the umlaut it is not a polite request.",
+          "es": "Konnten es el Präteritum y significa \"podían\". Sin la diéresis no es una petición cortés."
+        },
+        "Kannst": {
+          "en": "Kannst is the form for du. With Sie you need the plural form, and the polite tone needs Könnten.",
+          "es": "Kannst es la forma para du. Con Sie necesitas la forma plural, y el tono cortés pide Könnten."
+        }
+      },
+      "examples": [
+        "Könnten Sie das Fenster öffnen?",
+        "Könnten Sie bitte warten?"
+      ],
+      "tr": {
+        "en": "Excuse me, could you please help me?",
+        "es": "Disculpe, ¿podría ayudarme, por favor?"
+      }
+    },
+    {
+      "id": "konjunktiv-ii-wuensche-hoeflichkeit-f01",
+      "kind": "form",
+      "verb": "Konjunktiv II",
+      "person": "sein",
+      "answer": "wäre",
+      "table": "konjunktiv-ii"
+    },
+    {
+      "id": "konjunktiv-ii-wuensche-hoeflichkeit-c02",
+      "sentence": "Ich ___ gern einen Kaffee.",
+      "options": [
+        "hätte",
+        "hätten",
+        "hättest"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Ich hätte gern is the polite way to order or wish: Konjunktiv II of haben, form for ich.",
+        "es": "Ich hätte gern es la forma cortés de pedir o desear: Konjunktiv II de haben, forma para ich."
+      },
+      "wrong": {
+        "hätten": {
+          "en": "hätten is the form for wir and sie. With ich the form is hätte.",
+          "es": "hätten es la forma para wir y sie. Con ich la forma es hätte."
+        },
+        "hättest": {
+          "en": "hättest is the form for du. With ich the form is hätte.",
+          "es": "hättest es la forma para du. Con ich la forma es hätte."
+        }
+      },
+      "examples": [
+        "Ich hätte gern ein Wasser.",
+        "Ich hätte gern eine Suppe."
+      ],
+      "tr": {
+        "en": "I would like a coffee.",
+        "es": "Quisiera un café."
+      }
+    },
+    {
+      "id": "konjunktiv-ii-wuensche-hoeflichkeit-f02",
+      "kind": "form",
+      "verb": "haben",
+      "person": "du",
+      "answer": "hättest",
+      "table": "konjunktiv-ii-formen"
+    },
+    {
+      "id": "konjunktiv-ii-wuensche-hoeflichkeit-c03",
+      "sentence": "Du ___ mehr Wasser trinken.",
+      "options": [
+        "sollten",
+        "solltest",
+        "sollt"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Advice to du uses sollte with the ending -st: solltest.",
+        "es": "Un consejo para du usa sollte con la terminación -st: solltest."
+      },
+      "wrong": {
+        "sollten": {
+          "en": "sollten is the form for wir and sie. With du you need the ending -st.",
+          "es": "sollten es la forma para wir y sie. Con du necesitas la terminación -st."
+        },
+        "sollt": {
+          "en": "sollt is the form for ihr in the present. With du the Konjunktiv II is solltest.",
+          "es": "sollt es la forma para ihr en presente. Con du el Konjunktiv II es solltest."
+        }
+      },
+      "examples": [
+        "Du solltest mehr schlafen.",
+        "Du solltest zum Arzt gehen."
+      ],
+      "tr": {
+        "en": "You should drink more water.",
+        "es": "Deberías tomar más agua."
+      }
+    },
+    {
+      "id": "konjunktiv-ii-wuensche-hoeflichkeit-f03",
+      "kind": "form",
+      "verb": "Konjunktiv II",
+      "person": "können",
+      "answer": "könnte",
+      "table": "konjunktiv-ii"
+    },
+    {
+      "id": "konjunktiv-ii-wuensche-hoeflichkeit-w01",
+      "kind": "why",
+      "es": "Könnten Sie mir helfen?",
+      "target": "Könnten",
+      "tr": {
+        "en": "Could you help me?",
+        "es": "¿Podría ayudarme?"
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Könnten is the Präteritum and asks about the past",
+            "es": "Könnten es el Präteritum y pregunta por el pasado"
+          },
+          "wrong": {
+            "en": "The Präteritum is konnten, without an umlaut. With the umlaut könnten is the Konjunktiv II.",
+            "es": "El Präteritum es konnten, sin diéresis. Con diéresis könnten es el Konjunktiv II."
+          }
+        },
+        {
+          "text": {
+            "en": "Könnten is the Konjunktiv II of können and makes the request polite",
+            "es": "Könnten es el Konjunktiv II de können y vuelve cortés la petición"
+          }
+        },
+        {
+          "text": {
+            "en": "Könnten is a future form and asks about tomorrow",
+            "es": "Könnten es una forma de futuro y pregunta por mañana"
+          },
+          "wrong": {
+            "en": "German makes the future with werden. könnten is not a future form, it only softens the tone.",
+            "es": "El alemán forma el futuro con werden. könnten no es una forma de futuro, solo suaviza el tono."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "konjunktiv-ii-wuensche-hoeflichkeit-c04",
+      "sentence": "Wir ___ ins Kino gehen.",
+      "options": [
+        "könntet",
+        "könnt",
+        "könnten"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "A suggestion with wir uses könnten: Wir könnten ins Kino gehen.",
+        "es": "Una sugerencia con wir usa könnten: Wir könnten ins Kino gehen."
+      },
+      "wrong": {
+        "könntet": {
+          "en": "könntet is the form for ihr. With wir you need könnten.",
+          "es": "könntet es la forma para ihr. Con wir necesitas könnten."
+        },
+        "könnt": {
+          "en": "könnt is the present form for ihr. With wir the Konjunktiv II is könnten.",
+          "es": "könnt es la forma de presente para ihr. Con wir el Konjunktiv II es könnten."
+        }
+      },
+      "examples": [
+        "Wir könnten ein Eis essen.",
+        "Wir könnten am Samstag kommen."
+      ],
+      "tr": {
+        "en": "We could go to the cinema.",
+        "es": "Podríamos ir al cine."
+      }
+    },
+    {
+      "id": "konjunktiv-ii-wuensche-hoeflichkeit-f04",
+      "kind": "form",
+      "verb": "sein",
+      "person": "wir",
+      "answer": "wären",
+      "table": "konjunktiv-ii-formen"
+    },
+    {
+      "id": "konjunktiv-ii-wuensche-hoeflichkeit-c05",
+      "sentence": "Ich ___ gern reich.",
+      "options": [
+        "wärt",
+        "wären",
+        "wäre"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The wish uses the Konjunktiv II of sein, and the form for ich is wäre.",
+        "es": "El deseo usa el Konjunktiv II de sein, y la forma para ich es wäre."
+      },
+      "wrong": {
+        "wärt": {
+          "en": "wärt is the form for ihr. With ich the form is wäre.",
+          "es": "wärt es la forma para ihr. Con ich la forma es wäre."
+        },
+        "wären": {
+          "en": "wären is the form for wir and sie. With ich the form is wäre.",
+          "es": "wären es la forma para wir y sie. Con ich la forma es wäre."
+        }
+      },
+      "examples": [
+        "Ich wäre gern zu Hause.",
+        "Wir wären gern in Berlin."
+      ],
+      "tr": {
+        "en": "I would like to be rich.",
+        "es": "Me gustaría ser rico."
+      }
+    },
+    {
+      "id": "konjunktiv-ii-wuensche-hoeflichkeit-f05",
+      "kind": "form",
+      "verb": "Konjunktiv II",
+      "person": "haben",
+      "answer": "hätte",
+      "table": "konjunktiv-ii"
+    },
+    {
+      "id": "konjunktiv-ii-wuensche-hoeflichkeit-c06",
+      "sentence": "An deiner Stelle ___ ich mehr schlafen.",
+      "options": [
+        "würde",
+        "würdest",
+        "würden"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Advice with An deiner Stelle uses würde + infinitive. The subject is ich, so the form is würde.",
+        "es": "El consejo con An deiner Stelle usa würde + infinitivo. El sujeto es ich, así que la forma es würde."
+      },
+      "wrong": {
+        "würdest": {
+          "en": "würdest is the form for du. The subject here is ich.",
+          "es": "würdest es la forma para du. El sujeto aquí es ich."
+        },
+        "würden": {
+          "en": "würden is the form for wir and sie. The subject here is ich.",
+          "es": "würden es la forma para wir y sie. El sujeto aquí es ich."
+        }
+      },
+      "examples": [
+        "An deiner Stelle würde ich warten.",
+        "An deiner Stelle würde ich nach Hause gehen."
+      ],
+      "tr": {
+        "en": "In your place I would sleep more.",
+        "es": "En tu lugar yo dormiría más."
+      }
+    },
+    {
+      "id": "konjunktiv-ii-wuensche-hoeflichkeit-f06",
+      "kind": "form",
+      "verb": "können",
+      "person": "ich",
+      "answer": "könnte",
+      "table": "konjunktiv-ii-formen"
+    },
+    {
+      "id": "konjunktiv-ii-wuensche-hoeflichkeit-w02",
+      "kind": "why",
+      "es": "Ich hätte gern einen Kaffee.",
+      "target": "hätte",
+      "tr": {
+        "en": "I would like a coffee.",
+        "es": "Quisiera un café."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "hätte is the Perfekt of haben",
+            "es": "hätte es el Perfekt de haben"
+          },
+          "wrong": {
+            "en": "The Perfekt would be habe gehabt, with two words. hätte is one word, the Konjunktiv II.",
+            "es": "El Perfekt sería habe gehabt, con dos palabras. hätte es una palabra, el Konjunktiv II."
+          }
+        },
+        {
+          "text": {
+            "en": "hätte is the Präteritum: I had a coffee earlier",
+            "es": "hätte es el Präteritum: tuve un café antes"
+          },
+          "wrong": {
+            "en": "The Präteritum is hatte, without an umlaut. The umlaut in hätte makes it polite.",
+            "es": "El Präteritum es hatte, sin diéresis. La diéresis en hätte lo vuelve cortés."
+          }
+        },
+        {
+          "text": {
+            "en": "hätte gern is a polite way to order or wish, Konjunktiv II of haben",
+            "es": "hätte gern es una forma cortés de pedir o desear, Konjunktiv II de haben"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "konjunktiv-ii-wuensche-hoeflichkeit-c07",
+      "sentence": "___ Sie mir bitte das Salz geben?",
+      "options": [
+        "Würdest",
+        "Würde",
+        "Würden"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The polite Sie takes the plural form: Würden Sie ... geben?",
+        "es": "El Sie de cortesía lleva la forma plural: Würden Sie ... geben?"
+      },
+      "wrong": {
+        "Würdest": {
+          "en": "Würdest is the form for du. With Sie you need Würden.",
+          "es": "Würdest es la forma para du. Con Sie necesitas Würden."
+        },
+        "Würde": {
+          "en": "Würde is the singular form for er, sie and es, or for ich. The polite Sie needs the plural form.",
+          "es": "Würde es la forma singular para er, sie y es, o para ich. El Sie de cortesía necesita la forma plural."
+        }
+      },
+      "examples": [
+        "Würden Sie bitte langsam sprechen?",
+        "Würden Sie bitte die Tür schließen?"
+      ],
+      "tr": {
+        "en": "Would you please pass me the salt?",
+        "es": "¿Me pasaría la sal, por favor?"
+      }
+    },
+    {
+      "id": "konjunktiv-ii-wuensche-hoeflichkeit-f07",
+      "kind": "form",
+      "verb": "Konjunktiv II",
+      "person": "werden",
+      "answer": "würde",
+      "table": "konjunktiv-ii"
+    },
+    {
+      "id": "konjunktiv-ii-wuensche-hoeflichkeit-c08",
+      "sentence": "Wenn ich doch mehr Zeit ___!",
+      "options": [
+        "habe",
+        "hatte",
+        "hätte"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "A wish that is not true uses the Konjunktiv II: Wenn ich doch mehr Zeit hätte!",
+        "es": "Un deseo que no es realidad usa el Konjunktiv II: Wenn ich doch mehr Zeit hätte!"
+      },
+      "wrong": {
+        "habe": {
+          "en": "habe is the present tense and describes what is real. This is a sigh about something that is not true.",
+          "es": "habe es el presente y describe lo real. Esto es un suspiro sobre algo que no es verdad."
+        },
+        "hatte": {
+          "en": "hatte is the Präteritum, a fact in the past. A wish with doch needs the umlaut: hätte.",
+          "es": "hatte es el Präteritum, un hecho del pasado. Un deseo con doch necesita la diéresis: hätte."
+        }
+      },
+      "examples": [
+        "Wenn er doch hier wäre!",
+        "Wenn ich doch ein Auto hätte!"
+      ],
+      "tr": {
+        "en": "If only I had more time!",
+        "es": "¡Si tan solo tuviera más tiempo!"
+      }
+    },
+    {
+      "id": "konjunktiv-ii-wuensche-hoeflichkeit-f08",
+      "kind": "form",
+      "verb": "werden",
+      "person": "du",
+      "answer": "würdest",
+      "table": "konjunktiv-ii-formen"
+    },
+    {
+      "id": "konjunktiv-ii-wuensche-hoeflichkeit-c09",
+      "sentence": "Ich ___ bitte ein Wasser.",
+      "options": [
+        "mag",
+        "möchte",
+        "mochte"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "möchte is the polite fixed form for wishes, when you order or ask for something.",
+        "es": "möchte es la forma fija cortés para deseos, cuando pides algo."
+      },
+      "wrong": {
+        "mag": {
+          "en": "mag means \"like\" (Ich mag Wasser). It does not work as an order with bitte.",
+          "es": "mag significa \"gustar\" (Ich mag Wasser). No funciona como pedido con bitte."
+        },
+        "mochte": {
+          "en": "mochte is the Präteritum of mögen. It means \"liked\" and has no polite meaning.",
+          "es": "mochte es el Präteritum de mögen. Significa \"gustaba\" y no tiene sentido cortés."
+        }
+      },
+      "examples": [
+        "Ich möchte bitte einen Tee.",
+        "Ich möchte gern zahlen."
+      ],
+      "tr": {
+        "en": "I would like a water, please.",
+        "es": "Quisiera un agua, por favor."
+      }
+    },
+    {
+      "id": "konjunktiv-ii-wuensche-hoeflichkeit-f09",
+      "kind": "form",
+      "verb": "Konjunktiv II",
+      "person": "müssen",
+      "answer": "müsste",
+      "table": "konjunktiv-ii"
+    },
+    {
+      "id": "konjunktiv-ii-wuensche-hoeflichkeit-w03",
+      "kind": "why",
+      "es": "An deiner Stelle würde ich mehr schlafen.",
+      "target": "würde",
+      "tr": {
+        "en": "In your place I would sleep more.",
+        "es": "En tu lugar yo dormiría más."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "würde is the future: I will sleep more",
+            "es": "würde es el futuro: dormiré más"
+          },
+          "wrong": {
+            "en": "The future is werde schlafen. würde with an umlaut is the Konjunktiv II and gives advice.",
+            "es": "El futuro es werde schlafen. würde con diéresis es el Konjunktiv II y da un consejo."
+          }
+        },
+        {
+          "text": {
+            "en": "würde + infinitive is the usual Konjunktiv II for most verbs and gives advice",
+            "es": "würde + infinitivo es el Konjunktiv II habitual para la mayoría de los verbos y da un consejo"
+          }
+        },
+        {
+          "text": {
+            "en": "würde is the Präteritum of werden: I became",
+            "es": "würde es el Präteritum de werden: me volví"
+          },
+          "wrong": {
+            "en": "The Präteritum of werden is wurde, without an umlaut. würde with an umlaut is the Konjunktiv II.",
+            "es": "El Präteritum de werden es wurde, sin diéresis. würde con diéresis es el Konjunktiv II."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "konjunktiv-ii-wuensche-hoeflichkeit-c10",
+      "sentence": "Entschuldigung, ___ ich Sie etwas fragen?",
+      "options": [
+        "Dürfte",
+        "Dürften",
+        "Dürftest"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "A very polite question uses dürfte, with the umlaut. The subject is ich, so the form is dürfte.",
+        "es": "Una pregunta muy cortés usa dürfte, con diéresis. El sujeto es ich, así que la forma es dürfte."
+      },
+      "wrong": {
+        "Dürften": {
+          "en": "Dürften is the form for wir and sie. With ich the form is Dürfte.",
+          "es": "Dürften es la forma para wir y sie. Con ich la forma es Dürfte."
+        },
+        "Dürftest": {
+          "en": "Dürftest is the form for du. With ich the form is Dürfte.",
+          "es": "Dürftest es la forma para du. Con ich la forma es Dürfte."
+        }
+      },
+      "examples": [
+        "Dürfte ich bitte hier sitzen?",
+        "Dürfte ich das Fenster öffnen?"
+      ],
+      "tr": {
+        "en": "Excuse me, might I ask you something?",
+        "es": "Disculpe, ¿podría preguntarle algo?"
+      }
+    },
+    {
+      "id": "konjunktiv-ii-wuensche-hoeflichkeit-f10",
+      "kind": "form",
+      "verb": "haben",
+      "person": "wir",
+      "answer": "hätten",
+      "table": "konjunktiv-ii-formen"
+    },
+    {
+      "id": "konjunktiv-ii-wuensche-hoeflichkeit-c11",
+      "sentence": "Wir ___ gern ein größeres Zimmer.",
+      "options": [
+        "hättet",
+        "hätten",
+        "hätte"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The polite wish with wir uses hätten: Wir hätten gern ...",
+        "es": "El deseo cortés con wir usa hätten: Wir hätten gern ..."
+      },
+      "wrong": {
+        "hättet": {
+          "en": "hättet is the form for ihr. With wir you need hätten.",
+          "es": "hättet es la forma para ihr. Con wir necesitas hätten."
+        },
+        "hätte": {
+          "en": "hätte is the form for ich and er/sie/es. With wir the plural form hätten is needed.",
+          "es": "hätte es la forma para ich y er/sie/es. Con wir se necesita la forma plural hätten."
+        }
+      },
+      "examples": [
+        "Wir hätten gern zwei Kaffee.",
+        "Wir hätten gern einen Tisch."
+      ],
+      "tr": {
+        "en": "We would like a bigger room.",
+        "es": "Nos gustaría una habitación más grande."
+      }
+    },
+    {
+      "id": "konjunktiv-ii-wuensche-hoeflichkeit-f11",
+      "kind": "form",
+      "verb": "Präteritum",
+      "person": "dürfen",
+      "answer": "durfte",
+      "table": "konjunktiv-ii"
+    },
+    {
+      "id": "konjunktiv-ii-wuensche-hoeflichkeit-c12",
+      "sentence": "Es ___ schön, mit dir zu reisen.",
+      "options": [
+        "wäre",
+        "wären",
+        "wärt"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "A polite wish with es uses wäre: Es wäre schön ...",
+        "es": "Un deseo cortés con es usa wäre: Es wäre schön ..."
+      },
+      "wrong": {
+        "wären": {
+          "en": "wären is the plural form for wir and sie. es is singular and takes wäre.",
+          "es": "wären es la forma plural para wir y sie. es es singular y lleva wäre."
+        },
+        "wärt": {
+          "en": "wärt is the form for ihr. With es the form is wäre.",
+          "es": "wärt es la forma para ihr. Con es la forma es wäre."
+        }
+      },
+      "examples": [
+        "Es wäre gut, früh zu kommen.",
+        "Es wäre schön, dich zu sehen."
+      ],
+      "tr": {
+        "en": "It would be nice to travel with you.",
+        "es": "Sería bonito viajar contigo."
+      }
+    },
+    {
+      "id": "konjunktiv-ii-wuensche-hoeflichkeit-f12",
+      "kind": "form",
+      "verb": "sein",
+      "person": "ihr",
+      "answer": "wärt",
+      "table": "konjunktiv-ii-formen"
+    },
+    {
+      "id": "konjunktiv-ii-wuensche-hoeflichkeit-c13",
+      "sentence": "Ich ___ dir gern helfen.",
+      "options": [
+        "wurde",
+        "würde",
+        "würdest"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Ich würde gern + infinitive is a polite wish. The umlaut makes the Konjunktiv II: würde.",
+        "es": "Ich würde gern + infinitivo es un deseo cortés. La diéresis forma el Konjunktiv II: würde."
+      },
+      "wrong": {
+        "wurde": {
+          "en": "wurde is the Präteritum of werden, without an umlaut. It does not form a polite wish.",
+          "es": "wurde es el Präteritum de werden, sin diéresis. No forma un deseo cortés."
+        },
+        "würdest": {
+          "en": "würdest is the form for du. The subject here is ich.",
+          "es": "würdest es la forma para du. El sujeto aquí es ich."
+        }
+      },
+      "examples": [
+        "Ich würde dir gern zeigen, wo das ist.",
+        "Ich würde gern mitkommen."
+      ],
+      "tr": {
+        "en": "I would like to help you.",
+        "es": "Me gustaría ayudarte."
+      }
+    },
+    {
+      "id": "konjunktiv-ii-wuensche-hoeflichkeit-c14",
+      "sentence": "Könntest du mir bitte ___?",
+      "options": [
+        "geholfen",
+        "hilft",
+        "helfen"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "After könntest the main verb is an infinitive at the end: Könntest du mir bitte helfen?",
+        "es": "Después de könntest el verbo principal es un infinitivo al final: Könntest du mir bitte helfen?"
+      },
+      "wrong": {
+        "geholfen": {
+          "en": "geholfen is the participle of the Perfekt. After a modal verb the infinitive is used.",
+          "es": "geholfen es el participio del Perfekt. Después de un verbo modal se usa el infinitivo."
+        },
+        "hilft": {
+          "en": "hilft is a conjugated form. Only könntest is conjugated, the main verb stays in the infinitive.",
+          "es": "hilft es una forma conjugada. Solo könntest se conjuga, el verbo principal queda en infinitivo."
+        }
+      },
+      "examples": [
+        "Könntest du das Fenster öffnen?",
+        "Könntest du bitte kommen?"
+      ],
+      "tr": {
+        "en": "Could you please help me out?",
+        "es": "¿Podrías ayudarme, por favor?"
+      }
+    },
+    {
+      "id": "konjunktiv-ii-wuensche-hoeflichkeit-w04",
+      "kind": "why",
+      "es": "Du solltest mehr schlafen.",
+      "target": "solltest",
+      "tr": {
+        "en": "You should sleep more.",
+        "es": "Deberías dormir más."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "solltest is a command, like du sollst",
+            "es": "solltest es una orden, como du sollst"
+          },
+          "wrong": {
+            "en": "du sollst is a strong obligation. solltest softens it into friendly advice.",
+            "es": "du sollst es una obligación fuerte. solltest la suaviza hasta un consejo amable."
+          }
+        },
+        {
+          "text": {
+            "en": "sollen takes an umlaut in the Konjunktiv II: söllte",
+            "es": "sollen lleva diéresis en el Konjunktiv II: söllte"
+          },
+          "wrong": {
+            "en": "sollen and wollen have no umlaut. Their Konjunktiv II looks like the Präteritum, and the context shows the polite meaning.",
+            "es": "sollen y wollen no llevan diéresis. Su Konjunktiv II se ve como el Präteritum, y el contexto muestra el sentido cortés."
+          }
+        },
+        {
+          "text": {
+            "en": "The Konjunktiv II of sollen softens the tone and gives advice",
+            "es": "El Konjunktiv II de sollen suaviza el tono y da un consejo"
+          }
+        }
+      ],
+      "correctIndex": 2
+    }
+  ]
+}

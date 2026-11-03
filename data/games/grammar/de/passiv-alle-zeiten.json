@@ -1,0 +1,994 @@
+{
+  "schema": 2,
+  "topic": "passiv-alle-zeiten",
+  "level": "B2",
+  "title": {
+    "en": "The passive in all tenses",
+    "es": "La pasiva en todos los tiempos"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "The passive of an action (Vorgangspassiv) is built with werden and the Partizip II, and the tense is shown by werden: wird gebaut (Präsens), wurde gebaut (Präteritum), ist gebaut worden (Perfekt), war gebaut worden (Plusquamperfekt), wird gebaut werden (Futur I). In the perfect tenses werden has the special participle worden, not geworden. The passive is common in news, reports and instructions, where the doer is unknown or unimportant. English was built, has been built and Spanish fue construido, ha sido construido work the same way.",
+        "es": "La pasiva de acción (Vorgangspassiv) se forma con werden y el Partizip II, y el tiempo lo muestra werden: wird gebaut (Präsens), wurde gebaut (Präteritum), ist gebaut worden (Perfekt), war gebaut worden (Plusquamperfekt), wird gebaut werden (Futur I). En los tiempos perfectos werden tiene el participio especial worden, no geworden. La pasiva es común en noticias, informes e instrucciones, donde se desconoce a quien hace la acción o no importa. El inglés was built, has been built y el español fue construido, ha sido construido funcionan igual."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "passiv-zeiten",
+      "title": {
+        "en": "The passive in five tenses",
+        "es": "La pasiva en cinco tiempos"
+      },
+      "header": [
+        {
+          "en": "Tense",
+          "es": "Tiempo"
+        },
+        {
+          "en": "Das Haus",
+          "es": "Das Haus"
+        },
+        {
+          "en": "Die Häuser",
+          "es": "Die Häuser"
+        }
+      ],
+      "rows": [
+        [
+          "Präsens",
+          "wird gebaut",
+          "werden gebaut"
+        ],
+        [
+          "Präteritum",
+          "wurde gebaut",
+          "wurden gebaut"
+        ],
+        [
+          "Perfekt",
+          "ist gebaut worden",
+          "sind gebaut worden"
+        ],
+        [
+          "Plusquamperfekt",
+          "war gebaut worden",
+          "waren gebaut worden"
+        ],
+        [
+          "Futur I",
+          "wird gebaut werden",
+          "werden gebaut werden"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "passiv-verben",
+      "title": {
+        "en": "Präteritum and Perfekt of the passive",
+        "es": "Präteritum y Perfekt de la pasiva"
+      },
+      "header": [
+        {
+          "en": "Verb",
+          "es": "Verbo"
+        },
+        {
+          "en": "Präteritum Passiv (es)",
+          "es": "Präteritum Passiv (es)"
+        },
+        {
+          "en": "Perfekt Passiv (es)",
+          "es": "Perfekt Passiv (es)"
+        }
+      ],
+      "rows": [
+        [
+          "öffnen",
+          "wurde geöffnet",
+          "ist geöffnet worden"
+        ],
+        [
+          "reparieren",
+          "wurde repariert",
+          "ist repariert worden"
+        ],
+        [
+          "schreiben",
+          "wurde geschrieben",
+          "ist geschrieben worden"
+        ],
+        [
+          "einladen",
+          "wurde eingeladen",
+          "ist eingeladen worden"
+        ],
+        [
+          "bezahlen",
+          "wurde bezahlt",
+          "ist bezahlt worden"
+        ],
+        [
+          "finden",
+          "wurde gefunden",
+          "ist gefunden worden"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Forming the tenses",
+        "es": "Formación de los tiempos"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "Present and past are simple: wird or wurde plus the participle. In the Perfekt and Plusquamperfekt the auxiliary is sein (ist, war), and werden becomes worden at the end. The Futur I needs two forms of werden.",
+            "es": "El presente y el pasado son simples: wird o wurde más el participio. En el Perfekt y el Plusquamperfekt el auxiliar es sein (ist, war), y werden se convierte en worden al final. El Futur I necesita dos formas de werden."
+          },
+          "examples": [
+            {
+              "es": "Das Haus wird gebaut.",
+              "tr": {
+                "en": "The house is being built.",
+                "es": "La casa se está construyendo."
+              }
+            },
+            {
+              "es": "Das Haus wurde vor zehn Jahren gebaut.",
+              "tr": {
+                "en": "The house was built ten years ago.",
+                "es": "La casa fue construida hace diez años."
+              }
+            },
+            {
+              "es": "Das Haus ist vor zehn Jahren gebaut worden.",
+              "tr": {
+                "en": "The house was built ten years ago.",
+                "es": "La casa fue construida hace diez años."
+              }
+            },
+            {
+              "es": "Das Zimmer war schon gereinigt worden, als wir kamen.",
+              "tr": {
+                "en": "The room had already been cleaned when we arrived.",
+                "es": "El cuarto ya había sido limpiado cuando llegamos."
+              }
+            },
+            {
+              "es": "Das Haus wird nächstes Jahr gebaut werden.",
+              "tr": {
+                "en": "The house will be built next year.",
+                "es": "La casa será construida el próximo año."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "With a modal verb the passive has the pattern modal + participle + werden. In the Präteritum: musste gebaut werden. In the Perfekt there is a double infinitive: hat gebaut werden müssen (understand it, you will rarely need to write it).",
+            "es": "Con un verbo modal la pasiva tiene el patrón modal + participio + werden. En Präteritum: musste gebaut werden. En Perfekt hay un doble infinitivo: hat gebaut werden müssen (entiéndelo, rara vez necesitarás escribirlo)."
+          },
+          "examples": [
+            {
+              "es": "Das Haus muss gebaut werden.",
+              "tr": {
+                "en": "The house has to be built.",
+                "es": "La casa tiene que construirse."
+              }
+            },
+            {
+              "es": "Das Formular musste ausgefüllt werden.",
+              "tr": {
+                "en": "The form had to be filled out.",
+                "es": "El formulario tenía que llenarse."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Agent, impersonal passive, subordinate clauses",
+        "es": "Agente, pasiva impersonal, oraciones subordinadas"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "The doer is introduced with von + dative. A cause or a means uses durch + accusative. When the doer is not important, leave it out.",
+            "es": "El agente se introduce con von + dativo. Una causa o un medio usa durch + acusativo. Cuando quien hace la acción no importa, se omite."
+          },
+          "examples": [
+            {
+              "es": "Der Brief wurde von Anna geschrieben.",
+              "tr": {
+                "en": "The letter was written by Anna.",
+                "es": "La carta fue escrita por Anna."
+              }
+            },
+            {
+              "es": "Das Haus wurde durch ein Feuer zerstört.",
+              "tr": {
+                "en": "The house was destroyed by a fire.",
+                "es": "La casa fue destruida por un incendio."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Impersonal passive: an intransitive verb can also be passive, without a subject. The activity matters. In a subordinate clause the auxiliary stands last.",
+            "es": "Pasiva impersonal: un verbo intransitivo también puede ser pasivo, sin sujeto. Importa la actividad. En una oración subordinada el auxiliar va al final."
+          },
+          "examples": [
+            {
+              "es": "Gestern wurde viel getanzt.",
+              "tr": {
+                "en": "There was a lot of dancing yesterday.",
+                "es": "Ayer se bailó mucho."
+              }
+            },
+            {
+              "es": "Er weiß, dass das Haus gebaut worden ist.",
+              "tr": {
+                "en": "He knows that the house has been built.",
+                "es": "Él sabe que la casa ha sido construida."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "worden or geworden?",
+        "es": "¿worden o geworden?"
+      },
+      "pairs": [
+        {
+          "a": "Das Haus ist gebaut worden.",
+          "b": "Er ist Arzt geworden.",
+          "note": {
+            "en": "worden is the participle of werden as an auxiliary of the passive. geworden is the participle of werden as a full verb meaning to become.",
+            "es": "worden es el participio de werden como auxiliar de la pasiva. geworden es el participio de werden como verbo pleno que significa llegar a ser."
+          },
+          "examples": [
+            {
+              "es": "Der Brief ist geschrieben worden.",
+              "tr": {
+                "en": "The letter has been written.",
+                "es": "La carta ha sido escrita."
+              }
+            },
+            {
+              "es": "Es ist kalt geworden.",
+              "tr": {
+                "en": "It has become cold.",
+                "es": "Se ha puesto frío."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: the Perfekt of the passive ends in worden, not geworden (ist gebaut worden). The Perfekt and Plusquamperfekt passive use sein, not haben. Do not forget the participle: Das Haus wurde gebaut, not Das Haus wurde bauen. For the Futur I the two werden have different jobs: wird (auxiliary of the future) and werden (auxiliary of the passive). A plural subject needs wurden, werden, sind, waren. Impersonal passive has no subject: Gestern wurde viel getanzt, not Gestern wurden viel getanzt.",
+        "es": "Trampas clásicas: el Perfekt de la pasiva termina en worden, no en geworden (ist gebaut worden). El Perfekt y el Plusquamperfekt de la pasiva usan sein, no haben. No olvides el participio: Das Haus wurde gebaut, no Das Haus wurde bauen. En el Futur I los dos werden tienen funciones distintas: wird (auxiliar del futuro) y werden (auxiliar de la pasiva). Un sujeto plural necesita wurden, werden, sind, waren. La pasiva impersonal no tiene sujeto: Gestern wurde viel getanzt, no Gestern wurden viel getanzt."
+      }
+    }
+  ],
+  "speak": {
+    "en": "The passive is built with «werden» and the participle, and «werden» shows the tense. «Das Haus wird gebaut.» «Das Haus wurde vor zehn Jahren gebaut.» In the Perfekt the form is «ist gebaut worden», with «worden», not «geworden». The doer is introduced with «von»: «Der Brief wurde von Anna geschrieben.» There is also an impersonal passive without a subject: «Gestern wurde viel getanzt.»",
+    "es": "La pasiva se forma con «werden» y el participio, y «werden» muestra el tiempo. «Das Haus wird gebaut.» «Das Haus wurde vor zehn Jahren gebaut.» En el Perfekt la forma es «ist gebaut worden», con «worden», no «geworden». El agente se introduce con «von»: «Der Brief wurde von Anna geschrieben.» También hay una pasiva impersonal sin sujeto: «Gestern wurde viel getanzt.»"
+  },
+  "items": [
+    {
+      "id": "passiv-alle-zeiten-c01",
+      "sentence": "Das Haus ___ vor zehn Jahren gebaut.",
+      "options": [
+        "wird",
+        "wurde",
+        "ist"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The building happened in the past and the sentence has a time in the past, so the Präteritum passive is used: wurde gebaut.",
+        "es": "La construcción ocurrió en el pasado y la oración tiene un tiempo pasado, así que se usa la pasiva en Präteritum: wurde gebaut."
+      },
+      "wrong": {
+        "wird": {
+          "en": "wird is the present. With vor zehn Jahren the action lies in the past, so the present does not fit.",
+          "es": "wird es el presente. Con vor zehn Jahren la acción está en el pasado, así que el presente no encaja."
+        },
+        "ist": {
+          "en": "ist would need worden at the end for the Perfekt: ist gebaut worden. Alone, ist gebaut is a state.",
+          "es": "ist necesitaría worden al final para el Perfekt: ist gebaut worden. Solo, ist gebaut es un estado."
+        }
+      },
+      "examples": [
+        "Das Auto wurde gestern repariert.",
+        "Der Brief wurde vor einer Woche geschrieben."
+      ],
+      "tr": {
+        "en": "The house was built ten years ago.",
+        "es": "La casa fue construida hace diez años."
+      }
+    },
+    {
+      "id": "passiv-alle-zeiten-f01",
+      "kind": "form",
+      "verb": "Das Haus",
+      "person": "Präsens",
+      "answer": "wird gebaut",
+      "table": "passiv-zeiten"
+    },
+    {
+      "id": "passiv-alle-zeiten-c02",
+      "sentence": "Das Haus ist vor zehn Jahren gebaut ___.",
+      "options": [
+        "geworden",
+        "werden",
+        "worden"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "In the perfect tenses of the passive, werden has the short participle worden.",
+        "es": "En los tiempos perfectos de la pasiva, werden tiene el participio corto worden."
+      },
+      "wrong": {
+        "geworden": {
+          "en": "geworden is the participle of werden as a full verb (become). In the passive the form is worden.",
+          "es": "geworden es el participio de werden como verbo pleno (llegar a ser). En la pasiva la forma es worden."
+        },
+        "werden": {
+          "en": "werden is the infinitive. After ist and the participle gebaut the form needed is the participle worden.",
+          "es": "werden es el infinitivo. Después de ist y el participio gebaut la forma necesaria es el participio worden."
+        }
+      },
+      "examples": [
+        "Der Brief ist geschrieben worden.",
+        "Die Tür ist geöffnet worden."
+      ],
+      "tr": {
+        "en": "The house was built ten years ago.",
+        "es": "La casa fue construida hace diez años."
+      }
+    },
+    {
+      "id": "passiv-alle-zeiten-f02",
+      "kind": "form",
+      "verb": "Präteritum Passiv (es)",
+      "person": "öffnen",
+      "answer": "wurde geöffnet",
+      "table": "passiv-verben"
+    },
+    {
+      "id": "passiv-alle-zeiten-c03",
+      "sentence": "Die Rechnung ___ schon bezahlt worden.",
+      "options": [
+        "ist",
+        "hat",
+        "wird"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The Perfekt of the passive is formed with sein: ist bezahlt worden.",
+        "es": "El Perfekt de la pasiva se forma con sein: ist bezahlt worden."
+      },
+      "wrong": {
+        "hat": {
+          "en": "hat is the auxiliary of the active Perfekt of many verbs. The passive Perfekt always uses sein.",
+          "es": "hat es el auxiliar del Perfekt activo de muchos verbos. El Perfekt de la pasiva usa siempre sein."
+        },
+        "wird": {
+          "en": "wird is the present and cannot be followed by worden. The perfect passive needs ist.",
+          "es": "wird es el presente y no puede ir seguido de worden. La pasiva perfecta necesita ist."
+        }
+      },
+      "examples": [
+        "Das Auto ist repariert worden.",
+        "Die Fenster sind geöffnet worden."
+      ],
+      "tr": {
+        "en": "The bill has already been paid.",
+        "es": "La factura ya ha sido pagada."
+      }
+    },
+    {
+      "id": "passiv-alle-zeiten-f03",
+      "kind": "form",
+      "verb": "Das Haus",
+      "person": "Präteritum",
+      "answer": "wurde gebaut",
+      "table": "passiv-zeiten"
+    },
+    {
+      "id": "passiv-alle-zeiten-w01",
+      "kind": "why",
+      "es": "Das Haus ist vor zehn Jahren gebaut worden.",
+      "target": "worden",
+      "tr": {
+        "en": "The house was built ten years ago.",
+        "es": "La casa fue construida hace diez años."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "geworden: the normal participle of werden",
+            "es": "geworden: el participio normal de werden"
+          },
+          "wrong": {
+            "en": "geworden is the participle of werden as a full verb (to become). As the auxiliary of the passive, werden has the short form worden.",
+            "es": "geworden es el participio de werden como verbo pleno (llegar a ser). Como auxiliar de la pasiva, werden tiene la forma corta worden."
+          }
+        },
+        {
+          "text": {
+            "en": "worden: the participle of werden as the passive auxiliary, without ge-",
+            "es": "worden: el participio de werden como auxiliar de la pasiva, sin ge-"
+          }
+        },
+        {
+          "text": {
+            "en": "werden: the infinitive, because ist is already conjugated",
+            "es": "werden: el infinitivo, porque ist ya está conjugado"
+          },
+          "wrong": {
+            "en": "In the Perfekt the participle stands after gebaut, not the infinitive. The infinitive werden belongs to the Futur.",
+            "es": "En el Perfekt va el participio después de gebaut, no el infinitivo. El infinitivo werden pertenece al futuro."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "passiv-alle-zeiten-c04",
+      "sentence": "Das Zimmer ___ schon gereinigt worden, als wir kamen.",
+      "options": [
+        "war",
+        "wurde",
+        "ist"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The cleaning came before our arrival, so the Plusquamperfekt passive is used: war gereinigt worden.",
+        "es": "La limpieza ocurrió antes de nuestra llegada, así que se usa la pasiva en Plusquamperfekt: war gereinigt worden."
+      },
+      "wrong": {
+        "wurde": {
+          "en": "wurde would make a Präteritum passive, which does not combine with worden. The earlier action needs war.",
+          "es": "wurde formaría una pasiva en Präteritum, que no se combina con worden. La acción anterior necesita war."
+        },
+        "ist": {
+          "en": "ist makes a Perfekt. The sentence tells about the past with kamen, so the cleaning needs war.",
+          "es": "ist forma un Perfekt. La oración habla del pasado con kamen, así que la limpieza necesita war."
+        }
+      },
+      "examples": [
+        "Der Brief war schon geschrieben worden.",
+        "Die Tür war geöffnet worden."
+      ],
+      "tr": {
+        "en": "The room had already been cleaned when we arrived.",
+        "es": "El cuarto ya había sido limpiado cuando llegamos."
+      }
+    },
+    {
+      "id": "passiv-alle-zeiten-f04",
+      "kind": "form",
+      "verb": "Perfekt Passiv (es)",
+      "person": "reparieren",
+      "answer": "ist repariert worden",
+      "table": "passiv-verben"
+    },
+    {
+      "id": "passiv-alle-zeiten-c05",
+      "sentence": "Das Haus wird nächstes Jahr gebaut ___.",
+      "options": [
+        "wird",
+        "worden",
+        "werden"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The Futur I passive has two forms of werden: wird gebaut werden. The last one is the infinitive.",
+        "es": "El Futur I de la pasiva tiene dos formas de werden: wird gebaut werden. La última es el infinitivo."
+      },
+      "wrong": {
+        "wird": {
+          "en": "wird is already there as the first auxiliary. The end of the sentence needs the infinitive werden.",
+          "es": "wird ya está como primer auxiliar. El final de la oración necesita el infinitivo werden."
+        },
+        "worden": {
+          "en": "worden belongs to the Perfekt and the Plusquamperfekt. The future needs the infinitive werden.",
+          "es": "worden pertenece al Perfekt y al Plusquamperfekt. El futuro necesita el infinitivo werden."
+        }
+      },
+      "examples": [
+        "Das Auto wird morgen repariert werden.",
+        "Der Brief wird bald geschrieben werden."
+      ],
+      "tr": {
+        "en": "The house will be built next year.",
+        "es": "La casa será construida el próximo año."
+      }
+    },
+    {
+      "id": "passiv-alle-zeiten-f05",
+      "kind": "form",
+      "verb": "Das Haus",
+      "person": "Perfekt",
+      "answer": "ist gebaut worden",
+      "table": "passiv-zeiten"
+    },
+    {
+      "id": "passiv-alle-zeiten-c06",
+      "sentence": "Die Häuser ___ vor zehn Jahren gebaut.",
+      "options": [
+        "wurde",
+        "wurden",
+        "werden"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Die Häuser is plural, and the past tense is wurden: wurden gebaut.",
+        "es": "Die Häuser es plural, y el tiempo pasado es wurden: wurden gebaut."
+      },
+      "wrong": {
+        "wurde": {
+          "en": "wurde is the singular form for er, sie and es. The subject Die Häuser is plural.",
+          "es": "wurde es la forma singular de er, sie y es. El sujeto Die Häuser es plural."
+        },
+        "werden": {
+          "en": "werden is the plural present. With vor zehn Jahren the past tense wurden is needed.",
+          "es": "werden es el presente plural. Con vor zehn Jahren se necesita el pasado wurden."
+        }
+      },
+      "examples": [
+        "Die Autos wurden gestern repariert.",
+        "Die Briefe wurden von Anna geschrieben."
+      ],
+      "tr": {
+        "en": "The houses were built ten years ago.",
+        "es": "Las casas fueron construidas hace diez años."
+      }
+    },
+    {
+      "id": "passiv-alle-zeiten-f06",
+      "kind": "form",
+      "verb": "Präteritum Passiv (es)",
+      "person": "einladen",
+      "answer": "wurde eingeladen",
+      "table": "passiv-verben"
+    },
+    {
+      "id": "passiv-alle-zeiten-w02",
+      "kind": "why",
+      "es": "Das Haus wurde vor zehn Jahren gebaut.",
+      "target": "wurde",
+      "tr": {
+        "en": "The house was built ten years ago.",
+        "es": "La casa fue construida hace diez años."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "wurde is the Präteritum of sein, so it describes a state",
+            "es": "wurde es el Präteritum de sein, así que describe un estado"
+          },
+          "wrong": {
+            "en": "The Präteritum of sein is war. wurde is the Präteritum of werden and marks an action in the passive.",
+            "es": "El Präteritum de sein es war. wurde es el Präteritum de werden y marca una acción en pasiva."
+          }
+        },
+        {
+          "text": {
+            "en": "wurde + Partizip II: the Präteritum passive of an action",
+            "es": "wurde + Partizip II: la pasiva en Präteritum de una acción"
+          }
+        },
+        {
+          "text": {
+            "en": "wurde must be followed by worden, as in the Perfekt",
+            "es": "wurde debe ir seguido de worden, como en el Perfekt"
+          },
+          "wrong": {
+            "en": "worden belongs to the compound tenses with ist or war. In the Präteritum, wurde and the participle are enough.",
+            "es": "worden pertenece a los tiempos compuestos con ist o war. En el Präteritum bastan wurde y el participio."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "passiv-alle-zeiten-c07",
+      "sentence": "Der Brief wurde ___ Anna geschrieben.",
+      "options": [
+        "von",
+        "durch",
+        "mit"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The person who does the action is introduced with von: von Anna.",
+        "es": "La persona que hace la acción se introduce con von: von Anna."
+      },
+      "wrong": {
+        "durch": {
+          "en": "durch names a cause or a means, or a go-between. Anna is the writer herself, so you need von.",
+          "es": "durch nombra una causa o un medio, o un intermediario. Anna es quien escribe, así que necesitas von."
+        },
+        "mit": {
+          "en": "mit means together with or by means of a tool. It does not name who does the action.",
+          "es": "mit significa junto con o por medio de una herramienta. No nombra a quien hace la acción."
+        }
+      },
+      "examples": [
+        "Das Essen wurde von Paul gekocht.",
+        "Die Tür wurde von Anna geöffnet."
+      ],
+      "tr": {
+        "en": "The letter was written by Anna.",
+        "es": "La carta fue escrita por Anna."
+      }
+    },
+    {
+      "id": "passiv-alle-zeiten-f07",
+      "kind": "form",
+      "verb": "Die Häuser",
+      "person": "Plusquamperfekt",
+      "answer": "waren gebaut worden",
+      "table": "passiv-zeiten"
+    },
+    {
+      "id": "passiv-alle-zeiten-c08",
+      "sentence": "Das Haus wurde ___ ein Feuer zerstört.",
+      "options": [
+        "von",
+        "durch",
+        "mit"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "A fire is a cause or a force, not a person who acts. It is introduced with durch and the accusative.",
+        "es": "Un incendio es una causa o una fuerza, no una persona que actúa. Se introduce con durch y el acusativo."
+      },
+      "wrong": {
+        "von": {
+          "en": "von would need the dative (von einem Feuer). With the accusative ein Feuer the preposition must be durch.",
+          "es": "von necesitaría el dativo (von einem Feuer). Con el acusativo ein Feuer la preposición debe ser durch."
+        },
+        "mit": {
+          "en": "mit takes the dative, not the accusative, and it names a tool or company. It does not give the cause.",
+          "es": "mit lleva dativo, no acusativo, y nombra una herramienta o compañía. No da la causa."
+        }
+      },
+      "examples": [
+        "Die Brücke wurde durch einen Sturm zerstört.",
+        "Das Haus wurde durch einen Unfall beschädigt."
+      ],
+      "tr": {
+        "en": "The house was destroyed by a fire.",
+        "es": "La casa fue destruida por un incendio."
+      }
+    },
+    {
+      "id": "passiv-alle-zeiten-f08",
+      "kind": "form",
+      "verb": "Perfekt Passiv (es)",
+      "person": "schreiben",
+      "answer": "ist geschrieben worden",
+      "table": "passiv-verben"
+    },
+    {
+      "id": "passiv-alle-zeiten-c09",
+      "sentence": "Gestern ___ viel getanzt.",
+      "options": [
+        "wurden",
+        "ist",
+        "wurde"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The impersonal passive has no subject, so the auxiliary stays in the singular: wurde getanzt.",
+        "es": "La pasiva impersonal no tiene sujeto, así que el auxiliar se queda en singular: wurde getanzt."
+      },
+      "wrong": {
+        "wurden": {
+          "en": "wurden is plural. viel is not a plural subject, and there is no subject in the sentence.",
+          "es": "wurden es plural. viel no es un sujeto plural, y no hay sujeto en la oración."
+        },
+        "ist": {
+          "en": "ist would need worden at the end (ist getanzt worden). Alone it does not form a passive.",
+          "es": "ist necesitaría worden al final (ist getanzt worden). Solo no forma una pasiva."
+        }
+      },
+      "examples": [
+        "Hier wurde lange gearbeitet.",
+        "Gestern wurde viel gelacht."
+      ],
+      "tr": {
+        "en": "There was a lot of dancing yesterday.",
+        "es": "Ayer se bailó mucho."
+      }
+    },
+    {
+      "id": "passiv-alle-zeiten-f09",
+      "kind": "form",
+      "verb": "Das Haus",
+      "person": "Futur I",
+      "answer": "wird gebaut werden",
+      "table": "passiv-zeiten"
+    },
+    {
+      "id": "passiv-alle-zeiten-w03",
+      "kind": "why",
+      "es": "Gestern wurde viel getanzt.",
+      "target": "wurde",
+      "tr": {
+        "en": "There was a lot of dancing yesterday.",
+        "es": "Ayer se bailó mucho."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "wurden: viel means many, so the verb is plural",
+            "es": "wurden: viel significa muchos, así que el verbo es plural"
+          },
+          "wrong": {
+            "en": "viel is not a subject here. The verb is not agreeing with anything, so it stays in the singular.",
+            "es": "viel no es un sujeto aquí. El verbo no concuerda con nada, así que se queda en singular."
+          }
+        },
+        {
+          "text": {
+            "en": "wurde: the impersonal passive has no subject, so the verb stays singular",
+            "es": "wurde: la pasiva impersonal no tiene sujeto, así que el verbo se queda en singular"
+          }
+        },
+        {
+          "text": {
+            "en": "wurde: the subject es is hidden and must be written in the middle of the sentence",
+            "es": "wurde: el sujeto «es» está oculto y debe escribirse en medio de la oración"
+          },
+          "wrong": {
+            "en": "es appears only when it fills position 1 (Es wurde viel getanzt). After Gestern it disappears.",
+            "es": "es aparece solo cuando ocupa la posición 1 (Es wurde viel getanzt). Después de Gestern desaparece."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "passiv-alle-zeiten-c10",
+      "sentence": "Er weiß, dass das Haus gebaut worden ___.",
+      "options": [
+        "ist",
+        "wird",
+        "wurde"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "In the dass clause the auxiliary stands at the end: gebaut worden ist. The Perfekt uses ist.",
+        "es": "En la oración con dass el auxiliar va al final: gebaut worden ist. El Perfekt usa ist."
+      },
+      "wrong": {
+        "wird": {
+          "en": "wird is the present and cannot follow worden. The participle worden belongs to the Perfekt with ist.",
+          "es": "wird es el presente y no puede ir después de worden. El participio worden pertenece al Perfekt con ist."
+        },
+        "wurde": {
+          "en": "wurde is the Präteritum and does not combine with worden. gebaut worden needs ist.",
+          "es": "wurde es el Präteritum y no se combina con worden. gebaut worden necesita ist."
+        }
+      },
+      "examples": [
+        "Sie sagt, dass der Brief geschrieben worden ist.",
+        "Wir hoffen, dass es repariert worden ist."
+      ],
+      "tr": {
+        "en": "He knows that the house has been built.",
+        "es": "Él sabe que la casa ha sido construida."
+      }
+    },
+    {
+      "id": "passiv-alle-zeiten-f10",
+      "kind": "form",
+      "verb": "Perfekt Passiv (es)",
+      "person": "finden",
+      "answer": "ist gefunden worden",
+      "table": "passiv-verben"
+    },
+    {
+      "id": "passiv-alle-zeiten-c11",
+      "sentence": "Das Formular ___ gestern ausgefüllt werden.",
+      "options": [
+        "müsste",
+        "musste",
+        "musst"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The obligation lay in the past, so the Präteritum of the modal verb is used: musste ausgefüllt werden.",
+        "es": "La obligación estaba en el pasado, así que se usa el Präteritum del verbo modal: musste ausgefüllt werden."
+      },
+      "wrong": {
+        "müsste": {
+          "en": "müsste is the Konjunktiv II and would say that it should be done, but is not. The sentence reports a fact.",
+          "es": "müsste es el Konjunktiv II y diría que debería hacerse, pero no se hace. La oración informa de un hecho."
+        },
+        "musst": {
+          "en": "musst is the form for du. The subject here is das Formular, a thing.",
+          "es": "musst es la forma de du. El sujeto aquí es das Formular, una cosa."
+        }
+      },
+      "examples": [
+        "Der Brief musste gestern geschrieben werden.",
+        "Das Auto musste repariert werden."
+      ],
+      "tr": {
+        "en": "The form had to be filled out yesterday.",
+        "es": "El formulario tenía que llenarse ayer."
+      }
+    },
+    {
+      "id": "passiv-alle-zeiten-f11",
+      "kind": "form",
+      "verb": "Die Häuser",
+      "person": "Perfekt",
+      "answer": "sind gebaut worden",
+      "table": "passiv-zeiten"
+    },
+    {
+      "id": "passiv-alle-zeiten-c12",
+      "sentence": "Er ist Arzt ___.",
+      "options": [
+        "worden",
+        "werden",
+        "geworden"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Here werden is a full verb meaning to become, and the Perfekt uses the participle geworden.",
+        "es": "Aquí werden es un verbo pleno que significa llegar a ser, y el Perfekt usa el participio geworden."
+      },
+      "wrong": {
+        "worden": {
+          "en": "worden is only the passive auxiliary and needs a participle before it. Here nothing is being done to Arzt.",
+          "es": "worden es solo el auxiliar de la pasiva y necesita un participio delante. Aquí nada se hace a Arzt."
+        },
+        "werden": {
+          "en": "werden is the infinitive. After ist the Perfekt needs a participle.",
+          "es": "werden es el infinitivo. Después de ist el Perfekt necesita un participio."
+        }
+      },
+      "examples": [
+        "Sie ist müde geworden.",
+        "Es ist dunkel geworden."
+      ],
+      "tr": {
+        "en": "He has become a doctor.",
+        "es": "Se ha vuelto médico."
+      }
+    },
+    {
+      "id": "passiv-alle-zeiten-f12",
+      "kind": "form",
+      "verb": "Präteritum Passiv (es)",
+      "person": "bezahlen",
+      "answer": "wurde bezahlt",
+      "table": "passiv-verben"
+    },
+    {
+      "id": "passiv-alle-zeiten-c13",
+      "sentence": "Der Koch kocht das Essen: Das Essen ___ vom Koch gekocht.",
+      "options": [
+        "ist",
+        "wird",
+        "wurde"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The active sentence is in the present, so the passive is in the present too: wird gekocht.",
+        "es": "La oración activa está en presente, así que la pasiva también está en presente: wird gekocht."
+      },
+      "wrong": {
+        "ist": {
+          "en": "ist gekocht describes a state, for example food that is ready. The action in progress needs wird.",
+          "es": "ist gekocht describe un estado, por ejemplo una comida que ya está lista. La acción en curso necesita wird."
+        },
+        "wurde": {
+          "en": "wurde is the past. The active sentence kocht is in the present, so the passive keeps the tense.",
+          "es": "wurde es el pasado. La oración activa kocht está en presente, así que la pasiva conserva el tiempo."
+        }
+      },
+      "examples": [
+        "Der Mann baut das Haus: Das Haus wird vom Mann gebaut.",
+        "Anna schreibt den Brief: Der Brief wird von Anna geschrieben."
+      ],
+      "tr": {
+        "en": "The cook cooks the meal: the meal is cooked by the cook.",
+        "es": "El cocinero cocina la comida: la comida es cocinada por el cocinero."
+      }
+    },
+    {
+      "id": "passiv-alle-zeiten-c14",
+      "sentence": "Die Tür ist von uns schon ___ worden.",
+      "options": [
+        "öffnen",
+        "öffnete",
+        "geöffnet"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The passive Perfekt needs the participle before worden: geöffnet worden.",
+        "es": "El Perfekt de la pasiva necesita el participio antes de worden: geöffnet worden."
+      },
+      "wrong": {
+        "öffnen": {
+          "en": "öffnen is the infinitive. In ist ... worden the main verb must be the participle.",
+          "es": "öffnen es el infinitivo. En ist ... worden el verbo principal debe ser el participio."
+        },
+        "öffnete": {
+          "en": "öffnete is the Präteritum. It cannot be combined with the auxiliary ist and worden.",
+          "es": "öffnete es el Präteritum. No puede combinarse con el auxiliar ist y worden."
+        }
+      },
+      "examples": [
+        "Das Auto ist von uns repariert worden.",
+        "Das Haus ist von ihnen gebaut worden."
+      ],
+      "tr": {
+        "en": "The door has already been opened by us.",
+        "es": "La puerta ya ha sido abierta por nosotros."
+      }
+    },
+    {
+      "id": "passiv-alle-zeiten-w04",
+      "kind": "why",
+      "es": "Das Haus wird nächstes Jahr gebaut werden.",
+      "target": "werden",
+      "tr": {
+        "en": "The house will be built next year.",
+        "es": "La casa será construida el próximo año."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "werden is redundant, because wird gebaut already means the future",
+            "es": "werden es redundante, porque wird gebaut ya significa el futuro"
+          },
+          "wrong": {
+            "en": "wird gebaut is the present passive. The future passive needs the second werden at the end.",
+            "es": "wird gebaut es la pasiva en presente. La pasiva en futuro necesita el segundo werden al final."
+          }
+        },
+        {
+          "text": {
+            "en": "werden is the infinitive that closes the Futur I passive: wird + Partizip II + werden",
+            "es": "werden es el infinitivo que cierra el Futur I de la pasiva: wird + Partizip II + werden"
+          }
+        },
+        {
+          "text": {
+            "en": "werden is a participle, like worden",
+            "es": "werden es un participio, como worden"
+          },
+          "wrong": {
+            "en": "werden is the infinitive. The participle form is worden or geworden, and it appears only in the perfect tenses.",
+            "es": "werden es el infinitivo. La forma de participio es worden o geworden, y aparece solo en los tiempos perfectos."
+          }
+        }
+      ],
+      "correctIndex": 1
+    }
+  ]
+}

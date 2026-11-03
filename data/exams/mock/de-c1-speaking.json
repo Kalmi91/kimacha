@@ -1,0 +1,271 @@
+{
+  "target": "de",
+  "level": "C1",
+  "paper": "speaking",
+  "forms": [
+    {
+      "id": "f1",
+      "tasks": [
+        {
+          "skill": "speaking",
+          "kind": "speaking",
+          "instruction": "Halten Sie einen Vortrag zu einem der beiden Themen. Sie haben 15 Minuten Zeit zur Vorbereitung und können Notizen machen. Gliedern Sie Ihren Vortrag klar. Anschließend stellt der Prüfer Ihnen Fragen.",
+          "prepSeconds": 900,
+          "talkMinutes": [6, 7],
+          "choices": [
+            {
+              "id": "a",
+              "title": "Lebenslanges Lernen",
+              "prompt": "Halten Sie einen Vortrag zum Thema „Lebenslanges Lernen“.",
+              "bullets": ["Warum ist das Thema heute wichtig?", "Ihre eigenen Erfahrungen", "Vergleich mit anderen Ländern", "Chancen und Risiken", "Ausblick und Schluss"],
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Bitte halten Sie jetzt Ihren Vortrag. Sie haben etwa sechs Minuten Zeit.",
+                  "minWords": 90,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Leitet das Thema ein und stellt den Aufbau vor",
+                      "keywords": ["mein thema", "ich spreche", "zunachst", "erstens", "in meinem vortrag", "ich werde", "zum thema", "zuerst"]
+                    },
+                    {
+                      "id": "p2",
+                      "label": "Stellt die Bedeutung des Themas mit einem persönlichen Bezug dar",
+                      "keywords": ["ich habe", "bei mir", "meine erfahrung", "ich lerne", "ich habe gelernt", "in meinem beruf", "weiterbildung", "sprachkurs"]
+                    },
+                    {
+                      "id": "p3",
+                      "label": "Vergleicht mit der Situation im eigenen Land oder in anderen Ländern",
+                      "keywords": ["in meinem land", "in meiner heimat", "in deutschland", "in skandinavien", "im vergleich", "bei uns", "anders als", "wahrend"]
+                    },
+                    {
+                      "id": "p4",
+                      "label": "Wägt Chancen und Risiken ab und schließt mit einem Ausblick",
+                      "keywords": ["chance", "risiko", "einerseits", "andererseits", "uberforderung", "in zukunft", "ausblick", "abschliessend"]
+                    }
+                  ],
+                  "model": "Mein Thema ist das lebenslange Lernen. Zunächst erkläre ich, warum es heute so wichtig ist: Berufe verändern sich schnell, und wer nicht weiterlernt, verliert den Anschluss. Aus meiner eigenen Erfahrung weiß ich das gut, denn ich habe mich in meinem Beruf mehrfach weitergebildet und lerne zurzeit Deutsch. Im Vergleich zu meinem Land bieten Länder wie Deutschland oder Schweden viele staatlich geförderte Kurse an, während bei uns die Weiterbildung oft privat bezahlt werden muss. Einerseits eröffnet lebenslanges Lernen neue Chancen, andererseits besteht das Risiko der Überforderung, wenn man neben der Arbeit ständig neue Kurse besucht. In Zukunft sollten Betriebe Lernzeit fest einplanen. Abschließend bedanke ich mich für Ihre Aufmerksamkeit."
+                },
+                {
+                  "id": "t2",
+                  "ask": "Danke für Ihren Vortrag. Sie haben die Überforderung erwähnt. Wie kann man ihr Ihrer Meinung nach vorbeugen?",
+                  "minWords": 25,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Nennt eine Maßnahme gegen Überforderung",
+                      "keywords": ["pausen", "zeit einplanen", "arbeitgeber", "freistellung", "realistische ziele", "kleine schritte", "bildungsurlaub", "prioritaten"]
+                    }
+                  ],
+                  "model": "Meiner Meinung nach sollten Arbeitgeber ihren Mitarbeitern feste Zeit für die Weiterbildung geben, damit Lernen nicht in der Freizeit stattfinden muss. Außerdem helfen realistische Ziele und kleine Schritte."
+                },
+                {
+                  "id": "t3",
+                  "ask": "Würden Sie sagen, dass der Staat oder der einzelne Mensch für die Weiterbildung verantwortlich ist?",
+                  "minWords": 25,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Bezieht Stellung zur Verantwortung",
+                      "keywords": ["verantwortung", "jeder einzelne", "gemeinsam", "beide", "eigenverantwortung", "forderung", "rahmenbedingungen"]
+                    }
+                  ],
+                  "model": "Ich denke, die Verantwortung liegt bei beiden. Der Staat muss die Rahmenbedingungen schaffen, zum Beispiel durch Förderung und Bildungsurlaub, aber jeder Einzelne muss auch selbst bereit sein zu lernen."
+                }
+              ]
+            },
+            {
+              "id": "b",
+              "title": "Künstliche Intelligenz in der Arbeitswelt",
+              "prompt": "Halten Sie einen Vortrag zum Thema „Künstliche Intelligenz in der Arbeitswelt“.",
+              "bullets": ["Warum ist das Thema heute wichtig?", "Ihre eigenen Erfahrungen", "Vergleich mit anderen Ländern", "Chancen und Risiken", "Ausblick und Schluss"],
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Bitte halten Sie jetzt Ihren Vortrag. Sie haben etwa sechs Minuten Zeit.",
+                  "minWords": 90,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Leitet das Thema ein und stellt den Aufbau vor",
+                      "keywords": ["mein thema", "ich spreche", "zunachst", "erstens", "in meinem vortrag", "ich werde", "zum thema", "zuerst"]
+                    },
+                    {
+                      "id": "p2",
+                      "label": "Stellt die Bedeutung des Themas mit einem persönlichen Bezug dar",
+                      "keywords": ["ich benutze", "ich nutze", "bei mir", "meine erfahrung", "in meinem beruf", "an meinem arbeitsplatz", "ich habe erlebt", "texte"]
+                    },
+                    {
+                      "id": "p3",
+                      "label": "Vergleicht mit der Situation im eigenen Land oder in anderen Ländern",
+                      "keywords": ["in meinem land", "in meiner heimat", "in deutschland", "in den usa", "im vergleich", "bei uns", "anders als", "wahrend"]
+                    },
+                    {
+                      "id": "p4",
+                      "label": "Wägt Chancen und Risiken ab und schließt mit einem Ausblick",
+                      "keywords": ["chance", "risiko", "einerseits", "andererseits", "arbeitsplatze", "in zukunft", "ausblick", "abschliessend"]
+                    }
+                  ],
+                  "model": "Mein Thema ist die künstliche Intelligenz in der Arbeitswelt. Zunächst erkläre ich, warum sie heute so wichtig ist: Programme können Texte schreiben, Daten auswerten und Kunden beraten. Aus eigener Erfahrung weiß ich, dass sie im Alltag viel Zeit sparen, denn ich nutze sie an meinem Arbeitsplatz für Entwürfe. Im Vergleich zu meinem Land setzen Firmen in Deutschland die Technik vorsichtiger ein, weil der Datenschutz strenger ist. Einerseits bietet sie die Chance, langweilige Aufgaben zu automatisieren, andererseits besteht das Risiko, dass Arbeitsplätze verloren gehen. In Zukunft sollten Menschen lernen, mit der Technik zusammenzuarbeiten. Abschließend danke ich Ihnen herzlich für Ihre Aufmerksamkeit."
+                },
+                {
+                  "id": "t2",
+                  "ask": "Danke für Ihren Vortrag. Welche Berufe sind Ihrer Meinung nach am stärksten betroffen, und warum?",
+                  "minWords": 25,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Nennt betroffene Berufe und einen Grund",
+                      "keywords": ["buro", "verwaltung", "ubersetzer", "kundenservice", "routine", "wiederholende", "programmierer", "buchhaltung"]
+                    }
+                  ],
+                  "model": "Ich glaube, dass vor allem Berufe mit vielen Routineaufgaben betroffen sind, zum Beispiel in der Buchhaltung, im Kundenservice oder bei Übersetzungen, weil Programme solche wiederholenden Tätigkeiten schnell erledigen können."
+                },
+                {
+                  "id": "t3",
+                  "ask": "Sollte der Einsatz von künstlicher Intelligenz am Arbeitsplatz gesetzlich stärker geregelt werden?",
+                  "minWords": 25,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Bezieht Stellung zur Regulierung",
+                      "keywords": ["regeln", "regulierung", "datenschutz", "transparenz", "verbraucher", "kennzeichnung", "verantwortung"]
+                    }
+                  ],
+                  "model": "Ja, ich bin der Meinung, dass klare Regeln nötig sind, vor allem beim Datenschutz und bei der Kennzeichnung von Texten, die ein Programm geschrieben hat. Ohne Transparenz wüsste niemand, wer die Verantwortung trägt."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "speaking",
+          "kind": "speaking",
+          "instruction": "Diskutieren Sie mit dem Prüfer eine kontroverse Frage. Wählen Sie ein Thema, vertreten Sie eine klare Position und reagieren Sie auf die Argumente des Prüfers.",
+          "talkMinutes": [5, 5],
+          "choices": [
+            {
+              "id": "a",
+              "title": "Recht auf Homeoffice",
+              "prompt": "Diskussion: Sollte jeder Arbeitnehmer, dessen Tätigkeit es erlaubt, einen Anspruch auf Arbeit im Homeoffice haben?",
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Ich möchte mit Ihnen diskutieren, ob es ein gesetzliches Recht auf Arbeit von zu Hause geben sollte. Wie stehen Sie dazu?",
+                  "minWords": 28,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Nimmt Stellung und begründet",
+                      "keywords": ["anspruch", "ich bin dafur", "ich bin dagegen", "grundsatzlich", "flexibilitat", "vereinbarkeit", "familie"]
+                    }
+                  ],
+                  "model": "Ich bin grundsätzlich für einen gesetzlichen Anspruch, denn er schafft Sicherheit für Beschäftigte. Viele können dadurch Familie und Beruf besser vereinbaren, und die Flexibilität steigert langfristig auch die Zufriedenheit."
+                },
+                {
+                  "id": "t2",
+                  "ask": "Arbeitgeber sagen, dass Teamgeist und Kreativität leiden, wenn die Leute nicht mehr im Büro sind. Was halten Sie davon?",
+                  "minWords": 28,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Geht auf das Gegenargument ein",
+                      "keywords": ["austausch", "treffen", "videokonferenz", "ich verstehe", "allerdings", "dagegen", "trotzdem"]
+                    }
+                  ],
+                  "model": "Ich verstehe diese Sorge, aber Teamgeist hängt nicht nur vom Büro ab. Durch Videokonferenzen und regelmäßige Treffen lässt sich der Austausch erhalten, und wer konzentriert zu Hause arbeitet, bringt oft mehr Kreativität mit."
+                },
+                {
+                  "id": "t3",
+                  "ask": "Gibt es Belege oder eigene Erfahrungen, die Ihre Sichtweise stützen?",
+                  "minWords": 28,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Bringt ein Beispiel oder eine Studie",
+                      "keywords": ["studien", "umfrage", "produktiver", "produktivitat", "in meiner firma", "bei uns im", "pendeln", "beispielsweise"]
+                    }
+                  ],
+                  "model": "Mehrere Studien zeigen, dass die Produktivität im Homeoffice nicht sinkt. In meiner Firma sparen viele Kollegen täglich über eine Stunde Pendelzeit, und die Arbeitsergebnisse sind beispielsweise im Kundenservice gleich geblieben."
+                },
+                {
+                  "id": "t4",
+                  "ask": "Wie könnte eine Regelung aussehen, mit der Beschäftigte und Betriebe leben können?",
+                  "minWords": 28,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Zieht ein Fazit oder macht einen Vorschlag",
+                      "keywords": ["kompromiss", "hybrid", "tage pro woche", "vereinbarung", "ausnahmen", "abstimmung", "ich schlage vor"]
+                    }
+                  ],
+                  "model": "Ich schlage einen Kompromiss vor: ein hybrides Modell mit zwei oder drei Tagen pro Woche zu Hause, das Betrieb und Mitarbeiter gemeinsam vereinbaren. Für Berufe, in denen es nicht möglich ist, gibt es klar definierte Ausnahmen."
+                }
+              ]
+            },
+            {
+              "id": "b",
+              "title": "Tempolimit auf Autobahnen",
+              "prompt": "Diskussion: Sollte es auf allen Autobahnen ein generelles Tempolimit geben?",
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Ich möchte mit Ihnen diskutieren, ob auf allen Autobahnen ein Tempolimit gelten sollte. Welche Position vertreten Sie?",
+                  "minWords": 28,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Nimmt Stellung und begründet",
+                      "keywords": ["ich bin dafur", "ich bin dagegen", "grundsatzlich", "unfalle", "sicherheit", "umwelt", "klimaschutz"]
+                    }
+                  ],
+                  "model": "Ich bin grundsätzlich für ein generelles Tempolimit, weil es die Sicherheit erhöht und Unfälle mit schweren Folgen verhindert. Außerdem würde es den Verbrauch senken und damit dem Klimaschutz nützen."
+                },
+                {
+                  "id": "t2",
+                  "ask": "Gegner argumentieren, dass ein Limit die persönliche Freiheit einschränkt und kaum Wirkung hat. Was entgegnen Sie?",
+                  "minWords": 28,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Geht auf das Gegenargument ein",
+                      "keywords": ["einschrankung", "ich sehe das anders", "im gegenteil", "studien", "weniger unfalle", "verkehrstote"]
+                    }
+                  ],
+                  "model": "Ich sehe das anders: Studien aus anderen Ländern zeigen, dass bei einer Begrenzung weniger Verkehrstote zu beklagen sind. Und die persönliche Freiheit endet dort, wo man andere gefährdet. Die Fahrzeit verlängert sich nur geringfügig."
+                },
+                {
+                  "id": "t3",
+                  "ask": "Können Sie ein Beispiel aus einem Land nennen, in dem es ein solches Limit gibt?",
+                  "minWords": 28,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Bringt ein Beispiel oder eine Studie",
+                      "keywords": ["in frankreich", "in osterreich", "in spanien", "in meinem land", "in italien", "dort gilt", "erfahrung", "beispielsweise"]
+                    }
+                  ],
+                  "model": "In Frankreich und in Österreich gilt seit langem eine Höchstgeschwindigkeit auf Autobahnen, und die Menschen haben sich daran gewöhnt. Dort sind die Straßen nicht weniger leistungsfähig, wie man beispielsweise bei Reisen feststellt."
+                },
+                {
+                  "id": "t4",
+                  "ask": "Wie könnte ein Kompromiss zwischen beiden Seiten aussehen?",
+                  "minWords": 28,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Zieht ein Fazit oder macht einen Vorschlag",
+                      "keywords": ["ich schlage vor", "abschnitte", "streckenweise", "nachts", "richtgeschwindigkeit", "testphase", "regional"]
+                    }
+                  ],
+                  "model": "Ein Kompromiss könnte sein, das Limit zunächst auf besonders unfallreichen Abschnitten und nachts einzuführen. Ich schlage vor, das in einer Testphase auszuprobieren und danach anhand der Zahlen zu entscheiden."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

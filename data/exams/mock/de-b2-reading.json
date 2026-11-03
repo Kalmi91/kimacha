@@ -1,0 +1,171 @@
+{
+  "target": "de",
+  "level": "B2",
+  "paper": "reading",
+  "forms": [
+    {
+      "id": "f1",
+      "tasks": [
+        {
+          "skill": "reading",
+          "kind": "match_pool",
+          "instruction": "Sie lesen in einem Forum, wie vier Personen über das Smartphone im Alltag denken. Auf welche Person treffen die Aussagen 1 bis 9 zu? Eine Person können Sie mehrmals wählen.",
+          "prompts": [
+            { "id": "1", "text": "Wer hat das Smartphone eine Zeit lang bewusst weggelegt?" },
+            { "id": "2", "text": "Wer sieht das Smartphone vor allem als Werkzeug für den Beruf?" },
+            { "id": "3", "text": "Wer begrenzt die Nutzung mithilfe einer technischen Einstellung?" },
+            { "id": "4", "text": "Wer hält über das Gerät Kontakt zu Verwandten im Ausland?" },
+            { "id": "5", "text": "Wer hat nach einer Pause besser geschlafen?" },
+            { "id": "6", "text": "Wer hält einen Verzicht im Arbeitsleben für nicht machbar?" },
+            { "id": "7", "text": "Wer hat nur einzelne Anwendungen entfernt?" },
+            { "id": "8", "text": "Wer findet das Gerät auf Reisen unverzichtbar?" },
+            { "id": "9", "text": "Wer wünscht sich Regeln für Treffen und Besprechungen?" }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "title": "Lukas",
+              "text": "Ich habe im Winter einen Monat lang auf mein Smartphone verzichtet, und das war eine der besten Entscheidungen der letzten Jahre. Nach zwei Wochen konnte ich abends endlich wieder abschalten, und ich habe deutlich besser geschlafen. Ich lese wieder Bücher und treffe Freunde, ohne dass ständig jemand nebenbei auf den Bildschirm schaut. Dass man das nicht dauerhaft durchhält, glaube ich nicht, aber man muss es wirklich wollen."
+            },
+            {
+              "id": "b",
+              "title": "Mara",
+              "text": "Für mich wäre ein Verzicht unrealistisch. Ich arbeite im Vertrieb und bin per Telefon täglich für Kunden erreichbar, außerdem laufen meine Termine und Rechnungen darüber. Das Gerät ist für mich in erster Linie ein Arbeitsmittel. Was mich allerdings stört, sind Besprechungen, in denen alle nebenbei Nachrichten lesen. Da würde ich mir klare Regeln wünschen, aber ganz abschaffen kann ich das Handy nicht."
+            },
+            {
+              "id": "c",
+              "title": "Nils",
+              "text": "Ich halte nichts von radikalen Lösungen. Mir hat es geholfen, die Zeit zu begrenzen: Eine App sperrt die sozialen Netzwerke nach einer Stunde am Tag, und nach 22 Uhr schaltet sich das Gerät in den Ruhemodus. Gelöscht habe ich nur die zwei Anwendungen, die mich am meisten abgelenkt haben. Alles andere, wie Karten, Bank und Kalender, möchte ich nicht missen, und ich finde, so bleibt man flexibel."
+            },
+            {
+              "id": "d",
+              "title": "Selin",
+              "text": "Meine Eltern leben in der Türkei, und wir telefonieren fast jeden Abend per Video. Ohne Smartphone wäre das kaum möglich. Auch auf Reisen ist es für mich unverzichtbar: Ich nutze Karten, Übersetzer und Fahrpläne, und das spart mir viel Zeit und Stress. Ein Leben ganz ohne Gerät kann ich mir für mich nicht vorstellen, auch nicht für kurze Zeit, solange meine Familie so weit entfernt wohnt und wir uns nur so sehen können."
+            }
+          ],
+          "answer": { "1": "a", "2": "b", "3": "c", "4": "d", "5": "a", "6": "b", "7": "c", "8": "d", "9": "b" },
+          "unique": false
+        },
+        {
+          "skill": "reading",
+          "kind": "gapped_text",
+          "instruction": "Lesen Sie den Text und entscheiden Sie, welcher Abschnitt (a bis h) in welche Lücke (1 bis 6) passt. Jeden Abschnitt können Sie nur einmal verwenden. Zwei Abschnitte passen nicht.",
+          "title": "Der Nachtzug kehrt zurück",
+          "text": "Wer in den Neunzigerjahren quer durch Europa reisen wollte, hatte eine Alternative zum Flugzeug: den Nachtzug. Man stieg abends ein, schlief im Liegewagen und wachte am nächsten Morgen in Wien, Rom oder Kopenhagen auf. Das war nicht nur bequem, sondern hatte auch einen eigenen Charme: Fremde kamen im Speisewagen ins Gespräch, und viele Reisende erinnern sich noch heute an das Rattern der Schienen. {{1}} Viele Strecken wurden eingestellt, weil sie sich nicht mehr rechneten, und bis zum Jahr 2010 verschwanden fast alle Verbindungen der großen Gesellschaften.\n\nDoch seit einigen Jahren erlebt der Nachtzug eine überraschende Wiederkehr. {{2}} Mehrere Bahngesellschaften haben neue Verbindungen angekündigt, und auf manchen Strecken sind die Betten monatelang im Voraus ausgebucht. Besonders gefragt sind Verbindungen zwischen den großen Hauptstädten, etwa von Berlin nach Brüssel oder von Wien nach Venedig.\n\nDer wichtigste Grund ist das gewachsene Umweltbewusstsein. {{3}} Wer für eine Reise von tausend Kilometern den Zug nimmt, verursacht nur einen Bruchteil der Emissionen eines Fluges. Hinzu kommt, dass viele Menschen die Reisezeit sinnvoll nutzen möchten. {{4}} Man spart eine Hotelübernachtung und kommt ausgeruht im Stadtzentrum an, statt an einem entfernten Flughafen. Auch Geschäftsreisende, die früher für kurze Termine in andere Länder geflogen sind, nehmen deshalb häufiger den Zug.\n\nAllerdings ist der Betrieb von Nachtzügen teuer. {{5}} Außerdem fehlt es an modernen Schlafwagen, weil die Hersteller seit Jahren kaum noch welche bauen. Die Bahngesellschaften lassen deshalb alte Wagen aufwendig renovieren, was oft Jahre dauert und Millionen kostet.\n\nOb der Trend anhält, hängt auch von der Politik ab. {{6}} Reisende sind jedenfalls bereit, für ein bisschen Komfort mehr zu bezahlen: Kleine Einzelabteile mit eigenem Waschbecken sind besonders beliebt.",
+          "fragments": [
+            { "id": "a", "text": "Entscheidend ist, ob die Staaten die Gebühren für Zugtrassen senken und Fahrkarten dadurch günstiger werden." },
+            { "id": "b", "text": "Dann aber verloren die Züge gegen die Billigfluglinien, die Reisen quer durch Europa plötzlich für wenig Geld anboten." },
+            { "id": "c", "text": "Viele Reisende wollen nicht mehr fliegen, weil sie die Folgen für das Klima kennen." },
+            { "id": "d", "text": "Im Nachtzug dagegen wird aus der Fahrt eine Übernachtung, und man verliert keinen ganzen Tag." },
+            { "id": "e", "text": "Die Wagen müssen gewartet werden, und das Personal arbeitet nachts, was zusätzliche Zuschläge kostet." },
+            { "id": "f", "text": "Die Hersteller von Flugzeugen haben in den letzten Jahren deutlich sparsamere und leisere Motoren entwickelt." },
+            { "id": "g", "text": "Immer mehr Urlauber suchen nach Möglichkeiten, ohne Flugzeug weit zu reisen und dabei etwas zu erleben." },
+            { "id": "h", "text": "Aus Sicht der Fluggesellschaften sind Nachtzüge bei Weitem keine ernsthafte Konkurrenz für ihre Strecken." }
+          ],
+          "answer": { "1": "b", "2": "g", "3": "c", "4": "d", "5": "e", "6": "a" }
+        },
+        {
+          "skill": "reading",
+          "kind": "passage_mc",
+          "instruction": "Lesen Sie den Text und die Aufgaben 1 bis 6 dazu. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+          "title": "Gärtnern mitten in der Stadt",
+          "text": "Auf dem Dach eines alten Parkhauses in Dortmund wachsen Tomaten, Kräuter und Kürbisse. Wo früher Autos standen, graben heute rund vierzig Hobbygärtner in Hochbeeten. „Anfangs haben uns viele für verrückt erklärt“, sagt die Initiatorin Petra Kamp, die den Gemeinschaftsgarten vor drei Jahren gegründet hat. „Inzwischen haben wir eine Warteliste.“\n\nGemeinschaftsgärten wie dieser sind in deutschen Städten längst keine Ausnahme mehr. Laut einer Studie der Universität Kassel gibt es bundesweit mehr als 800 solcher Projekte, und ihre Zahl wächst jedes Jahr. Dabei geht es den Teilnehmern selten nur um Gemüse. „Natürlich ist es schön, etwas Eigenes zu ernten“, erzählt der Rentner Hans Brandt, „aber wichtiger ist mir, dass ich hier jeden Tag jemanden zum Reden habe.“ Viele Gärtner berichten, dass sie ihre Nachbarn erst durch die Arbeit im Beet kennengelernt haben.\n\nDie Stadtforscherin Dr. Ilse Wagner sieht darin einen entscheidenden Grund für den Erfolg. „In Großstädten leben viele Menschen anonym nebeneinander. Ein Garten schafft einen Ort, an dem man ohne Eintrittskarte und ohne Konsumzwang zusammenkommt.“ Zudem verbessern die Pflanzen das Klima: Sie kühlen im Sommer die Luft, binden Staub und bieten Insekten Nahrung. Wagner warnt allerdings vor übertriebenen Erwartungen. „Ein paar Beete lösen nicht das Problem der Hitze in der Innenstadt. Sie sind eine Ergänzung, kein Ersatz für Parks und Bäume.“\n\nNicht alles läuft reibungslos. Die Pacht für Flächen ist in vielen Städten teuer, und oft laufen die Verträge nur wenige Jahre. Wenn ein Investor ein Grundstück kaufen will, müssen die Gärtner weichen. In Dortmund konnte das bisher verhindert werden, weil die Stadt das Gelände besitzt und einen langfristigen Vertrag abgeschlossen hat. Auch Streit unter den Gärtnern kommt vor, etwa über die Frage, wer wie viel Wasser verbrauchen darf oder ob chemische Mittel gegen Schädlinge erlaubt sind. Im Dortmunder Garten haben sich die Mitglieder deshalb auf eine einfache Regel geeinigt: Alles, was man nicht essen würde, kommt nicht auf die Pflanzen.\n\nFür die Zukunft wünscht sich Petra Kamp vor allem eines: mehr Unterstützung durch die Verwaltung. „Wir brauchen nicht viel Geld, sondern Genehmigungen, die schneller kommen, und einen Ansprechpartner, der sich auskennt.“ Die Stadt will nun prüfen, ob auch auf anderen Dächern kommunaler Gebäude Gärten entstehen können. Bis dahin träumt Kamp von einem Café neben den Beeten: „Dann könnten auch Menschen kommen, die lieber zuschauen als graben.“",
+          "questions": [
+            {
+              "stem": "Was ist über den Gemeinschaftsgarten in Dortmund zu erfahren?",
+              "options": ["Er ist nach seiner Gründung von der Stadt stark gefördert worden.", "Er entstand auf einem Gelände, das vorher ungenutzt war.", "Er ist so beliebt, dass nicht alle Interessenten mitmachen können."],
+              "correct": 2
+            },
+            {
+              "stem": "Was ist den Teilnehmern der Gemeinschaftsgärten oft am wichtigsten?",
+              "options": ["Die Menge an Gemüse, die sie ernten.", "Der Kontakt zu anderen Menschen.", "Der Preis für die Pacht."],
+              "correct": 1
+            },
+            {
+              "stem": "Welchen Grund für den Erfolg der Gärten nennt Dr. Wagner?",
+              "options": ["Die Gärten senken die Temperaturen in der Innenstadt erheblich.", "Die Teilnehmer sparen Geld für Lebensmittel.", "Ein Ort ohne Zwang zum Kaufen wird in der anonymen Großstadt geschätzt."],
+              "correct": 2
+            },
+            {
+              "stem": "Wovor warnt die Forscherin?",
+              "options": ["Man darf keine Pflanzen anbauen, die Insekten anlocken.", "Man darf die Wirkung der Gärten nicht überschätzen.", "Man darf Gemeinschaftsgärten nicht in Wohngebieten anlegen."],
+              "correct": 1
+            },
+            {
+              "stem": "Was hat im Dortmunder Garten Konflikte vermieden?",
+              "options": ["Eine gemeinsame Regel für den Umgang mit Schädlingen.", "Ein langfristiger Vertrag mit einem privaten Investor.", "Eine feste Wasserzeit für jeden einzelnen Teilnehmer."],
+              "correct": 0
+            },
+            {
+              "stem": "Was wünscht sich Petra Kamp für die Zukunft?",
+              "options": ["Mehr Geld von der Stadt.", "Einfachere Abläufe bei der Verwaltung.", "Ein Verbot der chemischen Mittel."],
+              "correct": 1
+            }
+          ]
+        },
+        {
+          "skill": "reading",
+          "kind": "match_pool",
+          "instruction": "Lesen Sie die Texte 1 bis 6 und die Überschriften a bis h. Welche Überschrift passt zu welchem Text? Jede Überschrift können Sie nur einmal verwenden. Zwei Überschriften passen nicht.",
+          "prompts": [
+            {
+              "id": "10",
+              "text": "Jeden ersten Samstag im Monat treffen sich im Gemeindehaus Menschen mit kaputten Toastern, Lampen und Fahrrädern. Freiwillige Fachleute zeigen ihnen, wie sich die Geräte mit einfachen Mitteln wieder in Gang setzen lassen. Werkzeug und Ersatzteile sind vor Ort, der Besuch ist kostenlos. Die Organisatoren wollen so Müll vermeiden und das Wissen alter Handwerker weitergeben."
+            },
+            {
+              "id": "11",
+              "text": "Ab dem ersten Juni sind die Bürgerbüros dienstags und donnerstags bis 19 Uhr geöffnet, dafür bleiben sie am Freitagnachmittag geschlossen. Die Stadt reagiert damit auf Wünsche berufstätiger Einwohner, die tagsüber keine Zeit für Behördengänge haben. Viele Anträge können außerdem inzwischen im Internet gestellt werden, sodass der Gang ins Amt oft gar nicht mehr nötig ist."
+            },
+            {
+              "id": "12",
+              "text": "Immer wieder erhalten Kunden E-Mails, die angeblich von ihrer Bank stammen. Darin werden sie aufgefordert, auf einen Link zu klicken und ihre Zugangsdaten einzugeben. Die Verbraucherzentrale warnt: Die Nachrichten sind gefälscht, und wer seine Daten preisgibt, riskiert den Verlust seines Geldes. Banken fragen Passwörter niemals per E-Mail ab. Im Zweifel sollte man die Bank direkt anrufen."
+            },
+            {
+              "id": "13",
+              "text": "Eine Klasse der Goethe-Realschule hat beim Landeswettbewerb den ersten Platz belegt. Die Jugendlichen hatten untersucht, wie sich der Pflanzenwuchs verändert, wenn man Blumenerde mit Kaffeesatz mischt. Die Jury lobte vor allem die genaue Dokumentation der Versuche. Als Preis erhält die Gruppe eine Reise zum Bundesfinale und einen Gutschein für neue Laborgeräte."
+            },
+            {
+              "id": "14",
+              "text": "Wie sah ein normaler Tag vor hundert Jahren aus? Die neue Sonderausstellung zeigt Küchenmöbel, Spielzeug, Schulhefte und Arbeitskleidung aus der Region. Besonders beliebt ist ein nachgebautes Wohnzimmer, in dem die Besucher sich in alte Sessel setzen und Schallplatten hören dürfen. Die Ausstellung läuft bis Ende November, Schulklassen haben freien Eintritt."
+            },
+            {
+              "id": "15",
+              "text": "Am Wochenende wird die Hauptbrücke für Bauarbeiten gesperrt. Autofahrer müssen deshalb mit Umleitungen und längeren Fahrzeiten rechnen, besonders in den Außenbezirken im Norden der Stadt. Busse und Straßenbahnen fahren nach einem Sonderfahrplan, die Fahrgäste werden gebeten, sich vorher im Internet zu informieren. Am Montagmorgen soll die Brücke wieder frei sein."
+            }
+          ],
+          "options": [
+            { "id": "a", "text": "Reparieren statt wegwerfen: Neues Angebot für Bastler" },
+            { "id": "b", "text": "Weniger Papier, mehr Service: Rathaus ändert seine Öffnungszeiten" },
+            { "id": "c", "text": "Vorsicht, Betrug: Falsche Nachrichten im Namen der Bank" },
+            { "id": "d", "text": "Junge Forscher erfolgreich: Preis für eine Schülergruppe" },
+            { "id": "e", "text": "Alltag früher: Neue Ausstellung im Stadtmuseum" },
+            { "id": "f", "text": "Mehr Verkehr erwartet: Straßensperrung am Wochenende" },
+            { "id": "g", "text": "Tierpark begrüßt Nachwuchs: Zwei Pandas geboren" },
+            { "id": "h", "text": "Wohnungen gesucht: Studenten finden kaum ein Zimmer" }
+          ],
+          "answer": { "10": "a", "11": "b", "12": "c", "13": "d", "14": "e", "15": "f" },
+          "unique": true
+        },
+        {
+          "skill": "reading",
+          "kind": "match_pool",
+          "instruction": "Lesen Sie die Nutzungsbedingungen für einen Coworking-Raum. Welche Überschrift (a bis e) passt zu welchem Abschnitt (1 bis 3)? Jede Überschrift können Sie nur einmal verwenden. Zwei Überschriften passen nicht.",
+          "prompts": [
+            { "id": "25", "text": "Der Coworking-Raum steht allen Mitgliedern von Montag bis Freitag von 7 bis 22 Uhr zur Verfügung. Nach 18 Uhr ist die Küche nicht mehr besetzt, Getränke können Sie aber weiterhin selbst zubereiten. Am Wochenende ist der Raum geschlossen, es sei denn, ein Mitglied hat ihn für eine Veranstaltung gebucht." },
+            { "id": "26", "text": "Bitte reservieren Sie Ihren Arbeitsplatz im Voraus über die App. Die Plätze sind nicht fest zugeordnet, Sie können jeden Tag einen anderen Platz wählen. Wer seinen Platz nicht innerhalb von 30 Minuten nach Beginn der Reservierung belegt, verliert den Anspruch darauf, damit an stark nachgefragten Tagen für alle ein Platz frei ist." },
+            { "id": "27", "text": "Telefongespräche führen Sie bitte in den dafür vorgesehenen, schallgedämmten Kabinen. Besprechungen mit mehreren Personen finden ausschließlich in den Konferenzräumen statt, die ebenfalls über die App gebucht werden. Bitte halten Sie Ihre Umgebung sauber und stellen Sie benutztes Geschirr in die Spülmaschine." }
+          ],
+          "options": [
+            { "id": "a", "text": "Rücksicht auf andere: Telefonate, Besprechungen und Sauberkeit" },
+            { "id": "b", "text": "Einführung und Rundgang für neue Mitglieder" },
+            { "id": "c", "text": "Wann der Raum geöffnet ist" },
+            { "id": "d", "text": "Monatsgebühr und Zahlungsweise" },
+            { "id": "e", "text": "So sichern Sie sich einen Arbeitsplatz" }
+          ],
+          "answer": { "25": "c", "26": "e", "27": "a" },
+          "unique": true
+        }
+      ]
+    }
+  ]
+}

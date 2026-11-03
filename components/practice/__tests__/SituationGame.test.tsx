@@ -12,12 +12,15 @@ import { ExpoSpeechRecognitionModule } from 'expo-speech-recognition';
 import SituationGame from '@/components/practice/SituationGame';
 import { getDb } from '@/lib/database';
 import { setLanguage, t } from '@/lib/i18n';
+import { knownTokens } from '@/lib/knownSentence';
 import {
   SITUATIONS,
+  SITUATIONS_DE,
   SITUATIONS_MODE,
   fillBank,
   savedSituation,
   startSituation,
+  unknownWords,
   type SituationState,
   type SituationStep,
 } from '@/lib/practice/situations';
@@ -42,6 +45,11 @@ const EVERYTHING = new Set(family.words.flatMap((w) => w.forms.map((f) => f.toLo
 const at = (step: SituationStep, patch: Partial<SituationState> = {}): SituationState => ({ ...startSituation(family, EVERYTHING, SEED), step, ...patch });
 const saveRun = (run: SituationState) => saveResumeValue(getDb(), SITUATIONS_MODE, savedSituation(run));
 const savedRun = async () => (await loadResumeValue(getDb(), SITUATIONS_MODE)) as SituationState | null;
+
+// the German situation (target de)
+const familie = SITUATIONS_DE[0];
+const EVERYTHING_DE = new Set(familie.words.flatMap((w) => w.forms.map((f) => f.toLowerCase())));
+const atDe = (step: SituationStep, patch: Partial<SituationState> = {}): SituationState => ({ ...startSituation(familie, EVERYTHING_DE, SEED), step, ...patch });
 
 const mount = async () => {
   const view = render(<ThemeProvider><SituationGame /></ThemeProvider>);
@@ -469,5 +477,154 @@ describe('Situations: what is needed to answer is on screen without scrolling', 
     expect(view.getByText('Correct!')).toBeTruthy();
     expect(await savedRun()).toMatchObject({ step: 'questions', index: 0, done: true, wrong: 0, scores: { questions: 1 } });
     view.unmount();
+  });
+});
+
+describe('Situations in German', () => {
+  beforeEach(async () => {
+    await getDb().setOnboarding('en', 'de');
+  });
+
+  it('target German, learner English: the unknown German words, one card each (with the article), read aloud in de-DE', async () => {
+    const view = await mount();
+    const unknown = unknownWords(familie, knownTokens('de', { learned: [] }));
+    expect(view.getByTestId('situations-card-word').props.children).toBe('haben');
+    expect(view.getByText('to have')).toBeTruthy();
+    expect(view.getByText(`1/${unknown.length}`)).toBeTruthy();
+    expect(view.getByText('Family lunch: Sunday lunch, your aunt asks you.')).toBeTruthy();
+    fireEvent.press(view.getByTestId('situations-speak'));
+    expect(mockSpeak).toHaveBeenCalledWith('haben', 'de-DE');
+    // the 7th card is a noun with its article
+    for (let i = 0; i < unknown.findIndex((w) => w.de === 'der Bruder'); i++) await press(view, 'situations-next');
+    expect(view.getByTestId('situations-card-word').props.children).toBe('der Bruder');
+    expect(view.getByText('brother')).toBeTruthy();
+    fireEvent.press(view.getByTestId('situations-speak'));
+    expect(mockSpeak).toHaveBeenLastCalledWith('der Bruder', 'de-DE');
+    view.unmount();
+  });
+
+  it('the structures are explained in the learner\'s language, the example is read aloud in German', async () => {
+    await saveRun(atDe('patterns', { index: 0 }));
+    const view = await mount();
+    expect(view.getByTestId('situations-card-pattern').props.children).toBe('Ich habe + ein / eine / einen + noun');
+    expect(view.getByText('What you have is in the accusative: der Bruder becomes einen Bruder, die Schwester becomes eine Schwester.')).toBeTruthy();
+    expect(view.getByTestId('situations-card-example').props.children).toBe('Ich habe einen Bruder und eine Schwester.');
+    fireEvent.press(view.getByTestId('situations-speak'));
+    expect(mockSpeak).toHaveBeenCalledWith('Ich habe einen Bruder und eine Schwester.', 'de-DE');
+    view.unmount();
+  });
+
+  it('Fill in: the bank keeps the capital of Jahre, the right words fill the gaps in the German lines', async () => {
+    await saveRun(atDe('fill'));
+    const view = await mount();
+    const bank = fillBank(familie, SEED);
+    expect(bank).toContain('Jahre');
+    expect(view.getAllByText(/_____/).length).toBeGreaterThan(0);
+    const wrongAt = bank.findIndex((w) => w !== 'habe');
+    await press(view, `situations-word-${wrongAt}`);
+    expect(view.getByText(`✗ ${bank[wrongAt]}`)).toBeTruthy();
+    await press(view, `situations-word-${bank.indexOf('habe')}`);
+    expect(view.getByText(/Ja, ich habe einen Bruder und eine Schwester\./)).toBeTruthy();
+    await press(view, `situations-word-${bank.indexOf('wohnen')}`);
+    await press(view, `situations-word-${bank.indexOf('Jahre')}`);
+    expect(view.getByText(/Mein Bruder ist dreißig Jahre alt\./)).toBeTruthy();
+    expect(await savedRun()).toMatchObject({ index: 3, done: true, scores: { fill: 2 } });
+    view.unmount();
+  });
+
+  it('Say it by voice: the recognizer is asked for de-DE, ß and umlauts may be written ss / ae / ue, a number may be a digit', async () => {
+    await saveRun(atDe('say', { index: 5 }));
+    const view = await mount();
+    expect(view.getByTestId('situations-line-text').props.children).toBe('Mein Bruder ist dreißig Jahre alt.');
+    expect(view.getByText('My brother is thirty years old.')).toBeTruthy();
+    fireEvent.press(view.getByTestId('situations-listen'));
+    expect(mockSpeak).toHaveBeenCalledWith('Mein Bruder ist dreißig Jahre alt.', 'de-DE');
+    await press(view, 'situations-mic');
+    expect(ExpoSpeechRecognitionModule.start).toHaveBeenCalledWith(expect.objectContaining({ lang: 'de-DE', interimResults: false }));
+    await emit('start');
+    await heardFinal('Mein Bruder ist 30 Jahre alt');
+    expect(view.getByText('Correct!')).toBeTruthy();
+    expect(await savedRun()).toMatchObject({ index: 5, done: true, scores: { say: 1 } });
+    view.unmount();
+    await saveRun(atDe('say', { index: 5 }));
+    const typed = await mount();
+    await press(typed, 'situations-type');
+    expect(typed.getByPlaceholderText('Type in German')).toBeTruthy();
+    await type(typed, 'mein bruder ist dreissig jahre');
+    expect(typed.getByText('Wrong')).toBeTruthy();
+    expect(typed.getAllByTestId('situations-said-wrong')).toHaveLength(1);
+    await type(typed, 'Mein Bruder ist dreissig Jahre alt');
+    expect(typed.getByText('Correct!')).toBeTruthy();
+    typed.unmount();
+  });
+
+  it('Questions: asked in German and read aloud in de-DE, answered in German; the hint says so; umlauts as ue work', async () => {
+    await saveRun(atDe('questions', { index: 0 }));
+    const view = await mount();
+    expect(mockSpeak).toHaveBeenCalledWith('Hast du Geschwister?', 'de-DE');
+    expect(view.getByText('Answer in German')).toBeTruthy();
+    await press(view, 'situations-type');
+    await type(view, 'hallo');
+    expect(view.getByTestId('situations-model').props.children).toBe('A good answer: Ja, ich habe einen Bruder und eine Schwester.');
+    await type(view, 'ja ich habe zwei brueder');
+    expect(view.getByText('Correct!')).toBeTruthy();
+    await press(view, 'situations-next');
+    expect(mockSpeak).toHaveBeenCalledWith('Wo wohnen deine Eltern?', 'de-DE');
+    await type(view, 'sie wohnen in deutschland');
+    expect(view.getByText('Correct!')).toBeTruthy();
+    await press(view, 'situations-next');
+    await type(view, 'er ist 30');
+    expect(view.getByText('Correct!')).toBeTruthy();
+    expect(await savedRun()).toMatchObject({ step: 'questions', index: 2, done: true, scores: { questions: 2 } });
+    view.unmount();
+  });
+
+  it('Build: the tiles are the German words, a noun keeps its capital', async () => {
+    await saveRun(atDe('build'));
+    const view = await mount();
+    expect(view.getByText('Yes, I have a brother and a sister.')).toBeTruthy();
+    for (const w of ['ja', 'ich', 'habe', 'einen', 'Bruder', 'und', 'eine', 'Schwester']) fireEvent.press(view.getByText(w));
+    fireEvent.press(view.getByText('Check'));
+    fireEvent.press(view.getByText('Next →'));
+    await flush();
+    expect(await savedRun()).toMatchObject({ step: 'build', index: 1, scores: { build: 1 } });
+    view.unmount();
+  });
+
+  it('target Spanish, learner German: the meanings, the labels and the explanation are German, the dialogue is Spanish (es-MX)', async () => {
+    setLanguage('de');
+    await getDb().setOnboarding('de', 'es');
+    const view = await mount();
+    expect(view.getByTestId('situations-card-word').props.children).toBe('tener');
+    expect(view.getByText('haben')).toBeTruthy();
+    expect(view.getByText('Neue Wörter')).toBeTruthy();
+    expect(view.getByText('Familienessen: Sonntagsessen, deine Tante fragt dich.')).toBeTruthy();
+    fireEvent.press(view.getByTestId('situations-speak'));
+    expect(mockSpeak).toHaveBeenCalledWith('tener', 'es-MX');
+    view.unmount();
+    await saveRun(at('patterns', { index: 2 }));
+    const patterns = await mount();
+    expect(patterns.getByTestId('situations-card-pattern').props.children).toBe('tener + Zahl + años');
+    expect(patterns.getByText('Das Alter sagt man mit tener: Er hat dreißig Jahre (= er ist dreißig).')).toBeTruthy();
+    patterns.unmount();
+    await saveRun(at('questions', { index: 0 }));
+    const questions = await mount();
+    expect(questions.getByText('Antworte auf Spanisch')).toBeTruthy();
+    expect(questions.getByText('Hast du Geschwister?')).toBeTruthy();
+    questions.unmount();
+  });
+
+  it('target German, learner Spanish or Hungarian: the meanings are theirs', async () => {
+    await getDb().setOnboarding('es', 'de');
+    const es = await mount();
+    expect(es.getByTestId('situations-card-word').props.children).toBe('haben');
+    expect(es.getByText('tener')).toBeTruthy();
+    es.unmount();
+    await getDb().setOnboarding('hu', 'de');
+    setLanguage('hu');
+    const hu = await mount();
+    expect(hu.getByTestId('situations-card-word').props.children).toBe('haben');
+    expect(hu.getByText('van (valakinek)')).toBeTruthy();
+    hu.unmount();
   });
 });

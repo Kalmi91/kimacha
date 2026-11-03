@@ -1,0 +1,1009 @@
+{
+  "schema": 2,
+  "topic": "konnektoren-deshalb",
+  "level": "A2",
+  "title": {
+    "en": "deshalb, darum, dann, trotzdem: connecting words",
+    "es": "deshalb, darum, dann, trotzdem: conectores"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "Words like deshalb (so), dann (then) or sonst (otherwise) link two sentences, but they are adverbs, not conjunctions. They stand in position one of their sentence, so the verb comes right after them and the subject follows: Ich bin krank, deshalb bleibe ich zu Hause. Do not confuse them with weil (verb at the end) and denn (does not change the order). Remember: weil and denn give the reason, deshalb gives the result.",
+        "es": "Palabras como deshalb (por eso), dann (entonces) o sonst (si no) unen dos oraciones, pero son adverbios, no conjunciones. Ocupan la posición uno de su oración, así que el verbo va justo después y el sujeto sigue: Ich bin krank, deshalb bleibe ich zu Hause. No las confundas con weil (verbo al final) ni con denn (no cambia el orden). Recuerda: weil y denn dan la razón, deshalb da el resultado."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "konnektoren",
+      "title": {
+        "en": "Connecting words and their order",
+        "es": "Conectores y su orden"
+      },
+      "header": [
+        {
+          "en": "Word",
+          "es": "Palabra"
+        },
+        {
+          "en": "Meaning",
+          "es": "Significado"
+        },
+        {
+          "en": "Example",
+          "es": "Ejemplo"
+        }
+      ],
+      "rows": [
+        [
+          "weil",
+          "Grund",
+          "Ich bleibe zu Hause, weil ich krank bin."
+        ],
+        [
+          "denn",
+          "Grund",
+          "Ich bleibe zu Hause, denn ich bin krank."
+        ],
+        [
+          "deshalb",
+          "Folge",
+          "Ich bin krank, deshalb bleibe ich zu Hause."
+        ],
+        [
+          "deswegen, darum",
+          "Folge",
+          "Ich bin krank, deswegen bleibe ich zu Hause."
+        ],
+        [
+          "dann, danach",
+          "Reihenfolge",
+          "Zuerst esse ich, danach gehe ich nach Hause."
+        ],
+        [
+          "sonst",
+          "Alternative",
+          "Beeil dich, sonst kommst du zu spät."
+        ],
+        [
+          "trotzdem",
+          "Gegensatz",
+          "Ich bin krank, trotzdem gehe ich zur Arbeit."
+        ]
+      ],
+      "noTableDeck": true
+    },
+    {
+      "kind": "table",
+      "id": "inversion",
+      "title": {
+        "en": "Verb first, then the subject",
+        "es": "Primero el verbo, después el sujeto"
+      },
+      "header": [
+        {
+          "en": "Sentence",
+          "es": "Oración"
+        },
+        {
+          "en": "deshalb",
+          "es": "deshalb"
+        },
+        {
+          "en": "dann",
+          "es": "dann"
+        },
+        {
+          "en": "danach",
+          "es": "danach"
+        }
+      ],
+      "rows": [
+        [
+          "Ich esse ein Brot.",
+          "Deshalb esse ich ein Brot.",
+          "Dann esse ich ein Brot.",
+          "Danach esse ich ein Brot."
+        ],
+        [
+          "Wir gehen nach Hause.",
+          "Deshalb gehen wir nach Hause.",
+          "Dann gehen wir nach Hause.",
+          "Danach gehen wir nach Hause."
+        ],
+        [
+          "Er kauft Obst.",
+          "Deshalb kauft er Obst.",
+          "Dann kauft er Obst.",
+          "Danach kauft er Obst."
+        ],
+        [
+          "Du rufst deine Mutter an.",
+          "Deshalb rufst du deine Mutter an.",
+          "Dann rufst du deine Mutter an.",
+          "Danach rufst du deine Mutter an."
+        ],
+        [
+          "Sie nimmt den Bus.",
+          "Deshalb nimmt sie den Bus.",
+          "Dann nimmt sie den Bus.",
+          "Danach nimmt sie den Bus."
+        ],
+        [
+          "Ich stehe früh auf.",
+          "Deshalb stehe ich früh auf.",
+          "Dann stehe ich früh auf.",
+          "Danach stehe ich früh auf."
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Cause and result",
+        "es": "Causa y resultado"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "weil and denn name the reason. deshalb, deswegen and darum name the result. The same idea can be said both ways, only the order of the two parts changes.",
+            "es": "weil y denn nombran la razón. deshalb, deswegen y darum nombran el resultado. La misma idea se puede decir de las dos maneras, solo cambia el orden de las dos partes."
+          },
+          "examples": [
+            {
+              "es": "Ich habe Hunger, deshalb esse ich ein Brot.",
+              "tr": {
+                "en": "I am hungry, so I eat a piece of bread.",
+                "es": "Tengo hambre, por eso como un pan."
+              }
+            },
+            {
+              "es": "Ich esse ein Brot, denn ich habe Hunger.",
+              "tr": {
+                "en": "I eat a piece of bread, because I am hungry.",
+                "es": "Como un pan, porque tengo hambre."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "After deshalb, deswegen and darum the verb stands in position two, directly after the word. The subject follows the verb.",
+            "es": "Después de deshalb, deswegen y darum el verbo va en la posición dos, justo después de la palabra. El sujeto sigue al verbo."
+          },
+          "examples": [
+            {
+              "es": "Es ist kalt, deswegen trage ich einen Mantel.",
+              "tr": {
+                "en": "It is cold, so I wear a coat.",
+                "es": "Hace frío, por eso uso un abrigo."
+              }
+            },
+            {
+              "es": "Das Essen ist teuer, deshalb kaufen wir es nicht.",
+              "tr": {
+                "en": "The food is expensive, so we do not buy it.",
+                "es": "La comida es cara, por eso no la compramos."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "dann, danach, zuerst and später put actions in order. They also take position one: the verb comes next.",
+            "es": "dann, danach, zuerst y später ordenan las acciones. También ocupan la posición uno: el verbo va después."
+          },
+          "examples": [
+            {
+              "es": "Zuerst esse ich, dann gehe ich spazieren.",
+              "tr": {
+                "en": "First I eat, then I go for a walk.",
+                "es": "Primero como, luego voy a pasear."
+              }
+            },
+            {
+              "es": "Ich arbeite bis fünf, danach rufe ich meine Mutter an.",
+              "tr": {
+                "en": "I work until five, afterwards I call my mother.",
+                "es": "Trabajo hasta las cinco, después llamo a mi mamá."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "sonst means \"otherwise\" and names what happens if you do not do something. trotzdem means \"nevertheless\" and shows a contrast. For now, understand trotzdem when you read it. Both take position one as well.",
+            "es": "sonst significa \"si no\" y nombra lo que pasa si no haces algo. trotzdem significa \"a pesar de eso\" y muestra un contraste. Por ahora, entiende trotzdem cuando lo leas. Los dos ocupan también la posición uno."
+          },
+          "examples": [
+            {
+              "es": "Iss etwas, sonst wirst du krank.",
+              "tr": {
+                "en": "Eat something, otherwise you will get sick.",
+                "es": "Come algo, si no te vas a enfermar."
+              }
+            },
+            {
+              "es": "Es regnet, trotzdem gehen wir spazieren.",
+              "tr": {
+                "en": "It is raining, but we go for a walk anyway.",
+                "es": "Llueve, pero de todos modos vamos a pasear."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Same idea, three connectors",
+        "es": "La misma idea, tres conectores"
+      },
+      "pairs": [
+        {
+          "a": "Ich bleibe zu Hause, denn ich bin krank.",
+          "b": "Ich bin krank, deshalb bleibe ich zu Hause.",
+          "note": {
+            "en": "denn gives the reason and keeps the normal order (subject, verb). deshalb gives the result and needs the inverted order (verb, subject).",
+            "es": "denn da la razón y mantiene el orden normal (sujeto, verbo). deshalb da el resultado y necesita el orden invertido (verbo, sujeto)."
+          },
+          "examples": [
+            {
+              "es": "Wir gehen nicht, denn es regnet.",
+              "tr": {
+                "en": "We are not going, because it is raining.",
+                "es": "No vamos, porque llueve."
+              }
+            },
+            {
+              "es": "Es regnet, deshalb gehen wir nicht.",
+              "tr": {
+                "en": "It is raining, so we are not going.",
+                "es": "Llueve, por eso no vamos."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Ich bleibe zu Hause, weil ich krank bin.",
+          "b": "Ich bin krank, deshalb bleibe ich zu Hause.",
+          "note": {
+            "en": "weil sends the verb to the end of its clause. deshalb does not: the verb stays in position two of a main clause.",
+            "es": "weil manda el verbo al final de su oración. deshalb no: el verbo se queda en la posición dos de una oración principal."
+          },
+          "examples": [
+            {
+              "es": "Er schläft, weil er müde ist.",
+              "tr": {
+                "en": "He sleeps because he is tired.",
+                "es": "Él duerme porque está cansado."
+              }
+            },
+            {
+              "es": "Er ist müde, deshalb schläft er.",
+              "tr": {
+                "en": "He is tired, so he sleeps.",
+                "es": "Él está cansado, por eso duerme."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "The most common mistake is to keep the subject first after a connecting word: not Ich bin krank, deshalb ich bleibe zu Hause, but deshalb bleibe ich. English \"so\" and Spanish \"por eso\" are followed by the normal order, German is not. Ask yourself: is it deshalb or denn? If the sentence gives a result, put the verb right after the connector. If it gives a reason with denn, nothing changes. And do not write weil with the main clause order: not weil ich bin krank, but weil ich krank bin.",
+        "es": "El error más común es dejar el sujeto primero después de un conector: no Ich bin krank, deshalb ich bleibe zu Hause, sino deshalb bleibe ich. Después de \"so\" en inglés y de \"por eso\" en español sigue el orden normal, en alemán no. Pregúntate: ¿es deshalb o denn? Si la oración da un resultado, pon el verbo justo después del conector. Si da una razón con denn, no cambia nada. Y no escribas weil con el orden de la oración principal: no weil ich bin krank, sino weil ich krank bin."
+      }
+    }
+  ],
+  "speak": {
+    "en": "The words «deshalb», «deswegen» and «dann» are adverbs. They stand in position one, and the verb follows right after them. «Ich bin müde, deshalb gehe ich ins Bett.» The subject comes after the verb. The word «denn» also gives a reason, but it does not change the order. «Ich bleibe zu Hause, denn ich bin krank.» With «sonst» you say what happens otherwise. «Beeil dich, sonst kommst du zu spät.»",
+    "es": "Las palabras «deshalb», «deswegen» y «dann» son adverbios. Ocupan la posición uno, y el verbo sigue justo después. «Ich bin müde, deshalb gehe ich ins Bett.» El sujeto va después del verbo. La palabra «denn» también da una razón, pero no cambia el orden. «Ich bleibe zu Hause, denn ich bin krank.» Con «sonst» dices lo que pasa si no. «Beeil dich, sonst kommst du zu spät.»"
+  },
+  "items": [
+    {
+      "id": "konnektoren-deshalb-c01",
+      "sentence": "Ich bin müde, ___ gehe ich ins Bett.",
+      "options": [
+        "deshalb",
+        "weil",
+        "denn"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Being tired is the reason and going to bed is the result. deshalb names the result and takes the verb right after it.",
+        "es": "Estar cansado es la razón e ir a la cama es el resultado. deshalb nombra el resultado y lleva el verbo justo después."
+      },
+      "wrong": {
+        "weil": {
+          "en": "weil would send the verb to the end (weil ich ins Bett gehe) and it names the reason. Here \"gehe ich\" follows, so weil cannot fit.",
+          "es": "weil mandaría el verbo al final (weil ich ins Bett gehe) y nombra la razón. Aquí sigue \"gehe ich\", así que weil no encaja."
+        },
+        "denn": {
+          "en": "denn names a reason and does not invert the order. Going to bed is the result, not the reason, and \"denn gehe ich\" is not possible.",
+          "es": "denn nombra una razón y no invierte el orden. Ir a la cama es el resultado, no la razón, y \"denn gehe ich\" no es posible."
+        }
+      },
+      "examples": [
+        "Ich habe Hunger, deshalb esse ich.",
+        "Er ist krank, deshalb bleibt er hier."
+      ],
+      "tr": {
+        "en": "I am tired, so I go to bed.",
+        "es": "Estoy cansado, por eso me voy a la cama."
+      }
+    },
+    {
+      "id": "konnektoren-deshalb-f01",
+      "kind": "form",
+      "verb": "deshalb",
+      "person": "Ich esse ein Brot.",
+      "answer": "Deshalb esse ich ein Brot.",
+      "table": "inversion"
+    },
+    {
+      "id": "konnektoren-deshalb-c02",
+      "sentence": "Ich bleibe zu Hause, ___ ich bin krank.",
+      "options": [
+        "deshalb",
+        "dann",
+        "denn"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Here the second part gives the reason for staying at home, and the order stays normal (ich bin). That is denn.",
+        "es": "Aquí la segunda parte da la razón para quedarse en casa, y el orden sigue siendo normal (ich bin). Eso es denn."
+      },
+      "wrong": {
+        "deshalb": {
+          "en": "deshalb names a result and would need the verb first: \"deshalb bin ich krank\". Being sick is the reason here, not the result.",
+          "es": "deshalb nombra un resultado y necesitaría el verbo primero: \"deshalb bin ich krank\". Estar enfermo es aquí la razón, no el resultado."
+        },
+        "dann": {
+          "en": "dann puts two actions in order (\"then\") and would also need the verb first. It does not give a reason.",
+          "es": "dann ordena dos acciones (\"luego\") y también necesitaría el verbo primero. No da una razón."
+        }
+      },
+      "examples": [
+        "Wir gehen nicht, denn es regnet.",
+        "Er schläft, denn er ist müde."
+      ],
+      "tr": {
+        "en": "I stay at home, because I am sick.",
+        "es": "Me quedo en casa, porque estoy enfermo."
+      }
+    },
+    {
+      "id": "konnektoren-deshalb-f02",
+      "kind": "form",
+      "verb": "dann",
+      "person": "Wir gehen nach Hause.",
+      "answer": "Dann gehen wir nach Hause.",
+      "table": "inversion"
+    },
+    {
+      "id": "konnektoren-deshalb-c03",
+      "sentence": "Ich habe Hunger, deshalb ___.",
+      "options": [
+        "esse ich ein Brot",
+        "ich esse ein Brot",
+        "ich ein Brot esse"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "After deshalb the verb stands in position two, directly after the word: esse ich.",
+        "es": "Después de deshalb el verbo va en la posición dos, justo después de la palabra: esse ich."
+      },
+      "wrong": {
+        "ich esse ein Brot": {
+          "en": "This keeps the subject first, as in an ordinary sentence. deshalb already fills position one, so the verb must follow it.",
+          "es": "Esto deja el sujeto primero, como en una oración normal. deshalb ya ocupa la posición uno, así que el verbo debe ir después."
+        },
+        "ich ein Brot esse": {
+          "en": "Verb-final order is only for subordinate clauses like weil. deshalb does not send the verb to the end.",
+          "es": "El verbo al final es solo para las oraciones subordinadas como weil. deshalb no manda el verbo al final."
+        }
+      },
+      "examples": [
+        "Es ist kalt, deshalb trage ich einen Mantel.",
+        "Sie ist müde, deshalb schläft sie."
+      ],
+      "tr": {
+        "en": "I am hungry, so I eat a piece of bread.",
+        "es": "Tengo hambre, por eso como un pan."
+      }
+    },
+    {
+      "id": "konnektoren-deshalb-f03",
+      "kind": "form",
+      "verb": "danach",
+      "person": "Er kauft Obst.",
+      "answer": "Danach kauft er Obst.",
+      "table": "inversion"
+    },
+    {
+      "id": "konnektoren-deshalb-w01",
+      "kind": "why",
+      "es": "Ich bin krank, deshalb bleibe ich zu Hause.",
+      "target": "bleibe",
+      "tr": {
+        "en": "I am sick, so I stay at home.",
+        "es": "Estoy enfermo, por eso me quedo en casa."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "deshalb fills position one, so the verb comes before the subject",
+            "es": "deshalb ocupa la posición uno, así que el verbo va antes del sujeto"
+          }
+        },
+        {
+          "text": {
+            "en": "deshalb sends the verb to the end, like weil",
+            "es": "deshalb manda el verbo al final, como weil"
+          },
+          "wrong": {
+            "en": "Only subordinating conjunctions like weil do that. After deshalb the verb stays in position two, right behind the word.",
+            "es": "Solo las conjunciones subordinantes como weil hacen eso. Después de deshalb el verbo se queda en la posición dos, justo detrás de la palabra."
+          }
+        },
+        {
+          "text": {
+            "en": "deshalb is a conjunction in position zero, so the subject stays first",
+            "es": "deshalb es una conjunción en la posición cero, así que el sujeto sigue primero"
+          },
+          "wrong": {
+            "en": "Position zero is for und, aber, oder and denn. deshalb is an adverb and takes position one, so the verb must follow it.",
+            "es": "La posición cero es para und, aber, oder y denn. deshalb es un adverbio y ocupa la posición uno, así que el verbo debe seguirlo."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "konnektoren-deshalb-c04",
+      "sentence": "Zuerst esse ich, ___ gehe ich spazieren.",
+      "options": [
+        "weil",
+        "dann",
+        "denn"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The sentence puts two actions in order: first eating, then walking. That is dann, with the verb right after it.",
+        "es": "La oración ordena dos acciones: primero comer, luego pasear. Eso es dann, con el verbo justo después."
+      },
+      "wrong": {
+        "weil": {
+          "en": "weil gives a reason and sends the verb to the end. Walking is not the reason for eating, it is the next step.",
+          "es": "weil da una razón y manda el verbo al final. Pasear no es la razón para comer, es el siguiente paso."
+        },
+        "denn": {
+          "en": "denn gives a reason too, and the order after it stays normal. The two actions follow one another, so no reason is needed.",
+          "es": "denn también da una razón, y el orden después queda normal. Las dos acciones se suceden, así que no hace falta una razón."
+        }
+      },
+      "examples": [
+        "Zuerst lese ich, dann schlafe ich.",
+        "Zuerst kaufen wir Brot, dann gehen wir nach Hause."
+      ],
+      "tr": {
+        "en": "First I eat, then I go for a walk.",
+        "es": "Primero como, luego voy a pasear."
+      }
+    },
+    {
+      "id": "konnektoren-deshalb-f04",
+      "kind": "form",
+      "verb": "deshalb",
+      "person": "Du rufst deine Mutter an.",
+      "answer": "Deshalb rufst du deine Mutter an.",
+      "table": "inversion"
+    },
+    {
+      "id": "konnektoren-deshalb-c05",
+      "sentence": "Ich esse zuerst. ___ gehe ich nach Hause.",
+      "options": [
+        "Weil",
+        "Denn",
+        "Danach"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Two actions follow one another, and the second sentence starts with the verb after the connector: Danach gehe ich nach Hause.",
+        "es": "Dos acciones se suceden, y la segunda oración empieza con el verbo después del conector: Danach gehe ich nach Hause."
+      },
+      "wrong": {
+        "Weil": {
+          "en": "Weil starts a subordinate clause and sends the verb to the end. It cannot be followed by \"gehe ich\".",
+          "es": "Weil abre una oración subordinada y manda el verbo al final. No puede ir seguido de \"gehe ich\"."
+        },
+        "Denn": {
+          "en": "Denn needs a reason before it and does not start a new sentence with the verb next. Here the second sentence is the next step.",
+          "es": "Denn necesita una razón antes y no inicia una oración nueva con el verbo a continuación. Aquí la segunda oración es el siguiente paso."
+        }
+      },
+      "examples": [
+        "Ich arbeite. Danach lerne ich.",
+        "Wir essen. Danach gehen wir."
+      ],
+      "tr": {
+        "en": "I eat first. Afterwards I go home.",
+        "es": "Primero como. Después me voy a casa."
+      }
+    },
+    {
+      "id": "konnektoren-deshalb-f05",
+      "kind": "form",
+      "verb": "dann",
+      "person": "Sie nimmt den Bus.",
+      "answer": "Dann nimmt sie den Bus.",
+      "table": "inversion"
+    },
+    {
+      "id": "konnektoren-deshalb-c06",
+      "sentence": "Beeil dich, ___ kommst du zu spät.",
+      "options": [
+        "sonst",
+        "deshalb",
+        "denn"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "sonst means \"otherwise\": it names what happens if you do not hurry.",
+        "es": "sonst significa \"si no\": nombra lo que pasa si no te apuras."
+      },
+      "wrong": {
+        "deshalb": {
+          "en": "deshalb would mean that hurrying causes being late, which is the opposite of the meaning. It names a result.",
+          "es": "deshalb significaría que apurarse causa llegar tarde, lo contrario del sentido. Nombra un resultado."
+        },
+        "denn": {
+          "en": "denn gives a reason and cannot be followed by \"kommst du\". Being late is not the reason to hurry in this form.",
+          "es": "denn da una razón y no puede ir seguido de \"kommst du\". Llegar tarde no es la razón para apurarse en esta forma."
+        }
+      },
+      "examples": [
+        "Iss etwas, sonst wirst du krank.",
+        "Schlaf jetzt, sonst bist du morgen müde."
+      ],
+      "tr": {
+        "en": "Hurry up, otherwise you will be late.",
+        "es": "Apúrate, si no vas a llegar tarde."
+      }
+    },
+    {
+      "id": "konnektoren-deshalb-f06",
+      "kind": "form",
+      "verb": "danach",
+      "person": "Ich stehe früh auf.",
+      "answer": "Danach stehe ich früh auf.",
+      "table": "inversion"
+    },
+    {
+      "id": "konnektoren-deshalb-w02",
+      "kind": "why",
+      "es": "Ich bleibe zu Hause, denn ich bin krank.",
+      "target": "denn",
+      "tr": {
+        "en": "I stay at home, because I am sick.",
+        "es": "Me quedo en casa, porque estoy enfermo."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "denn names a result, like deshalb",
+            "es": "denn nombra un resultado, como deshalb"
+          },
+          "wrong": {
+            "en": "denn names the reason. The result is already in the first part: staying at home. Being sick is why.",
+            "es": "denn nombra la razón. El resultado ya está en la primera parte: quedarse en casa. Estar enfermo es el porqué."
+          }
+        },
+        {
+          "text": {
+            "en": "denn gives a reason and does not change the word order",
+            "es": "denn da una razón y no cambia el orden de las palabras"
+          }
+        },
+        {
+          "text": {
+            "en": "denn sends the verb to the end of the clause",
+            "es": "denn manda el verbo al final de la oración"
+          },
+          "wrong": {
+            "en": "That is weil. After denn the clause is an ordinary main clause: ich bin krank, with the verb in position two.",
+            "es": "Eso es weil. Después de denn la oración es una principal normal: ich bin krank, con el verbo en la posición dos."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "konnektoren-deshalb-c07",
+      "sentence": "Ich bin krank, ___ gehe ich zur Arbeit.",
+      "options": [
+        "deshalb",
+        "trotzdem",
+        "dann"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Going to work when sick is a contrast to what you would expect. That is trotzdem (\"nevertheless\").",
+        "es": "Ir a trabajar estando enfermo es un contraste con lo esperable. Eso es trotzdem (\"a pesar de eso\")."
+      },
+      "wrong": {
+        "deshalb": {
+          "en": "deshalb would say that being sick is the reason to go to work. That does not make sense here.",
+          "es": "deshalb diría que estar enfermo es la razón para ir a trabajar. Eso no tiene sentido aquí."
+        },
+        "dann": {
+          "en": "dann only puts actions in order (\"then\"). It does not show the contrast between being sick and working.",
+          "es": "dann solo ordena acciones (\"luego\"). No muestra el contraste entre estar enfermo y trabajar."
+        }
+      },
+      "examples": [
+        "Es regnet, trotzdem gehen wir spazieren.",
+        "Er ist müde, trotzdem arbeitet er."
+      ],
+      "tr": {
+        "en": "I am sick, but I go to work anyway.",
+        "es": "Estoy enfermo, pero de todos modos voy al trabajo."
+      }
+    },
+    {
+      "id": "konnektoren-deshalb-f07",
+      "kind": "form",
+      "verb": "deshalb",
+      "person": "Wir gehen nach Hause.",
+      "answer": "Deshalb gehen wir nach Hause.",
+      "table": "inversion"
+    },
+    {
+      "id": "konnektoren-deshalb-c08",
+      "sentence": "Ich lerne Deutsch, weil ___.",
+      "options": [
+        "ich arbeite in Berlin",
+        "ich in Berlin arbeite",
+        "arbeite ich in Berlin"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "weil starts a subordinate clause, so the verb goes to the end: weil ich in Berlin arbeite.",
+        "es": "weil abre una oración subordinada, así que el verbo va al final: weil ich in Berlin arbeite."
+      },
+      "wrong": {
+        "ich arbeite in Berlin": {
+          "en": "This is the order of a main clause. After weil the conjugated verb has to stand at the end.",
+          "es": "Este es el orden de una oración principal. Después de weil el verbo conjugado tiene que ir al final."
+        },
+        "arbeite ich in Berlin": {
+          "en": "This inverted order is for deshalb and similar words. Directly after weil the subject comes, the verb goes last.",
+          "es": "Este orden invertido es para deshalb y palabras similares. Justo después de weil va el sujeto, el verbo va al final."
+        }
+      },
+      "examples": [
+        "Er schläft, weil er müde ist.",
+        "Wir bleiben hier, weil es regnet."
+      ],
+      "tr": {
+        "en": "I learn German because I work in Berlin.",
+        "es": "Aprendo alemán porque trabajo en Berlín."
+      }
+    },
+    {
+      "id": "konnektoren-deshalb-f08",
+      "kind": "form",
+      "verb": "dann",
+      "person": "Du rufst deine Mutter an.",
+      "answer": "Dann rufst du deine Mutter an.",
+      "table": "inversion"
+    },
+    {
+      "id": "konnektoren-deshalb-c09",
+      "sentence": "Das Wetter ist schlecht, ___ bleiben wir hier.",
+      "options": [
+        "denn",
+        "dass",
+        "deswegen"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Bad weather is the reason, staying here is the result, and the verb comes right after the word: deswegen bleiben wir.",
+        "es": "El mal tiempo es la razón, quedarse aquí es el resultado, y el verbo va justo después de la palabra: deswegen bleiben wir."
+      },
+      "wrong": {
+        "denn": {
+          "en": "denn gives a reason and does not invert. \"denn bleiben wir hier\" is not possible, and the result does not belong after denn.",
+          "es": "denn da una razón y no invierte. \"denn bleiben wir hier\" no es posible, y el resultado no va después de denn."
+        },
+        "dass": {
+          "en": "dass starts a subordinate clause with the verb at the end and needs a verb like glauben before it. It does not link a cause to its result.",
+          "es": "dass abre una subordinada con el verbo al final y necesita un verbo como glauben antes. No une una causa con su resultado."
+        }
+      },
+      "examples": [
+        "Ich habe kein Geld, deswegen kaufe ich nichts.",
+        "Er ist krank, deswegen kommt er nicht."
+      ],
+      "tr": {
+        "en": "The weather is bad, so we stay here.",
+        "es": "El tiempo es malo, por eso nos quedamos aquí."
+      }
+    },
+    {
+      "id": "konnektoren-deshalb-f09",
+      "kind": "form",
+      "verb": "deshalb",
+      "person": "Sie nimmt den Bus.",
+      "answer": "Deshalb nimmt sie den Bus.",
+      "table": "inversion"
+    },
+    {
+      "id": "konnektoren-deshalb-w03",
+      "kind": "why",
+      "es": "Beeil dich, sonst kommst du zu spät.",
+      "target": "sonst",
+      "tr": {
+        "en": "Hurry up, otherwise you will be late.",
+        "es": "Apúrate, si no vas a llegar tarde."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "sonst gives the reason, like denn",
+            "es": "sonst da la razón, como denn"
+          },
+          "wrong": {
+            "en": "denn would explain why you should hurry. sonst names the bad result that will follow if you do not hurry.",
+            "es": "denn explicaría por qué debes apurarte. sonst nombra el mal resultado que sigue si no te apuras."
+          }
+        },
+        {
+          "text": {
+            "en": "sonst means otherwise and takes position one, so the verb follows",
+            "es": "sonst significa si no y ocupa la posición uno, así que el verbo sigue"
+          }
+        },
+        {
+          "text": {
+            "en": "sonst puts two actions in order, like dann",
+            "es": "sonst ordena dos acciones, como dann"
+          },
+          "wrong": {
+            "en": "dann means \"then\" for a next step. sonst means \"if not\", it warns about a consequence.",
+            "es": "dann significa \"luego\" para un siguiente paso. sonst significa \"si no\", avisa de una consecuencia."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "konnektoren-deshalb-c10",
+      "sentence": "Wir bleiben hier, denn ___ schlecht.",
+      "options": [
+        "das Wetter ist",
+        "ist das Wetter",
+        "das Wetter schlecht ist"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "denn does not change the order: subject first, verb second, as in a normal sentence.",
+        "es": "denn no cambia el orden: sujeto primero, verbo segundo, como en una oración normal."
+      },
+      "wrong": {
+        "ist das Wetter": {
+          "en": "Verb first is the order after deshalb. denn is a conjunction in position zero and the sentence continues as usual.",
+          "es": "El verbo primero es el orden después de deshalb. denn es una conjunción en la posición cero y la oración sigue como siempre."
+        },
+        "das Wetter schlecht ist": {
+          "en": "Verb-final order belongs to weil. denn works differently: the verb stays in position two.",
+          "es": "El verbo al final pertenece a weil. denn funciona distinto: el verbo se queda en la posición dos."
+        }
+      },
+      "examples": [
+        "Ich gehe nach Hause, denn ich bin müde.",
+        "Sie bleibt hier, denn es regnet."
+      ],
+      "tr": {
+        "en": "We stay here, because the weather is bad.",
+        "es": "Nos quedamos aquí, porque el tiempo es malo."
+      }
+    },
+    {
+      "id": "konnektoren-deshalb-f10",
+      "kind": "form",
+      "verb": "danach",
+      "person": "Ich esse ein Brot.",
+      "answer": "Danach esse ich ein Brot.",
+      "table": "inversion"
+    },
+    {
+      "id": "konnektoren-deshalb-c11",
+      "sentence": "Zuerst essen wir, dann ___.",
+      "options": [
+        "wir gehen spazieren",
+        "gehen wir spazieren",
+        "wir spazieren gehen"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "dann fills position one, so the verb comes next and the subject follows: gehen wir.",
+        "es": "dann ocupa la posición uno, así que el verbo va después y el sujeto sigue: gehen wir."
+      },
+      "wrong": {
+        "wir gehen spazieren": {
+          "en": "This keeps the subject first. After dann the verb must come before the subject.",
+          "es": "Esto deja el sujeto primero. Después de dann el verbo debe ir antes del sujeto."
+        },
+        "wir spazieren gehen": {
+          "en": "The verb stands at the end here, as in a subordinate clause. dann does not start a subordinate clause.",
+          "es": "Aquí el verbo va al final, como en una subordinada. dann no inicia una oración subordinada."
+        }
+      },
+      "examples": [
+        "Zuerst lernen wir, dann spielen wir.",
+        "Zuerst kaufe ich Brot, dann koche ich."
+      ],
+      "tr": {
+        "en": "First we eat, then we go for a walk.",
+        "es": "Primero comemos, luego vamos a pasear."
+      }
+    },
+    {
+      "id": "konnektoren-deshalb-f11",
+      "kind": "form",
+      "verb": "dann",
+      "person": "Er kauft Obst.",
+      "answer": "Dann kauft er Obst.",
+      "table": "inversion"
+    },
+    {
+      "id": "konnektoren-deshalb-c12",
+      "sentence": "Danach ___ ich dich an.",
+      "options": [
+        "rufst",
+        "anrufe",
+        "rufe"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "A separable verb splits in a main clause: the conjugated part rufe stands in position two, the prefix an goes to the end.",
+        "es": "Un verbo separable se separa en una oración principal: la parte conjugada rufe va en la posición dos, el prefijo an va al final."
+      },
+      "wrong": {
+        "rufst": {
+          "en": "rufst is the form for du. The subject here is ich, so the verb needs the ending -e.",
+          "es": "rufst es la forma para du. El sujeto aquí es ich, así que el verbo necesita la terminación -e."
+        },
+        "anrufe": {
+          "en": "The prefix an must go to the end of the sentence, it is not attached to the verb in a main clause. The sentence already has an at the end.",
+          "es": "El prefijo an debe ir al final de la oración, no se pega al verbo en una oración principal. La oración ya tiene an al final."
+        }
+      },
+      "examples": [
+        "Danach rufe ich meine Mutter an.",
+        "Dann stehe ich früh auf."
+      ],
+      "tr": {
+        "en": "Afterwards I call you.",
+        "es": "Después te llamo."
+      }
+    },
+    {
+      "id": "konnektoren-deshalb-f12",
+      "kind": "form",
+      "verb": "deshalb",
+      "person": "Ich stehe früh auf.",
+      "answer": "Deshalb stehe ich früh auf.",
+      "table": "inversion"
+    },
+    {
+      "id": "konnektoren-deshalb-c13",
+      "sentence": "Er hat Fieber. ___ geht er zum Arzt.",
+      "options": [
+        "Trotzdem",
+        "Deshalb",
+        "Sonst"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Fever is the reason and the doctor visit is the result, so the connector is Deshalb.",
+        "es": "La fiebre es la razón y la visita al médico es el resultado, así que el conector es Deshalb."
+      },
+      "wrong": {
+        "Trotzdem": {
+          "en": "Trotzdem shows a contrast. Going to the doctor with a fever is exactly what you expect, so there is no contrast.",
+          "es": "Trotzdem muestra un contraste. Ir al médico con fiebre es justo lo esperable, así que no hay contraste."
+        },
+        "Sonst": {
+          "en": "Sonst means \"otherwise\" and needs a request or a condition first. A statement about fever is not that.",
+          "es": "Sonst significa \"si no\" y necesita antes una petición o una condición. Una afirmación sobre la fiebre no es eso."
+        }
+      },
+      "examples": [
+        "Sie ist müde. Deshalb schläft sie.",
+        "Ich habe Durst. Deshalb trinke ich Wasser."
+      ],
+      "tr": {
+        "en": "He has a fever. So he goes to the doctor.",
+        "es": "Tiene fiebre. Por eso va al médico."
+      }
+    },
+    {
+      "id": "konnektoren-deshalb-c14",
+      "sentence": "Das Essen ist teuer. ___ kaufen wir es nicht.",
+      "options": [
+        "Deshalb",
+        "Trotzdem",
+        "Weil"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The high price is the reason not to buy it, so the result connector Deshalb fits.",
+        "es": "El precio alto es la razón para no comprarlo, así que encaja el conector de resultado Deshalb."
+      },
+      "wrong": {
+        "Trotzdem": {
+          "en": "Trotzdem would mean \"nevertheless we do not buy it\", which makes no sense. Trotzdem fits \"nevertheless we buy it\".",
+          "es": "Trotzdem significaría \"a pesar de eso no lo compramos\", lo que no tiene sentido. Trotzdem encaja con \"a pesar de eso lo compramos\"."
+        },
+        "Weil": {
+          "en": "Weil would send the verb to the end: weil wir es nicht kaufen. It also gives the reason, and here the result is needed.",
+          "es": "Weil enviaría el verbo al final: weil wir es nicht kaufen. Además da la causa, y aquí se necesita la consecuencia."
+        }
+      },
+      "examples": [
+        "Es ist kalt. Deshalb bleiben wir hier.",
+        "Das Hotel ist teuer. Deshalb schlafen wir zu Hause."
+      ],
+      "tr": {
+        "en": "The food is expensive. So we do not buy it.",
+        "es": "La comida es cara. Por eso no la compramos."
+      }
+    },
+    {
+      "id": "konnektoren-deshalb-w04",
+      "kind": "why",
+      "es": "Zuerst esse ich, danach gehe ich spazieren.",
+      "target": "danach",
+      "tr": {
+        "en": "First I eat, afterwards I go for a walk.",
+        "es": "Primero como, después voy a pasear."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "danach gives the reason for eating",
+            "es": "danach da la razón para comer"
+          },
+          "wrong": {
+            "en": "danach is about time, not about a cause. It says that walking comes after eating.",
+            "es": "danach habla del tiempo, no de una causa. Dice que pasear viene después de comer."
+          }
+        },
+        {
+          "text": {
+            "en": "danach is a subordinating conjunction, so the verb goes to the end",
+            "es": "danach es una conjunción subordinante, así que el verbo va al final"
+          },
+          "wrong": {
+            "en": "danach is an adverb. The verb does not go to the end, it stays in position two: danach gehe ich spazieren.",
+            "es": "danach es un adverbio. El verbo no va al final, se queda en la posición dos: danach gehe ich spazieren."
+          }
+        },
+        {
+          "text": {
+            "en": "danach puts the actions in order and takes position one",
+            "es": "danach ordena las acciones y ocupa la posición uno"
+          }
+        }
+      ],
+      "correctIndex": 2
+    }
+  ]
+}

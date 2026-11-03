@@ -83,7 +83,7 @@ const hu: typeof en = {
     strictAccents: 'Az ékezetek számítanak',
     strictAccentsHint: 'A hiányzó ékezet (á, é, ñ) hibának számít gépeléskor.',
     articlePicker: 'Névelő-gombok',
-    articlePickerHint: 'A spanyol főnévkártyákon az el/la/los/las közül választasz, nem kell beírnod. A ⊘ azt jelenti: nincs névelő.',
+    articlePickerHint: 'A spanyol és a német főnévkártyákon a névelőt (el/la/los/las, der/die/das) kiválasztod, nem kell beírnod. A ⊘ azt jelenti: nincs névelő.',
     missedWordDelay: 'Az elrontott szó ennyi idő múlva jön vissza',
     missedWordDelaySeconds: (n: string) => `${n} mp`,
     learningDirection: 'Tanulási irány',

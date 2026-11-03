@@ -118,7 +118,7 @@ export default function TableDeckScreen() {
     const { target } = await refresh(['direction']);
     setLearnedLang(target);
     const lesson = lessonFor(target, id);
-    const tableCells = tableCellsForLesson(lesson);
+    const tableCells = tableCellsForLesson(lesson, target);
     // table cells win where they exist (unchanged behavior); a
     // table-less lesson falls back to its own word-deck.
     const deckMode: DeckMode = tableCells.length > 0 ? 'table' : 'word';

@@ -1,0 +1,1077 @@
+{
+  "schema": 2,
+  "topic": "personalpronomen-sein",
+  "level": "A1",
+  "title": {
+    "en": "Pronouns and sein: ich bin, du bist, Sie sind",
+    "es": "Pronombres y sein: ich bin, du bist, Sie sind"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "In German every verb needs a subject, so the personal pronoun is never dropped: Ich bin Anna, not Bin Anna. The pronouns are ich, du, er, sie, es, wir, ihr, sie and Sie. The most important verb is sein (to be). It is irregular, so learn its six forms by heart: ich bin, du bist, er/sie/es ist, wir sind, ihr seid, sie/Sie sind.",
+        "es": "En alemán todo verbo necesita un sujeto, así que el pronombre personal nunca se omite: Ich bin Anna, no Bin Anna. Los pronombres son ich, du, er, sie, es, wir, ihr, sie y Sie. El verbo más importante es sein (ser, estar). Es irregular, así que aprende de memoria sus seis formas: ich bin, du bist, er/sie/es ist, wir sind, ihr seid, sie/Sie sind."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "pronomen",
+      "title": {
+        "en": "The personal pronouns",
+        "es": "Los pronombres personales"
+      },
+      "header": [
+        {
+          "en": "Person",
+          "es": "Persona"
+        },
+        {
+          "en": "Singular",
+          "es": "Singular"
+        },
+        {
+          "en": "Plural",
+          "es": "Plural"
+        }
+      ],
+      "rows": [
+        [
+          "1",
+          "ich",
+          "wir"
+        ],
+        [
+          "2",
+          "du",
+          "ihr"
+        ],
+        [
+          "3",
+          "er, sie, es",
+          "sie"
+        ],
+        [
+          "Sie",
+          "Sie",
+          "Sie"
+        ]
+      ],
+      "noTableDeck": true
+    },
+    {
+      "kind": "table",
+      "id": "sein-formen",
+      "title": {
+        "en": "sein in the present tense",
+        "es": "sein en presente"
+      },
+      "header": [
+        {
+          "en": "Pronoun",
+          "es": "Pronombre"
+        },
+        {
+          "en": "sein",
+          "es": "sein"
+        }
+      ],
+      "rows": [
+        [
+          "ich",
+          "bin"
+        ],
+        [
+          "du",
+          "bist"
+        ],
+        [
+          "er/sie/es",
+          "ist"
+        ],
+        [
+          "wir",
+          "sind"
+        ],
+        [
+          "ihr",
+          "seid"
+        ],
+        [
+          "sie/Sie",
+          "sind"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "Which pronoun?",
+        "es": "¿Qué pronombre?"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "er = he, sie = she, es = it. For a person, er or sie follows the sex; a child or a girl is es in grammar (das Kind, das Mädchen).",
+            "es": "er = él, sie = ella, es = ello. Para una persona, er o sie sigue el sexo; un niño o una niña es «es» en la gramática (das Kind, das Mädchen)."
+          },
+          "examples": [
+            {
+              "es": "Peter ist Lehrer. Er ist nett.",
+              "tr": {
+                "en": "Peter is a teacher. He is nice.",
+                "es": "Peter es profesor. Es amable."
+              }
+            },
+            {
+              "es": "Anna ist Ärztin. Sie ist nett.",
+              "tr": {
+                "en": "Anna is a doctor. She is nice.",
+                "es": "Anna es doctora. Es amable."
+              }
+            },
+            {
+              "es": "Das Kind ist klein. Es ist drei.",
+              "tr": {
+                "en": "The child is small. It is three.",
+                "es": "El niño es pequeño. Tiene tres."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "sie with a small s is she (sie ist) or they (sie sind). Sie with a capital S is the formal you, always with the verb form sind. Only the verb and the context tell you which sie it is.",
+            "es": "sie con minúscula es ella (sie ist) o ellos (sie sind). Sie con mayúscula es el usted, siempre con la forma verbal sind. Solo el verbo y el contexto te dicen qué sie es."
+          },
+          "examples": [
+            {
+              "es": "Anna ist müde. Sie ist müde.",
+              "tr": {
+                "en": "Anna is tired. She is tired.",
+                "es": "Anna está cansada. Está cansada."
+              }
+            },
+            {
+              "es": "Anna und Paul sind müde. Sie sind müde.",
+              "tr": {
+                "en": "Anna and Paul are tired. They are tired.",
+                "es": "Anna y Paul están cansados. Están cansados."
+              }
+            },
+            {
+              "es": "Frau Müller, sind Sie müde?",
+              "tr": {
+                "en": "Ms Müller, are you tired?",
+                "es": "Señora Müller, ¿está cansada?"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "You have three words for you. du is for one friend, a child, a family member. ihr is for two or more of them (the plural of du, like you all). Sie is formal, for one or several people you do not know well or who are older or in a service role.",
+            "es": "Tienes tres palabras para «tú»/«usted». du es para un amigo, un niño o un familiar. ihr es para dos o más de ellos (en México, ustedes entre amigos). Sie es formal, para una o varias personas que no conoces bien, mayores o en un servicio (usted y ustedes)."
+          },
+          "examples": [
+            {
+              "es": "Anna, bist du müde?",
+              "tr": {
+                "en": "Anna, are you tired?",
+                "es": "Anna, ¿estás cansada?"
+              }
+            },
+            {
+              "es": "Anna und Paul, seid ihr müde?",
+              "tr": {
+                "en": "Anna and Paul, are you tired?",
+                "es": "Anna y Paul, ¿están cansados?"
+              }
+            },
+            {
+              "es": "Herr Braun, sind Sie müde?",
+              "tr": {
+                "en": "Mr Braun, are you tired?",
+                "es": "Señor Braun, ¿está cansado?"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "What sein connects",
+        "es": "Qué une sein"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "Name, nationality, profession, adjective. A profession after sein has no article: Ich bin Lehrer, not Ich bin ein Lehrer.",
+            "es": "Nombre, nacionalidad, profesión, adjetivo. Una profesión después de sein no lleva artículo: Ich bin Lehrer, no Ich bin ein Lehrer."
+          },
+          "examples": [
+            {
+              "es": "Ich bin Lukas.",
+              "tr": {
+                "en": "I am Lukas.",
+                "es": "Soy Lukas."
+              }
+            },
+            {
+              "es": "Sie ist Ärztin.",
+              "tr": {
+                "en": "She is a doctor.",
+                "es": "Ella es doctora."
+              }
+            },
+            {
+              "es": "Wir sind Mexikaner.",
+              "tr": {
+                "en": "We are Mexicans.",
+                "es": "Somos mexicanos."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Feelings and states: Ich bin müde. Age also uses sein, not haben: Ich bin 20 Jahre alt (not Ich habe 20 Jahre).",
+            "es": "Sentimientos y estados: Ich bin müde. La edad también usa sein, no haben: Ich bin 20 Jahre alt (no Ich habe 20 Jahre)."
+          },
+          "examples": [
+            {
+              "es": "Ich bin müde.",
+              "tr": {
+                "en": "I am tired.",
+                "es": "Estoy cansado."
+              }
+            },
+            {
+              "es": "Wie alt bist du?",
+              "tr": {
+                "en": "How old are you?",
+                "es": "¿Cuántos años tienes?"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "pronomen-ersatz",
+      "title": {
+        "en": "Which pronoun replaces the subject?",
+        "es": "¿Qué pronombre reemplaza al sujeto?"
+      },
+      "header": [
+        {
+          "en": "Subject",
+          "es": "Sujeto"
+        },
+        {
+          "en": "Pronomen",
+          "es": "Pronomen"
+        }
+      ],
+      "rows": [
+        [
+          "Anna",
+          "sie"
+        ],
+        [
+          "Paul",
+          "er"
+        ],
+        [
+          "das Kind",
+          "es"
+        ],
+        [
+          "Anna und Paul",
+          "sie"
+        ],
+        [
+          "Paul und ich",
+          "wir"
+        ],
+        [
+          "Paul und du",
+          "ihr"
+        ]
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Three look-alikes",
+        "es": "Tres parecidos"
+      },
+      "pairs": [
+        {
+          "a": "Sie ist nett.",
+          "b": "Sie sind nett.",
+          "note": {
+            "en": "sie ist = she is. Sie sind = you are (formal) or they are. The verb form sind goes with both the formal you and they.",
+            "es": "sie ist = ella es. Sie sind = usted es / ustedes son o ellos son. La forma verbal sind va tanto con el usted como con ellos."
+          },
+          "examples": [
+            {
+              "es": "Anna ist nett.",
+              "tr": {
+                "en": "Anna is nice.",
+                "es": "Anna es amable."
+              }
+            },
+            {
+              "es": "Frau Müller, sind Sie nett?",
+              "tr": {
+                "en": "Ms Müller, are you nice?",
+                "es": "Señora Müller, ¿es usted amable?"
+              }
+            }
+          ]
+        },
+        {
+          "a": "Du bist nett.",
+          "b": "Ihr seid nett.",
+          "note": {
+            "en": "One friend: du bist. Several friends: ihr seid. Do not use sind for ihr.",
+            "es": "Un amigo: du bist. Varios amigos: ihr seid. No uses sind para ihr."
+          },
+          "examples": [
+            {
+              "es": "Lukas, du bist nett.",
+              "tr": {
+                "en": "Lukas, you are nice.",
+                "es": "Lukas, eres amable."
+              }
+            },
+            {
+              "es": "Lukas und Anna, ihr seid nett.",
+              "tr": {
+                "en": "Lukas and Anna, you are nice.",
+                "es": "Lukas y Anna, son amables."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: do not drop the pronoun (Bin Anna), do not use haben for your age (Ich habe 20 Jahre), and do not put ein before a profession (Ich bin ein Lehrer). Sie (you, formal) is always written with a capital S, and so are its forms Ihr and Ihnen.",
+        "es": "Trampas clásicas: no omitas el pronombre (Bin Anna), no uses haben para la edad (Ich habe 20 Jahre) y no pongas ein antes de una profesión (Ich bin ein Lehrer). Sie (usted) se escribe siempre con S mayúscula, igual que sus formas Ihr e Ihnen."
+      }
+    }
+  ],
+  "speak": {
+    "en": "In German the verb needs a subject, so you cannot drop the pronoun: «Ich bin Anna». The verb «sein» has six forms: «ich bin», «du bist», «er ist», «wir sind», «ihr seid» and «sie sind». Use «du» for one friend, «ihr» for several friends, and «Sie» with a capital S for people you address formally. The word «sie» can mean she or they, so look at the verb: «sie ist» is she is, and «sie sind» is they are. A profession has no article: «Sie ist Lehrerin».",
+    "es": "En alemán el verbo necesita un sujeto, así que no puedes omitir el pronombre: «Ich bin Anna». El verbo «sein» tiene seis formas: «ich bin», «du bist», «er ist», «wir sind», «ihr seid» y «sie sind». Usa «du» para un amigo, «ihr» para varios amigos, y «Sie» con S mayúscula para las personas a quienes tratas de usted. La palabra «sie» puede significar ella o ellos, así que fíjate en el verbo: «sie ist» es ella es, y «sie sind» es ellos son. Una profesión no lleva artículo: «Sie ist Lehrerin»."
+  },
+  "items": [
+    {
+      "id": "personalpronomen-sein-c01",
+      "sentence": "Ich ___ Anna.",
+      "options": [
+        "bin",
+        "bist",
+        "ist"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "With ich the verb form is bin: Ich bin Anna.",
+        "es": "Con ich la forma del verbo es bin: Ich bin Anna."
+      },
+      "wrong": {
+        "bist": {
+          "en": "bist is the form for du. Du bist Anna would mean You are Anna, not I am Anna.",
+          "es": "bist es la forma de du. Du bist Anna significaría «Tú eres Anna», no «Yo soy Anna»."
+        },
+        "ist": {
+          "en": "ist belongs to er, sie and es. With ich you need bin.",
+          "es": "ist corresponde a er, sie y es. Con ich necesitas bin."
+        }
+      },
+      "examples": [
+        "Ich bin Paul.",
+        "Ich bin müde."
+      ],
+      "tr": {
+        "en": "I am Anna.",
+        "es": "Yo soy Anna."
+      }
+    },
+    {
+      "id": "personalpronomen-sein-f01",
+      "kind": "form",
+      "verb": "sein",
+      "person": "ich",
+      "answer": "bin",
+      "table": "sein-formen"
+    },
+    {
+      "id": "personalpronomen-sein-c02",
+      "sentence": "Wie alt ___ du?",
+      "options": [
+        "sind",
+        "bist",
+        "ist"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "du goes with bist. Age uses sein in German: Wie alt bist du?",
+        "es": "du va con bist. La edad usa sein en alemán: Wie alt bist du?"
+      },
+      "wrong": {
+        "sind": {
+          "en": "sind goes with wir, sie and Sie. For one friend, du, the form is bist.",
+          "es": "sind va con wir, sie y Sie. Para un amigo, du, la forma es bist."
+        },
+        "ist": {
+          "en": "ist is for er, sie and es. The subject here is du, so you need bist.",
+          "es": "ist es para er, sie y es. El sujeto aquí es du, así que necesitas bist."
+        }
+      },
+      "examples": [
+        "Wie alt bist du, Lukas?",
+        "Du bist nett."
+      ],
+      "tr": {
+        "en": "How old are you?",
+        "es": "¿Cuántos años tienes?"
+      }
+    },
+    {
+      "id": "personalpronomen-sein-f02",
+      "kind": "form",
+      "verb": "Pronomen",
+      "person": "Anna",
+      "answer": "sie",
+      "table": "pronomen-ersatz"
+    },
+    {
+      "id": "personalpronomen-sein-c03",
+      "sentence": "Frau Müller, ___ Sie aus Berlin?",
+      "options": [
+        "bist",
+        "ist",
+        "sind"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "You address Frau Müller formally, with Sie, and Sie takes sind.",
+        "es": "A Frau Müller la tratas de usted, con Sie, y Sie lleva sind."
+      },
+      "wrong": {
+        "bist": {
+          "en": "bist goes with du, which you would use for a friend. For formal Sie the form is sind.",
+          "es": "bist va con du, que usarías para un amigo. Para el Sie formal la forma es sind."
+        },
+        "ist": {
+          "en": "ist is for er, sie (she) and es. Sie with a capital S, the formal you, takes sind.",
+          "es": "ist es para er, sie (ella) y es. Sie con mayúscula, el usted, lleva sind."
+        }
+      },
+      "examples": [
+        "Frau Müller, sind Sie müde?",
+        "Sind Sie Lehrer?"
+      ],
+      "tr": {
+        "en": "Ms Müller, are you from Berlin?",
+        "es": "Señora Müller, ¿usted es de Berlín?"
+      }
+    },
+    {
+      "id": "personalpronomen-sein-f03",
+      "kind": "form",
+      "verb": "sein",
+      "person": "du",
+      "answer": "bist",
+      "table": "sein-formen"
+    },
+    {
+      "id": "personalpronomen-sein-w01",
+      "kind": "why",
+      "es": "Sie ist Lehrerin.",
+      "target": "Lehrerin",
+      "tr": {
+        "en": "She is a teacher.",
+        "es": "Ella es maestra."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "A profession after sein takes ein or eine",
+            "es": "Una profesión después de sein lleva ein o eine"
+          },
+          "wrong": {
+            "en": "With this rule you would say Sie ist eine Lehrerin, which sounds as if you were adding a description. The plain profession has no article.",
+            "es": "Con esta regla dirías Sie ist eine Lehrerin, que suena como si añadieras una descripción. La profesión sola no lleva artículo."
+          }
+        },
+        {
+          "text": {
+            "en": "A profession after sein has no article",
+            "es": "Una profesión después de sein no lleva artículo"
+          }
+        },
+        {
+          "text": {
+            "en": "The pronoun is dropped, because the verb shows the person",
+            "es": "Se omite el pronombre, porque el verbo muestra la persona"
+          },
+          "wrong": {
+            "en": "German verbs need an explicit subject. Ist Lehrerin is not a complete sentence; the pronoun sie must stay.",
+            "es": "Los verbos alemanes necesitan un sujeto explícito. Ist Lehrerin no es una frase completa; el pronombre sie debe quedarse."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "personalpronomen-sein-c04",
+      "sentence": "Paul und Anna ___ müde.",
+      "options": [
+        "seid",
+        "sind",
+        "ist"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Paul and Anna together are they, sie, and sie takes sind.",
+        "es": "Paul y Anna juntos son ellos, sie, y sie lleva sind."
+      },
+      "wrong": {
+        "seid": {
+          "en": "seid is the form for ihr (you, several friends). Here we talk about Paul and Anna, so it is they: sind.",
+          "es": "seid es la forma de ihr (ustedes, varios amigos). Aquí hablamos de Paul y Anna, o sea ellos: sind."
+        },
+        "ist": {
+          "en": "ist is singular. Two people are plural, so the verb must be sind.",
+          "es": "ist es singular. Dos personas son plural, así que el verbo debe ser sind."
+        }
+      },
+      "examples": [
+        "Paul und Anna sind Freunde.",
+        "Sie sind nett."
+      ],
+      "tr": {
+        "en": "Paul and Anna are tired.",
+        "es": "Paul y Anna están cansados."
+      }
+    },
+    {
+      "id": "personalpronomen-sein-f04",
+      "kind": "form",
+      "verb": "Pronomen",
+      "person": "Paul",
+      "answer": "er",
+      "table": "pronomen-ersatz"
+    },
+    {
+      "id": "personalpronomen-sein-c05",
+      "sentence": "Anna ist Ärztin. ___ ist nett.",
+      "options": [
+        "Sie",
+        "Er",
+        "Es"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Anna is a woman, so the pronoun is sie. At the start of the sentence it is written Sie, but it is still she.",
+        "es": "Anna es una mujer, así que el pronombre es sie. Al inicio de la frase se escribe Sie, pero sigue siendo «ella»."
+      },
+      "wrong": {
+        "Er": {
+          "en": "er is he. Anna is a woman, so we need sie for her.",
+          "es": "er es «él». Anna es una mujer, así que necesitamos sie para ella."
+        },
+        "Es": {
+          "en": "es is used for das Kind or things. A woman is not es, she is sie.",
+          "es": "es se usa para das Kind o para cosas. Una mujer no es es, es sie."
+        }
+      },
+      "examples": [
+        "Sie ist Lehrerin.",
+        "Sie ist müde."
+      ],
+      "tr": {
+        "en": "Anna is a doctor. She is nice.",
+        "es": "Anna es doctora. Es amable."
+      }
+    },
+    {
+      "id": "personalpronomen-sein-f05",
+      "kind": "form",
+      "verb": "sein",
+      "person": "er/sie/es",
+      "answer": "ist",
+      "table": "sein-formen"
+    },
+    {
+      "id": "personalpronomen-sein-c06",
+      "sentence": "Wir ___ aus Mexiko.",
+      "options": [
+        "sind",
+        "bin",
+        "seid"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "wir (we) takes sind: Wir sind aus Mexiko.",
+        "es": "wir (nosotros) lleva sind: Wir sind aus Mexiko."
+      },
+      "wrong": {
+        "bin": {
+          "en": "bin is only for ich. We means more than one person, so you cannot use bin.",
+          "es": "bin es solo para ich. Wir significa más de una persona, así que no puedes usar bin."
+        },
+        "seid": {
+          "en": "seid is the form for ihr (you, several friends). With wir the form is sind.",
+          "es": "seid es la forma de ihr (ustedes, varios amigos). Con wir la forma es sind."
+        }
+      },
+      "examples": [
+        "Wir sind Freunde.",
+        "Wir sind hier."
+      ],
+      "tr": {
+        "en": "We are from Mexico.",
+        "es": "Somos de México."
+      }
+    },
+    {
+      "id": "personalpronomen-sein-f06",
+      "kind": "form",
+      "verb": "Pronomen",
+      "person": "das Kind",
+      "answer": "es",
+      "table": "pronomen-ersatz"
+    },
+    {
+      "id": "personalpronomen-sein-w02",
+      "kind": "why",
+      "es": "Wie alt bist du?",
+      "target": "bist",
+      "tr": {
+        "en": "How old are you?",
+        "es": "¿Cuántos años tienes?"
+      },
+      "options": [
+        {
+          "text": {
+            "en": "sein is used for age",
+            "es": "para la edad se usa sein"
+          }
+        },
+        {
+          "text": {
+            "en": "haben is used for age, as in Spanish",
+            "es": "para la edad se usa haben, como en español"
+          },
+          "wrong": {
+            "en": "Spanish says tener años, but German says to be old: Wie alt bist du? With haben the sentence would be wrong.",
+            "es": "El español dice tener años, pero el alemán dice «ser viejo»: Wie alt bist du? Con haben la frase sería incorrecta."
+          }
+        },
+        {
+          "text": {
+            "en": "werden is used for age",
+            "es": "para la edad se usa werden"
+          },
+          "wrong": {
+            "en": "Wie alt wirst du? asks how old you will be at your next birthday, not how old you are now.",
+            "es": "Wie alt wirst du? pregunta cuántos años vas a cumplir en tu próximo cumpleaños, no cuántos tienes ahora."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "personalpronomen-sein-c07",
+      "sentence": "Kinder, ___ ihr müde?",
+      "options": [
+        "seid",
+        "sind",
+        "bist"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "You are speaking to several children, ihr, and ihr has its own form of sein: seid.",
+        "es": "Hablas con varios niños, ihr, y ihr tiene su propia forma de sein: seid."
+      },
+      "wrong": {
+        "sind": {
+          "en": "sind goes with wir, sie and Sie. ihr is the exception and takes seid.",
+          "es": "sind va con wir, sie y Sie. ihr es la excepción y lleva seid."
+        },
+        "bist": {
+          "en": "bist is only for one person, du. Here ihr means several children.",
+          "es": "bist es solo para una persona, du. Aquí ihr significa varios niños."
+        }
+      },
+      "examples": [
+        "Ihr seid nett.",
+        "Seid ihr Freunde?"
+      ],
+      "tr": {
+        "en": "Children, are you tired?",
+        "es": "Niños, ¿están cansados?"
+      }
+    },
+    {
+      "id": "personalpronomen-sein-f07",
+      "kind": "form",
+      "verb": "sein",
+      "person": "wir",
+      "answer": "sind",
+      "table": "sein-formen"
+    },
+    {
+      "id": "personalpronomen-sein-c08",
+      "sentence": "Das ist Herr Braun. ___ ist Lehrer.",
+      "options": [
+        "Er",
+        "Sie",
+        "Es"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Herr Braun is a man, so the pronoun is er.",
+        "es": "Herr Braun es un hombre, así que el pronombre es er."
+      },
+      "wrong": {
+        "Sie": {
+          "en": "Sie would be a woman (sie ist) or the formal you. Herr Braun is a man, so we need er.",
+          "es": "Sie sería una mujer (sie ist) o el usted formal. Herr Braun es un hombre, así que necesitamos er."
+        },
+        "Es": {
+          "en": "es is for das Kind or things. A man is er.",
+          "es": "es es para das Kind o para cosas. Un hombre es er."
+        }
+      },
+      "examples": [
+        "Er ist müde.",
+        "Er ist aus Berlin."
+      ],
+      "tr": {
+        "en": "That is Mr Braun. He is a teacher.",
+        "es": "Él es el señor Braun. Es profesor."
+      }
+    },
+    {
+      "id": "personalpronomen-sein-f08",
+      "kind": "form",
+      "verb": "Pronomen",
+      "person": "Anna und Paul",
+      "answer": "sie",
+      "table": "pronomen-ersatz"
+    },
+    {
+      "id": "personalpronomen-sein-c09",
+      "sentence": "___ seid pünktlich.",
+      "options": [
+        "Wir",
+        "Ihr",
+        "Sie"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "seid is the form that belongs to ihr: Ihr seid pünktlich.",
+        "es": "seid es la forma que corresponde a ihr: Ihr seid pünktlich."
+      },
+      "wrong": {
+        "Wir": {
+          "en": "wir takes sind: Wir sind pünktlich. With seid you need ihr.",
+          "es": "wir lleva sind: Wir sind pünktlich. Con seid necesitas ihr."
+        },
+        "Sie": {
+          "en": "Sie (formal you) takes sind: Sie sind pünktlich. Only ihr goes with seid.",
+          "es": "Sie (usted) lleva sind: Sie sind pünktlich. Solo ihr va con seid."
+        }
+      },
+      "examples": [
+        "Ihr seid nett.",
+        "Ihr seid hier."
+      ],
+      "tr": {
+        "en": "You are on time.",
+        "es": "Ustedes son puntuales."
+      }
+    },
+    {
+      "id": "personalpronomen-sein-f09",
+      "kind": "form",
+      "verb": "sein",
+      "person": "ihr",
+      "answer": "seid",
+      "table": "sein-formen"
+    },
+    {
+      "id": "personalpronomen-sein-w03",
+      "kind": "why",
+      "es": "Frau Müller, sind Sie müde?",
+      "target": "Sie",
+      "tr": {
+        "en": "Ms Müller, are you tired?",
+        "es": "Señora Müller, ¿está cansada?"
+      },
+      "options": [
+        {
+          "text": {
+            "en": "du: one person, so the verb is bist",
+            "es": "du: una persona, así que el verbo es bist"
+          },
+          "wrong": {
+            "en": "du is for friends, family and children. You address Frau Müller formally, so the verb is sind and the pronoun is Sie.",
+            "es": "du es para amigos, familiares y niños. A Frau Müller la tratas de usted, así que el verbo es sind y el pronombre es Sie."
+          }
+        },
+        {
+          "text": {
+            "en": "sie with a small s: they, so the verb is sind",
+            "es": "sie con minúscula: ellos, así que el verbo es sind"
+          },
+          "wrong": {
+            "en": "A small sie would be they, but you are speaking to one person, Frau Müller, and the capital S marks the formal you.",
+            "es": "Una sie con minúscula sería «ellos», pero hablas con una sola persona, Frau Müller, y la S mayúscula marca el usted formal."
+          }
+        },
+        {
+          "text": {
+            "en": "Sie with a capital S: the formal you, so the verb is sind",
+            "es": "Sie con S mayúscula: el usted formal, así que el verbo es sind"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "personalpronomen-sein-c10",
+      "sentence": "Das Kind ist klein. ___ ist drei Jahre alt.",
+      "options": [
+        "Er",
+        "Sie",
+        "Es"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Das Kind is grammatically neuter, so the pronoun is es.",
+        "es": "Das Kind es neutro en la gramática, así que el pronombre es es."
+      },
+      "wrong": {
+        "Er": {
+          "en": "er would only fit a boy as a masculine word. Das Kind is neuter, so it is es.",
+          "es": "er solo encajaría con una palabra masculina. Das Kind es neutro, así que es es."
+        },
+        "Sie": {
+          "en": "sie is for a woman or a feminine word. Das Kind is neuter, so it is es.",
+          "es": "sie es para una mujer o una palabra femenina. Das Kind es neutro, así que es es."
+        }
+      },
+      "examples": [
+        "Es ist müde.",
+        "Es ist klein."
+      ],
+      "tr": {
+        "en": "The child is small. It is three years old.",
+        "es": "El niño es pequeño. Tiene tres años."
+      }
+    },
+    {
+      "id": "personalpronomen-sein-f10",
+      "kind": "form",
+      "verb": "Pronomen",
+      "person": "Paul und ich",
+      "answer": "wir",
+      "table": "pronomen-ersatz"
+    },
+    {
+      "id": "personalpronomen-sein-c11",
+      "sentence": "Ich ___ zwanzig Jahre alt.",
+      "options": [
+        "habe",
+        "bin",
+        "ist"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Age is said with sein, not with haben: Ich bin zwanzig Jahre alt.",
+        "es": "La edad se dice con sein, no con haben: Ich bin zwanzig Jahre alt."
+      },
+      "wrong": {
+        "habe": {
+          "en": "habe would be right in Spanish (tengo veinte años), but German says I am twenty years old, with sein.",
+          "es": "habe sería correcto en español (tengo veinte años), pero el alemán dice «soy veinte años viejo», con sein."
+        },
+        "ist": {
+          "en": "ist goes with er, sie and es. With ich the form is bin.",
+          "es": "ist va con er, sie y es. Con ich la forma es bin."
+        }
+      },
+      "examples": [
+        "Ich bin 20 Jahre alt.",
+        "Wie alt bist du?"
+      ],
+      "tr": {
+        "en": "I am twenty years old.",
+        "es": "Tengo veinte años."
+      }
+    },
+    {
+      "id": "personalpronomen-sein-f11",
+      "kind": "form",
+      "verb": "sein",
+      "person": "sie/Sie",
+      "answer": "sind",
+      "table": "sein-formen"
+    },
+    {
+      "id": "personalpronomen-sein-c12",
+      "sentence": "Hallo, Lukas! Bist ___ zu Hause?",
+      "options": [
+        "Sie",
+        "ihr",
+        "du"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Lukas is one friend, so you use du, and bist goes with du.",
+        "es": "Lukas es un amigo, así que usas du, y bist va con du."
+      },
+      "wrong": {
+        "Sie": {
+          "en": "Sie is the formal you and takes sind. Lukas is a friend, and bist belongs to du.",
+          "es": "Sie es el usted formal y lleva sind. Lukas es un amigo, y bist pertenece a du."
+        },
+        "ihr": {
+          "en": "ihr is for several friends and takes seid. Lukas is only one person.",
+          "es": "ihr es para varios amigos y lleva seid. Lukas es solo una persona."
+        }
+      },
+      "examples": [
+        "Bist du müde?",
+        "Bist du aus Berlin?"
+      ],
+      "tr": {
+        "en": "Hello, Lukas! Are you at home?",
+        "es": "Hola, Lukas, ¿estás en casa?"
+      }
+    },
+    {
+      "id": "personalpronomen-sein-f12",
+      "kind": "form",
+      "verb": "Pronomen",
+      "person": "Paul und du",
+      "answer": "ihr",
+      "table": "pronomen-ersatz"
+    },
+    {
+      "id": "personalpronomen-sein-c13",
+      "sentence": "Guten Tag, Frau Schmidt. Sind ___ Lehrerin?",
+      "options": [
+        "du",
+        "Sie",
+        "ihr"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "You say Guten Tag and Frau Schmidt, so it is formal: Sie, with sind.",
+        "es": "Dices Guten Tag y Frau Schmidt, así que es formal: Sie, con sind."
+      },
+      "wrong": {
+        "du": {
+          "en": "du is for friends and takes bist. After Guten Tag and Frau Schmidt the formal Sie is the right choice.",
+          "es": "du es para amigos y lleva bist. Después de Guten Tag y Frau Schmidt lo correcto es el formal Sie."
+        },
+        "ihr": {
+          "en": "ihr is for several friends and takes seid. Frau Schmidt is one person you address formally.",
+          "es": "ihr es para varios amigos y lleva seid. Frau Schmidt es una persona a quien tratas de usted."
+        }
+      },
+      "examples": [
+        "Sind Sie Frau Schmidt?",
+        "Sind Sie müde?"
+      ],
+      "tr": {
+        "en": "Good day, Ms Schmidt. Are you a teacher?",
+        "es": "Buenos días, señora Schmidt. ¿Usted es maestra?"
+      }
+    },
+    {
+      "id": "personalpronomen-sein-c14",
+      "sentence": "Peter und ich ___ Freunde.",
+      "options": [
+        "seid",
+        "bin",
+        "sind"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Peter and I together are we, wir, and wir takes sind.",
+        "es": "Peter y yo juntos somos nosotros, wir, y wir lleva sind."
+      },
+      "wrong": {
+        "seid": {
+          "en": "seid is the form for ihr (you, several friends). With Peter and I the subject is we, wir.",
+          "es": "seid es la forma de ihr (ustedes, varios amigos). Con Peter y yo el sujeto es nosotros, wir."
+        },
+        "bin": {
+          "en": "bin is only for a single person, ich. Peter and I are two people.",
+          "es": "bin es solo para una persona, ich. Peter y yo somos dos personas."
+        }
+      },
+      "examples": [
+        "Peter und ich sind müde.",
+        "Wir sind Freunde."
+      ],
+      "tr": {
+        "en": "Peter and I are friends.",
+        "es": "Peter y yo somos amigos."
+      }
+    },
+    {
+      "id": "personalpronomen-sein-w04",
+      "kind": "why",
+      "es": "Ihr seid sehr nett.",
+      "target": "seid",
+      "tr": {
+        "en": "You are very nice.",
+        "es": "Ustedes son muy amables."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "sind: every plural form of sein is sind",
+            "es": "sind: todas las formas plurales de sein son sind"
+          },
+          "wrong": {
+            "en": "wir, sie and Sie take sind, but ihr has its own form, seid. So this rule has an exception.",
+            "es": "wir, sie y Sie llevan sind, pero ihr tiene su propia forma, seid. Esta regla tiene una excepción."
+          }
+        },
+        {
+          "text": {
+            "en": "seid: the form of sein that goes with ihr",
+            "es": "seid: la forma de sein que va con ihr"
+          }
+        },
+        {
+          "text": {
+            "en": "bist: the plural form is the same as for du",
+            "es": "bist: la forma plural es la misma que para du"
+          },
+          "wrong": {
+            "en": "bist is only for one person, du. Several friends, ihr, need a different form.",
+            "es": "bist es solo para una persona, du. Varios amigos, ihr, necesitan otra forma."
+          }
+        }
+      ],
+      "correctIndex": 1
+    }
+  ]
+}

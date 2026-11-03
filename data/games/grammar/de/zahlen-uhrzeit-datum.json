@@ -1,0 +1,1172 @@
+{
+  "schema": 2,
+  "topic": "zahlen-uhrzeit-datum",
+  "level": "A1",
+  "title": {
+    "en": "Numbers, time and dates",
+    "es": "Números, hora y fechas"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "German numbers are written as one word. From 13 to 19 they end in -zehn, the tens end in -zig (zwanzig, vierzig), and from 21 on the units come first: einundzwanzig is one-and-twenty. For the time, the official 24-hour form is simple (vierzehn Uhr dreißig), but in speech people say halb drei for 2:30, because halb counts towards the next hour. Dates use ordinal numbers ending in -te or -ste: am ersten Mai, am zwanzigsten Juli.",
+        "es": "Los números alemanes se escriben en una sola palabra. Del 13 al 19 terminan en -zehn, las decenas terminan en -zig (zwanzig, vierzig), y a partir del 21 van primero las unidades: einundzwanzig es «uno y veinte». Para la hora, la forma oficial de 24 horas es sencilla (vierzehn Uhr dreißig), pero al hablar se dice halb drei para las 2:30, porque halb cuenta hacia la hora siguiente. Las fechas usan números ordinales que terminan en -te o -ste: am ersten Mai, am zwanzigsten Juli."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "zeit-woerter",
+      "title": {
+        "en": "Days, months and seasons",
+        "es": "Días, meses y estaciones"
+      },
+      "header": [
+        {
+          "en": "Group",
+          "es": "Grupo"
+        },
+        {
+          "en": "Wörter",
+          "es": "Wörter"
+        }
+      ],
+      "rows": [
+        [
+          "Wochentage",
+          "der Montag, der Dienstag, der Mittwoch, der Donnerstag, der Freitag, der Samstag, der Sonntag"
+        ],
+        [
+          "Monate",
+          "der Januar, der Februar, der März, der April, der Mai, der Juni, der Juli, der August, der September, der Oktober, der November, der Dezember"
+        ],
+        [
+          "Jahreszeiten",
+          "der Frühling, der Sommer, der Herbst, der Winter"
+        ]
+      ],
+      "noTableDeck": true
+    },
+    {
+      "kind": "table",
+      "id": "zahlen",
+      "title": {
+        "en": "Numbers in words",
+        "es": "Números en palabras"
+      },
+      "header": [
+        {
+          "en": "Digits",
+          "es": "Cifras"
+        },
+        {
+          "en": "Wort",
+          "es": "Wort"
+        }
+      ],
+      "rows": [
+        [
+          "1",
+          "eins"
+        ],
+        [
+          "7",
+          "sieben"
+        ],
+        [
+          "11",
+          "elf"
+        ],
+        [
+          "12",
+          "zwölf"
+        ],
+        [
+          "13",
+          "dreizehn"
+        ],
+        [
+          "16",
+          "sechzehn"
+        ],
+        [
+          "17",
+          "siebzehn"
+        ],
+        [
+          "20",
+          "zwanzig"
+        ],
+        [
+          "21",
+          "einundzwanzig"
+        ],
+        [
+          "30",
+          "dreißig"
+        ],
+        [
+          "45",
+          "fünfundvierzig"
+        ],
+        [
+          "60",
+          "sechzig"
+        ],
+        [
+          "70",
+          "siebzig"
+        ],
+        [
+          "99",
+          "neunundneunzig"
+        ],
+        [
+          "100",
+          "hundert"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "uhrzeit",
+      "title": {
+        "en": "Telling the time",
+        "es": "Decir la hora"
+      },
+      "header": [
+        {
+          "en": "Time",
+          "es": "Hora"
+        },
+        {
+          "en": "umgangssprachlich",
+          "es": "umgangssprachlich"
+        },
+        {
+          "en": "offiziell",
+          "es": "offiziell"
+        }
+      ],
+      "rows": [
+        [
+          "8:00",
+          "acht Uhr",
+          "acht Uhr"
+        ],
+        [
+          "8:10",
+          "zehn nach acht",
+          "acht Uhr zehn"
+        ],
+        [
+          "8:15",
+          "Viertel nach acht",
+          "acht Uhr fünfzehn"
+        ],
+        [
+          "8:30",
+          "halb neun",
+          "acht Uhr dreißig"
+        ],
+        [
+          "8:45",
+          "Viertel vor neun",
+          "acht Uhr fünfundvierzig"
+        ],
+        [
+          "8:50",
+          "zehn vor neun",
+          "acht Uhr fünfzig"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "datum",
+      "title": {
+        "en": "Dates",
+        "es": "Fechas"
+      },
+      "header": [
+        {
+          "en": "Date",
+          "es": "Fecha"
+        },
+        {
+          "en": "Datum",
+          "es": "Datum"
+        }
+      ],
+      "rows": [
+        [
+          "1. Mai",
+          "am ersten Mai"
+        ],
+        [
+          "2. Juni",
+          "am zweiten Juni"
+        ],
+        [
+          "3. Mai",
+          "am dritten Mai"
+        ],
+        [
+          "7. März",
+          "am siebten März"
+        ],
+        [
+          "20. Juli",
+          "am zwanzigsten Juli"
+        ],
+        [
+          "31. Dezember",
+          "am einunddreißigsten Dezember"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Numbers, time and dates in use",
+        "es": "Números, hora y fechas en uso"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "Numbers from 13 to 19 end in -zehn (sechzehn and siebzehn lose letters). The tens end in -zig (sechzig and siebzig lose letters, and dreißig has ß). From 21 on, the unit comes first and und joins it to the ten.",
+            "es": "Los números del 13 al 19 terminan en -zehn (sechzehn y siebzehn pierden letras). Las decenas terminan en -zig (sechzig y siebzig pierden letras, y dreißig lleva ß). A partir del 21, la unidad va primero y und la une a la decena."
+          },
+          "examples": [
+            {
+              "es": "Anna ist einundzwanzig Jahre alt.",
+              "tr": {
+                "en": "Anna is twenty-one years old.",
+                "es": "Anna tiene veintiún años."
+              }
+            },
+            {
+              "es": "Das Buch kostet dreizehn Euro.",
+              "tr": {
+                "en": "The book costs thirteen euros.",
+                "es": "El libro cuesta trece euros."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Use eins when you count or say the number alone, and ein before a noun. Prices are said with Euro and Cent, and in speech the second part often drops the word Cent.",
+            "es": "Usa eins cuando cuentas o dices el número solo, y ein delante de un sustantivo. Los precios se dicen con Euro y Cent, y al hablar la segunda parte suele omitir la palabra Cent."
+          },
+          "examples": [
+            {
+              "es": "Es ist ein Uhr.",
+              "tr": {
+                "en": "It is one o'clock.",
+                "es": "Es la una."
+              }
+            },
+            {
+              "es": "Das Brot kostet zwei Euro fünfzig.",
+              "tr": {
+                "en": "The bread costs two euros fifty.",
+                "es": "El pan cuesta dos euros cincuenta."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Official time uses the 24-hour clock: hours, the word Uhr, then the minutes. It is used for trains, films and announcements.",
+            "es": "La hora oficial usa el reloj de 24 horas: horas, la palabra Uhr y luego los minutos. Se usa para trenes, películas y anuncios."
+          },
+          "examples": [
+            {
+              "es": "Der Zug kommt um vierzehn Uhr dreißig an.",
+              "tr": {
+                "en": "The train arrives at 2:30 p.m.",
+                "es": "El tren llega a las catorce treinta."
+              }
+            },
+            {
+              "es": "Der Film beginnt um zwanzig Uhr.",
+              "tr": {
+                "en": "The film starts at 8 p.m.",
+                "es": "La película empieza a las veinte horas."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "In speech: Viertel nach and Viertel vor, zehn nach and zehn vor, and halb. halb drei is half an hour before three, so 2:30, not 3:30. Ask with Wie spät ist es? or Wie viel Uhr ist es?",
+            "es": "Al hablar: Viertel nach y Viertel vor, zehn nach y zehn vor, y halb. halb drei es media hora antes de las tres, o sea las 2:30, no las 3:30. Se pregunta con Wie spät ist es? o Wie viel Uhr ist es?"
+          },
+          "examples": [
+            {
+              "es": "Es ist halb drei.",
+              "tr": {
+                "en": "It is two thirty.",
+                "es": "Son las dos y media."
+              }
+            },
+            {
+              "es": "Es ist Viertel vor acht.",
+              "tr": {
+                "en": "It is a quarter to eight.",
+                "es": "Son cuarto para las ocho."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Days, months and seasons are all masculine. Use am with days, im with months and seasons, and um with a clock time.",
+            "es": "Los días, los meses y las estaciones son todos masculinos. Usa am con los días, im con los meses y las estaciones, y um con una hora del reloj."
+          },
+          "examples": [
+            {
+              "es": "Am Montag arbeite ich.",
+              "tr": {
+                "en": "On Monday I work.",
+                "es": "El lunes trabajo."
+              }
+            },
+            {
+              "es": "Im Mai fahre ich nach Berlin.",
+              "tr": {
+                "en": "In May I go to Berlin.",
+                "es": "En mayo voy a Berlín."
+              }
+            },
+            {
+              "es": "Der Film beginnt um halb neun.",
+              "tr": {
+                "en": "The film starts at half past eight.",
+                "es": "La película empieza a las ocho y media."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Dates use ordinal numbers: -te up to 19 and -ste from 20 on, with the irregular erste, dritte, siebte and achte. After am the ordinal ends in -en. Ask with Der Wievielte ist heute?",
+            "es": "Las fechas usan números ordinales: -te hasta el 19 y -ste a partir del 20, con los irregulares erste, dritte, siebte y achte. Después de am el ordinal termina en -en. Se pregunta con Der Wievielte ist heute?"
+          },
+          "examples": [
+            {
+              "es": "Heute ist der erste Mai.",
+              "tr": {
+                "en": "Today is the first of May.",
+                "es": "Hoy es el primero de mayo."
+              }
+            },
+            {
+              "es": "Ich habe am dritten Mai Geburtstag.",
+              "tr": {
+                "en": "My birthday is on the third of May.",
+                "es": "Mi cumpleaños es el tres de mayo."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Phone numbers are read digit by digit or in pairs. Zero is null.",
+            "es": "Los números de teléfono se leen cifra por cifra o de dos en dos. El cero es null."
+          },
+          "examples": [
+            {
+              "es": "Meine Nummer ist null eins fünf zwei.",
+              "tr": {
+                "en": "My number is zero one five two.",
+                "es": "Mi número es cero uno cinco dos."
+              }
+            },
+            {
+              "es": "Wie ist deine Telefonnummer?",
+              "tr": {
+                "en": "What is your phone number?",
+                "es": "¿Cuál es tu número de teléfono?"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Two pairs that cause mistakes",
+        "es": "Dos parejas que causan errores"
+      },
+      "pairs": [
+        {
+          "a": "Es ist halb drei.",
+          "b": "Es ist drei Uhr dreißig.",
+          "note": {
+            "en": "halb drei is 2:30 because halb points to the next hour, three. drei Uhr dreißig is 3:30. Do not translate half past two word by word.",
+            "es": "halb drei son las 2:30 porque halb apunta a la hora siguiente, las tres. drei Uhr dreißig son las 3:30. No traduzcas «las dos y media» palabra por palabra."
+          },
+          "examples": [
+            {
+              "es": "Es ist halb vier.",
+              "tr": {
+                "en": "It is three thirty.",
+                "es": "Son las tres y media."
+              }
+            },
+            {
+              "es": "Es ist vier Uhr dreißig.",
+              "tr": {
+                "en": "It is 4:30.",
+                "es": "Son las cuatro y treinta."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Heute ist der erste Mai.",
+          "b": "Ich habe am ersten Mai Geburtstag.",
+          "note": {
+            "en": "With ist the ordinal is in the nominative: der erste Mai. After am it ends in -en: am ersten Mai.",
+            "es": "Con ist el ordinal está en nominativo: der erste Mai. Después de am termina en -en: am ersten Mai."
+          },
+          "examples": [
+            {
+              "es": "Heute ist der zweite Juni.",
+              "tr": {
+                "en": "Today is the second of June.",
+                "es": "Hoy es el dos de junio."
+              }
+            },
+            {
+              "es": "Wir fahren am zweiten Juni.",
+              "tr": {
+                "en": "We leave on the second of June.",
+                "es": "Salimos el dos de junio."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: units come before the tens, so 21 is einundzwanzig, not zwanzigeins. Write numbers as one word. Do not mix up dreizehn (13) with dreißig (30). halb drei is not half past three. Use um for clock times, am for days and dates, im for months and seasons. And the ordinal needs -en after am: am ersten Mai, not am erste Mai.",
+        "es": "Trampas clásicas: las unidades van antes que las decenas, así que 21 es einundzwanzig, no zwanzigeins. Escribe los números en una palabra. No confundas dreizehn (13) con dreißig (30). halb drei no es «las tres y media». Usa um para las horas del reloj, am para días y fechas, im para meses y estaciones. Y el ordinal lleva -en después de am: am ersten Mai, no am erste Mai."
+      }
+    }
+  ],
+  "speak": {
+    "en": "German numbers are written as one word. Say «dreizehn» for thirteen, but «dreißig» for thirty. From twenty-one on, the units come first: «einundzwanzig». For the time, say «Es ist halb drei» for two thirty, because halb points to the next hour. Say «Es ist Viertel nach acht» and «Es ist Viertel vor neun». For dates, say «Heute ist der erste Mai», and «Ich habe am dritten Mai Geburtstag».",
+    "es": "Los números alemanes se escriben en una sola palabra. Di «dreizehn» para trece, pero «dreißig» para treinta. A partir de veintiuno, las unidades van primero: «einundzwanzig». Para la hora, di «Es ist halb drei» para las dos y media, porque halb apunta a la hora siguiente. Di «Es ist Viertel nach acht» y «Es ist Viertel vor neun». Para las fechas, di «Heute ist der erste Mai», y «Ich habe am dritten Mai Geburtstag»."
+  },
+  "items": [
+    {
+      "id": "zahlen-uhrzeit-datum-c01",
+      "sentence": "Die Zahl 21 heißt ___.",
+      "options": [
+        "einundzwanzig",
+        "zwanzigeins",
+        "zweiundzehn"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "From 21 on the unit comes first, joined to the ten with und: einundzwanzig.",
+        "es": "A partir del 21 la unidad va primero, unida a la decena con und: einundzwanzig."
+      },
+      "wrong": {
+        "zwanzigeins": {
+          "en": "zwanzigeins puts the ten first, as in English twenty-one. In German the unit comes first: einundzwanzig.",
+          "es": "zwanzigeins pone la decena primero, como el inglés twenty-one. En alemán la unidad va primero: einundzwanzig."
+        },
+        "zweiundzehn": {
+          "en": "zweiundzehn would be two-and-ten, which is not a number. For 21 you need one-and-twenty: einundzwanzig.",
+          "es": "zweiundzehn sería «dos y diez», que no es un número. Para 21 necesitas «uno y veinte»: einundzwanzig."
+        }
+      },
+      "examples": [
+        "Die Zahl 22 heißt zweiundzwanzig.",
+        "Die Zahl 31 heißt einunddreißig."
+      ],
+      "tr": {
+        "en": "The number 21 is called twenty-one.",
+        "es": "El número 21 se llama veintiuno."
+      }
+    },
+    {
+      "id": "zahlen-uhrzeit-datum-f01",
+      "kind": "form",
+      "verb": "Wort",
+      "person": "21",
+      "answer": "einundzwanzig",
+      "table": "zahlen"
+    },
+    {
+      "id": "zahlen-uhrzeit-datum-c02",
+      "sentence": "Die Zahl 30 heißt ___.",
+      "options": [
+        "dreizehn",
+        "dreißig",
+        "dreizig"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The ten 30 is written dreißig, with ß and not -zig after drei.",
+        "es": "La decena 30 se escribe dreißig, con ß y no con -zig después de drei."
+      },
+      "wrong": {
+        "dreizehn": {
+          "en": "dreizehn is 13. The tens end in -zig, and 30 is dreißig.",
+          "es": "dreizehn es 13. Las decenas terminan en -zig, y 30 es dreißig."
+        },
+        "dreizig": {
+          "en": "dreizig does not exist. The correct spelling of 30 is dreißig, with ß.",
+          "es": "dreizig no existe. La escritura correcta de 30 es dreißig, con ß."
+        }
+      },
+      "examples": [
+        "Die Zahl 40 heißt vierzig.",
+        "Die Zahl 20 heißt zwanzig."
+      ],
+      "tr": {
+        "en": "The number 30 is called thirty.",
+        "es": "El número 30 se llama treinta."
+      }
+    },
+    {
+      "id": "zahlen-uhrzeit-datum-f02",
+      "kind": "form",
+      "verb": "umgangssprachlich",
+      "person": "8:30",
+      "answer": "halb neun",
+      "table": "uhrzeit"
+    },
+    {
+      "id": "zahlen-uhrzeit-datum-c03",
+      "sentence": "Die Zahl 16 heißt ___.",
+      "options": [
+        "sechszehn",
+        "sechzig",
+        "sechzehn"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "16 is sechzehn: sechs loses its s before zehn.",
+        "es": "16 es sechzehn: sechs pierde su s delante de zehn."
+      },
+      "wrong": {
+        "sechszehn": {
+          "en": "sechszehn keeps the s of sechs, but the number 16 is spelled sechzehn, without the s.",
+          "es": "sechszehn conserva la s de sechs, pero el número 16 se escribe sechzehn, sin la s."
+        },
+        "sechzig": {
+          "en": "sechzig is 60. The number 16 ends in -zehn: sechzehn.",
+          "es": "sechzig es 60. El número 16 termina en -zehn: sechzehn."
+        }
+      },
+      "examples": [
+        "Die Zahl 17 heißt siebzehn.",
+        "Die Zahl 14 heißt vierzehn."
+      ],
+      "tr": {
+        "en": "The number 16 is called sixteen.",
+        "es": "El número 16 se llama dieciséis."
+      }
+    },
+    {
+      "id": "zahlen-uhrzeit-datum-f03",
+      "kind": "form",
+      "verb": "Datum",
+      "person": "1. Mai",
+      "answer": "am ersten Mai",
+      "table": "datum"
+    },
+    {
+      "id": "zahlen-uhrzeit-datum-w01",
+      "kind": "why",
+      "es": "Es ist halb drei.",
+      "target": "halb",
+      "tr": {
+        "en": "It is two thirty.",
+        "es": "Son las dos y media."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "halb drei is half an hour before three, so 2:30",
+            "es": "halb drei es media hora antes de las tres, o sea las 2:30"
+          }
+        },
+        {
+          "text": {
+            "en": "halb drei is half past three, 3:30",
+            "es": "halb drei es «tres y media», las 3:30"
+          },
+          "wrong": {
+            "en": "That is the English habit. German counts towards the next hour, so 3:30 is halb vier and 2:30 is halb drei.",
+            "es": "Ese es el hábito del inglés. El alemán cuenta hacia la hora siguiente, así que 3:30 es halb vier y 2:30 es halb drei."
+          }
+        },
+        {
+          "text": {
+            "en": "halb drei is 3:30 in the 24-hour clock",
+            "es": "halb drei son las 3:30 en el reloj de 24 horas"
+          },
+          "wrong": {
+            "en": "The official form is a different style: zwei Uhr dreißig for 2:30. halb is only used in speech.",
+            "es": "La forma oficial es otro estilo: zwei Uhr dreißig para las 2:30. halb solo se usa al hablar."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "zahlen-uhrzeit-datum-c04",
+      "sentence": "Es ist 2:30 Uhr. Es ist halb ___.",
+      "options": [
+        "zwei",
+        "drei",
+        "dreißig"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "halb points to the next hour. 2:30 is half an hour before three, so halb drei.",
+        "es": "halb apunta a la hora siguiente. Las 2:30 son media hora antes de las tres, así que halb drei."
+      },
+      "wrong": {
+        "zwei": {
+          "en": "halb zwei would be 1:30. 2:30 is half an hour before three, so you need halb drei.",
+          "es": "halb zwei serían las 1:30. Las 2:30 son media hora antes de las tres, así que necesitas halb drei."
+        },
+        "dreißig": {
+          "en": "dreißig is the number 30 and is used in the official form, as in zwei Uhr dreißig. After halb you use the next hour.",
+          "es": "dreißig es el número 30 y se usa en la forma oficial, como en zwei Uhr dreißig. Después de halb se usa la hora siguiente."
+        }
+      },
+      "examples": [
+        "Es ist halb vier.",
+        "Es ist halb acht."
+      ],
+      "tr": {
+        "en": "It is 2:30. It is half past two.",
+        "es": "Son las 2:30. Son las dos y media."
+      }
+    },
+    {
+      "id": "zahlen-uhrzeit-datum-f04",
+      "kind": "form",
+      "verb": "Wort",
+      "person": "30",
+      "answer": "dreißig",
+      "table": "zahlen"
+    },
+    {
+      "id": "zahlen-uhrzeit-datum-c05",
+      "sentence": "Es ist 8:15 Uhr. Es ist Viertel ___ acht.",
+      "options": [
+        "nach",
+        "vor",
+        "halb"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "8:15 is a quarter after eight, so Viertel nach acht.",
+        "es": "Las 8:15 son ocho y cuarto, así que Viertel nach acht."
+      },
+      "wrong": {
+        "vor": {
+          "en": "Viertel vor acht would be 7:45. 8:15 is after eight, so you need nach.",
+          "es": "Viertel vor acht serían las 7:45. Las 8:15 son después de las ocho, así que necesitas nach."
+        },
+        "halb": {
+          "en": "halb would point to half an hour. A quarter is Viertel nach or Viertel vor.",
+          "es": "halb señalaría media hora. Un cuarto es Viertel nach o Viertel vor."
+        }
+      },
+      "examples": [
+        "Es ist Viertel nach drei.",
+        "Es ist Viertel nach zehn."
+      ],
+      "tr": {
+        "en": "It is 8:15. It is a quarter past eight.",
+        "es": "Son las 8:15. Son las ocho y cuarto."
+      }
+    },
+    {
+      "id": "zahlen-uhrzeit-datum-f05",
+      "kind": "form",
+      "verb": "umgangssprachlich",
+      "person": "8:15",
+      "answer": "Viertel nach acht",
+      "accept": [
+        "viertel nach acht"
+      ],
+      "table": "uhrzeit"
+    },
+    {
+      "id": "zahlen-uhrzeit-datum-c06",
+      "sentence": "Es ist 8:45 Uhr. Es ist Viertel ___ neun.",
+      "options": [
+        "nach",
+        "halb",
+        "vor"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "8:45 is a quarter before nine, so Viertel vor neun.",
+        "es": "Las 8:45 son nueve menos cuarto, así que Viertel vor neun."
+      },
+      "wrong": {
+        "nach": {
+          "en": "Viertel nach neun would be 9:15. 8:45 is before nine, so you need vor.",
+          "es": "Viertel nach neun serían las 9:15. Las 8:45 son antes de las nueve, así que necesitas vor."
+        },
+        "halb": {
+          "en": "halb neun is 8:30. A quarter is Viertel nach or Viertel vor, so here you need vor.",
+          "es": "halb neun son las 8:30. Un cuarto es Viertel nach o Viertel vor, así que aquí necesitas vor."
+        }
+      },
+      "examples": [
+        "Es ist Viertel vor zehn.",
+        "Es ist Viertel vor zwölf."
+      ],
+      "tr": {
+        "en": "It is 8:45. It is a quarter to nine.",
+        "es": "Son las 8:45. Son las nueve menos cuarto."
+      }
+    },
+    {
+      "id": "zahlen-uhrzeit-datum-f06",
+      "kind": "form",
+      "verb": "Datum",
+      "person": "3. Mai",
+      "answer": "am dritten Mai",
+      "table": "datum"
+    },
+    {
+      "id": "zahlen-uhrzeit-datum-w02",
+      "kind": "why",
+      "es": "Ich habe am ersten Mai Geburtstag.",
+      "target": "ersten",
+      "tr": {
+        "en": "My birthday is on the first of May.",
+        "es": "Mi cumpleaños es el primero de mayo."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "The -en is the plural ending",
+            "es": "La -en es la terminación del plural"
+          },
+          "wrong": {
+            "en": "Here the -en is not a plural. It is the ending the ordinal gets after am, in the dative: am ersten Mai.",
+            "es": "Aquí la -en no es plural. Es la terminación que recibe el ordinal después de am, en dativo: am ersten Mai."
+          }
+        },
+        {
+          "text": {
+            "en": "ersten is the cardinal number one",
+            "es": "ersten es el número cardinal uno"
+          },
+          "wrong": {
+            "en": "The cardinal number is eins. erste is the ordinal, first, and dates use the ordinal.",
+            "es": "El número cardinal es eins. erste es el ordinal, «primero», y las fechas usan el ordinal."
+          }
+        },
+        {
+          "text": {
+            "en": "After am the ordinal gets the ending -en",
+            "es": "Después de am el ordinal recibe la terminación -en"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "zahlen-uhrzeit-datum-c07",
+      "sentence": "Es ist 1:00. Es ist ___ Uhr.",
+      "options": [
+        "eins",
+        "ein",
+        "einen"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Before a noun like Uhr the number one is ein: Es ist ein Uhr.",
+        "es": "Delante de un sustantivo como Uhr el número uno es ein: Es ist ein Uhr."
+      },
+      "wrong": {
+        "eins": {
+          "en": "eins is the number one on its own, for example when you count. Before the noun Uhr you need ein.",
+          "es": "eins es el número uno solo, por ejemplo al contar. Delante del sustantivo Uhr necesitas ein."
+        },
+        "einen": {
+          "en": "einen is the masculine accusative of ein. Uhr is feminine and the sentence is about the time, so you need ein.",
+          "es": "einen es el acusativo masculino de ein. Uhr es femenino y la oración habla de la hora, así que necesitas ein."
+        }
+      },
+      "examples": [
+        "Es ist ein Uhr.",
+        "Es ist ein Uhr zwanzig."
+      ],
+      "tr": {
+        "en": "It is 1:00. It is one o'clock.",
+        "es": "Es la 1:00. Es la una."
+      }
+    },
+    {
+      "id": "zahlen-uhrzeit-datum-f07",
+      "kind": "form",
+      "verb": "Wort",
+      "person": "12",
+      "answer": "zwölf",
+      "table": "zahlen"
+    },
+    {
+      "id": "zahlen-uhrzeit-datum-c08",
+      "sentence": "Der Film beginnt ___ acht Uhr.",
+      "options": [
+        "um",
+        "am",
+        "im"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "A clock time takes um: Der Film beginnt um acht Uhr.",
+        "es": "Una hora del reloj lleva um: Der Film beginnt um acht Uhr."
+      },
+      "wrong": {
+        "am": {
+          "en": "am goes with days and dates, such as am Montag. A clock time needs um.",
+          "es": "am va con días y fechas, como am Montag. Una hora del reloj necesita um."
+        },
+        "im": {
+          "en": "im goes with months and seasons, such as im Mai. A clock time needs um.",
+          "es": "im va con meses y estaciones, como im Mai. Una hora del reloj necesita um."
+        }
+      },
+      "examples": [
+        "Der Zug fährt um neun Uhr ab.",
+        "Wir essen um zwölf Uhr."
+      ],
+      "tr": {
+        "en": "The film starts at eight o'clock.",
+        "es": "La película empieza a las ocho."
+      }
+    },
+    {
+      "id": "zahlen-uhrzeit-datum-f08",
+      "kind": "form",
+      "verb": "offiziell",
+      "person": "8:45",
+      "answer": "acht Uhr fünfundvierzig",
+      "table": "uhrzeit"
+    },
+    {
+      "id": "zahlen-uhrzeit-datum-c09",
+      "sentence": "___ Montag arbeite ich.",
+      "options": [
+        "Im",
+        "Um",
+        "Am"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "A day of the week takes am: Am Montag arbeite ich.",
+        "es": "Un día de la semana lleva am: Am Montag arbeite ich."
+      },
+      "wrong": {
+        "Im": {
+          "en": "Im goes with months and seasons, such as Im Mai. A day needs Am.",
+          "es": "Im va con meses y estaciones, como Im Mai. Un día necesita Am."
+        },
+        "Um": {
+          "en": "Um goes with a clock time, such as Um acht Uhr. A day needs Am.",
+          "es": "Um va con una hora del reloj, como Um acht Uhr. Un día necesita Am."
+        }
+      },
+      "examples": [
+        "Am Dienstag lerne ich.",
+        "Am Freitag kommt Anna."
+      ],
+      "tr": {
+        "en": "On Monday I work.",
+        "es": "El lunes trabajo."
+      }
+    },
+    {
+      "id": "zahlen-uhrzeit-datum-f09",
+      "kind": "form",
+      "verb": "Datum",
+      "person": "7. März",
+      "answer": "am siebten März",
+      "table": "datum"
+    },
+    {
+      "id": "zahlen-uhrzeit-datum-w03",
+      "kind": "why",
+      "es": "Anna ist einundzwanzig Jahre alt.",
+      "target": "einundzwanzig",
+      "tr": {
+        "en": "Anna is twenty-one years old.",
+        "es": "Anna tiene veintiún años."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "The ten comes first, as in English: zwanzigeins",
+            "es": "La decena va primero, como en inglés: zwanzigeins"
+          },
+          "wrong": {
+            "en": "In German numbers from 21 on, the unit comes first and und joins it to the ten: einundzwanzig.",
+            "es": "En los números alemanes a partir del 21, la unidad va primero y und la une a la decena: einundzwanzig."
+          }
+        },
+        {
+          "text": {
+            "en": "The unit comes first, then und, then the ten: one-and-twenty",
+            "es": "La unidad va primero, luego und, luego la decena: «uno y veinte»"
+          }
+        },
+        {
+          "text": {
+            "en": "einundzwanzig is written as three words",
+            "es": "einundzwanzig se escribe en tres palabras"
+          },
+          "wrong": {
+            "en": "German writes numbers up to 999,999 as one word, so you write einundzwanzig without spaces.",
+            "es": "El alemán escribe los números hasta 999.999 en una sola palabra, así que se escribe einundzwanzig sin espacios."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "zahlen-uhrzeit-datum-c10",
+      "sentence": "___ Mai fahre ich nach Berlin.",
+      "options": [
+        "Im",
+        "Am",
+        "Um"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "A month takes im: Im Mai fahre ich nach Berlin.",
+        "es": "Un mes lleva im: Im Mai fahre ich nach Berlin."
+      },
+      "wrong": {
+        "Am": {
+          "en": "Am goes with days and dates, such as Am Montag. A month needs Im.",
+          "es": "Am va con días y fechas, como Am Montag. Un mes necesita Im."
+        },
+        "Um": {
+          "en": "Um goes with a clock time. A month needs Im.",
+          "es": "Um va con una hora del reloj. Un mes necesita Im."
+        }
+      },
+      "examples": [
+        "Im Juni arbeite ich viel.",
+        "Im Sommer fahre ich nach Hause."
+      ],
+      "tr": {
+        "en": "In May I go to Berlin.",
+        "es": "En mayo voy a Berlín."
+      }
+    },
+    {
+      "id": "zahlen-uhrzeit-datum-f10",
+      "kind": "form",
+      "verb": "Wort",
+      "person": "45",
+      "answer": "fünfundvierzig",
+      "table": "zahlen"
+    },
+    {
+      "id": "zahlen-uhrzeit-datum-c11",
+      "sentence": "Der 3. Mai ist der ___ Mai.",
+      "options": [
+        "dreite",
+        "dritte",
+        "drite"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The ordinal for 3 is irregular: dritte, not dreite.",
+        "es": "El ordinal de 3 es irregular: dritte, no dreite."
+      },
+      "wrong": {
+        "dreite": {
+          "en": "dreite would follow the normal -te pattern, but the ordinal for 3 is irregular: dritte.",
+          "es": "dreite seguiría el patrón normal -te, pero el ordinal de 3 es irregular: dritte."
+        },
+        "drite": {
+          "en": "drite is a misspelling. The ordinal for 3 is dritte, with tt.",
+          "es": "drite es un error de escritura. El ordinal de 3 es dritte, con tt."
+        }
+      },
+      "examples": [
+        "Der 1. Mai ist der erste Mai.",
+        "Der 2. Juni ist der zweite Juni."
+      ],
+      "tr": {
+        "en": "The 3rd of May is the third of May.",
+        "es": "El 3 de mayo es el tres de mayo."
+      }
+    },
+    {
+      "id": "zahlen-uhrzeit-datum-f11",
+      "kind": "form",
+      "verb": "umgangssprachlich",
+      "person": "8:10",
+      "answer": "zehn nach acht",
+      "table": "uhrzeit"
+    },
+    {
+      "id": "zahlen-uhrzeit-datum-c12",
+      "sentence": "Der 7. März ist der ___ März.",
+      "options": [
+        "sieben",
+        "siebzehnte",
+        "siebte"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The ordinal for 7 is siebte: the ending -en of sieben is dropped before -te.",
+        "es": "El ordinal de 7 es siebte: la terminación -en de sieben se pierde antes de -te."
+      },
+      "wrong": {
+        "sieben": {
+          "en": "sieben is the number 7 itself. A date needs the ordinal siebte.",
+          "es": "sieben es el número 7 mismo. Una fecha necesita el ordinal siebte."
+        },
+        "siebzehnte": {
+          "en": "siebzehnte is the ordinal for 17. The ordinal for 7 is siebte.",
+          "es": "siebzehnte es el ordinal de 17. El ordinal de 7 es siebte."
+        }
+      },
+      "examples": [
+        "Der 8. März ist der achte März.",
+        "Der 6. April ist der sechste April."
+      ],
+      "tr": {
+        "en": "The 7th of March is the seventh of March.",
+        "es": "El 7 de marzo es el siete de marzo."
+      }
+    },
+    {
+      "id": "zahlen-uhrzeit-datum-f12",
+      "kind": "form",
+      "verb": "Datum",
+      "person": "20. Juli",
+      "answer": "am zwanzigsten Juli",
+      "table": "datum"
+    },
+    {
+      "id": "zahlen-uhrzeit-datum-c13",
+      "sentence": "Mein Geburtstag ist der 1. Mai. Ich habe am ___ Mai Geburtstag.",
+      "options": [
+        "ersten",
+        "erste",
+        "erstem"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "After am the ordinal ends in -en: am ersten Mai.",
+        "es": "Después de am el ordinal termina en -en: am ersten Mai."
+      },
+      "wrong": {
+        "erste": {
+          "en": "erste is the form after der, as in der erste Mai. After am you need the ending -en: am ersten Mai.",
+          "es": "erste es la forma después de der, como en der erste Mai. Después de am necesitas la terminación -en: am ersten Mai."
+        },
+        "erstem": {
+          "en": "erstem is the ending used without an article. After am, which already contains dem, the ordinal takes -en: am ersten Mai.",
+          "es": "erstem es la terminación que se usa sin artículo. Después de am, que ya contiene dem, el ordinal lleva -en: am ersten Mai."
+        }
+      },
+      "examples": [
+        "Ich habe am zweiten Juni Geburtstag.",
+        "Anna hat am dritten Mai Geburtstag."
+      ],
+      "tr": {
+        "en": "My birthday is May 1st. My birthday is on the first of May.",
+        "es": "Mi cumpleaños es el 1 de mayo. Mi cumpleaños es el primero de mayo."
+      }
+    },
+    {
+      "id": "zahlen-uhrzeit-datum-c14",
+      "sentence": "Das Brot kostet 2,50 Euro. Es kostet zwei Euro ___.",
+      "options": [
+        "fünfzehn",
+        "fünfzig",
+        "fünf"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The 50 cents are said as fünfzig: zwei Euro fünfzig. The word Cent can be left out.",
+        "es": "Los 50 centavos se dicen como fünfzig: zwei Euro fünfzig. La palabra Cent se puede omitir."
+      },
+      "wrong": {
+        "fünfzehn": {
+          "en": "fünfzehn is 15. The price 2,50 has fifty cents: fünfzig.",
+          "es": "fünfzehn es 15. El precio 2,50 tiene cincuenta centavos: fünfzig."
+        },
+        "fünf": {
+          "en": "fünf is 5. The price 2,50 has fifty cents: fünfzig.",
+          "es": "fünf es 5. El precio 2,50 tiene cincuenta centavos: fünfzig."
+        }
+      },
+      "examples": [
+        "Das Eis kostet drei Euro fünfzig.",
+        "Der Kaffee kostet zwei Euro zwanzig."
+      ],
+      "tr": {
+        "en": "The bread costs 2.50 euros. It costs two euros fifty.",
+        "es": "El pan cuesta 2.50 euros. Cuesta dos euros cincuenta."
+      }
+    },
+    {
+      "id": "zahlen-uhrzeit-datum-w04",
+      "kind": "why",
+      "es": "Der Film beginnt um halb neun.",
+      "target": "um",
+      "tr": {
+        "en": "The film starts at half past eight.",
+        "es": "La película empieza a las ocho y media."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "um goes with a clock time, including halb neun",
+            "es": "um va con una hora del reloj, incluido halb neun"
+          }
+        },
+        {
+          "text": {
+            "en": "am goes with every kind of time",
+            "es": "am va con toda clase de tiempo"
+          },
+          "wrong": {
+            "en": "am is for days and dates, such as am Montag and am ersten Mai. A clock time takes um.",
+            "es": "am es para días y fechas, como am Montag y am ersten Mai. Una hora del reloj lleva um."
+          }
+        },
+        {
+          "text": {
+            "en": "im goes with all words about time",
+            "es": "im va con todas las palabras de tiempo"
+          },
+          "wrong": {
+            "en": "im is for months and seasons, such as im Mai and im Sommer. A clock time takes um.",
+            "es": "im es para meses y estaciones, como im Mai y im Sommer. Una hora del reloj lleva um."
+          }
+        }
+      ],
+      "correctIndex": 0
+    }
+  ]
+}

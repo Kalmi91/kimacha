@@ -290,6 +290,7 @@ export const MOCK_LEVELS: Record<MockTarget, readonly MockLevel[]> = {
   es: ['A1', 'A2', 'B1', 'B2', 'C1'],
   en: ['A1', 'A2', 'B1', 'B2', 'C1'],
   hu: ['A1', 'A2', 'B1', 'B2', 'C1'],
+  de: ['A1', 'A2', 'B1', 'B2', 'C1'],
 };
 
 // hu: the names of the skills in Hungarian.
@@ -320,10 +321,50 @@ function huBlueprint(level: MockLevel): MockBlueprint {
   };
 }
 
+// de (German, Goethe-Zertifikat shape, .work/s9a/format.md): the skills are named as in the Goethe modules; A1 / A2 are the speaking paper only like hu;
+// minutes: Lesen 65, Hören 40 and Schreiben 60 / 75 / 75 at B1 / B2 / C1, Sprechen 15 at A1 / A2 / B1 / B2 and 20 at C1 (a pair, Durchführungsbestimmungen; the app scores one learner).
+const DE_NAMES: MockSkillNames = {
+  reading: 'Lesen',
+  writing: 'Schreiben',
+  listening: 'Hören',
+  speaking: 'Sprechen',
+};
+
+/** The Goethe-Zertifikat A1 and A2 speaking part: about 15 minutes for a pair, no preparation time. */
+const DE_SPEAKING_A1_A2_MINUTES = 15;
+
+const DE_AUTHORED_MINUTES: Record<AuthoredLevel, Record<PaperSkill, number>> = {
+  B1: { reading: 65, listening: 40, writing: 60, speaking: 15 },
+  B2: { reading: 65, listening: 40, writing: 75, speaking: 15 },
+  C1: { reading: 65, listening: 40, writing: 75, speaking: 20 },
+};
+
+// Every Goethe module (B1 and up) is passed on its own at 60 percent, so no skill may stay under 60 percent (`each`); a strong skill does not make up for a weak one.
+// At A1 / A2 the speaking paper is the whole exam, so the rule is its 60 percent (at A2 the real speaking part needs 15 of 25 points).
+const DE_RULE: MockRule = { kind: 'average', passPct: 60, approximate: true, each: true };
+
+/** de: A1 / A2 = the speaking paper only (not a placeholder: it is the whole exam); B1-C1 = the four authored papers. */
+function deBlueprint(level: MockLevel): MockBlueprint {
+  const common = { plan: 'authored' as const, official: false, skillNames: DE_NAMES, rule: DE_RULE, counts: AUTHORED_COUNTS };
+  if (level === 'A1' || level === 'A2') {
+    return { ...common, papers: [{ id: 'speaking', name: DE_NAMES.speaking, minutes: DE_SPEAKING_A1_A2_MINUTES, skills: ['speaking'] }] };
+  }
+  return {
+    ...common,
+    papers: ES_AUTHORED_ORDER.map((skill) => ({
+      id: skill,
+      name: DE_NAMES[skill],
+      minutes: DE_AUTHORED_MINUTES[level][skill],
+      skills: [skill],
+      placeholder: skill === 'speaking',
+    })),
+  };
+}
+
 /** A1 / A2 are always available (hu: only with an authored speaking form, it is the whole exam); B1 and up only when every non-placeholder paper has at least one authored form (the speaking is not required: with an empty file it stays a placeholder). */
 export function mockAvailable(target: MockTarget, level: string, authored?: AuthoredPaperFile[]): level is MockLevel {
   if (!(MOCK_LEVELS[target] as readonly string[]).includes(level)) return false;
-  if ((level === 'A1' || level === 'A2') && target !== 'hu') return true;
+  if ((level === 'A1' || level === 'A2') && target !== 'hu' && target !== 'de') return true;
   const papers = getMockBlueprint(target, level as MockLevel).papers.filter((p) => !p.placeholder);
   return authoredFormCount(target, level as MockLevel, papers.map((p) => p.id), authored) > 0;
 }
@@ -337,6 +378,7 @@ const ES_ORDER: PaperSkill[] = ['reading', 'writing', 'listening', 'speaking'];
 
 export function getMockBlueprint(target: MockTarget, level: MockLevel): MockBlueprint {
   if (target === 'hu') return huBlueprint(level);
+  if (target === 'de') return deBlueprint(level);
   if (level !== 'A1' && level !== 'A2') {
     if (target === 'es') {
       const names = level === 'C1' ? ES_C1_NAMES : ES_NAMES;

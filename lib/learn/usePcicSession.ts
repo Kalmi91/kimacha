@@ -11,7 +11,7 @@ import { exampleIn, wordIn } from '@/lib/pcicItemText';
 import { speechLang } from '@/lib/languages';
 import { localDateString, DEFAULT_DAILY_NEW_LIMIT } from '@/lib/usageStats';
 import { addXp, getXp, wholeXp, xpForCard, type DailyXp } from '@/lib/dailyXp';
-import { pcicItemsForLevel, findPcicItem, type PcicLevel, type PcicTarget } from '@/data/pcic';
+import { pcicItemsForLevel, findPcicItem, levelOfItem, type PcicLevel, type PcicTarget } from '@/data/pcic';
 import { gradePcicAnswer, gradeSentenceAnswer, type PcicGrade } from '@/lib/pcicMatch';
 import { articleOf, composeAnswer, type ArticlePick } from '@/lib/articlePicker';
 import { sm2Review, pickSm2Session, sm2MarkKnown, type Sm2Card, type Sm2Grade } from '@/lib/sm2';
@@ -411,7 +411,7 @@ export function usePcicSession() {
       const g = gradePcicAnswer('', answerText, strictAccents, target);
       const revealed: PcicGrade = { ...g, match: 'wrong', accentOnly: undefined };
       setGrade(revealed);
-      if (revealed.match !== 'exact') setArticlePick(articleOf(revealed.best));
+      if (revealed.match !== 'exact') setArticlePick(articleOf(revealed.best, target));
       speakRevealed(g.best);
       return;
     }
@@ -420,7 +420,7 @@ export function usePcicSession() {
     const g = (currentItem.kind === 'sentence' ? gradeSentenceAnswer : gradePcicAnswer)(answer, answerText, strictAccents, target);
     setTypedAnswer(answer);
     setGrade(g);
-    if (g.match !== 'exact') setArticlePick(articleOf(g.best));
+    if (g.match !== 'exact') setArticlePick(articleOf(g.best, target));
     speakRevealed(g.best);
   };
 
@@ -452,6 +452,7 @@ export function usePcicSession() {
       cards: cardsById.values(),
       tenses,
       findItem: findPcicItem,
+      levelOf: levelOfItem,
       vocab: () => pcicItemsForLevel(level).map((i) => wordIn(i, target) ?? ''),
     });
     setCadence(step.state);

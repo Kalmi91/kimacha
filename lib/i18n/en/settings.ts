@@ -84,7 +84,7 @@ export default {
     strictAccents: 'Accents count',
     strictAccentsHint: 'A missing accent (á, é, ñ) is a mistake when typing.',
     articlePicker: 'Article buttons',
-    articlePickerHint: 'On Spanish noun cards you pick el/la/los/las instead of typing it. ⊘ means no article.',
+    articlePickerHint: 'On Spanish and German noun cards you pick the article (el/la/los/las, der/die/das) instead of typing it. ⊘ means no article.',
     // return time of a PCIC "again" card.
     missedWordDelay: 'Missed word comes back after',
     missedWordDelaySeconds: (n: string) => `${n} s`,

@@ -1,0 +1,1010 @@
+{
+  "schema": 2,
+  "topic": "adjektivdeklination-nom-akk",
+  "level": "A2",
+  "title": {
+    "en": "Adjectives before nouns: nominative and accusative",
+    "es": "Adjetivos antes del sustantivo: nominativo y acusativo"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "In German an adjective in front of a noun gets an ending, and the ending shows gender and case. After the definite article (der, die, das) the ending is -e, except for the masculine accusative and the plural, which take -en. After ein, kein and mein the masculine nominative needs -er and the neuter needs -es, because these words show no ending themselves. After sein the adjective stays bare: Das Auto ist neu. This lesson covers the nominative and the accusative.",
+        "es": "En alemán un adjetivo delante del sustantivo lleva una terminación, y la terminación muestra el género y el caso. Después del artículo definido (der, die, das) la terminación es -e, salvo en el acusativo masculino y en el plural, que llevan -en. Después de ein, kein y mein el nominativo masculino necesita -er y el neutro -es, porque estas palabras no muestran ninguna terminación. Después de sein el adjetivo queda sin terminación: Das Auto ist neu. Esta lección trata del nominativo y del acusativo."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "adjektiv-endungen",
+      "title": {
+        "en": "Adjective and noun together",
+        "es": "El adjetivo y el sustantivo juntos"
+      },
+      "header": [
+        {
+          "en": "Case and gender",
+          "es": "Caso y género"
+        },
+        {
+          "en": "bestimmt",
+          "es": "bestimmt"
+        },
+        {
+          "en": "unbestimmt",
+          "es": "unbestimmt"
+        }
+      ],
+      "rows": [
+        [
+          "Nominativ maskulin",
+          "der neue Tisch",
+          "ein neuer Tisch"
+        ],
+        [
+          "Nominativ feminin",
+          "die neue Lampe",
+          "eine neue Lampe"
+        ],
+        [
+          "Nominativ neutral",
+          "das neue Buch",
+          "ein neues Buch"
+        ],
+        [
+          "Nominativ Plural",
+          "die neuen Bücher",
+          "keine neuen Bücher"
+        ],
+        [
+          "Akkusativ maskulin",
+          "den neuen Tisch",
+          "einen neuen Tisch"
+        ],
+        [
+          "Akkusativ feminin",
+          "die neue Lampe",
+          "eine neue Lampe"
+        ],
+        [
+          "Akkusativ neutral",
+          "das neue Buch",
+          "ein neues Buch"
+        ],
+        [
+          "Akkusativ Plural",
+          "die neuen Bücher",
+          "keine neuen Bücher"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "endungen-uebersicht",
+      "title": {
+        "en": "The endings at a glance",
+        "es": "Las terminaciones de un vistazo"
+      },
+      "header": [
+        {
+          "en": "Article and case",
+          "es": "Artículo y caso"
+        },
+        {
+          "en": "maskulin",
+          "es": "maskulin"
+        },
+        {
+          "en": "feminin",
+          "es": "feminin"
+        },
+        {
+          "en": "neutral",
+          "es": "neutral"
+        },
+        {
+          "en": "Plural",
+          "es": "Plural"
+        }
+      ],
+      "rows": [
+        [
+          "der, die, das: Nominativ",
+          "-e",
+          "-e",
+          "-e",
+          "-en"
+        ],
+        [
+          "der, die, das: Akkusativ",
+          "-en",
+          "-e",
+          "-e",
+          "-en"
+        ],
+        [
+          "ein, kein, mein: Nominativ",
+          "-er",
+          "-e",
+          "-es",
+          "-en"
+        ],
+        [
+          "ein, kein, mein: Akkusativ",
+          "-en",
+          "-e",
+          "-es",
+          "-en"
+        ]
+      ],
+      "noTableDeck": true
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "How to choose the ending",
+        "es": "Cómo elegir la terminación"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "After der, die, das the ending is -e. The only exceptions are the masculine accusative (den kleinen Hund) and the plural (die kleinen Hunde), which take -en.",
+            "es": "Después de der, die, das la terminación es -e. Las únicas excepciones son el acusativo masculino (den kleinen Hund) y el plural (die kleinen Hunde), que llevan -en."
+          },
+          "examples": [
+            {
+              "es": "Der kleine Hund schläft.",
+              "tr": {
+                "en": "The small dog is sleeping.",
+                "es": "El perro pequeño duerme."
+              }
+            },
+            {
+              "es": "Ich sehe den kleinen Hund.",
+              "tr": {
+                "en": "I see the small dog.",
+                "es": "Veo al perro pequeño."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "After ein, kein and mein the adjective has to show what the article does not: -er for masculine, -es for neuter in the nominative. The neuter keeps -es in the accusative. The feminine is always -e.",
+            "es": "Después de ein, kein y mein el adjetivo tiene que mostrar lo que el artículo no muestra: -er para el masculino y -es para el neutro en el nominativo. El neutro conserva -es en el acusativo. El femenino es siempre -e."
+          },
+          "examples": [
+            {
+              "es": "Das ist ein neuer Computer.",
+              "tr": {
+                "en": "That is a new computer.",
+                "es": "Eso es una computadora nueva."
+              }
+            },
+            {
+              "es": "Ich lese ein gutes Buch.",
+              "tr": {
+                "en": "I am reading a good book.",
+                "es": "Leo un buen libro."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Only the masculine changes between nominative and accusative: ein neuer Tisch becomes einen neuen Tisch. Feminine, neuter and plural look the same in both cases.",
+            "es": "Solo el masculino cambia entre nominativo y acusativo: ein neuer Tisch pasa a einen neuen Tisch. El femenino, el neutro y el plural se ven igual en los dos casos."
+          },
+          "examples": [
+            {
+              "es": "Ein netter Mann wohnt hier.",
+              "tr": {
+                "en": "A nice man lives here.",
+                "es": "Un hombre amable vive aquí."
+              }
+            },
+            {
+              "es": "Ich kenne einen netten Mann.",
+              "tr": {
+                "en": "I know a nice man.",
+                "es": "Conozco a un hombre amable."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "After sein (and werden) the adjective is not in front of a noun and gets no ending. Without any article the adjective takes the ending of the definite article: kalte Milch, kalter Kaffee, gute Freunde.",
+            "es": "Después de sein (y werden) el adjetivo no está delante de un sustantivo y no lleva terminación. Sin artículo el adjetivo toma la terminación del artículo definido: kalte Milch, kalter Kaffee, gute Freunde."
+          },
+          "examples": [
+            {
+              "es": "Das Haus ist groß.",
+              "tr": {
+                "en": "The house is big.",
+                "es": "La casa es grande."
+              }
+            },
+            {
+              "es": "Ich trinke kalte Milch.",
+              "tr": {
+                "en": "I drink cold milk.",
+                "es": "Tomo leche fría."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Bare or with an ending",
+        "es": "Sin terminación o con terminación"
+      },
+      "pairs": [
+        {
+          "a": "Das Haus ist neu.",
+          "b": "Das ist ein neues Haus.",
+          "note": {
+            "en": "After sein the adjective is bare (neu). In front of the noun it gets an ending (ein neues Haus).",
+            "es": "Después de sein el adjetivo queda sin terminación (neu). Delante del sustantivo lleva terminación (ein neues Haus)."
+          },
+          "examples": [
+            {
+              "es": "Der Tisch ist alt.",
+              "tr": {
+                "en": "The table is old.",
+                "es": "La mesa es vieja."
+              }
+            },
+            {
+              "es": "Das ist ein alter Tisch.",
+              "tr": {
+                "en": "That is an old table.",
+                "es": "Esa es una mesa vieja."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Ein kleiner Hund kommt.",
+          "b": "Ich sehe einen kleinen Hund.",
+          "note": {
+            "en": "The masculine shows the case: -er in the nominative, -en in the accusative.",
+            "es": "El masculino muestra el caso: -er en el nominativo, -en en el acusativo."
+          },
+          "examples": [
+            {
+              "es": "Ein roter Bus fährt.",
+              "tr": {
+                "en": "A red bus is driving.",
+                "es": "Un autobús rojo va pasando."
+              }
+            },
+            {
+              "es": "Ich nehme einen roten Bus.",
+              "tr": {
+                "en": "I take a red bus.",
+                "es": "Tomo un autobús rojo."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Learn the noun with its article, because the gender decides the ending. English learners: the adjective is not invariable (not ein neu Auto, but ein neues Auto). Spanish learners: the adjective goes before the noun (not ein Auto neues). Hungarian learners: the adjective changes in German even in the plural (neue Autos, die neuen Autos). The masculine accusative is the trap: den neuen Tisch, einen neuen Tisch. And remember: no ending after sein.",
+        "es": "Aprende el sustantivo con su artículo, porque el género decide la terminación. Para quien habla inglés: el adjetivo no es invariable (no ein neu Auto, sino ein neues Auto). Para quien habla español: el adjetivo va antes del sustantivo (no ein Auto neues). Para quien habla húngaro: el adjetivo cambia en alemán incluso en plural (neue Autos, die neuen Autos). El acusativo masculino es la trampa: den neuen Tisch, einen neuen Tisch. Y recuerda: sin terminación después de sein."
+      }
+    }
+  ],
+  "speak": {
+    "en": "In front of a noun the adjective gets an ending. After «der», «die» and «das» it is almost always «e»: «der neue Tisch», «die neue Lampe», «das neue Buch». Only the masculine accusative and the plural take «en»: «den neuen Tisch», «die neuen Bücher». After «ein» the masculine needs «er» and the neuter needs «es»: «ein neuer Tisch», «ein neues Buch». After «sein» the adjective has no ending: «Das Buch ist neu.»",
+    "es": "Delante de un sustantivo el adjetivo lleva una terminación. Después de «der», «die» y «das» es casi siempre «e»: «der neue Tisch», «die neue Lampe», «das neue Buch». Solo el acusativo masculino y el plural llevan «en»: «den neuen Tisch», «die neuen Bücher». Después de «ein» el masculino necesita «er» y el neutro necesita «es»: «ein neuer Tisch», «ein neues Buch». Después de «sein» el adjetivo no lleva terminación: «Das Buch ist neu.»"
+  },
+  "items": [
+    {
+      "id": "adjektivdeklination-nom-akk-c01",
+      "sentence": "Der ___ Tisch ist braun.",
+      "options": [
+        "neuer",
+        "neue",
+        "neuen"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "After der, in the masculine nominative, the adjective takes -e: der neue Tisch.",
+        "es": "Después de der, en el nominativo masculino, el adjetivo lleva -e: der neue Tisch."
+      },
+      "wrong": {
+        "neuer": {
+          "en": "-er is needed after ein, where the article shows nothing (ein neuer Tisch). After der the article already shows the gender, so -e is enough.",
+          "es": "-er se necesita después de ein, donde el artículo no muestra nada (ein neuer Tisch). Después de der el artículo ya muestra el género, así que basta -e."
+        },
+        "neuen": {
+          "en": "-en is for the masculine accusative and the plural. Here Tisch is the subject, so it is nominative.",
+          "es": "-en es para el acusativo masculino y el plural. Aquí Tisch es el sujeto, o sea, nominativo."
+        }
+      },
+      "examples": [
+        "Der alte Mann schläft.",
+        "Der kleine Hund ist müde."
+      ],
+      "tr": {
+        "en": "The new table is brown.",
+        "es": "La mesa nueva es café."
+      }
+    },
+    {
+      "id": "adjektivdeklination-nom-akk-f01",
+      "kind": "form",
+      "verb": "bestimmt",
+      "person": "Nominativ maskulin",
+      "answer": "der neue Tisch",
+      "table": "adjektiv-endungen"
+    },
+    {
+      "id": "adjektivdeklination-nom-akk-c02",
+      "sentence": "Ich kaufe den ___ Tisch.",
+      "options": [
+        "neuen",
+        "neue",
+        "neuer"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Tisch is masculine and is the object here: accusative masculine takes -en, so den neuen Tisch.",
+        "es": "Tisch es masculino y aquí es el objeto: el acusativo masculino lleva -en, así que den neuen Tisch."
+      },
+      "wrong": {
+        "neue": {
+          "en": "-e is the ending of the nominative. The accusative masculine, shown by den, needs -en.",
+          "es": "-e es la terminación del nominativo. El acusativo masculino, que se ve en den, necesita -en."
+        },
+        "neuer": {
+          "en": "-er only appears after ein in the masculine nominative. After den the ending is -en.",
+          "es": "-er solo aparece después de ein en el nominativo masculino. Después de den la terminación es -en."
+        }
+      },
+      "examples": [
+        "Ich sehe den großen Hund.",
+        "Wir kaufen den roten Pullover."
+      ],
+      "tr": {
+        "en": "I buy the new table.",
+        "es": "Compro la mesa nueva."
+      }
+    },
+    {
+      "id": "adjektivdeklination-nom-akk-f02",
+      "kind": "form",
+      "verb": "unbestimmt",
+      "person": "Akkusativ maskulin",
+      "answer": "einen neuen Tisch",
+      "table": "adjektiv-endungen"
+    },
+    {
+      "id": "adjektivdeklination-nom-akk-c03",
+      "sentence": "Das ist ein ___ Buch.",
+      "options": [
+        "neue",
+        "neuer",
+        "neues"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Buch is neuter, and ein shows no gender, so the adjective must end in -es: ein neues Buch.",
+        "es": "Buch es neutro, y ein no muestra el género, así que el adjetivo debe terminar en -es: ein neues Buch."
+      },
+      "wrong": {
+        "neue": {
+          "en": "-e is for the feminine and after der, die, das. Buch is neuter, and after ein it needs -es.",
+          "es": "-e es para el femenino y después de der, die, das. Buch es neutro, y después de ein necesita -es."
+        },
+        "neuer": {
+          "en": "-er belongs to the masculine nominative (ein neuer Tisch). Buch is neuter, not masculine.",
+          "es": "-er pertenece al nominativo masculino (ein neuer Tisch). Buch es neutro, no masculino."
+        }
+      },
+      "examples": [
+        "Das ist ein gutes Auto.",
+        "Ich habe ein kleines Haus."
+      ],
+      "tr": {
+        "en": "That is a new book.",
+        "es": "Ese es un libro nuevo."
+      }
+    },
+    {
+      "id": "adjektivdeklination-nom-akk-f03",
+      "kind": "form",
+      "verb": "unbestimmt",
+      "person": "Nominativ neutral",
+      "answer": "ein neues Buch",
+      "table": "adjektiv-endungen"
+    },
+    {
+      "id": "adjektivdeklination-nom-akk-w01",
+      "kind": "why",
+      "es": "Ich kaufe den neuen Tisch.",
+      "target": "neuen",
+      "tr": {
+        "en": "I buy the new table.",
+        "es": "Compro la mesa nueva."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "The adjective is plural, so it ends in -en",
+            "es": "El adjetivo está en plural, así que termina en -en"
+          },
+          "wrong": {
+            "en": "Tisch is singular. Here -en marks the masculine accusative, not the plural.",
+            "es": "Tisch es singular. Aquí -en marca el acusativo masculino, no el plural."
+          }
+        },
+        {
+          "text": {
+            "en": "The masculine accusative takes -en: den neuen Tisch",
+            "es": "El acusativo masculino lleva -en: den neuen Tisch"
+          }
+        },
+        {
+          "text": {
+            "en": "After a definite article the adjective always takes -e",
+            "es": "Después de un artículo definido el adjetivo siempre lleva -e"
+          },
+          "wrong": {
+            "en": "-e is only the normal ending. The masculine accusative (den) and the plural are the exceptions with -en.",
+            "es": "-e es solo la terminación normal. El acusativo masculino (den) y el plural son las excepciones con -en."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "adjektivdeklination-nom-akk-c04",
+      "sentence": "Sie hat eine ___ Tasche.",
+      "options": [
+        "neue",
+        "neuen",
+        "neues"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Tasche is feminine, and the feminine ends in -e in the nominative and the accusative: eine neue Tasche.",
+        "es": "Tasche es femenino, y el femenino termina en -e en el nominativo y en el acusativo: eine neue Tasche."
+      },
+      "wrong": {
+        "neuen": {
+          "en": "-en would be right for the masculine accusative or the plural. A single feminine noun takes -e.",
+          "es": "-en sería correcto para el acusativo masculino o el plural. Un sustantivo femenino en singular lleva -e."
+        },
+        "neues": {
+          "en": "-es is only for neuter nouns (ein neues Buch). Tasche is feminine, so the form is eine neue.",
+          "es": "-es es solo para sustantivos neutros (ein neues Buch). Tasche es femenino, así que la forma es eine neue."
+        }
+      },
+      "examples": [
+        "Sie kauft eine blaue Jacke.",
+        "Ich habe eine kleine Katze."
+      ],
+      "tr": {
+        "en": "She has a new bag.",
+        "es": "Ella tiene una bolsa nueva."
+      }
+    },
+    {
+      "id": "adjektivdeklination-nom-akk-f04",
+      "kind": "form",
+      "verb": "bestimmt",
+      "person": "Akkusativ maskulin",
+      "answer": "den neuen Tisch",
+      "table": "adjektiv-endungen"
+    },
+    {
+      "id": "adjektivdeklination-nom-akk-c05",
+      "sentence": "Wir haben einen ___ Hund.",
+      "options": [
+        "kleine",
+        "kleiner",
+        "kleinen"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Hund is masculine and the object, so the accusative einen needs the ending -en: einen kleinen Hund.",
+        "es": "Hund es masculino y el objeto, así que el acusativo einen necesita la terminación -en: einen kleinen Hund."
+      },
+      "wrong": {
+        "kleine": {
+          "en": "-e is for the feminine. A masculine accusative after einen takes -en.",
+          "es": "-e es para el femenino. Un acusativo masculino después de einen lleva -en."
+        },
+        "kleiner": {
+          "en": "-er is the masculine nominative (ein kleiner Hund). Here the dog is the object, so it is einen kleinen.",
+          "es": "-er es el nominativo masculino (ein kleiner Hund). Aquí el perro es el objeto, así que es einen kleinen."
+        }
+      },
+      "examples": [
+        "Ich habe einen alten Computer.",
+        "Er kauft einen roten Mantel."
+      ],
+      "tr": {
+        "en": "We have a small dog.",
+        "es": "Tenemos un perro pequeño."
+      }
+    },
+    {
+      "id": "adjektivdeklination-nom-akk-f05",
+      "kind": "form",
+      "verb": "unbestimmt",
+      "person": "Nominativ maskulin",
+      "answer": "ein neuer Tisch",
+      "table": "adjektiv-endungen"
+    },
+    {
+      "id": "adjektivdeklination-nom-akk-c06",
+      "sentence": "Das ___ Auto ist schnell.",
+      "options": [
+        "große",
+        "großes",
+        "großen"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "After das the neuter nominative takes -e, because das already shows the neuter: das große Auto.",
+        "es": "Después de das el nominativo neutro lleva -e, porque das ya muestra el neutro: das große Auto."
+      },
+      "wrong": {
+        "großes": {
+          "en": "-es is needed after ein, where the article shows nothing. After das the article already carries the signal.",
+          "es": "-es se necesita después de ein, donde el artículo no muestra nada. Después de das el artículo ya lleva la señal."
+        },
+        "großen": {
+          "en": "-en is for the masculine accusative and the plural. Auto is singular and the subject, so it needs -e.",
+          "es": "-en es para el acusativo masculino y el plural. Auto es singular y el sujeto, así que necesita -e."
+        }
+      },
+      "examples": [
+        "Das neue Haus ist teuer.",
+        "Das kleine Kind schläft."
+      ],
+      "tr": {
+        "en": "The big car is fast.",
+        "es": "El carro grande es rápido."
+      }
+    },
+    {
+      "id": "adjektivdeklination-nom-akk-f06",
+      "kind": "form",
+      "verb": "bestimmt",
+      "person": "Nominativ feminin",
+      "answer": "die neue Lampe",
+      "table": "adjektiv-endungen"
+    },
+    {
+      "id": "adjektivdeklination-nom-akk-w02",
+      "kind": "why",
+      "es": "Das ist ein neues Buch.",
+      "target": "neues",
+      "tr": {
+        "en": "That is a new book.",
+        "es": "Ese es un libro nuevo."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Neuter nouns always take -e",
+            "es": "Los sustantivos neutros siempre llevan -e"
+          },
+          "wrong": {
+            "en": "After das the ending is -e, but after ein it is -es. The ending depends on the article word too.",
+            "es": "Después de das la terminación es -e, pero después de ein es -es. La terminación depende también de la palabra del artículo."
+          }
+        },
+        {
+          "text": {
+            "en": "ein shows no ending, so the adjective takes -es for the neuter",
+            "es": "ein no muestra terminación, así que el adjetivo toma -es para el neutro"
+          }
+        },
+        {
+          "text": {
+            "en": "-es marks the plural",
+            "es": "-es marca el plural"
+          },
+          "wrong": {
+            "en": "Buch is singular here. The plural of the adjective ends in -en: die neuen Bücher.",
+            "es": "Buch está aquí en singular. El plural del adjetivo termina en -en: die neuen Bücher."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "adjektivdeklination-nom-akk-c07",
+      "sentence": "Ich sehe die ___ Kinder.",
+      "options": [
+        "kleine",
+        "kleinen",
+        "kleines"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "In the plural, after the article die, the adjective takes -en: die kleinen Kinder.",
+        "es": "En plural, después del artículo die, el adjetivo lleva -en: die kleinen Kinder."
+      },
+      "wrong": {
+        "kleine": {
+          "en": "-e is for singular nouns after die, das (die kleine Frau). The plural always takes -en after the article.",
+          "es": "-e es para sustantivos en singular después de die, das (die kleine Frau). El plural lleva siempre -en después del artículo."
+        },
+        "kleines": {
+          "en": "-es is a neuter ending after ein. In the plural it never appears; the plural has -en.",
+          "es": "-es es una terminación neutra después de ein. En plural nunca aparece; el plural tiene -en."
+        }
+      },
+      "examples": [
+        "Ich kenne die netten Leute.",
+        "Wir lesen die neuen Bücher."
+      ],
+      "tr": {
+        "en": "I see the small children.",
+        "es": "Veo a los niños pequeños."
+      }
+    },
+    {
+      "id": "adjektivdeklination-nom-akk-f07",
+      "kind": "form",
+      "verb": "unbestimmt",
+      "person": "Akkusativ neutral",
+      "answer": "ein neues Buch",
+      "table": "adjektiv-endungen"
+    },
+    {
+      "id": "adjektivdeklination-nom-akk-c08",
+      "sentence": "Das Haus ist ___.",
+      "options": [
+        "große",
+        "groß",
+        "großes"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "After sein the adjective is bare and has no ending: Das Haus ist groß.",
+        "es": "Después de sein el adjetivo queda sin terminación: Das Haus ist groß."
+      },
+      "wrong": {
+        "große": {
+          "en": "Endings are only for adjectives in front of a noun (das große Haus). After sein there is no noun, so there is no ending.",
+          "es": "Las terminaciones son solo para adjetivos delante de un sustantivo (das große Haus). Después de sein no hay sustantivo, así que no hay terminación."
+        },
+        "großes": {
+          "en": "The neuter ending -es appears in ein großes Haus. In the predicate the adjective does not agree with the noun.",
+          "es": "La terminación neutra -es aparece en ein großes Haus. En el predicado el adjetivo no concuerda con el sustantivo."
+        }
+      },
+      "examples": [
+        "Der Tisch ist neu.",
+        "Die Katze ist klein."
+      ],
+      "tr": {
+        "en": "The house is big.",
+        "es": "La casa es grande."
+      }
+    },
+    {
+      "id": "adjektivdeklination-nom-akk-f08",
+      "kind": "form",
+      "verb": "bestimmt",
+      "person": "Akkusativ Plural",
+      "answer": "die neuen Bücher",
+      "table": "adjektiv-endungen"
+    },
+    {
+      "id": "adjektivdeklination-nom-akk-c09",
+      "sentence": "Ich lese ein ___ Buch.",
+      "options": [
+        "gute",
+        "guter",
+        "gutes"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Buch is neuter and ein shows nothing, so the accusative is also -es: ein gutes Buch.",
+        "es": "Buch es neutro y ein no muestra nada, así que el acusativo también es -es: ein gutes Buch."
+      },
+      "wrong": {
+        "gute": {
+          "en": "-e is feminine or after der, die, das. A neuter noun after ein needs -es in the accusative as well.",
+          "es": "-e es femenino o después de der, die, das. Un sustantivo neutro después de ein necesita -es también en el acusativo."
+        },
+        "guter": {
+          "en": "-er is only for the masculine nominative. The accusative neuter does not change from the nominative: -es.",
+          "es": "-er es solo para el nominativo masculino. El acusativo neutro no cambia respecto del nominativo: -es."
+        }
+      },
+      "examples": [
+        "Sie hat ein schönes Kleid.",
+        "Er sucht ein neues Auto."
+      ],
+      "tr": {
+        "en": "I am reading a good book.",
+        "es": "Estoy leyendo un buen libro."
+      }
+    },
+    {
+      "id": "adjektivdeklination-nom-akk-f09",
+      "kind": "form",
+      "verb": "unbestimmt",
+      "person": "Akkusativ feminin",
+      "answer": "eine neue Lampe",
+      "table": "adjektiv-endungen"
+    },
+    {
+      "id": "adjektivdeklination-nom-akk-w03",
+      "kind": "why",
+      "es": "Das Auto ist neu.",
+      "target": "neu",
+      "tr": {
+        "en": "The car is new.",
+        "es": "El carro es nuevo."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Adjectives always agree with the noun: neues",
+            "es": "Los adjetivos siempre concuerdan con el sustantivo: neues"
+          },
+          "wrong": {
+            "en": "Only an adjective in front of the noun takes an ending. After sein it stays bare.",
+            "es": "Solo un adjetivo delante del sustantivo lleva terminación. Después de sein se queda sin terminación."
+          }
+        },
+        {
+          "text": {
+            "en": "The ending -e is added because Auto is neuter",
+            "es": "Se añade la terminación -e porque Auto es neutro"
+          },
+          "wrong": {
+            "en": "The gender of Auto only matters in front of the noun (das neue Auto). After sein there is no ending at all.",
+            "es": "El género de Auto solo importa delante del sustantivo (das neue Auto). Después de sein no hay ninguna terminación."
+          }
+        },
+        {
+          "text": {
+            "en": "After sein the adjective stands alone and gets no ending",
+            "es": "Después de sein el adjetivo está solo y no lleva terminación"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "adjektivdeklination-nom-akk-c10",
+      "sentence": "Das ist ein ___ Mann.",
+      "options": [
+        "netter",
+        "netten",
+        "nette"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Mann is masculine and the nominative: after ein it takes -er, so ein netter Mann.",
+        "es": "Mann es masculino y está en nominativo: después de ein lleva -er, así que ein netter Mann."
+      },
+      "wrong": {
+        "netten": {
+          "en": "-en would be right for the masculine accusative (einen netten Mann). After Das ist the man is in the nominative.",
+          "es": "-en sería correcto para el acusativo masculino (einen netten Mann). Después de Das ist el hombre está en nominativo."
+        },
+        "nette": {
+          "en": "-e is the feminine ending. Mann is masculine, so the nominative after ein needs -er.",
+          "es": "-e es la terminación femenina. Mann es masculino, así que el nominativo después de ein necesita -er."
+        }
+      },
+      "examples": [
+        "Das ist ein großer Hund.",
+        "Das ist ein guter Freund."
+      ],
+      "tr": {
+        "en": "That is a nice man.",
+        "es": "Ese es un hombre amable."
+      }
+    },
+    {
+      "id": "adjektivdeklination-nom-akk-f10",
+      "kind": "form",
+      "verb": "bestimmt",
+      "person": "Nominativ neutral",
+      "answer": "das neue Buch",
+      "table": "adjektiv-endungen"
+    },
+    {
+      "id": "adjektivdeklination-nom-akk-c11",
+      "sentence": "Ich mag die ___ Frau.",
+      "options": [
+        "nette",
+        "netten",
+        "netter"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Frau is feminine; after die the accusative feminine takes -e: die nette Frau.",
+        "es": "Frau es femenino; después de die el acusativo femenino lleva -e: die nette Frau."
+      },
+      "wrong": {
+        "netten": {
+          "en": "-en is for the plural and the masculine accusative. A single feminine noun after die takes -e.",
+          "es": "-en es para el plural y el acusativo masculino. Un sustantivo femenino singular después de die lleva -e."
+        },
+        "netter": {
+          "en": "-er belongs to the masculine nominative after ein. Frau is feminine and takes -e.",
+          "es": "-er pertenece al nominativo masculino después de ein. Frau es femenino y lleva -e."
+        }
+      },
+      "examples": [
+        "Ich sehe die rote Tasche.",
+        "Wir kennen die neue Lehrerin."
+      ],
+      "tr": {
+        "en": "I like the nice woman.",
+        "es": "Me cae bien la mujer amable."
+      }
+    },
+    {
+      "id": "adjektivdeklination-nom-akk-f11",
+      "kind": "form",
+      "verb": "unbestimmt",
+      "person": "Nominativ Plural",
+      "answer": "keine neuen Bücher",
+      "table": "adjektiv-endungen"
+    },
+    {
+      "id": "adjektivdeklination-nom-akk-c12",
+      "sentence": "Ich trinke ___ Milch.",
+      "options": [
+        "kalte",
+        "kalter",
+        "kaltes"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Milch is feminine, and without an article the adjective takes the ending of die: kalte Milch.",
+        "es": "Milch es femenino, y sin artículo el adjetivo toma la terminación de die: kalte Milch."
+      },
+      "wrong": {
+        "kalter": {
+          "en": "-er would be the masculine ending as in kalter Kaffee. Milch is feminine.",
+          "es": "-er sería la terminación masculina como en kalter Kaffee. Milch es femenino."
+        },
+        "kaltes": {
+          "en": "-es would be the neuter ending as in kaltes Wasser. Milch is feminine, so it takes -e.",
+          "es": "-es sería la terminación neutra como en kaltes Wasser. Milch es femenino, así que lleva -e."
+        }
+      },
+      "examples": [
+        "Ich esse frisches Brot.",
+        "Er trinkt kalten Kaffee."
+      ],
+      "tr": {
+        "en": "I drink cold milk.",
+        "es": "Tomo leche fría."
+      }
+    },
+    {
+      "id": "adjektivdeklination-nom-akk-f12",
+      "kind": "form",
+      "verb": "bestimmt",
+      "person": "Akkusativ feminin",
+      "answer": "die neue Lampe",
+      "table": "adjektiv-endungen"
+    },
+    {
+      "id": "adjektivdeklination-nom-akk-c13",
+      "sentence": "Wir haben keine ___ Autos.",
+      "options": [
+        "neues",
+        "neue",
+        "neuen"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "After kein in the plural the adjective takes -en: keine neuen Autos.",
+        "es": "Después de kein en plural el adjetivo lleva -en: keine neuen Autos."
+      },
+      "wrong": {
+        "neues": {
+          "en": "-es is a neuter singular ending (kein neues Auto). Here the noun is plural.",
+          "es": "-es es una terminación neutra en singular (kein neues Auto). Aquí el sustantivo está en plural."
+        },
+        "neue": {
+          "en": "-e is the ending without an article (neue Autos). After keine the article word is present, so the plural takes -en.",
+          "es": "-e es la terminación sin artículo (neue Autos). Después de keine la palabra del artículo está presente, así que el plural lleva -en."
+        }
+      },
+      "examples": [
+        "Sie hat keine alten Bücher.",
+        "Wir sehen keine großen Hunde."
+      ],
+      "tr": {
+        "en": "We have no new cars.",
+        "es": "No tenemos carros nuevos."
+      }
+    },
+    {
+      "id": "adjektivdeklination-nom-akk-c14",
+      "sentence": "Ein ___ Hund kommt.",
+      "options": [
+        "kleine",
+        "kleiner",
+        "kleinen"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Hund is the subject, so the masculine nominative after ein takes -er: ein kleiner Hund.",
+        "es": "Hund es el sujeto, así que el nominativo masculino después de ein lleva -er: ein kleiner Hund."
+      },
+      "wrong": {
+        "kleine": {
+          "en": "-e is for the feminine (eine kleine Katze). Hund is masculine, so the nominative needs -er.",
+          "es": "-e es para el femenino (eine kleine Katze). Hund es masculino, así que el nominativo necesita -er."
+        },
+        "kleinen": {
+          "en": "-en would mark the accusative (einen kleinen Hund). Here the dog does the action, so it is the subject.",
+          "es": "-en marcaría el acusativo (einen kleinen Hund). Aquí el perro hace la acción, así que es el sujeto."
+        }
+      },
+      "examples": [
+        "Ein alter Mann wohnt hier.",
+        "Ein roter Bus kommt."
+      ],
+      "tr": {
+        "en": "A small dog is coming.",
+        "es": "Un perro pequeño viene."
+      }
+    },
+    {
+      "id": "adjektivdeklination-nom-akk-w04",
+      "kind": "why",
+      "es": "Wir haben keine neuen Autos.",
+      "target": "neuen",
+      "tr": {
+        "en": "We have no new cars.",
+        "es": "No tenemos carros nuevos."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "keine is feminine, so the adjective ends in -e",
+            "es": "keine es femenino, así que el adjetivo termina en -e"
+          },
+          "wrong": {
+            "en": "keine is the plural form here, not a feminine singular. The plural takes -en after kein-words.",
+            "es": "keine es aquí la forma del plural, no un femenino singular. El plural lleva -en después de las palabras kein."
+          }
+        },
+        {
+          "text": {
+            "en": "In the plural the adjective takes -en after kein",
+            "es": "En plural el adjetivo lleva -en después de kein"
+          }
+        },
+        {
+          "text": {
+            "en": "A plural noun has no adjective ending",
+            "es": "Un sustantivo en plural no tiene terminación de adjetivo"
+          },
+          "wrong": {
+            "en": "The adjective always has an ending in front of a noun, in the plural too. The ending is -en after the article words.",
+            "es": "El adjetivo siempre lleva una terminación delante de un sustantivo, también en plural. La terminación es -en después de las palabras del artículo."
+          }
+        }
+      ],
+      "correctIndex": 1
+    }
+  ]
+}

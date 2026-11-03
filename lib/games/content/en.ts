@@ -8,7 +8,14 @@
 import type { LanguageContentBundle } from '../content';
 import { EN_GRAMMAR_INDEX } from './en.index';
 import { EN_GRAMMAR_HU } from './en.hu.index';
-import { withHuIndex } from '@/lib/grammar/huOverlay';
+import { EN_GRAMMAR_DE } from './en.de.index';
+import { withOverlayIndex } from '@/lib/grammar/overlay';
 
-// The Hungarian sidecars (en.hu.index.ts, data/games/grammar-hu/en) are laid over each lesson as it loads.
-export const enContent: LanguageContentBundle = { grammarIndex: withHuIndex(EN_GRAMMAR_INDEX, EN_GRAMMAR_HU) };
+// The Hungarian and German sidecars (en.hu.index.ts, data/games/grammar-hu/en; en.de.index.ts, data/games/grammar-de/en)
+// are laid over each lesson as it loads.
+export const enContent: LanguageContentBundle = {
+  grammarIndex: withOverlayIndex(EN_GRAMMAR_INDEX, [
+    { lang: 'hu', sidecars: EN_GRAMMAR_HU },
+    { lang: 'de', sidecars: EN_GRAMMAR_DE },
+  ]),
+};

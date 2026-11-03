@@ -12,6 +12,7 @@
 // Pure module: no database, no loaded corpus, the caller supplies the data.
 
 import type { PcicItem } from '@/data/pcic';
+import { wordIn } from '@/lib/pcicItemText';
 import { hashString, shuffleArray, shuffleOptions } from '@/lib/shuffle';
 import { mockInstruction, MOCK_WRITING, type MockInstructionKind } from './author';
 import { authoredFormCount, authoredTasks } from './authored';
@@ -56,6 +57,7 @@ const ARTICLE: Record<MockTarget, RegExp> = {
   es: /^(el|la|los|las|un|una)\s+/i,
   en: /^(to|the|a|an)\s+/i,
   hu: /^(a|az|egy)\s+/i,
+  de: /^(der|die|das|ein|eine|sich)\s+/i,
 };
 // Numerals, pronouns, prepositions and conjunctions would fit several answers: they are neither a host nor a trap in the gaps.
 const AMBIGUOUS_POS = new Set(['num', 'pron', 'prep', 'conj']);
@@ -66,7 +68,7 @@ export function sentenceWords(sentence: string): string[] {
 
 /** The item's target-language form without article / "to" and parentheses, as a single word; otherwise null. */
 export function singleWordForm(item: PcicItem, target: MockTarget): string | null {
-  const raw = (target === 'es' ? item.es : target === 'hu' ? (item.hu ?? '') : item.en).split(' / ')[0].replace(/\(.*?\)/g, '').trim();
+  const raw = (wordIn(item, target) ?? '').split(' / ')[0].replace(/\(.*?\)/g, '').trim();
   const bare = raw.replace(ARTICLE[target], '').trim().toLowerCase();
   if (!bare || /\s/.test(bare) || bare.length < MIN_WORDS) return null;
   return bare;
@@ -120,8 +122,8 @@ export function buildMockExam(input: MockBuildInput): MockExam {
     });
     return { target, level, seed, official: bp.official, papers, skillNames: bp.skillNames, rule: bp.rule };
   }
-  // hu has only the authored plan (getMockBlueprint); the generator below builds the es / en A1 / A2 papers from the deck's sentences.
-  if (target === 'hu') return { target, level, seed, official: bp.official, papers: [], skillNames: bp.skillNames, rule: bp.rule };
+  // hu and de have only the authored plan (getMockBlueprint); the generator below builds the es / en A1 / A2 papers from the deck's sentences.
+  if (target === 'hu' || target === 'de') return { target, level, seed, official: bp.official, papers: [], skillNames: bp.skillNames, rule: bp.rule };
   const c = bp.counts;
   const key = `${target}:${level}:${seed}`;
   const rank = (part: string) => hashString(`${key}:${part}`);

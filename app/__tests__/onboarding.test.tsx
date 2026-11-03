@@ -30,6 +30,7 @@ describe('OnboardingScreen: language and level step', () => {
     expect(getByText('English')).toBeTruthy();
     expect(getByText('Español')).toBeTruthy();
     expect(getByText('Magyar')).toBeTruthy();
+    expect(getByText('Deutsch')).toBeTruthy();
   });
 
   it('after the "I speak" step comes "I learn", with the targets the supported pairs allow for that source', () => {
@@ -38,6 +39,7 @@ describe('OnboardingScreen: language and level step', () => {
     expect(en.getByText('Which language do you want to learn?')).toBeTruthy();
     expect(en.getByText('Español')).toBeTruthy();
     expect(en.getByText('Magyar')).toBeTruthy();
+    expect(en.getByText('Deutsch')).toBeTruthy();
     expect(en.queryByText('English')).toBeNull();
     en.unmount();
 
@@ -46,6 +48,7 @@ describe('OnboardingScreen: language and level step', () => {
     expect(es.getByText('¿Qué idioma quieres aprender?')).toBeTruthy();
     expect(es.getByText('English')).toBeTruthy();
     expect(es.getByText('Magyar')).toBeTruthy();
+    expect(es.getByText('Deutsch')).toBeTruthy();
     expect(es.queryByText('Español')).toBeNull();
     es.unmount();
 
@@ -55,10 +58,21 @@ describe('OnboardingScreen: language and level step', () => {
     expect(hu.getByText('Milyen nyelvet szeretnél tanulni?')).toBeTruthy();
     expect(hu.getByText('English')).toBeTruthy();
     expect(hu.getByText('Español')).toBeTruthy();
+    expect(hu.getByText('Deutsch')).toBeTruthy();
     expect(hu.queryByText('Magyar')).toBeNull();
+    hu.unmount();
+
+    // German: the interface switches to German, and the three other languages are offered
+    const de = render(<OnboardingScreen />);
+    fireEvent.press(de.getByText('Deutsch'));
+    expect(de.getByText('Welche Sprache möchtest du lernen?')).toBeTruthy();
+    expect(de.getByText('English')).toBeTruthy();
+    expect(de.getByText('Español')).toBeTruthy();
+    expect(de.getByText('Magyar')).toBeTruthy();
+    expect(de.queryByText('Deutsch')).toBeNull();
   });
 
-  it('every one of the six supported pairs saves as chosen', async () => {
+  it('every one of the twelve supported pairs saves as chosen', async () => {
     const pairs: [string, string, string, string][] = [
       ['English', 'Español', 'en', 'es'],
       ['English', 'Magyar', 'en', 'hu'],
@@ -66,17 +80,23 @@ describe('OnboardingScreen: language and level step', () => {
       ['Español', 'Magyar', 'es', 'hu'],
       ['Magyar', 'English', 'hu', 'en'],
       ['Magyar', 'Español', 'hu', 'es'],
+      ['English', 'Deutsch', 'en', 'de'],
+      ['Español', 'Deutsch', 'es', 'de'],
+      ['Magyar', 'Deutsch', 'hu', 'de'],
+      ['Deutsch', 'English', 'de', 'en'],
+      ['Deutsch', 'Español', 'de', 'es'],
+      ['Deutsch', 'Magyar', 'de', 'hu'],
     ];
     for (const [speak, learn, source, target] of pairs) {
       const view = render(<OnboardingScreen />);
       fireEvent.press(view.getByText(speak));
       fireEvent.press(view.getByText(learn));
       // welcome -> intro -> theme -> level (A1 is always offered, even on an empty deck)
-      // the buttons are in the chosen native language: English, Spanish or Hungarian
+      // the buttons are in the chosen native language: English, Spanish, Hungarian or German
       const press = (...labels: string[]) => fireEvent.press(view.getByText(labels.find((l) => view.queryByText(l)) ?? labels[0]));
-      press('Get started', 'Empezar', 'Kezdjük');
-      press("Let's start", 'Empecemos', 'Kezdjük');
-      press('Continue', 'Continuar', 'Tovább');
+      press('Get started', 'Empezar', 'Kezdjük', "Los geht's");
+      press("Let's start", 'Empecemos', 'Kezdjük', "Los geht's");
+      press('Continue', 'Continuar', 'Tovább', 'Weiter');
       await act(async () => {
         fireEvent.press(view.getByText('A1'));
         await Promise.resolve();

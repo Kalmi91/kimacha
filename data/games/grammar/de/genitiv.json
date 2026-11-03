@@ -1,0 +1,1016 @@
+{
+  "schema": 2,
+  "topic": "genitiv",
+  "level": "B1",
+  "title": {
+    "en": "The genitive",
+    "es": "El genitivo"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "The genitive says who owns something or what something belongs to: das Auto meines Vaters, die Farbe des Autos. It stands after the noun it belongs to. The articles are des (masculine), der (feminine), des (neuter) and der (plural), and masculine and neuter nouns add -s or -es: des Hundes, des Autos. Feminine and plural nouns do not change. In speech von + dative is very common, but the genitive is standard in writing and after some prepositions: wegen, trotz, während, statt.",
+        "es": "El genitivo dice quién posee algo o a qué pertenece algo: das Auto meines Vaters, die Farbe des Autos. Va después del sustantivo al que pertenece. Los artículos son des (masculino), der (femenino), des (neutro) y der (plural), y los sustantivos masculinos y neutros añaden -s o -es: des Hundes, des Autos. Los sustantivos femeninos y plurales no cambian. Al hablar es muy común von + dativo, pero el genitivo es lo estándar al escribir y después de algunas preposiciones: wegen, trotz, während, statt."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "genitiv-artikel",
+      "title": {
+        "en": "Articles in the genitive",
+        "es": "Los artículos en genitivo"
+      },
+      "header": [
+        {
+          "en": "Gender",
+          "es": "Género"
+        },
+        {
+          "en": "bestimmt",
+          "es": "bestimmt"
+        },
+        {
+          "en": "mein-",
+          "es": "mein-"
+        }
+      ],
+      "rows": [
+        [
+          "maskulin",
+          "des",
+          "meines"
+        ],
+        [
+          "feminin",
+          "der",
+          "meiner"
+        ],
+        [
+          "neutral",
+          "des",
+          "meines"
+        ],
+        [
+          "Plural",
+          "der",
+          "meiner"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "genitiv-nomen",
+      "title": {
+        "en": "The noun in the genitive",
+        "es": "El sustantivo en genitivo"
+      },
+      "header": [
+        {
+          "en": "Noun",
+          "es": "Sustantivo"
+        },
+        {
+          "en": "Genitiv",
+          "es": "Genitiv"
+        }
+      ],
+      "rows": [
+        [
+          "der Hund",
+          "des Hundes"
+        ],
+        [
+          "der Vater",
+          "des Vaters"
+        ],
+        [
+          "das Auto",
+          "des Autos"
+        ],
+        [
+          "das Haus",
+          "des Hauses"
+        ],
+        [
+          "das Kind",
+          "des Kindes"
+        ],
+        [
+          "der Tag",
+          "des Tages"
+        ],
+        [
+          "die Frau",
+          "der Frau"
+        ],
+        [
+          "die Kinder",
+          "der Kinder"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "The genitive after a noun",
+        "es": "El genitivo después de un sustantivo"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "The thing that belongs comes first, the owner follows in the genitive. Masculine and neuter nouns add -s (after a longer word or an ending in -er, -en, -el) or -es (after a short word or a sibilant like -s, -ß, -x, -z, -sch).",
+            "es": "Primero va lo que pertenece, y después el poseedor en genitivo. Los sustantivos masculinos y neutros añaden -s (después de una palabra más larga o de una terminación en -er, -en, -el) o -es (después de una palabra corta o de una sibilante como -s, -ß, -x, -z, -sch)."
+          },
+          "examples": [
+            {
+              "es": "Das ist das Auto meines Vaters.",
+              "tr": {
+                "en": "That is my father's car.",
+                "es": "Ese es el carro de mi padre."
+              }
+            },
+            {
+              "es": "Die Farbe des Autos ist rot.",
+              "tr": {
+                "en": "The color of the car is red.",
+                "es": "El color del carro es rojo."
+              }
+            },
+            {
+              "es": "Die Tür des Hauses ist offen.",
+              "tr": {
+                "en": "The door of the house is open.",
+                "es": "La puerta de la casa está abierta."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Feminine and plural nouns stay the same: only the article changes to der. Names take -s before the noun, without an apostrophe and without an article.",
+            "es": "Los sustantivos femeninos y plurales no cambian: solo el artículo pasa a der. Los nombres propios llevan -s antes del sustantivo, sin apóstrofo y sin artículo."
+          },
+          "examples": [
+            {
+              "es": "Das ist das Haus der Lehrerin.",
+              "tr": {
+                "en": "That is the teacher's house.",
+                "es": "Esa es la casa de la maestra."
+              }
+            },
+            {
+              "es": "Die Zimmer meiner Kinder sind klein.",
+              "tr": {
+                "en": "My children's rooms are small.",
+                "es": "Los cuartos de mis hijos son pequeños."
+              }
+            },
+            {
+              "es": "Das ist Annas Buch.",
+              "tr": {
+                "en": "That is Anna's book.",
+                "es": "Ese es el libro de Anna."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "genitiv-praepositionen",
+      "title": {
+        "en": "Prepositions with the genitive",
+        "es": "Preposiciones con genitivo"
+      },
+      "header": [
+        {
+          "en": "Preposition",
+          "es": "Preposición"
+        },
+        {
+          "en": "Example",
+          "es": "Ejemplo"
+        }
+      ],
+      "rows": [
+        [
+          "wegen",
+          "Wegen des Regens bleiben wir hier."
+        ],
+        [
+          "trotz",
+          "Trotz des Wetters gehen wir spazieren."
+        ],
+        [
+          "während",
+          "Während der Woche arbeite ich viel."
+        ],
+        [
+          "statt",
+          "Statt eines Buches kaufe ich eine Zeitung."
+        ],
+        [
+          "außerhalb",
+          "Außerhalb der Stadt gibt es einen Park."
+        ],
+        [
+          "innerhalb",
+          "Innerhalb der Stadt fahre ich Bus."
+        ]
+      ],
+      "noTableDeck": true
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Prepositions that take the genitive",
+        "es": "Preposiciones que llevan genitivo"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "wegen (because of), trotz (in spite of), während (during), statt or anstatt (instead of), außerhalb (outside of), innerhalb (inside of). In everyday speech many Germans use the dative, but the genitive is correct and expected in writing.",
+            "es": "wegen (a causa de), trotz (a pesar de), während (durante), statt o anstatt (en lugar de), außerhalb (fuera de), innerhalb (dentro de). Al hablar, muchos alemanes usan el dativo, pero el genitivo es lo correcto y lo esperado al escribir."
+          },
+          "examples": [
+            {
+              "es": "Wegen des Regens bleiben wir zu Hause.",
+              "tr": {
+                "en": "Because of the rain we are staying at home.",
+                "es": "A causa de la lluvia nos quedamos en casa."
+              }
+            },
+            {
+              "es": "Trotz der Kälte gehen wir spazieren.",
+              "tr": {
+                "en": "In spite of the cold, we go for a walk.",
+                "es": "A pesar del frío, salimos a caminar."
+              }
+            },
+            {
+              "es": "Statt eines Buches kaufe ich eine Zeitung.",
+              "tr": {
+                "en": "Instead of a book I buy a newspaper.",
+                "es": "En lugar de un libro compro un periódico."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Genitive or von + dative?",
+        "es": "¿Genitivo o von + dativo?"
+      },
+      "pairs": [
+        {
+          "a": "das Auto meines Vaters",
+          "b": "das Auto von meinem Vater",
+          "note": {
+            "en": "Both say the same. The genitive is more formal and standard in writing. von + dative is common in speech and in plain style. von is also the usual choice when a plural noun has no article: das Auto von Freunden.",
+            "es": "Los dos dicen lo mismo. El genitivo es más formal y estándar al escribir. von + dativo es común al hablar y en un estilo sencillo. von también es lo habitual cuando un sustantivo plural no lleva artículo: das Auto von Freunden."
+          },
+          "examples": [
+            {
+              "es": "Das ist das Auto meines Vaters.",
+              "tr": {
+                "en": "That is my father's car.",
+                "es": "Ese es el carro de mi padre."
+              }
+            },
+            {
+              "es": "Das ist das Auto von meinem Vater.",
+              "tr": {
+                "en": "That is the car of my father.",
+                "es": "Ese es el carro de mi padre."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: the owner comes after the thing (das Auto meines Vaters), not before it like in English. Masculine and neuter nouns need -s or -es (not des Hund). Feminine and plural nouns do not get -s (der Frau, der Kinder). Names take -s without an apostrophe (Annas Buch, not Anna's Buch). Do not mix: wegen takes the genitive in writing, not the accusative. Do not put von and the genitive together (not von des Vaters).",
+        "es": "Trampas clásicas: el poseedor va después de la cosa (das Auto meines Vaters), no antes como en inglés. Los sustantivos masculinos y neutros necesitan -s o -es (no des Hund). Los sustantivos femeninos y plurales no llevan -s (der Frau, der Kinder). Los nombres propios llevan -s sin apóstrofo (Annas Buch, no Anna's Buch). No mezcles: wegen lleva genitivo al escribir, no acusativo. No juntes von y el genitivo (no von des Vaters)."
+      }
+    }
+  ],
+  "speak": {
+    "en": "The genitive says who owns something: «das Auto meines Vaters». The articles are «des» for masculine and neuter nouns and «der» for feminine and plural nouns. Masculine and neuter nouns add an ending: «des Hundes», «des Autos». Names take an s without an apostrophe: «Annas Buch». The prepositions «wegen», «trotz», «während» and «statt» take the genitive: «Wegen des Regens bleiben wir zu Hause.»",
+    "es": "El genitivo dice quién posee algo: «das Auto meines Vaters». Los artículos son «des» para los sustantivos masculinos y neutros y «der» para los femeninos y plurales. Los sustantivos masculinos y neutros añaden una terminación: «des Hundes», «des Autos». Los nombres propios llevan una s sin apóstrofo: «Annas Buch». Las preposiciones «wegen», «trotz», «während» y «statt» llevan genitivo: «Wegen des Regens bleiben wir zu Hause.»"
+  },
+  "items": [
+    {
+      "id": "genitiv-c01",
+      "sentence": "Das ist das Auto ___ Vaters.",
+      "options": [
+        "mein",
+        "meinem",
+        "meines"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The genitive of the masculine possessive article is meines. The noun Vater then takes -s: meines Vaters.",
+        "es": "El genitivo del artículo posesivo masculino es meines. El sustantivo Vater lleva entonces -s: meines Vaters."
+      },
+      "wrong": {
+        "mein": {
+          "en": "mein is the nominative. After the noun Auto the owner stands in the genitive: meines.",
+          "es": "mein es el nominativo. Después del sustantivo Auto el poseedor está en genitivo: meines."
+        },
+        "meinem": {
+          "en": "meinem is the dative. It belongs after von (von meinem Vater), but not in a genitive phrase.",
+          "es": "meinem es el dativo. Va después de von (von meinem Vater), pero no en una frase con genitivo."
+        }
+      },
+      "examples": [
+        "Das ist das Haus meines Bruders.",
+        "Das ist das Zimmer meines Sohnes."
+      ],
+      "tr": {
+        "en": "That is my father's car.",
+        "es": "Ese es el carro de mi padre."
+      }
+    },
+    {
+      "id": "genitiv-f01",
+      "kind": "form",
+      "verb": "bestimmt",
+      "person": "maskulin",
+      "answer": "des",
+      "table": "genitiv-artikel"
+    },
+    {
+      "id": "genitiv-c02",
+      "sentence": "Das Haus ___ Lehrerin ist groß.",
+      "options": [
+        "der",
+        "die",
+        "des"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Lehrerin is feminine, and the feminine genitive article is der. The noun does not change.",
+        "es": "Lehrerin es femenino, y el artículo femenino en genitivo es der. El sustantivo no cambia."
+      },
+      "wrong": {
+        "die": {
+          "en": "die is the nominative or accusative. After Haus the owner needs the genitive.",
+          "es": "die es el nominativo o el acusativo. Después de Haus el poseedor necesita el genitivo."
+        },
+        "des": {
+          "en": "des is the genitive of masculine and neuter nouns. Lehrerin is feminine.",
+          "es": "des es el genitivo de los sustantivos masculinos y neutros. Lehrerin es femenino."
+        }
+      },
+      "examples": [
+        "Das Auto der Frau ist alt.",
+        "Die Tasche der Mutter ist neu."
+      ],
+      "tr": {
+        "en": "The teacher's house is big.",
+        "es": "La casa de la maestra es grande."
+      }
+    },
+    {
+      "id": "genitiv-f02",
+      "kind": "form",
+      "verb": "Genitiv",
+      "person": "der Hund",
+      "answer": "des Hundes",
+      "accept": [
+        "des Hunds"
+      ],
+      "table": "genitiv-nomen"
+    },
+    {
+      "id": "genitiv-c03",
+      "sentence": "Die Farbe ___ Autos ist rot.",
+      "options": [
+        "das",
+        "des",
+        "dem"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Auto is neuter, and the neuter genitive article is des. The noun adds -s: des Autos.",
+        "es": "Auto es neutro, y el artículo neutro en genitivo es des. El sustantivo añade -s: des Autos."
+      },
+      "wrong": {
+        "das": {
+          "en": "das is the nominative or accusative. The owner after Farbe stands in the genitive: des.",
+          "es": "das es el nominativo o el acusativo. El poseedor después de Farbe está en genitivo: des."
+        },
+        "dem": {
+          "en": "dem is the dative. With a dative you would use von: die Farbe von dem Auto, but not dem Autos.",
+          "es": "dem es el dativo. Con un dativo usarías von: die Farbe von dem Auto, pero no dem Autos."
+        }
+      },
+      "examples": [
+        "Die Tür des Zimmers ist offen.",
+        "Der Name des Kindes ist Lena."
+      ],
+      "tr": {
+        "en": "The color of the car is red.",
+        "es": "El color del carro es rojo."
+      }
+    },
+    {
+      "id": "genitiv-f03",
+      "kind": "form",
+      "verb": "bestimmt",
+      "person": "feminin",
+      "answer": "der",
+      "table": "genitiv-artikel"
+    },
+    {
+      "id": "genitiv-w01",
+      "kind": "why",
+      "es": "Das ist das Auto meines Vaters.",
+      "target": "Vaters",
+      "tr": {
+        "en": "That is my father's car.",
+        "es": "Ese es el carro de mi padre."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Vaters is a plural form, like Väter",
+            "es": "Vaters es una forma plural, como Väter"
+          },
+          "wrong": {
+            "en": "The plural of Vater is Väter, with an umlaut. Vaters with -s is the singular genitive, shown also by meines.",
+            "es": "El plural de Vater es Väter, con diéresis. Vaters con -s es el genitivo singular, que también muestra meines."
+          }
+        },
+        {
+          "text": {
+            "en": "Vaters is a masculine noun in the genitive, so it adds -s",
+            "es": "Vaters es un sustantivo masculino en genitivo, así que añade -s"
+          }
+        },
+        {
+          "text": {
+            "en": "-s is only for names, as in Annas Buch",
+            "es": "-s es solo para nombres propios, como en Annas Buch"
+          },
+          "wrong": {
+            "en": "Names are only one case. Masculine and neuter nouns in general add -s or -es in the genitive.",
+            "es": "Los nombres propios son solo un caso. Los sustantivos masculinos y neutros en general añaden -s o -es en genitivo."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "genitiv-c04",
+      "sentence": "Wegen ___ Regens bleiben wir zu Hause.",
+      "options": [
+        "den",
+        "des",
+        "der"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "wegen takes the genitive, and Regen is masculine: wegen des Regens.",
+        "es": "wegen lleva genitivo, y Regen es masculino: wegen des Regens."
+      },
+      "wrong": {
+        "den": {
+          "en": "den is the accusative or a dative plural. wegen with the genitive needs the form des for a masculine noun.",
+          "es": "den es el acusativo o un dativo plural. wegen con genitivo necesita la forma des para un sustantivo masculino."
+        },
+        "der": {
+          "en": "der is the genitive of feminine nouns. Regen is masculine, so you need des.",
+          "es": "der es el genitivo de los sustantivos femeninos. Regen es masculino, así que necesitas des."
+        }
+      },
+      "examples": [
+        "Wegen des Wetters bleiben wir hier.",
+        "Wegen der Arbeit komme ich spät."
+      ],
+      "tr": {
+        "en": "Because of the rain we are staying at home.",
+        "es": "A causa de la lluvia nos quedamos en casa."
+      }
+    },
+    {
+      "id": "genitiv-f04",
+      "kind": "form",
+      "verb": "Genitiv",
+      "person": "der Vater",
+      "answer": "des Vaters",
+      "table": "genitiv-nomen"
+    },
+    {
+      "id": "genitiv-c05",
+      "sentence": "Das ist das Buch ___ Kinder.",
+      "options": [
+        "die",
+        "den",
+        "der"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The plural genitive article is der: das Buch der Kinder. The noun Kinder does not change.",
+        "es": "El artículo plural en genitivo es der: das Buch der Kinder. El sustantivo Kinder no cambia."
+      },
+      "wrong": {
+        "die": {
+          "en": "die is the plural nominative or accusative. Here the owner is in the genitive, so the article is der.",
+          "es": "die es el nominativo o el acusativo plural. Aquí el poseedor está en genitivo, así que el artículo es der."
+        },
+        "den": {
+          "en": "den is the dative plural article, and the noun would need -n (den Kindern). It is not a genitive form.",
+          "es": "den es el artículo plural en dativo, y el sustantivo necesitaría -n (den Kindern). No es una forma de genitivo."
+        }
+      },
+      "examples": [
+        "Die Zimmer der Kinder sind klein.",
+        "Das Auto der Eltern ist neu."
+      ],
+      "tr": {
+        "en": "That is the children's book.",
+        "es": "Ese es el libro de los niños."
+      }
+    },
+    {
+      "id": "genitiv-f05",
+      "kind": "form",
+      "verb": "mein-",
+      "person": "maskulin",
+      "answer": "meines",
+      "table": "genitiv-artikel"
+    },
+    {
+      "id": "genitiv-c06",
+      "sentence": "Das Auto meines ___ ist neu.",
+      "options": [
+        "Vater",
+        "Vaters",
+        "Vatern"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Masculine nouns add -s in the genitive: meines Vaters.",
+        "es": "Los sustantivos masculinos añaden -s en genitivo: meines Vaters."
+      },
+      "wrong": {
+        "Vater": {
+          "en": "Vater without -s is the nominative. The genitive of a masculine noun needs the ending -s.",
+          "es": "Vater sin -s es el nominativo. El genitivo de un sustantivo masculino necesita la terminación -s."
+        },
+        "Vatern": {
+          "en": "Vatern does not exist. The ending -n is for the dative plural of some nouns, and Vater is singular here.",
+          "es": "Vatern no existe. La terminación -n es para el dativo plural de algunos sustantivos, y Vater es singular aquí."
+        }
+      },
+      "examples": [
+        "Das Auto meines Lehrers ist alt.",
+        "Das Zimmer meines Bruders ist klein."
+      ],
+      "tr": {
+        "en": "My father's car is new.",
+        "es": "El carro de mi padre es nuevo."
+      }
+    },
+    {
+      "id": "genitiv-f06",
+      "kind": "form",
+      "verb": "Genitiv",
+      "person": "das Auto",
+      "answer": "des Autos",
+      "table": "genitiv-nomen"
+    },
+    {
+      "id": "genitiv-w02",
+      "kind": "why",
+      "es": "Das Haus der Lehrerin ist groß.",
+      "target": "der",
+      "tr": {
+        "en": "The teacher's house is big.",
+        "es": "La casa de la maestra es grande."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "der is the masculine nominative, so the teacher must be a man",
+            "es": "der es el nominativo masculino, así que el maestro debe ser hombre"
+          },
+          "wrong": {
+            "en": "Lehrerin is feminine, which is clear from -in. The article der is the genitive of feminine nouns.",
+            "es": "Lehrerin es femenino, lo que se ve por -in. El artículo der es el genitivo de los sustantivos femeninos."
+          }
+        },
+        {
+          "text": {
+            "en": "der: feminine nouns have der in the genitive, and the noun does not change",
+            "es": "der: los sustantivos femeninos llevan der en genitivo, y el sustantivo no cambia"
+          }
+        },
+        {
+          "text": {
+            "en": "der needs an ending on the noun too: der Lehrerins",
+            "es": "der necesita una terminación también en el sustantivo: der Lehrerins"
+          },
+          "wrong": {
+            "en": "Feminine nouns never take -s in the genitive. The article alone shows the case.",
+            "es": "Los sustantivos femeninos nunca llevan -s en genitivo. El artículo solo muestra el caso."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "genitiv-c07",
+      "sentence": "Die Tür des ___ ist offen.",
+      "options": [
+        "Hauses",
+        "Haus",
+        "Häuser"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Haus is a short word, so the genitive takes -es: des Hauses.",
+        "es": "Haus es una palabra corta, así que el genitivo lleva -es: des Hauses."
+      },
+      "wrong": {
+        "Haus": {
+          "en": "Haus without an ending is the nominative. After des the noun must carry the genitive ending.",
+          "es": "Haus sin terminación es el nominativo. Después de des el sustantivo debe llevar la terminación de genitivo."
+        },
+        "Häuser": {
+          "en": "Häuser is the plural. After des a singular noun is needed, because des is a singular article.",
+          "es": "Häuser es el plural. Después de des se necesita un sustantivo singular, porque des es un artículo singular."
+        }
+      },
+      "examples": [
+        "Der Name des Hundes ist Bello.",
+        "Der Anfang des Tages ist schön."
+      ],
+      "tr": {
+        "en": "The door of the house is open.",
+        "es": "La puerta de la casa está abierta."
+      }
+    },
+    {
+      "id": "genitiv-f07",
+      "kind": "form",
+      "verb": "bestimmt",
+      "person": "Plural",
+      "answer": "der",
+      "table": "genitiv-artikel"
+    },
+    {
+      "id": "genitiv-c08",
+      "sentence": "Das ist ___ Buch.",
+      "options": [
+        "Annas",
+        "Anna's",
+        "Anna"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Names take -s before the noun, without an apostrophe: Annas Buch.",
+        "es": "Los nombres propios llevan -s antes del sustantivo, sin apóstrofo: Annas Buch."
+      },
+      "wrong": {
+        "Anna's": {
+          "en": "Anna's with an apostrophe is the English way. In German there is no apostrophe before the s.",
+          "es": "Anna's con apóstrofo es la forma inglesa. En alemán no hay apóstrofo antes de la s."
+        },
+        "Anna": {
+          "en": "Anna without -s does not show the owner. Annas Buch needs the genitive ending -s.",
+          "es": "Anna sin -s no muestra al poseedor. Annas Buch necesita la terminación de genitivo -s."
+        }
+      },
+      "examples": [
+        "Das ist Pauls Auto.",
+        "Das ist Evas Tasche."
+      ],
+      "tr": {
+        "en": "That is Anna's book.",
+        "es": "Ese es el libro de Anna."
+      }
+    },
+    {
+      "id": "genitiv-f08",
+      "kind": "form",
+      "verb": "Genitiv",
+      "person": "das Haus",
+      "answer": "des Hauses",
+      "table": "genitiv-nomen"
+    },
+    {
+      "id": "genitiv-c09",
+      "sentence": "Das ist das Auto ___ meinem Vater.",
+      "options": [
+        "von",
+        "des",
+        "bei"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "With a dative (meinem Vater) the owner is introduced by von: das Auto von meinem Vater.",
+        "es": "Con un dativo (meinem Vater) el poseedor se introduce con von: das Auto von meinem Vater."
+      },
+      "wrong": {
+        "des": {
+          "en": "des belongs to the genitive and would need meines Vaters. It cannot stand before meinem Vater.",
+          "es": "des pertenece al genitivo y necesitaría meines Vaters. No puede ir delante de meinem Vater."
+        },
+        "bei": {
+          "en": "bei means at or near a person. It does not express that a car belongs to someone.",
+          "es": "bei significa en casa de o junto a una persona. No expresa que un carro pertenece a alguien."
+        }
+      },
+      "examples": [
+        "Das ist das Zimmer von meiner Schwester.",
+        "Das ist ein Freund von mir."
+      ],
+      "tr": {
+        "en": "That is the car of my father.",
+        "es": "Ese es el carro de mi padre."
+      }
+    },
+    {
+      "id": "genitiv-f09",
+      "kind": "form",
+      "verb": "mein-",
+      "person": "neutral",
+      "answer": "meines",
+      "table": "genitiv-artikel"
+    },
+    {
+      "id": "genitiv-w03",
+      "kind": "why",
+      "es": "Wegen des Regens bleiben wir zu Hause.",
+      "target": "des",
+      "tr": {
+        "en": "Because of the rain we are staying at home.",
+        "es": "A causa de la lluvia nos quedamos en casa."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "wegen takes the dative, so it should be dem Regen",
+            "es": "wegen lleva dativo, así que debería ser dem Regen"
+          },
+          "wrong": {
+            "en": "In everyday speech people do say wegen dem Regen. In standard and written German wegen takes the genitive: des Regens.",
+            "es": "En el habla cotidiana sí se dice wegen dem Regen. En alemán estándar y escrito wegen lleva genitivo: des Regens."
+          }
+        },
+        {
+          "text": {
+            "en": "wegen takes the accusative, so it should be den Regen",
+            "es": "wegen lleva acusativo, así que debería ser den Regen"
+          },
+          "wrong": {
+            "en": "wegen never takes the accusative. The choice is genitive in writing or dative in casual speech.",
+            "es": "wegen nunca lleva acusativo. La opción es genitivo al escribir o dativo en el habla informal."
+          }
+        },
+        {
+          "text": {
+            "en": "wegen takes the genitive, and masculine Regen adds -s: des Regens",
+            "es": "wegen lleva genitivo, y Regen, masculino, añade -s: des Regens"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "genitiv-c10",
+      "sentence": "___ der Kälte gehen wir spazieren.",
+      "options": [
+        "Wegen",
+        "Trotz",
+        "Statt"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "We go for a walk although it is cold. In spite of is trotz, with the genitive.",
+        "es": "Salimos a caminar aunque hace frío. A pesar de es trotz, con genitivo."
+      },
+      "wrong": {
+        "Wegen": {
+          "en": "Wegen means because of. The cold would then be the reason for the walk, which is not logical.",
+          "es": "Wegen significa a causa de. El frío sería entonces la razón del paseo, lo que no es lógico."
+        },
+        "Statt": {
+          "en": "Statt means instead of. The cold cannot replace something in this sentence.",
+          "es": "Statt significa en lugar de. El frío no puede reemplazar nada en esta oración."
+        }
+      },
+      "examples": [
+        "Trotz des Regens gehen wir raus.",
+        "Trotz der Arbeit habe ich Zeit."
+      ],
+      "tr": {
+        "en": "In spite of the cold, we go for a walk.",
+        "es": "A pesar del frío, salimos a caminar."
+      }
+    },
+    {
+      "id": "genitiv-f10",
+      "kind": "form",
+      "verb": "Genitiv",
+      "person": "die Frau",
+      "answer": "der Frau",
+      "table": "genitiv-nomen"
+    },
+    {
+      "id": "genitiv-c11",
+      "sentence": "___ der Woche arbeite ich viel.",
+      "options": [
+        "Während",
+        "Wegen",
+        "Trotz"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The sentence says when: during the week. During is während, with the genitive.",
+        "es": "La oración dice cuándo: durante la semana. Durante es während, con genitivo."
+      },
+      "wrong": {
+        "Wegen": {
+          "en": "Wegen gives a reason. Working a lot is not because of the week itself.",
+          "es": "Wegen da una razón. Trabajar mucho no es a causa de la semana misma."
+        },
+        "Trotz": {
+          "en": "Trotz expresses a contrast. The sentence only says when I work, not that anything is surprising.",
+          "es": "Trotz expresa un contraste. La oración solo dice cuándo trabajo, no que algo sea sorprendente."
+        }
+      },
+      "examples": [
+        "Während des Tages arbeite ich.",
+        "Während der Ferien reise ich viel."
+      ],
+      "tr": {
+        "en": "During the week I work a lot.",
+        "es": "Durante la semana trabajo mucho."
+      }
+    },
+    {
+      "id": "genitiv-f11",
+      "kind": "form",
+      "verb": "Genitiv",
+      "person": "das Kind",
+      "answer": "des Kindes",
+      "accept": [
+        "des Kinds"
+      ],
+      "table": "genitiv-nomen"
+    },
+    {
+      "id": "genitiv-c12",
+      "sentence": "___ eines Buches kaufe ich eine Zeitung.",
+      "options": [
+        "Trotz",
+        "Während",
+        "Statt"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "I buy a newspaper in place of a book. Instead of is statt, with the genitive.",
+        "es": "Compro un periódico en lugar de un libro. En lugar de es statt, con genitivo."
+      },
+      "wrong": {
+        "Trotz": {
+          "en": "Trotz would mean in spite of a book, which makes no sense when buying a newspaper.",
+          "es": "Trotz significaría a pesar de un libro, lo que no tiene sentido al comprar un periódico."
+        },
+        "Während": {
+          "en": "Während gives a time, during something. A book is not a period of time.",
+          "es": "Während da un tiempo, durante algo. Un libro no es un período de tiempo."
+        }
+      },
+      "examples": [
+        "Statt des Autos nehme ich den Bus.",
+        "Statt eines Kaffees trinke ich Tee."
+      ],
+      "tr": {
+        "en": "Instead of a book I buy a newspaper.",
+        "es": "En lugar de un libro compro un periódico."
+      }
+    },
+    {
+      "id": "genitiv-f12",
+      "kind": "form",
+      "verb": "Genitiv",
+      "person": "die Kinder",
+      "answer": "der Kinder",
+      "table": "genitiv-nomen"
+    },
+    {
+      "id": "genitiv-c13",
+      "sentence": "Das Auto der ___ ist alt.",
+      "options": [
+        "Frau",
+        "Frauen",
+        "Fraus"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Feminine nouns do not change in the genitive: only the article becomes der. So: der Frau.",
+        "es": "Los sustantivos femeninos no cambian en genitivo: solo el artículo pasa a der. Así: der Frau."
+      },
+      "wrong": {
+        "Frauen": {
+          "en": "Frauen is the plural. The sentence talks about one woman, so the singular Frau is needed.",
+          "es": "Frauen es el plural. La oración habla de una mujer, así que se necesita el singular Frau."
+        },
+        "Fraus": {
+          "en": "Fraus adds a masculine ending. Feminine nouns never take -s in the genitive.",
+          "es": "Fraus añade una terminación masculina. Los sustantivos femeninos nunca llevan -s en genitivo."
+        }
+      },
+      "examples": [
+        "Die Tasche der Lehrerin ist rot.",
+        "Das Haus der Tante ist groß."
+      ],
+      "tr": {
+        "en": "The woman's car is old.",
+        "es": "El carro de la mujer es viejo."
+      }
+    },
+    {
+      "id": "genitiv-c14",
+      "sentence": "Die Zimmer meiner ___ sind klein.",
+      "options": [
+        "Kindern",
+        "Kindes",
+        "Kinder"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The plural genitive noun has no ending here: meiner Kinder. Only the article shows the genitive.",
+        "es": "El sustantivo en genitivo plural no lleva terminación aquí: meiner Kinder. Solo el artículo muestra el genitivo."
+      },
+      "wrong": {
+        "Kindern": {
+          "en": "Kindern is the dative plural. It would follow von (von meinen Kindern), not meiner.",
+          "es": "Kindern es el dativo plural. Iría después de von (von meinen Kindern), no de meiner."
+        },
+        "Kindes": {
+          "en": "Kindes is the singular genitive (des Kindes). meiner is a plural or feminine form, so it does not match.",
+          "es": "Kindes es el genitivo singular (des Kindes). meiner es una forma plural o femenina, así que no concuerda."
+        }
+      },
+      "examples": [
+        "Die Bücher meiner Eltern sind alt.",
+        "Die Namen der Kinder sind schön."
+      ],
+      "tr": {
+        "en": "My children's rooms are small.",
+        "es": "Los cuartos de mis hijos son pequeños."
+      }
+    },
+    {
+      "id": "genitiv-w04",
+      "kind": "why",
+      "es": "Das ist Annas Buch.",
+      "target": "Annas",
+      "tr": {
+        "en": "That is Anna's book.",
+        "es": "Ese es el libro de Anna."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Anna's with an apostrophe, as in English",
+            "es": "Anna's con apóstrofo, como en inglés"
+          },
+          "wrong": {
+            "en": "German does not use the apostrophe for the genitive. The s is added directly to the name.",
+            "es": "El alemán no usa el apóstrofo para el genitivo. La s se añade directamente al nombre."
+          }
+        },
+        {
+          "text": {
+            "en": "der Anna Buch: article of the owner plus the noun",
+            "es": "der Anna Buch: artículo del poseedor más el sustantivo"
+          },
+          "wrong": {
+            "en": "Names have no article here. Annas Buch is the short, usual form; with an article you would say das Buch von Anna.",
+            "es": "Los nombres no llevan artículo aquí. Annas Buch es la forma corta y habitual; con artículo dirías das Buch von Anna."
+          }
+        },
+        {
+          "text": {
+            "en": "Names take -s directly before the noun, without an apostrophe and without an article",
+            "es": "Los nombres propios llevan -s directamente antes del sustantivo, sin apóstrofo y sin artículo"
+          }
+        }
+      ],
+      "correctIndex": 2
+    }
+  ]
+}

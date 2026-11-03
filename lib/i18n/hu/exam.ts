@@ -50,7 +50,7 @@ const hu: typeof en = {
     skillPracticeSentences: 'Gyakorolj mondatokat',
     introSpeaking: (n: number) => `Beszéd: ${n} kérdés`,
     skillSpeaking: 'Beszéd',
-    speakTranslate: (lang: string): string => (lang === 'es' ? 'Mondd spanyolul' : lang === 'hu' ? 'Mondd magyarul' : 'Mondd angolul'),
+    speakTranslate: (lang: string): string => (lang === 'es' ? 'Mondd spanyolul' : lang === 'hu' ? 'Mondd magyarul' : lang === 'de' ? 'Mondd németül' : 'Mondd angolul'),
     speakRepeat: 'Olvasd fel hangosan',
     speakHint: 'Koppints a billentyűzeten a mikrofonra, és mondd el a mondatot. A szavaid megjelennek a mezőben.',
     speakPlaceholder: 'Itt jelennek meg a kimondott szavaid',
@@ -94,6 +94,7 @@ const hu: typeof en = {
     passRuleTotal: (needed: number, of: number) => `A sikerhez: összesen legalább ${needed} / ${of} pont. Az egyik készség pótolhatja a másikat.`,
     passRuleAverage: (pct: number) =>
       `A sikerhez: a készségek átlaga kb. ${pct}%. Ez a határ becslés, a valódi vizsga nem közöl ilyet.`,
+    passRuleEach: (pct: number) => `A sikerhez: minden készségben legalább ${pct}%, mint a valódi vizsga minden moduljában. Az erős készség nem pótolja a gyengét.`,
     passRuleScale: (needed: number) =>
       `A sikerhez: átlagosan legalább ${needed} pont a vizsgaskálán. A skálapontszámod itt becslés a nyers pontjaidból.`,
     shortNote: 'Rövidebb, mint a valódi vizsga, a pontok át vannak számolva. Az óra viszont valódi.',
@@ -160,6 +161,8 @@ const hu: typeof en = {
       `${i}. csoport: ${points} / ${of}, kell: ${needed}, ${passed ? 'sikeres' : 'sikertelen'}${provisional ? ' (ideiglenes)' : ''}`,
     totalLine: (points: number, of: number, needed: number, passed: boolean, provisional: boolean) =>
       `Összesen: ${points} / ${of}, kell: ${needed}, ${passed ? 'sikeres' : 'sikertelen'}${provisional ? ' (ideiglenes)' : ''}`,
+    eachLine: (passPct: number, below: string[], passed: boolean, provisional: boolean) =>
+      `Minden készségben kell legalább ${passPct}%: ${passed ? 'sikeres' : `sikertelen${below.length > 0 ? ` (${passPct}% alatt: ${below.join(', ')})` : ''}`}${provisional ? ' (ideiglenes)' : ''}`,
     averageLine: (pct: number, passPct: number, passed: boolean, provisional: boolean) =>
       `A készségek átlaga: ${pct}%, kell kb. ${passPct}% (becslés), ${passed ? 'sikeres' : 'sikertelen'}${provisional ? ' (ideiglenes)' : ''}`,
     checkAnswers: 'Válaszok ellenőrzése',
@@ -177,6 +180,8 @@ const hu: typeof en = {
     mockClipText: (n: number) => `${n}. szöveg`,
     mockHintMatch: 'Párosíts minden elemet egy lehetőséggel. Koppints egy betűre a kiválasztáshoz, még egyszer rákoppintva törlöd. Egy lehetőséget többször is használhatsz.',
     mockHintMatchUnique: 'Párosíts minden elemet egy másik lehetőséggel. Koppints egy betűre a kiválasztáshoz; ha már foglalt, ide kerül át. Néhány lehetőségre nincs szükség.',
+    mockHintMatchNone:
+      'Párosíts minden elemet egy másik lehetőséggel. Koppints egy betűre a kiválasztáshoz; ha már foglalt, ide kerül át. Koppints a 0-ra, ha egyik lehetőség sem illik. Néhány lehetőségre nincs szükség.',
     mockShowMore: 'Több mutatása',
     mockShowLess: 'Kevesebb mutatása',
     mockHintGapped: 'Válaszd ki azt a szövegrészt, amelyik illik a számozott helyre. Minden szövegrész csak egy helyre illik, és néhány felesleges.',
@@ -220,7 +225,7 @@ const hu: typeof en = {
     speakAnswerPlaceholder: 'A válaszod',
     // a billentyűzet mikrofonja a billentyűzet nyelvén hallgat, ezért a súgó megnevezi a nyelvet, amelyre át kell állítani.
     speakAnswerHint: (lang: string) =>
-      `Beszélj a billentyűzet mikrofonjával, vagy gépeld be. Állítsd a billentyűzetet ${lang === 'es' ? 'spanyolra' : 'angolra'}, hogy megértsen.`,
+      `Beszélj a billentyűzet mikrofonjával, vagy gépeld be. Állítsd a billentyűzetet ${lang === 'es' ? 'spanyolra' : lang === 'hu' ? 'magyarra' : lang === 'de' ? 'németre' : 'angolra'}, hogy megértsen.`,
     speakWords: (n: number, min: number) => `${n} szó, legalább ${min} szóra törekedj`,
     speakNextQuestion: 'Következő kérdés',
     speakPrevQuestion: 'Előző kérdés',

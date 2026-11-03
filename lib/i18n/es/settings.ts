@@ -83,7 +83,7 @@ const es: typeof en = {
     strictAccents: 'Los acentos cuentan',
     strictAccentsHint: 'Un acento que falta (á, é, ñ) cuenta como error al escribir.',
     articlePicker: 'Botones de artículo',
-    articlePickerHint: 'En las tarjetas de sustantivos en español eliges el/la/los/las en vez de escribirlo. ⊘ significa sin artículo.',
+    articlePickerHint: 'En las tarjetas de sustantivos en español y en alemán eliges el artículo (el/la/los/las, der/die/das) en vez de escribirlo. ⊘ significa sin artículo.',
     missedWordDelay: 'La palabra que fallas regresa en',
     missedWordDelaySeconds: (n: string) => `${n} s`,
     learningDirection: 'Dirección de aprendizaje',

@@ -6,7 +6,8 @@
 // statically import it in `lib/games/content/<lang>.ts`, push it into
 // `grammarTopics`. No code in the grammar screens should need to change.
 
-import { LEVELS, type Level } from '@/data/words';
+import { LEVELS, type Level, type WordEntry } from '@/data/words';
+import { getDeWords } from '@/data/deWords';
 import { getHuWords } from '@/data/huWords';
 import { getOpenWordsUpToLevel } from '@/data/openWords';
 import type { DictationItem, FormItem, Lang4, LessonV2, MatchItem, OrderItem, SpotItem, TenseId, TransformItem, WhyItem } from '../grammar/lessonTypes';
@@ -24,9 +25,11 @@ export function cumulativeCorpusWordIds(level: Level, lang: string): Set<number>
   const key = `${lang}:${level}`;
   const cached = cumulativeIdsCache.get(key);
   if (cached) return cached;
-  // The words-open cards (id = order), A0 → A1, C2 → C1; for the Hungarian course the cards of the Hungarian deck.
+  // The words-open cards (id = order), A0 → A1, C2 → C1; for the Hungarian and the German course the cards of their own deck.
   const ids = new Set<number>();
-  const cards = lang === 'hu' ? getHuWords().filter((w) => LEVELS.indexOf(w.level) <= LEVELS.indexOf(level)) : getOpenWordsUpToLevel(level);
+  // The German course reads its words in the German deck, never in the Spanish ones.
+  const upTo = (deck: WordEntry[]) => deck.filter((w) => LEVELS.indexOf(w.level) <= LEVELS.indexOf(level));
+  const cards = lang === 'de' ? upTo(getDeWords()) : lang === 'hu' ? upTo(getHuWords()) : getOpenWordsUpToLevel(level);
   for (const w of cards) ids.add(w.id);
   cumulativeIdsCache.set(key, ids);
   return ids;
@@ -57,11 +60,13 @@ export interface LanguageContentBundle {
 import { esContent } from './content/es';
 import { enContent } from './content/en';
 import { huContent } from './content/hu';
+import { deContent } from './content/de';
 
 const BUNDLES: Partial<Record<string, LanguageContentBundle>> = {
   es: esContent,
   en: enContent,
   hu: huContent,
+  de: deContent,
 };
 
 function byLang<K extends keyof LanguageContentBundle>(

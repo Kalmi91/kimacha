@@ -12,7 +12,9 @@
 
 import type { SyllabusTopic, SyllabusUnit } from './syllabus';
 import { withHuTitles } from './huOverlay';
+import { withOverlayTitles } from './overlay';
 import huSyllabus from '@/data/games/grammar-hu/syllabus.json';
+import deSyllabus from '@/data/games/grammar-de/syllabus.json';
 import a0Topics from '@/data/topics/en/a0.json';
 import a1Topics from '@/data/topics/en/a1.json';
 import a2Topics from '@/data/topics/en/a2.json';
@@ -67,16 +69,17 @@ const b1GrammarTopics = grammarOf(b1Topics);
 const b2GrammarTopics = grammarOf(b2Topics);
 const c1GrammarTopics = grammarOf(c1Topics);
 
-// The Hungarian titles (data/games/grammar-hu/syllabus.json) become the `hu` of each title.
-export const EN_UNITS: SyllabusUnit[] = withHuTitles([
+// The Hungarian titles (data/games/grammar-hu/syllabus.json) become the `hu` of each title, the German ones
+// (data/games/grammar-de/syllabus.json) the `de`.
+export const EN_UNITS: SyllabusUnit[] = withOverlayTitles(withHuTitles([
   ...unitsOf('A1', a1Sublevels),
   ...unitsOf('A2', a2Sublevels),
   ...unitsOf('B1', b1Sublevels).filter((u) => b1GrammarTopics.some((t) => t.subLevel === u.id)),
   ...unitsOf('B2', b2Sublevels).filter((u) => b2GrammarTopics.some((t) => t.subLevel === u.id)),
   ...unitsOf('C1', c1Sublevels).filter((u) => c1GrammarTopics.some((t) => t.subLevel === u.id)),
-], huSyllabus.en.units);
+], huSyllabus.en.units), 'de', deSyllabus.en.units);
 
-export const EN_SYLLABUS: SyllabusTopic[] = withHuTitles([
+export const EN_SYLLABUS: SyllabusTopic[] = withOverlayTitles(withHuTitles([
   // A0 basic_verbs opens A1, in the first unit.
   ...grammarOf(a0Topics).map((t) => topicOf(t, 'A1', 'A1.1')),
   ...grammarOf(a1Topics).map((t) => topicOf(t, 'A1', t.subLevel)),
@@ -84,4 +87,4 @@ export const EN_SYLLABUS: SyllabusTopic[] = withHuTitles([
   ...b1GrammarTopics.map((t) => topicOf(t, 'B1', t.subLevel)),
   ...b2GrammarTopics.map((t) => topicOf(t, 'B2', t.subLevel)),
   ...c1GrammarTopics.map((t) => topicOf(t, 'C1', t.subLevel)),
-], huSyllabus.en.topics);
+], huSyllabus.en.topics), 'de', deSyllabus.en.topics);

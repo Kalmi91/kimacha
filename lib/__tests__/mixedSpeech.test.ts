@@ -67,4 +67,17 @@ describe('lessonSpeechSegments', () => {
       { text: 'like this.', lang: 'en' },
     ]);
   });
+
+  it('reads the German text with the German voice and the marked sections with the learned language', () => {
+    const de = { ...speak, de: 'Sag «I am a teacher» so.' };
+    expect(lessonSpeechSegments(de, 'de', 'en')).toEqual([
+      { text: 'Sag', lang: 'de' },
+      { text: 'I am a teacher', lang: 'en' },
+      { text: 'so.', lang: 'de' },
+    ]);
+  });
+
+  it('a lesson without German text falls back to the English text and the English voice', () => {
+    expect(lessonSpeechSegments(speak, 'de', 'es')[0]).toEqual({ text: 'Say', lang: 'en' });
+  });
 });

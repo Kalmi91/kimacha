@@ -32,7 +32,7 @@ import * as Speech from 'expo-speech';
 import { speakNeural, stopNeural } from './neuralTts';
 import { neuralEngineFor, neuralPackFile, neuralSentenceFile, startNeural } from './neuralModels';
 import { playPackFile, stopPack } from './packAudio';
-import { voiceFor, type NeuralLang, type VoiceGender } from './neuralVoices';
+import { isPiperOnly, voiceFor, type NeuralLang, type VoiceGender } from './neuralVoices';
 import { preferredGender } from './voicePreference';
 
 let voiceLanguages: Set<string> | null = null;
@@ -113,7 +113,7 @@ export function speechTag(locale: string): string {
 export function voiceIdFor(locale: string): string | undefined {
   // Reported (`word:the grandson`): the English voice seemed to have changed
   // ("did you change it? if so, change it back"). The
-  // pinning was aimed at Spanish (es-MX, not Castilian) and Hungarian; English
+  // pinning was aimed at Spanish (es-MX, not Castilian), Hungarian and German (de-DE, not de-AT / de-CH); English
   // only came along for the ride and swapped the familiar system voice for an
   // "enhanced" one. English is therefore left to the engine's own default again;
   // the locale still goes out, so nothing else about that fix changes.
@@ -193,7 +193,7 @@ export function preferredGenderFor(locale: string): 'f' | 'm' | undefined {
 
 function neuralLangFor(locale: string): NeuralLang | null {
   const base = baseLanguage(locale);
-  return base === 'es' || base === 'en' || base === 'hu' ? base : null;
+  return base === 'es' || base === 'en' || base === 'hu' || base === 'de' ? base : null;
 }
 
 // The better voice (Settings, lib/neuralModels.ts) is tried before the phone's own, on four levels:
@@ -217,7 +217,7 @@ function speakBetter(text: string, locale: string, opts: BetterOptions, phone: (
   // A male / female line (practice exam) keeps its sex; any other speech takes the person chosen in Settings -> Voice.
   // Either way the speech must not get a pack recording of the other sex.
   const gender = opts.gender === 'f' || opts.gender === 'm' ? opts.gender : preferredGender(lang) ?? opts.gender;
-  const wrongSex = !!gender && gender !== 'n' && lang !== 'hu' && voiceFor(lang, 'kokoro', text).gender !== gender;
+  const wrongSex = !!gender && gender !== 'n' && !isPiperOnly(lang) && voiceFor(lang, 'kokoro', text).gender !== gender;
   const wordFile = wrongSex ? null : neuralPackFile(lang, text);
   // The sentence pack (Audio round B) after the word pack: the speaker is the explicit gender (a sequence's shared
   // speaker, a card's word), else the text's own hash gender, the one the engine would pick.

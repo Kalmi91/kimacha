@@ -1,0 +1,1039 @@
+{
+  "schema": 2,
+  "topic": "indefinitpronomen",
+  "level": "A2",
+  "title": {
+    "en": "man, jemand, niemand, etwas, nichts, alle",
+    "es": "man, jemand, niemand, etwas, nichts, alle"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "Indefinite pronouns talk about people and things without naming them. man means \"people in general\" (Hier spricht man Deutsch) and always takes the third person singular. jemand (somebody) and niemand (nobody) get -en in the accusative and -em in the dative. etwas, nichts and alles are invariable and can be followed by a capitalised adjective: etwas Neues. alle and viele are plural, jeder is singular. niemand and nichts are already negative, so you never add nicht: Ich sehe niemanden.",
+        "es": "Los pronombres indefinidos hablan de personas y cosas sin nombrarlas. man significa \"la gente en general\" (Hier spricht man Deutsch) y lleva siempre la tercera persona del singular. jemand (alguien) y niemand (nadie) reciben -en en el acusativo y -em en el dativo. etwas, nichts y alles son invariables y pueden ir seguidos de un adjetivo con mayúscula: etwas Neues. alle y viele son plurales, jeder es singular. niemand y nichts ya son negativos, así que nunca añades nicht: Ich sehe niemanden."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "jemand-niemand",
+      "title": {
+        "en": "jemand and niemand in three cases",
+        "es": "jemand y niemand en tres casos"
+      },
+      "header": [
+        {
+          "en": "Pronoun",
+          "es": "Pronombre"
+        },
+        {
+          "en": "Nominativ",
+          "es": "Nominativ"
+        },
+        {
+          "en": "Akkusativ",
+          "es": "Akkusativ"
+        },
+        {
+          "en": "Dativ",
+          "es": "Dativ"
+        }
+      ],
+      "rows": [
+        [
+          "jemand",
+          "jemand",
+          "jemanden",
+          "jemandem"
+        ],
+        [
+          "niemand",
+          "niemand",
+          "niemanden",
+          "niemandem"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "indefinit-verben",
+      "title": {
+        "en": "Which verb form follows",
+        "es": "Qué forma verbal sigue"
+      },
+      "header": [
+        {
+          "en": "Pronoun",
+          "es": "Pronombre"
+        },
+        {
+          "en": "sprechen",
+          "es": "sprechen"
+        },
+        {
+          "en": "kommen",
+          "es": "kommen"
+        },
+        {
+          "en": "sein",
+          "es": "sein"
+        }
+      ],
+      "rows": [
+        [
+          "man",
+          "spricht",
+          "kommt",
+          "ist"
+        ],
+        [
+          "jemand",
+          "spricht",
+          "kommt",
+          "ist"
+        ],
+        [
+          "niemand",
+          "spricht",
+          "kommt",
+          "ist"
+        ],
+        [
+          "jeder",
+          "spricht",
+          "kommt",
+          "ist"
+        ],
+        [
+          "alle",
+          "sprechen",
+          "kommen",
+          "sind"
+        ],
+        [
+          "viele",
+          "sprechen",
+          "kommen",
+          "sind"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "indefinit-gegenteile",
+      "title": {
+        "en": "Opposites",
+        "es": "Contrarios"
+      },
+      "header": [
+        {
+          "en": "Positive",
+          "es": "Positivo"
+        },
+        {
+          "en": "Negative",
+          "es": "Negativo"
+        },
+        {
+          "en": "Example",
+          "es": "Ejemplo"
+        }
+      ],
+      "rows": [
+        [
+          "jemand",
+          "niemand",
+          "Niemand ist zu Hause."
+        ],
+        [
+          "etwas",
+          "nichts",
+          "Ich habe nichts gesehen."
+        ],
+        [
+          "alles",
+          "nichts",
+          "Er weiß alles."
+        ],
+        [
+          "alle",
+          "niemand",
+          "Alle sind hier."
+        ],
+        [
+          "immer",
+          "nie",
+          "Er kommt nie zu spät."
+        ]
+      ],
+      "noTableDeck": true
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "How to use them",
+        "es": "Cómo usarlos"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "man replaces \"people\", \"you\" or \"they\" in general statements. The verb is in the third person singular. man is the subject only.",
+            "es": "man sustituye a \"la gente\", \"uno\" o \"se\" en afirmaciones generales. El verbo va en la tercera persona del singular. man solo es sujeto."
+          },
+          "examples": [
+            {
+              "es": "Hier spricht man Deutsch.",
+              "tr": {
+                "en": "People speak German here.",
+                "es": "Aquí se habla alemán."
+              }
+            },
+            {
+              "es": "Wie sagt man das auf Deutsch?",
+              "tr": {
+                "en": "How do you say that in German?",
+                "es": "¿Cómo se dice eso en alemán?"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "jemand and niemand change in the accusative (-en) and the dative (-em). niemand needs no nicht, because it is already negative.",
+            "es": "jemand y niemand cambian en el acusativo (-en) y el dativo (-em). niemand no necesita nicht, porque ya es negativo."
+          },
+          "examples": [
+            {
+              "es": "Ich sehe jemanden im Garten.",
+              "tr": {
+                "en": "I see somebody in the garden.",
+                "es": "Veo a alguien en el jardín."
+              }
+            },
+            {
+              "es": "Ich kenne hier niemanden.",
+              "tr": {
+                "en": "I do not know anybody here.",
+                "es": "No conozco a nadie aquí."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "etwas, nichts and alles do not change. After etwas and nichts an adjective can follow with a capital letter and the ending -es: etwas Neues, nichts Gutes.",
+            "es": "etwas, nichts y alles no cambian. Después de etwas y nichts puede seguir un adjetivo con mayúscula y la terminación -es: etwas Neues, nichts Gutes."
+          },
+          "examples": [
+            {
+              "es": "Ich möchte etwas trinken.",
+              "tr": {
+                "en": "I would like to drink something.",
+                "es": "Quiero tomar algo."
+              }
+            },
+            {
+              "es": "Heute gibt es nichts Neues.",
+              "tr": {
+                "en": "There is nothing new today.",
+                "es": "Hoy no hay nada nuevo."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "alle, viele, einige, wenige and mehrere are plural words and take a plural verb. jeder means \"everyone\" or \"every\" and is singular.",
+            "es": "alle, viele, einige, wenige y mehrere son palabras en plural y llevan un verbo en plural. jeder significa \"todos, cada uno\" o \"cada\" y es singular."
+          },
+          "examples": [
+            {
+              "es": "Alle Kinder spielen im Garten.",
+              "tr": {
+                "en": "All the children play in the garden.",
+                "es": "Todos los niños juegan en el jardín."
+              }
+            },
+            {
+              "es": "Jeder hat ein Buch.",
+              "tr": {
+                "en": "Everyone has a book.",
+                "es": "Cada uno tiene un libro."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Negative words",
+        "es": "Palabras negativas"
+      },
+      "pairs": [
+        {
+          "a": "Ich sehe jemanden.",
+          "b": "Ich sehe niemanden.",
+          "note": {
+            "en": "jemanden and niemanden are the same accusative form. niemanden is already negative: no nicht, no kein.",
+            "es": "jemanden y niemanden son la misma forma de acusativo. niemanden ya es negativo: sin nicht, sin kein."
+          },
+          "examples": [
+            {
+              "es": "Ich helfe jemandem.",
+              "tr": {
+                "en": "I help somebody.",
+                "es": "Ayudo a alguien."
+              }
+            },
+            {
+              "es": "Ich helfe niemandem.",
+              "tr": {
+                "en": "I help nobody.",
+                "es": "No ayudo a nadie."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Ich habe kein Geld.",
+          "b": "Ich habe nichts.",
+          "note": {
+            "en": "kein goes with a noun (kein Geld). nichts stands alone and replaces the noun.",
+            "es": "kein va con un sustantivo (kein Geld). nichts va solo y sustituye al sustantivo."
+          },
+          "examples": [
+            {
+              "es": "Wir haben keine Zeit.",
+              "tr": {
+                "en": "We have no time.",
+                "es": "No tenemos tiempo."
+              }
+            },
+            {
+              "es": "Wir haben nichts.",
+              "tr": {
+                "en": "We have nothing.",
+                "es": "No tenemos nada."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "The most common mistake is the double negation: not Ich sehe nicht niemanden or Ich habe nicht nichts, but Ich sehe niemanden and Ich habe nichts. Spanish learners (no veo a nadie) and Hungarian learners (nem látok senkit) both put a negative word next to the verb, and German does not. English learners: you and they do not translate directly, use man. Nouns with alle and viele are plural: alle Kinder spielen.",
+        "es": "El error más común es la doble negación: no Ich sehe nicht niemanden ni Ich habe nicht nichts, sino Ich sehe niemanden e Ich habe nichts. Quien habla español (no veo a nadie) y quien habla húngaro (nem látok senkit) ponen una palabra negativa junto al verbo, y el alemán no. Para quien habla inglés: you y they no se traducen directamente, usa man. Los sustantivos con alle y viele son plurales: alle Kinder spielen."
+      }
+    }
+  ],
+  "speak": {
+    "en": "The word «man» means people in general and takes the third person singular: «Hier spricht man Deutsch.» The words «jemand» and «niemand» change in the accusative and the dative: «Ich sehe jemanden», «Ich helfe niemandem». They are already negative, so you do not add «nicht»: «Ich kenne hier niemanden.» The words «etwas», «nichts» and «alles» do not change: «Ich möchte etwas trinken.» After «alle» the verb is plural: «Alle Kinder spielen im Garten.» After «jeder» it is singular: «Jeder hat ein Buch.»",
+    "es": "La palabra «man» significa la gente en general y lleva la tercera persona del singular: «Hier spricht man Deutsch.» Las palabras «jemand» y «niemand» cambian en el acusativo y el dativo: «Ich sehe jemanden», «Ich helfe niemandem». Ya son negativas, así que no añades «nicht»: «Ich kenne hier niemanden.» Las palabras «etwas», «nichts» y «alles» no cambian: «Ich möchte etwas trinken.» Después de «alle» el verbo va en plural: «Alle Kinder spielen im Garten.» Después de «jeder» va en singular: «Jeder hat ein Buch.»"
+  },
+  "items": [
+    {
+      "id": "indefinitpronomen-c01",
+      "sentence": "Wie sagt ___ das auf Deutsch?",
+      "options": [
+        "man",
+        "jemand",
+        "niemand"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The question is general, about how anybody says it, so the pronoun is man.",
+        "es": "La pregunta es general, sobre cómo lo dice cualquiera, así que el pronombre es man."
+      },
+      "wrong": {
+        "jemand": {
+          "en": "jemand means one particular, unknown person. The question is not about a person, it is about the general way to say it.",
+          "es": "jemand significa una persona concreta, desconocida. La pregunta no trata de una persona, trata de la forma general de decirlo."
+        },
+        "niemand": {
+          "en": "niemand means that nobody says it. That would be a statement about people, not a question about the usual way.",
+          "es": "niemand significa que nadie lo dice. Eso sería una afirmación sobre personas, no una pregunta por la forma habitual."
+        }
+      },
+      "examples": [
+        "Hier spricht man Deutsch.",
+        "Das macht man so."
+      ],
+      "tr": {
+        "en": "How do you say that in German?",
+        "es": "¿Cómo se dice eso en alemán?"
+      }
+    },
+    {
+      "id": "indefinitpronomen-f01",
+      "kind": "form",
+      "verb": "Akkusativ",
+      "person": "jemand",
+      "answer": "jemanden",
+      "table": "jemand-niemand"
+    },
+    {
+      "id": "indefinitpronomen-c02",
+      "sentence": "Das Haus ist leer. ___ ist zu Hause.",
+      "options": [
+        "Jemand",
+        "Niemand",
+        "Alle"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The house is empty, so nobody is at home: Niemand.",
+        "es": "La casa está vacía, así que nadie está en casa: Niemand."
+      },
+      "wrong": {
+        "Jemand": {
+          "en": "Jemand would say that somebody is at home, which contradicts an empty house.",
+          "es": "Jemand diría que alguien está en casa, lo cual contradice una casa vacía."
+        },
+        "Alle": {
+          "en": "Alle means everybody is at home, which is the opposite of an empty house.",
+          "es": "Alle significa que todos están en casa, lo contrario de una casa vacía."
+        }
+      },
+      "examples": [
+        "Niemand ist hier.",
+        "Niemand kommt heute."
+      ],
+      "tr": {
+        "en": "The house is empty. Nobody is at home.",
+        "es": "La casa está vacía. No hay nadie en casa."
+      }
+    },
+    {
+      "id": "indefinitpronomen-f02",
+      "kind": "form",
+      "verb": "sprechen",
+      "person": "man",
+      "answer": "spricht",
+      "table": "indefinit-verben"
+    },
+    {
+      "id": "indefinitpronomen-c03",
+      "sentence": "Ich sehe ___ im Garten.",
+      "options": [
+        "jemand",
+        "jemanden",
+        "jemandem"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "sehen takes the accusative, and jemand becomes jemanden in the accusative.",
+        "es": "sehen lleva acusativo, y jemand pasa a jemanden en el acusativo."
+      },
+      "wrong": {
+        "jemand": {
+          "en": "jemand is the nominative, for the subject. Here somebody is the object of sehen.",
+          "es": "jemand es el nominativo, para el sujeto. Aquí alguien es el objeto de sehen."
+        },
+        "jemandem": {
+          "en": "jemandem is the dative. sehen does not take the dative, only the accusative.",
+          "es": "jemandem es el dativo. sehen no lleva dativo, solo acusativo."
+        }
+      },
+      "examples": [
+        "Ich suche jemanden.",
+        "Er kennt jemanden."
+      ],
+      "tr": {
+        "en": "I see somebody in the garden.",
+        "es": "Veo a alguien en el jardín."
+      }
+    },
+    {
+      "id": "indefinitpronomen-f03",
+      "kind": "form",
+      "verb": "Dativ",
+      "person": "niemand",
+      "answer": "niemandem",
+      "table": "jemand-niemand"
+    },
+    {
+      "id": "indefinitpronomen-w01",
+      "kind": "why",
+      "es": "Hier spricht man Deutsch.",
+      "target": "man",
+      "tr": {
+        "en": "People speak German here.",
+        "es": "Aquí se habla alemán."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "man is the same as Mann and means a male person",
+            "es": "man es lo mismo que Mann y significa una persona masculina"
+          },
+          "wrong": {
+            "en": "man with one n and a lowercase letter is the pronoun for people in general. The noun der Mann has a capital letter and means a male person.",
+            "es": "man con una n y minúscula es el pronombre para la gente en general. El sustantivo der Mann lleva mayúscula y significa una persona masculina."
+          }
+        },
+        {
+          "text": {
+            "en": "man means people in general and takes the third person singular",
+            "es": "man significa la gente en general y lleva la tercera persona del singular"
+          }
+        },
+        {
+          "text": {
+            "en": "man takes the plural, because it means many people",
+            "es": "man lleva el plural, porque significa mucha gente"
+          },
+          "wrong": {
+            "en": "Even though man means people in general, the verb is singular: man spricht, not man sprechen.",
+            "es": "Aunque man significa la gente en general, el verbo va en singular: man spricht, no man sprechen."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "indefinitpronomen-c04",
+      "sentence": "Ich muss ___ helfen.",
+      "options": [
+        "jemand",
+        "jemanden",
+        "jemandem"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "helfen takes the dative, so jemand becomes jemandem.",
+        "es": "helfen lleva dativo, así que jemand pasa a jemandem."
+      },
+      "wrong": {
+        "jemand": {
+          "en": "jemand is the nominative. Here the person receives the help, so the nominative cannot be used.",
+          "es": "jemand es el nominativo. Aquí la persona recibe la ayuda, así que no se puede usar el nominativo."
+        },
+        "jemanden": {
+          "en": "jemanden is the accusative. helfen is one of the verbs that need the dative.",
+          "es": "jemanden es el acusativo. helfen es uno de los verbos que necesitan el dativo."
+        }
+      },
+      "examples": [
+        "Ich danke niemandem.",
+        "Sie hilft jemandem."
+      ],
+      "tr": {
+        "en": "I have to help somebody.",
+        "es": "Tengo que ayudar a alguien."
+      }
+    },
+    {
+      "id": "indefinitpronomen-f04",
+      "kind": "form",
+      "verb": "kommen",
+      "person": "alle",
+      "answer": "kommen",
+      "table": "indefinit-verben"
+    },
+    {
+      "id": "indefinitpronomen-c05",
+      "sentence": "Ich kenne hier ___.",
+      "options": [
+        "niemand",
+        "niemandem",
+        "niemanden"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "kennen takes the accusative, so niemand becomes niemanden. It is already negative.",
+        "es": "kennen lleva acusativo, así que niemand pasa a niemanden. Ya es negativo."
+      },
+      "wrong": {
+        "niemand": {
+          "en": "niemand is the nominative, for a subject. Here nobody is the object of kennen.",
+          "es": "niemand es el nominativo, para un sujeto. Aquí nadie es el objeto de kennen."
+        },
+        "niemandem": {
+          "en": "niemandem is the dative. kennen takes the accusative, not the dative.",
+          "es": "niemandem es el dativo. kennen lleva acusativo, no dativo."
+        }
+      },
+      "examples": [
+        "Ich sehe hier niemanden.",
+        "Wir treffen heute niemanden."
+      ],
+      "tr": {
+        "en": "I do not know anybody here.",
+        "es": "No conozco a nadie aquí."
+      }
+    },
+    {
+      "id": "indefinitpronomen-f05",
+      "kind": "form",
+      "verb": "Akkusativ",
+      "person": "niemand",
+      "answer": "niemanden",
+      "table": "jemand-niemand"
+    },
+    {
+      "id": "indefinitpronomen-c06",
+      "sentence": "Ich sehe ___.",
+      "options": [
+        "nicht niemanden",
+        "nicht jemand",
+        "niemanden"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "niemanden is already negative, so no nicht is added: Ich sehe niemanden.",
+        "es": "niemanden ya es negativo, así que no se añade nicht: Ich sehe niemanden."
+      },
+      "wrong": {
+        "nicht niemanden": {
+          "en": "This is a double negation, as in Spanish \"no veo a nadie\". German negates only once, so niemanden alone is right.",
+          "es": "Esto es una doble negación, como en español \"no veo a nadie\". El alemán niega solo una vez, así que niemanden solo es correcto."
+        },
+        "nicht jemand": {
+          "en": "nicht jemand is not a correct pair here, and jemand would also be nominative. For \"I see nobody\" you need niemanden.",
+          "es": "nicht jemand no es una pareja correcta aquí, y jemand sería además nominativo. Para \"no veo a nadie\" necesitas niemanden."
+        }
+      },
+      "examples": [
+        "Ich kenne niemanden.",
+        "Wir treffen niemanden."
+      ],
+      "tr": {
+        "en": "I see nobody.",
+        "es": "No veo a nadie."
+      }
+    },
+    {
+      "id": "indefinitpronomen-f06",
+      "kind": "form",
+      "verb": "sein",
+      "person": "niemand",
+      "answer": "ist",
+      "table": "indefinit-verben"
+    },
+    {
+      "id": "indefinitpronomen-w02",
+      "kind": "why",
+      "es": "Ich kenne niemanden.",
+      "target": "niemanden",
+      "tr": {
+        "en": "I do not know anybody.",
+        "es": "No conozco a nadie."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "niemanden is the dative form of niemand",
+            "es": "niemanden es la forma de dativo de niemand"
+          },
+          "wrong": {
+            "en": "The dative is niemandem. niemanden is the accusative, because kennen takes an accusative object.",
+            "es": "El dativo es niemandem. niemanden es el acusativo, porque kennen lleva un objeto en acusativo."
+          }
+        },
+        {
+          "text": {
+            "en": "niemanden is the accusative and already negative, so no nicht is added",
+            "es": "niemanden es el acusativo y ya es negativo, así que no se añade nicht"
+          }
+        },
+        {
+          "text": {
+            "en": "The verb needs nicht as well, as in Spanish: nicht niemanden",
+            "es": "El verbo necesita también nicht, como en español: nicht niemanden"
+          },
+          "wrong": {
+            "en": "German does not double the negation. niemand is negative by itself, so nicht would cancel or confuse the meaning.",
+            "es": "El alemán no duplica la negación. niemand es negativo por sí solo, así que nicht anularía o confundiría el sentido."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "indefinitpronomen-c07",
+      "sentence": "Was machst du heute? Ich mache ___.",
+      "options": [
+        "nichts",
+        "niemand",
+        "nie"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The answer to \"What do you do?\" is a thing, and \"no thing\" is nichts.",
+        "es": "La respuesta a \"¿Qué haces?\" es una cosa, y \"ninguna cosa\" es nichts."
+      },
+      "wrong": {
+        "niemand": {
+          "en": "niemand is for people (\"nobody\"). The question asks for an activity, not for a person.",
+          "es": "niemand es para personas (\"nadie\"). La pregunta pide una actividad, no una persona."
+        },
+        "nie": {
+          "en": "nie means \"never\" and says when. It does not give an object for machen, so the sentence stays incomplete.",
+          "es": "nie significa \"nunca\" y dice cuándo. No da un objeto para machen, así que la oración queda incompleta."
+        }
+      },
+      "examples": [
+        "Ich habe heute nichts.",
+        "Er sagt nichts."
+      ],
+      "tr": {
+        "en": "What are you doing today? I am doing nothing.",
+        "es": "¿Qué haces hoy? No hago nada."
+      }
+    },
+    {
+      "id": "indefinitpronomen-f07",
+      "kind": "form",
+      "verb": "Dativ",
+      "person": "jemand",
+      "answer": "jemandem",
+      "table": "jemand-niemand"
+    },
+    {
+      "id": "indefinitpronomen-c08",
+      "sentence": "Ich möchte ___ trinken.",
+      "options": [
+        "jemand",
+        "etwas",
+        "man"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "A thing to drink is etwas (\"something\"). It is invariable.",
+        "es": "Una cosa para beber es etwas (\"algo\"). Es invariable."
+      },
+      "wrong": {
+        "jemand": {
+          "en": "jemand is for persons. You cannot drink \"somebody\"; the object here is a thing.",
+          "es": "jemand es para personas. No puedes beber \"a alguien\"; el objeto aquí es una cosa."
+        },
+        "man": {
+          "en": "man can only be a subject and ich möchte already has a subject. It cannot be the thing you drink.",
+          "es": "man solo puede ser sujeto e ich möchte ya tiene sujeto. No puede ser la cosa que bebes."
+        }
+      },
+      "examples": [
+        "Ich brauche etwas Zeit.",
+        "Hast du etwas gesagt?"
+      ],
+      "tr": {
+        "en": "I would like to drink something.",
+        "es": "Quiero tomar algo."
+      }
+    },
+    {
+      "id": "indefinitpronomen-f08",
+      "kind": "form",
+      "verb": "sprechen",
+      "person": "viele",
+      "answer": "sprechen",
+      "table": "indefinit-verben"
+    },
+    {
+      "id": "indefinitpronomen-c09",
+      "sentence": "Ich habe etwas ___ für dich.",
+      "options": [
+        "Neue",
+        "Neuen",
+        "Neues"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "After etwas an adjective is capitalised and ends in -es: etwas Neues.",
+        "es": "Después de etwas el adjetivo lleva mayúscula y termina en -es: etwas Neues."
+      },
+      "wrong": {
+        "Neue": {
+          "en": "-e would be the feminine or plural ending. After etwas the adjective always ends in -es.",
+          "es": "-e sería la terminación femenina o plural. Después de etwas el adjetivo termina siempre en -es."
+        },
+        "Neuen": {
+          "en": "-en is for the plural or the masculine accusative. etwas does not have a gender, the adjective takes -es.",
+          "es": "-en es para el plural o el acusativo masculino. etwas no tiene género, el adjetivo lleva -es."
+        }
+      },
+      "examples": [
+        "Ich möchte etwas Schönes.",
+        "Er hat etwas Gutes."
+      ],
+      "tr": {
+        "en": "I have something new for you.",
+        "es": "Tengo algo nuevo para ti."
+      }
+    },
+    {
+      "id": "indefinitpronomen-f09",
+      "kind": "form",
+      "verb": "kommen",
+      "person": "jeder",
+      "answer": "kommt",
+      "table": "indefinit-verben"
+    },
+    {
+      "id": "indefinitpronomen-w03",
+      "kind": "why",
+      "es": "Alle Kinder spielen im Garten.",
+      "target": "spielen",
+      "tr": {
+        "en": "All the children play in the garden.",
+        "es": "Todos los niños juegan en el jardín."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "alle is plural, so the verb is plural too",
+            "es": "alle es plural, así que el verbo también es plural"
+          }
+        },
+        {
+          "text": {
+            "en": "alle is a singular word like jeder, so the verb should be spielt",
+            "es": "alle es una palabra singular como jeder, así que el verbo debería ser spielt"
+          },
+          "wrong": {
+            "en": "alle is the plural word. The singular word is jeder (jedes Kind spielt).",
+            "es": "alle es la palabra plural. La palabra singular es jeder (jedes Kind spielt)."
+          }
+        },
+        {
+          "text": {
+            "en": "spielen is an infinitive and has no personal ending",
+            "es": "spielen es un infinitivo y no tiene terminación personal"
+          },
+          "wrong": {
+            "en": "Here spielen is the conjugated plural form, third person plural. Its ending -en is the personal ending.",
+            "es": "Aquí spielen es la forma conjugada del plural, tercera persona del plural. Su terminación -en es la terminación personal."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "indefinitpronomen-c10",
+      "sentence": "Heute gibt es nichts ___.",
+      "options": [
+        "gutes",
+        "Gutes",
+        "Gute"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "An adjective after nichts is used as a noun, so it is capitalised and ends in -es: nichts Gutes.",
+        "es": "Un adjetivo después de nichts se usa como sustantivo, así que lleva mayúscula y termina en -es: nichts Gutes."
+      },
+      "wrong": {
+        "gutes": {
+          "en": "The ending is right, but the adjective is written with a lowercase letter. After nichts and etwas it is a noun and needs a capital.",
+          "es": "La terminación es correcta, pero el adjetivo está escrito con minúscula. Después de nichts y etwas es un sustantivo y necesita mayúscula."
+        },
+        "Gute": {
+          "en": "The capital letter is right, but the ending -e is wrong. After nichts the ending is -es.",
+          "es": "La mayúscula es correcta, pero la terminación -e es incorrecta. Después de nichts la terminación es -es."
+        }
+      },
+      "examples": [
+        "Es gibt nichts Neues.",
+        "Wir essen nichts Süßes."
+      ],
+      "tr": {
+        "en": "There is nothing good today.",
+        "es": "Hoy no hay nada bueno."
+      }
+    },
+    {
+      "id": "indefinitpronomen-f10",
+      "kind": "form",
+      "verb": "sein",
+      "person": "alle",
+      "answer": "sind",
+      "table": "indefinit-verben"
+    },
+    {
+      "id": "indefinitpronomen-c11",
+      "sentence": "Alle Kinder ___ im Garten.",
+      "options": [
+        "spielen",
+        "spielt",
+        "spielst"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "alle is plural, so the verb is plural too: spielen.",
+        "es": "alle es plural, así que el verbo también es plural: spielen."
+      },
+      "wrong": {
+        "spielt": {
+          "en": "spielt is singular (er, sie, es) or for ihr. alle Kinder means many children, so the plural form is needed.",
+          "es": "spielt es singular (er, sie, es) o para ihr. alle Kinder significa muchos niños, así que se necesita la forma plural."
+        },
+        "spielst": {
+          "en": "spielst is the form for du. The subject is alle Kinder, a third-person plural.",
+          "es": "spielst es la forma para du. El sujeto es alle Kinder, una tercera persona del plural."
+        }
+      },
+      "examples": [
+        "Alle Leute warten auf den Bus.",
+        "Viele Kinder spielen hier."
+      ],
+      "tr": {
+        "en": "All the children play in the garden.",
+        "es": "Todos los niños juegan en el jardín."
+      }
+    },
+    {
+      "id": "indefinitpronomen-f11",
+      "kind": "form",
+      "verb": "kommen",
+      "person": "man",
+      "answer": "kommt",
+      "table": "indefinit-verben"
+    },
+    {
+      "id": "indefinitpronomen-c12",
+      "sentence": "Jeder ___ ein Buch.",
+      "options": [
+        "hat",
+        "haben",
+        "habt"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "jeder is singular, so the verb is third person singular: hat.",
+        "es": "jeder es singular, así que el verbo está en tercera persona del singular: hat."
+      },
+      "wrong": {
+        "haben": {
+          "en": "haben is the plural. jeder means each person alone, even if it refers to a group, so it takes the singular.",
+          "es": "haben es el plural. jeder significa cada persona sola, aunque se refiera a un grupo, así que lleva el singular."
+        },
+        "habt": {
+          "en": "habt is the form for ihr. The subject jeder is third person singular.",
+          "es": "habt es la forma para ihr. El sujeto jeder es tercera persona del singular."
+        }
+      },
+      "examples": [
+        "Jeder kommt um acht Uhr.",
+        "Jeder ist müde."
+      ],
+      "tr": {
+        "en": "Everyone has a book.",
+        "es": "Cada uno tiene un libro."
+      }
+    },
+    {
+      "id": "indefinitpronomen-f12",
+      "kind": "form",
+      "verb": "sein",
+      "person": "jemand",
+      "answer": "ist",
+      "table": "indefinit-verben"
+    },
+    {
+      "id": "indefinitpronomen-c13",
+      "sentence": "___ Leute kommen zur Party.",
+      "options": [
+        "Viele",
+        "Jede",
+        "Jeder"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Leute is plural, so the plural word viele fits: Viele Leute.",
+        "es": "Leute es plural, así que encaja la palabra plural viele: Viele Leute."
+      },
+      "wrong": {
+        "Jede": {
+          "en": "Jede is feminine singular (jede Frau). It cannot stand with the plural Leute.",
+          "es": "Jede es femenino singular (jede Frau). No puede ir con el plural Leute."
+        },
+        "Jeder": {
+          "en": "Jeder is masculine singular (jeder Mann). Leute is plural.",
+          "es": "Jeder es masculino singular (jeder Mann). Leute es plural."
+        }
+      },
+      "examples": [
+        "Einige Leute warten.",
+        "Wenige Leute sind hier."
+      ],
+      "tr": {
+        "en": "Many people come to the party.",
+        "es": "Mucha gente viene a la fiesta."
+      }
+    },
+    {
+      "id": "indefinitpronomen-c14",
+      "sentence": "Er weiß ___.",
+      "options": [
+        "alle",
+        "jeder",
+        "alles"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "alles means \"everything\" and is invariable: Er weiß alles.",
+        "es": "alles significa \"todo\" y es invariable: Er weiß alles."
+      },
+      "wrong": {
+        "alle": {
+          "en": "alle means \"all\" and needs a plural noun or means all people (alle sind hier). It does not mean \"everything\".",
+          "es": "alle significa \"todos\" y necesita un sustantivo plural o significa todas las personas (alle sind hier). No significa \"todo\"."
+        },
+        "jeder": {
+          "en": "jeder means \"everyone, each person\" and is a person word. The object of wissen here is a thing.",
+          "es": "jeder significa \"todos, cada persona\" y es una palabra de persona. El objeto de wissen aquí es una cosa."
+        }
+      },
+      "examples": [
+        "Sie hat alles gekauft.",
+        "Danke für alles!"
+      ],
+      "tr": {
+        "en": "He knows everything.",
+        "es": "Él lo sabe todo."
+      }
+    },
+    {
+      "id": "indefinitpronomen-w04",
+      "kind": "why",
+      "es": "Jeder hat ein Buch.",
+      "target": "hat",
+      "tr": {
+        "en": "Everyone has a book.",
+        "es": "Cada uno tiene un libro."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "jeder means \"all\", so the verb is plural: haben",
+            "es": "jeder significa \"todos\", así que el verbo es plural: haben"
+          },
+          "wrong": {
+            "en": "The word for \"all\" is alle. jeder means each single person and takes the singular.",
+            "es": "La palabra para \"todos\" es alle. jeder significa cada persona sola y lleva el singular."
+          }
+        },
+        {
+          "text": {
+            "en": "jeder is singular: each person alone, so the verb is hat",
+            "es": "jeder es singular: cada persona sola, así que el verbo es hat"
+          }
+        },
+        {
+          "text": {
+            "en": "hat agrees with ein Buch, not with jeder",
+            "es": "hat concuerda con ein Buch, no con jeder"
+          },
+          "wrong": {
+            "en": "The verb agrees with the subject. ein Buch is the object, so it plays no role for the verb form.",
+            "es": "El verbo concuerda con el sujeto. ein Buch es el objeto, así que no influye en la forma del verbo."
+          }
+        }
+      ],
+      "correctIndex": 1
+    }
+  ]
+}
