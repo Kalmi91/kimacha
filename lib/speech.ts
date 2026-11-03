@@ -147,7 +147,8 @@ function isHeadlessWeb(): boolean {
   return /HeadlessChrome/.test(String(ua ?? ''));
 }
 
-export function speak(text: string, locale: string, options: Speech.SpeechOptions = {}): void {
+// `gender` picks the male / female voice of the better voice (speakerGenderFor gives the one of another text).
+export function speak(text: string, locale: string, options: Speech.SpeechOptions & { gender?: VoiceGender } = {}): void {
   if (!text) return;
   if (isHeadlessWeb()) {
     setTimeout(() => options.onDone?.(), 0);
@@ -157,6 +158,7 @@ export function speak(text: string, locale: string, options: Speech.SpeechOption
   // word + example chain in flight (speakSequence) stops there too; the phone's own queue (QUEUE_ADD) only
   // kept the phone from talking over itself, not over the word pack or the better voice.
   stop();
+  const { gender, ...phoneOptions } = options;
   const viaPhone = () => {
     if (!hasVoiceFor(locale)) {
       missing.add(baseLanguage(locale));
@@ -164,13 +166,21 @@ export function speak(text: string, locale: string, options: Speech.SpeechOption
     }
     const voice = voiceIdFor(locale);
     Speech.speak(padForAndroid(text), {
-      ...options,
+      ...phoneOptions,
       language: speechTag(locale),
       ...(voice ? { voice } : {}),
     });
   };
-  if (speakBetter(text, locale, { rate: options.rate, onDone: options.onDone, onStopped: options.onStopped }, viaPhone)) return;
+  if (speakBetter(text, locale, { rate: options.rate, gender, onDone: options.onDone, onStopped: options.onStopped }, viaPhone)) return;
   viaPhone();
+}
+
+// FB543: the sex of the voice that speaks `text` (the word pack and both engines pick it the same way), so a
+// learner's tap on the example sentence's own speaker keeps the word's speaker. Undefined for a language the
+// better voice does not cover.
+export function speakerGenderFor(text: string, locale: string): VoiceGender | undefined {
+  const lang = neuralLangFor(locale);
+  return lang ? voiceFor(lang, 'kokoro', text).gender : undefined;
 }
 
 function neuralLangFor(locale: string): NeuralLang | null {

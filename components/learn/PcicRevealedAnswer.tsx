@@ -2,7 +2,7 @@ import { Pressable, StyleSheet, View } from 'react-native';
 import { Text } from '@/components/KText';
 
 import Colors from '@/constants/Colors';
-import { speak } from '@/lib/speech';
+import { speak, speakerGenderFor } from '@/lib/speech';
 import { t } from '@/lib/i18n';
 import { charDiff } from '@/lib/charDiff';
 import { speechLang } from '@/lib/languages';
@@ -146,7 +146,7 @@ export default function PcicRevealedAnswer({
           <>
             <View style={[styles.frontRow, styles.exampleRow]}>
               <Text style={[styles.exampleEs, { color: colors.text }]}>{example}</Text>
-              <Pressable accessibilityRole="button" accessibilityLabel={t().a11y.speak} onPress={() => speak(example, speechLang(target))} style={styles.speakBtn}>
+              <Pressable accessibilityRole="button" accessibilityLabel={t().a11y.speak} onPress={() => speak(example, speechLang(target), { gender: speakerGenderFor(grade.best, speechLang(target)) })} style={styles.speakBtn}>
                 <Text style={styles.speakIcon}>🔊</Text>
                 <SkinSpeakLabel />
               </Pressable>

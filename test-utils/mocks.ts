@@ -10,6 +10,7 @@ export const speechMock = () => {
     speak,
     speakAuto: jest.fn((...args: unknown[]) => speak(...args)),
     speakSequence: jest.fn(),
+    speakerGenderFor: jest.fn(() => 'f'),
     stopSpeaking: jest.fn(),
   };
 };

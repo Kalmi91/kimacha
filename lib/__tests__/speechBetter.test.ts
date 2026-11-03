@@ -22,7 +22,7 @@ jest.mock('../packAudio', () => ({
 }));
 
 import * as Speech from 'expo-speech';
-import { speak, speakSequence, stop, resetVoiceCache, loadVoices, missingVoiceLanguages } from '@/lib/speech';
+import { speak, speakSequence, speakerGenderFor, stop, resetVoiceCache, loadVoices, missingVoiceLanguages } from '@/lib/speech';
 import * as models from '../neuralModels';
 import * as engine from '../neuralTts';
 import * as pack from '../packAudio';
@@ -214,6 +214,14 @@ describe('speakSequence(): one speaker per language (FB543)', () => {
       speakNeural.mock.calls[0][3].onDone();
       expect(speakNeural.mock.calls[1][2].gender).toBe(speakNeural.mock.calls[0][2].gender);
     }
+  });
+
+  it("the example sentence's own speaker button keeps the word's speaker (speak + speakerGenderFor)", () => {
+    engineFor.mockReturnValue('piper');
+    const sentence = pick('es', WORD, true, ES_SENTENCES);
+    speak(sentence, 'es-MX', { gender: speakerGenderFor(WORD, 'es-MX') });
+    expect(speakNeural.mock.calls[0][0]).toBe(sentence);
+    expect(speakNeural.mock.calls[0][2].gender).toBe(voiceFor('es', 'kokoro', WORD).gender);
   });
 
   it('a segment with its own gender keeps it (the practice exam speakers)', () => {
