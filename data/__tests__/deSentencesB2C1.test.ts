@@ -45,7 +45,7 @@ describe('chunks-de-b2c1.json', () => {
       if (sizes.some((n, i) => i > 0 && n <= sizes[i - 1])) problems.push(`${id}: the steps do not grow`);
     }
     expect(problems).toEqual([]);
-    expect(Object.keys(steps).length).toBeGreaterThanOrEqual(900);
+    expect(Object.keys(steps).length).toBeGreaterThanOrEqual(1100);
   });
 
   it('every step has its prompt in all three languages, no em dash, and no two steps share a prompt', () => {
