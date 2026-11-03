@@ -243,7 +243,7 @@ describe('better voice: the chosen speaker', () => {
     mockFs.set(`${TTS}/settings.json`, JSON.stringify({ enabled: true, engines: { es: 'piper', en: 'piper', hu: 'piper' } }));
     const { m, prefs } = loadBoth();
     await m.startNeural();
-    expect(prefs.getSpeakerChoices()).toEqual({ es: 'auto', en: 'auto', hu: 'auto' });
+    expect(prefs.getSpeakerChoices()).toEqual({ es: 'auto', en: 'auto', hu: 'auto', de: 'auto' });
     expect(prefs.preferredGender('es')).toBeUndefined();
   });
 
@@ -254,12 +254,12 @@ describe('better voice: the chosen speaker', () => {
     first.m.setNeuralSpeaker('hu', 'f');
     await flush();
     expect(first.prefs.preferredGender('es')).toBe('m');
-    expect(saved()).toEqual({ enabled: true, engines: { es: 'piper', en: 'piper', hu: 'piper' }, speakers: { es: 'm', en: 'auto', hu: 'f' } });
+    expect(saved()).toEqual({ enabled: true, engines: { es: 'piper', en: 'piper', hu: 'piper', de: 'piper' }, speakers: { es: 'm', en: 'auto', hu: 'f', de: 'auto' } });
 
     const second = loadBoth(); // the app restarted: a fresh module registry reads the file
     expect(second.prefs.preferredGender('es')).toBeUndefined();
     await second.m.startNeural();
-    expect(second.prefs.getSpeakerChoices()).toEqual({ es: 'm', en: 'auto', hu: 'f' });
+    expect(second.prefs.getSpeakerChoices()).toEqual({ es: 'm', en: 'auto', hu: 'f', de: 'auto' });
     expect(second.prefs.preferredGender('hu')).toBe('f');
   });
 
@@ -269,7 +269,7 @@ describe('better voice: the chosen speaker', () => {
     await m.startNeural();
     m.setNeuralSpeaker('es', 'auto');
     await flush();
-    expect(saved()).toEqual({ enabled: false, engines: { es: 'kokoro', en: 'piper', hu: 'piper' }, speakers: { es: 'auto', en: 'f', hu: 'auto' } });
+    expect(saved()).toEqual({ enabled: false, engines: { es: 'kokoro', en: 'piper', hu: 'piper', de: 'piper' }, speakers: { es: 'auto', en: 'f', hu: 'auto', de: 'auto' } });
     mockFs.set(`${TTS}/settings.json`, 'untouched');
     m.setNeuralSpeaker('es', 'auto');
     await flush();
@@ -281,7 +281,7 @@ describe('better voice: the chosen speaker', () => {
     mockFs.set(`${TTS}/settings.json`, JSON.stringify({ enabled: true, engines: {}, speakers: { es: 'x', en: 3, hu: 'm' } }));
     const { m, prefs } = loadBoth();
     await m.startNeural();
-    expect(prefs.getSpeakerChoices()).toEqual({ es: 'auto', en: 'auto', hu: 'm' });
+    expect(prefs.getSpeakerChoices()).toEqual({ es: 'auto', en: 'auto', hu: 'm', de: 'auto' });
   });
 });
 

@@ -23,7 +23,7 @@ const stateWith = (over: Record<string, unknown> = {}) => ({
   supported: true,
   ready: true,
   enabled: true,
-  engines: { es: 'piper', en: 'piper', hu: 'piper' },
+  engines: { es: 'piper', en: 'piper', hu: 'piper', de: 'piper' },
   installed: {},
   download: { running: false, percent: 0, phase: 'download', failed: [] },
   ...over,
@@ -53,16 +53,16 @@ describe('SpeakerPickerRows', () => {
     mockState = stateWith();
     const view = show();
     for (const text of [
-      'Who reads Español', 'Who reads English', 'Who reads Magyar',
-      'Claude, female', 'Ald, male', 'Kristin, female', 'John, male', 'Berta, female', 'Imre, male',
+      'Who reads Español', 'Who reads English', 'Who reads Magyar', 'Who reads Deutsch',
+      'Claude, female', 'Ald, male', 'Kristin, female', 'John, male', 'Berta, female', 'Imre, male', 'Kerstin, female', 'Thorsten, male',
     ]) {
       expect(view.getByText(text)).toBeTruthy();
     }
-    expect(view.getAllByText('Automatic (fastest)')).toHaveLength(3);
+    expect(view.getAllByText('Automatic (fastest)')).toHaveLength(4);
   });
 
   it('the people follow the engine of the language: Kokoro es and en show Dora / Alex and Heart / Michael', () => {
-    mockState = stateWith({ engines: { es: 'kokoro', en: 'kokoro', hu: 'piper' } });
+    mockState = stateWith({ engines: { es: 'kokoro', en: 'kokoro', hu: 'piper', de: 'piper' } });
     const view = show();
     for (const text of ['Dora, female', 'Alex, male', 'Heart, female', 'Michael, male', 'Berta, female']) {
       expect(view.getByText(text)).toBeTruthy();
@@ -73,13 +73,13 @@ describe('SpeakerPickerRows', () => {
   it('a hint under each person row says the other person\'s words start a little slower; Automatic has none', () => {
     mockState = stateWith();
     const view = show();
-    expect(view.getAllByText('Recordings of the other person\'s words start a little slower.')).toHaveLength(6);
+    expect(view.getAllByText('Recordings of the other person\'s words start a little slower.')).toHaveLength(8);
   });
 
   it('Automatic is checked in every language to begin with: exactly one row per language', () => {
     mockState = stateWith();
     const view = show();
-    for (const lang of ['es', 'en', 'hu']) expect(checked(view, lang)).toEqual(['auto']);
+    for (const lang of ['es', 'en', 'hu', 'de']) expect(checked(view, lang)).toEqual(['auto']);
   });
 
   it('tapping a person checks it (and only it), hands the choice on, and leaves the other languages alone', () => {
@@ -98,11 +98,12 @@ describe('SpeakerPickerRows', () => {
 
   it('shows the check mark on the checked row only', () => {
     mockState = stateWith();
-    setSpeakerChoices({ es: 'f', en: 'auto', hu: 'm' });
+    setSpeakerChoices({ es: 'f', en: 'auto', hu: 'm', de: 'f' });
     const view = show();
-    expect(view.getAllByText('✓')).toHaveLength(3); // one per language
+    expect(view.getAllByText('✓')).toHaveLength(4); // one per language
     expect(checked(view, 'es')).toEqual(['f']);
     expect(checked(view, 'hu')).toEqual(['m']);
+    expect(checked(view, 'de')).toEqual(['f']);
   });
 
   it('is hidden where the better voice does not exist (the web build)', () => {

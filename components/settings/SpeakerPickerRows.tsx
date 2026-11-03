@@ -15,7 +15,7 @@ import { voiceName, voicePair, type NeuralLang, type SpeakerChoice } from '@/lib
 import { useSpeakerChoices } from '@/lib/voicePreference';
 import type { RowComponent } from './BetterVoiceRows';
 
-const SPEAKER_LANGS: NeuralLang[] = ['es', 'en', 'hu'];
+const SPEAKER_LANGS: NeuralLang[] = ['es', 'en', 'hu', 'de'];
 
 export default function SpeakerPickerRows({ Row }: { Row: RowComponent }) {
   const { theme } = useTheme();

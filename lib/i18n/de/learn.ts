@@ -182,6 +182,8 @@ const de: typeof en = {
       speakerOther: 'Tante',
       speakerMe: 'Du',
       fillHint: 'Tippe auf das Wort, das in die erste Lücke passt',
+      wordsHint: 'Hör dir das Wort und seine Bedeutung an, dann tippe auf Weiter.',
+      patternsHint: 'Lies das Muster und hör dir das Beispiel an. Hier gibt es nichts zu beantworten: Tippe auf Weiter.',
       listen: 'Anhören',
       sayIt: 'Sprich es aus',
       listening: 'Ich höre zu… Tippe zum Stoppen',
@@ -213,6 +215,12 @@ const de: typeof en = {
     empty: 'Lerne mehr Wörter, um Sätze freizuschalten',
     roundDone: (n: number) => (n === 1 ? 'Runde geschafft: 1 Satz' : `Runde geschafft: ${n} Sätze`),
     more: 'Mehr Sätze',
+    // Level picker on top (lib/sentenceLevel.ts): all levels, or only the sentences of one level.
+    levelPickerLabel: 'Satzstufe',
+    levelAll: 'Alle',
+    levelAllA11y: 'Alle Stufen',
+    levelOptionA11y: (level: string) => `Stufe ${level}`,
+    emptyLevel: 'Mit den Wörtern, die du kennst, gibt es auf dieser Stufe noch keine Sätze. Wähle eine andere Stufe',
   },
   levelCounter: {
     a11y: (level: string, total: number, due: number) => `Stufe ${level}: ${total} Wörter, ${due} fällig`,

@@ -141,15 +141,15 @@ export function normalizeEngines(raw: Partial<Record<NeuralLang, NeuralEngine>> 
 
 // Settings -> Voice: whose voice the learner wants per language. 'auto' = today's behavior (each word's own
 // recorded voice, the fastest); 'f' / 'm' = that person of the language's engine pair speaks everything that has
-// no explicit gender (lib/voicePreference.ts). Hungarian has Piper voices only, so it takes part too.
+// no explicit gender (lib/voicePreference.ts). Hungarian and German have Piper voices only, so they take part too.
 export type SpeakerChoice = 'auto' | 'f' | 'm';
 export type SpeakerChoices = Record<NeuralLang, SpeakerChoice>;
-export const DEFAULT_SPEAKERS: SpeakerChoices = { es: 'auto', en: 'auto', hu: 'auto' };
+export const DEFAULT_SPEAKERS: SpeakerChoices = { es: 'auto', en: 'auto', hu: 'auto', de: 'auto' };
 
 const speakerOf = (raw: unknown): SpeakerChoice => (raw === 'f' || raw === 'm' ? raw : 'auto');
 
 export function normalizeSpeakers(raw: Partial<Record<NeuralLang, unknown>> | null | undefined): SpeakerChoices {
-  return { es: speakerOf(raw?.es), en: speakerOf(raw?.en), hu: speakerOf(raw?.hu) };
+  return { es: speakerOf(raw?.es), en: speakerOf(raw?.en), hu: speakerOf(raw?.hu), de: speakerOf(raw?.de) };
 }
 
 // The person's first name, for Settings: "ef_dora" -> "Dora", "es_MX-claude-high" -> "Claude".

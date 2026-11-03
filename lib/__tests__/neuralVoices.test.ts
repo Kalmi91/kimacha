@@ -217,9 +217,9 @@ describe('sentence pack lookup', () => {
 
 describe('the speaker choice of Settings -> Voice', () => {
   it('normalizeSpeakers: only f and m are a person, anything else (and nothing) is Automatic', () => {
-    expect(normalizeSpeakers(undefined)).toEqual({ es: 'auto', en: 'auto', hu: 'auto' });
-    expect(normalizeSpeakers({ es: 'm', en: 'f', hu: 'n' })).toEqual({ es: 'm', en: 'f', hu: 'auto' });
-    expect(normalizeSpeakers({ es: 1, en: null, hu: 'F' })).toEqual({ es: 'auto', en: 'auto', hu: 'auto' });
+    expect(normalizeSpeakers(undefined)).toEqual({ es: 'auto', en: 'auto', hu: 'auto', de: 'auto' });
+    expect(normalizeSpeakers({ es: 'm', en: 'f', hu: 'n' })).toEqual({ es: 'm', en: 'f', hu: 'auto', de: 'auto' });
+    expect(normalizeSpeakers({ es: 1, en: null, hu: 'F' })).toEqual({ es: 'auto', en: 'auto', hu: 'auto', de: 'auto' });
   });
 
   it('voiceName: the first name of every voice of both engines, as Settings shows it', () => {

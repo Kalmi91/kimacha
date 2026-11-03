@@ -49,8 +49,17 @@ const de: typeof en = {
       kokoro: 'Kokoro (schöner, langsamer)',
       kokoroSize: (mb: string) => `Kokoro braucht einen Download von ${mb}`,
       confirmTitle: 'Die bessere Stimme herunterladen?',
-      confirmMessage: (mb: string) => `Das lädt ${mb} herunter (die Wortaufnahmen und die Stimmen). Mit mobilen Daten zählt es zu deinem Datenvolumen, deshalb ist WLAN empfehlenswert.`,
+      confirmMessage: (mb: string) => `Das lädt ${mb} herunter (die Wort- und Satzaufnahmen und die Stimmen). Mit mobilen Daten zählt es zu deinem Datenvolumen, deshalb ist WLAN empfehlenswert.`,
       confirmYes: 'Herunterladen',
+    },
+    // Settings: the two tabs at the top, and the Voice tab's speaker picker (lib/voicePreference.ts).
+    tabGeneral: 'Allgemein',
+    tabVoice: 'Stimme',
+    speaker: {
+      title: (lang: string) => `Wer liest ${lang}`,
+      auto: 'Automatisch (am schnellsten)',
+      person: (name: string, female: boolean) => `${name}, ${female ? 'weiblich' : 'männlich'}`,
+      hint: 'Aufnahmen der Wörter der anderen Person starten etwas langsamer.',
     },
     dailyNewLimit: 'Neue Wörter pro Tag',
     dailyNewLimitWords: (n: string) => `${n} Wörter / Tag`,
