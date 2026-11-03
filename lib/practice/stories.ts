@@ -40,6 +40,7 @@ export interface StoryBridge {
   es?: string;
   en?: string;
   hu?: string;
+  de?: string;
 }
 
 export interface Story {
