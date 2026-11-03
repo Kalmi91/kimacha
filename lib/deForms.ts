@@ -70,21 +70,21 @@ export interface DeVerb {
 const VOWEL = /[aeiouäöüy]/;
 const SUBJECT_PRONOUNS: ReadonlySet<string> = new Set(['ich', 'du', 'er', 'sie', 'es', 'wir', 'ihr', 'man']);
 
-function stemOf(infinitive: string): string {
+export function stemOf(infinitive: string): string {
   return /e[lr]n$/.test(infinitive) ? infinitive.slice(0, -1) : infinitive.slice(0, -2);
 }
 
 // Stems that take -e- before -st / -t / -te (arbeitest, atmet, öffnete).
-function needsE(stem: string): boolean {
+export function needsE(stem: string): boolean {
   return /[dt]$/.test(stem) || /(?:[bcdfgkpt]|ch|ck|ff)[mn]$/.test(stem);
 }
 
 // Stems on s ß x z take -t instead of -st in the du form (du heißt, du tanzt), but not -sch (du wäschst).
-function sibilant(stem: string): boolean {
+export function sibilant(stem: string): boolean {
   return /[sßxz]$/.test(stem) && !/sch$/.test(stem);
 }
 
-function umlautLast(stem: string): string {
+export function umlautLast(stem: string): string {
   const at = Math.max(stem.lastIndexOf('a'), stem.lastIndexOf('o'), stem.lastIndexOf('u'));
   if (at < 0) return stem;
   if (stem[at] === 'u' && stem[at - 1] === 'a') return `${stem.slice(0, at - 1)}äu${stem.slice(at + 1)}`;
@@ -174,7 +174,7 @@ function plainParadigm(infinitive: string): Paradigm {
   return strong ? strongParadigm(infinitive, strong) : regularParadigm(infinitive);
 }
 
-interface Split {
+export interface Split {
   kind: 'none' | 'separable' | 'inseparable';
   prefix: string;
   base: string;
@@ -184,7 +184,7 @@ function looksLikeVerb(rest: string): boolean {
   return rest.length >= 4 && VOWEL.test(rest) && /(?:en|ern|eln|tun)$/.test(rest);
 }
 
-function splitPrefix(infinitive: string): Split {
+export function splitPrefix(infinitive: string): Split {
   const none: Split = { kind: 'none', prefix: '', base: infinitive };
   if (SPECIAL_VERBS.has(infinitive) || STRONG_VERBS.has(infinitive) || NOT_PREFIXED.has(infinitive)) return none;
   if (infinitive === 'möchten') return none;

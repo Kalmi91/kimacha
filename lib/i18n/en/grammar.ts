@@ -90,6 +90,33 @@ export default {
     dictationPlay: 'Play',
     dictationSlow: 'Slower',
   },
+  // app/grammar/tense-drill.tsx: the German tense drill (type the verb form for a person and a tense).
+  tenseDrill: {
+    start: 'Tense drill',
+    blurb: 'Type the verb form: present, perfect, preterite, future, Konjunktiv II',
+    title: 'German tenses',
+    levelLabel: 'Level',
+    tenseLabel: 'Tense',
+    mixed: 'All tenses of the level',
+    tenseNames: { praesens: 'Präsens', perfekt: 'Perfekt', praeteritum: 'Präteritum', futur1: 'Futur I', konjunktiv2: 'Konjunktiv II' },
+    tenseHints: {
+      praesens: 'present',
+      perfekt: 'haben / sein + Partizip II',
+      praeteritum: 'simple past',
+      futur1: 'werden + infinitive',
+      konjunktiv2: 'würde + infinitive, hätte, wäre, könnte',
+    },
+    begin: 'Start the round',
+    caption: 'Type the form, with the pronoun',
+    ownHint: 'This verb has a Konjunktiv II of its own too',
+    progress: (done: number, total: number) => `${done} / ${total}`,
+    resultTitle: (right: number, total: number) => `${right} of ${total} right`,
+    again: 'Another round',
+    changeChoice: 'Change level or tense',
+    backToCourse: 'Back to the course',
+    yourAnswer: 'Your answer',
+    empty: 'No verbs for this choice yet.',
+  },
   // app/grammar/random.tsx: the random grammar round (check, practice, re-check; or a full check).
   randomRound: {
     start: 'Random practice',

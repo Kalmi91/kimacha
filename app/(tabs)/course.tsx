@@ -203,6 +203,18 @@ export default function GrammarSyllabusScreen() {
             <Text style={[styles.brutalBlurb, { color: g.onFill }]}>{randomScore}</Text>
           </BrutalBox>
 
+          {learnedLang === 'de' ? (
+            <BrutalBox
+              testID="grammar-tense-drill-start"
+              fill="paper"
+              onPress={() => router.push('/grammar/tense-drill' as never)}
+              boxStyle={styles.brutalTopic}
+            >
+              <Text variant="title" style={[styles.brutalTopicTitle, { color: g.ink }]}>{`🔤 ${s.tenseDrill.start}`}</Text>
+              <Text style={[styles.brutalBlurb, { color: g.ink }]}>{s.tenseDrill.blurb}</Text>
+            </BrutalBox>
+          ) : null}
+
           <View style={styles.brutalLevelRow}>
             {syllabusLevels(learnedLang).map((lvl) => (
               <BrutalBox
@@ -335,6 +347,17 @@ export default function GrammarSyllabusScreen() {
           <Text style={[styles.levelName, { color: colors.text }]}>{randomTitle}</Text>
           <Text style={[styles.levelMeta, { color: colors.tabIconDefault }]}>{randomScore}</Text>
         </Pressable>
+
+        {learnedLang === 'de' ? (
+          <Pressable
+            testID="grammar-tense-drill-start"
+            style={[styles.randomCard, { backgroundColor: colors.card, borderColor: colors.tint }]}
+            onPress={() => router.push('/grammar/tense-drill' as never)}
+          >
+            <Text style={[styles.levelName, { color: colors.text }]}>{`🔤 ${s.tenseDrill.start}`}</Text>
+            <Text style={[styles.levelMeta, { color: colors.tabIconDefault }]}>{s.tenseDrill.blurb}</Text>
+          </Pressable>
+        ) : null}
 
         {syllabusLevels(learnedLang).map((lvl) => {
           const topics = syllabusForLevel(lvl, learnedLang);
