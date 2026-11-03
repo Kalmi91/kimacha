@@ -13,8 +13,9 @@ import { ActionButton, ProgressBar } from '@/components/grammar/Themed';
 import { DOCK_RESERVE } from '@/components/learn/DockedAction';
 import { useDockLift } from '@/components/learn/useDockLift';
 import LevelCounter from '@/components/practice/LevelCounter';
+import SentenceLevelPicker from '@/components/practice/SentenceLevelPicker';
 import { SkinBackdrop, SkinHeader } from '@/components/skins/Slots';
-import { PCIC_LEVELS, findPcicItem, levelOfItem, pcicItemsForLevel, type PcicTarget } from '@/data/pcic';
+import { PCIC_LEVELS, findPcicItem, levelOfItem, pcicItemsForLevel, type PcicLevel, type PcicTarget } from '@/data/pcic';
 import { getBeta, loadBeta, useBeta } from '@/lib/beta';
 import { getDb } from '@/lib/database';
 import { useLearner } from '@/lib/learner';
@@ -28,6 +29,7 @@ import { nearMissDistractors } from '@/lib/distractors';
 import { dropOrphanCards } from '@/lib/pcicSession';
 import { tileWords } from '@/lib/sentenceCards';
 import { pickSentences } from '@/lib/sentencePick';
+import { ALL_LEVELS, itemsForSentenceLevel, levelsWithSentences, loadSentenceLevel, resolveSentenceLevel, saveSentenceLevel, type SentenceLevel } from '@/lib/sentenceLevel';
 import {
   addHinted,
   answerStep,
@@ -121,6 +123,9 @@ export default function SentencesScreen() {
 
   const [loading, setLoading] = useState(true);
   const [target, setTarget] = useState<PcicTarget>('es');
+  // The level picker on top (lib/sentenceLevel.ts): the levels that have sentences for the pair, and the chosen one.
+  const [levels, setLevels] = useState<PcicLevel[]>([]);
+  const [level, setLevel] = useState<SentenceLevel>(ALL_LEVELS);
   const { strictAccents, refresh } = useLearner();
   // The round on screen (lib/sentenceRound.ts): its sentences, its steps, what is left to do and what is done.
   // null = no sentence to offer.
@@ -152,6 +157,9 @@ export default function SentencesScreen() {
       setLoading(false);
       return;
     }
+    // The picker: the levels that have sentences for this pair and the saved choice (a pick comes through here as a fresh load).
+    const available = levelsWithSentences(PCIC_LEVELS, pcicItemsForLevel, dir);
+    const chosen = resolveSentenceLevel(await loadSentenceLevel(db, pairOf(dir)), available);
     // A round that was left (other tab, app closed) continues where it stopped, the same day, direction and focus.
     const saved = await loadSentenceRound(db);
     let next: SentenceRound | null;
@@ -168,7 +176,7 @@ export default function SentencesScreen() {
         target: dir,
         cards,
         tenses: resolvedTensesFromLessons(doneGrammarTopicProgress(dir, grammarRows).keys()),
-        items: PCIC_LEVELS.flatMap((l) => pcicItemsForLevel(l)),
+        items: itemsForSentenceLevel(chosen, PCIC_LEVELS, pcicItemsForLevel),
         findItem: findPcicItem,
         today,
         done: doneKeys.current,
@@ -189,6 +197,8 @@ export default function SentencesScreen() {
       else await clearSentenceRound(db);
     }
     setTarget(dir);
+    setLevels(available);
+    setLevel(chosen);
     await refresh(['strictAccents']);
     setRound(next);
     setSeq((n) => n + 1);
@@ -253,6 +263,17 @@ export default function SentencesScreen() {
     });
   };
 
+  // A level was picked: kept per pair, the round on screen (and its saved copy) is dropped, and a new round is built from that level.
+  const onPickLevel = (picked: SentenceLevel) => {
+    if (picked === level) return;
+    setLoading(true);
+    void (async () => {
+      await saveSentenceLevel(getDb(), pairOf(target), picked);
+      await clearSentenceRound(getDb());
+      await load(true);
+    })();
+  };
+
   const feedback = (
     <ScreenFeedback
       placement="header"
@@ -265,6 +286,7 @@ export default function SentencesScreen() {
   const header = (
     <SkinHeader>
       {/* No screen title: the tab navigator's header already says "Sentences" (a second one was a duplicate). */}
+      {levels.length > 1 && <SentenceLevelPicker levels={levels} active={level} onSelect={onPickLevel} />}
       <View style={styles.headerRow}>
         <LevelCounter refreshKey={creditSeq} />
         {total > 0 && (
@@ -311,7 +333,7 @@ export default function SentencesScreen() {
         <SkinBackdrop />
         {header}
         <Text testID="sentences-empty" style={[styles.hint, { color: colors.tabIconDefault }]}>
-          {s.sentenceTab.empty}
+          {level === ALL_LEVELS ? s.sentenceTab.empty : s.sentenceTab.emptyLevel}
         </Text>
         {feedback}
       </View>

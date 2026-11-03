@@ -214,6 +214,11 @@ const hu: typeof en = {
     empty: 'Tanulj több szót a mondatok feloldásához',
     roundDone: (n: number) => `Kör kész: ${n} mondat`,
     more: 'Több mondat',
+    levelPickerLabel: 'A mondatok szintje',
+    levelAll: 'Mind',
+    levelAllA11y: 'Minden szint',
+    levelOptionA11y: (level: string) => `${level} szint`,
+    emptyLevel: 'Ezen a szinten még nincs mondat az ismert szavaiddal. Válassz másik szintet',
   },
   levelCounter: {
     a11y: (level: string, total: number, due: number) => `${level} szint: ${total} szó, ${due} esedékes`,
