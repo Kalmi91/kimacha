@@ -106,6 +106,7 @@ const de: typeof en = {
     photoCredit: (author: string, license: string, cropped: boolean) =>
       `Foto: ${author}, ${license}, Wikimedia Commons${cropped ? ' (zugeschnitten)' : ''}`,
     photoCreditHint: 'Öffnet die Fotoseite auf Wikimedia Commons',
+    noteLessonLink: (title: string) => `Lektion öffnen: ${title}`,
     levelBeginner: 'Anfänger',
     levelElementary: 'Grundkenntnisse',
     levelIntermediate: 'Mittelstufe',

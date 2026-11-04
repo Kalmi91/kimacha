@@ -110,6 +110,7 @@ const es: typeof en = {
     noteLabel: 'Más información',
     photoCredit: (author: string, license: string, cropped: boolean) => `Foto: ${author}, ${license}, Wikimedia Commons${cropped ? ' (recortada)' : ''}`,
     photoCreditHint: 'Abre la página de la foto en Wikimedia Commons',
+    noteLessonLink: (title: string) => `Abrir la lección: ${title}`,
     levelBeginner: 'Principiante',
     levelElementary: 'Elemental',
     levelIntermediate: 'Intermedio',

@@ -4,7 +4,8 @@
 //   R12  the hint contains exactly one *…* marker; the first 2 letters of the marked word (lowercase, accents stripped) match the
 //        first 2 letters of one of the question's words (juego/jugar, llevo/llevar, played/play), at most 8 words; an English
 //        irregular verb form is fine too (be: am/is/are/was/were, have: has/had, do: does/did, go: goes/went)
-//   R13  a hint is allowed only on a card covered by R11, or on a card whose order is in the `confusable` set (confusable group: scripts/words-open-confusable.json)
+//   R13  a hint is allowed only on a card covered by R11, or on a card whose order is in the `confusable` set (confusable group: scripts/words-open-confusable.json),
+//        or on a card listed in R13_EXCEPTIONS below
 //        splitAlternatives: splits the question into alternatives at commas/semicolons; if two cards share an alternative
 //        ("to try, to taste" and "to try, to attempt"), both must have a hint (or be merged). Collisions among old cards (order <=
 //        legacyMaxOrder) count as errors up to legacyWarnLimit, and as warnings above it.
@@ -14,6 +15,9 @@
 // Normalization: lowercase, whitespace collapsed, trimmed, without a leading article.
 
 const HINT_MAX_WORDS = 8;
+// R13 exceptions: the `order` of a card that may have a hint although its question is not multi-meaning. One id each, with the reason.
+// 1666 (la cintura, waist): FB560, Kálmán asked for the English example sentence on this very card (a2.json hint_en).
+const R13_EXCEPTIONS = new Set([1666]);
 const fold = (w) => w.normalize('NFD').replace(/[̀-ͯ]/g, '');
 const IRREGULAR = {
   be: ['am', 'is', 'are', 'was', 'were'],
@@ -77,7 +81,7 @@ export function checkMultiMeaning({
     if (count.get(k) >= 2 && !hasHintText(c)) {
       fail('R11', `${tag(c)}: "${k}" ${count.get(k)} kártyán szerepel, de nincs ${hintKey}`);
     }
-    if (hasHint && !multi && !confusable.has(c.order)) fail('R13', `${tag(c)}: ${hintKey} olyan kártyán, ahol a kérdés ("${k}") nem több jelentésű`);
+    if (hasHint && !multi && !confusable.has(c.order) && !R13_EXCEPTIONS.has(c.order)) fail('R13', `${tag(c)}: ${hintKey} olyan kártyán, ahol a kérdés ("${k}") nem több jelentésű`);
 
     // R12
     if (hasHint) {

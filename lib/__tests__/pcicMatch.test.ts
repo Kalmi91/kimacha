@@ -1,3 +1,4 @@
+import { findPcicItem, setPcicTarget } from '@/data/pcic';
 import { pcicAlternatives, gradePcicAnswer, gradeSentenceAnswer, suggestedGrade, withoutLeadingSubjectPronoun } from '../pcicMatch';
 
 describe('pcicAlternatives', () => {
@@ -210,5 +211,21 @@ describe('gradePcicAnswer, German (de)', () => {
   it('does not drop a leading subject pronoun in a German sentence (Spanish rule only)', () => {
     expect(gradeSentenceAnswer('trinke Wasser.', 'Ich trinke Wasser.', false, 'de').match).not.toBe('exact');
     expect(gradeSentenceAnswer('Ich trinke Wasser.', 'Ich trinke Wasser.', false, 'de').match).toBe('exact');
+  });
+});
+
+// FB561: the (i) note of the quizá card says any of the four forms is a right answer; this proves it on the real card.
+describe('gradePcicAnswer on the quizá / quizás / tal vez / acaso card (o436)', () => {
+  beforeEach(() => setPcicTarget('es'));
+
+  it('accepts each of the four forms as exact, with and without strict accents', () => {
+    const es = findPcicItem('o436')?.es ?? '';
+    expect(es).toBe('quizá / quizás / tal vez / acaso');
+    for (const form of ['quizá', 'quizás', 'tal vez', 'acaso']) {
+      expect(gradePcicAnswer(form, es)).toEqual({ match: 'exact', best: form });
+      expect(gradePcicAnswer(form, es, true).match).toBe('exact');
+    }
+    expect(gradePcicAnswer('quiza', es).match).not.toBe('wrong');
+    expect(gradePcicAnswer('quizas', es, true).match).toBe('wrong');
   });
 });
