@@ -71,6 +71,7 @@ const CHROME_CANDIDATES = [
 // Routes. `file`: the screen file providing the route; if it is not in the project, the route is skipped.
 // `steps`: buttons clicked through on a not-yet-onboarded (onboarded=0) route.
 const LANG = { testId: 'onboarding-lang-en', text: 'English' };
+const TARGET = { testId: 'onboarding-target-es', text: 'Español' };
 const START = { testId: 'onboarding-start', text: 'Get started' };
 const INTRO_START = { testId: 'onboarding-intro-start' };
 const ROUTES = {
@@ -80,8 +81,8 @@ const ROUTES = {
   settings: { path: '/settings', onboarded: true },
   themes: { path: '/themes', onboarded: true, file: 'app/themes.tsx' },
   'theme-mix': { path: '/theme-mix', onboarded: true, file: 'app/theme-mix.tsx' },
-  'onboarding-intro': { path: '/', onboarded: false, steps: [LANG, START], ready: 'onboarding-intro' },
-  'onboarding-theme': { path: '/', onboarded: false, steps: [LANG, START, INTRO_START], ready: 'onboarding-theme' },
+  'onboarding-intro': { path: '/', onboarded: false, steps: [LANG, TARGET, START], ready: 'onboarding-intro' },
+  'onboarding-theme': { path: '/', onboarded: false, steps: [LANG, TARGET, START, INTRO_START], ready: 'onboarding-theme' },
   // The state after Check: `reveal` = the text typed into the answer field (wrong: "xyz"; ok: the card's correct
   // answer, which is read from the revealed answer after a preliminary "xyz" + Check, then the page is reloaded).
   'learn-revealed': { path: '/', onboarded: true, reveal: 'wrong' },
@@ -199,6 +200,32 @@ function findChrome() {
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
+// The web build, with a time limit: a hung export must not hold the script forever. A spawnSync timeout would not do, because
+// with shell: true it kills only the shell and the build lives on. CI=1: an export has no prompts and no file watchers.
+const BUILD_TIMEOUT_MS = 15 * 60 * 1000;
+
+function runBuild(command) {
+  return new Promise((resolve, reject) => {
+    const proc = spawn(command, {
+      cwd: ROOT,
+      stdio: 'inherit',
+      shell: true,
+      detached: process.platform !== 'win32',
+      env: { ...process.env, EXPO_NO_TELEMETRY: '1', CI: '1' },
+    });
+    const timer = setTimeout(() => {
+      if (process.platform === 'win32') spawnSync('taskkill', ['/pid', String(proc.pid), '/T', '/F'], { stdio: 'ignore' });
+      else process.kill(-proc.pid, 'SIGKILL');
+      reject(new Error(`Az expo export nem végzett ${BUILD_TIMEOUT_MS / 60000} perc alatt.`));
+    }, BUILD_TIMEOUT_MS);
+    proc.on('exit', (code) => {
+      clearTimeout(timer);
+      if (code === 0) resolve();
+      else reject(new Error('Az expo export hibázott.'));
+    });
+  });
+}
+
 async function launchChrome() {
   const userDir = fs.mkdtempSync(path.join(os.tmpdir(), 'ui-overlap-chrome-'));
   const proc = spawn(
@@ -224,10 +251,10 @@ async function launchChrome() {
     ],
     { stdio: 'ignore' },
   );
-  // The port comes from the first line of the DevToolsActivePort file.
+  // The port comes from the first line of the DevToolsActivePort file. A cold start on a CI runner took 10 s and more.
   const portFile = path.join(userDir, 'DevToolsActivePort');
   let port = 0;
-  for (let i = 0; i < 100 && !port; i++) {
+  for (let i = 0; i < 600 && !port; i++) {
     await sleep(100);
     if (isFile(portFile)) port = Number(fs.readFileSync(portFile, 'utf8').split('\n')[0]);
   }
@@ -782,13 +809,8 @@ async function main() {
 
   if (opt.build) {
     console.log('expo export -p web ...');
-    const r = spawnSync('npx expo export -p web --output-dir dist', {
-      cwd: ROOT,
-      stdio: 'inherit',
-      shell: true,
-      env: { ...process.env, EXPO_NO_TELEMETRY: '1' },
-    });
-    if (r.status !== 0) throw new Error('Az expo export hibázott.');
+    // Without the content packs every page stops at the gate's "could not load the lessons" screen (components/cloud/CloudGate.tsx).
+    await runBuild('npx expo export -p web --output-dir dist && node scripts/build-web-content.mjs dist');
   }
   if (!isFile(path.join(DIST, 'index.html'))) throw new Error('Nincs dist/index.html (futtasd build-del).');
 
@@ -833,8 +855,9 @@ async function main() {
     };
     const open = async (url) => {
       // On a cold start the app returns to the last tab it was on (lib/useAppResume.ts, kept in localStorage): without
-      // forgetting it, the page opened after a Settings combination would come up as Settings.
-      await cdp.evaluate(`try { localStorage.removeItem('kimacha-resume'); } catch (e) {}`).catch(() => {});
+      // forgetting it, the page opened after a Settings combination would come up as Settings. Likewise a returning visitor
+      // (lib/cloud/guest.ts) gets the welcome screen instead of the app, so every combination has to be a first visit.
+      await cdp.evaluate(`try { localStorage.removeItem('kimacha-resume'); localStorage.removeItem('kimacha.cloud.visited'); } catch (e) {}`).catch(() => {});
       const loaded = cdp.waitEvent('Page.loadEventFired', 60000);
       await cdp.send('Page.navigate', { url });
       await loaded;
@@ -956,6 +979,7 @@ async function main() {
     issues,
   };
   fs.writeFileSync(REPORT, `${JSON.stringify(report, null, 2)}\n`);
+  for (const i of issues) console.log(`  ${i.type} ${i.skin}/${i.mode} ${i.route} ${i.viewport}: ${i.text}${i.other ? ` x ${i.other}` : ''}`);
   console.log(
     `Kész: ${combos.length} kombináció, ${report.secondsPerCombo} s/kombináció, hibák: ${JSON.stringify(totals)} -> ${path.relative(ROOT, REPORT)}`,
   );
