@@ -340,7 +340,8 @@ export default function SentencesScreen() {
   const header = (
     <SkinHeader>
       {/* No screen title: the tab navigator's header already says "Sentences" (a second one was a duplicate). */}
-      {levels.length > 1 && <SentenceLevelPicker levels={levels} active={level} onSelect={onPickLevel} />}
+      {/* While typing the keyboard leaves little room: the level row steps aside, so the 🔊 and the answer fit together. */}
+      {levels.length > 1 && kbHeight === 0 && <SentenceLevelPicker levels={levels} active={level} onSelect={onPickLevel} />}
       <View style={styles.headerRow}>
         <LevelCounter refreshKey={creditSeq} />
         {total > 0 && (
