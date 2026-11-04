@@ -446,7 +446,7 @@ export const SKIN_GROUPS: { id: SkinGroupId; skins: SkinId[] }[] = [
   { id: 'olvasas', skins: ['senior', 'konnyu', 'diszlexia'] },
 ];
 
-export const ONBOARDING_SKINS: SkinId[] = ['ukiyoe', 'csillampony', 'szocreal', 'brutal', 'deco'];
+export const ONBOARDING_SKINS: SkinId[] = ['brutal', 'gamer', 'popart', 'retro95', 'csillampony'];
 
 export const DEFAULT_SKIN: SkinId = 'brutal';
 
