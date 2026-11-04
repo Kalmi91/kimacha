@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
+import { useEffect, useRef, useState } from 'react';
+import { Keyboard, Platform, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 
 import Colors from '@/constants/Colors';
 import { fontSize, fontWeight, radius, spacing } from '@/constants/Theme';
@@ -48,6 +48,16 @@ export default function ExamTypeCard({ prompt, heading, label, hint, answer, acc
   const s = t();
   const [typed, setTyped] = useState('');
   const [missed, setMissed] = useState(false);
+  // the level tests: with the keyboard open the buttons under the field (I don't know) can sit behind the docked Check bar,
+  // so the body scrolls to its end when the keyboard comes up
+  const scrollRef = useRef<ScrollView>(null);
+  useEffect(() => {
+    if (!instant) return;
+    const sub = Keyboard.addListener(Platform.OS === 'ios' ? 'keyboardWillShow' : 'keyboardDidShow', () => {
+      setTimeout(() => scrollRef.current?.scrollToEnd({ animated: false }), 50);
+    });
+    return () => sub.remove();
+  }, [instant]);
 
   const check = () => {
     const ok = [answer, ...(accept ?? [])].some((target) => {
@@ -70,7 +80,7 @@ export default function ExamTypeCard({ prompt, heading, label, hint, answer, acc
   );
 
   return (
-    <ScrollView contentContainerStyle={styles.scroll} keyboardShouldPersistTaps="handled">
+    <ScrollView ref={scrollRef} contentContainerStyle={styles.scroll} keyboardShouldPersistTaps="handled">
       <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
         {heading ? (
           <Text testID="exam-heading" style={[styles.caption, { color: colors.textMuted }]}>

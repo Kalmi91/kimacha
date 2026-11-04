@@ -136,24 +136,15 @@ export default function LevelTestScreen() {
   // the sentence that was read aloud must not go on over another screen
   useEffect(() => () => stopSpeaking(), []);
 
-  // the 💬 is on every part of the test; `part` tells the Feedback sheet exactly which one it is about
-  // (grammar-level-test:<level>:<question id>). On a typed question the 💬 sits above the docked bar.
-  const shell = (children: ReactNode, part: string, bottomOffset?: number, overlay?: ReactNode) => (
+  // the screen frame; the 💬 sits in each state's header row (feedbackFor), not over the screen
+  const shell = (children: ReactNode, overlay?: ReactNode) => (
     <View style={[styles.screen, { backgroundColor: colors.background }]}>
       {children}
       {overlay}
-      {data ? (
-        <ScreenFeedback
-          level={data.userLevel}
-          languagePair={`${data.contentLang}→${data.learnedLang}`}
-          currentCard={`grammar-level-test:${level}:${part}`}
-          bottomOffset={bottomOffset}
-        />
-      ) : null}
     </View>
   );
 
-  if (!data || !current) return shell(<ActivityIndicator style={styles.flex} color={colors.tint} />, '');
+  if (!data || !current) return shell(<ActivityIndicator style={styles.flex} color={colors.tint} />);
 
   const ctx = levelTestCtx(data, seed, level, evidence);
   const ids = ctx.topics.map((tp) => tp.id);
@@ -198,7 +189,17 @@ export default function LevelTestScreen() {
     else say();
   };
 
-  const header = (
+  // the 💬 is on every part of the test, at the right end of the header row; `part` tells the Feedback sheet exactly which
+  // one it is about (grammar-level-test:<level>:<question id | round-end>)
+  const feedbackFor = (part: string) => (
+    <ScreenFeedback
+      placement="inline"
+      level={data.userLevel}
+      languagePair={pair}
+      currentCard={`grammar-level-test:${level}:${part}`}
+    />
+  );
+  const headerFor = (part: string) => (
     <View style={styles.header}>
       <Pressable testID="level-test-close" accessibilityRole="button" accessibilityLabel={s.leave} hitSlop={12} onPress={() => router.back()}>
         <Text style={[styles.close, { color: colors.textMuted }]}>✕</Text>
@@ -206,15 +207,19 @@ export default function LevelTestScreen() {
       <Text testID="level-test-header" style={[styles.counter, { color: colors.textMuted }]}>
         {s.header(level, pct, result || roundEnd ? round.n : round.n + 1, LEVEL_ROUND_SIZE)}
       </Text>
-      <View style={styles.closeSpacer} />
+      {doneOpen ? <View style={styles.closeSpacer} /> : feedbackFor(part)}
     </View>
   );
   const progress = (
     <ProgressBar testID="level-test-progress" trackProps={{ testID: "level-test-progress" }} pct={pct} brutalStyle={styles.brutalProgress} trackStyle={styles.track} trackColor={colors.border} fillStyle={styles.fill} fillColor={colors.tint} />
   );
 
-  const doneOverlay = doneOpen ? (
+  const doneFor = (part: string) => doneOpen ? (
     <View testID="level-test-done" accessibilityViewIsModal style={[StyleSheet.absoluteFill, styles.screen, { backgroundColor: colors.background }]}>
+      <View style={styles.header}>
+        <View style={styles.closeSpacer} />
+        {feedbackFor(part)}
+      </View>
       <View style={styles.body}>
         <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
           <Text testID="level-test-done-title" style={[styles.title, { color: colors.text }]}>{s.doneTitle(level)}</Text>
@@ -230,7 +235,7 @@ export default function LevelTestScreen() {
   if (result) {
     return shell(
       <View style={styles.flex}>
-        {header}
+        {headerFor(result.q.id)}
         {progress}
         <LevelTestFeedback
           q={result.q}
@@ -241,9 +246,7 @@ export default function LevelTestScreen() {
           onRule={() => router.push(`/grammar/${result.topicId}` as never)}
         />
       </View>,
-      result.q.id,
-      undefined,
-      doneOverlay
+      doneFor(result.q.id)
     );
   }
 
@@ -252,7 +255,7 @@ export default function LevelTestScreen() {
     const weak = weakestTopic(ids, evidence);
     return shell(
       <View style={styles.flex}>
-        {header}
+        {headerFor('round-end')}
         {progress}
         <View style={styles.body}>
           <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
@@ -286,17 +289,15 @@ export default function LevelTestScreen() {
           />
         </View>
       </View>,
-      'round-end',
-      undefined,
-      doneOverlay
+      doneFor('round-end')
     );
   }
 
-  if (!pendingQ) return shell(<ActivityIndicator style={styles.flex} color={colors.tint} />, current.qid);
+  if (!pendingQ) return shell(<ActivityIndicator style={styles.flex} color={colors.tint} />);
 
   return shell(
     <KeyboardAvoidingView style={styles.flex} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
-      {header}
+      {headerFor(pendingQ.id)}
       {progress}
       <DockSlotProvider host={dock}>
         <TestQuestionView
@@ -310,9 +311,7 @@ export default function LevelTestScreen() {
       </DockSlotProvider>
       {dock.node}
     </KeyboardAvoidingView>,
-    pendingQ.id,
-    dock.bottomOffset,
-    doneOverlay
+    doneFor(pendingQ.id)
   );
 }
 
