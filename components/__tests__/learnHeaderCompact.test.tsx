@@ -10,7 +10,7 @@ import Colors from '@/constants/Colors';
 import { getDb } from '@/lib/database';
 import { ThemeProvider } from '@/lib/ThemeContext';
 import FeedbackButton from '../FeedbackModal';
-import BadgeRow from '../learn/BadgeRow';
+import BadgeRow, { fitLabels } from '../learn/BadgeRow';
 import { HEADER_CHIP } from '../learn/pcicStyles';
 import { ProgressBar } from '../grammar/Themed';
 
@@ -88,6 +88,69 @@ describe('BadgeRow singleLine', () => {
       expect(view.getByText('total 12').props.numberOfLines).toBeUndefined();
     }, SETTLE);
     view.unmount();
+  });
+});
+
+describe('fitLabels (web: no adjustsFontSizeToFit)', () => {
+  const FULL = 100;
+  const original = globalThis.getComputedStyle;
+
+  // A label that is cut while its font is larger than `limit` px, on a page where the full font is `FULL` px.
+  const setup = (limit: number) => {
+    const state = { limit };
+    const label = {
+      style: { fontSize: '' },
+      clientWidth: 50,
+      get scrollWidth() {
+        return parseFloat(this.style.fontSize || String(FULL)) > state.limit ? 60 : 50;
+      },
+    };
+    const row = { style: { flexWrap: '' } };
+    return { state, label, row, fit: () => fitLabels(row as unknown as HTMLElement, [label as unknown as HTMLElement]) };
+  };
+
+  beforeEach(() => {
+    globalThis.getComputedStyle = (() => ({ fontSize: `${FULL}px` })) as unknown as typeof getComputedStyle;
+  });
+  afterEach(() => {
+    globalThis.getComputedStyle = original;
+  });
+
+  it('keeps the full size when no label is cut', () => {
+    const { label, row, fit } = setup(FULL);
+    fit();
+    expect(label.style.fontSize).toBe('');
+    expect(row.style.flexWrap).toBe('');
+  });
+
+  it('steps the font down until no label is cut', () => {
+    const { label, row, fit } = setup(82);
+    fit();
+    expect(label.style.fontSize).toBe('80px');
+    expect(row.style.flexWrap).toBe('');
+  });
+
+  it('uses the same floor as the native shrinking', () => {
+    const { label, row, fit } = setup(70);
+    fit();
+    expect(label.style.fontSize).toBe('70px');
+    expect(row.style.flexWrap).toBe('');
+  });
+
+  it('wraps at the full size when even the smallest font is cut', () => {
+    const { label, row, fit } = setup(69);
+    fit();
+    expect(label.style.fontSize).toBe('');
+    expect(row.style.flexWrap).toBe('wrap');
+  });
+
+  it('starts over on the next call', () => {
+    const { state, label, row, fit } = setup(69);
+    fit();
+    state.limit = FULL;
+    fit();
+    expect(label.style.fontSize).toBe('');
+    expect(row.style.flexWrap).toBe('');
   });
 });
 

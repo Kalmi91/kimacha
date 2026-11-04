@@ -1,4 +1,5 @@
-import { StyleSheet, View } from 'react-native';
+import { useEffect, useLayoutEffect, useReducer, useRef } from 'react';
+import { Platform, StyleSheet, View } from 'react-native';
 import { Text } from '@/components/KText';
 
 import Colors from '@/constants/Colors';
@@ -39,7 +40,26 @@ type Props = {
 };
 
 // label props for `singleLine`: one line, font shrinks down to 70 % before it is cut.
-const FIT_LABEL = { numberOfLines: 1, adjustsFontSizeToFit: true, minimumFontScale: 0.7 } as const;
+const MIN_FONT_SCALE = 0.7;
+const FIT_LABEL = { numberOfLines: 1, adjustsFontSizeToFit: true, minimumFontScale: MIN_FONT_SCALE } as const;
+
+// React Native Web ignores adjustsFontSizeToFit, so there numberOfLines alone cuts the label with an ellipsis ("du…"). On the web
+// the row does the same shrinking itself. Where even the smallest font is cut (the widest fonts on a narrow screen), the chips
+// keep their size and wrap: a count that cannot be read is worse than a second line.
+export function fitLabels(row: HTMLElement, labels: HTMLElement[]) {
+  const setFontSize = (value: string) => labels.forEach((label) => { label.style.fontSize = value; });
+  const anyCut = () => labels.some((label) => label.scrollWidth > label.clientWidth);
+  row.style.flexWrap = '';
+  setFontSize('');
+  if (!anyCut()) return;
+  const base = parseFloat(getComputedStyle(labels[0]).fontSize);
+  for (let percent = 95; percent >= MIN_FONT_SCALE * 100; percent -= 5) {
+    setFontSize(`${(base * percent) / 100}px`);
+    if (!anyCut()) return;
+  }
+  setFontSize('');
+  row.style.flexWrap = 'wrap';
+}
 
 // small boxes on the brutalist palette (due = b, XP = a fill).
 const TONE_FILL: Record<Tone, BrutalFill> = { default: 'paper', blue: 'b', green: 'paper', accent: 'a' };
@@ -47,9 +67,24 @@ const TONE_FILL: Record<Tone, BrutalFill> = { default: 'paper', blue: 'b', green
 export default function BadgeRow({ items, colors, singleLine = false }: Props) {
   const g = useGrammarColors();
   const fit = singleLine ? FIT_LABEL : null;
+  const webFit = singleLine && Platform.OS === 'web';
+  const row = useRef<View>(null);
+  const labels = useRef<(HTMLElement | null)[]>([]);
+  const [, refit] = useReducer((n: number) => n + 1, 0);
+  // After every render, before the paint, and again when the row's width changes or a font arrives (a theme's font is wider
+  // than its fallback, and nothing else re-renders the row then).
+  useLayoutEffect(() => {
+    if (webFit && row.current) fitLabels(row.current as unknown as HTMLElement, labels.current.filter((label) => label !== null));
+  });
+  useEffect(() => {
+    if (!webFit) return;
+    document.fonts.addEventListener('loadingdone', refit);
+    return () => document.fonts.removeEventListener('loadingdone', refit);
+  }, [webFit]);
+  const onRowLayout = webFit ? refit : undefined;
   if (g.brutal) {
     return (
-      <View style={[styles.row, singleLine && styles.rowSingle]}>
+      <View ref={row} style={[styles.row, singleLine && styles.rowSingle]} onLayout={onRowLayout}>
         {items.map((item, i) => {
           const fill = TONE_FILL[item.tone ?? 'default'];
           return (
@@ -62,6 +97,9 @@ export default function BadgeRow({ items, colors, singleLine = false }: Props) {
             >
               <Text
                 {...fit}
+                ref={(node) => {
+                  labels.current[i] = node as unknown as HTMLElement | null;
+                }}
                 accessibilityLabel={item.accessibilityLabel}
                 style={[styles.brutalBadgeText, { color: textOnFill(g, fill) }, item.tabular && styles.tabular]}
               >
@@ -74,11 +112,14 @@ export default function BadgeRow({ items, colors, singleLine = false }: Props) {
     );
   }
   return (
-    <View style={[styles.row, singleLine && styles.rowSingle]}>
+    <View ref={row} style={[styles.row, singleLine && styles.rowSingle]} onLayout={onRowLayout}>
       {items.map((item, i) => (
         <View key={i} style={[styles.badge, singleLine && styles.chipShrink, { backgroundColor: colors.card }]}>
           <Text
             {...fit}
+            ref={(node) => {
+              labels.current[i] = node as unknown as HTMLElement | null;
+            }}
             accessibilityLabel={item.accessibilityLabel}
             style={[
               styles.badgeText,

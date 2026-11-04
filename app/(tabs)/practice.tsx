@@ -3,6 +3,8 @@ import { Pressable, ScrollView, StyleSheet, View } from 'react-native';
 import { router } from 'expo-router';
 import { Text } from '@/components/KText';
 import Colors from '@/constants/Colors';
+import { ON_FILL } from '@/constants/GrammarPalettes';
+import { legibleOn } from '@/constants/Skins';
 import { fontSize, fontWeight, lineHeight, radius, spacing, tapTarget } from '@/constants/Theme';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
@@ -239,7 +241,7 @@ function ReadingMode() {
                 <Text key={w.itemId}>
                   {n > 0 ? ' ' : ''}
                   {w.before}
-                  <Text testID={`practice-word-${seg.index}`} style={[styles.word, { color: colors.tint }]}>{w.answer}</Text>
+                  <Text testID={`practice-word-${seg.index}`} style={[styles.word, { color: legibleOn(colors.tint, colors.card) }]}>{w.answer}</Text>
                   {w.after}
                 </Text>
               );
@@ -266,7 +268,7 @@ function ReadingMode() {
       <View style={styles.center}>
         <Text variant="title" style={[styles.doneTitle, { color: colors.text }]}>{s.practiceTab.questionsDone}</Text>
         <Pressable testID="practice-again" accessibilityRole="button" onPress={() => void load(true)} style={styles.link}>
-          <Text style={[styles.linkText, { color: colors.tint }]}>{s.practiceTab.newReading}</Text>
+          <Text style={[styles.linkText, { color: legibleOn(colors.tint, colors.background) }]}>{s.practiceTab.newReading}</Text>
         </Pressable>
       </View>,
       dockAction('practice-sentences', s.practiceTab.practiceSentences, practiceSentences),
@@ -296,6 +298,7 @@ function ReadingMode() {
             const chosenWrong = answered && pick === i && i !== question.correct;
             const right = answered && i === question.correct;
             const state = right ? s.card.correct : chosenWrong ? s.card.wrong : '';
+            const fill = right ? colors.successFill : chosenWrong ? colors.danger : null;
             return (
               <Pressable
                 key={`${step}-${i}`}
@@ -311,7 +314,7 @@ function ReadingMode() {
                   chosenWrong && { backgroundColor: colors.danger, borderColor: colors.danger },
                 ]}
               >
-                <Text style={[styles.optionText, { color: chosenWrong ? colors.onTint : colors.text }]}>
+                <Text style={[styles.optionText, { color: fill ? legibleOn(ON_FILL, fill) : colors.text }]}>
                   {right ? '✓ ' : chosenWrong ? '✗ ' : ''}
                   {option}
                 </Text>
