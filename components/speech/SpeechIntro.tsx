@@ -68,25 +68,6 @@ export default function SpeechIntro({ story, target, source, words, mode, micOk,
           <Text testID="speech-intro-text" style={[styles.intro, { color: colors.textMuted }]}>{story.intro[source]}</Text>
         </Card>
 
-        {words.length > 0 && (
-          <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
-            <Text testID="speech-words" style={[styles.caption, { color: colors.textMuted }]}>{sx.newWords}</Text>
-            {words.map((w, i) => (
-              <View key={w[story.target]} testID={`speech-word-${i}`} style={styles.word}>
-                <SpeakButton
-                  testID={`speech-word-speak-${i}`}
-                  accessibilityLabel={sx.listen}
-                  onPress={() => hear(w[story.target])}
-                  style={styles.speakBtn}
-                  iconStyle={styles.speakIcon}
-                />
-                <Text style={[styles.wordText, { color: colors.text }]}>{w[story.target]}</Text>
-                <Text style={[styles.meaning, { color: colors.textMuted }]}>{w[source]}</Text>
-              </View>
-            ))}
-          </Card>
-        )}
-
         <Text style={[styles.caption, { color: colors.textMuted }]}>{sx.howAnswer}</Text>
         <View style={styles.segments}>
           {segments.map((seg) => {
@@ -111,6 +92,25 @@ export default function SpeechIntro({ story, target, source, words, mode, micOk,
           })}
         </View>
         {!micOk && <Text testID="speech-no-mic" style={[styles.hint, { color: colors.textMuted }]}>{sx.noMic}</Text>}
+
+        {words.length > 0 && (
+          <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
+            <Text testID="speech-words" style={[styles.caption, { color: colors.textMuted }]}>{sx.newWords}</Text>
+            {words.map((w, i) => (
+              <View key={w[story.target]} testID={`speech-word-${i}`} style={styles.word}>
+                <SpeakButton
+                  testID={`speech-word-speak-${i}`}
+                  accessibilityLabel={sx.listen}
+                  onPress={() => hear(w[story.target])}
+                  style={styles.speakBtn}
+                  iconStyle={styles.speakIcon}
+                />
+                <Text style={[styles.wordText, { color: colors.text }]}>{w[story.target]}</Text>
+                <Text style={[styles.meaning, { color: colors.textMuted }]}>{w[source]}</Text>
+              </View>
+            ))}
+          </Card>
+        )}
       </View>
     </GameFrame>
   );
