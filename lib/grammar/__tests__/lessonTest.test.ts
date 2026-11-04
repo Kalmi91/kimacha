@@ -292,12 +292,20 @@ describe('form tasks and result data', () => {
           // a cell may look like a header word ("um"), but then the card names its table and column; alone it never does
           if (headers.has(v.prompt.trim().toLowerCase())) expect(v.heading && v.label).toBeTruthy();
           expect(v.hint).toBeTruthy();
+          const item = lesson.items.find((i) => i.id === q.id);
+          if (!item || item.kind !== 'form') throw new Error(`no form item ${q.id}`);
+          const table = lesson.body.find((x) => x.kind === 'table' && x.id === item.table);
           if (v.heading) {
-            // a non-verb table: the title heads the card and the first column's header labels the cell
+            // a non-verb table: the title heads the card and the first column's header labels the cell, which is a row of the table
             expect(v.label).toBeTruthy();
             expect(v.hint).not.toBe('Type the correct form');
+            expect(table && table.kind === 'table' && table.rows.some((r) => r[0] === v.prompt)).toBe(true);
+            expect(q.review.question).toBe(`${v.label}: ${v.prompt}`);
           } else {
+            // askable: the stem (the verb or column, and the person or cell) is on the card
             expect(v.prompt).toContain(' · ');
+            expect(v.prompt).toContain(item.person);
+            expect(v.prompt.startsWith(item.verb)).toBe(true);
           }
           if (q.detail?.table) tables++;
         }
@@ -322,6 +330,16 @@ describe('form tasks and result data', () => {
     const nh = byId('es', 'numeros-hora-fecha', 'nh-form-06').view;
     expect(nh).toMatchObject({ card: 'type', heading: 'Numbers', label: 'Number', prompt: '1:00' });
     expect((nh as { hint?: string }).hint).toBe('Type the word');
+  });
+
+  it('the hint keeps the capital of a German column label', () => {
+    const { setLanguage } = require('@/lib/i18n');
+    setLanguage('de');
+    try {
+      expect((byId('es', 'interrogativos', 'int-form-04').view as { hint?: string }).hint).toBe('Gib ein: Question word');
+    } finally {
+      setLanguage('en');
+    }
   });
 
   it('a person table shows the whole column of the verb with the asked cell; another table only the asked row', () => {
@@ -361,11 +379,18 @@ describe('form tasks and result data', () => {
     expect(withRule).toBeGreaterThan(without);
   });
 
-  it("a typed mistake: the item's own text first (lowercase, accents ignored), then which other form it is, else nothing", () => {
+  it("a typed mistake: the item's own text first (lowercase, spaces ignored; accents kept first), then which other form it is, else nothing", () => {
     const explain = byId('es', 'gustar', 'gu-form-12').detail!.explainTyped!;
     expect(explain('los gustan')).toMatch(/direct object pronoun/);
-    expect(explain('  LOS   Gustán ')).toMatch(/direct object pronoun/);
+    expect(explain('  LOS   Gustan ')).toMatch(/direct object pronoun/);
     expect(explain('nos gustan')).toBe('That is another form: nosotros · gustar + several things.');
+    // accents kept first: "tú gusta" / "mí gusta" are not the possessive "tu gusta" / "mi gusta"; a forgotten accent still finds it
+    const tu = byId('es', 'gustar', 'gu-form-02').detail!.explainTyped!;
+    expect(tu('tu gusta')).toMatch(/possessive/);
+    expect(tu('tú gusta')).toBeNull();
+    expect(tu('tú gustas')).toMatch(/other way round/);
+    expect(tu('tu gustas')).toMatch(/other way round/);
+    expect(byId('es', 'gustar', 'gu-form-01').detail!.explainTyped!('mí gusta')).toBeNull();
     expect(explain('zzz')).toBeNull();
     expect(explain('')).toBeNull();
   });

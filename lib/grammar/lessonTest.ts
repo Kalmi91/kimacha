@@ -219,7 +219,8 @@ function toQuestion(r: GrammarRoundItem, ctx: Ctx): LessonTestQuestion | null {
         // German: the umlaut and the ß of the inflected form are the thing asked (Väter), like in the form drill.
         ...(ctx.learnedLang === 'de' ? { keepUmlauts: true } : {}),
       },
-      review: { question: task.prompt, answer: item.answer },
+      // a non-verb table: the label goes with the cell, so the miss lists keep the context
+      review: { question: task.label ? `${task.label}: ${task.prompt}` : task.prompt, answer: item.answer },
       detail: formDetail(item, tableBlock, ctx.topic.body, pick),
     };
   }

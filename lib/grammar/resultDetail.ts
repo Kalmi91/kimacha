@@ -3,7 +3,7 @@
 // lessonTest.ts calls these from `toQuestion`; every field is optional and the other screens ignore them.
 
 import type { LessonBlock, FormItem, Lang4 } from '@/lib/grammar/lessonTypes';
-import { t } from '@/lib/i18n';
+import { currentLanguage, t } from '@/lib/i18n';
 
 type TableBlock = Extract<LessonBlock, { kind: 'table' }>;
 type Pick = (l: Record<string, string>) => string;
@@ -39,6 +39,9 @@ export const normTyped = (s: string): string =>
     .replace(/[̀-ͯ]/g, '')
     .replace(/\s+/g, ' ')
     .trim();
+
+/** How many accent marks a text has. */
+const accentMarks = (s: string): number => (s.normalize('NFD').match(/[̀-ͯ]/g) ?? []).length;
 
 const PERSON_HEADER = /^(person|persona|pronoun|pronombre)$/i;
 
@@ -78,10 +81,13 @@ export function formTask(item: FormItem, table: TableBlock | undefined, pick: Pi
     return { prompt: `${verbLabel} · ${item.person}`, hint: table ? s.formVerbHint : fallbackHint };
   }
   const ci = askedColumn(table, item.verb);
-  const asked = ci >= 0 ? pick(table.header[ci]) : item.verb;
+  // the cell is not a row of the table (or the column is unknown): the old stem `verb · person` is the only askable task
+  if (ci < 0 || !table.rows.some((r) => r[0] === item.person)) return { prompt: `${item.verb} · ${item.person}`, hint: fallbackHint };
+  const asked = pick(table.header[ci]);
   return {
     prompt: item.person,
-    hint: s.formColumnHint(lowerFirst(asked)),
+    // German nouns keep their capital letter
+    hint: s.formColumnHint(currentLanguage() === 'de' ? asked : lowerFirst(asked)),
     heading: pick(table.title),
     label: pick(table.header[0]),
   };
@@ -113,16 +119,23 @@ export function formDetail(item: FormItem, table: TableBlock | undefined, body: 
         }
       : { title, header: table.header.map((h) => pick(h)), rows: [table.rows[ri]], hl: { row: 0, col: ci } };
   }
-  const wrong = new Map<string, string>();
+  // the item's own texts: looked up with the accents kept first ("tú gusta" is not "tu gusta"), then accent-free
+  const wrongExact = new Map<string, string>();
+  const wrong = new Map<string, { text: string; marks: number }>();
   for (const [typed, texts] of Object.entries(item.wrong ?? {})) {
     const text = pick(texts);
-    if (text) wrong.set(normTyped(typed), text);
+    if (!text) continue;
+    wrongExact.set(typed.toLowerCase().replace(/\s+/g, ' ').trim(), text);
+    wrong.set(normTyped(typed), { text, marks: accentMarks(typed) });
   }
   detail.explainTyped = (typed) => {
     const key = normTyped(typed);
     if (key === '') return null;
+    const exact = wrongExact.get(typed.toLowerCase().replace(/\s+/g, ' ').trim());
+    if (exact) return exact;
+    // accent-free: a forgotten accent still finds the text, an accent the key does not have does not ("mí" is not "mi")
     const own = wrong.get(key);
-    if (own) return own;
+    if (own && accentMarks(typed) <= own.marks) return own.text;
     // what was typed is another cell of the same table: say which form it is
     for (const row of table.rows) {
       for (let c = 1; c < row.length; c++) {
