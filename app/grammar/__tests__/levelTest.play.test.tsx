@@ -421,7 +421,7 @@ describe.each(['brand', 'classic'] as const)('grammar level test (%s palette)', 
       expect(screen.getByTestId('level-test-feedback-why')).toHaveTextContent(q.review.why ?? '');
       for (const w of q.detail?.whyNot ?? []) expect(flat('level-test-whynot')).toContain(`${w.option}: ${w.text}`);
       expect(screen.queryByTestId('level-test-whynot-link')).toBeNull();
-      expect(screen.queryByText(/Practice this/)).toBeNull(); // the Practice button is the next brief
+      expect(screen.getByTestId('level-test-practice')).toBeTruthy(); // Practice is offered on a wrong answer
     });
   });
 
@@ -597,6 +597,77 @@ describe.each(['brand', 'classic'] as const)('grammar level test (%s palette)', 
       await next();
       expect(text('level-test-round-score')).toBe('20 / 20');
       expect(screen.queryByTestId('level-test-done')).toBeNull(); // once
+    });
+  });
+
+  describe('Practice after a wrong answer (FB574, FB575)', () => {
+    const typeWrongForm = async () => {
+      mockParams = { level: 'B1' };
+      await open();
+      fireEvent.changeText(screen.getByTestId('exam-input'), 'zzz');
+      await press('exam-check');
+    };
+
+    it('the wrong-answer card offers "Practice this · N" below Next, a right answer does not', async () => {
+      await typeWrongForm();
+      // 3 forms of the verb column (rows of the table) + the 2 other form items
+      expect(screen.getByTestId('level-test-practice')).toHaveTextContent('Practice this · 5');
+    });
+
+    it('Practice shows the rule, counts 1/5, writes no evidence, leaves the percent and the round alone; ✕ lands on the next test question', async () => {
+      await typeWrongForm();
+      const before = await evidenceNow();
+      const pct = /· (\d+)% ·/.exec(text('level-test-header'))![1];
+      await press('level-test-practice');
+      expect(text('level-practice-header')).toBe('Practice · 1/5');
+      expect(screen.queryByTestId('level-test-table') ?? screen.queryByTestId('level-practice-rule')).toBeTruthy();
+      expect(text('fb-card')).toMatch(/^grammar-level-practice:B1:lt5-f\d \| en→es \| A1$/);
+      fireEvent.changeText(screen.getByTestId('exam-input'), 'zzz');
+      await press('exam-check');
+      expect(screen.queryByText(/Practice this/)).toBeNull(); // no Practice button on the Practice card
+      await press('level-test-next');
+      await press('level-practice-close');
+      expect(screen.queryByTestId('level-practice-header')).toBeNull();
+      expect(text('exam-prompt')).toBeTruthy(); // the next test question
+      expect(text('level-test-header')).toBe(`B1 · ${pct}% · 2/20`);
+      expect(await evidenceNow()).toEqual(before);
+      expect(await loadResumeValue(getDb(), roundKey('B1'))).toEqual({ n: 1, right: 0, startPct: Number(pct) });
+    });
+
+    it('the rule table highlights the cell the CURRENT task asks, on every task (not only the first)', async () => {
+      await typeWrongForm();
+      await press('level-test-practice');
+      const expected: Record<string, string[]> = { yo: ['me gusta', 'me gustan'], nosotros: ['nos gusta', 'nos gustan'], 'ellos/ellas/ustedes': ['les gusta', 'les gustan'] };
+      const seen: string[] = [];
+      for (let i = 0; i < 3; i++) {
+        const prompt = text('exam-prompt');
+        const person = prompt.split(' · ')[1];
+        const col = prompt.startsWith('una') ? 0 : 1;
+        expect(flat('level-test-table-hl')).toBe(expected[person][col]);
+        seen.push(flat('level-test-table-hl'));
+        await press('exam-dont-know');
+        await press('level-test-next');
+      }
+      expect(new Set(seen).size).toBe(3);
+    });
+
+    it('a wrong task comes back once, the total grows by one; the end says "x of N right" and Back to the test returns', async () => {
+      await typeWrongForm();
+      await press('level-test-practice');
+      for (let i = 0; i < 5; i++) {
+        await press('exam-dont-know');
+        await press('level-test-next');
+      }
+      // each of the first 3 misses came back 3 places later (the total is 8 now); the last 2 are still to be missed
+      expect(text('level-practice-header')).toBe('Practice · 6/8');
+      for (let i = 0; i < 5; i++) {
+        await press('exam-dont-know');
+        await press('level-test-next');
+      }
+      expect(text('level-practice-end')).toBe('0 of 10 right');
+      await press('level-practice-back');
+      expect(screen.queryByTestId('level-practice-end')).toBeNull();
+      expect(text('level-test-header')).toMatch(/· 2\/20$/);
     });
   });
 

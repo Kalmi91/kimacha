@@ -18,6 +18,7 @@ import {
   isTransformItem,
   isTrialItem,
   isWhyItem,
+  type GrammarItem,
   type GrammarKind,
   type GrammarTopicData,
 } from '@/lib/games/content';
@@ -165,6 +166,7 @@ function toQuestion(r: GrammarRoundItem, ctx: Ctx): LessonTestQuestion | null {
         review: { question: it.sentence, answer: r.options[r.correctIndex], why: pick(it.why) },
         say: it.sentence,
         detail: {
+          examples: it.examples,
           filled: splitAtWord(it.sentence, r.options[r.correctIndex], it.answerIndex ?? 0) ?? undefined,
           tr: trText(it.tr, pick, it.sentence),
           whyNot: whyNotOf(r.options, r.correctIndex, (o) => (it.wrong?.[o] ? pick(it.wrong[o]) : undefined)),
@@ -181,6 +183,7 @@ function toQuestion(r: GrammarRoundItem, ctx: Ctx): LessonTestQuestion | null {
       review: { question: it.sentence, answer: filled, why: pick(it.why) },
       say: filled,
       detail: {
+        examples: it.examples,
         filled: { before: it.sentence.slice(0, gapAt), word: r.options[r.correctIndex], after: it.sentence.slice(gapAt + 3) },
         tr: trText(it.tr, pick, filled),
         whyNot: whyNotOf(r.options, r.correctIndex, (o) => (it.wrong?.[o] ? pick(it.wrong[o]) : undefined)),
@@ -297,6 +300,11 @@ function toQuestion(r: GrammarRoundItem, ctx: Ctx): LessonTestQuestion | null {
   // Dictation would require listening, and the test (like the exam) runs without sound: it is left out.
   // Sentence writing (`write`) is a trial kind outside the test too.
   return null;
+}
+
+/** One question from a single lesson item (the Practice run builds generated form tasks this way); null if the item has no usable card. */
+export function questionOfItem(item: GrammarItem, lesson: GrammarTopicData, learnedLang: string, contentLang: string, seed: number): LessonTestQuestion | null {
+  return toQuestion({ item } as unknown as GrammarRoundItem, { topic: lesson, learnedLang, contentLang, seed });
 }
 
 interface BuildLessonTestOptions {

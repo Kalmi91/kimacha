@@ -11,12 +11,14 @@ export default function TestQuestionView({
   learnedLang,
   strictAccents,
   instant,
+  bottomPad,
   onDone,
 }: {
   q: LessonTestQuestion;
   learnedLang: string;
   strictAccents: boolean;
   instant?: boolean;
+  bottomPad?: number;
   onDone: (correct: boolean, given?: string) => void;
 }) {
   const v = q.view;
@@ -29,6 +31,7 @@ export default function TestQuestionView({
           prompt={v.prompt}
           heading={v.heading}
           label={v.label}
+          bottomPad={bottomPad}
           hint={v.hint}
           answer={v.answer}
           accept={v.accept}

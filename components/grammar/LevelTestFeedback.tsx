@@ -24,6 +24,8 @@ export default function LevelTestFeedback({
   given,
   onNext,
   onRule,
+  practiceCount = 0,
+  onPractice,
 }: {
   q: LessonTestQuestion;
   topicTitle: string;
@@ -32,6 +34,9 @@ export default function LevelTestFeedback({
   given?: string;
   onNext: () => void;
   onRule: () => void;
+  /** The test's wrong-answer card: "Practice this · N" below Next (the Practice run itself passes none). */
+  practiceCount?: number;
+  onPractice?: () => void;
 }) {
   const { theme } = useTheme();
   const colors = Colors[theme];
@@ -141,35 +146,48 @@ export default function LevelTestFeedback({
       </ScrollView>
       <View style={styles.buttons}>
         <ExamButton testID="level-test-next" label={s.next} onPress={onNext} />
+        {!ok && onPractice && practiceCount > 0 ? (
+          <ExamButton testID="level-test-practice" secondary label={l.practiceButton(practiceCount)} onPress={onPractice} />
+        ) : null}
         <ExamButton testID="level-test-rule" secondary label={l.openLesson} onPress={onRule} />
       </View>
     </View>
   );
 }
 
-function TableView({ table }: { table: ResultTable }) {
+export function TableView({
+  table,
+  compact = false,
+  onHighlightLayout,
+}: {
+  table: ResultTable;
+  /** Smaller rows and no title: for the Practice rule box above the keyboard. */
+  compact?: boolean;
+  /** The y of the highlighted row inside the table, so a scroll box can bring it into view. */
+  onHighlightLayout?: (y: number) => void;
+}) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   return (
     <View testID="level-test-table" style={styles.group}>
-      <Text style={[styles.label, { color: colors.textMuted }]}>{table.title}</Text>
+      {compact ? null : <Text style={[styles.label, { color: colors.textMuted }]}>{table.title}</Text>}
       <View style={[styles.table, { borderColor: colors.border }]}>
         <View style={styles.row}>
           {table.header.map((h, c) => (
-            <Text key={c} style={[styles.cell, styles.headCell, { color: colors.textMuted }]}>
+            <Text key={c} style={[styles.cell, compact && styles.cellCompact, styles.headCell, { color: colors.textMuted }]}>
               {h}
             </Text>
           ))}
         </View>
         {table.rows.map((row, r) => (
-          <View key={r} style={styles.row}>
+          <View key={r} style={styles.row} onLayout={table.hl?.row === r && onHighlightLayout ? (e) => onHighlightLayout(e.nativeEvent.layout.y) : undefined}>
             {row.map((cell, c) => {
               const hl = table.hl?.row === r && table.hl.col === c;
               return (
                 <Text
                   key={c}
                   testID={hl ? 'level-test-table-hl' : undefined}
-                  style={[styles.cell, { color: colors.text }, hl && { backgroundColor: colors.successFill, fontWeight: fontWeight.bold }]}
+                  style={[styles.cell, compact && styles.cellCompact, { color: colors.text }, hl && { backgroundColor: colors.successFill, fontWeight: fontWeight.bold }]}
                 >
                   {cell}
                 </Text>
@@ -199,6 +217,7 @@ const styles = StyleSheet.create({
   table: { borderWidth: 1, borderRadius: radius.sm, overflow: 'hidden' },
   row: { flexDirection: 'row' },
   cell: { flex: 1, fontSize: fontSize.sm, padding: spacing.xs },
+  cellCompact: { paddingVertical: 2 },
   headCell: { fontWeight: fontWeight.semibold },
   buttons: { gap: spacing.md, paddingHorizontal: spacing.lg, paddingTop: spacing.sm, paddingBottom: FAB_CLEARANCE },
 });

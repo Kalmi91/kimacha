@@ -16,6 +16,7 @@ import { t } from '@/lib/i18n';
 import { useTheme } from '@/lib/ThemeContext';
 import { localDateString } from '@/lib/usageStats';
 import type { LessonTestQuestion } from '@/lib/grammar/lessonTest';
+import { buildPractice } from '@/lib/grammar/practice';
 import {
   LEVEL_ROUND_SIZE,
   kindsOfCtx,
@@ -28,10 +29,11 @@ import {
   type LevelRound,
 } from '@/lib/grammar/levelTest';
 import { levelTestCtx } from '@/lib/grammar/levelTestView';
-import { hasLesson, syllabusForLevel, syllabusLevels } from '@/lib/grammar/syllabus';
+import { hasLesson, lessonFor, syllabusForLevel, syllabusLevels } from '@/lib/grammar/syllabus';
 import { GRAMMAR_RANDOM_KEY, appendEvidence, evidenceFromRows, type EvidenceAnswer, type TopicEvidence } from '@/lib/grammar/randomRound';
 import { questionsOf, type RoundData } from '@/lib/grammar/randomRoundView';
 import { Card } from '@/components/grammar/Brutal';
+import LevelPractice from '@/components/grammar/LevelPractice';
 import LevelTestFeedback from '@/components/grammar/LevelTestFeedback';
 import { ProgressBar } from '@/components/grammar/Themed';
 import TestQuestionView from '@/components/grammar/TestQuestionView';
@@ -62,6 +64,8 @@ interface Result {
   ok: boolean;
   /** What was pressed or typed. */
   given?: string;
+  /** The Practice tasks for a wrong answer (built once, when it is given). */
+  practice: LessonTestQuestion[];
 }
 
 export default function LevelTestScreen() {
@@ -82,6 +86,8 @@ export default function LevelTestScreen() {
   const [result, setResult] = useState<Result | null>(null);
   const [round, setRound] = useState<LevelRound>({ n: 0, right: 0, startPct: 0 });
   const [doneOpen, setDoneOpen] = useState(false);
+  // the Practice run after a wrong answer; it has no state the test keeps (no evidence, same round, same next question)
+  const [practice, setPractice] = useState<{ missed: LessonTestQuestion; tasks: LessonTestQuestion[]; topicId: string } | null>(null);
   // the number of answers of this visit: it moves the seed of every pick and renews the question card
   const [asked, setAsked] = useState(0);
   const doneShown = useRef(false);
@@ -180,7 +186,9 @@ export default function LevelTestScreen() {
     }
     // a tap on the result card must not land on a keyboard that is still closing
     Keyboard.dismiss();
-    setResult({ q: pendingQ, topicId, ok, given });
+    const lesson = ok ? undefined : lessonFor(data.learnedLang, topicId);
+    const practiceTasks = lesson ? buildPractice(pendingQ, lesson, { learnedLang: data.learnedLang, contentLang: data.contentLang, seed }) : [];
+    setResult({ q: pendingQ, topicId, ok, given, practice: practiceTasks });
     // a right answer chimes first and the sentence follows; a wrong one is only read out
     const say = () => {
       if (pendingQ.say) speak(pendingQ.say, speechLang(data.learnedLang));
@@ -231,8 +239,30 @@ export default function LevelTestScreen() {
     </View>
   ) : null;
 
+  // the Practice run: ✕ and its end both land on the next test question, as Next would
+  if (practice) {
+    return (
+      <LevelPractice
+        missed={practice.missed}
+        tasks={practice.tasks}
+        level={level}
+        userLevel={data.userLevel}
+        languagePair={pair}
+        learnedLang={data.learnedLang}
+        strictAccents={strictAccents}
+        topicTitle={titleOf(practice.topicId)}
+        onRule={() => router.push(`/grammar/${practice.topicId}` as never)}
+        onExit={() => {
+          setPractice(null);
+          setResult(null);
+        }}
+      />
+    );
+  }
+
   // after every answer: the result card; the next question comes with Next.
   if (result) {
+    const practiceTasks = result.practice;
     return shell(
       <View style={styles.flex}>
         {headerFor(result.q.id)}
@@ -244,6 +274,8 @@ export default function LevelTestScreen() {
           given={result.given}
           onNext={() => setResult(null)}
           onRule={() => router.push(`/grammar/${result.topicId}` as never)}
+          practiceCount={practiceTasks.length}
+          onPractice={() => setPractice({ missed: result.q, tasks: practiceTasks, topicId: result.topicId })}
         />
       </View>,
       doneFor(result.q.id)
