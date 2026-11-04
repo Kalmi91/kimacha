@@ -4,7 +4,8 @@
 
 import type { PcicItem } from '@/data/pcic';
 import { getDb } from '@/lib/database';
-import { afterSentence, buildSentenceQueue, isDueCard, recordTypedWords, sentenceKey } from '@/lib/sentenceTab';
+import { pickSentences } from '@/lib/sentencePick';
+import { afterSentence, buildSentenceQueue, isDueCard, recordTypedWords, sentenceKey, SENTENCE_ROUND_SIZE } from '@/lib/sentenceTab';
 import type { WordVerdict } from '@/lib/sentenceTyping';
 import { sm2NewCard, type Sm2Card } from '@/lib/sm2';
 import { localDateString } from '@/lib/usageStats';
@@ -187,5 +188,54 @@ describe('recordTypedWords', () => {
     expect(await db.getDailyXpTenths(day)).toBe(0);
     await recordTypedWords([v('a1-s1', true), v('a1-s2', true), v('a1-nocard', true), v('a1-s3', false, true)], true, TODAY);
     expect(await db.getDailyXpTenths(day)).toBe(10 + 2);
+  });
+});
+
+// FB587: fresh rounds. A pool of 20 sentences (one learned word each, all due) over 4 simulated restarts.
+describe('buildSentenceQueue, seeded rounds and recent memory (FB587)', () => {
+  const LETTERS = 'abcdefghijklmnopqrst';
+  const POOL: PcicItem[] = [...LETTERS].map((c, n) => mk(100 + n, `zo${c}`, `en${c}`, `Zo${c}.`, `En${c}.`));
+  const POOL_BY_ID = new Map(POOL.map((i) => [i.id, i]));
+  const cards = POOL.map((i) => learned(i, '2026-10-01'));
+  const pool = (extra: Partial<Parameters<typeof buildSentenceQueue>[0]> = {}) =>
+    buildSentenceQueue({ target: 'es', cards, items: POOL, findItem: (id) => POOL_BY_ID.get(id), today: TODAY, ...extra });
+  const keys = (list: Array<{ target: string }>) => list.map((e) => sentenceKey(e));
+
+  it('the same seed gives the same queue, other seeds another order', () => {
+    expect(keys(pool({ seed: 7 }))).toEqual(keys(pool({ seed: 7 })));
+    expect(keys(pool({ seed: 7 }))).not.toEqual(keys(pool({ seed: 8 })));
+    expect(keys(pool({ seed: 7 })).sort()).toEqual(keys(pool()).sort());
+  });
+
+  it('4 restarts over a pool of 4 x the round give 4 different sets, no sentence twice', () => {
+    let recent = new Set<string>();
+    const seen = new Set<string>();
+    const sets: string[] = [];
+    for (const seed of [11, 22, 33, 44]) {
+      const round = keys(pickSentences(pool({ seed, recent }), 'es', SENTENCE_ROUND_SIZE, { seed }));
+      expect(round).toHaveLength(SENTENCE_ROUND_SIZE);
+      for (const k of round) {
+        expect(seen.has(k)).toBe(false);
+        seen.add(k);
+      }
+      sets.push([...round].sort().join());
+      recent = new Set([...recent, ...round]);
+    }
+    expect(new Set(sets).size).toBe(4);
+  });
+
+  it('recent sentences come back when the pool is too small to fill a round', () => {
+    const recent = new Set(keys(pool()));
+    expect(pickSentences(pool({ seed: 3, recent }), 'es', SENTENCE_ROUND_SIZE, { seed: 3 })).toHaveLength(SENTENCE_ROUND_SIZE);
+    const fewer = pool({ seed: 3, recent }).slice(0, 3);
+    expect(pickSentences(fewer, 'es', SENTENCE_ROUND_SIZE, { seed: 3 })).toHaveLength(3);
+  });
+
+  it('recent comes after non-recent of the same priority, but a sentence with more due words still wins', () => {
+    const first = keys(pool({ seed: 5 }))[0];
+    expect(keys(pool({ seed: 5, recent: new Set([first]) }))[19]).toBe(first);
+    const due = [learned(ITEMS[0], '2026-10-01'), learned(ITEMS[1], '2026-10-01'), learned(ITEMS[2], '2026-10-20')];
+    const q = queue(due, { seed: 1, recent: new Set(['el libro y la mesa.']) });
+    expect(q[0].itemId).toBe('a1-s1');
   });
 });

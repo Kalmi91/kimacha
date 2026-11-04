@@ -135,3 +135,67 @@ describe('pickSentences', () => {
     });
   });
 });
+
+// FB587: due words covered first, the round in seeded random order.
+describe('pickSentences, FB587', () => {
+  const withDue = (id: string, dueIds: string[]): SentenceEntry => ({ ...mk(id, words(id, 3), 0), wordIds: dueIds, due: dueIds.length > 0, dueIds });
+
+  it('covers as many different due words as possible: a sentence whose due words are already covered loses to one with a new due word', () => {
+    // a1 has 3 due words; a2 has the same 3 (already covered once a1 is in) plus nothing new; b1 has 1 new due word.
+    const q = [withDue('a1', ['x', 'y', 'z']), withDue('a2', ['x', 'y', 'z']), withDue('b1', ['w'])];
+    expect(ids(pickSentences(q, 'en', 2))).toEqual(['a1', 'b1']);
+  });
+
+  it('after the due words are covered the rest is filled in queue order', () => {
+    const q = [withDue('a1', ['x']), withDue('a2', ['x']), withDue('a3', ['x']), withDue('b1', ['w'])];
+    expect(ids(pickSentences(q, 'en', 3))).toEqual(['a1', 'a2', 'b1']);
+  });
+
+  it('focus words keep their priority over due coverage', () => {
+    const f = { ...withDue('f', ['p']), wordIds: ['p', 'focusWord'] };
+    const q = [withDue('a1', ['x', 'y', 'z']), withDue('a2', ['u', 'v']), f];
+    expect(ids(pickSentences(q, 'en', 1, { focus: new Set(['focusWord']) }))).toEqual(['f']);
+  });
+
+  it('a seed gives the round in a seeded order: same seed same order, other seeds differ, same members', () => {
+    const q = Array.from({ length: 8 }, (_, k) => mk(`s${k}`, words(`w${k}x`, 3 + (k % 3)), 0));
+    const a = ids(pickSentences(q, 'en', SIZE, { seed: 1 }));
+    expect(ids(pickSentences(q, 'en', SIZE, { seed: 1 }))).toEqual(a);
+    const orders = new Set([2, 3, 4, 5, 6, 7].map((seed) => ids(pickSentences(q, 'en', SIZE, { seed })).join()));
+    orders.add(a.join());
+    expect(orders.size).toBeGreaterThan(1);
+    expect([...a].sort()).toEqual(['s0', 's1', 's2', 's3', 's4']);
+  });
+
+  it('a small pool still fills the round, seeded or not', () => {
+    const q = [mk('a', ['aa', 'bb'], 1), mk('b', ['cc', 'dd'], 0), mk('c', ['ee', 'ff'], 2)];
+    expect(ids(pickSentences(q, 'en', SIZE, { seed: 9 })).sort()).toEqual(['a', 'b', 'c']);
+  });
+});
+
+describe('pickSentences, recent sentences (FB587)', () => {
+  const sent = (id: string, rung?: 2 | 3): SentenceEntry => ({ ...mk(id, words(id, 3), 0), ...(rung ? { rung } : {}) });
+  const keyOf = (id: string) => sent(id).target.toLowerCase();
+
+  it('a recent started sentence does not beat non-recent fresh ones', () => {
+    const q = [sent('r2a', 2), sent('r2b', 2), ...Array.from({ length: 6 }, (_, k) => sent(`f${k}`))];
+    const recent = new Set([keyOf('r2a'), keyOf('r2b')]);
+    const round = pickSentences(q, 'en', SIZE, { recent });
+    expect(round).toHaveLength(SIZE);
+    expect(ids(round).filter((i) => i.startsWith('r2'))).toEqual([]);
+  });
+
+  it('too few non-recent: recent ones fill the round, started before fresh', () => {
+    const q = [sent('n0'), sent('n1'), sent('rf0'), sent('rf1'), sent('rs0', 2)];
+    const recent = new Set([keyOf('rf0'), keyOf('rf1'), keyOf('rs0')]);
+    const round = ids(pickSentences(q, 'en', 4, { recent }));
+    expect(round).toHaveLength(4);
+    expect(round).toEqual(expect.arrayContaining(['n0', 'n1', 'rs0']));
+    expect(round).not.toContain('rf1');
+  });
+
+  it('non-recent started still beats non-recent fresh', () => {
+    const q = [sent('f0'), sent('f1'), sent('s0', 2)];
+    expect(ids(pickSentences(q, 'en', 1, { recent: new Set() }))).toEqual(['s0']);
+  });
+});
