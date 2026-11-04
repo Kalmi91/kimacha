@@ -9,6 +9,8 @@ export const fontSize = { xs: 12, sm: 14, md: 16, lg: 18, xl: 22, xxl: 28 } as c
 export const lineHeight = { xs: 16, sm: 20, md: 22, lg: 25, xl: 28, xxl: 34 } as const;
 export const fontWeight = { regular: '400', semibold: '600', bold: '700' } as const;
 export const tapTarget = 44;
+// the podium's medal rings (Weekly leaderboard), the same in every theme
+export const medal = { gold: '#F5B301', silver: '#B8C0CC', bronze: '#C77B3B' } as const;
 export const motion = { micro: 150, enter: 250, feedback: 300, pause: 600 } as const;
 export const shadow: Record<'card' | 'modal', ViewStyle> = {
   card: { shadowColor: '#000', shadowOpacity: 0.1, shadowRadius: 8, shadowOffset: { width: 0, height: 2 }, elevation: 4 },

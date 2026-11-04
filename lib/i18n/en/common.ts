@@ -29,6 +29,7 @@ export default {
     settings: 'Settings',
     grammar: 'Grammar',
     stats: 'Stats',
+    board: 'Weekly leaderboard',
     pcic: 'Learn',
     // the two beta tabs (Settings -> Beta) and the line on their placeholder screens.
     practice: 'Practice',
