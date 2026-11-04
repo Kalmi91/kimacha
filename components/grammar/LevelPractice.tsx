@@ -110,7 +110,12 @@ export default function LevelPractice({
       <Text testID="level-practice-header" style={[styles.counter, { color: colors.textMuted }]}>
         {s.practiceHeader(Math.min(index + 1, queue.length), queue.length)}
       </Text>
-      <View style={styles.closeSpacer} />
+      <ScreenFeedback
+        placement="inline"
+        level={userLevel}
+        languagePair={languagePair}
+        currentCard={`grammar-level-practice:${level}:${missed.id}`}
+      />
     </View>
   );
 
@@ -176,12 +181,6 @@ export default function LevelPractice({
     <View style={[styles.screen, { backgroundColor: colors.background }]}>
       {header}
       {body}
-      <ScreenFeedback
-        level={userLevel}
-        languagePair={languagePair}
-        currentCard={`grammar-level-practice:${level}:${missed.id}`}
-        bottomOffset={!done && !result ? dock.bottomOffset : undefined}
-      />
     </View>
   );
 }
