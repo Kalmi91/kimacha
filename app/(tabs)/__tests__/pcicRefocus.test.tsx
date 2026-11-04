@@ -28,7 +28,7 @@ jest.mock('@/data/pcic', () => ({
   setPcicTarget: () => {},
 }));
 
-import { act, render } from '@testing-library/react-native';
+import { act, render, waitFor } from '@testing-library/react-native';
 import { ActivityIndicator, TextInput } from 'react-native';
 
 import { getDb } from '@/lib/database';
@@ -62,6 +62,7 @@ describe('PCIC tab: refocus', () => {
     const { UNSAFE_queryByType } = render(<PcicScreen />);
     await flush();
     expect(mockSpeak).toHaveBeenCalledWith('life', 'en-US');
+    await waitFor(() => expect(focusSpy).toHaveBeenCalled());
     mockSpeak.mockClear();
     focusSpy.mockClear();
 
@@ -75,6 +76,6 @@ describe('PCIC tab: refocus', () => {
 
     expect(mockSpeak).toHaveBeenCalledTimes(1);
     expect(mockSpeak).toHaveBeenCalledWith('life', 'en-US');
-    expect(focusSpy).toHaveBeenCalled();
+    await waitFor(() => expect(focusSpy).toHaveBeenCalled());
   });
 });

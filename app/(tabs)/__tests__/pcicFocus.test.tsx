@@ -22,7 +22,7 @@ jest.mock('@/data/pcic', () => ({
   setPcicTarget: () => {},
 }));
 
-import { fireEvent, render } from '@testing-library/react-native';
+import { act, fireEvent, render, waitFor } from '@testing-library/react-native';
 import { TextInput } from 'react-native';
 
 import { getDb } from '@/lib/database';
@@ -47,18 +47,23 @@ describe('PCIC tab: field focus', () => {
     render(<PcicScreen />);
     await flush();
 
-    expect(focusSpy).toHaveBeenCalled();
+    await waitFor(() => expect(focusSpy).toHaveBeenCalled());
   });
 
   it('after reveal (Check) it does NOT regain focus while the same card is on screen', async () => {
+    const settle = () => act(async () => {
+      await new Promise((resolve) => setTimeout(resolve, 200));
+    });
     const { UNSAFE_getByType, getByText } = render(<PcicScreen />);
     await flush();
+    await settle();
     const callsAfterMount = focusSpy.mock.calls.length;
     expect(callsAfterMount).toBeGreaterThan(0);
 
     fireEvent.changeText(UNSAFE_getByType(TextInput), 'vida');
     fireEvent.press(getByText('✓ Check'));
     await flush();
+    await settle();
 
     expect(focusSpy.mock.calls.length).toBe(callsAfterMount);
   });
