@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "wrangler dev",
-    "build:web": "cd .. && npx expo export -p web",
+    "build:web": "cd .. && npx expo export -p web && node scripts/build-web-content.mjs dist",
     "deploy": "npm run build:web && wrangler deploy"
   },
   "devDependencies": {

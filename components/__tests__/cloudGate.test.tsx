@@ -31,6 +31,9 @@ jest.mock('@/lib/cloud/sync', () => ({
   exportCloudPayload: () => mockExportPayload(),
 }));
 
+const mockPrefetch = jest.fn();
+jest.mock('@/lib/games/content/webPacks', () => ({ prefetchContentPacks: () => mockPrefetch() }));
+
 jest.mock('expo-font', () => ({ useFonts: () => [true, null] }));
 jest.mock('@/lib/screenFeedback', () => ({ __esModule: true, default: () => null }));
 
@@ -79,7 +82,8 @@ async function signInAs(name: string, pin: string) {
 }
 
 beforeEach(() => {
-  [mockLogin, mockGetProgress, mockPutProgress, mockRestore, mockSnapshotKey, mockStartSync, mockExportPayload, reload].forEach((m) => m.mockReset());
+  [mockLogin, mockGetProgress, mockPutProgress, mockRestore, mockSnapshotKey, mockStartSync, mockExportPayload, reload, mockPrefetch].forEach((m) => m.mockReset());
+  mockPrefetch.mockResolvedValue(undefined);
   mockStartSync.mockReturnValue(jest.fn());
   mockRestore.mockResolvedValue(undefined);
   mockSnapshotKey.mockResolvedValue('snap');
@@ -91,6 +95,41 @@ afterEach(() => {
   delete (globalThis as any).localStorage;
   delete (globalThis as any).location;
   resetGuestStateForTests();
+});
+
+describe('CloudGate: the lesson packs', () => {
+  it('decides nothing until the packs are in: no app, no welcome, the visit not yet remembered', async () => {
+    const store = memoryStorage();
+    let done: () => void = () => {};
+    mockPrefetch.mockReturnValue(new Promise<void>((resolve) => (done = resolve)));
+    gate();
+    await flush();
+    expect(screen.queryByTestId('app')).toBeNull();
+    expect(screen.getByTestId('cloud-notice')).toBeTruthy();
+    expect(store.map.has(VISITED_KEY)).toBe(false);
+
+    await act(async () => done());
+    await flush();
+    expect(screen.getByTestId('app')).toBeTruthy();
+    expect(store.map.has(VISITED_KEY)).toBe(true);
+  });
+
+  it('a failed fetch shows the lesson error; Try again fetches again and goes on', async () => {
+    memoryStorage();
+    mockPrefetch.mockRejectedValueOnce(new Error('offline'));
+    gate();
+    await flush();
+    expect(screen.getByText('Could not load the lessons. Check your internet and try again.')).toBeTruthy();
+    expect(screen.queryByTestId('app')).toBeNull();
+    expect(screen.queryByTestId('cloud-back')).toBeNull();
+
+    await act(async () => {
+      fireEvent.press(screen.getByTestId('cloud-retry'));
+    });
+    await flush();
+    expect(mockPrefetch).toHaveBeenCalledTimes(2);
+    expect(screen.getByTestId('app')).toBeTruthy();
+  });
 });
 
 describe('CloudGate: the first visit', () => {

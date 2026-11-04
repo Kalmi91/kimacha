@@ -2,7 +2,6 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { TextInput } from 'react-native';
 import { router } from 'expo-router';
 import { speak, speakAuto, speakSequence, stopSpeaking } from '@/lib/speech';
-
 import { getDb } from '@/lib/database';
 import { useLearner } from '@/lib/learner';
 import { getBeta, useBeta } from '@/lib/beta';

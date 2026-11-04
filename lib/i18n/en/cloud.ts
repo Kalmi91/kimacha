@@ -34,6 +34,7 @@ export default {
     errorServer: 'Something went wrong. Try again in a moment.',
     loading: 'Loading your progress...',
     loadFailed: 'Could not load your progress.',
+    contentLoadFailed: 'Could not load the lessons. Check your internet and try again.',
     retry: 'Try again',
     backToLogin: 'Back to sign-in',
   },

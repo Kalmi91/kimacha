@@ -61,6 +61,7 @@
     "test:ci": "jest --ci --coverage --maxWorkers=2",
     "test:mutation": "stryker run",
     "gen:content": "node scripts/gen-content-index.mjs",
+    "build:web-content": "node scripts/build-web-content.mjs dist",
     "gen:names": "node scripts/gen-corpus-names.mjs",
     "check:de-course": "node scripts/grammar-de-course-check.mjs",
     "audit:data": "node scripts/words-open-check.mjs && node scripts/validate-en-track.mjs && node scripts/audit-corpus-en.mjs && node scripts/audit-games.mjs && node scripts/grammar-de-course-check.mjs",
