@@ -16,8 +16,9 @@ export type BetaFlag = 'practiceTab' | 'sentenceTab' | 'xpV2' | 'levels' | 'prac
 export const BETA_FLAGS: readonly BetaFlag[] = ['practiceTab', 'sentenceTab', 'xpV2', 'levels', 'practiceDictation', 'practiceScramble', 'practiceMatch', 'practiceOpposites', 'practiceSituations', 'sentenceMistakes', 'sentenceHint', 'sentenceMix', 'speechTab'];
 
 export const BETA_DEFAULTS: Readonly<Record<BetaFlag, boolean>> = {
-  practiceTab: false,
-  sentenceTab: false,
+  // the Practice and Sentences tabs are on from the start (Kálmán, 2026-11-04: the intro video shows them); the switch hides the tab.
+  practiceTab: true,
+  sentenceTab: true,
   xpV2: false,
   levels: false,
   // the Practice tab games are on from the start (Kálmán, 2026-10-21); the switch hides one.
@@ -26,7 +27,7 @@ export const BETA_DEFAULTS: Readonly<Record<BetaFlag, boolean>> = {
   practiceMatch: true,
   practiceOpposites: true,
   practiceSituations: true,
-  // New flags from sentenceMistakes on ship ON by default (Kálmán 3a); the older ones above stay off.
+  // New flags from sentenceMistakes on ship ON by default (Kálmán 3a); the older xpV2 and levels stay off.
   // (sentenceListening was one of them until FB570: the listening rung of the sentence ladder is always on.)
   sentenceMistakes: true,
   sentenceHint: true,

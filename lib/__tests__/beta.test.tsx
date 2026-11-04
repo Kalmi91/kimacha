@@ -19,10 +19,10 @@ beforeEach(async () => {
 });
 
 describe('beta defaults', () => {
-  it('has the old four flags off and every game flag on', () => {
+  it('has xpV2 and levels off and every other flag on', () => {
     expect([...BETA_FLAGS]).toEqual(['practiceTab', 'sentenceTab', 'xpV2', 'levels', 'practiceDictation', 'practiceScramble', 'practiceMatch', 'practiceOpposites', 'practiceSituations', 'sentenceMistakes', 'sentenceHint', 'sentenceMix', 'speechTab']);
     for (const f of BETA_FLAGS) {
-      const on = !['practiceTab', 'sentenceTab', 'xpV2', 'levels'].includes(f);
+      const on = !['xpV2', 'levels'].includes(f);
       expect(BETA_DEFAULTS[f]).toBe(on);
       expect(getBeta(f)).toBe(on);
     }
@@ -69,26 +69,26 @@ describe('setBeta / loadBeta', () => {
   });
 
   it('a new app run (cache cleared) reads the saved flags back', async () => {
-    await setBeta('practiceTab', true);
+    await setBeta('xpV2', true);
     __resetBetaForTest();
-    expect(getBeta('practiceTab')).toBe(false);
+    expect(getBeta('xpV2')).toBe(false);
     await loadBeta();
-    expect(getBeta('practiceTab')).toBe(true);
-    await setBeta('practiceTab', false);
+    expect(getBeta('xpV2')).toBe(true);
+    await setBeta('xpV2', false);
     __resetBetaForTest();
     await loadBeta();
-    expect(getBeta('practiceTab')).toBe(false);
+    expect(getBeta('xpV2')).toBe(false);
   });
 });
 
 describe('useBeta', () => {
   it('starts off, follows setBeta, and goes back off', async () => {
-    const { result } = renderHook(() => useBeta('sentenceTab'));
+    const { result } = renderHook(() => useBeta('xpV2'));
     await flush();
     expect(result.current).toBe(false);
-    await act(async () => { await setBeta('sentenceTab', true); });
+    await act(async () => { await setBeta('xpV2', true); });
     expect(result.current).toBe(true);
-    await act(async () => { await setBeta('sentenceTab', false); });
+    await act(async () => { await setBeta('xpV2', false); });
     expect(result.current).toBe(false);
   });
 

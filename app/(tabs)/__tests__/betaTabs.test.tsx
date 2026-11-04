@@ -66,9 +66,11 @@ describe('tab bar: the three beta tabs', () => {
     for (const name of ['index', 'course', 'stats', 'settings']) expect(tabLine(view, name)).toMatch(/\|shown$/);
     const order = view.getAllByTestId(/^tab-/).map((n) => String(n.props.children).split('|')[0]);
     expect(order.filter((n) => n !== 'practice' && n !== 'sentences' && n !== 'speak')).toEqual(['index', 'course', 'stats', 'settings']);
-    // the Speak tab sits between Sentences and Stats
+    // Grammar, Sentences, Speak, Practice, Stats: Practice comes after the tabs that teach (Kálmán, 2026-11-04)
+    expect(order.indexOf('sentences')).toBe(order.indexOf('course') + 1);
     expect(order.indexOf('speak')).toBe(order.indexOf('sentences') + 1);
-    expect(order.indexOf('stats')).toBe(order.indexOf('speak') + 1);
+    expect(order.indexOf('practice')).toBe(order.indexOf('speak') + 1);
+    expect(order.indexOf('stats')).toBe(order.indexOf('practice') + 1);
     view.unmount();
   });
 

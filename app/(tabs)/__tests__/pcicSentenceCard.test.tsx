@@ -78,6 +78,8 @@ describe('PCIC tab: sentence card', () => {
     await getDb().setOnboarding('en', 'es');
     await getDb().setPcicLevel('A1');
     mockSpeak.mockClear();
+    // the cards on the Words tab come only while the Sentences tab is switched off (it is on by default)
+    await setBeta('sentenceTab', false);
   });
 
   afterEach(async () => {
