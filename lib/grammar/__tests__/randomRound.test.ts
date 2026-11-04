@@ -17,6 +17,7 @@ import {
   metaFromRows,
   newRun,
   nextMode,
+  otherWrongTopics,
   overallScore,
   phaseProgress,
   pickNext,
@@ -81,7 +82,12 @@ function runWith(over: Partial<RoundRun> = {}): RoundRun {
 }
 
 // Plays like the screen: pick, skip an empty phase, answer (evidence first), until the round is done.
-function playRound(start: RoundRun, ctx: PickCtx, okFn: (topicId: string, run: RoundRun) => boolean = () => true): RoundRun {
+function playRound(
+  start: RoundRun,
+  ctx: PickCtx,
+  okFn: (topicId: string, run: RoundRun) => boolean = () => true,
+  onPick?: (pick: { topicId: string; qid: string }, run: RoundRun) => void,
+): RoundRun {
   let run = start;
   for (let guard = 0; currentPhase(run) !== 'done'; guard++) {
     if (guard > 500) throw new Error('round did not finish');
@@ -90,6 +96,7 @@ function playRound(start: RoundRun, ctx: PickCtx, okFn: (topicId: string, run: R
       run = skipPhase(run, ctx);
       continue;
     }
+    onPick?.(pick, run);
     const topic = ctx.topics.find((t) => t.id === pick.topicId) as PickTopic;
     const q = ctx.questionIds(pick.topicId).find((x) => x.id === pick.qid);
     expect(q).toBeDefined();
@@ -439,11 +446,15 @@ describe('pickNext: check', () => {
     expect(pick?.qid).not.toBe('chk0');
   });
 
-  it('prefers a weak topic over a known one and a core-plus topic on a tie', () => {
+  it('prefers a weak topic over a known one and a core-plus topic on a tie (once every topic has answers)', () => {
     const evidence = new Map<string, TopicEvidence>([
       ['a1-x', ev([true, true, true, true, true])],
       ['a1-y', ev([true, true, true, true, true])],
       ['a1-z', ev([false, false, false])],
+      ['a2-x', ev([true, true, true, true, true])],
+      ['a2-y', ev([true, true, true, true, true])],
+      ['b1-x', ev([true, true, true, true, true])],
+      ['b1-y', ev([true, true, true, true, true])],
     ]);
     for (let seed = 1; seed <= 10; seed++) {
       expect(pickNext(runWith({ seed }), makeCtx({ evidence }))!.topicId).toBe('a1-z');
@@ -476,6 +487,103 @@ describe('pickNext: check', () => {
     const ctx = makeCtx({ topics: [TOPICS[0]], n: 2 });
     const pick = pickNext(runWith({ pending: { topicId: 'a1-x', qid: 'a1-x#0' } }), ctx)!;
     expect(pick.qid).toBe('a1-x#1');
+  });
+});
+
+// FB568: the check keeps testing new grammar units; a topic that was never answered comes before any answered one.
+describe('pickNext: check, new topics first', () => {
+  const syllabus = (n: number, tiers: PickTopic['tier'][] = ['core']): PickTopic[] =>
+    Array.from({ length: n }, (_, i) => ({ id: `t${i}`, level: LEVELS[i % LEVELS.length], tier: tiers[i % tiers.length] }));
+  const checkOf = (run: RoundRun) => run.steps.filter((s) => s.phase === 'check');
+  // Before every pick of the check: while a topic has no evidence, the pick must be one of those.
+  const onlyNewWhileAny = (ctx: PickCtx) => (pick: { topicId: string }, run: RoundRun) => {
+    if (currentPhase(run) !== 'check') return;
+    const fresh = ctx.topics.filter((t) => !ctx.evidence.has(t.id)).map((t) => t.id);
+    if (fresh.length > 0) expect(fresh).toContain(pick.topicId);
+  };
+
+  it('a never-answered topic beats an answered one at the same level, whatever the weak score', () => {
+    const evidence = new Map<string, TopicEvidence>([['a1-x', ev([false, false, false])]]);
+    for (let seed = 1; seed <= 10; seed++) {
+      expect(['a1-y', 'a1-z']).toContain(pickNext(runWith({ seed }), makeCtx({ evidence }))!.topicId);
+    }
+    // one answer is an answer too (no percent yet, but not new any more)
+    evidence.set('a1-y', ev([true]));
+    for (let seed = 1; seed <= 10; seed++) {
+      expect(pickNext(runWith({ seed }), makeCtx({ evidence }))!.topicId).toBe('a1-z');
+    }
+  });
+
+  it('when the ladder level has none left, the nearest level with a never-answered topic is used before any answered topic', () => {
+    const answered = (levels: Level[]) =>
+      new Map<string, TopicEvidence>(TOPICS.filter((t) => levels.includes(t.level)).map((t) => [t.id, ev([false, false, false])]));
+    for (let seed = 1; seed <= 10; seed++) {
+      const a2 = pickNext(runWith({ seed }), makeCtx({ evidence: answered(['A1']) }))!;
+      expect(TOPICS.find((t) => t.id === a2.topicId)!.level).toBe('A2');
+      const b1 = pickNext(runWith({ seed }), makeCtx({ evidence: answered(['A1', 'A2']) }))!;
+      expect(TOPICS.find((t) => t.id === b1.topicId)!.level).toBe('B1');
+    }
+    // the ladder is at B1, B1 is used up: the nearest level (A2) before A1
+    const lowerFirst = pickNext(runWith({ startLevel: 'B1' }), makeCtx({ evidence: answered(['B1']) }))!;
+    expect(TOPICS.find((t) => t.id === lowerFirst.topicId)!.level).toBe('A2');
+  });
+
+  it('a never-answered topic without a free question does not hold the answered ones back', () => {
+    const evidence = new Map<string, TopicEvidence>(TOPICS.map((t) => [t.id, ev([false, false, false])]));
+    evidence.delete('a2-x');
+    const ctx = makeCtx({ evidence, counts: { 'a2-x': 0 } });
+    expect(pickNext(runWith(), ctx)).not.toBeNull();
+    expect(pickNext(runWith(), ctx)!.topicId).not.toBe('a2-x');
+  });
+
+  it('an all-right learner has been asked every topic after ceil(topics / CHECK_SIZE) rounds, new ones first', () => {
+    const topics = syllabus(25);
+    const ctx = makeCtx({ topics, n: 4 });
+    const rounds = Math.ceil(topics.length / CHECK_SIZE);
+    for (let r = 0; r < rounds; r++) {
+      const run = playRound(newRun('mixed', 30 + r, 'A1'), ctx, () => true, onlyNewWhileAny(ctx));
+      expect(checkOf(run)).toHaveLength(CHECK_SIZE);
+      if ((r + 1) * CHECK_SIZE <= topics.length) expect(new Set(checkOf(run).map((s) => s.topicId)).size).toBe(CHECK_SIZE);
+    }
+    expect(topics.every((t) => ctx.evidence.has(t.id))).toBe(true);
+  });
+
+  it('a learner with wrong answers meets only never-answered topics in the check too, while there are any', () => {
+    const topics = syllabus(25);
+    const ctx = makeCtx({ topics, n: 6 });
+    const rounds = Math.ceil(topics.length / CHECK_SIZE);
+    for (let r = 0; r < rounds; r++) {
+      const run = playRound(newRun('mixed', 40 + r, 'A1'), ctx, (_t, cur) => cur.steps.length % 3 !== 0, onlyNewWhileAny(ctx));
+      expect(checkOf(run)).toHaveLength(CHECK_SIZE);
+      // weak topics keep their practice and re-check
+      expect(run.weak.length).toBeGreaterThan(0);
+      expect(run.steps.filter((s) => s.phase === 'practice').every((s) => run.weak.includes(s.topicId))).toBe(true);
+      expect(run.steps.filter((s) => s.phase === 'recheck')).toHaveLength(run.weak.length);
+    }
+    expect(topics.every((t) => ctx.evidence.has(t.id))).toBe(true);
+  });
+
+  it('respects the tier filter of ctx.topics: a topic that is not in it is never asked', () => {
+    const all = syllabus(30, ['core', 'full', 'perfect']);
+    const topics = all.filter((t) => t.tier === 'core');
+    const ctx = makeCtx({ topics, n: 4 });
+    const allowed = new Set(topics.map((t) => t.id));
+    for (let r = 0; r < 3; r++) {
+      const run = playRound(newRun('mixed', 50 + r, 'A1'), ctx, () => true, onlyNewWhileAny(ctx));
+      expect(checkOf(run).every((s) => allowed.has(s.topicId))).toBe(true);
+      expect(checkOf(run)).toHaveLength(CHECK_SIZE);
+    }
+    expect(topics.every((t) => ctx.evidence.has(t.id))).toBe(true);
+    expect(all.filter((t) => !allowed.has(t.id)).some((t) => ctx.evidence.has(t.id))).toBe(false);
+  });
+
+  it('once every topic has answers the old scoring applies again: the weakest topic of the ladder level', () => {
+    const topics = syllabus(12);
+    const evidence = new Map<string, TopicEvidence>(topics.map((t) => [t.id, ev([true, true, true, true, true])]));
+    evidence.set('t3', ev([false, false, false])); // t3 is at A1 (3 % 3 = 0), weak
+    for (let seed = 1; seed <= 10; seed++) {
+      expect(pickNext(runWith({ seed }), makeCtx({ topics, evidence }))!.topicId).toBe('t3');
+    }
   });
 });
 
@@ -621,6 +729,22 @@ describe('pickNext: full', () => {
     const run = playRound(newRun('full', 11, 'A1'), ctx);
     expect(run.steps.some((s) => s.topicId === 'a1-x')).toBe(false);
   });
+
+  it('FB568: starts a never-answered topic before one with 1-2 answers, even at a level with more started topics', () => {
+    // earlier rounds left A2 and B1 with one or two answers each; this round started a1-x, A1 has two never-answered topics left
+    const evidence = new Map<string, TopicEvidence>([
+      ['a2-x', ev([true])],
+      ['a2-y', ev([true, true])],
+      ['b1-x', ev([true])],
+      ['b1-y', ev([true])],
+    ]);
+    const ctx = makeCtx({ evidence });
+    ctx.evidence.set('a1-x', ev([true]));
+    const steps = [step({ phase: 'full', topicId: 'a1-x', qid: 'a1-x#0' })];
+    for (let seed = 1; seed <= 10; seed++) {
+      expect(['a1-y', 'a1-z']).toContain(pickNext({ ...newRun('full', seed, 'A1'), steps }, ctx)!.topicId);
+    }
+  });
 });
 
 describe('a whole mixed round', () => {
@@ -645,6 +769,26 @@ describe('a whole mixed round', () => {
     expect(currentPhase(run)).toBe('done');
     const qids = run.steps.map((s) => s.qid);
     expect(new Set(qids).size).toBe(qids.length);
+  });
+});
+
+describe('otherWrongTopics', () => {
+  it('lists the wrong topics that did not make it into the capped weak list, in the order first asked wrong', () => {
+    const topics = ['t1', 't2', 't3', 't4', 't5', 't6'];
+    const oks = [false, true, false, false, false, true, false, false, true, true];
+    let run = runWith();
+    oks.forEach((ok, i) => {
+      run = recordAnswer(run, step({ topicId: topics[i % topics.length], qid: `chk${i}`, ok }), makeCtx({ topics: topics.map((id) => ({ id, level: 'A1', tier: 'core' })) }));
+    });
+    // wrong: t1 twice, t2, t3, t4, t5 once each: five wrong topics, the weak list keeps three
+    expect(run.weak).toEqual(['t1', 't2', 't3']);
+    expect(otherWrongTopics(run)).toEqual(['t4', 't5']);
+  });
+
+  it('is empty when every wrong topic is weak or nothing is wrong, and lists a topic once', () => {
+    expect(otherWrongTopics(runWith({ steps: checkSteps([true, true, true]) }))).toEqual([]);
+    expect(otherWrongTopics(runWith({ steps: checkSteps([false, false], ['a1-x', 'a1-y']), weak: ['a1-x', 'a1-y'] }))).toEqual([]);
+    expect(otherWrongTopics(runWith({ steps: checkSteps([false, false, false], ['a1-x']), weak: [] }))).toEqual(['a1-x']);
   });
 });
 

@@ -61,7 +61,9 @@ import { lessonFor } from '@/lib/grammar/syllabus';
 import { buildLessonTest, type LessonTestQuestion } from '@/lib/grammar/lessonTest';
 import {
   GRAMMAR_RANDOM_KEY,
+  MAX_WEAK_TOPICS,
   META_ITEM_ID,
+  PRACTICE_SIZE,
   RUN_ITEM_ID,
   evidenceFromRows,
   runFromRows,
@@ -252,6 +254,40 @@ describe.each(['brand', 'classic'] as const)('random grammar round (%s palette)'
     await press(`random-open-${saved.weak[0]}`);
     expect(mockPush).toHaveBeenCalledWith(`/grammar/${saved.weak[0]}`);
     expect(screen.getByTestId('random-practice-these')).toBeTruthy(); // the result pause stays
+  });
+
+  it('FB568: the check asks new topics, and a wrong topic that does not fit the capped weak list is a tappable row too, outside the practice', async () => {
+    await mixedNext();
+    await open();
+    for (let i = 0; i < 10; i++) await answer(i >= 4); // the first four answers are wrong, each at a different new topic
+    const saved = runFromRows(await rows())!;
+    const wrongTopics = [...new Set(saved.steps.filter((st) => !st.ok).map((st) => st.topicId))];
+    expect(wrongTopics.length).toBeGreaterThan(MAX_WEAK_TOPICS);
+    expect(saved.weak).toHaveLength(MAX_WEAK_TOPICS);
+    const other = wrongTopics.filter((id) => !saved.weak.includes(id));
+    expect(other.length).toBeGreaterThan(0);
+    // every topic with a wrong answer has a row that opens its lesson; only the weak ones are in the weak list
+    for (const id of wrongTopics) expect(screen.getByTestId(`random-open-${id}`)).toBeTruthy();
+    for (const id of other) expect(screen.getByTestId(`random-other-${id}`)).toHaveTextContent(TITLES[id]);
+    for (const id of other) expect(screen.queryByTestId(`random-weak-${id}`)).toBeNull();
+    await press(`random-open-${other[0]}`);
+    expect(mockPush).toHaveBeenCalledWith(`/grammar/${other[0]}`);
+    expect(screen.getByTestId('random-practice-these')).toBeTruthy(); // a push: the result pause stays
+
+    // the practice and the re-check stay on the weak topics only
+    await press('random-practice-these');
+    for (let i = 0; i < PRACTICE_SIZE; i++) {
+      expect(other).not.toContain(Object.keys(TITLES).find((id) => TITLES[id] === text('random-practice-title')));
+      await answer(true, true);
+      await press('random-next');
+    }
+    for (let i = 0; i < saved.weak.length; i++) await answer(true);
+
+    // the end screen lists them too
+    mockPush.mockClear();
+    expect(screen.getByTestId('random-end-check')).toBeTruthy();
+    await press(`random-open-${other[0]}`);
+    expect(mockPush).toHaveBeenCalledWith(`/grammar/${other[0]}`);
   });
 
   it('a full round marks the topic that is ticked off: 5+ answers, 80%, two kinds', async () => {

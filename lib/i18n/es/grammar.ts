@@ -115,6 +115,7 @@ const es: typeof en = {
     fullIntro: 'Prueba completa: también salen temas que aún no estudiaste. Es normal fallar.',
     finishedAt: (lvl: string) => `Terminaste en ${lvl}`,
     weakTitle: 'Temas débiles',
+    otherWrongTitle: 'También fallaste',
     noWeak: 'No hubo temas débiles en esta ronda.',
     practiceThese: (n: number) => `Practicar estos (${n})`,
     rule: 'Regla ›',

@@ -115,6 +115,7 @@ const hu: typeof en = {
     fullIntro: 'Átfogó felmérő: még nem tanult témák is jönnek. A hiba itt várható.',
     finishedAt: (lvl: string) => `Szint a végén: ${lvl}`,
     weakTitle: 'Gyenge témák',
+    otherWrongTitle: 'Szintén hibás volt',
     noWeak: 'Ebben a körben nem volt gyenge téma.',
     practiceThese: (n: number) => `Gyakorlás (${n})`,
     rule: 'Szabály ›',

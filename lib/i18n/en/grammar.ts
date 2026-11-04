@@ -129,6 +129,7 @@ export default {
     fullIntro: 'Full check: topics you have not learned yet come too. Wrong answers are expected.',
     finishedAt: (lvl: string) => `Finished at ${lvl}`,
     weakTitle: 'Weak topics',
+    otherWrongTitle: 'Also missed',
     noWeak: 'No weak topics in this round.',
     practiceThese: (n: number) => `Practice these (${n})`,
     rule: 'Rule ›',
