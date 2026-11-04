@@ -16,18 +16,19 @@ import { t } from '@/lib/i18n';
 import { answerInputProps } from '@/lib/inputProps';
 import type { Lang } from '@/lib/languagePair';
 import { speechLang } from '@/lib/languages';
-import { matchSpoken, type SpokenMatch } from '@/lib/practice/situationMatch';
+import type { SpokenMatch } from '@/lib/practice/situationMatch';
 import { speak, stopSpeaking } from '@/lib/speech';
 import { isMicOffError, isNothingHeardError, useRecognizer } from '@/lib/speechRecognition';
 import { TOP_ROW, upperFooterMax } from '@/lib/speech/layout';
-import { MAX_TRIES, answerTurn, lineOf, skipTurn, type AnswerMode, type SpeechStory, type StoryRun } from '@/lib/speech/stories';
+import { MAX_TRIES, answerTurn, bubbleOf, closingOf, judgeAnswer, progressOf, skipTurn, speakable, turnById, type AnswerMode, type SpeechStory, type StoryRun } from '@/lib/speech/stories';
 import { useTheme } from '@/lib/ThemeContext';
 
 // The story itself: the character's lines as chat bubbles, the learner's answers as bubbles on the other side, and below, docked
 // where it never needs scrolling to, what to do now (say it or type it), what was heard when it was wrong, the model after Help
 // or two wrong tries. The answer is checked in the background (lib/practice/situationMatch.ts, `*` = a free word): a right one
-// shows its bubble at once and, after motion.feedback, the next line comes by itself and is read aloud. The run (lib/speech/
-// stories.ts) is already one turn on while that bubble waits, so the screen keeps its own `shown`. Leaving keeps the run.
+// shows its bubble at once and, after motion.feedback, her reaction and the next line (one bubble) come by themselves and are read
+// aloud. The run (lib/speech/stories.ts) is already one turn on while that bubble waits, so the screen keeps its own `shown`.
+// Leaving keeps the run. Help (or two wrong tries) shows every line that can be said on this turn.
 // The docked footer is two parts: a scrollable upper one (what was heard, the ask, the hint) that is capped to the room that is
 // left (lib/speech/layout.ts), and a fixed lower one (input and Check, or the mic; Next; the links) that is always on screen.
 
@@ -57,18 +58,18 @@ export default function SpeechPlay({ story, run, target, source, strictAccents, 
   const g = useGrammarColors();
   const s = t();
   const sx = s.speechTab;
-  const total = story.turns.length;
   const lang = speechLang(target);
-  // The turns whose line is on screen are 0..shown.
-  const [shown, setShown] = useState(Math.min(run.turn, total - 1));
+  // The turns of the path whose line is on screen are 0..shown.
+  const [shown, setShown] = useState(Math.min(run.answers.length, run.path.length - 1));
   const [translated, setTranslated] = useState<ReadonlySet<number>>(new Set());
   // the turn Help was pressed on
   const [helpAt, setHelpAt] = useState<number | null>(null);
   const [typed, setTyped] = useState('');
   const [heard, setHeard] = useState<{ text: string; match: SpokenMatch; typed: boolean } | null>(null);
   // the answer is in and its bubble is on screen, the next line is on its way
-  const waiting = shown < run.turn;
-  const turn = story.turns[shown];
+  const waiting = shown < run.answers.length;
+  const turn = turnById(story, run.path[shown]) ?? story.turns[0];
+  const progress = progressOf(story, run);
   const hintOn = !waiting && (helpAt === shown || run.tries >= MAX_TRIES);
   // the height of the fixed lower part of the footer, and what is left for the scrollable upper part
   const { height: windowH } = useWindowDimensions();
@@ -83,15 +84,15 @@ export default function SpeechPlay({ story, run, target, source, strictAccents, 
   const submit = (text: string, byTyping: boolean) => {
     const said = text.trim();
     if (waiting || run.done || !said) return;
-    const match = matchSpoken(said, turn.answers, { anyNumber: turn.anyNumber, lang: story.target, strictAccents: byTyping && strictAccents });
-    if (match.right) {
+    const { branch, match } = judgeAnswer(turn, said, { lang: story.target, strictAccents: byTyping && strictAccents });
+    if (branch !== null) {
       setHeard(null);
       setTyped('');
       setHelpAt(null);
     } else {
       setHeard({ text: said, match, typed: byTyping });
     }
-    onRun(answerTurn(run, story, { right: match.right, text: said }));
+    onRun(answerTurn(run, story, { branch, text: said }));
   };
   const rec = useRecognizer(lang, (text) => submit(text, false));
   const { abort } = rec;
@@ -123,41 +124,50 @@ export default function SpeechPlay({ story, run, target, source, strictAccents, 
   // A new turn closes the microphone; leaving the tab (it stays mounted) stops the read-aloud and the microphone.
   useEffect(() => {
     abort();
-  }, [run.turn, abort]);
+  }, [run.answers.length, abort]);
+  // The next line of a right answer is read aloud only while this tab is in front: the timer below can fire after a tab switch.
+  const focused = useRef(true);
   useFocusEffect(
-    useCallback(
-      () => () => {
+    useCallback(() => {
+      focused.current = true;
+      return () => {
+        focused.current = false;
         stopSpeaking();
         abort();
-      },
-      [abort],
-    ),
+      };
+    }, [abort]),
   );
   useEffect(() => () => stopSpeaking(), []);
 
   // the first line of a run that was just started is read aloud
   const readFirst = useRef(fresh);
   useEffect(() => {
-    if (readFirst.current) speak(lineOf(story, story.turns[0]), lang);
+    if (readFirst.current) speak(story.turns[0][story.target], lang);
   }, [story, lang]);
 
   // after a right answer (or Next) the next line comes by itself; after the last one the story is done
   const finishRef = useRef(onFinish);
+  const runRef = useRef(run);
   useEffect(() => {
     finishRef.current = onFinish;
+    runRef.current = run;
   });
+  const closing = closingOf(story, run, story.target);
   useEffect(() => {
     if (!waiting) return;
+    // her closing words (a last reply, no next line) are read aloud at once and stay a little longer on screen
+    if (run.done && closing && focused.current) speak(closing, lang);
     const id = setTimeout(() => {
       if (run.done) {
         finishRef.current();
         return;
       }
-      setShown(run.turn);
-      speak(lineOf(story, story.turns[run.turn]), lang);
-    }, motion.feedback);
+      const at = runRef.current.answers.length;
+      setShown(at);
+      if (focused.current) speak(bubbleOf(story, runRef.current, at, story.target), lang);
+    }, run.done && closing ? motion.feedback * 3 : motion.feedback);
     return () => clearTimeout(id);
-  }, [waiting, run.turn, run.done, story, lang]);
+  }, [waiting, run.answers.length, run.done, story, lang, closing]);
 
   // a new result or a new turn shows the upper part from its top (the red words first)
   useEffect(() => {
@@ -188,10 +198,27 @@ export default function SpeechPlay({ story, run, target, source, strictAccents, 
         </View>
       )}
       <Text style={[styles.yourTurn, { color: colors.textMuted }]}>{sx.yourTurn}</Text>
-      <Text testID="speech-ask" style={[styles.ask, { color: colors.text }]}>{turn.ask[source]}</Text>
+      <Text testID="speech-ask" style={[styles.ask, { color: colors.text }]}>{sx.ask(story.speaker)}</Text>
       {hintOn && (
-        <View style={[styles.hint, themedEdgeStyle(g), { borderColor: colors.border, backgroundColor: colors.card }]}>
-          <Text testID="speech-hint" style={[styles.hintText, { color: colors.text }]}>{`💡 ${turn.model}`}</Text>
+        <View testID="speech-hint" style={[styles.hint, themedEdgeStyle(g), { borderColor: colors.border, backgroundColor: colors.card }]}>
+          <Text style={[styles.hintTitle, { color: colors.textMuted }]}>{`💡 ${sx.canSay}`}</Text>
+          {turn.branches.flatMap((b, j) =>
+            b.say.map((line, k) => (
+              <View key={`${j}-${k}`} style={styles.hintRow}>
+                <SpeakButton
+                  testID={`speech-hint-listen-${j}-${k}`}
+                  accessibilityLabel={sx.listen}
+                  onPress={() => say(speakable(line[story.target]))}
+                  style={styles.tool}
+                  iconStyle={styles.toolIcon}
+                />
+                <View style={styles.hintTexts}>
+                  <Text testID={`speech-hint-line-${j}-${k}`} style={[styles.hintText, { color: colors.text }]}>{line[story.target]}</Text>
+                  <Text style={[styles.hintTranslation, { color: colors.textMuted }]}>{line[source]}</Text>
+                </View>
+              </View>
+            )),
+          )}
         </View>
       )}
       {rec.error && !waiting && (
@@ -302,17 +329,17 @@ export default function SpeechPlay({ story, run, target, source, strictAccents, 
       target={target}
       currentCard={`speech:${story.id}:${shown}`}
       hideLevelCounter
-      scrollKey={`${shown}:${run.turn}:${heard ? 1 : 0}`}
+      scrollKey={`${shown}:${run.answers.length}:${heard ? 1 : 0}`}
       onFrameLayout={setFrameH}
       top={
         <View style={styles.top} onLayout={(e) => setTopH(Math.round(e.nativeEvent.layout.height))}>
           <BackButton testID="speech-back" onPress={onBack} pressStyle={styles.backPress} arrowStyle={[styles.backArrow, { color: colors.text }]} />
-          <View accessible accessibilityLabel={sx.progressLabel(Math.min(run.turn + 1, total), total)} style={styles.progress}>
+          <View accessible accessibilityLabel={sx.progressLabel(progress.n, progress.total)} style={styles.progress}>
             <ProgressBar
               testID="speech-progress"
-              pct={(run.turn / total) * 100}
-              filled={run.turn}
-              segments={total}
+              pct={(run.answers.length / progress.total) * 100}
+              filled={run.answers.length}
+              segments={progress.total}
               brutalStyle={styles.bar}
               trackStyle={styles.track}
               trackColor={colors.border}
@@ -326,7 +353,7 @@ export default function SpeechPlay({ story, run, target, source, strictAccents, 
     >
       <View style={styles.chat}>
         <Text testID="speech-narration" style={[styles.narration, { color: colors.textMuted }]}>{story.intro[source]}</Text>
-        {story.turns.slice(0, shown + 1).map((line, n) => {
+        {run.path.slice(0, shown + 1).map((_id, n) => {
           const answer = run.answers[n];
           return (
             <View key={n} style={styles.exchange}>
@@ -336,7 +363,7 @@ export default function SpeechPlay({ story, run, target, source, strictAccents, 
                   <View style={styles.tools}>
                     <SpeakButton
                       testID={`speech-listen-${n}`}
-                      onPress={() => say(lineOf(story, line))}
+                      onPress={() => say(bubbleOf(story, run, n, story.target))}
                       style={styles.tool}
                       iconStyle={styles.toolIcon}
                     />
@@ -352,8 +379,8 @@ export default function SpeechPlay({ story, run, target, source, strictAccents, 
                     </Pressable>
                   </View>
                 </View>
-                <Text testID={`speech-line-${n}`} style={[styles.line, { color: colors.text }]}>{lineOf(story, line)}</Text>
-                {translated.has(n) && <Text testID={`speech-translation-${n}`} style={[styles.translation, { color: colors.textMuted }]}>{line[source]}</Text>}
+                <Text testID={`speech-line-${n}`} style={[styles.line, { color: colors.text }]}>{bubbleOf(story, run, n, story.target)}</Text>
+                {translated.has(n) && <Text testID={`speech-translation-${n}`} style={[styles.translation, { color: colors.textMuted }]}>{bubbleOf(story, run, n, source)}</Text>}
               </Card>
               {answer && (
                 <Card
@@ -369,6 +396,12 @@ export default function SpeechPlay({ story, run, target, source, strictAccents, 
             </View>
           );
         })}
+        {run.done && closingOf(story, run, source) && (
+          <Card style={styles.left} classicStyle={styles.bubble} boxStyle={styles.brutalBubble}>
+            <Text style={[styles.who, { color: colors.textMuted }]}>{story.speaker}</Text>
+            <Text testID="speech-closing" style={[styles.line, { color: colors.text }]}>{closing}</Text>
+          </Card>
+        )}
       </View>
     </GameFrame>
   );
@@ -408,7 +441,11 @@ const styles = StyleSheet.create({
   yourTurn: { fontSize: fontSize.xs, fontWeight: fontWeight.bold, textTransform: 'uppercase' },
   ask: { fontSize: fontSize.md, fontWeight: fontWeight.bold, marginBottom: spacing.sm },
   hint: { borderWidth: 2, borderRadius: radius.md, padding: spacing.sm, marginBottom: spacing.sm },
-  hintText: { fontSize: fontSize.sm },
+  hintTitle: { fontSize: fontSize.xs, fontWeight: fontWeight.bold, textTransform: 'uppercase' },
+  hintRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.xs },
+  hintTexts: { flex: 1 },
+  hintText: { fontSize: fontSize.md },
+  hintTranslation: { fontSize: fontSize.sm },
   micBox: { alignItems: 'center', gap: spacing.xs },
   mic: { width: BIG, height: BIG, borderRadius: radius.full, alignItems: 'center', justifyContent: 'center' },
   micIcon: { fontSize: fontSize.xxl },

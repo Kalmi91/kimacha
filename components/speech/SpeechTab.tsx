@@ -5,6 +5,7 @@ import SpeechDone from '@/components/speech/SpeechDone';
 import SpeechIntro from '@/components/speech/SpeechIntro';
 import SpeechList from '@/components/speech/SpeechList';
 import SpeechPlay from '@/components/speech/SpeechPlay';
+import SpeechPrep from '@/components/speech/SpeechPrep';
 import { PCIC_LEVELS, findPcicItem, type PcicLevel, type PcicTarget } from '@/data/pcic';
 import { getDb } from '@/lib/database';
 import { GRAMMAR_PROGRESS_KEY, doneGrammarTopicProgress } from '@/lib/grammar/syllabus';
@@ -40,12 +41,12 @@ import { localDateString } from '@/lib/usageStats';
 import { useLoadOnMount } from '@/lib/useLoadOnMount';
 import { useScreenLoad } from '@/lib/useScreenLoad';
 
-// The Speak tab (beta speechTab, PLAN-beszed): a story the learner talks into. Four screens, one component each: the list (level and
-// stories), the intro (new words, voice or typing), the story itself, and the end. This component holds what they share: the
+// The Speak tab (beta speechTab, PLAN-beszed): a story the learner talks into. Five screens, one component each: the list (level and
+// stories), the intro (new words, voice or typing), the preparation (what she will ask, what can be said), the story itself, and the end. This component holds what they share: the
 // direction, the open run (kept in the resume store after every answer, so leaving the tab and coming back, also after the app was
 // killed, continues where the learner was) and the finished stories (the `game_progress` table). No SRS writes, no XP.
 
-type Screen = 'list' | 'intro' | 'play' | 'done';
+type Screen = 'list' | 'intro' | 'prep' | 'play' | 'done';
 
 const isLevel = (x: unknown): x is PcicLevel => typeof x === 'string' && (PCIC_LEVELS as string[]).includes(x);
 
@@ -90,7 +91,7 @@ export default function SpeechTab() {
   // gets the end screen, and the list still shows the tick for this session.
   const recordFinish = useCallback(async (story: SpeechStory, done: StoryRun) => {
     const db = getDb();
-    const total = story.turns.length;
+    const total = done.path.length;
     const at = localDateString();
     setProgress((all) => new Map(all).set(story.id, finishedProgress(all.get(story.id), done, total, at)));
     try {
@@ -143,7 +144,7 @@ export default function SpeechTab() {
     backRef.current = () => {
       if (!story || screen === 'list') return false;
       if (screen === 'done') setRun(null);
-      setScreen('list');
+      setScreen(screen === 'prep' ? 'intro' : 'list');
       return true;
     };
   });
@@ -223,10 +224,13 @@ export default function SpeechTab() {
         mode={mode}
         micOk={micOk}
         onMode={chooseMode}
-        onStart={() => startRun(story, way)}
+        onStart={() => setScreen('prep')}
         onBack={toList}
       />
     );
+  }
+  if (screen === 'prep') {
+    return <SpeechPrep story={story} target={target} source={source} onStart={() => startRun(story, way)} onBack={() => setScreen('intro')} />;
   }
   if (screen === 'done' && run) {
     return (

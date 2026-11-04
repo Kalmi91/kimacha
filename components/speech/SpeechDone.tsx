@@ -40,7 +40,7 @@ export default function SpeechDone({ story, run, target, source, onAgain, onList
       <Text testID="speech-done" variant="title" style={[styles.title, { color: colors.text }]}>{sx.done}</Text>
       <Text style={[styles.outro, { color: colors.textMuted }]}>{story.outro[source]}</Text>
       <View style={styles.scoreBox}>
-        <Text testID="speech-score" style={[styles.score, { color: colors.text }]}>{`${run.firstTry}/${story.turns.length}`}</Text>
+        <Text testID="speech-score" style={[styles.score, { color: colors.text }]}>{`${run.firstTry}/${run.path.length}`}</Text>
         <Text style={[styles.scoreLabel, { color: colors.textMuted }]}>{sx.rightFirstTime}</Text>
       </View>
       <Pressable testID="speech-to-list" accessibilityRole="button" onPress={onList} style={styles.link}>

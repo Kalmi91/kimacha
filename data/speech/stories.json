@@ -20,91 +20,277 @@
     },
     "words": [
       { "es": "hola", "forms": ["hola"], "en": "hello", "hu": "szia", "de": "hallo" },
-      { "es": "ser", "forms": ["soy", "eres"], "en": "to be", "hu": "lenni", "de": "sein" },
+      { "es": "yo", "forms": ["yo"], "en": "I", "hu": "én", "de": "ich" },
+      { "es": "ser", "forms": ["soy", "eres", "es"], "en": "to be", "hu": "lenni", "de": "sein" },
+      { "es": "estar", "forms": ["estoy"], "en": "to be (where, how)", "hu": "lenni (hol, hogyan)", "de": "sein (wo, wie)" },
       { "es": "tu", "forms": ["tu"], "en": "your", "hu": "a te …-d", "de": "dein" },
+      { "es": "mi", "forms": ["mi"], "en": "my", "hu": "az én …-m", "de": "mein" },
       { "es": "la vecina", "forms": ["vecina"], "en": "neighbor (woman)", "hu": "szomszéd (nő)", "de": "Nachbarin" },
+      { "es": "vivir", "forms": ["vivo"], "en": "to live", "hu": "lakni, élni", "de": "wohnen, leben" },
+      { "es": "el, la", "forms": ["el"], "en": "the", "hu": "a, az", "de": "der, die, das" },
+      { "es": "el departamento", "forms": ["departamento"], "en": "apartment", "hu": "lakás", "de": "Wohnung" },
+      { "es": "al lado", "forms": ["al", "lado"], "en": "next door, beside", "hu": "mellette", "de": "nebenan" },
       { "es": "cómo", "forms": ["cómo"], "en": "how", "hu": "hogyan", "de": "wie" },
       { "es": "llamarse", "forms": ["me", "te", "llamo", "llamas"], "en": "to be called", "hu": "hívnak valahogy", "de": "heißen" },
-      { "es": "mucho", "forms": ["mucho"], "en": "much", "hu": "sok", "de": "viel" },
+      { "es": "el nombre", "forms": ["nombre"], "en": "name", "hu": "név", "de": "Name" },
+      { "es": "mucho", "forms": ["mucho", "mucha"], "en": "much, a lot", "hu": "sok", "de": "viel" },
       { "es": "mucho gusto", "forms": ["gusto"], "en": "nice to meet you", "hu": "örvendek", "de": "freut mich" },
       { "es": "de", "forms": ["de"], "en": "from, of", "hu": "-ból, -ből", "de": "aus, von" },
+      { "es": "Oaxaca", "forms": ["oaxaca"], "en": "Oaxaca (a state in southern Mexico)", "hu": "Oaxaca (mexikói állam délen)", "de": "Oaxaca (Bundesstaat im Süden Mexikos)" },
+      { "es": "pero", "forms": ["pero"], "en": "but", "hu": "de", "de": "aber" },
+      { "es": "ahora", "forms": ["ahora"], "en": "now", "hu": "most", "de": "jetzt" },
+      { "es": "aquí", "forms": ["aquí"], "en": "here", "hu": "itt", "de": "hier" },
+      { "es": "tú", "forms": ["tú"], "en": "you", "hu": "te", "de": "du" },
       { "es": "dónde", "forms": ["dónde"], "en": "where", "hu": "hol", "de": "wo" },
+      { "es": "venir", "forms": ["vengo"], "en": "to come", "hu": "jönni", "de": "kommen" },
       { "es": "qué", "forms": ["qué"], "en": "what, how", "hu": "mi, milyen", "de": "was, wie" },
       { "es": "interesante", "forms": ["interesante"], "en": "interesting", "hu": "érdekes", "de": "interessant" },
       { "es": "cuántos", "forms": ["cuántos"], "en": "how many", "hu": "hány", "de": "wie viele" },
       { "es": "el año", "forms": ["años"], "en": "year", "hu": "év", "de": "Jahr" },
       { "es": "tener", "forms": ["tengo", "tienes"], "en": "to have", "hu": "van (valakinek)", "de": "haben" },
+      { "es": "cuarenta", "forms": ["cuarenta"], "en": "forty", "hu": "negyven", "de": "vierzig" },
+      { "es": "ah, ay", "forms": ["ah", "ay"], "en": "ah, oh", "hu": "á, jaj", "de": "ah, oh" },
+      { "es": "no", "forms": ["no"], "en": "no, not", "hu": "nem", "de": "nein, nicht" },
+      { "es": "sí", "forms": ["sí"], "en": "yes", "hu": "igen", "de": "ja" },
+      { "es": "preferir", "forms": ["prefiero"], "en": "to prefer", "hu": "inkább szeretni", "de": "lieber mögen" },
+      { "es": "decir", "forms": ["decirlo"], "en": "to say", "hu": "mondani", "de": "sagen" },
+      { "es": "claro", "forms": ["claro"], "en": "of course", "hu": "persze", "de": "klar" },
+      { "es": "pasar", "forms": ["pasa"], "en": "to happen", "hu": "történni", "de": "passieren" },
+      { "es": "nada", "forms": ["nada"], "en": "nothing", "hu": "semmi", "de": "nichts" },
       { "es": "y", "forms": ["y"], "en": "and", "hu": "és", "de": "und" },
+      { "es": "o", "forms": ["o"], "en": "or", "hu": "vagy", "de": "oder" },
       { "es": "en", "forms": ["en"], "en": "in", "hu": "-ban, -ben", "de": "in" },
       { "es": "trabajar", "forms": ["trabajo", "trabajas"], "en": "to work", "hu": "dolgozni", "de": "arbeiten" },
-      { "es": "hablar", "forms": ["hablo", "hablas"], "en": "to speak", "hu": "beszélni", "de": "sprechen" },
+      { "es": "la escuela", "forms": ["escuela"], "en": "school", "hu": "iskola", "de": "Schule" },
+      { "es": "la maestra", "forms": ["maestra"], "en": "teacher (woman)", "hu": "tanárnő", "de": "Lehrerin" },
+      { "es": "el estudiante", "forms": ["estudiante"], "en": "student", "hu": "diák", "de": "Student/in" },
+      { "es": "estudiar", "forms": ["estudio", "estudias"], "en": "to study", "hu": "tanulni", "de": "lernen, studieren" },
+      { "es": "buscar", "forms": ["busco", "buscas"], "en": "to look for", "hu": "keresni", "de": "suchen" },
+      { "es": "la oficina", "forms": ["oficina"], "en": "office", "hu": "iroda", "de": "Büro" },
+      { "es": "gustar", "forms": ["gusta"], "en": "to like (it pleases)", "hu": "tetszeni", "de": "gefallen" },
+      { "es": "más o menos", "forms": ["más", "menos"], "en": "so-so", "hu": "úgy-ahogy", "de": "es geht so" },
+      { "es": "lo siento", "forms": ["lo", "siento"], "en": "I'm sorry", "hu": "sajnálom", "de": "es tut mir leid" },
+      { "es": "bueno", "forms": ["bueno"], "en": "good, well", "hu": "jó, na", "de": "gut, also" },
+      { "es": "la suerte", "forms": ["suerte"], "en": "luck", "hu": "szerencse", "de": "Glück" },
+      { "es": "las vacaciones", "forms": ["vacaciones"], "en": "vacation", "hu": "szabadság, nyaralás", "de": "Urlaub" },
+      { "es": "qué padre", "forms": ["padre"], "en": "how cool (Mexican)", "hu": "de király (mexikói)", "de": "wie cool (mexikanisch)" },
+      { "es": "hablar", "forms": ["hablo", "hablas", "hablar"], "en": "to speak", "hu": "beszélni", "de": "sprechen" },
       { "es": "español", "forms": ["español"], "en": "Spanish", "hu": "spanyol", "de": "Spanisch" },
       { "es": "muy", "forms": ["muy"], "en": "very", "hu": "nagyon", "de": "sehr" },
       { "es": "bien", "forms": ["bien"], "en": "well", "hu": "jól", "de": "gut" },
-      { "es": "bueno", "forms": ["bueno"], "en": "well, okay", "hu": "na, jó", "de": "also, gut" },
+      { "es": "un poco", "forms": ["un", "una", "poco"], "en": "a little", "hu": "egy kicsit", "de": "ein bisschen" },
+      { "es": "poder", "forms": ["puedo"], "en": "to be able to, can", "hu": "tudni, képesnek lenni", "de": "können" },
+      { "es": "preocuparse", "forms": ["preocupes"], "en": "to worry", "hu": "aggódni", "de": "sich Sorgen machen" },
+      { "es": "ayudar", "forms": ["ayudo"], "en": "to help", "hu": "segíteni", "de": "helfen" },
+      { "es": "irse", "forms": ["voy"], "en": "to go, to leave", "hu": "menni, elmenni", "de": "gehen, weggehen" },
+      { "es": "si", "forms": ["si"], "en": "if", "hu": "ha", "de": "wenn" },
+      { "es": "necesitar", "forms": ["necesitas"], "en": "to need", "hu": "szüksége van", "de": "brauchen" },
+      { "es": "algo", "forms": ["algo"], "en": "something", "hu": "valami", "de": "etwas" },
       { "es": "adiós", "forms": ["adiós"], "en": "goodbye", "hu": "viszlát", "de": "tschüss" },
-      { "es": "treinta", "forms": ["treinta"], "en": "thirty", "hu": "harminc", "de": "dreißig" },
-      { "es": "un, una", "forms": ["un", "una"], "en": "a, one", "hu": "egy", "de": "ein, eine" },
-      { "es": "la oficina", "forms": ["oficina"], "en": "office", "hu": "iroda", "de": "Büro" },
-      { "es": "un poco", "forms": ["poco"], "en": "a little", "hu": "egy kicsit", "de": "ein bisschen" },
       { "es": "gracias", "forms": ["gracias"], "en": "thank you", "hu": "köszönöm", "de": "danke" },
-      { "es": "Inglaterra", "forms": ["Inglaterra"], "en": "England", "hu": "Anglia", "de": "England" }
+      { "es": "hasta luego", "forms": ["hasta", "luego"], "en": "see you later", "hu": "Viszlát!", "de": "bis später" },
+      { "es": "nos vemos", "forms": ["nos", "vemos"], "en": "see you", "hu": "találkozunk", "de": "wir sehen uns" }
     ],
     "turns": [
       {
-        "es": "¡Hola! Soy Lupita, tu vecina. ¿Cómo te llamas?",
-        "en": "Hi! I'm Lupita, your neighbor. What's your name?",
-        "hu": "Szia! Lupita vagyok, a szomszédod. Hogy hívnak?",
-        "de": "Hallo! Ich bin Lupita, deine Nachbarin. Wie heißt du?",
-        "ask": { "en": "Say your name.", "es": "Di tu nombre.", "hu": "Mondd meg a neved.", "de": "Sag deinen Namen." },
-        "model": "Me llamo ___.",
-        "answers": ["Me llamo *", "Soy *", "Mi nombre es *"]
+        "id": "name",
+        "es": "¡Hola! Soy Lupita, tu vecina. Vivo en el departamento de al lado. ¿Cómo te llamas?",
+        "en": "Hi! I'm Lupita, your neighbor. I live in the apartment next door. What's your name?",
+        "hu": "Szia! Lupita vagyok, a szomszédod. A szomszéd lakásban lakom. Hogy hívnak?",
+        "de": "Hallo! Ich bin Lupita, deine Nachbarin. Ich wohne in der Wohnung nebenan. Wie heißt du?",
+        "branches": [
+          {
+            "answers": ["Me llamo *", "Soy *", "Mi nombre es *", "*"],
+            "say": [
+              { "es": "Me llamo ___.", "en": "My name is ___.", "hu": "A nevem ___.", "de": "Ich heiße ___." },
+              { "es": "Soy ___.", "en": "I'm ___.", "hu": "___ vagyok.", "de": "Ich bin ___." },
+              { "es": "Mi nombre es ___.", "en": "My name is ___.", "hu": "A nevem ___.", "de": "Mein Name ist ___." }
+            ],
+            "reply": { "es": "Mucho gusto.", "en": "Nice to meet you.", "hu": "Örvendek.", "de": "Freut mich." },
+            "next": "from"
+          }
+        ]
       },
       {
-        "es": "Mucho gusto. ¿De dónde eres?",
-        "en": "Nice to meet you. Where are you from?",
-        "hu": "Örvendek. Honnan jöttél?",
-        "de": "Freut mich. Woher kommst du?",
-        "ask": { "en": "Say where you are from.", "es": "Di de dónde eres.", "hu": "Mondd meg, honnan jöttél.", "de": "Sag, woher du kommst." },
-        "model": "Soy de Inglaterra.",
-        "answers": ["Soy de *", "Vengo de *", "De *"]
+        "id": "from",
+        "es": "Yo soy de Oaxaca, pero ahora vivo aquí. ¿Y tú, de dónde eres?",
+        "en": "I'm from Oaxaca, but I live here now. And you, where are you from?",
+        "hu": "Én Oaxacából való vagyok, de most itt élek. És te honnan való vagy?",
+        "de": "Ich komme aus Oaxaca, aber jetzt wohne ich hier. Und woher kommst du?",
+        "branches": [
+          {
+            "answers": ["Soy de *", "Vengo de *", "De *", "Soy *", "*"],
+            "say": [
+              { "es": "Soy de ___.", "en": "I'm from ___.", "hu": "Innen vagyok: ___.", "de": "Ich bin aus ___." },
+              { "es": "Vengo de ___.", "en": "I come from ___.", "hu": "Innen jöttem: ___.", "de": "Ich komme aus ___." }
+            ],
+            "reply": { "es": "¡Qué interesante!", "en": "How interesting!", "hu": "Milyen érdekes!", "de": "Wie interessant!" },
+            "next": "age"
+          }
+        ]
       },
       {
-        "es": "¡Qué interesante! ¿Cuántos años tienes?",
-        "en": "How interesting! How old are you?",
-        "hu": "Milyen érdekes! Hány éves vagy?",
-        "de": "Wie interessant! Wie alt bist du?",
-        "ask": { "en": "Say how old you are.", "es": "Di cuántos años tienes.", "hu": "Mondd meg, hány éves vagy.", "de": "Sag, wie alt du bist." },
-        "model": "Tengo treinta años.",
-        "answers": ["Tengo treinta años"],
-        "anyNumber": true
+        "id": "age",
+        "es": "Yo tengo cuarenta años. ¿Cuántos años tienes?",
+        "en": "I'm forty. How old are you?",
+        "hu": "Negyven éves vagyok. Te hány éves vagy?",
+        "de": "Ich bin vierzig. Wie alt bist du?",
+        "branches": [
+          {
+            "answers": ["Tengo * años", "Tengo *", "Cuarenta"],
+            "anyNumber": true,
+            "say": [{ "es": "Tengo ___ años.", "en": "I'm ___ years old.", "hu": "___ éves vagyok.", "de": "Ich bin ___ Jahre alt." }],
+            "reply": { "es": "Ah, muy bien.", "en": "Oh, very good.", "hu": "Á, nagyon jó.", "de": "Ah, sehr gut." },
+            "next": "work"
+          },
+          {
+            "answers": ["Prefiero no decirlo", "Prefiero no decir"],
+            "say": [{ "es": "Prefiero no decirlo.", "en": "I'd rather not say.", "hu": "Inkább nem mondom meg.", "de": "Das sage ich lieber nicht." }],
+            "reply": { "es": "¡Claro, no pasa nada!", "en": "Of course, no problem!", "hu": "Persze, semmi gond!", "de": "Klar, kein Problem!" },
+            "next": "work"
+          }
+        ]
       },
       {
-        "es": "¿Y en qué trabajas?",
-        "en": "And what do you do for work?",
-        "hu": "És mivel foglalkozol?",
-        "de": "Und was arbeitest du?",
-        "ask": { "en": "Say what your work is.", "es": "Di en qué trabajas.", "hu": "Mondd meg, mi a munkád.", "de": "Sag, was du arbeitest." },
-        "model": "Trabajo en una oficina.",
-        "answers": ["Trabajo en *", "Soy *", "No trabajo"]
+        "id": "work",
+        "es": "Yo trabajo en una escuela, soy maestra. ¿Y tú? ¿En qué trabajas?",
+        "en": "I work at a school, I'm a teacher. And you? What do you do?",
+        "hu": "Én egy iskolában dolgozom, tanárnő vagyok. És te? Te mivel foglalkozol?",
+        "de": "Ich arbeite in einer Schule, ich bin Lehrerin. Und du? Was machst du beruflich?",
+        "main": 3,
+        "branches": [
+          {
+            "answers": ["No trabajo", "No tengo trabajo"],
+            "say": [{ "es": "No trabajo.", "en": "I don't work.", "hu": "Nem dolgozom.", "de": "Ich arbeite nicht." }],
+            "reply": { "es": "No pasa nada.", "en": "That's fine.", "hu": "Semmi baj.", "de": "Das ist in Ordnung." },
+            "next": "study"
+          },
+          {
+            "answers": ["Soy estudiante", "Estudio *"],
+            "say": [{ "es": "Soy estudiante.", "en": "I'm a student.", "hu": "Diák vagyok.", "de": "Ich studiere." }],
+            "reply": { "es": "¡Qué bien!", "en": "Great!", "hu": "Nagyszerű!", "de": "Das ist toll!" },
+            "next": "speak"
+          },
+          {
+            "answers": ["Busco trabajo", "Busco *"],
+            "say": [{ "es": "Busco trabajo.", "en": "I'm looking for work.", "hu": "Munkát keresek.", "de": "Ich suche Arbeit." }],
+            "reply": { "es": "¡Mucha suerte!", "en": "Good luck!", "hu": "Sok szerencsét!", "de": "Viel Glück!" },
+            "next": "speak"
+          },
+          {
+            "answers": ["Trabajo en *", "Trabajo de *", "Soy *"],
+            "say": [
+              { "es": "Trabajo en una oficina.", "en": "I work in an office.", "hu": "Egy irodában dolgozom.", "de": "Ich arbeite in einem Büro." },
+              { "es": "Soy ___.", "en": "I'm a ___.", "hu": "___ vagyok.", "de": "Ich bin ___." }
+            ],
+            "reply": { "es": "¡Qué bien!", "en": "Great!", "hu": "Nagyszerű!", "de": "Das ist toll!" },
+            "next": "like"
+          }
+        ]
       },
       {
+        "id": "like",
+        "es": "¿Te gusta tu trabajo?",
+        "en": "Do you like your job?",
+        "hu": "Szereted a munkádat?",
+        "de": "Gefällt dir deine Arbeit?",
+        "branches": [
+          {
+            "answers": ["No mucho", "Más o menos", "No *", "No"],
+            "say": [
+              { "es": "No mucho.", "en": "Not much.", "hu": "Nem nagyon.", "de": "Nicht so sehr." },
+              { "es": "Más o menos.", "en": "So-so.", "hu": "Úgy-ahogy.", "de": "Es geht so." }
+            ],
+            "reply": { "es": "Ay, lo siento.", "en": "Oh, I'm sorry.", "hu": "Jaj, sajnálom.", "de": "Oh, das tut mir leid." },
+            "next": "speak"
+          },
+          {
+            "answers": ["Sí *", "Me gusta *", "Mucho", "Sí"],
+            "say": [
+              { "es": "Sí, me gusta.", "en": "Yes, I like it.", "hu": "Igen, szeretem.", "de": "Ja, es gefällt mir." },
+              { "es": "Sí, mucho.", "en": "Yes, a lot.", "hu": "Igen, nagyon.", "de": "Ja, sehr." }
+            ],
+            "reply": { "es": "¡Qué bueno!", "en": "How nice!", "hu": "De jó!", "de": "Wie schön!" },
+            "next": "speak"
+          }
+        ]
+      },
+      {
+        "id": "study",
+        "es": "¿Estudias o buscas trabajo?",
+        "en": "Are you studying or looking for work?",
+        "hu": "Tanulsz, vagy munkát keresel?",
+        "de": "Studierst du oder suchst du Arbeit?",
+        "branches": [
+          {
+            "answers": ["Estudio *"],
+            "say": [{ "es": "Estudio español.", "en": "I'm studying Spanish.", "hu": "Spanyolul tanulok.", "de": "Ich lerne Spanisch." }],
+            "reply": { "es": "¡Qué bien!", "en": "Great!", "hu": "Nagyszerű!", "de": "Das ist toll!" },
+            "next": "speak"
+          },
+          {
+            "answers": ["Busco *"],
+            "say": [{ "es": "Busco trabajo.", "en": "I'm looking for work.", "hu": "Munkát keresek.", "de": "Ich suche Arbeit." }],
+            "reply": { "es": "¡Mucha suerte!", "en": "Good luck!", "hu": "Sok szerencsét!", "de": "Viel Glück!" },
+            "next": "speak"
+          },
+          {
+            "answers": ["Estoy de vacaciones"],
+            "say": [{ "es": "Estoy de vacaciones.", "en": "I'm on vacation.", "hu": "Szabadságon vagyok.", "de": "Ich habe Urlaub." }],
+            "reply": { "es": "¡Qué padre!", "en": "How cool!", "hu": "De király!", "de": "Wie cool!" },
+            "next": "speak"
+          }
+        ]
+      },
+      {
+        "id": "speak",
         "es": "¿Hablas español?",
         "en": "Do you speak Spanish?",
         "hu": "Beszélsz spanyolul?",
         "de": "Sprichst du Spanisch?",
-        "ask": { "en": "Say that you speak a little Spanish.", "es": "Di que hablas un poco de español.", "hu": "Mondd, hogy egy kicsit beszélsz spanyolul.", "de": "Sag, dass du ein bisschen Spanisch sprichst." },
-        "model": "Hablo un poco de español.",
-        "answers": ["Hablo un poco de español", "Un poco"]
+        "branches": [
+          {
+            "answers": ["Hablo un poco", "Un poco", "Hablo poco", "Más o menos"],
+            "say": [
+              { "es": "Hablo un poco.", "en": "I speak a little.", "hu": "Egy kicsit beszélek.", "de": "Ich spreche ein bisschen." },
+              { "es": "Un poco.", "en": "A little.", "hu": "Egy kicsit.", "de": "Ein bisschen." }
+            ],
+            "reply": { "es": "¡Pero hablas muy bien!", "en": "But you speak very well!", "hu": "De nagyon jól beszélsz!", "de": "Aber du sprichst sehr gut!" },
+            "next": "bye"
+          },
+          {
+            "answers": ["No mucho", "No *", "No"],
+            "say": [{ "es": "No mucho.", "en": "Not much.", "hu": "Nem nagyon.", "de": "Nicht viel." }],
+            "reply": { "es": "No te preocupes, yo te ayudo.", "en": "Don't worry, I'll help you.", "hu": "Ne aggódj, segítek.", "de": "Keine Sorge, ich helfe dir." },
+            "next": "bye"
+          },
+          {
+            "answers": ["Sí *", "Hablo *", "Puedo hablar *", "Sí"],
+            "say": [
+              { "es": "Sí, hablo español.", "en": "Yes, I speak Spanish.", "hu": "Igen, beszélek spanyolul.", "de": "Ja, ich spreche Spanisch." },
+              { "es": "Puedo hablar español.", "en": "I can speak Spanish.", "hu": "Tudok spanyolul beszélni.", "de": "Ich kann Spanisch sprechen." }
+            ],
+            "reply": { "es": "¡Hablas muy bien!", "en": "You speak very well!", "hu": "Nagyon jól beszélsz!", "de": "Du sprichst sehr gut!" },
+            "next": "bye"
+          }
+        ]
       },
       {
-        "es": "¡Hablas muy bien! Bueno, adiós.",
-        "en": "You speak very well! Well, goodbye.",
-        "hu": "Nagyon jól beszélsz! Na, szia.",
-        "de": "Du sprichst sehr gut! Also, tschüss.",
-        "ask": { "en": "Say thank you and goodbye.", "es": "Da las gracias y despídete.", "hu": "Köszönd meg, és köszönj el.", "de": "Bedanke dich und verabschiede dich." },
-        "model": "Gracias, adiós.",
-        "answers": ["Gracias, adiós", "Gracias, hasta luego", "Gracias, nos vemos"]
+        "id": "bye",
+        "es": "Bueno, me voy. Si necesitas algo, aquí estoy. ¡Adiós!",
+        "en": "Well, I'm off. If you need anything, I'm here. Bye!",
+        "hu": "Na, én megyek. Ha szükséged van valamire, itt vagyok. Viszlát!",
+        "de": "Na dann, ich gehe jetzt. Wenn du etwas brauchst, bin ich da. Tschüss!",
+        "branches": [
+          {
+            "answers": ["Gracias *", "Adiós *", "Hasta luego", "Nos vemos", "Igualmente", "Gracias", "Adiós"],
+            "say": [
+              { "es": "Gracias, adiós.", "en": "Thanks, bye.", "hu": "Köszönöm, viszlát.", "de": "Danke, tschüss." },
+              { "es": "Hasta luego.", "en": "See you later.", "hu": "Viszlát!", "de": "Bis später." },
+              { "es": "Nos vemos.", "en": "See you.", "hu": "Találkozunk.", "de": "Wir sehen uns." }
+            ]
+          }
+        ]
       }
     ]
   }

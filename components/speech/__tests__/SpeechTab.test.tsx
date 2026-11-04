@@ -1,4 +1,4 @@
-// The Speak tab (components/speech/*, lib/speech/stories.ts): list, intro, the story (typed and by voice), the end. The speech
+// The Speak tab (components/speech/*, lib/speech/stories.ts): list, intro, preparation, the story (typed and by voice), the end. The speech
 // recognizer is the stand-in of jest.setup.js (its listeners are fired with __emit); the read-aloud is mocked like in the other
 // Practice tests, so nothing plays. The clock is fake: a right answer brings the next line after motion.feedback.
 
@@ -56,8 +56,11 @@ import {
   SPEECH_PROGRESS_KEY,
   STORIES,
   answerTurn,
+  bubbleOf,
+  judgeAnswer,
   savedRun,
   startStory,
+  turnById,
   unknownWords,
   type AnswerMode,
   type StoryRun,
@@ -93,14 +96,18 @@ const mockKnownTokens = knownTokens as jest.Mock;
 const flush = makeFlush(20);
 
 const story = STORIES[0];
-const total = story.turns.length;
+// the first branch everywhere: name, from, age, work, study, speak, bye
+const WAY = ['name', 'from', 'age', 'work', 'study', 'speak', 'bye'];
+const total = WAY.length;
 const sx = t().speechTab;
 // a run on the given turn: every earlier turn answered right at the first try
 const at = (turn: number, mode: AnswerMode = 'type', patch: Partial<StoryRun> = {}): StoryRun => {
   let run = startStory(story, mode);
-  for (let i = 0; i < turn; i++) run = answerTurn(run, story, { right: true, text: `answer ${i}` });
+  for (let i = 0; i < turn; i++) run = answerTurn(run, story, { branch: 0, text: `answer ${i}` });
   return { ...run, ...patch };
 };
+// the text of bubble n of a run that is on the n-th turn of the first way: her reaction to the answer before, then the line
+const lineText = (n: number, lang: 'es' | 'en' = 'es') => bubbleOf(story, at(n), n, lang);
 const saveRun = (run: StoryRun) => saveResumeValue(getDb(), SPEECH_MODE, savedRun(run));
 const savedNow = async () => (await loadResumeValue(getDb(), SPEECH_MODE)) as StoryRun | null;
 const rows = () => getDb().getGameProgress(SPEECH_PROGRESS_KEY);
@@ -116,6 +123,11 @@ const press = async (view: View, testID: string) => {
   await flush();
 };
 // time passes, the timers fire
+// the intro's button leads to the preparation, its Start to the story
+const startFromIntro = async (view: View) => {
+  await press(view, 'speech-get-ready');
+  await press(view, 'speech-start');
+};
 const advance = async (ms: number = motion.feedback) => {
   await act(async () => {
     jest.advanceTimersByTime(ms);
@@ -260,7 +272,7 @@ describe('Speak tab: the intro', () => {
     expect(view.getByTestId('speech-mode-voice').props.accessibilityState).toMatchObject({ disabled: true, selected: false });
     expect(view.getByTestId('speech-mode-type').props.accessibilityState).toMatchObject({ selected: true });
     expect(view.getByTestId('speech-no-mic').props.children).toBe(sx.noMic);
-    await press(view, 'speech-start');
+    await startFromIntro(view);
     expect(view.getByTestId('speech-type-input')).toBeTruthy();
     expect(view.queryByTestId('speech-mic')).toBeNull();
     expect(view.queryByTestId('speech-mode-toggle')).toBeNull();
@@ -271,10 +283,10 @@ describe('Speak tab: the intro', () => {
   it('Start begins the run, saves it and reads the first line aloud', async () => {
     const view = await mount();
     await press(view, `speech-story-${story.id}`);
-    await press(view, 'speech-start');
-    expect(view.getByTestId('speech-line-0').props.children).toBe(story.turns[0].es);
-    expect(mockSpeak).toHaveBeenCalledWith(story.turns[0].es, 'es-MX');
-    expect(await savedNow()).toMatchObject({ id: story.id, mode: 'voice', turn: 0, done: false });
+    await startFromIntro(view);
+    expect(view.getByTestId('speech-line-0').props.children).toBe(lineText(0));
+    expect(mockSpeak).toHaveBeenCalledWith(lineText(0), 'es-MX');
+    expect(await savedNow()).toMatchObject({ id: story.id, mode: 'voice', path: WAY.slice(0, 1), done: false });
     expect(feedbackButton(view)).toBeTruthy();
     view.unmount();
   });
@@ -285,18 +297,18 @@ describe('Speak tab: the story, typed', () => {
     await saveRun(at(0));
     const view = await mount();
     expect(view.getByTestId('speech-narration').props.children).toBe(story.intro.en);
-    expect(text(view, 'speech-ask')).toBe('Say your name.');
-    await type(view, 'me llamo Kálmán');
-    expect(text(view, 'speech-answer-0')).toBe('Me llamo Kálmán');
+    expect(text(view, 'speech-ask')).toBe(sx.ask(story.speaker));
+    await type(view, 'me llamo Ana');
+    expect(text(view, 'speech-answer-0')).toBe('Me llamo Ana');
     expect(text(view, 'speech-answer-who-0')).toBe('You ✓');
     expect(view.queryByTestId('speech-line-1')).toBeNull();
     expect(view.queryByTestId('speech-result')).toBeNull();
     mockSpeak.mockClear();
     await advance();
-    expect(text(view, 'speech-line-1')).toBe(story.turns[1].es);
-    expect(text(view, 'speech-ask')).toBe('Say where you are from.');
-    expect(mockSpeak).toHaveBeenCalledWith(story.turns[1].es, 'es-MX');
-    expect(await savedNow()).toMatchObject({ turn: 1, tries: 0, firstTry: 1 });
+    expect(text(view, 'speech-line-1')).toBe(lineText(1));
+    expect(text(view, 'speech-ask')).toBe(sx.ask(story.speaker));
+    expect(mockSpeak).toHaveBeenCalledWith(lineText(1), 'es-MX');
+    expect(await savedNow()).toMatchObject({ path: WAY.slice(0, 2), tries: 0, firstTry: 1 });
     // the typing field is empty for the next turn
     expect(view.getByTestId('speech-type-input').props.value).toBe('');
     view.unmount();
@@ -307,47 +319,51 @@ describe('Speak tab: the story, typed', () => {
     const view = await mount();
     await type(view, 'Hola, me llamo Juan Pablo');
     expect(text(view, 'speech-answer-0')).toBe('Hola, me llamo Juan Pablo');
-    expect(await savedNow()).toMatchObject({ turn: 1, firstTry: 1 });
+    expect(await savedNow()).toMatchObject({ path: WAY.slice(0, 2), firstTry: 1 });
     view.unmount();
   });
 
   it('a wrong answer shows what was written and the red word; the try is counted; the next turn does not come', async () => {
-    await saveRun(at(1));
+    await saveRun(at(3));
     const view = await mount();
-    await type(view, 'soy Hungría');
+    await type(view, 'hola');
     expect(view.getByTestId('speech-result')).toBeTruthy();
-    expect(text(view, 'speech-heard')).toBe(sx.wrote('soy Hungría'));
-    const wrong = view.getAllByTestId('speech-said-wrong');
-    expect(wrong).toHaveLength(1);
-    expect(wrong[0].props.children).toBe('de');
-    expect(view.getAllByTestId('speech-said-right').map((n) => n.props.children)).toEqual(['Soy', 'Hungría']);
+    expect(text(view, 'speech-heard')).toBe(sx.wrote('hola'));
+    // the red words come from the closest answer over all the branches of the turn
+    const { match } = judgeAnswer(turnById(story, 'work')!, 'hola', { lang: 'es' });
+    expect(match.right).toBe(false);
+    expect(view.getAllByTestId('speech-said-wrong').map((n) => n.props.children)).toEqual(match.words.filter((w) => !w.right).map((w) => w.word));
+    expect(view.getAllByTestId('speech-said-right').map((n) => n.props.children)).toEqual(match.words.filter((w) => w.right).map((w) => w.word));
     expect(view.getByText(sx.missingWord)).toBeTruthy();
-    expect(view.queryByTestId('speech-answer-1')).toBeNull();
+    expect(view.queryByTestId('speech-answer-3')).toBeNull();
     expect(view.queryByTestId('speech-skip')).toBeNull();
     expect(view.queryByTestId('speech-hint')).toBeNull();
     await advance(1000);
-    expect(view.queryByTestId('speech-line-2')).toBeNull();
-    expect(await savedNow()).toMatchObject({ turn: 1, tries: 1 });
+    expect(view.queryByTestId('speech-line-4')).toBeNull();
+    expect(await savedNow()).toMatchObject({ path: WAY.slice(0, 4), tries: 1 });
     // the right answer takes the box away
-    await type(view, 'soy de Hungría');
+    await type(view, 'no trabajo');
     expect(view.queryByTestId('speech-result')).toBeNull();
-    expect(await savedNow()).toMatchObject({ turn: 2, tries: 0, firstTry: 1 });
+    expect(await savedNow()).toMatchObject({ path: WAY.slice(0, 5), tries: 0, firstTry: 3 });
     view.unmount();
   });
 
-  it('after two wrong answers the model and Next appear; Next gives the turn up and the story goes on', async () => {
-    await saveRun(at(0));
+  it('after two wrong answers the lines and Next appear; Next gives the turn up and the story follows the main branch', async () => {
+    await saveRun(at(3));
     const view = await mount();
     await type(view, 'hola');
     await type(view, 'adiós');
-    expect(text(view, 'speech-hint')).toBe('💡 Me llamo ___.');
+    expect(text(view, 'speech-hint-line-0-0')).toBe('No trabajo.');
     await press(view, 'speech-skip');
-    expect(text(view, 'speech-answer-0')).toBe('Me llamo ___.');
-    expect(text(view, 'speech-answer-who-0')).toBe('You (model)');
+    expect(text(view, 'speech-answer-3')).toBe('Trabajo en una oficina.');
+    expect(text(view, 'speech-answer-who-3')).toBe('You (model)');
     expect(view.queryByTestId('speech-skip')).toBeNull();
     await advance();
-    expect(text(view, 'speech-line-1')).toBe(story.turns[1].es);
-    expect(await savedNow()).toMatchObject({ turn: 1, tries: 0, firstTry: 0, answers: [{ ok: false }] });
+    // a given-up turn has no reaction of hers: the bubble is the next line only
+    expect(text(view, 'speech-line-4')).toBe(turnById(story, 'like')!.es);
+    const saved = (await savedNow()) as StoryRun;
+    expect(saved).toMatchObject({ path: [...WAY.slice(0, 4), 'like'], tries: 0, firstTry: 3 });
+    expect(saved.answers[3]).toMatchObject({ ok: false, branch: 3 });
     view.unmount();
   });
 
@@ -356,7 +372,7 @@ describe('Speak tab: the story, typed', () => {
     const view = await mount();
     expect(view.queryByTestId('speech-hint')).toBeNull();
     await press(view, 'speech-help');
-    expect(text(view, 'speech-hint')).toBe('💡 Me llamo ___.');
+    expect(text(view, 'speech-hint-line-0-0')).toBe('Me llamo ___.');
     expect(view.queryByTestId('speech-help')).toBeNull();
     await type(view, 'soy Ana');
     await advance();
@@ -370,37 +386,47 @@ describe('Speak tab: the story, typed', () => {
     const view = await mount();
     expect(view.queryByTestId('speech-translation-0')).toBeNull();
     await press(view, 'speech-translate-0');
-    expect(text(view, 'speech-translation-0')).toBe(story.turns[0].en);
+    expect(text(view, 'speech-translation-0')).toBe(lineText(0, 'en'));
     await press(view, 'speech-translate-0');
     expect(view.queryByTestId('speech-translation-0')).toBeNull();
     fireEvent.press(view.getByTestId('speech-listen-0'));
-    expect(mockSpeak).toHaveBeenCalledWith(story.turns[0].es, 'es-MX');
+    expect(mockSpeak).toHaveBeenCalledWith(lineText(0), 'es-MX');
     view.unmount();
   });
 
-  it('a number is any number; the accents count only when the setting says so (typed)', async () => {
+  it('a number is any number', async () => {
     await saveRun(at(2));
     const view = await mount();
     await type(view, 'tengo 35 años');
-    expect(await savedNow()).toMatchObject({ turn: 3, firstTry: 3 });
+    expect(await savedNow()).toMatchObject({ path: WAY.slice(0, 4), firstTry: 3 });
     view.unmount();
+  });
+
+  it('the accents count only when the setting says so (typed)', async () => {
+    await saveRun(at(total - 1));
+    const loose = await mount();
+    await type(loose, 'adios');
+    await advance();
+    expect(text(loose, 'speech-done')).toBe('Done');
+    loose.unmount();
     await getDb().setStrictAccents(true);
-    await saveRun(at(2));
+    await saveRun(at(total - 1));
     const strict = await mount();
-    await type(strict, 'tengo treinta anos');
-    expect(await savedNow()).toMatchObject({ turn: 2, tries: 1 });
-    expect(strict.getAllByTestId('speech-said-wrong').map((n) => n.props.children)).toEqual(['años']);
-    await type(strict, 'tengo treinta años');
-    expect(await savedNow()).toMatchObject({ turn: 3 });
+    await type(strict, 'adios');
+    expect(await savedNow()).toMatchObject({ path: WAY, tries: 1 });
+    expect(strict.getAllByTestId('speech-said-wrong').length).toBeGreaterThan(0);
+    await type(strict, 'adiós');
+    await advance();
+    expect(text(strict, 'speech-done')).toBe('Done');
     strict.unmount();
   });
 
   it('the last answer leads to the end screen: score, the progress row, the saved run dropped', async () => {
     await saveRun(at(total - 1));
     const view = await mount();
-    expect(text(view, 'speech-ask')).toBe('Say thank you and goodbye.');
+    expect(text(view, 'speech-ask')).toBe(sx.ask(story.speaker));
     await type(view, 'gracias, adiós');
-    expect(text(view, 'speech-answer-5')).toBe('Gracias, adiós');
+    expect(text(view, 'speech-answer-6')).toBe('Gracias, adiós');
     expect(view.queryByTestId('speech-done')).toBeNull();
     await advance();
     expect(text(view, 'speech-done')).toBe('Done');
@@ -422,10 +448,10 @@ describe('Speak tab: the story, typed', () => {
     expect((await rows())[0].data).toMatchObject({ best: 6, total });
     mockSpeak.mockClear();
     await press(view, 'speech-again');
-    expect(text(view, 'speech-line-0')).toBe(story.turns[0].es);
+    expect(text(view, 'speech-line-0')).toBe(lineText(0));
     expect(view.queryByTestId('speech-line-1')).toBeNull();
-    expect(mockSpeak).toHaveBeenCalledWith(story.turns[0].es, 'es-MX');
-    expect(await savedNow()).toMatchObject({ turn: 0, firstTry: 0, answers: [], mode: 'type' });
+    expect(mockSpeak).toHaveBeenCalledWith(lineText(0), 'es-MX');
+    expect(await savedNow()).toMatchObject({ path: WAY.slice(0, 1), firstTry: 0, answers: [], mode: 'type' });
     await press(view, 'speech-back');
     expect(view.getByTestId(`speech-story-continue-${story.id}`)).toBeTruthy();
     view.unmount();
@@ -448,15 +474,15 @@ describe('Speak tab: leaving and coming back', () => {
     await saveRun(at(2));
     const view = await mount();
     expect(view.queryByTestId('speech-levels')).toBeNull();
-    for (let n = 0; n <= 2; n++) expect(text(view, `speech-line-${n}`)).toBe(story.turns[n].es);
+    for (let n = 0; n <= 2; n++) expect(text(view, `speech-line-${n}`)).toBe(lineText(n));
     expect(view.queryByTestId('speech-line-3')).toBeNull();
     expect(text(view, 'speech-answer-0')).toBe('Answer 0');
     expect(text(view, 'speech-answer-1')).toBe('Answer 1');
     expect(view.queryByTestId('speech-answer-2')).toBeNull();
-    expect(text(view, 'speech-ask')).toBe('Say how old you are.');
+    expect(text(view, 'speech-ask')).toBe(sx.ask(story.speaker));
     expect(mockSpeak).not.toHaveBeenCalled();
     fireEvent.press(view.getByTestId('speech-listen-2'));
-    expect(mockSpeak).toHaveBeenCalledWith(story.turns[2].es, 'es-MX');
+    expect(mockSpeak).toHaveBeenCalledWith(lineText(2), 'es-MX');
     expect(feedbackButton(view)).toBeTruthy();
     view.unmount();
   });
@@ -466,9 +492,9 @@ describe('Speak tab: leaving and coming back', () => {
     const view = await mount();
     await press(view, 'speech-back');
     expect(view.getByTestId(`speech-story-continue-${story.id}`).props.children).toBe('Continue');
-    expect(await savedNow()).toMatchObject({ turn: 3 });
+    expect(await savedNow()).toMatchObject({ path: WAY.slice(0, 4) });
     await press(view, `speech-story-${story.id}`);
-    expect(text(view, 'speech-line-3')).toBe(story.turns[3].es);
+    expect(text(view, 'speech-line-3')).toBe(lineText(3));
     expect(view.queryByTestId('speech-start')).toBeNull();
     view.unmount();
   });
@@ -514,24 +540,25 @@ describe('Speak tab: by voice', () => {
     expect(ExpoSpeechRecognitionModule.start).toHaveBeenCalledWith(expect.objectContaining({ lang: 'es-MX', continuous: false }));
     await emit('start');
     expect(view.getByText(sx.listening)).toBeTruthy();
-    await heardFinal('soy de Hungría');
-    expect(text(view, 'speech-answer-1')).toBe('Soy de Hungría');
+    await heardFinal('soy de México');
+    expect(text(view, 'speech-answer-1')).toBe('Soy de México');
     await advance();
-    expect(text(view, 'speech-line-2')).toBe(story.turns[2].es);
+    expect(text(view, 'speech-line-2')).toBe(lineText(2));
     view.unmount();
   });
 
   it('a wrong result shows "I heard" and the red word; the recognizer writes no accents, so strict accents do not apply', async () => {
     await getDb().setStrictAccents(true);
-    await saveRun(at(2, 'voice'));
+    await saveRun(at(total - 1, 'voice'));
     const view = await mount();
     await press(view, 'speech-mic');
-    await heardFinal('treinta años');
-    expect(text(view, 'speech-heard')).toBe(sx.heard('treinta años'));
-    expect(view.getAllByTestId('speech-said-wrong').map((n) => n.props.children)).toEqual(['Tengo']);
+    await heardFinal('hola');
+    expect(text(view, 'speech-heard')).toBe(sx.heard('hola'));
+    expect(view.getAllByTestId('speech-said-wrong').length).toBeGreaterThan(0);
     await press(view, 'speech-mic');
-    await heardFinal('tengo treinta anos');
-    expect(await savedNow()).toMatchObject({ turn: 3, firstTry: 2 });
+    await heardFinal('adios');
+    await advance();
+    expect(text(view, 'speech-done')).toBe('Done');
     view.unmount();
   });
 
@@ -561,10 +588,10 @@ describe('Speak tab: by voice', () => {
     await press(view, 'speech-mode-toggle');
     expect(ExpoSpeechRecognitionModule.abort).toHaveBeenCalled();
     expect(view.getByTestId('speech-type-input')).toBeTruthy();
-    expect(await savedNow()).toMatchObject({ mode: 'type', turn: 1 });
+    expect(await savedNow()).toMatchObject({ mode: 'type', path: WAY.slice(0, 2) });
     expect(await loadResumeValue(getDb(), SPEECH_ANSWER_KEY)).toBe('type');
-    await heardFinal('soy de Hungría');
-    expect(await savedNow()).toMatchObject({ turn: 1, tries: 0 });
+    await heardFinal('soy de México');
+    expect(await savedNow()).toMatchObject({ path: WAY.slice(0, 2), tries: 0 });
     // and back
     await press(view, 'speech-mode-toggle');
     expect(view.getByTestId('speech-mic')).toBeTruthy();
@@ -578,13 +605,13 @@ describe('Speak tab: by voice', () => {
     await press(view, 'speech-mic');
     await emit('start');
     (ExpoSpeechRecognitionModule.abort as jest.Mock).mockClear();
-    await heardFinal('soy de Hungría');
+    await heardFinal('soy de México');
     // nothing else closed it (a voice result does not): the turn change did
     expect(ExpoSpeechRecognitionModule.abort).toHaveBeenCalled();
     await advance();
     // the next turn is on screen; a stray result of the old listening is not accepted
     await heardFinal('tengo treinta años');
-    expect(await savedNow()).toMatchObject({ turn: 2, tries: 0 });
+    expect(await savedNow()).toMatchObject({ path: WAY.slice(0, 3), tries: 0 });
     expect(within(view.getByTestId('speech-screen')).queryByTestId('speech-answer-2')).toBeNull();
     view.unmount();
   });
@@ -612,10 +639,10 @@ describe('Speak tab: the microphone and the screen', () => {
     fireEvent.press(view.getByTestId('speech-listen-0'));
     await flush();
     expect(ExpoSpeechRecognitionModule.abort).toHaveBeenCalled();
-    expect(mockSpeak).toHaveBeenCalledWith(story.turns[0].es, 'es-MX');
+    expect(mockSpeak).toHaveBeenCalledWith(lineText(0), 'es-MX');
     // what the microphone heard of the read-aloud is not an answer, and costs no try
-    await heardFinal(story.turns[0].es);
-    expect(await savedNow()).toMatchObject({ turn: 1, tries: 0 });
+    await heardFinal(lineText(0));
+    expect(await savedNow()).toMatchObject({ path: WAY.slice(0, 2), tries: 0 });
     view.unmount();
   });
 
@@ -636,7 +663,7 @@ describe('Speak tab: the microphone and the screen', () => {
       __focus();
     });
     await flush();
-    expect(text(view, 'speech-line-1')).toBe(story.turns[1].es);
+    expect(text(view, 'speech-line-1')).toBe(lineText(1));
     view.unmount();
   });
 
@@ -672,8 +699,8 @@ describe('Speak tab: the end of the story', () => {
     expect(view.queryByTestId('speech-done')).toBeNull();
     // started again: a fresh run, the score stays
     await press(view, `speech-story-${story.id}`);
-    await press(view, 'speech-start');
-    expect(await savedNow()).toMatchObject({ turn: 0, firstTry: 0 });
+    await startFromIntro(view);
+    expect(await savedNow()).toMatchObject({ path: WAY.slice(0, 1), firstTry: 0 });
     expect((await rows())[0].data).toMatchObject({ best: total });
     view.unmount();
   });
@@ -706,7 +733,7 @@ describe('Speak tab: the language pair', () => {
     await saveResumeValue(getDb(), SPEECH_LEVEL_KEY, 'A1');
     await getDb().setGameProgress(SPEECH_PROGRESS_KEY, story.id, 'done', { best: 5, total, at: '2026-11-03' });
     const view = await mount();
-    expect(text(view, 'speech-line-2')).toBe(story.turns[2].es);
+    expect(text(view, 'speech-line-2')).toBe(lineText(2));
     // hu -> es: nothing was saved there
     await getDb().setOnboarding('hu', 'es');
     await act(async () => {
@@ -729,7 +756,7 @@ describe('Speak tab: the language pair', () => {
       __focus();
     });
     await flush();
-    expect(text(view, 'speech-line-2')).toBe(story.turns[2].es);
+    expect(text(view, 'speech-line-2')).toBe(lineText(2));
     view.unmount();
   });
 });
@@ -739,10 +766,10 @@ describe('Speak tab: the docked footer', () => {
 
   it('what was heard, the ask and the hint scroll; the input, Check, Next and the links are fixed', async () => {
     Dimensions.set({ window: { width: 360, height: 640, scale: 1, fontScale: 1 } });
-    await saveRun(at(1));
+    await saveRun(at(3));
     const view = await mount();
-    await type(view, 'soy Hungría');
-    await type(view, 'soy Hungría');
+    await type(view, 'hola');
+    await type(view, 'hola');
     const scroll = view.getByTestId('speech-footer-scroll');
     const fixed = view.getByTestId('speech-footer-fixed');
     expect(scroll.props.keyboardShouldPersistTaps).toBe('handled');
@@ -789,10 +816,10 @@ describe('Speak tab: the small phone with the keyboard open', () => {
 
   it('610 dp window, header to 145, keyboard top at 276: the footer is measured, Next is a link, the input and Check fit between the header and the keyboard', async () => {
     Dimensions.set({ window: { width: 360, height: 610, scale: 1, fontScale: 1 } });
-    await saveRun(at(1));
+    await saveRun(at(3));
     const view = await mount();
-    await type(view, 'soy Hungría');
-    await type(view, 'soy Hungría');
+    await type(view, 'hola');
+    await type(view, 'hola');
     // keyboard closed: Next is the full-width button
     expect(view.getByTestId('speech-skip')).toBeTruthy();
     expect(view.queryByTestId('speech-skip-link')).toBeNull();
@@ -816,7 +843,7 @@ describe('Speak tab: the small phone with the keyboard open', () => {
     expect(within(fixed).getByTestId('speech-check')).toBeTruthy();
     // the link gives the turn up like the button did
     await press(view, 'speech-skip-link');
-    expect(text(view, 'speech-answer-who-1')).toBe('You (model)');
+    expect(text(view, 'speech-answer-who-3')).toBe('You (model)');
     // the keyboard closes: the button is back when it is needed again
     await act(async () => {
       DeviceEventEmitter.emit('keyboardDidHide', {});
@@ -837,7 +864,7 @@ describe('Speak tab: the intro opens at the top', () => {
     const view = await mount();
     scrollToEnd.mockClear();
     await press(view, `speech-story-${story.id}`);
-    expect(view.getByTestId('speech-start')).toBeTruthy();
+    expect(view.getByTestId('speech-get-ready')).toBeTruthy();
     expect(scrollToEnd).not.toHaveBeenCalled();
     view.unmount();
   });
@@ -854,7 +881,7 @@ describe('Speak tab: the hardware Back', () => {
   it('on the intro it goes back to the list and is consumed', async () => {
     const view = await mount();
     await press(view, `speech-story-${story.id}`);
-    expect(view.getByTestId('speech-start')).toBeTruthy();
+    expect(view.getByTestId('speech-get-ready')).toBeTruthy();
     expect(await pressBack()).toBe(true);
     expect(view.getByTestId('speech-levels')).toBeTruthy();
     view.unmount();
@@ -863,10 +890,10 @@ describe('Speak tab: the hardware Back', () => {
   it('in the story it keeps the run, like the back link: the list says Continue', async () => {
     await saveRun(at(2));
     const view = await mount();
-    expect(text(view, 'speech-line-2')).toBe(story.turns[2].es);
+    expect(text(view, 'speech-line-2')).toBe(lineText(2));
     expect(await pressBack()).toBe(true);
     expect(view.getByTestId(`speech-story-continue-${story.id}`)).toBeTruthy();
-    expect(await savedNow()).toMatchObject({ turn: 2 });
+    expect(await savedNow()).toMatchObject({ path: WAY.slice(0, 3) });
     // and the list leaves it alone
     expect(await pressBack()).toBe(false);
     view.unmount();
@@ -893,7 +920,7 @@ describe('Speak tab: the hardware Back', () => {
     });
     expect(backHandlers).toHaveLength(0);
     expect(await pressBack()).toBe(false);
-    expect(text(view, 'speech-line-1')).toBe(story.turns[1].es);
+    expect(text(view, 'speech-line-1')).toBe(lineText(1));
     await act(async () => {
       __focus();
     });
@@ -901,5 +928,167 @@ describe('Speak tab: the hardware Back', () => {
     expect(backHandlers).toHaveLength(1);
     view.unmount();
     expect(backHandlers).toHaveLength(0);
+  });
+});
+
+describe('Speak tab: the preparation', () => {
+  const toPrep = async (view: View) => {
+    await press(view, `speech-story-${story.id}`);
+    await press(view, 'speech-get-ready');
+  };
+
+  it('the intro button says Get ready; the preparation lists every question of the story in data order with what can be said, each line with its 🔊 and translation', async () => {
+    const view = await mount();
+    await press(view, `speech-story-${story.id}`);
+    expect(view.getByTestId('speech-get-ready')).toBeTruthy();
+    expect(within(view.getByTestId('speech-get-ready')).getByText(sx.getReady)).toBeTruthy();
+    await press(view, 'speech-get-ready');
+    expect(view.queryByTestId('speech-get-ready')).toBeNull();
+    expect(feedbackButton(view)).toBeTruthy();
+    story.turns.forEach((turn, i) => {
+      expect(text(view, `speech-prep-line-${i}`)).toBe(turn.es);
+      turn.branches.forEach((b, j) => b.say.forEach((line, k) => expect(text(view, `speech-prep-say-${i}-${j}-${k}`)).toBe(line.es)));
+    });
+    expect(view.getByText(story.turns[0].en)).toBeTruthy();
+    expect(view.getAllByText(story.turns[0].branches[0].say[0].en).length).toBeGreaterThan(0);
+    expect(view.getAllByText(sx.prepAsks(story.speaker))).toHaveLength(story.turns.length);
+    // a question that only one answer leads to says which one
+    const like = story.turns.findIndex((x) => x.id === 'like');
+    expect(text(view, `speech-prep-from-${like}`)).toBe(sx.leadsFrom('Trabajo en una oficina.'));
+    const study = story.turns.findIndex((x) => x.id === 'study');
+    expect(text(view, `speech-prep-from-${study}`)).toBe(sx.leadsFrom('No trabajo.'));
+    // a turn every way goes through says nothing, a name or a country neither
+    for (const id of ['name', 'from', 'age', 'work', 'speak', 'bye']) expect(view.queryByTestId(`speech-prep-from-${story.turns.findIndex((x) => x.id === id)}`)).toBeNull();
+    const bye = story.turns.findIndex((x) => x.id === 'bye');
+    expect(view.queryByTestId(`speech-prep-from-${bye}`)).toBeNull();
+    view.unmount();
+  });
+
+  it('🔊 reads a line (the blank left out); nothing is saved yet', async () => {
+    const view = await mount();
+    await toPrep(view);
+    mockSpeak.mockClear();
+    fireEvent.press(view.getByTestId('speech-prep-say-listen-0-0-0'));
+    expect(mockSpeak).toHaveBeenLastCalledWith('Me llamo.', 'es-MX');
+    fireEvent.press(view.getByTestId('speech-prep-listen-0'));
+    expect(mockSpeak).toHaveBeenLastCalledWith(story.turns[0].es, 'es-MX');
+    expect(await savedNow()).toBeNull();
+    view.unmount();
+  });
+
+  it('Start begins the story; the back link and the hardware Back go to the intro, and from there to the list', async () => {
+    const view = await mount();
+    await toPrep(view);
+    await press(view, 'speech-back');
+    expect(view.getByTestId('speech-get-ready')).toBeTruthy();
+    await press(view, 'speech-get-ready');
+    expect(await pressBack()).toBe(true);
+    expect(view.getByTestId('speech-get-ready')).toBeTruthy();
+    expect(await pressBack()).toBe(true);
+    expect(view.getByTestId('speech-levels')).toBeTruthy();
+    view.unmount();
+  });
+
+  it('leaving the preparation stops the read-aloud', async () => {
+    const view = await mount();
+    await toPrep(view);
+    mockStopSpeaking.mockClear();
+    await press(view, 'speech-back');
+    expect(mockStopSpeaking).toHaveBeenCalled();
+    view.unmount();
+  });
+
+  it('a resumed run skips the preparation', async () => {
+    await saveRun(at(2));
+    const view = await mount();
+    expect(view.getByTestId('speech-line-2')).toBeTruthy();
+    expect(view.queryByTestId('speech-prep-line-0')).toBeNull();
+    view.unmount();
+  });
+});
+
+describe('Speak tab: the answer decides how the story goes on', () => {
+  it('a right answer typed just before switching tab: the next line comes, but it is not read aloud in the other tab', async () => {
+    await saveRun(at(0));
+    const view = await mount();
+    await type(view, 'me llamo Ana');
+    await act(async () => {
+      __blur();
+    });
+    await flush();
+    mockSpeak.mockClear();
+    await advance();
+    expect(mockSpeak).not.toHaveBeenCalled();
+    expect(text(view, 'speech-line-1')).toBe(lineText(1));
+    view.unmount();
+  });
+
+  const answerWork = async (said: string) => {
+    await saveRun(at(3));
+    const view = await mount();
+    await type(view, said);
+    await advance();
+    return view;
+  };
+
+  it('"no trabajo" leads to a different next question than "trabajo en una oficina", and her reaction opens the bubble', async () => {
+    const study = await answerWork('no trabajo');
+    expect(text(study, 'speech-line-4')).toBe(`No pasa nada. ${turnById(story, 'study')!.es}`);
+    expect(await savedNow()).toMatchObject({ path: [...WAY.slice(0, 4), 'study'] });
+    study.unmount();
+    const like = await answerWork('trabajo en una oficina');
+    expect(text(like, 'speech-line-4')).toBe(`¡Qué bien! ${turnById(story, 'like')!.es}`);
+    expect(await savedNow()).toMatchObject({ path: [...WAY.slice(0, 4), 'like'] });
+    // the bubble and its translation are one text, the voice reads it as one
+    expect(mockSpeak).toHaveBeenLastCalledWith(`¡Qué bien! ${turnById(story, 'like')!.es}`, 'es-MX');
+    await press(like, 'speech-translate-4');
+    expect(text(like, 'speech-translation-4')).toBe(`Great! ${turnById(story, 'like')!.en}`);
+    like.unmount();
+  });
+
+  it('the header counter is answered + 1 over answered + the longest way ahead (4/7 on the work turn), and it follows the branch', async () => {
+    await saveRun(at(3));
+    const view = await mount();
+    expect(view.getByLabelText(sx.progressLabel(4, 7))).toBeTruthy();
+    await type(view, 'soy estudiante');
+    await advance();
+    expect(view.getByLabelText(sx.progressLabel(5, 6))).toBeTruthy();
+    view.unmount();
+  });
+
+  it('Help shows every line that can be said on the turn, each with 🔊 and its translation; 🔊 reads it', async () => {
+    await saveRun(at(5));
+    const view = await mount();
+    expect(view.queryByTestId('speech-hint')).toBeNull();
+    await press(view, 'speech-help');
+    const speakTurn = turnById(story, 'speak')!;
+    const lines = speakTurn.branches.flatMap((b) => b.say);
+    expect(lines.length).toBeGreaterThan(3);
+    speakTurn.branches.forEach((b, j) => b.say.forEach((line, k) => expect(text(view, `speech-hint-line-${j}-${k}`)).toBe(line.es)));
+    expect(view.getByText(sx.canSay, { exact: false })).toBeTruthy();
+    expect(view.getByText('I speak a little.')).toBeTruthy();
+    mockSpeak.mockClear();
+    fireEvent.press(view.getByTestId('speech-hint-listen-2-0'));
+    expect(mockSpeak).toHaveBeenLastCalledWith('Sí, hablo español.', 'es-MX');
+    view.unmount();
+  });
+
+  it('the broad answers of FB582 and FB583 move the story on', async () => {
+    for (const said of ['puedo hablar español', 'sí', 'no', 'un poco', 'no mucho']) {
+      await getDb().resetGameProgress(SPEECH_PROGRESS_KEY);
+      await saveRun(at(5));
+      const view = await mount();
+      await type(view, said);
+      expect({ said, path: ((await savedNow()) as StoryRun).path }).toEqual({ said, path: [...WAY.slice(0, 6), 'bye'] });
+      view.unmount();
+    }
+    for (const said of ['gracias', 'adiós', 'hasta luego', 'nos vemos']) {
+      await saveRun(at(total - 1));
+      const view = await mount();
+      await type(view, said);
+      await advance();
+      expect({ said, done: view.queryByTestId('speech-done') !== null }).toEqual({ said, done: true });
+      view.unmount();
+    }
   });
 });
