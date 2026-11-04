@@ -1385,6 +1385,182 @@
         "en": "The door is open.",
         "es": "La puerta está abierta."
       }
+    },
+    {
+      "id": "se-01-w",
+      "kind": "write",
+      "trial": true,
+      "prompt": {
+        "en": "I am a student.",
+        "es": "Yo soy estudiante."
+      },
+      "es": "Yo soy estudiante.",
+      "why": {
+        "en": "A job or role is a lasting classification, so use ser: yo soy estudiante.",
+        "es": "La profesión o el papel es una clasificación estable, por eso ser: yo soy estudiante."
+      }
+    },
+    {
+      "id": "se-02-w",
+      "kind": "write",
+      "trial": true,
+      "prompt": {
+        "en": "You are very intelligent, like your mother.",
+        "es": "Tú eres muy inteligente, como tu madre."
+      },
+      "es": "Tú eres muy inteligente, como tu madre.",
+      "accept": ["Tú eres muy inteligente, como tu mamá.", "Usted es muy inteligente, como su madre.", "Usted es muy inteligente, como su mamá."],
+      "why": {
+        "en": "Intelligence is a lasting personal quality, so ser: tú eres.",
+        "es": "La inteligencia es una cualidad estable de la persona, por eso ser: tú eres."
+      }
+    },
+    {
+      "id": "se-03-w",
+      "kind": "write",
+      "trial": true,
+      "prompt": {
+        "en": "She is tired today.",
+        "es": "Ella está cansada hoy."
+      },
+      "es": "Ella está cansada hoy.",
+      "accept": ["Hoy ella está cansada.", "Hoy está cansada.", "Ella hoy está cansada."],
+      "why": {
+        "en": "Being tired is a current, changeable state, so estar: ella está.",
+        "es": "El cansancio es un estado actual y cambiante, por eso estar: ella está."
+      }
+    },
+    {
+      "id": "se-04-w",
+      "kind": "write",
+      "trial": true,
+      "prompt": {
+        "en": "We are from Spain.",
+        "es": "Nosotros somos de España."
+      },
+      "es": "Nosotros somos de España.",
+      "why": {
+        "en": "Where you are from is a lasting fact, so ser: nosotros somos.",
+        "es": "El origen es un hecho estable, por eso ser: nosotros somos."
+      }
+    },
+    {
+      "id": "se-05-w",
+      "kind": "write",
+      "trial": true,
+      "prompt": {
+        "en": "The store is near my house.",
+        "es": "La tienda está cerca de mi casa."
+      },
+      "es": "La tienda está cerca de mi casa.",
+      "accept": ["Cerca de mi casa está la tienda."],
+      "why": {
+        "en": "The location of a place always takes estar, even if that place itself never moves.",
+        "es": "La ubicación de un lugar siempre lleva estar, aunque ese lugar nunca se mueva."
+      }
+    },
+    {
+      "id": "se-06-w",
+      "kind": "write",
+      "trial": true,
+      "prompt": {
+        "en": "Coffee is a hot drink.",
+        "es": "El café es una bebida caliente."
+      },
+      "es": "El café es una bebida caliente.",
+      "why": {
+        "en": "This classifies coffee as a kind of drink, with a noun after the verb (una bebida caliente), so ser.",
+        "es": "Aquí se clasifica el café como tipo de bebida, con un sustantivo después del verbo (una bebida caliente), por eso ser."
+      }
+    },
+    {
+      "id": "se-07-w",
+      "kind": "write",
+      "trial": true,
+      "prompt": {
+        "en": "This coffee is cold now.",
+        "es": "Este café está frío ahora."
+      },
+      "es": "Este café está frío ahora.",
+      "accept": ["Ahora este café está frío.", "Este café ahora está frío."],
+      "why": {
+        "en": "Here it is about ONE specific cup that has gone cold, the result of a change, so estar.",
+        "es": "Aquí se habla de UNA taza concreta que se ha enfriado, resultado de un cambio, por eso estar."
+      }
+    },
+    {
+      "id": "se-08-w",
+      "kind": "write",
+      "trial": true,
+      "prompt": {
+        "en": "It is three in the afternoon.",
+        "es": "Son las tres de la tarde."
+      },
+      "es": "Son las tres de la tarde.",
+      "why": {
+        "en": "Telling time always uses ser, never estar: son las tres.",
+        "es": "La hora siempre se expresa con ser, nunca con estar: son las tres."
+      }
+    },
+    {
+      "id": "se-09-w",
+      "kind": "write",
+      "trial": true,
+      "prompt": {
+        "en": "He is tall and thin, like his father.",
+        "es": "Él es alto y delgado, como su padre."
+      },
+      "es": "Él es alto y delgado, como su padre.",
+      "accept": ["Como su padre, él es alto y delgado.", "Como su padre, es alto y delgado.", "Él es alto y delgado, como su papá.", "Como su papá, él es alto y delgado.", "Como su papá, es alto y delgado.", "Él es alto y flaco, como su padre.", "Él es alto y flaco, como su papá."],
+      "why": {
+        "en": "Build, tall, thin, is a lasting physical trait, so ser.",
+        "es": "La complexión, alto, delgado, es un rasgo físico estable, por eso ser."
+      }
+    },
+    {
+      "id": "se-10-w",
+      "kind": "write",
+      "trial": true,
+      "prompt": {
+        "en": "Today I am very happy.",
+        "es": "Hoy estoy muy contento."
+      },
+      "es": "Hoy estoy muy contento.",
+      "accept": ["Estoy muy contento hoy.", "Yo estoy muy contento hoy.", "Hoy yo estoy muy contento.", "Hoy estoy muy contenta.", "Estoy muy contenta hoy.", "Yo estoy muy contenta hoy.", "Hoy yo estoy muy contenta.", "Hoy estoy muy feliz.", "Estoy muy feliz hoy."],
+      "why": {
+        "en": "Mood is a passing state, happy today, could be different tomorrow, so estar.",
+        "es": "El ánimo es un estado pasajero, hoy contento, mañana puede ser distinto, por eso estar."
+      }
+    },
+    {
+      "id": "se-11-w",
+      "kind": "write",
+      "trial": true,
+      "prompt": {
+        "en": "My parents are doctors.",
+        "es": "Mis padres son médicos."
+      },
+      "es": "Mis padres son médicos.",
+      "accept": ["Mis padres son doctores.", "Mis papás son médicos.", "Mis papás son doctores."],
+      "why": {
+        "en": "A profession is a lasting classification, so ser: son médicos.",
+        "es": "La profesión es una clasificación estable, por eso ser: son médicos."
+      }
+    },
+    {
+      "id": "se-12-w",
+      "kind": "write",
+      "trial": true,
+      "prompt": {
+        "en": "The party is at my house tonight.",
+        "es": "La fiesta es en mi casa esta noche."
+      },
+      "es": "La fiesta es en mi casa esta noche.",
+      "accept": ["Esta noche la fiesta es en mi casa.", "La fiesta es esta noche en mi casa.", "La fiesta es en mi casa hoy en la noche."],
+      "why": {
+        "en": "Where an EVENT takes place uses ser, not estar, the most common exception to remember.",
+        "es": "El lugar donde se celebra un EVENTO se expresa con ser, no con estar, la excepción más común."
+      }
     }
   ]
 }

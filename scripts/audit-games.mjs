@@ -852,7 +852,7 @@ function auditTenseField(tense, itemPath) {
 // the item kind of the tense-drill sentence rewrite. `wordIds` points to the
 // cards of the sentence (this drives the unlock), each of them must exist and
 // must not be of a higher level than the lesson's level.
-// Check of the new task kinds (spot, order, dictation). The
+// Check of the new task kinds (spot, order, dictation, write). The
 // words of the sentences must be taught / provided with a glossary (checkWords), the
 // explanations and translations in both languages, the wrong word and options of the error-spotting task consistent.
 function auditNewKindItem(item, itemPath, topic, checkWords) {
@@ -885,8 +885,28 @@ function auditNewKindItem(item, itemPath, topic, checkWords) {
   } else if (item.kind === 'order') {
     if (words.length < 2) p1.push({ path: itemPath, issue: 'order item needs at least 2 words' });
     checkLangs(item.prompt, `${itemPath} prompt`);
-  } else {
+  } else if (item.kind === 'dictation') {
     checkLangs(item.tr, `${itemPath} tr`);
+  } else if (item.kind === 'write') {
+    // sentence writing: the sentence to write (prompt) and the rule (why) in both languages; the accepted
+    // variants are only compared with what the learner typed, never shown, so the word gate does not apply to them.
+    checkLangs(item.prompt, `${itemPath} prompt`);
+    checkLangs(item.why, `${itemPath} why`);
+    if (item.accept !== undefined) {
+      if (!Array.isArray(item.accept)) {
+        p1.push({ path: itemPath, issue: 'write accept must be an array' });
+      } else {
+        for (const alt of item.accept) {
+          if (typeof alt !== 'string' || !alt.trim()) {
+            p1.push({ path: itemPath, issue: 'write accept entry must be a non-empty string' });
+            continue;
+          }
+          if (alt === item.es) p1.push({ path: itemPath, issue: `write accept entry equals es: "${alt}"` });
+        }
+      }
+    }
+  } else {
+    p1.push({ path: itemPath, issue: `unknown new item kind "${item.kind}"` });
   }
 }
 
@@ -987,8 +1007,8 @@ function auditGrammarTopic(topic, filePath, lang = 'es') {
       else auditTransformItem(item, itemPath, topic);
       continue;
     }
-    // error spotting / word order / dictation, temporary ("trial") items.
-    if (item.kind === 'spot' || item.kind === 'order' || item.kind === 'dictation') {
+    // error spotting / word order / dictation / sentence writing, temporary ("trial") items.
+    if (item.kind === 'spot' || item.kind === 'order' || item.kind === 'dictation' || item.kind === 'write') {
       auditNewKindItem(item, itemPath, topic, (text) => {
         if (isHu) return;
         for (const tok of toks(text)) auditGrammarWord(tok, taughtSet, extra, itemPath, lang);

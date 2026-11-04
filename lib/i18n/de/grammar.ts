@@ -64,6 +64,7 @@ const de: typeof en = {
     startSpot: (n: number) => `Fehler finden (${n})`,
     startOrder: (n: number) => `Wortstellung (${n})`,
     startDictation: (n: number) => `Diktat (${n})`,
+    startWrite: (n: number) => `Satz schreiben (${n})`,
     spotPrompt: 'Tippe auf das falsche Wort',
     spotPickFix: 'Wähle die richtige Form',
     spotWordFine: 'Dieses Wort ist richtig. Sieh noch einmal genau hin.',
@@ -72,6 +73,7 @@ const de: typeof en = {
     dictationHint: 'Höre zu und tippe, was du hörst',
     dictationPlay: 'Abspielen',
     dictationSlow: 'Langsamer',
+    writeHint: 'Schreib den ganzen Satz auf Spanisch',
   },
   // app/grammar/tense-drill.tsx: die Zeitenübung für Deutsch (die Verbform für eine Person und eine Zeit tippen).
   tenseDrill: {

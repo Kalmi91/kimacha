@@ -10,7 +10,7 @@ import { LEVELS, type Level, type WordEntry } from '@/data/words';
 import { getDeWords } from '@/data/deWords';
 import { getHuWords } from '@/data/huWords';
 import { getOpenWordsUpToLevel } from '@/data/openWords';
-import type { DictationItem, FormItem, Lang4, LessonV2, MatchItem, OrderItem, SpotItem, TenseId, TransformItem, WhyItem } from '../grammar/lessonTypes';
+import type { DictationItem, FormItem, Lang4, LessonV2, MatchItem, OrderItem, SpotItem, TenseId, TransformItem, WhyItem, WriteItem } from '../grammar/lessonTypes';
 import { isVosotrosItem } from '../grammar/vosotros';
 
 // Cumulative corpus word ids up to and including `level` (A0..level), used by
@@ -157,7 +157,7 @@ export interface GrammarMarkItem extends GrammarItemBase {
 // choice game) knows every lesson item kind, even if for now it only handles
 // the gap/mark pair (lib/games/grammarChoice.ts filters match/form out of its
 // round; those appear on the lesson screen).
-export type GrammarItem = GrammarGapItem | GrammarMarkItem | MatchItem | FormItem | WhyItem | TransformItem | SpotItem | OrderItem | DictationItem;
+export type GrammarItem = GrammarGapItem | GrammarMarkItem | MatchItem | FormItem | WhyItem | TransformItem | SpotItem | OrderItem | DictationItem | WriteItem;
 
 export function isMarkItem(item: GrammarItem): item is GrammarMarkItem {
   return item.kind === 'mark';
@@ -189,6 +189,11 @@ export function isDictationItem(item: GrammarItem): item is DictationItem {
   return item.kind === 'dictation';
 }
 
+// Sentence writing (trial kind, never required for a lesson's done state).
+export function isWriteItem(item: GrammarItem): item is WriteItem {
+  return item.kind === 'write';
+}
+
 /** A temporary (trial) item? */
 export function isTrialItem(item: GrammarItem): boolean {
   return (item as { trial?: boolean }).trial === true;
@@ -204,10 +209,10 @@ export function isTransformItem(item: GrammarItem): item is TransformItem {
 // single button), which requires knowing how many items of each kind a lesson has.
 // 'article' = the article-choice (el / la) button, separate: gap
 // items marked `set: 'article'`, on their own button, not among the sentence exercises.
-export type GrammarKind = 'choice' | 'article' | 'match' | 'form' | 'why' | 'transform' | 'spot' | 'order' | 'dictation';
+export type GrammarKind = 'choice' | 'article' | 'match' | 'form' | 'why' | 'transform' | 'spot' | 'order' | 'dictation' | 'write';
 
 export function grammarKindCounts(topic: GrammarTopicData): Record<GrammarKind, number> {
-  const counts: Record<GrammarKind, number> = { choice: 0, article: 0, match: 0, form: 0, why: 0, transform: 0, spot: 0, order: 0, dictation: 0 };
+  const counts: Record<GrammarKind, number> = { choice: 0, article: 0, match: 0, form: 0, why: 0, transform: 0, spot: 0, order: 0, dictation: 0, write: 0 };
   // the button label counts the round the learner actually plays, so a
   // vosotros item dropped from buildGrammarRound (lib/games/grammarChoice.ts)
   // does not inflate a "Sentences (N)"-style count.
@@ -220,6 +225,7 @@ export function grammarKindCounts(topic: GrammarTopicData): Record<GrammarKind, 
     else if (isSpotItem(item)) counts.spot++;
     else if (isOrderItem(item)) counts.order++;
     else if (isDictationItem(item)) counts.dictation++;
+    else if (isWriteItem(item)) counts.write++;
     else if (isArticleSetItem(item)) counts.article++;
     else counts.choice++;
   }

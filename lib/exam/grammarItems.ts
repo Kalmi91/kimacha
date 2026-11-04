@@ -14,6 +14,7 @@ import {
   isSpotItem,
   isTransformItem,
   isWhyItem,
+  isWriteItem,
   type GrammarGapItem,
   type GrammarItem,
 } from '@/lib/games/content';
@@ -39,7 +40,8 @@ function isGapChoice(item: GrammarItem): item is GrammarGapItem {
     !isTransformItem(item) &&
     !isSpotItem(item) &&
     !isOrderItem(item) &&
-    !isDictationItem(item)
+    !isDictationItem(item) &&
+    !isWriteItem(item)
   );
 }
 

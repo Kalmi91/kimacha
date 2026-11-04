@@ -373,9 +373,11 @@ function GrammarLessonPhases({ topic }: { topic: ReturnType<typeof useGrammarTop
                               ? s.grammar.startOrder(kindCounts.order)
                               : kind === 'dictation'
                                 ? s.grammar.startDictation(kindCounts.dictation)
-                                : kindCounts.transform > TRANSFORM_ROUND_SIZE
-                                  ? s.grammar.startTransformRound(TRANSFORM_ROUND_SIZE, kindCounts.transform)
-                                  : s.grammar.startTransform(kindCounts.transform),
+                                : kind === 'write'
+                                  ? s.grammar.startWrite(kindCounts.write)
+                                  : kindCounts.transform > TRANSFORM_ROUND_SIZE
+                                    ? s.grammar.startTransformRound(TRANSFORM_ROUND_SIZE, kindCounts.transform)
+                                    : s.grammar.startTransform(kindCounts.transform),
                 () => {
                   setDrillKind(kind);
                   setPhase('drill');

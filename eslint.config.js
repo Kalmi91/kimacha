@@ -34,7 +34,7 @@ module.exports = [
     // The files that were already over the ceiling when it was added are capped at their size then:
     // they can only shrink. Lower a cap when its file gets smaller, never raise one.
     files: ['components/grammar/GrammarDrill.tsx'],
-    rules: { 'max-lines': ['error', 627] },
+    rules: { 'max-lines': ['error', 611] },
   },
   {
     // Test files: jest.mock() calls are hoisted above imports by design, and a

@@ -27,7 +27,7 @@ export type ProgressRow = { itemId: string; state: string; data: unknown };
 
 // Buttons appear in this order, only for the kinds
 // the lesson has items for.
-export const KIND_ORDER: GrammarKind[] = ['choice', 'article', 'match', 'form', 'why', 'transform', 'spot', 'order', 'dictation'];
+export const KIND_ORDER: GrammarKind[] = ['choice', 'article', 'match', 'form', 'why', 'transform', 'spot', 'order', 'dictation', 'write'];
 
 export function useGrammarTopic() {
   const { theme } = useTheme();

@@ -68,6 +68,7 @@ const es: typeof en = {
     startSpot: (n: number) => `Encuentra el error (${n})`,
     startOrder: (n: number) => `Orden de palabras (${n})`,
     startDictation: (n: number) => `Dictado (${n})`,
+    startWrite: (n: number) => `Escribe la frase (${n})`,
     spotPrompt: 'Toca la palabra incorrecta',
     spotPickFix: 'Elige la forma correcta',
     spotWordFine: 'Esa palabra está bien. Mira otra vez.',
@@ -76,6 +77,7 @@ const es: typeof en = {
     dictationHint: 'Escucha y escribe lo que oyes',
     dictationPlay: 'Escuchar',
     dictationSlow: 'Más lento',
+    writeHint: 'Escribe la frase entera en español',
   },
   // app/grammar/tense-drill.tsx: el ejercicio de tiempos verbales del alemán (escribe la forma del verbo para una persona y un tiempo).
   tenseDrill: {

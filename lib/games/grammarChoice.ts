@@ -16,13 +16,14 @@ import {
   isSpotItem,
   isTransformItem,
   isWhyItem,
+  isWriteItem,
   type GrammarGapItem,
   type GrammarItem,
   type GrammarKind,
   type GrammarMarkItem,
   type GrammarTopicData,
 } from './content';
-import type { DictationItem, FormItem, MatchItem, OrderItem, SpotItem, TransformItem, WhyItem } from '../grammar/lessonTypes';
+import type { DictationItem, FormItem, MatchItem, OrderItem, SpotItem, TransformItem, WhyItem, WriteItem } from '../grammar/lessonTypes';
 import { markAnswerIndex, markTokens } from './grammarMark';
 import { filterVosotros, filterVosotrosPairs } from '../grammar/vosotros';
 import { ARTICLE_ROUND_SIZE, isArticleLesson } from '../grammar/nounArticles';
@@ -57,10 +58,10 @@ export interface GrammarTransformRoundItem {
   item: TransformItem;
 }
 
-// The three new kinds (error spotting, word order, dictation) also in their own
+// The new kinds (error spotting, word order, dictation, sentence writing) also in their own
 // round-item shape, following the pattern of why/transform.
 export interface GrammarNewKindRoundItem {
-  item: SpotItem | OrderItem | DictationItem;
+  item: SpotItem | OrderItem | DictationItem | WriteItem;
 }
 
 export type GrammarRoundItem =
@@ -83,6 +84,7 @@ export function grammarRoundItemKind(r: GrammarRoundItem): GrammarKind {
   if (isSpotItem(r.item)) return 'spot';
   if (isOrderItem(r.item)) return 'order';
   if (isDictationItem(r.item)) return 'dictation';
+  if (isWriteItem(r.item)) return 'write';
   return isTransformItem(r.item) ? 'transform' : 'why';
 }
 
@@ -106,7 +108,8 @@ export function buildGrammarRound(topic: GrammarTopicData, seed: number): Gramma
       !isTransformItem(item) &&
       !isSpotItem(item) &&
       !isOrderItem(item) &&
-      !isDictationItem(item)
+      !isDictationItem(item) &&
+      !isWriteItem(item)
   );
   // the articulos-genero el / la set is every noun in the app, which is longer than one
   // run; a run gets ARTICLE_ROUND_SIZE items from it (seeded sample). No other lesson is affected.
@@ -153,7 +156,10 @@ export function buildGrammarRound(topic: GrammarTopicData, seed: number): Gramma
 
   // the new kinds also go at the END of the round, in authored order.
   const newKindItems: GrammarNewKindRoundItem[] = allItems
-    .filter((item): item is SpotItem | OrderItem | DictationItem => isSpotItem(item) || isOrderItem(item) || isDictationItem(item))
+    .filter(
+      (item): item is SpotItem | OrderItem | DictationItem | WriteItem =>
+        isSpotItem(item) || isOrderItem(item) || isDictationItem(item) || isWriteItem(item)
+    )
     .map((item) => ({ item }));
 
   return [...orderedChoice, ...matchItems, ...formItems, ...whyItems, ...transformItems, ...newKindItems];
