@@ -134,14 +134,6 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="practice"
-        options={{
-          title: s.tabs.practice,
-          tabBarAccessibilityLabel: s.tabs.practice,
-          ...(showPractice ? { tabBarButton: tabButton({ ios: 'dumbbell.fill', android: 'fitness_center', web: 'fitness_center' }) } : { href: null }),
-        }}
-      />
-      <Tabs.Screen
         name="sentences"
         options={{
           title: s.tabs.sentences,
@@ -155,6 +147,14 @@ export default function TabLayout() {
           title: s.tabs.speak,
           tabBarAccessibilityLabel: s.tabs.speak,
           ...(showSpeak ? { tabBarButton: tabButton({ ios: 'mic.fill', android: 'mic', web: 'mic' }) } : { href: null }),
+        }}
+      />
+      <Tabs.Screen
+        name="practice"
+        options={{
+          title: s.tabs.practice,
+          tabBarAccessibilityLabel: s.tabs.practice,
+          ...(showPractice ? { tabBarButton: tabButton({ ios: 'dumbbell.fill', android: 'fitness_center', web: 'fitness_center' }) } : { href: null }),
         }}
       />
       <Tabs.Screen
