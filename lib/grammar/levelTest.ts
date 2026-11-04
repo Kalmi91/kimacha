@@ -7,6 +7,7 @@ import type { GrammarKind } from '@/lib/games/content';
 import { shuffleArray } from '@/lib/shuffle';
 import {
   EVIDENCE_WINDOW,
+  MIN_ANSWERS_FOR_PCT,
   topicPercent,
   topicTicked,
   type PickTopic,
@@ -27,10 +28,22 @@ const isCore = (t: PickTopic): boolean => t.tier === 'core-plus' || t.tier === '
 
 const windowOf = (ev?: TopicEvidence) => (ev ? ev.answers.slice(-EVIDENCE_WINDOW) : []);
 
-/** The average test percent of the topics (no percent yet = 0), 0 for no topics. */
+/**
+ * A topic's share in the level percent: its test percent from MIN_ANSWERS_FOR_PCT answers on; with 1 or 2 answers the
+ * right ones over MIN_ANSWERS_FOR_PCT (1 right of 1 = 33, 2 right of 2 = 67), so every answer moves the level. The tick and
+ * the topic's own percent (topicPercent) do not use this.
+ */
+export function topicShare(ev?: TopicEvidence): number {
+  const full = topicPercent(ev);
+  if (full !== null) return full;
+  const w = windowOf(ev);
+  return Math.round((w.filter((a) => a.ok).length / MIN_ANSWERS_FOR_PCT) * 100);
+}
+
+/** The average of the topics' shares (no answer = 0), 0 for no topics. */
 export function levelPercent(topicIds: string[], evidence: Map<string, TopicEvidence>): number {
   if (topicIds.length === 0) return 0;
-  const sum = topicIds.reduce((acc, id) => acc + (topicPercent(evidence.get(id)) ?? 0), 0);
+  const sum = topicIds.reduce((acc, id) => acc + topicShare(evidence.get(id)), 0);
   return Math.round(sum / topicIds.length);
 }
 

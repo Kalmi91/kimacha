@@ -221,7 +221,7 @@ function toQuestion(r: GrammarRoundItem, ctx: Ctx): LessonTestQuestion | null {
       },
       // a non-verb table: the label goes with the cell, so the miss lists keep the context
       review: { question: task.label ? `${task.label}: ${task.prompt}` : task.prompt, answer: item.answer },
-      detail: formDetail(item, tableBlock, ctx.topic.body, pick),
+      detail: formDetail(item, tableBlock, ctx.topic.body, pick, ctx.learnedLang),
     };
   }
   if (isWhyItem(item)) {
@@ -239,6 +239,7 @@ function toQuestion(r: GrammarRoundItem, ctx: Ctx): LessonTestQuestion | null {
       review: { question: `${heading}\n${item.es}`, answer: sh.options[sh.correctIndex], why: pick(item.tr) },
       say: item.es,
       detail: {
+        tr: trText(item.tr, pick, item.es),
         whyNot: whyNotOf(sh.options, sh.correctIndex, (o) => {
           const opt = item.options.find((x) => pick(x.text) === o);
           return opt?.wrong ? pick(opt.wrong) : undefined;
@@ -279,6 +280,7 @@ function toQuestion(r: GrammarRoundItem, ctx: Ctx): LessonTestQuestion | null {
       view: { card: 'choice', heading: s.grammar.spotPickFix, text: marked, options: sh.options, correctIndex: sh.correctIndex },
       review: { question: item.es, answer: fixed, why: pick(item.explain) },
       say: fixed,
+      detail: { tr: trText(item.tr, pick, fixed) },
     };
   }
   if (isOrderItem(item)) {

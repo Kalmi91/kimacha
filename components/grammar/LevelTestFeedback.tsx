@@ -45,7 +45,7 @@ export default function LevelTestFeedback({
   const givenLabel = card === 'type' ? l.youTyped : card === 'tiles' ? l.youBuilt : l.youChose;
   const hasWhyNot = !!d?.whyNot && d.whyNot.length > 0;
   // after a wrong typed answer: its own text, or which other form it is, else the rule before the table
-  const typedText = !ok && card === 'type' ? (given !== undefined ? d?.explainTyped?.(given) : null) || d?.rule : undefined;
+  const typedText = !ok && card === 'type' ? (given !== undefined ? d?.explainTyped?.(given) : null) || (d?.table ? undefined : d?.rule) : undefined;
 
   const whyNotList = hasWhyNot ? (
     <View testID="level-test-whynot" style={styles.group}>
@@ -116,7 +116,7 @@ export default function LevelTestFeedback({
               {d.tr}
             </Text>
           ) : null}
-          {!ok && q.review.why ? (
+          {!ok && q.review.why && q.review.why !== d?.tr ? (
             <Text testID="level-test-feedback-why" style={[styles.why, { color: colors.textMuted }]}>
               {q.review.why}
             </Text>

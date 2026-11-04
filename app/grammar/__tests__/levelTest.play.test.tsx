@@ -279,7 +279,7 @@ describe.each(['brand', 'classic'] as const)('grammar level test (%s palette)', 
     for (const id of ['lt-1', 'lt-2', 'lt-3']) await seedEvidence(id, TICKED);
     await open();
     expect(topicOnScreen()).toBe('lt-0');
-    expect(text('level-test-header')).toBe('A1 · 75% · 1/20');
+    expect(text('level-test-header')).toBe('A1 · 92% · 1/20'); // 3 topics at 100, lt-0 with 2 right answers counts 67
     await answer(true);
     expect(text('level-test-header')).toBe('A1 · 100% · 1/20');
   });
@@ -475,7 +475,9 @@ describe.each(['brand', 'classic'] as const)('grammar level test (%s palette)', 
       await open();
       formOnScreen();
       await typeIn('zzz');
-      expect(screen.getByTestId('level-test-feedback-typed')).toHaveTextContent('Gustar always takes an indirect pronoun: me, te, le, nos, les.');
+      // the item has a table: the generic rule would only push the table down, so it is not shown
+      expect(screen.queryByTestId('level-test-feedback-typed')).toBeNull();
+      expect(screen.getByTestId('level-test-table-hl')).toBeTruthy();
     });
 
     it('"I don\'t know" shows the right answer and the rule, no "You typed" line', async () => {
@@ -485,7 +487,9 @@ describe.each(['brand', 'classic'] as const)('grammar level test (%s palette)', 
       await press('exam-dont-know');
       expect(screen.queryByTestId('level-test-feedback-given')).toBeNull();
       expect(text('level-test-feedback-answer')).toBe(q.review.answer);
-      expect(screen.getByTestId('level-test-feedback-typed')).toHaveTextContent('Gustar always takes an indirect pronoun: me, te, le, nos, les.');
+      // the item has a table: the generic rule would only push the table down, so it is not shown
+      expect(screen.queryByTestId('level-test-feedback-typed')).toBeNull();
+      expect(screen.getByTestId('level-test-table-hl')).toBeTruthy();
     });
 
     it('a right typed answer: green card, the task and the answer, no table', async () => {
@@ -508,11 +512,11 @@ describe.each(['brand', 'classic'] as const)('grammar level test (%s palette)', 
       await open();
       expect(text('level-test-header')).toBe('A1 · 0% · 1/20');
       await answer(true);
-      expect(text('level-test-header')).toBe('A1 · 0% · 1/20'); // the card of the 1st answer
+      expect(text('level-test-header')).toBe('A1 · 8% · 1/20'); // the card of the 1st answer: 1 right of 1 moves the level (33 / 4 topics)
       await next();
-      expect(text('level-test-header')).toBe('A1 · 0% · 2/20');
+      expect(text('level-test-header')).toBe('A1 · 8% · 2/20');
       await answerNext(false);
-      expect(text('level-test-header')).toBe('A1 · 0% · 3/20');
+      expect(text('level-test-header')).toBe('A1 · 8% · 3/20');
       expect(await saved()).toEqual({ n: 2, right: 1, startPct: 0 });
     });
 
@@ -528,12 +532,12 @@ describe.each(['brand', 'classic'] as const)('grammar level test (%s palette)', 
 
       await saveResumeValue(getDb(), KEY, { n: 99, right: 3 });
       const again = await open();
-      expect(text('level-test-header')).toBe('A1 · 0% · 1/20');
+      expect(text('level-test-header')).toBe('A1 · 17% · 1/20');
       again.unmount();
       // the pair and the level are separate rounds
       await saveResumeValue(getDb(), roundKey('A2'), { n: 7, right: 2, startPct: 10 });
       await open();
-      expect(text('level-test-header')).toBe('A1 · 0% · 1/20');
+      expect(text('level-test-header')).toBe('A1 · 17% · 1/20');
     });
 
     const nearEnd = async () => {

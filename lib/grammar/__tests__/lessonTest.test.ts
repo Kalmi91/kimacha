@@ -4,7 +4,7 @@
 
 import { getGrammarTopics, isMarkItem, isTrialItem, type GrammarItem } from '@/lib/games/content';
 import { buildGrammarRound, isChoiceRoundItem } from '@/lib/games/grammarChoice';
-import { askedColumn, diffWords, isPersonTable } from '@/lib/grammar/resultDetail';
+import { askedColumn, diffWords, isPersonTable, normTyped } from '@/lib/grammar/resultDetail';
 import { doneGrammarTopicProgress, lessonFor, scoredKinds } from '@/lib/grammar/syllabus';
 import { kindBestKey, kindProgressFromRows, lessonScore, lessonScoresByTopic } from '@/lib/grammar/lessonScore';
 import {
@@ -332,6 +332,26 @@ describe('form tasks and result data', () => {
     expect((nh as { hint?: string }).hint).toBe('Type the word');
   });
 
+  it('every item kind that has a translation carries it in detail.tr (why, spot, gap, mark), none repeats the sentence', () => {
+    const seen = new Set<string>();
+    for (const lesson of getGrammarTopics('es')) {
+      for (const q of buildLessonTest(lesson, { seed: 1, learnedLang: 'es', contentLang: 'en', size: 9999 })) {
+        const it = lesson.items.find((i) => i.id === q.id) as { tr?: Record<string, string> } | undefined;
+        if (!it?.tr || q.kind === 'match') continue;
+        const tr = it.tr.en;
+        if (!tr) continue;
+        if (q.detail?.tr) {
+          expect(q.detail.tr).toBe(tr);
+          seen.add(q.kind);
+        } else {
+          // only hidden when it repeats the sentence
+          expect(normTyped(tr)).toBe(normTyped(q.review.answer));
+        }
+      }
+    }
+    for (const kind of ['choice', 'why']) expect(seen.has(kind as never)).toBe(true);
+  });
+
   it('the hint keeps the capital of a German column label', () => {
     const { setLanguage } = require('@/lib/i18n');
     setLanguage('de');
@@ -345,7 +365,8 @@ describe('form tasks and result data', () => {
   it('a person table shows the whole column of the verb with the asked cell; another table only the asked row', () => {
     const t1 = byId('es', 'gustar', 'gu-form-12').detail!.table!;
     expect(t1.header).toEqual(['Person', 'gustar + several things']);
-    expect(t1.rows).toHaveLength(6);
+    expect(t1.rows).toHaveLength(5); // the vosotros row is not shown in Spanish (Mexican norm)
+    expect(t1.rows.some((r) => /vosotr/i.test(r[0]))).toBe(false);
     expect(t1.rows[t1.hl!.row][t1.hl!.col]).toBe('les gustan');
     const t2 = byId('es', 'interrogativos', 'int-form-04').detail!.table!;
     expect(t2.rows).toHaveLength(1);

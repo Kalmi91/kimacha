@@ -2,7 +2,7 @@
 // no immediate repeat), which question of the topic, the level percent and the done state.
 
 import type { GrammarKind } from '@/lib/games/content';
-import { appendEvidence, topicTicked, type EvidenceAnswer, type PickTopic, type TopicEvidence } from '@/lib/grammar/randomRound';
+import { appendEvidence, topicPercent, topicTicked, type EvidenceAnswer, type PickTopic, type TopicEvidence } from '@/lib/grammar/randomRound';
 import {
   LEVEL_ROUND_SIZE,
   levelDone,
@@ -31,10 +31,10 @@ const ticked = (): TopicEvidence => evOf(['c', 'f', 'c', 'f', 'c']); // 5 answer
 const evidenceOf = (entries: Record<string, TopicEvidence>) => new Map(Object.entries(entries));
 
 describe('levelPercent / levelDone', () => {
-  it('is the average of the topic percents, a topic without a percent counts 0', () => {
+  it('is the average of the topic shares: from 3 answers the percent, with 1 or 2 the right ones over 3, none = 0', () => {
     const ev = evidenceOf({ a: evOf(['c', 'c', 'c', 'c']), b: evOf(['c', 'x']) /* 2 answers: no percent */, c: evOf(['c', 'c', 'x', 'x']) });
-    // a 100, b 0 (no percent yet), c 50, d no answers
-    expect(levelPercent(['a', 'b', 'c', 'd'], ev)).toBe(Math.round(150 / 4));
+    // a 100, b 33 (1 right of 2), c 50, d no answers
+    expect(levelPercent(['a', 'b', 'c', 'd'], ev)).toBe(Math.round(183 / 4));
     expect(levelPercent(['a'], ev)).toBe(100);
   });
 
@@ -242,5 +242,19 @@ describe('rounds of 20 (FB581)', () => {
     expect(weakestTopic(['a', 'b'], ev)).toEqual({ id: 'b', pct: 50 });
     expect(weakestTopic(['d', 'c'], ev)).toEqual({ id: 'd', pct: 0 });
     expect(weakestTopic([], ev)).toBeNull();
+  });
+});
+
+describe('levelPercent moves with every answer', () => {
+  it('1 right of 1 counts 33, 2 right of 2 counts 67, 1 right of 2 counts 33, a wrong one 0; from 3 answers it is the topic percent', () => {
+    const level = (spec: string[]) => levelPercent(['a'], new Map([['a', evOf(spec)]]));
+    expect(level(['c'])).toBe(33);
+    expect(level(['c', 'c'])).toBe(67);
+    expect(level(['c', 'x'])).toBe(33);
+    expect(level(['x'])).toBe(0);
+    expect(level(['c', 'c', 'x'])).toBe(67);
+    expect(level(['c', 'c', 'c'])).toBe(100);
+    // the topic's own percent and the tick are not changed
+    expect(topicPercent(evOf(['c', 'c']))).toBeNull();
   });
 });

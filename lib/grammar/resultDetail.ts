@@ -103,19 +103,21 @@ export function ruleBefore(body: LessonBlock[], table: TableBlock, pick: Pick): 
 }
 
 /** The result data of a form item. */
-export function formDetail(item: FormItem, table: TableBlock | undefined, body: LessonBlock[], pick: Pick): QuestionDetail {
+export function formDetail(item: FormItem, table: TableBlock | undefined, body: LessonBlock[], pick: Pick, learnedLang = ''): QuestionDetail {
   if (!table) return {};
   const detail: QuestionDetail = { rule: ruleBefore(body, table, pick) };
   const ci = askedColumn(table, item.verb);
   const ri = table.rows.findIndex((r) => r[0] === item.person);
+  // the Mexican norm has no vosotros: such a row is not shown on the result card in Spanish
+  const shown = learnedLang === 'es' ? table.rows.filter((r) => !/vosotr/i.test(r[0])) : table.rows;
   const title = pick(table.title);
   if (ri >= 0 && ci >= 0) {
     detail.table = isPersonTable(table)
       ? {
           title,
           header: [pick(table.header[0]), pick(table.header[ci])],
-          rows: table.rows.map((r) => [r[0], r[ci]]),
-          hl: { row: ri, col: 1 },
+          rows: shown.map((r) => [r[0], r[ci]]),
+          hl: { row: shown.findIndex((r) => r[0] === item.person), col: 1 },
         }
       : { title, header: table.header.map((h) => pick(h)), rows: [table.rows[ri]], hl: { row: 0, col: ci } };
   }
