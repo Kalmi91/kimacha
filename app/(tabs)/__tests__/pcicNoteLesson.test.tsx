@@ -1,5 +1,6 @@
-// FB561 on the real card o436 (quizá / quizás / tal vez / acaso): the (i) note explains the four answers and links to the
-// ojala-quizas lesson, but only in a direction where that lesson exists. The item is the real corpus card, only the deck list is stubbed.
+// FB560 + FB561 on the real cards: o1666 (la cintura) shows the English example sentence as its hint, and the (i) note of
+// o436 (quizá / quizás / tal vez / acaso) explains the four answers and links to the ojala-quizas lesson, but only
+// in a direction where that lesson exists. The items are the real corpus cards, only the deck list is stubbed.
 // Mock pattern: app/(tabs)/__tests__/pcicNote.test.tsx.
 
 jest.mock('@/lib/speech', () => require('@/test-utils/mocks').speechMock());
@@ -31,8 +32,8 @@ jest.mock('@/data/pcic', () => {
   };
 });
 
-import { fireEvent, render } from '@testing-library/react-native';
-import { TextInput } from 'react-native';
+import { fireEvent, render, within } from '@testing-library/react-native';
+import { StyleSheet, TextInput } from 'react-native';
 
 import * as pcic from '@/data/pcic';
 import { getDb } from '@/lib/database';
@@ -49,7 +50,7 @@ const textOf = (node: unknown): string => {
   return '';
 };
 
-describe('PCIC tab: o436 note with the lesson link', () => {
+describe('PCIC tab: o1666 hint and o436 note with the lesson link', () => {
   beforeEach(async () => {
     mockPush.mockClear();
     await getDb().resetPcicCards();
@@ -60,6 +61,18 @@ describe('PCIC tab: o436 note with the lesson link', () => {
 
   afterEach(() => {
     jest.restoreAllMocks();
+  });
+
+  it('FB560: the waist card shows the English example sentence under the word, "waist" marked', async () => {
+    mockItems = [realCard('o1666')];
+    const utils = render(<PcicScreen />);
+    await flush();
+
+    const hint = utils.getByTestId('learn-hint');
+    expect(textOf(hint.props.children)).toBe('The pants are big for my waist.');
+    const mark = StyleSheet.flatten(within(hint).getByText('waist').props.style);
+    expect(mark.fontWeight).toBe('700');
+    expect(mark.textDecorationLine).toBe('underline');
   });
 
   it('FB561: the (i) of o436 explains the four answers and the link row pushes the lesson route', async () => {
