@@ -320,6 +320,16 @@ function withWeak(run: RoundRun, ctx: PickCtx): RoundRun {
 }
 
 /**
+ * Topics with a wrong answer in the round that are not in `weak` (the weak list is capped at MAX_WEAK_TOPICS),
+ * in the order they were first asked wrong. The result and end screens list them as tappable rows.
+ */
+export function otherWrongTopics(run: RoundRun): string[] {
+  const out: string[] = [];
+  for (const s of run.steps) if (!s.ok && !run.weak.includes(s.topicId) && !out.includes(s.topicId)) out.push(s.topicId);
+  return out;
+}
+
+/**
  * Appends the answered step and clears `pending`. When the check just reached CHECK_SIZE in a
  * mixed round, the weak topics (and their `before` percents) are fixed.
  */
@@ -363,14 +373,20 @@ const hasFree = (topicId: string, ctx: PickCtx, used: Set<string>): boolean =>
   ctx.questionIds(topicId).some((q) => !used.has(usedKey(topicId, q.id)));
 
 // Check: a topic of the ladder level (else the nearest level with one, the lower on a tie), scored by how
-// much the learner needs it, the previous step's topic left out when there is another candidate.
+// much the learner needs it, the previous step's topic left out when there is another candidate. A topic
+// without any answer in its evidence always comes first: while one has a free question, only those are
+// candidates (so the nearest level that has one is used before any answered topic is asked again).
 function pickCheckTopic(run: RoundRun, ctx: PickCtx, used: Set<string>, seed: number): string | null {
   const idx = ladderIndex(run, ctx.levels);
   const levelOrder = ctx.levels.map((_, i) => i).sort((a, b) => Math.abs(a - idx) - Math.abs(b - idx) || a - b);
   const prev = run.steps.length > 0 ? run.steps[run.steps.length - 1].topicId : undefined;
+  const neverAnswered = ctx.topics.filter(
+    (t) => ctx.levels.includes(t.level) && (ctx.evidence.get(t.id)?.answers.length ?? 0) === 0 && hasFree(t.id, ctx, used),
+  );
+  const pool = neverAnswered.length > 0 ? neverAnswered : ctx.topics;
   for (const li of levelOrder) {
     const level = ctx.levels[li];
-    const all = ctx.topics.filter((t) => t.level === level && hasFree(t.id, ctx, used));
+    const all = pool.filter((t) => t.level === level && hasFree(t.id, ctx, used));
     if (all.length === 0) continue;
     const others = all.filter((t) => t.id !== prev);
     const cands = others.length > 0 ? others : all;
@@ -412,8 +428,8 @@ function pickRecheckTopic(run: RoundRun, ctx: PickCtx, used: Set<string>): strin
   return run.weak.find((id) => !checked.has(id) && hasFree(id, ctx, used)) ?? null;
 }
 
-// Full: fill the topics started in this round up to MIN_ANSWERS_FOR_PCT answers, then start a new topic in
-// the level with the fewest started topics; when no topic needs answers any more, the topics whose last
+// Full: fill the topics started in this round up to MIN_ANSWERS_FOR_PCT answers, then start a new topic (a
+// never-answered one first) in the level with the fewest started topics; when no topic needs answers any more, the topics whose last
 // answer is the oldest (at most 2 questions per topic in the round).
 function pickFullTopic(run: RoundRun, ctx: PickCtx, used: Set<string>, seed: number): string | null {
   const answersOf = (id: string) => windowOf(ctx.evidence.get(id)).length;
@@ -459,7 +475,8 @@ function pickFullTopic(run: RoundRun, ctx: PickCtx, used: Set<string>, seed: num
   if (fresh.length > 0) {
     const perLevel = new Map<Level, number>();
     for (const lv of startedLevel.values()) perLevel.set(lv, (perLevel.get(lv) ?? 0) + 1);
-    return lowest(fresh, (t) => [perLevel.get(t.level) ?? 0, answersOf(t.id), lastAt(t.id), tierRank(t.tier)]);
+    // A topic with no answer at all comes before one with 1-2 answers, then the level spread applies.
+    return lowest(fresh, (t) => [answersOf(t.id) > 0 ? 1 : 0, perLevel.get(t.level) ?? 0, answersOf(t.id), lastAt(t.id), tierRank(t.tier)]);
   }
 
   const inRound = (id: string) => run.steps.filter((s) => s.topicId === id).length;

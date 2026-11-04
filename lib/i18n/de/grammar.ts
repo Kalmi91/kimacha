@@ -111,6 +111,7 @@ const de: typeof en = {
     fullIntro: 'Volltest: Es kommen auch Themen dran, die du noch nicht gelernt hast. Falsche Antworten sind normal.',
     finishedAt: (lvl: string) => `Beendet bei ${lvl}`,
     weakTitle: 'Schwache Themen',
+    otherWrongTitle: 'Auch falsch',
     noWeak: 'In dieser Runde gibt es keine schwachen Themen.',
     practiceThese: (n: number) => `Diese üben (${n})`,
     rule: 'Regel ›',

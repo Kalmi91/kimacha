@@ -46,6 +46,7 @@ import {
 } from '@/lib/grammar/randomRound';
 import { advance, isResultPause, makeCtx, questionsOf, type RoundData } from '@/lib/grammar/randomRoundView';
 import { Card } from '@/components/grammar/Brutal';
+import RandomOtherWrong from '@/components/grammar/RandomOtherWrong';
 import { ProgressBar, themedEdgeStyle } from '@/components/grammar/Themed';
 import TestQuestionView from '@/components/grammar/TestQuestionView';
 import ResultBadge from '@/components/ResultBadge';
@@ -412,10 +413,9 @@ export default function RandomRoundScreen() {
             })}
           </View>
         ) : (
-          <Text testID="random-no-weak" style={[styles.line, { color: colors.textMuted }]}>
-            {s.noWeak}
-          </Text>
+          <Text testID="random-no-weak" style={[styles.line, { color: colors.textMuted }]}>{s.noWeak}</Text>
         )}
+        <RandomOtherWrong run={run} titleOf={titleOf} />
         {hasWeak ? (
           <>
             <ExamButton testID="random-practice-these" label={s.practiceThese(PRACTICE_SIZE)} onPress={startPractice} />
@@ -494,6 +494,7 @@ export default function RandomRoundScreen() {
             })}
           </View>
         )}
+        {run.mode === 'mixed' && <RandomOtherWrong run={run} titleOf={titleOf} />}
         <ExamButton testID="random-another" label={s.anotherRound} onPress={() => startRound(nextMode(metaRef.current))} />
         <ExamButton testID="random-done" secondary label={s.done} onPress={onDone} />
       </ScrollView>,
