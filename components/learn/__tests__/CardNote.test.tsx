@@ -2,11 +2,14 @@
 // the source line opens the image's Commons file page on tap, a cropped image is flagged in the line;
 // a card without an image has no image element, and if there is neither image nor explanation, nothing renders.
 import { Linking } from 'react-native';
+import { router } from 'expo-router';
 import { fireEvent, render } from '@testing-library/react-native';
 import Colors from '@/constants/Colors';
 import { findPcicItem, setPcicTarget } from '@/data/pcic';
 import { setLanguage } from '@/lib/i18n';
 import CardNote from '../CardNote';
+
+jest.mock('expo-router', () => ({ router: { push: jest.fn() } }));
 
 describe('CardNote (image + source line + explanation)', () => {
   beforeEach(() => setPcicTarget('es'));
@@ -62,6 +65,39 @@ describe('CardNote (image + source line + explanation)', () => {
     expect(queryByTestId('learn-image')).toBeNull();
     expect(queryByTestId('learn-image-credit')).toBeNull();
     expect(getByTestId('learn-note')).toBeTruthy();
+  });
+
+  it('with a lesson, a link row under the note opens that lesson (a push, so Back returns to the card)', () => {
+    const item = findPcicItem('o436');
+    const lesson = { id: 'ojala-quizas', title: 'Ojalá, quizás, tal vez' };
+    const { getByTestId } = render(<CardNote note={item?.note} lesson={lesson} colors={Colors.light} />);
+    const row = getByTestId('learn-note-lesson');
+    expect(row.props.accessibilityRole).toBe('link');
+    expect(getByTestId('learn-note')).toBeTruthy();
+    fireEvent.press(row);
+    expect(router.push).toHaveBeenCalledWith('/grammar/ojala-quizas');
+  });
+
+  it('the link label follows the UI language (en, es, hu, de)', () => {
+    const lesson = { id: 'ojala-quizas', title: 'Ojalá, quizás, tal vez' };
+    const labels: Record<string, string> = {
+      en: 'Open the lesson: Ojalá, quizás, tal vez ›',
+      es: 'Abrir la lección: Ojalá, quizás, tal vez ›',
+      hu: 'Lecke megnyitása: Ojalá, quizás, tal vez ›',
+      de: 'Lektion öffnen: Ojalá, quizás, tal vez ›',
+    };
+    for (const [lang, label] of Object.entries(labels)) {
+      setLanguage(lang);
+      const { getByText, unmount } = render(<CardNote note="A note." lesson={lesson} colors={Colors.light} />);
+      expect(getByText(label)).toBeTruthy();
+      unmount();
+    }
+  });
+
+  it('without a lesson there is no link row', () => {
+    const { queryByTestId, getByTestId } = render(<CardNote note="Just a note." colors={Colors.light} />);
+    expect(getByTestId('learn-note')).toBeTruthy();
+    expect(queryByTestId('learn-note-lesson')).toBeNull();
   });
 
   it('neither image nor explanation -> renders nothing', () => {

@@ -31,6 +31,7 @@ import { BrutalBox, textOnFill } from '@/components/grammar/Brutal';
 import EasySentenceCard from '@/components/EasySentenceCard';
 import { wordSpeakerGender } from '@/lib/cardSpeaker';
 import { findPcicItem } from '@/data/pcic';
+import { noteLessonFor } from '@/lib/grammar/noteLesson';
 import FitText from '@/components/FitText';
 import DoneBadge from '@/components/DoneBadge';
 import TypedSentenceCard from '@/components/TypedSentenceCard';
@@ -483,7 +484,7 @@ export default function PcicCardView({
                 </Pressable>
               ))}
           </View>
-          {noteOpen && <CardNote note={currentItem.note} image={currentItem.image} colors={colors} />}
+          {noteOpen && <CardNote note={currentItem.note} lesson={noteLessonFor(currentItem.noteLesson, target, sourceLang)} image={currentItem.image} colors={colors} />}
 
           {/* article button row from the Learn tab, ⊘ is the default.
               Addition: on PCIC the chip already shows when it is not a noun, so the

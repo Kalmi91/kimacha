@@ -1,4 +1,5 @@
 import { Image, Linking, Pressable, StyleSheet, View } from 'react-native';
+import { router } from 'expo-router';
 import { Text } from '@/components/KText';
 import { accentColor } from '@/components/grammar/Themed';
 
@@ -6,6 +7,7 @@ import Colors from '@/constants/Colors';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
 import type { WordImage } from '@/data/wordImages';
+import type { NoteLesson } from '@/lib/grammar/noteLesson';
 
 type ColorScheme = (typeof Colors)['light'];
 
@@ -13,13 +15,15 @@ type ColorScheme = (typeof Colors)['light'];
 // below the image a small source line that opens the image's Commons file page on tap (CC BY / BY-SA
 // attribution: link to the source; for a cropped image the line shows "(cropped)" / "(recortada)").
 // If there is neither an image nor an explanation, nothing renders.
+// `lesson`: the grammar lesson the explanation links to (a tappable row under the text, FB561).
 type Props = {
   note?: string;
+  lesson?: NoteLesson;
   image?: WordImage;
   colors: ColorScheme;
 };
 
-export default function CardNote({ note, image, colors }: Props) {
+export default function CardNote({ note, lesson, image, colors }: Props) {
   const g = useGrammarColors();
   if (!note && !image) return null;
   const linkColor = accentColor(g, colors.tint);
@@ -50,9 +54,20 @@ export default function CardNote({ note, image, colors }: Props) {
         </View>
       )}
       {!!note && (
-        <Text testID="learn-note" style={[styles.noteText, { color: colors.text }]}>
+        <Text testID="learn-note" style={[styles.noteText, !!lesson && styles.noteTextBeforeLink, { color: colors.text }]}>
           {note}
         </Text>
+      )}
+      {!!note && !!lesson && (
+        <Pressable
+          testID="learn-note-lesson"
+          accessibilityRole="link"
+          hitSlop={8}
+          style={styles.lessonLink}
+          onPress={() => router.push(`/grammar/${lesson.id}` as never)}
+        >
+          <Text style={[styles.lessonLinkText, { color: linkColor }]}>{`${t().pcic.noteLessonLink(lesson.title)} ›`}</Text>
+        </Pressable>
       )}
     </View>
   );
@@ -85,5 +100,17 @@ const styles = StyleSheet.create({
     lineHeight: 20,
     textAlign: 'center',
     marginBottom: 16,
+  },
+  noteTextBeforeLink: {
+    marginBottom: 8,
+  },
+  lessonLink: {
+    marginBottom: 16,
+  },
+  lessonLinkText: {
+    fontSize: 14,
+    lineHeight: 20,
+    textAlign: 'center',
+    textDecorationLine: 'underline',
   },
 });

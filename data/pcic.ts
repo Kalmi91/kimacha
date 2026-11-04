@@ -72,6 +72,8 @@ import openC1 from '@/data/words-open/c1.json';
 // hand-written (i) explanation for some cards, keyed by `o<order>`,
 // in English; opened by the small (i) button of the Learn card (PcicItem.note).
 import openNotes from '@/data/words-open/notes.json';
+// the grammar lesson a note points to (`o<order>` -> topic id), for the tappable row under the note.
+import openNoteLessons from '@/data/words-open/note-lessons.json';
 // image for some cards (Wikimedia Commons), shown under the (i) next to the explanation.
 import { wordImageFor, type WordImage } from '@/data/wordImages';
 
@@ -109,6 +111,8 @@ export interface PcicItem {
   hint?: string;
   // (i) explanation (English, short), only on the cards with a hand-written note.
   note?: string;
+  // id of the grammar topic the (i) note links to (data/words-open/note-lessons.json), only where the note has one.
+  noteLesson?: string;
   // the card's image (with author and licence), only on the cards that have one.
   image?: WordImage;
 }
@@ -231,6 +235,7 @@ function itemsFromOpen(cards: OpenCard[]): PcicItem[] {
     exampleEn: c.sentence_en || undefined,
     hint: c.hint_en || undefined,
     note: (openNotes as Record<string, string>)[`o${c.order}`],
+    noteLesson: (openNoteLessons as Record<string, string>)[`o${c.order}`],
     image: wordImageFor(`o${c.order}`),
     ...glossFields(GLOSS_OPEN, c.order),
   }));

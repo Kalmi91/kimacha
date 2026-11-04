@@ -132,6 +132,8 @@ export default {
     // the source line of the card's image (Wikimedia Commons).
     photoCredit: (author: string, license: string, cropped: boolean) => `Photo: ${author}, ${license}, Wikimedia Commons${cropped ? ' (cropped)' : ''}`,
     photoCreditHint: 'Opens the photo page on Wikimedia Commons',
+    // the tappable row under an (i) note that opens the grammar lesson it refers to.
+    noteLessonLink: (title: string) => `Open the lesson: ${title}`,
     // labels and rows of the level-picker sheet (previously hard-coded in English
     // in LEVEL_LABELS of data/pcic.ts and in components/LevelRow.tsx).
     levelBeginner: 'Beginner',

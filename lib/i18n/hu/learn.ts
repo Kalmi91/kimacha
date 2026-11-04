@@ -107,6 +107,7 @@ const hu: typeof en = {
     noteLabel: 'Több információ',
     photoCredit: (author: string, license: string, cropped: boolean) => `Fotó: ${author}, ${license}, Wikimedia Commons${cropped ? ' (kivágva)' : ''}`,
     photoCreditHint: 'Megnyitja a fotó oldalát a Wikimedia Commonson',
+    noteLessonLink: (title: string) => `Lecke megnyitása: ${title}`,
     levelBeginner: 'Kezdő',
     levelElementary: 'Alapszint',
     levelIntermediate: 'Középhaladó',
