@@ -10,6 +10,7 @@ import { useGrammarColors } from '@/lib/grammarColors';
 import { levelDone, levelPercent } from '@/lib/grammar/levelTest';
 import type { TopicEvidence } from '@/lib/grammar/randomRound';
 import { hasLesson, syllabusForLevel } from '@/lib/grammar/syllabus';
+import { topicKindCount } from '@/lib/grammar/randomRoundView';
 import { t } from '@/lib/i18n';
 import { useTheme } from '@/lib/ThemeContext';
 
@@ -19,10 +20,12 @@ import { useTheme } from '@/lib/ThemeContext';
 export default function LevelTestButton({
   level,
   learnedLang,
+  contentLang,
   evidence,
 }: {
   level: Level;
   learnedLang: string;
+  contentLang: string;
   evidence: Map<string, TopicEvidence>;
 }) {
   const { theme } = useTheme();
@@ -34,7 +37,7 @@ export default function LevelTestButton({
     [level, learnedLang]
   );
   if (ids.length === 0) return null;
-  const done = levelDone(ids, evidence);
+  const done = levelDone(ids, evidence, (id) => topicKindCount(learnedLang, contentLang, id));
   const label = `${done ? '✓ ' : ''}🎯 ${t().levelTest.button} · ${levelPercent(ids, evidence)}%`;
   const open = () => router.push(`/grammar/level-test?level=${level}` as never);
   if (g.brutal) {

@@ -5,6 +5,11 @@ import type { GrammarKind } from '@/lib/games/content';
 import { appendEvidence, topicTicked, type EvidenceAnswer, type PickTopic, type TopicEvidence } from '@/lib/grammar/randomRound';
 import { levelDone, levelPercent, pickLevelNext, pickLevelQuestion, pickLevelTopic, type LevelTestCtx } from '@/lib/grammar/levelTest';
 
+// every topic of these tests has two kinds (the usual case); the one-kind case has its own tests below
+const TWO = () => 2;
+const pick = (topics: PickTopic[], ev: Map<string, TopicEvidence>, prev?: string) => pickLevelTopic(topics, ev, TWO, prev);
+const done = (ids: string[], ev: Map<string, TopicEvidence>) => levelDone(ids, ev, TWO);
+
 const topic = (id: string, tier: PickTopic['tier']): PickTopic => ({ id, level: 'A1', tier });
 
 // answers: 'c1' = right choice, 'x' = wrong choice, 'f' = right form; ids are numbered per call
@@ -28,11 +33,37 @@ describe('levelPercent / levelDone', () => {
   });
 
   it('is done only when every topic is ticked (and there is a topic)', () => {
-    expect(levelDone([], new Map())).toBe(false);
-    expect(levelDone(['a', 'b'], evidenceOf({ a: ticked() }))).toBe(false);
-    expect(levelDone(['a', 'b'], evidenceOf({ a: ticked(), b: ticked() }))).toBe(true);
+    expect(done([], new Map())).toBe(false);
+    expect(done(['a', 'b'], evidenceOf({ a: ticked() }))).toBe(false);
+    expect(done(['a', 'b'], evidenceOf({ a: ticked(), b: ticked() }))).toBe(true);
     // 100% but one kind only: not ticked
-    expect(levelDone(['a'], evidenceOf({ a: evOf(['c', 'c', 'c', 'c', 'c']) }))).toBe(false);
+    expect(done(['a'], evidenceOf({ a: evOf(['c', 'c', 'c', 'c', 'c']) }))).toBe(false);
+  });
+});
+
+describe('a topic with one exercise kind', () => {
+  // the reported case: es A2 indefinido-10-verbos has 50 transform items and no other kind
+  const transformOnly = (n: number, oks: boolean[] = []): TopicEvidence => ({
+    answers: Array.from({ length: n }, (_, i) => ({ id: `t${i}`, kind: 'transform' as GrammarKind, ok: oks[i] ?? true, at: '2026-11-01' })),
+  });
+  const kindsOf = (id: string) => (id === 'one' ? 1 : 2);
+
+  it('ticks on answers and percent alone, so the level can be done', () => {
+    const ids = ['a', 'one'];
+    expect(levelDone(ids, evidenceOf({ a: ticked(), one: transformOnly(5) }), kindsOf)).toBe(true);
+    expect(levelDone(ids, evidenceOf({ a: ticked(), one: transformOnly(5) }), () => 2)).toBe(false); // the old rule: stuck
+    expect(levelDone(ids, evidenceOf({ a: ticked(), one: transformOnly(5, [true, false, false, true, true]) }), kindsOf)).toBe(false); // 60%
+  });
+
+  it('is out of the pool once ticked: the pick moves on to the other tiers, then the level runs on from the lowest', () => {
+    const topics = [topic('one', 'core'), topic('core2', 'core'), topic('plain', 'full')];
+    const ev = evidenceOf({ core2: ticked(), plain: evOf(['c', 'x', 'x', 'x']) });
+    // not ticked yet: the one-kind core topic is the open core topic
+    expect(pickLevelTopic(topics, evidenceOf({ ...Object.fromEntries(ev), one: transformOnly(4) }), kindsOf)).toBe('one');
+    // ticked: the other tier comes (plain, 25%)
+    expect(pickLevelTopic(topics, evidenceOf({ ...Object.fromEntries(ev), one: transformOnly(5) }), kindsOf)).toBe('plain');
+    // with the old rule it never ticks and stays the only pick forever
+    expect(pickLevelTopic(topics, evidenceOf({ ...Object.fromEntries(ev), one: transformOnly(5) }), () => 2)).toBe('one');
   });
 });
 
@@ -40,8 +71,8 @@ describe('pickLevelTopic', () => {
   const topics = [topic('plain1', 'exam'), topic('core1', 'core'), topic('plus1', 'core-plus'), topic('plain2', 'full')];
 
   it('a topic without any answer comes first, core+ before core before the rest on a tie', () => {
-    expect(pickLevelTopic(topics, new Map())).toBe('plus1');
-    expect(pickLevelTopic([topic('x', 'full'), topic('y', 'core')], new Map())).toBe('y');
+    expect(pick(topics, new Map())).toBe('plus1');
+    expect(pick([topic('x', 'full'), topic('y', 'core')], new Map())).toBe('y');
   });
 
   it('takes the unticked core topic with the lowest percent, whatever the other tiers need', () => {
@@ -50,20 +81,20 @@ describe('pickLevelTopic', () => {
       core1: evOf(['c', 'x', 'x', 'x']), // 25
       plain1: evOf(['x', 'x', 'x', 'x']), // 0, but not core
     });
-    expect(pickLevelTopic(topics, ev)).toBe('core1');
+    expect(pick(topics, ev)).toBe('core1');
   });
 
   it('a topic with 1-2 answers (no percent yet) ranks by its share of right answers, after the unanswered ones', () => {
     const ev = evidenceOf({ plus1: evOf(['x']), core1: evOf(['c', 'c']) });
     // all four unticked core: plus1 (0%) and core1 (100%); the others are not core
-    expect(pickLevelTopic(topics, ev)).toBe('plus1');
-    expect(pickLevelTopic(topics.slice(0, 3), evidenceOf({ plus1: evOf(['c']) }))).toBe('core1'); // core1 has no answer: below plus1
+    expect(pick(topics, ev)).toBe('plus1');
+    expect(pick(topics.slice(0, 3), evidenceOf({ plus1: evOf(['c']) }))).toBe('core1'); // core1 has no answer: below plus1
   });
 
   it('leaves the previous topic out when there is another candidate, takes it when it is the only one', () => {
-    expect(pickLevelTopic(topics, new Map(), 'plus1')).toBe('core1');
-    expect(pickLevelTopic([topic('only', 'core'), topic('p', 'full')], evidenceOf({ p: ticked() }), 'only')).toBe('only');
-    expect(pickLevelTopic([topic('only', 'core')], new Map(), 'only')).toBe('only');
+    expect(pick(topics, new Map(), 'plus1')).toBe('core1');
+    expect(pick([topic('only', 'core'), topic('p', 'full')], evidenceOf({ p: ticked() }), 'only')).toBe('only');
+    expect(pick([topic('only', 'core')], new Map(), 'only')).toBe('only');
   });
 
   it('once every core topic is ticked the other tiers come, lowest percent first', () => {
@@ -73,15 +104,15 @@ describe('pickLevelTopic', () => {
       plain1: evOf(['c', 'c', 'c', 'x']), // 75
       plain2: evOf(['c', 'x', 'x', 'x']), // 25
     });
-    expect(pickLevelTopic(topics, ev)).toBe('plain2');
+    expect(pick(topics, ev)).toBe('plain2');
   });
 
   it('when everything is ticked the whole level goes on, lowest percent first, core before the rest on a tie', () => {
     const lower = evOf(['c', 'f', 'c', 'f', 'c', 'x', 'c', 'f']); // 87.5 -> 88%, still ticked
     const ev = evidenceOf({ plus1: ticked(), core1: lower, plain1: ticked(), plain2: ticked() });
     expect(topicTicked(lower)).toBe(true);
-    expect(pickLevelTopic(topics, ev)).toBe('core1');
-    expect(pickLevelTopic(topics, evidenceOf({ plus1: ticked(), core1: ticked(), plain1: ticked(), plain2: ticked() }))).toBe('plus1');
+    expect(pick(topics, ev)).toBe('core1');
+    expect(pick(topics, evidenceOf({ plus1: ticked(), core1: ticked(), plain1: ticked(), plain2: ticked() }))).toBe('plus1');
   });
 
   it('evidence growth moves the pick: a wrong answer keeps a topic up front, right ones hand over to the next', () => {
@@ -91,24 +122,24 @@ describe('pickLevelTopic', () => {
       ev = new Map(ev).set(id, appendEvidence(ev.get(id), a));
     };
     const two = [topic('a', 'core'), topic('b', 'core')];
-    expect(pickLevelTopic(two, ev)).toBe('a');
+    expect(pick(two, ev)).toBe('a');
     answer('a', true, 0);
-    expect(pickLevelTopic(two, ev)).toBe('b'); // b has no answer
+    expect(pick(two, ev)).toBe('b'); // b has no answer
     answer('b', false, 1);
-    expect(pickLevelTopic(two, ev)).toBe('b'); // b 0% < a 100%
-    expect(pickLevelTopic(two, ev, 'b')).toBe('a'); // ... but never twice in a row while another one exists
+    expect(pick(two, ev)).toBe('b'); // b 0% < a 100%
+    expect(pick(two, ev, 'b')).toBe('a'); // ... but never twice in a row while another one exists
     answer('b', true, 2);
     answer('b', true, 3);
     answer('b', true, 4);
-    expect(pickLevelTopic(two, ev)).toBe('b'); // b is at 75%, a (one answer, no percent yet) counts 100
+    expect(pick(two, ev)).toBe('b'); // b is at 75%, a (one answer, no percent yet) counts 100
     answer('a', false, 5);
     answer('a', false, 6);
     answer('a', false, 7);
-    expect(pickLevelTopic(two, ev)).toBe('a'); // a fell to 25%: it moves to the front
+    expect(pick(two, ev)).toBe('a'); // a fell to 25%: it moves to the front
   });
 
   it('is null for a level without topics', () => {
-    expect(pickLevelTopic([], new Map())).toBeNull();
+    expect(pick([], new Map())).toBeNull();
   });
 });
 

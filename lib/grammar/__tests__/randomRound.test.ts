@@ -131,6 +131,29 @@ describe('topicTicked', () => {
     expect(topicTicked(ev([true, true, true, true, true], ['choice']))).toBe(false);
   });
 
+  it('needs only the kinds the topic has: a one-kind topic ticks on answers and percent alone', () => {
+    const one = ev([true, true, true, true, true], ['transform']);
+    expect(topicTicked(one, () => 1)).toBe(true);
+    expect(topicTicked(ev([true, true, true, true, false], ['transform']), () => 1)).toBe(true); // 80%
+    expect(topicTicked(ev([true, true, true, false, false], ['transform']), () => 1)).toBe(false); // 60%
+    expect(topicTicked(ev([true, true, true, true], ['transform']), () => 1)).toBe(false); // 4 answers
+    // a topic with two or more kinds still needs two of them in the window
+    expect(topicTicked(one, () => 2)).toBe(false);
+    expect(topicTicked(one, () => 5)).toBe(false);
+    // no kind count given: unchanged, two kinds
+    expect(topicTicked(one)).toBe(false);
+  });
+
+  it('asks for the kind count only when it decides', () => {
+    const count = jest.fn(() => 1);
+    topicTicked(ev([true, true, true, true, true], ['choice', 'form']), count); // two kinds already
+    topicTicked(ev([true, true, true, true], ['choice']), count); // too few answers
+    topicTicked(ev([true, false, false, false, false], ['choice']), count); // too low
+    expect(count).not.toHaveBeenCalled();
+    topicTicked(ev([true, true, true, true, true], ['choice']), count);
+    expect(count).toHaveBeenCalledTimes(1);
+  });
+
   it('is ticked at 80% with two kinds, not below 80%', () => {
     expect(topicTicked(ev([true, true, true, true, false], ['choice', 'form']))).toBe(true);
     expect(topicTicked(ev([true, true, true, false, false], ['choice', 'form']))).toBe(false);
@@ -821,6 +844,12 @@ describe('badgeForTopic', () => {
     expect(badgeForTopic(50, passed)).toEqual({ pct: 80, fromTest: true, ticked: true });
     expect(badgeForTopic(90, passed)).toEqual({ pct: 90, fromTest: false, ticked: true });
     expect(badgeForTopic(80, passed)).toEqual({ pct: 80, fromTest: false, ticked: true });
+  });
+
+  it('ticks a one-kind topic when it is told the topic has one kind', () => {
+    const one = ev([true, true, true, true, true], ['transform']);
+    expect(badgeForTopic(null, one).ticked).toBe(false);
+    expect(badgeForTopic(null, one, () => 1)).toEqual({ pct: 100, fromTest: true, ticked: true });
   });
 
   it('works with a missing lesson percent or missing evidence', () => {

@@ -15,7 +15,7 @@ import { t } from '@/lib/i18n';
 import { useTheme } from '@/lib/ThemeContext';
 import { localDateString } from '@/lib/usageStats';
 import type { LessonTestQuestion } from '@/lib/grammar/lessonTest';
-import { levelDone, levelPercent, pickLevelNext } from '@/lib/grammar/levelTest';
+import { kindsOfCtx, levelDone, levelPercent, pickLevelNext } from '@/lib/grammar/levelTest';
 import { levelTestCtx } from '@/lib/grammar/levelTestView';
 import { hasLesson, syllabusForLevel, syllabusLevels } from '@/lib/grammar/syllabus';
 import { GRAMMAR_RANDOM_KEY, appendEvidence, evidenceFromRows, type EvidenceAnswer, type TopicEvidence } from '@/lib/grammar/randomRound';
@@ -145,6 +145,7 @@ export default function LevelTestScreen() {
 
   const ctx = levelTestCtx(data, seed, level, evidence);
   const ids = ctx.topics.map((tp) => tp.id);
+  const kindsOf = kindsOfCtx(ctx);
   const pct = levelPercent(ids, evidence);
   const pendingQ = questionsOf(data, seed, current.topicId).find((q) => q.id === current.qid);
   const titleOf = (id: string) => {
@@ -163,7 +164,7 @@ export default function LevelTestScreen() {
     setEvidence(nextEvidence);
     setCurrent(pickLevelNext(levelTestCtx(data, seed, level, nextEvidence), topicId, seed + asked + 1) ?? current);
     // the last topic just ticked: the done screen comes once per visit
-    if (!doneShown.current && !levelDone(ids, evidence) && levelDone(ids, nextEvidence)) {
+    if (!doneShown.current && !levelDone(ids, evidence, kindsOf) && levelDone(ids, nextEvidence, kindsOf)) {
       doneShown.current = true;
       setDoneOpen(true);
     }

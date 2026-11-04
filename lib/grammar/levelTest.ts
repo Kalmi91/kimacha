@@ -34,9 +34,18 @@ export function levelPercent(topicIds: string[], evidence: Map<string, TopicEvid
   return Math.round(sum / topicIds.length);
 }
 
+/** How many exercise kinds a topic has questions of: the tick asks for two kinds, but never more than the topic has. */
+export type KindsOf = (topicId: string) => number;
+
+/** The kind counts of the topics of a level test context. */
+export const kindsOfCtx =
+  (ctx: LevelTestCtx): KindsOf =>
+  (topicId) =>
+    new Set(ctx.questionIds(topicId).map((q) => q.kind)).size;
+
 /** Every topic ticked (at least one topic). */
-export function levelDone(topicIds: string[], evidence: Map<string, TopicEvidence>): boolean {
-  return topicIds.length > 0 && topicIds.every((id) => topicTicked(evidence.get(id)));
+export function levelDone(topicIds: string[], evidence: Map<string, TopicEvidence>, kindsOf: KindsOf): boolean {
+  return topicIds.length > 0 && topicIds.every((id) => topicTicked(evidence.get(id), () => kindsOf(id)));
 }
 
 // How much a topic needs the learner, lowest first: a topic without any answer is below everything, a topic with
@@ -61,9 +70,14 @@ function lessThan(a: number[], b: number[]): boolean {
  * The previous question's topic is left out when the pool has another candidate. Ties: core+ before core before
  * the rest, then syllabus order.
  */
-export function pickLevelTopic(topics: PickTopic[], evidence: Map<string, TopicEvidence>, prev?: string): string | null {
+export function pickLevelTopic(
+  topics: PickTopic[],
+  evidence: Map<string, TopicEvidence>,
+  kindsOf: KindsOf,
+  prev?: string,
+): string | null {
   if (topics.length === 0) return null;
-  const open = (list: PickTopic[]) => list.filter((t) => !topicTicked(evidence.get(t.id)));
+  const open = (list: PickTopic[]) => list.filter((t) => !topicTicked(evidence.get(t.id), () => kindsOf(t.id)));
   const pool = [open(topics.filter(isCore)), open(topics.filter((t) => !isCore(t))), topics].find((l) => l.length > 0) ?? topics;
   const others = pool.filter((t) => t.id !== prev);
   const cands = others.length > 0 ? others : pool;
@@ -103,7 +117,7 @@ export function pickLevelQuestion(topicId: string, ctx: LevelTestCtx, seed: numb
 
 /** The next question of the stream, `null` only for a level without any usable question. */
 export function pickLevelNext(ctx: LevelTestCtx, prev: string | undefined, seed: number): { topicId: string; qid: string } | null {
-  const topicId = pickLevelTopic(ctx.topics, ctx.evidence, prev);
+  const topicId = pickLevelTopic(ctx.topics, ctx.evidence, kindsOfCtx(ctx), prev);
   if (topicId === null) return null;
   const qid = pickLevelQuestion(topicId, ctx, seed);
   return qid === null ? null : { topicId, qid };

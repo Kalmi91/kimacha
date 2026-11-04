@@ -120,13 +120,19 @@ export function topicPercent(ev?: TopicEvidence): number | null {
   return Math.round((w.filter((a) => a.ok).length / w.length) * 100);
 }
 
-/** Ticked: enough answers, a high enough percent, and at least two different exercise kinds. */
-export function topicTicked(ev?: TopicEvidence): boolean {
+/**
+ * Ticked: enough answers, a high enough percent, and at least two different exercise kinds. `kindCount` is the number
+ * of kinds the topic has questions of: a topic with fewer than TICK_MIN_KINDS (a lesson of one kind) ticks with the
+ * kinds it has, or it could never tick. It is only called when it decides the result.
+ */
+export function topicTicked(ev?: TopicEvidence, kindCount?: () => number): boolean {
   const w = windowOf(ev);
   if (w.length < TICK_MIN_ANSWERS) return false;
   const pct = topicPercent(ev);
   if (pct === null || pct < TICK_PCT) return false;
-  return new Set(w.map((a) => a.kind)).size >= TICK_MIN_KINDS;
+  const kinds = new Set(w.map((a) => a.kind)).size;
+  if (kinds >= TICK_MIN_KINDS) return true;
+  return kindCount !== undefined && kinds >= Math.max(1, Math.min(TICK_MIN_KINDS, kindCount()));
 }
 
 /** Appends one answer, only the last EVIDENCE_WINDOW stay. */
@@ -513,11 +519,12 @@ export function pickNext(run: RoundRun, ctx: PickCtx): { topicId: string; qid: s
 export function badgeForTopic(
   lessonPct: number | null,
   ev?: TopicEvidence,
+  kindCount?: () => number,
 ): { pct: number | null; fromTest: boolean; ticked: boolean } {
   const testPct = topicPercent(ev);
   const pct = lessonPct === null ? testPct : testPct === null ? lessonPct : Math.max(lessonPct, testPct);
   const fromTest = testPct !== null && (lessonPct === null || testPct > lessonPct);
-  return { pct, fromTest, ticked: topicTicked(ev) };
+  return { pct, fromTest, ticked: topicTicked(ev, kindCount) };
 }
 
 /** The grammar score: the average over the topics of the better of the lesson % and the test %, 0 for no topics. */

@@ -304,15 +304,27 @@ describe.each(['brand', 'classic'] as const)('grammar level test (%s palette)', 
   });
 
   it('a topic with every question in the window keeps coming back instead of drying up', async () => {
-    // the first topic has 12 questions: 14 right answers in a row on a single-topic level never stop the stream
+    // the topic has 12 questions: 14 right answers in a row on a single-topic level never stop the stream
     mockParams = { level: 'A2' };
     await open();
     expect(topicOnScreen()).toBe('lt-4');
     for (let i = 0; i < 14; i++) {
+      if (screen.queryByTestId('level-test-done')) await press('level-test-done-keep'); // ticked after the 5th answer
       expect(topicOnScreen()).toBe('lt-4');
       await answer(true);
     }
     expect((await evidenceNow()).get('lt-4')?.answers).toHaveLength(10);
+  });
+
+  it('a topic whose lesson has one exercise kind ticks on answers and percent alone, and the level is done', async () => {
+    // lt-4 (the only topic of A2) has choice questions only: five right answers tick it and finish the level
+    mockParams = { level: 'A2' };
+    await open();
+    for (let i = 0; i < 4; i++) await answer(true);
+    expect(screen.queryByTestId('level-test-done')).toBeNull();
+    expect(topicTicked((await evidenceNow()).get('lt-4'))).toBe(false); // the plain rule asks two kinds
+    await answer(true);
+    expect(text('level-test-done-title')).toBe('A2: every topic ticked off');
   });
 
   it('an unknown level falls back to the learner level; a level without any topic goes straight back', async () => {
