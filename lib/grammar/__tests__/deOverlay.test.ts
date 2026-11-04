@@ -210,7 +210,7 @@ describe('German syllabus titles', () => {
 describe('scripts/grammar-de-check.mjs', () => {
   it('prints the coverage summary and exits 0 with --strict while es and en are complete', () => {
     const out = execFileSync(process.execPath, [path.join(ROOT, 'scripts', 'grammar-de-check.mjs'), '--strict'], { encoding: 'utf8' });
-    expect(out).toMatch(/^es: 86 lessons, \d+\/\d+ Lang4 covered \(100\.00%\), 0 stale$/m);
+    expect(out).toMatch(/^es: 87 lessons, \d+\/\d+ Lang4 covered \(100\.00%\), 0 stale$/m);
     expect(out).toMatch(/^en: 63 lessons, \d+\/\d+ Lang4 covered \(100\.00%\), 0 stale$/m);
     expect(out).toMatch(/^TOTAL: \d+ lessons, \d+\/\d+ Lang4 covered \(\d+\.\d+%\), \d+ stale$/m);
   });

@@ -90,4 +90,5 @@ export const ES_GRAMMAR_INDEX: GrammarIndexEntry[] = [
   { id: 'finales-causales', load: () => require('@/data/games/grammar/es/finales-causales.json') },
   { id: 'marcadores-discursivos', load: () => require('@/data/games/grammar/es/marcadores-discursivos.json') },
   { id: 'indefinido-cambios-raiz', load: () => require('@/data/games/grammar/es/indefinido-cambios-raiz.json') },
+  { id: 'cuantificadores', load: () => require('@/data/games/grammar/es/cuantificadores.json') },
 ];
