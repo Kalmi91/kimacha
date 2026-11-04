@@ -2,6 +2,7 @@ import { View, Pressable, TextInput, ScrollView, KeyboardAvoidingView, Platform,
 import { Text } from '@/components/KText';
 import { TitleText, themedInkEdgeStyle, themedInputStyle, ProgressBar, ActionButton } from '@/components/grammar/Themed';
 import { dismissKeyboardOnTap, keyboardDismissOnDrag } from '@/lib/keyboardTap';
+import { useWebKeyboardOpen, WEB_TYPING_PADDING } from '@/lib/webKeyboard';
 import { speak } from '@/lib/speech';
 
 import Colors from '@/constants/Colors';
@@ -100,6 +101,10 @@ export default function PcicCardView({
   const colors = Colors[theme];
   const g = useGrammarColors();
   const s = t();
+  // On a phone browser the keyboard leaves room for little more than the card: the counts, the mistakes entry and the progress
+  // bar step aside while typing, so the prompt and the field fit together.
+  const webKeyboardOpen = useWebKeyboardOpen();
+  const typingPadding = webKeyboardOpen ? WEB_TYPING_PADDING : null;
 
   // The header's FIRST chip is the selected level,
   // tapping it opens the level picker sheet; the existing four chips are unchanged.
@@ -139,6 +144,7 @@ export default function PcicCardView({
         <ScreenFeedback placement="inline" compact level={level} languagePair={languagePair} currentCard={feedbackCard} />
       </View>
     </View>
+    {!webKeyboardOpen && (
     <View style={styles.badgeRowWrap}>
       <BadgeRow
         singleLine
@@ -152,8 +158,9 @@ export default function PcicCardView({
         ]}
       />
     </View>
+    )}
     </View>
-    <MistakesEntry colors={colors} />
+    {!webKeyboardOpen && <MistakesEntry colors={colors} />}
     </SkinHeader>
   );
 
@@ -170,7 +177,7 @@ export default function PcicCardView({
   if (sentenceCard) {
     return (
       <KeyboardAvoidingView
-        style={[styles.container, { backgroundColor: colors.background }]}
+        style={[styles.container, { backgroundColor: colors.background }, typingPadding]}
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
       >
         <SkinBackdrop />
@@ -378,7 +385,7 @@ export default function PcicCardView({
 
   return (
     <KeyboardAvoidingView
-      style={[styles.container, { backgroundColor: colors.background }]}
+      style={[styles.container, { backgroundColor: colors.background }, typingPadding]}
       behavior={Platform.OS === 'ios' ? 'padding' : undefined}
     >
       <SkinBackdrop />
@@ -396,6 +403,7 @@ export default function PcicCardView({
         onClose={() => setLevelSheetOpen(false)}
       />
 
+      {!webKeyboardOpen && (
       <ProgressBar
         testID="learn-progress"
         continuous
@@ -407,6 +415,7 @@ export default function PcicCardView({
         fillColor={colors.tint}
         fillProps={{ testID: 'learn-progress-fill' }}
       />
+      )}
 
       <ScrollView
         style={[styles.cardScroll, { marginBottom: dockInsets.marginBottom }]}

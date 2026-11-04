@@ -15,6 +15,7 @@ import { feedbackBuildTag } from '@/lib/appBuild';
 import { IS_PLAY_BUILD, FEEDBACK_URL } from '@/lib/buildFlavor';
 import { FeedbackHeaderContext } from '@/lib/feedbackHeader';
 import { HEADER_CHIP } from '@/components/learn/pcicStyles';
+import { useWebKeyboardOpen } from '@/lib/webKeyboard';
 
 interface Props {
   level: string;
@@ -63,6 +64,7 @@ function FeedbackControl({ level, languagePair, currentCard, draggable = false, 
   const [showThanks, setShowThanks] = useState(false);
   const [sendError, setSendError] = useState(false);
   const { feedbackBtnSide: side, refresh, setFeedbackBtnSide } = useLearner();
+  const webKeyboardOpen = useWebKeyboardOpen();
 
   useEffect(() => {
     if (!draggable) return;
@@ -163,6 +165,9 @@ function FeedbackControl({ level, languagePair, currentCard, draggable = false, 
           g.brutal && (slot === 'fab' ? styles.brutalFab : small ? styles.brutalCompactSlot : styles.brutalSlot),
           slot === 'fab' && draggable && (side === 'left' ? styles.fabLeft : styles.fabRight),
           slot === 'fab' && bottomOffset > 0 && { bottom: FEEDBACK_FAB_MARGIN + bottomOffset },
+          // In a short window the floating button lands on the field being typed in. Hidden, not unmounted: the feedback
+          // form below lives in this component, and its own field is what opens the keyboard.
+          slot === 'fab' && webKeyboardOpen && styles.fabHidden,
         ]}
         onPress={() => setVisible(true)}
         {...(draggable ? panResponder.panHandlers : {})}
@@ -299,6 +304,7 @@ const styles = StyleSheet.create({
   },
   // draggable tree-tab button only, override fab's default right:24
   // to switch sides (left clears the inherited right, and vice versa).
+  fabHidden: { display: 'none' },
   fabLeft: {
     left: FEEDBACK_FAB_MARGIN,
     right: undefined,

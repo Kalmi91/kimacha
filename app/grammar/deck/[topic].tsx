@@ -42,6 +42,7 @@ import { useDiffStyles } from '@/lib/useDiffStyles';
 import CardShell from '@/components/learn/CardShell';
 import DockedAction, { DOCK_RESERVE, FAB_CLEARANCE } from '@/components/learn/DockedAction';
 import { useDockLift } from '@/components/learn/useDockLift';
+import { useWebKeyboardOpen, WEB_TYPING_PADDING } from '@/lib/webKeyboard';
 
 // Practices the cells of the lesson's conjugation
 // tables on the PCIC card surface (CardShell,
@@ -107,6 +108,7 @@ export default function TableDeckScreen() {
   const [cellSeq, setCellSeq] = useState(0);
   const [dockH, setDockH] = useState(DOCK_RESERVE);
   const { dockLift } = useDockLift();
+  const webKeyboardOpen = useWebKeyboardOpen();
   // React Compiler purity rule: Date.now() may not be called during render
   // (lib/grammar/tableDeck.ts's nextCellId needs "now" to pick the due
   // cell), so it lives in state, refreshed right after every action that can
@@ -297,9 +299,9 @@ export default function TableDeckScreen() {
   }
 
   return (
-    <KeyboardAvoidingView style={[styles.container, { backgroundColor: colors.background }]} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
+    <KeyboardAvoidingView style={[styles.container, { backgroundColor: colors.background }, webKeyboardOpen && WEB_TYPING_PADDING]} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
       {header}
-      {progressBar}
+      {!webKeyboardOpen && progressBar}
 
       <ScrollView
         style={styles.cardScroll}

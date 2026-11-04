@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react';
 import { Keyboard, Platform } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
+import { WEB_KEYBOARD_MIN_PX } from '@/lib/webKeyboard';
+
 // On the web build react-native-web fires no Keyboard events, so a phone browser's open keyboard is
-// seen through the visual viewport instead: the part of the window the keyboard covers. A gap under
-// this many px is the URL bar or a pinch, not a keyboard.
-const WEB_KEYBOARD_MIN_PX = 80;
+// seen through the visual viewport instead: the part of the window the keyboard covers.
 
 // The typing card had two Check buttons (the in-card one and the older one
 // below the card); there is one now, docked to the bottom edge of this screen,
