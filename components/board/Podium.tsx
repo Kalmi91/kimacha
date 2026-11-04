@@ -52,7 +52,7 @@ export default function Podium({ rows, gains, onGainDone }: { rows: BoardRow[] |
         }
         const gain = gains?.[row.name];
         const fill = c.place === 1 ? colors.tint : colors.secondary;
-        const ink = c.place === 1 ? colors.onTint : textOn(colors.secondary, colors.text, colors.background);
+        const ink = c.place === 1 ? colors.onTint : textOn(colors.secondary, colors.onTint, colors.text, colors.background);
         const height = Math.max(MIN_HEIGHT, Math.round((row.xp / top) * FIRST_HEIGHT));
         return (
           <View

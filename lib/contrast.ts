@@ -19,7 +19,7 @@ export function contrastRatio(a: string, b: string): number {
   return (Math.max(la, lb) + 0.05) / (Math.min(la, lb) + 0.05);
 }
 
-// Of two candidate text colors the one that contrasts more with `fill` (the first when they tie or `fill` is not a hex color).
-export function textOn(fill: string, a: string, b: string): string {
-  return contrastRatio(fill, b) > contrastRatio(fill, a) ? b : a;
+// Of the candidate text colors the one that contrasts most with `fill` (the first when they tie or `fill` is not a hex color).
+export function textOn(fill: string, first: string, ...rest: string[]): string {
+  return rest.reduce((best, c) => (contrastRatio(fill, c) > contrastRatio(fill, best) ? c : best), first);
 }

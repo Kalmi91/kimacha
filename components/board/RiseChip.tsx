@@ -37,7 +37,7 @@ export default function RiseChip({ delta, onDone, style }: { delta: number; onDo
         },
       ]}
     >
-      <Text style={[styles.text, { color: textOn(colors.secondary, colors.text, colors.background) }]}>{`+${delta}`}</Text>
+      <Text style={[styles.text, { color: textOn(colors.secondary, colors.onTint, colors.text, colors.background) }]}>{`+${delta}`}</Text>
     </Animated.View>
   );
 }
