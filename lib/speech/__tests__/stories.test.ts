@@ -425,9 +425,9 @@ describe('the first story: broad answers (FB582, FB583)', () => {
     const name = turnById(story, 'name')!;
     const from = turnById(story, 'from')!;
     const age = turnById(story, 'age')!;
-    expect(judgeAnswer(name, 'Kálmán', { lang: 'es' }).branch).toBe(0);
-    expect(judgeAnswer(from, 'Hungría', { lang: 'es' }).branch).toBe(0);
-    expect(judgeAnswer(from, 'soy húngaro', { lang: 'es' }).branch).toBe(0);
+    expect(judgeAnswer(name, 'Ana', { lang: 'es' }).branch).toBe(0);
+    expect(judgeAnswer(from, 'México', { lang: 'es' }).branch).toBe(0);
+    expect(judgeAnswer(from, 'soy mexicano', { lang: 'es' }).branch).toBe(0);
     for (const said of ['35', 'treinta y cinco', 'cuarenta', 'tengo 35 años']) expect({ said, branch: judgeAnswer(age, said, { lang: 'es' }).branch }).toEqual({ said, branch: 0 });
     expect(judgeAnswer(age, 'prefiero no decirlo', { lang: 'es' }).branch).toBe(1);
   });

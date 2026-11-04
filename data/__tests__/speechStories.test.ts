@@ -19,7 +19,7 @@ const STRUCTURE_LEVEL: Partial<Record<string, PcicLevel>> = {
   subjuntivo_imperfecto: 'B2',
 };
 // what the learner would say for the blank of a model answer
-const SAMPLE = 'Kálmán';
+const SAMPLE = 'Ana';
 const blanked = (model: string) => model.replace(/_+/g, ' ');
 // the answers with the free slot filled in
 const sayable = (answer: string) => answer.replace(/\*/g, SAMPLE);

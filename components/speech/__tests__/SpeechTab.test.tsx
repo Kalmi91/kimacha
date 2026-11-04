@@ -298,8 +298,8 @@ describe('Speak tab: the story, typed', () => {
     const view = await mount();
     expect(view.getByTestId('speech-narration').props.children).toBe(story.intro.en);
     expect(text(view, 'speech-ask')).toBe(sx.ask(story.speaker));
-    await type(view, 'me llamo Kálmán');
-    expect(text(view, 'speech-answer-0')).toBe('Me llamo Kálmán');
+    await type(view, 'me llamo Ana');
+    expect(text(view, 'speech-answer-0')).toBe('Me llamo Ana');
     expect(text(view, 'speech-answer-who-0')).toBe('You ✓');
     expect(view.queryByTestId('speech-line-1')).toBeNull();
     expect(view.queryByTestId('speech-result')).toBeNull();
@@ -540,8 +540,8 @@ describe('Speak tab: by voice', () => {
     expect(ExpoSpeechRecognitionModule.start).toHaveBeenCalledWith(expect.objectContaining({ lang: 'es-MX', continuous: false }));
     await emit('start');
     expect(view.getByText(sx.listening)).toBeTruthy();
-    await heardFinal('soy de Hungría');
-    expect(text(view, 'speech-answer-1')).toBe('Soy de Hungría');
+    await heardFinal('soy de México');
+    expect(text(view, 'speech-answer-1')).toBe('Soy de México');
     await advance();
     expect(text(view, 'speech-line-2')).toBe(lineText(2));
     view.unmount();
@@ -590,7 +590,7 @@ describe('Speak tab: by voice', () => {
     expect(view.getByTestId('speech-type-input')).toBeTruthy();
     expect(await savedNow()).toMatchObject({ mode: 'type', path: WAY.slice(0, 2) });
     expect(await loadResumeValue(getDb(), SPEECH_ANSWER_KEY)).toBe('type');
-    await heardFinal('soy de Hungría');
+    await heardFinal('soy de México');
     expect(await savedNow()).toMatchObject({ path: WAY.slice(0, 2), tries: 0 });
     // and back
     await press(view, 'speech-mode-toggle');
@@ -605,7 +605,7 @@ describe('Speak tab: by voice', () => {
     await press(view, 'speech-mic');
     await emit('start');
     (ExpoSpeechRecognitionModule.abort as jest.Mock).mockClear();
-    await heardFinal('soy de Hungría');
+    await heardFinal('soy de México');
     // nothing else closed it (a voice result does not): the turn change did
     expect(ExpoSpeechRecognitionModule.abort).toHaveBeenCalled();
     await advance();
@@ -1011,7 +1011,7 @@ describe('Speak tab: the answer decides how the story goes on', () => {
   it('a right answer typed just before switching tab: the next line comes, but it is not read aloud in the other tab', async () => {
     await saveRun(at(0));
     const view = await mount();
-    await type(view, 'me llamo Kálmán');
+    await type(view, 'me llamo Ana');
     await act(async () => {
       __blur();
     });
