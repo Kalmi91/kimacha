@@ -79,7 +79,6 @@ const es: typeof en = {
       practiceMatch: 'Juego de parejas rápidas',
       practiceOpposites: 'Juego de opuestos',
       practiceSituations: 'Juego de situaciones',
-      sentenceListening: 'Frases: paso de escuchar y escribir',
       sentenceMistakes: 'Frases: de mis errores',
       sentenceHint: 'Frases: pistas al tocar una palabra',
       sentenceMix: 'Frases: las frases se alternan',

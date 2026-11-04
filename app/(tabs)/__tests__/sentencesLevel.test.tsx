@@ -40,6 +40,7 @@ import { fireEvent, render } from '@testing-library/react-native';
 import { __resetBetaForTest } from '@/lib/beta';
 import { getDb } from '@/lib/database';
 import { setLanguage } from '@/lib/i18n';
+import { LADDER_KEY, saveStage } from '@/lib/sentenceLadder';
 import { loadSentenceLevel, saveSentenceLevel } from '@/lib/sentenceLevel';
 import { clearSentenceRound, loadSentenceRound } from '@/lib/sentenceRound';
 import { sm2NewCard, type Sm2Card } from '@/lib/sm2';
@@ -71,7 +72,8 @@ beforeEach(async () => {
   await getDb().setGrammarPalette('classic');
   await clearSentenceRound(getDb());
   __resetBetaForTest();
-  for (const flag of ['xpV2', 'sentenceListening', 'sentenceHint', 'sentenceMix'] as const) await getDb().setBetaFlag(flag, false);
+  for (const flag of ['xpV2', 'sentenceHint', 'sentenceMix'] as const) await getDb().setBetaFlag(flag, false);
+  await getDb().resetGameProgress(LADDER_KEY);
   // back to the default after a test that picked a level
   await saveSentenceLevel(getDb(), 'en→es', 'all');
 });
@@ -88,7 +90,7 @@ describe('Sentences tab: level picker (FB556)', () => {
     expect(['all', 'A1', 'B2'].map((id) => selected(r, id))).toEqual([true, false, false]);
     expect(r.getByText('All')).toBeTruthy();
     expect(await roundItems()).toEqual(['a1-w1', 'a1-w2', 'b2-w1', 'b2-w2']);
-    expect(String(r.getByTestId('sentences-progress-text').props.children)).toBe('0 / 8');
+    expect(String(r.getByTestId('sentences-progress-text').props.children)).toBe('0 / 4');
     // the feedback button stays on the screen
     expect(r.getByLabelText('Feedback')).toBeTruthy();
   });
@@ -103,7 +105,7 @@ describe('Sentences tab: level picker (FB556)', () => {
     expect(selected(r, 'B2')).toBe(true);
     expect(selected(r, 'all')).toBe(false);
     expect(await roundItems()).toEqual(['b2-w1', 'b2-w2']);
-    expect(String(r.getByTestId('sentences-progress-text').props.children)).toBe('0 / 4');
+    expect(String(r.getByTestId('sentences-progress-text').props.children)).toBe('0 / 2');
     expect(r.queryByText('The cat.')).toBeNull();
     expect(r.queryByText('The dog.')).toBeNull();
 
@@ -151,7 +153,7 @@ describe('Sentences tab: level picker (FB556)', () => {
     fireEvent.press(r.getByTestId('sentences-level-B2'));
     await flush();
     expect(r.getByTestId('sentences-empty')).toBeTruthy();
-    expect(r.getByText('No sentences at this level with the words you know yet. Pick another level')).toBeTruthy();
+    expect(r.getByText('Nothing to practise at this level right now. Pick another level')).toBeTruthy();
     expect(selected(r, 'B2')).toBe(true);
     expect(r.getByLabelText('Feedback')).toBeTruthy();
 
@@ -164,8 +166,36 @@ describe('Sentences tab: level picker (FB556)', () => {
   it('no learned words at all: the old empty text with All picked', async () => {
     const r = render(screen());
     await flush();
-    expect(r.getByText('Learn more words to unlock sentences')).toBeTruthy();
+    expect(r.getByText('Nothing to practise right now. Learn more words to unlock new sentences')).toBeTruthy();
     expect(selected(r, 'all')).toBe(true);
+  });
+
+  it('a learned sentence never returns, in any level: a level whose sentences are all learned has nothing to practise, the others still serve theirs', async () => {
+    await learn(ALL_WORDS);
+    await saveStage(getDb(), 'la casa.', 'learned');
+    await saveStage(getDb(), 'el pan.', 'learned');
+    const r = render(screen());
+    await flush();
+    expect(await roundItems()).toEqual(['a1-w1', 'a1-w2']); // All: the B2 sentences are learned
+    fireEvent.press(r.getByTestId('sentences-level-B2'));
+    await flush();
+    expect(r.getByTestId('sentences-empty')).toBeTruthy();
+    expect(r.getByText('Nothing to practise at this level right now. Pick another level')).toBeTruthy();
+    expect(r.queryByText(/Round done/)).toBeNull();
+    fireEvent.press(r.getByTestId('sentences-level-A1'));
+    await flush();
+    expect(await roundItems()).toEqual(['a1-w1', 'a1-w2']);
+  });
+
+  it('the rung a sentence is on follows it across the levels: a B2 sentence on rung 3 is typed under B2 and under All', async () => {
+    await learn(ALL_WORDS);
+    await saveStage(getDb(), 'la casa.', 3);
+    const r = render(screen());
+    await flush();
+    expect(((await loadSentenceRound(getDb()))?.entries ?? []).find((e) => e.itemId === 'b2-w1')?.rung).toBe(3);
+    fireEvent.press(r.getByTestId('sentences-level-B2'));
+    await flush();
+    expect(((await loadSentenceRound(getDb()))?.entries ?? []).find((e) => e.itemId === 'b2-w1')?.rung).toBe(3);
   });
 
   it('a saved level that no longer has sentences opens on All', async () => {

@@ -78,7 +78,6 @@ const de: typeof en = {
       practiceMatch: 'Schnellzuordnung (Spiel)',
       practiceOpposites: 'Spiel „Gegenteile“',
       practiceSituations: 'Spiel „Situationen“',
-      sentenceListening: 'Sätze: Schritt Hören und Tippen',
       sentenceMistakes: 'Sätze: aus meinen Fehlern',
       sentenceHint: 'Sätze: Hinweis per Tipp auf ein Wort',
       sentenceMix: 'Sätze: die Sätze wechseln sich ab',

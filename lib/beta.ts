@@ -11,9 +11,9 @@ import { useEffect, useMemo, useSyncExternalStore } from 'react';
 
 import { getDb } from '@/lib/database';
 
-export type BetaFlag = 'practiceTab' | 'sentenceTab' | 'xpV2' | 'levels' | 'practiceDictation' | 'practiceScramble' | 'practiceMatch' | 'practiceOpposites' | 'practiceSituations' | 'sentenceListening' | 'sentenceMistakes' | 'sentenceHint' | 'sentenceMix' | 'speechTab';
+export type BetaFlag = 'practiceTab' | 'sentenceTab' | 'xpV2' | 'levels' | 'practiceDictation' | 'practiceScramble' | 'practiceMatch' | 'practiceOpposites' | 'practiceSituations' | 'sentenceMistakes' | 'sentenceHint' | 'sentenceMix' | 'speechTab';
 
-export const BETA_FLAGS: readonly BetaFlag[] = ['practiceTab', 'sentenceTab', 'xpV2', 'levels', 'practiceDictation', 'practiceScramble', 'practiceMatch', 'practiceOpposites', 'practiceSituations', 'sentenceListening', 'sentenceMistakes', 'sentenceHint', 'sentenceMix', 'speechTab'];
+export const BETA_FLAGS: readonly BetaFlag[] = ['practiceTab', 'sentenceTab', 'xpV2', 'levels', 'practiceDictation', 'practiceScramble', 'practiceMatch', 'practiceOpposites', 'practiceSituations', 'sentenceMistakes', 'sentenceHint', 'sentenceMix', 'speechTab'];
 
 export const BETA_DEFAULTS: Readonly<Record<BetaFlag, boolean>> = {
   practiceTab: false,
@@ -26,8 +26,8 @@ export const BETA_DEFAULTS: Readonly<Record<BetaFlag, boolean>> = {
   practiceMatch: true,
   practiceOpposites: true,
   practiceSituations: true,
-  // New flags from sentenceListening on ship ON by default (Kálmán 3a); the older ones above stay off.
-  sentenceListening: true,
+  // New flags from sentenceMistakes on ship ON by default (Kálmán 3a); the older ones above stay off.
+  // (sentenceListening was one of them until FB570: the listening rung of the sentence ladder is always on.)
   sentenceMistakes: true,
   sentenceHint: true,
   // FB536: the sentences of a round take turns (lib/sentenceSteps.ts); off = one sentence after the other.

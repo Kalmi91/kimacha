@@ -1,6 +1,6 @@
-// The Sentences tab round (FB524): every sentence runs through its steps, a wrong step goes to the end, the typing step is
-// done either way, the saved round (v2) round-trips (with its focus) and an unusable one, or one saved by the older version
-// (no steps), reads as nothing and so starts a fresh round.
+// The Sentences tab round (FB524, ladder FB569/FB570): every sentence runs through the steps of its rung, a wrong step goes to
+// the end, the typing step is done either way and passes nothing when wrong, the saved round (v3) round-trips (with its focus)
+// and an unusable one, or one saved by an older version (no steps, no rungs), reads as nothing and so starts a fresh round.
 
 
 import { getDb } from '@/lib/database';
@@ -11,7 +11,9 @@ import {
   currentEntry,
   currentStep,
   isRoundFor,
+  learnedInRound,
   loadSentenceRound,
+  newlyPassed,
   parseSentenceRound,
   roundProgress,
   roundSentences,
@@ -24,7 +26,7 @@ import type { SentenceEntry } from '../sentenceTab';
 
 const DAY = '2026-10-12';
 
-const entry = (id: string, chunks?: { source: string; target: string }[]): SentenceEntry => ({
+const entry = (id: string, chunks?: { source: string; target: string }[], rung?: 2 | 3): SentenceEntry => ({
   itemId: id,
   source: `src ${id}`,
   target: `tgt ${id}`,
@@ -35,11 +37,14 @@ const entry = (id: string, chunks?: { source: string; target: string }[]): Sente
   staleness: '2026-10-01',
   slots: [{ id: `w-${id}`, words: [id] }],
   ...(chunks ? { chunks } : {}),
+  ...(rung ? { rung } : {}),
 });
 const PARTS = [{ source: 'part one', target: 'parte uno' }, { source: 'part two', target: 'parte dos' }];
-// a: split in two (chunk0, chunk1, build, type); b, c: not split (build, type)
+// a: split in two (chunk0, chunk1, build); b, c: not split (build). All on rung 1.
 const ENTRIES = [entry('a', PARTS), entry('b'), entry('c')];
-const fresh = (entries = ENTRIES, focus = '', listening = false): SentenceRound => startRound(entries, DAY, 'es', focus, { listening });
+const fresh = (entries = ENTRIES, focus = ''): SentenceRound => startRound(entries, DAY, 'es', focus);
+// One sentence on each rung: a on rung 1 (chunk0, chunk1, build), b on rung 2 (listen), c on rung 3 (type).
+const LADDER = [entry('a', PARTS), entry('b', undefined, 2), entry('c', undefined, 3)];
 
 const allRight = (start: SentenceRound): SentenceRound => {
   let round = start;
@@ -50,18 +55,16 @@ const allRight = (start: SentenceRound): SentenceRound => {
 describe('the steps run sentence by sentence', () => {
   it('a fresh round: every step still to do, in order, the first one on screen', () => {
     const r = fresh();
-    expect(r).toMatchObject({ v: 2, day: DAY, target: 'es', focus: '', done: [], phase: 'steps' });
-    expect(r.queue).toEqual(['a#chunk0', 'a#chunk1', 'a#build', 'a#type', 'b#build', 'b#type', 'c#build', 'c#type']);
+    expect(r).toMatchObject({ v: 3, day: DAY, target: 'es', focus: '', done: [], phase: 'steps' });
+    expect(r.queue).toEqual(['a#chunk0', 'a#chunk1', 'a#build', 'b#build', 'c#build']);
     expect(r.steps.map((s) => s.id)).toEqual(r.queue);
     expect(currentStep(r)).toEqual({ id: 'a#chunk0', itemId: 'a', kind: 'chunk', chunk: 0 });
     expect(currentEntry(r)?.itemId).toBe('a');
-    expect(roundProgress(r)).toEqual({ done: 0, total: 8 });
+    expect(roundProgress(r)).toEqual({ done: 0, total: 5 });
   });
 
-  it('with the listening switch each sentence has its listen step before the build', () => {
-    expect(fresh(ENTRIES, '', true).queue).toEqual([
-      'a#chunk0', 'a#chunk1', 'a#listen', 'a#build', 'a#type', 'b#listen', 'b#build', 'b#type', 'c#listen', 'c#build', 'c#type',
-    ]);
+  it('each sentence gets only the steps of its own rung', () => {
+    expect(fresh(LADDER).queue).toEqual(['a#chunk0', 'a#chunk1', 'a#build', 'b#listen', 'c#type']);
   });
 
   it('right answers move on step by step; the last one ends the round', () => {
@@ -69,14 +72,14 @@ describe('the steps run sentence by sentence', () => {
     r = answerStep(r, true);
     expect(r.done).toEqual(['a#chunk0']);
     expect(currentStep(r)?.id).toBe('a#chunk1');
-    expect(roundProgress(r)).toEqual({ done: 1, total: 8 });
+    expect(roundProgress(r)).toEqual({ done: 1, total: 5 });
     const end = allRight(r);
     expect(end.phase).toBe('done');
     expect(end.queue).toEqual([]);
-    expect(end.done).toHaveLength(8);
+    expect(end.done).toHaveLength(5);
     expect(currentStep(end)).toBeUndefined();
     expect(currentEntry(end)).toBeUndefined();
-    expect(roundProgress(end)).toEqual({ done: 8, total: 8 });
+    expect(roundProgress(end)).toEqual({ done: 5, total: 5 });
   });
 
   it('nothing to play: the round is over at once', () => {
@@ -92,7 +95,7 @@ describe('the steps run sentence by sentence', () => {
   it('the place of the sentence on screen: 1-based, moves with the steps, the last one when the round is over', () => {
     let r = fresh();
     expect(sentenceNumber(r)).toBe(1);
-    for (let i = 0; i < 4; i++) r = answerStep(r, true); // the 4 steps of sentence a
+    for (let i = 0; i < 3; i++) r = answerStep(r, true); // the 3 steps of sentence a
     expect(currentEntry(r)?.itemId).toBe('b');
     expect(sentenceNumber(r)).toBe(2);
     expect(sentenceNumber(allRight(r))).toBe(3);
@@ -103,7 +106,7 @@ describe('the steps run sentence by sentence', () => {
 describe('wrong steps', () => {
   it('a wrong step goes to the end of the queue, nothing is done, the sentence stays the same', () => {
     const r = answerStep(fresh(), false);
-    expect(r.queue).toEqual(['a#chunk1', 'a#build', 'a#type', 'b#build', 'b#type', 'c#build', 'c#type', 'a#chunk0']);
+    expect(r.queue).toEqual(['a#chunk1', 'a#build', 'b#build', 'c#build', 'a#chunk0']);
     expect(r.done).toEqual([]);
     expect(sentenceNumber(r)).toBe(1);
     expect(roundProgress(r).done).toBe(0);
@@ -111,31 +114,113 @@ describe('wrong steps', () => {
 
   it('a step done wrong first counts once it is right, at the end of the round', () => {
     const round = allRight(answerStep(fresh(), false));
-    expect(round.done).toEqual(['a#chunk1', 'a#build', 'a#type', 'b#build', 'b#type', 'c#build', 'c#type', 'a#chunk0']);
+    expect(round.done).toEqual(['a#chunk1', 'a#build', 'b#build', 'c#build', 'a#chunk0']);
     expect(round.phase).toBe('done');
   });
 
   it('the typing step is done either way: a wrong typing is not repeated', () => {
-    let r = fresh();
-    for (let i = 0; i < 3; i++) r = answerStep(r, true);
+    const r = fresh([entry('c', undefined, 3), entry('b')]);
     expect(currentStep(r)?.kind).toBe('type');
     const next = answerStep(r, false);
-    expect(next.done).toEqual(['a#chunk0', 'a#chunk1', 'a#build', 'a#type']);
-    expect(next.queue).not.toContain('a#type');
+    expect(next.done).toEqual(['c#type']);
+    expect(next.queue).not.toContain('c#type');
     expect(currentStep(next)?.id).toBe('b#build');
   });
 
   it('the listening step, like a build, comes back when wrong', () => {
-    let r = fresh([entry('b')], '', true);
+    let r = fresh([entry('b', undefined, 2), entry('c', undefined, 3)]);
     expect(currentStep(r)?.kind).toBe('listen');
     r = answerStep(r, false);
-    expect(r.queue).toEqual(['b#build', 'b#type', 'b#listen']);
+    expect(r.queue).toEqual(['c#type', 'b#listen']);
   });
 
   it('an answer once the round is over changes nothing', () => {
     const end = allRight(fresh());
     expect(answerStep(end, true)).toBe(end);
     expect(answerStep(end, false)).toBe(end);
+  });
+});
+
+describe('passing a rung (FB570)', () => {
+  const passedAfter = (round: SentenceRound, answers: boolean[]): string[] => {
+    let r = round;
+    for (const a of answers) r = answerStep(r, a);
+    return r.passed ?? [];
+  };
+
+  it('rung 1 is passed with its last step done: the parts, then the whole sentence built', () => {
+    const r = fresh([entry('a', PARTS)]);
+    expect(passedAfter(r, [true, true])).toEqual([]);
+    expect(passedAfter(r, [true, true, true])).toEqual(['a']);
+  });
+
+  it('a wrong step is repeated, so the rung is passed only when every step was right in the end', () => {
+    const r = fresh([entry('a', PARTS)]);
+    expect(passedAfter(r, [true, false, true])).toEqual([]); // chunk1 went to the end, still to do
+    expect(passedAfter(r, [true, false, true, true])).toEqual(['a']);
+  });
+
+  it('rung 2 (listening) is passed with the step right, not with it wrong', () => {
+    const r = fresh([entry('b', undefined, 2)]);
+    expect(passedAfter(r, [false])).toEqual([]);
+    expect(passedAfter(r, [false, true])).toEqual(['b']);
+  });
+
+  it('rung 3 (typing) is passed only by a right typing: a wrong one ends for this round and passes nothing', () => {
+    const r = fresh([entry('c', undefined, 3)]);
+    const wrong = answerStep(r, false);
+    expect(wrong.phase).toBe('done');
+    expect(wrong.passed).toBeUndefined();
+    expect(newlyPassed(r, wrong)).toBeUndefined();
+    const right = answerStep(r, true);
+    expect(right.passed).toEqual(['c']);
+    expect(newlyPassed(r, right)?.itemId).toBe('c');
+  });
+
+  it('a mistake sentence is outside the ladder: it never passes a rung', () => {
+    const mistake = { ...entry('m'), wordIds: [], dueIds: [], slots: [], mistake: { wrong: 'frase mal' } };
+    const r = answerStep(fresh([mistake]), true);
+    expect(r.phase).toBe('done');
+    expect(r.passed).toBeUndefined();
+  });
+
+  it('newlyPassed names the sentence whose rung the last answer passed, and only once', () => {
+    let r = fresh(LADDER);
+    const seen: string[] = [];
+    while (r.phase === 'steps') {
+      const next = answerStep(r, true);
+      const passed = newlyPassed(r, next);
+      if (passed) seen.push(passed.itemId);
+      r = next;
+    }
+    expect(seen).toEqual(['a', 'b', 'c']);
+    expect(r.passed).toEqual(['a', 'b', 'c']);
+    expect(newlyPassed(r, r)).toBeUndefined();
+  });
+
+  it('learnedInRound counts the sentences that passed rung 3', () => {
+    expect(learnedInRound(fresh(LADDER))).toBe(0);
+    const end = allRight(fresh(LADDER));
+    expect(end.passed).toEqual(['a', 'b', 'c']);
+    expect(learnedInRound(end)).toBe(1); // only c was on rung 3
+    const missed = answerStep(answerStep(answerStep(answerStep(answerStep(fresh(LADDER), true), true), true), true), false);
+    expect(missed.phase).toBe('done');
+    expect(learnedInRound(missed)).toBe(0); // the typing was wrong: c stays on rung 3
+  });
+
+  it('what a round passed stays through save and load; a broken value is ignored', async () => {
+    const mid = answerStep(answerStep(answerStep(fresh(LADDER), true), true), true); // a passed
+    expect(mid.passed).toEqual(['a']);
+    await saveSentenceRound(getDb(), mid);
+    expect((await loadSentenceRound(getDb()))?.passed).toEqual(['a']);
+    expect(parseSentenceRound(JSON.parse(JSON.stringify({ ...mid, passed: [1] })))?.passed).toBeUndefined();
+    expect(parseSentenceRound(JSON.parse(JSON.stringify(fresh(LADDER))))?.passed).toBeUndefined();
+  });
+
+  it('the rung of a sentence stays through save and load', async () => {
+    await saveSentenceRound(getDb(), fresh(LADDER));
+    const loaded = await loadSentenceRound(getDb());
+    expect(loaded?.entries.map((e) => e.rung)).toEqual([undefined, 2, 3]);
   });
 });
 
@@ -146,10 +231,10 @@ describe('the saved round', () => {
 
   it('save then load gives the same round, at the start and mid-way', async () => {
     const db = getDb();
-    const start = fresh(ENTRIES, 'w-1,w-2', true);
+    const start = fresh(LADDER, 'w-1,w-2');
     await saveSentenceRound(db, start);
     expect(await loadSentenceRound(db)).toEqual(start);
-    const mid = answerStep(answerStep(fresh(), true), false);
+    const mid = answerStep(answerStep(fresh(LADDER), true), false);
     await saveSentenceRound(db, mid);
     expect(await loadSentenceRound(db)).toEqual(mid);
   });
@@ -181,6 +266,9 @@ describe('the saved round', () => {
       'x',
       {},
       { ...ok, v: 1 },
+      { ...ok, v: 2 }, // the round format before the ladder
+      { ...ok, entries: [{ ...ENTRIES[0], rung: 4 }] },
+      { ...ok, entries: [{ ...ENTRIES[0], rung: 1 }] }, // rung 1 is the absence of a rung
       { ...ok, v: undefined },
       { ...ok, day: 5 },
       { ...ok, target: 'fr' },

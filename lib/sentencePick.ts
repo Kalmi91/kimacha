@@ -1,7 +1,9 @@
 // Which sentences make up one round of the Sentences tab (Kálmán 2026-10-12, FB524): SENTENCE_ROUND_SIZE sentences, each
-// played through the whole step list (lib/sentenceSteps.ts; only its typing step credits words, lib/sentenceTyping.ts).
-// The queue (lib/sentenceTab.ts buildSentenceQueue) is already in priority order: most due words first, then the least
-// fresh review. Variety (FB504) is applied on top of that order, and gives way when the pool is too small for it.
+// on its own rung of the ladder (lib/sentenceLadder.ts) and played through that rung's steps (lib/sentenceSteps.ts; only the
+// typing step credits words, lib/sentenceTyping.ts). The queue (lib/sentenceTab.ts buildSentenceQueue) is already in priority
+// order: most due words first, then the least fresh review. A sentence already on rung 2 or 3 comes before a fresh one, and a
+// round takes at most MAX_PER_RUNG sentences of one rung while others are available (FB569: a varied round). Variety (FB504)
+// is applied on top of that order, and gives way when the pool is too small for it.
 
 import type { PcicTarget } from '@/data/pcic';
 import { sentenceTokens } from '@/lib/knownSentence';
@@ -37,6 +39,11 @@ const FUNCTION_WORDS: Record<PcicTarget, ReadonlySet<string>> = {
   ]),
 };
 
+/** A round takes at most this many sentences of the same rung while sentences of other rungs are available. */
+export const MAX_PER_RUNG = 2;
+
+const rungOf = (e: SentenceEntry): number => e.rung ?? 1;
+
 const startOf = (e: SentenceEntry): string => (tileWords(e.target)[0] ?? '').toLowerCase();
 
 /**
@@ -53,24 +60,32 @@ function fits(level: number, cand: SentenceEntry, chosen: readonly SentenceEntry
   return words.every((w) => sets.filter((set) => set.has(w)).length < 2);
 }
 
-/** Adds candidates (in their priority order) to `chosen` until `count` is reached: the strictest variety first. */
-function fill(chosen: SentenceEntry[], candidates: readonly SentenceEntry[], count: number, target: PcicTarget, maxSame: number): void {
-  for (const level of [0, 1, 2]) {
-    for (const cand of candidates) {
-      if (chosen.length >= count) return;
-      if (!chosen.includes(cand) && fits(level, cand, chosen, target, maxSame)) chosen.push(cand);
+/**
+ * Adds candidates (in their priority order) to `chosen` until `count` is reached: the rung cap first (`caps`: the same rung at
+ * most that often), within it the strictest variety first.
+ */
+function fill(chosen: SentenceEntry[], candidates: readonly SentenceEntry[], count: number, target: PcicTarget, maxSame: number, caps: readonly number[]): void {
+  for (const cap of caps) {
+    for (const level of [0, 1, 2]) {
+      for (const cand of candidates) {
+        if (chosen.length >= count) return;
+        if (!chosen.includes(cand) && chosen.filter((c) => rungOf(c) === rungOf(cand)).length < cap && fits(level, cand, chosen, target, maxSame)) chosen.push(cand);
+      }
     }
   }
 }
 
 /**
- * The sentences of one round from a priority-ordered queue: the highest-priority ones, variety applied on top (at most
- * half of them share their first word, a content word in at most 2); a pool too small for the rules gives way to them.
+ * The sentences of one round from a priority-ordered queue: the started ones (rung 2 or 3) before the fresh ones, then the
+ * highest-priority ones, at most MAX_PER_RUNG of one rung (a pool with one rung only has no cap), variety applied on top (at
+ * most half of them share their first word, a content word in at most 2); a pool too small for the rules gives way to them.
  * The result keeps the queue's order.
  */
 export function pickSentences(queue: readonly SentenceEntry[], target: PcicTarget, count: number): SentenceEntry[] {
   const maxSame = Math.max(1, Math.floor(count / 2));
   const chosen: SentenceEntry[] = [];
-  fill(chosen, queue, count, target, maxSame);
+  const ordered = [...queue.filter((e) => rungOf(e) > 1), ...queue.filter((e) => rungOf(e) === 1)];
+  const caps = new Set(queue.map(rungOf)).size > 1 ? [MAX_PER_RUNG, Infinity] : [Infinity];
+  fill(chosen, ordered, count, target, maxSame, caps);
   return queue.filter((e) => chosen.includes(e));
 }

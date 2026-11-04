@@ -20,7 +20,7 @@ beforeEach(async () => {
 
 describe('beta defaults', () => {
   it('has the old four flags off and every game flag on', () => {
-    expect([...BETA_FLAGS]).toEqual(['practiceTab', 'sentenceTab', 'xpV2', 'levels', 'practiceDictation', 'practiceScramble', 'practiceMatch', 'practiceOpposites', 'practiceSituations', 'sentenceListening', 'sentenceMistakes', 'sentenceHint', 'sentenceMix', 'speechTab']);
+    expect([...BETA_FLAGS]).toEqual(['practiceTab', 'sentenceTab', 'xpV2', 'levels', 'practiceDictation', 'practiceScramble', 'practiceMatch', 'practiceOpposites', 'practiceSituations', 'sentenceMistakes', 'sentenceHint', 'sentenceMix', 'speechTab']);
     for (const f of BETA_FLAGS) {
       const on = !['practiceTab', 'sentenceTab', 'xpV2', 'levels'].includes(f);
       expect(BETA_DEFAULTS[f]).toBe(on);
@@ -42,6 +42,15 @@ describe('beta defaults', () => {
     __resetBetaForTest();
     await loadBeta();
     expect(getBeta('practiceDictation')).toBe(false);
+  });
+
+  it('the removed sentenceListening switch (the listening rung is always on, FB570), still stored by an older version, is ignored', async () => {
+    await getDb().setBetaFlag('sentenceListening', false);
+    __resetBetaForTest();
+    await loadBeta();
+    expect((BETA_FLAGS as readonly string[]).includes('sentenceListening')).toBe(false);
+    expect(Object.keys(BETA_DEFAULTS)).not.toContain('sentenceListening');
+    expect(getBeta('sentenceListening' as never)).toBeUndefined();
   });
 
   it('a db with nothing stored loads as all off', async () => {

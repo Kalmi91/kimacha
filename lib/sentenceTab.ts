@@ -11,6 +11,7 @@ import { recordCorrectHalf } from '@/lib/practice/halfXp';
 import { recordPracticeResult } from '@/lib/practice/halfStep';
 import { learnedEntryOf, learnerLevel, sentenceLevel, sentencePair, tileWords } from '@/lib/sentenceCards';
 import { chunksFor, type SentenceChunk } from '@/lib/sentenceChunks';
+import type { Ladder, Rung } from '@/lib/sentenceLadder';
 import type { WordVerdict } from '@/lib/sentenceTyping';
 import type { Sm2Card } from '@/lib/sm2';
 
@@ -38,6 +39,8 @@ export interface SentenceEntry {
   slots: Array<{ id: string; words: string[] }>;
   /** The sentence split into parts to build one by one before the whole (data/sentences/chunks.json); absent = no split. */
   chunks?: SentenceChunk[];
+  /** The rung of the ladder this sentence plays in its round (lib/sentenceLadder.ts); absent = rung 1. */
+  rung?: Rung;
   /**
    * Set on a sentence from the learner's own mistakes (lib/sentenceMistakes.ts, beta sentenceMistakes): `itemId` is then
    * the mistake card's id, `source` its English, `target` the right Spanish, `wrong` the faulty sentence they wrote.
@@ -57,6 +60,8 @@ export interface SentenceQueueDeps {
   today: string;
   /** Sentences already done (by sentenceKey), left out. */
   done?: ReadonlySet<string>;
+  /** The ladder (lib/sentenceLadder.ts): a learned sentence is left out for good, any other gets the rung it plays next. */
+  ladder?: Ladder;
   /** Card ids to practise now (the `focus` route parameter): sentences with more of them come first. */
   focus?: ReadonlySet<string>;
 }
@@ -74,7 +79,7 @@ export function isDueCard(card: Sm2Card, today: string): boolean {
  * Every sentence the learner may see: all its words learned (or free). Order: the most `focus` cards, then the
  * most due words, then the least fresh review, then fewer words (stable on the corpus order).
  */
-export function buildSentenceQueue({ target, cards: cardsIn, tenses, items, findItem, levelOf, today, done, focus }: SentenceQueueDeps): SentenceEntry[] {
+export function buildSentenceQueue({ target, cards: cardsIn, tenses, items, findItem, levelOf, today, done, ladder, focus }: SentenceQueueDeps): SentenceEntry[] {
   const cards = [...cardsIn];
   const level = target === 'de' ? learnerLevel(cards, levelOf) : undefined;
   // The gate's token set, built once, plus which learned cards own which token (a half goes to the owners).
@@ -106,7 +111,8 @@ export function buildSentenceQueue({ target, cards: cardsIn, tenses, items, find
     const pair = sentencePair(item, target);
     if (!pair) continue;
     const key = sentenceKey(pair);
-    if (seen.has(key) || done?.has(key)) continue;
+    const stage = ladder?.get(key);
+    if (seen.has(key) || done?.has(key) || stage === 'learned') continue;
     seen.add(key);
     if (!isSentenceKnownIn(pair.target, target, known, level && sentenceLevel(level, item.id, levelOf))) continue;
     const owned = new Map<string, string[]>();
@@ -132,6 +138,7 @@ export function buildSentenceQueue({ target, cards: cardsIn, tenses, items, find
       staleness: wordIds.map((id) => lastReviews.get(id) ?? '').sort()[0] ?? '',
       slots: [...owned].map(([id, words]) => ({ id, words })),
       ...(chunks ? { chunks } : {}),
+      ...(stage === 2 || stage === 3 ? { rung: stage } : {}),
     });
   }
   const focusHits = (e: SentenceEntry) => (focus ? e.wordIds.filter((id) => focus.has(id)).length : 0);

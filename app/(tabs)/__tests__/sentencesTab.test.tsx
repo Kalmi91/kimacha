@@ -1,10 +1,10 @@
-// The Sentences tab (beta): queue from learned words; a round is 5 sentences, each run through its steps one after the other:
-// the parts of a split sentence, the listen-and-type step (beta sentenceListening), the whole sentence built, the whole
-// sentence typed. Only the typing credits word by word (a right word gets its half even if the rest is wrong, a due word
-// typed wrong is a wrong typed answer); a wrong step goes to the end of the round, the typing step is done either way, a
-// round that was left continues where it stopped (saved; an older saved round starts again), the `focus` route
-// parameter puts the sentences with those words first, the level counter on top drops as words are credited, and the
-// feedback button is on the screen. Mock pattern: pcicSentenceCard.test.tsx.
+// The Sentences tab (beta): queue from learned words; a round is 5 sentences, each on ONE rung of the ladder (lib/sentenceLadder.ts,
+// FB569/FB570): rung 1 = the parts of a split sentence and the whole sentence built, rung 2 = heard and typed, rung 3 = typed from
+// the English; after rung 3 the sentence is learned and never returns. Only the typing credits word by word (a right word gets
+// its half even if the rest is wrong, a due word typed wrong is a wrong typed answer); a wrong step goes to the end of the round,
+// the typing step is done either way (and passes nothing), a round that was left continues where it stopped (saved; an older
+// saved round starts again), the `focus` route parameter puts the sentences with those words first, the level counter on top
+// drops as words are credited, and the feedback button is on the screen. Mock pattern: pcicSentenceCard.test.tsx.
 
 jest.mock('@/lib/speech', () => ({ ...require('@/test-utils/mocks').speechMock(), stop: jest.fn() }));
 // The route parameters of the screen: a test sets `mockParams.focus` before it renders.
@@ -72,7 +72,8 @@ import { __resetBetaForTest, setBeta } from '@/lib/beta';
 import { __resetForTests as resetDailyXp } from '@/lib/dailyXp';
 import { getDb } from '@/lib/database';
 import { setLanguage } from '@/lib/i18n';
-import { clearSentenceRound, loadSentenceRound, saveSentenceRound, startRound } from '@/lib/sentenceRound';
+import { clearSentenceRound, currentStep, loadSentenceRound, saveSentenceRound, startRound } from '@/lib/sentenceRound';
+import { LADDER_KEY, loadLadder, saveStage } from '@/lib/sentenceLadder';
 import { addDays, sm2NewCard, sm2Review, type Sm2Card } from '@/lib/sm2';
 import sample from '@/lib/mistakes/__fixtures__/sample.json';
 import { validateMistakesPayload, type MistakesBatch } from '@/lib/mistakes/format';
@@ -98,25 +99,33 @@ const learnWords = async (nums: number[], dueNums: number[] = []) => {
   for (const n of nums) await getDb().upsertPcicCard(learned(n, dueNums.includes(n) ? '2000-01-01' : '2099-01-01'));
 };
 
-// The sentences of the mocked corpus: the prompt on screen, the tiles to build it, the text to type it.
-const SENT: Record<string, { tiles: string[]; typed: string; item: string }> = {
-  'The cat.': { tiles: ['el', 'gato'], typed: 'el gato', item: 'a1-w3' },
-  'The book and the table.': { tiles: ['el', 'libro', 'y', 'la', 'mesa'], typed: 'el libro y la mesa', item: 'a1-w1' },
-  'The table and the book.': { tiles: ['la', 'mesa', 'y', 'el', 'libro'], typed: 'la mesa y el libro', item: 'a1-w2' },
-  'The dog and the table.': { tiles: ['el', 'perro', 'y', 'la', 'mesa'], typed: 'el perro y la mesa', item: 'a1-w4' },
-  'The house and the cat.': { tiles: ['la', 'casa', 'y', 'el', 'gato'], typed: 'la casa y el gato', item: 'a1-w5' },
-  'A bread and a house.': { tiles: ['un', 'pan', 'y', 'una', 'casa'], typed: 'un pan y una casa', item: 'a1-w6' },
+// The sentences of the mocked corpus: the prompt on screen, the tiles to build it, the text to type it, the target as written.
+const SENT: Record<string, { tiles: string[]; typed: string; item: string; target: string }> = {
+  'The cat.': { tiles: ['el', 'gato'], typed: 'el gato', item: 'a1-w3', target: 'El gato.' },
+  'The book and the table.': { tiles: ['el', 'libro', 'y', 'la', 'mesa'], typed: 'el libro y la mesa', item: 'a1-w1', target: 'El libro y la mesa.' },
+  'The table and the book.': { tiles: ['la', 'mesa', 'y', 'el', 'libro'], typed: 'la mesa y el libro', item: 'a1-w2', target: 'La mesa y el libro.' },
+  'The dog and the table.': { tiles: ['el', 'perro', 'y', 'la', 'mesa'], typed: 'el perro y la mesa', item: 'a1-w4', target: 'El perro y la mesa.' },
+  'The house and the cat.': { tiles: ['la', 'casa', 'y', 'el', 'gato'], typed: 'la casa y el gato', item: 'a1-w5', target: 'La casa y el gato.' },
+  'A bread and a house.': { tiles: ['un', 'pan', 'y', 'una', 'casa'], typed: 'un pan y una casa', item: 'a1-w6', target: 'Un pan y una casa.' },
 };
-// With all six words learned the round is five sentences, in queue order (the short one first, then the corpus order) with
-// variety (not three starting with "el"): the dog sentence is the one left out. Each runs build, then type (listening off,
-// no parts in the mocked corpus): 10 steps.
+const BY_ITEM = Object.fromEntries(Object.values(SENT).map((s) => [s.item, s]));
+// With all six words learned (all fresh, on rung 1) the round is five sentences, in queue order (the short one first, then the
+// corpus order) with variety (not three starting with "el"): the dog sentence is the one left out. Each is one build step.
 const ROUND = ['The cat.', 'The book and the table.', 'The table and the book.', 'The house and the cat.', 'A bread and a house.'];
 const ROUND_IDS = ROUND.map((en) => SENT[en].item);
-const STEP_IDS = ROUND_IDS.flatMap((id) => [`${id}#build`, `${id}#type`]);
-// The step label on screen: "Sentence 2 of 5 · Build the whole sentence".
+const STEP_IDS = ROUND_IDS.map((id) => `${id}#build`);
+// The step label on screen: "Sentence 2 of 5 · Step 1 of 3 · Build the whole sentence" (a mistake sentence has no rung).
 const STEP = (n: number, total: number, label: string) => `Sentence ${n} of ${total} · ${label}`;
-const BUILD = 'Build the whole sentence';
-const TYPE = 'Type the whole sentence';
+const RUNG1 = 'Step 1 of 3 · Build the whole sentence';
+const RUNG2 = 'Step 2 of 3 · Listen and type what you hear';
+const RUNG3 = 'Step 3 of 3 · Type the whole sentence';
+const MISTAKE_BUILD = 'Build the whole sentence';
+
+// Puts the sentences of these words (default: all six) on a rung of the ladder (the rung they play next) or learned.
+const ladderAt = async (stage: 2 | 3 | 'learned', nums = [1, 2, 3, 4, 5, 6]) => {
+  for (const n of nums) await saveStage(getDb(), BY_ITEM[`a1-w${n}`].target.toLowerCase(), stage);
+};
+const stageOf = async (n: number) => (await loadLadder(getDb())).get(BY_ITEM[`a1-w${n}`].target.toLowerCase());
 
 type R = ReturnType<typeof render>;
 const build = (r: R, words: string[]) => {
@@ -146,7 +155,7 @@ const buildCurrent = async (r: R, right = true) => {
   await flush();
   return en;
 };
-// Types the current sentence: right, or `text` instead, and moves on.
+// Types the current sentence: right, or `text` instead, and moves on (the prompt is on screen: rung 3).
 const typeCurrent = async (r: R, text?: string) => {
   const en = current(r);
   typeIt(r, text ?? SENT[en].typed);
@@ -154,18 +163,25 @@ const typeCurrent = async (r: R, text?: string) => {
   await flush(24);
   return en;
 };
-// One sentence of the round: its build, then its typing.
-const playSentence = async (r: R, typeText?: string) => {
-  const en = await buildCurrent(r);
-  expect(await typeCurrent(r, typeText)).toBe(en);
-  return en;
-};
-// Plays whatever is left of a round (listening off, no mistake sentence): builds and typings, all right.
-const finishRound = async (r: R) => {
-  for (let i = 0; i < 40 && !r.queryByTestId('sentences-round-done'); i++) {
-    if (r.queryByPlaceholderText('Type the sentence')) await typeCurrent(r);
-    else await buildCurrent(r);
+// Plays the step on screen whatever it is (read from the saved round): a build right, or the typing (also the listening) right.
+const autoStep = async (r: R) => {
+  const saved = (await loadSentenceRound(getDb()))!;
+  const st = currentStep(saved)!;
+  const sentence = BY_ITEM[st.itemId];
+  if (st.kind === 'build') {
+    build(r, sentence.tiles);
+    check(r);
+    next(r);
+    await flush();
+  } else {
+    typeIt(r, sentence.typed);
+    next(r);
+    await flush(24);
   }
+};
+// Plays whatever is left of a round (no mistake sentence, no parts): all right.
+const finishRound = async (r: R) => {
+  for (let i = 0; i < 40 && !r.queryByTestId('sentences-round-done'); i++) await autoStep(r);
   expect(r.queryByTestId('sentences-round-done')).toBeTruthy();
 };
 const calls = () => mockRecord.mock.calls.map((c) => [c[0], c[1]]);
@@ -177,10 +193,9 @@ beforeEach(async () => {
   await getDb().setPcicLevel('A1');
   await getDb().setGrammarPalette('classic');
   await clearSentenceRound(getDb());
+  await getDb().resetGameProgress(LADDER_KEY);
   __resetBetaForTest();
   await getDb().setBetaFlag('xpV2', false);
-  // the listen-and-type step (beta sentenceListening, on by default) has its own describe below; every other test runs with it off
-  await getDb().setBetaFlag('sentenceListening', false);
   // the tap-a-word hints (beta sentenceHint, on by default) have their own describe at the end
   await getDb().setBetaFlag('sentenceHint', false);
   // the sentences taking turns (beta sentenceMix, on by default, FB536) have their own describe at the end
@@ -188,6 +203,7 @@ beforeEach(async () => {
   resetDailyXp();
   await getDb().addDailyXpTenths(localDateString(), -100000);
   mockRecord.mockClear();
+  mockSpeak.mockClear();
   delete mockParams.focus;
 });
 afterEach(() => {
@@ -200,13 +216,13 @@ describe('Sentences tab', () => {
   it('no learned words: the empty state (EN and ES); one header only (the navigator\'s), no second "Sentences" title', async () => {
     const r = render(<SentencesScreen />);
     await flush();
-    expect(r.getByText('Learn more words to unlock sentences')).toBeTruthy();
+    expect(r.getByText('Nothing to practise right now. Learn more words to unlock new sentences')).toBeTruthy();
     expect(r.queryByText('Sentences')).toBeNull();
     r.unmount();
     setLanguage('es');
     const es = render(<SentencesScreen />);
     await flush();
-    expect(es.getByText('Aprende más palabras para desbloquear frases')).toBeTruthy();
+    expect(es.getByText('Nada que practicar por ahora. Aprende más palabras para desbloquear frases nuevas')).toBeTruthy();
     expect(es.queryByText('Frases')).toBeNull();
   });
 
@@ -218,39 +234,54 @@ describe('Sentences tab', () => {
     expect(r.queryAllByRole('header')).toHaveLength(0);
   });
 
-  it('only sentences of learned words: 3 words -> 3 sentences, each built then typed, in the queue order', async () => {
+  it('only sentences of learned words: 3 words -> 3 sentences, each built (rung 1), in the queue order', async () => {
     await learnWords([1, 2, 3]); // the dog is not learned, so "The dog and the table." stays out
     const r = render(<SentencesScreen />);
     await flush();
-    expect(progress(r)).toBe('0 / 6'); // 3 sentences x (build + typing)
+    expect(progress(r)).toBe('0 / 3'); // 3 sentences x one build
     expect(r.queryByText('The dog and the table.')).toBeNull();
-    expect(stepText(r)).toBe(STEP(1, 3, BUILD));
-    expect(await playSentence(r)).toBe('The cat.');
-    expect(stepText(r)).toBe(STEP(2, 3, BUILD));
-    expect(await playSentence(r)).toBe('The book and the table.');
-    expect(await playSentence(r)).toBe('The table and the book.');
+    expect(stepText(r)).toBe(STEP(1, 3, RUNG1));
+    expect(await buildCurrent(r)).toBe('The cat.');
+    expect(stepText(r)).toBe(STEP(2, 3, RUNG1));
+    expect(await buildCurrent(r)).toBe('The book and the table.');
+    expect(await buildCurrent(r)).toBe('The table and the book.');
     expect(r.getByText('Round done: 3 sentences')).toBeTruthy();
+    expect(r.queryByTestId('sentences-learned')).toBeNull(); // rung 1 learns nothing yet
   });
 
-  it('Spanish UI: the step labels and the progress label', async () => {
+  it('Spanish UI: the step labels (the rung in front of the step) and the progress label', async () => {
     await learnWords([1, 2, 3, 4, 5, 6]);
     setLanguage('es');
     const r = render(<SentencesScreen />);
     await flush();
-    expect(stepText(r)).toBe('Frase 1 de 5 · Construye la frase entera');
-    expect(r.getAllByLabelText('Pasos hechos: 0 de 10').length).toBeGreaterThan(0);
+    expect(stepText(r)).toBe('Frase 1 de 5 · Paso 1 de 3 · Construye la frase entera');
+    expect(r.getAllByLabelText('Pasos hechos: 0 de 5').length).toBeGreaterThan(0);
     r.unmount();
-    // the typing step: build the first sentence in English, come back in Spanish (the saved round continues)
-    setLanguage('en');
-    const en = render(<SentencesScreen />);
+    // rung 2 and rung 3: the sentences are further up the ladder, the saved round of the first render is dropped
+    await clearSentenceRound(getDb());
+    await ladderAt(2);
+    const listen = render(<SentencesScreen />);
     await flush();
-    await buildCurrent(en);
-    en.unmount();
-    setLanguage('es');
+    expect(stepText(listen)).toBe('Frase 1 de 5 · Paso 2 de 3 · Escucha y escribe lo que oyes');
+    listen.unmount();
+    await clearSentenceRound(getDb());
+    await ladderAt(3);
     const typing = render(<SentencesScreen />);
     await flush();
-    expect(stepText(typing)).toBe('Frase 1 de 5 · Escribe la frase entera');
-    expect(typing.getAllByLabelText('Pasos hechos: 1 de 10').length).toBeGreaterThan(0);
+    expect(stepText(typing)).toBe('Frase 1 de 5 · Paso 3 de 3 · Escribe la frase entera');
+  });
+
+  it('Hungarian and German UI: the rung label', async () => {
+    await learnWords([1, 2, 3, 4, 5, 6]);
+    setLanguage('hu');
+    const hu = render(<SentencesScreen />);
+    await flush();
+    expect(stepText(hu)).toBe('Mondat: 1 / 5 · 1. lépés / 3 · Építsd fel az egész mondatot');
+    hu.unmount();
+    setLanguage('de');
+    const de = render(<SentencesScreen />);
+    await flush();
+    expect(stepText(de)).toBe('Satz 1 von 5 · Schritt 1 von 3 · Baue den ganzen Satz');
   });
 });
 
@@ -278,7 +309,7 @@ describe('the level counter on top (FB503)', () => {
     expect(r.getByLabelText('Level A1: 6 words, 0 due')).toBeTruthy();
   });
 
-  it('drops after the typing credits the due words (the build does not move it)', async () => {
+  it('a build (rung 1) does not move it; the typing (rung 3) credits the due words and drops it', async () => {
     await learnWords([1, 2], [1, 2]); // book and table, both due
     const r = render(<SentencesScreen />);
     await flush();
@@ -286,17 +317,22 @@ describe('the level counter on top (FB503)', () => {
     await buildCurrent(r);
     await flush();
     expect(r.getByText('due 2')).toBeTruthy(); // a build credits nothing
-    await typeCurrent(r); // the first sentence has both words: both get their half
+    r.unmount();
+    await clearSentenceRound(getDb());
+    await ladderAt(3, [1, 2]);
+    const typing = render(<SentencesScreen />);
+    await flush();
+    await typeCurrent(typing); // the first sentence has both words: both get their half
     await flush(24);
-    expect(r.getByText('due 0')).toBeTruthy();
-    expect(r.getByLabelText('Level A1: 6 words, 0 due')).toBeTruthy();
+    expect(typing.getByText('due 0')).toBeTruthy();
+    expect(typing.getByLabelText('Level A1: 6 words, 0 due')).toBeTruthy();
   });
 
   it('a word typed wrong stays due', async () => {
     await learnWords([1, 2], [1, 2]);
+    await ladderAt(3, [1, 2]);
     const r = render(<SentencesScreen />);
     await flush();
-    await buildCurrent(r);
     await typeCurrent(r, 'el libro y la silla'); // the book right, the table wrong
     await flush(24);
     expect(r.getByText('due 1')).toBeTruthy();
@@ -312,38 +348,36 @@ describe('FB502: the "Correct" feedback is centered', () => {
     check(r);
     expect(r.getByText('Correct!')).toBeTruthy();
     expect(r.UNSAFE_getByType(ResultBadge).props.align).toBe('center');
-    next(r);
+    r.unmount();
+    await clearSentenceRound(getDb());
+    await ladderAt(3, [1, 2]);
+    const typing = render(<SentencesScreen />);
     await flush();
-    typeIt(r, SENT[current(r)].typed);
-    expect(r.getByText('Correct!')).toBeTruthy();
-    expect(r.UNSAFE_getByType(ResultBadge).props.align).toBe('center');
+    typeIt(typing, SENT[current(typing)].typed);
+    expect(typing.getByText('Correct!')).toBeTruthy();
+    expect(typing.UNSAFE_getByType(ResultBadge).props.align).toBe('center');
   });
 });
 
 describe('the steps of a round (FB524)', () => {
-  it('5 sentences, each built whole and then typed whole, one after the other', async () => {
+  it('5 fresh sentences: each built whole (rung 1), one after the other', async () => {
     await learnWords([1, 2, 3, 4, 5, 6]);
     const r = render(<SentencesScreen />);
     await flush();
-    expect(progress(r)).toBe('0 / 10');
+    expect(progress(r)).toBe('0 / 5');
     const played: string[] = [];
     for (let i = 0; i < 5; i++) {
-      expect(stepText(r)).toBe(STEP(i + 1, 5, BUILD));
+      expect(stepText(r)).toBe(STEP(i + 1, 5, RUNG1));
       expect(r.queryByPlaceholderText('Type the sentence')).toBeNull();
-      const en = await buildCurrent(r);
-      expect(progress(r)).toBe(`${2 * i + 1} / 10`);
-      expect(stepText(r)).toBe(STEP(i + 1, 5, TYPE));
-      expect(r.getByPlaceholderText('Type the sentence')).toBeTruthy();
-      expect(await typeCurrent(r)).toBe(en); // the same sentence
-      expect(progress(r)).toBe(i < 4 ? `${2 * i + 2} / 10` : '10 / 10');
-      played.push(en);
+      played.push(await buildCurrent(r));
+      expect(progress(r)).toBe(`${i + 1} / 5`);
     }
     expect(played).toEqual(ROUND);
     expect(r.getByText('Round done: 5 sentences')).toBeTruthy();
     expect(r.queryByPlaceholderText('Type the sentence')).toBeNull();
   });
 
-  it('a build credits nothing (no half, no XP); the typing of the same sentence does', async () => {
+  it('a build credits nothing (no half, no XP); the typing of the sentence on rung 3 does', async () => {
     await setBeta('xpV2', true);
     await learnWords([1, 2, 3, 4, 5, 6], [3]); // the cat is due (so its sentence comes first), a credited build would move the schedule
     const r = render(<SentencesScreen />);
@@ -352,69 +386,84 @@ describe('the steps of a round (FB524)', () => {
     expect(mockRecord).not.toHaveBeenCalled();
     expect(await getDb().getDailyXpTenths(localDateString())).toBe(0);
     expect((await card(3))?.halfSteps ?? 0).toBe(0);
-    await typeCurrent(r);
+    r.unmount();
+    await clearSentenceRound(getDb());
+    await ladderAt(3);
+    const typing = render(<SentencesScreen />);
+    await flush();
+    await typeCurrent(typing);
     expect(calls()).toEqual([['a1-w3', 'correct']]);
     expect((await card(3))?.halfSteps).toBe(1);
   });
 
-  it('a wrong build: no credit, the build goes to the end of the round (the typing of the sentence is not held back)', async () => {
+  it('a wrong build: no credit, the sentence does not climb, and the build goes to the end of the round', async () => {
     await learnWords([1, 2, 3, 4, 5, 6]);
     const r = render(<SentencesScreen />);
     await flush();
     expect(await buildCurrent(r, false)).toBe(ROUND[0]);
     expect(mockRecord).not.toHaveBeenCalled();
-    expect(progress(r)).toBe('0 / 10');
-    expect(stepText(r)).toBe(STEP(1, 5, TYPE)); // the next step in the queue is the typing of the same sentence
-    expect(await typeCurrent(r)).toBe(ROUND[0]);
-    expect(calls()).toEqual([['a1-w3', 'correct']]);
+    expect(progress(r)).toBe('0 / 5');
+    expect(await stageOf(3)).toBeUndefined(); // not passed
+    expect(stepText(r)).toBe(STEP(2, 5, RUNG1)); // the next sentence is next, the cat build waits at the end
     // the other four sentences, then the cat build is back as the very last step
-    for (let i = 1; i < 5; i++) expect(await playSentence(r)).toBe(ROUND[i]);
-    expect(progress(r)).toBe('9 / 10');
-    expect(stepText(r)).toBe(STEP(1, 5, BUILD));
+    for (let i = 1; i < 5; i++) expect(await buildCurrent(r)).toBe(ROUND[i]);
+    expect(progress(r)).toBe('4 / 5');
+    expect(stepText(r)).toBe(STEP(1, 5, RUNG1));
+    expect(await stageOf(3)).toBeUndefined(); // still not passed: the cat is not right yet
     expect(await buildCurrent(r)).toBe(ROUND[0]);
     expect(r.getByText('Round done: 5 sentences')).toBeTruthy();
+    expect(await stageOf(3)).toBe(2); // right in the end: rung 1 passed
   });
 
-  it('after the round the finished sentences are left out of the next one', async () => {
+  it('after the round the sentences come on their next rung; the sentence that was not in the round is the only fresh one', async () => {
     await learnWords([1, 2, 3, 4, 5, 6]);
     const r = render(<SentencesScreen />);
     await flush();
     await finishRound(r);
+    for (const n of [3, 1, 2, 5, 6]) expect(await stageOf(n)).toBe(2);
+    expect(await stageOf(4)).toBeUndefined();
     fireEvent.press(r.getByTestId('sentences-more'));
     await flush();
-    // only the dog sentence was left out of the first round: it is the whole next round
-    expect(current(r)).toBe('The dog and the table.');
-    expect(progress(r)).toBe('0 / 2');
-    expect(stepText(r)).toBe(STEP(1, 1, BUILD));
+    // the five played sentences are on rung 2 and may come again; the dog sentence (never played) is the fresh one
+    const entries = (await loadSentenceRound(getDb()))!.entries;
+    expect(entries).toHaveLength(5);
+    expect(entries.map((e) => e.itemId)).toContain('a1-w4');
+    expect(entries.filter((e) => e.rung === 2)).toHaveLength(4);
+    expect(entries.find((e) => e.itemId === 'a1-w4')?.rung).toBeUndefined();
   });
 });
 
 describe('the typing credits word by word (FB505/508, Kálmán 2026-10-12)', () => {
-  // The book and the table learned; the table due. A pool of two sentences: "The book and the table." comes first, built here.
+  // The book and the table learned (both sentences on rung 3, typed); the table due. A pool of two sentences:
+  // "The book and the table." comes first.
   const twoWords = async (dueNums: number[] = [2]) => {
     await learnWords([1, 2], dueNums);
+    await ladderAt(3, [1, 2]);
     const r = render(<SentencesScreen />);
     await flush();
-    expect(await buildCurrent(r)).toBe('The book and the table.');
-    expect(stepText(r)).toBe(STEP(1, 2, TYPE));
+    expect(current(r)).toBe('The book and the table.');
+    expect(stepText(r)).toBe(STEP(1, 2, RUNG3));
     return r;
   };
 
-  it('the whole sentence right: every learned word gets its half', async () => {
+  it('the whole sentence right: every learned word gets its half; the sentence is learned', async () => {
     const r = await twoWords();
     await typeCurrent(r);
     expect(calls()).toEqual([['a1-w1', 'correct'], ['a1-w2', 'correct']]);
     expect((await card(1))?.halfSteps).toBe(1);
     expect((await card(2))?.halfSteps).toBe(1);
+    expect(await stageOf(1)).toBe('learned');
+    expect(await stageOf(2)).toBe(3); // the second sentence is not typed yet
   });
 
-  it('a partly right sentence: the right word gets its half, the due word that is wrong counts as a wrong typed answer', async () => {
+  it('a partly right sentence: the right word gets its half, the due word that is wrong counts as a wrong typed answer; the sentence stays on rung 3', async () => {
     const r = await twoWords();
     await typeCurrent(r, 'el libro y la silla');
     expect(calls()).toEqual([['a1-w1', 'correct'], ['a1-w2', 'wrongTyped']]);
     expect((await card(1))?.halfSteps).toBe(1);
     expect((await card(2))).toMatchObject({ wrongStreak: 1, halfSteps: 0 });
-    expect(stepText(r)).toBe(STEP(2, 2, BUILD)); // the round goes on with the next sentence
+    expect(stepText(r)).toBe(STEP(2, 2, RUNG3)); // the round goes on with the next sentence
+    expect(await stageOf(1)).toBe(3); // not learned
   });
 
   it('a word that is wrong but not due is left alone', async () => {
@@ -431,35 +480,38 @@ describe('the typing credits word by word (FB505/508, Kálmán 2026-10-12)', () 
     expect((await card(1))?.halfSteps ?? 0).toBe(0);
   });
 
-  it('"Knew it" on a sentence the check marked wrong credits every word', async () => {
+  it('"Knew it" on a sentence the check marked wrong credits every word, and learns the sentence', async () => {
     const r = await twoWords();
     typeIt(r, 'el libro y la silla');
     fireEvent.press(r.getByTestId('sentence-grade-good'));
     next(r);
     await flush(24);
     expect(calls()).toEqual([['a1-w1', 'correct'], ['a1-w2', 'correct']]);
+    expect(await stageOf(1)).toBe('learned');
   });
 
   it('the typing step is done right or wrong: the sentence is not typed again (no second credit for words just shown)', async () => {
     const r = await twoWords();
     await typeCurrent(r, 'xx');
-    expect(stepText(r)).toBe(STEP(2, 2, BUILD));
+    expect(stepText(r)).toBe(STEP(2, 2, RUNG3));
     expect(calls()).toEqual([['a1-w2', 'wrongTyped']]);
     expect((await loadSentenceRound(getDb()))?.queue).not.toContain('a1-w1#type');
-    await playSentence(r); // the second sentence: its build and its typing
+    await typeCurrent(r); // the second sentence
     expect(r.getByText('Round done: 2 sentences')).toBeTruthy();
+    expect(r.getByTestId('sentences-learned').props.children).toBe('1 sentence learned'); // only the second one was typed right
     expect(r.queryByPlaceholderText('Type the sentence')).toBeNull();
     expect(await loadSentenceRound(getDb())).toBeNull();
     expect(calls().filter((c) => c[1] === 'wrongTyped')).toEqual([['a1-w2', 'wrongTyped']]);
   });
 
-  it('a single learned sentence: its build, then its typing', async () => {
+  it('a single learned sentence on rung 3: its typing, then the round is over', async () => {
     await learnWords([3]);
+    await ladderAt(3, [3]);
     const r = render(<SentencesScreen />);
     await flush();
-    expect(progress(r)).toBe('0 / 2');
-    expect(stepText(r)).toBe(STEP(1, 1, BUILD));
-    expect(await playSentence(r)).toBe('The cat.');
+    expect(progress(r)).toBe('0 / 1');
+    expect(stepText(r)).toBe(STEP(1, 1, RUNG3));
+    expect(await typeCurrent(r)).toBe('The cat.');
     expect(calls()).toEqual([['a1-w3', 'correct']]);
     expect(r.getByText('Round done: 1 sentence')).toBeTruthy();
   });
@@ -501,7 +553,7 @@ describe('the `focus` route parameter', () => {
     mockParams.focus = 'a1-w4';
     const focused = render(<SentencesScreen />);
     await flush();
-    expect(progress(focused)).toBe('0 / 10');
+    expect(progress(focused)).toBe('0 / 5');
     expect(current(focused)).toBe('The dog and the table.');
     await buildCurrent(focused);
     focused.unmount();
@@ -509,7 +561,16 @@ describe('the `focus` route parameter', () => {
     // the same focus again: the round continues
     const back = render(<SentencesScreen />);
     await flush();
-    expect(progress(back)).toBe('1 / 10');
+    expect(progress(back)).toBe('1 / 5');
+  });
+
+  it('a learned sentence stays out whatever the focus says', async () => {
+    await learnWords([1, 2, 3, 4, 5, 6]);
+    await ladderAt('learned', [4]); // the dog sentence is learned
+    mockParams.focus = 'a1-w4';
+    render(<SentencesScreen />);
+    await flush();
+    expect((await loadSentenceRound(getDb()))?.entries.map((e) => e.itemId)).not.toContain('a1-w4');
   });
 });
 
@@ -518,13 +579,13 @@ describe('the progress bar counts the same steps as the number (a block per step
     await learnWords([1, 2, 3, 4, 5, 6]);
     const r = render(<SentencesScreen />);
     await flush();
-    expect(r.getByTestId('sentences-progress').props.accessibilityValue).toEqual({ min: 0, max: 10, now: 0 });
-    await playSentence(r);
-    expect(progress(r)).toBe('2 / 10');
-    expect(r.getByTestId('sentences-progress').props.accessibilityValue).toEqual({ min: 0, max: 10, now: 2 });
+    expect(r.getByTestId('sentences-progress').props.accessibilityValue).toEqual({ min: 0, max: 5, now: 0 });
+    await buildCurrent(r);
+    expect(progress(r)).toBe('1 / 5');
+    expect(r.getByTestId('sentences-progress').props.accessibilityValue).toEqual({ min: 0, max: 5, now: 1 });
   });
 
-  it('brand (segmented) bar: exactly 10 blocks for "x / 10"', async () => {
+  it('brand (segmented) bar: one block per step, "x / 5" has exactly 5', async () => {
     await getDb().setGrammarPalette('brand');
     await learnWords([1, 2, 3, 4, 5, 6]);
     const r = render(
@@ -533,9 +594,9 @@ describe('the progress bar counts the same steps as the number (a block per step
       </ThemeProvider>,
     );
     await flush();
-    for (let i = 0; i < 10; i++) expect(r.queryByTestId(`sentences-progress-${i}`)).toBeTruthy();
-    expect(r.queryByTestId('sentences-progress-10')).toBeNull();
-    expect(progress(r)).toBe('0 / 10');
+    for (let i = 0; i < 5; i++) expect(r.queryByTestId(`sentences-progress-${i}`)).toBeTruthy();
+    expect(r.queryByTestId('sentences-progress-5')).toBeNull();
+    expect(progress(r)).toBe('0 / 5');
     r.unmount();
     // a round of other length: the blocks follow the count
     await clearSentenceRound(getDb());
@@ -547,16 +608,20 @@ describe('the progress bar counts the same steps as the number (a block per step
       </ThemeProvider>,
     );
     await flush();
-    expect(progress(small)).toBe('0 / 6');
-    expect(small.queryByTestId('sentences-progress-5')).toBeTruthy();
-    expect(small.queryByTestId('sentences-progress-6')).toBeNull();
+    expect(progress(small)).toBe('0 / 3');
+    expect(small.queryByTestId('sentences-progress-2')).toBeTruthy();
+    expect(small.queryByTestId('sentences-progress-3')).toBeNull();
   });
 
   it('brand bar, a long round (more than 12 steps): the usual 8 blocks, filled by the share done', async () => {
-    await getDb().setBetaFlag('sentenceListening', true); // 5 sentences x 3 steps = 15
-    __resetBetaForTest();
     await getDb().setGrammarPalette('brand');
     await learnWords([1, 2, 3, 4, 5, 6]);
+    // 5 split sentences x (2 parts + the whole build) = 15 steps; the parts are data of the real ids, so the round is saved
+    const split = (n: number) => ({
+      itemId: `a1-w${n}`, source: 'The book and the table.', target: 'El libro y la mesa.', wordCount: 5, wordIds: [`a1-w${n}`], due: false, dueIds: [], staleness: '',
+      slots: [{ id: `a1-w${n}`, words: ['libro'] }], chunks: [{ source: 'the book', target: 'El libro' }, { source: 'and the table', target: 'y la mesa.' }],
+    });
+    await saveSentenceRound(getDb(), startRound([1, 2, 3, 4, 5].map(split), localDateString(), 'es', ''));
     const r = render(
       <ThemeProvider>
         <SentencesScreen />
@@ -572,9 +637,10 @@ describe('the progress bar counts the same steps as the number (a block per step
 describe('beta xpV2', () => {
   it('off (default): a typed word gets its half but no XP', async () => {
     await learnWords([3]);
+    await ladderAt(3, [3]);
     const r = render(<SentencesScreen />);
     await flush();
-    await playSentence(r);
+    await typeCurrent(r);
     expect(mockRecord).toHaveBeenCalledTimes(1);
     expect(await getDb().getDailyXpTenths(localDateString())).toBe(0);
   });
@@ -582,25 +648,28 @@ describe('beta xpV2', () => {
   it('on: each typed word earns XP by its own reps (1 XP; 0.2 XP from the 3rd repetition); a wrong word earns none', async () => {
     await setBeta('xpV2', true);
     await learnWords([3]);
+    await ladderAt(3, [3]);
     const r = render(<SentencesScreen />);
     await flush();
-    await playSentence(r);
+    await typeCurrent(r);
     expect(await getDb().getDailyXpTenths(localDateString())).toBe(10);
     r.unmount();
 
     await getDb().resetPcicCards();
     await getDb().upsertPcicCard({ ...learned(3), reps: 3 });
+    await ladderAt(3, [3]); // learned by the first typing: back on rung 3 for the next one
     const again = render(<SentencesScreen />);
     await flush();
-    await playSentence(again);
+    await typeCurrent(again);
     expect(await getDb().getDailyXpTenths(localDateString())).toBe(12);
 
     await getDb().resetPcicCards();
     await getDb().upsertPcicCard(learned(3, '2000-01-01'));
+    await ladderAt(3, [3]);
     again.unmount();
     const wrong = render(<SentencesScreen />);
     await flush();
-    await playSentence(wrong, 'el perro');
+    await typeCurrent(wrong, 'el perro');
     expect(await getDb().getDailyXpTenths(localDateString())).toBe(12);
   });
 });
@@ -610,36 +679,37 @@ describe('a round that was left continues', () => {
     await learnWords([1, 2, 3, 4, 5, 6]);
     const first = render(<SentencesScreen />);
     await flush();
-    await playSentence(first);
+    await buildCurrent(first);
     await buildCurrent(first);
     first.unmount();
 
     const back = render(<SentencesScreen />);
     await flush();
-    expect(progress(back)).toBe('3 / 10');
-    expect(stepText(back)).toBe(STEP(2, 5, TYPE));
-    expect(current(back)).toBe(ROUND[1]);
-    expect(calls()).toEqual([['a1-w3', 'correct']]); // only the first sentence was typed so far
-    await typeCurrent(back);
+    expect(progress(back)).toBe('2 / 5');
+    expect(stepText(back)).toBe(STEP(3, 5, RUNG1));
+    expect(current(back)).toBe(ROUND[2]);
+    expect(await stageOf(3)).toBe(2); // the two built sentences are already on rung 2
+    expect(await stageOf(1)).toBe(2);
+    expect(await stageOf(2)).toBeUndefined();
     await finishRound(back);
     expect(back.getByText('Round done: 5 sentences')).toBeTruthy();
   });
 
-  it('waiting for the typing: the same sentence to type after a mount; the credit comes once, at the typing', async () => {
+  it('waiting for the typing: the credit of a typed sentence comes once, a remount does not repeat it', async () => {
     await learnWords([1, 2, 3, 4, 5, 6]);
+    await ladderAt(3);
     const first = render(<SentencesScreen />);
     await flush();
-    await buildCurrent(first);
+    expect(await typeCurrent(first)).toBe(ROUND[0]);
     first.unmount();
 
     const back = render(<SentencesScreen />);
     await flush();
-    expect(stepText(back)).toBe(STEP(1, 5, TYPE));
-    expect(progress(back)).toBe('1 / 10');
-    expect(current(back)).toBe(ROUND[0]);
-    expect(mockRecord).not.toHaveBeenCalled();
-    expect(await typeCurrent(back)).toBe(ROUND[0]);
-    expect(calls()).toEqual([['a1-w3', 'correct']]);
+    expect(stepText(back)).toBe(STEP(2, 5, RUNG3));
+    expect(progress(back)).toBe('1 / 5');
+    expect(current(back)).toBe(ROUND[1]);
+    expect(calls()).toEqual([['a1-w3', 'correct']]); // the first sentence only, once
+    expect(await typeCurrent(back)).toBe(ROUND[1]);
   });
 
   it('the position is saved on every step (a wrong build too), and the saved round is dropped at the end of the round', async () => {
@@ -647,11 +717,11 @@ describe('a round that was left continues', () => {
     const r = render(<SentencesScreen />);
     await flush();
     const db = getDb();
-    expect(await loadSentenceRound(db)).toMatchObject({ v: 2, queue: STEP_IDS, done: [], phase: 'steps' });
+    expect(await loadSentenceRound(db)).toMatchObject({ v: 3, queue: STEP_IDS, done: [], phase: 'steps' });
     await buildCurrent(r, false);
     expect(await loadSentenceRound(db)).toMatchObject({ queue: [...STEP_IDS.slice(1), STEP_IDS[0]], done: [] });
-    await typeCurrent(r);
-    expect(await loadSentenceRound(db)).toMatchObject({ queue: [...STEP_IDS.slice(2), STEP_IDS[0]], done: [STEP_IDS[1]] });
+    await buildCurrent(r);
+    expect(await loadSentenceRound(db)).toMatchObject({ queue: [...STEP_IDS.slice(2), STEP_IDS[0]], done: [STEP_IDS[1]], passed: [ROUND_IDS[1]] });
     await finishRound(r);
     expect(await loadSentenceRound(db)).toBeNull();
   });
@@ -660,7 +730,7 @@ describe('a round that was left continues', () => {
     await learnWords([1, 2, 3, 4, 5, 6]);
     const first = render(<SentencesScreen />);
     await flush();
-    await playSentence(first);
+    await buildCurrent(first);
     first.unmount();
     const saved = await loadSentenceRound(getDb());
     expect(saved).not.toBeNull();
@@ -668,9 +738,8 @@ describe('a round that was left continues', () => {
 
     const next = render(<SentencesScreen />);
     await flush();
-    expect(progress(next)).toBe('0 / 10');
-    expect(stepText(next)).toBe(STEP(1, 5, BUILD));
-    expect(current(next)).toBe(ROUND[0]);
+    expect(progress(next)).toBe('0 / 5');
+    expect(stepText(next)).toBe(STEP(1, 5, RUNG2)); // the cat was built: it is on rung 2 now
     expect((await loadSentenceRound(getDb()))?.day).toBe(localDateString());
   });
 
@@ -679,7 +748,7 @@ describe('a round that was left continues', () => {
     await getDb().setGameProgress('app-resume', 'sentences', 'saved', { day: localDateString(), phase: 'steps' });
     const r = render(<SentencesScreen />);
     await flush();
-    expect(progress(r)).toBe('0 / 10');
+    expect(progress(r)).toBe('0 / 5');
     expect(current(r)).toBe(ROUND[0]);
   });
 
@@ -698,11 +767,32 @@ describe('a round that was left continues', () => {
     });
     const r = render(<SentencesScreen />);
     await flush();
-    expect(progress(r)).toBe('0 / 10');
+    expect(progress(r)).toBe('0 / 5');
     expect(current(r)).toBe(ROUND[0]);
-    expect(await loadSentenceRound(getDb())).toMatchObject({ v: 2, queue: STEP_IDS });
+    expect(await loadSentenceRound(getDb())).toMatchObject({ v: 3, queue: STEP_IDS });
+  });
+
+  it('a round saved in the format before the ladder (v2: every sentence build, then typing) starts again as a fresh round (v3)', async () => {
+    await learnWords([1, 2, 3, 4, 5, 6]);
+    const v3 = startRound([{ ...BY_ITEM_ENTRY(3) }], localDateString(), 'es', '');
+    await getDb().setGameProgress('app-resume', 'sentences', 'saved', {
+      ...v3,
+      v: 2,
+      steps: [{ id: 'a1-w3#build', itemId: 'a1-w3', kind: 'build' }, { id: 'a1-w3#type', itemId: 'a1-w3', kind: 'type' }],
+      queue: ['a1-w3#build', 'a1-w3#type'],
+    });
+    const r = render(<SentencesScreen />);
+    await flush();
+    expect(progress(r)).toBe('0 / 5'); // not the one saved sentence
+    expect(await loadSentenceRound(getDb())).toMatchObject({ v: 3, queue: STEP_IDS });
   });
 });
+
+// A saved-round entry of a corpus sentence (the screen continues a saved round of the same day, direction and focus).
+function BY_ITEM_ENTRY(n: number) {
+  const s = BY_ITEM[`a1-w${n}`];
+  return { itemId: s.item, source: 'x', target: s.target, wordCount: s.tiles.length, wordIds: [s.item], due: false, dueIds: [], staleness: '', slots: [{ id: s.item, words: [s.tiles[1]] }] };
+}
 
 describe('the feedback button', () => {
   it('is on the screen with a round, with an empty round and after the round, with the sentences screen id in the message', async () => {
@@ -732,9 +822,19 @@ describe('the feedback button', () => {
     expect(body.languagePair).toBe('en→es');
 
     await buildCurrent(r);
-    expect(r.getByLabelText('Feedback')).toBeTruthy(); // the typing step
+    expect(r.getByLabelText('Feedback')).toBeTruthy(); // the next step
     await finishRound(r);
     expect(r.getByText('Round done: 5 sentences')).toBeTruthy();
+    expect(r.getByLabelText('Feedback')).toBeTruthy();
+  });
+
+  it('is on the screen when there is nothing to practise, with the sentences tab id', async () => {
+    await learnWords([3]);
+    await ladderAt('learned', [3]);
+    global.fetch = jest.fn().mockResolvedValue({ ok: true } as never);
+    const r = render(<SentencesScreen />);
+    await flush();
+    expect(r.getByTestId('sentences-empty')).toBeTruthy();
     expect(r.getByLabelText('Feedback')).toBeTruthy();
   });
 });
@@ -753,65 +853,52 @@ describe('the daily streak', () => {
     await finishRound(r);
     fireEvent.press(r.getByTestId('sentences-more'));
     await flush();
-    await playSentence(r);
+    await autoStep(r);
     expect(await getDb().getStreak()).toEqual({ current_count: 5, last_date: localDateString(), longest_count: 5 });
   });
 
-  it('a typed sentence counts the day on its own (a saved round that only has the typing left)', async () => {
+  it('a typed sentence counts the day on its own (a sentence on rung 3)', async () => {
     await learnWords([3]);
+    await ladderAt(3, [3]);
     const r = render(<SentencesScreen />);
     await flush();
     expect(current(r)).toBe('The cat.');
-    await buildCurrent(r);
-    expect(stepText(r)).toBe(STEP(1, 1, TYPE));
-    (getDb() as any).__setStreakForTest({ current_count: 4, last_date: YESTERDAY, longest_count: 4 });
+    expect(stepText(r)).toBe(STEP(1, 1, RUNG3));
+    expect(await getDb().getStreak()).toEqual({ current_count: 4, last_date: YESTERDAY, longest_count: 4 });
     await typeCurrent(r);
     expect(await getDb().getStreak()).toEqual({ current_count: 5, last_date: localDateString(), longest_count: 5 });
   });
 });
 
-describe('listen-and-type step (beta sentenceListening, FB523/FB524)', () => {
-  beforeEach(async () => {
-    await getDb().setBetaFlag('sentenceListening', true);
-    __resetBetaForTest();
-    mockSpeak.mockClear();
-  });
+describe('rung 2: listen and type (FB523/FB524, always on since FB570)', () => {
   const play = (r: R) => r.queryByTestId('sentence-listen-play');
-  const LISTEN = 'Listen and type what you hear';
 
-  it('each sentence starts with it: the SPANISH sentence is read aloud, the English prompt is hidden until the check, nothing is credited', async () => {
+  it('the SPANISH sentence is read aloud, the English prompt is hidden until the check, nothing is credited; a right answer passes the rung', async () => {
     await learnWords([1, 2, 3, 4, 5, 6]);
+    await ladderAt(2);
     const r = render(<SentencesScreen />);
     await flush();
-    expect(progress(r)).toBe('0 / 15'); // 5 sentences x (listen, build, typing)
-    expect(stepText(r)).toBe(STEP(1, 5, LISTEN));
+    expect(progress(r)).toBe('0 / 5'); // 5 sentences x one listen step
+    expect(stepText(r)).toBe(STEP(1, 5, RUNG2));
     expect(play(r)).not.toBeNull();
     expect(onScreen(r)).toEqual([]); // the prompt is hidden
     expect(r.getByText('Listen, then type the sentence')).toBeTruthy();
     expect(mockSpeak).toHaveBeenCalledWith('El gato.', expect.any(String), { gender: expect.stringMatching(/^[fm]$/) }); // the target sentence, when the step opens
-    expect(mockSpeak).not.toHaveBeenCalledWith('The cat.', expect.any(String));
+    expect(mockSpeak).not.toHaveBeenCalledWith('The cat.', expect.any(String), expect.anything());
     typeIt(r, 'el gato');
     expect(r.getByText('The cat.')).toBeTruthy(); // shown after the check
     expect(r.getByText('Correct!')).toBeTruthy();
     next(r);
     await flush(24);
-    expect(mockRecord).not.toHaveBeenCalled();
-    expect(progress(r)).toBe('1 / 15');
-    expect(stepText(r)).toBe(STEP(1, 5, BUILD));
-    expect(play(r)).toBeNull();
-    expect(current(r)).toBe('The cat.'); // the prompt is shown again on the build
-    await buildCurrent(r);
-    expect(stepText(r)).toBe(STEP(1, 5, TYPE));
-    expect(play(r)).toBeNull();
-    expect(r.getByPlaceholderText('Type the sentence')).toBeTruthy();
-    expect(mockRecord).not.toHaveBeenCalled();
-    await typeCurrent(r);
-    expect(calls()).toEqual([['a1-w3', 'correct']]); // only the typing step credits
-    expect(stepText(r)).toBe(STEP(2, 5, LISTEN));
+    expect(mockRecord).not.toHaveBeenCalled(); // nothing is credited
+    expect(progress(r)).toBe('1 / 5');
+    expect(stepText(r)).toBe(STEP(2, 5, RUNG2));
+    expect(await stageOf(3)).toBe(3); // rung 2 passed: the cat is on rung 3
   });
 
   it('the 🔊 button reads the Spanish sentence again', async () => {
     await learnWords([1, 2, 3, 4, 5, 6]);
+    await ladderAt(2);
     const r = render(<SentencesScreen />);
     await flush();
     mockSpeak.mockClear();
@@ -819,8 +906,9 @@ describe('listen-and-type step (beta sentenceListening, FB523/FB524)', () => {
     expect(mockSpeak).toHaveBeenCalledWith('El gato.', expect.any(String), { gender: expect.stringMatching(/^[fm]$/) });
   });
 
-  it('a wrong answer here is credited to nothing and the step comes back at the end of the round', async () => {
+  it('a wrong answer here is credited to nothing, the step comes back at the end of the round, the sentence stays on rung 2', async () => {
     await learnWords([1, 2, 3, 4, 5, 6]);
+    await ladderAt(2);
     const r = render(<SentencesScreen />);
     await flush();
     typeIt(r, 'el perro');
@@ -828,31 +916,209 @@ describe('listen-and-type step (beta sentenceListening, FB523/FB524)', () => {
     next(r);
     await flush(24);
     expect(mockRecord).not.toHaveBeenCalled();
-    expect(progress(r)).toBe('0 / 15');
-    expect(stepText(r)).toBe(STEP(1, 5, BUILD));
+    expect(progress(r)).toBe('0 / 5');
+    expect(stepText(r)).toBe(STEP(2, 5, RUNG2));
     const queue = (await loadSentenceRound(getDb()))!.queue;
     expect(queue[queue.length - 1]).toBe('a1-w3#listen');
-  });
-
-  it('switch off: no listen step, no 🔊 button', async () => {
-    await getDb().setBetaFlag('sentenceListening', false);
-    __resetBetaForTest();
-    await learnWords([1, 2, 3, 4, 5, 6]);
-    const r = render(<SentencesScreen />);
-    await flush();
-    expect(progress(r)).toBe('0 / 10');
-    expect(stepText(r)).toBe(STEP(1, 5, BUILD));
-    expect(play(r)).toBeNull();
+    expect(await stageOf(3)).toBe(2);
   });
 
   it('Spanish UI: the step label, the hint and the button label', async () => {
     await learnWords([1, 2, 3, 4, 5, 6]);
+    await ladderAt(2);
     setLanguage('es');
     const es = render(<SentencesScreen />);
     await flush();
-    expect(stepText(es)).toBe('Frase 1 de 5 · Escucha y escribe lo que oyes');
+    expect(stepText(es)).toBe('Frase 1 de 5 · Paso 2 de 3 · Escucha y escribe lo que oyes');
     expect(es.getByLabelText('Reproducir la frase')).toBeTruthy();
     expect(es.getByText('Escucha y escribe la frase')).toBeTruthy();
+  });
+});
+
+describe('the ladder (FB569 + FB570)', () => {
+  it('a sentence climbs one rung per round (build, listen, type) and is learned after the third; it never comes back', async () => {
+    await learnWords([3]);
+    const r = render(<SentencesScreen />);
+    await flush();
+    // round 1: rung 1
+    expect(progress(r)).toBe('0 / 1');
+    expect(stepText(r)).toBe(STEP(1, 1, RUNG1));
+    await buildCurrent(r);
+    expect(r.getByText('Round done: 1 sentence')).toBeTruthy();
+    expect(r.queryByTestId('sentences-learned')).toBeNull();
+    expect(await stageOf(3)).toBe(2);
+    // round 2: rung 2
+    fireEvent.press(r.getByTestId('sentences-more'));
+    await flush();
+    expect(stepText(r)).toBe(STEP(1, 1, RUNG2));
+    typeIt(r, 'el gato');
+    next(r);
+    await flush(24);
+    expect(r.getByText('Round done: 1 sentence')).toBeTruthy();
+    expect(await stageOf(3)).toBe(3);
+    expect(mockRecord).not.toHaveBeenCalled();
+    // round 3: rung 3, the only one that credits
+    fireEvent.press(r.getByTestId('sentences-more'));
+    await flush();
+    expect(stepText(r)).toBe(STEP(1, 1, RUNG3));
+    await typeCurrent(r);
+    expect(calls()).toEqual([['a1-w3', 'correct']]);
+    expect(r.getByText('Round done: 1 sentence')).toBeTruthy();
+    expect(r.getByTestId('sentences-learned').props.children).toBe('1 sentence learned');
+    expect(await stageOf(3)).toBe('learned');
+    // learned: the next round has nothing to practise (not "Round done: 0")
+    fireEvent.press(r.getByTestId('sentences-more'));
+    await flush();
+    expect(r.getByTestId('sentences-empty')).toBeTruthy();
+    expect(r.queryByTestId('sentences-round-done')).toBeNull();
+    expect(r.queryByText(/Round done/)).toBeNull();
+    // ...also after a restart of the tab
+    r.unmount();
+    const again = render(<SentencesScreen />);
+    await flush();
+    expect(again.getByTestId('sentences-empty')).toBeTruthy();
+  });
+
+  it('the place on the ladder survives a restart: another mount plays the next rung', async () => {
+    await learnWords([3]);
+    const first = render(<SentencesScreen />);
+    await flush();
+    await buildCurrent(first);
+    first.unmount();
+    const back = render(<SentencesScreen />);
+    await flush();
+    expect(stepText(back)).toBe(STEP(1, 1, RUNG2));
+    expect(await stageOf(3)).toBe(2);
+  });
+
+  it('a wrong typing on rung 3 passes nothing: the sentence stays on rung 3, the "more" button does not replay it, a restart does', async () => {
+    await learnWords([3]);
+    await ladderAt(3, [3]);
+    const r = render(<SentencesScreen />);
+    await flush();
+    await typeCurrent(r, 'xx');
+    expect(r.getByText('Round done: 1 sentence')).toBeTruthy();
+    expect(r.queryByTestId('sentences-learned')).toBeNull();
+    expect(await stageOf(3)).toBe(3);
+    fireEvent.press(r.getByTestId('sentences-more'));
+    await flush();
+    expect(r.getByTestId('sentences-empty')).toBeTruthy(); // not the same rung again in this session
+    r.unmount();
+    const again = render(<SentencesScreen />);
+    await flush();
+    expect(stepText(again)).toBe(STEP(1, 1, RUNG3));
+  });
+
+  it('a round has at most 2 sentences of one rung while others are available; the rest is filled up', async () => {
+    await learnWords([1, 2, 3, 4, 5, 6]);
+    await ladderAt(3, [1, 2, 3]);
+    await ladderAt(2, [4, 5]); // the bread sentence is fresh (rung 1)
+    const r = render(<SentencesScreen />);
+    await flush();
+    const entries = (await loadSentenceRound(getDb()))!.entries;
+    expect(entries.map((e) => e.rung ?? 1).sort()).toEqual([1, 2, 2, 3, 3]);
+    expect(new Set(entries.map((e) => e.itemId)).size).toBe(5); // never the same sentence twice
+    // the steps are the steps of each rung: 1 build, 2 listens, 2 typings
+    expect((await loadSentenceRound(getDb()))!.steps.map((s) => s.kind).sort()).toEqual(['build', 'listen', 'listen', 'type', 'type']);
+    expect(progress(r)).toBe('0 / 5');
+  });
+
+  it('a started sentence (rung 3) comes into the round before the fresh ones, even one that variety would leave out', async () => {
+    await learnWords([1, 2, 3, 4, 5, 6]);
+    await ladderAt(3, [4]); // the dog sentence is the one the round leaves out when everything is fresh
+    render(<SentencesScreen />);
+    await flush();
+    const entries = (await loadSentenceRound(getDb()))!.entries;
+    expect(entries.find((e) => e.itemId === 'a1-w4')?.rung).toBe(3);
+  });
+
+  it('learned sentences never return, in any level or focus; with all of them learned the tab says there is nothing to practise', async () => {
+    await learnWords([1, 2, 3, 4, 5, 6]);
+    await ladderAt('learned');
+    const r = render(<SentencesScreen />);
+    await flush();
+    expect(r.getByTestId('sentences-empty')).toBeTruthy();
+    expect(r.getByText('Nothing to practise right now. Learn more words to unlock new sentences')).toBeTruthy();
+    expect(r.queryByText(/Round done/)).toBeNull();
+    expect(r.queryByTestId('sentences-more')).toBeNull();
+    r.unmount();
+    mockParams.focus = 'a1-w4,a1-w1';
+    const focused = render(<SentencesScreen />);
+    await flush();
+    expect(focused.getByTestId('sentences-empty')).toBeTruthy();
+  });
+
+  it('Spanish UI: the empty line and the learned line', async () => {
+    setLanguage('es');
+    await learnWords([3]);
+    await ladderAt('learned', [3]);
+    const r = render(<SentencesScreen />);
+    await flush();
+    expect(r.getByText('Nada que practicar por ahora. Aprende más palabras para desbloquear frases nuevas')).toBeTruthy();
+    r.unmount();
+    await ladderAt(3, [3]);
+    const done = render(<SentencesScreen />);
+    await flush();
+    typeIt2(done);
+    await flush(24);
+    expect(done.getByTestId('sentences-learned').props.children).toBe('1 frase aprendida');
+  });
+});
+
+// Types the cat sentence on a Spanish-UI screen (the placeholder and the buttons are Spanish there).
+function typeIt2(r: R) {
+  fireEvent.changeText(r.getByPlaceholderText('Escribe la oración'), 'el gato');
+  fireEvent.press(r.getByText('✓ Comprobar'));
+  fireEvent.press(r.getByText(/^Siguiente/));
+}
+
+describe('speech on the Sentences tab (FB569: it said the sentence too often)', () => {
+  const spoken = (text: string) => mockSpeak.mock.calls.some((c) => c[0] === text);
+  const GENDER = { gender: expect.stringMatching(/^[fm]$/) };
+
+  it('rung 1 (build): nothing is spoken when the step opens or after the check; a tile still sounds; the 🔊 speaks the prompt, after the check the sentence', async () => {
+    await learnWords([3]);
+    const r = render(<SentencesScreen />);
+    await flush();
+    expect(mockSpeak).not.toHaveBeenCalled(); // not the prompt, not the sentence
+    fireEvent.press(r.getAllByText('el')[0]);
+    expect(mockSpeak).toHaveBeenCalledWith('el', expect.any(String), expect.anything()); // the tile's own word sound stays
+    fireEvent.press(r.getAllByText('gato')[0]);
+    mockSpeak.mockClear();
+    fireEvent.press(r.getByTestId('sentence-speak'));
+    expect(mockSpeak).toHaveBeenCalledWith('The cat.', expect.any(String), GENDER); // before the check: the English prompt, never the answer
+    expect(spoken('El gato.')).toBe(false);
+    mockSpeak.mockClear();
+    check(r);
+    expect(spoken('El gato.')).toBe(false); // no read-aloud by itself after the check
+    fireEvent.press(r.getByTestId('sentence-speak'));
+    expect(mockSpeak).toHaveBeenCalledWith('El gato.', expect.any(String), GENDER);
+  });
+
+  it('rung 2 (listen): the Spanish sentence is read by itself when the step opens; there is no second button that would show the answer', async () => {
+    await learnWords([3]);
+    await ladderAt(2, [3]);
+    const r = render(<SentencesScreen />);
+    await flush();
+    expect(mockSpeak).toHaveBeenCalledWith('El gato.', expect.any(String), GENDER);
+    expect(r.queryByTestId('sentence-listen-play')).not.toBeNull();
+    expect(r.queryByTestId('sentence-speak')).toBeNull();
+  });
+
+  it('rung 3 (type): nothing is spoken by itself, not when it opens and not after the check; the 🔊 speaks the prompt, after the check the sentence', async () => {
+    await learnWords([3]);
+    await ladderAt(3, [3]);
+    const r = render(<SentencesScreen />);
+    await flush();
+    expect(mockSpeak).not.toHaveBeenCalled();
+    fireEvent.press(r.getByTestId('sentence-speak'));
+    expect(mockSpeak).toHaveBeenCalledWith('The cat.', expect.any(String), GENDER); // the prompt before the check, not the answer
+    expect(spoken('El gato.')).toBe(false);
+    mockSpeak.mockClear();
+    typeIt(r, 'el gato');
+    expect(mockSpeak).not.toHaveBeenCalled();
+    fireEvent.press(r.getByTestId('sentence-speak'));
+    expect(mockSpeak).toHaveBeenCalledWith('El gato.', expect.any(String), GENDER);
   });
 });
 
@@ -871,18 +1137,18 @@ describe('the parts of a split sentence (FB524)', () => {
     slots: [{ id: 'a1-w1', words: ['libro'] }, { id: 'a1-w2', words: ['mesa'] }],
     chunks: [{ source: 'the book', target: 'El libro' }, { source: 'and the table', target: 'y la mesa.' }],
   };
-  const seedRound = () => saveSentenceRound(getDb(), startRound([BOOK], localDateString(), 'es', '', { listening: false }));
-  const PART = (n: number) => `Build the short sentence ${n} of 2`;
+  const seedRound = () => saveSentenceRound(getDb(), startRound([BOOK], localDateString(), 'es', ''));
+  const PART = (n: number) => `Step 1 of 3 · Build the short sentence ${n} of 2`;
 
   beforeEach(async () => {
     await learnWords([1, 2]);
     await seedRound();
   });
 
-  it('part 1, part 2 (each built from its own tiles, the English part is the prompt), then the whole sentence built, then typed; only the typing credits', async () => {
+  it('part 1, part 2 (each built from its own tiles, the English part is the prompt), then the whole sentence built: that is rung 1, nothing is credited', async () => {
     const r = render(<SentencesScreen />);
     await flush();
-    expect(progress(r)).toBe('0 / 4');
+    expect(progress(r)).toBe('0 / 3');
     expect(stepText(r)).toBe(STEP(1, 1, PART(1)));
     expect(r.getByText('the book')).toBeTruthy();
     expect(onScreen(r)).toEqual([]); // not the whole sentence
@@ -890,21 +1156,21 @@ describe('the parts of a split sentence (FB524)', () => {
     check(r);
     next(r);
     await flush();
-    expect(progress(r)).toBe('1 / 4');
+    expect(progress(r)).toBe('1 / 3');
     expect(stepText(r)).toBe(STEP(1, 1, PART(2)));
     expect(r.getByText('and the table')).toBeTruthy();
     build(r, ['y', 'la', 'mesa']);
     check(r);
     next(r);
     await flush();
-    expect(stepText(r)).toBe(STEP(1, 1, BUILD));
+    expect(stepText(r)).toBe(STEP(1, 1, RUNG1));
     expect(current(r)).toBe('The book and the table.');
+    expect(await stageOf(1)).toBeUndefined(); // the whole sentence is still to build
     await buildCurrent(r);
-    expect(stepText(r)).toBe(STEP(1, 1, TYPE));
     expect(mockRecord).not.toHaveBeenCalled();
-    await typeCurrent(r);
-    expect(calls()).toEqual([['a1-w1', 'correct'], ['a1-w2', 'correct']]);
     expect(r.getByText('Round done: 1 sentence')).toBeTruthy();
+    expect(r.queryByPlaceholderText('Type the sentence')).toBeNull();
+    expect(await stageOf(1)).toBe(2); // rung 1 passed
   });
 
   it('a wrong part comes back at the end of the round', async () => {
@@ -914,21 +1180,22 @@ describe('the parts of a split sentence (FB524)', () => {
     check(r);
     next(r);
     await flush();
-    expect(progress(r)).toBe('0 / 4');
+    expect(progress(r)).toBe('0 / 3');
     expect(stepText(r)).toBe(STEP(1, 1, PART(2)));
     build(r, ['y', 'la', 'mesa']);
     check(r);
     next(r);
     await flush();
     await buildCurrent(r);
-    await typeCurrent(r);
-    expect(progress(r)).toBe('3 / 4');
+    expect(progress(r)).toBe('2 / 3');
+    expect(await stageOf(1)).toBeUndefined(); // part 1 is still to do
     expect(stepText(r)).toBe(STEP(1, 1, PART(1)));
     build(r, ['el', 'libro']);
     check(r);
     next(r);
     await flush();
     expect(r.getByText('Round done: 1 sentence')).toBeTruthy();
+    expect(await stageOf(1)).toBe(2);
   });
 
   it('the position inside the parts is saved: another mount continues on part 2', async () => {
@@ -941,7 +1208,7 @@ describe('the parts of a split sentence (FB524)', () => {
     first.unmount();
     const back = render(<SentencesScreen />);
     await flush();
-    expect(progress(back)).toBe('1 / 4');
+    expect(progress(back)).toBe('1 / 3');
     expect(stepText(back)).toBe(STEP(1, 1, PART(2)));
     expect((await loadSentenceRound(getDb()))?.entries[0].chunks).toHaveLength(2);
   });
@@ -950,7 +1217,7 @@ describe('the parts of a split sentence (FB524)', () => {
     setLanguage('es');
     const es = render(<SentencesScreen />);
     await flush();
-    expect(stepText(es)).toBe('Frase 1 de 1 · Construye la frase corta 1 de 2');
+    expect(stepText(es)).toBe('Frase 1 de 1 · Paso 1 de 3 · Construye la frase corta 1 de 2');
   });
 
   it('a part has no tap-a-word hints; the whole sentence has', async () => {
@@ -967,7 +1234,7 @@ describe('the parts of a split sentence (FB524)', () => {
     check(r);
     next(r);
     await flush();
-    expect(stepText(r)).toBe(STEP(1, 1, BUILD));
+    expect(stepText(r)).toBe(STEP(1, 1, RUNG1));
     expect(r.getByTestId('sentence-hint-0')).toBeTruthy();
     await getDb().setBetaFlag('sentenceHint', false);
   });
@@ -1002,17 +1269,17 @@ describe('mistake step (beta sentenceMistakes, BRIEF-B2)', () => {
     await seedBatch({ ...BATCH, sentences: [] }); // there is no delete: an empty list is "no mistake sentence"
   });
 
-  it('the 3rd sentence is one from the list (a single step: label, English prompt, the faulty words as decoys); a right build = "Knew it" in the mistake deck, nothing for the corpus cards', async () => {
+  it('the 3rd sentence is one from the list (a single step, outside the ladder: label, English prompt, the faulty words as decoys); a right build = "Knew it" in the mistake deck, nothing for the corpus cards', async () => {
     await learnWords([1, 2, 3, 4, 5, 6]);
     await seedBatch();
     const r = render(<SentencesScreen />);
     await flush();
-    expect(progress(r)).toBe('0 / 11'); // the 5 corpus sentences x 2 steps + the one mistake step
+    expect(progress(r)).toBe('0 / 6'); // the 5 corpus sentences x one build + the one mistake step
     expect(label(r)).toBeNull();
-    expect(await playSentence(r)).toBe(ROUND[0]);
-    expect(await playSentence(r)).toBe(ROUND[1]);
+    expect(await buildCurrent(r)).toBe(ROUND[0]);
+    expect(await buildCurrent(r)).toBe(ROUND[1]);
     const credited = mockRecord.mock.calls.length;
-    expect(stepText(r)).toBe(STEP(3, 6, BUILD));
+    expect(stepText(r)).toBe(STEP(3, 6, MISTAKE_BUILD)); // no rung on a mistake sentence
     expect(r.getByTestId('sentences-mistake-label').props.children).toBe('From your mistakes');
     expect(r.getByText(MISTAKE_EN)).toBeTruthy();
     for (const en of Object.keys(SENT)) expect(r.queryByText(en)).toBeNull(); // not a corpus sentence
@@ -1022,9 +1289,10 @@ describe('mistake step (beta sentenceMistakes, BRIEF-B2)', () => {
     expect(await savedCard(S2)).toEqual(sm2NewCard(S2));
     expect(mockRecord).toHaveBeenCalledTimes(credited); // nothing for the corpus cards
     expect(label(r)).toBeNull();
-    expect(progress(r)).toBe('5 / 11');
-    expect(stepText(r)).toBe(STEP(4, 6, BUILD)); // no typing after it: the next sentence
+    expect(progress(r)).toBe('3 / 6');
+    expect(stepText(r)).toBe(STEP(4, 6, RUNG1)); // the next sentence
     expect(current(r)).toBe(ROUND[2]);
+    expect((await loadLadder(getDb())).has('no tengo tomate.')).toBe(false); // the mistake sentence is not on the ladder
   });
 
   it('a wrong mistake build is "Didn\'t know" and the step goes to the end of the round, where it can be built right', async () => {
@@ -1032,16 +1300,16 @@ describe('mistake step (beta sentenceMistakes, BRIEF-B2)', () => {
     await seedBatch();
     const r = render(<SentencesScreen />);
     await flush();
-    await playSentence(r);
-    await playSentence(r);
+    await buildCurrent(r);
+    await buildCurrent(r);
     await buildTiles(r, TILES_S1, false);
     const again = sm2Review(sm2NewCard(S1), 'again', localDateString());
     expect(await savedCard(S1)).toEqual(again);
-    expect(progress(r)).toBe('4 / 11');
-    expect(stepText(r)).toBe(STEP(4, 6, BUILD)); // the next sentence is next, the mistake step waits at the end
+    expect(progress(r)).toBe('2 / 6');
+    expect(stepText(r)).toBe(STEP(4, 6, RUNG1)); // the next sentence is next, the mistake step waits at the end
     expect(label(r)).toBeNull();
-    for (let i = 2; i < 5; i++) expect(await playSentence(r)).toBe(ROUND[i]);
-    expect(progress(r)).toBe('10 / 11');
+    for (let i = 2; i < 5; i++) expect(await buildCurrent(r)).toBe(ROUND[i]);
+    expect(progress(r)).toBe('5 / 6');
     expect(label(r)).not.toBeNull();
     expect(r.getByText(MISTAKE_EN)).toBeTruthy();
     expect(r.queryByPlaceholderText('Type the sentence')).toBeNull();
@@ -1055,14 +1323,14 @@ describe('mistake step (beta sentenceMistakes, BRIEF-B2)', () => {
     await seedBatch();
     const first = render(<SentencesScreen />);
     await flush();
-    await playSentence(first);
-    await playSentence(first);
+    await buildCurrent(first);
+    await buildCurrent(first);
     first.unmount();
     // the list changes in between: the saved round still holds the sentence
     await seedBatch({ ...BATCH, sentences: [] });
     const again = render(<SentencesScreen />);
     await flush();
-    expect(stepText(again)).toBe(STEP(3, 6, BUILD));
+    expect(stepText(again)).toBe(STEP(3, 6, MISTAKE_BUILD));
     expect(again.getByTestId('sentences-mistake-label')).toBeTruthy();
     expect(again.getByText(MISTAKE_EN)).toBeTruthy();
     expect(again.getAllByText('tienes').length).toBeGreaterThan(0);
@@ -1076,17 +1344,17 @@ describe('mistake step (beta sentenceMistakes, BRIEF-B2)', () => {
     await seedBatch();
     const first = render(<SentencesScreen />);
     await flush();
-    await playSentence(first);
-    await playSentence(first);
+    await buildCurrent(first);
+    await buildCurrent(first);
     first.unmount();
     await getDb().setBetaFlag('sentenceMistakes', false);
     __resetBetaForTest();
     const again = render(<SentencesScreen />);
     await flush();
-    expect(stepText(again)).toBe(STEP(3, 6, BUILD));
+    expect(stepText(again)).toBe(STEP(3, 6, MISTAKE_BUILD));
     await buildTiles(again, TILES_S1);
     expect(await savedCard(S1)).toEqual(sm2NewCard(S1));
-    expect(stepText(again)).toBe(STEP(4, 6, BUILD));
+    expect(stepText(again)).toBe(STEP(4, 6, RUNG1));
   });
 
   it('a due sentence is chosen before one not seen yet', async () => {
@@ -1095,8 +1363,8 @@ describe('mistake step (beta sentenceMistakes, BRIEF-B2)', () => {
     await getDb().upsertMistakeCard({ ...sm2NewCard(S2), state: 'learning', due: '2026-10-01', introducedAt: '2026-10-01', lastReview: '2026-10-01' });
     const r = render(<SentencesScreen />);
     await flush();
-    await playSentence(r);
-    await playSentence(r);
+    await buildCurrent(r);
+    await buildCurrent(r);
     expect(r.getByText("That's fine.")).toBeTruthy();
     expect(r.queryByText(MISTAKE_EN)).toBeNull();
     expect(r.getAllByText('es').length).toBeGreaterThan(0); // the faulty "Eso es bien."
@@ -1107,14 +1375,15 @@ describe('mistake step (beta sentenceMistakes, BRIEF-B2)', () => {
     const playRound = async () => {
       const r = render(<SentencesScreen />);
       await flush();
-      expect(progress(r)).toBe('0 / 10');
+      expect(progress(r)).toBe('0 / 5');
       for (let i = 0; i < 5; i++) {
-        expect(stepText(r)).toBe(STEP(i + 1, 5, BUILD));
+        expect(stepText(r)).toBe(STEP(i + 1, 5, RUNG1));
         expect(label(r)).toBeNull();
-        expect(await playSentence(r)).toBe(ROUND[i]);
+        expect(await buildCurrent(r)).toBe(ROUND[i]);
       }
       r.unmount();
       await clearSentenceRound(getDb());
+      await getDb().resetGameProgress(LADDER_KEY); // the next round starts on rung 1 again
     };
     await playRound(); // no list
     await seedBatch({ ...BATCH, sentences: BATCH.sentences.filter((s) => s.doubtful) });
@@ -1132,8 +1401,8 @@ describe('mistake step (beta sentenceMistakes, BRIEF-B2)', () => {
     await seedBatch();
     const first = render(<SentencesScreen />);
     await flush();
-    await playSentence(first);
-    await playSentence(first);
+    await buildCurrent(first);
+    await buildCurrent(first);
     first.unmount();
     setLanguage('es');
     const es = render(<SentencesScreen />);
@@ -1161,7 +1430,7 @@ describe('tap-a-word hint (beta sentenceHint, BRIEF-B3)', () => {
     await learnWords([1, 2, 3, 4, 5, 6]);
     const r = render(<SentencesScreen />);
     await flush();
-    await playSentence(r); // the cat
+    await buildCurrent(r); // the cat
     expect(current(r)).toBe('The book and the table.');
     expect(bubble(r)).toBeNull();
     for (let i = 0; i < 5; i++) expect(r.getByTestId(`sentence-hint-${i}`)).toBeTruthy(); // the book and the table
@@ -1176,12 +1445,13 @@ describe('tap-a-word hint (beta sentenceHint, BRIEF-B3)', () => {
     expect(bubble(r)).toBeNull();
   });
 
-  it('the typing step has the hints too; the word that was looked at earns no half, the other words do', async () => {
+  it('the typing step (rung 3) has the hints too; the word that was looked at earns no half, the other words do', async () => {
     await learnWords([1, 2]);
+    await ladderAt(3, [1, 2]);
     const r = render(<SentencesScreen />);
     await flush();
-    expect(await buildCurrent(r)).toBe('The book and the table.');
-    expect(stepText(r)).toBe(STEP(1, 2, TYPE));
+    expect(current(r)).toBe('The book and the table.');
+    expect(stepText(r)).toBe(STEP(1, 2, RUNG3));
     tap(r, 1); // "book" -> libro (card 1)
     expect(inBubble(r).getByText('libro')).toBeTruthy();
     await typeCurrent(r);
@@ -1192,8 +1462,11 @@ describe('tap-a-word hint (beta sentenceHint, BRIEF-B3)', () => {
 
   it('a word looked at in a build step earns nothing at the typing of the same round; the hint is kept with the saved round', async () => {
     await learnWords([1, 2]);
+    await ladderAt(3, [2]); // the table sentence is typed, the book sentence is built
     const r = render(<SentencesScreen />);
     await flush();
+    expect(current(r)).toBe('The book and the table.');
+    expect(stepText(r)).toBe(STEP(1, 2, RUNG1));
     tap(r, 1); // build step "The book and the table.": "book" -> libro (card 1)
     expect(inBubble(r).getByText('libro')).toBeTruthy();
     await flush(); // the round is saved in the background
@@ -1203,26 +1476,26 @@ describe('tap-a-word hint (beta sentenceHint, BRIEF-B3)', () => {
     await flush();
     expect((await loadSentenceRound(getDb()))?.hinted).toEqual(['a1-w1']);
     await buildCurrent(again);
+    expect(current(again)).toBe('The table and the book.');
     await typeCurrent(again);
-    expect((await card(1))?.halfSteps ?? 0).toBe(0);
+    expect((await card(1))?.halfSteps ?? 0).toBe(0); // the book was looked at in this round
     expect((await card(2))?.halfSteps).toBe(1);
   });
 
   it('a word looked at and typed wrong is not a wrong typed answer either; the other due word still is', async () => {
     await learnWords([1, 2], [1, 2]); // both due
+    await ladderAt(3, [1, 2]);
     const r = render(<SentencesScreen />);
     await flush();
-    await buildCurrent(r);
     expect(current(r)).toBe('The book and the table.');
     tap(r, 1); // "book" -> libro (card 1)
     await typeCurrent(r, 'el gato');
     expect(calls()).toEqual([['a1-w2', 'wrongTyped']]);
   });
 
-  it('the listen-and-type step has no hints (its prompt only shows after the check, still plain); the build after it has', async () => {
-    await getDb().setBetaFlag('sentenceListening', true);
-    __resetBetaForTest();
+  it('the listen-and-type step has no hints (its prompt only shows after the check, still plain)', async () => {
     await learnWords([1, 2, 3, 4, 5, 6]);
+    await ladderAt(2);
     const r = render(<SentencesScreen />);
     await flush();
     expect(r.queryByTestId('sentence-listen-play')).not.toBeNull();
@@ -1230,10 +1503,6 @@ describe('tap-a-word hint (beta sentenceHint, BRIEF-B3)', () => {
     typeIt(r, 'el gato');
     expect(r.getByText('The cat.')).toBeTruthy();
     expect(r.queryByTestId('sentence-hint-0')).toBeNull(); // plain text after the check
-    next(r);
-    await flush();
-    expect(r.getByTestId('sentence-hint-0')).toBeTruthy(); // the build step
-    await getDb().setBetaFlag('sentenceListening', false);
   });
 
   it('switch off: the prompt is plain text, nothing is underlined', async () => {
@@ -1258,7 +1527,7 @@ describe('tap-a-word hint (beta sentenceHint, BRIEF-B3)', () => {
 
 // FB536: "the same sentences come one after the other, shuffle them" (beta sentenceMix, lib/sentenceSteps.ts).
 describe('Sentences tab: the sentences take turns (beta sentenceMix)', () => {
-  it('a round of 5: every sentence built, then every one typed, never the same sentence twice in a row', async () => {
+  it('a round of 5 on the ladder: every sentence plays its rung, never the same sentence twice in a row', async () => {
     await getDb().setBetaFlag('sentenceMix', true);
     __resetBetaForTest();
     await learnWords([1, 2, 3, 4, 5, 6]);
@@ -1266,10 +1535,9 @@ describe('Sentences tab: the sentences take turns (beta sentenceMix)', () => {
     await flush();
     const seen: string[] = [];
     for (let i = 0; i < 40 && !r.queryByTestId('sentences-round-done'); i++) {
-      if (r.queryByPlaceholderText('Type the sentence')) seen.push(`type ${await typeCurrent(r)}`);
-      else seen.push(`build ${await buildCurrent(r)}`);
+      seen.push(`build ${await buildCurrent(r)}`);
     }
-    expect(seen).toEqual([...ROUND.map((en) => `build ${en}`), ...ROUND.map((en) => `type ${en}`)]);
+    expect(seen).toEqual(ROUND.map((en) => `build ${en}`));
     expect(r.getByText('Round done: 5 sentences')).toBeTruthy();
   });
 

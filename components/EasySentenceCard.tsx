@@ -16,6 +16,7 @@ import { sentenceBuildMatch, sentenceBuildMisplaced } from '@/lib/answerMatch';
 import { useDiffStyles } from '@/lib/useDiffStyles';
 import { dropIndex, moveItem, type TileFrame } from '@/lib/tileDrag';
 import HintedSentence from '@/components/HintedSentence';
+import SpeakButton from '@/components/SpeakButton';
 import type { HintPiece } from '@/lib/sentenceHint';
 
 interface Props {
@@ -40,9 +41,13 @@ interface Props {
   // The sentence as written, spoken after Check. The tiles are lower-cased and without punctuation, which is not the
   // sentence the pack holds; without it the joined tiles are spoken as before.
   spokenSentence?: string;
+  // Sentences tab (FB569): no sentence is spoken by itself, only on a press of the 🔊 button (before Check the prompt, after it
+  // the right sentence); a tile still sounds when it is placed. Off (default) = the Learn tab's behaviour: the prompt is read
+  // when the card opens and the right sentence after Check.
+  speakOnPress?: boolean;
 }
 
-export default function EasySentenceCard({ sourceSentence, targetWords, trapWords, onResult, speechLocale, sourceSpeechLocale, gradeButtons = false, sourceHints, onSourceHint, speakerGender, spokenSentence }: Props) {
+export default function EasySentenceCard({ sourceSentence, targetWords, trapWords, onResult, speechLocale, sourceSpeechLocale, gradeButtons = false, sourceHints, onSourceHint, speakerGender, spokenSentence, speakOnPress = false }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const g = useGrammarColors();
@@ -63,7 +68,7 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
   const saySentence = (text: string, locale: string) => (speakerGender ? speakIn(text, locale, { gender: speakerGender }) : speakIn(text, locale));
 
   useEffect(() => {
-    if (sourceSpeechLocale) saySentence(sourceSentence, sourceSpeechLocale);
+    if (sourceSpeechLocale && !speakOnPress) saySentence(sourceSentence, sourceSpeechLocale);
     return () => stopSpeech();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sourceSentence, sourceSpeechLocale]);
@@ -128,11 +133,19 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
     setResult(isCorrect ? 'correct' : 'wrong');
     setMissed(!isCorrect);
     // The correct sentence is ALWAYS spoken, after a good and after a bad
-    // build alike (after a bad build it is also shown).
-    if (speechLocale) {
+    // build alike (after a bad build it is also shown); not with speakOnPress.
+    if (speechLocale && !speakOnPress) {
       stopSpeech();
       saySentence(spokenSentence ?? targetSentence, speechLocale);
     }
+  };
+
+  // speakOnPress: the 🔊 button speaks what is in front of the learner: the prompt, and once checked the right sentence.
+  const speakShown = () => {
+    stopSpeech();
+    if (result) {
+      if (speechLocale) saySentence(spokenSentence ?? targetSentence, speechLocale);
+    } else if (sourceSpeechLocale) saySentence(sourceSentence, sourceSpeechLocale);
   };
 
   const canCheck = placed.length > 0;
@@ -153,6 +166,7 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
   return (
     <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
       <HintedSentence text={sourceSentence} pieces={sourceHints} onHint={onSourceHint} style={[styles.sourceText, { color: colors.text }]} />
+      {speakOnPress && <SpeakButton testID="sentence-speak" onPress={speakShown} style={styles.speakBtn} iconStyle={styles.speakIcon} brutalStyle={styles.speakBrutal} />}
 
       <View style={[styles.placedArea, { borderColor: result === 'correct' ? colors.successFill : result === 'wrong' ? colors.danger : colors.tabIconDefault, borderStyle: result === 'correct' ? 'solid' : 'dashed' }, g.brutal && styles.brutalPlaced]}>
         {placed.length === 0 ? (
@@ -245,6 +259,9 @@ const styles = StyleSheet.create({
   brutalSlot: { borderRadius: 0, borderWidth: 2.5, paddingHorizontal: 12, paddingVertical: 6, marginRight: 2, marginBottom: 2 },
   brutalBtn: { alignSelf: 'stretch' },
   sourceText: { fontSize: 20, fontWeight: '700', textAlign: 'center' },
+  speakBtn: { alignSelf: 'center', padding: 4 },
+  speakIcon: { fontSize: 22 },
+  speakBrutal: { alignSelf: 'center' },
   placedArea: { borderWidth: 2, borderStyle: 'dashed', borderRadius: 12, padding: 12, minHeight: 50, width: '100%', justifyContent: 'center', alignItems: 'center' },
   placeholder: { fontSize: 16 },
   wordRow: { flexDirection: 'row', flexWrap: 'wrap', gap: 8, justifyContent: 'center' },
