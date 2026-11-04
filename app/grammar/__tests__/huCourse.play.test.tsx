@@ -54,7 +54,7 @@ describe.each([
     expect(screen.queryByTestId('grammar-coming-soon')).toBeNull();
     expect(screen.queryByText(unitTitle)).toBeTruthy();
     expect(screen.getAllByTestId(/^grammar-topic-/)).toHaveLength(24);
-    expect(screen.getAllByTestId(/^grammar-level-/)).toHaveLength(5);
+    expect(screen.getAllByTestId(/^grammar-level-[ABC][12]$/)).toHaveLength(5);
 
     fireEvent.press(screen.getByTestId('grammar-level-A2'));
     await flush(1);

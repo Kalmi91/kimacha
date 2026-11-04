@@ -137,6 +137,43 @@ describe.each([
     view.unmount();
   });
 
+  // FB571: the level test button under a level's header: the average test percent of its written topics.
+  describe('level test button', () => {
+    const a1Written = () => syllabusForLevel('A1', 'es').filter((tp) => hasLesson('es', tp.id));
+
+    it('shows the level percent (no answers = 0) and opens the level test of that level', async () => {
+      const view = render(<ThemeProvider><GrammarSyllabusScreen /></ThemeProvider>);
+      await flush();
+      expect(screen.getByTestId('grammar-level-test-A1')).toHaveTextContent('🎯 Level test · 0%');
+      fireEvent.press(screen.getByTestId('grammar-level-test-A1'));
+      expect(mockPush).toHaveBeenCalledWith('/grammar/level-test?level=A1');
+      view.unmount();
+    });
+
+    it('is the average of the topics test percent: one topic at 100% among all the written A1 ones', async () => {
+      await getDb().setGameProgress(GRAMMAR_RANDOM_KEY, 'presente-regular', 'evidence', answers(4, 4)); // 100%, not ticked
+      await getDb().setGameProgress(GRAMMAR_RANDOM_KEY, 'presente-irregular', 'evidence', answers(2, 2)); // 2 answers: no percent yet
+      const view = render(<ThemeProvider><GrammarSyllabusScreen /></ThemeProvider>);
+      await flush();
+      const pct = Math.round(100 / a1Written().length);
+      expect(pct).toBeGreaterThan(0);
+      expect(screen.getByTestId('grammar-level-test-A1')).toHaveTextContent(`🎯 Level test · ${pct}%`);
+      view.unmount();
+    });
+
+    it('a done mark once every topic of the level is ticked off; it still opens the test', async () => {
+      for (const tp of a1Written()) {
+        await getDb().setGameProgress(GRAMMAR_RANDOM_KEY, tp.id, 'evidence', answers(5, 5, ['choice', 'form']));
+      }
+      const view = render(<ThemeProvider><GrammarSyllabusScreen /></ThemeProvider>);
+      await flush();
+      expect(screen.getByTestId('grammar-level-test-A1')).toHaveTextContent('✓ 🎯 Level test · 100%');
+      fireEvent.press(screen.getByTestId('grammar-level-test-A1'));
+      expect(mockPush).toHaveBeenCalledWith('/grammar/level-test?level=A1');
+      view.unmount();
+    });
+  });
+
   it('a ticked, not finished lesson reads "✓ NN% 🎯"', async () => {
     await getDb().setGameProgress(GRAMMAR_RANDOM_KEY, 'presente-regular', 'evidence', answers(4, 5, ['choice', 'form'])); // 80%, 2 kinds
     const view = render(<ThemeProvider><GrammarSyllabusScreen /></ThemeProvider>);

@@ -40,6 +40,7 @@ import {
 import { DEFAULT_WEEKLY_GOAL_MINUTES } from '@/lib/usageStats';
 import ScreenFeedback from '@/lib/screenFeedback';
 import { BrutalBox, SegmentBar, Sticker, segmentsFilled } from '@/components/grammar/Brutal';
+import LevelTestButton from '@/components/grammar/LevelTestButton';
 import { SkinBackdrop, SkinHeader } from '@/components/skins/Slots';
 
 // The grammar course: the whole syllabus from A1 to C1, in teaching order.
@@ -233,6 +234,7 @@ export default function GrammarSyllabusScreen() {
             {s.grammar.levelMeta(shownDone, shownTopics.length, shownWritten)}
             {shownLevel === level ? ` · ${s.grammar.yourLevel}` : ''}
           </Text>
+          <LevelTestButton level={shownLevel} learnedLang={learnedLang} evidence={evidence} />
 
           {unitsForLevel(shownLevel, learnedLang).map((unit) => (
             <View key={unit.id} style={styles.brutalUnit}>
@@ -384,6 +386,7 @@ export default function GrammarSyllabusScreen() {
                   {s.grammar.levelMeta(done, topics.length, written)}
                 </Text>
               </Pressable>
+              <LevelTestButton level={lvl} learnedLang={learnedLang} evidence={evidence} />
 
               {isOpen
                 ? unitsForLevel(lvl, learnedLang).map((unit) => (
