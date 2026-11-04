@@ -72,7 +72,7 @@ export function lessonBadgePercent(
 // read as a fallback (while the kind has neither a best nor a run row), so that
 // existing progress does not disappear.
 
-type ScoredKind = 'choice' | 'article' | 'match' | 'form' | 'why' | 'transform' | 'spot' | 'order' | 'dictation';
+type ScoredKind = 'choice' | 'article' | 'match' | 'form' | 'why' | 'transform' | 'spot' | 'order' | 'dictation' | 'write';
 
 export interface KindBest {
   correct: number;
@@ -199,7 +199,7 @@ export function kindProgressFromRows(rows: Row[], topicId: string, kind: ScoredK
 export function lessonScoresByTopic(rows: Row[], kindsOf: (topicId: string) => ScoredKind[]): Map<string, number> {
   const topics = new Set<string>();
   for (const row of rows) {
-    const m = row.itemId.match(/^(.+?):(choice|article|match|form|why|transform|spot|order|dictation):(best|run|answered|correct)$/);
+    const m = row.itemId.match(/^(.+?):(choice|article|match|form|why|transform|spot|order|dictation|write):(best|run|answered|correct)$/);
     if (m) topics.add(m[1]);
   }
   const legacyByTopic = lessonPercentsByTopic(rows);

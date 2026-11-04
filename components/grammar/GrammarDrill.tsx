@@ -9,15 +9,13 @@ import { normalizeWordToken } from '@/data/words';
 import { useLearner } from '@/lib/learner';
 import {
   cumulativeCorpusWordIds,
-  isDictationItem,
   isFormItem,
   isArticleSetItem,
   isMarkItem,
   isMatchItem,
-  isOrderItem,
-  isSpotItem,
   isTransformItem,
   isWhyItem,
+  isWriteItem,
   type GrammarKind,
   type GrammarMarkItem,
   type GrammarTopicData,
@@ -33,7 +31,7 @@ import { hashString } from '@/lib/shuffle';
 import GlossText from '@/components/games/GlossText';
 import { BrutalBox, SegmentBar, Sticker, inkButtonText, segmentsFilled, textOnFill, mutedColor, themedDockPad } from '@/components/grammar/Brutal';
 import ResultBadge from '@/components/ResultBadge';
-import { DictationDrillItem, OrderDrillItem, SpotDrillItem } from '@/components/grammar/NewKinds';
+import { NewKindDrillItem } from '@/components/grammar/NewKinds';
 import { useGrammarColors, type GrammarColors } from '@/lib/grammarColors';
 import { MatchDrillItem, FormDrillItem } from '@/components/grammar/drill/MatchFormItems';
 import { WhyDrillItem, TransformDrillItem } from '@/components/grammar/drill/WhyTransformItems';
@@ -193,10 +191,10 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
     setCombo(comboRef.current);
     if (!wasCorrect && miss && !missRef.current) missRef.current = miss;
   };
-  // the Settings accent-strictness switch, fetched once, only if the round needs it (transform, dictation, a German form:
+  // the Settings accent-strictness switch, fetched once, only if the round needs it (transform, dictation, write, a German form:
   // there it decides whether the digraph spelling counts for the umlaut and the ß).
   const { strictAccents, refresh } = useLearner();
-  const hasTransform = kinds.includes('transform') || kinds.includes('dictation') || (kinds.includes('form') && learnedLang === 'de');
+  const hasTransform = kinds.includes('transform') || kinds.includes('dictation') || kinds.includes('write') || (kinds.includes('form') && learnedLang === 'de');
   useEffect(() => {
     if (!hasTransform) return;
     refresh(['strictAccents']).catch(() => {
@@ -251,7 +249,9 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
       wasCorrect,
       isTransformItem(roundItem.item)
         ? { sentence: roundItem.item.answer, highlight: roundItem.item.answer }
-        : undefined
+        : isWriteItem(roundItem.item)
+          ? { sentence: roundItem.item.es, highlight: roundItem.item.es }
+          : undefined
     );
     const finalCount = correctCount + (correctUnits ?? (wasCorrect ? 1 : 0));
     if (finalCount !== correctCount) setCorrectCount(finalCount);
@@ -314,31 +314,6 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
             s={s}
             onDone={completeItem}
           />
-        ) : isSpotItem(roundItem.item) ? (
-          <SpotDrillItem
-            key={roundItem.item.id}
-            item={roundItem.item}
-            learnedLang={learnedLang}
-            contentLang={contentLang as ContentLang}
-            onDone={completeItem}
-          />
-        ) : isOrderItem(roundItem.item) ? (
-          <OrderDrillItem
-            key={roundItem.item.id}
-            item={roundItem.item}
-            learnedLang={learnedLang}
-            contentLang={contentLang as ContentLang}
-            onDone={completeItem}
-          />
-        ) : isDictationItem(roundItem.item) ? (
-          <DictationDrillItem
-            key={roundItem.item.id}
-            item={roundItem.item}
-            learnedLang={learnedLang}
-            contentLang={contentLang as ContentLang}
-            strictAccents={strictAccents}
-            onDone={completeItem}
-          />
         ) : isTransformItem(roundItem.item) ? (
           <TransformDrillItem
             key={roundItem.item.id}
@@ -349,7 +324,16 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
             s={s}
             onDone={completeItem}
           />
-        ) : null}
+        ) : (
+          <NewKindDrillItem
+            key={roundItem.item.id}
+            item={roundItem.item}
+            learnedLang={learnedLang}
+            contentLang={contentLang as ContentLang}
+            strictAccents={strictAccents}
+            onDone={completeItem}
+          />
+        )}
       </ScrollView>
     );
   }

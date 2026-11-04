@@ -259,7 +259,7 @@ def collect_keys():
 #                      speaker per language of the sequence: the gender of the first segment of that language)
 #   grammar-examples   rule 3: the lesson body's example sentences (components/grammar/LessonBody.tsx)
 #   grammar-items      rule 3: the drills' sentences: gap (filled), mark, why, transform answer, spot (fixed), order,
-#                      dictation (GrammarDrill, lessonTest `say`, WhyTransformItems, NewKinds)
+#                      dictation, write (GrammarDrill, lessonTest `say`, WhyTransformItems, NewKinds)
 #   grammar-forms      rule 3: form answers and the table deck's cells (MatchFormItems, app/grammar/deck)
 # Priority order = what is heard most first (gen --order priority walks the keys in this order).
 SENT_SOURCES = (
@@ -484,7 +484,7 @@ def collect_sentences():
                     add_own("grammar-items", d, s)
                 elif kind == "mark":
                     add_own("grammar-items", d, it.get("sentence"))
-                elif kind in ("why", "order", "dictation"):
+                elif kind in ("why", "order", "dictation", "write"):
                     add_own("grammar-items", d, it.get("es"))
                 elif kind == "transform":
                     add_own("grammar-items", d, it.get("answer"))

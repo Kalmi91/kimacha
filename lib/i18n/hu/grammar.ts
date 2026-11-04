@@ -68,6 +68,7 @@ const hu: typeof en = {
     startSpot: (n: number) => `Találd meg a hibát (${n})`,
     startOrder: (n: number) => `Szórend (${n})`,
     startDictation: (n: number) => `Diktálás (${n})`,
+    startWrite: (n: number) => `Mondatírás (${n})`,
     spotPrompt: 'Koppints a hibás szóra',
     spotPickFix: 'Válaszd a helyes alakot',
     spotWordFine: 'Ez a szó jó. Nézd meg újra.',
@@ -76,6 +77,7 @@ const hu: typeof en = {
     dictationHint: 'Hallgasd meg, és írd le, amit hallasz',
     dictationPlay: 'Lejátszás',
     dictationSlow: 'Lassabban',
+    writeHint: 'Írd le az egész mondatot spanyolul',
   },
   // app/grammar/tense-drill.tsx: a német igeidő-gyakorlat (írd be az igealakot egy személyhez és egy igeidőhöz).
   tenseDrill: {

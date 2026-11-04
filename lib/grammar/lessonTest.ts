@@ -272,6 +272,7 @@ function toQuestion(r: GrammarRoundItem, ctx: Ctx): LessonTestQuestion | null {
     };
   }
   // Dictation would require listening, and the test (like the exam) runs without sound: it is left out.
+  // Sentence writing (`write`) is a trial kind outside the test too.
   return null;
 }
 

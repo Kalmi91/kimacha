@@ -81,6 +81,7 @@ export default {
     startSpot: (n: number) => `Spot the mistake (${n})`,
     startOrder: (n: number) => `Word order (${n})`,
     startDictation: (n: number) => `Dictation (${n})`,
+    startWrite: (n: number) => `Write the sentence (${n})`,
     spotPrompt: 'Tap the word that is wrong',
     spotPickFix: 'Pick the right form',
     spotWordFine: 'That word is fine. Look again.',
@@ -89,6 +90,7 @@ export default {
     dictationHint: 'Listen and type what you hear',
     dictationPlay: 'Play',
     dictationSlow: 'Slower',
+    writeHint: 'Write the whole sentence in Spanish',
   },
   // app/grammar/tense-drill.tsx: the German tense drill (type the verb form for a person and a tense).
   tenseDrill: {

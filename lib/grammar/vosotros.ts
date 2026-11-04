@@ -80,10 +80,11 @@ export function isVosotrosItem(item: GrammarItem): boolean {
       return hasVosotrosEnding(item.answer) || hasVosotrosPronoun(item.sentence);
     case 'match':
     case 'why':
-    // the sentences of the new kinds (error finder, word order, dictation) are never vosotros tasks.
+    // the sentences of the new kinds (error finder, word order, dictation, sentence writing) are never vosotros tasks.
     case 'spot':
     case 'order':
     case 'dictation':
+    case 'write':
       return false;
     default: {
       // GrammarGapItem: `kind` is undefined or 'gap', the only member left

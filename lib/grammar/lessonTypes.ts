@@ -214,6 +214,21 @@ export interface DictationItem {
   tr: Lang4;
 }
 
+/** Sentence writing: the sentence in the learner's language on top, the learner types the whole sentence in the learned language. */
+export interface WriteItem {
+  kind: 'write';
+  id: string;
+  trial?: boolean;
+  /** The sentence to write, in the content languages. */
+  prompt: Lang4;
+  /** The correct sentence. */
+  es: string;
+  /** Further accepted forms (another natural word order). */
+  accept?: string[];
+  /** Short explanation of the rule, shown after the answer. */
+  why: Lang4;
+}
+
 export interface LessonV2 {
   schema: 2;
   topic: string;
@@ -222,7 +237,7 @@ export interface LessonV2 {
   body: LessonBlock[];
   speak: Lang4; // text written for the read-aloud, the Spanish stretches between «...»
   glossary?: { word: string; gloss: Lang4 }[];
-  items: (GrammarGapItem | GrammarMarkItem | MatchItem | FormItem | WhyItem | TransformItem | SpotItem | OrderItem | DictationItem)[];
+  items: (GrammarGapItem | GrammarMarkItem | MatchItem | FormItem | WhyItem | TransformItem | SpotItem | OrderItem | DictationItem | WriteItem)[];
   focusTopic?: string; // word topic whose cards belong to the lesson's word set alongside the transform words
   noWordDeck?: boolean; // this lesson has no "Practice the words" deck (switches off the automatic word deck)
 }

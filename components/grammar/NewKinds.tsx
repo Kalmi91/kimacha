@@ -15,11 +15,12 @@ import { gradeSentenceAnswer, suggestedGrade } from '@/lib/pcicMatch';
 import { tileWords } from '@/lib/sentenceCards';
 import { hashString, shuffleOptions } from '@/lib/shuffle';
 import { speak, stopSpeaking } from '@/lib/speech';
-import type { ContentLang, DictationItem, OrderItem, SpotItem } from '@/lib/grammar/lessonTypes';
+import type { ContentLang, DictationItem, OrderItem, SpotItem, WriteItem } from '@/lib/grammar/lessonTypes';
 
 // three new task kinds, FOR NOW only in the
 // ser-estar (error spotting + dictation) and negacion (word order + error spotting) lessons. All three are 1 unit in
 // scoring (right or not), and the right sentence is spoken after the answer.
+// Sentence writing (`write`) joined them later, in the por-para and ser-estar lessons, with the same rules.
 
 type Lang = ContentLang;
 
@@ -276,6 +277,126 @@ export function DictationDrillItem({
   );
 }
 
+// ---------------------------------------------------------------- sentence writing
+export function WriteDrillItem({
+  item,
+  learnedLang,
+  contentLang,
+  strictAccents,
+  onDone,
+}: {
+  item: WriteItem;
+  learnedLang: string;
+  contentLang: Lang;
+  strictAccents: boolean;
+  onDone: (correct: boolean) => void;
+}) {
+  const g = useGrammarColors();
+  const s = t();
+  const locale = speechLang(learnedLang);
+  const [typed, setTyped] = useState('');
+  const [result, setResult] = useState<{ correct: boolean } | null>(null);
+
+  // The right sentence is spoken after the answer only; leaving the task silences it.
+  useEffect(() => () => stopSpeaking(), []);
+
+  const check = () => {
+    if (result || typed.trim() === '') return;
+    // Lenient check, as in the dictation: punctuation, a dropped pronoun and the accent setting
+    // are handled by the sentence grader; any accepted form (another natural word order) counts.
+    const ok = [item.es, ...(item.accept ?? [])].some(
+      (c) => suggestedGrade(gradeSentenceAnswer(typed, c, strictAccents, learnedLang)) === 'good'
+    );
+    setResult({ correct: ok });
+    speak(item.es, locale);
+  };
+
+  // Check (and then Next) is a bar docked above the keyboard, as on the dictation (DockSlot).
+  const { docked, padBottom } = useDockedAction(
+    result
+      ? { label: s.grammar.nextArrow, tone: 'next', testID: 'grammar-next', onPress: () => onDone(result.correct) }
+      : { label: `✓ ${s.grammar.check}`, tone: 'check', testID: 'write-check', onPress: check }
+  );
+
+  const why = item.why[contentLang] ?? item.why.en;
+
+  return (
+    <View style={styles.body} testID="write-item">
+      <BrutalBox boxStyle={styles.promptBox}>
+        <Text testID="write-prompt" style={[styles.promptText, { color: g.ink }]}>
+          {item.prompt[contentLang] ?? item.prompt.en}
+        </Text>
+      </BrutalBox>
+      <Text style={[styles.writeLabel, { color: g.ink }]}>{s.grammar.writeHint}</Text>
+      <BrutalBox dashed={!!result && !result.correct} boxStyle={styles.inputBox}>
+        <TextInput
+          testID="write-input"
+          {...answerInputProps}
+          multiline
+          submitBehavior="blurAndSubmit"
+          style={[styles.input, styles.writeInput, { color: g.ink }]}
+          value={typed}
+          onChangeText={setTyped}
+          editable={!result}
+          placeholder={s.card.typeIn(learnedLang)}
+          placeholderTextColor={g.mu}
+          onSubmitEditing={result ? undefined : check}
+        />
+      </BrutalBox>
+      {result ? (
+        <>
+          <BrutalBox testID={result.correct ? 'write-correct' : 'write-wrong'} fill="b" boxStyle={styles.feedback}>
+            {result.correct ? (
+              <Text style={[styles.fixedLine, { color: g.onB }]}>{s.grammar.correct}</Text>
+            ) : (
+              <AnswerCompare typed={typed} correct={item.es} g={g} onFill />
+            )}
+            <Text testID="write-why" style={[styles.explain, { color: g.onB }]}>
+              {why}
+            </Text>
+          </BrutalBox>
+          {docked ? null : (
+            <BrutalBox testID="grammar-next" fill="ink" boxStyle={styles.next} onPress={() => onDone(result.correct)}>
+              <Text style={[styles.nextText, { color: inkButtonText(g) }]}>{s.grammar.nextArrow}</Text>
+            </BrutalBox>
+          )}
+        </>
+      ) : docked ? null : (
+        <BrutalBox testID="write-check" fill="ink" boxStyle={styles.next} onPress={check}>
+          <Text style={[styles.nextText, { color: inkButtonText(g) }]}>{s.grammar.check}</Text>
+        </BrutalBox>
+      )}
+      {docked ? <View style={{ height: padBottom }} /> : null}
+    </View>
+  );
+}
+
+// One entry for the trial kinds: GrammarDrill hands over whichever of them the round item is.
+export function NewKindDrillItem({
+  item,
+  learnedLang,
+  contentLang,
+  strictAccents,
+  onDone,
+}: {
+  item: SpotItem | OrderItem | DictationItem | WriteItem;
+  learnedLang: string;
+  contentLang: Lang;
+  strictAccents: boolean;
+  onDone: (correct: boolean) => void;
+}) {
+  switch (item.kind) {
+    case 'spot':
+      return <SpotDrillItem item={item} learnedLang={learnedLang} contentLang={contentLang} onDone={onDone} />;
+    case 'order':
+      return <OrderDrillItem item={item} learnedLang={learnedLang} contentLang={contentLang} onDone={onDone} />;
+    case 'dictation':
+      return <DictationDrillItem item={item} learnedLang={learnedLang} contentLang={contentLang} strictAccents={strictAccents} onDone={onDone} />;
+    case 'write':
+      return <WriteDrillItem item={item} learnedLang={learnedLang} contentLang={contentLang} strictAccents={strictAccents} onDone={onDone} />;
+  }
+}
+
 const styles = StyleSheet.create({
   body: { gap: 12 },
   head: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 8 },
@@ -301,4 +422,8 @@ const styles = StyleSheet.create({
   playText: { fontSize: 15, fontWeight: '700', flexShrink: 1 },
   inputBox: { padding: 0 },
   input: { paddingVertical: 12, paddingHorizontal: 14, fontSize: 18 },
+  promptBox: { padding: 16 },
+  promptText: { fontSize: 22, lineHeight: 29, fontWeight: '600' },
+  writeLabel: { fontSize: 15, fontWeight: '600' },
+  writeInput: { minHeight: 96, textAlignVertical: 'top' },
 });

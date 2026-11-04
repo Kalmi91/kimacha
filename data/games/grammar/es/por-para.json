@@ -648,6 +648,183 @@
         }
       ],
       "correctIndex": 0
+    },
+    {
+      "id": "pp-01-w",
+      "kind": "write",
+      "trial": true,
+      "prompt": {
+        "en": "I study Spanish to travel to Mexico.",
+        "es": "Estudio español para viajar a México."
+      },
+      "es": "Estudio español para viajar a México.",
+      "accept": ["Yo estudio español para viajar a México.", "Para viajar a México, estudio español.", "Para viajar a México, yo estudio español."],
+      "why": {
+        "en": "Before an infinitive expressing purpose or intent, use para: para + infinitive = in order to.",
+        "es": "Ante un infinitivo que expresa propósito, se usa para: para + infinitivo = con el fin de."
+      }
+    },
+    {
+      "id": "pp-02-w",
+      "kind": "write",
+      "trial": true,
+      "prompt": {
+        "en": "Here, this gift is for you.",
+        "es": "Toma, este regalo es para ti."
+      },
+      "es": "Toma, este regalo es para ti.",
+      "why": {
+        "en": "Para marks the recipient, who something is intended for.",
+        "es": "Para marca al destinatario, para quien es algo."
+      }
+    },
+    {
+      "id": "pp-03-w",
+      "kind": "write",
+      "trial": true,
+      "prompt": {
+        "en": "I am not working today because of the rain.",
+        "es": "No trabajo hoy por la lluvia."
+      },
+      "es": "No trabajo hoy por la lluvia.",
+      "accept": ["Hoy no trabajo por la lluvia.", "Yo no trabajo hoy por la lluvia."],
+      "why": {
+        "en": "Por expresses the cause: why I'm not working, because of the rain.",
+        "es": "Por expresa la causa: por qué no trabajo, a causa de la lluvia."
+      }
+    },
+    {
+      "id": "pp-04-w",
+      "kind": "write",
+      "trial": true,
+      "prompt": {
+        "en": "I was in Mexico for two weeks.",
+        "es": "Estuve en México por dos semanas."
+      },
+      "es": "Estuve en México por dos semanas.",
+      "accept": ["Yo estuve en México por dos semanas.", "Por dos semanas estuve en México.", "Estuve por dos semanas en México."],
+      "why": {
+        "en": "Por expresses duration: for how long.",
+        "es": "Por expresa la duración: durante cuánto tiempo."
+      }
+    },
+    {
+      "id": "pp-05-w",
+      "kind": "write",
+      "trial": true,
+      "prompt": {
+        "en": "I'll buy this shirt for one hundred pesos.",
+        "es": "Compro esta camisa por cien pesos."
+      },
+      "es": "Compro esta camisa por cien pesos.",
+      "accept": ["Yo compro esta camisa por cien pesos."],
+      "why": {
+        "en": "Por expresses an exchange: how much, what you give in return.",
+        "es": "Por expresa el intercambio: cuánto, qué se da a cambio."
+      }
+    },
+    {
+      "id": "pp-06-w",
+      "kind": "write",
+      "trial": true,
+      "prompt": {
+        "en": "We are talking on the phone.",
+        "es": "Hablamos por teléfono."
+      },
+      "es": "Hablamos por teléfono.",
+      "accept": ["Nosotros hablamos por teléfono."],
+      "why": {
+        "en": "Por expresses the means, the channel of communication: by phone.",
+        "es": "Por expresa el medio, el canal de comunicación: por teléfono."
+      }
+    },
+    {
+      "id": "pp-07-w",
+      "kind": "write",
+      "trial": true,
+      "prompt": {
+        "en": "We are walking through the park.",
+        "es": "Paseamos por el parque."
+      },
+      "es": "Paseamos por el parque.",
+      "accept": ["Nosotros paseamos por el parque."],
+      "why": {
+        "en": "Por expresses movement through a place: we walk through the park.",
+        "es": "Por expresa el movimiento a través de un lugar: caminamos por el parque."
+      }
+    },
+    {
+      "id": "pp-08-w",
+      "kind": "write",
+      "trial": true,
+      "prompt": {
+        "en": "The work is for Monday.",
+        "es": "El trabajo es para el lunes."
+      },
+      "es": "El trabajo es para el lunes.",
+      "why": {
+        "en": "Para expresses the deadline: by when it must be ready.",
+        "es": "Para expresa el plazo: para cuándo debe estar listo."
+      }
+    },
+    {
+      "id": "pp-09-w",
+      "kind": "write",
+      "trial": true,
+      "prompt": {
+        "en": "For me, Spanish is easy.",
+        "es": "Para mí, el español es fácil."
+      },
+      "es": "Para mí, el español es fácil.",
+      "accept": ["El español es fácil para mí."],
+      "why": {
+        "en": "'Para mí' expresses an opinion: from my point of view.",
+        "es": "'Para mí' expresa una opinión: desde mi punto de vista."
+      }
+    },
+    {
+      "id": "pp-10-w",
+      "kind": "write",
+      "trial": true,
+      "prompt": {
+        "en": "We are leaving for Spain tomorrow.",
+        "es": "Vamos a salir para España mañana."
+      },
+      "es": "Vamos a salir para España mañana.",
+      "accept": ["Mañana vamos a salir para España.", "Vamos a salir mañana para España.", "Nosotros vamos a salir para España mañana."],
+      "why": {
+        "en": "Para expresses the destination: where you're headed.",
+        "es": "Para expresa el destino: hacia dónde se sale."
+      }
+    },
+    {
+      "id": "pp-11-w",
+      "kind": "write",
+      "trial": true,
+      "prompt": {
+        "en": "Thank you for your help.",
+        "es": "Gracias por tu ayuda."
+      },
+      "es": "Gracias por tu ayuda.",
+      "why": {
+        "en": "Por expresses the cause: what you're thanking someone for.",
+        "es": "Por expresa la causa: por qué se dan las gracias."
+      }
+    },
+    {
+      "id": "pp-12-w",
+      "kind": "write",
+      "trial": true,
+      "prompt": {
+        "en": "I need a cup for coffee.",
+        "es": "Necesito una taza para el café."
+      },
+      "es": "Necesito una taza para el café.",
+      "accept": ["Yo necesito una taza para el café."],
+      "why": {
+        "en": "Para expresses the object's purpose: what the cup is for.",
+        "es": "Para expresa el uso del objeto: para qué sirve la taza."
+      }
     }
   ]
 }
