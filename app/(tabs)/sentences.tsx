@@ -222,7 +222,7 @@ export default function SentencesScreen() {
         seed,
         recent,
       });
-      const picked = pickSentences(queue, dir, SENTENCE_ROUND_SIZE, { seed, focus: focusSet });
+      const picked = pickSentences(queue, dir, SENTENCE_ROUND_SIZE, { seed, focus: focusSet, recent });
       // Remembered when the round is created, not when it ends: leaving at once must still bring other sentences next time.
       if (picked.length > 0) await rememberRound(db, pairOf(dir), picked.map((e) => sentenceKey(e)));
       // beta sentenceMistakes: one sentence is from the learner's mistake list (Spanish direction only; none = the round as picked).

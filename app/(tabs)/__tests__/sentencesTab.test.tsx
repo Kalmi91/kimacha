@@ -26,7 +26,7 @@ jest.mock('@/lib/usageStats', () => {
   return { ...actual, localDateString: jest.fn(actual.localDateString) };
 });
 // FB587: a new round is picked by a seed (random order, recent last); these tests pin the queue's own order, so they run unseeded.
-jest.mock('@/lib/sentencePick', () => ({ ...jest.requireActual('@/lib/sentencePick'), roundSeed: () => undefined }));
+jest.mock('@/lib/sentencePick', () => ({ ...jest.requireActual('@/lib/sentencePick'), roundSeed: jest.fn(() => undefined) }));
 jest.mock('@/lib/practice/halfStep', () => {
   const actual = jest.requireActual('@/lib/practice/halfStep');
   return { ...actual, recordPracticeResult: jest.fn(actual.recordPracticeResult) };
@@ -80,6 +80,9 @@ import { __resetForTests as resetDailyXp } from '@/lib/dailyXp';
 import { getDb } from '@/lib/database';
 import { setLanguage } from '@/lib/i18n';
 import { RESUME_GAME_ID } from '@/lib/resumeRoute';
+import { roundSeed } from '@/lib/sentencePick';
+import { loadRecentSentences } from '@/lib/sentenceRecent';
+import { pairOf } from '@/lib/languagePair';
 import { clearSentenceRound, currentStep, loadSentenceRound, saveSentenceRound, startRound } from '@/lib/sentenceRound';
 import { LADDER_KEY, loadLadder, saveStage } from '@/lib/sentenceLadder';
 import { addDays, sm2NewCard, sm2Review, type Sm2Card } from '@/lib/sm2';
@@ -239,6 +242,22 @@ describe('Sentences tab', () => {
     await flush();
     expect(es.getByText('Nada que practicar por ahora. Aprende más palabras para desbloquear frases nuevas')).toBeTruthy();
     expect(es.queryByText('Frases')).toBeNull();
+  });
+
+  it('FB587: with a seed the round is still 5 different sentences, and they are remembered as the last round', async () => {
+    await learnWords([1, 2, 3, 4, 5, 6]);
+    (roundSeed as jest.Mock).mockReturnValue(12345);
+    try {
+      const r = render(<SentencesScreen />);
+      await flush();
+      expect(progress(r)).toBe('0 / 5');
+      const saved = (await loadSentenceRound(getDb()))!;
+      expect(new Set(saved.entries.map((e) => e.target)).size).toBe(5);
+      const recent = await loadRecentSentences(getDb(), pairOf('es'));
+      expect([...recent].sort()).toEqual(saved.entries.map((e) => e.target.trim().toLowerCase()).sort());
+    } finally {
+      (roundSeed as jest.Mock).mockReturnValue(undefined);
+    }
   });
 
   it('a round has no title either (the progress is the only text on the header row)', async () => {

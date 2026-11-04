@@ -9,7 +9,7 @@ import type { PcicTarget } from '@/data/pcic';
 import { sentenceTokens } from '@/lib/knownSentence';
 import { tileWords } from '@/lib/sentenceCards';
 import { shuffleArray } from '@/lib/shuffle';
-import type { SentenceEntry } from '@/lib/sentenceTab';
+import { sentenceKey, type SentenceEntry } from '@/lib/sentenceTab';
 
 /** A word counts toward the "at most 2 sentences" variety rule unless it is one of these small grammar words. */
 const FUNCTION_WORDS: Record<PcicTarget, ReadonlySet<string>> = {
@@ -66,13 +66,14 @@ function fits(level: number, cand: SentenceEntry, chosen: readonly SentenceEntry
 
 /**
  * Adds candidates to `chosen` until `count` is reached: the rung cap first (`caps`: the same rung at most that often), within it
- * the strictest variety first. Each pick is the best fitting candidate: a started sentence before a fresh one, then the most
+ * the strictest variety first. Each pick is the best fitting candidate: a non-recent one before a recent one, a started sentence before a fresh one, then the most
  * `focus` words, then the most due words NOT yet covered by the sentences already chosen (FB587: as many different due words
  * as possible); equals keep the candidates' order (the queue's priority, recent last, seeded random).
  */
-function fill(chosen: SentenceEntry[], candidates: readonly SentenceEntry[], count: number, target: PcicTarget, maxSame: number, caps: readonly number[], focus?: ReadonlySet<string>): void {
+function fill(chosen: SentenceEntry[], candidates: readonly SentenceEntry[], count: number, target: PcicTarget, maxSame: number, caps: readonly number[], focus?: ReadonlySet<string>, recent?: ReadonlySet<string>): void {
   const score = (e: SentenceEntry, covered: ReadonlySet<string>): number[] => [
-    rungOf(e) > 1 ? 1 : 0,
+    // non-recent started, non-recent fresh, recent started, recent fresh (FB587: a recent sentence never beats a non-recent one)
+    (recent?.has(sentenceKey(e)) ? 0 : 2) + (rungOf(e) > 1 ? 1 : 0),
     focus ? e.wordIds.filter((id) => focus.has(id)).length : 0,
     e.dueIds.filter((id) => !covered.has(id)).length,
   ];
@@ -109,12 +110,15 @@ function fill(chosen: SentenceEntry[], candidates: readonly SentenceEntry[], cou
  * too small for the rules gives way to them. With a `seed` the round is in seeded random order (FB587), without it in the
  * queue's order.
  */
-export function pickSentences(queue: readonly SentenceEntry[], target: PcicTarget, count: number, opts: { seed?: number; focus?: ReadonlySet<string> } = {}): SentenceEntry[] {
+export function pickSentences(queue: readonly SentenceEntry[], target: PcicTarget, count: number, opts: { seed?: number; focus?: ReadonlySet<string>; recent?: ReadonlySet<string> } = {}): SentenceEntry[] {
   const maxSame = Math.max(1, Math.floor(count / 2));
   const chosen: SentenceEntry[] = [];
   const ordered = [...queue.filter((e) => rungOf(e) > 1), ...queue.filter((e) => rungOf(e) === 1)];
   const caps = new Set(queue.map(rungOf)).size > 1 ? [MAX_PER_RUNG, Infinity] : [Infinity];
-  fill(chosen, ordered, count, target, maxSame, caps, opts.focus);
+  const isRecent = (e: SentenceEntry) => opts.recent?.has(sentenceKey(e)) === true;
+  // The non-recent sentences fill the round first, under every rule; recent ones only fill what is left (a small pool).
+  if (opts.recent?.size) fill(chosen, ordered.filter((e) => !isRecent(e)), count, target, maxSame, caps, opts.focus, opts.recent);
+  fill(chosen, ordered, count, target, maxSame, caps, opts.focus, opts.recent);
   const inQueueOrder = queue.filter((e) => chosen.includes(e));
   return opts.seed === undefined ? inQueueOrder : shuffleArray(inQueueOrder, opts.seed);
 }

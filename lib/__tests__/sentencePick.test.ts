@@ -172,3 +172,30 @@ describe('pickSentences, FB587', () => {
     expect(ids(pickSentences(q, 'en', SIZE, { seed: 9 })).sort()).toEqual(['a', 'b', 'c']);
   });
 });
+
+describe('pickSentences, recent sentences (FB587)', () => {
+  const sent = (id: string, rung?: 2 | 3): SentenceEntry => ({ ...mk(id, words(id, 3), 0), ...(rung ? { rung } : {}) });
+  const keyOf = (id: string) => sent(id).target.toLowerCase();
+
+  it('a recent started sentence does not beat non-recent fresh ones', () => {
+    const q = [sent('r2a', 2), sent('r2b', 2), ...Array.from({ length: 6 }, (_, k) => sent(`f${k}`))];
+    const recent = new Set([keyOf('r2a'), keyOf('r2b')]);
+    const round = pickSentences(q, 'en', SIZE, { recent });
+    expect(round).toHaveLength(SIZE);
+    expect(ids(round).filter((i) => i.startsWith('r2'))).toEqual([]);
+  });
+
+  it('too few non-recent: recent ones fill the round, started before fresh', () => {
+    const q = [sent('n0'), sent('n1'), sent('rf0'), sent('rf1'), sent('rs0', 2)];
+    const recent = new Set([keyOf('rf0'), keyOf('rf1'), keyOf('rs0')]);
+    const round = ids(pickSentences(q, 'en', 4, { recent }));
+    expect(round).toHaveLength(4);
+    expect(round).toEqual(expect.arrayContaining(['n0', 'n1', 'rs0']));
+    expect(round).not.toContain('rf1');
+  });
+
+  it('non-recent started still beats non-recent fresh', () => {
+    const q = [sent('f0'), sent('f1'), sent('s0', 2)];
+    expect(ids(pickSentences(q, 'en', 1, { recent: new Set() }))).toEqual(['s0']);
+  });
+});
