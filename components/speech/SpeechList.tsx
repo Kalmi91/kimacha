@@ -100,7 +100,7 @@ export default function SpeechList({ target, source, hasStories, level, onLevel,
 }
 
 const styles = StyleSheet.create({
-  box: { marginHorizontal: spacing.xl, gap: spacing.md },
+  box: { marginHorizontal: spacing.xl, paddingTop: spacing.lg, gap: spacing.md },
   levels: { flexDirection: 'row', gap: spacing.sm },
   chip: { flex: 1, minHeight: tapTarget, borderRadius: radius.full, borderWidth: 1, alignItems: 'center', justifyContent: 'center' },
   chipText: { fontSize: fontSize.md, fontWeight: fontWeight.semibold },

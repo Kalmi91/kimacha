@@ -78,20 +78,26 @@ export default function SpeechTab() {
   // a new run remounts the story screen; `fresh` = its first line is read aloud (a resumed run is silent)
   const [runKey, setRunKey] = useState(0);
   const [fresh, setFresh] = useState(false);
-  // the direction on screen: a refocus keeps the screen, another direction replaces it
-  const shownTarget = useRef<PcicTarget | null>(null);
+  // The language pair on screen: a refocus keeps the screen, another pair replaces it. The pair, not only the target: the saved run,
+  // the level, the way of answering and the progress rows are kept per pair (en->es and hu->es have their own).
+  const shownPair = useRef<string | null>(null);
 
-  // A finished run: the progress row (`best` keeps the higher value), the saved run dropped, the end screen.
-  const finishRun = useCallback(async (story: SpeechStory, done: StoryRun) => {
+  // A finished run: the progress row (`best` keeps the higher value, so writing it twice changes nothing) and the saved run
+  // dropped. It is called the moment the run becomes done, not when the end screen is reached, so leaving in between loses
+  // nothing; the app-restart path (a saved run that is done) calls it too. A database that throws is logged: the learner still
+  // gets the end screen, and the list still shows the tick for this session.
+  const recordFinish = useCallback(async (story: SpeechStory, done: StoryRun) => {
     const db = getDb();
-    const previous = (await db.getGameProgress(SPEECH_PROGRESS_KEY)).find((r) => r.itemId === story.id)?.data;
-    const data = finishedProgress(previous, done, story.turns.length, localDateString());
-    await db.setGameProgress(SPEECH_PROGRESS_KEY, story.id, 'done', data);
+    const total = story.turns.length;
+    const at = localDateString();
+    setProgress((all) => new Map(all).set(story.id, finishedProgress(all.get(story.id), done, total, at)));
+    try {
+      const previous = (await db.getGameProgress(SPEECH_PROGRESS_KEY)).find((r) => r.itemId === story.id)?.data;
+      await db.setGameProgress(SPEECH_PROGRESS_KEY, story.id, 'done', finishedProgress(previous, done, total, at));
+    } catch (e) {
+      console.warn('speech: could not write the progress', e);
+    }
     await saveResumeValue(db, SPEECH_MODE, null);
-    setProgress((all) => new Map(all).set(story.id, data));
-    setStoryId(story.id);
-    setRun(done);
-    setScreen('done');
   }, []);
 
   const load = useCallback(async () => {
@@ -100,8 +106,9 @@ export default function SpeechTab() {
     setStrictAccents(learner.strictAccents);
     setProgress(progressById(await db.getGameProgress(SPEECH_PROGRESS_KEY)));
     const dir = learner.target;
-    if (shownTarget.current === dir) return;
-    shownTarget.current = dir;
+    const pair = pairOf(dir);
+    if (shownPair.current === pair) return;
+    shownPair.current = pair;
     const all = storiesFor(dir);
     const savedLevel = await loadResumeValue(db, SPEECH_LEVEL_KEY);
     const savedAnswer = await loadResumeValue(db, SPEECH_ANSWER_KEY);
@@ -113,11 +120,11 @@ export default function SpeechTab() {
     setStoryId(story?.id ?? null);
     setRun(story ? saved : null);
     setFresh(false);
-    setScreen(story && saved && !saved.done ? 'play' : 'list');
+    setScreen(story && saved ? (saved.done ? 'done' : 'play') : 'list');
     setLoaded(true);
-    // an app killed after the last answer: the end screen still has to write the progress
-    if (story && saved?.done) await finishRun(story, saved);
-  }, [refresh, finishRun]);
+    // a saved run that is done (the app was killed after the last answer): the end screen still has to write the progress
+    if (story && saved?.done) await recordFinish(story, saved);
+  }, [refresh, recordFinish]);
   // Leaving the tab stops the read-aloud (the tab stays mounted).
   useScreenLoad(load, { onBlur: stopSpeaking });
   const checkMic = useCallback(async () => {
@@ -134,9 +141,10 @@ export default function SpeechTab() {
   // no recognizer = typing, whatever was chosen before
   const way: AnswerMode = micOk ? mode : 'type';
 
-  const apply = (next: StoryRun) => {
+  const apply = (next: StoryRun, forStory: SpeechStory | null = null) => {
     setRun(next);
-    void saveResumeValue(getDb(), SPEECH_MODE, savedRun(next));
+    if (next.done && forStory) void recordFinish(forStory, next);
+    else void saveResumeValue(getDb(), SPEECH_MODE, savedRun(next));
   };
   const chooseLevel = (next: PcicLevel) => {
     setLevel(next);
@@ -165,6 +173,11 @@ export default function SpeechTab() {
     setScreen('intro');
   };
   const toList = () => setScreen('list');
+  const showDone = (s: SpeechStory, done: StoryRun) => {
+    setStoryId(s.id);
+    setRun(done);
+    setScreen('done');
+  };
 
   if (!story || screen === 'list') {
     return (
@@ -221,13 +234,13 @@ export default function SpeechTab() {
       strictAccents={strictAccents}
       micOk={micOk}
       fresh={fresh}
-      onRun={apply}
+      onRun={(next) => apply(next, story)}
       onMode={(next) => {
         apply(withMode(run, next));
         chooseMode(next);
       }}
       onBack={toList}
-      onFinish={() => void finishRun(story, run)}
+      onFinish={() => showDone(story, run)}
     />
   );
 }

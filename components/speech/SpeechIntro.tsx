@@ -116,7 +116,7 @@ export default function SpeechIntro({ story, target, source, words, mode, micOk,
 }
 
 const styles = StyleSheet.create({
-  top: { flexDirection: 'row', alignItems: 'center', gap: spacing.md, paddingHorizontal: spacing.xl, paddingBottom: spacing.md },
+  top: { flexDirection: 'row', alignItems: 'center', gap: spacing.md, paddingHorizontal: spacing.xl, paddingTop: spacing.sm, paddingBottom: spacing.md },
   backPress: { minHeight: tapTarget, minWidth: tapTarget, justifyContent: 'center' },
   backArrow: { fontSize: fontSize.xxl },
   heading: { flex: 1, fontSize: fontSize.lg, fontWeight: fontWeight.bold },

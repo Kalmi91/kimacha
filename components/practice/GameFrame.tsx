@@ -70,15 +70,17 @@ export default function GameFrame({ testID, target, currentCard, creditSeq = 0, 
       behavior={Platform.OS === 'ios' ? 'padding' : undefined}
     >
       <SkinBackdrop />
-      <View style={styles.header}>
-        {/* No screen title: the tab navigator's header already says "Practice". */}
-        {!hideLevelCounter && <LevelCounter refreshKey={creditSeq} />}
-        {progress && (
-          <Text accessibilityLabel={progress.label} style={[styles.progress, { color: colors.tabIconDefault }]}>
-            {progress.text}
-          </Text>
-        )}
-      </View>
+      {(!hideLevelCounter || progress) && (
+        <View testID="game-header" style={styles.header}>
+          {/* No screen title: the tab navigator's header already says "Practice". */}
+          {!hideLevelCounter && <LevelCounter refreshKey={creditSeq} />}
+          {progress && (
+            <Text accessibilityLabel={progress.label} style={[styles.progress, { color: colors.tabIconDefault }]}>
+              {progress.text}
+            </Text>
+          )}
+        </View>
+      )}
       {top}
       {centered ? (
         <View style={styles.center}>{children}</View>

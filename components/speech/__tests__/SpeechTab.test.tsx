@@ -3,7 +3,33 @@
 // Practice tests, so nothing plays. The clock is fake: a right answer brings the next line after motion.feedback.
 
 jest.mock('@/lib/speech', () => ({ ...require('@/test-utils/mocks').speechMock(), stop: jest.fn() }));
-jest.mock('expo-router', () => require('@/test-utils/mocks').focusEffectRouterMock());
+// useFocusEffect whose focus can be taken away and given back (__blur / __focus): the screen stays mounted, as a tab does
+jest.mock('expo-router', () => {
+  const React = require('react');
+  const effects = new Set<{ run: () => void | (() => void); stop?: void | (() => void) }>();
+  return {
+    useFocusEffect: (callback: () => void | (() => void)) => {
+      React.useEffect(() => {
+        const effect: { run: () => void | (() => void); stop?: void | (() => void) } = { run: callback };
+        effects.add(effect);
+        effect.stop = callback();
+        return () => {
+          effect.stop?.();
+          effects.delete(effect);
+        };
+      }, []);
+    },
+    __blur: () =>
+      effects.forEach((e) => {
+        e.stop?.();
+        e.stop = undefined;
+      }),
+    __focus: () =>
+      effects.forEach((e) => {
+        if (!e.stop) e.stop = e.run();
+      }),
+  };
+});
 jest.mock('@/lib/buildFlavor', () => ({ IS_PLAY_BUILD: false, FEEDBACK_URL: 'https://example.test/feedback' }));
 jest.mock('@/lib/knownSentence', () => {
   const actual = jest.requireActual('@/lib/knownSentence');
@@ -11,14 +37,17 @@ jest.mock('@/lib/knownSentence', () => {
 });
 
 import { act, fireEvent, render, within } from '@testing-library/react-native';
+import { DeviceEventEmitter, Dimensions, StyleSheet } from 'react-native';
 import { ExpoSpeechRecognitionModule } from 'expo-speech-recognition';
 
 import SpeechTab from '@/components/speech/SpeechTab';
+import { DOCK_RESERVE } from '@/components/learn/DockedAction';
 import { motion } from '@/constants/Theme';
 import { getDb } from '@/lib/database';
 import { setLanguage, t } from '@/lib/i18n';
 import { knownTokens } from '@/lib/knownSentence';
 import { loadResumeValue, saveResumeValue } from '@/lib/resumeStore';
+import { MIN_UPPER, upperFooterMax } from '@/lib/speech/layout';
 import { speak, stopSpeaking } from '@/lib/speech';
 import {
   SPEECH_ANSWER_KEY,
@@ -39,6 +68,8 @@ import { makeFlush } from '@/test-utils/flush';
 jest.setTimeout(60000);
 
 const { __emit } = require('expo-speech-recognition') as { __emit: (name: string, payload?: unknown) => void };
+const { __blur, __focus } = require('expo-router') as { __blur: () => void; __focus: () => void };
+const WINDOW = Dimensions.get('window');
 const mockSpeak = speak as jest.Mock;
 const mockStopSpeaking = stopSpeaking as jest.Mock;
 const mockKnownTokens = knownTokens as jest.Mock;
@@ -104,6 +135,7 @@ beforeEach(async () => {
 afterEach(() => {
   jest.useRealTimers();
   setLanguage('en');
+  Dimensions.set({ window: WINDOW });
 });
 
 describe('Speak tab: the list', () => {
@@ -516,12 +548,15 @@ describe('Speak tab: by voice', () => {
     view.unmount();
   });
 
-  it('an answer on its way does not land on the next turn: after a right answer the recognizer is closed', async () => {
+  it('a turn change closes the microphone: after a right answer the recognizer is aborted, and a stray result lands nowhere', async () => {
     await saveRun(at(1, 'voice'));
     const view = await mount();
     await press(view, 'speech-mic');
     await emit('start');
+    (ExpoSpeechRecognitionModule.abort as jest.Mock).mockClear();
     await heardFinal('soy de Hungría');
+    // nothing else closed it (a voice result does not): the turn change did
+    expect(ExpoSpeechRecognitionModule.abort).toHaveBeenCalled();
     await advance();
     // the next turn is on screen; a stray result of the old listening is not accepted
     await heardFinal('tengo treinta años');
@@ -540,5 +575,185 @@ describe('Speak tab: the strings', () => {
       expect([key, String(shown).trim() === '']).toEqual([key, false]);
     }
     expect(t().tabs.speak.trim()).not.toBe('');
+  });
+});
+
+describe('Speak tab: the microphone and the screen', () => {
+  it('the 🔊 on a bubble closes the microphone first: the phone does not hear itself', async () => {
+    await saveRun(at(1, 'voice'));
+    const view = await mount();
+    await press(view, 'speech-mic');
+    await emit('start');
+    (ExpoSpeechRecognitionModule.abort as jest.Mock).mockClear();
+    fireEvent.press(view.getByTestId('speech-listen-0'));
+    await flush();
+    expect(ExpoSpeechRecognitionModule.abort).toHaveBeenCalled();
+    expect(mockSpeak).toHaveBeenCalledWith(story.turns[0].es, 'es-MX');
+    // what the microphone heard of the read-aloud is not an answer, and costs no try
+    await heardFinal(story.turns[0].es);
+    expect(await savedNow()).toMatchObject({ turn: 1, tries: 0 });
+    view.unmount();
+  });
+
+  it('losing focus (the tab stays mounted) stops the read-aloud and the microphone; getting it back keeps the screen', async () => {
+    await saveRun(at(1, 'voice'));
+    const view = await mount();
+    await press(view, 'speech-mic');
+    await emit('start');
+    (ExpoSpeechRecognitionModule.abort as jest.Mock).mockClear();
+    mockStopSpeaking.mockClear();
+    await act(async () => {
+      __blur();
+    });
+    expect(mockStopSpeaking).toHaveBeenCalled();
+    expect(ExpoSpeechRecognitionModule.abort).toHaveBeenCalled();
+    expect(view.getByTestId('speech-screen')).toBeTruthy();
+    await act(async () => {
+      __focus();
+    });
+    await flush();
+    expect(text(view, 'speech-line-1')).toBe(story.turns[1].es);
+    view.unmount();
+  });
+
+  it('after a denied microphone the link says "Say it instead": voice can be tried again in the same run', async () => {
+    await saveRun(at(1, 'voice'));
+    const view = await mount();
+    await press(view, 'speech-mic');
+    await emit('error', { error: 'not-allowed' });
+    expect(view.getByTestId('speech-type-input')).toBeTruthy();
+    expect(view.getByText(sx.sayInstead)).toBeTruthy();
+    await press(view, 'speech-mode-toggle');
+    expect(view.getByTestId('speech-mic')).toBeTruthy();
+    expect(view.queryByTestId('speech-type-input')).toBeNull();
+    (ExpoSpeechRecognitionModule.start as jest.Mock).mockClear();
+    await press(view, 'speech-mic');
+    expect(ExpoSpeechRecognitionModule.start).toHaveBeenCalled();
+    view.unmount();
+  });
+});
+
+describe('Speak tab: the end of the story', () => {
+  it('Back right after the last answer loses nothing: the score is written at once, the list shows the tick, the story can be started again', async () => {
+    await saveRun(at(total - 1));
+    const view = await mount();
+    await type(view, 'gracias, adiós');
+    // before motion.feedback is over: the end screen has not been reached
+    await press(view, 'speech-back');
+    expect(await rows()).toEqual([{ itemId: story.id, state: 'done', data: { best: total, total, at: expect.stringMatching(/^\d{4}-\d{2}-\d{2}$/) } }]);
+    expect(await savedNow()).toBeNull();
+    expect(view.getByTestId(`speech-story-best-${story.id}`).props.children).toBe(`✓ ${total}/${total}`);
+    expect(view.queryByTestId(`speech-story-continue-${story.id}`)).toBeNull();
+    await advance(1000);
+    expect(view.queryByTestId('speech-done')).toBeNull();
+    // started again: a fresh run, the score stays
+    await press(view, `speech-story-${story.id}`);
+    await press(view, 'speech-start');
+    expect(await savedNow()).toMatchObject({ turn: 0, firstTry: 0 });
+    expect((await rows())[0].data).toMatchObject({ best: total });
+    view.unmount();
+  });
+
+  it('a database that throws on the progress row still brings the end screen', async () => {
+    await saveRun(at(total - 1));
+    const original = getDb().setGameProgress.bind(getDb());
+    // only the progress row fails (the resume store writes through the same table)
+    const write = jest.spyOn(getDb(), 'setGameProgress').mockImplementation((game, ...rest) => (game === SPEECH_PROGRESS_KEY ? Promise.reject(new Error('disk full')) : original(game, ...rest)));
+    const warn = jest.spyOn(console, 'warn').mockImplementation(() => {});
+    try {
+      const view = await mount();
+      await type(view, 'gracias, adiós');
+      await advance();
+      expect(text(view, 'speech-done')).toBe('Done');
+      expect(text(view, 'speech-score')).toBe(`${total}/${total}`);
+      expect(warn).toHaveBeenCalled();
+      expect(await savedNow()).toBeNull();
+      view.unmount();
+    } finally {
+      write.mockRestore();
+      warn.mockRestore();
+    }
+  });
+});
+
+describe('Speak tab: the language pair', () => {
+  it('another pair of the same target reloads the run, the level and the progress; coming back restores the first', async () => {
+    await saveRun(at(2));
+    await saveResumeValue(getDb(), SPEECH_LEVEL_KEY, 'A1');
+    await getDb().setGameProgress(SPEECH_PROGRESS_KEY, story.id, 'done', { best: 5, total, at: '2026-11-03' });
+    const view = await mount();
+    expect(text(view, 'speech-line-2')).toBe(story.turns[2].es);
+    // hu -> es: nothing was saved there
+    await getDb().setOnboarding('hu', 'es');
+    await act(async () => {
+      __blur();
+    });
+    await act(async () => {
+      __focus();
+    });
+    await flush();
+    expect(view.getByTestId('speech-levels')).toBeTruthy();
+    expect(view.getByText('Bemutatkozás')).toBeTruthy();
+    expect(view.queryByTestId(`speech-story-continue-${story.id}`)).toBeNull();
+    expect(view.queryByTestId(`speech-story-best-${story.id}`)).toBeNull();
+    // back to en -> es: its run is there again
+    await getDb().setOnboarding('en', 'es');
+    await act(async () => {
+      __blur();
+    });
+    await act(async () => {
+      __focus();
+    });
+    await flush();
+    expect(text(view, 'speech-line-2')).toBe(story.turns[2].es);
+    view.unmount();
+  });
+});
+
+describe('Speak tab: the docked footer', () => {
+  const scrollMax = (view: View) => StyleSheet.flatten(view.getByTestId('speech-footer-scroll').props.style).maxHeight as number;
+
+  it('what was heard, the ask and the hint scroll; the input, Check, Next and the links are fixed', async () => {
+    Dimensions.set({ window: { width: 360, height: 640, scale: 1, fontScale: 1 } });
+    await saveRun(at(1));
+    const view = await mount();
+    await type(view, 'soy Hungría');
+    await type(view, 'soy Hungría');
+    const scroll = view.getByTestId('speech-footer-scroll');
+    const fixed = view.getByTestId('speech-footer-fixed');
+    expect(scroll.props.keyboardShouldPersistTaps).toBe('handled');
+    for (const id of ['speech-result', 'speech-ask', 'speech-hint']) expect(within(scroll).getByTestId(id)).toBeTruthy();
+    for (const id of ['speech-type-input', 'speech-check', 'speech-skip', 'speech-mode-toggle']) {
+      expect(within(fixed).getByTestId(id)).toBeTruthy();
+      expect(within(scroll).queryByTestId(id)).toBeNull();
+    }
+    expect(scrollMax(view)).toBe(upperFooterMax({ windowH: 640, lift: 0, kbHeight: 0, fixedH: DOCK_RESERVE, voice: false }));
+    view.unmount();
+  });
+
+  it('an open keyboard gives the upper part less room, never less than the minimum; the input stays in the fixed part', async () => {
+    Dimensions.set({ window: { width: 360, height: 640, scale: 1, fontScale: 1 } });
+    await saveRun(at(1));
+    const view = await mount();
+    const closed = scrollMax(view);
+    await act(async () => {
+      DeviceEventEmitter.emit('keyboardDidShow', { endCoordinates: { height: 300 } });
+    });
+    const open = scrollMax(view);
+    expect(open).toBeLessThan(closed);
+    expect(open).toBeGreaterThanOrEqual(MIN_UPPER);
+    expect(open).toBe(upperFooterMax({ windowH: 640, lift: 300, kbHeight: 300, fixedH: DOCK_RESERVE, voice: false }));
+    expect(within(view.getByTestId('speech-footer-fixed')).getByTestId('speech-type-input')).toBeTruthy();
+    view.unmount();
+  });
+
+  it('by voice the mic is in the fixed part and the chat keeps room', async () => {
+    Dimensions.set({ window: { width: 360, height: 640, scale: 1, fontScale: 1 } });
+    await saveRun(at(1, 'voice'));
+    const view = await mount();
+    expect(within(view.getByTestId('speech-footer-fixed')).getByTestId('speech-mic')).toBeTruthy();
+    expect(within(view.getByTestId('speech-footer-scroll')).queryByTestId('speech-mic')).toBeNull();
+    expect(scrollMax(view)).toBe(upperFooterMax({ windowH: 640, lift: 0, kbHeight: 0, fixedH: DOCK_RESERVE, voice: true }));
+    view.unmount();
   });
 });

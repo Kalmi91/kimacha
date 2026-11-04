@@ -213,7 +213,7 @@ const hu: typeof en = {
     howAnswer: 'Hogyan válaszolsz?',
     byVoice: '🎤 Beszéddel',
     byTyping: '⌨ Írással',
-    noMic: 'A beszédes válasz ezen az eszközön nem érhető el. Írással válaszolsz.',
+    noMic: 'A szóbeli válasz ezen az eszközön nem érhető el. Írással válaszolsz.',
     start: 'Kezdés',
     progressLabel: (n: number, total: number) => `${n}. válasz / ${total}`,
     showTranslation: 'Fordítás mutatása',

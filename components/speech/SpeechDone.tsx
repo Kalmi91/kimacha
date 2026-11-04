@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
   title: { fontSize: fontSize.xxl, fontWeight: fontWeight.bold, textAlign: 'center' },
   outro: { fontSize: fontSize.md, textAlign: 'center' },
   scoreBox: { alignItems: 'center', gap: spacing.xs },
-  score: { fontSize: 48, fontWeight: fontWeight.bold },
+  score: { fontSize: fontSize.xxl, fontWeight: fontWeight.bold },
   scoreLabel: { fontSize: fontSize.md, textAlign: 'center' },
   link: { minHeight: tapTarget, justifyContent: 'center', alignItems: 'center' },
   linkText: { fontSize: fontSize.md, fontWeight: fontWeight.semibold, textDecorationLine: 'underline' },

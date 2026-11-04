@@ -1,11 +1,13 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { Pressable, StyleSheet, TextInput, View } from 'react-native';
+import { Pressable, ScrollView, StyleSheet, TextInput, View, useWindowDimensions } from 'react-native';
 import { useFocusEffect } from 'expo-router';
 import { Text } from '@/components/KText';
 import Colors from '@/constants/Colors';
 import { fontSize, fontWeight, motion, radius, spacing, tapTarget } from '@/constants/Theme';
 import { Card, textOnFill } from '@/components/grammar/Brutal';
 import { ActionButton, BackButton, ProgressBar, themedEdgeStyle, themedInputStyle } from '@/components/grammar/Themed';
+import { DOCK_RESERVE } from '@/components/learn/DockedAction';
+import { useDockLift } from '@/components/learn/useDockLift';
 import GameFrame from '@/components/practice/GameFrame';
 import SpeakButton from '@/components/SpeakButton';
 import type { PcicTarget } from '@/data/pcic';
@@ -17,6 +19,7 @@ import { speechLang } from '@/lib/languages';
 import { matchSpoken, type SpokenMatch } from '@/lib/practice/situationMatch';
 import { speak, stopSpeaking } from '@/lib/speech';
 import { isMicOffError, isNothingHeardError, useRecognizer } from '@/lib/speechRecognition';
+import { upperFooterMax } from '@/lib/speech/layout';
 import { MAX_TRIES, answerTurn, lineOf, skipTurn, type AnswerMode, type SpeechStory, type StoryRun } from '@/lib/speech/stories';
 import { useTheme } from '@/lib/ThemeContext';
 
@@ -25,6 +28,8 @@ import { useTheme } from '@/lib/ThemeContext';
 // or two wrong tries. The answer is checked in the background (lib/practice/situationMatch.ts, `*` = a free word): a right one
 // shows its bubble at once and, after motion.feedback, the next line comes by itself and is read aloud. The run (lib/speech/
 // stories.ts) is already one turn on while that bubble waits, so the screen keeps its own `shown`. Leaving keeps the run.
+// The docked footer is two parts: a scrollable upper one (what was heard, the ask, the hint) that is capped to the room that is
+// left (lib/speech/layout.ts), and a fixed lower one (input and Check, or the mic; Next; the links) that is always on screen.
 
 interface Props {
   story: SpeechStory;
@@ -65,6 +70,11 @@ export default function SpeechPlay({ story, run, target, source, strictAccents, 
   const waiting = shown < run.turn;
   const turn = story.turns[shown];
   const hintOn = !waiting && (helpAt === shown || run.tries >= MAX_TRIES);
+  // the height of the fixed lower part of the footer, and what is left for the scrollable upper part
+  const { height: windowH } = useWindowDimensions();
+  const { dockLift, kbHeight } = useDockLift();
+  const [fixedH, setFixedH] = useState(DOCK_RESERVE);
+  const upper = useRef<ScrollView>(null);
 
   // What was said (the recognizer's final result) or typed is judged.
   const submit = (text: string, byTyping: boolean) => {
@@ -100,7 +110,9 @@ export default function SpeechPlay({ story, run, target, source, strictAccents, 
     setHeard(null);
     onMode(mode);
   };
+  // the read-aloud on a bubble closes the microphone first: the phone must not hear itself (and the learner lose a try)
   const say = (text: string) => {
+    abort();
     stopSpeaking();
     speak(text, lang);
   };
@@ -144,12 +156,17 @@ export default function SpeechPlay({ story, run, target, source, strictAccents, 
     return () => clearTimeout(id);
   }, [waiting, run.turn, run.done, story, lang]);
 
+  // a new result or a new turn shows the upper part from its top (the red words first)
+  useEffect(() => {
+    upper.current?.scrollTo({ y: 0, animated: false });
+  }, [heard, shown]);
+
   const micOff = rec.error !== null && isMicOffError(rec.error);
   const voice = run.mode === 'voice' && micOk && !micOff;
   const meText = g.brutal ? textOnFill(g, 'b') : colors.onTint;
   const mark = (right: boolean) => ({ color: right ? colors.success : colors.danger });
 
-  const footer = (
+  const upperPart = (
     <>
       {!waiting && heard && (
         <View testID="speech-result" style={[styles.result, themedEdgeStyle(g), { borderColor: colors.danger, backgroundColor: colors.card }]}>
@@ -171,6 +188,16 @@ export default function SpeechPlay({ story, run, target, source, strictAccents, 
           <Text testID="speech-hint" style={[styles.hintText, { color: colors.text }]}>{`💡 ${turn.model}`}</Text>
         </View>
       )}
+      {rec.error && !waiting && (
+        <Text testID="speech-mic-error" style={[styles.note, { color: colors.textMuted }]}>
+          {micOff ? sx.micOff : isNothingHeardError(rec.error) ? sx.micMiss : sx.micRetry}
+        </Text>
+      )}
+    </>
+  );
+
+  const lowerPart = (
+    <>
       {voice ? (
         <View style={styles.micBox}>
           <Pressable
@@ -186,7 +213,7 @@ export default function SpeechPlay({ story, run, target, source, strictAccents, 
                 void rec.start();
               }
             }}
-            style={[styles.mic, { backgroundColor: rec.listening ? colors.danger : colors.tint, borderColor: colors.border }]}
+            style={[styles.mic, { backgroundColor: rec.listening ? colors.danger : colors.tint }]}
           >
             <Text style={styles.micIcon}>🎤</Text>
           </Pressable>
@@ -216,11 +243,6 @@ export default function SpeechPlay({ story, run, target, source, strictAccents, 
           />
         </View>
       )}
-      {rec.error && !waiting && (
-        <Text testID="speech-mic-error" style={[styles.note, { color: colors.textMuted }]}>
-          {micOff ? sx.micOff : isNothingHeardError(rec.error) ? sx.micMiss : sx.micRetry}
-        </Text>
-      )}
       {!waiting && run.tries >= MAX_TRIES && (
         <ActionButton
           testID="speech-skip"
@@ -240,11 +262,27 @@ export default function SpeechPlay({ story, run, target, source, strictAccents, 
         ) : (
           <View />
         )}
-        {(voice || (micOk && !micOff)) && (
+        {micOk && (
           <Pressable testID="speech-mode-toggle" accessibilityRole="button" onPress={() => switchMode(voice ? 'type' : 'voice')} style={styles.link}>
             <Text style={[styles.linkText, { color: colors.text }]}>{voice ? sx.typeInstead : sx.sayInstead}</Text>
           </Pressable>
         )}
+      </View>
+    </>
+  );
+
+  const footer = (
+    <>
+      <ScrollView
+        ref={upper}
+        testID="speech-footer-scroll"
+        style={[styles.upper, { maxHeight: upperFooterMax({ windowH, lift: dockLift, kbHeight, fixedH, voice }) }]}
+        keyboardShouldPersistTaps="handled"
+      >
+        {upperPart}
+      </ScrollView>
+      <View testID="speech-footer-fixed" onLayout={(e) => setFixedH(Math.round(e.nativeEvent.layout.height))}>
+        {lowerPart}
       </View>
     </>
   );
@@ -326,15 +364,15 @@ export default function SpeechPlay({ story, run, target, source, strictAccents, 
   );
 }
 
-const MIC = 72;
+const BIG = tapTarget * 2;
 
 const styles = StyleSheet.create({
-  top: { flexDirection: 'row', alignItems: 'center', gap: spacing.md, paddingHorizontal: spacing.xl, paddingBottom: spacing.md },
+  top: { flexDirection: 'row', alignItems: 'center', gap: spacing.md, paddingHorizontal: spacing.xl, paddingTop: spacing.sm, paddingBottom: spacing.md },
   backPress: { minHeight: tapTarget, minWidth: tapTarget, justifyContent: 'center' },
   backArrow: { fontSize: fontSize.xxl },
   progress: { flex: 1 },
   bar: { flex: 1 },
-  track: { height: 8, borderRadius: radius.full, overflow: 'hidden' },
+  track: { height: 8, borderRadius: radius.xs, overflow: 'hidden' },
   fill: { height: '100%' },
   chat: { marginHorizontal: spacing.xl, gap: spacing.md },
   narration: { fontSize: fontSize.sm, fontStyle: 'italic' },
@@ -351,17 +389,18 @@ const styles = StyleSheet.create({
   toolLetter: { fontSize: fontSize.md, fontWeight: fontWeight.bold },
   line: { fontSize: fontSize.md },
   translation: { fontSize: fontSize.sm },
-  result: { borderWidth: 2.5, borderRadius: radius.md, padding: spacing.sm, gap: spacing.xs, marginBottom: spacing.sm },
+  result: { borderWidth: 2, borderRadius: radius.md, padding: spacing.sm, gap: spacing.xs, marginBottom: spacing.sm },
   resultText: { fontSize: fontSize.sm },
   said: { flexDirection: 'row', flexWrap: 'wrap', gap: spacing.sm },
   saidWord: { fontSize: fontSize.md, fontWeight: fontWeight.semibold },
   struck: { textDecorationLine: 'underline', fontWeight: fontWeight.bold },
+  upper: { flexGrow: 0 },
   yourTurn: { fontSize: fontSize.xs, fontWeight: fontWeight.bold, textTransform: 'uppercase' },
   ask: { fontSize: fontSize.md, fontWeight: fontWeight.bold, marginBottom: spacing.sm },
   hint: { borderWidth: 2, borderRadius: radius.md, padding: spacing.sm, marginBottom: spacing.sm },
   hintText: { fontSize: fontSize.sm },
   micBox: { alignItems: 'center', gap: spacing.xs },
-  mic: { width: MIC, height: MIC, borderRadius: radius.full, borderWidth: 3, alignItems: 'center', justifyContent: 'center' },
+  mic: { width: BIG, height: BIG, borderRadius: radius.full, alignItems: 'center', justifyContent: 'center' },
   micIcon: { fontSize: fontSize.xxl },
   micLabel: { fontSize: fontSize.sm, fontWeight: fontWeight.semibold, textTransform: 'uppercase' },
   typeRow: { flexDirection: 'row', gap: spacing.sm, alignItems: 'center' },
