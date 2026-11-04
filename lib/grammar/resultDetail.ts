@@ -53,7 +53,7 @@ export function askedColumn(table: TableBlock, verb: string): number {
   const cols = table.header.map((h) => Object.values(h));
   const same = (v: string) => cols.findIndex((vals, ci) => ci > 0 && vals.includes(v));
   let ci = same(verb);
-  if (ci < 0) ci = cols.findIndex((vals, c) => c > 0 && vals.some((v) => v.startsWith(`${verb} (`)));
+  if (ci < 0) ci = cols.findIndex((vals, c) => c > 0 && vals.some((v) => v.startsWith(`${verb} (`) || v.endsWith(`(${verb})`)));
   if (ci < 0 && cols.length === 2) ci = 1;
   return ci;
 }
