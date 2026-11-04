@@ -31,6 +31,7 @@ const hu: typeof en = {
     pcic: 'Tanulás',
     practice: 'Gyakorlás',
     sentences: 'Mondatok',
+    speak: 'Beszéd',
     comingSoon: 'Hamarosan',
   },
   a11y: {

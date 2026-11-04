@@ -257,3 +257,73 @@ describe('matchSpoken in German', () => {
     expect(matchSpoken('hallo', [], de)).toEqual({ right: false, best: '', words: [] });
   });
 });
+
+describe('matchSpoken: the free slot (*)', () => {
+  const shown = (heard: string, expected: string[], options = {}) => matchSpoken(heard, expected, options).words.map((w) => `${w.word}${w.right ? '' : '!'}`);
+
+  it('takes the next word said and shows it as heard', () => {
+    const m = matchSpoken('me llamo Kálmán', ['Me llamo *']);
+    expect(m.right).toBe(true);
+    expect(m.words).toEqual([
+      { word: 'Me', right: true },
+      { word: 'llamo', right: true },
+      { word: 'Kálmán', right: true },
+    ]);
+  });
+
+  it('a name of several words is right and shown whole', () => {
+    const m = matchSpoken('me llamo Juan Pablo', ['Me llamo *']);
+    expect(m.right).toBe(true);
+    expect(m.words[2]).toEqual({ word: 'Juan Pablo', right: true });
+    expect(shown('Hola, me llamo Ana María.', ['Me llamo *'])).toEqual(['Me', 'llamo', 'Ana María']);
+  });
+
+  it('nothing said for the slot: wrong, the slot shows ___', () => {
+    const m = matchSpoken('me llamo', ['Me llamo *']);
+    expect(m.right).toBe(false);
+    expect(m.words[2]).toEqual({ word: '___', right: false });
+  });
+
+  it('a missing word next to the slot is red, the slot still takes what was said', () => {
+    expect(shown('soy Hungría', ['Soy de *'])).toEqual(['Soy', 'de!', 'Hungría']);
+    expect(matchSpoken('soy Hungría', ['Soy de *']).right).toBe(false);
+  });
+
+  it('the no guard still works with a slot', () => {
+    expect(matchSpoken('no soy Kálmán', ['Soy *']).right).toBe(false);
+    expect(matchSpoken('soy Kálmán', ['Soy *']).right).toBe(true);
+  });
+
+  it('the first of several answers that fits wins, a short answer without the slot too', () => {
+    const answers = ['Me llamo *', 'Soy *', 'Mi nombre es *'];
+    expect(matchSpoken('mi nombre es Ana', answers).best).toBe('Mi nombre es *');
+    expect(matchSpoken('soy Ana', answers).best).toBe('Soy *');
+    expect(matchSpoken('un poco', ['Hablo un poco de español', 'Un poco']).right).toBe(true);
+  });
+
+  it('anyNumber: tengo treinta años is right with 35, a digit or another number word', () => {
+    expect(matchSpoken('tengo 35 años', ['Tengo treinta años'], { anyNumber: true }).right).toBe(true);
+    expect(matchSpoken('tengo treinta y cinco años', ['Tengo treinta años'], { anyNumber: true }).right).toBe(true);
+    expect(matchSpoken('tengo 35 años', ['Tengo treinta años']).right).toBe(false);
+  });
+});
+
+describe('matchSpoken: strictAccents', () => {
+  it('años is not anos with it, the same with it off', () => {
+    expect(matchSpoken('tengo treinta anos', ['Tengo treinta años'], { strictAccents: true }).right).toBe(false);
+    expect(matchSpoken('tengo treinta anos', ['Tengo treinta años']).right).toBe(true);
+    expect(matchSpoken('Tengo treinta años', ['Tengo treinta años'], { strictAccents: true }).right).toBe(true);
+  });
+
+  it('the wrong word is the red one, and the slot still takes anything', () => {
+    const m = matchSpoken('tengo treinta anos', ['Tengo treinta años'], { strictAccents: true });
+    expect(m.words.map((w) => w.right)).toEqual([true, true, false]);
+    expect(matchSpoken('me llamo Ángel', ['Me llamo *'], { strictAccents: true }).right).toBe(true);
+    expect(matchSpoken('me llamo angel', ['Me llamo *'], { strictAccents: true }).right).toBe(true);
+  });
+
+  it('a number is still a number: digits and accented number words match', () => {
+    expect(matchSpoken('tengo 16 años', ['Tengo dieciséis años'], { strictAccents: true }).right).toBe(true);
+    expect(matchSpoken('tengo dieciséis años', ['Tengo 16 años'], { strictAccents: true }).right).toBe(true);
+  });
+});

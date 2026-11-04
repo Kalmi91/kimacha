@@ -71,6 +71,7 @@ const es: typeof en = {
       title: 'Beta',
       practiceTab: 'Pestaña Práctica',
       sentenceTab: 'Pestaña Frases',
+      speechTab: 'Pestaña Hablar',
       xpV2: 'Nuevos valores de XP',
       levels: 'Niveles A1-C1',
       practiceDictation: 'Juego de dictado',

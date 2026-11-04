@@ -70,6 +70,7 @@ const de: typeof en = {
       title: 'Beta',
       practiceTab: 'Tab „Üben“',
       sentenceTab: 'Tab „Sätze“',
+      speechTab: 'Tab „Sprechen“',
       xpV2: 'Neue XP-Werte',
       levels: 'Stufen A1-C1',
       practiceDictation: 'Spiel „Diktat“',

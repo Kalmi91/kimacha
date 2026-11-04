@@ -8,7 +8,9 @@
 // has to be the one of the sentence. A heard "uno" / "eins" (also the digit 1) matches an expected "un" / "una" / "ein" / "eine" ...
 // A leading subject pronoun of the expected Spanish sentence may be left out (lib/pcicMatch.ts withoutLeadingSubjectPronoun; German
 // never drops it). Extra words that were said do no harm, except a "no" (German: "nicht", "nein", "kein...") the sentence does
-// not have: it turns the sentence round. Pure logic, no I/O.
+// not have: it turns the sentence round. An expected answer may contain `*`: one free word slot for what only the learner knows (a
+// name, a country, a job); it takes the next word said and, shown, everything said from there to the end. `strictAccents` keeps
+// the accents of both sides (typed answers only, a recognizer writes none). Pure logic, no I/O.
 
 import { withoutLeadingSubjectPronoun } from '@/lib/pcicMatch';
 
@@ -33,6 +35,8 @@ const UNITS_AFTER_Y = new Set([...UNITS.slice(1), 'un', 'una']);
 // stands for a whole number in the comparison ("NUM" = any number, "NUM31" = that number); a normalized word is lower case,
 // so it can never clash with one
 const NUM = 'NUM';
+// the free slot of an expected answer: it matches any said unit
+const FREE = '*';
 
 /** A number 0-100 in Spanish words, without accents (31 -> "treinta y uno"). */
 export function numberWords(n: number): string {
@@ -73,13 +77,13 @@ const DE_LETTERS: Record<string, string> = { ä: 'ae', ö: 'oe', ü: 'ue', ß: '
 
 /**
  * The comparison form of a text: lower case, no accents, no ¿?¡!.,;:, digits 0-100 as number words, single spaces.
- * German also writes ä ö ü ß as ae oe ue ss.
+ * German also writes ä ö ü ß as ae oe ue ss. With `strictAccents` the other accents stay (años is not anos).
  */
-export function normalizeSpoken(text: string, lang: SpokenLang = 'es'): string {
+export function normalizeSpoken(text: string, lang: SpokenLang = 'es', strictAccents = false): string {
   const lower = text.toLowerCase();
-  return (lang === 'de' ? lower.replace(/[äöüß]/g, (c) => DE_LETTERS[c]) : lower)
-    .normalize('NFD')
-    .replace(/[̀-ͯ]/g, '')
+  const letters = lang === 'de' ? lower.replace(/[äöüß]/g, (c) => DE_LETTERS[c]) : lower;
+  // strict: the accents stay (composed, so a typed ñ is one letter however the keyboard wrote it)
+  return (strictAccents ? letters.normalize('NFC') : letters.normalize('NFD').replace(/[̀-ͯ]/g, ''))
     .replace(/\d+/g, (digits) => (Number(digits) <= 100 ? (lang === 'de' ? germanNumberWords(Number(digits)) : numberWords(Number(digits))) : digits))
     .replace(/[¿?¡!.,;:„“”"]/g, ' ')
     .replace(/\s+/g, ' ')
@@ -92,10 +96,10 @@ interface Piece {
   source: number;
 }
 
-function piecesOf(text: string, lang: SpokenLang): Piece[] {
+function piecesOf(text: string, lang: SpokenLang, strictAccents: boolean): Piece[] {
   const out: Piece[] = [];
   text.trim().split(/\s+/).forEach((raw, source) => {
-    for (const word of normalizeSpoken(raw, lang).split(' ')) if (word) out.push({ word, source });
+    for (const word of normalizeSpoken(raw, lang, strictAccents).split(' ')) if (word) out.push({ word, source });
   });
   return out;
 }
@@ -107,19 +111,23 @@ interface Unit {
   value: number | null;
 }
 
+// the word without accents: the number words are looked up by it, so a strict "dieciséis" is still the number 16
+const plain = (word: string) => word.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
 function unitsOf(pieces: Piece[], anyNumber: boolean, lang: SpokenLang): Unit[] {
   const out: Unit[] = [];
   const values = lang === 'de' ? DE_NUMBER_VALUES : NUMBER_VALUES;
   const number = (value: number, sources: number[]): Unit => ({ word: anyNumber ? NUM : `${NUM}${value}`, sources, value });
   for (let i = 0; i < pieces.length; i++) {
     const { word, source } = pieces[i];
+    const key = plain(word);
     const y = pieces[i + 1];
     const unit = pieces[i + 2];
-    if (lang === 'es' && TENS_WORDS.has(word) && y?.word === 'y' && unit && UNITS_AFTER_Y.has(unit.word)) {
-      out.push(number(NUMBER_VALUES.get(word)! + (NUMBER_VALUES.get(unit.word) ?? 1), [source, y.source, unit.source]));
+    if (lang === 'es' && TENS_WORDS.has(key) && y?.word === 'y' && unit && UNITS_AFTER_Y.has(plain(unit.word))) {
+      out.push(number(NUMBER_VALUES.get(key)! + (NUMBER_VALUES.get(plain(unit.word)) ?? 1), [source, y.source, unit.source]));
       i += 2;
-    } else if (values.has(word)) {
-      out.push(number(values.get(word)!, [source]));
+    } else if (values.has(key)) {
+      out.push(number(values.get(key)!, [source]));
     } else {
       out.push({ word, sources: [source], value: null });
     }
@@ -129,10 +137,12 @@ function unitsOf(pieces: Piece[], anyNumber: boolean, lang: SpokenLang): Unit[] 
 
 // the same unit, or a said "uno" / "eins" / 1 for an expected article un / una / ein / eine ...
 const isOneArticle = (word: string, lang: SpokenLang) => (lang === 'de' ? DE_ONE.has(word) : word === 'un' || word === 'una');
-const sameUnit = (said: Unit, want: Unit, lang: SpokenLang) => said.word === want.word || (said.value === 1 && isOneArticle(want.word, lang));
+// the free slot matches any unit
+const sameUnit = (said: Unit, want: Unit, lang: SpokenLang) =>
+  want.word === FREE || said.word === want.word || (said.value === 1 && isOneArticle(want.word, lang));
 
-/** The positions of `expected` that are in the longest common subsequence with `said` (the words said in order). */
-function matchedPositions(said: readonly Unit[], expected: readonly Unit[], lang: SpokenLang): Set<number> {
+/** The positions of `expected` that are in the longest common subsequence with `said` (the words said in order), each with the position in `said` it was matched to. */
+function matchedPositions(said: readonly Unit[], expected: readonly Unit[], lang: SpokenLang): Map<number, number> {
   const n = said.length;
   const m = expected.length;
   const len: number[][] = Array.from({ length: n + 1 }, () => new Array<number>(m + 1).fill(0));
@@ -141,12 +151,12 @@ function matchedPositions(said: readonly Unit[], expected: readonly Unit[], lang
       len[i][j] = sameUnit(said[i], expected[j], lang) ? len[i + 1][j + 1] + 1 : Math.max(len[i + 1][j], len[i][j + 1]);
     }
   }
-  const matched = new Set<number>();
+  const matched = new Map<number, number>();
   let i = 0;
   let j = 0;
   while (i < n && j < m) {
     if (sameUnit(said[i], expected[j], lang) && len[i][j] === len[i + 1][j + 1] + 1) {
-      matched.add(j);
+      matched.set(j, i);
       i++;
       j++;
     } else if (len[i + 1][j] >= len[i][j + 1]) i++;
@@ -177,6 +187,8 @@ export interface SpokenOptions {
   anyNumber?: boolean;
   /** The language that is spoken (default Spanish). */
   lang?: SpokenLang;
+  /** The accents of both sides count (años is not anos); the free slot still takes anything. Typed answers only: a recognizer writes no accents. */
+  strictAccents?: boolean;
 }
 
 const isNo = (u: Unit, lang: SpokenLang) => (lang === 'de' ? DE_NEGATIONS.has(u.word) : u.word === 'no');
@@ -186,15 +198,16 @@ const isNo = (u: Unit, lang: SpokenLang) => (lang === 'de' ? DE_NEGATIONS.has(u.
  * the model answer goes first). Extra words that were said are not an error, except a "no" the sentence does not have
  * (it counts as one more missing word). Right when none is missing.
  */
-export function matchSpoken(heard: string, expected: string[], { anyNumber = false, lang = 'es' }: SpokenOptions = {}): SpokenMatch {
-  const said = unitsOf(piecesOf(heard, lang), anyNumber, lang);
+export function matchSpoken(heard: string, expected: string[], { anyNumber = false, lang = 'es', strictAccents = false }: SpokenOptions = {}): SpokenMatch {
+  const said = unitsOf(piecesOf(heard, lang, strictAccents), anyNumber, lang);
+  const heardWords = heard.trim().split(/\s+/);
   let best: { text: string; missing: number; words: SpokenWord[] } | null = null;
   for (const text of expected) {
     const rest = lang === 'es' ? withoutLeadingSubjectPronoun(text) : null;
     // the full sentence, then without its subject pronoun (that word then counts as said)
     const forms = rest === null ? [{ body: text, lead: null }] : [{ body: text, lead: null }, { body: rest, lead: text.trim().split(/\s+/)[0] }];
     for (const { body, lead } of forms) {
-      const units = unitsOf(piecesOf(body, lang), anyNumber, lang);
+      const units = unitsOf(piecesOf(body, lang, strictAccents), anyNumber, lang);
       if (units.length === 0) continue;
       const matched = matchedPositions(said, units, lang);
       const missing = units.length - matched.size + Math.max(0, said.filter((u) => isNo(u, lang)).length - units.filter((u) => isNo(u, lang)).length);
@@ -205,7 +218,12 @@ export function matchSpoken(heard: string, expected: string[], { anyNumber = fal
       const words: SpokenWord[] = [];
       if (lead) words.push({ word: cleanWord(lead), right: true });
       body.trim().split(/\s+/).forEach((raw, source) => {
-        if (cleanWord(raw)) words.push({ word: cleanWord(raw), right: covered.get(source) ?? true });
+        if (raw === FREE) {
+          // the slot shows what was said from its matched word to the end (a name may be several words), as heard
+          const at = matched.get(units.findIndex((u) => u.word === FREE && u.sources[0] === source));
+          const told = at === undefined ? '' : heardWords.slice(said[at].sources[0]).map(cleanWord).filter(Boolean).join(' ');
+          words.push(told ? { word: told, right: true } : { word: '___', right: false });
+        } else if (cleanWord(raw)) words.push({ word: cleanWord(raw), right: covered.get(source) ?? true });
       });
       best = { text, missing, words };
     }
