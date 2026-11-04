@@ -5,6 +5,7 @@ import { speak, speakAuto, speakSequence, stopSpeaking } from '@/lib/speech';
 import { getDb } from '@/lib/database';
 import { useLearner } from '@/lib/learner';
 import { getBeta, useBeta } from '@/lib/beta';
+import { useFocusOnNewCard } from '@/lib/learn/useFocusOnNewCard';
 import { noteCardGraded } from '@/lib/cloud/guest';
 import { pairOf, sourceFor, type Lang } from '@/lib/languagePair';
 import { exampleIn, wordIn } from '@/lib/pcicItemText';
@@ -129,9 +130,7 @@ export function usePcicSession() {
   const [dockH, setDockH] = useState(DOCK_RESERVE);
   // The docked bar rises above the keyboard, as on the Learn tab.
   const { dockLift, kbHeight } = useDockLift();
-  // The input field gets focus on every NEW card (see the
-  // effect below), not only on first mount (the `autoFocus` prop is not
-  // enough for this, because the TextInput does not remount on a card change).
+  // The input field gets focus on every NEW card (see the focus effect below).
   const inputRef = useRef<TextInput>(null);
   // In-flight guard of handleGrade: a double tap must not grade the same card twice.
   const gradingRef = useRef(false);
@@ -142,7 +141,7 @@ export function usePcicSession() {
   // its old InputConnection / composing state: `focus()` sometimes does not
   // open the keyboard, and deleting from text that Gboard still considers
   // "being typed" does not work. A fresh field =
-  // a fresh InputConnection + `autoFocus`, which opens the keyboard on every mount.
+  // a fresh InputConnection, and the focus effect below opens the keyboard on every mount.
   // The counter also covers the case when the same card comes back (again).
   const [cardSeq, setCardSeq] = useState(0);
 
@@ -265,11 +264,11 @@ export function usePcicSession() {
   const promptSource = currentItem ? wordIn(currentItem, sourceLang) : undefined;
   const answerText = currentItem ? wordIn(currentItem, target) : undefined;
 
-  // Reading the prompt aloud AND focusing the input field when a
-  // NEW card comes on screen (the keyboard opens). It should run only on a
+  // Reading the prompt aloud when a
+  // NEW card comes on screen. It should run only on a
   // change of `current?.itemId` (`grade` is read from the closure and
   // decides that it is not revealed yet); on reveal (when the `grade` state
-  // changes) it should not repeat, neither the read-aloud nor the focus.
+  // changes) it should not repeat.
   // Under a sentence card the next prompt is not spoken;
   // it is spoken when the card closes (sentenceOpen false), like on a new card.
   // The same while the more-new-words question (FB542) replaces the card.
@@ -277,13 +276,13 @@ export function usePcicSession() {
   useEffect(() => {
     if (!loading && !sentenceOpen && !askMoreNew && currentItem && promptSource && !grade) {
       speakAuto(promptSource, speechLang(sourceLang)); // silent right after the app opens (lib/speech.ts)
-      inputRef.current?.focus();
     }
     // On a card change, any read-aloud in progress
     // (e.g. the word + example sentence chain after Check) should stop (same pattern).
     return () => stopSpeaking();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [current?.itemId, loading, sentenceOpen, askMoreNew, loadSeq]);
+  useFocusOnNewCard(inputRef, !loading && !sentenceOpen && !askMoreNew && !!currentItem && !!promptSource && !grade, `${current?.itemId}-${cardSeq}-${loadSeq}`);
 
   // Card-level resume: after every queue / batch change it saves a snapshot (lib/learnResume.ts).
   useEffect(() => {
