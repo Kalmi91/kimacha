@@ -25,9 +25,10 @@ export default function TabLayout() {
   const { skin } = useSkin();
   const { HeaderOrnament } = useSkinDecor();
   const s = t();
-  // the two beta tabs are hidden (href: null) while their switch is off.
+  // the three beta tabs (Practice, Sentences, Speak) are hidden (href: null) while their switch is off.
   const showPractice = useBeta('practiceTab');
   const showSentences = useBeta('sentenceTab');
+  const showSpeak = useBeta('speechTab');
 
   // On the brutalist palette the active icon sits on a filled square with an ink border.
   const tabIcon = (name: SymbolViewProps['name'], color: ColorValue, focused: boolean) => {
@@ -146,6 +147,14 @@ export default function TabLayout() {
           title: s.tabs.sentences,
           tabBarAccessibilityLabel: s.tabs.sentences,
           ...(showSentences ? { tabBarButton: tabButton({ ios: 'text.bubble.fill', android: 'chat', web: 'chat' }) } : { href: null }),
+        }}
+      />
+      <Tabs.Screen
+        name="speak"
+        options={{
+          title: s.tabs.speak,
+          tabBarAccessibilityLabel: s.tabs.speak,
+          ...(showSpeak ? { tabBarButton: tabButton({ ios: 'mic.fill', android: 'mic', web: 'mic' }) } : { href: null }),
         }}
       />
       <Tabs.Screen

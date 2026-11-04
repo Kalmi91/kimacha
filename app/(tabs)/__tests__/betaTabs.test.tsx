@@ -1,5 +1,5 @@
-// The Beta section of Settings (four switches, EN + ES, all off by default) and the two beta tabs of the
-// tab bar (hidden while their switch is off, the existing tabs unchanged). Mock pattern: a11yLabels.test.tsx.
+// The Beta section of Settings (every switch, EN + ES) and the three beta tabs of the tab bar (Practice, Sentences, Speak: hidden
+// while their switch is off, the existing tabs unchanged). Mock pattern: a11yLabels.test.tsx.
 
 jest.mock('expo-symbols', () => ({ SymbolView: () => null }));
 jest.mock('expo-router', () => {
@@ -56,15 +56,31 @@ afterEach(() => setLanguage('en'));
 
 const tabLine = (view: ReturnType<typeof render>, name: string) => String(view.getByTestId(`tab-${name}`).props.children);
 
-describe('tab bar: the two beta tabs', () => {
-  it('both are hidden by default, the existing tabs stay shown and in order', async () => {
+describe('tab bar: the three beta tabs', () => {
+  it('all are hidden while their switch is off, the existing tabs stay shown and in order', async () => {
     const view = render(<ThemeProvider><TabLayout /></ThemeProvider>);
     await flush();
     expect(tabLine(view, 'practice')).toBe('practice|Practice|hidden');
     expect(tabLine(view, 'sentences')).toBe('sentences|Sentences|hidden');
+    expect(tabLine(view, 'speak')).toBe('speak|Speak|hidden');
     for (const name of ['index', 'course', 'stats', 'settings']) expect(tabLine(view, name)).toMatch(/\|shown$/);
     const order = view.getAllByTestId(/^tab-/).map((n) => String(n.props.children).split('|')[0]);
-    expect(order.filter((n) => n !== 'practice' && n !== 'sentences')).toEqual(['index', 'course', 'stats', 'settings']);
+    expect(order.filter((n) => n !== 'practice' && n !== 'sentences' && n !== 'speak')).toEqual(['index', 'course', 'stats', 'settings']);
+    // the Speak tab sits between Sentences and Stats
+    expect(order.indexOf('speak')).toBe(order.indexOf('sentences') + 1);
+    expect(order.indexOf('stats')).toBe(order.indexOf('speak') + 1);
+    view.unmount();
+  });
+
+  it('the Speak tab shows up when its own switch is on, and hides again when it goes off', async () => {
+    const view = render(<ThemeProvider><TabLayout /></ThemeProvider>);
+    await flush();
+    await act(async () => { await setBeta('speechTab', true); });
+    expect(tabLine(view, 'speak')).toBe('speak|Speak|shown');
+    expect(tabLine(view, 'practice')).toMatch(/\|hidden$/);
+    expect(tabLine(view, 'sentences')).toMatch(/\|hidden$/);
+    await act(async () => { await setBeta('speechTab', false); });
+    expect(tabLine(view, 'speak')).toMatch(/\|hidden$/);
     view.unmount();
   });
 
@@ -87,13 +103,14 @@ describe('tab bar: the two beta tabs', () => {
     await flush();
     expect(tabLine(view, 'practice')).toBe('practice|Práctica|hidden');
     expect(tabLine(view, 'sentences')).toBe('sentences|Frases|hidden');
+    expect(tabLine(view, 'speak')).toBe('speak|Hablar|hidden');
     view.unmount();
   });
 });
 
 describe('Settings: Beta section', () => {
-  const EN = { practiceTab: 'Practice tab', sentenceTab: 'Sentences tab', xpV2: 'New XP values', levels: 'Levels A1-C1', practiceDictation: 'Dictation game', practiceScramble: 'Letter scramble game', practiceMatch: 'Quick match game', practiceOpposites: 'Opposites game', practiceSituations: 'Situations game', sentenceListening: 'Sentences: listen and type step', sentenceMistakes: 'Sentences: from my mistakes', sentenceHint: 'Sentences: tap-a-word hints', sentenceMix: 'Sentences: the sentences take turns' } as const;
-  const ES = { practiceTab: 'Pestaña Práctica', sentenceTab: 'Pestaña Frases', xpV2: 'Nuevos valores de XP', levels: 'Niveles A1-C1', practiceDictation: 'Juego de dictado', practiceScramble: 'Juego de letras revueltas', practiceMatch: 'Juego de parejas rápidas', practiceOpposites: 'Juego de opuestos', practiceSituations: 'Juego de situaciones', sentenceListening: 'Frases: paso de escuchar y escribir', sentenceMistakes: 'Frases: de mis errores', sentenceHint: 'Frases: pistas al tocar una palabra', sentenceMix: 'Frases: las frases se alternan' } as const;
+  const EN = { practiceTab: 'Practice tab', sentenceTab: 'Sentences tab', xpV2: 'New XP values', levels: 'Levels A1-C1', practiceDictation: 'Dictation game', practiceScramble: 'Letter scramble game', practiceMatch: 'Quick match game', practiceOpposites: 'Opposites game', practiceSituations: 'Situations game', sentenceListening: 'Sentences: listen and type step', sentenceMistakes: 'Sentences: from my mistakes', sentenceHint: 'Sentences: tap-a-word hints', sentenceMix: 'Sentences: the sentences take turns', speechTab: 'Speak tab' } as const;
+  const ES = { practiceTab: 'Pestaña Práctica', sentenceTab: 'Pestaña Frases', xpV2: 'Nuevos valores de XP', levels: 'Niveles A1-C1', practiceDictation: 'Juego de dictado', practiceScramble: 'Juego de letras revueltas', practiceMatch: 'Juego de parejas rápidas', practiceOpposites: 'Juego de opuestos', practiceSituations: 'Juego de situaciones', sentenceListening: 'Frases: paso de escuchar y escribir', sentenceMistakes: 'Frases: de mis errores', sentenceHint: 'Frases: pistas al tocar una palabra', sentenceMix: 'Frases: las frases se alternan', speechTab: 'Pestaña Hablar' } as const;
 
   describe.each(['classic', 'brand'] as const)('palette %s', (palette) => {
     it('every switch is named and set off; a toggle saves the flag', async () => {

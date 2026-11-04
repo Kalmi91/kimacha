@@ -72,6 +72,7 @@ export default {
       title: 'Beta',
       practiceTab: 'Practice tab',
       sentenceTab: 'Sentences tab',
+      speechTab: 'Speak tab',
       xpV2: 'New XP values',
       levels: 'Levels A1-C1',
       practiceDictation: 'Dictation game',

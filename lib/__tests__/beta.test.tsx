@@ -20,12 +20,21 @@ beforeEach(async () => {
 
 describe('beta defaults', () => {
   it('has the old four flags off and every game flag on', () => {
-    expect([...BETA_FLAGS]).toEqual(['practiceTab', 'sentenceTab', 'xpV2', 'levels', 'practiceDictation', 'practiceScramble', 'practiceMatch', 'practiceOpposites', 'practiceSituations', 'sentenceListening', 'sentenceMistakes', 'sentenceHint', 'sentenceMix']);
+    expect([...BETA_FLAGS]).toEqual(['practiceTab', 'sentenceTab', 'xpV2', 'levels', 'practiceDictation', 'practiceScramble', 'practiceMatch', 'practiceOpposites', 'practiceSituations', 'sentenceListening', 'sentenceMistakes', 'sentenceHint', 'sentenceMix', 'speechTab']);
     for (const f of BETA_FLAGS) {
       const on = !['practiceTab', 'sentenceTab', 'xpV2', 'levels'].includes(f);
       expect(BETA_DEFAULTS[f]).toBe(on);
       expect(getBeta(f)).toBe(on);
     }
+  });
+
+  it('the Speak tab is on from the start (a never-saved db shows it), and a saved off is read back off', async () => {
+    expect(BETA_DEFAULTS.speechTab).toBe(true);
+    expect(getBeta('speechTab')).toBe(true);
+    await getDb().setBetaFlag('speechTab', false);
+    __resetBetaForTest();
+    await loadBeta();
+    expect(getBeta('speechTab')).toBe(false);
   });
 
   it('a game switched off is read back off, a never-saved one is on', async () => {

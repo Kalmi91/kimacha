@@ -31,6 +31,7 @@ const de: typeof en = {
     pcic: 'Lernen',
     practice: 'Üben',
     sentences: 'Sätze',
+    speak: 'Sprechen',
     comingSoon: 'Bald verfügbar',
   },
   a11y: {

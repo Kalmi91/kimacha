@@ -35,6 +35,10 @@ interface Props {
   /** Bump after every credited answer: the level counter reads the due words again. */
   creditSeq?: number;
   progress?: { text: string; label: string };
+  /** No level counter on top (the Speak tab has no level of words to count down). Default: it is there, as in the Practice tab. */
+  hideLevelCounter?: boolean;
+  /** Content above the scroller, outside it (the Speak tab's back link and story progress), so it stays in view. */
+  top?: ReactNode;
   dock?: GameDock;
   /** The content sits in the middle of the screen instead of a scroller. */
   centered?: boolean;
@@ -45,7 +49,7 @@ interface Props {
   children: ReactNode;
 }
 
-export default function GameFrame({ testID, target, currentCard, creditSeq = 0, progress, dock, centered = false, footer, scrollKey, children }: Props) {
+export default function GameFrame({ testID, target, currentCard, creditSeq = 0, progress, hideLevelCounter = false, top, dock, centered = false, footer, scrollKey, children }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const { dockLift, kbHeight } = useDockLift();
@@ -68,13 +72,14 @@ export default function GameFrame({ testID, target, currentCard, creditSeq = 0, 
       <SkinBackdrop />
       <View style={styles.header}>
         {/* No screen title: the tab navigator's header already says "Practice". */}
-        <LevelCounter refreshKey={creditSeq} />
+        {!hideLevelCounter && <LevelCounter refreshKey={creditSeq} />}
         {progress && (
           <Text accessibilityLabel={progress.label} style={[styles.progress, { color: colors.tabIconDefault }]}>
             {progress.text}
           </Text>
         )}
       </View>
+      {top}
       {centered ? (
         <View style={styles.center}>{children}</View>
       ) : (

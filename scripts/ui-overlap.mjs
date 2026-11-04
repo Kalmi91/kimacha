@@ -91,6 +91,8 @@ const ROUTES = {
   practice: { path: '/practice', onboarded: true, seed: 'practice', docked: true, ready: 'practice-text' },
   'practice-question': { path: '/practice', onboarded: true, seed: 'practice', docked: true, steps: [{ testId: 'practice-action' }], ready: 'practice-question' },
   'practice-answered': { path: '/practice', onboarded: true, seed: 'practice', docked: true, steps: [{ testId: 'practice-action' }, { testId: 'practice-option-0' }], ready: 'practice-explanation' },
+  // Speak tab (beta speechTab, on by default): the story list with the level row.
+  speak: { path: '/speak', onboarded: true, ready: 'speech-levels' },
 };
 // The docked Check button of the Learn card: a testID on the Neo-brutalist branch, the label on the Classic one.
 const CHECK = { testId: 'learn-docked-action', text: '✓ Check' };

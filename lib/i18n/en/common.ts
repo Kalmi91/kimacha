@@ -33,6 +33,7 @@ export default {
     // the two beta tabs (Settings -> Beta) and the line on their placeholder screens.
     practice: 'Practice',
     sentences: 'Sentences',
+    speak: 'Speak',
     comingSoon: 'Coming soon',
   },
   // accessibility labels (screen readers) of the controls that show only an icon or a symbol.

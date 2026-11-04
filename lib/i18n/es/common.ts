@@ -31,6 +31,7 @@ const es: typeof en = {
     pcic: 'Aprender',
     practice: 'Práctica',
     sentences: 'Frases',
+    speak: 'Hablar',
     comingSoon: 'Próximamente',
   },
   a11y: {

@@ -1,0 +1,111 @@
+[
+  {
+    "id": "a1-presentacion",
+    "target": "es",
+    "level": "A1",
+    "speaker": "Lupita",
+    "title": { "en": "Introductions", "es": "Presentarse", "hu": "Bemutatkozás", "de": "Sich vorstellen" },
+    "teaser": { "en": "The new neighbor", "es": "La nueva vecina", "hu": "Az új szomszéd", "de": "Die neue Nachbarin" },
+    "intro": {
+      "en": "You have just moved to Mexico City. The doorbell rings: your neighbor is at the door.",
+      "es": "Acabas de llegar a la Ciudad de México. Tocan el timbre: tu vecina está en la puerta.",
+      "hu": "Most költöztél Mexikóvárosba. Csöngetnek: a szomszédod áll az ajtóban.",
+      "de": "Du bist gerade nach Mexiko-Stadt gezogen. Es klingelt: deine Nachbarin steht vor der Tür."
+    },
+    "outro": {
+      "en": "Lupita smiles and goes home. You have your first acquaintance in the neighborhood.",
+      "es": "Lupita sonríe y se va a su casa. Ya conoces a alguien en la colonia.",
+      "hu": "Lupita mosolyogva hazamegy. Megvan az első ismerősöd a környéken.",
+      "de": "Lupita lächelt und geht nach Hause. Du kennst jetzt jemanden im Viertel."
+    },
+    "words": [
+      { "es": "hola", "forms": ["hola"], "en": "hello", "hu": "szia", "de": "hallo" },
+      { "es": "ser", "forms": ["soy", "eres"], "en": "to be", "hu": "lenni", "de": "sein" },
+      { "es": "tu", "forms": ["tu"], "en": "your", "hu": "a te …-d", "de": "dein" },
+      { "es": "la vecina", "forms": ["vecina"], "en": "neighbor (woman)", "hu": "szomszéd (nő)", "de": "Nachbarin" },
+      { "es": "cómo", "forms": ["cómo"], "en": "how", "hu": "hogyan", "de": "wie" },
+      { "es": "llamarse", "forms": ["me", "te", "llamo", "llamas"], "en": "to be called", "hu": "hívnak valahogy", "de": "heißen" },
+      { "es": "mucho", "forms": ["mucho"], "en": "much", "hu": "sok", "de": "viel" },
+      { "es": "mucho gusto", "forms": ["gusto"], "en": "nice to meet you", "hu": "örvendek", "de": "freut mich" },
+      { "es": "de", "forms": ["de"], "en": "from, of", "hu": "-ból, -ből", "de": "aus, von" },
+      { "es": "dónde", "forms": ["dónde"], "en": "where", "hu": "hol", "de": "wo" },
+      { "es": "qué", "forms": ["qué"], "en": "what, how", "hu": "mi, milyen", "de": "was, wie" },
+      { "es": "interesante", "forms": ["interesante"], "en": "interesting", "hu": "érdekes", "de": "interessant" },
+      { "es": "cuántos", "forms": ["cuántos"], "en": "how many", "hu": "hány", "de": "wie viele" },
+      { "es": "el año", "forms": ["años"], "en": "year", "hu": "év", "de": "Jahr" },
+      { "es": "tener", "forms": ["tengo", "tienes"], "en": "to have", "hu": "van (valakinek)", "de": "haben" },
+      { "es": "y", "forms": ["y"], "en": "and", "hu": "és", "de": "und" },
+      { "es": "en", "forms": ["en"], "en": "in", "hu": "-ban, -ben", "de": "in" },
+      { "es": "trabajar", "forms": ["trabajo", "trabajas"], "en": "to work", "hu": "dolgozni", "de": "arbeiten" },
+      { "es": "hablar", "forms": ["hablo", "hablas"], "en": "to speak", "hu": "beszélni", "de": "sprechen" },
+      { "es": "español", "forms": ["español"], "en": "Spanish", "hu": "spanyol", "de": "Spanisch" },
+      { "es": "muy", "forms": ["muy"], "en": "very", "hu": "nagyon", "de": "sehr" },
+      { "es": "bien", "forms": ["bien"], "en": "well", "hu": "jól", "de": "gut" },
+      { "es": "bueno", "forms": ["bueno"], "en": "well, okay", "hu": "na, jó", "de": "also, gut" },
+      { "es": "adiós", "forms": ["adiós"], "en": "goodbye", "hu": "viszlát", "de": "tschüss" },
+      { "es": "treinta", "forms": ["treinta"], "en": "thirty", "hu": "harminc", "de": "dreißig" },
+      { "es": "un, una", "forms": ["un", "una"], "en": "a, one", "hu": "egy", "de": "ein, eine" },
+      { "es": "la oficina", "forms": ["oficina"], "en": "office", "hu": "iroda", "de": "Büro" },
+      { "es": "un poco", "forms": ["poco"], "en": "a little", "hu": "egy kicsit", "de": "ein bisschen" },
+      { "es": "gracias", "forms": ["gracias"], "en": "thank you", "hu": "köszönöm", "de": "danke" },
+      { "es": "Hungría", "forms": ["Hungría"], "en": "Hungary", "hu": "Magyarország", "de": "Ungarn" }
+    ],
+    "turns": [
+      {
+        "es": "¡Hola! Soy Lupita, tu vecina. ¿Cómo te llamas?",
+        "en": "Hi! I'm Lupita, your neighbor. What's your name?",
+        "hu": "Szia! Lupita vagyok, a szomszédod. Hogy hívnak?",
+        "de": "Hallo! Ich bin Lupita, deine Nachbarin. Wie heißt du?",
+        "ask": { "en": "Say your name.", "es": "Di tu nombre.", "hu": "Mondd meg a neved.", "de": "Sag deinen Namen." },
+        "model": "Me llamo ___.",
+        "answers": ["Me llamo *", "Soy *", "Mi nombre es *"]
+      },
+      {
+        "es": "Mucho gusto. ¿De dónde eres?",
+        "en": "Nice to meet you. Where are you from?",
+        "hu": "Örvendek. Honnan jöttél?",
+        "de": "Freut mich. Woher kommst du?",
+        "ask": { "en": "Say where you are from.", "es": "Di de dónde eres.", "hu": "Mondd meg, honnan jöttél.", "de": "Sag, woher du kommst." },
+        "model": "Soy de Hungría.",
+        "answers": ["Soy de *", "Vengo de *", "De *"]
+      },
+      {
+        "es": "¡Qué interesante! ¿Cuántos años tienes?",
+        "en": "How interesting! How old are you?",
+        "hu": "Milyen érdekes! Hány éves vagy?",
+        "de": "Wie interessant! Wie alt bist du?",
+        "ask": { "en": "Say how old you are.", "es": "Di cuántos años tienes.", "hu": "Mondd meg, hány éves vagy.", "de": "Sag, wie alt du bist." },
+        "model": "Tengo treinta años.",
+        "answers": ["Tengo treinta años"],
+        "anyNumber": true
+      },
+      {
+        "es": "¿Y en qué trabajas?",
+        "en": "And what do you do for work?",
+        "hu": "És mivel foglalkozol?",
+        "de": "Und was arbeitest du?",
+        "ask": { "en": "Say what your work is.", "es": "Di en qué trabajas.", "hu": "Mondd meg, mi a munkád.", "de": "Sag, was du arbeitest." },
+        "model": "Trabajo en una oficina.",
+        "answers": ["Trabajo en *", "Soy *", "No trabajo"]
+      },
+      {
+        "es": "¿Hablas español?",
+        "en": "Do you speak Spanish?",
+        "hu": "Beszélsz spanyolul?",
+        "de": "Sprichst du Spanisch?",
+        "ask": { "en": "Say that you speak a little Spanish.", "es": "Di que hablas un poco de español.", "hu": "Mondd, hogy egy kicsit beszélsz spanyolul.", "de": "Sag, dass du ein bisschen Spanisch sprichst." },
+        "model": "Hablo un poco de español.",
+        "answers": ["Hablo un poco de español", "Un poco"]
+      },
+      {
+        "es": "¡Hablas muy bien! Bueno, adiós.",
+        "en": "You speak very well! Well, goodbye.",
+        "hu": "Nagyon jól beszélsz! Na, szia.",
+        "de": "Du sprichst sehr gut! Also, tschüss.",
+        "ask": { "en": "Say thank you and goodbye.", "es": "Da las gracias y despídete.", "hu": "Köszönd meg, és köszönj el.", "de": "Bedanke dich und verabschiede dich." },
+        "model": "Gracias, adiós.",
+        "answers": ["Gracias, adiós", "Gracias, hasta luego", "Gracias, nos vemos"]
+      }
+    ]
+  }
+]

@@ -71,6 +71,7 @@ const hu: typeof en = {
       title: 'Béta',
       practiceTab: 'Gyakorlás fül',
       sentenceTab: 'Mondatok fül',
+      speechTab: 'Beszéd fül',
       xpV2: 'Új XP-értékek',
       levels: 'A1-C1 szintek',
       practiceDictation: 'Tollbamondás játék',
