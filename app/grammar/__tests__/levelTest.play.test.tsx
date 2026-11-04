@@ -634,6 +634,23 @@ describe.each(['brand', 'classic'] as const)('grammar level test (%s palette)', 
       expect(await loadResumeValue(getDb(), roundKey('B1'))).toEqual({ n: 1, right: 0, startPct: Number(pct) });
     });
 
+    it('the rule table highlights the cell the CURRENT task asks, on every task (not only the first)', async () => {
+      await typeWrongForm();
+      await press('level-test-practice');
+      const expected: Record<string, string[]> = { yo: ['me gusta', 'me gustan'], nosotros: ['nos gusta', 'nos gustan'], 'ellos/ellas/ustedes': ['les gusta', 'les gustan'] };
+      const seen: string[] = [];
+      for (let i = 0; i < 3; i++) {
+        const prompt = text('exam-prompt');
+        const person = prompt.split(' · ')[1];
+        const col = prompt.startsWith('una') ? 0 : 1;
+        expect(flat('level-test-table-hl')).toBe(expected[person][col]);
+        seen.push(flat('level-test-table-hl'));
+        await press('exam-dont-know');
+        await press('level-test-next');
+      }
+      expect(new Set(seen).size).toBe(3);
+    });
+
     it('a wrong task comes back once, the total grows by one; the end says "x of N right" and Back to the test returns', async () => {
       await typeWrongForm();
       await press('level-test-practice');

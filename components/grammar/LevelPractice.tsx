@@ -22,6 +22,9 @@ import ScreenFeedback from '@/lib/screenFeedback';
 // grows by one so the counter stays true. Practice keeps no state of its own and writes no evidence: the level percent and
 // the test's round do not move. ✕ and the end screen both hand control back to the test.
 const COME_BACK_AFTER = 3;
+// the rule box height: smaller with the keyboard open, so the input and Check stay on screen on a 1080x1600 phone
+const RULE_MAX = 220;
+const RULE_MAX_KEYBOARD = 110;
 
 interface Item {
   q: LessonTestQuestion;
@@ -60,7 +63,7 @@ export default function LevelPractice({
   const [right, setRight] = useState(0);
   const [result, setResult] = useState<{ ok: boolean; given?: string } | null>(null);
   const retried = useRef(new Set<string>());
-  // the rule box folds up while the keyboard is open, so the input stays on a small phone
+  const ruleScroll = useRef<ScrollView>(null);
   const [keyboardOpen, setKeyboardOpen] = useState(false);
   useEffect(() => {
     const show = Keyboard.addListener(Platform.OS === 'ios' ? 'keyboardWillShow' : 'keyboardDidShow', () => setKeyboardOpen(true));
@@ -112,30 +115,32 @@ export default function LevelPractice({
   );
 
   const d = missed.detail;
-  const hasRule = !!d?.table || !!missed.review.why || (d?.examples ?? []).length > 0;
+  // the table of the CURRENT task: its asked cell is the highlighted one (a later task asks another row)
+  const table = cur?.q.detail?.table ?? d?.table;
+  const hasRule = !!table || !!missed.review.why || (d?.examples ?? []).length > 0;
+  // the rule stays on screen while typing: compact rows, a height cap that leaves the input and Check visible, and the
+  // asked row scrolled into view
   const ruleBox = hasRule ? (
     <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
       <Text style={[styles.label, { color: colors.textMuted }]}>{s.practiceRule}</Text>
-      {keyboardOpen ? null : (
-        <ScrollView testID="level-practice-rule-box" style={styles.ruleScroll} nestedScrollEnabled>
-          {d?.table ? (
-            <TableView table={d.table} />
-          ) : (
-            <>
-              {missed.review.why ? (
-                <Text testID="level-practice-rule" style={[styles.text, { color: colors.text }]}>
-                  {missed.review.why}
-                </Text>
-              ) : null}
-              {(d?.examples ?? []).map((e) => (
-                <Text key={e} style={[styles.example, { color: colors.textMuted }]}>
-                  {e}
-                </Text>
-              ))}
-            </>
-          )}
-        </ScrollView>
-      )}
+      <ScrollView ref={ruleScroll} testID="level-practice-rule-box" style={{ maxHeight: keyboardOpen ? RULE_MAX_KEYBOARD : RULE_MAX }} nestedScrollEnabled>
+        {table ? (
+          <TableView table={table} compact onHighlightLayout={(y) => ruleScroll.current?.scrollTo({ y: Math.max(0, y - 24), animated: false })} />
+        ) : (
+          <>
+            {missed.review.why ? (
+              <Text testID="level-practice-rule" style={[styles.text, { color: colors.text }]}>
+                {missed.review.why}
+              </Text>
+            ) : null}
+            {(d?.examples ?? []).map((e) => (
+              <Text key={e} style={[styles.example, { color: colors.textMuted }]}>
+                {e}
+              </Text>
+            ))}
+          </>
+        )}
+      </ScrollView>
     </Card>
   ) : null;
 
@@ -160,7 +165,7 @@ export default function LevelPractice({
       <KeyboardAvoidingView style={styles.flex} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
         {ruleBox ? <View style={styles.rule}>{ruleBox}</View> : null}
         <DockSlotProvider host={dock}>
-          <TestQuestionView key={`${index}:${cur.q.id}`} q={cur.q} learnedLang={learnedLang} strictAccents={strictAccents} instant onDone={answered} />
+          <TestQuestionView key={`${index}:${cur.q.id}`} q={cur.q} learnedLang={learnedLang} strictAccents={strictAccents} instant bottomPad={FAB_CLEARANCE} onDone={answered} />
         </DockSlotProvider>
         {dock.node}
       </KeyboardAvoidingView>
@@ -186,7 +191,6 @@ const styles = StyleSheet.create({
   flex: { flex: 1 },
   body: { padding: spacing.lg, paddingBottom: FAB_CLEARANCE, gap: spacing.md },
   rule: { paddingHorizontal: spacing.lg, paddingTop: spacing.sm },
-  ruleScroll: { maxHeight: 180 },
   card: { borderRadius: radius.lg, padding: spacing.lg, gap: spacing.sm },
   brutalCard: { padding: spacing.lg, gap: spacing.sm },
   title: { fontSize: fontSize.xl, fontWeight: fontWeight.bold, textAlign: 'center' },

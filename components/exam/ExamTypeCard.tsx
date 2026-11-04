@@ -24,6 +24,8 @@ type Props = {
   /** The level test's form task on a non-verb table: the table's title above, and the label of the cell under it. */
   heading?: string;
   label?: string;
+  /** Extra space under the buttons (a floating button of the screen must not sit on them). */
+  bottomPad?: number;
   /** A short sentence for a word with several meanings; the `*marked*` part is highlighted. */
   hint?: string;
   answer: string;
@@ -41,7 +43,7 @@ type Props = {
   onDone: (correct: boolean, given?: string) => void;
 };
 
-export default function ExamTypeCard({ prompt, heading, label, hint, answer, accept, sentence, targetLang, strictAccents, keepUmlauts = false, instant = false, onDone }: Props) {
+export default function ExamTypeCard({ prompt, heading, label, bottomPad, hint, answer, accept, sentence, targetLang, strictAccents, keepUmlauts = false, instant = false, onDone }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const g = useGrammarColors();
@@ -80,7 +82,7 @@ export default function ExamTypeCard({ prompt, heading, label, hint, answer, acc
   );
 
   return (
-    <ScrollView ref={scrollRef} contentContainerStyle={styles.scroll} keyboardShouldPersistTaps="handled">
+    <ScrollView ref={scrollRef} contentContainerStyle={[styles.scroll, bottomPad ? { paddingBottom: bottomPad } : null]} keyboardShouldPersistTaps="handled">
       <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
         {heading ? (
           <Text testID="exam-heading" style={[styles.caption, { color: colors.textMuted }]}>
