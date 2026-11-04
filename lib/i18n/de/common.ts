@@ -28,6 +28,7 @@ const de: typeof en = {
     settings: 'Einstellungen',
     grammar: 'Grammatik',
     stats: 'Statistik',
+    board: 'Wochenrangliste',
     pcic: 'Lernen',
     practice: 'Üben',
     sentences: 'Sätze',

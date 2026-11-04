@@ -35,7 +35,9 @@ jest.mock('expo-sharing', () => ({}));
 jest.mock('expo-document-picker', () => ({}));
 
 import { act, fireEvent, render } from '@testing-library/react-native';
+import { Platform } from 'react-native';
 
+import { clearSession, saveSession } from '@/lib/cloud/session';
 import { getDb } from '@/lib/database';
 import { BETA_FLAGS, __resetBetaForTest, getBeta, setBeta } from '@/lib/beta';
 import { setLanguage } from '@/lib/i18n';
@@ -63,14 +65,16 @@ describe('tab bar: the three beta tabs', () => {
     expect(tabLine(view, 'practice')).toBe('practice|Practice|hidden');
     expect(tabLine(view, 'sentences')).toBe('sentences|Sentences|hidden');
     expect(tabLine(view, 'speak')).toBe('speak|Speak|hidden');
-    for (const name of ['index', 'course', 'stats', 'settings']) expect(tabLine(view, name)).toMatch(/\|shown$/);
+    for (const name of ['index', 'course', 'board', 'stats', 'settings']) expect(tabLine(view, name)).toMatch(/\|shown$/);
     const order = view.getAllByTestId(/^tab-/).map((n) => String(n.props.children).split('|')[0]);
-    expect(order.filter((n) => n !== 'practice' && n !== 'sentences' && n !== 'speak')).toEqual(['index', 'course', 'stats', 'settings']);
+    expect(order.filter((n) => n !== 'practice' && n !== 'sentences' && n !== 'speak')).toEqual(['index', 'course', 'board', 'stats', 'settings']);
     // Grammar, Sentences, Speak, Practice, Stats: Practice comes after the tabs that teach (Kálmán, 2026-11-04)
     expect(order.indexOf('sentences')).toBe(order.indexOf('course') + 1);
     expect(order.indexOf('speak')).toBe(order.indexOf('sentences') + 1);
     expect(order.indexOf('practice')).toBe(order.indexOf('speak') + 1);
-    expect(order.indexOf('stats')).toBe(order.indexOf('practice') + 1);
+    // the weekly leaderboard tab sits right before Stats
+    expect(order.indexOf('board')).toBe(order.indexOf('practice') + 1);
+    expect(order.indexOf('stats')).toBe(order.indexOf('board') + 1);
     view.unmount();
   });
 
@@ -107,6 +111,57 @@ describe('tab bar: the three beta tabs', () => {
     expect(tabLine(view, 'sentences')).toBe('sentences|Frases|hidden');
     expect(tabLine(view, 'speak')).toBe('speak|Hablar|hidden');
     view.unmount();
+  });
+});
+
+describe('tab bar: the weekly leaderboard tab', () => {
+  it('is shown on native with its title', async () => {
+    const view = render(<ThemeProvider><TabLayout /></ThemeProvider>);
+    await flush();
+    expect(tabLine(view, 'board')).toBe('board|Weekly leaderboard|shown');
+    view.unmount();
+  });
+
+  it('is hidden for a guest on web (no cloud session) and shown with one', async () => {
+    jest.replaceProperty(Platform, 'OS', 'web');
+    Object.defineProperty(globalThis, 'location', { configurable: true, value: { search: '' } });
+    const guest = render(<ThemeProvider><TabLayout /></ThemeProvider>);
+    await flush();
+    expect(tabLine(guest, 'board')).toBe('board|Weekly leaderboard|hidden');
+    guest.unmount();
+
+    const store = new Map([['kimacha.cloud.session', JSON.stringify({ name: 'Kálmán', token: 'web-tok' })]]);
+    Object.defineProperty(globalThis, 'localStorage', { configurable: true, value: { getItem: (k: string) => store.get(k) ?? null, setItem: () => {}, removeItem: () => {} } });
+    const member = render(<ThemeProvider><TabLayout /></ThemeProvider>);
+    await flush();
+    expect(tabLine(member, 'board')).toBe('board|Weekly leaderboard|shown');
+    member.unmount();
+    delete (globalThis as { localStorage?: unknown }).localStorage;
+    delete (globalThis as { location?: unknown }).location;
+    jest.restoreAllMocks();
+  });
+});
+
+describe('tab bar: the leaderboard tab follows login and logout on web', () => {
+  it('a guest who logs in gets the tab, a logout hides it again', async () => {
+    jest.replaceProperty(Platform, 'OS', 'web');
+    Object.defineProperty(globalThis, 'location', { configurable: true, value: { search: '' } });
+    const store = new Map<string, string>();
+    Object.defineProperty(globalThis, 'localStorage', {
+      configurable: true,
+      value: { getItem: (k: string) => store.get(k) ?? null, setItem: (k: string, v: string) => void store.set(k, v), removeItem: (k: string) => void store.delete(k) },
+    });
+    const view = render(<ThemeProvider><TabLayout /></ThemeProvider>);
+    await flush();
+    expect(tabLine(view, 'board')).toMatch(/\|hidden$/);
+    await act(async () => { saveSession({ name: 'Kálmán', token: 'web-tok' }); });
+    expect(tabLine(view, 'board')).toMatch(/\|shown$/);
+    await act(async () => { clearSession(); });
+    expect(tabLine(view, 'board')).toMatch(/\|hidden$/);
+    view.unmount();
+    delete (globalThis as { localStorage?: unknown }).localStorage;
+    delete (globalThis as { location?: unknown }).location;
+    jest.restoreAllMocks();
   });
 });
 

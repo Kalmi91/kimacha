@@ -8,6 +8,18 @@ export interface CloudSession {
 
 export const SESSION_KEY = 'kimacha.cloud.session';
 
+// Whoever shows something that depends on being logged in (the weekly leaderboard tab) listens here: save and clear tell it.
+const listeners = new Set<() => void>();
+
+export function subscribeSession(fn: () => void): () => void {
+  listeners.add(fn);
+  return () => {
+    listeners.delete(fn);
+  };
+}
+
+const notify = () => listeners.forEach((fn) => fn());
+
 export function loadSession(): CloudSession | null {
   try {
     const raw = localStorage.getItem(SESSION_KEY);
@@ -24,6 +36,7 @@ export function loadSession(): CloudSession | null {
 export function saveSession(session: CloudSession): boolean {
   try {
     localStorage.setItem(SESSION_KEY, JSON.stringify({ name: session.name, token: session.token }));
+    notify();
     return true;
   } catch {
     return false;
@@ -36,4 +49,5 @@ export function clearSession(): void {
   } catch {
     // nothing stored, nothing to clear
   }
+  notify();
 }

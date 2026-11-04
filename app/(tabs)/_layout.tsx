@@ -1,5 +1,5 @@
 import type { ComponentProps } from 'react';
-import { Pressable, StyleSheet, View, type ColorValue } from 'react-native';
+import { Platform, Pressable, StyleSheet, View, type ColorValue } from 'react-native';
 import { Text } from '@/components/KText';
 import { Tabs } from 'expo-router';
 import { SymbolView, type SymbolViewProps } from 'expo-symbols';
@@ -12,6 +12,7 @@ import { brutalHeaderOptions } from '@/lib/brutalHeader';
 import { useSkinDecor } from '@/components/skins';
 import { t } from '@/lib/i18n';
 import { useBeta } from '@/lib/beta';
+import { useHasSession } from '@/lib/cloud/useHasSession';
 import { FeedbackHeaderProvider } from '@/lib/feedbackHeader';
 import { ScreenFeedbackFrame } from '@/lib/screenFeedback';
 
@@ -29,6 +30,8 @@ export default function TabLayout() {
   const showPractice = useBeta('practiceTab');
   const showSentences = useBeta('sentenceTab');
   const showSpeak = useBeta('speechTab');
+  // the weekly leaderboard needs a cloud account on web; the tab follows login and logout
+  const hasSession = useHasSession();
 
   // On the brutalist palette the active icon sits on a filled square with an ink border.
   const tabIcon = (name: SymbolViewProps['name'], color: ColorValue, focused: boolean) => {
@@ -155,6 +158,17 @@ export default function TabLayout() {
           title: s.tabs.practice,
           tabBarAccessibilityLabel: s.tabs.practice,
           ...(showPractice ? { tabBarButton: tabButton({ ios: 'dumbbell.fill', android: 'fitness_center', web: 'fitness_center' }) } : { href: null }),
+        }}
+      />
+      <Tabs.Screen
+        name="board"
+        options={{
+          title: s.tabs.board,
+          tabBarAccessibilityLabel: s.tabs.board,
+          // draws its own header (band + title + feedback button)
+          headerShown: false,
+          // a guest on web has no cloud account, so no board (the same condition the old Stats card hid itself with)
+          ...(Platform.OS === 'web' && !hasSession ? { href: null } : { tabBarButton: tabButton({ ios: 'trophy.fill', android: 'emoji_events', web: 'emoji_events' }) }),
         }}
       />
       <Tabs.Screen

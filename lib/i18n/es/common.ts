@@ -28,6 +28,7 @@ const es: typeof en = {
     settings: 'Ajustes',
     grammar: 'Gramática',
     stats: 'Estadísticas',
+    board: 'Clasificación semanal',
     pcic: 'Aprender',
     practice: 'Práctica',
     sentences: 'Frases',

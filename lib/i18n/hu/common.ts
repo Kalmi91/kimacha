@@ -28,6 +28,7 @@ const hu: typeof en = {
     settings: 'Beállítások',
     grammar: 'Nyelvtan',
     stats: 'Statisztika',
+    board: 'Heti rangsor',
     pcic: 'Tanulás',
     practice: 'Gyakorlás',
     sentences: 'Mondatok',
