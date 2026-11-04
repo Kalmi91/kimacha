@@ -337,12 +337,20 @@
         "es": "ser",
         "forms": [
           "soy",
-          "es",
-          "eres"
+          "es"
         ],
         "en": "to be",
         "hu": "lenni",
         "de": "sein"
+      },
+      {
+        "es": "estar",
+        "forms": [
+          "está"
+        ],
+        "en": "to be (where, how)",
+        "hu": "lenni (hol, hogyan)",
+        "de": "sein (wo, wie)"
       },
       {
         "es": "hay",
@@ -350,7 +358,7 @@
           "hay"
         ],
         "en": "there is, there are",
-        "hu": "van, létezik",
+        "hu": "van",
         "de": "es gibt"
       },
       {
@@ -466,9 +474,8 @@
         "de": "mein, dein"
       },
       {
-        "es": "esto",
+        "es": "esta, esa",
         "forms": [
-          "esta",
           "esta"
         ],
         "en": "this, that",
@@ -680,24 +687,6 @@
         "de": "dann"
       },
       {
-        "es": "ahí",
-        "forms": [
-          "aquí"
-        ],
-        "en": "there, here",
-        "hu": "ott, itt",
-        "de": "dort, hier"
-      },
-      {
-        "es": "solo",
-        "forms": [
-          "solo"
-        ],
-        "en": "alone, only",
-        "hu": "egyedül, csak",
-        "de": "allein, nur"
-      },
-      {
         "es": "todavía",
         "forms": [
           "todavía"
@@ -752,15 +741,6 @@
         "de": "schön"
       },
       {
-        "es": "rico",
-        "forms": [
-          "rico"
-        ],
-        "en": "tasty, delicious",
-        "hu": "finom",
-        "de": "lecker"
-      },
-      {
         "es": "interesante",
         "forms": [
           "interesante"
@@ -772,21 +752,11 @@
       {
         "es": "el hijo",
         "forms": [
-          "hijos",
-          "hijo"
+          "hijos"
         ],
-        "en": "child, son, daughter",
-        "hu": "gyerek, fiú, lány",
-        "de": "Kind, Sohn, Tochter"
-      },
-      {
-        "es": "único",
-        "forms": [
-          "único"
-        ],
-        "en": "only, unique",
-        "hu": "egyetlen",
-        "de": "einzig"
+        "en": "son (hijos: children)",
+        "hu": "fiú (hijos: gyerekek)",
+        "de": "Sohn (hijos: Kinder)"
       },
       {
         "es": "el hermano",
@@ -796,7 +766,7 @@
           "hermanas"
         ],
         "en": "brother, sibling",
-        "hu": "testvér, báty",
+        "hu": "fiútestvér, testvér",
         "de": "Bruder, Geschwister"
       },
       {
@@ -865,13 +835,22 @@
         "de": "passieren"
       },
       {
-        "es": "siento",
+        "es": "lo",
         "forms": [
           "lo"
         ],
-        "en": "it (object)",
-        "hu": "azt",
-        "de": "es"
+        "en": "it, him (object)",
+        "hu": "azt (tárgy)",
+        "de": "es (Objekt)"
+      },
+      {
+        "es": "aquí",
+        "forms": [
+          "aquí"
+        ],
+        "en": "here",
+        "hu": "itt",
+        "de": "hier"
       },
       {
         "es": "Ana",
@@ -891,6 +870,15 @@
         "en": "ah, oh, hmm",
         "hu": "á, jaj, hmm",
         "de": "ah, oh, hmm"
+      },
+      {
+        "es": "entender",
+        "forms": [
+          "entiendo"
+        ],
+        "en": "to understand",
+        "hu": "érteni",
+        "de": "verstehen"
       }
     ],
     "turns": [
@@ -945,10 +933,10 @@
                 "de": "Nein, ich habe hier keine Familie."
               },
               {
-                "es": "Vivo solo.",
-                "en": "I live alone.",
-                "hu": "Egyedül élek.",
-                "de": "Ich wohne allein."
+                "es": "No, mi familia no está aquí.",
+                "en": "No, my family isn't here.",
+                "hu": "Nem, a családom nincs itt.",
+                "de": "Nein, meine Familie ist nicht hier."
               }
             ],
             "reply": {
@@ -978,13 +966,13 @@
               {
                 "es": "Sí, tengo un hermano.",
                 "en": "Yes, I have a brother.",
-                "hu": "Igen, van egy bátyám.",
+                "hu": "Igen, van egy fiútestvérem.",
                 "de": "Ja, ich habe einen Bruder."
               },
               {
                 "es": "Tengo dos hermanas.",
                 "en": "I have two sisters.",
-                "hu": "Két nővérem van.",
+                "hu": "Van két lánytestvérem.",
                 "de": "Ich habe zwei Schwestern."
               }
             ],
@@ -1010,19 +998,13 @@
                 "en": "No, I don't have siblings.",
                 "hu": "Nem, nincsenek testvéreim.",
                 "de": "Nein, ich habe keine Geschwister."
-              },
-              {
-                "es": "Soy hijo único.",
-                "en": "I'm an only child.",
-                "hu": "Egyke vagyok.",
-                "de": "Ich bin Einzelkind."
               }
             ],
             "reply": {
-              "es": "Ah, eres hijo único.",
-              "en": "Ah, you're an only child.",
-              "hu": "Á, te egyke vagy.",
-              "de": "Ah, du bist ein Einzelkind."
+              "es": "Ah, no tienes hermanos.",
+              "en": "Ah, you don't have siblings.",
+              "hu": "Á, nincsenek testvéreid.",
+              "de": "Ah, du hast keine Geschwister."
             },
             "next": "home"
           }
@@ -1108,13 +1090,13 @@
               {
                 "es": "Mi familia vive en ___.",
                 "en": "My family lives in ___.",
-                "hu": "A családom ___ él.",
+                "hu": "A családom itt él: ___.",
                 "de": "Meine Familie wohnt in ___."
               },
               {
                 "es": "Vivo en ___.",
                 "en": "I live in ___.",
-                "hu": "___ élek.",
+                "hu": "Itt lakom: ___.",
                 "de": "Ich wohne in ___."
               }
             ],
@@ -1123,6 +1105,29 @@
               "en": "Ah, how interesting.",
               "hu": "Á, milyen érdekes.",
               "de": "Ah, wie interessant."
+            },
+            "next": "food"
+          },
+          {
+            "answers": [
+              "No *",
+              "No no *",
+              "No tengo *",
+              "No"
+            ],
+            "say": [
+              {
+                "es": "No tengo familia aquí.",
+                "en": "I don't have family here.",
+                "hu": "Itt nincs családom.",
+                "de": "Ich habe hier keine Familie."
+              }
+            ],
+            "reply": {
+              "es": "Ah, entiendo.",
+              "en": "Ah, I understand.",
+              "hu": "Á, értem.",
+              "de": "Ah, verstehe."
             },
             "next": "food"
           }
@@ -1157,10 +1162,10 @@
               }
             ],
             "reply": {
-              "es": "¡Qué rico!",
-              "en": "How delicious!",
-              "hu": "De finom!",
-              "de": "Wie lecker!"
+              "es": "¡Qué bien!",
+              "en": "How nice!",
+              "hu": "De jó!",
+              "de": "Wie schön!"
             },
             "next": "invite"
           },
@@ -1181,7 +1186,7 @@
               {
                 "es": "Más o menos.",
                 "en": "So-so.",
-                "hu": "Így-úgy.",
+                "hu": "Úgy-ahogy.",
                 "de": "Es geht so."
               }
             ],
@@ -1207,9 +1212,7 @@
               "Sí *",
               "Sí",
               "Claro",
-              "Puedo *",
-              "Gracias *",
-              "Gracias"
+              "Puedo *"
             ],
             "say": [
               {
@@ -1309,7 +1312,7 @@
           "hay"
         ],
         "en": "there is, there are",
-        "hu": "van, létezik",
+        "hu": "van",
         "de": "es gibt"
       },
       {
@@ -1444,8 +1447,7 @@
       {
         "es": "me, te",
         "forms": [
-          "me",
-          "te"
+          "me"
         ],
         "en": "me, you (object)",
         "hu": "engem, téged",
@@ -1618,15 +1620,6 @@
         "de": "scharf sein"
       },
       {
-        "es": "traer",
-        "forms": [
-          "traigo"
-        ],
-        "en": "to bring",
-        "hu": "hozni",
-        "de": "bringen"
-      },
-      {
         "es": "alegrar",
         "forms": [
           "alegra"
@@ -1634,6 +1627,15 @@
         "en": "to make glad",
         "hu": "megörvendeztetni",
         "de": "freuen"
+      },
+      {
+        "es": "sentir",
+        "forms": [
+          "siento"
+        ],
+        "en": "to feel, to be sorry",
+        "hu": "érezni, sajnálni",
+        "de": "fühlen, bedauern"
       },
       {
         "es": "por favor",
@@ -1670,24 +1672,6 @@
         "en": "right now (Mexican)",
         "hu": "mindjárt (mexikói)",
         "de": "gleich (mexikanisch)"
-      },
-      {
-        "es": "claro",
-        "forms": [
-          "claro"
-        ],
-        "en": "of course",
-        "hu": "persze",
-        "de": "klar"
-      },
-      {
-        "es": "ahí",
-        "forms": [
-          "aquí"
-        ],
-        "en": "there, here",
-        "hu": "ott, itt",
-        "de": "dort, hier"
       },
       {
         "es": "rico",
@@ -1728,21 +1712,12 @@
         "de": "Tisch"
       },
       {
-        "es": "grande",
-        "forms": [
-          "grande"
-        ],
-        "en": "big",
-        "hu": "nagy",
-        "de": "groß"
-      },
-      {
         "es": "perfecto",
         "forms": [
           "perfecto"
         ],
         "en": "perfect",
-        "hu": "tökéletes",
+        "hu": "remek",
         "de": "perfekt"
       },
       {
@@ -1809,7 +1784,7 @@
         "de": "grün"
       },
       {
-        "es": "roja",
+        "es": "rojo",
         "forms": [
           "roja"
         ],
@@ -1881,13 +1856,22 @@
         "de": "Nachtisch"
       },
       {
-        "es": "siento",
+        "es": "lo",
         "forms": [
           "lo"
         ],
-        "en": "it (object)",
-        "hu": "azt",
-        "de": "es"
+        "en": "it, him (object)",
+        "hu": "azt (tárgy)",
+        "de": "es (Objekt)"
+      },
+      {
+        "es": "aquí",
+        "forms": [
+          "aquí"
+        ],
+        "en": "here",
+        "hu": "itt",
+        "de": "hier"
       },
       {
         "es": "tarde",
@@ -1899,6 +1883,15 @@
         "de": "Nachmittag"
       },
       {
+        "es": "ah, ay, mmm",
+        "forms": [
+          "ay"
+        ],
+        "en": "ah, oh, hmm",
+        "hu": "á, jaj, hmm",
+        "de": "ah, oh, hmm"
+      },
+      {
         "es": "ti",
         "forms": [
           "ti"
@@ -1906,6 +1899,24 @@
         "en": "you (after a preposition)",
         "hu": "neked",
         "de": "dir"
+      },
+      {
+        "es": "arreglar",
+        "forms": [
+          "arreglo"
+        ],
+        "en": "to fix",
+        "hu": "megoldani, rendbe tenni",
+        "de": "regeln, in Ordnung bringen"
+      },
+      {
+        "es": "libre",
+        "forms": [
+          "libre"
+        ],
+        "en": "free, available",
+        "hu": "szabad",
+        "de": "frei"
       }
     ],
     "turns": [
@@ -1940,9 +1951,9 @@
               }
             ],
             "reply": {
-              "es": "Muy bien, aquí hay una mesa.",
+              "es": "Muy bien, aquí tienes una mesa.",
               "en": "Very well, here's a table.",
-              "hu": "Rendben, itt van egy asztal.",
+              "hu": "Rendben, itt egy asztal.",
               "de": "Sehr gut, hier ist ein Tisch."
             },
             "next": "menu"
@@ -1972,10 +1983,10 @@
               }
             ],
             "reply": {
-              "es": "Perfecto, hay una mesa grande.",
-              "en": "Perfect, there's a big table.",
-              "hu": "Tökéletes, van egy nagy asztal.",
-              "de": "Perfekt, es gibt einen großen Tisch."
+              "es": "Perfecto, hay una mesa libre.",
+              "en": "Perfect, there's a free table.",
+              "hu": "Remek, van egy szabad asztal.",
+              "de": "Perfekt, es gibt einen freien Tisch."
             },
             "next": "menu"
           }
@@ -2133,7 +2144,7 @@
             "reply": {
               "es": "Perfecto, no pica mucho.",
               "en": "Perfect, it's not very spicy.",
-              "hu": "Tökéletes, nem nagyon csípős.",
+              "hu": "Remek, nem nagyon csípős.",
               "de": "Perfekt, sie ist nicht sehr scharf."
             },
             "next": "drink"
@@ -2173,7 +2184,10 @@
           {
             "answers": [
               "Agua",
-              "Quiero agua"
+              "Quiero agua",
+              "Un agua",
+              "El agua",
+              "Agua por favor"
             ],
             "say": [
               {
@@ -2194,7 +2208,10 @@
           {
             "answers": [
               "Refresco",
-              "Quiero refresco"
+              "Quiero refresco",
+              "Un refresco",
+              "El refresco",
+              "Refresco por favor"
             ],
             "say": [
               {
@@ -2215,7 +2232,10 @@
           {
             "answers": [
               "Jugo",
-              "Quiero jugo"
+              "Quiero jugo",
+              "Un jugo",
+              "El jugo",
+              "Jugo por favor"
             ],
             "say": [
               {
@@ -2311,10 +2331,10 @@
               }
             ],
             "reply": {
-              "es": "Claro, ahorita te lo traigo.",
-              "en": "Sure, I'll bring it right now.",
-              "hu": "Persze, mindjárt hozom.",
-              "de": "Klar, ich bringe es gleich."
+              "es": "Ay, lo siento. Ahorita lo arreglo.",
+              "en": "Oh, sorry. I'll fix it right away.",
+              "hu": "Jaj, sajnálom. Mindjárt megoldom.",
+              "de": "Oh, tut mir leid. Ich kläre das gleich."
             },
             "next": "bill"
           }
@@ -2410,8 +2430,7 @@
         "es": "ser",
         "forms": [
           "soy",
-          "es",
-          "son"
+          "es"
         ],
         "en": "to be",
         "hu": "lenni",
@@ -2432,7 +2451,7 @@
           "hay"
         ],
         "en": "there is, there are",
-        "hu": "van, létezik",
+        "hu": "van",
         "de": "es gibt"
       },
       {
@@ -2533,15 +2552,6 @@
         "en": "two",
         "hu": "kettő",
         "de": "zwei"
-      },
-      {
-        "es": "veinte",
-        "forms": [
-          "veinte"
-        ],
-        "en": "twenty",
-        "hu": "húsz",
-        "de": "zwanzig"
       },
       {
         "es": "también",
@@ -2693,15 +2703,6 @@
         "de": "verkaufen"
       },
       {
-        "es": "sentir",
-        "forms": [
-          "siento"
-        ],
-        "en": "to feel, to be sorry",
-        "hu": "érezni, sajnálni",
-        "de": "fühlen, bedauern"
-      },
-      {
         "es": "por favor",
         "forms": [
           "favor"
@@ -2735,7 +2736,7 @@
           "luego"
         ],
         "en": "see you later",
-        "hu": "viszlát később",
+        "hu": "Viszlát!",
         "de": "bis später"
       },
       {
@@ -2766,30 +2767,12 @@
         "de": "klar"
       },
       {
-        "es": "ahí",
-        "forms": [
-          "aquí"
-        ],
-        "en": "there, here",
-        "hu": "ott, itt",
-        "de": "dort, hier"
-      },
-      {
-        "es": "solo",
-        "forms": [
-          "solo"
-        ],
-        "en": "alone, only",
-        "hu": "egyedül, csak",
-        "de": "allein, nur"
-      },
-      {
         "es": "perfecto",
         "forms": [
           "perfecto"
         ],
         "en": "perfect",
-        "hu": "tökéletes",
+        "hu": "remek",
         "de": "perfekt"
       },
       {
@@ -2921,15 +2904,6 @@
         "de": "Bargeld"
       },
       {
-        "es": "en total",
-        "forms": [
-          "total"
-        ],
-        "en": "in total",
-        "hu": "összesen",
-        "de": "insgesamt"
-      },
-      {
         "es": "eso",
         "forms": [
           "eso"
@@ -2939,13 +2913,13 @@
         "de": "das"
       },
       {
-        "es": "siento",
+        "es": "aquí",
         "forms": [
-          "lo"
+          "aquí"
         ],
-        "en": "it (object)",
-        "hu": "azt",
-        "de": "es"
+        "en": "here",
+        "hu": "itt",
+        "de": "hier"
       },
       {
         "es": "día",
@@ -2955,6 +2929,15 @@
         "en": "day",
         "hu": "nap",
         "de": "Tag"
+      },
+      {
+        "es": "ya",
+        "forms": [
+          "ya"
+        ],
+        "en": "already, now",
+        "hu": "már",
+        "de": "schon"
       }
     ],
     "turns": [
@@ -2974,27 +2957,31 @@
               "Manzanas",
               "Quiero manzanas",
               "Naranjas",
-              "Quiero naranjas"
+              "Quiero naranjas",
+              "Busco fruta",
+              "Busco frutas",
+              "Busco manzanas",
+              "Busco naranjas"
             ],
             "say": [
               {
                 "es": "Quiero fruta.",
                 "en": "I want fruit.",
-                "hu": "Gyümölcsöt szeretnék.",
+                "hu": "Gyümölcsöt kérek.",
                 "de": "Ich möchte Obst."
               },
               {
                 "es": "Quiero manzanas.",
                 "en": "I want apples.",
-                "hu": "Almát szeretnék.",
+                "hu": "Almát kérek.",
                 "de": "Ich möchte Äpfel."
               }
             ],
             "reply": {
-              "es": "Tengo fruta muy fresca.",
-              "en": "I have very fresh fruit.",
-              "hu": "Nagyon friss gyümölcsöm van.",
-              "de": "Ich habe sehr frisches Obst."
+              "es": "Tengo fruta muy fresca. Hoy hay manzanas y naranjas muy dulces.",
+              "en": "I have very fresh fruit. Today there are very sweet apples and oranges.",
+              "hu": "Nagyon friss gyümölcsöm van. Ma nagyon édes alma és narancs van.",
+              "de": "Ich habe sehr frisches Obst. Heute gibt es sehr süße Äpfel und Orangen."
             },
             "next": "fruit"
           },
@@ -3007,19 +2994,23 @@
               "Tomates",
               "Quiero tomates",
               "Cebollas",
-              "Quiero cebollas"
+              "Quiero cebollas",
+              "Busco verdura",
+              "Busco verduras",
+              "Busco tomates",
+              "Busco cebollas"
             ],
             "say": [
               {
                 "es": "Quiero verdura.",
                 "en": "I want vegetables.",
-                "hu": "Zöldséget szeretnék.",
+                "hu": "Zöldséget kérek.",
                 "de": "Ich möchte Gemüse."
               },
               {
                 "es": "Quiero tomates.",
                 "en": "I want tomatoes.",
-                "hu": "Paradicsomot szeretnék.",
+                "hu": "Paradicsomot kérek.",
                 "de": "Ich möchte Tomaten."
               }
             ],
@@ -3045,10 +3036,10 @@
               }
             ],
             "reply": {
-              "es": "Claro, aquí hay de todo.",
-              "en": "Sure, there is everything here.",
-              "hu": "Persze, itt minden van.",
-              "de": "Klar, hier gibt es alles."
+              "es": "Claro, aquí hay de todo. Hoy hay manzanas y naranjas muy dulces.",
+              "en": "Sure, there is everything here. Today there are very sweet apples and oranges.",
+              "hu": "Persze, itt minden van. Ma nagyon édes alma és narancs van.",
+              "de": "Klar, hier gibt es alles. Heute gibt es sehr süße Äpfel und Orangen."
             },
             "next": "fruit"
           }
@@ -3056,10 +3047,10 @@
       },
       {
         "id": "fruit",
-        "es": "Hoy hay manzanas y naranjas muy dulces. ¿Cuántos kilos quieres?",
-        "en": "Today there are very sweet apples and oranges. How many kilos do you want?",
-        "hu": "Ma nagyon édes alma és narancs van. Hány kilót kérsz?",
-        "de": "Heute gibt es sehr süße Äpfel und Orangen. Wie viele Kilo möchtest du?",
+        "es": "¿Cuántos kilos quieres?",
+        "en": "How many kilos do you want?",
+        "hu": "Hány kilót kérsz?",
+        "de": "Wie viele Kilo möchtest du?",
         "branches": [
           {
             "answers": [
@@ -3100,7 +3091,7 @@
             "reply": {
               "es": "Muy bien, dos kilos.",
               "en": "Very well, two kilos.",
-              "hu": "Rendben, két kilo.",
+              "hu": "Rendben, két kiló.",
               "de": "Sehr gut, zwei Kilo."
             },
             "next": "more"
@@ -3181,7 +3172,7 @@
             "reply": {
               "es": "Muy bien, dos kilos.",
               "en": "Very well, two kilos.",
-              "hu": "Rendben, két kilo.",
+              "hu": "Rendben, két kiló.",
               "de": "Sehr gut, zwei Kilo."
             },
             "next": "more"
@@ -3245,10 +3236,10 @@
               }
             ],
             "reply": {
-              "es": "¡Qué bueno! Son muy buenos hoy.",
-              "en": "Great! They are very good today.",
-              "hu": "Remek! Ma nagyon jók.",
-              "de": "Prima! Sie sind heute sehr gut."
+              "es": "¡Qué bueno! Hoy está todo muy bueno.",
+              "en": "Great! Everything is very good today.",
+              "hu": "Remek! Ma minden nagyon jó.",
+              "de": "Prima! Heute ist alles sehr gut."
             },
             "next": "pay"
           },
@@ -3287,10 +3278,10 @@
       },
       {
         "id": "pay",
-        "es": "Son veinte pesos en total. ¿Pagas con pesos o con tarjeta?",
-        "en": "That's twenty pesos in total. Do you pay with pesos or with a card?",
-        "hu": "Összesen húsz peso. Pesóval fizetsz, vagy kártyával?",
-        "de": "Das macht zusammen zwanzig Pesos. Zahlst du mit Pesos oder mit Karte?",
+        "es": "Muy bien, ya está todo. ¿Pagas en efectivo o con tarjeta?",
+        "en": "All right, that's everything. Do you pay cash or by card?",
+        "hu": "Rendben, ez minden. Készpénzzel vagy kártyával fizetsz?",
+        "de": "Gut, das ist alles. Zahlst du bar oder mit Karte?",
         "branches": [
           {
             "answers": [
@@ -3298,6 +3289,8 @@
               "Con pesos",
               "Pago con pesos",
               "Efectivo",
+              "En efectivo",
+              "Con efectivo",
               "Tengo pesos"
             ],
             "say": [
@@ -3317,7 +3310,7 @@
             "reply": {
               "es": "Perfecto.",
               "en": "Perfect.",
-              "hu": "Tökéletes.",
+              "hu": "Remek.",
               "de": "Perfekt."
             },
             "next": "bye"
@@ -3338,10 +3331,10 @@
               }
             ],
             "reply": {
-              "es": "Lo siento, aquí solo hay efectivo.",
-              "en": "Sorry, here it's cash only.",
-              "hu": "Sajnálom, itt csak készpénz van.",
-              "de": "Tut mir leid, hier gibt es nur Bargeld."
+              "es": "Perfecto, con tarjeta.",
+              "en": "Perfect, by card.",
+              "hu": "Rendben, kártyával.",
+              "de": "Perfekt, mit Karte."
             },
             "next": "bye"
           }
@@ -3374,7 +3367,7 @@
               {
                 "es": "Hasta luego.",
                 "en": "See you later.",
-                "hu": "Viszlát később.",
+                "hu": "Viszlát!",
                 "de": "Bis später."
               },
               {
@@ -3453,7 +3446,7 @@
           "hay"
         ],
         "en": "there is, there are",
-        "hu": "van, létezik",
+        "hu": "van",
         "de": "es gibt"
       },
       {
@@ -3613,10 +3606,8 @@
         "de": "mein, dein"
       },
       {
-        "es": "esto",
+        "es": "esta, esa",
         "forms": [
-          "esta",
-          "esa",
           "esta"
         ],
         "en": "this, that",
@@ -3685,15 +3676,6 @@
         "en": "much, a lot, many",
         "hu": "sok",
         "de": "viel"
-      },
-      {
-        "es": "poco",
-        "forms": [
-          "poco"
-        ],
-        "en": "little",
-        "hu": "kevés",
-        "de": "wenig"
       },
       {
         "es": "bien",
@@ -3772,7 +3754,8 @@
       {
         "es": "necesitar",
         "forms": [
-          "necesitas"
+          "necesitas",
+          "necesito"
         ],
         "en": "to need",
         "hu": "szüksége van",
@@ -3820,7 +3803,7 @@
       {
         "es": "usar",
         "forms": [
-          "usarlo",
+          "usar",
           "uso"
         ],
         "en": "to use",
@@ -3870,7 +3853,7 @@
           "luego"
         ],
         "en": "see you later",
-        "hu": "viszlát később",
+        "hu": "Viszlát!",
         "de": "bis später"
       },
       {
@@ -3904,12 +3887,11 @@
       {
         "es": "ahí",
         "forms": [
-          "ahí",
-          "aquí"
+          "ahí"
         ],
-        "en": "there, here",
-        "hu": "ott, itt",
-        "de": "dort, hier"
+        "en": "there",
+        "hu": "ott",
+        "de": "dort"
       },
       {
         "es": "solo",
@@ -3929,6 +3911,15 @@
         "en": "pretty, nice",
         "hu": "szép",
         "de": "schön"
+      },
+      {
+        "es": "la casa",
+        "forms": [
+          "casa"
+        ],
+        "en": "house, home",
+        "hu": "ház, otthon",
+        "de": "Haus, Zuhause"
       },
       {
         "es": "la calle",
@@ -3972,7 +3963,7 @@
           "perfecto"
         ],
         "en": "perfect",
-        "hu": "tökéletes",
+        "hu": "remek",
         "de": "perfekt"
       },
       {
@@ -4174,6 +4165,15 @@
         "de": "Problem"
       },
       {
+        "es": "aquí",
+        "forms": [
+          "aquí"
+        ],
+        "en": "here",
+        "hu": "itt",
+        "de": "hier"
+      },
+      {
         "es": "ah, ay, mmm",
         "forms": [
           "ah",
@@ -4208,7 +4208,10 @@
               "El metro",
               "Metro",
               "Dónde está el metro",
-              "Quiero ir al metro"
+              "Quiero ir al metro",
+              "Busco el metro *",
+              "Busco la estación *",
+              "Dónde está el metro *"
             ],
             "say": [
               {
@@ -4238,7 +4241,9 @@
               "La farmacia",
               "Farmacia",
               "Dónde está la farmacia",
-              "Quiero ir a la farmacia"
+              "Quiero ir a la farmacia",
+              "Busco la farmacia *",
+              "Dónde está la farmacia *"
             ],
             "say": [
               {
@@ -4368,10 +4373,10 @@
                 "de": "Ja, ich habe Kopfschmerzen."
               },
               {
-                "es": "Sí, un poco.",
-                "en": "Yes, a little.",
-                "hu": "Igen, egy kicsit.",
-                "de": "Ja, ein bisschen."
+                "es": "Sí, necesito medicina.",
+                "en": "Yes, I need medicine.",
+                "hu": "Igen, szükségem van gyógyszerre.",
+                "de": "Ja, ich brauche Medizin."
               }
             ],
             "reply": {
@@ -4384,9 +4389,8 @@
           },
           {
             "answers": [
-              "No *",
-              "No",
-              "Solo quiero *"
+              "Solo quiero *",
+              "No solo quiero *"
             ],
             "say": [
               {
@@ -4403,22 +4407,44 @@
               "de": "Dort gibt es auch Wasser."
             },
             "next": "together"
+          },
+          {
+            "answers": [
+              "No *",
+              "No no *",
+              "No"
+            ],
+            "say": [
+              {
+                "es": "No, no necesito.",
+                "en": "No, I don't need any.",
+                "hu": "Nem, nincs szükségem rá.",
+                "de": "Nein, brauche ich nicht."
+              }
+            ],
+            "reply": {
+              "es": "Ah, está bien.",
+              "en": "Oh, okay.",
+              "hu": "Á, rendben.",
+              "de": "Ach so, okay."
+            },
+            "next": "together"
           }
         ]
       },
       {
         "id": "map",
-        "es": "Pero hay un mapa en el celular. ¿Sabes usarlo?",
-        "en": "But there's a map on the phone. Do you know how to use it?",
-        "hu": "De van térkép a mobilon. Tudod használni?",
-        "de": "Aber es gibt eine Karte auf dem Handy. Kannst du sie benutzen?",
+        "es": "Pero hay un mapa en el celular. ¿Sabes usar el celular?",
+        "en": "But there's a map on the phone. Do you know how to use the phone?",
+        "hu": "De van térkép a mobilon. Tudod használni a mobilt?",
+        "de": "Aber es gibt eine Karte auf dem Handy. Kannst du das Handy benutzen?",
         "branches": [
           {
             "answers": [
               "Sí *",
               "Sí",
               "Claro",
-              "Sé usarlo"
+              "Sé usar el celular"
             ],
             "say": [
               {
@@ -4452,9 +4478,9 @@
             "say": [
               {
                 "es": "No, no sé.",
-                "en": "No, I don't know.",
-                "hu": "Nem, nem tudom.",
-                "de": "Nein, das weiß ich nicht."
+                "en": "No, I don't know how.",
+                "hu": "Nem, nem tudom, hogyan.",
+                "de": "Nein, ich kann das nicht."
               }
             ],
             "reply": {
@@ -4469,19 +4495,17 @@
       },
       {
         "id": "together",
-        "es": "Yo también voy por esa calle. ¿Quieres venir conmigo?",
-        "en": "I'm going down that street too. Do you want to come with me?",
-        "hu": "Én is arra megyek. Velem jössz?",
-        "de": "Ich gehe auch diese Straße entlang. Möchtest du mit mir kommen?",
+        "es": "Yo voy a mi casa, por esta calle. ¿Quieres venir conmigo?",
+        "en": "I'm going home down this street. Do you want to come with me?",
+        "hu": "Én hazafelé megyek, ezen az utcán. Velem jössz?",
+        "de": "Ich gehe nach Hause, diese Straße entlang. Möchtest du mit mir kommen?",
         "branches": [
           {
             "answers": [
               "Sí *",
               "Sí",
               "Claro",
-              "Vamos",
-              "Gracias *",
-              "Gracias"
+              "Vamos"
             ],
             "say": [
               {
@@ -4508,25 +4532,23 @@
           {
             "answers": [
               "No *",
-              "No",
               "Voy solo",
               "Voy sola"
             ],
             "say": [
               {
-                "es": "No, gracias, voy solo.",
-                "en": "No, thanks, I'll go alone.",
-                "hu": "Nem, köszönöm, egyedül megyek.",
-                "de": "Nein, danke, ich gehe allein."
+                "es": "No, gracias.",
+                "en": "No, thanks.",
+                "hu": "Nem, köszönöm.",
+                "de": "Nein, danke."
               }
             ],
             "reply": {
-              "es": "Está bien, no hay problema.",
-              "en": "Okay, no problem.",
-              "hu": "Rendben, semmi gond.",
-              "de": "In Ordnung, kein Problem."
-            },
-            "next": "chat"
+              "es": "Está bien, no hay problema. ¡Hasta luego!",
+              "en": "Okay, no problem. See you later!",
+              "hu": "Rendben, semmi gond. Viszlát!",
+              "de": "In Ordnung, kein Problem. Bis dann!"
+            }
           }
         ]
       },
@@ -4542,7 +4564,9 @@
               "Sí *",
               "Me gusta *",
               "Mucho",
-              "Sí"
+              "Sí",
+              "Es muy bonita",
+              "Es bonita"
             ],
             "say": [
               {
@@ -4578,7 +4602,7 @@
               {
                 "es": "Más o menos.",
                 "en": "So-so.",
-                "hu": "Így-úgy.",
+                "hu": "Úgy-ahogy.",
                 "de": "Es geht so."
               },
               {
@@ -4589,10 +4613,10 @@
               }
             ],
             "reply": {
-              "es": "Sí, es grande, pero tiene cosas muy bonitas.",
-              "en": "Yes, it's big, but it has very nice things.",
-              "hu": "Igen, nagy, de nagyon szép dolgok vannak benne.",
-              "de": "Ja, sie ist groß, aber sie hat sehr schöne Dinge."
+              "es": "Es muy grande, pero tiene cosas muy bonitas.",
+              "en": "It's very big, but it has very nice things.",
+              "hu": "Nagyon nagy, de nagyon szép dolgok vannak benne.",
+              "de": "Sie ist sehr groß, aber sie hat sehr schöne Dinge."
             },
             "next": "bye"
           }
@@ -4624,7 +4648,7 @@
               {
                 "es": "Hasta luego.",
                 "en": "See you later.",
-                "hu": "Viszlát később.",
+                "hu": "Viszlát!",
                 "de": "Bis später."
               },
               {
