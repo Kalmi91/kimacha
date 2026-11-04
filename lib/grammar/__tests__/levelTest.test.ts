@@ -3,7 +3,18 @@
 
 import type { GrammarKind } from '@/lib/games/content';
 import { appendEvidence, topicTicked, type EvidenceAnswer, type PickTopic, type TopicEvidence } from '@/lib/grammar/randomRound';
-import { levelDone, levelPercent, pickLevelNext, pickLevelQuestion, pickLevelTopic, type LevelTestCtx } from '@/lib/grammar/levelTest';
+import {
+  LEVEL_ROUND_SIZE,
+  levelDone,
+  levelPercent,
+  levelRoundKey,
+  parseLevelRound,
+  pickLevelNext,
+  pickLevelQuestion,
+  pickLevelTopic,
+  weakestTopic,
+  type LevelTestCtx,
+} from '@/lib/grammar/levelTest';
 
 // every topic of these tests has two kinds (the usual case); the one-kind case has its own tests below
 const TWO = () => 2;
@@ -193,5 +204,43 @@ describe('pickLevelNext', () => {
     expect(pickLevelNext(ctx, 'a', 1)).toEqual({ topicId: 'b', qid: 'b-1' });
     expect(pickLevelNext({ ...ctx, topics: [] }, undefined, 1)).toBeNull();
     expect(pickLevelNext({ ...ctx, questionIds: () => [] }, undefined, 1)).toBeNull();
+  });
+});
+
+describe('rounds of 20 (FB581)', () => {
+  it('the key is per language pair and level', () => {
+    expect(levelRoundKey('en→es', 'A1')).not.toBe(levelRoundKey('en→es', 'A2'));
+    expect(levelRoundKey('en→es', 'A1')).not.toBe(levelRoundKey('hu→es', 'A1'));
+  });
+
+  it('a saved round is read back; a damaged value starts a new round (null)', () => {
+    expect(parseLevelRound({ n: 7, right: 5, startPct: 34 })).toEqual({ n: 7, right: 5, startPct: 34 });
+    expect(parseLevelRound({ n: LEVEL_ROUND_SIZE, right: 0, startPct: 0 })).not.toBeNull();
+    for (const bad of [
+      null,
+      undefined,
+      'x',
+      42,
+      {},
+      { n: 21, right: 3, startPct: 10 },
+      { n: -1, right: 0, startPct: 10 },
+      { n: 3, right: 4, startPct: 10 },
+      { n: 3.5, right: 1, startPct: 10 },
+      { n: 3, right: 1, startPct: 'x' },
+      { n: 3, right: 1, startPct: NaN },
+    ]) {
+      expect(parseLevelRound(bad)).toBeNull();
+    }
+  });
+
+  it('the weakest topic is the lowest percent (no percent = 0), ties in syllabus order', () => {
+    const ev = new Map([
+      ['a', evOf(['c', 'c', 'c', 'c'])],
+      ['b', evOf(['c', 'c', 'x', 'x'])],
+    ]);
+    expect(weakestTopic(['a', 'b', 'c'], ev)).toEqual({ id: 'c', pct: 0 });
+    expect(weakestTopic(['a', 'b'], ev)).toEqual({ id: 'b', pct: 50 });
+    expect(weakestTopic(['d', 'c'], ev)).toEqual({ id: 'd', pct: 0 });
+    expect(weakestTopic([], ev)).toBeNull();
   });
 });

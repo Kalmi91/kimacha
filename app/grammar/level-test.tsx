@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react';
-import { ActivityIndicator, KeyboardAvoidingView, Platform, Pressable, StyleSheet, Text, View } from 'react-native';
+import { ActivityIndicator, Keyboard, KeyboardAvoidingView, Platform, Pressable, StyleSheet, Text, View } from 'react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 
 import Colors from '@/constants/Colors';
@@ -8,6 +8,7 @@ import type { Level } from '@/data/words';
 import { getDb } from '@/lib/database';
 import { useLearner } from '@/lib/learner';
 import { sourceFor } from '@/lib/languagePair';
+import { loadResumeValue, saveResumeValue } from '@/lib/resumeStore';
 import { speechLang } from '@/lib/languages';
 import { playChime } from '@/lib/chime';
 import { speak, stopSpeaking } from '@/lib/speech';
@@ -15,7 +16,17 @@ import { t } from '@/lib/i18n';
 import { useTheme } from '@/lib/ThemeContext';
 import { localDateString } from '@/lib/usageStats';
 import type { LessonTestQuestion } from '@/lib/grammar/lessonTest';
-import { kindsOfCtx, levelDone, levelPercent, pickLevelNext } from '@/lib/grammar/levelTest';
+import {
+  LEVEL_ROUND_SIZE,
+  kindsOfCtx,
+  levelDone,
+  levelPercent,
+  levelRoundKey,
+  parseLevelRound,
+  pickLevelNext,
+  weakestTopic,
+  type LevelRound,
+} from '@/lib/grammar/levelTest';
 import { levelTestCtx } from '@/lib/grammar/levelTestView';
 import { hasLesson, syllabusForLevel, syllabusLevels } from '@/lib/grammar/syllabus';
 import { GRAMMAR_RANDOM_KEY, appendEvidence, evidenceFromRows, type EvidenceAnswer, type TopicEvidence } from '@/lib/grammar/randomRound';
@@ -24,7 +35,6 @@ import { Card } from '@/components/grammar/Brutal';
 import LevelTestFeedback from '@/components/grammar/LevelTestFeedback';
 import { ProgressBar } from '@/components/grammar/Themed';
 import TestQuestionView from '@/components/grammar/TestQuestionView';
-import ResultBadge from '@/components/ResultBadge';
 import ExamButton from '@/components/exam/ExamButton';
 import { DockSlotProvider, useDockSlot } from '@/components/learn/DockSlot';
 import { FAB_CLEARANCE } from '@/components/learn/DockedAction';
@@ -34,20 +44,24 @@ import ScreenFeedback from '@/lib/screenFeedback';
 // ONE level's topics, always from the topic with the lowest test percent (core topics first, lib/grammar/levelTest.ts).
 // Every answer is saved as the same per-topic evidence the random round uses (game_progress, GRAMMAR_RANDOM_KEY), so the
 // lesson row badge, the tick and the random round see it, and there is nothing else to resume: the ✕ leaves at once
-// and the next visit continues with the then lowest topic. A right answer chimes, reads the sentence and a green badge
-// marks it; a wrong one shows the right answer, the why and a link to the lesson. When the last topic ticks, a done
-// screen comes once (leave, or keep practising).
-
-const RIGHT_MARK_MS = 900;
+// and the next visit continues with the then lowest topic. Every answer stops on a result card
+// (components/grammar/LevelTestFeedback.tsx) and the test moves on only with Next (FB578): a right answer chimes, reads
+// the sentence and the card explains it; a wrong one shows what was chosen or typed, the right answer, the why and a link to
+// the lesson. The stream is cut into rounds of 20 (header "A1 · 34% · 3/20", a result screen after the 20th, FB581); the
+// round's position survives leaving and an app kill (resume store). When the last topic ticks, a done screen comes once
+// (leave, or keep practising) and goes before the round screen.
 
 interface Current {
   topicId: string;
   qid: string;
 }
 
-interface Wrong {
+interface Result {
   q: LessonTestQuestion;
   topicId: string;
+  ok: boolean;
+  /** What was pressed or typed. */
+  given?: string;
 }
 
 export default function LevelTestScreen() {
@@ -65,8 +79,8 @@ export default function LevelTestScreen() {
   const [seed, setSeed] = useState(0);
   const [evidence, setEvidence] = useState<Map<string, TopicEvidence>>(new Map());
   const [current, setCurrent] = useState<Current | null>(null);
-  const [wrong, setWrong] = useState<Wrong | null>(null);
-  const [rightMark, setRightMark] = useState(0);
+  const [result, setResult] = useState<Result | null>(null);
+  const [round, setRound] = useState<LevelRound>({ n: 0, right: 0, startPct: 0 });
   const [doneOpen, setDoneOpen] = useState(false);
   // the number of answers of this visit: it moves the seed of every pick and renews the question card
   const [asked, setAsked] = useState(0);
@@ -103,6 +117,10 @@ export default function LevelTestScreen() {
         router.back();
         return;
       }
+      const pair = `${d.contentLang}→${d.learnedLang}`;
+      const saved = parseLevelRound(await loadResumeValue(db, levelRoundKey(pair, lvl)));
+      if (!alive) return;
+      setRound(saved ?? { n: 0, right: 0, startPct: levelPercent(levelTestCtx(d, sd, lvl, ev).topics.map((tp) => tp.id), ev) });
       setLevel(lvl);
       setSeed(sd);
       setEvidence(ev);
@@ -114,12 +132,6 @@ export default function LevelTestScreen() {
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps -- the load runs once per visit
   }, []);
-
-  useEffect(() => {
-    if (rightMark === 0) return;
-    const timer = setTimeout(() => setRightMark(0), RIGHT_MARK_MS);
-    return () => clearTimeout(timer);
-  }, [rightMark]);
 
   // the sentence that was read aloud must not go on over another screen
   useEffect(() => () => stopSpeaking(), []);
@@ -153,7 +165,11 @@ export default function LevelTestScreen() {
     return tp ? tp.title[data.contentLang] ?? tp.title.en : id;
   };
 
-  const answered = (ok: boolean) => {
+  const pair = `${data.contentLang}→${data.learnedLang}`;
+  const saveRound = (r: LevelRound | null) => enqueue(async () => void (await saveResumeValue(getDb(), levelRoundKey(pair, level), r)));
+  const roundEnd = round.n >= LEVEL_ROUND_SIZE && !result;
+
+  const answered = (ok: boolean, given?: string) => {
     if (!pendingQ) return;
     const { topicId } = current;
     const answer: EvidenceAnswer = { id: pendingQ.id, kind: pendingQ.kind, ok, at: localDateString() };
@@ -163,13 +179,17 @@ export default function LevelTestScreen() {
     enqueue(() => getDb().setGameProgress(GRAMMAR_RANDOM_KEY, topicId, 'evidence', topicEvidence));
     setEvidence(nextEvidence);
     setCurrent(pickLevelNext(levelTestCtx(data, seed, level, nextEvidence), topicId, seed + asked + 1) ?? current);
+    const nextRound = { ...round, n: round.n + 1, right: round.right + (ok ? 1 : 0) };
+    setRound(nextRound);
+    saveRound(nextRound);
     // the last topic just ticked: the done screen comes once per visit
     if (!doneShown.current && !levelDone(ids, evidence, kindsOf) && levelDone(ids, nextEvidence, kindsOf)) {
       doneShown.current = true;
       setDoneOpen(true);
     }
-    if (ok) setRightMark((n) => n + 1);
-    else setWrong({ q: pendingQ, topicId });
+    // a tap on the result card must not land on a keyboard that is still closing
+    Keyboard.dismiss();
+    setResult({ q: pendingQ, topicId, ok, given });
     // a right answer chimes first and the sentence follows; a wrong one is only read out
     const say = () => {
       if (pendingQ.say) speak(pendingQ.say, speechLang(data.learnedLang));
@@ -184,10 +204,13 @@ export default function LevelTestScreen() {
         <Text style={[styles.close, { color: colors.textMuted }]}>✕</Text>
       </Pressable>
       <Text testID="level-test-header" style={[styles.counter, { color: colors.textMuted }]}>
-        {s.header(level, pct)}
+        {s.header(level, pct, result || roundEnd ? round.n : round.n + 1, LEVEL_ROUND_SIZE)}
       </Text>
       <View style={styles.closeSpacer} />
     </View>
+  );
+  const progress = (
+    <ProgressBar testID="level-test-progress" trackProps={{ testID: "level-test-progress" }} pct={pct} brutalStyle={styles.brutalProgress} trackStyle={styles.track} trackColor={colors.border} fillStyle={styles.fill} fillColor={colors.tint} />
   );
 
   const doneOverlay = doneOpen ? (
@@ -203,20 +226,67 @@ export default function LevelTestScreen() {
     </View>
   ) : null;
 
-  // after a wrong answer: the right one, the why, the link to the lesson.
-  if (wrong) {
+  // after every answer: the result card; the next question comes with Next.
+  if (result) {
     return shell(
       <View style={styles.flex}>
         {header}
-        <ProgressBar testID="level-test-progress" trackProps={{ testID: "level-test-progress" }} pct={pct} brutalStyle={styles.brutalProgress} trackStyle={styles.track} trackColor={colors.border} fillStyle={styles.fill} fillColor={colors.tint} />
+        {progress}
         <LevelTestFeedback
-          q={wrong.q}
-          topicTitle={titleOf(wrong.topicId)}
-          onNext={() => setWrong(null)}
-          onRule={() => router.push(`/grammar/${wrong.topicId}` as never)}
+          q={result.q}
+          topicTitle={titleOf(result.topicId)}
+          ok={result.ok}
+          given={result.given}
+          onNext={() => setResult(null)}
+          onRule={() => router.push(`/grammar/${result.topicId}` as never)}
         />
       </View>,
-      wrong.q.id,
+      result.q.id,
+      undefined,
+      doneOverlay
+    );
+  }
+
+  // after the 20th result: the round summary
+  if (roundEnd) {
+    const weak = weakestTopic(ids, evidence);
+    return shell(
+      <View style={styles.flex}>
+        {header}
+        {progress}
+        <View style={styles.body}>
+          <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
+            <Text style={[styles.line, { color: colors.textMuted }]}>{s.roundDone}</Text>
+            <Text testID="level-test-round-score" style={[styles.title, { color: colors.text }]}>{s.roundScore(round.right, LEVEL_ROUND_SIZE)}</Text>
+            <Text testID="level-test-round-levels" style={[styles.line, { color: colors.text }]}>{s.roundLevels(level, round.startPct, pct)}</Text>
+            {weak ? (
+              <>
+                <Text style={[styles.line, { color: colors.textMuted }]}>{s.weakest}</Text>
+                <Text testID="level-test-round-weakest" style={[styles.line, { color: colors.text }]}>{s.weakestLine(titleOf(weak.id), weak.pct)}</Text>
+              </>
+            ) : null}
+          </Card>
+          <ExamButton
+            testID="level-test-round-next"
+            label={s.nextRound(LEVEL_ROUND_SIZE)}
+            onPress={() => {
+              const fresh = { n: 0, right: 0, startPct: pct };
+              setRound(fresh);
+              saveRound(fresh);
+            }}
+          />
+          <ExamButton
+            testID="level-test-round-leave"
+            secondary
+            label={t().exam.leave}
+            onPress={() => {
+              saveRound(null);
+              router.back();
+            }}
+          />
+        </View>
+      </View>,
+      'round-end',
       undefined,
       doneOverlay
     );
@@ -227,15 +297,7 @@ export default function LevelTestScreen() {
   return shell(
     <KeyboardAvoidingView style={styles.flex} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
       {header}
-      <ProgressBar testID="level-test-progress" trackProps={{ testID: "level-test-progress" }} pct={pct} brutalStyle={styles.brutalProgress} trackStyle={styles.track} trackColor={colors.border} fillStyle={styles.fill} fillColor={colors.tint} />
-      {rightMark > 0 ? (
-        // a zero-height anchor under the progress bar: the badge lies over the top of the next question, centered
-        <View pointerEvents="none" style={styles.rightMarkAnchor}>
-          <View style={styles.rightMark}>
-            <ResultBadge testID="level-test-right-mark" correct align="center" label={t().randomRound.correct} />
-          </View>
-        </View>
-      ) : null}
+      {progress}
       <DockSlotProvider host={dock}>
         <TestQuestionView
           key={`${asked}:${current.topicId}:${pendingQ.id}`}
@@ -269,6 +331,4 @@ const styles = StyleSheet.create({
   track: { height: 8, borderRadius: radius.xs, marginHorizontal: spacing.lg, marginTop: spacing.sm, overflow: 'hidden' },
   fill: { height: '100%', borderRadius: radius.xs },
   brutalProgress: { marginHorizontal: spacing.lg, marginTop: spacing.sm },
-  rightMarkAnchor: { height: 0, zIndex: 10 },
-  rightMark: { position: 'absolute', top: spacing.sm, left: 0, right: 0, alignItems: 'center' },
 });

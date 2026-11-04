@@ -600,7 +600,25 @@
       "verb": "gustar + una cosa",
       "person": "yo",
       "answer": "me gusta",
-      "table": "gustar-presente"
+      "table": "gustar-presente",
+      "wrong": {
+        "yo gusto": {
+          "en": "Gustar works the other way round: the thing that is liked is the subject and the person is the indirect object (me). Say \"me gusta\", not \"yo gusto\".",
+          "es": "Gustar funciona al revés: lo que gusta es el sujeto y la persona es el objeto indirecto (me). Se dice \"me gusta\", no \"yo gusto\"."
+        },
+        "mi gusta": {
+          "en": "\"mi\" is a possessive (my), not an object pronoun. The person goes in as \"me\": \"me gusta\".",
+          "es": "\"mi\" es un posesivo, no un pronombre de objeto. La persona entra como \"me\": \"me gusta\"."
+        },
+        "me gustan": {
+          "en": "Only one thing is liked, so the verb is singular: gusta. The verb follows the thing that is liked, not the person. \"me gusta\".",
+          "es": "Aquí gusta una sola cosa, así que el verbo va en singular: gusta. El verbo sigue a lo que gusta, no a la persona. \"me gusta\"."
+        },
+        "lo gusta": {
+          "en": "\"lo\" is a direct object pronoun. Gustar always takes an indirect one: me, te, le, nos, les.",
+          "es": "\"lo\" es un pronombre de objeto directo. Gustar siempre lleva uno indirecto: me, te, le, nos, les."
+        }
+      }
     },
     {
       "id": "gu-form-02",
@@ -608,7 +626,25 @@
       "verb": "gustar + una cosa",
       "person": "tú",
       "answer": "te gusta",
-      "table": "gustar-presente"
+      "table": "gustar-presente",
+      "wrong": {
+        "tú gustas": {
+          "en": "Gustar works the other way round: the thing that is liked is the subject and the person is the indirect object (te). Say \"te gusta\", not \"tú gustas\".",
+          "es": "Gustar funciona al revés: lo que gusta es el sujeto y la persona es el objeto indirecto (te). Se dice \"te gusta\", no \"tú gustas\"."
+        },
+        "tu gusta": {
+          "en": "\"tu\" is a possessive (your), not an object pronoun. The person goes in as \"te\": \"te gusta\".",
+          "es": "\"tu\" es un posesivo, no un pronombre de objeto. La persona entra como \"te\": \"te gusta\"."
+        },
+        "te gustan": {
+          "en": "Only one thing is liked, so the verb is singular: gusta. The verb follows the thing that is liked, not the person. \"te gusta\".",
+          "es": "Aquí gusta una sola cosa, así que el verbo va en singular: gusta. El verbo sigue a lo que gusta, no a la persona. \"te gusta\"."
+        },
+        "lo gusta": {
+          "en": "\"lo\" is a direct object pronoun. Gustar always takes an indirect one: me, te, le, nos, les.",
+          "es": "\"lo\" es un pronombre de objeto directo. Gustar siempre lleva uno indirecto: me, te, le, nos, les."
+        }
+      }
     },
     {
       "id": "gu-form-03",
@@ -616,7 +652,29 @@
       "verb": "gustar + una cosa",
       "person": "él/ella/usted",
       "answer": "le gusta",
-      "table": "gustar-presente"
+      "table": "gustar-presente",
+      "wrong": {
+        "él gusta": {
+          "en": "Gustar works the other way round: the thing that is liked is the subject and the person is the indirect object (le). Say \"le gusta\", not \"él gusta\".",
+          "es": "Gustar funciona al revés: lo que gusta es el sujeto y la persona es el objeto indirecto (le). Se dice \"le gusta\", no \"él gusta\"."
+        },
+        "su gusta": {
+          "en": "\"su\" is a possessive (his, her or your), not an object pronoun. The person goes in as \"le\": \"le gusta\".",
+          "es": "\"su\" es un posesivo, no un pronombre de objeto. La persona entra como \"le\": \"le gusta\"."
+        },
+        "le gustan": {
+          "en": "Only one thing is liked, so the verb is singular: gusta. The verb follows the thing that is liked, not the person. \"le gusta\".",
+          "es": "Aquí gusta una sola cosa, así que el verbo va en singular: gusta. El verbo sigue a lo que gusta, no a la persona. \"le gusta\"."
+        },
+        "lo gusta": {
+          "en": "\"lo\" is a direct object pronoun. Gustar always takes an indirect one: me, te, le, nos, les.",
+          "es": "\"lo\" es un pronombre de objeto directo. Gustar siempre lleva uno indirecto: me, te, le, nos, les."
+        },
+        "les gusta": {
+          "en": "\"les\" is for several people. For one person (él, ella, usted) it is \"le\".",
+          "es": "\"les\" es para varias personas. Para una (él, ella, usted) es \"le\"."
+        }
+      }
     },
     {
       "id": "gu-form-04",
@@ -624,7 +682,25 @@
       "verb": "gustar + una cosa",
       "person": "nosotros",
       "answer": "nos gusta",
-      "table": "gustar-presente"
+      "table": "gustar-presente",
+      "wrong": {
+        "nosotros gustamos": {
+          "en": "Gustar works the other way round: the thing that is liked is the subject and the person is the indirect object (nos). Say \"nos gusta\", not \"nosotros gustamos\".",
+          "es": "Gustar funciona al revés: lo que gusta es el sujeto y la persona es el objeto indirecto (nos). Se dice \"nos gusta\", no \"nosotros gustamos\"."
+        },
+        "nuestro gusta": {
+          "en": "\"nuestro\" is a possessive (our), not an object pronoun. The person goes in as \"nos\": \"nos gusta\".",
+          "es": "\"nuestro\" es un posesivo, no un pronombre de objeto. La persona entra como \"nos\": \"nos gusta\"."
+        },
+        "nos gustan": {
+          "en": "Only one thing is liked, so the verb is singular: gusta. The verb follows the thing that is liked, not the person. \"nos gusta\".",
+          "es": "Aquí gusta una sola cosa, así que el verbo va en singular: gusta. El verbo sigue a lo que gusta, no a la persona. \"nos gusta\"."
+        },
+        "lo gusta": {
+          "en": "\"lo\" is a direct object pronoun. Gustar always takes an indirect one: me, te, le, nos, les.",
+          "es": "\"lo\" es un pronombre de objeto directo. Gustar siempre lleva uno indirecto: me, te, le, nos, les."
+        }
+      }
     },
     {
       "id": "gu-form-06",
@@ -632,7 +708,29 @@
       "verb": "gustar + una cosa",
       "person": "ellos/ellas/ustedes",
       "answer": "les gusta",
-      "table": "gustar-presente"
+      "table": "gustar-presente",
+      "wrong": {
+        "ellos gustan": {
+          "en": "Gustar works the other way round: the thing that is liked is the subject and the person is the indirect object (les). Say \"les gusta\", not \"ellos gustan\".",
+          "es": "Gustar funciona al revés: lo que gusta es el sujeto y la persona es el objeto indirecto (les). Se dice \"les gusta\", no \"ellos gustan\"."
+        },
+        "su gusta": {
+          "en": "\"su\" is a possessive (their or your), not an object pronoun. The person goes in as \"les\": \"les gusta\".",
+          "es": "\"su\" es un posesivo, no un pronombre de objeto. La persona entra como \"les\": \"les gusta\"."
+        },
+        "les gustan": {
+          "en": "Only one thing is liked, so the verb is singular: gusta. The verb follows the thing that is liked, not the person. \"les gusta\".",
+          "es": "Aquí gusta una sola cosa, así que el verbo va en singular: gusta. El verbo sigue a lo que gusta, no a la persona. \"les gusta\"."
+        },
+        "los gusta": {
+          "en": "\"los\" is a direct object pronoun. Gustar always takes an indirect one: me, te, le, nos, les.",
+          "es": "\"los\" es un pronombre de objeto directo. Gustar siempre lleva uno indirecto: me, te, le, nos, les."
+        },
+        "le gusta": {
+          "en": "\"le\" is for one person. For several people (ellos, ellas, ustedes) it is \"les\".",
+          "es": "\"le\" es para una persona. Para varias (ellos, ellas, ustedes) es \"les\"."
+        }
+      }
     },
     {
       "id": "gu-form-07",
@@ -640,7 +738,25 @@
       "verb": "gustar + varias cosas",
       "person": "yo",
       "answer": "me gustan",
-      "table": "gustar-presente"
+      "table": "gustar-presente",
+      "wrong": {
+        "yo gusto": {
+          "en": "Gustar works the other way round: the thing that is liked is the subject and the person is the indirect object (me). Say \"me gustan\", not \"yo gusto\".",
+          "es": "Gustar funciona al revés: lo que gusta es el sujeto y la persona es el objeto indirecto (me). Se dice \"me gustan\", no \"yo gusto\"."
+        },
+        "mi gustan": {
+          "en": "\"mi\" is a possessive (my), not an object pronoun. The person goes in as \"me\": \"me gustan\".",
+          "es": "\"mi\" es un posesivo, no un pronombre de objeto. La persona entra como \"me\": \"me gustan\"."
+        },
+        "me gusta": {
+          "en": "Several things are liked, so the verb is plural: gustan. The verb follows the thing that is liked, not the person. \"me gustan\".",
+          "es": "Aquí gustan varias cosas, así que el verbo va en plural: gustan. El verbo sigue a lo que gusta, no a la persona. \"me gustan\"."
+        },
+        "lo gustan": {
+          "en": "\"lo\" is a direct object pronoun. Gustar always takes an indirect one: me, te, le, nos, les.",
+          "es": "\"lo\" es un pronombre de objeto directo. Gustar siempre lleva uno indirecto: me, te, le, nos, les."
+        }
+      }
     },
     {
       "id": "gu-form-08",
@@ -648,7 +764,25 @@
       "verb": "gustar + varias cosas",
       "person": "tú",
       "answer": "te gustan",
-      "table": "gustar-presente"
+      "table": "gustar-presente",
+      "wrong": {
+        "tú gustas": {
+          "en": "Gustar works the other way round: the thing that is liked is the subject and the person is the indirect object (te). Say \"te gustan\", not \"tú gustas\".",
+          "es": "Gustar funciona al revés: lo que gusta es el sujeto y la persona es el objeto indirecto (te). Se dice \"te gustan\", no \"tú gustas\"."
+        },
+        "tu gustan": {
+          "en": "\"tu\" is a possessive (your), not an object pronoun. The person goes in as \"te\": \"te gustan\".",
+          "es": "\"tu\" es un posesivo, no un pronombre de objeto. La persona entra como \"te\": \"te gustan\"."
+        },
+        "te gusta": {
+          "en": "Several things are liked, so the verb is plural: gustan. The verb follows the thing that is liked, not the person. \"te gustan\".",
+          "es": "Aquí gustan varias cosas, así que el verbo va en plural: gustan. El verbo sigue a lo que gusta, no a la persona. \"te gustan\"."
+        },
+        "lo gustan": {
+          "en": "\"lo\" is a direct object pronoun. Gustar always takes an indirect one: me, te, le, nos, les.",
+          "es": "\"lo\" es un pronombre de objeto directo. Gustar siempre lleva uno indirecto: me, te, le, nos, les."
+        }
+      }
     },
     {
       "id": "gu-form-09",
@@ -656,7 +790,29 @@
       "verb": "gustar + varias cosas",
       "person": "él/ella/usted",
       "answer": "le gustan",
-      "table": "gustar-presente"
+      "table": "gustar-presente",
+      "wrong": {
+        "él gusta": {
+          "en": "Gustar works the other way round: the thing that is liked is the subject and the person is the indirect object (le). Say \"le gustan\", not \"él gusta\".",
+          "es": "Gustar funciona al revés: lo que gusta es el sujeto y la persona es el objeto indirecto (le). Se dice \"le gustan\", no \"él gusta\"."
+        },
+        "su gustan": {
+          "en": "\"su\" is a possessive (his, her or your), not an object pronoun. The person goes in as \"le\": \"le gustan\".",
+          "es": "\"su\" es un posesivo, no un pronombre de objeto. La persona entra como \"le\": \"le gustan\"."
+        },
+        "le gusta": {
+          "en": "Several things are liked, so the verb is plural: gustan. The verb follows the thing that is liked, not the person. \"le gustan\".",
+          "es": "Aquí gustan varias cosas, así que el verbo va en plural: gustan. El verbo sigue a lo que gusta, no a la persona. \"le gustan\"."
+        },
+        "lo gustan": {
+          "en": "\"lo\" is a direct object pronoun. Gustar always takes an indirect one: me, te, le, nos, les.",
+          "es": "\"lo\" es un pronombre de objeto directo. Gustar siempre lleva uno indirecto: me, te, le, nos, les."
+        },
+        "les gustan": {
+          "en": "\"les\" is for several people. For one person (él, ella, usted) it is \"le\".",
+          "es": "\"les\" es para varias personas. Para una (él, ella, usted) es \"le\"."
+        }
+      }
     },
     {
       "id": "gu-form-10",
@@ -664,7 +820,25 @@
       "verb": "gustar + varias cosas",
       "person": "nosotros",
       "answer": "nos gustan",
-      "table": "gustar-presente"
+      "table": "gustar-presente",
+      "wrong": {
+        "nosotros gustamos": {
+          "en": "Gustar works the other way round: the thing that is liked is the subject and the person is the indirect object (nos). Say \"nos gustan\", not \"nosotros gustamos\".",
+          "es": "Gustar funciona al revés: lo que gusta es el sujeto y la persona es el objeto indirecto (nos). Se dice \"nos gustan\", no \"nosotros gustamos\"."
+        },
+        "nuestro gustan": {
+          "en": "\"nuestro\" is a possessive (our), not an object pronoun. The person goes in as \"nos\": \"nos gustan\".",
+          "es": "\"nuestro\" es un posesivo, no un pronombre de objeto. La persona entra como \"nos\": \"nos gustan\"."
+        },
+        "nos gusta": {
+          "en": "Several things are liked, so the verb is plural: gustan. The verb follows the thing that is liked, not the person. \"nos gustan\".",
+          "es": "Aquí gustan varias cosas, así que el verbo va en plural: gustan. El verbo sigue a lo que gusta, no a la persona. \"nos gustan\"."
+        },
+        "lo gustan": {
+          "en": "\"lo\" is a direct object pronoun. Gustar always takes an indirect one: me, te, le, nos, les.",
+          "es": "\"lo\" es un pronombre de objeto directo. Gustar siempre lleva uno indirecto: me, te, le, nos, les."
+        }
+      }
     },
     {
       "id": "gu-form-12",
@@ -672,7 +846,29 @@
       "verb": "gustar + varias cosas",
       "person": "ellos/ellas/ustedes",
       "answer": "les gustan",
-      "table": "gustar-presente"
+      "table": "gustar-presente",
+      "wrong": {
+        "ellos gustan": {
+          "en": "Gustar works the other way round: the thing that is liked is the subject and the person is the indirect object (les). Say \"les gustan\", not \"ellos gustan\".",
+          "es": "Gustar funciona al revés: lo que gusta es el sujeto y la persona es el objeto indirecto (les). Se dice \"les gustan\", no \"ellos gustan\"."
+        },
+        "su gustan": {
+          "en": "\"su\" is a possessive (their or your), not an object pronoun. The person goes in as \"les\": \"les gustan\".",
+          "es": "\"su\" es un posesivo, no un pronombre de objeto. La persona entra como \"les\": \"les gustan\"."
+        },
+        "les gusta": {
+          "en": "Several things are liked, so the verb is plural: gustan. The verb follows the thing that is liked, not the person. \"les gustan\".",
+          "es": "Aquí gustan varias cosas, así que el verbo va en plural: gustan. El verbo sigue a lo que gusta, no a la persona. \"les gustan\"."
+        },
+        "los gustan": {
+          "en": "\"los\" is a direct object pronoun. Gustar always takes an indirect one: me, te, le, nos, les.",
+          "es": "\"los\" es un pronombre de objeto directo. Gustar siempre lleva uno indirecto: me, te, le, nos, les."
+        },
+        "le gustan": {
+          "en": "\"le\" is for one person. For several people (ellos, ellas, ustedes) it is \"les\".",
+          "es": "\"le\" es para una persona. Para varias (ellos, ellas, ustedes) es \"les\"."
+        }
+      }
     },
     {
       "kind": "why",

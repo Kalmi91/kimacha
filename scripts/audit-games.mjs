@@ -750,6 +750,17 @@ function auditFormItem(item, itemPath, topic, tableIds, lang = 'es') {
     if (!Array.isArray(item.accept)) p1.push({ path: itemPath, issue: 'form accept must be an array' });
     else for (const alt of item.accept) if (alt === item.answer) p1.push({ path: itemPath, issue: `form accept entry equals answer: "${alt}"` });
   }
+  // optional typed-mistake texts for the level test's result card: typed answer -> { en, es }, never a right answer
+  if (item.wrong !== undefined) {
+    if (!item.wrong || typeof item.wrong !== 'object' || Array.isArray(item.wrong)) p1.push({ path: itemPath, issue: 'form wrong must be an object' });
+    else {
+      for (const [typed, texts] of Object.entries(item.wrong)) {
+        if (typed.trim() === '') p1.push({ path: itemPath, issue: 'form wrong has an empty typed answer' });
+        if (typed === item.answer || (item.accept ?? []).includes(typed)) p1.push({ path: itemPath, issue: `form wrong key is a right answer: "${typed}"` });
+        checkLangs(texts, `${itemPath} wrong "${typed}"`);
+      }
+    }
+  }
   if (!item.table || !tableIds.has(item.table)) {
     p1.push({ path: itemPath, issue: `form item references unknown table "${item.table}"` });
     return;
