@@ -8,6 +8,7 @@ import { getDb } from '@/lib/database';
 import { useLearner } from '@/lib/learner';
 import { PCIC_LEVELS, pcicItemsForLevel } from '@/data/pcic';
 import { t } from '@/lib/i18n';
+import { keyboardDismissOnDrag } from '@/lib/keyboardTap';
 import { pairOf } from '@/lib/languagePair';
 import { speechLang } from '@/lib/languages';
 import { hasVoiceFor, loadVoices, stop as stopSpeaking } from '@/lib/speech';
@@ -438,7 +439,7 @@ export default function MockExamScreen() {
             style={{ marginBottom: dock.bottomOffset ?? (kbHeight > 0 ? dockLift : 0) }}
             contentContainerStyle={styles.body}
             keyboardShouldPersistTaps="handled"
-            keyboardDismissMode={task.kind === 'speaking' ? 'none' : 'on-drag'}
+            keyboardDismissMode={task.kind === 'speaking' ? 'none' : keyboardDismissOnDrag()}
           >
             <MockTaskCard
               key={task.id}

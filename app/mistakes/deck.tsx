@@ -5,7 +5,7 @@ import { TitleText, themedInputStyle, BackButton, ActionButton } from '@/compone
 import { useRouter } from 'expo-router';
 
 import Colors from '@/constants/Colors';
-import { dismissKeyboardOnTap } from '@/lib/keyboardTap';
+import { dismissKeyboardOnTap, keyboardDismissOnDrag } from '@/lib/keyboardTap';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
@@ -162,7 +162,7 @@ export default function MistakesDeckScreen() {
         style={styles.cardScroll}
         contentContainerStyle={[styles.cardScrollContent, { paddingBottom: 16 + dockH + dockLift }]}
         keyboardShouldPersistTaps="handled"
-        keyboardDismissMode="on-drag"
+        keyboardDismissMode={keyboardDismissOnDrag()}
       >
         <CardShell compact colors={colors} chip={CHIP_LABEL[currentCard.kind](s)} onPress={dismissKeyboardOnTap}>
           <Text variant="word" style={[styles.promptBig, { color: colors.text }]}>{currentCard.prompt}</Text>

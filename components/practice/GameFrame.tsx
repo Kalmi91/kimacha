@@ -10,6 +10,7 @@ import { useDockLift } from '@/components/learn/useDockLift';
 import LevelCounter from '@/components/practice/LevelCounter';
 import type { PcicTarget } from '@/data/pcic';
 import { t } from '@/lib/i18n';
+import { keyboardDismissOnDrag } from '@/lib/keyboardTap';
 import { pairOf } from '@/lib/languagePair';
 import ScreenFeedback from '@/lib/screenFeedback';
 import { useTheme } from '@/lib/ThemeContext';
@@ -95,7 +96,7 @@ export default function GameFrame({ testID, target, currentCard, creditSeq = 0, 
           style={[styles.scroll, { marginBottom: insets.marginBottom }]}
           contentContainerStyle={{ paddingBottom: insets.paddingBottom }}
           keyboardShouldPersistTaps="handled"
-          keyboardDismissMode="on-drag"
+          keyboardDismissMode={keyboardDismissOnDrag()}
         >
           {children}
         </ScrollView>
