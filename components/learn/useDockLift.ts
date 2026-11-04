@@ -1,6 +1,11 @@
 import { useEffect, useState } from 'react';
-import { Keyboard } from 'react-native';
+import { Keyboard, Platform } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+
+// On the web build react-native-web fires no Keyboard events, so a phone browser's open keyboard is
+// seen through the visual viewport instead: the part of the window the keyboard covers. A gap under
+// this many px is the URL bar or a pinch, not a keyboard.
+const WEB_KEYBOARD_MIN_PX = 80;
 
 // The typing card had two Check buttons (the in-card one and the older one
 // below the card); there is one now, docked to the bottom edge of this screen,
@@ -32,6 +37,20 @@ export function useDockLift() {
 
   // 'Did' events, not 'Will': Android only fires those.
   useEffect(() => {
+    if (Platform.OS === 'web') {
+      // The fallback for browsers that ignore `interactive-widget=resizes-content` (app/+html.tsx, e.g. Safari).
+      // Where it is honored the layout shrinks with the keyboard, the difference is 0 and nothing is lifted twice.
+      const vv = typeof window !== 'undefined' ? window.visualViewport : null;
+      if (!vv) return;
+      const update = () => {
+        const covered = Math.max(0, Math.round(window.innerHeight - vv.height - vv.offsetTop));
+        setKbHeight(covered < WEB_KEYBOARD_MIN_PX ? 0 : covered);
+      };
+      update();
+      vv.addEventListener('resize', update);
+      vv.addEventListener('scroll', update);
+      return () => { vv.removeEventListener('resize', update); vv.removeEventListener('scroll', update); };
+    }
     const show = Keyboard.addListener('keyboardDidShow', (e) => setKbHeight(e.endCoordinates.height));
     const hide = Keyboard.addListener('keyboardDidHide', () => setKbHeight(0));
     return () => { show.remove(); hide.remove(); };

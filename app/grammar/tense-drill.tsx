@@ -1,9 +1,10 @@
 import { useCallback, useState } from 'react';
-import { ActivityIndicator, Keyboard, KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, TextInput, View } from 'react-native';
+import { ActivityIndicator, KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, TextInput, View } from 'react-native';
 import { Text } from '@/components/KText';
 import { useRouter } from 'expo-router';
 
 import Colors from '@/constants/Colors';
+import { dismissKeyboardOnTap } from '@/lib/keyboardTap';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { brutalHeaderRowStyle } from '@/lib/brutalHeader';
@@ -243,7 +244,7 @@ export default function TenseDrillScreen() {
         keyboardShouldPersistTaps="handled"
         keyboardDismissMode="on-drag"
       >
-        <CardShell compact colors={colors} chip={d.tenseNames[current.tense].toUpperCase()} onPress={() => Keyboard.dismiss()}>
+        <CardShell compact colors={colors} chip={d.tenseNames[current.tense].toUpperCase()} onPress={dismissKeyboardOnTap}>
           <Text style={[styles.promptCaption, { color: colors.tabIconDefault }]}>{d.tenseHints[current.tense]}</Text>
           <FitText testID="tensedrill-prompt" variant="word" base={32} maxLines={3} reserve={100} style={[styles.promptBig, { color: colors.text }]}>
             {`${current.personLabel} · ${current.infinitive}`}

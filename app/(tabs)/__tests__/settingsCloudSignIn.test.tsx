@@ -55,6 +55,14 @@ describe('Settings: the web guest sign-in row', () => {
     jest.restoreAllMocks();
   });
 
+  it('web has no General and Voice tabs, the Voice tab would be empty there', async () => {
+    jest.replaceProperty(Platform, 'OS', 'web');
+    await renderSettings();
+    expect(screen.queryByTestId('settings-tab-general')).toBeNull();
+    expect(screen.queryByTestId('settings-tab-voice')).toBeNull();
+    expect(screen.getByTestId('settings-theme-row')).toBeTruthy();
+  });
+
   it('shows for a guest on web, and pressing it requests the sign-in chooser', async () => {
     jest.replaceProperty(Platform, 'OS', 'web');
     await renderSettings();

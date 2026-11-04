@@ -1,9 +1,10 @@
 import { useCallback, useState } from 'react';
-import { ActivityIndicator, Keyboard, KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, TextInput, View } from 'react-native';
+import { ActivityIndicator, KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, TextInput, View } from 'react-native';
 import { Text } from '@/components/KText';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 
 import Colors from '@/constants/Colors';
+import { dismissKeyboardOnTap } from '@/lib/keyboardTap';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { brutalHeaderRowStyle } from '@/lib/brutalHeader';
@@ -306,7 +307,7 @@ export default function TableDeckScreen() {
         keyboardShouldPersistTaps="handled"
         keyboardDismissMode="on-drag"
       >
-        <CardShell compact colors={colors} chip={mode === 'table' ? s.tableDeck.chip : s.tableDeck.wordChip} onPress={() => Keyboard.dismiss()}>
+        <CardShell compact colors={colors} chip={mode === 'table' ? s.tableDeck.chip : s.tableDeck.wordChip} onPress={dismissKeyboardOnTap}>
           <Text style={[styles.promptCaption, { color: colors.tabIconDefault }]}>
             {mode === 'table'
               ? current.enPrompt

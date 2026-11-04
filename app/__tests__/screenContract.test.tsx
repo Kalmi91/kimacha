@@ -4,6 +4,7 @@ import path from 'path';
 // Every route screen must name its feedback card (<ScreenFeedback />); the one button is drawn by the screen frame in the
 // root stack's and the tab navigator's screenLayout (lib/screenFeedback.tsx). Exempt: no learning content.
 const EXEMPT = [
+  '+html.tsx', // the web export's HTML document, not a screen
   '+not-found.tsx', // error
   'credits.tsx', // legal
   'onboarding.tsx', // intro

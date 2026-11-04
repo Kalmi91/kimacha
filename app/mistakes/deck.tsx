@@ -1,10 +1,11 @@
 import { useCallback, useState } from 'react';
-import { ActivityIndicator, Keyboard, KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, TextInput, View } from 'react-native';
+import { ActivityIndicator, KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, TextInput, View } from 'react-native';
 import { Text } from '@/components/KText';
 import { TitleText, themedInputStyle, BackButton, ActionButton } from '@/components/grammar/Themed';
 import { useRouter } from 'expo-router';
 
 import Colors from '@/constants/Colors';
+import { dismissKeyboardOnTap } from '@/lib/keyboardTap';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
@@ -163,7 +164,7 @@ export default function MistakesDeckScreen() {
         keyboardShouldPersistTaps="handled"
         keyboardDismissMode="on-drag"
       >
-        <CardShell compact colors={colors} chip={CHIP_LABEL[currentCard.kind](s)} onPress={() => Keyboard.dismiss()}>
+        <CardShell compact colors={colors} chip={CHIP_LABEL[currentCard.kind](s)} onPress={dismissKeyboardOnTap}>
           <Text variant="word" style={[styles.promptBig, { color: colors.text }]}>{currentCard.prompt}</Text>
           {currentCard.kind === 'drill' && (
             <Text style={[styles.promptEn, { color: colors.tabIconDefault }]}>{currentCard.promptEn}</Text>
