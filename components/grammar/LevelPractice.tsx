@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Keyboard, KeyboardAvoidingView, Platform, Pressable, StyleSheet, Text, View } from 'react-native';
+import { Keyboard, KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 import Colors from '@/constants/Colors';
 import { fontSize, fontWeight, radius, spacing } from '@/constants/Theme';
@@ -60,6 +60,16 @@ export default function LevelPractice({
   const [right, setRight] = useState(0);
   const [result, setResult] = useState<{ ok: boolean; given?: string } | null>(null);
   const retried = useRef(new Set<string>());
+  // the rule box folds up while the keyboard is open, so the input stays on a small phone
+  const [keyboardOpen, setKeyboardOpen] = useState(false);
+  useEffect(() => {
+    const show = Keyboard.addListener(Platform.OS === 'ios' ? 'keyboardWillShow' : 'keyboardDidShow', () => setKeyboardOpen(true));
+    const hide = Keyboard.addListener(Platform.OS === 'ios' ? 'keyboardWillHide' : 'keyboardDidHide', () => setKeyboardOpen(false));
+    return () => {
+      show.remove();
+      hide.remove();
+    };
+  }, []);
   useEffect(() => () => stopSpeaking(), []);
 
   const done = index >= queue.length;
@@ -102,27 +112,32 @@ export default function LevelPractice({
   );
 
   const d = missed.detail;
-  const ruleBox = (
+  const hasRule = !!d?.table || !!missed.review.why || (d?.examples ?? []).length > 0;
+  const ruleBox = hasRule ? (
     <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
       <Text style={[styles.label, { color: colors.textMuted }]}>{s.practiceRule}</Text>
-      {d?.table ? (
-        <TableView table={d.table} />
-      ) : (
-        <>
-          {missed.review.why ? (
-            <Text testID="level-practice-rule" style={[styles.text, { color: colors.text }]}>
-              {missed.review.why}
-            </Text>
-          ) : null}
-          {(d?.examples ?? []).map((e) => (
-            <Text key={e} style={[styles.example, { color: colors.textMuted }]}>
-              {e}
-            </Text>
-          ))}
-        </>
+      {keyboardOpen ? null : (
+        <ScrollView testID="level-practice-rule-box" style={styles.ruleScroll} nestedScrollEnabled>
+          {d?.table ? (
+            <TableView table={d.table} />
+          ) : (
+            <>
+              {missed.review.why ? (
+                <Text testID="level-practice-rule" style={[styles.text, { color: colors.text }]}>
+                  {missed.review.why}
+                </Text>
+              ) : null}
+              {(d?.examples ?? []).map((e) => (
+                <Text key={e} style={[styles.example, { color: colors.textMuted }]}>
+                  {e}
+                </Text>
+              ))}
+            </>
+          )}
+        </ScrollView>
       )}
     </Card>
-  );
+  ) : null;
 
   let body;
   if (done) {
@@ -143,7 +158,7 @@ export default function LevelPractice({
   } else if (cur) {
     body = (
       <KeyboardAvoidingView style={styles.flex} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
-        <View style={styles.rule}>{ruleBox}</View>
+        {ruleBox ? <View style={styles.rule}>{ruleBox}</View> : null}
         <DockSlotProvider host={dock}>
           <TestQuestionView key={`${index}:${cur.q.id}`} q={cur.q} learnedLang={learnedLang} strictAccents={strictAccents} instant onDone={answered} />
         </DockSlotProvider>
@@ -171,6 +186,7 @@ const styles = StyleSheet.create({
   flex: { flex: 1 },
   body: { padding: spacing.lg, paddingBottom: FAB_CLEARANCE, gap: spacing.md },
   rule: { paddingHorizontal: spacing.lg, paddingTop: spacing.sm },
+  ruleScroll: { maxHeight: 180 },
   card: { borderRadius: radius.lg, padding: spacing.lg, gap: spacing.sm },
   brutalCard: { padding: spacing.lg, gap: spacing.sm },
   title: { fontSize: fontSize.xl, fontWeight: fontWeight.bold, textAlign: 'center' },

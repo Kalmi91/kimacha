@@ -5,6 +5,7 @@ import { isFormItem, type GrammarTopicData } from '@/lib/games/content';
 import type { FormItem } from '@/lib/grammar/lessonTypes';
 import { buildLessonTest, questionOfItem, type LessonTestQuestion } from '@/lib/grammar/lessonTest';
 import { askedColumn, isPersonTable } from '@/lib/grammar/resultDetail';
+import { isVosotrosItem } from '@/lib/grammar/vosotros';
 import { shuffleArray } from '@/lib/shuffle';
 
 export const PRACTICE_SIZE = 15;
@@ -36,7 +37,22 @@ export function buildPractice(
     const ci = askedColumn(table, item.verb);
     if (ci > 0) {
       table.rows.forEach((row, ri) => {
-        const gen: FormItem = { kind: 'form', id: `${item.id}:p${ri}`, verb: item.verb, person: row[0], answer: row[ci], table: item.table, wrong: item.wrong };
+        // a cell may list alternatives ("he's / she's / it's"): the first is the answer, the rest are accepted
+        const [answer, ...accept] = row[ci].split(' / ').map((x) => x.trim()).filter(Boolean);
+        if (!answer) return;
+        // the missed row keeps the item's own mistake texts; they describe that answer and no other
+        const gen: FormItem = {
+          kind: 'form',
+          id: `${item.id}:p${ri}`,
+          verb: item.verb,
+          person: row[0],
+          answer,
+          ...(accept.length > 0 ? { accept } : {}),
+          table: item.table,
+          ...(row[0] === item.person && item.wrong ? { wrong: item.wrong } : {}),
+        };
+        // the Mexican norm has no vosotros: such a row is no task (the real items are filtered the same way)
+        if (learnedLang === 'es' && isVosotrosItem(gen)) return;
         add(questionOfItem(gen, lesson, learnedLang, contentLang, seed));
       });
     }
