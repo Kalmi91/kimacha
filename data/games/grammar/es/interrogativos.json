@@ -179,7 +179,7 @@
         ["how many", "cuántos", "¿Cuántos años tienes?", "Treinta años."],
         ["which", "cuál", "¿Cuál es tu apellido?", "Pérez."],
         ["why", "por qué", "¿Por qué estudias español?", "Porque me gusta."],
-        ["where from", "de dónde", "¿De dónde eres?", "Soy de Hungría."]
+        ["where from", "de dónde", "¿De dónde eres?", "Soy de Inglaterra."]
       ]
     },
     {
@@ -206,7 +206,7 @@
         ["Tengo treinta años.", "cuántos", "¿Cuántos años tienes?"],
         ["El azul.", "cuál", "¿Cuál prefieres?"],
         ["Porque estoy cansado.", "por qué", "¿Por qué no vienes?"],
-        ["Soy de Hungría.", "de dónde", "¿De dónde eres?"]
+        ["Soy de Inglaterra.", "de dónde", "¿De dónde eres?"]
       ]
     },
     {
@@ -658,7 +658,7 @@
       "id": "int-form-12",
       "kind": "form",
       "verb": "Interrogativo",
-      "person": "Soy de Hungría.",
+      "person": "Soy de Inglaterra.",
       "answer": "de dónde",
       "table": "interrogativos-respuestas"
     },

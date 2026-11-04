@@ -48,7 +48,7 @@
       { "es": "la oficina", "forms": ["oficina"], "en": "office", "hu": "iroda", "de": "Büro" },
       { "es": "un poco", "forms": ["poco"], "en": "a little", "hu": "egy kicsit", "de": "ein bisschen" },
       { "es": "gracias", "forms": ["gracias"], "en": "thank you", "hu": "köszönöm", "de": "danke" },
-      { "es": "Hungría", "forms": ["Hungría"], "en": "Hungary", "hu": "Magyarország", "de": "Ungarn" }
+      { "es": "Inglaterra", "forms": ["Inglaterra"], "en": "England", "hu": "Anglia", "de": "England" }
     ],
     "turns": [
       {
@@ -66,7 +66,7 @@
         "hu": "Örvendek. Honnan jöttél?",
         "de": "Freut mich. Woher kommst du?",
         "ask": { "en": "Say where you are from.", "es": "Di de dónde eres.", "hu": "Mondd meg, honnan jöttél.", "de": "Sag, woher du kommst." },
-        "model": "Soy de Hungría.",
+        "model": "Soy de Inglaterra.",
         "answers": ["Soy de *", "Vengo de *", "De *"]
       },
       {

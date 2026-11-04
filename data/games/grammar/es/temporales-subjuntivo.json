@@ -10,7 +10,7 @@
     {
       "kind": "text",
       "text": {
-        "en": "This lesson shows when the subjunctive is needed in a time clause: “when…”, “as soon as…”, “before…” referring to the future. For a plan, a promise, or a condition, if the event hasn't happened yet, Spanish uses the subjunctive in the subordinate clause where English or Hungarian would use a future or present tense.",
+        "en": "This lesson shows when the subjunctive is needed in a time clause: “when…”, “as soon as…”, “before…” referring to the future. For a plan, a promise, or a condition, if the event hasn't happened yet, Spanish uses the subjunctive in the subordinate clause where English would use a future or present tense.",
         "es": "Esta lección muestra cuándo hace falta el subjuntivo en una subordinada temporal: “cuando…”, “en cuanto…”, “antes de…” referidos al futuro. Ante un plan, una promesa o una condición, si el evento aún no ha ocurrido, el español usa el subjuntivo en la subordinada."
       }
     },
@@ -215,17 +215,17 @@
         { "en": "salir", "es": "salir" }
       ],
       "rows": [
-        ["Cuando (tú, jövő)", "llegues", "tengas", "salgas"],
+        ["Cuando (tú, futuro)", "llegues", "tengas", "salgas"],
         ["Cuando (yo, szokás)", "llego", "tengo", "salgo"],
-        ["En cuanto (ella, jövő)", "llegue", "tenga", "salga"],
-        ["Hasta que (nosotros, jövő)", "lleguemos", "tengamos", "salgamos"],
+        ["En cuanto (ella, futuro)", "llegue", "tenga", "salga"],
+        ["Hasta que (nosotros, futuro)", "lleguemos", "tengamos", "salgamos"],
         ["Antes de que (ustedes)", "lleguen", "tengan", "salgan"],
-        ["Después de que (él, jövő)", "llegue", "tenga", "salga"],
-        ["Tan pronto como (tú, jövő)", "llegues", "tengas", "salgas"],
+        ["Después de que (él, futuro)", "llegue", "tenga", "salga"],
+        ["Tan pronto como (tú, futuro)", "llegues", "tengas", "salgas"],
         ["Mientras (yo, szokás)", "llego", "tengo", "salgo"],
-        ["Cuando (ellos, jövő)", "lleguen", "tengan", "salgan"],
+        ["Cuando (ellos, futuro)", "lleguen", "tengan", "salgan"],
         ["Desde que (yo)", "llego", "tengo", "salgo"],
-        ["Mientras (nosotros, jövő)", "lleguemos", "tengamos", "salgamos"],
+        ["Mientras (nosotros, futuro)", "lleguemos", "tengamos", "salgamos"],
         ["Cuando (ella, szokás)", "llega", "tiene", "sale"]
       ]
     },
@@ -289,7 +289,7 @@
     {
       "kind": "tip",
       "text": {
-        "en": "If the Hungarian sentence would take a future marker (“when I will get home”), Spanish needs the subjunctive.",
+        "en": "If a literal translation would take a future marker (“when I will get home”), Spanish needs the subjunctive.",
         "es": "Si la frase admite un matiz de futuro todavía no cumplido (“cuando llegue”, no “cuando llego”), en español hace falta subjuntivo."
       }
     }
@@ -592,7 +592,7 @@
       "id": "sp-form-01",
       "kind": "form",
       "verb": "llegar",
-      "person": "Cuando (tú, jövő)",
+      "person": "Cuando (tú, futuro)",
       "answer": "llegues",
       "table": "temporales",
       "tense": { "from": "presente", "to": "subjuntivo-presente" }
@@ -610,7 +610,7 @@
       "id": "sp-form-03",
       "kind": "form",
       "verb": "tener",
-      "person": "En cuanto (ella, jövő)",
+      "person": "En cuanto (ella, futuro)",
       "answer": "tenga",
       "table": "temporales",
       "tense": { "from": "presente", "to": "subjuntivo-presente" }
@@ -619,7 +619,7 @@
       "id": "sp-form-04",
       "kind": "form",
       "verb": "salir",
-      "person": "Hasta que (nosotros, jövő)",
+      "person": "Hasta que (nosotros, futuro)",
       "answer": "salgamos",
       "table": "temporales",
       "tense": { "from": "presente", "to": "subjuntivo-presente" }
@@ -637,7 +637,7 @@
       "id": "sp-form-06",
       "kind": "form",
       "verb": "tener",
-      "person": "Después de que (él, jövő)",
+      "person": "Después de que (él, futuro)",
       "answer": "tenga",
       "table": "temporales",
       "tense": { "from": "presente", "to": "subjuntivo-presente" }
@@ -646,7 +646,7 @@
       "id": "sp-form-07",
       "kind": "form",
       "verb": "salir",
-      "person": "Tan pronto como (tú, jövő)",
+      "person": "Tan pronto como (tú, futuro)",
       "answer": "salgas",
       "table": "temporales",
       "tense": { "from": "presente", "to": "subjuntivo-presente" }
@@ -664,7 +664,7 @@
       "id": "sp-form-09",
       "kind": "form",
       "verb": "llegar",
-      "person": "Cuando (ellos, jövő)",
+      "person": "Cuando (ellos, futuro)",
       "answer": "lleguen",
       "table": "temporales",
       "tense": { "from": "presente", "to": "subjuntivo-presente" }
@@ -682,7 +682,7 @@
       "id": "sp-form-11",
       "kind": "form",
       "verb": "tener",
-      "person": "Mientras (nosotros, jövő)",
+      "person": "Mientras (nosotros, futuro)",
       "answer": "tengamos",
       "table": "temporales",
       "tense": { "from": "presente", "to": "subjuntivo-presente" }

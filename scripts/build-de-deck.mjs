@@ -17,6 +17,9 @@
 //   - exception: a de-extra card at a LOWER level than an existing card claims the headword. Every " / " branch of its
 //     headword is claimed, so an existing card at a higher level with that branch is dropped (that is how "liegen" moves
 //     from A2 to A1). A de-extra card is dropped when any of its branches is already owned at the same or a lower level.
+//   - data/words/de-overrides.json maps a card's src (h6146) to the fields that replace the built ones, for texts that
+//     came from the Hungarian deck and are not neutral for a learner (Budapest, Ungarisch ...); id, level, pos, src stay,
+//     and duplicates are still judged on the headword before the override
 //   - a card is kept only when it has all four meanings and all four sentences
 
 import fs from 'node:fs';
@@ -28,6 +31,8 @@ const LEVELS = ['a1', 'a2', 'b1', 'b2', 'c1'];
 const read = (rel) => JSON.parse(fs.readFileSync(path.join(ROOT, rel), 'utf8'));
 const readIfExists = (rel) => (fs.existsSync(path.join(ROOT, rel)) ? read(rel) : []);
 const byKey = (rows) => new Map(rows.map((r) => [r.k, r]));
+const OVERRIDES = fs.existsSync(path.join(ROOT, 'data/words/de-overrides.json')) ? read('data/words/de-overrides.json') : {};
+const ORIGINAL_DE = new Map(); // src -> built headword before an override, so duplicates are judged as before
 const text = (v) => (typeof v === 'string' ? v.trim() : '');
 
 // One entry per source file, in the order they are considered inside a level.
@@ -110,6 +115,10 @@ function toCard(src, level, file, card, glossDe, glossHu) {
     pos: card.pos,
     src: src.prefix + k,
   };
+  if (OVERRIDES[out.src]) {
+    ORIGINAL_DE.set(out.src, out.de);
+    Object.assign(out, OVERRIDES[out.src]);
+  }
   for (const f of ['de', 'es', 'en', 'hu', 'sentence_de', 'sentence_es', 'sentence_en', 'sentence_hu']) {
     if (!out[f]) return null;
   }
@@ -148,8 +157,9 @@ export function buildDeck() {
             stats.incomplete += 1;
             continue;
           }
-          const key = headwordKey(out.de);
-          const branches = branchKeys(out.de);
+          const de0 = ORIGINAL_DE.get(out.src) ?? out.de;
+          const key = headwordKey(de0);
+          const branches = branchKeys(de0);
           const isExtra = src.name === 'extra';
           // an existing card gives way to a de-extra card of a lower level; a de-extra card gives way to any owner
           const claimedLower = !isExtra && branches.some((b) => claimed.has(b) && claimed.get(b) < li);
