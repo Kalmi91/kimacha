@@ -68,6 +68,20 @@ describe('botXpAt', () => {
     }
     expect(rests).toBeGreaterThan(0);
   });
+
+  it('keeps the board moving: between 8:00 and 22:00 nobody moving for 10 minutes never happens, in 6 different weeks', () => {
+    for (let w = 0; w < 6; w++) {
+      const weekStart = shiftDate(WEEK, 7 * w);
+      for (let d = 0; d < 7; d++) {
+        let quiet = 0;
+        for (let m = 8 * 60; m < 22 * 60; m++) {
+          const moved = BOTS.some((b) => botXpAt(b, weekStart, d, m) !== botXpAt(b, weekStart, d, m - 1));
+          quiet = moved ? 0 : quiet + 1;
+          expect(quiet).toBeLessThan(10);
+        }
+      }
+    }
+  });
 });
 
 describe('withBots', () => {

@@ -44,6 +44,9 @@ export { BOARD_LIST_MAX };
 
 const REST_CHANCE = 0.15;
 const DAY_MINUTES = 24 * 60;
+const ACTIVE_FROM = 7 * 60;
+const ACTIVE_TO = 23 * 60;
+const STEADY_SHARE = 0.6;
 
 // FNV-1a: a text to a 32-bit number
 function fnv1a(text: string): number {
@@ -79,7 +82,7 @@ interface DayPlan {
   sessions: Session[];
 }
 
-// The bot's whole week: per day the XP and the 1-3 sessions it is earned in.
+// The bot's whole week: per day the XP and the 4-8 sessions it is earned in.
 function planWeek(bot: Bot, weekStart: string): DayPlan[] {
   const rng = mulberry32(fnv1a(`${weekStart}|${bot.name}|plan`));
   const target = bot.weekly * (0.8 + 0.4 * rng());
@@ -90,33 +93,49 @@ function planWeek(bot: Bot, weekStart: string): DayPlan[] {
   if (!weights.some((w) => w > 0)) weights[0] = 1;
   const sum = weights.reduce((a, b) => a + b, 0);
   return weights.map((w) => {
-    const count = 1 + Math.floor(rng() * 3);
-    const raw = Array.from({ length: count }, () => {
-      // 7:00 to 23:00, 10 to 30 minutes: the latest end is 23:30, always before 23:59
-      const start = 7 * 60 + Math.floor(rng() * (16 * 60 + 1));
-      return { start, end: start + 10 + Math.floor(rng() * 21), weight: 0.5 + rng() };
+    const count = 4 + Math.floor(rng() * 5);
+    const raw = Array.from({ length: count }, (_, i) => {
+      // One session in each equal slot of 7:00 to 23:00, 20 to 50 minutes long: the latest end is 23:50, always before 23:59. Spread
+      // like this, somebody on the board is earning XP at any time of the day.
+      const start = ACTIVE_FROM + Math.floor(((i + rng()) * (ACTIVE_TO - ACTIVE_FROM)) / count);
+      return { start, end: start + 20 + Math.floor(rng() * 31), weight: 0.5 + rng() };
     });
     const parts = raw.reduce((a, s) => a + s.weight, 0);
     return { xp: (target * w) / sum, sessions: raw.map((s) => ({ start: s.start, end: s.end, share: s.weight / parts })) };
   });
 }
 
-// The XP the bot earns on each day of the week starting `weekStart` (fractional; botXpAt floors the running total).
-export function botDailyXp(bot: Bot, weekStart: string): number[] {
-  return planWeek(bot, weekStart).map((d) => d.xp);
+// A plan depends only on its week and bot, so it never goes stale; the board asks for all of them every few seconds.
+const plans = new Map<string, DayPlan[]>();
+function planFor(bot: Bot, weekStart: string): DayPlan[] {
+  const key = `${weekStart}|${bot.name}`;
+  let plan = plans.get(key);
+  if (!plan) {
+    if (plans.size >= 2 * BOTS.length) plans.clear();
+    plan = planWeek(bot, weekStart);
+    plans.set(key, plan);
+  }
+  return plan;
 }
 
-// The bot's XP so far this week, a whole number that never goes down: the earlier days in full plus today's sessions up to
-// `minuteOfDay`, each growing linearly while it runs.
+// The XP the bot earns on each day of the week starting `weekStart` (fractional; botXpAt floors the running total).
+export function botDailyXp(bot: Bot, weekStart: string): number[] {
+  return planFor(bot, weekStart).map((d) => d.xp);
+}
+
+// The bot's XP so far this week, a whole number that never goes down: the earlier days in full plus today's part up to
+// `minuteOfDay`. STEADY_SHARE of a day's XP comes evenly from ACTIVE_FROM to ACTIVE_TO, which keeps the board moving all day; the
+// rest comes in the day's sessions, each growing linearly while it runs, which makes the players look like they sit down to learn.
 export function botXpAt(bot: Bot, weekStart: string, dayIndex: number, minuteOfDay: number): number {
-  const plan = planWeek(bot, weekStart);
+  const plan = planFor(bot, weekStart);
   const day = Math.min(6, Math.max(0, dayIndex));
   const minute = Math.min(DAY_MINUTES - 1, Math.max(0, minuteOfDay));
   let total = 0;
   for (let i = 0; i < day; i++) total += plan[i].xp;
-  const done = plan[day].sessions.every((s) => minute >= s.end);
+  const done = minute >= ACTIVE_TO && plan[day].sessions.every((s) => minute >= s.end);
+  const steady = Math.min(1, Math.max(0, (minute - ACTIVE_FROM) / (ACTIVE_TO - ACTIVE_FROM)));
   const part = plan[day].sessions.reduce((a, s) => a + s.share * Math.min(1, Math.max(0, (minute - s.start) / (s.end - s.start))), 0);
-  return Math.floor(total + plan[day].xp * (done ? 1 : Math.min(1, part)));
+  return Math.floor(total + plan[day].xp * (done ? 1 : Math.min(1, STEADY_SHARE * steady + (1 - STEADY_SHARE) * part)));
 }
 
 // The board order of the server (cloud/logic.ts rankBoard): XP descending, then the name with case and accents ignored.
