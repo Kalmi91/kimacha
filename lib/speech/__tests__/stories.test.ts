@@ -394,6 +394,13 @@ describe.each(STORIES.map((s) => [s.id, s] as const))('story check: %s', (_id, s
     for (const w of s.words) expect(w.forms.length).toBeGreaterThan(0);
   });
 
+  it('the English texts are English: no Spanish letters or function words, and not the Spanish text', () => {
+    const all: StoryText[] = [s.title, s.teaser, s.intro, s.outro, ...s.words, ...s.turns, ...s.turns.flatMap((turn) => turn.branches.flatMap((b) => [...b.say, ...(b.reply ? [b.reply] : [])]))];
+    const spanish = /[¿¡ñáéíóúü]|(^|[^\p{L}])(el|la|los|las|una|de|en|por|muy|qué|tu|mi|y)(?![\p{L}])/iu;
+    const bad = all.filter((x) => spanish.test(x.en) || x.en === x.es).map((x) => x.en);
+    expect(bad).toEqual([]);
+  });
+
   it('every token of the lines and the say lines is a form of the story or a name', () => {
     const own = new Set(s.words.flatMap((w) => w.forms.map((f) => f.toLowerCase())));
     const names = new Set([...CORPUS_NAMES.es.flatMap((n) => sentenceTokens(n, 'es')), ...sentenceTokens(s.speaker, 'es')]);
