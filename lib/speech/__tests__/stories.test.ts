@@ -93,8 +93,9 @@ describe('the run', () => {
     const work = at('work');
     expect(currentTurn(story, answerTurn(work, story, right(0))).id).toBe('study');
     expect(currentTurn(story, answerTurn(work, story, right(1))).id).toBe('speak');
-    expect(currentTurn(story, answerTurn(work, story, right(2))).id).toBe('like');
-    expect(answerTurn(work, story, right(2)).answers[3]).toMatchObject({ ok: true, branch: 2 });
+    expect(currentTurn(story, answerTurn(work, story, right(2))).id).toBe('speak');
+    expect(currentTurn(story, answerTurn(work, story, right(3))).id).toBe('like');
+    expect(answerTurn(work, story, right(3)).answers[3]).toMatchObject({ ok: true, branch: 3 });
   });
 
   it('a wrong answer is one more try and nothing else', () => {
@@ -118,11 +119,11 @@ describe('the run', () => {
     expect(skipTurn(two, story)).toMatchObject({ path: ['name', 'from'], tries: 0, firstTry: 0, done: false, answers: [{ text: 'Me llamo ___.', ok: false, branch: 0 }] });
   });
 
-  it('a given-up turn follows its `main` branch (work: the third, speak: the first)', () => {
+  it('a given-up turn follows its `main` branch (work: the fourth, speak: the first)', () => {
     const giveUp = (run: StoryRun) => skipTurn(answerTurn(answerTurn(run, story, wrong()), story, wrong()), story);
     const work = giveUp(at('work'));
     expect(currentTurn(story, work).id).toBe('like');
-    expect(work.answers[3]).toEqual({ text: 'Trabajo en una oficina.', ok: false, branch: 2 });
+    expect(work.answers[3]).toEqual({ text: 'Trabajo en una oficina.', ok: false, branch: 3 });
     expect(currentTurn(story, giveUp(at('speak'))).id).toBe('bye');
   });
 
@@ -160,8 +161,9 @@ describe('judging an answer', () => {
   it('the first branch with a right match, in data order', () => {
     expect(judgeAnswer(work, 'no trabajo', { lang: 'es' }).branch).toBe(0);
     expect(judgeAnswer(work, 'soy estudiante', { lang: 'es' }).branch).toBe(1);
-    expect(judgeAnswer(work, 'soy maestra', { lang: 'es' }).branch).toBe(2);
-    expect(judgeAnswer(work, 'trabajo en una oficina', { lang: 'es' }).branch).toBe(2);
+    expect(judgeAnswer(work, 'busco trabajo', { lang: 'es' }).branch).toBe(2);
+    expect(judgeAnswer(work, 'soy maestra', { lang: 'es' }).branch).toBe(3);
+    expect(judgeAnswer(work, 'trabajo en una oficina', { lang: 'es' }).branch).toBe(3);
   });
 
   it('a wrong answer: no branch, the red words come from the closest answer over all branches', () => {
@@ -262,6 +264,13 @@ describe('saving a run', () => {
 });
 
 describe('the progress row', () => {
+  it('best and total are one pair: a run with more points replaces both, a run with fewer or equal points only moves the date', () => {
+    expect(finishedProgress({ best: 4, total: 5, at: '2026-11-01' }, { firstTry: 4 }, 7, '2026-11-03')).toEqual({ best: 4, total: 5, at: '2026-11-03' });
+    expect(finishedProgress({ best: 4, total: 5, at: '2026-11-01' }, { firstTry: 3 }, 7, '2026-11-03')).toEqual({ best: 4, total: 5, at: '2026-11-03' });
+    expect(finishedProgress({ best: 4, total: 5, at: '2026-11-01' }, { firstTry: 5 }, 7, '2026-11-03')).toEqual({ best: 5, total: 7, at: '2026-11-03' });
+    expect(finishedProgress({ best: 4 }, { firstTry: 3 }, 7, '2026-11-03')).toEqual({ best: 3, total: 7, at: '2026-11-03' });
+  });
+
   it('best keeps the higher value, the date is the last finish', () => {
     expect(finishedProgress(null, { firstTry: 4 }, 6, '2026-11-03')).toEqual({ best: 4, total: 6, at: '2026-11-03' });
     expect(finishedProgress({ best: 5, total: 6, at: '2026-11-01' }, { firstTry: 3 }, 6, '2026-11-03')).toEqual({ best: 5, total: 6, at: '2026-11-03' });
@@ -335,21 +344,22 @@ describe.each(STORIES.map((s) => [s.id, s] as const))('story check: %s', (_id, s
     for (const turn of s.turns) for (const b of turn.branches) expect([turn.id, b.say.length > 0, b.answers.length > 0]).toEqual([turn.id, true, true]);
   });
 
-  it('every say line is accepted by its own branch and by no earlier branch that leads elsewhere or reacts differently', () => {
+  it.each([false, true])('every say line is accepted by its own branch and by no earlier branch that leads elsewhere or reacts differently (typed with strict accents: %s)', (strictAccents) => {
     for (const turn of s.turns) {
       turn.branches.forEach((b, j) => {
         for (const line of b.say) {
           const heard = filled(line.es);
-          const own = matchSpoken(heard, b.answers, { lang: 'es' }).right;
-          expect({ turn: turn.id, heard, own }).toMatchObject({ own: true });
+          const own = matchSpoken(heard, b.answers, { lang: 'es', anyNumber: b.anyNumber, strictAccents }).right;
+          expect({ turn: turn.id, heard, own }).toEqual({ turn: turn.id, heard, own: true });
           for (let i = 0; i < j; i++) {
             const earlier = turn.branches[i];
             const same = earlier.next === b.next && JSON.stringify(earlier.reply) === JSON.stringify(b.reply);
-            if (!same) expect({ turn: turn.id, heard, earlier: i, taken: matchSpoken(heard, earlier.answers, { lang: 'es' }).right }).toMatchObject({ taken: false });
+            const taken = matchSpoken(heard, earlier.answers, { lang: 'es', anyNumber: earlier.anyNumber, strictAccents }).right;
+            if (!same) expect({ turn: turn.id, heard, earlier: i, taken }).toEqual({ turn: turn.id, heard, earlier: i, taken: false });
           }
           // the judge sends it to its own branch, or to an earlier one that is the same for the story
-          const at = judgeAnswer(turn, heard, { lang: 'es' }).branch;
-          expect({ turn: turn.id, heard, at: at !== null && at <= j }).toMatchObject({ at: true });
+          const at = judgeAnswer(turn, heard, { lang: 'es', strictAccents }).branch;
+          expect({ turn: turn.id, heard, at: at !== null && at <= j }).toEqual({ turn: turn.id, heard, at: true });
         }
       });
     }
@@ -386,6 +396,17 @@ describe('the first story: broad answers (FB582, FB583)', () => {
     expect(branchOf(speak, 'no mucho')).toBe(1);
     expect(branchOf(speak, 'Sí, hablo español')).toBe(2);
     expect(branchOf(speak, 'hablo un poco de español')).toBe(0);
+  });
+
+  it('the first turns take a bare name, a bare country, and an age as a bare number', () => {
+    const name = turnById(story, 'name')!;
+    const from = turnById(story, 'from')!;
+    const age = turnById(story, 'age')!;
+    expect(judgeAnswer(name, 'Kálmán', { lang: 'es' }).branch).toBe(0);
+    expect(judgeAnswer(from, 'Hungría', { lang: 'es' }).branch).toBe(0);
+    expect(judgeAnswer(from, 'soy húngaro', { lang: 'es' }).branch).toBe(0);
+    for (const said of ['35', 'treinta y cinco', 'cuarenta', 'tengo 35 años']) expect({ said, branch: judgeAnswer(age, said, { lang: 'es' }).branch }).toEqual({ said, branch: 0 });
+    expect(judgeAnswer(age, 'prefiero no decirlo', { lang: 'es' }).branch).toBe(1);
   });
 
   it('FB583: "gracias", "adiós", "hasta luego" and "nos vemos" end the story', () => {

@@ -63,12 +63,12 @@
       { "es": "trabajar", "forms": ["trabajo", "trabajas"], "en": "to work", "hu": "dolgozni", "de": "arbeiten" },
       { "es": "la escuela", "forms": ["escuela"], "en": "school", "hu": "iskola", "de": "Schule" },
       { "es": "la maestra", "forms": ["maestra"], "en": "teacher (woman)", "hu": "tanárnő", "de": "Lehrerin" },
-      { "es": "el estudiante", "forms": ["estudiante"], "en": "student", "hu": "diák", "de": "Student" },
+      { "es": "el estudiante", "forms": ["estudiante"], "en": "student", "hu": "diák", "de": "Student/in" },
       { "es": "estudiar", "forms": ["estudio", "estudias"], "en": "to study", "hu": "tanulni", "de": "lernen, studieren" },
       { "es": "buscar", "forms": ["busco", "buscas"], "en": "to look for", "hu": "keresni", "de": "suchen" },
       { "es": "la oficina", "forms": ["oficina"], "en": "office", "hu": "iroda", "de": "Büro" },
       { "es": "gustar", "forms": ["gusta"], "en": "to like (it pleases)", "hu": "tetszeni", "de": "gefallen" },
-      { "es": "más o menos", "forms": ["más", "menos"], "en": "so-so", "hu": "többé-kevésbé", "de": "es geht so" },
+      { "es": "más o menos", "forms": ["más", "menos"], "en": "so-so", "hu": "úgy-ahogy", "de": "es geht so" },
       { "es": "lo siento", "forms": ["lo", "siento"], "en": "I'm sorry", "hu": "sajnálom", "de": "es tut mir leid" },
       { "es": "bueno", "forms": ["bueno"], "en": "good, well", "hu": "jó, na", "de": "gut, also" },
       { "es": "la suerte", "forms": ["suerte"], "en": "luck", "hu": "szerencse", "de": "Glück" },
@@ -88,7 +88,7 @@
       { "es": "algo", "forms": ["algo"], "en": "something", "hu": "valami", "de": "etwas" },
       { "es": "adiós", "forms": ["adiós"], "en": "goodbye", "hu": "viszlát", "de": "tschüss" },
       { "es": "gracias", "forms": ["gracias"], "en": "thank you", "hu": "köszönöm", "de": "danke" },
-      { "es": "hasta luego", "forms": ["hasta", "luego"], "en": "see you later", "hu": "viszlát később", "de": "bis später" },
+      { "es": "hasta luego", "forms": ["hasta", "luego"], "en": "see you later", "hu": "Viszlát!", "de": "bis später" },
       { "es": "nos vemos", "forms": ["nos", "vemos"], "en": "see you", "hu": "találkozunk", "de": "wir sehen uns" }
     ],
     "turns": [
@@ -100,7 +100,7 @@
         "de": "Hallo! Ich bin Lupita, deine Nachbarin. Ich wohne in der Wohnung nebenan. Wie heißt du?",
         "branches": [
           {
-            "answers": ["Me llamo *", "Soy *", "Mi nombre es *"],
+            "answers": ["Me llamo *", "Soy *", "Mi nombre es *", "*"],
             "say": [
               { "es": "Me llamo ___.", "en": "My name is ___.", "hu": "A nevem ___.", "de": "Ich heiße ___." },
               { "es": "Soy ___.", "en": "I'm ___.", "hu": "___ vagyok.", "de": "Ich bin ___." },
@@ -115,14 +115,14 @@
         "id": "from",
         "es": "Yo soy de Oaxaca, pero ahora vivo aquí. ¿Y tú, de dónde eres?",
         "en": "I'm from Oaxaca, but I live here now. And you, where are you from?",
-        "hu": "Én Oaxacából származom, de most itt élek. És te honnan jöttél?",
+        "hu": "Én Oaxacából való vagyok, de most itt élek. És te honnan való vagy?",
         "de": "Ich komme aus Oaxaca, aber jetzt wohne ich hier. Und woher kommst du?",
         "branches": [
           {
-            "answers": ["Soy de *", "Vengo de *", "De *"],
+            "answers": ["Soy de *", "Vengo de *", "De *", "Soy *", "*"],
             "say": [
-              { "es": "Soy de ___.", "en": "I'm from ___.", "hu": "___ vagyok.", "de": "Ich bin aus ___." },
-              { "es": "Vengo de ___.", "en": "I come from ___.", "hu": "___ jöttem.", "de": "Ich komme aus ___." }
+              { "es": "Soy de ___.", "en": "I'm from ___.", "hu": "Innen vagyok: ___.", "de": "Ich bin aus ___." },
+              { "es": "Vengo de ___.", "en": "I come from ___.", "hu": "Innen jöttem: ___.", "de": "Ich komme aus ___." }
             ],
             "reply": { "es": "¡Qué interesante!", "en": "How interesting!", "hu": "Milyen érdekes!", "de": "Wie interessant!" },
             "next": "age"
@@ -137,7 +137,8 @@
         "de": "Ich bin vierzig. Wie alt bist du?",
         "branches": [
           {
-            "answers": ["Tengo * años", "Tengo *"],
+            "answers": ["Tengo * años", "Tengo *", "Cuarenta"],
+            "anyNumber": true,
             "say": [{ "es": "Tengo ___ años.", "en": "I'm ___ years old.", "hu": "___ éves vagyok.", "de": "Ich bin ___ Jahre alt." }],
             "reply": { "es": "Ah, muy bien.", "en": "Oh, very good.", "hu": "Á, nagyon jó.", "de": "Ah, sehr gut." },
             "next": "work"
@@ -156,7 +157,7 @@
         "en": "I work at a school, I'm a teacher. And you? What do you do?",
         "hu": "Én egy iskolában dolgozom, tanárnő vagyok. És te? Te mivel foglalkozol?",
         "de": "Ich arbeite in einer Schule, ich bin Lehrerin. Und du? Was machst du beruflich?",
-        "main": 2,
+        "main": 3,
         "branches": [
           {
             "answers": ["No trabajo", "No tengo trabajo"],
@@ -166,8 +167,14 @@
           },
           {
             "answers": ["Soy estudiante", "Estudio *"],
-            "say": [{ "es": "Soy estudiante.", "en": "I'm a student.", "hu": "Diák vagyok.", "de": "Ich bin Student." }],
+            "say": [{ "es": "Soy estudiante.", "en": "I'm a student.", "hu": "Diák vagyok.", "de": "Ich studiere." }],
             "reply": { "es": "¡Qué bien!", "en": "Great!", "hu": "Nagyszerű!", "de": "Das ist toll!" },
+            "next": "speak"
+          },
+          {
+            "answers": ["Busco trabajo", "Busco *"],
+            "say": [{ "es": "Busco trabajo.", "en": "I'm looking for work.", "hu": "Munkát keresek.", "de": "Ich suche Arbeit." }],
+            "reply": { "es": "¡Mucha suerte!", "en": "Good luck!", "hu": "Sok szerencsét!", "de": "Viel Glück!" },
             "next": "speak"
           },
           {
@@ -192,7 +199,7 @@
             "answers": ["No mucho", "Más o menos", "No *", "No"],
             "say": [
               { "es": "No mucho.", "en": "Not much.", "hu": "Nem nagyon.", "de": "Nicht so sehr." },
-              { "es": "Más o menos.", "en": "So-so.", "hu": "Így is, úgy is.", "de": "Es geht so." }
+              { "es": "Más o menos.", "en": "So-so.", "hu": "Úgy-ahogy.", "de": "Es geht so." }
             ],
             "reply": { "es": "Ay, lo siento.", "en": "Oh, I'm sorry.", "hu": "Jaj, sajnálom.", "de": "Oh, das tut mir leid." },
             "next": "speak"
@@ -279,7 +286,7 @@
             "answers": ["Gracias *", "Adiós *", "Hasta luego", "Nos vemos", "Igualmente", "Gracias", "Adiós"],
             "say": [
               { "es": "Gracias, adiós.", "en": "Thanks, bye.", "hu": "Köszönöm, viszlát.", "de": "Danke, tschüss." },
-              { "es": "Hasta luego.", "en": "See you later.", "hu": "Viszlát később.", "de": "Bis später." },
+              { "es": "Hasta luego.", "en": "See you later.", "hu": "Viszlát!", "de": "Bis später." },
               { "es": "Nos vemos.", "en": "See you.", "hu": "Találkozunk.", "de": "Wir sehen uns." }
             ]
           }

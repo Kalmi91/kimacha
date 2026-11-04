@@ -45,11 +45,11 @@ describe('data/speech/stories.json', () => {
         expect(branch.answers.length).toBeGreaterThan(0);
         for (const answer of branch.answers) {
           const heard = sayable(answer);
-          expect({ heard, right: matchSpoken(heard, branch.answers, { lang: 'es' }).right }).toEqual({ heard, right: true });
+          expect({ heard, right: matchSpoken(heard, branch.answers, { lang: 'es', anyNumber: branch.anyNumber }).right }).toEqual({ heard, right: true });
         }
       }
-      // an unrelated sentence is not an answer
-      expect(judgeAnswer(turn, 'la mesa es azul', { lang: 'es' }).branch).toBeNull();
+      // an unrelated sentence is not an answer (a turn that takes any single word, a bare `*`, takes this too)
+      if (!turn.branches.some((b) => b.answers.includes('*'))) expect(judgeAnswer(turn, 'la mesa es azul', { lang: 'es' }).branch).toBeNull();
     }
   });
 

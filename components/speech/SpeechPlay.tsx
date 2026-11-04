@@ -125,14 +125,17 @@ export default function SpeechPlay({ story, run, target, source, strictAccents, 
   useEffect(() => {
     abort();
   }, [run.answers.length, abort]);
+  // The next line of a right answer is read aloud only while this tab is in front: the timer below can fire after a tab switch.
+  const focused = useRef(true);
   useFocusEffect(
-    useCallback(
-      () => () => {
+    useCallback(() => {
+      focused.current = true;
+      return () => {
+        focused.current = false;
         stopSpeaking();
         abort();
-      },
-      [abort],
-    ),
+      };
+    }, [abort]),
   );
   useEffect(() => () => stopSpeaking(), []);
 
@@ -158,7 +161,7 @@ export default function SpeechPlay({ story, run, target, source, strictAccents, 
       }
       const at = runRef.current.answers.length;
       setShown(at);
-      speak(bubbleOf(story, runRef.current, at, story.target), lang);
+      if (focused.current) speak(bubbleOf(story, runRef.current, at, story.target), lang);
     }, motion.feedback);
     return () => clearTimeout(id);
   }, [waiting, run.answers.length, run.done, story, lang]);

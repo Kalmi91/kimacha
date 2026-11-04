@@ -35,6 +35,8 @@ export interface StoryWord extends StoryText {
 export interface StoryBranch {
   /** What is accepted; `*` is one free word slot. */
   answers: string[];
+  /** Any number matches the number of an answer ("Cuarenta" is also right as "35"). */
+  anyNumber?: boolean;
   /** The lines shown under "You can say": the target text and its translations; `___` stands for what only the learner knows. */
   say: StoryText[];
   /** Her reaction, the start of the next bubble. */
@@ -178,10 +180,10 @@ export function judgeAnswer(
   options: { lang: 'es'; strictAccents?: boolean },
 ): { branch: number | null; match: SpokenMatch } {
   for (let i = 0; i < turn.branches.length; i++) {
-    const match = matchSpoken(said, turn.branches[i].answers, options);
+    const match = matchSpoken(said, turn.branches[i].answers, { ...options, anyNumber: turn.branches[i].anyNumber });
     if (match.right) return { branch: i, match };
   }
-  return { branch: null, match: matchSpoken(said, turn.branches.flatMap((b) => b.answers), options) };
+  return { branch: null, match: matchSpoken(said, turn.branches.flatMap((b) => b.answers), { ...options, anyNumber: turn.branches.some((b) => b.anyNumber) }) };
 }
 
 function advance(state: StoryRun, s: SpeechStory, answer: StoryAnswer, firstTry: number): StoryRun {
@@ -254,11 +256,17 @@ export interface StoryProgress {
   at: string;
 }
 
-/** The row data after a run finished: `best` keeps the higher value, `total` = the number of turns of this run. `previous` = the data of the row so far (anything broken counts as none). */
+/**
+ * The row data after a run finished. `best` and `total` are a pair from one run: they are replaced only by a run with more points
+ * (a story has paths of different length, so a best of one run must not sit beside the total of another). `previous` = the data of
+ * the row so far (anything broken counts as none).
+ */
 export function finishedProgress(previous: unknown, run: Pick<StoryRun, 'firstTry'>, total: number, at: string): StoryProgress {
   const was = previous as Partial<StoryProgress> | null;
-  const before = typeof was === 'object' && was !== null && isCount(was.best) ? was.best : 0;
-  return { best: Math.max(before, run.firstTry), total, at };
+  if (typeof was === 'object' && was !== null && isCount(was.best) && isCount(was.total) && run.firstTry <= was.best) {
+    return { best: was.best, total: was.total, at };
+  }
+  return { best: run.firstTry, total, at };
 }
 
 /** The finished stories by id with their best, from the rows of `SPEECH_PROGRESS_KEY`. */

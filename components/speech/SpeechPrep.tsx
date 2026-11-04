@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Text } from '@/components/KText';
 import Colors from '@/constants/Colors';
@@ -32,10 +33,19 @@ function onlyBranchTo(story: SpeechStory, id: string): StoryBranch | null {
   return into.length === 1 ? into[0] : null;
 }
 
+/** Every way through the story, as the ids of its turns (the story check guarantees there is no cycle). */
+function waysFrom(story: SpeechStory, id: string): string[][] {
+  const nexts = (story.turns.find((x) => x.id === id)?.branches ?? []).flatMap((b) => (b.next ? [b.next] : []));
+  return nexts.length === 0 ? [[id]] : [...new Set(nexts)].flatMap((next) => waysFrom(story, next).map((way) => [id, ...way]));
+}
+
 export default function SpeechPrep({ story, target, source, onStart, onBack }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const sx = t().speechTab;
+  // leaving the preparation stops what is being read
+  useEffect(() => () => stopSpeaking(), []);
+  const ways = waysFrom(story, story.turns[0].id);
   const hear = (text: string) => {
     stopSpeaking();
     speak(speakable(text), speechLang(target));
@@ -57,7 +67,8 @@ export default function SpeechPrep({ story, target, source, onStart, onBack }: P
     >
       <View style={styles.box}>
         {story.turns.map((turn, i) => {
-          const from = onlyBranchTo(story, turn.id);
+          // only a turn that not every way goes through says which answer leads to it
+          const from = ways.every((way) => way.includes(turn.id)) ? null : onlyBranchTo(story, turn.id);
           return (
             <Card key={turn.id} classicStyle={styles.card} boxStyle={styles.brutalCard}>
               <View testID={`speech-prep-turn-${i}`} style={styles.group}>
@@ -77,7 +88,7 @@ export default function SpeechPrep({ story, target, source, onStart, onBack }: P
                 </View>
                 {from && (
                   <Text testID={`speech-prep-from-${i}`} style={[styles.from, { color: colors.textMuted }]}>
-                    {sx.leadsFrom(from.say[0][story.target])}
+                    {sx.leadsFrom(speakable(from.say[0][story.target]))}
                   </Text>
                 )}
                 <Text style={[styles.caption, { color: colors.textMuted }]}>{sx.canSay}</Text>
