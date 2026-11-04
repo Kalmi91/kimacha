@@ -25,7 +25,8 @@ type Props = {
   distractors: string[];
   /** The result is handed over at once (`onDone(correct)`), without the card's own reveal and Next: for a screen that shows the answer itself. */
   instant?: boolean;
-  onDone: (correct: boolean) => void;
+  /** `given`: the tiles placed, joined by spaces. */
+  onDone: (correct: boolean, given?: string) => void;
 };
 
 export default function ExamTilesCard({ prompt, answerTokens, sentence, distractors, instant = false, onDone }: Props) {
@@ -45,8 +46,9 @@ export default function ExamTilesCard({ prompt, answerTokens, sentence, distract
     if (!missed) setPlaced(placed.filter((_, p) => p !== pos));
   };
   const check = () => {
-    if (sentenceBuildMatch(placed.map((i) => bank[i]), answerTokens)) onDone(true);
-    else if (instant) onDone(false);
+    const built = placed.map((i) => bank[i]);
+    if (sentenceBuildMatch(built, answerTokens)) onDone(true, built.join(' '));
+    else if (instant) onDone(false, built.join(' '));
     else setMissed(true);
   };
 

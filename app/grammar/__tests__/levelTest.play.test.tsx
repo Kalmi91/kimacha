@@ -35,7 +35,8 @@ jest.mock('@/components/FeedbackModal', () => {
   };
 });
 
-// lt-0 core+ (Alpha), lt-1 core (Beta), lt-2 exam (Gamma), lt-3 full (Delta), all A1; lt-4 core at A2; B1 has no topic.
+// lt-0 core+ (Alpha), lt-1 core (Beta), lt-2 exam (Gamma), lt-3 full (Delta), all A1; lt-4 core at A2; lt-5 core at B1 holds three typed
+// form items (a table, a rule, a typed-mistake text); C1 has no topic.
 jest.mock('@/lib/grammar/syllabus', () => {
   const actual = jest.requireActual('@/lib/grammar/syllabus');
   const base = require('@/lib/__tests__/fixtures/legacy-lesson.json');
@@ -45,6 +46,7 @@ jest.mock('@/lib/grammar/syllabus', () => {
     { id: 'lt-2', level: 'A1', title: 'Gamma topic', tier: 'exam' },
     { id: 'lt-3', level: 'A1', title: 'Delta topic', tier: 'full' },
     { id: 'lt-4', level: 'A2', title: 'Epsilon topic', tier: 'core' },
+    { id: 'lt-5', level: 'B1', title: 'Zeta topic', tier: 'core' },
   ];
   const lessons: Record<string, unknown> = {};
   for (const d of defs) {
@@ -55,10 +57,40 @@ jest.mock('@/lib/grammar/syllabus', () => {
       items: base.items.map((it: { id: string; sentence: string }) => ({ ...it, id: `${d.id}-${it.id}`, sentence: `${d.id}: ${it.sentence}` })),
     };
   }
+  const wrongLos = { 'los gustan': { en: 'Los is a direct object pronoun.', es: 'Los es un pronombre de objeto directo.' } };
+  const formItem = (id: string, verb: string, person: string, answer: string) => ({ id, kind: 'form', verb, person, answer, table: 'lt5-table', wrong: wrongLos });
+  lessons['lt-5'] = {
+    ...base,
+    topic: 'lt-5',
+    level: 'B1',
+    body: [
+      { kind: 'text', text: { en: 'Gustar always takes an indirect pronoun: me, te, le, nos, les.', es: 'Gustar lleva siempre un pronombre indirecto.' } },
+      {
+        kind: 'table',
+        id: 'lt5-table',
+        title: { en: 'Gustar, present', es: 'Gustar, presente' },
+        header: [
+          { en: 'Person', es: 'Persona' },
+          { en: 'one thing', es: 'una cosa' },
+          { en: 'several things', es: 'varias cosas' },
+        ],
+        rows: [
+          ['yo', 'me gusta', 'me gustan'],
+          ['nosotros', 'nos gusta', 'nos gustan'],
+          ['ellos/ellas/ustedes', 'les gusta', 'les gustan'],
+        ],
+      },
+    ],
+    items: [
+      formItem('lt5-f1', 'una cosa', 'yo', 'me gusta'),
+      formItem('lt5-f2', 'varias cosas', 'yo', 'me gustan'),
+      formItem('lt5-f3', 'varias cosas', 'ellos/ellas/ustedes', 'les gustan'),
+    ],
+  };
   const topics = defs.map((d) => ({ id: d.id, level: d.level, unit: 'u', title: { en: d.title }, blurb: { en: '' } }));
   return {
     ...actual,
-    syllabusLevels: () => ['A1', 'A2', 'B1'],
+    syllabusLevels: () => ['A1', 'A2', 'B1', 'C1'],
     syllabusForLevel: (level: string) => topics.filter((tp) => tp.level === level),
     hasLesson: (_lang: string, id: string) => id in lessons,
     lessonFor: (_lang: string, id: string) => lessons[id],
@@ -73,6 +105,8 @@ import { playChime } from '@/lib/chime';
 import { speak } from '@/lib/speech';
 import { lessonFor } from '@/lib/grammar/syllabus';
 import { buildLessonTest, type LessonTestQuestion } from '@/lib/grammar/lessonTest';
+import { levelRoundKey } from '@/lib/grammar/levelTest';
+import { loadResumeValue, saveResumeValue } from '@/lib/resumeStore';
 import { GRAMMAR_RANDOM_KEY, evidenceFromRows, topicPercent, topicTicked, type EvidenceAnswer } from '@/lib/grammar/randomRound';
 import { ThemeProvider } from '@/lib/ThemeContext';
 import LevelTestScreen from '../level-test';
@@ -82,9 +116,10 @@ jest.setTimeout(60000);
 
 const NOW = 1700000000000;
 const SEED = NOW % 2147483647;
-const TOPICS = ['lt-0', 'lt-1', 'lt-2', 'lt-3', 'lt-4'];
+const TOPICS = ['lt-0', 'lt-1', 'lt-2', 'lt-3', 'lt-4', 'lt-5'];
 
 const flush = makeFlush(4);
+const roundKey = (level: string) => levelRoundKey('en→es', level);
 const press = async (testID: string) => {
   fireEvent.press(screen.getByTestId(testID));
   await flush();
@@ -92,6 +127,12 @@ const press = async (testID: string) => {
 const text = (testID: string) => {
   const c = screen.getByTestId(testID).props.children;
   return Array.isArray(c) ? c.join('') : String(c);
+};
+
+// the whole text of a node with nested Text children
+const flat = (testID: string): string => {
+  const walk = (n: any): string => (typeof n === 'string' ? n : (n.children ?? []).map(walk).join(''));
+  return walk(screen.getByTestId(testID));
 };
 
 let questions: { topic: string; q: LessonTestQuestion }[] = [];
@@ -109,12 +150,20 @@ const onScreen = () => {
 };
 const topicOnScreen = () => onScreen().topic;
 
+// Every answer stops on its result card; the test moves on only with Next (FB578).
+const next = () => press('level-test-next');
 // A tap on the right or on a wrong option; the card hands the answer over at once.
 const answer = async (ok: boolean) => {
   const found = onScreen();
   const v = found.q.view;
   if (v.card !== 'choice') throw new Error('choice only');
   await press(`exam-option-${ok ? v.correctIndex : (v.correctIndex + 1) % v.options.length}`);
+  return found;
+};
+// the answer, then Next: the following question is on screen
+const answerNext = async (ok: boolean) => {
+  const found = await answer(ok);
+  await next();
   return found;
 };
 
@@ -136,6 +185,7 @@ describe.each(['brand', 'classic'] as const)('grammar level test (%s palette)', 
     (db as any).__setLevelForTest('A1');
     await db.setGrammarPalette(palette);
     await db.resetGameProgress(GRAMMAR_RANDOM_KEY);
+    for (const lvl of ['A1', 'A2', 'B1', 'C1']) await saveResumeValue(db, roundKey(lvl), null);
     questions = buildAll();
   });
   afterEach(() => (Date.now as jest.Mock).mockRestore());
@@ -153,33 +203,34 @@ describe.each(['brand', 'classic'] as const)('grammar level test (%s palette)', 
   it('starts on the core+ topic of the level, with the level percent in the header and no topic name before the answer', async () => {
     await open();
     expect(topicOnScreen()).toBe('lt-0');
-    expect(text('level-test-header')).toBe('A1 level test · 0%');
+    expect(text('level-test-header')).toBe('A1 · 0% · 1/20');
     expect(screen.getByTestId('level-test-progress')).toBeTruthy();
     for (const name of ['Alpha topic', 'Beta topic', 'Gamma topic', 'Delta topic', 'Epsilon topic']) expect(screen.queryByText(name)).toBeNull();
     // the A2 topic is not part of the A1 test
     expect(screen.queryByText(/lt-4/)).toBeNull();
   });
 
-  it('a right answer chimes, reads the sentence, is marked green, goes into the topic evidence and moves on to another topic', async () => {
+  it('a right answer chimes, reads the sentence, stops on a green result card and goes into the topic evidence; only Next moves on to another topic', async () => {
     await open();
     const { q } = await answer(true);
     expect(playChime).toHaveBeenCalledTimes(1);
     expect(speak).toHaveBeenCalledWith(q.say, 'es-MX');
     expect((playChime as jest.Mock).mock.invocationCallOrder[0]).toBeLessThan((speak as jest.Mock).mock.invocationCallOrder[0]);
-    expect(screen.getByTestId('level-test-right-mark')).toHaveTextContent(/Correct/);
-    expect(topicOnScreen()).toBe('lt-1'); // never the same topic twice in a row, and lt-1 has no answer yet
+    expect(screen.getByTestId('level-test-feedback-badge')).toHaveTextContent(/Correct/);
+    expect(screen.queryByTestId('exam-text')).toBeNull(); // no next question under the card
     const ev = await evidenceNow();
     expect(ev.get('lt-0')?.answers).toEqual([{ id: q.id, kind: q.kind, ok: true, at: expect.any(String) }]);
+    await next();
+    expect(topicOnScreen()).toBe('lt-1'); // never the same topic twice in a row, and lt-1 has no answer yet
   });
 
   it('a wrong answer shows the right one, the why and a link to the lesson; Next goes on', async () => {
     await open();
-    await answer(true); // lt-0
+    await answerNext(true); // lt-0
     const { q, topic } = await answer(false); // lt-1
     expect(topic).toBe('lt-1');
     expect(playChime).toHaveBeenCalledTimes(1); // only the right answer chimed
     expect(speak).toHaveBeenLastCalledWith(q.say, 'es-MX');
-    expect(screen.queryByTestId('level-test-right-mark')).toBeNull();
     expect(text('level-test-topic')).toBe('Beta topic');
     expect(text('level-test-feedback-answer')).toBe(q.review.answer);
     expect(screen.getByTestId('level-test-feedback-badge')).toHaveTextContent(/Not quite/);
@@ -228,9 +279,9 @@ describe.each(['brand', 'classic'] as const)('grammar level test (%s palette)', 
     for (const id of ['lt-1', 'lt-2', 'lt-3']) await seedEvidence(id, TICKED);
     await open();
     expect(topicOnScreen()).toBe('lt-0');
-    expect(text('level-test-header')).toBe('A1 level test · 75%');
+    expect(text('level-test-header')).toBe('A1 · 92% · 1/20'); // 3 topics at 100, lt-0 with 2 right answers counts 67
     await answer(true);
-    expect(text('level-test-header')).toBe('A1 level test · 100%');
+    expect(text('level-test-header')).toBe('A1 · 100% · 1/20');
   });
 
   it('the ✕ leaves at once with no question, progress stays, and the next visit continues with the then lowest topic', async () => {
@@ -245,7 +296,7 @@ describe.each(['brand', 'classic'] as const)('grammar level test (%s palette)', 
 
     await open();
     expect(topicOnScreen()).toBe('lt-1'); // lt-0 has an answer now, lt-1 none
-    await answer(true);
+    await answerNext(true);
     expect(topicOnScreen()).toBe('lt-0'); // the stream goes on and every answer adds to the same evidence
     expect((await evidenceNow()).get('lt-1')?.answers).toHaveLength(1);
   });
@@ -279,6 +330,8 @@ describe.each(['brand', 'classic'] as const)('grammar level test (%s palette)', 
       expect(screen.getByText('You can leave now or keep practising.')).toBeTruthy();
       await press('level-test-done-keep');
       expect(screen.queryByTestId('level-test-done')).toBeNull();
+      expect(screen.getByTestId('level-test-feedback-badge')).toBeTruthy(); // the result card of that answer is under it
+      await next();
       expect(screen.getByTestId('exam-text')).toBeTruthy(); // the stream continues
       await answer(true);
       expect(screen.queryByTestId('level-test-done')).toBeNull(); // once
@@ -299,7 +352,7 @@ describe.each(['brand', 'classic'] as const)('grammar level test (%s palette)', 
       await open();
       expect(screen.queryByTestId('level-test-done')).toBeNull();
       expect(topicOnScreen()).toBe('lt-2');
-      expect(text('level-test-header')).toBe('A1 level test · 97%');
+      expect(text('level-test-header')).toBe('A1 · 97% · 1/20');
     });
   });
 
@@ -309,9 +362,10 @@ describe.each(['brand', 'classic'] as const)('grammar level test (%s palette)', 
     await open();
     expect(topicOnScreen()).toBe('lt-4');
     for (let i = 0; i < 14; i++) {
-      if (screen.queryByTestId('level-test-done')) await press('level-test-done-keep'); // ticked after the 5th answer
       expect(topicOnScreen()).toBe('lt-4');
       await answer(true);
+      if (screen.queryByTestId('level-test-done')) await press('level-test-done-keep'); // ticked after the 5th answer
+      await next();
     }
     expect((await evidenceNow()).get('lt-4')?.answers).toHaveLength(10);
   });
@@ -320,21 +374,240 @@ describe.each(['brand', 'classic'] as const)('grammar level test (%s palette)', 
     // lt-4 (the only topic of A2) has choice questions only: five right answers tick it and finish the level
     mockParams = { level: 'A2' };
     await open();
-    for (let i = 0; i < 4; i++) await answer(true);
+    for (let i = 0; i < 4; i++) await answerNext(true);
     expect(screen.queryByTestId('level-test-done')).toBeNull();
     expect(topicTicked((await evidenceNow()).get('lt-4'))).toBe(false); // the plain rule asks two kinds
     await answer(true);
     expect(text('level-test-done-title')).toBe('A2: every topic ticked off');
   });
 
+  describe('the result card (FB578, FB580, FB588)', () => {
+    it('a right answer stops on the card: badge, the filled sentence with the right word, the topic, Next and the lesson link; nothing moves on by itself', async () => {
+      await open();
+      const { q } = await answer(true);
+      expect(screen.getByTestId('level-test-feedback-badge')).toHaveTextContent(/Correct/);
+      expect(flat('level-test-feedback-sentence')).toBe(q.review.answer);
+      expect(text('level-test-topic')).toBe('Alpha topic');
+      expect(screen.getByTestId('level-test-next')).toBeTruthy();
+      expect(screen.getByText('Open the lesson')).toBeTruthy();
+      expect(screen.queryByTestId('exam-text')).toBeNull();
+      expect(screen.queryByTestId('level-test-right-mark')).toBeNull();
+      await press('level-test-rule');
+      expect(mockPush).toHaveBeenCalledWith('/grammar/lt-0');
+      expect(screen.getByTestId('level-test-feedback-badge')).toBeTruthy(); // back from the lesson: still the card
+    });
+
+    it('a right answer offers "Why not the others?", and it opens in place with the text of every wrong option', async () => {
+      await open();
+      const { q } = await answer(true);
+      const whyNot = q.detail?.whyNot ?? [];
+      expect(whyNot.length).toBeGreaterThan(0);
+      expect(screen.queryByTestId('level-test-whynot')).toBeNull();
+      await press('level-test-whynot-link');
+      expect(screen.queryByTestId('level-test-whynot-link')).toBeNull();
+      for (const w of whyNot) expect(flat('level-test-whynot')).toContain(`${w.option}: ${w.text}`);
+      expect(screen.getByTestId('level-test-next')).toBeTruthy(); // still on the same card
+    });
+
+    it('a wrong choice shows the question, what was chosen, the right answer, the why and every why-not text, no extra link', async () => {
+      await open();
+      const { q } = await answer(false);
+      const v = q.view;
+      if (v.card !== 'choice') throw new Error('choice only');
+      const chosen = v.options[(v.correctIndex + 1) % v.options.length];
+      expect(text('level-test-feedback-question')).toBe(q.review.question);
+      expect(screen.getByTestId('level-test-feedback-given')).toHaveTextContent(`You chose: ${chosen}`);
+      expect(text('level-test-feedback-answer')).toBe(q.review.answer);
+      expect(screen.getByTestId('level-test-feedback-why')).toHaveTextContent(q.review.why ?? '');
+      for (const w of q.detail?.whyNot ?? []) expect(flat('level-test-whynot')).toContain(`${w.option}: ${w.text}`);
+      expect(screen.queryByTestId('level-test-whynot-link')).toBeNull();
+      expect(screen.queryByText(/Practice this/)).toBeNull(); // the Practice button is the next brief
+    });
+  });
+
+  describe('typed form questions (FB576, FB577, FB589)', () => {
+    const formOnScreen = () => {
+      const prompt = text('exam-prompt');
+      const found = questions.find((x) => x.q.view.card === 'type' && x.q.view.prompt === prompt);
+      if (!found) throw new Error(`no form question for "${prompt}"`);
+      return found;
+    };
+    const typeIn = async (value: string) => {
+      fireEvent.changeText(screen.getByTestId('exam-input'), value);
+      await press('exam-check');
+    };
+
+    it('the task reads verb (meaning) · person with the hint to type the form of the verb', async () => {
+      mockParams = { level: 'B1' };
+      await open();
+      const { q } = formOnScreen();
+      expect(text('exam-prompt')).toMatch(/^(una|varias) cosas \(.*\) · (yo|ellos\/ellas\/ustedes)$/);
+      expect(text('exam-hint')).toBe('Type the form of the verb');
+      expect(q.view).toMatchObject({ card: 'type' });
+    });
+
+    it("a typed mistake: 'You typed' and the right answer have the differing words marked, the item's own text, the table with the asked cell", async () => {
+      mockParams = { level: 'B1' };
+      await open();
+      const { q } = formOnScreen();
+      await typeIn('los gustan');
+      expect(screen.getByTestId('level-test-feedback-given')).toHaveTextContent('You typed: los gustan');
+      expect(flat('level-test-feedback-answer')).toBe(q.review.answer);
+      // the differing word is struck in what was typed and bold in the right answer; the other word is plain
+      const given = screen.getByTestId('level-test-feedback-given');
+      const struck = given.findAll((n) => n.props.style?.textDecorationLine === 'line-through' && n.props.children !== undefined);
+      expect(struck.length).toBeGreaterThan(0);
+      expect(screen.getByTestId('level-test-feedback-typed')).toHaveTextContent('Los is a direct object pronoun.');
+      expect(screen.getByTestId('level-test-table')).toBeTruthy();
+      expect(flat('level-test-table-hl')).toBe(q.review.answer);
+    });
+
+    it('a typed answer that is another cell of the table says which form it is', async () => {
+      mockParams = { level: 'B1' };
+      await open();
+      formOnScreen();
+      await typeIn('nos gusta');
+      expect(screen.getByTestId('level-test-feedback-typed')).toHaveTextContent('That is another form: nosotros · one thing.');
+    });
+
+    it('anything else shows the rule before the table', async () => {
+      mockParams = { level: 'B1' };
+      await open();
+      formOnScreen();
+      await typeIn('zzz');
+      // the item has a table: the generic rule would only push the table down, so it is not shown
+      expect(screen.queryByTestId('level-test-feedback-typed')).toBeNull();
+      expect(screen.getByTestId('level-test-table-hl')).toBeTruthy();
+    });
+
+    it('"I don\'t know" shows the right answer and the rule, no "You typed" line', async () => {
+      mockParams = { level: 'B1' };
+      await open();
+      const { q } = formOnScreen();
+      await press('exam-dont-know');
+      expect(screen.queryByTestId('level-test-feedback-given')).toBeNull();
+      expect(text('level-test-feedback-answer')).toBe(q.review.answer);
+      // the item has a table: the generic rule would only push the table down, so it is not shown
+      expect(screen.queryByTestId('level-test-feedback-typed')).toBeNull();
+      expect(screen.getByTestId('level-test-table-hl')).toBeTruthy();
+    });
+
+    it('a right typed answer: green card, the task and the answer, no table', async () => {
+      mockParams = { level: 'B1' };
+      await open();
+      const { q } = formOnScreen();
+      await typeIn(q.review.answer);
+      expect(screen.getByTestId('level-test-feedback-badge')).toHaveTextContent(/Correct/);
+      expect(text('level-test-feedback-question')).toBe(q.review.question);
+      expect(text('level-test-feedback-answer')).toBe(q.review.answer);
+      expect(screen.queryByTestId('level-test-table')).toBeNull();
+    });
+  });
+
+  describe('rounds of 20 (FB581)', () => {
+    const KEY = roundKey('A1');
+    const saved = async () => loadResumeValue(getDb(), KEY);
+
+    it('the header counts the question of the round and every answer is saved', async () => {
+      await open();
+      expect(text('level-test-header')).toBe('A1 · 0% · 1/20');
+      await answer(true);
+      expect(text('level-test-header')).toBe('A1 · 8% · 1/20'); // the card of the 1st answer: 1 right of 1 moves the level (33 / 4 topics)
+      await next();
+      expect(text('level-test-header')).toBe('A1 · 8% · 2/20');
+      await answerNext(false);
+      expect(text('level-test-header')).toBe('A1 · 8% · 3/20');
+      expect(await saved()).toEqual({ n: 2, right: 1, startPct: 0 });
+    });
+
+    it('re-entry mid-round: the position and the right count survive leaving, and a damaged value starts a new round', async () => {
+      const view = await open();
+      await answerNext(true);
+      await answerNext(true);
+      await press('level-test-close');
+      view.unmount();
+      const second = await open();
+      expect(text('level-test-header')).toContain('3/20');
+      second.unmount();
+
+      await saveResumeValue(getDb(), KEY, { n: 99, right: 3 });
+      const again = await open();
+      expect(text('level-test-header')).toBe('A1 · 17% · 1/20');
+      again.unmount();
+      // the pair and the level are separate rounds
+      await saveResumeValue(getDb(), roundKey('A2'), { n: 7, right: 2, startPct: 10 });
+      await open();
+      expect(text('level-test-header')).toBe('A1 · 17% · 1/20');
+    });
+
+    const nearEnd = async () => {
+      // lt-1..lt-3 ticked, lt-2 at 50% would not tick: keep lt-2 weakest among the percents; lt-0 has two right answers
+      await seedEvidence('lt-0', ['c', 'c']);
+      await seedEvidence('lt-1', TICKED);
+      await seedEvidence('lt-2', ['c', 'c', 'x', 'x']);
+      await seedEvidence('lt-3', TICKED);
+      await saveResumeValue(getDb(), KEY, { n: 19, right: 10, startPct: 60 });
+    };
+
+    it('after the 20th result comes the round screen: right count, level percent before and after, the weakest topic, Next 20, Leave', async () => {
+      await nearEnd();
+      await open();
+      expect(text('level-test-header')).toMatch(/· 20\/20$/); // the 20th question
+      await answer(true);
+      expect(text('level-test-header')).toMatch(/· 20\/20$/);
+      expect(screen.queryByTestId('level-test-round-score')).toBeNull(); // the 20th result card first
+      await next();
+      expect(text('level-test-round-score')).toBe('11 / 20');
+      const after = /A1 · (\d+)% · 20\/20/.exec(text('level-test-header'))![1];
+      expect(text('level-test-round-levels')).toBe(`A1 level: 60% → ${after}%`);
+      expect(text('level-test-round-weakest')).toBe('Gamma topic · 50%');
+      expect(text('fb-card')).toBe('grammar-level-test:A1:round-end | en→es | A1');
+      expect(screen.queryByTestId('exam-text')).toBeNull();
+    });
+
+    it('Next 20 starts a fresh round on the next question; Leave goes back and the finished round is not shown again', async () => {
+      await nearEnd();
+      const view = await open();
+      await answerNext(true);
+      await press('level-test-round-next');
+      const pctNow = /A1 · (\d+)%/.exec(text('level-test-header'))![1];
+      expect(text('level-test-header')).toBe(`A1 · ${pctNow}% · 1/20`);
+      expect(screen.getByTestId('exam-text')).toBeTruthy();
+      expect(await saved()).toEqual({ n: 0, right: 0, startPct: Number(pctNow) });
+      view.unmount();
+
+      await saveResumeValue(getDb(), KEY, { n: 20, right: 12, startPct: 30 });
+      await open();
+      expect(text('level-test-round-score')).toBe('12 / 20'); // killed on the 20th card: the summary is still due
+      await press('level-test-round-leave');
+      expect(mockBack).toHaveBeenCalledTimes(1);
+      expect(await saved()).toBeNull();
+    });
+
+    it('when the level is done on the 20th answer the done screen goes first, then the result card, then the round screen', async () => {
+      for (const id of ['lt-0', 'lt-1', 'lt-2']) await seedEvidence(id, TICKED);
+      await seedEvidence('lt-3', ['f', 'c', 'f', 'c']);
+      await saveResumeValue(getDb(), KEY, { n: 19, right: 19, startPct: 90 });
+      await open();
+      await answer(true);
+      expect(text('level-test-done-title')).toBe('A1: every topic ticked off');
+      expect(screen.queryByTestId('level-test-round-score')).toBeNull();
+      await press('level-test-done-keep');
+      expect(screen.getByTestId('level-test-feedback-badge')).toBeTruthy();
+      await next();
+      expect(text('level-test-round-score')).toBe('20 / 20');
+      expect(screen.queryByTestId('level-test-done')).toBeNull(); // once
+    });
+  });
+
   it('an unknown level falls back to the learner level; a level without any topic goes straight back', async () => {
     mockParams = { level: 'Z9' };
     const view = await open();
-    expect(text('level-test-header')).toBe('A1 level test · 0%');
+    expect(text('level-test-header')).toBe('A1 · 0% · 1/20');
     view.unmount();
 
     mockBack.mockClear();
-    mockParams = { level: 'B1' };
+    mockParams = { level: 'C1' };
     await open();
     expect(mockBack).toHaveBeenCalledTimes(1);
   });

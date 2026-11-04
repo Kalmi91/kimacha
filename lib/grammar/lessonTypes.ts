@@ -138,6 +138,9 @@ export interface FormItem {
   accept?: string[];
   table: string; // id of one of the body's `table` blocks
   tense?: { from: TenseId; to: TenseId };
+  // optional: a typical wrong typed answer -> why it is wrong ({en, es}); the level test's result card looks the
+  // typed answer up here (lowercase, accents removed). Where it is missing the card shows the table and the rule.
+  wrong?: Record<string, Record<string, string>>;
 }
 
 // "Why this sentence": the

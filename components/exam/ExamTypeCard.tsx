@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
+import { useEffect, useRef, useState } from 'react';
+import { Keyboard, Platform, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 
 import Colors from '@/constants/Colors';
 import { fontSize, fontWeight, radius, spacing } from '@/constants/Theme';
@@ -21,6 +21,9 @@ import ExamButton from './ExamButton';
 // exam has no listening.
 type Props = {
   prompt: string;
+  /** The level test's form task on a non-verb table: the table's title above, and the label of the cell under it. */
+  heading?: string;
+  label?: string;
   /** A short sentence for a word with several meanings; the `*marked*` part is highlighted. */
   hint?: string;
   answer: string;
@@ -34,16 +37,27 @@ type Props = {
   keepUmlauts?: boolean;
   /** The result is handed over at once (`onDone(correct)`), without the card's own reveal and Next: for a screen that shows the answer itself. */
   instant?: boolean;
-  onDone: (correct: boolean) => void;
+  /** `given`: what was typed (absent for "I don't know"). */
+  onDone: (correct: boolean, given?: string) => void;
 };
 
-export default function ExamTypeCard({ prompt, hint, answer, accept, sentence, targetLang, strictAccents, keepUmlauts = false, instant = false, onDone }: Props) {
+export default function ExamTypeCard({ prompt, heading, label, hint, answer, accept, sentence, targetLang, strictAccents, keepUmlauts = false, instant = false, onDone }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const g = useGrammarColors();
   const s = t();
   const [typed, setTyped] = useState('');
   const [missed, setMissed] = useState(false);
+  // the level tests: with the keyboard open the buttons under the field (I don't know) can sit behind the docked Check bar,
+  // so the body scrolls to its end when the keyboard comes up
+  const scrollRef = useRef<ScrollView>(null);
+  useEffect(() => {
+    if (!instant) return;
+    const sub = Keyboard.addListener(Platform.OS === 'ios' ? 'keyboardWillShow' : 'keyboardDidShow', () => {
+      setTimeout(() => scrollRef.current?.scrollToEnd({ animated: false }), 50);
+    });
+    return () => sub.remove();
+  }, [instant]);
 
   const check = () => {
     const ok = [answer, ...(accept ?? [])].some((target) => {
@@ -53,7 +67,7 @@ export default function ExamTypeCard({ prompt, hint, answer, accept, sentence, t
         : gradePcicAnswer(typed, target, strictAccents, targetLang);
       return suggestedGrade(grade) === 'good';
     });
-    if (ok || instant) onDone(ok);
+    if (ok || instant) onDone(ok, typed);
     else setMissed(true);
   };
   const giveUp = () => (instant ? onDone(false) : setMissed(true));
@@ -61,14 +75,24 @@ export default function ExamTypeCard({ prompt, hint, answer, accept, sentence, t
   // Check (and Next after a wrong answer) is a bar docked above the keyboard, as on the word card (DockSlot).
   const { docked, padBottom } = useDockedAction(
     missed
-      ? { label: `${s.card.next} →`, tone: 'next', testID: 'exam-next', onPress: () => onDone(false) }
+      ? { label: `${s.card.next} →`, tone: 'next', testID: 'exam-next', onPress: () => onDone(false, typed) }
       : { label: `✓ ${s.card.check}`, tone: 'check', testID: 'exam-check', disabled: typed.trim().length === 0, onPress: check }
   );
 
   return (
-    <ScrollView contentContainerStyle={styles.scroll} keyboardShouldPersistTaps="handled">
+    <ScrollView ref={scrollRef} contentContainerStyle={styles.scroll} keyboardShouldPersistTaps="handled">
       <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
-        <Text style={[styles.prompt, { color: colors.text }]}>{prompt}</Text>
+        {heading ? (
+          <Text testID="exam-heading" style={[styles.caption, { color: colors.textMuted }]}>
+            {heading}
+          </Text>
+        ) : null}
+        {label ? (
+          <Text testID="exam-label" style={[styles.caption, { color: colors.textMuted }]}>
+            {label}
+          </Text>
+        ) : null}
+        <Text testID="exam-prompt" style={[styles.prompt, { color: colors.text }]}>{prompt}</Text>
         {hint ? (
           <Text testID="exam-hint" style={[styles.hint, { color: colors.textMuted }]}>
             {hint.split('*').map((part, i) =>
@@ -93,7 +117,7 @@ export default function ExamTypeCard({ prompt, hint, answer, accept, sentence, t
           placeholderTextColor={colors.textMuted}
           value={typed}
           onChangeText={setTyped}
-          onSubmitEditing={missed ? () => onDone(false) : check}
+          onSubmitEditing={missed ? () => onDone(false, typed) : check}
           editable={!missed}
           autoFocus
           {...answerInputProps}
@@ -109,7 +133,7 @@ export default function ExamTypeCard({ prompt, hint, answer, accept, sentence, t
         )}
       </Card>
       {missed ? (
-        docked ? null : <ExamButton testID="exam-next" label={`${s.card.next} →`} onPress={() => onDone(false)} />
+        docked ? null : <ExamButton testID="exam-next" label={`${s.card.next} →`} onPress={() => onDone(false, typed)} />
       ) : (
         <>
           {docked ? null : <ExamButton testID="exam-check" label={s.card.check} onPress={check} disabled={typed.trim().length === 0} />}
@@ -125,6 +149,7 @@ const styles = StyleSheet.create({
   scroll: { padding: spacing.lg, gap: spacing.md },
   card: { borderRadius: radius.lg, padding: spacing.lg, gap: spacing.md },
   brutalCard: { padding: spacing.lg, gap: spacing.md },
+  caption: { fontSize: fontSize.sm, textAlign: 'center' },
   prompt: { fontSize: fontSize.xl, fontWeight: fontWeight.bold, textAlign: 'center' },
   hint: { fontSize: fontSize.sm, textAlign: 'center' },
   input: {

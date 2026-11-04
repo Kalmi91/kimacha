@@ -29,6 +29,7 @@ import { t } from '@/lib/i18n';
 import { tileWords } from '@/lib/sentenceCards';
 import { hashString, shuffleArray, shuffleOptions } from '@/lib/shuffle';
 import { fixedSentence } from '@/components/grammar/NewKinds';
+import { formDetail, formTask, splitAtWord, trText, whyNotOf, type QuestionDetail } from '@/lib/grammar/resultDetail';
 
 export const LESSON_TEST_SIZE = 10;
 export const LESSON_TEST_PASS_PCT = EXAM_PASS_PCT;
@@ -118,7 +119,7 @@ export function lessonTestUnlocked(lesson: GrammarTopicData, rows: Row[], topicI
 
 export type LessonTestView =
   | { card: 'choice'; heading: string; text: string; options: string[]; correctIndex: number }
-  | { card: 'type'; prompt: string; hint?: string; answer: string; accept?: string[]; sentence: boolean; keepUmlauts?: boolean }
+  | { card: 'type'; prompt: string; hint?: string; heading?: string; label?: string; answer: string; accept?: string[]; sentence: boolean; keepUmlauts?: boolean }
   | { card: 'tiles'; prompt: string; answerTokens: string[]; sentence: string }
   | { card: 'match'; pairs: { left: string; right: string }[] };
 
@@ -130,6 +131,8 @@ export interface LessonTestQuestion {
   review: { question: string; answer: string; why?: string };
   /** FB549: the whole sentence in the learned language, read aloud after the answer; none for a form or a match. */
   say?: string;
+  /** What the level test's result card shows besides `review`: translation, why-not texts, the form table (lib/grammar/resultDetail.ts). */
+  detail?: QuestionDetail;
 }
 
 interface Ctx {
@@ -161,16 +164,27 @@ function toQuestion(r: GrammarRoundItem, ctx: Ctx): LessonTestQuestion | null {
         },
         review: { question: it.sentence, answer: r.options[r.correctIndex], why: pick(it.why) },
         say: it.sentence,
+        detail: {
+          filled: splitAtWord(it.sentence, r.options[r.correctIndex], it.answerIndex ?? 0) ?? undefined,
+          tr: trText(it.tr, pick, it.sentence),
+          whyNot: whyNotOf(r.options, r.correctIndex, (o) => (it.wrong?.[o] ? pick(it.wrong[o]) : undefined)),
+        },
       };
     }
     if (!it.sentence.includes('___')) return null;
     const filled = it.sentence.replace('___', r.options[r.correctIndex]);
+    const gapAt = it.sentence.indexOf('___');
     return {
       id: it.id,
       kind,
       view: { card: 'choice', heading: s.exam.chooseGap, text: it.sentence, options: r.options, correctIndex: r.correctIndex },
       review: { question: it.sentence, answer: filled, why: pick(it.why) },
       say: filled,
+      detail: {
+        filled: { before: it.sentence.slice(0, gapAt), word: r.options[r.correctIndex], after: it.sentence.slice(gapAt + 3) },
+        tr: trText(it.tr, pick, filled),
+        whyNot: whyNotOf(r.options, r.correctIndex, (o) => (it.wrong?.[o] ? pick(it.wrong[o]) : undefined)),
+      },
     };
   }
 
@@ -189,24 +203,25 @@ function toQuestion(r: GrammarRoundItem, ctx: Ctx): LessonTestQuestion | null {
   }
   if (isFormItem(item)) {
     const table = ctx.topic.body.find((b) => b.kind === 'table' && b.id === item.table);
-    const headerCell = table && table.kind === 'table' ? table.header.find((h) => h.es === item.verb) : undefined;
-    const localized = headerCell ? pick(headerCell) : undefined;
-    const verbLabel = localized && localized !== item.verb ? `${item.verb} (${localized})` : item.verb;
-    const prompt = `${verbLabel} · ${item.person}`;
+    const tableBlock = table && table.kind === 'table' ? table : undefined;
+    const task = formTask(item, tableBlock, pick, s.grammar.formHint);
     return {
       id: item.id,
       kind,
       view: {
         card: 'type',
-        prompt,
-        hint: s.grammar.formHint,
+        prompt: task.prompt,
+        hint: task.hint,
+        ...(task.heading ? { heading: task.heading, label: task.label } : {}),
         answer: item.answer,
         accept: item.accept,
         sentence: false,
         // German: the umlaut and the ß of the inflected form are the thing asked (Väter), like in the form drill.
         ...(ctx.learnedLang === 'de' ? { keepUmlauts: true } : {}),
       },
-      review: { question: prompt, answer: item.answer },
+      // a non-verb table: the label goes with the cell, so the miss lists keep the context
+      review: { question: task.label ? `${task.label}: ${task.prompt}` : task.prompt, answer: item.answer },
+      detail: formDetail(item, tableBlock, ctx.topic.body, pick, ctx.learnedLang),
     };
   }
   if (isWhyItem(item)) {
@@ -223,6 +238,13 @@ function toQuestion(r: GrammarRoundItem, ctx: Ctx): LessonTestQuestion | null {
       // The result sheet also shows the question text, not just the sentence.
       review: { question: `${heading}\n${item.es}`, answer: sh.options[sh.correctIndex], why: pick(item.tr) },
       say: item.es,
+      detail: {
+        tr: trText(item.tr, pick, item.es),
+        whyNot: whyNotOf(sh.options, sh.correctIndex, (o) => {
+          const opt = item.options.find((x) => pick(x.text) === o);
+          return opt?.wrong ? pick(opt.wrong) : undefined;
+        }),
+      },
     };
   }
   if (isTransformItem(item)) {
@@ -258,6 +280,7 @@ function toQuestion(r: GrammarRoundItem, ctx: Ctx): LessonTestQuestion | null {
       view: { card: 'choice', heading: s.grammar.spotPickFix, text: marked, options: sh.options, correctIndex: sh.correctIndex },
       review: { question: item.es, answer: fixed, why: pick(item.explain) },
       say: fixed,
+      detail: { tr: trText(item.tr, pick, fixed) },
     };
   }
   if (isOrderItem(item)) {

@@ -50,7 +50,7 @@ describe('DockSlot: exam typed-answer card', () => {
     expect(onDone).not.toHaveBeenCalled();
 
     fireEvent.press(screen.getByTestId('exam-next'));
-    expect(onDone).toHaveBeenCalledWith(false);
+    expect(onDone).toHaveBeenCalledWith(false, 'xxx');
   });
 
   it('the bar button always grades with the latest typed text', () => {
@@ -59,7 +59,7 @@ describe('DockSlot: exam typed-answer card', () => {
     fireEvent.changeText(screen.getByTestId('exam-input'), 'se');
     fireEvent.changeText(screen.getByTestId('exam-input'), 'ser');
     fireEvent.press(screen.getByTestId('exam-check'));
-    expect(onDone).toHaveBeenCalledWith(true);
+    expect(onDone).toHaveBeenCalledWith(true, 'ser');
   });
 
   it('without a host the old inline Check stays (no docked bar)', () => {

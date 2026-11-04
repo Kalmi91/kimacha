@@ -23,7 +23,8 @@ type Props = {
   correctIndex: number;
   /** The result is handed over at once (`onDone(correct)`), without the card's own reveal and Next: for a screen that shows the answer itself. */
   instant?: boolean;
-  onDone: (correct: boolean) => void;
+  /** `given`: the text of the option that was pressed. */
+  onDone: (correct: boolean, given?: string) => void;
 };
 
 export default function ExamChoiceCard({ heading, text, options, correctIndex, instant = false, onDone }: Props) {
@@ -35,13 +36,13 @@ export default function ExamChoiceCard({ heading, text, options, correctIndex, i
 
   const choose = (i: number) => {
     if (picked !== null) return;
-    if (i === correctIndex) onDone(true);
-    else if (instant) onDone(false);
+    if (i === correctIndex) onDone(true, options[i]);
+    else if (instant) onDone(false, options[i]);
     else setPicked(i);
   };
 
   return (
-    <ScrollView contentContainerStyle={styles.scroll}>
+    <ScrollView contentContainerStyle={styles.scroll} keyboardShouldPersistTaps="handled">
       <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
         <Text style={[styles.heading, { color: colors.textMuted }]}>{heading}</Text>
         <Text testID="exam-text" style={[styles.text, { color: colors.text }]}>{text}</Text>
@@ -73,7 +74,7 @@ export default function ExamChoiceCard({ heading, text, options, correctIndex, i
           );
         })}
       </View>
-      {picked !== null && <ExamButton testID="exam-next" label={`${s.card.next} →`} onPress={() => onDone(false)} />}
+      {picked !== null && <ExamButton testID="exam-next" label={`${s.card.next} →`} onPress={() => onDone(false, picked !== null ? options[picked] : undefined)} />}
     </ScrollView>
   );
 }

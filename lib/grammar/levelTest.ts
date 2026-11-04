@@ -7,6 +7,7 @@ import type { GrammarKind } from '@/lib/games/content';
 import { shuffleArray } from '@/lib/shuffle';
 import {
   EVIDENCE_WINDOW,
+  MIN_ANSWERS_FOR_PCT,
   topicPercent,
   topicTicked,
   type PickTopic,
@@ -27,10 +28,22 @@ const isCore = (t: PickTopic): boolean => t.tier === 'core-plus' || t.tier === '
 
 const windowOf = (ev?: TopicEvidence) => (ev ? ev.answers.slice(-EVIDENCE_WINDOW) : []);
 
-/** The average test percent of the topics (no percent yet = 0), 0 for no topics. */
+/**
+ * A topic's share in the level percent: its test percent from MIN_ANSWERS_FOR_PCT answers on; with 1 or 2 answers the
+ * right ones over MIN_ANSWERS_FOR_PCT (1 right of 1 = 33, 2 right of 2 = 67), so every answer moves the level. The tick and
+ * the topic's own percent (topicPercent) do not use this.
+ */
+export function topicShare(ev?: TopicEvidence): number {
+  const full = topicPercent(ev);
+  if (full !== null) return full;
+  const w = windowOf(ev);
+  return Math.round((w.filter((a) => a.ok).length / MIN_ANSWERS_FOR_PCT) * 100);
+}
+
+/** The average of the topics' shares (no answer = 0), 0 for no topics. */
 export function levelPercent(topicIds: string[], evidence: Map<string, TopicEvidence>): number {
   if (topicIds.length === 0) return 0;
-  const sum = topicIds.reduce((acc, id) => acc + (topicPercent(evidence.get(id)) ?? 0), 0);
+  const sum = topicIds.reduce((acc, id) => acc + topicShare(evidence.get(id)), 0);
   return Math.round(sum / topicIds.length);
 }
 
@@ -121,4 +134,41 @@ export function pickLevelNext(ctx: LevelTestCtx, prev: string | undefined, seed:
   if (topicId === null) return null;
   const qid = pickLevelQuestion(topicId, ctx, seed);
   return qid === null ? null : { topicId, qid };
+}
+
+// ---------------------------------------------------------------------------
+// Rounds of 20 (FB581): the stream stays endless, but the learner sees "3/20" and, after the 20th result, a short round
+// summary. The position and the right count are kept per language pair and level in the resume store (lib/resumeStore.ts).
+
+export const LEVEL_ROUND_SIZE = 20;
+
+export interface LevelRound {
+  /** Answers given in this round (0..LEVEL_ROUND_SIZE). */
+  n: number;
+  /** How many of them were right. */
+  right: number;
+  /** The level percent when the round started. */
+  startPct: number;
+}
+
+export const levelRoundKey = (pair: string, level: string): string => `grammar-level-round:${pair}:${level}`;
+
+/** A saved round, or null when the value is missing or damaged (the caller starts a new round). */
+export function parseLevelRound(raw: unknown): LevelRound | null {
+  const r = raw as Partial<LevelRound> | null | undefined;
+  if (!r || typeof r !== 'object') return null;
+  const { n, right, startPct } = r;
+  if (!Number.isInteger(n) || !Number.isInteger(right) || typeof startPct !== 'number' || !Number.isFinite(startPct)) return null;
+  if ((n as number) < 0 || (n as number) > LEVEL_ROUND_SIZE || (right as number) < 0 || (right as number) > (n as number)) return null;
+  return { n: n as number, right: right as number, startPct };
+}
+
+/** The topic of the level with the lowest percent (no percent yet = 0), ties in syllabus order; null for no topic. */
+export function weakestTopic(topicIds: string[], evidence: Map<string, TopicEvidence>): { id: string; pct: number } | null {
+  let best: { id: string; pct: number } | null = null;
+  for (const id of topicIds) {
+    const pct = topicPercent(evidence.get(id)) ?? 0;
+    if (!best || pct < best.pct) best = { id, pct };
+  }
+  return best;
 }

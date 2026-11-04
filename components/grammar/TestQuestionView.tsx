@@ -17,7 +17,7 @@ export default function TestQuestionView({
   learnedLang: string;
   strictAccents: boolean;
   instant?: boolean;
-  onDone: (correct: boolean) => void;
+  onDone: (correct: boolean, given?: string) => void;
 }) {
   const v = q.view;
   switch (v.card) {
@@ -27,6 +27,8 @@ export default function TestQuestionView({
       return (
         <ExamTypeCard
           prompt={v.prompt}
+          heading={v.heading}
+          label={v.label}
           hint={v.hint}
           answer={v.answer}
           accept={v.accept}

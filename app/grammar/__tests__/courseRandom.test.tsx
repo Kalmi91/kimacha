@@ -152,10 +152,10 @@ describe.each([
 
     it('is the average of the topics test percent: one topic at 100% among all the written A1 ones', async () => {
       await getDb().setGameProgress(GRAMMAR_RANDOM_KEY, 'presente-regular', 'evidence', answers(4, 4)); // 100%, not ticked
-      await getDb().setGameProgress(GRAMMAR_RANDOM_KEY, 'presente-irregular', 'evidence', answers(2, 2)); // 2 answers: no percent yet
+      await getDb().setGameProgress(GRAMMAR_RANDOM_KEY, 'presente-irregular', 'evidence', answers(2, 2)); // 2 right answers: 2/3 of a percent share
       const view = render(<ThemeProvider><GrammarSyllabusScreen /></ThemeProvider>);
       await flush();
-      const pct = Math.round(100 / a1Written().length);
+      const pct = Math.round((100 + 67) / a1Written().length);
       expect(pct).toBeGreaterThan(0);
       expect(screen.getByTestId('grammar-level-test-A1')).toHaveTextContent(`🎯 Level test · ${pct}%`);
       view.unmount();
