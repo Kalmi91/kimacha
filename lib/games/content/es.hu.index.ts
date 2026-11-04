@@ -88,4 +88,5 @@ export const ES_GRAMMAR_HU: Record<string, () => Record<string, string>> = {
   'finales-causales': () => require('@/data/games/grammar-hu/es/finales-causales.json'),
   'marcadores-discursivos': () => require('@/data/games/grammar-hu/es/marcadores-discursivos.json'),
   'indefinido-cambios-raiz': () => require('@/data/games/grammar-hu/es/indefinido-cambios-raiz.json'),
+  'cuantificadores': () => require('@/data/games/grammar-hu/es/cuantificadores.json'),
 };

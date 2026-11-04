@@ -1,0 +1,1203 @@
+{
+  "schema": 2,
+  "topic": "cuantificadores",
+  "level": "A2",
+  "title": {
+    "en": "Quantity: todo, cada, otro, mismo, demasiado, bastante",
+    "es": "Cantidad: todo, cada, otro, mismo, demasiado, bastante"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "These words answer \"how much?\", \"which one?\" and \"the same or different?\". Most of them behave like adjectives and agree with the noun in gender and number: todo, toda, todos, todas. Two are simpler: cada never changes at all, and bastante changes only in the plural.",
+        "es": "Estas palabras responden a «¿cuánto?», «¿cuál?» y «¿igual o distinto?». Casi todas funcionan como adjetivos y concuerdan con el sustantivo en género y número: todo, toda, todos, todas. Dos son más sencillas: cada no cambia nunca, y bastante solo cambia en plural."
+      }
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "Six words, six rules",
+        "es": "Seis palabras, seis reglas"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "todo / toda: the whole of one thing. The article comes after it: todo el día, toda la semana. In the plural, todos los / todas las means every: todos los días, todas las noches.",
+            "es": "todo / toda: una cosa entera. El artículo va después: todo el día, toda la semana. En plural, todos los / todas las significa «sin excepción»: todos los días, todas las noches."
+          },
+          "examples": [
+            {
+              "es": "Trabajo todo el día.",
+              "tr": {
+                "en": "I work all day long.",
+                "es": "Trabajo todo el día."
+              }
+            },
+            {
+              "es": "Estudio toda la semana.",
+              "tr": {
+                "en": "I study the whole week.",
+                "es": "Estudio toda la semana."
+              }
+            },
+            {
+              "es": "Todos los días tomo café.",
+              "tr": {
+                "en": "I drink coffee every day.",
+                "es": "Todos los días tomo café."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "cada: each, every. It always goes with a singular noun, has no article and never changes: cada día, cada casa, cada uno.",
+            "es": "cada: cada uno de un grupo. Va siempre con un sustantivo singular, no lleva artículo y no cambia nunca: cada día, cada casa, cada uno."
+          },
+          "examples": [
+            {
+              "es": "Cada niño tiene un libro.",
+              "tr": {
+                "en": "Each child has a book.",
+                "es": "Cada niño tiene un libro."
+              }
+            },
+            {
+              "es": "Hay una cocina en cada casa.",
+              "tr": {
+                "en": "There is a kitchen in every house.",
+                "es": "Hay una cocina en cada casa."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "otro / otra / otros / otras: another, other. Never put un or una before it: otro café, not un otro café. After the article it means the other one: el otro libro.",
+            "es": "otro / otra / otros / otras: uno más o uno distinto. Nunca lleva un ni una delante: otro café, no «un otro café». Con artículo es el otro que ya conocemos: el otro libro."
+          },
+          "examples": [
+            {
+              "es": "Quiero otro café.",
+              "tr": {
+                "en": "I want another coffee.",
+                "es": "Quiero otro café."
+              }
+            },
+            {
+              "es": "¿Tienes otra pregunta?",
+              "tr": {
+                "en": "Do you have another question?",
+                "es": "¿Tienes otra pregunta?"
+              }
+            },
+            {
+              "es": "El otro libro es más caro.",
+              "tr": {
+                "en": "The other book is more expensive.",
+                "es": "El otro libro es más caro."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "mismo / misma / mismos / mismas: the same. The article always comes before it: el mismo libro, la misma casa. In ahora mismo (right now) and aquí mismo (right here) it never changes.",
+            "es": "mismo / misma / mismos / mismas: igual, no distinto. El artículo va siempre antes: el mismo libro, la misma casa. En ahora mismo y aquí mismo no cambia nunca."
+          },
+          "examples": [
+            {
+              "es": "Tenemos el mismo trabajo.",
+              "tr": {
+                "en": "We have the same job.",
+                "es": "Tenemos el mismo trabajo."
+              }
+            },
+            {
+              "es": "Vivimos en la misma casa.",
+              "tr": {
+                "en": "We live in the same house.",
+                "es": "Vivimos en la misma casa."
+              }
+            },
+            {
+              "es": "Voy ahora mismo.",
+              "tr": {
+                "en": "I'm going right now.",
+                "es": "Voy ahora mismo."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "demasiado / demasiada / demasiados / demasiadas: too much, too many. With a noun it agrees: demasiado ruido, demasiada gente, demasiados libros. Before an adjective or with a verb it never changes: demasiado caro, trabajo demasiado.",
+            "es": "demasiado / demasiada / demasiados / demasiadas: más de lo que se quiere. Con un sustantivo concuerda: demasiado ruido, demasiada gente, demasiados libros. Delante de un adjetivo o con un verbo no cambia: demasiado caro, trabajo demasiado."
+          },
+          "examples": [
+            {
+              "es": "Hay demasiada gente aquí.",
+              "tr": {
+                "en": "There are too many people here.",
+                "es": "Hay demasiada gente aquí."
+              }
+            },
+            {
+              "es": "Este libro es demasiado caro.",
+              "tr": {
+                "en": "This book is too expensive.",
+                "es": "Este libro es demasiado caro."
+              }
+            },
+            {
+              "es": "Trabajo demasiado.",
+              "tr": {
+                "en": "I work too much.",
+                "es": "Trabajo demasiado."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "bastante / bastantes: quite a lot of, a good amount of. One form for masculine and feminine, with -s only in the plural: bastante tiempo, bastantes amigos. Before an adjective it means fairly and never changes: bastante barato.",
+            "es": "bastante / bastantes: una cantidad grande, pero no excesiva. Una sola forma para masculino y femenino, con -s solo en plural: bastante tiempo, bastantes amigos. Delante de un adjetivo significa «más o menos mucho» y no cambia: bastante barato."
+          },
+          "examples": [
+            {
+              "es": "Tengo bastante tiempo hoy.",
+              "tr": {
+                "en": "I have quite a lot of time today.",
+                "es": "Tengo bastante tiempo hoy."
+              }
+            },
+            {
+              "es": "Tiene bastantes amigos.",
+              "tr": {
+                "en": "He has quite a few friends.",
+                "es": "Tiene bastantes amigos."
+              }
+            },
+            {
+              "es": "El restaurante es bastante barato.",
+              "tr": {
+                "en": "The restaurant is fairly cheap.",
+                "es": "El restaurante es bastante barato."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "formas",
+      "title": {
+        "en": "The forms that change",
+        "es": "Las formas que cambian"
+      },
+      "header": [
+        {
+          "en": "The noun is",
+          "es": "El sustantivo es"
+        },
+        {
+          "en": "todo",
+          "es": "todo"
+        },
+        {
+          "en": "otro",
+          "es": "otro"
+        },
+        {
+          "en": "mismo",
+          "es": "mismo"
+        },
+        {
+          "en": "demasiado",
+          "es": "demasiado"
+        },
+        {
+          "en": "bastante",
+          "es": "bastante"
+        }
+      ],
+      "rows": [
+        [
+          "masculino singular",
+          "todo",
+          "otro",
+          "mismo",
+          "demasiado",
+          "bastante"
+        ],
+        [
+          "femenino singular",
+          "toda",
+          "otra",
+          "misma",
+          "demasiada",
+          "bastante"
+        ],
+        [
+          "masculino plural",
+          "todos",
+          "otros",
+          "mismos",
+          "demasiados",
+          "bastantes"
+        ],
+        [
+          "femenino plural",
+          "todas",
+          "otras",
+          "mismas",
+          "demasiadas",
+          "bastantes"
+        ]
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Easy to mix up",
+        "es": "Fáciles de confundir"
+      },
+      "pairs": [
+        {
+          "a": "todo el día",
+          "b": "todos los días",
+          "note": {
+            "en": "One single day from start to finish, versus every day, again and again.",
+            "es": "Un solo día de principio a fin, frente a cada día, una y otra vez."
+          },
+          "examples": [
+            {
+              "es": "Estudio todo el día.",
+              "tr": {
+                "en": "I study all day long.",
+                "es": "Estudio todo el día."
+              }
+            },
+            {
+              "es": "Estudio todos los días.",
+              "tr": {
+                "en": "I study every day.",
+                "es": "Estudio todos los días."
+              }
+            }
+          ]
+        },
+        {
+          "a": "cada día",
+          "b": "todos los días",
+          "note": {
+            "en": "Same meaning: every day. After cada the noun is singular and has no article; after todos it is plural with los.",
+            "es": "Mismo significado: cada día. Después de cada el sustantivo va en singular y sin artículo; después de todos va en plural, con los."
+          },
+          "examples": [
+            {
+              "es": "Cada día camino un poco.",
+              "tr": {
+                "en": "I walk a little every day.",
+                "es": "Cada día camino un poco."
+              }
+            },
+            {
+              "es": "Todos los días camino un poco.",
+              "tr": {
+                "en": "I walk a little every day.",
+                "es": "Todos los días camino un poco."
+              }
+            }
+          ]
+        },
+        {
+          "a": "otro libro",
+          "b": "el otro libro",
+          "note": {
+            "en": "Another one, any other, versus the other one, the one we both know.",
+            "es": "Otro cualquiera, frente al otro, el que los dos conocemos."
+          },
+          "examples": [
+            {
+              "es": "Necesito otro libro.",
+              "tr": {
+                "en": "I need another book.",
+                "es": "Necesito otro libro."
+              }
+            },
+            {
+              "es": "Necesito el otro libro.",
+              "tr": {
+                "en": "I need the other book.",
+                "es": "Necesito el otro libro."
+              }
+            }
+          ]
+        },
+        {
+          "a": "mucha gente",
+          "b": "demasiada gente",
+          "note": {
+            "en": "A lot is just a big amount; too much is more than you want.",
+            "es": "Mucha es solo una cantidad grande; demasiada es más de lo que se quiere."
+          },
+          "examples": [
+            {
+              "es": "Hay mucha gente en el metro.",
+              "tr": {
+                "en": "There are a lot of people on the metro.",
+                "es": "Hay mucha gente en el metro."
+              }
+            },
+            {
+              "es": "Hay demasiada gente en el metro.",
+              "tr": {
+                "en": "There are too many people on the metro.",
+                "es": "Hay demasiada gente en el metro."
+              }
+            }
+          ]
+        },
+        {
+          "a": "bastante caro",
+          "b": "demasiado caro",
+          "note": {
+            "en": "Fairly expensive: you can still pay. Too expensive: you cannot.",
+            "es": "Bastante caro: todavía puedes pagar. Demasiado caro: no puedes."
+          },
+          "examples": [
+            {
+              "es": "Esta casa es bastante cara.",
+              "tr": {
+                "en": "This house is fairly expensive.",
+                "es": "Esta casa es bastante cara."
+              }
+            },
+            {
+              "es": "Esta casa es demasiado cara.",
+              "tr": {
+                "en": "This house is too expensive.",
+                "es": "Esta casa es demasiado cara."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "In Spanish gente is singular and feminine: mucha gente, demasiada gente, bastante gente. Never demasiados gente.",
+        "es": "En español gente es singular y femenino: mucha gente, demasiada gente, bastante gente. Nunca «demasiados gente»."
+      }
+    }
+  ],
+  "speak": {
+    "en": "Six little words tell you how much, which one, and whether things are the same. Four of them change with the noun, like adjectives: the word for the whole thing, the word for another one, the word for the same, and the word for too much. The word for each never changes at all. And the word for quite a lot changes only in the plural. Learn them in short phrases: the whole day, every day, another coffee, the same house, too much noise, quite a few friends.",
+    "es": "Seis palabras pequeñas dicen cuánto, cuál y si las cosas son iguales. Cuatro cambian con el sustantivo, como los adjetivos: todo, otro, mismo y demasiado. La palabra cada no cambia nunca. Y bastante solo cambia en plural. Aprende frases cortas: todo el día, todos los días, otro café, la misma casa, demasiado ruido, bastantes amigos."
+  },
+  "glossary": [
+    {
+      "word": "demasiado",
+      "gloss": {
+        "en": "too much, too many; too (before an adjective)",
+        "es": "más de lo que se quiere"
+      }
+    },
+    {
+      "word": "bastante",
+      "gloss": {
+        "en": "quite a lot of; fairly (before an adjective)",
+        "es": "una cantidad grande, pero no excesiva"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "c01",
+      "sentence": "Estudio ___ el día.",
+      "options": [
+        "todo",
+        "toda",
+        "todos"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "«Día» is masculine and singular, so the whole day is «todo el día».",
+        "es": "«Día» es masculino y singular, así que el día entero es «todo el día»."
+      },
+      "wrong": {
+        "toda": {
+          "en": "«Toda» needs a feminine noun: «toda la semana», «toda la noche». «Día» is masculine.",
+          "es": "«Toda» necesita un sustantivo femenino: «toda la semana», «toda la noche». «Día» es masculino."
+        },
+        "todos": {
+          "en": "«Todos» goes with a plural: «todos los días» means every day. Here we have «el día», one single day.",
+          "es": "«Todos» va con un plural: «todos los días» significa cada día. Aquí tenemos «el día», un solo día."
+        }
+      },
+      "examples": [
+        "Trabajo todo el día.",
+        "Mi hermano duerme todo el día."
+      ],
+      "tr": {
+        "en": "I study all day long.",
+        "es": "Estudio todo el día."
+      }
+    },
+    {
+      "id": "c02",
+      "sentence": "Trabajo ___ la semana, pero el domingo estoy en casa.",
+      "options": [
+        "todas",
+        "toda",
+        "todo"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "«Semana» is feminine and singular, so the whole week is «toda la semana».",
+        "es": "«Semana» es femenino y singular, así que la semana entera es «toda la semana»."
+      },
+      "wrong": {
+        "todas": {
+          "en": "«Todas las semanas» would mean every week (plural). Here «la semana» is one single week.",
+          "es": "«Todas las semanas» significaría cada semana (plural). Aquí «la semana» es una sola semana."
+        },
+        "todo": {
+          "en": "«Todo» is masculine, but «semana» is feminine: «toda la semana».",
+          "es": "«Todo» es masculino, pero «semana» es femenino: «toda la semana»."
+        }
+      },
+      "examples": [
+        "Estudio toda la noche.",
+        "Toda la familia come aquí."
+      ],
+      "tr": {
+        "en": "I work the whole week, but on Sunday I am at home.",
+        "es": "Trabajo toda la semana, pero el domingo estoy en casa."
+      }
+    },
+    {
+      "id": "c03",
+      "sentence": "Voy a clase ___ los lunes.",
+      "options": [
+        "todos",
+        "todo",
+        "cada"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "«Los lunes» is plural, and with a plural we say «todos los»: every Monday.",
+        "es": "«Los lunes» es plural, y con un plural decimos «todos los»: cada lunes."
+      },
+      "wrong": {
+        "todo": {
+          "en": "«Todo» is singular: «todo el lunes» would mean the whole Monday, from morning to night.",
+          "es": "«Todo» es singular: «todo el lunes» significaría el lunes entero, de la mañana a la noche."
+        },
+        "cada": {
+          "en": "«Cada» never takes an article or a plural: it would be «cada lunes», without «los».",
+          "es": "«Cada» nunca lleva artículo ni plural: sería «cada lunes», sin «los»."
+        }
+      },
+      "examples": [
+        "Todos los lunes tengo clase.",
+        "Todos los días como en casa."
+      ],
+      "tr": {
+        "en": "I go to class every Monday.",
+        "es": "Voy a clase todos los lunes."
+      }
+    },
+    {
+      "id": "c04",
+      "sentence": "En ___ casa hay una cocina.",
+      "options": [
+        "todas",
+        "cada",
+        "todo"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "«Cada» goes with a singular noun and never changes: «en cada casa» is in each house.",
+        "es": "«Cada» va con un sustantivo singular y no cambia nunca: «en cada casa» es en cada una de las casas."
+      },
+      "wrong": {
+        "todas": {
+          "en": "«Todas» needs a plural noun and an article: «en todas las casas». Here «casa» is singular.",
+          "es": "«Todas» necesita un sustantivo plural y un artículo: «en todas las casas». Aquí «casa» es singular."
+        },
+        "todo": {
+          "en": "«Todo» is masculine, but «casa» is feminine. And to say the whole house you need the article: «en toda la casa».",
+          "es": "«Todo» es masculino, pero «casa» es femenino. Y para decir la casa entera hace falta el artículo: «en toda la casa»."
+        }
+      },
+      "examples": [
+        "Cada día camino un poco.",
+        "Cada niño tiene un libro."
+      ],
+      "tr": {
+        "en": "In each house there is a kitchen.",
+        "es": "En cada casa hay una cocina."
+      }
+    },
+    {
+      "id": "c05",
+      "sentence": "Quiero ___ café, por favor.",
+      "options": [
+        "un otro",
+        "otro",
+        "otros"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "«Otro» already means «one more», so it takes no «un» before it.",
+        "es": "«Otro» ya significa «uno más», así que no lleva «un» delante."
+      },
+      "wrong": {
+        "un otro": {
+          "en": "Spanish never puts «un» or «una» before «otro»; «otro» already means «another one».",
+          "es": "El español nunca pone «un» ni «una» delante de «otro»; «otro» ya significa «uno más»."
+        },
+        "otros": {
+          "en": "«Otros» is plural, but we want one single coffee: «otro café».",
+          "es": "«Otros» es plural, pero queremos un solo café: «otro café»."
+        }
+      },
+      "examples": [
+        "Quiero otra casa.",
+        "¿Tienes otro libro?"
+      ],
+      "tr": {
+        "en": "I want another coffee, please.",
+        "es": "Quiero otro café, por favor."
+      }
+    },
+    {
+      "id": "c06",
+      "sentence": "Esta casa es pequeña, pero la ___ es grande.",
+      "options": [
+        "otro",
+        "otras",
+        "otra"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "«Casa» is feminine and singular, so «la otra» is the other one.",
+        "es": "«Casa» es femenino y singular, así que «la otra» es la otra casa."
+      },
+      "wrong": {
+        "otro": {
+          "en": "«Otro» is masculine, but «casa» is feminine: «la otra».",
+          "es": "«Otro» es masculino, pero «casa» es femenino: «la otra»."
+        },
+        "otras": {
+          "en": "«Otras» is plural, but we are talking about one single house: «la otra».",
+          "es": "«Otras» es plural, pero hablamos de una sola casa: «la otra»."
+        }
+      },
+      "examples": [
+        "El otro libro es más caro.",
+        "La otra casa es más cara."
+      ],
+      "tr": {
+        "en": "This house is small, but the other one is big.",
+        "es": "Esta casa es pequeña, pero la otra es grande."
+      }
+    },
+    {
+      "id": "c07",
+      "sentence": "Mi hermano y yo vivimos en la ___ casa.",
+      "options": [
+        "misma",
+        "mismo",
+        "mismas"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "«Casa» is feminine and singular, and the article goes before «mismo»: «la misma casa».",
+        "es": "«Casa» es femenino y singular, y el artículo va antes de «mismo»: «la misma casa»."
+      },
+      "wrong": {
+        "mismo": {
+          "en": "«Mismo» is masculine, but «casa» is feminine: «la misma casa».",
+          "es": "«Mismo» es masculino, pero «casa» es femenino: «la misma casa»."
+        },
+        "mismas": {
+          "en": "«Mismas» is plural. Here it is one single house.",
+          "es": "«Mismas» es plural. Aquí es una sola casa."
+        }
+      },
+      "examples": [
+        "Tenemos el mismo trabajo.",
+        "Compramos el mismo libro."
+      ],
+      "tr": {
+        "en": "My brother and I live in the same house.",
+        "es": "Mi hermano y yo vivimos en la misma casa."
+      }
+    },
+    {
+      "id": "c08",
+      "sentence": "Llámame ahora ___, por favor.",
+      "options": [
+        "misma",
+        "mismo",
+        "mismos"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "«Ahora mismo» means right now. Here «mismo» just stresses «ahora» and never changes.",
+        "es": "«Ahora mismo» significa en este momento. Aquí «mismo» solo refuerza «ahora» y no cambia nunca."
+      },
+      "wrong": {
+        "misma": {
+          "en": "In «ahora mismo» the word is not an adjective: it agrees with nothing, so it stays «mismo».",
+          "es": "En «ahora mismo» la palabra no es un adjetivo: no concuerda con nada, así que se queda en «mismo»."
+        },
+        "mismos": {
+          "en": "«Ahora» is not a plural noun. «Mismo» only stresses it and never changes.",
+          "es": "«Ahora» no es un sustantivo plural. «Mismo» solo lo refuerza y no cambia nunca."
+        }
+      },
+      "examples": [
+        "Voy ahora mismo.",
+        "Estoy aquí mismo."
+      ],
+      "tr": {
+        "en": "Call me right now, please.",
+        "es": "Llámame ahora mismo, por favor."
+      }
+    },
+    {
+      "id": "c09",
+      "sentence": "Hay ___ gente en el metro.",
+      "options": [
+        "demasiados",
+        "demasiado",
+        "demasiada"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "«Gente» is feminine and singular, so it is «demasiada gente».",
+        "es": "«Gente» es femenino y singular, así que es «demasiada gente»."
+      },
+      "wrong": {
+        "demasiados": {
+          "en": "«Gente» is singular in Spanish, even though it means many people: «demasiada gente».",
+          "es": "«Gente» es singular en español, aunque signifique muchas personas: «demasiada gente»."
+        },
+        "demasiado": {
+          "en": "«Demasiado» is masculine, but «gente» is feminine: «demasiada gente».",
+          "es": "«Demasiado» es masculino, pero «gente» es femenino: «demasiada gente»."
+        }
+      },
+      "examples": [
+        "Hay demasiada gente aquí.",
+        "Hay demasiado ruido."
+      ],
+      "tr": {
+        "en": "There are too many people on the metro.",
+        "es": "Hay demasiada gente en el metro."
+      }
+    },
+    {
+      "id": "c10",
+      "sentence": "Este café está ___ caliente para mí.",
+      "options": [
+        "demasiado",
+        "demasiada",
+        "demasiados"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Before an adjective («caliente»), «demasiado» means «too» and never changes.",
+        "es": "Delante de un adjetivo («caliente»), «demasiado» significa «en exceso» y no cambia nunca."
+      },
+      "wrong": {
+        "demasiada": {
+          "en": "«Demasiada» agrees with a feminine noun (demasiada agua). Before an adjective it stays «demasiado».",
+          "es": "«Demasiada» concuerda con un sustantivo femenino (demasiada agua). Delante de un adjetivo se queda en «demasiado»."
+        },
+        "demasiados": {
+          "en": "«Demasiados» goes with a plural noun (demasiados libros). Before an adjective it stays «demasiado».",
+          "es": "«Demasiados» va con un sustantivo plural (demasiados libros). Delante de un adjetivo se queda en «demasiado»."
+        }
+      },
+      "examples": [
+        "Este libro es demasiado caro.",
+        "La comida está demasiado fría."
+      ],
+      "tr": {
+        "en": "This coffee is too hot for me.",
+        "es": "Este café está demasiado caliente para mí."
+      }
+    },
+    {
+      "id": "c11",
+      "sentence": "Tengo ___ amigos en esta ciudad.",
+      "options": [
+        "bastantes",
+        "demasiadas",
+        "bastante"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "«Amigos» is plural, so «bastante» takes an -s: «bastantes amigos».",
+        "es": "«Amigos» es plural, así que «bastante» lleva una -s: «bastantes amigos»."
+      },
+      "wrong": {
+        "demasiadas": {
+          "en": "«Demasiadas» is feminine, but «amigos» is masculine. It would also mean too many friends, not quite a few.",
+          "es": "«Demasiadas» es femenino, pero «amigos» es masculino. Además significaría demasiados amigos, no bastantes."
+        },
+        "bastante": {
+          "en": "«Bastante» (singular) goes with «tiempo» or «dinero». «Amigos» is plural: «bastantes».",
+          "es": "«Bastante» (singular) va con «tiempo» o «dinero». «Amigos» es plural: «bastantes»."
+        }
+      },
+      "examples": [
+        "Tiene bastantes amigos.",
+        "Hay bastantes personas aquí."
+      ],
+      "tr": {
+        "en": "I have quite a few friends in this city.",
+        "es": "Tengo bastantes amigos en esta ciudad."
+      }
+    },
+    {
+      "id": "c12",
+      "sentence": "Mi nuevo trabajo es ___ interesante.",
+      "options": [
+        "bastante",
+        "bastanta",
+        "bastantes"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Before an adjective («interesante»), «bastante» means «fairly» and never changes.",
+        "es": "Delante de un adjetivo («interesante»), «bastante» significa «más o menos mucho» y no cambia nunca."
+      },
+      "wrong": {
+        "bastanta": {
+          "en": "«Bastante» has one form for masculine and feminine: it never ends in -a.",
+          "es": "«Bastante» tiene una sola forma para masculino y femenino: nunca termina en -a."
+        },
+        "bastantes": {
+          "en": "«Bastantes» is for plural nouns (bastantes amigos). Before an adjective it stays «bastante».",
+          "es": "«Bastantes» es para sustantivos plurales (bastantes amigos). Delante de un adjetivo se queda en «bastante»."
+        }
+      },
+      "examples": [
+        "El restaurante es bastante barato.",
+        "La clase es bastante difícil."
+      ],
+      "tr": {
+        "en": "My new job is fairly interesting.",
+        "es": "Mi nuevo trabajo es bastante interesante."
+      }
+    },
+    {
+      "kind": "match",
+      "id": "m01",
+      "pairs": [
+        {
+          "es": "todos los días",
+          "en": "every day"
+        },
+        {
+          "es": "cada uno",
+          "en": "each one"
+        },
+        {
+          "es": "otra vez",
+          "en": "again"
+        },
+        {
+          "es": "el mismo",
+          "en": "the same"
+        },
+        {
+          "es": "demasiado ruido",
+          "en": "too much noise"
+        },
+        {
+          "es": "bastantes amigos",
+          "en": "quite a few friends"
+        }
+      ]
+    },
+    {
+      "kind": "form",
+      "id": "f01",
+      "verb": "todo",
+      "person": "femenino plural",
+      "answer": "todas",
+      "table": "formas"
+    },
+    {
+      "kind": "form",
+      "id": "f02",
+      "verb": "otro",
+      "person": "femenino singular",
+      "answer": "otra",
+      "table": "formas"
+    },
+    {
+      "kind": "form",
+      "id": "f03",
+      "verb": "mismo",
+      "person": "masculino plural",
+      "answer": "mismos",
+      "table": "formas"
+    },
+    {
+      "kind": "form",
+      "id": "f04",
+      "verb": "demasiado",
+      "person": "femenino singular",
+      "answer": "demasiada",
+      "table": "formas"
+    },
+    {
+      "kind": "form",
+      "id": "f05",
+      "verb": "bastante",
+      "person": "femenino plural",
+      "answer": "bastantes",
+      "table": "formas"
+    },
+    {
+      "kind": "form",
+      "id": "f06",
+      "verb": "bastante",
+      "person": "masculino singular",
+      "answer": "bastante",
+      "table": "formas"
+    },
+    {
+      "kind": "form",
+      "id": "f07",
+      "verb": "todo",
+      "person": "masculino plural",
+      "answer": "todos",
+      "table": "formas"
+    },
+    {
+      "kind": "form",
+      "id": "f08",
+      "verb": "mismo",
+      "person": "femenino singular",
+      "answer": "misma",
+      "table": "formas"
+    },
+    {
+      "kind": "form",
+      "id": "f09",
+      "verb": "demasiado",
+      "person": "masculino plural",
+      "answer": "demasiados",
+      "table": "formas"
+    },
+    {
+      "kind": "form",
+      "id": "f10",
+      "verb": "otro",
+      "person": "masculino plural",
+      "answer": "otros",
+      "table": "formas"
+    },
+    {
+      "kind": "form",
+      "id": "f11",
+      "verb": "todo",
+      "person": "femenino singular",
+      "answer": "toda",
+      "table": "formas"
+    },
+    {
+      "kind": "form",
+      "id": "f12",
+      "verb": "demasiado",
+      "person": "femenino plural",
+      "answer": "demasiadas",
+      "table": "formas"
+    },
+    {
+      "kind": "why",
+      "id": "w01",
+      "es": "Trabajo toda la noche.",
+      "target": "toda",
+      "tr": {
+        "en": "I work the whole night.",
+        "es": "Trabajo toda la noche."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Every one, in the plural (todos los / todas las)",
+            "es": "Cada uno, en plural (todos los / todas las)"
+          },
+          "wrong": {
+            "en": "«Todas las noches» would mean every night. Here «toda la noche» is one single night, from start to end.",
+            "es": "«Todas las noches» significaría cada noche. Aquí «toda la noche» es una sola noche, de principio a fin."
+          }
+        },
+        {
+          "text": {
+            "en": "Each one, always singular (cada)",
+            "es": "Cada uno, siempre singular (cada)"
+          },
+          "wrong": {
+            "en": "«Cada noche» would mean each night, again and again. «Toda la noche» is one night, all of it.",
+            "es": "«Cada noche» significaría cada noche, una y otra vez. «Toda la noche» es una noche, entera."
+          }
+        },
+        {
+          "text": {
+            "en": "The whole of one thing (todo el / toda la)",
+            "es": "Una cosa entera (todo el / toda la)"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "w02",
+      "es": "Cada semana voy al mercado.",
+      "target": "Cada",
+      "tr": {
+        "en": "Every week I go to the market.",
+        "es": "Cada semana voy al mercado."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "The whole of one thing (todo el / toda la)",
+            "es": "Una cosa entera (todo el / toda la)"
+          },
+          "wrong": {
+            "en": "«Toda la semana» would be the whole week. «Cada» takes one week at a time, again and again.",
+            "es": "«Toda la semana» sería la semana entera. «Cada» toma una semana cada vez, una y otra vez."
+          }
+        },
+        {
+          "text": {
+            "en": "Each one, always singular (cada)",
+            "es": "Cada uno, siempre singular (cada)"
+          }
+        },
+        {
+          "text": {
+            "en": "Every one, in the plural (todos los / todas las)",
+            "es": "Cada uno, en plural (todos los / todas las)"
+          },
+          "wrong": {
+            "en": "«Todas las semanas» is plural and has «las». «Cada» takes a singular noun with no article.",
+            "es": "«Todas las semanas» es plural y lleva «las». «Cada» lleva un sustantivo singular y sin artículo."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "w03",
+      "es": "Necesito otro libro para la clase.",
+      "target": "otro",
+      "tr": {
+        "en": "I need another book for class.",
+        "es": "Necesito otro libro para la clase."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "The other one we know (el otro)",
+            "es": "El otro que ya conocemos (el otro)"
+          },
+          "wrong": {
+            "en": "«El otro libro» would be a book we already know. Without the article, «otro libro» is any other one.",
+            "es": "«El otro libro» sería un libro que ya conocemos. Sin artículo, «otro libro» es uno cualquiera."
+          }
+        },
+        {
+          "text": {
+            "en": "The same, not different (el mismo)",
+            "es": "Igual, no distinto (el mismo)"
+          },
+          "wrong": {
+            "en": "The same book would be «el mismo libro». «Otro» means a different or an extra one.",
+            "es": "El mismo libro sería «el mismo libro». «Otro» significa uno distinto o uno más."
+          }
+        },
+        {
+          "text": {
+            "en": "One more, any other (otro, no article)",
+            "es": "Uno más, uno cualquiera (otro, sin artículo)"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "w04",
+      "es": "Compramos el mismo libro.",
+      "target": "el mismo",
+      "tr": {
+        "en": "We buy the same book.",
+        "es": "Compramos el mismo libro."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "The same, not different (el mismo)",
+            "es": "Igual, no distinto (el mismo)"
+          }
+        },
+        {
+          "text": {
+            "en": "One more, any other (otro, no article)",
+            "es": "Uno más, uno cualquiera (otro, sin artículo)"
+          },
+          "wrong": {
+            "en": "«Otro libro» would be a different book, not the same one.",
+            "es": "«Otro libro» sería un libro distinto, no el mismo."
+          }
+        },
+        {
+          "text": {
+            "en": "The other one we know (el otro)",
+            "es": "El otro que ya conocemos (el otro)"
+          },
+          "wrong": {
+            "en": "«El otro libro» is the other of two. «El mismo» says it is the identical one.",
+            "es": "«El otro libro» es el otro de dos. «El mismo» dice que es el mismo libro."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "w05",
+      "es": "Hay demasiado ruido aquí.",
+      "target": "demasiado",
+      "tr": {
+        "en": "There is too much noise here.",
+        "es": "Hay demasiado ruido aquí."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "A good amount, not too much (bastante)",
+            "es": "Una cantidad grande, pero no excesiva (bastante)"
+          },
+          "wrong": {
+            "en": "«Bastante ruido» would be quite a lot of noise, but not a problem. «Demasiado» says it is more than you want.",
+            "es": "«Bastante ruido» sería bastante ruido, pero no un problema. «Demasiado» dice que es más de lo que se quiere."
+          }
+        },
+        {
+          "text": {
+            "en": "More than you want (demasiado)",
+            "es": "Más de lo que se quiere (demasiado)"
+          }
+        },
+        {
+          "text": {
+            "en": "Each one, always singular (cada)",
+            "es": "Cada uno, siempre singular (cada)"
+          },
+          "wrong": {
+            "en": "«Cada ruido» would mean each noise, one by one. «Demasiado ruido» is about the amount.",
+            "es": "«Cada ruido» significaría cada ruido, uno por uno. «Demasiado ruido» habla de la cantidad."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "w06",
+      "es": "Tengo bastante tiempo hoy.",
+      "target": "bastante",
+      "tr": {
+        "en": "I have quite a lot of time today.",
+        "es": "Tengo bastante tiempo hoy."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "More than you want (demasiado)",
+            "es": "Más de lo que se quiere (demasiado)"
+          },
+          "wrong": {
+            "en": "«Demasiado tiempo» would be too much time, more than I want. «Bastante» is a good amount.",
+            "es": "«Demasiado tiempo» sería demasiado tiempo, más de lo que quiero. «Bastante» es una buena cantidad."
+          }
+        },
+        {
+          "text": {
+            "en": "A good amount, not too much (bastante)",
+            "es": "Una cantidad grande, pero no excesiva (bastante)"
+          }
+        },
+        {
+          "text": {
+            "en": "The whole of one thing (todo el / toda la)",
+            "es": "Una cosa entera (todo el / toda la)"
+          },
+          "wrong": {
+            "en": "«Todo el tiempo» would be all the time. «Bastante» is a large part, not the whole.",
+            "es": "«Todo el tiempo» sería todo el tiempo. «Bastante» es una parte grande, no el total."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "w07",
+      "es": "Quiero ver la otra casa.",
+      "target": "la otra",
+      "tr": {
+        "en": "I want to see the other house.",
+        "es": "Quiero ver la otra casa."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "The other one we know (el otro)",
+            "es": "El otro que ya conocemos (el otro)"
+          }
+        },
+        {
+          "text": {
+            "en": "One more, any other (otro, no article)",
+            "es": "Uno más, uno cualquiera (otro, sin artículo)"
+          },
+          "wrong": {
+            "en": "«Otra casa» (no article) would be any other house. With «la» it is the other one we both know.",
+            "es": "«Otra casa» (sin artículo) sería una casa cualquiera. Con «la» es la otra que los dos conocemos."
+          }
+        },
+        {
+          "text": {
+            "en": "The same, not different (el mismo)",
+            "es": "Igual, no distinto (el mismo)"
+          },
+          "wrong": {
+            "en": "«La misma casa» would be the identical house, not a different one.",
+            "es": "«La misma casa» sería la casa idéntica, no una distinta."
+          }
+        }
+      ],
+      "correctIndex": 0
+    }
+  ]
+}

@@ -104,6 +104,7 @@ const GRAMMAR_TIER: Record<string, GrammarTier> = {
   'imperativo-pronombres': 'exam',
   'comparativos-superlativos': 'core',
   indefinidos: 'core',
+  cuantificadores: 'core',
   'por-para': 'core',
   'saber-conocer': 'exam',
   'pedir-preguntar': 'exam',

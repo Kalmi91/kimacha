@@ -91,4 +91,5 @@ export const ES_GRAMMAR_INDEX: GrammarIndexEntry[] = [
   { id: 'finales-causales', load: () => packEntry('grammar-es', 'finales-causales') },
   { id: 'marcadores-discursivos', load: () => packEntry('grammar-es', 'marcadores-discursivos') },
   { id: 'indefinido-cambios-raiz', load: () => packEntry('grammar-es', 'indefinido-cambios-raiz') },
+  { id: 'cuantificadores', load: () => packEntry('grammar-es', 'cuantificadores') },
 ];

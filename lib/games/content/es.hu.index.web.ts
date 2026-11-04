@@ -90,4 +90,5 @@ export const ES_GRAMMAR_HU: Record<string, () => Record<string, string>> = {
   'finales-causales': () => packEntry('grammar-hu-es', 'finales-causales'),
   'marcadores-discursivos': () => packEntry('grammar-hu-es', 'marcadores-discursivos'),
   'indefinido-cambios-raiz': () => packEntry('grammar-hu-es', 'indefinido-cambios-raiz'),
+  'cuantificadores': () => packEntry('grammar-hu-es', 'cuantificadores'),
 };

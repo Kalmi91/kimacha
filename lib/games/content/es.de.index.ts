@@ -88,4 +88,5 @@ export const ES_GRAMMAR_DE: Record<string, () => Record<string, string>> = {
   'finales-causales': () => require('@/data/games/grammar-de/es/finales-causales.json'),
   'marcadores-discursivos': () => require('@/data/games/grammar-de/es/marcadores-discursivos.json'),
   'indefinido-cambios-raiz': () => require('@/data/games/grammar-de/es/indefinido-cambios-raiz.json'),
+  'cuantificadores': () => require('@/data/games/grammar-de/es/cuantificadores.json'),
 };
