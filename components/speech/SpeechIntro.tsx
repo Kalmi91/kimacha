@@ -16,7 +16,7 @@ import type { AnswerMode, SpeechStory, StoryWord } from '@/lib/speech/stories';
 import { useTheme } from '@/lib/ThemeContext';
 
 // The screen before a story: what it is about, the words in it the learner does not know yet (🔊 + meaning), and how the learner
-// answers (by voice or typed). Without a speech recognizer on the device the voice segment is off and typing is the way.
+// answers (by voice or typed); its button leads to the preparation. Without a speech recognizer on the device the voice segment is off and typing is the way.
 
 interface Props {
   story: SpeechStory;
@@ -60,7 +60,7 @@ export default function SpeechIntro({ story, target, source, words, mode, micOk,
           <Text style={[styles.heading, { color: colors.text }]}>{story.title[source]}</Text>
         </View>
       }
-      dock={{ testID: 'speech-start', label: sx.start, tone: 'next', onPress: onStart }}
+      dock={{ testID: 'speech-get-ready', label: sx.getReady, tone: 'next', onPress: onStart }}
     >
       <View style={styles.box}>
         <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
