@@ -29,7 +29,8 @@ import { resolvedTensesFromLessons } from '@/lib/knownSentence';
 import { nearMissDistractors } from '@/lib/distractors';
 import { dropOrphanCards } from '@/lib/pcicSession';
 import { tileWords } from '@/lib/sentenceCards';
-import { pickSentences } from '@/lib/sentencePick';
+import { pickSentences, roundSeed } from '@/lib/sentencePick';
+import { loadRecentSentences, rememberRound } from '@/lib/sentenceRecent';
 import { introduceNewWord, planNewWords } from '@/lib/sentenceNewWord';
 import { LAST_RUNG, PlayedRounds, loadLadder, saveStage, stageAfter, stillOnPlayedRung } from '@/lib/sentenceLadder';
 import { ALL_LEVELS, itemsForSentenceLevel, levelsWithSentences, loadSentenceLevel, resolveSentenceLevel, saveSentenceLevel, type SentenceLevel } from '@/lib/sentenceLevel';
@@ -203,6 +204,10 @@ export default function SentencesScreen() {
       // The ladder: a learned sentence stays out, every other one plays the rung it is on.
       const ladder = await loadLadder(db);
       const tenses = resolvedTensesFromLessons(doneGrammarTopicProgress(dir, grammarRows).keys());
+      // FB587: every round is picked by a fresh seed, and the sentences of the last rounds (kept over restarts) come last.
+      const seed = roundSeed();
+      const recent = await loadRecentSentences(db, pairOf(dir));
+      const focusSet = new Set(focusKey.split(',').filter(Boolean));
       const queue = buildSentenceQueue({
         target: dir,
         cards,
@@ -213,9 +218,13 @@ export default function SentencesScreen() {
         today,
         done: stillOnPlayedRung(played.current.rungs, ladder),
         ladder,
-        focus: new Set(focusKey.split(',').filter(Boolean)),
+        focus: focusSet,
+        seed,
+        recent,
       });
-      const picked = pickSentences(queue, dir, SENTENCE_ROUND_SIZE);
+      const picked = pickSentences(queue, dir, SENTENCE_ROUND_SIZE, { seed, focus: focusSet });
+      // Remembered when the round is created, not when it ends: leaving at once must still bring other sentences next time.
+      if (picked.length > 0) await rememberRound(db, pairOf(dir), picked.map((e) => sentenceKey(e)));
       // beta sentenceMistakes: one sentence is from the learner's mistake list (Spanish direction only; none = the round as picked).
       let entries = picked;
       if (picked.length === 0) {

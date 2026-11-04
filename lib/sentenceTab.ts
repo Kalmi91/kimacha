@@ -13,6 +13,7 @@ import { learnedEntryOf, learnerLevel, sentenceLevel, sentencePair, tileWords } 
 import { chunksFor, type SentenceChunk } from '@/lib/sentenceChunks';
 import type { Ladder, Rung } from '@/lib/sentenceLadder';
 import type { WordVerdict } from '@/lib/sentenceTyping';
+import { mulberry32 } from '@/lib/shuffle';
 import type { Sm2Card } from '@/lib/sm2';
 
 /** How many sentences one round has; every one of them gets the whole step list (lib/sentencePick.ts, lib/sentenceSteps.ts). */
@@ -69,6 +70,10 @@ export interface SentenceQueueDeps {
   ladder?: Ladder;
   /** Card ids to practise now (the `focus` route parameter): sentences with more of them come first. */
   focus?: ReadonlySet<string>;
+  /** Seeds the order of equal-priority sentences (FB587: a fresh round each time); absent = the old fixed order (fewer words first). */
+  seed?: number;
+  /** Sentence keys of the last rounds (lib/sentenceRecent.ts): after every non-recent sentence of the same priority. */
+  recent?: ReadonlySet<string>;
 }
 
 /** The same sentence under several items counts once: lowercase target text. */
@@ -82,9 +87,10 @@ export function isDueCard(card: Sm2Card, today: string): boolean {
 
 /**
  * Every sentence the learner may see: all its words learned (or free). Order: the most `focus` cards, then the
- * most due words, then the least fresh review, then fewer words (stable on the corpus order).
+ * most due words, then the least fresh review, then the ones not played in the last rounds, then (with a `seed`) a seeded
+ * random order, or without one fewer words (stable on the corpus order).
  */
-export function buildSentenceQueue({ target, cards: cardsIn, tenses, items, findItem, levelOf, today, done, ladder, focus }: SentenceQueueDeps): SentenceEntry[] {
+export function buildSentenceQueue({ target, cards: cardsIn, tenses, items, findItem, levelOf, today, done, ladder, focus, seed, recent }: SentenceQueueDeps): SentenceEntry[] {
   const cards = [...cardsIn];
   const level = target === 'de' ? learnerLevel(cards, levelOf) : undefined;
   // The gate's token set, built once, plus which learned cards own which token (a half goes to the owners).
@@ -146,15 +152,18 @@ export function buildSentenceQueue({ target, cards: cardsIn, tenses, items, find
       ...(stage === 2 || stage === 3 ? { rung: stage } : {}),
     });
   }
+  const rng = seed === undefined ? undefined : mulberry32(seed);
+  const isRecent = (e: SentenceEntry) => (recent?.has(sentenceKey(e)) ? 1 : 0);
   const focusHits = (e: SentenceEntry) => (focus ? e.wordIds.filter((id) => focus.has(id)).length : 0);
   return out
-    .map((entry, index) => ({ entry, index }))
+    .map((entry, index) => ({ entry, index, r: rng ? rng() : 0 }))
     .sort(
       (a, b) =>
         focusHits(b.entry) - focusHits(a.entry) ||
         b.entry.dueIds.length - a.entry.dueIds.length ||
         (a.entry.staleness < b.entry.staleness ? -1 : a.entry.staleness > b.entry.staleness ? 1 : 0) ||
-        a.entry.wordCount - b.entry.wordCount ||
+        isRecent(a.entry) - isRecent(b.entry) ||
+        (rng ? a.r - b.r : a.entry.wordCount - b.entry.wordCount) ||
         a.index - b.index,
     )
     .map((x) => x.entry);

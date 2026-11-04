@@ -25,6 +25,8 @@ jest.mock('@/lib/usageStats', () => {
   const actual = jest.requireActual('@/lib/usageStats');
   return { ...actual, localDateString: jest.fn(actual.localDateString) };
 });
+// FB587: a new round is picked by a seed (random order, recent last); these tests pin the queue's own order, so they run unseeded.
+jest.mock('@/lib/sentencePick', () => ({ ...jest.requireActual('@/lib/sentencePick'), roundSeed: () => undefined }));
 jest.mock('@/lib/practice/halfStep', () => {
   const actual = jest.requireActual('@/lib/practice/halfStep');
   return { ...actual, recordPracticeResult: jest.fn(actual.recordPracticeResult) };
@@ -77,6 +79,7 @@ import { __resetBetaForTest, setBeta } from '@/lib/beta';
 import { __resetForTests as resetDailyXp } from '@/lib/dailyXp';
 import { getDb } from '@/lib/database';
 import { setLanguage } from '@/lib/i18n';
+import { RESUME_GAME_ID } from '@/lib/resumeRoute';
 import { clearSentenceRound, currentStep, loadSentenceRound, saveSentenceRound, startRound } from '@/lib/sentenceRound';
 import { LADDER_KEY, loadLadder, saveStage } from '@/lib/sentenceLadder';
 import { addDays, sm2NewCard, sm2Review, type Sm2Card } from '@/lib/sm2';
@@ -199,6 +202,8 @@ beforeEach(async () => {
   await getDb().setGrammarPalette('classic');
   await clearSentenceRound(getDb());
   await getDb().resetGameProgress(LADDER_KEY);
+  // the sentences of the last rounds (FB587) are kept in the resume store: a test starts without them
+  await getDb().resetGameProgress(RESUME_GAME_ID);
   // the new words of an empty tab (FB564) have their own describe at the end: the day's budget is the default here
   await getDb().setDailyNewLimit(DEFAULT_DAILY_NEW_LIMIT);
   __resetBetaForTest();
@@ -745,6 +750,7 @@ describe('a round that was left continues', () => {
     const saved = await loadSentenceRound(getDb());
     expect(saved).not.toBeNull();
     await saveSentenceRound(getDb(), { ...saved!, day: '2000-01-01' });
+    await getDb().resetGameProgress(RESUME_GAME_ID); // FB587: the first round's sentences would go last in the new one
 
     const next = render(<SentencesScreen />);
     await flush();
@@ -1416,6 +1422,7 @@ describe('mistake step (beta sentenceMistakes, BRIEF-B2)', () => {
       r.unmount();
       await clearSentenceRound(getDb());
       await getDb().resetGameProgress(LADDER_KEY); // the next round starts on rung 1 again
+      await getDb().resetGameProgress(RESUME_GAME_ID); // FB587: and with the same sentences (they would go last)
     };
     await playRound(); // no list
     await seedBatch({ ...BATCH, sentences: BATCH.sentences.filter((s) => s.doubtful) });
