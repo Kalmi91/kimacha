@@ -224,10 +224,10 @@ async function launchChrome() {
     ],
     { stdio: 'ignore' },
   );
-  // The port comes from the first line of the DevToolsActivePort file.
+  // The port comes from the first line of the DevToolsActivePort file. A cold start on a CI runner took 10 s and more.
   const portFile = path.join(userDir, 'DevToolsActivePort');
   let port = 0;
-  for (let i = 0; i < 100 && !port; i++) {
+  for (let i = 0; i < 600 && !port; i++) {
     await sleep(100);
     if (isFile(portFile)) port = Number(fs.readFileSync(portFile, 'utf8').split('\n')[0]);
   }
