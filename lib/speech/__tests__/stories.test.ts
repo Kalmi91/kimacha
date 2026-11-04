@@ -7,6 +7,7 @@ import {
   STORIES,
   answerTurn,
   bubbleOf,
+  closingOf,
   currentTurn,
   finishedProgress,
   judgeAnswer,
@@ -206,6 +207,28 @@ describe('the counter, the bubbles and the voice', () => {
     expect(speakable('Me llamo ___.')).toBe('Me llamo.');
     expect(speakable('Tengo ___ años.')).toBe('Tengo años.');
     expect(speakable('Hablo un poco.')).toBe('Hablo un poco.');
+  });
+});
+
+describe('her closing words', () => {
+  const text = (es: string): StoryText => ({ es, en: es, hu: es, de: es });
+  const small: SpeechStory = {
+    ...story,
+    id: 'small',
+    turns: [
+      { id: 'a', ...text('a'), branches: [{ answers: ['Sí'], say: [text('Sí.')], reply: text('Gracias.'), next: 'b' }] },
+      { id: 'b', ...text('b'), branches: [{ answers: ['Sí'], say: [text('Sí.')], reply: text('Adiós.') }, { answers: ['No'], say: [text('No.')] }] },
+    ],
+  };
+
+  it('a last reply on a branch without next turn is the closing bubble; none without a reply or before the end', () => {
+    let run = answerTurn(startStory(small, 'type'), small, right(0, 'sí'));
+    expect(closingOf(small, run, 'es')).toBeNull();
+    expect(closingOf(small, answerTurn(run, small, right(0, 'sí')), 'es')).toBe('Adiós.');
+    expect(closingOf(small, answerTurn(run, small, right(1, 'no')), 'es')).toBeNull();
+    run = startStory(story, 'type');
+    for (let i = 0; i < total; i++) run = answerTurn(run, story, right());
+    expect(closingOf(story, run, 'es')).toBeNull();
   });
 });
 

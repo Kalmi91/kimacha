@@ -20,7 +20,7 @@ import type { SpokenMatch } from '@/lib/practice/situationMatch';
 import { speak, stopSpeaking } from '@/lib/speech';
 import { isMicOffError, isNothingHeardError, useRecognizer } from '@/lib/speechRecognition';
 import { TOP_ROW, upperFooterMax } from '@/lib/speech/layout';
-import { MAX_TRIES, answerTurn, bubbleOf, judgeAnswer, progressOf, skipTurn, speakable, turnById, type AnswerMode, type SpeechStory, type StoryRun } from '@/lib/speech/stories';
+import { MAX_TRIES, answerTurn, bubbleOf, closingOf, judgeAnswer, progressOf, skipTurn, speakable, turnById, type AnswerMode, type SpeechStory, type StoryRun } from '@/lib/speech/stories';
 import { useTheme } from '@/lib/ThemeContext';
 
 // The story itself: the character's lines as chat bubbles, the learner's answers as bubbles on the other side, and below, docked
@@ -152,8 +152,11 @@ export default function SpeechPlay({ story, run, target, source, strictAccents, 
     finishRef.current = onFinish;
     runRef.current = run;
   });
+  const closing = closingOf(story, run, story.target);
   useEffect(() => {
     if (!waiting) return;
+    // her closing words (a last reply, no next line) are read aloud at once and stay a little longer on screen
+    if (run.done && closing && focused.current) speak(closing, lang);
     const id = setTimeout(() => {
       if (run.done) {
         finishRef.current();
@@ -162,9 +165,9 @@ export default function SpeechPlay({ story, run, target, source, strictAccents, 
       const at = runRef.current.answers.length;
       setShown(at);
       if (focused.current) speak(bubbleOf(story, runRef.current, at, story.target), lang);
-    }, motion.feedback);
+    }, run.done && closing ? motion.feedback * 3 : motion.feedback);
     return () => clearTimeout(id);
-  }, [waiting, run.answers.length, run.done, story, lang]);
+  }, [waiting, run.answers.length, run.done, story, lang, closing]);
 
   // a new result or a new turn shows the upper part from its top (the red words first)
   useEffect(() => {
@@ -393,6 +396,12 @@ export default function SpeechPlay({ story, run, target, source, strictAccents, 
             </View>
           );
         })}
+        {run.done && closingOf(story, run, source) && (
+          <Card style={styles.left} classicStyle={styles.bubble} boxStyle={styles.brutalBubble}>
+            <Text style={[styles.who, { color: colors.textMuted }]}>{story.speaker}</Text>
+            <Text testID="speech-closing" style={[styles.line, { color: colors.text }]}>{closing}</Text>
+          </Card>
+        )}
       </View>
     </GameFrame>
   );

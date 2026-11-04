@@ -162,6 +162,13 @@ export function bubbleOf(s: SpeechStory, run: Pick<StoryRun, 'path' | 'answers'>
   return reply ? `${reply[lang]} ${turn[lang]}` : turn[lang];
 }
 
+/** Her last words after the final right answer (a branch with a reply and no next turn), or null: shown as a closing bubble. */
+export function closingOf(s: SpeechStory, run: Pick<StoryRun, 'path' | 'answers' | 'done'>, lang: Lang): string | null {
+  const last = run.answers[run.answers.length - 1];
+  if (!run.done || !last?.ok) return null;
+  return currentTurn(s, run).branches[last.branch]?.reply?.[lang] ?? null;
+}
+
 /** A `say` line as the voice reads it: the blank is left out. */
 export const speakable = (text: string): string => text.replace(/\s*_{3}/g, '').trim();
 
