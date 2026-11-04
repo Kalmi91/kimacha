@@ -46,10 +46,14 @@ interface Props {
   footer?: ReactNode;
   /** The scroller goes to its end whenever this changes (a card that grows under its own button). */
   scrollKey?: string | number;
+  /** The scroller goes to its end when a dock appears (default). A screen that must open at its top (the Speak intro) switches it off. */
+  scrollToEndOnDock?: boolean;
+  /** The measured height of the frame (what is below the navigator header and above the tab bar), at every layout. */
+  onFrameLayout?: (height: number) => void;
   children: ReactNode;
 }
 
-export default function GameFrame({ testID, target, currentCard, creditSeq = 0, progress, hideLevelCounter = false, top, dock, centered = false, footer, scrollKey, children }: Props) {
+export default function GameFrame({ testID, target, currentCard, creditSeq = 0, progress, hideLevelCounter = false, top, dock, centered = false, footer, scrollKey, scrollToEndOnDock = true, onFrameLayout, children }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const { dockLift, kbHeight } = useDockLift();
@@ -61,13 +65,14 @@ export default function GameFrame({ testID, target, currentCard, creditSeq = 0, 
   // behind the dock (emulator 2026-10-22: "The opposite: …" half hidden under Next). So does a change of `scrollKey`.
   const dockId = dock?.testID;
   useEffect(() => {
-    if (dockId || scrollKey !== undefined) scroll.current?.scrollToEnd({ animated: true });
-  }, [dockId, scrollKey]);
+    if ((dockId && scrollToEndOnDock) || scrollKey !== undefined) scroll.current?.scrollToEnd({ animated: true });
+  }, [dockId, scrollKey, scrollToEndOnDock]);
   return (
     <KeyboardAvoidingView
       testID={testID}
       style={[styles.screen, { backgroundColor: colors.background }]}
       behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+      onLayout={onFrameLayout ? (e) => onFrameLayout(Math.round(e.nativeEvent.layout.height)) : undefined}
     >
       <SkinBackdrop />
       {(!hideLevelCounter || progress) && (

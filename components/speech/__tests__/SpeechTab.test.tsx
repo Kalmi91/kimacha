@@ -37,7 +37,7 @@ jest.mock('@/lib/knownSentence', () => {
 });
 
 import { act, fireEvent, render, within } from '@testing-library/react-native';
-import { DeviceEventEmitter, Dimensions, StyleSheet } from 'react-native';
+import { BackHandler, DeviceEventEmitter, Dimensions, ScrollView, StyleSheet } from 'react-native';
 import { ExpoSpeechRecognitionModule } from 'expo-speech-recognition';
 
 import SpeechTab from '@/components/speech/SpeechTab';
@@ -47,7 +47,7 @@ import { getDb } from '@/lib/database';
 import { setLanguage, t } from '@/lib/i18n';
 import { knownTokens } from '@/lib/knownSentence';
 import { loadResumeValue, saveResumeValue } from '@/lib/resumeStore';
-import { MIN_UPPER, upperFooterMax } from '@/lib/speech/layout';
+import { FOOTER_PAD, TOP_ROW, upperFooterMax } from '@/lib/speech/layout';
 import { speak, stopSpeaking } from '@/lib/speech';
 import {
   SPEECH_ANSWER_KEY,
@@ -70,6 +70,23 @@ jest.setTimeout(60000);
 const { __emit } = require('expo-speech-recognition') as { __emit: (name: string, payload?: unknown) => void };
 const { __blur, __focus } = require('expo-router') as { __blur: () => void; __focus: () => void };
 const WINDOW = Dimensions.get('window');
+// the jest ScrollView keeps its methods on the class: one jest.fn for every scroller
+const scrollToEnd = ScrollView.prototype.scrollToEnd as unknown as jest.Mock;
+// the hardware Back: handlers are kept the way Android calls them (the last registered first, until one consumes the press)
+const backHandlers: (() => boolean | null | undefined)[] = [];
+const pressBack = async () => {
+  let consumed = false;
+  await act(async () => {
+    for (const handler of [...backHandlers].reverse()) {
+      if (handler()) {
+        consumed = true;
+        break;
+      }
+    }
+  });
+  await flush();
+  return consumed;
+};
 const mockSpeak = speak as jest.Mock;
 const mockStopSpeaking = stopSpeaking as jest.Mock;
 const mockKnownTokens = knownTokens as jest.Mock;
@@ -121,6 +138,12 @@ beforeEach(async () => {
   jest.useFakeTimers();
   mockSpeak.mockClear();
   mockStopSpeaking.mockClear();
+  scrollToEnd.mockClear();
+  backHandlers.length = 0;
+  jest.spyOn(BackHandler, 'addEventListener').mockImplementation((_event, handler) => {
+    backHandlers.push(handler);
+    return { remove: () => void backHandlers.splice(backHandlers.indexOf(handler), 1) };
+  });
   mockKnownTokens.mockReset();
   mockKnownTokens.mockImplementation(jest.requireActual('@/lib/knownSentence').knownTokens);
   (ExpoSpeechRecognitionModule.start as jest.Mock).mockClear();
@@ -136,6 +159,7 @@ afterEach(() => {
   jest.useRealTimers();
   setLanguage('en');
   Dimensions.set({ window: WINDOW });
+  (BackHandler.addEventListener as jest.Mock).mockRestore();
 });
 
 describe('Speak tab: the list', () => {
@@ -727,11 +751,11 @@ describe('Speak tab: the docked footer', () => {
       expect(within(fixed).getByTestId(id)).toBeTruthy();
       expect(within(scroll).queryByTestId(id)).toBeNull();
     }
-    expect(scrollMax(view)).toBe(upperFooterMax({ windowH: 640, lift: 0, kbHeight: 0, fixedH: DOCK_RESERVE, voice: false }));
+    expect(scrollMax(view)).toBe(upperFooterMax({ room: 640, windowH: 640, kbHeight: 0, topH: TOP_ROW, fixedH: DOCK_RESERVE, voice: false }));
     view.unmount();
   });
 
-  it('an open keyboard gives the upper part less room, never less than the minimum; the input stays in the fixed part', async () => {
+  it('an open keyboard gives the upper part less room (it may shrink to zero); the input stays in the fixed part', async () => {
     Dimensions.set({ window: { width: 360, height: 640, scale: 1, fontScale: 1 } });
     await saveRun(at(1));
     const view = await mount();
@@ -741,8 +765,8 @@ describe('Speak tab: the docked footer', () => {
     });
     const open = scrollMax(view);
     expect(open).toBeLessThan(closed);
-    expect(open).toBeGreaterThanOrEqual(MIN_UPPER);
-    expect(open).toBe(upperFooterMax({ windowH: 640, lift: 300, kbHeight: 300, fixedH: DOCK_RESERVE, voice: false }));
+    expect(open).toBeGreaterThanOrEqual(0);
+    expect(open).toBe(upperFooterMax({ room: 640 - 300, windowH: 640, kbHeight: 300, topH: TOP_ROW, fixedH: DOCK_RESERVE, voice: false }));
     expect(within(view.getByTestId('speech-footer-fixed')).getByTestId('speech-type-input')).toBeTruthy();
     view.unmount();
   });
@@ -753,7 +777,129 @@ describe('Speak tab: the docked footer', () => {
     const view = await mount();
     expect(within(view.getByTestId('speech-footer-fixed')).getByTestId('speech-mic')).toBeTruthy();
     expect(within(view.getByTestId('speech-footer-scroll')).queryByTestId('speech-mic')).toBeNull();
-    expect(scrollMax(view)).toBe(upperFooterMax({ windowH: 640, lift: 0, kbHeight: 0, fixedH: DOCK_RESERVE, voice: true }));
+    expect(scrollMax(view)).toBe(upperFooterMax({ room: 640, windowH: 640, kbHeight: 0, topH: TOP_ROW, fixedH: DOCK_RESERVE, voice: true }));
     view.unmount();
+  });
+});
+
+describe('Speak tab: the small phone with the keyboard open', () => {
+  const layout = (node: ReturnType<View['getByTestId']>, height: number) => {
+    fireEvent(node, 'layout', { persist: () => {}, nativeEvent: { layout: { x: 0, y: 0, width: 360, height } } });
+  };
+
+  it('610 dp window, header to 145, keyboard top at 276: the footer is measured, Next is a link, the input and Check fit between the header and the keyboard', async () => {
+    Dimensions.set({ window: { width: 360, height: 610, scale: 1, fontScale: 1 } });
+    await saveRun(at(1));
+    const view = await mount();
+    await type(view, 'soy Hungría');
+    await type(view, 'soy Hungría');
+    // keyboard closed: Next is the full-width button
+    expect(view.getByTestId('speech-skip')).toBeTruthy();
+    expect(view.queryByTestId('speech-skip-link')).toBeNull();
+    // what the device measured: the frame is 465 dp (below the header), the keyboard is 334 dp, the fixed part 95 dp
+    await act(async () => {
+      layout(view.getByTestId('speech-screen'), 610 - 145);
+      layout(view.getByTestId('speech-footer-fixed'), 95);
+      DeviceEventEmitter.emit('keyboardDidShow', { endCoordinates: { height: 610 - 276 } });
+    });
+    const upper = scrollMax(view);
+    expect(upper).toBe(upperFooterMax({ room: 610 - 145 - (610 - 276), windowH: 610, kbHeight: 610 - 276, topH: TOP_ROW, fixedH: 95, voice: false }));
+    expect(upper).toBeGreaterThanOrEqual(0);
+    expect(FOOTER_PAD + upper + 95).toBeLessThanOrEqual(276 - 145);
+    // Next moved into the links row, in the place of Help (the hint is showing)
+    const fixed = view.getByTestId('speech-footer-fixed');
+    expect(within(fixed).getByTestId('speech-skip-link')).toBeTruthy();
+    expect(view.queryByTestId('speech-skip')).toBeNull();
+    expect(view.queryByTestId('speech-help')).toBeNull();
+    expect(within(view.getByTestId('speech-footer-scroll')).getByTestId('speech-hint')).toBeTruthy();
+    expect(within(fixed).getByTestId('speech-type-input')).toBeTruthy();
+    expect(within(fixed).getByTestId('speech-check')).toBeTruthy();
+    // the link gives the turn up like the button did
+    await press(view, 'speech-skip-link');
+    expect(text(view, 'speech-answer-who-1')).toBe('You (model)');
+    // the keyboard closes: the button is back when it is needed again
+    await act(async () => {
+      DeviceEventEmitter.emit('keyboardDidHide', {});
+    });
+    await advance();
+    await type(view, 'hola');
+    await type(view, 'hola');
+    expect(view.getByTestId('speech-skip')).toBeTruthy();
+    expect(view.queryByTestId('speech-skip-link')).toBeNull();
+    view.unmount();
+  });
+
+  const scrollMax = (view: View) => StyleSheet.flatten(view.getByTestId('speech-footer-scroll').props.style).maxHeight as number;
+});
+
+describe('Speak tab: the intro opens at the top', () => {
+  it('the scroller is not sent to its end when the Start button appears', async () => {
+    const view = await mount();
+    scrollToEnd.mockClear();
+    await press(view, `speech-story-${story.id}`);
+    expect(view.getByTestId('speech-start')).toBeTruthy();
+    expect(scrollToEnd).not.toHaveBeenCalled();
+    view.unmount();
+  });
+});
+
+describe('Speak tab: the hardware Back', () => {
+  it('on the list it is left alone (the tab is left as before)', async () => {
+    const view = await mount();
+    expect(await pressBack()).toBe(false);
+    expect(view.getByTestId('speech-levels')).toBeTruthy();
+    view.unmount();
+  });
+
+  it('on the intro it goes back to the list and is consumed', async () => {
+    const view = await mount();
+    await press(view, `speech-story-${story.id}`);
+    expect(view.getByTestId('speech-start')).toBeTruthy();
+    expect(await pressBack()).toBe(true);
+    expect(view.getByTestId('speech-levels')).toBeTruthy();
+    view.unmount();
+  });
+
+  it('in the story it keeps the run, like the back link: the list says Continue', async () => {
+    await saveRun(at(2));
+    const view = await mount();
+    expect(text(view, 'speech-line-2')).toBe(story.turns[2].es);
+    expect(await pressBack()).toBe(true);
+    expect(view.getByTestId(`speech-story-continue-${story.id}`)).toBeTruthy();
+    expect(await savedNow()).toMatchObject({ turn: 2 });
+    // and the list leaves it alone
+    expect(await pressBack()).toBe(false);
+    view.unmount();
+  });
+
+  it('on the end screen it goes to the list, like Back to the stories', async () => {
+    await saveRun(at(total - 1));
+    const view = await mount();
+    await type(view, 'gracias, adiós');
+    await advance();
+    expect(view.getByTestId('speech-done')).toBeTruthy();
+    expect(await pressBack()).toBe(true);
+    expect(view.getByTestId(`speech-story-best-${story.id}`)).toBeTruthy();
+    expect(view.queryByTestId(`speech-story-continue-${story.id}`)).toBeNull();
+    view.unmount();
+  });
+
+  it('only while the tab is focused: a blurred tab has no handler, a refocused one has it again', async () => {
+    await saveRun(at(1));
+    const view = await mount();
+    expect(backHandlers).toHaveLength(1);
+    await act(async () => {
+      __blur();
+    });
+    expect(backHandlers).toHaveLength(0);
+    expect(await pressBack()).toBe(false);
+    expect(text(view, 'speech-line-1')).toBe(story.turns[1].es);
+    await act(async () => {
+      __focus();
+    });
+    await flush();
+    expect(backHandlers).toHaveLength(1);
+    view.unmount();
+    expect(backHandlers).toHaveLength(0);
   });
 });

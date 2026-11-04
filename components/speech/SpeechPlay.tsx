@@ -19,7 +19,7 @@ import { speechLang } from '@/lib/languages';
 import { matchSpoken, type SpokenMatch } from '@/lib/practice/situationMatch';
 import { speak, stopSpeaking } from '@/lib/speech';
 import { isMicOffError, isNothingHeardError, useRecognizer } from '@/lib/speechRecognition';
-import { upperFooterMax } from '@/lib/speech/layout';
+import { TOP_ROW, upperFooterMax } from '@/lib/speech/layout';
 import { MAX_TRIES, answerTurn, lineOf, skipTurn, type AnswerMode, type SpeechStory, type StoryRun } from '@/lib/speech/stories';
 import { useTheme } from '@/lib/ThemeContext';
 
@@ -74,6 +74,9 @@ export default function SpeechPlay({ story, run, target, source, strictAccents, 
   const { height: windowH } = useWindowDimensions();
   const { dockLift, kbHeight } = useDockLift();
   const [fixedH, setFixedH] = useState(DOCK_RESERVE);
+  // the measured height of the frame (below the navigator header, above the tab bar) and of the back / progress row
+  const [frameH, setFrameH] = useState(0);
+  const [topH, setTopH] = useState(TOP_ROW);
   const upper = useRef<ScrollView>(null);
 
   // What was said (the recognizer's final result) or typed is judged.
@@ -165,6 +168,9 @@ export default function SpeechPlay({ story, run, target, source, strictAccents, 
   const voice = run.mode === 'voice' && micOk && !micOff;
   const meText = g.brutal ? textOnFill(g, 'b') : colors.onTint;
   const mark = (right: boolean) => ({ color: right ? colors.success : colors.danger });
+  // With the keyboard open the fixed part is just the input row and one link row: Next is a link then, in the place of Help
+  const keyboardOpen = kbHeight > 0;
+  const canSkip = !waiting && run.tries >= MAX_TRIES;
 
   const upperPart = (
     <>
@@ -237,13 +243,12 @@ export default function SpeechPlay({ story, run, target, source, strictAccents, 
             label={`✓ ${s.card.check}`}
             onPress={() => submitTyped(typed)}
             disabled={waiting || !typed.trim()}
-            brutalStyle={styles.button}
             classicStyle={[styles.button, styles.classicButton, { backgroundColor: colors.tint, opacity: waiting || !typed.trim() ? 0.4 : 1 }]}
             classicTextStyle={[styles.classicButtonText, { color: colors.onTint }]}
           />
         </View>
       )}
-      {!waiting && run.tries >= MAX_TRIES && (
+      {canSkip && !keyboardOpen && (
         <ActionButton
           testID="speech-skip"
           label={`${s.card.next} →`}
@@ -255,7 +260,11 @@ export default function SpeechPlay({ story, run, target, source, strictAccents, 
         />
       )}
       <View style={styles.links}>
-        {!hintOn ? (
+        {canSkip && keyboardOpen ? (
+          <Pressable testID="speech-skip-link" accessibilityRole="button" onPress={skip} style={styles.link}>
+            <Text style={[styles.linkText, { color: colors.text }]}>{`${s.card.next} →`}</Text>
+          </Pressable>
+        ) : !hintOn ? (
           <Pressable testID="speech-help" accessibilityRole="button" onPress={() => setHelpAt(shown)} style={styles.link}>
             <Text style={[styles.linkText, { color: colors.text }]}>{sx.help}</Text>
           </Pressable>
@@ -276,7 +285,7 @@ export default function SpeechPlay({ story, run, target, source, strictAccents, 
       <ScrollView
         ref={upper}
         testID="speech-footer-scroll"
-        style={[styles.upper, { maxHeight: upperFooterMax({ windowH, lift: dockLift, kbHeight, fixedH, voice }) }]}
+        style={[styles.upper, { maxHeight: upperFooterMax({ room: (frameH > 0 ? frameH : windowH) - dockLift, windowH, kbHeight, topH, fixedH, voice }) }]}
         keyboardShouldPersistTaps="handled"
       >
         {upperPart}
@@ -294,8 +303,9 @@ export default function SpeechPlay({ story, run, target, source, strictAccents, 
       currentCard={`speech:${story.id}:${shown}`}
       hideLevelCounter
       scrollKey={`${shown}:${run.turn}:${heard ? 1 : 0}`}
+      onFrameLayout={setFrameH}
       top={
-        <View style={styles.top}>
+        <View style={styles.top} onLayout={(e) => setTopH(Math.round(e.nativeEvent.layout.height))}>
           <BackButton testID="speech-back" onPress={onBack} pressStyle={styles.backPress} arrowStyle={[styles.backArrow, { color: colors.text }]} />
           <View accessible accessibilityLabel={sx.progressLabel(Math.min(run.turn + 1, total), total)} style={styles.progress}>
             <ProgressBar

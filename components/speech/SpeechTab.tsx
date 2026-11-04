@@ -1,4 +1,6 @@
-import { useCallback, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { BackHandler } from 'react-native';
+import { useFocusEffect } from 'expo-router';
 import SpeechDone from '@/components/speech/SpeechDone';
 import SpeechIntro from '@/components/speech/SpeechIntro';
 import SpeechList from '@/components/speech/SpeechList';
@@ -132,11 +134,29 @@ export default function SpeechTab() {
   }, []);
   useLoadOnMount(checkMic);
 
+  const stories = storiesFor(target);
+  const story = stories.find((x) => x.id === storyId) ?? null;
+  // Android's hardware Back on an inner screen does what the on-screen back link does (leaving the story keeps the run) and is
+  // consumed; on the list it is left alone (it leaves the tab as before). Only while this tab is focused.
+  const backRef = useRef<() => boolean>(() => false);
+  useEffect(() => {
+    backRef.current = () => {
+      if (!story || screen === 'list') return false;
+      if (screen === 'done') setRun(null);
+      setScreen('list');
+      return true;
+    };
+  });
+  useFocusEffect(
+    useCallback(() => {
+      const subscription = BackHandler.addEventListener('hardwareBackPress', () => backRef.current());
+      return () => subscription.remove();
+    }, []),
+  );
+
   // the 💬 button is there before the first screen is (every screen names its feedback card, app/__tests__/screenContract.test.tsx)
   if (!loaded) return <ScreenFeedback placement="header" level="-" languagePair={pairOf(target)} currentCard="speech-list" />;
 
-  const stories = storiesFor(target);
-  const story = stories.find((x) => x.id === storyId) ?? null;
   const openId = run && !run.done ? run.id : null;
   // no recognizer = typing, whatever was chosen before
   const way: AnswerMode = micOk ? mode : 'type';

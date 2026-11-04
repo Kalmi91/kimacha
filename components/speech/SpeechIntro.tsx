@@ -53,6 +53,7 @@ export default function SpeechIntro({ story, target, source, words, mode, micOk,
       target={target}
       currentCard={`speech-intro:${story.id}`}
       hideLevelCounter
+      scrollToEndOnDock={false}
       top={
         <View style={styles.top}>
           <BackButton testID="speech-back" onPress={onBack} pressStyle={styles.backPress} arrowStyle={[styles.backArrow, { color: colors.text }]} />

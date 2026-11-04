@@ -4,8 +4,8 @@
 jest.mock('expo-router', () => require('@/test-utils/mocks').focusEffectRouterMock());
 jest.mock('@/lib/buildFlavor', () => ({ IS_PLAY_BUILD: false, FEEDBACK_URL: 'https://example.test/feedback' }));
 
-import { render } from '@testing-library/react-native';
-import { Text } from 'react-native';
+import { fireEvent, render } from '@testing-library/react-native';
+import { ScrollView, Text } from 'react-native';
 
 import GameFrame from '@/components/practice/GameFrame';
 import { ThemeProvider } from '@/lib/ThemeContext';
@@ -14,6 +14,11 @@ import { makeFlush } from '@/test-utils/flush';
 jest.setTimeout(30000);
 
 const flush = makeFlush(12);
+// the jest ScrollView keeps its methods on the class: one jest.fn for every scroller
+const scrollToEnd = ScrollView.prototype.scrollToEnd as unknown as jest.Mock;
+const dock = { testID: 'frame-dock', label: 'Go', tone: 'next' as const, onPress: () => {} };
+
+beforeEach(() => scrollToEnd.mockClear());
 
 const mount = async (props: Partial<React.ComponentProps<typeof GameFrame>> = {}) => {
   const view = render(
@@ -50,6 +55,35 @@ describe('GameFrame header', () => {
     expect(view.getByTestId('game-header')).toBeTruthy();
     expect(view.queryByTestId('level-counter')).toBeNull();
     expect(view.getByText('1/3')).toBeTruthy();
+    view.unmount();
+  });
+});
+
+describe('GameFrame scroll to the end', () => {
+  it('by default a dock that appears sends the scroller to its end', async () => {
+    const view = await mount({ dock });
+    expect(scrollToEnd).toHaveBeenCalled();
+    view.unmount();
+  });
+
+  it('scrollToEndOnDock off: a screen with a dock opens at its top; a scrollKey still scrolls', async () => {
+    const view = await mount({ dock, scrollToEndOnDock: false });
+    expect(scrollToEnd).not.toHaveBeenCalled();
+    view.unmount();
+    const keyed = await mount({ dock, scrollToEndOnDock: false, scrollKey: 'a' });
+    expect(scrollToEnd).toHaveBeenCalled();
+    keyed.unmount();
+  });
+});
+
+describe('GameFrame onFrameLayout', () => {
+  it('reports the measured height of the frame at every layout', async () => {
+    const heights: number[] = [];
+    const view = await mount({ onFrameLayout: (h) => heights.push(h) });
+    fireEvent(view.getByTestId('frame'), 'layout', { persist: () => {}, nativeEvent: { layout: { x: 0, y: 0, width: 360, height: 465.4 } } });
+    fireEvent(view.getByTestId('frame'), 'layout', { persist: () => {}, nativeEvent: { layout: { x: 0, y: 0, width: 360, height: 131 } } });
+    await flush();
+    expect(heights).toEqual([465, 131]);
     view.unmount();
   });
 });
