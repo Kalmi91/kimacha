@@ -673,6 +673,7 @@
         "es": "Toma, este regalo es para ti."
       },
       "es": "Toma, este regalo es para ti.",
+      "accept": ["Aquí, este regalo es para ti.", "Ten, este regalo es para ti."],
       "why": {
         "en": "Para marks the recipient, who something is intended for.",
         "es": "Para marca al destinatario, para quien es algo."
@@ -687,7 +688,7 @@
         "es": "No trabajo hoy por la lluvia."
       },
       "es": "No trabajo hoy por la lluvia.",
-      "accept": ["Hoy no trabajo por la lluvia.", "Yo no trabajo hoy por la lluvia."],
+      "accept": ["Hoy no trabajo por la lluvia.", "Yo no trabajo hoy por la lluvia.", "No estoy trabajando hoy por la lluvia.", "Hoy no estoy trabajando por la lluvia."],
       "why": {
         "en": "Por expresses the cause: why I'm not working, because of the rain.",
         "es": "Por expresa la causa: por qué no trabajo, a causa de la lluvia."
@@ -702,7 +703,7 @@
         "es": "Estuve en México por dos semanas."
       },
       "es": "Estuve en México por dos semanas.",
-      "accept": ["Yo estuve en México por dos semanas.", "Por dos semanas estuve en México.", "Estuve por dos semanas en México."],
+      "accept": ["Yo estuve en México por dos semanas.", "Por dos semanas estuve en México.", "Estuve por dos semanas en México.", "Estuve dos semanas en México.", "Estuve en México durante dos semanas.", "Estuve durante dos semanas en México."],
       "why": {
         "en": "Por expresses duration: for how long.",
         "es": "Por expresa la duración: durante cuánto tiempo."
@@ -717,7 +718,7 @@
         "es": "Compro esta camisa por cien pesos."
       },
       "es": "Compro esta camisa por cien pesos.",
-      "accept": ["Yo compro esta camisa por cien pesos."],
+      "accept": ["Yo compro esta camisa por cien pesos.", "Voy a comprar esta camisa por cien pesos.", "Compraré esta camisa por cien pesos.", "Compro esta camisa por 100 pesos.", "Voy a comprar esta camisa por 100 pesos."],
       "why": {
         "en": "Por expresses an exchange: how much, what you give in return.",
         "es": "Por expresa el intercambio: cuánto, qué se da a cambio."
@@ -732,7 +733,7 @@
         "es": "Hablamos por teléfono."
       },
       "es": "Hablamos por teléfono.",
-      "accept": ["Nosotros hablamos por teléfono."],
+      "accept": ["Nosotros hablamos por teléfono.", "Estamos hablando por teléfono.", "Nosotros estamos hablando por teléfono."],
       "why": {
         "en": "Por expresses the means, the channel of communication: by phone.",
         "es": "Por expresa el medio, el canal de comunicación: por teléfono."
@@ -747,7 +748,7 @@
         "es": "Paseamos por el parque."
       },
       "es": "Paseamos por el parque.",
-      "accept": ["Nosotros paseamos por el parque."],
+      "accept": ["Nosotros paseamos por el parque.", "Estamos paseando por el parque.", "Nosotros estamos paseando por el parque.", "Caminamos por el parque.", "Estamos caminando por el parque."],
       "why": {
         "en": "Por expresses movement through a place: we walk through the park.",
         "es": "Por expresa el movimiento a través de un lugar: caminamos por el parque."
@@ -791,7 +792,7 @@
         "es": "Vamos a salir para España mañana."
       },
       "es": "Vamos a salir para España mañana.",
-      "accept": ["Mañana vamos a salir para España.", "Vamos a salir mañana para España.", "Nosotros vamos a salir para España mañana."],
+      "accept": ["Mañana vamos a salir para España.", "Vamos a salir mañana para España.", "Nosotros vamos a salir para España mañana.", "Salimos para España mañana.", "Mañana salimos para España.", "Salimos mañana para España.", "Nos vamos para España mañana.", "Mañana nos vamos para España."],
       "why": {
         "en": "Para expresses the destination: where you're headed.",
         "es": "Para expresa el destino: hacia dónde se sale."
@@ -806,6 +807,7 @@
         "es": "Gracias por tu ayuda."
       },
       "es": "Gracias por tu ayuda.",
+      "accept": ["Gracias por su ayuda."],
       "why": {
         "en": "Por expresses the cause: what you're thanking someone for.",
         "es": "Por expresa la causa: por qué se dan las gracias."
@@ -820,7 +822,7 @@
         "es": "Necesito una taza para el café."
       },
       "es": "Necesito una taza para el café.",
-      "accept": ["Yo necesito una taza para el café."],
+      "accept": ["Yo necesito una taza para el café.", "Necesito una taza para café.", "Yo necesito una taza para café."],
       "why": {
         "en": "Para expresses the object's purpose: what the cup is for.",
         "es": "Para expresa el uso del objeto: para qué sirve la taza."

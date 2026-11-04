@@ -16,6 +16,7 @@ import { tileWords } from '@/lib/sentenceCards';
 import { hashString, shuffleOptions } from '@/lib/shuffle';
 import { speak, stopSpeaking } from '@/lib/speech';
 import type { ContentLang, DictationItem, OrderItem, SpotItem, WriteItem } from '@/lib/grammar/lessonTypes';
+import { isWriteAnswerRight } from '@/lib/grammar/writeAnswer';
 
 // three new task kinds, FOR NOW only in the
 // ser-estar (error spotting + dictation) and negacion (word order + error spotting) lessons. All three are 1 unit in
@@ -302,12 +303,7 @@ export function WriteDrillItem({
 
   const check = () => {
     if (result || typed.trim() === '') return;
-    // Lenient check, as in the dictation: punctuation, a dropped pronoun and the accent setting
-    // are handled by the sentence grader; any accepted form (another natural word order) counts.
-    const ok = [item.es, ...(item.accept ?? [])].some(
-      (c) => suggestedGrade(gradeSentenceAnswer(typed, c, strictAccents, learnedLang)) === 'good'
-    );
-    setResult({ correct: ok });
+    setResult({ correct: isWriteAnswerRight(typed, item, strictAccents) });
     speak(item.es, locale);
   };
 
@@ -347,7 +343,13 @@ export function WriteDrillItem({
         <>
           <BrutalBox testID={result.correct ? 'write-correct' : 'write-wrong'} fill="b" boxStyle={styles.feedback}>
             {result.correct ? (
-              <Text style={[styles.fixedLine, { color: g.onB }]}>{s.grammar.correct}</Text>
+              <>
+                <Text style={[styles.fixedLine, { color: g.onB }]}>{s.grammar.correct}</Text>
+                {/* the lesson's own form, with its accents: the learner may have typed another accepted one */}
+                <Text testID="write-sentence" style={[styles.writeSentence, { color: g.onB }]}>
+                  {item.es}
+                </Text>
+              </>
             ) : (
               <AnswerCompare typed={typed} correct={item.es} g={g} onFill />
             )}
@@ -366,6 +368,11 @@ export function WriteDrillItem({
           <Text style={[styles.nextText, { color: inkButtonText(g) }]}>{s.grammar.check}</Text>
         </BrutalBox>
       )}
+      {!strictAccents ? (
+        <Text testID="write-accent-hint" style={[styles.explain, { color: g.mu }]}>
+          {s.grammar.accentHint}
+        </Text>
+      ) : null}
       {docked ? <View style={{ height: padBottom }} /> : null}
     </View>
   );
@@ -413,6 +420,7 @@ const styles = StyleSheet.create({
   optionText: { fontSize: 17, fontWeight: '600', textAlign: 'center', flexShrink: 1 },
   feedback: { padding: 14, gap: 6 },
   fixedLine: { fontSize: 20, fontWeight: '700' },
+  writeSentence: { fontSize: 17, lineHeight: 24, fontWeight: '600' },
   explain: { fontSize: 14, lineHeight: 20 },
   translation: { fontSize: 14, fontStyle: 'italic' },
   next: { paddingVertical: 14, alignItems: 'center' },

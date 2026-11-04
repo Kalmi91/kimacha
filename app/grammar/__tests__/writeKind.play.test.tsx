@@ -151,6 +151,7 @@ describe('write: playing the por-para round', () => {
     await openWriteRound();
     await typeAndCheck(POR_PARA[0].es);
     expect(screen.getByTestId('write-correct')).toHaveTextContent(/^Correct/);
+    expect(screen.getByTestId('write-sentence')).toHaveTextContent(POR_PARA[0].es);
     expect(screen.getByTestId('write-why')).toHaveTextContent(POR_PARA[0].why.en);
     expect(screen.queryByTestId('answer-compare-typed')).toBeNull();
     expect(speech.speak).toHaveBeenCalledWith(POR_PARA[0].es, 'es-MX');
@@ -182,15 +183,15 @@ describe('write: playing the por-para round', () => {
     expect(screen.getByTestId('write-wrong')).toBeTruthy();
   });
 
-  it('a missing accent counts as right unless Settings asks for strict accents', async () => {
-    // the sentence grader (as in the dictation) forgives one missing accent
+  it('missing accents count as right, however many, unless Settings asks for strict accents', async () => {
     const db = getDb();
     await db.setStrictAccents(false);
     const loose = render(<GrammarLessonScreen />);
     await flush(4);
     fireEvent.press(screen.getByTestId('grammar-start-write'));
     await flush(2);
-    await typeAndCheck('Estudio español para viajar a Mexico.');
+    expect(screen.getByTestId('write-accent-hint')).toBeTruthy();
+    await typeAndCheck('Estudio espanol para viajar a Mexico.');
     expect(screen.getByTestId('write-correct')).toBeTruthy();
     loose.unmount();
     await flush(2);

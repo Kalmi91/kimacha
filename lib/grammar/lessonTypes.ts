@@ -223,7 +223,7 @@ export interface WriteItem {
   prompt: Lang4;
   /** The correct sentence. */
   es: string;
-  /** Further accepted forms (another natural word order). */
+  /** Further accepted forms: another natural word order or wording that is also right for the prompt. Never shown. */
   accept?: string[];
   /** Short explanation of the rule, shown after the answer. */
   why: Lang4;

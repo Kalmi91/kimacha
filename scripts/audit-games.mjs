@@ -889,7 +889,7 @@ function auditNewKindItem(item, itemPath, topic, checkWords) {
     checkLangs(item.tr, `${itemPath} tr`);
   } else if (item.kind === 'write') {
     // sentence writing: the sentence to write (prompt) and the rule (why) in both languages; the accepted
-    // variants are sentences the learner may type, so they pass the same word gate as `es`.
+    // variants are only compared with what the learner typed, never shown, so the word gate does not apply to them.
     checkLangs(item.prompt, `${itemPath} prompt`);
     checkLangs(item.why, `${itemPath} why`);
     if (item.accept !== undefined) {
@@ -902,7 +902,6 @@ function auditNewKindItem(item, itemPath, topic, checkWords) {
             continue;
           }
           if (alt === item.es) p1.push({ path: itemPath, issue: `write accept entry equals es: "${alt}"` });
-          checkWords(alt);
         }
       }
     }

@@ -1409,6 +1409,7 @@
         "es": "Tú eres muy inteligente, como tu madre."
       },
       "es": "Tú eres muy inteligente, como tu madre.",
+      "accept": ["Tú eres muy inteligente, como tu mamá.", "Usted es muy inteligente, como su madre.", "Usted es muy inteligente, como su mamá."],
       "why": {
         "en": "Intelligence is a lasting personal quality, so ser: tú eres.",
         "es": "La inteligencia es una cualidad estable de la persona, por eso ser: tú eres."
@@ -1510,7 +1511,7 @@
         "es": "Él es alto y delgado, como su padre."
       },
       "es": "Él es alto y delgado, como su padre.",
-      "accept": ["Como su padre, él es alto y delgado.", "Como su padre, es alto y delgado."],
+      "accept": ["Como su padre, él es alto y delgado.", "Como su padre, es alto y delgado.", "Él es alto y delgado, como su papá.", "Como su papá, él es alto y delgado.", "Como su papá, es alto y delgado.", "Él es alto y flaco, como su padre.", "Él es alto y flaco, como su papá."],
       "why": {
         "en": "Build, tall, thin, is a lasting physical trait, so ser.",
         "es": "La complexión, alto, delgado, es un rasgo físico estable, por eso ser."
@@ -1525,7 +1526,7 @@
         "es": "Hoy estoy muy contento."
       },
       "es": "Hoy estoy muy contento.",
-      "accept": ["Estoy muy contento hoy.", "Yo estoy muy contento hoy.", "Hoy yo estoy muy contento."],
+      "accept": ["Estoy muy contento hoy.", "Yo estoy muy contento hoy.", "Hoy yo estoy muy contento.", "Hoy estoy muy contenta.", "Estoy muy contenta hoy.", "Yo estoy muy contenta hoy.", "Hoy yo estoy muy contenta.", "Hoy estoy muy feliz.", "Estoy muy feliz hoy."],
       "why": {
         "en": "Mood is a passing state, happy today, could be different tomorrow, so estar.",
         "es": "El ánimo es un estado pasajero, hoy contento, mañana puede ser distinto, por eso estar."
@@ -1540,6 +1541,7 @@
         "es": "Mis padres son médicos."
       },
       "es": "Mis padres son médicos.",
+      "accept": ["Mis padres son doctores.", "Mis papás son médicos.", "Mis papás son doctores."],
       "why": {
         "en": "A profession is a lasting classification, so ser: son médicos.",
         "es": "La profesión es una clasificación estable, por eso ser: son médicos."
@@ -1554,7 +1556,7 @@
         "es": "La fiesta es en mi casa esta noche."
       },
       "es": "La fiesta es en mi casa esta noche.",
-      "accept": ["Esta noche la fiesta es en mi casa.", "La fiesta es esta noche en mi casa."],
+      "accept": ["Esta noche la fiesta es en mi casa.", "La fiesta es esta noche en mi casa.", "La fiesta es en mi casa hoy en la noche."],
       "why": {
         "en": "Where an EVENT takes place uses ser, not estar, the most common exception to remember.",
         "es": "El lugar donde se celebra un EVENTO se expresa con ser, no con estar, la excepción más común."
