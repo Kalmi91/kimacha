@@ -123,9 +123,9 @@ describe('Onboarding: intro + theme step', () => {
     await toIntro();
     fireEvent.press(screen.getByText("Let's start"));
     const fonts = screen.getAllByText('el carro').map((n) => RN.StyleSheet.flatten(n.props.style).fontFamily);
-    // ONBOARDING_SKINS order: ukiyoe, csillampony, szocreal, brutal, deco
+    // ONBOARDING_SKINS order: brutal, gamer, popart, retro95, csillampony
     // the brutal row's word font is null = today's system font, so there is no fontFamily
-    expect(fonts).toEqual(['Spectral-Light', 'Fredoka-Medium', 'Playfair-Black', undefined, 'PoiretOne']);
+    expect(fonts).toEqual([undefined, 'Orbitron-Bold', 'Bangers', 'VT323', 'Fredoka-Medium']);
   });
 
   it('on tap the theme is saved immediately (setSkin), the selected row is marked', async () => {
@@ -139,9 +139,9 @@ describe('Onboarding: intro + theme step', () => {
     expect(screen.getByTestId('onboarding-theme-csillampony').props.accessibilityState).toMatchObject({ selected: true });
     expect(screen.getByTestId('onboarding-theme-brutal').props.accessibilityState).toMatchObject({ selected: false });
 
-    fireEvent.press(screen.getByTestId('onboarding-theme-ukiyoe'));
+    fireEvent.press(screen.getByTestId('onboarding-theme-gamer'));
     await flush();
-    expect(await getDb().getSkin()).toBe('ukiyoe');
+    expect(await getDb().getSkin()).toBe('gamer');
   });
 
   it('"Continue" leads to the level picker', async () => {

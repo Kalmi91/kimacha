@@ -121,7 +121,7 @@ describe('theme list', () => {
   });
 
   it('the onboarding offer is 5 valid themes, the default is brutal', () => {
-    expect(ONBOARDING_SKINS).toEqual(['ukiyoe', 'csillampony', 'szocreal', 'brutal', 'deco']);
+    expect(ONBOARDING_SKINS).toEqual(['brutal', 'gamer', 'popart', 'retro95', 'csillampony']);
     expect(ONBOARDING_SKINS).toHaveLength(5);
     for (const id of ONBOARDING_SKINS) expect(SKINS[id]).toBeDefined();
     expect(DEFAULT_SKIN).toBe('brutal');
