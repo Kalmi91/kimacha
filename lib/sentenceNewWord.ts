@@ -12,7 +12,7 @@
 import type { PcicItem, PcicKind, PcicTarget } from '@/data/pcic';
 import type { DB } from '@/lib/database';
 import type { ResolvedTense } from '@/lib/knownSentence';
-import { pcicNewBudget } from '@/lib/pcicSession';
+import { dropOrphanCards, pcicNewBudget } from '@/lib/pcicSession';
 import type { Ladder } from '@/lib/sentenceLadder';
 import { buildSentenceQueue, type SentenceEntry } from '@/lib/sentenceTab';
 import { sm2NewCard, sm2Review, type Sm2Card } from '@/lib/sm2';
@@ -24,6 +24,12 @@ export const MAX_NEW_WORDS_PER_ROUND = 3;
 export function newWordsLeft(budget: { limit: number; bonus: number; introducedAllLevels: number }): number {
   const { limit, bonus, introducedAllLevels } = budget;
   return Math.max(0, pcicNewBudget({ limit, bonus, introducedToday: introducedAllLevels }) - introducedAllLevels);
+}
+
+/** The words the budget lets in: the Learn tab's limit and today's bonus against the cards (orphans dropped) introduced today. */
+async function wordsLeftToday(db: Pick<DB, 'getDailyNewLimit' | 'getPcicNewBonus'>, cards: readonly Sm2Card[], today: string): Promise<number> {
+  const introducedAllLevels = cards.filter((c) => c.introducedAt === today).length;
+  return newWordsLeft({ limit: await db.getDailyNewLimit(), bonus: await db.getPcicNewBonus(today), introducedAllLevels });
 }
 
 /**
@@ -76,8 +82,7 @@ export interface NewWordPlan {
 export async function planNewWords(deps: NewWordPlanDeps): Promise<NewWordPlan> {
   const { db, target, today, order, cards, findItem, tenses, levelOf, ladder } = deps;
   const kindOf = (id: string) => findItem(id)?.kind;
-  const introducedAllLevels = cards.filter((c) => c.introducedAt === today).length;
-  const left = newWordsLeft({ limit: await db.getDailyNewLimit(), bonus: await db.getPcicNewBonus(today), introducedAllLevels });
+  const left = await wordsLeftToday(db, cards, today);
   const ids = nextNewWordIds(order, cards, kindOf, Math.min(MAX_NEW_WORDS_PER_ROUND, left));
   if (ids.length === 0) return { entries: [], budgetOut: left === 0 && nextNewWordIds(order, cards, kindOf, 1).length > 0 };
   const byId = new Map(cards.map((c) => [c.itemId, c]));
@@ -94,13 +99,24 @@ export async function planNewWords(deps: NewWordPlanDeps): Promise<NewWordPlan> 
   return { entries, budgetOut: false };
 }
 
+/** What passing a word card did: the word was introduced, it had started already (nothing written), or today's budget was used up (nothing written). */
+export type Introduction = 'introduced' | 'started' | 'no-budget';
+
 /**
- * The word card was passed: the word is introduced (graded 'good' like the Learn tab's "Knew it", counted in today's budget there).
- * A word whose card already started (the Learn tab, or this step before a restart) is left as it is. Returns whether it was written.
+ * The word card was passed: the word is introduced (graded 'good' like the Learn tab's "Knew it", counted in today's budget there),
+ * when the budget still has room: the round was planned earlier, and the Learn tab (or a saved round resumed later) may have used
+ * the day's words since. A word whose card already started (the Learn tab, or this step before a restart) is left as it is and
+ * costs nothing. `exists` = whether an item id is in the loaded corpus (an orphan card does not count in the budget).
  */
-export async function introduceNewWord(db: Pick<DB, 'getPcicCard' | 'upsertPcicCard'>, itemId: string, today: string): Promise<boolean> {
+export async function introduceNewWord(
+  db: Pick<DB, 'getPcicCard' | 'getPcicCards' | 'upsertPcicCard' | 'getDailyNewLimit' | 'getPcicNewBonus'>,
+  itemId: string,
+  today: string,
+  exists: (id: string) => boolean = () => true,
+): Promise<Introduction> {
   const card = await db.getPcicCard(itemId);
-  if (card && card.state !== 'new') return false;
+  if (card && card.state !== 'new') return 'started';
+  if ((await wordsLeftToday(db, dropOrphanCards(await db.getPcicCards(), exists), today)) <= 0) return 'no-budget';
   await db.upsertPcicCard(sm2Review(card ?? sm2NewCard(itemId), 'good', today));
-  return true;
+  return 'introduced';
 }

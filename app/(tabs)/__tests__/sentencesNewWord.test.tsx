@@ -50,8 +50,9 @@ import { getDb } from '@/lib/database';
 import { setLanguage } from '@/lib/i18n';
 import { LADDER_KEY, loadLadder, saveStage } from '@/lib/sentenceLadder';
 import { introduceNewWord } from '@/lib/sentenceNewWord';
-import { clearSentenceRound, loadSentenceRound } from '@/lib/sentenceRound';
-import { pickSm2Session } from '@/lib/sm2';
+import { clearSentenceRound, loadSentenceRound, saveSentenceRound, startRound } from '@/lib/sentenceRound';
+import type { SentenceEntry } from '@/lib/sentenceTab';
+import { pickSm2Session, sm2NewCard, sm2Review } from '@/lib/sm2';
 import { DEFAULT_DAILY_NEW_LIMIT, localDateString } from '@/lib/usageStats';
 import { speak } from '@/lib/speech';
 import { makeFlush } from '@/test-utils/flush';
@@ -258,5 +259,65 @@ describe('the new-word round (es)', () => {
     expect(await cardOf(2)).toBeNull();
     onCard.unmount();
     expect((await loadSentenceRound(getDb()))?.steps.map((s) => s.kind)).toContain('newword');
+  });
+
+  // The round is planned when it starts: the Learn tab (or a saved round resumed later) may have used the day's words since.
+  it('the budget is rechecked when a word card is passed: with none left the word and the new words after it drop out, no stuck screen', async () => {
+    await getDb().setDailyNewLimit(2);
+    const r = render(<SentencesScreen />);
+    await flush();
+    expect(stepText(r)).toBe('New word 1 of 2');
+    // the Learn tab introduced a word meanwhile: one of the two words of the day is gone
+    await getDb().upsertPcicCard(sm2Review(sm2NewCard('a1-n6'), 'good', localDateString()));
+    await nextWord(r); // word 1 still fits
+    expect((await cardOf(1))?.state).toBe('review');
+    await buildIt(r, ['libro']);
+    expect(word(r)).toBe('mesa');
+    await nextWord(r); // word 2 does not: nothing is written, the round ends here
+    expect(await cardOf(2)).toBeNull();
+    expect(r.queryByTestId('new-word-word')).toBeNull();
+    expect(r.getByTestId('sentences-new-words').props.children).toBe('1 new word');
+    expect(r.getByText('Round done: 1 sentence')).toBeTruthy();
+    expect((await getDb().getPcicCards()).filter((c) => c.introducedAt === localDateString())).toHaveLength(2); // never over the limit
+    expect(await loadSentenceRound(getDb())).toBeNull();
+  });
+
+  it('with the budget gone before the first card is passed the round is no round: the empty line says so, nothing is introduced', async () => {
+    await getDb().setDailyNewLimit(1);
+    const r = render(<SentencesScreen />);
+    await flush();
+    expect(stepText(r)).toBe('New word 1 of 1');
+    await getDb().upsertPcicCard(sm2Review(sm2NewCard('a1-n6'), 'good', localDateString()));
+    await nextWord(r);
+    expect(await cardOf(1)).toBeNull();
+    expect(r.getByTestId('sentences-empty')).toBeTruthy();
+    expect(r.getByText(/today's new words are used up/)).toBeTruthy();
+    expect(await loadSentenceRound(getDb())).toBeNull();
+  });
+
+  // A saved round of the same day whose new word is no longer in the corpus (an update in between): no blank card.
+  describe('a saved round whose word left the corpus', () => {
+    const cardEntry = (id: string): SentenceEntry => ({ itemId: id, source: '', target: '', wordCount: 0, wordIds: [], due: false, dueIds: [], staleness: '', slots: [], newWord: true });
+    const saveRound = (ids: string[]) => saveSentenceRound(getDb(), startRound(ids.map(cardEntry), localDateString(), 'es', '', {}));
+
+    it('the word is dropped with its steps and the round goes on with the next word card', async () => {
+      await saveRound(['a1-gone', 'a1-n2']);
+      const r = render(<SentencesScreen />);
+      await flush();
+      expect(word(r)).toBe('mesa');
+      expect(stepText(r)).toBe('New word 1 of 1');
+      expect(r.getByTestId('new-word-next')).toBeTruthy();
+      expect((await loadSentenceRound(getDb()))?.entries.map((e) => e.itemId)).toEqual(['a1-n2']); // saved without the gone word
+      expect(await getDb().getPcicCard('a1-gone')).toBeNull();
+    });
+
+    it('a round with nothing left is not resumed: a fresh round is built', async () => {
+      await saveRound(['a1-gone']);
+      const r = render(<SentencesScreen />);
+      await flush();
+      expect(word(r)).toBe('libro');
+      expect(stepText(r)).toBe('New word 1 of 3');
+      expect((await loadSentenceRound(getDb()))?.entries.map((e) => e.itemId)).toEqual(['a1-n1', 'a1-n2', 'a1-n3']);
+    });
   });
 });

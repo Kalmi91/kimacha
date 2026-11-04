@@ -20,6 +20,11 @@ jest.mock('react-native-safe-area-context', () => ({
   useSafeAreaInsets: () => ({ top: 0, left: 0, right: 0, bottom: 0 }),
 }));
 jest.mock('@/lib/buildFlavor', () => ({ IS_PLAY_BUILD: false, FEEDBACK_URL: 'https://example.test/feedback' }));
+// The day a test lives on: the real one unless a test moves it (a screen left open over midnight).
+jest.mock('@/lib/usageStats', () => {
+  const actual = jest.requireActual('@/lib/usageStats');
+  return { ...actual, localDateString: jest.fn(actual.localDateString) };
+});
 jest.mock('@/lib/practice/halfStep', () => {
   const actual = jest.requireActual('@/lib/practice/halfStep');
   return { ...actual, recordPracticeResult: jest.fn(actual.recordPracticeResult) };
@@ -210,6 +215,7 @@ beforeEach(async () => {
 });
 afterEach(() => {
   setLanguage('en');
+  (localDateString as jest.Mock).mockImplementation(jest.requireActual('@/lib/usageStats').localDateString);
   // @ts-expect-error test-only cleanup of a global set per test
   delete global.fetch;
 });
@@ -1016,6 +1022,23 @@ describe('the ladder (FB569 + FB570)', () => {
     const again = render(<SentencesScreen />);
     await flush();
     expect(stepText(again)).toBe(STEP(1, 1, RUNG3));
+  });
+
+  it('a sentence that failed rung 3 is kept out of that day’s next rounds only: a new day (the screen stayed open) brings it back', async () => {
+    await getDb().setDailyNewLimit(0); // the other words are new: no new word instead of the sentence
+    await learnWords([3]);
+    await ladderAt(3, [3]);
+    const r = render(<SentencesScreen />);
+    await flush();
+    await typeCurrent(r, 'xx');
+    expect(r.getByText('Round done: 1 sentence')).toBeTruthy();
+    expect(await stageOf(3)).toBe(3);
+    const realDay = jest.requireActual('@/lib/usageStats').localDateString as () => string;
+    (localDateString as jest.Mock).mockImplementation(() => addDays(realDay(), 1));
+    fireEvent.press(r.getByTestId('sentences-more'));
+    await flush();
+    expect(r.queryByTestId('sentences-empty')).toBeNull();
+    expect(stepText(r)).toBe(STEP(1, 1, RUNG3));
   });
 
   it('a round has at most 2 sentences of one rung while others are available; the rest is filled up', async () => {

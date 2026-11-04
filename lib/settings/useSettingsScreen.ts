@@ -29,6 +29,7 @@ import {
 } from '@/lib/pcicSession';
 import { loadVoices, hasVoiceFor } from '@/lib/speech';
 import { clearLearnResume } from '@/lib/learnResume';
+import { clearLadderKeys, ladderKeysOfLevel } from '@/lib/sentenceLadder';
 import { useScreenLoad } from '@/lib/useScreenLoad';
 
 // The resettable decks (the levels that have
@@ -263,6 +264,9 @@ export function useSettingsScreen() {
   const handleResetDeck = (lvl: PcicLevel) =>
     confirmReset(s.pcic.resetConfirmTitle, s.pcic.resetConfirmLevel(lvl), async () => {
       await getDb().resetPcicCards(lvl.toLowerCase());
+      // The Sentences tab's ladder of that level's sentences goes with it (a learned sentence may come back, none resumes mid-ladder).
+      const { target } = await refresh(['direction']);
+      await clearLadderKeys(getDb(), ladderKeysOfLevel(lvl, PCIC_LEVELS, pcicItemsForLevel, target));
       // The saved Learn-round snapshot is no longer valid after the progress was reset.
       await clearLearnResume(getDb());
     });

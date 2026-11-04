@@ -15,7 +15,7 @@ import {
 } from '@/lib/sentenceNewWord';
 import { unknownTokens } from '@/lib/knownSentence';
 import type { LadderStage } from '@/lib/sentenceLadder';
-import { answerStep, parseSentenceRound, startRound, currentStep } from '@/lib/sentenceRound';
+import { answerStep, currentStep, dropEntries, parseSentenceRound, startRound, unpassedNewWords } from '@/lib/sentenceRound';
 import { roundSteps } from '@/lib/sentenceSteps';
 import { sentenceKey, type SentenceEntry } from '@/lib/sentenceTab';
 import { pickSm2Session, sm2NewCard, type Sm2Card } from '@/lib/sm2';
@@ -157,7 +157,7 @@ describe('introduceNewWord: the Learn tab\'s introduction', () => {
   });
 
   it('writes a learned (review) card introduced today, like "Knew it" on a new card in the Learn tab', async () => {
-    expect(await introduceNewWord(getDb(), 'a1-n1', TODAY)).toBe(true);
+    expect(await introduceNewWord(getDb(), 'a1-n1', TODAY)).toBe('introduced');
     const card = await getDb().getPcicCard('a1-n1');
     expect(card).toMatchObject({ itemId: 'a1-n1', state: 'review', introducedAt: TODAY, reps: 1, lastReview: TODAY });
   });
@@ -165,16 +165,16 @@ describe('introduceNewWord: the Learn tab\'s introduction', () => {
   it('once: a word whose card already started (this step before a restart, or the Learn tab) is left as it is', async () => {
     await introduceNewWord(getDb(), 'a1-n1', TODAY);
     const first = await getDb().getPcicCard('a1-n1');
-    expect(await introduceNewWord(getDb(), 'a1-n1', TODAY)).toBe(false);
+    expect(await introduceNewWord(getDb(), 'a1-n1', TODAY)).toBe('started');
     expect(await getDb().getPcicCard('a1-n1')).toEqual(first);
     await getDb().upsertPcicCard({ ...review('a1-n2'), reps: 7 });
-    expect(await introduceNewWord(getDb(), 'a1-n2', TODAY)).toBe(false);
+    expect(await introduceNewWord(getDb(), 'a1-n2', TODAY)).toBe('started');
     expect((await getDb().getPcicCard('a1-n2'))?.reps).toBe(7);
   });
 
   it('a card that exists as `new` is introduced', async () => {
     await getDb().upsertPcicCard(sm2NewCard('a1-n3'));
-    expect(await introduceNewWord(getDb(), 'a1-n3', TODAY)).toBe(true);
+    expect(await introduceNewWord(getDb(), 'a1-n3', TODAY)).toBe('introduced');
     expect((await getDb().getPcicCard('a1-n3'))?.state).toBe('review');
   });
 
@@ -189,6 +189,42 @@ describe('introduceNewWord: the Learn tab\'s introduction', () => {
     // and the tab itself plans one word fewer from the same budget
     const plan = await planNewWords({ db: budget(3), target: 'es', today: TODAY, order: ORDER, cards, findItem });
     expect(plan.entries.map((e) => e.itemId)).toEqual(['a1-n2', 'a1-n3']);
+  });
+});
+
+describe('introduceNewWord: the budget is rechecked when the card is passed', () => {
+  beforeEach(async () => {
+    await getDb().resetPcicCards();
+    await getDb().setDailyNewLimit(2);
+    await getDb().setPcicNewBonus(0, TODAY);
+  });
+  afterEach(async () => {
+    await getDb().setDailyNewLimit(10);
+  });
+
+  it('the day words used meanwhile (the Learn tab) leave no room: nothing is written', async () => {
+    await getDb().upsertPcicCard(review('a1-n6', TODAY)); // the Learn tab introduced one after the round was planned
+    expect(await introduceNewWord(getDb(), 'a1-n1', TODAY)).toBe('introduced');
+    expect(await introduceNewWord(getDb(), 'a1-n2', TODAY)).toBe('no-budget'); // 2 of 2 introduced today
+    expect(await getDb().getPcicCard('a1-n2')).toBeNull();
+    expect((await getDb().getPcicCards()).filter((c) => c.introducedAt === TODAY)).toHaveLength(2);
+  });
+
+  it('the day bonus makes room again; a word that already started costs nothing and passes even with no budget', async () => {
+    await getDb().upsertPcicCard(review('a1-n6', TODAY));
+    await getDb().upsertPcicCard(review('a1-n7', TODAY));
+    expect(await introduceNewWord(getDb(), 'a1-n1', TODAY)).toBe('no-budget');
+    expect(await introduceNewWord(getDb(), 'a1-n6', TODAY)).toBe('started');
+    await getDb().setPcicNewBonus(1, TODAY);
+    expect(await introduceNewWord(getDb(), 'a1-n1', TODAY)).toBe('introduced');
+  });
+
+  it('an orphan card (its item is not in the corpus) does not use the budget', async () => {
+    await getDb().upsertPcicCard(review('gone-1', TODAY));
+    await getDb().upsertPcicCard(review('gone-2', TODAY));
+    const exists = (id: string) => findItem(id) !== undefined;
+    expect(await introduceNewWord(getDb(), 'a1-n1', TODAY, exists)).toBe('introduced');
+    expect(await introduceNewWord(getDb(), 'a1-n2', TODAY)).toBe('no-budget'); // counted when nobody says which ids exist
   });
 });
 
@@ -219,6 +255,32 @@ describe('an entry that starts with a word card', () => {
     alone = answerStep(alone, true);
     expect(alone.passed).toBeUndefined(); // no sentence key is ever written for a word with no sentence
     expect(alone.phase).toBe('done');
+  });
+
+  it('dropping entries: their steps leave the round, the queue and the done steps; with no step left the round is over', () => {
+    const r0 = round([entry(1, 'libro.'), entry(2, ''), entry(3, '')]);
+    const r1 = answerStep(r0, true); // the card of word 1 passed
+    expect(unpassedNewWords(r1)).toEqual(['a1-n2', 'a1-n3']);
+    const dropped = dropEntries(r1, ['a1-n2', 'a1-n3']);
+    expect(dropped.entries.map((e) => e.itemId)).toEqual(['a1-n1']);
+    expect(dropped.steps.map((st) => st.id)).toEqual(['a1-n1#newword', 'a1-n1#build']);
+    expect(dropped.queue).toEqual(['a1-n1#build']);
+    expect(dropped.done).toEqual(['a1-n1#newword']);
+    expect(dropped.phase).toBe('steps');
+    const none = dropEntries(r0, ['a1-n1', 'a1-n2', 'a1-n3']);
+    expect(none).toMatchObject({ entries: [], steps: [], queue: [], done: [], phase: 'done' });
+    expect(dropEntries(r0, [])).toBe(r0);
+    // what is left of the round is a usable saved round
+    expect(parseSentenceRound(JSON.parse(JSON.stringify(dropped)))).toEqual(dropped);
+  });
+
+  it('unpassedNewWords: the word card on screen and the ones after it, not the ones passed', () => {
+    let r = round([entry(1, ''), entry(2, ''), entry(3, '')]);
+    expect(unpassedNewWords(r)).toEqual(['a1-n1', 'a1-n2', 'a1-n3']);
+    r = answerStep(r, true);
+    expect(unpassedNewWords(r)).toEqual(['a1-n2', 'a1-n3']);
+    r = answerStep(answerStep(r, true), true);
+    expect(unpassedNewWords(r)).toEqual([]);
   });
 
   it('is saved with the round and read back (the card step, the flag); a malformed flag is not a usable round', () => {

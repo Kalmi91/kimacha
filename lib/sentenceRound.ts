@@ -103,6 +103,31 @@ export function answerStep(round: SentenceRound, correct: boolean): SentenceRoun
   return { ...round, ...passed, queue: rest, done, phase: rest.length === 0 ? 'done' : 'steps' };
 }
 
+/**
+ * The round without these sentences (a new word whose word card cannot be passed: today's budget is used up, or its item is no
+ * longer in the corpus): their entries and every step of them are gone, from the queue and the done steps too. The round is over
+ * when no step is left.
+ */
+export function dropEntries(round: SentenceRound, itemIds: readonly string[]): SentenceRound {
+  if (itemIds.length === 0) return round;
+  const gone = new Set(itemIds);
+  const goneSteps = new Set(round.steps.filter((st) => gone.has(st.itemId)).map((st) => st.id));
+  const queue = round.queue.filter((id) => !goneSteps.has(id));
+  return {
+    ...round,
+    entries: round.entries.filter((e) => !gone.has(e.itemId)),
+    steps: round.steps.filter((st) => !goneSteps.has(st.id)),
+    queue,
+    done: round.done.filter((id) => !goneSteps.has(id)),
+    phase: queue.length === 0 ? 'done' : round.phase,
+  };
+}
+
+/** The new words of the round whose word card is still to pass: the one on screen and the ones after it. */
+export function unpassedNewWords(round: SentenceRound): string[] {
+  return round.entries.filter((e) => e.newWord && !round.done.includes(`${e.itemId}#newword`)).map((e) => e.itemId);
+}
+
 /** The sentence that passed its rung with the answer that turned `before` into `after`, if any (see answerStep). */
 export function newlyPassed(before: SentenceRound, after: SentenceRound): SentenceEntry | undefined {
   const id = after.passed?.find((p) => !before.passed?.includes(p));

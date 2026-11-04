@@ -31,13 +31,14 @@ import { dropOrphanCards } from '@/lib/pcicSession';
 import { tileWords } from '@/lib/sentenceCards';
 import { pickSentences } from '@/lib/sentencePick';
 import { introduceNewWord, planNewWords } from '@/lib/sentenceNewWord';
-import { LAST_RUNG, loadLadder, saveStage, stageAfter, stillOnPlayedRung, type Rung } from '@/lib/sentenceLadder';
+import { LAST_RUNG, PlayedRounds, loadLadder, saveStage, stageAfter, stillOnPlayedRung } from '@/lib/sentenceLadder';
 import { ALL_LEVELS, itemsForSentenceLevel, levelsWithSentences, loadSentenceLevel, resolveSentenceLevel, saveSentenceLevel, type SentenceLevel } from '@/lib/sentenceLevel';
 import {
   addHinted,
   answerStep,
   clearSentenceRound,
   currentEntry,
+  dropEntries,
   currentStep,
   isRoundFor,
   learnedInRound,
@@ -48,6 +49,7 @@ import {
   saveSentenceRound,
   sentenceNumber,
   startRound,
+  unpassedNewWords,
   type SentenceRound,
 } from '@/lib/sentenceRound';
 import { hintPieces, type HintPiece } from '@/lib/sentenceHint';
@@ -151,9 +153,10 @@ export default function SentencesScreen() {
   const [seq, setSeq] = useState(0);
   // Bumps after every typed sentence is credited: the level counter on top reads the db again.
   const [creditSeq, setCreditSeq] = useState(0);
-  // Sentences of the finished rounds since the app opened, with the rung they played: one still on that rung is left out of the
-  // next rounds, or a word that is still due would bring the same rung straight back (one that moved up may come, FB569).
-  const playedRungs = useRef(new Map<string, Rung>());
+  // Sentences of the finished rounds today since the app opened, with the rung they played: one still on that rung is left out of
+  // the next rounds, or a word that is still due would bring the same rung straight back (one that moved up may come, FB569).
+  // A new day empties it; a mistake sentence is kept apart (lib/sentenceLadder.ts PlayedRounds).
+  const played = useRef(new PlayedRounds());
   const runOnce = useSingleFlight();
   // The round on screen, for the focus effect (its state is stale in the callback).
   const roundRef = useRef<SentenceRound | null>(null);
@@ -166,6 +169,7 @@ export default function SentencesScreen() {
     // The learner store sets the deck's direction before the corpus is read (data/pcic.ts: the loaded deck follows the target).
     const { target: dir } = await refresh(['direction']);
     const today = localDateString();
+    played.current.forDay(today);
     // A round on screen (running or finished) survives leaving the tab; a new day, another direction, another focus
     // or the "more" button replaces it.
     const shown = roundRef.current;
@@ -181,11 +185,16 @@ export default function SentencesScreen() {
     const saved = await loadSentenceRound(db);
     let next: SentenceRound | null;
     let outOfNewWords = false;
-    if (isRoundFor(saved, today, dir, focusKey)) {
-      next = saved;
+    // A new word whose item left the corpus since the round was saved (an update) can be neither shown nor introduced: it is dropped
+    // with its steps, and a round with nothing left is not resumed.
+    const savedFor = isRoundFor(saved, today, dir, focusKey) ? saved : null;
+    const resumed = savedFor ? dropEntries(savedFor, savedFor.entries.filter((e) => e.newWord && findPcicItem(e.itemId) === undefined).map((e) => e.itemId)) : null;
+    if (resumed && resumed.queue.length > 0) {
+      next = resumed;
+      if (resumed !== savedFor) await saveSentenceRound(db, resumed);
       // A sentence with every step done is done, even if the round goes on.
-      for (const e of saved.entries) {
-        if (saved.steps.filter((st) => st.itemId === e.itemId).every((st) => saved.done.includes(st.id))) playedRungs.current.set(sentenceKey(e), e.rung ?? 1);
+      for (const e of resumed.entries) {
+        if (resumed.steps.filter((st) => st.itemId === e.itemId).every((st) => resumed.done.includes(st.id))) played.current.note([e]);
       }
     } else {
       const cards = dropOrphanCards(await db.getPcicCards(), (id) => findPcicItem(id) !== undefined);
@@ -201,7 +210,7 @@ export default function SentencesScreen() {
         findItem: findPcicItem,
         levelOf: levelOfItem,
         today,
-        done: stillOnPlayedRung(playedRungs.current, ladder),
+        done: stillOnPlayedRung(played.current.rungs, ladder),
         ladder,
         focus: new Set(focusKey.split(',').filter(Boolean)),
       });
@@ -217,7 +226,7 @@ export default function SentencesScreen() {
       }
       await loadBeta();
       if (picked.length > 0 && dir === 'es' && getBeta('sentenceMistakes')) {
-        const skip = new Set([...playedRungs.current.keys(), ...picked.map((e) => sentenceKey(e))]);
+        const skip = new Set([...played.current.rungs.keys(), ...played.current.mistakes, ...picked.map((e) => sentenceKey(e))]);
         entries = withMistakeStep(picked, await pickMistakeEntry(today, skip));
       }
       // beta sentenceMix: the sentences take turns (not the new words: each one is followed by its own sentence).
@@ -276,8 +285,10 @@ export default function SentencesScreen() {
     if (!stepNow || !entry) return;
     await runOnce(async () => {
       // The word card of a new word: the word is introduced first (written once, a restart cannot do it twice), then the round moves on.
-      if (stepNow.kind === 'newword') await introduceNewWord(getDb(), entry.itemId, localDateString());
-      const next = answerStep(round, correct);
+      // The day's budget is rechecked here (the round was planned earlier): with none left this word and the new words after it
+      // drop out of the round with their sentences.
+      const noBudget = stepNow.kind === 'newword' && (await introduceNewWord(getDb(), entry.itemId, localDateString(), (id) => findPcicItem(id) !== undefined)) === 'no-budget';
+      const next = noBudget ? dropEntries(round, unpassedNewWords(round)) : answerStep(round, correct);
       await keepRound(next);
       // A passed rung moves the sentence up the ladder (rung 3 passed = learned). Saved after the round, so a kill in between
       // loses the move, never repeats a step.
@@ -296,8 +307,10 @@ export default function SentencesScreen() {
         await recordMistakeBuild(entry.itemId, correct, localDateString());
       }
       await countLearningToday();
-      if (next.phase === 'done') for (const e of roundSentences(round)) playedRungs.current.set(sentenceKey(e), e.rung ?? 1);
-      setRound(next);
+      if (next.phase === 'done') played.current.note(roundSentences(next));
+      // Nothing left after the drop: no round, the empty line says the budget is used up (a round with no step has no "More" button).
+      setRound(noBudget && next.steps.length === 0 ? null : next);
+      if (noBudget) setBudgetOut(next.steps.length === 0);
       setSeq((n) => n + 1);
       if (stepNow.kind === 'type') setCreditSeq((n) => n + 1);
     });
