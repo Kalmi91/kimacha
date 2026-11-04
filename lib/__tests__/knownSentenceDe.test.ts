@@ -87,9 +87,9 @@ describe('free words: closed classes, names, numbers', () => {
     expect(unknownTokens('Der Garten ist groß.', 'de', { learned: [verb('sein'), adj('groß')] })).toEqual(['garten']);
   });
 
-  it('the names of the corpus are free, with their accent; other capitalised words are not', () => {
+  it('the names of the corpus are free; other capitalised words are not', () => {
     expect(ok('Ich bin Anna.', [verb('sein')])).toBe(true);
-    expect(ok('Ich bin Péter.', [verb('sein')])).toBe(true);
+    expect(ok('Ich bin Peter.', [verb('sein')])).toBe(true);
     expect(ok('Ich bin Klaus.', [verb('sein')])).toBe(false);
     expect(ok('Ich fahre nach Spanien.', [verb('fahren')])).toBe(true);
   });

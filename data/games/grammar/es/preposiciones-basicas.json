@@ -32,13 +32,13 @@
         },
         {
           "text": {
-            "en": "De expresses possession (el libro de Ana), material or origin (soy de Hungría, una mesa de madera), what something is about (hablamos de la comida), and a part of day next to an exact hour (de la mañana).",
-            "es": "De expresa posesión (el libro de Ana), material u origen (soy de Hungría, una mesa de madera), aquello de lo que se habla (hablamos de la comida), y una parte del día junto a una hora exacta (de la mañana)."
+            "en": "De expresses possession (el libro de Ana), material or origin (soy de Inglaterra, una mesa de madera), what something is about (hablamos de la comida), and a part of day next to an exact hour (de la mañana).",
+            "es": "De expresa posesión (el libro de Ana), material u origen (soy de Inglaterra, una mesa de madera), aquello de lo que se habla (hablamos de la comida), y una parte del día junto a una hora exacta (de la mañana)."
           },
           "examples": [
             { "es": "Es el libro de Ana.", "tr": { "en": "It's Ana's book.", "es": "Es el libro de Ana." } },
             { "es": "La mesa es de madera.", "tr": { "en": "The table is made of wood.", "es": "La mesa es de madera." } },
-            { "es": "Soy de Hungría.", "tr": { "en": "I am from Hungary.", "es": "Soy de Hungría." } },
+            { "es": "Soy de Inglaterra.", "tr": { "en": "I am from England.", "es": "Soy de Inglaterra." } },
             { "es": "Hablamos de la comida.", "tr": { "en": "We talk about the food.", "es": "Hablamos de la comida." } },
             { "es": "Son las siete de la mañana.", "tr": { "en": "It is seven in the morning.", "es": "Son las siete de la mañana." } }
           ]
@@ -527,15 +527,15 @@
     {
       "kind": "why",
       "id": "pb-why-05",
-      "es": "Soy de Hungría.",
-      "target": "de Hungría",
-      "tr": { "en": "I am from Hungary.", "es": "Soy de Hungría." },
+      "es": "Soy de Inglaterra.",
+      "target": "de Inglaterra",
+      "tr": { "en": "I am from England.", "es": "Soy de Inglaterra." },
       "options": [
         {
           "text": { "en": "direction or a point in time (a)", "es": "dirección o un momento (a)" },
           "wrong": {
-            "en": "There is no direction or point in time in the sentence, but origin: soy de Hungría.",
-            "es": "No hay dirección ni momento en la frase, sino origen: soy de Hungría."
+            "en": "There is no direction or point in time in the sentence, but origin: soy de Inglaterra.",
+            "es": "No hay dirección ni momento en la frase, sino origen: soy de Inglaterra."
           }
         },
         {
@@ -544,8 +544,8 @@
         {
           "text": { "en": "place, month, or means of transport (en)", "es": "lugar, mes o medio de transporte (en)" },
           "wrong": {
-            "en": "There is no place, month, or means of transport in the sentence, but origin: soy de Hungría.",
-            "es": "No hay lugar, mes ni medio de transporte en la frase, sino origen: soy de Hungría."
+            "en": "There is no place, month, or means of transport in the sentence, but origin: soy de Inglaterra.",
+            "es": "No hay lugar, mes ni medio de transporte en la frase, sino origen: soy de Inglaterra."
           }
         }
       ],

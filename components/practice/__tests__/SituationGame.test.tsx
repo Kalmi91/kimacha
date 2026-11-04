@@ -219,7 +219,7 @@ describe('Situations: build', () => {
     fireEvent.press(view.getByText('Next →'));
     await flush();
     expect(await savedRun()).toMatchObject({ step: 'build', index: 1, scores: { build: 1 } });
-    expect(view.getByText('My parents live in Hungary.')).toBeTruthy();
+    expect(view.getByText('My parents live in England.')).toBeTruthy();
     fireEvent.press(view.getByText('mis'));
     fireEvent.press(view.getByText('Check'));
     fireEvent.press(view.getByText('Next →'));
@@ -407,7 +407,7 @@ describe('Situations: summary and resume', () => {
     await saveRun(at('say', { index: 3, wrong: 1, scores: { fill: 3, build: 3, say: 2, questions: 0 } }));
     let view = await mount();
     expect(view.getByText('4/6')).toBeTruthy();
-    expect(view.getByTestId('situations-line-text').props.children).toBe('Mis papás viven en Hungría.');
+    expect(view.getByTestId('situations-line-text').props.children).toBe('Mis papás viven en Inglaterra.');
     view.unmount();
     view = await mount();
     expect(view.getByText('4/6')).toBeTruthy();

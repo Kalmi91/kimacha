@@ -110,7 +110,7 @@ const GLUE_STRIPPED = new Set([...GLUE_WHITELIST].map((w) => removeAccents(w)));
 // name in any language, glossing "María" scene after scene would be noise,
 // not a vocabulary lesson.
 const PROPER_NOUNS = new Set([
-  'méxico', 'mexico', 'españa', 'espana', 'madrid', 'barcelona', 'alemania',
+  'méxico', 'mexico', 'españa', 'espana', 'madrid', 'barcelona', 'alemania', 'inglaterra', 'londres',
   'cdmx', 'coyoacán', 'coyoacan', 'condesa', 'roma', 'polanco',
   'maría', 'maria', 'ana', 'rosa', 'carlos', 'elena', 'sofía', 'sofia',
   'diego', 'luis', 'laura', 'nova', 'rex', 'javier', 'marco', 'lucía', 'lucia',

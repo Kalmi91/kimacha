@@ -29,7 +29,7 @@
       { "de": "mein", "forms": ["mein", "meine"], "en": "my", "es": "mi, mis", "hu": "az én …-m" },
       { "de": "die Eltern (Pl.)", "forms": ["Eltern"], "en": "parents", "es": "los padres", "hu": "szülők" },
       { "de": "in", "forms": ["in"], "en": "in", "es": "en", "hu": "-ban, -ben" },
-      { "de": "Ungarn", "forms": ["Ungarn"], "en": "Hungary", "es": "Hungría", "hu": "Magyarország" },
+      { "de": "England", "forms": ["England"], "en": "England", "es": "Inglaterra", "hu": "Anglia" },
       { "de": "Deutschland", "forms": ["Deutschland"], "en": "Germany", "es": "Alemania", "hu": "Németország" },
       { "de": "er", "forms": ["er"], "en": "he", "es": "él", "hu": "ő (férfi)" },
       { "de": "sie", "forms": ["sie"], "en": "they (also: she)", "es": "ellos, ellas (también: ella)", "hu": "ők (egy nőre: ő)" },
@@ -114,18 +114,18 @@
         "hu": "Hol élnek a szüleid?",
         "en": "Where do your parents live?",
         "answers": [
-          "Meine Eltern wohnen in Ungarn.",
-          "Sie wohnen in Ungarn.",
+          "Meine Eltern wohnen in England.",
+          "Sie wohnen in England.",
           "Meine Eltern wohnen in Deutschland.",
           "Sie wohnen in Deutschland."
         ]
       },
       {
         "speaker": "me",
-        "de": "Meine Eltern wohnen in Ungarn.",
-        "es": "Mis papás viven en Hungría.",
-        "hu": "A szüleim Magyarországon élnek.",
-        "en": "My parents live in Hungary.",
+        "de": "Meine Eltern wohnen in England.",
+        "es": "Mis papás viven en Inglaterra.",
+        "hu": "A szüleim Angliában élnek.",
+        "en": "My parents live in England.",
         "gap": "wohnen"
       },
       {
@@ -2637,11 +2637,11 @@
         "hu": "beszélni"
       },
       {
-        "de": "ungarisch",
-        "forms": ["Ungarisch"],
-        "en": "Hungarian",
-        "es": "húngaro",
-        "hu": "magyar"
+        "de": "spanisch",
+        "forms": ["Spanisch"],
+        "en": "Spanish",
+        "es": "español",
+        "hu": "spanyol"
       },
       {
         "de": "deutsch",
@@ -2924,17 +2924,17 @@
         "hu": "Milyen nyelveket beszél?",
         "en": "Which languages do you speak?",
         "answers": [
-          "Ich spreche Ungarisch und Deutsch, und ich lerne gerade Englisch.",
-          "Ich spreche Ungarisch und Deutsch.",
-          "Ich spreche Ungarisch, Deutsch und Englisch."
+          "Ich spreche Spanisch und Deutsch, und ich lerne gerade Englisch.",
+          "Ich spreche Spanisch und Deutsch.",
+          "Ich spreche Spanisch, Deutsch und Englisch."
         ]
       },
       {
         "speaker": "me",
-        "de": "Ich spreche Ungarisch und Deutsch, und ich lerne gerade Englisch.",
-        "es": "Hablo húngaro y alemán, y ahora estoy aprendiendo inglés.",
-        "hu": "Beszélek magyarul és németül, és jelenleg angolul tanulok.",
-        "en": "I speak Hungarian and German, and I am learning English at the moment.",
+        "de": "Ich spreche Spanisch und Deutsch, und ich lerne gerade Englisch.",
+        "es": "Hablo español y alemán, y ahora estoy aprendiendo inglés.",
+        "hu": "Beszélek spanyolul és németül, és jelenleg angolul tanulok.",
+        "en": "I speak Spanish and German, and I am learning English at the moment.",
         "gap": "lerne"
       },
       {

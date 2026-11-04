@@ -24,7 +24,7 @@
       { "es": "mi", "forms": ["mi", "mis"], "en": "my", "hu": "az én …-m", "de": "mein, meine" },
       { "es": "papás", "forms": ["papás"], "en": "parents", "hu": "szülők", "de": "die Eltern (Pl.)" },
       { "es": "en", "forms": ["en"], "en": "in", "hu": "-ban, -ben", "de": "in" },
-      { "es": "Hungría", "forms": ["Hungría"], "en": "Hungary", "hu": "Magyarország", "de": "Ungarn" },
+      { "es": "Inglaterra", "forms": ["Inglaterra"], "en": "England", "hu": "Anglia", "de": "England" },
       { "es": "México", "forms": ["México"], "en": "Mexico", "hu": "Mexikó", "de": "Mexiko" },
       { "es": "cuántos", "forms": ["cuántos"], "en": "how many", "hu": "hány", "de": "wie viele" },
       { "es": "año", "forms": ["años"], "en": "year", "hu": "év", "de": "das Jahr" },
@@ -95,18 +95,18 @@
         "en": "Where do your parents live?",
         "de": "Wo wohnen deine Eltern?",
         "answers": [
-          "Mis papás viven en Hungría.",
-          "Viven en Hungría.",
+          "Mis papás viven en Inglaterra.",
+          "Viven en Inglaterra.",
           "Mis papás viven en México.",
           "Viven en México."
         ]
       },
       {
         "speaker": "me",
-        "es": "Mis papás viven en Hungría.",
-        "hu": "A szüleim Magyarországon élnek.",
-        "en": "My parents live in Hungary.",
-        "de": "Meine Eltern wohnen in Ungarn.",
+        "es": "Mis papás viven en Inglaterra.",
+        "hu": "A szüleim Angliában élnek.",
+        "en": "My parents live in England.",
+        "de": "Meine Eltern wohnen in England.",
         "gap": "viven"
       },
       {
