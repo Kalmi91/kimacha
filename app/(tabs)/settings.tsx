@@ -123,7 +123,8 @@ export default function SettingsScreen() {
         </Row>
       )}
 
-      <SettingsTabs tab={tab} onChange={setTab} spaced={Platform.OS === 'web' && isCloudGuest} />
+      {/* no tabs on web: the on-device voices do not exist there, the Voice tab would be empty (FB563). The spacer keeps the tab bar's gap. */}
+      {Platform.OS === 'web' ? <View style={styles.webTabsGap} /> : <SettingsTabs tab={tab} onChange={setTab} />}
 
       {/* the on-device neural voices (download, switch, sentence engine per language) and whose voice reads each language. */}
       {tab === 'voice' && (
@@ -422,6 +423,7 @@ const styles = StyleSheet.create({
   difficultyLabelBox: {
     flex: 1,
   },
+  webTabsGap: { height: 16 },
   wordsOnlyRow: {
     flexDirection: 'row',
     flexWrap: 'wrap',
