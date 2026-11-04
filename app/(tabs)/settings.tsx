@@ -123,7 +123,7 @@ export default function SettingsScreen() {
         </Row>
       )}
 
-      <SettingsTabs tab={tab} onChange={setTab} />
+      <SettingsTabs tab={tab} onChange={setTab} spaced={Platform.OS === 'web' && isCloudGuest} />
 
       {/* the on-device neural voices (download, switch, sentence engine per language) and whose voice reads each language. */}
       {tab === 'voice' && (
