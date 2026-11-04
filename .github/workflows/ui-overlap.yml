@@ -20,7 +20,7 @@ jobs:
   overlap:
     name: UI overlap check
     runs-on: ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 60
     env:
       # Chrome is preinstalled on the runner image; the script looks for it by this variable.
       CHROME_PATH: /usr/bin/google-chrome
