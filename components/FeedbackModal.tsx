@@ -1,9 +1,10 @@
 import { useContext, useEffect, useState, type ReactNode } from 'react';
-import { StyleSheet, View, Pressable, TextInput, Modal, PanResponder, Dimensions, Keyboard, Share, Platform } from 'react-native';
+import { StyleSheet, View, Pressable, TextInput, Modal, PanResponder, Dimensions, Share, Platform } from 'react-native';
 import { Text } from '@/components/KText';
 import { TitleText, themedInputStyle } from '@/components/grammar/Themed';
 import Colors from '@/constants/Colors';
 import { FEEDBACK_FAB_MARGIN, FEEDBACK_FAB_SIZE } from '@/constants/FeedbackFab';
+import { dismissKeyboardOnTap } from '@/lib/keyboardTap';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { BrutalBox, BrutalButton } from '@/components/grammar/Brutal';
@@ -197,7 +198,7 @@ function FeedbackControl({ level, languagePair, currentCard, draggable = false, 
         {/* the dimmed area around the box is the "beside" the learner
             taps, so it closes the keyboard (the modal itself stays open, Cancel
             closes that). */}
-        <Pressable style={styles.overlay} onPress={() => Keyboard.dismiss()}>
+        <Pressable style={styles.overlay} onPress={dismissKeyboardOnTap}>
           <ModalBox>
             <TitleText variant="title" style={[styles.modalTitle, { color: colors.text }]}>{s.feedback.button}</TitleText>
 

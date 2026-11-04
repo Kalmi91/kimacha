@@ -1,6 +1,7 @@
-import { View, Pressable, TextInput, ScrollView, KeyboardAvoidingView, Platform, ActivityIndicator, Keyboard } from 'react-native';
+import { View, Pressable, TextInput, ScrollView, KeyboardAvoidingView, Platform, ActivityIndicator } from 'react-native';
 import { Text } from '@/components/KText';
 import { TitleText, themedInkEdgeStyle, themedInputStyle, ProgressBar, ActionButton } from '@/components/grammar/Themed';
+import { dismissKeyboardOnTap } from '@/lib/keyboardTap';
 import { speak } from '@/lib/speech';
 
 import Colors from '@/constants/Colors';
@@ -417,7 +418,7 @@ export default function PcicCardView({
           colors={colors}
           chip={chipLabel}
           chipTone={current.state === 'new' ? 'new' : 'neutral'}
-          onPress={() => Keyboard.dismiss()}
+          onPress={dismissKeyboardOnTap}
         >
           {/* the 🔊 next to the word speaks the English again (added afterwards),
               with the same call as the read-aloud on opening a card. */}
