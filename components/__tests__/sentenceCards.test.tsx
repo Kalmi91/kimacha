@@ -390,7 +390,7 @@ describe('EasySentenceCard has no listening mode any more (the listen-and-type s
   });
 });
 
-describe('TypedSentenceCard listening step (beta sentenceListening, FB524)', () => {
+describe('TypedSentenceCard listening step (rung 2 of the sentence ladder, FB524)', () => {
   const props = {
     sourceSentence: 'The book and the table.',
     targetSentence: 'El libro y la mesa.',
@@ -507,5 +507,97 @@ describe('Audio round B: the sentence cards speak with the voice of the card wor
     for (const w of ['el', 'libro']) fireEvent.press(getAllByText(w)[0]);
     fireEvent.press(getByText('Check'));
     expect(speech.speak).toHaveBeenLastCalledWith('El libro.', 'es-MX');
+  });
+});
+
+// FB569 ("too much saying of the sentence"): the Sentences tab passes speakOnPress, the Learn tab does not and keeps today's behaviour.
+describe('speakOnPress: only a press of the 🔊 button speaks a sentence (Sentences tab)', () => {
+  const easy = {
+    sourceSentence: 'The book and the table.',
+    targetWords: ['el', 'libro', 'y', 'la', 'mesa'],
+    trapWords: ['los'],
+    speechLocale: 'es-MX',
+    sourceSpeechLocale: 'en-US',
+    spokenSentence: 'El libro y la mesa.',
+  };
+  const typed = {
+    sourceSentence: 'The book and the table.',
+    targetSentence: 'El libro y la mesa.',
+    speechLocale: 'es-MX',
+    sourceSpeechLocale: 'en-US',
+  };
+  const build = (getAllByText: (t: string) => unknown[]) => {
+    for (const w of easy.targetWords) fireEvent.press(getAllByText(w)[0] as never);
+  };
+
+  it('Learn tab (default): the build card reads the prompt when it opens and the sentence after Check; no 🔊 button', () => {
+    const { getByText, getAllByText, queryByTestId } = render(<EasySentenceCard {...easy} onResult={jest.fn()} />);
+    expect(speech.speak).toHaveBeenCalledWith('The book and the table.', 'en-US');
+    expect(queryByTestId('sentence-speak')).toBeNull();
+    build(getAllByText);
+    fireEvent.press(getByText('Check'));
+    expect(speech.speak).toHaveBeenLastCalledWith('El libro y la mesa.', 'es-MX');
+  });
+
+  it('Learn tab (default): the typing card reads the prompt when it opens and the sentence after Check; no 🔊 button', () => {
+    const { getByText, getByPlaceholderText, queryByTestId } = render(<TypedSentenceCard {...typed} onResult={jest.fn()} />);
+    expect(speech.speak).toHaveBeenCalledWith('The book and the table.', 'en-US');
+    expect(queryByTestId('sentence-speak')).toBeNull();
+    fireEvent.changeText(getByPlaceholderText('Type the sentence'), 'el libro y la mesa');
+    fireEvent.press(getByText('✓ Check'));
+    expect(speech.speak).toHaveBeenLastCalledWith('El libro y la mesa.', 'es-MX');
+  });
+
+  it('build card: nothing is spoken on open or after Check, a tile still sounds; the 🔊 reads the prompt before Check and the sentence after', () => {
+    const { getByText, getAllByText, getByTestId } = render(<EasySentenceCard {...easy} speakOnPress onResult={jest.fn()} />);
+    expect(speech.speak).not.toHaveBeenCalled();
+    fireEvent.press(getAllByText('el')[0]);
+    expect(speech.speak).toHaveBeenCalledWith('el', 'es-MX', { gender: 'f' }); // the tile's own sound stays
+    fireEvent.press(getAllByText('libro')[0]);
+    fireEvent.press(getAllByText('y')[0]);
+    fireEvent.press(getAllByText('la')[0]);
+    fireEvent.press(getAllByText('mesa')[0]);
+    speech.speak.mockClear();
+    fireEvent.press(getByTestId('sentence-speak'));
+    expect(speech.speak).toHaveBeenCalledTimes(1);
+    expect(speech.speak).toHaveBeenCalledWith('The book and the table.', 'en-US'); // never the answer before Check
+    speech.speak.mockClear();
+    fireEvent.press(getByText('Check'));
+    expect(speech.speak).not.toHaveBeenCalled();
+    fireEvent.press(getByTestId('sentence-speak'));
+    expect(speech.speak).toHaveBeenCalledTimes(1);
+    expect(speech.speak).toHaveBeenCalledWith('El libro y la mesa.', 'es-MX');
+  });
+
+  it('typing card: nothing is spoken on open or after Check; the 🔊 reads the prompt before Check and the sentence after', () => {
+    const { getByText, getByPlaceholderText, getByTestId } = render(<TypedSentenceCard {...typed} speakOnPress onResult={jest.fn()} />);
+    expect(speech.speak).not.toHaveBeenCalled();
+    fireEvent.press(getByTestId('sentence-speak'));
+    expect(speech.speak).toHaveBeenCalledTimes(1);
+    expect(speech.speak).toHaveBeenCalledWith('The book and the table.', 'en-US');
+    speech.speak.mockClear();
+    fireEvent.changeText(getByPlaceholderText('Type the sentence'), 'el libro y la mesa');
+    fireEvent.press(getByText('✓ Check'));
+    expect(speech.speak).not.toHaveBeenCalled();
+    fireEvent.press(getByTestId('sentence-speak'));
+    expect(speech.speak).toHaveBeenCalledTimes(1);
+    expect(speech.speak).toHaveBeenCalledWith('El libro y la mesa.', 'es-MX');
+  });
+
+  it('typing card, a wrong answer: still nothing by itself; the 🔊 then reads the right sentence', () => {
+    const { getByText, getByPlaceholderText, getByTestId } = render(<TypedSentenceCard {...typed} speakOnPress onResult={jest.fn()} />);
+    fireEvent.changeText(getByPlaceholderText('Type the sentence'), 'el gato');
+    fireEvent.press(getByText('✓ Check'));
+    expect(speech.speak).not.toHaveBeenCalled();
+    fireEvent.press(getByTestId('sentence-speak'));
+    expect(speech.speak).toHaveBeenCalledWith('El libro y la mesa.', 'es-MX');
+  });
+
+  it('the listening step still plays by itself (the one place that does), and has only its own 🔊, no second button', () => {
+    const { getByTestId, queryByTestId } = render(<TypedSentenceCard {...typed} listening speakOnPress onResult={jest.fn()} />);
+    expect(speech.speak).toHaveBeenCalledTimes(1);
+    expect(speech.speak).toHaveBeenCalledWith('El libro y la mesa.', 'es-MX');
+    expect(getByTestId('sentence-listen-play')).toBeTruthy();
+    expect(queryByTestId('sentence-speak')).toBeNull();
   });
 });

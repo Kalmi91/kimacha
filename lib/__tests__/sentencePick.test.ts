@@ -2,7 +2,7 @@
 // pool gives way on variety, a pool smaller than the round is taken whole.
 
 import { tileWords } from '@/lib/sentenceCards';
-import { pickSentences } from '@/lib/sentencePick';
+import { MAX_PER_RUNG, pickSentences } from '@/lib/sentencePick';
 import type { SentenceEntry } from '@/lib/sentenceTab';
 
 const mk = (id: string, words: string[], dueN = 0): SentenceEntry => {
@@ -82,5 +82,56 @@ describe('pickSentences', () => {
     const q = [mk('i0', ['I', 'run'], 2), mk('i1', ['I', 'eat'], 1), mk('x', ['She', 'sings'], 0)];
     expect(ids(pickSentences(q, 'en', 1))).toEqual(['i0']);
     expect(ids(pickSentences(q, 'en', 2))).toEqual(['i0', 'x']); // half of 2 = 1 sentence per first word
+  });
+
+  // FB569/FB570: the ladder. A sentence on rung 2 or 3 comes before a fresh one; a round takes at most MAX_PER_RUNG of one rung
+  // while others are available.
+  describe('the ladder rungs', () => {
+    const onRung = (id: string, rung: 2 | 3 | undefined, n: number): SentenceEntry => ({ ...mk(id, words(id, 3 + (n % 3)), 0), ...(rung ? { rung } : {}) });
+    const rungsOf = (list: SentenceEntry[]) => list.map((e) => e.rung ?? 1);
+
+    it('a started sentence (rung 2 or 3) comes before a fresh one, even if the fresh one is first in the queue', () => {
+      const q = [onRung('f0', undefined, 0), onRung('f1', undefined, 1), onRung('f2', undefined, 2), onRung('r2', 2, 3), onRung('r3', 3, 4)];
+      const round = pickSentences(q, 'en', 3);
+      expect(ids(round)).toEqual(['f0', 'r2', 'r3']); // the round keeps the queue's order; r2 and r3 are in, f1 and f2 are not
+    });
+
+    it('a round takes at most ' + MAX_PER_RUNG + ' sentences of the same rung while others are available (2 + 2 + 1)', () => {
+      const q = [
+        ...Array.from({ length: 6 }, (_, k) => onRung(`t${k}`, 3, k)),
+        ...Array.from({ length: 6 }, (_, k) => onRung(`l${k}`, 2, k + 6)),
+        ...Array.from({ length: 6 }, (_, k) => onRung(`b${k}`, undefined, k + 12)),
+      ];
+      const round = pickSentences(q, 'en', SIZE);
+      expect(round).toHaveLength(5);
+      const counts = [1, 2, 3].map((r) => rungsOf(round).filter((x) => x === r).length);
+      expect(counts.sort()).toEqual([1, 2, 2]);
+      expect(Math.max(...counts)).toBeLessThanOrEqual(MAX_PER_RUNG);
+    });
+
+    it('the cap gives way when nothing else is available: the round is filled up to its size', () => {
+      const q = [
+        ...Array.from({ length: 5 }, (_, k) => onRung(`t${k}`, 3, k)),
+        onRung('b0', undefined, 6),
+      ];
+      const round = pickSentences(q, 'en', SIZE);
+      expect(round).toHaveLength(5);
+      expect(rungsOf(round).filter((x) => x === 3).length).toBe(4); // 2 by the cap, then 2 more to fill up
+      expect(ids(round)).toContain('b0');
+    });
+
+    it('a pool with one rung only has no cap', () => {
+      const fresh = Array.from({ length: 6 }, (_, k) => onRung(`b${k}`, undefined, k));
+      expect(ids(pickSentences(fresh, 'en', SIZE))).toEqual(['b0', 'b1', 'b2', 'b3', 'b4']);
+      const all3 = Array.from({ length: 6 }, (_, k) => onRung(`t${k}`, 3, k));
+      expect(ids(pickSentences(all3, 'en', SIZE))).toEqual(['t0', 't1', 't2', 't3', 't4']);
+    });
+
+    it('never the same sentence twice in a round', () => {
+      const q = [onRung('t0', 3, 0), onRung('l0', 2, 1), onRung('b0', undefined, 2)];
+      const round = pickSentences(q, 'en', SIZE);
+      expect(new Set(ids(round)).size).toBe(round.length);
+      expect(ids(round)).toEqual(['t0', 'l0', 'b0']);
+    });
   });
 });

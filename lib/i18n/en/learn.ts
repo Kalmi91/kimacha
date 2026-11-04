@@ -277,9 +277,11 @@ export default {
     // Step label: the sentence and the step ("Sentence 2 of 5 · Build the whole sentence").
     sentenceOf: (n: number, total: number) => `Sentence ${n} of ${total}`,
     stepChunk: (part: number, parts: number) => `Build the short sentence ${part} of ${parts}`,
+    // The rung of the ladder (lib/sentenceLadder.ts) the sentence is on this round: "Step 2 of 3".
+    stepRung: (n: number, total: number) => `Step ${n} of ${total}`,
     stepBuildWhole: 'Build the whole sentence',
     stepTypeWhole: 'Type the whole sentence',
-    // Listen-and-type step (beta sentenceListening): the sentence is heard, not shown, until it is checked.
+    // Listen-and-type step (rung 2 of the sentence ladder): the sentence is heard, not shown, until it is checked.
     stepListenType: 'Listen and type what you hear',
     listenTypeHint: 'Listen, then type the sentence',
     listenPlay: 'Play the sentence',
@@ -288,15 +290,16 @@ export default {
     // Tap-a-word hint (beta sentenceHint): a tapped English word shows its Spanish form; that word earns no credit this round.
     hintUsed: 'hint used',
     hintA11y: 'Show the Spanish word',
-    empty: 'Learn more words to unlock sentences',
+    empty: 'Nothing to practise right now. Learn more words to unlock new sentences',
     roundDone: (n: number) => (n === 1 ? 'Round done: 1 sentence' : `Round done: ${n} sentences`),
+    learnedNow: (n: number) => (n === 1 ? '1 sentence learned' : `${n} sentences learned`),
     more: 'More sentences',
     // Level picker on top (lib/sentenceLevel.ts): all levels, or only the sentences of one level.
     levelPickerLabel: 'Sentence level',
     levelAll: 'All',
     levelAllA11y: 'All levels',
     levelOptionA11y: (level: string) => `Level ${level}`,
-    emptyLevel: 'No sentences at this level with the words you know yet. Pick another level',
+    emptyLevel: 'Nothing to practise at this level right now. Pick another level',
   },
   // components/practice/LevelCounter.tsx (Sentences and Practice tabs): the level and its word counts, same chips as the Words tab.
   levelCounter: {

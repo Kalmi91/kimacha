@@ -20,6 +20,7 @@ import { useDiffStyles } from '@/lib/useDiffStyles';
 import { stripSentencePunct } from '@/lib/sentenceCards';
 import { answerInputProps } from '@/lib/inputProps';
 import HintedSentence from '@/components/HintedSentence';
+import SpeakButton from '@/components/SpeakButton';
 import type { HintPiece } from '@/lib/sentenceHint';
 
 interface Props {
@@ -49,9 +50,13 @@ interface Props {
   // Tap-a-word hints on the prompt sentence (Sentences tab, beta sentenceHint); see EasySentenceCard.
   sourceHints?: HintPiece[] | null;
   onSourceHint?: (ids: string[]) => void;
-  // Listen-and-type step (Sentences tab, beta sentenceListening): the TARGET sentence is heard when the card opens and a big
+  // Listen-and-type step (Sentences tab, rung 2): the TARGET sentence is heard when the card opens and a big
   // 🔊 button replaces the prompt sentence, which (with its hints) is shown only once the answer is checked.
   listening?: boolean;
+  // Sentences tab (FB569): no sentence is spoken by itself, only on a press of the 🔊 button (before Check the prompt, after it
+  // the right sentence); the listening step still plays by itself. Off (default) = the Learn tab's behaviour: the prompt is
+  // read when the card opens and the right sentence after Check.
+  speakOnPress?: boolean;
   // Audio round B: every sentence this card speaks (target and source side) is spoken by this speaker, the sex of the
   // card's word voice (lib/cardSpeaker.ts), so the sentence pack finds its recording.
   speakerGender?: VoiceGender;
@@ -104,6 +109,7 @@ export default function TypedSentenceCard({
   sourceHints,
   onSourceHint,
   listening = false,
+  speakOnPress = false,
   speakerGender,
 }: Props) {
   const { theme } = useTheme();
@@ -124,7 +130,7 @@ export default function TypedSentenceCard({
   useEffect(() => {
     if (listening) {
       if (speechLocale) sayAuto(targetSentence, speechLocale);
-    } else if (sourceSpeechLocale) sayAuto(sourceSentence, sourceSpeechLocale);
+    } else if (sourceSpeechLocale && !speakOnPress) sayAuto(sourceSentence, sourceSpeechLocale);
     return () => stopSpeech();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [listening, sourceSentence, sourceSpeechLocale, targetSentence, speechLocale]);
@@ -144,11 +150,19 @@ export default function TypedSentenceCard({
     const isCorrect = suggestedGrade(grade) === 'good';
     setResult(isCorrect ? 'correct' : 'wrong');
     setMissed(!isCorrect);
-    // The correct sentence is ALWAYS spoken, after a good and after a wrong answer alike.
-    if (speechLocale) {
+    // The correct sentence is ALWAYS spoken, after a good and after a wrong answer alike (not with speakOnPress, except when listening).
+    if (speechLocale && (listening || !speakOnPress)) {
       stopSpeech();
       say(targetSentence, speechLocale);
     }
+  };
+
+  // speakOnPress: the 🔊 button speaks what is in front of the learner: the prompt, and once checked the right sentence.
+  const speakShown = () => {
+    stopSpeech();
+    if (result || missed) {
+      if (speechLocale) say(targetSentence, speechLocale);
+    } else if (sourceSpeechLocale) say(sourceSentence, sourceSpeechLocale);
   };
 
   const dockInsets = dockScrollInsets(dockH, dockLift, keyboardOpen);
@@ -187,6 +201,7 @@ export default function TypedSentenceCard({
             </>
           )}
           {revealed && <HintedSentence text={sourceSentence} pieces={sourceHints} onHint={onSourceHint} style={[styles.sourceText, { color: colors.text }]} />}
+          {speakOnPress && !listening && <SpeakButton testID="sentence-speak" onPress={speakShown} style={styles.speakBtn} iconStyle={styles.speakIcon} brutalStyle={styles.speakBrutal} />}
 
           <TextInput
             style={[
@@ -258,6 +273,9 @@ const styles = StyleSheet.create({
   listenBtn: { width: 96, height: 96, borderRadius: 48, alignItems: 'center', justifyContent: 'center' },
   listenBrutal: { width: 96, height: 96, alignItems: 'center', justifyContent: 'center' },
   listenIcon: { fontSize: 44 },
+  speakBtn: { alignSelf: 'center', padding: 4 },
+  speakIcon: { fontSize: 22 },
+  speakBrutal: { alignSelf: 'center' },
   listenHint: { fontSize: 14, fontWeight: '600', textAlign: 'center' },
   input: { width: '100%', borderWidth: 2, borderRadius: 12, paddingHorizontal: 12, paddingVertical: 10, fontSize: 16 },
   correctLine: { fontSize: 14, fontWeight: '600', textAlign: 'center' },
