@@ -15,8 +15,10 @@ import { useScreenLoad } from '@/lib/useScreenLoad';
 import { useReduceMotion } from './boardUi';
 import type { Gains } from './Podium';
 
-// While the tab is focused and the app is active the board is read again this often (the made-up players move with the clock).
+// While the tab is focused and the app is active the board is read again this often...
 export const BOARD_REFRESH_MS = 30000;
+// ...and the made-up players, who move with the clock and need no network, are moved on this often.
+export const BOARD_TICK_MS = 10000;
 
 export type Phase = 'loading' | 'join' | 'ready' | 'left' | 'offline' | 'hidden';
 
@@ -189,13 +191,17 @@ export function useBoard() {
   useFocusEffect(
     useCallback(() => {
       let timer: ReturnType<typeof setInterval> | null = null;
+      let tick: ReturnType<typeof setInterval> | null = null;
       const stop = () => {
         if (timer) clearInterval(timer);
+        if (tick) clearInterval(tick);
         timer = null;
+        tick = null;
       };
       const start = () => {
         stop();
         timer = setInterval(() => void refreshRef.current(), BOARD_REFRESH_MS);
+        tick = setInterval(show, BOARD_TICK_MS);
       };
       // the state can still be unknown (null) right after launch: that counts as active
       if (AppState.currentState !== 'background' && AppState.currentState !== 'inactive') start();
@@ -204,7 +210,7 @@ export function useBoard() {
         stop();
         sub.remove();
       };
-    }, []),
+    }, [show]),
   );
 
   const gainDone = useCallback((who: string, id: number) => {

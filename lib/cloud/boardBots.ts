@@ -12,17 +12,29 @@ export interface Bot {
 }
 
 // A learner who earns 50 XP a day (350 a week) ends the week in the middle of this field.
+// The cast is this big so the board moves often: together they earn about one XP a minute during the day.
 export const BOTS: readonly Bot[] = [
+  { name: 'Ricky07', weekly: 760 },
+  { name: 'LaPatrona', weekly: 700 },
   { name: 'TacoLover', weekly: 640 },
+  { name: 'SzofiHU', weekly: 610 },
   { name: 'kamarano', weekly: 590 },
   { name: 'Diego', weekly: 520 },
+  { name: 'Dani_mx', weekly: 480 },
   { name: 'xX_Nacho_Xx', weekly: 450 },
+  { name: 'pixelmano', weekly: 430 },
   { name: 'Luis', weekly: 400 },
+  { name: 'ToroLoco', weekly: 380 },
   { name: 'NyelvNinja', weekly: 370 },
+  { name: 'Panni_22', weekly: 320 },
   { name: 'ElCrack77', weekly: 300 },
+  { name: 'Gabo.mx', weekly: 270 },
   { name: 'chilango_23', weekly: 240 },
+  { name: 'quesadilla9', weekly: 210 },
   { name: 'GatoLoco', weekly: 180 },
+  { name: 'BogyoBoy', weekly: 160 },
   { name: 'Zsolti92', weekly: 130 },
+  { name: 'NoSleepMx', weekly: 110 },
   { name: 'vale.mx', weekly: 90 },
   { name: 'darkPaco', weekly: 60 },
   { name: 'lolka_07', weekly: 25 },

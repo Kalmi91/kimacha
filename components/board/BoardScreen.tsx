@@ -1,7 +1,6 @@
 import { useRef } from 'react';
 import { Pressable, ScrollView, StyleSheet, TextInput, View } from 'react-native';
 import { useRouter } from 'expo-router';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { Text } from '@/components/KText';
 import Colors from '@/constants/Colors';
@@ -30,7 +29,6 @@ export default function BoardScreen() {
   const colors = Colors[theme];
   const s = t().board;
   const router = useRouter();
-  const insets = useSafeAreaInsets();
   const b = useBoard();
   const scroll = useRef<ScrollView>(null);
   const sheetY = useRef(0);
@@ -70,7 +68,7 @@ export default function BoardScreen() {
         contentContainerStyle={styles.content}
         showsVerticalScrollIndicator={false}
       >
-        <View style={{ backgroundColor: band, paddingTop: insets.top }}>
+        <View style={{ backgroundColor: band }}>
           <View style={styles.header}>
             <Text variant="title" accessibilityRole="header" style={[styles.title, { color: colors.text }]}>{t().tabs.board}</Text>
             <ScreenFeedback placement="inline" level="-" languagePair={pairOf(getPcicTarget())} currentCard="board-tab" />

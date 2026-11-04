@@ -34,7 +34,7 @@ import { setLanguage } from '@/lib/i18n';
 import { ThemeProvider } from '@/lib/ThemeContext';
 import { localDateString } from '@/lib/usageStats';
 import BoardScreen from '../board/BoardScreen';
-import { BOARD_REFRESH_MS } from '../board/useBoard';
+import { BOARD_REFRESH_MS, BOARD_TICK_MS } from '../board/useBoard';
 
 jest.setTimeout(30000);
 
@@ -412,8 +412,29 @@ describe('BoardScreen', () => {
       const before = withBots.mock.calls.length;
       mockFetch.mockRejectedValue(new Error('offline'));
       await tick(BOARD_REFRESH_MS);
+      expect(withBots.mock.calls.length).toBeGreaterThan(before);
+      expect(withBots.mock.calls[withBots.mock.calls.length - 1][0]).toMatchObject({ weekStart: WEEK_START });
+      view.unmount();
+    });
+
+    it('moves the made-up players between two server reads, without calling the server, and stops on blur', async () => {
+      await getDb().setBoardIdentity({ token: 'dev-tok', name: 'Kálmán' });
+      fakeTimers();
+      serveBoard();
+      const view = renderScreen();
+      await view.findByTestId('board-panel');
+      const withBots = botsModule.withBots as jest.Mock;
+      const before = withBots.mock.calls.length;
+      const reads = callsTo('GET', '/api/board').length;
+
+      await tick(BOARD_TICK_MS);
       expect(withBots.mock.calls.length).toBe(before + 1);
-      expect(withBots.mock.calls[before][0]).toMatchObject({ weekStart: WEEK_START });
+      expect(callsTo('GET', '/api/board')).toHaveLength(reads);
+
+      await act(async () => mockBlur.forEach((blur) => blur()));
+      const atBlur = withBots.mock.calls.length;
+      await tick(BOARD_TICK_MS * 4);
+      expect(withBots.mock.calls.length).toBe(atBlur);
       view.unmount();
     });
 

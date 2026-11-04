@@ -75,8 +75,8 @@ describe('withBots', () => {
     for (let w = 0; w < 12; w++) {
       const weekStart = shiftDate(WEEK, 7 * w);
       const out = withBots(alone(350, weekStart), new Date(2026, 10, 2 + 7 * w + 6, 23, 59));
-      expect(out.me!.rank).toBeGreaterThanOrEqual(5);
-      expect(out.me!.rank).toBeLessThanOrEqual(9);
+      expect(out.me!.rank).toBeGreaterThanOrEqual(9);
+      expect(out.me!.rank).toBeLessThanOrEqual(17);
       expect(out.rows.find((r) => r.me)!.rank).toBe(out.me!.rank);
     }
   });
