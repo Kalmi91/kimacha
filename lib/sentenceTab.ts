@@ -42,6 +42,11 @@ export interface SentenceEntry {
   /** The rung of the ladder this sentence plays in its round (lib/sentenceLadder.ts); absent = rung 1. */
   rung?: Rung;
   /**
+   * Set on an entry that starts with a word card (lib/sentenceNewWord.ts, FB564): `itemId` is the new word, `source`/`target`
+   * its own example sentence, or '' when the word has none yet that is made of known words (then the card is the whole entry).
+   */
+  newWord?: true;
+  /**
    * Set on a sentence from the learner's own mistakes (lib/sentenceMistakes.ts, beta sentenceMistakes): `itemId` is then
    * the mistake card's id, `source` its English, `target` the right Spanish, `wrong` the faulty sentence they wrote.
    * Such an entry owns no learned words (`wordIds` empty). Saved with the round, so it stays a mistake step on reload.

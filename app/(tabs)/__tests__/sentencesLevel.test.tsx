@@ -145,7 +145,10 @@ describe('Sentences tab: level picker (FB556)', () => {
   });
 
   it('a level with nothing to offer for the words known says so and keeps the picker on screen', async () => {
-    await learn(['a1-w1', 'a1-w2']);
+    // every B2 word is known and its sentence learned: nothing to practise and no new word at that level either (FB564)
+    await learn(ALL_WORDS);
+    await saveStage(getDb(), 'la casa.', 'learned');
+    await saveStage(getDb(), 'el pan.', 'learned');
     const r = render(screen());
     await flush();
     expect(r.queryByTestId('sentences-empty')).toBeNull();
@@ -163,7 +166,30 @@ describe('Sentences tab: level picker (FB556)', () => {
     expect(await roundItems()).toEqual(['a1-w1', 'a1-w2']);
   });
 
-  it('no learned words at all: the old empty text with All picked', async () => {
+  it('a level with words not learned yet brings them as new words instead of an empty screen (FB564)', async () => {
+    await learn(['a1-w1', 'a1-w2']);
+    const r = render(screen());
+    await flush();
+    fireEvent.press(r.getByTestId('sentences-level-B2'));
+    await flush();
+    expect(r.queryByTestId('sentences-empty')).toBeNull();
+        expect(r.getByTestId('new-word-word').props.children).toBe('la casa'); // the picked level's words, not the Learn tab's A1
+    expect(selected(r, 'B2')).toBe(true);
+  });
+
+  it('no learned words at all and the day\'s new words used up: the budget line, with All picked (FB564)', async () => {
+    await getDb().setDailyNewLimit(0);
+    const r = render(screen());
+    await flush();
+    expect(r.getByTestId('sentences-empty')).toBeTruthy();
+    expect(r.getByText(/today's new words are used up/)).toBeTruthy();
+    expect(selected(r, 'all')).toBe(true);
+    await getDb().setDailyNewLimit(20);
+  });
+
+  it('everything learned and every sentence learned: the old empty text with All picked', async () => {
+    await learn(ALL_WORDS);
+    for (const key of ['el gato.', 'el perro.', 'la casa.', 'el pan.']) await saveStage(getDb(), key, 'learned');
     const r = render(screen());
     await flush();
     expect(r.getByText('Nothing to practise right now. Learn more words to unlock new sentences')).toBeTruthy();

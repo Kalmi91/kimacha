@@ -78,7 +78,7 @@ import { addDays, sm2NewCard, sm2Review, type Sm2Card } from '@/lib/sm2';
 import sample from '@/lib/mistakes/__fixtures__/sample.json';
 import { validateMistakesPayload, type MistakesBatch } from '@/lib/mistakes/format';
 import { ThemeProvider } from '@/lib/ThemeContext';
-import { localDateString } from '@/lib/usageStats';
+import { DEFAULT_DAILY_NEW_LIMIT, localDateString } from '@/lib/usageStats';
 import { recordPracticeResult } from '@/lib/practice/halfStep';
 import { speak } from '@/lib/speech';
 import SentencesScreen from '../sentences';
@@ -194,6 +194,8 @@ beforeEach(async () => {
   await getDb().setGrammarPalette('classic');
   await clearSentenceRound(getDb());
   await getDb().resetGameProgress(LADDER_KEY);
+  // the new words of an empty tab (FB564) have their own describe at the end: the day's budget is the default here
+  await getDb().setDailyNewLimit(DEFAULT_DAILY_NEW_LIMIT);
   __resetBetaForTest();
   await getDb().setBetaFlag('xpV2', false);
   // the tap-a-word hints (beta sentenceHint, on by default) have their own describe at the end
@@ -213,7 +215,9 @@ afterEach(() => {
 });
 
 describe('Sentences tab', () => {
-  it('no learned words: the empty state (EN and ES); one header only (the navigator\'s), no second "Sentences" title', async () => {
+  it('everything learned: the empty state (EN and ES); one header only (the navigator\'s), no second "Sentences" title', async () => {
+    await learnWords([1, 2, 3, 4, 5, 6]);
+    await ladderAt('learned');
     const r = render(<SentencesScreen />);
     await flush();
     expect(r.getByText('Nothing to practise right now. Learn more words to unlock new sentences')).toBeTruthy();
@@ -796,10 +800,12 @@ function BY_ITEM_ENTRY(n: number) {
 
 describe('the feedback button', () => {
   it('is on the screen with a round, with an empty round and after the round, with the sentences screen id in the message', async () => {
+    await getDb().setDailyNewLimit(0); // no new word either: the empty tab
     const empty = render(<SentencesScreen />);
     await flush();
     expect(empty.getByLabelText('Feedback')).toBeTruthy();
     empty.unmount();
+    await getDb().setDailyNewLimit(DEFAULT_DAILY_NEW_LIMIT);
 
     await learnWords([1, 2, 3, 4, 5, 6]);
     global.fetch = jest.fn().mockResolvedValue({ ok: true } as never);
@@ -829,6 +835,7 @@ describe('the feedback button', () => {
   });
 
   it('is on the screen when there is nothing to practise, with the sentences tab id', async () => {
+    await getDb().setDailyNewLimit(0); // the other words are new: no new word either
     await learnWords([3]);
     await ladderAt('learned', [3]);
     global.fetch = jest.fn().mockResolvedValue({ ok: true } as never);
@@ -937,6 +944,7 @@ describe('rung 2: listen and type (FB523/FB524, always on since FB570)', () => {
 
 describe('the ladder (FB569 + FB570)', () => {
   it('a sentence climbs one rung per round (build, listen, type) and is learned after the third; it never comes back', async () => {
+    await getDb().setDailyNewLimit(0); // the other words are new: no new word once the sentence is learned
     await learnWords([3]);
     const r = render(<SentencesScreen />);
     await flush();
@@ -992,6 +1000,7 @@ describe('the ladder (FB569 + FB570)', () => {
   });
 
   it('a wrong typing on rung 3 passes nothing: the sentence stays on rung 3, the "more" button does not replay it, a restart does', async () => {
+    await getDb().setDailyNewLimit(0); // the other words are new: no new word instead of the sentence
     await learnWords([3]);
     await ladderAt(3, [3]);
     const r = render(<SentencesScreen />);
@@ -1050,8 +1059,8 @@ describe('the ladder (FB569 + FB570)', () => {
 
   it('Spanish UI: the empty line and the learned line', async () => {
     setLanguage('es');
-    await learnWords([3]);
-    await ladderAt('learned', [3]);
+    await learnWords([1, 2, 3, 4, 5, 6]);
+    await ladderAt('learned');
     const r = render(<SentencesScreen />);
     await flush();
     expect(r.getByText('Nada que practicar por ahora. Aprende más palabras para desbloquear frases nuevas')).toBeTruthy();

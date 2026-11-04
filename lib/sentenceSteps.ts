@@ -8,12 +8,14 @@
 //   rung 3  type    the whole sentence typed from the English (the ONLY step that credits words, lib/sentenceTyping.ts)
 // A sentence with no shorter sentences has no chunk steps. A sentence from the learner's own mistakes (SentenceEntry.mistake,
 // lib/sentenceMistakes.ts) is ONE `mistake` step outside the ladder: it is credited to the mistake deck instead.
+// A new word (SentenceEntry.newWord, lib/sentenceNewWord.ts, FB564) starts with ONE `newword` step, the word card, which
+// introduces the word; its own sentence follows on rung 1 (the steps above), or nothing follows when it has none yet.
 //
 // The step list is saved with the round (lib/sentenceRound.ts), so a round continues on the same steps after a reload.
 
 import type { SentenceEntry } from '@/lib/sentenceTab';
 
-export type StepKind = 'chunk' | 'listen' | 'build' | 'type' | 'mistake';
+export type StepKind = 'chunk' | 'listen' | 'build' | 'type' | 'mistake' | 'newword';
 
 export interface RoundStep {
   /** Unique in the round: `${itemId}#${kind}${chunk ?? ''}`. */
@@ -43,7 +45,8 @@ function sentenceSteps(e: SentenceEntry): RoundStep[] {
   if (e.mistake) return [step(e.itemId, 'mistake')];
   if (e.rung === 2) return [step(e.itemId, 'listen')];
   if (e.rung === 3) return [step(e.itemId, 'type')];
-  const steps: RoundStep[] = [];
+  const steps: RoundStep[] = e.newWord ? [step(e.itemId, 'newword')] : [];
+  if (e.newWord && e.target === '') return steps;
   for (let i = 0; i < (e.chunks?.length ?? 0); i++) steps.push(step(e.itemId, 'chunk', i));
   steps.push(step(e.itemId, 'build'));
   return steps;

@@ -260,6 +260,10 @@ const de: typeof en = {
     levelAllA11y: 'Alle Stufen',
     levelOptionA11y: (level: string) => `Stufe ${level}`,
     emptyLevel: 'Auf dieser Stufe gibt es gerade nichts zu üben. Wähle eine andere Stufe',
+    newWordTag: 'Neues Wort',
+    newWordOf: (n: number, total: number) => `Neues Wort ${n} von ${total}`,
+    newWordsNow: (n: number) => (n === 1 ? '1 neues Wort' : `${n} neue Wörter`),
+    emptyBudget: 'Gerade gibt es nichts zu üben, und die neuen Wörter für heute sind aufgebraucht. Komm morgen wieder oder erhöhe „Neue Wörter pro Tag“ in den Einstellungen',
   },
   levelCounter: {
     a11y: (level: string, total: number, due: number) => `Stufe ${level}: ${total} Wörter, ${due} fällig`,

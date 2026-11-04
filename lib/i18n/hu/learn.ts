@@ -260,6 +260,10 @@ const hu: typeof en = {
     levelAllA11y: 'Minden szint',
     levelOptionA11y: (level: string) => `${level} szint`,
     emptyLevel: 'Ezen a szinten most nincs mit gyakorolni. Válassz másik szintet',
+    newWordTag: 'Új szó',
+    newWordOf: (n: number, total: number) => `Új szó: ${n} / ${total}`,
+    newWordsNow: (n: number) => `${n} új szó`,
+    emptyBudget: 'Most nincs mit gyakorolni, és a mai új szavak elfogytak. Gyere vissza holnap, vagy emeld meg a „Napi új szavak” értékét a Beállításokban',
   },
   levelCounter: {
     a11y: (level: string, total: number, due: number) => `${level} szint: ${total} szó, ${due} esedékes`,
