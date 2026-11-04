@@ -59,7 +59,7 @@ describe('the grammar tab keeps listing the courses it has', () => {
     render(<GrammarSyllabusScreen />);
     await flush(4);
     expect(screen.queryByTestId('grammar-no-course')).toBeNull();
-    expect(screen.getAllByTestId(/^grammar-level-/).length).toBe(5);
+    expect(screen.getAllByTestId(/^grammar-level-[ABC][12]$/).length).toBe(5);
     setLanguage('en');
   });
 });

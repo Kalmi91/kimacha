@@ -125,6 +125,14 @@ const de: typeof en = {
     leaveTitle: 'Runde verlassen?',
     leaveBody: 'Deine Antworten sind gespeichert. Du kannst später weitermachen.',
   },
+  levelTest: {
+    button: 'Niveautest',
+    header: (lvl: string, pct: number) => `Niveautest ${lvl} · ${pct}%`,
+    leave: 'Niveautest verlassen',
+    doneTitle: (lvl: string) => `${lvl}: alle Themen abgehakt`,
+    doneBody: 'Du kannst jetzt aufhören oder weiterüben.',
+    keepPractising: 'Weiterüben',
+  },
 };
 
 export default de;

@@ -129,6 +129,14 @@ const es: typeof en = {
     leaveTitle: '¿Salir de la ronda?',
     leaveBody: 'Tus respuestas se guardan. Puedes continuar después.',
   },
+  levelTest: {
+    button: 'Prueba de nivel',
+    header: (lvl: string, pct: number) => `Prueba de nivel ${lvl} · ${pct}%`,
+    leave: 'Salir de la prueba de nivel',
+    doneTitle: (lvl: string) => `${lvl}: todos los temas superados`,
+    doneBody: 'Puedes salir ahora o seguir practicando.',
+    keepPractising: 'Seguir practicando',
+  },
 };
 
 export default es;

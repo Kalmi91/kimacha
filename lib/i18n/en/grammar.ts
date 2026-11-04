@@ -143,4 +143,13 @@ export default {
     leaveTitle: 'Leave the round?',
     leaveBody: 'Your answers are saved. You can continue later.',
   },
+  // FB571: the level test (an endless stream of questions from one level's topics, the weakest first).
+  levelTest: {
+    button: 'Level test',
+    header: (lvl: string, pct: number) => `${lvl} level test · ${pct}%`,
+    leave: 'Leave the level test',
+    doneTitle: (lvl: string) => `${lvl}: every topic ticked off`,
+    doneBody: 'You can leave now or keep practising.',
+    keepPractising: 'Keep practising',
+  },
 };

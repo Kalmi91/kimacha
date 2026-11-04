@@ -40,6 +40,8 @@ import {
 import { DEFAULT_WEEKLY_GOAL_MINUTES } from '@/lib/usageStats';
 import ScreenFeedback from '@/lib/screenFeedback';
 import { BrutalBox, SegmentBar, Sticker, segmentsFilled } from '@/components/grammar/Brutal';
+import LevelTestButton from '@/components/grammar/LevelTestButton';
+import { topicKindCount } from '@/lib/grammar/randomRoundView';
 import { SkinBackdrop, SkinHeader } from '@/components/skins/Slots';
 
 // The grammar course: the whole syllabus from A1 to C1, in teaching order.
@@ -233,6 +235,7 @@ export default function GrammarSyllabusScreen() {
             {s.grammar.levelMeta(shownDone, shownTopics.length, shownWritten)}
             {shownLevel === level ? ` · ${s.grammar.yourLevel}` : ''}
           </Text>
+          <LevelTestButton level={shownLevel} learnedLang={learnedLang} contentLang={contentLang} evidence={evidence} />
 
           {unitsForLevel(shownLevel, learnedLang).map((unit) => (
             <View key={unit.id} style={styles.brutalUnit}>
@@ -244,7 +247,7 @@ export default function GrammarSyllabusScreen() {
                 const p = progress.get(topic.id);
                 const pct = percents.get(topic.id) ?? null;
                 // the lesson % or the random-round test % (the larger one), 🎯 behind a test %, ✓ 🎯 once the test ticked the topic.
-                const bd = badgeForTopic(lessonBadgePercent(pct, p?.correct, p?.total), evidence.get(topic.id));
+                const bd = badgeForTopic(lessonBadgePercent(pct, p?.correct, p?.total), evidence.get(topic.id), () => topicKindCount(learnedLang, contentLang, topic.id));
                 const badgePct = bd.pct;
                 const isDone = p?.state === 'done';
                 const tickedOpen = bd.ticked && !isDone;
@@ -384,6 +387,7 @@ export default function GrammarSyllabusScreen() {
                   {s.grammar.levelMeta(done, topics.length, written)}
                 </Text>
               </Pressable>
+              <LevelTestButton level={lvl} learnedLang={learnedLang} contentLang={contentLang} evidence={evidence} />
 
               {isOpen
                 ? unitsForLevel(lvl, learnedLang).map((unit) => (
@@ -400,7 +404,7 @@ export default function GrammarSyllabusScreen() {
                         // percentage (or, for the old progress, the round's result)
                         // sits next to the ✓; on a started, not done topic it stands alone.
                         // the larger of the lesson % and the random-round test %; 🎯 behind a test %, ✓ 🎯 once the test ticked the topic.
-                        const bd = badgeForTopic(lessonBadgePercent(pct, p?.correct, p?.total), evidence.get(topic.id));
+                        const bd = badgeForTopic(lessonBadgePercent(pct, p?.correct, p?.total), evidence.get(topic.id), () => topicKindCount(learnedLang, contentLang, topic.id));
                         const badgePct = bd.pct;
                         const tickedOpen = bd.ticked && p?.state !== 'done';
                         const testMark = bd.fromTest || tickedOpen ? ' 🎯' : '';

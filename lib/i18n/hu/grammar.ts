@@ -129,6 +129,14 @@ const hu: typeof en = {
     leaveTitle: 'Kilépsz a körből?',
     leaveBody: 'A válaszaid mentve vannak, később folytathatod.',
   },
+  levelTest: {
+    button: 'Szintteszt',
+    header: (lvl: string, pct: number) => `${lvl} szintteszt · ${pct}%`,
+    leave: 'Kilépés a szinttesztből',
+    doneTitle: (lvl: string) => `${lvl}: minden téma kipipálva`,
+    doneBody: 'Kiléphetsz, vagy gyakorolhatsz tovább.',
+    keepPractising: 'Gyakorlok tovább',
+  },
 };
 
 export default hu;

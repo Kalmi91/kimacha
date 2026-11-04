@@ -51,6 +51,22 @@ export function questionsOf(d: RoundData, seed: number, topicId: string): Lesson
   return qs;
 }
 
+const kindCounts = new Map<string, number>();
+
+// How many exercise kinds a topic has questions of (match cards left out), 0 without a lesson. The tick (topicTicked) asks for
+// two kinds but never more than the topic has: a lesson of one kind ticks on answers and percent alone. Built once per topic.
+export function topicKindCount(learnedLang: string, contentLang: string, topicId: string): number {
+  const key = `${learnedLang}|${contentLang}|${topicId}`;
+  let n = kindCounts.get(key);
+  if (n === undefined) {
+    const lesson = lessonFor(learnedLang, topicId);
+    const qs = lesson ? buildLessonTest(lesson, { seed: 1, learnedLang, contentLang, size: 9999 }).filter((q) => q.kind !== 'match') : [];
+    n = new Set(qs.map((q) => q.kind)).size;
+    kindCounts.set(key, n);
+  }
+  return n;
+}
+
 export function makeCtx(d: RoundData, seed: number, evidence: Map<string, TopicEvidence>): PickCtx {
   return {
     levels: d.levels,

@@ -44,7 +44,7 @@ import {
   type RoundStep,
   type TopicEvidence,
 } from '@/lib/grammar/randomRound';
-import { advance, isResultPause, makeCtx, questionsOf, type RoundData } from '@/lib/grammar/randomRoundView';
+import { advance, isResultPause, makeCtx, questionsOf, topicKindCount, type RoundData } from '@/lib/grammar/randomRoundView';
 import { Card } from '@/components/grammar/Brutal';
 import RandomOtherWrong from '@/components/grammar/RandomOtherWrong';
 import { ProgressBar, themedEdgeStyle } from '@/components/grammar/Themed';
@@ -482,7 +482,7 @@ export default function RandomRoundScreen() {
                     <Text testID={`random-end-pct-${id}`} style={[styles.rowValue, { color: colors.textMuted }]}>
                       {pct === null ? s.answersSoFar(ev?.answers.length ?? 0) : `${pct}%`}
                     </Text>
-                    {topicTicked(ev) && (
+                    {topicTicked(ev, () => topicKindCount(data.learnedLang, data.contentLang, id)) && (
                       <Text testID={`random-end-ticked-${id}`} style={[styles.rowValue, { color: colors.success }]}>
                         {`✓ ${s.ticked}`}
                       </Text>
