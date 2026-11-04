@@ -149,6 +149,11 @@ const de: typeof en = {
     weakest: 'Jetzt am schwächsten',
     weakestLine: (title: string, pct: number) => `${title} · ${pct}%`,
     nextRound: (n: number) => `Weitere ${n}`,
+    practiceButton: (n: number) => `Das üben · ${n}`,
+    practiceHeader: (i: number, n: number) => `Übung · ${i}/${n}`,
+    practiceRule: 'Die Regel',
+    practiceEnd: (r: number, n: number) => `${r} von ${n} richtig`,
+    backToTest: 'Zurück zum Test',
   },
 };
 

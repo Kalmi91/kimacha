@@ -24,6 +24,8 @@ export default function LevelTestFeedback({
   given,
   onNext,
   onRule,
+  practiceCount = 0,
+  onPractice,
 }: {
   q: LessonTestQuestion;
   topicTitle: string;
@@ -32,6 +34,9 @@ export default function LevelTestFeedback({
   given?: string;
   onNext: () => void;
   onRule: () => void;
+  /** The test's wrong-answer card: "Practice this · N" below Next (the Practice run itself passes none). */
+  practiceCount?: number;
+  onPractice?: () => void;
 }) {
   const { theme } = useTheme();
   const colors = Colors[theme];
@@ -141,13 +146,16 @@ export default function LevelTestFeedback({
       </ScrollView>
       <View style={styles.buttons}>
         <ExamButton testID="level-test-next" label={s.next} onPress={onNext} />
+        {!ok && onPractice && practiceCount > 0 ? (
+          <ExamButton testID="level-test-practice" secondary label={l.practiceButton(practiceCount)} onPress={onPractice} />
+        ) : null}
         <ExamButton testID="level-test-rule" secondary label={l.openLesson} onPress={onRule} />
       </View>
     </View>
   );
 }
 
-function TableView({ table }: { table: ResultTable }) {
+export function TableView({ table }: { table: ResultTable }) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   return (

@@ -168,5 +168,10 @@ export default {
     weakest: 'Weakest now',
     weakestLine: (title: string, pct: number) => `${title} · ${pct}%`,
     nextRound: (n: number) => `Next ${n}`,
+    practiceButton: (n: number) => `Practice this · ${n}`,
+    practiceHeader: (i: number, n: number) => `Practice · ${i}/${n}`,
+    practiceRule: 'The rule',
+    practiceEnd: (r: number, n: number) => `${r} of ${n} right`,
+    backToTest: 'Back to the test',
   },
 };

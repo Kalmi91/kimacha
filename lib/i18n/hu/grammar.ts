@@ -153,6 +153,11 @@ const hu: typeof en = {
     weakest: 'Most a leggyengébb',
     weakestLine: (title: string, pct: number) => `${title} · ${pct}%`,
     nextRound: (n: number) => `Következő ${n}`,
+    practiceButton: (n: number) => `Gyakorold ezt · ${n}`,
+    practiceHeader: (i: number, n: number) => `Gyakorlás · ${i}/${n}`,
+    practiceRule: 'A szabály',
+    practiceEnd: (r: number, n: number) => `${r} / ${n} helyes`,
+    backToTest: 'Vissza a teszthez',
   },
 };
 

@@ -21,6 +21,8 @@ export interface QuestionDetail {
   filled?: { before: string; word: string; after: string };
   /** The translation, absent when it equals the sentence. */
   tr?: string;
+  /** Two example sentences of the rule (gap and mark items), for the Practice rule box. */
+  examples?: string[];
   /** One entry per wrong option that has a text. */
   whyNot?: { option: string; text: string }[];
   /** Form items: the table (the asked person's column, or only the asked row) with the asked cell. */
