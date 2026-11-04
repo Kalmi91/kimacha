@@ -300,6 +300,11 @@ export default {
     levelAllA11y: 'All levels',
     levelOptionA11y: (level: string) => `Level ${level}`,
     emptyLevel: 'Nothing to practise at this level right now. Pick another level',
+    // New words (lib/sentenceNewWord.ts, FB564): with nothing to practise the tab brings new words, up to the daily budget.
+    newWordTag: 'New word',
+    newWordOf: (n: number, total: number) => `New word ${n} of ${total}`,
+    newWordsNow: (n: number) => (n === 1 ? '1 new word' : `${n} new words`),
+    emptyBudget: "Nothing to practise right now, and today's new words are used up. Come back tomorrow, or raise \"New words a day\" in Settings",
   },
   // components/practice/LevelCounter.tsx (Sentences and Practice tabs): the level and its word counts, same chips as the Words tab.
   levelCounter: {

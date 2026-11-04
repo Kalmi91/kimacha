@@ -21,6 +21,9 @@ import { getDb } from '@/lib/database';
 import { GRAMMAR_PROGRESS_KEY } from '@/lib/grammar/syllabus';
 import { GRAMMAR_RANDOM_KEY } from '@/lib/grammar/randomRound';
 import { buildLearnResume, loadLearnResume, saveLearnResume } from '@/lib/learnResume';
+import { sentencePair } from '@/lib/sentenceCards';
+import { LADDER_KEY, loadLadder, saveStage } from '@/lib/sentenceLadder';
+import { sentenceKey } from '@/lib/sentenceTab';
 import { sm2NewCard } from '@/lib/sm2';
 import { ThemeProvider } from '@/lib/ThemeContext';
 import SettingsScreen from '../settings';
@@ -54,6 +57,7 @@ describe('Settings: progress reset', () => {
     await getDb().resetPcicCards();
     await getDb().resetGameProgress(GRAMMAR_PROGRESS_KEY);
     await getDb().resetGameProgress(GRAMMAR_RANDOM_KEY);
+    await getDb().resetGameProgress(LADDER_KEY);
   });
   afterEach(() => jest.restoreAllMocks());
 
@@ -88,6 +92,26 @@ describe('Settings: progress reset', () => {
     expect(left).toEqual([pcicItemsForLevel('B1')[0].id]);
     expect(queryByText('🗑️ Reset progress (A1)')).toBeNull();
     expect(getByText('🗑️ Reset progress (B1)')).toBeTruthy();
+  });
+
+  // The Sentences tab's ladder: a level's learned sentences come back and none resumes mid-ladder (the other levels stay).
+  it('resetting a level also clears the ladder rows of that level’s sentences, the other levels’ rows stay', async () => {
+    const keyOf = (level: 'A1' | 'B1') => {
+      const item = pcicItemsForLevel(level).find((i) => sentencePair(i, 'es') !== null);
+      return sentenceKey(sentencePair(item!, 'es')!);
+    };
+    expect(keyOf('A1')).not.toBe(keyOf('B1'));
+    await seedCard('A1');
+    await seedCard('B1');
+    await saveStage(getDb(), keyOf('A1'), 'learned');
+    await saveStage(getDb(), keyOf('B1'), 3);
+    const alertSpy = jest.spyOn(Alert, 'alert').mockImplementation(() => {});
+    const r = render(<ThemeProvider><SettingsScreen /></ThemeProvider>);
+    await flush();
+    openReset(r);
+    fireEvent.press(r.getByText('🗑️ Reset progress (A1)'));
+    await confirmAlert(alertSpy);
+    expect([...(await loadLadder(getDb()))]).toEqual([[keyOf('B1'), 3]]);
   });
 
   // the snapshot of the saved Learn round is no longer valid for the reset progress.

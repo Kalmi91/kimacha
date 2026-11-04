@@ -6,9 +6,10 @@ import { Text } from '@/components/KText';
 import Colors from '@/constants/Colors';
 import EasySentenceCard from '@/components/EasySentenceCard';
 import ScreenFeedback from '@/lib/screenFeedback';
-import { wordIn } from '@/lib/pcicItemText';
+import { firstForm, wordIn } from '@/lib/pcicItemText';
 import { wordSpeakerGender } from '@/lib/cardSpeaker';
 import TypedSentenceCard from '@/components/TypedSentenceCard';
+import NewWordCard from '@/components/NewWordCard';
 import { ActionButton, ProgressBar } from '@/components/grammar/Themed';
 import { DOCK_RESERVE } from '@/components/learn/DockedAction';
 import { useDockLift } from '@/components/learn/useDockLift';
@@ -29,13 +30,15 @@ import { nearMissDistractors } from '@/lib/distractors';
 import { dropOrphanCards } from '@/lib/pcicSession';
 import { tileWords } from '@/lib/sentenceCards';
 import { pickSentences } from '@/lib/sentencePick';
-import { LAST_RUNG, loadLadder, saveStage, stageAfter, stillOnPlayedRung, type Rung } from '@/lib/sentenceLadder';
+import { introduceNewWord, planNewWords } from '@/lib/sentenceNewWord';
+import { LAST_RUNG, PlayedRounds, loadLadder, saveStage, stageAfter, stillOnPlayedRung } from '@/lib/sentenceLadder';
 import { ALL_LEVELS, itemsForSentenceLevel, levelsWithSentences, loadSentenceLevel, resolveSentenceLevel, saveSentenceLevel, type SentenceLevel } from '@/lib/sentenceLevel';
 import {
   addHinted,
   answerStep,
   clearSentenceRound,
   currentEntry,
+  dropEntries,
   currentStep,
   isRoundFor,
   learnedInRound,
@@ -46,6 +49,7 @@ import {
   saveSentenceRound,
   sentenceNumber,
   startRound,
+  unpassedNewWords,
   type SentenceRound,
 } from '@/lib/sentenceRound';
 import { hintPieces, type HintPiece } from '@/lib/sentenceHint';
@@ -64,7 +68,9 @@ import { useSingleFlight } from '@/lib/useSingleFlight';
 // rung 2 the Spanish sentence heard and typed, rung 3 the whole sentence typed from the English; after rung 3 the sentence is
 // learned and never comes back. Only the typing step credits (lib/sentenceTyping.ts, lib/sentenceTab.ts recordTypedWords): a learned
 // word typed right gets one half even if the rest is wrong, a due word typed wrong counts as a wrong typed answer. A wrong step
-// goes to the end of the round (the typing step is done either way, and then the sentence stays on rung 3). lib/sentenceRound.ts holds the round's state and its
+// goes to the end of the round (the typing step is done either way, and then the sentence stays on rung 3). With nothing to
+// practise the round brings new words instead (lib/sentenceNewWord.ts, FB564): a word card, then the word's own sentence on
+// rung 1 when it has one, up to the Learn tab's daily budget. lib/sentenceRound.ts holds the round's state and its
 // save: it is saved on every step, so leaving the tab or the app and coming back continues it (same day). The `focus` route
 // parameter (card ids, comma separated) puts the sentences with those words first. The cards are the Words tab's former
 // sentence cards.
@@ -141,13 +147,17 @@ export default function SentencesScreen() {
   // The round on screen (lib/sentenceRound.ts): its sentences, its steps, what is left to do and what is done.
   // null = no sentence to offer.
   const [round, setRound] = useState<SentenceRound | null>(null);
+  // Nothing to practise and today's new words are used up (lib/sentenceNewWord.ts): the empty line says so.
+  const [budgetOut, setBudgetOut] = useState(false);
   // Bumps on every finished step, so a sentence that comes back gets fresh tiles and an empty input.
   const [seq, setSeq] = useState(0);
   // Bumps after every typed sentence is credited: the level counter on top reads the db again.
   const [creditSeq, setCreditSeq] = useState(0);
-  // Sentences of the finished rounds since the app opened, with the rung they played: one still on that rung is left out of the
-  // next rounds, or a word that is still due would bring the same rung straight back (one that moved up may come, FB569).
-  const playedRungs = useRef(new Map<string, Rung>());
+  // Sentences of the finished rounds today since the app opened, with the rung they played: one still on that rung is left out of
+  // the next rounds, or a word that is still due would bring the same rung straight back (one that moved up may come, FB569).
+  // A new day empties it; a mistake sentence is kept apart (lib/sentenceLadder.ts PlayedRounds).
+  const played = useRef(new PlayedRounds());
+  const buildScroll = useRef<ScrollView>(null);
   const runOnce = useSingleFlight();
   // The round on screen, for the focus effect (its state is stale in the callback).
   const roundRef = useRef<SentenceRound | null>(null);
@@ -160,6 +170,7 @@ export default function SentencesScreen() {
     // The learner store sets the deck's direction before the corpus is read (data/pcic.ts: the loaded deck follows the target).
     const { target: dir } = await refresh(['direction']);
     const today = localDateString();
+    played.current.forDay(today);
     // A round on screen (running or finished) survives leaving the tab; a new day, another direction, another focus
     // or the "more" button replaces it.
     const shown = roundRef.current;
@@ -174,39 +185,53 @@ export default function SentencesScreen() {
     // A round that was left (other tab, app closed) continues where it stopped, the same day, direction and focus.
     const saved = await loadSentenceRound(db);
     let next: SentenceRound | null;
-    if (isRoundFor(saved, today, dir, focusKey)) {
-      next = saved;
+    let outOfNewWords = false;
+    // A new word whose item left the corpus since the round was saved (an update) can be neither shown nor introduced: it is dropped
+    // with its steps, and a round with nothing left is not resumed.
+    const savedFor = isRoundFor(saved, today, dir, focusKey) ? saved : null;
+    const resumed = savedFor ? dropEntries(savedFor, savedFor.entries.filter((e) => e.newWord && findPcicItem(e.itemId) === undefined).map((e) => e.itemId)) : null;
+    if (resumed && resumed.queue.length > 0) {
+      next = resumed;
+      if (resumed !== savedFor) await saveSentenceRound(db, resumed);
       // A sentence with every step done is done, even if the round goes on.
-      for (const e of saved.entries) {
-        if (saved.steps.filter((st) => st.itemId === e.itemId).every((st) => saved.done.includes(st.id))) playedRungs.current.set(sentenceKey(e), e.rung ?? 1);
+      for (const e of resumed.entries) {
+        if (resumed.steps.filter((st) => st.itemId === e.itemId).every((st) => resumed.done.includes(st.id))) played.current.note([e]);
       }
     } else {
       const cards = dropOrphanCards(await db.getPcicCards(), (id) => findPcicItem(id) !== undefined);
       const grammarRows = dir === 'es' ? await db.getGameProgress(GRAMMAR_PROGRESS_KEY) : [];
       // The ladder: a learned sentence stays out, every other one plays the rung it is on.
       const ladder = await loadLadder(db);
+      const tenses = resolvedTensesFromLessons(doneGrammarTopicProgress(dir, grammarRows).keys());
       const queue = buildSentenceQueue({
         target: dir,
         cards,
-        tenses: resolvedTensesFromLessons(doneGrammarTopicProgress(dir, grammarRows).keys()),
+        tenses,
         items: itemsForSentenceLevel(chosen, PCIC_LEVELS, pcicItemsForLevel),
         findItem: findPcicItem,
         levelOf: levelOfItem,
         today,
-        done: stillOnPlayedRung(playedRungs.current, ladder),
+        done: stillOnPlayedRung(played.current.rungs, ladder),
         ladder,
         focus: new Set(focusKey.split(',').filter(Boolean)),
       });
       const picked = pickSentences(queue, dir, SENTENCE_ROUND_SIZE);
       // beta sentenceMistakes: one sentence is from the learner's mistake list (Spanish direction only; none = the round as picked).
       let entries = picked;
+      if (picked.length === 0) {
+        // Nothing to practise: new words instead, from the picked level (all levels = the level the Learn tab is on).
+        const wordLevel = chosen === ALL_LEVELS ? (await refresh(['level'])).level : chosen;
+        const plan = await planNewWords({ db, target: dir, today, order: pcicItemsForLevel(wordLevel).map((i) => i.id), cards, findItem: findPcicItem, tenses, levelOf: levelOfItem, ladder });
+        entries = plan.entries;
+        outOfNewWords = plan.budgetOut;
+      }
       await loadBeta();
       if (picked.length > 0 && dir === 'es' && getBeta('sentenceMistakes')) {
-        const skip = new Set([...playedRungs.current.keys(), ...picked.map((e) => sentenceKey(e))]);
+        const skip = new Set([...played.current.rungs.keys(), ...played.current.mistakes, ...picked.map((e) => sentenceKey(e))]);
         entries = withMistakeStep(picked, await pickMistakeEntry(today, skip));
       }
-      // beta sentenceMix: the sentences take turns.
-      next = entries.length > 0 ? startRound(entries, today, dir, focusKey, { mix: getBeta('sentenceMix') }) : null;
+      // beta sentenceMix: the sentences take turns (not the new words: each one is followed by its own sentence).
+      next = entries.length > 0 ? startRound(entries, today, dir, focusKey, { mix: picked.length > 0 && getBeta('sentenceMix') }) : null;
       // Saved at once (when there is a round): leaving before the first answer brings back the same sentences.
       if (next) await saveSentenceRound(db, next);
       else await clearSentenceRound(db);
@@ -216,6 +241,7 @@ export default function SentencesScreen() {
     setLevel(chosen);
     await refresh(['strictAccents']);
     setRound(next);
+    setBudgetOut(outOfNewWords);
     setSeq((n) => n + 1);
     setLoading(false);
   }, [focusKey, refresh]);
@@ -230,7 +256,10 @@ export default function SentencesScreen() {
   const current = round ? currentEntry(round) : undefined;
   const { done, total } = round ? roundProgress(round) : { done: 0, total: 0 };
   // The tappable words of the prompt on screen (Spanish direction only; a part of a sentence and the listening step have none).
-  const hints = hintBeta && target === 'es' && activeSourceFor(target) !== 'de' && current && step && step.kind !== 'chunk' && step.kind !== 'listen' ? hintPieces(current) : null;
+  const hints = hintBeta && target === 'es' && activeSourceFor(target) !== 'de' && current && step && step.kind !== 'chunk' && step.kind !== 'listen' && step.kind !== 'newword' ? hintPieces(current) : null;
+
+  // The item of the word card on screen (a new word, lib/sentenceNewWord.ts).
+  const newWordItem = step?.kind === 'newword' && current ? findPcicItem(current.itemId) : undefined;
 
   // The new state is saved BEFORE the words are credited: a kill in between loses a credit, it never pays one twice.
   const keepRound = async (next: SentenceRound) => {
@@ -256,7 +285,11 @@ export default function SentencesScreen() {
     const entry = currentEntry(round);
     if (!stepNow || !entry) return;
     await runOnce(async () => {
-      const next = answerStep(round, correct);
+      // The word card of a new word: the word is introduced first (written once, a restart cannot do it twice), then the round moves on.
+      // The day's budget is rechecked here (the round was planned earlier): with none left this word and the new words after it
+      // drop out of the round with their sentences.
+      const noBudget = stepNow.kind === 'newword' && (await introduceNewWord(getDb(), entry.itemId, localDateString(), (id) => findPcicItem(id) !== undefined)) === 'no-budget';
+      const next = noBudget ? dropEntries(round, unpassedNewWords(round)) : answerStep(round, correct);
       await keepRound(next);
       // A passed rung moves the sentence up the ladder (rung 3 passed = learned). Saved after the round, so a kill in between
       // loses the move, never repeats a step.
@@ -275,8 +308,10 @@ export default function SentencesScreen() {
         await recordMistakeBuild(entry.itemId, correct, localDateString());
       }
       await countLearningToday();
-      if (next.phase === 'done') for (const e of roundSentences(round)) playedRungs.current.set(sentenceKey(e), e.rung ?? 1);
-      setRound(next);
+      if (next.phase === 'done') played.current.note(roundSentences(next));
+      // Nothing left after the drop: no round, the empty line says the budget is used up (a round with no step has no "More" button).
+      setRound(noBudget && next.steps.length === 0 ? null : next);
+      if (noBudget) setBudgetOut(next.steps.length === 0);
       setSeq((n) => n + 1);
       if (stepNow.kind === 'type') setCreditSeq((n) => n + 1);
     });
@@ -305,7 +340,8 @@ export default function SentencesScreen() {
   const header = (
     <SkinHeader>
       {/* No screen title: the tab navigator's header already says "Sentences" (a second one was a duplicate). */}
-      {levels.length > 1 && <SentenceLevelPicker levels={levels} active={level} onSelect={onPickLevel} />}
+      {/* While typing the keyboard leaves little room: the level row steps aside, so the 🔊 and the answer fit together. */}
+      {levels.length > 1 && kbHeight === 0 && <SentenceLevelPicker levels={levels} active={level} onSelect={onPickLevel} />}
       <View style={styles.headerRow}>
         <LevelCounter refreshKey={creditSeq} />
         {total > 0 && (
@@ -352,7 +388,7 @@ export default function SentencesScreen() {
         <SkinBackdrop />
         {header}
         <Text testID="sentences-empty" style={[styles.hint, { color: colors.tabIconDefault }]}>
-          {level === ALL_LEVELS ? s.sentenceTab.empty : s.sentenceTab.emptyLevel}
+          {budgetOut ? s.sentenceTab.emptyBudget : level === ALL_LEVELS ? s.sentenceTab.empty : s.sentenceTab.emptyLevel}
         </Text>
         {feedback}
       </View>
@@ -361,13 +397,23 @@ export default function SentencesScreen() {
 
   // The round is over: every step of it is done.
   if (!round || !current || !step) {
+    // A new word with no sentence yet is only a card: the round counts the sentences it played, and the new words apart.
+    const playedSentences = round ? roundSentences(round).filter((e) => e.target !== '').length : 0;
+    const newWords = round ? roundSentences(round).filter((e) => e.newWord).length : 0;
     return (
       <View testID="sentences-screen" style={[styles.container, { backgroundColor: colors.background }]}>
         <SkinBackdrop />
         {header}
-        <Text testID="sentences-round-done" style={[styles.hint, { color: colors.text }]}>
-          {s.sentenceTab.roundDone(round ? roundSentences(round).length : 0)}
-        </Text>
+        {(playedSentences > 0 || newWords === 0) && (
+          <Text testID="sentences-round-done" style={[styles.hint, { color: colors.text }]}>
+            {s.sentenceTab.roundDone(playedSentences)}
+          </Text>
+        )}
+        {newWords > 0 && (
+          <Text testID="sentences-new-words" style={[styles.hint, { color: colors.text }]}>
+            {s.sentenceTab.newWordsNow(newWords)}
+          </Text>
+        )}
         {round && learnedInRound(round) > 0 && (
           <Text testID="sentences-learned" style={[styles.hint, { color: colors.text }]}>
             {s.sentenceTab.learnedNow(learnedInRound(round))}
@@ -396,14 +442,29 @@ export default function SentencesScreen() {
       <SkinBackdrop />
       {header}
       <Text testID="sentences-step" style={[styles.stepText, { color: colors.tabIconDefault }]}>
-        {`${s.sentenceTab.sentenceOf(sentenceNumber(round), round.entries.length)} · ${stepLabel(step, current, s)}`}
+        {step.kind === 'newword'
+          ? s.sentenceTab.newWordOf(sentenceNumber(round), round.entries.length)
+          : `${current.newWord ? s.sentenceTab.newWordOf(sentenceNumber(round), round.entries.length) : s.sentenceTab.sentenceOf(sentenceNumber(round), round.entries.length)} · ${stepLabel(step, current, s)}`}
       </Text>
       {step.kind === 'mistake' && (
         <Text testID="sentences-mistake-label" style={[styles.mistakeLabel, { color: colors.text }]}>
           {s.sentenceTab.fromMistakes}
         </Text>
       )}
-      {step.kind === 'listen' || step.kind === 'type' ? (
+      {step.kind === 'newword' ? (
+        newWordItem && (
+          <ScrollView style={styles.cardScroll} contentContainerStyle={{ paddingBottom: 24 }}>
+            <NewWordCard
+              key={`${step.id}-${seq}`}
+              word={firstForm(wordIn(newWordItem, target) ?? '', target)}
+              meaning={wordIn(newWordItem, activeSourceFor(target)) ?? ''}
+              speechLocale={speechLang(target)}
+              speakerGender={wordSpeakerGender(newWordItem, target)}
+              onNext={() => void onStepResult(true)}
+            />
+          </ScrollView>
+        )
+      ) : step.kind === 'listen' || step.kind === 'type' ? (
         // The typing cards have their own scroller + the docked Check bar above the keyboard (no outer ScrollView).
         <TypedSentenceCard
           key={`${step.id}-${seq}`}
@@ -427,10 +488,13 @@ export default function SentencesScreen() {
         />
       ) : (
         <ScrollView
+          ref={buildScroll}
           style={styles.cardScroll}
           contentContainerStyle={{ paddingBottom: 24 }}
           keyboardShouldPersistTaps="handled"
           keyboardDismissMode="on-drag"
+          // The result and Next appear below the tiles: with a long sentence under the level row they fell off the screen.
+          onContentSizeChange={() => buildScroll.current?.scrollToEnd({ animated: true })}
         >
           <BuildStep key={`${step.id}-${seq}`} entry={current} target={target} step={step} hints={hints} onHint={onHint} onResult={(correct) => void onStepResult(correct)} />
         </ScrollView>

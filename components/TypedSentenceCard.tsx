@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, TextInput, Keyboard, View } from 'react-native';
 import { Text } from '@/components/KText';
 import { speak, speakAuto, stop as stopSpeech } from '@/lib/speech';
@@ -166,6 +166,7 @@ export default function TypedSentenceCard({
   };
 
   const dockInsets = dockScrollInsets(dockH, dockLift, keyboardOpen);
+  const scroller = useRef<ScrollView>(null);
 
   // The correct sentence is shown after a miss; with something typed, it comes with the answer
   // marked up so the learner sees WHERE the mistake is (an empty answer has nothing to compare).
@@ -180,10 +181,16 @@ export default function TypedSentenceCard({
   return (
     <>
       <ScrollView
+        ref={scroller}
         style={[styles.scroll, { marginBottom: dockInsets.marginBottom }]}
         contentContainerStyle={{ paddingBottom: dockInsets.paddingBottom }}
         keyboardShouldPersistTaps="handled"
         keyboardDismissMode="on-drag"
+        // The answer field is the card's last row: with the keyboard open and a tall card above it, it sat behind the
+        // docked bar and the learner typed blind. The bottom padding above keeps it just over the bar.
+        onContentSizeChange={() => {
+          if (keyboardOpen) scroller.current?.scrollToEnd({ animated: true });
+        }}
       >
         <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
           {listening && (

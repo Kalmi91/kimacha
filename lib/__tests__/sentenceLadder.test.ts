@@ -2,12 +2,15 @@
 // a restart and a backup, a learned sentence never comes back (every pair, level and focus), the rung a sentence plays is
 // on its queue entry, and a finished round's sentences stay out of the next round only while they are on the same rung.
 
-import type { PcicItem, PcicTarget } from '@/data/pcic';
+import type { PcicItem, PcicLevel, PcicTarget } from '@/data/pcic';
 import { getDb } from '@/lib/database';
 import { setActiveSource } from '@/lib/languagePair';
 import {
   LADDER_KEY,
   LAST_RUNG,
+  PlayedRounds,
+  clearLadderKeys,
+  ladderKeysOfLevel,
   loadLadder,
   saveStage,
   stageAfter,
@@ -16,7 +19,7 @@ import {
   type LadderStage,
   type Rung,
 } from '@/lib/sentenceLadder';
-import { buildSentenceQueue, sentenceKey } from '@/lib/sentenceTab';
+import { buildSentenceQueue, sentenceKey, type SentenceEntry } from '@/lib/sentenceTab';
 import { sm2NewCard, type Sm2Card } from '@/lib/sm2';
 
 describe('stageAfter', () => {
@@ -141,5 +144,67 @@ describe.each(['es', 'en', 'hu', 'de'] as const)('buildSentenceQueue with the la
     expect(buildSentenceQueue({ ...base, ladder: learnedLadder, focus: new Set([single.id]) })).toEqual([]);
     // a sentence of another key is not touched by it
     expect(buildSentenceQueue({ ...base, ladder: new Map<string, LadderStage>([['another sentence.', 'learned']]) })).toHaveLength(1);
+  });
+});
+
+// Resetting a level (Settings): the ladder rows of that level's sentences go, the other levels' rows stay.
+describe('a level reset clears its sentences from the ladder', () => {
+  const mk = (id: string, exampleEs: string): PcicItem => ({ id, es: 'x', en: 'x', hu: 'x', de: 'x', kind: 'word', section: 'Test', order: 1, exampleEs, exampleEn: exampleEs, exampleHu: exampleEs, exampleDe: exampleEs });
+  const LEVELS: Record<string, PcicItem[]> = {
+    A1: [mk('a1-1', 'Frase uno.'), mk('a1-2', 'Frase compartida.')],
+    A2: [mk('a2-1', 'Frase dos.'), mk('a2-2', 'frase compartida. ')],
+    B1: [mk('b1-1', 'Frase tres.'), { ...mk('b1-2', 'x'), exampleEs: undefined }],
+  };
+  const itemsFor = (level: PcicLevel) => LEVELS[level] ?? [];
+  const ALL = ['A1', 'A2', 'B1'] as PcicLevel[];
+
+  it('the keys of the sentences of the level, except one that an item of another level has too; an item with no sentence has none', () => {
+    expect([...ladderKeysOfLevel('A1', ALL, itemsFor, 'es')]).toEqual(['frase uno.']);
+    expect([...ladderKeysOfLevel('A2', ALL, itemsFor, 'es')]).toEqual(['frase dos.']);
+    expect([...ladderKeysOfLevel('B1', ALL, itemsFor, 'es')]).toEqual(['frase tres.']);
+    // with only the one level asked about, the shared sentence is its own
+    expect([...ladderKeysOfLevel('A1', ['A1'], itemsFor, 'es')].sort()).toEqual(['frase compartida.', 'frase uno.']);
+  });
+
+  it('clearLadderKeys drops those rows (learned or half way) and keeps every other row, its stage and its data', async () => {
+    const db = getDb();
+    await db.resetGameProgress(LADDER_KEY);
+    await saveStage(db, 'frase uno.', 'learned');
+    await saveStage(db, 'frase dos.', 3);
+    await saveStage(db, 'frase tres.', 2);
+    await db.setGameProgress(LADDER_KEY, 'frase cuatro.', 'rung2', { note: 1 });
+    await clearLadderKeys(db, new Set(['frase uno.', 'frase tres.']));
+    const left = await loadLadder(db);
+    expect([...left].sort()).toEqual([['frase cuatro.', 2], ['frase dos.', 3]]);
+    expect((await db.getGameProgress(LADDER_KEY)).find((r) => r.itemId === 'frase cuatro.')?.data).toEqual({ note: 1 });
+    // nothing to clear: the rows are left untouched
+    await clearLadderKeys(db, new Set(['frase nueve.']));
+    await clearLadderKeys(db, new Set());
+    expect((await loadLadder(db)).size).toBe(2);
+    await db.resetGameProgress(LADDER_KEY);
+  });
+});
+
+describe('PlayedRounds: what the finished rounds of a day keep out of the next ones', () => {
+  const sentence = (target: string, rung?: 2 | 3): SentenceEntry => ({ itemId: target, source: 's', target, wordCount: 1, wordIds: [], due: false, dueIds: [], staleness: '', slots: [], ...(rung ? { rung } : {}) });
+
+  it('notes the sentence with the rung it played; a new day empties it, the same day does not', () => {
+    const played = new PlayedRounds();
+    played.forDay('2026-11-03').note([sentence('Uno.'), sentence('Dos.', 3)]);
+    expect([...played.forDay('2026-11-03').rungs]).toEqual([['uno.', 1], ['dos.', 3]]);
+    expect(played.forDay('2026-11-04').rungs.size).toBe(0);
+    played.note([sentence('Tres.', 2)]);
+    expect([...played.forDay('2026-11-04').rungs]).toEqual([['tres.', 2]]);
+  });
+
+  it('a mistake sentence is kept apart: it never hides a corpus sentence with the same text; a word card without a sentence has no key', () => {
+    const played = new PlayedRounds().forDay('2026-11-03');
+    const mistake: SentenceEntry = { ...sentence('El gato.'), mistake: { wrong: 'gato el' } };
+    const cardOnly: SentenceEntry = { ...sentence(''), newWord: true };
+    played.note([mistake, cardOnly, sentence('El perro.')]);
+    expect([...played.rungs.keys()]).toEqual(['el perro.']);
+    expect([...played.mistakes]).toEqual(['el gato.']); // still skipped when the next mistake sentence is picked
+    expect([...stillOnPlayedRung(played.rungs, new Map())]).toEqual(['el perro.']); // the corpus sentence "El gato." is not left out
+    expect([...played.forDay('2026-11-04').mistakes]).toEqual([]);
   });
 });

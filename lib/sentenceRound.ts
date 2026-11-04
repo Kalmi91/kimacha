@@ -85,7 +85,8 @@ export function roundSentences(round: SentenceRound): SentenceEntry[] {
  * The step on screen was answered. The typing step is done either way (a retry would credit words that were just shown);
  * any other step: right = done, wrong = it goes to the end of the queue. The last step done ends the round. The sentence's
  * rung is passed (`passed`) when its typing step was right, or when its last other step was done (each of those is only done
- * right); a mistake sentence is outside the ladder.
+ * right); a mistake sentence is outside the ladder, and so is the word card of a new word (FB564): it passes nothing, its own
+ * sentence (if it has one) passes rung 1 with its last step.
  */
 export function answerStep(round: SentenceRound, correct: boolean): SentenceRound {
   const id = round.queue[0];
@@ -96,9 +97,35 @@ export function answerStep(round: SentenceRound, correct: boolean): SentenceRoun
   const done = round.done.includes(id) ? round.done : [...round.done, id];
   const rungPassed =
     step.kind !== 'mistake' &&
+    step.kind !== 'newword' &&
     (step.kind === 'type' ? correct : round.steps.filter((st) => st.itemId === step.itemId).every((st) => done.includes(st.id)));
   const passed = rungPassed && !round.passed?.includes(step.itemId) ? { passed: [...(round.passed ?? []), step.itemId] } : {};
   return { ...round, ...passed, queue: rest, done, phase: rest.length === 0 ? 'done' : 'steps' };
+}
+
+/**
+ * The round without these sentences (a new word whose word card cannot be passed: today's budget is used up, or its item is no
+ * longer in the corpus): their entries and every step of them are gone, from the queue and the done steps too. The round is over
+ * when no step is left.
+ */
+export function dropEntries(round: SentenceRound, itemIds: readonly string[]): SentenceRound {
+  if (itemIds.length === 0) return round;
+  const gone = new Set(itemIds);
+  const goneSteps = new Set(round.steps.filter((st) => gone.has(st.itemId)).map((st) => st.id));
+  const queue = round.queue.filter((id) => !goneSteps.has(id));
+  return {
+    ...round,
+    entries: round.entries.filter((e) => !gone.has(e.itemId)),
+    steps: round.steps.filter((st) => !goneSteps.has(st.id)),
+    queue,
+    done: round.done.filter((id) => !goneSteps.has(id)),
+    phase: queue.length === 0 ? 'done' : round.phase,
+  };
+}
+
+/** The new words of the round whose word card is still to pass: the one on screen and the ones after it. */
+export function unpassedNewWords(round: SentenceRound): string[] {
+  return round.entries.filter((e) => e.newWord && !round.done.includes(`${e.itemId}#newword`)).map((e) => e.itemId);
 }
 
 /** The sentence that passed its rung with the answer that turned `before` into `after`, if any (see answerStep). */
@@ -142,10 +169,13 @@ function parseEntry(raw: unknown): SentenceEntry | null {
   // Optional (rung 1 has none); present but not 2 or 3 = not a usable round.
   if (e.rung !== undefined && e.rung !== 2 && e.rung !== 3) return null;
   const rung = e.rung ? { rung: e.rung } : {};
-  return { itemId: e.itemId, source: e.source, target: e.target, wordCount: e.wordCount, wordIds: e.wordIds, due: e.due, dueIds: e.dueIds, staleness: e.staleness, slots: e.slots, ...chunks, ...rung, ...mistake };
+  // Optional (a new word's entry only); present but not true = not a usable round.
+  if (e.newWord !== undefined && e.newWord !== true) return null;
+  const newWord = e.newWord ? { newWord: true as const } : {};
+  return { itemId: e.itemId, source: e.source, target: e.target, wordCount: e.wordCount, wordIds: e.wordIds, due: e.due, dueIds: e.dueIds, staleness: e.staleness, slots: e.slots, ...chunks, ...rung, ...newWord, ...mistake };
 }
 
-const STEP_KINDS: readonly string[] = ['chunk', 'listen', 'build', 'type', 'mistake'] satisfies readonly StepKind[];
+const STEP_KINDS: readonly string[] = ['chunk', 'listen', 'build', 'type', 'mistake', 'newword'] satisfies readonly StepKind[];
 
 function parseStep(raw: unknown): RoundStep | null {
   if (typeof raw !== 'object' || raw === null) return null;

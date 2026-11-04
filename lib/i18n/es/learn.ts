@@ -265,6 +265,10 @@ const es: typeof en = {
     levelAllA11y: 'Todos los niveles',
     levelOptionA11y: (level: string) => `Nivel ${level}`,
     emptyLevel: 'Nada que practicar en este nivel por ahora. Elige otro nivel',
+    newWordTag: 'Palabra nueva',
+    newWordOf: (n: number, total: number) => `Palabra nueva ${n} de ${total}`,
+    newWordsNow: (n: number) => (n === 1 ? '1 palabra nueva' : `${n} palabras nuevas`),
+    emptyBudget: 'Nada que practicar por ahora y las palabras nuevas de hoy se acabaron. Vuelve mañana o sube "Palabras nuevas al día" en Ajustes',
   },
   // components/practice/LevelCounter.tsx (pestañas Frases y Práctica): el nivel y sus palabras, los mismos chips que la pestaña Palabras.
   levelCounter: {

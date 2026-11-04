@@ -7,7 +7,10 @@
 // so it survives a restart and travels with the backup like the other rows. No row = a fresh sentence, on rung 1. The row
 // holds the rung the sentence plays NEXT ('rung2', 'rung3') or 'learned': a learned sentence never comes back.
 
+import type { PcicItem, PcicLevel, PcicTarget } from '@/data/pcic';
 import type { DB } from '@/lib/database';
+import { sentencePair } from '@/lib/sentenceCards';
+import { sentenceKey, type SentenceEntry } from '@/lib/sentenceTab';
 
 export const LADDER_KEY = 'sentence-ladder';
 
@@ -53,4 +56,64 @@ export function stillOnPlayedRung(played: ReadonlyMap<string, Rung>, ladder: Lad
   const keys = new Set<string>();
   for (const [key, rung] of played) if ((ladder.get(key) ?? 1) === rung) keys.add(key);
   return keys;
+}
+
+/**
+ * The sentence keys a reset of one level clears: those of the level's items (the sentence of an item in the pair's target
+ * language), except a sentence that an item of another level has too (it counts once: lib/sentenceTab.ts sentenceKey).
+ */
+export function ladderKeysOfLevel(
+  level: PcicLevel,
+  levels: readonly PcicLevel[],
+  itemsFor: (level: PcicLevel) => readonly PcicItem[],
+  target: PcicTarget,
+): Set<string> {
+  const keysOf = (items: readonly PcicItem[]) => {
+    const keys = new Set<string>();
+    for (const item of items) {
+      const pair = sentencePair(item, target);
+      if (pair) keys.add(sentenceKey(pair));
+    }
+    return keys;
+  };
+  const keys = keysOf(itemsFor(level));
+  for (const other of levels) if (other !== level) for (const key of keysOf(itemsFor(other))) keys.delete(key);
+  return keys;
+}
+
+/** Drops the rows of these sentences (a level was reset: its learned sentences may come back, the others start on rung 1); the other rows stay. */
+export async function clearLadderKeys(db: Pick<DB, 'getGameProgress' | 'setGameProgress' | 'resetGameProgress'>, keys: ReadonlySet<string>): Promise<void> {
+  const rows = await db.getGameProgress(LADDER_KEY);
+  if (!rows.some((row) => keys.has(row.itemId))) return;
+  await db.resetGameProgress(LADDER_KEY);
+  for (const row of rows) if (!keys.has(row.itemId)) await db.setGameProgress(LADDER_KEY, row.itemId, row.state, row.data ?? undefined);
+}
+
+/**
+ * The sentences of the rounds finished today since the screen opened (key -> the rung they played): one still on that rung is left
+ * out of the next rounds. A new day empties it. A sentence from the learner's own mistakes is kept apart: it only keeps itself out of
+ * the mistake picking, it must not hide a corpus sentence with the same text that was never played. A word card with no sentence
+ * has no key.
+ */
+export class PlayedRounds {
+  private day = '';
+  readonly rungs = new Map<string, Rung>();
+  readonly mistakes = new Set<string>();
+
+  /** The same object, emptied when `day` is not the day it was filled on. */
+  forDay(day: string): this {
+    if (day !== this.day) {
+      this.day = day;
+      this.rungs.clear();
+      this.mistakes.clear();
+    }
+    return this;
+  }
+
+  note(entries: readonly SentenceEntry[]): void {
+    for (const e of entries) {
+      if (e.mistake) this.mistakes.add(sentenceKey(e));
+      else if (e.target !== '') this.rungs.set(sentenceKey(e), e.rung ?? 1);
+    }
+  }
 }
