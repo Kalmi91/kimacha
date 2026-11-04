@@ -157,6 +157,7 @@ export default function SentencesScreen() {
   // the next rounds, or a word that is still due would bring the same rung straight back (one that moved up may come, FB569).
   // A new day empties it; a mistake sentence is kept apart (lib/sentenceLadder.ts PlayedRounds).
   const played = useRef(new PlayedRounds());
+  const buildScroll = useRef<ScrollView>(null);
   const runOnce = useSingleFlight();
   // The round on screen, for the focus effect (its state is stale in the callback).
   const roundRef = useRef<SentenceRound | null>(null);
@@ -486,10 +487,13 @@ export default function SentencesScreen() {
         />
       ) : (
         <ScrollView
+          ref={buildScroll}
           style={styles.cardScroll}
           contentContainerStyle={{ paddingBottom: 24 }}
           keyboardShouldPersistTaps="handled"
           keyboardDismissMode="on-drag"
+          // The result and Next appear below the tiles: with a long sentence under the level row they fell off the screen.
+          onContentSizeChange={() => buildScroll.current?.scrollToEnd({ animated: true })}
         >
           <BuildStep key={`${step.id}-${seq}`} entry={current} target={target} step={step} hints={hints} onHint={onHint} onResult={(correct) => void onStepResult(correct)} />
         </ScrollView>
