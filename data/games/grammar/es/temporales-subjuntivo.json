@@ -748,7 +748,7 @@
           }
         },
         {
-          "text": { "en": "antes de que → always subjunctive", "es": "antes de que → siempre subjuntivo" },
+          "text": { "en": "a conjunction that takes the subjunctive in every tense", "es": "una conjunción con subjuntivo en todos los tiempos" },
           "wrong": {
             "en": "This rule applies to “antes de que”, not to “cuando”; here it's about habit, not anteriority.",
             "es": "Esta regla es para “antes de que”, no para “cuando”; aquí se trata de costumbre, no de anterioridad."
@@ -769,7 +769,7 @@
       },
       "options": [
         {
-          "text": { "en": "antes de que → always subjunctive", "es": "antes de que → siempre subjuntivo" }
+          "text": { "en": "a conjunction that takes the subjunctive in every tense", "es": "una conjunción con subjuntivo en todos los tiempos" }
         },
         {
           "text": { "en": "future → subjunctive", "es": "futuro → subjuntivo" },
@@ -803,7 +803,7 @@
           "text": { "en": "same subject → infinitive", "es": "mismo sujeto → infinitivo" }
         },
         {
-          "text": { "en": "antes de que → always subjunctive", "es": "antes de que → siempre subjuntivo" },
+          "text": { "en": "a conjunction that takes the subjunctive in every tense", "es": "una conjunción con subjuntivo en todos los tiempos" },
           "wrong": {
             "en": "This would be true if the sentence had “que”; here there's no “que”, because the subject is the same, so it's the infinitive.",
             "es": "Esto sería cierto si la frase tuviera “que”; aquí no hay “que”, porque el sujeto es el mismo, por eso es infinitivo."
@@ -841,7 +841,7 @@
           }
         },
         {
-          "text": { "en": "antes de que → always subjunctive", "es": "antes de que → siempre subjuntivo" },
+          "text": { "en": "a conjunction that takes the subjunctive in every tense", "es": "una conjunción con subjuntivo en todos los tiempos" },
           "wrong": {
             "en": "This rule applies to “antes de que”, not to “desde que”; here the subjunctive never appears.",
             "es": "Esta regla es para “antes de que”, no para “desde que”; aquí nunca va subjuntivo."
@@ -872,10 +872,10 @@
           }
         },
         {
-          "text": { "en": "antes de que → always subjunctive", "es": "antes de que → siempre subjuntivo" },
+          "text": { "en": "a conjunction that takes the subjunctive in every tense", "es": "una conjunción con subjuntivo en todos los tiempos" },
           "wrong": {
-            "en": "This rule refers to “antes de que”; “en cuanto” is a different connector, but it likewise takes the subjunctive for the future.",
-            "es": "Esta regla es para “antes de que”; “en cuanto” es otro conector, pero también pide subjuntivo para el futuro."
+            "en": "antes de que needs the subjunctive even for past events; en cuanto only for the future.",
+            "es": "«antes de que» exige subjuntivo incluso para hechos pasados; «en cuanto» solo para el futuro."
           }
         }
       ],

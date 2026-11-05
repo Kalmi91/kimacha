@@ -994,14 +994,14 @@
       "options": [
         {
           "text": {
-            "en": "me: to me",
-            "es": "me: a mí"
+            "en": "first person singular",
+            "es": "primera persona del singular"
           }
         },
         {
           "text": {
-            "en": "te: to you",
-            "es": "te: a ti"
+            "en": "second person singular, informal",
+            "es": "segunda persona del singular, informal"
           },
           "wrong": {
             "en": "Te would mark the action happening to the person I am talking to (\"Te escribe todos los días\" = writes to you); here I am the recipient, so me.",
@@ -1010,8 +1010,8 @@
         },
         {
           "text": {
-            "en": "nos: to us",
-            "es": "nos: a nosotros"
+            "en": "first person plural",
+            "es": "primera persona del plural"
           },
           "wrong": {
             "en": "Nos would mark that SEVERAL of us receive it; here only I am the recipient, singular, so me.",
@@ -1033,8 +1033,8 @@
       "options": [
         {
           "text": {
-            "en": "me: to me",
-            "es": "me: a mí"
+            "en": "first person singular",
+            "es": "primera persona del singular"
           },
           "wrong": {
             "en": "Me would mark that I receive the keys (\"Me traes las llaves\" = you bring them to me); here I bring them to YOU, so te.",
@@ -1043,14 +1043,14 @@
         },
         {
           "text": {
-            "en": "te: to you",
-            "es": "te: a ti"
+            "en": "second person singular, informal",
+            "es": "segunda persona del singular, informal"
           }
         },
         {
           "text": {
-            "en": "le: to him/her/usted",
-            "es": "le: a él/ella/usted"
+            "en": "third person singular: he, she or formal you",
+            "es": "tercera persona del singular: él, ella o usted"
           },
           "wrong": {
             "en": "Le would be to a THIRD person (him/her/usted) (\"Le traigo las llaves\" = I bring them to him/her); here it is to the person I AM TALKING TO, so te.",
@@ -1072,8 +1072,8 @@
       "options": [
         {
           "text": {
-            "en": "te: to you",
-            "es": "te: a ti"
+            "en": "second person singular, informal",
+            "es": "segunda persona del singular, informal"
           },
           "wrong": {
             "en": "Te would be to the person I am talking to (\"Te doy el libro\" = I give it to you); here it is to a THIRD person, Juan, so le.",
@@ -1082,14 +1082,14 @@
         },
         {
           "text": {
-            "en": "le: to him/her/usted",
-            "es": "le: a él/ella/usted"
+            "en": "third person singular: he, she or formal you",
+            "es": "tercera persona del singular: él, ella o usted"
           }
         },
         {
           "text": {
-            "en": "les: to them/you all",
-            "es": "les: a ellos/ellas/ustedes"
+            "en": "third person plural: they or you all",
+            "es": "tercera persona del plural: ellos, ellas o ustedes"
           },
           "wrong": {
             "en": "Les would refer to SEVERAL third persons (they/you all); here it is ONE person, Juan, singular, so le.",
@@ -1111,8 +1111,8 @@
       "options": [
         {
           "text": {
-            "en": "me: to me",
-            "es": "me: a mí"
+            "en": "first person singular",
+            "es": "primera persona del singular"
           },
           "wrong": {
             "en": "Me would mark that ONLY I receive the message; here SEVERAL of us receive it (the speaker and others), so nos.",
@@ -1121,14 +1121,14 @@
         },
         {
           "text": {
-            "en": "nos: to us",
-            "es": "nos: a nosotros"
+            "en": "first person plural",
+            "es": "primera persona del plural"
           }
         },
         {
           "text": {
-            "en": "les: to them/you all",
-            "es": "les: a ellos/ellas/ustedes"
+            "en": "third person plural: they or you all",
+            "es": "tercera persona del plural: ellos, ellas o ustedes"
           },
           "wrong": {
             "en": "Les would be to several people but EXCLUDING the speaker (they/you all); here the speaker IS among the recipients, so nos, not les.",
@@ -1150,8 +1150,8 @@
       "options": [
         {
           "text": {
-            "en": "le: to him/her/usted",
-            "es": "le: a él/ella/usted"
+            "en": "third person singular: he, she or formal you",
+            "es": "tercera persona del singular: él, ella o usted"
           },
           "wrong": {
             "en": "Le would be to ONE third person (\"Le mando un mensaje a mi papá\"); here I send it to SEVERAL people, my parents, so les.",
@@ -1160,8 +1160,8 @@
         },
         {
           "text": {
-            "en": "nos: to us",
-            "es": "nos: a nosotros"
+            "en": "first person plural",
+            "es": "primera persona del plural"
           },
           "wrong": {
             "en": "Nos would mark that the speaker IS among the recipients (we receive it); here my parents receive it, without the speaker, so les.",
@@ -1170,8 +1170,8 @@
         },
         {
           "text": {
-            "en": "les: to them/you all",
-            "es": "les: a ellos/ellas/ustedes"
+            "en": "third person plural: they or you all",
+            "es": "tercera persona del plural: ellos, ellas o ustedes"
           }
         }
       ],
@@ -1189,14 +1189,14 @@
       "options": [
         {
           "text": {
-            "en": "le: to him/her/usted",
-            "es": "le: a él/ella/usted"
+            "en": "third person singular: he, she or formal you",
+            "es": "tercera persona del singular: él, ella o usted"
           }
         },
         {
           "text": {
-            "en": "me: to me",
-            "es": "me: a mí"
+            "en": "first person singular",
+            "es": "primera persona del singular"
           },
           "wrong": {
             "en": "Me would mark that I receive the book (\"Me da el libro\" = he/she gives it to me); here I give it to María, so le.",
@@ -1205,8 +1205,8 @@
         },
         {
           "text": {
-            "en": "les: to them/you all",
-            "es": "les: a ellos/ellas/ustedes"
+            "en": "third person plural: they or you all",
+            "es": "tercera persona del plural: ellos, ellas o ustedes"
           },
           "wrong": {
             "en": "Les would refer to SEVERAL third persons; here it is ONE person, María, singular, so le.",

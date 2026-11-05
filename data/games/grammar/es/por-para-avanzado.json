@@ -840,14 +840,14 @@
       "options": [
         {
           "text": {
-            "en": "por + infinitive: a reason that already happened",
-            "es": "por + infinitivo: una razón que ya ocurrió"
+            "en": "a reason that already happened, followed by an infinitive",
+            "es": "una razón que ya ocurrió, seguida de un infinitivo"
           }
         },
         {
           "text": {
-            "en": "para + infinitive: goal, intent",
-            "es": "para + infinitivo: meta, intención"
+            "en": "a goal or intention, followed by an infinitive",
+            "es": "una meta o intención, seguida de un infinitivo"
           },
           "wrong": {
             "en": "Para perder would express a goal: he got angry in order to miss the train. But the missing already happened and is the reason for the anger.",
@@ -856,8 +856,8 @@
         },
         {
           "text": {
-            "en": "por: frequency, rate",
-            "es": "por: frecuencia, proporción"
+            "en": "frequency, proportion",
+            "es": "frecuencia, proporción"
           },
           "wrong": {
             "en": "It does not say how often or in what proportion something happens, but what he got angry about.",
@@ -879,8 +879,8 @@
       "options": [
         {
           "text": {
-            "en": "para: destination, which way",
-            "es": "para: destino, hacia dónde"
+            "en": "destination, toward where",
+            "es": "destino, hacia dónde"
           },
           "wrong": {
             "en": "A destination takes para and points to a place (voy para el centro). Here I want to bring the tortillas back, I am not heading to a place.",
@@ -889,8 +889,8 @@
         },
         {
           "text": {
-            "en": "por: route, through which place",
-            "es": "por: ruta, a través de qué lugar"
+            "en": "route, through which place",
+            "es": "ruta, a través de qué lugar"
           },
           "wrong": {
             "en": "A route is a place I move through (caminamos por el parque). The tortillas are not a place but what I want to bring back.",
@@ -899,8 +899,8 @@
         },
         {
           "text": {
-            "en": "por: going to get or pick up",
-            "es": "por: ir a buscar o a recoger"
+            "en": "going to fetch or pick up",
+            "es": "ir a buscar o a recoger"
           }
         }
       ],
@@ -918,8 +918,8 @@
       "options": [
         {
           "text": {
-            "en": "para + infinitive: goal, intent",
-            "es": "para + infinitivo: meta, intención"
+            "en": "a goal or intention, followed by an infinitive",
+            "es": "una meta o intención, seguida de un infinitivo"
           },
           "wrong": {
             "en": "The ser here is not a goal, I am not trying to make it October. Para + ser compares what the warmth is unusual for.",
@@ -928,14 +928,14 @@
         },
         {
           "text": {
-            "en": "para: comparison with an expectation",
-            "es": "para: comparación con lo esperable"
+            "en": "comparison with what is expected",
+            "es": "comparación con lo esperable"
           }
         },
         {
           "text": {
-            "en": "por: cause, why",
-            "es": "por: causa, por qué"
+            "en": "cause, the reason",
+            "es": "causa, la razón"
           },
           "wrong": {
             "en": "Por ser octubre would mean because it is October, as if the month caused the heat. The sentence compares with an expectation instead.",
@@ -957,14 +957,14 @@
       "options": [
         {
           "text": {
-            "en": "por: frequency, rate",
-            "es": "por: frecuencia, proporción"
+            "en": "frequency, proportion",
+            "es": "frecuencia, proporción"
           }
         },
         {
           "text": {
-            "en": "por: duration, how long",
-            "es": "por: duración, cuánto tiempo"
+            "en": "duration, how long",
+            "es": "duración, cuánto tiempo"
           },
           "wrong": {
             "en": "A duration says how long something lasts (por dos semanas). Here it says how many times it happens in a month.",
@@ -973,8 +973,8 @@
         },
         {
           "text": {
-            "en": "para: deadline, by when",
-            "es": "para: plazo, para cuándo"
+            "en": "deadline, by when",
+            "es": "plazo, cuándo debe estar listo"
           },
           "wrong": {
             "en": "A deadline takes para (para el lunes) and says by when something must be ready. Here por stands and gives the frequency.",
@@ -996,8 +996,8 @@
       "options": [
         {
           "text": {
-            "en": "para: recipient, for whom",
-            "es": "para: destinatario, para quién"
+            "en": "recipient, who gets it",
+            "es": "destinatario, quién lo recibe"
           },
           "wrong": {
             "en": "A recipient is someone who receives an object or a message (un regalo para ti). Here the government receives nothing, it is the employer.",
@@ -1006,8 +1006,8 @@
         },
         {
           "text": {
-            "en": "por: in someone's place",
-            "es": "por: en lugar de alguien"
+            "en": "in place of someone",
+            "es": "en lugar de alguien"
           },
           "wrong": {
             "en": "Por el gobierno would mean he works in place of the government. That would express a substitution, not the employer.",
@@ -1016,8 +1016,8 @@
         },
         {
           "text": {
-            "en": "para: employer, whom you work for",
-            "es": "para: empleador, para quién se trabaja"
+            "en": "employer, the body that hires",
+            "es": "empleador, la entidad que contrata"
           }
         }
       ],
@@ -1035,8 +1035,8 @@
       "options": [
         {
           "text": {
-            "en": "por: cause, why",
-            "es": "por: causa, por qué"
+            "en": "cause, the reason",
+            "es": "causa, la razón"
           },
           "wrong": {
             "en": "A cause says why something happens (por la lluvia). Here it is not about a cause but about what the sugar affects.",
@@ -1045,14 +1045,14 @@
         },
         {
           "text": {
-            "en": "para: effect, what it is good or bad for",
-            "es": "para: efecto, para qué es bueno o malo"
+            "en": "effect, what it is good or bad for",
+            "es": "efecto: a qué le hace bien o mal"
           }
         },
         {
           "text": {
-            "en": "para: recipient, for whom",
-            "es": "para: destinatario, para quién"
+            "en": "recipient, who gets it",
+            "es": "destinatario, quién lo recibe"
           },
           "wrong": {
             "en": "The teeth do not receive anything, like the recipient of a gift. Malo para expresses what something is harmful to.",
@@ -1074,14 +1074,14 @@
       "options": [
         {
           "text": {
-            "en": "por: approximate place",
-            "es": "por: lugar aproximado"
+            "en": "approximate place",
+            "es": "lugar aproximado"
           }
         },
         {
           "text": {
-            "en": "por: route, through which place",
-            "es": "por: ruta, a través de qué lugar"
+            "en": "route, through which place",
+            "es": "ruta, a través de qué lugar"
           },
           "wrong": {
             "en": "A route involves movement (caminamos por el parque), but to live is not movement: it only says roughly where she lives.",
@@ -1090,8 +1090,8 @@
         },
         {
           "text": {
-            "en": "para: destination, which way",
-            "es": "para: destino, hacia dónde"
+            "en": "destination, toward where",
+            "es": "destino, hacia dónde"
           },
           "wrong": {
             "en": "A destination takes para (voy para el centro), but to live goes nowhere, so there is no destination here.",

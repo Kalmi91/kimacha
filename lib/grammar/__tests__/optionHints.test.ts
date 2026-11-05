@@ -27,8 +27,8 @@ describe('optionHint', () => {
   });
 
   it('the character trait ("es amable") appears under the identity rule', () => {
-    expect(OPTION_HINTS['profession, identity (ser)'].en).toContain('es amable');
-    expect(OPTION_HINTS['profession, identity (ser)'].en).toContain('Soy Ana, es médico');
+    expect(OPTION_HINTS['profession, identity'].en).toContain('es amable');
+    expect(OPTION_HINTS['profession, identity'].en).toContain('Soy Ana, es médico');
   });
 
   it('every hint has a Hungarian row with the same examples', () => {

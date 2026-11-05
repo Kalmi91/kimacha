@@ -759,28 +759,28 @@
       "options": [
         {
           "text": {
-            "en": "me (yo)",
-            "es": "me (yo)"
+            "en": "first person singular",
+            "es": "primera persona del singular"
           }
         },
         {
           "text": {
-            "en": "te (tú)",
-            "es": "te (tú)"
+            "en": "second person singular, informal",
+            "es": "segunda persona del singular, informal"
           },
           "wrong": {
-            "en": "If it were te, it would say 'Te levantas a las siete', meaning YOU get up at seven, not me.",
-            "es": "Si fuera te, diría 'Te levantas a las siete', o sea que TÚ te levantas, no yo."
+            "en": "If the subject were you, it would say 'Te levantas a las siete', meaning YOU get up at seven, not me.",
+            "es": "Si el sujeto fuera tú, diría 'Te levantas a las siete', o sea que TÚ te levantas, no yo."
           }
         },
         {
           "text": {
-            "en": "se (él/ella/usted)",
-            "es": "se (él/ella/usted)"
+            "en": "third person singular: he, she or formal you",
+            "es": "tercera persona del singular"
           },
           "wrong": {
-            "en": "If it were se (él/ella), it would say 'Se levanta a las siete', meaning HE/SHE gets up at seven, not me.",
-            "es": "Si fuera se (él/ella), diría 'Se levanta a las siete', o sea que ÉL/ELLA se levanta, no yo."
+            "en": "If the subject were he or she, it would say 'Se levanta a las siete', meaning HE/SHE gets up at seven, not me.",
+            "es": "Si el sujeto fuera él o ella, diría 'Se levanta a las siete', o sea que ÉL/ELLA se levanta, no yo."
           }
         }
       ],
@@ -798,28 +798,28 @@
       "options": [
         {
           "text": {
-            "en": "se (ellos/ellas/ustedes)",
-            "es": "se (ellos/ellas/ustedes)"
+            "en": "third person plural: they or you all",
+            "es": "tercera persona del plural"
           },
           "wrong": {
-            "en": "If it were se (ellos), it would say 'Se duchan antes de desayunar', with a PLURAL ending; here 'ducha' is a singular form, so it is one person.",
-            "es": "Si fuera se (ellos), diría 'Se duchan antes de desayunar', con terminación PLURAL; aquí 'ducha' es una forma singular, así que es una sola persona."
+            "en": "If the subject were they, it would say 'Se duchan antes de desayunar', with a PLURAL ending; here 'ducha' is a singular form, so it is one person.",
+            "es": "Si el sujeto fuera ellos, diría 'Se duchan antes de desayunar', con terminación PLURAL; aquí 'ducha' es una forma singular, así que es una sola persona."
           }
         },
         {
           "text": {
-            "en": "se (él/ella/usted)",
-            "es": "se (él/ella/usted)"
+            "en": "third person singular: he, she or formal you",
+            "es": "tercera persona del singular"
           }
         },
         {
           "text": {
-            "en": "me (yo)",
-            "es": "me (yo)"
+            "en": "first person singular",
+            "es": "primera persona del singular"
           },
           "wrong": {
-            "en": "If it were me, it would say 'Me ducho antes de desayunar', meaning I shower, not him.",
-            "es": "Si fuera me, diría 'Me ducho antes de desayunar', o sea que YO me ducho, no él."
+            "en": "If the subject were I, it would say 'Me ducho antes de desayunar', meaning I shower, not him.",
+            "es": "Si el sujeto fuera yo, diría 'Me ducho antes de desayunar', o sea que YO me ducho, no él."
           }
         }
       ],
@@ -837,24 +837,24 @@
       "options": [
         {
           "text": {
-            "en": "nos (nosotros)",
-            "es": "nos (nosotros)"
+            "en": "first person plural",
+            "es": "primera persona del plural"
           }
         },
         {
           "text": {
-            "en": "se (él/ella/usted)",
-            "es": "se (él/ella/usted)"
+            "en": "third person singular: he, she or formal you",
+            "es": "tercera persona del singular"
           },
           "wrong": {
-            "en": "If it were se (él/ella), it would say 'Se ve todos los días', meaning HE/SHE sees himself/herself, which does not even fit here; the reciprocal 'we see each other' needs nos, because it is US, two people.",
-            "es": "Si fuera se (él/ella), diría 'Se ve todos los días', o sea que ÉL/ELLA se ve a sí mismo, lo cual ni encaja aquí; el recíproco 'nos vemos' necesita nos, porque somos NOSOTROS, dos personas."
+            "en": "If the subject were he or she, it would say 'Se ve todos los días', meaning HE/SHE sees himself/herself, which does not even fit here; the reciprocal 'we see each other' needs nos, because it is US, two people.",
+            "es": "Si el sujeto fuera él o ella, diría 'Se ve todos los días', o sea que ÉL/ELLA se ve a sí mismo, lo cual ni encaja aquí; el recíproco 'nos vemos' necesita nos, porque somos NOSOTROS, dos personas."
           }
         },
         {
           "text": {
-            "en": "se (ellos/ellas/ustedes)",
-            "es": "se (ellos/ellas/ustedes)"
+            "en": "third person plural: they or you all",
+            "es": "tercera persona del plural"
           },
           "wrong": {
             "en": "With third-person plural, the verb form would be 'Se ven todos los días', meaning they see each other. Since the verb here is 'vemos' (first-person plural), the correct pronoun is 'nos'.",
@@ -876,28 +876,28 @@
       "options": [
         {
           "text": {
-            "en": "se (él/ella/usted)",
-            "es": "se (él/ella/usted)"
+            "en": "third person singular: he, she or formal you",
+            "es": "tercera persona del singular"
           },
           "wrong": {
-            "en": "If it were se (él/ella), it would say 'Se acuesta tarde los fines de semana', with a SINGULAR ending; here 'acuestan' is a plural form, so it is SEVERAL people.",
-            "es": "Si fuera se (él/ella), diría 'Se acuesta tarde los fines de semana', con terminación SINGULAR; aquí 'acuestan' es una forma plural, así que son VARIAS personas."
+            "en": "If the subject were he or she, it would say 'Se acuesta tarde los fines de semana', with a SINGULAR ending; here 'acuestan' is a plural form, so it is SEVERAL people.",
+            "es": "Si el sujeto fuera él o ella, diría 'Se acuesta tarde los fines de semana', con terminación SINGULAR; aquí 'acuestan' es una forma plural, así que son VARIAS personas."
           }
         },
         {
           "text": {
-            "en": "se (ellos/ellas/ustedes)",
-            "es": "se (ellos/ellas/ustedes)"
+            "en": "third person plural: they or you all",
+            "es": "tercera persona del plural"
           }
         },
         {
           "text": {
-            "en": "nos (nosotros)",
-            "es": "nos (nosotros)"
+            "en": "first person plural",
+            "es": "primera persona del plural"
           },
           "wrong": {
-            "en": "If it were nos, it would say 'Nos acostamos tarde los fines de semana', meaning WE go to bed late, including the speaker, not them, seen from outside.",
-            "es": "Si fuera nos, diría 'Nos acostamos tarde los fines de semana', o sea que NOSOTROS nos acostamos, con el hablante, no ellos, visto desde fuera."
+            "en": "If the subject were we, it would say 'Nos acostamos tarde los fines de semana', meaning WE go to bed late, including the speaker, not them, seen from outside.",
+            "es": "Si el sujeto fuera nosotros, diría 'Nos acostamos tarde los fines de semana', o sea que NOSOTROS nos acostamos, con el hablante, no ellos, visto desde fuera."
           }
         }
       ],
@@ -915,28 +915,28 @@
       "options": [
         {
           "text": {
-            "en": "me (yo)",
-            "es": "me (yo)"
+            "en": "first person singular",
+            "es": "primera persona del singular"
           },
           "wrong": {
-            "en": "If it were me, it would say 'Me ducho muy rápido', meaning I shower fast, not you.",
-            "es": "Si fuera me, diría 'Me ducho muy rápido', o sea que YO me ducho, no tú."
+            "en": "If the subject were I, it would say 'Me ducho muy rápido', meaning I shower fast, not you.",
+            "es": "Si el sujeto fuera yo, diría 'Me ducho muy rápido', o sea que YO me ducho, no tú."
           }
         },
         {
           "text": {
-            "en": "te (tú)",
-            "es": "te (tú)"
+            "en": "second person singular, informal",
+            "es": "segunda persona del singular, informal"
           }
         },
         {
           "text": {
-            "en": "se (él/ella/usted)",
-            "es": "se (él/ella/usted)"
+            "en": "third person singular: he, she or formal you",
+            "es": "tercera persona del singular"
           },
           "wrong": {
-            "en": "If it were se (él/ella), it would say 'Se ducha muy rápido', meaning HE/SHE showers fast, not you.",
-            "es": "Si fuera se (él/ella), diría 'Se ducha muy rápido', o sea que ÉL/ELLA se ducha, no tú."
+            "en": "If the subject were he or she, it would say 'Se ducha muy rápido', meaning HE/SHE showers fast, not you.",
+            "es": "Si el sujeto fuera él o ella, diría 'Se ducha muy rápido', o sea que ÉL/ELLA se ducha, no tú."
           }
         }
       ],
@@ -954,28 +954,28 @@
       "options": [
         {
           "text": {
-            "en": "me (yo)",
-            "es": "me (yo)"
+            "en": "first person singular",
+            "es": "primera persona del singular"
           }
         },
         {
           "text": {
-            "en": "te (tú)",
-            "es": "te (tú)"
+            "en": "second person singular, informal",
+            "es": "segunda persona del singular, informal"
           },
           "wrong": {
-            "en": "If it were te, it would say 'Te quedas en casa esta noche', meaning YOU are staying home, not me.",
-            "es": "Si fuera te, diría 'Te quedas en casa esta noche', o sea que TÚ te quedas, no yo."
+            "en": "If the subject were you, it would say 'Te quedas en casa esta noche', meaning YOU are staying home, not me.",
+            "es": "Si el sujeto fuera tú, diría 'Te quedas en casa esta noche', o sea que TÚ te quedas, no yo."
           }
         },
         {
           "text": {
-            "en": "nos (nosotros)",
-            "es": "nos (nosotros)"
+            "en": "first person plural",
+            "es": "primera persona del plural"
           },
           "wrong": {
-            "en": "If it were nos, it would say 'Nos quedamos en casa esta noche', meaning WE are staying home, not just me.",
-            "es": "Si fuera nos, diría 'Nos quedamos en casa esta noche', o sea que NOSOTROS nos quedamos, no solo yo."
+            "en": "If the subject were we, it would say 'Nos quedamos en casa esta noche', meaning WE are staying home, not just me.",
+            "es": "Si el sujeto fuera nosotros, diría 'Nos quedamos en casa esta noche', o sea que NOSOTROS nos quedamos, no solo yo."
           }
         }
       ],

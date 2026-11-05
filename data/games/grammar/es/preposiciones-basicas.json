@@ -424,17 +424,17 @@
       "tr": { "en": "I go to school.", "es": "Voy a la escuela." },
       "options": [
         {
-          "text": { "en": "direction or a point in time (a)", "es": "dirección o un momento (a)" }
+          "text": { "en": "direction or a point in time", "es": "dirección o un momento" }
         },
         {
-          "text": { "en": "possession or origin (de)", "es": "posesión u origen (de)" },
+          "text": { "en": "possession or origin", "es": "posesión u origen" },
           "wrong": {
             "en": "There is no possession or origin in the sentence, but direction: voy a la escuela.",
             "es": "No hay posesión ni origen en la frase, sino dirección: voy a la escuela."
           }
         },
         {
-          "text": { "en": "place, month, or means of transport (en)", "es": "lugar, mes o medio de transporte (en)" },
+          "text": { "en": "place, month, or means of transport", "es": "lugar, mes o medio de transporte" },
           "wrong": {
             "en": "There is no place, month, or means of transport in the sentence, but direction: voy a la escuela.",
             "es": "No hay lugar, mes ni medio de transporte en la frase, sino dirección: voy a la escuela."
@@ -451,17 +451,17 @@
       "tr": { "en": "It's Ana's book.", "es": "Es el libro de Ana." },
       "options": [
         {
-          "text": { "en": "direction or a point in time (a)", "es": "dirección o un momento (a)" },
+          "text": { "en": "direction or a point in time", "es": "dirección o un momento" },
           "wrong": {
             "en": "There is no direction or point in time in the sentence, but possession: es el libro de Ana.",
             "es": "No hay dirección ni momento en la frase, sino posesión: es el libro de Ana."
           }
         },
         {
-          "text": { "en": "possession or origin (de)", "es": "posesión u origen (de)" }
+          "text": { "en": "possession or origin", "es": "posesión u origen" }
         },
         {
-          "text": { "en": "place, month, or means of transport (en)", "es": "lugar, mes o medio de transporte (en)" },
+          "text": { "en": "place, month, or means of transport", "es": "lugar, mes o medio de transporte" },
           "wrong": {
             "en": "There is no place, month, or means of transport in the sentence, but possession: es el libro de Ana.",
             "es": "No hay lugar, mes ni medio de transporte en la frase, sino posesión: es el libro de Ana."
@@ -478,21 +478,21 @@
       "tr": { "en": "I am at home.", "es": "Estoy en casa." },
       "options": [
         {
-          "text": { "en": "direction or a point in time (a)", "es": "dirección o un momento (a)" },
+          "text": { "en": "direction or a point in time", "es": "dirección o un momento" },
           "wrong": {
             "en": "There is no direction or point in time in the sentence, but a place: estoy en casa.",
             "es": "No hay dirección ni momento en la frase, sino un lugar: estoy en casa."
           }
         },
         {
-          "text": { "en": "possession or origin (de)", "es": "posesión u origen (de)" },
+          "text": { "en": "possession or origin", "es": "posesión u origen" },
           "wrong": {
             "en": "There is no possession or origin in the sentence, but a place: estoy en casa.",
             "es": "No hay posesión ni origen en la frase, sino un lugar: estoy en casa."
           }
         },
         {
-          "text": { "en": "place, month, or means of transport (en)", "es": "lugar, mes o medio de transporte (en)" }
+          "text": { "en": "place, month, or means of transport", "es": "lugar, mes o medio de transporte" }
         }
       ],
       "correctIndex": 2
@@ -505,17 +505,17 @@
       "tr": { "en": "Class starts at eight.", "es": "La clase empieza a las ocho." },
       "options": [
         {
-          "text": { "en": "direction or a point in time (a)", "es": "dirección o un momento (a)" }
+          "text": { "en": "direction or a point in time", "es": "dirección o un momento" }
         },
         {
-          "text": { "en": "possession or origin (de)", "es": "posesión u origen (de)" },
+          "text": { "en": "possession or origin", "es": "posesión u origen" },
           "wrong": {
             "en": "There is no possession or origin in the sentence, but a point in time: la clase empieza a las ocho.",
             "es": "No hay posesión ni origen en la frase, sino un momento: la clase empieza a las ocho."
           }
         },
         {
-          "text": { "en": "place, month, or means of transport (en)", "es": "lugar, mes o medio de transporte (en)" },
+          "text": { "en": "place, month, or means of transport", "es": "lugar, mes o medio de transporte" },
           "wrong": {
             "en": "There is no place, month, or means of transport in the sentence, but a point in time: la clase empieza a las ocho.",
             "es": "No hay lugar, mes ni medio de transporte en la frase, sino un momento: la clase empieza a las ocho."
@@ -532,17 +532,17 @@
       "tr": { "en": "I am from England.", "es": "Soy de Inglaterra." },
       "options": [
         {
-          "text": { "en": "direction or a point in time (a)", "es": "dirección o un momento (a)" },
+          "text": { "en": "direction or a point in time", "es": "dirección o un momento" },
           "wrong": {
             "en": "There is no direction or point in time in the sentence, but origin: soy de Inglaterra.",
             "es": "No hay dirección ni momento en la frase, sino origen: soy de Inglaterra."
           }
         },
         {
-          "text": { "en": "possession or origin (de)", "es": "posesión u origen (de)" }
+          "text": { "en": "possession or origin", "es": "posesión u origen" }
         },
         {
-          "text": { "en": "place, month, or means of transport (en)", "es": "lugar, mes o medio de transporte (en)" },
+          "text": { "en": "place, month, or means of transport", "es": "lugar, mes o medio de transporte" },
           "wrong": {
             "en": "There is no place, month, or means of transport in the sentence, but origin: soy de Inglaterra.",
             "es": "No hay lugar, mes ni medio de transporte en la frase, sino origen: soy de Inglaterra."
@@ -559,21 +559,21 @@
       "tr": { "en": "The exam is in May.", "es": "El examen es en mayo." },
       "options": [
         {
-          "text": { "en": "direction or a point in time (a)", "es": "dirección o un momento (a)" },
+          "text": { "en": "direction or a point in time", "es": "dirección o un momento" },
           "wrong": {
             "en": "There is no direction or an exact clock time in the sentence, but a month: el examen es en mayo.",
             "es": "No hay dirección ni una hora exacta en la frase, sino un mes: el examen es en mayo."
           }
         },
         {
-          "text": { "en": "possession or origin (de)", "es": "posesión u origen (de)" },
+          "text": { "en": "possession or origin", "es": "posesión u origen" },
           "wrong": {
             "en": "There is no possession or origin in the sentence, but a month: el examen es en mayo.",
             "es": "No hay posesión ni origen en la frase, sino un mes: el examen es en mayo."
           }
         },
         {
-          "text": { "en": "place, month, or means of transport (en)", "es": "lugar, mes o medio de transporte (en)" }
+          "text": { "en": "place, month, or means of transport", "es": "lugar, mes o medio de transporte" }
         }
       ],
       "correctIndex": 2
@@ -586,21 +586,21 @@
       "tr": { "en": "We go by metro.", "es": "Vamos en metro." },
       "options": [
         {
-          "text": { "en": "direction or a point in time (a)", "es": "dirección o un momento (a)" },
+          "text": { "en": "direction or a point in time", "es": "dirección o un momento" },
           "wrong": {
             "en": "There is no direction or point in time in the sentence, but a means of transport: vamos en metro.",
             "es": "No hay dirección ni momento en la frase, sino un medio de transporte: vamos en metro."
           }
         },
         {
-          "text": { "en": "possession or origin (de)", "es": "posesión u origen (de)" },
+          "text": { "en": "possession or origin", "es": "posesión u origen" },
           "wrong": {
             "en": "There is no possession or origin in the sentence, but a means of transport: vamos en metro.",
             "es": "No hay posesión ni origen en la frase, sino un medio de transporte: vamos en metro."
           }
         },
         {
-          "text": { "en": "place, month, or means of transport (en)", "es": "lugar, mes o medio de transporte (en)" }
+          "text": { "en": "place, month, or means of transport", "es": "lugar, mes o medio de transporte" }
         }
       ],
       "correctIndex": 2

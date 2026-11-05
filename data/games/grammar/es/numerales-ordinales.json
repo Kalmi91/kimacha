@@ -951,8 +951,8 @@
       "options": [
         {
           "text": {
-            "en": "a feminine or plural form (primera, segundos): the ordinal agrees with the noun",
-            "es": "forma femenina o plural (primera, segundos): el ordinal concuerda con el sustantivo"
+            "en": "a feminine or plural form: the ordinal agrees with the noun",
+            "es": "forma femenina o plural: el ordinal concuerda con el sustantivo"
           },
           "wrong": {
             "en": "Tercer is neither a feminine nor a plural form: it is masculine singular. There is no -a or -s ending here; the short form has another reason.",
@@ -961,14 +961,14 @@
         },
         {
           "text": {
-            "en": "primero / tercero → primer / tercer, right before a masculine singular noun",
-            "es": "primero / tercero → primer / tercer, justo ante un sustantivo masculino singular"
+            "en": "some ordinals lose their final -o right before a masculine singular noun",
+            "es": "algunos ordinales pierden la -o final justo delante de un sustantivo masculino singular"
           }
         },
         {
           "text": {
-            "en": "above the tenth, an ordinary number goes AFTER the noun (el piso doce)",
-            "es": "pasado el décimo, el número normal va DESPUÉS del sustantivo (el piso doce)"
+            "en": "above the tenth, an ordinary number goes AFTER the noun",
+            "es": "pasado el décimo, el número normal va DESPUÉS del sustantivo"
           },
           "wrong": {
             "en": "The third floor is below the tenth, so the ordinal goes BEFORE the noun. The ordinary number after the noun is for floors above the tenth (el piso doce).",
@@ -990,14 +990,14 @@
       "options": [
         {
           "text": {
-            "en": "a feminine or plural form (primera, segundos): the ordinal agrees with the noun",
-            "es": "forma femenina o plural (primera, segundos): el ordinal concuerda con el sustantivo"
+            "en": "a feminine or plural form: the ordinal agrees with the noun",
+            "es": "forma femenina o plural: el ordinal concuerda con el sustantivo"
           }
         },
         {
           "text": {
-            "en": "primero / tercero → primer / tercer, right before a masculine singular noun",
-            "es": "primero / tercero → primer / tercer, justo ante un sustantivo masculino singular"
+            "en": "some ordinals lose their final -o right before a masculine singular noun",
+            "es": "algunos ordinales pierden la -o final justo delante de un sustantivo masculino singular"
           },
           "wrong": {
             "en": "The shortening of primero / tercero only happens before a masculine singular noun, and segunda is neither primero nor tercero. Here a feminine noun (calle) follows: segunda.",
@@ -1006,8 +1006,8 @@
         },
         {
           "text": {
-            "en": "without a noun the full form stays (el primero, la tercera)",
-            "es": "sin sustantivo queda la forma completa (el primero, la tercera)"
+            "en": "without a noun the full form stays",
+            "es": "sin sustantivo queda la forma completa"
           },
           "wrong": {
             "en": "A noun follows the ordinal here (calle), so this is not the case without a noun. Segunda is feminine because calle is feminine.",
@@ -1029,8 +1029,8 @@
       "options": [
         {
           "text": {
-            "en": "primero / tercero → primer / tercer, right before a masculine singular noun",
-            "es": "primero / tercero → primer / tercer, justo ante un sustantivo masculino singular"
+            "en": "some ordinals lose their final -o right before a masculine singular noun",
+            "es": "algunos ordinales pierden la -o final justo delante de un sustantivo masculino singular"
           },
           "wrong": {
             "en": "Primer is the short form before a noun (el primer día). In a date the day stands on its own and de junio comes only after it, so primero stays.",
@@ -1039,8 +1039,8 @@
         },
         {
           "text": {
-            "en": "adverb of order: primero ... luego, it never changes",
-            "es": "adverbio de orden: primero ... luego, no cambia"
+            "en": "an adverb of order that never changes",
+            "es": "adverbio de orden que no cambia"
           },
           "wrong": {
             "en": "The adverb of order goes before a verb and says first this, then that (Primero como). Here it is a date, not an order of actions.",
@@ -1049,8 +1049,8 @@
         },
         {
           "text": {
-            "en": "date: only the first day of the month is an ordinal (el primero), the other days are ordinary numbers (el dos)",
-            "es": "fecha: solo el primer día del mes es ordinal (el primero), los demás días llevan número normal (el dos)"
+            "en": "a date: only day one of the month is ordinal, the other days take a plain number",
+            "es": "una fecha: solo el día uno del mes es ordinal, los demás días llevan número normal"
           }
         }
       ],
@@ -1068,8 +1068,8 @@
       "options": [
         {
           "text": {
-            "en": "without a noun the full form stays (el primero, la tercera)",
-            "es": "sin sustantivo queda la forma completa (el primero, la tercera)"
+            "en": "without a noun the full form stays",
+            "es": "sin sustantivo queda la forma completa"
           },
           "wrong": {
             "en": "Here quince is an ordinary number, not an ordinal, and the noun (piso) is right next to it. Shortening and the form without a noun concern ordinals.",
@@ -1078,14 +1078,14 @@
         },
         {
           "text": {
-            "en": "above the tenth, an ordinary number goes AFTER the noun (el piso doce)",
-            "es": "pasado el décimo, el número normal va DESPUÉS del sustantivo (el piso doce)"
+            "en": "above the tenth, an ordinary number goes AFTER the noun",
+            "es": "pasado el décimo, el número normal va DESPUÉS del sustantivo"
           }
         },
         {
           "text": {
-            "en": "a feminine or plural form (primera, segundos): the ordinal agrees with the noun",
-            "es": "forma femenina o plural (primera, segundos): el ordinal concuerda con el sustantivo"
+            "en": "a feminine or plural form: the ordinal agrees with the noun",
+            "es": "forma femenina o plural: el ordinal concuerda con el sustantivo"
           },
           "wrong": {
             "en": "Quince is not an ordinal, so it has no feminine or plural form that agrees with the noun. The number after the noun is the rule for floors above the tenth.",
@@ -1107,14 +1107,14 @@
       "options": [
         {
           "text": {
-            "en": "adverb of order: primero ... luego, it never changes",
-            "es": "adverbio de orden: primero ... luego, no cambia"
+            "en": "an adverb of order that never changes",
+            "es": "adverbio de orden que no cambia"
           }
         },
         {
           "text": {
-            "en": "primero / tercero → primer / tercer, right before a masculine singular noun",
-            "es": "primero / tercero → primer / tercer, justo ante un sustantivo masculino singular"
+            "en": "some ordinals lose their final -o right before a masculine singular noun",
+            "es": "algunos ordinales pierden la -o final justo delante de un sustantivo masculino singular"
           },
           "wrong": {
             "en": "Primer is used directly before a masculine singular noun. Here a verb (como) follows, so primero stays, as an adverb.",
@@ -1123,8 +1123,8 @@
         },
         {
           "text": {
-            "en": "date: only the first day of the month is an ordinal (el primero), the other days are ordinary numbers (el dos)",
-            "es": "fecha: solo el primer día del mes es ordinal (el primero), los demás días llevan número normal (el dos)"
+            "en": "a date: only day one of the month is ordinal, the other days take a plain number",
+            "es": "una fecha: solo el día uno del mes es ordinal, los demás días llevan número normal"
           },
           "wrong": {
             "en": "A date names a day (el primero de junio). Here there is no day and month, only the order of two actions.",
@@ -1146,8 +1146,8 @@
       "options": [
         {
           "text": {
-            "en": "primero / tercero → primer / tercer, right before a masculine singular noun",
-            "es": "primero / tercero → primer / tercer, justo ante un sustantivo masculino singular"
+            "en": "some ordinals lose their final -o right before a masculine singular noun",
+            "es": "algunos ordinales pierden la -o final justo delante de un sustantivo masculino singular"
           },
           "wrong": {
             "en": "Primer is the short form before a noun (el primer día). Here en llegar follows, which is not a noun, so primero stays in its full form.",
@@ -1156,8 +1156,8 @@
         },
         {
           "text": {
-            "en": "date: only the first day of the month is an ordinal (el primero), the other days are ordinary numbers (el dos)",
-            "es": "fecha: solo el primer día del mes es ordinal (el primero), los demás días llevan número normal (el dos)"
+            "en": "a date: only day one of the month is ordinal, the other days take a plain number",
+            "es": "una fecha: solo el día uno del mes es ordinal, los demás días llevan número normal"
           },
           "wrong": {
             "en": "A date names a day and a month (el primero de junio). Here nobody gives a date; the sentence says who arrived first.",
@@ -1166,8 +1166,8 @@
         },
         {
           "text": {
-            "en": "without a noun the full form stays (el primero, la tercera)",
-            "es": "sin sustantivo queda la forma completa (el primero, la tercera)"
+            "en": "without a noun the full form stays",
+            "es": "sin sustantivo queda la forma completa"
           }
         }
       ],
@@ -1185,8 +1185,8 @@
       "options": [
         {
           "text": {
-            "en": "adverb of order: primero ... luego, it never changes",
-            "es": "adverbio de orden: primero ... luego, no cambia"
+            "en": "an adverb of order that never changes",
+            "es": "adverbio de orden que no cambia"
           },
           "wrong": {
             "en": "The adverb of order gives the order of actions (primero ... luego). Here it is a date, one day of a month.",
@@ -1195,14 +1195,14 @@
         },
         {
           "text": {
-            "en": "date: only the first day of the month is an ordinal (el primero), the other days are ordinary numbers (el dos)",
-            "es": "fecha: solo el primer día del mes es ordinal (el primero), los demás días llevan número normal (el dos)"
+            "en": "a date: only day one of the month is ordinal, the other days take a plain number",
+            "es": "una fecha: solo el día uno del mes es ordinal, los demás días llevan número normal"
           }
         },
         {
           "text": {
-            "en": "above the tenth, an ordinary number goes AFTER the noun (el piso doce)",
-            "es": "pasado el décimo, el número normal va DESPUÉS del sustantivo (el piso doce)"
+            "en": "above the tenth, an ordinary number goes AFTER the noun",
+            "es": "pasado el décimo, el número normal va DESPUÉS del sustantivo"
           },
           "wrong": {
             "en": "An ordinary number after the noun is for floors above the tenth (el piso doce). Here dos does not mark a floor but the day of the month.",

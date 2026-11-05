@@ -804,8 +804,8 @@
       "options": [
         {
           "text": {
-            "en": "hace + length of time + past tense: when it happened, a finished event",
-            "es": "hace + tiempo + pretérito: cuándo ocurrió, un hecho terminado"
+            "en": "a time expression with a finished past event: when it happened",
+            "es": "una expresión de tiempo con un hecho pasado terminado: cuándo ocurrió"
           },
           "wrong": {
             "en": "That would be the hace + past tense structure (Llegué hace dos años). But this sentence has a verb in the present (vivo) and desde before hace: the situation is still going.",
@@ -814,14 +814,14 @@
         },
         {
           "text": {
-            "en": "verb in the present + desde hace + length of time: the situation is still going",
-            "es": "verbo en presente + desde hace + tiempo: la situación sigue"
+            "en": "the present tense with a length of time: the situation continues",
+            "es": "el presente con una duración: la situación continúa"
           }
         },
         {
           "text": {
-            "en": "desde + point in time: names when it began",
-            "es": "desde + momento: dice cuándo empezó"
+            "en": "a starting point in time: it says when it began",
+            "es": "un punto de partida en el tiempo: dice cuándo empezó"
           },
           "wrong": {
             "en": "After desde a point in time would be needed (desde 2022), but here a length of time follows: dos años. Before a length of time you need desde hace.",
@@ -843,14 +843,14 @@
       "options": [
         {
           "text": {
-            "en": "hace + length of time + past tense: when it happened, a finished event",
-            "es": "hace + tiempo + pretérito: cuándo ocurrió, un hecho terminado"
+            "en": "a time expression with a finished past event: when it happened",
+            "es": "una expresión de tiempo con un hecho pasado terminado: cuándo ocurrió"
           }
         },
         {
           "text": {
-            "en": "hace + length of time + que + present: the situation is still going",
-            "es": "hace + tiempo + que + presente: la situación sigue"
+            "en": "a time expression with a linking word and the present: the situation continues",
+            "es": "una expresión de tiempo con un nexo y presente: la situación continúa"
           },
           "wrong": {
             "en": "Hace ... que + present states a situation that is still going (Hace dos años que vivo aquí). Here the verb is in the past (llegué): a finished event, so this is not that structure.",
@@ -859,8 +859,8 @@
         },
         {
           "text": {
-            "en": "verb in the present + desde hace + length of time: the situation is still going",
-            "es": "verbo en presente + desde hace + tiempo: la situación sigue"
+            "en": "the present tense with a length of time: the situation continues",
+            "es": "el presente con una duración: la situación continúa"
           },
           "wrong": {
             "en": "Desde hace goes with a verb in the present and states a situation that is still going (Vivo aquí desde hace dos años). Llegué is a finished event, and there is no desde in the sentence.",
@@ -882,8 +882,8 @@
       "options": [
         {
           "text": {
-            "en": "verb in the present + desde hace + length of time: the situation is still going",
-            "es": "verbo en presente + desde hace + tiempo: la situación sigue"
+            "en": "the present tense with a length of time: the situation continues",
+            "es": "el presente con una duración: la situación continúa"
           },
           "wrong": {
             "en": "After desde hace comes a length of time (desde hace tres meses), but enero is a month, so a point in time. Without hace: desde enero.",
@@ -892,8 +892,8 @@
         },
         {
           "text": {
-            "en": "llevar + length of time + gerund: how long someone has been doing it",
-            "es": "llevar + tiempo + gerundio: cuánto tiempo lleva haciéndolo"
+            "en": "a verb of duration plus a gerund: how long it has been going on",
+            "es": "un verbo de duración con gerundio: cuánto tiempo hace que ocurre"
           },
           "wrong": {
             "en": "A llevar + length of time + gerund sentence has llevar and a gerund (Llevo tres meses trabajando). Neither is here; the sentence is desde + point in time.",
@@ -902,8 +902,8 @@
         },
         {
           "text": {
-            "en": "desde + point in time: names when it began",
-            "es": "desde + momento: dice cuándo empezó"
+            "en": "a starting point in time: it says when it began",
+            "es": "un punto de partida en el tiempo: dice cuándo empezó"
           }
         }
       ],
@@ -921,14 +921,14 @@
       "options": [
         {
           "text": {
-            "en": "llevar + length of time + gerund: how long someone has been doing it",
-            "es": "llevar + tiempo + gerundio: cuánto tiempo lleva haciéndolo"
+            "en": "a verb of duration plus a gerund: how long it has been going on",
+            "es": "un verbo de duración con gerundio: cuánto tiempo hace que ocurre"
           }
         },
         {
           "text": {
-            "en": "hace + length of time + que + present: the situation is still going",
-            "es": "hace + tiempo + que + presente: la situación sigue"
+            "en": "a time expression with a linking word and the present: the situation continues",
+            "es": "una expresión de tiempo con un nexo y presente: la situación continúa"
           },
           "wrong": {
             "en": "There is no hace here, and the verb for studying is not in the present but in the gerund (estudiando): llevar carries the tense.",
@@ -937,8 +937,8 @@
         },
         {
           "text": {
-            "en": "hace + length of time + past tense: when it happened, a finished event",
-            "es": "hace + tiempo + pretérito: cuándo ocurrió, un hecho terminado"
+            "en": "a time expression with a finished past event: when it happened",
+            "es": "una expresión de tiempo con un hecho pasado terminado: cuándo ocurrió"
           },
           "wrong": {
             "en": "Hace + past tense would state a finished event. Here there is no hace and no past tense: llevar is in the present, the verb is a gerund, and the situation is still going.",
@@ -960,8 +960,8 @@
       "options": [
         {
           "text": {
-            "en": "desde + point in time: names when it began",
-            "es": "desde + momento: dice cuándo empezó"
+            "en": "a starting point in time: it says when it began",
+            "es": "un punto de partida en el tiempo: dice cuándo empezó"
           },
           "wrong": {
             "en": "There is no desde here, and seis meses is a length of time, not a point in time. The sentence is hace + length of time + que + present.",
@@ -970,14 +970,14 @@
         },
         {
           "text": {
-            "en": "hace + length of time + que + present: the situation is still going",
-            "es": "hace + tiempo + que + presente: la situación sigue"
+            "en": "a time expression with a linking word and the present: the situation continues",
+            "es": "una expresión de tiempo con un nexo y presente: la situación continúa"
           }
         },
         {
           "text": {
-            "en": "hace + length of time + past tense: when it happened, a finished event",
-            "es": "hace + tiempo + pretérito: cuándo ocurrió, un hecho terminado"
+            "en": "a time expression with a finished past event: when it happened",
+            "es": "una expresión de tiempo con un hecho pasado terminado: cuándo ocurrió"
           },
           "wrong": {
             "en": "Hace + past tense would state a finished event (Llegué hace seis meses). Here vivo is in the present, and the situation is still going.",
@@ -999,8 +999,8 @@
       "options": [
         {
           "text": {
-            "en": "verb in the present + desde hace + length of time: the situation is still going",
-            "es": "verbo en presente + desde hace + tiempo: la situación sigue"
+            "en": "the present tense with a length of time: the situation continues",
+            "es": "el presente con una duración: la situación continúa"
           },
           "wrong": {
             "en": "Desde hace goes with a verb in the present and states a situation that is still going. Llegó is a finished past, a finished event, and there is no desde in the sentence.",
@@ -1009,8 +1009,8 @@
         },
         {
           "text": {
-            "en": "hace + length of time + que + present: the situation is still going",
-            "es": "hace + tiempo + que + presente: la situación sigue"
+            "en": "a time expression with a linking word and the present: the situation continues",
+            "es": "una expresión de tiempo con un nexo y presente: la situación continúa"
           },
           "wrong": {
             "en": "Hace ... que + present states a situation that is still going. Here llegó is in the past, a finished event, and there is no que: the arrival happened an hour ago.",
@@ -1019,8 +1019,8 @@
         },
         {
           "text": {
-            "en": "hace + length of time + past tense: when it happened, a finished event",
-            "es": "hace + tiempo + pretérito: cuándo ocurrió, un hecho terminado"
+            "en": "a time expression with a finished past event: when it happened",
+            "es": "una expresión de tiempo con un hecho pasado terminado: cuándo ocurrió"
           }
         }
       ],
@@ -1038,8 +1038,8 @@
       "options": [
         {
           "text": {
-            "en": "llevar + length of time + gerund: how long someone has been doing it",
-            "es": "llevar + tiempo + gerundio: cuánto tiempo lleva haciéndolo"
+            "en": "a verb of duration plus a gerund: how long it has been going on",
+            "es": "un verbo de duración con gerundio: cuánto tiempo hace que ocurre"
           },
           "wrong": {
             "en": "A llevar + length of time + gerund sentence has llevar (Llevo dos horas esperando). There is no llevar here, and las ocho is a clock time, not a length of time.",
@@ -1048,14 +1048,14 @@
         },
         {
           "text": {
-            "en": "desde + point in time: names when it began",
-            "es": "desde + momento: dice cuándo empezó"
+            "en": "a starting point in time: it says when it began",
+            "es": "un punto de partida en el tiempo: dice cuándo empezó"
           }
         },
         {
           "text": {
-            "en": "verb in the present + desde hace + length of time: the situation is still going",
-            "es": "verbo en presente + desde hace + tiempo: la situación sigue"
+            "en": "the present tense with a length of time: the situation continues",
+            "es": "el presente con una duración: la situación continúa"
           },
           "wrong": {
             "en": "After desde hace comes a length of time (desde hace dos horas). Las ocho is a clock time, so a point in time: without hace, desde las ocho.",

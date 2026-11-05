@@ -895,14 +895,14 @@
       "options": [
         {
           "text": {
-            "en": "lo: masculine singular",
-            "es": "lo: masculino singular"
+            "en": "masculine singular",
+            "es": "masculino singular"
           }
         },
         {
           "text": {
-            "en": "la: feminine singular",
-            "es": "la: femenino singular"
+            "en": "feminine singular",
+            "es": "femenino singular"
           },
           "wrong": {
             "en": "La would replace a feminine thing (\"¿La mochila? La tengo aquí\"); here \"el libro\" is masculine, so lo.",
@@ -911,8 +911,8 @@
         },
         {
           "text": {
-            "en": "los: masc./mixed plural",
-            "es": "los: masculino/mixto plural"
+            "en": "masculine or mixed plural",
+            "es": "masculino o mixto plural"
           },
           "wrong": {
             "en": "Los would replace PLURAL masculine things (\"¿Los libros? Los tengo aquí\"); here it is a single book, so singular: lo.",
@@ -934,8 +934,8 @@
       "options": [
         {
           "text": {
-            "en": "lo: masculine singular",
-            "es": "lo: masculino singular"
+            "en": "masculine singular",
+            "es": "masculino singular"
           },
           "wrong": {
             "en": "Lo would replace a masculine thing (\"¿El libro? Lo llevo yo\"); here \"la mochila\" is feminine, so la.",
@@ -944,14 +944,14 @@
         },
         {
           "text": {
-            "en": "la: feminine singular",
-            "es": "la: femenino singular"
+            "en": "feminine singular",
+            "es": "femenino singular"
           }
         },
         {
           "text": {
-            "en": "las: feminine plural",
-            "es": "las: femenino plural"
+            "en": "feminine plural",
+            "es": "femenino plural"
           },
           "wrong": {
             "en": "Las would replace PLURAL feminine things (\"¿Las llaves? Las llevo yo\"); here it is a single backpack, so singular: la.",
@@ -973,8 +973,8 @@
       "options": [
         {
           "text": {
-            "en": "lo: masculine singular",
-            "es": "lo: masculino singular"
+            "en": "masculine singular",
+            "es": "masculino singular"
           },
           "wrong": {
             "en": "Lo would replace a SINGULAR masculine thing (\"¿El libro? Lo tengo aquí\"); here it is SEVERAL books, so plural: los.",
@@ -983,14 +983,14 @@
         },
         {
           "text": {
-            "en": "los: masc./mixed plural",
-            "es": "los: masculino/mixto plural"
+            "en": "masculine or mixed plural",
+            "es": "masculino o mixto plural"
           }
         },
         {
           "text": {
-            "en": "las: feminine plural",
-            "es": "las: femenino plural"
+            "en": "feminine plural",
+            "es": "femenino plural"
           },
           "wrong": {
             "en": "Las would replace feminine, plural things (\"¿Las llaves? Las tengo aquí\"); here \"los libros\" is masculine, so los.",
@@ -1012,8 +1012,8 @@
       "options": [
         {
           "text": {
-            "en": "los: masc./mixed plural",
-            "es": "los: masculino/mixto plural"
+            "en": "masculine or mixed plural",
+            "es": "masculino o mixto plural"
           },
           "wrong": {
             "en": "Los would replace a masculine or mixed group (\"¿Los libros? Los tengo en la bolsa\"); here \"las llaves\" are all feminine, so las.",
@@ -1022,14 +1022,14 @@
         },
         {
           "text": {
-            "en": "las: feminine plural",
-            "es": "las: femenino plural"
+            "en": "feminine plural",
+            "es": "femenino plural"
           }
         },
         {
           "text": {
-            "en": "1st/2nd person (me/te/nos/os)",
-            "es": "1.ª/2.ª persona (me/te/nos/os)"
+            "en": "1st/2nd person",
+            "es": "1.ª/2.ª persona"
           },
           "wrong": {
             "en": "Me/te/nos/os would mark myself or the person I am talking to; here we replace a THING (las llaves), so las.",
@@ -1051,8 +1051,8 @@
       "options": [
         {
           "text": {
-            "en": "lo: masculine singular",
-            "es": "lo: masculino singular"
+            "en": "masculine singular",
+            "es": "masculino singular"
           },
           "wrong": {
             "en": "Lo would replace a masculine THING or third person (\"Lo veo mañana\" = him/it); here I am marking the PERSON I AM TALKING TO, so te.",
@@ -1061,8 +1061,8 @@
         },
         {
           "text": {
-            "en": "los: masc./mixed plural",
-            "es": "los: masculino/mixto plural"
+            "en": "masculine or mixed plural",
+            "es": "masculino o mixto plural"
           },
           "wrong": {
             "en": "Los would replace PLURAL masculine things or a group; here I am addressing ONE person I am talking to, singular, so te.",
@@ -1071,8 +1071,8 @@
         },
         {
           "text": {
-            "en": "1st/2nd person (me/te/nos/os)",
-            "es": "1.ª/2.ª persona (me/te/nos/os)"
+            "en": "1st/2nd person",
+            "es": "1.ª/2.ª persona"
           }
         }
       ],
@@ -1090,8 +1090,8 @@
       "options": [
         {
           "text": {
-            "en": "los: masc./mixed plural",
-            "es": "los: masculino/mixto plural"
+            "en": "masculine or mixed plural",
+            "es": "masculino o mixto plural"
           },
           "wrong": {
             "en": "Los would replace masculine things or people, with gender/number agreement; for us (nosotros) the pronoun is nos, with no gender or number marking.",
@@ -1100,14 +1100,14 @@
         },
         {
           "text": {
-            "en": "1st/2nd person (me/te/nos/os)",
-            "es": "1.ª/2.ª persona (me/te/nos/os)"
+            "en": "1st/2nd person",
+            "es": "1.ª/2.ª persona"
           }
         },
         {
           "text": {
-            "en": "las: feminine plural",
-            "es": "las: femenino plural"
+            "en": "feminine plural",
+            "es": "femenino plural"
           },
           "wrong": {
             "en": "Las would replace feminine, plural things, with gender agreement; for us (nosotros) the pronoun is nos, with no gender agreement.",
@@ -1129,8 +1129,8 @@
       "options": [
         {
           "text": {
-            "en": "lo: masculine singular",
-            "es": "lo: masculino singular"
+            "en": "masculine singular",
+            "es": "masculino singular"
           },
           "wrong": {
             "en": "Lo would replace a masculine person (\"¿Conoces a Juan? Sí, lo conozco\"); here it is a FEMININE person, so la.",
@@ -1139,14 +1139,14 @@
         },
         {
           "text": {
-            "en": "la: feminine singular",
-            "es": "la: femenino singular"
+            "en": "feminine singular",
+            "es": "femenino singular"
           }
         },
         {
           "text": {
-            "en": "los: masc./mixed plural",
-            "es": "los: masculino/mixto plural"
+            "en": "masculine or mixed plural",
+            "es": "masculino o mixto plural"
           },
           "wrong": {
             "en": "Los would replace a PLURAL, masculine or mixed group; here it is ONE feminine person, so singular: la.",

@@ -670,17 +670,17 @@
       "tr": { "en": "Where do you work?", "es": "¿Dónde trabajas?" },
       "options": [
         {
-          "text": { "en": "place = dónde", "es": "lugar = dónde" }
+          "text": { "en": "place", "es": "lugar" }
         },
         {
-          "text": { "en": "time = cuándo", "es": "tiempo = cuándo" },
+          "text": { "en": "time", "es": "tiempo" },
           "wrong": {
             "en": "Cuándo asks about TIME, but here the question is about WHERE you work, not when.",
             "es": "Cuándo pregunta por el TIEMPO, pero aquí se pregunta DÓNDE trabajas, no cuándo."
           }
         },
         {
-          "text": { "en": "person = quién", "es": "persona = quién" },
+          "text": { "en": "person", "es": "persona" },
           "wrong": {
             "en": "Quién asks about a PERSON, but here we are asking about the PLACE of work.",
             "es": "Quién pregunta por una PERSONA, pero aquí se pregunta por el LUGAR de trabajo."
@@ -697,17 +697,17 @@
       "tr": { "en": "When does the class start?", "es": "¿Cuándo empieza la clase?" },
       "options": [
         {
-          "text": { "en": "time = cuándo", "es": "tiempo = cuándo" }
+          "text": { "en": "time", "es": "tiempo" }
         },
         {
-          "text": { "en": "place = dónde", "es": "lugar = dónde" },
+          "text": { "en": "place", "es": "lugar" },
           "wrong": {
             "en": "Dónde asks about PLACE, but here it is about the STARTING TIME of the class.",
             "es": "Dónde pregunta por el LUGAR, pero aquí se trata del MOMENTO en que empieza la clase."
           }
         },
         {
-          "text": { "en": "quantity = cuánto", "es": "cantidad = cuánto" },
+          "text": { "en": "quantity", "es": "cantidad" },
           "wrong": {
             "en": "Cuánto asks about QUANTITY, but here it is about a POINT IN TIME.",
             "es": "Cuánto pregunta por la CANTIDAD, pero aquí se trata de un MOMENTO."
@@ -724,17 +724,17 @@
       "tr": { "en": "Who are they?", "es": "¿Quiénes son ellos?" },
       "options": [
         {
-          "text": { "en": "person, plural = quiénes", "es": "persona, plural = quiénes" }
+          "text": { "en": "person, plural", "es": "persona, plural" }
         },
         {
-          "text": { "en": "person, singular = quién", "es": "persona, singular = quién" },
+          "text": { "en": "person, singular", "es": "persona, singular" },
           "wrong": {
             "en": "Quién asks about one person, but ellos is PLURAL.",
             "es": "Quién pregunta por una sola persona, y ellos está en PLURAL."
           }
         },
         {
-          "text": { "en": "thing = qué", "es": "cosa = qué" },
+          "text": { "en": "thing", "es": "cosa" },
           "wrong": {
             "en": "Qué asks about a THING, but ellos refers to PEOPLE.",
             "es": "Qué pregunta por una COSA, y ellos se refiere a PERSONAS."
@@ -751,17 +751,17 @@
       "tr": { "en": "How many sisters do you have?", "es": "¿Cuántas hermanas tienes?" },
       "options": [
         {
-          "text": { "en": "quantity, feminine plural = cuántas", "es": "cantidad, femenino plural = cuántas" }
+          "text": { "en": "quantity, feminine plural", "es": "cantidad, femenino plural" }
         },
         {
-          "text": { "en": "quantity, masculine plural = cuántos", "es": "cantidad, masculino plural = cuántos" },
+          "text": { "en": "quantity, masculine plural", "es": "cantidad, masculino plural" },
           "wrong": {
             "en": "Cuántos is the masculine form, but hermanas is FEMININE.",
             "es": "Cuántos es la forma masculina, y hermanas es FEMENINO."
           }
         },
         {
-          "text": { "en": "choice = cuál", "es": "elección = cuál" },
+          "text": { "en": "choice", "es": "elección" },
           "wrong": {
             "en": "Cuál is for choosing, but here we ask about QUANTITY.",
             "es": "Cuál sirve para elegir, pero aquí se pregunta por la CANTIDAD."
@@ -778,7 +778,7 @@
       "tr": { "en": "Who are you going to the movies with?", "es": "¿Con quién vas al cine?" },
       "options": [
         {
-          "text": { "en": "preposition before the question word = con quién", "es": "preposición delante del interrogativo = con quién" }
+          "text": { "en": "preposition before the question word", "es": "preposición delante del interrogativo" }
         },
         {
           "text": { "en": "preposition after the question word", "es": "preposición detrás del interrogativo" },
@@ -788,7 +788,7 @@
           }
         },
         {
-          "text": { "en": "place = dónde", "es": "lugar = dónde" },
+          "text": { "en": "place", "es": "lugar" },
           "wrong": {
             "en": "Dónde asks about PLACE, but here we ask WHO you are going with.",
             "es": "Dónde pregunta por el LUGAR, pero aquí se pregunta CON QUIÉN vas."
@@ -805,17 +805,17 @@
       "tr": { "en": "What is your last name?", "es": "¿Cuál es tu apellido?" },
       "options": [
         {
-          "text": { "en": "choice = cuál", "es": "elección = cuál" }
+          "text": { "en": "choice", "es": "elección" }
         },
         {
-          "text": { "en": "open question, definition = qué", "es": "pregunta abierta, definición = qué" },
+          "text": { "en": "open question, definition", "es": "pregunta abierta, definición" },
           "wrong": {
             "en": "Qué asks for the definition of a concept, but for a name cuál is used, as if choosing among possible names.",
             "es": "Qué pide la definición de un concepto, pero para un nombre va cuál, como si eligieras entre los nombres posibles."
           }
         },
         {
-          "text": { "en": "quantity = cuánto", "es": "cantidad = cuánto" },
+          "text": { "en": "quantity", "es": "cantidad" },
           "wrong": {
             "en": "Cuánto asks about QUANTITY, but here it is about a NAME.",
             "es": "Cuánto pregunta por la CANTIDAD, pero aquí se trata de un NOMBRE."
@@ -832,17 +832,17 @@
       "tr": { "en": "Why aren't you coming? Because I'm tired.", "es": "¿Por qué no vienes? Porque estoy cansado." },
       "options": [
         {
-          "text": { "en": "question, two words, accented = por qué", "es": "pregunta, dos palabras, con tilde = por qué" }
+          "text": { "en": "question, two words, accented", "es": "pregunta, dos palabras, con tilde" }
         },
         {
-          "text": { "en": "answer, one word, no accent = porque", "es": "respuesta, una palabra, sin tilde = porque" },
+          "text": { "en": "answer, one word, no accent", "es": "respuesta, una palabra, sin tilde" },
           "wrong": {
             "en": "Porque is the ANSWER word, but the start of the sentence is a QUESTION, which needs the two-word por qué.",
             "es": "Porque es la palabra de la RESPUESTA, pero el inicio de la frase es una PREGUNTA, que necesita el por qué de dos palabras."
           }
         },
         {
-          "text": { "en": "place = dónde", "es": "lugar = dónde" },
+          "text": { "en": "place", "es": "lugar" },
           "wrong": {
             "en": "Dónde asks about PLACE, but here we ask the REASON why someone is not coming.",
             "es": "Dónde pregunta por el LUGAR, pero aquí se pregunta el MOTIVO de que alguien no venga."

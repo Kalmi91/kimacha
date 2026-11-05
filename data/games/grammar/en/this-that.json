@@ -308,14 +308,14 @@
       "options": [
         {
           "text": {
-            "en": "plural, far away: those",
-            "es": "plural, lejos: those"
+            "en": "plural, far away",
+            "es": "plural, lejos"
           }
         },
         {
           "text": {
-            "en": "plural, near: these",
-            "es": "plural, cerca: these"
+            "en": "plural, near",
+            "es": "plural, cerca"
           },
           "wrong": {
             "en": "“These” is for near things; “those” is for far ones: Those are my friends (over there).",
@@ -324,8 +324,8 @@
         },
         {
           "text": {
-            "en": "singular, far away: that",
-            "es": "singular, lejos: that"
+            "en": "singular, far away",
+            "es": "singular, lejos"
           },
           "wrong": {
             "en": "“Friends” and “are” are plural, so “those”, not “that”.",
@@ -500,8 +500,8 @@
       "options": [
         {
           "text": {
-            "en": "short answer: “it” replaces this / that",
-            "es": "respuesta corta: «it» sustituye a this / that"
+            "en": "short answer: a pronoun replaces this / that",
+            "es": "respuesta corta: un pronombre reemplaza a this / that"
           }
         },
         {
@@ -693,14 +693,14 @@
       "options": [
         {
           "text": {
-            "en": "singular, near: this (also to introduce a person)",
-            "es": "singular, cerca: this (también para presentar a una persona)"
+            "en": "singular, near",
+            "es": "singular, cerca"
           }
         },
         {
           "text": {
-            "en": "singular, far away: that",
-            "es": "singular, lejos: that"
+            "en": "singular, far away",
+            "es": "singular, lejos"
           },
           "wrong": {
             "en": "“Here” means near, so “this”, not “that”.",
