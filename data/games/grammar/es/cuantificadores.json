@@ -836,7 +836,17 @@
       "verb": "todo",
       "person": "femenino plural",
       "answer": "todas",
-      "table": "formas"
+      "table": "formas",
+      "wrong": {
+        "todos": {
+          "en": "Todos is not the masculine plural form of todo: todas.",
+          "es": "Todos no es la forma masculino plural de todo: todas."
+        },
+        "toda": {
+          "en": "Toda is not the feminine singular form of todo: todas.",
+          "es": "Toda no es la forma femenino singular de todo: todas."
+        }
+      }
     },
     {
       "kind": "form",
@@ -844,7 +854,17 @@
       "verb": "otro",
       "person": "femenino singular",
       "answer": "otra",
-      "table": "formas"
+      "table": "formas",
+      "wrong": {
+        "otro": {
+          "en": "Otro is not the masculine singular form of otro: otra.",
+          "es": "Otro no es la forma masculino singular de otro: otra."
+        },
+        "otras": {
+          "en": "Otras is not the feminine plural form of otro: otra.",
+          "es": "Otras no es la forma femenino plural de otro: otra."
+        }
+      }
     },
     {
       "kind": "form",
@@ -852,7 +872,17 @@
       "verb": "mismo",
       "person": "masculino plural",
       "answer": "mismos",
-      "table": "formas"
+      "table": "formas",
+      "wrong": {
+        "misma": {
+          "en": "Misma is not the feminine singular form of mismo: mismos.",
+          "es": "Misma no es la forma femenino singular de mismo: mismos."
+        },
+        "mismo": {
+          "en": "Mismo is not the masculine singular form of mismo: mismos.",
+          "es": "Mismo no es la forma masculino singular de mismo: mismos."
+        }
+      }
     },
     {
       "kind": "form",
@@ -860,7 +890,17 @@
       "verb": "demasiado",
       "person": "femenino singular",
       "answer": "demasiada",
-      "table": "formas"
+      "table": "formas",
+      "wrong": {
+        "demasiado": {
+          "en": "Demasiado is not the masculine singular form of demasiado: demasiada.",
+          "es": "Demasiado no es la forma masculino singular de demasiado: demasiada."
+        },
+        "demasiadas": {
+          "en": "Demasiadas is not the feminine plural form of demasiado: demasiada.",
+          "es": "Demasiadas no es la forma femenino plural de demasiado: demasiada."
+        }
+      }
     },
     {
       "kind": "form",
@@ -868,7 +908,17 @@
       "verb": "bastante",
       "person": "femenino plural",
       "answer": "bastantes",
-      "table": "formas"
+      "table": "formas",
+      "wrong": {
+        "bastante": {
+          "en": "Bastante is not the feminine plural form of bastante: bastantes.",
+          "es": "Bastante no es la forma femenino plural de bastante: bastantes."
+        },
+        "bastantas": {
+          "en": "Bastante ends in -e and does not change with gender; only the plural adds -s: bastantes.",
+          "es": "Bastante termina en -e y no cambia con el género; solo el plural añade -s: bastantes."
+        }
+      }
     },
     {
       "kind": "form",
@@ -876,7 +926,17 @@
       "verb": "bastante",
       "person": "masculino singular",
       "answer": "bastante",
-      "table": "formas"
+      "table": "formas",
+      "wrong": {
+        "bastanto": {
+          "en": "Bastante ends in -e and does not change with gender; only the plural adds -s: bastante.",
+          "es": "Bastante termina en -e y no cambia con el género; solo el plural añade -s: bastante."
+        },
+        "bastantes": {
+          "en": "Bastantes is not the masculine singular form of bastante: bastante.",
+          "es": "Bastantes no es la forma masculino singular de bastante: bastante."
+        }
+      }
     },
     {
       "kind": "form",
@@ -884,7 +944,17 @@
       "verb": "todo",
       "person": "masculino plural",
       "answer": "todos",
-      "table": "formas"
+      "table": "formas",
+      "wrong": {
+        "todo": {
+          "en": "Todo is not the masculine singular form of todo: todos.",
+          "es": "Todo no es la forma masculino singular de todo: todos."
+        },
+        "todas": {
+          "en": "Todas is not the feminine plural form of todo: todos.",
+          "es": "Todas no es la forma femenino plural de todo: todos."
+        }
+      }
     },
     {
       "kind": "form",
@@ -892,7 +962,17 @@
       "verb": "mismo",
       "person": "femenino singular",
       "answer": "misma",
-      "table": "formas"
+      "table": "formas",
+      "wrong": {
+        "mismo": {
+          "en": "Mismo is not the masculine singular form of mismo: misma.",
+          "es": "Mismo no es la forma masculino singular de mismo: misma."
+        },
+        "mismas": {
+          "en": "Mismas is not the feminine plural form of mismo: misma.",
+          "es": "Mismas no es la forma femenino plural de mismo: misma."
+        }
+      }
     },
     {
       "kind": "form",
@@ -900,7 +980,17 @@
       "verb": "demasiado",
       "person": "masculino plural",
       "answer": "demasiados",
-      "table": "formas"
+      "table": "formas",
+      "wrong": {
+        "demasiado": {
+          "en": "Demasiado is not the masculine singular form of demasiado: demasiados.",
+          "es": "Demasiado no es la forma masculino singular de demasiado: demasiados."
+        },
+        "demasiadas": {
+          "en": "Demasiadas is not the feminine plural form of demasiado: demasiados.",
+          "es": "Demasiadas no es la forma femenino plural de demasiado: demasiados."
+        }
+      }
     },
     {
       "kind": "form",
@@ -908,7 +998,17 @@
       "verb": "otro",
       "person": "masculino plural",
       "answer": "otros",
-      "table": "formas"
+      "table": "formas",
+      "wrong": {
+        "otro": {
+          "en": "Otro is not the masculine singular form of otro: otros.",
+          "es": "Otro no es la forma masculino singular de otro: otros."
+        },
+        "otras": {
+          "en": "Otras is not the feminine plural form of otro: otros.",
+          "es": "Otras no es la forma femenino plural de otro: otros."
+        }
+      }
     },
     {
       "kind": "form",
@@ -916,7 +1016,17 @@
       "verb": "todo",
       "person": "femenino singular",
       "answer": "toda",
-      "table": "formas"
+      "table": "formas",
+      "wrong": {
+        "todo": {
+          "en": "Todo is not the masculine singular form of todo: toda.",
+          "es": "Todo no es la forma masculino singular de todo: toda."
+        },
+        "todas": {
+          "en": "Todas is not the feminine plural form of todo: toda.",
+          "es": "Todas no es la forma femenino plural de todo: toda."
+        }
+      }
     },
     {
       "kind": "form",
@@ -924,7 +1034,17 @@
       "verb": "demasiado",
       "person": "femenino plural",
       "answer": "demasiadas",
-      "table": "formas"
+      "table": "formas",
+      "wrong": {
+        "demasiados": {
+          "en": "Demasiados is not the masculine plural form of demasiado: demasiadas.",
+          "es": "Demasiados no es la forma masculino plural de demasiado: demasiadas."
+        },
+        "demasiada": {
+          "en": "Demasiada is not the feminine singular form of demasiado: demasiadas.",
+          "es": "Demasiada no es la forma femenino singular de demasiado: demasiadas."
+        }
+      }
     },
     {
       "kind": "why",
