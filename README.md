@@ -99,6 +99,10 @@ npm run test:ci        # jest with coverage
 `npm run ui:overlap` renders the web build in headless Chrome and reports clipped, overlapping,
 overflowing or low-contrast text for every theme. Run it after UI changes.
 
+`npm run smoke:web-keyboard` taps every typing field of the web build with real taps in Chrome on an Android
+emulator, and fails if the phone keyboard closes again or a typed letter does not arrive. Jest and desktop browsers
+cannot see this. Run it before a web deploy (see [Web deploy](#web-deploy)).
+
 ## CI
 
 All workflows are in `.github/workflows/`. Superseded runs on the same ref are cancelled.
@@ -155,6 +159,25 @@ part of the normal release path.
 5. Upload the bundle in the Google Play Console.
 6. Tag the commit `vX.Y.Z` and publish a GitHub Release. `hygiene.yml` warns when a release commit has
    no tag.
+
+## Web deploy
+
+The web build is served by the Cloudflare Worker in `cloud/`, and goes out by hand from an up-to-date `main`:
+
+```bash
+npm run smoke:web-keyboard   # builds dist/; 0 = go on, 1 = do not deploy, 2 = the check could not run
+cd cloud && npm run deploy   # builds dist/ again, then wrangler deploy
+```
+
+`smoke:web-keyboard` (`scripts/web-keyboard-smoke.mjs`) walks onboarding and checks the Learn card, the feedback form,
+the tense drill, the grammar table deck and sign-in. It needs Node 22 or newer, the Android SDK and an AVD named
+`kimacha_smoke` with Chrome (`--avd` picks another). It boots the AVD if it is not running and stops it again, and
+restores what it changes on a running one; `--no-build` or `--dist <dir>` skip the build. A failure prints the focus and
+scroll log of the page and saves a screenshot.
+
+It is not a CI job. A fresh emulator needs minutes before Chrome answers reliably, even on a desktop machine; the Chrome
+in the stock system image is old (124, against 156 on the updated AVD), while this bug class depends on the real browser;
+and since web deploys are manual, the step before the deploy already stops a bad build before it reaches anyone.
 
 ## Privacy
 
