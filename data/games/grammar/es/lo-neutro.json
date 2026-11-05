@@ -731,7 +731,13 @@
       "verb": "forma",
       "person": "Para el examen, ___ (importante) es dormir.",
       "answer": "lo importante",
-      "table": "lo-forma"
+      "table": "lo-forma",
+      "wrong": {
+        "el importante": {
+          "en": "El importante points to a specific masculine noun (\"the ... one\"). For an idea or \"the ... thing\", Spanish uses lo: lo importante.",
+          "es": "El importante apunta a un sustantivo masculino concreto (\"el ... que\"). Para una idea o \"lo que es ...\", el español usa lo: lo importante."
+        }
+      }
     },
     {
       "id": "lon-form-02",
@@ -739,7 +745,13 @@
       "verb": "forma",
       "person": "Me gusta la casa, pero ___ (malo) es el ruido.",
       "answer": "lo malo",
-      "table": "lo-forma"
+      "table": "lo-forma",
+      "wrong": {
+        "el malo": {
+          "en": "El malo points to a specific masculine noun (\"the ... one\"). For an idea or \"the ... thing\", Spanish uses lo: lo malo.",
+          "es": "El malo apunta a un sustantivo masculino concreto (\"el ... que\"). Para una idea o \"lo que es ...\", el español usa lo: lo malo."
+        }
+      }
     },
     {
       "id": "lon-form-03",
@@ -747,7 +759,13 @@
       "verb": "forma",
       "person": "En esta ciudad ___ (difícil) es encontrar casa.",
       "answer": "lo difícil",
-      "table": "lo-forma"
+      "table": "lo-forma",
+      "wrong": {
+        "el difícil": {
+          "en": "El difícil points to a specific masculine noun (\"the ... one\"). For an idea or \"the ... thing\", Spanish uses lo: lo difícil.",
+          "es": "El difícil apunta a un sustantivo masculino concreto (\"el ... que\"). Para una idea o \"lo que es ...\", el español usa lo: lo difícil."
+        }
+      }
     },
     {
       "id": "lon-form-04",
@@ -755,7 +773,13 @@
       "verb": "forma",
       "person": "Cuéntame ___ (mejor) de tu viaje.",
       "answer": "lo mejor",
-      "table": "lo-forma"
+      "table": "lo-forma",
+      "wrong": {
+        "el mejor": {
+          "en": "El mejor points to a specific masculine noun (\"the ... one\"). For an idea or \"the ... thing\", Spanish uses lo: lo mejor.",
+          "es": "El mejor apunta a un sustantivo masculino concreto (\"el ... que\"). Para una idea o \"lo que es ...\", el español usa lo: lo mejor."
+        }
+      }
     },
     {
       "id": "lon-form-05",
@@ -763,7 +787,17 @@
       "verb": "forma",
       "person": "Hice ___ (mismo) que tú.",
       "answer": "lo mismo",
-      "table": "lo-forma"
+      "table": "lo-forma",
+      "wrong": {
+        "el mismo": {
+          "en": "El mismo points to a specific masculine noun (\"the ... one\"). For an idea or \"the ... thing\", Spanish uses lo: lo mismo.",
+          "es": "El mismo apunta a un sustantivo masculino concreto (\"el ... que\"). Para una idea o \"lo que es ...\", el español usa lo: lo mismo."
+        },
+        "la misma": {
+          "en": "La misma points to a specific feminine noun (\"the ... one\"). For an idea or \"the ... thing\", Spanish uses lo: lo mismo.",
+          "es": "La misma apunta a un sustantivo femenino concreto (\"el ... que\"). Para una idea o \"lo que es ...\", el español usa lo: lo mismo."
+        }
+      }
     },
     {
       "id": "lon-form-06",
@@ -771,7 +805,17 @@
       "verb": "forma",
       "person": "No entiendo ___ dices.",
       "answer": "lo que",
-      "table": "lo-forma"
+      "table": "lo-forma",
+      "wrong": {
+        "que": {
+          "en": "Que alone cannot mean \"what\". For \"what\" as the object of entiendo, Spanish uses lo que: lo que.",
+          "es": "Que solo no puede significar \"lo que\". Para \"lo que\" como objeto de entiendo, el español usa lo que: lo que."
+        },
+        "lo cual": {
+          "en": "Lo cual refers back to something already said, not to what comes next. Before a new clause, use lo que: lo que.",
+          "es": "Lo cual se refiere a algo ya dicho, no a lo que viene después. Antes de una oración nueva se usa lo que: lo que."
+        }
+      }
     },
     {
       "id": "lon-form-07",
@@ -779,7 +823,13 @@
       "verb": "forma",
       "person": "Todo ___ tengo está en esta caja.",
       "answer": "lo que",
-      "table": "lo-forma"
+      "table": "lo-forma",
+      "wrong": {
+        "que": {
+          "en": "After todo, Spanish needs lo que for \"everything that\": lo que.",
+          "es": "Después de todo, el español necesita lo que para \"todo lo que\": lo que."
+        }
+      }
     },
     {
       "id": "lon-form-08",
@@ -787,7 +837,17 @@
       "verb": "forma",
       "person": "forma formal, escrita (empieza por «lo c»): Llegó tarde, ___ no me gustó nada.",
       "answer": "lo cual",
-      "table": "lo-forma"
+      "table": "lo-forma",
+      "wrong": {
+        "el cual": {
+          "en": "El cual refers to a masculine noun. Here the relative clause refers to the whole fact (Llegó tarde), so the neuter form is used: lo cual.",
+          "es": "El cual se refiere a un sustantivo masculino. Aquí la oración de relativo se refiere a todo el hecho (Llegó tarde), así que se usa la forma neutra: lo cual."
+        },
+        "cual": {
+          "en": "Cual needs its article here. Referring to the whole fact before the comma, the form is lo cual: lo cual.",
+          "es": "Cual necesita aquí su artículo. Para referirse a todo el hecho anterior a la coma, la forma es lo cual: lo cual."
+        }
+      }
     },
     {
       "id": "lon-form-09",
@@ -795,7 +855,13 @@
       "verb": "forma",
       "person": "¿Qué pasó con ___ Pedro?",
       "answer": "lo de",
-      "table": "lo-forma"
+      "table": "lo-forma",
+      "wrong": {
+        "el de": {
+          "en": "El de means \"the one of\" (a masculine thing). To mean \"the matter of Pedro\", Spanish uses lo de: lo de.",
+          "es": "El de significa \"el que es de\" (una cosa masculina). Para decir \"el asunto de Pedro\" se usa lo de: lo de."
+        }
+      }
     },
     {
       "id": "lon-form-10",
@@ -803,7 +869,13 @@
       "verb": "forma",
       "person": "No quiero hablar de ___ ayer.",
       "answer": "lo de",
-      "table": "lo-forma"
+      "table": "lo-forma",
+      "wrong": {
+        "el de": {
+          "en": "El de ayer means \"the one from yesterday\" (a masculine thing). To mean \"what happened yesterday\", Spanish uses lo de: lo de.",
+          "es": "El de ayer significa \"el de ayer\" (una cosa masculina). Para decir \"lo que pasó ayer\" se usa lo de: lo de."
+        }
+      }
     },
     {
       "id": "lon-form-11",
@@ -811,7 +883,13 @@
       "verb": "forma",
       "person": "No sabes ___ (bien) canta mi hermana.",
       "answer": "lo bien que",
-      "table": "lo-forma"
+      "table": "lo-forma",
+      "wrong": {
+        "lo bien": {
+          "en": "In this exclamatory use (how well ...), lo + adverb needs que: lo bien que.",
+          "es": "En este uso exclamativo (qué bien ...), lo + adverbio necesita que: lo bien que."
+        }
+      }
     },
     {
       "id": "lon-form-12",
@@ -819,7 +897,17 @@
       "verb": "forma",
       "person": "Mira ___ (grande) son tus hijos.",
       "answer": "lo grandes que",
-      "table": "lo-forma"
+      "table": "lo-forma",
+      "wrong": {
+        "lo grande que": {
+          "en": "With lo + adjective, the adjective agrees with the noun: tus hijos is plural, so the adjective is grandes: lo grandes que.",
+          "es": "Con lo + adjetivo, el adjetivo concuerda con el sustantivo: tus hijos es plural, así que el adjetivo es grandes: lo grandes que."
+        },
+        "lo grandes": {
+          "en": "In this exclamatory use (how big ...), lo + adjective needs que: lo grandes que.",
+          "es": "En este uso exclamativo (qué grandes ...), lo + adjetivo necesita que: lo grandes que."
+        }
+      }
     },
     {
       "kind": "why",
