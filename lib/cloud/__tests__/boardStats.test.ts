@@ -1,5 +1,5 @@
-import type { BoardRow } from '../board';
-import { BOARD_LIST_MAX, daysLeft, gaps, shiftDate, weekDayIndex, weekDayOffset, weekSummary } from '../boardStats';
+import type { BoardData, BoardRow } from '../board';
+import { BOARD_LIST_MAX, daysLeft, formatMinutes, gaps, shiftDate, timeView, weekDayIndex, weekDayOffset, weekSummary } from '../boardStats';
 
 const rows = (xps: number[]): BoardRow[] => xps.map((xp, i) => ({ rank: i + 1, name: `p${i + 1}`, xp, me: false }));
 
@@ -79,5 +79,42 @@ describe('days', () => {
     expect(weekDayOffset('2026-11-02', new Date(2026, 10, 9, 0, 5))).toBe(7);
     expect(weekDayOffset('2026-11-02', new Date(2026, 10, 1))).toBe(-1);
     expect(weekDayOffset('nonsense', new Date(2026, 10, 1))).toBeNaN();
+  });
+});
+
+describe('formatMinutes', () => {
+  it('writes `3 h 25 min` from an hour on, and plain minutes under it', () => {
+    expect(formatMinutes(205)).toBe('3 h 25 min');
+    expect(formatMinutes(60)).toBe('1 h 0 min');
+    expect(formatMinutes(59)).toBe('59 min');
+    expect(formatMinutes(0)).toBe('0 min');
+    expect(formatMinutes(1440 * 7)).toBe('168 h 0 min');
+  });
+
+  it('rounds fractions and never shows a negative or broken figure as one', () => {
+    expect(formatMinutes(59.6)).toBe('1 h 0 min');
+    expect(formatMinutes(12.4)).toBe('12 min');
+    expect(formatMinutes(-5)).toBe('0 min');
+  });
+});
+
+describe('timeView', () => {
+  const data: BoardData = {
+    weekStart: '2026-11-02',
+    metric: 'time',
+    rows: [
+      { rank: 1, name: 'Ana', xp: 10, minutes: 75, me: false },
+      { rank: 2, name: 'Old', xp: 5, me: true },
+    ],
+    me: { rank: 2, xp: 5, name: 'Old' },
+  };
+
+  it('puts the minutes into `xp` of every row and of me (0 where there are none), and leaves the rest', () => {
+    const v = timeView(data);
+    expect(v.rows.map((r) => [r.rank, r.name, r.xp, r.minutes])).toEqual([[1, 'Ana', 75, 75], [2, 'Old', 0, undefined]]);
+    expect(v.me).toEqual({ rank: 2, xp: 0, name: 'Old' });
+    expect(v.metric).toBe('time');
+    expect(timeView({ ...data, me: null }).me).toBeNull();
+    expect(data.rows[0].xp).toBe(10); // the input is not changed
   });
 });

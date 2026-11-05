@@ -4,20 +4,18 @@ import { Animated, StyleSheet, View, type LayoutChangeEvent } from 'react-native
 import { Text } from '@/components/KText';
 import Colors from '@/constants/Colors';
 import { fontSize, fontWeight, radius, spacing, tapTarget } from '@/constants/Theme';
-import type { BoardRow } from '@/lib/cloud/board';
-import { t } from '@/lib/i18n';
+import type { BoardMetric, BoardRow } from '@/lib/cloud/board';
 import { mixColor } from '@/lib/mixColor';
 import { useTheme } from '@/lib/ThemeContext';
-import { avatarColor } from './boardUi';
+import { avatarColor, rankText, valueText } from './boardUi';
 import type { Gains } from './Podium';
 import RiseChip from './RiseChip';
 
 const SLIDE_MS = 400;
 
-function Row({ row, gain, onGainDone, animate }: { row: BoardRow; gain?: Gains[string]; onGainDone?: (name: string, id: number) => void; animate: boolean }) {
+function Row({ row, gain, onGainDone, animate, metric }: { row: BoardRow; gain?: Gains[string]; onGainDone?: (name: string, id: number) => void; animate: boolean; metric: BoardMetric }) {
   const { theme } = useTheme();
   const colors = Colors[theme];
-  const s = t().board;
   const [slide] = useState(() => new Animated.Value(0));
   const lastY = useRef<number | null>(null);
   // A row that moved (the order changed) glides from its old place to the new one.
@@ -33,7 +31,7 @@ function Row({ row, gain, onGainDone, animate }: { row: BoardRow; gain?: Gains[s
     <Animated.View
       testID={row.me ? 'board-row-me' : `board-row-${row.rank}`}
       accessible
-      accessibilityLabel={`${row.name}, ${s.rankLine(row.rank, row.xp)}`}
+      accessibilityLabel={`${row.name}, ${rankText(metric, row.rank, row.xp)}`}
       accessibilityState={{ selected: row.me }}
       onLayout={onLayout}
       style={[styles.row, { backgroundColor: row.me ? mixColor(colors.tint, colors.card, 0.2) : colors.card, transform: [{ translateY: slide }] }]}
@@ -43,18 +41,18 @@ function Row({ row, gain, onGainDone, animate }: { row: BoardRow; gain?: Gains[s
         <Text style={[styles.letter, { color: colors.text }]}>{[...row.name][0].toUpperCase()}</Text>
       </View>
       <Text numberOfLines={1} style={[styles.name, { color: colors.text }]}>{row.name}</Text>
-      <Text style={[styles.xp, { color: colors.text }]}>{s.xp(row.xp)}</Text>
+      <Text style={[styles.xp, { color: colors.text }]}>{valueText(metric, row.xp)}</Text>
       {gain ? <RiseChip key={gain.id} delta={gain.delta} onDone={() => onGainDone?.(row.name, gain.id)} style={styles.gain} /> : null}
     </Animated.View>
   );
 }
 
 // The list from the 4th place down; rows are keyed by name so a row that changes place keeps its identity and can slide.
-export default function BoardList({ rows, gains, onGainDone, animate }: { rows: BoardRow[]; gains: Gains; onGainDone: (name: string, id: number) => void; animate: boolean }) {
+export default function BoardList({ rows, gains, onGainDone, animate, metric = 'xp' }: { rows: BoardRow[]; gains: Gains; onGainDone: (name: string, id: number) => void; animate: boolean; metric?: BoardMetric }) {
   return (
     <View>
       {rows.map((r) => (
-        <Row key={r.name} row={r} gain={gains[r.name]} onGainDone={onGainDone} animate={animate} />
+        <Row key={r.name} row={r} gain={gains[r.name]} onGainDone={onGainDone} animate={animate} metric={metric} />
       ))}
     </View>
   );

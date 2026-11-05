@@ -6,7 +6,7 @@
 import { DurableObject } from 'cloudflare:workers';
 import { nameKey } from '../lib/cloud/validate';
 import { ADMIN_PAGE } from './admin';
-import { BOARD_JOINS_PER_DAY, BOARD_RETENTION_DAYS, adminAuthorized, afterBadPin, afterBadPinForName, bearerToken, boardToday, clientIp, displayName, lockRemainingSec, parseBaseRev, parseBoardDays, parseBoardName, parseLogin, parsePayload, rankBoard, safeEqual, secondsToNextUtcDay, toAdminStats, toHex, weekStartOf } from './logic';
+import { BOARD_JOINS_PER_DAY, BOARD_RETENTION_DAYS, adminAuthorized, afterBadPin, afterBadPinForName, bearerToken, boardToday, clientIp, displayName, lockRemainingSec, parseBaseRev, parseBoardDays, parseBoardMetric, parseBoardMinutes, parseBoardName, parseLogin, parsePayload, rankBoard, safeEqual, secondsToNextUtcDay, toAdminStats, toHex, weekStartOf } from './logic';
 import type { AdminUserRow } from './logic';
 
 interface Env {
@@ -83,6 +83,10 @@ export class KimachaUsers extends DurableObject<Env> {
       `CREATE TABLE IF NOT EXISTS board (
         owner TEXT PRIMARY KEY, name_key TEXT NOT NULL UNIQUE, display_name TEXT NOT NULL, daily_xp TEXT NOT NULL DEFAULT '[]', updated_at TEXT NOT NULL)`,
     );
+    // `daily_minutes`: the learning minutes per day, a JSON array of [date, minutes], added later (the time ranking): a table made before
+    // it gets the column here, and a row nobody pushed minutes to keeps '[]'.
+    const boardColumns = new Set(sql.exec<{ name: string }>('PRAGMA table_info(board)').toArray().map((c) => c.name));
+    if (!boardColumns.has('daily_minutes')) sql.exec("ALTER TABLE board ADD COLUMN daily_minutes TEXT NOT NULL DEFAULT '[]'");
     sql.exec('CREATE TABLE IF NOT EXISTS board_joins (ip TEXT NOT NULL, day TEXT NOT NULL, count INTEGER NOT NULL DEFAULT 0, PRIMARY KEY (ip, day))');
     // An account that left the board (DELETE /api/board/me) stays off it: its next automatic push would otherwise put it back.
     sql.exec('CREATE TABLE IF NOT EXISTS board_optout (name_key TEXT PRIMARY KEY)');
@@ -287,11 +291,14 @@ export class KimachaUsers extends DurableObject<Env> {
     this.purgeBoard(now);
     const caller = await this.boardCaller(req);
     if (!caller) return json({ error: 'bad_token' }, 401);
-    const days = parseBoardDays(body, new Date(now).toISOString().slice(0, 10));
+    const utcToday = new Date(now).toISOString().slice(0, 10);
+    const days = parseBoardDays(body, utcToday);
     if (!days) return json({ error: 'bad_input' }, 400);
     if (caller.web && this.optedOut(caller.key)) return json({}); // left the board: the automatic push writes nothing
     const sql = this.ctx.storage.sql;
     const updatedAt = new Date(now).toISOString();
+    // An old client sends no minutes (or junk): the stored ones stay, the XP push still succeeds.
+    const minutes = parseBoardMinutes(body, utcToday);
     if (caller.web) {
       sql.exec(
         `INSERT INTO board (owner, name_key, display_name, daily_xp, updated_at) VALUES (?, ?, ?, ?, ?)
@@ -305,6 +312,7 @@ export class KimachaUsers extends DurableObject<Env> {
     } else {
       sql.exec('UPDATE board SET daily_xp = ?, updated_at = ? WHERE owner = ?', JSON.stringify(days), updatedAt, caller.owner);
     }
+    if (minutes) sql.exec('UPDATE board SET daily_minutes = ? WHERE owner = ?', JSON.stringify(minutes), caller.owner);
     return json({});
   }
 
@@ -316,14 +324,16 @@ export class KimachaUsers extends DurableObject<Env> {
     const utcToday = new Date(now).toISOString().slice(0, 10);
     const weekStart = weekStartOf(boardToday(new URL(req.url).searchParams.get('today'), utcToday));
     const entries = this.ctx.storage.sql
-      .exec<{ owner: string; display_name: string; daily_xp: string }>('SELECT owner, display_name, daily_xp FROM board')
+      .exec<{ owner: string; display_name: string; daily_xp: string; daily_minutes: string }>('SELECT owner, display_name, daily_xp, daily_minutes FROM board')
       .toArray()
-      .map((r) => ({ owner: r.owner, name: r.display_name, dailyXp: r.daily_xp }));
+      .map((r) => ({ owner: r.owner, name: r.display_name, dailyXp: r.daily_xp, dailyMinutes: r.daily_minutes }));
+    // `?metric=time` ranks by learning minutes; the answer says which metric it is (an old worker's answer has no `metric`).
+    const metric = parseBoardMetric(new URL(req.url).searchParams.get('metric'));
     // An account that left sees the list but is not on it: `me` null, `left` true.
-    if (caller.web && this.optedOut(caller.key)) return json({ weekStart, ...rankBoard(entries, weekStart, caller.owner), me: null, left: true });
+    if (caller.web && this.optedOut(caller.key)) return json({ weekStart, metric, ...rankBoard(entries, weekStart, caller.owner, metric), me: null, left: true });
     // An account that has not pushed yet has no row, but still sees itself: 0 XP, last.
-    if (!entries.some((e) => e.owner === caller.owner)) entries.push({ owner: caller.owner, name: caller.name, dailyXp: '[]' });
-    return json({ weekStart, ...rankBoard(entries, weekStart, caller.owner) });
+    if (!entries.some((e) => e.owner === caller.owner)) entries.push({ owner: caller.owner, name: caller.name, dailyXp: '[]', dailyMinutes: '[]' });
+    return json({ weekStart, metric, ...rankBoard(entries, weekStart, caller.owner, metric) });
   }
 
   private async deleteBoardMe(req: Request): Promise<Response> {

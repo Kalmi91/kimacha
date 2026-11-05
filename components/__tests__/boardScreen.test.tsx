@@ -30,6 +30,7 @@ import { BOTS } from '@/lib/cloud/boardBots';
 import * as botsModule from '@/lib/cloud/boardBots';
 import { BOARD_LIST_MAX, shiftDate } from '@/lib/cloud/boardStats';
 import { getDb } from '@/lib/database';
+import { loadResumeValue, saveResumeValue } from '@/lib/resumeStore';
 import { setLanguage } from '@/lib/i18n';
 import { ThemeProvider } from '@/lib/ThemeContext';
 import { localDateString } from '@/lib/usageStats';
@@ -82,6 +83,7 @@ describe('BoardScreen', () => {
     (globalThis as any).fetch = mockFetch;
     await getDb().setGrammarPalette('classic');
     await getDb().setBoardIdentity(null);
+    await saveResumeValue(getDb(), 'board-metric', null);
   });
   afterEach(() => {
     jest.restoreAllMocks();
@@ -797,6 +799,129 @@ describe('BoardScreen', () => {
       expect(await view.findByText('Too many people have joined from this network today. Try again tomorrow.')).toBeTruthy();
       expect(view.getByTestId('board-rejoin')).toBeTruthy();
       view.unmount();
+    });
+  });
+  describe('time ranking', () => {
+    const trow = (rank: number, name: string, minutes: number, xp: number, me = false) => ({ rank, name, xp, minutes, me });
+    const TIME_BOARD = {
+      weekStart: WEEK_START,
+      metric: 'time',
+      rows: [trow(1, 'Beto', 205, 90), trow(2, 'Ana', 190, 412), trow(3, 'Cris', 95, 305), trow(4, 'Kálmán', 40, 172, true), trow(5, 'Dani', 12, 241)],
+      me: { rank: 4, xp: 172, minutes: 40, name: 'Kálmán' },
+    };
+    const gets = () => callsTo('GET', '/api/board').map(([url]) => String(url));
+    const ready = async () => {
+      await getDb().setBoardIdentity({ token: 'dev-tok', name: 'Kálmán' });
+    };
+
+    it('shows the XP ranking first with a switch on top, and the switch asks the worker for the time ranking and shows `3 h 25 min`', async () => {
+      await ready();
+      serveBoard(() => (gets().at(-1)!.includes('metric=time') ? TIME_BOARD : BOARD)); // the worker answers the ranking the last request asked for
+      const view = renderScreen();
+      expect(await view.findByTestId('board-mebar')).toBeTruthy();
+      expect(view.getByTestId('board-metric-xp').props.accessibilityState.selected).toBe(true);
+      expect(view.getAllByText('412 XP').length).toBeGreaterThan(0);
+      expect(gets().every((u) => !u.includes('metric'))).toBe(true);
+
+      fireEvent.press(view.getByTestId('board-metric-time'));
+      expect(await view.findByText('3 h 25 min')).toBeTruthy(); // Beto, 1st on the podium
+      expect(view.getByText('3 h 10 min')).toBeTruthy();
+      expect(view.getByText('1 h 35 min')).toBeTruthy();
+      expect(view.getByTestId('board-metric-time').props.accessibilityState.selected).toBe(true);
+      expect(view.getByTestId('board-rank').props.children).toBe('4.');
+      expect(view.getByText('Kálmán · 40 min')).toBeTruthy(); // the bottom bar follows the metric
+      expect(view.getByText('56 min to pass')).toBeTruthy(); // 95 - 40 + 1
+      expect(view.queryByText('412 XP')).toBeNull();
+      expect(gets().some((u) => u.endsWith(`?today=${localDateString()}&metric=time`))).toBe(true);
+      // the own-week panel follows too: weekly time instead of weekly XP, no daily XP goal
+      expect(view.getByText('Weekly time')).toBeTruthy();
+      expect(view.queryByText('Weekly XP')).toBeNull();
+      expect(view.queryByText('To daily goal')).toBeNull();
+      expect(view.queryByText(/^goal /)).toBeNull();
+
+      fireEvent.press(view.getByTestId('board-metric-xp'));
+      expect(await view.findByText('412 XP')).toBeTruthy();
+      expect(view.getByText('Weekly XP')).toBeTruthy();
+      view.unmount();
+    });
+
+    it('the own week in minutes comes from the local usage: today, and the best day', async () => {
+      await ready();
+      for (let i = 0; i < 3; i++) await getDb().addUsageMinute();
+      const today = (await getDb().getUsageStats()).today; // the in-memory database is shared by the tests of this file
+      serveBoard(() => TIME_BOARD);
+      await saveResumeValue(getDb(), 'board-metric', 'time');
+      const view = renderScreen();
+      expect(await view.findByText(`today ${today} min`)).toBeTruthy();
+      view.unmount();
+    });
+
+    it('remembers the choice: it is stored, and a new screen asks for the time ranking from the first request', async () => {
+      await ready();
+      serveBoard(() => (gets().at(-1)!.includes('metric=time') ? TIME_BOARD : BOARD)); // the worker answers the ranking the last request asked for
+      const first = renderScreen();
+      fireEvent.press(await first.findByTestId('board-metric-time'));
+      await first.findByText('3 h 25 min');
+      expect(await loadResumeValue(getDb(), 'board-metric')).toBe('time');
+      first.unmount();
+
+      mockFetch.mockClear();
+      const again = renderScreen();
+      expect(await again.findByText('3 h 25 min')).toBeTruthy();
+      expect(again.getByTestId('board-metric-time').props.accessibilityState.selected).toBe(true);
+      expect(gets()[0]).toContain('metric=time');
+      again.unmount();
+    });
+
+    it('sends the day minutes with the XP in every push', async () => {
+      await ready();
+      await getDb().addUsageMinute();
+      const today = (await getDb().getUsageStats()).today;
+      serveBoard();
+      const view = renderScreen();
+      await view.findByTestId('board-mebar');
+      const body = JSON.parse(callsTo('PUT', '/api/board/xp')[0][1].body);
+      expect(body.days).toHaveLength(14);
+      expect(body.minutes).toHaveLength(14);
+      expect(body.minutes[13]).toEqual([localDateString(), today]);
+      view.unmount();
+    });
+
+    it('against a worker from before the time ranking: the answer has no metric, so the XP board stays, the switch is gone and nothing errors', async () => {
+      await ready();
+      await saveResumeValue(getDb(), 'board-metric', 'time');
+      serveBoard(); // answers by XP, rows without minutes, no `metric`
+      const view = renderScreen();
+      expect(await view.findByTestId('board-mebar')).toBeTruthy();
+      expect(view.getAllByText('412 XP').length).toBeGreaterThan(0);
+      expect(view.queryByTestId('board-metric-time')).toBeNull();
+      expect(view.queryByTestId('board-metric-xp')).toBeNull();
+      expect(view.queryByTestId('board-error')).toBeNull();
+      expect(view.queryByTestId('board-offline')).toBeNull();
+      view.unmount();
+    });
+
+    it('nobody has learned yet: the time board says so in its own words', async () => {
+      await ready();
+      await saveResumeValue(getDb(), 'board-metric', 'time');
+      serveBoard(() => ({ weekStart: WEEK_START, metric: 'time', rows: [trow(1, 'Kálmán', 0, 0, true)], me: { rank: 1, xp: 0, minutes: 0, name: 'Kálmán' } }));
+      const view = renderScreen();
+      expect(await view.findByTestId('board-empty')).toBeTruthy();
+      expect(view.getByText('Nobody has learned this week yet.')).toBeTruthy();
+      view.unmount();
+    });
+
+    it('every UI language has the switch and the time wording', async () => {
+      await ready();
+      await saveResumeValue(getDb(), 'board-metric', 'time');
+      serveBoard(() => TIME_BOARD);
+      for (const [lang, label] of [['es', 'Tiempo'], ['hu', 'Idő'], ['de', 'Zeit']] as const) {
+        setLanguage(lang);
+        const view = renderScreen();
+        expect(await view.findByText(label)).toBeTruthy();
+        expect(view.getByText('3 h 25 min')).toBeTruthy();
+        view.unmount();
+      }
     });
   });
 });

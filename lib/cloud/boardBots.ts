@@ -1,7 +1,7 @@
 // The made-up players of the weekly leaderboard (components/board/): a fixed cast whose XP is computed from the clock, so the board
 // is never empty and moves while the screen is open. Pure and deterministic: the same week + name + time always gives the same XP
 // (no Math.random, nothing stored), so every device and every refresh agrees. The server knows nothing about them.
-import type { BoardData, BoardRow } from './board';
+import type { BoardData, BoardMetric, BoardRow } from './board';
 import { BOARD_LIST_MAX, weekDayOffset } from './boardStats';
 import { nameKey } from './validate';
 
@@ -47,6 +47,10 @@ const DAY_MINUTES = 24 * 60;
 const ACTIVE_FROM = 7 * 60;
 const ACTIVE_TO = 23 * 60;
 const STEADY_SHARE = 0.6;
+// Minutes of learning per XP over a bot's week: a 350 XP week (50 a day) comes to about 3 to 4 hours, next to the 7 hour weekly goal of the Stats tab.
+// Chosen to look plausible next to a real learner, not measured.
+const MINUTES_PER_XP_MIN = 0.5;
+const MINUTES_PER_XP_MAX = 0.85;
 
 // FNV-1a: a text to a 32-bit number
 function fnv1a(text: string): number {
@@ -79,6 +83,8 @@ interface Session {
 
 interface DayPlan {
   xp: number;
+  // the day's learning minutes: the XP times the week's minutes per XP, spread over the sessions like the XP is
+  minutes: number;
   sessions: Session[];
 }
 
@@ -92,6 +98,8 @@ function planWeek(bot: Bot, weekStart: string): DayPlan[] {
   });
   if (!weights.some((w) => w > 0)) weights[0] = 1;
   const sum = weights.reduce((a, b) => a + b, 0);
+  // The minutes come from their own random stream, so the XP plan above is the same as before they existed.
+  const minutesPerXp = MINUTES_PER_XP_MIN + (MINUTES_PER_XP_MAX - MINUTES_PER_XP_MIN) * mulberry32(fnv1a(`${weekStart}|${bot.name}|minutes`))();
   return weights.map((w) => {
     const count = 4 + Math.floor(rng() * 5);
     const raw = Array.from({ length: count }, (_, i) => {
@@ -101,7 +109,8 @@ function planWeek(bot: Bot, weekStart: string): DayPlan[] {
       return { start, end: start + 20 + Math.floor(rng() * 31), weight: 0.5 + rng() };
     });
     const parts = raw.reduce((a, s) => a + s.weight, 0);
-    return { xp: (target * w) / sum, sessions: raw.map((s) => ({ start: s.start, end: s.end, share: s.weight / parts })) };
+    const xp = (target * w) / sum;
+    return { xp, minutes: xp * minutesPerXp, sessions: raw.map((s) => ({ start: s.start, end: s.end, share: s.weight / parts })) };
   });
 }
 
@@ -138,14 +147,30 @@ export function botXpAt(bot: Bot, weekStart: string, dayIndex: number, minuteOfD
   return Math.floor(total + plan[day].xp * (done ? 1 : Math.min(1, STEADY_SHARE * steady + (1 - STEADY_SHARE) * part)));
 }
 
-// The board order of the server (cloud/logic.ts rankBoard): XP descending, then the name with case and accents ignored.
-const byXpThenName = (a: { xp: number; name: string }, b: { xp: number; name: string }) =>
-  b.xp - a.xp || a.name.localeCompare(b.name, undefined, { sensitivity: 'base' });
+// The bot's learning minutes so far this week, a whole number that never goes down: the earlier days in full plus today's, which grow
+// only while a session of the day runs (linearly, like the session part of the XP). A resting day has 0, and so has a bot with no XP.
+export function botMinutesAt(bot: Bot, weekStart: string, dayIndex: number, minuteOfDay: number): number {
+  const plan = planFor(bot, weekStart);
+  const day = Math.min(6, Math.max(0, dayIndex));
+  const minute = Math.min(DAY_MINUTES - 1, Math.max(0, minuteOfDay));
+  let total = 0;
+  for (let i = 0; i < day; i++) total += plan[i].minutes;
+  const part = plan[day].sessions.reduce((a, s) => a + s.share * Math.min(1, Math.max(0, (minute - s.start) / (s.end - s.start))), 0);
+  return Math.floor(total + plan[day].minutes * Math.min(1, part));
+}
+
+// The board order of the server (cloud/logic.ts rankBoard): the ranked figure descending, then the name with case and accents ignored.
+const byValueThenName = (value: (r: { xp: number; minutes: number }) => number) => (a: { xp: number; minutes: number; name: string }, b: { xp: number; minutes: number; name: string }) =>
+  value(b) - value(a) || a.name.localeCompare(b.name, undefined, { sensitivity: 'base' });
 
 // The server's board with the made-up players mixed in at the clock's time `now`: ranks and the 50-row cut are redone, `me.rank`
 // counts the bots ahead of the caller (even when the caller is below the cut). A bot whose name matches a real player (or the
 // caller) is left out, and so is one with 0 XP, like a real player on the server.
 export function withBots(data: BoardData, now: Date = new Date()): BoardData {
+  // The ranking the server answered: by XP, or by learning minutes (data.metric 'time'; an old worker has no metric and ranks by XP).
+  const metric: BoardMetric = data.metric === 'time' ? 'time' : 'xp';
+  const value = (r: { xp: number; minutes: number }) => (metric === 'time' ? r.minutes : r.xp);
+  const order = byValueThenName(value);
   // Past Sunday (a stale week) the bots stand at the week's end, before Monday at its start: their XP never drops in between.
   const offset = weekDayOffset(data.weekStart, now);
   const dayIndex = Number.isFinite(offset) ? Math.min(6, Math.max(0, offset)) : 0;
@@ -153,12 +178,12 @@ export function withBots(data: BoardData, now: Date = new Date()): BoardData {
   const taken = new Set(data.rows.map((r) => nameKey(r.name)));
   if (data.me) taken.add(nameKey(data.me.name));
   const bots = BOTS.filter((b) => !taken.has(nameKey(b.name)))
-    .map((b) => ({ name: b.name, xp: botXpAt(b, data.weekStart, dayIndex, minute), me: false }))
-    .filter((b) => b.xp > 0);
-  const rows: BoardRow[] = [...data.rows, ...bots]
-    .sort((a, b) => byXpThenName(a, b))
+    .map((b) => ({ name: b.name, xp: botXpAt(b, data.weekStart, dayIndex, minute), minutes: botMinutesAt(b, data.weekStart, dayIndex, minute), me: false }))
+    .filter((b) => value(b) > 0);
+  const rows: BoardRow[] = [...data.rows.map((r) => ({ ...r, minutes: r.minutes ?? 0 })), ...bots]
+    .sort(order)
     .slice(0, BOARD_LIST_MAX)
-    .map((r, i) => ({ rank: i + 1, name: r.name, xp: r.xp, me: r.me }));
-  const me = data.me;
-  return { ...data, rows, me: me && { ...me, rank: me.rank + bots.filter((b) => byXpThenName(b, me) < 0).length } };
+    .map((r, i) => ({ rank: i + 1, name: r.name, xp: r.xp, minutes: r.minutes, me: r.me }));
+  const me = data.me && { ...data.me, minutes: data.me.minutes ?? 0 };
+  return { ...data, rows, me: me && { ...me, rank: me.rank + bots.filter((b) => order(b, me) < 0).length } };
 }

@@ -9,7 +9,7 @@ import { AppState, Platform } from 'react-native';
 import { __resetForTests, addXp } from '@/lib/dailyXp';
 import { getDb } from '@/lib/database';
 import { putBoardXp } from '../board';
-import { BOARD_DAYS, PUSH_DEBOUNCE_MS, PUSH_MAX_WAIT_MS, boardPayload, pushBoardNow, startBoardSync } from '../boardSync';
+import { BOARD_DAYS, PUSH_DEBOUNCE_MS, PUSH_MAX_WAIT_MS, boardMinutesPayload, boardPayload, pushBoardNow, startBoardSync } from '../boardSync';
 
 const mockPut = putBoardXp as jest.Mock;
 const IDENTITY = { token: 'dev-tok', name: 'Kálmán' };
@@ -47,6 +47,21 @@ describe('boardPayload', () => {
   });
 });
 
+describe('boardMinutesPayload', () => {
+  it('is the same 14 local days, with the active-use minutes of each day and 0 for a day without any', async () => {
+    const db = getDb();
+    const stats = await db.getUsageStats();
+    const known = new Map(stats.last30Days.map((d) => [d.date, d.minutes]));
+    await db.addUsageMinute(); // today, whatever the shared in-memory database already holds
+    const days = await boardMinutesPayload();
+    expect(days).toHaveLength(BOARD_DAYS);
+    expect(days.map(([d]) => d)).toEqual((await boardPayload()).map(([d]) => d));
+    expect(days[13]).toEqual(['2026-11-03', (known.get('2026-11-03') ?? 0) + 1]);
+    expect(days[12][1]).toBe(known.get('2026-11-02') ?? 0);
+    expect(days.every(([, m]) => Number.isInteger(m) && m >= 0)).toBe(true);
+  });
+});
+
 describe('pushBoardNow', () => {
   it('sends nothing while this device has no identity', async () => {
     await pushBoardNow();
@@ -57,10 +72,11 @@ describe('pushBoardNow', () => {
     await getDb().setBoardIdentity(IDENTITY);
     await pushBoardNow();
     expect(mockPut).toHaveBeenCalledTimes(1);
-    const [token, days] = mockPut.mock.calls[0];
+    const [token, days, minutes] = mockPut.mock.calls[0];
     expect(token).toBe('dev-tok');
     expect(days).toEqual(await boardPayload());
     expect(days).toHaveLength(14);
+    expect(minutes).toEqual(await boardMinutesPayload());
   });
 
   it('runs one push at a time: triggers that arrive meanwhile add exactly one more push, with the newer payload, after it', async () => {

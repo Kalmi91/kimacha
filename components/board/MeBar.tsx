@@ -3,33 +3,40 @@ import { Pressable, StyleSheet, View } from 'react-native';
 import { Text } from '@/components/KText';
 import Colors from '@/constants/Colors';
 import { fontSize, fontWeight, lineHeight, radius, shadow, spacing, tapTarget } from '@/constants/Theme';
-import type { BoardRow } from '@/lib/cloud/board';
-import { gaps } from '@/lib/cloud/boardStats';
+import type { BoardMetric, BoardRow } from '@/lib/cloud/board';
+import { formatMinutes, gaps } from '@/lib/cloud/boardStats';
 import { t } from '@/lib/i18n';
 import { useTheme } from '@/lib/ThemeContext';
+import { rankText, valueText } from './boardUi';
 
 // The bar floating above the tab bar: the own place, name and XP with the gap to the next place (tap: jump to the own-week panel)
 // and the Learn button.
-export default function MeBar({ me, rows, onOpenWeek, onLearn }: { me: { rank: number; xp: number; name: string }; rows: BoardRow[]; onOpenWeek?: () => void; onLearn: () => void }) {
+export default function MeBar({ me, rows, onOpenWeek, onLearn, metric = 'xp' }: { me: { rank: number; xp: number; name: string }; rows: BoardRow[]; onOpenWeek?: () => void; onLearn: () => void; metric?: BoardMetric }) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const s = t().board;
   const { toPass, lead, atTop, alone } = gaps(rows, me);
   // The second line only says what is known: the gap to the player ahead, the lead at the top, or being alone at the top.
-  const hint = toPass !== null ? s.needToPass(toPass) : atTop && lead !== null ? s.leading(lead) : alone ? s.alone : null;
+  const time = metric === 'time';
+  const hint =
+    toPass !== null
+      ? time ? s.needToPassTime(formatMinutes(toPass)) : s.needToPass(toPass)
+      : atTop && lead !== null
+        ? time ? s.leadingTime(formatMinutes(lead)) : s.leading(lead)
+        : alone ? s.alone : null;
   return (
     <View testID="board-mebar" style={[styles.bar, { backgroundColor: colors.text }]}>
       <Pressable
         testID="board-open-week"
         accessibilityRole="button"
-        accessibilityLabel={`${me.name}, ${s.rankLine(me.rank, me.xp)}${hint ? `, ${hint}` : ''}`}
+        accessibilityLabel={`${me.name}, ${rankText(metric, me.rank, me.xp)}${hint ? `, ${hint}` : ''}`}
         onPress={onOpenWeek}
         disabled={!onOpenWeek}
         style={styles.open}
       >
         <Text testID="board-rank" style={[styles.big, { color: colors.background }]}>{`${me.rank}.`}</Text>
         <View style={styles.txt}>
-          <Text numberOfLines={1} style={[styles.name, { color: colors.background }]}>{`${me.name} · ${s.xp(me.xp)}`}</Text>
+          <Text numberOfLines={1} style={[styles.name, { color: colors.background }]}>{`${me.name} · ${valueText(metric, me.xp)}`}</Text>
           {hint ? <Text numberOfLines={1} style={[styles.hint, { color: colors.background }]}>{hint}</Text> : null}
         </View>
       </Pressable>

@@ -51,6 +51,9 @@ function makeSql(legacy = false) {
       return cursor([]);
     }
     if (q.startsWith('create table')) return cursor([]);
+    // the board table is not modelled here (boardWorker.test.ts runs it for real): its column check finds none and the ALTER is accepted
+    if (q === 'pragma table_info(board)') return cursor([]);
+    if (q.startsWith('alter table board add column')) return cursor([]);
     if (q === 'pragma table_info(users)') return cursor([...(columns ?? [])].map((name) => ({ name })));
     if (q === 'alter table users add column rev integer not null default 0') {
       if (!columns || columns.has('rev')) throw new Error('duplicate column name: rev');
