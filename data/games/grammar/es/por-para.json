@@ -462,18 +462,148 @@
         { "es": "escrito por", "en": "written by, passive agent" }
       ]
     },
-    { "id": "pp-form-01", "kind": "form", "verb": "expresión", "person": "___, ¿me pasas la sal?", "answer": "Por favor", "table": "por-para" },
-    { "id": "pp-form-02", "kind": "form", "verb": "expresión", "person": "¿Vienes a la fiesta? ¡___!", "answer": "Por supuesto", "table": "por-para" },
-    { "id": "pp-form-03", "kind": "form", "verb": "expresión", "person": "___ llegó el camión.", "answer": "Por fin", "table": "por-para" },
+    {
+      "id": "pp-form-01",
+      "kind": "form",
+      "verb": "expresión",
+      "person": "___, ¿me pasas la sal?",
+      "answer": "Por favor",
+      "table": "por-para",
+      "wrong": {
+        "para favor": {
+          "en": "The phrase \"Por favor\" is fixed: it is built with por, not para.",
+          "es": "La expresión \"Por favor\" es fija: se forma con por, no con para."
+        }
+      }
+    },
+    {
+      "id": "pp-form-02",
+      "kind": "form",
+      "verb": "expresión",
+      "person": "¿Vienes a la fiesta? ¡___!",
+      "answer": "Por supuesto",
+      "table": "por-para",
+      "wrong": {
+        "para supuesto": {
+          "en": "The phrase \"Por supuesto\" is fixed: it is built with por, not para.",
+          "es": "La expresión \"Por supuesto\" es fija: se forma con por, no con para."
+        }
+      }
+    },
+    {
+      "id": "pp-form-03",
+      "kind": "form",
+      "verb": "expresión",
+      "person": "___ llegó el camión.",
+      "answer": "Por fin",
+      "table": "por-para",
+      "wrong": {
+        "para fin": {
+          "en": "The phrase \"Por fin\" is fixed: it is built with por, not para.",
+          "es": "La expresión \"Por fin\" es fija: se forma con por, no con para."
+        }
+      }
+    },
     { "id": "pp-form-04", "kind": "form", "verb": "expresión", "person": "Te quiero ___.", "answer": "para siempre", "table": "por-para" },
-    { "id": "pp-form-05", "kind": "form", "verb": "expresión", "person": "Tengo sueño, ___ me voy a dormir.", "answer": "por eso", "table": "por-para" },
-    { "id": "pp-form-06", "kind": "form", "verb": "expresión", "person": "¿___ sirve esto?", "answer": "Para qué", "table": "por-para" },
-    { "id": "pp-form-07", "kind": "form", "verb": "expresión", "person": "Te llamo ___, no te escribo.", "answer": "por teléfono", "table": "por-para" },
-    { "id": "pp-form-08", "kind": "form", "verb": "expresión", "person": "Trabajo ___; por la tarde estudio.", "answer": "por la mañana", "table": "por-para" },
+    {
+      "id": "pp-form-05",
+      "kind": "form",
+      "verb": "expresión",
+      "person": "Tengo sueño, ___ me voy a dormir.",
+      "answer": "por eso",
+      "table": "por-para",
+      "wrong": {
+        "para eso": {
+          "en": "Por eso means \"for that reason\" (a cause, \"therefore\"). Para eso would mean \"for that purpose\": por eso.",
+          "es": "Por eso significa \"por esa razón\" (una causa, \"por lo tanto\"). Para eso significaría \"para ese fin\": por eso."
+        }
+      }
+    },
+    {
+      "id": "pp-form-06",
+      "kind": "form",
+      "verb": "expresión",
+      "person": "¿___ sirve esto?",
+      "answer": "Para qué",
+      "table": "por-para",
+      "wrong": {
+        "por qué": {
+          "en": "Por qué asks for the cause (\"why\"). This question asks about the purpose of the thing (\"what for\"): para qué.",
+          "es": "Por qué pregunta por la causa (\"por qué motivo\"). Esta pregunta busca la finalidad de la cosa (\"con qué fin\"): para qué."
+        }
+      }
+    },
+    {
+      "id": "pp-form-07",
+      "kind": "form",
+      "verb": "expresión",
+      "person": "Te llamo ___, no te escribo.",
+      "answer": "por teléfono",
+      "table": "por-para",
+      "wrong": {
+        "en teléfono": {
+          "en": "For the means of communication Spanish says por teléfono, not en teléfono.",
+          "es": "Para el medio de comunicación el español dice por teléfono, no en teléfono."
+        }
+      }
+    },
+    {
+      "id": "pp-form-08",
+      "kind": "form",
+      "verb": "expresión",
+      "person": "Trabajo ___; por la tarde estudio.",
+      "answer": "por la mañana",
+      "table": "por-para",
+      "wrong": {
+        "para la mañana": {
+          "en": "The phrase \"por la mañana\" is fixed: it is built with por, not para.",
+          "es": "La expresión \"por la mañana\" es fija: se forma con por, no con para."
+        }
+      }
+    },
     { "id": "pp-form-09", "kind": "form", "verb": "expresión", "person": "___, está bien, pero otros dicen que no.", "answer": "Para mí", "table": "por-para" },
-    { "id": "pp-form-10", "kind": "form", "verb": "expresión", "person": "La tarea es ___.", "answer": "para mañana", "table": "por-para" },
-    { "id": "pp-form-11", "kind": "form", "verb": "expresión", "person": "___, ¿sabes que llueve mucho hoy?", "answer": "Por cierto", "table": "por-para" },
-    { "id": "pp-form-12", "kind": "form", "verb": "expresión", "person": "Me gustan los idiomas, ___ el francés.", "answer": "Por ejemplo", "table": "por-para" },
+    {
+      "id": "pp-form-10",
+      "kind": "form",
+      "verb": "expresión",
+      "person": "La tarea es ___.",
+      "answer": "para mañana",
+      "table": "por-para",
+      "wrong": {
+        "por mañana": {
+          "en": "Para sets a deadline: para mañana means \"due tomorrow\". Por mañana does not express that.",
+          "es": "Para marca un plazo: para mañana significa \"debe estar listo mañana\". Por mañana no expresa eso."
+        }
+      }
+    },
+    {
+      "id": "pp-form-11",
+      "kind": "form",
+      "verb": "expresión",
+      "person": "___, ¿sabes que llueve mucho hoy?",
+      "answer": "Por cierto",
+      "table": "por-para",
+      "wrong": {
+        "para cierto": {
+          "en": "The phrase \"Por cierto\" is fixed: it is built with por, not para.",
+          "es": "La expresión \"Por cierto\" es fija: se forma con por, no con para."
+        }
+      }
+    },
+    {
+      "id": "pp-form-12",
+      "kind": "form",
+      "verb": "expresión",
+      "person": "Me gustan los idiomas, ___ el francés.",
+      "answer": "Por ejemplo",
+      "table": "por-para",
+      "wrong": {
+        "para ejemplo": {
+          "en": "The phrase \"Por ejemplo\" is fixed: it is built with por, not para.",
+          "es": "La expresión \"Por ejemplo\" es fija: se forma con por, no con para."
+        }
+      }
+    },
     {
       "kind": "why",
       "id": "pp-why-01",
