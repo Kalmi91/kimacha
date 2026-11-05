@@ -755,8 +755,8 @@
           "es": "Zapatos es masculino plural, así que el pronombre directo es los: me los."
         },
         "me lo": {
-          "en": "Zapatos is masculine plural, so the direct pronoun is los: me los.",
-          "es": "Zapatos es masculino plural, así que el pronombre directo es los: me los."
+          "en": "Zapatos is plural, so the direct pronoun must be plural too: los, not lo: me los.",
+          "es": "Zapatos es plural, así que el pronombre directo también va en plural: los, no lo: me los."
         }
       }
     },
@@ -791,8 +791,8 @@
           "es": "Flores es femenino plural, así que el pronombre directo es las: te las."
         },
         "te la": {
-          "en": "Flores is feminine plural, so the direct pronoun is las: te las.",
-          "es": "Flores es femenino plural, así que el pronombre directo es las: te las."
+          "en": "Flores is plural, so the direct pronoun must be plural too: las, not la: te las.",
+          "es": "Flores es plural, así que el pronombre directo también va en plural: las, no la: te las."
         }
       }
     },

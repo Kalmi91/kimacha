@@ -998,12 +998,12 @@
       "table": "imperativo-pronombres-formas",
       "wrong": {
         "no espérame": {
-          "en": "In a negative command the pronoun goes before the verb, as a separate word: no me esperes.",
-          "es": "En un imperativo negativo el pronombre va antes del verbo, como palabra separada: no me esperes."
+          "en": "Espérame is the affirmative form, with the pronoun attached. With no the verb changes to esperes and the pronoun goes before it: no me esperes.",
+          "es": "Espérame es la forma afirmativa, con el pronombre unido. Con no el verbo cambia a esperes y el pronombre va antes: no me esperes."
         },
         "no esperes me": {
-          "en": "In a negative command the pronoun goes before the verb, as a separate word: no me esperes.",
-          "es": "En un imperativo negativo el pronombre va antes del verbo, como palabra separada: no me esperes."
+          "en": "The verb form esperes is right, but the pronoun cannot follow it: with no it goes before the verb, as a separate word: no me esperes.",
+          "es": "La forma esperes es correcta, pero el pronombre no puede ir detrás: con no va antes del verbo, como palabra separada: no me esperes."
         }
       }
     },
@@ -1016,8 +1016,8 @@
       "table": "imperativo-pronombres-formas",
       "wrong": {
         "no envíeselo": {
-          "en": "In a negative command the pronoun goes before the verb, as a separate word: no se lo envíes.",
-          "es": "En un imperativo negativo el pronombre va antes del verbo, como palabra separada: no se lo envíes."
+          "en": "Envíeselo is the affirmative command for usted, with the pronouns attached. This task is negative and for tú: the verb is envíes and the pronouns go before it: no se lo envíes.",
+          "es": "Envíeselo es el imperativo afirmativo de usted, con los pronombres unidos. Esta tarea es negativa y de tú: el verbo es envíes y los pronombres van antes: no se lo envíes."
         },
         "no le lo envíes": {
           "en": "Before lo, la, los or las, the pronoun le (or les) changes to se: no se lo envíes.",

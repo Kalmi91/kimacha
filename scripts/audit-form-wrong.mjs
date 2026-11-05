@@ -46,6 +46,17 @@ for (const [lane, levels] of Object.entries(share)) {
     .join(', ');
   console.log(`  ${lane}: ${line}`);
 }
+// items on purpose without a `wrong` map: every typical wrong answer of them is acceptable Spanish in Mexico
+const NO_SAFE_KEY = [
+  ['es/por-para.json', 'pp-form-04'],
+  ['es/por-para.json', 'pp-form-09'],
+  ['es/haber-impersonal-tiempos.json', 'hb-form-10'],
+];
+const left = NO_SAFE_KEY.filter(([f, id]) => {
+  const item = JSON.parse(readFileSync(join(gamesDir, f), 'utf8')).items.find((i) => i.id === id);
+  return item && !item.wrong;
+});
+if (left.length) console.log(`  (on purpose without a map, no safe wrong key: ${left.map(([, id]) => id).join(', ')})`);
 if (problems.length) {
   console.error(`audit-form-wrong: ${problems.length} P1:`);
   for (const p of problems.slice(0, 30)) console.error('  ' + p);
