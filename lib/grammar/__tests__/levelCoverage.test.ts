@@ -99,6 +99,12 @@ describe('level test coverage over the real es A1 course', () => {
     expect(r.steps.slice(0, firstNonCore).every((s) => isCoreId(s.topicId))).toBe(true);
   });
 
+  it('an always right learner: after the first pass every A1 topic has been asked within 3 of the others, over 500 answers (no topic hammered)', () => {
+    const r = simulate(d, 'A1', 1, seed);
+    const counts = r.topics.map((t) => t.asked[3]);
+    expect(Math.max(...counts) - Math.min(...counts)).toBeLessThanOrEqual(3);
+  });
+
   it.each(LEARNERS)('%s: a returning learner (one topic never asked, the others with stored answers) gets that topic first and no burst on one topic', (_n, p) => {
     const start = unevenStart(d, 'A1', seed);
     const r = simulate(d, 'A1', p, seed, 120, { start });

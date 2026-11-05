@@ -82,7 +82,7 @@ function lessThan(a: number[], b: number[]): boolean {
 /**
  * The next topic, the same rule on every level. Strictly core first: while a core topic (core+ or core) is not ticked, only
  * the open core topics are asked; then the open topics of the other tiers; when everything is ticked the whole level again,
- * lowest percent first. Inside the first two groups the topics take turns: the least recently asked one (the evidence's
+ * lowest percent first, tied topics in turns. Inside the first two groups the topics take turns: the least recently asked one (the evidence's
  * `stamp`, a never asked topic first) comes next, ties by lowest percent, then core+ before core before the rest, then
  * syllabus order. So a weak topic keeps coming until it ticks, but never starves the others, and a learner who comes back
  * after a break gets one question of each topic in turn, not a burst on one. The previous question's topic is left out
@@ -100,7 +100,9 @@ export function pickLevelTopic(
   const pool = rotating ?? topics;
   const others = pool.filter((t) => t.id !== prev);
   const cands = others.length > 0 ? others : pool;
-  const keyOf = (t: PickTopic) => [...(rotating ? [evidence.get(t.id)?.stamp ?? 0] : []), ...needKey(evidence.get(t.id)), TIER_RANK[t.tier] ?? 5];
+  const stampOf = (t: PickTopic) => evidence.get(t.id)?.stamp ?? 0;
+  // turns first in the open groups; in the whole-level round the lowest percent first, tied topics still take turns
+  const keyOf = (t: PickTopic) => (rotating ? [stampOf(t), ...needKey(evidence.get(t.id)), TIER_RANK[t.tier] ?? 5] : [...needKey(evidence.get(t.id)), stampOf(t), TIER_RANK[t.tier] ?? 5]);
   let best = cands[0];
   let bestKey = keyOf(best);
   for (const t of cands.slice(1)) {
