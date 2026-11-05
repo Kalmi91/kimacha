@@ -5,7 +5,7 @@ import { Alert, View } from 'react-native';
 import { fireEvent, render } from '@testing-library/react-native';
 
 import { ThemeProvider } from '@/lib/ThemeContext';
-import { NEURAL_MODELS, PACK_KEY, PIPER_MODEL_KEYS, SENTENCES_KEY } from '@/lib/neuralVoices';
+import { NEURAL_MODELS, PACK_BYTES, PACK_KEY, PIPER_MODEL_KEYS, SENTENCE_PACK_BYTES, SENTENCES_KEY, formatMegabytes } from '@/lib/neuralVoices';
 import BetterVoiceRows from '../BetterVoiceRows';
 
 let mockState: any;
@@ -27,6 +27,10 @@ const stateWith = (installed: Record<string, boolean>, engines = { es: 'piper', 
   download: { running: false, percent: 0, phase: 'download', failed: [] },
   issues: {} as Record<string, unknown>,
 });
+// the pack sizes are the built-in ones (lib/neuralVoices.ts), so a new pack release changes no test
+const PACK_MB = formatMegabytes(PACK_BYTES);
+const SENTENCES_MB = formatMegabytes(SENTENCE_PACK_BYTES);
+const ALL_MB = formatMegabytes(PACK_BYTES + SENTENCE_PACK_BYTES + PIPER_MODEL_KEYS.reduce((sum, key) => sum + NEURAL_MODELS[key].bytes, 0));
 const allPiper = Object.fromEntries(PIPER_MODEL_KEYS.map(key => [key, true]));
 
 const Row = ({ children }: { children: React.ReactNode }) => <View>{children}</View>;
@@ -52,11 +56,11 @@ describe('BetterVoiceRows: the size question', () => {
   it('the first download asks with the real size (both packs and eight voices), and only the confirm starts it', () => {
     mockState = stateWith({});
     const view = show();
-    expect(view.getByText('Download (602 MB)')).toBeTruthy(); // the label counts the packs too
+    expect(view.getByText(`Download (${ALL_MB})`)).toBeTruthy(); // the label counts the packs too
     fireEvent.press(view.getByTestId('settings-better-voice-download'));
     expect(alertSpy).toHaveBeenCalledTimes(1);
     expect(alertSpy.mock.calls[0][0]).toBe('Download the better voice?');
-    expect(alertSpy.mock.calls[0][1]).toContain('602 MB');
+    expect(alertSpy.mock.calls[0][1]).toContain(ALL_MB);
     expect(mockDownload).not.toHaveBeenCalled();
     lastButtons(alertSpy).find(b => b.text === 'Cancel')?.onPress?.();
     expect(mockDownload).not.toHaveBeenCalled();
@@ -68,7 +72,7 @@ describe('BetterVoiceRows: the size question', () => {
     mockState = { ...stateWith({ ...allPiper, [SENTENCES_KEY]: true }), download: { running: false, percent: 80, phase: 'download', failed: [PACK_KEY] } };
     const view = show();
     fireEvent.press(view.getByTestId('settings-better-voice-retry'));
-    expect(alertSpy.mock.calls[0][1]).toContain('114 MB');
+    expect(alertSpy.mock.calls[0][1]).toContain(PACK_MB);
     expect(mockDownload).not.toHaveBeenCalled();
     lastButtons(alertSpy).find(b => b.text === 'Download')?.onPress?.();
     expect(mockDownload).toHaveBeenCalledTimes(1);
@@ -99,8 +103,8 @@ describe('BetterVoiceRows: the size question', () => {
     mockState = stateWith({ ...allPiper, [PACK_KEY]: true });
     const view = show();
     expect(view.getByTestId('settings-better-voice')).toBeTruthy(); // the voice keeps working meanwhile
-    fireEvent.press(view.getByText('Download (327 MB)'));
-    expect(alertSpy.mock.calls[0][1]).toContain('327 MB');
+    fireEvent.press(view.getByText(`Download (${SENTENCES_MB})`));
+    expect(alertSpy.mock.calls[0][1]).toContain(SENTENCES_MB);
     expect(mockDownload).not.toHaveBeenCalled();
     lastButtons(alertSpy).find(b => b.text === 'Download')?.onPress?.();
     expect(mockDownload).toHaveBeenCalledTimes(1);

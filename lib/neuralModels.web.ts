@@ -40,7 +40,7 @@ export async function releaseStandIns(_except?: NeuralLang): Promise<void> {}
 
 export function noteNeuralTrouble(_lang: NeuralLang, _engine: NeuralEngine, _kind: 'slow' | 'failed'): void {}
 
-export function neuralPackFile(_lang: NeuralLang, _text: string): string | null {
+export function neuralPackFile(_lang: NeuralLang, _text: string, _gender?: VoiceGender): string | null {
   return null;
 }
 

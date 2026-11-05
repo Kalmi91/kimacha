@@ -20,6 +20,8 @@ import { Platform } from 'react-native';
 import {
   DEFAULT_ENGINES,
   DEFAULT_SPEAKERS,
+  LEGACY_PACK_DIR,
+  LEGACY_SENTENCE_PACK_DIR,
   NEURAL_MODELS,
   PACK_DIR,
   PACK_KEY,
@@ -163,10 +165,14 @@ async function writeSettings(): Promise<void> {
 
 // A pack's index.json, from the pack folder (or one folder below it, if the archive had a top folder). A pack
 // that is not installed or whose index is unreadable is simply absent: the other levels keep speaking.
-async function readPackIndex(fs: Fs, key: string, label: string): Promise<{ index: PackIndex; root: string } | null> {
-  if (!state.installed[key]) return null;
-  const base = itemDir(fs, key);
-  for (const root of [base, `${base}/${packDirName(key)}`]) {
+async function readPackIndex(fs: Fs, key: string, label: string, legacyDir?: string): Promise<{ index: PackIndex; root: string } | null> {
+  // A phone that has only the v1 pack keeps speaking from it (its index has the old keys, packFileFor reads both)
+  // until the v2 download is installed.
+  const legacy = !state.installed[key] && legacyDir && (await fs.exists(`${ttsDir(fs)}/${legacyDir}.ok`).catch(() => false));
+  if (!state.installed[key] && !legacy) return null;
+  const dirName = legacy && legacyDir ? legacyDir : packDirName(key);
+  const base = `${ttsDir(fs)}/${dirName}`;
+  for (const root of [base, `${base}/${dirName}`]) {
     try {
       const index = JSON.parse(await fs.readFile(`${root}/index.json`, 'utf8')) as PackIndex;
       if (index && typeof index === 'object' && index.files) return { index, root };
@@ -179,10 +185,10 @@ async function readPackIndex(fs: Fs, key: string, label: string): Promise<{ inde
 }
 
 async function loadPackIndex(fs: Fs): Promise<void> {
-  const word = await readPackIndex(fs, PACK_KEY, 'word pack');
+  const word = await readPackIndex(fs, PACK_KEY, 'word pack', LEGACY_PACK_DIR);
   packIndex = word?.index ?? null;
   packRoot = word?.root ?? null;
-  const sentences = await readPackIndex(fs, SENTENCES_KEY, 'sentence pack');
+  const sentences = await readPackIndex(fs, SENTENCES_KEY, 'sentence pack', LEGACY_SENTENCE_PACK_DIR);
   sentenceIndex = sentences?.index ?? null;
   sentenceRoot = sentences?.root ?? null;
 }
@@ -345,9 +351,9 @@ export async function releaseStandIns(except?: NeuralLang): Promise<void> {
 
 // Absolute path of the word pack's audio for this card word, or null (not installed, switched off, or the
 // text is not a card word).
-export function neuralPackFile(lang: NeuralLang, text: string): string | null {
+export function neuralPackFile(lang: NeuralLang, text: string, gender?: VoiceGender): string | null {
   if (!state.supported || !state.enabled || !packIndex || !packRoot) return null;
-  const relative = packFileFor(packIndex, lang, text);
+  const relative = packFileFor(packIndex, lang, text, gender);
   return relative ? `${packRoot}/${relative}` : null;
 }
 

@@ -69,7 +69,7 @@ describe('speak(): the levels', () => {
     engineFor.mockReturnValue('piper');
     const onDone = jest.fn();
     speak('el perro', 'es-MX', { rate: 0.8, onDone });
-    expect(packFile).toHaveBeenCalledWith('es', 'el perro');
+    expect(packFile).toHaveBeenCalledWith('es', 'el perro', undefined);
     expect(playPack).toHaveBeenCalledWith('/files/tts/pack/es/27956ac4.mp3', expect.objectContaining({ rate: 0.8, onDone }));
     expect(speakNeural).not.toHaveBeenCalled();
     expect(speech.speak).not.toHaveBeenCalled();
@@ -242,7 +242,9 @@ describe('speakSequence(): the levels per segment', () => {
   });
 
   it('a male line never gets a pack recording of a female voice', () => {
-    packFile.mockReturnValue('/files/tts/pack/es/27956ac4.mp3'); // "el perro": hash even = ef_dora, a woman
+    // "el perro": hash even = ef_dora, a woman; the pack has the recording of the sex that is asked for (v2: the man too, see
+    // the recordings below), so this stands for a pack that lacks the man's
+    packFile.mockImplementation((_lang: string, _text: string, g?: string) => (g === 'f' ? '/files/tts/pack/es/27956ac4.mp3' : null));
     engineFor.mockReturnValue('piper');
     speakSequence([{ text: 'el perro', locale: 'es-MX', gender: 'm' }]);
     expect(playPack).not.toHaveBeenCalled();
@@ -348,7 +350,7 @@ describe('speakSequence(): one speaker per language (FB543)', () => {
   });
 
   it('the example of the other hash voice is not played from its pack recording', () => {
-    packFile.mockReturnValue('/files/tts/pack/es/x.mp3');
+    packFile.mockImplementation((_lang: string, text: string) => (text === WORD ? '/files/tts/pack/es/x.mp3' : null));
     engineFor.mockReturnValue('piper');
     const sentence = pick('es', WORD, true, ES_SENTENCES);
     speakSequence([{ text: WORD, locale: 'es-MX' }, { text: sentence, locale: 'es-MX' }]);
@@ -367,7 +369,7 @@ describe('speak(): the sentence pack (Audio round B)', () => {
     engineFor.mockReturnValue('piper');
     const onDone = jest.fn();
     speak(SENTENCE, 'es-MX', { rate: 0.9, onDone });
-    expect(packFile).toHaveBeenCalledWith('es', SENTENCE);
+    expect(packFile).toHaveBeenCalledWith('es', SENTENCE, undefined);
     expect(sentenceFile).toHaveBeenCalledWith('es', SENTENCE, undefined); // no gender: the pack uses the text's own hash gender
     expect(playPack).toHaveBeenCalledWith('/files/tts/sentences/es/f/abc.mp3', expect.objectContaining({ rate: 0.9, onDone }));
     expect(speakNeural).not.toHaveBeenCalled();
@@ -385,7 +387,7 @@ describe('speak(): the sentence pack (Audio round B)', () => {
   it('the explicit gender goes to the lookup, and a word recording of the other sex is skipped for it', () => {
     const ownGender = voiceFor('es', 'kokoro', SENTENCE).gender;
     const other = ownGender === 'f' ? 'm' : 'f';
-    packFile.mockReturnValue('/files/tts/pack/es/x.mp3'); // a recording of the sentence's own voice
+    packFile.mockImplementation((_lang: string, _text: string, g?: string) => (g === ownGender ? '/files/tts/pack/es/x.mp3' : null)); // a recording of the sentence's own voice only
     sentenceFile.mockReturnValue('/files/tts/sentences/es/other/y.mp3');
     engineFor.mockReturnValue('piper');
     speak(SENTENCE, 'es-MX', { gender: other });

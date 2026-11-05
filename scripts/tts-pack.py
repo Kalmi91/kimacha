@@ -13,15 +13,19 @@ Commands (count, gen, verify, pack take --set words|sentences; words is the defa
                                 synthesize the missing files (resumable: existing files are kept);
                                 --order (sentences): sources by priority, deck-examples first, instead of by key
   verify [--n 20]               sample check: length > 0.2 s, peak > 0.05, file name = FNV-1a of the key
-  pack                          kimacha-tts-pack-v1.tar.bz2 with index.json
-                                (--set sentences: kimacha-tts-sentences-v1.tar.bz2)
+  migrate                       (words) copy the v1 recordings (work/<lang>/<hash>.mp3, the word's own hash voice) into
+                                the v2 layout work/<lang>/<g>/<hash>.mp3; only the other person is then generated
+  pack                          kimacha-tts-pack-v2.tar.bz2 with index.json
+                                (--set sentences: kimacha-tts-sentences-v2.tar.bz2)
 
 Contract (shared with lib/neuralTts.ts of the app):
   key   = text.trim().normalize('NFC')       (case and article stay: "el perro")
   hash  = FNV-1a 32 bit over the UTF-8 bytes of the key, 8 lowercase hex digits
   voice = hash % 2 === 0 -> voice 0, else voice 1
           es [ef_dora, em_alex], en [af_heart, am_michael]
-  index = { "version": 1, "engine": "kokoro-v1.0", "files": { "es": { key: "es/<hash>.mp3" }, "en": {...} } }
+  v2 (EJSZAKA E101): the word pack is keyed like the sentence pack, EVERY word in BOTH voices of the pair:
+  index = { "version": 2, "engine": "kokoro-v1.0", "files": { "es": { "<g>|key": "es/<g>/<hash>.mp3" }, "en": {...} } }
+  (v1 had the plain key and es/<hash>.mp3, the word's own hash voice only; the app still reads a v1 index.)
 
 Which text the card reads aloud (checked in the app code):
   lib/learn/usePcicSession.ts speak(promptSource, ...) on a new card and speak(best, ...) /
@@ -34,8 +38,9 @@ Which text the card reads aloud (checked in the app code):
   Example sentences are NOT in the word pack (they go to the on-device engine, or to the sentence pack).
 
 Sentence pack contract (PLAN-fb1102.md "Audio round B"; shared with the app, lib/neuralModels.ts / lib/speech.ts):
-  separate archive kimacha-tts-sentences-v1.tar.bz2 (installs to the folder kimacha-tts-sentences-v1)
-  index = { "version": 1, "engine": "kokoro-v1.0",
+  separate archive kimacha-tts-sentences-v2.tar.bz2 (installs to the folder kimacha-tts-sentences-v2)
+  v2 (EJSZAKA E101): every sentence in BOTH speakers (f and m), and the Speak tab's story lines (speech-stories)
+  index = { "version": 2, "engine": "kokoro-v1.0",
             "files": { "es": { "<g>|<key>": "es/<g>/<hash>.mp3" }, "en": { ... } } }
   g     = f | m, the sex of the speaker (the app: explicit gender, or the speakSequence shared-speaker gender,
           else the text's own hash gender: FNV-1a(key) even -> f, odd -> m)
@@ -80,13 +85,14 @@ LIMIT_PER_LANG = 15000
 SOURCE_DIRS = ("data/words-open", "data/words/en", "data/words/hu", "data/words")
 FIELD_LANG = {"es": "es", "en": "en"}
 
-AUDIO = OUT / "work"  # staging: work/es/<hash>.mp3, work/en/<hash>.mp3 (the archive paths)
-PACK_FILE = OUT / "kimacha-tts-pack-v1.tar.bz2"
+AUDIO = OUT / "work"  # staging: work/es/<g>/<hash>.mp3, work/en/<g>/<hash>.mp3 (the archive paths; v1 files sit at work/es/<hash>.mp3)
+PACK_FILE = OUT / "kimacha-tts-pack-v2.tar.bz2"
 
 # --set sentences: the sentence pack (keys are "<g>|<text>", files es/<g>/<hash>.mp3), its own output folder.
 SET = "words"
 SENT_OUT = Path(os.environ.get("TTS_PACK_OUT_SENTENCES", r"C:\AI\_work\tts-sentences"))
-SENT_PACK_NAME = "kimacha-tts-sentences-v1.tar.bz2"
+SENT_PACK_NAME = "kimacha-tts-sentences-v2.tar.bz2"
+PACK_VERSION = 2
 SENT_MP3_LEVEL = 0.7  # libsndfile MP3 compression_level (VBR quality scale 0..1) of the sentence pack only
 GRAMMAR_DIRS = ("es", "en", "hu")  # data/games/grammar/<dir>: the language the lessons teach
 
@@ -138,8 +144,8 @@ def sent_key(g: str, text: str) -> str:
 
 
 def split_key(k: str):
-    """(g, text) of a sentence-pack key "<g>|<text>"; (None, k) in the word set."""
-    return (k[0], k[2:]) if SET == "sentences" else (None, k)
+    """(g, text) of a pack key "<g>|<text>" (both sets since v2)."""
+    return (k[0], k[2:])
 
 
 def voice_of(lang: str, k: str) -> str:
@@ -255,6 +261,10 @@ def collect_keys():
 #                      word (the answer field's full-field word-pack voice, the reading's rule), not the sentence's own
 #   sentence-chunks    rule 3: data/sentences/chunks.json (the shorter sentences of the tile steps, es target + en prompt)
 #   situation          rule 3: the situation game (lines, pattern examples, words), es
+#   speech-stories     the Speak tab (data/speech/stories.json, components/speech/*): her lines (turn), the "You can say"
+#                      lines (branch say, the blank left out, lib/speech/stories.ts speakable), her reactions and ask-back
+#                      answers (branch reply), the story words, and the bubble the app reads after a right answer: her
+#                      reaction + " " + the next turn (bubbleOf). Intro, outro and scene are shown, never spoken.
 #   grammar-read-aloud rule 3: a lesson's `speak` field as the read-aloud speaks it (lib/mixedSpeech.ts segments, one
 #                      speaker per language of the sequence: the gender of the first segment of that language)
 #   grammar-examples   rule 3: the lesson body's example sentences (components/grammar/LessonBody.tsx)
@@ -263,6 +273,7 @@ def collect_keys():
 #   grammar-forms      rule 3: form answers and the table deck's cells (MatchFormItems, app/grammar/deck)
 # Priority order = what is heard most first (gen --order priority walks the keys in this order).
 SENT_SOURCES = (
+    "speech-stories",
     "deck-examples",
     "sentence-tab",
     "reading-stories",
@@ -398,8 +409,14 @@ def collect_sentences():
 
     def add(source: str, lang: str, g: str, text):
         # a segment of punctuation only ("." between two «...» stretches) has nothing to say
+        # v2: both people of the pair for every line (the learner may have chosen either), whatever g the caller worked out
         if lang in LANGS and isinstance(text, str) and any(ch.isalnum() for ch in text):
-            src[source][lang][sent_key(g, text)] = True
+            for gg in ("f", "m"):
+                src[source][lang][sent_key(gg, text)] = True
+
+    def add_story(lang: str, text):
+        if isinstance(text, str) and make_key(text):
+            add("speech-stories", lang, "f", text)
 
     def add_own(source: str, lang: str, text):
         if isinstance(text, str) and make_key(text):
@@ -433,6 +450,29 @@ def collect_sentences():
                     notes["story_unresolved"] += 1
                     continue
                 add("reading-stories", lang, gender_of(make_key(word)), s.get(lang))
+
+    # the Speak tab's stories (data/speech/stories.json): every line the screens speak, see SENT_SOURCES
+    turns_by_story = 0
+    for story in read_json(DATA / "speech" / "stories.json") or []:
+        lang = story.get("target")
+        if lang not in LANGS:
+            continue
+        turns_by_story += 1
+        turns = {t.get("id"): t for t in story.get("turns", [])}
+        for w in story.get("words", []):
+            add_story(lang, w.get(lang))
+        for t in turns.values():
+            add_story(lang, t.get(lang))
+            for b in t.get("branches", []):
+                for x in b.get("say", []):
+                    if isinstance(x.get(lang), str):
+                        add_story(lang, re.sub(r"s*_{3}", "", x[lang]).strip())
+                reply = (b.get("reply") or {}).get(lang)
+                add_story(lang, reply)
+                nxt = turns.get(b.get("next"))
+                if reply and nxt and not b.get("back") and not nxt.get("recall"):
+                    add_story(lang, f"{reply} {nxt.get(lang)}")
+    notes["story_lines"] = turns_by_story
 
     # rule 3: sentence cards' chunk steps
     for parts in (read_json(DATA / "sentences" / "chunks.json") or {}).values():
@@ -506,7 +546,10 @@ def collect_sentences():
 
 
 def collect_all():
-    return collect_sentences() if SET == "sentences" else collect_keys()
+    if SET == "sentences":
+        return collect_sentences()
+    keys, st = collect_keys()  # v2: every word in both voices of the pair
+    return {l: [f"{g}|{k}" for k in keys[l] for g in ("f", "m")] for l in LANGS}, st
 
 
 def assign_files(keys: dict) -> dict:
@@ -601,7 +644,9 @@ def count_sentences() -> int:
     for lang in LANGS:
         chars = st["chars"][lang]
         print(f"{'UNION (distinct)':<20} {lang:<4} {st['total'][lang]:>8} {chars:>9} {chars / CHARS_PER_SEC / 60:>9.0f}")
-    print(f"story sentences without a resolvable word {st['notes']['story_unresolved']}, hash collisions {files['_collisions']}")
+    print(f"story sentences without a resolvable word {st['notes']['story_unresolved']}, speech stories read {st['notes']['story_lines']}, hash collisions {files['_collisions']}")
+    done = sum(1 for lang in LANGS for k in keys[lang] if (AUDIO / files[lang][k]).exists() and (AUDIO / files[lang][k]).stat().st_size > 0)
+    print(f"entries with (g, text) {sum(len(keys[l]) for l in LANGS)}, already recorded {done}, missing {sum(len(keys[l]) for l in LANGS) - done}")
     keys_path().write_text(json.dumps(keys, ensure_ascii=False), encoding="utf-8")
     print(f"wrote {keys_path()}")
     return 0
@@ -612,7 +657,7 @@ def cmd_count(_args) -> int:
         return count_sentences()
     keys, st = collect_keys()
     OUT.mkdir(parents=True, exist_ok=True)
-    files = assign_files(keys)
+    files = assign_files({l: [f"{g}|{k}" for k in keys[l] for g in ("f", "m")] for l in LANGS})
     for rel, counts in st["per_file"]:
         print(f"  {rel}: {counts}")
     for lang in LANGS:
@@ -621,7 +666,10 @@ def cmd_count(_args) -> int:
             f"chars {st['chars'][lang]}"
         )
     print(f"empty fields skipped {st['empty_skipped']}, hash collisions {files['_collisions']}")
-    keys_path().write_text(json.dumps(keys, ensure_ascii=False), encoding="utf-8")
+    gkeys = {l: [f"{g}|{k}" for k in keys[l] for g in ("f", "m")] for l in LANGS}
+    done = sum(1 for lang in LANGS for k in gkeys[lang] if (AUDIO / files[lang][k]).exists() and (AUDIO / files[lang][k]).stat().st_size > 0)
+    print(f"v2 recordings (both voices): {sum(len(gkeys[l]) for l in LANGS)}, already there {done}, missing {sum(len(gkeys[l]) for l in LANGS) - done}")
+    keys_path().write_text(json.dumps(gkeys, ensure_ascii=False), encoding="utf-8")
     over = [l for l in LANGS if st["total"][l] > LIMIT_PER_LANG]
     if over:
         print(f"STOP: over {LIMIT_PER_LANG} unique keys for {over}; report before generating.")
@@ -791,11 +839,49 @@ def cmd_verify(args) -> int:
     return 0 if bad == 0 and sample else 1
 
 
+def cmd_migrate(_args) -> int:
+    """words: v1 recordings (work/<lang>/<hash[-n]>.mp3 = the word's own hash voice) -> v2 path of that voice. Copies, keeps v1."""
+    import shutil
+
+    if SET != "words":
+        print("migrate is for the word set")
+        return 1
+    plain, _ = collect_keys()
+    old = {}
+    for lang in LANGS:  # the v1 names: collisions counted per language, no g
+        used, m = set(), {}
+        for k in sorted(plain[lang]):
+            h = hash_hex(k)
+            name, n = h, 2
+            while name in used:
+                name = f"{h}-{n}"
+                n += 1
+            used.add(name)
+            m[k] = f"{lang}/{name}.{EXT}"
+        old[lang] = m
+    new = assign_files({l: [f"{g}|{k}" for k in plain[l] for g in ("f", "m")] for l in LANGS})
+    copied = kept = missing = 0
+    for lang in LANGS:
+        for k in plain[lang]:
+            src = AUDIO / old[lang][k]
+            dst = AUDIO / new[lang][f"{gender_of(k)}|{k}"]
+            if dst.exists() and dst.stat().st_size > 0:
+                kept += 1
+            elif src.exists() and src.stat().st_size > 0:
+                dst.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copy2(src, dst)
+                copied += 1
+            else:
+                missing += 1
+    print(f"migrate: copied {copied}, already in v2 {kept}, no v1 file {missing}")
+    return 0
+
+
 def cmd_pack(_args) -> int:
     keys = load_keys()
     files = assign_files(keys)
     have = present(keys, files)
-    index = {"version": 1, "engine": "kokoro-v1.0", "files": {l: {k: files[l][k] for k in have[l]} for l in LANGS}}
+    index = {"version": PACK_VERSION, "engine": "kokoro-v1.0", "files": {l: {k: files[l][k] for k in have[l]} for l in LANGS}}
     idx_path = OUT / "index.json"
     idx_path.write_text(json.dumps(index, ensure_ascii=False, indent=0), encoding="utf-8")
     t0 = time.time()
@@ -839,12 +925,13 @@ def main() -> int:
     v = with_set(sub.add_parser("verify"))
     v.add_argument("--n", type=int, default=20)
     with_set(sub.add_parser("pack"))
+    with_set(sub.add_parser("migrate"))
     args = ap.parse_args()
     if getattr(args, "set", "words") == "sentences":
         global SET, OUT, AUDIO, PACK_FILE
         SET, OUT = "sentences", SENT_OUT
         AUDIO, PACK_FILE = OUT / "work", OUT / SENT_PACK_NAME
-    return {"selftest": cmd_selftest, "count": cmd_count, "gen": cmd_gen, "verify": cmd_verify, "pack": cmd_pack}[args.cmd](args)
+    return {"selftest": cmd_selftest, "count": cmd_count, "gen": cmd_gen, "verify": cmd_verify, "pack": cmd_pack, "migrate": cmd_migrate}[args.cmd](args)
 
 
 if __name__ == "__main__":

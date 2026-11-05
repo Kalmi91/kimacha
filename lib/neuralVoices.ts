@@ -106,21 +106,28 @@ export const PIPER_MODEL_KEYS: string[] = Object.values(NEURAL_MODELS)
   .filter(m => m.engine === 'piper')
   .map(m => m.key);
 
-// The word pack (scripts/tts-pack.py): a GitHub release asset of the app's own repo (tts-pack-v1, 119 608 678
-// bytes as uploaded). The Settings label and the progress count it with the models.
+// The word pack (scripts/tts-pack.py): a GitHub release asset of the app's own repo. v2 (EJSZAKA E101) holds every
+// card word in both voices of the pair, keyed "<g>|key" like the sentence pack; v1 (tts-pack-v1, 119 608 678 bytes) had
+// only each word's own hash voice under the plain key and stays readable (LEGACY_PACK_DIR). PACK_BYTES is the size
+// as uploaded (⚠ estimate until the v2 archive is packed and uploaded). The Settings label and the progress count it
+// with the models.
 export const PACK_KEY = 'pack';
-export const PACK_BYTES = 119608678;
-export const PACK_URL = 'https://github.com/Kalmi91/kimacha/releases/download/tts-pack-v1/kimacha-tts-pack-v1.tar.bz2';
-export const PACK_DIR = 'kimacha-tts-pack-v1';
+export const PACK_BYTES = 239000000;
+export const PACK_URL = 'https://github.com/Kalmi91/kimacha/releases/download/tts-pack-v2/kimacha-tts-pack-v2.tar.bz2';
+export const PACK_DIR = 'kimacha-tts-pack-v2';
+export const LEGACY_PACK_DIR = 'kimacha-tts-pack-v1';
 
 // The sentence pack (scripts/tts-pack.py --set sentences, PLAN-fb1102 "Audio round B"): a second release asset with a
 // Kokoro recording of the fixed sentences the screens speak, one per (speaker sex, sentence). Its index.json
 // is { version, engine, files: { es: { "<g>|<key>": "es/<g>/<hash>.mp3" }, en: { ... } } }, g = f | m, key = packKey(text).
 // An empty URL keeps today's behavior: the item is not required and nothing is downloaded.
+// v2 (EJSZAKA E101) has both speakers of every sentence and the Speak tab's story lines; v1 (343 377 219 bytes, the
+// sex the app asked at the time) stays readable (LEGACY_SENTENCE_PACK_DIR). The size is an estimate until packed.
 export const SENTENCES_KEY = 'sentences';
-export const SENTENCE_PACK_BYTES = 343377219;
-export const SENTENCE_PACK_URL = 'https://github.com/Kalmi91/kimacha/releases/download/tts-sentences-v1/kimacha-tts-sentences-v1.tar.bz2';
-export const SENTENCE_PACK_DIR = 'kimacha-tts-sentences-v1';
+export const SENTENCE_PACK_BYTES = 700000000;
+export const SENTENCE_PACK_URL = 'https://github.com/Kalmi91/kimacha/releases/download/tts-sentences-v2/kimacha-tts-sentences-v2.tar.bz2';
+export const SENTENCE_PACK_DIR = 'kimacha-tts-sentences-v2';
+export const LEGACY_SENTENCE_PACK_DIR = 'kimacha-tts-sentences-v1';
 
 // espeak-ng voice the Kokoro engine speaks each language with. es-419 is Latin-American Spanish and is
 // in the espeak-ng data of the Kokoro archive (espeak-ng-data/lang/roa/es-419, checked 2026-11-02).
@@ -249,12 +256,19 @@ export interface PackIndex {
 }
 
 // Relative path of the pack's audio file for the text, or null (the pack covers es and en card words).
+// The v2 key is "<g>|key" (g = the speaker's sex: `gender` f / m, else the text's own hash gender, the sex of the
+// word's own voice); a v1 index has the plain key, which is the recording of the own hash voice only, so it answers
+// only when the speaker is that one (a v1 pack never gives the other person's sex).
 // There is no German in the pack (kimacha-tts-pack-v1 was rendered before German existed) and none for
 // Hungarian: those languages always return null here, so a German word is never looked up in the pack
 // (and never gets a Spanish or English recording by a key clash); the Piper voice speaks it.
-export function packFileFor(index: PackIndex | null, lang: NeuralLang, text: string): string | null {
+export function packFileFor(index: PackIndex | null, lang: NeuralLang, text: string, gender?: VoiceGender): string | null {
   if (!index || isPiperOnly(lang)) return null;
-  return index.files[lang as 'es' | 'en']?.[packKey(text)] ?? null;
+  const files = index.files[lang as 'es' | 'en'];
+  const key = packKey(text);
+  const own = voiceFor(lang, 'kokoro', text).gender;
+  const g = gender === 'f' || gender === 'm' ? gender : own;
+  return files?.[`${g}|${key}`] ?? (g === own ? files?.[key] : undefined) ?? null;
 }
 
 // Relative path of the sentence pack's audio file for the text, or null. `gender` (f / m) is the speaker the

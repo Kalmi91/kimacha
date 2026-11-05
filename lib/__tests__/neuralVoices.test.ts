@@ -148,7 +148,7 @@ describe('models', () => {
     const items = requiredItems({ es: 'piper', en: 'piper', hu: 'piper', de: 'piper' });
     const all = missingBytes(items, {});
     expect(all).toBe(PACK_BYTES + SENTENCE_PACK_BYTES + PIPER_MODEL_KEYS.reduce((sum, key) => sum + NEURAL_MODELS[key].bytes, 0)); // the pack counts too
-    expect(formatMegabytes(all)).toBe('602 MB');
+    expect(formatMegabytes(all - PACK_BYTES - SENTENCE_PACK_BYTES)).toBe('161 MB'); // the models; the two packs' sizes are set when v2 is packed
     expect(missingBytes(items, { 'hu_HU-berta-medium': true })).toBe(all - NEURAL_MODELS['hu_HU-berta-medium'].bytes);
     expect(missingBytes(items, { [PACK_KEY]: true })).toBe(all - PACK_BYTES);
     expect(missingBytes(items, { [SENTENCES_KEY]: true })).toBe(all - SENTENCE_PACK_BYTES);
@@ -171,6 +171,39 @@ describe('pack lookup', () => {
     expect(packFileFor(index, 'de', 'der Hund')).toBeNull();
     expect(packFileFor({ ...index, files: { ...index.files, de: { 'der Hund': 'de/x.mp3' } } } as PackIndex, 'de', 'der Hund')).toBeNull();
     expect(packFileFor(null, 'es', 'el perro')).toBeNull();
+  });
+
+  // v2 (EJSZAKA E101): the key is "<g>|key", both people of the pair are in it
+  const v2: PackIndex = {
+    version: 2,
+    engine: 'kokoro-v1.0',
+    files: { es: { 'f|el perro': 'es/f/27956ac4.mp3', 'm|el perro': 'es/m/27956ac4.mp3' }, en: { 'f|the dog': 'en/f/ba7d9c5e.mp3', 'm|the dog': 'en/m/ba7d9c5e.mp3' } },
+  };
+
+  it("v2: the chosen person's recording of the word, both sexes", () => {
+    expect(packFileFor(v2, 'es', 'el perro', 'f')).toBe('es/f/27956ac4.mp3');
+    expect(packFileFor(v2, 'es', 'el perro', 'm')).toBe('es/m/27956ac4.mp3');
+    expect(packFileFor(v2, 'en', ' the dog ', 'm')).toBe('en/m/ba7d9c5e.mp3');
+    expect(packFileFor(v2, 'en', 'the dog', 'f')).toBe('en/f/ba7d9c5e.mp3');
+  });
+
+  it("v2: no gender (Automatic) or n keeps the word's own hash voice, as today", () => {
+    const own = voiceFor('es', 'kokoro', 'el perro').gender;
+    expect(packFileFor(v2, 'es', 'el perro')).toBe(`es/${own}/27956ac4.mp3`);
+    expect(packFileFor(v2, 'es', 'el perro', 'n')).toBe(`es/${own}/27956ac4.mp3`);
+  });
+
+  it('a v1 index (plain key) still works for the own voice, and never gives the other person', () => {
+    const own = voiceFor('es', 'kokoro', 'el perro').gender;
+    const other = own === 'f' ? 'm' : 'f';
+    expect(packFileFor(index, 'es', 'el perro', own)).toBe('es/27956ac4.mp3');
+    expect(packFileFor(index, 'es', 'el perro', other)).toBeNull();
+  });
+
+  it("v2: a word without the chosen person's recording is not found", () => {
+    const half: PackIndex = { ...v2, files: { es: { 'f|el perro': 'es/f/27956ac4.mp3' } } };
+    expect(packFileFor(half, 'es', 'el perro', 'm')).toBeNull();
+    expect(packFileFor(half, 'hu', 'a kutya', 'f')).toBeNull();
   });
 });
 
@@ -211,7 +244,8 @@ describe('sentence pack lookup', () => {
   });
 
   it('the word pack lookup is untouched by the g| keys', () => {
-    expect(packFileFor(index, 'es', '¿Dónde está el baño?')).toBeNull();
+    // the word pack and the sentence pack share the key shape: a sentence index answers a word lookup the same way
+    expect(packFileFor(index, 'es', '¿Dónde está el baño?')).toBe('es/m/5382b1ed.mp3');
   });
 });
 
