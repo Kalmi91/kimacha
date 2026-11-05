@@ -1171,6 +1171,16 @@
       "tense": {
         "from": "presente",
         "to": "indefinido"
+      },
+      "wrong": {
+        "tengo": {
+          "en": "Tengo is in the present tense. This task asks for the preterite (indefinido): tuve.",
+          "es": "Tengo está en presente. Esta tarea pide pretérito indefinido: tuve."
+        },
+        "tuví": {
+          "en": "Irregular preterite stems take their own endings, and the yo ending is -e, with no accent: tuve.",
+          "es": "Los pretéritos irregulares usan terminaciones propias, y la de yo es -e, sin acento: tuve."
+        }
       }
     },
     {
@@ -1183,6 +1193,16 @@
       "tense": {
         "from": "presente",
         "to": "indefinido"
+      },
+      "wrong": {
+        "tienen": {
+          "en": "Tienen is in the present tense. This task asks for the preterite (indefinido): tuvieron.",
+          "es": "Tienen está en presente. Esta tarea pide pretérito indefinido: tuvieron."
+        },
+        "tenieron": {
+          "en": "Tener has an irregular stem in the preterite (indefinido): tuv-. The regular pattern does not work: tuvieron.",
+          "es": "Tener tiene una raíz irregular en pretérito indefinido: tuv-. El patrón regular no sirve: tuvieron."
+        }
       }
     },
     {
@@ -1195,6 +1215,16 @@
       "tense": {
         "from": "presente",
         "to": "indefinido"
+      },
+      "wrong": {
+        "estás": {
+          "en": "Estás is in the present tense. This task asks for the preterite (indefinido): estuviste.",
+          "es": "Estás está en presente. Esta tarea pide pretérito indefinido: estuviste."
+        },
+        "estaste": {
+          "en": "Estar has an irregular stem in the preterite (indefinido): estuv-. The regular pattern does not work: estuviste.",
+          "es": "Estar tiene una raíz irregular en pretérito indefinido: estuv-. El patrón regular no sirve: estuviste."
+        }
       }
     },
     {
@@ -1207,6 +1237,16 @@
       "tense": {
         "from": "presente",
         "to": "indefinido"
+      },
+      "wrong": {
+        "estamos": {
+          "en": "Estamos is in the present tense. This task asks for the preterite (indefinido): estuvimos.",
+          "es": "Estamos está en presente. Esta tarea pide pretérito indefinido: estuvimos."
+        },
+        "estábamos": {
+          "en": "Estábamos is in the imperfect. This task asks for the preterite (indefinido): estuvimos.",
+          "es": "Estábamos está en imperfecto. Esta tarea pide pretérito indefinido: estuvimos."
+        }
       }
     },
     {
@@ -1219,6 +1259,16 @@
       "tense": {
         "from": "presente",
         "to": "indefinido"
+      },
+      "wrong": {
+        "hace": {
+          "en": "Hace is in the present tense. This task asks for the preterite (indefinido): hizo.",
+          "es": "Hace está en presente. Esta tarea pide pretérito indefinido: hizo."
+        },
+        "hacó": {
+          "en": "Hacer has an irregular preterite stem: hic- (written hiz- before o). The form is hizo.",
+          "es": "Hacer tiene una raíz irregular en pretérito indefinido: hic- (se escribe hiz- ante o). La forma es hizo."
+        }
       }
     },
     {
@@ -1231,6 +1281,16 @@
       "tense": {
         "from": "presente",
         "to": "indefinido"
+      },
+      "wrong": {
+        "pongo": {
+          "en": "Pongo is in the present tense. This task asks for the preterite (indefinido): puse.",
+          "es": "Pongo está en presente. Esta tarea pide pretérito indefinido: puse."
+        },
+        "poní": {
+          "en": "Poner has an irregular stem in the preterite (indefinido): pus-. The regular pattern does not work: puse.",
+          "es": "Poner tiene una raíz irregular en pretérito indefinido: pus-. El patrón regular no sirve: puse."
+        }
       }
     },
     {
@@ -1243,6 +1303,16 @@
       "tense": {
         "from": "presente",
         "to": "indefinido"
+      },
+      "wrong": {
+        "sabes": {
+          "en": "Sabes is in the present tense. This task asks for the preterite (indefinido): supiste.",
+          "es": "Sabes está en presente. Esta tarea pide pretérito indefinido: supiste."
+        },
+        "sabiste": {
+          "en": "Saber has an irregular stem in the preterite (indefinido): sup-. The regular pattern does not work: supiste.",
+          "es": "Saber tiene una raíz irregular en pretérito indefinido: sup-. El patrón regular no sirve: supiste."
+        }
       }
     },
     {
@@ -1255,6 +1325,16 @@
       "tense": {
         "from": "presente",
         "to": "indefinido"
+      },
+      "wrong": {
+        "viene": {
+          "en": "Viene is in the present tense. This task asks for the preterite (indefinido): vino.",
+          "es": "Viene está en presente. Esta tarea pide pretérito indefinido: vino."
+        },
+        "venió": {
+          "en": "Venir has an irregular stem in the preterite (indefinido): vin-. The regular pattern does not work: vino.",
+          "es": "Venir tiene una raíz irregular en pretérito indefinido: vin-. El patrón regular no sirve: vino."
+        }
       }
     },
     {
@@ -1267,6 +1347,20 @@
       "tense": {
         "from": "presente",
         "to": "indefinido"
+      },
+      "wrong": {
+        "dicen": {
+          "en": "Dicen is in the present tense. This task asks for the preterite (indefinido): dijeron.",
+          "es": "Dicen está en presente. Esta tarea pide pretérito indefinido: dijeron."
+        },
+        "dijieron": {
+          "en": "After a stem ending in j, the ending is -eron, not -ieron: dijeron.",
+          "es": "Después de una raíz terminada en j, la terminación es -eron, no -ieron: dijeron."
+        },
+        "decieron": {
+          "en": "Decir has an irregular stem in the preterite (indefinido): dij-. The regular pattern does not work: dijeron.",
+          "es": "Decir tiene una raíz irregular en pretérito indefinido: dij-. El patrón regular no sirve: dijeron."
+        }
       }
     },
     {
@@ -1279,6 +1373,16 @@
       "tense": {
         "from": "presente",
         "to": "indefinido"
+      },
+      "wrong": {
+        "soy": {
+          "en": "Soy is in the present tense. This task asks for the preterite (indefinido): fui.",
+          "es": "Soy está en presente. Esta tarea pide pretérito indefinido: fui."
+        },
+        "era": {
+          "en": "Era is in the imperfect. This task asks for the preterite (indefinido): fui.",
+          "es": "Era está en imperfecto. Esta tarea pide pretérito indefinido: fui."
+        }
       }
     },
     {
@@ -1291,6 +1395,16 @@
       "tense": {
         "from": "presente",
         "to": "indefinido"
+      },
+      "wrong": {
+        "vamos": {
+          "en": "Vamos is in the present tense. This task asks for the preterite (indefinido): fuimos.",
+          "es": "Vamos está en presente. Esta tarea pide pretérito indefinido: fuimos."
+        },
+        "íbamos": {
+          "en": "Íbamos is in the imperfect. This task asks for the preterite (indefinido): fuimos.",
+          "es": "Íbamos está en imperfecto. Esta tarea pide pretérito indefinido: fuimos."
+        }
       }
     },
     {
@@ -1303,6 +1417,16 @@
       "tense": {
         "from": "presente",
         "to": "indefinido"
+      },
+      "wrong": {
+        "dan": {
+          "en": "Dan is in the present tense. This task asks for the preterite (indefinido): dieron.",
+          "es": "Dan está en presente. Esta tarea pide pretérito indefinido: dieron."
+        },
+        "daron": {
+          "en": "Dar takes the preterite endings of -er and -ir verbs (di, diste, dio, dimos, dieron): dieron.",
+          "es": "Dar toma en pretérito indefinido las terminaciones de los verbos en -er e -ir (di, diste, dio, dimos, dieron): dieron."
+        }
       }
     },
     {
