@@ -1184,14 +1184,14 @@
       "options": [
         {
           "text": {
-            "en": "I",
-            "es": "yo"
+            "en": "first person singular",
+            "es": "primera persona del singular"
           }
         },
         {
           "text": {
-            "en": "you, informal",
-            "es": "tú"
+            "en": "second person singular, informal",
+            "es": "segunda persona del singular, informal"
           },
           "wrong": {
             "en": "If it were tú, it would say 'Hablarías conmigo si tuvieras tiempo', meaning YOU would talk to me, not me to you.",
@@ -1200,8 +1200,8 @@
         },
         {
           "text": {
-            "en": "we",
-            "es": "nosotros"
+            "en": "first person plural",
+            "es": "primera persona del plural"
           },
           "wrong": {
             "en": "If it were nosotros, it would say 'Hablaríamos contigo si tuviéramos tiempo', meaning WE would talk to you, not just me.",
@@ -1227,8 +1227,8 @@
       "options": [
         {
           "text": {
-            "en": "I",
-            "es": "yo"
+            "en": "first person singular",
+            "es": "primera persona del singular"
           },
           "wrong": {
             "en": "If it were yo, it would say '¿Podría cerrar la ventana?', meaning I would be asking whether I can close it, not asking you.",
@@ -1237,14 +1237,14 @@
         },
         {
           "text": {
-            "en": "you, informal",
-            "es": "tú"
+            "en": "second person singular, informal",
+            "es": "segunda persona del singular, informal"
           }
         },
         {
           "text": {
-            "en": "we",
-            "es": "nosotros"
+            "en": "first person plural",
+            "es": "primera persona del plural"
           },
           "wrong": {
             "en": "If it were nosotros, it would say '¿Podríamos cerrar la ventana?', meaning WE would be asking whether we can close it, not asking just you.",
@@ -1270,8 +1270,8 @@
       "options": [
         {
           "text": {
-            "en": "I",
-            "es": "yo"
+            "en": "first person singular",
+            "es": "primera persona del singular"
           },
           "wrong": {
             "en": "If it were yo, the sentence's subject would be 'yo', not 'mi hermana'; here it is explicitly about my sister, in the third person.",
@@ -1280,14 +1280,14 @@
         },
         {
           "text": {
-            "en": "he, she, or formal you",
-            "es": "él/ella/usted"
+            "en": "third person singular: he, she or formal you",
+            "es": "tercera persona del singular"
           }
         },
         {
           "text": {
-            "en": "we",
-            "es": "nosotros"
+            "en": "first person plural",
+            "es": "primera persona del plural"
           },
           "wrong": {
             "en": "If it were nosotros, it would say 'Tendríamos más tiempo', meaning WE, together with my sister; here it is ONLY about my sister, alone.",
@@ -1313,8 +1313,8 @@
       "options": [
         {
           "text": {
-            "en": "I",
-            "es": "yo"
+            "en": "first person singular",
+            "es": "primera persona del singular"
           },
           "wrong": {
             "en": "If it were yo, it would say 'Viviría más cerca del centro', meaning I would live closer, not us.",
@@ -1323,14 +1323,14 @@
         },
         {
           "text": {
-            "en": "we",
-            "es": "nosotros"
+            "en": "first person plural",
+            "es": "primera persona del plural"
           }
         },
         {
           "text": {
-            "en": "they or you all",
-            "es": "ellos/ellas/ustedes"
+            "en": "third person plural: they or you all",
+            "es": "tercera persona del plural"
           },
           "wrong": {
             "en": "If it were ellos, it would say 'Vivirían más cerca del centro', meaning THEY would live closer, not us.",
@@ -1356,8 +1356,8 @@
       "options": [
         {
           "text": {
-            "en": "I",
-            "es": "yo"
+            "en": "first person singular",
+            "es": "primera persona del singular"
           },
           "wrong": {
             "en": "If it were yo, it would say 'Yo vendría si me invitaras', meaning I would come, not them.",
@@ -1366,8 +1366,8 @@
         },
         {
           "text": {
-            "en": "we",
-            "es": "nosotros"
+            "en": "first person plural",
+            "es": "primera persona del plural"
           },
           "wrong": {
             "en": "If it were nosotros, it would say 'Nosotros vendríamos si nos invitaras', meaning WE would come, not them.",
@@ -1376,8 +1376,8 @@
         },
         {
           "text": {
-            "en": "they or you all",
-            "es": "ellos/ellas/ustedes"
+            "en": "third person plural: they or you all",
+            "es": "tercera persona del plural"
           }
         }
       ],
@@ -1399,8 +1399,8 @@
       "options": [
         {
           "text": {
-            "en": "we",
-            "es": "nosotros"
+            "en": "first person plural",
+            "es": "primera persona del plural"
           },
           "wrong": {
             "en": "If it were nosotros, it would say '¿Qué diríamos en mi lugar?', meaning WE would say it, not just you.",
@@ -1409,14 +1409,14 @@
         },
         {
           "text": {
-            "en": "you, informal",
-            "es": "tú"
+            "en": "second person singular, informal",
+            "es": "segunda persona del singular, informal"
           }
         },
         {
           "text": {
-            "en": "they or you all",
-            "es": "ellos/ellas/ustedes"
+            "en": "third person plural: they or you all",
+            "es": "tercera persona del plural"
           },
           "wrong": {
             "en": "If it were ellos, it would say '¿Qué dirían en mi lugar?', meaning THEY would say it, not you.",

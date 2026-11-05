@@ -883,14 +883,14 @@
       "options": [
         {
           "text": {
-            "en": "I",
-            "es": "yo"
+            "en": "first person singular",
+            "es": "primera persona del singular"
           }
         },
         {
           "text": {
-            "en": "you, informal",
-            "es": "tú"
+            "en": "second person singular, informal",
+            "es": "segunda persona del singular, informal"
           },
           "wrong": {
             "en": "If it were tú, it would say 'Vas a estudiar esta noche', meaning YOU are going to study tonight, not me.",
@@ -899,8 +899,8 @@
         },
         {
           "text": {
-            "en": "we",
-            "es": "nosotros"
+            "en": "first person plural",
+            "es": "primera persona del plural"
           },
           "wrong": {
             "en": "If it were nosotros, it would say 'Vamos a estudiar esta noche', meaning WE are going to study, not just me.",
@@ -923,8 +923,8 @@
       "options": [
         {
           "text": {
-            "en": "he, she, or formal you",
-            "es": "él/ella/usted"
+            "en": "third person singular: he, she or formal you",
+            "es": "tercera persona del singular"
           },
           "wrong": {
             "en": "If it were él/ella, it would say 'Va a terminar la tarea', meaning HE/SHE is going to finish the homework, not you.",
@@ -933,14 +933,14 @@
         },
         {
           "text": {
-            "en": "you, informal",
-            "es": "tú"
+            "en": "second person singular, informal",
+            "es": "segunda persona del singular, informal"
           }
         },
         {
           "text": {
-            "en": "they or you all",
-            "es": "ellos/ellas/ustedes"
+            "en": "third person plural: they or you all",
+            "es": "tercera persona del plural"
           },
           "wrong": {
             "en": "If it were ellos, it would say 'Van a terminar la tarea', meaning THEY are going to finish it, not just you.",
@@ -963,14 +963,14 @@
       "options": [
         {
           "text": {
-            "en": "we",
-            "es": "nosotros"
+            "en": "first person plural",
+            "es": "primera persona del plural"
           }
         },
         {
           "text": {
-            "en": "they or you all",
-            "es": "ellos/ellas/ustedes"
+            "en": "third person plural: they or you all",
+            "es": "tercera persona del plural"
           },
           "wrong": {
             "en": "If it were ellos, it would say 'Van a salir temprano', meaning THEY are going to leave early, not us.",
@@ -979,8 +979,8 @@
         },
         {
           "text": {
-            "en": "I",
-            "es": "yo"
+            "en": "first person singular",
+            "es": "primera persona del singular"
           },
           "wrong": {
             "en": "If it were yo, it would say 'Voy a salir temprano', meaning I am going to leave early, alone, not us.",
@@ -1003,8 +1003,8 @@
       "options": [
         {
           "text": {
-            "en": "we",
-            "es": "nosotros"
+            "en": "first person plural",
+            "es": "primera persona del plural"
           },
           "wrong": {
             "en": "If it were nosotros, it would say 'Vamos a llegar tarde', meaning WE are going to be late, not you all.",
@@ -1013,14 +1013,14 @@
         },
         {
           "text": {
-            "en": "they or you all",
-            "es": "ellos/ellas/ustedes"
+            "en": "third person plural: they or you all",
+            "es": "tercera persona del plural"
           }
         },
         {
           "text": {
-            "en": "he, she, or formal you",
-            "es": "él/ella/usted"
+            "en": "third person singular: he, she or formal you",
+            "es": "tercera persona del singular"
           },
           "wrong": {
             "en": "If it were él/ella, it would say 'Va a llegar tarde', meaning HE/SHE is going to be late, alone, not you all.",
@@ -1043,8 +1043,8 @@
       "options": [
         {
           "text": {
-            "en": "you, informal",
-            "es": "tú"
+            "en": "second person singular, informal",
+            "es": "segunda persona del singular, informal"
           },
           "wrong": {
             "en": "If it were tú, it would say 'Vas a viajar juntos', meaning YOU are going to travel, not them.",
@@ -1053,8 +1053,8 @@
         },
         {
           "text": {
-            "en": "we",
-            "es": "nosotros"
+            "en": "first person plural",
+            "es": "primera persona del plural"
           },
           "wrong": {
             "en": "If it were nosotros, it would say 'Vamos a viajar juntos', meaning WE are going to travel, not them.",
@@ -1063,8 +1063,8 @@
         },
         {
           "text": {
-            "en": "they or you all",
-            "es": "ellos/ellas/ustedes"
+            "en": "third person plural: they or you all",
+            "es": "tercera persona del plural"
           }
         }
       ],
@@ -1083,14 +1083,14 @@
       "options": [
         {
           "text": {
-            "en": "they or you all",
-            "es": "ellos/ellas/ustedes"
+            "en": "third person plural: they or you all",
+            "es": "tercera persona del plural"
           }
         },
         {
           "text": {
-            "en": "we",
-            "es": "nosotros"
+            "en": "first person plural",
+            "es": "primera persona del plural"
           },
           "wrong": {
             "en": "If it were nosotros, it would say 'No vamos a venir hoy', meaning WE are not going to come, not them.",
@@ -1099,8 +1099,8 @@
         },
         {
           "text": {
-            "en": "I",
-            "es": "yo"
+            "en": "first person singular",
+            "es": "primera persona del singular"
           },
           "wrong": {
             "en": "If it were yo, it would say 'No voy a venir hoy', meaning I am not going to come, alone, not them.",

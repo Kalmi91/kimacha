@@ -830,8 +830,8 @@
       "options": [
         {
           "text": {
-            "en": "cuyo: a possessive relative, agrees with the thing owned",
-            "es": "cuyo: relativo posesivo, concuerda con lo poseído"
+            "en": "a possessive relative that agrees with the thing owned",
+            "es": "un relativo posesivo que concuerda con lo poseído"
           }
         },
         {
@@ -846,8 +846,8 @@
         },
         {
           "text": {
-            "en": "que su: a colloquial possessive structure",
-            "es": "que su: estructura posesiva coloquial"
+            "en": "a colloquial possessive structure built with the plain relative",
+            "es": "una estructura posesiva coloquial con el relativo simple"
           },
           "wrong": {
             "en": "Que su is not standard, the sentence uses cuyos",
@@ -928,8 +928,8 @@
         },
         {
           "text": {
-            "en": "preposition + article + que: the article agrees with the antecedent",
-            "es": "preposición + artículo + que: el artículo concuerda con el antecedente"
+            "en": "preposition + article + relative: the article agrees with the antecedent",
+            "es": "preposición + artículo + relativo: el artículo concuerda con el antecedente"
           }
         }
       ],
@@ -947,8 +947,8 @@
       "options": [
         {
           "text": {
-            "en": "a neuter relative that refers to a whole clause",
-            "es": "un relativo neutro que remite a toda una frase"
+            "en": "a neuter relative after a comma that sums up the clause before it",
+            "es": "un relativo neutro tras una coma que resume la oración anterior"
           },
           "wrong": {
             "en": "Lo cual comes after a comma and a clause, here there is no clause before it",
@@ -992,8 +992,8 @@
         },
         {
           "text": {
-            "en": "a neuter relative that refers to a whole clause",
-            "es": "un relativo neutro que remite a toda una frase"
+            "en": "a neuter relative after a comma that sums up the clause before it",
+            "es": "un relativo neutro tras una coma que resume la oración anterior"
           },
           "wrong": {
             "en": "Lo cual refers to a clause, here the antecedent is la empresa (a noun)",
@@ -1064,8 +1064,8 @@
       "options": [
         {
           "text": {
-            "en": "a neuter relative that refers to a whole clause",
-            "es": "un relativo neutro que remite a toda una frase"
+            "en": "a neuter relative after a comma that sums up the clause before it",
+            "es": "un relativo neutro tras una coma que resume la oración anterior"
           },
           "wrong": {
             "en": "The antecedent is hermanos (a noun), not a clause",

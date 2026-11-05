@@ -63,6 +63,10 @@
             {
               "es": "Mi casa está enfrente del parque.",
               "tr": { "en": "My house is across from the park.", "es": "Mi casa está enfrente del parque." }
+            },
+            {
+              "es": "Cruza la calle y ahí está.",
+              "tr": { "en": "Cross the street and there it is.", "es": "Cruza la calle y ahí está." }
             }
           ]
         },
@@ -288,7 +292,7 @@
   },
   "glossary": [
     { "word": "encima", "gloss": { "en": "on top of, above", "es": "sobre algo, en su parte superior" } },
-    { "word": "sobre", "gloss": { "en": "on, resting on a surface", "es": "encima de algo, apoyado en su superficie" } },
+    { "word": "sobre", "gloss": { "en": "on, resting on a surface", "es": "en contacto con la parte de arriba de una superficie" } },
     { "word": "detrás", "gloss": { "en": "behind", "es": "en la parte de atrás" } },
     { "word": "delante", "gloss": { "en": "in front of", "es": "en la parte de adelante" } },
     { "word": "enfrente", "gloss": { "en": "across from, opposite", "es": "en el lado opuesto" } },

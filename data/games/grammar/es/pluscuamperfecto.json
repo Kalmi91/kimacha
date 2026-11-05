@@ -835,14 +835,14 @@
       "options": [
         {
           "text": {
-            "en": "había + participle = an earlier past",
-            "es": "había + participio = un pasado anterior"
+            "en": "the past auxiliary + participle: a past before another past",
+            "es": "auxiliar de pasado + participio: un pasado anterior a otro"
           }
         },
         {
           "text": {
-            "en": "he + participle = linked to now",
-            "es": "he + participio = unido al presente"
+            "en": "the present auxiliary + participle: connected to the present",
+            "es": "auxiliar de presente + participio: unido al presente"
           },
           "wrong": {
             "en": "He + participle is linked to the present: Ana ha salido = Ana has left (now); here llegué gives a moment in the past.",
@@ -874,8 +874,8 @@
       "options": [
         {
           "text": {
-            "en": "he + participle = linked to now",
-            "es": "he + participio = unido al presente"
+            "en": "the present auxiliary + participle: connected to the present",
+            "es": "auxiliar de presente + participio: unido al presente"
           },
           "wrong": {
             "en": "He + participle gives an experience up to today: nunca he viajado = I have never travelled so far; here hasta ese día gives a limit in the past.",
@@ -894,8 +894,8 @@
         },
         {
           "text": {
-            "en": "había + participle = an earlier past",
-            "es": "había + participio = un pasado anterior"
+            "en": "the past auxiliary + participle: a past before another past",
+            "es": "auxiliar de pasado + participio: un pasado anterior a otro"
           }
         }
       ],
@@ -923,14 +923,14 @@
         },
         {
           "text": {
-            "en": "había + participle = an earlier past",
-            "es": "había + participio = un pasado anterior"
+            "en": "the past auxiliary + participle: a past before another past",
+            "es": "auxiliar de pasado + participio: un pasado anterior a otro"
           }
         },
         {
           "text": {
-            "en": "he + participle = linked to now",
-            "es": "he + participio = unido al presente"
+            "en": "the present auxiliary + participle: connected to the present",
+            "es": "auxiliar de presente + participio: unido al presente"
           },
           "wrong": {
             "en": "He + participle would refer to the present: dice que ya ha comido = he says he has already eaten (now); here me dijo is in the past.",
@@ -952,8 +952,8 @@
       "options": [
         {
           "text": {
-            "en": "había + participle = an earlier past",
-            "es": "había + participio = un pasado anterior"
+            "en": "the past auxiliary + participle: a past before another past",
+            "es": "auxiliar de pasado + participio: un pasado anterior a otro"
           },
           "wrong": {
             "en": "Había comido needs a past reference point (for example cuando llamaste); hoy is the current period.",
@@ -962,8 +962,8 @@
         },
         {
           "text": {
-            "en": "he + participle = linked to now",
-            "es": "he + participio = unido al presente"
+            "en": "the present auxiliary + participle: connected to the present",
+            "es": "auxiliar de presente + participio: unido al presente"
           }
         },
         {
@@ -991,8 +991,8 @@
       "options": [
         {
           "text": {
-            "en": "había + participle = an earlier past",
-            "es": "había + participio = un pasado anterior"
+            "en": "the past auxiliary + participle: a past before another past",
+            "es": "auxiliar de pasado + participio: un pasado anterior a otro"
           },
           "wrong": {
             "en": "Ana ya había salido means that Ana had gone earlier; here salió happened when or after I arrived, there is no earlier event.",
@@ -1001,8 +1001,8 @@
         },
         {
           "text": {
-            "en": "he + participle = linked to now",
-            "es": "he + participio = unido al presente"
+            "en": "the present auxiliary + participle: connected to the present",
+            "es": "auxiliar de presente + participio: unido al presente"
           },
           "wrong": {
             "en": "He + participle is linked to the present; llegué is a moment in the past, there is no current period in the sentence.",
@@ -1079,8 +1079,8 @@
         },
         {
           "text": {
-            "en": "the pronoun goes between había and the participle",
-            "es": "el pronombre va entre había y el participio"
+            "en": "the pronoun goes between the auxiliary and the participle",
+            "es": "el pronombre va entre el auxiliar y el participio"
           },
           "wrong": {
             "en": "Nothing can go between había and the participle; the pronoun goes in front of both; correctly: Ya me había levantado.",
@@ -1089,8 +1089,8 @@
         },
         {
           "text": {
-            "en": "the pronoun goes before había",
-            "es": "el pronombre va antes de había"
+            "en": "the pronoun goes before the auxiliary",
+            "es": "el pronombre va antes del auxiliar"
           }
         }
       ],

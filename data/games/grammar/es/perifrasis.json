@@ -881,14 +881,14 @@
       "options": [
         {
           "text": {
-            "en": "acabar de = to have just done",
-            "es": "acabar de = hacer hace un momento"
+            "en": "something done a moment ago",
+            "es": "algo hecho hace un momento"
           }
         },
         {
           "text": {
-            "en": "dejar de = to stop",
-            "es": "dejar de = parar"
+            "en": "stopping an action",
+            "es": "detener una acción"
           },
           "wrong": {
             "en": "Dejar de means stopping: Mis padres dejan de cenar = my parents stop having dinner; here dinner has just ended.",
@@ -897,8 +897,8 @@
         },
         {
           "text": {
-            "en": "volver a = again",
-            "es": "volver a = otra vez"
+            "en": "doing it again",
+            "es": "hacerlo otra vez"
           },
           "wrong": {
             "en": "Volver a means repeating: Mis padres vuelven a cenar = my parents have dinner again; there is no repetition here, dinner has just ended.",
@@ -920,8 +920,8 @@
       "options": [
         {
           "text": {
-            "en": "empezar a = to begin",
-            "es": "empezar a = comenzar"
+            "en": "beginning an action",
+            "es": "dar inicio a una acción"
           },
           "wrong": {
             "en": "Empezar a means beginning: Mañana empiezo a llamar a mi madre = from tomorrow I begin calling her; the sentence says repetition.",
@@ -930,8 +930,8 @@
         },
         {
           "text": {
-            "en": "dejar de = to stop",
-            "es": "dejar de = parar"
+            "en": "stopping an action",
+            "es": "detener una acción"
           },
           "wrong": {
             "en": "Dejar de means stopping: Mañana dejo de llamar a mi madre = from tomorrow I no longer call her; the sentence uses a and says again.",
@@ -940,8 +940,8 @@
         },
         {
           "text": {
-            "en": "volver a = again",
-            "es": "volver a = otra vez"
+            "en": "doing it again",
+            "es": "hacerlo otra vez"
           }
         }
       ],
@@ -959,8 +959,8 @@
       "options": [
         {
           "text": {
-            "en": "seguir + gerund = to keep on",
-            "es": "seguir + gerundio = continuar"
+            "en": "continuing an action",
+            "es": "continuar una acción"
           },
           "wrong": {
             "en": "Seguir takes a gerund: Mis hermanos siguen jugando en la calle = they are still playing there; the sentence uses de and an infinitive and says stopping.",
@@ -969,14 +969,14 @@
         },
         {
           "text": {
-            "en": "dejar de = to stop",
-            "es": "dejar de = parar"
+            "en": "stopping an action",
+            "es": "detener una acción"
           }
         },
         {
           "text": {
-            "en": "ponerse a = to start suddenly",
-            "es": "ponerse a = empezar de repente"
+            "en": "starting suddenly",
+            "es": "empezar de golpe"
           },
           "wrong": {
             "en": "Ponerse a means starting: Mis hermanos se ponen a jugar en la calle = they suddenly start playing; the de here means stopping.",
@@ -998,8 +998,8 @@
       "options": [
         {
           "text": {
-            "en": "volver a = again",
-            "es": "volver a = otra vez"
+            "en": "doing it again",
+            "es": "hacerlo otra vez"
           },
           "wrong": {
             "en": "Volver a means repeating: Volvemos a cenar a las nueve = we have dinner at nine again; there is no repetition here, it is a first beginning.",
@@ -1008,8 +1008,8 @@
         },
         {
           "text": {
-            "en": "dejar de = to stop",
-            "es": "dejar de = parar"
+            "en": "stopping an action",
+            "es": "detener una acción"
           },
           "wrong": {
             "en": "Dejar de means stopping: Dejamos de cenar a las nueve = at nine we stop having dinner; the sentence uses a and says beginning.",
@@ -1018,8 +1018,8 @@
         },
         {
           "text": {
-            "en": "empezar a = to begin",
-            "es": "empezar a = comenzar"
+            "en": "beginning an action",
+            "es": "dar inicio a una acción"
           }
         }
       ],
@@ -1037,8 +1037,8 @@
       "options": [
         {
           "text": {
-            "en": "dejar de = to stop",
-            "es": "dejar de = parar"
+            "en": "stopping an action",
+            "es": "detener una acción"
           },
           "wrong": {
             "en": "Dejar de means stopping: De repente, ella deja de cantar = suddenly she stops singing; the sentence uses ponerse a and says beginning.",
@@ -1047,14 +1047,14 @@
         },
         {
           "text": {
-            "en": "ponerse a = to start suddenly",
-            "es": "ponerse a = empezar de repente"
+            "en": "starting suddenly",
+            "es": "empezar de golpe"
           }
         },
         {
           "text": {
-            "en": "acabar de = to have just done",
-            "es": "acabar de = hacer hace un momento"
+            "en": "something done a moment ago",
+            "es": "algo hecho hace un momento"
           },
           "wrong": {
             "en": "Acabar de means something that just happened: Ella acaba de cantar = she has just sung; the sentence says a beginning, not an end.",
@@ -1076,8 +1076,8 @@
       "options": [
         {
           "text": {
-            "en": "llevar + gerund = for how long",
-            "es": "llevar + gerundio = desde hace cuánto tiempo"
+            "en": "how long it has been going on",
+            "es": "desde hace cuánto tiempo ocurre"
           },
           "wrong": {
             "en": "Llevar asks for a length of time: Ana lleva una hora leyendo en la cama = Ana has been reading for an hour; the sentence has no length of time, only the continuing counts.",
@@ -1086,14 +1086,14 @@
         },
         {
           "text": {
-            "en": "seguir + gerund = to keep on",
-            "es": "seguir + gerundio = continuar"
+            "en": "continuing an action",
+            "es": "continuar una acción"
           }
         },
         {
           "text": {
-            "en": "volver a = again",
-            "es": "volver a = otra vez"
+            "en": "doing it again",
+            "es": "hacerlo otra vez"
           },
           "wrong": {
             "en": "Volver a takes an infinitive: Ana vuelve a leer en la cama = Ana reads in bed again; the gerund means continuing, so you need seguir.",
@@ -1115,14 +1115,14 @@
       "options": [
         {
           "text": {
-            "en": "llevar + gerund = for how long",
-            "es": "llevar + gerundio = desde hace cuánto tiempo"
+            "en": "how long it has been going on",
+            "es": "desde hace cuánto tiempo ocurre"
           }
         },
         {
           "text": {
-            "en": "seguir + gerund = to keep on",
-            "es": "seguir + gerundio = continuar"
+            "en": "continuing an action",
+            "es": "continuar una acción"
           },
           "wrong": {
             "en": "Seguir means continuing: Mi madre sigue cocinando = my mother is still cooking; the length of time dos horas calls for llevar.",
@@ -1131,8 +1131,8 @@
         },
         {
           "text": {
-            "en": "dejar de = to stop",
-            "es": "dejar de = parar"
+            "en": "stopping an action",
+            "es": "detener una acción"
           },
           "wrong": {
             "en": "Dejar de means stopping, with an infinitive: Mi madre deja de cocinar = my mother stops cooking; the sentence uses a gerund and a length of time.",

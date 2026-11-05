@@ -483,14 +483,14 @@
       "options": [
         { "text": { "en": "goal, intent", "es": "meta, intención" } },
         {
-          "text": { "en": "cause, why", "es": "causa, por qué" },
+          "text": { "en": "cause, the reason", "es": "causa, la razón" },
           "wrong": {
             "en": "There is no specific cause in the sentence, but a goal: why I study Spanish, in order to travel to Mexico.",
             "es": "No hay una causa concreta en la frase, sino una meta: para qué estudio español, para poder viajar a México."
           }
         },
         {
-          "text": { "en": "recipient, for whom", "es": "destinatario, para quién" },
+          "text": { "en": "recipient, who gets it", "es": "destinatario, quién lo recibe" },
           "wrong": {
             "en": "There is no recipient in the sentence that something is intended for, but a goal: why I study Spanish.",
             "es": "No hay un destinatario en la frase, sino una meta: para qué estudio español."
@@ -513,7 +513,7 @@
             "es": "No hay una meta en la frase, sino una causa: por qué no trabajo, a causa de la lluvia."
           }
         },
-        { "text": { "en": "cause, why", "es": "causa, por qué" } },
+        { "text": { "en": "cause, the reason", "es": "causa, la razón" } },
         {
           "text": { "en": "exchange, price", "es": "intercambio, precio" },
           "wrong": {
@@ -532,7 +532,7 @@
       "tr": { "en": "I'm going to Mexico for two weeks.", "es": "Voy a México por dos semanas." },
       "options": [
         {
-          "text": { "en": "deadline, by when", "es": "plazo, para cuándo" },
+          "text": { "en": "deadline, by when", "es": "plazo, cuándo debe estar listo" },
           "wrong": {
             "en": "There is no deadline in the sentence, by when something must be ready, but a duration: how long I'll be in Mexico.",
             "es": "No hay un plazo en la frase, para cuándo debe estar listo algo, sino una duración: cuánto tiempo estaré en México."
@@ -558,14 +558,14 @@
       "options": [
         { "text": { "en": "exchange, price", "es": "intercambio, precio" } },
         {
-          "text": { "en": "cause, why", "es": "causa, por qué" },
+          "text": { "en": "cause, the reason", "es": "causa, la razón" },
           "wrong": {
             "en": "There is no cause in the sentence for why I'd do this, but an exchange: how much I'm paying for the shirt.",
             "es": "No hay una causa en la frase, sino un intercambio: cuánto pago por la camisa."
           }
         },
         {
-          "text": { "en": "recipient, for whom", "es": "destinatario, para quién" },
+          "text": { "en": "recipient, who gets it", "es": "destinatario, quién lo recibe" },
           "wrong": {
             "en": "There is no recipient in the sentence the shirt is intended for, but an exchange: how much I'm paying for it.",
             "es": "No hay un destinatario en la frase, sino un intercambio: cuánto pago por ella."
@@ -588,7 +588,7 @@
             "es": "No hay una duración en la frase, sino un plazo: para cuándo debe estar listo el trabajo."
           }
         },
-        { "text": { "en": "deadline, by when", "es": "plazo, para cuándo" } },
+        { "text": { "en": "deadline, by when", "es": "plazo, cuándo debe estar listo" } },
         {
           "text": { "en": "goal, intent", "es": "meta, intención" },
           "wrong": {
@@ -614,13 +614,13 @@
           }
         },
         {
-          "text": { "en": "cause, why", "es": "causa, por qué" },
+          "text": { "en": "cause, the reason", "es": "causa, la razón" },
           "wrong": {
             "en": "There is no cause in the sentence for why I'd give this gift, but a recipient: who it's for.",
             "es": "No hay una causa en la frase, sino un destinatario: para quién es."
           }
         },
-        { "text": { "en": "recipient, for whom", "es": "destinatario, para quién" } }
+        { "text": { "en": "recipient, who gets it", "es": "destinatario, quién lo recibe" } }
       ],
       "correctIndex": 2
     },
@@ -633,14 +633,14 @@
       "options": [
         { "text": { "en": "agent in the passive voice", "es": "agente en la voz pasiva" } },
         {
-          "text": { "en": "cause, why", "es": "causa, por qué" },
+          "text": { "en": "cause, the reason", "es": "causa, la razón" },
           "wrong": {
             "en": "There is no separate cause in the sentence, but the agent of the passive voice: who wrote the book.",
             "es": "No hay una causa aparte en la frase, sino el agente de la voz pasiva: quién escribió el libro."
           }
         },
         {
-          "text": { "en": "deadline, by when", "es": "plazo, para cuándo" },
+          "text": { "en": "deadline, by when", "es": "plazo, cuándo debe estar listo" },
           "wrong": {
             "en": "There is no deadline in the sentence, but the agent of the passive voice: who wrote the book.",
             "es": "No hay un plazo en la frase, sino el agente de la voz pasiva: quién escribió el libro."
