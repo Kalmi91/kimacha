@@ -148,7 +148,7 @@ export default {
   // FB571: the level test (an endless stream of questions from one level's topics, the weakest first).
   levelTest: {
     button: 'Level test',
-    header: (lvl: string, pct: number, pos: number, total: number) => `${lvl} · ${pct}% · ${pos}/${total}`,
+    header: (lvl: string, pos: number, total: number) => `${lvl} · ${pos}/${total}`,
     leave: 'Leave the level test',
     doneTitle: (lvl: string) => `${lvl}: every topic ticked off`,
     doneBody: 'You can leave now or keep practising.',
@@ -167,6 +167,10 @@ export default {
     roundLevels: (lvl: string, from: number, to: number) => `${lvl} level: ${from}% → ${to}%`,
     weakest: 'Weakest now',
     weakestLine: (title: string, pct: number) => `${title} · ${pct}%`,
+    roundTopics: 'Topics this round',
+    roundTopicRow: (right: number, asked: number) => `${right}/${asked}`,
+    topicFew: 'new, too few answers',
+    topicDelta: (d: number) => (d > 0 ? `▲ +${d} pts` : d < 0 ? `▼ ${d} pts` : `= 0 pts`),
     nextRound: (n: number) => `Next ${n}`,
     practiceButton: (n: number) => `Practice this · ${n}`,
     practiceHeader: (i: number, n: number) => `Practice · ${i}/${n}`,

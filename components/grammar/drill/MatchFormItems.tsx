@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { Pressable, TextInput, View } from 'react-native';
 import { Text } from '@/components/KText';
 import Colors from '@/constants/Colors';
@@ -10,6 +10,7 @@ import { speechLang } from '@/lib/languages';
 import { strictAnswerMatch } from '@/lib/answerMatch';
 import { hashString, shuffleNoFixedPoints } from '@/lib/shuffle';
 import { useDockedAction } from '@/components/learn/DockSlot';
+import { useFocusOnNewCard } from '@/lib/learn/useFocusOnNewCard';
 import LessonBody from '@/components/grammar/LessonBody';
 import { BrutalBox } from '@/components/grammar/Brutal';
 import AnswerCompare from '@/components/grammar/AnswerCompare';
@@ -225,6 +226,9 @@ export function FormDrillItem({
   const [checked, setChecked] = useState(false);
   const [correct, setCorrect] = useState(false);
   const g = useGrammarColors();
+  // the keyboard opens by itself, with the word card's single delayed focus (plain autoFocus left Gboard up with a dead field)
+  const inputRef = useRef<TextInput>(null);
+  useFocusOnNewCard(inputRef, true, item.id);
 
   const check = () => {
     const targets = [item.answer, ...(item.accept ?? [])];
@@ -276,6 +280,7 @@ export function FormDrillItem({
         </BrutalBox>
         <BrutalBox dashed={checked && !correct} style={checked && !correct ? styles.brutalDim : undefined} boxStyle={styles.brutalInputBox}>
           <TextInput
+            ref={inputRef}
             testID="formInput"
             style={[styles.brutalInput, { color: g.ink }]}
             value={value}
@@ -322,6 +327,7 @@ export function FormDrillItem({
         {verbLabel} · {item.person}
       </Text>
       <TextInput
+        ref={inputRef}
         testID="formInput"
         style={[styles.formInput, { color: colors.text, borderColor: colors.tabIconDefault }]}
         value={value}

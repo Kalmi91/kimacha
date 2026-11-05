@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react';
-import { ActivityIndicator, Keyboard, KeyboardAvoidingView, Platform, Pressable, StyleSheet, Text, View } from 'react-native';
+import { ActivityIndicator, Keyboard, KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 
 import Colors from '@/constants/Colors';
@@ -23,8 +23,16 @@ import {
   levelDone,
   levelPercent,
   levelRoundKey,
+  levelShownKey,
+  nextShownPct,
   parseLevelRound,
+  parseShownPct,
   pickLevelNext,
+  recordRoundAnswer,
+  roundTopicRows,
+  shownLabel,
+  shownPctOf,
+  topicShare,
   weakestTopic,
   type LevelRound,
 } from '@/lib/grammar/levelTest';
@@ -86,6 +94,8 @@ export default function LevelTestScreen() {
   const [result, setResult] = useState<Result | null>(null);
   const [round, setRound] = useState<LevelRound>({ n: 0, right: 0, startPct: 0 });
   const [doneOpen, setDoneOpen] = useState(false);
+  // the level's standing on the bar (FB593/594): never sinks, +0.3 per right answer; saved per pair and level, like the round
+  const [shown, setShown] = useState(0);
   // the Practice run after a wrong answer; it has no state the test keeps (no evidence, same round, same next question)
   const [practice, setPractice] = useState<{ missed: LessonTestQuestion; tasks: LessonTestQuestion[]; topicId: string } | null>(null);
   // the number of answers of this visit: it moves the seed of every pick and renews the question card
@@ -126,7 +136,10 @@ export default function LevelTestScreen() {
       const pair = `${d.contentLang}→${d.learnedLang}`;
       const saved = parseLevelRound(await loadResumeValue(db, levelRoundKey(pair, lvl)));
       if (!alive) return;
-      setRound(saved ?? { n: 0, right: 0, startPct: levelPercent(levelTestCtx(d, sd, lvl, ev).topics.map((tp) => tp.id), ev) });
+      const savedShown = parseShownPct(await loadResumeValue(db, levelShownKey(pair, lvl)));
+      if (!alive) return;
+      setShown(savedShown ?? 0);
+      setRound(saved ?? { n: 0, right: 0, startPct: shownPctOf(savedShown, levelPercent(levelTestCtx(d, sd, lvl, ev).topics.map((tp) => tp.id), ev)) });
       setLevel(lvl);
       setSeed(sd);
       setEvidence(ev);
@@ -163,6 +176,7 @@ export default function LevelTestScreen() {
   };
 
   const pair = `${data.contentLang}→${data.learnedLang}`;
+  const saveShown = (v: number) => enqueue(async () => void (await saveResumeValue(getDb(), levelShownKey(pair, level), v)));
   const saveRound = (r: LevelRound | null) => enqueue(async () => void (await saveResumeValue(getDb(), levelRoundKey(pair, level), r)));
   const roundEnd = round.n >= LEVEL_ROUND_SIZE && !result;
 
@@ -176,9 +190,19 @@ export default function LevelTestScreen() {
     enqueue(() => getDb().setGameProgress(GRAMMAR_RANDOM_KEY, topicId, 'evidence', topicEvidence));
     setEvidence(nextEvidence);
     setCurrent(pickLevelNext(levelTestCtx(data, seed, level, nextEvidence), topicId, seed + asked + 1) ?? current);
-    const nextRound = { ...round, n: round.n + 1, right: round.right + (ok ? 1 : 0) };
+    const nextRound = {
+      ...round,
+      n: round.n + 1,
+      right: round.right + (ok ? 1 : 0),
+      topics: recordRoundAnswer(round.topics, topicId, ok, topicShare(evidence.get(topicId))),
+    };
     setRound(nextRound);
     saveRound(nextRound);
+    const nextShown = nextShownPct(shown, levelPercent(ids, nextEvidence), ok);
+    if (nextShown !== shown) {
+      setShown(nextShown);
+      saveShown(nextShown);
+    }
     // the last topic just ticked: the done screen comes once per visit
     if (!doneShown.current && !levelDone(ids, evidence, kindsOf) && levelDone(ids, nextEvidence, kindsOf)) {
       doneShown.current = true;
@@ -213,13 +237,24 @@ export default function LevelTestScreen() {
         <Text style={[styles.close, { color: colors.textMuted }]}>✕</Text>
       </Pressable>
       <Text testID="level-test-header" style={[styles.counter, { color: colors.textMuted }]}>
-        {s.header(level, pct, result || roundEnd ? round.n : round.n + 1, LEVEL_ROUND_SIZE)}
+        {s.header(level, result || roundEnd ? round.n : round.n + 1, LEVEL_ROUND_SIZE)}
       </Text>
       {doneOpen ? <View style={styles.closeSpacer} /> : feedbackFor(part)}
     </View>
   );
   const progress = (
-    <ProgressBar testID="level-test-progress" trackProps={{ testID: "level-test-progress" }} pct={pct} brutalStyle={styles.brutalProgress} trackStyle={styles.track} trackColor={colors.border} fillStyle={styles.fill} fillColor={colors.tint} />
+    <ProgressBar
+      testID="level-test-progress"
+      continuous
+      trackProps={{ testID: 'level-test-progress' }}
+      fillProps={{ testID: 'level-test-progress-fill' }}
+      pct={shownPctOf(shown, pct)}
+      brutalStyle={styles.brutalProgress}
+      trackStyle={styles.track}
+      trackColor={colors.card}
+      fillStyle={styles.fill}
+      fillColor={colors.tint}
+    />
   );
 
   const doneFor = (part: string) => doneOpen ? (
@@ -284,28 +319,56 @@ export default function LevelTestScreen() {
 
   // after the 20th result: the round summary
   if (roundEnd) {
-    const weak = weakestTopic(ids, evidence);
+    // one row per topic asked in this round, weakest first (FB596); honest: it can go down while the level bar does not
+    const rows = roundTopicRows(round.topics, evidence);
+    // a round saved before the topic record (or one the rows do not cover): the old weakest-topic line stays as the fallback
+    const covered = rows.reduce((sum, r) => sum + r.n, 0) >= round.n;
+    const weak = covered ? null : weakestTopic(ids, evidence);
     return shell(
       <View style={styles.flex}>
         {headerFor('round-end')}
         {progress}
-        <View style={styles.body}>
+        <ScrollView testID="level-test-round-scroll" contentContainerStyle={styles.body}>
           <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
             <Text style={[styles.line, { color: colors.textMuted }]}>{s.roundDone}</Text>
             <Text testID="level-test-round-score" style={[styles.title, { color: colors.text }]}>{s.roundScore(round.right, LEVEL_ROUND_SIZE)}</Text>
-            <Text testID="level-test-round-levels" style={[styles.line, { color: colors.text }]}>{s.roundLevels(level, round.startPct, pct)}</Text>
-            {weak ? (
-              <>
-                <Text style={[styles.line, { color: colors.textMuted }]}>{s.weakest}</Text>
-                <Text testID="level-test-round-weakest" style={[styles.line, { color: colors.text }]}>{s.weakestLine(titleOf(weak.id), weak.pct)}</Text>
-              </>
-            ) : null}
+            <Text testID="level-test-round-levels" style={[styles.line, { color: colors.text }]}>{s.roundLevels(level, shownLabel(round.startPct), shownLabel(shownPctOf(shown, pct)))}</Text>
           </Card>
+          {rows.length > 0 ? (
+            <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
+              <Text style={[styles.rowsTitle, { color: colors.textMuted }]}>{s.roundTopics}</Text>
+              {rows.map((r) => (
+                <Pressable
+                  key={r.id}
+                  testID={`level-test-round-topic-${r.id}`}
+                  accessibilityRole="button"
+                  accessibilityLabel={`${titleOf(r.id)}, ${s.openLesson}`}
+                  style={styles.topicRow}
+                  onPress={() => router.push(`/grammar/${r.id}` as never)}
+                >
+                  <Text style={[styles.topicName, { color: colors.text }]} numberOfLines={2}>{titleOf(r.id)}</Text>
+                  <Text testID={`level-test-round-topic-score-${r.id}`} style={[styles.topicScore, { color: colors.text }]}>{s.roundTopicRow(r.right, r.n)}</Text>
+                  <Text
+                    testID={`level-test-round-topic-delta-${r.id}`}
+                    style={[styles.topicDelta, { color: r.delta === null ? colors.textMuted : r.delta > 0 ? colors.success : r.delta < 0 ? colors.danger : colors.textMuted }]}
+                  >
+                    {r.delta === null ? s.topicFew : s.topicDelta(r.delta)}
+                  </Text>
+                </Pressable>
+              ))}
+            </Card>
+          ) : null}
+          {weak ? (
+            <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
+              <Text style={[styles.line, { color: colors.textMuted }]}>{s.weakest}</Text>
+              <Text testID="level-test-round-weakest" style={[styles.line, { color: colors.text }]}>{s.weakestLine(titleOf(weak.id), weak.pct)}</Text>
+            </Card>
+          ) : null}
           <ExamButton
             testID="level-test-round-next"
             label={s.nextRound(LEVEL_ROUND_SIZE)}
             onPress={() => {
-              const fresh = { n: 0, right: 0, startPct: pct };
+              const fresh = { n: 0, right: 0, startPct: shownPctOf(shown, pct) };
               setRound(fresh);
               saveRound(fresh);
             }}
@@ -319,7 +382,7 @@ export default function LevelTestScreen() {
               router.back();
             }}
           />
-        </View>
+        </ScrollView>
       </View>,
       doneFor('round-end')
     );
@@ -362,4 +425,9 @@ const styles = StyleSheet.create({
   track: { height: 8, borderRadius: radius.xs, marginHorizontal: spacing.lg, marginTop: spacing.sm, overflow: 'hidden' },
   fill: { height: '100%', borderRadius: radius.xs },
   brutalProgress: { marginHorizontal: spacing.lg, marginTop: spacing.sm },
+  rowsTitle: { fontSize: fontSize.sm },
+  topicRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm, minHeight: 44 },
+  topicName: { flex: 1, fontSize: fontSize.md },
+  topicScore: { fontSize: fontSize.md, fontWeight: fontWeight.semibold },
+  topicDelta: { fontSize: fontSize.sm, minWidth: 76, textAlign: 'right' },
 });

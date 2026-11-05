@@ -118,7 +118,7 @@ function GrammarLessonPhases({ topic }: { topic: ReturnType<typeof useGrammarTop
           </FitText>
           <View style={{ width: 24 }} />
         </View>
-        <Text style={[styles.empty, { color: colors.tabIconDefault }]}>{s.grammar.soonLong}</Text>
+        {topic.loaded ? <Text style={[styles.empty, { color: colors.tabIconDefault }]}>{s.grammar.soonLong}</Text> : null}
       </View>
     );
   }

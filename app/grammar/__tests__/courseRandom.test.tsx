@@ -17,7 +17,11 @@ jest.mock('expo-router', () => ({
   },
 }));
 
+import { StyleSheet } from 'react-native';
 import { fireEvent, render, screen } from '@testing-library/react-native';
+
+import { levelShownKey } from '@/lib/grammar/levelTest';
+import { saveResumeValue } from '@/lib/resumeStore';
 
 import { getDb } from '@/lib/database.web';
 import { GRAMMAR_PROGRESS_KEY, hasLesson, syllabusForLevel, syllabusLevels } from '@/lib/grammar/syllabus';
@@ -159,6 +163,18 @@ describe.each([
       expect(pct).toBeGreaterThan(0);
       expect(screen.getByTestId('grammar-level-test-A1')).toHaveTextContent(`🎯 Level test · ${pct}%`);
       view.unmount();
+    });
+
+    it('the standing is one number: the button and every level header (with its bar) show the stored standing, never less than the real percent (FB616)', async () => {
+      await getDb().setGameProgress(GRAMMAR_RANDOM_KEY, 'presente-regular', 'evidence', answers(4, 4));
+      await saveResumeValue(getDb(), levelShownKey('en→es', 'A1'), 41.3);
+      const view = render(<ThemeProvider><GrammarSyllabusScreen /></ThemeProvider>);
+      await flush();
+      expect(screen.getByTestId('grammar-level-test-A1')).toHaveTextContent('🎯 Level test · 41%');
+      expect(screen.getByTestId('grammar-level-standing-pct-A1')).toHaveTextContent('41%');
+      expect(String(StyleSheet.flatten(screen.getByTestId('grammar-level-standing-fill-A1').props.style).width)).toBe('41.3%');
+      view.unmount();
+      await saveResumeValue(getDb(), levelShownKey('en→es', 'A1'), null);
     });
 
     it('a done mark once every topic of the level is ticked off; it still opens the test', async () => {

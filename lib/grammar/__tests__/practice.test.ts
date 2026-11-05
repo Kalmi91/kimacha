@@ -109,4 +109,42 @@ describe('buildPractice over the real lessons of all four courses', () => {
     expect(slash).toBeTruthy();
     if (slash?.view.card === 'type') expect(slash.view.answer).toBe("he's");
   });
+  it('se-form-05 (ser): the 15 tasks practise every form of ser AND of estar, not one column (FB590)', () => {
+    const lesson = lessonFor('es', 'ser-estar')!;
+    const missed = missedOf('ser-estar', 'se-form-05');
+    const tasks = buildPractice(missed, lesson, O);
+    const forms = tasks.filter((q) => q.view.card === 'type').map((q) => (q.view.card === 'type' ? q.view.answer : ''));
+    const col = (id: string) =>
+      (lesson.body.find((b) => b.kind === 'table' && b.id === id) as Extract<(typeof lesson.body)[number], { kind: 'table' }>).rows
+        .filter((r) => !/vosotr/i.test(r[0]))
+        .map((r) => r[1]);
+    // the missed verb's column comes first, the other verb's column right after it
+    expect(forms.slice(0, 5)).toEqual(col('ser-presente'));
+    expect(forms.slice(5, 10)).toEqual(col('estar-presente'));
+    expect(tasks.length).toBe(PRACTICE_SIZE);
+    expect(new Set(tasks.map((q) => q.id)).size).toBe(tasks.length);
+  });
+
+  it('a topic with one verb keeps working: gustar still starts with the one column', () => {
+    const lesson = lessonFor('es', 'gustar')!;
+    const tasks = buildPractice(missedOf('gustar', 'gu-form-12'), lesson, O);
+    expect(tasks.length).toBe(PRACTICE_SIZE);
+    expect(tasks[0].kind).toBe('form');
+  });
+  it('several verbs on ONE table (imperfecto: ser / ir / ver): every verb column is practised, the missed verb first (FB590)', () => {
+    const lesson = lessonFor('es', 'imperfecto')!;
+    const table = lesson.body.find((b) => b.kind === 'table' && b.id === 'imperfecto-irregular');
+    if (!table || table.kind !== 'table') throw new Error('table');
+    const miss = lesson.items.find((i) => i.kind === 'form' && i.table === 'imperfecto-irregular' && i.verb === 'ir')!;
+    const tasks = buildPractice(all('imperfecto').find((q) => q.id === miss.id)!, lesson, O);
+    const answers = tasks.map((q) => (q.view.card === 'type' ? q.view.answer : ''));
+    const col = (verb: string) => {
+      const ci = table.header.findIndex((h) => h.es === verb);
+      return table.rows.filter((r) => !/vosotr/i.test(r[0])).map((r) => r[ci].split(' / ')[0].trim());
+    };
+    expect(answers.slice(0, 5)).toEqual(col('ir')); // the missed verb first
+    for (const verb of ['ser', 'ver']) for (const a of col(verb)) expect(answers).toContain(a);
+    expect(new Set(tasks.map((q) => q.id)).size).toBe(tasks.length);
+    expect(tasks.length).toBeLessThanOrEqual(PRACTICE_SIZE);
+  });
 });
