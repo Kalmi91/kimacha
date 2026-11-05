@@ -3,9 +3,9 @@
 // lib/grammar/__tests__/levelCoverage.test.ts and printed by scripts/level-coverage.mjs.
 
 import type { Level } from '@/data/words';
-import { pickLevelNext } from '@/lib/grammar/levelTest';
+import { kindsOfCtx, pickLevelNext } from '@/lib/grammar/levelTest';
 import { levelTestCtx } from '@/lib/grammar/levelTestView';
-import { appendEvidence, type TopicEvidence } from '@/lib/grammar/randomRound';
+import { appendEvidence, topicTicked, type TopicEvidence } from '@/lib/grammar/randomRound';
 import { questionsOf, type RoundData } from '@/lib/grammar/randomRoundView';
 import { hasLesson, syllabusForLevel, syllabusLevels } from '@/lib/grammar/syllabus';
 import { gradePcicAnswer, gradeSentenceAnswer, suggestedGrade } from '@/lib/pcicMatch';
@@ -51,26 +51,61 @@ export interface TopicStat {
 export interface SimResult {
   topics: TopicStat[];
   /** The asked topic ids and question ids, in order. */
-  steps: { topicId: string; qid: string }[];
+  steps: { topicId: string; qid: string; /** A core topic was still open (not ticked) when this question was picked. */ coreOpen: boolean; /** How many topics took turns when this question was picked. */ pool: number }[];
   /** Per topic the first step where a question came back before every question of the topic was asked. */
   earlyRepeats: { topicId: string; step: number; available: number }[];
 }
 
+export interface SimOptions {
+  /** Stored evidence the learner comes with (a returning learner); default none. */
+  start?: Map<string, TopicEvidence>;
+  /** Every this many answers the learner leaves and comes back: a new seed (new option order), a new question cache, no previous topic. */
+  visitEvery?: number;
+}
+
+/** Evidence of a learner who answered 10 questions of every topic but the first core one (never asked), the stamps rising topic by topic. */
+export function unevenStart(d: RoundData, level: Level, seed: number): Map<string, TopicEvidence> {
+  const ev = new Map<string, TopicEvidence>();
+  let stamp = 1;
+  const topics = levelTestCtx(d, seed, level, ev).topics;
+  const skipped = topics.find((tp) => tp.tier === 'core' || tp.tier === 'core-plus');
+  topics.filter((tp) => tp !== skipped).forEach((tp) => {
+    let e: TopicEvidence | undefined;
+    questionsOf(d, seed, tp.id).slice(0, 10).forEach((q, i) => {
+      e = appendEvidence(e, { id: q.id, kind: q.kind, ok: i % 3 !== 0, at: '2026-11-01' }, stamp++);
+    });
+    if (e) ev.set(tp.id, e);
+  });
+  return ev;
+}
+
 /** A learner who answers right with probability `pRight`, 500 answers by default, through the real picker. */
-export function simulate(d: RoundData, level: Level, pRight: number, seed: number, answers = 500): SimResult {
+export function simulate(d: RoundData, level: Level, pRight: number, seed: number, answers = 500, opts: SimOptions = {}): SimResult {
   const rand = rng(seed);
-  let evidence = new Map<string, TopicEvidence>();
-  let ctx = levelTestCtx(d, seed, level, evidence);
-  const steps: { topicId: string; qid: string }[] = [];
+  let evidence = new Map(opts.start ?? []);
+  let visitSeed = seed;
+  let ctx = levelTestCtx(d, visitSeed, level, evidence);
+  const steps: SimResult['steps'] = [];
   let prev: string | undefined;
   for (let i = 0; i < answers; i++) {
-    const next = pickLevelNext(ctx, prev, seed + i);
+    if (opts.visitEvery && i > 0 && i % opts.visitEvery === 0) {
+      visitSeed = seed + i * 7919;
+      d.cache = { seed: -1, map: new Map() };
+      prev = undefined;
+      ctx = levelTestCtx(d, visitSeed, level, evidence);
+    }
+    const kindsOf = kindsOfCtx(ctx);
+    const openOf = (core: boolean) => ctx.topics.filter((tp) => (tp.tier === 'core' || tp.tier === 'core-plus') === core && !topicTicked(evidence.get(tp.id), () => kindsOf(tp.id))).length;
+    const coreOpen = openOf(true) > 0;
+    const pool = coreOpen ? openOf(true) : openOf(false) || ctx.topics.length;
+    const next = pickLevelNext(ctx, prev, visitSeed + i);
     if (!next) break;
-    const q = questionsOf(d, seed, next.topicId).find((x) => x.id === next.qid)!;
+    const q = questionsOf(d, visitSeed, next.topicId).find((x) => x.id === next.qid)!;
     const ok = rand() < pRight;
-    evidence = new Map(evidence).set(next.topicId, appendEvidence(evidence.get(next.topicId), { id: q.id, kind: q.kind, ok, at: '2026-11-05' }));
-    ctx = levelTestCtx(d, seed, level, evidence);
-    steps.push(next);
+    const ids = ctx.questionIds(next.topicId).map((x) => x.id);
+    evidence = new Map(evidence).set(next.topicId, appendEvidence(evidence.get(next.topicId), { id: q.id, kind: q.kind, ok, at: '2026-11-05' }, 1_000_000 + i, ids));
+    ctx = levelTestCtx(d, visitSeed, level, evidence);
+    steps.push({ ...next, coreOpen, pool });
     prev = next.topicId;
   }
   const topics: TopicStat[] = ctx.topics.map((tp) => ({

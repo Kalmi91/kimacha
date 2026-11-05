@@ -2,7 +2,7 @@
 // no immediate repeat), which question of the topic, the level percent and the done state.
 
 import type { GrammarKind } from '@/lib/games/content';
-import { appendEvidence, askedCount, seenIds, topicPercent, topicTicked, type EvidenceAnswer, type PickTopic, type TopicEvidence } from '@/lib/grammar/randomRound';
+import { SEEN_CAP, appendEvidence, seenIds, topicPercent, topicTicked, type EvidenceAnswer, type PickTopic, type TopicEvidence } from '@/lib/grammar/randomRound';
 import {
   LEVEL_ROUND_SIZE,
   levelDone,
@@ -15,8 +15,6 @@ import {
   pickLevelNext,
   pickLevelQuestion,
   pickLevelTopic,
-  NON_CORE_LAG,
-  SPREAD_SLACK,
   recordRoundAnswer,
   roundTopicRows,
   shownLabel,
@@ -100,7 +98,6 @@ describe('pickLevelTopic', () => {
       plus1: evOf(['c', 'c', 'c', 'x']), // 75
       core1: evOf(['c', 'x', 'x', 'x']), // 25
       plain1: evOf(['x', 'x', 'x', 'x']), // 0, but not core
-      plain2: evOf(['x', 'x', 'x', 'x']), // 0, but not core
     });
     expect(pick(topics, ev)).toBe('core1');
   });
@@ -130,33 +127,62 @@ describe('pickLevelTopic', () => {
 
   it('when everything is ticked the whole level goes on, lowest percent first, core before the rest on a tie', () => {
     const lower = evOf(['c', 'f', 'c', 'f', 'c', 'x', 'c', 'f']); // 87.5 -> 88%, still ticked
-    const ev = evidenceOf({ plus1: ticked(), core1: { ...lower, n: 5 }, plain1: ticked(), plain2: ticked() });
+    const ev = evidenceOf({ plus1: ticked(), core1: lower, plain1: ticked(), plain2: ticked() });
     expect(topicTicked(lower)).toBe(true);
     expect(pick(topics, ev)).toBe('core1');
     expect(pick(topics, evidenceOf({ plus1: ticked(), core1: ticked(), plain1: ticked(), plain2: ticked() }))).toBe('plus1');
   });
 
-  it('evidence growth moves the pick: a wrong answer keeps a topic up front, right ones hand over to the next', () => {
+  it('the open topics take turns: the least recently asked first, a weak one keeps coming without starving the other', () => {
     let ev = new Map<string, TopicEvidence>();
     const answer = (id: string, ok: boolean, i: number, kind: GrammarKind = 'choice') => {
       const a: EvidenceAnswer = { id: `q${i}`, kind, ok, at: '2026-11-01' };
-      ev = new Map(ev).set(id, appendEvidence(ev.get(id), a));
+      ev = new Map(ev).set(id, appendEvidence(ev.get(id), a, i + 1));
     };
     const two = [topic('a', 'core'), topic('b', 'core')];
     expect(pick(two, ev)).toBe('a');
     answer('a', true, 0);
     expect(pick(two, ev)).toBe('b'); // b has no answer
     answer('b', false, 1);
-    expect(pick(two, ev)).toBe('b'); // b 0% < a 100%
-    expect(pick(two, ev, 'b')).toBe('a'); // ... but never twice in a row while another one exists
-    answer('b', true, 2);
-    answer('b', true, 3);
-    answer('b', true, 4);
-    expect(pick(two, ev)).toBe('a'); // b is at 75% but already 3 questions ahead of a: a gets its turn (spread)
-    answer('a', false, 5);
-    answer('a', false, 6);
-    answer('a', false, 7);
-    expect(pick(two, ev)).toBe('a'); // a fell to 25%: it moves to the front
+    expect(pick(two, ev)).toBe('a'); // a was asked longer ago, although b is weaker
+    expect(pick(two, ev, 'a')).toBe('b'); // never twice in a row while another one exists
+    answer('a', true, 2);
+    expect(pick(two, ev)).toBe('b'); // the weak topic comes every second question
+    for (let i = 3; i < 13; i++) {
+      const id = pick(two, ev)!;
+      answer(id, id === 'a', i);
+      expect(id).toBe(i % 2 === 1 ? 'b' : 'a');
+    }
+  });
+
+  it('with equal stamps (evidence saved before) the lower percent goes first', () => {
+    expect(pick([topic('a', 'core'), topic('b', 'core')], evidenceOf({ a: evOf(['c', 'c', 'c']), b: evOf(['x', 'x', 'c']) }))).toBe('b');
+  });
+
+  it('strictly core first: no other tier while a core topic is open, then the other tiers, then the whole level by lowest percent', () => {
+    const topics = [topic('c', 'core'), topic('plain', 'exam'), topic('p', 'core-plus')];
+    const ev = evidenceOf({ c: { ...evOf(['c', 'c', 'c']), stamp: 99 }, p: { ...evOf(['c', 'c', 'c']), stamp: 98 } });
+    expect(pick(topics, ev, 'c')).toBe('p'); // plain was never asked, but it is not core
+    expect(pick(topics, ev, 'p')).toBe('c');
+    expect(pick(topics, evidenceOf({ c: ticked(), p: ticked() }))).toBe('plain');
+    const lower = evOf(['c', 'f', 'c', 'f', 'c', 'x', 'c', 'f']); // 88%, still ticked
+    expect(pick(topics, evidenceOf({ c: ticked(), p: ticked(), plain: lower }))).toBe('plain');
+    expect(pick(topics, evidenceOf({ c: lower, p: ticked(), plain: ticked() }))).toBe('c');
+  });
+
+  it('a returning learner with one never asked topic gets it once, then the rotation goes on (no burst)', () => {
+    const topics = Array.from({ length: 4 }, (_, i) => topic(`t${i}`, 'core'));
+    let ev = evidenceOf({ t0: { ...evOf(['c', 'x']), stamp: 50 }, t1: { ...evOf(['x', 'x']), stamp: 10 }, t2: { ...evOf(['x']), stamp: 30 } });
+    const got: string[] = [];
+    let prev: string | undefined;
+    for (let i = 0; i < 8; i++) {
+      const id = pick(topics, ev, prev)!;
+      got.push(id);
+      ev = new Map(ev).set(id, appendEvidence(ev.get(id), { id: `n${i}`, kind: 'choice', ok: false, at: 'x' }, 100 + i));
+      prev = id;
+    }
+    expect(got.slice(0, 4)).toEqual(['t3', 't1', 't2', 't0']); // never asked, then the oldest stamp first
+    expect(got.slice(4)).toEqual(got.slice(0, 4));
   });
 
   it('is null for a level without topics', () => {
@@ -164,69 +190,44 @@ describe('pickLevelTopic', () => {
   });
 });
 
-describe('core first, even spread (FB595)', () => {
-  const four = Array.from({ length: 4 }, (_, i) => topic(`c${i}`, 'core'));
-  const asked = (n: number, ok = true): TopicEvidence => ({ answers: evOf(Array(Math.min(n, 10)).fill(ok ? 'c' : 'x')).answers, n });
-
-  it('a topic more than SPREAD_SLACK questions ahead of the least asked one waits, however weak it is', () => {
-    const ev = evidenceOf({ c0: asked(6, false), c1: asked(3), c2: asked(3), c3: asked(3) });
-    expect(SPREAD_SLACK).toBe(2);
-    expect(pick(four, ev)).not.toBe('c0');
-    // within the slack the weak topic still goes first
-    expect(pick(four, evidenceOf({ c0: asked(5, false), c1: asked(3), c2: asked(3), c3: asked(3) }))).toBe('c0');
-  });
-
-  it('the count is the all-time count of the topic, not the window length', () => {
-    const ev = evidenceOf({ c0: asked(40), c1: asked(10), c2: asked(10), c3: asked(10) });
-    expect(pick(four, ev)).not.toBe('c0');
-  });
-
-  it('a topic outside the core joins only once the core topics are close to NON_CORE_LAG questions behind it', () => {
-    const topics = [topic('c', 'core'), topic('plain', 'exam')];
-    expect(NON_CORE_LAG).toBe(4);
-    // 1 asked on the core topic: the plain topic counts as 4 ahead, outside the slack, the core topic goes first
-    expect(pick(topics, evidenceOf({ c: asked(1, false) }))).toBe('c');
-    // 2 asked: the plain topic is within the slack and, unasked, comes first
-    expect(pick(topics, evidenceOf({ c: asked(2, false) }))).toBe('plain');
-    // an unasked core topic always beats an unasked plain one
-    expect(pick(topics, new Map())).toBe('c');
-  });
-
-  it('a stream over many topics keeps the asked counts within 3 of each other', () => {
-    let ev = new Map<string, TopicEvidence>();
-    const counts = new Map(four.map((t) => [t.id, 0]));
-    let prev: string | undefined;
-    for (let i = 0; i < 40; i++) {
-      const id = pick(four, ev, prev)!;
-      ev = new Map(ev).set(id, appendEvidence(ev.get(id), { id: `q${i}`, kind: 'choice', ok: i % 3 !== 0, at: 'x' }));
-      counts.set(id, counts.get(id)! + 1);
-      const v = [...counts.values()];
-      expect(Math.max(...v) - Math.min(...v)).toBeLessThanOrEqual(3);
-      prev = id;
-    }
-  });
-});
-
-describe('appendEvidence keeps the all-time count and the pass over the questions', () => {
+describe('appendEvidence: stamp and the pass over the questions', () => {
   const a = (id: string): EvidenceAnswer => ({ id, kind: 'choice', ok: true, at: 'x' });
 
-  it('counts past the window and records the ids of the pass; a question that comes back starts a new pass', () => {
+  it('keeps the stamp and the ids of the pass; a repeat alone (random round, no question list) does not reset it', () => {
     let ev: TopicEvidence | undefined;
-    for (let i = 0; i < 12; i++) ev = appendEvidence(ev, a(`q${i}`));
+    for (let i = 0; i < 12; i++) ev = appendEvidence(ev, a(`q${i}`), 7);
     expect(ev!.answers).toHaveLength(10);
-    expect(ev!.n).toBe(12);
+    expect(ev!.stamp).toBe(7);
     expect(ev!.seen).toHaveLength(12);
-    ev = appendEvidence(ev, a('q3'));
-    expect(ev.seen).toEqual(['q3']);
-    expect(ev.n).toBe(13);
+    ev = appendEvidence(ev, a('q3'), 8);
+    expect(ev.seen).toHaveLength(12);
+    expect(ev.stamp).toBe(8);
   });
 
-  it('evidence saved before (no n, no seen) counts with its window', () => {
+  it('with the question list: ids of questions that are gone are dropped, a finished pass starts again with this answer', () => {
+    const ids = ['x', 'y', 'z'];
+    let ev = appendEvidence(undefined, a('old-gone'), 1, ids);
+    ev = appendEvidence(ev, a('x'), 2, ids);
+    expect(ev.seen).toEqual(['x']); // the gone id was dropped on the next answer
+    ev = appendEvidence(ev, a('y'), 3, ids);
+    ev = appendEvidence(ev, a('z'), 4, ids);
+    expect(ev.seen).toEqual(['x', 'y', 'z']);
+    ev = appendEvidence(ev, a('y'), 5, ids); // every question was in: a new pass
+    expect(ev.seen).toEqual(['y']);
+  });
+
+  it('caps the pass at SEEN_CAP ids (topics whose questions get new ids every visit)', () => {
+    let ev: TopicEvidence | undefined;
+    for (let i = 0; i < SEEN_CAP + 30; i++) ev = appendEvidence(ev, a(`s${i}`), i);
+    expect(ev!.seen).toHaveLength(SEEN_CAP);
+    expect(ev!.seen![SEEN_CAP - 1]).toBe(`s${SEEN_CAP + 29}`);
+  });
+
+  it('evidence saved before (no stamp, no seen) counts with its window', () => {
     const old: TopicEvidence = { answers: [a('x'), a('y')] };
-    expect(askedCount(old)).toBe(2);
     expect(seenIds(old)).toEqual(['x', 'y']);
-    expect(askedCount(undefined)).toBe(0);
-    expect(appendEvidence(old, a('z')).seen).toEqual(['x', 'y', 'z']);
+    expect(seenIds(undefined)).toEqual([]);
+    expect(appendEvidence(old, a('z'), 1).seen).toEqual(['x', 'y', 'z']);
   });
 });
 
@@ -256,31 +257,38 @@ describe('pickLevelQuestion', () => {
     expect(['a', 'b', 'c', 'f1', 'f2']).toContain(pickLevelQuestion('t', ctxOf(qs, undefined), 3));
   });
 
-  it('never runs dry: with every question in the window, the one answered longest ago comes back', () => {
+  it('never runs dry: with every question in the window a new pass starts, not with the one just answered, with the kind balance', () => {
     const qs = [q('a', 'choice'), q('b', 'choice'), q('c', 'form')];
     const answers = ['b', 'c', 'a', 'c', 'a'].map((id) => ({ id, kind: (id === 'c' ? 'form' : 'choice') as GrammarKind, ok: true, at: 'x' }));
-    // last positions: b 0, c 3, a 4 -> b
-    expect(pickLevelQuestion('t', ctxOf(qs, { answers }), 5)).toBe('b');
+    // the window holds 3 choice and 2 form answers: b (choice) or c (form), form is the lesser kind
+    for (let seed = 0; seed < 10; seed++) expect(pickLevelQuestion('t', ctxOf(qs, { answers }), seed)).toBe('c');
   });
 
-  it('no question comes back before all questions of the topic were asked, even past the window (more questions than answers kept)', () => {
+  it('a new pass also balances the kinds, and ignores seen ids of questions that are gone', () => {
+    const qs = [q('a', 'choice'), q('b', 'choice'), q('f1', 'form')];
+    const ev: TopicEvidence = { answers: [{ id: 'a', kind: 'choice', ok: true, at: 'x' }], seen: ['a', 'b', 'f1', 'gone'] };
+    // every current question was seen: the pass restarts; the window holds one choice answer, so the form question comes
+    for (let seed = 0; seed < 10; seed++) expect(pickLevelQuestion('t', ctxOf(qs, ev), seed)).toBe('f1');
+  });
+
+  it('a pass over more questions than the window holds: none comes back before all were asked', () => {
     const qs = Array.from({ length: 25 }, (_, i) => q(`q${i}`, i % 2 ? 'choice' : 'form'));
+    const ids = qs.map((x) => x.id);
     let ev: TopicEvidence | undefined;
     const got: string[] = [];
     for (let i = 0; i < 25; i++) {
       const id = pickLevelQuestion('t', ctxOf(qs, ev), i)!;
       got.push(id);
-      ev = appendEvidence(ev, { id, kind: qs.find((x) => x.id === id)!.kind, ok: true, at: 'x' });
+      ev = appendEvidence(ev, { id, kind: qs.find((x) => x.id === id)!.kind, ok: true, at: 'x' }, i, ids);
     }
     expect(new Set(got).size).toBe(25);
-    // the next pass starts, and not with the question just asked
     const again = pickLevelQuestion('t', ctxOf(qs, ev), 99)!;
     expect(again).not.toBe(got[24]);
     expect(got.slice(15)).not.toContain(again);
   });
 
   it('a topic with a single question gives it every time (the data makes the repeat unavoidable)', () => {
-    const ev = appendEvidence(undefined, { id: 'only', kind: 'choice', ok: true, at: 'x' });
+    const ev = appendEvidence(undefined, { id: 'only', kind: 'choice', ok: true, at: 'x' }, 1, ['only']);
     expect(pickLevelQuestion('t', ctxOf([q('only', 'choice')], ev), 1)).toBe('only');
   });
 

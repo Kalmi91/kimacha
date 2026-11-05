@@ -259,26 +259,24 @@ describe.each(['brand', 'classic'] as const)('grammar level test (%s palette)', 
   });
 
   it('the core topics come first by percent, then the other tiers once every core topic is ticked off', async () => {
-    // lt-0 ticked, lt-1 (core) 25%, lt-2 (exam) 100% over 4 answers, lt-3 (full) 0%: the other tiers count 4 questions ahead
+    // lt-0 ticked, lt-1 (core) 25%, lt-2 (exam) with no answer, lt-3 (full) 0%
     await seedEvidence('lt-0', TICKED);
     await seedEvidence('lt-1', ['c', 'x', 'x', 'x']);
-    await seedEvidence('lt-2', ['c', 'c', 'c', 'c']);
     await seedEvidence('lt-3', ['x', 'x', 'x', 'x']);
     const view = await open();
     expect(topicOnScreen()).toBe('lt-1');
     view.unmount();
 
-    // all core topics ticked: the lowest of the others (lt-3 at 0%)
+    // all core topics ticked: the lowest of the others (lt-2 has no answer)
     await seedEvidence('lt-1', TICKED);
     const again = await open();
-    expect(topicOnScreen()).toBe('lt-3');
+    expect(topicOnScreen()).toBe('lt-2');
     again.unmount();
 
-    // every topic ticked: the level goes on with a core topic, the least asked ones
-    await seedEvidence('lt-2', TICKED);
-    await seedEvidence('lt-3', TICKED);
+    // lt-2 answered 100% (4 answers, unticked): lt-3 at 0% comes next
+    await seedEvidence('lt-2', ['c', 'c', 'c', 'c']);
     await open();
-    expect(['lt-0', 'lt-1']).toContain(topicOnScreen());
+    expect(topicOnScreen()).toBe('lt-3');
   });
 
   it('the level percent is live: a third answer gives the topic its percent and the header follows', async () => {
@@ -356,12 +354,12 @@ describe.each(['brand', 'classic'] as const)('grammar level test (%s palette)', 
       expect(mockBack).toHaveBeenCalledTimes(1);
     });
 
-    it('a level that is already all ticked has no done screen on entry; the stream asks the least asked topic', async () => {
+    it('a level that is already all ticked has no done screen on entry; the stream asks the lowest topic', async () => {
       for (const id of ['lt-0', 'lt-1', 'lt-2', 'lt-3']) await seedEvidence(id, TICKED);
       await seedEvidence('lt-2', ['c', 'f', 'c', 'f', 'c', 'x', 'c', 'f']); // still ticked, 88%
       await open();
       expect(screen.queryByTestId('level-test-done')).toBeNull();
-      expect(topicOnScreen()).toBe('lt-0'); // lt-2 has 8 answers, the others 5
+      expect(topicOnScreen()).toBe('lt-2');
       expect(Math.floor(barPct())).toBe(97);
     });
   });

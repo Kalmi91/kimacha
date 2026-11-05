@@ -184,7 +184,7 @@ export default function LevelTestScreen() {
     if (!pendingQ) return;
     const { topicId } = current;
     const answer: EvidenceAnswer = { id: pendingQ.id, kind: pendingQ.kind, ok, at: localDateString() };
-    const topicEvidence = appendEvidence(evidence.get(topicId), answer);
+    const topicEvidence = appendEvidence(evidence.get(topicId), answer, undefined, questionsOf(data, seed, topicId).map((x) => x.id));
     const nextEvidence = new Map(evidence).set(topicId, topicEvidence);
     setAsked(asked + 1);
     enqueue(() => getDb().setGameProgress(GRAMMAR_RANDOM_KEY, topicId, 'evidence', topicEvidence));
