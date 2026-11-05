@@ -767,7 +767,17 @@
       "verb": "forma verbal",
       "person": "Ayer ___ (cenar, yo) en casa.",
       "answer": "cené",
-      "table": "marcadores-formas"
+      "table": "marcadores-formas",
+      "wrong": {
+        "ceno": {
+          "en": "Ceno is in the present tense. This task asks for the preterite (indefinido): cené.",
+          "es": "Ceno está en presente. Esta tarea pide pretérito indefinido: cené."
+        },
+        "he cenado": {
+          "en": "He cenado is the present perfect. A time that is already over (\"ayer\") takes the preterite: cené.",
+          "es": "He cenado es el pretérito perfecto. Un tiempo ya terminado (\"ayer\") lleva el pretérito indefinido: cené."
+        }
+      }
     },
     {
       "id": "mt-form-02",
@@ -775,7 +785,17 @@
       "verb": "forma verbal",
       "person": "La semana pasada ___ (ir, nosotros) a Puebla.",
       "answer": "fuimos",
-      "table": "marcadores-formas"
+      "table": "marcadores-formas",
+      "wrong": {
+        "vamos": {
+          "en": "Vamos is in the present tense. This task asks for the preterite (indefinido): fuimos.",
+          "es": "Vamos está en presente. Esta tarea pide pretérito indefinido: fuimos."
+        },
+        "hemos ido": {
+          "en": "Hemos ido is the present perfect. A time that is already over (\"la semana pasada\") takes the preterite: fuimos.",
+          "es": "Hemos ido es el pretérito perfecto. Un tiempo ya terminado (\"la semana pasada\") lleva el pretérito indefinido: fuimos."
+        }
+      }
     },
     {
       "id": "mt-form-03",
@@ -783,7 +803,17 @@
       "verb": "forma verbal",
       "person": "Hace dos años ___ (hacer, ellos) un viaje largo.",
       "answer": "hicieron",
-      "table": "marcadores-formas"
+      "table": "marcadores-formas",
+      "wrong": {
+        "hacen": {
+          "en": "Hacen is in the present tense. This task asks for the preterite (indefinido): hicieron.",
+          "es": "Hacen está en presente. Esta tarea pide pretérito indefinido: hicieron."
+        },
+        "han hecho": {
+          "en": "Han hecho is the present perfect. A time that is already over (\"hace dos años\") takes the preterite: hicieron.",
+          "es": "Han hecho es el pretérito perfecto. Un tiempo ya terminado (\"hace dos años\") lleva el pretérito indefinido: hicieron."
+        }
+      }
     },
     {
       "id": "mt-form-04",
@@ -791,7 +821,13 @@
       "verb": "forma verbal",
       "person": "De niño ___ (jugar, yo) en la calle.",
       "answer": "jugaba",
-      "table": "marcadores-formas"
+      "table": "marcadores-formas",
+      "wrong": {
+        "juego": {
+          "en": "Juego is in the present tense. This task asks for the imperfect: jugaba.",
+          "es": "Juego está en presente. Esta tarea pide imperfecto: jugaba."
+        }
+      }
     },
     {
       "id": "mt-form-05",
@@ -799,7 +835,17 @@
       "verb": "forma verbal",
       "person": "Antes ___ (comer, nosotros; imperfecto) en casa de mi abuela.",
       "answer": "comíamos",
-      "table": "marcadores-formas"
+      "table": "marcadores-formas",
+      "wrong": {
+        "comimos": {
+          "en": "Comimos is in the preterite (indefinido). This task asks for the imperfect: comíamos.",
+          "es": "Comimos está en pretérito indefinido. Esta tarea pide imperfecto: comíamos."
+        },
+        "comemos": {
+          "en": "Comemos is in the present tense. This task asks for the imperfect: comíamos.",
+          "es": "Comemos está en presente. Esta tarea pide imperfecto: comíamos."
+        }
+      }
     },
     {
       "id": "mt-form-06",
@@ -807,7 +853,13 @@
       "verb": "forma verbal",
       "person": "Esta semana ___ (trabajar, nosotros; indefinido) mucho.",
       "answer": "trabajamos",
-      "table": "marcadores-formas"
+      "table": "marcadores-formas",
+      "wrong": {
+        "hemos trabajado": {
+          "en": "Hemos trabajado is in the present perfect. This task asks for the preterite (indefinido): trabajamos.",
+          "es": "Hemos trabajado está en pretérito perfecto. Esta tarea pide pretérito indefinido: trabajamos."
+        }
+      }
     },
     {
       "id": "mt-form-07",
@@ -815,7 +867,17 @@
       "verb": "forma verbal",
       "person": "Desde hace un mes ___ (dormir, yo; perfecto) mal.",
       "answer": "he dormido",
-      "table": "marcadores-formas"
+      "table": "marcadores-formas",
+      "wrong": {
+        "dormí": {
+          "en": "Dormí is in the preterite (indefinido). This task asks for the present perfect: he dormido.",
+          "es": "Dormí está en pretérito indefinido. Esta tarea pide pretérito perfecto: he dormido."
+        },
+        "he durmido": {
+          "en": "The participle of dormir keeps the o: dormido. The change to u appears in other forms (durmió, durmiendo), not in the participle.",
+          "es": "El participio de dormir conserva la o: dormido. El cambio a u aparece en otras formas (durmió, durmiendo), no en el participio."
+        }
+      }
     },
     {
       "id": "mt-form-08",
@@ -823,7 +885,17 @@
       "verb": "forma verbal",
       "person": "Hasta ahora no ___ (llamar, ella; perfecto).",
       "answer": "ha llamado",
-      "table": "marcadores-formas"
+      "table": "marcadores-formas",
+      "wrong": {
+        "llamó": {
+          "en": "Llamó is in the preterite (indefinido). This task asks for the present perfect: ha llamado.",
+          "es": "Llamó está en pretérito indefinido. Esta tarea pide pretérito perfecto: ha llamado."
+        },
+        "ha llamó": {
+          "en": "After a form of haber the verb is a participle, not a conjugated form: ha llamado.",
+          "es": "Después de una forma de haber el verbo va en participio, no conjugado: ha llamado."
+        }
+      }
     },
     {
       "id": "mt-form-09",
@@ -831,7 +903,17 @@
       "verb": "forma verbal",
       "person": "Normalmente ___ (salir, yo) a las siete.",
       "answer": "salgo",
-      "table": "marcadores-formas"
+      "table": "marcadores-formas",
+      "wrong": {
+        "salí": {
+          "en": "Salí is in the preterite (indefinido). This task asks for the present tense: salgo.",
+          "es": "Salí está en pretérito indefinido. Esta tarea pide presente: salgo."
+        },
+        "salo": {
+          "en": "The yo form of salir is irregular: the stem does not follow the regular pattern. It is salgo.",
+          "es": "La forma yo de salir es irregular: la raíz no sigue el patrón regular. Es salgo."
+        }
+      }
     },
     {
       "id": "mt-form-10",
@@ -839,7 +921,13 @@
       "verb": "forma verbal",
       "person": "Hoy en día ___ (leer, yo) muy poco.",
       "answer": "leo",
-      "table": "marcadores-formas"
+      "table": "marcadores-formas",
+      "wrong": {
+        "leí": {
+          "en": "Leí is in the preterite (indefinido). This task asks for the present tense: leo.",
+          "es": "Leí está en pretérito indefinido. Esta tarea pide presente: leo."
+        }
+      }
     },
     {
       "id": "mt-form-11",
@@ -847,7 +935,17 @@
       "verb": "forma verbal",
       "person": "El año que viene ___ (tener, nosotros; futuro simple) más tiempo.",
       "answer": "tendremos",
-      "table": "marcadores-formas"
+      "table": "marcadores-formas",
+      "wrong": {
+        "tenemos": {
+          "en": "Tenemos is in the present tense. This task asks for the simple future: tendremos.",
+          "es": "Tenemos está en presente. Esta tarea pide futuro simple: tendremos."
+        },
+        "teneremos": {
+          "en": "Tener has an irregular stem in the simple future: tendr-. The regular pattern does not work: tendremos.",
+          "es": "Tener tiene una raíz irregular en futuro simple: tendr-. El patrón regular no sirve: tendremos."
+        }
+      }
     },
     {
       "id": "mt-form-12",
@@ -855,7 +953,17 @@
       "verb": "forma verbal",
       "person": "Dentro de dos días ___ (llegar, ellos; futuro simple) a Guadalajara.",
       "answer": "llegarán",
-      "table": "marcadores-formas"
+      "table": "marcadores-formas",
+      "wrong": {
+        "llegan": {
+          "en": "Llegan is in the present tense. This task asks for the simple future: llegarán.",
+          "es": "Llegan está en presente. Esta tarea pide futuro simple: llegarán."
+        },
+        "llegarían": {
+          "en": "Llegarían is in the conditional. This task asks for the simple future: llegarán.",
+          "es": "Llegarían está en condicional. Esta tarea pide futuro simple: llegarán."
+        }
+      }
     },
     {
       "kind": "why",

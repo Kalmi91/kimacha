@@ -708,7 +708,21 @@
       "verb": "pareja de pronombres",
       "person": "¿Me das el libro? Sí, ___ doy.",
       "answer": "te lo",
-      "table": "combinacion-pares"
+      "table": "combinacion-pares",
+      "wrong": {
+        "me lo": {
+          "en": "Me is the person asking. The giver answers that person, so the indirect pronoun is te: te lo.",
+          "es": "Me es la persona que pregunta. Quien da le responde a esa persona, así que el pronombre indirecto es te: te lo."
+        },
+        "te la": {
+          "en": "Libro is masculine singular, so the direct pronoun is lo: te lo.",
+          "es": "Libro es masculino singular, así que el pronombre directo es lo: te lo."
+        },
+        "lo te": {
+          "en": "In a pair of pronouns the indirect one comes first, then the direct one: te lo.",
+          "es": "En una pareja de pronombres va primero el indirecto y después el directo: te lo."
+        }
+      }
     },
     {
       "id": "cp-form-02",
@@ -716,7 +730,17 @@
       "verb": "pareja de pronombres",
       "person": "¿Y mi comida? Mi mamá ___ lleva ahora.",
       "answer": "me la",
-      "table": "combinacion-pares"
+      "table": "combinacion-pares",
+      "wrong": {
+        "me lo": {
+          "en": "Comida is feminine singular, so the direct pronoun is la: me la.",
+          "es": "Comida es femenino singular, así que el pronombre directo es la: me la."
+        },
+        "la me": {
+          "en": "In a pair of pronouns the indirect one comes first, then the direct one: me la.",
+          "es": "En una pareja de pronombres va primero el indirecto y después el directo: me la."
+        }
+      }
     },
     {
       "id": "cp-form-03",
@@ -724,7 +748,17 @@
       "verb": "pareja de pronombres",
       "person": "¿Y mis zapatos? Mi tío ___ compra mañana.",
       "answer": "me los",
-      "table": "combinacion-pares"
+      "table": "combinacion-pares",
+      "wrong": {
+        "me las": {
+          "en": "Zapatos is masculine plural, so the direct pronoun is los: me los.",
+          "es": "Zapatos es masculino plural, así que el pronombre directo es los: me los."
+        },
+        "me lo": {
+          "en": "Zapatos is plural, so the direct pronoun must be plural too: los, not lo: me los.",
+          "es": "Zapatos es plural, así que el pronombre directo también va en plural: los, no lo: me los."
+        }
+      }
     },
     {
       "id": "cp-form-04",
@@ -732,7 +766,17 @@
       "verb": "pareja de pronombres",
       "person": "¿Me llevas la maleta? Sí, ___ llevo yo.",
       "answer": "te la",
-      "table": "combinacion-pares"
+      "table": "combinacion-pares",
+      "wrong": {
+        "te lo": {
+          "en": "Maleta is feminine singular, so the direct pronoun is la: te la.",
+          "es": "Maleta es femenino singular, así que el pronombre directo es la: te la."
+        },
+        "la te": {
+          "en": "In a pair of pronouns the indirect one comes first, then the direct one: te la.",
+          "es": "En una pareja de pronombres va primero el indirecto y después el directo: te la."
+        }
+      }
     },
     {
       "id": "cp-form-05",
@@ -740,7 +784,17 @@
       "verb": "pareja de pronombres",
       "person": "¿Me compras las flores? Sí, ___ compro hoy.",
       "answer": "te las",
-      "table": "combinacion-pares"
+      "table": "combinacion-pares",
+      "wrong": {
+        "te los": {
+          "en": "Flores is feminine plural, so the direct pronoun is las: te las.",
+          "es": "Flores es femenino plural, así que el pronombre directo es las: te las."
+        },
+        "te la": {
+          "en": "Flores is plural, so the direct pronoun must be plural too: las, not la: te las.",
+          "es": "Flores es plural, así que el pronombre directo también va en plural: las, no la: te las."
+        }
+      }
     },
     {
       "id": "cp-form-06",
@@ -748,7 +802,17 @@
       "verb": "pareja de pronombres",
       "person": "¿Le diste el regalo a Ana? Sí, ___ di ayer.",
       "answer": "se lo",
-      "table": "combinacion-pares"
+      "table": "combinacion-pares",
+      "wrong": {
+        "le lo": {
+          "en": "Before lo, la, los or las, the pronoun le (or les) changes to se: se lo.",
+          "es": "Ante lo, la, los o las, el pronombre le (o les) cambia a se: se lo."
+        },
+        "se la": {
+          "en": "Regalo is masculine singular, so the direct pronoun is lo: se lo.",
+          "es": "Regalo es masculino singular, así que el pronombre directo es lo: se lo."
+        }
+      }
     },
     {
       "id": "cp-form-07",
@@ -756,7 +820,17 @@
       "verb": "pareja de pronombres",
       "person": "¿Le escribes la carta a tu jefe? Sí, ___ escribo hoy.",
       "answer": "se la",
-      "table": "combinacion-pares"
+      "table": "combinacion-pares",
+      "wrong": {
+        "le la": {
+          "en": "Before lo, la, los or las, the pronoun le (or les) changes to se: se la.",
+          "es": "Ante lo, la, los o las, el pronombre le (o les) cambia a se: se la."
+        },
+        "se lo": {
+          "en": "Carta is feminine singular, so the direct pronoun is la: se la.",
+          "es": "Carta es femenino singular, así que el pronombre directo es la: se la."
+        }
+      }
     },
     {
       "id": "cp-form-08",
@@ -764,7 +838,17 @@
       "verb": "pareja de pronombres",
       "person": "¿Les vendes los pasteles a tus vecinos? Sí, ___ vendo.",
       "answer": "se los",
-      "table": "combinacion-pares"
+      "table": "combinacion-pares",
+      "wrong": {
+        "les los": {
+          "en": "Before lo, la, los or las, the pronoun le (or les) changes to se: se los.",
+          "es": "Ante lo, la, los o las, el pronombre le (o les) cambia a se: se los."
+        },
+        "se las": {
+          "en": "Pasteles is masculine plural, so the direct pronoun is los: se los.",
+          "es": "Pasteles es masculino plural, así que el pronombre directo es los: se los."
+        }
+      }
     },
     {
       "id": "cp-form-09",
@@ -772,7 +856,17 @@
       "verb": "pareja de pronombres",
       "person": "¿Les llevas las llaves a tus papás? Sí, ___ llevo.",
       "answer": "se las",
-      "table": "combinacion-pares"
+      "table": "combinacion-pares",
+      "wrong": {
+        "les las": {
+          "en": "Before lo, la, los or las, the pronoun le (or les) changes to se: se las.",
+          "es": "Ante lo, la, los o las, el pronombre le (o les) cambia a se: se las."
+        },
+        "se los": {
+          "en": "Llaves is feminine plural, so the direct pronoun is las: se las.",
+          "es": "Llaves es femenino plural, así que el pronombre directo es las: se las."
+        }
+      }
     },
     {
       "id": "cp-form-10",
@@ -780,7 +874,17 @@
       "verb": "pareja de pronombres",
       "person": "¿Quién nos da el dinero? Mi jefe ___ da cada mes.",
       "answer": "nos lo",
-      "table": "combinacion-pares"
+      "table": "combinacion-pares",
+      "wrong": {
+        "nos la": {
+          "en": "Dinero is masculine singular, so the direct pronoun is lo: nos lo.",
+          "es": "Dinero es masculino singular, así que el pronombre directo es lo: nos lo."
+        },
+        "lo nos": {
+          "en": "In a pair of pronouns the indirect one comes first, then the direct one: nos lo.",
+          "es": "En una pareja de pronombres va primero el indirecto y después el directo: nos lo."
+        }
+      }
     },
     {
       "id": "cp-form-11",
@@ -788,7 +892,17 @@
       "verb": "pareja de pronombres",
       "person": "¿Quién nos hace la cena? Mi mamá ___ hace.",
       "answer": "nos la",
-      "table": "combinacion-pares"
+      "table": "combinacion-pares",
+      "wrong": {
+        "nos lo": {
+          "en": "Cena is feminine singular, so the direct pronoun is la: nos la.",
+          "es": "Cena es femenino singular, así que el pronombre directo es la: nos la."
+        },
+        "la nos": {
+          "en": "In a pair of pronouns the indirect one comes first, then the direct one: nos la.",
+          "es": "En una pareja de pronombres va primero el indirecto y después el directo: nos la."
+        }
+      }
     },
     {
       "id": "cp-form-12",
@@ -796,7 +910,17 @@
       "verb": "pareja de pronombres",
       "person": "¿Y mi café? Mi hermana ___ trae hoy.",
       "answer": "me lo",
-      "table": "combinacion-pares"
+      "table": "combinacion-pares",
+      "wrong": {
+        "me la": {
+          "en": "Café is masculine singular, so the direct pronoun is lo: me lo.",
+          "es": "Café es masculino singular, así que el pronombre directo es lo: me lo."
+        },
+        "lo me": {
+          "en": "In a pair of pronouns the indirect one comes first, then the direct one: me lo.",
+          "es": "En una pareja de pronombres va primero el indirecto y después el directo: me lo."
+        }
+      }
     },
     {
       "kind": "why",

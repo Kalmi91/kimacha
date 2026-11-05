@@ -700,7 +700,13 @@
       "verb": "forma verbal",
       "person": "Ayer ___ (comer, yo) con mi madre.",
       "answer": "comí",
-      "table": "perfecto-indefinido-formas"
+      "table": "perfecto-indefinido-formas",
+      "wrong": {
+        "he comido": {
+          "en": "He comido is the present perfect. A time that is already over (\"ayer\") takes the preterite: comí.",
+          "es": "He comido es el pretérito perfecto. Un tiempo ya terminado (\"ayer\") lleva el pretérito indefinido: comí."
+        }
+      }
     },
     {
       "id": "pvi-form-02",
@@ -708,7 +714,13 @@
       "verb": "forma verbal",
       "person": "Hasta ahora no ___ (hablar, yo; perfecto) con mi padre.",
       "answer": "he hablado",
-      "table": "perfecto-indefinido-formas"
+      "table": "perfecto-indefinido-formas",
+      "wrong": {
+        "hablé": {
+          "en": "Hablé is in the preterite (indefinido). This task asks for the present perfect: he hablado.",
+          "es": "Hablé está en pretérito indefinido. Esta tarea pide pretérito perfecto: he hablado."
+        }
+      }
     },
     {
       "id": "pvi-form-03",
@@ -716,7 +728,13 @@
       "verb": "forma verbal",
       "person": "Anoche ___ (ver, ellos) una película en casa.",
       "answer": "vieron",
-      "table": "perfecto-indefinido-formas"
+      "table": "perfecto-indefinido-formas",
+      "wrong": {
+        "han visto": {
+          "en": "Han visto is the present perfect. A time that is already over (\"anoche\") takes the preterite: vieron.",
+          "es": "Han visto es el pretérito perfecto. Un tiempo ya terminado (\"anoche\") lleva el pretérito indefinido: vieron."
+        }
+      }
     },
     {
       "id": "pvi-form-04",
@@ -724,7 +742,13 @@
       "verb": "forma verbal",
       "person": "Nunca ___ (estar, yo; indefinido) en un hospital.",
       "answer": "estuve",
-      "table": "perfecto-indefinido-formas"
+      "table": "perfecto-indefinido-formas",
+      "wrong": {
+        "he estado": {
+          "en": "He estado is in the present perfect. This task asks for the preterite (indefinido): estuve.",
+          "es": "He estado está en pretérito perfecto. Esta tarea pide pretérito indefinido: estuve."
+        }
+      }
     },
     {
       "id": "pvi-form-05",
@@ -732,7 +756,13 @@
       "verb": "forma verbal",
       "person": "¿Ya ___ (comprar, tú; indefinido) el pan?",
       "answer": "compraste",
-      "table": "perfecto-indefinido-formas"
+      "table": "perfecto-indefinido-formas",
+      "wrong": {
+        "has comprado": {
+          "en": "Has comprado is in the present perfect. This task asks for the preterite (indefinido): compraste.",
+          "es": "Has comprado está en pretérito perfecto. Esta tarea pide pretérito indefinido: compraste."
+        }
+      }
     },
     {
       "id": "pvi-form-06",
@@ -740,7 +770,13 @@
       "verb": "forma verbal",
       "person": "El lunes ___ (ir, nosotros) al cine.",
       "answer": "fuimos",
-      "table": "perfecto-indefinido-formas"
+      "table": "perfecto-indefinido-formas",
+      "wrong": {
+        "hemos ido": {
+          "en": "Hemos ido is the present perfect. A time that is already over (\"el lunes\") takes the preterite: fuimos.",
+          "es": "Hemos ido es el pretérito perfecto. Un tiempo ya terminado (\"el lunes\") lleva el pretérito indefinido: fuimos."
+        }
+      }
     },
     {
       "id": "pvi-form-07",
@@ -748,7 +784,13 @@
       "verb": "forma verbal",
       "person": "El año pasado ___ (viajar, ellos) a la playa.",
       "answer": "viajaron",
-      "table": "perfecto-indefinido-formas"
+      "table": "perfecto-indefinido-formas",
+      "wrong": {
+        "han viajado": {
+          "en": "Han viajado is the present perfect. A time that is already over (\"el año pasado\") takes the preterite: viajaron.",
+          "es": "Han viajado es el pretérito perfecto. Un tiempo ya terminado (\"el año pasado\") lleva el pretérito indefinido: viajaron."
+        }
+      }
     },
     {
       "id": "pvi-form-08",
@@ -756,7 +798,13 @@
       "verb": "forma verbal",
       "person": "Hace tres meses ___ (hablar, yo) con mi jefe.",
       "answer": "hablé",
-      "table": "perfecto-indefinido-formas"
+      "table": "perfecto-indefinido-formas",
+      "wrong": {
+        "he hablado": {
+          "en": "He hablado is the present perfect. A time that is already over (\"hace tres meses\") takes the preterite: hablé.",
+          "es": "He hablado es el pretérito perfecto. Un tiempo ya terminado (\"hace tres meses\") lleva el pretérito indefinido: hablé."
+        }
+      }
     },
     {
       "id": "pvi-form-09",
@@ -764,7 +812,13 @@
       "verb": "forma verbal",
       "person": "Todavía no ___ (escribir, ella; indefinido) la carta.",
       "answer": "escribió",
-      "table": "perfecto-indefinido-formas"
+      "table": "perfecto-indefinido-formas",
+      "wrong": {
+        "ha escrito": {
+          "en": "Ha escrito is in the present perfect. This task asks for the preterite (indefinido): escribió.",
+          "es": "Ha escrito está en pretérito perfecto. Esta tarea pide pretérito indefinido: escribió."
+        }
+      }
     },
     {
       "id": "pvi-form-10",
@@ -772,7 +826,13 @@
       "verb": "forma verbal",
       "person": "En 2018 ___ (viajar, yo) en tren.",
       "answer": "viajé",
-      "table": "perfecto-indefinido-formas"
+      "table": "perfecto-indefinido-formas",
+      "wrong": {
+        "he viajado": {
+          "en": "He viajado is the present perfect. A time that is already over (\"en 2018\") takes the preterite: viajé.",
+          "es": "He viajado es el pretérito perfecto. Un tiempo ya terminado (\"en 2018\") lleva el pretérito indefinido: viajé."
+        }
+      }
     },
     {
       "id": "pvi-form-11",
@@ -780,7 +840,13 @@
       "verb": "forma verbal",
       "person": "¿___ (ver, tú; indefinido) alguna vez el mar?",
       "answer": "Viste",
-      "table": "perfecto-indefinido-formas"
+      "table": "perfecto-indefinido-formas",
+      "wrong": {
+        "has visto": {
+          "en": "Has visto is in the present perfect. This task asks for the preterite (indefinido): Viste.",
+          "es": "Has visto está en pretérito perfecto. Esta tarea pide pretérito indefinido: Viste."
+        }
+      }
     },
     {
       "id": "pvi-form-12",
@@ -788,7 +854,13 @@
       "verb": "forma verbal",
       "person": "Últimamente ___ (hacer, yo; perfecto) mucho ejercicio.",
       "answer": "he hecho",
-      "table": "perfecto-indefinido-formas"
+      "table": "perfecto-indefinido-formas",
+      "wrong": {
+        "hice": {
+          "en": "Hice is in the preterite (indefinido). This task asks for the present perfect: he hecho.",
+          "es": "Hice está en pretérito indefinido. Esta tarea pide pretérito perfecto: he hecho."
+        }
+      }
     },
     {
       "kind": "why",

@@ -849,7 +849,17 @@
       "verb": "forma",
       "person": "Mi amigo vive en el ___ piso. (tercero)",
       "answer": "tercer",
-      "table": "numerales-ordinales-formas"
+      "table": "numerales-ordinales-formas",
+      "wrong": {
+        "tercero": {
+          "en": "Before a masculine singular noun, tercero shortens to tercer.",
+          "es": "Ante un sustantivo masculino singular, tercero se acorta a tercer."
+        },
+        "tres": {
+          "en": "Tres is a cardinal number. This sentence needs the ordinal (the position in an order): tercer.",
+          "es": "Tres es un número cardinal. Esta oración necesita el ordinal (la posición en un orden): tercer."
+        }
+      }
     },
     {
       "id": "no-form-02",
@@ -857,7 +867,17 @@
       "verb": "forma",
       "person": "Ana vive en el ___ piso. (primero)",
       "answer": "primer",
-      "table": "numerales-ordinales-formas"
+      "table": "numerales-ordinales-formas",
+      "wrong": {
+        "primero": {
+          "en": "Before a masculine singular noun, primero shortens to primer.",
+          "es": "Ante un sustantivo masculino singular, primero se acorta a primer."
+        },
+        "uno": {
+          "en": "Uno is a cardinal number. This sentence needs the ordinal (the position in an order): primer.",
+          "es": "Uno es un número cardinal. Esta oración necesita el ordinal (la posición en un orden): primer."
+        }
+      }
     },
     {
       "id": "no-form-03",
@@ -865,7 +885,17 @@
       "verb": "forma",
       "person": "Es la ___ vez que llamo a Ana. (primero)",
       "answer": "primera",
-      "table": "numerales-ordinales-formas"
+      "table": "numerales-ordinales-formas",
+      "wrong": {
+        "primero": {
+          "en": "Vez is feminine, so the form is primera, not primero.",
+          "es": "Vez es femenino, así que la forma es primera, no primero."
+        },
+        "primer": {
+          "en": "Vez is feminine, so the form is primera, not primer.",
+          "es": "Vez es femenino, así que la forma es primera, no primer."
+        }
+      }
     },
     {
       "id": "no-form-04",
@@ -873,7 +903,17 @@
       "verb": "forma",
       "person": "Mi hermana fue la ___ en llegar. (tercero)",
       "answer": "tercera",
-      "table": "numerales-ordinales-formas"
+      "table": "numerales-ordinales-formas",
+      "wrong": {
+        "tercero": {
+          "en": "Hermana is feminine, so the form is tercera, not tercero.",
+          "es": "Hermana es femenino, así que la forma es tercera, no tercero."
+        },
+        "tercer": {
+          "en": "Hermana is feminine, so the form is tercera, not tercer.",
+          "es": "Hermana es femenino, así que la forma es tercera, no tercer."
+        }
+      }
     },
     {
       "id": "no-form-05",
@@ -881,7 +921,17 @@
       "verb": "forma",
       "person": "Las ___ semanas del año son frías. (primero)",
       "answer": "primeras",
-      "table": "numerales-ordinales-formas"
+      "table": "numerales-ordinales-formas",
+      "wrong": {
+        "primeros": {
+          "en": "Semanas is feminine, so the form is primeras, not primeros.",
+          "es": "Semanas es femenino, así que la forma es primeras, no primeros."
+        },
+        "primera": {
+          "en": "Semanas is plural, so the ordinal is plural too: primeras, not primera.",
+          "es": "Semanas es plural, así que el ordinal también va en plural: primeras, no primera."
+        }
+      }
     },
     {
       "id": "no-form-06",
@@ -889,7 +939,17 @@
       "verb": "forma",
       "person": "Mayo es el ___ mes del año. (5.º)",
       "answer": "quinto",
-      "table": "numerales-ordinales-formas"
+      "table": "numerales-ordinales-formas",
+      "wrong": {
+        "cinco": {
+          "en": "Cinco is a cardinal number. This sentence needs the ordinal (the position in an order): quinto.",
+          "es": "Cinco es un número cardinal. Esta oración necesita el ordinal (la posición en un orden): quinto."
+        },
+        "quinta": {
+          "en": "Mes is masculine, so the form is quinto, not quinta.",
+          "es": "Mes es masculino, así que la forma es quinto, no quinta."
+        }
+      }
     },
     {
       "id": "no-form-07",
@@ -897,7 +957,17 @@
       "verb": "forma",
       "person": "Agosto es el ___ mes del año. (8.º)",
       "answer": "octavo",
-      "table": "numerales-ordinales-formas"
+      "table": "numerales-ordinales-formas",
+      "wrong": {
+        "ocho": {
+          "en": "Ocho is a cardinal number. This sentence needs the ordinal (the position in an order): octavo.",
+          "es": "Ocho es un número cardinal. Esta oración necesita el ordinal (la posición en un orden): octavo."
+        },
+        "octava": {
+          "en": "Mes is masculine, so the form is octavo, not octava.",
+          "es": "Mes es masculino, así que la forma es octavo, no octava."
+        }
+      }
     },
     {
       "id": "no-form-08",
@@ -905,7 +975,17 @@
       "verb": "forma",
       "person": "Mi mamá es la ___ de seis hermanos. (segundo)",
       "answer": "segunda",
-      "table": "numerales-ordinales-formas"
+      "table": "numerales-ordinales-formas",
+      "wrong": {
+        "segundo": {
+          "en": "Mamá is feminine, so the form is segunda, not segundo.",
+          "es": "Mamá es femenino, así que la forma es segunda, no segundo."
+        },
+        "dos": {
+          "en": "Dos is a cardinal number. This sentence needs the ordinal (the position in an order): segunda.",
+          "es": "Dos es un número cardinal. Esta oración necesita el ordinal (la posición en un orden): segunda."
+        }
+      }
     },
     {
       "id": "no-form-09",
@@ -913,7 +993,13 @@
       "verb": "forma",
       "person": "Mi clase empieza el ___ de agosto. (primero)",
       "answer": "primero",
-      "table": "numerales-ordinales-formas"
+      "table": "numerales-ordinales-formas",
+      "wrong": {
+        "primer": {
+          "en": "For the first day of a month Spanish uses primero (el primero de agosto), not the short form primer.",
+          "es": "Para el primer día del mes el español usa primero (el primero de agosto), no la forma corta primer."
+        }
+      }
     },
     {
       "id": "no-form-10",
@@ -921,7 +1007,13 @@
       "verb": "forma",
       "person": "Hoy es el ___ de junio. (2)",
       "answer": "dos",
-      "table": "numerales-ordinales-formas"
+      "table": "numerales-ordinales-formas",
+      "wrong": {
+        "segundo": {
+          "en": "From the second day of the month on, dates use cardinal numbers: el dos de junio. Only the first day uses an ordinal.",
+          "es": "Desde el segundo día del mes, las fechas usan números cardinales: el dos de junio. Solo el primer día usa un ordinal."
+        }
+      }
     },
     {
       "id": "no-form-11",
@@ -929,7 +1021,13 @@
       "verb": "forma",
       "person": "Mi amiga vive en el piso ___. (12, número normal)",
       "answer": "doce",
-      "table": "numerales-ordinales-formas"
+      "table": "numerales-ordinales-formas",
+      "wrong": {
+        "doze": {
+          "en": "Twelve is written doce, with c: doce.",
+          "es": "Doce se escribe con c: doce."
+        }
+      }
     },
     {
       "id": "no-form-12",
@@ -937,7 +1035,17 @@
       "verb": "forma",
       "person": "Abril es el ___ mes del año. (4.º)",
       "answer": "cuarto",
-      "table": "numerales-ordinales-formas"
+      "table": "numerales-ordinales-formas",
+      "wrong": {
+        "cuatro": {
+          "en": "Cuatro is a cardinal number. This sentence needs the ordinal (the position in an order): cuarto.",
+          "es": "Cuatro es un número cardinal. Esta oración necesita el ordinal (la posición en un orden): cuarto."
+        },
+        "cuarta": {
+          "en": "Mes is masculine, so the form is cuarto, not cuarta.",
+          "es": "Mes es masculino, así que la forma es cuarto, no cuarta."
+        }
+      }
     },
     {
       "kind": "why",

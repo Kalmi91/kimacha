@@ -416,7 +416,7 @@ describe('form tasks and result data', () => {
     expect(explain('')).toBeNull();
   });
 
-  it('all 10 gustar form items have mistake texts in en and es; the sibling lesson has none', () => {
+  it('all 10 gustar form items have mistake texts in en and es; the sibling lesson has them too', () => {
     const forms = lessonFor('es', 'gustar')!.items.filter((i) => i.kind === 'form');
     expect(forms).toHaveLength(10);
     for (const f of forms) {
@@ -430,7 +430,7 @@ describe('form tasks and result data', () => {
       }
     }
     const { items } = lessonFor('es', 'verbos-como-gustar')!;
-    expect(items.some((i) => i.kind === 'form' && i.wrong)).toBe(false);
+    expect(items.filter((i) => i.kind === 'form').every((i) => i.kind === 'form' && i.wrong)).toBe(true);
   });
 
   it('a choice item carries one why-not text per wrong option and a translation that is not the sentence itself', () => {

@@ -637,7 +637,17 @@
       "verb": "gerundio",
       "person": "hablar",
       "answer": "hablando",
-      "table": "gerundio"
+      "table": "gerundio",
+      "wrong": {
+        "hablado": {
+          "en": "Hablado is the past participle. This task asks for the gerund: hablando.",
+          "es": "Hablado es el participio. Esta tarea pide el gerundio: hablando."
+        },
+        "hablar": {
+          "en": "Hablar is the infinitive. This task asks for the gerund: hablando.",
+          "es": "Hablar es el infinitivo. Esta tarea pide el gerundio: hablando."
+        }
+      }
     },
     {
       "id": "eg-form-02",
@@ -645,7 +655,17 @@
       "verb": "gerundio",
       "person": "comer",
       "answer": "comiendo",
-      "table": "gerundio"
+      "table": "gerundio",
+      "wrong": {
+        "comido": {
+          "en": "Comido is the past participle. This task asks for the gerund: comiendo.",
+          "es": "Comido es el participio. Esta tarea pide el gerundio: comiendo."
+        },
+        "comendo": {
+          "en": "In the gerund, -er and -ir verbs take -iendo (-ar verbs take -ando): comiendo.",
+          "es": "En el gerundio, los verbos en -er e -ir toman -iendo (los verbos en -ar toman -ando): comiendo."
+        }
+      }
     },
     {
       "id": "eg-form-03",
@@ -653,7 +673,17 @@
       "verb": "gerundio",
       "person": "vivir",
       "answer": "viviendo",
-      "table": "gerundio"
+      "table": "gerundio",
+      "wrong": {
+        "vivido": {
+          "en": "Vivido is the past participle. This task asks for the gerund: viviendo.",
+          "es": "Vivido es el participio. Esta tarea pide el gerundio: viviendo."
+        },
+        "vivendo": {
+          "en": "In the gerund, -er and -ir verbs take -iendo (-ar verbs take -ando): viviendo.",
+          "es": "En el gerundio, los verbos en -er e -ir toman -iendo (los verbos en -ar toman -ando): viviendo."
+        }
+      }
     },
     {
       "id": "eg-form-04",
@@ -661,7 +691,17 @@
       "verb": "gerundio",
       "person": "leer",
       "answer": "leyendo",
-      "table": "gerundio"
+      "table": "gerundio",
+      "wrong": {
+        "leído": {
+          "en": "Leído is the past participle. This task asks for the gerund: leyendo.",
+          "es": "Leído es el participio. Esta tarea pide el gerundio: leyendo."
+        },
+        "leiendo": {
+          "en": "An unstressed i between two vowels is written y: leyendo.",
+          "es": "Una i átona entre dos vocales se escribe y: leyendo."
+        }
+      }
     },
     {
       "id": "eg-form-05",
@@ -669,7 +709,17 @@
       "verb": "gerundio",
       "person": "dormir",
       "answer": "durmiendo",
-      "table": "gerundio"
+      "table": "gerundio",
+      "wrong": {
+        "dormido": {
+          "en": "Dormido is the past participle. This task asks for the gerund: durmiendo.",
+          "es": "Dormido es el participio. Esta tarea pide el gerundio: durmiendo."
+        },
+        "dormiendo": {
+          "en": "In the gerund the stem vowel of dormir changes: o becomes u: durmiendo.",
+          "es": "En el gerundio cambia la vocal de la raíz de dormir: o pasa a u: durmiendo."
+        }
+      }
     },
     {
       "id": "eg-form-06",
@@ -677,7 +727,17 @@
       "verb": "gerundio",
       "person": "decir",
       "answer": "diciendo",
-      "table": "gerundio"
+      "table": "gerundio",
+      "wrong": {
+        "dicho": {
+          "en": "Dicho is the past participle. This task asks for the gerund: diciendo.",
+          "es": "Dicho es el participio. Esta tarea pide el gerundio: diciendo."
+        },
+        "deciendo": {
+          "en": "In the gerund the stem vowel of decir changes: e becomes i: diciendo.",
+          "es": "En el gerundio cambia la vocal de la raíz de decir: e pasa a i: diciendo."
+        }
+      }
     },
     {
       "id": "eg-form-07",
@@ -685,7 +745,17 @@
       "verb": "gerundio",
       "person": "ir",
       "answer": "yendo",
-      "table": "gerundio"
+      "table": "gerundio",
+      "wrong": {
+        "ido": {
+          "en": "Ido is the past participle. This task asks for the gerund: yendo.",
+          "es": "Ido es el participio. Esta tarea pide el gerundio: yendo."
+        },
+        "iendo": {
+          "en": "Ir is irregular in the gerund: it takes y-, so the form is yendo, not iendo.",
+          "es": "Ir es irregular en el gerundio: toma y-, así que la forma es yendo, no iendo."
+        }
+      }
     },
     {
       "id": "eg-form-08",
@@ -693,7 +763,17 @@
       "verb": "gerundio",
       "person": "pedir",
       "answer": "pidiendo",
-      "table": "gerundio"
+      "table": "gerundio",
+      "wrong": {
+        "pedido": {
+          "en": "Pedido is the past participle. This task asks for the gerund: pidiendo.",
+          "es": "Pedido es el participio. Esta tarea pide el gerundio: pidiendo."
+        },
+        "pediendo": {
+          "en": "In the gerund the stem vowel of pedir changes: e becomes i: pidiendo.",
+          "es": "En el gerundio cambia la vocal de la raíz de pedir: e pasa a i: pidiendo."
+        }
+      }
     },
     {
       "id": "eg-form-09",
@@ -701,7 +781,17 @@
       "verb": "estar",
       "person": "yo",
       "answer": "estoy",
-      "table": "estar-presente"
+      "table": "estar-presente",
+      "wrong": {
+        "soy": {
+          "en": "Soy is a form of ser, but this task asks for estar: estoy.",
+          "es": "Soy es una forma de ser, pero esta tarea pide estar: estoy."
+        },
+        "estar": {
+          "en": "The infinitive does not change with the person. Conjugate estar for yo: estoy.",
+          "es": "El infinitivo no cambia con la persona. Conjuga estar para yo: estoy."
+        }
+      }
     },
     {
       "id": "eg-form-10",
@@ -709,7 +799,17 @@
       "verb": "estar",
       "person": "tú",
       "answer": "estás",
-      "table": "estar-presente"
+      "table": "estar-presente",
+      "wrong": {
+        "eres": {
+          "en": "Eres is a form of ser, but this task asks for estar: estás.",
+          "es": "Eres es una forma de ser, pero esta tarea pide estar: estás."
+        },
+        "estar": {
+          "en": "The infinitive does not change with the person. Conjugate estar for tú: estás.",
+          "es": "El infinitivo no cambia con la persona. Conjuga estar para tú: estás."
+        }
+      }
     },
     {
       "id": "eg-form-11",
@@ -717,7 +817,17 @@
       "verb": "estar",
       "person": "él/ella/usted",
       "answer": "está",
-      "table": "estar-presente"
+      "table": "estar-presente",
+      "wrong": {
+        "es": {
+          "en": "Es is a form of ser, but this task asks for estar: está.",
+          "es": "Es es una forma de ser, pero esta tarea pide estar: está."
+        },
+        "estar": {
+          "en": "The infinitive does not change with the person. Conjugate estar for él, ella and usted: está.",
+          "es": "El infinitivo no cambia con la persona. Conjuga estar para él, ella y usted: está."
+        }
+      }
     },
     {
       "id": "eg-form-12",
@@ -725,7 +835,17 @@
       "verb": "estar",
       "person": "ellos/ellas/ustedes",
       "answer": "están",
-      "table": "estar-presente"
+      "table": "estar-presente",
+      "wrong": {
+        "son": {
+          "en": "Son is a form of ser, but this task asks for estar: están.",
+          "es": "Son es una forma de ser, pero esta tarea pide estar: están."
+        },
+        "estar": {
+          "en": "The infinitive does not change with the person. Conjugate estar for ellos, ellas and ustedes: están.",
+          "es": "El infinitivo no cambia con la persona. Conjuga estar para ellos, ellas y ustedes: están."
+        }
+      }
     },
     {
       "kind": "why",

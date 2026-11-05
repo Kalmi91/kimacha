@@ -1076,7 +1076,13 @@
       "verb": "forma",
       "person": "Pon el vaso en la ___, por favor. (mesa + -ita)",
       "answer": "mesita",
-      "table": "diminutivos-formas"
+      "table": "diminutivos-formas",
+      "wrong": {
+        "mesaita": {
+          "en": "The final vowel of mesa is dropped before the diminutive ending: mesita.",
+          "es": "La vocal final de mesa se pierde ante la terminación del diminutivo: mesita."
+        }
+      }
     },
     {
       "id": "dim-form-02",
@@ -1084,7 +1090,13 @@
       "verb": "forma",
       "person": "Espérame un ___, ya casi termino. (rato + -ito)",
       "answer": "ratito",
-      "table": "diminutivos-formas"
+      "table": "diminutivos-formas",
+      "wrong": {
+        "ratoito": {
+          "en": "The final vowel of rato is dropped before the diminutive ending: ratito.",
+          "es": "La vocal final de rato se pierde ante la terminación del diminutivo: ratito."
+        }
+      }
     },
     {
       "id": "dim-form-03",
@@ -1092,7 +1104,17 @@
       "verb": "forma",
       "person": "Abre la ___, hijo, y come. (boca + -ita)",
       "answer": "boquita",
-      "table": "diminutivos-formas"
+      "table": "diminutivos-formas",
+      "wrong": {
+        "bocita": {
+          "en": "To keep the hard k sound, the c becomes qu before the ending -ita: boquita.",
+          "es": "Para conservar el sonido fuerte de la c, la c cambia a qu ante la terminación -ita: boquita."
+        },
+        "bocaita": {
+          "en": "The final vowel of boca is dropped before the diminutive ending: boquita.",
+          "es": "La vocal final de boca se pierde ante la terminación del diminutivo: boquita."
+        }
+      }
     },
     {
       "id": "dim-form-04",
@@ -1100,7 +1122,13 @@
       "verb": "forma",
       "person": "Quiero una ___ de té caliente. (taza + -ita)",
       "answer": "tacita",
-      "table": "diminutivos-formas"
+      "table": "diminutivos-formas",
+      "wrong": {
+        "tazaita": {
+          "en": "The final vowel of taza is dropped before the diminutive ending: tacita.",
+          "es": "La vocal final de taza se pierde ante la terminación del diminutivo: tacita."
+        }
+      }
     },
     {
       "id": "dim-form-05",
@@ -1108,7 +1136,17 @@
       "verb": "forma",
       "person": "Mi hijo tiene un ___ en la escuela. (amigo + -ito)",
       "answer": "amiguito",
-      "table": "diminutivos-formas"
+      "table": "diminutivos-formas",
+      "wrong": {
+        "amigito": {
+          "en": "To keep the hard g sound, the g becomes gu before the ending -ito: amiguito.",
+          "es": "Para conservar el sonido fuerte de la g, la g cambia a gu ante la terminación -ito: amiguito."
+        },
+        "amigoito": {
+          "en": "The final vowel of amigo is dropped before the diminutive ending: amiguito.",
+          "es": "La vocal final de amigo se pierde ante la terminación del diminutivo: amiguito."
+        }
+      }
     },
     {
       "id": "dim-form-06",
@@ -1116,7 +1154,13 @@
       "verb": "forma",
       "person": "Tomamos dos ___ en la mañana. (café + -cito, plural)",
       "answer": "cafecitos",
-      "table": "diminutivos-formas"
+      "table": "diminutivos-formas",
+      "wrong": {
+        "cafecito": {
+          "en": "Cafecito is singular. The task asks for the plural: add -s: cafecitos.",
+          "es": "Cafecito es singular. La tarea pide el plural: se añade -s: cafecitos."
+        }
+      }
     },
     {
       "id": "dim-form-07",
@@ -1124,7 +1168,13 @@
       "verb": "forma",
       "person": "Ven, mi ___, dame un abrazo. (corazón + -cito)",
       "answer": "corazoncito",
-      "table": "diminutivos-formas"
+      "table": "diminutivos-formas",
+      "wrong": {
+        "corazonito": {
+          "en": "Words ending in -n or -r take -cito, not -ito: corazoncito.",
+          "es": "Las palabras terminadas en -n o -r toman -cito, no -ito: corazoncito."
+        }
+      }
     },
     {
       "id": "dim-form-08",
@@ -1132,7 +1182,13 @@
       "verb": "forma",
       "person": "Quiero un ___ con mantequilla. (pan + -ecito)",
       "answer": "panecito",
-      "table": "diminutivos-formas"
+      "table": "diminutivos-formas",
+      "wrong": {
+        "panito": {
+          "en": "The one-syllable word pan takes the longer ending -ecito/-ecita: panecito.",
+          "es": "La palabra de una sílaba pan toma la terminación más larga -ecito/-ecita: panecito."
+        }
+      }
     },
     {
       "id": "dim-form-09",
@@ -1140,7 +1196,13 @@
       "verb": "forma",
       "person": "Compré una ___ para mi mamá. (flor + -ecita)",
       "answer": "florecita",
-      "table": "diminutivos-formas"
+      "table": "diminutivos-formas",
+      "wrong": {
+        "florita": {
+          "en": "The one-syllable word flor takes the longer ending -ecito/-ecita: florecita.",
+          "es": "La palabra de una sílaba flor toma la terminación más larga -ecito/-ecita: florecita."
+        }
+      }
     },
     {
       "id": "dim-form-10",
@@ -1148,7 +1210,17 @@
       "verb": "forma",
       "person": "Mi hija tiene un ___ rojo. (pez + -ecito)",
       "answer": "pececito",
-      "table": "diminutivos-formas"
+      "table": "diminutivos-formas",
+      "wrong": {
+        "pezito": {
+          "en": "One-syllable words take -ecito, and the z of pez changes to c before e: pececito.",
+          "es": "Las palabras de una sílaba toman -ecito, y la z de pez cambia a c ante e: pececito."
+        },
+        "pezecito": {
+          "en": "The z of pez changes to c before e: pececito.",
+          "es": "La z de pez cambia a c ante e: pececito."
+        }
+      }
     },
     {
       "id": "dim-form-11",
@@ -1156,7 +1228,13 @@
       "verb": "forma",
       "person": "Mi hijo juega todo el día con su ___. (tren + -ecito)",
       "answer": "trenecito",
-      "table": "diminutivos-formas"
+      "table": "diminutivos-formas",
+      "wrong": {
+        "trenito": {
+          "en": "The one-syllable word tren takes the longer ending -ecito/-ecita: trenecito.",
+          "es": "La palabra de una sílaba tren toma la terminación más larga -ecito/-ecita: trenecito."
+        }
+      }
     },
     {
       "id": "dim-form-12",
@@ -1164,7 +1242,13 @@
       "verb": "forma",
       "person": "Dame un ___ y un lápiz, por favor. (papel + -ito)",
       "answer": "papelito",
-      "table": "diminutivos-formas"
+      "table": "diminutivos-formas",
+      "wrong": {
+        "papelcito": {
+          "en": "Words ending in -l take -ito, not -cito: papelito.",
+          "es": "Las palabras terminadas en -l toman -ito, no -cito: papelito."
+        }
+      }
     },
     {
       "kind": "why",

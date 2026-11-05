@@ -747,7 +747,17 @@
       "verb": "indefinido",
       "person": "¿Quieres ___ de comer?",
       "answer": "algo",
-      "table": "indefinidos"
+      "table": "indefinidos",
+      "wrong": {
+        "alguien": {
+          "en": "Alguien is used for people. For things the word is algo.",
+          "es": "Alguien se usa para personas. Para cosas la palabra es algo."
+        },
+        "nada": {
+          "en": "Nada is a negative word. This sentence is not negative, so the word is algo.",
+          "es": "Nada es una palabra negativa. Esta oración no es negativa, así que la palabra es algo."
+        }
+      }
     },
     {
       "id": "indef-form-02",
@@ -755,7 +765,17 @@
       "verb": "indefinido",
       "person": "Tengo sed: ¿hay ___ de beber en casa?",
       "answer": "algo",
-      "table": "indefinidos"
+      "table": "indefinidos",
+      "wrong": {
+        "alguien": {
+          "en": "Alguien is used for people. For things the word is algo.",
+          "es": "Alguien se usa para personas. Para cosas la palabra es algo."
+        },
+        "nada": {
+          "en": "Nada is a negative word. This sentence is not negative, so the word is algo.",
+          "es": "Nada es una palabra negativa. Esta oración no es negativa, así que la palabra es algo."
+        }
+      }
     },
     {
       "id": "indef-form-03",
@@ -763,7 +783,17 @@
       "verb": "indefinido",
       "person": "No tengo ___ en la bolsa.",
       "answer": "nada",
-      "table": "indefinidos"
+      "table": "indefinidos",
+      "wrong": {
+        "algo": {
+          "en": "This sentence already has no before the verb, so it needs the negative word: nada, not algo.",
+          "es": "Esta oración ya tiene no antes del verbo, así que necesita la palabra negativa: nada, no algo."
+        },
+        "nadie": {
+          "en": "Nadie is used for people. For things the word is nada.",
+          "es": "Nadie se usa para personas. Para cosas la palabra es nada."
+        }
+      }
     },
     {
       "id": "indef-form-04",
@@ -771,7 +801,17 @@
       "verb": "indefinido",
       "person": "Estoy cansado: hoy no quiero hacer ___.",
       "answer": "nada",
-      "table": "indefinidos"
+      "table": "indefinidos",
+      "wrong": {
+        "algo": {
+          "en": "This sentence already has no before the verb, so it needs the negative word: nada, not algo.",
+          "es": "Esta oración ya tiene no antes del verbo, así que necesita la palabra negativa: nada, no algo."
+        },
+        "nadie": {
+          "en": "Nadie is used for people. For things the word is nada.",
+          "es": "Nadie se usa para personas. Para cosas la palabra es nada."
+        }
+      }
     },
     {
       "id": "indef-form-05",
@@ -779,7 +819,17 @@
       "verb": "indefinido",
       "person": "¿Conoces a ___ en Madrid?",
       "answer": "alguien",
-      "table": "indefinidos"
+      "table": "indefinidos",
+      "wrong": {
+        "algo": {
+          "en": "Algo is used for things. For people the word is alguien.",
+          "es": "Algo se usa para cosas. Para personas la palabra es alguien."
+        },
+        "nadie": {
+          "en": "Nadie is a negative word. This sentence is not negative, so the word is alguien.",
+          "es": "Nadie es una palabra negativa. Esta oración no es negativa, así que la palabra es alguien."
+        }
+      }
     },
     {
       "id": "indef-form-06",
@@ -787,7 +837,17 @@
       "verb": "indefinido",
       "person": "No conozco a ___ en esta ciudad.",
       "answer": "nadie",
-      "table": "indefinidos"
+      "table": "indefinidos",
+      "wrong": {
+        "alguien": {
+          "en": "This sentence already has no before the verb, so it needs the negative word: nadie, not alguien.",
+          "es": "Esta oración ya tiene no antes del verbo, así que necesita la palabra negativa: nadie, no alguien."
+        },
+        "nada": {
+          "en": "Nada is used for things. For people the word is nadie.",
+          "es": "Nada se usa para cosas. Para personas la palabra es nadie."
+        }
+      }
     },
     {
       "id": "indef-form-07",
@@ -795,7 +855,17 @@
       "verb": "indefinido",
       "person": "Quiero ir a Puebla ___ día.",
       "answer": "algún",
-      "table": "indefinidos"
+      "table": "indefinidos",
+      "wrong": {
+        "alguno": {
+          "en": "Before a masculine singular noun, alguno shortens to algún.",
+          "es": "Ante un sustantivo masculino singular, alguno se acorta a algún."
+        },
+        "alguna": {
+          "en": "Día is masculine, so the form is algún, not alguna.",
+          "es": "Día es masculino, así que la forma es algún, no alguna."
+        }
+      }
     },
     {
       "id": "indef-form-08",
@@ -803,7 +873,21 @@
       "verb": "indefinido",
       "person": "No hay ___ problema en la casa.",
       "answer": "ningún",
-      "table": "indefinidos"
+      "table": "indefinidos",
+      "wrong": {
+        "ninguno": {
+          "en": "Before a masculine singular noun, ninguno shortens to ningún.",
+          "es": "Ante un sustantivo masculino singular, ninguno se acorta a ningún."
+        },
+        "ninguna": {
+          "en": "Problema is masculine, so the form is ningún, not ninguna.",
+          "es": "Problema es masculino, así que la forma es ningún, no ninguna."
+        },
+        "algún": {
+          "en": "This sentence already has no before the verb, so it needs the negative word: ningún, not algún.",
+          "es": "Esta oración ya tiene no antes del verbo, así que necesita la palabra negativa: ningún, no algún."
+        }
+      }
     },
     {
       "id": "indef-form-09",
@@ -811,7 +895,17 @@
       "verb": "indefinido",
       "person": "¿Tienes ___ pregunta sobre el trabajo?",
       "answer": "alguna",
-      "table": "indefinidos"
+      "table": "indefinidos",
+      "wrong": {
+        "algún": {
+          "en": "Pregunta is feminine, so the form is alguna, not algún.",
+          "es": "Pregunta es femenino, así que la forma es alguna, no algún."
+        },
+        "alguno": {
+          "en": "Pregunta is feminine, so the form is alguna, not alguno.",
+          "es": "Pregunta es femenino, así que la forma es alguna, no alguno."
+        }
+      }
     },
     {
       "id": "indef-form-10",
@@ -819,7 +913,21 @@
       "verb": "indefinido",
       "person": "No hay ___ mesa libre en el café.",
       "answer": "ninguna",
-      "table": "indefinidos"
+      "table": "indefinidos",
+      "wrong": {
+        "ningún": {
+          "en": "Mesa is feminine, so the form is ninguna, not ningún.",
+          "es": "Mesa es femenino, así que la forma es ninguna, no ningún."
+        },
+        "ninguno": {
+          "en": "Mesa is feminine, so the form is ninguna, not ninguno.",
+          "es": "Mesa es femenino, así que la forma es ninguna, no ninguno."
+        },
+        "alguna": {
+          "en": "This sentence already has no before the verb, so it needs the negative word: ninguna, not alguna.",
+          "es": "Esta oración ya tiene no antes del verbo, así que necesita la palabra negativa: ninguna, no alguna."
+        }
+      }
     },
     {
       "id": "indef-form-11",
@@ -827,7 +935,13 @@
       "verb": "indefinido",
       "person": "masculino singular, empieza por «alg»: ¿Hay cafés cerca de aquí? Sí, hay ___.",
       "answer": "alguno",
-      "table": "indefinidos"
+      "table": "indefinidos",
+      "wrong": {
+        "algún": {
+          "en": "Algún is the short form, used only right before a noun. Without a noun after it the full form is used: alguno.",
+          "es": "Algún es la forma corta, que se usa solo justo delante de un sustantivo. Sin sustantivo detrás se usa la forma completa: alguno."
+        }
+      }
     },
     {
       "id": "indef-form-12",
@@ -835,7 +949,13 @@
       "verb": "indefinido",
       "person": "¿Tienes amigos en Puebla? No, no tengo ___.",
       "answer": "ninguno",
-      "table": "indefinidos"
+      "table": "indefinidos",
+      "wrong": {
+        "ningún": {
+          "en": "Ningún is the short form, used only right before a noun. Without a noun after it the full form is used: ninguno.",
+          "es": "Ningún es la forma corta, que se usa solo justo delante de un sustantivo. Sin sustantivo detrás se usa la forma completa: ninguno."
+        }
+      }
     },
     {
       "kind": "why",

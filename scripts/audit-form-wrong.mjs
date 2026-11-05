@@ -46,6 +46,27 @@ for (const [lane, levels] of Object.entries(share)) {
     .join(', ');
   console.log(`  ${lane}: ${line}`);
 }
+// P1: the Hungarian placeholder article "a(z)" must never reach a text (write az before a vowel, a before a consonant)
+const huDir = join(root, 'data', 'games', 'grammar-hu');
+const scanHu = (dir) => {
+  for (const e of readdirSync(dir, { withFileTypes: true })) {
+    const p = join(dir, e.name);
+    if (e.isDirectory()) scanHu(p);
+    else if (e.name.endsWith('.json') && /a\(z\)/i.test(readFileSync(p, 'utf8'))) problems.push(`hu placeholder "a(z)" in ${p.slice(root.length + 1)}`);
+  }
+};
+if (existsSync(huDir)) scanHu(huDir);
+// items on purpose without a `wrong` map: every typical wrong answer of them is acceptable Spanish in Mexico
+const NO_SAFE_KEY = [
+  ['es/por-para.json', 'pp-form-04'],
+  ['es/por-para.json', 'pp-form-09'],
+  ['es/haber-impersonal-tiempos.json', 'hb-form-10'],
+];
+const left = NO_SAFE_KEY.filter(([f, id]) => {
+  const item = JSON.parse(readFileSync(join(gamesDir, f), 'utf8')).items.find((i) => i.id === id);
+  return item && !item.wrong;
+});
+if (left.length) console.log(`  (on purpose without a map, no safe wrong key: ${left.map(([, id]) => id).join(', ')})`);
 if (problems.length) {
   console.error(`audit-form-wrong: ${problems.length} P1:`);
   for (const p of problems.slice(0, 30)) console.error('  ' + p);

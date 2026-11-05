@@ -994,6 +994,16 @@
       "tense": {
         "from": "presente",
         "to": "imperfecto"
+      },
+      "wrong": {
+        "soy": {
+          "en": "Soy is in the present tense. This task asks for the imperfect: era.",
+          "es": "Soy está en presente. Esta tarea pide imperfecto: era."
+        },
+        "fui": {
+          "en": "Fui is in the preterite (indefinido). This task asks for the imperfect: era.",
+          "es": "Fui está en pretérito indefinido. Esta tarea pide imperfecto: era."
+        }
       }
     },
     {
@@ -1006,6 +1016,16 @@
       "tense": {
         "from": "presente",
         "to": "imperfecto"
+      },
+      "wrong": {
+        "somos": {
+          "en": "Somos is in the present tense. This task asks for the imperfect: éramos.",
+          "es": "Somos está en presente. Esta tarea pide imperfecto: éramos."
+        },
+        "fuimos": {
+          "en": "Fuimos is in the preterite (indefinido). This task asks for the imperfect: éramos.",
+          "es": "Fuimos está en pretérito indefinido. Esta tarea pide imperfecto: éramos."
+        }
       }
     },
     {
@@ -1018,6 +1038,20 @@
       "tense": {
         "from": "presente",
         "to": "imperfecto"
+      },
+      "wrong": {
+        "vas": {
+          "en": "Vas is in the present tense. This task asks for the imperfect: ibas.",
+          "es": "Vas está en presente. Esta tarea pide imperfecto: ibas."
+        },
+        "vabas": {
+          "en": "The imperfect of ir is irregular: it is not built from the infinitive: ibas.",
+          "es": "El imperfecto de ir es irregular: no se forma a partir del infinitivo: ibas."
+        },
+        "fuiste": {
+          "en": "Fuiste is in the preterite (indefinido). This task asks for the imperfect: ibas.",
+          "es": "Fuiste está en pretérito indefinido. Esta tarea pide imperfecto: ibas."
+        }
       }
     },
     {
@@ -1030,6 +1064,16 @@
       "tense": {
         "from": "presente",
         "to": "imperfecto"
+      },
+      "wrong": {
+        "van": {
+          "en": "Van is in the present tense. This task asks for the imperfect: iban.",
+          "es": "Van está en presente. Esta tarea pide imperfecto: iban."
+        },
+        "vaban": {
+          "en": "The imperfect of ir is irregular: it is not built from the infinitive: iban.",
+          "es": "El imperfecto de ir es irregular: no se forma a partir del infinitivo: iban."
+        }
       }
     },
     {
@@ -1042,6 +1086,20 @@
       "tense": {
         "from": "presente",
         "to": "imperfecto"
+      },
+      "wrong": {
+        "ve": {
+          "en": "Ve is in the present tense. This task asks for the imperfect: veía.",
+          "es": "Ve está en presente. Esta tarea pide imperfecto: veía."
+        },
+        "vía": {
+          "en": "The imperfect of ver keeps the e of the stem: ve- + -ía = veía.",
+          "es": "El imperfecto de ver conserva la e de la raíz: ve- + -ía = veía."
+        },
+        "vio": {
+          "en": "Vio is in the preterite (indefinido). This task asks for the imperfect: veía.",
+          "es": "Vio está en pretérito indefinido. Esta tarea pide imperfecto: veía."
+        }
       }
     },
     {
@@ -1054,6 +1112,20 @@
       "tense": {
         "from": "presente",
         "to": "imperfecto"
+      },
+      "wrong": {
+        "ven": {
+          "en": "Ven is in the present tense. This task asks for the imperfect: veían.",
+          "es": "Ven está en presente. Esta tarea pide imperfecto: veían."
+        },
+        "vían": {
+          "en": "The imperfect of ver keeps the e of the stem: ve- + -ían = veían.",
+          "es": "El imperfecto de ver conserva la e de la raíz: ve- + -ían = veían."
+        },
+        "vieron": {
+          "en": "Vieron is in the preterite (indefinido). This task asks for the imperfect: veían.",
+          "es": "Vieron está en pretérito indefinido. Esta tarea pide imperfecto: veían."
+        }
       }
     },
     {
@@ -1066,6 +1138,16 @@
       "tense": {
         "from": "presente",
         "to": "imperfecto"
+      },
+      "wrong": {
+        "hablo": {
+          "en": "Hablo is in the present tense. This task asks for the imperfect: hablaba.",
+          "es": "Hablo está en presente. Esta tarea pide imperfecto: hablaba."
+        },
+        "hablé": {
+          "en": "Hablé is in the preterite (indefinido). This task asks for the imperfect: hablaba.",
+          "es": "Hablé está en pretérito indefinido. Esta tarea pide imperfecto: hablaba."
+        }
       }
     },
     {
@@ -1078,6 +1160,16 @@
       "tense": {
         "from": "presente",
         "to": "imperfecto"
+      },
+      "wrong": {
+        "hablan": {
+          "en": "Hablan is in the present tense. This task asks for the imperfect: hablaban.",
+          "es": "Hablan está en presente. Esta tarea pide imperfecto: hablaban."
+        },
+        "hablaron": {
+          "en": "Hablaron is in the preterite (indefinido). This task asks for the imperfect: hablaban.",
+          "es": "Hablaron está en pretérito indefinido. Esta tarea pide imperfecto: hablaban."
+        }
       }
     },
     {
@@ -1090,6 +1182,20 @@
       "tense": {
         "from": "presente",
         "to": "imperfecto"
+      },
+      "wrong": {
+        "comes": {
+          "en": "Comes is in the present tense. This task asks for the imperfect: comías.",
+          "es": "Comes está en presente. Esta tarea pide imperfecto: comías."
+        },
+        "comiste": {
+          "en": "Comiste is in the preterite (indefinido). This task asks for the imperfect: comías.",
+          "es": "Comiste está en pretérito indefinido. Esta tarea pide imperfecto: comías."
+        },
+        "comabas": {
+          "en": "The imperfect of -er and -ir verbs uses -ía, not -aba (-aba is for -ar verbs): comías.",
+          "es": "El imperfecto de los verbos en -er e -ir usa -ía, no -aba (-aba es de los verbos en -ar): comías."
+        }
       }
     },
     {
@@ -1102,6 +1208,20 @@
       "tense": {
         "from": "presente",
         "to": "imperfecto"
+      },
+      "wrong": {
+        "comemos": {
+          "en": "Comemos is in the present tense. This task asks for the imperfect: comíamos.",
+          "es": "Comemos está en presente. Esta tarea pide imperfecto: comíamos."
+        },
+        "comimos": {
+          "en": "Comimos is in the preterite (indefinido). This task asks for the imperfect: comíamos.",
+          "es": "Comimos está en pretérito indefinido. Esta tarea pide imperfecto: comíamos."
+        },
+        "comábamos": {
+          "en": "The imperfect of -er and -ir verbs uses -ía, not -aba (-aba is for -ar verbs): comíamos.",
+          "es": "El imperfecto de los verbos en -er e -ir usa -ía, no -aba (-aba es de los verbos en -ar): comíamos."
+        }
       }
     },
     {
@@ -1114,6 +1234,20 @@
       "tense": {
         "from": "presente",
         "to": "imperfecto"
+      },
+      "wrong": {
+        "vive": {
+          "en": "Vive is in the present tense. This task asks for the imperfect: vivía.",
+          "es": "Vive está en presente. Esta tarea pide imperfecto: vivía."
+        },
+        "vivió": {
+          "en": "Vivió is in the preterite (indefinido). This task asks for the imperfect: vivía.",
+          "es": "Vivió está en pretérito indefinido. Esta tarea pide imperfecto: vivía."
+        },
+        "vivaba": {
+          "en": "The imperfect of -er and -ir verbs uses -ía, not -aba (-aba is for -ar verbs): vivía.",
+          "es": "El imperfecto de los verbos en -er e -ir usa -ía, no -aba (-aba es de los verbos en -ar): vivía."
+        }
       }
     },
     {
@@ -1126,6 +1260,20 @@
       "tense": {
         "from": "presente",
         "to": "imperfecto"
+      },
+      "wrong": {
+        "viven": {
+          "en": "Viven is in the present tense. This task asks for the imperfect: vivían.",
+          "es": "Viven está en presente. Esta tarea pide imperfecto: vivían."
+        },
+        "vivieron": {
+          "en": "Vivieron is in the preterite (indefinido). This task asks for the imperfect: vivían.",
+          "es": "Vivieron está en pretérito indefinido. Esta tarea pide imperfecto: vivían."
+        },
+        "vivaban": {
+          "en": "The imperfect of -er and -ir verbs uses -ía, not -aba (-aba is for -ar verbs): vivían.",
+          "es": "El imperfecto de los verbos en -er e -ir usa -ía, no -aba (-aba es de los verbos en -ar): vivían."
+        }
       }
     },
     {
