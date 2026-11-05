@@ -864,7 +864,17 @@
       "verb": "tener + sustantivo",
       "person": "to be thirsty",
       "answer": "tener sed",
-      "table": "tener-expresiones"
+      "table": "tener-expresiones",
+      "wrong": {
+        "estar sed": {
+          "en": "Spanish does not use ser or estar for this. It says tener + noun: tener sed.",
+          "es": "El español no usa ser ni estar para esto. Dice tener + sustantivo: tener sed."
+        },
+        "ser sed": {
+          "en": "Spanish does not use ser or estar for this. It says tener + noun: tener sed.",
+          "es": "El español no usa ser ni estar para esto. Dice tener + sustantivo: tener sed."
+        }
+      }
     },
     {
       "kind": "form",
@@ -872,7 +882,17 @@
       "verb": "tener + sustantivo",
       "person": "to be hungry",
       "answer": "tener hambre",
-      "table": "tener-expresiones"
+      "table": "tener-expresiones",
+      "wrong": {
+        "estar hambre": {
+          "en": "Spanish does not use ser or estar for this. It says tener + noun: tener hambre.",
+          "es": "El español no usa ser ni estar para esto. Dice tener + sustantivo: tener hambre."
+        },
+        "ser hambre": {
+          "en": "Spanish does not use ser or estar for this. It says tener + noun: tener hambre.",
+          "es": "El español no usa ser ni estar para esto. Dice tener + sustantivo: tener hambre."
+        }
+      }
     },
     {
       "kind": "form",
@@ -880,7 +900,17 @@
       "verb": "tener + sustantivo",
       "person": "to be afraid",
       "answer": "tener miedo",
-      "table": "tener-expresiones"
+      "table": "tener-expresiones",
+      "wrong": {
+        "estar miedo": {
+          "en": "Spanish does not use ser or estar for this. It says tener + noun: tener miedo.",
+          "es": "El español no usa ser ni estar para esto. Dice tener + sustantivo: tener miedo."
+        },
+        "ser miedo": {
+          "en": "Spanish does not use ser or estar for this. It says tener + noun: tener miedo.",
+          "es": "El español no usa ser ni estar para esto. Dice tener + sustantivo: tener miedo."
+        }
+      }
     },
     {
       "kind": "form",
@@ -888,7 +918,17 @@
       "verb": "tener + sustantivo",
       "person": "to be sleepy",
       "answer": "tener sueño",
-      "table": "tener-expresiones"
+      "table": "tener-expresiones",
+      "wrong": {
+        "estar sueño": {
+          "en": "Spanish does not use ser or estar for this. It says tener + noun: tener sueño.",
+          "es": "El español no usa ser ni estar para esto. Dice tener + sustantivo: tener sueño."
+        },
+        "ser sueño": {
+          "en": "Spanish does not use ser or estar for this. It says tener + noun: tener sueño.",
+          "es": "El español no usa ser ni estar para esto. Dice tener + sustantivo: tener sueño."
+        }
+      }
     },
     {
       "kind": "form",
@@ -896,7 +936,17 @@
       "verb": "tener + sustantivo",
       "person": "to be right",
       "answer": "tener razón",
-      "table": "tener-expresiones"
+      "table": "tener-expresiones",
+      "wrong": {
+        "ser razón": {
+          "en": "Spanish does not use ser or estar for this. It says tener + noun: tener razón.",
+          "es": "El español no usa ser ni estar para esto. Dice tener + sustantivo: tener razón."
+        },
+        "estar razón": {
+          "en": "Spanish does not use ser or estar for this. It says tener + noun: tener razón.",
+          "es": "El español no usa ser ni estar para esto. Dice tener + sustantivo: tener razón."
+        }
+      }
     },
     {
       "kind": "form",
@@ -904,7 +954,17 @@
       "verb": "tener + sustantivo",
       "person": "to be cold (a person)",
       "answer": "tener frío",
-      "table": "tener-expresiones"
+      "table": "tener-expresiones",
+      "wrong": {
+        "estar frío": {
+          "en": "To say that a person feels cold, Spanish uses tener frío. Ser or estar frío describes a thing or a character trait: tener frío.",
+          "es": "Para decir que una persona siente frío, el español usa tener frío. Ser o estar frío describe una cosa o un rasgo de carácter: tener frío."
+        },
+        "ser frío": {
+          "en": "To say that a person feels cold, Spanish uses tener frío. Ser frío describes a character trait (cold, distant): tener frío.",
+          "es": "Para decir que una persona siente frío, el español usa tener frío. Ser frío describe un rasgo de carácter (distante): tener frío."
+        }
+      }
     },
     {
       "kind": "form",
@@ -912,7 +972,17 @@
       "verb": "tener + sustantivo",
       "person": "to be in a hurry",
       "answer": "tener prisa",
-      "table": "tener-expresiones"
+      "table": "tener-expresiones",
+      "wrong": {
+        "estar prisa": {
+          "en": "Spanish does not use ser or estar for this. It says tener + noun: tener prisa.",
+          "es": "El español no usa ser ni estar para esto. Dice tener + sustantivo: tener prisa."
+        },
+        "ser prisa": {
+          "en": "Spanish does not use ser or estar for this. It says tener + noun: tener prisa.",
+          "es": "El español no usa ser ni estar para esto. Dice tener + sustantivo: tener prisa."
+        }
+      }
     },
     {
       "kind": "form",
@@ -923,7 +993,17 @@
       "accept": [
         "tener 30 años"
       ],
-      "table": "tener-expresiones"
+      "table": "tener-expresiones",
+      "wrong": {
+        "ser treinta años": {
+          "en": "Spanish does not use ser or estar for this. It says tener + noun: tener treinta años.",
+          "es": "El español no usa ser ni estar para esto. Dice tener + sustantivo: tener treinta años."
+        },
+        "estar treinta años": {
+          "en": "Spanish does not use ser or estar for this. It says tener + noun: tener treinta años.",
+          "es": "El español no usa ser ni estar para esto. Dice tener + sustantivo: tener treinta años."
+        }
+      }
     },
     {
       "kind": "form",
@@ -931,7 +1011,17 @@
       "verb": "tener + sustantivo",
       "person": "to be hot (a person)",
       "answer": "tener calor",
-      "table": "tener-expresiones"
+      "table": "tener-expresiones",
+      "wrong": {
+        "estar caliente": {
+          "en": "To say that a person feels hot, Spanish uses tener calor. Estar caliente about a person means something else: tener calor.",
+          "es": "Para decir que una persona siente calor, el español usa tener calor. Estar caliente referido a una persona significa otra cosa: tener calor."
+        },
+        "estar calor": {
+          "en": "Calor is a noun, so it goes with tener, not estar: tener calor.",
+          "es": "Calor es un sustantivo, así que va con tener, no con estar: tener calor."
+        }
+      }
     },
     {
       "kind": "form",
@@ -939,7 +1029,17 @@
       "verb": "tener + sustantivo",
       "person": "to be lucky",
       "answer": "tener suerte",
-      "table": "tener-expresiones"
+      "table": "tener-expresiones",
+      "wrong": {
+        "ser suerte": {
+          "en": "Spanish does not use ser or estar for this. It says tener + noun: tener suerte.",
+          "es": "El español no usa ser ni estar para esto. Dice tener + sustantivo: tener suerte."
+        },
+        "estar suerte": {
+          "en": "Spanish does not use ser or estar for this. It says tener + noun: tener suerte.",
+          "es": "El español no usa ser ni estar para esto. Dice tener + sustantivo: tener suerte."
+        }
+      }
     },
     {
       "kind": "form",
@@ -947,7 +1047,17 @@
       "verb": "tener + sustantivo",
       "person": "to feel like (doing)",
       "answer": "tener ganas de",
-      "table": "tener-expresiones"
+      "table": "tener-expresiones",
+      "wrong": {
+        "tener ganas para": {
+          "en": "This expression takes de before the thing you feel like doing, not para: tener ganas de.",
+          "es": "Esta expresión lleva de antes de lo que se tiene ganas de hacer, no para: tener ganas de."
+        },
+        "tener gana de": {
+          "en": "In this expression ganas is always plural: tener ganas de.",
+          "es": "En esta expresión ganas va siempre en plural: tener ganas de."
+        }
+      }
     },
     {
       "kind": "form",
@@ -955,7 +1065,17 @@
       "verb": "tener + sustantivo",
       "person": "to have to (must)",
       "answer": "tener que",
-      "table": "tener-expresiones"
+      "table": "tener-expresiones",
+      "wrong": {
+        "tener de": {
+          "en": "The obligation is tener que, not tener de. De is used in other expressions (tener ganas de): tener que.",
+          "es": "La obligación es tener que, no tener de. De se usa en otras expresiones (tener ganas de): tener que."
+        },
+        "tener para": {
+          "en": "The obligation is tener que, not tener para. Para is not used in this structure: tener que.",
+          "es": "La obligación es tener que, no tener para. Para no se usa en esta estructura: tener que."
+        }
+      }
     },
     {
       "kind": "why",
