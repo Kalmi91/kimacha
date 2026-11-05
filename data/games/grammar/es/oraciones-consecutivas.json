@@ -739,7 +739,17 @@
       "verb": "forma",
       "person": "Compré ___ cosas que no caben en el carro. (tanto)",
       "answer": "tantas",
-      "table": "oraciones-consecutivas-formas"
+      "table": "oraciones-consecutivas-formas",
+      "wrong": {
+        "tantos": {
+          "en": "Before a noun, tanto agrees with it: las cosas is feminine plural, so the form is tantas.",
+          "es": "Antes de un sustantivo, tanto concuerda con él: las cosas es femenino plural, así que la forma es tantas."
+        },
+        "tan": {
+          "en": "Before a noun the full form tanto is needed (tanto, tanta, tantos, tantas); tan is only for adjectives and adverbs: tantas.",
+          "es": "Antes de un sustantivo hace falta la forma completa tanto (tanto, tanta, tantos, tantas); tan es solo para adjetivos y adverbios: tantas."
+        }
+      }
     },
     {
       "id": "oc-form-02",
@@ -747,7 +757,17 @@
       "verb": "forma",
       "person": "Tengo ___ tarea que no voy a dormir hoy. (tanto)",
       "answer": "tanta",
-      "table": "oraciones-consecutivas-formas"
+      "table": "oraciones-consecutivas-formas",
+      "wrong": {
+        "tanto": {
+          "en": "Before a noun, tanto agrees with it: la tarea is feminine singular, so the form is tanta.",
+          "es": "Antes de un sustantivo, tanto concuerda con él: la tarea es femenino singular, así que la forma es tanta."
+        },
+        "tan": {
+          "en": "Before a noun the full form tanto is needed (tanto, tanta, tantos, tantas); tan is only for adjectives and adverbs: tanta.",
+          "es": "Antes de un sustantivo hace falta la forma completa tanto (tanto, tanta, tantos, tantas); tan es solo para adjetivos y adverbios: tanta."
+        }
+      }
     },
     {
       "id": "oc-form-03",
@@ -755,7 +775,17 @@
       "verb": "forma",
       "person": "Tiene ___ dinero que no necesita trabajar. (tanto)",
       "answer": "tanto",
-      "table": "oraciones-consecutivas-formas"
+      "table": "oraciones-consecutivas-formas",
+      "wrong": {
+        "tan": {
+          "en": "Before a noun the full form tanto is needed (tanto, tanta, tantos, tantas); tan is only for adjectives and adverbs: tanto.",
+          "es": "Antes de un sustantivo hace falta la forma completa tanto (tanto, tanta, tantos, tantas); tan es solo para adjetivos y adverbios: tanto."
+        },
+        "tanta": {
+          "en": "Before a noun, tanto agrees with it: el dinero is masculine singular, so the form is tanto.",
+          "es": "Antes de un sustantivo, tanto concuerda con él: el dinero es masculino singular, así que la forma es tanto."
+        }
+      }
     },
     {
       "id": "oc-form-04",
@@ -763,7 +793,17 @@
       "verb": "forma",
       "person": "Hay ___ niños en el parque que no encuentro a mi hijo. (tanto)",
       "answer": "tantos",
-      "table": "oraciones-consecutivas-formas"
+      "table": "oraciones-consecutivas-formas",
+      "wrong": {
+        "tantas": {
+          "en": "Before a noun, tanto agrees with it: los niños is masculine plural, so the form is tantos.",
+          "es": "Antes de un sustantivo, tanto concuerda con él: los niños es masculino plural, así que la forma es tantos."
+        },
+        "tanto": {
+          "en": "Before a noun, tanto agrees with it: los niños is masculine plural, so the form is tantos.",
+          "es": "Antes de un sustantivo, tanto concuerda con él: los niños es masculino plural, así que la forma es tantos."
+        }
+      }
     },
     {
       "id": "oc-form-05",
@@ -771,7 +811,13 @@
       "verb": "forma",
       "person": "Mi mamá está ___ feliz que llora. (tan / tanto)",
       "answer": "tan",
-      "table": "oraciones-consecutivas-formas"
+      "table": "oraciones-consecutivas-formas",
+      "wrong": {
+        "tanto": {
+          "en": "Before an adjective or an adverb, tanto shortens to tan: tan.",
+          "es": "Antes de un adjetivo o un adverbio, tanto se acorta a tan: tan."
+        }
+      }
     },
     {
       "id": "oc-form-06",
@@ -779,7 +825,13 @@
       "verb": "forma",
       "person": "El café está ___ caliente que no lo puedo tomar. (tan / tanto)",
       "answer": "tan",
-      "table": "oraciones-consecutivas-formas"
+      "table": "oraciones-consecutivas-formas",
+      "wrong": {
+        "tanto": {
+          "en": "Before an adjective or an adverb, tanto shortens to tan: tan.",
+          "es": "Antes de un adjetivo o un adverbio, tanto se acorta a tan: tan."
+        }
+      }
     },
     {
       "id": "oc-form-07",
@@ -787,7 +839,13 @@
       "verb": "forma",
       "person": "Mi hermana cocina ___ bien que todos piden más. (tan / tanto)",
       "answer": "tan",
-      "table": "oraciones-consecutivas-formas"
+      "table": "oraciones-consecutivas-formas",
+      "wrong": {
+        "tanto": {
+          "en": "Before an adjective or an adverb, tanto shortens to tan: tan.",
+          "es": "Antes de un adjetivo o un adverbio, tanto se acorta a tan: tan."
+        }
+      }
     },
     {
       "id": "oc-form-08",
@@ -795,7 +853,13 @@
       "verb": "forma",
       "person": "Estudió ___ que sacó diez en el examen. (tan / tanto)",
       "answer": "tanto",
-      "table": "oraciones-consecutivas-formas"
+      "table": "oraciones-consecutivas-formas",
+      "wrong": {
+        "tan": {
+          "en": "After a verb, with no adjective or adverb following, the full form tanto is used: tanto.",
+          "es": "Después de un verbo, sin adjetivo ni adverbio detrás, se usa la forma completa tanto: tanto."
+        }
+      }
     },
     {
       "id": "oc-form-09",
@@ -803,7 +867,13 @@
       "verb": "forma",
       "person": "Corrimos ___ que llegamos temprano. (tan / tanto)",
       "answer": "tanto",
-      "table": "oraciones-consecutivas-formas"
+      "table": "oraciones-consecutivas-formas",
+      "wrong": {
+        "tan": {
+          "en": "After a verb, with no adjective or adverb following, the full form tanto is used: tanto.",
+          "es": "Después de un verbo, sin adjetivo ni adverbio detrás, se usa la forma completa tanto: tanto."
+        }
+      }
     },
     {
       "id": "oc-form-10",
@@ -811,7 +881,17 @@
       "verb": "forma",
       "person": "Perdimos el camión, así que ___ a pie. (ir, nosotros, indefinido)",
       "answer": "fuimos",
-      "table": "oraciones-consecutivas-formas"
+      "table": "oraciones-consecutivas-formas",
+      "wrong": {
+        "íbamos": {
+          "en": "Íbamos is the imperfect form. This task asks for the preterite form: fuimos.",
+          "es": "Íbamos es la forma del pretérito imperfecto. Esta tarea pide la forma del pretérito indefinido: fuimos."
+        },
+        "fuemos": {
+          "en": "The preterite of ir is fuimos (the same form as ser), not fuemos.",
+          "es": "El pretérito indefinido de ir es fuimos (la misma forma que ser), no fuemos."
+        }
+      }
     },
     {
       "id": "oc-form-11",
@@ -819,7 +899,17 @@
       "verb": "forma",
       "person": "Hizo mucho calor, de modo que ___ las ventanas. (abrir, nosotros, indefinido)",
       "answer": "abrimos",
-      "table": "oraciones-consecutivas-formas"
+      "table": "oraciones-consecutivas-formas",
+      "wrong": {
+        "abríamos": {
+          "en": "Abríamos is the imperfect form. This task asks for the preterite form: abrimos.",
+          "es": "Abríamos es la forma del pretérito imperfecto. Esta tarea pide la forma del pretérito indefinido: abrimos."
+        },
+        "abremos": {
+          "en": "Abrir is an -ir verb, so the nosotros form ends in -imos: abrimos, not abremos.",
+          "es": "Abrir es un verbo en -ir, así que la forma nosotros termina en -imos: abrimos, no abremos."
+        }
+      }
     },
     {
       "id": "oc-form-12",
@@ -827,7 +917,17 @@
       "verb": "forma",
       "person": "Estaba tan cansada que se ___ en el camión. (dormir, ella, indefinido)",
       "answer": "durmió",
-      "table": "oraciones-consecutivas-formas"
+      "table": "oraciones-consecutivas-formas",
+      "wrong": {
+        "dormía": {
+          "en": "Dormía is the imperfect form. This task asks for the preterite form: durmió.",
+          "es": "Dormía es la forma del pretérito imperfecto. Esta tarea pide la forma del pretérito indefinido: durmió."
+        },
+        "dormió": {
+          "en": "In the preterite, -ir verbs like dormir change o to u in the third person: durmió, not dormió.",
+          "es": "En el pretérito indefinido, los verbos en -ir como dormir cambian la o a u en la tercera persona: durmió, no dormió."
+        }
+      }
     },
     {
       "kind": "why",
