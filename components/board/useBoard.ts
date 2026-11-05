@@ -2,14 +2,15 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { Alert, AppState, Platform } from 'react-native';
 import { useFocusEffect } from 'expo-router';
 
-import { boardToken, getBoard, joinBoard, leaveBoard, rejoinBoard, type BoardData, type BoardFailure } from '@/lib/cloud/board';
+import { boardToken, getBoard, joinBoard, leaveBoard, rejoinBoard, type BoardData, type BoardFailure, type BoardMetric } from '@/lib/cloud/board';
 import { withBots } from '@/lib/cloud/boardBots';
 import { pushBoardNow } from '@/lib/cloud/boardSync';
-import { shiftDate, weekDayIndex } from '@/lib/cloud/boardStats';
+import { shiftDate, timeView, weekDayIndex } from '@/lib/cloud/boardStats';
 import { loadSession } from '@/lib/cloud/session';
 import { isValidName } from '@/lib/cloud/validate';
 import { getDb } from '@/lib/database';
 import { t } from '@/lib/i18n';
+import { loadResumeValue, saveResumeValue } from '@/lib/resumeStore';
 import { localDateString } from '@/lib/usageStats';
 import { useScreenLoad } from '@/lib/useScreenLoad';
 import { useReduceMotion } from './boardUi';
@@ -20,6 +21,9 @@ export const BOARD_REFRESH_MS = 30000;
 // ...and the made-up players, who move with the clock and need no network, are moved on this often.
 export const BOARD_TICK_MS = 10000;
 
+// Where the switch's choice is kept (lib/resumeStore.ts: the DB on native, localStorage on web), so it survives leaving the tab and an app kill.
+const METRIC_KEY = 'board-metric';
+
 export type Phase = 'loading' | 'join' | 'ready' | 'left' | 'offline' | 'hidden';
 
 // What the own-week panel needs from the local database: XP per day of the week (null = still to come), last week's sum, the streak.
@@ -28,6 +32,9 @@ export interface WeekData {
   weekStart: string;
   days: (number | null)[];
   lastWeek: number;
+  // the same for the learning minutes (the time ranking)
+  minutes: (number | null)[];
+  lastWeekMinutes: number;
   streak: number;
 }
 
@@ -52,7 +59,10 @@ async function loadWeek(weekStart: string): Promise<WeekData> {
     Array.from({ length: 7 }, async (_, i) => (i <= todayIndex ? (await db.getDailyXpTenths(shiftDate(weekStart, i))) / 10 : null)),
   );
   const before = await Promise.all(Array.from({ length: 7 }, (_, i) => db.getDailyXpTenths(shiftDate(weekStart, i - 7))));
-  return { weekStart, days, lastWeek: Math.round(before.reduce((a, b) => a + b, 0) / 10), streak: (await db.getStreak())?.current_count ?? 0 };
+  const usage = new Map((await db.getUsageStats()).last30Days.map((d): [string, number] => [d.date, d.minutes]));
+  const minutes = Array.from({ length: 7 }, (_, i) => (i <= todayIndex ? usage.get(shiftDate(weekStart, i)) ?? 0 : null));
+  const lastWeekMinutes = Array.from({ length: 7 }, (_, i) => usage.get(shiftDate(weekStart, i - 7)) ?? 0).reduce((a, b) => a + b, 0);
+  return { weekStart, days, lastWeek: Math.round(before.reduce((a, b) => a + b, 0) / 10), minutes, lastWeekMinutes, streak: (await db.getStreak())?.current_count ?? 0 };
 }
 
 // The state and the actions of the weekly leaderboard screen: the phases (loading / join / ready / left / offline / hidden), joining,
@@ -67,6 +77,13 @@ export function useBoard() {
   const [name, setName] = useState('');
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  // The switch: what the learner chose (kept), and whether the worker can rank by time at all (an old worker answers by XP: the switch hides).
+  const [choice, setChoice] = useState<BoardMetric>('xp');
+  const [timeSupported, setTimeSupported] = useState(true);
+  // The ranking the data on screen was asked for: until it equals the choice, the list is still the other ranking and the screen loads.
+  const [answeredFor, setAnsweredFor] = useState<BoardMetric | null>(null);
+  const chosen = useRef<BoardMetric | null>(null);
+  const prevMetric = useRef<BoardMetric>('xp');
   const reduceMotion = useReduceMotion();
   const reduceRef = useRef(reduceMotion);
   const raw = useRef<BoardData | null>(null);
@@ -81,8 +98,11 @@ export function useBoard() {
   // row has left the list is dropped.
   const show = useCallback(() => {
     if (!raw.current) return;
-    const next = withBots(raw.current, new Date());
-    const prev = prevXp.current;
+    const ranked = withBots(raw.current, new Date());
+    // in the time ranking every row's `xp` is its minutes (timeView), so the pieces below read one number for both rankings
+    const next = ranked.metric === 'time' ? timeView(ranked) : ranked;
+    const prev = prevMetric.current === (next.metric ?? 'xp') ? prevXp.current : null;
+    prevMetric.current = next.metric ?? 'xp';
     const grown: Gains = {};
     if (prev && !reduceRef.current) {
       for (const r of next.rows) {
@@ -128,6 +148,26 @@ export function useBoard() {
     setPhase('join');
   }, [forget]);
 
+  // What an answer says about the worker: any `metric` in it means it can rank by time (the switch comes back when a worker is deployed
+  // during a session), none while time was asked means it cannot.
+  const noteWorker = useCallback((asked: BoardMetric, data: BoardData) => {
+    if (data.metric !== undefined) setTimeSupported(true);
+    else if (asked === 'time') setTimeSupported(false);
+    setAnsweredFor(asked);
+  }, []);
+
+  // The ranking the learner chose, read from the store once (a failed read is XP, the default).
+  const askedMetric = useCallback(async (): Promise<BoardMetric> => {
+    if (chosen.current === null) {
+      const saved = await loadResumeValue(getDb(), METRIC_KEY);
+      if (chosen.current === null) {
+        chosen.current = saved === 'time' ? 'time' : 'xp';
+        setChoice(chosen.current);
+      }
+    }
+    return chosen.current;
+  }, []);
+
   const load = useCallback(async () => {
     const mine = ++generation.current;
     const stale = () => mine !== generation.current;
@@ -138,9 +178,12 @@ export function useBoard() {
       return;
     }
     await pushBoardNow();
-    const res = await getBoard(token, localDateString());
-    if (stale()) return;
+    const asked = await askedMetric();
+    const res = await getBoard(token, localDateString(), asked);
+    // an answer for the other ranking (the learner switched meanwhile) is dropped: the switch fetches its own
+    if (stale() || asked !== chosen.current) return;
     if (res.ok) {
+      noteWorker(asked, res.data);
       raw.current = res.data;
       prevXp.current = null;
       setGains({});
@@ -154,16 +197,18 @@ export function useBoard() {
     } else {
       setPhase('offline');
     }
-  }, [show, refreshWeek, dropIdentity]);
+  }, [show, refreshWeek, dropIdentity, askedMetric, noteWorker]);
 
   // A failed refresh keeps the last server answer and only moves the bots on; it never turns the screen "offline".
   const refresh = useCallback(async () => {
     const mine = generation.current;
     const token = await boardToken();
     if (!token || mine !== generation.current) return;
-    const res = await getBoard(token, localDateString());
-    if (mine !== generation.current) return;
+    const asked = await askedMetric();
+    const res = await getBoard(token, localDateString(), asked);
+    if (mine !== generation.current || asked !== chosen.current) return;
     if (res.ok) {
+      noteWorker(asked, res.data);
       raw.current = res.data;
       setPhase(res.data.me && !res.data.left ? 'ready' : 'left');
       // the figures are missing (the first load had no database) or belong to another week (Sunday to Monday)
@@ -177,9 +222,11 @@ export function useBoard() {
       return;
     }
     show();
-  }, [show, refreshWeek, dropIdentity]);
+  }, [show, refreshWeek, dropIdentity, askedMetric, noteWorker]);
   const refreshRef = useRef(refresh);
+  const timeSupportedRef = useRef(timeSupported);
   useEffect(() => {
+    timeSupportedRef.current = timeSupported;
     reduceRef.current = reduceMotion;
     refreshRef.current = refresh;
   });
@@ -205,6 +252,8 @@ export function useBoard() {
       };
       // the state can still be unknown (null) right after launch: that counts as active
       if (AppState.currentState !== 'background' && AppState.currentState !== 'inactive') start();
+      // a worker that could not rank by time may have been deployed since: ask again whenever the tab comes into focus
+      if (!timeSupportedRef.current) void refreshRef.current();
       const sub = AppState.addEventListener('change', (state) => (state === 'active' ? start() : stop()));
       return () => {
         stop();
@@ -212,6 +261,15 @@ export function useBoard() {
       };
     }, [show]),
   );
+
+  // The switch: the choice is remembered at once, and the board of that ranking is asked for (the list keeps showing the other one until it arrives).
+  const switchMetric = useCallback((metric: BoardMetric) => {
+    if (metric === chosen.current) return;
+    chosen.current = metric;
+    setChoice(metric);
+    void saveResumeValue(getDb(), METRIC_KEY, metric);
+    void refreshRef.current();
+  }, []);
 
   const gainDone = useCallback((who: string, id: number) => {
     setGains((g) => {
@@ -303,5 +361,9 @@ export function useBoard() {
     setError(null);
   };
 
-  return { phase, data, week, gains, gainDone, name, changeName, busy, error, join, rejoin, confirmLeave, reduceMotion };
+  // `shown`: the ranking `data` is in (the worker's answer decides, so an old worker always shows XP)
+  const shown: BoardMetric = data?.metric === 'time' ? 'time' : 'xp';
+  // the learner's choice has no answer yet (just switched): the list on screen is still the other ranking
+  const pending = timeSupported && answeredFor !== null && answeredFor !== choice;
+  return { phase, data, week, gains, gainDone, choice, shown, pending, timeSupported, switchMetric, name, changeName, busy, error, join, rejoin, confirmLeave, reduceMotion };
 }

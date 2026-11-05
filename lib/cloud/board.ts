@@ -19,23 +19,33 @@ export interface JoinData {
   displayName: string;
 }
 
+// What a board is ranked by: the week's XP or the minutes spent learning this week.
+export type BoardMetric = 'xp' | 'time';
+
+// `minutes`: learning minutes this week; a worker from before the time ranking sends none (read as 0).
 export interface BoardRow {
   rank: number;
   name: string;
   xp: number;
+  minutes?: number;
   me: boolean;
 }
 
 // `me: null` + `left: true`: a web account that left the board (the list is still there, the account can join again).
+// `metric`: what the rows are ranked by, as the worker answers it; an old worker has no such field and always ranks by XP.
 export interface BoardData {
   weekStart: string;
+  metric?: BoardMetric;
   rows: BoardRow[];
-  me: { rank: number; xp: number; name: string } | null;
+  me: { rank: number; xp: number; minutes?: number; name: string } | null;
   left?: boolean;
 }
 
 // [local date YYYY-MM-DD, XP in tenths]
 export type BoardDay = [string, number];
+
+// [local date YYYY-MM-DD, whole learning minutes]
+export type BoardMinuteDay = [string, number];
 
 const NATIVE_BASE_URL = 'https://kimacha.kichata.workers.dev';
 
@@ -90,18 +100,20 @@ export function rejoinBoard(token: string): Promise<BoardResult<{ displayName: s
   });
 }
 
-// Replaces the server's copy of the caller's daily XP (the last days, tenths of an XP).
-export function putBoardXp(token: string, days: BoardDay[]): Promise<BoardResult<Record<string, never>>> {
+// Replaces the server's copy of the caller's daily XP (the last days, tenths of an XP) and, with `minutes`, of the daily learning
+// minutes. A worker from before the time ranking ignores the minutes; a client from before it sent none (the worker keeps the old ones).
+export function putBoardXp(token: string, days: BoardDay[], minutes?: BoardMinuteDay[]): Promise<BoardResult<Record<string, never>>> {
   return call<Record<string, never>>('/api/board/xp', {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json', ...bearer(token) },
-    body: JSON.stringify({ days }),
+    body: JSON.stringify(minutes ? { days, minutes } : { days }),
   });
 }
 
 // `today`: the caller's local date, so the week turns over at the learner's midnight (the server allows a day of drift).
-export function getBoard(token: string, today: string): Promise<BoardResult<BoardData>> {
-  return call<BoardData>(`/api/board?today=${encodeURIComponent(today)}`, { headers: bearer(token) });
+// `metric` 'time' asks for the ranking by learning minutes; the default XP ranking sends no parameter, exactly as before.
+export function getBoard(token: string, today: string, metric: BoardMetric = 'xp'): Promise<BoardResult<BoardData>> {
+  return call<BoardData>(`/api/board?today=${encodeURIComponent(today)}${metric === 'time' ? '&metric=time' : ''}`, { headers: bearer(token) });
 }
 
 // Deletes the caller's row; on native the device token dies with it.

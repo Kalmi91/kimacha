@@ -3,12 +3,16 @@
 import {
   BOARD_JOINS_PER_DAY,
   BOARD_MAX_DAYS,
+  BOARD_MAX_MINUTES,
   BOARD_MAX_ROWS,
   BOARD_MAX_TENTHS,
   BOARD_RETENTION_DAYS,
   BOARD_WINDOW_DAYS,
   boardToday,
+  mergeBoardMinutes,
   parseBoardDays,
+  parseBoardMetric,
+  parseBoardMinutes,
   parseBoardName,
   rankBoard,
   secondsToNextUtcDay,
@@ -166,6 +170,40 @@ describe('secondsToNextUtcDay', () => {
   });
 });
 
+describe('parseBoardMinutes', () => {
+  it('filters like the XP days: real dates inside the window, whole minutes, clamped to one day, sorted', () => {
+    const body = { minutes: [['2026-11-03', 25], ['2026-11-02', 99_999], ['2026-11-01', -5], ['2026-10-01', 40], ['2026-11-03', 30], ['x', 1], ['2026-11-02', 1.5], 'junk'] };
+    expect(parseBoardMinutes(body, TODAY)).toEqual([['2026-11-01', 0], ['2026-11-02', BOARD_MAX_MINUTES], ['2026-11-03', 30]]);
+  });
+
+  it('is null (stored minutes stay) when the body has none or junk, never throwing: an old client', () => {
+    for (const body of [null, undefined, 'x', {}, { days: [] }, { minutes: 'x' }, { minutes: {} }, { minutes: null }]) expect(parseBoardMinutes(body, TODAY)).toBeNull();
+  });
+
+  it('reads only the first BOARD_MAX_DAYS entries', () => {
+    const minutes = Array.from({ length: 40 }, (_, i) => [`2026-11-${String((i % 3) + 1).padStart(2, '0')}`, i]);
+    expect(parseBoardMinutes({ minutes }, TODAY)?.length).toBeLessThanOrEqual(3);
+  });
+});
+
+describe('mergeBoardMinutes', () => {
+  it('takes the larger figure per day, keeps days only one side has, and sorts', () => {
+    expect(mergeBoardMinutes('[["2026-11-02",40],["2026-11-03",5]]', [['2026-11-03', 25], ['2026-11-01', 7], ['2026-11-02', 3]], TODAY)).toEqual([['2026-11-01', 7], ['2026-11-02', 40], ['2026-11-03', 25]]);
+  });
+
+  it('drops days older than the window, and reads a damaged stored text as nothing', () => {
+    expect(mergeBoardMinutes('[["2026-10-01",99],["2026-11-03",5]]', [], TODAY)).toEqual([['2026-11-03', 5]]);
+    for (const bad of ['', 'nope', '{}', 'null', '[1,["x",2],["2026-11-03","5"],["2026-11-03",1.5]]']) expect(mergeBoardMinutes(bad, [['2026-11-03', 9]], TODAY)).toEqual([['2026-11-03', 9]]);
+  });
+});
+
+describe('parseBoardMetric', () => {
+  it('is time only for "time": anything else, or nothing (an old client), is XP', () => {
+    expect(parseBoardMetric('time')).toBe('time');
+    for (const p of [null, '', 'xp', 'TIME', 'minutes']) expect(parseBoardMetric(p)).toBe('xp');
+  });
+});
+
 describe('rankBoard', () => {
   const WEEK = '2026-11-02';
   const entry = (owner: string, name: string, days: [string, number][] | string): BoardEntry => ({ owner, name, dailyXp: typeof days === 'string' ? days : JSON.stringify(days) });
@@ -173,16 +211,16 @@ describe('rankBoard', () => {
   it('orders by XP descending and numbers the positions from 1', () => {
     const r = rankBoard([entry('d:a', 'Ana', [['2026-11-02', 100]]), entry('d:b', 'Bela', [['2026-11-03', 300]]), entry('d:c', 'Cili', [['2026-11-04', 200]])], WEEK, 'd:a');
     expect(r.rows).toEqual([
-      { rank: 1, name: 'Bela', xp: 30, me: false },
-      { rank: 2, name: 'Cili', xp: 20, me: false },
-      { rank: 3, name: 'Ana', xp: 10, me: true },
+      { rank: 1, name: 'Bela', xp: 30, minutes: 0, me: false },
+      { rank: 2, name: 'Cili', xp: 20, minutes: 0, me: false },
+      { rank: 3, name: 'Ana', xp: 10, minutes: 0, me: true },
     ]);
-    expect(r.me).toEqual({ rank: 3, xp: 10, name: 'Ana' });
+    expect(r.me).toEqual({ rank: 3, xp: 10, minutes: 0, name: 'Ana' });
   });
 
   it('sums only the 7 days of the week (Monday to Sunday), not the neighbours', () => {
     const days: [string, number][] = [['2026-11-01', 9_000], ['2026-11-02', 10], ['2026-11-08', 20], ['2026-11-09', 9_000]];
-    expect(rankBoard([entry('d:a', 'Ana', days)], WEEK, 'd:a').me).toEqual({ rank: 1, xp: 3, name: 'Ana' });
+    expect(rankBoard([entry('d:a', 'Ana', days)], WEEK, 'd:a').me).toEqual({ rank: 1, xp: 3, minutes: 0, name: 'Ana' });
   });
 
   it('adds the tenths first and rounds the XP once (0.5 rounds up)', () => {
@@ -212,15 +250,15 @@ describe('rankBoard', () => {
   it('keeps the caller with 0 XP, last, with the rank of that position', () => {
     const r = rankBoard([entry('d:z', 'Zita', []), entry('d:a', 'Ana', [['2026-11-02', 10]]), entry('d:b', 'Bela', [['2026-11-03', 20]])], WEEK, 'd:z');
     expect(r.rows).toEqual([
-      { rank: 1, name: 'Bela', xp: 2, me: false },
-      { rank: 2, name: 'Ana', xp: 1, me: false },
-      { rank: 3, name: 'Zita', xp: 0, me: true },
+      { rank: 1, name: 'Bela', xp: 2, minutes: 0, me: false },
+      { rank: 2, name: 'Ana', xp: 1, minutes: 0, me: false },
+      { rank: 3, name: 'Zita', xp: 0, minutes: 0, me: true },
     ]);
-    expect(r.me).toEqual({ rank: 3, xp: 0, name: 'Zita' });
+    expect(r.me).toEqual({ rank: 3, xp: 0, minutes: 0, name: 'Zita' });
   });
 
   it('is only the caller on an empty week, and nobody for an empty board', () => {
-    expect(rankBoard([entry('d:z', 'Zita', [])], WEEK, 'd:z')).toEqual({ rows: [{ rank: 1, name: 'Zita', xp: 0, me: true }], me: { rank: 1, xp: 0, name: 'Zita' } });
+    expect(rankBoard([entry('d:z', 'Zita', [])], WEEK, 'd:z')).toEqual({ rows: [{ rank: 1, name: 'Zita', xp: 0, minutes: 0, me: true }], me: { rank: 1, xp: 0, minutes: 0, name: 'Zita' } });
     expect(rankBoard([], WEEK, 'd:z')).toEqual({ rows: [], me: null });
   });
 
@@ -234,25 +272,80 @@ describe('rankBoard', () => {
     const many = Array.from({ length: 60 }, (_, i) => entry('d:' + i, 'P' + String(i).padStart(2, '0'), [['2026-11-02', 1000 - i * 10]]));
     const r = rankBoard([...many, entry('d:me', 'Zed', [])], WEEK, 'd:me');
     expect(r.rows).toHaveLength(BOARD_MAX_ROWS);
-    expect(r.rows[0]).toEqual({ rank: 1, name: 'P00', xp: 100, me: false });
+    expect(r.rows[0]).toEqual({ rank: 1, name: 'P00', xp: 100, minutes: 0, me: false });
     expect(r.rows[BOARD_MAX_ROWS - 1].rank).toBe(BOARD_MAX_ROWS);
     expect(r.rows.some((x) => x.me)).toBe(false);
-    expect(r.me).toEqual({ rank: 61, xp: 0, name: 'Zed' });
+    expect(r.me).toEqual({ rank: 61, xp: 0, minutes: 0, name: 'Zed' });
   });
 
   it('reads damaged stored days as nothing, without throwing', () => {
     const bad = ['', 'not json', '{}', 'null', '5', '"x"', '[1,"a",["2026-11-02","5"],["2026-11-02",null],["2026-11-02",{}],[5,5],[]]'];
     const r = rankBoard(bad.map((s, i) => entry('d:' + i, 'P' + i, s)).concat(entry('d:ok', 'Ok', [['2026-11-02', 70]])), WEEK, 'd:ok');
-    expect(r.rows).toEqual([{ rank: 1, name: 'Ok', xp: 7, me: true }]);
+    expect(r.rows).toEqual([{ rank: 1, name: 'Ok', xp: 7, minutes: 0, me: true }]);
   });
 
   it('counts the good entries around damaged ones', () => {
     const r = rankBoard([entry('d:a', 'Ana', '[1,["2026-11-02","5"],["2026-11-02",40],null,["2026-11-03",20]]')], WEEK, 'd:a');
-    expect(r.me).toEqual({ rank: 1, xp: 6, name: 'Ana' });
+    expect(r.me).toEqual({ rank: 1, xp: 6, minutes: 0, name: 'Ana' });
   });
 
   it('gives nobody XP, without throwing, when the week start is not a date', () => {
     const r = rankBoard([entry('d:a', 'Ana', [['2026-11-02', 100]]), entry('d:b', 'Bela', [])], '', 'd:b');
-    expect(r.rows).toEqual([{ rank: 1, name: 'Bela', xp: 0, me: true }]);
+    expect(r.rows).toEqual([{ rank: 1, name: 'Bela', xp: 0, minutes: 0, me: true }]);
+  });
+
+  describe('by learning minutes', () => {
+    const withMinutes = (owner: string, name: string, xp: [string, number][], minutes: [string, number][] | string | undefined): BoardEntry => ({
+      owner,
+      name,
+      dailyXp: JSON.stringify(xp),
+      ...(minutes === undefined ? {} : { dailyMinutes: typeof minutes === 'string' ? minutes : JSON.stringify(minutes) }),
+    });
+
+    it('ranks by the week minutes, not XP, and gives both figures on every row and on me', () => {
+      const r = rankBoard(
+        [
+          withMinutes('d:a', 'Ana', [['2026-11-02', 900]], [['2026-11-02', 20]]),
+          withMinutes('d:b', 'Bela', [['2026-11-02', 100]], [['2026-11-02', 50], ['2026-11-03', 25]]),
+          withMinutes('d:c', 'Cili', [['2026-11-02', 500]], [['2026-11-04', 40]]),
+        ],
+        WEEK,
+        'd:a',
+        'time',
+      );
+      expect(r.rows).toEqual([
+        { rank: 1, name: 'Bela', xp: 10, minutes: 75, me: false },
+        { rank: 2, name: 'Cili', xp: 50, minutes: 40, me: false },
+        { rank: 3, name: 'Ana', xp: 90, minutes: 20, me: true },
+      ]);
+      expect(r.me).toEqual({ rank: 3, xp: 90, minutes: 20, name: 'Ana' });
+    });
+
+    it('leaves out players with 0 minutes (an old client pushed none) except the caller, who stands last', () => {
+      const r = rankBoard([withMinutes('d:a', 'Ana', [['2026-11-02', 900]], undefined), withMinutes('d:b', 'Bela', [['2026-11-02', 10]], [['2026-11-02', 5]])], WEEK, 'd:a', 'time');
+      expect(r.rows.map((x) => [x.rank, x.name, x.minutes])).toEqual([[1, 'Bela', 5], [2, 'Ana', 0]]);
+      expect(rankBoard([withMinutes('d:a', 'Ana', [['2026-11-02', 900]], undefined)], WEEK, 'd:b', 'time').rows).toEqual([]);
+    });
+
+    it('sums only the week, breaks ties by name, and reads damaged minutes as 0', () => {
+      const r = rankBoard(
+        [
+          withMinutes('d:1', 'Zoé', [], [['2026-11-01', 500], ['2026-11-02', 10], ['2026-11-09', 500]]),
+          withMinutes('d:2', 'Ádám', [], [['2026-11-08', 10]]),
+          withMinutes('d:3', 'Bad', [], 'not json'),
+          withMinutes('d:4', 'Bad2', [], '[1,["2026-11-02","5"],null]'),
+        ],
+        WEEK,
+        'none',
+        'time',
+      );
+      expect(r.rows.map((x) => [x.name, x.minutes])).toEqual([['Ádám', 10], ['Zoé', 10]]);
+    });
+
+    it('keeps the XP ranking the default', () => {
+      const e = [withMinutes('d:a', 'Ana', [['2026-11-02', 900]], [['2026-11-02', 1]]), withMinutes('d:b', 'Bela', [['2026-11-02', 10]], [['2026-11-02', 99]])];
+      expect(rankBoard(e, WEEK, 'd:a').rows.map((x) => x.name)).toEqual(['Ana', 'Bela']);
+      expect(rankBoard(e, WEEK, 'd:a', 'time').rows.map((x) => x.name)).toEqual(['Bela', 'Ana']);
+    });
   });
 });

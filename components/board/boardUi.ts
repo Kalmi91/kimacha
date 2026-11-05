@@ -3,6 +3,9 @@ import { useEffect, useState } from 'react';
 import { AccessibilityInfo, Platform } from 'react-native';
 
 import type { ThemeColors } from '@/constants/Theme';
+import type { BoardMetric } from '@/lib/cloud/board';
+import { formatMinutes } from '@/lib/cloud/boardStats';
+import { t } from '@/lib/i18n';
 import { mixColor } from '@/lib/mixColor';
 
 export const MONO = Platform.select({
@@ -33,3 +36,10 @@ export function useReduceMotion(): boolean {
   }, []);
   return reduce;
 }
+
+// The figure of a ranking as text: `412 XP`, or `3 h 25 min` for the time ranking (`value` is then the week's minutes).
+export const valueText = (metric: BoardMetric, value: number): string => (metric === 'time' ? formatMinutes(value) : t().board.xp(value));
+
+// `Rank 3 · 412 XP` / `Rank 3 · 3 h 25 min`, for the screen reader labels.
+export const rankText = (metric: BoardMetric, rank: number, value: number): string =>
+  metric === 'time' ? t().board.rankLineTime(rank, formatMinutes(value)) : t().board.rankLine(rank, value);
