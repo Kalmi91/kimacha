@@ -717,7 +717,17 @@
       "verb": "forma",
       "person": "La puerta del departamento está ___. (abrir)",
       "answer": "abierta",
-      "table": "estar-participio-formas"
+      "table": "estar-participio-formas",
+      "wrong": {
+        "abierto": {
+          "en": "The participle after estar works like an adjective and agrees with la puerta (feminine singular): abierta.",
+          "es": "El participio con estar funciona como un adjetivo y concuerda con la puerta (femenino singular): abierta."
+        },
+        "abrida": {
+          "en": "Abrir has an irregular participle, abierto, not the regular form: abierta.",
+          "es": "Abrir tiene participio irregular, abierto, no la forma regular: abierta."
+        }
+      }
     },
     {
       "id": "ep-form-02",
@@ -725,7 +735,13 @@
       "verb": "forma",
       "person": "Hoy la escuela está ___. (cerrar)",
       "answer": "cerrada",
-      "table": "estar-participio-formas"
+      "table": "estar-participio-formas",
+      "wrong": {
+        "cerrado": {
+          "en": "The participle after estar works like an adjective and agrees with la escuela (feminine singular): cerrada.",
+          "es": "El participio con estar funciona como un adjetivo y concuerda con la escuela (femenino singular): cerrada."
+        }
+      }
     },
     {
       "id": "ep-form-03",
@@ -733,7 +749,17 @@
       "verb": "forma",
       "person": "Las ventanas del cuarto están ___. (romper)",
       "answer": "rotas",
-      "table": "estar-participio-formas"
+      "table": "estar-participio-formas",
+      "wrong": {
+        "roto": {
+          "en": "The participle after estar works like an adjective and agrees with las ventanas (feminine plural): rotas.",
+          "es": "El participio con estar funciona como un adjetivo y concuerda con las ventanas (femenino plural): rotas."
+        },
+        "rompidas": {
+          "en": "Romper has an irregular participle, roto, not the regular form: rotas.",
+          "es": "Romper tiene participio irregular, roto, no la forma regular: rotas."
+        }
+      }
     },
     {
       "id": "ep-form-04",
@@ -741,7 +767,17 @@
       "verb": "forma",
       "person": "Mis papás ya están ___ para salir. (preparar)",
       "answer": "preparados",
-      "table": "estar-participio-formas"
+      "table": "estar-participio-formas",
+      "wrong": {
+        "preparadas": {
+          "en": "The participle after estar works like an adjective and agrees with mis papás (masculine plural): preparados.",
+          "es": "El participio con estar funciona como un adjetivo y concuerda con mis papás (masculino plural): preparados."
+        },
+        "preparado": {
+          "en": "The participle after estar works like an adjective and agrees with mis papás (masculine plural): preparados.",
+          "es": "El participio con estar funciona como un adjetivo y concuerda con mis papás (masculino plural): preparados."
+        }
+      }
     },
     {
       "id": "ep-form-05",
@@ -749,7 +785,17 @@
       "verb": "forma",
       "person": "Mis hermanas están muy ___ por el examen. (preocupar)",
       "answer": "preocupadas",
-      "table": "estar-participio-formas"
+      "table": "estar-participio-formas",
+      "wrong": {
+        "preocupados": {
+          "en": "The participle after estar works like an adjective and agrees with mis hermanas (feminine plural): preocupadas.",
+          "es": "El participio con estar funciona como un adjetivo y concuerda con mis hermanas (femenino plural): preocupadas."
+        },
+        "preocupado": {
+          "en": "The participle after estar works like an adjective and agrees with mis hermanas (feminine plural): preocupadas.",
+          "es": "El participio con estar funciona como un adjetivo y concuerda con mis hermanas (femenino plural): preocupadas."
+        }
+      }
     },
     {
       "id": "ep-form-06",
@@ -757,7 +803,17 @@
       "verb": "forma",
       "person": "Mi papá está ___ en la cocina. (sentar)",
       "answer": "sentado",
-      "table": "estar-participio-formas"
+      "table": "estar-participio-formas",
+      "wrong": {
+        "sentada": {
+          "en": "The participle after estar works like an adjective and agrees with mi papá (masculine singular): sentado.",
+          "es": "El participio con estar funciona como un adjetivo y concuerda con mi papá (masculino singular): sentado."
+        },
+        "sentando": {
+          "en": "Sentando is a gerund: it describes an action in progress. A state needs the participle: sentado.",
+          "es": "Sentando es un gerundio: describe una acción en curso. Un estado lleva el participio: sentado."
+        }
+      }
     },
     {
       "id": "ep-form-07",
@@ -765,7 +821,17 @@
       "verb": "forma",
       "person": "El pastel ya está ___. (hacer)",
       "answer": "hecho",
-      "table": "estar-participio-formas"
+      "table": "estar-participio-formas",
+      "wrong": {
+        "hecha": {
+          "en": "The participle after estar works like an adjective and agrees with el pastel (masculine singular): hecho.",
+          "es": "El participio con estar funciona como un adjetivo y concuerda con el pastel (masculino singular): hecho."
+        },
+        "hacido": {
+          "en": "Hacer has an irregular participle, hecho, not the regular form: hecho.",
+          "es": "Hacer tiene participio irregular, hecho, no la forma regular: hecho."
+        }
+      }
     },
     {
       "id": "ep-form-08",
@@ -773,7 +839,17 @@
       "verb": "forma",
       "person": "Mis zapatos están ___ por la lluvia. (mojar)",
       "answer": "mojados",
-      "table": "estar-participio-formas"
+      "table": "estar-participio-formas",
+      "wrong": {
+        "mojado": {
+          "en": "The participle after estar works like an adjective and agrees with mis zapatos (masculine plural): mojados.",
+          "es": "El participio con estar funciona como un adjetivo y concuerda con mis zapatos (masculino plural): mojados."
+        },
+        "mojadas": {
+          "en": "The participle after estar works like an adjective and agrees with mis zapatos (masculine plural): mojados.",
+          "es": "El participio con estar funciona como un adjetivo y concuerda con mis zapatos (masculino plural): mojados."
+        }
+      }
     },
     {
       "id": "ep-form-09",
@@ -781,7 +857,17 @@
       "verb": "forma",
       "person": "Ahora Ana y Sofía ___ conmigo. (estar + enojar)",
       "answer": "están enojadas",
-      "table": "estar-participio-formas"
+      "table": "estar-participio-formas",
+      "wrong": {
+        "están enojados": {
+          "en": "The participle after estar works like an adjective and agrees with Ana y Sofía (feminine plural): están enojadas.",
+          "es": "El participio con estar funciona como un adjetivo y concuerda con Ana y Sofía (femenino plural): están enojadas."
+        },
+        "están enojando": {
+          "en": "Están enojando is a gerund: it describes an action in progress. A state needs the participle: están enojadas.",
+          "es": "Están enojando es un gerundio: describe una acción en curso. Un estado lleva el participio: están enojadas."
+        }
+      }
     },
     {
       "id": "ep-form-10",
@@ -789,7 +875,17 @@
       "verb": "forma",
       "person": "Este libro está ___ en español. (escribir)",
       "answer": "escrito",
-      "table": "estar-participio-formas"
+      "table": "estar-participio-formas",
+      "wrong": {
+        "escrita": {
+          "en": "The participle after estar works like an adjective and agrees with este libro (masculine singular): escrito.",
+          "es": "El participio con estar funciona como un adjetivo y concuerda con este libro (masculino singular): escrito."
+        },
+        "escribido": {
+          "en": "Escribir has an irregular participle, escrito, not the regular form: escrito.",
+          "es": "Escribir tiene participio irregular, escrito, no la forma regular: escrito."
+        }
+      }
     },
     {
       "id": "ep-form-11",
@@ -797,7 +893,13 @@
       "verb": "forma",
       "person": "Mañana la oficina ___. (estar + cerrar, futuro)",
       "answer": "estará cerrada",
-      "table": "estar-participio-formas"
+      "table": "estar-participio-formas",
+      "wrong": {
+        "estará cerrado": {
+          "en": "The participle after estar works like an adjective and agrees with la oficina (feminine singular): estará cerrada.",
+          "es": "El participio con estar funciona como un adjetivo y concuerda con la oficina (femenino singular): estará cerrada."
+        }
+      }
     },
     {
       "id": "ep-form-12",
@@ -805,7 +907,13 @@
       "verb": "forma",
       "person": "Cuando llegamos, la tienda ya ___. (estar + cerrar, imperfecto)",
       "answer": "estaba cerrada",
-      "table": "estar-participio-formas"
+      "table": "estar-participio-formas",
+      "wrong": {
+        "estaba cerrado": {
+          "en": "The participle after estar works like an adjective and agrees with la tienda (feminine singular): estaba cerrada.",
+          "es": "El participio con estar funciona como un adjetivo y concuerda con la tienda (femenino singular): estaba cerrada."
+        }
+      }
     },
     {
       "kind": "why",
