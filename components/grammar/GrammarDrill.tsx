@@ -64,6 +64,7 @@ interface Props {
   transformSeen?: Record<string, number>;
   /** for the feedback context: id of the item currently visible. */
   onItemChange?: (itemId: string) => void;
+  onAnswer?: (itemId: string, correct: boolean) => void; // every answered item, for the XP (FB591)
   /** stats of the round at its end (BEFORE onFinish): best combo, time, the first mistaken sentence. */
   onRoundStats?: (stats: RoundStats) => void;
   /** the X closing the brutalist header (same as the lesson page's ← button: back to the lesson). */
@@ -140,7 +141,7 @@ function findFormTable(topic: GrammarTopicData, tableId: string): Extract<Lesson
   return topic.body.find((b): b is Extract<LessonBlock, { kind: 'table' }> => b.kind === 'table' && b.id === tableId);
 }
 
-export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish, footer, kinds = CHOICE_ONLY, transformSeen, onItemChange, onRoundStats, onClose, resume, onProgress }: Props) {
+export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish, footer, kinds = CHOICE_ONLY, transformSeen, onItemChange, onAnswer, onRoundStats, onClose, resume, onProgress }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const g = useGrammarColors();
@@ -178,8 +179,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
   const [correctCount, setCorrectCount] = useState(resumeOk ? resume.correct : 0);
   // whether the choice item's sentence translation (F button) is open; closed again for a new item.
   const [showTr, setShowTr] = useState(false);
-  // consecutive right answers within the round, in memory only (no
-  // DB write); resets on a mistake, the combo sticker shows from "x2".
+  // consecutive right answers within the round, in memory only; resets on a mistake, the sticker shows from "x2".
   const [combo, setCombo] = useState(0);
   const comboRef = useRef(0);
   const bestComboRef = useRef(0);
@@ -189,6 +189,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
     comboRef.current = wasCorrect ? comboRef.current + 1 : 0;
     bestComboRef.current = Math.max(bestComboRef.current, comboRef.current);
     setCombo(comboRef.current);
+    onAnswer?.(round[index].item.id, wasCorrect);
     if (!wasCorrect && miss && !missRef.current) missRef.current = miss;
   };
   // the Settings accent-strictness switch, fetched once, only if the round needs it (transform, dictation, write, a German form:
@@ -202,8 +203,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
     });
   }, [hasTransform, refresh]);
 
-  // from this the parent knows which item the learner
-  // complained about, to put it in the feedback context.
+  // from this the parent knows which item the learner complained about (feedback context).
   useEffect(() => {
     const id = round[index]?.item.id;
     if (id) onItemChange?.(id);

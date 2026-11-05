@@ -16,6 +16,8 @@ import ExamButton from '@/components/exam/ExamButton';
 import { DockSlotProvider, useDockSlot } from '@/components/learn/DockSlot';
 import { FAB_CLEARANCE } from '@/components/learn/DockedAction';
 import ScreenFeedback from '@/lib/screenFeedback';
+import XpChip from '@/components/XpChip';
+import { awardXpThen } from '@/lib/xpAward';
 
 // The Practice run after a wrong answer in the level test (FB574, FB575): the rule on top, then the tasks one by one, each
 // with the same result card as the test (no Practice button). A wrong task comes back once, 3 places later, and the total
@@ -61,6 +63,8 @@ export default function LevelPractice({
   const [queue, setQueue] = useState<Item[]>(() => tasks.map((q) => ({ q, retry: false })));
   const [index, setIndex] = useState(0);
   const [right, setRight] = useState(0);
+  // the XP the answer on screen gave (FB591); 0 shows nothing
+  const [earned, setEarned] = useState(0);
   const [result, setResult] = useState<{ ok: boolean; given?: string } | null>(null);
   const retried = useRef(new Set<string>());
   const ruleScroll = useRef<ScrollView>(null);
@@ -82,7 +86,11 @@ export default function LevelPractice({
     if (!cur) return;
     Keyboard.dismiss();
     setResult({ ok, given });
-    if (ok) setRight((n) => n + 1);
+    setEarned(0);
+    if (ok) {
+      setRight((n) => n + 1);
+      awardXpThen('levelPractice', cur.q.id, setEarned);
+    }
     const say = () => {
       if (cur.q.say) speak(cur.q.say, speechLang(learnedLang));
     };
@@ -180,6 +188,7 @@ export default function LevelPractice({
   return (
     <View style={[styles.screen, { backgroundColor: colors.background }]}>
       {header}
+      {!keyboardOpen && <XpChip earned={earned} />}
       {body}
     </View>
   );

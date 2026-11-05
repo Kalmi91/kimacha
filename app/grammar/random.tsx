@@ -36,7 +36,6 @@ import {
   runFromRows,
   topicPercent,
   topicTicked,
-  type AskPhase,
   type EvidenceAnswer,
   type RandomMeta,
   type RoundMode,
@@ -44,11 +43,13 @@ import {
   type RoundStep,
   type TopicEvidence,
 } from '@/lib/grammar/randomRound';
-import { advance, isResultPause, makeCtx, questionsOf, topicKindCount, type RoundData } from '@/lib/grammar/randomRoundView';
+import { advance, isResultPause, makeCtx, phaseLabel, questionsOf, topicKindCount, type RoundData } from '@/lib/grammar/randomRoundView';
 import { Card } from '@/components/grammar/Brutal';
 import RandomOtherWrong from '@/components/grammar/RandomOtherWrong';
 import { ProgressBar, themedEdgeStyle } from '@/components/grammar/Themed';
 import TestQuestionView from '@/components/grammar/TestQuestionView';
+import XpChip from '@/components/XpChip';
+import { awardXpThen } from '@/lib/xpAward';
 import ResultBadge from '@/components/ResultBadge';
 import ExamButton from '@/components/exam/ExamButton';
 import { DockSlotProvider, useDockSlot } from '@/components/learn/DockSlot';
@@ -65,8 +66,6 @@ import ScreenFeedback from '@/lib/screenFeedback';
 // FB549: every answer, in every phase, reads the right sentence aloud; a right one first chimes and is marked green
 // (on the explanation card in the practice, a short green badge over the next question elsewhere).
 
-type RoundStrings = ReturnType<typeof t>['randomRound'];
-
 /** The practice feedback card: shown after an answer of the practice phase. */
 interface Feedback {
   q: LessonTestQuestion;
@@ -74,19 +73,6 @@ interface Feedback {
   topicId: string;
   index: number;
   of: number;
-}
-
-function phaseLabel(s: RoundStrings, phase: AskPhase, i: number, n: number): string {
-  switch (phase) {
-    case 'check':
-      return s.phaseCheck(i, n);
-    case 'practice':
-      return s.phasePractice(i, n);
-    case 'recheck':
-      return s.phaseRecheck(i, n);
-    case 'full':
-      return s.phaseFull(i, n);
-  }
 }
 
 // how long the green badge of a right answer stays over the next question
@@ -111,6 +97,8 @@ export default function RandomRoundScreen() {
   const [leaving, setLeaving] = useState(false);
   // FB549: a right answer in the exam-style phases moves on at once; the green badge over the next question is its mark.
   const [rightMark, setRightMark] = useState(0);
+  // the XP the last answer gave (FB591); 0 shows nothing
+  const [earned, setEarned] = useState(0);
 
   // the number of finished rounds, and whether the round in memory is already counted in it.
   const metaRef = useRef<RandomMeta>({ rounds: 0 });
@@ -284,6 +272,8 @@ export default function RandomRoundScreen() {
     enqueue(() => getDb().setGameProgress(GRAMMAR_RANDOM_KEY, topicId, 'evidence', topicEvidence));
     setEvidence(nextEvidence);
     setRun(next);
+    setEarned(0);
+    if (ok) awardXpThen(phase === 'practice' ? 'levelPractice' : 'grammar', pendingQ.id, setEarned);
     if (phase === 'practice') setFeedback({ q: pendingQ, ok, topicId, index: before.index + 1, of: before.of });
     else if (ok) setRightMark((n) => n + 1);
     // FB549: a right answer chimes first and the sentence follows; a wrong one is only read out
@@ -327,6 +317,7 @@ export default function RandomRoundScreen() {
     return shell(
       <View style={styles.flex}>
         {header(s.phasePractice(feedback.index, feedback.of))}
+        <XpChip earned={earned} />
         <ScrollView contentContainerStyle={styles.body}>
           <Text testID="random-practice-title" style={[styles.topicTitle, { color: colors.text }]}>
             {titleOf(topicId)}
@@ -534,6 +525,7 @@ export default function RandomRoundScreen() {
           })}
         </View>
       )}
+      <XpChip earned={earned} />
       {phase === 'practice' && (
         <Text testID="random-practice-title" style={[styles.topicTitle, { color: colors.text }]}>
           {titleOf(run.pending.topicId)}

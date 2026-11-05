@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { Pressable, ScrollView, View } from 'react-native';
 import { Text } from '@/components/KText';
 import { useRouter } from 'expo-router';
@@ -21,6 +21,8 @@ import { speak } from '@/lib/speech';
 import { speechLang } from '@/lib/languages';
 import GlossText from '@/components/games/GlossText';
 import GrammarDrill from '@/components/grammar/GrammarDrill';
+import XpChip from '@/components/XpChip';
+import { awardXpThen } from '@/lib/xpAward';
 import GrammarRoundEnd from '@/components/grammar/GrammarRoundEnd';
 import LessonBody from '@/components/grammar/LessonBody';
 import LessonTest from '@/components/grammar/LessonTest';
@@ -98,6 +100,8 @@ function GrammarLessonPhases({ topic }: { topic: ReturnType<typeof useGrammarTop
     lessonScoreOf,
     finish,
   } = topic;
+  // the XP the last right drill answer gave (FB591), shown while that item is on screen
+  const [earned, setEarned] = useState<{ id: string; points: number } | null>(null);
   // a stable array: GrammarDrill's round memo and its onItemChange effect depend on `kinds`.
   const drillKinds = useMemo(() => [drillKind], [drillKind]);
   const g = useGrammarColors();
@@ -249,6 +253,7 @@ function GrammarLessonPhases({ topic }: { topic: ReturnType<typeof useGrammarTop
         <DockSlotProvider host={dock}>
           {/* on the brutalist palette the drill's own header (X + segmented bar + combo) replaces it. */}
           {g.brutal ? null : header}
+          <XpChip earned={earned ? earned.points : 0} />
           {/* the lesson drill runs through the `drillKind` kind
               (the buttons start each kind separately); the Game tab's grammar-choice,
               lacking the `kinds` prop, still gets only its gap/mark round as before. */}
@@ -260,6 +265,7 @@ function GrammarLessonPhases({ topic }: { topic: ReturnType<typeof useGrammarTop
             kinds={drillKinds}
             transformSeen={transformSeen}
             onItemChange={setDrillItemId}
+            onAnswer={(id, ok) => ok && awardXpThen('grammar', id, (points) => setEarned({ id, points }))}
             onRoundStats={setRoundStats}
             onClose={() => setPhase('lesson')}
             // an abandoned round continues from where it left off; it is saved

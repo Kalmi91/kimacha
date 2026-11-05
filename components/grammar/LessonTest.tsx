@@ -1,4 +1,6 @@
 import { useEffect, useState, type ReactNode } from 'react';
+import XpChip from '@/components/XpChip';
+import { awardXpThen } from '@/lib/xpAward';
 import { ActivityIndicator, KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 import Colors from '@/constants/Colors';
@@ -100,6 +102,8 @@ export default function LessonTest({
   const [dealt, setDealt] = useState(() => deal(new Set(previous?.missed ?? []), new Set()));
   const questions = dealt.questions;
   const [index, setIndex] = useState(0);
+  // the XP the last right answer gave (FB591); the chip fades it
+  const [earned, setEarned] = useState(0);
   const [answers, setAnswers] = useState<Answered[]>([]);
   const [summary, setSummary] = useState<Summary | null>(null);
 
@@ -131,6 +135,8 @@ export default function LessonTest({
   };
 
   const answered = (correct: boolean) => {
+    setEarned(0);
+    if (correct) awardXpThen('grammar', questions[index].id, setEarned);
     const all = [...answers, { q: questions[index], correct }];
     setAnswers(all);
     if (index + 1 >= questions.length) finish(all);
@@ -238,6 +244,7 @@ export default function LessonTest({
         </Text>
         <View style={styles.closeSpacer} />
       </View>
+      <XpChip earned={earned} />
       <ProgressBar testID="lesson-test-progress" pct={pct} brutalStyle={styles.brutalProgress} trackStyle={styles.track} trackColor={colors.border} fillStyle={styles.fill} fillColor={colors.tint} />
       <DockSlotProvider host={dock}>
         {questions[index] && (
