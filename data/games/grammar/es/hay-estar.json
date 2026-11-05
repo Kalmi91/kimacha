@@ -932,14 +932,14 @@
       "options": [
         {
           "text": {
-            "en": "hay: new/unknown thing",
-            "es": "hay: algo nuevo"
+            "en": "something being introduced for the first time",
+            "es": "algo que se presenta por primera vez"
           }
         },
         {
           "text": {
-            "en": "está: known, specific thing",
-            "es": "está: algo concreto y conocido"
+            "en": "something specific and already known, whose location is being told",
+            "es": "algo concreto y ya conocido, del que se dice dónde se encuentra"
           },
           "wrong": {
             "en": "Está would refer to an ALREADY known bank (\"El banco está cerca de mi casa\"); here we announce the EXISTENCE of an unknown bank with un, that is hay.",
@@ -948,8 +948,8 @@
         },
         {
           "text": {
-            "en": "está: after a possessive",
-            "es": "está: tras un posesivo"
+            "en": "something with a possessive such as mi, tu or su",
+            "es": "algo con un posesivo, como mi, tu o su"
           },
           "wrong": {
             "en": "The possessive-following está applies to something like \"Mi banco está cerca\" (MY bank); here there is no possessive, it is about a general, new bank existing.",
@@ -971,8 +971,8 @@
       "options": [
         {
           "text": {
-            "en": "hay: new/unknown thing",
-            "es": "hay: algo nuevo"
+            "en": "something being introduced for the first time",
+            "es": "algo que se presenta por primera vez"
           },
           "wrong": {
             "en": "The rule for introducing a new thing with un/una applies to a single, still unknown item; here we state a QUANTITY (mucha gente), a separate point.",
@@ -981,14 +981,14 @@
         },
         {
           "text": {
-            "en": "hay: quantity",
-            "es": "hay: cantidad"
+            "en": "a quantity of something",
+            "es": "una cantidad de algo"
           }
         },
         {
           "text": {
-            "en": "está: known, specific thing",
-            "es": "está: algo concreto y conocido"
+            "en": "something specific and already known, whose location is being told",
+            "es": "algo concreto y ya conocido, del que se dice dónde se encuentra"
           },
           "wrong": {
             "en": "Está would refer to a SPECIFIC, known thing with a definite article; here it is about a QUANTITY (mucha gente), that is hay.",
@@ -1010,8 +1010,8 @@
       "options": [
         {
           "text": {
-            "en": "hay: quantity",
-            "es": "hay: cantidad"
+            "en": "a quantity of something",
+            "es": "una cantidad de algo"
           },
           "wrong": {
             "en": "The quantity point applies to things like \"mucha gente\" or \"pocos estudiantes\"; here there is no quantity word, just the uncountable \"leche\" without an article.",
@@ -1020,14 +1020,14 @@
         },
         {
           "text": {
-            "en": "hay: uncountable",
-            "es": "hay: incontable"
+            "en": "something uncountable",
+            "es": "algo incontable"
           }
         },
         {
           "text": {
-            "en": "está: after a possessive",
-            "es": "está: tras un posesivo"
+            "en": "something with a possessive such as mi, tu or su",
+            "es": "algo con un posesivo, como mi, tu o su"
           },
           "wrong": {
             "en": "The possessive-following está applies to something like \"Mi leche está en el refrigerador\" (MY milk); here there is no possessive, it is just about milk existing.",
@@ -1049,8 +1049,8 @@
       "options": [
         {
           "text": {
-            "en": "hay: new/unknown thing",
-            "es": "hay: algo nuevo"
+            "en": "something being introduced for the first time",
+            "es": "algo que se presenta por primera vez"
           },
           "wrong": {
             "en": "Hay would refer to a STILL unknown bank, with un/una (\"Hay un banco en la esquina\"); here it is an ALREADY known bank with a definite article, that is está.",
@@ -1059,14 +1059,14 @@
         },
         {
           "text": {
-            "en": "está: known, specific thing",
-            "es": "está: algo concreto y conocido"
+            "en": "something specific and already known, whose location is being told",
+            "es": "algo concreto y ya conocido, del que se dice dónde se encuentra"
           }
         },
         {
           "text": {
-            "en": "está: after a proper name",
-            "es": "está: tras un nombre propio"
+            "en": "a person or place with a proper name",
+            "es": "una persona o un lugar con nombre propio"
           },
           "wrong": {
             "en": "The proper-name-following está applies to something like \"Ana está en el trabajo\"; here \"el banco\" is a common noun with a definite article, not a proper name.",
@@ -1088,8 +1088,8 @@
       "options": [
         {
           "text": {
-            "en": "hay: uncountable",
-            "es": "hay: incontable"
+            "en": "something uncountable",
+            "es": "algo incontable"
           },
           "wrong": {
             "en": "The uncountable point applies to something like \"Hay leche\", with no article; here \"mi teléfono\" is a specific, possessed object, that is está.",
@@ -1098,14 +1098,14 @@
         },
         {
           "text": {
-            "en": "está: after a possessive",
-            "es": "está: tras un posesivo"
+            "en": "something with a possessive such as mi, tu or su",
+            "es": "algo con un posesivo, como mi, tu o su"
           }
         },
         {
           "text": {
-            "en": "está: after a proper name",
-            "es": "está: tras un nombre propio"
+            "en": "a person or place with a proper name",
+            "es": "una persona o un lugar con nombre propio"
           },
           "wrong": {
             "en": "The proper-name-following está applies to something like \"Ana está en el trabajo\"; here a possessive (mi) stands before the noun, not a proper name.",
@@ -1127,8 +1127,8 @@
       "options": [
         {
           "text": {
-            "en": "hay: new/unknown thing",
-            "es": "hay: algo nuevo"
+            "en": "something being introduced for the first time",
+            "es": "algo que se presenta por primera vez"
           },
           "wrong": {
             "en": "Hay is for introducing something, with un/una; a PROPER NAME (Ana) never follows hay, because Ana is already known, not something to introduce.",
@@ -1137,8 +1137,8 @@
         },
         {
           "text": {
-            "en": "está: after a possessive",
-            "es": "está: tras un posesivo"
+            "en": "something with a possessive such as mi, tu or su",
+            "es": "algo con un posesivo, como mi, tu o su"
           },
           "wrong": {
             "en": "The possessive-following está applies to something like \"Mi hermana está en el trabajo\"; here \"Ana\" is a proper name, not a possessive.",
@@ -1147,8 +1147,8 @@
         },
         {
           "text": {
-            "en": "está: after a proper name",
-            "es": "está: tras un nombre propio"
+            "en": "a person or place with a proper name",
+            "es": "una persona o un lugar con nombre propio"
           }
         }
       ],
@@ -1166,14 +1166,14 @@
       "options": [
         {
           "text": {
-            "en": "está: known, specific thing",
-            "es": "está: algo concreto y conocido"
+            "en": "something specific and already known, whose location is being told",
+            "es": "algo concreto y ya conocido, del que se dice dónde se encuentra"
           }
         },
         {
           "text": {
-            "en": "hay: new/unknown thing",
-            "es": "hay: algo nuevo"
+            "en": "something being introduced for the first time",
+            "es": "algo que se presenta por primera vez"
           },
           "wrong": {
             "en": "Hay would ask WHETHER a bathroom exists at all (\"¿Hay un baño?\"); here \"el baño\" with a definite article asks the location of an ALREADY known, specific bathroom.",
@@ -1182,8 +1182,8 @@
         },
         {
           "text": {
-            "en": "hay: quantity",
-            "es": "hay: cantidad"
+            "en": "a quantity of something",
+            "es": "una cantidad de algo"
           },
           "wrong": {
             "en": "The quantity point applies to something like \"¿Cuántos baños hay?\" (how many bathrooms); here we ask the LOCATION of a specific bathroom, that is está.",

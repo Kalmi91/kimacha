@@ -1075,14 +1075,14 @@
       "options": [
         {
           "text": {
-            "en": "profession, identity (ser)",
-            "es": "profesión, identidad (ser)"
+            "en": "profession, identity",
+            "es": "profesión, identidad"
           }
         },
         {
           "text": {
-            "en": "location (estar)",
-            "es": "ubicación (estar)"
+            "en": "location",
+            "es": "ubicación"
           },
           "wrong": {
             "en": "Estar would express location, but a plain noun for a profession never follows it that way; a profession is a lasting classification, that is ser: soy profesor.",
@@ -1091,8 +1091,8 @@
         },
         {
           "text": {
-            "en": "temporary state (estar)",
-            "es": "estado pasajero (estar)"
+            "en": "temporary state",
+            "es": "estado pasajero"
           },
           "wrong": {
             "en": "Estar would express a temporary state (tired, nervous); a profession is not a state, it is a lasting classification, so ser: soy profesor.",
@@ -1114,8 +1114,8 @@
       "options": [
         {
           "text": {
-            "en": "profession, identity (ser)",
-            "es": "profesión, identidad (ser)"
+            "en": "profession, identity",
+            "es": "profesión, identidad"
           },
           "wrong": {
             "en": "The profession/identity point applies to sentences like \"Somos profesores\"; here it is about ORIGIN (de España), a separate ser point.",
@@ -1124,14 +1124,14 @@
         },
         {
           "text": {
-            "en": "origin (ser)",
-            "es": "origen (ser)"
+            "en": "origin",
+            "es": "origen"
           }
         },
         {
           "text": {
-            "en": "location (estar)",
-            "es": "ubicación (estar)"
+            "en": "location",
+            "es": "ubicación"
           },
           "wrong": {
             "en": "Estar would express CURRENT whereabouts (\"Estamos en España\" = we are in Spain right now); here it is about ORIGIN, which always takes ser.",
@@ -1153,8 +1153,8 @@
       "options": [
         {
           "text": {
-            "en": "origin (ser)",
-            "es": "origen (ser)"
+            "en": "origin",
+            "es": "origen"
           },
           "wrong": {
             "en": "The origin point applies to sentences like \"Son de México\"; here it is about the TIME, a separate ser point: son las tres.",
@@ -1163,14 +1163,14 @@
         },
         {
           "text": {
-            "en": "time, date (ser)",
-            "es": "hora, fecha (ser)"
+            "en": "time, date",
+            "es": "hora, fecha"
           }
         },
         {
           "text": {
-            "en": "result of a change (estar)",
-            "es": "resultado de un cambio (estar)"
+            "en": "result of a change",
+            "es": "resultado de un cambio"
           },
           "wrong": {
             "en": "Estar would express the result of a change (broken, open); telling time is never done with estar, this is a fixed exception: son las tres.",
@@ -1192,8 +1192,8 @@
       "options": [
         {
           "text": {
-            "en": "origin (ser)",
-            "es": "origen (ser)"
+            "en": "origin",
+            "es": "origen"
           },
           "wrong": {
             "en": "Ser would express origin (e.g. soy de México); here it is about the current LOCATION, which takes estar: estoy en casa.",
@@ -1202,14 +1202,14 @@
         },
         {
           "text": {
-            "en": "location (estar)",
-            "es": "ubicación (estar)"
+            "en": "location",
+            "es": "ubicación"
           }
         },
         {
           "text": {
-            "en": "temporary state (estar)",
-            "es": "estado pasajero (estar)"
+            "en": "temporary state",
+            "es": "estado pasajero"
           },
           "wrong": {
             "en": "The temporary-state point applies to sentences like \"Estoy cansado\"; here it is about LOCATION (en casa), not a mood or state.",
@@ -1231,8 +1231,8 @@
       "options": [
         {
           "text": {
-            "en": "profession, identity (ser)",
-            "es": "profesión, identidad (ser)"
+            "en": "profession, identity",
+            "es": "profesión, identidad"
           },
           "wrong": {
             "en": "Ser would express a lasting trait (\"Es cansada\" = she IS a tiring, tiresome person); here it is about CURRENT tiredness, that is estar.",
@@ -1241,14 +1241,14 @@
         },
         {
           "text": {
-            "en": "temporary state (estar)",
-            "es": "estado pasajero (estar)"
+            "en": "temporary state",
+            "es": "estado pasajero"
           }
         },
         {
           "text": {
-            "en": "result of a change (estar)",
-            "es": "resultado de un cambio (estar)"
+            "en": "result of a change",
+            "es": "resultado de un cambio"
           },
           "wrong": {
             "en": "The result-of-a-change point applies to sentences like \"La puerta está rota\" (a physical state); tiredness is more of a PASSING mood, a separate point.",
@@ -1270,8 +1270,8 @@
       "options": [
         {
           "text": {
-            "en": "location (estar)",
-            "es": "ubicación (estar)"
+            "en": "location",
+            "es": "ubicación"
           },
           "wrong": {
             "en": "The location point applies to something like \"La puerta está aquí\" (WHERE the door is); here it is about the door's STATE (open, the result of a change), not its location.",
@@ -1280,14 +1280,14 @@
         },
         {
           "text": {
-            "en": "result of a change (estar)",
-            "es": "resultado de un cambio (estar)"
+            "en": "result of a change",
+            "es": "resultado de un cambio"
           }
         },
         {
           "text": {
-            "en": "profession, identity (ser)",
-            "es": "profesión, identidad (ser)"
+            "en": "profession, identity",
+            "es": "profesión, identidad"
           },
           "wrong": {
             "en": "Ser would express identity or profession (soy profesor); an open door is a STATE, which takes estar: la puerta está abierta.",
@@ -1309,14 +1309,14 @@
       "options": [
         {
           "text": {
-            "en": "profession, identity (ser)",
-            "es": "profesión, identidad (ser)"
+            "en": "profession, identity",
+            "es": "profesión, identidad"
           }
         },
         {
           "text": {
-            "en": "location (estar)",
-            "es": "ubicación (estar)"
+            "en": "location",
+            "es": "ubicación"
           },
           "wrong": {
             "en": "Estar would express location, but a profession as a plain noun is never expressed with estar; a profession is a lasting classification, that is ser: somos profesores.",
@@ -1325,8 +1325,8 @@
         },
         {
           "text": {
-            "en": "temporary state (estar)",
-            "es": "estado pasajero (estar)"
+            "en": "temporary state",
+            "es": "estado pasajero"
           },
           "wrong": {
             "en": "Estar would express a temporary state (tired, nervous); a profession is not a state, it is a lasting classification, so ser: somos profesores.",

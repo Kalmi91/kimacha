@@ -804,8 +804,8 @@
       "options": [
         {
           "text": {
-            "en": "donde = a place",
-            "es": "donde = lugar"
+            "en": "a place",
+            "es": "un lugar"
           },
           "wrong": {
             "en": "Donde is for places, and the girl is a person, not a place.",
@@ -814,14 +814,14 @@
         },
         {
           "text": {
-            "en": "que = a person or a thing, subject or object",
-            "es": "que = persona o cosa, sujeto u objeto"
+            "en": "a person or thing, subject or object",
+            "es": "persona o cosa, sujeto u objeto"
           }
         },
         {
           "text": {
-            "en": "quien = after a preposition, for one person",
-            "es": "quien = después de una preposición, para una persona"
+            "en": "after a preposition, for a person",
+            "es": "después de una preposición, para una persona"
           },
           "wrong": {
             "en": "Quien comes after a preposition; there is none here, the girl is the subject, so que.",
@@ -843,8 +843,8 @@
       "options": [
         {
           "text": {
-            "en": "quien = after a preposition, for one person",
-            "es": "quien = después de una preposición, para una persona"
+            "en": "after a preposition, for a person",
+            "es": "después de una preposición, para una persona"
           },
           "wrong": {
             "en": "Quien is for people after a preposition; a book is a thing, and there is no preposition.",
@@ -853,14 +853,14 @@
         },
         {
           "text": {
-            "en": "the object is not repeated (que compré)",
-            "es": "el objeto no se repite (que compré)"
+            "en": "the object is not repeated",
+            "es": "el objeto no se repite"
           }
         },
         {
           "text": {
-            "en": "donde = a place",
-            "es": "donde = lugar"
+            "en": "a place",
+            "es": "un lugar"
           },
           "wrong": {
             "en": "Donde is for places; a book is not a place.",
@@ -882,14 +882,14 @@
       "options": [
         {
           "text": {
-            "en": "quien = after a preposition, for one person",
-            "es": "quien = después de una preposición, para una persona"
+            "en": "after a preposition, for a person",
+            "es": "después de una preposición, para una persona"
           }
         },
         {
           "text": {
-            "en": "que = a person or a thing, subject or object",
-            "es": "que = persona o cosa, sujeto u objeto"
+            "en": "a person or thing, subject or object",
+            "es": "persona o cosa, sujeto u objeto"
           },
           "wrong": {
             "en": "Que is for a subject or object without a preposition; here a person follows con, and there you need quien.",
@@ -898,8 +898,8 @@
         },
         {
           "text": {
-            "en": "donde = a place",
-            "es": "donde = lugar"
+            "en": "a place",
+            "es": "un lugar"
           },
           "wrong": {
             "en": "Donde is for places; the woman is a person.",
@@ -921,8 +921,8 @@
       "options": [
         {
           "text": {
-            "en": "que = a person or a thing, subject or object",
-            "es": "que = persona o cosa, sujeto u objeto"
+            "en": "a person or thing, subject or object",
+            "es": "persona o cosa, sujeto u objeto"
           },
           "wrong": {
             "en": "Que does not change, but after preposition (a) + person comes quien / quienes.",
@@ -931,14 +931,14 @@
         },
         {
           "text": {
-            "en": "quienes = after a preposition, for several people",
-            "es": "quienes = después de una preposición, para varias personas"
+            "en": "after a preposition, for several people",
+            "es": "después de una preposición, para varias personas"
           }
         },
         {
           "text": {
-            "en": "quien = after a preposition, for one person",
-            "es": "quien = después de una preposición, para una persona"
+            "en": "after a preposition, for a person",
+            "es": "después de una preposición, para una persona"
           },
           "wrong": {
             "en": "Quien is for one person, and “vecinos” is plural: quienes.",
@@ -960,8 +960,8 @@
       "options": [
         {
           "text": {
-            "en": "que = a person or a thing, subject or object",
-            "es": "que = persona o cosa, sujeto u objeto"
+            "en": "a person or thing, subject or object",
+            "es": "persona o cosa, sujeto u objeto"
           },
           "wrong": {
             "en": "After que the preposition would be missing here (“la ciudad en que vivo”); a place is simple with donde.",
@@ -970,8 +970,8 @@
         },
         {
           "text": {
-            "en": "quien = after a preposition, for one person",
-            "es": "quien = después de una preposición, para una persona"
+            "en": "after a preposition, for a person",
+            "es": "después de una preposición, para una persona"
           },
           "wrong": {
             "en": "Quien is for people; a city is not a person.",
@@ -980,8 +980,8 @@
         },
         {
           "text": {
-            "en": "donde = a place",
-            "es": "donde = lugar"
+            "en": "a place",
+            "es": "un lugar"
           }
         }
       ],
@@ -999,8 +999,8 @@
       "options": [
         {
           "text": {
-            "en": "between commas, for a person, que or quien",
-            "es": "entre comas, con personas, que o quien"
+            "en": "between commas, with people: either relative word works",
+            "es": "entre comas, con personas: sirve cualquiera de los dos relativos"
           },
           "wrong": {
             "en": "Between commas que would be fine too, but after the preposition a bare que does not fit; you need quien.",
@@ -1009,14 +1009,14 @@
         },
         {
           "text": {
-            "en": "quien = after a preposition, for one person",
-            "es": "quien = después de una preposición, para una persona"
+            "en": "after a preposition, for a person",
+            "es": "después de una preposición, para una persona"
           }
         },
         {
           "text": {
-            "en": "donde = a place",
-            "es": "donde = lugar"
+            "en": "a place",
+            "es": "un lugar"
           },
           "wrong": {
             "en": "Donde is for places; the aunt is a person.",
@@ -1038,8 +1038,8 @@
       "options": [
         {
           "text": {
-            "en": "the object is not repeated (que compré)",
-            "es": "el objeto no se repite (que compré)"
+            "en": "the object is not repeated",
+            "es": "el objeto no se repite"
           },
           "wrong": {
             "en": "Here que is the subject, there is no object that could be repeated.",
@@ -1048,14 +1048,14 @@
         },
         {
           "text": {
-            "en": "between commas, for a person, que or quien",
-            "es": "entre comas, con personas, que o quien"
+            "en": "between commas, with people: either relative word works",
+            "es": "entre comas, con personas: sirve cualquiera de los dos relativos"
           }
         },
         {
           "text": {
-            "en": "donde = a place",
-            "es": "donde = lugar"
+            "en": "a place",
+            "es": "un lugar"
           },
           "wrong": {
             "en": "Donde is for places; the brother is a person.",

@@ -13,6 +13,8 @@
  * confusables `members[].word`, or a `glossary[]` entry on the topic/set).
  *
  * P1 (build-blocking):
+ *   - a why item that gives the answer away: a parenthesis in any option, or the target word in the right option
+ *     only (scripts/whyGiveaway.cjs)
  *   - a target-language content word that is neither taught nor glossed
  *   - a Record<lang,string> field (title/rule/more/why/wrong/gloss/hint/
  *     mnemonic/explanation) missing one of the 2 active languages
@@ -60,7 +62,10 @@
 import { readFileSync, readdirSync, existsSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
+import { createRequire } from 'module';
 import { importTs } from './lib/importTs.mjs';
+
+const { whyGiveaways } = createRequire(import.meta.url)('./whyGiveaway.cjs');
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
@@ -806,6 +811,9 @@ function auditWhyItem(item, itemPath, lang = 'es') {
   } else if (item.es && wholeWordIndex(item.es, item.target) === -1) {
     p1.push({ path: itemPath, issue: `why item target "${item.target}" not found as a whole word in es` });
   }
+
+  // the answer must not be given away: no parenthesis in an option, and the right option does not carry the target word
+  for (const issue of whyGiveaways(item)) p1.push({ path: itemPath, issue });
 
   const enSeen = new Set();
   options.forEach((opt, i) => {

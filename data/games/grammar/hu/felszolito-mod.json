@@ -367,7 +367,7 @@
             "es": "Con esta regla la frase sería Nem megyek el (no me voy): una afirmación, no una orden."
           }
         },
-        { "text": { "en": "'Don't' + command: ne goes before the imperative", "es": "«No» + orden: ne va delante del imperativo" } },
+        { "text": { "en": "A prohibition: the negative particle goes before the imperative", "es": "Una prohibición: la partícula negativa va delante del imperativo" } },
         {
           "text": { "en": "A suggestion for both of us: the mi form", "es": "Una propuesta para los dos: la forma mi" },
           "wrong": {
@@ -564,7 +564,7 @@
       "target": "Olvass",
       "tr": { "en": "Read a book!", "es": "¡Lee un libro!" },
       "options": [
-        { "text": { "en": "Imperative: olvas + j, and the s merges (ss)", "es": "Imperativo: olvas + j, y la s se funde (ss)" } },
+        { "text": { "en": "Imperative: the stem + j, and the s merges", "es": "Imperativo: la raíz + j, y la s se funde" } },
         {
           "text": { "en": "Present tense: you read", "es": "Presente: tú lees" },
           "wrong": {
@@ -670,7 +670,7 @@
             "es": "Con esta regla la frase sería Nézze meg a térképet! (dicho a alguien a quien tratas de usted)."
           }
         },
-        { "text": { "en": "The object (a térképet) is definite: the -d form", "es": "El objeto (a térképet) es definido: la forma con -d" } }
+        { "text": { "en": "The object is definite: the -d form", "es": "El objeto es definido: la forma con -d" } }
       ],
       "correctIndex": 2
     }

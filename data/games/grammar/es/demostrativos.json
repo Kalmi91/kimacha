@@ -719,14 +719,14 @@
       "options": [
         {
           "text": {
-            "en": "este = here (by me)",
-            "es": "este = aquí (junto a mí)"
+            "en": "near the speaker",
+            "es": "cerca de quien habla"
           }
         },
         {
           "text": {
-            "en": "ese = by you",
-            "es": "ese = junto a ti"
+            "en": "near the listener",
+            "es": "cerca de quien escucha"
           },
           "wrong": {
             "en": "Ese would mark what is by YOU, but here aquí (here) shows it is by the speaker.",
@@ -735,8 +735,8 @@
         },
         {
           "text": {
-            "en": "aquel = far from both of us",
-            "es": "aquel = lejos de los dos"
+            "en": "far from both",
+            "es": "lejos de los dos"
           },
           "wrong": {
             "en": "Aquel would mark what is far from both of us, but here the book is with the speaker, so close.",
@@ -758,8 +758,8 @@
       "options": [
         {
           "text": {
-            "en": "este = here (by me)",
-            "es": "este = aquí (junto a mí)"
+            "en": "near the speaker",
+            "es": "cerca de quien habla"
           },
           "wrong": {
             "en": "Este would mark what is by ME, but here que tienes en la mano (in your hand) shows it is by the listener.",
@@ -768,14 +768,14 @@
         },
         {
           "text": {
-            "en": "ese = by you",
-            "es": "ese = junto a ti"
+            "en": "near the listener",
+            "es": "cerca de quien escucha"
           }
         },
         {
           "text": {
-            "en": "aquel = far from both of us",
-            "es": "aquel = lejos de los dos"
+            "en": "far from both",
+            "es": "lejos de los dos"
           },
           "wrong": {
             "en": "Aquel would mark what is far from both of us, but here the book is with the listener, so close to them.",
@@ -797,8 +797,8 @@
       "options": [
         {
           "text": {
-            "en": "este = here (by me)",
-            "es": "este = aquí (junto a mí)"
+            "en": "near the speaker",
+            "es": "cerca de quien habla"
           },
           "wrong": {
             "en": "Estas would mark what is here by me, but the sentence says it is far from you and me.",
@@ -807,8 +807,8 @@
         },
         {
           "text": {
-            "en": "ese = by you",
-            "es": "ese = junto a ti"
+            "en": "near the listener",
+            "es": "cerca de quien escucha"
           },
           "wrong": {
             "en": "Esas would mark what is by you, but the sentence says it is far from you and me.",
@@ -817,8 +817,8 @@
         },
         {
           "text": {
-            "en": "aquel = far from both of us",
-            "es": "aquel = lejos de los dos"
+            "en": "far from both",
+            "es": "lejos de los dos"
           }
         }
       ],
@@ -836,8 +836,8 @@
       "options": [
         {
           "text": {
-            "en": "este = here (by me)",
-            "es": "este = aquí (junto a mí)"
+            "en": "near the speaker",
+            "es": "cerca de quien habla"
           },
           "wrong": {
             "en": "Este goes with a noun (or stands in for a known one), but here there is no noun: we are asking about an unknown thing.",
@@ -846,8 +846,8 @@
         },
         {
           "text": {
-            "en": "ese = by you",
-            "es": "ese = junto a ti"
+            "en": "near the listener",
+            "es": "cerca de quien escucha"
           },
           "wrong": {
             "en": "Ese also stands before a noun, marking what is by you; but here we ask about an unknown thing, with no noun.",
@@ -856,8 +856,8 @@
         },
         {
           "text": {
-            "en": "esto/eso/aquello = an unknown thing or a whole situation",
-            "es": "esto/eso/aquello = una cosa desconocida o una situación entera"
+            "en": "a neuter pronoun: an unknown thing or a whole situation",
+            "es": "un pronombre neutro: una cosa desconocida o una situación entera"
           }
         }
       ],
@@ -875,14 +875,14 @@
       "options": [
         {
           "text": {
-            "en": "este = here (by me)",
-            "es": "este = aquí (junto a mí)"
+            "en": "near the speaker",
+            "es": "cerca de quien habla"
           }
         },
         {
           "text": {
-            "en": "ese = by you",
-            "es": "ese = junto a ti"
+            "en": "near the listener",
+            "es": "cerca de quien escucha"
           },
           "wrong": {
             "en": "Esa semana would mark ANOTHER week, one already mentioned; but here it is the current week.",
@@ -891,8 +891,8 @@
         },
         {
           "text": {
-            "en": "aquel = far from both of us",
-            "es": "aquel = lejos de los dos"
+            "en": "far from both",
+            "es": "lejos de los dos"
           },
           "wrong": {
             "en": "Aquella semana would point to a week long ago; but here it is the current week.",
@@ -914,8 +914,8 @@
       "options": [
         {
           "text": {
-            "en": "este = here (by me)",
-            "es": "este = aquí (junto a mí)"
+            "en": "near the speaker",
+            "es": "cerca de quien habla"
           },
           "wrong": {
             "en": "Esta would mark what is by me, but here que llevas (what you are carrying) shows it is by you.",
@@ -924,14 +924,14 @@
         },
         {
           "text": {
-            "en": "ese = by you",
-            "es": "ese = junto a ti"
+            "en": "near the listener",
+            "es": "cerca de quien escucha"
           }
         },
         {
           "text": {
-            "en": "aquel = far from both of us",
-            "es": "aquel = lejos de los dos"
+            "en": "far from both",
+            "es": "lejos de los dos"
           },
           "wrong": {
             "en": "Aquella would mark what is far from both of us, but here the bag is by you, so close to you.",
@@ -953,8 +953,8 @@
       "options": [
         {
           "text": {
-            "en": "este = here (by me)",
-            "es": "este = aquí (junto a mí)"
+            "en": "near the speaker",
+            "es": "cerca de quien habla"
           },
           "wrong": {
             "en": "Estos años would mark the present years; but here it is about years long past.",
@@ -963,8 +963,8 @@
         },
         {
           "text": {
-            "en": "ese = by you",
-            "es": "ese = junto a ti"
+            "en": "near the listener",
+            "es": "cerca de quien escucha"
           },
           "wrong": {
             "en": "Esos años would mark a nearer, already-mentioned period; but here it is about far-off, long-past years.",
@@ -973,8 +973,8 @@
         },
         {
           "text": {
-            "en": "aquel = far from both of us",
-            "es": "aquel = lejos de los dos"
+            "en": "far from both",
+            "es": "lejos de los dos"
           }
         }
       ],

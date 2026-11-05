@@ -1301,8 +1301,8 @@
       "options": [
         {
           "text": {
-            "en": "Past tense, ők (they): they went",
-            "es": "Pasado, ők (ellos): ellos fueron"
+            "en": "Past tense, ők: they went",
+            "es": "Pasado, ők: ellos fueron"
           },
           "wrong": {
             "en": "With this rule the sentence would need ők and a past time word: Ők tegnap Szegedre mentek. Here the sentence has ti and holnap (tomorrow).",
@@ -1311,14 +1311,14 @@
         },
         {
           "text": {
-            "en": "Present tense, ti (you all): you go",
-            "es": "Presente, ti (ustedes): ustedes van"
+            "en": "Present tense, ti: you go",
+            "es": "Presente, ti: ustedes van"
           }
         },
         {
           "text": {
-            "en": "Past tense, ti (you all): you went",
-            "es": "Pasado, ti (ustedes): ustedes fueron"
+            "en": "Past tense, ti: you went",
+            "es": "Pasado, ti: ustedes fueron"
           },
           "wrong": {
             "en": "With this rule the form would be mentetek (Ti tegnap Szegedre mentetek); holnap is the future.",
@@ -1423,14 +1423,14 @@
       "options": [
         {
           "text": {
-            "en": "Past of lesz: he became (a change)",
-            "es": "Pasado de lesz: se hizo (un cambio)"
+            "en": "Past of lesz: he became",
+            "es": "Pasado de lesz: se hizo"
           }
         },
         {
           "text": {
-            "en": "Past of van: he was (a state)",
-            "es": "Pasado de van: era (un estado)"
+            "en": "Past of van: he was",
+            "es": "Pasado de van: era"
           },
           "wrong": {
             "en": "The past of van is volt: Péter tavaly apa volt would describe a state without a change. The sentence says he became a father.",

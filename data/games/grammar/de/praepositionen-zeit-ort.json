@@ -629,14 +629,14 @@
         },
         {
           "text": {
-            "en": "am (an dem) + day or part of the day",
-            "es": "am (an dem) + día o parte del día"
+            "en": "The contracted form + day or part of the day",
+            "es": "La forma contraída + día o parte del día"
           }
         },
         {
           "text": {
-            "en": "im (in dem) + day, because Montag is masculine",
-            "es": "im (in dem) + día, porque Montag es masculino"
+            "en": "im + day, because Montag is masculine",
+            "es": "im + día, porque Montag es masculino"
           },
           "wrong": {
             "en": "im is for months and seasons (im Mai, im Winter). The gender of Montag does not decide it: every weekday takes am.",
@@ -798,8 +798,8 @@
         },
         {
           "text": {
-            "en": "im (in dem) + month or season",
-            "es": "im (in dem) + mes o estación"
+            "en": "The contracted form + month or season",
+            "es": "La forma contraída + mes o estación"
           }
         }
       ],
@@ -937,8 +937,8 @@
       "options": [
         {
           "text": {
-            "en": "um + clock time",
-            "es": "um + hora del reloj"
+            "en": "The preposition for clock time",
+            "es": "La preposición de la hora del reloj"
           }
         },
         {
@@ -1160,8 +1160,8 @@
       "options": [
         {
           "text": {
-            "en": "im (in dem): the doctor's office is a room",
-            "es": "im (in dem): el consultorio es una habitación"
+            "en": "im: the doctor's office is a room",
+            "es": "im: el consultorio es una habitación"
           },
           "wrong": {
             "en": "The noun is Arzt, a person, not a room. With people and their business German uses bei, not in.",
@@ -1170,14 +1170,14 @@
         },
         {
           "text": {
-            "en": "beim (bei dem): you are at a person's place or business",
-            "es": "beim (bei dem): estás en casa o en el negocio de una persona"
+            "en": "The contracted form for being at a person's place or business",
+            "es": "La forma contraída para estar en casa o en el negocio de una persona"
           }
         },
         {
           "text": {
-            "en": "am (an dem): the doctor is at the edge of something",
-            "es": "am (an dem): el médico está en el borde de algo"
+            "en": "am: the doctor is at the edge of something",
+            "es": "am: el médico está en el borde de algo"
           },
           "wrong": {
             "en": "am means at the edge or at the water (am Strand). It does not describe a visit at somebody's place.",
