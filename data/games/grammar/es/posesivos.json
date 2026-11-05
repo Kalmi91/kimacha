@@ -685,7 +685,17 @@
       "verb": "Masculino singular",
       "person": "yo",
       "answer": "mi",
-      "table": "posesivos"
+      "table": "posesivos",
+      "wrong": {
+        "me": {
+          "en": "Me is an object pronoun (me gusta). The possessive for yo is mi: mi libro.",
+          "es": "Me es un pronombre de objeto (me gusta). El posesivo de yo es mi: mi libro."
+        },
+        "mío": {
+          "en": "Mío is the stressed form, used after the noun or alone. Before the noun, use the short form: mi.",
+          "es": "Mío es la forma tónica, que se usa después del sustantivo o sola. Delante del sustantivo se usa la forma corta: mi."
+        }
+      }
     },
     {
       "id": "pos-form-02",
@@ -693,7 +703,17 @@
       "verb": "Masculino plural",
       "person": "tú",
       "answer": "tus",
-      "table": "posesivos"
+      "table": "posesivos",
+      "wrong": {
+        "tuyos": {
+          "en": "Tuyos is the stressed form, used after the noun or alone. Before the noun, use the short form: tus.",
+          "es": "Tuyos es la forma tónica, que se usa después del sustantivo o sola. Delante del sustantivo se usa la forma corta: tus."
+        },
+        "tuses": {
+          "en": "The short possessive adds only -s in the plural: tus.",
+          "es": "El posesivo corto añade solo -s en plural: tus."
+        }
+      }
     },
     {
       "id": "pos-form-03",
@@ -701,7 +721,17 @@
       "verb": "Femenino singular",
       "person": "él/ella/usted",
       "answer": "su",
-      "table": "posesivos"
+      "table": "posesivos",
+      "wrong": {
+        "suyo": {
+          "en": "Suyo is the stressed form, used after the noun or alone. Before the noun, use the short form: su.",
+          "es": "Suyo es la forma tónica, que se usa después del sustantivo o sola. Delante del sustantivo se usa la forma corta: su."
+        },
+        "suya": {
+          "en": "Suya is the stressed form, used after the noun or alone. Before the noun, use the short form: su.",
+          "es": "Suya es la forma tónica, que se usa después del sustantivo o sola. Delante del sustantivo se usa la forma corta: su."
+        }
+      }
     },
     {
       "id": "pos-form-04",
@@ -709,7 +739,17 @@
       "verb": "Masculino singular",
       "person": "nosotros",
       "answer": "nuestro",
-      "table": "posesivos"
+      "table": "posesivos",
+      "wrong": {
+        "nosotros": {
+          "en": "Nosotros is the subject pronoun (we). The possessive is nuestro: nuestro libro.",
+          "es": "Nosotros es el pronombre de sujeto (we). El posesivo es nuestro: nuestro libro."
+        },
+        "nuestre": {
+          "en": "Nuestro has only four forms (nuestro, nuestra, nuestros, nuestras). There is no -e form: nuestro.",
+          "es": "Nuestro solo tiene cuatro formas (nuestro, nuestra, nuestros, nuestras). No existe una forma en -e: nuestro."
+        }
+      }
     },
     {
       "id": "pos-form-05",
@@ -717,7 +757,17 @@
       "verb": "Femenino singular",
       "person": "nosotros",
       "answer": "nuestra",
-      "table": "posesivos"
+      "table": "posesivos",
+      "wrong": {
+        "nosotras": {
+          "en": "Nosotras is the subject pronoun (we, feminine). The possessive is nuestra: nuestra casa.",
+          "es": "Nosotras es el pronombre de sujeto (we, femenino). El posesivo es nuestra: nuestra casa."
+        },
+        "nuestre": {
+          "en": "Nuestro has only four forms (nuestro, nuestra, nuestros, nuestras). There is no -e form: nuestra.",
+          "es": "Nuestro solo tiene cuatro formas (nuestro, nuestra, nuestros, nuestras). No existe una forma en -e: nuestra."
+        }
+      }
     },
     {
       "id": "pos-form-06",
@@ -725,7 +775,17 @@
       "verb": "Femenino plural",
       "person": "nosotros",
       "answer": "nuestras",
-      "table": "posesivos"
+      "table": "posesivos",
+      "wrong": {
+        "nosotras": {
+          "en": "Nosotras is the subject pronoun (we, feminine). The possessive is nuestras: nuestras casas.",
+          "es": "Nosotras es el pronombre de sujeto (we, femenino). El posesivo es nuestras: nuestras casas."
+        },
+        "nuestres": {
+          "en": "Nuestro has only four forms (nuestro, nuestra, nuestros, nuestras). There is no -es form: nuestras.",
+          "es": "Nuestro solo tiene cuatro formas (nuestro, nuestra, nuestros, nuestras). No existe una forma en -es: nuestras."
+        }
+      }
     },
     {
       "id": "pos-form-07",
@@ -733,7 +793,17 @@
       "verb": "Masculino plural",
       "person": "ellos/ellas/ustedes",
       "answer": "sus",
-      "table": "posesivos"
+      "table": "posesivos",
+      "wrong": {
+        "suyos": {
+          "en": "Suyos is the stressed form, used after the noun or alone. Before the noun, use the short form: sus.",
+          "es": "Suyos es la forma tónica, que se usa después del sustantivo o sola. Delante del sustantivo se usa la forma corta: sus."
+        },
+        "ellos": {
+          "en": "Ellos is the subject pronoun (they). The possessive for ellos, ellas and ustedes is sus: sus libros.",
+          "es": "Ellos es el pronombre de sujeto (they). El posesivo de ellos, ellas y ustedes es sus: sus libros."
+        }
+      }
     },
     {
       "id": "pos-form-08",
@@ -741,7 +811,17 @@
       "verb": "Femenino singular",
       "person": "yo",
       "answer": "mía",
-      "table": "posesivos-tonicos"
+      "table": "posesivos-tonicos",
+      "wrong": {
+        "mi": {
+          "en": "Mi is the short form, used before the noun. The stressed form, after the noun, is mía: una amiga mía.",
+          "es": "Mi es la forma corta, que se usa delante del sustantivo. La forma tónica, después del sustantivo, es mía: una amiga mía."
+        },
+        "mío": {
+          "en": "Mío is masculine. With a feminine noun, the stressed form is mía: una amiga mía.",
+          "es": "Mío es masculino. Con un sustantivo femenino, la forma tónica es mía: una amiga mía."
+        }
+      }
     },
     {
       "id": "pos-form-09",
@@ -749,7 +829,17 @@
       "verb": "Masculino singular",
       "person": "tú",
       "answer": "tuyo",
-      "table": "posesivos-tonicos"
+      "table": "posesivos-tonicos",
+      "wrong": {
+        "tu": {
+          "en": "Tu is the short form, used before the noun. The stressed form, after the noun, is tuyo: un amigo tuyo.",
+          "es": "Tu es la forma corta, que se usa delante del sustantivo. La forma tónica, después del sustantivo, es tuyo: un amigo tuyo."
+        },
+        "tuio": {
+          "en": "The sound is written with y: tuyo.",
+          "es": "El sonido se escribe con y: tuyo."
+        }
+      }
     },
     {
       "id": "pos-form-10",
@@ -757,7 +847,17 @@
       "verb": "Masculino plural",
       "person": "él/ella/usted",
       "answer": "suyos",
-      "table": "posesivos-tonicos"
+      "table": "posesivos-tonicos",
+      "wrong": {
+        "sus": {
+          "en": "Sus is the short form, used before the noun. The stressed form, after the noun, is suyos: unos amigos suyos.",
+          "es": "Sus es la forma corta, que se usa delante del sustantivo. La forma tónica, después del sustantivo, es suyos: unos amigos suyos."
+        },
+        "suios": {
+          "en": "The sound is written with y: suyos.",
+          "es": "El sonido se escribe con y: suyos."
+        }
+      }
     },
     {
       "id": "pos-form-11",
@@ -765,7 +865,17 @@
       "verb": "Femenino plural",
       "person": "ellos/ellas/ustedes",
       "answer": "suyas",
-      "table": "posesivos-tonicos"
+      "table": "posesivos-tonicos",
+      "wrong": {
+        "sus": {
+          "en": "Sus is the short form, used before the noun. The stressed form, after the noun, is suyas: unas amigas suyas.",
+          "es": "Sus es la forma corta, que se usa delante del sustantivo. La forma tónica, después del sustantivo, es suyas: unas amigas suyas."
+        },
+        "suias": {
+          "en": "The sound is written with y: suyas.",
+          "es": "El sonido se escribe con y: suyas."
+        }
+      }
     },
     {
       "id": "pos-form-12",
@@ -773,7 +883,17 @@
       "verb": "Femenino singular",
       "person": "ellos/ellas/ustedes",
       "answer": "suya",
-      "table": "posesivos-tonicos"
+      "table": "posesivos-tonicos",
+      "wrong": {
+        "su": {
+          "en": "Su is the short form, used before the noun. The stressed form, after the noun, is suya: una amiga suya.",
+          "es": "Su es la forma corta, que se usa delante del sustantivo. La forma tónica, después del sustantivo, es suya: una amiga suya."
+        },
+        "suia": {
+          "en": "The sound is written with y: suya.",
+          "es": "El sonido se escribe con y: suya."
+        }
+      }
     },
     {
       "id": "pos-why-01",
