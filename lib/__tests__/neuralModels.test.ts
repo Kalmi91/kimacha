@@ -202,6 +202,115 @@ describe('better voice: state at start', () => {
     expect(mockLoaded).toHaveLength(1); // one attempt, the first voice of the pair
   });
 
+  it('a failed load is tried again after the retry wait, and the Settings state says so meanwhile', async () => {
+    jest.useFakeTimers({ doNotFake: ['setTimeout', 'setImmediate', 'nextTick'] });
+    try {
+      for (const key of PIPER_MODEL_KEYS) installModel(key);
+      mockFailLoad.add('es_MX-claude-high');
+      const m = load();
+      await m.startNeural();
+      m.neuralEngineFor('es');
+      await flush();
+      expect(m.getNeuralState().issues.es).toMatchObject({ engine: 'piper', kind: 'load-failed' });
+      expect(mockLoaded).toHaveLength(1);
+      jest.setSystemTime(Date.now() + 31000);
+      mockFailLoad.clear();
+      m.neuralEngineFor('es'); // the wait is over: a new attempt
+      await flush();
+      expect(m.neuralEngineFor('es')).toBe('piper');
+      expect(m.getNeuralState().issues.es).toBeUndefined();
+    } finally {
+      jest.useRealTimers();
+    }
+  });
+
+  it('a chosen engine that was too slow is skipped while the other one is loaded, for ten minutes, and the state says so', async () => {
+    jest.useFakeTimers({ doNotFake: ['setTimeout', 'setImmediate', 'nextTick'] });
+    try {
+      for (const key of [...PIPER_MODEL_KEYS, 'kokoro']) installModel(key);
+      const m = load();
+      await m.startNeural();
+      await m.setNeuralEngine('es', 'kokoro');
+      m.neuralEngineFor('es');
+      await flush();
+      expect(m.neuralEngineFor('es')).toBe('kokoro');
+      expect(m.neuralFallbackEngine('es', 'kokoro')).toBeNull(); // Piper is freed while Kokoro is chosen: it loads now
+      await flush();
+      expect(m.neuralFallbackEngine('es', 'kokoro')).toBe('piper'); // loaded, the next hand-over is immediate
+      m.noteNeuralTrouble('es', 'kokoro', 'slow');
+      expect(m.getNeuralState().issues.es).toMatchObject({ engine: 'kokoro', kind: 'slow' });
+      expect(m.neuralEngineFor('es')).toBe('piper'); // no ten-second wait on every speech
+      jest.setSystemTime(Date.now() + 11 * 60 * 1000);
+      expect(m.neuralEngineFor('es')).toBe('kokoro'); // tried again later
+      await m.setNeuralEngine('es', 'piper');
+      expect(m.getNeuralState().issues.es).toBeUndefined();
+    } finally {
+      jest.useRealTimers();
+    }
+  });
+
+  it('Kokoro chosen but its download was cut off: Piper is loaded in its place at the first use, and the phone is not needed', async () => {
+    for (const key of PIPER_MODEL_KEYS) installModel(key);
+    mockFs.set(`${TTS}/${NEURAL_MODELS.kokoro.dir}/half`, 'x'); // a folder without its .ok marker
+    mockFs.set(`${TTS}/settings.json`, JSON.stringify({ enabled: true, engines: { es: 'kokoro', en: 'kokoro', hu: 'piper', de: 'piper' } }));
+    const m = load();
+    await m.startNeural();
+    expect(m.neuralEngineFor('es')).toBeNull(); // the first use starts the load
+    await flush();
+    expect(m.neuralEngineFor('es')).toBe('piper');
+    expect(mockLoaded.every(entry => entry.includes('es_MX'))).toBe(true);
+  });
+
+  it('an error counts only when it happens twice in a row, a slow engine at once, and an engine that spoke clears it', async () => {
+    for (const key of [...PIPER_MODEL_KEYS, 'kokoro']) installModel(key);
+    mockFs.set(`${TTS}/settings.json`, JSON.stringify({ enabled: true, engines: { es: 'kokoro', en: 'piper', hu: 'piper', de: 'piper' } }));
+    const m = load();
+    await m.startNeural();
+    m.noteNeuralTrouble('es', 'kokoro', 'failed');
+    expect(m.getNeuralState().issues.es).toBeUndefined(); // one-off
+    m.noteNeuralOk('es', 'kokoro');
+    m.noteNeuralTrouble('es', 'kokoro', 'failed');
+    expect(m.getNeuralState().issues.es).toBeUndefined(); // the counter was reset by the success
+    m.noteNeuralTrouble('es', 'kokoro', 'failed');
+    expect(m.getNeuralState().issues.es).toMatchObject({ kind: 'failed' });
+    m.noteNeuralOk('es', 'kokoro');
+    expect(m.getNeuralState().issues.es).toBeUndefined(); // recovered: no stale warning
+    m.noteNeuralTrouble('es', 'kokoro', 'slow');
+    expect(m.getNeuralState().issues.es).toMatchObject({ kind: 'slow' });
+  });
+
+  it('a stand-in that fails to load is reported, only one language keeps a stand-in, and releaseStandIns drops it', async () => {
+    for (const key of [...PIPER_MODEL_KEYS, 'kokoro']) installModel(key);
+    mockFs.set(`${TTS}/settings.json`, JSON.stringify({ enabled: true, engines: { es: 'kokoro', en: 'kokoro', hu: 'piper', de: 'piper' } }));
+    const m = load();
+    await m.startNeural();
+    m.neuralEngineFor('es');
+    m.neuralEngineFor('en');
+    await flush();
+    m.neuralFallbackEngine('es', 'kokoro');
+    await flush();
+    expect(m.neuralFallbackEngine('es', 'kokoro')).toBe('piper');
+    m.neuralFallbackEngine('en', 'kokoro'); // the speaking language changes: es loses its stand-in
+    await flush();
+    expect(mockPairReleased).toContain('es:piper');
+    expect(m.neuralFallbackEngine('en', 'kokoro')).toBe('piper');
+    await m.releaseStandIns();
+    expect(mockPairReleased).toContain('en:piper');
+    mockFailLoad.add('en_US-john-medium');
+    m.neuralFallbackEngine('en', 'kokoro');
+    await flush();
+    expect(m.getNeuralState().issues.en).toMatchObject({ engine: 'piper', kind: 'standin-failed' });
+  });
+
+  it('trouble of the stand-in engine is not reported as the chosen voice, and Hungarian has no fallback', async () => {
+    for (const key of PIPER_MODEL_KEYS) installModel(key);
+    const m = load();
+    await m.startNeural();
+    m.noteNeuralTrouble('es', 'kokoro', 'failed'); // Piper is chosen
+    expect(m.getNeuralState().issues.es).toBeUndefined();
+    expect(m.neuralFallbackEngine('hu', 'piper')).toBeNull();
+  });
+
   it('a download that ran lets the failed language try again at its next use', async () => {
     for (const key of PIPER_MODEL_KEYS) installModel(key);
     mockFailLoad.add('es_MX-claude-high');

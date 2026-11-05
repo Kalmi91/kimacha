@@ -20,6 +20,28 @@ export interface NeuralSpeakOptions {
   rate?: number;
   onDone?: () => void;
   onStopped?: () => void;
+  /**
+   * The first audio chunk must be there within this many ms, else the speech gives up (rejects with a
+   * NeuralSlowError, the generation is cancelled) and the caller hands the text to the next level. It also
+   * bounds the wait for an engine that is still busy with a cancelled generation.
+   */
+  firstChunkTimeoutMs?: number;
+}
+
+/** The engine is still busy with the generation the learner's own cut left behind: not the engine's fault. */
+export class NeuralBusyError extends Error {
+  constructor() {
+    super('neural voice busy');
+    this.name = 'NeuralBusyError';
+  }
+}
+
+/** The engine did not produce audio in time (a slow phone, a busy engine): the caller hands over to the next level. */
+export class NeuralSlowError extends Error {
+  constructor(message = 'neural voice too slow') {
+    super(message);
+    this.name = 'NeuralSlowError';
+  }
 }
 
 export interface NeuralTimings {
@@ -41,6 +63,8 @@ interface ActiveRun {
   engine: StreamingTtsEngine;
   controller: TtsStreamController | null;
   timer: ReturnType<typeof setTimeout> | null;
+  /** The time limit for the first chunk. */
+  slowTimer: ReturnType<typeof setTimeout> | null;
   finished: boolean;
   onStopped?: () => void;
   /** Settles when generateSpeechStream has returned (the controller exists then) or failed. */
@@ -50,6 +74,10 @@ interface ActiveRun {
 }
 let active: ActiveRun | null = null;
 let runCounter = 0;
+// The generations the native side has not finished yet, per engine: a cancel only takes effect at the next chunk,
+// so an engine can still be busy after its speech was cut. Only a speech on the SAME engine waits for it; another
+// engine (the hand-over from a slow Kokoro to Piper) starts at once.
+const generating = new Map<StreamingTtsEngine, Promise<void>>();
 // The native side has one PCM player per engine, and stopping is asynchronous (cancel, then the player
 // release). Every release goes through this chain, and a new speech waits for it: a stopPcmPlayer that lands
 // after the next startPcmPlayer leaves the new speech without a player ("PCM player not initialized").
@@ -193,6 +221,7 @@ function stopActive(): Promise<void> {
   if (run) {
     active = null;
     if (run.timer) clearTimeout(run.timer);
+    if (run.slowTimer) clearTimeout(run.slowTimer);
     const wasInFlight = !run.finished;
     run.finished = true;
     stopping = stopping.then(async () => {
@@ -209,7 +238,6 @@ function stopActive(): Promise<void> {
         // player already released
       }
       if (wasInFlight) run.onStopped?.();
-      await settledOrAfter(run.ended, NATIVE_END_WAIT_MS);
     });
   }
   return stopping;
@@ -236,10 +264,21 @@ export async function speakNeural(
 
   runCounter += 1;
   const myRun = runCounter;
+  const budgetStart = now(); // one time limit per speech: the wait for a busy engine counts against it
   await stopActive();
   if (myRun !== runCounter) return { firstChunkMs: -1, generatedMs: 0, audioMs: 0, peak: 0 }; // a newer speech or a stop won
 
-  const run: ActiveRun = { engine, controller: null, timer: null, finished: false, onStopped: options.onStopped, started: Promise.resolve(), ended: Promise.resolve() };
+  // an earlier generation of this engine that is still running native-side (its cancel lands at the next chunk)
+  const busy = generating.get(engine);
+  if (busy) {
+    await settledOrAfter(busy, options.firstChunkTimeoutMs ?? NATIVE_END_WAIT_MS);
+    if (myRun !== runCounter) return { firstChunkMs: -1, generatedMs: 0, audioMs: 0, peak: 0 };
+    if (generating.get(engine) === busy) throw new NeuralBusyError();
+  }
+  const budgetLeft = options.firstChunkTimeoutMs === undefined ? undefined : options.firstChunkTimeoutMs - (now() - budgetStart);
+  if (budgetLeft !== undefined && budgetLeft <= 0) throw new NeuralBusyError();
+
+  const run: ActiveRun = { engine, controller: null, timer: null, slowTimer: null, finished: false, onStopped: options.onStopped, started: Promise.resolve(), ended: Promise.resolve() };
   active = run;
 
   const t0 = now();
@@ -265,6 +304,7 @@ export async function speakNeural(
     const fail = (err: unknown) => {
       if (run.finished) return;
       run.finished = true;
+      if (run.slowTimer) clearTimeout(run.slowTimer);
       if (active === run) active = null;
       releasePlayer(engine);
       reject(err instanceof Error ? err : new Error(String(err)));
@@ -275,6 +315,19 @@ export async function speakNeural(
       endNative = resolveEnded;
     });
 
+    generating.set(engine, run.ended);
+    void run.ended.then(() => {
+      if (generating.get(engine) === run.ended) generating.delete(engine);
+    });
+    if (budgetLeft !== undefined) {
+      run.slowTimer = setTimeout(() => {
+        if (run.finished || firstChunkMs >= 0) return;
+        console.log(`[neural] ${lang}/${voice.id} no audio after ${options.firstChunkTimeoutMs} ms, handing over`);
+        // the cancel can only go to a generation that has started (as in stopActive)
+        void run.started.then(() => run.engine.cancelSpeechStream()).catch(() => {});
+        fail(new NeuralSlowError());
+      }, budgetLeft);
+    }
     run.started = generateWhenFree(
         run,
         text,
@@ -283,6 +336,10 @@ export async function speakNeural(
           onChunk: chunk => {
             if (run.finished) return;
             if (firstChunkMs < 0) firstChunkMs = now() - t0;
+            if (run.slowTimer) {
+              clearTimeout(run.slowTimer);
+              run.slowTimer = null;
+            }
             // FB544/545: the Piper voices hiss in the pauses and click at the edges; Kokoro is clean
             const samples = voice.engine === 'piper' ? Array.from(cleanPcm(Float32Array.from(chunk.samples), sampleRate)) : chunk.samples;
             samplesTotal += samples.length;

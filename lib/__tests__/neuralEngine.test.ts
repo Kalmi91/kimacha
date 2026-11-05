@@ -11,7 +11,7 @@ const mockPlayers: any[] = [];
 const mockCreatePlayer = jest.fn();
 jest.mock('expo-audio', () => ({ createAudioPlayer: (...args: unknown[]) => mockCreatePlayer(...args) }), { virtual: true });
 
-import { isNeuralReady, loadNeuralVoice, releaseNeural, speakNeural, stopNeural } from '../neuralTts';
+import { NeuralSlowError, isNeuralReady, loadNeuralVoice, releaseNeural, speakNeural, stopNeural } from '../neuralTts';
 import { playPackFile, stopPack } from '../packAudio';
 import { KOKORO_VOICES, PIPER_VOICES } from '../neuralVoices';
 
@@ -360,7 +360,7 @@ describe('neural engines: a new request while the native generation is still run
     expect(onDone).toHaveBeenCalledTimes(1);
   });
 
-  it('a generation whose end never comes does not block the speech for ever: the wait has a limit, then the busy engine is asked again for a while', async () => {
+  it('a generation whose end never comes does not block the speech for ever: the wait has a limit, then the speech gives up so the caller hands over', async () => {
     jest.useFakeTimers();
     try {
       const { engine, started } = nativeEngine({ genMs: 0, neverEnds: true });
@@ -374,10 +374,78 @@ describe('neural engines: a new request while the native generation is still run
       await jest.advanceTimersByTimeAsync(29000);
       expect(engine.generateSpeechStream).toHaveBeenCalledTimes(1); // still waiting for the end of 'uno'
       await jest.advanceTimersByTimeAsync(2000);
-      expect(engine.generateSpeechStream.mock.calls.length).toBeGreaterThan(1); // the limit passed: it tries
-      await jest.advanceTimersByTimeAsync(8000);
-      expect(await second).toContain('already in progress'); // and in the end the caller still gets its fallback
+      expect(await second).toContain('busy'); // the limit passed: the caller still gets its fallback
       expect(started).toEqual(['uno']);
+    } finally {
+      jest.useRealTimers();
+    }
+  });
+});
+
+describe('neural engines: the time limit and the hand-over to another engine', () => {
+  it('the limit is one budget per speech: the wait for a busy engine counts, and it is NeuralBusyError, not slow', async () => {
+    jest.useFakeTimers();
+    try {
+      const { engine, started } = nativeEngine({ genMs: 20000 });
+      mockCreate.mockImplementation(async () => engine);
+      const voice = PIPER_VOICES.es[0];
+      await loadNeuralVoice(voice, 'es', '/p');
+      void speakNeural('uno', 'es', voice).catch(() => {});
+      await jest.advanceTimersByTimeAsync(10);
+      stopNeural(); // the learner's cut: the generation runs on native-side
+      const t0 = Date.now();
+      const second = speakNeural('dos', 'es', voice, { firstChunkTimeoutMs: 4000 }).then(() => 'spoke', err => err);
+      await jest.advanceTimersByTimeAsync(4100);
+      const err = await second;
+      expect(err.name).toBe('NeuralBusyError');
+      expect(err).not.toBeInstanceOf(NeuralSlowError);
+      expect(Date.now() - t0).toBeLessThan(4500); // not 4 s of waiting plus 4 s of timer
+      expect(started).toEqual(['uno']);
+    } finally {
+      jest.useRealTimers();
+    }
+  });
+
+  it('an engine that gives no audio within the limit rejects with NeuralSlowError, cancels, and does not hold up another engine', async () => {
+    jest.useFakeTimers();
+    try {
+      const slow = nativeEngine({ genMs: 20000 }); // Kokoro on a slow phone: one chunk after 20 s
+      const fast = nativeEngine({ genMs: 50 });
+      const engines = [slow.engine, fast.engine];
+      mockCreate.mockImplementation(async () => engines.shift());
+      const kokoro = KOKORO_VOICES.es[0];
+      const piper = PIPER_VOICES.es[0];
+      await loadNeuralVoice(kokoro, 'es', '/k');
+      await loadNeuralVoice(piper, 'es', '/p');
+      const first = speakNeural('uno', 'es', kokoro, { firstChunkTimeoutMs: 5000 }).then(() => 'spoke', err => err);
+      await jest.advanceTimersByTimeAsync(5100);
+      const err = await first;
+      expect(err).toBeInstanceOf(NeuralSlowError);
+      expect(slow.engine.cancelSpeechStream).toHaveBeenCalled();
+      const onDone = jest.fn();
+      const second = speakNeural('uno', 'es', piper, { firstChunkTimeoutMs: 5000, onDone }); // the hand-over
+      await jest.advanceTimersByTimeAsync(100);
+      await second;
+      expect(fast.started).toEqual(['uno']); // started at once, not after the slow generation's 20 s
+      await jest.advanceTimersByTimeAsync(1000);
+      expect(onDone).toHaveBeenCalledTimes(1);
+    } finally {
+      jest.useRealTimers();
+    }
+  });
+
+  it('audio that arrives in time cancels the limit', async () => {
+    jest.useFakeTimers();
+    try {
+      const { engine } = nativeEngine({ genMs: 100 });
+      mockCreate.mockImplementation(async () => engine);
+      const voice = PIPER_VOICES.es[0];
+      await loadNeuralVoice(voice, 'es', '/p');
+      const done = speakNeural('uno', 'es', voice, { firstChunkTimeoutMs: 5000 }).then(() => 'spoke', err => err);
+      await jest.advanceTimersByTimeAsync(200);
+      expect(await done).toBe('spoke');
+      await jest.advanceTimersByTimeAsync(6000);
+      expect(engine.cancelSpeechStream).not.toHaveBeenCalled();
     } finally {
       jest.useRealTimers();
     }

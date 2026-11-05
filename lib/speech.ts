@@ -30,9 +30,9 @@
 import { AppState, Platform } from 'react-native';
 import * as Speech from 'expo-speech';
 import { speakNeural, stopNeural } from './neuralTts';
-import { neuralEngineFor, neuralPackFile, neuralSentenceFile, startNeural } from './neuralModels';
+import { neuralEngineFor, neuralFallbackEngine, neuralPackFile, neuralSentenceFile, noteNeuralOk, noteNeuralTrouble, releaseStandIns, startNeural } from './neuralModels';
 import { playPackFile, stopPack } from './packAudio';
-import { isPiperOnly, voiceFor, type NeuralLang, type VoiceGender } from './neuralVoices';
+import { isPiperOnly, neuralTimeLimitMs, voiceFor, type NeuralEngine, type NeuralLang, type VoiceGender } from './neuralVoices';
 import { getFastFallback, preferredGender } from './voicePreference';
 
 let voiceLanguages: Set<string> | null = null;
@@ -163,6 +163,7 @@ export function speak(text: string, locale: string, options: Speech.SpeechOption
   const viaPhone = () => {
     if (!hasVoiceFor(locale)) {
       missing.add(baseLanguage(locale));
+      options.onDone?.(); // nothing will speak: a read-aloud chain must not freeze here
       return;
     }
     const voice = voiceIdFor(locale);
@@ -245,17 +246,35 @@ function speakBetter(text: string, locale: string, opts: BetterOptions, phone: (
     stopPack();
     phone();
   };
+  // Level 2 and 2b: the chosen engine, then the other one if it is loaded. An engine that fails or gives no audio
+  // within its time limit (FB608/609: a slow Kokoro left silence) hands the same text on, the phone last.
+  const attempt = (engine: NeuralEngine, canHandOver: boolean) => {
+    speakNeural(text, lang, voiceFor(lang, engine, text, gender), {
+      rate: opts.rate,
+      onDone: opts.onDone,
+      onStopped: opts.onStopped,
+      firstChunkTimeoutMs: neuralTimeLimitMs(engine, text),
+    }).then(
+      timings => {
+        if (timings.firstChunkMs >= 0) noteNeuralOk(lang, engine);
+      },
+      err => {
+        // the learner's own cut generation still running is not the engine's fault: hand over, report nothing
+        const name = err instanceof Error ? err.name : '';
+        if (name !== 'NeuralBusyError') noteNeuralTrouble(lang, engine, name === 'NeuralSlowError' ? 'slow' : 'failed');
+        const next = canHandOver ? neuralFallbackEngine(lang, engine) : null;
+        if (next) attempt(next, false);
+        else toPhone();
+      },
+    );
+  };
   const viaEngine = () => {
     const now = neuralEngineFor(lang);
     if (!now) {
       toPhone();
       return;
     }
-    speakNeural(text, lang, voiceFor(lang, now, text, gender), {
-      rate: opts.rate,
-      onDone: opts.onDone,
-      onStopped: opts.onStopped,
-    }).catch(toPhone);
+    attempt(now, true);
   };
   if (pack) {
     playPackFile(pack, { rate: opts.rate, onDone: opts.onDone, onStopped: opts.onStopped, onFail: viaEngine });
@@ -301,9 +320,12 @@ export function stopSpeaking(): void {
 // it cannot keep speaking in the background anyway, and in the foreground the
 // next speak() starts with a clean slate. The root layout wires it up, following the usageTimer pattern.
 let appStateSub: { remove(): void } | null = null;
+let memorySub: { remove(): void } | null = null;
 
 export function watchAppStateForSpeech(): () => void {
   void startNeural(); // reads the better voice's settings and loads its engines (once per run)
+  memorySub?.remove();
+  memorySub = AppState.addEventListener('memoryWarning', () => void releaseStandIns());
   appStateSub?.remove();
   appStateSub = AppState.addEventListener('change', state => {
     stop();
@@ -312,6 +334,8 @@ export function watchAppStateForSpeech(): () => void {
   return () => {
     appStateSub?.remove();
     appStateSub = null;
+    memorySub?.remove();
+    memorySub = null;
   };
 }
 

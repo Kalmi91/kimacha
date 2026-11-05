@@ -12,6 +12,10 @@ jest.mock('../neuralModels', () => ({
   neuralPackFile: jest.fn(() => null),
   neuralSentenceFile: jest.fn(() => null),
   neuralEngineFor: jest.fn(() => null),
+  neuralFallbackEngine: jest.fn(() => null),
+  noteNeuralTrouble: jest.fn(),
+  noteNeuralOk: jest.fn(),
+  releaseStandIns: jest.fn(async () => {}),
 }));
 jest.mock('../neuralTts', () => ({
   speakNeural: jest.fn(async () => ({ firstChunkMs: 1, generatedMs: 2, audioMs: 3, peak: 0.5 })),
@@ -33,6 +37,9 @@ const speech = Speech as jest.Mocked<typeof Speech>;
 const packFile = models.neuralPackFile as jest.Mock;
 const sentenceFile = models.neuralSentenceFile as jest.Mock;
 const engineFor = models.neuralEngineFor as jest.Mock;
+const fallbackEngine = models.neuralFallbackEngine as jest.Mock;
+const noteTrouble = models.noteNeuralTrouble as jest.Mock;
+const noteOk = models.noteNeuralOk as jest.Mock;
 const speakNeural = engine.speakNeural as jest.Mock;
 const playPack = pack.playPackFile as jest.Mock;
 
@@ -44,6 +51,7 @@ beforeEach(() => {
   packFile.mockReturnValue(null);
   sentenceFile.mockReturnValue(null);
   engineFor.mockReturnValue(null);
+  fallbackEngine.mockReturnValue(null);
   speakNeural.mockResolvedValue({ firstChunkMs: 1, generatedMs: 2, audioMs: 3, peak: 0.5 });
 });
 
@@ -105,6 +113,62 @@ describe('speak(): the levels', () => {
     expect(pack.stopPack).toHaveBeenCalledTimes(1);
     expect((engine.stopNeural as jest.Mock).mock.invocationCallOrder[0]).toBeLessThan(speech.speak.mock.invocationCallOrder[0]);
     expect((pack.stopPack as jest.Mock).mock.invocationCallOrder[0]).toBeLessThan(speech.speak.mock.invocationCallOrder[0]);
+  });
+
+  it('every engine speech carries a time limit for its first audio, longer for Kokoro and for longer text', () => {
+    engineFor.mockReturnValue('kokoro');
+    speak('Hola', 'es-MX');
+    speak('Quiero otro café con leche, por favor, y también un vaso de agua fría.', 'es-MX');
+    const limits = speakNeural.mock.calls.map(c => c[3].firstChunkTimeoutMs);
+    expect(limits[0]).toBeGreaterThanOrEqual(4000);
+    expect(limits[1]).toBeGreaterThan(limits[0]);
+    expect(limits[1]).toBeLessThanOrEqual(9000);
+  });
+
+  it('a too-slow chosen engine hands over to the other engine if it is loaded, and a second failure to the phone', async () => {
+    const slow = Object.assign(new Error('neural voice too slow'), { name: 'NeuralSlowError' });
+    engineFor.mockReturnValue('kokoro');
+    fallbackEngine.mockImplementation((_lang: string, failed: string) => (failed === 'kokoro' ? 'piper' : null));
+    speakNeural.mockRejectedValueOnce(slow).mockRejectedValueOnce(new Error('piper down'));
+    speak('Quiero otro café con leche.', 'es-MX');
+    await flush();
+    expect(speakNeural).toHaveBeenCalledTimes(2);
+    expect(speakNeural.mock.calls[1][2].engine).toBe('piper');
+    expect(noteTrouble).toHaveBeenNthCalledWith(1, 'es', 'kokoro', 'slow');
+    expect(noteTrouble).toHaveBeenNthCalledWith(2, 'es', 'piper', 'failed');
+    expect(speech.speak).toHaveBeenCalledTimes(1); // the phone, last
+    expect(fallbackEngine).toHaveBeenCalledTimes(1); // the stand-in never hands on again
+  });
+
+  it('an engine that spoke clears its trouble; the learner\'s own cut (busy) is not reported at all', async () => {
+    engineFor.mockReturnValue('kokoro');
+    speak('Hola amigo', 'es-MX');
+    await flush();
+    expect(noteOk).toHaveBeenCalledWith('es', 'kokoro');
+    fallbackEngine.mockReturnValue('piper');
+    speakNeural.mockRejectedValueOnce(Object.assign(new Error('busy'), { name: 'NeuralBusyError' }));
+    speak('Hola amigo', 'es-MX');
+    await flush();
+    expect(noteTrouble).not.toHaveBeenCalled();
+    expect(speakNeural).toHaveBeenLastCalledWith('Hola amigo', 'es', expect.objectContaining({ engine: 'piper' }), expect.anything());
+  });
+
+  it('a language the phone has no voice for still ends the speech (onDone), so a read-aloud chain goes on', async () => {
+    (speech.getAvailableVoicesAsync as jest.Mock).mockResolvedValue([{ language: 'en-US' }]);
+    await loadVoices();
+    const onDone = jest.fn();
+    speak('a kutya', 'hu-HU', { onDone });
+    expect(onDone).toHaveBeenCalledTimes(1);
+  });
+
+  it('with no other engine loaded the slow engine hands straight to the phone', async () => {
+    engineFor.mockReturnValue('kokoro');
+    fallbackEngine.mockReturnValue(null);
+    speakNeural.mockRejectedValue(Object.assign(new Error('x'), { name: 'NeuralSlowError' }));
+    speak('Quiero otro café con leche.', 'es-MX');
+    await flush();
+    expect(speakNeural).toHaveBeenCalledTimes(1);
+    expect(speech.speak).toHaveBeenCalledWith('Quiero otro café con leche.', { language: 'es-MX' });
   });
 
   it('the engine going away between the levels goes straight to the phone', () => {

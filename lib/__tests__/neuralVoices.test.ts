@@ -227,3 +227,15 @@ describe('the speaker choice of Settings -> Voice', () => {
     expect([...PIPER_VOICES.es, ...PIPER_VOICES.en, ...PIPER_VOICES.hu].map(voiceName)).toEqual(['Claude', 'Ald', 'Kristin', 'John', 'Berta', 'Imre']);
   });
 });
+
+describe('neuralTimeLimitMs', () => {
+  it('grows with the text, is longer for Kokoro, and stays between the bounds', () => {
+    const { neuralTimeLimitMs } = require('../neuralVoices');
+    expect(neuralTimeLimitMs('kokoro', 'Hola')).toBe(4000);
+    expect(neuralTimeLimitMs('kokoro', 'x'.repeat(40))).toBe(5300);
+    expect(neuralTimeLimitMs('kokoro', 'x'.repeat(500))).toBe(9000);
+    expect(neuralTimeLimitMs('piper', 'Hola')).toBe(3000);
+    expect(neuralTimeLimitMs('piper', 'x'.repeat(500))).toBe(7000);
+    expect(neuralTimeLimitMs('kokoro', 'x'.repeat(60))).toBeGreaterThan(neuralTimeLimitMs('piper', 'x'.repeat(60)));
+  });
+});

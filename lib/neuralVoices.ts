@@ -269,3 +269,14 @@ export function sentencePackFileFor(index: PackIndex | null, lang: NeuralLang, t
 export function formatMegabytes(bytes: number): string {
   return `${Math.round(bytes / 1048576)} MB`;
 }
+
+// How long a sentence engine may take to deliver its FIRST audio before lib/speech.ts hands the text to the
+// next level (Kálmán 2026-11-05, FB608/609: a slow Kokoro left the learner with silence). One sentence is one
+// chunk for both engines, so this is about the whole generation: measured on the loaded x86_64 emulator
+// Kokoro needs ~2 s for a 27 character sentence, and on a phone it runs at 1.3-2.4 x real time. The limit grows
+// with the text and is capped, so a long sentence is not given up too early and nobody waits half a minute.
+export function neuralTimeLimitMs(engine: NeuralEngine, text: string): number {
+  const length = text.trim().length;
+  const [base, perChar, min, max] = engine === 'kokoro' ? [2500, 70, 4000, 9000] : [2000, 40, 3000, 7000];
+  return Math.min(max, Math.max(min, base + length * perChar));
+}

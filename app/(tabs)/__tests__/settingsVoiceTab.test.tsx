@@ -47,6 +47,7 @@ const neuralState = (supported: boolean) => ({
   engines: { es: 'piper', en: 'piper', hu: 'piper' },
   installed: Object.fromEntries(PIPER_MODEL_KEYS.map(key => [key, true])),
   download: { running: false, percent: 0, phase: 'download', failed: [] },
+  issues: {},
 });
 
 describe('Settings: the General and Voice tabs', () => {
