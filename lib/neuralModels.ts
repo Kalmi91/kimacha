@@ -36,9 +36,10 @@ import {
   normalizeEngines,
   normalizeSpeakers,
   packFileFor,
-  requiredItems,
   sentencePackFileFor,
+  modelItems,
   modelKeysFor,
+  packSpaceNeeded,
   voicePair,
   type EngineChoice,
   type NeuralEngine,
@@ -59,6 +60,8 @@ export interface NeuralDownloadState {
   phase: 'download' | 'unpack';
   /** Item keys the last run could not fetch (NEURAL_MODELS keys, or 'pack'). */
   failed: string[];
+  /** Set when a recordings download did not start for lack of space: the free bytes it needs (archive + unpacked). */
+  lowSpace?: number;
 }
 
 /** Why the chosen sentence engine of a language is not the one speaking right now (Settings says it in words). */
@@ -138,6 +141,21 @@ async function readInstalled(fs: Fs): Promise<Record<string, boolean>> {
   installed[LEGACY_PACK_KEY] = await fs.exists(`${ttsDir(fs)}/${LEGACY_PACK_DIR}.ok`).catch(() => false);
   installed[LEGACY_SENTENCES_KEY] = await fs.exists(`${ttsDir(fs)}/${LEGACY_SENTENCE_PACK_DIR}.ok`).catch(() => false);
   return installed;
+}
+
+// A v2 pack that is installed (its .ok marker is there) replaces the v1 pack: the v1 folder and marker go, about 462 MB.
+// A v1 pack stays as long as its v2 is not installed (a failed or cancelled download leaves v1 playing).
+async function removeSupersededPacks(fs: Fs): Promise<void> {
+  for (const [key, legacyDir] of [[PACK_KEY, LEGACY_PACK_DIR], [SENTENCES_KEY, LEGACY_SENTENCE_PACK_DIR]] as const) {
+    try {
+      if (!(await fs.exists(itemMarker(fs, key)))) continue;
+      const legacy = `${ttsDir(fs)}/${legacyDir}`;
+      await fs.unlink(`${legacy}.ok`).catch(() => {});
+      await fs.unlink(legacy).catch(() => {});
+    } catch {
+      // keep what is there
+    }
+  }
 }
 
 async function readSettings(fs: Fs): Promise<Pick<NeuralState, 'enabled' | 'engines'> & { speakers: SpeakerChoices; fastFallback: boolean }> {
@@ -267,6 +285,7 @@ export async function startNeural(): Promise<void> {
     const { speakers, fastFallback, ...settings } = await readSettings(fs);
     setSpeakerChoices(speakers);
     setFastFallback(fastFallback);
+    await removeSupersededPacks(fs);
     update({ ...settings, installed: await readInstalled(fs), ready: true });
     await loadPackIndex(fs);
   } catch (e) {
@@ -423,13 +442,28 @@ export async function downloadNeural(keys?: string[]): Promise<void> {
   if (!state.supported || state.download.running) return;
   const fs = getFs();
   const { extractArchive } = require('react-native-sherpa-onnx/extraction') as typeof import('react-native-sherpa-onnx/extraction');
-  const jobs: Job[] = (keys ?? requiredItems(state.engines))
+  const jobs: Job[] = (keys ?? modelItems(state.engines))
     .filter(key => !state.installed[key])
     .map(key => {
       const url = itemUrl(key);
       return { key, url, file: `${ttsDir(fs)}/dl/${url.split('/').pop()}`, bytes: itemBytes(key) };
     });
   if (jobs.length === 0) return;
+  // The recordings are big (about 955 MB, twice that while unpacking): with too little free space nothing starts and the
+  // Settings row says how much is needed. A phone that cannot tell its free space just goes ahead.
+  const packNeed = packSpaceNeeded(jobs.map(job => job.key));
+  if (packNeed > 0) {
+    let free = Infinity;
+    try {
+      free = (await fs.getFSInfo()).freeSpace;
+    } catch {
+      // unknown: go ahead
+    }
+    if (free < packNeed) {
+      update({ download: { running: false, percent: 0, phase: 'download', failed: [], lowSpace: packNeed } });
+      return;
+    }
+  }
 
   let totalBytes = jobs.reduce((sum, job) => sum + job.bytes, 0);
   let doneBytes = 0;
@@ -486,6 +520,7 @@ export async function downloadNeural(keys?: string[]): Promise<void> {
     }
   }
 
+  await removeSupersededPacks(fs);
   update({ installed: await readInstalled(fs) });
   await loadPackIndex(fs);
   update({ download: { running: false, percent: failed.length ? state.download.percent : 100, phase: 'download', failed } });

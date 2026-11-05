@@ -466,7 +466,7 @@ def collect_sentences():
             for b in t.get("branches", []):
                 for x in b.get("say", []):
                     if isinstance(x.get(lang), str):
-                        add_story(lang, re.sub(r"s*_{3}", "", x[lang]).strip())
+                        add_story(lang, re.sub(r"_{3}", "", x[lang]).strip())
                 reply = (b.get("reply") or {}).get(lang)
                 add_story(lang, reply)
                 nxt = turns.get(b.get("next"))

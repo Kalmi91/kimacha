@@ -24,7 +24,6 @@ import {
   modelItems,
   modelKeysFor,
   packItems,
-  requiredItems,
   type NeuralEngine,
   type NeuralLang,
 } from '@/lib/neuralVoices';
@@ -42,10 +41,10 @@ export default function BetterVoiceRows({ Row }: { Row: RowComponent }) {
   const state = useNeuralState();
   if (!state.supported) return null;
 
-  // Before the voices are installed the first download fetches everything; after that the voice models and the
-  // recordings (both speakers) are separate, and the recordings only come with a tap on their own row.
+  // The Better voice download fetches the voice models only; the recordings (both speakers, optional) are a row of
+  // their own and only a tap there installs them, on a phone with no packs too.
   const usableNow = PIPER_MODEL_KEYS.every(key => state.installed[key]);
-  const items = usableNow ? modelItems(state.engines) : requiredItems(state.engines);
+  const items = modelItems(state.engines);
   const packs = packItems();
   const packsMissing = packs.filter(key => !state.installed[key]);
   const hasOlderRecordings = !!(state.installed[LEGACY_PACK_KEY] || state.installed[LEGACY_SENTENCES_KEY]);
@@ -53,11 +52,11 @@ export default function BetterVoiceRows({ Row }: { Row: RowComponent }) {
   const usable = usableNow;
   const { running, percent, phase } = state.download;
   const isPackKey = (key: string) => key === PACK_KEY || key === SENTENCES_KEY;
-  const failed = usableNow ? state.download.failed.filter(key => !isPackKey(key)) : state.download.failed;
+  const failed = state.download.failed.filter(key => !isPackKey(key));
   const packFailed = state.download.failed.filter(isPackKey);
   const langName = (code: NeuralLang) => languages.find(l => l.code === code)?.name ?? code;
   // Nothing downloads without a question that names the size (the phone may be on mobile data).
-  const confirmDownload = (bytes: number, go: () => void, message: (mb: string) => string = s.confirmMessage) => {
+  const confirmDownload = (bytes: number, go: () => void, message: (mb: string) => string = s.confirmModel) => {
     Alert.alert(s.confirmTitle, message(formatMegabytes(bytes)), [
       { text: t().feedback.cancel, style: 'cancel' },
       { text: s.confirmYes, onPress: go },
@@ -72,7 +71,7 @@ export default function BetterVoiceRows({ Row }: { Row: RowComponent }) {
     if (issue.engine !== state.engines[lang]) return null;
     return issue.kind === 'slow' ? s.issueSlow(engineName) : issue.kind === 'load-failed' ? s.issueLoad(engineName) : s.issueFailed(engineName);
   };
-  const askMissing = () => confirmDownload(missingBytes(items, state.installed), () => void downloadNeural(usableNow ? items : undefined), usableNow ? s.confirmModel : s.confirmMessage);
+  const askMissing = () => confirmDownload(missingBytes(items, state.installed), () => void downloadNeural(items), s.confirmModel);
   const askRecordings = () => confirmDownload(missingBytes(packs, state.installed), () => void downloadNeural(packs), s.confirmRecordings);
 
   const right = running ? (
@@ -110,11 +109,16 @@ export default function BetterVoiceRows({ Row }: { Row: RowComponent }) {
         </View>
         {right}
       </Row>
-      {usable && (packsMissing.length > 0 || running) && (
+      {packsMissing.length > 0 && (
         <Row>
           <View style={styles.labelBox}>
             <Text style={[styles.label, { color: colors.text }]}>{s.recordingsTitle}</Text>
             <Text style={[styles.hint, { color: colors.tabIconDefault }]}>{s.recordingsHint}</Text>
+            {!running && state.download.lowSpace ? (
+              <Text testID="settings-recordings-lowspace" style={[styles.hint, { color: colors.text }]}>
+                {s.recordingsLowSpace(formatMegabytes(state.download.lowSpace))}
+              </Text>
+            ) : null}
             {hasOlderRecordings && (
               <Text testID="settings-recordings-newer" style={[styles.hint, { color: colors.text }]}>
                 {s.recordingsNewer}

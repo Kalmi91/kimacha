@@ -233,6 +233,8 @@ export function modelKeysFor(lang: NeuralLang, engine: NeuralEngine): string[] {
   return [...new Set(voicePair(lang, engine).map(v => v.model))];
 }
 
+// requiredItems is the full set (models and both recordings packs). The Settings download of the better voice
+// itself fetches modelItems only; the recordings come from their own row (Kálmán: only his own tap installs them).
 // What the better voice needs on the phone: the word pack, the eight Piper models (the default engine, and
 // the only one of Hungarian and German), and the Kokoro model when a language chose Kokoro.
 // The sentence pack comes last (a late or failed download of it never delays the voice) and only with a URL.
@@ -249,6 +251,16 @@ export function modelItems(engines: EngineChoice): string[] {
 // The two recordings packs alone: only the Settings "Recordings" row fetches them on a phone that already has the voices.
 export function packItems(sentencePackUrl: string = SENTENCE_PACK_URL): string[] {
   return [PACK_KEY, ...(sentencePackUrl ? [SENTENCES_KEY] : [])];
+}
+
+// Free space a recordings download needs: the archive being fetched plus everything unpacked (the mp3 files barely
+// compress: measured 1.22-1.30 x the archive for the two v2 packs), counted as the largest archive plus all unpacked
+// parts, since each archive is deleted once it is unpacked.
+export const UNPACK_FACTOR = 1.3;
+export function packSpaceNeeded(keys: string[]): number {
+  const sizes = keys.filter(key => key === PACK_KEY || key === SENTENCES_KEY).map(itemBytes);
+  if (sizes.length === 0) return 0;
+  return Math.ceil(sizes.reduce((sum, bytes) => sum + bytes * UNPACK_FACTOR, 0) + Math.max(...sizes));
 }
 
 // The size built in for an item key (the two packs and the models).
