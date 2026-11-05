@@ -665,6 +665,12 @@
       "tense": {
         "from": "presente",
         "to": "imperfecto"
+      },
+      "wrong": {
+        "hay": {
+          "en": "Hay is in the present tense. This task asks for the imperfect: había.",
+          "es": "Hay está en presente. Esta tarea pide imperfecto: había."
+        }
       }
     },
     {
@@ -677,6 +683,16 @@
       "tense": {
         "from": "presente",
         "to": "imperfecto"
+      },
+      "wrong": {
+        "hay": {
+          "en": "Hay is in the present tense. This task asks for the imperfect: había.",
+          "es": "Hay está en presente. Esta tarea pide imperfecto: había."
+        },
+        "hubo": {
+          "en": "Hubo is in the preterite (indefinido). This task asks for the imperfect: había.",
+          "es": "Hubo está en pretérito indefinido. Esta tarea pide imperfecto: había."
+        }
       }
     },
     {
@@ -689,6 +705,12 @@
       "tense": {
         "from": "presente",
         "to": "indefinido"
+      },
+      "wrong": {
+        "hay": {
+          "en": "Hay is in the present tense. This task asks for the preterite (indefinido): hubo.",
+          "es": "Hay está en presente. Esta tarea pide pretérito indefinido: hubo."
+        }
       }
     },
     {
@@ -701,6 +723,16 @@
       "tense": {
         "from": "presente",
         "to": "indefinido"
+      },
+      "wrong": {
+        "había": {
+          "en": "Había is in the imperfect. This task asks for the preterite (indefinido): hubo.",
+          "es": "Había está en imperfecto. Esta tarea pide pretérito indefinido: hubo."
+        },
+        "hay": {
+          "en": "Hay is in the present tense. This task asks for the preterite (indefinido): hubo.",
+          "es": "Hay está en presente. Esta tarea pide pretérito indefinido: hubo."
+        }
       }
     },
     {
@@ -713,6 +745,16 @@
       "tense": {
         "from": "presente",
         "to": "futuro-simple"
+      },
+      "wrong": {
+        "hubo": {
+          "en": "Hubo is in the preterite (indefinido). This task asks for the simple future: habrá.",
+          "es": "Hubo está en pretérito indefinido. Esta tarea pide futuro simple: habrá."
+        },
+        "había": {
+          "en": "Había is in the imperfect. This task asks for the simple future: habrá.",
+          "es": "Había está en imperfecto. Esta tarea pide futuro simple: habrá."
+        }
       }
     },
     {
@@ -725,6 +767,16 @@
       "tense": {
         "from": "presente",
         "to": "futuro-simple"
+      },
+      "wrong": {
+        "hay": {
+          "en": "Hay is in the present tense. This task asks for the simple future: habrá.",
+          "es": "Hay está en presente. Esta tarea pide futuro simple: habrá."
+        },
+        "había": {
+          "en": "Había is in the imperfect. This task asks for the simple future: habrá.",
+          "es": "Había está en imperfecto. Esta tarea pide futuro simple: habrá."
+        }
       }
     },
     {
@@ -737,6 +789,12 @@
       "tense": {
         "from": "presente",
         "to": "condicional"
+      },
+      "wrong": {
+        "habrá": {
+          "en": "Habrá is the future: it says what will exist. \"Con más tiempo\" sets a condition, so the conditional is used: habría.",
+          "es": "Habrá es el futuro: dice lo que habrá. \"Con más tiempo\" pone una condición, y la condición pide el condicional: habría."
+        }
       }
     },
     {
@@ -749,6 +807,16 @@
       "tense": {
         "from": "presente",
         "to": "condicional"
+      },
+      "wrong": {
+        "habrá": {
+          "en": "Habrá is in the simple future. This task asks for the conditional: habría.",
+          "es": "Habrá está en futuro simple. Esta tarea pide condicional: habría."
+        },
+        "hay": {
+          "en": "Hay is in the present tense. This task asks for the conditional: habría.",
+          "es": "Hay está en presente. Esta tarea pide condicional: habría."
+        }
       }
     },
     {
@@ -761,6 +829,12 @@
       "tense": {
         "from": "presente",
         "to": "indefinido"
+      },
+      "wrong": {
+        "hay": {
+          "en": "Hay is in the present tense. This task asks for the preterite (indefinido): hubo.",
+          "es": "Hay está en presente. Esta tarea pide pretérito indefinido: hubo."
+        }
       }
     },
     {
@@ -773,6 +847,12 @@
       "tense": {
         "from": "presente",
         "to": "futuro-simple"
+      },
+      "wrong": {
+        "hubo": {
+          "en": "Hubo is the preterite, for something already finished. Here \"el lunes\" is the coming Monday, so the future is used: habrá.",
+          "es": "Hubo es el pretérito indefinido, para algo ya terminado. Aquí \"el lunes\" es el próximo lunes, así que se usa el futuro: habrá."
+        }
       }
     },
     {
@@ -785,6 +865,12 @@
       "tense": {
         "from": "presente",
         "to": "indefinido"
+      },
+      "wrong": {
+        "hay": {
+          "en": "Hay is in the present tense. This task asks for the preterite (indefinido): hubo.",
+          "es": "Hay está en presente. Esta tarea pide pretérito indefinido: hubo."
+        }
       }
     },
     {
@@ -797,6 +883,16 @@
       "tense": {
         "from": "presente",
         "to": "futuro-simple"
+      },
+      "wrong": {
+        "hubo": {
+          "en": "Hubo is in the preterite (indefinido). This task asks for the simple future: habrá.",
+          "es": "Hubo está en pretérito indefinido. Esta tarea pide futuro simple: habrá."
+        },
+        "había": {
+          "en": "Había is in the imperfect. This task asks for the simple future: habrá.",
+          "es": "Había está en imperfecto. Esta tarea pide futuro simple: habrá."
+        }
       }
     },
     {
