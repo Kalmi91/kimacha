@@ -702,7 +702,13 @@
       "verb": "forma",
       "person": "Hace dos años que ___ en este departamento. (vivir, yo, presente)",
       "answer": "vivo",
-      "table": "hace-desde-hace-formas"
+      "table": "hace-desde-hace-formas",
+      "wrong": {
+        "viví": {
+          "en": "Viví is in the preterite (indefinido). This task asks for the present tense: vivo.",
+          "es": "Viví está en pretérito indefinido. Esta tarea pide presente: vivo."
+        }
+      }
     },
     {
       "id": "hdh-form-02",
@@ -710,7 +716,13 @@
       "verb": "forma",
       "person": "Hace tres meses que Ana ___ en un banco. (trabajar, presente)",
       "answer": "trabaja",
-      "table": "hace-desde-hace-formas"
+      "table": "hace-desde-hace-formas",
+      "wrong": {
+        "trabajó": {
+          "en": "Trabajó is in the preterite (indefinido). This task asks for the present tense: trabaja.",
+          "es": "Trabajó está en pretérito indefinido. Esta tarea pide presente: trabaja."
+        }
+      }
     },
     {
       "id": "hdh-form-03",
@@ -718,7 +730,13 @@
       "verb": "forma",
       "person": "Hace un año que mis papás ___ en Puebla. (vivir, presente)",
       "answer": "viven",
-      "table": "hace-desde-hace-formas"
+      "table": "hace-desde-hace-formas",
+      "wrong": {
+        "vivieron": {
+          "en": "Vivieron is in the preterite (indefinido). This task asks for the present tense: viven.",
+          "es": "Vivieron está en pretérito indefinido. Esta tarea pide presente: viven."
+        }
+      }
     },
     {
       "id": "hdh-form-04",
@@ -726,7 +744,13 @@
       "verb": "forma",
       "person": "Mi hermano ___ inglés desde hace cinco años. (estudiar, presente)",
       "answer": "estudia",
-      "table": "hace-desde-hace-formas"
+      "table": "hace-desde-hace-formas",
+      "wrong": {
+        "estudió": {
+          "en": "Estudió is in the preterite (indefinido). This task asks for the present tense: estudia.",
+          "es": "Estudió está en pretérito indefinido. Esta tarea pide presente: estudia."
+        }
+      }
     },
     {
       "id": "hdh-form-05",
@@ -734,7 +758,13 @@
       "verb": "forma",
       "person": "Nosotros ___ en esta ciudad desde hace diez años. (vivir, presente)",
       "answer": "vivimos",
-      "table": "hace-desde-hace-formas"
+      "table": "hace-desde-hace-formas",
+      "wrong": {
+        "vivemos": {
+          "en": "With -ir verbs the nosotros ending is -imos, not -emos: vivimos.",
+          "es": "Con los verbos en -ir la terminación de nosotros es -imos, no -emos: vivimos."
+        }
+      }
     },
     {
       "id": "hdh-form-06",
@@ -742,7 +772,13 @@
       "verb": "forma",
       "person": "Mi papá ___ seis meses buscando trabajo. (llevar, presente)",
       "answer": "lleva",
-      "table": "hace-desde-hace-formas"
+      "table": "hace-desde-hace-formas",
+      "wrong": {
+        "llevo": {
+          "en": "Llevo is the yo form of llevar. The subject here is mi papá, so the verb takes the él form: lleva.",
+          "es": "Llevo es la forma yo de llevar. Aquí el sujeto es mi papá, así que el verbo va en la forma de él: lleva."
+        }
+      }
     },
     {
       "id": "hdh-form-07",
@@ -750,7 +786,17 @@
       "verb": "forma",
       "person": "Llevo dos años ___ en este banco. (trabajar)",
       "answer": "trabajando",
-      "table": "hace-desde-hace-formas"
+      "table": "hace-desde-hace-formas",
+      "wrong": {
+        "trabajado": {
+          "en": "Trabajado is the past participle. This task asks for the gerund: trabajando.",
+          "es": "Trabajado es el participio. Esta tarea pide el gerundio: trabajando."
+        },
+        "trabajar": {
+          "en": "Trabajar is the infinitive. This task asks for the gerund: trabajando.",
+          "es": "Trabajar es el infinitivo. Esta tarea pide el gerundio: trabajando."
+        }
+      }
     },
     {
       "id": "hdh-form-08",
@@ -758,7 +804,17 @@
       "verb": "forma",
       "person": "Luis y yo llevamos una hora ___ la cena. (preparar)",
       "answer": "preparando",
-      "table": "hace-desde-hace-formas"
+      "table": "hace-desde-hace-formas",
+      "wrong": {
+        "preparado": {
+          "en": "Preparado is the past participle. This task asks for the gerund: preparando.",
+          "es": "Preparado es el participio. Esta tarea pide el gerundio: preparando."
+        },
+        "preparar": {
+          "en": "Preparar is the infinitive. This task asks for the gerund: preparando.",
+          "es": "Preparar es el infinitivo. Esta tarea pide el gerundio: preparando."
+        }
+      }
     },
     {
       "id": "hdh-form-09",
@@ -766,7 +822,17 @@
       "verb": "forma",
       "person": "Mis papás ___ a Puebla hace una semana. (ir)",
       "answer": "fueron",
-      "table": "hace-desde-hace-formas"
+      "table": "hace-desde-hace-formas",
+      "wrong": {
+        "van": {
+          "en": "Van is in the present tense. This task asks for the preterite (indefinido): fueron.",
+          "es": "Van está en presente. Esta tarea pide pretérito indefinido: fueron."
+        },
+        "han ido": {
+          "en": "Han ido is in the present perfect. This task asks for the preterite (indefinido): fueron.",
+          "es": "Han ido está en pretérito perfecto. Esta tarea pide pretérito indefinido: fueron."
+        }
+      }
     },
     {
       "id": "hdh-form-10",
@@ -774,7 +840,17 @@
       "verb": "forma",
       "person": "Yo ___ este coche hace dos meses. (comprar)",
       "answer": "compré",
-      "table": "hace-desde-hace-formas"
+      "table": "hace-desde-hace-formas",
+      "wrong": {
+        "compro": {
+          "en": "Compro is in the present tense. This task asks for the preterite (indefinido): compré.",
+          "es": "Compro está en presente. Esta tarea pide pretérito indefinido: compré."
+        },
+        "he comprado": {
+          "en": "He comprado is in the present perfect. This task asks for the preterite (indefinido): compré.",
+          "es": "He comprado está en pretérito perfecto. Esta tarea pide pretérito indefinido: compré."
+        }
+      }
     },
     {
       "id": "hdh-form-11",
@@ -782,7 +858,13 @@
       "verb": "forma",
       "person": "Ana vive en México ___ 2019.",
       "answer": "desde",
-      "table": "hace-desde-hace-formas"
+      "table": "hace-desde-hace-formas",
+      "wrong": {
+        "hace": {
+          "en": "Hace goes with an amount of time (hace dos años). A starting year such as 2019 is introduced by desde: desde.",
+          "es": "Hace va con una cantidad de tiempo (hace dos años). Un año de inicio como 2019 se introduce con desde: desde."
+        }
+      }
     },
     {
       "id": "hdh-form-12",
@@ -790,7 +872,13 @@
       "verb": "forma",
       "person": "Mi hermano llegó ___ una hora.",
       "answer": "hace",
-      "table": "hace-desde-hace-formas"
+      "table": "hace-desde-hace-formas",
+      "wrong": {
+        "desde": {
+          "en": "Desde introduces a starting point (desde 2019). Here the time is an amount (\"una hora\") counted back from now, so the word is hace: hace.",
+          "es": "Desde introduce un punto de inicio (desde 2019). Aquí el tiempo es una cantidad (\"una hora\") contada hacia atrás desde ahora, así que la palabra es hace: hace."
+        }
+      }
     },
     {
       "kind": "why",
