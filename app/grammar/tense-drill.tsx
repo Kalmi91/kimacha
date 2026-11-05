@@ -29,6 +29,7 @@ import { useDiffStyles } from '@/lib/useDiffStyles';
 import CardShell from '@/components/learn/CardShell';
 import DockedAction, { DOCK_RESERVE, FAB_CLEARANCE } from '@/components/learn/DockedAction';
 import { useDockLift } from '@/components/learn/useDockLift';
+import { useWebKeyboardOpen, WEB_TYPING_PADDING } from '@/lib/webKeyboard';
 
 // The German tense drill (Grammar tab, German course): a verb, a person and a tense are shown ("er/sie/es · aufstehen",
 // Perfekt), the learner types the form with its pronoun ("er ist aufgestanden"). The verbs are the verbs of the German deck up to
@@ -69,6 +70,7 @@ export default function TenseDrillScreen() {
   const [seq, setSeq] = useState(0);
   const [dockH, setDockH] = useState(DOCK_RESERVE);
   const { dockLift } = useDockLift();
+  const webKeyboardOpen = useWebKeyboardOpen();
 
   const load = useCallback(async () => {
     const { target, source } = await refresh(['direction', 'strictAccents']);
@@ -234,9 +236,9 @@ export default function TenseDrillScreen() {
   const pct = round.length > 0 ? (index / round.length) * 100 : 0;
 
   return (
-    <KeyboardAvoidingView style={[styles.container, { backgroundColor: colors.background }]} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
+    <KeyboardAvoidingView style={[styles.container, { backgroundColor: colors.background }, webKeyboardOpen && WEB_TYPING_PADDING]} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
       {header}
-      <ProgressBar testID="tensedrill-segments" pct={pct} brutalStyle={styles.brutalBar} trackStyle={styles.progressTrack} trackColor={colors.card} fillStyle={styles.progressFill} fillColor={colors.successFill} />
+      {!webKeyboardOpen && <ProgressBar testID="tensedrill-segments" pct={pct} brutalStyle={styles.brutalBar} trackStyle={styles.progressTrack} trackColor={colors.card} fillStyle={styles.progressFill} fillColor={colors.successFill} />}
 
       <ScrollView
         style={styles.cardScroll}

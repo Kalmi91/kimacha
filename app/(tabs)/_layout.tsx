@@ -15,6 +15,7 @@ import { useBeta } from '@/lib/beta';
 import { useHasSession } from '@/lib/cloud/useHasSession';
 import { FeedbackHeaderProvider } from '@/lib/feedbackHeader';
 import { ScreenFeedbackFrame } from '@/lib/screenFeedback';
+import { useWebKeyboardOpen } from '@/lib/webKeyboard';
 
 type TabOptions = Exclude<NonNullable<ComponentProps<typeof Tabs.Screen>['options']>, (...args: never[]) => unknown>;
 type TabButtonProps = Parameters<NonNullable<TabOptions['tabBarButton']>>[0];
@@ -32,6 +33,7 @@ export default function TabLayout() {
   const showSpeak = useBeta('speechTab');
   // the weekly leaderboard needs a cloud account on web; the tab follows login and logout
   const hasSession = useHasSession();
+  const webKeyboardOpen = useWebKeyboardOpen();
 
   // On the brutalist palette the active icon sits on a filled square with an ink border.
   const tabIcon = (name: SymbolViewProps['name'], color: ColorValue, focused: boolean) => {
@@ -78,6 +80,8 @@ export default function TabLayout() {
           borderTopColor: colors.card,
           // On the brutalist palette a 2.5 px ink line at the top.
           ...(g.brutal ? { borderTopColor: g.ink, borderTopWidth: 2.5 } : null),
+          // tabBarHideOnKeyboard listens for Keyboard events, which the web build never gets.
+          ...(webKeyboardOpen ? { display: 'none' } : null),
         },
         // with the window resizing for the keyboard, a visible tab bar would
         // sit between the learn card's docked Check and the keys. It steps aside
