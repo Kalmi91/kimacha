@@ -74,6 +74,8 @@ import openC1 from '@/data/words-open/c1.json';
 import openNotes from '@/data/words-open/notes.json';
 // the grammar lesson a note points to (`o<order>` -> topic id), for the tappable row under the note.
 import openNoteLessons from '@/data/words-open/note-lessons.json';
+// the topic of the A1 cards (`o<order>` -> topic id, the ids of data/topics/en).
+import openTopicsA1 from '@/data/words-open/topics-a1.json';
 // image for some cards (Wikimedia Commons), shown under the (i) next to the explanation.
 import { wordImageFor, type WordImage } from '@/data/wordImages';
 
@@ -113,6 +115,9 @@ export interface PcicItem {
   note?: string;
   // id of the grammar topic the (i) note links to (data/words-open/note-lessons.json), only where the note has one.
   noteLesson?: string;
+  // topic id of the card (the ids of data/topics/en, data/words-open/topics-a1.json), A1 es cards only so far:
+  // the reading round takes the words of one topic (lib/practice/reading.ts).
+  topic?: string;
   // the card's image (with author and licence), only on the cards that have one.
   image?: WordImage;
 }
@@ -236,6 +241,7 @@ function itemsFromOpen(cards: OpenCard[]): PcicItem[] {
     hint: c.hint_en || undefined,
     note: (openNotes as Record<string, string>)[`o${c.order}`],
     noteLesson: (openNoteLessons as Record<string, string>)[`o${c.order}`],
+    topic: (openTopicsA1 as Record<string, string>)[`o${c.order}`],
     image: wordImageFor(`o${c.order}`),
     ...glossFields(GLOSS_OPEN, c.order),
   }));

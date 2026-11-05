@@ -108,6 +108,28 @@ describe('pickReadingWords', () => {
     expect(words.map((w) => w.itemId)).toEqual(['o1', 'o2', 'o12', 'o11', 'o14']);
   });
 
+  describe('one topic (E102, FB551)', () => {
+    const withTopics = (topics: Record<string, string>) => (id: string) => {
+      const it = findItem(id);
+      return it ? { ...it, topic: topics[id] } : undefined;
+    };
+
+    it('the topic with the most due words comes first, in due order, the next topic fills up to five', () => {
+      const d = deps({ findItem: withTopics({ o1: 'home', o2: 'pets', o3: 'pets', o4: 'pets', o5: 'home', o6: 'pets' }) });
+      expect(pickReadingWords(d, known(d)).map((w) => w.itemId)).toEqual(['o2', 'o3', 'o4', 'o6', 'o1']);
+    });
+
+    it('a topic with fewer than five words: the next topics fill the text up', () => {
+      const d = deps({ findItem: withTopics({ o1: 'a', o2: 'a', o3: 'b', o4: 'b', o5: 'c', o6: 'c' }) });
+      expect(pickReadingWords(d, known(d)).map((w) => w.itemId)).toEqual(['o1', 'o2', 'o3', 'o4', 'o5']);
+    });
+
+    it('the words of the previous round do not make their topic win again', () => {
+      const d = deps({ findItem: withTopics({ o1: 'a', o2: 'a', o3: 'a', o4: 'b', o5: 'b', o6: 'b' }), avoid: new Set(['o1', 'o2', 'o3']) });
+      expect(pickReadingWords(d, known(d)).map((w) => w.itemId)).toEqual(['o4', 'o5', 'o6', 'o1', 'o2']);
+    });
+  });
+
   it('the highlighted word is the one as written in its own sentence', () => {
     const [first] = pickReadingWords(deps(), known(deps()));
     expect(first).toMatchObject({ itemId: 'o1', before: 'La ', answer: 'casa', after: ' es grande.', sentence: 'La casa es grande.', translation: 'The house is big.', meaning: 'house' });

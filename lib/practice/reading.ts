@@ -128,6 +128,8 @@ export function pickReadingWords(deps: ReadingDeps, known: ReadonlySet<string>):
   const candidates = practiceCandidates(deps.cards, deps.today);
   const avoid = deps.avoid;
   const ordered = avoid && avoid.size > 0 ? [...candidates.filter((c) => !avoid.has(c.itemId)), ...candidates.filter((c) => avoid.has(c.itemId))] : candidates;
+  // The usable words (a sentence the learner fully knows, the same sentence once) in candidate order, each with its topic.
+  const usable: { word: ReadingWord; topic: string; avoided: boolean }[] = [];
   for (const card of ordered) {
     const item = deps.findItem(card.itemId);
     const word = item ? readingWordFor(item, deps.target, deps.info) : null;
@@ -136,7 +138,24 @@ export function pickReadingWords(deps: ReadingDeps, known: ReadonlySet<string>):
     const key = word.sentence.trim().toLowerCase();
     if (seen.has(key)) continue;
     seen.add(key);
-    out.push(word);
+    usable.push({ word, topic: item?.topic ?? '', avoided: !!avoid?.has(card.itemId) });
+  }
+  // One topic (E102, FB551): the topic with the most due words gives the text, so its sentences belong together;
+  // the next topics (same ranking) fill the text up to READING_WORDS. Words of the previous
+  // round do not count for the ranking. Cards with no topic form one group, i.e. the plain candidate order.
+  const groups = new Map<string, { first: number; fresh: number; words: ReadingWord[] }>();
+  usable.forEach((u, i) => {
+    const g = groups.get(u.topic) ?? { first: i, fresh: 0, words: [] };
+    if (!u.avoided) g.fresh++;
+    g.words.push(u.word);
+    groups.set(u.topic, g);
+  });
+  const ranked = [...groups.values()].sort((a, b) => b.fresh - a.fresh || a.first - b.first);
+  for (const g of ranked) {
+    for (const w of g.words) {
+      if (out.length >= READING_WORDS) break;
+      out.push(w);
+    }
     if (out.length >= READING_WORDS) break;
   }
   return out;
