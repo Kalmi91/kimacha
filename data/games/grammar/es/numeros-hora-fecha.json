@@ -555,18 +555,230 @@
         { "es": "es la una", "en": "it is one o'clock" }
       ]
     },
-    { "id": "nh-form-01", "kind": "form", "verb": "palabra", "person": "4", "answer": "cuatro", "table": "numeros" },
-    { "id": "nh-form-02", "kind": "form", "verb": "palabra", "person": "19", "answer": "diecinueve", "table": "numeros" },
-    { "id": "nh-form-03", "kind": "form", "verb": "palabra", "person": "21", "answer": "veintiuno", "table": "numeros" },
-    { "id": "nh-form-04", "kind": "form", "verb": "palabra", "person": "80", "answer": "ochenta", "table": "numeros" },
-    { "id": "nh-form-05", "kind": "form", "verb": "palabra", "person": "100", "answer": "cien", "table": "numeros" },
-    { "id": "nh-form-06", "kind": "form", "verb": "palabra", "person": "1:00", "answer": "la una", "table": "numeros" },
-    { "id": "nh-form-07", "kind": "form", "verb": "palabra", "person": "2:00", "answer": "las dos", "table": "numeros" },
-    { "id": "nh-form-08", "kind": "form", "verb": "palabra", "person": "3:30 (media)", "answer": "las tres y media", "table": "numeros" },
-    { "id": "nh-form-09", "kind": "form", "verb": "palabra", "person": "2:45 (menos)", "answer": "las tres menos cuarto", "table": "numeros" },
-    { "id": "nh-form-10", "kind": "form", "verb": "palabra", "person": "1 de enero", "answer": "el primero de enero", "table": "numeros" },
-    { "id": "nh-form-11", "kind": "form", "verb": "palabra", "person": "5 de mayo", "answer": "el cinco de mayo", "table": "numeros" },
-    { "id": "nh-form-12", "kind": "form", "verb": "palabra", "person": "21 años", "answer": "veintiún años", "table": "numeros" },
+    {
+      "id": "nh-form-01",
+      "kind": "form",
+      "verb": "palabra",
+      "person": "4",
+      "answer": "cuatro",
+      "table": "numeros",
+      "wrong": {
+        "quatro": {
+          "en": "Spanish writes this number with cu-: cuatro.",
+          "es": "El español escribe este número con cu-: cuatro."
+        },
+        "cuarto": {
+          "en": "Cuarto means \"fourth\" or \"quarter\". The number 4 is cuatro.",
+          "es": "Cuarto significa \"fourth\" o \"quarter\". El número 4 es cuatro."
+        }
+      }
+    },
+    {
+      "id": "nh-form-02",
+      "kind": "form",
+      "verb": "palabra",
+      "person": "19",
+      "answer": "diecinueve",
+      "table": "numeros",
+      "wrong": {
+        "dieznueve": {
+          "en": "From 16 to 19 the ten becomes dieci- and joins the unit: diecinueve.",
+          "es": "Del 16 al 19 el diez se convierte en dieci- y se une a la unidad: diecinueve."
+        },
+        "diecenueve": {
+          "en": "The ten in 16 to 19 is dieci- with i, not dice-: diecinueve.",
+          "es": "El diez de 16 a 19 es dieci- con i, no dice-: diecinueve."
+        }
+      }
+    },
+    {
+      "id": "nh-form-03",
+      "kind": "form",
+      "verb": "palabra",
+      "person": "21",
+      "answer": "veintiuno",
+      "table": "numeros",
+      "wrong": {
+        "veinteuno": {
+          "en": "From 21 to 29 the veinte becomes veinti- and joins the unit: veintiuno.",
+          "es": "Del 21 al 29 veinte se convierte en veinti- y se une a la unidad: veintiuno."
+        },
+        "veintuno": {
+          "en": "The prefix is veinti- with an i: veintiuno.",
+          "es": "El prefijo es veinti- con i: veintiuno."
+        }
+      }
+    },
+    {
+      "id": "nh-form-04",
+      "kind": "form",
+      "verb": "palabra",
+      "person": "80",
+      "answer": "ochenta",
+      "table": "numeros",
+      "wrong": {
+        "ochocientos": {
+          "en": "Ochocientos is 800. The number 80 is ochenta.",
+          "es": "Ochocientos es 800. El número 80 es ochenta."
+        },
+        "ochanta": {
+          "en": "The tens ending is -enta here: ochenta.",
+          "es": "La terminación de la decena aquí es -enta: ochenta."
+        }
+      }
+    },
+    {
+      "id": "nh-form-05",
+      "kind": "form",
+      "verb": "palabra",
+      "person": "100",
+      "answer": "cien",
+      "table": "numeros",
+      "wrong": {
+        "ciento": {
+          "en": "Ciento is used only before another number (ciento uno). Alone, the number is cien.",
+          "es": "Ciento se usa solo antes de otro número (ciento uno). Solo, el número es cien."
+        },
+        "sien": {
+          "en": "The number starts with c: cien.",
+          "es": "El número empieza con c: cien."
+        }
+      }
+    },
+    {
+      "id": "nh-form-06",
+      "kind": "form",
+      "verb": "palabra",
+      "person": "1:00",
+      "answer": "la una",
+      "table": "numeros",
+      "wrong": {
+        "las una": {
+          "en": "One o'clock uses the singular la, because it is one hour: la una.",
+          "es": "La una usa el singular la, porque es una sola hora: la una."
+        },
+        "la uno": {
+          "en": "Hora is feminine, so the number agrees: una, not uno: la una.",
+          "es": "Hora es femenino, así que el número concuerda: una, no uno: la una."
+        },
+        "una": {
+          "en": "When telling the time, the article comes first: la una.",
+          "es": "Al decir la hora, el artículo va primero: la una."
+        }
+      }
+    },
+    {
+      "id": "nh-form-07",
+      "kind": "form",
+      "verb": "palabra",
+      "person": "2:00",
+      "answer": "las dos",
+      "table": "numeros",
+      "wrong": {
+        "la dos": {
+          "en": "From two o'clock on, the plural article is used: las dos.",
+          "es": "Desde las dos en adelante se usa el artículo plural: las dos."
+        },
+        "los dos": {
+          "en": "Los dos means \"both of them\". For the time, the article is las, because hora is feminine: las dos.",
+          "es": "Los dos significa \"both of them\". Para la hora el artículo es las, porque hora es femenino: las dos."
+        }
+      }
+    },
+    {
+      "id": "nh-form-08",
+      "kind": "form",
+      "verb": "palabra",
+      "person": "3:30 (media)",
+      "answer": "las tres y media",
+      "table": "numeros",
+      "wrong": {
+        "las tres y medio": {
+          "en": "Media agrees with hora, which is feminine: media.",
+          "es": "Media concuerda con hora, que es femenino: media."
+        },
+        "la tres y media": {
+          "en": "From two o'clock on, the plural article is used: las tres y media.",
+          "es": "Desde las dos en adelante se usa el artículo plural: las tres y media."
+        }
+      }
+    },
+    {
+      "id": "nh-form-09",
+      "kind": "form",
+      "verb": "palabra",
+      "person": "2:45 (menos)",
+      "answer": "las tres menos cuarto",
+      "table": "numeros",
+      "wrong": {
+        "las dos menos cuarto": {
+          "en": "Las dos menos cuarto is 1:45. You take a quarter away from the next hour, so 2:45 is las tres menos cuarto.",
+          "es": "Las dos menos cuarto es la 1:45. Se resta un cuarto a la hora siguiente, así que las 2:45 son las tres menos cuarto."
+        },
+        "las tres y cuarto": {
+          "en": "Las tres y cuarto is 3:15. For 2:45 you take a quarter away from the next hour: las tres menos cuarto.",
+          "es": "Las tres y cuarto es 3:15. Para las 2:45 se resta un cuarto a la hora siguiente: las tres menos cuarto."
+        }
+      }
+    },
+    {
+      "id": "nh-form-10",
+      "kind": "form",
+      "verb": "palabra",
+      "person": "1 de enero",
+      "answer": "el primero de enero",
+      "table": "numeros",
+      "wrong": {
+        "el primer de enero": {
+          "en": "Primero is shortened to primer only right before a masculine noun (el primer día). Before de it stays primero: el primero de enero.",
+          "es": "Primero se acorta a primer solo justo antes de un sustantivo masculino (el primer día). Antes de de se queda primero: el primero de enero."
+        },
+        "el primero enero": {
+          "en": "Between the day and the month you need de: el primero de enero.",
+          "es": "Entre el día y el mes hace falta de: el primero de enero."
+        }
+      }
+    },
+    {
+      "id": "nh-form-11",
+      "kind": "form",
+      "verb": "palabra",
+      "person": "5 de mayo",
+      "answer": "el cinco de mayo",
+      "table": "numeros",
+      "wrong": {
+        "el cinco mayo": {
+          "en": "Between the day and the month you need de: el cinco de mayo.",
+          "es": "Entre el día y el mes hace falta de: el cinco de mayo."
+        },
+        "el quinto de mayo": {
+          "en": "Dates use cardinal numbers (cinco). Only the first of the month has an ordinal: el primero.",
+          "es": "Las fechas usan números cardinales (cinco). Solo el día uno lleva ordinal: el primero."
+        }
+      }
+    },
+    {
+      "id": "nh-form-12",
+      "kind": "form",
+      "verb": "palabra",
+      "person": "21 años",
+      "answer": "veintiún años",
+      "table": "numeros",
+      "wrong": {
+        "veintiuno años": {
+          "en": "Before a masculine noun, uno shortens to un: veintiún años.",
+          "es": "Delante de un sustantivo masculino, uno se acorta a un: veintiún años."
+        },
+        "veintiuna años": {
+          "en": "Años is masculine, so it takes un, not una: veintiún años.",
+          "es": "Años es masculino, así que lleva un, no una: veintiún años."
+        },
+        "veintún años": {
+          "en": "The prefix is veinti- with an i: veintiún años.",
+          "es": "El prefijo es veinti- con i: veintiún años."
+        }
+      }
+    },
     {
       "kind": "why",
       "id": "nh-why-01",
