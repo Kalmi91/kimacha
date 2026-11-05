@@ -793,6 +793,12 @@
       "tense": {
         "from": "presente",
         "to": "subjuntivo-presente"
+      },
+      "wrong": {
+        "hablo": {
+          "en": "Hablo is the present indicative form. This task asks for the subjunctive, where -ar verbs take e-endings: hable.",
+          "es": "Hablo es la forma del presente de indicativo. Esta tarea pide el subjuntivo, donde los verbos en -ar llevan terminaciones con e: hable."
+        }
       }
     },
     {
@@ -805,6 +811,12 @@
       "tense": {
         "from": "presente",
         "to": "subjuntivo-presente"
+      },
+      "wrong": {
+        "comes": {
+          "en": "Comes is the present indicative form. This task asks for the subjunctive, where -er and -ir verbs take a-endings: comas.",
+          "es": "Comes es la forma del presente de indicativo. Esta tarea pide el subjuntivo, donde los verbos en -er e -ir llevan terminaciones con a: comas."
+        }
       }
     },
     {
@@ -817,6 +829,12 @@
       "tense": {
         "from": "presente",
         "to": "subjuntivo-presente"
+      },
+      "wrong": {
+        "vive": {
+          "en": "Vive is the present indicative form. This task asks for the subjunctive, where -er and -ir verbs take a-endings: viva.",
+          "es": "Vive es la forma del presente de indicativo. Esta tarea pide el subjuntivo, donde los verbos en -er e -ir llevan terminaciones con a: viva."
+        }
       }
     },
     {
@@ -829,6 +847,16 @@
       "tense": {
         "from": "presente",
         "to": "subjuntivo-presente"
+      },
+      "wrong": {
+        "tenemos": {
+          "en": "Tenemos is the present indicative form. This task asks for the subjunctive, which is built from the yo form: the irregular yo stem comes back in every person: tengamos.",
+          "es": "Tenemos es la forma del presente de indicativo. Esta tarea pide el subjuntivo, que se forma desde la forma yo: la raíz irregular de yo vuelve en todas las personas: tengamos."
+        },
+        "tengemos": {
+          "en": "The subjunctive of tener comes from tengo, so the stem is teng-, and -er verbs take a-endings in the subjunctive: tengamos.",
+          "es": "El subjuntivo de tener sale de tengo, así que la raíz es teng-, y los verbos en -er llevan terminaciones con a en subjuntivo: tengamos."
+        }
       }
     },
     {
@@ -841,6 +869,12 @@
       "tense": {
         "from": "presente",
         "to": "subjuntivo-presente"
+      },
+      "wrong": {
+        "hacen": {
+          "en": "Hacen is the present indicative form. This task asks for the subjunctive, which is built from the yo form: the irregular yo stem comes back in every person: hagan.",
+          "es": "Hacen es la forma del presente de indicativo. Esta tarea pide el subjuntivo, que se forma desde la forma yo: la raíz irregular de yo vuelve en todas las personas: hagan."
+        }
       }
     },
     {
@@ -853,6 +887,12 @@
       "tense": {
         "from": "presente",
         "to": "subjuntivo-presente"
+      },
+      "wrong": {
+        "soy": {
+          "en": "Soy is the present indicative form. This task asks for the subjunctive, and this verb has its own irregular subjunctive forms: sea.",
+          "es": "Soy es la forma del presente de indicativo. Esta tarea pide el subjuntivo, y este verbo tiene formas de subjuntivo irregulares propias: sea."
+        }
       }
     },
     {
@@ -865,6 +905,12 @@
       "tense": {
         "from": "presente",
         "to": "subjuntivo-presente"
+      },
+      "wrong": {
+        "vas": {
+          "en": "Vas is the present indicative form. This task asks for the subjunctive, and this verb has its own irregular subjunctive forms: vayas.",
+          "es": "Vas es la forma del presente de indicativo. Esta tarea pide el subjuntivo, y este verbo tiene formas de subjuntivo irregulares propias: vayas."
+        }
       }
     },
     {
@@ -877,6 +923,12 @@
       "tense": {
         "from": "presente",
         "to": "subjuntivo-presente"
+      },
+      "wrong": {
+        "sabe": {
+          "en": "Sabe is the present indicative form. This task asks for the subjunctive, and this verb has its own irregular subjunctive forms: sepa.",
+          "es": "Sabe es la forma del presente de indicativo. Esta tarea pide el subjuntivo, y este verbo tiene formas de subjuntivo irregulares propias: sepa."
+        }
       }
     },
     {
@@ -889,6 +941,12 @@
       "tense": {
         "from": "presente",
         "to": "subjuntivo-presente"
+      },
+      "wrong": {
+        "podemos": {
+          "en": "Podemos is the present indicative form. This task asks for the subjunctive, where -er and -ir verbs take a-endings: podamos.",
+          "es": "Podemos es la forma del presente de indicativo. Esta tarea pide el subjuntivo, donde los verbos en -er e -ir llevan terminaciones con a: podamos."
+        }
       }
     },
     {
@@ -901,6 +959,16 @@
       "tense": {
         "from": "presente",
         "to": "subjuntivo-presente"
+      },
+      "wrong": {
+        "piden": {
+          "en": "Piden is the present indicative form. This task asks for the subjunctive, where -er and -ir verbs take a-endings: pidan.",
+          "es": "Piden es la forma del presente de indicativo. Esta tarea pide el subjuntivo, donde los verbos en -er e -ir llevan terminaciones con a: pidan."
+        },
+        "pedan": {
+          "en": "Pedir keeps the change e to i in the subjunctive too: the stem is pid-, not ped-: pidan.",
+          "es": "Pedir mantiene el cambio e a i también en subjuntivo: la raíz es pid-, no ped-: pidan."
+        }
       }
     },
     {
@@ -913,6 +981,12 @@
       "tense": {
         "from": "presente",
         "to": "subjuntivo-presente"
+      },
+      "wrong": {
+        "tengo": {
+          "en": "Tengo is the present indicative form. This task asks for the subjunctive, which is built from the yo form: the irregular yo stem comes back in every person: tenga.",
+          "es": "Tengo es la forma del presente de indicativo. Esta tarea pide el subjuntivo, que se forma desde la forma yo: la raíz irregular de yo vuelve en todas las personas: tenga."
+        }
       }
     },
     {
@@ -925,6 +999,16 @@
       "tense": {
         "from": "presente",
         "to": "subjuntivo-presente"
+      },
+      "wrong": {
+        "pides": {
+          "en": "Pides is the present indicative form. This task asks for the subjunctive, where -er and -ir verbs take a-endings: pidas.",
+          "es": "Pides es la forma del presente de indicativo. Esta tarea pide el subjuntivo, donde los verbos en -er e -ir llevan terminaciones con a: pidas."
+        },
+        "pedas": {
+          "en": "Pedir keeps the change e to i in the subjunctive too: the stem is pid-, not ped-: pidas.",
+          "es": "Pedir mantiene el cambio e a i también en subjuntivo: la raíz es pid-, no ped-: pidas."
+        }
       }
     },
     {
