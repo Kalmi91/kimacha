@@ -23,6 +23,9 @@
 //   <apk>         default android/app/build/outputs/apk/release/app-release.apk; its versionCode must be
 //                 higher than the installed app's
 //   --no-install  only starts and watches the installed app (shows that a broken build fails the check)
+//
+// Device: the one running emulator, so a phone on USB beside it is left alone, and with no emulator the run stops
+// instead of installing over the phone. ANDROID_SERIAL chooses another device, or one of several emulators.
 import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -72,12 +75,18 @@ function crashOf() {
 
 const devices = (() => {
   try {
-    return adb(['devices']).split(/\r?\n/).slice(1).filter(line => /\tdevice$/.test(line));
+    return adb(['devices']).split(/\r?\n/).slice(1).filter(line => /\tdevice$/.test(line)).map(line => line.split('\t')[0]);
   } catch (e) {
     return cannotRun(`adb did not run (${String(e).slice(0, 100)})`);
   }
 })();
-if (devices.length !== 1) cannotRun(`needs exactly one running device, found ${devices.length}`);
+const chosen = process.env.ANDROID_SERIAL;
+const emulators = devices.filter(serial => /^emulator-\d+$/.test(serial));
+if (chosen && !devices.includes(chosen)) cannotRun(`ANDROID_SERIAL=${chosen} is not a running device`);
+if (!chosen && emulators.length !== 1) cannotRun(`needs exactly one running emulator, found ${emulators.length}: start one, or set ANDROID_SERIAL`);
+// Every adb call below inherits this, whatever else is plugged in.
+process.env.ANDROID_SERIAL = chosen || emulators[0];
+console.log(`device ${process.env.ANDROID_SERIAL}`);
 
 const before = installedVersion();
 if (!noInstall) {
