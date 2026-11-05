@@ -728,7 +728,17 @@
       "verb": "hueco",
       "person": "El escritor ___ libro leí es de Oaxaca.",
       "answer": "cuyo",
-      "table": "relc-hueco"
+      "table": "relc-hueco",
+      "wrong": {
+        "cuya": {
+          "en": "Cuyo agrees with the thing that belongs, not with the owner: el libro is masculine singular, so the form is cuyo.",
+          "es": "Cuyo concuerda con lo poseído, no con el poseedor: el libro es masculino singular, así que la forma es cuyo."
+        },
+        "que su": {
+          "en": "Cuyo already means \"whose\" and includes the possessive, so que su is not needed: cuyo.",
+          "es": "Cuyo ya significa \"de quien\" e incluye el posesivo, así que no hace falta que su: cuyo."
+        }
+      }
     },
     {
       "id": "rc-form-02",
@@ -736,7 +746,17 @@
       "verb": "hueco",
       "person": "Tengo una amiga ___ madre es médica.",
       "answer": "cuya",
-      "table": "relc-hueco"
+      "table": "relc-hueco",
+      "wrong": {
+        "cuyo": {
+          "en": "Cuyo agrees with the thing that belongs, not with the owner: la madre is feminine singular, so the form is cuya.",
+          "es": "Cuyo concuerda con lo poseído, no con el poseedor: la madre es femenino singular, así que la forma es cuya."
+        },
+        "que su": {
+          "en": "Cuyo already means \"whose\" and includes the possessive, so que su is not needed: cuya.",
+          "es": "Cuyo ya significa \"de quien\" e incluye el posesivo, así que no hace falta que su: cuya."
+        }
+      }
     },
     {
       "id": "rc-form-03",
@@ -744,7 +764,17 @@
       "verb": "hueco",
       "person": "Hablé con unos chicos ___ padres viven en Puebla.",
       "answer": "cuyos",
-      "table": "relc-hueco"
+      "table": "relc-hueco",
+      "wrong": {
+        "cuyo": {
+          "en": "Cuyo agrees with the thing that belongs, not with the owner: los padres is masculine plural, so the form is cuyos.",
+          "es": "Cuyo concuerda con lo poseído, no con el poseedor: los padres es masculino plural, así que la forma es cuyos."
+        },
+        "cuyas": {
+          "en": "Cuyo agrees with the thing that belongs, not with the owner: los padres is masculine plural, so the form is cuyos.",
+          "es": "Cuyo concuerda con lo poseído, no con el poseedor: los padres es masculino plural, así que la forma es cuyos."
+        }
+      }
     },
     {
       "id": "rc-form-04",
@@ -752,7 +782,17 @@
       "verb": "hueco",
       "person": "Es una ciudad ___ calles siempre están llenas.",
       "answer": "cuyas",
-      "table": "relc-hueco"
+      "table": "relc-hueco",
+      "wrong": {
+        "cuya": {
+          "en": "Cuyo agrees with the thing that belongs, not with the owner: las calles is feminine plural, so the form is cuyas.",
+          "es": "Cuyo concuerda con lo poseído, no con el poseedor: las calles es femenino plural, así que la forma es cuyas."
+        },
+        "cuyos": {
+          "en": "Cuyo agrees with the thing that belongs, not with the owner: las calles is feminine plural, so the form is cuyas.",
+          "es": "Cuyo concuerda con lo poseído, no con el poseedor: las calles es femenino plural, así que la forma es cuyas."
+        }
+      }
     },
     {
       "id": "rc-form-05",
@@ -760,7 +800,17 @@
       "verb": "hueco",
       "person": "De los dos libros, ___ compré ayer es mejor.",
       "answer": "el que",
-      "table": "relc-hueco"
+      "table": "relc-hueco",
+      "wrong": {
+        "lo que": {
+          "en": "The relative pronoun agrees with the noun it replaces: uno de los dos libros is masculine singular, so the form is el que.",
+          "es": "El pronombre relativo concuerda con el sustantivo al que sustituye: uno de los dos libros es masculino singular, así que la forma es el que."
+        },
+        "la que": {
+          "en": "The relative pronoun agrees with the noun it replaces: uno de los dos libros is masculine singular, so the form is el que.",
+          "es": "El pronombre relativo concuerda con el sustantivo al que sustituye: uno de los dos libros es masculino singular, así que la forma es el que."
+        }
+      }
     },
     {
       "id": "rc-form-06",
@@ -768,7 +818,17 @@
       "verb": "hueco",
       "person": "De las dos casas, ___ vimos ayer es más barata.",
       "answer": "la que",
-      "table": "relc-hueco"
+      "table": "relc-hueco",
+      "wrong": {
+        "el que": {
+          "en": "The relative pronoun agrees with the noun it replaces: una de las dos casas is feminine singular, so the form is la que.",
+          "es": "El pronombre relativo concuerda con el sustantivo al que sustituye: una de las dos casas es femenino singular, así que la forma es la que."
+        },
+        "lo que": {
+          "en": "The relative pronoun agrees with the noun it replaces: una de las dos casas is feminine singular, so the form is la que.",
+          "es": "El pronombre relativo concuerda con el sustantivo al que sustituye: una de las dos casas es femenino singular, así que la forma es la que."
+        }
+      }
     },
     {
       "id": "rc-form-07",
@@ -776,7 +836,17 @@
       "verb": "hueco",
       "person": "Entre estos vestidos, ___ más me gustan son los rojos.",
       "answer": "los que",
-      "table": "relc-hueco"
+      "table": "relc-hueco",
+      "wrong": {
+        "las que": {
+          "en": "The relative pronoun agrees with the noun it replaces: los vestidos is masculine plural, so the form is los que.",
+          "es": "El pronombre relativo concuerda con el sustantivo al que sustituye: los vestidos es masculino plural, así que la forma es los que."
+        },
+        "el que": {
+          "en": "The relative pronoun agrees with the noun it replaces: los vestidos is masculine plural, so the form is los que.",
+          "es": "El pronombre relativo concuerda con el sustantivo al que sustituye: los vestidos es masculino plural, así que la forma es los que."
+        }
+      }
     },
     {
       "id": "rc-form-08",
@@ -784,7 +854,13 @@
       "verb": "hueco",
       "person": "Todo ___ tengo es tuyo.",
       "answer": "lo que",
-      "table": "relc-hueco"
+      "table": "relc-hueco",
+      "wrong": {
+        "que": {
+          "en": "After todo, Spanish needs lo que for \"everything that\": lo que.",
+          "es": "Después de todo, el español necesita lo que para \"todo lo que\": lo que."
+        }
+      }
     },
     {
       "id": "rc-form-09",
@@ -792,7 +868,17 @@
       "verb": "hueco",
       "person": "Eso es justo ___ necesitaba.",
       "answer": "lo que",
-      "table": "relc-hueco"
+      "table": "relc-hueco",
+      "wrong": {
+        "el que": {
+          "en": "Eso is neuter, so the relative pronoun is neuter too: lo que.",
+          "es": "Eso es neutro, así que el pronombre relativo también es neutro: lo que."
+        },
+        "que": {
+          "en": "Que alone cannot stand for \"the thing that\" after eso es justo. The neuter form is needed: lo que.",
+          "es": "Que solo no puede equivaler a \"aquello que\" después de eso es justo. Hace falta la forma neutra: lo que."
+        }
+      }
     },
     {
       "id": "rc-form-10",
@@ -800,7 +886,17 @@
       "verb": "hueco",
       "person": "La persona en ___ que confío es mi madre.",
       "answer": "la",
-      "table": "relc-hueco"
+      "table": "relc-hueco",
+      "wrong": {
+        "el": {
+          "en": "The relative pronoun agrees with the noun it replaces: la persona is feminine singular, so the form is la.",
+          "es": "El pronombre relativo concuerda con el sustantivo al que sustituye: la persona es femenino singular, así que la forma es la."
+        },
+        "lo": {
+          "en": "The relative pronoun agrees with the noun it replaces: la persona is feminine singular, so the form is la.",
+          "es": "El pronombre relativo concuerda con el sustantivo al que sustituye: la persona es femenino singular, así que la forma es la."
+        }
+      }
     },
     {
       "id": "rc-form-11",
@@ -808,7 +904,17 @@
       "verb": "hueco",
       "person": "Los amigos ___ los que cuento son pocos.",
       "answer": "con",
-      "table": "relc-hueco"
+      "table": "relc-hueco",
+      "wrong": {
+        "en": {
+          "en": "Contar takes con, not en: con.",
+          "es": "Contar lleva con, no en: con."
+        },
+        "de": {
+          "en": "Contar takes con, not de: con.",
+          "es": "Contar lleva con, no de: con."
+        }
+      }
     },
     {
       "id": "rc-form-12",
@@ -816,7 +922,17 @@
       "verb": "hueco",
       "person": "Las ideas ___ las que creo son muy simples.",
       "answer": "en",
-      "table": "relc-hueco"
+      "table": "relc-hueco",
+      "wrong": {
+        "con": {
+          "en": "Creer takes en, not con: en.",
+          "es": "Creer lleva en, no con: en."
+        },
+        "de": {
+          "en": "Creer takes en, not de: en.",
+          "es": "Creer lleva en, no de: en."
+        }
+      }
     },
     {
       "kind": "why",
