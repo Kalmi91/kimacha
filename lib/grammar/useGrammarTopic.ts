@@ -193,6 +193,7 @@ export function useGrammarTopic() {
 
   return {
     colors,
+    loaded: drillResumeReady,
     topicId,
     learnedLang,
     contentLang,
