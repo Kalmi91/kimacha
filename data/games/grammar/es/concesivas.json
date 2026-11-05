@@ -652,7 +652,13 @@
       "verb": "forma",
       "person": "Aunque ahora ___ (llover) mucho, salimos igual.",
       "answer": "llueve",
-      "table": "concesivas-forma"
+      "table": "concesivas-forma",
+      "wrong": {
+        "llueva": {
+          "en": "Llueva is the present subjunctive form. “Aunque” introduces a fact the speaker knows to be true, so the verb stays in the indicative: llueve.",
+          "es": "Llueva es la forma del presente de subjuntivo. “Aunque” introduce un hecho que el hablante sabe que es cierto, así que el verbo va en indicativo: llueve."
+        }
+      }
     },
     {
       "kind": "form",
@@ -660,7 +666,13 @@
       "verb": "forma",
       "person": "Mañana, aunque ___ (llover) mucho, saldremos igual.",
       "answer": "llueva",
-      "table": "concesivas-forma"
+      "table": "concesivas-forma",
+      "wrong": {
+        "llueve": {
+          "en": "Llueve is the present indicative form. “Aunque” refers to something that has not happened yet or is uncertain, so the verb goes in the subjunctive: llueva.",
+          "es": "Llueve es la forma del presente de indicativo. “Aunque” se refiere a algo que todavía no ha pasado o que es incierto, así que el verbo va en subjuntivo: llueva."
+        }
+      }
     },
     {
       "kind": "form",
@@ -668,7 +680,13 @@
       "verb": "forma",
       "person": "Mira, aunque ya ___ (ser) las once, mi hijo no duerme.",
       "answer": "son",
-      "table": "concesivas-forma"
+      "table": "concesivas-forma",
+      "wrong": {
+        "sean": {
+          "en": "Sean is the present subjunctive form. “Aunque” introduces a fact the speaker knows to be true, so the verb stays in the indicative: son.",
+          "es": "Sean es la forma del presente de subjuntivo. “Aunque” introduce un hecho que el hablante sabe que es cierto, así que el verbo va en indicativo: son."
+        }
+      }
     },
     {
       "kind": "form",
@@ -676,7 +694,13 @@
       "verb": "forma",
       "person": "Mañana, aunque ___ (llegar, nosotros) tarde, el jefe nos esperará.",
       "answer": "lleguemos",
-      "table": "concesivas-forma"
+      "table": "concesivas-forma",
+      "wrong": {
+        "llegamos": {
+          "en": "Llegamos is the present indicative form. “Aunque” refers to something that has not happened yet or is uncertain, so the verb goes in the subjunctive: lleguemos.",
+          "es": "Llegamos es la forma del presente de indicativo. “Aunque” se refiere a algo que todavía no ha pasado o que es incierto, así que el verbo va en subjuntivo: lleguemos."
+        }
+      }
     },
     {
       "kind": "form",
@@ -684,7 +708,17 @@
       "verb": "forma",
       "person": "A pesar ___ frío, salimos a correr.",
       "answer": "del",
-      "table": "concesivas-forma"
+      "table": "concesivas-forma",
+      "wrong": {
+        "de": {
+          "en": "Frío needs its article here (el frío), and de + el contracts to del: del.",
+          "es": "Frío necesita aquí su artículo (el frío), y de + el se contrae en del: del."
+        },
+        "de el": {
+          "en": "De + el always contracts to del: del.",
+          "es": "De + el siempre se contrae en del: del."
+        }
+      }
     },
     {
       "kind": "form",
@@ -692,7 +726,17 @@
       "verb": "forma",
       "person": "A pesar ___ lluvia, jugamos al fútbol.",
       "answer": "de la",
-      "table": "concesivas-forma"
+      "table": "concesivas-forma",
+      "wrong": {
+        "de": {
+          "en": "Lluvia needs its article here (la lluvia), so the answer is de la: de la.",
+          "es": "Lluvia necesita aquí su artículo (la lluvia), así que la respuesta es de la: de la."
+        },
+        "del": {
+          "en": "Lluvia is feminine, so de + la does not contract: de la.",
+          "es": "Lluvia es femenino, así que de + la no se contrae: de la."
+        }
+      }
     },
     {
       "kind": "form",
@@ -700,7 +744,17 @@
       "verb": "forma",
       "person": "A pesar de ___ (estar) enfermo, mi padre trabaja.",
       "answer": "estar",
-      "table": "concesivas-forma"
+      "table": "concesivas-forma",
+      "wrong": {
+        "estando": {
+          "en": "After a pesar de the second verb is an infinitive, not a gerund: estar.",
+          "es": "Después de a pesar de el segundo verbo va en infinitivo, no en gerundio: estar."
+        },
+        "está": {
+          "en": "After a pesar de a verb goes in the infinitive. To use a conjugated verb, you need que: a pesar de que está, or a pesar de estar.",
+          "es": "Después de a pesar de el verbo va en infinitivo. Para usar un verbo conjugado hace falta que: a pesar de que está, o a pesar de estar."
+        }
+      }
     },
     {
       "kind": "form",
@@ -708,7 +762,13 @@
       "verb": "forma",
       "person": "A pesar de que hoy ___ (hacer) mucho calor, salimos.",
       "answer": "hace",
-      "table": "concesivas-forma"
+      "table": "concesivas-forma",
+      "wrong": {
+        "haga": {
+          "en": "Haga is the present subjunctive form. “A pesar de que” introduces a fact the speaker knows to be true, so the verb stays in the indicative: hace.",
+          "es": "Haga es la forma del presente de subjuntivo. “A pesar de que” introduce un hecho que el hablante sabe que es cierto, así que el verbo va en indicativo: hace."
+        }
+      }
     },
     {
       "kind": "form",
@@ -716,7 +776,13 @@
       "verb": "forma",
       "person": "Por más que ___ (trabajar, yo), no terminaré hoy.",
       "answer": "trabaje",
-      "table": "concesivas-forma"
+      "table": "concesivas-forma",
+      "wrong": {
+        "trabajo": {
+          "en": "Trabajo is the present indicative form. “Por más que” refers to something that has not happened yet or is uncertain, so the verb goes in the subjunctive: trabaje.",
+          "es": "Trabajo es la forma del presente de indicativo. “Por más que” se refiere a algo que todavía no ha pasado o que es incierto, así que el verbo va en subjuntivo: trabaje."
+        }
+      }
     },
     {
       "kind": "form",
@@ -724,7 +790,13 @@
       "verb": "forma",
       "person": "Por mucho que ___ (estudiar, él), no aprobará.",
       "answer": "estudie",
-      "table": "concesivas-forma"
+      "table": "concesivas-forma",
+      "wrong": {
+        "estudia": {
+          "en": "Estudia is the present indicative form. “Por mucho que” refers to something that has not happened yet or is uncertain, so the verb goes in the subjunctive: estudie.",
+          "es": "Estudia es la forma del presente de indicativo. “Por mucho que” se refiere a algo que todavía no ha pasado o que es incierto, así que el verbo va en subjuntivo: estudie."
+        }
+      }
     },
     {
       "kind": "form",
@@ -732,7 +804,13 @@
       "verb": "forma",
       "person": "Mañana, aunque ___ (tener, yo) que esperar toda la noche, no me voy.",
       "answer": "tenga",
-      "table": "concesivas-forma"
+      "table": "concesivas-forma",
+      "wrong": {
+        "tengo": {
+          "en": "Tengo is the present indicative form. “Aunque” refers to something that has not happened yet or is uncertain, so the verb goes in the subjunctive: tenga.",
+          "es": "Tengo es la forma del presente de indicativo. “Aunque” se refiere a algo que todavía no ha pasado o que es incierto, así que el verbo va en subjuntivo: tenga."
+        }
+      }
     },
     {
       "kind": "form",
@@ -740,7 +818,13 @@
       "verb": "forma",
       "person": "Mira, aunque ___ (tener, ella) dos años, ya habla mucho.",
       "answer": "tiene",
-      "table": "concesivas-forma"
+      "table": "concesivas-forma",
+      "wrong": {
+        "tenga": {
+          "en": "Tenga is the present subjunctive form. “Aunque” introduces a fact the speaker knows to be true, so the verb stays in the indicative: tiene.",
+          "es": "Tenga es la forma del presente de subjuntivo. “Aunque” introduce un hecho que el hablante sabe que es cierto, así que el verbo va en indicativo: tiene."
+        }
+      }
     },
     {
       "kind": "why",
