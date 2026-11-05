@@ -109,10 +109,10 @@ export const PIPER_MODEL_KEYS: string[] = Object.values(NEURAL_MODELS)
 // The word pack (scripts/tts-pack.py): a GitHub release asset of the app's own repo. v2 (EJSZAKA E101) holds every
 // card word in both voices of the pair, keyed "<g>|key" like the sentence pack; v1 (tts-pack-v1, 119 608 678 bytes) had
 // only each word's own hash voice under the plain key and stays readable (LEGACY_PACK_DIR). PACK_BYTES is the size
-// as uploaded (⚠ estimate until the v2 archive is packed and uploaded). The Settings label and the progress count it
+// as uploaded (packed 2026-11-05). The Settings label and the progress count it
 // with the models.
 export const PACK_KEY = 'pack';
-export const PACK_BYTES = 239000000;
+export const PACK_BYTES = 269171160;
 export const PACK_URL = 'https://github.com/Kalmi91/kimacha/releases/download/tts-pack-v2/kimacha-tts-pack-v2.tar.bz2';
 export const PACK_DIR = 'kimacha-tts-pack-v2';
 export const LEGACY_PACK_DIR = 'kimacha-tts-pack-v1';
@@ -125,9 +125,9 @@ export const LEGACY_SENTENCES_KEY = 'legacy-sentences';
 // is { version, engine, files: { es: { "<g>|<key>": "es/<g>/<hash>.mp3" }, en: { ... } } }, g = f | m, key = packKey(text).
 // An empty URL keeps today's behavior: the item is not required and nothing is downloaded.
 // v2 (EJSZAKA E101) has both speakers of every sentence and the Speak tab's story lines; v1 (343 377 219 bytes, the
-// sex the app asked at the time) stays readable (LEGACY_SENTENCE_PACK_DIR). The size is an estimate until packed.
+// sex the app asked at the time) stays readable (LEGACY_SENTENCE_PACK_DIR). Sizes as packed 2026-11-05.
 export const SENTENCES_KEY = 'sentences';
-export const SENTENCE_PACK_BYTES = 700000000;
+export const SENTENCE_PACK_BYTES = 686281987;
 export const SENTENCE_PACK_URL = 'https://github.com/Kalmi91/kimacha/releases/download/tts-sentences-v2/kimacha-tts-sentences-v2.tar.bz2';
 export const SENTENCE_PACK_DIR = 'kimacha-tts-sentences-v2';
 export const LEGACY_SENTENCE_PACK_DIR = 'kimacha-tts-sentences-v1';
