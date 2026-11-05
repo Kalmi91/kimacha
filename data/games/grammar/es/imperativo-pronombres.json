@@ -851,7 +851,17 @@
       "verb": "forma",
       "person": "Tengo un problema, Luis: ___ , por favor. (ayudar, tú, a mí)",
       "answer": "ayúdame",
-      "table": "imperativo-pronombres-formas"
+      "table": "imperativo-pronombres-formas",
+      "wrong": {
+        "me ayuda": {
+          "en": "In an affirmative command the pronoun goes after the verb and is attached to it: ayúdame.",
+          "es": "En un imperativo afirmativo el pronombre va después del verbo y unido a él: ayúdame."
+        },
+        "ayuda me": {
+          "en": "In an affirmative command the pronoun is written together with the verb, as one word: ayúdame.",
+          "es": "En un imperativo afirmativo el pronombre se escribe junto al verbo, en una sola palabra: ayúdame."
+        }
+      }
     },
     {
       "id": "ip-form-02",
@@ -859,7 +869,17 @@
       "verb": "forma",
       "person": "Hace frío, Luis: ___ la camisa. (ponerse, tú)",
       "answer": "ponte",
-      "table": "imperativo-pronombres-formas"
+      "table": "imperativo-pronombres-formas",
+      "wrong": {
+        "te pon": {
+          "en": "In an affirmative command the pronoun goes after the verb and is attached to it: ponte.",
+          "es": "En un imperativo afirmativo el pronombre va después del verbo y unido a él: ponte."
+        },
+        "pon te": {
+          "en": "In an affirmative command the pronoun is written together with the verb, as one word: ponte.",
+          "es": "En un imperativo afirmativo el pronombre se escribe junto al verbo, en una sola palabra: ponte."
+        }
+      }
     },
     {
       "id": "ip-form-03",
@@ -867,7 +887,17 @@
       "verb": "forma",
       "person": "Ana, ___ , por favor. (devolver, tú, a mí, el libro, en una palabra)",
       "answer": "devuélvemelo",
-      "table": "imperativo-pronombres-formas"
+      "table": "imperativo-pronombres-formas",
+      "wrong": {
+        "devuélvelome": {
+          "en": "In a pair of pronouns the indirect one comes first, then the direct one: devuélvemelo.",
+          "es": "En una pareja de pronombres va primero el indirecto y después el directo: devuélvemelo."
+        },
+        "devuelve me lo": {
+          "en": "In an affirmative command the pronoun is written together with the verb, as one word: devuélvemelo.",
+          "es": "En un imperativo afirmativo el pronombre se escribe junto al verbo, en una sola palabra: devuélvemelo."
+        }
+      }
     },
     {
       "id": "ip-form-04",
@@ -875,7 +905,17 @@
       "verb": "forma",
       "person": "Luis, ___ , por favor. (pasar, tú, a mí, el teléfono, en una palabra)",
       "answer": "pásamelo",
-      "table": "imperativo-pronombres-formas"
+      "table": "imperativo-pronombres-formas",
+      "wrong": {
+        "pásalome": {
+          "en": "In a pair of pronouns the indirect one comes first, then the direct one: pásamelo.",
+          "es": "En una pareja de pronombres va primero el indirecto y después el directo: pásamelo."
+        },
+        "pasa me lo": {
+          "en": "In an affirmative command the pronoun is written together with the verb, as one word: pásamelo.",
+          "es": "En un imperativo afirmativo el pronombre se escribe junto al verbo, en una sola palabra: pásamelo."
+        }
+      }
     },
     {
       "id": "ip-form-05",
@@ -883,7 +923,17 @@
       "verb": "forma",
       "person": "Diego, ___ ya. (dar, tú, a tu mamá, las llaves, en una palabra)",
       "answer": "dáselas",
-      "table": "imperativo-pronombres-formas"
+      "table": "imperativo-pronombres-formas",
+      "wrong": {
+        "dálelas": {
+          "en": "Before lo, la, los or las, the pronoun le (or les) changes to se: dáselas.",
+          "es": "Ante lo, la, los o las, el pronombre le (o les) cambia a se: dáselas."
+        },
+        "da se las": {
+          "en": "In an affirmative command the pronoun is written together with the verb, as one word: dáselas.",
+          "es": "En un imperativo afirmativo el pronombre se escribe junto al verbo, en una sola palabra: dáselas."
+        }
+      }
     },
     {
       "id": "ip-form-06",
@@ -891,7 +941,17 @@
       "verb": "forma",
       "person": "Señora, ___ , por favor. (pasar, usted, a mí, el pan, en una palabra)",
       "answer": "pásemelo",
-      "table": "imperativo-pronombres-formas"
+      "table": "imperativo-pronombres-formas",
+      "wrong": {
+        "pásamelo": {
+          "en": "Pásamelo is the command form for tú. For usted the command is pásemelo.",
+          "es": "Pásamelo es la forma del imperativo para tú. Para usted el imperativo es pásemelo."
+        },
+        "pase me lo": {
+          "en": "In an affirmative command the pronoun is written together with the verb, as one word: pásemelo.",
+          "es": "En un imperativo afirmativo el pronombre se escribe junto al verbo, en una sola palabra: pásemelo."
+        }
+      }
     },
     {
       "id": "ip-form-07",
@@ -899,7 +959,17 @@
       "verb": "forma",
       "person": "Ya es tarde, Diego: ___ ahora mismo. (levantarse, tú)",
       "answer": "levántate",
-      "table": "imperativo-pronombres-formas"
+      "table": "imperativo-pronombres-formas",
+      "wrong": {
+        "te levanta": {
+          "en": "In an affirmative command the pronoun goes after the verb and is attached to it: levántate.",
+          "es": "En un imperativo afirmativo el pronombre va después del verbo y unido a él: levántate."
+        },
+        "levanta te": {
+          "en": "In an affirmative command the pronoun is written together with the verb, as one word: levántate.",
+          "es": "En un imperativo afirmativo el pronombre se escribe junto al verbo, en una sola palabra: levántate."
+        }
+      }
     },
     {
       "id": "ip-form-08",
@@ -907,7 +977,17 @@
       "verb": "forma",
       "person": "Niños, la clase empieza: ___ . (sentarse, ustedes)",
       "answer": "siéntense",
-      "table": "imperativo-pronombres-formas"
+      "table": "imperativo-pronombres-formas",
+      "wrong": {
+        "se sienten": {
+          "en": "In an affirmative command the pronoun goes after the verb and is attached to it: siéntense.",
+          "es": "En un imperativo afirmativo el pronombre va después del verbo y unido a él: siéntense."
+        },
+        "siéntate": {
+          "en": "Siéntate is the command form for tú. For ustedes the command is siéntense.",
+          "es": "Siéntate es la forma del imperativo para tú. Para ustedes el imperativo es siéntense."
+        }
+      }
     },
     {
       "id": "ip-form-09",
@@ -915,7 +995,17 @@
       "verb": "forma",
       "person": "Voy tarde, mamá: no ___ para cenar. (esperar, tú, a mí)",
       "answer": "me esperes",
-      "table": "imperativo-pronombres-formas"
+      "table": "imperativo-pronombres-formas",
+      "wrong": {
+        "no espérame": {
+          "en": "In a negative command the pronoun goes before the verb, as a separate word: no me esperes.",
+          "es": "En un imperativo negativo el pronombre va antes del verbo, como palabra separada: no me esperes."
+        },
+        "no esperes me": {
+          "en": "In a negative command the pronoun goes before the verb, as a separate word: no me esperes.",
+          "es": "En un imperativo negativo el pronombre va antes del verbo, como palabra separada: no me esperes."
+        }
+      }
     },
     {
       "id": "ip-form-10",
@@ -923,7 +1013,17 @@
       "verb": "forma",
       "person": "Ana, no ___ . (enviar, tú, a Luis, mi número, en tres palabras)",
       "answer": "se lo envíes",
-      "table": "imperativo-pronombres-formas"
+      "table": "imperativo-pronombres-formas",
+      "wrong": {
+        "no envíeselo": {
+          "en": "In a negative command the pronoun goes before the verb, as a separate word: no se lo envíes.",
+          "es": "En un imperativo negativo el pronombre va antes del verbo, como palabra separada: no se lo envíes."
+        },
+        "no le lo envíes": {
+          "en": "Before lo, la, los or las, the pronoun le (or les) changes to se: no se lo envíes.",
+          "es": "Ante lo, la, los o las, el pronombre le (o les) cambia a se: no se lo envíes."
+        }
+      }
     },
     {
       "id": "ip-form-11",
@@ -931,7 +1031,17 @@
       "verb": "forma",
       "person": "Todavía hay música, Laura: no ___ . (irse, tú)",
       "answer": "te vayas",
-      "table": "imperativo-pronombres-formas"
+      "table": "imperativo-pronombres-formas",
+      "wrong": {
+        "no vayas te": {
+          "en": "In a negative command the pronoun goes before the verb, as a separate word: no te vayas.",
+          "es": "En un imperativo negativo el pronombre va antes del verbo, como palabra separada: no te vayas."
+        },
+        "no te vaya": {
+          "en": "No te vaya is the command form for usted. For tú the command is no te vayas.",
+          "es": "No te vaya es la forma del imperativo para usted. Para tú el imperativo es no te vayas."
+        }
+      }
     },
     {
       "id": "ip-form-12",
@@ -939,7 +1049,17 @@
       "verb": "forma",
       "person": "Es tarde, Luis: ___ ya. (acostarse, tú)",
       "answer": "acuéstate",
-      "table": "imperativo-pronombres-formas"
+      "table": "imperativo-pronombres-formas",
+      "wrong": {
+        "te acuesta": {
+          "en": "In an affirmative command the pronoun goes after the verb and is attached to it: acuéstate.",
+          "es": "En un imperativo afirmativo el pronombre va después del verbo y unido a él: acuéstate."
+        },
+        "acóstate": {
+          "en": "With tú the stem vowel of acostarse changes: o becomes ue. acuéstate.",
+          "es": "Con tú cambia la vocal de la raíz de acostarse: o pasa a ue. acuéstate."
+        }
+      }
     },
     {
       "kind": "why",
