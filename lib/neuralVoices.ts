@@ -116,6 +116,9 @@ export const PACK_BYTES = 239000000;
 export const PACK_URL = 'https://github.com/Kalmi91/kimacha/releases/download/tts-pack-v2/kimacha-tts-pack-v2.tar.bz2';
 export const PACK_DIR = 'kimacha-tts-pack-v2';
 export const LEGACY_PACK_DIR = 'kimacha-tts-pack-v1';
+// state.installed keys of the v1 packs (not downloadable items: they only tell Settings that older recordings are in use)
+export const LEGACY_PACK_KEY = 'legacy-pack';
+export const LEGACY_SENTENCES_KEY = 'legacy-sentences';
 
 // The sentence pack (scripts/tts-pack.py --set sentences, PLAN-fb1102 "Audio round B"): a second release asset with a
 // Kokoro recording of the fixed sentences the screens speak, one per (speaker sex, sentence). Its index.json
@@ -236,6 +239,16 @@ export function modelKeysFor(lang: NeuralLang, engine: NeuralEngine): string[] {
 export function requiredItems(engines: EngineChoice, sentencePackUrl: string = SENTENCE_PACK_URL): string[] {
   const kokoro = engines.es === 'kokoro' || engines.en === 'kokoro';
   return [PACK_KEY, ...PIPER_MODEL_KEYS, ...(kokoro ? ['kokoro'] : []), ...(sentencePackUrl ? [SENTENCES_KEY] : [])];
+}
+
+// The voice models alone (no recordings): what picking an engine fetches, and what the "voice" part of Settings needs.
+export function modelItems(engines: EngineChoice): string[] {
+  return requiredItems(engines, '').filter(key => key !== PACK_KEY);
+}
+
+// The two recordings packs alone: only the Settings "Recordings" row fetches them on a phone that already has the voices.
+export function packItems(sentencePackUrl: string = SENTENCE_PACK_URL): string[] {
+  return [PACK_KEY, ...(sentencePackUrl ? [SENTENCES_KEY] : [])];
 }
 
 // The size built in for an item key (the two packs and the models).

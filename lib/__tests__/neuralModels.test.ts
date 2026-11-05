@@ -593,6 +593,50 @@ describe('better voice: download', () => {
   });
 });
 
+describe('better voice: nothing downloads by itself (EJSZAKA E101, Kálmán: "nekem kelljen feltenni")', () => {
+  const installV1 = () => {
+    for (const key of PIPER_MODEL_KEYS) installModel(key);
+    mockFs.set(`${TTS}/kimacha-tts-pack-v1/index.json`, JSON.stringify({ version: 1, engine: 'x', files: { es: { 'el perro': 'es/27956ac4.mp3' } } }));
+    mockFs.set(`${TTS}/kimacha-tts-pack-v1.ok`, '1');
+    mockFs.set(`${TTS}/kimacha-tts-sentences-v1/index.json`, JSON.stringify(SENTENCE_INDEX));
+    mockFs.set(`${TTS}/kimacha-tts-sentences-v1.ok`, '1');
+  };
+
+  it('launching (and using) the app with the v1 packs starts no download and keeps playing v1', async () => {
+    installV1();
+    const m = load();
+    await m.startNeural();
+    m.neuralEngineFor('es');
+    await flush();
+    expect(mockDownloads).toEqual([]);
+    expect(m.getNeuralState().download.running).toBe(false);
+    expect(m.getNeuralState().installed.pack).toBe(false);
+    expect(m.getNeuralState().installed['legacy-pack']).toBe(true);
+    expect(m.neuralPackFile('es', 'el perro')).toBe(`${TTS}/kimacha-tts-pack-v1/es/27956ac4.mp3`);
+  });
+
+  it('choosing Kokoro with only the v1 packs fetches the Kokoro model and no pack', async () => {
+    installV1();
+    const m = load();
+    await m.startNeural();
+    await m.setNeuralEngine('es', 'kokoro');
+    expect(mockDownloads.map(d => d.url)).toEqual([NEURAL_MODELS.kokoro.archive]);
+    expect(m.getNeuralState().installed.pack).toBe(false);
+  });
+
+  it('a failed v2 download (the recordings row) leaves the v1 packs playing', async () => {
+    installV1();
+    mockStatusFor['https://github.com/Kalmi91/kimacha/releases/download/tts-pack-v2/kimacha-tts-pack-v2.tar.bz2'] = 404;
+    mockStatusFor['https://github.com/Kalmi91/kimacha/releases/download/tts-sentences-v2/kimacha-tts-sentences-v2.tar.bz2'] = 404;
+    const m = load();
+    await m.startNeural();
+    await m.downloadNeural([PACK_KEY, SENTENCES_KEY]);
+    expect(m.getNeuralState().download.failed).toEqual([PACK_KEY, SENTENCES_KEY]);
+    expect(m.neuralPackFile('es', 'el perro')).toBe(`${TTS}/kimacha-tts-pack-v1/es/27956ac4.mp3`);
+    expect(m.neuralSentenceFile('es', SENTENCE, 'f')).toBe(`${TTS}/kimacha-tts-sentences-v1/es/f/aaaaaaaa.mp3`);
+  });
+});
+
 describe('better voice: switch and engine choice', () => {
   it('choosing Kokoro for a language downloads the Kokoro model once, saves the choice, and Piper speaks until it is loaded', async () => {
     for (const key of PIPER_MODEL_KEYS) installModel(key);

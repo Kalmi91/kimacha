@@ -21,7 +21,9 @@ import {
   DEFAULT_ENGINES,
   DEFAULT_SPEAKERS,
   LEGACY_PACK_DIR,
+  LEGACY_PACK_KEY,
   LEGACY_SENTENCE_PACK_DIR,
+  LEGACY_SENTENCES_KEY,
   NEURAL_MODELS,
   PACK_DIR,
   PACK_KEY,
@@ -36,6 +38,7 @@ import {
   packFileFor,
   requiredItems,
   sentencePackFileFor,
+  modelKeysFor,
   voicePair,
   type EngineChoice,
   type NeuralEngine,
@@ -132,6 +135,8 @@ async function readInstalled(fs: Fs): Promise<Record<string, boolean>> {
   for (const key of [...Object.keys(NEURAL_MODELS), PACK_KEY, SENTENCES_KEY]) {
     installed[key] = await fs.exists(itemMarker(fs, key)).catch(() => false);
   }
+  installed[LEGACY_PACK_KEY] = await fs.exists(`${ttsDir(fs)}/${LEGACY_PACK_DIR}.ok`).catch(() => false);
+  installed[LEGACY_SENTENCES_KEY] = await fs.exists(`${ttsDir(fs)}/${LEGACY_SENTENCE_PACK_DIR}.ok`).catch(() => false);
   return installed;
 }
 
@@ -391,14 +396,15 @@ export async function setNeuralEnabled(enabled: boolean): Promise<void> {
   }
 }
 
-// A language's sentence engine (hu and de are always Piper). Kokoro that is not installed starts its download.
+// A language's sentence engine (hu and de are always Piper). Kokoro that is not installed starts the download of that
+// model, and only of that model: the recordings packs are fetched by their own Settings row, never from here.
 export async function setNeuralEngine(lang: NeuralLang, engine: NeuralEngine): Promise<void> {
   const next = normalizeEngines({ ...state.engines, [lang]: engine });
   if (next[lang] === state.engines[lang]) return;
   update({ engines: next, issues: {} });
   void writeSettings();
   const needs = voicePair(lang, next[lang]).some(v => !state.installed[v.model]);
-  if (needs) await downloadNeural();
+  if (needs) await downloadNeural(modelKeysFor(lang, next[lang]));
   loadEngines(lang);
 }
 
@@ -409,13 +415,15 @@ interface Job {
   bytes: number;
 }
 
-// Fetches and installs everything the choices need that is not installed yet. Resolves when the run ended;
+// Fetches and installs what is not installed yet: `keys` (item keys), or without it everything the choices need
+// (the first download). Only a tap on a Settings button calls this; nothing starts it on launch or update. A failed or
+// cancelled item leaves its folder out and the v1 packs, if any, keep playing. Resolves when the run ended;
 // state.download.failed names what did not make it.
-export async function downloadNeural(): Promise<void> {
+export async function downloadNeural(keys?: string[]): Promise<void> {
   if (!state.supported || state.download.running) return;
   const fs = getFs();
   const { extractArchive } = require('react-native-sherpa-onnx/extraction') as typeof import('react-native-sherpa-onnx/extraction');
-  const jobs: Job[] = requiredItems(state.engines)
+  const jobs: Job[] = (keys ?? requiredItems(state.engines))
     .filter(key => !state.installed[key])
     .map(key => {
       const url = itemUrl(key);
