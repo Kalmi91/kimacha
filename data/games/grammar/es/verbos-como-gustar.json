@@ -879,7 +879,17 @@
       "verb": "pronombre + verbo",
       "person": "A mí ___ (encantar) las frutas.",
       "answer": "me encantan",
-      "table": "verbos-como-gustar-formas"
+      "table": "verbos-como-gustar-formas",
+      "wrong": {
+        "me encanta": {
+          "en": "The verb agrees with what pleases, not with the person: las frutas is plural, so the verb is encantan: me encantan.",
+          "es": "El verbo concuerda con lo que gusta, no con la persona: las frutas es plural, así que el verbo es encantan: me encantan."
+        },
+        "te encantan": {
+          "en": "Te does not go with \"A mí\". Here the pronoun is me: me encantan.",
+          "es": "Te no va con \"A mí\". Aquí el pronombre es me: me encantan."
+        }
+      }
     },
     {
       "kind": "form",
@@ -887,7 +897,17 @@
       "verb": "pronombre + verbo",
       "person": "A ti ___ (interesar) la historia.",
       "answer": "te interesa",
-      "table": "verbos-como-gustar-formas"
+      "table": "verbos-como-gustar-formas",
+      "wrong": {
+        "te interesan": {
+          "en": "The verb agrees with what pleases, not with the person: la historia is singular, so the verb is interesa: te interesa.",
+          "es": "El verbo concuerda con lo que gusta, no con la persona: la historia es singular, así que el verbo es interesa: te interesa."
+        },
+        "me interesa": {
+          "en": "Me does not go with \"A ti\". Here the pronoun is te: te interesa.",
+          "es": "Me no va con \"A ti\". Aquí el pronombre es te: te interesa."
+        }
+      }
     },
     {
       "kind": "form",
@@ -895,7 +915,17 @@
       "verb": "pronombre + verbo",
       "person": "A Ana ___ (doler) la cabeza.",
       "answer": "le duele",
-      "table": "verbos-como-gustar-formas"
+      "table": "verbos-como-gustar-formas",
+      "wrong": {
+        "le duelen": {
+          "en": "The verb agrees with what pleases, not with the person: la cabeza is singular, so the verb is duele: le duele.",
+          "es": "El verbo concuerda con lo que gusta, no con la persona: la cabeza es singular, así que el verbo es duele: le duele."
+        },
+        "les duele": {
+          "en": "Les does not go with \"A Ana\". Here the pronoun is le: le duele.",
+          "es": "Les no va con \"A Ana\". Aquí el pronombre es le: le duele."
+        }
+      }
     },
     {
       "kind": "form",
@@ -903,7 +933,17 @@
       "verb": "pronombre + verbo",
       "person": "A nosotros ___ (faltar) tiempo.",
       "answer": "nos falta",
-      "table": "verbos-como-gustar-formas"
+      "table": "verbos-como-gustar-formas",
+      "wrong": {
+        "nos faltan": {
+          "en": "The verb agrees with what pleases, not with the person: tiempo is singular, so the verb is falta: nos falta.",
+          "es": "El verbo concuerda con lo que gusta, no con la persona: tiempo es singular, así que el verbo es falta: nos falta."
+        },
+        "les falta": {
+          "en": "Les does not go with \"A nosotros\". Here the pronoun is nos: nos falta.",
+          "es": "Les no va con \"A nosotros\". Aquí el pronombre es nos: nos falta."
+        }
+      }
     },
     {
       "kind": "form",
@@ -911,7 +951,17 @@
       "verb": "pronombre + verbo",
       "person": "A ustedes ___ (molestar) el calor.",
       "answer": "les molesta",
-      "table": "verbos-como-gustar-formas"
+      "table": "verbos-como-gustar-formas",
+      "wrong": {
+        "les molestan": {
+          "en": "The verb agrees with what pleases, not with the person: el calor is singular, so the verb is molesta: les molesta.",
+          "es": "El verbo concuerda con lo que gusta, no con la persona: el calor es singular, así que el verbo es molesta: les molesta."
+        },
+        "le molesta": {
+          "en": "Le does not go with \"A ustedes\". Here the pronoun is les: les molesta.",
+          "es": "Le no va con \"A ustedes\". Aquí el pronombre es les: les molesta."
+        }
+      }
     },
     {
       "kind": "form",
@@ -919,7 +969,17 @@
       "verb": "pronombre + verbo",
       "person": "A mi hermano ___ (importar) mucho el fútbol.",
       "answer": "le importa",
-      "table": "verbos-como-gustar-formas"
+      "table": "verbos-como-gustar-formas",
+      "wrong": {
+        "le importan": {
+          "en": "The verb agrees with what pleases, not with the person: el fútbol is singular, so the verb is importa: le importa.",
+          "es": "El verbo concuerda con lo que gusta, no con la persona: el fútbol es singular, así que el verbo es importa: le importa."
+        },
+        "les importa": {
+          "en": "Les does not go with \"A mi hermano\". Here the pronoun is le: le importa.",
+          "es": "Les no va con \"A mi hermano\". Aquí el pronombre es le: le importa."
+        }
+      }
     },
     {
       "kind": "form",
@@ -927,7 +987,17 @@
       "verb": "pronombre + verbo",
       "person": "A él ___ (doler) los ojos.",
       "answer": "le duelen",
-      "table": "verbos-como-gustar-formas"
+      "table": "verbos-como-gustar-formas",
+      "wrong": {
+        "le duele": {
+          "en": "The verb agrees with what pleases, not with the person: los ojos is plural, so the verb is duelen: le duelen.",
+          "es": "El verbo concuerda con lo que gusta, no con la persona: los ojos es plural, así que el verbo es duelen: le duelen."
+        },
+        "les duelen": {
+          "en": "Les does not go with \"A él\". Here the pronoun is le: le duelen.",
+          "es": "Les no va con \"A él\". Aquí el pronombre es le: le duelen."
+        }
+      }
     },
     {
       "kind": "form",
@@ -935,7 +1005,17 @@
       "verb": "pronombre + verbo",
       "person": "A mí ___ (quedar) grandes estos zapatos.",
       "answer": "me quedan",
-      "table": "verbos-como-gustar-formas"
+      "table": "verbos-como-gustar-formas",
+      "wrong": {
+        "me queda": {
+          "en": "The verb agrees with what pleases, not with the person: estos zapatos is plural, so the verb is quedan: me quedan.",
+          "es": "El verbo concuerda con lo que gusta, no con la persona: estos zapatos es plural, así que el verbo es quedan: me quedan."
+        },
+        "te quedan": {
+          "en": "Te does not go with \"A mí\". Here the pronoun is me: me quedan.",
+          "es": "Te no va con \"A mí\". Aquí el pronombre es me: me quedan."
+        }
+      }
     },
     {
       "kind": "form",
@@ -943,7 +1023,17 @@
       "verb": "pronombre + verbo",
       "person": "¿A ti ___ (parecer) bien el plan?",
       "answer": "te parece",
-      "table": "verbos-como-gustar-formas"
+      "table": "verbos-como-gustar-formas",
+      "wrong": {
+        "te parecen": {
+          "en": "The verb agrees with what pleases, not with the person: el plan is singular, so the verb is parece: te parece.",
+          "es": "El verbo concuerda con lo que gusta, no con la persona: el plan es singular, así que el verbo es parece: te parece."
+        },
+        "me parece": {
+          "en": "Me does not go with \"A ti\". Here the pronoun is te: te parece.",
+          "es": "Me no va con \"A ti\". Aquí el pronombre es te: te parece."
+        }
+      }
     },
     {
       "kind": "form",
@@ -951,7 +1041,17 @@
       "verb": "pronombre + verbo",
       "person": "A mis amigos ___ (encantar) bailar.",
       "answer": "les encanta",
-      "table": "verbos-como-gustar-formas"
+      "table": "verbos-como-gustar-formas",
+      "wrong": {
+        "les encantan": {
+          "en": "When what pleases is a verb in the infinitive, the gustar-type verb stays singular: les encanta.",
+          "es": "Cuando lo que gusta es un verbo en infinitivo, el verbo tipo gustar queda en singular: les encanta."
+        },
+        "le encanta": {
+          "en": "Le does not go with \"A mis amigos\". Here the pronoun is les: les encanta.",
+          "es": "Le no va con \"A mis amigos\". Aquí el pronombre es les: les encanta."
+        }
+      }
     },
     {
       "kind": "form",
@@ -959,7 +1059,17 @@
       "verb": "pronombre + verbo",
       "person": "A mí no ___ (importar) los precios.",
       "answer": "me importan",
-      "table": "verbos-como-gustar-formas"
+      "table": "verbos-como-gustar-formas",
+      "wrong": {
+        "me importa": {
+          "en": "The verb agrees with what pleases, not with the person: los precios is plural, so the verb is importan: me importan.",
+          "es": "El verbo concuerda con lo que gusta, no con la persona: los precios es plural, así que el verbo es importan: me importan."
+        },
+        "te importan": {
+          "en": "Te does not go with \"A mí\". Here the pronoun is me: me importan.",
+          "es": "Te no va con \"A mí\". Aquí el pronombre es me: me importan."
+        }
+      }
     },
     {
       "kind": "form",
@@ -967,7 +1077,17 @@
       "verb": "pronombre + verbo",
       "person": "A ella ___ (interesar) los idiomas.",
       "answer": "le interesan",
-      "table": "verbos-como-gustar-formas"
+      "table": "verbos-como-gustar-formas",
+      "wrong": {
+        "le interesa": {
+          "en": "The verb agrees with what pleases, not with the person: los idiomas is plural, so the verb is interesan: le interesan.",
+          "es": "El verbo concuerda con lo que gusta, no con la persona: los idiomas es plural, así que el verbo es interesan: le interesan."
+        },
+        "les interesan": {
+          "en": "Les does not go with \"A ella\". Here the pronoun is le: le interesan.",
+          "es": "Les no va con \"A ella\". Aquí el pronombre es le: le interesan."
+        }
+      }
     },
     {
       "kind": "why",
