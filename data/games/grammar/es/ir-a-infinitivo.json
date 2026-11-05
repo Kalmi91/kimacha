@@ -833,7 +833,17 @@
       "person": "yo",
       "answer": "voy a",
       "table": "ir-a-presente",
-      "tense": { "from": "presente", "to": "ir-a" }
+      "tense": { "from": "presente", "to": "ir-a" },
+      "wrong": {
+        "voy": {
+          "en": "The near future with ir needs the little word a after the verb: voy a.",
+          "es": "El futuro cercano con ir necesita la palabra a después del verbo: voy a."
+        },
+        "vo a": {
+          "en": "The yo form of ir is irregular and ends in -y, like soy and estoy: voy a.",
+          "es": "La forma yo de ir es irregular y termina en -y, como soy y estoy: voy a."
+        }
+      }
     },
     {
       "id": "ir-form-02",
@@ -842,7 +852,17 @@
       "person": "tú",
       "answer": "vas a",
       "table": "ir-a-presente",
-      "tense": { "from": "presente", "to": "ir-a" }
+      "tense": { "from": "presente", "to": "ir-a" },
+      "wrong": {
+        "vas": {
+          "en": "The near future with ir needs the little word a after the verb: vas a.",
+          "es": "El futuro cercano con ir necesita la palabra a después del verbo: vas a."
+        },
+        "ves a": {
+          "en": "Ves is a form of ver (to see). This structure uses ir: vas a.",
+          "es": "Ves es una forma de ver. Esta estructura usa ir: vas a."
+        }
+      }
     },
     {
       "id": "ir-form-03",
@@ -851,7 +871,17 @@
       "person": "él/ella/usted",
       "answer": "va a",
       "table": "ir-a-presente",
-      "tense": { "from": "presente", "to": "ir-a" }
+      "tense": { "from": "presente", "to": "ir-a" },
+      "wrong": {
+        "va": {
+          "en": "The near future with ir needs the little word a after the verb: va a.",
+          "es": "El futuro cercano con ir necesita la palabra a después del verbo: va a."
+        },
+        "ve a": {
+          "en": "Ve is a form of ver (to see). This structure uses ir: va a.",
+          "es": "Ve es una forma de ver. Esta estructura usa ir: va a."
+        }
+      }
     },
     {
       "id": "ir-form-04",
@@ -860,7 +890,17 @@
       "person": "nosotros",
       "answer": "vamos a",
       "table": "ir-a-presente",
-      "tense": { "from": "presente", "to": "ir-a" }
+      "tense": { "from": "presente", "to": "ir-a" },
+      "wrong": {
+        "vamos": {
+          "en": "The near future with ir needs the little word a after the verb: vamos a.",
+          "es": "El futuro cercano con ir necesita la palabra a después del verbo: vamos a."
+        },
+        "vemos a": {
+          "en": "Vemos is a form of ver (to see). This structure uses ir: vamos a.",
+          "es": "Vemos es una forma de ver. Esta estructura usa ir: vamos a."
+        }
+      }
     },
     {
       "id": "ir-form-06",
@@ -869,7 +909,17 @@
       "person": "ellos/ellas/ustedes",
       "answer": "van a",
       "table": "ir-a-presente",
-      "tense": { "from": "presente", "to": "ir-a" }
+      "tense": { "from": "presente", "to": "ir-a" },
+      "wrong": {
+        "van": {
+          "en": "The near future with ir needs the little word a after the verb: van a.",
+          "es": "El futuro cercano con ir necesita la palabra a después del verbo: van a."
+        },
+        "ven a": {
+          "en": "Ven is a form of ver (to see). This structure uses ir: van a.",
+          "es": "Ven es una forma de ver. Esta estructura usa ir: van a."
+        }
+      }
     },
     {
       "kind": "why",
