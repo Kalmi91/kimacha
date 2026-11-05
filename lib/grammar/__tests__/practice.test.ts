@@ -11,6 +11,8 @@ const O = { learnedLang: 'es', contentLang: 'en', seed: 7 };
 const all = (topic: string) => buildLessonTest(lessonFor('es', topic)!, { ...O, size: 9999 });
 const missedOf = (topic: string, id: string) => all(topic).find((q) => q.id === id)!;
 
+const tableRowOf = (table: { rows: string[][] }, person: string) => table.rows.filter((r) => !/vosotr/i.test(r[0])).findIndex((r) => r[0] === person);
+
 describe('buildPractice', () => {
   it('a form item of a person table: every form of THAT verb first (the missed one included), then other form items, then the rest', () => {
     const lesson = lessonFor('es', 'gustar')!;
@@ -18,10 +20,12 @@ describe('buildPractice', () => {
     const tasks = buildPractice(missed, lesson, O);
     const table = lesson.body.find((b) => b.kind === 'table')!;
     if (table.kind !== 'table') throw new Error('table');
-    const forms = tasks.slice(0, table.rows.filter((r) => !/vosotr/i.test(r[0])).length);
     // the vosotros row is no task in Spanish (Mexican norm)
     const rows = table.rows.filter((r) => !/vosotr/i.test(r[0]));
-    expect(forms.map((q) => (q.view.card === 'type' ? q.view.answer : ''))).toEqual(rows.map((r) => r[2]));
+    const forms = tasks.slice(0, 2 * rows.length);
+    const answers = forms.map((q) => (q.view.card === 'type' ? q.view.answer : ''));
+    // the table holds two verbs (one thing / several things): the missed verb's whole column is among the first tasks
+    for (const r of rows) expect(answers).toContain(r[2]);
     for (const q of forms) expect(q.kind).toBe('form');
     expect(forms.some((q) => q.view.card === 'type' && q.view.answer === missed.review.answer)).toBe(true);
     // the real items of the same table follow, the missed one is not asked twice
@@ -118,9 +122,15 @@ describe('buildPractice over the real lessons of all four courses', () => {
       (lesson.body.find((b) => b.kind === 'table' && b.id === id) as Extract<(typeof lesson.body)[number], { kind: 'table' }>).rows
         .filter((r) => !/vosotr/i.test(r[0]))
         .map((r) => r[1]);
-    // the missed verb's column comes first, the other verb's column right after it
-    expect(forms.slice(0, 5)).toEqual(col('ser-presente'));
-    expect(forms.slice(5, 10)).toEqual(col('estar-presente'));
+    const ser = col('ser-presente');
+    const estar = col('estar-presente');
+    // round robin: the missed verb and person first (ser, él/ella/usted = es), the first 6 hold both verbs on different persons
+    expect(forms[0]).toBe('es');
+    const first6 = tasks.slice(0, 6).map((q) => (q.view.card === 'type' ? q.view.label ?? q.view.prompt : ''));
+    expect(forms.slice(0, 6).some((a, i) => i % 2 === 1 && estar.includes(a) && !ser.includes(a))).toBe(true);
+    expect(new Set(first6).size).toBe(6);
+    // every form of ser AND of estar is practised
+    for (const a of [...ser, ...estar]) expect(forms).toContain(a);
     expect(tasks.length).toBe(PRACTICE_SIZE);
     expect(new Set(tasks.map((q) => q.id)).size).toBe(tasks.length);
   });
@@ -142,8 +152,10 @@ describe('buildPractice over the real lessons of all four courses', () => {
       const ci = table.header.findIndex((h) => h.es === verb);
       return table.rows.filter((r) => !/vosotr/i.test(r[0])).map((r) => r[ci].split(' / ')[0].trim());
     };
-    expect(answers.slice(0, 5)).toEqual(col('ir')); // the missed verb first
-    for (const verb of ['ser', 'ver']) for (const a of col(verb)) expect(answers).toContain(a);
+    expect(answers[0]).toBe(col('ir')[tableRowOf(table, (miss as { person: string }).person)]); // the missed verb and person first
+    // the 15-task cap is shared with the topic's other verbs: each verb of the table is in, the missed verb completely
+    for (const a of col('ir')) expect(answers).toContain(a);
+    for (const verb of ['ser', 'ver']) expect(col(verb).some((a) => answers.includes(a))).toBe(true);
     expect(new Set(tasks.map((q) => q.id)).size).toBe(tasks.length);
     expect(tasks.length).toBeLessThanOrEqual(PRACTICE_SIZE);
   });

@@ -37,5 +37,5 @@ export default function XpChip({ earned = 0 }: { earned?: number }) {
 
 // The screens that show it have no side padding of their own at this spot: the chip must not touch the screen edge.
 const styles = StyleSheet.create({
-  row: { paddingHorizontal: 16 },
+  row: { paddingHorizontal: 16, marginTop: 4 },
 });
