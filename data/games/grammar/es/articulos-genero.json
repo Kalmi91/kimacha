@@ -754,7 +754,21 @@
       "verb": "Determinado plural",
       "person": "el libro",
       "answer": "los libros",
-      "table": "articulos"
+      "table": "articulos",
+      "wrong": {
+        "los libro": {
+          "en": "In the plural the noun changes too, not only the article: libro becomes libros.",
+          "es": "En plural cambia también el sustantivo, no solo el artículo: libro pasa a libros."
+        },
+        "las libros": {
+          "en": "Libro is masculine, so its article is los, not las: los libros.",
+          "es": "Libro es masculino, así que su artículo es los, no las: los libros."
+        },
+        "los libroses": {
+          "en": "A noun ending in a vowel adds only -s. The ending -es is for nouns ending in a consonant: libros.",
+          "es": "Un sustantivo terminado en vocal solo añade -s. La terminación -es es para sustantivos terminados en consonante: libros."
+        }
+      }
     },
     {
       "id": "ag-form-02",
@@ -762,7 +776,17 @@
       "verb": "Determinado plural",
       "person": "la casa",
       "answer": "las casas",
-      "table": "articulos"
+      "table": "articulos",
+      "wrong": {
+        "los casas": {
+          "en": "Casa is feminine, so its article is las, not los: las casas.",
+          "es": "Casa es femenino, así que su artículo es las, no los: las casas."
+        },
+        "las casa": {
+          "en": "In the plural the noun changes too, not only the article: casa becomes casas.",
+          "es": "En plural cambia también el sustantivo, no solo el artículo: casa pasa a casas."
+        }
+      }
     },
     {
       "id": "ag-form-03",
@@ -770,7 +794,17 @@
       "verb": "Determinado plural",
       "person": "el día",
       "answer": "los días",
-      "table": "articulos"
+      "table": "articulos",
+      "wrong": {
+        "las días": {
+          "en": "Día is masculine even though it ends in -a, so the article is los: los días.",
+          "es": "Día es masculino aunque termine en -a, así que el artículo es los: los días."
+        },
+        "los día": {
+          "en": "In the plural the noun changes too, not only the article: día becomes días.",
+          "es": "En plural cambia también el sustantivo, no solo el artículo: día pasa a días."
+        }
+      }
     },
     {
       "id": "ag-form-04",
@@ -778,7 +812,17 @@
       "verb": "Determinado plural",
       "person": "la mano",
       "answer": "las manos",
-      "table": "articulos"
+      "table": "articulos",
+      "wrong": {
+        "los manos": {
+          "en": "Mano is feminine even though it ends in -o, so the article is las: las manos.",
+          "es": "Mano es femenino aunque termine en -o, así que el artículo es las: las manos."
+        },
+        "las mano": {
+          "en": "In the plural the noun changes too, not only the article: mano becomes manos.",
+          "es": "En plural cambia también el sustantivo, no solo el artículo: mano pasa a manos."
+        }
+      }
     },
     {
       "id": "ag-form-05",
@@ -786,7 +830,21 @@
       "verb": "Determinado plural",
       "person": "el agua",
       "answer": "las aguas",
-      "table": "articulos"
+      "table": "articulos",
+      "wrong": {
+        "los aguas": {
+          "en": "Agua is feminine. It takes el only in the singular, before a stressed a; in the plural it is las aguas.",
+          "es": "Agua es femenino. Lleva el solo en singular, ante a tónica; en plural es las aguas."
+        },
+        "las agua": {
+          "en": "In the plural the noun changes too, not only the article: agua becomes aguas.",
+          "es": "En plural cambia también el sustantivo, no solo el artículo: agua pasa a aguas."
+        },
+        "las aguases": {
+          "en": "A noun ending in a vowel adds only -s. The ending -es is for nouns ending in a consonant: aguas.",
+          "es": "Un sustantivo terminado en vocal solo añade -s. La terminación -es es para sustantivos terminados en consonante: aguas."
+        }
+      }
     },
     {
       "id": "ag-form-06",
@@ -794,7 +852,17 @@
       "verb": "Determinado plural",
       "person": "el problema",
       "answer": "los problemas",
-      "table": "articulos"
+      "table": "articulos",
+      "wrong": {
+        "las problemas": {
+          "en": "Problema is masculine even though it ends in -a, so the article is los: los problemas.",
+          "es": "Problema es masculino aunque termine en -a, así que el artículo es los: los problemas."
+        },
+        "los problema": {
+          "en": "In the plural the noun changes too, not only the article: problema becomes problemas.",
+          "es": "En plural cambia también el sustantivo, no solo el artículo: problema pasa a problemas."
+        }
+      }
     },
     {
       "id": "ag-form-07",
@@ -802,7 +870,21 @@
       "verb": "Determinado plural",
       "person": "la ciudad",
       "answer": "las ciudades",
-      "table": "articulos"
+      "table": "articulos",
+      "wrong": {
+        "las ciudads": {
+          "en": "A noun ending in -d adds -es, not just -s: ciudad becomes ciudades.",
+          "es": "Un sustantivo terminado en -d añade -es, no solo -s: ciudad pasa a ciudades."
+        },
+        "los ciudades": {
+          "en": "Ciudad is feminine, so its article is las, not los: las ciudades.",
+          "es": "Ciudad es femenino, así que su artículo es las, no los: las ciudades."
+        },
+        "las ciudad": {
+          "en": "In the plural the noun changes too, not only the article: ciudad becomes ciudades.",
+          "es": "En plural cambia también el sustantivo, no solo el artículo: ciudad pasa a ciudades."
+        }
+      }
     },
     {
       "id": "ag-form-08",
@@ -810,7 +892,17 @@
       "verb": "Determinado plural",
       "person": "el mapa",
       "answer": "los mapas",
-      "table": "articulos"
+      "table": "articulos",
+      "wrong": {
+        "las mapas": {
+          "en": "Mapa is masculine even though it ends in -a, so the article is los: los mapas.",
+          "es": "Mapa es masculino aunque termine en -a, así que el artículo es los: los mapas."
+        },
+        "los mapa": {
+          "en": "In the plural the noun changes too, not only the article: mapa becomes mapas.",
+          "es": "En plural cambia también el sustantivo, no solo el artículo: mapa pasa a mapas."
+        }
+      }
     },
     {
       "id": "ag-form-09",
@@ -818,7 +910,21 @@
       "verb": "Determinado plural",
       "person": "la foto",
       "answer": "las fotos",
-      "table": "articulos"
+      "table": "articulos",
+      "wrong": {
+        "los fotos": {
+          "en": "Foto is feminine even though it ends in -o, so the article is las: las fotos.",
+          "es": "Foto es femenino aunque termine en -o, así que el artículo es las: las fotos."
+        },
+        "las foto": {
+          "en": "In the plural the noun changes too, not only the article: foto becomes fotos.",
+          "es": "En plural cambia también el sustantivo, no solo el artículo: foto pasa a fotos."
+        },
+        "las fotoes": {
+          "en": "A noun ending in a vowel adds only -s. The ending -es is for nouns ending in a consonant: fotos.",
+          "es": "Un sustantivo terminado en vocal solo añade -s. La terminación -es es para sustantivos terminados en consonante: fotos."
+        }
+      }
     },
     {
       "id": "ag-form-10",
@@ -826,7 +932,21 @@
       "verb": "Determinado plural",
       "person": "la lección",
       "answer": "las lecciones",
-      "table": "articulos"
+      "table": "articulos",
+      "wrong": {
+        "las leccións": {
+          "en": "Nouns ending in -n add -es, and the written accent disappears: lección becomes lecciones.",
+          "es": "Los sustantivos en -n añaden -es, y la tilde desaparece: lección pasa a lecciones."
+        },
+        "las lección": {
+          "en": "In the plural the noun changes too, not only the article: lección becomes lecciones.",
+          "es": "En plural cambia también el sustantivo, no solo el artículo: lección pasa a lecciones."
+        },
+        "los lecciones": {
+          "en": "Lección is feminine, so its article is las, not los: las lecciones.",
+          "es": "Lección es femenino, así que su artículo es las, no los: las lecciones."
+        }
+      }
     },
     {
       "id": "ag-form-11",
@@ -834,7 +954,17 @@
       "verb": "Determinado plural",
       "person": "el lunes",
       "answer": "los lunes",
-      "table": "articulos"
+      "table": "articulos",
+      "wrong": {
+        "los luneses": {
+          "en": "Days of the week ending in -s do not change in the plural; only the article does: los lunes.",
+          "es": "Los días de la semana terminados en -s no cambian en plural; solo cambia el artículo: los lunes."
+        },
+        "las lunes": {
+          "en": "Lunes is masculine, so its article is los, not las: los lunes.",
+          "es": "Lunes es masculino, así que su artículo es los, no las: los lunes."
+        }
+      }
     },
     {
       "id": "ag-form-12",
@@ -842,7 +972,21 @@
       "verb": "Determinado plural",
       "person": "la clase",
       "answer": "las clases",
-      "table": "articulos"
+      "table": "articulos",
+      "wrong": {
+        "los clases": {
+          "en": "Clase is feminine, so its article is las, not los: las clases.",
+          "es": "Clase es femenino, así que su artículo es las, no los: las clases."
+        },
+        "las clase": {
+          "en": "In the plural the noun changes too, not only the article: clase becomes clases.",
+          "es": "En plural cambia también el sustantivo, no solo el artículo: clase pasa a clases."
+        },
+        "las clasees": {
+          "en": "A noun ending in a vowel adds only -s. The ending -es is for nouns ending in a consonant: clases.",
+          "es": "Un sustantivo terminado en vocal solo añade -s. La terminación -es es para sustantivos terminados en consonante: clases."
+        }
+      }
     },
     {
       "id": "ag-why-01",
