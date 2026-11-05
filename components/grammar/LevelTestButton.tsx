@@ -7,9 +7,10 @@ import { BrutalBox } from '@/components/grammar/Brutal';
 import Colors from '@/constants/Colors';
 import type { Level } from '@/data/words';
 import { useGrammarColors } from '@/lib/grammarColors';
-import { levelDone, levelPercent } from '@/lib/grammar/levelTest';
+import { levelDone, levelPercent, shownLabel } from '@/lib/grammar/levelTest';
 import type { TopicEvidence } from '@/lib/grammar/randomRound';
 import { hasLesson, syllabusForLevel } from '@/lib/grammar/syllabus';
+import { useLevelShown } from '@/lib/grammar/useLevelShown';
 import { topicKindCount } from '@/lib/grammar/randomRoundView';
 import { t } from '@/lib/i18n';
 import { useTheme } from '@/lib/ThemeContext';
@@ -36,9 +37,11 @@ export default function LevelTestButton({
     () => syllabusForLevel(level, learnedLang).filter((tp) => hasLesson(learnedLang, tp.id)).map((tp) => tp.id),
     [level, learnedLang]
   );
+  // the standing (never sinks, grows with right answers), the same number as the test's bar and the syllabus header
+  const pct = useLevelShown(`${contentLang}→${learnedLang}`, level, levelPercent(ids, evidence), evidence);
   if (ids.length === 0) return null;
   const done = levelDone(ids, evidence, (id) => topicKindCount(learnedLang, contentLang, id));
-  const label = `${done ? '✓ ' : ''}🎯 ${t().levelTest.button} · ${levelPercent(ids, evidence)}%`;
+  const label = `${done ? '✓ ' : ''}🎯 ${t().levelTest.button} · ${shownLabel(pct)}%`;
   const open = () => router.push(`/grammar/level-test?level=${level}` as never);
   if (g.brutal) {
     return (

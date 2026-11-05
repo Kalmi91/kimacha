@@ -129,7 +129,7 @@ const de: typeof en = {
   },
   levelTest: {
     button: 'Niveautest',
-    header: (lvl: string, pct: number, pos: number, total: number) => `${lvl} · ${pct}% · ${pos}/${total}`,
+    header: (lvl: string, pos: number, total: number) => `${lvl} · ${pos}/${total}`,
     leave: 'Niveautest verlassen',
     doneTitle: (lvl: string) => `${lvl}: alle Themen abgehakt`,
     doneBody: 'Du kannst jetzt aufhören oder weiterüben.',
@@ -148,6 +148,9 @@ const de: typeof en = {
     roundLevels: (lvl: string, from: number, to: number) => `Niveau ${lvl}: ${from}% → ${to}%`,
     weakest: 'Jetzt am schwächsten',
     weakestLine: (title: string, pct: number) => `${title} · ${pct}%`,
+    roundTopics: 'Themen dieser Runde',
+    roundTopicRow: (right: number, asked: number) => `${right}/${asked}`,
+    topicDelta: (d: number) => (d > 0 ? `▲ +${d} Pkt.` : d < 0 ? `▼ ${d} Pkt.` : `= 0 Pkt.`),
     nextRound: (n: number) => `Weitere ${n}`,
     practiceButton: (n: number) => `Das üben · ${n}`,
     practiceHeader: (i: number, n: number) => `Übung · ${i}/${n}`,

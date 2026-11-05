@@ -22,9 +22,9 @@ import ScreenFeedback from '@/lib/screenFeedback';
 // grows by one so the counter stays true. Practice keeps no state of its own and writes no evidence: the level percent and
 // the test's round do not move. ✕ and the end screen both hand control back to the test.
 const COME_BACK_AFTER = 3;
-// the rule box height: smaller with the keyboard open, so the input and Check stay on screen on a 1080x1600 phone
+// the rule box height; with the keyboard open the box is not drawn at all (FB590): the app pans the window for the
+// keyboard (app.json softwareKeyboardLayoutMode), so a box above the question pushed the question off the top
 const RULE_MAX = 220;
-const RULE_MAX_KEYBOARD = 110;
 
 interface Item {
   q: LessonTestQuestion;
@@ -128,7 +128,7 @@ export default function LevelPractice({
   const ruleBox = hasRule ? (
     <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
       <Text style={[styles.label, { color: colors.textMuted }]}>{s.practiceRule}</Text>
-      <ScrollView ref={ruleScroll} testID="level-practice-rule-box" style={{ maxHeight: keyboardOpen ? RULE_MAX_KEYBOARD : RULE_MAX }} nestedScrollEnabled>
+      <ScrollView ref={ruleScroll} testID="level-practice-rule-box" style={{ maxHeight: RULE_MAX }} nestedScrollEnabled>
         {table ? (
           <TableView table={table} compact onHighlightLayout={(y) => ruleScroll.current?.scrollTo({ y: Math.max(0, y - 24), animated: false })} />
         ) : (
@@ -168,7 +168,7 @@ export default function LevelPractice({
   } else if (cur) {
     body = (
       <KeyboardAvoidingView style={styles.flex} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
-        {ruleBox ? <View style={styles.rule}>{ruleBox}</View> : null}
+        {ruleBox && !keyboardOpen ? <View style={styles.rule}>{ruleBox}</View> : null}
         <DockSlotProvider host={dock}>
           <TestQuestionView key={`${index}:${cur.q.id}`} q={cur.q} learnedLang={learnedLang} strictAccents={strictAccents} instant bottomPad={FAB_CLEARANCE} onDone={answered} />
         </DockSlotProvider>

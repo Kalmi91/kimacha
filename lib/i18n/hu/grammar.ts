@@ -133,7 +133,7 @@ const hu: typeof en = {
   },
   levelTest: {
     button: 'Szintteszt',
-    header: (lvl: string, pct: number, pos: number, total: number) => `${lvl} · ${pct}% · ${pos}/${total}`,
+    header: (lvl: string, pos: number, total: number) => `${lvl} · ${pos}/${total}`,
     leave: 'Kilépés a szinttesztből',
     doneTitle: (lvl: string) => `${lvl}: minden téma kipipálva`,
     doneBody: 'Kiléphetsz, vagy gyakorolhatsz tovább.',
@@ -152,6 +152,9 @@ const hu: typeof en = {
     roundLevels: (lvl: string, from: number, to: number) => `${lvl} szint: ${from}% → ${to}%`,
     weakest: 'Most a leggyengébb',
     weakestLine: (title: string, pct: number) => `${title} · ${pct}%`,
+    roundTopics: 'A kör témái',
+    roundTopicRow: (right: number, asked: number) => `${right}/${asked}`,
+    topicDelta: (d: number) => (d > 0 ? `▲ +${d} pont` : d < 0 ? `▼ ${d} pont` : `= 0 pont`),
     nextRound: (n: number) => `Következő ${n}`,
     practiceButton: (n: number) => `Gyakorold ezt · ${n}`,
     practiceHeader: (i: number, n: number) => `Gyakorlás · ${i}/${n}`,

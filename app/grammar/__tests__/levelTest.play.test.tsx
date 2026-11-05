@@ -98,14 +98,15 @@ jest.mock('@/lib/grammar/syllabus', () => {
   };
 });
 
-import { fireEvent, render, screen } from '@testing-library/react-native';
+import { DeviceEventEmitter, Platform, StyleSheet } from 'react-native';
+import { act, fireEvent, render, screen } from '@testing-library/react-native';
 
 import { getDb } from '@/lib/database.web';
 import { playChime } from '@/lib/chime';
 import { speak } from '@/lib/speech';
 import { lessonFor } from '@/lib/grammar/syllabus';
 import { buildLessonTest, type LessonTestQuestion } from '@/lib/grammar/lessonTest';
-import { levelRoundKey } from '@/lib/grammar/levelTest';
+import { levelRoundKey, levelShownKey } from '@/lib/grammar/levelTest';
 import { loadResumeValue, saveResumeValue } from '@/lib/resumeStore';
 import { GRAMMAR_RANDOM_KEY, evidenceFromRows, topicPercent, topicTicked, type EvidenceAnswer } from '@/lib/grammar/randomRound';
 import { ThemeProvider } from '@/lib/ThemeContext';
@@ -120,6 +121,9 @@ const TOPICS = ['lt-0', 'lt-1', 'lt-2', 'lt-3', 'lt-4', 'lt-5'];
 
 const flush = makeFlush(4);
 const roundKey = (level: string) => levelRoundKey('en→es', level);
+const shownKey = (level: string) => levelShownKey('en→es', level);
+// the level bar's fill, in percent (a fraction: the standing grows by 0.3 per right answer)
+const barPct = () => parseFloat(String(StyleSheet.flatten(screen.getByTestId('level-test-progress-fill').props.style).width));
 const press = async (testID: string) => {
   fireEvent.press(screen.getByTestId(testID));
   await flush();
@@ -186,6 +190,7 @@ describe.each(['brand', 'classic'] as const)('grammar level test (%s palette)', 
     await db.setGrammarPalette(palette);
     await db.resetGameProgress(GRAMMAR_RANDOM_KEY);
     for (const lvl of ['A1', 'A2', 'B1', 'C1']) await saveResumeValue(db, roundKey(lvl), null);
+    for (const lvl of ['A1', 'A2', 'B1', 'C1']) await saveResumeValue(db, shownKey(lvl), null);
     questions = buildAll();
   });
   afterEach(() => (Date.now as jest.Mock).mockRestore());
@@ -203,8 +208,9 @@ describe.each(['brand', 'classic'] as const)('grammar level test (%s palette)', 
   it('starts on the core+ topic of the level, with the level percent in the header and no topic name before the answer', async () => {
     await open();
     expect(topicOnScreen()).toBe('lt-0');
-    expect(text('level-test-header')).toBe('A1 · 0% · 1/20');
+    expect(text('level-test-header')).toBe('A1 · 1/20'); // no percent in the header (FB593)
     expect(screen.getByTestId('level-test-progress')).toBeTruthy();
+    expect(barPct()).toBe(0);
     for (const name of ['Alpha topic', 'Beta topic', 'Gamma topic', 'Delta topic', 'Epsilon topic']) expect(screen.queryByText(name)).toBeNull();
     // the A2 topic is not part of the A1 test
     expect(screen.queryByText(/lt-4/)).toBeNull();
@@ -279,9 +285,11 @@ describe.each(['brand', 'classic'] as const)('grammar level test (%s palette)', 
     for (const id of ['lt-1', 'lt-2', 'lt-3']) await seedEvidence(id, TICKED);
     await open();
     expect(topicOnScreen()).toBe('lt-0');
-    expect(text('level-test-header')).toBe('A1 · 92% · 1/20'); // 3 topics at 100, lt-0 with 2 right answers counts 67
+    expect(text('level-test-header')).toBe('A1 · 1/20');
+    expect(Math.floor(barPct())).toBe(92); // 3 topics at 100, lt-0 with 2 right answers counts 67
     await answer(true);
-    expect(text('level-test-header')).toBe('A1 · 100% · 1/20');
+    expect(text('level-test-header')).toBe('A1 · 1/20');
+    expect(barPct()).toBe(100);
   });
 
   it('the ✕ leaves at once with no question, progress stays, and the next visit continues with the then lowest topic', async () => {
@@ -352,7 +360,7 @@ describe.each(['brand', 'classic'] as const)('grammar level test (%s palette)', 
       await open();
       expect(screen.queryByTestId('level-test-done')).toBeNull();
       expect(topicOnScreen()).toBe('lt-2');
-      expect(text('level-test-header')).toBe('A1 · 97% · 1/20');
+      expect(Math.floor(barPct())).toBe(97);
     });
   });
 
@@ -510,14 +518,17 @@ describe.each(['brand', 'classic'] as const)('grammar level test (%s palette)', 
 
     it('the header counts the question of the round and every answer is saved', async () => {
       await open();
-      expect(text('level-test-header')).toBe('A1 · 0% · 1/20');
+      expect(text('level-test-header')).toBe('A1 · 1/20');
       await answer(true);
-      expect(text('level-test-header')).toBe('A1 · 8% · 1/20'); // the card of the 1st answer: 1 right of 1 moves the level (33 / 4 topics)
+      expect(text('level-test-header')).toBe('A1 · 1/20');
+      expect(barPct()).toBeCloseTo(8.3, 5); // 1 right of 1 moves the level to 8 (33 / 4 topics), and the standing grows 0.3 on top
       await next();
-      expect(text('level-test-header')).toBe('A1 · 8% · 2/20');
+      expect(text('level-test-header')).toBe('A1 · 2/20');
       await answerNext(false);
-      expect(text('level-test-header')).toBe('A1 · 8% · 3/20');
-      expect(await saved()).toEqual({ n: 2, right: 1, startPct: 0 });
+      expect(text('level-test-header')).toBe('A1 · 3/20');
+      expect(barPct()).toBeCloseTo(8.3, 5); // a wrong answer leaves it where it was
+      expect(await saved()).toEqual({ n: 2, right: 1, startPct: 0, topics: expect.any(Object) });
+      expect(await loadResumeValue(getDb(), shownKey('A1'))).toBeCloseTo(8.3, 5);
     });
 
     it('re-entry mid-round: the position and the right count survive leaving, and a damaged value starts a new round', async () => {
@@ -532,12 +543,12 @@ describe.each(['brand', 'classic'] as const)('grammar level test (%s palette)', 
 
       await saveResumeValue(getDb(), KEY, { n: 99, right: 3 });
       const again = await open();
-      expect(text('level-test-header')).toBe('A1 · 17% · 1/20');
+      expect(text('level-test-header')).toBe('A1 · 1/20');
       again.unmount();
       // the pair and the level are separate rounds
       await saveResumeValue(getDb(), roundKey('A2'), { n: 7, right: 2, startPct: 10 });
       await open();
-      expect(text('level-test-header')).toBe('A1 · 17% · 1/20');
+      expect(text('level-test-header')).toBe('A1 · 1/20');
     });
 
     const nearEnd = async () => {
@@ -546,7 +557,9 @@ describe.each(['brand', 'classic'] as const)('grammar level test (%s palette)', 
       await seedEvidence('lt-1', TICKED);
       await seedEvidence('lt-2', ['c', 'c', 'x', 'x']);
       await seedEvidence('lt-3', TICKED);
-      await saveResumeValue(getDb(), KEY, { n: 19, right: 10, startPct: 60 });
+      // the round so far: lt-2 got 2 of 4 right and fell from 75, lt-1 got 5 of 5 and stayed at 100
+      const topics = { 'lt-2': { n: 4, right: 2, start: 75 }, 'lt-1': { n: 5, right: 5, start: 100 } };
+      await saveResumeValue(getDb(), KEY, { n: 19, right: 10, startPct: 60, topics });
     };
 
     it('after the 20th result comes the round screen: right count, level percent before and after, the weakest topic, Next 20, Leave', async () => {
@@ -558,9 +571,19 @@ describe.each(['brand', 'classic'] as const)('grammar level test (%s palette)', 
       expect(screen.queryByTestId('level-test-round-score')).toBeNull(); // the 20th result card first
       await next();
       expect(text('level-test-round-score')).toBe('11 / 20');
-      const after = /A1 · (\d+)% · 20\/20/.exec(text('level-test-header'))![1];
+      const after = /→ (\d+)%/.exec(text('level-test-round-levels'))![1];
       expect(text('level-test-round-levels')).toBe(`A1 level: 60% → ${after}%`);
-      expect(text('level-test-round-weakest')).toBe('Gamma topic · 50%');
+      // one row per topic asked in this round, the weakest first; a tap opens that topic's lesson
+      const rows = screen.getAllByTestId(/^level-test-round-topic-lt-\d$/);
+      expect(rows.length).toBeGreaterThan(0);
+      expect(rows[0].props.testID).toBe('level-test-round-topic-lt-2');
+      expect(text('level-test-round-topic-score-lt-2')).toBe('2/4');
+      expect(text('level-test-round-topic-delta-lt-2')).toBe('▼ -25 pts');
+      expect(text('level-test-round-topic-delta-lt-1')).toBe('= 0 pts');
+      expect(text('level-test-round-topic-score-lt-0')).toBe('1/1');
+      expect(text('level-test-round-topic-delta-lt-0')).toBe('▲ +33 pts'); // 2 right answers counted 67, the third gives 100
+      await press('level-test-round-topic-lt-2');
+      expect(mockPush).toHaveBeenCalledWith('/grammar/lt-2');
       expect(text('fb-card')).toBe('grammar-level-test:A1:round-end | en→es | A1');
       expect(screen.queryByTestId('exam-text')).toBeNull();
     });
@@ -569,9 +592,9 @@ describe.each(['brand', 'classic'] as const)('grammar level test (%s palette)', 
       await nearEnd();
       const view = await open();
       await answerNext(true);
+      const pctNow = /→ (\d+)%/.exec(text('level-test-round-levels'))![1];
       await press('level-test-round-next');
-      const pctNow = /A1 · (\d+)%/.exec(text('level-test-header'))![1];
-      expect(text('level-test-header')).toBe(`A1 · ${pctNow}% · 1/20`);
+      expect(text('level-test-header')).toBe('A1 · 1/20');
       expect(screen.getByTestId('exam-text')).toBeTruthy();
       expect(await saved()).toEqual({ n: 0, right: 0, startPct: Number(pctNow) });
       view.unmount();
@@ -617,11 +640,23 @@ describe.each(['brand', 'classic'] as const)('grammar level test (%s palette)', 
     it('Practice shows the rule, counts 1/5, writes no evidence, leaves the percent and the round alone; ✕ lands on the next test question', async () => {
       await typeWrongForm();
       const before = await evidenceNow();
-      const pct = /· (\d+)% ·/.exec(text('level-test-header'))![1];
+      const bar = barPct();
       await press('level-test-practice');
       expect(text('level-practice-header')).toBe('Practice · 1/5');
       expect(screen.queryByTestId('level-test-table') ?? screen.queryByTestId('level-practice-rule')).toBeTruthy();
       expect(text('fb-card')).toMatch(/^grammar-level-practice:B1:lt5-f\d \| en→es \| A1$/);
+      // FB590: with the keyboard open the rule box is gone and the question stays; it comes back when the keyboard closes
+      const evt = Platform.OS === 'ios' ? 'Will' : 'Did';
+      expect(screen.queryByTestId('level-practice-rule-box')).toBeTruthy();
+      act(() => {
+        DeviceEventEmitter.emit(`keyboard${evt}Show`, {});
+      });
+      expect(screen.queryByTestId('level-practice-rule-box')).toBeNull();
+      expect(screen.getByTestId('exam-prompt')).toBeTruthy();
+      act(() => {
+        DeviceEventEmitter.emit(`keyboard${evt}Hide`, {});
+      });
+      expect(screen.queryByTestId('level-practice-rule-box')).toBeTruthy();
       fireEvent.changeText(screen.getByTestId('exam-input'), 'zzz');
       await press('exam-check');
       expect(screen.queryByText(/Practice this/)).toBeNull(); // no Practice button on the Practice card
@@ -629,9 +664,10 @@ describe.each(['brand', 'classic'] as const)('grammar level test (%s palette)', 
       await press('level-practice-close');
       expect(screen.queryByTestId('level-practice-header')).toBeNull();
       expect(text('exam-prompt')).toBeTruthy(); // the next test question
-      expect(text('level-test-header')).toBe(`B1 · ${pct}% · 2/20`);
+      expect(text('level-test-header')).toBe('B1 · 2/20');
+      expect(barPct()).toBe(bar);
       expect(await evidenceNow()).toEqual(before);
-      expect(await loadResumeValue(getDb(), roundKey('B1'))).toEqual({ n: 1, right: 0, startPct: Number(pct) });
+      expect(await loadResumeValue(getDb(), roundKey('B1'))).toEqual({ n: 1, right: 0, startPct: 0, topics: expect.any(Object) });
     });
 
     it('the rule table highlights the cell the CURRENT task asks, on every task (not only the first)', async () => {
@@ -674,7 +710,7 @@ describe.each(['brand', 'classic'] as const)('grammar level test (%s palette)', 
   it('an unknown level falls back to the learner level; a level without any topic goes straight back', async () => {
     mockParams = { level: 'Z9' };
     const view = await open();
-    expect(text('level-test-header')).toBe('A1 · 0% · 1/20');
+    expect(text('level-test-header')).toBe('A1 · 1/20');
     view.unmount();
 
     mockBack.mockClear();

@@ -133,7 +133,7 @@ const es: typeof en = {
   },
   levelTest: {
     button: 'Prueba de nivel',
-    header: (lvl: string, pct: number, pos: number, total: number) => `${lvl} · ${pct}% · ${pos}/${total}`,
+    header: (lvl: string, pos: number, total: number) => `${lvl} · ${pos}/${total}`,
     leave: 'Salir de la prueba de nivel',
     doneTitle: (lvl: string) => `${lvl}: todos los temas superados`,
     doneBody: 'Puedes salir ahora o seguir practicando.',
@@ -152,6 +152,9 @@ const es: typeof en = {
     roundLevels: (lvl: string, from: number, to: number) => `Nivel ${lvl}: ${from}% → ${to}%`,
     weakest: 'Lo más débil ahora',
     weakestLine: (title: string, pct: number) => `${title} · ${pct}%`,
+    roundTopics: 'Temas de esta ronda',
+    roundTopicRow: (right: number, asked: number) => `${right}/${asked}`,
+    topicDelta: (d: number) => (d > 0 ? `▲ +${d} pts` : d < 0 ? `▼ ${d} pts` : `= 0 pts`),
     nextRound: (n: number) => `Otras ${n}`,
     practiceButton: (n: number) => `Practicar esto · ${n}`,
     practiceHeader: (i: number, n: number) => `Práctica · ${i}/${n}`,

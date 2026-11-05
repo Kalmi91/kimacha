@@ -8,10 +8,17 @@ import {
   levelDone,
   levelPercent,
   levelRoundKey,
+  levelShownKey,
+  nextShownPct,
   parseLevelRound,
+  parseShownPct,
   pickLevelNext,
   pickLevelQuestion,
   pickLevelTopic,
+  recordRoundAnswer,
+  roundTopicRows,
+  shownLabel,
+  shownPctOf,
   weakestTopic,
   type LevelTestCtx,
 } from '@/lib/grammar/levelTest';
@@ -256,5 +263,84 @@ describe('levelPercent moves with every answer', () => {
     expect(level(['c', 'c', 'c'])).toBe(100);
     // the topic's own percent and the tick are not changed
     expect(topicPercent(evOf(['c', 'c']))).toBeNull();
+  });
+});
+
+// FB593/FB594/FB616: the level's standing, the number on the test's bar, the test button and the syllabus header.
+describe('the level standing (shown percent)', () => {
+  it('a right answer adds 0.3 on top of the larger of the standing and the real percent; a wrong one changes nothing', () => {
+    expect(nextShownPct(40, 38, true)).toBeCloseTo(40.3, 5);
+    expect(nextShownPct(30, 38, true)).toBeCloseTo(38.3, 5); // the real percent overtook the stored standing
+    expect(nextShownPct(40.3, 38, false)).toBe(40.3);
+    expect(nextShownPct(0, 0, false)).toBe(0);
+  });
+
+  it('never goes down: a run of wrong answers and a falling real percent leave what is drawn where it was', () => {
+    let shown = nextShownPct(0, 50, true);
+    const peak = shownPctOf(shown, 50);
+    for (let i = 0; i < 5; i++) shown = nextShownPct(shown, 20, false);
+    expect(shownPctOf(shown, 20)).toBe(peak);
+    // and a right answer afterwards still grows it, from the standing, not from the lower real percent
+    expect(nextShownPct(shown, 20, true)).toBeGreaterThan(peak);
+  });
+
+  it('stops at 99 until the real percent is 100', () => {
+    expect(nextShownPct(98.9, 60, true)).toBe(99);
+    expect(nextShownPct(99, 60, true)).toBe(99);
+    expect(nextShownPct(99, 99, true)).toBe(99);
+    expect(nextShownPct(99, 100, true)).toBe(100);
+    expect(nextShownPct(100, 100, true)).toBe(100);
+  });
+
+  it('every right answer moves it (a small step each time), on the way from 0', () => {
+    let shown = 0;
+    const seen: number[] = [];
+    for (let i = 0; i < 4; i++) {
+      shown = nextShownPct(shown, 0, true);
+      seen.push(shown);
+    }
+    expect(seen.every((v, i) => v > (seen[i - 1] ?? 0))).toBe(true);
+    expect(shownLabel(seen[3])).toBe(1); // 1.2
+  });
+
+  it('draws the larger of the standing and the real percent; the label never rounds up to the next point', () => {
+    expect(shownPctOf(null, 12)).toBe(12);
+    expect(shownPctOf(41.3, 12)).toBe(41.3);
+    expect(shownLabel(41.9)).toBe(41);
+    expect(shownLabel(99)).toBe(99);
+    expect(shownLabel(100)).toBe(100);
+  });
+
+  it('parses a saved standing and refuses damaged values; the key is per pair and level', () => {
+    expect(parseShownPct(41.3)).toBe(41.3);
+    for (const bad of [null, undefined, 'x', NaN, -1, 101, {}]) expect(parseShownPct(bad)).toBeNull();
+    expect(levelShownKey('en→es', 'A1')).not.toBe(levelShownKey('en→es', 'A2'));
+    expect(levelShownKey('en→es', 'A1')).not.toBe(levelShownKey('hu→es', 'A1'));
+  });
+});
+
+// FB596: the round end's per-topic rows.
+describe('the round end topic rows', () => {
+  it('records asked, right and the topic share before its FIRST answer of the round', () => {
+    let topics = recordRoundAnswer(undefined, 'a', true, 40);
+    topics = recordRoundAnswer(topics, 'a', false, 67);
+    topics = recordRoundAnswer(topics, 'b', true, 0);
+    expect(topics).toEqual({ a: { n: 2, right: 1, start: 40 }, b: { n: 1, right: 1, start: 0 } });
+  });
+
+  it('one row per topic with right/asked and the change in points; weakest first; it can fall while others rise', () => {
+    const topics = { a: { n: 4, right: 2, start: 75 }, b: { n: 3, right: 3, start: 33 }, c: { n: 2, right: 2, start: 100 } };
+    const rows = roundTopicRows(topics, evidenceOf({ a: evOf(['c', 'c', 'x', 'x']), b: evOf(['c', 'c', 'c']), c: ticked() }));
+    expect(rows.map((r) => r.id)).toEqual(['a', 'b', 'c']); // 50, 100 (b: 3 right of 3), 100 (c)
+    expect(rows[0]).toEqual({ id: 'a', n: 4, right: 2, delta: -25 });
+    expect(rows[1].delta).toBe(67);
+    expect(rows[2].delta).toBe(0);
+  });
+
+  it('is empty for a round without a record (saved before) and parses with or without it', () => {
+    expect(roundTopicRows(undefined, new Map())).toEqual([]);
+    expect(parseLevelRound({ n: 3, right: 1, startPct: 10 })).toEqual({ n: 3, right: 1, startPct: 10 });
+    const withTopics = parseLevelRound({ n: 3, right: 1, startPct: 10, topics: { a: { n: 2, right: 1, start: 5 }, bad: { n: 'x' } } });
+    expect(withTopics?.topics).toEqual({ a: { n: 2, right: 1, start: 5 } });
   });
 });

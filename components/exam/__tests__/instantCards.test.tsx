@@ -1,7 +1,8 @@
 // The `instant` mode of the exam cards (the random grammar round's practice): the result is handed over at once,
 // with no reveal and no "Next" on the card. Without it (the exam, the lesson test) the cards behave as before.
 
-import { fireEvent, render, screen } from '@testing-library/react-native';
+import { TextInput } from 'react-native';
+import { act, fireEvent, render, screen } from '@testing-library/react-native';
 
 import { ThemeProvider } from '@/lib/ThemeContext';
 import ExamChoiceCard from '../ExamChoiceCard';
@@ -159,5 +160,21 @@ describe('ExamChoiceCard: the keyboard of a typed question before it', () => {
     const { UNSAFE_getByType } = wrap(<ExamChoiceCard heading="Pick" text="Hoy ___." options={['a', 'b']} correctIndex={0} onDone={jest.fn()} />);
     const { ScrollView } = require('react-native');
     expect(UNSAFE_getByType(ScrollView).props.keyboardShouldPersistTaps).toBe('handled');
+  });
+});
+
+describe('ExamTypeCard: the keyboard opens by itself (FB610)', () => {
+  it('no plain autoFocus (Gboard stays up with a dead field); one delayed focus a moment after mounting', () => {
+    jest.useFakeTimers();
+    const focus = jest.spyOn(TextInput.prototype, 'focus').mockImplementation(() => {});
+    wrap(<ExamTypeCard prompt="hablar · yo" answer="hablo" sentence={false} targetLang="es" strictAccents={false} instant onDone={jest.fn()} />);
+    expect(screen.getByTestId('exam-input').props.autoFocus).toBeFalsy();
+    expect(focus).not.toHaveBeenCalled();
+    act(() => {
+      jest.advanceTimersByTime(200);
+    });
+    expect(focus).toHaveBeenCalledTimes(1);
+    focus.mockRestore();
+    jest.useRealTimers();
   });
 });

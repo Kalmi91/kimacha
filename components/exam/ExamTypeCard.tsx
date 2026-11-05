@@ -8,6 +8,7 @@ import { themedInputStyle } from '@/components/grammar/Themed';
 import ResultBadge from '@/components/ResultBadge';
 import { answerInputProps } from '@/lib/inputProps';
 import { useDockedAction } from '@/components/learn/DockSlot';
+import { useFocusOnNewCard } from '@/lib/learn/useFocusOnNewCard';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
 import { gradePcicAnswer, gradeSentenceAnswer, suggestedGrade } from '@/lib/pcicMatch';
@@ -53,6 +54,9 @@ export default function ExamTypeCard({ prompt, heading, label, bottomPad, hint, 
   // the level tests: with the keyboard open the buttons under the field (I don't know) can sit behind the docked Check bar,
   // so the body scrolls to its end when the keyboard comes up
   const scrollRef = useRef<ScrollView>(null);
+  // the keyboard opens by itself, with the word card's single delayed focus (plain autoFocus left Gboard up with a dead field)
+  const inputRef = useRef<TextInput>(null);
+  useFocusOnNewCard(inputRef, true, prompt);
   useEffect(() => {
     if (!instant) return;
     const sub = Keyboard.addListener(Platform.OS === 'ios' ? 'keyboardWillShow' : 'keyboardDidShow', () => {
@@ -109,6 +113,7 @@ export default function ExamTypeCard({ prompt, heading, label, bottomPad, hint, 
           </Text>
         ) : null}
         <TextInput
+          ref={inputRef}
           testID="exam-input"
           style={[
             styles.input,
@@ -121,7 +126,6 @@ export default function ExamTypeCard({ prompt, heading, label, bottomPad, hint, 
           onChangeText={setTyped}
           onSubmitEditing={missed ? () => onDone(false, typed) : check}
           editable={!missed}
-          autoFocus
           {...answerInputProps}
         />
         {missed && (

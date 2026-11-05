@@ -149,6 +149,15 @@ export interface LevelRound {
   right: number;
   /** The level percent when the round started. */
   startPct: number;
+  /** Per topic asked in this round (FB596): answers, right ones and the topic's share before its first answer. Absent in rounds saved before. */
+  topics?: Record<string, RoundTopic>;
+}
+
+export interface RoundTopic {
+  n: number;
+  right: number;
+  /** The topic's share (topicShare) before its first answer of this round. */
+  start: number;
 }
 
 export const levelRoundKey = (pair: string, level: string): string => `grammar-level-round:${pair}:${level}`;
@@ -160,7 +169,48 @@ export function parseLevelRound(raw: unknown): LevelRound | null {
   const { n, right, startPct } = r;
   if (!Number.isInteger(n) || !Number.isInteger(right) || typeof startPct !== 'number' || !Number.isFinite(startPct)) return null;
   if ((n as number) < 0 || (n as number) > LEVEL_ROUND_SIZE || (right as number) < 0 || (right as number) > (n as number)) return null;
-  return { n: n as number, right: right as number, startPct };
+  const topics = parseRoundTopics((r as { topics?: unknown }).topics);
+  return { n: n as number, right: right as number, startPct, ...(topics ? { topics } : {}) };
+}
+
+function parseRoundTopics(raw: unknown): Record<string, RoundTopic> | null {
+  if (!raw || typeof raw !== 'object') return null;
+  const out: Record<string, RoundTopic> = {};
+  for (const [id, v] of Object.entries(raw as Record<string, Partial<RoundTopic>>)) {
+    if (!v || !Number.isInteger(v.n) || !Number.isInteger(v.right) || typeof v.start !== 'number' || !Number.isFinite(v.start)) continue;
+    if ((v.right as number) < 0 || (v.right as number) > (v.n as number)) continue;
+    out[id] = { n: v.n as number, right: v.right as number, start: v.start };
+  }
+  return out;
+}
+
+/** The round's per-topic record after one more answer; `startShare` is the topic's share BEFORE this answer (kept only for its first one). */
+export function recordRoundAnswer(
+  topics: Record<string, RoundTopic> | undefined,
+  topicId: string,
+  ok: boolean,
+  startShare: number,
+): Record<string, RoundTopic> {
+  const old = topics?.[topicId];
+  return { ...topics, [topicId]: { n: (old?.n ?? 0) + 1, right: (old?.right ?? 0) + (ok ? 1 : 0), start: old ? old.start : startShare } };
+}
+
+export interface RoundTopicRow {
+  id: string;
+  n: number;
+  right: number;
+  /** The change of the topic's share in this round, in points: up > 0, down < 0. */
+  delta: number;
+}
+
+/** One row per topic asked in the round, the weakest (lowest share now, then lowest right/asked) first. */
+export function roundTopicRows(topics: Record<string, RoundTopic> | undefined, evidence: Map<string, TopicEvidence>): RoundTopicRow[] {
+  const rows = Object.entries(topics ?? {}).map(([id, t]) => {
+    const now = topicShare(evidence.get(id));
+    return { id, n: t.n, right: t.right, delta: now - t.start, now };
+  });
+  rows.sort((a, b) => a.now - b.now || a.right / a.n - b.right / b.n);
+  return rows.map(({ id, n, right, delta }) => ({ id, n, right, delta }));
 }
 
 /** The topic of the level with the lowest percent (no percent yet = 0), ties in syllabus order; null for no topic. */
@@ -172,3 +222,29 @@ export function weakestTopic(topicIds: string[], evidence: Map<string, TopicEvid
   }
   return best;
 }
+
+// ---------------------------------------------------------------------------
+// The level's standing (FB593, FB594, FB616): the number on the level test's bar, the test button and the syllabus header.
+// It never goes down and grows a little with every right answer, so the bar always moves; the real percent (levelPercent)
+// is the floor it can never sink below. Stored per language pair and level in the resume store.
+
+export const LEVEL_SHOWN_STEP = 0.3;
+
+export const levelShownKey = (pair: string, level: string): string => `grammar-level-shown:${pair}:${level}`;
+
+/** A saved standing, or null when the value is missing or damaged. */
+export function parseShownPct(raw: unknown): number | null {
+  return typeof raw === 'number' && Number.isFinite(raw) && raw >= 0 && raw <= 100 ? raw : null;
+}
+
+/** The standing after an answer: right = one step up (never above 99 unless the real percent is 100), wrong = unchanged. */
+export function nextShownPct(shown: number, real: number, ok: boolean): number {
+  if (!ok) return shown;
+  return Math.min(Math.max(shown, real) + LEVEL_SHOWN_STEP, real >= 100 ? 100 : 99);
+}
+
+/** What is drawn: the larger of the stored standing and the real percent. */
+export const shownPctOf = (shown: number | null | undefined, real: number): number => Math.max(shown ?? 0, real);
+
+/** The whole-percent label of a standing (never rounds up to the next point, so 100 appears only at 100). */
+export const shownLabel = (pct: number): number => Math.floor(pct + 1e-9);
