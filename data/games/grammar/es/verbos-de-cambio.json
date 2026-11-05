@@ -771,10 +771,6 @@
       "answer": "se han vuelto",
       "table": "verbos-de-cambio-formas",
       "wrong": {
-        "se han hecho": {
-          "en": "Hacerse is used for a change you bring about through effort or choice. Here the sentence needs a lasting change of character or condition: se han vuelto.",
-          "es": "Hacerse se usa para un cambio que uno consigue con esfuerzo o por decisión. Aquí hace falta un cambio duradero de carácter o de estado: se han vuelto."
-        },
         "se han puesto": {
           "en": "Ponerse is used for a temporary change of mood or state. Here the sentence needs a lasting change of character or condition: se han vuelto.",
           "es": "Ponerse se usa para un cambio temporal de ánimo o de estado. Aquí hace falta un cambio duradero de carácter o de estado: se han vuelto."
@@ -789,10 +785,6 @@
       "answer": "te volviste",
       "table": "verbos-de-cambio-formas",
       "wrong": {
-        "te hiciste": {
-          "en": "Hacerse is used for a change you bring about through effort or choice. Here the sentence needs a lasting change of character or condition: te volviste.",
-          "es": "Hacerse se usa para un cambio que uno consigue con esfuerzo o por decisión. Aquí hace falta un cambio duradero de carácter o de estado: te volviste."
-        },
         "te pusiste": {
           "en": "Ponerse is used for a temporary change of mood or state. Here the sentence needs a lasting change of character or condition: te volviste.",
           "es": "Ponerse se usa para un cambio temporal de ánimo o de estado. Aquí hace falta un cambio duradero de carácter o de estado: te volviste."
@@ -877,13 +869,7 @@
       "verb": "forma conjugada",
       "person": "Después de la fiesta, la casa ___ un desastre. (convertirse en)",
       "answer": "se convirtió en",
-      "table": "verbos-de-cambio-formas",
-      "wrong": {
-        "se puso": {
-          "en": "Ponerse is used for a temporary change of mood or state. Here the sentence needs a complete transformation into something else: se convirtió en.",
-          "es": "Ponerse se usa para un cambio temporal de ánimo o de estado. Aquí hace falta una transformación completa en otra cosa: se convirtió en."
-        }
-      }
+      "table": "verbos-de-cambio-formas"
     },
     {
       "id": "vc-form-10",

@@ -216,17 +216,17 @@
       ],
       "rows": [
         ["Cuando (tú, futuro)", "llegues", "tengas", "salgas"],
-        ["Cuando (yo, szokás)", "llego", "tengo", "salgo"],
+        ["Cuando (yo, costumbre)", "llego", "tengo", "salgo"],
         ["En cuanto (ella, futuro)", "llegue", "tenga", "salga"],
         ["Hasta que (nosotros, futuro)", "lleguemos", "tengamos", "salgamos"],
         ["Antes de que (ustedes)", "lleguen", "tengan", "salgan"],
         ["Después de que (él, futuro)", "llegue", "tenga", "salga"],
         ["Tan pronto como (tú, futuro)", "llegues", "tengas", "salgas"],
-        ["Mientras (yo, szokás)", "llego", "tengo", "salgo"],
+        ["Mientras (yo, costumbre)", "llego", "tengo", "salgo"],
         ["Cuando (ellos, futuro)", "lleguen", "tengan", "salgan"],
         ["Desde que (yo)", "llego", "tengo", "salgo"],
         ["Mientras (nosotros, futuro)", "lleguemos", "tengamos", "salgamos"],
-        ["Cuando (ella, szokás)", "llega", "tiene", "sale"]
+        ["Cuando (ella, costumbre)", "llega", "tiene", "sale"]
       ]
     },
     {
@@ -611,7 +611,7 @@
       "id": "sp-form-02",
       "kind": "form",
       "verb": "llegar",
-      "person": "Cuando (yo, szokás)",
+      "person": "Cuando (yo, costumbre)",
       "answer": "llego",
       "table": "temporales",
       "tense": { "from": "presente", "to": "subjuntivo-presente" },
@@ -701,7 +701,7 @@
       "id": "sp-form-08",
       "kind": "form",
       "verb": "tener",
-      "person": "Mientras (yo, szokás)",
+      "person": "Mientras (yo, costumbre)",
       "answer": "tengo",
       "table": "temporales",
       "tense": { "from": "presente", "to": "subjuntivo-presente" },
@@ -765,7 +765,7 @@
       "id": "sp-form-12",
       "kind": "form",
       "verb": "llegar",
-      "person": "Cuando (ella, szokás)",
+      "person": "Cuando (ella, costumbre)",
       "answer": "llega",
       "table": "temporales",
       "tense": { "from": "presente", "to": "subjuntivo-presente" },

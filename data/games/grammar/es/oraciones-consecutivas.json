@@ -796,12 +796,12 @@
       "table": "oraciones-consecutivas-formas",
       "wrong": {
         "tantas": {
-          "en": "Before a noun, tanto agrees with it: los niños is masculine plural, so the form is tantos.",
-          "es": "Antes de un sustantivo, tanto concuerda con él: los niños es masculino plural, así que la forma es tantos."
+          "en": "Tantas is feminine, but los niños is masculine: tantos.",
+          "es": "Tantas es femenino, pero los niños es masculino: tantos."
         },
         "tanto": {
-          "en": "Before a noun, tanto agrees with it: los niños is masculine plural, so the form is tantos.",
-          "es": "Antes de un sustantivo, tanto concuerda con él: los niños es masculino plural, así que la forma es tantos."
+          "en": "Tanto is singular, but los niños is plural: tantos.",
+          "es": "Tanto es singular, pero los niños es plural: tantos."
         }
       }
     },

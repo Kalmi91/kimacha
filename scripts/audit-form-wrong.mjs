@@ -65,6 +65,8 @@ const NO_SAFE_KEY = [
   ['es/condicionales-tipo2-3.json', 'ct2-form-12'],
   // es más vs además: además is also correct in this sentence
   ['es/marcadores-discursivos.json', 'md-form-07'],
+  // se puso un desastre / se puso muy rica are heard in Mexican Spanish
+  ['es/verbos-de-cambio.json', 'vc-form-09'],
 ];
 const left = NO_SAFE_KEY.filter(([f, id]) => {
   const item = JSON.parse(readFileSync(join(gamesDir, f), 'utf8')).items.find((i) => i.id === id);
