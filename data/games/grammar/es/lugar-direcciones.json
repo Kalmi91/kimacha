@@ -582,7 +582,17 @@
       "verb": "forma",
       "person": "encima de + el",
       "answer": "encima del",
-      "table": "lugar-articulo"
+      "table": "lugar-articulo",
+      "wrong": {
+        "encima de el": {
+          "en": "De + el must merge into one word: encima del.",
+          "es": "De + el se unen siempre en una sola palabra: encima del."
+        },
+        "encima al": {
+          "en": "This place phrase is built with de, not a: encima del.",
+          "es": "Esta expresión de lugar se forma con de, no con a: encima del."
+        }
+      }
     },
     {
       "id": "ld-form-02",
@@ -590,7 +600,17 @@
       "verb": "forma",
       "person": "debajo de + el",
       "answer": "debajo del",
-      "table": "lugar-articulo"
+      "table": "lugar-articulo",
+      "wrong": {
+        "debajo de el": {
+          "en": "De + el must merge into one word: debajo del.",
+          "es": "De + el se unen siempre en una sola palabra: debajo del."
+        },
+        "debajo al": {
+          "en": "This place phrase is built with de, not a: debajo del.",
+          "es": "Esta expresión de lugar se forma con de, no con a: debajo del."
+        }
+      }
     },
     {
       "id": "ld-form-03",
@@ -598,7 +618,17 @@
       "verb": "forma",
       "person": "detrás de + la",
       "answer": "detrás de la",
-      "table": "lugar-articulo"
+      "table": "lugar-articulo",
+      "wrong": {
+        "detrás del": {
+          "en": "Del is only for de + el. With la nothing merges: detrás de la.",
+          "es": "Del es solo para de + el. Con la no se une nada: detrás de la."
+        },
+        "detrás a la": {
+          "en": "This place phrase is built with de, not a: detrás de la.",
+          "es": "Esta expresión de lugar se forma con de, no con a: detrás de la."
+        }
+      }
     },
     {
       "id": "ld-form-04",
@@ -606,7 +636,17 @@
       "verb": "forma",
       "person": "delante de + el",
       "answer": "delante del",
-      "table": "lugar-articulo"
+      "table": "lugar-articulo",
+      "wrong": {
+        "delante de el": {
+          "en": "De + el must merge into one word: delante del.",
+          "es": "De + el se unen siempre en una sola palabra: delante del."
+        },
+        "delante al": {
+          "en": "This place phrase is built with de, not a: delante del.",
+          "es": "Esta expresión de lugar se forma con de, no con a: delante del."
+        }
+      }
     },
     {
       "id": "ld-form-05",
@@ -614,7 +654,17 @@
       "verb": "forma",
       "person": "enfrente de + el",
       "answer": "enfrente del",
-      "table": "lugar-articulo"
+      "table": "lugar-articulo",
+      "wrong": {
+        "enfrente de el": {
+          "en": "De + el must merge into one word: enfrente del.",
+          "es": "De + el se unen siempre en una sola palabra: enfrente del."
+        },
+        "enfrente al": {
+          "en": "This place phrase is built with de, not a: enfrente del.",
+          "es": "Esta expresión de lugar se forma con de, no con a: enfrente del."
+        }
+      }
     },
     {
       "id": "ld-form-06",
@@ -622,7 +672,17 @@
       "verb": "forma",
       "person": "al lado de + el",
       "answer": "al lado del",
-      "table": "lugar-articulo"
+      "table": "lugar-articulo",
+      "wrong": {
+        "al lado de el": {
+          "en": "De + el must merge into one word: al lado del.",
+          "es": "De + el se unen siempre en una sola palabra: al lado del."
+        },
+        "al lado al": {
+          "en": "This place phrase is built with de, not a: al lado del.",
+          "es": "Esta expresión de lugar se forma con de, no con a: al lado del."
+        }
+      }
     },
     {
       "id": "ld-form-07",
@@ -630,7 +690,17 @@
       "verb": "forma",
       "person": "al lado de + los",
       "answer": "al lado de los",
-      "table": "lugar-articulo"
+      "table": "lugar-articulo",
+      "wrong": {
+        "al lado del": {
+          "en": "Del is only for de + el. With los nothing merges: al lado de los.",
+          "es": "Del es solo para de + el. Con los no se une nada: al lado de los."
+        },
+        "al lado a los": {
+          "en": "This place phrase is built with de, not a: al lado de los.",
+          "es": "Esta expresión de lugar se forma con de, no con a: al lado de los."
+        }
+      }
     },
     {
       "id": "ld-form-08",
@@ -638,7 +708,17 @@
       "verb": "forma",
       "person": "a la izquierda de + el",
       "answer": "a la izquierda del",
-      "table": "lugar-articulo"
+      "table": "lugar-articulo",
+      "wrong": {
+        "a la izquierda de el": {
+          "en": "De + el must merge into one word: a la izquierda del.",
+          "es": "De + el se unen siempre en una sola palabra: a la izquierda del."
+        },
+        "a la izquierda al": {
+          "en": "This place phrase is built with de, not a: a la izquierda del.",
+          "es": "Esta expresión de lugar se forma con de, no con a: a la izquierda del."
+        }
+      }
     },
     {
       "id": "ld-form-09",
@@ -646,7 +726,17 @@
       "verb": "forma",
       "person": "a la derecha de + la",
       "answer": "a la derecha de la",
-      "table": "lugar-articulo"
+      "table": "lugar-articulo",
+      "wrong": {
+        "a la derecha del": {
+          "en": "Del is only for de + el. With la nothing merges: a la derecha de la.",
+          "es": "Del es solo para de + el. Con la no se une nada: a la derecha de la."
+        },
+        "a la derecha a la": {
+          "en": "This place phrase is built with de, not a: a la derecha de la.",
+          "es": "Esta expresión de lugar se forma con de, no con a: a la derecha de la."
+        }
+      }
     },
     {
       "id": "ld-form-10",
@@ -654,7 +744,17 @@
       "verb": "forma",
       "person": "cerca de + el",
       "answer": "cerca del",
-      "table": "lugar-articulo"
+      "table": "lugar-articulo",
+      "wrong": {
+        "cerca de el": {
+          "en": "De + el must merge into one word: cerca del.",
+          "es": "De + el se unen siempre en una sola palabra: cerca del."
+        },
+        "cerca al": {
+          "en": "This place phrase is built with de, not a: cerca del.",
+          "es": "Esta expresión de lugar se forma con de, no con a: cerca del."
+        }
+      }
     },
     {
       "id": "ld-form-11",
@@ -662,7 +762,17 @@
       "verb": "forma",
       "person": "lejos de + las",
       "answer": "lejos de las",
-      "table": "lugar-articulo"
+      "table": "lugar-articulo",
+      "wrong": {
+        "lejos de la": {
+          "en": "The article here is las (feminine plural), so it must be las, not la: lejos de las.",
+          "es": "El artículo aquí es las (femenino plural), así que debe ser las, no la: lejos de las."
+        },
+        "lejos de los": {
+          "en": "The article here is las (feminine), not los (masculine): lejos de las.",
+          "es": "El artículo aquí es las (femenino), no los (masculino): lejos de las."
+        }
+      }
     },
     {
       "id": "ld-form-12",
@@ -670,7 +780,17 @@
       "verb": "forma",
       "person": "detrás de + el",
       "answer": "detrás del",
-      "table": "lugar-articulo"
+      "table": "lugar-articulo",
+      "wrong": {
+        "detrás de el": {
+          "en": "De + el must merge into one word: detrás del.",
+          "es": "De + el se unen siempre en una sola palabra: detrás del."
+        },
+        "detrás al": {
+          "en": "This place phrase is built with de, not a: detrás del.",
+          "es": "Esta expresión de lugar se forma con de, no con a: detrás del."
+        }
+      }
     }
   ]
 }
