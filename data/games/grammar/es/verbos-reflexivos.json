@@ -657,7 +657,17 @@
       "verb": "levantarse",
       "person": "yo",
       "answer": "me levanto",
-      "table": "reflexivos-presente"
+      "table": "reflexivos-presente",
+      "wrong": {
+        "levanto": {
+          "en": "A reflexive verb needs its pronoun before the conjugated verb: me levanto.",
+          "es": "Un verbo reflexivo necesita su pronombre delante del verbo conjugado: me levanto."
+        },
+        "levantarse": {
+          "en": "The infinitive does not change with the person. Conjugate levantarse for yo: me levanto.",
+          "es": "El infinitivo no cambia con la persona. Conjuga levantarse para yo: me levanto."
+        }
+      }
     },
     {
       "id": "rf-form-02",
@@ -665,7 +675,17 @@
       "verb": "levantarse",
       "person": "tú",
       "answer": "te levantas",
-      "table": "reflexivos-presente"
+      "table": "reflexivos-presente",
+      "wrong": {
+        "levantas": {
+          "en": "A reflexive verb needs its pronoun before the conjugated verb: te levantas.",
+          "es": "Un verbo reflexivo necesita su pronombre delante del verbo conjugado: te levantas."
+        },
+        "me levantas": {
+          "en": "The reflexive pronoun must match the subject: me goes with yo. With tú the pronoun is te: te levantas.",
+          "es": "El pronombre reflexivo debe concordar con el sujeto: me va con yo. Con tú el pronombre es te: te levantas."
+        }
+      }
     },
     {
       "id": "rf-form-03",
@@ -673,7 +693,17 @@
       "verb": "levantarse",
       "person": "nosotros",
       "answer": "nos levantamos",
-      "table": "reflexivos-presente"
+      "table": "reflexivos-presente",
+      "wrong": {
+        "levantamos": {
+          "en": "A reflexive verb needs its pronoun before the conjugated verb: nos levantamos.",
+          "es": "Un verbo reflexivo necesita su pronombre delante del verbo conjugado: nos levantamos."
+        },
+        "me levantamos": {
+          "en": "The reflexive pronoun must match the subject: me goes with yo. With nosotros the pronoun is nos: nos levantamos.",
+          "es": "El pronombre reflexivo debe concordar con el sujeto: me va con yo. Con nosotros el pronombre es nos: nos levantamos."
+        }
+      }
     },
     {
       "id": "rf-form-04",
@@ -681,7 +711,17 @@
       "verb": "levantarse",
       "person": "ellos/ellas/ustedes",
       "answer": "se levantan",
-      "table": "reflexivos-presente"
+      "table": "reflexivos-presente",
+      "wrong": {
+        "levantan": {
+          "en": "A reflexive verb needs its pronoun before the conjugated verb: se levantan.",
+          "es": "Un verbo reflexivo necesita su pronombre delante del verbo conjugado: se levantan."
+        },
+        "levantarse": {
+          "en": "The infinitive does not change with the person. Conjugate levantarse for ellos, ellas and ustedes: se levantan.",
+          "es": "El infinitivo no cambia con la persona. Conjuga levantarse para ellos, ellas y ustedes: se levantan."
+        }
+      }
     },
     {
       "id": "rf-form-05",
@@ -689,7 +729,17 @@
       "verb": "ducharse",
       "person": "yo",
       "answer": "me ducho",
-      "table": "reflexivos-presente"
+      "table": "reflexivos-presente",
+      "wrong": {
+        "ducho": {
+          "en": "A reflexive verb needs its pronoun before the conjugated verb: me ducho.",
+          "es": "Un verbo reflexivo necesita su pronombre delante del verbo conjugado: me ducho."
+        },
+        "ducharse": {
+          "en": "The infinitive does not change with the person. Conjugate ducharse for yo: me ducho.",
+          "es": "El infinitivo no cambia con la persona. Conjuga ducharse para yo: me ducho."
+        }
+      }
     },
     {
       "id": "rf-form-06",
@@ -697,7 +747,17 @@
       "verb": "ducharse",
       "person": "él/ella/usted",
       "answer": "se ducha",
-      "table": "reflexivos-presente"
+      "table": "reflexivos-presente",
+      "wrong": {
+        "ducha": {
+          "en": "A reflexive verb needs its pronoun before the conjugated verb: se ducha.",
+          "es": "Un verbo reflexivo necesita su pronombre delante del verbo conjugado: se ducha."
+        },
+        "me ducha": {
+          "en": "The reflexive pronoun must match the subject: me goes with yo. With él, ella and usted the pronoun is se: se ducha.",
+          "es": "El pronombre reflexivo debe concordar con el sujeto: me va con yo. Con él, ella y usted el pronombre es se: se ducha."
+        }
+      }
     },
     {
       "id": "rf-form-07",
@@ -705,7 +765,17 @@
       "verb": "ducharse",
       "person": "tú",
       "answer": "te duchas",
-      "table": "reflexivos-presente"
+      "table": "reflexivos-presente",
+      "wrong": {
+        "duchas": {
+          "en": "A reflexive verb needs its pronoun before the conjugated verb: te duchas.",
+          "es": "Un verbo reflexivo necesita su pronombre delante del verbo conjugado: te duchas."
+        },
+        "se duchas": {
+          "en": "The reflexive pronoun must match the subject: se goes with él, ella and usted. With tú the pronoun is te: te duchas.",
+          "es": "El pronombre reflexivo debe concordar con el sujeto: se va con él, ella y usted. Con tú el pronombre es te: te duchas."
+        }
+      }
     },
     {
       "id": "rf-form-08",
@@ -713,7 +783,17 @@
       "verb": "ducharse",
       "person": "ellos/ellas/ustedes",
       "answer": "se duchan",
-      "table": "reflexivos-presente"
+      "table": "reflexivos-presente",
+      "wrong": {
+        "duchan": {
+          "en": "A reflexive verb needs its pronoun before the conjugated verb: se duchan.",
+          "es": "Un verbo reflexivo necesita su pronombre delante del verbo conjugado: se duchan."
+        },
+        "ducharse": {
+          "en": "The infinitive does not change with the person. Conjugate ducharse for ellos, ellas and ustedes: se duchan.",
+          "es": "El infinitivo no cambia con la persona. Conjuga ducharse para ellos, ellas y ustedes: se duchan."
+        }
+      }
     },
     {
       "id": "rf-form-09",
@@ -721,7 +801,17 @@
       "verb": "acostarse",
       "person": "tú",
       "answer": "te acuestas",
-      "table": "reflexivos-presente"
+      "table": "reflexivos-presente",
+      "wrong": {
+        "acostas": {
+          "en": "A reflexive verb needs its pronoun before the conjugated verb: te acuestas.",
+          "es": "Un verbo reflexivo necesita su pronombre delante del verbo conjugado: te acuestas."
+        },
+        "te acostas": {
+          "en": "With tú the stem vowel of acostarse changes: o becomes ue. te acuestas.",
+          "es": "Con tú cambia la vocal de la raíz de acostarse: o pasa a ue. te acuestas."
+        }
+      }
     },
     {
       "id": "rf-form-10",
@@ -729,7 +819,17 @@
       "verb": "acostarse",
       "person": "él/ella/usted",
       "answer": "se acuesta",
-      "table": "reflexivos-presente"
+      "table": "reflexivos-presente",
+      "wrong": {
+        "acuesta": {
+          "en": "A reflexive verb needs its pronoun before the conjugated verb: se acuesta.",
+          "es": "Un verbo reflexivo necesita su pronombre delante del verbo conjugado: se acuesta."
+        },
+        "se acosta": {
+          "en": "With él, ella and usted the stem vowel of acostarse changes: o becomes ue. se acuesta.",
+          "es": "Con él, ella y usted cambia la vocal de la raíz de acostarse: o pasa a ue. se acuesta."
+        }
+      }
     },
     {
       "id": "rf-form-11",
@@ -737,7 +837,17 @@
       "verb": "acostarse",
       "person": "nosotros",
       "answer": "nos acostamos",
-      "table": "reflexivos-presente"
+      "table": "reflexivos-presente",
+      "wrong": {
+        "acostamos": {
+          "en": "A reflexive verb needs its pronoun before the conjugated verb: nos acostamos.",
+          "es": "Un verbo reflexivo necesita su pronombre delante del verbo conjugado: nos acostamos."
+        },
+        "nos acuestamos": {
+          "en": "With nosotros the stem of acostarse does not change: the stress falls on the ending. nos acostamos.",
+          "es": "Con nosotros la raíz de acostarse no cambia: el acento cae en la terminación. nos acostamos."
+        }
+      }
     },
     {
       "id": "rf-form-12",
@@ -745,7 +855,17 @@
       "verb": "acostarse",
       "person": "yo",
       "answer": "me acuesto",
-      "table": "reflexivos-presente"
+      "table": "reflexivos-presente",
+      "wrong": {
+        "acuesto": {
+          "en": "A reflexive verb needs its pronoun before the conjugated verb: me acuesto.",
+          "es": "Un verbo reflexivo necesita su pronombre delante del verbo conjugado: me acuesto."
+        },
+        "me acosto": {
+          "en": "With yo the stem vowel of acostarse changes: o becomes ue. me acuesto.",
+          "es": "Con yo cambia la vocal de la raíz de acostarse: o pasa a ue. me acuesto."
+        }
+      }
     },
     {
       "kind": "why",
