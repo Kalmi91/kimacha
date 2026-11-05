@@ -1038,6 +1038,12 @@
       "tense": {
         "from": "presente",
         "to": "condicional"
+      },
+      "wrong": {
+        "hablaré": {
+          "en": "Hablaré is the simple future form. This task asks for the conditional form: hablaría.",
+          "es": "Hablaré es la forma del futuro simple. Esta tarea pide la forma del condicional: hablaría."
+        }
       }
     },
     {
@@ -1050,6 +1056,12 @@
       "tense": {
         "from": "presente",
         "to": "condicional"
+      },
+      "wrong": {
+        "hablaremos": {
+          "en": "Hablaremos is the simple future form. This task asks for the conditional form: hablaríamos.",
+          "es": "Hablaremos es la forma del futuro simple. Esta tarea pide la forma del condicional: hablaríamos."
+        }
       }
     },
     {
@@ -1062,6 +1074,12 @@
       "tense": {
         "from": "presente",
         "to": "condicional"
+      },
+      "wrong": {
+        "comerás": {
+          "en": "Comerás is the simple future form. This task asks for the conditional form: comerías.",
+          "es": "Comerás es la forma del futuro simple. Esta tarea pide la forma del condicional: comerías."
+        }
       }
     },
     {
@@ -1074,6 +1092,12 @@
       "tense": {
         "from": "presente",
         "to": "condicional"
+      },
+      "wrong": {
+        "vivirán": {
+          "en": "Vivirán is the simple future form. This task asks for the conditional form: vivirían.",
+          "es": "Vivirán es la forma del futuro simple. Esta tarea pide la forma del condicional: vivirían."
+        }
       }
     },
     {
@@ -1086,6 +1110,16 @@
       "tense": {
         "from": "presente",
         "to": "condicional"
+      },
+      "wrong": {
+        "tendré": {
+          "en": "Tendré is the simple future form. This task asks for the conditional form: tendría.",
+          "es": "Tendré es la forma del futuro simple. Esta tarea pide la forma del condicional: tendría."
+        },
+        "tenería": {
+          "en": "Tener has the irregular stem tendr- in the conditional, so the form is not built on the whole infinitive: tendría.",
+          "es": "Tener tiene la raíz irregular tendr- en el condicional, así que la forma no se construye con el infinitivo completo: tendría."
+        }
       }
     },
     {
@@ -1098,6 +1132,16 @@
       "tense": {
         "from": "presente",
         "to": "condicional"
+      },
+      "wrong": {
+        "tendrán": {
+          "en": "Tendrán is the simple future form. This task asks for the conditional form: tendrían.",
+          "es": "Tendrán es la forma del futuro simple. Esta tarea pide la forma del condicional: tendrían."
+        },
+        "tenerían": {
+          "en": "Tener has the irregular stem tendr- in the conditional, so the form is not built on the whole infinitive: tendrían.",
+          "es": "Tener tiene la raíz irregular tendr- en el condicional, así que la forma no se construye con el infinitivo completo: tendrían."
+        }
       }
     },
     {
@@ -1110,6 +1154,16 @@
       "tense": {
         "from": "presente",
         "to": "condicional"
+      },
+      "wrong": {
+        "podrás": {
+          "en": "Podrás is the simple future form. This task asks for the conditional form: podrías.",
+          "es": "Podrás es la forma del futuro simple. Esta tarea pide la forma del condicional: podrías."
+        },
+        "poderías": {
+          "en": "Poder has the irregular stem podr- in the conditional, so the form is not built on the whole infinitive: podrías.",
+          "es": "Poder tiene la raíz irregular podr- en el condicional, así que la forma no se construye con el infinitivo completo: podrías."
+        }
       }
     },
     {
@@ -1122,6 +1176,16 @@
       "tense": {
         "from": "presente",
         "to": "condicional"
+      },
+      "wrong": {
+        "podremos": {
+          "en": "Podremos is the simple future form. This task asks for the conditional form: podríamos.",
+          "es": "Podremos es la forma del futuro simple. Esta tarea pide la forma del condicional: podríamos."
+        },
+        "poderíamos": {
+          "en": "Poder has the irregular stem podr- in the conditional, so the form is not built on the whole infinitive: podríamos.",
+          "es": "Poder tiene la raíz irregular podr- en el condicional, así que la forma no se construye con el infinitivo completo: podríamos."
+        }
       }
     },
     {
@@ -1134,6 +1198,16 @@
       "tense": {
         "from": "presente",
         "to": "condicional"
+      },
+      "wrong": {
+        "hará": {
+          "en": "Hará is the simple future form. This task asks for the conditional form: haría.",
+          "es": "Hará es la forma del futuro simple. Esta tarea pide la forma del condicional: haría."
+        },
+        "hacería": {
+          "en": "Hacer has the irregular stem har- in the conditional, so the form is not built on the whole infinitive: haría.",
+          "es": "Hacer tiene la raíz irregular har- en el condicional, así que la forma no se construye con el infinitivo completo: haría."
+        }
       }
     },
     {
@@ -1146,6 +1220,16 @@
       "tense": {
         "from": "presente",
         "to": "condicional"
+      },
+      "wrong": {
+        "harán": {
+          "en": "Harán is the simple future form. This task asks for the conditional form: harían.",
+          "es": "Harán es la forma del futuro simple. Esta tarea pide la forma del condicional: harían."
+        },
+        "hacerían": {
+          "en": "Hacer has the irregular stem har- in the conditional, so the form is not built on the whole infinitive: harían.",
+          "es": "Hacer tiene la raíz irregular har- en el condicional, así que la forma no se construye con el infinitivo completo: harían."
+        }
       }
     },
     {
@@ -1158,6 +1242,16 @@
       "tense": {
         "from": "presente",
         "to": "condicional"
+      },
+      "wrong": {
+        "diré": {
+          "en": "Diré is the simple future form. This task asks for the conditional form: diría.",
+          "es": "Diré es la forma del futuro simple. Esta tarea pide la forma del condicional: diría."
+        },
+        "decería": {
+          "en": "Decir has the irregular stem dir- in the conditional, so the form is not built on the whole infinitive: diría.",
+          "es": "Decir tiene la raíz irregular dir- en el condicional, así que la forma no se construye con el infinitivo completo: diría."
+        }
       }
     },
     {
@@ -1170,6 +1264,16 @@
       "tense": {
         "from": "presente",
         "to": "condicional"
+      },
+      "wrong": {
+        "diremos": {
+          "en": "Diremos is the simple future form. This task asks for the conditional form: diríamos.",
+          "es": "Diremos es la forma del futuro simple. Esta tarea pide la forma del condicional: diríamos."
+        },
+        "decíamos": {
+          "en": "Decíamos is the imperfect form. This task asks for the conditional form: diríamos.",
+          "es": "Decíamos es la forma del pretérito imperfecto. Esta tarea pide la forma del condicional: diríamos."
+        }
       }
     },
     {

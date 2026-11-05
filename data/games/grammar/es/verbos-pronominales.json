@@ -827,7 +827,13 @@
       "verb": "darse cuenta",
       "person": "yo",
       "answer": "me doy cuenta",
-      "table": "pronominales-presente"
+      "table": "pronominales-presente",
+      "wrong": {
+        "doy cuenta": {
+          "en": "The verb is pronominal, so it needs the pronoun (me, te, se, nos) before it: me doy cuenta.",
+          "es": "El verbo es pronominal: necesita el pronombre (me, te, se, nos) antes del verbo: me doy cuenta."
+        }
+      }
     },
     {
       "id": "pv-form-02",
@@ -835,7 +841,17 @@
       "verb": "acordarse",
       "person": "tú",
       "answer": "te acuerdas",
-      "table": "pronominales-presente"
+      "table": "pronominales-presente",
+      "wrong": {
+        "acuerdas": {
+          "en": "The verb is pronominal, so it needs the pronoun (me, te, se, nos) before it: te acuerdas.",
+          "es": "El verbo es pronominal: necesita el pronombre (me, te, se, nos) antes del verbo: te acuerdas."
+        },
+        "te acordas": {
+          "en": "Acordarse changes o to ue in the forms with stress on the stem: te acuerdas, not te acordas.",
+          "es": "Acordarse cambia la o a ue en las formas con el acento en la raíz: te acuerdas, no te acordas."
+        }
+      }
     },
     {
       "id": "pv-form-03",
@@ -843,7 +859,13 @@
       "verb": "quejarse",
       "person": "él/ella/usted",
       "answer": "se queja",
-      "table": "pronominales-presente"
+      "table": "pronominales-presente",
+      "wrong": {
+        "queja": {
+          "en": "The verb is pronominal, so it needs the pronoun (me, te, se, nos) before it: se queja.",
+          "es": "El verbo es pronominal: necesita el pronombre (me, te, se, nos) antes del verbo: se queja."
+        }
+      }
     },
     {
       "id": "pv-form-04",
@@ -851,7 +873,13 @@
       "verb": "parecerse",
       "person": "nosotros",
       "answer": "nos parecemos",
-      "table": "pronominales-presente"
+      "table": "pronominales-presente",
+      "wrong": {
+        "parecemos": {
+          "en": "Parecemos means \"we seem\". To say \"we resemble each other\", use the pronominal verb: nos parecemos.",
+          "es": "Parecemos significa \"tenemos aspecto de\". Para decir que nos asemejamos, se usa el verbo pronominal: nos parecemos."
+        }
+      }
     },
     {
       "id": "pv-form-05",
@@ -859,7 +887,17 @@
       "verb": "darse cuenta",
       "person": "ellos/ellas/ustedes",
       "answer": "se dan cuenta",
-      "table": "pronominales-presente"
+      "table": "pronominales-presente",
+      "wrong": {
+        "dan cuenta": {
+          "en": "The verb is pronominal, so it needs the pronoun (me, te, se, nos) before it: se dan cuenta.",
+          "es": "El verbo es pronominal: necesita el pronombre (me, te, se, nos) antes del verbo: se dan cuenta."
+        },
+        "se da cuenta": {
+          "en": "Se da cuenta is the él/ella form. The task asks for ellos, ellas or ustedes: se dan cuenta.",
+          "es": "Se da cuenta es la forma de él/ella. La tarea pide ellos, ellas o ustedes: se dan cuenta."
+        }
+      }
     },
     {
       "id": "pv-form-06",
@@ -867,7 +905,17 @@
       "verb": "parecerse",
       "person": "yo",
       "answer": "me parezco",
-      "table": "pronominales-presente"
+      "table": "pronominales-presente",
+      "wrong": {
+        "parezco": {
+          "en": "Parezco means \"I seem\". To say \"I resemble someone\", use the pronominal verb: me parezco.",
+          "es": "Parezco significa \"tengo aspecto de\". Para decir que me asemejo a alguien, se usa el verbo pronominal: me parezco."
+        },
+        "me parezo": {
+          "en": "In the yo form, parecer inserts a z before the c: parezco, not parezo: me parezco.",
+          "es": "En la forma yo, parecer inserta una z antes de la c: parezco, no parezo: me parezco."
+        }
+      }
     },
     {
       "id": "pv-form-07",
@@ -875,7 +923,13 @@
       "verb": "quejarse",
       "person": "tú",
       "answer": "te quejas",
-      "table": "pronominales-presente"
+      "table": "pronominales-presente",
+      "wrong": {
+        "quejas": {
+          "en": "The verb is pronominal, so it needs the pronoun (me, te, se, nos) before it: te quejas.",
+          "es": "El verbo es pronominal: necesita el pronombre (me, te, se, nos) antes del verbo: te quejas."
+        }
+      }
     },
     {
       "id": "pv-form-08",
@@ -883,7 +937,17 @@
       "verb": "acordarse",
       "person": "nosotros",
       "answer": "nos acordamos",
-      "table": "pronominales-presente"
+      "table": "pronominales-presente",
+      "wrong": {
+        "acordamos": {
+          "en": "The verb is pronominal, so it needs the pronoun (me, te, se, nos) before it: nos acordamos.",
+          "es": "El verbo es pronominal: necesita el pronombre (me, te, se, nos) antes del verbo: nos acordamos."
+        },
+        "nos acuerdamos": {
+          "en": "In acordarse the o changes to ue only when the stress falls on the stem; with nosotros the o stays: nos acordamos.",
+          "es": "En acordarse la o cambia a ue solo cuando el acento cae en la raíz; con nosotros la o se queda: nos acordamos."
+        }
+      }
     },
     {
       "id": "pv-form-09",
@@ -891,7 +955,13 @@
       "verb": "darse cuenta",
       "person": "tú",
       "answer": "te das cuenta",
-      "table": "pronominales-presente"
+      "table": "pronominales-presente",
+      "wrong": {
+        "das cuenta": {
+          "en": "The verb is pronominal, so it needs the pronoun (me, te, se, nos) before it: te das cuenta.",
+          "es": "El verbo es pronominal: necesita el pronombre (me, te, se, nos) antes del verbo: te das cuenta."
+        }
+      }
     },
     {
       "id": "pv-form-10",
@@ -899,7 +969,13 @@
       "verb": "parecerse",
       "person": "él/ella/usted",
       "answer": "se parece",
-      "table": "pronominales-presente"
+      "table": "pronominales-presente",
+      "wrong": {
+        "parece": {
+          "en": "Parece alone means \"it seems\" or \"he/she looks\". To say \"he/she resembles\", Spanish needs parecerse: se parece.",
+          "es": "Parece solo significa \"parece\" o \"tiene aspecto de\". Para decir \"se asemeja a alguien\" hace falta parecerse: se parece."
+        }
+      }
     },
     {
       "id": "pv-form-11",
@@ -907,7 +983,17 @@
       "verb": "acordarse",
       "person": "ellos/ellas/ustedes",
       "answer": "se acuerdan",
-      "table": "pronominales-presente"
+      "table": "pronominales-presente",
+      "wrong": {
+        "acuerdan": {
+          "en": "The verb is pronominal, so it needs the pronoun (me, te, se, nos) before it: se acuerdan.",
+          "es": "El verbo es pronominal: necesita el pronombre (me, te, se, nos) antes del verbo: se acuerdan."
+        },
+        "se acordan": {
+          "en": "Acordarse changes o to ue in the forms with stress on the stem: se acuerdan, not se acordan.",
+          "es": "Acordarse cambia la o a ue en las formas con el acento en la raíz: se acuerdan, no se acordan."
+        }
+      }
     },
     {
       "id": "pv-form-12",
@@ -915,7 +1001,13 @@
       "verb": "quejarse",
       "person": "nosotros",
       "answer": "nos quejamos",
-      "table": "pronominales-presente"
+      "table": "pronominales-presente",
+      "wrong": {
+        "quejamos": {
+          "en": "The verb is pronominal, so it needs the pronoun (me, te, se, nos) before it: nos quejamos.",
+          "es": "El verbo es pronominal: necesita el pronombre (me, te, se, nos) antes del verbo: nos quejamos."
+        }
+      }
     },
     {
       "kind": "why",

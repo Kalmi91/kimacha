@@ -685,7 +685,13 @@
       "verb": "forma",
       "person": "El museo ___ (construir) hace muchos años.",
       "answer": "fue construido",
-      "table": "pasiva-forma"
+      "table": "pasiva-forma",
+      "wrong": {
+        "fue construida": {
+          "en": "In the passive the participle agrees with the subject el museo (masculine singular): fue construido.",
+          "es": "En la pasiva el participio concuerda con el sujeto el museo (masculino singular): fue construido."
+        }
+      }
     },
     {
       "id": "pas-form-02",
@@ -693,7 +699,17 @@
       "verb": "forma",
       "person": "La carta ___ (escribir) el año pasado por mi madre.",
       "answer": "fue escrita",
-      "table": "pasiva-forma"
+      "table": "pasiva-forma",
+      "wrong": {
+        "fue escrito": {
+          "en": "In the passive the participle agrees with the subject la carta (feminine singular): fue escrita.",
+          "es": "En la pasiva el participio concuerda con el sujeto la carta (femenino singular): fue escrita."
+        },
+        "fue escribida": {
+          "en": "Escribir has an irregular participle, escrito, not the regular form: fue escrita.",
+          "es": "Escribir tiene participio irregular, escrito, no la forma regular: fue escrita."
+        }
+      }
     },
     {
       "id": "pas-form-03",
@@ -701,7 +717,17 @@
       "verb": "forma",
       "person": "Los resultados ___ (publicar) ayer por la universidad.",
       "answer": "fueron publicados",
-      "table": "pasiva-forma"
+      "table": "pasiva-forma",
+      "wrong": {
+        "fue publicados": {
+          "en": "The form of ser agrees with the subject: los resultados is plural, so ser is plural too: fueron publicados.",
+          "es": "La forma de ser concuerda con el sujeto: los resultados es plural, así que ser también va en plural: fueron publicados."
+        },
+        "fueron publicadas": {
+          "en": "In the passive the participle agrees with the subject los resultados (masculine plural): fueron publicados.",
+          "es": "En la pasiva el participio concuerda con el sujeto los resultados (masculino plural): fueron publicados."
+        }
+      }
     },
     {
       "id": "pas-form-04",
@@ -709,7 +735,17 @@
       "verb": "forma",
       "person": "Las cajas ___ (abrir) ayer por la policía.",
       "answer": "fueron abiertas",
-      "table": "pasiva-forma"
+      "table": "pasiva-forma",
+      "wrong": {
+        "fueron abiertos": {
+          "en": "In the passive the participle agrees with the subject las cajas (feminine plural): fueron abiertas.",
+          "es": "En la pasiva el participio concuerda con el sujeto las cajas (femenino plural): fueron abiertas."
+        },
+        "fueron abridas": {
+          "en": "Abrir has an irregular participle, abierto, not the regular form: fueron abiertas.",
+          "es": "Abrir tiene participio irregular, abierto, no la forma regular: fueron abiertas."
+        }
+      }
     },
     {
       "id": "pas-form-05",
@@ -717,7 +753,17 @@
       "verb": "forma",
       "person": "Hasta ahora, esta película ___ (ver) por muchas personas.",
       "answer": "ha sido vista",
-      "table": "pasiva-forma"
+      "table": "pasiva-forma",
+      "wrong": {
+        "ha sido visto": {
+          "en": "In the passive the participle agrees with the subject esta película (feminine singular): ha sido vista.",
+          "es": "En la pasiva el participio concuerda con el sujeto esta película (femenino singular): ha sido vista."
+        },
+        "ha sido veída": {
+          "en": "Ver has an irregular participle, visto, not the regular form: ha sido vista.",
+          "es": "Ver tiene participio irregular, visto, no la forma regular: ha sido vista."
+        }
+      }
     },
     {
       "id": "pas-form-06",
@@ -725,7 +771,17 @@
       "verb": "forma",
       "person": "futuro simple: El problema ___ (resolver) mañana por el equipo.",
       "answer": "será resuelto",
-      "table": "pasiva-forma"
+      "table": "pasiva-forma",
+      "wrong": {
+        "será resuelta": {
+          "en": "In the passive the participle agrees with the subject el problema (masculine singular): será resuelto.",
+          "es": "En la pasiva el participio concuerda con el sujeto el problema (masculino singular): será resuelto."
+        },
+        "será resolvido": {
+          "en": "Resolver has an irregular participle, resuelto, not the regular form: será resuelto.",
+          "es": "Resolver tiene participio irregular, resuelto, no la forma regular: será resuelto."
+        }
+      }
     },
     {
       "id": "pas-form-07",
@@ -733,7 +789,17 @@
       "verb": "forma",
       "person": "Antes, los niños ___ (llevar) a la escuela por su tío.",
       "answer": "eran llevados",
-      "table": "pasiva-forma"
+      "table": "pasiva-forma",
+      "wrong": {
+        "eran llevadas": {
+          "en": "In the passive the participle agrees with the subject los niños (masculine plural): eran llevados.",
+          "es": "En la pasiva el participio concuerda con el sujeto los niños (masculino plural): eran llevados."
+        },
+        "era llevados": {
+          "en": "The form of ser agrees with the subject: los niños is plural, so ser is plural too: eran llevados.",
+          "es": "La forma de ser concuerda con el sujeto: los niños es plural, así que ser también va en plural: eran llevados."
+        }
+      }
     },
     {
       "id": "pas-form-08",
@@ -741,7 +807,17 @@
       "verb": "forma",
       "person": "Ahora, la cena ___ (preparar) por mi padre cada domingo.",
       "answer": "es preparada",
-      "table": "pasiva-forma"
+      "table": "pasiva-forma",
+      "wrong": {
+        "es preparado": {
+          "en": "In the passive the participle agrees with the subject la cena (feminine singular): es preparada.",
+          "es": "En la pasiva el participio concuerda con el sujeto la cena (femenino singular): es preparada."
+        },
+        "está preparada": {
+          "en": "Está preparada describes a state (it is ready). A repeated action, here \"cada domingo\", takes ser + participle: es preparada.",
+          "es": "Está preparada describe un estado (está lista). Una acción repetida, aquí \"cada domingo\", lleva ser + participio: es preparada."
+        }
+      }
     },
     {
       "id": "pas-form-09",
@@ -749,7 +825,13 @@
       "verb": "forma",
       "person": "Ana espera ___ (invitar) a la fiesta por Luis.",
       "answer": "ser invitada",
-      "table": "pasiva-forma"
+      "table": "pasiva-forma",
+      "wrong": {
+        "ser invitado": {
+          "en": "In the passive the participle agrees with the subject Ana (feminine singular): ser invitada.",
+          "es": "En la pasiva el participio concuerda con el sujeto Ana (femenino singular): ser invitada."
+        }
+      }
     },
     {
       "id": "pas-form-10",
@@ -757,7 +839,17 @@
       "verb": "forma",
       "person": "perfecto: Los boletos ya ___ (vender), no quedan.",
       "answer": "han sido vendidos",
-      "table": "pasiva-forma"
+      "table": "pasiva-forma",
+      "wrong": {
+        "han sido vendidas": {
+          "en": "In the passive the participle agrees with the subject los boletos (masculine plural): han sido vendidos.",
+          "es": "En la pasiva el participio concuerda con el sujeto los boletos (masculino plural): han sido vendidos."
+        },
+        "ha sido vendidos": {
+          "en": "The form of ser agrees with the subject: los boletos is plural, so ser is plural too: han sido vendidos.",
+          "es": "La forma de ser concuerda con el sujeto: los boletos es plural, así que ser también va en plural: han sido vendidos."
+        }
+      }
     },
     {
       "id": "pas-form-11",
@@ -765,7 +857,17 @@
       "verb": "forma",
       "person": "futuro simple: Las fotos ___ (enviar) mañana por el jefe.",
       "answer": "serán enviadas",
-      "table": "pasiva-forma"
+      "table": "pasiva-forma",
+      "wrong": {
+        "serán enviados": {
+          "en": "In the passive the participle agrees with the subject las fotos (feminine plural): serán enviadas.",
+          "es": "En la pasiva el participio concuerda con el sujeto las fotos (femenino plural): serán enviadas."
+        },
+        "será enviadas": {
+          "en": "The form of ser agrees with the subject: las fotos is plural, so ser is plural too: serán enviadas.",
+          "es": "La forma de ser concuerda con el sujeto: las fotos es plural, así que ser también va en plural: serán enviadas."
+        }
+      }
     },
     {
       "id": "pas-form-12",
@@ -773,7 +875,13 @@
       "verb": "forma",
       "person": "Estas normas deben ___ (conocer) por todos.",
       "answer": "ser conocidas",
-      "table": "pasiva-forma"
+      "table": "pasiva-forma",
+      "wrong": {
+        "ser conocidos": {
+          "en": "In the passive the participle agrees with the subject estas normas (feminine plural): ser conocidas.",
+          "es": "En la pasiva el participio concuerda con el sujeto estas normas (femenino plural): ser conocidas."
+        }
+      }
     },
     {
       "kind": "why",

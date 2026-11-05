@@ -561,7 +561,13 @@
       "person": "Quiero que (tú)",
       "answer": "vengas",
       "table": "disparadores",
-      "tense": { "from": "presente", "to": "subjuntivo-presente" }
+      "tense": { "from": "presente", "to": "subjuntivo-presente" },
+      "wrong": {
+        "vienes": {
+          "en": "Vienes is the present indicative form. After “Quiero que”, a wish about someone else, the verb goes in the subjunctive: vengas.",
+          "es": "Vienes es la forma del presente de indicativo. Después de “Quiero que”, un deseo sobre otra persona, el verbo va en subjuntivo: vengas."
+        }
+      }
     },
     {
       "id": "sp-form-02",
@@ -570,7 +576,13 @@
       "person": "Creo que (ella)",
       "answer": "tiene",
       "table": "disparadores",
-      "tense": { "from": "presente", "to": "subjuntivo-presente" }
+      "tense": { "from": "presente", "to": "subjuntivo-presente" },
+      "wrong": {
+        "tenga": {
+          "en": "Tenga is the present subjunctive form. “Creo que” affirms something, so the verb stays in the indicative: tiene.",
+          "es": "Tenga es la forma del presente de subjuntivo. “Creo que” afirma algo, así que el verbo va en indicativo: tiene."
+        }
+      }
     },
     {
       "id": "sp-form-03",
@@ -579,7 +591,17 @@
       "person": "Es posible que (nosotros)",
       "answer": "hagamos",
       "table": "disparadores",
-      "tense": { "from": "presente", "to": "subjuntivo-presente" }
+      "tense": { "from": "presente", "to": "subjuntivo-presente" },
+      "wrong": {
+        "hacemos": {
+          "en": "Hacemos is the present indicative form. “Es posible que” gives an opinion or a possibility, not a fact, so the verb goes in the subjunctive: hagamos.",
+          "es": "Hacemos es la forma del presente de indicativo. “Es posible que” da una opinión o una posibilidad, no un hecho, así que el verbo va en subjuntivo: hagamos."
+        },
+        "hagemos": {
+          "en": "With -er verbs the subjunctive takes a-endings, and hacer keeps the g of hago: hagamos, not hagemos.",
+          "es": "Con los verbos en -er, el subjuntivo lleva terminaciones con a, y hacer conserva la g de hago: hagamos, no hagemos."
+        }
+      }
     },
     {
       "id": "sp-form-04",
@@ -588,7 +610,13 @@
       "person": "Dudo que (ustedes)",
       "answer": "vengan",
       "table": "disparadores",
-      "tense": { "from": "presente", "to": "subjuntivo-presente" }
+      "tense": { "from": "presente", "to": "subjuntivo-presente" },
+      "wrong": {
+        "vienen": {
+          "en": "Vienen is the present indicative form. “Dudo que” expresses doubt, so the verb goes in the subjunctive: vengan.",
+          "es": "Vienen es la forma del presente de indicativo. “Dudo que” expresa duda, así que el verbo va en subjuntivo: vengan."
+        }
+      }
     },
     {
       "id": "sp-form-05",
@@ -597,7 +625,13 @@
       "person": "Me alegro de que (tú)",
       "answer": "tengas",
       "table": "disparadores",
-      "tense": { "from": "presente", "to": "subjuntivo-presente" }
+      "tense": { "from": "presente", "to": "subjuntivo-presente" },
+      "wrong": {
+        "tienes": {
+          "en": "Tienes is the present indicative form. “Me alegro de que” gives a feeling about what someone does, so the verb goes in the subjunctive: tengas.",
+          "es": "Tienes es la forma del presente de indicativo. “Me alegro de que” expresa un sentimiento sobre lo que hace alguien, así que el verbo va en subjuntivo: tengas."
+        }
+      }
     },
     {
       "id": "sp-form-06",
@@ -606,7 +640,13 @@
       "person": "Es verdad que (él)",
       "answer": "hace",
       "table": "disparadores",
-      "tense": { "from": "presente", "to": "subjuntivo-presente" }
+      "tense": { "from": "presente", "to": "subjuntivo-presente" },
+      "wrong": {
+        "haga": {
+          "en": "Haga is the present subjunctive form. “Es verdad que” affirms something, so the verb stays in the indicative: hace.",
+          "es": "Haga es la forma del presente de subjuntivo. “Es verdad que” afirma algo, así que el verbo va en indicativo: hace."
+        }
+      }
     },
     {
       "id": "sp-form-07",
@@ -615,7 +655,13 @@
       "person": "Ojalá (yo)",
       "answer": "venga",
       "table": "disparadores",
-      "tense": { "from": "presente", "to": "subjuntivo-presente" }
+      "tense": { "from": "presente", "to": "subjuntivo-presente" },
+      "wrong": {
+        "vengo": {
+          "en": "Vengo is the present indicative form. “Ojalá” always takes the subjunctive: venga.",
+          "es": "Vengo es la forma del presente de indicativo. “Ojalá” siempre lleva subjuntivo: venga."
+        }
+      }
     },
     {
       "id": "sp-form-08",
@@ -624,7 +670,13 @@
       "person": "No creo que (ellos)",
       "answer": "tengan",
       "table": "disparadores",
-      "tense": { "from": "presente", "to": "subjuntivo-presente" }
+      "tense": { "from": "presente", "to": "subjuntivo-presente" },
+      "wrong": {
+        "tienen": {
+          "en": "Tienen is the present indicative form. “No creo que” denies or doubts the belief, so the verb goes in the subjunctive: tengan.",
+          "es": "Tienen es la forma del presente de indicativo. “No creo que” niega o pone en duda lo que se cree, así que el verbo va en subjuntivo: tengan."
+        }
+      }
     },
     {
       "id": "sp-form-09",
@@ -633,7 +685,13 @@
       "person": "Prefiero que (usted)",
       "answer": "haga",
       "table": "disparadores",
-      "tense": { "from": "presente", "to": "subjuntivo-presente" }
+      "tense": { "from": "presente", "to": "subjuntivo-presente" },
+      "wrong": {
+        "hace": {
+          "en": "Hace is the present indicative form. After “Prefiero que”, a wish about someone else, the verb goes in the subjunctive: haga.",
+          "es": "Hace es la forma del presente de indicativo. Después de “Prefiero que”, un deseo sobre otra persona, el verbo va en subjuntivo: haga."
+        }
+      }
     },
     {
       "id": "sp-form-10",
@@ -642,7 +700,13 @@
       "person": "Está claro que (tú)",
       "answer": "vienes",
       "table": "disparadores",
-      "tense": { "from": "presente", "to": "subjuntivo-presente" }
+      "tense": { "from": "presente", "to": "subjuntivo-presente" },
+      "wrong": {
+        "vengas": {
+          "en": "Vengas is the present subjunctive form. “Está claro que” affirms something, so the verb stays in the indicative: vienes.",
+          "es": "Vengas es la forma del presente de subjuntivo. “Está claro que” afirma algo, así que el verbo va en indicativo: vienes."
+        }
+      }
     },
     {
       "id": "sp-form-11",
@@ -651,7 +715,13 @@
       "person": "Es importante que (nosotros)",
       "answer": "tengamos",
       "table": "disparadores",
-      "tense": { "from": "presente", "to": "subjuntivo-presente" }
+      "tense": { "from": "presente", "to": "subjuntivo-presente" },
+      "wrong": {
+        "tenemos": {
+          "en": "Tenemos is the present indicative form. “Es importante que” gives an opinion or a possibility, not a fact, so the verb goes in the subjunctive: tengamos.",
+          "es": "Tenemos es la forma del presente de indicativo. “Es importante que” da una opinión o una posibilidad, no un hecho, así que el verbo va en subjuntivo: tengamos."
+        }
+      }
     },
     {
       "id": "sp-form-12",
@@ -660,7 +730,13 @@
       "person": "Sé que (ella)",
       "answer": "viene",
       "table": "disparadores",
-      "tense": { "from": "presente", "to": "subjuntivo-presente" }
+      "tense": { "from": "presente", "to": "subjuntivo-presente" },
+      "wrong": {
+        "venga": {
+          "en": "Venga is the present subjunctive form. “Sé que” affirms something, so the verb stays in the indicative: viene.",
+          "es": "Venga es la forma del presente de subjuntivo. “Sé que” afirma algo, así que el verbo va en indicativo: viene."
+        }
+      }
     },
     {
       "kind": "why",

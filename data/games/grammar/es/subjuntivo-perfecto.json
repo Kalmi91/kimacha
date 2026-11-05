@@ -840,7 +840,13 @@
       "verb": "hablar",
       "person": "yo",
       "answer": "haya hablado",
-      "table": "perfecto-subj"
+      "table": "perfecto-subj",
+      "wrong": {
+        "he hablado": {
+          "en": "He hablado is the present perfect form. This task asks for the present perfect subjunctive form: haya hablado.",
+          "es": "He hablado es la forma del pretérito perfecto. Esta tarea pide la forma del pretérito perfecto de subjuntivo: haya hablado."
+        }
+      }
     },
     {
       "id": "sp2-form-02",
@@ -848,7 +854,13 @@
       "verb": "comer",
       "person": "tú",
       "answer": "hayas comido",
-      "table": "perfecto-subj"
+      "table": "perfecto-subj",
+      "wrong": {
+        "has comido": {
+          "en": "Has comido is the present perfect form. This task asks for the present perfect subjunctive form: hayas comido.",
+          "es": "Has comido es la forma del pretérito perfecto. Esta tarea pide la forma del pretérito perfecto de subjuntivo: hayas comido."
+        }
+      }
     },
     {
       "id": "sp2-form-03",
@@ -856,7 +868,13 @@
       "verb": "vivir",
       "person": "él/ella/usted",
       "answer": "haya vivido",
-      "table": "perfecto-subj"
+      "table": "perfecto-subj",
+      "wrong": {
+        "ha vivido": {
+          "en": "Ha vivido is the present perfect form. This task asks for the present perfect subjunctive form: haya vivido.",
+          "es": "Ha vivido es la forma del pretérito perfecto. Esta tarea pide la forma del pretérito perfecto de subjuntivo: haya vivido."
+        }
+      }
     },
     {
       "id": "sp2-form-04",
@@ -864,7 +882,17 @@
       "verb": "hacer",
       "person": "nosotros",
       "answer": "hayamos hecho",
-      "table": "perfecto-subj"
+      "table": "perfecto-subj",
+      "wrong": {
+        "hemos hecho": {
+          "en": "Hemos hecho is the present perfect form. This task asks for the present perfect subjunctive form: hayamos hecho.",
+          "es": "Hemos hecho es la forma del pretérito perfecto. Esta tarea pide la forma del pretérito perfecto de subjuntivo: hayamos hecho."
+        },
+        "hayamos hacido": {
+          "en": "Hacer has an irregular participle, hecho, not the regular form: hayamos hecho.",
+          "es": "Hacer tiene participio irregular, hecho, no la forma regular: hayamos hecho."
+        }
+      }
     },
     {
       "id": "sp2-form-05",
@@ -872,7 +900,17 @@
       "verb": "ver",
       "person": "ellos/ellas/ustedes",
       "answer": "hayan visto",
-      "table": "perfecto-subj"
+      "table": "perfecto-subj",
+      "wrong": {
+        "han visto": {
+          "en": "Han visto is the present perfect form. This task asks for the present perfect subjunctive form: hayan visto.",
+          "es": "Han visto es la forma del pretérito perfecto. Esta tarea pide la forma del pretérito perfecto de subjuntivo: hayan visto."
+        },
+        "hayan veído": {
+          "en": "Ver has an irregular participle, visto, not the regular form: hayan visto.",
+          "es": "Ver tiene participio irregular, visto, no la forma regular: hayan visto."
+        }
+      }
     },
     {
       "id": "sp2-form-06",
@@ -880,7 +918,17 @@
       "verb": "decir",
       "person": "ellos/ellas/ustedes",
       "answer": "hayan dicho",
-      "table": "perfecto-subj"
+      "table": "perfecto-subj",
+      "wrong": {
+        "han dicho": {
+          "en": "Han dicho is the present perfect form. This task asks for the present perfect subjunctive form: hayan dicho.",
+          "es": "Han dicho es la forma del pretérito perfecto. Esta tarea pide la forma del pretérito perfecto de subjuntivo: hayan dicho."
+        },
+        "hayan decido": {
+          "en": "Decir has an irregular participle, dicho, not the regular form: hayan dicho.",
+          "es": "Decir tiene participio irregular, dicho, no la forma regular: hayan dicho."
+        }
+      }
     },
     {
       "id": "sp2-form-07",
@@ -888,7 +936,17 @@
       "verb": "escribir",
       "person": "yo",
       "answer": "haya escrito",
-      "table": "perfecto-subj"
+      "table": "perfecto-subj",
+      "wrong": {
+        "he escrito": {
+          "en": "He escrito is the present perfect form. This task asks for the present perfect subjunctive form: haya escrito.",
+          "es": "He escrito es la forma del pretérito perfecto. Esta tarea pide la forma del pretérito perfecto de subjuntivo: haya escrito."
+        },
+        "haya escribido": {
+          "en": "Escribir has an irregular participle, escrito, not the regular form: haya escrito.",
+          "es": "Escribir tiene participio irregular, escrito, no la forma regular: haya escrito."
+        }
+      }
     },
     {
       "id": "sp2-form-08",
@@ -896,7 +954,17 @@
       "verb": "volver",
       "person": "tú",
       "answer": "hayas vuelto",
-      "table": "perfecto-subj"
+      "table": "perfecto-subj",
+      "wrong": {
+        "has vuelto": {
+          "en": "Has vuelto is the present perfect form. This task asks for the present perfect subjunctive form: hayas vuelto.",
+          "es": "Has vuelto es la forma del pretérito perfecto. Esta tarea pide la forma del pretérito perfecto de subjuntivo: hayas vuelto."
+        },
+        "hayas volvido": {
+          "en": "Volver has an irregular participle, vuelto, not the regular form: hayas vuelto.",
+          "es": "Volver tiene participio irregular, vuelto, no la forma regular: hayas vuelto."
+        }
+      }
     },
     {
       "id": "sp2-form-09",
@@ -904,7 +972,13 @@
       "verb": "hablar",
       "person": "nosotros",
       "answer": "hayamos hablado",
-      "table": "perfecto-subj"
+      "table": "perfecto-subj",
+      "wrong": {
+        "hemos hablado": {
+          "en": "Hemos hablado is the present perfect form. This task asks for the present perfect subjunctive form: hayamos hablado.",
+          "es": "Hemos hablado es la forma del pretérito perfecto. Esta tarea pide la forma del pretérito perfecto de subjuntivo: hayamos hablado."
+        }
+      }
     },
     {
       "id": "sp2-form-10",
@@ -912,7 +986,13 @@
       "verb": "comer",
       "person": "ellos/ellas/ustedes",
       "answer": "hayan comido",
-      "table": "perfecto-subj"
+      "table": "perfecto-subj",
+      "wrong": {
+        "han comido": {
+          "en": "Han comido is the present perfect form. This task asks for the present perfect subjunctive form: hayan comido.",
+          "es": "Han comido es la forma del pretérito perfecto. Esta tarea pide la forma del pretérito perfecto de subjuntivo: hayan comido."
+        }
+      }
     },
     {
       "id": "sp2-form-11",
@@ -920,7 +1000,17 @@
       "verb": "decir",
       "person": "él/ella/usted",
       "answer": "haya dicho",
-      "table": "perfecto-subj"
+      "table": "perfecto-subj",
+      "wrong": {
+        "ha dicho": {
+          "en": "Ha dicho is the present perfect form. This task asks for the present perfect subjunctive form: haya dicho.",
+          "es": "Ha dicho es la forma del pretérito perfecto. Esta tarea pide la forma del pretérito perfecto de subjuntivo: haya dicho."
+        },
+        "haya decido": {
+          "en": "Decir has an irregular participle, dicho, not the regular form: haya dicho.",
+          "es": "Decir tiene participio irregular, dicho, no la forma regular: haya dicho."
+        }
+      }
     },
     {
       "id": "sp2-form-12",
@@ -928,7 +1018,17 @@
       "verb": "hacer",
       "person": "ellos/ellas/ustedes",
       "answer": "hayan hecho",
-      "table": "perfecto-subj"
+      "table": "perfecto-subj",
+      "wrong": {
+        "han hecho": {
+          "en": "Han hecho is the present perfect form. This task asks for the present perfect subjunctive form: hayan hecho.",
+          "es": "Han hecho es la forma del pretérito perfecto. Esta tarea pide la forma del pretérito perfecto de subjuntivo: hayan hecho."
+        },
+        "hayan hacido": {
+          "en": "Hacer has an irregular participle, hecho, not the regular form: hayan hecho.",
+          "es": "Hacer tiene participio irregular, hecho, no la forma regular: hayan hecho."
+        }
+      }
     },
     {
       "kind": "why",

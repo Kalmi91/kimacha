@@ -711,7 +711,13 @@
       "verb": "forma del verbo",
       "person": "Busco un trabajo que ___ (ser) interesante, pero todavía no lo encontré.",
       "answer": "sea",
-      "table": "subjuntivo-relativo-formas"
+      "table": "subjuntivo-relativo-formas",
+      "wrong": {
+        "es": {
+          "en": "Es is the present indicative form. What is looked for is still unknown or not found, so the verb of the relative clause goes in the subjunctive: sea.",
+          "es": "Es es la forma del presente de indicativo. Lo que se busca todavía no se conoce o no se ha encontrado, así que el verbo de la oración de relativo va en subjuntivo: sea."
+        }
+      }
     },
     {
       "id": "sr-form-02",
@@ -719,7 +725,13 @@
       "verb": "forma del verbo",
       "person": "Tengo un amigo que ___ (trabajar) en un banco.",
       "answer": "trabaja",
-      "table": "subjuntivo-relativo-formas"
+      "table": "subjuntivo-relativo-formas",
+      "wrong": {
+        "trabaje": {
+          "en": "Trabaje is the present subjunctive form. The speaker knows that it exists, so the verb of the relative clause stays in the indicative: trabaja.",
+          "es": "Trabaje es la forma del presente de subjuntivo. El hablante sabe que existe, así que el verbo de la oración de relativo va en indicativo: trabaja."
+        }
+      }
     },
     {
       "id": "sr-form-03",
@@ -727,7 +739,13 @@
       "verb": "forma del verbo",
       "person": "Quiero una casa que ___ (tener) jardín, pero no sé si existe.",
       "answer": "tenga",
-      "table": "subjuntivo-relativo-formas"
+      "table": "subjuntivo-relativo-formas",
+      "wrong": {
+        "tiene": {
+          "en": "Tiene is the present indicative form. The speaker does not know whether it exists, so the verb of the relative clause goes in the subjunctive: tenga.",
+          "es": "Tiene es la forma del presente de indicativo. El hablante no sabe si existe, así que el verbo de la oración de relativo va en subjuntivo: tenga."
+        }
+      }
     },
     {
       "id": "sr-form-04",
@@ -735,7 +753,13 @@
       "verb": "forma del verbo",
       "person": "Conozco a una chica que ___ (vivir) en mi edificio.",
       "answer": "vive",
-      "table": "subjuntivo-relativo-formas"
+      "table": "subjuntivo-relativo-formas",
+      "wrong": {
+        "viva": {
+          "en": "Viva is the present subjunctive form. The speaker knows that it exists, so the verb of the relative clause stays in the indicative: vive.",
+          "es": "Viva es la forma del presente de subjuntivo. El hablante sabe que existe, así que el verbo de la oración de relativo va en indicativo: vive."
+        }
+      }
     },
     {
       "id": "sr-form-05",
@@ -743,7 +767,13 @@
       "verb": "forma del verbo",
       "person": "Necesito a alguien que ___ (poder) ayudarme, pero no sé quién.",
       "answer": "pueda",
-      "table": "subjuntivo-relativo-formas"
+      "table": "subjuntivo-relativo-formas",
+      "wrong": {
+        "puede": {
+          "en": "Puede is the present indicative form. What is looked for is still unknown or not found, so the verb of the relative clause goes in the subjunctive: pueda.",
+          "es": "Puede es la forma del presente de indicativo. Lo que se busca todavía no se conoce o no se ha encontrado, así que el verbo de la oración de relativo va en subjuntivo: pueda."
+        }
+      }
     },
     {
       "id": "sr-form-06",
@@ -751,7 +781,13 @@
       "verb": "forma del verbo",
       "person": "No hay nadie en mi familia que ___ (hablar) alemán.",
       "answer": "hable",
-      "table": "subjuntivo-relativo-formas"
+      "table": "subjuntivo-relativo-formas",
+      "wrong": {
+        "habla": {
+          "en": "Habla is the present indicative form. Nothing or nobody of this kind exists, so the verb of the relative clause goes in the subjunctive: hable.",
+          "es": "Habla es la forma del presente de indicativo. No existe nada ni nadie de ese tipo, así que el verbo de la oración de relativo va en subjuntivo: hable."
+        }
+      }
     },
     {
       "id": "sr-form-07",
@@ -759,7 +795,13 @@
       "verb": "forma del verbo",
       "person": "Hay un café en la esquina que ___ (ser) muy barato.",
       "answer": "es",
-      "table": "subjuntivo-relativo-formas"
+      "table": "subjuntivo-relativo-formas",
+      "wrong": {
+        "sea": {
+          "en": "Sea is the present subjunctive form. The speaker knows that it exists, so the verb of the relative clause stays in the indicative: es.",
+          "es": "Sea es la forma del presente de subjuntivo. El hablante sabe que existe, así que el verbo de la oración de relativo va en indicativo: es."
+        }
+      }
     },
     {
       "id": "sr-form-08",
@@ -767,7 +809,13 @@
       "verb": "forma del verbo",
       "person": "No conozco a nadie que ___ (vivir) cerca de aquí.",
       "answer": "viva",
-      "table": "subjuntivo-relativo-formas"
+      "table": "subjuntivo-relativo-formas",
+      "wrong": {
+        "vive": {
+          "en": "Vive is the present indicative form. Nothing or nobody of this kind exists, so the verb of the relative clause goes in the subjunctive: viva.",
+          "es": "Vive es la forma del presente de indicativo. No existe nada ni nadie de ese tipo, así que el verbo de la oración de relativo va en subjuntivo: viva."
+        }
+      }
     },
     {
       "id": "sr-form-09",
@@ -775,7 +823,13 @@
       "verb": "forma del verbo",
       "person": "Mi hermana trabaja en una empresa que ___ (pagar) muy bien.",
       "answer": "paga",
-      "table": "subjuntivo-relativo-formas"
+      "table": "subjuntivo-relativo-formas",
+      "wrong": {
+        "pague": {
+          "en": "Pague is the present subjunctive form. The speaker knows that it exists, so the verb of the relative clause stays in the indicative: paga.",
+          "es": "Pague es la forma del presente de subjuntivo. El hablante sabe que existe, así que el verbo de la oración de relativo va en indicativo: paga."
+        }
+      }
     },
     {
       "id": "sr-form-10",
@@ -783,7 +837,13 @@
       "verb": "forma del verbo",
       "person": "No hay nada en el menú que me ___ (gustar).",
       "answer": "guste",
-      "table": "subjuntivo-relativo-formas"
+      "table": "subjuntivo-relativo-formas",
+      "wrong": {
+        "gusta": {
+          "en": "Gusta is the present indicative form. Nothing or nobody of this kind exists, so the verb of the relative clause goes in the subjunctive: guste.",
+          "es": "Gusta es la forma del presente de indicativo. No existe nada ni nadie de ese tipo, así que el verbo de la oración de relativo va en subjuntivo: guste."
+        }
+      }
     },
     {
       "id": "sr-form-11",
@@ -791,7 +851,13 @@
       "verb": "forma del verbo",
       "person": "No sé si hay una tienda cerca que ___ (abrir) hoy.",
       "answer": "abra",
-      "table": "subjuntivo-relativo-formas"
+      "table": "subjuntivo-relativo-formas",
+      "wrong": {
+        "abre": {
+          "en": "Abre is the present indicative form. The speaker does not know whether it exists, so the verb of the relative clause goes in the subjunctive: abra.",
+          "es": "Abre es la forma del presente de indicativo. El hablante no sabe si existe, así que el verbo de la oración de relativo va en subjuntivo: abra."
+        }
+      }
     },
     {
       "id": "sr-form-12",
@@ -799,7 +865,13 @@
       "verb": "forma del verbo",
       "person": "Busco a la señora que ___ (vender) frutas; ayer la vi.",
       "answer": "vende",
-      "table": "subjuntivo-relativo-formas"
+      "table": "subjuntivo-relativo-formas",
+      "wrong": {
+        "venda": {
+          "en": "Venda is the present subjunctive form. The speaker knows that it exists, so the verb of the relative clause stays in the indicative: vende.",
+          "es": "Venda es la forma del presente de subjuntivo. El hablante sabe que existe, así que el verbo de la oración de relativo va en indicativo: vende."
+        }
+      }
     },
     {
       "kind": "why",

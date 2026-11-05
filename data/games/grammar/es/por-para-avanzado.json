@@ -738,7 +738,13 @@
       "verb": "expresión",
       "person": "Hoy no llueve, pero llevo el paraguas ___.",
       "answer": "por si acaso",
-      "table": "por-para-avanzado-expresiones"
+      "table": "por-para-avanzado-expresiones",
+      "wrong": {
+        "para si acaso": {
+          "en": "\"por si acaso\" is a fixed expression with por; it does not work with para: por si acaso.",
+          "es": "\"por si acaso\" es una expresión fija con por; no funciona con para: por si acaso."
+        }
+      }
     },
     {
       "id": "ppa-form-02",
@@ -746,7 +752,13 @@
       "verb": "expresión",
       "person": "Necesito ___ dos horas para terminar el trabajo.",
       "answer": "por lo menos",
-      "table": "por-para-avanzado-expresiones"
+      "table": "por-para-avanzado-expresiones",
+      "wrong": {
+        "para lo menos": {
+          "en": "\"por lo menos\" is a fixed expression with por; it does not work with para: por lo menos.",
+          "es": "\"por lo menos\" es una expresión fija con por; no funciona con para: por lo menos."
+        }
+      }
     },
     {
       "id": "ppa-form-03",
@@ -754,7 +766,13 @@
       "verb": "expresión",
       "person": "¿Te molesta el ruido? No, ___.",
       "answer": "para nada",
-      "table": "por-para-avanzado-expresiones"
+      "table": "por-para-avanzado-expresiones",
+      "wrong": {
+        "por nada": {
+          "en": "Por nada is a reply to thanks (\"you're welcome\"). To say \"not at all\", use para nada: para nada.",
+          "es": "Por nada es una respuesta a un agradecimiento (\"de nada\"). Para decir \"en absoluto\" se usa para nada: para nada."
+        }
+      }
     },
     {
       "id": "ppa-form-04",
@@ -762,7 +780,13 @@
       "verb": "expresión",
       "person": "como siempre (empieza por «para v»): Hoy mi hermano llegó tarde, ___.",
       "answer": "para variar",
-      "table": "por-para-avanzado-expresiones"
+      "table": "por-para-avanzado-expresiones",
+      "wrong": {
+        "por variar": {
+          "en": "\"para variar\" is a fixed expression with para; it does not work with por: para variar.",
+          "es": "\"para variar\" es una expresión fija con para; no funciona con por: para variar."
+        }
+      }
     },
     {
       "id": "ppa-form-05",
@@ -770,7 +794,13 @@
       "verb": "expresión",
       "person": "Perdí el autobús, pero ___ pasó otro enseguida.",
       "answer": "por suerte",
-      "table": "por-para-avanzado-expresiones"
+      "table": "por-para-avanzado-expresiones",
+      "wrong": {
+        "para suerte": {
+          "en": "\"por suerte\" is a fixed expression with por; it does not work with para: por suerte.",
+          "es": "\"por suerte\" es una expresión fija con por; no funciona con para: por suerte."
+        }
+      }
     },
     {
       "id": "ppa-form-06",
@@ -778,7 +808,13 @@
       "verb": "expresión",
       "person": "Quiero viajar, pero ___ no tengo dinero.",
       "answer": "por desgracia",
-      "table": "por-para-avanzado-expresiones"
+      "table": "por-para-avanzado-expresiones",
+      "wrong": {
+        "para desgracia": {
+          "en": "\"por desgracia\" is a fixed expression with por; it does not work with para: por desgracia.",
+          "es": "\"por desgracia\" es una expresión fija con por; no funciona con para: por desgracia."
+        }
+      }
     },
     {
       "id": "ppa-form-07",
@@ -786,7 +822,13 @@
       "verb": "expresión",
       "person": "Sin buscarla, vi a mi profesora en el mercado ___.",
       "answer": "por casualidad",
-      "table": "por-para-avanzado-expresiones"
+      "table": "por-para-avanzado-expresiones",
+      "wrong": {
+        "para casualidad": {
+          "en": "\"por casualidad\" is a fixed expression with por; it does not work with para: por casualidad.",
+          "es": "\"por casualidad\" es una expresión fija con por; no funciona con para: por casualidad."
+        }
+      }
     },
     {
       "id": "ppa-form-08",
@@ -794,7 +836,13 @@
       "verb": "expresión",
       "person": "además, algo peor (empieza por «para c»): Perdí las llaves y, ___, empezó a llover.",
       "answer": "para colmo",
-      "table": "por-para-avanzado-expresiones"
+      "table": "por-para-avanzado-expresiones",
+      "wrong": {
+        "por colmo": {
+          "en": "\"para colmo\" is a fixed expression with para; it does not work with por: para colmo.",
+          "es": "\"para colmo\" es una expresión fija con para; no funciona con por: para colmo."
+        }
+      }
     },
     {
       "id": "ppa-form-09",
@@ -802,7 +850,13 @@
       "verb": "expresión",
       "person": "Hay carteles ___ en el centro.",
       "answer": "por todas partes",
-      "table": "por-para-avanzado-expresiones"
+      "table": "por-para-avanzado-expresiones",
+      "wrong": {
+        "para todas partes": {
+          "en": "\"por todas partes\" is a fixed expression with por; it does not work with para: por todas partes.",
+          "es": "\"por todas partes\" es una expresión fija con por; no funciona con para: por todas partes."
+        }
+      }
     },
     {
       "id": "ppa-form-10",
@@ -810,7 +864,13 @@
       "verb": "expresión",
       "person": "___ pierdo el tren, pero corrí mucho.",
       "answer": "Por poco",
-      "table": "por-para-avanzado-expresiones"
+      "table": "por-para-avanzado-expresiones",
+      "wrong": {
+        "para poco": {
+          "en": "\"por poco\" is a fixed expression with por; it does not work with para: por poco.",
+          "es": "\"por poco\" es una expresión fija con por; no funciona con para: por poco."
+        }
+      }
     },
     {
       "id": "ppa-form-11",
@@ -818,7 +878,13 @@
       "verb": "expresión",
       "person": "Rompí un vaso, pero ___.",
       "answer": "no es para tanto",
-      "table": "por-para-avanzado-expresiones"
+      "table": "por-para-avanzado-expresiones",
+      "wrong": {
+        "no es por tanto": {
+          "en": "\"no es para tanto\" is a fixed expression with para; it does not work with por: no es para tanto.",
+          "es": "\"no es para tanto\" es una expresión fija con para; no funciona con por: no es para tanto."
+        }
+      }
     },
     {
       "id": "ppa-form-12",
@@ -826,7 +892,13 @@
       "verb": "expresión",
       "person": "Hoy cocino para mis suegros ___.",
       "answer": "por primera vez",
-      "table": "por-para-avanzado-expresiones"
+      "table": "por-para-avanzado-expresiones",
+      "wrong": {
+        "para primera vez": {
+          "en": "\"por primera vez\" is a fixed expression with por; it does not work with para: por primera vez.",
+          "es": "\"por primera vez\" es una expresión fija con por; no funciona con para: por primera vez."
+        }
+      }
     },
     {
       "kind": "why",

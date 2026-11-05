@@ -779,7 +779,17 @@
       "verb": "trabajar",
       "person": "acabar de (yo)",
       "answer": "acabo de trabajar",
-      "table": "perifrasis"
+      "table": "perifrasis",
+      "wrong": {
+        "acabo trabajar": {
+          "en": "Acabar de + infinitive needs the de: acabo de trabajar.",
+          "es": "Acabar de + infinitivo necesita la preposición de: acabo de trabajar."
+        },
+        "acabo de trabajando": {
+          "en": "After de the second verb is an infinitive, not a gerund: acabo de trabajar.",
+          "es": "Tras la preposición de, el segundo verbo va en infinitivo, no en gerundio: acabo de trabajar."
+        }
+      }
     },
     {
       "kind": "form",
@@ -787,7 +797,17 @@
       "verb": "comer",
       "person": "volver a (tú)",
       "answer": "vuelves a comer",
-      "table": "perifrasis"
+      "table": "perifrasis",
+      "wrong": {
+        "vuelves comer": {
+          "en": "Volver a + infinitive needs the a: vuelves a comer.",
+          "es": "Volver a + infinitivo necesita la preposición a: vuelves a comer."
+        },
+        "vuelves de comer": {
+          "en": "Volver a + infinitive takes a, not de: vuelves a comer.",
+          "es": "Volver a + infinitivo lleva a, no de: vuelves a comer."
+        }
+      }
     },
     {
       "kind": "form",
@@ -795,7 +815,17 @@
       "verb": "estudiar",
       "person": "dejar de (ella)",
       "answer": "deja de estudiar",
-      "table": "perifrasis"
+      "table": "perifrasis",
+      "wrong": {
+        "deja estudiar": {
+          "en": "Dejar de + infinitive needs the de: deja de estudiar.",
+          "es": "Dejar de + infinitivo necesita la preposición de: deja de estudiar."
+        },
+        "deja de estudiando": {
+          "en": "After de the second verb is an infinitive, not a gerund: deja de estudiar.",
+          "es": "Tras la preposición de, el segundo verbo va en infinitivo, no en gerundio: deja de estudiar."
+        }
+      }
     },
     {
       "kind": "form",
@@ -803,7 +833,17 @@
       "verb": "trabajar",
       "person": "empezar a (nosotros)",
       "answer": "empezamos a trabajar",
-      "table": "perifrasis"
+      "table": "perifrasis",
+      "wrong": {
+        "empezamos trabajar": {
+          "en": "Empezar a + infinitive needs the a: empezamos a trabajar.",
+          "es": "Empezar a + infinitivo necesita la preposición a: empezamos a trabajar."
+        },
+        "empezamos de trabajar": {
+          "en": "Empezar a + infinitive takes a, not de: empezamos a trabajar.",
+          "es": "Empezar a + infinitivo lleva a, no de: empezamos a trabajar."
+        }
+      }
     },
     {
       "kind": "form",
@@ -811,7 +851,17 @@
       "verb": "comer",
       "person": "ponerse a (yo)",
       "answer": "me pongo a comer",
-      "table": "perifrasis"
+      "table": "perifrasis",
+      "wrong": {
+        "pongo a comer": {
+          "en": "The verb is pronominal, so it needs the pronoun (me, te, se, nos) before it: me pongo a comer.",
+          "es": "El verbo es pronominal: necesita el pronombre (me, te, se, nos) antes del verbo: me pongo a comer."
+        },
+        "me pongo comer": {
+          "en": "Ponerse a + infinitive needs the a: me pongo a comer.",
+          "es": "Ponerse a + infinitivo necesita la preposición a: me pongo a comer."
+        }
+      }
     },
     {
       "kind": "form",
@@ -819,7 +869,17 @@
       "verb": "estudiar",
       "person": "seguir + gerundio (tú)",
       "answer": "sigues estudiando",
-      "table": "perifrasis"
+      "table": "perifrasis",
+      "wrong": {
+        "sigues estudiar": {
+          "en": "Seguir + gerund: the second verb is a gerund (-ando, -iendo), not an infinitive: sigues estudiando.",
+          "es": "Seguir + gerundio: el segundo verbo va en gerundio (-ando, -iendo), no en infinitivo: sigues estudiando."
+        },
+        "sigues estudiendo": {
+          "en": "Verbs in -ar form the gerund with -ando: estudiando, not estudiendo: sigues estudiando.",
+          "es": "Los verbos en -ar forman el gerundio con -ando: estudiando, no estudiendo: sigues estudiando."
+        }
+      }
     },
     {
       "kind": "form",
@@ -827,7 +887,13 @@
       "verb": "trabajar",
       "person": "llevar + gerundio (nosotros)",
       "answer": "llevamos trabajando",
-      "table": "perifrasis"
+      "table": "perifrasis",
+      "wrong": {
+        "llevamos trabajar": {
+          "en": "Llevar + gerund: the second verb is a gerund (-ando, -iendo), not an infinitive: llevamos trabajando.",
+          "es": "Llevar + gerundio: el segundo verbo va en gerundio (-ando, -iendo), no en infinitivo: llevamos trabajando."
+        }
+      }
     },
     {
       "kind": "form",
@@ -835,7 +901,17 @@
       "verb": "comer",
       "person": "acabar de (ellos)",
       "answer": "acaban de comer",
-      "table": "perifrasis"
+      "table": "perifrasis",
+      "wrong": {
+        "acaban comer": {
+          "en": "Acabar de + infinitive needs the de: acaban de comer.",
+          "es": "Acabar de + infinitivo necesita la preposición de: acaban de comer."
+        },
+        "acaban de comiendo": {
+          "en": "After de the second verb is an infinitive, not a gerund: acaban de comer.",
+          "es": "Tras la preposición de, el segundo verbo va en infinitivo, no en gerundio: acaban de comer."
+        }
+      }
     },
     {
       "kind": "form",
@@ -843,7 +919,17 @@
       "verb": "estudiar",
       "person": "empezar a (ustedes)",
       "answer": "empiezan a estudiar",
-      "table": "perifrasis"
+      "table": "perifrasis",
+      "wrong": {
+        "empezan a estudiar": {
+          "en": "Empezar changes e to ie in the forms with stress on the stem: empiezan, not empezan: empiezan a estudiar.",
+          "es": "Empezar cambia e a ie en las formas con el acento en la raíz: empiezan, no empezan: empiezan a estudiar."
+        },
+        "empiezan estudiar": {
+          "en": "Empezar a + infinitive needs the a: empiezan a estudiar.",
+          "es": "Empezar a + infinitivo necesita la preposición a: empiezan a estudiar."
+        }
+      }
     },
     {
       "kind": "form",
@@ -851,7 +937,13 @@
       "verb": "trabajar",
       "person": "dejar de (yo)",
       "answer": "dejo de trabajar",
-      "table": "perifrasis"
+      "table": "perifrasis",
+      "wrong": {
+        "dejo trabajar": {
+          "en": "Dejar de + infinitive needs the de: dejo de trabajar.",
+          "es": "Dejar de + infinitivo necesita la preposición de: dejo de trabajar."
+        }
+      }
     },
     {
       "kind": "form",
@@ -859,7 +951,17 @@
       "verb": "comer",
       "person": "volver a (nosotros)",
       "answer": "volvemos a comer",
-      "table": "perifrasis"
+      "table": "perifrasis",
+      "wrong": {
+        "volvemos comer": {
+          "en": "Volver a + infinitive needs the a: volvemos a comer.",
+          "es": "Volver a + infinitivo necesita la preposición a: volvemos a comer."
+        },
+        "vuelvemos a comer": {
+          "en": "With nosotros the stress is on the ending, so volver keeps the o: volvemos, not vuelvemos: volvemos a comer.",
+          "es": "Con nosotros el acento cae en la terminación, así que volver conserva la o: volvemos, no vuelvemos: volvemos a comer."
+        }
+      }
     },
     {
       "kind": "form",
@@ -867,7 +969,17 @@
       "verb": "estudiar",
       "person": "ponerse a (ella)",
       "answer": "se pone a estudiar",
-      "table": "perifrasis"
+      "table": "perifrasis",
+      "wrong": {
+        "pone a estudiar": {
+          "en": "The verb is pronominal, so it needs the pronoun (me, te, se, nos) before it: se pone a estudiar.",
+          "es": "El verbo es pronominal: necesita el pronombre (me, te, se, nos) antes del verbo: se pone a estudiar."
+        },
+        "se pone estudiar": {
+          "en": "Ponerse a + infinitive needs the a: se pone a estudiar.",
+          "es": "Ponerse a + infinitivo necesita la preposición a: se pone a estudiar."
+        }
+      }
     },
     {
       "kind": "why",

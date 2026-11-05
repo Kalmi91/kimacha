@@ -475,7 +475,13 @@
       "verb": "forma",
       "person": "salir, nosotros (presente)",
       "answer": "salimos",
-      "table": "tipo1"
+      "table": "tipo1",
+      "wrong": {
+        "saldremos": {
+          "en": "Saldremos is the simple future form. This task asks for the present indicative form: salimos.",
+          "es": "Saldremos es la forma del futuro simple. Esta tarea pide la forma del presente de indicativo: salimos."
+        }
+      }
     },
     {
       "id": "ct-form-02",
@@ -483,7 +489,17 @@
       "verb": "forma",
       "person": "tener, tú (presente)",
       "answer": "tienes",
-      "table": "tipo1"
+      "table": "tipo1",
+      "wrong": {
+        "tendrás": {
+          "en": "Tendrás is the simple future form. This task asks for the present indicative form: tienes.",
+          "es": "Tendrás es la forma del futuro simple. Esta tarea pide la forma del presente de indicativo: tienes."
+        },
+        "tengas": {
+          "en": "Tengas is the present subjunctive form. After si in a real condition the verb stays in the indicative: tienes.",
+          "es": "Tengas es la forma del presente de subjuntivo. Después de si en una condición real el verbo va en indicativo: tienes."
+        }
+      }
     },
     {
       "id": "ct-form-03",
@@ -491,7 +507,17 @@
       "verb": "forma",
       "person": "decir, yo (presente)",
       "answer": "digo",
-      "table": "tipo1"
+      "table": "tipo1",
+      "wrong": {
+        "diré": {
+          "en": "Diré is the simple future form. This task asks for the present indicative form: digo.",
+          "es": "Diré es la forma del futuro simple. Esta tarea pide la forma del presente de indicativo: digo."
+        },
+        "diga": {
+          "en": "Diga is the present subjunctive form. After si in a real condition the verb stays in the indicative: digo.",
+          "es": "Diga es la forma del presente de subjuntivo. Después de si en una condición real el verbo va en indicativo: digo."
+        }
+      }
     },
     {
       "id": "ct-form-04",
@@ -499,7 +525,13 @@
       "verb": "forma",
       "person": "aprobar, tú (futuro)",
       "answer": "aprobarás",
-      "table": "tipo1"
+      "table": "tipo1",
+      "wrong": {
+        "aprobarías": {
+          "en": "Aprobarías is the conditional form, used for unlikely or imaginary situations. A real condition takes the future here: aprobarás.",
+          "es": "Aprobarías es la forma del condicional, que se usa para situaciones poco probables o imaginarias. Una condición real lleva aquí el futuro: aprobarás."
+        }
+      }
     },
     {
       "id": "ct-form-05",
@@ -507,7 +539,17 @@
       "verb": "forma",
       "person": "venir, ellos (futuro)",
       "answer": "vendrán",
-      "table": "tipo1"
+      "table": "tipo1",
+      "wrong": {
+        "vendrían": {
+          "en": "Vendrían is the conditional form, used for unlikely or imaginary situations. A real condition takes the future here: vendrán.",
+          "es": "Vendrían es la forma del condicional, que se usa para situaciones poco probables o imaginarias. Una condición real lleva aquí el futuro: vendrán."
+        },
+        "venirán": {
+          "en": "Venir has the irregular stem vendr- in the simple future, so the form is not built on the whole infinitive: vendrán.",
+          "es": "Venir tiene la raíz irregular vendr- en el futuro simple, así que la forma no se construye con el infinitivo completo: vendrán."
+        }
+      }
     },
     {
       "id": "ct-form-06",
@@ -515,7 +557,17 @@
       "verb": "forma",
       "person": "hacer, tú (futuro)",
       "answer": "harás",
-      "table": "tipo1"
+      "table": "tipo1",
+      "wrong": {
+        "harías": {
+          "en": "Harías is the conditional form, used for unlikely or imaginary situations. A real condition takes the future here: harás.",
+          "es": "Harías es la forma del condicional, que se usa para situaciones poco probables o imaginarias. Una condición real lleva aquí el futuro: harás."
+        },
+        "hacerás": {
+          "en": "Hacer has the irregular stem har- in the simple future, so the form is not built on the whole infinitive: harás.",
+          "es": "Hacer tiene la raíz irregular har- en el futuro simple, así que la forma no se construye con el infinitivo completo: harás."
+        }
+      }
     },
     {
       "id": "ct-form-07",
@@ -523,7 +575,13 @@
       "verb": "forma",
       "person": "cerrar, tú (imperativo)",
       "answer": "cierra",
-      "table": "tipo1"
+      "table": "tipo1",
+      "wrong": {
+        "cierres": {
+          "en": "Cierres is the present subjunctive, the form used for negative commands (no cierres). An affirmative tú command is the imperative: cierra.",
+          "es": "Cierres es el presente de subjuntivo, la forma de los mandatos negativos (no cierres). Un mandato afirmativo con tú es el imperativo: cierra."
+        }
+      }
     },
     {
       "id": "ct-form-08",
@@ -531,7 +589,13 @@
       "verb": "forma",
       "person": "llamar, usted (imperativo)",
       "answer": "llame",
-      "table": "tipo1"
+      "table": "tipo1",
+      "wrong": {
+        "llama": {
+          "en": "Llama is the tú imperative. The sentence speaks to usted (Si necesita ayuda), and the usted command uses the subjunctive form: llame.",
+          "es": "Llama es el imperativo de tú. La oración habla de usted (Si necesita ayuda), y el mandato con usted usa la forma del subjuntivo: llame."
+        }
+      }
     },
     {
       "id": "ct-form-09",
@@ -539,7 +603,13 @@
       "verb": "forma",
       "person": "quedarse, nosotros (presente)",
       "answer": "nos quedamos",
-      "table": "tipo1"
+      "table": "tipo1",
+      "wrong": {
+        "quedamos": {
+          "en": "Quedamos without nos usually means we agree to meet. To say we stay, use the reflexive quedarse: nos quedamos.",
+          "es": "Quedamos sin nos suele significar que acordamos vernos. Para decir que nos quedamos en un lugar, se usa el reflexivo quedarse: nos quedamos."
+        }
+      }
     },
     {
       "id": "ct-form-10",
@@ -547,7 +617,17 @@
       "verb": "forma",
       "person": "empezar, nosotros (ir a)",
       "answer": "vamos a empezar",
-      "table": "tipo1"
+      "table": "tipo1",
+      "wrong": {
+        "vamos empezar": {
+          "en": "Ir a + infinitive needs the a: vamos a empezar.",
+          "es": "Ir a + infinitivo necesita la a: vamos a empezar."
+        },
+        "vamos a empiezar": {
+          "en": "After ir a, the verb stays in the infinitive, without a stem change: empezar, not empiezar: vamos a empezar.",
+          "es": "Después de ir a, el verbo va en infinitivo, sin cambio de raíz: empezar, no empiezar: vamos a empezar."
+        }
+      }
     },
     {
       "id": "ct-form-11",
@@ -555,7 +635,13 @@
       "verb": "forma",
       "person": "salir, ellos (ir a)",
       "answer": "van a salir",
-      "table": "tipo1"
+      "table": "tipo1",
+      "wrong": {
+        "van salir": {
+          "en": "Ir a + infinitive needs the a: van a salir.",
+          "es": "Ir a + infinitivo necesita la a: van a salir."
+        }
+      }
     },
     {
       "id": "ct-form-12",
@@ -563,7 +649,13 @@
       "verb": "forma",
       "person": "llegar, ellas (ir a)",
       "answer": "van a llegar",
-      "table": "tipo1"
+      "table": "tipo1",
+      "wrong": {
+        "van llegar": {
+          "en": "Ir a + infinitive needs the a: van a llegar.",
+          "es": "Ir a + infinitivo necesita la a: van a llegar."
+        }
+      }
     },
     {
       "kind": "why",

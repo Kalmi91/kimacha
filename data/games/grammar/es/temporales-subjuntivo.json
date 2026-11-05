@@ -216,17 +216,17 @@
       ],
       "rows": [
         ["Cuando (tú, futuro)", "llegues", "tengas", "salgas"],
-        ["Cuando (yo, szokás)", "llego", "tengo", "salgo"],
+        ["Cuando (yo, costumbre)", "llego", "tengo", "salgo"],
         ["En cuanto (ella, futuro)", "llegue", "tenga", "salga"],
         ["Hasta que (nosotros, futuro)", "lleguemos", "tengamos", "salgamos"],
         ["Antes de que (ustedes)", "lleguen", "tengan", "salgan"],
         ["Después de que (él, futuro)", "llegue", "tenga", "salga"],
         ["Tan pronto como (tú, futuro)", "llegues", "tengas", "salgas"],
-        ["Mientras (yo, szokás)", "llego", "tengo", "salgo"],
+        ["Mientras (yo, costumbre)", "llego", "tengo", "salgo"],
         ["Cuando (ellos, futuro)", "lleguen", "tengan", "salgan"],
         ["Desde que (yo)", "llego", "tengo", "salgo"],
         ["Mientras (nosotros, futuro)", "lleguemos", "tengamos", "salgamos"],
-        ["Cuando (ella, szokás)", "llega", "tiene", "sale"]
+        ["Cuando (ella, costumbre)", "llega", "tiene", "sale"]
       ]
     },
     {
@@ -595,16 +595,32 @@
       "person": "Cuando (tú, futuro)",
       "answer": "llegues",
       "table": "temporales",
-      "tense": { "from": "presente", "to": "subjuntivo-presente" }
+      "tense": { "from": "presente", "to": "subjuntivo-presente" },
+      "wrong": {
+        "llegas": {
+          "en": "Llegas is the present indicative form. “Cuando” about something that has not happened yet takes the subjunctive: llegues.",
+          "es": "Llegas es la forma del presente de indicativo. “Cuando” sobre algo que todavía no ha pasado lleva subjuntivo: llegues."
+        },
+        "lleges": {
+          "en": "Llegar adds u before e to keep the hard g sound: llegues, not lleges.",
+          "es": "Llegar añade una u antes de e para conservar el sonido fuerte de la g: llegues, no lleges."
+        }
+      }
     },
     {
       "id": "sp-form-02",
       "kind": "form",
       "verb": "llegar",
-      "person": "Cuando (yo, szokás)",
+      "person": "Cuando (yo, costumbre)",
       "answer": "llego",
       "table": "temporales",
-      "tense": { "from": "presente", "to": "subjuntivo-presente" }
+      "tense": { "from": "presente", "to": "subjuntivo-presente" },
+      "wrong": {
+        "llegue": {
+          "en": "Llegue is the present subjunctive form. “Cuando” about a habit, a repeated fact, takes the indicative: llego.",
+          "es": "Llegue es la forma del presente de subjuntivo. “Cuando” sobre un hábito, un hecho repetido, lleva indicativo: llego."
+        }
+      }
     },
     {
       "id": "sp-form-03",
@@ -613,7 +629,13 @@
       "person": "En cuanto (ella, futuro)",
       "answer": "tenga",
       "table": "temporales",
-      "tense": { "from": "presente", "to": "subjuntivo-presente" }
+      "tense": { "from": "presente", "to": "subjuntivo-presente" },
+      "wrong": {
+        "tiene": {
+          "en": "Tiene is the present indicative form. “En cuanto” about something that has not happened yet takes the subjunctive: tenga.",
+          "es": "Tiene es la forma del presente de indicativo. “En cuanto” sobre algo que todavía no ha pasado lleva subjuntivo: tenga."
+        }
+      }
     },
     {
       "id": "sp-form-04",
@@ -622,7 +644,13 @@
       "person": "Hasta que (nosotros, futuro)",
       "answer": "salgamos",
       "table": "temporales",
-      "tense": { "from": "presente", "to": "subjuntivo-presente" }
+      "tense": { "from": "presente", "to": "subjuntivo-presente" },
+      "wrong": {
+        "salimos": {
+          "en": "Salimos is the present indicative form. “Hasta que” about something that has not happened yet takes the subjunctive: salgamos.",
+          "es": "Salimos es la forma del presente de indicativo. “Hasta que” sobre algo que todavía no ha pasado lleva subjuntivo: salgamos."
+        }
+      }
     },
     {
       "id": "sp-form-05",
@@ -631,7 +659,13 @@
       "person": "Antes de que (ustedes)",
       "answer": "salgan",
       "table": "temporales",
-      "tense": { "from": "presente", "to": "subjuntivo-presente" }
+      "tense": { "from": "presente", "to": "subjuntivo-presente" },
+      "wrong": {
+        "salen": {
+          "en": "Salen is the present indicative form. “Antes de que” always takes the subjunctive: salgan.",
+          "es": "Salen es la forma del presente de indicativo. “Antes de que” siempre lleva subjuntivo: salgan."
+        }
+      }
     },
     {
       "id": "sp-form-06",
@@ -640,7 +674,13 @@
       "person": "Después de que (él, futuro)",
       "answer": "tenga",
       "table": "temporales",
-      "tense": { "from": "presente", "to": "subjuntivo-presente" }
+      "tense": { "from": "presente", "to": "subjuntivo-presente" },
+      "wrong": {
+        "tiene": {
+          "en": "Tiene is the present indicative form. “Después de que” about something that has not happened yet takes the subjunctive: tenga.",
+          "es": "Tiene es la forma del presente de indicativo. “Después de que” sobre algo que todavía no ha pasado lleva subjuntivo: tenga."
+        }
+      }
     },
     {
       "id": "sp-form-07",
@@ -649,16 +689,28 @@
       "person": "Tan pronto como (tú, futuro)",
       "answer": "salgas",
       "table": "temporales",
-      "tense": { "from": "presente", "to": "subjuntivo-presente" }
+      "tense": { "from": "presente", "to": "subjuntivo-presente" },
+      "wrong": {
+        "sales": {
+          "en": "Sales is the present indicative form. “Tan pronto como” about something that has not happened yet takes the subjunctive: salgas.",
+          "es": "Sales es la forma del presente de indicativo. “Tan pronto como” sobre algo que todavía no ha pasado lleva subjuntivo: salgas."
+        }
+      }
     },
     {
       "id": "sp-form-08",
       "kind": "form",
       "verb": "tener",
-      "person": "Mientras (yo, szokás)",
+      "person": "Mientras (yo, costumbre)",
       "answer": "tengo",
       "table": "temporales",
-      "tense": { "from": "presente", "to": "subjuntivo-presente" }
+      "tense": { "from": "presente", "to": "subjuntivo-presente" },
+      "wrong": {
+        "tenga": {
+          "en": "Tenga is the present subjunctive form. “Mientras” about a habit, a repeated fact, takes the indicative: tengo.",
+          "es": "Tenga es la forma del presente de subjuntivo. “Mientras” sobre un hábito, un hecho repetido, lleva indicativo: tengo."
+        }
+      }
     },
     {
       "id": "sp-form-09",
@@ -667,7 +719,17 @@
       "person": "Cuando (ellos, futuro)",
       "answer": "lleguen",
       "table": "temporales",
-      "tense": { "from": "presente", "to": "subjuntivo-presente" }
+      "tense": { "from": "presente", "to": "subjuntivo-presente" },
+      "wrong": {
+        "llegan": {
+          "en": "Llegan is the present indicative form. “Cuando” about something that has not happened yet takes the subjunctive: lleguen.",
+          "es": "Llegan es la forma del presente de indicativo. “Cuando” sobre algo que todavía no ha pasado lleva subjuntivo: lleguen."
+        },
+        "llegen": {
+          "en": "Llegar adds u before e to keep the hard g sound: lleguen, not llegen.",
+          "es": "Llegar añade una u antes de e para conservar el sonido fuerte de la g: lleguen, no llegen."
+        }
+      }
     },
     {
       "id": "sp-form-10",
@@ -676,7 +738,13 @@
       "person": "Desde que (yo)",
       "answer": "salgo",
       "table": "temporales",
-      "tense": { "from": "presente", "to": "subjuntivo-presente" }
+      "tense": { "from": "presente", "to": "subjuntivo-presente" },
+      "wrong": {
+        "salga": {
+          "en": "Salga is the present subjunctive form. “Desde que” looks at something that already happened, so the verb is in the indicative: salgo.",
+          "es": "Salga es la forma del presente de subjuntivo. “Desde que” mira algo que ya pasó, así que el verbo va en indicativo: salgo."
+        }
+      }
     },
     {
       "id": "sp-form-11",
@@ -685,16 +753,28 @@
       "person": "Mientras (nosotros, futuro)",
       "answer": "tengamos",
       "table": "temporales",
-      "tense": { "from": "presente", "to": "subjuntivo-presente" }
+      "tense": { "from": "presente", "to": "subjuntivo-presente" },
+      "wrong": {
+        "tenemos": {
+          "en": "Tenemos is the present indicative form. “Mientras” about something that has not happened yet takes the subjunctive: tengamos.",
+          "es": "Tenemos es la forma del presente de indicativo. “Mientras” sobre algo que todavía no ha pasado lleva subjuntivo: tengamos."
+        }
+      }
     },
     {
       "id": "sp-form-12",
       "kind": "form",
       "verb": "llegar",
-      "person": "Cuando (ella, szokás)",
+      "person": "Cuando (ella, costumbre)",
       "answer": "llega",
       "table": "temporales",
-      "tense": { "from": "presente", "to": "subjuntivo-presente" }
+      "tense": { "from": "presente", "to": "subjuntivo-presente" },
+      "wrong": {
+        "llegue": {
+          "en": "Llegue is the present subjunctive form. “Cuando” about a habit, a repeated fact, takes the indicative: llega.",
+          "es": "Llegue es la forma del presente de subjuntivo. “Cuando” sobre un hábito, un hecho repetido, lleva indicativo: llega."
+        }
+      }
     },
     {
       "kind": "why",

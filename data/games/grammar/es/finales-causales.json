@@ -715,7 +715,17 @@
       "verb": "modo",
       "person": "para que",
       "answer": "subjuntivo",
-      "table": "nexos"
+      "table": "nexos",
+      "wrong": {
+        "indicativo": {
+          "en": "\"para que\" expresses a purpose, something still to be achieved, so it takes the subjunctive (subjuntivo).",
+          "es": "\"para que\" expresa una finalidad, algo que todavía se quiere lograr, así que lleva subjuntivo."
+        },
+        "infinitivo": {
+          "en": "\"para que\" introduces a new subject, so it needs a conjugated verb in the subjunctive (subjuntivo), not an infinitive.",
+          "es": "\"para que\" introduce un sujeto nuevo, así que necesita un verbo conjugado en subjuntivo, no un infinitivo."
+        }
+      }
     },
     {
       "id": "fc-form-02",
@@ -723,7 +733,13 @@
       "verb": "modo",
       "person": "a fin de que",
       "answer": "subjuntivo",
-      "table": "nexos"
+      "table": "nexos",
+      "wrong": {
+        "indicativo": {
+          "en": "\"a fin de que\" expresses a purpose, something still to be achieved, so it takes the subjunctive (subjuntivo).",
+          "es": "\"a fin de que\" expresa una finalidad, algo que todavía se quiere lograr, así que lleva subjuntivo."
+        }
+      }
     },
     {
       "id": "fc-form-03",
@@ -731,7 +747,13 @@
       "verb": "modo",
       "person": "a que",
       "answer": "subjuntivo",
-      "table": "nexos"
+      "table": "nexos",
+      "wrong": {
+        "indicativo": {
+          "en": "\"a que\" expresses a purpose, something still to be achieved, so it takes the subjunctive (subjuntivo).",
+          "es": "\"a que\" expresa una finalidad, algo que todavía se quiere lograr, así que lleva subjuntivo."
+        }
+      }
     },
     {
       "id": "fc-form-04",
@@ -739,7 +761,13 @@
       "verb": "modo",
       "person": "porque",
       "answer": "indicativo",
-      "table": "nexos"
+      "table": "nexos",
+      "wrong": {
+        "subjuntivo": {
+          "en": "\"porque\" gives a real reason, a fact, so it takes the indicative (indicativo).",
+          "es": "\"porque\" da una razón real, un hecho, así que lleva indicativo."
+        }
+      }
     },
     {
       "id": "fc-form-05",
@@ -747,7 +775,13 @@
       "verb": "modo",
       "person": "ya que",
       "answer": "indicativo",
-      "table": "nexos"
+      "table": "nexos",
+      "wrong": {
+        "subjuntivo": {
+          "en": "\"ya que\" gives a real reason, a fact, so it takes the indicative (indicativo).",
+          "es": "\"ya que\" da una razón real, un hecho, así que lleva indicativo."
+        }
+      }
     },
     {
       "id": "fc-form-06",
@@ -755,7 +789,13 @@
       "verb": "modo",
       "person": "puesto que",
       "answer": "indicativo",
-      "table": "nexos"
+      "table": "nexos",
+      "wrong": {
+        "subjuntivo": {
+          "en": "\"puesto que\" gives a real reason, a fact, so it takes the indicative (indicativo).",
+          "es": "\"puesto que\" da una razón real, un hecho, así que lleva indicativo."
+        }
+      }
     },
     {
       "id": "fc-form-07",
@@ -763,7 +803,13 @@
       "verb": "modo",
       "person": "como (causa)",
       "answer": "indicativo",
-      "table": "nexos"
+      "table": "nexos",
+      "wrong": {
+        "subjuntivo": {
+          "en": "\"como\" gives a real reason, a fact, so it takes the indicative (indicativo).",
+          "es": "\"como\" da una razón real, un hecho, así que lleva indicativo."
+        }
+      }
     },
     {
       "id": "fc-form-08",
@@ -771,7 +817,13 @@
       "verb": "modo",
       "person": "es que",
       "answer": "indicativo",
-      "table": "nexos"
+      "table": "nexos",
+      "wrong": {
+        "subjuntivo": {
+          "en": "\"es que\" gives a real reason, a fact, so it takes the indicative (indicativo).",
+          "es": "\"es que\" da una razón real, un hecho, así que lleva indicativo."
+        }
+      }
     },
     {
       "id": "fc-form-09",
@@ -779,7 +831,17 @@
       "verb": "modo",
       "person": "por",
       "answer": "infinitivo",
-      "table": "nexos"
+      "table": "nexos",
+      "wrong": {
+        "subjuntivo": {
+          "en": "\"por\" is followed by an infinitive, not by a verb in the subjunctive (infinitivo).",
+          "es": "\"por\" va seguido de infinitivo, no de un verbo en subjuntivo (infinitivo)."
+        },
+        "indicativo": {
+          "en": "\"por\" is followed by an infinitive, not by a verb in the indicative (infinitivo).",
+          "es": "\"por\" va seguido de infinitivo, no de un verbo en indicativo (infinitivo)."
+        }
+      }
     },
     {
       "id": "fc-form-10",
@@ -787,7 +849,13 @@
       "verb": "modo",
       "person": "no porque",
       "answer": "subjuntivo",
-      "table": "nexos"
+      "table": "nexos",
+      "wrong": {
+        "indicativo": {
+          "en": "\"no porque\" denies that this is the reason, so it takes the subjunctive (subjuntivo).",
+          "es": "\"no porque\" niega que esa sea la razón, así que lleva subjuntivo."
+        }
+      }
     },
     {
       "id": "fc-form-11",
@@ -795,7 +863,13 @@
       "verb": "modo",
       "person": "sino porque",
       "answer": "indicativo",
-      "table": "nexos"
+      "table": "nexos",
+      "wrong": {
+        "subjuntivo": {
+          "en": "\"sino porque\" gives the true reason after a denied one, a fact, so it takes the indicative (indicativo).",
+          "es": "\"sino porque\" da la razón verdadera después de una negada, un hecho, así que lleva indicativo."
+        }
+      }
     },
     {
       "id": "fc-form-12",
@@ -803,7 +877,17 @@
       "verb": "modo",
       "person": "para + inf.",
       "answer": "infinitivo",
-      "table": "nexos"
+      "table": "nexos",
+      "wrong": {
+        "subjuntivo": {
+          "en": "\"para + infinitivo\" is followed by an infinitive, not by the subjunctive, when both verbs have the same subject (infinitivo).",
+          "es": "\"para + infinitivo\" va seguido de infinitivo, no de subjuntivo, cuando el sujeto de los dos verbos es el mismo (infinitivo)."
+        },
+        "indicativo": {
+          "en": "\"para + infinitivo\" is followed by an infinitive, not by the indicative, when both verbs have the same subject (infinitivo).",
+          "es": "\"para + infinitivo\" va seguido de infinitivo, no de indicativo, cuando el sujeto de los dos verbos es el mismo (infinitivo)."
+        }
+      }
     },
     {
       "kind": "why",

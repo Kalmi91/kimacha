@@ -511,7 +511,17 @@
       "verb": "tener",
       "person": "imperfecto de subjuntivo (-ra), yo",
       "answer": "tuviera",
-      "table": "irreal"
+      "table": "irreal",
+      "wrong": {
+        "tendría": {
+          "en": "Tendría is the conditional form. After si in an unlikely condition the verb goes in the imperfect subjunctive: tuviera.",
+          "es": "Tendría es la forma del condicional. Después de si en una condición poco probable el verbo va en imperfecto de subjuntivo: tuviera."
+        },
+        "tenga": {
+          "en": "Tenga is the present subjunctive form. After si in an unlikely condition the verb goes in the imperfect subjunctive: tuviera.",
+          "es": "Tenga es la forma del presente de subjuntivo. Después de si en una condición poco probable el verbo va en imperfecto de subjuntivo: tuviera."
+        }
+      }
     },
     {
       "id": "ct2-form-02",
@@ -519,7 +529,17 @@
       "verb": "ser",
       "person": "imperfecto de subjuntivo (-ra), tú",
       "answer": "fueras",
-      "table": "irreal"
+      "table": "irreal",
+      "wrong": {
+        "serías": {
+          "en": "Serías is the conditional form. After si in an unlikely condition the verb goes in the imperfect subjunctive: fueras.",
+          "es": "Serías es la forma del condicional. Después de si en una condición poco probable el verbo va en imperfecto de subjuntivo: fueras."
+        },
+        "seas": {
+          "en": "Seas is the present subjunctive form. After si in an unlikely condition the verb goes in the imperfect subjunctive: fueras.",
+          "es": "Seas es la forma del presente de subjuntivo. Después de si en una condición poco probable el verbo va en imperfecto de subjuntivo: fueras."
+        }
+      }
     },
     {
       "id": "ct2-form-03",
@@ -527,7 +547,17 @@
       "verb": "hacer",
       "person": "imperfecto de subjuntivo (-ra), él",
       "answer": "hiciera",
-      "table": "irreal"
+      "table": "irreal",
+      "wrong": {
+        "haría": {
+          "en": "Haría is the conditional form. After si in an unlikely condition the verb goes in the imperfect subjunctive: hiciera.",
+          "es": "Haría es la forma del condicional. Después de si en una condición poco probable el verbo va en imperfecto de subjuntivo: hiciera."
+        },
+        "haga": {
+          "en": "Haga is the present subjunctive form. After si in an unlikely condition the verb goes in the imperfect subjunctive: hiciera.",
+          "es": "Haga es la forma del presente de subjuntivo. Después de si en una condición poco probable el verbo va en imperfecto de subjuntivo: hiciera."
+        }
+      }
     },
     {
       "id": "ct2-form-04",
@@ -535,7 +565,17 @@
       "verb": "poder",
       "person": "imperfecto de subjuntivo (-ra), yo",
       "answer": "pudiera",
-      "table": "irreal"
+      "table": "irreal",
+      "wrong": {
+        "podría": {
+          "en": "Podría is the conditional form. After si in an unlikely condition the verb goes in the imperfect subjunctive: pudiera.",
+          "es": "Podría es la forma del condicional. Después de si en una condición poco probable el verbo va en imperfecto de subjuntivo: pudiera."
+        },
+        "pueda": {
+          "en": "Pueda is the present subjunctive form. After si in an unlikely condition the verb goes in the imperfect subjunctive: pudiera.",
+          "es": "Pueda es la forma del presente de subjuntivo. Después de si en una condición poco probable el verbo va en imperfecto de subjuntivo: pudiera."
+        }
+      }
     },
     {
       "id": "ct2-form-05",
@@ -543,7 +583,17 @@
       "verb": "saber",
       "person": "imperfecto de subjuntivo (-ra), tú",
       "answer": "supieras",
-      "table": "irreal"
+      "table": "irreal",
+      "wrong": {
+        "sabrías": {
+          "en": "Sabrías is the conditional form. After si in an unlikely condition the verb goes in the imperfect subjunctive: supieras.",
+          "es": "Sabrías es la forma del condicional. Después de si en una condición poco probable el verbo va en imperfecto de subjuntivo: supieras."
+        },
+        "sepas": {
+          "en": "Sepas is the present subjunctive form. After si in an unlikely condition the verb goes in the imperfect subjunctive: supieras.",
+          "es": "Sepas es la forma del presente de subjuntivo. Después de si en una condición poco probable el verbo va en imperfecto de subjuntivo: supieras."
+        }
+      }
     },
     {
       "id": "ct2-form-06",
@@ -551,7 +601,17 @@
       "verb": "ser",
       "person": "imperfecto de subjuntivo (-ra), yo",
       "answer": "fuera",
-      "table": "irreal"
+      "table": "irreal",
+      "wrong": {
+        "sería": {
+          "en": "Sería is the conditional form. After si in an unlikely condition the verb goes in the imperfect subjunctive: fuera.",
+          "es": "Sería es la forma del condicional. Después de si en una condición poco probable el verbo va en imperfecto de subjuntivo: fuera."
+        },
+        "sea": {
+          "en": "Sea is the present subjunctive form. After si in an unlikely condition the verb goes in the imperfect subjunctive: fuera.",
+          "es": "Sea es la forma del presente de subjuntivo. Después de si en una condición poco probable el verbo va en imperfecto de subjuntivo: fuera."
+        }
+      }
     },
     {
       "id": "ct2-form-07",
@@ -559,7 +619,13 @@
       "verb": "tener",
       "person": "pluscuamperfecto de subjuntivo (hubiera), yo",
       "answer": "hubiera tenido",
-      "table": "irreal"
+      "table": "irreal",
+      "wrong": {
+        "habría tenido": {
+          "en": "Habría tenido is the compound conditional, which belongs to the result clause. After si in an unreal past condition the verb goes in the pluscuamperfecto de subjuntivo: hubiera tenido.",
+          "es": "Habría tenido es el condicional compuesto, que corresponde a la oración del resultado. Después de si en una condición irreal en el pasado el verbo va en pluscuamperfecto de subjuntivo: hubiera tenido."
+        }
+      }
     },
     {
       "id": "ct2-form-08",
@@ -567,7 +633,13 @@
       "verb": "saber",
       "person": "pluscuamperfecto de subjuntivo (hubiera), yo",
       "answer": "hubiera sabido",
-      "table": "irreal"
+      "table": "irreal",
+      "wrong": {
+        "habría sabido": {
+          "en": "Habría sabido is the compound conditional, which belongs to the result clause. After si in an unreal past condition the verb goes in the pluscuamperfecto de subjuntivo: hubiera sabido.",
+          "es": "Habría sabido es el condicional compuesto, que corresponde a la oración del resultado. Después de si en una condición irreal en el pasado el verbo va en pluscuamperfecto de subjuntivo: hubiera sabido."
+        }
+      }
     },
     {
       "id": "ct2-form-09",
@@ -575,7 +647,17 @@
       "verb": "hacer",
       "person": "pluscuamperfecto de subjuntivo (hubiera), yo",
       "answer": "hubiera hecho",
-      "table": "irreal"
+      "table": "irreal",
+      "wrong": {
+        "habría hecho": {
+          "en": "Habría hecho is the compound conditional, which belongs to the result clause. After si in an unreal past condition the verb goes in the pluscuamperfecto de subjuntivo: hubiera hecho.",
+          "es": "Habría hecho es el condicional compuesto, que corresponde a la oración del resultado. Después de si en una condición irreal en el pasado el verbo va en pluscuamperfecto de subjuntivo: hubiera hecho."
+        },
+        "hubiera hacido": {
+          "en": "Hacer has an irregular participle, hecho, not the regular form: hubiera hecho.",
+          "es": "Hacer tiene participio irregular, hecho, no la forma regular: hubiera hecho."
+        }
+      }
     },
     {
       "id": "ct2-form-10",
@@ -583,7 +665,17 @@
       "verb": "tener",
       "person": "condicional simple, yo",
       "answer": "tendría",
-      "table": "irreal"
+      "table": "irreal",
+      "wrong": {
+        "tuviera": {
+          "en": "Tuviera is the imperfect subjunctive form. The result of an unlikely condition takes the conditional: tendría.",
+          "es": "Tuviera es la forma del imperfecto de subjuntivo. El resultado de una condición poco probable lleva condicional: tendría."
+        },
+        "tendré": {
+          "en": "Tendré is the simple future form. The result of an unlikely condition takes the conditional: tendría.",
+          "es": "Tendré es la forma del futuro simple. El resultado de una condición poco probable lleva condicional: tendría."
+        }
+      }
     },
     {
       "id": "ct2-form-11",
@@ -591,7 +683,17 @@
       "verb": "hacer",
       "person": "condicional simple, yo",
       "answer": "haría",
-      "table": "irreal"
+      "table": "irreal",
+      "wrong": {
+        "hiciera": {
+          "en": "Hiciera is the imperfect subjunctive form. The result of an unlikely condition takes the conditional: haría.",
+          "es": "Hiciera es la forma del imperfecto de subjuntivo. El resultado de una condición poco probable lleva condicional: haría."
+        },
+        "hará": {
+          "en": "Hará is the simple future form. The result of an unlikely condition takes the conditional: haría.",
+          "es": "Hará es la forma del futuro simple. El resultado de una condición poco probable lleva condicional: haría."
+        }
+      }
     },
     {
       "id": "ct2-form-12",

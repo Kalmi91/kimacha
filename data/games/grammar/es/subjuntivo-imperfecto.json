@@ -701,7 +701,17 @@
       "verb": "hablar",
       "person": "yo",
       "answer": "hablara",
-      "table": "imperfecto-subj"
+      "table": "imperfecto-subj",
+      "wrong": {
+        "hablaba": {
+          "en": "Hablaba is the imperfect form. This task asks for the imperfect subjunctive form: hablara.",
+          "es": "Hablaba es la forma del pretérito imperfecto. Esta tarea pide la forma del imperfecto de subjuntivo: hablara."
+        },
+        "hable": {
+          "en": "Hable is the present subjunctive form. This task asks for the imperfect subjunctive form: hablara.",
+          "es": "Hable es la forma del presente de subjuntivo. Esta tarea pide la forma del imperfecto de subjuntivo: hablara."
+        }
+      }
     },
     {
       "id": "sp-form-02",
@@ -709,7 +719,17 @@
       "verb": "comer",
       "person": "tú",
       "answer": "comieras",
-      "table": "imperfecto-subj"
+      "table": "imperfecto-subj",
+      "wrong": {
+        "comías": {
+          "en": "Comías is the imperfect form. This task asks for the imperfect subjunctive form: comieras.",
+          "es": "Comías es la forma del pretérito imperfecto. Esta tarea pide la forma del imperfecto de subjuntivo: comieras."
+        },
+        "comas": {
+          "en": "Comas is the present subjunctive form. This task asks for the imperfect subjunctive form: comieras.",
+          "es": "Comas es la forma del presente de subjuntivo. Esta tarea pide la forma del imperfecto de subjuntivo: comieras."
+        }
+      }
     },
     {
       "id": "sp-form-03",
@@ -717,7 +737,17 @@
       "verb": "vivir",
       "person": "él/ella",
       "answer": "viviera",
-      "table": "imperfecto-subj"
+      "table": "imperfecto-subj",
+      "wrong": {
+        "vivía": {
+          "en": "Vivía is the imperfect form. This task asks for the imperfect subjunctive form: viviera.",
+          "es": "Vivía es la forma del pretérito imperfecto. Esta tarea pide la forma del imperfecto de subjuntivo: viviera."
+        },
+        "viva": {
+          "en": "Viva is the present subjunctive form. This task asks for the imperfect subjunctive form: viviera.",
+          "es": "Viva es la forma del presente de subjuntivo. Esta tarea pide la forma del imperfecto de subjuntivo: viviera."
+        }
+      }
     },
     {
       "id": "sp-form-04",
@@ -725,7 +755,17 @@
       "verb": "tener",
       "person": "nosotros",
       "answer": "tuviéramos",
-      "table": "imperfecto-subj"
+      "table": "imperfecto-subj",
+      "wrong": {
+        "teníamos": {
+          "en": "Teníamos is the imperfect form. This task asks for the imperfect subjunctive form: tuviéramos.",
+          "es": "Teníamos es la forma del pretérito imperfecto. Esta tarea pide la forma del imperfecto de subjuntivo: tuviéramos."
+        },
+        "teniéramos": {
+          "en": "The imperfect subjunctive starts from the ellos form of the preterite (tuvieron), not from the infinitive: tuviéramos.",
+          "es": "El imperfecto de subjuntivo parte de la forma ellos del pretérito indefinido (tuvieron), no del infinitivo: tuviéramos."
+        }
+      }
     },
     {
       "id": "sp-form-05",
@@ -733,7 +773,17 @@
       "verb": "hacer",
       "person": "ustedes",
       "answer": "hicieran",
-      "table": "imperfecto-subj"
+      "table": "imperfecto-subj",
+      "wrong": {
+        "hacían": {
+          "en": "Hacían is the imperfect form. This task asks for the imperfect subjunctive form: hicieran.",
+          "es": "Hacían es la forma del pretérito imperfecto. Esta tarea pide la forma del imperfecto de subjuntivo: hicieran."
+        },
+        "hacieran": {
+          "en": "The imperfect subjunctive starts from the ellos form of the preterite (hicieron), not from the infinitive: hicieran.",
+          "es": "El imperfecto de subjuntivo parte de la forma ellos del pretérito indefinido (hicieron), no del infinitivo: hicieran."
+        }
+      }
     },
     {
       "id": "sp-form-06",
@@ -741,7 +791,17 @@
       "verb": "ser",
       "person": "yo",
       "answer": "fuera",
-      "table": "imperfecto-subj"
+      "table": "imperfecto-subj",
+      "wrong": {
+        "era": {
+          "en": "Era is the imperfect form. This task asks for the imperfect subjunctive form: fuera.",
+          "es": "Era es la forma del pretérito imperfecto. Esta tarea pide la forma del imperfecto de subjuntivo: fuera."
+        },
+        "sea": {
+          "en": "Sea is the present subjunctive form. This task asks for the imperfect subjunctive form: fuera.",
+          "es": "Sea es la forma del presente de subjuntivo. Esta tarea pide la forma del imperfecto de subjuntivo: fuera."
+        }
+      }
     },
     {
       "id": "sp-form-07",
@@ -749,7 +809,17 @@
       "verb": "ir",
       "person": "tú",
       "answer": "fueras",
-      "table": "imperfecto-subj"
+      "table": "imperfecto-subj",
+      "wrong": {
+        "ibas": {
+          "en": "Ibas is the imperfect form. This task asks for the imperfect subjunctive form: fueras.",
+          "es": "Ibas es la forma del pretérito imperfecto. Esta tarea pide la forma del imperfecto de subjuntivo: fueras."
+        },
+        "vayas": {
+          "en": "Vayas is the present subjunctive form. This task asks for the imperfect subjunctive form: fueras.",
+          "es": "Vayas es la forma del presente de subjuntivo. Esta tarea pide la forma del imperfecto de subjuntivo: fueras."
+        }
+      }
     },
     {
       "id": "sp-form-08",
@@ -757,7 +827,17 @@
       "verb": "saber",
       "person": "él/ella",
       "answer": "supiera",
-      "table": "imperfecto-subj"
+      "table": "imperfecto-subj",
+      "wrong": {
+        "sabía": {
+          "en": "Sabía is the imperfect form. This task asks for the imperfect subjunctive form: supiera.",
+          "es": "Sabía es la forma del pretérito imperfecto. Esta tarea pide la forma del imperfecto de subjuntivo: supiera."
+        },
+        "sabiera": {
+          "en": "The imperfect subjunctive starts from the ellos form of the preterite (supieron), not from the infinitive: supiera.",
+          "es": "El imperfecto de subjuntivo parte de la forma ellos del pretérito indefinido (supieron), no del infinitivo: supiera."
+        }
+      }
     },
     {
       "id": "sp-form-09",
@@ -765,7 +845,17 @@
       "verb": "poder",
       "person": "nosotros",
       "answer": "pudiéramos",
-      "table": "imperfecto-subj"
+      "table": "imperfecto-subj",
+      "wrong": {
+        "podíamos": {
+          "en": "Podíamos is the imperfect form. This task asks for the imperfect subjunctive form: pudiéramos.",
+          "es": "Podíamos es la forma del pretérito imperfecto. Esta tarea pide la forma del imperfecto de subjuntivo: pudiéramos."
+        },
+        "podiéramos": {
+          "en": "The imperfect subjunctive starts from the ellos form of the preterite (pudieron), not from the infinitive: pudiéramos.",
+          "es": "El imperfecto de subjuntivo parte de la forma ellos del pretérito indefinido (pudieron), no del infinitivo: pudiéramos."
+        }
+      }
     },
     {
       "id": "sp-form-10",
@@ -773,7 +863,17 @@
       "verb": "querer",
       "person": "ustedes",
       "answer": "quisieran",
-      "table": "imperfecto-subj"
+      "table": "imperfecto-subj",
+      "wrong": {
+        "querían": {
+          "en": "Querían is the imperfect form. This task asks for the imperfect subjunctive form: quisieran.",
+          "es": "Querían es la forma del pretérito imperfecto. Esta tarea pide la forma del imperfecto de subjuntivo: quisieran."
+        },
+        "querieran": {
+          "en": "The imperfect subjunctive starts from the ellos form of the preterite (quisieron), not from the infinitive: quisieran.",
+          "es": "El imperfecto de subjuntivo parte de la forma ellos del pretérito indefinido (quisieron), no del infinitivo: quisieran."
+        }
+      }
     },
     {
       "id": "sp-form-11",
@@ -781,7 +881,17 @@
       "verb": "decir",
       "person": "yo",
       "answer": "dijera",
-      "table": "imperfecto-subj"
+      "table": "imperfecto-subj",
+      "wrong": {
+        "decía": {
+          "en": "Decía is the imperfect form. This task asks for the imperfect subjunctive form: dijera.",
+          "es": "Decía es la forma del pretérito imperfecto. Esta tarea pide la forma del imperfecto de subjuntivo: dijera."
+        },
+        "dijiera": {
+          "en": "After j the ending drops the i: dijeron gives dijera, not dijiera.",
+          "es": "Después de j la terminación pierde la i: dijeron da dijera, no dijiera."
+        }
+      }
     },
     {
       "id": "sp-form-12",
@@ -789,7 +899,17 @@
       "verb": "tener",
       "person": "tú",
       "answer": "tuvieras",
-      "table": "imperfecto-subj"
+      "table": "imperfecto-subj",
+      "wrong": {
+        "tenías": {
+          "en": "Tenías is the imperfect form. This task asks for the imperfect subjunctive form: tuvieras.",
+          "es": "Tenías es la forma del pretérito imperfecto. Esta tarea pide la forma del imperfecto de subjuntivo: tuvieras."
+        },
+        "tengas": {
+          "en": "Tengas is the present subjunctive form. This task asks for the imperfect subjunctive form: tuvieras.",
+          "es": "Tengas es la forma del presente de subjuntivo. Esta tarea pide la forma del imperfecto de subjuntivo: tuvieras."
+        }
+      }
     },
     {
       "kind": "why",

@@ -841,7 +841,13 @@
       "verb": "conector",
       "person": "contraste (empieza por «s»): Es un libro corto; ___, es muy difícil.",
       "answer": "sin embargo",
-      "table": "marcadores-situaciones"
+      "table": "marcadores-situaciones",
+      "wrong": {
+        "por lo tanto": {
+          "en": "\"por lo tanto\" expresses a consequence. Here the sentence needs a contrast: sin embargo.",
+          "es": "\"por lo tanto\" expresa una consecuencia. Aquí hace falta un contraste: sin embargo."
+        }
+      }
     },
     {
       "id": "md-form-02",
@@ -849,7 +855,13 @@
       "verb": "conector",
       "person": "contraste entre dos personas (empieza por «e»): Ana vive en Madrid; su hermano, ___, en Lima.",
       "answer": "en cambio",
-      "table": "marcadores-situaciones"
+      "table": "marcadores-situaciones",
+      "wrong": {
+        "por lo tanto": {
+          "en": "\"por lo tanto\" expresses a consequence. Here the sentence needs a contrast between two subjects: en cambio.",
+          "es": "\"por lo tanto\" expresa una consecuencia. Aquí hace falta un contraste entre dos sujetos: en cambio."
+        }
+      }
     },
     {
       "id": "md-form-03",
@@ -857,7 +869,13 @@
       "verb": "conector",
       "person": "contraste a pesar de todo (empieza por «au»): No tenía dinero; ___, hizo el viaje.",
       "answer": "aun así",
-      "table": "marcadores-situaciones"
+      "table": "marcadores-situaciones",
+      "wrong": {
+        "además": {
+          "en": "\"además\" expresses an addition. Here the sentence needs something that happens despite an obstacle: aun así.",
+          "es": "\"además\" expresa una adición. Aquí hace falta algo que ocurre a pesar de un obstáculo: aun así."
+        }
+      }
     },
     {
       "id": "md-form-04",
@@ -865,7 +883,17 @@
       "verb": "conector",
       "person": "consecuencia + subjuntivo (empieza por «de a»): Llovía mucho, ___ cancelaran el partido.",
       "answer": "de ahí que",
-      "table": "marcadores-situaciones"
+      "table": "marcadores-situaciones",
+      "wrong": {
+        "así que": {
+          "en": "Así que is followed by the indicative. The verb here (cancelaran) is in the subjunctive, which needs de ahí que: de ahí que.",
+          "es": "Así que va seguido de indicativo. El verbo de aquí (cancelaran) está en subjuntivo, y eso pide de ahí que: de ahí que."
+        },
+        "por eso": {
+          "en": "Por eso is followed by the indicative. The verb here (cancelaran) is in the subjunctive, which needs de ahí que: de ahí que.",
+          "es": "Por eso va seguido de indicativo. El verbo de aquí (cancelaran) está en subjuntivo, y eso pide de ahí que: de ahí que."
+        }
+      }
     },
     {
       "id": "md-form-05",
@@ -873,7 +901,13 @@
       "verb": "conector",
       "person": "consecuencia, hablado, sin pausa (empieza por «a»): No tenía trabajo, ___ buscó otro.",
       "answer": "así que",
-      "table": "marcadores-situaciones"
+      "table": "marcadores-situaciones",
+      "wrong": {
+        "de ahí que": {
+          "en": "After de ahí que the verb is in the subjunctive. Here the verb (buscó) is in the indicative, so the connector is así que: así que.",
+          "es": "Tras de ahí que el verbo va en subjuntivo. Aquí el verbo (buscó) está en indicativo, así que el conector es así que: así que."
+        }
+      }
     },
     {
       "id": "md-form-06",
@@ -881,7 +915,13 @@
       "verb": "conector",
       "person": "adición neutra (empieza por «ade»): El departamento es grande; ___, está bien ubicado.",
       "answer": "además",
-      "table": "marcadores-situaciones"
+      "table": "marcadores-situaciones",
+      "wrong": {
+        "sin embargo": {
+          "en": "\"sin embargo\" expresses a contrast. Here the sentence needs an addition: además.",
+          "es": "\"sin embargo\" expresa un contraste. Aquí hace falta una adición: además."
+        }
+      }
     },
     {
       "id": "md-form-07",
@@ -897,7 +937,13 @@
       "verb": "conector",
       "person": "orden, abre la lista (empieza por «en»): ___, hay que revisar el presupuesto; en segundo lugar, el plazo.",
       "answer": "en primer lugar",
-      "table": "marcadores-situaciones"
+      "table": "marcadores-situaciones",
+      "wrong": {
+        "por último": {
+          "en": "\"por último\" expresses the last item of a list. Here the sentence needs the first item of a list: en primer lugar.",
+          "es": "\"por último\" expresa el último elemento de una lista. Aquí hace falta el primer elemento de una lista: en primer lugar."
+        }
+      }
     },
     {
       "id": "md-form-09",
@@ -905,7 +951,13 @@
       "verb": "conector",
       "person": "orden, cierra la lista (empieza por «por»): En primer lugar, el precio; en segundo, el plazo; ___, la calidad.",
       "answer": "por último",
-      "table": "marcadores-situaciones"
+      "table": "marcadores-situaciones",
+      "wrong": {
+        "en primer lugar": {
+          "en": "\"en primer lugar\" expresses the first item of a list. Here the sentence needs the last item of a list: por último.",
+          "es": "\"en primer lugar\" expresa el primer elemento de una lista. Aquí hace falta el último elemento de una lista: por último."
+        }
+      }
     },
     {
       "id": "md-form-10",
@@ -913,7 +965,13 @@
       "verb": "conector",
       "person": "tema nuevo (empieza por «en cu»): ___ los precios, subieron este año.",
       "answer": "en cuanto a",
-      "table": "marcadores-situaciones"
+      "table": "marcadores-situaciones",
+      "wrong": {
+        "en cuanto": {
+          "en": "\"En cuanto\" without a means \"as soon as\". To introduce a new topic (\"as for\"), you need en cuanto a: en cuanto a.",
+          "es": "\"En cuanto\" sin a significa \"tan pronto como\". Para introducir un tema nuevo (\"en cuanto a\"), hace falta la a: en cuanto a."
+        }
+      }
     },
     {
       "id": "md-form-11",
@@ -921,7 +979,13 @@
       "verb": "conector",
       "person": "explicación, formal, escrito (empieza por «es d»): Trabaja por su cuenta, ___, es autónomo.",
       "answer": "es decir",
-      "table": "marcadores-situaciones"
+      "table": "marcadores-situaciones",
+      "wrong": {
+        "por ejemplo": {
+          "en": "\"por ejemplo\" expresses an example. Here the sentence needs an explanation: es decir.",
+          "es": "\"por ejemplo\" expresa un ejemplo. Aquí hace falta una explicación: es decir."
+        }
+      }
     },
     {
       "id": "md-form-12",
@@ -929,7 +993,13 @@
       "verb": "conector",
       "person": "explicación, hablado (empieza por «o»): Llegamos a las nueve, ___, media hora tarde.",
       "answer": "o sea",
-      "table": "marcadores-situaciones"
+      "table": "marcadores-situaciones",
+      "wrong": {
+        "por ejemplo": {
+          "en": "\"por ejemplo\" expresses an example. Here the sentence needs an explanation: o sea.",
+          "es": "\"por ejemplo\" expresa un ejemplo. Aquí hace falta una explicación: o sea."
+        }
+      }
     },
     {
       "kind": "why",
