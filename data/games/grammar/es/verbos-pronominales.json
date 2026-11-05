@@ -827,7 +827,13 @@
       "verb": "darse cuenta",
       "person": "yo",
       "answer": "me doy cuenta",
-      "table": "pronominales-presente"
+      "table": "pronominales-presente",
+      "wrong": {
+        "doy cuenta": {
+          "en": "In the plural the noun changes too, not only the article: doy cuenta becomes darse cuenta.",
+          "es": "En plural cambia también el sustantivo, no solo el artículo: doy cuenta pasa a darse cuenta."
+        }
+      }
     },
     {
       "id": "pv-form-02",
@@ -835,7 +841,17 @@
       "verb": "acordarse",
       "person": "tú",
       "answer": "te acuerdas",
-      "table": "pronominales-presente"
+      "table": "pronominales-presente",
+      "wrong": {
+        "acuerdas": {
+          "en": "In the plural the noun changes too, not only the article: acuerdas becomes acordarse.",
+          "es": "En plural cambia también el sustantivo, no solo el artículo: acuerdas pasa a acordarse."
+        },
+        "te acordas": {
+          "en": "Acordarse changes o to ue in the forms with stress on the stem: te acuerdas, not te acordas.",
+          "es": "Acordarse cambia la o a ue en las formas con el acento en la raíz: te acuerdas, no te acordas."
+        }
+      }
     },
     {
       "id": "pv-form-03",
@@ -843,7 +859,13 @@
       "verb": "quejarse",
       "person": "él/ella/usted",
       "answer": "se queja",
-      "table": "pronominales-presente"
+      "table": "pronominales-presente",
+      "wrong": {
+        "queja": {
+          "en": "In the plural the noun changes too, not only the article: queja becomes quejarse.",
+          "es": "En plural cambia también el sustantivo, no solo el artículo: queja pasa a quejarse."
+        }
+      }
     },
     {
       "id": "pv-form-04",
@@ -851,7 +873,13 @@
       "verb": "parecerse",
       "person": "nosotros",
       "answer": "nos parecemos",
-      "table": "pronominales-presente"
+      "table": "pronominales-presente",
+      "wrong": {
+        "parecemos": {
+          "en": "In the plural the noun changes too, not only the article: parecemos becomes parecerse.",
+          "es": "En plural cambia también el sustantivo, no solo el artículo: parecemos pasa a parecerse."
+        }
+      }
     },
     {
       "id": "pv-form-05",
@@ -859,7 +887,17 @@
       "verb": "darse cuenta",
       "person": "ellos/ellas/ustedes",
       "answer": "se dan cuenta",
-      "table": "pronominales-presente"
+      "table": "pronominales-presente",
+      "wrong": {
+        "dan cuenta": {
+          "en": "In the plural the noun changes too, not only the article: dan cuenta becomes darse cuenta.",
+          "es": "En plural cambia también el sustantivo, no solo el artículo: dan cuenta pasa a darse cuenta."
+        },
+        "se da cuenta": {
+          "en": "Se da cuenta is the él/ella form. The task asks for ellos, ellas or ustedes: se dan cuenta.",
+          "es": "Se da cuenta es la forma de él/ella. La tarea pide ellos, ellas o ustedes: se dan cuenta."
+        }
+      }
     },
     {
       "id": "pv-form-06",
@@ -867,7 +905,17 @@
       "verb": "parecerse",
       "person": "yo",
       "answer": "me parezco",
-      "table": "pronominales-presente"
+      "table": "pronominales-presente",
+      "wrong": {
+        "parezco": {
+          "en": "In the plural the noun changes too, not only the article: parezco becomes parecerse.",
+          "es": "En plural cambia también el sustantivo, no solo el artículo: parezco pasa a parecerse."
+        },
+        "me parezo": {
+          "en": "In the yo form, parecer inserts a z before the c: parezco, not parezo: me parezco.",
+          "es": "En la forma yo, parecer inserta una z antes de la c: parezco, no parezo: me parezco."
+        }
+      }
     },
     {
       "id": "pv-form-07",
@@ -875,7 +923,13 @@
       "verb": "quejarse",
       "person": "tú",
       "answer": "te quejas",
-      "table": "pronominales-presente"
+      "table": "pronominales-presente",
+      "wrong": {
+        "quejas": {
+          "en": "In the plural the noun changes too, not only the article: quejas becomes quejarse.",
+          "es": "En plural cambia también el sustantivo, no solo el artículo: quejas pasa a quejarse."
+        }
+      }
     },
     {
       "id": "pv-form-08",
@@ -883,7 +937,17 @@
       "verb": "acordarse",
       "person": "nosotros",
       "answer": "nos acordamos",
-      "table": "pronominales-presente"
+      "table": "pronominales-presente",
+      "wrong": {
+        "acordamos": {
+          "en": "In the plural the noun changes too, not only the article: acordamos becomes acordarse.",
+          "es": "En plural cambia también el sustantivo, no solo el artículo: acordamos pasa a acordarse."
+        },
+        "nos acuerdamos": {
+          "en": "In acordarse the o changes to ue only when the stress falls on the stem; with nosotros the o stays: nos acordamos.",
+          "es": "En acordarse la o cambia a ue solo cuando el acento cae en la raíz; con nosotros la o se queda: nos acordamos."
+        }
+      }
     },
     {
       "id": "pv-form-09",
@@ -891,7 +955,13 @@
       "verb": "darse cuenta",
       "person": "tú",
       "answer": "te das cuenta",
-      "table": "pronominales-presente"
+      "table": "pronominales-presente",
+      "wrong": {
+        "das cuenta": {
+          "en": "In the plural the noun changes too, not only the article: das cuenta becomes darse cuenta.",
+          "es": "En plural cambia también el sustantivo, no solo el artículo: das cuenta pasa a darse cuenta."
+        }
+      }
     },
     {
       "id": "pv-form-10",
@@ -899,7 +969,13 @@
       "verb": "parecerse",
       "person": "él/ella/usted",
       "answer": "se parece",
-      "table": "pronominales-presente"
+      "table": "pronominales-presente",
+      "wrong": {
+        "parece": {
+          "en": "Parece alone means \"it seems\" or \"he/she looks\". To say \"he/she resembles\", Spanish needs parecerse: se parece.",
+          "es": "Parece solo significa \"parece\" o \"tiene aspecto de\". Para decir \"se asemeja a alguien\" hace falta parecerse: se parece."
+        }
+      }
     },
     {
       "id": "pv-form-11",
@@ -907,7 +983,17 @@
       "verb": "acordarse",
       "person": "ellos/ellas/ustedes",
       "answer": "se acuerdan",
-      "table": "pronominales-presente"
+      "table": "pronominales-presente",
+      "wrong": {
+        "acuerdan": {
+          "en": "In the plural the noun changes too, not only the article: acuerdan becomes acordarse.",
+          "es": "En plural cambia también el sustantivo, no solo el artículo: acuerdan pasa a acordarse."
+        },
+        "se acordan": {
+          "en": "Acordarse changes o to ue in the forms with stress on the stem: se acuerdan, not se acordan.",
+          "es": "Acordarse cambia la o a ue en las formas con el acento en la raíz: se acuerdan, no se acordan."
+        }
+      }
     },
     {
       "id": "pv-form-12",
@@ -915,7 +1001,13 @@
       "verb": "quejarse",
       "person": "nosotros",
       "answer": "nos quejamos",
-      "table": "pronominales-presente"
+      "table": "pronominales-presente",
+      "wrong": {
+        "quejamos": {
+          "en": "In the plural the noun changes too, not only the article: quejamos becomes quejarse.",
+          "es": "En plural cambia también el sustantivo, no solo el artículo: quejamos pasa a quejarse."
+        }
+      }
     },
     {
       "kind": "why",
