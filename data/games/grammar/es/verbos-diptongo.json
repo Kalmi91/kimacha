@@ -986,7 +986,17 @@
       "verb": "querer",
       "person": "yo",
       "answer": "quiero",
-      "table": "presente-diptongo"
+      "table": "presente-diptongo",
+      "wrong": {
+        "quero": {
+          "en": "In the yo form of querer the stem vowel changes: e becomes ie. quiero.",
+          "es": "En la forma yo de querer cambia la vocal de la raíz: e pasa a ie. quiero."
+        },
+        "querer": {
+          "en": "The infinitive does not change with the person. For yo, the stem changes to quier- and the ending is -o: quiero.",
+          "es": "El infinitivo no cambia con la persona. Para yo, la raíz cambia a quier- y la terminación es -o: quiero."
+        }
+      }
     },
     {
       "id": "vd-form-02",
@@ -994,7 +1004,17 @@
       "verb": "querer",
       "person": "tú",
       "answer": "quieres",
-      "table": "presente-diptongo"
+      "table": "presente-diptongo",
+      "wrong": {
+        "queres": {
+          "en": "With tú the stem vowel changes too: e becomes ie. quieres.",
+          "es": "Con tú también cambia la vocal de la raíz: e pasa a ie. quieres."
+        },
+        "quires": {
+          "en": "Querer changes e to ie, not e to i (that is pedir): quieres.",
+          "es": "Querer cambia e a ie, no e a i (eso es pedir): quieres."
+        }
+      }
     },
     {
       "id": "vd-form-03",
@@ -1002,7 +1022,17 @@
       "verb": "querer",
       "person": "nosotros",
       "answer": "queremos",
-      "table": "presente-diptongo"
+      "table": "presente-diptongo",
+      "wrong": {
+        "quieremos": {
+          "en": "With nosotros the stem does not change: the stress falls on the ending, so querer keeps its e: queremos.",
+          "es": "Con nosotros la raíz no cambia: el acento cae en la terminación, así que querer mantiene su e: queremos."
+        },
+        "querimos": {
+          "en": "The ending -imos is for -ir verbs. Querer is an -er verb: queremos.",
+          "es": "La terminación -imos es de los verbos en -ir. Querer es un verbo en -er: queremos."
+        }
+      }
     },
     {
       "id": "vd-form-04",
@@ -1010,7 +1040,17 @@
       "verb": "poder",
       "person": "él/ella/usted",
       "answer": "puede",
-      "table": "presente-diptongo"
+      "table": "presente-diptongo",
+      "wrong": {
+        "pode": {
+          "en": "In the él, ella and usted form the stem vowel changes: o becomes ue. puede.",
+          "es": "En la forma de él, ella y usted cambia la vocal de la raíz: o pasa a ue. puede."
+        },
+        "poder": {
+          "en": "The infinitive does not change with the person. For él, ella and usted, the stem changes to pued- and the ending is -e: puede.",
+          "es": "El infinitivo no cambia con la persona. Para él, ella y usted, la raíz cambia a pued- y la terminación es -e: puede."
+        }
+      }
     },
     {
       "id": "vd-form-06",
@@ -1018,7 +1058,17 @@
       "verb": "poder",
       "person": "ellos/ellas/ustedes",
       "answer": "pueden",
-      "table": "presente-diptongo"
+      "table": "presente-diptongo",
+      "wrong": {
+        "poden": {
+          "en": "With ellos, ellas and ustedes the stem vowel changes too: o becomes ue. pueden.",
+          "es": "Con ellos, ellas y ustedes también cambia la vocal de la raíz: o pasa a ue. pueden."
+        },
+        "puedan": {
+          "en": "The ending -an is for -ar verbs (hablan). Poder is an -er verb: pueden.",
+          "es": "La terminación -an es de los verbos en -ar (hablan). Poder es un verbo en -er: pueden."
+        }
+      }
     },
     {
       "id": "vd-form-07",
@@ -1026,7 +1076,17 @@
       "verb": "pedir",
       "person": "yo",
       "answer": "pido",
-      "table": "presente-diptongo"
+      "table": "presente-diptongo",
+      "wrong": {
+        "pedo": {
+          "en": "In the yo form of pedir the stem vowel changes: e becomes i. pido.",
+          "es": "En la forma yo de pedir cambia la vocal de la raíz: e pasa a i. pido."
+        },
+        "piedo": {
+          "en": "Pedir changes e to i, not e to ie (that is querer): pido.",
+          "es": "Pedir cambia e a i, no e a ie (eso es querer): pido."
+        }
+      }
     },
     {
       "id": "vd-form-08",
@@ -1034,7 +1094,17 @@
       "verb": "pedir",
       "person": "tú",
       "answer": "pides",
-      "table": "presente-diptongo"
+      "table": "presente-diptongo",
+      "wrong": {
+        "pedes": {
+          "en": "With tú the stem vowel changes too: e becomes i. pides.",
+          "es": "Con tú también cambia la vocal de la raíz: e pasa a i. pides."
+        },
+        "piedes": {
+          "en": "Pedir changes e to i, not e to ie (that is querer): pides.",
+          "es": "Pedir cambia e a i, no e a ie (eso es querer): pides."
+        }
+      }
     },
     {
       "id": "vd-form-09",
@@ -1042,7 +1112,17 @@
       "verb": "pedir",
       "person": "nosotros",
       "answer": "pedimos",
-      "table": "presente-diptongo"
+      "table": "presente-diptongo",
+      "wrong": {
+        "pidimos": {
+          "en": "With nosotros the stem does not change: the stress falls on the ending, so pedir keeps its e: pedimos.",
+          "es": "Con nosotros la raíz no cambia: el acento cae en la terminación, así que pedir mantiene su e: pedimos."
+        },
+        "piedimos": {
+          "en": "With nosotros the stem does not change, and pedir never has ie: pedimos.",
+          "es": "Con nosotros la raíz no cambia, y pedir nunca lleva ie: pedimos."
+        }
+      }
     },
     {
       "id": "vd-form-10",
@@ -1050,7 +1130,17 @@
       "verb": "jugar",
       "person": "él/ella/usted",
       "answer": "juega",
-      "table": "presente-diptongo"
+      "table": "presente-diptongo",
+      "wrong": {
+        "juga": {
+          "en": "In the él, ella and usted form of jugar the stem vowel changes: u becomes ue. juega.",
+          "es": "En la forma de él, ella y usted de jugar cambia la vocal de la raíz: u pasa a ue. juega."
+        },
+        "jugar": {
+          "en": "The infinitive does not change with the person. For él, ella and usted, the stem changes to jueg- and the ending is -a: juega.",
+          "es": "El infinitivo no cambia con la persona. Para él, ella y usted, la raíz cambia a jueg- y la terminación es -a: juega."
+        }
+      }
     },
     {
       "id": "vd-form-12",
@@ -1058,7 +1148,17 @@
       "verb": "jugar",
       "person": "ellos/ellas/ustedes",
       "answer": "juegan",
-      "table": "presente-diptongo"
+      "table": "presente-diptongo",
+      "wrong": {
+        "jugan": {
+          "en": "With ellos, ellas and ustedes the stem vowel changes too: u becomes ue. juegan.",
+          "es": "Con ellos, ellas y ustedes también cambia la vocal de la raíz: u pasa a ue. juegan."
+        },
+        "juegen": {
+          "en": "The ending -en is for -er and -ir verbs. Jugar is an -ar verb: juegan.",
+          "es": "La terminación -en es de los verbos en -er e -ir. Jugar es un verbo en -ar: juegan."
+        }
+      }
     },
     {
       "kind": "why",

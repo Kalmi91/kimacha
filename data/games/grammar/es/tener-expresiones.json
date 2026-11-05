@@ -864,7 +864,17 @@
       "verb": "tener + sustantivo",
       "person": "to be thirsty",
       "answer": "tener sed",
-      "table": "tener-expresiones"
+      "table": "tener-expresiones",
+      "wrong": {
+        "estar sed": {
+          "en": "Estar goes with adjectives that describe a state (estoy cansado), not with a noun like this one: tener sed.",
+          "es": "Estar va con adjetivos que describen un estado (estoy cansado), no con un sustantivo como este: tener sed."
+        },
+        "ser sed": {
+          "en": "With ser, the noun would say what the subject is. Here it is something you have: tener sed.",
+          "es": "Con ser, el sustantivo diría qué es el sujeto. Aquí es algo que se tiene: tener sed."
+        }
+      }
     },
     {
       "kind": "form",
@@ -872,7 +882,17 @@
       "verb": "tener + sustantivo",
       "person": "to be hungry",
       "answer": "tener hambre",
-      "table": "tener-expresiones"
+      "table": "tener-expresiones",
+      "wrong": {
+        "estar hambre": {
+          "en": "Estar goes with adjectives that describe a state (estoy cansado), not with a noun like this one: tener hambre.",
+          "es": "Estar va con adjetivos que describen un estado (estoy cansado), no con un sustantivo como este: tener hambre."
+        },
+        "ser hambre": {
+          "en": "With ser, the noun would say what the subject is. Here it is something you have: tener hambre.",
+          "es": "Con ser, el sustantivo diría qué es el sujeto. Aquí es algo que se tiene: tener hambre."
+        }
+      }
     },
     {
       "kind": "form",
@@ -880,7 +900,17 @@
       "verb": "tener + sustantivo",
       "person": "to be afraid",
       "answer": "tener miedo",
-      "table": "tener-expresiones"
+      "table": "tener-expresiones",
+      "wrong": {
+        "estar miedo": {
+          "en": "Estar goes with adjectives that describe a state (estoy cansado), not with a noun like this one: tener miedo.",
+          "es": "Estar va con adjetivos que describen un estado (estoy cansado), no con un sustantivo como este: tener miedo."
+        },
+        "ser miedo": {
+          "en": "With ser, the noun would say what the subject is. Here it is something you have: tener miedo.",
+          "es": "Con ser, el sustantivo diría qué es el sujeto. Aquí es algo que se tiene: tener miedo."
+        }
+      }
     },
     {
       "kind": "form",
@@ -888,7 +918,17 @@
       "verb": "tener + sustantivo",
       "person": "to be sleepy",
       "answer": "tener sueño",
-      "table": "tener-expresiones"
+      "table": "tener-expresiones",
+      "wrong": {
+        "estar sueño": {
+          "en": "Estar goes with adjectives that describe a state (estoy cansado), not with a noun like this one: tener sueño.",
+          "es": "Estar va con adjetivos que describen un estado (estoy cansado), no con un sustantivo como este: tener sueño."
+        },
+        "ser sueño": {
+          "en": "With ser, the noun would say what the subject is. Here it is something you have: tener sueño.",
+          "es": "Con ser, el sustantivo diría qué es el sujeto. Aquí es algo que se tiene: tener sueño."
+        }
+      }
     },
     {
       "kind": "form",
@@ -896,7 +936,17 @@
       "verb": "tener + sustantivo",
       "person": "to be right",
       "answer": "tener razón",
-      "table": "tener-expresiones"
+      "table": "tener-expresiones",
+      "wrong": {
+        "ser razón": {
+          "en": "With ser, the noun would say what the subject is. Here it is something you have: tener razón.",
+          "es": "Con ser, el sustantivo diría qué es el sujeto. Aquí es algo que se tiene: tener razón."
+        },
+        "estar razón": {
+          "en": "Estar goes with adjectives that describe a state (estoy cansado), not with a noun like this one: tener razón.",
+          "es": "Estar va con adjetivos que describen un estado (estoy cansado), no con un sustantivo como este: tener razón."
+        }
+      }
     },
     {
       "kind": "form",
@@ -904,7 +954,17 @@
       "verb": "tener + sustantivo",
       "person": "to be cold (a person)",
       "answer": "tener frío",
-      "table": "tener-expresiones"
+      "table": "tener-expresiones",
+      "wrong": {
+        "estar frío": {
+          "en": "To say that a person feels cold, Spanish uses tener frío. Ser or estar frío describes a thing or a character trait: tener frío.",
+          "es": "Para decir que una persona siente frío, el español usa tener frío. Ser o estar frío describe una cosa o un rasgo de carácter: tener frío."
+        },
+        "ser frío": {
+          "en": "To say that a person feels cold, Spanish uses tener frío. Ser frío describes a character trait (cold, distant): tener frío.",
+          "es": "Para decir que una persona siente frío, el español usa tener frío. Ser frío describe un rasgo de carácter (distante): tener frío."
+        }
+      }
     },
     {
       "kind": "form",
@@ -912,7 +972,17 @@
       "verb": "tener + sustantivo",
       "person": "to be in a hurry",
       "answer": "tener prisa",
-      "table": "tener-expresiones"
+      "table": "tener-expresiones",
+      "wrong": {
+        "estar prisa": {
+          "en": "Estar goes with adjectives that describe a state (estoy cansado), not with a noun like this one: tener prisa.",
+          "es": "Estar va con adjetivos que describen un estado (estoy cansado), no con un sustantivo como este: tener prisa."
+        },
+        "ser prisa": {
+          "en": "With ser, the noun would say what the subject is. Here it is something you have: tener prisa.",
+          "es": "Con ser, el sustantivo diría qué es el sujeto. Aquí es algo que se tiene: tener prisa."
+        }
+      }
     },
     {
       "kind": "form",
@@ -923,7 +993,17 @@
       "accept": [
         "tener 30 años"
       ],
-      "table": "tener-expresiones"
+      "table": "tener-expresiones",
+      "wrong": {
+        "ser treinta años": {
+          "en": "With ser, the noun would say what the subject is. Here it is something you have: tener treinta años.",
+          "es": "Con ser, el sustantivo diría qué es el sujeto. Aquí es algo que se tiene: tener treinta años."
+        },
+        "estar treinta años": {
+          "en": "Estar goes with adjectives that describe a state (estoy cansado), not with a noun like this one: tener treinta años.",
+          "es": "Estar va con adjetivos que describen un estado (estoy cansado), no con un sustantivo como este: tener treinta años."
+        }
+      }
     },
     {
       "kind": "form",
@@ -931,7 +1011,17 @@
       "verb": "tener + sustantivo",
       "person": "to be hot (a person)",
       "answer": "tener calor",
-      "table": "tener-expresiones"
+      "table": "tener-expresiones",
+      "wrong": {
+        "estar caliente": {
+          "en": "To say that a person feels hot, Spanish uses tener calor. Estar caliente about a person means something else: tener calor.",
+          "es": "Para decir que una persona siente calor, el español usa tener calor. Estar caliente referido a una persona significa otra cosa: tener calor."
+        },
+        "estar calor": {
+          "en": "Calor is a noun, so it goes with tener, not estar: tener calor.",
+          "es": "Calor es un sustantivo, así que va con tener, no con estar: tener calor."
+        }
+      }
     },
     {
       "kind": "form",
@@ -939,7 +1029,17 @@
       "verb": "tener + sustantivo",
       "person": "to be lucky",
       "answer": "tener suerte",
-      "table": "tener-expresiones"
+      "table": "tener-expresiones",
+      "wrong": {
+        "ser suerte": {
+          "en": "With ser, the noun would say what the subject is. Here it is something you have: tener suerte.",
+          "es": "Con ser, el sustantivo diría qué es el sujeto. Aquí es algo que se tiene: tener suerte."
+        },
+        "estar suerte": {
+          "en": "Estar goes with adjectives that describe a state (estoy cansado), not with a noun like this one: tener suerte.",
+          "es": "Estar va con adjetivos que describen un estado (estoy cansado), no con un sustantivo como este: tener suerte."
+        }
+      }
     },
     {
       "kind": "form",
@@ -947,7 +1047,17 @@
       "verb": "tener + sustantivo",
       "person": "to feel like (doing)",
       "answer": "tener ganas de",
-      "table": "tener-expresiones"
+      "table": "tener-expresiones",
+      "wrong": {
+        "tener ganas para": {
+          "en": "This expression takes de before the thing you feel like doing, not para: tener ganas de.",
+          "es": "Esta expresión lleva de antes de lo que se tiene ganas de hacer, no para: tener ganas de."
+        },
+        "tener gana de": {
+          "en": "In this expression ganas is always plural: tener ganas de.",
+          "es": "En esta expresión ganas va siempre en plural: tener ganas de."
+        }
+      }
     },
     {
       "kind": "form",
@@ -955,7 +1065,17 @@
       "verb": "tener + sustantivo",
       "person": "to have to (must)",
       "answer": "tener que",
-      "table": "tener-expresiones"
+      "table": "tener-expresiones",
+      "wrong": {
+        "tener de": {
+          "en": "The obligation is tener que, not tener de. De is used in other expressions (tener ganas de): tener que.",
+          "es": "La obligación es tener que, no tener de. De se usa en otras expresiones (tener ganas de): tener que."
+        },
+        "tener para": {
+          "en": "The obligation is tener que, not tener para. Para is not used in this structure: tener que.",
+          "es": "La obligación es tener que, no tener para. Para no se usa en esta estructura: tener que."
+        }
+      }
     },
     {
       "kind": "why",

@@ -571,7 +571,17 @@
       "verb": "Adverbio (-mente)",
       "person": "rápido",
       "answer": "rápidamente",
-      "table": "derivacion"
+      "table": "derivacion",
+      "wrong": {
+        "rápidomente": {
+          "en": "The ending -mente is added to the feminine form (rápida), not the masculine one: rápidamente.",
+          "es": "El sufijo -mente se añade a la forma femenina (rápida), no a la masculina: rápidamente."
+        },
+        "rápidemente": {
+          "en": "Adjectives ending in -o first become -a, and then take -mente. They do not turn into -e: rápidamente.",
+          "es": "Los adjetivos en -o primero pasan a -a y luego llevan -mente. No cambian a -e: rápidamente."
+        }
+      }
     },
     {
       "id": "cp-form-02",
@@ -579,7 +589,21 @@
       "verb": "Sustantivo",
       "person": "feliz",
       "answer": "felicidad",
-      "table": "derivacion"
+      "table": "derivacion",
+      "wrong": {
+        "felizdad": {
+          "en": "The noun needs the suffix -idad, and the z of feliz turns into c before i: felicidad.",
+          "es": "El sustantivo necesita el sufijo -idad y la z de feliz cambia a c ante i: felicidad."
+        },
+        "felizidad": {
+          "en": "The z of feliz becomes c before i, so the noun is written with c: felicidad.",
+          "es": "La z de feliz se convierte en c ante i, así que el sustantivo se escribe con c: felicidad."
+        },
+        "felicedad": {
+          "en": "The suffix is -idad, with i, not -edad: felicidad.",
+          "es": "El sufijo es -idad, con i, no -edad: felicidad."
+        }
+      }
     },
     {
       "id": "cp-form-03",
@@ -587,7 +611,21 @@
       "verb": "Adjetivo (femenino)",
       "person": "tranquilo",
       "answer": "tranquila",
-      "table": "derivacion"
+      "table": "derivacion",
+      "wrong": {
+        "tranquilo": {
+          "en": "That is the masculine form. For a feminine noun the ending -o becomes -a: tranquila.",
+          "es": "Esa es la forma masculina. Con un sustantivo femenino la terminación -o pasa a -a: tranquila."
+        },
+        "tranquilla": {
+          "en": "Only the ending changes (-o becomes -a); the l is not doubled: tranquila.",
+          "es": "Solo cambia la terminación (-o pasa a -a); la l no se duplica: tranquila."
+        },
+        "tranquile": {
+          "en": "The ending -e belongs to adjectives like fuerte or amable. An adjective in -o changes to -a in the feminine: tranquila.",
+          "es": "La terminación -e es de adjetivos como fuerte o amable. Un adjetivo en -o cambia a -a en femenino: tranquila."
+        }
+      }
     },
     {
       "id": "cp-form-04",
@@ -595,7 +633,17 @@
       "verb": "Sustantivo",
       "person": "fácil",
       "answer": "facilidad",
-      "table": "derivacion"
+      "table": "derivacion",
+      "wrong": {
+        "facildad": {
+          "en": "The suffix is -idad, and the i must stay: fácil becomes facilidad.",
+          "es": "El sufijo es -idad y la i debe quedarse: fácil pasa a facilidad."
+        },
+        "facilitad": {
+          "en": "Here the suffix is -idad, not -tad. The -tad ending is in other words, like libertad.",
+          "es": "Aquí el sufijo es -idad, no -tad. La terminación -tad aparece en otras palabras, como libertad."
+        }
+      }
     },
     {
       "id": "cp-form-05",
@@ -603,7 +651,17 @@
       "verb": "Adverbio (-mente)",
       "person": "claro",
       "answer": "claramente",
-      "table": "derivacion"
+      "table": "derivacion",
+      "wrong": {
+        "claromente": {
+          "en": "-mente is added to the feminine form, not to the masculine: clara + mente.",
+          "es": "-mente se añade a la forma femenina, no a la masculina: clara + mente."
+        },
+        "clarmente": {
+          "en": "The a of the feminine form clara stays when -mente is added.",
+          "es": "La a de la forma femenina clara se mantiene al añadir -mente."
+        }
+      }
     },
     {
       "id": "cp-form-06",
@@ -611,7 +669,17 @@
       "verb": "Adjetivo (femenino)",
       "person": "lento",
       "answer": "lenta",
-      "table": "derivacion"
+      "table": "derivacion",
+      "wrong": {
+        "lento": {
+          "en": "That is the masculine form. For the feminine, -o becomes -a: lenta.",
+          "es": "Esa es la forma masculina. En femenino, -o pasa a -a: lenta."
+        },
+        "lente": {
+          "en": "An adjective in -o does not take -e in the feminine. The ending changes to -a: lenta.",
+          "es": "Un adjetivo en -o no toma -e en femenino. La terminación cambia a -a: lenta."
+        }
+      }
     },
     {
       "id": "cp-form-07",
@@ -619,7 +687,17 @@
       "verb": "Sustantivo",
       "person": "fuerte",
       "answer": "fuerza",
-      "table": "derivacion"
+      "table": "derivacion",
+      "wrong": {
+        "fuerteza": {
+          "en": "The noun of fuerte is irregular: it has a different stem, fuerza.",
+          "es": "El sustantivo de fuerte es irregular: tiene otra raíz, fuerza."
+        },
+        "fuertedad": {
+          "en": "The suffix -dad does not fit fuerte. The noun has its own form: fuerza.",
+          "es": "El sufijo -dad no encaja con fuerte. El sustantivo tiene su propia forma: fuerza."
+        }
+      }
     },
     {
       "id": "cp-form-08",
@@ -627,7 +705,17 @@
       "verb": "Adverbio (-mente)",
       "person": "triste",
       "answer": "tristemente",
-      "table": "derivacion"
+      "table": "derivacion",
+      "wrong": {
+        "tristamente": {
+          "en": "Adjectives in -e have one form for both genders, so -mente is added directly: tristemente.",
+          "es": "Los adjetivos en -e tienen una sola forma para los dos géneros, así que -mente se añade directamente: tristemente."
+        },
+        "tristmente": {
+          "en": "The final e of triste stays when -mente is added: tristemente.",
+          "es": "La e final de triste se mantiene al añadir -mente: tristemente."
+        }
+      }
     },
     {
       "id": "cp-form-09",
@@ -635,7 +723,17 @@
       "verb": "Adjetivo (femenino)",
       "person": "seguro",
       "answer": "segura",
-      "table": "derivacion"
+      "table": "derivacion",
+      "wrong": {
+        "seguro": {
+          "en": "That is the masculine form. For the feminine, -o becomes -a: segura.",
+          "es": "Esa es la forma masculina. En femenino, -o pasa a -a: segura."
+        },
+        "segure": {
+          "en": "An adjective in -o does not take -e in the feminine. The ending changes to -a: segura.",
+          "es": "Un adjetivo en -o no toma -e en femenino. La terminación cambia a -a: segura."
+        }
+      }
     },
     {
       "id": "cp-form-10",
@@ -643,7 +741,17 @@
       "verb": "Sustantivo",
       "person": "difícil",
       "answer": "dificultad",
-      "table": "derivacion"
+      "table": "derivacion",
+      "wrong": {
+        "dificilidad": {
+          "en": "By analogy with facilidad it looks right, but the noun of difícil is irregular: dificultad.",
+          "es": "Por analogía con facilidad parece correcto, pero el sustantivo de difícil es irregular: dificultad."
+        },
+        "dificiltad": {
+          "en": "The noun has -ul- in the middle, not -il-: dificultad.",
+          "es": "El sustantivo lleva -ul- en medio, no -il-: dificultad."
+        }
+      }
     },
     {
       "id": "cp-form-11",
@@ -651,7 +759,17 @@
       "verb": "Adverbio (-mente)",
       "person": "amable",
       "answer": "amablemente",
-      "table": "derivacion"
+      "table": "derivacion",
+      "wrong": {
+        "amablamente": {
+          "en": "An adjective in -e has one form for both genders, so -mente is added to amable as it is: amablemente.",
+          "es": "Un adjetivo en -e tiene una sola forma para los dos géneros, así que -mente se añade a amable tal cual: amablemente."
+        },
+        "amabilmente": {
+          "en": "The stem amabil- belongs to the noun amabilidad. The adverb is built on the adjective itself: amablemente.",
+          "es": "La raíz amabil- es la del sustantivo amabilidad. El adverbio se forma con el propio adjetivo: amablemente."
+        }
+      }
     },
     {
       "id": "cp-form-12",
@@ -659,7 +777,17 @@
       "verb": "Adjetivo (femenino)",
       "person": "libre",
       "answer": "libre",
-      "table": "derivacion"
+      "table": "derivacion",
+      "wrong": {
+        "libra": {
+          "en": "Adjectives in -e do not change in the feminine, so the form stays libre. Libra is a different word (the pound or the zodiac sign).",
+          "es": "Los adjetivos en -e no cambian en femenino, así que la forma sigue siendo libre. Libra es otra palabra (la libra o el signo del zodiaco)."
+        },
+        "libro": {
+          "en": "Libro is a noun (book), not a form of the adjective. The adjective libre stays the same in the feminine.",
+          "es": "Libro es un sustantivo (el objeto que se lee), no una forma del adjetivo. El adjetivo libre no cambia en femenino."
+        }
+      }
     },
     {
       "id": "cp-why-01",

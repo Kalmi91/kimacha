@@ -960,7 +960,17 @@
       "verb": "poder",
       "person": "yo",
       "answer": "puedo",
-      "table": "modales-presente"
+      "table": "modales-presente",
+      "wrong": {
+        "podo": {
+          "en": "With yo the stem vowel of poder changes: o becomes ue. puedo.",
+          "es": "Con yo cambia la vocal de la raíz de poder: o pasa a ue. puedo."
+        },
+        "pueda": {
+          "en": "The ending -a is not the yo ending of the present tense. For yo, the ending is -o: puedo.",
+          "es": "La terminación -a no es la de yo en presente. Para yo, la terminación es -o: puedo."
+        }
+      }
     },
     {
       "id": "pm-form-02",
@@ -968,7 +978,17 @@
       "verb": "poder",
       "person": "tú",
       "answer": "puedes",
-      "table": "modales-presente"
+      "table": "modales-presente",
+      "wrong": {
+        "podes": {
+          "en": "With tú the stem vowel of poder changes too: o becomes ue. puedes.",
+          "es": "Con tú también cambia la vocal de la raíz de poder: o pasa a ue. puedes."
+        },
+        "pueds": {
+          "en": "The ending of tú in -er verbs is -es, with the e: puedes.",
+          "es": "La terminación de tú en los verbos en -er es -es, con la e: puedes."
+        }
+      }
     },
     {
       "id": "pm-form-03",
@@ -976,7 +996,17 @@
       "verb": "poder",
       "person": "él/ella/usted",
       "answer": "puede",
-      "table": "modales-presente"
+      "table": "modales-presente",
+      "wrong": {
+        "pode": {
+          "en": "In the él, ella and usted form the stem vowel changes: o becomes ue. puede.",
+          "es": "En la forma de él, ella y usted cambia la vocal de la raíz: o pasa a ue. puede."
+        },
+        "poder": {
+          "en": "The infinitive does not change with the person. For él, ella and usted, the stem changes to pued- and the ending is -e: puede.",
+          "es": "El infinitivo no cambia con la persona. Para él, ella y usted, la raíz cambia a pued- y la terminación es -e: puede."
+        }
+      }
     },
     {
       "id": "pm-form-04",
@@ -984,7 +1014,21 @@
       "verb": "tener que",
       "person": "yo",
       "answer": "tengo que",
-      "table": "modales-presente"
+      "table": "modales-presente",
+      "wrong": {
+        "tengo": {
+          "en": "Tengo alone only means I have. For an obligation you need que: tengo que.",
+          "es": "Tengo solo significa I have. Para una obligación hace falta que: tengo que."
+        },
+        "tengo de": {
+          "en": "The obligation is tener que, not tener de. De is used in other expressions (tener ganas de): tengo que.",
+          "es": "La obligación es tener que, no tener de. De se usa en otras expresiones (tener ganas de): tengo que."
+        },
+        "tiengo que": {
+          "en": "In the yo form of tener only the g is added; the stem vowel does not change: tengo que.",
+          "es": "En la forma yo de tener solo se añade la g; la vocal de la raíz no cambia: tengo que."
+        }
+      }
     },
     {
       "id": "pm-form-05",
@@ -992,7 +1036,21 @@
       "verb": "tener que",
       "person": "tú",
       "answer": "tienes que",
-      "table": "modales-presente"
+      "table": "modales-presente",
+      "wrong": {
+        "tenes que": {
+          "en": "With tú the stem vowel of tener changes: e becomes ie. tienes que.",
+          "es": "Con tú cambia la vocal de la raíz de tener: e pasa a ie. tienes que."
+        },
+        "tienes": {
+          "en": "Tienes alone only means you have. For an obligation you need que: tienes que.",
+          "es": "Tienes solo significa you have. Para una obligación hace falta que: tienes que."
+        },
+        "tienes de": {
+          "en": "The obligation is tener que, not tener de. De is used in other expressions (tener ganas de): tienes que.",
+          "es": "La obligación es tener que, no tener de. De se usa en otras expresiones (tener ganas de): tienes que."
+        }
+      }
     },
     {
       "id": "pm-form-06",
@@ -1000,7 +1058,21 @@
       "verb": "tener que",
       "person": "él/ella/usted",
       "answer": "tiene que",
-      "table": "modales-presente"
+      "table": "modales-presente",
+      "wrong": {
+        "tene que": {
+          "en": "In the él, ella and usted form the stem vowel of tener changes: e becomes ie. tiene que.",
+          "es": "En la forma de él, ella y usted cambia la vocal de la raíz de tener: e pasa a ie. tiene que."
+        },
+        "tiene": {
+          "en": "Tiene alone only means he, she or you (usted) has. For an obligation you need que: tiene que.",
+          "es": "Tiene solo significa él, ella o usted tiene. Para una obligación hace falta que: tiene que."
+        },
+        "tiene de": {
+          "en": "The obligation is tener que, not tener de. De is used in other expressions (tener ganas de): tiene que.",
+          "es": "La obligación es tener que, no tener de. De se usa en otras expresiones (tener ganas de): tiene que."
+        }
+      }
     },
     {
       "id": "pm-form-07",
@@ -1008,7 +1080,17 @@
       "verb": "querer",
       "person": "nosotros",
       "answer": "queremos",
-      "table": "modales-presente"
+      "table": "modales-presente",
+      "wrong": {
+        "quieremos": {
+          "en": "With nosotros the stem does not change: the stress falls on the ending, so querer keeps its e: queremos.",
+          "es": "Con nosotros la raíz no cambia: el acento cae en la terminación, así que querer mantiene su e: queremos."
+        },
+        "querimos": {
+          "en": "The ending -imos is for -ir verbs. Querer is an -er verb: queremos.",
+          "es": "La terminación -imos es de los verbos en -ir. Querer es un verbo en -er: queremos."
+        }
+      }
     },
     {
       "id": "pm-form-09",
@@ -1016,7 +1098,17 @@
       "verb": "querer",
       "person": "ellos/ellas/ustedes",
       "answer": "quieren",
-      "table": "modales-presente"
+      "table": "modales-presente",
+      "wrong": {
+        "queren": {
+          "en": "With ellos, ellas and ustedes the stem vowel of querer changes: e becomes ie. quieren.",
+          "es": "Con ellos, ellas y ustedes cambia la vocal de la raíz de querer: e pasa a ie. quieren."
+        },
+        "quieran": {
+          "en": "The ending -an is for -ar verbs (hablan). Querer is an -er verb: quieren.",
+          "es": "La terminación -an es de los verbos en -ar (hablan). Querer es un verbo en -er: quieren."
+        }
+      }
     },
     {
       "id": "pm-form-10",
@@ -1024,7 +1116,17 @@
       "verb": "deber",
       "person": "nosotros",
       "answer": "debemos",
-      "table": "modales-presente"
+      "table": "modales-presente",
+      "wrong": {
+        "debamos": {
+          "en": "The ending -amos is for -ar verbs (hablamos). Deber is an -er verb: debemos.",
+          "es": "La terminación -amos es de los verbos en -ar (hablamos). Deber es un verbo en -er: debemos."
+        },
+        "debimos": {
+          "en": "The ending -imos is for -ir verbs (vivimos). Deber is an -er verb: debemos.",
+          "es": "La terminación -imos es de los verbos en -ir (vivimos). Deber es un verbo en -er: debemos."
+        }
+      }
     },
     {
       "id": "pm-form-12",
@@ -1032,7 +1134,17 @@
       "verb": "deber",
       "person": "ellos/ellas/ustedes",
       "answer": "deben",
-      "table": "modales-presente"
+      "table": "modales-presente",
+      "wrong": {
+        "deban": {
+          "en": "The ending -an is for -ar verbs (hablan). Deber is an -er verb: deben.",
+          "es": "La terminación -an es de los verbos en -ar (hablan). Deber es un verbo en -er: deben."
+        },
+        "deber": {
+          "en": "The infinitive does not change with the person. For ellos, ellas and ustedes, replace -er with -en: deben.",
+          "es": "El infinitivo no cambia con la persona. Para ellos, ellas y ustedes, se cambia -er por -en: deben."
+        }
+      }
     },
     {
       "kind": "why",

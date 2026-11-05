@@ -845,7 +845,17 @@
       "verb": "Masculino plural",
       "person": "rojo",
       "answer": "rojos",
-      "table": "concordancia"
+      "table": "concordancia",
+      "wrong": {
+        "rojoes": {
+          "en": "The ending -es is for adjectives ending in a consonant. An adjective in -o takes -s in the plural: rojos.",
+          "es": "La terminación -es es para adjetivos terminados en consonante. Un adjetivo en -o toma -s en plural: rojos."
+        },
+        "rojes": {
+          "en": "An adjective in -o does not take -e. It takes -s for the masculine plural: rojos.",
+          "es": "Un adjetivo en -o no toma -e. Toma -s en masculino plural: rojos."
+        }
+      }
     },
     {
       "id": "ac-form-02",
@@ -853,7 +863,17 @@
       "verb": "Femenino plural",
       "person": "rojo",
       "answer": "rojas",
-      "table": "concordancia"
+      "table": "concordancia",
+      "wrong": {
+        "rojes": {
+          "en": "An adjective in -o does not take -e. For the feminine plural, -o becomes -as: rojas.",
+          "es": "Un adjetivo en -o no toma -e. En femenino plural, -o pasa a -as: rojas."
+        },
+        "rojoas": {
+          "en": "The ending -o is replaced, not kept: -o becomes -as in the feminine plural: rojas.",
+          "es": "La terminación -o se sustituye, no se mantiene: en femenino plural, -o pasa a -as: rojas."
+        }
+      }
     },
     {
       "id": "ac-form-03",
@@ -861,7 +881,17 @@
       "verb": "Masculino plural",
       "person": "grande",
       "answer": "grandes",
-      "table": "concordancia"
+      "table": "concordancia",
+      "wrong": {
+        "grandas": {
+          "en": "Adjectives in -e do not change to -a. They only add -s in the plural: grandes.",
+          "es": "Los adjetivos en -e no cambian a -a. Solo añaden -s en plural: grandes."
+        },
+        "grandos": {
+          "en": "Grande does not end in -o, so the plural ending of adjectives in -o (rojos) does not apply. It only adds -s: grandes.",
+          "es": "Grande no termina en -o, así que no se aplica el plural de los adjetivos en -o (rojos). Solo añade -s: grandes."
+        }
+      }
     },
     {
       "id": "ac-form-04",
@@ -869,7 +899,17 @@
       "verb": "Masculino plural",
       "person": "azul",
       "answer": "azules",
-      "table": "concordancia"
+      "table": "concordancia",
+      "wrong": {
+        "azuls": {
+          "en": "An adjective ending in a consonant adds -es in the plural, not just -s: azules.",
+          "es": "Un adjetivo terminado en consonante añade -es en plural, no solo -s: azules."
+        },
+        "azulos": {
+          "en": "Azul does not end in -o, so the plural ending of adjectives in -o (rojos) does not apply. It adds -es in the plural: azules.",
+          "es": "Azul no termina en -o, así que no se aplica el plural de los adjetivos en -o (rojos). Añade -es en plural: azules."
+        }
+      }
     },
     {
       "id": "ac-form-05",
@@ -877,7 +917,17 @@
       "verb": "Femenino plural",
       "person": "español",
       "answer": "españolas",
-      "table": "concordancia"
+      "table": "concordancia",
+      "wrong": {
+        "españolases": {
+          "en": "The feminine form already ends in -a (española), so the plural only adds -s: españolas.",
+          "es": "La forma femenina ya termina en -a (española), así que el plural solo añade -s: españolas."
+        },
+        "españolos": {
+          "en": "The masculine plural ending does not fit here. For the feminine plural, take española and add -s: españolas.",
+          "es": "La terminación del masculino plural no sirve aquí. Para el femenino plural, toma española y añade -s: españolas."
+        }
+      }
     },
     {
       "id": "ac-form-06",
@@ -885,7 +935,17 @@
       "verb": "Masculino plural",
       "person": "español",
       "answer": "españoles",
-      "table": "concordancia"
+      "table": "concordancia",
+      "wrong": {
+        "españols": {
+          "en": "An adjective ending in a consonant adds -es in the plural, not just -s: españoles.",
+          "es": "Un adjetivo terminado en consonante añade -es en plural, no solo -s: españoles."
+        },
+        "españolos": {
+          "en": "Español ends in a consonant, so the masculine plural takes -es, not the ending of adjectives in -o (rojos): españoles.",
+          "es": "Español termina en consonante, así que el masculino plural toma -es, no la terminación de los adjetivos en -o (rojos): españoles."
+        }
+      }
     },
     {
       "id": "ac-form-07",
@@ -893,7 +953,17 @@
       "verb": "Femenino singular",
       "person": "bueno",
       "answer": "buena",
-      "table": "concordancia"
+      "table": "concordancia",
+      "wrong": {
+        "buenoa": {
+          "en": "The feminine replaces the ending -o with -a; it does not add -a after it: buena.",
+          "es": "El femenino sustituye la terminación -o por -a; no añade -a detrás: buena."
+        },
+        "buene": {
+          "en": "An adjective in -o does not take -e in the feminine. The ending changes to -a: buena.",
+          "es": "Un adjetivo en -o no toma -e en femenino. La terminación cambia a -a: buena."
+        }
+      }
     },
     {
       "id": "ac-form-08",
@@ -901,7 +971,17 @@
       "verb": "Masculino plural",
       "person": "feliz",
       "answer": "felices",
-      "table": "concordancia"
+      "table": "concordancia",
+      "wrong": {
+        "felizes": {
+          "en": "Nouns and adjectives ending in -z change z to c before -es: felices.",
+          "es": "Los sustantivos y adjetivos en -z cambian la z a c ante -es: felices."
+        },
+        "felizs": {
+          "en": "An adjective ending in a consonant adds -es in the plural, not just -s, and z becomes c: felices.",
+          "es": "Un adjetivo terminado en consonante añade -es en plural, no solo -s, y la z pasa a c: felices."
+        }
+      }
     },
     {
       "id": "ac-form-09",
@@ -909,7 +989,17 @@
       "verb": "Femenino singular",
       "person": "trabajador",
       "answer": "trabajadora",
-      "table": "concordancia"
+      "table": "concordancia",
+      "wrong": {
+        "trabajadore": {
+          "en": "The ending -e belongs to adjectives like inteligente. The feminine of trabajador adds -a: trabajadora.",
+          "es": "La terminación -e es de adjetivos como inteligente. El femenino de trabajador añade -a: trabajadora."
+        },
+        "trabajadoro": {
+          "en": "The feminine of an adjective ending in -or adds -a: trabajadora. The ending -o is not used.",
+          "es": "El femenino de un adjetivo en -or añade -a: trabajadora. No se usa la terminación -o."
+        }
+      }
     },
     {
       "id": "ac-form-10",
@@ -917,7 +1007,17 @@
       "verb": "Masculino plural",
       "person": "joven",
       "answer": "jóvenes",
-      "table": "concordancia"
+      "table": "concordancia",
+      "wrong": {
+        "jóvens": {
+          "en": "An adjective ending in a consonant adds -es in the plural, not just -s: jóvenes.",
+          "es": "Un adjetivo terminado en consonante añade -es en plural, no solo -s: jóvenes."
+        },
+        "jóvenos": {
+          "en": "Joven does not end in -o, so the plural ending of adjectives in -o (rojos) does not apply. It adds -es in the plural: jóvenes.",
+          "es": "Joven no termina en -o, así que no se aplica el plural de los adjetivos en -o (rojos). Añade -es en plural: jóvenes."
+        }
+      }
     },
     {
       "id": "ac-form-11",
@@ -925,7 +1025,17 @@
       "verb": "Femenino plural",
       "person": "inteligente",
       "answer": "inteligentes",
-      "table": "concordancia"
+      "table": "concordancia",
+      "wrong": {
+        "inteligentas": {
+          "en": "Adjectives in -e do not change to -a in the feminine. They only add -s in the plural: inteligentes.",
+          "es": "Los adjetivos en -e no cambian a -a en femenino. Solo añaden -s en plural: inteligentes."
+        },
+        "inteligentos": {
+          "en": "Inteligente does not end in -o, so the plural ending of adjectives in -o (rojos) does not apply. It only adds -s: inteligentes.",
+          "es": "Inteligente no termina en -o, así que no se aplica el plural de los adjetivos en -o (rojos). Solo añade -s: inteligentes."
+        }
+      }
     },
     {
       "id": "ac-form-12",
@@ -933,7 +1043,17 @@
       "verb": "Femenino plural",
       "person": "mexicano",
       "answer": "mexicanas",
-      "table": "concordancia"
+      "table": "concordancia",
+      "wrong": {
+        "mexicanes": {
+          "en": "An adjective in -o does not take -e. For the feminine plural, -o becomes -as: mexicanas.",
+          "es": "Un adjetivo en -o no toma -e. En femenino plural, -o pasa a -as: mexicanas."
+        },
+        "mexicanoas": {
+          "en": "The ending -o is replaced, not kept: -o becomes -as in the feminine plural: mexicanas.",
+          "es": "La terminación -o se sustituye, no se mantiene: en femenino plural, -o pasa a -as: mexicanas."
+        }
+      }
     },
     {
       "id": "ac-why-01",
