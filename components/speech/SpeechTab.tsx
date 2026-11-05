@@ -20,6 +20,7 @@ import ScreenFeedback from '@/lib/screenFeedback';
 import { recognitionAvailable } from '@/lib/speechRecognition';
 import {
   SPEECH_ANSWER_KEY,
+  speechAnswerKey,
   SPEECH_LEVEL_KEY,
   SPEECH_MODE,
   SPEECH_PROGRESS_KEY,
@@ -49,6 +50,13 @@ import { useScreenLoad } from '@/lib/useScreenLoad';
 type Screen = 'list' | 'intro' | 'prep' | 'play' | 'done';
 
 const isLevel = (x: unknown): x is PcicLevel => typeof x === 'string' && (PCIC_LEVELS as string[]).includes(x);
+
+// the last chosen way of this pair (the pair-less value of older versions as the fallback)
+async function savedAnswerFor(dir: PcicTarget): Promise<AnswerMode> {
+  const db = getDb();
+  const value = (await loadResumeValue(db, speechAnswerKey(pairOf(dir)))) ?? (await loadResumeValue(db, SPEECH_ANSWER_KEY));
+  return value === 'type' ? 'type' : 'voice';
+}
 
 // The tokens the learner knows, computed as the Situations do (the deck of the active direction has to be set before findPcicItem).
 async function knownFor(dir: PcicTarget): Promise<ReadonlySet<string>> {
@@ -114,7 +122,7 @@ export default function SpeechTab() {
     shownPair.current = pair;
     const all = storiesFor(dir);
     const savedLevel = await loadResumeValue(db, SPEECH_LEVEL_KEY);
-    const savedAnswer = await loadResumeValue(db, SPEECH_ANSWER_KEY);
+    const savedAnswer = await savedAnswerFor(dir);
     const saved = all.length ? parseRun(await loadResumeValue(db, SPEECH_MODE), all) : null;
     const story = all.find((x) => x.id === saved?.id) ?? null;
     setTarget(dir);
@@ -173,9 +181,11 @@ export default function SpeechTab() {
   };
   const chooseMode = (next: AnswerMode) => {
     setAnswerMode(next);
-    void saveResumeValue(getDb(), SPEECH_ANSWER_KEY, next);
+    void saveResumeValue(getDb(), speechAnswerKey(pairOf(target)), next);
   };
   const startRun = (s: SpeechStory, how: AnswerMode) => {
+    // the way a story is started in is the way the next one is offered in
+    chooseMode(how);
     apply(startStory(s, how));
     setRunKey((n) => n + 1);
     setFresh(true);
@@ -185,6 +195,8 @@ export default function SpeechTab() {
     const opened = stories.find((x) => x.id === id);
     if (!opened) return;
     setStoryId(id);
+    // the last way chosen, for every story: read again, whatever this screen held
+    setAnswerMode(await savedAnswerFor(target));
     if (run && run.id === id && !run.done) {
       setFresh(false);
       setScreen('play');

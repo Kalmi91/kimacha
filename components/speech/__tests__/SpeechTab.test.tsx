@@ -48,8 +48,10 @@ import { setLanguage, t } from '@/lib/i18n';
 import { knownTokens } from '@/lib/knownSentence';
 import { loadResumeValue, saveResumeValue } from '@/lib/resumeStore';
 import { FOOTER_PAD, TOP_ROW, upperFooterMax } from '@/lib/speech/layout';
+import { pairOf } from '@/lib/languagePair';
 import { speak, stopSpeaking } from '@/lib/speech';
 import {
+  speechAnswerKey,
   SPEECH_ANSWER_KEY,
   SPEECH_LEVEL_KEY,
   SPEECH_MODE,
@@ -95,6 +97,8 @@ const mockSpeak = speak as jest.Mock;
 const mockStopSpeaking = stopSpeaking as jest.Mock;
 const mockKnownTokens = knownTokens as jest.Mock;
 const flush = makeFlush(20);
+// where the way of answering is kept: per language pair
+const ANSWER_KEY = speechAnswerKey(pairOf('es'));
 
 const story = STORIES[0];
 // the first branch everywhere: the talk, then the two questions about her
@@ -171,7 +175,7 @@ beforeEach(async () => {
   await getDb().setOnboarding('en', 'es');
   await getDb().setStrictAccents(false);
   await getDb().resetGameProgress(SPEECH_PROGRESS_KEY);
-  for (const key of [SPEECH_MODE, SPEECH_LEVEL_KEY, SPEECH_ANSWER_KEY]) await saveResumeValue(getDb(), key, null);
+  for (const key of [SPEECH_MODE, SPEECH_LEVEL_KEY, SPEECH_ANSWER_KEY, ANSWER_KEY]) await saveResumeValue(getDb(), key, null);
 });
 afterEach(() => {
   jest.useRealTimers();
@@ -260,7 +264,7 @@ describe('Speak tab: the intro', () => {
     expect(view.getByTestId('speech-mode-voice').props.accessibilityState).toMatchObject({ selected: true });
     await press(view, 'speech-mode-type');
     expect(view.getByTestId('speech-mode-type').props.accessibilityState).toMatchObject({ selected: true });
-    expect(await loadResumeValue(getDb(), SPEECH_ANSWER_KEY)).toBe('type');
+    expect(await loadResumeValue(getDb(), ANSWER_KEY)).toBe('type');
     await press(view, 'speech-back');
     expect(view.getByTestId(`speech-story-${story.id}`)).toBeTruthy();
     view.unmount();
@@ -595,7 +599,7 @@ describe('Speak tab: by voice', () => {
     expect(ExpoSpeechRecognitionModule.abort).toHaveBeenCalled();
     expect(view.getByTestId('speech-type-input')).toBeTruthy();
     expect(await savedNow()).toMatchObject({ mode: 'type', path: WAY.slice(0, 2) });
-    expect(await loadResumeValue(getDb(), SPEECH_ANSWER_KEY)).toBe('type');
+    expect(await loadResumeValue(getDb(), ANSWER_KEY)).toBe('type');
     await heardFinal('soy de México');
     expect(await savedNow()).toMatchObject({ path: WAY.slice(0, 2), tries: 0 });
     // and back
@@ -770,7 +774,7 @@ describe('Speak tab: the language pair', () => {
 describe('Speak tab: the docked footer', () => {
   const scrollMax = (view: View) => StyleSheet.flatten(view.getByTestId('speech-footer-scroll').props.style).maxHeight as number;
 
-  it('what was heard, the ask and the hint scroll; the input, Check, Next and the links are fixed', async () => {
+  it('what was heard, the ask and the hint scroll; Check, Next and the links are fixed, the input is in the chat', async () => {
     Dimensions.set({ window: { width: 360, height: 640, scale: 1, fontScale: 1 } });
     await saveRun(at(3));
     const view = await mount();
@@ -780,7 +784,11 @@ describe('Speak tab: the docked footer', () => {
     const fixed = view.getByTestId('speech-footer-fixed');
     expect(scroll.props.keyboardShouldPersistTaps).toBe('handled');
     for (const id of ['speech-result', 'speech-ask', 'speech-hint']) expect(within(scroll).getByTestId(id)).toBeTruthy();
-    for (const id of ['speech-type-input', 'speech-check', 'speech-skip', 'speech-mode-toggle']) {
+    // the field is in the chat (like Practice and the level test), not at the window's bottom edge where Android would pan the screen
+    expect(within(fixed).queryByTestId('speech-type-input')).toBeNull();
+    expect(within(scroll).queryByTestId('speech-type-input')).toBeNull();
+    expect(view.getByTestId('speech-type-input')).toBeTruthy();
+    for (const id of ['speech-check', 'speech-skip', 'speech-mode-toggle']) {
       expect(within(fixed).getByTestId(id)).toBeTruthy();
       expect(within(scroll).queryByTestId(id)).toBeNull();
     }
@@ -788,7 +796,7 @@ describe('Speak tab: the docked footer', () => {
     view.unmount();
   });
 
-  it('an open keyboard gives the upper part less room (it may shrink to zero); the input stays in the fixed part', async () => {
+  it('an open keyboard gives the upper part less room (it may shrink to zero); Check stays in the fixed part', async () => {
     Dimensions.set({ window: { width: 360, height: 640, scale: 1, fontScale: 1 } });
     await saveRun(at(1));
     const view = await mount();
@@ -800,7 +808,7 @@ describe('Speak tab: the docked footer', () => {
     expect(open).toBeLessThan(closed);
     expect(open).toBeGreaterThanOrEqual(0);
     expect(open).toBe(upperFooterMax({ room: 640 - 300, windowH: 640, kbHeight: 300, topH: TOP_ROW, fixedH: DOCK_RESERVE, voice: false }));
-    expect(within(view.getByTestId('speech-footer-fixed')).getByTestId('speech-type-input')).toBeTruthy();
+    expect(within(view.getByTestId('speech-footer-fixed')).getByTestId('speech-check')).toBeTruthy();
     view.unmount();
   });
 
@@ -845,7 +853,7 @@ describe('Speak tab: the small phone with the keyboard open', () => {
     expect(view.queryByTestId('speech-skip')).toBeNull();
     expect(view.queryByTestId('speech-help')).toBeNull();
     expect(within(view.getByTestId('speech-footer-scroll')).getByTestId('speech-hint')).toBeTruthy();
-    expect(within(fixed).getByTestId('speech-type-input')).toBeTruthy();
+    expect(view.getByTestId('speech-type-input')).toBeTruthy();
     expect(within(fixed).getByTestId('speech-check')).toBeTruthy();
     // the link gives the turn up like the button did
     await press(view, 'speech-skip-link');
@@ -1210,5 +1218,32 @@ describe('Speak tab: the order of reaction and scene, and Help with the ask-back
     expect(view.getByTestId('speech-hint-line-0-0')).toBeTruthy();
     dismiss.mockRestore();
     view.unmount();
+  });
+});
+
+describe('Speak tab: the last chosen way of answering', () => {
+  it('typing, chosen once, is the way of every story of the pair: the next story is offered and started in typing, also after a restart', async () => {
+    const view = await mount();
+    await press(view, `speech-story-${story.id}`);
+    await press(view, 'speech-mode-type');
+    await startFromIntro(view);
+    expect(await savedNow()).toMatchObject({ mode: 'type' });
+    expect(await loadResumeValue(getDb(), ANSWER_KEY)).toBe('type');
+    await press(view, 'speech-back');
+    // another story of the list: typing is already chosen, and the run starts in typing
+    const other = STORIES[1];
+    await press(view, `speech-story-${other.id}`);
+    expect(view.getByTestId('speech-mode-type').props.accessibilityState).toMatchObject({ selected: true });
+    await startFromIntro(view);
+    expect(await savedNow()).toMatchObject({ id: other.id, mode: 'type' });
+    view.unmount();
+    // an old value without the pair is still honored, a new one wins
+    await saveResumeValue(getDb(), ANSWER_KEY, null);
+    await saveResumeValue(getDb(), SPEECH_ANSWER_KEY, 'type');
+    await saveResumeValue(getDb(), SPEECH_MODE, null);
+    const again = await mount();
+    await press(again, `speech-story-${story.id}`);
+    expect(again.getByTestId('speech-mode-type').props.accessibilityState).toMatchObject({ selected: true });
+    again.unmount();
   });
 });

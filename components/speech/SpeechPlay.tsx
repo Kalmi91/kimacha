@@ -65,6 +65,8 @@ export default function SpeechPlay({ story, run, target, source, strictAccents, 
   // the turn Help was pressed on
   const [helpAt, setHelpAt] = useState<number | null>(null);
   const [typed, setTyped] = useState('');
+  // a focus of the field scrolls the chat to its end, so the field is in view above the footer
+  const [focusTick, setFocusTick] = useState(0);
   const [heard, setHeard] = useState<{ text: string; match: SpokenMatch; typed: boolean } | null>(null);
   // the answer is in and its bubble is on screen, the next line is on its way
   const waiting = shown < run.answers.length;
@@ -284,17 +286,6 @@ export default function SpeechPlay({ story, run, target, source, strictAccents, 
         </View>
       ) : (
         <View style={styles.typeRow}>
-          <TextInput
-            testID="speech-type-input"
-            style={[styles.input, { color: colors.text, borderColor: colors.tabIconDefault, backgroundColor: colors.card }, themedInputStyle(g)]}
-            placeholder={s.card.typeIn(target)}
-            placeholderTextColor={colors.tabIconDefault}
-            value={typed}
-            onChangeText={setTyped}
-            onSubmitEditing={() => submitTyped(typed)}
-            submitBehavior="submit"
-            {...answerInputProps}
-          />
           <ActionButton
             testID="speech-check"
             label={`✓ ${s.card.check}`}
@@ -365,7 +356,7 @@ export default function SpeechPlay({ story, run, target, source, strictAccents, 
       target={target}
       currentCard={`speech:${story.id}:${shown}`}
       hideLevelCounter
-      scrollKey={`${shown}:${run.answers.length}:${run.backs.length}:${heard ? 1 : 0}`}
+      scrollKey={`${shown}:${run.answers.length}:${run.backs.length}:${heard ? 1 : 0}:${focusTick}`}
       onFrameLayout={setFrameH}
       top={
         <View style={styles.top} onLayout={(e) => setTopH(Math.round(e.nativeEvent.layout.height))}>
@@ -473,6 +464,20 @@ export default function SpeechPlay({ story, run, target, source, strictAccents, 
             </View>
           );
         })}
+        {!voice && !run.done && (
+            <TextInput
+              testID="speech-type-input"
+              style={[styles.input, { color: colors.text, borderColor: colors.tabIconDefault, backgroundColor: colors.card }, themedInputStyle(g)]}
+              placeholder={s.card.typeIn(target)}
+              placeholderTextColor={colors.tabIconDefault}
+              value={typed}
+              onChangeText={setTyped}
+            onFocus={() => setFocusTick((n) => n + 1)}
+              onSubmitEditing={() => submitTyped(typed)}
+              submitBehavior="submit"
+              {...answerInputProps}
+            />
+        )}
         {run.done && closingOf(story, run, source) && (
           <Card style={styles.left} classicStyle={styles.bubble} boxStyle={styles.brutalBubble}>
             <Text style={[styles.who, { color: colors.textMuted }]}>{story.speaker}</Text>
@@ -529,8 +534,8 @@ const styles = StyleSheet.create({
   micIcon: { fontSize: fontSize.xxl },
   micLabel: { fontSize: fontSize.sm, fontWeight: fontWeight.semibold, textTransform: 'uppercase' },
   typeRow: { flexDirection: 'row', gap: spacing.sm, alignItems: 'center' },
-  input: { flex: 1, minHeight: tapTarget, borderWidth: 2, borderRadius: radius.md, paddingHorizontal: spacing.md, fontSize: fontSize.md },
-  button: { minHeight: tapTarget, paddingHorizontal: spacing.lg },
+  input: { minHeight: tapTarget, borderWidth: 2, borderRadius: radius.md, paddingHorizontal: spacing.md, fontSize: fontSize.md },
+  button: { flex: 1, minHeight: tapTarget, paddingHorizontal: spacing.lg },
   skip: { minHeight: tapTarget, marginTop: spacing.sm },
   classicButton: { borderRadius: radius.md, alignItems: 'center', justifyContent: 'center' },
   classicButtonText: { fontSize: fontSize.md, fontWeight: fontWeight.bold },

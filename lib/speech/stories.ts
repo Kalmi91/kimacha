@@ -18,8 +18,10 @@ import { matchSpoken, type SpokenMatch } from '@/lib/practice/situationMatch';
 export const SPEECH_MODE = 'speech';
 /** Resume store key of the level the list shows. */
 export const SPEECH_LEVEL_KEY = 'speech-level';
-/** Resume store key of how the learner answers (voice or typing), kept between stories. */
+/** Resume store key (the old, pair-less one) of how the learner answers (voice or typing). */
 export const SPEECH_ANSWER_KEY = 'speech-answer';
+/** The same, per language pair: the last way the learner chose for any story of that pair. */
+export const speechAnswerKey = (pair: string): string => `${SPEECH_ANSWER_KEY}:${pair}`;
 /** `game_progress` game id: one row per finished story (item id = story id, state 'done', data `StoryProgress`). */
 export const SPEECH_PROGRESS_KEY = 'speech-stories';
 
