@@ -220,6 +220,7 @@ const de: typeof en = {
     canSay: 'Du kannst sagen',
     prepAsks: (name: string) => `${name} fragt`,
     recallWho: 'Frage',
+    canAsk: 'Du kannst auch fragen',
     leadsFrom: (say: string) => `Kommt, wenn du sagst: “${say}”`,
     progressLabel: (n: number, total: number) => `Antwort ${n} von ${total}`,
     showTranslation: 'Übersetzung anzeigen',

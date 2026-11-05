@@ -37,7 +37,7 @@ jest.mock('@/lib/knownSentence', () => {
 });
 
 import { act, fireEvent, render, within } from '@testing-library/react-native';
-import { BackHandler, DeviceEventEmitter, Dimensions, ScrollView, StyleSheet } from 'react-native';
+import { BackHandler, DeviceEventEmitter, Dimensions, Keyboard, ScrollView, StyleSheet } from 'react-native';
 import { ExpoSpeechRecognitionModule } from 'expo-speech-recognition';
 
 import SpeechTab from '@/components/speech/SpeechTab';
@@ -59,6 +59,7 @@ import {
   bubbleOf,
   judgeAnswer,
   savedRun,
+  splitBubble,
   startStory,
   turnById,
   unknownWords,
@@ -112,7 +113,7 @@ const at = (turn: number, mode: AnswerMode = 'type', patch: Partial<StoryRun> = 
   return { ...run, ...patch };
 };
 // the text of bubble n of a run that is on the n-th turn of the first way: her reaction to the answer before, then the line
-const lineText = (n: number, lang: 'es' | 'en' = 'es') => bubbleOf(story, at(n), n, lang);
+const lineText = (n: number, lang: 'es' | 'en' = 'es') => splitBubble(story, at(n), n, lang).line;
 const saveRun = (run: StoryRun) => saveResumeValue(getDb(), SPEECH_MODE, savedRun(run));
 const savedNow = async () => (await loadResumeValue(getDb(), SPEECH_MODE)) as StoryRun | null;
 const rows = () => getDb().getGameProgress(SPEECH_PROGRESS_KEY);
@@ -951,14 +952,19 @@ describe('Speak tab: the preparation', () => {
     expect(view.queryByTestId('speech-get-ready')).toBeNull();
     expect(feedbackButton(view)).toBeTruthy();
     story.turns.forEach((turn, i) => {
+      if (turn.recall) return;
       expect(text(view, `speech-prep-line-${i}`)).toBe(turn.es);
       turn.branches.forEach((b, j) => b.say.forEach((line, k) => expect(text(view, `speech-prep-say-${i}-${j}-${k}`)).toBe(line.es)));
     });
     expect(view.getByText(story.turns[0].en)).toBeTruthy();
     expect(view.getAllByText(story.turns[0].branches[0].say[0].en).length).toBeGreaterThan(0);
-    // the questions about her after the talk are the app's, and say so
+    // the questions about her after the talk are a surprise: not listed
     expect(view.getAllByText(sx.prepAsks(story.speaker))).toHaveLength(story.turns.filter((x) => !x.recall).length);
-    expect(view.getAllByText(sx.recallWho)).toHaveLength(story.turns.filter((x) => x.recall).length);
+    expect(view.queryAllByText(sx.recallWho)).toHaveLength(0);
+    expect(view.queryByTestId(`speech-prep-line-${story.turns.findIndex((x) => x.recall)}`)).toBeNull();
+    // the ask-backs are listed under their own label, not among the answers
+    const age = story.turns.findIndex((x) => x.id === 'age');
+    expect(text(view, `speech-prep-ask-${age}`)).toBe(sx.canAsk);
     // a question that only one answer leads to says which one
     const like = story.turns.findIndex((x) => x.id === 'like');
     expect(text(view, `speech-prep-from-${like}`)).toBe(sx.leadsFrom('Trabajo en una oficina.'));
@@ -1160,6 +1166,49 @@ describe('Speak tab: scenes, asking back and the questions about her', () => {
     await type(view, 'es pintora');
     await advance();
     expect(await savedNow()).toMatchObject({ path: WAY.slice(0, RECALL + 2), firstTry: RECALL + 1 });
+    view.unmount();
+  });
+});
+
+describe('Speak tab: the order of reaction and scene, and Help with the ask-backs', () => {
+  const AGE = WAY.indexOf('age');
+  const FAMILY = WAY.indexOf('family1');
+  const BACK = 3;
+
+  it('a turn with a scene: her reaction to the answer is its own bubble, then the scene, then the question', async () => {
+    await saveRun(at(FAMILY));
+    const view = await mount();
+    expect(text(view, `speech-reaction-${FAMILY}`)).toBe('Ah, muy bien.');
+    expect(text(view, `speech-line-${FAMILY}`)).toBe(turnById(story, 'family1')!.es);
+    // the reaction comes before the scene, the scene before the question
+    const json = JSON.stringify(view.toJSON());
+    expect(json.indexOf('speech-reaction-')).toBeLessThan(json.indexOf(`speech-scene-${FAMILY}`));
+    expect(json.indexOf(`speech-scene-${FAMILY}`)).toBeLessThan(json.indexOf(`speech-line-${FAMILY}`));
+    // a turn without a scene is one bubble
+    expect(view.queryByTestId(`speech-reaction-${AGE}`)).toBeNull();
+    expect(text(view, `speech-line-${AGE}`)).toBe(bubbleOf(story, at(AGE), AGE, 'es'));
+    view.unmount();
+  });
+
+  it('Help lists the answers, then the ask-backs under their own label; Help closes the keyboard and stays open after an ask-back; the ask-backs are gone once used up', async () => {
+    const dismiss = jest.spyOn(Keyboard, 'dismiss');
+    await saveRun(at(AGE));
+    const view = await mount();
+    await press(view, 'speech-help');
+    expect(dismiss).toHaveBeenCalled();
+    const age = turnById(story, 'age')!;
+    expect(text(view, 'speech-hint-ask-title')).toBe(sx.canAsk);
+    expect(text(view, `speech-hint-line-${BACK}-0`)).toBe(age.branches[BACK].say[0].es);
+    // the list stays open after an ask-back, and the label stays while the turn takes more
+    await type(view, 'y tú');
+    expect(view.getByTestId('speech-hint')).toBeTruthy();
+    expect(view.getByTestId('speech-hint-ask-title')).toBeTruthy();
+    await type(view, 'y tú');
+    expect(view.getByTestId('speech-hint')).toBeTruthy();
+    expect(view.queryByTestId('speech-hint-ask-title')).toBeNull();
+    expect(view.queryByTestId(`speech-hint-line-${BACK}-0`)).toBeNull();
+    expect(view.getByTestId('speech-hint-line-0-0')).toBeTruthy();
+    dismiss.mockRestore();
     view.unmount();
   });
 });

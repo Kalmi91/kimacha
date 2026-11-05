@@ -21,6 +21,7 @@ import {
   setMode,
   skipTurn,
   speakable,
+  splitBubble,
   startStory,
   storiesFor,
   storiesOfLevel,
@@ -252,10 +253,12 @@ describe('saving a run', () => {
     expect(parseRun(savedRun(state), STORIES)).toEqual(state);
   });
 
-  it('a run saved before the branches (v 1) is dropped', () => {
+  it('a run saved by an older version (v 1, v 2) is dropped cleanly, the story starts from the beginning', () => {
     const old = { v: 1, id: story.id, mode: 'type', turn: 1, tries: 0, firstTry: 1, answers: [{ text: 'soy Ana', ok: true }], done: false };
     expect(parseRun(old, STORIES)).toBeNull();
-    expect((savedRun(open) as { v: number }).v).toBe(2);
+    // v 2 had the same ids on the way: it must not be taken for a run of the new story
+    expect(parseRun({ ...(savedRun(open) as object), v: 2 }, STORIES)).toBeNull();
+    expect((savedRun(open) as { v: number }).v).toBe(3);
   });
 
   it('drops a broken run, one of a story that is gone, or one that does not fit the story\'s graph', () => {
@@ -265,7 +268,7 @@ describe('saving a run', () => {
     expect(parseRun({}, STORIES)).toBeNull();
     expect(parseRun(saved, [])).toBeNull();
     expect(parseRun({ ...saved, id: 'other' }, STORIES)).toBeNull();
-    expect(parseRun({ ...saved, v: 3 }, STORIES)).toBeNull();
+    expect(parseRun({ ...saved, v: 4 }, STORIES)).toBeNull();
     expect(parseRun({ ...saved, mode: 'sing' }, STORIES)).toBeNull();
     expect(parseRun({ ...saved, tries: 'x' }, STORIES)).toBeNull();
     // the path
@@ -291,11 +294,21 @@ describe('saving a run', () => {
 });
 
 describe('the progress row', () => {
-  it('best and total are one pair: a run with more points replaces both, a run with fewer or equal points only moves the date', () => {
+  it('best and total are one pair of one run: only a run with a higher share of right answers replaces both, the others only move the date', () => {
     expect(finishedProgress({ best: 4, total: 5, at: '2026-11-01' }, { firstTry: 4 }, 7, '2026-11-03')).toEqual({ best: 4, total: 5, at: '2026-11-03' });
     expect(finishedProgress({ best: 4, total: 5, at: '2026-11-01' }, { firstTry: 3 }, 7, '2026-11-03')).toEqual({ best: 4, total: 5, at: '2026-11-03' });
-    expect(finishedProgress({ best: 4, total: 5, at: '2026-11-01' }, { firstTry: 5 }, 7, '2026-11-03')).toEqual({ best: 5, total: 7, at: '2026-11-03' });
+    // 5 of 7 is not a better share than 4 of 5, however many points
+    expect(finishedProgress({ best: 4, total: 5, at: '2026-11-01' }, { firstTry: 5 }, 7, '2026-11-03')).toEqual({ best: 4, total: 5, at: '2026-11-03' });
+    expect(finishedProgress({ best: 4, total: 5, at: '2026-11-01' }, { firstTry: 6 }, 7, '2026-11-03')).toEqual({ best: 6, total: 7, at: '2026-11-03' });
     expect(finishedProgress({ best: 4 }, { firstTry: 3 }, 7, '2026-11-03')).toEqual({ best: 3, total: 7, at: '2026-11-03' });
+  });
+
+  it('a row saved before the stories grew (7/8) is beaten by a better share on the longer way, not by more points (7/17)', () => {
+    const old = { best: 7, total: 8, at: '2026-11-01' };
+    expect(finishedProgress(old, { firstTry: 7 }, 17, '2026-11-05')).toEqual({ best: 7, total: 8, at: '2026-11-05' });
+    expect(finishedProgress(old, { firstTry: 14 }, 17, '2026-11-05')).toEqual({ best: 7, total: 8, at: '2026-11-05' });
+    expect(finishedProgress(old, { firstTry: 15 }, 17, '2026-11-05')).toEqual({ best: 15, total: 17, at: '2026-11-05' });
+    expect(finishedProgress({ best: 0, total: 0 }, { firstTry: 1 }, 17, '2026-11-05')).toEqual({ best: 1, total: 17, at: '2026-11-05' });
   });
 
   it('best keeps the higher value, the date is the last finish', () => {
@@ -568,11 +581,29 @@ describe('asking back', () => {
     expect(judgeAnswer(age, 'prefiero no decirlo', { lang: 'es' }).branch).toBe(1);
   });
 
-  it('the ask-back is judged before a free slot would take it, and not at all after MAX_BACKS', () => {
+  it('a real branch matches first: an ask-back fires only when nothing else matches and the whole utterance is its phrase', () => {
     const a = small.turns[0];
-    expect(judgeAnswer(a, 'y tú', { lang: 'es' }).branch).toBe(1);
+    // a free slot is a real answer
+    expect(judgeAnswer(a, 'y tú', { lang: 'es' }).branch).toBe(0);
     expect(judgeAnswer(a, 'Ana', { lang: 'es' }).branch).toBe(0);
-    expect(judgeAnswer(a, 'y tú', { lang: 'es', noBack: true }).branch).toBe(0);
+    // "Tengo 30 años, ¿y tú?" is the answer, not an ask-back
+    for (const said of ['Tengo 30 años, ¿y tú?', 'tengo treinta años y tú', 'Más o menos 30, ¿y tú?']) expect({ said, branch: judgeAnswer(age, said, { lang: 'es' }).branch }).toEqual({ said, branch: 0 });
+    // one word inside a real answer is not an ask-back
+    const speak = turnById(story, 'speak')!;
+    const backAt = speak.branches.findIndex((b) => b.back);
+    expect(judgeAnswer(speak, 'cómo estás', { lang: 'es' }).branch).toBeNull();
+    expect(judgeAnswer(speak, 'hablo un poco, ¿cómo?', { lang: 'es' }).branch).toBe(0);
+    expect(judgeAnswer(speak, 'sí, hablo qué bien', { lang: 'es' }).branch).toBe(2);
+    expect(judgeAnswer(speak, 'Cómo', { lang: 'es' }).branch).toBe(backAt);
+    expect(judgeAnswer(speak, '¿Perdón?', { lang: 'es' }).branch).toBe(backAt);
+    const like = turnById(story, 'like')!;
+    expect(judgeAnswer(like, 'Sí, me gusta, ¿y a ti?', { lang: 'es' }).branch).toBe(1);
+    expect(judgeAnswer(like, '¿Y a ti?', { lang: 'es' }).branch).toBe(like.branches.findIndex((b) => b.back));
+    // accents never count for an ask-back, typed too (a real answer keeps strictAccents)
+    for (const said of ['Y tu', 'y TÚ', 'Cuantos años tienes tu']) expect({ said, branch: judgeAnswer(age, said, { lang: 'es', strictAccents: true }).branch }).toEqual({ said, branch: BACK });
+    expect(judgeAnswer(speak, 'Como', { lang: 'es', strictAccents: true }).branch).toBe(backAt);
+    // and not at all after MAX_BACKS
+    expect(judgeAnswer(age, 'y tú', { lang: 'es', noBack: true }).branch).toBeNull();
     // the closest answer for the red words never comes from an ask-back
     expect(judgeAnswer(age, 'la mesa es azul', { lang: 'es', noBack: true }).match.best).not.toBe('Y tú');
   });
@@ -633,5 +664,31 @@ describe('asking back', () => {
     expect(make([{ at: 0, text: 'y tú', branch: BACK }])).toBeNull();
     expect(make(Array.from({ length: MAX_BACKS + 1 }, () => ({ at: 2, text: 'y tú', branch: BACK })))).toBeNull();
     expect(make(saved.backs)).not.toBeNull();
+  });
+});
+
+describe('a scene never comes between an answer and her reaction', () => {
+  it('a turn with a scene shows the reaction as its own bubble, any other turn is one bubble; the voice still reads reaction and line together', () => {
+    const run = at('family1');
+    const n = run.path.length - 1;
+    const turn = turnById(story, 'family1')!;
+    expect(turn.scene).toBeDefined();
+    expect(splitBubble(story, run, n, 'es')).toEqual({ reply: 'Ah, muy bien.', line: turn.es });
+    expect(splitBubble(story, run, n, 'en')).toEqual({ reply: 'Oh, very good.', line: turn.en });
+    expect(bubbleOf(story, run, n, 'es')).toBe(`Ah, muy bien. ${turn.es}`);
+    // no scene: the same as bubbleOf
+    const second = answerTurn(startStory(story, 'type'), story, right());
+    expect(splitBubble(story, second, 1, 'es')).toEqual({ reply: null, line: bubbleOf(story, second, 1, 'es') });
+    // a given-up turn has no reaction to split
+    expect(splitBubble(story, startStory(story, 'type'), 0, 'es')).toEqual({ reply: null, line: story.turns[0].es });
+  });
+
+  it('in every story: a scene turn reached by a branch with a reaction shows both, and no recall turn has a reaction before it', () => {
+    for (const s of STORIES) {
+      for (const turn of s.turns) {
+        const into = s.turns.flatMap((x) => x.branches.filter((b) => b.next === turn.id));
+        if (turn.recall) for (const b of into) expect({ story: s.id, turn: turn.id, reply: b.reply }).toEqual({ story: s.id, turn: turn.id, reply: undefined });
+      }
+    }
   });
 });

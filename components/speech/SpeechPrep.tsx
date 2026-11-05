@@ -50,6 +50,27 @@ export default function SpeechPrep({ story, target, source, onStart, onBack }: P
     stopSpeaking();
     speak(speakable(text), speechLang(target));
   };
+  // the lines under a caption: what answers the turn, or (back) what she can be asked back
+  const sayRows = (turn: SpeechStory['turns'][number], i: number, back: boolean) =>
+    turn.branches.flatMap((b, j) =>
+      Boolean(b.back) !== back
+        ? []
+        : b.say.map((line, k) => (
+            <View key={`${j}-${k}`} style={styles.row}>
+              <SpeakButton
+                testID={`speech-prep-say-listen-${i}-${j}-${k}`}
+                accessibilityLabel={sx.listen}
+                onPress={() => hear(line[story.target])}
+                style={styles.speakBtn}
+                iconStyle={styles.speakIcon}
+              />
+              <View style={styles.texts}>
+                <Text testID={`speech-prep-say-${i}-${j}-${k}`} style={[styles.sayLine, { color: colors.text }]}>{line[story.target]}</Text>
+                <Text style={[styles.translation, { color: colors.textMuted }]}>{line[source]}</Text>
+              </View>
+            </View>
+          )),
+    );
   return (
     <GameFrame
       testID="speech-screen"
@@ -67,12 +88,14 @@ export default function SpeechPrep({ story, target, source, onStart, onBack }: P
     >
       <View style={styles.box}>
         {story.turns.map((turn, i) => {
+          // the questions about her after the talk are a surprise: not listed
+          if (turn.recall) return null;
           // only a turn that not every way goes through says which answer leads to it
           const from = ways.every((way) => way.includes(turn.id)) ? null : onlyBranchTo(story, turn.id);
           return (
             <Card key={turn.id} classicStyle={styles.card} boxStyle={styles.brutalCard}>
               <View testID={`speech-prep-turn-${i}`} style={styles.group}>
-                <Text style={[styles.caption, { color: colors.textMuted }]}>{turn.recall ? sx.recallWho : sx.prepAsks(story.speaker)}</Text>
+                <Text style={[styles.caption, { color: colors.textMuted }]}>{sx.prepAsks(story.speaker)}</Text>
                 <View style={styles.row}>
                   <SpeakButton
                     testID={`speech-prep-listen-${i}`}
@@ -92,22 +115,12 @@ export default function SpeechPrep({ story, target, source, onStart, onBack }: P
                   </Text>
                 )}
                 <Text style={[styles.caption, { color: colors.textMuted }]}>{sx.canSay}</Text>
-                {turn.branches.flatMap((b, j) =>
-                  b.say.map((line, k) => (
-                    <View key={`${j}-${k}`} style={styles.row}>
-                      <SpeakButton
-                        testID={`speech-prep-say-listen-${i}-${j}-${k}`}
-                        accessibilityLabel={sx.listen}
-                        onPress={() => hear(line[story.target])}
-                        style={styles.speakBtn}
-                        iconStyle={styles.speakIcon}
-                      />
-                      <View style={styles.texts}>
-                        <Text testID={`speech-prep-say-${i}-${j}-${k}`} style={[styles.sayLine, { color: colors.text }]}>{line[story.target]}</Text>
-                        <Text style={[styles.translation, { color: colors.textMuted }]}>{line[source]}</Text>
-                      </View>
-                    </View>
-                  )),
+                {sayRows(turn, i, false)}
+                {turn.branches.some((b) => b.back) && (
+                  <>
+                    <Text testID={`speech-prep-ask-${i}`} style={[styles.caption, { color: colors.textMuted }]}>{sx.canAsk}</Text>
+                    {sayRows(turn, i, true)}
+                  </>
                 )}
               </View>
             </Card>

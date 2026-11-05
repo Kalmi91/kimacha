@@ -49,7 +49,8 @@ export interface StoryBranch {
   next?: string;
   /**
    * Asking back ("¿Y tú?", "¿Cómo?"): she answers with `reply` (which asks the question again) and the same turn stands. It counts neither
-   * right nor wrong, has no `next`, is kept last in the data (it is judged before the others) and works MAX_BACKS times on a turn.
+   * right nor wrong, has no `next`, is kept last in the data (it fires only when no real branch matches and the whole utterance is its
+   * phrase) and works MAX_BACKS times on a turn.
    */
   back?: boolean;
 }
@@ -179,13 +180,29 @@ export function progressOf(s: SpeechStory, run: Pick<StoryRun, 'path' | 'answers
   return { n: answered + 1, total: answered + longestPath(s, run.path[run.path.length - 1]) };
 }
 
-/** The text of bubble `n` in one language: her reaction to the right answer before it, then the line of the turn. */
-export function bubbleOf(s: SpeechStory, run: Pick<StoryRun, 'path' | 'answers'>, n: number, lang: Lang): string {
+/** Her reaction to the right answer before turn `n` (none for a given-up turn, and none before a question about her: that is the app's). */
+function reactionBefore(s: SpeechStory, run: Pick<StoryRun, 'path' | 'answers'>, n: number): StoryText | undefined {
   const turn = turnById(s, run.path[n]) ?? s.turns[0];
   const before = n > 0 ? run.answers[n - 1] : undefined;
-  // a question about her (recall) is the app's, not hers: no reaction before it
-  const reply = before?.ok && !turn.recall ? turnById(s, run.path[n - 1])?.branches[before.branch]?.reply : undefined;
+  return before?.ok && !turn.recall ? turnById(s, run.path[n - 1])?.branches[before.branch]?.reply : undefined;
+}
+
+/** The text of bubble `n` in one language as the voice reads it: her reaction to the right answer before it, then the line of the turn. */
+export function bubbleOf(s: SpeechStory, run: Pick<StoryRun, 'path' | 'answers'>, n: number, lang: Lang): string {
+  const turn = turnById(s, run.path[n]) ?? s.turns[0];
+  const reply = reactionBefore(s, run, n);
   return reply ? `${reply[lang]} ${turn[lang]}` : turn[lang];
+}
+
+/**
+ * What the screen shows for turn `n`: a turn with a scene shows her reaction as its own bubble first (then the scene, then the line),
+ * so the scene never comes between an answer and her reaction to it; any other turn is one bubble, as `bubbleOf`.
+ */
+export function splitBubble(s: SpeechStory, run: Pick<StoryRun, 'path' | 'answers'>, n: number, lang: Lang): { reply: string | null; line: string } {
+  const turn = turnById(s, run.path[n]) ?? s.turns[0];
+  const reply = reactionBefore(s, run, n);
+  if (reply && turn.scene) return { reply: reply[lang], line: turn[lang] };
+  return { reply: null, line: bubbleOf(s, run, n, lang) };
 }
 
 /** Her last words after the final right answer (a branch with a reply and no next turn), or null: shown as a closing bubble. */
@@ -206,10 +223,15 @@ export function startStory(s: SpeechStory, mode: AnswerMode): StoryRun {
 /** The ask-backs made on the turn on screen. */
 export const backsOn = (run: Pick<StoryRun, 'path' | 'backs'>): number => run.backs.filter((b) => b.at === run.path.length - 1).length;
 
+/** Lower case without accents and punctuation: how an ask-back phrase is compared (typed or spoken, accents never count). */
+const plain = (text: string): string =>
+  text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[¿?¡!.,;:„“”"]/g, ' ').replace(/\s+/g, ' ').trim();
+
 /**
- * What was said, judged against a turn: the ask-back branches first (they are short phrases like "Y tú", and a free slot of another
- * branch would swallow them; `noBack` once the turn has had MAX_BACKS), then the first branch (data order) with a right match gives
- * `branch`; when none matches, `branch` is null and the match is the closest answer over the branches that are no ask-back (its red words).
+ * What was said, judged against a turn: the first real branch (data order) with a right match gives `branch`. An ask-back fires only
+ * when no real branch matches and the whole utterance is its phrase (so "Tengo 30 años, ¿y tú?" is the answer, and "Cómo" or "Qué"
+ * inside a real answer is not an ask-back); its phrases ignore accents also when typed. `noBack` once the turn has had MAX_BACKS.
+ * When nothing matches, `branch` is null and the match is the closest answer over the real branches (its red words).
  */
 export function judgeAnswer(
   turn: StoryTurn,
@@ -217,11 +239,15 @@ export function judgeAnswer(
   options: { lang: 'es'; strictAccents?: boolean; noBack?: boolean },
 ): { branch: number | null; match: SpokenMatch } {
   const { noBack, ...spoken } = options;
-  const order = turn.branches.map((_, i) => i).filter((i) => !noBack || !turn.branches[i].back);
-  order.sort((a, b) => Number(Boolean(turn.branches[b].back)) - Number(Boolean(turn.branches[a].back)) || a - b);
-  for (const i of order) {
+  for (let i = 0; i < turn.branches.length; i++) {
+    if (turn.branches[i].back) continue;
     const match = matchSpoken(said, turn.branches[i].answers, { ...spoken, anyNumber: turn.branches[i].anyNumber });
     if (match.right) return { branch: i, match };
+  }
+  if (!noBack) {
+    const heard = plain(said);
+    const i = turn.branches.findIndex((b) => b.back && b.answers.some((a) => plain(a) === heard));
+    if (i >= 0) return { branch: i, match: matchSpoken(said, turn.branches[i].answers, { ...spoken, strictAccents: false }) };
   }
   const own = turn.branches.filter((b) => !b.back);
   return { branch: null, match: matchSpoken(said, own.flatMap((b) => b.answers), { ...spoken, anyNumber: own.some((b) => b.anyNumber) }) };
@@ -262,17 +288,17 @@ export function setMode(state: StoryRun, mode: AnswerMode): StoryRun {
 
 /** What goes into the resume store. */
 export function savedRun(state: StoryRun): unknown {
-  return { v: 2, ...state };
+  return { v: 3, ...state };
 }
 
 const isCount = (x: unknown, max = Infinity): x is number => Number.isInteger(x) && (x as number) >= 0 && (x as number) <= max;
 
-/** A saved run back, or null when it is broken (also a run saved before the branches, v 1), is of a story that is gone, or does not fit the story's graph any more. */
+/** A saved run back, or null when it is broken (also a run saved by an older version, v 1 or 2), is of a story that is gone, or does not fit the story's graph any more. */
 export function parseRun(raw: unknown, stories: readonly SpeechStory[]): StoryRun | null {
   if (typeof raw !== 'object' || raw === null) return null;
   const r = raw as Record<string, unknown>;
   const s = stories.find((x) => x.id === r.id);
-  if (!s || r.v !== 2 || (r.mode !== 'voice' && r.mode !== 'type') || typeof r.done !== 'boolean') return null;
+  if (!s || r.v !== 3 || (r.mode !== 'voice' && r.mode !== 'type') || typeof r.done !== 'boolean') return null;
   if (!isCount(r.tries) || !Array.isArray(r.path) || !Array.isArray(r.answers)) return null;
   const path = r.path as unknown[];
   if (path.length === 0 || path[0] !== s.turns[0].id || !path.every((id) => typeof id === 'string' && turnById(s, id))) return null;
@@ -315,13 +341,13 @@ export interface StoryProgress {
 }
 
 /**
- * The row data after a run finished. `best` and `total` are a pair from one run: they are replaced only by a run with more points
- * (a story has paths of different length, so a best of one run must not sit beside the total of another). `previous` = the data of
- * the row so far (anything broken counts as none).
+ * The row data after a run finished. `best` and `total` are a pair from one run (shown as that run's x/y): they are replaced only by a
+ * run with a higher share of right answers, never by one with more points on a longer way (a story has paths of different length, and
+ * a row saved before the stories grew must not be unbeatable). `previous` = the data of the row so far (anything broken counts as none).
  */
 export function finishedProgress(previous: unknown, run: Pick<StoryRun, 'firstTry'>, total: number, at: string): StoryProgress {
   const was = previous as Partial<StoryProgress> | null;
-  if (typeof was === 'object' && was !== null && isCount(was.best) && isCount(was.total) && run.firstTry <= was.best) {
+  if (typeof was === 'object' && was !== null && isCount(was.best) && isCount(was.total) && was.total > 0 && run.firstTry * was.total <= was.best * total) {
     return { best: was.best, total: was.total, at };
   }
   return { best: run.firstTry, total, at };

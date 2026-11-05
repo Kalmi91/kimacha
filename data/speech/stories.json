@@ -162,7 +162,7 @@
           },
           {
             "answers": ["Vengo de *", "De *"],
-            "say": [{ "es": "Vengo de ___.", "en": "I come from ___.", "hu": "Innen jöttem: ___.", "de": "Ich komme aus ___." }],
+            "say": [{ "es": "Vengo de ___.", "en": "I come from ___.", "hu": "Innen jövök: ___.", "de": "Ich komme aus ___." }],
             "reply": { "es": "¡Qué interesante!", "en": "How interesting!", "hu": "Milyen érdekes!", "de": "Wie interessant!" },
             "next": "age"
           },
@@ -254,14 +254,14 @@
       },
       {
         "id": "family2",
-        "es": "¿Y tus hermanos viven aquí, en la ciudad?",
-        "en": "And do your siblings live here, in the city?",
-        "hu": "És a testvéreid itt élnek, a városban?",
-        "de": "Und leben deine Geschwister hier, in der Stadt?",
+        "es": "¿Y viven aquí, en la ciudad?",
+        "en": "And do they live here, in the city?",
+        "hu": "És itt élnek, a városban?",
+        "de": "Und wohnen sie hier, in der Stadt?",
         "chain": "family",
         "branches": [
           {
-            "answers": ["Sí *", "Sí", "Viven aquí", "Vive aquí"],
+            "answers": ["Sí", "Viven aquí", "Sí, viven aquí"],
             "say": [{ "es": "Sí, viven aquí.", "en": "Yes, they live here.", "hu": "Igen, itt élnek.", "de": "Ja, sie wohnen hier." }],
             "reply": { "es": "¡Qué bueno, están cerca!", "en": "How nice, they are close!", "hu": "De jó, közel vannak!", "de": "Wie schön, sie sind in der Nähe!" },
             "next": "work"
@@ -296,7 +296,7 @@
           },
           {
             "answers": ["Soy estudiante", "Estudio *"],
-            "say": [{ "es": "Soy estudiante.", "en": "I'm a student.", "hu": "Diák vagyok.", "de": "Ich studiere." }],
+            "say": [{ "es": "Soy estudiante.", "en": "I'm a student.", "hu": "Diák vagyok.", "de": "Ich bin Student/in." }],
             "reply": { "es": "¡Qué bien!", "en": "Great!", "hu": "Nagyszerű!", "de": "Das ist toll!" },
             "next": "speak"
           },
@@ -371,7 +371,7 @@
         "chain": "work",
         "branches": [
           {
-            "answers": ["Sí *", "Sí", "Está cerca *", "Está cerca", "Cerca"],
+            "answers": ["Sí", "Sí, está cerca", "Está cerca", "Cerca"],
             "say": [{ "es": "Sí, está cerca.", "en": "Yes, it's close.", "hu": "Igen, közel van.", "de": "Ja, es ist in der Nähe." }],
             "reply": { "es": "¡Qué bueno!", "en": "How nice!", "hu": "De jó!", "de": "Wie schön!" },
             "next": "speak"
@@ -526,7 +526,7 @@
             "next": "recall1"
           },
           {
-            "answers": ["Adiós *", "Adiós", "Igualmente"],
+            "answers": ["Adiós *", "Adiós"],
             "say": [{ "es": "Adiós.", "en": "Bye.", "hu": "Viszlát.", "de": "Tschüss." }],
             "next": "recall1"
           },
@@ -784,7 +784,8 @@
         "es": "mi, tu",
         "forms": [
           "mi",
-          "tu"
+          "tu",
+          "mis"
         ],
         "en": "my, your",
         "hu": "az én ...-m, a te ...-d",
@@ -916,7 +917,8 @@
         "es": "vivir",
         "forms": [
           "vivo",
-          "vive"
+          "vive",
+          "viven"
         ],
         "en": "to live",
         "hu": "lakni, élni",
@@ -1203,6 +1205,51 @@
         "de": "verstehen"
       },
       {
+        "es": "el nombre",
+        "forms": [
+          "nombre"
+        ],
+        "en": "name",
+        "hu": "név",
+        "de": "Name"
+      },
+      {
+        "es": "su",
+        "forms": [
+          "su"
+        ],
+        "en": "his, her",
+        "hu": "az ő ...-ja, ...-je",
+        "de": "sein, ihr"
+      },
+      {
+        "es": "los papás",
+        "forms": [
+          "papás"
+        ],
+        "en": "parents",
+        "hu": "szülők",
+        "de": "Eltern"
+      },
+      {
+        "es": "pronto",
+        "forms": [
+          "pronto"
+        ],
+        "en": "soon",
+        "hu": "hamarosan",
+        "de": "bald"
+      },
+      {
+        "es": "solo",
+        "forms": [
+          "solo"
+        ],
+        "en": "only, just",
+        "hu": "csak",
+        "de": "nur"
+      },
+      {
         "es": "grande",
         "forms": [
           "grande"
@@ -1475,10 +1522,10 @@
             ],
             "say": [
               {
-                "es": "Sí, tengo un hermano.",
-                "en": "Yes, I have a brother.",
-                "hu": "Igen, van egy fiútestvérem.",
-                "de": "Ja, ich habe einen Bruder."
+                "es": "Sí, tengo hermanos.",
+                "en": "Yes, I have siblings.",
+                "hu": "Igen, vannak testvéreim.",
+                "de": "Ja, ich habe Geschwister."
               }
             ],
             "reply": {
@@ -1519,10 +1566,10 @@
             ],
             "say": [
               {
-                "es": "Tengo dos hermanas.",
-                "en": "I have two sisters.",
-                "hu": "Van két lánytestvérem.",
-                "de": "Ich habe zwei Schwestern."
+                "es": "Tengo hermanos.",
+                "en": "I have siblings.",
+                "hu": "Vannak testvéreim.",
+                "de": "Ich habe Geschwister."
               }
             ],
             "reply": {
@@ -1568,12 +1615,12 @@
               }
             ],
             "reply": {
-              "es": "Ah, uno. ¡Qué bien!",
-              "en": "Oh, one. Great!",
-              "hu": "Á, egy. De jó!",
-              "de": "Ah, einen. Wie schön!"
+              "es": "¡Qué bien, solo uno!",
+              "en": "Great, just one!",
+              "hu": "De jó, csak egy!",
+              "de": "Wie schön, nur eines!"
             },
-            "next": "sib3"
+            "next": "sib3s"
           },
           {
             "answers": [
@@ -1632,16 +1679,35 @@
         ]
       },
       {
-        "id": "sib3",
-        "es": "¿Y cómo se llaman?",
-        "en": "And what are their names?",
-        "hu": "És hogy hívják őket?",
-        "de": "Und wie heißen sie?",
-        "chain": "siblings",
+        "id": "sib3s",
+        "es": "¿Y cómo se llama?",
+        "en": "And what is the name?",
+        "hu": "És hogy hívják?",
+        "de": "Und wie heißt er oder sie?",
+        "chain": "sibling1",
         "branches": [
           {
             "answers": [
-              "Se llama *",
+              "Se llama *"
+            ],
+            "say": [
+              {
+                "es": "Se llama ___.",
+                "en": "He or she is called ___.",
+                "hu": "___ a neve.",
+                "de": "Er oder sie heißt ___."
+              }
+            ],
+            "reply": {
+              "es": "¡Qué bonito!",
+              "en": "How lovely!",
+              "hu": "Milyen szép!",
+              "de": "Wie schön!"
+            },
+            "next": "sib4s"
+          },
+          {
+            "answers": [
               "Mi hermano se llama *",
               "Mi hermana se llama *"
             ],
@@ -1653,10 +1719,10 @@
                 "de": "Mein Bruder heißt ___."
               },
               {
-                "es": "Se llama ___.",
-                "en": "He is called ___.",
-                "hu": "___ a neve.",
-                "de": "Er heißt ___."
+                "es": "Mi hermana se llama ___.",
+                "en": "My sister is called ___.",
+                "hu": "A lánytestvéremet ___ hívják.",
+                "de": "Meine Schwester heißt ___."
               }
             ],
             "reply": {
@@ -1665,8 +1731,111 @@
               "hu": "Milyen szép!",
               "de": "Wie schön!"
             },
-            "next": "sib4"
+            "next": "sib4s"
           },
+          {
+            "answers": [
+              "Su nombre es *"
+            ],
+            "say": [
+              {
+                "es": "Su nombre es ___.",
+                "en": "The name is ___.",
+                "hu": "A neve ___.",
+                "de": "Der Name ist ___."
+              }
+            ],
+            "reply": {
+              "es": "¡Qué bonito!",
+              "en": "How lovely!",
+              "hu": "Milyen szép!",
+              "de": "Wie schön!"
+            },
+            "next": "sib4s"
+          }
+        ]
+      },
+      {
+        "id": "sib4s",
+        "es": "¿Y cuántos años tiene?",
+        "en": "And how old is he or she?",
+        "hu": "És hány éves?",
+        "de": "Und wie alt ist er oder sie?",
+        "chain": "sibling1",
+        "branches": [
+          {
+            "answers": [
+              "Tiene * años"
+            ],
+            "anyNumber": true,
+            "say": [
+              {
+                "es": "Tiene ___ años.",
+                "en": "He or she is ___ years old.",
+                "hu": "___ éves.",
+                "de": "Er oder sie ist ___ Jahre alt."
+              }
+            ],
+            "reply": {
+              "es": "Ah, muy bien.",
+              "en": "Oh, very good.",
+              "hu": "Á, nagyon jó.",
+              "de": "Ah, sehr gut."
+            },
+            "next": "home"
+          },
+          {
+            "answers": [
+              "* años"
+            ],
+            "anyNumber": true,
+            "say": [
+              {
+                "es": "___ años.",
+                "en": "___ years.",
+                "hu": "___ év.",
+                "de": "___ Jahre."
+              }
+            ],
+            "reply": {
+              "es": "Ah, muy bien.",
+              "en": "Oh, very good.",
+              "hu": "Á, nagyon jó.",
+              "de": "Ah, sehr gut."
+            },
+            "next": "home"
+          },
+          {
+            "answers": [
+              "No sé",
+              "No sé cuántos años tiene"
+            ],
+            "say": [
+              {
+                "es": "No sé.",
+                "en": "I don't know.",
+                "hu": "Nem tudom.",
+                "de": "Ich weiß es nicht."
+              }
+            ],
+            "reply": {
+              "es": "No pasa nada.",
+              "en": "It doesn't matter.",
+              "hu": "Nem baj.",
+              "de": "Das macht nichts."
+            },
+            "next": "home"
+          }
+        ]
+      },
+      {
+        "id": "sib3",
+        "es": "¿Y cómo se llaman?",
+        "en": "And what are their names?",
+        "hu": "És hogy hívják őket?",
+        "de": "Und wie heißen sie?",
+        "chain": "siblings",
+        "branches": [
           {
             "answers": [
               "Se llaman *",
@@ -1708,6 +1877,27 @@
               "de": "Wie schön!"
             },
             "next": "sib4"
+          },
+          {
+            "answers": [
+              "Mis hermanas se llaman *",
+              "Mis hermanas son *"
+            ],
+            "say": [
+              {
+                "es": "Mis hermanas se llaman ___ y ___.",
+                "en": "My sisters are called ___ and ___.",
+                "hu": "A lánytestvéreimet ___ és ___ hívják.",
+                "de": "Meine Schwestern heißen ___ und ___."
+              }
+            ],
+            "reply": {
+              "es": "¡Qué bonito!",
+              "en": "How lovely!",
+              "hu": "Milyen szép!",
+              "de": "Wie schön!"
+            },
+            "next": "sib4"
           }
         ]
       },
@@ -1721,15 +1911,15 @@
         "branches": [
           {
             "answers": [
-              "Tiene * años"
+              "Tienen * años"
             ],
             "anyNumber": true,
             "say": [
               {
-                "es": "Tiene ___ años.",
-                "en": "He is ___ years old.",
-                "hu": "___ éves.",
-                "de": "Er ist ___ Jahre alt."
+                "es": "Tienen ___ años.",
+                "en": "They are ___ years old.",
+                "hu": "___ évesek.",
+                "de": "Sie sind ___ Jahre alt."
               }
             ],
             "reply": {
@@ -1742,7 +1932,6 @@
           },
           {
             "answers": [
-              "Tienen * años",
               "Tienen * y * años"
             ],
             "anyNumber": true,
@@ -1799,10 +1988,10 @@
             ],
             "say": [
               {
-                "es": "Sí, tengo un amigo.",
-                "en": "Yes, I have a friend.",
-                "hu": "Igen, van egy barátom.",
-                "de": "Ja, ich habe einen Freund."
+                "es": "Sí, tengo amigos aquí.",
+                "en": "Yes, I have friends here.",
+                "hu": "Igen, vannak barátaim itt.",
+                "de": "Ja, ich habe hier Freunde."
               }
             ],
             "reply": {
@@ -1842,10 +2031,10 @@
             ],
             "say": [
               {
-                "es": "Tengo dos amigos.",
-                "en": "I have two friends.",
-                "hu": "Két barátom van.",
-                "de": "Ich habe zwei Freunde."
+                "es": "Tengo amigos aquí.",
+                "en": "I have friends here.",
+                "hu": "Vannak barátaim itt.",
+                "de": "Ich habe hier Freunde."
               }
             ],
             "reply": {
@@ -1941,10 +2130,10 @@
       },
       {
         "id": "home",
-        "es": "Mi familia vive en Puebla. ¿Dónde vive tu familia?",
-        "en": "My family lives in Puebla. Where does your family live?",
-        "hu": "A családom Pueblában él. A te családod hol él?",
-        "de": "Meine Familie wohnt in Puebla. Wo wohnt deine Familie?",
+        "es": "Mis papás viven en Puebla. ¿Dónde vive tu familia?",
+        "en": "My parents live in Puebla. Where does your family live?",
+        "hu": "A szüleim Pueblában élnek. Hol él a te családod?",
+        "de": "Meine Eltern wohnen in Puebla. Wo wohnt deine Familie?",
         "branches": [
           {
             "answers": [
@@ -2048,10 +2237,10 @@
       },
       {
         "id": "food",
-        "es": "Los domingos comemos todos juntos. ¿Te gusta cocinar?",
-        "en": "On Sundays we all eat together. Do you like to cook?",
-        "hu": "Vasárnaponként mind együtt ebédelünk. Szeretsz főzni?",
-        "de": "Sonntags essen wir alle zusammen. Kochst du gern?",
+        "es": "Los domingos comemos en familia. ¿Te gusta cocinar?",
+        "en": "On Sundays we eat as a family. Do you like cooking?",
+        "hu": "Vasárnaponként családdal ebédelünk. Szeretsz főzni?",
+        "de": "Sonntags essen wir als Familie. Kochst du gern?",
         "branches": [
           {
             "answers": [
@@ -2078,8 +2267,7 @@
             "answers": [
               "No *",
               "No",
-              "Más o menos",
-              "Un poco"
+              "Más o menos"
             ],
             "say": [
               {
@@ -2106,7 +2294,8 @@
           {
             "answers": [
               "Me gusta *",
-              "Mucho"
+              "Mucho",
+              "Un poco"
             ],
             "say": [
               {
@@ -2230,10 +2419,10 @@
       },
       {
         "id": "invite",
-        "es": "Mañana hay comida en mi casa. Luis y Ana vienen de Puebla. ¿Puedes venir?",
-        "en": "Tomorrow there is lunch at my house. Luis and Ana are coming from Puebla. Can you come?",
-        "hu": "Holnap ebéd lesz nálam. Luis és Ana Pueblából jönnek. El tudsz jönni?",
-        "de": "Morgen gibt es Mittagessen bei mir. Luis und Ana kommen aus Puebla. Kannst du kommen?",
+        "es": "Mañana hay comida en mi casa. Mis dos hijos, Luis y Ana, vienen de Puebla. ¿Puedes venir?",
+        "en": "Tomorrow there is lunch at my house. My two children, Luis and Ana, are coming from Puebla. Can you come?",
+        "hu": "Holnap ebéd lesz nálam. A két gyerekem, Luis és Ana, Pueblából jönnek. El tudsz jönni?",
+        "de": "Morgen gibt es Mittagessen bei mir. Meine zwei Kinder, Luis und Ana, kommen aus Puebla. Kannst du kommen?",
         "branches": [
           {
             "answers": [
@@ -2314,10 +2503,10 @@
       },
       {
         "id": "bye",
-        "es": "Bueno, tengo que cocinar. ¡Hasta mañana!",
-        "en": "Well, I have to cook. See you tomorrow!",
-        "hu": "Na, főznöm kell. Holnap találkozunk!",
-        "de": "Also, ich muss kochen. Bis morgen!",
+        "es": "Bueno, tengo que cocinar. ¡Hasta pronto!",
+        "en": "Well, I have to cook. See you soon!",
+        "hu": "Na, főznöm kell. Hamarosan találkozunk!",
+        "de": "Also, ich muss kochen. Bis bald!",
         "scene": {
           "es": "Rosa mira el reloj de la cocina.",
           "en": "Rosa looks at the kitchen clock.",
@@ -2332,25 +2521,25 @@
             ],
             "say": [
               {
-                "es": "Gracias, hasta mañana.",
-                "en": "Thanks, see you tomorrow.",
-                "hu": "Köszönöm, holnap találkozunk.",
-                "de": "Danke, bis morgen."
+                "es": "Gracias, hasta pronto.",
+                "en": "Thanks, see you soon.",
+                "hu": "Köszönöm, hamarosan találkozunk.",
+                "de": "Danke, bis bald."
               }
             ],
             "next": "recall1"
           },
           {
             "answers": [
-              "Hasta mañana",
+              "Hasta pronto",
               "Nos vemos"
             ],
             "say": [
               {
-                "es": "Hasta mañana.",
-                "en": "See you tomorrow.",
-                "hu": "Holnap találkozunk.",
-                "de": "Bis morgen."
+                "es": "Hasta pronto.",
+                "en": "See you soon.",
+                "hu": "Hamarosan találkozunk.",
+                "de": "Bis bald."
               },
               {
                 "es": "Nos vemos.",
@@ -2564,7 +2753,8 @@
           "está",
           "estoy",
           "estás",
-          "están"
+          "están",
+          "estamos"
         ],
         "en": "to be (where, how)",
         "hu": "lenni (hol, hogyan)",
@@ -2795,7 +2985,8 @@
         "es": "bueno",
         "forms": [
           "buena",
-          "buenas"
+          "buenas",
+          "bueno"
         ],
         "en": "good",
         "hu": "jó",
@@ -2824,7 +3015,8 @@
         "es": "tener",
         "forms": [
           "tienes",
-          "tengo"
+          "tengo",
+          "tiene"
         ],
         "en": "to have",
         "hu": "van (valakinek)",
@@ -2834,7 +3026,8 @@
         "es": "querer",
         "forms": [
           "quiero",
-          "quieres"
+          "quieres",
+          "quiere"
         ],
         "en": "to want",
         "hu": "akarni, szeretne",
@@ -3435,10 +3628,38 @@
         "de": "Tee"
       },
       {
+        "es": "usted",
+        "forms": [
+          "usted"
+        ],
+        "en": "you (formal)",
+        "hu": "Ön",
+        "de": "Sie"
+      },
+      {
+        "es": "servir",
+        "forms": [
+          "servirle"
+        ],
+        "en": "to serve (servirle = to serve you)",
+        "hu": "szolgálni",
+        "de": "dienen"
+      },
+      {
+        "es": "el débito",
+        "forms": [
+          "débito"
+        ],
+        "en": "debit",
+        "hu": "bankkártya",
+        "de": "Debit"
+      },
+      {
         "es": "pagar",
         "forms": [
           "pagas",
-          "pago"
+          "pago",
+          "paga"
         ],
         "en": "to pay",
         "hu": "fizetni",
@@ -3580,10 +3801,10 @@
     "turns": [
       {
         "id": "table",
-        "es": "¡Buenas tardes! Soy Miguel, tu mesero. ¿Cuántas personas son?",
+        "es": "¡Buenas tardes! Soy Miguel, su mesero. ¿Cuántas personas son?",
         "en": "Good afternoon! I'm Miguel, your waiter. How many people are you?",
-        "hu": "Jó napot! Miguel vagyok, a pincéred. Hányan vagytok?",
-        "de": "Guten Tag! Ich bin Miguel, dein Kellner. Wie viele Personen seid ihr?",
+        "hu": "Jó napot! Miguel vagyok, az Ön pincére. Hányan vannak?",
+        "de": "Guten Tag! Ich bin Miguel, Ihr Kellner. Wie viele Personen sind Sie?",
         "branches": [
           {
             "answers": [
@@ -3609,10 +3830,10 @@
               }
             ],
             "reply": {
-              "es": "Muy bien, aquí tienes una mesa.",
-              "en": "Very well, here's a table.",
-              "hu": "Rendben, itt egy asztal.",
-              "de": "Sehr gut, hier ist ein Tisch."
+              "es": "Muy bien, aquí tiene una mesa.",
+              "en": "Very good, here is a table for you.",
+              "hu": "Nagyon jó, parancsoljon egy asztalt.",
+              "de": "Sehr gut, hier ist ein Tisch für Sie."
             },
             "next": "visit"
           },
@@ -3667,10 +3888,10 @@
       },
       {
         "id": "visit",
-        "es": "Aquí está tu mesa. ¿Eres de aquí o estás de vacaciones?",
+        "es": "Aquí está su mesa. ¿Es de aquí o está de vacaciones?",
         "en": "Here is your table. Are you from here or on vacation?",
-        "hu": "Itt van az asztalod. Idevalósi vagy, vagy nyaralsz?",
-        "de": "Hier ist dein Tisch. Bist du von hier oder im Urlaub?",
+        "hu": "Itt van az asztala. Idevalósi, vagy nyaral?",
+        "de": "Hier ist Ihr Tisch. Sind Sie von hier oder im Urlaub?",
         "branches": [
           {
             "answers": [
@@ -3707,10 +3928,10 @@
               }
             ],
             "reply": {
-              "es": "¡Bienvenido a México!",
-              "en": "Welcome to Mexico!",
-              "hu": "Üdv Mexikóban!",
-              "de": "Willkommen in Mexiko!"
+              "es": "¡Qué bueno que está en México!",
+              "en": "How nice that you are in Mexico!",
+              "hu": "De jó, hogy Mexikóban van!",
+              "de": "Wie schön, dass Sie in Mexiko sind!"
             },
             "next": "menu"
           },
@@ -3740,10 +3961,10 @@
       },
       {
         "id": "menu",
-        "es": "Hoy hay tacos, sopa y pollo. Mi favorito es el pollo. ¿Qué quieres comer?",
+        "es": "Hoy hay tacos, sopa y pollo. Mi favorito es el pollo. ¿Qué quiere comer?",
         "en": "Today there are tacos, soup and chicken. My favorite is the chicken. What do you want to eat?",
-        "hu": "Ma van taco, leves és csirke. A csirke a kedvencem. Mit szeretnél enni?",
-        "de": "Heute gibt es Tacos, Suppe und Hähnchen. Mein Lieblingsessen ist das Hähnchen. Was möchtest du essen?",
+        "hu": "Ma van taco, leves és csirke. A csirke a kedvencem. Mit szeretne enni?",
+        "de": "Heute gibt es Tacos, Suppe und Hähnchen. Mein Lieblingsessen ist das Hähnchen. Was möchten Sie essen?",
         "branches": [
           {
             "answers": [
@@ -3838,9 +4059,9 @@
           },
           {
             "answers": [
-              "Qué hay",
               "Qué me recomienda",
-              "Qué recomienda"
+              "Qué recomienda",
+              "Cuál es el favorito"
             ],
             "say": [
               {
@@ -3848,19 +4069,13 @@
                 "en": "What do you recommend?",
                 "hu": "Mit ajánl?",
                 "de": "Was empfehlen Sie?"
-              },
-              {
-                "es": "¿Qué hay?",
-                "en": "What is there?",
-                "hu": "Mi van?",
-                "de": "Was gibt es?"
               }
             ],
             "reply": {
-              "es": "Yo recomiendo el pollo, pero los tacos y la sopa también están muy ricos. ¿Qué quieres comer?",
+              "es": "Yo recomiendo el pollo, pero los tacos y la sopa también están muy ricos. ¿Qué quiere comer?",
               "en": "I recommend the chicken, but the tacos and the soup are very good too. What do you want to eat?",
-              "hu": "Én a csirkét ajánlom, de a taco és a leves is nagyon finom. Mit szeretnél enni?",
-              "de": "Ich empfehle das Hähnchen, aber die Tacos und die Suppe sind auch sehr lecker. Was möchtest du essen?"
+              "hu": "Én a csirkét ajánlom, de a taco és a leves is nagyon finom. Mit szeretne enni?",
+              "de": "Ich empfehle das Hähnchen, aber die Tacos und die Suppe sind auch sehr lecker. Was möchten Sie essen?"
             },
             "back": true
           }
@@ -3874,10 +4089,10 @@
       },
       {
         "id": "salsa",
-        "es": "Los tacos van con salsa. ¿Quieres salsa verde o roja?",
+        "es": "Los tacos van con salsa. ¿Quiere salsa verde o roja?",
         "en": "Tacos come with salsa. Do you want green or red salsa?",
-        "hu": "A taco salsával jár. Zöld vagy piros salsát kérsz?",
-        "de": "Tacos gibt es mit Salsa. Möchtest du grüne oder rote Salsa?",
+        "hu": "A taco salsával jár. Zöld vagy piros salsát szeretne?",
+        "de": "Tacos gibt es mit Salsa. Möchten Sie grüne oder rote Salsa?",
         "branches": [
           {
             "answers": [
@@ -3957,10 +4172,10 @@
       },
       {
         "id": "salsa2",
-        "es": "¿Quieres cebolla y cilantro?",
+        "es": "¿Quiere cebolla y cilantro?",
         "en": "Do you want onion and cilantro?",
-        "hu": "Kérsz hagymát és koriandert?",
-        "de": "Möchtest du Zwiebel und Koriander?",
+        "hu": "Kér hagymát és koriandert?",
+        "de": "Möchten Sie Zwiebel und Koriander?",
         "chain": "taco",
         "branches": [
           {
@@ -4058,10 +4273,10 @@
               }
             ],
             "reply": {
-              "es": "Bien, agua para ti.",
-              "en": "Good, water for you.",
-              "hu": "Jó, víz neked.",
-              "de": "Gut, Wasser für dich."
+              "es": "Bien, agua para usted.",
+              "en": "Fine, water for you.",
+              "hu": "Rendben, víz Önnek.",
+              "de": "Gut, Wasser für Sie."
             },
             "next": "leave"
           },
@@ -4150,10 +4365,10 @@
               }
             ],
             "reply": {
-              "es": "Hay agua, refresco y jugo. ¿Qué quieres tomar?",
+              "es": "Hay agua, refresco y jugo. ¿Qué quiere tomar?",
               "en": "There is water, soda and juice. What do you want to drink?",
-              "hu": "Van víz, üdítő és gyümölcslé. Mit szeretnél inni?",
-              "de": "Es gibt Wasser, Limonade und Saft. Was möchtest du trinken?"
+              "hu": "Van víz, üdítő és gyümölcslé. Mit szeretne inni?",
+              "de": "Es gibt Wasser, Limonade und Saft. Was möchten Sie trinken?"
             },
             "back": true
           }
@@ -4219,10 +4434,10 @@
       },
       {
         "id": "food",
-        "es": "Aquí tienes tu comida. Mi favorito es el pollo, pero todo está rico. ¿Todo está bien?",
+        "es": "Aquí tiene su comida. Mi favorito es el pollo, pero todo está rico. ¿Todo está bien?",
         "en": "Here is your food. My favorite is the chicken, but everything is good. Is everything fine?",
-        "hu": "Itt az ételed. A csirke a kedvencem, de minden finom. Minden rendben van?",
-        "de": "Hier ist dein Essen. Mein Lieblingsessen ist das Hähnchen, aber alles ist lecker. Ist alles in Ordnung?",
+        "hu": "Parancsoljon, itt az étele. A csirke a kedvencem, de minden finom. Minden rendben van?",
+        "de": "Hier ist Ihr Essen. Mein Lieblingsessen ist das Hähnchen, aber alles ist lecker. Ist alles in Ordnung?",
         "branches": [
           {
             "answers": [
@@ -4261,10 +4476,10 @@
               }
             ],
             "reply": {
-              "es": "Ay, lo siento. Ahorita lo arreglo.",
-              "en": "Oh, sorry. I'll fix it right away.",
-              "hu": "Jaj, sajnálom. Mindjárt megoldom.",
-              "de": "Oh, tut mir leid. Ich kläre das gleich."
+              "es": "Ay, lo siento. Ahorita se lo traigo.",
+              "en": "Oh, I'm sorry. I'll bring it to you right away.",
+              "hu": "Jaj, sajnálom. Mindjárt hozom.",
+              "de": "Oh, tut mir leid. Ich bringe es Ihnen gleich."
             },
             "next": "fix"
           },
@@ -4450,10 +4665,10 @@
       },
       {
         "id": "bill",
-        "es": "¿Algo más? ¿Quieres un postre o la cuenta?",
-        "en": "Anything else? Do you want dessert or the check?",
-        "hu": "Még valamit? Desszertet kérsz, vagy a számlát?",
-        "de": "Noch etwas? Möchtest du einen Nachtisch oder die Rechnung?",
+        "es": "¿Algo más? ¿Quiere un postre o la cuenta?",
+        "en": "Anything else? Do you want a dessert or the bill?",
+        "hu": "Még valamit? Desszertet kér, vagy a számlát?",
+        "de": "Noch etwas? Möchten Sie eine Nachspeise oder die Rechnung?",
         "branches": [
           {
             "answers": [
@@ -4532,10 +4747,10 @@
       },
       {
         "id": "dessert",
-        "es": "Muy bien. ¿Qué postre quieres?",
+        "es": "Muy bien. ¿Qué postre quiere?",
         "en": "Very good. What dessert do you want?",
-        "hu": "Nagyon jó. Milyen desszertet kérsz?",
-        "de": "Sehr gut. Welche Nachspeise möchtest du?",
+        "hu": "Nagyon jó. Milyen desszertet kér?",
+        "de": "Sehr gut. Welche Nachspeise möchten Sie?",
         "chain": "dessert",
         "branches": [
           {
@@ -4617,10 +4832,10 @@
               }
             ],
             "reply": {
-              "es": "Hay flan y helado. ¿Qué postre quieres?",
+              "es": "Hay flan y helado. ¿Qué postre quiere?",
               "en": "There is flan and ice cream. What dessert do you want?",
-              "hu": "Van flan és fagylalt. Milyen desszertet kérsz?",
-              "de": "Es gibt Flan und Eis. Welche Nachspeise möchtest du?"
+              "hu": "Van flan és fagylalt. Milyen desszertet kér?",
+              "de": "Es gibt Flan und Eis. Welche Nachspeise möchten Sie?"
             },
             "back": true
           }
@@ -4628,10 +4843,10 @@
       },
       {
         "id": "dessert2",
-        "es": "¿Quieres un café también?",
+        "es": "¿Quiere un café también?",
         "en": "Do you want a coffee too?",
-        "hu": "Kérsz kávét is?",
-        "de": "Möchtest du auch einen Kaffee?",
+        "hu": "Kér kávét is?",
+        "de": "Möchten Sie auch einen Kaffee?",
         "chain": "dessert",
         "branches": [
           {
@@ -4705,10 +4920,10 @@
       },
       {
         "id": "pay",
-        "es": "Aquí está la cuenta. ¿Pagas en efectivo o con tarjeta?",
+        "es": "Aquí está la cuenta. ¿Paga en efectivo o con tarjeta?",
         "en": "Here is the bill. Do you pay in cash or by card?",
-        "hu": "Itt a számla. Készpénzzel vagy kártyával fizetsz?",
-        "de": "Hier ist die Rechnung. Zahlst du bar oder mit Karte?",
+        "hu": "Itt a számla. Készpénzzel vagy kártyával fizet?",
+        "de": "Hier ist die Rechnung. Zahlen Sie bar oder mit Karte?",
         "scene": {
           "es": "Miguel trae la cuenta en un platito.",
           "en": "Miguel brings the bill on a small plate.",
@@ -4763,24 +4978,25 @@
           },
           {
             "answers": [
-              "Pesos",
-              "Con pesos",
-              "Pago con pesos",
-              "Tengo pesos"
+              "Débito",
+              "Con débito",
+              "Con tarjeta de débito",
+              "Crédito",
+              "Con tarjeta de crédito"
             ],
             "say": [
               {
-                "es": "Pago con pesos.",
-                "en": "I pay with pesos.",
-                "hu": "Pesóval fizetek.",
-                "de": "Ich zahle mit Pesos."
+                "es": "Pago con tarjeta de débito.",
+                "en": "I pay with a debit card.",
+                "hu": "Bankkártyával fizetek.",
+                "de": "Ich zahle mit Debitkarte."
               }
             ],
             "reply": {
-              "es": "Perfecto.",
-              "en": "Perfect.",
-              "hu": "Tökéletes.",
-              "de": "Perfekt."
+              "es": "Perfecto, con tarjeta.",
+              "en": "Perfect, by card.",
+              "hu": "Tökéletes, kártyával.",
+              "de": "Perfekt, mit Karte."
             },
             "next": "bye"
           },
@@ -4799,10 +5015,10 @@
               }
             ],
             "reply": {
-              "es": "Son cien pesos. ¿Pagas en efectivo o con tarjeta?",
+              "es": "Son cien pesos. ¿Paga en efectivo o con tarjeta?",
               "en": "It is one hundred pesos. Do you pay in cash or by card?",
-              "hu": "Száz peso. Készpénzzel vagy kártyával fizetsz?",
-              "de": "Es sind hundert Pesos. Zahlst du bar oder mit Karte?"
+              "hu": "Száz peso. Készpénzzel vagy kártyával fizet?",
+              "de": "Es sind hundert Pesos. Zahlen Sie bar oder mit Karte?"
             },
             "back": true
           }
@@ -4810,10 +5026,10 @@
       },
       {
         "id": "bye",
-        "es": "Gracias por venir. Me llamo Miguel, aquí estoy para ti. Ahora tengo que ir a la cocina. ¡Hasta luego!",
-        "en": "Thanks for coming. My name is Miguel, I am here for you. Now I have to go to the kitchen. See you later!",
-        "hu": "Köszönöm, hogy eljöttél. Miguel a nevem, itt vagyok neked. Most vissza kell mennem a konyhába. Viszlát!",
-        "de": "Danke fürs Kommen. Ich heiße Miguel, ich bin für dich da. Jetzt muss ich in die Küche gehen. Bis später!",
+        "es": "Gracias por venir. Me llamo Miguel, aquí estamos para servirle. Ahora tengo que ir a la cocina. ¡Hasta luego!",
+        "en": "Thanks for coming. My name is Miguel, we are here to serve you. Now I have to go to the kitchen. See you later!",
+        "hu": "Köszönjük, hogy eljött. Miguel a nevem, szolgálatára állunk. Most vissza kell mennem a konyhába. Viszlát!",
+        "de": "Danke für Ihren Besuch. Ich heiße Miguel, wir sind für Sie da. Jetzt muss ich in die Küche gehen. Bis später!",
         "branches": [
           {
             "answers": [
@@ -4824,7 +5040,7 @@
               {
                 "es": "Gracias por todo.",
                 "en": "Thanks for everything.",
-                "hu": "Köszönök mindent.",
+                "hu": "Köszönöm szépen.",
                 "de": "Danke für alles."
               }
             ],
@@ -4878,10 +5094,10 @@
         "hu": "Hogy hívják a pincért?",
         "de": "Wie heißt der Kellner?",
         "scene": {
-          "es": "Sales del restaurante contento. ¿Qué recuerdas de Miguel?",
-          "en": "You leave the restaurant happy. What do you remember about Miguel?",
-          "hu": "Elégedetten kijössz az étteremből. Mire emlékszel Miguellel kapcsolatban?",
-          "de": "Du verlässt zufrieden das Restaurant. Woran erinnerst du dich bei Miguel?"
+          "es": "Sales del restaurante con una sonrisa. ¿Qué recuerdas de Miguel?",
+          "en": "You leave the restaurant with a smile. What do you remember about Miguel?",
+          "hu": "Mosolyogva jössz ki az étteremből. Mire emlékszel Miguellel kapcsolatban?",
+          "de": "Du verlässt das Restaurant mit einem Lächeln. Woran erinnerst du dich bei Miguel?"
         },
         "recall": {
           "key": "miguel",
@@ -5555,6 +5771,15 @@
         "de": "schon"
       },
       {
+        "es": "noventa",
+        "forms": [
+          "noventa"
+        ],
+        "en": "ninety",
+        "hu": "kilencven",
+        "de": "neunzig"
+      },
+      {
         "es": "mi, yo",
         "forms": [
           "mi",
@@ -5704,13 +5929,23 @@
         "de": "müssen (tengo que ...)"
       },
       {
-        "es": "atender",
+        "es": "ayudar",
         "forms": [
-          "atender"
+          "ayudar"
         ],
-        "en": "to serve, to attend to",
-        "hu": "kiszolgálni",
-        "de": "bedienen"
+        "en": "to help",
+        "hu": "segíteni",
+        "de": "helfen"
+      },
+      {
+        "es": "el débito",
+        "forms": [
+          "débito",
+          "crédito"
+        ],
+        "en": "debit, credit",
+        "hu": "bankkártya, hitelkártya",
+        "de": "Debit, Kredit"
       },
       {
         "es": "a",
@@ -5915,7 +6150,7 @@
               "hu": "Az avokádók tökéletesek.",
               "de": "Die Avocados sind perfekt."
             },
-            "next": "fruit"
+            "next": "avo"
           },
           {
             "answers": [
@@ -6169,8 +6404,12 @@
             "answers": [
               "Medio kilo",
               "Quiero medio kilo",
-              "Quiero *"
+              "Tres kilos",
+              "Quiero * kilos",
+              "Tres",
+              "Cuatro"
             ],
+            "anyNumber": true,
             "say": [
               {
                 "es": "Medio kilo, por favor.",
@@ -6273,8 +6512,12 @@
             "answers": [
               "Medio kilo",
               "Quiero medio kilo",
-              "Quiero *"
+              "Tres kilos",
+              "Quiero * kilos",
+              "Tres",
+              "Cuatro"
             ],
+            "anyNumber": true,
             "say": [
               {
                 "es": "Medio kilo, por favor.",
@@ -6389,7 +6632,8 @@
           },
           {
             "answers": [
-              "Quiero *",
+              "Quiero aguacates",
+              "Quiero * aguacates",
               "Aguacates",
               "Aguacate"
             ],
@@ -6474,8 +6718,7 @@
             "answers": [
               "Tres",
               "Cuatro",
-              "Quiero * aguacates",
-              "Tengo *"
+              "Quiero * aguacates"
             ],
             "anyNumber": true,
             "say": [
@@ -6505,23 +6748,17 @@
         "branches": [
           {
             "answers": [
-              "Pesos",
-              "Con pesos",
-              "Pago con pesos",
-              "Tengo pesos"
+              "Efectivo",
+              "En efectivo",
+              "Con efectivo",
+              "Pago en efectivo"
             ],
             "say": [
               {
-                "es": "Pago con pesos.",
-                "en": "I pay with pesos.",
-                "hu": "Pesóval fizetek.",
-                "de": "Ich zahle mit Pesos."
-              },
-              {
-                "es": "Tengo pesos.",
-                "en": "I have pesos.",
-                "hu": "Van pesóm.",
-                "de": "Ich habe Pesos."
+                "es": "Pago en efectivo.",
+                "en": "I pay in cash.",
+                "hu": "Készpénzzel fizetek.",
+                "de": "Ich zahle bar."
               }
             ],
             "reply": {
@@ -6557,25 +6794,48 @@
           },
           {
             "answers": [
-              "Efectivo",
-              "En efectivo",
-              "Con efectivo"
+              "Débito",
+              "Con débito",
+              "Crédito",
+              "Con tarjeta de débito"
             ],
             "say": [
               {
-                "es": "Pago en efectivo.",
-                "en": "I pay in cash.",
-                "hu": "Készpénzzel fizetek.",
-                "de": "Ich zahle bar."
+                "es": "Pago con tarjeta de débito.",
+                "en": "I pay with a debit card.",
+                "hu": "Bankkártyával fizetek.",
+                "de": "Ich zahle mit Debitkarte."
               }
             ],
             "reply": {
-              "es": "Perfecto.",
-              "en": "Perfect.",
-              "hu": "Remek.",
-              "de": "Perfekt."
+              "es": "Perfecto, con tarjeta.",
+              "en": "Perfect, by card.",
+              "hu": "Rendben, kártyával.",
+              "de": "Perfekt, mit Karte."
             },
             "next": "local"
+          },
+          {
+            "answers": [
+              "Cuánto es",
+              "Cuánto le debo",
+              "Cuánto fue"
+            ],
+            "say": [
+              {
+                "es": "¿Cuánto es?",
+                "en": "How much is it?",
+                "hu": "Mennyi?",
+                "de": "Wie viel ist es?"
+              }
+            ],
+            "reply": {
+              "es": "Son noventa pesos. ¿Pagas en efectivo o con tarjeta?",
+              "en": "It is ninety pesos. Do you pay in cash or by card?",
+              "hu": "Kilencven peso. Készpénzzel vagy kártyával fizetsz?",
+              "de": "Es sind neunzig Pesos. Zahlst du bar oder mit Karte?"
+            },
+            "back": true
           }
         ],
         "scene": {
@@ -6663,10 +6923,10 @@
       },
       {
         "id": "bye",
-        "es": "Gracias por venir. Ahora tengo que atender a otra persona. ¡Hasta el sábado!",
-        "en": "Thanks for coming. Now I have to serve another customer. See you on Saturday!",
-        "hu": "Köszönöm, hogy eljöttél. Most ki kell szolgálnom egy másik vevőt. Szombaton találkozunk!",
-        "de": "Danke fürs Kommen. Jetzt muss ich eine andere Kundin bedienen. Bis Samstag!",
+        "es": "Gracias por venir. Ahora tengo que ayudar a otra persona. ¡Hasta el sábado!",
+        "en": "Thanks for coming. Now I have to help another customer. See you on Saturday!",
+        "hu": "Köszönöm, hogy eljöttél. Most segítenem kell egy másik vevőnek. Szombaton találkozunk!",
+        "de": "Danke fürs Kommen. Jetzt muss ich einer anderen Kundin helfen. Bis Samstag!",
         "branches": [
           {
             "answers": [
@@ -6675,10 +6935,10 @@
             ],
             "say": [
               {
-                "es": "Gracias, hasta mañana.",
-                "en": "Thanks, see you tomorrow.",
-                "hu": "Köszönöm, holnap találkozunk.",
-                "de": "Danke, bis morgen."
+                "es": "Gracias, hasta el sábado.",
+                "en": "Thanks, see you on Saturday.",
+                "hu": "Köszönöm, szombaton találkozunk.",
+                "de": "Danke, bis Samstag."
               }
             ],
             "next": "recall1"
@@ -6687,7 +6947,6 @@
             "answers": [
               "Adiós *",
               "Adiós",
-              "Hasta mañana",
               "Hasta luego",
               "Nos vemos"
             ],
@@ -7679,6 +7938,42 @@
         "de": "so"
       },
       {
+        "es": "cinco",
+        "forms": [
+          "cinco"
+        ],
+        "en": "five",
+        "hu": "öt",
+        "de": "fünf"
+      },
+      {
+        "es": "mirar",
+        "forms": [
+          "mira"
+        ],
+        "en": "to look (mira = look)",
+        "hu": "nézni (mira = nézd)",
+        "de": "schauen (mira = schau)"
+      },
+      {
+        "es": "abrir",
+        "forms": [
+          "abre"
+        ],
+        "en": "to open",
+        "hu": "megnyitni",
+        "de": "öffnen"
+      },
+      {
+        "es": "lo",
+        "forms": [
+          "lo"
+        ],
+        "en": "it (object)",
+        "hu": "azt",
+        "de": "es"
+      },
+      {
         "es": "cómo",
         "forms": [
           "cómo"
@@ -8145,10 +8440,10 @@
       },
       {
         "id": "metro2",
-        "es": "Son diez minutos a pie. ¿Tienes prisa?",
-        "en": "It is ten minutes on foot. Are you in a hurry?",
-        "hu": "Tíz perc gyalog. Sietsz?",
-        "de": "Es sind zehn Minuten zu Fuß. Hast du es eilig?",
+        "es": "Son cinco minutos a pie. ¿Tienes prisa?",
+        "en": "It is five minutes on foot. Are you in a hurry?",
+        "hu": "Öt perc gyalog. Sietsz?",
+        "de": "Es sind fünf Minuten zu Fuß. Hast du es eilig?",
         "chain": "metro",
         "branches": [
           {
@@ -8230,16 +8525,9 @@
           {
             "answers": [
               "Sí *",
-              "Sí",
-              "Me duele *"
+              "Sí"
             ],
             "say": [
-              {
-                "es": "Sí, me duele la cabeza.",
-                "en": "Yes, I have a headache.",
-                "hu": "Igen, fáj a fejem.",
-                "de": "Ja, ich habe Kopfschmerzen."
-              },
               {
                 "es": "Sí, necesito medicina.",
                 "en": "Yes, I need medicine.",
@@ -8257,8 +8545,8 @@
           },
           {
             "answers": [
-              "Solo quiero *",
-              "No solo quiero *"
+              "Solo quiero agua",
+              "No, solo quiero agua"
             ],
             "say": [
               {
@@ -8452,72 +8740,71 @@
       },
       {
         "id": "map2",
-        "es": "Yo te ayudo. ¿Qué lugar buscas?",
-        "en": "I will help you. What place are you looking for?",
-        "hu": "Én segítek. Milyen helyet keresel?",
-        "de": "Ich helfe dir. Welchen Ort suchst du?",
+        "es": "Yo te ayudo. Abre el mapa en el celular. ¿Ya lo tienes?",
+        "en": "I will help you. Open the map on your phone. Do you have it yet?",
+        "hu": "Én segítek. Nyisd meg a térképet a telefonodon. Már megvan?",
+        "de": "Ich helfe dir. Öffne die Karte auf deinem Handy. Hast du sie schon?",
         "chain": "map",
         "branches": [
           {
             "answers": [
-              "Busco la farmacia",
-              "La farmacia"
+              "Sí *",
+              "Sí"
             ],
             "say": [
               {
-                "es": "Busco la farmacia.",
-                "en": "I am looking for the pharmacy.",
-                "hu": "A gyógyszertárat keresem.",
-                "de": "Ich suche die Apotheke."
+                "es": "Sí, ya lo tengo.",
+                "en": "Yes, I have it.",
+                "hu": "Igen, megvan.",
+                "de": "Ja, ich habe sie."
               }
             ],
             "reply": {
-              "es": "Ah, la farmacia. Está en la esquina.",
-              "en": "Ah, the pharmacy. It is on the corner.",
-              "hu": "Á, a gyógyszertár. A sarkon van.",
-              "de": "Ah, die Apotheke. Sie ist an der Ecke."
+              "es": "Muy bien.",
+              "en": "Very good.",
+              "hu": "Nagyon jó.",
+              "de": "Sehr gut."
             },
             "next": "together"
           },
           {
             "answers": [
-              "Busco el metro",
-              "El metro"
+              "Ya"
             ],
             "say": [
               {
-                "es": "Busco el metro.",
-                "en": "I am looking for the metro.",
-                "hu": "A metrót keresem.",
-                "de": "Ich suche die U-Bahn."
+                "es": "Ya.",
+                "en": "Already.",
+                "hu": "Már.",
+                "de": "Schon."
               }
             ],
             "reply": {
-              "es": "Ah, el metro. Está a dos cuadras.",
-              "en": "Ah, the metro. It is two blocks away.",
-              "hu": "Á, a metró. Két sarokra van.",
-              "de": "Ah, die U-Bahn. Sie ist zwei Blocks entfernt."
+              "es": "Perfecto.",
+              "en": "Perfect.",
+              "hu": "Tökéletes.",
+              "de": "Perfekt."
             },
             "next": "together"
           },
           {
             "answers": [
-              "Busco *",
-              "Quiero ir a *"
+              "No *",
+              "No"
             ],
             "say": [
               {
-                "es": "Busco ___.",
-                "en": "I am looking for ___.",
-                "hu": "___ keresem.",
-                "de": "Ich suche ___."
+                "es": "No lo tengo.",
+                "en": "I do not have it.",
+                "hu": "Nincs meg.",
+                "de": "Ich habe sie nicht."
               }
             ],
             "reply": {
-              "es": "Mmm, vamos a ver el mapa.",
-              "en": "Hmm, let us look at the map.",
-              "hu": "Hmm, nézzük meg a térképet.",
-              "de": "Mmm, schauen wir auf die Karte."
+              "es": "Yo te ayudo, mira.",
+              "en": "I will help you, look.",
+              "hu": "Én segítek, nézd.",
+              "de": "Ich helfe dir, schau."
             },
             "next": "together"
           }
@@ -8843,7 +9130,7 @@
               {
                 "es": "Gracias por todo.",
                 "en": "Thanks for everything.",
-                "hu": "Köszönök mindent.",
+                "hu": "Köszönöm szépen.",
                 "de": "Danke für alles."
               }
             ],
@@ -8925,7 +9212,7 @@
                 "es": "Vive en esa calle.",
                 "en": "He lives on that street.",
                 "hu": "Azon az utcán lakik.",
-                "de": "Er wohnt in dieser Straße."
+                "de": "Er wohnt in der Straße."
               }
             ],
             "next": "recall2"
@@ -8941,7 +9228,7 @@
                 "es": "En esa calle.",
                 "en": "On that street.",
                 "hu": "Azon az utcán.",
-                "de": "In dieser Straße."
+                "de": "In der Straße."
               }
             ],
             "next": "recall2"

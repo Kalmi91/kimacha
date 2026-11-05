@@ -221,6 +221,7 @@ const hu: typeof en = {
     canSay: 'Ezt mondhatod',
     prepAsks: (name: string) => `${name} kérdez`,
     recallWho: 'Kérdés',
+    canAsk: 'Kérdezhetsz is',
     leadsFrom: (say: string) => `Akkor jön, ha ezt mondod: “${say}”`,
     progressLabel: (n: number, total: number) => `${n}. válasz / ${total}`,
     showTranslation: 'Fordítás mutatása',

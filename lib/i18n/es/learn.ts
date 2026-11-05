@@ -225,6 +225,7 @@ const es: typeof en = {
     canSay: 'Puedes decir',
     prepAsks: (name: string) => `${name} pregunta`,
     recallWho: 'Pregunta',
+    canAsk: 'También puedes preguntar',
     leadsFrom: (say: string) => `Viene después de: “${say}”`,
     progressLabel: (n: number, total: number) => `Respuesta ${n} de ${total}`,
     showTranslation: 'Mostrar la traducción',
