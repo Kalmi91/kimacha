@@ -899,7 +899,17 @@
       "verb": "conector",
       "person": "Ana ___ yo somos amigos.",
       "answer": "y",
-      "table": "conectores-basicos-frases"
+      "table": "conectores-basicos-frases",
+      "wrong": {
+        "e": {
+          "en": "The connector y changes to e only before a word that starts with the sound i (or hi-). Yo starts with a consonant sound: y.",
+          "es": "El conector y cambia a e solo ante una palabra que empieza con el sonido i (o hi-). Yo empieza con un sonido consonántico: y."
+        },
+        "o": {
+          "en": "O means \"or\", but here two things go together: y.",
+          "es": "O significa \"or\", pero aquí las dos cosas van juntas: y."
+        }
+      }
     },
     {
       "kind": "form",
@@ -907,7 +917,17 @@
       "verb": "conector",
       "person": "Padre ___ hijo juegan fútbol en el parque.",
       "answer": "e",
-      "table": "conectores-basicos-frases"
+      "table": "conectores-basicos-frases",
+      "wrong": {
+        "y": {
+          "en": "Before a word that starts with hi-, y changes to e: e hijo.",
+          "es": "Ante una palabra que empieza con hi-, y cambia a e: e hijo."
+        },
+        "o": {
+          "en": "O means \"or\", but here two things go together: e.",
+          "es": "O significa \"or\", pero aquí las dos cosas van juntas: e."
+        }
+      }
     },
     {
       "kind": "form",
@@ -915,7 +935,17 @@
       "verb": "conector",
       "person": "Es una ciudad grande ___ importante.",
       "answer": "e",
-      "table": "conectores-basicos-frases"
+      "table": "conectores-basicos-frases",
+      "wrong": {
+        "y": {
+          "en": "Before a word that starts with i-, y changes to e: e importante.",
+          "es": "Ante una palabra que empieza con i-, y cambia a e: e importante."
+        },
+        "o": {
+          "en": "O means \"or\", but here two qualities go together: e.",
+          "es": "O significa \"or\", pero aquí las dos cualidades van juntas: e."
+        }
+      }
     },
     {
       "kind": "form",
@@ -923,7 +953,17 @@
       "verb": "conector",
       "person": "¿Hoy es lunes ___ martes?",
       "answer": "o",
-      "table": "conectores-basicos-frases"
+      "table": "conectores-basicos-frases",
+      "wrong": {
+        "u": {
+          "en": "O changes to u only before a word that starts with o- or ho-. Martes starts with m: o.",
+          "es": "O cambia a u solo ante una palabra que empieza con o- o ho-. Martes empieza con m: o."
+        },
+        "y": {
+          "en": "Y means \"and\". The question asks for one of two options, so you need \"or\": o.",
+          "es": "Y significa \"and\". La pregunta pide una de dos opciones, así que hace falta \"or\": o."
+        }
+      }
     },
     {
       "kind": "form",
@@ -931,7 +971,17 @@
       "verb": "conector",
       "person": "Hay diez ___ once personas en la sala.",
       "answer": "u",
-      "table": "conectores-basicos-frases"
+      "table": "conectores-basicos-frases",
+      "wrong": {
+        "o": {
+          "en": "Before a word that starts with o-, o changes to u: u once.",
+          "es": "Ante una palabra que empieza con o-, o cambia a u: u once."
+        },
+        "y": {
+          "en": "Y means \"and\". The sentence gives two possible numbers, so you need \"or\": u.",
+          "es": "Y significa \"and\". La frase da dos números posibles, así que hace falta \"or\": u."
+        }
+      }
     },
     {
       "kind": "form",
@@ -939,7 +989,17 @@
       "verb": "conector",
       "person": "¿Estamos en septiembre ___ octubre?",
       "answer": "u",
-      "table": "conectores-basicos-frases"
+      "table": "conectores-basicos-frases",
+      "wrong": {
+        "o": {
+          "en": "Before a word that starts with o-, o changes to u: u octubre.",
+          "es": "Ante una palabra que empieza con o-, o cambia a u: u octubre."
+        },
+        "y": {
+          "en": "Y means \"and\". The question asks for one of two months, so you need \"or\": u.",
+          "es": "Y significa \"and\". La pregunta pide uno de dos meses, así que hace falta \"or\": u."
+        }
+      }
     },
     {
       "kind": "form",
@@ -947,7 +1007,17 @@
       "verb": "conector",
       "person": "Bailo bien, ___ canto mal.",
       "answer": "pero",
-      "table": "conectores-basicos-frases"
+      "table": "conectores-basicos-frases",
+      "wrong": {
+        "y": {
+          "en": "Y adds one thing to another. Here the two parts contrast (well / badly), so you need pero.",
+          "es": "Y añade una cosa a otra. Aquí las dos partes contrastan (bien / mal), así que hace falta pero."
+        },
+        "sino": {
+          "en": "Sino is used after a negative to correct something (no es X, sino Y). This sentence has no negative before the connector: pero.",
+          "es": "Sino se usa después de una negación para corregir algo (no es X, sino Y). Esta frase no tiene una negación antes del conector: pero."
+        }
+      }
     },
     {
       "kind": "form",
@@ -955,7 +1025,17 @@
       "verb": "conector",
       "person": "Mi hermano duerme mucho, ___ siempre está cansado.",
       "answer": "pero",
-      "table": "conectores-basicos-frases"
+      "table": "conectores-basicos-frases",
+      "wrong": {
+        "y": {
+          "en": "Y adds one thing to another. Here the second part is unexpected after the first (sleeps a lot, still tired), so you need pero.",
+          "es": "Y añade una cosa a otra. Aquí la segunda parte es inesperada tras la primera (duerme mucho, aun así está cansado), así que hace falta pero."
+        },
+        "por eso": {
+          "en": "Por eso introduces a result of the first part. Being tired is not a result of sleeping a lot, it is a contrast: pero.",
+          "es": "Por eso introduce una consecuencia de la primera parte. Estar cansado no es consecuencia de dormir mucho, es un contraste: pero."
+        }
+      }
     },
     {
       "kind": "form",
@@ -963,7 +1043,17 @@
       "verb": "conector",
       "person": "No llamo a mi mamá ___ es muy tarde.",
       "answer": "porque",
-      "table": "conectores-basicos-frases"
+      "table": "conectores-basicos-frases",
+      "wrong": {
+        "por qué": {
+          "en": "Por qué (two words, with an accent) is the question word. A sentence that gives a reason uses porque.",
+          "es": "Por qué (dos palabras, con tilde) es la palabra interrogativa. Una frase que da una razón usa porque."
+        },
+        "por eso": {
+          "en": "Por eso introduces a result. Here the second part (it is very late) is the reason, not the result: porque.",
+          "es": "Por eso introduce un resultado. Aquí la segunda parte (es muy tarde) es la razón, no el resultado: porque."
+        }
+      }
     },
     {
       "kind": "form",
@@ -976,7 +1066,17 @@
         "asi que",
         "entonces"
       ],
-      "table": "conectores-basicos-frases"
+      "table": "conectores-basicos-frases",
+      "wrong": {
+        "porque": {
+          "en": "Porque introduces the reason. Here the first part (it is Sunday) is the reason and the second one the result: por eso.",
+          "es": "Porque introduce la razón. Aquí la primera parte (es domingo) es la razón y la segunda el resultado: por eso."
+        },
+        "pero": {
+          "en": "Pero introduces a contrast. Here the second part follows from the first, it does not contradict it: por eso.",
+          "es": "Pero introduce un contraste. Aquí la segunda parte se sigue de la primera, no la contradice: por eso."
+        }
+      }
     },
     {
       "kind": "form",
@@ -989,7 +1089,17 @@
         "por eso",
         "entonces"
       ],
-      "table": "conectores-basicos-frases"
+      "table": "conectores-basicos-frases",
+      "wrong": {
+        "pero": {
+          "en": "Pero introduces a contrast. Here the second part follows from the first, it does not contradict it: así que.",
+          "es": "Pero introduce un contraste. Aquí la segunda parte se sigue de la primera, no la contradice: así que."
+        },
+        "porque": {
+          "en": "Porque introduces the reason. Here the first part (the metro is closed) is the reason and the second one the result: así que.",
+          "es": "Porque introduce la razón. Aquí la primera parte (el metro está cerrado) es la razón y la segunda el resultado: así que."
+        }
+      }
     },
     {
       "kind": "form",
@@ -1001,7 +1111,17 @@
         "así que",
         "asi que"
       ],
-      "table": "conectores-basicos-frases"
+      "table": "conectores-basicos-frases",
+      "wrong": {
+        "porque": {
+          "en": "Porque introduces a reason. Here the question asks what to do next, given the situation: entonces.",
+          "es": "Porque introduce una razón. Aquí la pregunta plantea qué hacer a continuación, dada la situación: entonces."
+        },
+        "pero": {
+          "en": "Pero introduces a contrast. Here the question follows from the situation (so, in that case): entonces.",
+          "es": "Pero introduce un contraste. Aquí la pregunta se sigue de la situación (así, en ese caso): entonces."
+        }
+      }
     },
     {
       "kind": "why",
