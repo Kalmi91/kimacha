@@ -13,6 +13,7 @@ const state: NeuralState = {
   engines: { ...DEFAULT_ENGINES },
   installed: {},
   download: { running: false, percent: 0, phase: 'download', failed: [] },
+  issues: {},
 };
 
 export function getNeuralState(): NeuralState {
@@ -28,6 +29,12 @@ export async function startNeural(): Promise<void> {}
 export function neuralEngineFor(_lang: NeuralLang): NeuralEngine | null {
   return null;
 }
+
+export function neuralFallbackEngine(_lang: NeuralLang, _failed: NeuralEngine): NeuralEngine | null {
+  return null;
+}
+
+export function noteNeuralTrouble(_lang: NeuralLang, _engine: NeuralEngine, _kind: 'slow' | 'failed'): void {}
 
 export function neuralPackFile(_lang: NeuralLang, _text: string): string | null {
   return null;

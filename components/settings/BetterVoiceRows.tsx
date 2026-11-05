@@ -47,6 +47,13 @@ export default function BetterVoiceRows({ Row }: { Row: RowComponent }) {
       { text: s.confirmYes, onPress: go },
     ]);
   };
+  // Why the chosen engine is not the one speaking right now, in plain words (lib/neuralModels.ts noteNeuralTrouble).
+  const issueText = (lang: NeuralLang): string | null => {
+    const issue = state.issues[lang];
+    if (!issue || issue.engine !== state.engines[lang]) return null;
+    const engineName = issue.engine === 'kokoro' ? 'Kokoro' : 'Piper';
+    return issue.kind === 'slow' ? s.issueSlow(engineName) : issue.kind === 'load-failed' ? s.issueLoad(engineName) : s.issueFailed(engineName);
+  };
   const askMissing = () => confirmDownload(missingBytes(items, state.installed), () => void downloadNeural());
 
   const right = running ? (
@@ -89,6 +96,11 @@ export default function BetterVoiceRows({ Row }: { Row: RowComponent }) {
           <Row key={lang}>
             <View style={styles.labelBox}>
               <Text style={[styles.label, { color: colors.text }]}>{s.sentences(langName(lang))}</Text>
+              {issueText(lang) && (
+                <Text testID={`settings-better-voice-${lang}-issue`} style={[styles.hint, { color: colors.text }]}>
+                  {issueText(lang)}
+                </Text>
+              )}
               {state.engines[lang] === 'kokoro' && !state.installed.kokoro && (
                 <Text style={[styles.hint, { color: colors.tabIconDefault }]}>{s.kokoroSize(formatMegabytes(NEURAL_MODELS.kokoro.bytes))}</Text>
               )}

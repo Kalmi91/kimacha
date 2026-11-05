@@ -30,9 +30,9 @@
 import { AppState, Platform } from 'react-native';
 import * as Speech from 'expo-speech';
 import { speakNeural, stopNeural } from './neuralTts';
-import { neuralEngineFor, neuralPackFile, neuralSentenceFile, startNeural } from './neuralModels';
+import { neuralEngineFor, neuralFallbackEngine, neuralPackFile, neuralSentenceFile, noteNeuralTrouble, startNeural } from './neuralModels';
 import { playPackFile, stopPack } from './packAudio';
-import { isPiperOnly, voiceFor, type NeuralLang, type VoiceGender } from './neuralVoices';
+import { isPiperOnly, neuralTimeLimitMs, voiceFor, type NeuralEngine, type NeuralLang, type VoiceGender } from './neuralVoices';
 import { getFastFallback, preferredGender } from './voicePreference';
 
 let voiceLanguages: Set<string> | null = null;
@@ -245,17 +245,28 @@ function speakBetter(text: string, locale: string, opts: BetterOptions, phone: (
     stopPack();
     phone();
   };
+  // Level 2 and 2b: the chosen engine, then the other one if it is loaded. An engine that fails or gives no audio
+  // within its time limit (FB608/609: a slow Kokoro left silence) hands the same text on, the phone last.
+  const attempt = (engine: NeuralEngine, canHandOver: boolean) => {
+    speakNeural(text, lang, voiceFor(lang, engine, text, gender), {
+      rate: opts.rate,
+      onDone: opts.onDone,
+      onStopped: opts.onStopped,
+      firstChunkTimeoutMs: neuralTimeLimitMs(engine, text),
+    }).catch(err => {
+      noteNeuralTrouble(lang, engine, err instanceof Error && err.name === 'NeuralSlowError' ? 'slow' : 'failed');
+      const next = canHandOver ? neuralFallbackEngine(lang, engine) : null;
+      if (next) attempt(next, false);
+      else toPhone();
+    });
+  };
   const viaEngine = () => {
     const now = neuralEngineFor(lang);
     if (!now) {
       toPhone();
       return;
     }
-    speakNeural(text, lang, voiceFor(lang, now, text, gender), {
-      rate: opts.rate,
-      onDone: opts.onDone,
-      onStopped: opts.onStopped,
-    }).catch(toPhone);
+    attempt(now, true);
   };
   if (pack) {
     playPackFile(pack, { rate: opts.rate, onDone: opts.onDone, onStopped: opts.onStopped, onFail: viaEngine });

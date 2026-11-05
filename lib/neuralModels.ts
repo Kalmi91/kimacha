@@ -56,6 +56,13 @@ export interface NeuralDownloadState {
   failed: string[];
 }
 
+/** Why the chosen sentence engine of a language is not the one speaking right now (Settings says it in words). */
+export interface NeuralIssue {
+  engine: NeuralEngine;
+  kind: 'load-failed' | 'slow' | 'failed';
+  at: number;
+}
+
 export interface NeuralState {
   /** A native build that can run the voices (Android); false on the web. */
   supported: boolean;
@@ -66,6 +73,8 @@ export interface NeuralState {
   engines: EngineChoice;
   installed: Record<string, boolean>;
   download: NeuralDownloadState;
+  /** Per language, the last trouble of the chosen engine (cleared when the choice changes or a download ran). */
+  issues: Partial<Record<NeuralLang, NeuralIssue>>;
 }
 
 const IDLE_DOWNLOAD: NeuralDownloadState = { running: false, percent: 0, phase: 'download', failed: [] };
@@ -77,6 +86,7 @@ let state: NeuralState = {
   engines: { ...DEFAULT_ENGINES },
   installed: {},
   download: IDLE_DOWNLOAD,
+  issues: {},
 };
 const listeners = new Set<() => void>();
 const subscribe = (fn: () => void) => {
@@ -182,14 +192,35 @@ async function loadPackIndex(fs: Fs): Promise<void> {
 // engine choice changes or a download ran, so a broken model does not cost a load attempt on every speech.
 // The language keeps the phone's voice meanwhile.
 const loadedLangs = new Set<string>();
+// A load that failed is tried again on a later speech once this long has passed (a model that was busy or short of
+// memory then; a really broken one fails again and the Settings row keeps saying so).
+const loadFailedAt = new Map<string, number>();
+const LOAD_RETRY_MS = 30000;
+// An engine that was too slow is skipped for this long when the other engine is ready, so the learner does not wait
+// out the time limit on every speech.
+const SLOW_COOLDOWN_MS = 10 * 60 * 1000;
+
+function setIssue(lang: NeuralLang, issue: NeuralIssue | null): void {
+  const issues = { ...state.issues };
+  if (issue) issues[lang] = issue;
+  else delete issues[lang];
+  update({ issues });
+}
 let loadingChain: Promise<void> = Promise.resolve();
 
 function loadEngines(lang: NeuralLang): void {
   if (!state.supported || !state.enabled) return;
-  const engine = state.engines[lang];
+  // The chosen engine's files are missing (a Kokoro download that was cut off, never made): the other engine,
+  // when it is installed, is loaded in its place, so the learner still hears a better voice and not the phone's.
+  const chosen = state.engines[lang];
+  const chosenInstalled = voicePair(lang, chosen).every(v => state.installed[v.model]);
+  const engine: NeuralEngine = chosenInstalled || isPiperOnly(lang) ? chosen : chosen === 'piper' ? 'kokoro' : 'piper';
   const tag = `${lang}:${engine}`;
   const pair = voicePair(lang, engine);
-  if (loadedLangs.has(tag) || !pair.every(v => state.installed[v.model])) return;
+  if (!pair.every(v => state.installed[v.model])) return;
+  const failedAt = loadFailedAt.get(tag);
+  if (loadedLangs.has(tag) && (failedAt === undefined || Date.now() - failedAt < LOAD_RETRY_MS)) return;
+  loadFailedAt.delete(tag);
   loadedLangs.add(tag);
   loadingChain = loadingChain.then(async () => {
     const fs = getFs();
@@ -197,10 +228,13 @@ function loadEngines(lang: NeuralLang): void {
       try {
         await loadNeuralVoice(voice, lang, itemDir(fs, voice.model));
       } catch (e) {
-        console.log(`[neural] load failed ${lang}/${voice.id}: ${String(e)}`);
-        return; // the tag stays in loadedLangs: no retry on every speech
+        console.log(`[neural] load failed ${lang}/${voice.id}: ${String(e).slice(0, 120)}`);
+        loadFailedAt.set(tag, Date.now()); // the tag stays in loadedLangs: the next try waits LOAD_RETRY_MS
+        setIssue(lang, { engine, kind: 'load-failed', at: Date.now() });
+        return;
       }
     }
+    if (state.issues[lang]?.kind === 'load-failed' && state.issues[lang]?.engine === engine) setIssue(lang, null);
     update({}); // the engine is ready now
     // The language's other engine is not needed any more (the old choice, or the stand-in while this one loaded).
     if (!isPiperOnly(lang) && state.engines[lang] === engine) {
@@ -237,10 +271,44 @@ export function neuralEngineFor(lang: NeuralLang): NeuralEngine | null {
   if (!state.supported || !state.enabled) return null;
   loadEngines(lang);
   const chosen = state.engines[lang];
-  if (isNeuralReady(lang, chosen)) return chosen;
   const other: NeuralEngine = chosen === 'piper' ? 'kokoro' : 'piper';
+  const issue = state.issues[lang];
+  const tooSlow = issue?.kind === 'slow' && issue.engine === chosen && Date.now() - issue.at < SLOW_COOLDOWN_MS;
+  if (tooSlow && !isPiperOnly(lang) && isNeuralReady(lang, other)) return other;
+  if (isNeuralReady(lang, chosen)) return chosen;
   if (!isPiperOnly(lang) && isNeuralReady(lang, other)) return other;
   return null;
+}
+
+// The engine that takes over when `failed` did not deliver audio in time or broke: the language's other engine
+// if it is loaded. If it is installed but not loaded (Piper is released while Kokoro is the chosen one) it loads
+// now, in the background, and this speech goes to the phone; null = the phone speaks.
+export function neuralFallbackEngine(lang: NeuralLang, failed: NeuralEngine): NeuralEngine | null {
+  if (!state.supported || !state.enabled || isPiperOnly(lang)) return null;
+  const other: NeuralEngine = failed === 'piper' ? 'kokoro' : 'piper';
+  if (isNeuralReady(lang, other)) return other;
+  const pair = voicePair(lang, other);
+  if (pair.every(v => state.installed[v.model])) {
+    loadingChain = loadingChain.then(async () => {
+      const fs = getFs();
+      for (const voice of pair) {
+        try {
+          await loadNeuralVoice(voice, lang, itemDir(fs, voice.model));
+        } catch (e) {
+          console.log(`[neural] stand-in load failed ${lang}/${voice.id}: ${String(e).slice(0, 120)}`);
+          return;
+        }
+      }
+      update({});
+    });
+  }
+  return null;
+}
+
+// lib/speech.ts reports an engine that could not speak (too slow, an error): the Settings row says so in words.
+export function noteNeuralTrouble(lang: NeuralLang, engine: NeuralEngine, kind: 'slow' | 'failed'): void {
+  if (engine !== state.engines[lang]) return; // the stand-in's trouble is not the chosen voice's
+  setIssue(lang, { engine, kind, at: Date.now() });
 }
 
 // Absolute path of the word pack's audio for this card word, or null (not installed, switched off, or the
@@ -289,7 +357,7 @@ export async function setNeuralEnabled(enabled: boolean): Promise<void> {
 export async function setNeuralEngine(lang: NeuralLang, engine: NeuralEngine): Promise<void> {
   const next = normalizeEngines({ ...state.engines, [lang]: engine });
   if (next[lang] === state.engines[lang]) return;
-  update({ engines: next });
+  update({ engines: next, issues: {} });
   void writeSettings();
   const needs = voicePair(lang, next[lang]).some(v => !state.installed[v.model]);
   if (needs) await downloadNeural();
@@ -376,4 +444,6 @@ export async function downloadNeural(): Promise<void> {
   await loadPackIndex(fs);
   update({ download: { running: false, percent: failed.length ? state.download.percent : 100, phase: 'download', failed } });
   loadedLangs.clear(); // new files may have repaired a model that failed to load: the next use tries again
+  loadFailedAt.clear();
+  update({ issues: {} });
 }

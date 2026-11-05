@@ -25,6 +25,7 @@ const stateWith = (installed: Record<string, boolean>, engines = { es: 'piper', 
   engines,
   installed,
   download: { running: false, percent: 0, phase: 'download', failed: [] },
+  issues: {} as Record<string, unknown>,
 });
 const allPiper = Object.fromEntries(PIPER_MODEL_KEYS.map(key => [key, true]));
 
@@ -103,5 +104,26 @@ describe('BetterVoiceRows: the size question', () => {
     expect(mockDownload).not.toHaveBeenCalled();
     lastButtons(alertSpy).find(b => b.text === 'Download')?.onPress?.();
     expect(mockDownload).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe('BetterVoiceRows: why the chosen voice is not speaking', () => {
+  it('says in words that Kokoro was too slow, or could not load, for that language only', () => {
+    mockState = { ...stateWith(allPiper, { es: 'kokoro', en: 'piper', hu: 'piper', de: 'piper' }), issues: { es: { engine: 'kokoro', kind: 'slow', at: 1 } } };
+    const view = show();
+    expect(view.getByTestId('settings-better-voice-es-issue').props.children).toContain('Kokoro was too slow on this phone');
+    expect(view.queryByTestId('settings-better-voice-en-issue')).toBeNull();
+    mockState = { ...mockState, issues: { es: { engine: 'kokoro', kind: 'load-failed', at: 1 } } };
+    view.rerender(
+      <ThemeProvider>
+        <BetterVoiceRows Row={Row} />
+      </ThemeProvider>,
+    );
+    expect(view.getByTestId('settings-better-voice-es-issue').props.children).toContain('could not be loaded');
+  });
+
+  it('says nothing when the trouble belongs to an engine that is no longer the chosen one', () => {
+    mockState = { ...stateWith(allPiper), issues: { es: { engine: 'kokoro', kind: 'slow', at: 1 } } };
+    expect(show().queryByTestId('settings-better-voice-es-issue')).toBeNull();
   });
 });
