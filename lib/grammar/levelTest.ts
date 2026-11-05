@@ -1,13 +1,15 @@
 // Grammar level test (Grammar tab, FB571): the pure engine, no React, no DB. A level's test is an endless stream of
 // questions from the topics of ONE level. Which topic comes next is decided only by the per-topic evidence of the
-// random round (lib/grammar/randomRound.ts): the core topics first, the lowest test percent first, a ticked topic
-// only when nothing else is open. Every answer goes into the same evidence, so there is nothing to resume.
+// random round (lib/grammar/randomRound.ts): strictly the core topics first, taking turns, then the other tiers, then the whole
+// level by lowest percent; a question comes back only after all questions of its topic were asked. Every answer goes into the
+// same evidence, so there is nothing to resume.
 
 import type { GrammarKind } from '@/lib/games/content';
 import { shuffleArray } from '@/lib/shuffle';
 import {
   EVIDENCE_WINDOW,
   MIN_ANSWERS_FOR_PCT,
+  seenIds,
   topicPercent,
   topicTicked,
   type PickTopic,
@@ -78,10 +80,13 @@ function lessThan(a: number[], b: number[]): boolean {
 }
 
 /**
- * The next topic: the core topics (core+ and core) that are not ticked yet, lowest percent first; when all of them
- * are ticked the other tiers the same way; when everything is ticked the whole level again, lowest percent first.
- * The previous question's topic is left out when the pool has another candidate. Ties: core+ before core before
- * the rest, then syllabus order.
+ * The next topic, the same rule on every level. Strictly core first: while a core topic (core+ or core) is not ticked, only
+ * the open core topics are asked; then the open topics of the other tiers; when everything is ticked the whole level again,
+ * lowest percent first, tied topics in turns. Inside the first two groups the topics take turns: the least recently asked one (the evidence's
+ * `stamp`, a never asked topic first) comes next, ties by lowest percent, then core+ before core before the rest, then
+ * syllabus order. So a weak topic keeps coming until it ticks, but never starves the others, and a learner who comes back
+ * after a break gets one question of each topic in turn, not a burst on one. The previous question's topic is left out
+ * when the group has another candidate.
  */
 export function pickLevelTopic(
   topics: PickTopic[],
@@ -91,13 +96,17 @@ export function pickLevelTopic(
 ): string | null {
   if (topics.length === 0) return null;
   const open = (list: PickTopic[]) => list.filter((t) => !topicTicked(evidence.get(t.id), () => kindsOf(t.id)));
-  const pool = [open(topics.filter(isCore)), open(topics.filter((t) => !isCore(t))), topics].find((l) => l.length > 0) ?? topics;
+  const rotating = [open(topics.filter(isCore)), open(topics.filter((t) => !isCore(t)))].find((l) => l.length > 0);
+  const pool = rotating ?? topics;
   const others = pool.filter((t) => t.id !== prev);
   const cands = others.length > 0 ? others : pool;
+  const stampOf = (t: PickTopic) => evidence.get(t.id)?.stamp ?? 0;
+  // turns first in the open groups; in the whole-level round the lowest percent first, tied topics still take turns
+  const keyOf = (t: PickTopic) => (rotating ? [stampOf(t), ...needKey(evidence.get(t.id)), TIER_RANK[t.tier] ?? 5] : [...needKey(evidence.get(t.id)), stampOf(t), TIER_RANK[t.tier] ?? 5]);
   let best = cands[0];
-  let bestKey = [...needKey(evidence.get(best.id)), TIER_RANK[best.tier] ?? 5];
+  let bestKey = keyOf(best);
   for (const t of cands.slice(1)) {
-    const key = [...needKey(evidence.get(t.id)), TIER_RANK[t.tier] ?? 5];
+    const key = keyOf(t);
     if (lessThan(key, bestKey)) {
       best = t;
       bestKey = key;
@@ -107,19 +116,26 @@ export function pickLevelTopic(
 }
 
 /**
- * A question of the topic: one that is not among the topic's last EVIDENCE_WINDOW answers, of the kind that window
- * holds least (a new kind first); seeded random among those. A topic whose questions are all in the window gives back
- * the one answered longest ago, so the stream never runs dry.
+ * A question of the topic: one that has not had its turn in the current pass over the topic's questions (the evidence's
+ * `seen`, counted only for questions that still exist), of the kind the last answers hold least (a new kind first); seeded
+ * random among those. When every question had its turn a new pass starts: the questions not among the last EVIDENCE_WINDOW
+ * answers come first (or, when all are in the window, all but the one just answered), with the same kind balance. So no
+ * question comes back before all questions of its topic were asked.
  */
 export function pickLevelQuestion(topicId: string, ctx: LevelTestCtx, seed: number): string | null {
   const qs = ctx.questionIds(topicId);
   if (qs.length === 0) return null;
   const answers = windowOf(ctx.evidence.get(topicId));
-  const lastAt = new Map<string, number>();
-  answers.forEach((a, i) => lastAt.set(a.id, i));
-  const fresh = qs.filter((q) => !lastAt.has(q.id));
-  if (fresh.length === 0) {
-    return qs.reduce((oldest, q) => ((lastAt.get(q.id) ?? 0) < (lastAt.get(oldest.id) ?? 0) ? q : oldest)).id;
+  const inWindow = new Set(answers.map((a) => a.id));
+  const known = new Set(qs.map((q) => q.id));
+  const seen = new Set(seenIds(ctx.evidence.get(topicId)).filter((id) => known.has(id)));
+  let fresh = qs.filter((q) => !seen.has(q.id));
+  if (fresh.length === 0) fresh = qs; // a new pass
+  const away = fresh.filter((q) => !inWindow.has(q.id));
+  if (away.length > 0) fresh = away;
+  else if (fresh.length > 1) {
+    const last = answers[answers.length - 1]?.id;
+    fresh = fresh.filter((q) => q.id !== last);
   }
   const kindCount = new Map<GrammarKind, number>();
   for (const a of answers) kindCount.set(a.kind, (kindCount.get(a.kind) ?? 0) + 1);
