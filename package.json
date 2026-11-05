@@ -68,6 +68,7 @@
     "gate": "npm run typecheck:ci && npm run lint && npm run test:ci && npm run audit:data",
     "check-keystore": "node scripts/check-keystore.mjs",
     "smoke:release": "node scripts/release-smoke.mjs",
+    "smoke:web-keyboard": "node scripts/web-keyboard-smoke.mjs",
     "ui:overlap": "node scripts/ui-overlap.mjs",
     "dead": "knip --include files,exports,types",
     "postinstall": "node scripts/patch-expo-speech.mjs && node scripts/patch-sherpa-onnx.mjs"
