@@ -19,6 +19,7 @@ import { charDiff } from '@/lib/charDiff';
 import { useDiffStyles } from '@/lib/useDiffStyles';
 import { stripSentencePunct } from '@/lib/sentenceCards';
 import { answerInputProps } from '@/lib/inputProps';
+import { keyboardDismissOnDrag } from '@/lib/keyboardTap';
 import HintedSentence from '@/components/HintedSentence';
 import SpeakButton from '@/components/SpeakButton';
 import type { HintPiece } from '@/lib/sentenceHint';
@@ -185,7 +186,7 @@ export default function TypedSentenceCard({
         style={[styles.scroll, { marginBottom: dockInsets.marginBottom }]}
         contentContainerStyle={{ paddingBottom: dockInsets.paddingBottom }}
         keyboardShouldPersistTaps="handled"
-        keyboardDismissMode="on-drag"
+        keyboardDismissMode={keyboardDismissOnDrag()}
         // The answer field is the card's last row: with the keyboard open and a tall card above it, it sat behind the
         // docked bar and the learner typed blind. The bottom padding above keeps it just over the bar.
         onContentSizeChange={() => {

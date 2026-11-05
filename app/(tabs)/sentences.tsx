@@ -27,6 +27,7 @@ import { speechLang } from '@/lib/languages';
 import { countLearningToday } from '@/lib/learningDay';
 import { resolvedTensesFromLessons } from '@/lib/knownSentence';
 import { nearMissDistractors } from '@/lib/distractors';
+import { keyboardDismissOnDrag } from '@/lib/keyboardTap';
 import { dropOrphanCards } from '@/lib/pcicSession';
 import { tileWords } from '@/lib/sentenceCards';
 import { pickSentences, roundSeed } from '@/lib/sentencePick';
@@ -501,7 +502,7 @@ export default function SentencesScreen() {
           style={styles.cardScroll}
           contentContainerStyle={{ paddingBottom: 24 }}
           keyboardShouldPersistTaps="handled"
-          keyboardDismissMode="on-drag"
+          keyboardDismissMode={keyboardDismissOnDrag()}
           // The result and Next appear below the tiles: with a long sentence under the level row they fell off the screen.
           onContentSizeChange={() => buildScroll.current?.scrollToEnd({ animated: true })}
         >

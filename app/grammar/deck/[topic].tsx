@@ -4,7 +4,7 @@ import { Text } from '@/components/KText';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 
 import Colors from '@/constants/Colors';
-import { dismissKeyboardOnTap } from '@/lib/keyboardTap';
+import { dismissKeyboardOnTap, keyboardDismissOnDrag } from '@/lib/keyboardTap';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { brutalHeaderRowStyle } from '@/lib/brutalHeader';
@@ -305,7 +305,7 @@ export default function TableDeckScreen() {
         style={styles.cardScroll}
         contentContainerStyle={[styles.cardScrollContent, { paddingBottom: FAB_CLEARANCE + dockH + dockLift }]}
         keyboardShouldPersistTaps="handled"
-        keyboardDismissMode="on-drag"
+        keyboardDismissMode={keyboardDismissOnDrag()}
       >
         <CardShell compact colors={colors} chip={mode === 'table' ? s.tableDeck.chip : s.tableDeck.wordChip} onPress={dismissKeyboardOnTap}>
           <Text style={[styles.promptCaption, { color: colors.tabIconDefault }]}>

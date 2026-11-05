@@ -1,7 +1,7 @@
 import { View, Pressable, TextInput, ScrollView, KeyboardAvoidingView, Platform, ActivityIndicator } from 'react-native';
 import { Text } from '@/components/KText';
 import { TitleText, themedInkEdgeStyle, themedInputStyle, ProgressBar, ActionButton } from '@/components/grammar/Themed';
-import { dismissKeyboardOnTap } from '@/lib/keyboardTap';
+import { dismissKeyboardOnTap, keyboardDismissOnDrag } from '@/lib/keyboardTap';
 import { speak } from '@/lib/speech';
 
 import Colors from '@/constants/Colors';
@@ -192,7 +192,7 @@ export default function PcicCardView({
             style={styles.cardScroll}
             contentContainerStyle={[styles.cardScrollContent, { paddingBottom: 24 }]}
             keyboardShouldPersistTaps="handled"
-            keyboardDismissMode="on-drag"
+            keyboardDismissMode={keyboardDismissOnDrag()}
           >
             <EasySentenceCard
               key={sentenceCard.itemId}
@@ -412,7 +412,7 @@ export default function PcicCardView({
         style={[styles.cardScroll, { marginBottom: dockInsets.marginBottom }]}
         contentContainerStyle={[styles.cardScrollContent, { paddingBottom: dockInsets.paddingBottom }]}
         keyboardShouldPersistTaps="handled"
-        keyboardDismissMode="on-drag"
+        keyboardDismissMode={keyboardDismissOnDrag()}
       >
         <CardShell
           compact

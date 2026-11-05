@@ -4,7 +4,7 @@ import { Text } from '@/components/KText';
 import { useRouter } from 'expo-router';
 
 import Colors from '@/constants/Colors';
-import { dismissKeyboardOnTap } from '@/lib/keyboardTap';
+import { dismissKeyboardOnTap, keyboardDismissOnDrag } from '@/lib/keyboardTap';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { brutalHeaderRowStyle } from '@/lib/brutalHeader';
@@ -242,7 +242,7 @@ export default function TenseDrillScreen() {
         style={styles.cardScroll}
         contentContainerStyle={[styles.cardScrollContent, { paddingBottom: FAB_CLEARANCE + dockH + dockLift }]}
         keyboardShouldPersistTaps="handled"
-        keyboardDismissMode="on-drag"
+        keyboardDismissMode={keyboardDismissOnDrag()}
       >
         <CardShell compact colors={colors} chip={d.tenseNames[current.tense].toUpperCase()} onPress={dismissKeyboardOnTap}>
           <Text style={[styles.promptCaption, { color: colors.tabIconDefault }]}>{d.tenseHints[current.tense]}</Text>
