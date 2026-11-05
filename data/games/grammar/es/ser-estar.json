@@ -989,7 +989,21 @@
       "verb": "ser",
       "person": "yo",
       "answer": "soy",
-      "table": "ser-presente"
+      "table": "ser-presente",
+      "wrong": {
+        "so": {
+          "en": "The yo form of ser is irregular and ends in -y, like estoy and voy: soy.",
+          "es": "La forma yo de ser es irregular y termina en -y, como estoy y voy: soy."
+        },
+        "soi": {
+          "en": "At the end of a word, Spanish writes this sound as -y after a vowel: soy.",
+          "es": "A final de palabra, el español escribe este sonido como -y después de vocal: soy."
+        },
+        "estoy": {
+          "en": "Estoy is a form of estar, but this task asks for ser: soy.",
+          "es": "Estoy es una forma de estar, pero esta tarea pide ser: soy."
+        }
+      }
     },
     {
       "id": "se-form-02",
@@ -997,7 +1011,21 @@
       "verb": "estar",
       "person": "yo",
       "answer": "estoy",
-      "table": "estar-presente"
+      "table": "estar-presente",
+      "wrong": {
+        "esto": {
+          "en": "The yo form of estar is irregular and ends in -oy: estoy.",
+          "es": "La forma yo de estar es irregular y termina en -oy: estoy."
+        },
+        "estoi": {
+          "en": "At the end of a word, Spanish writes this sound as -y after a vowel: estoy.",
+          "es": "A final de palabra, el español escribe este sonido como -y después de vocal: estoy."
+        },
+        "soy": {
+          "en": "Soy is a form of ser, but this task asks for estar: estoy.",
+          "es": "Soy es una forma de ser, pero esta tarea pide estar: estoy."
+        }
+      }
     },
     {
       "id": "se-form-03",
@@ -1005,7 +1033,21 @@
       "verb": "ser",
       "person": "tú",
       "answer": "eres",
-      "table": "ser-presente"
+      "table": "ser-presente",
+      "wrong": {
+        "ere": {
+          "en": "The tú form of ser ends in -s: eres.",
+          "es": "La forma tú de ser termina en -s: eres."
+        },
+        "eras": {
+          "en": "Eras is a past form (you were). In the present, tú is eres.",
+          "es": "Eras es una forma del pasado (you were). En presente, tú es eres."
+        },
+        "estás": {
+          "en": "Estás is a form of estar, but this task asks for ser: eres.",
+          "es": "Estás es una forma de estar, pero esta tarea pide ser: eres."
+        }
+      }
     },
     {
       "id": "se-form-04",
@@ -1013,7 +1055,21 @@
       "verb": "estar",
       "person": "tú",
       "answer": "estás",
-      "table": "estar-presente"
+      "table": "estar-presente",
+      "wrong": {
+        "estes": {
+          "en": "The ending -es does not fit estar in the present. The tú form of estar ends in -ás: estás.",
+          "es": "La terminación -es no encaja con estar en presente. La forma tú de estar termina en -ás: estás."
+        },
+        "eres": {
+          "en": "Eres is a form of ser, but this task asks for estar: estás.",
+          "es": "Eres es una forma de ser, pero esta tarea pide estar: estás."
+        },
+        "estar": {
+          "en": "The infinitive does not change with the person. Conjugate estar for tú: estás.",
+          "es": "El infinitivo no cambia con la persona. Conjuga estar para tú: estás."
+        }
+      }
     },
     {
       "id": "se-form-05",
@@ -1021,7 +1077,17 @@
       "verb": "ser",
       "person": "él/ella/usted",
       "answer": "es",
-      "table": "ser-presente"
+      "table": "ser-presente",
+      "wrong": {
+        "está": {
+          "en": "Está is a form of estar, but this task asks for ser: es.",
+          "es": "Está es una forma de estar, pero esta tarea pide ser: es."
+        },
+        "ser": {
+          "en": "The infinitive does not change with the person. Conjugate ser for él, ella and usted: es.",
+          "es": "El infinitivo no cambia con la persona. Conjuga ser para él, ella y usted: es."
+        }
+      }
     },
     {
       "id": "se-form-06",
@@ -1029,7 +1095,21 @@
       "verb": "estar",
       "person": "él/ella/usted",
       "answer": "está",
-      "table": "estar-presente"
+      "table": "estar-presente",
+      "wrong": {
+        "es": {
+          "en": "Es is a form of ser, but this task asks for estar: está.",
+          "es": "Es es una forma de ser, pero esta tarea pide estar: está."
+        },
+        "estar": {
+          "en": "The infinitive does not change with the person. Conjugate estar for él, ella and usted: está.",
+          "es": "El infinitivo no cambia con la persona. Conjuga estar para él, ella y usted: está."
+        },
+        "esté": {
+          "en": "The ending -é is not the present tense of él, ella and usted. The form is está.",
+          "es": "La terminación -é no es el presente de él, ella y usted. La forma es está."
+        }
+      }
     },
     {
       "id": "se-form-07",
@@ -1037,7 +1117,21 @@
       "verb": "ser",
       "person": "nosotros",
       "answer": "somos",
-      "table": "ser-presente"
+      "table": "ser-presente",
+      "wrong": {
+        "semos": {
+          "en": "Semos is a nonstandard form. The nosotros form of ser is somos.",
+          "es": "Semos es una forma no estándar. La forma nosotros de ser es somos."
+        },
+        "estamos": {
+          "en": "Estamos is a form of estar, but this task asks for ser: somos.",
+          "es": "Estamos es una forma de estar, pero esta tarea pide ser: somos."
+        },
+        "ser": {
+          "en": "The infinitive does not change with the person. Conjugate ser for nosotros: somos.",
+          "es": "El infinitivo no cambia con la persona. Conjuga ser para nosotros: somos."
+        }
+      }
     },
     {
       "id": "se-form-08",
@@ -1045,7 +1139,21 @@
       "verb": "estar",
       "person": "nosotros",
       "answer": "estamos",
-      "table": "estar-presente"
+      "table": "estar-presente",
+      "wrong": {
+        "estemos": {
+          "en": "The ending -emos is not the present tense of estar. The nosotros form is estamos.",
+          "es": "La terminación -emos no es el presente de estar. La forma nosotros es estamos."
+        },
+        "somos": {
+          "en": "Somos is a form of ser, but this task asks for estar: estamos.",
+          "es": "Somos es una forma de ser, pero esta tarea pide estar: estamos."
+        },
+        "estar": {
+          "en": "The infinitive does not change with the person. Conjugate estar for nosotros: estamos.",
+          "es": "El infinitivo no cambia con la persona. Conjuga estar para nosotros: estamos."
+        }
+      }
     },
     {
       "id": "se-form-11",
@@ -1053,7 +1161,21 @@
       "verb": "ser",
       "person": "ellos/ellas/ustedes",
       "answer": "son",
-      "table": "ser-presente"
+      "table": "ser-presente",
+      "wrong": {
+        "sen": {
+          "en": "The ellos form of ser is irregular and has no e: son.",
+          "es": "La forma ellos de ser es irregular y no lleva e: son."
+        },
+        "están": {
+          "en": "Están is a form of estar, but this task asks for ser: son.",
+          "es": "Están es una forma de estar, pero esta tarea pide ser: son."
+        },
+        "ser": {
+          "en": "The infinitive does not change with the person. Conjugate ser for ellos, ellas and ustedes: son.",
+          "es": "El infinitivo no cambia con la persona. Conjuga ser para ellos, ellas y ustedes: son."
+        }
+      }
     },
     {
       "id": "se-form-12",
@@ -1061,7 +1183,21 @@
       "verb": "estar",
       "person": "ellos/ellas/ustedes",
       "answer": "están",
-      "table": "estar-presente"
+      "table": "estar-presente",
+      "wrong": {
+        "son": {
+          "en": "Son is a form of ser, but this task asks for estar: están.",
+          "es": "Son es una forma de ser, pero esta tarea pide estar: están."
+        },
+        "estén": {
+          "en": "The ending -én is not the present tense of ellos, ellas and ustedes. The form is están.",
+          "es": "La terminación -én no es el presente de ellos, ellas y ustedes. La forma es están."
+        },
+        "estar": {
+          "en": "The infinitive does not change with the person. Conjugate estar for ellos, ellas and ustedes: están.",
+          "es": "El infinitivo no cambia con la persona. Conjuga estar para ellos, ellas y ustedes: están."
+        }
+      }
     },
     {
       "kind": "why",
