@@ -917,7 +917,13 @@
       "verb": "se + pronombre + verbo",
       "person": "Ayer, a mí ___ (olvidar) la llave.",
       "answer": "se me olvidó",
-      "table": "se-accidental-formas"
+      "table": "se-accidental-formas",
+      "wrong": {
+        "me olvidó": {
+          "en": "Without se the sentence is not the \"it happened to me\" construction. The accident needs se + pronoun + verb: se me olvidó.",
+          "es": "Sin se la oración no es la construcción de \"se me pasó\". El accidente lleva se + pronombre + verbo: se me olvidó."
+        }
+      }
     },
     {
       "kind": "form",
@@ -925,7 +931,17 @@
       "verb": "se + pronombre + verbo",
       "person": "Ayer, a ti ___ (caer) el vaso en la cocina.",
       "answer": "se te cayó",
-      "table": "se-accidental-formas"
+      "table": "se-accidental-formas",
+      "wrong": {
+        "se me cayó": {
+          "en": "The sentence says a ti, so the pronoun is te: se te cayó.",
+          "es": "La oración dice a ti, así que el pronombre es te: se te cayó."
+        },
+        "te cayó": {
+          "en": "Without se the sentence is not the \"it happened to me\" construction. The accident needs se + pronoun + verb: se te cayó.",
+          "es": "Sin se la oración no es la construcción de \"se me pasó\". El accidente lleva se + pronombre + verbo: se te cayó."
+        }
+      }
     },
     {
       "kind": "form",
@@ -933,7 +949,13 @@
       "verb": "se + pronombre + verbo",
       "person": "Ayer, a mi hermana ___ (romper) la taza.",
       "answer": "se le rompió",
-      "table": "se-accidental-formas"
+      "table": "se-accidental-formas",
+      "wrong": {
+        "se te rompió": {
+          "en": "The sentence says a mi hermana, so the pronoun is le: se le rompió.",
+          "es": "La oración dice a mi hermana, así que el pronombre es le: se le rompió."
+        }
+      }
     },
     {
       "kind": "form",
@@ -941,7 +963,13 @@
       "verb": "se + pronombre + verbo",
       "person": "Ayer, a nosotros ___ (acabar) la leche.",
       "answer": "se nos acabó",
-      "table": "se-accidental-formas"
+      "table": "se-accidental-formas",
+      "wrong": {
+        "se me acabó": {
+          "en": "The sentence says a nosotros, so the pronoun is nos: se nos acabó.",
+          "es": "La oración dice a nosotros, así que el pronombre es nos: se nos acabó."
+        }
+      }
     },
     {
       "kind": "form",
@@ -949,7 +977,17 @@
       "verb": "se + pronombre + verbo",
       "person": "Ayer, a ustedes ___ (perder) las llaves.",
       "answer": "se les perdieron",
-      "table": "se-accidental-formas"
+      "table": "se-accidental-formas",
+      "wrong": {
+        "se les perdió": {
+          "en": "The verb agrees with the thing, not with the person: las llaves is plural, so the verb is plural: se les perdieron.",
+          "es": "El verbo concuerda con la cosa, no con la persona: las llaves es plural, así que el verbo va en plural: se les perdieron."
+        },
+        "se le perdieron": {
+          "en": "The sentence says a ustedes, so the pronoun is les: se les perdieron.",
+          "es": "La oración dice a ustedes, así que el pronombre es les: se les perdieron."
+        }
+      }
     },
     {
       "kind": "form",
@@ -957,7 +995,13 @@
       "verb": "se + pronombre + verbo",
       "person": "Ayer, a mí ___ (caer) los platos.",
       "answer": "se me cayeron",
-      "table": "se-accidental-formas"
+      "table": "se-accidental-formas",
+      "wrong": {
+        "se me cayó": {
+          "en": "The verb agrees with the thing, not with the person: los platos is plural, so the verb is plural: se me cayeron.",
+          "es": "El verbo concuerda con la cosa, no con la persona: los platos es plural, así que el verbo va en plural: se me cayeron."
+        }
+      }
     },
     {
       "kind": "form",
@@ -965,7 +1009,17 @@
       "verb": "se + pronombre + verbo",
       "person": "Ayer, a mis padres ___ (acabar) el dinero.",
       "answer": "se les acabó",
-      "table": "se-accidental-formas"
+      "table": "se-accidental-formas",
+      "wrong": {
+        "se le acabó": {
+          "en": "The sentence says a mis padres, so the pronoun is les: se les acabó.",
+          "es": "La oración dice a mis padres, así que el pronombre es les: se les acabó."
+        },
+        "se les acabaron": {
+          "en": "The verb agrees with the thing, not with the person: el dinero is singular, so the verb is singular: se les acabó.",
+          "es": "El verbo concuerda con la cosa, no con la persona: el dinero es singular, así que el verbo va en singular: se les acabó."
+        }
+      }
     },
     {
       "kind": "form",
@@ -973,7 +1027,13 @@
       "verb": "se + pronombre + verbo",
       "person": "Ayer, a mi hermano ___ (quedar) el teléfono en casa.",
       "answer": "se le quedó",
-      "table": "se-accidental-formas"
+      "table": "se-accidental-formas",
+      "wrong": {
+        "se me quedó": {
+          "en": "The sentence says a mi hermano, so the pronoun is le: se le quedó.",
+          "es": "La oración dice a mi hermano, así que el pronombre es le: se le quedó."
+        }
+      }
     },
     {
       "kind": "form",
@@ -981,7 +1041,13 @@
       "verb": "se + pronombre + verbo",
       "person": "Ayer, a nosotros ___ (perder) las maletas.",
       "answer": "se nos perdieron",
-      "table": "se-accidental-formas"
+      "table": "se-accidental-formas",
+      "wrong": {
+        "se nos perdió": {
+          "en": "The verb agrees with the thing, not with the person: las maletas is plural, so the verb is plural: se nos perdieron.",
+          "es": "El verbo concuerda con la cosa, no con la persona: las maletas es plural, así que el verbo va en plural: se nos perdieron."
+        }
+      }
     },
     {
       "kind": "form",
@@ -989,7 +1055,17 @@
       "verb": "se + pronombre + verbo",
       "person": "Ayer, a Ana ___ (perder) la cartera.",
       "answer": "se le perdió",
-      "table": "se-accidental-formas"
+      "table": "se-accidental-formas",
+      "wrong": {
+        "se me perdió": {
+          "en": "The sentence says a Ana, so the pronoun is le: se le perdió.",
+          "es": "La oración dice a Ana, así que el pronombre es le: se le perdió."
+        },
+        "se le perdieron": {
+          "en": "The verb agrees with the thing, not with the person: la cartera is singular, so the verb is singular: se le perdió.",
+          "es": "El verbo concuerda con la cosa, no con la persona: la cartera es singular, así que el verbo va en singular: se le perdió."
+        }
+      }
     },
     {
       "kind": "form",
@@ -997,7 +1073,13 @@
       "verb": "se + pronombre + verbo",
       "person": "Ayer, a ti ___ (olvidar) la cita.",
       "answer": "se te olvidó",
-      "table": "se-accidental-formas"
+      "table": "se-accidental-formas",
+      "wrong": {
+        "se me olvidó": {
+          "en": "The sentence says a ti, so the pronoun is te: se te olvidó.",
+          "es": "La oración dice a ti, así que el pronombre es te: se te olvidó."
+        }
+      }
     },
     {
       "kind": "form",
@@ -1005,7 +1087,13 @@
       "verb": "se + pronombre + verbo",
       "person": "Ayer, a ti ___ (apagar) la computadora.",
       "answer": "se te apagó",
-      "table": "se-accidental-formas"
+      "table": "se-accidental-formas",
+      "wrong": {
+        "se me apagó": {
+          "en": "The sentence says a ti, so the pronoun is te: se te apagó.",
+          "es": "La oración dice a ti, así que el pronombre es te: se te apagó."
+        }
+      }
     },
     {
       "kind": "why",

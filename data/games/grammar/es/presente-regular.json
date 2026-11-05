@@ -752,7 +752,17 @@
       "verb": "hablar",
       "person": "yo",
       "answer": "hablo",
-      "table": "presente-regular"
+      "table": "presente-regular",
+      "wrong": {
+        "hablar": {
+          "en": "The infinitive does not change with the person. For yo, replace -ar with -o: hablo.",
+          "es": "El infinitivo no cambia con la persona. Para yo, se cambia -ar por -o: hablo."
+        },
+        "hable": {
+          "en": "The ending -e is not the yo ending of the present tense. For yo, -ar verbs take -o: hablo.",
+          "es": "La terminación -e no es la de yo en presente. Para yo, los verbos en -ar toman -o: hablo."
+        }
+      }
     },
     {
       "id": "pr-form-02",
@@ -760,7 +770,17 @@
       "verb": "hablar",
       "person": "tú",
       "answer": "hablas",
-      "table": "presente-regular"
+      "table": "presente-regular",
+      "wrong": {
+        "hablar": {
+          "en": "The infinitive does not change with the person. For tú, replace -ar with -as: hablas.",
+          "es": "El infinitivo no cambia con la persona. Para tú, se cambia -ar por -as: hablas."
+        },
+        "hables": {
+          "en": "The ending -es is for tú with -er and -ir verbs (comes, vives). -ar verbs take -as: hablas.",
+          "es": "La terminación -es es la de tú en los verbos en -er e -ir (comes, vives). Los verbos en -ar toman -as: hablas."
+        }
+      }
     },
     {
       "id": "pr-form-03",
@@ -768,7 +788,17 @@
       "verb": "hablar",
       "person": "nosotros",
       "answer": "hablamos",
-      "table": "presente-regular"
+      "table": "presente-regular",
+      "wrong": {
+        "hablemos": {
+          "en": "The ending -emos is for -er verbs (comemos). -ar verbs keep the a: hablamos.",
+          "es": "La terminación -emos es de los verbos en -er (comemos). Los verbos en -ar mantienen la a: hablamos."
+        },
+        "hablar": {
+          "en": "The infinitive does not change with the person. For nosotros, replace -ar with -amos: hablamos.",
+          "es": "El infinitivo no cambia con la persona. Para nosotros, se cambia -ar por -amos: hablamos."
+        }
+      }
     },
     {
       "id": "pr-form-04",
@@ -776,7 +806,17 @@
       "verb": "hablar",
       "person": "ellos/ellas/ustedes",
       "answer": "hablan",
-      "table": "presente-regular"
+      "table": "presente-regular",
+      "wrong": {
+        "hablen": {
+          "en": "The ending -en is for -er and -ir verbs (comen, viven). -ar verbs take -an: hablan.",
+          "es": "La terminación -en es de los verbos en -er e -ir (comen, viven). Los verbos en -ar toman -an: hablan."
+        },
+        "hablar": {
+          "en": "The infinitive does not change with the person. For ellos, ellas and ustedes, replace -ar with -an: hablan.",
+          "es": "El infinitivo no cambia con la persona. Para ellos, ellas y ustedes, se cambia -ar por -an: hablan."
+        }
+      }
     },
     {
       "id": "pr-form-05",
@@ -784,7 +824,17 @@
       "verb": "comer",
       "person": "tú",
       "answer": "comes",
-      "table": "presente-regular"
+      "table": "presente-regular",
+      "wrong": {
+        "comas": {
+          "en": "The ending -as is for -ar verbs (hablas). -er verbs take -es for tú: comes.",
+          "es": "La terminación -as es de los verbos en -ar (hablas). Los verbos en -er toman -es para tú: comes."
+        },
+        "comer": {
+          "en": "The infinitive does not change with the person. For tú, replace -er with -es: comes.",
+          "es": "El infinitivo no cambia con la persona. Para tú, se cambia -er por -es: comes."
+        }
+      }
     },
     {
       "id": "pr-form-06",
@@ -792,7 +842,17 @@
       "verb": "comer",
       "person": "él/ella/usted",
       "answer": "come",
-      "table": "presente-regular"
+      "table": "presente-regular",
+      "wrong": {
+        "coma": {
+          "en": "The ending -a is for -ar verbs (habla). -er verbs take -e for él, ella and usted: come.",
+          "es": "La terminación -a es de los verbos en -ar (habla). Los verbos en -er toman -e para él, ella y usted: come."
+        },
+        "comer": {
+          "en": "The infinitive does not change with the person. For él, ella and usted, replace -er with -e: come.",
+          "es": "El infinitivo no cambia con la persona. Para él, ella y usted, se cambia -er por -e: come."
+        }
+      }
     },
     {
       "id": "pr-form-08",
@@ -800,7 +860,17 @@
       "verb": "comer",
       "person": "ellos/ellas/ustedes",
       "answer": "comen",
-      "table": "presente-regular"
+      "table": "presente-regular",
+      "wrong": {
+        "coman": {
+          "en": "The ending -an is for -ar verbs (hablan). -er verbs take -en: comen.",
+          "es": "La terminación -an es de los verbos en -ar (hablan). Los verbos en -er toman -en: comen."
+        },
+        "comer": {
+          "en": "The infinitive does not change with the person. For ellos, ellas and ustedes, replace -er with -en: comen.",
+          "es": "El infinitivo no cambia con la persona. Para ellos, ellas y ustedes, se cambia -er por -en: comen."
+        }
+      }
     },
     {
       "id": "pr-form-09",
@@ -808,7 +878,17 @@
       "verb": "vivir",
       "person": "yo",
       "answer": "vivo",
-      "table": "presente-regular"
+      "table": "presente-regular",
+      "wrong": {
+        "vivir": {
+          "en": "The infinitive does not change with the person. For yo, replace -ir with -o: vivo.",
+          "es": "El infinitivo no cambia con la persona. Para yo, se cambia -ir por -o: vivo."
+        },
+        "viví": {
+          "en": "The ending -í is the past tense (viví = I lived). In the present, yo takes -o: vivo.",
+          "es": "La terminación -í es del pasado (viví = I lived). En presente, yo toma -o: vivo."
+        }
+      }
     },
     {
       "id": "pr-form-10",
@@ -816,7 +896,17 @@
       "verb": "vivir",
       "person": "él/ella/usted",
       "answer": "vive",
-      "table": "presente-regular"
+      "table": "presente-regular",
+      "wrong": {
+        "viva": {
+          "en": "The ending -a is for -ar verbs (habla). -ir verbs take -e for él, ella and usted: vive.",
+          "es": "La terminación -a es de los verbos en -ar (habla). Los verbos en -ir toman -e para él, ella y usted: vive."
+        },
+        "vivir": {
+          "en": "The infinitive does not change with the person. For él, ella and usted, replace -ir with -e: vive.",
+          "es": "El infinitivo no cambia con la persona. Para él, ella y usted, se cambia -ir por -e: vive."
+        }
+      }
     },
     {
       "id": "pr-form-11",
@@ -824,7 +914,17 @@
       "verb": "vivir",
       "person": "nosotros",
       "answer": "vivimos",
-      "table": "presente-regular"
+      "table": "presente-regular",
+      "wrong": {
+        "vivemos": {
+          "en": "The ending -emos is for -er verbs (comemos). -ir verbs take -imos: vivimos.",
+          "es": "La terminación -emos es de los verbos en -er (comemos). Los verbos en -ir toman -imos: vivimos."
+        },
+        "vivamos": {
+          "en": "The ending -amos is for -ar verbs (hablamos). -ir verbs take -imos: vivimos.",
+          "es": "La terminación -amos es de los verbos en -ar (hablamos). Los verbos en -ir toman -imos: vivimos."
+        }
+      }
     },
     {
       "id": "pr-form-12",
@@ -832,7 +932,17 @@
       "verb": "vivir",
       "person": "ellos/ellas/ustedes",
       "answer": "viven",
-      "table": "presente-regular"
+      "table": "presente-regular",
+      "wrong": {
+        "vivan": {
+          "en": "The ending -an is for -ar verbs (hablan). -ir verbs take -en: viven.",
+          "es": "La terminación -an es de los verbos en -ar (hablan). Los verbos en -ir toman -en: viven."
+        },
+        "vivir": {
+          "en": "The infinitive does not change with the person. For ellos, ellas and ustedes, replace -ir with -en: viven.",
+          "es": "El infinitivo no cambia con la persona. Para ellos, ellas y ustedes, se cambia -ir por -en: viven."
+        }
+      }
     },
     {
       "kind": "why",

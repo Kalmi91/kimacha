@@ -617,7 +617,17 @@
       "verb": "Masculino singular",
       "person": "este",
       "answer": "este",
-      "table": "demostrativos"
+      "table": "demostrativos",
+      "wrong": {
+        "esto": {
+          "en": "Esto is the neutral form, for ideas or things you have not named. With a masculine noun you use este.",
+          "es": "Esto es la forma neutra, para ideas o cosas que no se han nombrado. Con un sustantivo masculino se usa este."
+        },
+        "aquí": {
+          "en": "Aquí is an adverb (here). The demonstrative that goes with a masculine noun is este.",
+          "es": "Aquí es un adverbio (here). El demostrativo que acompaña a un sustantivo masculino es este."
+        }
+      }
     },
     {
       "id": "dem-form-02",
@@ -625,7 +635,17 @@
       "verb": "Femenino singular",
       "person": "este",
       "answer": "esta",
-      "table": "demostrativos"
+      "table": "demostrativos",
+      "wrong": {
+        "esto": {
+          "en": "Esto is the neutral form, for ideas or things you have not named. With a feminine noun you use esta.",
+          "es": "Esto es la forma neutra, para ideas o cosas que no se han nombrado. Con un sustantivo femenino se usa esta."
+        },
+        "aquí": {
+          "en": "Aquí is an adverb (here). The demonstrative that goes with a feminine noun is esta.",
+          "es": "Aquí es un adverbio (here). El demostrativo que acompaña a un sustantivo femenino es esta."
+        }
+      }
     },
     {
       "id": "dem-form-03",
@@ -633,7 +653,17 @@
       "verb": "Masculino plural",
       "person": "este",
       "answer": "estos",
-      "table": "demostrativos"
+      "table": "demostrativos",
+      "wrong": {
+        "estes": {
+          "en": "The demonstratives have no -es ending. The masculine plural of este is estos.",
+          "es": "Los demostrativos no tienen la terminación -es. El masculino plural de este es estos."
+        },
+        "esto": {
+          "en": "Esto is the neutral form, for ideas or things you have not named. For several masculine nouns you use estos.",
+          "es": "Esto es la forma neutra, para ideas o cosas que no se han nombrado. Para varios sustantivos masculinos se usa estos."
+        }
+      }
     },
     {
       "id": "dem-form-04",
@@ -641,7 +671,17 @@
       "verb": "Femenino plural",
       "person": "este",
       "answer": "estas",
-      "table": "demostrativos"
+      "table": "demostrativos",
+      "wrong": {
+        "estes": {
+          "en": "The demonstratives have no -es ending. The feminine plural of este is estas.",
+          "es": "Los demostrativos no tienen la terminación -es. El femenino plural de este es estas."
+        },
+        "esto": {
+          "en": "Esto is the neutral form, for ideas or things you have not named. For several feminine nouns you use estas.",
+          "es": "Esto es la forma neutra, para ideas o cosas que no se han nombrado. Para varios sustantivos femeninos se usa estas."
+        }
+      }
     },
     {
       "id": "dem-form-05",
@@ -649,7 +689,17 @@
       "verb": "Masculino singular",
       "person": "ese",
       "answer": "ese",
-      "table": "demostrativos"
+      "table": "demostrativos",
+      "wrong": {
+        "eso": {
+          "en": "Eso is the neutral form, for ideas or things you have not named. With a masculine noun you use ese.",
+          "es": "Eso es la forma neutra, para ideas o cosas que no se han nombrado. Con un sustantivo masculino se usa ese."
+        },
+        "esse": {
+          "en": "Spanish writes ese with a single s.",
+          "es": "El español escribe ese con una sola s."
+        }
+      }
     },
     {
       "id": "dem-form-06",
@@ -657,7 +707,17 @@
       "verb": "Femenino singular",
       "person": "ese",
       "answer": "esa",
-      "table": "demostrativos"
+      "table": "demostrativos",
+      "wrong": {
+        "eso": {
+          "en": "Eso is the neutral form, for ideas or things you have not named. With a feminine noun you use esa.",
+          "es": "Eso es la forma neutra, para ideas o cosas que no se han nombrado. Con un sustantivo femenino se usa esa."
+        },
+        "essa": {
+          "en": "Spanish writes esa with a single s.",
+          "es": "El español escribe esa con una sola s."
+        }
+      }
     },
     {
       "id": "dem-form-07",
@@ -665,7 +725,17 @@
       "verb": "Masculino plural",
       "person": "ese",
       "answer": "esos",
-      "table": "demostrativos"
+      "table": "demostrativos",
+      "wrong": {
+        "eses": {
+          "en": "The demonstratives have no -es ending. The masculine plural of ese is esos.",
+          "es": "Los demostrativos no tienen la terminación -es. El masculino plural de ese es esos."
+        },
+        "eso": {
+          "en": "Eso is the neutral form, for ideas or things you have not named. For several masculine nouns you use esos.",
+          "es": "Eso es la forma neutra, para ideas o cosas que no se han nombrado. Para varios sustantivos masculinos se usa esos."
+        }
+      }
     },
     {
       "id": "dem-form-08",
@@ -673,7 +743,17 @@
       "verb": "Femenino plural",
       "person": "ese",
       "answer": "esas",
-      "table": "demostrativos"
+      "table": "demostrativos",
+      "wrong": {
+        "eses": {
+          "en": "The demonstratives have no -es ending. The feminine plural of ese is esas.",
+          "es": "Los demostrativos no tienen la terminación -es. El femenino plural de ese es esas."
+        },
+        "eso": {
+          "en": "Eso is the neutral form, for ideas or things you have not named. For several feminine nouns you use esas.",
+          "es": "Eso es la forma neutra, para ideas o cosas que no se han nombrado. Para varios sustantivos femeninos se usa esas."
+        }
+      }
     },
     {
       "id": "dem-form-09",
@@ -681,7 +761,17 @@
       "verb": "Masculino singular",
       "person": "aquel",
       "answer": "aquel",
-      "table": "demostrativos"
+      "table": "demostrativos",
+      "wrong": {
+        "aquello": {
+          "en": "Aquello is the neutral form, for ideas or things you have not named. With a masculine noun you use aquel.",
+          "es": "Aquello es la forma neutra, para ideas o cosas que no se han nombrado. Con un sustantivo masculino se usa aquel."
+        },
+        "allí": {
+          "en": "Allí is an adverb (there). The demonstrative that goes with a masculine noun is aquel.",
+          "es": "Allí es un adverbio (there). El demostrativo que acompaña a un sustantivo masculino es aquel."
+        }
+      }
     },
     {
       "id": "dem-form-10",
@@ -689,7 +779,17 @@
       "verb": "Femenino singular",
       "person": "aquel",
       "answer": "aquella",
-      "table": "demostrativos"
+      "table": "demostrativos",
+      "wrong": {
+        "aquela": {
+          "en": "Spanish writes aquella with ll.",
+          "es": "El español escribe aquella con ll."
+        },
+        "aquello": {
+          "en": "Aquello is the neutral form, for ideas or things you have not named. With a feminine noun you use aquella.",
+          "es": "Aquello es la forma neutra, para ideas o cosas que no se han nombrado. Con un sustantivo femenino se usa aquella."
+        }
+      }
     },
     {
       "id": "dem-form-11",
@@ -697,7 +797,17 @@
       "verb": "Masculino plural",
       "person": "aquel",
       "answer": "aquellos",
-      "table": "demostrativos"
+      "table": "demostrativos",
+      "wrong": {
+        "aquelos": {
+          "en": "Spanish writes aquellos with ll.",
+          "es": "El español escribe aquellos con ll."
+        },
+        "aquello": {
+          "en": "Aquello is the neutral form, for ideas or things you have not named. For several masculine nouns you use aquellos.",
+          "es": "Aquello es la forma neutra, para ideas o cosas que no se han nombrado. Para varios sustantivos masculinos se usa aquellos."
+        }
+      }
     },
     {
       "id": "dem-form-12",
@@ -705,7 +815,17 @@
       "verb": "Femenino plural",
       "person": "aquel",
       "answer": "aquellas",
-      "table": "demostrativos"
+      "table": "demostrativos",
+      "wrong": {
+        "aquelas": {
+          "en": "Spanish writes aquellas with ll.",
+          "es": "El español escribe aquellas con ll."
+        },
+        "aquello": {
+          "en": "Aquello is the neutral form, for ideas or things you have not named. For several feminine nouns you use aquellas.",
+          "es": "Aquello es la forma neutra, para ideas o cosas que no se han nombrado. Para varios sustantivos femeninos se usa aquellas."
+        }
+      }
     },
     {
       "id": "dem-why-01",

@@ -677,7 +677,13 @@
       "verb": "forma verbal",
       "person": "Tengo hambre y ___ (yo) una pizza.",
       "answer": "pido",
-      "table": "pedir-preguntar-formas"
+      "table": "pedir-preguntar-formas",
+      "wrong": {
+        "pregunto": {
+          "en": "Pregunto is a form of preguntar, which means to ask a question. Here something is requested, so the verb is pedir: pido.",
+          "es": "Pregunto es una forma de preguntar, que significa hacer una pregunta. Aquí se solicita algo, así que el verbo es pedir: pido."
+        }
+      }
     },
     {
       "id": "pp-form-02",
@@ -685,7 +691,13 @@
       "verb": "forma verbal",
       "person": "Le ___ (yo) a un policía dónde está la farmacia.",
       "answer": "pregunto",
-      "table": "pedir-preguntar-formas"
+      "table": "pedir-preguntar-formas",
+      "wrong": {
+        "pido": {
+          "en": "Pido is a form of pedir, which means to ask for something. Here a question or information is asked, so the verb is preguntar: pregunto.",
+          "es": "Pido es una forma de pedir, que significa solicitar algo. Aquí se hace una pregunta o se pide información, así que el verbo es preguntar: pregunto."
+        }
+      }
     },
     {
       "id": "pp-form-03",
@@ -693,7 +705,17 @@
       "verb": "forma verbal",
       "person": "¿Qué ___ (tú) de postre?",
       "answer": "pides",
-      "table": "pedir-preguntar-formas"
+      "table": "pedir-preguntar-formas",
+      "wrong": {
+        "pedes": {
+          "en": "With tú the stem vowel of pedir changes: e becomes i. pides.",
+          "es": "Con tú cambia la vocal de la raíz de pedir: e pasa a i. pides."
+        },
+        "preguntas": {
+          "en": "Preguntas is a form of preguntar, which means to ask a question. Here something is requested, so the verb is pedir: pides.",
+          "es": "Preguntas es una forma de preguntar, que significa hacer una pregunta. Aquí se solicita algo, así que el verbo es pedir: pides."
+        }
+      }
     },
     {
       "id": "pp-form-04",
@@ -701,7 +723,17 @@
       "verb": "forma verbal",
       "person": "Mi hijo ___ (él) permiso para ir al parque.",
       "answer": "pide",
-      "table": "pedir-preguntar-formas"
+      "table": "pedir-preguntar-formas",
+      "wrong": {
+        "pede": {
+          "en": "With él, ella and usted the stem vowel of pedir changes: e becomes i. pide.",
+          "es": "Con él, ella y usted cambia la vocal de la raíz de pedir: e pasa a i. pide."
+        },
+        "pregunta": {
+          "en": "Pregunta is a form of preguntar, which means to ask a question. Here something is requested, so the verb is pedir: pide.",
+          "es": "Pregunta es una forma de preguntar, que significa hacer una pregunta. Aquí se solicita algo, así que el verbo es pedir: pide."
+        }
+      }
     },
     {
       "id": "pp-form-05",
@@ -709,7 +741,17 @@
       "verb": "forma verbal",
       "person": "Mis amigos ___ (ellos) la cuenta y yo pago.",
       "answer": "piden",
-      "table": "pedir-preguntar-formas"
+      "table": "pedir-preguntar-formas",
+      "wrong": {
+        "peden": {
+          "en": "With ellos, ellas and ustedes the stem vowel of pedir changes: e becomes i. piden.",
+          "es": "Con ellos, ellas y ustedes cambia la vocal de la raíz de pedir: e pasa a i. piden."
+        },
+        "preguntan": {
+          "en": "Preguntan is a form of preguntar, which means to ask a question. Here something is requested, so the verb is pedir: piden.",
+          "es": "Preguntan es una forma de preguntar, que significa hacer una pregunta. Aquí se solicita algo, así que el verbo es pedir: piden."
+        }
+      }
     },
     {
       "id": "pp-form-06",
@@ -717,7 +759,17 @@
       "verb": "forma verbal",
       "person": "Nosotros ___ (nosotros) agua y pan en el restaurante.",
       "answer": "pedimos",
-      "table": "pedir-preguntar-formas"
+      "table": "pedir-preguntar-formas",
+      "wrong": {
+        "pidimos": {
+          "en": "With nosotros the stem of pedir does not change: the stress falls on the ending. pedimos.",
+          "es": "Con nosotros la raíz de pedir no cambia: el acento cae en la terminación. pedimos."
+        },
+        "preguntamos": {
+          "en": "Preguntamos is a form of preguntar, which means to ask a question. Here something is requested, so the verb is pedir: pedimos.",
+          "es": "Preguntamos es una forma de preguntar, que significa hacer una pregunta. Aquí se solicita algo, así que el verbo es pedir: pedimos."
+        }
+      }
     },
     {
       "id": "pp-form-07",
@@ -725,7 +777,13 @@
       "verb": "forma verbal",
       "person": "Mi madre ___ (ella) por ti. ¿Cuándo vienes?",
       "answer": "pregunta",
-      "table": "pedir-preguntar-formas"
+      "table": "pedir-preguntar-formas",
+      "wrong": {
+        "pide": {
+          "en": "Pide is a form of pedir, which means to ask for something. Here a question or information is asked, so the verb is preguntar: pregunta.",
+          "es": "Pide es una forma de pedir, que significa solicitar algo. Aquí se hace una pregunta o se pide información, así que el verbo es preguntar: pregunta."
+        }
+      }
     },
     {
       "id": "pp-form-08",
@@ -733,7 +791,13 @@
       "verb": "forma verbal",
       "person": "Nosotros ___ (nosotros) el precio en la tienda.",
       "answer": "preguntamos",
-      "table": "pedir-preguntar-formas"
+      "table": "pedir-preguntar-formas",
+      "wrong": {
+        "pedimos": {
+          "en": "Pedimos is a form of pedir, which means to ask for something. Here a question or information is asked, so the verb is preguntar: preguntamos.",
+          "es": "Pedimos es una forma de pedir, que significa solicitar algo. Aquí se hace una pregunta o se pide información, así que el verbo es preguntar: preguntamos."
+        }
+      }
     },
     {
       "id": "pp-form-09",
@@ -741,7 +805,13 @@
       "verb": "forma verbal",
       "person": "Mis hijos ___ (ellos) dónde está su abuela.",
       "answer": "preguntan",
-      "table": "pedir-preguntar-formas"
+      "table": "pedir-preguntar-formas",
+      "wrong": {
+        "piden": {
+          "en": "Piden is a form of pedir, which means to ask for something. Here a question or information is asked, so the verb is preguntar: preguntan.",
+          "es": "Piden es una forma de pedir, que significa solicitar algo. Aquí se hace una pregunta o se pide información, así que el verbo es preguntar: preguntan."
+        }
+      }
     },
     {
       "id": "pp-form-10",
@@ -749,7 +819,13 @@
       "verb": "forma verbal",
       "person": "Si no sabes la hora, le ___ (tú) a tu hermano.",
       "answer": "preguntas",
-      "table": "pedir-preguntar-formas"
+      "table": "pedir-preguntar-formas",
+      "wrong": {
+        "pides": {
+          "en": "Pides is a form of pedir, which means to ask for something. Here a question or information is asked, so the verb is preguntar: preguntas.",
+          "es": "Pides es una forma de pedir, que significa solicitar algo. Aquí se hace una pregunta o se pide información, así que el verbo es preguntar: preguntas."
+        }
+      }
     },
     {
       "id": "pp-form-11",
@@ -757,7 +833,17 @@
       "verb": "forma verbal",
       "person": "Mi hermana ___ (ella) dinero a mi padre.",
       "answer": "pide",
-      "table": "pedir-preguntar-formas"
+      "table": "pedir-preguntar-formas",
+      "wrong": {
+        "pregunta": {
+          "en": "Pregunta is a form of preguntar, which means to ask a question. Here something is requested, so the verb is pedir: pide.",
+          "es": "Pregunta es una forma de preguntar, que significa hacer una pregunta. Aquí se solicita algo, así que el verbo es pedir: pide."
+        },
+        "pede": {
+          "en": "With él, ella and usted the stem vowel of pedir changes: e becomes i. pide.",
+          "es": "Con él, ella y usted cambia la vocal de la raíz de pedir: e pasa a i. pide."
+        }
+      }
     },
     {
       "id": "pp-form-12",
@@ -765,7 +851,13 @@
       "verb": "forma verbal",
       "person": "Mi jefe siempre ___ (él) si estamos listos.",
       "answer": "pregunta",
-      "table": "pedir-preguntar-formas"
+      "table": "pedir-preguntar-formas",
+      "wrong": {
+        "pide": {
+          "en": "Pide is a form of pedir, which means to ask for something. Here a question or information is asked, so the verb is preguntar: pregunta.",
+          "es": "Pide es una forma de pedir, que significa solicitar algo. Aquí se hace una pregunta o se pide información, así que el verbo es preguntar: pregunta."
+        }
+      }
     },
     {
       "kind": "why",

@@ -1,3 +1,5 @@
+import XpChip from '@/components/XpChip';
+import { awardXpThen } from '@/lib/xpAward';
 import { useCallback, useState } from 'react';
 import { ActivityIndicator, KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, TextInput, View } from 'react-native';
 import { Text } from '@/components/KText';
@@ -97,6 +99,8 @@ export default function TableDeckScreen() {
   const [deck, setDeck] = useState<DeckState>({ cells: [], resetCount: 0, shuffled: false });
   const [typed, setTyped] = useState('');
   const [checked, setChecked] = useState<{ correct: boolean } | null>(null);
+  // the XP the last right answer gave (FB591); the chip fades it
+  const [earned, setEarned] = useState(0);
   // id of the cell for which the hint button was pressed
   // (derived as "not pressed" on a card change, so no reset effect).
   const [hintFor, setHintFor] = useState<string | null>(null);
@@ -181,6 +185,8 @@ export default function TableDeckScreen() {
     if (!current) return;
     const correct = typed.trim().length > 0 && strictAnswerMatch(typed, current.answer, { strictAccents, lang: learnedLang });
     setChecked({ correct });
+    setEarned(0);
+    if (correct) awardXpThen('grammar', `deck:${current.id}`, setEarned);
     speak(current.answer, speechLang(learnedLang));
   };
 
@@ -301,6 +307,7 @@ export default function TableDeckScreen() {
   return (
     <KeyboardAvoidingView style={[styles.container, { backgroundColor: colors.background }, webKeyboardOpen && WEB_TYPING_PADDING]} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
       {header}
+      {!webKeyboardOpen && <XpChip earned={earned} />}
       {!webKeyboardOpen && progressBar}
 
       <ScrollView

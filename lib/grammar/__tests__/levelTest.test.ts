@@ -2,16 +2,23 @@
 // no immediate repeat), which question of the topic, the level percent and the done state.
 
 import type { GrammarKind } from '@/lib/games/content';
-import { appendEvidence, topicPercent, topicTicked, type EvidenceAnswer, type PickTopic, type TopicEvidence } from '@/lib/grammar/randomRound';
+import { SEEN_CAP, appendEvidence, seenIds, topicPercent, topicTicked, type EvidenceAnswer, type PickTopic, type TopicEvidence } from '@/lib/grammar/randomRound';
 import {
   LEVEL_ROUND_SIZE,
   levelDone,
   levelPercent,
   levelRoundKey,
+  levelShownKey,
+  nextShownPct,
   parseLevelRound,
+  parseShownPct,
   pickLevelNext,
   pickLevelQuestion,
   pickLevelTopic,
+  recordRoundAnswer,
+  roundTopicRows,
+  shownLabel,
+  shownPctOf,
   weakestTopic,
   type LevelTestCtx,
 } from '@/lib/grammar/levelTest';
@@ -126,31 +133,101 @@ describe('pickLevelTopic', () => {
     expect(pick(topics, evidenceOf({ plus1: ticked(), core1: ticked(), plain1: ticked(), plain2: ticked() }))).toBe('plus1');
   });
 
-  it('evidence growth moves the pick: a wrong answer keeps a topic up front, right ones hand over to the next', () => {
+  it('the open topics take turns: the least recently asked first, a weak one keeps coming without starving the other', () => {
     let ev = new Map<string, TopicEvidence>();
     const answer = (id: string, ok: boolean, i: number, kind: GrammarKind = 'choice') => {
       const a: EvidenceAnswer = { id: `q${i}`, kind, ok, at: '2026-11-01' };
-      ev = new Map(ev).set(id, appendEvidence(ev.get(id), a));
+      ev = new Map(ev).set(id, appendEvidence(ev.get(id), a, i + 1));
     };
     const two = [topic('a', 'core'), topic('b', 'core')];
     expect(pick(two, ev)).toBe('a');
     answer('a', true, 0);
     expect(pick(two, ev)).toBe('b'); // b has no answer
     answer('b', false, 1);
-    expect(pick(two, ev)).toBe('b'); // b 0% < a 100%
-    expect(pick(two, ev, 'b')).toBe('a'); // ... but never twice in a row while another one exists
-    answer('b', true, 2);
-    answer('b', true, 3);
-    answer('b', true, 4);
-    expect(pick(two, ev)).toBe('b'); // b is at 75%, a (one answer, no percent yet) counts 100
-    answer('a', false, 5);
-    answer('a', false, 6);
-    answer('a', false, 7);
-    expect(pick(two, ev)).toBe('a'); // a fell to 25%: it moves to the front
+    expect(pick(two, ev)).toBe('a'); // a was asked longer ago, although b is weaker
+    expect(pick(two, ev, 'a')).toBe('b'); // never twice in a row while another one exists
+    answer('a', true, 2);
+    expect(pick(two, ev)).toBe('b'); // the weak topic comes every second question
+    for (let i = 3; i < 13; i++) {
+      const id = pick(two, ev)!;
+      answer(id, id === 'a', i);
+      expect(id).toBe(i % 2 === 1 ? 'b' : 'a');
+    }
+  });
+
+  it('with equal stamps (evidence saved before) the lower percent goes first', () => {
+    expect(pick([topic('a', 'core'), topic('b', 'core')], evidenceOf({ a: evOf(['c', 'c', 'c']), b: evOf(['x', 'x', 'c']) }))).toBe('b');
+  });
+
+  it('strictly core first: no other tier while a core topic is open, then the other tiers, then the whole level by lowest percent', () => {
+    const topics = [topic('c', 'core'), topic('plain', 'exam'), topic('p', 'core-plus')];
+    const ev = evidenceOf({ c: { ...evOf(['c', 'c', 'c']), stamp: 99 }, p: { ...evOf(['c', 'c', 'c']), stamp: 98 } });
+    expect(pick(topics, ev, 'c')).toBe('p'); // plain was never asked, but it is not core
+    expect(pick(topics, ev, 'p')).toBe('c');
+    expect(pick(topics, evidenceOf({ c: ticked(), p: ticked() }))).toBe('plain');
+    const lower = evOf(['c', 'f', 'c', 'f', 'c', 'x', 'c', 'f']); // 88%, still ticked
+    expect(pick(topics, evidenceOf({ c: ticked(), p: ticked(), plain: lower }))).toBe('plain');
+    expect(pick(topics, evidenceOf({ c: lower, p: ticked(), plain: ticked() }))).toBe('c');
+  });
+
+  it('a returning learner with one never asked topic gets it once, then the rotation goes on (no burst)', () => {
+    const topics = Array.from({ length: 4 }, (_, i) => topic(`t${i}`, 'core'));
+    let ev = evidenceOf({ t0: { ...evOf(['c', 'x']), stamp: 50 }, t1: { ...evOf(['x', 'x']), stamp: 10 }, t2: { ...evOf(['x']), stamp: 30 } });
+    const got: string[] = [];
+    let prev: string | undefined;
+    for (let i = 0; i < 8; i++) {
+      const id = pick(topics, ev, prev)!;
+      got.push(id);
+      ev = new Map(ev).set(id, appendEvidence(ev.get(id), { id: `n${i}`, kind: 'choice', ok: false, at: 'x' }, 100 + i));
+      prev = id;
+    }
+    expect(got.slice(0, 4)).toEqual(['t3', 't1', 't2', 't0']); // never asked, then the oldest stamp first
+    expect(got.slice(4)).toEqual(got.slice(0, 4));
   });
 
   it('is null for a level without topics', () => {
     expect(pick([], new Map())).toBeNull();
+  });
+});
+
+describe('appendEvidence: stamp and the pass over the questions', () => {
+  const a = (id: string): EvidenceAnswer => ({ id, kind: 'choice', ok: true, at: 'x' });
+
+  it('keeps the stamp and the ids of the pass; a repeat alone (random round, no question list) does not reset it', () => {
+    let ev: TopicEvidence | undefined;
+    for (let i = 0; i < 12; i++) ev = appendEvidence(ev, a(`q${i}`), 7);
+    expect(ev!.answers).toHaveLength(10);
+    expect(ev!.stamp).toBe(7);
+    expect(ev!.seen).toHaveLength(12);
+    ev = appendEvidence(ev, a('q3'), 8);
+    expect(ev.seen).toHaveLength(12);
+    expect(ev.stamp).toBe(8);
+  });
+
+  it('with the question list: ids of questions that are gone are dropped, a finished pass starts again with this answer', () => {
+    const ids = ['x', 'y', 'z'];
+    let ev = appendEvidence(undefined, a('old-gone'), 1, ids);
+    ev = appendEvidence(ev, a('x'), 2, ids);
+    expect(ev.seen).toEqual(['x']); // the gone id was dropped on the next answer
+    ev = appendEvidence(ev, a('y'), 3, ids);
+    ev = appendEvidence(ev, a('z'), 4, ids);
+    expect(ev.seen).toEqual(['x', 'y', 'z']);
+    ev = appendEvidence(ev, a('y'), 5, ids); // every question was in: a new pass
+    expect(ev.seen).toEqual(['y']);
+  });
+
+  it('caps the pass at SEEN_CAP ids (topics whose questions get new ids every visit)', () => {
+    let ev: TopicEvidence | undefined;
+    for (let i = 0; i < SEEN_CAP + 30; i++) ev = appendEvidence(ev, a(`s${i}`), i);
+    expect(ev!.seen).toHaveLength(SEEN_CAP);
+    expect(ev!.seen![SEEN_CAP - 1]).toBe(`s${SEEN_CAP + 29}`);
+  });
+
+  it('evidence saved before (no stamp, no seen) counts with its window', () => {
+    const old: TopicEvidence = { answers: [a('x'), a('y')] };
+    expect(seenIds(old)).toEqual(['x', 'y']);
+    expect(seenIds(undefined)).toEqual([]);
+    expect(appendEvidence(old, a('z'), 1).seen).toEqual(['x', 'y', 'z']);
   });
 });
 
@@ -180,11 +257,39 @@ describe('pickLevelQuestion', () => {
     expect(['a', 'b', 'c', 'f1', 'f2']).toContain(pickLevelQuestion('t', ctxOf(qs, undefined), 3));
   });
 
-  it('never runs dry: with every question in the window, the one answered longest ago comes back', () => {
+  it('never runs dry: with every question in the window a new pass starts, not with the one just answered, with the kind balance', () => {
     const qs = [q('a', 'choice'), q('b', 'choice'), q('c', 'form')];
     const answers = ['b', 'c', 'a', 'c', 'a'].map((id) => ({ id, kind: (id === 'c' ? 'form' : 'choice') as GrammarKind, ok: true, at: 'x' }));
-    // last positions: b 0, c 3, a 4 -> b
-    expect(pickLevelQuestion('t', ctxOf(qs, { answers }), 5)).toBe('b');
+    // the window holds 3 choice and 2 form answers: b (choice) or c (form), form is the lesser kind
+    for (let seed = 0; seed < 10; seed++) expect(pickLevelQuestion('t', ctxOf(qs, { answers }), seed)).toBe('c');
+  });
+
+  it('a new pass also balances the kinds, and ignores seen ids of questions that are gone', () => {
+    const qs = [q('a', 'choice'), q('b', 'choice'), q('f1', 'form')];
+    const ev: TopicEvidence = { answers: [{ id: 'a', kind: 'choice', ok: true, at: 'x' }], seen: ['a', 'b', 'f1', 'gone'] };
+    // every current question was seen: the pass restarts; the window holds one choice answer, so the form question comes
+    for (let seed = 0; seed < 10; seed++) expect(pickLevelQuestion('t', ctxOf(qs, ev), seed)).toBe('f1');
+  });
+
+  it('a pass over more questions than the window holds: none comes back before all were asked', () => {
+    const qs = Array.from({ length: 25 }, (_, i) => q(`q${i}`, i % 2 ? 'choice' : 'form'));
+    const ids = qs.map((x) => x.id);
+    let ev: TopicEvidence | undefined;
+    const got: string[] = [];
+    for (let i = 0; i < 25; i++) {
+      const id = pickLevelQuestion('t', ctxOf(qs, ev), i)!;
+      got.push(id);
+      ev = appendEvidence(ev, { id, kind: qs.find((x) => x.id === id)!.kind, ok: true, at: 'x' }, i, ids);
+    }
+    expect(new Set(got).size).toBe(25);
+    const again = pickLevelQuestion('t', ctxOf(qs, ev), 99)!;
+    expect(again).not.toBe(got[24]);
+    expect(got.slice(15)).not.toContain(again);
+  });
+
+  it('a topic with a single question gives it every time (the data makes the repeat unavoidable)', () => {
+    const ev = appendEvidence(undefined, { id: 'only', kind: 'choice', ok: true, at: 'x' }, 1, ['only']);
+    expect(pickLevelQuestion('t', ctxOf([q('only', 'choice')], ev), 1)).toBe('only');
   });
 
   it('is repeatable for the same seed', () => {
@@ -256,5 +361,95 @@ describe('levelPercent moves with every answer', () => {
     expect(level(['c', 'c', 'c'])).toBe(100);
     // the topic's own percent and the tick are not changed
     expect(topicPercent(evOf(['c', 'c']))).toBeNull();
+  });
+});
+
+// FB593/FB594/FB616: the level's standing, the number on the test's bar, the test button and the syllabus header.
+describe('the level standing (shown percent)', () => {
+  it('a right answer adds 0.5 on top of the larger of the standing and the real percent; a wrong one changes nothing', () => {
+    expect(nextShownPct(40, 38, true)).toBeCloseTo(40.5, 5);
+    expect(nextShownPct(30, 38, true)).toBeCloseTo(38.5, 5); // the real percent overtook the stored standing
+    expect(nextShownPct(40.5, 38, false)).toBe(40.5);
+    expect(nextShownPct(0, 0, false)).toBe(0);
+  });
+
+  it('never goes down: a run of wrong answers and a falling real percent leave what is drawn where it was', () => {
+    let shown = nextShownPct(0, 50, true);
+    const peak = shownPctOf(shown, 50);
+    for (let i = 0; i < 5; i++) shown = nextShownPct(shown, 20, false);
+    expect(shownPctOf(shown, 20)).toBe(peak);
+    // and a right answer afterwards still grows it, from the standing, not from the lower real percent
+    expect(nextShownPct(shown, 20, true)).toBeGreaterThan(peak);
+  });
+
+  it('stops at 99 until the real percent is 100', () => {
+    expect(nextShownPct(98.9, 60, true)).toBe(99);
+    expect(nextShownPct(99, 60, true)).toBe(99);
+    expect(nextShownPct(99, 99, true)).toBe(99);
+    expect(nextShownPct(99, 100, true)).toBe(100);
+    expect(nextShownPct(100, 100, true)).toBe(100);
+  });
+
+  it('a stored 100 stays 100 when the real percent fell below it: right or wrong answers never push it down', () => {
+    expect(nextShownPct(100, 90, true)).toBe(100);
+    expect(nextShownPct(100, 90, false)).toBe(100);
+    expect(nextShownPct(99.5, 60, true)).toBe(99.5);
+  });
+
+  it('every right answer moves it (a small step each time), on the way from 0', () => {
+    let shown = 0;
+    const seen: number[] = [];
+    for (let i = 0; i < 4; i++) {
+      shown = nextShownPct(shown, 0, true);
+      seen.push(shown);
+    }
+    expect(seen.every((v, i) => v > (seen[i - 1] ?? 0))).toBe(true);
+    expect(shownLabel(seen[3])).toBe(2); // 2.0
+  });
+
+  it('draws the larger of the standing and the real percent; the label never rounds up to the next point', () => {
+    expect(shownPctOf(null, 12)).toBe(12);
+    expect(shownPctOf(41.3, 12)).toBe(41.3);
+    expect(shownLabel(41.9)).toBe(41);
+    expect(shownLabel(99)).toBe(99);
+    expect(shownLabel(100)).toBe(100);
+  });
+
+  it('parses a saved standing and refuses damaged values; the key is per pair and level', () => {
+    expect(parseShownPct(41.3)).toBe(41.3);
+    for (const bad of [null, undefined, 'x', NaN, -1, 101, {}]) expect(parseShownPct(bad)).toBeNull();
+    expect(levelShownKey('en→es', 'A1')).not.toBe(levelShownKey('en→es', 'A2'));
+    expect(levelShownKey('en→es', 'A1')).not.toBe(levelShownKey('hu→es', 'A1'));
+  });
+});
+
+// FB596: the round end's per-topic rows.
+describe('the round end topic rows', () => {
+  it('records asked, right and the topic share before its FIRST answer of the round', () => {
+    let topics = recordRoundAnswer(undefined, 'a', true, 40);
+    topics = recordRoundAnswer(topics, 'a', false, 67);
+    topics = recordRoundAnswer(topics, 'b', true, 0);
+    expect(topics).toEqual({ a: { n: 2, right: 1, start: 40 }, b: { n: 1, right: 1, start: 0 } });
+  });
+
+  it('one row per topic with right/asked and the change in points; weakest first; it can fall while others rise', () => {
+    const topics = { a: { n: 4, right: 2, start: 75 }, b: { n: 3, right: 3, start: 33 }, c: { n: 2, right: 2, start: 100 } };
+    const rows = roundTopicRows(topics, evidenceOf({ a: evOf(['c', 'c', 'x', 'x']), b: evOf(['c', 'c', 'c']), c: ticked() }));
+    expect(rows.map((r) => r.id)).toEqual(['a', 'b', 'c']); // 50, 100 (b: 3 right of 3), 100 (c)
+    expect(rows[0]).toEqual({ id: 'a', n: 4, right: 2, delta: -25 });
+    expect(rows[1].delta).toBe(67);
+    expect(rows[2].delta).toBe(0);
+  });
+
+  it('a topic with fewer than 3 answers has no point change (its share is right/3, not a percent): delta is null, right/asked stays', () => {
+    const rows = roundTopicRows({ a: { n: 1, right: 1, start: 0 }, b: { n: 2, right: 2, start: 0 } }, evidenceOf({ a: evOf(['c']), b: evOf(['c', 'c']) }));
+    expect(rows.map((r) => [r.id, r.n, r.right, r.delta])).toEqual([['a', 1, 1, null], ['b', 2, 2, null]]);
+  });
+
+  it('is empty for a round without a record (saved before) and parses with or without it', () => {
+    expect(roundTopicRows(undefined, new Map())).toEqual([]);
+    expect(parseLevelRound({ n: 3, right: 1, startPct: 10 })).toEqual({ n: 3, right: 1, startPct: 10 });
+    const withTopics = parseLevelRound({ n: 3, right: 1, startPct: 10, topics: { a: { n: 2, right: 1, start: 5 }, bad: { n: 'x' } } });
+    expect(withTopics?.topics).toEqual({ a: { n: 2, right: 1, start: 5 } });
   });
 });

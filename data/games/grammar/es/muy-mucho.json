@@ -647,7 +647,13 @@
       "verb": "palabra",
       "person": "Estoy ___ contento hoy.",
       "answer": "muy",
-      "table": "muy-mucho-formas"
+      "table": "muy-mucho-formas",
+      "wrong": {
+        "mucho": {
+          "en": "Before an adjective or an adverb the word is muy. Mucho goes with verbs and nouns: muy.",
+          "es": "Delante de un adjetivo o un adverbio la palabra es muy. Mucho va con verbos y sustantivos: muy."
+        }
+      }
     },
     {
       "id": "mm-form-02",
@@ -655,7 +661,17 @@
       "verb": "palabra",
       "person": "Tengo ___ hambre.",
       "answer": "mucha",
-      "table": "muy-mucho-formas"
+      "table": "muy-mucho-formas",
+      "wrong": {
+        "mucho": {
+          "en": "Hambre is feminine, even though it takes el in the singular (el hambre): mucha hambre.",
+          "es": "Hambre es femenino, aunque lleve el en singular (el hambre): mucha hambre."
+        },
+        "muy": {
+          "en": "Muy only goes before an adjective or an adverb. With a verb or a noun you need mucho: mucha.",
+          "es": "Muy solo va delante de un adjetivo o un adverbio. Con un verbo o un sustantivo hace falta mucho: mucha."
+        }
+      }
     },
     {
       "id": "mm-form-03",
@@ -663,7 +679,17 @@
       "verb": "palabra",
       "person": "Mi hermana corre ___.",
       "answer": "mucho",
-      "table": "muy-mucho-formas"
+      "table": "muy-mucho-formas",
+      "wrong": {
+        "muy": {
+          "en": "Muy only goes before an adjective or an adverb. With a verb or a noun you need mucho: mucho.",
+          "es": "Muy solo va delante de un adjetivo o un adverbio. Con un verbo o un sustantivo hace falta mucho: mucho."
+        },
+        "mucha": {
+          "en": "After a verb, with no noun, the word does not change: mucho.",
+          "es": "Después de un verbo, sin sustantivo, la palabra no cambia: mucho."
+        }
+      }
     },
     {
       "id": "mm-form-04",
@@ -671,7 +697,21 @@
       "verb": "palabra",
       "person": "Hay ___ libros en la mesa.",
       "answer": "muchos",
-      "table": "muy-mucho-formas"
+      "table": "muy-mucho-formas",
+      "wrong": {
+        "mucho": {
+          "en": "Libros is plural, so mucho must be plural too: muchos.",
+          "es": "Libros es plural, así que mucho también debe ir en plural: muchos."
+        },
+        "muy": {
+          "en": "Muy only goes before an adjective or an adverb. With a verb or a noun you need mucho: muchos.",
+          "es": "Muy solo va delante de un adjetivo o un adverbio. Con un verbo o un sustantivo hace falta mucho: muchos."
+        },
+        "muchas": {
+          "en": "Libros is masculine, so the feminine form does not fit: muchos.",
+          "es": "Libros es masculino, así que la forma femenina no concuerda: muchos."
+        }
+      }
     },
     {
       "id": "mm-form-05",
@@ -679,7 +719,13 @@
       "verb": "palabra",
       "person": "El restaurante está ___ lejos.",
       "answer": "muy",
-      "table": "muy-mucho-formas"
+      "table": "muy-mucho-formas",
+      "wrong": {
+        "mucho": {
+          "en": "Before an adjective or an adverb the word is muy. Mucho goes with verbs and nouns: muy.",
+          "es": "Delante de un adjetivo o un adverbio la palabra es muy. Mucho va con verbos y sustantivos: muy."
+        }
+      }
     },
     {
       "id": "mm-form-06",
@@ -687,7 +733,17 @@
       "verb": "palabra",
       "person": "Mi tía tiene ___ ropa.",
       "answer": "mucha",
-      "table": "muy-mucho-formas"
+      "table": "muy-mucho-formas",
+      "wrong": {
+        "mucho": {
+          "en": "Before a noun, mucho agrees with it in gender and number. Ropa is feminine singular: mucha.",
+          "es": "Delante de un sustantivo, mucho concuerda con él en género y número. Ropa es femenino singular: mucha."
+        },
+        "muchas": {
+          "en": "In Spanish ropa is singular (la ropa), even though \"clothes\" is plural in English: mucha.",
+          "es": "En español ropa es singular (la ropa), aunque en inglés \"clothes\" sea plural: mucha."
+        }
+      }
     },
     {
       "id": "mm-form-07",
@@ -695,7 +751,17 @@
       "verb": "palabra",
       "person": "Mi tío vende ___ zapatos.",
       "answer": "muchos",
-      "table": "muy-mucho-formas"
+      "table": "muy-mucho-formas",
+      "wrong": {
+        "mucho": {
+          "en": "Zapatos is plural, so mucho must be plural too: muchos.",
+          "es": "Zapatos es plural, así que mucho también debe ir en plural: muchos."
+        },
+        "muchas": {
+          "en": "Zapatos is masculine, so the feminine form does not fit: muchos.",
+          "es": "Zapatos es masculino, así que la forma femenina no concuerda: muchos."
+        }
+      }
     },
     {
       "id": "mm-form-08",
@@ -703,7 +769,17 @@
       "verb": "palabra",
       "person": "Compro ___ manzanas en el mercado.",
       "answer": "muchas",
-      "table": "muy-mucho-formas"
+      "table": "muy-mucho-formas",
+      "wrong": {
+        "muchos": {
+          "en": "Manzanas is feminine, so the masculine form does not fit: muchas.",
+          "es": "Manzanas es femenino, así que la forma masculina no concuerda: muchas."
+        },
+        "mucho": {
+          "en": "Manzanas is plural, so mucho must be plural too: muchas.",
+          "es": "Manzanas es plural, así que mucho también debe ir en plural: muchas."
+        }
+      }
     },
     {
       "id": "mm-form-09",
@@ -711,7 +787,17 @@
       "verb": "palabra",
       "person": "Mi jefe tiene ___ trabajo.",
       "answer": "mucho",
-      "table": "muy-mucho-formas"
+      "table": "muy-mucho-formas",
+      "wrong": {
+        "mucha": {
+          "en": "Trabajo is masculine, so the feminine form does not fit: mucho.",
+          "es": "Trabajo es masculino, así que la forma femenina no concuerda: mucho."
+        },
+        "muchos": {
+          "en": "Trabajo is singular, so the plural form does not fit: mucho.",
+          "es": "Trabajo es singular, así que la forma plural no concuerda: mucho."
+        }
+      }
     },
     {
       "id": "mm-form-10",
@@ -719,7 +805,13 @@
       "verb": "palabra",
       "person": "Esta sopa está ___ rica.",
       "answer": "muy",
-      "table": "muy-mucho-formas"
+      "table": "muy-mucho-formas",
+      "wrong": {
+        "mucho": {
+          "en": "Before an adjective or an adverb the word is muy. Mucho goes with verbs and nouns: muy.",
+          "es": "Delante de un adjetivo o un adverbio la palabra es muy. Mucho va con verbos y sustantivos: muy."
+        }
+      }
     },
     {
       "id": "mm-form-11",
@@ -727,7 +819,17 @@
       "verb": "palabra",
       "person": "Hablamos ___ en clase.",
       "answer": "mucho",
-      "table": "muy-mucho-formas"
+      "table": "muy-mucho-formas",
+      "wrong": {
+        "muy": {
+          "en": "Muy only goes before an adjective or an adverb. With a verb or a noun you need mucho: mucho.",
+          "es": "Muy solo va delante de un adjetivo o un adverbio. Con un verbo o un sustantivo hace falta mucho: mucho."
+        },
+        "mucha": {
+          "en": "After a verb, with no noun, the word does not change: mucho.",
+          "es": "Después de un verbo, sin sustantivo, la palabra no cambia: mucho."
+        }
+      }
     },
     {
       "id": "mm-form-12",
@@ -735,7 +837,13 @@
       "verb": "palabra",
       "person": "Mi amigo es ___ simpático.",
       "answer": "muy",
-      "table": "muy-mucho-formas"
+      "table": "muy-mucho-formas",
+      "wrong": {
+        "mucho": {
+          "en": "Before an adjective or an adverb the word is muy. Mucho goes with verbs and nouns: muy.",
+          "es": "Delante de un adjetivo o un adverbio la palabra es muy. Mucho va con verbos y sustantivos: muy."
+        }
+      }
     }
   ]
 }

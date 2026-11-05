@@ -8,6 +8,7 @@ import { themedInputStyle } from '@/components/grammar/Themed';
 import ResultBadge from '@/components/ResultBadge';
 import { answerInputProps } from '@/lib/inputProps';
 import { useDockedAction } from '@/components/learn/DockSlot';
+import { useFocusOnNewCard } from '@/lib/learn/useFocusOnNewCard';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
 import { gradePcicAnswer, gradeSentenceAnswer, suggestedGrade } from '@/lib/pcicMatch';
@@ -43,6 +44,11 @@ type Props = {
   onDone: (correct: boolean, given?: string) => void;
 };
 
+/** How far to scroll so the card's bottom (the field) clears the docked bar: 0 for a card that already fits. */
+export function keyboardScrollY(cardBottom: number, viewportHeight: number, padBottom: number): number {
+  return Math.max(0, cardBottom - (viewportHeight - padBottom) + 8);
+}
+
 export default function ExamTypeCard({ prompt, heading, label, bottomPad, hint, answer, accept, sentence, targetLang, strictAccents, keepUmlauts = false, instant = false, onDone }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
@@ -50,13 +56,22 @@ export default function ExamTypeCard({ prompt, heading, label, bottomPad, hint, 
   const s = t();
   const [typed, setTyped] = useState('');
   const [missed, setMissed] = useState(false);
-  // the level tests: with the keyboard open the buttons under the field (I don't know) can sit behind the docked Check bar,
-  // so the body scrolls to its end when the keyboard comes up
+  // the level tests: with the keyboard open the field can sit behind the docked Check bar, so the body scrolls when the
+  // keyboard comes up, but only as far as the card's bottom needs (a short card never moves, the prompt stays in view)
   const scrollRef = useRef<ScrollView>(null);
+  const cardBottom = useRef(0);
+  const viewportH = useRef(0);
+  const padRef = useRef(0);
+  // the keyboard opens by itself, with the word card's single delayed focus (plain autoFocus left Gboard up with a dead field)
+  const inputRef = useRef<TextInput>(null);
+  useFocusOnNewCard(inputRef, true, prompt);
   useEffect(() => {
     if (!instant) return;
     const sub = Keyboard.addListener(Platform.OS === 'ios' ? 'keyboardWillShow' : 'keyboardDidShow', () => {
-      setTimeout(() => scrollRef.current?.scrollToEnd({ animated: false }), 50);
+      setTimeout(() => {
+        const y = keyboardScrollY(cardBottom.current, viewportH.current, padRef.current);
+        if (y > 0) scrollRef.current?.scrollTo({ y, animated: false });
+      }, 50);
     });
     return () => sub.remove();
   }, [instant]);
@@ -81,8 +96,25 @@ export default function ExamTypeCard({ prompt, heading, label, bottomPad, hint, 
       : { label: `✓ ${s.card.check}`, tone: 'check', testID: 'exam-check', disabled: typed.trim().length === 0, onPress: check }
   );
 
+  useEffect(() => {
+    padRef.current = padBottom;
+  }, [padBottom]);
+
   return (
-    <ScrollView ref={scrollRef} contentContainerStyle={[styles.scroll, bottomPad ? { paddingBottom: bottomPad } : null]} keyboardShouldPersistTaps="handled">
+    <ScrollView
+      ref={scrollRef}
+      onLayout={(e) => {
+        viewportH.current = e.nativeEvent.layout.height;
+      }}
+      contentContainerStyle={[styles.scroll, bottomPad ? { paddingBottom: bottomPad } : null]}
+      keyboardShouldPersistTaps="handled"
+    >
+      <View
+        testID="exam-card-box"
+        onLayout={(e) => {
+          cardBottom.current = e.nativeEvent.layout.y + e.nativeEvent.layout.height;
+        }}
+      >
       <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
         {heading ? (
           <Text testID="exam-heading" style={[styles.caption, { color: colors.textMuted }]}>
@@ -109,6 +141,7 @@ export default function ExamTypeCard({ prompt, heading, label, bottomPad, hint, 
           </Text>
         ) : null}
         <TextInput
+          ref={inputRef}
           testID="exam-input"
           style={[
             styles.input,
@@ -121,7 +154,6 @@ export default function ExamTypeCard({ prompt, heading, label, bottomPad, hint, 
           onChangeText={setTyped}
           onSubmitEditing={missed ? () => onDone(false, typed) : check}
           editable={!missed}
-          autoFocus
           {...answerInputProps}
         />
         {missed && (
@@ -134,6 +166,7 @@ export default function ExamTypeCard({ prompt, heading, label, bottomPad, hint, 
           </View>
         )}
       </Card>
+      </View>
       {missed ? (
         docked ? null : <ExamButton testID="exam-next" label={`${s.card.next} →`} onPress={() => onDone(false, typed)} />
       ) : (

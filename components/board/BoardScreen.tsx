@@ -15,6 +15,7 @@ import ScreenFeedback from '@/lib/screenFeedback';
 import { useTheme } from '@/lib/ThemeContext';
 import BoardList from './BoardList';
 import MeBar from './MeBar';
+import MetricSwitch from './MetricSwitch';
 import MyWeekPanel from './MyWeekPanel';
 import Podium from './Podium';
 import { useBoard } from './useBoard';
@@ -37,12 +38,15 @@ export default function BoardScreen() {
   if (b.phase === 'hidden') return null;
 
   const { phase, data } = b;
-  const ready = phase === 'ready' && data?.me ? data : null;
-  const showList = (phase === 'ready' || phase === 'left') && data;
+  // `pending`: the switch was just pressed and the answer for it is not here, so the list on screen is the other ranking: load instead
+  const ready = phase === 'ready' && data?.me && !b.pending ? data : null;
+  const hasData = (phase === 'ready' || phase === 'left') && data;
+  const showList = hasData && !b.pending;
   const band = mixColor(colors.secondary, colors.background, 0.3);
   const todayIndex = data ? weekDayIndex(data.weekStart, new Date()) : 0;
   const canJoin = isValidName(b.name) && !b.busy;
   const rest = data ? data.rows.filter((r) => r.rank > 3) : [];
+  const time = b.shown === 'time';
   const errorLine = b.error ? <Text testID="board-error" style={[styles.note, { color: colors.danger }]}>{b.error}</Text> : null;
   const joinButton = (testID: string, onPress: () => void, enabled: boolean) => (
     <Pressable
@@ -73,12 +77,13 @@ export default function BoardScreen() {
             <Text variant="title" accessibilityRole="header" style={[styles.title, { color: colors.text }]}>{t().tabs.board}</Text>
             <ScreenFeedback placement="inline" level="-" languagePair={pairOf(getPcicTarget())} currentCard="board-tab" />
           </View>
+          {hasData && b.timeSupported ? <MetricSwitch value={b.choice} onChange={b.switchMetric} /> : null}
           {showList && data ? (
             <View style={[styles.chip, { backgroundColor: colors.card }]}>
               <Text style={[styles.chipText, { color: colors.text }]}>{s.chipLeft(daysLeft(todayIndex))}</Text>
             </View>
           ) : null}
-          <Podium rows={showList && data ? data.rows : null} gains={b.gains} onGainDone={b.gainDone} />
+          <Podium rows={showList && data ? data.rows : null} gains={b.gains} onGainDone={b.gainDone} metric={b.shown} />
         </View>
         <View
           style={[styles.sheet, { backgroundColor: colors.card }, ready && styles.sheetReady]}
@@ -86,7 +91,7 @@ export default function BoardScreen() {
             sheetY.current = e.nativeEvent.layout.y;
           }}
         >
-          {phase === 'loading' && <Text testID="board-loading" style={[styles.note, styles.pad, { color: colors.textMuted }]}>{s.loading}</Text>}
+          {(phase === 'loading' || (b.pending && hasData)) && <Text testID="board-loading" style={[styles.note, styles.pad, { color: colors.textMuted }]}>{s.loading}</Text>}
           {phase === 'offline' && <Text testID="board-offline" style={[styles.note, styles.pad, { color: colors.textMuted }]}>{s.offline}</Text>}
           {phase === 'join' && (
             <View style={styles.form}>
@@ -114,9 +119,10 @@ export default function BoardScreen() {
             <MyWeekPanel
               me={ready.me!}
               rows={ready.rows}
-              days={b.week.days}
+              days={time ? b.week.minutes : b.week.days}
               todayIndex={todayIndex}
-              lastWeek={b.week.lastWeek}
+              lastWeek={time ? b.week.lastWeekMinutes : b.week.lastWeek}
+              metric={b.shown}
               streak={b.week.streak}
               onLayout={(e) => {
                 panelY.current = e.nativeEvent.layout.y;
@@ -125,9 +131,9 @@ export default function BoardScreen() {
           ) : null}
           {showList && data ? (
             data.rows.every((r) => r.xp === 0) ? (
-              <Text testID="board-empty" style={[styles.note, styles.pad, { color: colors.textMuted }]}>{s.empty}</Text>
+              <Text testID="board-empty" style={[styles.note, styles.pad, { color: colors.textMuted }]}>{time ? s.emptyTime : s.empty}</Text>
             ) : (
-              <BoardList rows={rest} gains={b.gains} onGainDone={b.gainDone} animate={!b.reduceMotion} />
+              <BoardList rows={rest} gains={b.gains} onGainDone={b.gainDone} animate={!b.reduceMotion} metric={b.shown} />
             )
           ) : null}
           {phase === 'left' && (
@@ -151,6 +157,7 @@ export default function BoardScreen() {
         <MeBar
           me={ready.me!}
           rows={ready.rows}
+          metric={b.shown}
           // without the own-week figures there is no panel to jump to
           onOpenWeek={b.week ? openWeek : undefined}
           onLearn={() => router.navigate('/(tabs)' as never)}

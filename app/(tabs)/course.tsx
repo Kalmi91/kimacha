@@ -41,6 +41,7 @@ import { DEFAULT_WEEKLY_GOAL_MINUTES } from '@/lib/usageStats';
 import ScreenFeedback from '@/lib/screenFeedback';
 import { BrutalBox, SegmentBar, Sticker, segmentsFilled } from '@/components/grammar/Brutal';
 import LevelTestButton from '@/components/grammar/LevelTestButton';
+import LevelStanding from '@/components/grammar/LevelStanding';
 import { topicKindCount } from '@/lib/grammar/randomRoundView';
 import { SkinBackdrop, SkinHeader } from '@/components/skins/Slots';
 
@@ -235,6 +236,7 @@ export default function GrammarSyllabusScreen() {
             {s.grammar.levelMeta(shownDone, shownTopics.length, shownWritten)}
             {shownLevel === level ? ` · ${s.grammar.yourLevel}` : ''}
           </Text>
+          <LevelStanding level={shownLevel} learnedLang={learnedLang} contentLang={contentLang} evidence={evidence} />
           <LevelTestButton level={shownLevel} learnedLang={learnedLang} contentLang={contentLang} evidence={evidence} />
 
           {unitsForLevel(shownLevel, learnedLang).map((unit) => (
@@ -386,6 +388,7 @@ export default function GrammarSyllabusScreen() {
                 <Text style={[styles.levelMeta, { color: colors.tabIconDefault }]}>
                   {s.grammar.levelMeta(done, topics.length, written)}
                 </Text>
+                <LevelStanding level={lvl} learnedLang={learnedLang} contentLang={contentLang} evidence={evidence} />
               </Pressable>
               <LevelTestButton level={lvl} learnedLang={learnedLang} contentLang={contentLang} evidence={evidence} />
 

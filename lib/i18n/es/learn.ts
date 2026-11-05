@@ -71,6 +71,7 @@ const es: typeof en = {
     badgeDone: (n: number) => `hechas ${n}`,
     badgeXp: (xp: number, goal: number) => (xp >= goal ? `XP ${xp} ✓` : `XP ${xp}/${goal}`),
     badgeXpA11y: (xp: number, goal: number) => `XP de hoy: ${xp} de ${goal}`,
+    badgeXpEarned: (xp: number) => `+${String(xp).replace('.', ',')} XP`,
     // "oración" -> "oraciones" is not a plain "+es" inflection (the accent drops in the
     // plural), so the whole word switches, not a suffix (typo fix:
     // "oraciónes" -> "oraciones").

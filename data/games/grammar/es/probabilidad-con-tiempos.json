@@ -723,7 +723,13 @@
       "verb": "forma",
       "person": "¿Qué hora es? No sé, ___ (ser) las seis.",
       "answer": "serán",
-      "table": "prob-forma"
+      "table": "prob-forma",
+      "wrong": {
+        "sería": {
+          "en": "Sería is the conditional form. To guess about the present, Spanish uses the simple future: serán.",
+          "es": "Sería es la forma del condicional. Para suponer algo del presente, el español usa el futuro simple: serán."
+        }
+      }
     },
     {
       "id": "pt-form-02",
@@ -731,7 +737,13 @@
       "verb": "forma",
       "person": "¿Dónde está Ana? No sé, ___ (estar) en el trabajo.",
       "answer": "estará",
-      "table": "prob-forma"
+      "table": "prob-forma",
+      "wrong": {
+        "estaría": {
+          "en": "Estaría is the conditional form. To guess about the present, Spanish uses the simple future: estará.",
+          "es": "Estaría es la forma del condicional. Para suponer algo del presente, el español usa el futuro simple: estará."
+        }
+      }
     },
     {
       "id": "pt-form-03",
@@ -739,7 +751,13 @@
       "verb": "forma",
       "person": "¿Cuántos años tiene ese señor? No sé, ___ (tener) unos sesenta.",
       "answer": "tendrá",
-      "table": "prob-forma"
+      "table": "prob-forma",
+      "wrong": {
+        "tendría": {
+          "en": "Tendría is the conditional form. To guess about the present, Spanish uses the simple future: tendrá.",
+          "es": "Tendría es la forma del condicional. Para suponer algo del presente, el español usa el futuro simple: tendrá."
+        }
+      }
     },
     {
       "id": "pt-form-04",
@@ -747,7 +765,17 @@
       "verb": "forma",
       "person": "¿Dónde está Luis? No sé, a estas horas ya ___ (llegar) a casa.",
       "answer": "habrá llegado",
-      "table": "prob-forma"
+      "table": "prob-forma",
+      "wrong": {
+        "ha llegado": {
+          "en": "Ha llegado is the present perfect form. To guess about something that already happened before now, Spanish uses the future perfect: habrá llegado.",
+          "es": "Ha llegado es la forma del pretérito perfecto. Para suponer algo que ya pasó antes de ahora, el español usa el futuro perfecto: habrá llegado."
+        },
+        "habría llegado": {
+          "en": "Habría llegado is the compound conditional form. To guess about something that already happened before now, Spanish uses the future perfect: habrá llegado.",
+          "es": "Habría llegado es la forma del condicional compuesto. Para suponer algo que ya pasó antes de ahora, el español usa el futuro perfecto: habrá llegado."
+        }
+      }
     },
     {
       "id": "pt-form-05",
@@ -755,7 +783,17 @@
       "verb": "forma",
       "person": "Mi hija no quiere comer. No sé, ya ___ (comer) en la escuela.",
       "answer": "habrá comido",
-      "table": "prob-forma"
+      "table": "prob-forma",
+      "wrong": {
+        "ha comido": {
+          "en": "Ha comido is the present perfect form. To guess about something that already happened before now, Spanish uses the future perfect: habrá comido.",
+          "es": "Ha comido es la forma del pretérito perfecto. Para suponer algo que ya pasó antes de ahora, el español usa el futuro perfecto: habrá comido."
+        },
+        "habría comido": {
+          "en": "Habría comido is the compound conditional form. To guess about something that already happened before now, Spanish uses the future perfect: habrá comido.",
+          "es": "Habría comido es la forma del condicional compuesto. Para suponer algo que ya pasó antes de ahora, el español usa el futuro perfecto: habrá comido."
+        }
+      }
     },
     {
       "id": "pt-form-06",
@@ -763,7 +801,17 @@
       "verb": "forma",
       "person": "El suelo está mojado. No sé, ___ (llover) toda la noche.",
       "answer": "habrá llovido",
-      "table": "prob-forma"
+      "table": "prob-forma",
+      "wrong": {
+        "ha llovido": {
+          "en": "Ha llovido is the present perfect form. To guess about something that already happened before now, Spanish uses the future perfect: habrá llovido.",
+          "es": "Ha llovido es la forma del pretérito perfecto. Para suponer algo que ya pasó antes de ahora, el español usa el futuro perfecto: habrá llovido."
+        },
+        "habría llovido": {
+          "en": "Habría llovido is the compound conditional form. To guess about something that already happened before now, Spanish uses the future perfect: habrá llovido.",
+          "es": "Habría llovido es la forma del condicional compuesto. Para suponer algo que ya pasó antes de ahora, el español usa el futuro perfecto: habrá llovido."
+        }
+      }
     },
     {
       "id": "pt-form-07",
@@ -771,7 +819,13 @@
       "verb": "forma",
       "person": "¿Cuántos años tenía el maestro entonces? No sé, ___ (tener) cuarenta.",
       "answer": "tendría",
-      "table": "prob-forma"
+      "table": "prob-forma",
+      "wrong": {
+        "tendrá": {
+          "en": "Tendrá is the simple future form. To guess about a moment in the past, Spanish uses the conditional: tendría.",
+          "es": "Tendrá es la forma del futuro simple. Para suponer algo de un momento del pasado, el español usa el condicional: tendría."
+        }
+      }
     },
     {
       "id": "pt-form-08",
@@ -779,7 +833,13 @@
       "verb": "forma",
       "person": "¿Cuánto costaba el boleto antes? No sé, ___ (costar) cinco pesos.",
       "answer": "costaría",
-      "table": "prob-forma"
+      "table": "prob-forma",
+      "wrong": {
+        "costará": {
+          "en": "Costará is the simple future form. To guess about a moment in the past, Spanish uses the conditional: costaría.",
+          "es": "Costará es la forma del futuro simple. Para suponer algo de un momento del pasado, el español usa el condicional: costaría."
+        }
+      }
     },
     {
       "id": "pt-form-09",
@@ -787,7 +847,13 @@
       "verb": "forma",
       "person": "¿Cuánta gente había en la boda? No sé, ___ (haber) unas cien.",
       "answer": "habría",
-      "table": "prob-forma"
+      "table": "prob-forma",
+      "wrong": {
+        "habrá": {
+          "en": "Habrá is the simple future form. To guess about a moment in the past, Spanish uses the conditional: habría.",
+          "es": "Habrá es la forma del futuro simple. Para suponer algo de un momento del pasado, el español usa el condicional: habría."
+        }
+      }
     },
     {
       "id": "pt-form-10",
@@ -795,7 +861,13 @@
       "verb": "forma",
       "person": "Cuando llegué, Luis ya no estaba. No sé, ya ___ (salir).",
       "answer": "habría salido",
-      "table": "prob-forma"
+      "table": "prob-forma",
+      "wrong": {
+        "habrá salido": {
+          "en": "Habrá salido is the future perfect form. To guess about something that happened before a past moment, Spanish uses the compound conditional (habría + participle): habría salido.",
+          "es": "Habrá salido es la forma del futuro perfecto. Para suponer algo que pasó antes de un momento del pasado, el español usa el condicional compuesto (habría + participio): habría salido."
+        }
+      }
     },
     {
       "id": "pt-form-11",
@@ -803,7 +875,13 @@
       "verb": "forma",
       "person": "Cuando fui a verlos, la casa estaba cerrada. No sé, ya ___ (viajar).",
       "answer": "habrían viajado",
-      "table": "prob-forma"
+      "table": "prob-forma",
+      "wrong": {
+        "habrán viajado": {
+          "en": "Habrán viajado is the future perfect form. To guess about something that happened before a past moment, Spanish uses the compound conditional (habría + participle): habrían viajado.",
+          "es": "Habrán viajado es la forma del futuro perfecto. Para suponer algo que pasó antes de un momento del pasado, el español usa el condicional compuesto (habría + participio): habrían viajado."
+        }
+      }
     },
     {
       "id": "pt-form-12",
@@ -811,7 +889,13 @@
       "verb": "forma",
       "person": "Cuando llegué, el jefe ya no estaba. No sé, ya ___ (terminar) el trabajo.",
       "answer": "habría terminado",
-      "table": "prob-forma"
+      "table": "prob-forma",
+      "wrong": {
+        "habrá terminado": {
+          "en": "Habrá terminado is the future perfect form. To guess about something that happened before a past moment, Spanish uses the compound conditional (habría + participle): habría terminado.",
+          "es": "Habrá terminado es la forma del futuro perfecto. Para suponer algo que pasó antes de un momento del pasado, el español usa el condicional compuesto (habría + participio): habría terminado."
+        }
+      }
     },
     {
       "kind": "why",

@@ -829,7 +829,17 @@
       "verb": "hablar",
       "person": "yo",
       "answer": "habré hablado",
-      "table": "fut-perf"
+      "table": "fut-perf",
+      "wrong": {
+        "he hablado": {
+          "en": "He hablado is the present perfect form. This task asks for the future perfect form: habré hablado.",
+          "es": "He hablado es la forma del pretérito perfecto. Esta tarea pide la forma del futuro perfecto: habré hablado."
+        },
+        "hablaré": {
+          "en": "Hablaré is the simple future form. This task asks for the future perfect form: habré hablado.",
+          "es": "Hablaré es la forma del futuro simple. Esta tarea pide la forma del futuro perfecto: habré hablado."
+        }
+      }
     },
     {
       "id": "fcp-form-02",
@@ -837,7 +847,17 @@
       "verb": "comer",
       "person": "tú",
       "answer": "habrás comido",
-      "table": "fut-perf"
+      "table": "fut-perf",
+      "wrong": {
+        "has comido": {
+          "en": "Has comido is the present perfect form. This task asks for the future perfect form: habrás comido.",
+          "es": "Has comido es la forma del pretérito perfecto. Esta tarea pide la forma del futuro perfecto: habrás comido."
+        },
+        "comerás": {
+          "en": "Comerás is the simple future form. This task asks for the future perfect form: habrás comido.",
+          "es": "Comerás es la forma del futuro simple. Esta tarea pide la forma del futuro perfecto: habrás comido."
+        }
+      }
     },
     {
       "id": "fcp-form-03",
@@ -845,7 +865,17 @@
       "verb": "vivir",
       "person": "él/ella/usted",
       "answer": "habrá vivido",
-      "table": "fut-perf"
+      "table": "fut-perf",
+      "wrong": {
+        "ha vivido": {
+          "en": "Ha vivido is the present perfect form. This task asks for the future perfect form: habrá vivido.",
+          "es": "Ha vivido es la forma del pretérito perfecto. Esta tarea pide la forma del futuro perfecto: habrá vivido."
+        },
+        "vivirá": {
+          "en": "Vivirá is the simple future form. This task asks for the future perfect form: habrá vivido.",
+          "es": "Vivirá es la forma del futuro simple. Esta tarea pide la forma del futuro perfecto: habrá vivido."
+        }
+      }
     },
     {
       "id": "fcp-form-04",
@@ -853,7 +883,17 @@
       "verb": "hacer",
       "person": "nosotros",
       "answer": "habremos hecho",
-      "table": "fut-perf"
+      "table": "fut-perf",
+      "wrong": {
+        "hemos hecho": {
+          "en": "Hemos hecho is the present perfect form. This task asks for the future perfect form: habremos hecho.",
+          "es": "Hemos hecho es la forma del pretérito perfecto. Esta tarea pide la forma del futuro perfecto: habremos hecho."
+        },
+        "habremos hacido": {
+          "en": "Hacer has an irregular participle, hecho, not the regular form: habremos hecho.",
+          "es": "Hacer tiene participio irregular, hecho, no la forma regular: habremos hecho."
+        }
+      }
     },
     {
       "id": "fcp-form-05",
@@ -861,7 +901,17 @@
       "verb": "ver",
       "person": "ellos/ellas/ustedes",
       "answer": "habrán visto",
-      "table": "fut-perf"
+      "table": "fut-perf",
+      "wrong": {
+        "han visto": {
+          "en": "Han visto is the present perfect form. This task asks for the future perfect form: habrán visto.",
+          "es": "Han visto es la forma del pretérito perfecto. Esta tarea pide la forma del futuro perfecto: habrán visto."
+        },
+        "habrán veído": {
+          "en": "Ver has an irregular participle, visto, not the regular form: habrán visto.",
+          "es": "Ver tiene participio irregular, visto, no la forma regular: habrán visto."
+        }
+      }
     },
     {
       "id": "fcp-form-06",
@@ -869,7 +919,17 @@
       "verb": "decir",
       "person": "yo",
       "answer": "habré dicho",
-      "table": "fut-perf"
+      "table": "fut-perf",
+      "wrong": {
+        "he dicho": {
+          "en": "He dicho is the present perfect form. This task asks for the future perfect form: habré dicho.",
+          "es": "He dicho es la forma del pretérito perfecto. Esta tarea pide la forma del futuro perfecto: habré dicho."
+        },
+        "habré decido": {
+          "en": "Decir has an irregular participle, dicho, not the regular form: habré dicho.",
+          "es": "Decir tiene participio irregular, dicho, no la forma regular: habré dicho."
+        }
+      }
     },
     {
       "id": "fcp-form-07",
@@ -877,7 +937,17 @@
       "verb": "escribir",
       "person": "ellos/ellas/ustedes",
       "answer": "habrán escrito",
-      "table": "fut-perf"
+      "table": "fut-perf",
+      "wrong": {
+        "han escrito": {
+          "en": "Han escrito is the present perfect form. This task asks for the future perfect form: habrán escrito.",
+          "es": "Han escrito es la forma del pretérito perfecto. Esta tarea pide la forma del futuro perfecto: habrán escrito."
+        },
+        "habrán escribido": {
+          "en": "Escribir has an irregular participle, escrito, not the regular form: habrán escrito.",
+          "es": "Escribir tiene participio irregular, escrito, no la forma regular: habrán escrito."
+        }
+      }
     },
     {
       "id": "fcp-form-08",
@@ -885,7 +955,17 @@
       "verb": "volver",
       "person": "tú",
       "answer": "habrás vuelto",
-      "table": "fut-perf"
+      "table": "fut-perf",
+      "wrong": {
+        "has vuelto": {
+          "en": "Has vuelto is the present perfect form. This task asks for the future perfect form: habrás vuelto.",
+          "es": "Has vuelto es la forma del pretérito perfecto. Esta tarea pide la forma del futuro perfecto: habrás vuelto."
+        },
+        "habrás volvido": {
+          "en": "Volver has an irregular participle, vuelto, not the regular form: habrás vuelto.",
+          "es": "Volver tiene participio irregular, vuelto, no la forma regular: habrás vuelto."
+        }
+      }
     },
     {
       "id": "fcp-form-09",
@@ -893,7 +973,17 @@
       "verb": "condicional de haber",
       "person": "yo",
       "answer": "habría",
-      "table": "haber-aux"
+      "table": "haber-aux",
+      "wrong": {
+        "habré": {
+          "en": "Habré is the simple future form. This task asks for the conditional form: habría.",
+          "es": "Habré es la forma del futuro simple. Esta tarea pide la forma del condicional: habría."
+        },
+        "había": {
+          "en": "Había is the imperfect form. This task asks for the conditional form: habría.",
+          "es": "Había es la forma del pretérito imperfecto. Esta tarea pide la forma del condicional: habría."
+        }
+      }
     },
     {
       "id": "fcp-form-10",
@@ -901,7 +991,17 @@
       "verb": "condicional de haber",
       "person": "tú",
       "answer": "habrías",
-      "table": "haber-aux"
+      "table": "haber-aux",
+      "wrong": {
+        "habrás": {
+          "en": "Habrás is the simple future form. This task asks for the conditional form: habrías.",
+          "es": "Habrás es la forma del futuro simple. Esta tarea pide la forma del condicional: habrías."
+        },
+        "habías": {
+          "en": "Habías is the imperfect form. This task asks for the conditional form: habrías.",
+          "es": "Habías es la forma del pretérito imperfecto. Esta tarea pide la forma del condicional: habrías."
+        }
+      }
     },
     {
       "id": "fcp-form-11",
@@ -909,7 +1009,17 @@
       "verb": "condicional de haber",
       "person": "nosotros",
       "answer": "habríamos",
-      "table": "haber-aux"
+      "table": "haber-aux",
+      "wrong": {
+        "habremos": {
+          "en": "Habremos is the simple future form. This task asks for the conditional form: habríamos.",
+          "es": "Habremos es la forma del futuro simple. Esta tarea pide la forma del condicional: habríamos."
+        },
+        "habíamos": {
+          "en": "Habíamos is the imperfect form. This task asks for the conditional form: habríamos.",
+          "es": "Habíamos es la forma del pretérito imperfecto. Esta tarea pide la forma del condicional: habríamos."
+        }
+      }
     },
     {
       "id": "fcp-form-12",
@@ -917,7 +1027,17 @@
       "verb": "condicional de haber",
       "person": "ellos/ellas/ustedes",
       "answer": "habrían",
-      "table": "haber-aux"
+      "table": "haber-aux",
+      "wrong": {
+        "habrán": {
+          "en": "Habrán is the simple future form. This task asks for the conditional form: habrían.",
+          "es": "Habrán es la forma del futuro simple. Esta tarea pide la forma del condicional: habrían."
+        },
+        "habían": {
+          "en": "Habían is the imperfect form. This task asks for the conditional form: habrían.",
+          "es": "Habían es la forma del pretérito imperfecto. Esta tarea pide la forma del condicional: habrían."
+        }
+      }
     },
     {
       "kind": "why",

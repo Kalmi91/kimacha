@@ -717,7 +717,17 @@
       "verb": "forma",
       "person": "La puerta del departamento está ___. (abrir)",
       "answer": "abierta",
-      "table": "estar-participio-formas"
+      "table": "estar-participio-formas",
+      "wrong": {
+        "abierto": {
+          "en": "Abierto is masculine, but la puerta is feminine: abierta.",
+          "es": "Abierto es masculino, pero la puerta es femenino: abierta."
+        },
+        "abrida": {
+          "en": "Abrir has an irregular participle, abierto, not the regular form: abierta.",
+          "es": "Abrir tiene participio irregular, abierto, no la forma regular: abierta."
+        }
+      }
     },
     {
       "id": "ep-form-02",
@@ -725,7 +735,13 @@
       "verb": "forma",
       "person": "Hoy la escuela está ___. (cerrar)",
       "answer": "cerrada",
-      "table": "estar-participio-formas"
+      "table": "estar-participio-formas",
+      "wrong": {
+        "cerrado": {
+          "en": "Cerrado is masculine, but la escuela is feminine: cerrada.",
+          "es": "Cerrado es masculino, pero la escuela es femenino: cerrada."
+        }
+      }
     },
     {
       "id": "ep-form-03",
@@ -733,7 +749,17 @@
       "verb": "forma",
       "person": "Las ventanas del cuarto están ___. (romper)",
       "answer": "rotas",
-      "table": "estar-participio-formas"
+      "table": "estar-participio-formas",
+      "wrong": {
+        "roto": {
+          "en": "Roto is masculine singular, but las ventanas is feminine plural: rotas.",
+          "es": "Roto es masculino singular, pero las ventanas es femenino plural: rotas."
+        },
+        "rompidas": {
+          "en": "Romper has an irregular participle, roto, not the regular form: rotas.",
+          "es": "Romper tiene participio irregular, roto, no la forma regular: rotas."
+        }
+      }
     },
     {
       "id": "ep-form-04",
@@ -741,7 +767,17 @@
       "verb": "forma",
       "person": "Mis papás ya están ___ para salir. (preparar)",
       "answer": "preparados",
-      "table": "estar-participio-formas"
+      "table": "estar-participio-formas",
+      "wrong": {
+        "preparadas": {
+          "en": "Preparadas is feminine, but mis papás is masculine: preparados.",
+          "es": "Preparadas es femenino, pero mis papás es masculino: preparados."
+        },
+        "preparado": {
+          "en": "Preparado is singular, but mis papás is plural: preparados.",
+          "es": "Preparado es singular, pero mis papás es plural: preparados."
+        }
+      }
     },
     {
       "id": "ep-form-05",
@@ -749,7 +785,17 @@
       "verb": "forma",
       "person": "Mis hermanas están muy ___ por el examen. (preocupar)",
       "answer": "preocupadas",
-      "table": "estar-participio-formas"
+      "table": "estar-participio-formas",
+      "wrong": {
+        "preocupados": {
+          "en": "Preocupados is masculine, but mis hermanas is feminine: preocupadas.",
+          "es": "Preocupados es masculino, pero mis hermanas es femenino: preocupadas."
+        },
+        "preocupado": {
+          "en": "Preocupado is singular, but mis hermanas is plural: preocupadas.",
+          "es": "Preocupado es singular, pero mis hermanas es plural: preocupadas."
+        }
+      }
     },
     {
       "id": "ep-form-06",
@@ -757,7 +803,17 @@
       "verb": "forma",
       "person": "Mi papá está ___ en la cocina. (sentar)",
       "answer": "sentado",
-      "table": "estar-participio-formas"
+      "table": "estar-participio-formas",
+      "wrong": {
+        "sentada": {
+          "en": "Sentada is feminine, but mi papá is masculine: sentado.",
+          "es": "Sentada es femenino, pero mi papá es masculino: sentado."
+        },
+        "sentando": {
+          "en": "Sentando is a gerund: it describes an action in progress. A state needs the participle: sentado.",
+          "es": "Sentando es un gerundio: describe una acción en curso. Un estado lleva el participio: sentado."
+        }
+      }
     },
     {
       "id": "ep-form-07",
@@ -765,7 +821,17 @@
       "verb": "forma",
       "person": "El pastel ya está ___. (hacer)",
       "answer": "hecho",
-      "table": "estar-participio-formas"
+      "table": "estar-participio-formas",
+      "wrong": {
+        "hecha": {
+          "en": "Hecha is feminine, but el pastel is masculine: hecho.",
+          "es": "Hecha es femenino, pero el pastel es masculino: hecho."
+        },
+        "hacido": {
+          "en": "Hacer has an irregular participle, hecho, not the regular form: hecho.",
+          "es": "Hacer tiene participio irregular, hecho, no la forma regular: hecho."
+        }
+      }
     },
     {
       "id": "ep-form-08",
@@ -773,7 +839,17 @@
       "verb": "forma",
       "person": "Mis zapatos están ___ por la lluvia. (mojar)",
       "answer": "mojados",
-      "table": "estar-participio-formas"
+      "table": "estar-participio-formas",
+      "wrong": {
+        "mojado": {
+          "en": "Mojado is singular, but mis zapatos is plural: mojados.",
+          "es": "Mojado es singular, pero mis zapatos es plural: mojados."
+        },
+        "mojadas": {
+          "en": "Mojadas is feminine, but mis zapatos is masculine: mojados.",
+          "es": "Mojadas es femenino, pero mis zapatos es masculino: mojados."
+        }
+      }
     },
     {
       "id": "ep-form-09",
@@ -781,7 +857,17 @@
       "verb": "forma",
       "person": "Ahora Ana y Sofía ___ conmigo. (estar + enojar)",
       "answer": "están enojadas",
-      "table": "estar-participio-formas"
+      "table": "estar-participio-formas",
+      "wrong": {
+        "están enojados": {
+          "en": "Están enojados is masculine, but Ana y Sofía is feminine: están enojadas.",
+          "es": "Están enojados es masculino, pero Ana y Sofía es femenino: están enojadas."
+        },
+        "están enojando": {
+          "en": "Están enojando is a gerund: it describes an action in progress. A state needs the participle: están enojadas.",
+          "es": "Están enojando es un gerundio: describe una acción en curso. Un estado lleva el participio: están enojadas."
+        }
+      }
     },
     {
       "id": "ep-form-10",
@@ -789,7 +875,17 @@
       "verb": "forma",
       "person": "Este libro está ___ en español. (escribir)",
       "answer": "escrito",
-      "table": "estar-participio-formas"
+      "table": "estar-participio-formas",
+      "wrong": {
+        "escrita": {
+          "en": "Escrita is feminine, but este libro is masculine: escrito.",
+          "es": "Escrita es femenino, pero este libro es masculino: escrito."
+        },
+        "escribido": {
+          "en": "Escribir has an irregular participle, escrito, not the regular form: escrito.",
+          "es": "Escribir tiene participio irregular, escrito, no la forma regular: escrito."
+        }
+      }
     },
     {
       "id": "ep-form-11",
@@ -797,7 +893,13 @@
       "verb": "forma",
       "person": "Mañana la oficina ___. (estar + cerrar, futuro)",
       "answer": "estará cerrada",
-      "table": "estar-participio-formas"
+      "table": "estar-participio-formas",
+      "wrong": {
+        "estará cerrado": {
+          "en": "Estará cerrado is masculine, but la oficina is feminine: estará cerrada.",
+          "es": "Estará cerrado es masculino, pero la oficina es femenino: estará cerrada."
+        }
+      }
     },
     {
       "id": "ep-form-12",
@@ -805,7 +907,13 @@
       "verb": "forma",
       "person": "Cuando llegamos, la tienda ya ___. (estar + cerrar, imperfecto)",
       "answer": "estaba cerrada",
-      "table": "estar-participio-formas"
+      "table": "estar-participio-formas",
+      "wrong": {
+        "estaba cerrado": {
+          "en": "Estaba cerrado is masculine, but la tienda is feminine: estaba cerrada.",
+          "es": "Estaba cerrado es masculino, pero la tienda es femenino: estaba cerrada."
+        }
+      }
     },
     {
       "kind": "why",

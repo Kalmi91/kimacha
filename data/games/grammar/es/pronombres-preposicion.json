@@ -778,7 +778,17 @@
       "verb": "pronombre",
       "person": "El regalo es para ___. (yo)",
       "answer": "mí",
-      "table": "pronombres-preposicion-formas"
+      "table": "pronombres-preposicion-formas",
+      "wrong": {
+        "yo": {
+          "en": "Yo is the subject pronoun. After most prepositions a different form is used: mí.",
+          "es": "Yo es el pronombre de sujeto. Tras la mayoría de las preposiciones se usa otra forma: mí."
+        },
+        "me": {
+          "en": "Me is the pronoun that goes before a verb. After a preposition the form is mí.",
+          "es": "Me es el pronombre que va delante de un verbo. Tras una preposición la forma es mí."
+        }
+      }
     },
     {
       "id": "pp-form-02",
@@ -786,7 +796,17 @@
       "verb": "pronombre",
       "person": "Quiero hablar de ___. (tú)",
       "answer": "ti",
-      "table": "pronombres-preposicion-formas"
+      "table": "pronombres-preposicion-formas",
+      "wrong": {
+        "tú": {
+          "en": "Tú is the subject pronoun. After most prepositions a different form is used: ti.",
+          "es": "Tú es el pronombre de sujeto. Tras la mayoría de las preposiciones se usa otra forma: ti."
+        },
+        "te": {
+          "en": "Te is the pronoun that goes before a verb. After a preposition the form is ti.",
+          "es": "Te es el pronombre que va delante de un verbo. Tras una preposición la forma es ti."
+        }
+      }
     },
     {
       "id": "pp-form-03",
@@ -794,7 +814,13 @@
       "verb": "pronombre",
       "person": "Vivo cerca de ___. (él)",
       "answer": "él",
-      "table": "pronombres-preposicion-formas"
+      "table": "pronombres-preposicion-formas",
+      "wrong": {
+        "lo": {
+          "en": "Lo is the pronoun that goes before a verb. After a preposition the form is él.",
+          "es": "Lo es el pronombre que va delante de un verbo. Tras una preposición la forma es él."
+        }
+      }
     },
     {
       "id": "pp-form-04",
@@ -802,7 +828,13 @@
       "verb": "pronombre",
       "person": "Mis papás viven con ___. (nosotros)",
       "answer": "nosotros",
-      "table": "pronombres-preposicion-formas"
+      "table": "pronombres-preposicion-formas",
+      "wrong": {
+        "nos": {
+          "en": "Nos is the pronoun that goes before a verb. After a preposition the form is nosotros.",
+          "es": "Nos es el pronombre que va delante de un verbo. Tras una preposición la forma es nosotros."
+        }
+      }
     },
     {
       "id": "pp-form-05",
@@ -810,7 +842,13 @@
       "verb": "pronombre",
       "person": "Esta mesa es para ___. (ustedes)",
       "answer": "ustedes",
-      "table": "pronombres-preposicion-formas"
+      "table": "pronombres-preposicion-formas",
+      "wrong": {
+        "les": {
+          "en": "Les is the pronoun that goes before a verb. After a preposition the form is ustedes.",
+          "es": "Les es el pronombre que va delante de un verbo. Tras una preposición la forma es ustedes."
+        }
+      }
     },
     {
       "id": "pp-form-06",
@@ -818,7 +856,17 @@
       "verb": "pronombre",
       "person": "¿Vienes al cine ___? (con + yo)",
       "answer": "conmigo",
-      "table": "pronombres-preposicion-formas"
+      "table": "pronombres-preposicion-formas",
+      "wrong": {
+        "con mí": {
+          "en": "After con, the forms for yo and tú are single words: conmigo and contigo. \"con mí\" is not one of them: conmigo.",
+          "es": "Con con, las formas de yo y tú son una sola palabra: conmigo y contigo. \"con mí\" no es ninguna de ellas: conmigo."
+        },
+        "con yo": {
+          "en": "After con, the forms for yo and tú are single words: conmigo and contigo. \"con yo\" is not one of them: conmigo.",
+          "es": "Con con, las formas de yo y tú son una sola palabra: conmigo y contigo. \"con yo\" no es ninguna de ellas: conmigo."
+        }
+      }
     },
     {
       "id": "pp-form-07",
@@ -826,7 +874,17 @@
       "verb": "pronombre",
       "person": "Hoy quiero comer ___. (con + tú)",
       "answer": "contigo",
-      "table": "pronombres-preposicion-formas"
+      "table": "pronombres-preposicion-formas",
+      "wrong": {
+        "con ti": {
+          "en": "After con, the forms for yo and tú are single words: conmigo and contigo. \"con ti\" is not one of them: contigo.",
+          "es": "Con con, las formas de yo y tú son una sola palabra: conmigo y contigo. \"con ti\" no es ninguna de ellas: contigo."
+        },
+        "con tú": {
+          "en": "After con, the forms for yo and tú are single words: conmigo and contigo. \"con tú\" is not one of them: contigo.",
+          "es": "Con con, las formas de yo y tú son una sola palabra: conmigo y contigo. \"con tú\" no es ninguna de ellas: contigo."
+        }
+      }
     },
     {
       "id": "pp-form-08",
@@ -834,7 +892,13 @@
       "verb": "pronombre",
       "person": "No hay problemas entre ___ y yo. (tú)",
       "answer": "tú",
-      "table": "pronombres-preposicion-formas"
+      "table": "pronombres-preposicion-formas",
+      "wrong": {
+        "ti": {
+          "en": "After entre, Spanish uses the subject pronoun, not the form used after other prepositions: tú.",
+          "es": "Después de entre, el español usa el pronombre de sujeto, no la forma de otras preposiciones: tú."
+        }
+      }
     },
     {
       "id": "pp-form-09",
@@ -842,7 +906,13 @@
       "verb": "pronombre",
       "person": "Todos vienen, excepto ___. (yo)",
       "answer": "yo",
-      "table": "pronombres-preposicion-formas"
+      "table": "pronombres-preposicion-formas",
+      "wrong": {
+        "mí": {
+          "en": "After excepto, Spanish uses the subject pronoun, not the form used after other prepositions: yo.",
+          "es": "Después de excepto, el español usa el pronombre de sujeto, no la forma de otras preposiciones: yo."
+        }
+      }
     },
     {
       "id": "pp-form-10",
@@ -850,7 +920,13 @@
       "verb": "pronombre",
       "person": "Según ___, el examen es difícil. (tú)",
       "answer": "tú",
-      "table": "pronombres-preposicion-formas"
+      "table": "pronombres-preposicion-formas",
+      "wrong": {
+        "ti": {
+          "en": "After según, Spanish uses the subject pronoun, not the form used after other prepositions: tú.",
+          "es": "Después de según, el español usa el pronombre de sujeto, no la forma de otras preposiciones: tú."
+        }
+      }
     },
     {
       "id": "pp-form-11",
@@ -858,7 +934,17 @@
       "verb": "pronombre",
       "person": "A ___ me gusta bailar. (yo)",
       "answer": "mí",
-      "table": "pronombres-preposicion-formas"
+      "table": "pronombres-preposicion-formas",
+      "wrong": {
+        "yo": {
+          "en": "Yo is the subject pronoun. After most prepositions a different form is used: mí.",
+          "es": "Yo es el pronombre de sujeto. Tras la mayoría de las preposiciones se usa otra forma: mí."
+        },
+        "me": {
+          "en": "Me is the pronoun that goes before a verb. After a preposition the form is mí.",
+          "es": "Me es el pronombre que va delante de un verbo. Tras una preposición la forma es mí."
+        }
+      }
     },
     {
       "id": "pp-form-12",
@@ -866,7 +952,13 @@
       "verb": "pronombre",
       "person": "Esta carta es de ___. (ella)",
       "answer": "ella",
-      "table": "pronombres-preposicion-formas"
+      "table": "pronombres-preposicion-formas",
+      "wrong": {
+        "la": {
+          "en": "La is the pronoun that goes before a verb. After a preposition the form is ella.",
+          "es": "La es el pronombre que va delante de un verbo. Tras una preposición la forma es ella."
+        }
+      }
     },
     {
       "kind": "why",

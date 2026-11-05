@@ -19,11 +19,13 @@ interface Props {
   run: StoryRun;
   target: PcicTarget;
   source: Lang;
+  /** The XP the story gave when its last answer landed (0 shows nothing). */
+  earned: number;
   onAgain: () => void;
   onList: () => void;
 }
 
-export default function SpeechDone({ story, run, target, source, onAgain, onList }: Props) {
+export default function SpeechDone({ story, run, target, source, earned, onAgain, onList }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const g = useGrammarColors();
@@ -43,6 +45,9 @@ export default function SpeechDone({ story, run, target, source, onAgain, onList
         <Text testID="speech-score" style={[styles.score, { color: colors.text }]}>{`${run.firstTry}/${run.path.length}`}</Text>
         <Text style={[styles.scoreLabel, { color: colors.textMuted }]}>{sx.rightFirstTime}</Text>
       </View>
+      {earned > 0 && (
+        <Text testID="speech-xp" style={[styles.xp, { color: accentColor(g, colors.tint) }]}>{t().pcic.badgeXpEarned(earned)}</Text>
+      )}
       <Pressable testID="speech-to-list" accessibilityRole="button" onPress={onList} style={styles.link}>
         <Text style={[styles.linkText, { color: accentColor(g, colors.tint) }]}>{sx.backToStories}</Text>
       </Pressable>
@@ -55,6 +60,7 @@ const styles = StyleSheet.create({
   outro: { fontSize: fontSize.md, textAlign: 'center' },
   scoreBox: { alignItems: 'center', gap: spacing.xs },
   score: { fontSize: fontSize.xxl, fontWeight: fontWeight.bold },
+  xp: { fontSize: fontSize.lg, fontWeight: fontWeight.bold, textAlign: 'center' },
   scoreLabel: { fontSize: fontSize.md, textAlign: 'center' },
   link: { minHeight: tapTarget, justifyContent: 'center', alignItems: 'center' },
   linkText: { fontSize: fontSize.md, fontWeight: fontWeight.semibold, textDecorationLine: 'underline' },

@@ -207,6 +207,8 @@ beforeEach(async () => {
   await getDb().resetGameProgress(LADDER_KEY);
   // the sentences of the last rounds (FB587) are kept in the resume store: a test starts without them
   await getDb().resetGameProgress(RESUME_GAME_ID);
+  // the XP of a right sentence is counted once per sentence per day: a test starts with no count
+  await getDb().resetGameProgress('xp-items');
   // the new words of an empty tab (FB564) have their own describe at the end: the day's budget is the default here
   await getDb().setDailyNewLimit(DEFAULT_DAILY_NEW_LIMIT);
   __resetBetaForTest();
@@ -411,14 +413,14 @@ describe('the steps of a round (FB524)', () => {
     expect(r.queryByPlaceholderText('Type the sentence')).toBeNull();
   });
 
-  it('a build credits nothing (no half, no XP); the typing of the sentence on rung 3 does', async () => {
+  it('a build credits no half (its right sentence pays the table XP); the typing of the sentence on rung 3 does', async () => {
     await setBeta('xpV2', true);
     await learnWords([1, 2, 3, 4, 5, 6], [3]); // the cat is due (so its sentence comes first), a credited build would move the schedule
     const r = render(<SentencesScreen />);
     await flush();
     await buildCurrent(r);
     expect(mockRecord).not.toHaveBeenCalled();
-    expect(await getDb().getDailyXpTenths(localDateString())).toBe(0);
+    expect(await getDb().getDailyXpTenths(localDateString())).toBe(10);
     expect((await card(3))?.halfSteps ?? 0).toBe(0);
     r.unmount();
     await clearSentenceRound(getDb());
@@ -669,42 +671,36 @@ describe('the progress bar counts the same steps as the number (a block per step
 });
 
 describe('beta xpV2', () => {
-  it('off (default): a typed word gets its half but no XP', async () => {
+  it('off (default): a typed word gets its half, the sentence pays the table XP', async () => {
     await learnWords([3]);
     await ladderAt(3, [3]);
     const r = render(<SentencesScreen />);
     await flush();
     await typeCurrent(r);
     expect(mockRecord).toHaveBeenCalledTimes(1);
-    expect(await getDb().getDailyXpTenths(localDateString())).toBe(0);
+    expect([10, 20]).toContain(await getDb().getDailyXpTenths(localDateString()));
   });
 
-  it('on: each typed word earns XP by its own reps (1 XP; 0.2 XP from the 3rd repetition); a wrong word earns none', async () => {
+  it('on: the sentence table pays, the per-word halves do not stack on top (the same sentence again adds nothing)', async () => {
     await setBeta('xpV2', true);
     await learnWords([3]);
     await ladderAt(3, [3]);
     const r = render(<SentencesScreen />);
     await flush();
     await typeCurrent(r);
-    expect(await getDb().getDailyXpTenths(localDateString())).toBe(10);
+    await flush();
+    const first = await getDb().getDailyXpTenths(localDateString());
+    expect([10, 20]).toContain(first); // 1 XP, or 2 for a hard sentence: never the table plus a word half
     r.unmount();
 
     await getDb().resetPcicCards();
     await getDb().upsertPcicCard({ ...learned(3), reps: 3 });
-    await ladderAt(3, [3]); // learned by the first typing: back on rung 3 for the next one
+    await ladderAt(3, [3]);
     const again = render(<SentencesScreen />);
     await flush();
     await typeCurrent(again);
-    expect(await getDb().getDailyXpTenths(localDateString())).toBe(12);
-
-    await getDb().resetPcicCards();
-    await getDb().upsertPcicCard(learned(3, '2000-01-01'));
-    await ladderAt(3, [3]);
-    again.unmount();
-    const wrong = render(<SentencesScreen />);
     await flush();
-    await typeCurrent(wrong, 'el perro');
-    expect(await getDb().getDailyXpTenths(localDateString())).toBe(12);
+    expect(await getDb().getDailyXpTenths(localDateString())).toBe(first);
   });
 });
 

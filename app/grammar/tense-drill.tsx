@@ -23,6 +23,8 @@ import type { DeLevel } from '@/lib/deForms';
 import type { DeDrillTense } from '@/lib/deConjugate';
 import { DE_DRILL_LEVELS, buildTenseRound, gradeTense, tensesAtLevel, type TenseQuestion } from '@/lib/games/deTenseDrill';
 import ScreenFeedback from '@/lib/screenFeedback';
+import XpChip from '@/components/XpChip';
+import { awardXpThen } from '@/lib/xpAward';
 import FitText from '@/components/FitText';
 import SpeakButton from '@/components/SpeakButton';
 import { useDiffStyles } from '@/lib/useDiffStyles';
@@ -66,6 +68,8 @@ export default function TenseDrillScreen() {
   const [right, setRight] = useState(0);
   const [typed, setTyped] = useState('');
   const [checked, setChecked] = useState<{ correct: boolean } | null>(null);
+  // the XP the checked answer gave (FB591); 0 shows nothing
+  const [earned, setEarned] = useState(0);
   // the input remounts for every question, so that autoFocus runs again (the same reason as on the deck screen)
   const [seq, setSeq] = useState(0);
   const [dockH, setDockH] = useState(DOCK_RESERVE);
@@ -106,6 +110,8 @@ export default function TenseDrillScreen() {
     if (!current) return;
     const correct = gradeTense(typed, current, { strictAccents });
     setChecked({ correct });
+    setEarned(0);
+    if (correct) awardXpThen('grammar', current.id, setEarned);
     speak(current.answer, speechLang('de'));
   };
 
@@ -238,6 +244,7 @@ export default function TenseDrillScreen() {
   return (
     <KeyboardAvoidingView style={[styles.container, { backgroundColor: colors.background }, webKeyboardOpen && WEB_TYPING_PADDING]} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
       {header}
+      {!webKeyboardOpen && <XpChip earned={earned} />}
       {!webKeyboardOpen && <ProgressBar testID="tensedrill-segments" pct={pct} brutalStyle={styles.brutalBar} trackStyle={styles.progressTrack} trackColor={colors.card} fillStyle={styles.progressFill} fillColor={colors.successFill} />}
 
       <ScrollView

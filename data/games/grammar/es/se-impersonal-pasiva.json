@@ -640,7 +640,13 @@
       "verb": "se + verbo",
       "person": "En México ___ (hablar) español.",
       "answer": "se habla",
-      "table": "se-impersonal-formas"
+      "table": "se-impersonal-formas",
+      "wrong": {
+        "habla": {
+          "en": "Without se the verb names one particular person. The general \"one\" needs se: se habla.",
+          "es": "Sin se el verbo nombra a una persona concreta. El \"uno\" general lleva se: se habla."
+        }
+      }
     },
     {
       "id": "sip-form-02",
@@ -648,7 +654,13 @@
       "verb": "se + verbo",
       "person": "En esa tienda ___ (vender) libros viejos.",
       "answer": "se venden",
-      "table": "se-impersonal-formas"
+      "table": "se-impersonal-formas",
+      "wrong": {
+        "se vende": {
+          "en": "Se vende is singular, but libros viejos is plural and the verb agrees with it: se venden.",
+          "es": "Se vende está en singular, pero libros viejos es plural y el verbo concuerda con él: se venden."
+        }
+      }
     },
     {
       "id": "sip-form-03",
@@ -656,7 +668,13 @@
       "verb": "se + verbo",
       "person": "En esta ciudad ___ (comer) muy bien.",
       "answer": "se come",
-      "table": "se-impersonal-formas"
+      "table": "se-impersonal-formas",
+      "wrong": {
+        "come": {
+          "en": "Without se the verb names one particular person. The general \"one\" needs se: se come.",
+          "es": "Sin se el verbo nombra a una persona concreta. El \"uno\" general lleva se: se come."
+        }
+      }
     },
     {
       "id": "sip-form-04",
@@ -664,7 +682,13 @@
       "verb": "se + verbo",
       "person": "Aquí ___ (prohibir) fumar.",
       "answer": "se prohíbe",
-      "table": "se-impersonal-formas"
+      "table": "se-impersonal-formas",
+      "wrong": {
+        "se prohíben": {
+          "en": "Fumar is an infinitive, which counts as singular, so the verb stays singular: se prohíbe.",
+          "es": "Fumar es un infinitivo, que cuenta como singular, así que el verbo queda en singular: se prohíbe."
+        }
+      }
     },
     {
       "id": "sip-form-05",
@@ -672,7 +696,13 @@
       "verb": "se + verbo",
       "person": "En la escuela ___ (necesitar) tres profesores.",
       "answer": "se necesitan",
-      "table": "se-impersonal-formas"
+      "table": "se-impersonal-formas",
+      "wrong": {
+        "se necesita": {
+          "en": "Se necesita is singular, but tres profesores is plural and the verb agrees with it: se necesitan.",
+          "es": "Se necesita está en singular, pero tres profesores es plural y el verbo concuerda con él: se necesitan."
+        }
+      }
     },
     {
       "id": "sip-form-06",
@@ -680,7 +710,13 @@
       "verb": "se + verbo",
       "person": "En mi casa ___ (cocinar) mucho los domingos.",
       "answer": "se cocina",
-      "table": "se-impersonal-formas"
+      "table": "se-impersonal-formas",
+      "wrong": {
+        "cocina": {
+          "en": "Without se the verb names one particular person. The general \"one\" needs se: se cocina.",
+          "es": "Sin se el verbo nombra a una persona concreta. El \"uno\" general lleva se: se cocina."
+        }
+      }
     },
     {
       "id": "sip-form-07",
@@ -688,7 +724,13 @@
       "verb": "se + verbo",
       "person": "En este bar ___ (pagar) las bebidas al final.",
       "answer": "se pagan",
-      "table": "se-impersonal-formas"
+      "table": "se-impersonal-formas",
+      "wrong": {
+        "se paga": {
+          "en": "Se paga is singular, but las bebidas is plural and the verb agrees with it: se pagan.",
+          "es": "Se paga está en singular, pero las bebidas es plural y el verbo concuerda con él: se pagan."
+        }
+      }
     },
     {
       "id": "sip-form-08",
@@ -696,7 +738,13 @@
       "verb": "se + verbo",
       "person": "Aquí no ___ (poder) pagar con tarjeta.",
       "answer": "se puede",
-      "table": "se-impersonal-formas"
+      "table": "se-impersonal-formas",
+      "wrong": {
+        "se pueden": {
+          "en": "Poder is followed by an infinitive (pagar), not by a plural noun, so the verb stays singular: se puede.",
+          "es": "Poder va seguido de un infinitivo (pagar), no de un sustantivo plural, así que el verbo queda en singular: se puede."
+        }
+      }
     },
     {
       "id": "sip-form-09",
@@ -704,7 +752,13 @@
       "verb": "se + verbo",
       "person": "Hoy ___ (abrir) las tiendas a las diez.",
       "answer": "se abren",
-      "table": "se-impersonal-formas"
+      "table": "se-impersonal-formas",
+      "wrong": {
+        "se abre": {
+          "en": "Se abre is singular, but las tiendas is plural and the verb agrees with it: se abren.",
+          "es": "Se abre está en singular, pero las tiendas es plural y el verbo concuerda con él: se abren."
+        }
+      }
     },
     {
       "id": "sip-form-10",
@@ -712,7 +766,13 @@
       "verb": "se + verbo",
       "person": "En el cine ___ (ver) películas viejas.",
       "answer": "se ven",
-      "table": "se-impersonal-formas"
+      "table": "se-impersonal-formas",
+      "wrong": {
+        "se ve": {
+          "en": "Se ve is singular, but películas viejas is plural and the verb agrees with it: se ven.",
+          "es": "Se ve está en singular, pero películas viejas es plural y el verbo concuerda con él: se ven."
+        }
+      }
     },
     {
       "id": "sip-form-11",
@@ -720,7 +780,13 @@
       "verb": "se + verbo",
       "person": "En este banco ___ (cambiar) dinero.",
       "answer": "se cambia",
-      "table": "se-impersonal-formas"
+      "table": "se-impersonal-formas",
+      "wrong": {
+        "se cambian": {
+          "en": "Dinero is singular, so the verb stays singular: se cambia.",
+          "es": "Dinero es singular, así que el verbo queda en singular: se cambia."
+        }
+      }
     },
     {
       "id": "sip-form-12",
@@ -728,7 +794,13 @@
       "verb": "se + verbo",
       "person": "En este hotel ___ (tratar) bien a los clientes.",
       "answer": "se trata",
-      "table": "se-impersonal-formas"
+      "table": "se-impersonal-formas",
+      "wrong": {
+        "se tratan": {
+          "en": "A los clientes is the object, introduced by a, not the subject, so the verb stays singular: se trata.",
+          "es": "A los clientes es el objeto, introducido por a, no el sujeto, así que el verbo queda en singular: se trata."
+        }
+      }
     },
     {
       "id": "sip-why-01",

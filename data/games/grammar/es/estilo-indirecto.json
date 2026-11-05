@@ -709,7 +709,17 @@
       "verb": "indirecto",
       "person": "tengo → imperfecto",
       "answer": "tenía",
-      "table": "cambio"
+      "table": "cambio",
+      "wrong": {
+        "tuve": {
+          "en": "Tuve is the preterite form. After a past reporting verb the present becomes the imperfect: tenía.",
+          "es": "Tuve es la forma del pretérito indefinido. Después de un verbo de decir en pasado el presente pasa al imperfecto: tenía."
+        },
+        "tengo": {
+          "en": "Tengo is the present indicative form. After a past reporting verb the present becomes the imperfect: tenía.",
+          "es": "Tengo es la forma del presente de indicativo. Después de un verbo de decir en pasado el presente pasa al imperfecto: tenía."
+        }
+      }
     },
     {
       "id": "ei-form-02",
@@ -717,7 +727,17 @@
       "verb": "indirecto",
       "person": "vivo → imperfecto",
       "answer": "vivía",
-      "table": "cambio"
+      "table": "cambio",
+      "wrong": {
+        "viví": {
+          "en": "Viví is the preterite form. After a past reporting verb the present becomes the imperfect: vivía.",
+          "es": "Viví es la forma del pretérito indefinido. Después de un verbo de decir en pasado el presente pasa al imperfecto: vivía."
+        },
+        "vivo": {
+          "en": "Vivo is the present indicative form. After a past reporting verb the present becomes the imperfect: vivía.",
+          "es": "Vivo es la forma del presente de indicativo. Después de un verbo de decir en pasado el presente pasa al imperfecto: vivía."
+        }
+      }
     },
     {
       "id": "ei-form-03",
@@ -725,7 +745,17 @@
       "verb": "indirecto",
       "person": "comí → pluscuamperfecto",
       "answer": "había comido",
-      "table": "cambio"
+      "table": "cambio",
+      "wrong": {
+        "comí": {
+          "en": "Comí is the preterite form. After a past reporting verb the preterite becomes the pluscuamperfecto: había comido.",
+          "es": "Comí es la forma del pretérito indefinido. Después de un verbo de decir en pasado el pretérito indefinido pasa al pluscuamperfecto: había comido."
+        },
+        "comía": {
+          "en": "Comía is the imperfect form. After a past reporting verb the preterite becomes the pluscuamperfecto: había comido.",
+          "es": "Comía es la forma del pretérito imperfecto. Después de un verbo de decir en pasado el pretérito indefinido pasa al pluscuamperfecto: había comido."
+        }
+      }
     },
     {
       "id": "ei-form-04",
@@ -733,7 +763,17 @@
       "verb": "indirecto",
       "person": "llegó → pluscuamperfecto",
       "answer": "había llegado",
-      "table": "cambio"
+      "table": "cambio",
+      "wrong": {
+        "llegó": {
+          "en": "Llegó is the preterite form. After a past reporting verb the preterite becomes the pluscuamperfecto: había llegado.",
+          "es": "Llegó es la forma del pretérito indefinido. Después de un verbo de decir en pasado el pretérito indefinido pasa al pluscuamperfecto: había llegado."
+        },
+        "llegaba": {
+          "en": "Llegaba is the imperfect form. After a past reporting verb the preterite becomes the pluscuamperfecto: había llegado.",
+          "es": "Llegaba es la forma del pretérito imperfecto. Después de un verbo de decir en pasado el pretérito indefinido pasa al pluscuamperfecto: había llegado."
+        }
+      }
     },
     {
       "id": "ei-form-05",
@@ -741,7 +781,17 @@
       "verb": "indirecto",
       "person": "he trabajado → pluscuamperfecto",
       "answer": "había trabajado",
-      "table": "cambio"
+      "table": "cambio",
+      "wrong": {
+        "he trabajado": {
+          "en": "He trabajado is the present perfect form. After a past reporting verb the pretérito perfecto becomes the pluscuamperfecto: había trabajado.",
+          "es": "He trabajado es la forma del pretérito perfecto. Después de un verbo de decir en pasado el pretérito perfecto pasa al pluscuamperfecto: había trabajado."
+        },
+        "trabajaba": {
+          "en": "Trabajaba is the imperfect form. After a past reporting verb the pretérito perfecto becomes the pluscuamperfecto: había trabajado.",
+          "es": "Trabajaba es la forma del pretérito imperfecto. Después de un verbo de decir en pasado el pretérito perfecto pasa al pluscuamperfecto: había trabajado."
+        }
+      }
     },
     {
       "id": "ei-form-06",
@@ -749,7 +799,17 @@
       "verb": "indirecto",
       "person": "he estudiado → pluscuamperfecto",
       "answer": "había estudiado",
-      "table": "cambio"
+      "table": "cambio",
+      "wrong": {
+        "he estudiado": {
+          "en": "He estudiado is the present perfect form. After a past reporting verb the pretérito perfecto becomes the pluscuamperfecto: había estudiado.",
+          "es": "He estudiado es la forma del pretérito perfecto. Después de un verbo de decir en pasado el pretérito perfecto pasa al pluscuamperfecto: había estudiado."
+        },
+        "estudiaba": {
+          "en": "Estudiaba is the imperfect form. After a past reporting verb the pretérito perfecto becomes the pluscuamperfecto: había estudiado.",
+          "es": "Estudiaba es la forma del pretérito imperfecto. Después de un verbo de decir en pasado el pretérito perfecto pasa al pluscuamperfecto: había estudiado."
+        }
+      }
     },
     {
       "id": "ei-form-07",
@@ -757,7 +817,17 @@
       "verb": "indirecto",
       "person": "vendré → condicional",
       "answer": "vendría",
-      "table": "cambio"
+      "table": "cambio",
+      "wrong": {
+        "vendré": {
+          "en": "Vendré is the simple future form. After a past reporting verb the future becomes the conditional: vendría.",
+          "es": "Vendré es la forma del futuro simple. Después de un verbo de decir en pasado el futuro pasa al condicional: vendría."
+        },
+        "venía": {
+          "en": "Venía is the imperfect form. After a past reporting verb the future becomes the conditional: vendría.",
+          "es": "Venía es la forma del pretérito imperfecto. Después de un verbo de decir en pasado el futuro pasa al condicional: vendría."
+        }
+      }
     },
     {
       "id": "ei-form-08",
@@ -765,7 +835,17 @@
       "verb": "indirecto",
       "person": "llegaré → condicional",
       "answer": "llegaría",
-      "table": "cambio"
+      "table": "cambio",
+      "wrong": {
+        "llegaré": {
+          "en": "Llegaré is the simple future form. After a past reporting verb the future becomes the conditional: llegaría.",
+          "es": "Llegaré es la forma del futuro simple. Después de un verbo de decir en pasado el futuro pasa al condicional: llegaría."
+        },
+        "llegaba": {
+          "en": "Llegaba is the imperfect form. After a past reporting verb the future becomes the conditional: llegaría.",
+          "es": "Llegaba es la forma del pretérito imperfecto. Después de un verbo de decir en pasado el futuro pasa al condicional: llegaría."
+        }
+      }
     },
     {
       "id": "ei-form-09",
@@ -773,7 +853,17 @@
       "verb": "indirecto",
       "person": "¡Cierra! → imperfecto de subjuntivo (-ra)",
       "answer": "cerrara",
-      "table": "cambio"
+      "table": "cambio",
+      "wrong": {
+        "cierra": {
+          "en": "Cierra is the imperative form. After a past reporting verb a command becomes que + imperfect subjunctive: cerrara.",
+          "es": "Cierra es la forma del imperativo. Después de un verbo de decir en pasado un mandato pasa a que + imperfecto de subjuntivo: cerrara."
+        },
+        "cierre": {
+          "en": "Cierre is the present subjunctive form. After a past reporting verb a command becomes que + imperfect subjunctive: cerrara.",
+          "es": "Cierre es la forma del presente de subjuntivo. Después de un verbo de decir en pasado un mandato pasa a que + imperfecto de subjuntivo: cerrara."
+        }
+      }
     },
     {
       "id": "ei-form-10",
@@ -781,7 +871,17 @@
       "verb": "indirecto",
       "person": "¡Ven! → imperfecto de subjuntivo (-ra)",
       "answer": "viniera",
-      "table": "cambio"
+      "table": "cambio",
+      "wrong": {
+        "ven": {
+          "en": "Ven is the imperative form. After a past reporting verb a command becomes que + imperfect subjunctive: viniera.",
+          "es": "Ven es la forma del imperativo. Después de un verbo de decir en pasado un mandato pasa a que + imperfecto de subjuntivo: viniera."
+        },
+        "venga": {
+          "en": "Venga is the present subjunctive form. After a past reporting verb a command becomes que + imperfect subjunctive: viniera.",
+          "es": "Venga es la forma del presente de subjuntivo. Después de un verbo de decir en pasado un mandato pasa a que + imperfecto de subjuntivo: viniera."
+        }
+      }
     },
     {
       "id": "ei-form-11",
@@ -789,7 +889,17 @@
       "verb": "indirecto",
       "person": "quiero que (vengas) → imperfecto de subjuntivo (-ra)",
       "answer": "vinieras",
-      "table": "cambio"
+      "table": "cambio",
+      "wrong": {
+        "vengas": {
+          "en": "Vengas is the present subjunctive form. After a past reporting verb the present subjunctive becomes the imperfect subjunctive: vinieras.",
+          "es": "Vengas es la forma del presente de subjuntivo. Después de un verbo de decir en pasado el presente de subjuntivo pasa al imperfecto de subjuntivo: vinieras."
+        },
+        "venías": {
+          "en": "Venías is the imperfect form. After a past reporting verb the present subjunctive becomes the imperfect subjunctive: vinieras.",
+          "es": "Venías es la forma del pretérito imperfecto. Después de un verbo de decir en pasado el presente de subjuntivo pasa al imperfecto de subjuntivo: vinieras."
+        }
+      }
     },
     {
       "id": "ei-form-12",
@@ -797,7 +907,17 @@
       "verb": "indirecto",
       "person": "espero que (estudies) → imperfecto de subjuntivo (-ra)",
       "answer": "estudiaras",
-      "table": "cambio"
+      "table": "cambio",
+      "wrong": {
+        "estudies": {
+          "en": "Estudies is the present subjunctive form. After a past reporting verb the present subjunctive becomes the imperfect subjunctive: estudiaras.",
+          "es": "Estudies es la forma del presente de subjuntivo. Después de un verbo de decir en pasado el presente de subjuntivo pasa al imperfecto de subjuntivo: estudiaras."
+        },
+        "estudiabas": {
+          "en": "Estudiabas is the imperfect form. After a past reporting verb the present subjunctive becomes the imperfect subjunctive: estudiaras.",
+          "es": "Estudiabas es la forma del pretérito imperfecto. Después de un verbo de decir en pasado el presente de subjuntivo pasa al imperfecto de subjuntivo: estudiaras."
+        }
+      }
     },
     {
       "kind": "why",

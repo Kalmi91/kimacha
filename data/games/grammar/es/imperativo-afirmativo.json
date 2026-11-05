@@ -485,18 +485,222 @@
         { "es": "tener", "en": "ten (have)" }
       ]
     },
-    { "id": "ia-form-01", "kind": "form", "verb": "venir", "person": "tú", "answer": "ven", "table": "imperativo" },
-    { "id": "ia-form-02", "kind": "form", "verb": "hacer", "person": "usted", "answer": "haga", "table": "imperativo" },
-    { "id": "ia-form-03", "kind": "form", "verb": "comer", "person": "ustedes", "answer": "coman", "table": "imperativo" },
-    { "id": "ia-form-04", "kind": "form", "verb": "hablar", "person": "tú", "answer": "habla", "table": "imperativo" },
-    { "id": "ia-form-05", "kind": "form", "verb": "escribir", "person": "usted", "answer": "escriba", "table": "imperativo" },
-    { "id": "ia-form-06", "kind": "form", "verb": "decir", "person": "ustedes", "answer": "digan", "table": "imperativo" },
-    { "id": "ia-form-07", "kind": "form", "verb": "poner", "person": "tú", "answer": "pon", "table": "imperativo" },
-    { "id": "ia-form-08", "kind": "form", "verb": "ir", "person": "usted", "answer": "vaya", "table": "imperativo" },
-    { "id": "ia-form-09", "kind": "form", "verb": "salir", "person": "ustedes", "answer": "salgan", "table": "imperativo" },
-    { "id": "ia-form-10", "kind": "form", "verb": "tener", "person": "tú", "answer": "ten", "table": "imperativo" },
-    { "id": "ia-form-11", "kind": "form", "verb": "ser", "person": "usted", "answer": "sea", "table": "imperativo" },
-    { "id": "ia-form-12", "kind": "form", "verb": "escribir", "person": "tú", "answer": "escribe", "table": "imperativo" },
+    {
+      "id": "ia-form-01",
+      "kind": "form",
+      "verb": "venir",
+      "person": "tú",
+      "answer": "ven",
+      "table": "imperativo",
+      "wrong": {
+        "vienes": {
+          "en": "Vienes is in the present tense. This task asks for the affirmative command: ven.",
+          "es": "Vienes está en presente. Esta tarea pide imperativo afirmativo: ven."
+        },
+        "venga": {
+          "en": "Venga is the command form for usted. For tú the command is ven.",
+          "es": "Venga es la forma del imperativo para usted. Para tú el imperativo es ven."
+        }
+      }
+    },
+    {
+      "id": "ia-form-02",
+      "kind": "form",
+      "verb": "hacer",
+      "person": "usted",
+      "answer": "haga",
+      "table": "imperativo",
+      "wrong": {
+        "hace": {
+          "en": "Hace is in the present tense. This task asks for the affirmative command: haga.",
+          "es": "Hace está en presente. Esta tarea pide imperativo afirmativo: haga."
+        },
+        "haz": {
+          "en": "Haz is the command form for tú. For usted the command is haga.",
+          "es": "Haz es la forma del imperativo para tú. Para usted el imperativo es haga."
+        }
+      }
+    },
+    {
+      "id": "ia-form-03",
+      "kind": "form",
+      "verb": "comer",
+      "person": "ustedes",
+      "answer": "coman",
+      "table": "imperativo",
+      "wrong": {
+        "comen": {
+          "en": "Comen is in the present tense. This task asks for the affirmative command: coman.",
+          "es": "Comen está en presente. Esta tarea pide imperativo afirmativo: coman."
+        },
+        "come": {
+          "en": "Come is the command form for tú. For ustedes the command is coman.",
+          "es": "Come es la forma del imperativo para tú. Para ustedes el imperativo es coman."
+        }
+      }
+    },
+    {
+      "id": "ia-form-04",
+      "kind": "form",
+      "verb": "hablar",
+      "person": "tú",
+      "answer": "habla",
+      "table": "imperativo",
+      "wrong": {
+        "hablas": {
+          "en": "Hablas is in the present tense. This task asks for the affirmative command: habla.",
+          "es": "Hablas está en presente. Esta tarea pide imperativo afirmativo: habla."
+        },
+        "hable": {
+          "en": "Hable is the command form for usted. For tú the command is habla.",
+          "es": "Hable es la forma del imperativo para usted. Para tú el imperativo es habla."
+        }
+      }
+    },
+    {
+      "id": "ia-form-05",
+      "kind": "form",
+      "verb": "escribir",
+      "person": "usted",
+      "answer": "escriba",
+      "table": "imperativo",
+      "wrong": {
+        "escribes": {
+          "en": "Escribes is in the present tense. This task asks for the affirmative command: escriba.",
+          "es": "Escribes está en presente. Esta tarea pide imperativo afirmativo: escriba."
+        },
+        "escribe": {
+          "en": "Escribe is the command form for tú. For usted the command is escriba.",
+          "es": "Escribe es la forma del imperativo para tú. Para usted el imperativo es escriba."
+        }
+      }
+    },
+    {
+      "id": "ia-form-06",
+      "kind": "form",
+      "verb": "decir",
+      "person": "ustedes",
+      "answer": "digan",
+      "table": "imperativo",
+      "wrong": {
+        "dicen": {
+          "en": "Dicen is in the present tense. This task asks for the affirmative command: digan.",
+          "es": "Dicen está en presente. Esta tarea pide imperativo afirmativo: digan."
+        },
+        "di": {
+          "en": "Di is the command form for tú. For ustedes the command is digan.",
+          "es": "Di es la forma del imperativo para tú. Para ustedes el imperativo es digan."
+        }
+      }
+    },
+    {
+      "id": "ia-form-07",
+      "kind": "form",
+      "verb": "poner",
+      "person": "tú",
+      "answer": "pon",
+      "table": "imperativo",
+      "wrong": {
+        "pones": {
+          "en": "Pones is in the present tense. This task asks for the affirmative command: pon.",
+          "es": "Pones está en presente. Esta tarea pide imperativo afirmativo: pon."
+        },
+        "ponga": {
+          "en": "Ponga is the command form for usted. For tú the command is pon.",
+          "es": "Ponga es la forma del imperativo para usted. Para tú el imperativo es pon."
+        }
+      }
+    },
+    {
+      "id": "ia-form-08",
+      "kind": "form",
+      "verb": "ir",
+      "person": "usted",
+      "answer": "vaya",
+      "table": "imperativo",
+      "wrong": {
+        "va": {
+          "en": "Va is in the present tense. This task asks for the affirmative command: vaya.",
+          "es": "Va está en presente. Esta tarea pide imperativo afirmativo: vaya."
+        },
+        "ve": {
+          "en": "Ve is the command form for tú. For usted the command is vaya.",
+          "es": "Ve es la forma del imperativo para tú. Para usted el imperativo es vaya."
+        }
+      }
+    },
+    {
+      "id": "ia-form-09",
+      "kind": "form",
+      "verb": "salir",
+      "person": "ustedes",
+      "answer": "salgan",
+      "table": "imperativo",
+      "wrong": {
+        "salen": {
+          "en": "Salen is in the present tense. This task asks for the affirmative command: salgan.",
+          "es": "Salen está en presente. Esta tarea pide imperativo afirmativo: salgan."
+        },
+        "sal": {
+          "en": "Sal is the command form for tú. For ustedes the command is salgan.",
+          "es": "Sal es la forma del imperativo para tú. Para ustedes el imperativo es salgan."
+        }
+      }
+    },
+    {
+      "id": "ia-form-10",
+      "kind": "form",
+      "verb": "tener",
+      "person": "tú",
+      "answer": "ten",
+      "table": "imperativo",
+      "wrong": {
+        "tienes": {
+          "en": "Tienes is in the present tense. This task asks for the affirmative command: ten.",
+          "es": "Tienes está en presente. Esta tarea pide imperativo afirmativo: ten."
+        },
+        "tenga": {
+          "en": "Tenga is the command form for usted. For tú the command is ten.",
+          "es": "Tenga es la forma del imperativo para usted. Para tú el imperativo es ten."
+        }
+      }
+    },
+    {
+      "id": "ia-form-11",
+      "kind": "form",
+      "verb": "ser",
+      "person": "usted",
+      "answer": "sea",
+      "table": "imperativo",
+      "wrong": {
+        "es": {
+          "en": "Es is in the present tense. This task asks for the affirmative command: sea.",
+          "es": "Es está en presente. Esta tarea pide imperativo afirmativo: sea."
+        },
+        "sé": {
+          "en": "Sé is the command form for tú. For usted the command is sea.",
+          "es": "Sé es la forma del imperativo para tú. Para usted el imperativo es sea."
+        }
+      }
+    },
+    {
+      "id": "ia-form-12",
+      "kind": "form",
+      "verb": "escribir",
+      "person": "tú",
+      "answer": "escribe",
+      "table": "imperativo",
+      "wrong": {
+        "escribes": {
+          "en": "Escribes is in the present tense. This task asks for the affirmative command: escribe.",
+          "es": "Escribes está en presente. Esta tarea pide imperativo afirmativo: escribe."
+        },
+        "escriba": {
+          "en": "Escriba is the command form for usted. For tú the command is escribe.",
+          "es": "Escriba es la forma del imperativo para usted. Para tú el imperativo es escribe."
+        }
+      }
+    },
     {
       "kind": "why",
       "id": "ia-why-01",

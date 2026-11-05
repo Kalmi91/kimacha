@@ -728,7 +728,17 @@
       "verb": "hueco",
       "person": "El escritor ___ libro leí es de Oaxaca.",
       "answer": "cuyo",
-      "table": "relc-hueco"
+      "table": "relc-hueco",
+      "wrong": {
+        "cuya": {
+          "en": "Cuya is feminine, but el libro is masculine: cuyo.",
+          "es": "Cuya es femenino, pero el libro es masculino: cuyo."
+        },
+        "que su": {
+          "en": "Cuyo already means \"whose\" and includes the possessive, so que su is not needed: cuyo.",
+          "es": "Cuyo ya significa \"de quien\" e incluye el posesivo, así que no hace falta que su: cuyo."
+        }
+      }
     },
     {
       "id": "rc-form-02",
@@ -736,7 +746,17 @@
       "verb": "hueco",
       "person": "Tengo una amiga ___ madre es médica.",
       "answer": "cuya",
-      "table": "relc-hueco"
+      "table": "relc-hueco",
+      "wrong": {
+        "cuyo": {
+          "en": "Cuyo is masculine, but la madre is feminine: cuya.",
+          "es": "Cuyo es masculino, pero la madre es femenino: cuya."
+        },
+        "que su": {
+          "en": "Cuyo already means \"whose\" and includes the possessive, so que su is not needed: cuya.",
+          "es": "Cuyo ya significa \"de quien\" e incluye el posesivo, así que no hace falta que su: cuya."
+        }
+      }
     },
     {
       "id": "rc-form-03",
@@ -744,7 +764,17 @@
       "verb": "hueco",
       "person": "Hablé con unos chicos ___ padres viven en Puebla.",
       "answer": "cuyos",
-      "table": "relc-hueco"
+      "table": "relc-hueco",
+      "wrong": {
+        "cuyo": {
+          "en": "Cuyo is singular, but los padres is plural: cuyos.",
+          "es": "Cuyo es singular, pero los padres es plural: cuyos."
+        },
+        "cuyas": {
+          "en": "Cuyas is feminine, but los padres is masculine: cuyos.",
+          "es": "Cuyas es femenino, pero los padres es masculino: cuyos."
+        }
+      }
     },
     {
       "id": "rc-form-04",
@@ -752,7 +782,17 @@
       "verb": "hueco",
       "person": "Es una ciudad ___ calles siempre están llenas.",
       "answer": "cuyas",
-      "table": "relc-hueco"
+      "table": "relc-hueco",
+      "wrong": {
+        "cuya": {
+          "en": "Cuya is singular, but las calles is plural: cuyas.",
+          "es": "Cuya es singular, pero las calles es plural: cuyas."
+        },
+        "cuyos": {
+          "en": "Cuyos is masculine, but las calles is feminine: cuyas.",
+          "es": "Cuyos es masculino, pero las calles es femenino: cuyas."
+        }
+      }
     },
     {
       "id": "rc-form-05",
@@ -760,7 +800,17 @@
       "verb": "hueco",
       "person": "De los dos libros, ___ compré ayer es mejor.",
       "answer": "el que",
-      "table": "relc-hueco"
+      "table": "relc-hueco",
+      "wrong": {
+        "lo que": {
+          "en": "Lo que is neuter and refers to an idea, not to one of the two books: el que.",
+          "es": "Lo que es neutro y se refiere a una idea, no a uno de los dos libros: el que."
+        },
+        "la que": {
+          "en": "La que is feminine, but uno de los dos libros is masculine: el que.",
+          "es": "La que es femenino, pero uno de los dos libros es masculino: el que."
+        }
+      }
     },
     {
       "id": "rc-form-06",
@@ -768,7 +818,17 @@
       "verb": "hueco",
       "person": "De las dos casas, ___ vimos ayer es más barata.",
       "answer": "la que",
-      "table": "relc-hueco"
+      "table": "relc-hueco",
+      "wrong": {
+        "el que": {
+          "en": "El que is masculine, but una de las dos casas is feminine: la que.",
+          "es": "El que es masculino, pero una de las dos casas es femenino: la que."
+        },
+        "lo que": {
+          "en": "Lo que is neuter and refers to an idea, not to one of the two houses: la que.",
+          "es": "Lo que es neutro y se refiere a una idea, no a una de las dos casas: la que."
+        }
+      }
     },
     {
       "id": "rc-form-07",
@@ -776,7 +836,17 @@
       "verb": "hueco",
       "person": "Entre estos vestidos, ___ más me gustan son los rojos.",
       "answer": "los que",
-      "table": "relc-hueco"
+      "table": "relc-hueco",
+      "wrong": {
+        "las que": {
+          "en": "Las que is feminine, but los vestidos is masculine: los que.",
+          "es": "Las que es femenino, pero los vestidos es masculino: los que."
+        },
+        "el que": {
+          "en": "El que is singular, but los vestidos is plural: los que.",
+          "es": "El que es singular, pero los vestidos es plural: los que."
+        }
+      }
     },
     {
       "id": "rc-form-08",
@@ -784,7 +854,13 @@
       "verb": "hueco",
       "person": "Todo ___ tengo es tuyo.",
       "answer": "lo que",
-      "table": "relc-hueco"
+      "table": "relc-hueco",
+      "wrong": {
+        "que": {
+          "en": "After todo, Spanish needs lo que for \"everything that\": lo que.",
+          "es": "Después de todo, el español necesita lo que para \"todo lo que\": lo que."
+        }
+      }
     },
     {
       "id": "rc-form-09",
@@ -792,7 +868,17 @@
       "verb": "hueco",
       "person": "Eso es justo ___ necesitaba.",
       "answer": "lo que",
-      "table": "relc-hueco"
+      "table": "relc-hueco",
+      "wrong": {
+        "el que": {
+          "en": "Eso is neuter, so the relative pronoun is neuter too: lo que.",
+          "es": "Eso es neutro, así que el pronombre relativo también es neutro: lo que."
+        },
+        "que": {
+          "en": "Que alone cannot stand for \"the thing that\" after eso es justo. The neuter form is needed: lo que.",
+          "es": "Que solo no puede equivaler a \"aquello que\" después de eso es justo. Hace falta la forma neutra: lo que."
+        }
+      }
     },
     {
       "id": "rc-form-10",
@@ -800,7 +886,17 @@
       "verb": "hueco",
       "person": "La persona en ___ que confío es mi madre.",
       "answer": "la",
-      "table": "relc-hueco"
+      "table": "relc-hueco",
+      "wrong": {
+        "el": {
+          "en": "El is masculine, but la persona is feminine: la.",
+          "es": "El es masculino, pero la persona es femenino: la."
+        },
+        "lo": {
+          "en": "Lo is neuter and refers to an idea, not to a person: la.",
+          "es": "Lo es neutro y se refiere a una idea, no a la persona: la."
+        }
+      }
     },
     {
       "id": "rc-form-11",
@@ -808,7 +904,17 @@
       "verb": "hueco",
       "person": "Los amigos ___ los que cuento son pocos.",
       "answer": "con",
-      "table": "relc-hueco"
+      "table": "relc-hueco",
+      "wrong": {
+        "en": {
+          "en": "Contar takes con, not en: con.",
+          "es": "Contar lleva con, no en: con."
+        },
+        "de": {
+          "en": "Contar takes con, not de: con.",
+          "es": "Contar lleva con, no de: con."
+        }
+      }
     },
     {
       "id": "rc-form-12",
@@ -816,7 +922,17 @@
       "verb": "hueco",
       "person": "Las ideas ___ las que creo son muy simples.",
       "answer": "en",
-      "table": "relc-hueco"
+      "table": "relc-hueco",
+      "wrong": {
+        "con": {
+          "en": "Creer takes en, not con: en.",
+          "es": "Creer lleva en, no con: en."
+        },
+        "de": {
+          "en": "Creer takes en, not de: en.",
+          "es": "Creer lleva en, no de: en."
+        }
+      }
     },
     {
       "kind": "why",

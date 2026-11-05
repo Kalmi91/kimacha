@@ -43,7 +43,9 @@ const TODAY = localDateString();
 
 // The five due words, the longest overdue first, and their sentences (words-open sentence_es).
 const DUE = ['o19', 'o37', 'o20', 'o38', 'o3'];
-const SENTENCES = ['Estoy en casa.', 'Usted está bien.', 'Tiene una casa.', 'Ella es mi madre.', 'Yo estoy bien.'];
+// The text follows the topics (E102): the words of one topic stand together, so the order differs from the due order above.
+const TEXT = ['o19', 'o20', 'o38', 'o37', 'o3'];
+const SENTENCES = ['Estoy en casa.', 'Tiene una casa.', 'Ella es mi madre.', 'Usted está bien.', 'Yo estoy bien.'];
 
 const learned = (itemId: string, due: string, over: Partial<Sm2Card> = {}): Sm2Card => ({
   ...sm2NewCard(itemId),
@@ -142,7 +144,7 @@ describe('Practice tab: the text', () => {
     const flat = (node: unknown): string =>
       Array.isArray(node) ? node.map(flat).join('') : typeof node === 'string' ? node : node && typeof node === 'object' && 'props' in node ? flat((node as { props: { children?: unknown } }).props.children) : '';
     expect(flat(view.getByTestId('practice-text').props.children)).toBe(SENTENCES.join(' '));
-    expect([0, 1, 2, 3, 4].map((i) => view.getByTestId(`practice-word-${i}`).props.children)).toEqual(['casa', 'Usted', 'una', 'madre', 'bien']);
+    expect([0, 1, 2, 3, 4].map((i) => view.getByTestId(`practice-word-${i}`).props.children)).toEqual(['casa', 'una', 'madre', 'Usted', 'bien']);
     expect(view.getByText('Read aloud')).toBeTruthy();
     expect(view.getByText('Next →')).toBeTruthy();
     view.unmount();
@@ -154,7 +156,7 @@ describe('Practice tab: the text', () => {
     await press(view, 'practice-speak');
     expect(mockSequence).toHaveBeenCalledTimes(1);
     // the gender is the sex of the word-pack voice of the card's Spanish field (the speaker the sentence pack holds it under)
-    const genders = DUE.map((id) => voiceFor('es', 'kokoro', findPcicItem(id)!.es).gender);
+    const genders = TEXT.map((id) => voiceFor('es', 'kokoro', findPcicItem(id)!.es).gender);
     expect(new Set(genders).size).toBe(2); // the five words really do not share one speaker, so the rule is exercised
     expect(mockSequence).toHaveBeenCalledWith(SENTENCES.map((text, i) => ({ text, locale: 'es-MX', gender: genders[i] })));
     expect(mockSpeak).not.toHaveBeenCalled();
@@ -179,7 +181,7 @@ describe('Practice tab: the text', () => {
     await getDb().upsertPcicCard(learned(pcicItemsForLevel('C1')[0].id, '1999-01-01'));
     await getDb().upsertPcicCard(learned('o5', '1999-01-02', { known: true }));
     const view = await mount();
-    expect((await saved())!.ids).toEqual(DUE);
+    expect((await saved())!.ids).toEqual(TEXT);
     view.unmount();
   });
 
@@ -318,7 +320,7 @@ describe('Practice tab: the sentences step', () => {
     await press(view, 'practice-sentences');
     expect(view.getByText('Practice these words in sentences')).toBeTruthy();
     expect(mockPush).toHaveBeenCalledTimes(1);
-    expect(mockPush).toHaveBeenCalledWith({ pathname: '/sentences', params: { focus: 'o19,o37,o20,o38,o3' } });
+    expect(mockPush).toHaveBeenCalledWith({ pathname: '/sentences', params: { focus: 'o19,o20,o38,o37,o3' } });
     view.unmount();
   });
 
@@ -377,7 +379,7 @@ describe('Practice tab: the round survives leaving the tab and the app', () => {
     await learnWords();
     const view = await mount();
     const round = (await saved())!;
-    expect(round).toMatchObject({ v: 2, date: TODAY, target: 'es', ids: DUE, step: 0, picks: [null, null, null, null, null] });
+    expect(round).toMatchObject({ v: 2, date: TODAY, target: 'es', ids: TEXT, step: 0, picks: [null, null, null, null, null] });
     expect(round.qs).toHaveLength(5);
     view.unmount();
   });
@@ -455,7 +457,7 @@ describe('Practice tab: the round survives leaving the tab and the app', () => {
     const second = await mount();
     expect(second.getByText('Questions done')).toBeTruthy();
     await press(second, 'practice-sentences');
-    expect(mockPush).toHaveBeenCalledWith({ pathname: '/sentences', params: { focus: DUE.join(',') } });
+    expect(mockPush).toHaveBeenCalledWith({ pathname: '/sentences', params: { focus: TEXT.join(',') } });
     second.unmount();
   });
 
@@ -482,7 +484,7 @@ describe('Practice tab: the round survives leaving the tab and the app', () => {
       await getDb().setPracticeRound(raw);
       const view = await mount();
       expect(view.getByText('Read aloud')).toBeTruthy();
-      expect((await saved())!.ids).toEqual(DUE);
+      expect((await saved())!.ids).toEqual(TEXT);
       view.unmount();
     }
   });

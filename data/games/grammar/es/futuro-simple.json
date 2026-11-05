@@ -1049,6 +1049,16 @@
       "tense": {
         "from": "presente",
         "to": "futuro-simple"
+      },
+      "wrong": {
+        "hablo": {
+          "en": "Hablo is in the present tense. This task asks for the simple future: hablaré.",
+          "es": "Hablo está en presente. Esta tarea pide futuro simple: hablaré."
+        },
+        "hablaría": {
+          "en": "Hablaría is in the conditional. This task asks for the simple future: hablaré.",
+          "es": "Hablaría está en condicional. Esta tarea pide futuro simple: hablaré."
+        }
       }
     },
     {
@@ -1061,6 +1071,16 @@
       "tense": {
         "from": "presente",
         "to": "futuro-simple"
+      },
+      "wrong": {
+        "comes": {
+          "en": "Comes is in the present tense. This task asks for the simple future: comerás.",
+          "es": "Comes está en presente. Esta tarea pide futuro simple: comerás."
+        },
+        "comeré": {
+          "en": "The ending -é is the yo ending of the simple future. For tú the ending is -ás: comerás.",
+          "es": "La terminación -é es la de yo en futuro simple. Para tú la terminación es -ás: comerás."
+        }
       }
     },
     {
@@ -1073,6 +1093,16 @@
       "tense": {
         "from": "presente",
         "to": "futuro-simple"
+      },
+      "wrong": {
+        "vive": {
+          "en": "Vive is in the present tense. This task asks for the simple future: vivirá.",
+          "es": "Vive está en presente. Esta tarea pide futuro simple: vivirá."
+        },
+        "viviría": {
+          "en": "Viviría is in the conditional. This task asks for the simple future: vivirá.",
+          "es": "Viviría está en condicional. Esta tarea pide futuro simple: vivirá."
+        }
       }
     },
     {
@@ -1085,6 +1115,16 @@
       "tense": {
         "from": "presente",
         "to": "futuro-simple"
+      },
+      "wrong": {
+        "hablamos": {
+          "en": "Hablamos is in the present tense. This task asks for the simple future: hablaremos.",
+          "es": "Hablamos está en presente. Esta tarea pide futuro simple: hablaremos."
+        },
+        "hablaríamos": {
+          "en": "Hablaríamos is in the conditional. This task asks for the simple future: hablaremos.",
+          "es": "Hablaríamos está en condicional. Esta tarea pide futuro simple: hablaremos."
+        }
       }
     },
     {
@@ -1097,6 +1137,16 @@
       "tense": {
         "from": "presente",
         "to": "futuro-simple"
+      },
+      "wrong": {
+        "comen": {
+          "en": "Comen is in the present tense. This task asks for the simple future: comerán.",
+          "es": "Comen está en presente. Esta tarea pide futuro simple: comerán."
+        },
+        "comerían": {
+          "en": "Comerían is in the conditional. This task asks for the simple future: comerán.",
+          "es": "Comerían está en condicional. Esta tarea pide futuro simple: comerán."
+        }
       }
     },
     {
@@ -1109,6 +1159,16 @@
       "tense": {
         "from": "presente",
         "to": "futuro-simple"
+      },
+      "wrong": {
+        "viven": {
+          "en": "Viven is in the present tense. This task asks for the simple future: vivirán.",
+          "es": "Viven está en presente. Esta tarea pide futuro simple: vivirán."
+        },
+        "vivirían": {
+          "en": "Vivirían is in the conditional. This task asks for the simple future: vivirán.",
+          "es": "Vivirían está en condicional. Esta tarea pide futuro simple: vivirán."
+        }
       }
     },
     {
@@ -1121,6 +1181,16 @@
       "tense": {
         "from": "presente",
         "to": "futuro-simple"
+      },
+      "wrong": {
+        "tenré": {
+          "en": "Tener has an irregular stem in the simple future: tendr-. The regular pattern does not work: tendré.",
+          "es": "Tener tiene una raíz irregular en futuro simple: tendr-. El patrón regular no sirve: tendré."
+        },
+        "tengo": {
+          "en": "Tengo is in the present tense. This task asks for the simple future: tendré.",
+          "es": "Tengo está en presente. Esta tarea pide futuro simple: tendré."
+        }
       }
     },
     {
@@ -1133,6 +1203,16 @@
       "tense": {
         "from": "presente",
         "to": "futuro-simple"
+      },
+      "wrong": {
+        "poderás": {
+          "en": "Poder has an irregular stem in the simple future: podr-. The regular pattern does not work: podrás.",
+          "es": "Poder tiene una raíz irregular en futuro simple: podr-. El patrón regular no sirve: podrás."
+        },
+        "puedes": {
+          "en": "Puedes is in the present tense. This task asks for the simple future: podrás.",
+          "es": "Puedes está en presente. Esta tarea pide futuro simple: podrás."
+        }
       }
     },
     {
@@ -1145,6 +1225,16 @@
       "tense": {
         "from": "presente",
         "to": "futuro-simple"
+      },
+      "wrong": {
+        "hacerá": {
+          "en": "Hacer has an irregular stem in the simple future: har-. The regular pattern does not work: hará.",
+          "es": "Hacer tiene una raíz irregular en futuro simple: har-. El patrón regular no sirve: hará."
+        },
+        "hace": {
+          "en": "Hace is in the present tense. This task asks for the simple future: hará.",
+          "es": "Hace está en presente. Esta tarea pide futuro simple: hará."
+        }
       }
     },
     {
@@ -1157,6 +1247,16 @@
       "tense": {
         "from": "presente",
         "to": "futuro-simple"
+      },
+      "wrong": {
+        "saliremos": {
+          "en": "Salir has an irregular stem in the simple future: saldr-. The regular pattern does not work: saldremos.",
+          "es": "Salir tiene una raíz irregular en futuro simple: saldr-. El patrón regular no sirve: saldremos."
+        },
+        "salimos": {
+          "en": "Salimos is in the present tense. This task asks for the simple future: saldremos.",
+          "es": "Salimos está en presente. Esta tarea pide futuro simple: saldremos."
+        }
       }
     },
     {
@@ -1169,6 +1269,16 @@
       "tense": {
         "from": "presente",
         "to": "futuro-simple"
+      },
+      "wrong": {
+        "decirán": {
+          "en": "Decir has an irregular stem in the simple future: dir-. The regular pattern does not work: dirán.",
+          "es": "Decir tiene una raíz irregular en futuro simple: dir-. El patrón regular no sirve: dirán."
+        },
+        "dicen": {
+          "en": "Dicen is in the present tense. This task asks for the simple future: dirán.",
+          "es": "Dicen está en presente. Esta tarea pide futuro simple: dirán."
+        }
       }
     },
     {
@@ -1181,6 +1291,16 @@
       "tense": {
         "from": "presente",
         "to": "futuro-simple"
+      },
+      "wrong": {
+        "tenerán": {
+          "en": "Tener has an irregular stem in the simple future: tendr-. The regular pattern does not work: tendrán.",
+          "es": "Tener tiene una raíz irregular en futuro simple: tendr-. El patrón regular no sirve: tendrán."
+        },
+        "tienen": {
+          "en": "Tienen is in the present tense. This task asks for the simple future: tendrán.",
+          "es": "Tienen está en presente. Esta tarea pide futuro simple: tendrán."
+        }
       }
     },
     {

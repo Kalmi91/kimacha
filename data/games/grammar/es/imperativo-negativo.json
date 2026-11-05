@@ -716,7 +716,17 @@
       "verb": "hablar",
       "person": "usted",
       "answer": "no hable",
-      "table": "imperativo-negativo"
+      "table": "imperativo-negativo",
+      "wrong": {
+        "no habla": {
+          "en": "No habla is in the present tense. This task asks for the negative command: no hable.",
+          "es": "No habla está en presente. Esta tarea pide imperativo negativo: no hable."
+        },
+        "hable": {
+          "en": "Hable has no negation. A negative command needs no before the verb: no hable.",
+          "es": "Hable no tiene negación. Un imperativo negativo necesita no delante del verbo: no hable."
+        }
+      }
     },
     {
       "id": "ineg-form-02",
@@ -724,7 +734,17 @@
       "verb": "comer",
       "person": "tú",
       "answer": "no comas",
-      "table": "imperativo-negativo"
+      "table": "imperativo-negativo",
+      "wrong": {
+        "no come": {
+          "en": "No come is the affirmative tú command with no added. A negative command with tú uses a different form: no comas.",
+          "es": "No come es el imperativo afirmativo de tú con no delante. El imperativo negativo de tú usa otra forma: no comas."
+        },
+        "no comes": {
+          "en": "No comes is in the present tense. This task asks for the negative command: no comas.",
+          "es": "No comes está en presente. Esta tarea pide imperativo negativo: no comas."
+        }
+      }
     },
     {
       "id": "ineg-form-03",
@@ -732,7 +752,17 @@
       "verb": "hacer",
       "person": "ustedes",
       "answer": "no hagan",
-      "table": "imperativo-negativo"
+      "table": "imperativo-negativo",
+      "wrong": {
+        "no hacen": {
+          "en": "No hacen is in the present tense. This task asks for the negative command: no hagan.",
+          "es": "No hacen está en presente. Esta tarea pide imperativo negativo: no hagan."
+        },
+        "hagan": {
+          "en": "Hagan has no negation. A negative command needs no before the verb: no hagan.",
+          "es": "Hagan no tiene negación. Un imperativo negativo necesita no delante del verbo: no hagan."
+        }
+      }
     },
     {
       "id": "ineg-form-04",
@@ -740,7 +770,17 @@
       "verb": "ir",
       "person": "tú",
       "answer": "no vayas",
-      "table": "imperativo-negativo"
+      "table": "imperativo-negativo",
+      "wrong": {
+        "no ve": {
+          "en": "No ve is the affirmative tú command with no added. A negative command with tú uses a different form: no vayas.",
+          "es": "No ve es el imperativo afirmativo de tú con no delante. El imperativo negativo de tú usa otra forma: no vayas."
+        },
+        "no vas": {
+          "en": "No vas is in the present tense. This task asks for the negative command: no vayas.",
+          "es": "No vas está en presente. Esta tarea pide imperativo negativo: no vayas."
+        }
+      }
     },
     {
       "id": "ineg-form-05",
@@ -748,7 +788,17 @@
       "verb": "escribir",
       "person": "ustedes",
       "answer": "no escriban",
-      "table": "imperativo-negativo"
+      "table": "imperativo-negativo",
+      "wrong": {
+        "no escriben": {
+          "en": "No escriben is in the present tense. This task asks for the negative command: no escriban.",
+          "es": "No escriben está en presente. Esta tarea pide imperativo negativo: no escriban."
+        },
+        "escriban": {
+          "en": "Escriban has no negation. A negative command needs no before the verb: no escriban.",
+          "es": "Escriban no tiene negación. Un imperativo negativo necesita no delante del verbo: no escriban."
+        }
+      }
     },
     {
       "id": "ineg-form-06",
@@ -756,7 +806,17 @@
       "verb": "decir",
       "person": "usted",
       "answer": "no diga",
-      "table": "imperativo-negativo"
+      "table": "imperativo-negativo",
+      "wrong": {
+        "no dice": {
+          "en": "No dice is in the present tense. This task asks for the negative command: no diga.",
+          "es": "No dice está en presente. Esta tarea pide imperativo negativo: no diga."
+        },
+        "diga": {
+          "en": "Diga has no negation. A negative command needs no before the verb: no diga.",
+          "es": "Diga no tiene negación. Un imperativo negativo necesita no delante del verbo: no diga."
+        }
+      }
     },
     {
       "id": "ineg-form-07",
@@ -764,7 +824,17 @@
       "verb": "salir",
       "person": "tú",
       "answer": "no salgas",
-      "table": "imperativo-negativo"
+      "table": "imperativo-negativo",
+      "wrong": {
+        "no sal": {
+          "en": "No sal is the affirmative tú command with no added. A negative command with tú uses a different form: no salgas.",
+          "es": "No sal es el imperativo afirmativo de tú con no delante. El imperativo negativo de tú usa otra forma: no salgas."
+        },
+        "no sales": {
+          "en": "No sales is in the present tense. This task asks for the negative command: no salgas.",
+          "es": "No sales está en presente. Esta tarea pide imperativo negativo: no salgas."
+        }
+      }
     },
     {
       "id": "ineg-form-08",
@@ -772,7 +842,17 @@
       "verb": "poner",
       "person": "ustedes",
       "answer": "no pongan",
-      "table": "imperativo-negativo"
+      "table": "imperativo-negativo",
+      "wrong": {
+        "no ponen": {
+          "en": "No ponen is in the present tense. This task asks for the negative command: no pongan.",
+          "es": "No ponen está en presente. Esta tarea pide imperativo negativo: no pongan."
+        },
+        "pongan": {
+          "en": "Pongan has no negation. A negative command needs no before the verb: no pongan.",
+          "es": "Pongan no tiene negación. Un imperativo negativo necesita no delante del verbo: no pongan."
+        }
+      }
     },
     {
       "id": "ineg-form-09",
@@ -780,7 +860,17 @@
       "verb": "tener",
       "person": "usted",
       "answer": "no tenga",
-      "table": "imperativo-negativo"
+      "table": "imperativo-negativo",
+      "wrong": {
+        "no tiene": {
+          "en": "No tiene is in the present tense. This task asks for the negative command: no tenga.",
+          "es": "No tiene está en presente. Esta tarea pide imperativo negativo: no tenga."
+        },
+        "tenga": {
+          "en": "Tenga has no negation. A negative command needs no before the verb: no tenga.",
+          "es": "Tenga no tiene negación. Un imperativo negativo necesita no delante del verbo: no tenga."
+        }
+      }
     },
     {
       "id": "ineg-form-10",
@@ -788,7 +878,17 @@
       "verb": "ser",
       "person": "tú",
       "answer": "no seas",
-      "table": "imperativo-negativo"
+      "table": "imperativo-negativo",
+      "wrong": {
+        "no eres": {
+          "en": "No eres is in the present tense. This task asks for the negative command: no seas.",
+          "es": "No eres está en presente. Esta tarea pide imperativo negativo: no seas."
+        },
+        "no sea": {
+          "en": "No sea is the command form for usted. For tú the command is no seas.",
+          "es": "No sea es la forma del imperativo para usted. Para tú el imperativo es no seas."
+        }
+      }
     },
     {
       "id": "ineg-form-11",
@@ -796,7 +896,17 @@
       "verb": "venir",
       "person": "ustedes",
       "answer": "no vengan",
-      "table": "imperativo-negativo"
+      "table": "imperativo-negativo",
+      "wrong": {
+        "no vienen": {
+          "en": "No vienen is in the present tense. This task asks for the negative command: no vengan.",
+          "es": "No vienen está en presente. Esta tarea pide imperativo negativo: no vengan."
+        },
+        "vengan": {
+          "en": "Vengan has no negation. A negative command needs no before the verb: no vengan.",
+          "es": "Vengan no tiene negación. Un imperativo negativo necesita no delante del verbo: no vengan."
+        }
+      }
     },
     {
       "id": "ineg-form-12",
@@ -804,7 +914,17 @@
       "verb": "hablar",
       "person": "tú",
       "answer": "no hables",
-      "table": "imperativo-negativo"
+      "table": "imperativo-negativo",
+      "wrong": {
+        "no habla": {
+          "en": "No habla is the affirmative tú command with no added. A negative command with tú uses a different form: no hables.",
+          "es": "No habla es el imperativo afirmativo de tú con no delante. El imperativo negativo de tú usa otra forma: no hables."
+        },
+        "no hablas": {
+          "en": "No hablas is in the present tense. This task asks for the negative command: no hables.",
+          "es": "No hablas está en presente. Esta tarea pide imperativo negativo: no hables."
+        }
+      }
     },
     {
       "kind": "why",

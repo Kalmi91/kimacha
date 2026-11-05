@@ -1,12 +1,13 @@
 // The `instant` mode of the exam cards (the random grammar round's practice): the result is handed over at once,
 // with no reveal and no "Next" on the card. Without it (the exam, the lesson test) the cards behave as before.
 
-import { fireEvent, render, screen } from '@testing-library/react-native';
+import { DeviceEventEmitter, Platform, ScrollView, TextInput } from 'react-native';
+import { act, fireEvent, render, screen } from '@testing-library/react-native';
 
 import { ThemeProvider } from '@/lib/ThemeContext';
 import ExamChoiceCard from '../ExamChoiceCard';
 import ExamTilesCard from '../ExamTilesCard';
-import ExamTypeCard from '../ExamTypeCard';
+import ExamTypeCard, { keyboardScrollY } from '../ExamTypeCard';
 
 const wrap = (node: React.ReactElement) => render(<ThemeProvider>{node}</ThemeProvider>);
 
@@ -159,5 +160,53 @@ describe('ExamChoiceCard: the keyboard of a typed question before it', () => {
     const { UNSAFE_getByType } = wrap(<ExamChoiceCard heading="Pick" text="Hoy ___." options={['a', 'b']} correctIndex={0} onDone={jest.fn()} />);
     const { ScrollView } = require('react-native');
     expect(UNSAFE_getByType(ScrollView).props.keyboardShouldPersistTaps).toBe('handled');
+  });
+});
+
+describe('ExamTypeCard: the keyboard opens by itself (FB610)', () => {
+  it('no plain autoFocus (Gboard stays up with a dead field); one delayed focus a moment after mounting', () => {
+    jest.useFakeTimers();
+    const focus = jest.spyOn(TextInput.prototype, 'focus').mockImplementation(() => {});
+    wrap(<ExamTypeCard prompt="hablar · yo" answer="hablo" sentence={false} targetLang="es" strictAccents={false} instant onDone={jest.fn()} />);
+    expect(screen.getByTestId('exam-input').props.autoFocus).toBeFalsy();
+    expect(focus).not.toHaveBeenCalled();
+    act(() => {
+      jest.advanceTimersByTime(200);
+    });
+    expect(focus).toHaveBeenCalledTimes(1);
+    focus.mockRestore();
+    jest.useRealTimers();
+  });
+});
+
+describe('ExamTypeCard: the keyboard scrolls only as far as the field needs (FB590)', () => {
+  const layout = (h: number, y = 0) => ({ nativeEvent: { layout: { x: 0, y, width: 300, height: h } } });
+  const open = (viewportH: number, cardH: number) => {
+    jest.useFakeTimers();
+    const scrollTo = jest.spyOn(ScrollView.prototype as unknown as { scrollTo: () => void }, 'scrollTo').mockImplementation(() => {});
+    jest.spyOn(TextInput.prototype, 'focus').mockImplementation(() => {});
+    const { UNSAFE_getByType } = wrap(<ExamTypeCard prompt="ser · yo" answer="soy" sentence={false} targetLang="es" strictAccents={false} instant onDone={jest.fn()} />);
+    fireEvent(UNSAFE_getByType(ScrollView), 'layout', layout(viewportH));
+    fireEvent(screen.getByTestId('exam-card-box'), 'layout', layout(cardH, 16));
+    act(() => {
+      DeviceEventEmitter.emit(Platform.OS === 'ios' ? 'keyboardWillShow' : 'keyboardDidShow', {});
+      jest.advanceTimersByTime(100);
+    });
+    jest.useRealTimers();
+    return scrollTo;
+  };
+  afterEach(() => jest.restoreAllMocks());
+
+  it('the formula: a card that fits does not move, a long one moves just enough plus 8', () => {
+    expect(keyboardScrollY(200, 600, 100)).toBe(0);
+    expect(keyboardScrollY(560, 600, 100)).toBe(68);
+  });
+
+  it('a short card never scrolls when the keyboard opens', () => {
+    expect(open(600, 180)).not.toHaveBeenCalled();
+  });
+
+  it('a long card scrolls to the computed y (card bottom 16 + 600, viewport 600, dock room 0 in a bare render)', () => {
+    expect(open(600, 600)).toHaveBeenCalledWith({ y: 24, animated: false });
   });
 });

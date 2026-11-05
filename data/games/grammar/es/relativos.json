@@ -702,7 +702,13 @@
       "verb": "relativo",
       "person": "El señor ___ vive aquí es mi vecino.",
       "answer": "que",
-      "table": "relativos"
+      "table": "relativos",
+      "wrong": {
+        "quien": {
+          "en": "Quien is used after a preposition or in a clause set off by commas. In this plain clause without a preposition the relative is que: que.",
+          "es": "Quien se usa después de una preposición o en una oración entre comas. En esta oración sin preposición el relativo es que: que."
+        }
+      }
     },
     {
       "id": "rel-form-02",
@@ -710,7 +716,13 @@
       "verb": "relativo",
       "person": "La mesa ___ está en la cocina es nueva.",
       "answer": "que",
-      "table": "relativos"
+      "table": "relativos",
+      "wrong": {
+        "quien": {
+          "en": "Quien refers to people. La mesa is a thing, so the relative is que: que.",
+          "es": "Quien se refiere a personas. La mesa es una cosa, así que el relativo es que: que."
+        }
+      }
     },
     {
       "id": "rel-form-03",
@@ -718,7 +730,13 @@
       "verb": "relativo",
       "person": "El libro ___ compré en la tienda es muy bueno.",
       "answer": "que",
-      "table": "relativos"
+      "table": "relativos",
+      "wrong": {
+        "lo que": {
+          "en": "Lo que refers to an idea or a whole situation. El libro is a specific noun, so the relative is que: que.",
+          "es": "Lo que se refiere a una idea o a toda una situación. El libro es un sustantivo concreto, así que el relativo es que: que."
+        }
+      }
     },
     {
       "id": "rel-form-04",
@@ -726,7 +744,13 @@
       "verb": "relativo",
       "person": "La chica ___ conocí en la escuela es mi amiga.",
       "answer": "que",
-      "table": "relativos"
+      "table": "relativos",
+      "wrong": {
+        "quien": {
+          "en": "Quien is used after a preposition or in a clause set off by commas. In this plain clause without a preposition the relative is que: que.",
+          "es": "Quien se usa después de una preposición o en una oración entre comas. En esta oración sin preposición el relativo es que: que."
+        }
+      }
     },
     {
       "id": "rel-form-05",
@@ -734,7 +758,17 @@
       "verb": "relativo",
       "person": "El amigo con ___ vivo es de Oaxaca.",
       "answer": "quien",
-      "table": "relativos"
+      "table": "relativos",
+      "wrong": {
+        "que": {
+          "en": "After a preposition, que alone does not refer to a person. Use quien (or the el que form): quien.",
+          "es": "Después de una preposición, que solo no se refiere a una persona. Usa quien (o la forma el que): quien."
+        },
+        "quienes": {
+          "en": "El amigo is singular, so the relative pronoun is singular too: quien.",
+          "es": "El amigo es singular, así que el pronombre relativo también es singular: quien."
+        }
+      }
     },
     {
       "id": "rel-form-06",
@@ -742,7 +776,17 @@
       "verb": "relativo",
       "person": "Las chicas con ___ estudio son de México.",
       "answer": "quienes",
-      "table": "relativos"
+      "table": "relativos",
+      "wrong": {
+        "que": {
+          "en": "After a preposition, que alone does not refer to a person. Use quienes (or the el que form): quienes.",
+          "es": "Después de una preposición, que solo no se refiere a una persona. Usa quienes (o la forma el que): quienes."
+        },
+        "quien": {
+          "en": "Las chicas is plural, so the relative pronoun is plural too: quienes.",
+          "es": "Las chicas es plural, así que el pronombre relativo también es plural: quienes."
+        }
+      }
     },
     {
       "id": "rel-form-07",
@@ -750,7 +794,13 @@
       "verb": "relativo",
       "person": "El jefe para ___ trabajo es muy amable.",
       "answer": "quien",
-      "table": "relativos"
+      "table": "relativos",
+      "wrong": {
+        "que": {
+          "en": "Para que means \"so that\" and opens a purpose clause. To say \"for whom\" after para, use quien: quien.",
+          "es": "Para que significa \"con el fin de que\" y abre una oración de finalidad. Para decir \"para quien\" se usa quien: quien."
+        }
+      }
     },
     {
       "id": "rel-form-08",
@@ -758,7 +808,17 @@
       "verb": "relativo",
       "person": "Las señoras a ___ ayudé son mis vecinas.",
       "answer": "quienes",
-      "table": "relativos"
+      "table": "relativos",
+      "wrong": {
+        "que": {
+          "en": "After a preposition, que alone does not refer to a person. Use quienes (or the el que form): quienes.",
+          "es": "Después de una preposición, que solo no se refiere a una persona. Usa quienes (o la forma el que): quienes."
+        },
+        "quien": {
+          "en": "Las señoras is plural, so the relative pronoun is plural too: quienes.",
+          "es": "Las señoras es plural, así que el pronombre relativo también es plural: quienes."
+        }
+      }
     },
     {
       "id": "rel-form-09",
@@ -766,7 +826,13 @@
       "verb": "relativo",
       "person": "La ciudad ___ vivo es muy grande.",
       "answer": "donde",
-      "table": "relativos"
+      "table": "relativos",
+      "wrong": {
+        "que": {
+          "en": "Que alone cannot say where. For a place, use donde (or en la que): donde.",
+          "es": "Que solo no puede decir dónde. Para un lugar se usa donde (o en la que): donde."
+        }
+      }
     },
     {
       "id": "rel-form-10",
@@ -774,7 +840,13 @@
       "verb": "relativo",
       "person": "El café ___ trabajo está cerca.",
       "answer": "donde",
-      "table": "relativos"
+      "table": "relativos",
+      "wrong": {
+        "que": {
+          "en": "Que alone cannot say where. For a place, use donde (or en la que): donde.",
+          "es": "Que solo no puede decir dónde. Para un lugar se usa donde (o en la que): donde."
+        }
+      }
     },
     {
       "id": "rel-form-11",
@@ -782,7 +854,13 @@
       "verb": "relativo",
       "person": "La casa ___ nací es muy vieja.",
       "answer": "donde",
-      "table": "relativos"
+      "table": "relativos",
+      "wrong": {
+        "que": {
+          "en": "Que alone cannot say where. For a place, use donde (or en la que): donde.",
+          "es": "Que solo no puede decir dónde. Para un lugar se usa donde (o en la que): donde."
+        }
+      }
     },
     {
       "id": "rel-form-12",
@@ -790,7 +868,17 @@
       "verb": "relativo",
       "person": "Mi tía, a ___ quiero mucho, vive en Madrid.",
       "answer": "quien",
-      "table": "relativos"
+      "table": "relativos",
+      "wrong": {
+        "quienes": {
+          "en": "Mi tía is singular, so the relative pronoun is singular too: quien.",
+          "es": "Mi tía es singular, así que el pronombre relativo también es singular: quien."
+        },
+        "que": {
+          "en": "After a preposition, que alone does not refer to a person. Use quien (or the el que form): quien.",
+          "es": "Después de una preposición, que solo no se refiere a una persona. Usa quien (o la forma el que): quien."
+        }
+      }
     },
     {
       "kind": "why",

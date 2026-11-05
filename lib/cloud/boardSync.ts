@@ -6,7 +6,7 @@ import { AppState, Platform } from 'react-native';
 import { getDb } from '@/lib/database';
 import { onXpChanged } from '@/lib/dailyXp';
 import { buildDayRange } from '@/lib/usageStats';
-import { boardToken, putBoardXp, type BoardDay } from './board';
+import { boardToken, putBoardXp, type BoardDay, type BoardMinuteDay } from './board';
 
 export const PUSH_DEBOUNCE_MS = 20000;
 // A learner who keeps earning XP keeps restarting the debounce; the push goes up at the latest this long after the first
@@ -21,11 +21,17 @@ export async function boardPayload(now: Date = new Date()): Promise<BoardDay[]> 
   return Promise.all(buildDayRange(BOARD_DAYS, now).map(async (date): Promise<BoardDay> => [date, await db.getDailyXpTenths(date)]));
 }
 
+// The same days with the day's active-use minutes (the counter of lib/usageTimer.ts: foreground, touch within the last 30 s).
+export async function boardMinutesPayload(now: Date = new Date()): Promise<BoardMinuteDay[]> {
+  const byDate = new Map((await getDb().getUsageStats()).last30Days.map((d): [string, number] => [d.date, d.minutes]));
+  return buildDayRange(BOARD_DAYS, now).map((date): BoardMinuteDay => [date, Math.max(0, Math.floor(byDate.get(date) ?? 0))]);
+}
+
 async function pushOnce(): Promise<void> {
   try {
     const token = await boardToken();
     if (!token) return;
-    const res = await putBoardXp(token, await boardPayload());
+    const res = await putBoardXp(token, await boardPayload(), await boardMinutesPayload());
     if (!res.ok && res.error === 'bad_token' && Platform.OS !== 'web') await getDb().setBoardIdentity(null);
   } catch {
     // the next trigger tries again

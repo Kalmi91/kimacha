@@ -1000,7 +1000,17 @@
       "verb": "hablar",
       "person": "usted",
       "answer": "habla",
-      "table": "tu-usted-formas"
+      "table": "tu-usted-formas",
+      "wrong": {
+        "hable": {
+          "en": "Hable is a different form (a command or the subjunctive). In the present, usted uses the same form as él and ella: habla.",
+          "es": "Hable es otra forma (un mandato o el subjuntivo). En presente, usted usa la misma forma que él y ella: habla."
+        },
+        "hablar": {
+          "en": "The infinitive does not change with the person. Conjugate hablar for usted: habla.",
+          "es": "El infinitivo no cambia con la persona. Conjuga hablar para usted: habla."
+        }
+      }
     },
     {
       "id": "tu-form-02",
@@ -1008,7 +1018,17 @@
       "verb": "hablar",
       "person": "tú",
       "answer": "hablas",
-      "table": "tu-usted-formas"
+      "table": "tu-usted-formas",
+      "wrong": {
+        "hables": {
+          "en": "The ending -es is for tú with -er and -ir verbs (comes, vives). -ar verbs take -as: hablas.",
+          "es": "La terminación -es es la de tú en los verbos en -er e -ir (comes, vives). Los verbos en -ar toman -as: hablas."
+        },
+        "hablar": {
+          "en": "The infinitive does not change with the person. For tú, replace -ar with -as: hablas.",
+          "es": "El infinitivo no cambia con la persona. Para tú, se cambia -ar por -as: hablas."
+        }
+      }
     },
     {
       "id": "tu-form-03",
@@ -1016,7 +1036,17 @@
       "verb": "hablar",
       "person": "ustedes",
       "answer": "hablan",
-      "table": "tu-usted-formas"
+      "table": "tu-usted-formas",
+      "wrong": {
+        "hablen": {
+          "en": "The ending -en is for -er and -ir verbs (comen, viven). -ar verbs take -an: hablan.",
+          "es": "La terminación -en es de los verbos en -er e -ir (comen, viven). Los verbos en -ar toman -an: hablan."
+        },
+        "hablar": {
+          "en": "The infinitive does not change with the person. For ellos, ellas and ustedes, replace -ar with -an: hablan.",
+          "es": "El infinitivo no cambia con la persona. Para ellos, ellas y ustedes, se cambia -ar por -an: hablan."
+        }
+      }
     },
     {
       "id": "tu-form-04",
@@ -1024,7 +1054,17 @@
       "verb": "ser",
       "person": "usted",
       "answer": "es",
-      "table": "tu-usted-formas"
+      "table": "tu-usted-formas",
+      "wrong": {
+        "está": {
+          "en": "Está is a form of estar, but this task asks for ser: es.",
+          "es": "Está es una forma de estar, pero esta tarea pide ser: es."
+        },
+        "ser": {
+          "en": "The infinitive does not change with the person. Conjugate ser for usted: es.",
+          "es": "El infinitivo no cambia con la persona. Conjuga ser para usted: es."
+        }
+      }
     },
     {
       "id": "tu-form-05",
@@ -1032,7 +1072,21 @@
       "verb": "ser",
       "person": "ustedes",
       "answer": "son",
-      "table": "tu-usted-formas"
+      "table": "tu-usted-formas",
+      "wrong": {
+        "están": {
+          "en": "Están is a form of estar, but this task asks for ser: son.",
+          "es": "Están es una forma de estar, pero esta tarea pide ser: son."
+        },
+        "ser": {
+          "en": "The infinitive does not change with the person. Conjugate ser for ustedes: son.",
+          "es": "El infinitivo no cambia con la persona. Conjuga ser para ustedes: son."
+        },
+        "sen": {
+          "en": "The ustedes form of ser is irregular: it uses o, not e: son.",
+          "es": "La forma ustedes de ser es irregular: lleva o, no e: son."
+        }
+      }
     },
     {
       "id": "tu-form-06",
@@ -1040,7 +1094,21 @@
       "verb": "ser",
       "person": "nosotros/nosotras",
       "answer": "somos",
-      "table": "tu-usted-formas"
+      "table": "tu-usted-formas",
+      "wrong": {
+        "estamos": {
+          "en": "Estamos is a form of estar, but this task asks for ser: somos.",
+          "es": "Estamos es una forma de estar, pero esta tarea pide ser: somos."
+        },
+        "semos": {
+          "en": "Semos is a nonstandard form. The nosotros form of ser is somos.",
+          "es": "Semos es una forma no estándar. La forma nosotros de ser es somos."
+        },
+        "ser": {
+          "en": "The infinitive does not change with the person. Conjugate ser for nosotros: somos.",
+          "es": "El infinitivo no cambia con la persona. Conjuga ser para nosotros: somos."
+        }
+      }
     },
     {
       "id": "tu-form-07",
@@ -1048,7 +1116,17 @@
       "verb": "tener",
       "person": "usted",
       "answer": "tiene",
-      "table": "tu-usted-formas"
+      "table": "tu-usted-formas",
+      "wrong": {
+        "tene": {
+          "en": "With él, ella and usted the stem vowel of tener changes: e becomes ie. tiene.",
+          "es": "Con él, ella y usted cambia la vocal de la raíz de tener: e pasa a ie. tiene."
+        },
+        "tener": {
+          "en": "The infinitive does not change with the person. Conjugate tener for usted: tiene.",
+          "es": "El infinitivo no cambia con la persona. Conjuga tener para usted: tiene."
+        }
+      }
     },
     {
       "id": "tu-form-08",
@@ -1056,7 +1134,17 @@
       "verb": "tener",
       "person": "tú",
       "answer": "tienes",
-      "table": "tu-usted-formas"
+      "table": "tu-usted-formas",
+      "wrong": {
+        "tenes": {
+          "en": "With tú the stem vowel of tener changes: e becomes ie. tienes.",
+          "es": "Con tú cambia la vocal de la raíz de tener: e pasa a ie. tienes."
+        },
+        "tener": {
+          "en": "The infinitive does not change with the person. Conjugate tener for tú: tienes.",
+          "es": "El infinitivo no cambia con la persona. Conjuga tener para tú: tienes."
+        }
+      }
     },
     {
       "id": "tu-form-09",
@@ -1064,7 +1152,17 @@
       "verb": "tener",
       "person": "ustedes",
       "answer": "tienen",
-      "table": "tu-usted-formas"
+      "table": "tu-usted-formas",
+      "wrong": {
+        "tenen": {
+          "en": "With ellos, ellas and ustedes the stem vowel of tener changes: e becomes ie. tienen.",
+          "es": "Con ellos, ellas y ustedes cambia la vocal de la raíz de tener: e pasa a ie. tienen."
+        },
+        "tener": {
+          "en": "The infinitive does not change with the person. Conjugate tener for ustedes: tienen.",
+          "es": "El infinitivo no cambia con la persona. Conjuga tener para ustedes: tienen."
+        }
+      }
     },
     {
       "id": "tu-form-10",
@@ -1072,7 +1170,17 @@
       "verb": "querer",
       "person": "usted",
       "answer": "quiere",
-      "table": "tu-usted-formas"
+      "table": "tu-usted-formas",
+      "wrong": {
+        "quere": {
+          "en": "With él, ella and usted the stem vowel of querer changes: e becomes ie. quiere.",
+          "es": "Con él, ella y usted cambia la vocal de la raíz de querer: e pasa a ie. quiere."
+        },
+        "querer": {
+          "en": "The infinitive does not change with the person. Conjugate querer for usted: quiere.",
+          "es": "El infinitivo no cambia con la persona. Conjuga querer para usted: quiere."
+        }
+      }
     },
     {
       "id": "tu-form-11",
@@ -1080,7 +1188,17 @@
       "verb": "querer",
       "person": "ustedes",
       "answer": "quieren",
-      "table": "tu-usted-formas"
+      "table": "tu-usted-formas",
+      "wrong": {
+        "queren": {
+          "en": "With ellos, ellas and ustedes the stem vowel of querer changes: e becomes ie. quieren.",
+          "es": "Con ellos, ellas y ustedes cambia la vocal de la raíz de querer: e pasa a ie. quieren."
+        },
+        "quieran": {
+          "en": "The ending -an is for -ar verbs (hablan). Querer is an -er verb: quieren.",
+          "es": "La terminación -an es de los verbos en -ar (hablan). Querer es un verbo en -er: quieren."
+        }
+      }
     },
     {
       "id": "tu-form-12",
@@ -1088,7 +1206,17 @@
       "verb": "querer",
       "person": "yo",
       "answer": "quiero",
-      "table": "tu-usted-formas"
+      "table": "tu-usted-formas",
+      "wrong": {
+        "quero": {
+          "en": "With yo the stem vowel of querer changes: e becomes ie. quiero.",
+          "es": "Con yo cambia la vocal de la raíz de querer: e pasa a ie. quiero."
+        },
+        "querer": {
+          "en": "The infinitive does not change with the person. Conjugate querer for yo: quiero.",
+          "es": "El infinitivo no cambia con la persona. Conjuga querer para yo: quiero."
+        }
+      }
     },
     {
       "kind": "why",

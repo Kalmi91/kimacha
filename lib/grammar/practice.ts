@@ -34,28 +34,45 @@ export function buildPractice(
   const item = lesson.items.find((i) => i.id === missed.id);
   const table = item && isFormItem(item) ? lesson.body.find((b) => b.kind === 'table' && b.id === item.table) : undefined;
   if (item && isFormItem(item) && table && table.kind === 'table' && isPersonTable(table)) {
-    const ci = askedColumn(table, item.verb);
-    if (ci > 0) {
-      table.rows.forEach((row, ri) => {
-        // a cell may list alternatives ("he's / she's / it's"): the first is the answer, the rest are accepted
-        const [answer, ...accept] = row[ci].split(' / ').map((x) => x.trim()).filter(Boolean);
-        if (!answer) return;
-        // the missed row keeps the item's own mistake texts; they describe that answer and no other
-        const gen: FormItem = {
-          kind: 'form',
-          id: `${item.id}:p${ri}`,
-          verb: item.verb,
-          person: row[0],
-          answer,
-          ...(accept.length > 0 ? { accept } : {}),
-          table: item.table,
-          ...(row[0] === item.person && item.wrong ? { wrong: item.wrong } : {}),
-        };
-        // the Mexican norm has no vosotros: such a row is no task (the real items are filtered the same way)
-        if (learnedLang === 'es' && isVosotrosItem(gen)) return;
-        add(questionOfItem(gen, lesson, learnedLang, contentLang, seed));
-      });
+    // a topic whose tables hold several verbs (ser and estar on two tables, ser/ir/ver on one): the missed verb's column
+    // first, then the column of every other verb the topic asks in a person table (the missed table's other verbs before
+    // the other tables), so all forms of each of those verbs are practised (FB590)
+    const columns: { table: typeof table; verb: string }[] = [{ table, verb: item.verb }];
+    const tables = [table, ...lesson.body.filter((b) => b.kind === 'table' && b.id !== table.id)];
+    for (const b of tables) {
+      if (b.kind !== 'table' || !isPersonTable(b)) continue;
+      const verbs = new Set(lesson.items.filter((i): i is FormItem => isFormItem(i) && i.table === b.id).map((i) => i.verb));
+      for (const verb of verbs) if (!(b === table && verb === item.verb)) columns.push({ table: b, verb });
     }
+    const taskOf = (col: (typeof columns)[number], ri: number): LessonTestQuestion | null => {
+      const ci = askedColumn(col.table, col.verb);
+      const row = col.table.rows[ri];
+      if (ci <= 0 || !row) return null;
+      // a cell may list alternatives ("he's / she's / it's"): the first is the answer, the rest are accepted
+      const [answer, ...accept] = row[ci].split(' / ').map((x) => x.trim()).filter(Boolean);
+      if (!answer) return null;
+      // the missed row keeps the item's own mistake texts; they describe that answer and no other
+      const mine = col.table === table && col.verb === item.verb;
+      const gen: FormItem = {
+        kind: 'form',
+        id: `${mine ? item.id : `${item.id}:${col.table.id}:${col.verb}`}:p${ri}`,
+        verb: col.verb,
+        person: row[0],
+        answer,
+        ...(accept.length > 0 ? { accept } : {}),
+        table: col.table.id,
+        ...(mine && row[0] === item.person && item.wrong ? { wrong: item.wrong } : {}),
+      };
+      // the Mexican norm has no vosotros: such a row is no task (the real items are filtered the same way)
+      if (learnedLang === 'es' && isVosotrosItem(gen)) return null;
+      return questionOfItem(gen, lesson, learnedLang, contentLang, seed);
+    };
+    // round robin: one row per column in turn (ser yo, estar tú, ser él, ...), starting with the missed verb and person, so a
+    // miss practises the different forms of each verb at once; then whatever rows of each column are still open
+    const rowCount = Math.max(...columns.map((c) => c.table.rows.length));
+    const start = Math.max(0, table.rows.findIndex((r) => r[0] === item.person));
+    for (let i = 0; i < rowCount; i++) add(taskOf(columns[i % columns.length], (start + i) % table.rows.length));
+    for (const col of columns) col.table.rows.forEach((_, ri) => add(taskOf(col, ri)));
     const sameTable = (q: LessonTestQuestion) => {
       const it = lesson.items.find((i) => i.id === q.id);
       return !!it && isFormItem(it) && it.table === item.table;

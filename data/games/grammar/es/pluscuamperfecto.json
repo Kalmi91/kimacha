@@ -733,7 +733,13 @@
       "verb": "hablar",
       "person": "yo",
       "answer": "había hablado",
-      "table": "pluscuamperfecto"
+      "table": "pluscuamperfecto",
+      "wrong": {
+        "he hablado": {
+          "en": "He hablado is the present perfect form. This task asks for the past perfect form: había hablado.",
+          "es": "He hablado es la forma del pretérito perfecto. Esta tarea pide la forma del pluscuamperfecto: había hablado."
+        }
+      }
     },
     {
       "kind": "form",
@@ -741,7 +747,13 @@
       "verb": "comer",
       "person": "tú",
       "answer": "habías comido",
-      "table": "pluscuamperfecto"
+      "table": "pluscuamperfecto",
+      "wrong": {
+        "has comido": {
+          "en": "Has comido is the present perfect form. This task asks for the past perfect form: habías comido.",
+          "es": "Has comido es la forma del pretérito perfecto. Esta tarea pide la forma del pluscuamperfecto: habías comido."
+        }
+      }
     },
     {
       "kind": "form",
@@ -749,7 +761,13 @@
       "verb": "vivir",
       "person": "él/ella/usted",
       "answer": "había vivido",
-      "table": "pluscuamperfecto"
+      "table": "pluscuamperfecto",
+      "wrong": {
+        "ha vivido": {
+          "en": "Ha vivido is the present perfect form. This task asks for the past perfect form: había vivido.",
+          "es": "Ha vivido es la forma del pretérito perfecto. Esta tarea pide la forma del pluscuamperfecto: había vivido."
+        }
+      }
     },
     {
       "kind": "form",
@@ -757,7 +775,17 @@
       "verb": "hacer",
       "person": "nosotros",
       "answer": "habíamos hecho",
-      "table": "pluscuamperfecto"
+      "table": "pluscuamperfecto",
+      "wrong": {
+        "habíamos hacido": {
+          "en": "Hacer has an irregular participle, hecho, not the regular form: habíamos hecho.",
+          "es": "Hacer tiene participio irregular, hecho, no la forma regular: habíamos hecho."
+        },
+        "hemos hecho": {
+          "en": "Hemos hecho is the present perfect form. This task asks for the past perfect form: habíamos hecho.",
+          "es": "Hemos hecho es la forma del pretérito perfecto. Esta tarea pide la forma del pluscuamperfecto: habíamos hecho."
+        }
+      }
     },
     {
       "kind": "form",
@@ -765,7 +793,17 @@
       "verb": "ver",
       "person": "ellos/ellas/ustedes",
       "answer": "habían visto",
-      "table": "pluscuamperfecto"
+      "table": "pluscuamperfecto",
+      "wrong": {
+        "habían veído": {
+          "en": "Ver has an irregular participle, visto, not the regular form: habían visto.",
+          "es": "Ver tiene participio irregular, visto, no la forma regular: habían visto."
+        },
+        "han visto": {
+          "en": "Han visto is the present perfect form. This task asks for the past perfect form: habían visto.",
+          "es": "Han visto es la forma del pretérito perfecto. Esta tarea pide la forma del pluscuamperfecto: habían visto."
+        }
+      }
     },
     {
       "kind": "form",
@@ -773,7 +811,17 @@
       "verb": "decir",
       "person": "ellos/ellas/ustedes",
       "answer": "habían dicho",
-      "table": "pluscuamperfecto"
+      "table": "pluscuamperfecto",
+      "wrong": {
+        "habían decido": {
+          "en": "Decir has an irregular participle, dicho, not the regular form: habían dicho.",
+          "es": "Decir tiene participio irregular, dicho, no la forma regular: habían dicho."
+        },
+        "han dicho": {
+          "en": "Han dicho is the present perfect form. This task asks for the past perfect form: habían dicho.",
+          "es": "Han dicho es la forma del pretérito perfecto. Esta tarea pide la forma del pluscuamperfecto: habían dicho."
+        }
+      }
     },
     {
       "kind": "form",
@@ -781,7 +829,17 @@
       "verb": "escribir",
       "person": "yo",
       "answer": "había escrito",
-      "table": "pluscuamperfecto"
+      "table": "pluscuamperfecto",
+      "wrong": {
+        "había escribido": {
+          "en": "Escribir has an irregular participle, escrito, not the regular form: había escrito.",
+          "es": "Escribir tiene participio irregular, escrito, no la forma regular: había escrito."
+        },
+        "he escrito": {
+          "en": "He escrito is the present perfect form. This task asks for the past perfect form: había escrito.",
+          "es": "He escrito es la forma del pretérito perfecto. Esta tarea pide la forma del pluscuamperfecto: había escrito."
+        }
+      }
     },
     {
       "kind": "form",
@@ -789,7 +847,17 @@
       "verb": "volver",
       "person": "tú",
       "answer": "habías vuelto",
-      "table": "pluscuamperfecto"
+      "table": "pluscuamperfecto",
+      "wrong": {
+        "habías volvido": {
+          "en": "Volver has an irregular participle, vuelto, not the regular form: habías vuelto.",
+          "es": "Volver tiene participio irregular, vuelto, no la forma regular: habías vuelto."
+        },
+        "has vuelto": {
+          "en": "Has vuelto is the present perfect form. This task asks for the past perfect form: habías vuelto.",
+          "es": "Has vuelto es la forma del pretérito perfecto. Esta tarea pide la forma del pluscuamperfecto: habías vuelto."
+        }
+      }
     },
     {
       "kind": "form",
@@ -797,7 +865,13 @@
       "verb": "hablar",
       "person": "nosotros",
       "answer": "habíamos hablado",
-      "table": "pluscuamperfecto"
+      "table": "pluscuamperfecto",
+      "wrong": {
+        "hemos hablado": {
+          "en": "Hemos hablado is the present perfect form. This task asks for the past perfect form: habíamos hablado.",
+          "es": "Hemos hablado es la forma del pretérito perfecto. Esta tarea pide la forma del pluscuamperfecto: habíamos hablado."
+        }
+      }
     },
     {
       "kind": "form",
@@ -805,7 +879,13 @@
       "verb": "comer",
       "person": "ellos/ellas/ustedes",
       "answer": "habían comido",
-      "table": "pluscuamperfecto"
+      "table": "pluscuamperfecto",
+      "wrong": {
+        "han comido": {
+          "en": "Han comido is the present perfect form. This task asks for the past perfect form: habían comido.",
+          "es": "Han comido es la forma del pretérito perfecto. Esta tarea pide la forma del pluscuamperfecto: habían comido."
+        }
+      }
     },
     {
       "kind": "form",
@@ -813,7 +893,17 @@
       "verb": "decir",
       "person": "él/ella/usted",
       "answer": "había dicho",
-      "table": "pluscuamperfecto"
+      "table": "pluscuamperfecto",
+      "wrong": {
+        "había decido": {
+          "en": "Decir has an irregular participle, dicho, not the regular form: había dicho.",
+          "es": "Decir tiene participio irregular, dicho, no la forma regular: había dicho."
+        },
+        "ha dicho": {
+          "en": "Ha dicho is the present perfect form. This task asks for the past perfect form: había dicho.",
+          "es": "Ha dicho es la forma del pretérito perfecto. Esta tarea pide la forma del pluscuamperfecto: había dicho."
+        }
+      }
     },
     {
       "kind": "form",
@@ -821,7 +911,17 @@
       "verb": "hacer",
       "person": "ellos/ellas/ustedes",
       "answer": "habían hecho",
-      "table": "pluscuamperfecto"
+      "table": "pluscuamperfecto",
+      "wrong": {
+        "habían hacido": {
+          "en": "Hacer has an irregular participle, hecho, not the regular form: habían hecho.",
+          "es": "Hacer tiene participio irregular, hecho, no la forma regular: habían hecho."
+        },
+        "han hecho": {
+          "en": "Han hecho is the present perfect form. This task asks for the past perfect form: habían hecho.",
+          "es": "Han hecho es la forma del pretérito perfecto. Esta tarea pide la forma del pluscuamperfecto: habían hecho."
+        }
+      }
     },
     {
       "kind": "why",

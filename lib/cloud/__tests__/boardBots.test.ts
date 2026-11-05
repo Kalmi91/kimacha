@@ -1,5 +1,5 @@
 import type { BoardData } from '../board';
-import { BOARD_LIST_MAX, BOTS, botDailyXp, botXpAt, withBots } from '../boardBots';
+import { BOARD_LIST_MAX, BOTS, botDailyXp, botMinutesAt, botXpAt, withBots } from '../boardBots';
 import { shiftDate } from '../boardStats';
 
 const WEEK = '2026-11-02';
@@ -97,8 +97,8 @@ describe('withBots', () => {
 
   it('on Monday morning nobody has XP yet: only the real rows stay', () => {
     const out = withBots(alone(0), at(0, 6, 0));
-    expect(out.rows).toEqual([{ rank: 1, name: 'Kálmán', xp: 0, me: true }]);
-    expect(out.me).toEqual({ rank: 1, xp: 0, name: 'Kálmán' });
+    expect(out.rows).toEqual([{ rank: 1, name: 'Kálmán', xp: 0, minutes: 0, me: true }]);
+    expect(out.me).toEqual({ rank: 1, xp: 0, minutes: 0, name: 'Kálmán' });
   });
 
   it('a real player whose name matches a bot (case ignored) pushes that bot out, and so does the caller', () => {
@@ -184,11 +184,89 @@ describe('withBots', () => {
     expect(withBots(alone(1), at(12, 14, 0))).toEqual(end);
     // before the week starts: day 0, minute 0 (everybody at 0)
     const before = withBots(alone(0), at(-1, 14, 0));
-    expect(before.rows).toEqual([{ rank: 1, name: 'Kálmán', xp: 0, me: true }]);
+    expect(before.rows).toEqual([{ rank: 1, name: 'Kálmán', xp: 0, minutes: 0, me: true }]);
   });
 
   it('is deterministic for the same data and time, and moves with the clock', () => {
     expect(withBots(alone(), at(3, 15, 0))).toEqual(withBots(alone(), at(3, 15, 0)));
     expect(withBots(alone(), at(3, 15, 0))).not.toEqual(withBots(alone(), at(6, 23, 59)));
+  });
+});
+
+describe('botMinutesAt', () => {
+  it('is deterministic, 0 at Monday 00:00, and never goes down through the week and over each midnight', () => {
+    for (const b of BOTS) {
+      expect(botMinutesAt(b, WEEK, 0, 0)).toBe(0);
+      expect(botMinutesAt(b, WEEK, 3, 14 * 60 + 7)).toBe(botMinutesAt(b, WEEK, 3, 14 * 60 + 7));
+      let last = 0;
+      for (let d = 0; d < 7; d++) {
+        for (let m = 0; m < 1440; m += 15) {
+          const min = botMinutesAt(b, WEEK, d, m);
+          expect(min).toBeGreaterThanOrEqual(last);
+          last = min;
+        }
+        last = botMinutesAt(b, WEEK, d, 1439);
+        if (d < 6) expect(botMinutesAt(b, WEEK, d + 1, 0)).toBe(last);
+      }
+    }
+  });
+
+  it('grows only while a session of the day runs, and not on a resting day', () => {
+    for (const b of BOTS) {
+      const daily = botDailyXp(b, WEEK);
+      for (let d = 0; d < 7; d++) {
+        const before = d === 0 ? 0 : botMinutesAt(b, WEEK, d - 1, 1439);
+        const after = botMinutesAt(b, WEEK, d, 1439);
+        if (daily[d] === 0) expect(after).toBe(before);
+        else expect(after).toBeGreaterThan(before - 1);
+        // nothing before the first session can start (7:00) and nothing after the last one ends (23:50)
+        expect(botMinutesAt(b, WEEK, d, 6 * 60 + 59)).toBe(before);
+        expect(botMinutesAt(b, WEEK, d, 23 * 60 + 50)).toBe(after);
+      }
+    }
+  });
+
+  it('is believable: a week is between 0 and 24 h for everyone, ordered roughly like their XP, and the XP plan did not change', () => {
+    const week = (name: string) => botMinutesAt(BOTS.find((b) => b.name === name)!, WEEK, 6, 1439);
+    for (const b of BOTS) expect(week(b.name)).toBeLessThan(24 * 60);
+    expect(week('Ricky07')).toBeGreaterThan(week('lolka_07'));
+    expect(week('Ricky07')).toBeGreaterThan(120);
+    expect(botXpAt(BOTS[0], WEEK, 6, 1439)).toBe(botXpAt(BOTS[0], WEEK, 6, 1439));
+  });
+});
+
+describe('withBots by learning minutes', () => {
+  const timeAlone = (minutes: number, xp = 5000): BoardData => ({
+    weekStart: WEEK,
+    metric: 'time',
+    rows: [{ rank: 1, name: 'Kálmán', xp, minutes, me: true }],
+    me: { rank: 1, xp, minutes, name: 'Kálmán' },
+  });
+
+  it('ranks real and made-up players by minutes, with both figures on every row, and the rows stay sorted', () => {
+    const out = withBots(timeAlone(200), at(6, 23, 59));
+    expect(out.metric).toBe('time');
+    expect(out.rows.length).toBeGreaterThan(5);
+    for (let i = 1; i < out.rows.length; i++) expect(out.rows[i - 1].minutes!).toBeGreaterThanOrEqual(out.rows[i].minutes!);
+    expect(out.rows.map((r) => r.rank)).toEqual(out.rows.map((_, i) => i + 1));
+    expect(out.rows.every((r) => typeof r.xp === 'number' && typeof r.minutes === 'number')).toBe(true);
+    expect(out.rows.find((r) => r.me)!.xp).toBe(5000); // the real XP stays on the row
+    expect(out.rows.find((r) => r.me)!.rank).toBe(out.me!.rank);
+  });
+
+  it('the caller rank counts the bots ahead by minutes: 0 minutes is behind every bot with some, even with the highest XP', () => {
+    const out = withBots(timeAlone(0), at(6, 23, 59));
+    expect(out.me!.rank).toBe(out.rows.filter((r) => !r.me).length + 1);
+  });
+
+  it('a bot with 0 minutes is left out: Monday morning only the real row stays', () => {
+    const out = withBots(timeAlone(0), at(0, 6, 0));
+    expect(out.rows).toEqual([{ rank: 1, name: 'Kálmán', xp: 5000, minutes: 0, me: true }]);
+  });
+
+  it('an answer without a metric (an old worker) is ranked by XP and its rows without minutes read as 0', () => {
+    const out = withBots(alone(350), at(6, 23, 59));
+    expect(out.rows.find((r) => r.me)!.minutes).toBe(0);
+    expect(out.rows.map((r) => r.xp)).toEqual([...out.rows.map((r) => r.xp)].sort((a, b) => b - a));
   });
 });

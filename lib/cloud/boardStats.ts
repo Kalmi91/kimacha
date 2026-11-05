@@ -1,5 +1,5 @@
 // The numbers behind the weekly leaderboard screen's own-week panel and bottom bar (components/board/). Pure: no React, no database.
-import type { BoardRow } from './board';
+import type { BoardData, BoardRow } from './board';
 
 export interface WeekSummary {
   total: number;
@@ -62,6 +62,23 @@ export function gaps(rows: BoardRow[], me: { rank: number; xp: number }): Gaps {
 }
 
 export const daysLeft = (dayIndex: number): number => 7 - dayIndex;
+
+// A learning time as `3 h 25 min` (under an hour `25 min`), whole minutes.
+export function formatMinutes(total: number): string {
+  const m = Math.max(0, Math.round(total));
+  return m < 60 ? `${m} min` : `${Math.floor(m / 60)} h ${m % 60} min`;
+}
+
+// The time ranking as the screen's pieces read a board: the `xp` of every row and of `me` carries the week's minutes (0 where a
+// worker from before the time ranking sent none), so the podium heights, the gaps and the "+N" gains work on one number for both
+// rankings. Only the text next to the number differs (XP or formatMinutes).
+export function timeView(data: BoardData): BoardData {
+  return {
+    ...data,
+    rows: data.rows.map((r) => ({ ...r, xp: r.minutes ?? 0 })),
+    me: data.me && { ...data.me, xp: data.me.minutes ?? 0 },
+  };
+}
 
 const DAY_MS = 86_400_000;
 

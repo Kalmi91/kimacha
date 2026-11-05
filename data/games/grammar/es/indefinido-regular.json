@@ -2165,6 +2165,16 @@
       "tense": {
         "from": "presente",
         "to": "indefinido"
+      },
+      "wrong": {
+        "hablo": {
+          "en": "Hablo is in the present tense. This task asks for the preterite (indefinido): hablé.",
+          "es": "Hablo está en presente. Esta tarea pide pretérito indefinido: hablé."
+        },
+        "hablar": {
+          "en": "The infinitive does not change with the person. Conjugate hablar for yo: hablé.",
+          "es": "El infinitivo no cambia con la persona. Conjuga hablar para yo: hablé."
+        }
       }
     },
     {
@@ -2177,6 +2187,20 @@
       "tense": {
         "from": "presente",
         "to": "indefinido"
+      },
+      "wrong": {
+        "hablas": {
+          "en": "Hablas is in the present tense. This task asks for the preterite (indefinido): hablaste.",
+          "es": "Hablas está en presente. Esta tarea pide pretérito indefinido: hablaste."
+        },
+        "hablé": {
+          "en": "The ending -é is the yo ending of the preterite (indefinido). For tú the ending is -aste: hablaste.",
+          "es": "La terminación -é es la de yo en pretérito indefinido. Para tú la terminación es -aste: hablaste."
+        },
+        "hablastes": {
+          "en": "The tú form of the preterite ends in -ste, without a final s: hablaste.",
+          "es": "La forma tú del pretérito indefinido termina en -ste, sin s final: hablaste."
+        }
       }
     },
     {
@@ -2189,6 +2213,16 @@
       "tense": {
         "from": "presente",
         "to": "indefinido"
+      },
+      "wrong": {
+        "hablábamos": {
+          "en": "Hablábamos is in the imperfect. This task asks for the preterite (indefinido): hablamos.",
+          "es": "Hablábamos está en imperfecto. Esta tarea pide pretérito indefinido: hablamos."
+        },
+        "hablar": {
+          "en": "The infinitive does not change with the person. Conjugate hablar for nosotros: hablamos.",
+          "es": "El infinitivo no cambia con la persona. Conjuga hablar para nosotros: hablamos."
+        }
       }
     },
     {
@@ -2201,6 +2235,16 @@
       "tense": {
         "from": "presente",
         "to": "indefinido"
+      },
+      "wrong": {
+        "hablan": {
+          "en": "Hablan is in the present tense. This task asks for the preterite (indefinido): hablaron.",
+          "es": "Hablan está en presente. Esta tarea pide pretérito indefinido: hablaron."
+        },
+        "hablaban": {
+          "en": "Hablaban is in the imperfect. This task asks for the preterite (indefinido): hablaron.",
+          "es": "Hablaban está en imperfecto. Esta tarea pide pretérito indefinido: hablaron."
+        }
       }
     },
     {
@@ -2213,6 +2257,20 @@
       "tense": {
         "from": "presente",
         "to": "indefinido"
+      },
+      "wrong": {
+        "comes": {
+          "en": "Comes is in the present tense. This task asks for the preterite (indefinido): comiste.",
+          "es": "Comes está en presente. Esta tarea pide pretérito indefinido: comiste."
+        },
+        "comí": {
+          "en": "The ending -í is the yo ending of the preterite (indefinido). For tú the ending is -iste: comiste.",
+          "es": "La terminación -í es la de yo en pretérito indefinido. Para tú la terminación es -iste: comiste."
+        },
+        "comistes": {
+          "en": "The tú form of the preterite ends in -ste, without a final s: comiste.",
+          "es": "La forma tú del pretérito indefinido termina en -ste, sin s final: comiste."
+        }
       }
     },
     {
@@ -2225,6 +2283,16 @@
       "tense": {
         "from": "presente",
         "to": "indefinido"
+      },
+      "wrong": {
+        "come": {
+          "en": "Come is in the present tense. This task asks for the preterite (indefinido): comió.",
+          "es": "Come está en presente. Esta tarea pide pretérito indefinido: comió."
+        },
+        "comía": {
+          "en": "Comía is in the imperfect. This task asks for the preterite (indefinido): comió.",
+          "es": "Comía está en imperfecto. Esta tarea pide pretérito indefinido: comió."
+        }
       }
     },
     {
@@ -2237,6 +2305,16 @@
       "tense": {
         "from": "presente",
         "to": "indefinido"
+      },
+      "wrong": {
+        "comen": {
+          "en": "Comen is in the present tense. This task asks for the preterite (indefinido): comieron.",
+          "es": "Comen está en presente. Esta tarea pide pretérito indefinido: comieron."
+        },
+        "comiaron": {
+          "en": "With -er verbs the ending is -ieron, not -aron: comieron.",
+          "es": "Con los verbos en -er la terminación es -ieron, no -aron: comieron."
+        }
       }
     },
     {
@@ -2249,6 +2327,16 @@
       "tense": {
         "from": "presente",
         "to": "indefinido"
+      },
+      "wrong": {
+        "vivo": {
+          "en": "Vivo is in the present tense. This task asks for the preterite (indefinido): viví.",
+          "es": "Vivo está en presente. Esta tarea pide pretérito indefinido: viví."
+        },
+        "vivía": {
+          "en": "Vivía is in the imperfect. This task asks for the preterite (indefinido): viví.",
+          "es": "Vivía está en imperfecto. Esta tarea pide pretérito indefinido: viví."
+        }
       }
     },
     {
@@ -2261,6 +2349,16 @@
       "tense": {
         "from": "presente",
         "to": "indefinido"
+      },
+      "wrong": {
+        "vive": {
+          "en": "Vive is in the present tense. This task asks for the preterite (indefinido): vivió.",
+          "es": "Vive está en presente. Esta tarea pide pretérito indefinido: vivió."
+        },
+        "vivía": {
+          "en": "Vivía is in the imperfect. This task asks for the preterite (indefinido): vivió.",
+          "es": "Vivía está en imperfecto. Esta tarea pide pretérito indefinido: vivió."
+        }
       }
     },
     {
@@ -2273,6 +2371,16 @@
       "tense": {
         "from": "presente",
         "to": "indefinido"
+      },
+      "wrong": {
+        "vivemos": {
+          "en": "With -ir verbs the nosotros ending is -imos, not -emos (-emos is for -er verbs in the present): vivimos.",
+          "es": "Con los verbos en -ir la terminación de nosotros es -imos, no -emos (-emos es de los verbos en -er en presente): vivimos."
+        },
+        "vivíamos": {
+          "en": "Vivíamos is in the imperfect. This task asks for the preterite (indefinido): vivimos.",
+          "es": "Vivíamos está en imperfecto. Esta tarea pide pretérito indefinido: vivimos."
+        }
       }
     },
     {
@@ -2285,6 +2393,16 @@
       "tense": {
         "from": "presente",
         "to": "indefinido"
+      },
+      "wrong": {
+        "viven": {
+          "en": "Viven is in the present tense. This task asks for the preterite (indefinido): vivieron.",
+          "es": "Viven está en presente. Esta tarea pide pretérito indefinido: vivieron."
+        },
+        "vivían": {
+          "en": "Vivían is in the imperfect. This task asks for the preterite (indefinido): vivieron.",
+          "es": "Vivían está en imperfecto. Esta tarea pide pretérito indefinido: vivieron."
+        }
       }
     },
     {

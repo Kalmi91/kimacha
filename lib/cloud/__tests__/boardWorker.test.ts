@@ -93,7 +93,7 @@ async function startCloud() {
     run: (query: string, ...bindings: unknown[]): void => void sql.exec(query, ...bindings),
     join: (name: unknown, o: CallOptions = {}) => call('POST', '/api/board/join', { ...o, body: { name } }),
     login: (name: string, pin: string, o: CallOptions = {}) => call('POST', '/api/login', { ...o, body: { name, pin } }),
-    push: (token: string, days: unknown) => call('PUT', '/api/board/xp', { token, body: { days } }),
+    push: (token: string, days: unknown, minutes?: unknown) => call('PUT', '/api/board/xp', { token, body: minutes === undefined ? { days } : { days, minutes } }),
     board: (token: string | undefined, query = '') => call('GET', '/api/board' + query, token === undefined ? {} : { token }),
     leave: (token: string | undefined) => call('DELETE', '/api/board/me', token === undefined ? {} : { token }),
   };
@@ -121,7 +121,7 @@ describe('POST /api/board/join', () => {
     expect(res.status).toBe(200);
     expect(res.body).toEqual({ token: expect.stringMatching(/^[0-9a-f]{64}$/), displayName: 'Mari Néni' });
     const rows = cloud.rows('SELECT * FROM board');
-    expect(rows).toEqual([{ owner: 'd:' + sha256(res.body.token), name_key: 'mari néni', display_name: 'Mari Néni', daily_xp: '[]', updated_at: '2026-11-03T12:00:00.000Z' }]);
+    expect(rows).toEqual([{ owner: 'd:' + sha256(res.body.token), name_key: 'mari néni', display_name: 'Mari Néni', daily_xp: '[]', daily_minutes: '[]', updated_at: '2026-11-03T12:00:00.000Z' }]);
     expect(JSON.stringify(cloud.rows('SELECT * FROM board_joins'))).not.toContain(res.body.token);
     expect(JSON.stringify(rows)).not.toContain(res.body.token);
     expect(cloud.rows('SELECT * FROM board_joins')).toEqual([{ ip: '10.0.0.1', day: '2026-11-03', count: 1 }]);
@@ -222,7 +222,7 @@ describe('PUT /api/board/xp', () => {
     const { token } = (await cloud.login('  ana ', '1234')).body; // typed in lower case with spaces: the account keeps the typed form, trimmed
     expect(boardCount(cloud)).toBe(0); // logging in alone puts nobody on the board
     expect((await cloud.push(token, [[TUE, 125]])).status).toBe(200);
-    expect(cloud.rows('SELECT * FROM board')).toEqual([{ owner: 'u:ana', name_key: 'ana', display_name: 'ana', daily_xp: '[["2026-11-03",125]]', updated_at: '2026-11-03T12:00:00.000Z' }]);
+    expect(cloud.rows('SELECT * FROM board')).toEqual([{ owner: 'u:ana', name_key: 'ana', display_name: 'ana', daily_xp: '[["2026-11-03",125]]', daily_minutes: '[]', updated_at: '2026-11-03T12:00:00.000Z' }]);
     await cloud.push(token, [[MON, 5]]);
     expect(boardCount(cloud)).toBe(1);
     expect(storedDays(cloud, 'ana')).toBe('[["2026-11-02",5]]');
@@ -270,19 +270,20 @@ describe('GET /api/board', () => {
     expect(asAna.status).toBe(200);
     expect(asAna.body).toEqual({
       weekStart: MON,
+      metric: 'xp',
       rows: [
-        { rank: 1, name: 'Bela', xp: 30, me: false },
-        { rank: 2, name: 'Ana', xp: 13, me: true },
+        { rank: 1, name: 'Bela', xp: 30, minutes: 0, me: false },
+        { rank: 2, name: 'Ana', xp: 13, minutes: 0, me: true },
       ],
-      me: { rank: 2, xp: 13, name: 'Ana' },
+      me: { rank: 2, xp: 13, minutes: 0, name: 'Ana' },
     });
     const asBela = await cloud.board(bela);
-    expect(asBela.body.me).toEqual({ rank: 1, xp: 30, name: 'Bela' });
+    expect(asBela.body.me).toEqual({ rank: 1, xp: 30, minutes: 0, name: 'Bela' });
     expect(asBela.body.rows.map((r: Row) => r.me)).toEqual([true, false]);
     // Cili has no XP this week (only last week's): off the list for the others, last for herself
     const asCili = await cloud.board(cili);
     expect(asCili.body.rows.map((r: Row) => [r.rank, r.name, r.xp, r.me])).toEqual([[1, 'Bela', 30, false], [2, 'Ana', 13, false], [3, 'Cili', 0, true]]);
-    expect(asCili.body.me).toEqual({ rank: 3, xp: 0, name: 'Cili' });
+    expect(asCili.body.me).toEqual({ rank: 3, xp: 0, minutes: 0, name: 'Cili' });
   });
 
   it('answers 401 bad_token without a good token', async () => {
@@ -302,7 +303,7 @@ describe('GET /api/board', () => {
     const before = boardCount(cloud);
     const res = await cloud.board(zita);
     expect(res.body.rows.map((r: Row) => [r.rank, r.name, r.xp, r.me])).toEqual([[1, 'Bela', 30, false], [2, 'Ana', 13, false], [3, 'Zita', 0, true]]);
-    expect(res.body.me).toEqual({ rank: 3, xp: 0, name: 'Zita' });
+    expect(res.body.me).toEqual({ rank: 3, xp: 0, minutes: 0, name: 'Zita' });
     expect(boardCount(cloud)).toBe(before);
   });
 
@@ -312,7 +313,7 @@ describe('GET /api/board', () => {
     const res = await cloud.board(ana);
     expect(res.text).not.toMatch(/owner|token|name_key|"d:|"u:/);
     expect(res.text).not.toContain(sha256(bela));
-    expect(Object.keys(res.body).sort()).toEqual(['me', 'rows', 'weekStart']);
+    expect(Object.keys(res.body).sort()).toEqual(['me', 'metric', 'rows', 'weekStart']);
   });
 
   it('counts the week of the day the client names when it is within a day of UTC, else the UTC week', async () => {
@@ -328,7 +329,7 @@ describe('GET /api/board', () => {
 
     const mondayThere = await cloud.board(ana, '?today=2026-11-09'); // a client east of UTC, already on Monday
     expect(mondayThere.body.weekStart).toBe('2026-11-09');
-    expect(mondayThere.body.rows).toEqual([{ rank: 1, name: 'Ana', xp: 0, me: true }]);
+    expect(mondayThere.body.rows).toEqual([{ rank: 1, name: 'Ana', xp: 0, minutes: 0, me: true }]);
 
     for (const q of ['?today=2026-11-12', '?today=garbage', '?today=', '?today=2026-02-30']) expect((await cloud.board(ana, q)).body.weekStart).toBe(MON);
   });
@@ -386,9 +387,9 @@ describe('DELETE /api/board/me', () => {
     await cloud.leave(ana);
     const after = await cloud.board(ana);
     expect(after.status).toBe(200);
-    expect(after.body).toEqual({ weekStart: MON, rows: [{ rank: 1, name: 'Bela', xp: 30, me: false }], me: null, left: true });
+    expect(after.body).toEqual({ weekStart: MON, metric: 'xp', rows: [{ rank: 1, name: 'Bela', xp: 30, minutes: 0, me: false }], me: null, left: true });
     expect(boardCount(cloud)).toBe(2);
-    expect(Object.keys((await cloud.board(bela)).body).sort()).toEqual(['me', 'rows', 'weekStart']); // others are not told anything
+    expect(Object.keys((await cloud.board(bela)).body).sort()).toEqual(['me', 'metric', 'rows', 'weekStart']); // others are not told anything
   });
 
   it('puts a left account back on POST /api/board/join with its web token: no name, no new token, no count against the address', async () => {
@@ -409,11 +410,12 @@ describe('DELETE /api/board/me', () => {
     const res = await cloud.board(ana);
     expect(res.body).toEqual({
       weekStart: MON,
+      metric: 'xp',
       rows: [
-        { rank: 1, name: 'Bela', xp: 30, me: false },
-        { rank: 2, name: 'Ana', xp: 13, me: true },
+        { rank: 1, name: 'Bela', xp: 30, minutes: 0, me: false },
+        { rank: 2, name: 'Ana', xp: 13, minutes: 0, me: true },
       ],
-      me: { rank: 2, xp: 13, name: 'Ana' },
+      me: { rank: 2, xp: 13, minutes: 0, name: 'Ana' },
     });
   });
 
@@ -445,6 +447,106 @@ describe('DELETE /api/board/me', () => {
       expect(res.body).toEqual({ error: 'bad_token' });
     }
     expect(boardCount(cloud)).toBe(before);
+  });
+});
+
+describe('learning minutes: PUT /api/board/xp minutes and GET /api/board?metric=time', () => {
+  const storedMinutes = (cloud: Cloud, nameKey: string): string | undefined => cloud.rows('SELECT daily_minutes FROM board WHERE name_key = ?', nameKey)[0]?.daily_minutes;
+
+  it('stores the minutes of a device and of an account next to the XP, and a second push can only raise a day', async () => {
+    const cloud = await startCloud();
+    const bela = (await cloud.join('Bela')).body.token as string;
+    const ana = (await cloud.login('Ana', '1234')).body.token as string;
+    expect((await cloud.push(bela, [[TUE, 50]], [[TUE, 25], [MON, 40]])).status).toBe(200);
+    expect((await cloud.push(ana, [[TUE, 10]], [[TUE, 7]])).status).toBe(200);
+    expect(storedMinutes(cloud, 'bela')).toBe('[["2026-11-02",40],["2026-11-03",25]]');
+    expect(storedMinutes(cloud, 'ana')).toBe('[["2026-11-03",7]]');
+    expect(storedDays(cloud, 'bela')).toBe('[["2026-11-03",50]]');
+    await cloud.push(bela, [[TUE, 50]], [[TUE, 30]]);
+    expect(storedMinutes(cloud, 'bela')).toBe('[["2026-11-02",40],["2026-11-03",30]]');
+  });
+
+  it('minutes never go down: a fresh install or a second device with less cannot lower a day, while XP is still replaced', async () => {
+    const cloud = await startCloud();
+    const { token } = (await cloud.join('Bela')).body;
+    await cloud.push(token, [[TUE, 50]], [[MON, 40], [TUE, 25]]);
+    await cloud.push(token, [[TUE, 5]], [[MON, 3], [TUE, 0]]);
+    expect(storedMinutes(cloud, 'bela')).toBe('[["2026-11-02",40],["2026-11-03",25]]');
+    expect(storedDays(cloud, 'bela')).toBe('[["2026-11-03",5]]');
+    await cloud.push(token, [[TUE, 5]], []);
+    expect(storedMinutes(cloud, 'bela')).toBe('[["2026-11-02",40],["2026-11-03",25]]');
+    expect((await cloud.board(token, '?metric=time')).body.me.minutes).toBe(65);
+  });
+
+  it('filters the minutes like the days: window, clamp to 24 h, whole numbers only', async () => {
+    const cloud = await startCloud();
+    const { token } = (await cloud.join('Bela')).body;
+    await cloud.push(token, [], [['2026-10-20', 5], ['2026-10-21', 99_999], [TUE, 7.5], [TUE, 30], ['junk', 1], [MON, 'x']]);
+    expect(storedMinutes(cloud, 'bela')).toBe('[["2026-10-21",1440],["2026-11-03",30]]');
+  });
+
+  it('an old client without minutes still succeeds, writes its XP and leaves the stored minutes alone; junk minutes do the same', async () => {
+    const cloud = await startCloud();
+    const { token } = (await cloud.join('Bela')).body;
+    await cloud.push(token, [[TUE, 50]], [[TUE, 25]]);
+    const old = await cloud.push(token, [[TUE, 60]]);
+    expect(old.status).toBe(200);
+    expect(old.body).toEqual({});
+    expect(storedDays(cloud, 'bela')).toBe('[["2026-11-03",60]]');
+    expect(storedMinutes(cloud, 'bela')).toBe('[["2026-11-03",25]]');
+    for (const junk of ['x', {}, null, 5]) expect((await cloud.push(token, [[TUE, 70]], junk)).status).toBe(200);
+    expect(storedDays(cloud, 'bela')).toBe('[["2026-11-03",70]]');
+    expect(storedMinutes(cloud, 'bela')).toBe('[["2026-11-03",25]]');
+  });
+
+  it('bad days still answer 400 and write no minutes', async () => {
+    const cloud = await startCloud();
+    const { token } = (await cloud.join('Bela')).body;
+    const res = await cloud.call('PUT', '/api/board/xp', { token, body: { days: 'x', minutes: [[TUE, 25]] } });
+    expect(res.status).toBe(400);
+    expect(storedMinutes(cloud, 'bela')).toBe('[]');
+  });
+
+  it('ranks by minutes with ?metric=time, by XP without it, and says which one it answered', async () => {
+    const cloud = await startCloud();
+    const ana = (await cloud.login('Ana', '1234')).body.token as string;
+    const bela = (await cloud.join('Bela')).body.token as string;
+    const cili = (await cloud.join('Cili')).body.token as string;
+    await cloud.push(ana, [[TUE, 900]], [[TUE, 20]]);
+    await cloud.push(bela, [[TUE, 100]], [[MON, 50], [TUE, 25]]);
+    await cloud.push(cili, [[TUE, 500]]); // an old client: XP only
+
+    const time = await cloud.board(ana, '?metric=time');
+    expect(time.body).toEqual({
+      weekStart: MON,
+      metric: 'time',
+      rows: [
+        { rank: 1, name: 'Bela', xp: 10, minutes: 75, me: false },
+        { rank: 2, name: 'Ana', xp: 90, minutes: 20, me: true },
+      ],
+      me: { rank: 2, xp: 90, minutes: 20, name: 'Ana' },
+    });
+    const xp = await cloud.board(ana);
+    expect(xp.body.metric).toBe('xp');
+    expect(xp.body.rows.map((r: Row) => [r.rank, r.name, r.xp, r.minutes])).toEqual([[1, 'Ana', 90, 20], [2, 'Cili', 50, 0], [3, 'Bela', 10, 75]]);
+    expect((await cloud.board(ana, '?metric=banana')).body.metric).toBe('xp');
+    // the caller without minutes stands last in the time ranking, with 0
+    const asCili = await cloud.board(cili, '?metric=time');
+    expect(asCili.body.rows.map((r: Row) => [r.rank, r.name, r.minutes, r.me])).toEqual([[1, 'Bela', 75, false], [2, 'Ana', 20, false], [3, 'Cili', 0, true]]);
+  });
+
+  it('adds the column to a board table made before it, keeping the rows, and works at once', async () => {
+    const cloud = await startCloud();
+    const { token } = (await cloud.join('Bela')).body;
+    await cloud.push(token, [[TUE, 50]]);
+    cloud.run('ALTER TABLE board DROP COLUMN daily_minutes');
+    cloud.restart();
+    expect(cloud.rows('SELECT daily_minutes FROM board')).toEqual([{ daily_minutes: '[]' }]);
+    expect(storedDays(cloud, 'bela')).toBe('[["2026-11-03",50]]');
+    await cloud.push(token, [[TUE, 50]], [[TUE, 12]]);
+    expect((await cloud.board(token, '?metric=time')).body.me).toEqual({ rank: 1, xp: 5, minutes: 12, name: 'Bela' });
+    cloud.restart(); // a second start does not fail on the existing column
+    expect(storedMinutes(cloud, 'bela')).toBe('[["2026-11-03",12]]');
   });
 });
 
@@ -548,7 +650,7 @@ describe('retention: old rows and old join counters go', () => {
     const gone = await cloud.board(ana); // the web token has no expiry: it still works, the row does not
     expect(gone.status).toBe(200);
     expect(names(cloud)).toEqual([]);
-    expect(gone.body.me).toEqual({ rank: 1, xp: 0, name: 'Ana' });
+    expect(gone.body.me).toEqual({ rank: 1, xp: 0, minutes: 0, name: 'Ana' });
     expect(cloud.rows('SELECT * FROM board_optout')).toEqual([{ name_key: 'zita' }]);
     expect((await cloud.board(zita)).body).toMatchObject({ me: null, left: true });
     await cloud.push(ana, [['2026-12-02', 30]]);
@@ -582,7 +684,7 @@ describe('the board tables', () => {
     await cloud.push(token, [[TUE, 50]]);
     cloud.restart();
     expect(storedDays(cloud, 'bela')).toBe('[["2026-11-03",50]]');
-    expect((await cloud.board(token)).body.me).toEqual({ rank: 1, xp: 5, name: 'Bela' });
+    expect((await cloud.board(token)).body.me).toEqual({ rank: 1, xp: 5, minutes: 0, name: 'Bela' });
     expect((await cloud.join('Cili')).status).toBe(200);
   });
 

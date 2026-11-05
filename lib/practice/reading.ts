@@ -30,6 +30,12 @@ import { bridgesIn, falseIn, pickStory, type Story } from './stories';
 export const READING_WORDS = 5;
 /** Fewer sentences than this make no reading: the screen shows the empty state. */
 export const READING_MIN_WORDS = 3;
+/** Looking for sentences stops after this many usable words (in due order): the check runs on every candidate otherwise. */
+export const READING_MAX_USABLE = 60;
+/** Grammar and function-word buckets (data/words-open/topics-a1.json): their words share no subject, so they only come when no real topic has READING_MIN_WORDS usable words. */
+export const BUCKET_TOPICS: ReadonlySet<string> = new Set([
+  'numbers', 'common_adjectives', 'personal_info', 'basic_verbs', 'present_simple', 'survival_needs', 'prepositions',
+]);
 /** A meaning question offers the right meaning plus this many others. */
 const MEANING_DISTRACTORS = 2;
 
@@ -128,6 +134,8 @@ export function pickReadingWords(deps: ReadingDeps, known: ReadonlySet<string>):
   const candidates = practiceCandidates(deps.cards, deps.today);
   const avoid = deps.avoid;
   const ordered = avoid && avoid.size > 0 ? [...candidates.filter((c) => !avoid.has(c.itemId)), ...candidates.filter((c) => avoid.has(c.itemId))] : candidates;
+  // The usable words (a sentence the learner fully knows, the same sentence once) in candidate order, each with its topic.
+  const usable: { word: ReadingWord; topic: string; avoided: boolean }[] = [];
   for (const card of ordered) {
     const item = deps.findItem(card.itemId);
     const word = item ? readingWordFor(item, deps.target, deps.info) : null;
@@ -136,7 +144,29 @@ export function pickReadingWords(deps: ReadingDeps, known: ReadonlySet<string>):
     const key = word.sentence.trim().toLowerCase();
     if (seen.has(key)) continue;
     seen.add(key);
-    out.push(word);
+    usable.push({ word, topic: item?.topic ?? '', avoided: !!avoid?.has(card.itemId) });
+    if (usable.length >= READING_MAX_USABLE) break;
+  }
+  // One topic (E102, FB551): the topic with the most due words gives the text, so its sentences belong together;
+  // the next topics (same ranking) fill the text up to READING_WORDS. Words of the previous
+  // round do not count for the ranking. Cards with no topic form one group, i.e. the plain candidate order.
+  const groups = new Map<string, { first: number; fresh: number; words: ReadingWord[] }>();
+  usable.forEach((u, i) => {
+    const g = groups.get(u.topic) ?? { first: i, fresh: 0, words: [] };
+    if (!u.avoided) g.fresh++;
+    g.words.push(u.word);
+    groups.set(u.topic, g);
+  });
+  // Real topics with enough words first, then the small real topics, the buckets last; each by fresh count, then due order.
+  const tier = ([topic, g]: [string, { words: ReadingWord[] }]) => (BUCKET_TOPICS.has(topic) ? 2 : g.words.length >= READING_MIN_WORDS ? 0 : 1);
+  const ranked = [...groups.entries()]
+    .sort((a, b) => tier(a) - tier(b) || b[1].fresh - a[1].fresh || a[1].first - b[1].first)
+    .map(([, g]) => g);
+  for (const g of ranked) {
+    for (const w of g.words) {
+      if (out.length >= READING_WORDS) break;
+      out.push(w);
+    }
     if (out.length >= READING_WORDS) break;
   }
   return out;

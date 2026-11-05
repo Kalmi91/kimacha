@@ -22,7 +22,7 @@ jest.mock('expo-router', () => ({
   useLocalSearchParams: () => ({ topic: mockTopicId }),
 }));
 
-import { DeviceEventEmitter, StyleSheet } from 'react-native';
+import { DeviceEventEmitter, StyleSheet, TextInput } from 'react-native';
 import { act, fireEvent, render, screen, within } from '@testing-library/react-native';
 
 import { getDb } from '@/lib/database.web';
@@ -130,5 +130,18 @@ describe('grammar drill: the correct conjugated form is spoken', () => {
     fireEvent.press(screen.getByTestId('formCheck'));
     await flush(1);
     expect(speak).toHaveBeenCalledWith('soy', speechLang('es'));
+  });
+});
+
+describe('grammar drill: the keyboard opens by itself on a typed task (FB610)', () => {
+  it('the form field gets one delayed focus, not autoFocus', async () => {
+    const focus = jest.spyOn(TextInput.prototype, 'focus').mockImplementation(() => {});
+    await openKind('ser-estar', 'form');
+    expect(screen.getByTestId('formInput').props.autoFocus).toBeFalsy();
+    await act(async () => {
+      await new Promise((r) => setTimeout(r, 250));
+    });
+    expect(focus).toHaveBeenCalled();
+    focus.mockRestore();
   });
 });

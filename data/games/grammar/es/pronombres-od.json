@@ -833,7 +833,17 @@
       "verb": "pronombre de objeto directo",
       "person": "yo",
       "answer": "me",
-      "table": "pronombres-od"
+      "table": "pronombres-od",
+      "wrong": {
+        "yo": {
+          "en": "Yo is a subject pronoun. For a direct object the pronoun is me.",
+          "es": "Yo es un pronombre de sujeto. Para un objeto directo el pronombre es me."
+        },
+        "mi": {
+          "en": "Mi is a possessive. For a direct object the pronoun is me.",
+          "es": "Mi es un posesivo. Para un objeto directo el pronombre es me."
+        }
+      }
     },
     {
       "id": "od-form-02",
@@ -841,7 +851,17 @@
       "verb": "pronombre de objeto directo",
       "person": "tú",
       "answer": "te",
-      "table": "pronombres-od"
+      "table": "pronombres-od",
+      "wrong": {
+        "tu": {
+          "en": "Tu is a possessive. For a direct object the pronoun is te.",
+          "es": "Tu es un posesivo. Para un objeto directo el pronombre es te."
+        },
+        "ti": {
+          "en": "Ti is a pronoun used after a preposition. For a direct object the pronoun is te.",
+          "es": "Ti es un pronombre que va después de una preposición. Para un objeto directo el pronombre es te."
+        }
+      }
     },
     {
       "id": "od-form-03",
@@ -849,7 +869,17 @@
       "verb": "pronombre de objeto directo",
       "person": "él / usted (masculino)",
       "answer": "lo",
-      "table": "pronombres-od"
+      "table": "pronombres-od",
+      "wrong": {
+        "le": {
+          "en": "Le is an indirect object pronoun. For a direct object the pronoun is lo.",
+          "es": "Le es un pronombre de objeto indirecto. Para un objeto directo el pronombre es lo."
+        },
+        "el": {
+          "en": "El is an article. For a direct object the pronoun is lo.",
+          "es": "El es un artículo. Para un objeto directo el pronombre es lo."
+        }
+      }
     },
     {
       "id": "od-form-04",
@@ -857,7 +887,17 @@
       "verb": "pronombre de objeto directo",
       "person": "ella / usted (femenino)",
       "answer": "la",
-      "table": "pronombres-od"
+      "table": "pronombres-od",
+      "wrong": {
+        "le": {
+          "en": "Le is an indirect object pronoun. For a direct object the pronoun is la.",
+          "es": "Le es un pronombre de objeto indirecto. Para un objeto directo el pronombre es la."
+        },
+        "ella": {
+          "en": "Ella is a subject pronoun. For a direct object the pronoun is la.",
+          "es": "Ella es un pronombre de sujeto. Para un objeto directo el pronombre es la."
+        }
+      }
     },
     {
       "id": "od-form-05",
@@ -865,7 +905,17 @@
       "verb": "pronombre de objeto directo",
       "person": "nosotros",
       "answer": "nos",
-      "table": "pronombres-od"
+      "table": "pronombres-od",
+      "wrong": {
+        "nosotros": {
+          "en": "Nosotros is a subject pronoun. For a direct object the pronoun is nos.",
+          "es": "Nosotros es un pronombre de sujeto. Para un objeto directo el pronombre es nos."
+        },
+        "no": {
+          "en": "No is the negation. Do not confuse it with nos, the pronoun for nosotros: nos.",
+          "es": "No es la negación. No la confundas con nos, el pronombre de nosotros: nos."
+        }
+      }
     },
     {
       "id": "od-form-07",
@@ -873,7 +923,17 @@
       "verb": "pronombre de objeto directo",
       "person": "ellos / ustedes (masculino)",
       "answer": "los",
-      "table": "pronombres-od"
+      "table": "pronombres-od",
+      "wrong": {
+        "les": {
+          "en": "Les is an indirect object pronoun. For a direct object the pronoun is los.",
+          "es": "Les es un pronombre de objeto indirecto. Para un objeto directo el pronombre es los."
+        },
+        "ellos": {
+          "en": "Ellos is a subject pronoun. For a direct object the pronoun is los.",
+          "es": "Ellos es un pronombre de sujeto. Para un objeto directo el pronombre es los."
+        }
+      }
     },
     {
       "id": "od-form-08",
@@ -881,7 +941,17 @@
       "verb": "pronombre de objeto directo",
       "person": "ellas / ustedes (femenino)",
       "answer": "las",
-      "table": "pronombres-od"
+      "table": "pronombres-od",
+      "wrong": {
+        "les": {
+          "en": "Les is an indirect object pronoun. For a direct object the pronoun is las.",
+          "es": "Les es un pronombre de objeto indirecto. Para un objeto directo el pronombre es las."
+        },
+        "ellas": {
+          "en": "Ellas is a subject pronoun. For a direct object the pronoun is las.",
+          "es": "Ellas es un pronombre de sujeto. Para un objeto directo el pronombre es las."
+        }
+      }
     },
     {
       "kind": "why",

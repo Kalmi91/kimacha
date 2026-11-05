@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { BackHandler } from 'react-native';
 import { useFocusEffect } from 'expo-router';
 import SpeechDone from '@/components/speech/SpeechDone';
+import { awardXpThen } from '@/lib/xpAward';
 import SpeechIntro from '@/components/speech/SpeechIntro';
 import SpeechList from '@/components/speech/SpeechList';
 import SpeechPlay from '@/components/speech/SpeechPlay';
@@ -20,6 +21,7 @@ import ScreenFeedback from '@/lib/screenFeedback';
 import { recognitionAvailable } from '@/lib/speechRecognition';
 import {
   SPEECH_ANSWER_KEY,
+  speechAnswerKey,
   SPEECH_LEVEL_KEY,
   SPEECH_MODE,
   SPEECH_PROGRESS_KEY,
@@ -44,11 +46,18 @@ import { useScreenLoad } from '@/lib/useScreenLoad';
 // The Speak tab (beta speechTab, PLAN-beszed): a story the learner talks into. Five screens, one component each: the list (level and
 // stories), the intro (new words, voice or typing), the preparation (what she will ask, what can be said), the story itself, and the end. This component holds what they share: the
 // direction, the open run (kept in the resume store after every answer, so leaving the tab and coming back, also after the app was
-// killed, continues where the learner was) and the finished stories (the `game_progress` table). No SRS writes, no XP.
+// killed, continues where the learner was) and the finished stories (the `game_progress` table). No SRS writes; a finished story pays XP once (lib/xpAward.ts).
 
 type Screen = 'list' | 'intro' | 'prep' | 'play' | 'done';
 
 const isLevel = (x: unknown): x is PcicLevel => typeof x === 'string' && (PCIC_LEVELS as string[]).includes(x);
+
+// the last chosen way of this pair (the pair-less value of older versions as the fallback)
+async function savedAnswerFor(dir: PcicTarget): Promise<AnswerMode> {
+  const db = getDb();
+  const value = (await loadResumeValue(db, speechAnswerKey(pairOf(dir)))) ?? (await loadResumeValue(db, SPEECH_ANSWER_KEY));
+  return value === 'type' ? 'type' : 'voice';
+}
 
 // The tokens the learner knows, computed as the Situations do (the deck of the active direction has to be set before findPcicItem).
 async function knownFor(dir: PcicTarget): Promise<ReadonlySet<string>> {
@@ -72,6 +81,8 @@ export default function SpeechTab() {
   const [level, setLevel] = useState<PcicLevel>('A1');
   const [storyId, setStoryId] = useState<string | null>(null);
   const [run, setRun] = useState<StoryRun | null>(null);
+  // the XP the story just finished gave (FB606), paid when the last answer lands, shown on the end screen
+  const [earned, setEarned] = useState(0);
   // how the learner answers; the intro changes it, the next story starts with it
   const [mode, setAnswerMode] = useState<AnswerMode>('voice');
   const [micOk, setMicOk] = useState(true);
@@ -114,7 +125,7 @@ export default function SpeechTab() {
     shownPair.current = pair;
     const all = storiesFor(dir);
     const savedLevel = await loadResumeValue(db, SPEECH_LEVEL_KEY);
-    const savedAnswer = await loadResumeValue(db, SPEECH_ANSWER_KEY);
+    const savedAnswer = await savedAnswerFor(dir);
     const saved = all.length ? parseRun(await loadResumeValue(db, SPEECH_MODE), all) : null;
     const story = all.find((x) => x.id === saved?.id) ?? null;
     setTarget(dir);
@@ -164,7 +175,11 @@ export default function SpeechTab() {
 
   const apply = (next: StoryRun, forStory: SpeechStory | null = null) => {
     setRun(next);
-    if (next.done && forStory) void recordFinish(forStory, next);
+    if (next.done && forStory) {
+      void recordFinish(forStory, next);
+      setEarned(0);
+      awardXpThen('speech', forStory.id, setEarned);
+    }
     else void saveResumeValue(getDb(), SPEECH_MODE, savedRun(next));
   };
   const chooseLevel = (next: PcicLevel) => {
@@ -173,9 +188,11 @@ export default function SpeechTab() {
   };
   const chooseMode = (next: AnswerMode) => {
     setAnswerMode(next);
-    void saveResumeValue(getDb(), SPEECH_ANSWER_KEY, next);
+    void saveResumeValue(getDb(), speechAnswerKey(pairOf(target)), next);
   };
   const startRun = (s: SpeechStory, how: AnswerMode) => {
+    // the way a story is started in is the way the next one is offered in
+    chooseMode(how);
     apply(startStory(s, how));
     setRunKey((n) => n + 1);
     setFresh(true);
@@ -185,6 +202,8 @@ export default function SpeechTab() {
     const opened = stories.find((x) => x.id === id);
     if (!opened) return;
     setStoryId(id);
+    // the last way chosen, for every story: read again, whatever this screen held
+    setAnswerMode(await savedAnswerFor(target));
     if (run && run.id === id && !run.done) {
       setFresh(false);
       setScreen('play');
@@ -239,6 +258,7 @@ export default function SpeechTab() {
         run={run}
         target={target}
         source={source}
+        earned={earned}
         onAgain={() => startRun(story, run.mode)}
         onList={() => {
           setRun(null);

@@ -699,7 +699,17 @@
       "verb": "comparativo",
       "person": "bueno",
       "answer": "mejor",
-      "table": "irregulares"
+      "table": "irregulares",
+      "wrong": {
+        "más mejor": {
+          "en": "Mejor is already a comparative, so más is not added: mejor.",
+          "es": "Mejor ya es un comparativo, así que no se añade más: mejor."
+        },
+        "bueno": {
+          "en": "Bueno is the basic form of the adjective. This task asks for the comparative: mejor.",
+          "es": "Bueno es la forma básica del adjetivo. Esta tarea pide el comparativo: mejor."
+        }
+      }
     },
     {
       "id": "cs-form-02",
@@ -707,7 +717,17 @@
       "verb": "comparativo",
       "person": "malo",
       "answer": "peor",
-      "table": "irregulares"
+      "table": "irregulares",
+      "wrong": {
+        "más peor": {
+          "en": "Peor is already a comparative, so más is not added: peor.",
+          "es": "Peor ya es un comparativo, así que no se añade más: peor."
+        },
+        "malo": {
+          "en": "Malo is the basic form of the adjective. This task asks for the comparative: peor.",
+          "es": "Malo es la forma básica del adjetivo. Esta tarea pide el comparativo: peor."
+        }
+      }
     },
     {
       "id": "cs-form-03",
@@ -715,7 +735,17 @@
       "verb": "comparativo",
       "person": "grande (edad)",
       "answer": "mayor",
-      "table": "irregulares"
+      "table": "irregulares",
+      "wrong": {
+        "más mayor": {
+          "en": "Mayor is already a comparative, so más is not added: mayor.",
+          "es": "Mayor ya es un comparativo, así que no se añade más: mayor."
+        },
+        "grande": {
+          "en": "Grande is the basic form of the adjective. This task asks for the comparative: mayor.",
+          "es": "Grande es la forma básica del adjetivo. Esta tarea pide el comparativo: mayor."
+        }
+      }
     },
     {
       "id": "cs-form-04",
@@ -723,7 +753,17 @@
       "verb": "comparativo",
       "person": "pequeño (edad)",
       "answer": "menor",
-      "table": "irregulares"
+      "table": "irregulares",
+      "wrong": {
+        "más menor": {
+          "en": "Menor is already a comparative, so más is not added: menor.",
+          "es": "Menor ya es un comparativo, así que no se añade más: menor."
+        },
+        "pequeño": {
+          "en": "Pequeño is the basic form of the adjective. This task asks for the comparative: menor.",
+          "es": "Pequeño es la forma básica del adjetivo. Esta tarea pide el comparativo: menor."
+        }
+      }
     },
     {
       "id": "cs-form-05",
@@ -731,7 +771,17 @@
       "verb": "superlativo",
       "person": "bueno",
       "answer": "el mejor",
-      "table": "irregulares"
+      "table": "irregulares",
+      "wrong": {
+        "mejor": {
+          "en": "Mejor is the comparative. The superlative adds the article: el mejor.",
+          "es": "Mejor es el comparativo. El superlativo añade el artículo: el mejor."
+        },
+        "el más mejor": {
+          "en": "Mejor is already a comparative, so más is not added: el mejor.",
+          "es": "Mejor ya es un comparativo, así que no se añade más: el mejor."
+        }
+      }
     },
     {
       "id": "cs-form-06",
@@ -739,7 +789,17 @@
       "verb": "superlativo",
       "person": "malo",
       "answer": "el peor",
-      "table": "irregulares"
+      "table": "irregulares",
+      "wrong": {
+        "peor": {
+          "en": "Peor is the comparative. The superlative adds the article: el peor.",
+          "es": "Peor es el comparativo. El superlativo añade el artículo: el peor."
+        },
+        "el más peor": {
+          "en": "Peor is already a comparative, so más is not added: el peor.",
+          "es": "Peor ya es un comparativo, así que no se añade más: el peor."
+        }
+      }
     },
     {
       "id": "cs-form-07",
@@ -747,7 +807,17 @@
       "verb": "superlativo",
       "person": "grande (edad)",
       "answer": "el mayor",
-      "table": "irregulares"
+      "table": "irregulares",
+      "wrong": {
+        "mayor": {
+          "en": "Mayor is the comparative. The superlative adds the article: el mayor.",
+          "es": "Mayor es el comparativo. El superlativo añade el artículo: el mayor."
+        },
+        "el más mayor": {
+          "en": "Mayor is already a comparative, so más is not added: el mayor.",
+          "es": "Mayor ya es un comparativo, así que no se añade más: el mayor."
+        }
+      }
     },
     {
       "id": "cs-form-08",
@@ -755,7 +825,17 @@
       "verb": "superlativo",
       "person": "pequeño (edad)",
       "answer": "el menor",
-      "table": "irregulares"
+      "table": "irregulares",
+      "wrong": {
+        "menor": {
+          "en": "Menor is the comparative. The superlative adds the article: el menor.",
+          "es": "Menor es el comparativo. El superlativo añade el artículo: el menor."
+        },
+        "el más menor": {
+          "en": "Menor is already a comparative, so más is not added: el menor.",
+          "es": "Menor ya es un comparativo, así que no se añade más: el menor."
+        }
+      }
     },
     {
       "id": "cs-form-09",
@@ -763,7 +843,17 @@
       "verb": "superlativo",
       "person": "caro",
       "answer": "carísimo",
-      "table": "irregulares"
+      "table": "irregulares",
+      "wrong": {
+        "caroísimo": {
+          "en": "The ending -ísimo replaces the final vowel of the adjective, it is not added after it: carísimo.",
+          "es": "La terminación -ísimo reemplaza la vocal final del adjetivo, no se añade después de ella: carísimo."
+        },
+        "caro": {
+          "en": "Caro is the basic form of the adjective. This task asks for the superlative: carísimo.",
+          "es": "Caro es la forma básica del adjetivo. Esta tarea pide el superlativo: carísimo."
+        }
+      }
     },
     {
       "id": "cs-form-10",
@@ -771,7 +861,13 @@
       "verb": "superlativo",
       "person": "fácil",
       "answer": "facilísimo",
-      "table": "irregulares"
+      "table": "irregulares",
+      "wrong": {
+        "fácil": {
+          "en": "Fácil is the basic form of the adjective. This task asks for the superlative: facilísimo.",
+          "es": "Fácil es la forma básica del adjetivo. Esta tarea pide el superlativo: facilísimo."
+        }
+      }
     },
     {
       "id": "cs-form-11",
@@ -779,7 +875,17 @@
       "verb": "superlativo",
       "person": "rico",
       "answer": "riquísimo",
-      "table": "irregulares"
+      "table": "irregulares",
+      "wrong": {
+        "ricoísimo": {
+          "en": "The ending -ísimo replaces the final vowel of the adjective, it is not added after it: riquísimo.",
+          "es": "La terminación -ísimo reemplaza la vocal final del adjetivo, no se añade después de ella: riquísimo."
+        },
+        "ricísimo": {
+          "en": "To keep the hard k sound before the i, the c changes to qu: riquísimo.",
+          "es": "Para conservar el sonido fuerte de la c ante la i, la c cambia a qu: riquísimo."
+        }
+      }
     },
     {
       "id": "cs-form-12",
@@ -787,7 +893,17 @@
       "verb": "superlativo",
       "person": "largo",
       "answer": "larguísimo",
-      "table": "irregulares"
+      "table": "irregulares",
+      "wrong": {
+        "largoísimo": {
+          "en": "The ending -ísimo replaces the final vowel of the adjective, it is not added after it: larguísimo.",
+          "es": "La terminación -ísimo reemplaza la vocal final del adjetivo, no se añade después de ella: larguísimo."
+        },
+        "largísimo": {
+          "en": "To keep the hard g sound before the i, the g changes to gu: larguísimo.",
+          "es": "Para conservar el sonido fuerte de la g ante la i, la g cambia a gu: larguísimo."
+        }
+      }
     },
     {
       "kind": "why",

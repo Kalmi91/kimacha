@@ -72,6 +72,7 @@ const de: typeof en = {
     badgeDone: (n: number) => `fertig ${n}`,
     badgeXp: (xp: number, goal: number) => (xp >= goal ? `XP ${xp} ✓` : `XP ${xp}/${goal}`),
     badgeXpA11y: (xp: number, goal: number) => `XP heute: ${xp} von ${goal}`,
+    badgeXpEarned: (xp: number) => `+${String(xp).replace('.', ',')} XP`,
     badgeIntroducedToday: (words: number, sentences: number, budget: number) =>
       `heute: ${words} ${words === 1 ? 'Wort' : 'Wörter'} · ${sentences} ${sentences === 1 ? 'Satz' : 'Sätze'} / ${budget}`,
     again: 'Wusste ich nicht',

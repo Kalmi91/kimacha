@@ -71,6 +71,7 @@ const hu: typeof en = {
     badgeDone: (n: number) => `kész ${n}`,
     badgeXp: (xp: number, goal: number) => (xp >= goal ? `XP ${xp} ✓` : `XP ${xp}/${goal}`),
     badgeXpA11y: (xp: number, goal: number) => `Mai XP: ${xp} / ${goal}`,
+    badgeXpEarned: (xp: number) => `+${String(xp).replace('.', ',')} XP`,
     badgeIntroducedToday: (words: number, sentences: number, budget: number) =>
       `ma: ${words} szó · ${sentences} mondat / ${budget}`,
     again: 'Nem tudtam',

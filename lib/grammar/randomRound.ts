@@ -43,6 +43,10 @@ export interface EvidenceAnswer {
 /** Oldest first, at most EVIDENCE_WINDOW answers. */
 export interface TopicEvidence {
   answers: EvidenceAnswer[];
+  /** When the topic was last answered (ms, `Date.now()`); absent in evidence saved before. The level test asks the least recently asked topic first. */
+  stamp?: number;
+  /** The question ids asked in the topic's current pass over its questions (FB595); absent in evidence saved before, then the window's ids count. */
+  seen?: string[];
 }
 
 export type RoundMode = 'mixed' | 'full';
@@ -135,9 +139,25 @@ export function topicTicked(ev?: TopicEvidence, kindCount?: () => number): boole
   return kindCount !== undefined && kinds >= Math.max(1, Math.min(TICK_MIN_KINDS, kindCount()));
 }
 
-/** Appends one answer, only the last EVIDENCE_WINDOW stay. */
-export function appendEvidence(ev: TopicEvidence | undefined, a: EvidenceAnswer): TopicEvidence {
-  return { answers: [...(ev?.answers ?? []), a].slice(-EVIDENCE_WINDOW) };
+/** The question ids asked in the topic's current pass (at most SEEN_CAP). */
+export const seenIds = (ev?: TopicEvidence): string[] => (ev ? ev.seen ?? ev.answers.map((x) => x.id) : []);
+
+export const SEEN_CAP = 200;
+
+/**
+ * Appends one answer, only the last EVIDENCE_WINDOW stay. `stamp` is when it happened. `qids` (the topic's current question
+ * ids, when the caller knows them) lets the pass over the questions run on: ids that are no longer among them are dropped,
+ * and when every one of them was already asked the pass starts again with this answer. Without `qids` the id is only added.
+ */
+export function appendEvidence(ev: TopicEvidence | undefined, a: EvidenceAnswer, stamp: number = Date.now(), qids?: string[]): TopicEvidence {
+  let seen = seenIds(ev);
+  if (qids) {
+    const known = new Set(qids);
+    seen = seen.filter((id) => known.has(id));
+    if (qids.length > 0 && qids.every((id) => seen.includes(id))) seen = [];
+  }
+  if (!seen.includes(a.id)) seen = [...seen, a.id];
+  return { answers: [...(ev?.answers ?? []), a].slice(-EVIDENCE_WINDOW), stamp, seen: seen.slice(-SEEN_CAP) };
 }
 
 function isEvidenceAnswer(v: unknown): v is EvidenceAnswer {
@@ -147,7 +167,13 @@ function isEvidenceAnswer(v: unknown): v is EvidenceAnswer {
 
 function isTopicEvidence(v: unknown): v is TopicEvidence {
   const o = v as TopicEvidence | null;
-  return !!o && Array.isArray(o.answers) && o.answers.every(isEvidenceAnswer);
+  return (
+    !!o &&
+    Array.isArray(o.answers) &&
+    o.answers.every(isEvidenceAnswer) &&
+    (o.stamp === undefined || (typeof o.stamp === 'number' && Number.isFinite(o.stamp))) &&
+    (o.seen === undefined || (Array.isArray(o.seen) && o.seen.every((x) => typeof x === 'string')))
+  );
 }
 
 function isRandomMeta(v: unknown): v is RandomMeta {

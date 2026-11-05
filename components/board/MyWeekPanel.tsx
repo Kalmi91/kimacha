@@ -3,8 +3,8 @@ import { StyleSheet, View, type LayoutChangeEvent } from 'react-native';
 import { Text } from '@/components/KText';
 import Colors, { isDarkTheme } from '@/constants/Colors';
 import { fontSize, radius, spacing } from '@/constants/Theme';
-import type { BoardRow } from '@/lib/cloud/board';
-import { daysLeft, gaps, weekSummary } from '@/lib/cloud/boardStats';
+import type { BoardMetric, BoardRow } from '@/lib/cloud/board';
+import { daysLeft, formatMinutes, gaps, weekSummary } from '@/lib/cloud/boardStats';
 import { DAILY_XP_GOAL } from '@/lib/dailyXp';
 import { t } from '@/lib/i18n';
 import { mixColor } from '@/lib/mixColor';
@@ -21,34 +21,39 @@ const DASH = '–';
 export interface MyWeekPanelProps {
   me: { rank: number; xp: number };
   rows: BoardRow[];
-  // XP of Monday..Sunday (fractions allowed), null for the days still to come
+  // XP (or, for the time ranking, learning minutes) of Monday..Sunday (fractions allowed), null for the days still to come
   days: (number | null)[];
   todayIndex: number;
   lastWeek: number;
   streak: number;
   onLayout?: (e: LayoutChangeEvent) => void;
+  // 'time': every figure is minutes (`me.xp`, `days`, `lastWeek` carry them), written as `3 h 25 min`, and there is no daily XP goal
+  metric?: BoardMetric;
 }
 
 // The own-week panel: a dark panel in both themes with the place on split-flap digits, the week's XP, the days left, a bar
 // chart of the week with the daily goal line, and six small figures.
-export default function MyWeekPanel({ me, rows, days, todayIndex, lastWeek, streak, onLayout }: MyWeekPanelProps) {
+export default function MyWeekPanel({ me, rows, days, todayIndex, lastWeek, streak, onLayout, metric = 'xp' }: MyWeekPanelProps) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const s = t().board;
   const dark = isDarkTheme(theme);
   const panel = dark ? colors.background : colors.text;
   const fg = dark ? colors.text : colors.background;
+  const time = metric === 'time';
+  const fig = (n: number) => (time ? formatMinutes(n) : `${n} XP`);
   const sum = weekSummary(days, todayIndex, DAILY_XP_GOAL);
   const { toPass, lead, atTop, last } = gaps(rows, me);
-  const px = BAR_MAX / Math.max(DAILY_XP_GOAL, ...days.map((d) => d ?? 0));
+  const px = BAR_MAX / Math.max(time ? 1 : DAILY_XP_GOAL, ...days.map((d) => d ?? 0));
   const mono = { color: fg };
   const lab = [styles.lab, mono];
   const cells = [
-    [s.toPass, toPass !== null ? `${toPass} XP` : atTop ? s.atTop : DASH],
-    [s.lead, lead !== null ? `${lead} XP` : last ? s.none : DASH],
-    [s.toGoal, sum.toGoal > 0 ? `${sum.toGoal} XP` : s.goalDone],
-    [s.bestDay, sum.best.xp > 0 ? `${s.days[sum.best.index]} · ${sum.best.xp}` : DASH],
-    [s.average, `${sum.average} XP`],
+    [s.toPass, toPass !== null ? fig(toPass) : atTop ? s.atTop : DASH],
+    [s.lead, lead !== null ? fig(lead) : last ? s.none : DASH],
+    // the daily goal is an XP goal: the time ranking has none
+    ...(time ? [] : [[s.toGoal, sum.toGoal > 0 ? `${sum.toGoal} XP` : s.goalDone]]),
+    [s.bestDay, sum.best.xp > 0 ? `${s.days[sum.best.index]} · ${time ? formatMinutes(sum.best.xp) : sum.best.xp}` : DASH],
+    [s.average, fig(sum.average)],
     [s.streak, s.daysCount(streak)],
   ];
   return (
@@ -66,9 +71,9 @@ export default function MyWeekPanel({ me, rows, days, todayIndex, lastWeek, stre
           </View>
         </View>
         <View style={styles.stat}>
-          <MonoText style={[...lab, styles.opLab]}>{s.weekXp}</MonoText>
-          <MonoText style={[styles.big, mono]}>{me.xp}</MonoText>
-          <MonoText style={[styles.small, mono]}>{s.todayXp(sum.today)}</MonoText>
+          <MonoText style={[...lab, styles.opLab]}>{time ? s.weekTime : s.weekXp}</MonoText>
+          <MonoText numberOfLines={1} adjustsFontSizeToFit style={[styles.big, time && styles.bigTime, mono]}>{time ? formatMinutes(me.xp) : me.xp}</MonoText>
+          <MonoText style={[styles.small, mono]}>{time ? s.todayTime(formatMinutes(sum.today)) : s.todayXp(sum.today)}</MonoText>
         </View>
         <View style={styles.stat}>
           <MonoText style={[...lab, styles.opLab]}>{s.remaining(daysLeft(todayIndex))}</MonoText>
@@ -78,12 +83,14 @@ export default function MyWeekPanel({ me, rows, days, todayIndex, lastWeek, stre
       </View>
       <View style={styles.chead}>
         <MonoText style={[styles.small, mono]}>{s.yourWeek}</MonoText>
-        <MonoText style={[styles.small, mono]}>{s.lastWeek(lastWeek)}</MonoText>
+        <MonoText style={[styles.small, mono]}>{time ? s.lastWeekTime(formatMinutes(lastWeek)) : s.lastWeek(lastWeek)}</MonoText>
       </View>
       <View style={styles.chart}>
-        <View style={[styles.goal, { bottom: Math.round(DAILY_XP_GOAL * px) + DAY_LABEL, borderColor: mixColor(fg, panel, 0.55) }]}>
-          <MonoText style={[styles.small, mono, styles.goalText]}>{s.goalLine(DAILY_XP_GOAL)}</MonoText>
-        </View>
+        {time ? null : (
+          <View style={[styles.goal, { bottom: Math.round(DAILY_XP_GOAL * px) + DAY_LABEL, borderColor: mixColor(fg, panel, 0.55) }]}>
+            <MonoText style={[styles.small, mono, styles.goalText]}>{s.goalLine(DAILY_XP_GOAL)}</MonoText>
+          </View>
+        )}
         {days.map((xp, i) => (
           <View key={i} style={styles.day}>
             {xp === null ? (
@@ -125,6 +132,7 @@ const styles = StyleSheet.create({
   flapText: { fontSize: 44, fontWeight: '700' },
   flapLine: { position: 'absolute', left: 0, right: 0, top: '50%', height: 2, marginTop: -1 },
   big: { marginTop: spacing.xs, fontSize: 26, lineHeight: 32, fontWeight: '700', letterSpacing: -1 },
+  bigTime: { fontSize: 20 },
   small: { fontSize: fontSize.xs, lineHeight: 16, opacity: 0.8 },
   chead: { flexDirection: 'row', justifyContent: 'space-between', gap: spacing.sm, marginTop: spacing.md },
   chart: { flexDirection: 'row', gap: spacing.sm, alignItems: 'flex-end', height: CHART_HEIGHT, marginTop: spacing.xs },

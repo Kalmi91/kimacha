@@ -87,6 +87,7 @@ export default {
     // today's XP chip: "XP 20/50", and "XP 63 ✓" once the daily goal is reached.
     badgeXp: (xp: number, goal: number) => (xp >= goal ? `XP ${xp} ✓` : `XP ${xp}/${goal}`),
     badgeXpA11y: (xp: number, goal: number) => `XP today: ${xp} of ${goal}`,
+    badgeXpEarned: (xp: number) => `+${xp} XP`,
     // today's introduction split into words/sentences +
     // today's full allowance (daily limit + the "+10" bonus), e.g. "today: 6 words · 4 sentences / 10".
     badgeIntroducedToday: (words: number, sentences: number, budget: number) =>

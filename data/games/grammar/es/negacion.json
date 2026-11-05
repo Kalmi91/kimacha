@@ -518,7 +518,17 @@
       "verb": "Negativo",
       "person": "algo",
       "answer": "nada",
-      "table": "negacion"
+      "table": "negacion",
+      "wrong": {
+        "no": {
+          "en": "The negative counterpart of algo is nada. No is the plain negation: nada.",
+          "es": "El par negativo de algo es nada. No es la negación simple: nada."
+        },
+        "nado": {
+          "en": "Nado is a form of the verb nadar (to swim). The negative of algo is nada.",
+          "es": "Nado es una forma del verbo nadar. El negativo de algo es nada."
+        }
+      }
     },
     {
       "id": "neg-form-02",
@@ -526,7 +536,17 @@
       "verb": "Negativo",
       "person": "alguien",
       "answer": "nadie",
-      "table": "negacion"
+      "table": "negacion",
+      "wrong": {
+        "nadien": {
+          "en": "Nadie has no n at the end: nadie.",
+          "es": "Nadie no termina en n: nadie."
+        },
+        "ninguien": {
+          "en": "The negative of alguien is nadie. Ninguien does not exist.",
+          "es": "El negativo de alguien es nadie. Ninguien no existe."
+        }
+      }
     },
     {
       "id": "neg-form-03",
@@ -534,7 +554,17 @@
       "verb": "Negativo",
       "person": "siempre",
       "answer": "nunca",
-      "table": "negacion"
+      "table": "negacion",
+      "wrong": {
+        "nuca": {
+          "en": "Nuca is a noun (the nape of the neck). The word for never is nunca.",
+          "es": "Nuca es un sustantivo (la parte de atrás del cuello). La palabra para never es nunca."
+        },
+        "nunka": {
+          "en": "In Spanish this sound is written with c, not k: nunca.",
+          "es": "En español este sonido se escribe con c, no con k: nunca."
+        }
+      }
     },
     {
       "id": "neg-form-04",
@@ -542,7 +572,17 @@
       "verb": "Negativo",
       "person": "alguna vez",
       "answer": "nunca",
-      "table": "negacion"
+      "table": "negacion",
+      "wrong": {
+        "nuca": {
+          "en": "Nuca is a noun (the nape of the neck). The word for never is nunca.",
+          "es": "Nuca es un sustantivo (la parte de atrás del cuello). La palabra para never es nunca."
+        },
+        "ninguna vez": {
+          "en": "The usual negative pair of alguna vez is the single word nunca.",
+          "es": "El par negativo habitual de alguna vez es la palabra nunca."
+        }
+      }
     },
     {
       "id": "neg-form-05",
@@ -550,7 +590,17 @@
       "verb": "Negativo",
       "person": "también",
       "answer": "tampoco",
-      "table": "negacion"
+      "table": "negacion",
+      "wrong": {
+        "tan poco": {
+          "en": "Tan poco means \"so little\" (two words). The negative of también is tampoco, one word.",
+          "es": "Tan poco significa \"so little\" (dos palabras). El negativo de también es tampoco, una sola palabra."
+        },
+        "no también": {
+          "en": "There is no \"no también\". The negative of también is its own word: tampoco.",
+          "es": "No existe \"no también\". El negativo de también es una palabra propia: tampoco."
+        }
+      }
     },
     {
       "id": "neg-form-06",
@@ -558,7 +608,17 @@
       "verb": "Negativo",
       "person": "algún",
       "answer": "ningún",
-      "table": "negacion"
+      "table": "negacion",
+      "wrong": {
+        "ninguno": {
+          "en": "Before a masculine singular noun, ninguno is shortened to ningún: ningún libro.",
+          "es": "Delante de un sustantivo masculino singular, ninguno se acorta a ningún: ningún libro."
+        },
+        "nigún": {
+          "en": "The negative word has a g after the first n: ningún.",
+          "es": "La palabra negativa lleva una g después de la primera n: ningún."
+        }
+      }
     },
     {
       "id": "neg-form-07",
@@ -566,7 +626,17 @@
       "verb": "Negativo",
       "person": "alguno",
       "answer": "ninguno",
-      "table": "negacion"
+      "table": "negacion",
+      "wrong": {
+        "ningún": {
+          "en": "Ningún is the shortened form used before a masculine noun. Without a noun, the pair of alguno is ninguno.",
+          "es": "Ningún es la forma abreviada que se usa delante de un sustantivo masculino. Sin sustantivo, el par de alguno es ninguno."
+        },
+        "ningunos": {
+          "en": "The negative pair of alguno is singular: ninguno. The plural ningunos is rare.",
+          "es": "El par negativo de alguno es singular: ninguno. El plural ningunos es poco frecuente."
+        }
+      }
     },
     {
       "id": "neg-form-08",
@@ -574,7 +644,17 @@
       "verb": "Negativo",
       "person": "alguna",
       "answer": "ninguna",
-      "table": "negacion"
+      "table": "negacion",
+      "wrong": {
+        "ningún": {
+          "en": "Ningún is the shortened masculine form. The feminine pair of alguna is ninguna.",
+          "es": "Ningún es la forma masculina abreviada. El par femenino de alguna es ninguna."
+        },
+        "ningunas": {
+          "en": "The negative pair of alguna is singular: ninguna. The plural ningunas is rare.",
+          "es": "El par negativo de alguna es singular: ninguna. El plural ningunas es poco frecuente."
+        }
+      }
     },
     {
       "id": "neg-form-09",
@@ -582,7 +662,17 @@
       "verb": "Negativo",
       "person": "o … o",
       "answer": "ni … ni",
-      "table": "negacion"
+      "table": "negacion",
+      "wrong": {
+        "no … no": {
+          "en": "The pair is made of two ni, not two no: ni … ni.",
+          "es": "El par se forma con dos ni, no con dos no: ni … ni."
+        },
+        "ni … o": {
+          "en": "Both parts are ni, the second one cannot be o: ni … ni.",
+          "es": "Las dos partes son ni, la segunda no puede ser o: ni … ni."
+        }
+      }
     },
     {
       "id": "neg-form-10",
@@ -590,7 +680,17 @@
       "verb": "Negativo",
       "person": "y",
       "answer": "ni",
-      "table": "negacion"
+      "table": "negacion",
+      "wrong": {
+        "no": {
+          "en": "No is not the negative of y. The word that joins two negatives is ni.",
+          "es": "No no es el negativo de y. La palabra que une dos negativos es ni."
+        },
+        "tampoco": {
+          "en": "Tampoco is the negative of también, not of y: ni.",
+          "es": "Tampoco es el negativo de también, no de y: ni."
+        }
+      }
     },
     {
       "id": "neg-form-11",
@@ -598,7 +698,17 @@
       "verb": "Negativo",
       "person": "ya",
       "answer": "ya no",
-      "table": "negacion"
+      "table": "negacion",
+      "wrong": {
+        "no ya": {
+          "en": "In this expression no comes after ya: ya no.",
+          "es": "En esta expresión no va después de ya: ya no."
+        },
+        "ya": {
+          "en": "Ya alone is the affirmative (already). To negate it, add no after it: ya no.",
+          "es": "Ya solo es la forma afirmativa (already). Para negarlo se añade no después: ya no."
+        }
+      }
     },
     {
       "id": "neg-form-12",
@@ -606,7 +716,17 @@
       "verb": "Negativo",
       "person": "todavía",
       "answer": "todavía no",
-      "table": "negacion"
+      "table": "negacion",
+      "wrong": {
+        "no todavía": {
+          "en": "Usually no comes after todavía: todavía no.",
+          "es": "Normalmente no va después de todavía: todavía no."
+        },
+        "todavía": {
+          "en": "Todavía alone is the affirmative (still). To negate it, add no after it: todavía no.",
+          "es": "Todavía solo es la forma afirmativa (still). Para negarlo se añade no después: todavía no."
+        }
+      }
     },
     {
       "id": "neg-why-01",
