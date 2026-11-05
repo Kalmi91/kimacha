@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { Pressable, ScrollView, StyleSheet, TextInput, View, useWindowDimensions } from 'react-native';
+import { Keyboard, Pressable, ScrollView, StyleSheet, TextInput, View, useWindowDimensions } from 'react-native';
 import { useFocusEffect } from 'expo-router';
 import { Text } from '@/components/KText';
 import Colors from '@/constants/Colors';
@@ -20,7 +20,7 @@ import type { SpokenMatch } from '@/lib/practice/situationMatch';
 import { speak, stopSpeaking } from '@/lib/speech';
 import { isMicOffError, isNothingHeardError, useRecognizer } from '@/lib/speechRecognition';
 import { TOP_ROW, upperFooterMax } from '@/lib/speech/layout';
-import { MAX_TRIES, answerTurn, bubbleOf, closingOf, judgeAnswer, progressOf, skipTurn, speakable, turnById, type AnswerMode, type SpeechStory, type StoryRun } from '@/lib/speech/stories';
+import { MAX_BACKS, MAX_TRIES, answerTurn, backsOn, bubbleOf, closingOf, judgeAnswer, progressOf, skipTurn, speakable, splitBubble, turnById, type AnswerMode, type SpeechStory, type StoryRun } from '@/lib/speech/stories';
 import { useTheme } from '@/lib/ThemeContext';
 
 // The story itself: the character's lines as chat bubbles, the learner's answers as bubbles on the other side, and below, docked
@@ -84,11 +84,12 @@ export default function SpeechPlay({ story, run, target, source, strictAccents, 
   const submit = (text: string, byTyping: boolean) => {
     const said = text.trim();
     if (waiting || run.done || !said) return;
-    const { branch, match } = judgeAnswer(turn, said, { lang: story.target, strictAccents: byTyping && strictAccents });
+    const { branch, match } = judgeAnswer(turn, said, { lang: story.target, strictAccents: byTyping && strictAccents, noBack: backsOn(run) >= MAX_BACKS });
     if (branch !== null) {
       setHeard(null);
       setTyped('');
-      setHelpAt(null);
+      // an ask-back leaves Help open: the learner still has to answer
+      if (!turn.branches[branch].back) setHelpAt(null);
     } else {
       setHeard({ text: said, match, typed: byTyping });
     }
@@ -169,6 +170,22 @@ export default function SpeechPlay({ story, run, target, source, strictAccents, 
     return () => clearTimeout(id);
   }, [waiting, run.answers.length, run.done, story, lang, closing]);
 
+  // the hint after two wrong tries needs the room of the keyboard too
+  useEffect(() => {
+    if (run.tries >= MAX_TRIES) Keyboard.dismiss();
+  }, [run.tries]);
+
+  // her answer to an ask-back is read aloud (a resumed run is silent)
+  const backsSeen = useRef(run.backs.length);
+  useEffect(() => {
+    const last = run.backs[run.backs.length - 1];
+    if (last && run.backs.length > backsSeen.current && focused.current) {
+      const reply = turnById(story, run.path[last.at])?.branches[last.branch]?.reply;
+      if (reply) speak(reply[story.target], lang);
+    }
+    backsSeen.current = run.backs.length;
+  }, [run.backs, run.path, story, lang]);
+
   // a new result or a new turn shows the upper part from its top (the red words first)
   useEffect(() => {
     upper.current?.scrollTo({ y: 0, animated: false });
@@ -181,6 +198,29 @@ export default function SpeechPlay({ story, run, target, source, strictAccents, 
   // With the keyboard open the fixed part is just the input row and one link row: Next is a link then, in the place of Help
   const keyboardOpen = kbHeight > 0;
   const canSkip = !waiting && run.tries >= MAX_TRIES;
+
+  // the lines of the Help list: what answers the turn, then (while the turn still takes them) what she can be asked back
+  const backsLeft = backsOn(run) < MAX_BACKS;
+  const hintRows = (back: boolean) =>
+    turn.branches.flatMap((b, j) =>
+      Boolean(b.back) !== back
+        ? []
+        : b.say.map((line, k) => (
+            <View key={`${j}-${k}`} style={styles.hintRow}>
+              <SpeakButton
+                testID={`speech-hint-listen-${j}-${k}`}
+                accessibilityLabel={sx.listen}
+                onPress={() => say(speakable(line[story.target]))}
+                style={styles.tool}
+                iconStyle={styles.toolIcon}
+              />
+              <View style={styles.hintTexts}>
+                <Text testID={`speech-hint-line-${j}-${k}`} style={[styles.hintText, { color: colors.text }]}>{line[story.target]}</Text>
+                <Text style={[styles.hintTranslation, { color: colors.textMuted }]}>{line[source]}</Text>
+              </View>
+            </View>
+          )),
+    );
 
   const upperPart = (
     <>
@@ -202,22 +242,12 @@ export default function SpeechPlay({ story, run, target, source, strictAccents, 
       {hintOn && (
         <View testID="speech-hint" style={[styles.hint, themedEdgeStyle(g), { borderColor: colors.border, backgroundColor: colors.card }]}>
           <Text style={[styles.hintTitle, { color: colors.textMuted }]}>{`💡 ${sx.canSay}`}</Text>
-          {turn.branches.flatMap((b, j) =>
-            b.say.map((line, k) => (
-              <View key={`${j}-${k}`} style={styles.hintRow}>
-                <SpeakButton
-                  testID={`speech-hint-listen-${j}-${k}`}
-                  accessibilityLabel={sx.listen}
-                  onPress={() => say(speakable(line[story.target]))}
-                  style={styles.tool}
-                  iconStyle={styles.toolIcon}
-                />
-                <View style={styles.hintTexts}>
-                  <Text testID={`speech-hint-line-${j}-${k}`} style={[styles.hintText, { color: colors.text }]}>{line[story.target]}</Text>
-                  <Text style={[styles.hintTranslation, { color: colors.textMuted }]}>{line[source]}</Text>
-                </View>
-              </View>
-            )),
+          {hintRows(false)}
+          {backsLeft && turn.branches.some((b) => b.back) && (
+            <>
+              <Text testID="speech-hint-ask-title" style={[styles.hintTitle, styles.hintTitleAsk, { color: colors.textMuted }]}>{sx.canAsk}</Text>
+              {hintRows(true)}
+            </>
           )}
         </View>
       )}
@@ -292,7 +322,13 @@ export default function SpeechPlay({ story, run, target, source, strictAccents, 
             <Text style={[styles.linkText, { color: colors.text }]}>{`${s.card.next} →`}</Text>
           </Pressable>
         ) : !hintOn ? (
-          <Pressable testID="speech-help" accessibilityRole="button" onPress={() => setHelpAt(shown)} style={styles.link}>
+          <Pressable testID="speech-help" accessibilityRole="button" onPress={() => {
+              // the list needs the room the keyboard takes
+              Keyboard.dismiss();
+              setHelpAt(shown);
+            }}
+            style={styles.link}
+          >
             <Text style={[styles.linkText, { color: colors.text }]}>{sx.help}</Text>
           </Pressable>
         ) : (
@@ -312,7 +348,7 @@ export default function SpeechPlay({ story, run, target, source, strictAccents, 
       <ScrollView
         ref={upper}
         testID="speech-footer-scroll"
-        style={[styles.upper, { maxHeight: upperFooterMax({ room: (frameH > 0 ? frameH : windowH) - dockLift, windowH, kbHeight, topH, fixedH, voice }) }]}
+        style={[styles.upper, { maxHeight: upperFooterMax({ room: (frameH > 0 ? frameH : windowH) - dockLift, windowH, kbHeight, topH, fixedH, voice, help: hintOn }) }]}
         keyboardShouldPersistTaps="handled"
       >
         {upperPart}
@@ -329,7 +365,7 @@ export default function SpeechPlay({ story, run, target, source, strictAccents, 
       target={target}
       currentCard={`speech:${story.id}:${shown}`}
       hideLevelCounter
-      scrollKey={`${shown}:${run.answers.length}:${heard ? 1 : 0}`}
+      scrollKey={`${shown}:${run.answers.length}:${run.backs.length}:${heard ? 1 : 0}`}
       onFrameLayout={setFrameH}
       top={
         <View style={styles.top} onLayout={(e) => setTopH(Math.round(e.nativeEvent.layout.height))}>
@@ -353,17 +389,28 @@ export default function SpeechPlay({ story, run, target, source, strictAccents, 
     >
       <View style={styles.chat}>
         <Text testID="speech-narration" style={[styles.narration, { color: colors.textMuted }]}>{story.intro[source]}</Text>
-        {run.path.slice(0, shown + 1).map((_id, n) => {
+        {run.path.slice(0, shown + 1).map((id, n) => {
           const answer = run.answers[n];
+          const here = turnById(story, id);
+          const lineT = splitBubble(story, run, n, story.target);
+          const lineS = splitBubble(story, run, n, source);
           return (
             <View key={n} style={styles.exchange}>
+              {lineT.reply !== null && (
+                <Card style={styles.left} classicStyle={styles.bubble} boxStyle={styles.brutalBubble}>
+                  <Text style={[styles.who, { color: colors.textMuted }]}>{story.speaker}</Text>
+                  <Text testID={`speech-reaction-${n}`} style={[styles.line, { color: colors.text }]}>{lineT.reply}</Text>
+                  {translated.has(n) && <Text style={[styles.translation, { color: colors.textMuted }]}>{lineS.reply}</Text>}
+                </Card>
+              )}
+              {here?.scene && <Text testID={`speech-scene-${n}`} style={[styles.narration, { color: colors.textMuted }]}>{here.scene[source]}</Text>}
               <Card style={styles.left} classicStyle={styles.bubble} boxStyle={styles.brutalBubble}>
                 <View style={styles.bubbleHead}>
-                  <Text style={[styles.who, { color: colors.textMuted }]}>{story.speaker}</Text>
+                  <Text style={[styles.who, { color: colors.textMuted }]}>{here?.recall ? sx.recallWho : story.speaker}</Text>
                   <View style={styles.tools}>
                     <SpeakButton
                       testID={`speech-listen-${n}`}
-                      onPress={() => say(bubbleOf(story, run, n, story.target))}
+                      onPress={() => say(lineT.line)}
                       style={styles.tool}
                       iconStyle={styles.toolIcon}
                     />
@@ -379,9 +426,39 @@ export default function SpeechPlay({ story, run, target, source, strictAccents, 
                     </Pressable>
                   </View>
                 </View>
-                <Text testID={`speech-line-${n}`} style={[styles.line, { color: colors.text }]}>{bubbleOf(story, run, n, story.target)}</Text>
-                {translated.has(n) && <Text testID={`speech-translation-${n}`} style={[styles.translation, { color: colors.textMuted }]}>{bubbleOf(story, run, n, source)}</Text>}
+                <Text testID={`speech-line-${n}`} style={[styles.line, { color: colors.text }]}>{lineT.line}</Text>
+                {translated.has(n) && <Text testID={`speech-translation-${n}`} style={[styles.translation, { color: colors.textMuted }]}>{lineS.line}</Text>}
               </Card>
+              {run.backs.flatMap((back, i) => {
+                const reply = back.at === n ? turnById(story, id)?.branches[back.branch]?.reply : undefined;
+                if (!reply) return [];
+                return [
+                  <Card key={`back-${i}`} fill="b" style={styles.right} classicStyle={[styles.bubble, { backgroundColor: colors.tint }]} boxStyle={styles.brutalBubble}>
+                    <Text style={[styles.who, { color: meText }]}>{sx.you}</Text>
+                    <Text testID={`speech-back-${i}`} style={[styles.line, { color: meText }]}>{cap(back.text)}</Text>
+                  </Card>,
+                  <Card key={`back-reply-${i}`} style={styles.left} classicStyle={styles.bubble} boxStyle={styles.brutalBubble}>
+                    <View style={styles.bubbleHead}>
+                      <Text style={[styles.who, { color: colors.textMuted }]}>{story.speaker}</Text>
+                      <View style={styles.tools}>
+                        <SpeakButton testID={`speech-back-listen-${i}`} onPress={() => say(reply[story.target])} style={styles.tool} iconStyle={styles.toolIcon} />
+                        <Pressable
+                          testID={`speech-back-translate-${i}`}
+                          accessibilityRole="button"
+                          accessibilityLabel={sx.showTranslation}
+                          accessibilityState={{ expanded: translated.has(1000 + i) }}
+                          onPress={() => setTranslated((all) => (all.has(1000 + i) ? new Set([...all].filter((x) => x !== 1000 + i)) : new Set([...all, 1000 + i])))}
+                          style={styles.tool}
+                        >
+                          <Text style={[styles.toolLetter, { color: colors.text }]}>F</Text>
+                        </Pressable>
+                      </View>
+                    </View>
+                    <Text testID={`speech-back-reply-${i}`} style={[styles.line, { color: colors.text }]}>{reply[story.target]}</Text>
+                    {translated.has(1000 + i) && <Text style={[styles.translation, { color: colors.textMuted }]}>{reply[source]}</Text>}
+                  </Card>,
+                ];
+              })}
               {answer && (
                 <Card
                   fill="b"
@@ -442,6 +519,7 @@ const styles = StyleSheet.create({
   ask: { fontSize: fontSize.md, fontWeight: fontWeight.bold, marginBottom: spacing.sm },
   hint: { borderWidth: 2, borderRadius: radius.md, padding: spacing.sm, marginBottom: spacing.sm },
   hintTitle: { fontSize: fontSize.xs, fontWeight: fontWeight.bold, textTransform: 'uppercase' },
+  hintTitleAsk: { marginTop: spacing.sm },
   hintRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.xs },
   hintTexts: { flex: 1 },
   hintText: { fontSize: fontSize.md },

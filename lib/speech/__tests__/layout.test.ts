@@ -1,4 +1,4 @@
-import { FOOTER_PAD, MIN_UPPER, TOP_ROW, upperFooterMax } from '../layout';
+import { FOOTER_PAD, MIN_HELP, MIN_UPPER, TOP_ROW, upperFooterMax } from '../layout';
 
 // a tall phone, keyboard closed: the frame is 700 dp, the footer sits on the bottom
 const tall = { room: 700, windowH: 914, kbHeight: 0, topH: TOP_ROW, fixedH: 100, voice: false };
@@ -44,5 +44,14 @@ describe('upperFooterMax', () => {
     const closed = upperFooterMax({ ...tall, room: 700 - 48 });
     const open = upperFooterMax({ ...tall, room: 700 - 48 - 300, kbHeight: 300 });
     expect(closed - open).toBe(300 - TOP_ROW);
+  });
+
+  it('Help open (keyboard closed): the list keeps room for about three rows and scrolls, also on a small phone', () => {
+    expect(MIN_HELP).toBeGreaterThan(MIN_UPPER);
+    expect(upperFooterMax({ ...tall, room: 200, help: true })).toBe(MIN_HELP);
+    expect(upperFooterMax({ ...tall, fixedH: 900, help: true })).toBe(MIN_HELP);
+    expect(upperFooterMax({ ...tall, room: 200 })).toBe(MIN_UPPER);
+    // a roomy phone is not limited by the minimum
+    expect(upperFooterMax({ ...tall, help: true })).toBe(upperFooterMax(tall));
   });
 });

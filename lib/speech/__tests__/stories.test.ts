@@ -3,9 +3,11 @@ import { sentenceTokens } from '@/lib/knownSentence';
 import type { Lang } from '@/lib/languagePair';
 import { matchSpoken } from '@/lib/practice/situationMatch';
 import {
+  MAX_BACKS,
   MAX_TRIES,
   STORIES,
   answerTurn,
+  backsOn,
   bubbleOf,
   closingOf,
   currentTurn,
@@ -19,6 +21,7 @@ import {
   setMode,
   skipTurn,
   speakable,
+  splitBubble,
   startStory,
   storiesFor,
   storiesOfLevel,
@@ -30,8 +33,8 @@ import {
 } from '../stories';
 
 const story = STORIES[0];
-// the first story walked on its first branch everywhere: name, from, age, work, study, speak, bye
-const FIRST_WAY = ['name', 'from', 'age', 'work', 'study', 'speak', 'bye'];
+// the first story walked on its first branch everywhere (the talk, then the two questions about her)
+const FIRST_WAY = ['name', 'from', 'age', 'family1', 'family2', 'work', 'study', 'speak', 'learn', 'learn2', 'bye', 'recall1', 'recall2'];
 const total = FIRST_WAY.length;
 const right = (branch = 0, text = 'me llamo Ana') => ({ branch, text });
 const wrong = (text = 'hola') => ({ branch: null, text });
@@ -81,7 +84,7 @@ describe('unknownWords', () => {
 
 describe('the run', () => {
   it('starts on the first turn with nothing counted', () => {
-    expect(startStory(story, 'voice')).toEqual({ id: story.id, mode: 'voice', path: ['name'], tries: 0, firstTry: 0, answers: [], done: false });
+    expect(startStory(story, 'voice')).toEqual({ id: story.id, mode: 'voice', path: ['name'], tries: 0, firstTry: 0, answers: [], backs: [], done: false });
     expect(startStory(story, 'type').mode).toBe('type');
   });
 
@@ -96,7 +99,7 @@ describe('the run', () => {
     expect(currentTurn(story, answerTurn(work, story, right(1))).id).toBe('speak');
     expect(currentTurn(story, answerTurn(work, story, right(2))).id).toBe('speak');
     expect(currentTurn(story, answerTurn(work, story, right(3))).id).toBe('like');
-    expect(answerTurn(work, story, right(3)).answers[3]).toMatchObject({ ok: true, branch: 3 });
+    expect(answerTurn(work, story, right(3)).answers[5]).toMatchObject({ ok: true, branch: 3 });
   });
 
   it('a wrong answer is one more try and nothing else', () => {
@@ -120,12 +123,12 @@ describe('the run', () => {
     expect(skipTurn(two, story)).toMatchObject({ path: ['name', 'from'], tries: 0, firstTry: 0, done: false, answers: [{ text: 'Me llamo ___.', ok: false, branch: 0 }] });
   });
 
-  it('a given-up turn follows its `main` branch (work: the fourth, speak: the first)', () => {
+  it('a given-up turn follows its `main` branch (work: the fourth, speak: the first one that is no ask-back)', () => {
     const giveUp = (run: StoryRun) => skipTurn(answerTurn(answerTurn(run, story, wrong()), story, wrong()), story);
     const work = giveUp(at('work'));
     expect(currentTurn(story, work).id).toBe('like');
-    expect(work.answers[3]).toEqual({ text: 'Trabajo en una oficina.', ok: false, branch: 3 });
-    expect(currentTurn(story, giveUp(at('speak'))).id).toBe('bye');
+    expect(work.answers[5]).toEqual({ text: 'Trabajo en una oficina.', ok: false, branch: 3 });
+    expect(currentTurn(story, giveUp(at('speak'))).id).toBe('learn');
   });
 
   it('the last answer finishes the run, and a finished run does not change', () => {
@@ -142,11 +145,11 @@ describe('the run', () => {
   });
 
   it('the last turn given up also finishes the run', () => {
-    let state = at('bye');
+    let state = at('recall2');
     state = answerTurn(answerTurn(state, story, wrong()), story, wrong());
     state = skipTurn(state, story);
     expect(state).toMatchObject({ path: FIRST_WAY, done: true, firstTry: total - 1 });
-    expect(state.answers[total - 1]).toEqual({ text: 'Gracias, adiós.', ok: false, branch: 0 });
+    expect(state.answers[total - 1]).toEqual({ text: 'Es de Oaxaca.', ok: false, branch: 0 });
   });
 
   it('the way of answering changes the run only', () => {
@@ -178,19 +181,21 @@ describe('judging an answer', () => {
 
 describe('the counter, the bubbles and the voice', () => {
   it('the longest way from a turn counts the turns to an end, itself included', () => {
-    expect(longestPath(story, 'name')).toBe(total);
-    expect(longestPath(story, 'work')).toBe(4);
-    expect(longestPath(story, 'bye')).toBe(1);
+    // the way through like and like2 is the longest: name, from, age, family1, family2, work, like, like2, speak, learn, learn2, bye, recall1, recall2
+    expect(longestPath(story, 'name')).toBe(14);
+    expect(longestPath(story, 'work')).toBe(9);
+    expect(longestPath(story, 'bye')).toBe(3);
+    expect(longestPath(story, 'recall2')).toBe(1);
   });
 
-  it('answered + 1 over answered + the longest way ahead (the mock: 4/7 on the work turn), a finished run: all of it', () => {
-    expect(progressOf(story, startStory(story, 'voice'))).toEqual({ n: 1, total: 7 });
-    expect(progressOf(story, at('work'))).toEqual({ n: 4, total: 7 });
-    // the student answer skips two turns of the longest way
-    expect(progressOf(story, answerTurn(at('work'), story, right(1)))).toEqual({ n: 5, total: 6 });
+  it('answered + 1 over answered + the longest way ahead (6/14 on the work turn), a finished run: all of it', () => {
+    expect(progressOf(story, startStory(story, 'voice'))).toEqual({ n: 1, total: 14 });
+    expect(progressOf(story, at('work'))).toEqual({ n: 6, total: 14 });
+    // the student answer skips like and like2 of the longest way
+    expect(progressOf(story, answerTurn(at('work'), story, right(1)))).toEqual({ n: 7, total: 12 });
     let state = startStory(story, 'voice');
     for (let i = 0; i < total; i++) state = answerTurn(state, story, right());
-    expect(progressOf(story, state)).toEqual({ n: 7, total: 7 });
+    expect(progressOf(story, state)).toEqual({ n: 13, total: 13 });
   });
 
   it('her reaction to a right answer and the next line are one bubble, in every language; a given-up turn has no reaction', () => {
@@ -248,10 +253,12 @@ describe('saving a run', () => {
     expect(parseRun(savedRun(state), STORIES)).toEqual(state);
   });
 
-  it('a run saved before the branches (v 1) is dropped', () => {
+  it('a run saved by an older version (v 1, v 2) is dropped cleanly, the story starts from the beginning', () => {
     const old = { v: 1, id: story.id, mode: 'type', turn: 1, tries: 0, firstTry: 1, answers: [{ text: 'soy Ana', ok: true }], done: false };
     expect(parseRun(old, STORIES)).toBeNull();
-    expect((savedRun(open) as { v: number }).v).toBe(2);
+    // v 2 had the same ids on the way: it must not be taken for a run of the new story
+    expect(parseRun({ ...(savedRun(open) as object), v: 2 }, STORIES)).toBeNull();
+    expect((savedRun(open) as { v: number }).v).toBe(3);
   });
 
   it('drops a broken run, one of a story that is gone, or one that does not fit the story\'s graph', () => {
@@ -261,7 +268,7 @@ describe('saving a run', () => {
     expect(parseRun({}, STORIES)).toBeNull();
     expect(parseRun(saved, [])).toBeNull();
     expect(parseRun({ ...saved, id: 'other' }, STORIES)).toBeNull();
-    expect(parseRun({ ...saved, v: 3 }, STORIES)).toBeNull();
+    expect(parseRun({ ...saved, v: 4 }, STORIES)).toBeNull();
     expect(parseRun({ ...saved, mode: 'sing' }, STORIES)).toBeNull();
     expect(parseRun({ ...saved, tries: 'x' }, STORIES)).toBeNull();
     // the path
@@ -287,11 +294,21 @@ describe('saving a run', () => {
 });
 
 describe('the progress row', () => {
-  it('best and total are one pair: a run with more points replaces both, a run with fewer or equal points only moves the date', () => {
+  it('best and total are one pair of one run: only a run with a higher share of right answers replaces both, the others only move the date', () => {
     expect(finishedProgress({ best: 4, total: 5, at: '2026-11-01' }, { firstTry: 4 }, 7, '2026-11-03')).toEqual({ best: 4, total: 5, at: '2026-11-03' });
     expect(finishedProgress({ best: 4, total: 5, at: '2026-11-01' }, { firstTry: 3 }, 7, '2026-11-03')).toEqual({ best: 4, total: 5, at: '2026-11-03' });
-    expect(finishedProgress({ best: 4, total: 5, at: '2026-11-01' }, { firstTry: 5 }, 7, '2026-11-03')).toEqual({ best: 5, total: 7, at: '2026-11-03' });
+    // 5 of 7 is not a better share than 4 of 5, however many points
+    expect(finishedProgress({ best: 4, total: 5, at: '2026-11-01' }, { firstTry: 5 }, 7, '2026-11-03')).toEqual({ best: 4, total: 5, at: '2026-11-03' });
+    expect(finishedProgress({ best: 4, total: 5, at: '2026-11-01' }, { firstTry: 6 }, 7, '2026-11-03')).toEqual({ best: 6, total: 7, at: '2026-11-03' });
     expect(finishedProgress({ best: 4 }, { firstTry: 3 }, 7, '2026-11-03')).toEqual({ best: 3, total: 7, at: '2026-11-03' });
+  });
+
+  it('a row saved before the stories grew (7/8) is beaten by a better share on the longer way, not by more points (7/17)', () => {
+    const old = { best: 7, total: 8, at: '2026-11-01' };
+    expect(finishedProgress(old, { firstTry: 7 }, 17, '2026-11-05')).toEqual({ best: 7, total: 8, at: '2026-11-05' });
+    expect(finishedProgress(old, { firstTry: 14 }, 17, '2026-11-05')).toEqual({ best: 7, total: 8, at: '2026-11-05' });
+    expect(finishedProgress(old, { firstTry: 15 }, 17, '2026-11-05')).toEqual({ best: 15, total: 17, at: '2026-11-05' });
+    expect(finishedProgress({ best: 0, total: 0 }, { firstTry: 1 }, 17, '2026-11-05')).toEqual({ best: 1, total: 17, at: '2026-11-05' });
   });
 
   it('best keeps the higher value, the date is the last finish', () => {
@@ -334,6 +351,12 @@ function cycleIn(s: SpeechStory): string[] | null {
     return null;
   };
   return walk(s.turns[0].id, []);
+}
+
+/** Every way through the story as the ids of its turns (there is no cycle: the check below). */
+function waysOf(s: SpeechStory, id: string = s.turns[0].id): string[][] {
+  const nexts = [...new Set(nextsOf(s, id))];
+  return nexts.length === 0 ? [[id]] : nexts.flatMap((next) => waysOf(s, next).map((way) => [id, ...way]));
 }
 
 describe.each(STORIES.map((s) => [s.id, s] as const))('story check: %s', (_id, s) => {
@@ -389,13 +412,13 @@ describe.each(STORIES.map((s) => [s.id, s] as const))('story check: %s', (_id, s
   });
 
   it('every text exists in the four languages', () => {
-    const texts: StoryText[] = [s.title, s.teaser, s.intro, s.outro, ...s.words, ...s.turns, ...s.turns.flatMap((turn) => turn.branches.flatMap((b) => [...b.say, ...(b.reply ? [b.reply] : [])]))];
+    const texts: StoryText[] = [s.title, s.teaser, s.intro, s.outro, ...s.words, ...s.turns, ...s.turns.flatMap((turn) => (turn.scene ? [turn.scene] : [])), ...s.turns.flatMap((turn) => turn.branches.flatMap((b) => [...b.say, ...(b.reply ? [b.reply] : [])]))];
     for (const text of texts) for (const lang of LANGS) expect(text[lang].trim()).not.toBe('');
     for (const w of s.words) expect(w.forms.length).toBeGreaterThan(0);
   });
 
   it('the English texts are English: no Spanish letters or function words, and not the Spanish text', () => {
-    const all: StoryText[] = [s.title, s.teaser, s.intro, s.outro, ...s.words, ...s.turns, ...s.turns.flatMap((turn) => turn.branches.flatMap((b) => [...b.say, ...(b.reply ? [b.reply] : [])]))];
+    const all: StoryText[] = [s.title, s.teaser, s.intro, s.outro, ...s.words, ...s.turns, ...s.turns.flatMap((turn) => (turn.scene ? [turn.scene] : [])), ...s.turns.flatMap((turn) => turn.branches.flatMap((b) => [...b.say, ...(b.reply ? [b.reply] : [])]))];
     const spanish = /[¿¡ñáéíóúü]|(^|[^\p{L}])(el|la|los|las|una|de|en|por|muy|qué|tu|mi|y)(?![\p{L}])/iu;
     const bad = all.filter((x) => spanish.test(x.en) || x.en === x.es).map((x) => x.en);
     expect(bad).toEqual([]);
@@ -410,6 +433,90 @@ describe.each(STORIES.map((s) => [s.id, s] as const))('story check: %s', (_id, s
       for (const text of texts) for (const token of sentenceTokens(text, 'es')) if (!own.has(token) && !names.has(token)) unknown.push(token);
     }
     expect([...new Set(unknown)]).toEqual([]);
+  });
+
+  it('every way ends: no turn twice on it, and its last turn has a branch that ends the story', () => {
+    const ways = waysOf(s);
+    expect(ways.length).toBeGreaterThan(1);
+    for (const way of ways) {
+      expect(new Set(way).size).toBe(way.length);
+      expect(turnById(s, way[way.length - 1])!.branches.some((b) => !b.next && !b.back)).toBe(true);
+    }
+  });
+
+  it('every turn has at least three answer groups that share no answer (the ask-backs come on top)', () => {
+    for (const turn of s.turns) {
+      expect({ turn: turn.id, groups: turn.branches.filter((b) => !b.back).length >= 3 }).toEqual({ turn: turn.id, groups: true });
+      const all = turn.branches.flatMap((b) => b.answers.map((a) => a.toLowerCase()));
+      expect({ turn: turn.id, shared: all.filter((a, i) => all.indexOf(a) !== i) }).toEqual({ turn: turn.id, shared: [] });
+    }
+  });
+
+  it('asking back: at least two turns have a branch that answers and returns (a reply that asks again, no next, never the first branch, all at the end)', () => {
+    expect(s.turns.filter((turn) => turn.branches.some((b) => b.back)).length).toBeGreaterThanOrEqual(2);
+    for (const turn of s.turns) {
+      const first = turn.branches.findIndex((b) => b.back);
+      expect({ turn: turn.id, firstIsBack: Boolean(turn.branches[0].back) }).toEqual({ turn: turn.id, firstIsBack: false });
+      if (first >= 0) expect({ turn: turn.id, backsAtTheEnd: turn.branches.slice(first).every((b) => b.back) }).toEqual({ turn: turn.id, backsAtTheEnd: true });
+      for (const b of turn.branches.filter((x) => x.back)) {
+        expect({ turn: turn.id, reply: Boolean(b.reply), next: b.next }).toEqual({ turn: turn.id, reply: true, next: undefined });
+        expect({ turn: turn.id, asksAgain: b.reply!.es.trim().endsWith('?') }).toEqual({ turn: turn.id, asksAgain: true });
+      }
+      if (turn.main !== undefined) expect(turn.branches[turn.main].back).toBeFalsy();
+    }
+  });
+
+  it('at least three follow-up chains of two or more questions: every one is skipped by some way and gone through whole by another', () => {
+    const chains = [...new Set(s.turns.flatMap((turn) => (turn.chain ? [turn.chain] : [])))];
+    expect(chains.length).toBeGreaterThanOrEqual(3);
+    const ways = waysOf(s);
+    for (const chain of chains) {
+      const ids = s.turns.filter((turn) => turn.chain === chain).map((turn) => turn.id);
+      expect({ chain, questions: ids.length >= 2 }).toEqual({ chain, questions: true });
+      expect({ chain, whole: ways.some((way) => ids.every((id) => way.includes(id))) }).toEqual({ chain, whole: true });
+      expect({ chain, skipped: ways.some((way) => !ids.every((id) => way.includes(id))) }).toEqual({ chain, skipped: true });
+    }
+  });
+
+  it('scene lines: the app tells what happens in between, in every language; the restaurant has its whole arc', () => {
+    const scenes = s.turns.filter((turn) => turn.scene);
+    expect(scenes.length).toBeGreaterThanOrEqual(s.id === 'a1-restaurante' ? 4 : 3);
+    for (const turn of scenes) for (const lang of LANGS) expect({ turn: turn.id, lang, text: turn.scene![lang].trim() !== '' }).toEqual({ turn: turn.id, lang, text: true });
+    if (s.id === 'a1-restaurante') {
+      // greeting, ordering, the waiter leaves, the food comes (a scene), a question about it, the bill, goodbye
+      const arc = ['table', 'menu', 'leave', 'food', 'bill', 'pay', 'bye'];
+      const ways = waysOf(s);
+      expect(ways.some((way) => arc.every((id, i) => way.indexOf(id) >= 0 && (i === 0 || way.indexOf(id) > way.indexOf(arc[i - 1]))))).toBe(true);
+      expect(turnById(s, 'food')!.scene).toBeDefined();
+      expect(turnById(s, 'pay')!.scene).toBeDefined();
+    }
+  });
+
+  it("the learner's own life has free slots, and after the talk come at least two questions about her on facts that came up twice", () => {
+    expect(s.turns.some((turn) => !turn.recall && turn.branches.some((b) => b.answers.some((a) => a.includes('*'))))).toBe(true);
+    const recalls = s.turns.filter((turn) => turn.recall);
+    expect(recalls.length).toBeGreaterThanOrEqual(2);
+    const ways = waysOf(s);
+    for (const way of ways) {
+      const at = way.findIndex((id) => turnById(s, id)!.recall);
+      expect(at).toBeGreaterThan(0);
+      // only questions about her from there on, and the goodbye with its reason right before them
+      expect(way.slice(at).every((id) => turnById(s, id)!.recall)).toBe(true);
+      expect(way.length - at).toBeGreaterThanOrEqual(2);
+      expect(turnById(s, way[at - 1])!.es).toMatch(/tengo que/i);
+    }
+    for (const turn of recalls) {
+      const { key, seen } = turn.recall!;
+      expect(new Set(seen).size).toBeGreaterThanOrEqual(2);
+      for (const id of seen) {
+        // a line every way goes through, that says the fact
+        expect({ turn: turn.id, seen: id, everyWay: ways.every((way) => way.includes(id)) }).toEqual({ turn: turn.id, seen: id, everyWay: true });
+        expect({ turn: turn.id, seen: id, says: turnById(s, id)!.es.toLowerCase().includes(key) }).toEqual({ turn: turn.id, seen: id, says: true });
+        expect(turnById(s, id)!.recall).toBeUndefined();
+      }
+      // a free slot would take any answer
+      expect({ turn: turn.id, free: turn.branches.some((b) => b.answers.some((a) => a.includes('*'))) }).toEqual({ turn: turn.id, free: false });
+    }
   });
 });
 
@@ -432,17 +539,156 @@ describe('the first story: broad answers (FB582, FB583)', () => {
     const name = turnById(story, 'name')!;
     const from = turnById(story, 'from')!;
     const age = turnById(story, 'age')!;
-    expect(judgeAnswer(name, 'Ana', { lang: 'es' }).branch).toBe(0);
-    expect(judgeAnswer(from, 'México', { lang: 'es' }).branch).toBe(0);
+    expect(judgeAnswer(name, 'Ana', { lang: 'es' }).branch).toBe(2);
+    expect(judgeAnswer(from, 'México', { lang: 'es' }).branch).toBe(2);
     expect(judgeAnswer(from, 'soy mexicano', { lang: 'es' }).branch).toBe(0);
     for (const said of ['35', 'treinta y cinco', 'cuarenta', 'tengo 35 años']) expect({ said, branch: judgeAnswer(age, said, { lang: 'es' }).branch }).toEqual({ said, branch: 0 });
     expect(judgeAnswer(age, 'prefiero no decirlo', { lang: 'es' }).branch).toBe(1);
   });
 
-  it('FB583: "gracias", "adiós", "hasta luego" and "nos vemos" end the story', () => {
-    for (const said of ['gracias', 'adiós', 'adios', 'hasta luego', 'nos vemos', 'gracias, adiós']) {
-      expect({ said, branch: branchOf(bye, said) }).toEqual({ said, branch: 0 });
+  it('FB583: "gracias", "adiós", "hasta luego" and "nos vemos" end the talk (the questions about her follow)', () => {
+    const wanted: [string, number][] = [['gracias', 0], ['adiós', 1], ['adios', 1], ['hasta luego', 2], ['nos vemos', 2], ['gracias, adiós', 0], ['mucha suerte', 3]];
+    for (const [said, branch] of wanted) expect({ said, branch: branchOf(bye, said) }).toEqual({ said, branch });
+    for (const b of bye.branches) expect(b.next).toBe('recall1');
+  });
+});
+
+describe('asking back', () => {
+  const age = turnById(story, 'age')!;
+  const BACK = 3;
+  const text = (es: string): StoryText => ({ es, en: es, hu: es, de: es });
+  // a turn whose first branch takes anything ("*") and whose last branch is an ask-back, then a recall question
+  const small: SpeechStory = {
+    ...story,
+    id: 'small-back',
+    turns: [
+      {
+        id: 'a',
+        ...text('a'),
+        branches: [
+          { answers: ['*'], say: [text('Ana.')], reply: text('Hola.'), next: 'b' },
+          { answers: ['Y tú'], say: [text('¿Y tú?')], reply: text('Bien. ¿Y tú?'), back: true },
+        ],
+      },
+      { id: 'b', ...text('b'), recall: { key: 'b', seen: ['a', 'b'] }, branches: [{ answers: ['Sí'], say: [text('Sí.')] }] },
+    ],
+  };
+
+  it('"Y tú" is the ask-back of the age turn and no answer; the others still judge as before', () => {
+    expect(age.branches[BACK].back).toBe(true);
+    for (const said of ['y tú', '¿Y tú?', 'cuántos años tienes tú']) expect({ said, branch: judgeAnswer(age, said, { lang: 'es' }).branch }).toEqual({ said, branch: BACK });
+    expect(judgeAnswer(age, 'tengo 35 años', { lang: 'es' }).branch).toBe(0);
+    expect(judgeAnswer(age, 'prefiero no decirlo', { lang: 'es' }).branch).toBe(1);
+  });
+
+  it('a real branch matches first: an ask-back fires only when nothing else matches and the whole utterance is its phrase', () => {
+    const a = small.turns[0];
+    // a free slot is a real answer
+    expect(judgeAnswer(a, 'y tú', { lang: 'es' }).branch).toBe(0);
+    expect(judgeAnswer(a, 'Ana', { lang: 'es' }).branch).toBe(0);
+    // "Tengo 30 años, ¿y tú?" is the answer, not an ask-back
+    for (const said of ['Tengo 30 años, ¿y tú?', 'tengo treinta años y tú', 'Más o menos 30, ¿y tú?']) expect({ said, branch: judgeAnswer(age, said, { lang: 'es' }).branch }).toEqual({ said, branch: 0 });
+    // one word inside a real answer is not an ask-back
+    const speak = turnById(story, 'speak')!;
+    const backAt = speak.branches.findIndex((b) => b.back);
+    expect(judgeAnswer(speak, 'cómo estás', { lang: 'es' }).branch).toBeNull();
+    expect(judgeAnswer(speak, 'hablo un poco, ¿cómo?', { lang: 'es' }).branch).toBe(0);
+    expect(judgeAnswer(speak, 'sí, hablo qué bien', { lang: 'es' }).branch).toBe(2);
+    expect(judgeAnswer(speak, 'Cómo', { lang: 'es' }).branch).toBe(backAt);
+    expect(judgeAnswer(speak, '¿Perdón?', { lang: 'es' }).branch).toBe(backAt);
+    const like = turnById(story, 'like')!;
+    expect(judgeAnswer(like, 'Sí, me gusta, ¿y a ti?', { lang: 'es' }).branch).toBe(1);
+    expect(judgeAnswer(like, '¿Y a ti?', { lang: 'es' }).branch).toBe(like.branches.findIndex((b) => b.back));
+    // accents never count for an ask-back, typed too (a real answer keeps strictAccents)
+    for (const said of ['Y tu', 'y TÚ', 'Cuantos años tienes tu']) expect({ said, branch: judgeAnswer(age, said, { lang: 'es', strictAccents: true }).branch }).toEqual({ said, branch: BACK });
+    expect(judgeAnswer(speak, 'Como', { lang: 'es', strictAccents: true }).branch).toBe(backAt);
+    // and not at all after MAX_BACKS
+    expect(judgeAnswer(age, 'y tú', { lang: 'es', noBack: true }).branch).toBeNull();
+    // the closest answer for the red words never comes from an ask-back
+    expect(judgeAnswer(age, 'la mesa es azul', { lang: 'es', noBack: true }).match.best).not.toBe('Y tú');
+  });
+
+  it('asking back is neither right nor wrong: the turn stands, no point is lost, nothing is counted', () => {
+    const run = at('age');
+    const asked = answerTurn(run, story, { branch: BACK, text: '¿y tú?' });
+    expect(asked).toEqual({ ...run, backs: [{ at: 2, text: '¿y tú?', branch: BACK }] });
+    expect(currentTurn(story, asked).id).toBe('age');
+    expect(backsOn(asked)).toBe(1);
+    const next = answerTurn(asked, story, right(0, 'tengo 35 años'));
+    expect(next).toMatchObject({ path: ['name', 'from', 'age', 'family1'], firstTry: run.firstTry + 1, tries: 0, done: false });
+    // the next turn starts with none
+    expect(backsOn(next)).toBe(0);
+    expect(next.backs).toHaveLength(1);
+    // after a wrong try it changes neither the tries nor the Next rule
+    const wrongThenBack = answerTurn(answerTurn(run, story, wrong()), story, { branch: BACK, text: 'y tú' });
+    expect(wrongThenBack.tries).toBe(1);
+  });
+
+  it('a turn always ends: a third ask-back on the same turn is a wrong try', () => {
+    let run = at('age');
+    for (let i = 0; i < MAX_BACKS; i++) run = answerTurn(run, story, { branch: BACK, text: 'y tú' });
+    expect(backsOn(run)).toBe(MAX_BACKS);
+    const third = answerTurn(run, story, { branch: BACK, text: 'y tú' });
+    expect(third).toEqual({ ...run, tries: 1 });
+    expect(judgeAnswer(age, 'y tú', { lang: 'es', noBack: backsOn(run) >= MAX_BACKS }).branch).toBeNull();
+    // and Next is then allowed after two such tries, so even a learner who only asks back gets on
+    expect(currentTurn(story, skipTurn(answerTurn(third, story, wrong()), story)).id).toBe('family1');
+  });
+
+  it('a given-up turn follows the first branch that is no ask-back', () => {
+    const two = answerTurn(answerTurn(startStory(small, 'type'), small, wrong()), small, wrong());
+    expect(skipTurn(two, small)).toMatchObject({ path: ['a', 'b'], answers: [{ text: 'Ana.', ok: false, branch: 0 }] });
+  });
+
+  it("a recall question is the app's: no reaction of hers before it", () => {
+    const run = answerTurn(startStory(small, 'type'), small, right(0, 'Ana'));
+    expect(bubbleOf(small, run, 1, 'es')).toBe('b');
+    expect(small.turns[0].branches[0].reply?.es).toBe('Hola.');
+  });
+
+  it('saving a run keeps the ask-backs, also through JSON; a run saved without them has none', () => {
+    const asked = answerTurn(answerTurn(at('age'), story, { branch: BACK, text: 'y tú' }), story, { branch: BACK, text: 'cuántos años tienes tú' });
+    expect(parseRun(JSON.parse(JSON.stringify(savedRun(asked))), STORIES)).toEqual(asked);
+    const { backs: _backs, ...old } = savedRun(at('age')) as Record<string, unknown>;
+    expect(parseRun(old, STORIES)).toEqual(at('age'));
+  });
+
+  it('drops a run whose ask-backs do not fit: not a list, not an ask-back branch, not on the path, or more than MAX_BACKS on a turn', () => {
+    const saved = savedRun(answerTurn(at('age'), story, { branch: BACK, text: 'y tú' })) as { backs: unknown[] };
+    const make = (backs: unknown) => parseRun({ ...saved, backs }, STORIES);
+    expect(make('x')).toBeNull();
+    expect(make([null])).toBeNull();
+    expect(make([{ at: 2, text: 1, branch: BACK }])).toBeNull();
+    expect(make([{ at: 2, text: 'y tú', branch: 0 }])).toBeNull();
+    expect(make([{ at: 9, text: 'y tú', branch: BACK }])).toBeNull();
+    expect(make([{ at: 0, text: 'y tú', branch: BACK }])).toBeNull();
+    expect(make(Array.from({ length: MAX_BACKS + 1 }, () => ({ at: 2, text: 'y tú', branch: BACK })))).toBeNull();
+    expect(make(saved.backs)).not.toBeNull();
+  });
+});
+
+describe('a scene never comes between an answer and her reaction', () => {
+  it('a turn with a scene shows the reaction as its own bubble, any other turn is one bubble; the voice still reads reaction and line together', () => {
+    const run = at('family1');
+    const n = run.path.length - 1;
+    const turn = turnById(story, 'family1')!;
+    expect(turn.scene).toBeDefined();
+    expect(splitBubble(story, run, n, 'es')).toEqual({ reply: 'Ah, muy bien.', line: turn.es });
+    expect(splitBubble(story, run, n, 'en')).toEqual({ reply: 'Oh, very good.', line: turn.en });
+    expect(bubbleOf(story, run, n, 'es')).toBe(`Ah, muy bien. ${turn.es}`);
+    // no scene: the same as bubbleOf
+    const second = answerTurn(startStory(story, 'type'), story, right());
+    expect(splitBubble(story, second, 1, 'es')).toEqual({ reply: null, line: bubbleOf(story, second, 1, 'es') });
+    // a given-up turn has no reaction to split
+    expect(splitBubble(story, startStory(story, 'type'), 0, 'es')).toEqual({ reply: null, line: story.turns[0].es });
+  });
+
+  it('in every story: a scene turn reached by a branch with a reaction shows both, and no recall turn has a reaction before it', () => {
+    for (const s of STORIES) {
+      for (const turn of s.turns) {
+        const into = s.turns.flatMap((x) => x.branches.filter((b) => b.next === turn.id));
+        if (turn.recall) for (const b of into) expect({ story: s.id, turn: turn.id, reply: b.reply }).toEqual({ story: s.id, turn: turn.id, reply: undefined });
+      }
     }
-    expect(bye.branches[0].next).toBeUndefined();
   });
 });
