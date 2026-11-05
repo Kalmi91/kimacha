@@ -46,6 +46,16 @@ for (const [lane, levels] of Object.entries(share)) {
     .join(', ');
   console.log(`  ${lane}: ${line}`);
 }
+// P1: the Hungarian placeholder article "a(z)" must never reach a text (write az before a vowel, a before a consonant)
+const huDir = join(root, 'data', 'games', 'grammar-hu');
+const scanHu = (dir) => {
+  for (const e of readdirSync(dir, { withFileTypes: true })) {
+    const p = join(dir, e.name);
+    if (e.isDirectory()) scanHu(p);
+    else if (e.name.endsWith('.json') && /a\(z\)/i.test(readFileSync(p, 'utf8'))) problems.push(`hu placeholder "a(z)" in ${p.slice(root.length + 1)}`);
+  }
+};
+if (existsSync(huDir)) scanHu(huDir);
 // items on purpose without a `wrong` map: every typical wrong answer of them is acceptable Spanish in Mexico
 const NO_SAFE_KEY = [
   ['es/por-para.json', 'pp-form-04'],
