@@ -19,6 +19,8 @@ import { SkinBackdrop, SkinHeader } from '@/components/skins/Slots';
 import { PCIC_LEVELS, findPcicItem, levelOfItem, pcicItemsForLevel, type PcicLevel, type PcicTarget } from '@/data/pcic';
 import { getBeta, loadBeta, useBeta } from '@/lib/beta';
 import { getDb } from '@/lib/database';
+import XpChip from '@/components/XpChip';
+import { awardXp, isHardSentence } from '@/lib/xpAward';
 import { useLearner } from '@/lib/learner';
 import { GRAMMAR_PROGRESS_KEY, doneGrammarTopicProgress } from '@/lib/grammar/syllabus';
 import { t } from '@/lib/i18n';
@@ -155,6 +157,14 @@ export default function SentencesScreen() {
   const [seq, setSeq] = useState(0);
   // Bumps after every typed sentence is credited: the level counter on top reads the db again.
   const [creditSeq, setCreditSeq] = useState(0);
+  // The XP the last right sentence gave (FB600, FB601); 0 shows nothing.
+  const [earned, setEarned] = useState(0);
+  // The answer's card has moved on by the time the XP is written, so the "+1 XP" fades after a moment.
+  useEffect(() => {
+    if (earned <= 0) return;
+    const timer = setTimeout(() => setEarned(0), 2500);
+    return () => clearTimeout(timer);
+  }, [earned]);
   // Sentences of the finished rounds today since the app opened, with the rung they played: one still on that rung is left out of
   // the next rounds, or a word that is still due would bring the same rung straight back (one that moved up may come, FB569).
   // A new day empties it; a mistake sentence is kept apart (lib/sentenceLadder.ts PlayedRounds).
@@ -295,6 +305,17 @@ export default function SentencesScreen() {
     const entry = currentEntry(round);
     if (!stepNow || !entry) return;
     await runOnce(async () => {
+      // XP: a right sentence earns once per sentence per day, a hard one (8+ words, or above the learner's level) more.
+      setEarned(0);
+      if (correct && stepNow.kind !== 'newword') {
+        try {
+          const { level: learnerLevel } = await refresh(['level']);
+          const hard = isHardSentence(entry.target, levelOfItem(entry.itemId), learnerLevel, PCIC_LEVELS);
+          setEarned(await awardXp(hard ? 'sentenceHard' : 'sentence', sentenceKey(entry)));
+        } catch {
+          // a failed XP write earns nothing, the answer itself stands
+        }
+      }
       // The word card of a new word: the word is introduced first (written once, a restart cannot do it twice), then the round moves on.
       // The day's budget is rechecked here (the round was planned earlier): with none left this word and the new words after it
       // drop out of the round with their sentences.
@@ -360,6 +381,7 @@ export default function SentencesScreen() {
           </Text>
         )}
       </View>
+      {kbHeight === 0 && <XpChip earned={earned} />}
       {total > 0 && (
         // One block per step while the round is short, so the bar and the "4 / 5" next to it count the same steps.
         <ProgressBar

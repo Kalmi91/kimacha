@@ -1,7 +1,9 @@
 import type { Level } from '@/data/words';
 import { buildLessonTest, type LessonTestQuestion } from '@/lib/grammar/lessonTest';
 import { getGrammarTier, lessonFor, type SyllabusTopic } from '@/lib/grammar/syllabus';
+import { t } from '@/lib/i18n';
 import {
+  type AskPhase,
   currentPhase,
   pickNext,
   skipPhase,
@@ -97,4 +99,18 @@ export function advance(run: RoundRun, ctx: PickCtx): RoundRun {
     if (r.mode === 'mixed' && phase === 'check') return r;
   }
   return r;
+}
+
+// The counter text of one phase of the round ("Check 2/5"), in the UI language.
+export function phaseLabel(s: ReturnType<typeof t>['randomRound'], phase: AskPhase, i: number, n: number): string {
+  switch (phase) {
+    case 'check':
+      return s.phaseCheck(i, n);
+    case 'practice':
+      return s.phasePractice(i, n);
+    case 'recheck':
+      return s.phaseRecheck(i, n);
+    case 'full':
+      return s.phaseFull(i, n);
+  }
 }

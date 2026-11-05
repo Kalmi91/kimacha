@@ -45,6 +45,8 @@ import LevelPractice from '@/components/grammar/LevelPractice';
 import LevelTestFeedback from '@/components/grammar/LevelTestFeedback';
 import { ProgressBar } from '@/components/grammar/Themed';
 import TestQuestionView from '@/components/grammar/TestQuestionView';
+import XpChip from '@/components/XpChip';
+import { awardXpThen } from '@/lib/xpAward';
 import ExamButton from '@/components/exam/ExamButton';
 import { DockSlotProvider, useDockSlot } from '@/components/learn/DockSlot';
 import { FAB_CLEARANCE } from '@/components/learn/DockedAction';
@@ -92,6 +94,8 @@ export default function LevelTestScreen() {
   const [evidence, setEvidence] = useState<Map<string, TopicEvidence>>(new Map());
   const [current, setCurrent] = useState<Current | null>(null);
   const [result, setResult] = useState<Result | null>(null);
+  // the XP the answer on the result card gave (FB591); 0 shows nothing
+  const [earned, setEarned] = useState(0);
   const [round, setRound] = useState<LevelRound>({ n: 0, right: 0, startPct: 0 });
   const [doneOpen, setDoneOpen] = useState(false);
   // the level's standing on the bar (FB593/594): never sinks, +0.3 per right answer; saved per pair and level, like the round
@@ -213,6 +217,8 @@ export default function LevelTestScreen() {
     const lesson = ok ? undefined : lessonFor(data.learnedLang, topicId);
     const practiceTasks = lesson ? buildPractice(pendingQ, lesson, { learnedLang: data.learnedLang, contentLang: data.contentLang, seed }) : [];
     setResult({ q: pendingQ, topicId, ok, given, practice: practiceTasks });
+    setEarned(0);
+    if (ok) awardXpThen('grammar', `level:${pendingQ.id}`, setEarned);
     // a right answer chimes first and the sentence follows; a wrong one is only read out
     const say = () => {
       if (pendingQ.say) speak(pendingQ.say, speechLang(data.learnedLang));
@@ -302,6 +308,7 @@ export default function LevelTestScreen() {
       <View style={styles.flex}>
         {headerFor(result.q.id)}
         {progress}
+        <XpChip earned={earned} />
         <LevelTestFeedback
           q={result.q}
           topicTitle={titleOf(result.topicId)}
@@ -394,6 +401,7 @@ export default function LevelTestScreen() {
     <KeyboardAvoidingView style={styles.flex} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
       {headerFor(pendingQ.id)}
       {progress}
+      <XpChip />
       <DockSlotProvider host={dock}>
         <TestQuestionView
           key={`${asked}:${current.topicId}:${pendingQ.id}`}
