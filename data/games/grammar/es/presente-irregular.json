@@ -1539,7 +1539,17 @@
       "verb": "hacer",
       "person": "yo",
       "answer": "hago",
-      "table": "presente-irregular-go"
+      "table": "presente-irregular-go",
+      "wrong": {
+        "haco": {
+          "en": "The yo form of hacer is irregular, so the regular -o ending does not work: hago.",
+          "es": "La forma yo de hacer es irregular, así que la terminación regular -o no sirve: hago."
+        },
+        "hazo": {
+          "en": "The yo form of hacer has a g, not a z: hago.",
+          "es": "La forma yo de hacer lleva g, no z: hago."
+        }
+      }
     },
     {
       "id": "pi-form-02",
@@ -1547,7 +1557,17 @@
       "verb": "hacer",
       "person": "nosotros",
       "answer": "hacemos",
-      "table": "presente-irregular-go"
+      "table": "presente-irregular-go",
+      "wrong": {
+        "hagemos": {
+          "en": "The extra consonant of hacer appears only in the yo form. With nosotros the verb is regular: hacemos.",
+          "es": "La consonante extra de hacer aparece solo en la forma yo. Con nosotros el verbo es regular: hacemos."
+        },
+        "hacimos": {
+          "en": "The ending -imos is for -ir verbs. Hacer is an -er verb: hacemos.",
+          "es": "La terminación -imos es de los verbos en -ir. Hacer es un verbo en -er: hacemos."
+        }
+      }
     },
     {
       "id": "pi-form-03",
@@ -1555,7 +1575,17 @@
       "verb": "poner",
       "person": "tú",
       "answer": "pones",
-      "table": "presente-irregular-go"
+      "table": "presente-irregular-go",
+      "wrong": {
+        "pongues": {
+          "en": "The extra consonant of poner appears only in the yo form. With tú the verb is regular: pones.",
+          "es": "La consonante extra de poner aparece solo en la forma yo. Con tú el verbo es regular: pones."
+        },
+        "ponas": {
+          "en": "The ending -as is for -ar verbs (hablas). Poner is an -er verb: pones.",
+          "es": "La terminación -as es de los verbos en -ar (hablas). Poner es un verbo en -er: pones."
+        }
+      }
     },
     {
       "id": "pi-form-04",
@@ -1563,7 +1593,17 @@
       "verb": "ir",
       "person": "yo",
       "answer": "voy",
-      "table": "presente-ser-ir"
+      "table": "presente-ser-ir",
+      "wrong": {
+        "vo": {
+          "en": "The yo form of ir is irregular and ends in -y, like soy and doy: voy.",
+          "es": "La forma yo de ir es irregular y termina en -y, como soy y doy: voy."
+        },
+        "vayo": {
+          "en": "The stem vay- is not used for yo in the present. The yo form of ir is irregular: voy.",
+          "es": "La raíz vay- no se usa para yo en presente. La forma yo de ir es irregular: voy."
+        }
+      }
     },
     {
       "id": "pi-form-05",
@@ -1571,7 +1611,17 @@
       "verb": "salir",
       "person": "él/ella/usted",
       "answer": "sale",
-      "table": "presente-irregular-go"
+      "table": "presente-irregular-go",
+      "wrong": {
+        "salga": {
+          "en": "The extra consonant of salir appears only in the yo form. With él, ella and usted the verb is regular: sale.",
+          "es": "La consonante extra de salir aparece solo en la forma yo. Con él, ella y usted el verbo es regular: sale."
+        },
+        "sala": {
+          "en": "The ending -a is for -ar verbs (habla). Salir is an -ir verb: sale.",
+          "es": "La terminación -a es de los verbos en -ar (habla). Salir es un verbo en -ir: sale."
+        }
+      }
     },
     {
       "id": "pi-form-06",
@@ -1579,7 +1629,17 @@
       "verb": "salir",
       "person": "ellos/ellas/ustedes",
       "answer": "salen",
-      "table": "presente-irregular-go"
+      "table": "presente-irregular-go",
+      "wrong": {
+        "salgen": {
+          "en": "The extra consonant of salir appears only in the yo form. With ellos, ellas and ustedes the verb is regular: salen.",
+          "es": "La consonante extra de salir aparece solo en la forma yo. Con ellos, ellas y ustedes el verbo es regular: salen."
+        },
+        "salan": {
+          "en": "The ending -an is for -ar verbs (hablan). Salir is an -ir verb: salen.",
+          "es": "La terminación -an es de los verbos en -ar (hablan). Salir es un verbo en -ir: salen."
+        }
+      }
     },
     {
       "id": "pi-form-07",
@@ -1587,7 +1647,17 @@
       "verb": "tener",
       "person": "yo",
       "answer": "tengo",
-      "table": "presente-irregular-fuerte"
+      "table": "presente-irregular-fuerte",
+      "wrong": {
+        "tiengo": {
+          "en": "In the yo form of tener only the g is added; the stem vowel does not change: tengo.",
+          "es": "En la forma yo de tener solo se añade la g; la vocal de la raíz no cambia: tengo."
+        },
+        "teno": {
+          "en": "The yo form of tener is irregular, so the regular -o ending does not work: tengo.",
+          "es": "La forma yo de tener es irregular, así que la terminación regular -o no sirve: tengo."
+        }
+      }
     },
     {
       "id": "pi-form-08",
@@ -1595,7 +1665,17 @@
       "verb": "tener",
       "person": "ellos/ellas/ustedes",
       "answer": "tienen",
-      "table": "presente-irregular-fuerte"
+      "table": "presente-irregular-fuerte",
+      "wrong": {
+        "tenen": {
+          "en": "With ellos, ellas and ustedes the stem vowel of tener changes: e becomes ie. tienen.",
+          "es": "Con ellos, ellas y ustedes cambia la vocal de la raíz de tener: e pasa a ie. tienen."
+        },
+        "tengen": {
+          "en": "The g of tener appears only in the yo form (tengo). Here the stem changes e to ie: tienen.",
+          "es": "La g de tener aparece solo en la forma yo (tengo). Aquí la raíz cambia e a ie: tienen."
+        }
+      }
     },
     {
       "id": "pi-form-09",
@@ -1603,7 +1683,17 @@
       "verb": "venir",
       "person": "tú",
       "answer": "vienes",
-      "table": "presente-irregular-fuerte"
+      "table": "presente-irregular-fuerte",
+      "wrong": {
+        "venes": {
+          "en": "With tú the stem vowel of venir changes: e becomes ie. vienes.",
+          "es": "Con tú cambia la vocal de la raíz de venir: e pasa a ie. vienes."
+        },
+        "vengues": {
+          "en": "The extra consonant of venir appears only in the yo form. With tú the verb is regular: vienes.",
+          "es": "La consonante extra de venir aparece solo en la forma yo. Con tú el verbo es regular: vienes."
+        }
+      }
     },
     {
       "id": "pi-form-10",
@@ -1611,7 +1701,17 @@
       "verb": "venir",
       "person": "nosotros",
       "answer": "venimos",
-      "table": "presente-irregular-fuerte"
+      "table": "presente-irregular-fuerte",
+      "wrong": {
+        "vienimos": {
+          "en": "With nosotros the stem of venir does not change: the stress falls on the ending. venimos.",
+          "es": "Con nosotros la raíz de venir no cambia: el acento cae en la terminación. venimos."
+        },
+        "venemos": {
+          "en": "The ending -emos is for -er verbs (comemos). Venir is an -ir verb: venimos.",
+          "es": "La terminación -emos es de los verbos en -er (comemos). Venir es un verbo en -ir: venimos."
+        }
+      }
     },
     {
       "id": "pi-form-11",
@@ -1619,7 +1719,17 @@
       "verb": "decir",
       "person": "él/ella/usted",
       "answer": "dice",
-      "table": "presente-irregular-fuerte"
+      "table": "presente-irregular-fuerte",
+      "wrong": {
+        "dece": {
+          "en": "With él, ella and usted the stem vowel of decir changes: e becomes i. dice.",
+          "es": "Con él, ella y usted cambia la vocal de la raíz de decir: e pasa a i. dice."
+        },
+        "dize": {
+          "en": "Dice is written with c, not z: the c comes from the stem dec-/dic-.",
+          "es": "Dice se escribe con c, no con z: la c viene de la raíz dec-/dic-."
+        }
+      }
     },
     {
       "id": "pi-form-12",
@@ -1627,7 +1737,17 @@
       "verb": "ir",
       "person": "ellos/ellas/ustedes",
       "answer": "van",
-      "table": "presente-ser-ir"
+      "table": "presente-ser-ir",
+      "wrong": {
+        "ven": {
+          "en": "Ven belongs to other verbs (ellos ven is from ver). The verb ir is irregular: van.",
+          "es": "Ven es de otros verbos (ellos ven es de ver). El verbo ir es irregular: van."
+        },
+        "vayan": {
+          "en": "The stem vay- is not used in the present indicative. Ir is irregular: van.",
+          "es": "La raíz vay- no se usa en el presente de indicativo. Ir es irregular: van."
+        }
+      }
     },
     {
       "kind": "why",
@@ -2112,7 +2232,17 @@
       "verb": "estar",
       "person": "yo",
       "answer": "estoy",
-      "table": "presente-irregular-epq"
+      "table": "presente-irregular-epq",
+      "wrong": {
+        "esto": {
+          "en": "The yo form of estar is irregular and ends in -oy: estoy.",
+          "es": "La forma yo de estar es irregular y termina en -oy: estoy."
+        },
+        "estoi": {
+          "en": "At the end of a word, Spanish writes this sound as -y after a vowel: estoy.",
+          "es": "A final de palabra, el español escribe este sonido como -y después de vocal: estoy."
+        }
+      }
     },
     {
       "id": "pi-form-14",
@@ -2120,7 +2250,17 @@
       "verb": "poder",
       "person": "tú",
       "answer": "puedes",
-      "table": "presente-irregular-epq"
+      "table": "presente-irregular-epq",
+      "wrong": {
+        "podes": {
+          "en": "With tú the stem vowel of poder changes too: o becomes ue. puedes.",
+          "es": "Con tú también cambia la vocal de la raíz de poder: o pasa a ue. puedes."
+        },
+        "pueds": {
+          "en": "The ending of tú in -er verbs is -es, with the e: puedes.",
+          "es": "La terminación de tú en los verbos en -er es -es, con la e: puedes."
+        }
+      }
     },
     {
       "id": "pi-form-15",
@@ -2128,7 +2268,17 @@
       "verb": "querer",
       "person": "yo",
       "answer": "quiero",
-      "table": "presente-irregular-epq"
+      "table": "presente-irregular-epq",
+      "wrong": {
+        "quero": {
+          "en": "With yo the stem vowel of querer changes: e becomes ie. quiero.",
+          "es": "Con yo cambia la vocal de la raíz de querer: e pasa a ie. quiero."
+        },
+        "quiro": {
+          "en": "Querer changes e to ie, not e to i (that is pedir): quiero.",
+          "es": "Querer cambia e a ie, no e a i (eso es pedir): quiero."
+        }
+      }
     },
     {
       "id": "pi-form-16",
@@ -2136,7 +2286,17 @@
       "verb": "saber",
       "person": "yo",
       "answer": "sé",
-      "table": "presente-irregular-yo"
+      "table": "presente-irregular-yo",
+      "wrong": {
+        "sabo": {
+          "en": "The yo form of saber is irregular, so the regular -o ending does not work: sé.",
+          "es": "La forma yo de saber es irregular, así que la terminación regular -o no sirve: sé."
+        },
+        "sepa": {
+          "en": "Sepa belongs to another tense (the subjunctive). In the present, yo says sé.",
+          "es": "Sepa es de otro tiempo (el subjuntivo). En presente, yo dice sé."
+        }
+      }
     },
     {
       "id": "pi-form-17",
@@ -2144,7 +2304,21 @@
       "verb": "conocer",
       "person": "yo",
       "answer": "conozco",
-      "table": "presente-irregular-zco"
+      "table": "presente-irregular-zco",
+      "wrong": {
+        "conoco": {
+          "en": "The yo form of conocer is irregular, so the regular -o ending does not work: conozco.",
+          "es": "La forma yo de conocer es irregular, así que la terminación regular -o no sirve: conozco."
+        },
+        "conosco": {
+          "en": "The yo form of conocer is written with z: conozco.",
+          "es": "La forma yo de conocer se escribe con z: conozco."
+        },
+        "conozo": {
+          "en": "The yo form of verbs in -cer has -zco, not just -zo: conozco.",
+          "es": "La forma yo de los verbos en -cer lleva -zco, no solo -zo: conozco."
+        }
+      }
     },
     {
       "id": "pi-form-18",
@@ -2152,7 +2326,17 @@
       "verb": "dar",
       "person": "yo",
       "answer": "doy",
-      "table": "presente-irregular-yo"
+      "table": "presente-irregular-yo",
+      "wrong": {
+        "do": {
+          "en": "The yo form of dar is irregular and ends in -oy: doy.",
+          "es": "La forma yo de dar es irregular y termina en -oy: doy."
+        },
+        "doi": {
+          "en": "At the end of a word, Spanish writes this sound as -y after a vowel: doy.",
+          "es": "A final de palabra, el español escribe este sonido como -y después de vocal: doy."
+        }
+      }
     },
     {
       "id": "pi-form-19",
@@ -2160,7 +2344,17 @@
       "verb": "ver",
       "person": "yo",
       "answer": "veo",
-      "table": "presente-irregular-yo"
+      "table": "presente-irregular-yo",
+      "wrong": {
+        "vo": {
+          "en": "Vo is not the yo form of ver. It keeps the e and adds -o: veo.",
+          "es": "Vo no es la forma yo de ver. Mantiene la e y añade -o: veo."
+        },
+        "vego": {
+          "en": "The -g- group (hago, tengo) does not include ver. Its yo form is veo.",
+          "es": "El grupo con -g- (hago, tengo) no incluye ver. Su forma yo es veo."
+        }
+      }
     },
     {
       "id": "pi-form-20",
@@ -2168,7 +2362,17 @@
       "verb": "oír",
       "person": "yo",
       "answer": "oigo",
-      "table": "presente-irregular-igo"
+      "table": "presente-irregular-igo",
+      "wrong": {
+        "oyo": {
+          "en": "The yo form of oír is -igo, like traigo. The y appears in other persons (oyes, oye): oigo.",
+          "es": "La forma yo de oír es -igo, como traigo. La y aparece en otras personas (oyes, oye): oigo."
+        },
+        "ogo": {
+          "en": "The i of oír stays in the yo form: oigo.",
+          "es": "La i de oír se mantiene en la forma yo: oigo."
+        }
+      }
     },
     {
       "id": "pi-form-21",
@@ -2176,7 +2380,17 @@
       "verb": "traer",
       "person": "yo",
       "answer": "traigo",
-      "table": "presente-irregular-igo"
+      "table": "presente-irregular-igo",
+      "wrong": {
+        "trago": {
+          "en": "The yo form of traer keeps the i: traigo. Trago is the form of another verb (tragar).",
+          "es": "La forma yo de traer mantiene la i: traigo. Trago es la forma de otro verbo (tragar)."
+        },
+        "trayo": {
+          "en": "The yo form of traer is -igo, not -yo. The y appears in other verbs (oyes, cayó): traigo.",
+          "es": "La forma yo de traer es -igo, no -yo. La y aparece en otros verbos (oyes, cayó): traigo."
+        }
+      }
     },
     {
       "id": "pi-form-22",
@@ -2184,7 +2398,21 @@
       "verb": "parecer",
       "person": "yo",
       "answer": "parezco",
-      "table": "presente-irregular-zco"
+      "table": "presente-irregular-zco",
+      "wrong": {
+        "pareco": {
+          "en": "The yo form of parecer is irregular, so the regular -o ending does not work: parezco.",
+          "es": "La forma yo de parecer es irregular, así que la terminación regular -o no sirve: parezco."
+        },
+        "paresco": {
+          "en": "The yo form of parecer is written with z: parezco.",
+          "es": "La forma yo de parecer se escribe con z: parezco."
+        },
+        "parezo": {
+          "en": "The yo form of verbs in -cer has -zco, not just -zo: parezco.",
+          "es": "La forma yo de los verbos en -cer lleva -zco, no solo -zo: parezco."
+        }
+      }
     },
     {
       "id": "pi-form-23",
@@ -2192,7 +2420,17 @@
       "verb": "seguir",
       "person": "yo",
       "answer": "sigo",
-      "table": "presente-irregular-sv"
+      "table": "presente-irregular-sv",
+      "wrong": {
+        "siguo": {
+          "en": "Before -o the u is dropped, because the g already sounds hard: sigo.",
+          "es": "Ante -o se omite la u, porque la g ya suena fuerte: sigo."
+        },
+        "sego": {
+          "en": "With yo the stem vowel of seguir changes: e becomes i. sigo.",
+          "es": "Con yo cambia la vocal de la raíz de seguir: e pasa a i. sigo."
+        }
+      }
     },
     {
       "id": "pi-form-24",
@@ -2200,7 +2438,17 @@
       "verb": "conducir",
       "person": "yo",
       "answer": "conduzco",
-      "table": "presente-irregular-zco"
+      "table": "presente-irregular-zco",
+      "wrong": {
+        "conduco": {
+          "en": "The yo form of conducir is irregular, so the regular -o ending does not work: conduzco.",
+          "es": "La forma yo de conducir es irregular, así que la terminación regular -o no sirve: conduzco."
+        },
+        "conduzo": {
+          "en": "The yo form of verbs in -cir like conducir has -zco, not just -zo: conduzco.",
+          "es": "La forma yo de los verbos en -cir como conducir lleva -zco, no solo -zo: conduzco."
+        }
+      }
     },
     {
       "id": "pi-form-25",
@@ -2208,7 +2456,17 @@
       "verb": "caer",
       "person": "yo",
       "answer": "caigo",
-      "table": "presente-irregular-igo"
+      "table": "presente-irregular-igo",
+      "wrong": {
+        "cayo": {
+          "en": "The yo form of caer is -igo, like traigo. Cayo is another word: caigo.",
+          "es": "La forma yo de caer es -igo, como traigo. Cayo es otra palabra: caigo."
+        },
+        "caeo": {
+          "en": "The yo form of caer is irregular, so the regular -o ending does not work: caigo.",
+          "es": "La forma yo de caer es irregular, así que la terminación regular -o no sirve: caigo."
+        }
+      }
     },
     {
       "id": "pi-form-26",
@@ -2216,7 +2474,17 @@
       "verb": "valer",
       "person": "yo",
       "answer": "valgo",
-      "table": "presente-irregular-sv"
+      "table": "presente-irregular-sv",
+      "wrong": {
+        "valo": {
+          "en": "The yo form of valer is irregular, so the regular -o ending does not work: valgo.",
+          "es": "La forma yo de valer es irregular, así que la terminación regular -o no sirve: valgo."
+        },
+        "vaigo": {
+          "en": "The yo form of valer has -lg-, not -ig-: valgo.",
+          "es": "La forma yo de valer lleva -lg-, no -ig-: valgo."
+        }
+      }
     }
   ]
 }
