@@ -695,7 +695,13 @@
       "verb": "preposición + continuación",
       "person": "Pienso ___ todos los días. (mi familia)",
       "answer": "en mi familia",
-      "table": "verbos-preposicion-formas"
+      "table": "verbos-preposicion-formas",
+      "wrong": {
+        "de mi familia": {
+          "en": "Pensar takes en, not de: en mi familia.",
+          "es": "Pensar lleva en, no de: en mi familia."
+        }
+      }
     },
     {
       "id": "vp-form-02",
@@ -703,7 +709,13 @@
       "verb": "preposición + continuación",
       "person": "Sueño ___ algún día. (tener un departamento)",
       "answer": "con tener un departamento",
-      "table": "verbos-preposicion-formas"
+      "table": "verbos-preposicion-formas",
+      "wrong": {
+        "de tener un departamento": {
+          "en": "Soñar takes con, not de: con tener un departamento.",
+          "es": "Soñar lleva con, no de: con tener un departamento."
+        }
+      }
     },
     {
       "id": "vp-form-03",
@@ -711,7 +723,17 @@
       "verb": "preposición + continuación",
       "person": "Mi viaje depende ___. (el clima)",
       "answer": "del clima",
-      "table": "verbos-preposicion-formas"
+      "table": "verbos-preposicion-formas",
+      "wrong": {
+        "en el clima": {
+          "en": "Depender takes de, not en: del clima.",
+          "es": "Depender lleva de, no en: del clima."
+        },
+        "de el clima": {
+          "en": "De + el always contracts to del: del clima.",
+          "es": "De + el siempre se contrae en del: del clima."
+        }
+      }
     },
     {
       "id": "vp-form-04",
@@ -719,7 +741,13 @@
       "verb": "preposición + continuación",
       "person": "Para cuidar a mi perro, confío ___. (mi hermana)",
       "answer": "en mi hermana",
-      "table": "verbos-preposicion-formas"
+      "table": "verbos-preposicion-formas",
+      "wrong": {
+        "de mi hermana": {
+          "en": "Confiar takes en, not de: en mi hermana.",
+          "es": "Confiar lleva en, no de: en mi hermana."
+        }
+      }
     },
     {
       "id": "vp-form-05",
@@ -727,7 +755,13 @@
       "verb": "preposición + continuación",
       "person": "Me acuerdo ___ cada verano. (mi abuela)",
       "answer": "de mi abuela",
-      "table": "verbos-preposicion-formas"
+      "table": "verbos-preposicion-formas",
+      "wrong": {
+        "mi abuela": {
+          "en": "Acordarse needs the preposition de before what follows: de mi abuela.",
+          "es": "Acordarse necesita la preposición de antes de lo que sigue: de mi abuela."
+        }
+      }
     },
     {
       "id": "vp-form-06",
@@ -735,7 +769,13 @@
       "verb": "preposición + continuación",
       "person": "Ana se casa en octubre ___. (Luis)",
       "answer": "con Luis",
-      "table": "verbos-preposicion-formas"
+      "table": "verbos-preposicion-formas",
+      "wrong": {
+        "a Luis": {
+          "en": "Casarse takes con, not a: con Luis.",
+          "es": "Casarse lleva con, no a: con Luis."
+        }
+      }
     },
     {
       "id": "vp-form-07",
@@ -743,7 +783,13 @@
       "verb": "preposición + continuación",
       "person": "Me enamoré ___ en el viaje. (Oaxaca)",
       "answer": "de Oaxaca",
-      "table": "verbos-preposicion-formas"
+      "table": "verbos-preposicion-formas",
+      "wrong": {
+        "con Oaxaca": {
+          "en": "Enamorarse takes de, not con: de Oaxaca.",
+          "es": "Enamorarse lleva de, no con: de Oaxaca."
+        }
+      }
     },
     {
       "id": "vp-form-08",
@@ -751,7 +797,13 @@
       "verb": "preposición + continuación",
       "person": "Trato ___ todos los días. (hacer ejercicio)",
       "answer": "de hacer ejercicio",
-      "table": "verbos-preposicion-formas"
+      "table": "verbos-preposicion-formas",
+      "wrong": {
+        "hacer ejercicio": {
+          "en": "Tratar needs the preposition de before what follows: de hacer ejercicio.",
+          "es": "Tratar necesita la preposición de antes de lo que sigue: de hacer ejercicio."
+        }
+      }
     },
     {
       "id": "vp-form-09",
@@ -759,7 +811,13 @@
       "verb": "preposición + continuación",
       "person": "El vendedor y yo quedamos ___ por el coche. (el precio)",
       "answer": "en el precio",
-      "table": "verbos-preposicion-formas"
+      "table": "verbos-preposicion-formas",
+      "wrong": {
+        "con el precio": {
+          "en": "Quedar takes en, not con: en el precio.",
+          "es": "Quedar lleva en, no con: en el precio."
+        }
+      }
     },
     {
       "id": "vp-form-10",
@@ -767,7 +825,17 @@
       "verb": "preposición + continuación",
       "person": "Mi papá insiste ___. (pagar la cuenta)",
       "answer": "en pagar la cuenta",
-      "table": "verbos-preposicion-formas"
+      "table": "verbos-preposicion-formas",
+      "wrong": {
+        "pagar la cuenta": {
+          "en": "Insistir needs the preposition en before what follows: en pagar la cuenta.",
+          "es": "Insistir necesita la preposición en antes de lo que sigue: en pagar la cuenta."
+        },
+        "de pagar la cuenta": {
+          "en": "Insistir takes en, not de: en pagar la cuenta.",
+          "es": "Insistir lleva en, no de: en pagar la cuenta."
+        }
+      }
     },
     {
       "id": "vp-form-11",
@@ -775,7 +843,13 @@
       "verb": "preposición + continuación",
       "person": "No sé si voy, depende ___. (la hora)",
       "answer": "de la hora",
-      "table": "verbos-preposicion-formas"
+      "table": "verbos-preposicion-formas",
+      "wrong": {
+        "en la hora": {
+          "en": "Depender takes de, not en: de la hora.",
+          "es": "Depender lleva de, no en: de la hora."
+        }
+      }
     },
     {
       "id": "vp-form-12",
@@ -783,7 +857,13 @@
       "verb": "preposición + continuación",
       "person": "Siempre me acuerdo ___. (cerrar la puerta)",
       "answer": "de cerrar la puerta",
-      "table": "verbos-preposicion-formas"
+      "table": "verbos-preposicion-formas",
+      "wrong": {
+        "cerrar la puerta": {
+          "en": "Acordarse needs the preposition de before what follows: de cerrar la puerta.",
+          "es": "Acordarse necesita la preposición de antes de lo que sigue: de cerrar la puerta."
+        }
+      }
     },
     {
       "kind": "why",
