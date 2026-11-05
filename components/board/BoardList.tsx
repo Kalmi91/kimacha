@@ -42,7 +42,7 @@ function Row({ row, gain, onGainDone, animate, metric }: { row: BoardRow; gain?:
       </View>
       <Text numberOfLines={1} style={[styles.name, { color: colors.text }]}>{row.name}</Text>
       <Text style={[styles.xp, { color: colors.text }]}>{valueText(metric, row.xp)}</Text>
-      {gain ? <RiseChip key={gain.id} delta={gain.delta} onDone={() => onGainDone?.(row.name, gain.id)} style={styles.gain} /> : null}
+      {gain ? <RiseChip key={gain.id} delta={gain.delta} unit={metric === 'time' ? 'min' : undefined} onDone={() => onGainDone?.(row.name, gain.id)} style={styles.gain} /> : null}
     </Animated.View>
   );
 }

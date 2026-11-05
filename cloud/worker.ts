@@ -6,7 +6,7 @@
 import { DurableObject } from 'cloudflare:workers';
 import { nameKey } from '../lib/cloud/validate';
 import { ADMIN_PAGE } from './admin';
-import { BOARD_JOINS_PER_DAY, BOARD_RETENTION_DAYS, adminAuthorized, afterBadPin, afterBadPinForName, bearerToken, boardToday, clientIp, displayName, lockRemainingSec, parseBaseRev, parseBoardDays, parseBoardMetric, parseBoardMinutes, parseBoardName, parseLogin, parsePayload, rankBoard, safeEqual, secondsToNextUtcDay, toAdminStats, toHex, weekStartOf } from './logic';
+import { BOARD_JOINS_PER_DAY, BOARD_RETENTION_DAYS, adminAuthorized, afterBadPin, afterBadPinForName, bearerToken, boardToday, clientIp, displayName, lockRemainingSec, mergeBoardMinutes, parseBaseRev, parseBoardDays, parseBoardMetric, parseBoardMinutes, parseBoardName, parseLogin, parsePayload, rankBoard, safeEqual, secondsToNextUtcDay, toAdminStats, toHex, weekStartOf } from './logic';
 import type { AdminUserRow } from './logic';
 
 interface Env {
@@ -312,7 +312,11 @@ export class KimachaUsers extends DurableObject<Env> {
     } else {
       sql.exec('UPDATE board SET daily_xp = ?, updated_at = ? WHERE owner = ?', JSON.stringify(days), updatedAt, caller.owner);
     }
-    if (minutes) sql.exec('UPDATE board SET daily_minutes = ? WHERE owner = ?', JSON.stringify(minutes), caller.owner);
+    if (minutes) {
+      // minutes never go down: per day the larger of the stored and the pushed (XP above is replaced as before)
+      const stored = sql.exec<{ daily_minutes: string }>('SELECT daily_minutes FROM board WHERE owner = ?', caller.owner).toArray()[0]?.daily_minutes ?? '[]';
+      sql.exec('UPDATE board SET daily_minutes = ? WHERE owner = ?', JSON.stringify(mergeBoardMinutes(stored, minutes, utcToday)), caller.owner);
+    }
     return json({});
   }
 

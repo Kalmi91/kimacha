@@ -291,6 +291,28 @@ export function parseBoardMinutes(body: unknown, utcToday: string): [string, num
   return [...byDay].sort(([a], [b]) => (a < b ? -1 : a > b ? 1 : 0));
 }
 
+/**
+ * The stored learning minutes with a push merged in: per day the larger of the stored and the pushed figure, so minutes never go
+ * down (a fresh install or a second device that has counted less cannot lower the week). Days older than the push window are dropped.
+ * `stored` is the `daily_minutes` JSON text; whatever cannot be read counts as nothing. Sorted by date. Never throws.
+ */
+export function mergeBoardMinutes(stored: string, pushed: [string, number][], utcToday: string): [string, number][] {
+  const from = shiftDay(utcToday, 1 - BOARD_WINDOW_DAYS);
+  const byDay = new Map<string, number>();
+  let old: unknown;
+  try {
+    old = JSON.parse(stored);
+  } catch {
+    old = [];
+  }
+  const add = (date: string, minutes: number) => {
+    if (date >= from) byDay.set(date, Math.max(byDay.get(date) ?? 0, minutes));
+  };
+  if (Array.isArray(old)) for (const e of old) if (Array.isArray(e) && isIsoDay(e[0]) && Number.isInteger(e[1])) add(e[0], Math.min(Math.max(e[1], 0), BOARD_MAX_MINUTES));
+  for (const [date, minutes] of pushed) add(date, minutes);
+  return [...byDay].sort(([x], [y]) => (x < y ? -1 : x > y ? 1 : 0));
+}
+
 export type BoardMetric = 'xp' | 'time';
 
 /** The GET /api/board `?metric=`: 'time' ranks by learning minutes, anything else (or nothing: an old client) by XP. */

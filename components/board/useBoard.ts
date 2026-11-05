@@ -80,6 +80,8 @@ export function useBoard() {
   // The switch: what the learner chose (kept), and whether the worker can rank by time at all (an old worker answers by XP: the switch hides).
   const [choice, setChoice] = useState<BoardMetric>('xp');
   const [timeSupported, setTimeSupported] = useState(true);
+  // The ranking the data on screen was asked for: until it equals the choice, the list is still the other ranking and the screen loads.
+  const [answeredFor, setAnsweredFor] = useState<BoardMetric | null>(null);
   const chosen = useRef<BoardMetric | null>(null);
   const prevMetric = useRef<BoardMetric>('xp');
   const reduceMotion = useReduceMotion();
@@ -146,6 +148,14 @@ export function useBoard() {
     setPhase('join');
   }, [forget]);
 
+  // What an answer says about the worker: any `metric` in it means it can rank by time (the switch comes back when a worker is deployed
+  // during a session), none while time was asked means it cannot.
+  const noteWorker = useCallback((asked: BoardMetric, data: BoardData) => {
+    if (data.metric !== undefined) setTimeSupported(true);
+    else if (asked === 'time') setTimeSupported(false);
+    setAnsweredFor(asked);
+  }, []);
+
   // The ranking the learner chose, read from the store once (a failed read is XP, the default).
   const askedMetric = useCallback(async (): Promise<BoardMetric> => {
     if (chosen.current === null) {
@@ -173,7 +183,7 @@ export function useBoard() {
     // an answer for the other ranking (the learner switched meanwhile) is dropped: the switch fetches its own
     if (stale() || asked !== chosen.current) return;
     if (res.ok) {
-      if (asked === 'time') setTimeSupported(res.data.metric === 'time');
+      noteWorker(asked, res.data);
       raw.current = res.data;
       prevXp.current = null;
       setGains({});
@@ -187,7 +197,7 @@ export function useBoard() {
     } else {
       setPhase('offline');
     }
-  }, [show, refreshWeek, dropIdentity, askedMetric]);
+  }, [show, refreshWeek, dropIdentity, askedMetric, noteWorker]);
 
   // A failed refresh keeps the last server answer and only moves the bots on; it never turns the screen "offline".
   const refresh = useCallback(async () => {
@@ -198,7 +208,7 @@ export function useBoard() {
     const res = await getBoard(token, localDateString(), asked);
     if (mine !== generation.current || asked !== chosen.current) return;
     if (res.ok) {
-      if (asked === 'time') setTimeSupported(res.data.metric === 'time');
+      noteWorker(asked, res.data);
       raw.current = res.data;
       setPhase(res.data.me && !res.data.left ? 'ready' : 'left');
       // the figures are missing (the first load had no database) or belong to another week (Sunday to Monday)
@@ -212,9 +222,11 @@ export function useBoard() {
       return;
     }
     show();
-  }, [show, refreshWeek, dropIdentity, askedMetric]);
+  }, [show, refreshWeek, dropIdentity, askedMetric, noteWorker]);
   const refreshRef = useRef(refresh);
+  const timeSupportedRef = useRef(timeSupported);
   useEffect(() => {
+    timeSupportedRef.current = timeSupported;
     reduceRef.current = reduceMotion;
     refreshRef.current = refresh;
   });
@@ -240,6 +252,8 @@ export function useBoard() {
       };
       // the state can still be unknown (null) right after launch: that counts as active
       if (AppState.currentState !== 'background' && AppState.currentState !== 'inactive') start();
+      // a worker that could not rank by time may have been deployed since: ask again whenever the tab comes into focus
+      if (!timeSupportedRef.current) void refreshRef.current();
       const sub = AppState.addEventListener('change', (state) => (state === 'active' ? start() : stop()));
       return () => {
         stop();
@@ -349,5 +363,7 @@ export function useBoard() {
 
   // `shown`: the ranking `data` is in (the worker's answer decides, so an old worker always shows XP)
   const shown: BoardMetric = data?.metric === 'time' ? 'time' : 'xp';
-  return { phase, data, week, gains, gainDone, choice, shown, timeSupported, switchMetric, name, changeName, busy, error, join, rejoin, confirmLeave, reduceMotion };
+  // the learner's choice has no answer yet (just switched): the list on screen is still the other ranking
+  const pending = timeSupported && answeredFor !== null && answeredFor !== choice;
+  return { phase, data, week, gains, gainDone, choice, shown, pending, timeSupported, switchMetric, name, changeName, busy, error, join, rejoin, confirmLeave, reduceMotion };
 }

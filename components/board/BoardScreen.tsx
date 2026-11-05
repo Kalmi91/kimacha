@@ -38,8 +38,10 @@ export default function BoardScreen() {
   if (b.phase === 'hidden') return null;
 
   const { phase, data } = b;
-  const ready = phase === 'ready' && data?.me ? data : null;
-  const showList = (phase === 'ready' || phase === 'left') && data;
+  // `pending`: the switch was just pressed and the answer for it is not here, so the list on screen is the other ranking: load instead
+  const ready = phase === 'ready' && data?.me && !b.pending ? data : null;
+  const hasData = (phase === 'ready' || phase === 'left') && data;
+  const showList = hasData && !b.pending;
   const band = mixColor(colors.secondary, colors.background, 0.3);
   const todayIndex = data ? weekDayIndex(data.weekStart, new Date()) : 0;
   const canJoin = isValidName(b.name) && !b.busy;
@@ -75,7 +77,7 @@ export default function BoardScreen() {
             <Text variant="title" accessibilityRole="header" style={[styles.title, { color: colors.text }]}>{t().tabs.board}</Text>
             <ScreenFeedback placement="inline" level="-" languagePair={pairOf(getPcicTarget())} currentCard="board-tab" />
           </View>
-          {showList && data && b.timeSupported ? <MetricSwitch value={b.choice} onChange={b.switchMetric} /> : null}
+          {hasData && b.timeSupported ? <MetricSwitch value={b.choice} onChange={b.switchMetric} /> : null}
           {showList && data ? (
             <View style={[styles.chip, { backgroundColor: colors.card }]}>
               <Text style={[styles.chipText, { color: colors.text }]}>{s.chipLeft(daysLeft(todayIndex))}</Text>
@@ -89,7 +91,7 @@ export default function BoardScreen() {
             sheetY.current = e.nativeEvent.layout.y;
           }}
         >
-          {phase === 'loading' && <Text testID="board-loading" style={[styles.note, styles.pad, { color: colors.textMuted }]}>{s.loading}</Text>}
+          {(phase === 'loading' || (b.pending && hasData)) && <Text testID="board-loading" style={[styles.note, styles.pad, { color: colors.textMuted }]}>{s.loading}</Text>}
           {phase === 'offline' && <Text testID="board-offline" style={[styles.note, styles.pad, { color: colors.textMuted }]}>{s.offline}</Text>}
           {phase === 'join' && (
             <View style={styles.form}>

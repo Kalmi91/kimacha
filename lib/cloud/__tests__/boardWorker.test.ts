@@ -453,7 +453,7 @@ describe('DELETE /api/board/me', () => {
 describe('learning minutes: PUT /api/board/xp minutes and GET /api/board?metric=time', () => {
   const storedMinutes = (cloud: Cloud, nameKey: string): string | undefined => cloud.rows('SELECT daily_minutes FROM board WHERE name_key = ?', nameKey)[0]?.daily_minutes;
 
-  it('stores the minutes of a device and of an account next to the XP, and a second push replaces them', async () => {
+  it('stores the minutes of a device and of an account next to the XP, and a second push can only raise a day', async () => {
     const cloud = await startCloud();
     const bela = (await cloud.join('Bela')).body.token as string;
     const ana = (await cloud.login('Ana', '1234')).body.token as string;
@@ -463,7 +463,19 @@ describe('learning minutes: PUT /api/board/xp minutes and GET /api/board?metric=
     expect(storedMinutes(cloud, 'ana')).toBe('[["2026-11-03",7]]');
     expect(storedDays(cloud, 'bela')).toBe('[["2026-11-03",50]]');
     await cloud.push(bela, [[TUE, 50]], [[TUE, 30]]);
-    expect(storedMinutes(cloud, 'bela')).toBe('[["2026-11-03",30]]');
+    expect(storedMinutes(cloud, 'bela')).toBe('[["2026-11-02",40],["2026-11-03",30]]');
+  });
+
+  it('minutes never go down: a fresh install or a second device with less cannot lower a day, while XP is still replaced', async () => {
+    const cloud = await startCloud();
+    const { token } = (await cloud.join('Bela')).body;
+    await cloud.push(token, [[TUE, 50]], [[MON, 40], [TUE, 25]]);
+    await cloud.push(token, [[TUE, 5]], [[MON, 3], [TUE, 0]]);
+    expect(storedMinutes(cloud, 'bela')).toBe('[["2026-11-02",40],["2026-11-03",25]]');
+    expect(storedDays(cloud, 'bela')).toBe('[["2026-11-03",5]]');
+    await cloud.push(token, [[TUE, 5]], []);
+    expect(storedMinutes(cloud, 'bela')).toBe('[["2026-11-02",40],["2026-11-03",25]]');
+    expect((await cloud.board(token, '?metric=time')).body.me.minutes).toBe(65);
   });
 
   it('filters the minutes like the days: window, clamp to 24 h, whole numbers only', async () => {

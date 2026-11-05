@@ -11,7 +11,8 @@ export const RISE_MS = 1100;
 
 // The "+N" label that floats up for a moment where a player's XP just grew (a row or a podium column). Plain Animated with the
 // native driver, no Reanimated / LayoutAnimation (see app/(tabs)/_layout.tsx on Fabric). Calls `onDone` when it has faded out.
-export default function RiseChip({ delta, onDone, style }: { delta: number; onDone: () => void; style?: object }) {
+// `unit` follows the ranking: nothing for XP, `min` for the time ranking (`+1 min`).
+export default function RiseChip({ delta, onDone, style, unit }: { delta: number; onDone: () => void; style?: object; unit?: string }) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const [t] = useState(() => new Animated.Value(0));
@@ -37,7 +38,7 @@ export default function RiseChip({ delta, onDone, style }: { delta: number; onDo
         },
       ]}
     >
-      <Text style={[styles.text, { color: textOn(colors.secondary, colors.onTint, colors.text, colors.background) }]}>{`+${delta}`}</Text>
+      <Text style={[styles.text, { color: textOn(colors.secondary, colors.onTint, colors.text, colors.background) }]}>{unit ? `+${delta} ${unit}` : `+${delta}`}</Text>
     </Animated.View>
   );
 }

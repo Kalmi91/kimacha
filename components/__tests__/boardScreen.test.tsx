@@ -911,6 +911,64 @@ describe('BoardScreen', () => {
       view.unmount();
     });
 
+    it('after a switch the list is not shown as the other ranking: it loads until the answer, then shows the new one', async () => {
+      await ready();
+      let release: (v: unknown) => void = () => {};
+      let hold = false;
+      mockFetch.mockImplementation(async (url: string, init?: RequestInit) => {
+        const u = String(url);
+        if ((init?.method ?? 'GET') === 'PUT') return answer(200, {});
+        if (hold && u.includes('metric=time')) return new Promise((res) => { release = res; });
+        return answer(200, u.includes('metric=time') ? TIME_BOARD : BOARD);
+      });
+      const view = renderScreen();
+      await view.findByTestId('board-mebar');
+      hold = true;
+      fireEvent.press(view.getByTestId('board-metric-time'));
+      expect(await view.findByTestId('board-loading')).toBeTruthy();
+      expect(view.getByTestId('board-metric-time').props.accessibilityState.selected).toBe(true);
+      expect(view.queryByTestId('board-mebar')).toBeNull();
+      expect(view.queryByText('412 XP')).toBeNull();
+      await act(async () => release(answer(200, TIME_BOARD)));
+      expect(await view.findByText('3 h 25 min')).toBeTruthy();
+      expect(view.queryByTestId('board-loading')).toBeNull();
+      view.unmount();
+    });
+
+    it('the switch comes back when a worker that answers `metric` is deployed during the session', async () => {
+      await ready();
+      await saveResumeValue(getDb(), 'board-metric', 'time');
+      let deployed = false;
+      serveBoard(() => (deployed ? TIME_BOARD : BOARD));
+      jest.useFakeTimers();
+      const view = renderScreen();
+      await view.findByTestId('board-mebar');
+      expect(view.queryByTestId('board-metric-time')).toBeNull();
+      deployed = true;
+      await act(async () => {
+        jest.advanceTimersByTime(BOARD_REFRESH_MS);
+      });
+      expect(await view.findByTestId('board-metric-time')).toBeTruthy();
+      expect(await view.findByText('3 h 25 min')).toBeTruthy();
+      view.unmount();
+    });
+
+    it('the gain chip says the unit in the time ranking: +N min', async () => {
+      await ready();
+      await saveResumeValue(getDb(), 'board-metric', 'time');
+      let minutes = 205;
+      serveBoard(() => ({ ...TIME_BOARD, rows: [{ ...TIME_BOARD.rows[0], minutes, xp: 90 }, ...TIME_BOARD.rows.slice(1)] }));
+      jest.useFakeTimers();
+      const view = renderScreen();
+      await view.findByTestId('board-mebar');
+      minutes = 206;
+      await act(async () => {
+        jest.advanceTimersByTime(BOARD_REFRESH_MS);
+      });
+      expect((await view.findAllByText('+1 min')).length).toBeGreaterThan(0);
+      view.unmount();
+    });
+
     it('every UI language has the switch and the time wording', async () => {
       await ready();
       await saveResumeValue(getDb(), 'board-metric', 'time');

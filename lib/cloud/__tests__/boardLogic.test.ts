@@ -9,6 +9,7 @@ import {
   BOARD_RETENTION_DAYS,
   BOARD_WINDOW_DAYS,
   boardToday,
+  mergeBoardMinutes,
   parseBoardDays,
   parseBoardMetric,
   parseBoardMinutes,
@@ -182,6 +183,17 @@ describe('parseBoardMinutes', () => {
   it('reads only the first BOARD_MAX_DAYS entries', () => {
     const minutes = Array.from({ length: 40 }, (_, i) => [`2026-11-${String((i % 3) + 1).padStart(2, '0')}`, i]);
     expect(parseBoardMinutes({ minutes }, TODAY)?.length).toBeLessThanOrEqual(3);
+  });
+});
+
+describe('mergeBoardMinutes', () => {
+  it('takes the larger figure per day, keeps days only one side has, and sorts', () => {
+    expect(mergeBoardMinutes('[["2026-11-02",40],["2026-11-03",5]]', [['2026-11-03', 25], ['2026-11-01', 7], ['2026-11-02', 3]], TODAY)).toEqual([['2026-11-01', 7], ['2026-11-02', 40], ['2026-11-03', 25]]);
+  });
+
+  it('drops days older than the window, and reads a damaged stored text as nothing', () => {
+    expect(mergeBoardMinutes('[["2026-10-01",99],["2026-11-03",5]]', [], TODAY)).toEqual([['2026-11-03', 5]]);
+    for (const bad of ['', 'nope', '{}', 'null', '[1,["x",2],["2026-11-03","5"],["2026-11-03",1.5]]']) expect(mergeBoardMinutes(bad, [['2026-11-03', 9]], TODAY)).toEqual([['2026-11-03', 9]]);
   });
 });
 
