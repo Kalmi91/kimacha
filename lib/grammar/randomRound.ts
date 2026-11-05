@@ -43,6 +43,10 @@ export interface EvidenceAnswer {
 /** Oldest first, at most EVIDENCE_WINDOW answers. */
 export interface TopicEvidence {
   answers: EvidenceAnswer[];
+  /** All answers ever given to the topic (the window keeps only the last ones); absent in evidence saved before, then the window length counts. */
+  n?: number;
+  /** The question ids asked since the topic's questions last all had a turn (FB595); absent in evidence saved before, then the window's ids count. */
+  seen?: string[];
 }
 
 export type RoundMode = 'mixed' | 'full';
@@ -135,9 +139,20 @@ export function topicTicked(ev?: TopicEvidence, kindCount?: () => number): boole
   return kindCount !== undefined && kinds >= Math.max(1, Math.min(TICK_MIN_KINDS, kindCount()));
 }
 
-/** Appends one answer, only the last EVIDENCE_WINDOW stay. */
+/** How many answers the topic ever got (the window is only the last EVIDENCE_WINDOW of them). */
+export const askedCount = (ev?: TopicEvidence): number => (ev ? ev.n ?? ev.answers.length : 0);
+
+/** The question ids asked in the topic's current pass over its questions. */
+export const seenIds = (ev?: TopicEvidence): string[] => (ev ? ev.seen ?? ev.answers.map((x) => x.id) : []);
+
+/** Appends one answer, only the last EVIDENCE_WINDOW stay; the count and the pass over the questions go on (a question that comes back starts a new pass). */
 export function appendEvidence(ev: TopicEvidence | undefined, a: EvidenceAnswer): TopicEvidence {
-  return { answers: [...(ev?.answers ?? []), a].slice(-EVIDENCE_WINDOW) };
+  const seen = seenIds(ev);
+  return {
+    answers: [...(ev?.answers ?? []), a].slice(-EVIDENCE_WINDOW),
+    n: askedCount(ev) + 1,
+    seen: seen.includes(a.id) ? [a.id] : [...seen, a.id],
+  };
 }
 
 function isEvidenceAnswer(v: unknown): v is EvidenceAnswer {
@@ -147,7 +162,13 @@ function isEvidenceAnswer(v: unknown): v is EvidenceAnswer {
 
 function isTopicEvidence(v: unknown): v is TopicEvidence {
   const o = v as TopicEvidence | null;
-  return !!o && Array.isArray(o.answers) && o.answers.every(isEvidenceAnswer);
+  return (
+    !!o &&
+    Array.isArray(o.answers) &&
+    o.answers.every(isEvidenceAnswer) &&
+    (o.n === undefined || (Number.isInteger(o.n) && o.n >= 0)) &&
+    (o.seen === undefined || (Array.isArray(o.seen) && o.seen.every((x) => typeof x === 'string')))
+  );
 }
 
 function isRandomMeta(v: unknown): v is RandomMeta {
