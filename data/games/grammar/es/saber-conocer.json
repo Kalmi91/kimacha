@@ -664,7 +664,17 @@
       "verb": "forma verbal",
       "person": "Sí, ___ (yo) dónde está tu casa.",
       "answer": "sé",
-      "table": "saber-conocer-formas"
+      "table": "saber-conocer-formas",
+      "wrong": {
+        "conozco": {
+          "en": "Conozco is a form of conocer, used for people and places. Here the object is information or a skill, which takes saber: sé.",
+          "es": "Conozco es una forma de conocer, que se usa con personas y lugares. Aquí lo que se sabe es una información o una habilidad, y eso pide saber: sé."
+        },
+        "sabo": {
+          "en": "The yo form of saber is irregular: the stem does not follow the regular pattern. It is sé.",
+          "es": "La forma yo de saber es irregular: la raíz no sigue el patrón regular. Es sé."
+        }
+      }
     },
     {
       "id": "sc-form-02",
@@ -672,7 +682,13 @@
       "verb": "forma verbal",
       "person": "Mis hermanos ___ (ellos) tocar la guitarra.",
       "answer": "saben",
-      "table": "saber-conocer-formas"
+      "table": "saber-conocer-formas",
+      "wrong": {
+        "conocen": {
+          "en": "Conocen is a form of conocer, used for people and places. Here the object is information or a skill, which takes saber: saben.",
+          "es": "Conocen es una forma de conocer, que se usa con personas y lugares. Aquí lo que se sabe es una información o una habilidad, y eso pide saber: saben."
+        }
+      }
     },
     {
       "id": "sc-form-03",
@@ -680,7 +696,13 @@
       "verb": "forma verbal",
       "person": "¿___ (tú) a mi novio? Se llama Carlos.",
       "answer": "conoces",
-      "table": "saber-conocer-formas"
+      "table": "saber-conocer-formas",
+      "wrong": {
+        "sabes": {
+          "en": "Sabes is a form of saber, used for facts and skills. Here the object is a person or a place, which takes conocer: conoces.",
+          "es": "Sabes es una forma de saber, que se usa con datos y habilidades. Aquí se trata de una persona o un lugar, y eso pide conocer: conoces."
+        }
+      }
     },
     {
       "id": "sc-form-04",
@@ -688,7 +710,13 @@
       "verb": "forma verbal",
       "person": "Mi jefe ___ (él) a mucha gente.",
       "answer": "conoce",
-      "table": "saber-conocer-formas"
+      "table": "saber-conocer-formas",
+      "wrong": {
+        "sabe": {
+          "en": "Sabe is a form of saber, used for facts and skills. Here the object is a person or a place, which takes conocer: conoce.",
+          "es": "Sabe es una forma de saber, que se usa con datos y habilidades. Aquí se trata de una persona o un lugar, y eso pide conocer: conoce."
+        }
+      }
     },
     {
       "id": "sc-form-05",
@@ -696,7 +724,13 @@
       "verb": "forma verbal",
       "person": "Nosotros no ___ (nosotros) qué hora es.",
       "answer": "sabemos",
-      "table": "saber-conocer-formas"
+      "table": "saber-conocer-formas",
+      "wrong": {
+        "conocemos": {
+          "en": "Conocemos is a form of conocer, used for people and places. Here the object is information or a skill, which takes saber: sabemos.",
+          "es": "Conocemos es una forma de conocer, que se usa con personas y lugares. Aquí lo que se sabe es una información o una habilidad, y eso pide saber: sabemos."
+        }
+      }
     },
     {
       "id": "sc-form-06",
@@ -704,7 +738,13 @@
       "verb": "forma verbal",
       "person": "Quiero ___ manejar, pero no tengo coche.",
       "answer": "saber",
-      "table": "saber-conocer-formas"
+      "table": "saber-conocer-formas",
+      "wrong": {
+        "conocer": {
+          "en": "Conocer is a form of conocer, used for people and places. Here the object is information or a skill, which takes saber: saber.",
+          "es": "Conocer es una forma de conocer, que se usa con personas y lugares. Aquí lo que se sabe es una información o una habilidad, y eso pide saber: saber."
+        }
+      }
     },
     {
       "id": "sc-form-07",
@@ -712,7 +752,17 @@
       "verb": "forma verbal",
       "person": "Sí, ___ (yo) a tu hermana. Es muy inteligente.",
       "answer": "conozco",
-      "table": "saber-conocer-formas"
+      "table": "saber-conocer-formas",
+      "wrong": {
+        "sé": {
+          "en": "Sé is a form of saber, used for facts and skills. Here the object is a person or a place, which takes conocer: conozco.",
+          "es": "Sé es una forma de saber, que se usa con datos y habilidades. Aquí se trata de una persona o un lugar, y eso pide conocer: conozco."
+        },
+        "conozo": {
+          "en": "The yo form of conocer is irregular: the stem does not follow the regular pattern. It is conozco.",
+          "es": "La forma yo de conocer es irregular: la raíz no sigue el patrón regular. Es conozco."
+        }
+      }
     },
     {
       "id": "sc-form-08",
@@ -720,7 +770,13 @@
       "verb": "forma verbal",
       "person": "Mi abuela ___ (ella) cocinar muy bien.",
       "answer": "sabe",
-      "table": "saber-conocer-formas"
+      "table": "saber-conocer-formas",
+      "wrong": {
+        "conoce": {
+          "en": "Conoce is a form of conocer, used for people and places. Here the object is information or a skill, which takes saber: sabe.",
+          "es": "Conoce es una forma de conocer, que se usa con personas y lugares. Aquí lo que se sabe es una información o una habilidad, y eso pide saber: sabe."
+        }
+      }
     },
     {
       "id": "sc-form-09",
@@ -728,7 +784,13 @@
       "verb": "forma verbal",
       "person": "¿___ (tú) cuándo llega el tren?",
       "answer": "sabes",
-      "table": "saber-conocer-formas"
+      "table": "saber-conocer-formas",
+      "wrong": {
+        "conoces": {
+          "en": "Conoces is a form of conocer, used for people and places. Here the object is information or a skill, which takes saber: sabes.",
+          "es": "Conoces es una forma de conocer, que se usa con personas y lugares. Aquí lo que se sabe es una información o una habilidad, y eso pide saber: sabes."
+        }
+      }
     },
     {
       "id": "sc-form-10",
@@ -736,7 +798,13 @@
       "verb": "forma verbal",
       "person": "Mis amigos ___ (ellos) muy bien México.",
       "answer": "conocen",
-      "table": "saber-conocer-formas"
+      "table": "saber-conocer-formas",
+      "wrong": {
+        "saben": {
+          "en": "Saben is a form of saber, used for facts and skills. Here the object is a person or a place, which takes conocer: conocen.",
+          "es": "Saben es una forma de saber, que se usa con datos y habilidades. Aquí se trata de una persona o un lugar, y eso pide conocer: conocen."
+        }
+      }
     },
     {
       "id": "sc-form-11",
@@ -744,7 +812,13 @@
       "verb": "forma verbal",
       "person": "Mi hijo no ___ (él) leer todavía.",
       "answer": "sabe",
-      "table": "saber-conocer-formas"
+      "table": "saber-conocer-formas",
+      "wrong": {
+        "conoce": {
+          "en": "Conoce is a form of conocer, used for people and places. Here the object is information or a skill, which takes saber: sabe.",
+          "es": "Conoce es una forma de conocer, que se usa con personas y lugares. Aquí lo que se sabe es una información o una habilidad, y eso pide saber: sabe."
+        }
+      }
     },
     {
       "id": "sc-form-12",
@@ -752,7 +826,13 @@
       "verb": "forma verbal",
       "person": "Nosotros ___ (nosotros) Oaxaca, pero no Puebla.",
       "answer": "conocemos",
-      "table": "saber-conocer-formas"
+      "table": "saber-conocer-formas",
+      "wrong": {
+        "sabemos": {
+          "en": "Sabemos is a form of saber, used for facts and skills. Here the object is a person or a place, which takes conocer: conocemos.",
+          "es": "Sabemos es una forma de saber, que se usa con datos y habilidades. Aquí se trata de una persona o un lugar, y eso pide conocer: conocemos."
+        }
+      }
     },
     {
       "kind": "why",
