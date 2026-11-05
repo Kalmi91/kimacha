@@ -199,15 +199,15 @@ export interface RoundTopicRow {
   id: string;
   n: number;
   right: number;
-  /** The change of the topic's share in this round, in points: up > 0, down < 0. */
-  delta: number;
+  /** The change of the topic's share in this round, in points: up > 0, down < 0; null while the topic has too few answers for a percent. */
+  delta: number | null;
 }
 
 /** One row per topic asked in the round, the weakest (lowest share now, then lowest right/asked) first. */
 export function roundTopicRows(topics: Record<string, RoundTopic> | undefined, evidence: Map<string, TopicEvidence>): RoundTopicRow[] {
   const rows = Object.entries(topics ?? {}).map(([id, t]) => {
     const now = topicShare(evidence.get(id));
-    return { id, n: t.n, right: t.right, delta: now - t.start, now };
+    return { id, n: t.n, right: t.right, delta: topicPercent(evidence.get(id)) === null ? null : now - t.start, now };
   });
   rows.sort((a, b) => a.now - b.now || a.right / a.n - b.right / b.n);
   return rows.map(({ id, n, right, delta }) => ({ id, n, right, delta }));
@@ -228,7 +228,7 @@ export function weakestTopic(topicIds: string[], evidence: Map<string, TopicEvid
 // It never goes down and grows a little with every right answer, so the bar always moves; the real percent (levelPercent)
 // is the floor it can never sink below. Stored per language pair and level in the resume store.
 
-export const LEVEL_SHOWN_STEP = 0.3;
+export const LEVEL_SHOWN_STEP = 0.5;
 
 export const levelShownKey = (pair: string, level: string): string => `grammar-level-shown:${pair}:${level}`;
 
@@ -237,10 +237,10 @@ export function parseShownPct(raw: unknown): number | null {
   return typeof raw === 'number' && Number.isFinite(raw) && raw >= 0 && raw <= 100 ? raw : null;
 }
 
-/** The standing after an answer: right = one step up (never above 99 unless the real percent is 100), wrong = unchanged. */
+/** The standing after an answer: right = one step up (never above 99 unless the real percent is 100; a stored 100 stays), wrong = unchanged. */
 export function nextShownPct(shown: number, real: number, ok: boolean): number {
   if (!ok) return shown;
-  return Math.min(Math.max(shown, real) + LEVEL_SHOWN_STEP, real >= 100 ? 100 : 99);
+  return Math.min(Math.max(shown, real) + LEVEL_SHOWN_STEP, real >= 100 ? 100 : Math.max(shown, 99));
 }
 
 /** What is drawn: the larger of the stored standing and the real percent. */

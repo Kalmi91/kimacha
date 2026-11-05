@@ -33,7 +33,7 @@ export default function LevelStanding({
     [level, learnedLang]
   );
   const pct = useLevelShown(`${contentLang}→${learnedLang}`, level, levelPercent(ids, evidence), evidence);
-  if (ids.length === 0) return null;
+  if (ids.length === 0 || pct === null) return null;
   return (
     <View testID={`grammar-level-standing-${level}`} style={styles.row}>
       <Text testID={`grammar-level-standing-pct-${level}`} style={[styles.pct, { color: g.brutal ? g.mu : colors.tabIconDefault }]}>{`${shownLabel(pct)}%`}</Text>

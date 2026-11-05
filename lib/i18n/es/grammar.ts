@@ -154,6 +154,7 @@ const es: typeof en = {
     weakestLine: (title: string, pct: number) => `${title} · ${pct}%`,
     roundTopics: 'Temas de esta ronda',
     roundTopicRow: (right: number, asked: number) => `${right}/${asked}`,
+    topicFew: 'nuevo, pocas respuestas',
     topicDelta: (d: number) => (d > 0 ? `▲ +${d} pts` : d < 0 ? `▼ ${d} pts` : `= 0 pts`),
     nextRound: (n: number) => `Otras ${n}`,
     practiceButton: (n: number) => `Practicar esto · ${n}`,

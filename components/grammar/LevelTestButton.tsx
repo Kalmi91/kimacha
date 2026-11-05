@@ -41,7 +41,7 @@ export default function LevelTestButton({
   const pct = useLevelShown(`${contentLang}→${learnedLang}`, level, levelPercent(ids, evidence), evidence);
   if (ids.length === 0) return null;
   const done = levelDone(ids, evidence, (id) => topicKindCount(learnedLang, contentLang, id));
-  const label = `${done ? '✓ ' : ''}🎯 ${t().levelTest.button} · ${shownLabel(pct)}%`;
+  const label = `${done ? '✓ ' : ''}🎯 ${t().levelTest.button}${pct === null ? '' : ` · ${shownLabel(pct)}%`}`;
   const open = () => router.push(`/grammar/level-test?level=${level}` as never);
   if (g.brutal) {
     return (

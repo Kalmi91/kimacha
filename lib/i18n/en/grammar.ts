@@ -169,6 +169,7 @@ export default {
     weakestLine: (title: string, pct: number) => `${title} · ${pct}%`,
     roundTopics: 'Topics this round',
     roundTopicRow: (right: number, asked: number) => `${right}/${asked}`,
+    topicFew: 'new, too few answers',
     topicDelta: (d: number) => (d > 0 ? `▲ +${d} pts` : d < 0 ? `▼ ${d} pts` : `= 0 pts`),
     nextRound: (n: number) => `Next ${n}`,
     practiceButton: (n: number) => `Practice this · ${n}`,

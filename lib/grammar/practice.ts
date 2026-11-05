@@ -34,13 +34,15 @@ export function buildPractice(
   const item = lesson.items.find((i) => i.id === missed.id);
   const table = item && isFormItem(item) ? lesson.body.find((b) => b.kind === 'table' && b.id === item.table) : undefined;
   if (item && isFormItem(item) && table && table.kind === 'table' && isPersonTable(table)) {
-    // a topic whose tables hold several verbs (ser and estar): the missed verb's column first, then the column of every
-    // other verb the topic asks in a person table, so all forms of each of those verbs are practised (FB590)
+    // a topic whose tables hold several verbs (ser and estar on two tables, ser/ir/ver on one): the missed verb's column
+    // first, then the column of every other verb the topic asks in a person table (the missed table's other verbs before
+    // the other tables), so all forms of each of those verbs are practised (FB590)
     const columns: { table: typeof table; verb: string }[] = [{ table, verb: item.verb }];
-    for (const b of lesson.body) {
-      if (b.kind !== 'table' || b.id === table.id || !isPersonTable(b)) continue;
+    const tables = [table, ...lesson.body.filter((b) => b.kind === 'table' && b.id !== table.id)];
+    for (const b of tables) {
+      if (b.kind !== 'table' || !isPersonTable(b)) continue;
       const verbs = new Set(lesson.items.filter((i): i is FormItem => isFormItem(i) && i.table === b.id).map((i) => i.verb));
-      for (const verb of verbs) columns.push({ table: b, verb });
+      for (const verb of verbs) if (!(b === table && verb === item.verb)) columns.push({ table: b, verb });
     }
     for (const col of columns) {
       const ci = askedColumn(col.table, col.verb);
@@ -53,7 +55,7 @@ export function buildPractice(
         const mine = col.table === table && col.verb === item.verb;
         const gen: FormItem = {
           kind: 'form',
-          id: `${mine ? item.id : `${item.id}:${col.table.id}`}:p${ri}`,
+          id: `${mine ? item.id : `${item.id}:${col.table.id}:${col.verb}`}:p${ri}`,
           verb: col.verb,
           person: row[0],
           answer,

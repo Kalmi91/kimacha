@@ -6,19 +6,24 @@ import { levelShownKey, parseShownPct, shownPctOf } from '@/lib/grammar/levelTes
 
 /**
  * The standing of a level (FB616): the stored, never-sinking number of the level test (lib/grammar/levelTest.ts nextShownPct),
- * at least the real percent. Reloaded whenever `reload` (the screen's evidence map, a new one on every focus) changes, so the syllabus header and the test button show the
- * same number as the test's bar after coming back from it.
+ * at least the real percent. `null` until the stored value of THIS pair and level is read (so nothing is drawn with the real
+ * percent first and then jumps); a failed read counts as "nothing stored". Reloaded whenever `reload` (the screen's evidence
+ * map, a new one on every focus) changes; the value of another pair or level is never shown.
  */
-export function useLevelShown(pair: string, level: string, real: number, reload: unknown): number {
-  const [stored, setStored] = useState<number | null>(null);
+export function useLevelShown(pair: string, level: string, real: number, reload: unknown): number | null {
+  const key = levelShownKey(pair, level);
+  const [stored, setStored] = useState<{ key: string; value: number | null } | null>(null);
   useEffect(() => {
     let alive = true;
-    loadResumeValue(getDb(), levelShownKey(pair, level)).then((raw) => {
-      if (alive) setStored(parseShownPct(raw));
-    });
+    loadResumeValue(getDb(), key)
+      .then((raw) => parseShownPct(raw))
+      .catch(() => null)
+      .then((value) => {
+        if (alive) setStored({ key, value });
+      });
     return () => {
       alive = false;
     };
-  }, [pair, level, reload]);
-  return shownPctOf(stored, real);
+  }, [key, reload]);
+  return stored && stored.key === key ? shownPctOf(stored.value, real) : null;
 }

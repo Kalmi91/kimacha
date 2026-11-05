@@ -30,8 +30,10 @@ import {
   pickLevelNext,
   recordRoundAnswer,
   roundTopicRows,
+  shownLabel,
   shownPctOf,
   topicShare,
+  weakestTopic,
   type LevelRound,
 } from '@/lib/grammar/levelTest';
 import { levelTestCtx } from '@/lib/grammar/levelTestView';
@@ -137,7 +139,7 @@ export default function LevelTestScreen() {
       const savedShown = parseShownPct(await loadResumeValue(db, levelShownKey(pair, lvl)));
       if (!alive) return;
       setShown(savedShown ?? 0);
-      setRound(saved ?? { n: 0, right: 0, startPct: levelPercent(levelTestCtx(d, sd, lvl, ev).topics.map((tp) => tp.id), ev) });
+      setRound(saved ?? { n: 0, right: 0, startPct: shownPctOf(savedShown, levelPercent(levelTestCtx(d, sd, lvl, ev).topics.map((tp) => tp.id), ev)) });
       setLevel(lvl);
       setSeed(sd);
       setEvidence(ev);
@@ -319,6 +321,9 @@ export default function LevelTestScreen() {
   if (roundEnd) {
     // one row per topic asked in this round, weakest first (FB596); honest: it can go down while the level bar does not
     const rows = roundTopicRows(round.topics, evidence);
+    // a round saved before the topic record (or one the rows do not cover): the old weakest-topic line stays as the fallback
+    const covered = rows.reduce((sum, r) => sum + r.n, 0) >= round.n;
+    const weak = covered ? null : weakestTopic(ids, evidence);
     return shell(
       <View style={styles.flex}>
         {headerFor('round-end')}
@@ -327,7 +332,7 @@ export default function LevelTestScreen() {
           <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
             <Text style={[styles.line, { color: colors.textMuted }]}>{s.roundDone}</Text>
             <Text testID="level-test-round-score" style={[styles.title, { color: colors.text }]}>{s.roundScore(round.right, LEVEL_ROUND_SIZE)}</Text>
-            <Text testID="level-test-round-levels" style={[styles.line, { color: colors.text }]}>{s.roundLevels(level, round.startPct, pct)}</Text>
+            <Text testID="level-test-round-levels" style={[styles.line, { color: colors.text }]}>{s.roundLevels(level, shownLabel(round.startPct), shownLabel(shownPctOf(shown, pct)))}</Text>
           </Card>
           {rows.length > 0 ? (
             <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
@@ -345,19 +350,25 @@ export default function LevelTestScreen() {
                   <Text testID={`level-test-round-topic-score-${r.id}`} style={[styles.topicScore, { color: colors.text }]}>{s.roundTopicRow(r.right, r.n)}</Text>
                   <Text
                     testID={`level-test-round-topic-delta-${r.id}`}
-                    style={[styles.topicDelta, { color: r.delta > 0 ? colors.success : r.delta < 0 ? colors.danger : colors.textMuted }]}
+                    style={[styles.topicDelta, { color: r.delta === null ? colors.textMuted : r.delta > 0 ? colors.success : r.delta < 0 ? colors.danger : colors.textMuted }]}
                   >
-                    {s.topicDelta(r.delta)}
+                    {r.delta === null ? s.topicFew : s.topicDelta(r.delta)}
                   </Text>
                 </Pressable>
               ))}
+            </Card>
+          ) : null}
+          {weak ? (
+            <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
+              <Text style={[styles.line, { color: colors.textMuted }]}>{s.weakest}</Text>
+              <Text testID="level-test-round-weakest" style={[styles.line, { color: colors.text }]}>{s.weakestLine(titleOf(weak.id), weak.pct)}</Text>
             </Card>
           ) : null}
           <ExamButton
             testID="level-test-round-next"
             label={s.nextRound(LEVEL_ROUND_SIZE)}
             onPress={() => {
-              const fresh = { n: 0, right: 0, startPct: pct };
+              const fresh = { n: 0, right: 0, startPct: shownPctOf(shown, pct) };
               setRound(fresh);
               saveRound(fresh);
             }}

@@ -131,4 +131,20 @@ describe('buildPractice over the real lessons of all four courses', () => {
     expect(tasks.length).toBe(PRACTICE_SIZE);
     expect(tasks[0].kind).toBe('form');
   });
+  it('several verbs on ONE table (imperfecto: ser / ir / ver): every verb column is practised, the missed verb first (FB590)', () => {
+    const lesson = lessonFor('es', 'imperfecto')!;
+    const table = lesson.body.find((b) => b.kind === 'table' && b.id === 'imperfecto-irregular');
+    if (!table || table.kind !== 'table') throw new Error('table');
+    const miss = lesson.items.find((i) => i.kind === 'form' && i.table === 'imperfecto-irregular' && i.verb === 'ir')!;
+    const tasks = buildPractice(all('imperfecto').find((q) => q.id === miss.id)!, lesson, O);
+    const answers = tasks.map((q) => (q.view.card === 'type' ? q.view.answer : ''));
+    const col = (verb: string) => {
+      const ci = table.header.findIndex((h) => h.es === verb);
+      return table.rows.filter((r) => !/vosotr/i.test(r[0])).map((r) => r[ci].split(' / ')[0].trim());
+    };
+    expect(answers.slice(0, 5)).toEqual(col('ir')); // the missed verb first
+    for (const verb of ['ser', 'ver']) for (const a of col(verb)) expect(answers).toContain(a);
+    expect(new Set(tasks.map((q) => q.id)).size).toBe(tasks.length);
+    expect(tasks.length).toBeLessThanOrEqual(PRACTICE_SIZE);
+  });
 });

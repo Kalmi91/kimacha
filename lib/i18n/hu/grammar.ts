@@ -154,6 +154,7 @@ const hu: typeof en = {
     weakestLine: (title: string, pct: number) => `${title} · ${pct}%`,
     roundTopics: 'A kör témái',
     roundTopicRow: (right: number, asked: number) => `${right}/${asked}`,
+    topicFew: 'új, kevés válasz',
     topicDelta: (d: number) => (d > 0 ? `▲ +${d} pont` : d < 0 ? `▼ ${d} pont` : `= 0 pont`),
     nextRound: (n: number) => `Következő ${n}`,
     practiceButton: (n: number) => `Gyakorold ezt · ${n}`,

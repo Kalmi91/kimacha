@@ -521,14 +521,14 @@ describe.each(['brand', 'classic'] as const)('grammar level test (%s palette)', 
       expect(text('level-test-header')).toBe('A1 · 1/20');
       await answer(true);
       expect(text('level-test-header')).toBe('A1 · 1/20');
-      expect(barPct()).toBeCloseTo(8.3, 5); // 1 right of 1 moves the level to 8 (33 / 4 topics), and the standing grows 0.3 on top
+      expect(barPct()).toBeCloseTo(8.5, 5); // 1 right of 1 moves the level to 8 (33 / 4 topics), and the standing grows 0.5 on top
       await next();
       expect(text('level-test-header')).toBe('A1 · 2/20');
       await answerNext(false);
       expect(text('level-test-header')).toBe('A1 · 3/20');
-      expect(barPct()).toBeCloseTo(8.3, 5); // a wrong answer leaves it where it was
+      expect(barPct()).toBeCloseTo(8.5, 5); // a wrong answer leaves it where it was
       expect(await saved()).toEqual({ n: 2, right: 1, startPct: 0, topics: expect.any(Object) });
-      expect(await loadResumeValue(getDb(), shownKey('A1'))).toBeCloseTo(8.3, 5);
+      expect(await loadResumeValue(getDb(), shownKey('A1'))).toBeCloseTo(8.5, 5);
     });
 
     it('re-entry mid-round: the position and the right count survive leaving, and a damaged value starts a new round', async () => {
@@ -588,6 +588,45 @@ describe.each(['brand', 'classic'] as const)('grammar level test (%s palette)', 
       expect(screen.queryByTestId('exam-text')).toBeNull();
     });
 
+    it('the round end uses the standing the bar shows, at the start and now, not the real percent (FB593, FB594)', async () => {
+      await saveResumeValue(getDb(), KEY, { n: 19, right: 10, startPct: 40.2, topics: { 'lt-2': { n: 19, right: 10, start: 50 } } });
+      await saveResumeValue(getDb(), shownKey('A1'), 41.5);
+      await open();
+      await answer(true);
+      await next();
+      expect(text('level-test-round-levels')).toBe('A1 level: 40% → 42%'); // 41.5 + 0.5, and the bar is drawn at that
+      expect(Math.floor(barPct())).toBe(42);
+    });
+
+    it('a topic with too few answers shows the right/asked count and a plain marker, no point change (FB596)', async () => {
+      await nearEnd();
+      await seedEvidence('lt-3', ['c']);
+      await saveResumeValue(getDb(), KEY, { n: 19, right: 10, startPct: 60, topics: { 'lt-3': { n: 1, right: 1, start: 0 } } });
+      await open();
+      await answer(true);
+      await next();
+      expect(text('level-test-round-topic-score-lt-3')).toBe('1/1');
+      expect(text('level-test-round-topic-delta-lt-3')).toBe('new, too few answers');
+    });
+
+    it('a round saved before the topic record keeps the weakest-topic line; a fully recorded round does not need it', async () => {
+      await nearEnd();
+      await saveResumeValue(getDb(), KEY, { n: 19, right: 10, startPct: 60 });
+      await open();
+      await answer(true);
+      await next();
+      expect(text('level-test-round-weakest')).toMatch(/ · \d+%$/);
+      expect(screen.getAllByTestId(/^level-test-round-topic-lt-\d$/).length).toBe(1); // only this visit's answer is recorded
+
+      await press('level-test-round-leave');
+      await saveResumeValue(getDb(), KEY, { n: 19, right: 10, startPct: 60, topics: { 'lt-2': { n: 19, right: 10, start: 50 } } });
+      mockBack.mockClear();
+      await open();
+      await answer(true);
+      await next();
+      expect(screen.queryByTestId('level-test-round-weakest')).toBeNull();
+    });
+
     it('Next 20 starts a fresh round on the next question; Leave goes back and the finished round is not shown again', async () => {
       await nearEnd();
       const view = await open();
@@ -596,7 +635,8 @@ describe.each(['brand', 'classic'] as const)('grammar level test (%s palette)', 
       await press('level-test-round-next');
       expect(text('level-test-header')).toBe('A1 · 1/20');
       expect(screen.getByTestId('exam-text')).toBeTruthy();
-      expect(await saved()).toEqual({ n: 0, right: 0, startPct: Number(pctNow) });
+      expect(await saved()).toEqual({ n: 0, right: 0, startPct: expect.any(Number) });
+      expect(Math.floor(((await saved()) as { startPct: number }).startPct)).toBe(Number(pctNow)); // the new round starts at the standing the bar showed
       view.unmount();
 
       await saveResumeValue(getDb(), KEY, { n: 20, right: 12, startPct: 30 });
@@ -633,16 +673,16 @@ describe.each(['brand', 'classic'] as const)('grammar level test (%s palette)', 
 
     it('the wrong-answer card offers "Practice this · N" below Next, a right answer does not', async () => {
       await typeWrongForm();
-      // 3 forms of the verb column (rows of the table) + the 2 other form items
-      expect(screen.getByTestId('level-test-practice')).toHaveTextContent('Practice this · 5');
+      // the forms of BOTH verbs of the table (una cosa, varias cosas), the missed verb first, then the other form items
+      expect(screen.getByTestId('level-test-practice')).toHaveTextContent('Practice this · 8');
     });
 
-    it('Practice shows the rule, counts 1/5, writes no evidence, leaves the percent and the round alone; ✕ lands on the next test question', async () => {
+    it('Practice shows the rule, counts 1/8, writes no evidence, leaves the percent and the round alone; ✕ lands on the next test question', async () => {
       await typeWrongForm();
       const before = await evidenceNow();
       const bar = barPct();
       await press('level-test-practice');
-      expect(text('level-practice-header')).toBe('Practice · 1/5');
+      expect(text('level-practice-header')).toBe('Practice · 1/8');
       expect(screen.queryByTestId('level-test-table') ?? screen.queryByTestId('level-practice-rule')).toBeTruthy();
       expect(text('fb-card')).toMatch(/^grammar-level-practice:B1:lt5-f\d \| en→es \| A1$/);
       // FB590: with the keyboard open the rule box is gone and the question stays; it comes back when the keyboard closes
@@ -694,13 +734,13 @@ describe.each(['brand', 'classic'] as const)('grammar level test (%s palette)', 
         await press('exam-dont-know');
         await press('level-test-next');
       }
-      // each of the first 3 misses came back 3 places later (the total is 8 now); the last 2 are still to be missed
-      expect(text('level-practice-header')).toBe('Practice · 6/8');
-      for (let i = 0; i < 5; i++) {
+      // each of the first 3 misses came back 3 places later (the total is 11 now); the other 5 are still to be missed
+      expect(text('level-practice-header')).toBe('Practice · 6/11');
+      for (let i = 0; i < 11; i++) {
         await press('exam-dont-know');
         await press('level-test-next');
       }
-      expect(text('level-practice-end')).toBe('0 of 10 right');
+      expect(text('level-practice-end')).toBe('0 of 16 right');
       await press('level-practice-back');
       expect(screen.queryByTestId('level-practice-end')).toBeNull();
       expect(text('level-test-header')).toMatch(/· 2\/20$/);

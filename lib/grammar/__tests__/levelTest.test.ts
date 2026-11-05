@@ -268,10 +268,10 @@ describe('levelPercent moves with every answer', () => {
 
 // FB593/FB594/FB616: the level's standing, the number on the test's bar, the test button and the syllabus header.
 describe('the level standing (shown percent)', () => {
-  it('a right answer adds 0.3 on top of the larger of the standing and the real percent; a wrong one changes nothing', () => {
-    expect(nextShownPct(40, 38, true)).toBeCloseTo(40.3, 5);
-    expect(nextShownPct(30, 38, true)).toBeCloseTo(38.3, 5); // the real percent overtook the stored standing
-    expect(nextShownPct(40.3, 38, false)).toBe(40.3);
+  it('a right answer adds 0.5 on top of the larger of the standing and the real percent; a wrong one changes nothing', () => {
+    expect(nextShownPct(40, 38, true)).toBeCloseTo(40.5, 5);
+    expect(nextShownPct(30, 38, true)).toBeCloseTo(38.5, 5); // the real percent overtook the stored standing
+    expect(nextShownPct(40.5, 38, false)).toBe(40.5);
     expect(nextShownPct(0, 0, false)).toBe(0);
   });
 
@@ -292,6 +292,12 @@ describe('the level standing (shown percent)', () => {
     expect(nextShownPct(100, 100, true)).toBe(100);
   });
 
+  it('a stored 100 stays 100 when the real percent fell below it: right or wrong answers never push it down', () => {
+    expect(nextShownPct(100, 90, true)).toBe(100);
+    expect(nextShownPct(100, 90, false)).toBe(100);
+    expect(nextShownPct(99.5, 60, true)).toBe(99.5);
+  });
+
   it('every right answer moves it (a small step each time), on the way from 0', () => {
     let shown = 0;
     const seen: number[] = [];
@@ -300,7 +306,7 @@ describe('the level standing (shown percent)', () => {
       seen.push(shown);
     }
     expect(seen.every((v, i) => v > (seen[i - 1] ?? 0))).toBe(true);
-    expect(shownLabel(seen[3])).toBe(1); // 1.2
+    expect(shownLabel(seen[3])).toBe(2); // 2.0
   });
 
   it('draws the larger of the standing and the real percent; the label never rounds up to the next point', () => {
@@ -335,6 +341,11 @@ describe('the round end topic rows', () => {
     expect(rows[0]).toEqual({ id: 'a', n: 4, right: 2, delta: -25 });
     expect(rows[1].delta).toBe(67);
     expect(rows[2].delta).toBe(0);
+  });
+
+  it('a topic with fewer than 3 answers has no point change (its share is right/3, not a percent): delta is null, right/asked stays', () => {
+    const rows = roundTopicRows({ a: { n: 1, right: 1, start: 0 }, b: { n: 2, right: 2, start: 0 } }, evidenceOf({ a: evOf(['c']), b: evOf(['c', 'c']) }));
+    expect(rows.map((r) => [r.id, r.n, r.right, r.delta])).toEqual([['a', 1, 1, null], ['b', 2, 2, null]]);
   });
 
   it('is empty for a round without a record (saved before) and parses with or without it', () => {
