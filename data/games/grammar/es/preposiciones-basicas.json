@@ -404,18 +404,222 @@
         { "es": "al / del", "en": "a + el / de + el contraction" }
       ]
     },
-    { "id": "pb-form-01", "kind": "form", "verb": "forma", "person": "a + el", "answer": "al", "table": "contracciones" },
-    { "id": "pb-form-02", "kind": "form", "verb": "forma", "person": "a + la", "answer": "a la", "table": "contracciones" },
-    { "id": "pb-form-03", "kind": "form", "verb": "forma", "person": "a + los", "answer": "a los", "table": "contracciones" },
-    { "id": "pb-form-04", "kind": "form", "verb": "forma", "person": "a + las", "answer": "a las", "table": "contracciones" },
-    { "id": "pb-form-05", "kind": "form", "verb": "forma", "person": "de + el", "answer": "del", "table": "contracciones" },
-    { "id": "pb-form-06", "kind": "form", "verb": "forma", "person": "de + la", "answer": "de la", "table": "contracciones" },
-    { "id": "pb-form-07", "kind": "form", "verb": "forma", "person": "de + los", "answer": "de los", "table": "contracciones" },
-    { "id": "pb-form-08", "kind": "form", "verb": "forma", "person": "de + las", "answer": "de las", "table": "contracciones" },
-    { "id": "pb-form-09", "kind": "form", "verb": "forma", "person": "a + el", "answer": "al", "table": "contracciones" },
-    { "id": "pb-form-10", "kind": "form", "verb": "forma", "person": "de + el", "answer": "del", "table": "contracciones" },
-    { "id": "pb-form-11", "kind": "form", "verb": "forma", "person": "a + la", "answer": "a la", "table": "contracciones" },
-    { "id": "pb-form-12", "kind": "form", "verb": "forma", "person": "de + la", "answer": "de la", "table": "contracciones" },
+    {
+      "id": "pb-form-01",
+      "kind": "form",
+      "verb": "forma",
+      "person": "a + el",
+      "answer": "al",
+      "table": "contracciones",
+      "wrong": {
+        "a el": {
+          "en": "A + el must merge into one word: al.",
+          "es": "A + el se unen siempre en una sola palabra: al."
+        },
+        "del": {
+          "en": "Del is the contraction of de + el. Here the preposition is a: al.",
+          "es": "Del es la contracción de de + el. Aquí la preposición es a: al."
+        }
+      }
+    },
+    {
+      "id": "pb-form-02",
+      "kind": "form",
+      "verb": "forma",
+      "person": "a + la",
+      "answer": "a la",
+      "table": "contracciones",
+      "wrong": {
+        "al": {
+          "en": "Al is only for a + el. With la nothing merges: a la.",
+          "es": "Al es solo para a + el. Con la no se une nada: a la."
+        },
+        "ala": {
+          "en": "With this article nothing merges: the preposition and the article stay two separate words: a la.",
+          "es": "Con este artículo no se une nada: la preposición y el artículo quedan como dos palabras separadas: a la."
+        }
+      }
+    },
+    {
+      "id": "pb-form-03",
+      "kind": "form",
+      "verb": "forma",
+      "person": "a + los",
+      "answer": "a los",
+      "table": "contracciones",
+      "wrong": {
+        "al": {
+          "en": "Al is only for a + el. With los nothing merges: a los.",
+          "es": "Al es solo para a + el. Con los no se une nada: a los."
+        },
+        "alos": {
+          "en": "With this article nothing merges: the preposition and the article stay two separate words: a los.",
+          "es": "Con este artículo no se une nada: la preposición y el artículo quedan como dos palabras separadas: a los."
+        }
+      }
+    },
+    {
+      "id": "pb-form-04",
+      "kind": "form",
+      "verb": "forma",
+      "person": "a + las",
+      "answer": "a las",
+      "table": "contracciones",
+      "wrong": {
+        "al": {
+          "en": "Al is only for a + el. With las nothing merges: a las.",
+          "es": "Al es solo para a + el. Con las no se une nada: a las."
+        },
+        "alas": {
+          "en": "Alas is a different word (wings). The preposition and the article stay two words: a las.",
+          "es": "Alas es otra palabra (wings). La preposición y el artículo quedan como dos palabras: a las."
+        }
+      }
+    },
+    {
+      "id": "pb-form-05",
+      "kind": "form",
+      "verb": "forma",
+      "person": "de + el",
+      "answer": "del",
+      "table": "contracciones",
+      "wrong": {
+        "de el": {
+          "en": "De + el must merge into one word: del.",
+          "es": "De + el se unen siempre en una sola palabra: del."
+        },
+        "al": {
+          "en": "Al is the contraction of a + el. Here the preposition is de: del.",
+          "es": "Al es la contracción de a + el. Aquí la preposición es de: del."
+        }
+      }
+    },
+    {
+      "id": "pb-form-06",
+      "kind": "form",
+      "verb": "forma",
+      "person": "de + la",
+      "answer": "de la",
+      "table": "contracciones",
+      "wrong": {
+        "del": {
+          "en": "Del is only for de + el. With la nothing merges: de la.",
+          "es": "Del es solo para de + el. Con la no se une nada: de la."
+        },
+        "dela": {
+          "en": "With this article nothing merges: the preposition and the article stay two separate words: de la.",
+          "es": "Con este artículo no se une nada: la preposición y el artículo quedan como dos palabras separadas: de la."
+        }
+      }
+    },
+    {
+      "id": "pb-form-07",
+      "kind": "form",
+      "verb": "forma",
+      "person": "de + los",
+      "answer": "de los",
+      "table": "contracciones",
+      "wrong": {
+        "del": {
+          "en": "Del is only for de + el. With los nothing merges: de los.",
+          "es": "Del es solo para de + el. Con los no se une nada: de los."
+        },
+        "delos": {
+          "en": "With this article nothing merges: the preposition and the article stay two separate words: de los.",
+          "es": "Con este artículo no se une nada: la preposición y el artículo quedan como dos palabras separadas: de los."
+        }
+      }
+    },
+    {
+      "id": "pb-form-08",
+      "kind": "form",
+      "verb": "forma",
+      "person": "de + las",
+      "answer": "de las",
+      "table": "contracciones",
+      "wrong": {
+        "del": {
+          "en": "Del is only for de + el. With las nothing merges: de las.",
+          "es": "Del es solo para de + el. Con las no se une nada: de las."
+        },
+        "delas": {
+          "en": "With this article nothing merges: the preposition and the article stay two separate words: de las.",
+          "es": "Con este artículo no se une nada: la preposición y el artículo quedan como dos palabras separadas: de las."
+        }
+      }
+    },
+    {
+      "id": "pb-form-09",
+      "kind": "form",
+      "verb": "forma",
+      "person": "a + el",
+      "answer": "al",
+      "table": "contracciones",
+      "wrong": {
+        "a el": {
+          "en": "A + el must merge into one word: al.",
+          "es": "A + el se unen siempre en una sola palabra: al."
+        },
+        "del": {
+          "en": "Del is the contraction of de + el. Here the preposition is a: al.",
+          "es": "Del es la contracción de de + el. Aquí la preposición es a: al."
+        }
+      }
+    },
+    {
+      "id": "pb-form-10",
+      "kind": "form",
+      "verb": "forma",
+      "person": "de + el",
+      "answer": "del",
+      "table": "contracciones",
+      "wrong": {
+        "de el": {
+          "en": "De + el must merge into one word: del.",
+          "es": "De + el se unen siempre en una sola palabra: del."
+        },
+        "al": {
+          "en": "Al is the contraction of a + el. Here the preposition is de: del.",
+          "es": "Al es la contracción de a + el. Aquí la preposición es de: del."
+        }
+      }
+    },
+    {
+      "id": "pb-form-11",
+      "kind": "form",
+      "verb": "forma",
+      "person": "a + la",
+      "answer": "a la",
+      "table": "contracciones",
+      "wrong": {
+        "al": {
+          "en": "Al is only for a + el. With la nothing merges: a la.",
+          "es": "Al es solo para a + el. Con la no se une nada: a la."
+        },
+        "ala": {
+          "en": "With this article nothing merges: the preposition and the article stay two separate words: a la.",
+          "es": "Con este artículo no se une nada: la preposición y el artículo quedan como dos palabras separadas: a la."
+        }
+      }
+    },
+    {
+      "id": "pb-form-12",
+      "kind": "form",
+      "verb": "forma",
+      "person": "de + la",
+      "answer": "de la",
+      "table": "contracciones",
+      "wrong": {
+        "del": {
+          "en": "Del is only for de + el. With la nothing merges: de la.",
+          "es": "Del es solo para de + el. Con la no se une nada: de la."
+        },
+        "dela": {
+          "en": "With this article nothing merges: the preposition and the article stay two separate words: de la.",
+          "es": "Con este artículo no se une nada: la preposición y el artículo quedan como dos palabras separadas: de la."
+        }
+      }
+    },
     {
       "kind": "why",
       "id": "pb-why-01",
