@@ -733,7 +733,17 @@
       "verb": "forma conjugada",
       "person": "Ayer, cuando vi la cuenta, yo ___ muy nervioso. (ponerse)",
       "answer": "me puse",
-      "table": "verbos-de-cambio-formas"
+      "table": "verbos-de-cambio-formas",
+      "wrong": {
+        "me hice": {
+          "en": "Hacerse is used for a change you bring about through effort or choice. Here the sentence needs a temporary change of mood or state: me puse.",
+          "es": "Hacerse se usa para un cambio que uno consigue con esfuerzo o por decisión. Aquí hace falta un cambio temporal de ánimo o de estado: me puse."
+        },
+        "me volví": {
+          "en": "Volverse is used for a lasting change of character or condition. Here the sentence needs a temporary change of mood or state: me puse.",
+          "es": "Volverse se usa para un cambio duradero de carácter o de estado. Aquí hace falta un cambio temporal de ánimo o de estado: me puse."
+        }
+      }
     },
     {
       "id": "vc-form-02",
@@ -741,7 +751,17 @@
       "verb": "forma conjugada",
       "person": "Mi abuelo ___ muy triste cada vez que escucha esa canción. (ponerse)",
       "answer": "se pone",
-      "table": "verbos-de-cambio-formas"
+      "table": "verbos-de-cambio-formas",
+      "wrong": {
+        "se vuelve": {
+          "en": "Volverse is used for a lasting change of character or condition. Here the sentence needs a temporary change of mood or state: se pone.",
+          "es": "Volverse se usa para un cambio duradero de carácter o de estado. Aquí hace falta un cambio temporal de ánimo o de estado: se pone."
+        },
+        "se hace": {
+          "en": "Hacerse is used for a change you bring about through effort or choice. Here the sentence needs a temporary change of mood or state: se pone.",
+          "es": "Hacerse se usa para un cambio que uno consigue con esfuerzo o por decisión. Aquí hace falta un cambio temporal de ánimo o de estado: se pone."
+        }
+      }
     },
     {
       "id": "vc-form-03",
@@ -749,7 +769,17 @@
       "verb": "forma conjugada",
       "person": "Mis vecinos eran alegres, pero ahora ___ muy callados. (volverse, perfecto)",
       "answer": "se han vuelto",
-      "table": "verbos-de-cambio-formas"
+      "table": "verbos-de-cambio-formas",
+      "wrong": {
+        "se han hecho": {
+          "en": "Hacerse is used for a change you bring about through effort or choice. Here the sentence needs a lasting change of character or condition: se han vuelto.",
+          "es": "Hacerse se usa para un cambio que uno consigue con esfuerzo o por decisión. Aquí hace falta un cambio duradero de carácter o de estado: se han vuelto."
+        },
+        "se han puesto": {
+          "en": "Ponerse is used for a temporary change of mood or state. Here the sentence needs a lasting change of character or condition: se han vuelto.",
+          "es": "Ponerse se usa para un cambio temporal de ánimo o de estado. Aquí hace falta un cambio duradero de carácter o de estado: se han vuelto."
+        }
+      }
     },
     {
       "id": "vc-form-04",
@@ -757,7 +787,17 @@
       "verb": "forma conjugada",
       "person": "Antes eras abierto, pero a los quince años ___ callado. (volverse)",
       "answer": "te volviste",
-      "table": "verbos-de-cambio-formas"
+      "table": "verbos-de-cambio-formas",
+      "wrong": {
+        "te hiciste": {
+          "en": "Hacerse is used for a change you bring about through effort or choice. Here the sentence needs a lasting change of character or condition: te volviste.",
+          "es": "Hacerse se usa para un cambio que uno consigue con esfuerzo o por decisión. Aquí hace falta un cambio duradero de carácter o de estado: te volviste."
+        },
+        "te pusiste": {
+          "en": "Ponerse is used for a temporary change of mood or state. Here the sentence needs a lasting change of character or condition: te volviste.",
+          "es": "Ponerse se usa para un cambio temporal de ánimo o de estado. Aquí hace falta un cambio duradero de carácter o de estado: te volviste."
+        }
+      }
     },
     {
       "id": "vc-form-05",
@@ -765,7 +805,17 @@
       "verb": "forma conjugada",
       "person": "Mi primo estudió mucho y el año pasado ___ abogado. (hacerse)",
       "answer": "se hizo",
-      "table": "verbos-de-cambio-formas"
+      "table": "verbos-de-cambio-formas",
+      "wrong": {
+        "se volvió": {
+          "en": "Volverse is used for a lasting change of character or condition. Here the sentence needs a change you bring about through effort or choice: se hizo.",
+          "es": "Volverse se usa para un cambio duradero de carácter o de estado. Aquí hace falta un cambio que uno consigue con esfuerzo o por decisión: se hizo."
+        },
+        "se puso": {
+          "en": "Ponerse is used for a temporary change of mood or state. Here the sentence needs a change you bring about through effort or choice: se hizo.",
+          "es": "Ponerse se usa para un cambio temporal de ánimo o de estado. Aquí hace falta un cambio que uno consigue con esfuerzo o por decisión: se hizo."
+        }
+      }
     },
     {
       "id": "vc-form-06",
@@ -773,7 +823,17 @@
       "verb": "forma conjugada",
       "person": "Hace diez años, mi socio y yo ___ dueños del restaurante. (hacerse)",
       "answer": "nos hicimos",
-      "table": "verbos-de-cambio-formas"
+      "table": "verbos-de-cambio-formas",
+      "wrong": {
+        "nos volvimos": {
+          "en": "Volverse is used for a lasting change of character or condition. Here the sentence needs a change you bring about through effort or choice: nos hicimos.",
+          "es": "Volverse se usa para un cambio duradero de carácter o de estado. Aquí hace falta un cambio que uno consigue con esfuerzo o por decisión: nos hicimos."
+        },
+        "nos pusimos": {
+          "en": "Ponerse is used for a temporary change of mood or state. Here the sentence needs a change you bring about through effort or choice: nos hicimos.",
+          "es": "Ponerse se usa para un cambio temporal de ánimo o de estado. Aquí hace falta un cambio que uno consigue con esfuerzo o por decisión: nos hicimos."
+        }
+      }
     },
     {
       "id": "vc-form-07",
@@ -781,7 +841,17 @@
       "verb": "forma conjugada",
       "person": "Cuando el jefe entró, todos ___ callados. (quedarse)",
       "answer": "se quedaron",
-      "table": "verbos-de-cambio-formas"
+      "table": "verbos-de-cambio-formas",
+      "wrong": {
+        "se hicieron": {
+          "en": "Hacerse is used for a change you bring about through effort or choice. Here the sentence needs a state that results from something that happened: se quedaron.",
+          "es": "Hacerse se usa para un cambio que uno consigue con esfuerzo o por decisión. Aquí hace falta un estado que resulta de algo que pasó: se quedaron."
+        },
+        "se volvieron": {
+          "en": "Volverse is used for a lasting change of character or condition. Here the sentence needs a state that results from something that happened: se quedaron.",
+          "es": "Volverse se usa para un cambio duradero de carácter o de estado. Aquí hace falta un estado que resulta de algo que pasó: se quedaron."
+        }
+      }
     },
     {
       "id": "vc-form-08",
@@ -789,7 +859,17 @@
       "verb": "forma conjugada",
       "person": "Ayer mis amigos se fueron y yo ___ solo en la ciudad. (quedarse)",
       "answer": "me quedé",
-      "table": "verbos-de-cambio-formas"
+      "table": "verbos-de-cambio-formas",
+      "wrong": {
+        "me hice": {
+          "en": "Hacerse is used for a change you bring about through effort or choice. Here the sentence needs a state that results from something that happened: me quedé.",
+          "es": "Hacerse se usa para un cambio que uno consigue con esfuerzo o por decisión. Aquí hace falta un estado que resulta de algo que pasó: me quedé."
+        },
+        "me volví": {
+          "en": "Volverse is used for a lasting change of character or condition. Here the sentence needs a state that results from something that happened: me quedé.",
+          "es": "Volverse se usa para un cambio duradero de carácter o de estado. Aquí hace falta un estado que resulta de algo que pasó: me quedé."
+        }
+      }
     },
     {
       "id": "vc-form-09",
@@ -797,7 +877,13 @@
       "verb": "forma conjugada",
       "person": "Después de la fiesta, la casa ___ un desastre. (convertirse en)",
       "answer": "se convirtió en",
-      "table": "verbos-de-cambio-formas"
+      "table": "verbos-de-cambio-formas",
+      "wrong": {
+        "se puso": {
+          "en": "Ponerse is used for a temporary change of mood or state. Here the sentence needs a complete transformation into something else: se convirtió en.",
+          "es": "Ponerse se usa para un cambio temporal de ánimo o de estado. Aquí hace falta una transformación completa en otra cosa: se convirtió en."
+        }
+      }
     },
     {
       "id": "vc-form-10",
@@ -805,7 +891,13 @@
       "verb": "forma conjugada",
       "person": "El año pasado, mi hermano y yo ___ tíos. (convertirse en)",
       "answer": "nos convertimos en",
-      "table": "verbos-de-cambio-formas"
+      "table": "verbos-de-cambio-formas",
+      "wrong": {
+        "nos pusimos": {
+          "en": "Ponerse is used for a temporary change of mood or state. Here the sentence needs a complete transformation into something else: nos convertimos en.",
+          "es": "Ponerse se usa para un cambio temporal de ánimo o de estado. Aquí hace falta una transformación completa en otra cosa: nos convertimos en."
+        }
+      }
     },
     {
       "id": "vc-form-11",
@@ -813,7 +905,13 @@
       "verb": "forma conjugada",
       "person": "Mi abuela era pobre, pero con el tiempo ___ muy rica. (llegar a ser)",
       "answer": "llegó a ser",
-      "table": "verbos-de-cambio-formas"
+      "table": "verbos-de-cambio-formas",
+      "wrong": {
+        "se puso": {
+          "en": "Ponerse is used for a temporary change of mood or state. Here the sentence needs a result reached gradually over time: llegó a ser.",
+          "es": "Ponerse se usa para un cambio temporal de ánimo o de estado. Aquí hace falta un resultado al que se llega poco a poco con el tiempo: llegó a ser."
+        }
+      }
     },
     {
       "id": "vc-form-12",
@@ -821,7 +919,13 @@
       "verb": "forma conjugada",
       "person": "Mis papás empezaron sin nada y ___ dueños de tres tiendas. (llegar a ser)",
       "answer": "llegaron a ser",
-      "table": "verbos-de-cambio-formas"
+      "table": "verbos-de-cambio-formas",
+      "wrong": {
+        "se pusieron": {
+          "en": "Ponerse is used for a temporary change of mood or state. Here the sentence needs a result reached gradually over time: llegaron a ser.",
+          "es": "Ponerse se usa para un cambio temporal de ánimo o de estado. Aquí hace falta un resultado al que se llega poco a poco con el tiempo: llegaron a ser."
+        }
+      }
     },
     {
       "kind": "why",
