@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { StyleSheet, View } from 'react-native';
 import BadgeRow from '@/components/learn/BadgeRow';
 import Colors from '@/constants/Colors';
 import { DAILY_XP_GOAL } from '@/lib/dailyXp';
@@ -27,5 +28,14 @@ export default function XpChip({ earned = 0 }: { earned?: number }) {
   }, [earned]);
   const items: Parameters<typeof BadgeRow>[0]['items'] = [{ label: s.pcic.badgeXp(xp, DAILY_XP_GOAL), tone: 'accent', accessibilityLabel: s.pcic.badgeXpA11y(xp, DAILY_XP_GOAL), tabular: true }];
   if (shown > 0) items.push({ label: s.pcic.badgeXpEarned(shown), tone: 'green', accessibilityLabel: s.pcic.badgeXpEarned(shown), tabular: true });
-  return <BadgeRow singleLine colors={colors} items={items} />;
+  return (
+    <View style={styles.row}>
+      <BadgeRow singleLine colors={colors} items={items} />
+    </View>
+  );
 }
+
+// The screens that show it have no side padding of their own at this spot: the chip must not touch the screen edge.
+const styles = StyleSheet.create({
+  row: { paddingHorizontal: 16 },
+});
