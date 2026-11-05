@@ -846,14 +846,14 @@
       "options": [
         {
           "text": {
-            "en": "yo (I)",
-            "es": "yo"
+            "en": "first person singular",
+            "es": "primera persona del singular"
           }
         },
         {
           "text": {
-            "en": "tú (you)",
-            "es": "tú"
+            "en": "second person singular, informal",
+            "es": "segunda persona del singular, informal"
           },
           "wrong": {
             "en": "If it were tú, the sentence would be 'Tú hablas tres idiomas', meaning YOU speak three languages, not me.",
@@ -862,8 +862,8 @@
         },
         {
           "text": {
-            "en": "we (nosotros)",
-            "es": "nosotros"
+            "en": "first person plural",
+            "es": "primera persona del plural"
           },
           "wrong": {
             "en": "If it were nosotros, it would say 'Hablamos tres idiomas', meaning WE speak three languages, not just me.",
@@ -885,8 +885,8 @@
       "options": [
         {
           "text": {
-            "en": "he/she/you (usted)",
-            "es": "él/ella/usted"
+            "en": "third person singular: he, she or formal you",
+            "es": "tercera persona del singular"
           },
           "wrong": {
             "en": "If it were él/ella, it would say 'Come mucha fruta', meaning HE/SHE eats a lot of fruit, not you.",
@@ -895,14 +895,14 @@
         },
         {
           "text": {
-            "en": "tú (you)",
-            "es": "tú"
+            "en": "second person singular, informal",
+            "es": "segunda persona del singular, informal"
           }
         },
         {
           "text": {
-            "en": "they/you all (ustedes)",
-            "es": "ellos/ellas/ustedes"
+            "en": "third person plural: they or you all",
+            "es": "tercera persona del plural"
           },
           "wrong": {
             "en": "If it were ellos, it would say 'Comen mucha fruta', meaning THEY eat a lot of fruit, not just you.",
@@ -924,8 +924,8 @@
       "options": [
         {
           "text": {
-            "en": "yo (I)",
-            "es": "yo"
+            "en": "first person singular",
+            "es": "primera persona del singular"
           },
           "wrong": {
             "en": "If it were yo, it would say 'Vivo en Puebla', meaning I live in Puebla, not him/her.",
@@ -934,14 +934,14 @@
         },
         {
           "text": {
-            "en": "he/she/you (usted)",
-            "es": "él/ella/usted"
+            "en": "third person singular: he, she or formal you",
+            "es": "tercera persona del singular"
           }
         },
         {
           "text": {
-            "en": "they / you all (ellos/ellas/ustedes)",
-            "es": "ellos/ellas/ustedes"
+            "en": "third person plural: they or you all",
+            "es": "tercera persona del plural"
           },
           "wrong": {
             "en": "In the plural it would say 'Viven en Puebla', meaning THEY or YOU ALL live in Puebla, not just one person.",
@@ -963,8 +963,8 @@
       "options": [
         {
           "text": {
-            "en": "yo (I)",
-            "es": "yo"
+            "en": "first person singular",
+            "es": "primera persona del singular"
           },
           "wrong": {
             "en": "If it were yo, it would say 'Trabajo los sábados', meaning I work on Saturdays, not us.",
@@ -973,14 +973,14 @@
         },
         {
           "text": {
-            "en": "we (nosotros)",
-            "es": "nosotros"
+            "en": "first person plural",
+            "es": "primera persona del plural"
           }
         },
         {
           "text": {
-            "en": "they/you all (ustedes)",
-            "es": "ellos/ellas/ustedes"
+            "en": "third person plural: they or you all",
+            "es": "tercera persona del plural"
           },
           "wrong": {
             "en": "If it were ellos, it would say 'Trabajan los sábados', meaning THEY work on Saturdays, not us.",
@@ -1002,8 +1002,8 @@
       "options": [
         {
           "text": {
-            "en": "tú (you)",
-            "es": "tú"
+            "en": "second person singular, informal",
+            "es": "segunda persona del singular, informal"
           },
           "wrong": {
             "en": "If it were tú, it would say 'Escribes cartas', meaning YOU write letters, not them.",
@@ -1012,8 +1012,8 @@
         },
         {
           "text": {
-            "en": "we (nosotros)",
-            "es": "nosotros"
+            "en": "first person plural",
+            "es": "primera persona del plural"
           },
           "wrong": {
             "en": "If it were nosotros, it would say 'Escribimos cartas', meaning WE write letters, not them.",
@@ -1022,8 +1022,8 @@
         },
         {
           "text": {
-            "en": "they/you all (ustedes)",
-            "es": "ellos/ellas/ustedes"
+            "en": "third person plural: they or you all",
+            "es": "tercera persona del plural"
           }
         }
       ],
@@ -1041,14 +1041,14 @@
       "options": [
         {
           "text": {
-            "en": "we (nosotros)",
-            "es": "nosotros"
+            "en": "first person plural",
+            "es": "primera persona del plural"
           }
         },
         {
           "text": {
-            "en": "they / you all (ellos/ustedes)",
-            "es": "ellos/ustedes"
+            "en": "third person plural: they or you all",
+            "es": "tercera persona del plural"
           },
           "wrong": {
             "en": "If the subject were ellos or ustedes, it would say 'Comen temprano los domingos', not the first-person plural comemos.",
@@ -1057,8 +1057,8 @@
         },
         {
           "text": {
-            "en": "yo (I)",
-            "es": "yo"
+            "en": "first person singular",
+            "es": "primera persona del singular"
           },
           "wrong": {
             "en": "If it were yo, it would say 'Como temprano los domingos', meaning I eat early, alone, not us.",

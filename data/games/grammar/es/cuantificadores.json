@@ -938,8 +938,8 @@
       "options": [
         {
           "text": {
-            "en": "Every one, in the plural (todos los / todas las)",
-            "es": "Cada uno, en plural (todos los / todas las)"
+            "en": "all of them taken together, in the plural",
+            "es": "todos juntos, en plural"
           },
           "wrong": {
             "en": "«Todas las noches» would mean every night. Here «toda la noche» is one single night, from start to end.",
@@ -948,8 +948,8 @@
         },
         {
           "text": {
-            "en": "Each one, always singular (cada)",
-            "es": "Cada uno, siempre singular (cada)"
+            "en": "one item at a time, always singular",
+            "es": "un elemento por separado, siempre en singular"
           },
           "wrong": {
             "en": "«Cada noche» would mean each night, again and again. «Toda la noche» is one night, all of it.",
@@ -958,8 +958,8 @@
         },
         {
           "text": {
-            "en": "The whole of one thing (todo el / toda la)",
-            "es": "Una cosa entera (todo el / toda la)"
+            "en": "The whole of one thing",
+            "es": "Una cosa entera"
           }
         }
       ],
@@ -977,8 +977,8 @@
       "options": [
         {
           "text": {
-            "en": "The whole of one thing (todo el / toda la)",
-            "es": "Una cosa entera (todo el / toda la)"
+            "en": "The whole of one thing",
+            "es": "Una cosa entera"
           },
           "wrong": {
             "en": "«Toda la semana» would be the whole week. «Cada» takes one week at a time, again and again.",
@@ -987,14 +987,14 @@
         },
         {
           "text": {
-            "en": "Each one, always singular (cada)",
-            "es": "Cada uno, siempre singular (cada)"
+            "en": "one item at a time, always singular",
+            "es": "un elemento por separado, siempre en singular"
           }
         },
         {
           "text": {
-            "en": "Every one, in the plural (todos los / todas las)",
-            "es": "Cada uno, en plural (todos los / todas las)"
+            "en": "all of them taken together, in the plural",
+            "es": "todos juntos, en plural"
           },
           "wrong": {
             "en": "«Todas las semanas» is plural and has «las». «Cada» takes a singular noun with no article.",
@@ -1016,8 +1016,8 @@
       "options": [
         {
           "text": {
-            "en": "The other one we know (el otro)",
-            "es": "El otro que ya conocemos (el otro)"
+            "en": "The other one we know",
+            "es": "El otro que ya conocemos"
           },
           "wrong": {
             "en": "«El otro libro» would be a book we already know. Without the article, «otro libro» is any other one.",
@@ -1026,8 +1026,8 @@
         },
         {
           "text": {
-            "en": "The same, not different (el mismo)",
-            "es": "Igual, no distinto (el mismo)"
+            "en": "The same, not different",
+            "es": "Igual, no distinto"
           },
           "wrong": {
             "en": "The same book would be «el mismo libro». «Otro» means a different or an extra one.",
@@ -1036,8 +1036,8 @@
         },
         {
           "text": {
-            "en": "One more, any other (otro, no article)",
-            "es": "Uno más, uno cualquiera (otro, sin artículo)"
+            "en": "One more, any other",
+            "es": "Uno más, uno cualquiera"
           }
         }
       ],
@@ -1055,14 +1055,14 @@
       "options": [
         {
           "text": {
-            "en": "The same, not different (el mismo)",
-            "es": "Igual, no distinto (el mismo)"
+            "en": "The same, not different",
+            "es": "Igual, no distinto"
           }
         },
         {
           "text": {
-            "en": "One more, any other (otro, no article)",
-            "es": "Uno más, uno cualquiera (otro, sin artículo)"
+            "en": "One more, any other",
+            "es": "Uno más, uno cualquiera"
           },
           "wrong": {
             "en": "«Otro libro» would be a different book, not the same one.",
@@ -1071,8 +1071,8 @@
         },
         {
           "text": {
-            "en": "The other one we know (el otro)",
-            "es": "El otro que ya conocemos (el otro)"
+            "en": "The other one we know",
+            "es": "El otro que ya conocemos"
           },
           "wrong": {
             "en": "«El otro libro» is the other of two. «El mismo» says it is the identical one.",
@@ -1094,8 +1094,8 @@
       "options": [
         {
           "text": {
-            "en": "A good amount, not too much (bastante)",
-            "es": "Una cantidad grande, pero no excesiva (bastante)"
+            "en": "A good amount, not too much",
+            "es": "Una cantidad grande, pero no excesiva"
           },
           "wrong": {
             "en": "«Bastante ruido» would be quite a lot of noise, but not a problem. «Demasiado» says it is more than you want.",
@@ -1104,14 +1104,14 @@
         },
         {
           "text": {
-            "en": "More than you want (demasiado)",
-            "es": "Más de lo que se quiere (demasiado)"
+            "en": "More than you want",
+            "es": "Más de lo que se quiere"
           }
         },
         {
           "text": {
-            "en": "Each one, always singular (cada)",
-            "es": "Cada uno, siempre singular (cada)"
+            "en": "one item at a time, always singular",
+            "es": "un elemento por separado, siempre en singular"
           },
           "wrong": {
             "en": "«Cada ruido» would mean each noise, one by one. «Demasiado ruido» is about the amount.",
@@ -1133,8 +1133,8 @@
       "options": [
         {
           "text": {
-            "en": "More than you want (demasiado)",
-            "es": "Más de lo que se quiere (demasiado)"
+            "en": "More than you want",
+            "es": "Más de lo que se quiere"
           },
           "wrong": {
             "en": "«Demasiado tiempo» would be too much time, more than I want. «Bastante» is a good amount.",
@@ -1143,14 +1143,14 @@
         },
         {
           "text": {
-            "en": "A good amount, not too much (bastante)",
-            "es": "Una cantidad grande, pero no excesiva (bastante)"
+            "en": "A good amount, not too much",
+            "es": "Una cantidad grande, pero no excesiva"
           }
         },
         {
           "text": {
-            "en": "The whole of one thing (todo el / toda la)",
-            "es": "Una cosa entera (todo el / toda la)"
+            "en": "The whole of one thing",
+            "es": "Una cosa entera"
           },
           "wrong": {
             "en": "«Todo el tiempo» would be all the time. «Bastante» is a large part, not the whole.",
@@ -1172,14 +1172,14 @@
       "options": [
         {
           "text": {
-            "en": "The other one we know (el otro)",
-            "es": "El otro que ya conocemos (el otro)"
+            "en": "The other one we know",
+            "es": "El otro que ya conocemos"
           }
         },
         {
           "text": {
-            "en": "One more, any other (otro, no article)",
-            "es": "Uno más, uno cualquiera (otro, sin artículo)"
+            "en": "One more, any other",
+            "es": "Uno más, uno cualquiera"
           },
           "wrong": {
             "en": "«Otra casa» (no article) would be any other house. With «la» it is the other one we both know.",
@@ -1188,8 +1188,8 @@
         },
         {
           "text": {
-            "en": "The same, not different (el mismo)",
-            "es": "Igual, no distinto (el mismo)"
+            "en": "The same, not different",
+            "es": "Igual, no distinto"
           },
           "wrong": {
             "en": "«La misma casa» would be the identical house, not a different one.",

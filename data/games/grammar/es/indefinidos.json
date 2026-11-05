@@ -849,14 +849,14 @@
       "options": [
         {
           "text": {
-            "en": "algo / nada = a thing (something / nothing)",
-            "es": "algo / nada = una cosa"
+            "en": "pronouns that stand for a thing",
+            "es": "pronombres que se refieren a una cosa"
           }
         },
         {
           "text": {
-            "en": "alguien / nadie = a person (someone / no one)",
-            "es": "alguien / nadie = una persona"
+            "en": "pronouns that stand for a person",
+            "es": "pronombres que se refieren a una persona"
           },
           "wrong": {
             "en": "Alguien stands for people; the sentence asks about a drink, which is a thing: algo.",
@@ -865,8 +865,8 @@
         },
         {
           "text": {
-            "en": "algún / ningún = before a masculine noun",
-            "es": "algún / ningún = delante de un nombre masculino"
+            "en": "forms used before a masculine noun",
+            "es": "formas que van delante de un sustantivo masculino"
           },
           "wrong": {
             "en": "Algún stands before a noun (algún día); there is no noun here, the sentence asks about a thing: algo.",
@@ -888,8 +888,8 @@
       "options": [
         {
           "text": {
-            "en": "algo / nada = a thing (something / nothing)",
-            "es": "algo / nada = una cosa"
+            "en": "pronouns that stand for a thing",
+            "es": "pronombres que se refieren a una cosa"
           },
           "wrong": {
             "en": "Nada stands for things; a person follows the a, here we see no one: nadie.",
@@ -898,14 +898,14 @@
         },
         {
           "text": {
-            "en": "alguien / nadie = a person (someone / no one)",
-            "es": "alguien / nadie = una persona"
+            "en": "pronouns that stand for a person",
+            "es": "pronombres que se refieren a una persona"
           }
         },
         {
           "text": {
-            "en": "alguno / ninguno = without a noun",
-            "es": "alguno / ninguno = sin nombre"
+            "en": "forms used without a noun",
+            "es": "formas que se usan sin sustantivo"
           },
           "wrong": {
             "en": "Alguno / ninguno refer back to a noun; there is no noun here, it is about a person: nadie.",
@@ -1054,7 +1054,7 @@
         },
         {
           "text": {
-            "en": "alguien / nadie = a person (someone / no one)",
+            "en": "alguien / nadie = a person",
             "es": "alguien / nadie = una persona"
           },
           "wrong": {
@@ -1064,8 +1064,8 @@
         },
         {
           "text": {
-            "en": "no + verb + negative word (double negative)",
-            "es": "no + verbo + palabra negativa (doble negación)"
+            "en": "no + verb + negative word",
+            "es": "no + verbo + palabra negativa"
           }
         }
       ],
@@ -1089,8 +1089,8 @@
         },
         {
           "text": {
-            "en": "no + verb + negative word (double negative)",
-            "es": "no + verbo + palabra negativa (doble negación)"
+            "en": "no + verb + negative word",
+            "es": "no + verbo + palabra negativa"
           },
           "wrong": {
             "en": "This applies to a negative word AFTER the verb (No está nadie en casa); here nadie comes before the verb, so no no.",
@@ -1099,8 +1099,8 @@
         },
         {
           "text": {
-            "en": "algo / nada = a thing (something / nothing)",
-            "es": "algo / nada = una cosa"
+            "en": "pronouns that stand for a thing",
+            "es": "pronombres que se refieren a una cosa"
           },
           "wrong": {
             "en": "Nada stands for things; here it is about people (no one is at home): nadie.",

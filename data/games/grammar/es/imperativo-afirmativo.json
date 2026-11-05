@@ -544,7 +544,7 @@
       "tr": { "en": "Speak with the doctor, please.", "es": "Hable con el doctor, por favor." },
       "options": [
         {
-          "text": { "en": "tú, regular form (same as presente third person)", "es": "tú, forma regular (igual al presente de él/ella)" },
+          "text": { "en": "tú, regular form", "es": "tú, forma regular" },
           "wrong": {
             "en": "There is no tú form in the sentence, but usted's subjunctive form: hable.",
             "es": "No hay una forma de tú en la frase, sino la forma de subjuntivo de usted: hable."
@@ -610,7 +610,7 @@
       "tr": { "en": "Let's go to the beach this weekend.", "es": "Vamos a la playa este fin de semana." },
       "options": [
         {
-          "text": { "en": "nosotros, exception: ir keeps the form vamos", "es": "nosotros, excepción: ir mantiene la forma vamos" }
+          "text": { "en": "nosotros: the verb ir is an exception and keeps the present form", "es": "nosotros: el verbo ir es una excepción y conserva la forma del presente" }
         },
         {
           "text": { "en": "usted, a form from the subjunctive", "es": "usted, forma del subjuntivo" },

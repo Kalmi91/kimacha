@@ -267,7 +267,7 @@
       "target": "Péter jön",
       "tr": { "en": "Péter is coming, not Anna.", "es": "Viene Péter, no Anna." },
       "options": [
-        { "text": { "en": "The stressed word (Péter) stands right before the verb", "es": "La palabra destacada (Péter) va justo antes del verbo" } },
+        { "text": { "en": "The stressed word stands right before the verb", "es": "La palabra destacada va justo antes del verbo" } },
         {
           "text": { "en": "Nothing is stressed: plain order, subject then verb", "es": "Nada se destaca: orden neutro, sujeto y luego verbo" },
           "wrong": {
@@ -397,7 +397,7 @@
             "es": "Con esta regla la frase sería Anna megy a boltba, con Anna justo antes del verbo. Aquí la palabra justo antes del verbo es a boltba."
           }
         },
-        { "text": { "en": "a boltba is stressed: it stands right before the verb", "es": "a boltba se destaca: va justo antes del verbo" } },
+        { "text": { "en": "The place phrase is stressed: it stands right before the verb", "es": "El complemento de lugar lleva el énfasis: va justo delante del verbo" } },
         {
           "text": { "en": "The verb is stressed, so it comes first", "es": "El verbo se destaca, así que va primero" },
           "wrong": {

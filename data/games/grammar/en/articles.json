@@ -195,14 +195,14 @@
       "options": [
         {
           "text": {
-            "en": "job: a job takes a / an",
-            "es": "profesión: la profesión lleva a / an"
+            "en": "profession: indefinite article",
+            "es": "profesión: artículo indefinido"
           }
         },
         {
           "text": {
-            "en": "the only one that exists: the",
-            "es": "lo único que existe: the"
+            "en": "only one exists: definite article",
+            "es": "solo existe uno: artículo definido"
           },
           "wrong": {
             "en": "The sentence is not about the only doctor in the world, but about what she is: her job. That takes “a doctor”, not “the doctor”.",
@@ -351,8 +351,8 @@
       "options": [
         {
           "text": {
-            "en": "job: a / an",
-            "es": "profesión: a / an"
+            "en": "profession: indefinite article",
+            "es": "profesión: artículo indefinido"
           },
           "wrong": {
             "en": "The sentence does not say what someone’s job is. The sun is a thing, and there is only one: “the sun”.",
@@ -361,14 +361,14 @@
         },
         {
           "text": {
-            "en": "the only one that exists: the",
-            "es": "lo único que existe: the"
+            "en": "only one exists: definite article",
+            "es": "solo existe uno: artículo definido"
           }
         },
         {
           "text": {
-            "en": "new, first-mentioned thing: a / an",
-            "es": "algo nuevo, mencionado por primera vez: a / an"
+            "en": "new, first-mentioned thing: indefinite article",
+            "es": "cosa nueva, mencionada por primera vez: artículo indefinido"
           },
           "wrong": {
             "en": "The sun is not “one of many”: there is only one sun, so “the”, not “a”.",
@@ -535,14 +535,14 @@
       "options": [
         {
           "text": {
-            "en": "first mention: a new thing, a / an",
-            "es": "primera mención: algo nuevo, a / an"
+            "en": "first mention: something new, indefinite article",
+            "es": "primera mención: algo nuevo, artículo indefinido"
           }
         },
         {
           "text": {
-            "en": "second mention: the",
-            "es": "segunda mención: the"
+            "en": "second mention: definite article",
+            "es": "segunda mención: artículo definido"
           },
           "wrong": {
             "en": "The marked “a bird” is the first mention of the bird; the second mention is “The bird” in the next sentence.",
@@ -551,8 +551,8 @@
         },
         {
           "text": {
-            "en": "the only one that exists: the",
-            "es": "lo único que existe: the"
+            "en": "only one exists: definite article",
+            "es": "solo existe uno: artículo definido"
           },
           "wrong": {
             "en": "It is not the only bird in the world, just a newly mentioned one: “a bird”, not “the bird”.",
@@ -778,8 +778,8 @@
       "options": [
         {
           "text": {
-            "en": "first mention: a new thing, a / an",
-            "es": "primera mención: algo nuevo, a / an"
+            "en": "first mention: something new, indefinite article",
+            "es": "primera mención: algo nuevo, artículo indefinido"
           },
           "wrong": {
             "en": "“The cat” is not a first mention: the previous sentence already introduced the cat (“a cat”).",
@@ -798,8 +798,8 @@
         },
         {
           "text": {
-            "en": "second mention: the",
-            "es": "segunda mención: the"
+            "en": "second mention: definite article",
+            "es": "segunda mención: artículo definido"
           }
         }
       ],
@@ -1008,8 +1008,8 @@
         },
         {
           "text": {
-            "en": "second mention: the",
-            "es": "segunda mención: the"
+            "en": "second mention: definite article",
+            "es": "segunda mención: artículo definido"
           },
           "wrong": {
             "en": "It is not about cats that were already mentioned, but about cats in general: no article, “Cats are nice”.",

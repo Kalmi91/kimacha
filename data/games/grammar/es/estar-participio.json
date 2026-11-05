@@ -819,8 +819,8 @@
       "options": [
         {
           "text": {
-            "en": "ser + participle = the action (passive)",
-            "es": "ser + participio = la acción (pasiva)"
+            "en": "the passive: the action itself",
+            "es": "la pasiva: la acción misma"
           },
           "wrong": {
             "en": "Ser + participle would state the action (fue abierta: someone opened it). The sentence has está: the result, it is open.",
@@ -829,14 +829,14 @@
         },
         {
           "text": {
-            "en": "estar + participle = the result, the state",
-            "es": "estar + participio = el resultado, el estado"
+            "en": "a verb of situation plus a participle: the result, the resulting condition",
+            "es": "un verbo de situación con un participio: el resultado, la condición resultante"
           }
         },
         {
           "text": {
-            "en": "estar + gerund = an action in progress",
-            "es": "estar + gerundio = una acción en curso"
+            "en": "a verb of situation plus a gerund: an action in progress",
+            "es": "un verbo de situación con un gerundio: una acción en curso"
           },
           "wrong": {
             "en": "A gerund would state a process (está abriendo: it is opening right now). The sentence has a participle (abierta), so it states the result: it is open.",
@@ -897,8 +897,8 @@
       "options": [
         {
           "text": {
-            "en": "estar + participle = the result, the state",
-            "es": "estar + participio = el resultado, el estado"
+            "en": "a verb of situation plus a participle: the result, the resulting condition",
+            "es": "un verbo de situación con un participio: el resultado, la condición resultante"
           },
           "wrong": {
             "en": "Estar + participle would state the result (está vendido: it is sold now). The sentence has fue and a point in time (el año pasado): someone sold it then, which is the action.",
@@ -907,14 +907,14 @@
         },
         {
           "text": {
-            "en": "ser + participle = the action (passive)",
-            "es": "ser + participio = la acción (pasiva)"
+            "en": "the passive: the action itself",
+            "es": "la pasiva: la acción misma"
           }
         },
         {
           "text": {
-            "en": "estar + gerund = an action in progress",
-            "es": "estar + gerundio = una acción en curso"
+            "en": "a verb of situation plus a gerund: an action in progress",
+            "es": "un verbo de situación con un gerundio: una acción en curso"
           },
           "wrong": {
             "en": "A gerund would state a process (estaba vendiendo). Here fue + participle is used, and last year shows that the action happened.",
@@ -946,8 +946,8 @@
         },
         {
           "text": {
-            "en": "estar + gerund = an action in progress",
-            "es": "estar + gerundio = una acción en curso"
+            "en": "a verb of situation plus a gerund: an action in progress",
+            "es": "un verbo de situación con un gerundio: una acción en curso"
           },
           "wrong": {
             "en": "A gerund would state a process (está haciendo). The sentence has a participle (hecha): the dinner is done, it is not being made.",
@@ -956,8 +956,8 @@
         },
         {
           "text": {
-            "en": "irregular participle: hacer → hecho (feminine: hecha)",
-            "es": "participio irregular: hacer → hecho (femenino: hecha)"
+            "en": "an irregular participle, not formed with -ido",
+            "es": "participio irregular, no se forma con -ido"
           }
         }
       ],
@@ -975,8 +975,8 @@
       "options": [
         {
           "text": {
-            "en": "the participle carries the tense (past)",
-            "es": "el participio lleva el tiempo (pasado)"
+            "en": "the participle carries the tense",
+            "es": "el participio lleva el tiempo"
           },
           "wrong": {
             "en": "The tense is not carried by the participle but by estar: estaba = past. Terminada only states the result and agrees with tarea.",
@@ -985,8 +985,8 @@
         },
         {
           "text": {
-            "en": "estar carries the tense, the participle does not express time",
-            "es": "estar lleva el tiempo, el participio no expresa tiempo"
+            "en": "the auxiliary carries the tense, the participle expresses none",
+            "es": "el auxiliar lleva el tiempo, el participio no expresa tiempo"
           }
         },
         {
@@ -1024,8 +1024,8 @@
         },
         {
           "text": {
-            "en": "mixed group (father and mother): masculine plural",
-            "es": "grupo mixto (padre y madre): masculino plural"
+            "en": "mixed group: masculine plural",
+            "es": "grupo mixto: masculino plural"
           }
         },
         {
@@ -1053,8 +1053,8 @@
       "options": [
         {
           "text": {
-            "en": "estar + cansado = someone is tired, their state",
-            "es": "estar + cansado = alguien tiene cansancio, su estado"
+            "en": "someone feels exhausted: their condition",
+            "es": "alguien siente agotamiento: su condición"
           },
           "wrong": {
             "en": "Estar + cansado would say that someone is tired (estoy cansado). But the subject of this sentence is the trip, and about a trip we say that it is tiring.",
@@ -1063,14 +1063,14 @@
         },
         {
           "text": {
-            "en": "ser + cansado = tiring, a feature of the thing",
-            "es": "ser + cansado = que cansa, una característica de la cosa"
+            "en": "something that wears you out: a characteristic of the thing",
+            "es": "algo que agota: una característica de la cosa"
           }
         },
         {
           "text": {
-            "en": "ser + participle = the action (passive)",
-            "es": "ser + participio = la acción (pasiva)"
+            "en": "the passive: the action itself",
+            "es": "la pasiva: la acción misma"
           },
           "wrong": {
             "en": "Ser + participle in a passive would state the action and name who did it with por. Here there is no action: we say a feature of the trip, that it is tiring.",

@@ -243,28 +243,28 @@
       "options": [
         {
           "text": {
-            "en": "identity, profession (ser meaning)",
-            "es": "identidad, profesión (sentido de ser)"
+            "en": "identity, profession",
+            "es": "identidad, profesión"
           }
         },
         {
           "text": {
-            "en": "location (estar meaning)",
-            "es": "lugar (sentido de estar)"
+            "en": "place",
+            "es": "lugar"
           },
           "wrong": {
-            "en": "The sentence does not say where she is, but what she is: doctor is a profession, the ser meaning. English uses “is” here too.",
-            "es": "La oración no dice dónde está, sino quién es: doctora es una profesión, el sentido de ser. El inglés también usa «is»."
+            "en": "The sentence does not say where she is, but what she is: doctor is a profession, an identity. English uses “is” here too.",
+            "es": "La oración no dice dónde está, sino quién es: doctora es una profesión, una identidad. El inglés también usa «is»."
           }
         },
         {
           "text": {
-            "en": "temporary state (estar meaning)",
-            "es": "estado pasajero (sentido de estar)"
+            "en": "passing state",
+            "es": "estado pasajero"
           },
           "wrong": {
-            "en": "Doctor is not a temporary state but a profession, a lasting classification: the ser meaning.",
-            "es": "Doctora no es un estado pasajero sino una profesión, una clasificación estable: el sentido de ser."
+            "en": "Doctor is not a passing state but a profession, a lasting classification.",
+            "es": "Doctora no es una condición pasajera sino una profesión, una clasificación estable."
           }
         }
       ],
@@ -349,28 +349,28 @@
       "options": [
         {
           "text": {
-            "en": "identity, profession (ser meaning)",
-            "es": "identidad, profesión (sentido de ser)"
+            "en": "identity, profession",
+            "es": "identidad, profesión"
           },
           "wrong": {
-            "en": "Being tired does not say who you are but how you are right now: a state, the estar meaning. English uses “am” here too.",
-            "es": "Estar cansado no dice quién eres sino cómo estás ahora: un estado, el sentido de estar. El inglés también usa «am»."
+            "en": "Being tired does not say who you are but how you are right now: a passing state. English uses “am” here too.",
+            "es": "Estar cansado no dice quién eres sino cómo estás ahora: una condición pasajera. El inglés también usa «am»."
           }
         },
         {
           "text": {
-            "en": "location (estar meaning)",
-            "es": "lugar (sentido de estar)"
+            "en": "place",
+            "es": "lugar"
           },
           "wrong": {
-            "en": "The sentence has no place in it: being tired is a state, not a location.",
-            "es": "La oración no menciona ningún lugar: estar cansado es un estado, no un lugar."
+            "en": "The sentence has no place in it: being tired is a passing state, not a place.",
+            "es": "La oración no menciona ningún lugar: estar cansado es una condición pasajera, no un lugar."
           }
         },
         {
           "text": {
-            "en": "temporary state (estar meaning)",
-            "es": "estado pasajero (sentido de estar)"
+            "en": "passing state",
+            "es": "estado pasajero"
           }
         }
       ],
@@ -541,28 +541,28 @@
       "options": [
         {
           "text": {
-            "en": "identity, profession (ser meaning)",
-            "es": "identidad, profesión (sentido de ser)"
+            "en": "identity, profession",
+            "es": "identidad, profesión"
           },
           "wrong": {
-            "en": "The sentence does not say what the book is but where it is: “on the table”, a location, the estar meaning. English uses “is” here too.",
-            "es": "La oración no dice qué es el libro sino dónde está: «on the table», un lugar, el sentido de estar. El inglés también usa «is»."
+            "en": "The sentence does not say what the book is but where it is: “on the table”, a place. English uses “is” here too.",
+            "es": "La oración no dice qué es el libro sino dónde está: «on the table», un lugar. El inglés también usa «is»."
           }
         },
         {
           "text": {
-            "en": "location (estar meaning)",
-            "es": "lugar (sentido de estar)"
+            "en": "place",
+            "es": "lugar"
           }
         },
         {
           "text": {
-            "en": "temporary state (estar meaning)",
-            "es": "estado pasajero (sentido de estar)"
+            "en": "passing state",
+            "es": "estado pasajero"
           },
           "wrong": {
-            "en": "Being on the table is not a temporary state but a location: the estar meaning.",
-            "es": "Estar en la mesa no es un estado pasajero sino un lugar: el sentido de estar."
+            "en": "Being on the table is not a passing state but a place.",
+            "es": "Estar en la mesa no es una condición pasajera sino un lugar."
           }
         }
       ],
@@ -763,14 +763,14 @@
       "options": [
         {
           "text": {
-            "en": "origin, identity (ser meaning)",
-            "es": "origen, identidad (sentido de ser)"
+            "en": "origin, identity",
+            "es": "origen, identidad"
           }
         },
         {
           "text": {
-            "en": "location (estar meaning)",
-            "es": "lugar (sentido de estar)"
+            "en": "place",
+            "es": "lugar"
           },
           "wrong": {
             "en": "“From” says where she comes from, not where she is now. If she is there now, it would be “She is in Mexico” (estar). Origin is ser.",
@@ -779,12 +779,12 @@
         },
         {
           "text": {
-            "en": "temporary state (estar meaning)",
-            "es": "estado pasajero (sentido de estar)"
+            "en": "passing state",
+            "es": "estado pasajero"
           },
           "wrong": {
-            "en": "Origin is not a temporary state but a lasting trait: the ser meaning.",
-            "es": "El origen no es un estado pasajero sino un rasgo estable: el sentido de ser."
+            "en": "Origin is not a passing state but a lasting trait.",
+            "es": "El origen no es una condición pasajera sino un rasgo estable."
           }
         }
       ],
@@ -918,28 +918,28 @@
       "options": [
         {
           "text": {
-            "en": "identity, profession (ser meaning)",
-            "es": "identidad, profesión (sentido de ser)"
+            "en": "identity, profession",
+            "es": "identidad, profesión"
           },
           "wrong": {
-            "en": "Being happy does not say who we are but how we are right now: a state, the estar meaning. English uses “are” here too.",
-            "es": "Estar contentos no dice quiénes somos sino cómo estamos ahora: un estado, el sentido de estar. El inglés también usa «are»."
+            "en": "Being happy does not say who we are but how we are right now: a passing state. English uses “are” here too.",
+            "es": "Estar contentos no dice quiénes somos sino cómo estamos ahora: una condición pasajera. El inglés también usa «are»."
           }
         },
         {
           "text": {
-            "en": "location (estar meaning)",
-            "es": "lugar (sentido de estar)"
+            "en": "place",
+            "es": "lugar"
           },
           "wrong": {
-            "en": "The sentence has no place in it: being happy is a state, not a location.",
-            "es": "La oración no menciona ningún lugar: estar contentos es un estado, no un lugar."
+            "en": "The sentence has no place in it: being happy is a passing state, not a place.",
+            "es": "La oración no menciona ningún lugar: estar contentos es una condición pasajera, no un lugar."
           }
         },
         {
           "text": {
-            "en": "temporary state (estar meaning)",
-            "es": "estado pasajero (sentido de estar)"
+            "en": "passing state",
+            "es": "estado pasajero"
           }
         }
       ],

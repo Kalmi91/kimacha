@@ -810,8 +810,8 @@
       "options": [
         {
           "text": {
-            "en": "le / les + lo, la, los, las → se lo, se la…",
-            "es": "le / les + lo, la, los, las → se lo, se la…"
+            "en": "le or les before lo, la, los, las changes form",
+            "es": "le o les delante de lo, la, los, las cambia de forma"
           },
           "wrong": {
             "en": "There is no le or les here: me does not change, only le and les turn into se. Me lo is about the order.",
@@ -820,18 +820,18 @@
         },
         {
           "text": {
-            "en": "order: indirect + direct pronoun (me lo, te la)",
-            "es": "orden: indirecto + directo (me lo, te la)"
+            "en": "order: indirect + direct pronoun",
+            "es": "orden: indirecto + directo"
           }
         },
         {
           "text": {
-            "en": "the pair stays together: before the verb, or at the end of an infinitive / gerund (accent)",
-            "es": "la pareja va junta: delante del verbo, o al final de un infinitivo / gerundio (tilde)"
+            "en": "the two pronouns can be placed far apart in the sentence",
+            "es": "los dos pronombres pueden ir lejos uno del otro en la oración"
           },
           "wrong": {
-            "en": "The pair does stand before the verb here, but that does not explain why it is me lo and not lo me: the question is the order of the pronouns.",
-            "es": "La pareja sí va delante del verbo, pero eso no explica por qué es me lo y no lo me: la cuestión es el orden de los pronombres."
+            "en": "The two pronouns never separate: they stay together as a pair, so this cannot be the reason for the order of me lo.",
+            "es": "Los dos pronombres nunca se separan: van juntos como pareja, así que esta no puede ser la razón del orden de me lo."
           }
         }
       ],
@@ -849,14 +849,14 @@
       "options": [
         {
           "text": {
-            "en": "le / les + lo, la, los, las → se lo, se la…",
-            "es": "le / les + lo, la, los, las → se lo, se la…"
+            "en": "le or les before lo, la, los, las changes form",
+            "es": "le o les delante de lo, la, los, las cambia de forma"
           }
         },
         {
           "text": {
-            "en": "order: indirect + direct pronoun (me lo, te la)",
-            "es": "orden: indirecto + directo (me lo, te la)"
+            "en": "order: indirect + direct pronoun",
+            "es": "orden: indirecto + directo"
           },
           "wrong": {
             "en": "The order (indirect + direct) holds here too, but that does not explain why it is se and not le: two pronouns with l would stand side by side.",
@@ -865,8 +865,8 @@
         },
         {
           "text": {
-            "en": "the second pronoun agrees with the thing (lo, la, los, las)",
-            "es": "el segundo pronombre concuerda con la cosa (lo, la, los, las)"
+            "en": "the second pronoun agrees with the thing",
+            "es": "el segundo pronombre concuerda con la cosa"
           },
           "wrong": {
             "en": "The marked word, se, does not agree with the thing: lo does that. Se stands in place of le.",
@@ -888,8 +888,8 @@
       "options": [
         {
           "text": {
-            "en": "order: indirect + direct pronoun (me lo, te la)",
-            "es": "orden: indirecto + directo (me lo, te la)"
+            "en": "order: indirect + direct pronoun",
+            "es": "orden: indirecto + directo"
           },
           "wrong": {
             "en": "The order (te + las) is right, but the marked las is las not because of the order but because llaves is feminine plural.",
@@ -898,18 +898,18 @@
         },
         {
           "text": {
-            "en": "the pair stays together: before the verb, or at the end of an infinitive / gerund (accent)",
-            "es": "la pareja va junta: delante del verbo, o al final de un infinitivo / gerundio (tilde)"
+            "en": "the two pronouns can be placed far apart in the sentence",
+            "es": "los dos pronombres pueden ir lejos uno del otro en la oración"
           },
           "wrong": {
-            "en": "The pair stands before the verb, but that does not explain why it is las and not lo or la: the gender and number of the thing (llaves) decide that.",
-            "es": "La pareja va delante del verbo, pero eso no explica por qué es las y no lo o la: lo decide el género y el número de la cosa (llaves)."
+            "en": "The two pronouns never separate: they stay together as a pair, so this cannot be the reason for the marked pronoun.",
+            "es": "Los dos pronombres nunca se separan: van juntos como pareja, así que esta no puede ser la razón del pronombre marcado."
           }
         },
         {
           "text": {
-            "en": "the second pronoun agrees with the thing (lo, la, los, las)",
-            "es": "el segundo pronombre concuerda con la cosa (lo, la, los, las)"
+            "en": "the second pronoun agrees with the thing",
+            "es": "el segundo pronombre concuerda con la cosa"
           }
         }
       ],
@@ -927,8 +927,8 @@
       "options": [
         {
           "text": {
-            "en": "le / les + lo, la, los, las → se lo, se la…",
-            "es": "le / les + lo, la, los, las → se lo, se la…"
+            "en": "le or les before lo, la, los, las changes form",
+            "es": "le o les delante de lo, la, los, las cambia de forma"
           },
           "wrong": {
             "en": "There is no le or les here: te does not turn into se. The marked word is written as one word with an accent because the pair attaches to the infinitive.",
@@ -937,8 +937,8 @@
         },
         {
           "text": {
-            "en": "order: indirect + direct pronoun (me lo, te la)",
-            "es": "orden: indirecto + directo (me lo, te la)"
+            "en": "order: indirect + direct pronoun",
+            "es": "orden: indirecto + directo"
           },
           "wrong": {
             "en": "The order (te + lo) is right, but what sets the marked word apart is that the pair attaches to the end of the infinitive, with an accent.",
@@ -947,8 +947,8 @@
         },
         {
           "text": {
-            "en": "the pair stays together: before the verb, or at the end of an infinitive / gerund (accent)",
-            "es": "la pareja va junta: delante del verbo, o al final de un infinitivo / gerundio (tilde)"
+            "en": "the pair stays together: before the verb, or at the end of an infinitive / gerund",
+            "es": "la pareja va junta: delante del verbo, o al final de un infinitivo / gerundio"
           }
         }
       ],
@@ -966,8 +966,8 @@
       "options": [
         {
           "text": {
-            "en": "the pair stays together: before the verb, or at the end of an infinitive / gerund (accent)",
-            "es": "la pareja va junta: delante del verbo, o al final de un infinitivo / gerundio (tilde)"
+            "en": "the pair stays together: before the verb, or at the end of an infinitive / gerund",
+            "es": "la pareja va junta: delante del verbo, o al final de un infinitivo / gerundio"
           },
           "wrong": {
             "en": "The pair stands before the verb, but the question is se: the formal Señor is a third person (le), which turns into se before la.",
@@ -976,14 +976,14 @@
         },
         {
           "text": {
-            "en": "le / les + lo, la, los, las → se lo, se la…",
-            "es": "le / les + lo, la, los, las → se lo, se la…"
+            "en": "le or les before lo, la, los, las changes form",
+            "es": "le o les delante de lo, la, los, las cambia de forma"
           }
         },
         {
           "text": {
-            "en": "the second pronoun agrees with the thing (lo, la, los, las)",
-            "es": "el segundo pronombre concuerda con la cosa (lo, la, los, las)"
+            "en": "the second pronoun agrees with the thing",
+            "es": "el segundo pronombre concuerda con la cosa"
           },
           "wrong": {
             "en": "La agrees with the thing (feminine, singular), but the marked part is se, which is the transformed le, not the gender of the thing.",
@@ -1005,8 +1005,8 @@
       "options": [
         {
           "text": {
-            "en": "order: indirect + direct pronoun (me lo, te la)",
-            "es": "orden: indirecto + directo (me lo, te la)"
+            "en": "order: indirect + direct pronoun",
+            "es": "orden: indirecto + directo"
           },
           "wrong": {
             "en": "The order (te + la) is right, but what sets the marked word apart is that the pair attaches to the end of the gerund, with an accent.",
@@ -1015,14 +1015,14 @@
         },
         {
           "text": {
-            "en": "the pair stays together: before the verb, or at the end of an infinitive / gerund (accent)",
-            "es": "la pareja va junta: delante del verbo, o al final de un infinitivo / gerundio (tilde)"
+            "en": "the pair stays together: before the verb, or at the end of an infinitive / gerund",
+            "es": "la pareja va junta: delante del verbo, o al final de un infinitivo / gerundio"
           }
         },
         {
           "text": {
-            "en": "the second pronoun agrees with the thing (lo, la, los, las)",
-            "es": "el segundo pronombre concuerda con la cosa (lo, la, los, las)"
+            "en": "the second pronoun agrees with the thing",
+            "es": "el segundo pronombre concuerda con la cosa"
           },
           "wrong": {
             "en": "La agrees with the thing, but the form of the marked word is decided by the pair attaching to the end of the gerund.",
@@ -1044,14 +1044,14 @@
       "options": [
         {
           "text": {
-            "en": "the second pronoun agrees with the thing (lo, la, los, las)",
-            "es": "el segundo pronombre concuerda con la cosa (lo, la, los, las)"
+            "en": "the second pronoun agrees with the thing",
+            "es": "el segundo pronombre concuerda con la cosa"
           }
         },
         {
           "text": {
-            "en": "le / les + lo, la, los, las → se lo, se la…",
-            "es": "le / les + lo, la, los, las → se lo, se la…"
+            "en": "le or les before lo, la, los, las changes form",
+            "es": "le o les delante de lo, la, los, las cambia de forma"
           },
           "wrong": {
             "en": "The change of le/les into se explains se, not the marked los: that agrees with the thing (pasteles), not with papás.",
@@ -1060,8 +1060,8 @@
         },
         {
           "text": {
-            "en": "the pair stays together: before the verb, or at the end of an infinitive / gerund (accent)",
-            "es": "la pareja va junta: delante del verbo, o al final de un infinitivo / gerundio (tilde)"
+            "en": "the pair stays together: before the verb, or at the end of an infinitive / gerund",
+            "es": "la pareja va junta: delante del verbo, o al final de un infinitivo / gerundio"
           },
           "wrong": {
             "en": "The pair stands before the verb, but that does not explain why it is los and not lo: the pasteles (masculine, plural) decide that.",

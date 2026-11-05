@@ -830,8 +830,8 @@
       "options": [
         {
           "text": {
-            "en": "cuyo: a possessive relative, agrees with the thing owned",
-            "es": "cuyo: relativo posesivo, concuerda con lo poseído"
+            "en": "a possessive relative that agrees with the thing owned",
+            "es": "un relativo posesivo que concuerda con lo poseído"
           }
         },
         {
@@ -846,8 +846,8 @@
         },
         {
           "text": {
-            "en": "que su: a colloquial possessive structure",
-            "es": "que su: estructura posesiva coloquial"
+            "en": "a colloquial possessive structure built with the plain relative",
+            "es": "una estructura posesiva coloquial con el relativo simple"
           },
           "wrong": {
             "en": "Que su is not standard, the sentence uses cuyos",
@@ -869,8 +869,8 @@
       "options": [
         {
           "text": {
-            "en": "el cual: refers to a masculine noun",
-            "es": "el cual: remite a un sustantivo masculino"
+            "en": "a relative with an article that refers back to a masculine noun",
+            "es": "un relativo con artículo que remite a un sustantivo masculino"
           },
           "wrong": {
             "en": "The antecedent is not a masculine noun but the whole clause",
@@ -879,14 +879,14 @@
         },
         {
           "text": {
-            "en": "lo cual: refers to a whole clause, more formal than lo que",
-            "es": "lo cual: remite a toda una frase, más formal que lo que"
+            "en": "a neuter relative that refers to a whole clause, more formal than the plain one",
+            "es": "un relativo neutro que remite a toda una frase, más formal que el simple"
           }
         },
         {
           "text": {
-            "en": "cuyo: a possessive relative",
-            "es": "cuyo: relativo posesivo"
+            "en": "a possessive relative",
+            "es": "un relativo posesivo"
           },
           "wrong": {
             "en": "There is no possession, and no noun follows lo cual",
@@ -918,8 +918,8 @@
         },
         {
           "text": {
-            "en": "cuyo: a possessive relative",
-            "es": "cuyo: relativo posesivo"
+            "en": "a possessive relative",
+            "es": "un relativo posesivo"
           },
           "wrong": {
             "en": "There is no possession: la que only connects the sentence to escuela",
@@ -928,8 +928,8 @@
         },
         {
           "text": {
-            "en": "preposition + article + que: the article agrees with the antecedent",
-            "es": "preposición + artículo + que: el artículo concuerda con el antecedente"
+            "en": "preposition + article + relative: the article agrees with the antecedent",
+            "es": "preposición + artículo + relativo: el artículo concuerda con el antecedente"
           }
         }
       ],
@@ -947,8 +947,8 @@
       "options": [
         {
           "text": {
-            "en": "lo cual: refers to a whole clause",
-            "es": "lo cual: remite a toda una frase"
+            "en": "a neuter relative after a comma that sums up the clause before it",
+            "es": "un relativo neutro tras una coma que resume la oración anterior"
           },
           "wrong": {
             "en": "Lo cual comes after a comma and a clause, here there is no clause before it",
@@ -957,14 +957,14 @@
         },
         {
           "text": {
-            "en": "lo que: the neutral form, no noun antecedent",
-            "es": "lo que: forma neutra, sin antecedente nominal"
+            "en": "the neutral form, with no noun antecedent",
+            "es": "la forma neutra, sin antecedente nominal"
           }
         },
         {
           "text": {
-            "en": "el que: refers to a masculine antecedent",
-            "es": "el que: remite a un antecedente masculino"
+            "en": "refers to a masculine antecedent, with an article",
+            "es": "remite a un antecedente masculino, con artículo"
           },
           "wrong": {
             "en": "There is no masculine antecedent for el que to refer to",
@@ -986,14 +986,14 @@
       "options": [
         {
           "text": {
-            "en": "el cual / la cual: formal, written, after a preposition",
-            "es": "el cual / la cual: formal, escrito, después de preposición"
+            "en": "a formal, written relative with an article that follows a preposition",
+            "es": "relativo formal, escrito, con artículo, que va después de preposición"
           }
         },
         {
           "text": {
-            "en": "lo cual: refers to a whole clause",
-            "es": "lo cual: remite a toda una frase"
+            "en": "a neuter relative after a comma that sums up the clause before it",
+            "es": "un relativo neutro tras una coma que resume la oración anterior"
           },
           "wrong": {
             "en": "Lo cual refers to a clause, here the antecedent is la empresa (a noun)",
@@ -1002,8 +1002,8 @@
         },
         {
           "text": {
-            "en": "cuyo: a possessive relative",
-            "es": "cuyo: relativo posesivo"
+            "en": "a possessive relative",
+            "es": "un relativo posesivo"
           },
           "wrong": {
             "en": "Cuyo expresses possession and a noun follows it; here la cual joins the preposition para to empresa",
@@ -1025,8 +1025,8 @@
       "options": [
         {
           "text": {
-            "en": "donde: a relative adverb for a place",
-            "es": "donde: adverbio relativo de lugar"
+            "en": "a relative adverb of place",
+            "es": "adverbio relativo de lugar"
           },
           "wrong": {
             "en": "Donde refers to a place, but verano means a time",
@@ -1035,14 +1035,14 @@
         },
         {
           "text": {
-            "en": "cuando: a relative adverb for a time",
-            "es": "cuando: adverbio relativo de tiempo"
+            "en": "a relative adverb of time",
+            "es": "adverbio relativo de tiempo"
           }
         },
         {
           "text": {
-            "en": "como: a relative adverb for a manner",
-            "es": "como: adverbio relativo de manera"
+            "en": "a relative adverb of manner",
+            "es": "adverbio relativo de manera"
           },
           "wrong": {
             "en": "Como refers to a manner, but verano means a time",
@@ -1064,8 +1064,8 @@
       "options": [
         {
           "text": {
-            "en": "lo cual: refers to a whole clause",
-            "es": "lo cual: remite a toda una frase"
+            "en": "a neuter relative after a comma that sums up the clause before it",
+            "es": "un relativo neutro tras una coma que resume la oración anterior"
           },
           "wrong": {
             "en": "The antecedent is hermanos (a noun), not a clause",
@@ -1074,8 +1074,8 @@
         },
         {
           "text": {
-            "en": "cuyos: a possessive relative",
-            "es": "cuyos: relativo posesivo"
+            "en": "a possessive relative",
+            "es": "un relativo posesivo"
           },
           "wrong": {
             "en": "There is no possession: dos de los cuales picks two out of hermanos",
@@ -1084,8 +1084,8 @@
         },
         {
           "text": {
-            "en": "quantifier + de + los cuales: refers to the noun antecedent",
-            "es": "cuantificador + de + los cuales: remite al antecedente nominal"
+            "en": "a quantifier plus de plus the relative with an article: refers back to the noun",
+            "es": "cuantificador + de + relativo con artículo: remite al antecedente nominal"
           }
         }
       ],

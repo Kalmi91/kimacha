@@ -608,14 +608,14 @@
       "options": [
         {
           "text": {
-            "en": "of + a number or a plural (of the three, of all)",
-            "es": "of + un número o un plural (of the three, of all)"
+            "en": "a number or a plural follows",
+            "es": "va seguido de un número o de un plural"
           }
         },
         {
           "text": {
-            "en": "in + a place or a group as a whole (in the class)",
-            "es": "in + un lugar o un grupo en conjunto (in the class)"
+            "en": "a place or a group as a whole follows",
+            "es": "va seguido de un lugar o de un grupo como un todo"
           },
           "wrong": {
             "en": "“The three” is a specific number, not a place or a group name; a number takes “of”.",
@@ -624,8 +624,8 @@
         },
         {
           "text": {
-            "en": "at + a point",
-            "es": "at + un punto"
+            "en": "a point follows",
+            "es": "va seguido de un punto"
           },
           "wrong": {
             "en": "“At” marks a point (at the door); it does not follow a superlative.",
@@ -764,8 +764,8 @@
       "options": [
         {
           "text": {
-            "en": "irregular superlative: good → the best",
-            "es": "superlativo irregular: good → the best"
+            "en": "irregular superlative: it has its own form",
+            "es": "superlativo irregular: tiene forma propia"
           }
         },
         {

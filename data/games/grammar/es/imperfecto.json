@@ -1140,14 +1140,14 @@
       "options": [
         {
           "text": {
-            "en": "yo (I)",
-            "es": "yo"
+            "en": "first person singular",
+            "es": "primera persona del singular"
           }
         },
         {
           "text": {
-            "en": "tú (you)",
-            "es": "tú"
+            "en": "second person singular, informal",
+            "es": "segunda persona del singular, informal"
           },
           "wrong": {
             "en": "If it were tú, it would say 'Hablabas español en el trabajo', meaning YOU used to speak Spanish, not me.",
@@ -1156,8 +1156,8 @@
         },
         {
           "text": {
-            "en": "we (nosotros)",
-            "es": "nosotros"
+            "en": "first person plural",
+            "es": "primera persona del plural"
           },
           "wrong": {
             "en": "If it were nosotros, it would say 'Hablábamos español en el trabajo', meaning WE used to speak, not just me.",
@@ -1183,8 +1183,8 @@
       "options": [
         {
           "text": {
-            "en": "yo (I)",
-            "es": "yo"
+            "en": "first person singular",
+            "es": "primera persona del singular"
           },
           "wrong": {
             "en": "If it were yo, it would say 'Comía fruta cada mañana', meaning I used to eat fruit, not you.",
@@ -1193,14 +1193,14 @@
         },
         {
           "text": {
-            "en": "tú (you)",
-            "es": "tú"
+            "en": "second person singular, informal",
+            "es": "segunda persona del singular, informal"
           }
         },
         {
           "text": {
-            "en": "they/you all (ustedes)",
-            "es": "ellos/ellas/ustedes"
+            "en": "third person plural: they or you all",
+            "es": "tercera persona del plural"
           },
           "wrong": {
             "en": "If it were ellos, it would say 'Comían fruta cada mañana', meaning THEY used to eat fruit, not you.",
@@ -1226,8 +1226,8 @@
       "options": [
         {
           "text": {
-            "en": "tú (you)",
-            "es": "tú"
+            "en": "second person singular, informal",
+            "es": "segunda persona del singular, informal"
           },
           "wrong": {
             "en": "If it were tú, it would say 'Vivías en Puebla', meaning YOU used to live in Puebla, not him/her.",
@@ -1236,14 +1236,14 @@
         },
         {
           "text": {
-            "en": "he/she/you (usted)",
-            "es": "él/ella/usted"
+            "en": "third person singular: he, she or formal you",
+            "es": "tercera persona del singular"
           }
         },
         {
           "text": {
-            "en": "they / you all (ellos/ustedes)",
-            "es": "ellos/ellas/ustedes"
+            "en": "third person plural: they or you all",
+            "es": "tercera persona del plural"
           },
           "wrong": {
             "en": "If it were ellos or ustedes, it would say 'Vivían en Puebla' in the plural.",
@@ -1269,8 +1269,8 @@
       "options": [
         {
           "text": {
-            "en": "yo (I)",
-            "es": "yo"
+            "en": "first person singular",
+            "es": "primera persona del singular"
           },
           "wrong": {
             "en": "If it were yo, it would say 'Hablaba todos los días', meaning I used to talk every day, not us.",
@@ -1279,14 +1279,14 @@
         },
         {
           "text": {
-            "en": "we (nosotros)",
-            "es": "nosotros"
+            "en": "first person plural",
+            "es": "primera persona del plural"
           }
         },
         {
           "text": {
-            "en": "they/you all (ustedes)",
-            "es": "ellos/ellas/ustedes"
+            "en": "third person plural: they or you all",
+            "es": "tercera persona del plural"
           },
           "wrong": {
             "en": "If it were ellos, it would say 'Hablaban todos los días', meaning THEY used to talk every day, not us.",
@@ -1312,8 +1312,8 @@
       "options": [
         {
           "text": {
-            "en": "we (nosotros)",
-            "es": "nosotros"
+            "en": "first person plural",
+            "es": "primera persona del plural"
           },
           "wrong": {
             "en": "If it were nosotros, it would say 'Íbamos al mar cada verano', meaning WE used to go to the sea, not them.",
@@ -1322,8 +1322,8 @@
         },
         {
           "text": {
-            "en": "tú (you)",
-            "es": "tú"
+            "en": "second person singular, informal",
+            "es": "segunda persona del singular, informal"
           },
           "wrong": {
             "en": "If it were tú, it would say 'Ibas al mar cada verano', meaning YOU used to go to the sea, not them.",
@@ -1332,8 +1332,8 @@
         },
         {
           "text": {
-            "en": "they/you all (ustedes)",
-            "es": "ellos/ellas/ustedes"
+            "en": "third person plural: they or you all",
+            "es": "tercera persona del plural"
           }
         }
       ],
@@ -1355,14 +1355,14 @@
       "options": [
         {
           "text": {
-            "en": "we (nosotros)",
-            "es": "nosotros"
+            "en": "first person plural",
+            "es": "primera persona del plural"
           }
         },
         {
           "text": {
-            "en": "yo (I)",
-            "es": "yo"
+            "en": "first person singular",
+            "es": "primera persona del singular"
           },
           "wrong": {
             "en": "If it were yo, it would say 'Veía la tele todas las tardes', meaning I used to watch TV, not us.",
@@ -1371,8 +1371,8 @@
         },
         {
           "text": {
-            "en": "they/you all (ustedes)",
-            "es": "ellos/ellas/ustedes"
+            "en": "third person plural: they or you all",
+            "es": "tercera persona del plural"
           },
           "wrong": {
             "en": "If it were ellos, it would say 'Veían la tele todas las tardes', meaning THEY used to watch TV, not us.",

@@ -13,6 +13,8 @@
  * confusables `members[].word`, or a `glossary[]` entry on the topic/set).
  *
  * P1 (build-blocking):
+ *   - a why item that gives the answer away: a parenthesis in any option, or the target word in the right option
+ *     only (scripts/whyGiveaway.cjs)
  *   - a target-language content word that is neither taught nor glossed
  *   - a Record<lang,string> field (title/rule/more/why/wrong/gloss/hint/
  *     mnemonic/explanation) missing one of the 2 active languages
@@ -60,7 +62,10 @@
 import { readFileSync, readdirSync, existsSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
+import { createRequire } from 'module';
 import { importTs } from './lib/importTs.mjs';
+
+const { whyGiveaways } = createRequire(import.meta.url)('./whyGiveaway.cjs');
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
@@ -807,6 +812,9 @@ function auditWhyItem(item, itemPath, lang = 'es') {
     p1.push({ path: itemPath, issue: `why item target "${item.target}" not found as a whole word in es` });
   }
 
+  // the answer must not be given away: no parenthesis in an option, and the right option does not carry the target word
+  for (const issue of whyGiveaways(item, lang === 'es' || lang === 'en' ? lang : null, { lexical: /verbos-preposicion.json/.test(itemPath) })) p1.push({ path: itemPath, issue });
+
   const enSeen = new Set();
   options.forEach((opt, i) => {
     checkLangs(opt?.text, `${itemPath} option ${i} text`);
@@ -1157,6 +1165,39 @@ if (p1.length > 0) {
 if (p2.length > 0) {
   console.log('\n--- P2 (reported) ---');
   for (const issue of p2) console.log(`  [${issue.path}] ${issue.issue}`);
+}
+
+// why items: the Hungarian/German overlays (data/games/grammar-hu|grammar-de/<course>/<lesson>.json, keyed by the English text)
+// must not bring a parenthesis or bracket back; info only: how often the right option is the unique longest one.
+{
+  const { overlayGiveaways } = createRequire(import.meta.url)('./whyGiveaway.cjs');
+  const info = [];
+  for (const course of ['es', 'en', 'de', 'hu']) {
+    const dir = join(ROOT, 'data', 'games', 'grammar', course);
+    if (!existsSync(dir)) continue;
+    let total = 0;
+    let longest = 0;
+    for (const f of readdirSync(dir).filter((x) => x.endsWith('.json'))) {
+      const lesson = JSON.parse(readFileSync(join(dir, f), 'utf8'));
+      const overlays = ['grammar-hu', 'grammar-de'].map((o) => join(ROOT, 'data', 'games', o, course, f)).filter((x) => existsSync(x)).map((x) => ({ name: x, map: JSON.parse(readFileSync(x, 'utf8')) }));
+      for (const item of lesson.items ?? []) {
+        if (item.kind !== 'why') continue;
+        total += 1;
+        const len = (o) => String(o?.text?.en ?? '').length;
+        const lens = (item.options ?? []).map(len);
+        const best = Math.max(...lens);
+        if (lens[item.correctIndex] === best && lens.filter((l) => l === best).length === 1) longest += 1;
+        for (const ov of overlays) {
+          for (const issue of overlayGiveaways(item, ov.map)) {
+            p1.push({ path: `${ov.name.replace(ROOT, '')} item ${item.id}`, issue });
+            console.log(`  [P1] ${ov.name.replace(ROOT, '')} item ${item.id}: ${issue}`);
+          }
+        }
+      }
+    }
+    if (total) info.push(`${course} ${((100 * longest) / total).toFixed(1)}%`);
+  }
+  console.log(`[info] why items whose right option is the unique longest one: ${info.join(', ')}`);
 }
 
 process.exit(p1.length > 0 ? 1 : 0);
