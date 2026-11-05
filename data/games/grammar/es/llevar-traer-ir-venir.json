@@ -701,7 +701,13 @@
       "verb": "forma verbal",
       "person": "Estoy en la oficina. Mañana ___ (tú) aquí, ¿no?",
       "answer": "vienes",
-      "table": "llevar-traer-formas"
+      "table": "llevar-traer-formas",
+      "wrong": {
+        "vas": {
+          "en": "Vas is a form of ir: movement away from the speaker. Here the movement is toward the speaker's place, so the verb is venir: vienes.",
+          "es": "Vas es una forma de ir: movimiento que se aleja de quien habla. Aquí el movimiento va hacia el lugar de quien habla, así que el verbo es venir: vienes."
+        }
+      }
     },
     {
       "id": "llt-form-02",
@@ -709,7 +715,13 @@
       "verb": "forma verbal",
       "person": "Mi tía vive en Puebla y ___ (ella) aquí en junio.",
       "answer": "viene",
-      "table": "llevar-traer-formas"
+      "table": "llevar-traer-formas",
+      "wrong": {
+        "va": {
+          "en": "Va is a form of ir: movement away from the speaker. Here the movement is toward the speaker's place, so the verb is venir: viene.",
+          "es": "Va es una forma de ir: movimiento que se aleja de quien habla. Aquí el movimiento va hacia el lugar de quien habla, así que el verbo es venir: viene."
+        }
+      }
     },
     {
       "id": "llt-form-03",
@@ -717,7 +729,13 @@
       "verb": "forma verbal",
       "person": "Cada viernes ___ (nosotros) al cine con mis amigos.",
       "answer": "vamos",
-      "table": "llevar-traer-formas"
+      "table": "llevar-traer-formas",
+      "wrong": {
+        "venimos": {
+          "en": "Venimos is a form of venir: movement toward the speaker. Here the movement is away from the speaker's place, so the verb is ir: vamos.",
+          "es": "Venimos es una forma de venir: movimiento hacia quien habla. Aquí el movimiento se aleja del lugar de quien habla, así que el verbo es ir: vamos."
+        }
+      }
     },
     {
       "id": "llt-form-04",
@@ -725,7 +743,13 @@
       "verb": "forma verbal",
       "person": "Mi hermano vive lejos y ___ (él) a su trabajo en metro.",
       "answer": "va",
-      "table": "llevar-traer-formas"
+      "table": "llevar-traer-formas",
+      "wrong": {
+        "viene": {
+          "en": "Viene is a form of venir: movement toward the speaker. Here the movement is away from the speaker's place, so the verb is ir: va.",
+          "es": "Viene es una forma de venir: movimiento hacia quien habla. Aquí el movimiento se aleja del lugar de quien habla, así que el verbo es ir: va."
+        }
+      }
     },
     {
       "id": "llt-form-05",
@@ -733,7 +757,13 @@
       "verb": "forma verbal",
       "person": "Mi abuela vive lejos y le ___ (yo) pan cada domingo.",
       "answer": "llevo",
-      "table": "llevar-traer-formas"
+      "table": "llevar-traer-formas",
+      "wrong": {
+        "traigo": {
+          "en": "Traigo is a form of traer: bringing something toward the speaker's place. Here the thing goes away from the speaker, so the verb is llevar: llevo.",
+          "es": "Traigo es una forma de traer: llevar algo hacia el lugar de quien habla. Aquí la cosa se aleja de quien habla, así que el verbo es llevar: llevo."
+        }
+      }
     },
     {
       "id": "llt-form-06",
@@ -741,7 +771,13 @@
       "verb": "forma verbal",
       "person": "Estoy en casa. ¿___ (tú) el paraguas a la oficina?",
       "answer": "llevas",
-      "table": "llevar-traer-formas"
+      "table": "llevar-traer-formas",
+      "wrong": {
+        "traes": {
+          "en": "Traes is a form of traer: bringing something toward the speaker's place. Here the thing goes away from the speaker, so the verb is llevar: llevas.",
+          "es": "Traes es una forma de traer: llevar algo hacia el lugar de quien habla. Aquí la cosa se aleja de quien habla, así que el verbo es llevar: llevas."
+        }
+      }
     },
     {
       "id": "llt-form-07",
@@ -749,7 +785,13 @@
       "verb": "forma verbal",
       "person": "Hoy no salgo de casa. ¿Me ___ (tú) pan del mercado?",
       "answer": "traes",
-      "table": "llevar-traer-formas"
+      "table": "llevar-traer-formas",
+      "wrong": {
+        "llevas": {
+          "en": "Llevas is a form of llevar: taking something away from the speaker. Here the thing comes toward the speaker's place, so the verb is traer: traes.",
+          "es": "Llevas es una forma de llevar: llevar algo lejos de quien habla. Aquí la cosa llega hacia el lugar de quien habla, así que el verbo es traer: traes."
+        }
+      }
     },
     {
       "id": "llt-form-08",
@@ -757,7 +799,13 @@
       "verb": "forma verbal",
       "person": "Los sábados ___ (nosotros) a nuestro perro al parque.",
       "answer": "llevamos",
-      "table": "llevar-traer-formas"
+      "table": "llevar-traer-formas",
+      "wrong": {
+        "traemos": {
+          "en": "Traemos is a form of traer: bringing something toward the speaker's place. Here the thing goes away from the speaker, so the verb is llevar: llevamos.",
+          "es": "Traemos es una forma de traer: llevar algo hacia el lugar de quien habla. Aquí la cosa se aleja de quien habla, así que el verbo es llevar: llevamos."
+        }
+      }
     },
     {
       "id": "llt-form-09",
@@ -765,7 +813,13 @@
       "verb": "forma verbal",
       "person": "Estamos en casa. ¿___ (ustedes) aquí el sábado?",
       "answer": "vienen",
-      "table": "llevar-traer-formas"
+      "table": "llevar-traer-formas",
+      "wrong": {
+        "van": {
+          "en": "Van is a form of ir: movement away from the speaker. Here the movement is toward the speaker's place, so the verb is venir: vienen.",
+          "es": "Van es una forma de ir: movimiento que se aleja de quien habla. Aquí el movimiento va hacia el lugar de quien habla, así que el verbo es venir: vienen."
+        }
+      }
     },
     {
       "id": "llt-form-10",
@@ -773,7 +827,13 @@
       "verb": "forma verbal",
       "person": "Mi tío está en Cancún y ___ (yo) a verlo en mayo.",
       "answer": "voy",
-      "table": "llevar-traer-formas"
+      "table": "llevar-traer-formas",
+      "wrong": {
+        "vengo": {
+          "en": "Vengo is a form of venir: movement toward the speaker. Here the movement is away from the speaker's place, so the verb is ir: voy.",
+          "es": "Vengo es una forma de venir: movimiento hacia quien habla. Aquí el movimiento se aleja del lugar de quien habla, así que el verbo es ir: voy."
+        }
+      }
     },
     {
       "id": "llt-form-11",
@@ -781,7 +841,13 @@
       "verb": "forma verbal",
       "person": "Mi hermano ___ (él) siempre regalos cuando viene a mi casa.",
       "answer": "trae",
-      "table": "llevar-traer-formas"
+      "table": "llevar-traer-formas",
+      "wrong": {
+        "lleva": {
+          "en": "Lleva is a form of llevar: taking something away from the speaker. Here the thing comes toward the speaker's place, so the verb is traer: trae.",
+          "es": "Lleva es una forma de llevar: llevar algo lejos de quien habla. Aquí la cosa llega hacia el lugar de quien habla, así que el verbo es traer: trae."
+        }
+      }
     },
     {
       "id": "llt-form-12",
@@ -789,7 +855,13 @@
       "verb": "forma verbal",
       "person": "Mañana es mi cumpleaños: mis amigos ___ (ellos) pastel a mi casa.",
       "answer": "traen",
-      "table": "llevar-traer-formas"
+      "table": "llevar-traer-formas",
+      "wrong": {
+        "llevan": {
+          "en": "Llevan is a form of llevar: taking something away from the speaker. Here the thing comes toward the speaker's place, so the verb is traer: traen.",
+          "es": "Llevan es una forma de llevar: llevar algo lejos de quien habla. Aquí la cosa llega hacia el lugar de quien habla, así que el verbo es traer: traen."
+        }
+      }
     },
     {
       "kind": "why",
