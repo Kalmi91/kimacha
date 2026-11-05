@@ -783,7 +783,17 @@
       "verb": "forma",
       "person": "Los niños salieron ___ (correr).",
       "answer": "corriendo",
-      "table": "construcciones"
+      "table": "construcciones",
+      "wrong": {
+        "corrido": {
+          "en": "Corrido is the past participle form. The manner or cause of the main action is expressed with the gerund: corriendo.",
+          "es": "Corrido es la forma del participio. La manera o la causa de la acción principal se expresa con el gerundio: corriendo."
+        },
+        "correr": {
+          "en": "Correr is the infinitive form. The manner or cause of the main action is expressed with the gerund: corriendo.",
+          "es": "Correr es la forma del infinitivo. La manera o la causa de la acción principal se expresa con el gerundio: corriendo."
+        }
+      }
     },
     {
       "kind": "form",
@@ -791,7 +801,17 @@
       "verb": "forma",
       "person": "Dejé ___ (escribir) una nota en la mesa.",
       "answer": "escrita",
-      "table": "construcciones"
+      "table": "construcciones",
+      "wrong": {
+        "escrito": {
+          "en": "In this construction the participle agrees with una nota (feminine singular): escrita.",
+          "es": "En esta construcción el participio concuerda con una nota (femenino singular): escrita."
+        },
+        "escribida": {
+          "en": "Escribir has an irregular participle, escrito, not the regular form: escrita.",
+          "es": "Escribir tiene participio irregular, escrito, no la forma regular: escrita."
+        }
+      }
     },
     {
       "kind": "form",
@@ -799,7 +819,17 @@
       "verb": "forma",
       "person": "Mi hermano, ___ (ser) muy joven, no maneja.",
       "answer": "siendo",
-      "table": "construcciones"
+      "table": "construcciones",
+      "wrong": {
+        "ser": {
+          "en": "Ser is the infinitive form. The manner or cause of the main action is expressed with the gerund: siendo.",
+          "es": "Ser es la forma del infinitivo. La manera o la causa de la acción principal se expresa con el gerundio: siendo."
+        },
+        "sido": {
+          "en": "Sido is the past participle form. The manner or cause of the main action is expressed with the gerund: siendo.",
+          "es": "Sido es la forma del participio. La manera o la causa de la acción principal se expresa con el gerundio: siendo."
+        }
+      }
     },
     {
       "kind": "form",
@@ -807,7 +837,17 @@
       "verb": "forma",
       "person": "Ana, ___ (tener) sed, bebió agua.",
       "answer": "teniendo",
-      "table": "construcciones"
+      "table": "construcciones",
+      "wrong": {
+        "tenido": {
+          "en": "Tenido is the past participle form. The manner or cause of the main action is expressed with the gerund: teniendo.",
+          "es": "Tenido es la forma del participio. La manera o la causa de la acción principal se expresa con el gerundio: teniendo."
+        },
+        "tener": {
+          "en": "Tener is the infinitive form. The manner or cause of the main action is expressed with the gerund: teniendo.",
+          "es": "Tener es la forma del infinitivo. La manera o la causa de la acción principal se expresa con el gerundio: teniendo."
+        }
+      }
     },
     {
       "kind": "form",
@@ -815,7 +855,17 @@
       "verb": "forma",
       "person": "Llegarás antes ___ (salir) temprano.",
       "answer": "saliendo",
-      "table": "construcciones"
+      "table": "construcciones",
+      "wrong": {
+        "salendo": {
+          "en": "Verbs in -ir form the gerund with -iendo: saliendo, not salendo.",
+          "es": "Los verbos en -ir forman el gerundio con -iendo: saliendo, no salendo."
+        },
+        "salido": {
+          "en": "Salido is the past participle form. The manner or cause of the main action is expressed with the gerund: saliendo.",
+          "es": "Salido es la forma del participio. La manera o la causa de la acción principal se expresa con el gerundio: saliendo."
+        }
+      }
     },
     {
       "kind": "form",
@@ -823,7 +873,13 @@
       "verb": "forma",
       "person": "Ayer cenamos y ___ (volver) a casa.",
       "answer": "volvimos",
-      "table": "construcciones"
+      "table": "construcciones",
+      "wrong": {
+        "volviendo": {
+          "en": "The gerund cannot express an action that happens after the main verb. Use a conjugated verb: volvimos.",
+          "es": "El gerundio no puede expresar una acción posterior al verbo principal. Usa un verbo conjugado: volvimos."
+        }
+      }
     },
     {
       "kind": "form",
@@ -831,7 +887,17 @@
       "verb": "forma",
       "person": "Una vez ___ (preparar) la comida, nos sentamos.",
       "answer": "preparada",
-      "table": "construcciones"
+      "table": "construcciones",
+      "wrong": {
+        "preparado": {
+          "en": "In this construction the participle agrees with la comida (feminine singular): preparada.",
+          "es": "En esta construcción el participio concuerda con la comida (femenino singular): preparada."
+        },
+        "preparando": {
+          "en": "Una vez + participle says that the action is finished, and the participle agrees with its noun. The gerund would show an action in progress: preparada.",
+          "es": "Una vez + participio dice que la acción ya terminó, y el participio concuerda con su sustantivo. El gerundio mostraría una acción en curso: preparada."
+        }
+      }
     },
     {
       "kind": "form",
@@ -839,7 +905,17 @@
       "verb": "forma",
       "person": "Una vez ___ (escribir) los mensajes, salí.",
       "answer": "escritos",
-      "table": "construcciones"
+      "table": "construcciones",
+      "wrong": {
+        "escrito": {
+          "en": "In this construction the participle agrees with los mensajes (masculine plural): escritos.",
+          "es": "En esta construcción el participio concuerda con los mensajes (masculino plural): escritos."
+        },
+        "escribidos": {
+          "en": "Escribir has an irregular participle, escrito, not the regular form: escritos.",
+          "es": "Escribir tiene participio irregular, escrito, no la forma regular: escritos."
+        }
+      }
     },
     {
       "kind": "form",
@@ -847,7 +923,17 @@
       "verb": "forma",
       "person": "Una vez ___ (abrir) la ventana, entró frío.",
       "answer": "abierta",
-      "table": "construcciones"
+      "table": "construcciones",
+      "wrong": {
+        "abierto": {
+          "en": "In this construction the participle agrees with la ventana (feminine singular): abierta.",
+          "es": "En esta construcción el participio concuerda con la ventana (femenino singular): abierta."
+        },
+        "abrida": {
+          "en": "Abrir has an irregular participle, abierto, not the regular form: abierta.",
+          "es": "Abrir tiene participio irregular, abierto, no la forma regular: abierta."
+        }
+      }
     },
     {
       "kind": "form",
@@ -855,7 +941,17 @@
       "verb": "forma",
       "person": "Lo explicó todo y, ___ (decir) esto, se fue.",
       "answer": "dicho",
-      "table": "construcciones"
+      "table": "construcciones",
+      "wrong": {
+        "decido": {
+          "en": "Decir has an irregular participle, dicho, not the regular form: dicho.",
+          "es": "Decir tiene participio irregular, dicho, no la forma regular: dicho."
+        },
+        "dicha": {
+          "en": "Esto is neuter, so the participle stays in the masculine singular: dicho.",
+          "es": "Esto es neutro, así que el participio queda en masculino singular: dicho."
+        }
+      }
     },
     {
       "kind": "form",
@@ -863,7 +959,17 @@
       "verb": "forma",
       "person": "Ya tengo ___ (hacer) las tareas.",
       "answer": "hechas",
-      "table": "construcciones"
+      "table": "construcciones",
+      "wrong": {
+        "hecho": {
+          "en": "In this construction the participle agrees with las tareas (feminine plural): hechas.",
+          "es": "En esta construcción el participio concuerda con las tareas (femenino plural): hechas."
+        },
+        "hacidas": {
+          "en": "Hacer has an irregular participle, hecho, not the regular form: hechas.",
+          "es": "Hacer tiene participio irregular, hecho, no la forma regular: hechas."
+        }
+      }
     },
     {
       "kind": "form",
@@ -871,7 +977,17 @@
       "verb": "forma",
       "person": "Llevo ___ (ver) tres películas.",
       "answer": "vistas",
-      "table": "construcciones"
+      "table": "construcciones",
+      "wrong": {
+        "visto": {
+          "en": "In this construction the participle agrees with tres películas (feminine plural): vistas.",
+          "es": "En esta construcción el participio concuerda con tres películas (femenino plural): vistas."
+        },
+        "veídas": {
+          "en": "Ver has an irregular participle, visto, not the regular form: vistas.",
+          "es": "Ver tiene participio irregular, visto, no la forma regular: vistas."
+        }
+      }
     },
     {
       "kind": "why",
