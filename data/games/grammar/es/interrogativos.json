@@ -576,11 +576,11 @@
       "wrong": {
         "cuál": {
           "en": "Cuál asks \"which one\". This answer calls for qué (\"what\").",
-          "es": "Cuál pregunta por: cuál entre varios. Esta respuesta pide qué: qué cosa."
+          "es": "Cuál pregunta por una opción entre varias. Esta respuesta pide qué, que pregunta por la identidad de una cosa."
         },
         "cómo": {
           "en": "Cómo asks \"how\". This answer calls for qué (\"what\").",
-          "es": "Cómo pregunta por: de qué manera. Esta respuesta pide qué: qué cosa."
+          "es": "Cómo pregunta por la manera de hacer o de ser algo. Esta respuesta pide qué, que pregunta por la identidad de una cosa."
         }
       }
     },
@@ -594,11 +594,11 @@
       "wrong": {
         "qué": {
           "en": "Qué asks \"what\". This answer calls for quién (\"who\").",
-          "es": "Qué pregunta por: qué cosa. Esta respuesta pide quién: qué persona."
+          "es": "Qué pregunta por la identidad de una cosa. Esta respuesta pide quién, que pregunta por la identidad de una persona."
         },
         "cuál": {
           "en": "Cuál asks \"which one\". This answer calls for quién (\"who\").",
-          "es": "Cuál pregunta por: cuál entre varios. Esta respuesta pide quién: qué persona."
+          "es": "Cuál pregunta por una opción entre varias. Esta respuesta pide quién, que pregunta por la identidad de una persona."
         }
       }
     },
@@ -612,11 +612,11 @@
       "wrong": {
         "adónde": {
           "en": "Adónde asks \"where to\". This answer calls for dónde (\"where\").",
-          "es": "Adónde pregunta por: a qué lugar. Esta respuesta pide dónde: en qué lugar."
+          "es": "Adónde pregunta por el destino de un movimiento. Esta respuesta pide dónde, que pregunta por el lugar donde está algo."
         },
         "cuándo": {
           "en": "Cuándo asks \"when\". This answer calls for dónde (\"where\").",
-          "es": "Cuándo pregunta por: en qué momento. Esta respuesta pide dónde: en qué lugar."
+          "es": "Cuándo pregunta por el momento en que ocurre algo. Esta respuesta pide dónde, que pregunta por el lugar donde está algo."
         }
       }
     },
@@ -629,12 +629,12 @@
       "table": "interrogativos-respuestas",
       "wrong": {
         "dónde": {
-          "en": "Dónde asks \"where\". This answer calls for adónde (\"where to\").",
-          "es": "Dónde pregunta por: en qué lugar. Esta respuesta pide adónde: a qué lugar."
+          "en": "Dónde asks where something is. In careful Spanish, movement toward a place takes adónde.",
+          "es": "Dónde pregunta dónde está algo. En el español cuidado, el movimiento hacia un lugar lleva adónde."
         },
         "cuándo": {
           "en": "Cuándo asks \"when\". This answer calls for adónde (\"where to\").",
-          "es": "Cuándo pregunta por: en qué momento. Esta respuesta pide adónde: a qué lugar."
+          "es": "Cuándo pregunta por el momento en que ocurre algo. Esta respuesta pide adónde, que pregunta por el destino de un movimiento."
         }
       }
     },
@@ -648,11 +648,11 @@
       "wrong": {
         "cuánto": {
           "en": "Cuánto asks \"how much\". This answer calls for cuándo (\"when\").",
-          "es": "Cuánto pregunta por: qué cantidad. Esta respuesta pide cuándo: en qué momento."
+          "es": "Cuánto pregunta por la cantidad de algo. Esta respuesta pide cuándo, que pregunta por el momento en que ocurre algo."
         },
         "cómo": {
           "en": "Cómo asks \"how\". This answer calls for cuándo (\"when\").",
-          "es": "Cómo pregunta por: de qué manera. Esta respuesta pide cuándo: en qué momento."
+          "es": "Cómo pregunta por la manera de hacer o de ser algo. Esta respuesta pide cuándo, que pregunta por el momento en que ocurre algo."
         }
       }
     },
@@ -666,11 +666,11 @@
       "wrong": {
         "qué": {
           "en": "Qué asks \"what\". This answer calls for cómo (\"how\").",
-          "es": "Qué pregunta por: qué cosa. Esta respuesta pide cómo: de qué manera."
+          "es": "Qué pregunta por la identidad de una cosa. Esta respuesta pide cómo, que pregunta por la manera de hacer o de ser algo."
         },
         "cuál": {
           "en": "Cuál asks \"which one\". This answer calls for cómo (\"how\").",
-          "es": "Cuál pregunta por: cuál entre varios. Esta respuesta pide cómo: de qué manera."
+          "es": "Cuál pregunta por una opción entre varias. Esta respuesta pide cómo, que pregunta por la manera de hacer o de ser algo."
         }
       }
     },
@@ -684,11 +684,11 @@
       "wrong": {
         "cuándo": {
           "en": "Cuándo asks \"when\". This answer calls for cuánto (\"how much\").",
-          "es": "Cuándo pregunta por: en qué momento. Esta respuesta pide cuánto: qué cantidad."
+          "es": "Cuándo pregunta por el momento en que ocurre algo. Esta respuesta pide cuánto, que pregunta por la cantidad de algo."
         },
         "cuántos": {
           "en": "Cuántos asks \"how many\". This answer calls for cuánto (\"how much\").",
-          "es": "Cuántos pregunta por: cuántas cosas o personas (masculino). Esta respuesta pide cuánto: qué cantidad."
+          "es": "Cuántos pregunta por el número de cosas o personas (masculino). Esta respuesta pide cuánto, que pregunta por la cantidad de algo."
         }
       }
     },
@@ -702,7 +702,7 @@
       "wrong": {
         "con qué": {
           "en": "Con qué asks \"with what\". This answer calls for con quién (\"with whom\").",
-          "es": "Con qué pregunta por: con qué cosa. Esta respuesta pide con quién: con qué persona."
+          "es": "Con qué pregunta por el objeto o el medio. Esta respuesta pide con quién, que pregunta por la compañía."
         },
         "quién": {
           "en": "The preposition is missing: the answer starts with con, so the question needs it too: con quién.",
@@ -720,11 +720,11 @@
       "wrong": {
         "cuánto": {
           "en": "Cuánto asks \"how much\". This answer calls for cuántos (\"how many\").",
-          "es": "Cuánto pregunta por: qué cantidad. Esta respuesta pide cuántos: cuántas cosas o personas (masculino)."
+          "es": "Cuánto pregunta por la cantidad de algo. Esta respuesta pide cuántos, que pregunta por el número de cosas o personas (masculino)."
         },
         "cuántas": {
           "en": "Cuántas asks \"how many (feminine)\". This answer calls for cuántos (\"how many\").",
-          "es": "Cuántas pregunta por: cuántas cosas o personas (femenino). Esta respuesta pide cuántos: cuántas cosas o personas (masculino)."
+          "es": "Cuántas pregunta por el número de cosas o personas (femenino). Esta respuesta pide cuántos, que pregunta por el número de cosas o personas (masculino)."
         }
       }
     },
@@ -738,11 +738,11 @@
       "wrong": {
         "qué": {
           "en": "Qué asks \"what\". This answer calls for cuál (\"which one\").",
-          "es": "Qué pregunta por: qué cosa. Esta respuesta pide cuál: cuál entre varios."
+          "es": "Qué pregunta por la identidad de una cosa. Esta respuesta pide cuál, que pregunta por una opción entre varias."
         },
         "cuáles": {
           "en": "Cuáles asks \"which ones\". This answer calls for cuál (\"which one\").",
-          "es": "Cuáles pregunta por: cuáles entre varios. Esta respuesta pide cuál: cuál entre varios."
+          "es": "Cuáles pregunta por varias opciones a la vez. Esta respuesta pide cuál, que pregunta por una opción entre varias."
         }
       }
     },
@@ -760,7 +760,7 @@
         },
         "para qué": {
           "en": "Para qué asks \"what for\". This answer calls for por qué (\"why\").",
-          "es": "Para qué pregunta por: con qué fin. Esta respuesta pide por qué: por qué motivo."
+          "es": "Para qué pregunta por el fin o propósito. Esta respuesta pide por qué, que pregunta por el motivo."
         }
       }
     },
@@ -778,7 +778,7 @@
         },
         "adónde": {
           "en": "Adónde asks \"where to\". This answer calls for de dónde (\"where from\").",
-          "es": "Adónde pregunta por: a qué lugar. Esta respuesta pide de dónde: de qué lugar."
+          "es": "Adónde pregunta por el destino de un movimiento. Esta respuesta pide de dónde, que pregunta por el origen."
         }
       }
     },
