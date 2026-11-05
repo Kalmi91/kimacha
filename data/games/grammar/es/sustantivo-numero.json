@@ -823,7 +823,21 @@
       "verb": "Plural",
       "person": "el libro",
       "answer": "los libros",
-      "table": "plural"
+      "table": "plural",
+      "wrong": {
+        "los libro": {
+          "en": "In the plural the noun changes too, not only the article: libro becomes libros.",
+          "es": "En plural cambia también el sustantivo, no solo el artículo: libro pasa a libros."
+        },
+        "los libroses": {
+          "en": "A noun ending in a vowel adds only -s. The ending -es is for nouns ending in a consonant: libros.",
+          "es": "Un sustantivo terminado en vocal solo añade -s. La terminación -es es para sustantivos terminados en consonante: libros."
+        },
+        "las libros": {
+          "en": "Libro is masculine, so its plural article is los, not las: los libros.",
+          "es": "Libro es masculino, así que su artículo plural es los, no las: los libros."
+        }
+      }
     },
     {
       "id": "sn-form-02",
@@ -831,7 +845,21 @@
       "verb": "Plural",
       "person": "la casa",
       "answer": "las casas",
-      "table": "plural"
+      "table": "plural",
+      "wrong": {
+        "los casas": {
+          "en": "Casa is feminine, so its plural article is las, not los: las casas.",
+          "es": "Casa es femenino, así que su artículo plural es las, no los: las casas."
+        },
+        "las casa": {
+          "en": "In the plural the noun changes too, not only the article: casa becomes casas.",
+          "es": "En plural cambia también el sustantivo, no solo el artículo: casa pasa a casas."
+        },
+        "las casases": {
+          "en": "A noun ending in a vowel adds only -s. The ending -es is for nouns ending in a consonant: casas.",
+          "es": "Un sustantivo terminado en vocal solo añade -s. La terminación -es es para sustantivos terminados en consonante: casas."
+        }
+      }
     },
     {
       "id": "sn-form-03",
@@ -839,7 +867,21 @@
       "verb": "Plural",
       "person": "la ciudad",
       "answer": "las ciudades",
-      "table": "plural"
+      "table": "plural",
+      "wrong": {
+        "las ciudads": {
+          "en": "A noun ending in a consonant adds -es, not just -s: ciudad becomes ciudades.",
+          "es": "Un sustantivo terminado en consonante añade -es, no solo -s: ciudad pasa a ciudades."
+        },
+        "los ciudades": {
+          "en": "Ciudad is feminine, so its plural article is las, not los: las ciudades.",
+          "es": "Ciudad es femenino, así que su artículo plural es las, no los: las ciudades."
+        },
+        "las ciudad": {
+          "en": "In the plural the noun changes too, not only the article: ciudad becomes ciudades.",
+          "es": "En plural cambia también el sustantivo, no solo el artículo: ciudad pasa a ciudades."
+        }
+      }
     },
     {
       "id": "sn-form-04",
@@ -847,7 +889,21 @@
       "verb": "Plural",
       "person": "el lápiz",
       "answer": "los lápices",
-      "table": "plural"
+      "table": "plural",
+      "wrong": {
+        "los lápizes": {
+          "en": "Nouns ending in -z change z to c before -es: lápiz becomes lápices.",
+          "es": "Los sustantivos en -z cambian la z a c ante -es: lápiz pasa a lápices."
+        },
+        "los lápiz": {
+          "en": "In the plural the noun changes too, not only the article: lápiz becomes lápices.",
+          "es": "En plural cambia también el sustantivo, no solo el artículo: lápiz pasa a lápices."
+        },
+        "las lápices": {
+          "en": "Lápiz is masculine, so its plural article is los, not las: los lápices.",
+          "es": "Lápiz es masculino, así que su artículo plural es los, no las: los lápices."
+        }
+      }
     },
     {
       "id": "sn-form-05",
@@ -855,7 +911,21 @@
       "verb": "Plural",
       "person": "la lección",
       "answer": "las lecciones",
-      "table": "plural"
+      "table": "plural",
+      "wrong": {
+        "las leccións": {
+          "en": "Nouns ending in -n add -es, and the written accent disappears: lección becomes lecciones.",
+          "es": "Los sustantivos en -n añaden -es, y la tilde desaparece: lección pasa a lecciones."
+        },
+        "las lección": {
+          "en": "In the plural the noun changes too, not only the article: lección becomes lecciones.",
+          "es": "En plural cambia también el sustantivo, no solo el artículo: lección pasa a lecciones."
+        },
+        "los lecciones": {
+          "en": "Lección is feminine, so its plural article is las, not los: las lecciones.",
+          "es": "Lección es femenino, así que su artículo plural es las, no los: las lecciones."
+        }
+      }
     },
     {
       "id": "sn-form-06",
@@ -863,7 +933,17 @@
       "verb": "Plural",
       "person": "el lunes",
       "answer": "los lunes",
-      "table": "plural"
+      "table": "plural",
+      "wrong": {
+        "los luneses": {
+          "en": "Days of the week ending in -s do not change in the plural; only the article does: los lunes.",
+          "es": "Los días de la semana terminados en -s no cambian en plural; solo cambia el artículo: los lunes."
+        },
+        "las lunes": {
+          "en": "Lunes is masculine, so its plural article is los, not las: los lunes.",
+          "es": "Lunes es masculino, así que su artículo plural es los, no las: los lunes."
+        }
+      }
     },
     {
       "id": "sn-form-07",
@@ -871,7 +951,17 @@
       "verb": "Plural",
       "person": "el problema",
       "answer": "los problemas",
-      "table": "plural"
+      "table": "plural",
+      "wrong": {
+        "las problemas": {
+          "en": "Problema is masculine even though it ends in -a, so the article is los: los problemas.",
+          "es": "Problema es masculino aunque termine en -a, así que el artículo es los: los problemas."
+        },
+        "los problema": {
+          "en": "In the plural the noun changes too, not only the article: problema becomes problemas.",
+          "es": "En plural cambia también el sustantivo, no solo el artículo: problema pasa a problemas."
+        }
+      }
     },
     {
       "id": "sn-form-08",
@@ -879,7 +969,17 @@
       "verb": "Plural",
       "person": "la mano",
       "answer": "las manos",
-      "table": "plural"
+      "table": "plural",
+      "wrong": {
+        "los manos": {
+          "en": "Mano is feminine even though it ends in -o, so the article is las: las manos.",
+          "es": "Mano es femenino aunque termine en -o, así que el artículo es las: las manos."
+        },
+        "las mano": {
+          "en": "In the plural the noun changes too, not only the article: mano becomes manos.",
+          "es": "En plural cambia también el sustantivo, no solo el artículo: mano pasa a manos."
+        }
+      }
     },
     {
       "id": "sn-form-09",
@@ -887,7 +987,17 @@
       "verb": "Plural",
       "person": "el mes",
       "answer": "los meses",
-      "table": "plural"
+      "table": "plural",
+      "wrong": {
+        "los mes": {
+          "en": "In the plural the noun changes too, not only the article: mes becomes meses.",
+          "es": "En plural cambia también el sustantivo, no solo el artículo: mes pasa a meses."
+        },
+        "las meses": {
+          "en": "Mes is masculine, so its plural article is los, not las: los meses.",
+          "es": "Mes es masculino, así que su artículo plural es los, no las: los meses."
+        }
+      }
     },
     {
       "id": "sn-form-10",
@@ -895,7 +1005,21 @@
       "verb": "Plural",
       "person": "el examen",
       "answer": "los exámenes",
-      "table": "plural"
+      "table": "plural",
+      "wrong": {
+        "los exámens": {
+          "en": "A noun ending in -n adds -es, not just -s: examen becomes exámenes.",
+          "es": "Un sustantivo terminado en -n añade -es, no solo -s: examen pasa a exámenes."
+        },
+        "los examen": {
+          "en": "In the plural the noun changes too, not only the article: examen becomes exámenes.",
+          "es": "En plural cambia también el sustantivo, no solo el artículo: examen pasa a exámenes."
+        },
+        "las exámenes": {
+          "en": "Examen is masculine, so its plural article is los, not las: los exámenes.",
+          "es": "Examen es masculino, así que su artículo plural es los, no las: los exámenes."
+        }
+      }
     },
     {
       "id": "sn-form-11",
@@ -903,7 +1027,17 @@
       "verb": "Plural",
       "person": "el día",
       "answer": "los días",
-      "table": "plural"
+      "table": "plural",
+      "wrong": {
+        "las días": {
+          "en": "Día is masculine even though it ends in -a, so the article is los: los días.",
+          "es": "Día es masculino aunque termine en -a, así que el artículo es los: los días."
+        },
+        "los día": {
+          "en": "In the plural the noun changes too, not only the article: día becomes días.",
+          "es": "En plural cambia también el sustantivo, no solo el artículo: día pasa a días."
+        }
+      }
     },
     {
       "id": "sn-form-12",
@@ -911,7 +1045,17 @@
       "verb": "Plural",
       "person": "el mapa",
       "answer": "los mapas",
-      "table": "plural"
+      "table": "plural",
+      "wrong": {
+        "las mapas": {
+          "en": "Mapa is masculine even though it ends in -a, so the article is los: los mapas.",
+          "es": "Mapa es masculino aunque termine en -a, así que el artículo es los: los mapas."
+        },
+        "los mapa": {
+          "en": "In the plural the noun changes too, not only the article: mapa becomes mapas.",
+          "es": "En plural cambia también el sustantivo, no solo el artículo: mapa pasa a mapas."
+        }
+      }
     },
     {
       "kind": "why",
@@ -1252,7 +1396,21 @@
       "verb": "Plural",
       "person": "la vez",
       "answer": "las veces",
-      "table": "plural"
+      "table": "plural",
+      "wrong": {
+        "las vezes": {
+          "en": "Nouns ending in -z change z to c before -es: vez becomes veces.",
+          "es": "Los sustantivos en -z cambian la z a c ante -es: vez pasa a veces."
+        },
+        "las vez": {
+          "en": "In the plural the noun changes too, not only the article: vez becomes veces.",
+          "es": "En plural cambia también el sustantivo, no solo el artículo: vez pasa a veces."
+        },
+        "los veces": {
+          "en": "Vez is feminine, so its plural article is las, not los: las veces.",
+          "es": "Vez es femenino, así que su artículo plural es las, no los: las veces."
+        }
+      }
     },
     {
       "id": "sn-form-14",
@@ -1260,7 +1418,21 @@
       "verb": "Plural",
       "person": "la luz",
       "answer": "las luces",
-      "table": "plural"
+      "table": "plural",
+      "wrong": {
+        "las luzes": {
+          "en": "Nouns ending in -z change z to c before -es: luz becomes luces.",
+          "es": "Los sustantivos en -z cambian la z a c ante -es: luz pasa a luces."
+        },
+        "las luz": {
+          "en": "In the plural the noun changes too, not only the article: luz becomes luces.",
+          "es": "En plural cambia también el sustantivo, no solo el artículo: luz pasa a luces."
+        },
+        "los luces": {
+          "en": "Luz is feminine, so its plural article is las, not los: las luces.",
+          "es": "Luz es femenino, así que su artículo plural es las, no los: las luces."
+        }
+      }
     },
     {
       "id": "sn-form-15",
@@ -1268,7 +1440,21 @@
       "verb": "Plural",
       "person": "el pez",
       "answer": "los peces",
-      "table": "plural"
+      "table": "plural",
+      "wrong": {
+        "los pezes": {
+          "en": "Nouns ending in -z change z to c before -es: pez becomes peces.",
+          "es": "Los sustantivos en -z cambian la z a c ante -es: pez pasa a peces."
+        },
+        "los pez": {
+          "en": "In the plural the noun changes too, not only the article: pez becomes peces.",
+          "es": "En plural cambia también el sustantivo, no solo el artículo: pez pasa a peces."
+        },
+        "las peces": {
+          "en": "Pez is masculine, so its plural article is los, not las: los peces.",
+          "es": "Pez es masculino, así que su artículo plural es los, no las: los peces."
+        }
+      }
     },
     {
       "id": "sn-form-16",
@@ -1276,7 +1462,21 @@
       "verb": "Plural",
       "person": "la crisis",
       "answer": "las crisis",
-      "table": "plural"
+      "table": "plural",
+      "wrong": {
+        "las crises": {
+          "en": "Crisis already ends in -s and is not stressed on the last syllable, so the noun does not change in the plural: las crisis.",
+          "es": "Crisis ya termina en -s y no lleva el acento en la última sílaba, así que el sustantivo no cambia en plural: las crisis."
+        },
+        "las crisises": {
+          "en": "Crisis already ends in -s and is not stressed on the last syllable, so no ending is added: las crisis.",
+          "es": "Crisis ya termina en -s y no lleva el acento en la última sílaba, así que no se añade ninguna terminación: las crisis."
+        },
+        "los crisis": {
+          "en": "Crisis is feminine, so its article is las, not los: las crisis.",
+          "es": "Crisis es femenino, así que su artículo es las, no los: las crisis."
+        }
+      }
     },
     {
       "id": "sn-form-17",
@@ -1284,7 +1484,21 @@
       "verb": "Plural",
       "person": "el paraguas",
       "answer": "los paraguas",
-      "table": "plural"
+      "table": "plural",
+      "wrong": {
+        "los paraguases": {
+          "en": "Paraguas already ends in -s and is not stressed on the last syllable, so no ending is added: los paraguas.",
+          "es": "Paraguas ya termina en -s y no lleva el acento en la última sílaba, así que no se añade ninguna terminación: los paraguas."
+        },
+        "los paragua": {
+          "en": "The singular is already paraguas, with an s. The noun stays the same in the plural: los paraguas.",
+          "es": "El singular ya es paraguas, con s. El sustantivo se queda igual en plural: los paraguas."
+        },
+        "las paraguas": {
+          "en": "Paraguas is masculine even though it ends in -s, so the article is los: los paraguas.",
+          "es": "Paraguas es masculino aunque termine en -s, así que el artículo es los: los paraguas."
+        }
+      }
     },
     {
       "id": "sn-form-18",
@@ -1292,7 +1506,21 @@
       "verb": "Plural",
       "person": "el joven",
       "answer": "los jóvenes",
-      "table": "plural"
+      "table": "plural",
+      "wrong": {
+        "los jóvens": {
+          "en": "A noun ending in -n adds -es, not just -s: joven becomes jóvenes.",
+          "es": "Un sustantivo terminado en -n añade -es, no solo -s: joven pasa a jóvenes."
+        },
+        "los joven": {
+          "en": "In the plural the noun changes too, not only the article: joven becomes jóvenes.",
+          "es": "En plural cambia también el sustantivo, no solo el artículo: joven pasa a jóvenes."
+        },
+        "las jóvenes": {
+          "en": "Here the singular is el joven, which is masculine, so the plural article is los: los jóvenes.",
+          "es": "Aquí el singular es el joven, que es masculino, así que el artículo plural es los: los jóvenes."
+        }
+      }
     },
     {
       "id": "sn-form-19",
@@ -1300,7 +1528,21 @@
       "verb": "Plural",
       "person": "el carácter",
       "answer": "los caracteres",
-      "table": "plural"
+      "table": "plural",
+      "wrong": {
+        "los carácters": {
+          "en": "A noun ending in -r adds -es, not just -s: carácter becomes caracteres.",
+          "es": "Un sustantivo terminado en -r añade -es, no solo -s: carácter pasa a caracteres."
+        },
+        "los carácter": {
+          "en": "In the plural the noun changes too, not only the article: carácter becomes caracteres.",
+          "es": "En plural cambia también el sustantivo, no solo el artículo: carácter pasa a caracteres."
+        },
+        "las caracteres": {
+          "en": "Carácter is masculine, so its plural article is los, not las: los caracteres.",
+          "es": "Carácter es masculino, así que su artículo plural es los, no las: los caracteres."
+        }
+      }
     },
     {
       "id": "sn-form-20",
@@ -1308,7 +1550,21 @@
       "verb": "Plural",
       "person": "el origen",
       "answer": "los orígenes",
-      "table": "plural"
+      "table": "plural",
+      "wrong": {
+        "los origens": {
+          "en": "A noun ending in -n adds -es, not just -s: origen becomes orígenes.",
+          "es": "Un sustantivo terminado en -n añade -es, no solo -s: origen pasa a orígenes."
+        },
+        "los origen": {
+          "en": "In the plural the noun changes too, not only the article: origen becomes orígenes.",
+          "es": "En plural cambia también el sustantivo, no solo el artículo: origen pasa a orígenes."
+        },
+        "las orígenes": {
+          "en": "Origen is masculine, so its plural article is los, not las: los orígenes.",
+          "es": "Origen es masculino, así que su artículo plural es los, no las: los orígenes."
+        }
+      }
     },
     {
       "id": "sn-art-01",
