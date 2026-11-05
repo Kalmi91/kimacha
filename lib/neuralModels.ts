@@ -20,6 +20,10 @@ import { Platform } from 'react-native';
 import {
   DEFAULT_ENGINES,
   DEFAULT_SPEAKERS,
+  LEGACY_PACK_DIR,
+  LEGACY_PACK_KEY,
+  LEGACY_SENTENCE_PACK_DIR,
+  LEGACY_SENTENCES_KEY,
   NEURAL_MODELS,
   PACK_DIR,
   PACK_KEY,
@@ -32,8 +36,10 @@ import {
   normalizeEngines,
   normalizeSpeakers,
   packFileFor,
-  requiredItems,
   sentencePackFileFor,
+  modelItems,
+  modelKeysFor,
+  packSpaceNeeded,
   voicePair,
   type EngineChoice,
   type NeuralEngine,
@@ -54,6 +60,8 @@ export interface NeuralDownloadState {
   phase: 'download' | 'unpack';
   /** Item keys the last run could not fetch (NEURAL_MODELS keys, or 'pack'). */
   failed: string[];
+  /** Set when a recordings download did not start for lack of space: the free bytes it needs (archive + unpacked). */
+  lowSpace?: number;
 }
 
 /** Why the chosen sentence engine of a language is not the one speaking right now (Settings says it in words). */
@@ -130,7 +138,24 @@ async function readInstalled(fs: Fs): Promise<Record<string, boolean>> {
   for (const key of [...Object.keys(NEURAL_MODELS), PACK_KEY, SENTENCES_KEY]) {
     installed[key] = await fs.exists(itemMarker(fs, key)).catch(() => false);
   }
+  installed[LEGACY_PACK_KEY] = await fs.exists(`${ttsDir(fs)}/${LEGACY_PACK_DIR}.ok`).catch(() => false);
+  installed[LEGACY_SENTENCES_KEY] = await fs.exists(`${ttsDir(fs)}/${LEGACY_SENTENCE_PACK_DIR}.ok`).catch(() => false);
   return installed;
+}
+
+// A v2 pack that is installed (its .ok marker is there) replaces the v1 pack: the v1 folder and marker go, about 462 MB.
+// A v1 pack stays as long as its v2 is not installed (a failed or cancelled download leaves v1 playing).
+async function removeSupersededPacks(fs: Fs): Promise<void> {
+  for (const [key, legacyDir] of [[PACK_KEY, LEGACY_PACK_DIR], [SENTENCES_KEY, LEGACY_SENTENCE_PACK_DIR]] as const) {
+    try {
+      if (!(await fs.exists(itemMarker(fs, key)))) continue;
+      const legacy = `${ttsDir(fs)}/${legacyDir}`;
+      await fs.unlink(`${legacy}.ok`).catch(() => {});
+      await fs.unlink(legacy).catch(() => {});
+    } catch {
+      // keep what is there
+    }
+  }
 }
 
 async function readSettings(fs: Fs): Promise<Pick<NeuralState, 'enabled' | 'engines'> & { speakers: SpeakerChoices; fastFallback: boolean }> {
@@ -163,10 +188,14 @@ async function writeSettings(): Promise<void> {
 
 // A pack's index.json, from the pack folder (or one folder below it, if the archive had a top folder). A pack
 // that is not installed or whose index is unreadable is simply absent: the other levels keep speaking.
-async function readPackIndex(fs: Fs, key: string, label: string): Promise<{ index: PackIndex; root: string } | null> {
-  if (!state.installed[key]) return null;
-  const base = itemDir(fs, key);
-  for (const root of [base, `${base}/${packDirName(key)}`]) {
+async function readPackIndex(fs: Fs, key: string, label: string, legacyDir?: string): Promise<{ index: PackIndex; root: string } | null> {
+  // A phone that has only the v1 pack keeps speaking from it (its index has the old keys, packFileFor reads both)
+  // until the v2 download is installed.
+  const legacy = !state.installed[key] && legacyDir && (await fs.exists(`${ttsDir(fs)}/${legacyDir}.ok`).catch(() => false));
+  if (!state.installed[key] && !legacy) return null;
+  const dirName = legacy && legacyDir ? legacyDir : packDirName(key);
+  const base = `${ttsDir(fs)}/${dirName}`;
+  for (const root of [base, `${base}/${dirName}`]) {
     try {
       const index = JSON.parse(await fs.readFile(`${root}/index.json`, 'utf8')) as PackIndex;
       if (index && typeof index === 'object' && index.files) return { index, root };
@@ -179,10 +208,10 @@ async function readPackIndex(fs: Fs, key: string, label: string): Promise<{ inde
 }
 
 async function loadPackIndex(fs: Fs): Promise<void> {
-  const word = await readPackIndex(fs, PACK_KEY, 'word pack');
+  const word = await readPackIndex(fs, PACK_KEY, 'word pack', LEGACY_PACK_DIR);
   packIndex = word?.index ?? null;
   packRoot = word?.root ?? null;
-  const sentences = await readPackIndex(fs, SENTENCES_KEY, 'sentence pack');
+  const sentences = await readPackIndex(fs, SENTENCES_KEY, 'sentence pack', LEGACY_SENTENCE_PACK_DIR);
   sentenceIndex = sentences?.index ?? null;
   sentenceRoot = sentences?.root ?? null;
 }
@@ -256,6 +285,7 @@ export async function startNeural(): Promise<void> {
     const { speakers, fastFallback, ...settings } = await readSettings(fs);
     setSpeakerChoices(speakers);
     setFastFallback(fastFallback);
+    await removeSupersededPacks(fs);
     update({ ...settings, installed: await readInstalled(fs), ready: true });
     await loadPackIndex(fs);
   } catch (e) {
@@ -345,9 +375,9 @@ export async function releaseStandIns(except?: NeuralLang): Promise<void> {
 
 // Absolute path of the word pack's audio for this card word, or null (not installed, switched off, or the
 // text is not a card word).
-export function neuralPackFile(lang: NeuralLang, text: string): string | null {
+export function neuralPackFile(lang: NeuralLang, text: string, gender?: VoiceGender): string | null {
   if (!state.supported || !state.enabled || !packIndex || !packRoot) return null;
-  const relative = packFileFor(packIndex, lang, text);
+  const relative = packFileFor(packIndex, lang, text, gender);
   return relative ? `${packRoot}/${relative}` : null;
 }
 
@@ -385,14 +415,15 @@ export async function setNeuralEnabled(enabled: boolean): Promise<void> {
   }
 }
 
-// A language's sentence engine (hu and de are always Piper). Kokoro that is not installed starts its download.
+// A language's sentence engine (hu and de are always Piper). Kokoro that is not installed starts the download of that
+// model, and only of that model: the recordings packs are fetched by their own Settings row, never from here.
 export async function setNeuralEngine(lang: NeuralLang, engine: NeuralEngine): Promise<void> {
   const next = normalizeEngines({ ...state.engines, [lang]: engine });
   if (next[lang] === state.engines[lang]) return;
   update({ engines: next, issues: {} });
   void writeSettings();
   const needs = voicePair(lang, next[lang]).some(v => !state.installed[v.model]);
-  if (needs) await downloadNeural();
+  if (needs) await downloadNeural(modelKeysFor(lang, next[lang]));
   loadEngines(lang);
 }
 
@@ -403,19 +434,36 @@ interface Job {
   bytes: number;
 }
 
-// Fetches and installs everything the choices need that is not installed yet. Resolves when the run ended;
+// Fetches and installs what is not installed yet: `keys` (item keys), or without it everything the choices need
+// (the first download). Only a tap on a Settings button calls this; nothing starts it on launch or update. A failed or
+// cancelled item leaves its folder out and the v1 packs, if any, keep playing. Resolves when the run ended;
 // state.download.failed names what did not make it.
-export async function downloadNeural(): Promise<void> {
+export async function downloadNeural(keys?: string[]): Promise<void> {
   if (!state.supported || state.download.running) return;
   const fs = getFs();
   const { extractArchive } = require('react-native-sherpa-onnx/extraction') as typeof import('react-native-sherpa-onnx/extraction');
-  const jobs: Job[] = requiredItems(state.engines)
+  const jobs: Job[] = (keys ?? modelItems(state.engines))
     .filter(key => !state.installed[key])
     .map(key => {
       const url = itemUrl(key);
       return { key, url, file: `${ttsDir(fs)}/dl/${url.split('/').pop()}`, bytes: itemBytes(key) };
     });
   if (jobs.length === 0) return;
+  // The recordings are big (about 955 MB, twice that while unpacking): with too little free space nothing starts and the
+  // Settings row says how much is needed. A phone that cannot tell its free space just goes ahead.
+  const packNeed = packSpaceNeeded(jobs.map(job => job.key));
+  if (packNeed > 0) {
+    let free = Infinity;
+    try {
+      free = (await fs.getFSInfo()).freeSpace;
+    } catch {
+      // unknown: go ahead
+    }
+    if (free < packNeed) {
+      update({ download: { running: false, percent: 0, phase: 'download', failed: [], lowSpace: packNeed } });
+      return;
+    }
+  }
 
   let totalBytes = jobs.reduce((sum, job) => sum + job.bytes, 0);
   let doneBytes = 0;
@@ -472,6 +520,7 @@ export async function downloadNeural(): Promise<void> {
     }
   }
 
+  await removeSupersededPacks(fs);
   update({ installed: await readInstalled(fs) });
   await loadPackIndex(fs);
   update({ download: { running: false, percent: failed.length ? state.download.percent : 100, phase: 'download', failed } });

@@ -209,8 +209,8 @@ describe('the counter, the bubbles and the voice', () => {
   });
 
   it('a blank is left out of what the voice reads', () => {
-    expect(speakable('Me llamo ___.')).toBe('Me llamo.');
-    expect(speakable('Tengo ___ años.')).toBe('Tengo años.');
+    expect(speakable('Me llamo ___.')).toBe('Me llamo .');
+    expect(speakable('Tengo ___ años.')).toBe('Tengo  años.');
     expect(speakable('Hablo un poco.')).toBe('Hablo un poco.');
   });
 });

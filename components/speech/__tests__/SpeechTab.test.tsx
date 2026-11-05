@@ -990,7 +990,7 @@ describe('Speak tab: the preparation', () => {
     await toPrep(view);
     mockSpeak.mockClear();
     fireEvent.press(view.getByTestId('speech-prep-say-listen-0-0-0'));
-    expect(mockSpeak).toHaveBeenLastCalledWith('Me llamo.', 'es-MX');
+    expect(mockSpeak).toHaveBeenLastCalledWith('Me llamo .', 'es-MX');
     fireEvent.press(view.getByTestId('speech-prep-listen-0'));
     expect(mockSpeak).toHaveBeenLastCalledWith(story.turns[0].es, 'es-MX');
     expect(await savedNow()).toBeNull();

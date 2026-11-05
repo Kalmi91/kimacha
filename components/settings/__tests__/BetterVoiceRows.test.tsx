@@ -5,7 +5,7 @@ import { Alert, View } from 'react-native';
 import { fireEvent, render } from '@testing-library/react-native';
 
 import { ThemeProvider } from '@/lib/ThemeContext';
-import { NEURAL_MODELS, PACK_KEY, PIPER_MODEL_KEYS, SENTENCES_KEY } from '@/lib/neuralVoices';
+import { NEURAL_MODELS, PACK_BYTES, PACK_KEY, PIPER_MODEL_KEYS, SENTENCE_PACK_BYTES, SENTENCES_KEY, formatMegabytes } from '@/lib/neuralVoices';
 import BetterVoiceRows from '../BetterVoiceRows';
 
 let mockState: any;
@@ -27,6 +27,11 @@ const stateWith = (installed: Record<string, boolean>, engines = { es: 'piper', 
   download: { running: false, percent: 0, phase: 'download', failed: [] },
   issues: {} as Record<string, unknown>,
 });
+// the pack sizes are the built-in ones (lib/neuralVoices.ts), so a new pack release changes no test
+const PACK_MB = formatMegabytes(PACK_BYTES);
+const SENTENCES_MB = formatMegabytes(SENTENCE_PACK_BYTES);
+const VOICES_MB = formatMegabytes(PIPER_MODEL_KEYS.reduce((sum, key) => sum + NEURAL_MODELS[key].bytes, 0));
+const PACKS_MB = formatMegabytes(PACK_BYTES + SENTENCE_PACK_BYTES);
 const allPiper = Object.fromEntries(PIPER_MODEL_KEYS.map(key => [key, true]));
 
 const Row = ({ children }: { children: React.ReactNode }) => <View>{children}</View>;
@@ -49,26 +54,46 @@ beforeEach(() => {
 afterEach(() => alertSpy.mockRestore());
 
 describe('BetterVoiceRows: the size question', () => {
-  it('the first download asks with the real size (both packs and eight voices), and only the confirm starts it', () => {
+  it('the first download names and fetches the voice models only, and only the confirm starts it', () => {
     mockState = stateWith({});
     const view = show();
-    expect(view.getByText('Download (602 MB)')).toBeTruthy(); // the label counts the packs too
+    expect(view.getByText(`Download (${VOICES_MB})`)).toBeTruthy(); // the voices alone, no recordings in the label
     fireEvent.press(view.getByTestId('settings-better-voice-download'));
     expect(alertSpy).toHaveBeenCalledTimes(1);
     expect(alertSpy.mock.calls[0][0]).toBe('Download the better voice?');
-    expect(alertSpy.mock.calls[0][1]).toContain('602 MB');
+    expect(alertSpy.mock.calls[0][1]).toContain(VOICES_MB);
+    expect(alertSpy.mock.calls[0][1]).not.toContain(PACKS_MB);
     expect(mockDownload).not.toHaveBeenCalled();
     lastButtons(alertSpy).find(b => b.text === 'Cancel')?.onPress?.();
     expect(mockDownload).not.toHaveBeenCalled();
     lastButtons(alertSpy).find(b => b.text === 'Download')?.onPress?.();
     expect(mockDownload).toHaveBeenCalledTimes(1);
+    expect((mockDownload.mock.calls[0][0] as string[]).some(key => key === PACK_KEY || key === SENTENCES_KEY)).toBe(false);
+  });
+
+  it('a phone with no packs also has the optional Recordings row; only its own tap fetches them', () => {
+    mockState = stateWith({});
+    const view = show();
+    expect(view.getByText('Recordings: both speakers')).toBeTruthy();
+    expect(view.getByText(/Optional: recordings of every word and sentence by both speakers/)).toBeTruthy();
+    expect(view.queryByTestId('settings-recordings-newer')).toBeNull();
+    fireEvent.press(view.getByTestId('settings-recordings-download'));
+    expect(alertSpy.mock.calls[0][1]).toContain(PACKS_MB);
+    expect(mockDownload).not.toHaveBeenCalled();
+    lastButtons(alertSpy).find(b => b.text === 'Download')?.onPress?.();
+    expect(mockDownload).toHaveBeenCalledWith([PACK_KEY, SENTENCES_KEY]);
+  });
+
+  it('too little free space: the row says how much is needed', () => {
+    mockState = { ...stateWith(allPiper), download: { running: false, percent: 0, phase: 'download', failed: [], lowSpace: 2000 * 1048576 } };
+    expect(show().getByTestId('settings-recordings-lowspace').props.children).toContain('2000 MB');
   });
 
   it('a retry after a failed item asks too, with the size of what is still missing', () => {
     mockState = { ...stateWith({ ...allPiper, [SENTENCES_KEY]: true }), download: { running: false, percent: 80, phase: 'download', failed: [PACK_KEY] } };
     const view = show();
-    fireEvent.press(view.getByTestId('settings-better-voice-retry'));
-    expect(alertSpy.mock.calls[0][1]).toContain('114 MB');
+    fireEvent.press(view.getByTestId('settings-recordings-retry'));
+    expect(alertSpy.mock.calls[0][1]).toContain(PACK_MB);
     expect(mockDownload).not.toHaveBeenCalled();
     lastButtons(alertSpy).find(b => b.text === 'Download')?.onPress?.();
     expect(mockDownload).toHaveBeenCalledTimes(1);
@@ -95,15 +120,43 @@ describe('BetterVoiceRows: the size question', () => {
     expect(alertSpy).not.toHaveBeenCalled();
   });
 
-  it('a phone that already has the voices is offered the sentence recordings, behind the same question', () => {
+  it('a phone that already has the voices is offered the recordings in their own row, behind the size question', () => {
     mockState = stateWith({ ...allPiper, [PACK_KEY]: true });
     const view = show();
     expect(view.getByTestId('settings-better-voice')).toBeTruthy(); // the voice keeps working meanwhile
-    fireEvent.press(view.getByText('Download (327 MB)'));
-    expect(alertSpy.mock.calls[0][1]).toContain('327 MB');
+    expect(view.getByText('Recordings: both speakers')).toBeTruthy();
+    fireEvent.press(view.getByTestId('settings-recordings-download'));
+    expect(alertSpy.mock.calls[0][1]).toContain(SENTENCES_MB);
     expect(mockDownload).not.toHaveBeenCalled();
     lastButtons(alertSpy).find(b => b.text === 'Download')?.onPress?.();
     expect(mockDownload).toHaveBeenCalledTimes(1);
+    expect(mockDownload).toHaveBeenCalledWith([PACK_KEY, SENTENCES_KEY]);
+  });
+
+  it('with the v1 recordings the row says newer ones exist, nothing downloads by itself, and the voice switch works', () => {
+    mockState = stateWith({ ...allPiper, 'legacy-pack': true, 'legacy-sentences': true });
+    const view = show();
+    expect(view.getByTestId('settings-recordings-newer').props.children).toContain('The app works without them');
+    expect(view.getByTestId('settings-better-voice')).toBeTruthy();
+    expect(mockDownload).not.toHaveBeenCalled();
+    expect(alertSpy).not.toHaveBeenCalled();
+  });
+
+  it('Kokoro with only the v1 recordings: the question names the model size alone and no pack is fetched', () => {
+    mockState = stateWith({ ...allPiper, 'legacy-pack': true, 'legacy-sentences': true });
+    const view = show();
+    fireEvent.press(view.getByTestId('settings-better-voice-es-kokoro'));
+    expect(alertSpy.mock.calls[0][1]).toContain(formatMegabytes(NEURAL_MODELS.kokoro.bytes));
+    expect(alertSpy.mock.calls[0][1]).not.toContain(formatMegabytes(NEURAL_MODELS.kokoro.bytes + PACK_BYTES + SENTENCE_PACK_BYTES));
+    lastButtons(alertSpy).find(b => b.text === 'Download')?.onPress?.();
+    expect(mockSetEngine).toHaveBeenCalledWith('es', 'kokoro');
+    expect(mockDownload).not.toHaveBeenCalled();
+  });
+
+  it('a phone with no packs at all keeps the first Download with the full size, started only by the tap', () => {
+    mockState = stateWith({});
+    show();
+    expect(mockDownload).not.toHaveBeenCalled();
   });
 });
 

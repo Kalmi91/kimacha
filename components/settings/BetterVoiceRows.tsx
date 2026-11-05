@@ -13,11 +13,17 @@ import { t } from '@/lib/i18n';
 import { languages } from '@/lib/languages';
 import { downloadNeural, setNeuralEnabled, setNeuralEngine, useNeuralState } from '@/lib/neuralModels';
 import {
+  LEGACY_PACK_KEY,
+  LEGACY_SENTENCES_KEY,
   NEURAL_MODELS,
+  PACK_KEY,
   PIPER_MODEL_KEYS,
+  SENTENCES_KEY,
   formatMegabytes,
   missingBytes,
-  requiredItems,
+  modelItems,
+  modelKeysFor,
+  packItems,
   type NeuralEngine,
   type NeuralLang,
 } from '@/lib/neuralVoices';
@@ -35,14 +41,23 @@ export default function BetterVoiceRows({ Row }: { Row: RowComponent }) {
   const state = useNeuralState();
   if (!state.supported) return null;
 
-  const items = requiredItems(state.engines);
+  // The Better voice download fetches the voice models only; the recordings (both speakers, optional) are a row of
+  // their own and only a tap there installs them, on a phone with no packs too.
+  const usableNow = PIPER_MODEL_KEYS.every(key => state.installed[key]);
+  const items = modelItems(state.engines);
+  const packs = packItems();
+  const packsMissing = packs.filter(key => !state.installed[key]);
+  const hasOlderRecordings = !!(state.installed[LEGACY_PACK_KEY] || state.installed[LEGACY_SENTENCES_KEY]);
   const missing = items.filter(key => !state.installed[key]);
-  const usable = PIPER_MODEL_KEYS.every(key => state.installed[key]);
-  const { running, percent, phase, failed } = state.download;
+  const usable = usableNow;
+  const { running, percent, phase } = state.download;
+  const isPackKey = (key: string) => key === PACK_KEY || key === SENTENCES_KEY;
+  const failed = state.download.failed.filter(key => !isPackKey(key));
+  const packFailed = state.download.failed.filter(isPackKey);
   const langName = (code: NeuralLang) => languages.find(l => l.code === code)?.name ?? code;
   // Nothing downloads without a question that names the size (the phone may be on mobile data).
-  const confirmDownload = (bytes: number, go: () => void) => {
-    Alert.alert(s.confirmTitle, s.confirmMessage(formatMegabytes(bytes)), [
+  const confirmDownload = (bytes: number, go: () => void, message: (mb: string) => string = s.confirmModel) => {
+    Alert.alert(s.confirmTitle, message(formatMegabytes(bytes)), [
       { text: t().feedback.cancel, style: 'cancel' },
       { text: s.confirmYes, onPress: go },
     ]);
@@ -56,7 +71,8 @@ export default function BetterVoiceRows({ Row }: { Row: RowComponent }) {
     if (issue.engine !== state.engines[lang]) return null;
     return issue.kind === 'slow' ? s.issueSlow(engineName) : issue.kind === 'load-failed' ? s.issueLoad(engineName) : s.issueFailed(engineName);
   };
-  const askMissing = () => confirmDownload(missingBytes(items, state.installed), () => void downloadNeural());
+  const askMissing = () => confirmDownload(missingBytes(items, state.installed), () => void downloadNeural(items), s.confirmModel);
+  const askRecordings = () => confirmDownload(missingBytes(packs, state.installed), () => void downloadNeural(packs), s.confirmRecordings);
 
   const right = running ? (
     <Text style={[styles.status, { color: colors.text }]}>{phase === 'unpack' ? s.unpacking : s.downloading(percent)}</Text>
@@ -93,6 +109,36 @@ export default function BetterVoiceRows({ Row }: { Row: RowComponent }) {
         </View>
         {right}
       </Row>
+      {packsMissing.length > 0 && (
+        <Row>
+          <View style={styles.labelBox}>
+            <Text style={[styles.label, { color: colors.text }]}>{s.recordingsTitle}</Text>
+            <Text style={[styles.hint, { color: colors.tabIconDefault }]}>{s.recordingsHint}</Text>
+            {!running && state.download.lowSpace ? (
+              <Text testID="settings-recordings-lowspace" style={[styles.hint, { color: colors.text }]}>
+                {s.recordingsLowSpace(formatMegabytes(state.download.lowSpace))}
+              </Text>
+            ) : null}
+            {hasOlderRecordings && (
+              <Text testID="settings-recordings-newer" style={[styles.hint, { color: colors.text }]}>
+                {s.recordingsNewer}
+              </Text>
+            )}
+            {!running && packFailed.length > 0 && (
+              <Text testID="settings-recordings-retry" accessibilityRole="button" onPress={askRecordings} style={[styles.hint, { color: colors.text }]}>
+                {s.retry}
+              </Text>
+            )}
+          </View>
+          {running ? (
+            <Text style={[styles.status, { color: colors.text }]}>{phase === 'unpack' ? s.unpacking : s.downloading(percent)}</Text>
+          ) : (
+            <Pressable testID="settings-recordings-download" accessibilityRole="button" style={[styles.button, { borderColor: g.a }]} onPress={askRecordings}>
+              <Text style={[styles.buttonText, { color: g.ink }]}>{s.download(formatMegabytes(missingBytes(packs, state.installed)))}</Text>
+            </Pressable>
+          )}
+        </Row>
+      )}
       {usable &&
         CHOICE_LANGS.map(lang => (
           <Row key={lang}>
@@ -119,9 +165,10 @@ export default function BetterVoiceRows({ Row }: { Row: RowComponent }) {
                     disabled={running}
                     style={[styles.pill, { borderColor: selected ? g.a : colors.tabIconDefault, borderWidth: selected ? 2 : 1 }]}
                     onPress={() => {
-                      const bytes = missingBytes(requiredItems({ ...state.engines, [lang]: engine }), state.installed);
+                      // picking an engine asks about and fetches that engine's model only, never a recordings pack
+                      const bytes = missingBytes(modelKeysFor(lang, engine), state.installed);
                       if (engine === state.engines[lang] || bytes === 0) void setNeuralEngine(lang, engine);
-                      else confirmDownload(bytes, () => void setNeuralEngine(lang, engine));
+                      else confirmDownload(bytes, () => void setNeuralEngine(lang, engine), s.confirmModel);
                     }}
                   >
                     <Text style={[styles.pillText, { color: selected ? g.ink : colors.tabIconDefault }]}>{engine === 'piper' ? s.piper : s.kokoro}</Text>

@@ -32,7 +32,7 @@ import * as Speech from 'expo-speech';
 import { speakNeural, stopNeural } from './neuralTts';
 import { neuralEngineFor, neuralFallbackEngine, neuralPackFile, neuralSentenceFile, noteNeuralOk, noteNeuralTrouble, releaseStandIns, startNeural } from './neuralModels';
 import { playPackFile, stopPack } from './packAudio';
-import { isPiperOnly, neuralTimeLimitMs, voiceFor, type NeuralEngine, type NeuralLang, type VoiceGender } from './neuralVoices';
+import { neuralTimeLimitMs, voiceFor, type NeuralEngine, type NeuralLang, type VoiceGender } from './neuralVoices';
 import { getFastFallback, preferredGender } from './voicePreference';
 
 let voiceLanguages: Set<string> | null = null;
@@ -222,8 +222,8 @@ function speakBetter(text: string, locale: string, opts: BetterOptions, phone: (
   const explicitSex = opts.gender === 'f' || opts.gender === 'm';
   const picked = preferredGender(lang);
   const gender = explicitSex ? opts.gender : picked ?? opts.gender;
-  const wrongSex = !!gender && gender !== 'n' && !isPiperOnly(lang) && voiceFor(lang, 'kokoro', text).gender !== gender;
-  const wordFile = wrongSex ? null : neuralPackFile(lang, text);
+  // v2 of the word pack has both people of the pair: the recording of the speaking sex, none of the other.
+  const wordFile = neuralPackFile(lang, text, gender);
   // The sentence pack (Audio round B) after the word pack: the speaker is the explicit gender (a sequence's shared
   // speaker, a card's word), else the text's own hash gender, the one the engine would pick.
   let pack = wordFile ?? neuralSentenceFile(lang, text, gender);

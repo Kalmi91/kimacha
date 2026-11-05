@@ -214,8 +214,8 @@ export function closingOf(s: SpeechStory, run: Pick<StoryRun, 'path' | 'answers'
   return currentTurn(s, run).branches[last.branch]?.reply?.[lang] ?? null;
 }
 
-/** A `say` line as the voice reads it: the blank is left out. */
-export const speakable = (text: string): string => text.replace(/\s*_{3}/g, '').trim();
+/** A `say` line as the voice reads it: the blank is left out (its space stays: "Soy de ." is the text the recordings pack holds). */
+export const speakable = (text: string): string => text.replace(/_{3}/g, '').trim();
 
 /** A fresh run of the story. */
 export function startStory(s: SpeechStory, mode: AnswerMode): StoryRun {
