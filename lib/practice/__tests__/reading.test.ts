@@ -3,6 +3,7 @@ import type { ResolvedTense } from '@/lib/knownSentence';
 import { sm2NewCard, type Sm2Card } from '@/lib/sm2';
 import type { GapSourceInfo } from '../gapFill';
 import {
+  READING_MAX_USABLE,
   READING_WORDS,
   buildQuestions,
   buildReadingSet,
@@ -122,6 +123,34 @@ describe('pickReadingWords', () => {
     it('a topic with fewer than five words: the next topics fill the text up', () => {
       const d = deps({ findItem: withTopics({ o1: 'a', o2: 'a', o3: 'b', o4: 'b', o5: 'c', o6: 'c' }) });
       expect(pickReadingWords(d, known(d)).map((w) => w.itemId)).toEqual(['o1', 'o2', 'o3', 'o4', 'o5']);
+    });
+
+    it('a bucket topic does not win by size: a real topic with three words comes first', () => {
+      const d = deps({ findItem: withTopics({ o1: 'numbers', o2: 'numbers', o3: 'numbers', o4: 'numbers', o5: 'pets', o6: 'pets', o11: 'pets' }), cards: [...CARDS.filter((c) => c.itemId !== 'o11'), learned('o11', '2026-10-07')] });
+      expect(pickReadingWords(d, known(d)).map((w) => w.itemId)).toEqual(['o5', 'o6', 'o11', 'o1', 'o2']);
+    });
+
+    it('with no real topic of three words the bucket may win', () => {
+      const d = deps({ findItem: withTopics({ o1: 'numbers', o2: 'numbers', o3: 'numbers', o4: 'pets', o5: 'pets', o6: 'home' }) });
+      expect(pickReadingWords(d, known(d)).map((w) => w.itemId)).toEqual(['o4', 'o5', 'o6', 'o1', 'o2']);
+    });
+
+    it('the search stops after READING_MAX_USABLE usable words and the choice stays due-first', () => {
+      const nouns = Array.from({ length: 80 }, (_, i) => item(`o${100 + i}`, `el n${i}`, `n${i}`, 'noun', `El n${i} es grande.`, `The n${i} is big.`));
+      const items = [...ITEMS, ...nouns];
+      const infos = (id: string) => (id.startsWith('o1') && id.length === 4 ? { lemma: `n${Number(id.slice(1)) - 100}`, sentenceLemmas: ['el', `n${Number(id.slice(1)) - 100}`, 'ser', 'grande'] } : INFO[id]);
+      const calls: string[] = [];
+      const cards = nouns.map((n, i) => learned(n.id, `2026-09-${String(1 + (i % 28)).padStart(2, '0')}`, { lastReview: '2000-01-01' }));
+      const d = deps({ cards: [...CARDS.filter((c) => c.itemId === 'o11' || c.itemId === 'o14'), ...cards], findItem: (id) => { calls.push(id); return items.find((i) => i.id === id); }, info: infos });
+      const k = knownTokens(d.target, { learned: learnedEntries(d.cards, d.target, d.findItem), tenses: d.tenses });
+      calls.length = 0;
+      const words = pickReadingWords(d, k);
+      expect(words).toHaveLength(READING_WORDS);
+      expect(calls.length).toBeLessThanOrEqual(READING_MAX_USABLE);
+      const dueOf = (id: string) => cards.find((c) => c.itemId === id)!.due;
+      const dues = words.map((w) => dueOf(w.itemId));
+      expect(dues).toEqual([...dues].sort());
+      expect(dues[0]).toBe('2026-09-01');
     });
 
     it('the words of the previous round do not make their topic win again', () => {

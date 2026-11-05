@@ -30,6 +30,12 @@ import { bridgesIn, falseIn, pickStory, type Story } from './stories';
 export const READING_WORDS = 5;
 /** Fewer sentences than this make no reading: the screen shows the empty state. */
 export const READING_MIN_WORDS = 3;
+/** Looking for sentences stops after this many usable words (in due order): the check runs on every candidate otherwise. */
+export const READING_MAX_USABLE = 60;
+/** Grammar and function-word buckets (data/words-open/topics-a1.json): their words share no subject, so they only come when no real topic has READING_MIN_WORDS usable words. */
+export const BUCKET_TOPICS: ReadonlySet<string> = new Set([
+  'numbers', 'common_adjectives', 'personal_info', 'basic_verbs', 'present_simple', 'survival_needs', 'prepositions',
+]);
 /** A meaning question offers the right meaning plus this many others. */
 const MEANING_DISTRACTORS = 2;
 
@@ -139,6 +145,7 @@ export function pickReadingWords(deps: ReadingDeps, known: ReadonlySet<string>):
     if (seen.has(key)) continue;
     seen.add(key);
     usable.push({ word, topic: item?.topic ?? '', avoided: !!avoid?.has(card.itemId) });
+    if (usable.length >= READING_MAX_USABLE) break;
   }
   // One topic (E102, FB551): the topic with the most due words gives the text, so its sentences belong together;
   // the next topics (same ranking) fill the text up to READING_WORDS. Words of the previous
@@ -150,7 +157,11 @@ export function pickReadingWords(deps: ReadingDeps, known: ReadonlySet<string>):
     g.words.push(u.word);
     groups.set(u.topic, g);
   });
-  const ranked = [...groups.values()].sort((a, b) => b.fresh - a.fresh || a.first - b.first);
+  // Real topics with enough words first, then the small real topics, the buckets last; each by fresh count, then due order.
+  const tier = ([topic, g]: [string, { words: ReadingWord[] }]) => (BUCKET_TOPICS.has(topic) ? 2 : g.words.length >= READING_MIN_WORDS ? 0 : 1);
+  const ranked = [...groups.entries()]
+    .sort((a, b) => tier(a) - tier(b) || b[1].fresh - a[1].fresh || a[1].first - b[1].first)
+    .map(([, g]) => g);
   for (const g of ranked) {
     for (const w of g.words) {
       if (out.length >= READING_WORDS) break;
