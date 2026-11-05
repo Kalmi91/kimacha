@@ -34,6 +34,10 @@ export function neuralFallbackEngine(_lang: NeuralLang, _failed: NeuralEngine): 
   return null;
 }
 
+export function noteNeuralOk(_lang: NeuralLang, _engine: NeuralEngine): void {}
+
+export async function releaseStandIns(_except?: NeuralLang): Promise<void> {}
+
 export function noteNeuralTrouble(_lang: NeuralLang, _engine: NeuralEngine, _kind: 'slow' | 'failed'): void {}
 
 export function neuralPackFile(_lang: NeuralLang, _text: string): string | null {

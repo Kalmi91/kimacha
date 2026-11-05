@@ -59,7 +59,7 @@ export interface NeuralDownloadState {
 /** Why the chosen sentence engine of a language is not the one speaking right now (Settings says it in words). */
 export interface NeuralIssue {
   engine: NeuralEngine;
-  kind: 'load-failed' | 'slow' | 'failed';
+  kind: 'load-failed' | 'slow' | 'failed' | 'standin-failed';
   at: number;
 }
 
@@ -288,14 +288,18 @@ export function neuralFallbackEngine(lang: NeuralLang, failed: NeuralEngine): Ne
   const other: NeuralEngine = failed === 'piper' ? 'kokoro' : 'piper';
   if (isNeuralReady(lang, other)) return other;
   const pair = voicePair(lang, other);
-  if (pair.every(v => state.installed[v.model])) {
+  if (pair.every(v => state.installed[v.model]) && !standIns.has(lang)) {
+    standIns.add(lang);
     loadingChain = loadingChain.then(async () => {
       const fs = getFs();
+      await releaseStandIns(lang); // only this language keeps a stand-in
       for (const voice of pair) {
         try {
           await loadNeuralVoice(voice, lang, itemDir(fs, voice.model));
         } catch (e) {
           console.log(`[neural] stand-in load failed ${lang}/${voice.id}: ${String(e).slice(0, 120)}`);
+          standIns.delete(lang);
+          setIssue(lang, { engine: other, kind: 'standin-failed', at: Date.now() });
           return;
         }
       }
@@ -306,9 +310,37 @@ export function neuralFallbackEngine(lang: NeuralLang, failed: NeuralEngine): Ne
 }
 
 // lib/speech.ts reports an engine that could not speak (too slow, an error): the Settings row says so in words.
+// A slow engine counts at once; an error only when it happens twice in a row (a Bluetooth headset dropping, a player
+// that did not start: one-off, the speech was handed on and the next one is fine).
+const failedInARow = new Map<NeuralLang, number>();
 export function noteNeuralTrouble(lang: NeuralLang, engine: NeuralEngine, kind: 'slow' | 'failed'): void {
   if (engine !== state.engines[lang]) return; // the stand-in's trouble is not the chosen voice's
+  if (kind === 'failed') {
+    const count = (failedInARow.get(lang) ?? 0) + 1;
+    failedInARow.set(lang, count);
+    if (count < 2) return;
+  }
   setIssue(lang, { engine, kind, at: Date.now() });
+}
+
+// The engine spoke: its trouble is over, Settings stops warning.
+export function noteNeuralOk(lang: NeuralLang, engine: NeuralEngine): void {
+  failedInARow.delete(lang);
+  const issue = state.issues[lang];
+  if (issue && issue.engine === engine && issue.kind !== 'standin-failed') setIssue(lang, null);
+}
+
+// Stand-in engines (the other engine, loaded because the chosen one failed): only the speaking language keeps one,
+// and the system's memory warning drops them all. The chosen engine is never touched.
+const standIns = new Set<NeuralLang>();
+export async function releaseStandIns(except?: NeuralLang): Promise<void> {
+  for (const lang of [...standIns]) {
+    if (lang === except) continue;
+    standIns.delete(lang);
+    const other: NeuralEngine = state.engines[lang] === 'piper' ? 'kokoro' : 'piper';
+    loadedLangs.delete(`${lang}:${other}`);
+    await releaseNeuralPair(lang, other);
+  }
 }
 
 // Absolute path of the word pack's audio for this card word, or null (not installed, switched off, or the

@@ -122,6 +122,11 @@ describe('BetterVoiceRows: why the chosen voice is not speaking', () => {
     expect(view.getByTestId('settings-better-voice-es-issue').props.children).toContain('could not be loaded');
   });
 
+  it('says in words that the stand-in could not be loaded either', () => {
+    mockState = { ...stateWith(allPiper, { es: 'kokoro', en: 'piper', hu: 'piper', de: 'piper' }), issues: { es: { engine: 'piper', kind: 'standin-failed', at: 1 } } };
+    expect(show().getByTestId('settings-better-voice-es-issue').props.children).toContain('Piper could not be loaded either');
+  });
+
   it('says nothing when the trouble belongs to an engine that is no longer the chosen one', () => {
     mockState = { ...stateWith(allPiper), issues: { es: { engine: 'kokoro', kind: 'slow', at: 1 } } };
     expect(show().queryByTestId('settings-better-voice-es-issue')).toBeNull();

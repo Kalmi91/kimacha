@@ -13,6 +13,10 @@ jest.mock('../neuralModels', () => ({
   neuralPackFile: jest.fn(() => null),
   neuralSentenceFile: jest.fn(() => null),
   neuralEngineFor: jest.fn(() => null),
+  neuralFallbackEngine: jest.fn(() => null),
+  noteNeuralTrouble: jest.fn(),
+  noteNeuralOk: jest.fn(),
+  releaseStandIns: jest.fn(async () => {}),
 }));
 jest.mock('../neuralTts', () => ({
   speakNeural: jest.fn(async () => ({ firstChunkMs: 1, generatedMs: 2, audioMs: 3, peak: 0.5 })),

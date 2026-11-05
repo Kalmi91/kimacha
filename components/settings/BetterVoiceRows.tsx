@@ -50,8 +50,10 @@ export default function BetterVoiceRows({ Row }: { Row: RowComponent }) {
   // Why the chosen engine is not the one speaking right now, in plain words (lib/neuralModels.ts noteNeuralTrouble).
   const issueText = (lang: NeuralLang): string | null => {
     const issue = state.issues[lang];
-    if (!issue || issue.engine !== state.engines[lang]) return null;
+    if (!issue) return null;
     const engineName = issue.engine === 'kokoro' ? 'Kokoro' : 'Piper';
+    if (issue.kind === 'standin-failed') return s.issueStandIn(engineName);
+    if (issue.engine !== state.engines[lang]) return null;
     return issue.kind === 'slow' ? s.issueSlow(engineName) : issue.kind === 'load-failed' ? s.issueLoad(engineName) : s.issueFailed(engineName);
   };
   const askMissing = () => confirmDownload(missingBytes(items, state.installed), () => void downloadNeural());

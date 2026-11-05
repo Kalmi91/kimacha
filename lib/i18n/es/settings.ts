@@ -52,6 +52,7 @@ const es: typeof en = {
       issueSlow: (engine: string) => `${engine} fue demasiado lento en este teléfono, así que habla la otra voz. Elige Piper para evitar la espera.`,
       issueFailed: (engine: string) => `${engine} no pudo hablar ahora, así que habla la otra voz o la voz del teléfono.`,
       issueLoad: (engine: string) => `${engine} no se pudo cargar, así que habla la otra voz o la voz del teléfono. Lo intenta de nuevo en un momento.`,
+      issueStandIn: (engine: string) => `${engine} tampoco se pudo cargar, así que habla la voz del teléfono.`,
       confirmTitle: '¿Descargar la voz mejor?',
       confirmMessage: (mb: string) => `Se descargan ${mb} (las grabaciones de las palabras y las frases, y las voces). Con datos móviles cuenta en tu plan, por eso se recomienda Wi-Fi.`,
       confirmYes: 'Descargar',

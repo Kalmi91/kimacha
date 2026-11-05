@@ -52,6 +52,7 @@ export default {
       issueSlow: (engine: string) => `${engine} was too slow on this phone, so the other voice speaks. Choose Piper to skip the wait.`,
       issueFailed: (engine: string) => `${engine} could not speak just now, so the other voice or the phone's own voice speaks instead.`,
       issueLoad: (engine: string) => `${engine} could not be loaded, so the other voice or the phone's own voice speaks instead. It tries again in a moment.`,
+      issueStandIn: (engine: string) => `${engine} could not be loaded either, so the phone's own voice speaks instead.`,
       confirmTitle: 'Download the better voice?',
       confirmMessage: (mb: string) => `This downloads ${mb} (the word and sentence recordings and the voices). On mobile data it counts against your plan, so Wi-Fi is recommended.`,
       confirmYes: 'Download',

@@ -14,6 +14,8 @@ jest.mock('../neuralModels', () => ({
   neuralEngineFor: jest.fn(() => null),
   neuralFallbackEngine: jest.fn(() => null),
   noteNeuralTrouble: jest.fn(),
+  noteNeuralOk: jest.fn(),
+  releaseStandIns: jest.fn(async () => {}),
 }));
 jest.mock('../neuralTts', () => ({
   speakNeural: jest.fn(async () => ({ firstChunkMs: 1, generatedMs: 2, audioMs: 3, peak: 0.5 })),
@@ -37,6 +39,7 @@ const sentenceFile = models.neuralSentenceFile as jest.Mock;
 const engineFor = models.neuralEngineFor as jest.Mock;
 const fallbackEngine = models.neuralFallbackEngine as jest.Mock;
 const noteTrouble = models.noteNeuralTrouble as jest.Mock;
+const noteOk = models.noteNeuralOk as jest.Mock;
 const speakNeural = engine.speakNeural as jest.Mock;
 const playPack = pack.playPackFile as jest.Mock;
 
@@ -135,6 +138,27 @@ describe('speak(): the levels', () => {
     expect(noteTrouble).toHaveBeenNthCalledWith(2, 'es', 'piper', 'failed');
     expect(speech.speak).toHaveBeenCalledTimes(1); // the phone, last
     expect(fallbackEngine).toHaveBeenCalledTimes(1); // the stand-in never hands on again
+  });
+
+  it('an engine that spoke clears its trouble; the learner\'s own cut (busy) is not reported at all', async () => {
+    engineFor.mockReturnValue('kokoro');
+    speak('Hola amigo', 'es-MX');
+    await flush();
+    expect(noteOk).toHaveBeenCalledWith('es', 'kokoro');
+    fallbackEngine.mockReturnValue('piper');
+    speakNeural.mockRejectedValueOnce(Object.assign(new Error('busy'), { name: 'NeuralBusyError' }));
+    speak('Hola amigo', 'es-MX');
+    await flush();
+    expect(noteTrouble).not.toHaveBeenCalled();
+    expect(speakNeural).toHaveBeenLastCalledWith('Hola amigo', 'es', expect.objectContaining({ engine: 'piper' }), expect.anything());
+  });
+
+  it('a language the phone has no voice for still ends the speech (onDone), so a read-aloud chain goes on', async () => {
+    (speech.getAvailableVoicesAsync as jest.Mock).mockResolvedValue([{ language: 'en-US' }]);
+    await loadVoices();
+    const onDone = jest.fn();
+    speak('a kutya', 'hu-HU', { onDone });
+    expect(onDone).toHaveBeenCalledTimes(1);
   });
 
   it('with no other engine loaded the slow engine hands straight to the phone', async () => {

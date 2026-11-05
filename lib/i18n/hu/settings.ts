@@ -52,6 +52,7 @@ const hu: typeof en = {
       issueSlow: (engine: string) => `A ${engine} túl lassú volt ezen a telefonon, ezért a másik hang szól. Válaszd a Pipert, hogy ne kelljen várni.`,
       issueFailed: (engine: string) => `A ${engine} most nem tudott megszólalni, ezért a másik hang vagy a telefon saját hangja szól helyette.`,
       issueLoad: (engine: string) => `A ${engine} nem töltődött be, ezért a másik hang vagy a telefon saját hangja szól helyette. Hamarosan újra próbálja.`,
+      issueStandIn: (engine: string) => `A ${engine} sem töltődött be, ezért a telefon saját hangja szól.`,
       confirmTitle: 'Letöltöd a jobb hangot?',
       confirmMessage: (mb: string) => `Ez ${mb} letöltés (a szavak és mondatok felvételei és a hangok). Mobilneten a csomagodból fogy, ezért Wi-Fi ajánlott.`,
       confirmYes: 'Letöltés',

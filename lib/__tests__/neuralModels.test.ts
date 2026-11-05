@@ -261,6 +261,47 @@ describe('better voice: state at start', () => {
     expect(mockLoaded.every(entry => entry.includes('es_MX'))).toBe(true);
   });
 
+  it('an error counts only when it happens twice in a row, a slow engine at once, and an engine that spoke clears it', async () => {
+    for (const key of [...PIPER_MODEL_KEYS, 'kokoro']) installModel(key);
+    mockFs.set(`${TTS}/settings.json`, JSON.stringify({ enabled: true, engines: { es: 'kokoro', en: 'piper', hu: 'piper', de: 'piper' } }));
+    const m = load();
+    await m.startNeural();
+    m.noteNeuralTrouble('es', 'kokoro', 'failed');
+    expect(m.getNeuralState().issues.es).toBeUndefined(); // one-off
+    m.noteNeuralOk('es', 'kokoro');
+    m.noteNeuralTrouble('es', 'kokoro', 'failed');
+    expect(m.getNeuralState().issues.es).toBeUndefined(); // the counter was reset by the success
+    m.noteNeuralTrouble('es', 'kokoro', 'failed');
+    expect(m.getNeuralState().issues.es).toMatchObject({ kind: 'failed' });
+    m.noteNeuralOk('es', 'kokoro');
+    expect(m.getNeuralState().issues.es).toBeUndefined(); // recovered: no stale warning
+    m.noteNeuralTrouble('es', 'kokoro', 'slow');
+    expect(m.getNeuralState().issues.es).toMatchObject({ kind: 'slow' });
+  });
+
+  it('a stand-in that fails to load is reported, only one language keeps a stand-in, and releaseStandIns drops it', async () => {
+    for (const key of [...PIPER_MODEL_KEYS, 'kokoro']) installModel(key);
+    mockFs.set(`${TTS}/settings.json`, JSON.stringify({ enabled: true, engines: { es: 'kokoro', en: 'kokoro', hu: 'piper', de: 'piper' } }));
+    const m = load();
+    await m.startNeural();
+    m.neuralEngineFor('es');
+    m.neuralEngineFor('en');
+    await flush();
+    m.neuralFallbackEngine('es', 'kokoro');
+    await flush();
+    expect(m.neuralFallbackEngine('es', 'kokoro')).toBe('piper');
+    m.neuralFallbackEngine('en', 'kokoro'); // the speaking language changes: es loses its stand-in
+    await flush();
+    expect(mockPairReleased).toContain('es:piper');
+    expect(m.neuralFallbackEngine('en', 'kokoro')).toBe('piper');
+    await m.releaseStandIns();
+    expect(mockPairReleased).toContain('en:piper');
+    mockFailLoad.add('en_US-john-medium');
+    m.neuralFallbackEngine('en', 'kokoro');
+    await flush();
+    expect(m.getNeuralState().issues.en).toMatchObject({ engine: 'piper', kind: 'standin-failed' });
+  });
+
   it('trouble of the stand-in engine is not reported as the chosen voice, and Hungarian has no fallback', async () => {
     for (const key of PIPER_MODEL_KEYS) installModel(key);
     const m = load();

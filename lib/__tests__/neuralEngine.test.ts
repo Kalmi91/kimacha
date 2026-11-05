@@ -383,6 +383,29 @@ describe('neural engines: a new request while the native generation is still run
 });
 
 describe('neural engines: the time limit and the hand-over to another engine', () => {
+  it('the limit is one budget per speech: the wait for a busy engine counts, and it is NeuralBusyError, not slow', async () => {
+    jest.useFakeTimers();
+    try {
+      const { engine, started } = nativeEngine({ genMs: 20000 });
+      mockCreate.mockImplementation(async () => engine);
+      const voice = PIPER_VOICES.es[0];
+      await loadNeuralVoice(voice, 'es', '/p');
+      void speakNeural('uno', 'es', voice).catch(() => {});
+      await jest.advanceTimersByTimeAsync(10);
+      stopNeural(); // the learner's cut: the generation runs on native-side
+      const t0 = Date.now();
+      const second = speakNeural('dos', 'es', voice, { firstChunkTimeoutMs: 4000 }).then(() => 'spoke', err => err);
+      await jest.advanceTimersByTimeAsync(4100);
+      const err = await second;
+      expect(err.name).toBe('NeuralBusyError');
+      expect(err).not.toBeInstanceOf(NeuralSlowError);
+      expect(Date.now() - t0).toBeLessThan(4500); // not 4 s of waiting plus 4 s of timer
+      expect(started).toEqual(['uno']);
+    } finally {
+      jest.useRealTimers();
+    }
+  });
+
   it('an engine that gives no audio within the limit rejects with NeuralSlowError, cancels, and does not hold up another engine', async () => {
     jest.useFakeTimers();
     try {

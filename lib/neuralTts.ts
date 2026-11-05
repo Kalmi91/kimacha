@@ -28,6 +28,14 @@ export interface NeuralSpeakOptions {
   firstChunkTimeoutMs?: number;
 }
 
+/** The engine is still busy with the generation the learner's own cut left behind: not the engine's fault. */
+export class NeuralBusyError extends Error {
+  constructor() {
+    super('neural voice busy');
+    this.name = 'NeuralBusyError';
+  }
+}
+
 /** The engine did not produce audio in time (a slow phone, a busy engine): the caller hands over to the next level. */
 export class NeuralSlowError extends Error {
   constructor(message = 'neural voice too slow') {
@@ -256,6 +264,7 @@ export async function speakNeural(
 
   runCounter += 1;
   const myRun = runCounter;
+  const budgetStart = now(); // one time limit per speech: the wait for a busy engine counts against it
   await stopActive();
   if (myRun !== runCounter) return { firstChunkMs: -1, generatedMs: 0, audioMs: 0, peak: 0 }; // a newer speech or a stop won
 
@@ -264,8 +273,10 @@ export async function speakNeural(
   if (busy) {
     await settledOrAfter(busy, options.firstChunkTimeoutMs ?? NATIVE_END_WAIT_MS);
     if (myRun !== runCounter) return { firstChunkMs: -1, generatedMs: 0, audioMs: 0, peak: 0 };
-    if (generating.get(engine) === busy) throw new NeuralSlowError('neural voice busy');
+    if (generating.get(engine) === busy) throw new NeuralBusyError();
   }
+  const budgetLeft = options.firstChunkTimeoutMs === undefined ? undefined : options.firstChunkTimeoutMs - (now() - budgetStart);
+  if (budgetLeft !== undefined && budgetLeft <= 0) throw new NeuralBusyError();
 
   const run: ActiveRun = { engine, controller: null, timer: null, slowTimer: null, finished: false, onStopped: options.onStopped, started: Promise.resolve(), ended: Promise.resolve() };
   active = run;
@@ -308,13 +319,14 @@ export async function speakNeural(
     void run.ended.then(() => {
       if (generating.get(engine) === run.ended) generating.delete(engine);
     });
-    if (options.firstChunkTimeoutMs !== undefined) {
+    if (budgetLeft !== undefined) {
       run.slowTimer = setTimeout(() => {
         if (run.finished || firstChunkMs >= 0) return;
         console.log(`[neural] ${lang}/${voice.id} no audio after ${options.firstChunkTimeoutMs} ms, handing over`);
-        void run.engine.cancelSpeechStream().catch(() => {});
+        // the cancel can only go to a generation that has started (as in stopActive)
+        void run.started.then(() => run.engine.cancelSpeechStream()).catch(() => {});
         fail(new NeuralSlowError());
-      }, options.firstChunkTimeoutMs);
+      }, budgetLeft);
     }
     run.started = generateWhenFree(
         run,

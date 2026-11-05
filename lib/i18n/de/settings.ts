@@ -51,6 +51,7 @@ const de: typeof en = {
       issueSlow: (engine: string) => `${engine} war auf diesem Handy zu langsam, deshalb spricht die andere Stimme. Wähle Piper, um das Warten zu sparen.`,
       issueFailed: (engine: string) => `${engine} konnte gerade nicht sprechen, deshalb spricht die andere Stimme oder die Stimme des Handys.`,
       issueLoad: (engine: string) => `${engine} konnte nicht geladen werden, deshalb spricht die andere Stimme oder die Stimme des Handys. Es wird gleich noch einmal versucht.`,
+      issueStandIn: (engine: string) => `${engine} konnte auch nicht geladen werden, deshalb spricht die Stimme des Handys.`,
       confirmTitle: 'Die bessere Stimme herunterladen?',
       confirmMessage: (mb: string) => `Das lädt ${mb} herunter (die Wort- und Satzaufnahmen und die Stimmen). Mit mobilen Daten zählt es zu deinem Datenvolumen, deshalb ist WLAN empfehlenswert.`,
       confirmYes: 'Herunterladen',
