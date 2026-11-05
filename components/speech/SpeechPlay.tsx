@@ -20,7 +20,7 @@ import type { SpokenMatch } from '@/lib/practice/situationMatch';
 import { speak, stopSpeaking } from '@/lib/speech';
 import { isMicOffError, isNothingHeardError, useRecognizer } from '@/lib/speechRecognition';
 import { TOP_ROW, upperFooterMax } from '@/lib/speech/layout';
-import { MAX_TRIES, answerTurn, bubbleOf, closingOf, judgeAnswer, progressOf, skipTurn, speakable, turnById, type AnswerMode, type SpeechStory, type StoryRun } from '@/lib/speech/stories';
+import { MAX_BACKS, MAX_TRIES, answerTurn, backsOn, bubbleOf, closingOf, judgeAnswer, progressOf, skipTurn, speakable, turnById, type AnswerMode, type SpeechStory, type StoryRun } from '@/lib/speech/stories';
 import { useTheme } from '@/lib/ThemeContext';
 
 // The story itself: the character's lines as chat bubbles, the learner's answers as bubbles on the other side, and below, docked
@@ -84,7 +84,7 @@ export default function SpeechPlay({ story, run, target, source, strictAccents, 
   const submit = (text: string, byTyping: boolean) => {
     const said = text.trim();
     if (waiting || run.done || !said) return;
-    const { branch, match } = judgeAnswer(turn, said, { lang: story.target, strictAccents: byTyping && strictAccents });
+    const { branch, match } = judgeAnswer(turn, said, { lang: story.target, strictAccents: byTyping && strictAccents, noBack: backsOn(run) >= MAX_BACKS });
     if (branch !== null) {
       setHeard(null);
       setTyped('');
@@ -168,6 +168,17 @@ export default function SpeechPlay({ story, run, target, source, strictAccents, 
     }, run.done && closing ? motion.feedback * 3 : motion.feedback);
     return () => clearTimeout(id);
   }, [waiting, run.answers.length, run.done, story, lang, closing]);
+
+  // her answer to an ask-back is read aloud (a resumed run is silent)
+  const backsSeen = useRef(run.backs.length);
+  useEffect(() => {
+    const last = run.backs[run.backs.length - 1];
+    if (last && run.backs.length > backsSeen.current && focused.current) {
+      const reply = turnById(story, run.path[last.at])?.branches[last.branch]?.reply;
+      if (reply) speak(reply[story.target], lang);
+    }
+    backsSeen.current = run.backs.length;
+  }, [run.backs, run.path, story, lang]);
 
   // a new result or a new turn shows the upper part from its top (the red words first)
   useEffect(() => {
@@ -329,7 +340,7 @@ export default function SpeechPlay({ story, run, target, source, strictAccents, 
       target={target}
       currentCard={`speech:${story.id}:${shown}`}
       hideLevelCounter
-      scrollKey={`${shown}:${run.answers.length}:${heard ? 1 : 0}`}
+      scrollKey={`${shown}:${run.answers.length}:${run.backs.length}:${heard ? 1 : 0}`}
       onFrameLayout={setFrameH}
       top={
         <View style={styles.top} onLayout={(e) => setTopH(Math.round(e.nativeEvent.layout.height))}>
@@ -353,13 +364,15 @@ export default function SpeechPlay({ story, run, target, source, strictAccents, 
     >
       <View style={styles.chat}>
         <Text testID="speech-narration" style={[styles.narration, { color: colors.textMuted }]}>{story.intro[source]}</Text>
-        {run.path.slice(0, shown + 1).map((_id, n) => {
+        {run.path.slice(0, shown + 1).map((id, n) => {
           const answer = run.answers[n];
+          const here = turnById(story, id);
           return (
             <View key={n} style={styles.exchange}>
+              {here?.scene && <Text testID={`speech-scene-${n}`} style={[styles.narration, { color: colors.textMuted }]}>{here.scene[source]}</Text>}
               <Card style={styles.left} classicStyle={styles.bubble} boxStyle={styles.brutalBubble}>
                 <View style={styles.bubbleHead}>
-                  <Text style={[styles.who, { color: colors.textMuted }]}>{story.speaker}</Text>
+                  <Text style={[styles.who, { color: colors.textMuted }]}>{here?.recall ? sx.recallWho : story.speaker}</Text>
                   <View style={styles.tools}>
                     <SpeakButton
                       testID={`speech-listen-${n}`}
@@ -382,6 +395,36 @@ export default function SpeechPlay({ story, run, target, source, strictAccents, 
                 <Text testID={`speech-line-${n}`} style={[styles.line, { color: colors.text }]}>{bubbleOf(story, run, n, story.target)}</Text>
                 {translated.has(n) && <Text testID={`speech-translation-${n}`} style={[styles.translation, { color: colors.textMuted }]}>{bubbleOf(story, run, n, source)}</Text>}
               </Card>
+              {run.backs.flatMap((back, i) => {
+                const reply = back.at === n ? turnById(story, id)?.branches[back.branch]?.reply : undefined;
+                if (!reply) return [];
+                return [
+                  <Card key={`back-${i}`} fill="b" style={styles.right} classicStyle={[styles.bubble, { backgroundColor: colors.tint }]} boxStyle={styles.brutalBubble}>
+                    <Text style={[styles.who, { color: meText }]}>{sx.you}</Text>
+                    <Text testID={`speech-back-${i}`} style={[styles.line, { color: meText }]}>{cap(back.text)}</Text>
+                  </Card>,
+                  <Card key={`back-reply-${i}`} style={styles.left} classicStyle={styles.bubble} boxStyle={styles.brutalBubble}>
+                    <View style={styles.bubbleHead}>
+                      <Text style={[styles.who, { color: colors.textMuted }]}>{story.speaker}</Text>
+                      <View style={styles.tools}>
+                        <SpeakButton testID={`speech-back-listen-${i}`} onPress={() => say(reply[story.target])} style={styles.tool} iconStyle={styles.toolIcon} />
+                        <Pressable
+                          testID={`speech-back-translate-${i}`}
+                          accessibilityRole="button"
+                          accessibilityLabel={sx.showTranslation}
+                          accessibilityState={{ expanded: translated.has(1000 + i) }}
+                          onPress={() => setTranslated((all) => (all.has(1000 + i) ? new Set([...all].filter((x) => x !== 1000 + i)) : new Set([...all, 1000 + i])))}
+                          style={styles.tool}
+                        >
+                          <Text style={[styles.toolLetter, { color: colors.text }]}>F</Text>
+                        </Pressable>
+                      </View>
+                    </View>
+                    <Text testID={`speech-back-reply-${i}`} style={[styles.line, { color: colors.text }]}>{reply[story.target]}</Text>
+                    {translated.has(1000 + i) && <Text style={[styles.translation, { color: colors.textMuted }]}>{reply[source]}</Text>}
+                  </Card>,
+                ];
+              })}
               {answer && (
                 <Card
                   fill="b"

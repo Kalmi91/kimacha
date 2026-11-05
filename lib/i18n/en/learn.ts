@@ -253,6 +253,7 @@ export default {
     ask: (name: string) => `Answer ${name}.`,
     canSay: 'You can say',
     prepAsks: (name: string) => `${name} asks`,
+    recallWho: 'Question',
     leadsFrom: (say: string) => `Comes after: “${say}”`,
     progressLabel: (n: number, total: number) => `Answer ${n} of ${total}`,
     showTranslation: 'Show the translation',

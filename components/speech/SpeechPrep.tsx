@@ -72,7 +72,7 @@ export default function SpeechPrep({ story, target, source, onStart, onBack }: P
           return (
             <Card key={turn.id} classicStyle={styles.card} boxStyle={styles.brutalCard}>
               <View testID={`speech-prep-turn-${i}`} style={styles.group}>
-                <Text style={[styles.caption, { color: colors.textMuted }]}>{sx.prepAsks(story.speaker)}</Text>
+                <Text style={[styles.caption, { color: colors.textMuted }]}>{turn.recall ? sx.recallWho : sx.prepAsks(story.speaker)}</Text>
                 <View style={styles.row}>
                   <SpeakButton
                     testID={`speech-prep-listen-${i}`}
