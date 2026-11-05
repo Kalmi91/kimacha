@@ -218,7 +218,7 @@ export default function LevelTestScreen() {
     const practiceTasks = lesson ? buildPractice(pendingQ, lesson, { learnedLang: data.learnedLang, contentLang: data.contentLang, seed }) : [];
     setResult({ q: pendingQ, topicId, ok, given, practice: practiceTasks });
     setEarned(0);
-    if (ok) awardXpThen('grammar', `level:${pendingQ.id}`, setEarned);
+    if (ok) awardXpThen('grammar', pendingQ.id, setEarned);
     // a right answer chimes first and the sentence follows; a wrong one is only read out
     const say = () => {
       if (pendingQ.say) speak(pendingQ.say, speechLang(data.learnedLang));

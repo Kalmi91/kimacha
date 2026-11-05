@@ -85,7 +85,6 @@ function GrammarLessonPhases({ topic }: { topic: ReturnType<typeof useGrammarTop
     setScore,
     drillKind,
     setDrillKind,
-    drillItemId,
     setDrillItemId,
     dock,
     scrollRef,
@@ -254,7 +253,7 @@ function GrammarLessonPhases({ topic }: { topic: ReturnType<typeof useGrammarTop
         <DockSlotProvider host={dock}>
           {/* on the brutalist palette the drill's own header (X + segmented bar + combo) replaces it. */}
           {g.brutal ? null : header}
-          <XpChip earned={earned && earned.id === drillItemId ? earned.points : 0} />
+          <XpChip earned={earned ? earned.points : 0} />
           {/* the lesson drill runs through the `drillKind` kind
               (the buttons start each kind separately); the Game tab's grammar-choice,
               lacking the `kinds` prop, still gets only its gap/mark round as before. */}
@@ -266,7 +265,7 @@ function GrammarLessonPhases({ topic }: { topic: ReturnType<typeof useGrammarTop
             kinds={drillKinds}
             transformSeen={transformSeen}
             onItemChange={setDrillItemId}
-            onAnswer={(id, ok) => ok && awardXpThen('grammar', `${String(topicId)}:${id}`, (points) => setEarned({ id, points }))}
+            onAnswer={(id, ok) => ok && awardXpThen('grammar', id, (points) => setEarned({ id, points }))}
             onRoundStats={setRoundStats}
             onClose={() => setPhase('lesson')}
             // an abandoned round continues from where it left off; it is saved

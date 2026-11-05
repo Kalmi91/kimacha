@@ -273,7 +273,7 @@ export default function RandomRoundScreen() {
     setEvidence(nextEvidence);
     setRun(next);
     setEarned(0);
-    if (ok) awardXpThen(phase === 'practice' ? 'levelPractice' : 'grammar', `random:${pendingQ.id}`, setEarned);
+    if (ok) awardXpThen(phase === 'practice' ? 'levelPractice' : 'grammar', pendingQ.id, setEarned);
     if (phase === 'practice') setFeedback({ q: pendingQ, ok, topicId, index: before.index + 1, of: before.of });
     else if (ok) setRightMark((n) => n + 1);
     // FB549: a right answer chimes first and the sentence follows; a wrong one is only read out

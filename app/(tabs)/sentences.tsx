@@ -20,6 +20,7 @@ import { PCIC_LEVELS, findPcicItem, levelOfItem, pcicItemsForLevel, type PcicLev
 import { getBeta, loadBeta, useBeta } from '@/lib/beta';
 import { getDb } from '@/lib/database';
 import XpChip from '@/components/XpChip';
+import { hashString } from '@/lib/shuffle';
 import { awardXp, isHardSentence } from '@/lib/xpAward';
 import { useLearner } from '@/lib/learner';
 import { GRAMMAR_PROGRESS_KEY, doneGrammarTopicProgress } from '@/lib/grammar/syllabus';
@@ -131,8 +132,7 @@ export default function SentencesScreen() {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const s = t();
-  // beta: xpV2, each word's half of a typed sentence earns XP; off = no XP, the old behavior.
-  const xpV2 = useBeta('xpV2');
+  // XP comes only from the sentence table (lib/xpAward.ts), flag or not: the per-word halves earn nothing here.
   // beta: sentenceMistakes, one build is a sentence from "My mistakes", credited to that deck (lib/sentenceMistakes.ts).
   const mistakesBeta = useBeta('sentenceMistakes');
   // beta: sentenceHint, the English prompt's words can be tapped for the Spanish form; a looked-at word earns no credit this round.
@@ -311,7 +311,7 @@ export default function SentencesScreen() {
         try {
           const { level: learnerLevel } = await refresh(['level']);
           const hard = isHardSentence(entry.target, levelOfItem(entry.itemId), learnerLevel, PCIC_LEVELS);
-          setEarned(await awardXp(hard ? 'sentenceHard' : 'sentence', sentenceKey(entry)));
+          setEarned(await awardXp(hard ? 'sentenceHard' : 'sentence', hashString(sentenceKey(entry)).toString(36)));
         } catch {
           // a failed XP write earns nothing, the answer itself stands
         }
@@ -333,7 +333,7 @@ export default function SentencesScreen() {
         // A word that was looked at with a hint this round earns nothing (neither a half nor a step back).
         const hinted = new Set((roundRef.current ?? round).hinted ?? []);
         if (hinted.size > 0) verdicts = verdicts.filter((v) => !hinted.has(v.id));
-        await recordTypedWords(verdicts, xpV2);
+        await recordTypedWords(verdicts, false);
       } else if (stepNow.kind === 'mistake' && mistakesBeta) {
         // Credited to the mistake deck, as its Knew it / Didn't know: right = knew it, wrong = didn't know.
         await recordMistakeBuild(entry.itemId, correct, localDateString());

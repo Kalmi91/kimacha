@@ -1,7 +1,7 @@
 // XP of the grammar, Sentences and speech sources (FB591, FB600, FB601, FB606): the table, the per-item-per-day count
 // (it survives an app kill) and the one function that decides what a "hard" sentence is. Memory db.
 
-import { exportWebState } from '../database.web';
+import { exportWebState, getDb } from '../database.web';
 import { getXp } from '../dailyXp';
 import { PCIC_LEVELS } from '../../data/pcic';
 import { XP_TABLE, awardXp, isHardSentence, xpForRepeat, type XpKind } from '../xpAward';
@@ -79,6 +79,24 @@ describe('the count is per item per day', () => {
       await reborn;
     });
     expect(await reborn).toBe(0);
+  });
+});
+
+describe('one row, bounded by a day', () => {
+  it('many items on two days still leave exactly one row, and a new date starts from empty', async () => {
+    await payouts('grammar', 'row-a', 2, '2031-04-01');
+    await payouts('sentence', 'row-b', 1, '2031-04-01');
+    await awardXp('grammar', 'row-c', '2031-04-02');
+    const rows = (await getDb().getGameProgress('xp-items')).filter((r) => r.itemId === 'today');
+    expect(rows).toHaveLength(1);
+    expect(Object.keys((rows[0].data as { counts: object }).counts)).toEqual(['row-c']);
+    expect(await awardXp('grammar', 'row-a', '2031-04-02')).toBe(2);
+  });
+
+  it('a grammar item is one item on every screen, level practice keeps its own count', async () => {
+    expect(await awardXp('grammar', 'shared-q', '2031-04-03')).toBe(2);
+    expect(await awardXp('grammar', 'shared-q', '2031-04-03')).toBe(0.5);
+    expect(await awardXp('levelPractice', 'shared-q', '2031-04-03')).toBe(0.5);
   });
 });
 

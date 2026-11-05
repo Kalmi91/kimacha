@@ -111,7 +111,7 @@ export default function TenseDrillScreen() {
     const correct = gradeTense(typed, current, { strictAccents });
     setChecked({ correct });
     setEarned(0);
-    if (correct) awardXpThen('grammar', `tense:${current.id}`, setEarned);
+    if (correct) awardXpThen('grammar', current.id, setEarned);
     speak(current.answer, speechLang('de'));
   };
 

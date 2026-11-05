@@ -20,20 +20,22 @@ export function xpForRepeat(kind: XpKind, timesToday: number): number {
   return XP_TABLE[kind][timesToday] ?? 0;
 }
 
-// The per-item-per-day count lives in the game_progress table under this game id, one row per item:
-// item_id = `${kind}:${itemKey}`, state = `${date}:${count}`. A row of an older day reads as 0, so the
-// table holds one row per item ever rewarded, not one per day. It survives an app kill (SQLite).
+// The per-item-per-day count lives in ONE game_progress row: game `xp-items`, item `today`, data {date, counts}.
+// A new date empties it, so it is bounded by one day's activity (one row read per answer, nothing to merge across days).
+// Grammar answers count per item id, whatever screen they come from (a question seen in the level test, the random
+// round and the lesson drill is one item); the other kinds have their own key space, so level practice keeps its own line.
 export const XP_ITEMS_GAME = 'xp-items';
+const TODAY_ROW = 'today';
 
-function parseState(state: string | undefined, date: string): number {
-  if (!state) return 0;
-  const at = state.lastIndexOf(':');
-  if (at < 0 || state.slice(0, at) !== date) return 0;
-  const n = Number(state.slice(at + 1));
-  return Number.isFinite(n) && n > 0 ? n : 0;
+type DayCounts = { date: string; counts: Record<string, number> };
+
+function readCounts(data: unknown, date: string): DayCounts {
+  const d = data as Partial<DayCounts> | null | undefined;
+  if (d && d.date === date && d.counts && typeof d.counts === 'object') return { date, counts: { ...d.counts } };
+  return { date, counts: {} };
 }
 
-// Read-modify-write of one count must not interleave: two fast answers would both read the same count.
+// Read-modify-write of the row must not interleave: two fast answers would both read the same counts.
 let chain: Promise<unknown> = Promise.resolve();
 
 // Records one right answer on `itemKey` and adds the XP it earns. Returns the XP earned (0 = nothing, show nothing).
@@ -41,11 +43,13 @@ let chain: Promise<unknown> = Promise.resolve();
 export function awardXp(kind: XpKind, itemKey: string, date: string = localDateString()): Promise<number> {
   const run = async (): Promise<number> => {
     const db = getDb();
-    const id = `${kind}:${itemKey}`;
-    const rows = await db.getGameProgress(XP_ITEMS_GAME);
-    const before = parseState(rows.find((r) => r.itemId === id)?.state, date);
+    const key = kind === 'grammar' ? itemKey : `${kind}:${itemKey}`;
+    const row = (await db.getGameProgress(XP_ITEMS_GAME)).find((r) => r.itemId === TODAY_ROW);
+    const day = readCounts(row?.data, date);
+    const before = day.counts[key] ?? 0;
     const points = xpForRepeat(kind, before);
-    await db.setGameProgress(XP_ITEMS_GAME, id, `${date}:${before + 1}`);
+    day.counts[key] = before + 1;
+    await db.setGameProgress(XP_ITEMS_GAME, TODAY_ROW, date, day);
     if (points > 0) await addXp(points, date);
     return points;
   };

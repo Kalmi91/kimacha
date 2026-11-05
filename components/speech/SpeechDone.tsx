@@ -1,4 +1,3 @@
-import { useEffect, useRef, useState } from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
 import { Text } from '@/components/KText';
 import Colors from '@/constants/Colors';
@@ -11,7 +10,6 @@ import { t } from '@/lib/i18n';
 import type { Lang } from '@/lib/languagePair';
 import type { SpeechStory, StoryRun } from '@/lib/speech/stories';
 import { useTheme } from '@/lib/ThemeContext';
-import { awardXpThen } from '@/lib/xpAward';
 
 // The end of a story: the closing words, how many answers were right the first time, and what next (the same story again, or
 // the list). Reaching it dropped the saved run and wrote the progress row (components/speech/SpeechTab.tsx).
@@ -21,23 +19,17 @@ interface Props {
   run: StoryRun;
   target: PcicTarget;
   source: Lang;
+  /** The XP the story gave when its last answer landed (0 shows nothing). */
+  earned: number;
   onAgain: () => void;
   onList: () => void;
 }
 
-export default function SpeechDone({ story, run, target, source, onAgain, onList }: Props) {
+export default function SpeechDone({ story, run, target, source, earned, onAgain, onList }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const g = useGrammarColors();
   const sx = t().speechTab;
-  // XP (FB606): a finished story pays once when its end screen opens, 3 the first time today, less after; 0 shows nothing.
-  const [earned, setEarned] = useState(0);
-  const paid = useRef(false);
-  useEffect(() => {
-    if (paid.current) return;
-    paid.current = true;
-    awardXpThen('speech', story.id, setEarned);
-  }, [story.id]);
   return (
     <GameFrame
       testID="speech-screen"
