@@ -28,6 +28,7 @@ export default function MockPlayer({ audio, id, lines, canSpeak, testKey }: Prop
   const [showTranscript, setShowTranscript] = useState(false);
   const suffix = testKey === undefined ? '' : `-${testKey}`;
   const left = audio.playsLeft(id);
+  const playing = audio.playingId === id;
 
   return (
     <View style={[styles.audioBox, { borderColor: colors.border, backgroundColor: colors.card }]}>
@@ -37,18 +38,20 @@ export default function MockPlayer({ audio, id, lines, canSpeak, testKey }: Prop
             testID={`mock-play${suffix}`}
             accessibilityRole="button"
             onPress={() => audio.play(id, lines)}
-            disabled={left <= 0}
+            disabled={left <= 0 || audio.playingId !== null}
+            accessibilityState={{ busy: playing }}
             style={[styles.playBtn, { backgroundColor: left <= 0 ? colors.border : colors.tint }]}
           >
-            <Text style={[styles.playText, { color: colors.onTint }]}>🔊 {s.play}</Text>
+            <Text style={[styles.playText, { color: colors.onTint }]}>{playing ? `🔉 ${t().audio.playing}` : `🔊 ${s.play}`}</Text>
           </Pressable>
           <Text testID={`mock-plays-left${suffix}`} style={[styles.small, { color: colors.textMuted }]}>
             {s.playsLeft(left)}
           </Text>
         </>
-      ) : (
+      ) : null}
+      {(!canSpeak || audio.failed) && (
         <>
-          <Text style={[styles.body, { color: colors.warning }]}>{s.noVoice}</Text>
+          {!canSpeak && <Text style={[styles.body, { color: colors.warning }]}>{s.noVoice}</Text>}
           <Pressable testID={`mock-transcript-toggle${suffix}`} accessibilityRole="button" style={styles.linkBox} onPress={() => setShowTranscript((v) => !v)}>
             <Text style={[styles.link, { color: colors.tint }]}>{showTranscript ? s.hideTranscript : s.showTranscript}</Text>
           </Pressable>

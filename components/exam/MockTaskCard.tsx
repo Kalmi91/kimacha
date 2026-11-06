@@ -53,6 +53,8 @@ export default function MockTaskCard({ task, answer, onAnswer, target, canSpeak,
   const s = t().mockExam;
 
   const [plays, setPlays] = useState(0);
+  const [playing, setPlaying] = useState(false);
+  const [audioFailed, setAudioFailed] = useState(false);
   const [showTranscript, setShowTranscript] = useState(false);
   const [showGlossary, setShowGlossary] = useState(false);
   const playingRef = useRef(false);
@@ -102,10 +104,13 @@ export default function MockTaskCard({ task, answer, onAnswer, target, canSpeak,
     // While the recording plays, the button is mute (a double tap must not use up two listens).
     if (playingRef.current || plays >= maxPlays || audioLines.length === 0) return;
     playingRef.current = true;
+    setPlaying(true);
+    setAudioFailed(false);
     setPlays((p) => p + 1);
     stopSpeaking();
     const release = () => {
       playingRef.current = false;
+      setPlaying(false);
     };
     // One read-aloud per line, one after the other; in a dialogue speaker A (even lines) has the female voice
     // of the better voice and speaker B (odd lines) the male one, B also in a deeper phone voice.
@@ -118,6 +123,11 @@ export default function MockTaskCard({ task, answer, onAnswer, target, canSpeak,
       })),
       release,
       release,
+      () => {
+        setAudioFailed(true);
+        setPlays((p) => Math.max(0, p - 1));
+        release();
+      },
     );
   };
 
@@ -159,18 +169,20 @@ export default function MockTaskCard({ task, answer, onAnswer, target, canSpeak,
                 testID="mock-play"
                 accessibilityRole="button"
                 onPress={playAudio}
-                disabled={plays >= maxPlays}
+                disabled={playing || plays >= maxPlays}
+                accessibilityState={{ busy: playing }}
                 style={[styles.playBtn, { backgroundColor: plays >= maxPlays ? colors.border : colors.tint }]}
               >
-                <Text style={[styles.playText, { color: colors.onTint }]}>🔊 {s.play}</Text>
+                <Text style={[styles.playText, { color: colors.onTint }]}>{playing ? `🔉 ${t().audio.playing}` : `🔊 ${s.play}`}</Text>
               </Pressable>
               <Text testID="mock-plays-left" style={[styles.small, { color: colors.textMuted }]}>
                 {s.playsLeft(Math.max(0, maxPlays - plays))}
               </Text>
             </>
-          ) : (
+          ) : null}
+          {(!canSpeak || audioFailed) && (
             <>
-              <Text style={[styles.body, { color: colors.warning }]}>{s.noVoice}</Text>
+              {!canSpeak && <Text style={[styles.body, { color: colors.warning }]}>{s.noVoice}</Text>}
               <Pressable testID="mock-transcript-toggle" accessibilityRole="button" style={styles.linkBox} onPress={() => setShowTranscript((v) => !v)}>
                 <Text style={[styles.link, { color: colors.tint }]}>{showTranscript ? s.hideTranscript : s.showTranscript}</Text>
               </Pressable>

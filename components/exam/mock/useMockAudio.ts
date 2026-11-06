@@ -12,10 +12,14 @@ import { speakSequence, stop as stopSpeaking } from '@/lib/speech';
 export interface MockAudio {
   playsLeft: (id: string) => number;
   play: (id: string, lines: MockAudioLine[]) => void;
+  playingId: string | null;
+  failed: boolean;
 }
 
 export function useMockAudio(target: MockTarget, maxPlays: number = DEFAULT_PLAYS): MockAudio {
   const [plays, setPlays] = useState<Record<string, number>>({});
+  const [playingId, setPlayingId] = useState<string | null>(null);
+  const [failed, setFailed] = useState(false);
   // The recording that is playing right now (a token, so a cut-off recording cannot release the next one's lock).
   const playing = useRef<object | null>(null);
 
@@ -33,12 +37,23 @@ export function useMockAudio(target: MockTarget, maxPlays: number = DEFAULT_PLAY
     if (playing.current || playsLeft(id) <= 0 || lines.length === 0) return;
     const token = {};
     playing.current = token;
+    setPlayingId(id);
+    setFailed(false);
     setPlays((p) => ({ ...p, [id]: (p[id] ?? 0) + 1 }));
     const release = () => {
-      if (playing.current === token) playing.current = null;
+      if (playing.current === token) {
+        playing.current = null;
+        setPlayingId(null);
+      }
     };
-    speakSequence(audioSegments(lines, speechLang(target)), release, release);
+    const fail = () => {
+      if (playing.current !== token) return;
+      setFailed(true);
+      setPlays((p) => ({ ...p, [id]: Math.max(0, (p[id] ?? 0) - 1) }));
+      release();
+    };
+    speakSequence(audioSegments(lines, speechLang(target)), release, release, fail);
   };
 
-  return { playsLeft, play };
+  return { playsLeft, play, playingId, failed };
 }

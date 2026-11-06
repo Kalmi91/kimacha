@@ -1,8 +1,10 @@
+import { useState } from 'react';
 import { Pressable, StyleSheet, Text, type StyleProp, type TextStyle, type ViewStyle } from 'react-native';
 
 import { BrutalBox } from '@/components/grammar/Brutal';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
+import { speechBusy, speechStatus, useSpeechStatus } from '@/lib/speechStatus';
 
 // The shared 🔊 / ⏹ button. On the brutalist palette a box matching the small
 // icon buttons of the games (✕ in the GrammarDrill header, ← on the lesson page):
@@ -44,7 +46,14 @@ export default function SpeakButton({
   hitSlop,
 }: Props) {
   const g = useGrammarColors();
-  const icon = iconProp ?? (speaking ? '⏹' : '🔊');
+  const status = useSpeechStatus();
+  const [pressedRun, setPressedRun] = useState<number | null>(null);
+  const active = pressedRun === status.id && speechBusy(status.phase);
+  const press = () => {
+    onPress();
+    if (!iconProp) setPressedRun(speechStatus().id);
+  };
+  const icon = iconProp ?? (speaking ? '⏹' : active ? (status.phase === 'loading' ? '⏳' : '🔉') : '🔊');
   // icon-only (no visible label): a spoken name for the screen reader.
   const a11yLabel = accessibilityLabel ?? (label || iconProp ? undefined : speaking ? t().a11y.stopSpeaking : t().a11y.speak);
   if (g.brutal) {
@@ -53,7 +62,7 @@ export default function SpeakButton({
         testID={testID}
         accessibilityLabel={a11yLabel}
         offset={2}
-        onPress={onPress}
+        onPress={press}
         style={[styles.brutalOuter, brutalStyle]}
         boxStyle={label ? styles.brutalBoxLabel : styles.brutalBox}
       >
@@ -63,7 +72,7 @@ export default function SpeakButton({
     );
   }
   return (
-    <Pressable testID={testID} accessibilityRole="button" accessibilityLabel={a11yLabel} style={style} onPress={onPress} hitSlop={hitSlop}>
+    <Pressable testID={testID} accessibilityRole="button" accessibilityLabel={a11yLabel} accessibilityState={{ busy: active }} style={style} onPress={press} hitSlop={hitSlop}>
       <Text style={iconStyle}>{icon}</Text>
       {label ? <Text style={labelStyle}>{label}</Text> : null}
     </Pressable>

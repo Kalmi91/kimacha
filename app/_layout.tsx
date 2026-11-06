@@ -26,6 +26,7 @@ import { useAppResume } from '@/lib/useAppResume';
 import CloudGate from '@/components/cloud/CloudGate';
 import UsageToast from '@/components/UsageToast';
 import StatusBarStrip from '@/components/StatusBarStrip';
+import SpeechFeedback from '@/components/SpeechFeedback';
 import { ScreenFeedbackFrame } from '@/lib/screenFeedback';
 
 export { ErrorBoundary } from 'expo-router';
@@ -163,6 +164,7 @@ function RootLayoutNav() {
           <Stack.Screen name="placement" options={{ headerShown: false }} />
           <Stack.Screen name="mock-exam" options={{ headerShown: false }} />
         </Stack>
+        <SpeechFeedback />
         <UsageToast hidden={(segments as string[])[0] === 'onboarding'} />
       </View>
     </NavThemeProvider>

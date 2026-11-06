@@ -263,10 +263,10 @@ describe('Mock exam: flow', () => {
     expect(s.getByText('Plays left: 1')).toBeTruthy();
     // The mocked audio is "done" immediately, so the lock releases by itself: the 2nd play can go.
     const speakMock = speakSequence as jest.Mock;
-    speakMock.mock.calls[0][1]?.();
+    act(() => speakMock.mock.calls[0][1]?.());
     await press(s, 'mock-play');
     expect(s.getByText('Plays left: 0')).toBeTruthy();
-    speakMock.mock.calls[1][1]?.();
+    act(() => speakMock.mock.calls[1][1]?.());
     await press(s, 'mock-play');
     expect(speakMock).toHaveBeenCalledTimes(2);
     s.unmount();
@@ -500,7 +500,7 @@ describe('Mock exam: es→en direction (international sample, UI in Spanish)', (
     await press(s, 'mock-start-paper');
     await press(s, 'mock-play');
     expect(s.getByText('Reproducciones restantes: 0')).toBeTruthy();
-    (speakSequence as jest.Mock).mock.calls[0][1]?.();
+    act(() => (speakSequence as jest.Mock).mock.calls[0][1]?.());
     await press(s, 'mock-play');
     expect(speakSequence).toHaveBeenCalledTimes(1);
     s.unmount();

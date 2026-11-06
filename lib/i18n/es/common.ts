@@ -1,6 +1,13 @@
 import type en from '../en/common';
 
 const es: typeof en = {
+  audio: {
+    loading: 'Preparando audio…',
+    playing: 'Reproduciendo audio…',
+    noEngine: 'No hay motor de voz ni voces disponibles en este dispositivo. Activa la síntesis de voz en los ajustes del dispositivo o del navegador.',
+    noVoice: 'No hay una voz instalada para este idioma. Instálala en los ajustes del dispositivo o del navegador.',
+    failed: 'No se pudo reproducir el audio. Inténtalo de nuevo o revisa los ajustes de voz del dispositivo o del navegador.',
+  },
   onboarding: {
     welcome: '¡Bienvenido a Kimacha! Gracias por usar la app, significa mucho.',
     start: 'Empezar',

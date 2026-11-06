@@ -1,6 +1,13 @@
 import type en from '../en/common';
 
 const hu: typeof en = {
+  audio: {
+    loading: 'Hang előkészítése…',
+    playing: 'Hang lejátszása…',
+    noEngine: 'Nem érhető el beszédmotor vagy hang ezen az eszközön. Engedélyezd a felolvasást az eszköz vagy a böngésző beállításaiban.',
+    noVoice: 'Ehhez a nyelvhez nincs telepített hang. Telepítsd az eszköz vagy a böngésző beállításaiban.',
+    failed: 'Nem sikerült lejátszani a hangot. Próbáld újra, vagy ellenőrizd az eszköz vagy a böngésző beszédbeállításait.',
+  },
   onboarding: {
     welcome: 'Üdv a Kimachában! Köszönöm, hogy használod az appot, sokat jelent.',
     start: 'Kezdjük',
