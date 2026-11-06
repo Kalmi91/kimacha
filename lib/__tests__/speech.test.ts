@@ -8,9 +8,10 @@ jest.mock('expo-speech', () => ({
 
 import { Platform } from 'react-native';
 import * as Speech from 'expo-speech';
-import { loadVoices, hasVoiceFor, speak, speakSequence, missingVoiceLanguages, resetVoiceCache, voiceIdFor, speechTag } from '@/lib/speech';
+import { loadVoices, hasVoiceFor, speak, speakSequence, stop, missingVoiceLanguages, resetVoiceCache, voiceIdFor, speechTag } from '@/lib/speech';
 
 const mocked = Speech as jest.Mocked<typeof Speech>;
+afterEach(() => stop());
 
 const withVoices = async (languages: string[]) => {
   resetVoiceCache();
@@ -25,7 +26,7 @@ describe('speech voices', () => {
   it('speaks in a language the device has a voice for', async () => {
     await withVoices(['en-US', 'hu-HU']);
     speak('fiútestvér', 'hu-HU');
-    expect(mocked.speak).toHaveBeenCalledWith('fiútestvér', { language: 'hu-HU' });
+    expect(mocked.speak).toHaveBeenCalledWith('fiútestvér', expect.objectContaining({ language: 'hu-HU' }));
   });
 
   it('stays silent instead of reading Hungarian with an English voice', async () => {
@@ -45,7 +46,7 @@ describe('speech voices', () => {
   it('behaves as before when the platform lists no voices', async () => {
     await withVoices([]);
     speak('brother', 'en-US');
-    expect(mocked.speak).toHaveBeenCalledWith('brother', { language: 'en-US' });
+    expect(mocked.speak).toHaveBeenCalledWith('brother', expect.objectContaining({ language: 'en-US' }));
   });
 
   it('behaves as before when the voice query throws', async () => {
@@ -54,7 +55,7 @@ describe('speech voices', () => {
     (mocked.getAvailableVoicesAsync as jest.Mock).mockRejectedValue(new Error('no tts'));
     await loadVoices();
     speak('brother', 'en-US');
-    expect(mocked.speak).toHaveBeenCalledWith('brother', { language: 'en-US' });
+    expect(mocked.speak).toHaveBeenCalledWith('brother', expect.objectContaining({ language: 'en-US' }));
   });
 
   it('never speaks empty text', async () => {
@@ -241,14 +242,18 @@ describe('headless browser on web', () => {
   const onWebWithUserAgent = async (userAgent: string, fn: () => Promise<void>) => {
     const os = Platform.OS;
     const nav = Object.getOwnPropertyDescriptor(globalThis, 'navigator');
+    const synth = Object.getOwnPropertyDescriptor(globalThis, 'speechSynthesis');
     (Platform as { OS: string }).OS = 'web';
     Object.defineProperty(globalThis, 'navigator', { value: { userAgent }, configurable: true });
+    Object.defineProperty(globalThis, 'speechSynthesis', { value: {}, configurable: true });
     try {
       await fn();
     } finally {
       (Platform as { OS: string }).OS = os;
       if (nav) Object.defineProperty(globalThis, 'navigator', nav);
       else delete (globalThis as { navigator?: unknown }).navigator;
+      if (synth) Object.defineProperty(globalThis, 'speechSynthesis', synth);
+      else Reflect.deleteProperty(globalThis, 'speechSynthesis');
     }
   };
   const tick = () => new Promise((resolve) => setTimeout(resolve, 0));
@@ -306,6 +311,9 @@ describe('speakSequence: pitch and the stop callback', () => {
     expect(onStopped).toHaveBeenCalledTimes(1);
     expect(onEnd).not.toHaveBeenCalled();
     options.onDone();
+    expect(onEnd).not.toHaveBeenCalled(); // a late end event cannot complete a stopped recording
+    speakSequence([{ text: 'hola', locale: 'es-MX' }], onEnd, onStopped);
+    (mocked.speak as jest.Mock).mock.calls[1][1].onDone();
     expect(onEnd).toHaveBeenCalledTimes(1);
   });
 });

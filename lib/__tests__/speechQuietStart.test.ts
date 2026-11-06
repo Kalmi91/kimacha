@@ -24,7 +24,7 @@ jest.mock('../packAudio', () => ({
 
 import { AppState } from 'react-native';
 import * as Speech from 'expo-speech';
-import { noteSpeechTouch, resetVoiceCache, speak, speakAuto, speakSequence, watchAppStateForSpeech } from '@/lib/speech';
+import { noteSpeechTouch, resetVoiceCache, speak, speakAuto, speakSequence, stop, watchAppStateForSpeech } from '@/lib/speech';
 import * as models from '../neuralModels';
 import * as engine from '../neuralTts';
 import * as pack from '../packAudio';
@@ -40,6 +40,7 @@ beforeEach(() => {
   packFile.mockReturnValue(null);
   engineFor.mockReturnValue(null);
 });
+afterEach(() => stop());
 
 describe('one voice at a time', () => {
   it('a speech that falls to the phone first cuts the word pack and the better voice still sounding', () => {
@@ -77,7 +78,7 @@ describe('opening the app is silent', () => {
     expect(speech.speak).toHaveBeenCalledTimes(1);
     noteSpeechTouch();
     speakAuto('perdonar', 'es-MX');
-    expect(speech.speak).toHaveBeenLastCalledWith('perdonar', { language: 'es-MX' });
+    expect(speech.speak).toHaveBeenLastCalledWith('perdonar', expect.objectContaining({ language: 'es-MX' }));
   });
 
   it('back from the background it is silent again until the next touch', () => {

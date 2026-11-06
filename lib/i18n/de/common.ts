@@ -1,6 +1,13 @@
 import type en from '../en/common';
 
 const de: typeof en = {
+  audio: {
+    loading: 'Audio wird vorbereitet…',
+    playing: 'Audio wird abgespielt…',
+    noEngine: 'Auf diesem Gerät sind keine Sprachengine oder Stimmen verfügbar. Aktiviere die Sprachausgabe in den Geräte- oder Browsereinstellungen.',
+    noVoice: 'Für diese Sprache ist keine Stimme installiert. Installiere sie in den Geräte- oder Browsereinstellungen.',
+    failed: 'Audio konnte nicht abgespielt werden. Versuche es erneut oder prüfe die Spracheinstellungen des Geräts oder Browsers.',
+  },
   onboarding: {
     welcome: 'Willkommen bei Kimacha! Danke, dass du die App benutzt, das bedeutet mir viel.',
     start: "Los geht's",

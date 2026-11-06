@@ -1,4 +1,11 @@
 export default {
+  audio: {
+    loading: 'Preparing audio…',
+    playing: 'Playing audio…',
+    noEngine: 'No speech engine or voices are available on this device. Enable text-to-speech in your device or browser settings.',
+    noVoice: 'No voice for this language is installed. Install it in your device or browser settings.',
+    failed: 'Audio could not play. Try again or check your device or browser speech settings.',
+  },
   onboarding: {
     welcome: 'Welcome to Kimacha! Thank you for using the app, it means a lot.',
     // Kimacha Play: single en-es pair, no more language

@@ -25,7 +25,7 @@
 //
 // The voice list is loaded once and cached. If the platform returns nothing (or
 // throws), every language counts as available and no voice is pinned, i.e. the
-// app behaves exactly as it did before this module.
+// app behaves exactly as it did before this module. A slow query also stays unknown.
 
 import { AppState, Platform } from 'react-native';
 import * as Speech from 'expo-speech';
@@ -34,10 +34,12 @@ import { neuralEngineFor, neuralFallbackEngine, neuralPackFile, neuralSentenceFi
 import { playPackFile, stopPack } from './packAudio';
 import { neuralTimeLimitMs, voiceFor, type NeuralEngine, type NeuralLang, type VoiceGender } from './neuralVoices';
 import { getFastFallback, preferredGender } from './voicePreference';
+import { setSpeechStatus } from './speechStatus';
 
 let voiceLanguages: Set<string> | null = null;
 let voicesByLanguage: Map<string, Speech.Voice[]> | null = null;
 let loading: Promise<void> | null = null;
+let phoneTimer: ReturnType<typeof setTimeout> | undefined;
 const missing = new Set<string>();
 
 // 'hu-HU', 'hu_HU', 'hun' → 'hu'
@@ -62,8 +64,12 @@ function pickBest(voices: Speech.Voice[]): Speech.Voice | undefined {
 export async function loadVoices(): Promise<void> {
   if (voiceLanguages || loading) return loading ?? undefined;
   loading = (async () => {
+    let timer: ReturnType<typeof setTimeout> | undefined;
     try {
-      const voices = (await Speech.getAvailableVoicesAsync()) ?? [];
+      const voices = (await Promise.race([
+        Speech.getAvailableVoicesAsync(),
+        new Promise<Speech.Voice[]>((resolve) => { timer = setTimeout(() => resolve([]), 2000); }),
+      ])) ?? [];
       const languages = new Set<string>();
       const byLanguage = new Map<string, Speech.Voice[]>();
       for (const voice of voices) {
@@ -83,10 +89,77 @@ export async function loadVoices(): Promise<void> {
       voiceLanguages = null;
       voicesByLanguage = null;
     } finally {
+      clearTimeout(timer);
       loading = null;
     }
   })();
   return loading;
+}
+
+function stopPhone(): void {
+  clearTimeout(phoneTimer);
+  try { void Promise.resolve(Speech.stop()).catch(() => {}); } catch { /* no speech engine */ }
+}
+
+// Keep user feedback and callbacks tied to this run, including delayed voice discovery.
+function speakOnDevice(text: string, locale: string, options: Speech.SpeechOptions, run: number, reportErrors = true): void {
+  if (run !== speakingRun) return;
+  const fail = (phase: 'noEngine' | 'noVoice' | 'failed', error: Error) => {
+    if (run !== speakingRun) return;
+    if (!reportErrors) missing.add(baseLanguage(locale));
+    setSpeechStatus(run, reportErrors ? phase : 'idle', text);
+    if (options.onError) options.onError(error);
+    else options.onDone?.(); // release existing read-aloud controls
+  };
+  if (Platform.OS === 'web' && !globalThis.speechSynthesis) {
+    fail('noEngine', new Error('Speech engine unavailable'));
+    return;
+  }
+  // Discovery must not block an engine that can speak but cannot list its voices.
+  if (!voiceLanguages && !loading) void loadVoices();
+  if (!hasVoiceFor(locale)) {
+    missing.add(baseLanguage(locale));
+    fail('noVoice', new Error('Speech voice unavailable'));
+    return;
+  }
+  const voice = voiceIdFor(locale);
+  let started = false;
+  let finished = false;
+  const timer = setTimeout(() => {
+    if (!started && run === speakingRun) {
+      finished = true;
+      stopPhone();
+      fail(voiceLanguages ? 'failed' : 'noEngine', new Error('Speech did not start'));
+    }
+  }, 10000);
+  phoneTimer = timer;
+  const finish = (callback?: () => void) => {
+    clearTimeout(timer);
+    if (finished || run !== speakingRun) return;
+    finished = true;
+    setSpeechStatus(run, 'idle');
+    callback?.();
+  };
+  try {
+    Speech.speak(padForAndroid(text), {
+      ...options,
+      language: speechTag(locale),
+      ...(voice ? { voice } : {}),
+      onStart: () => {
+        clearTimeout(timer);
+        if (finished || run !== speakingRun) return;
+        started = true;
+        setSpeechStatus(run, 'playing', text);
+        options.onStart?.();
+      },
+      onDone: () => finish(options.onDone),
+      onStopped: () => finish(options.onStopped),
+      onError: (error) => { clearTimeout(timer); if (!finished) { finished = true; fail('failed', error); } },
+    });
+  } catch (error) {
+    clearTimeout(timer);
+    fail('failed', error instanceof Error ? error : new Error(String(error)));
+  }
 }
 
 export function hasVoiceFor(code: string): boolean {
@@ -149,7 +222,7 @@ function isHeadlessWeb(): boolean {
 }
 
 // `gender` picks the male / female voice of the better voice (speakerGenderFor gives the one of another text).
-export function speak(text: string, locale: string, options: Speech.SpeechOptions & { gender?: VoiceGender; strict?: boolean } = {}): void {
+export function speak(text: string, locale: string, options: Speech.SpeechOptions & { gender?: VoiceGender; strict?: boolean } = {}, reportErrors = true): void {
   if (!text) return;
   if (isHeadlessWeb()) {
     setTimeout(() => options.onDone?.(), 0);
@@ -159,21 +232,35 @@ export function speak(text: string, locale: string, options: Speech.SpeechOption
   // word + example chain in flight (speakSequence) stops there too; the phone's own queue (QUEUE_ADD) only
   // kept the phone from talking over itself, not over the word pack or the better voice.
   stop();
+  const run = speakingRun;
+  setSpeechStatus(run, 'loading', text);
   const { gender, strict, ...phoneOptions } = options;
-  const viaPhone = () => {
-    if (!hasVoiceFor(locale)) {
-      missing.add(baseLanguage(locale));
-      options.onDone?.(); // nothing will speak: a read-aloud chain must not freeze here
-      return;
-    }
-    const voice = voiceIdFor(locale);
-    Speech.speak(padForAndroid(text), {
-      ...phoneOptions,
-      language: speechTag(locale),
-      ...(voice ? { voice } : {}),
-    });
+  cancelSpeech = () => options.onStopped?.();
+  let finished = false;
+  const finish = (callback?: () => void) => {
+    if (finished || run !== speakingRun) return;
+    finished = true;
+    cancelSpeech = null;
+    setSpeechStatus(run, 'idle');
+    callback?.();
   };
-  if (speakBetter(text, locale, { rate: options.rate, gender, strict, onDone: options.onDone, onStopped: options.onStopped }, viaPhone)) return;
+  const viaPhone = () => speakOnDevice(text, locale, {
+    ...phoneOptions,
+    onDone: () => finish(options.onDone),
+    onStopped: () => finish(options.onStopped),
+    onError: (error) => {
+      if (finished || run !== speakingRun) return;
+      finished = true;
+      cancelSpeech = null;
+      options.onError?.(error);
+      if (!reportErrors || !options.onError) options.onDone?.();
+    },
+  }, run, reportErrors);
+  if (speakBetter(text, locale, {
+    rate: options.rate, gender, strict,
+    onDone: () => finish(options.onDone),
+    onStopped: () => finish(options.onStopped),
+  }, viaPhone)) return;
   viaPhone();
 }
 
@@ -237,18 +324,22 @@ function speakBetter(text: string, locale: string, opts: BetterOptions, phone: (
   }
   const engine = neuralEngineFor(lang);
   if (!pack && !engine) return false;
-  Speech.stop();
+  stopPhone();
   stopNeural();
   stopPack();
   // The phone takes over from a level that failed: whatever of that level still sounds is cut first.
   const toPhone = () => {
+    if (run !== speakingRun) return;
     stopNeural();
     stopPack();
     phone();
   };
+  const run = speakingRun;
+  setSpeechStatus(run, 'playing', text);
   // Level 2 and 2b: the chosen engine, then the other one if it is loaded. An engine that fails or gives no audio
   // within its time limit (FB608/609: a slow Kokoro left silence) hands the same text on, the phone last.
   const attempt = (engine: NeuralEngine, canHandOver: boolean) => {
+    if (run !== speakingRun) return;
     speakNeural(text, lang, voiceFor(lang, engine, text, gender), {
       rate: opts.rate,
       onDone: opts.onDone,
@@ -259,6 +350,7 @@ function speakBetter(text: string, locale: string, opts: BetterOptions, phone: (
         if (timings.firstChunkMs >= 0) noteNeuralOk(lang, engine);
       },
       err => {
+        if (run !== speakingRun) return;
         // the learner's own cut generation still running is not the engine's fault: hand over, report nothing
         const name = err instanceof Error ? err.name : '';
         if (name !== 'NeuralBusyError') noteNeuralTrouble(lang, engine, name === 'NeuralSlowError' ? 'slow' : 'failed');
@@ -269,6 +361,7 @@ function speakBetter(text: string, locale: string, opts: BetterOptions, phone: (
     );
   };
   const viaEngine = () => {
+    if (run !== speakingRun) return;
     const now = neuralEngineFor(lang);
     if (!now) {
       toPhone();
@@ -285,8 +378,12 @@ function speakBetter(text: string, locale: string, opts: BetterOptions, phone: (
 }
 
 export function stop(): void {
+  const cancel = cancelSpeech;
+  cancelSpeech = null;
   speakingRun += 1; // no running segment chain may continue after the stop
-  Speech.stop();
+  cancel?.();
+  setSpeechStatus(speakingRun, 'idle');
+  stopPhone();
   stopNeural();
   stopPack();
 }
@@ -299,7 +396,7 @@ let quietStart = true;
 
 export function speakAuto(text: string, locale: string, options: Speech.SpeechOptions & { gender?: VoiceGender; strict?: boolean } = {}): void {
   if (quietStart) return;
-  speak(text, locale, options);
+  speak(text, locale, options, false);
 }
 
 export function noteSpeechTouch(): void {
@@ -344,6 +441,7 @@ export function watchAppStateForSpeech(): () => void {
 // because the voices of two languages started in parallel would talk over each other.
 // A new speech (or a `stop()`) invalidates the previous chain.
 let speakingRun = 0;
+let cancelSpeech: (() => void) | null = null;
 
 export interface SpeechRunSegment {
   text: string;
@@ -378,46 +476,57 @@ function withSharedSpeaker(segments: SpeechRunSegment[]): SpeechRunSegment[] {
 }
 
 // `onStopped` fires when a segment in flight is cut off by a stop() or by the next speech (not at the natural end).
-export function speakSequence(segments: SpeechRunSegment[], onEnd?: () => void, onStopped?: () => void): void {
-  Speech.stop();
-  stopNeural();
-  stopPack();
-  speakingRun += 1;
+export function speakSequence(segments: SpeechRunSegment[], onEnd?: () => void, onStopped?: () => void, onError?: () => void): void {
+  stop();
   const run = speakingRun;
+  cancelSpeech = () => onStopped?.();
   const queue = withSharedSpeaker(segments.filter((seg) => seg.text.trim()));
 
   const next = (index: number) => {
     if (run !== speakingRun) return; // another speech started in the meantime
     const segment = queue[index];
     if (!segment) {
+      cancelSpeech = null;
+      setSpeechStatus(run, 'idle');
       onEnd?.();
       return;
     }
-    const viaPhone = () => {
-      if (!hasVoiceFor(segment.locale)) {
-        // No voice for this language: the segment is skipped, the rest carry on
-        // (Settings offers the installation based on missingVoiceLanguages(),
-        // the same way as for the single-language speak()).
-        missing.add(baseLanguage(segment.locale));
-        next(index + 1);
-        return;
-      }
-      const voice = voiceIdFor(segment.locale);
-      Speech.speak(padForAndroid(segment.text), {
-        language: speechTag(segment.locale),
-        ...(voice ? { voice } : {}),
-        ...(segment.pitch !== undefined ? { pitch: segment.pitch } : {}),
-        onDone: () => next(index + 1),
-        onStopped: () => onStopped?.(),
-        onError: () => next(index + 1),
-      });
+    setSpeechStatus(run, 'loading', segment.text);
+    let ended = false;
+    const done = () => {
+      if (ended || run !== speakingRun) return;
+      ended = true;
+      next(index + 1);
     };
-    const better = { gender: segment.gender, strict: segment.strict, onDone: () => next(index + 1), onStopped: () => onStopped?.() };
+    const stopped = () => {
+      if (ended || run !== speakingRun) return;
+      ended = true;
+      cancelSpeech = null;
+      setSpeechStatus(run, 'idle');
+      onStopped?.();
+    };
+    const viaPhone = () => {
+      speakOnDevice(segment.text, segment.locale, {
+        ...(segment.pitch !== undefined ? { pitch: segment.pitch } : {}),
+        onDone: done,
+        onStopped: stopped,
+        onError: () => {
+          if (onError) { ended = true; cancelSpeech = null; onError(); }
+          else {
+            // No voice for this language: the segment is skipped, the rest carry on
+            // (Settings offers the installation based on missingVoiceLanguages(),
+            // the same way as for the single-language speak()). Runtime failures also skip.
+            done();
+          }
+        },
+      }, run);
+    };
+    const better = { gender: segment.gender, strict: segment.strict, onDone: done, onStopped: stopped };
     if (!speakBetter(segment.text, segment.locale, better, viaPhone)) viaPhone();
   };
 
   if (isHeadlessWeb()) {
-    setTimeout(() => { if (run === speakingRun) onEnd?.(); }, 0);
+    setTimeout(() => { if (run === speakingRun) { cancelSpeech = null; onEnd?.(); } }, 0);
     return;
   }
   next(0);
@@ -426,10 +535,13 @@ export function speakSequence(segments: SpeechRunSegment[], onEnd?: () => void, 
 
 // Tests only: forget the cached voice list.
 export function resetVoiceCache(): void {
+  clearTimeout(phoneTimer);
+  cancelSpeech = null;
   voiceLanguages = null;
   voicesByLanguage = null;
   loading = null;
   missing.clear();
-  speakingRun = 0;
+  speakingRun += 1;
+  setSpeechStatus(speakingRun, 'idle');
   quietStart = true;
 }

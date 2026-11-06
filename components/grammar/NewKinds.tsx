@@ -15,6 +15,7 @@ import { gradeSentenceAnswer, suggestedGrade } from '@/lib/pcicMatch';
 import { tileWords } from '@/lib/sentenceCards';
 import { hashString, shuffleOptions } from '@/lib/shuffle';
 import { speak, stopSpeaking } from '@/lib/speech';
+import { speechBusy, useSpeechStatus } from '@/lib/speechStatus';
 import type { ContentLang, DictationItem, OrderItem, SpotItem, WriteItem } from '@/lib/grammar/lessonTypes';
 import { isWriteAnswerRight } from '@/lib/grammar/writeAnswer';
 
@@ -208,6 +209,9 @@ export function DictationDrillItem({
   const locale = speechLang(learnedLang);
   const [typed, setTyped] = useState('');
   const [result, setResult] = useState<{ correct: boolean } | null>(null);
+  const audio = useSpeechStatus();
+  const active = audio.text === item.es && speechBusy(audio.phase);
+  const speakerIcon = active ? (audio.phase === 'loading' ? '⏳' : '🔉') : '🔊';
 
   // The sentence is spoken once, when the task appears.
   useEffect(() => {
@@ -236,10 +240,10 @@ export function DictationDrillItem({
       <ItemHead title={s.grammar.dictationHint} />
       <View style={styles.playRow}>
         <BrutalBox testID="dictation-play" fill="a" offset={3} boxStyle={styles.playBtn} onPress={() => speak(item.es, locale)} accessibilityLabel={s.grammar.dictationPlay}>
-          <Text style={[styles.playText, { color: g.onFill }]}>🔊 {s.grammar.dictationPlay}</Text>
+          <Text style={[styles.playText, { color: g.onFill }]}>{speakerIcon} {s.grammar.dictationPlay}</Text>
         </BrutalBox>
         <BrutalBox testID="dictation-slow" fill="paper" offset={3} boxStyle={styles.playBtn} onPress={() => speak(item.es, locale, { rate: 0.55 })} accessibilityLabel={s.grammar.dictationSlow}>
-          <Text style={[styles.playText, { color: g.ink }]}>🐢 {s.grammar.dictationSlow}</Text>
+          <Text style={[styles.playText, { color: g.ink }]}>{active ? speakerIcon : '🐢'} {s.grammar.dictationSlow}</Text>
         </BrutalBox>
       </View>
       <BrutalBox dashed={!!result && !result.correct} boxStyle={styles.inputBox}>

@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, TextInput, Keyboard, View } from 'react-native';
 import { Text } from '@/components/KText';
 import { speak, speakAuto, stop as stopSpeech } from '@/lib/speech';
+import { speechBusy, useSpeechStatus } from '@/lib/speechStatus';
 import type { VoiceGender } from '@/lib/neuralVoices';
 import Colors from '@/constants/Colors';
 import { ON_FILL } from '@/constants/GrammarPalettes';
@@ -118,6 +119,9 @@ export default function TypedSentenceCard({
   const g = useGrammarColors();
   const diff = useDiffStyles();
   const s = t();
+  const audio = useSpeechStatus();
+  const audioActive = audio.text === targetSentence && speechBusy(audio.phase);
+  const speakerIcon = audioActive ? (audio.phase === 'loading' ? '⏳' : '🔉') : '🔊';
 
   const [typed, setTyped] = useState('');
   const [result, setResult] = useState<'correct' | 'wrong' | null>(null);
@@ -198,11 +202,11 @@ export default function TypedSentenceCard({
             <>
               {g.brutal ? (
                 <BrutalBox testID="sentence-listen-play" accessibilityLabel={s.sentenceTab.listenPlay} fill="a" offset={3} onPress={replay} boxStyle={styles.listenBrutal}>
-                  <Text style={styles.listenIcon}>🔊</Text>
+                  <Text style={styles.listenIcon}>{speakerIcon}</Text>
                 </BrutalBox>
               ) : (
-                <Pressable testID="sentence-listen-play" accessibilityRole="button" accessibilityLabel={s.sentenceTab.listenPlay} style={[styles.listenBtn, { backgroundColor: colors.accent }]} onPress={replay}>
-                  <Text style={styles.listenIcon}>🔊</Text>
+                <Pressable testID="sentence-listen-play" accessibilityRole="button" accessibilityLabel={s.sentenceTab.listenPlay} accessibilityState={{ busy: audioActive }} style={[styles.listenBtn, { backgroundColor: colors.accent }]} onPress={replay}>
+                  <Text style={styles.listenIcon}>{speakerIcon}</Text>
                 </Pressable>
               )}
               {!result && <Text style={[styles.listenHint, { color: colors.tabIconDefault }]}>{s.sentenceTab.listenTypeHint}</Text>}

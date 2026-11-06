@@ -26,6 +26,7 @@ import {
 import { creditRight, creditWrong } from '@/lib/practice/gameRound';
 import { useGameRound } from '@/lib/practice/useGameRound';
 import { speak, stopSpeaking } from '@/lib/speech';
+import { speechBusy, useSpeechStatus } from '@/lib/speechStatus';
 import { useSingleFlight } from '@/lib/useSingleFlight';
 import { useTheme } from '@/lib/ThemeContext';
 
@@ -43,6 +44,7 @@ export default function DictationGame() {
   const game = useGameRound(dictationLogic);
   const runOnce = useSingleFlight();
   const [typed, setTyped] = useState('');
+  const audio = useSpeechStatus();
   // Bumps after every credited answer: the level counter reads the due words again.
   const [creditSeq, setCreditSeq] = useState(0);
 
@@ -105,6 +107,8 @@ export default function DictationGame() {
 
   const position = dictationPosition(state, round.items.length);
   const speakLabel = s.practiceTab.dictation.listen;
+  const active = audio.text === word.say && speechBusy(audio.phase);
+  const speakerIcon = active ? (audio.phase === 'loading' ? '⏳' : '🔉') : '🔊';
   return (
     <GameFrame
       testID="dictation-screen"
@@ -122,21 +126,22 @@ export default function DictationGame() {
         <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
           {g.brutal ? (
             <BrutalBox testID="dictation-speak" accessibilityLabel={speakLabel} onPress={play} style={styles.bigBrutal} boxStyle={styles.bigBrutalBox}>
-              <Text style={styles.bigIcon}>🔊</Text>
+              <Text style={styles.bigIcon}>{speakerIcon}</Text>
             </BrutalBox>
           ) : (
             <Pressable
               testID="dictation-speak"
               accessibilityRole="button"
               accessibilityLabel={speakLabel}
+              accessibilityState={{ busy: active }}
               onPress={play}
               style={[styles.big, { backgroundColor: colors.tint }]}
             >
-              <Text style={styles.bigIcon}>🔊</Text>
+              <Text style={styles.bigIcon}>{speakerIcon}</Text>
             </Pressable>
           )}
           <Pressable testID="dictation-replay" accessibilityRole="button" onPress={play} style={styles.link}>
-            <Text style={[styles.linkText, { color: colors.tint }]}>{s.practiceTab.dictation.listenAgain}</Text>
+            <Text style={[styles.linkText, { color: colors.tint }]}>{active ? s.audio[audio.phase === 'loading' ? 'loading' : 'playing'] : s.practiceTab.dictation.listenAgain}</Text>
           </Pressable>
           <TextInput
             key={turn}

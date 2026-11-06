@@ -54,11 +54,12 @@ beforeEach(() => {
   fallbackEngine.mockReturnValue(null);
   speakNeural.mockResolvedValue({ firstChunkMs: 1, generatedMs: 2, audioMs: 3, peak: 0.5 });
 });
+afterEach(() => stop());
 
 describe('speak(): the levels', () => {
   it('nothing installed: the phone speaks, after whatever still sounded was cut', () => {
     speak('el perro', 'es-MX');
-    expect(speech.speak).toHaveBeenCalledWith('el perro', { language: 'es-MX' });
+    expect(speech.speak).toHaveBeenCalledWith('el perro', expect.objectContaining({ language: 'es-MX' }));
     expect(speech.stop.mock.invocationCallOrder[0]).toBeLessThan(speech.speak.mock.invocationCallOrder[0]);
     expect(playPack).not.toHaveBeenCalled();
     expect(speakNeural).not.toHaveBeenCalled();
@@ -70,7 +71,9 @@ describe('speak(): the levels', () => {
     const onDone = jest.fn();
     speak('el perro', 'es-MX', { rate: 0.8, onDone });
     expect(packFile).toHaveBeenCalledWith('es', 'el perro', undefined);
-    expect(playPack).toHaveBeenCalledWith('/files/tts/pack/es/27956ac4.mp3', expect.objectContaining({ rate: 0.8, onDone }));
+    expect(playPack).toHaveBeenCalledWith('/files/tts/pack/es/27956ac4.mp3', expect.objectContaining({ rate: 0.8, onDone: expect.any(Function) }));
+    playPack.mock.calls[0][1].onDone();
+    expect(onDone).toHaveBeenCalledTimes(1);
     expect(speakNeural).not.toHaveBeenCalled();
     expect(speech.speak).not.toHaveBeenCalled();
   });
@@ -99,7 +102,7 @@ describe('speak(): the levels', () => {
     onFail();
     expect(speakNeural).toHaveBeenCalledTimes(1);
     await flush();
-    expect(speech.speak).toHaveBeenCalledWith('el perro', { language: 'es-MX' });
+    expect(speech.speak).toHaveBeenCalledWith('el perro', expect.objectContaining({ language: 'es-MX' }));
   });
 
   it('the phone takes over from a failed level only after whatever of the better voice still sounds is cut', async () => {
@@ -168,7 +171,7 @@ describe('speak(): the levels', () => {
     speak('Quiero otro café con leche.', 'es-MX');
     await flush();
     expect(speakNeural).toHaveBeenCalledTimes(1);
-    expect(speech.speak).toHaveBeenCalledWith('Quiero otro café con leche.', { language: 'es-MX' });
+    expect(speech.speak).toHaveBeenCalledWith('Quiero otro café con leche.', expect.objectContaining({ language: 'es-MX' }));
   });
 
   it('the engine going away between the levels goes straight to the phone', () => {
@@ -197,7 +200,7 @@ describe('speak(): the levels', () => {
     packFile.mockReturnValue('/files/x.mp3');
     engineFor.mockReturnValue('piper');
     speak('Bonjour', 'fr-FR');
-    expect(speech.speak).toHaveBeenCalledWith('Bonjour', { language: 'fr-FR' });
+    expect(speech.speak).toHaveBeenCalledWith('Bonjour', expect.objectContaining({ language: 'fr-FR' }));
     expect(playPack).not.toHaveBeenCalled();
   });
 
@@ -215,7 +218,7 @@ describe('speak(): the levels', () => {
     packFile.mockReturnValue(null);
     speak('der Hund', 'de-DE');
     expect(speakNeural).not.toHaveBeenCalled();
-    expect(speech.speak).toHaveBeenCalledWith('der Hund', { language: 'de-DE' });
+    expect(speech.speak).toHaveBeenCalledWith('der Hund', expect.objectContaining({ language: 'de-DE' }));
   });
 
   it('stop() stops the phone, the engine and the pack', () => {
@@ -263,8 +266,11 @@ describe('speakSequence(): the levels per segment', () => {
     expect(speech.speak).toHaveBeenCalledWith('Hola', expect.objectContaining({ language: 'es-MX', pitch: 1.15 }));
     engineFor.mockReturnValue('piper');
     speakSequence([{ text: 'Hola', locale: 'es-MX' }], onEnd, onStopped);
+    expect(onStopped).toHaveBeenCalledTimes(1); // starting this recording stopped the previous one
     speakNeural.mock.calls[speakNeural.mock.calls.length - 1][3].onStopped();
-    expect(onStopped).toHaveBeenCalledTimes(1);
+    expect(onStopped).toHaveBeenCalledTimes(2);
+    speakNeural.mock.calls[speakNeural.mock.calls.length - 1][3].onStopped();
+    expect(onStopped).toHaveBeenCalledTimes(2);
   });
 });
 
@@ -371,7 +377,9 @@ describe('speak(): the sentence pack (Audio round B)', () => {
     speak(SENTENCE, 'es-MX', { rate: 0.9, onDone });
     expect(packFile).toHaveBeenCalledWith('es', SENTENCE, undefined);
     expect(sentenceFile).toHaveBeenCalledWith('es', SENTENCE, undefined); // no gender: the pack uses the text's own hash gender
-    expect(playPack).toHaveBeenCalledWith('/files/tts/sentences/es/f/abc.mp3', expect.objectContaining({ rate: 0.9, onDone }));
+    expect(playPack).toHaveBeenCalledWith('/files/tts/sentences/es/f/abc.mp3', expect.objectContaining({ rate: 0.9, onDone: expect.any(Function) }));
+    playPack.mock.calls[0][1].onDone();
+    expect(onDone).toHaveBeenCalledTimes(1);
     expect(speakNeural).not.toHaveBeenCalled();
     expect(speech.speak).not.toHaveBeenCalled();
   });
@@ -412,7 +420,7 @@ describe('speak(): the sentence pack (Audio round B)', () => {
     expect(speakNeural).toHaveBeenCalledTimes(1);
     expect(speakNeural).toHaveBeenCalledWith(SENTENCE, 'es', expect.anything(), expect.anything());
     await flush();
-    expect(speech.speak).toHaveBeenCalledWith(SENTENCE, { language: 'es-MX' });
+    expect(speech.speak).toHaveBeenCalledWith(SENTENCE, expect.objectContaining({ language: 'es-MX' }));
   });
 
   it('the sentence pack alone (no engine installed) still speaks; without both the phone speaks', () => {
@@ -421,7 +429,7 @@ describe('speak(): the sentence pack (Audio round B)', () => {
     expect(playPack).toHaveBeenCalledTimes(1);
     sentenceFile.mockReturnValue(null);
     speak(SENTENCE, 'es-MX');
-    expect(speech.speak).toHaveBeenCalledWith(SENTENCE, { language: 'es-MX' });
+    expect(speech.speak).toHaveBeenCalledWith(SENTENCE, expect.objectContaining({ language: 'es-MX' }));
   });
 
   it('a sequence looks each segment up with its speaker: the first segment decides, an explicit gender stays', () => {

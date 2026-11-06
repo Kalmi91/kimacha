@@ -10,6 +10,7 @@ import type { MockSpeakingChoice, MockSpeakingTask } from '@/lib/exam/mock/types
 import { t } from '@/lib/i18n';
 import { speechLang } from '@/lib/languages';
 import { speak, stop as stopSpeaking } from '@/lib/speech';
+import { speechBusy, useSpeechStatus } from '@/lib/speechStatus';
 import { useTheme } from '@/lib/ThemeContext';
 import ExamButton from '../ExamButton';
 import MockTaskFrame from './MockTaskFrame';
@@ -46,6 +47,7 @@ type Step = 'choose' | 'sheet' | 'turns';
 const firstSentence = (text: string) => /^[\s\S]*?[.!?](?=\s|$)/.exec(text.trim())?.[0] ?? text.trim();
 
 export default function SpeakingTask({ task, answer, onAnswer, target, canSpeak, glossary, inheritedChoice, onHoldClock, onNextTask, lastTask, onScrollTo }: Props) {
+  const audio = useSpeechStatus();
   const { theme } = useTheme();
   const colors = Colors[theme];
   const s = t().mockExam;
@@ -245,7 +247,7 @@ export default function SpeakingTask({ task, answer, onAnswer, target, canSpeak,
                 </Text>
                 {canSpeak ? (
                   <Pressable testID="mock-speaking-replay" accessibilityRole="button" onPress={replay} style={styles.linkBox}>
-                    <Text style={[styles.link, { color: colors.tint }]}>🔊 {s.speakReplay}</Text>
+                    <Text style={[styles.link, { color: colors.tint }]}>{audio.text === turn.ask && speechBusy(audio.phase) ? `🔉 ${t().audio[audio.phase === 'loading' ? 'loading' : 'playing']}` : `🔊 ${s.speakReplay}`}</Text>
                   </Pressable>
                 ) : (
                   <Text testID="mock-speaking-no-voice" style={[styles.small, { color: colors.warning }]}>
