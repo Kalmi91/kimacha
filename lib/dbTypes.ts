@@ -80,9 +80,6 @@ export interface DB {
   // one card by item id (null = no row yet); the practice tab reads it per answer.
   getPcicCard(itemId: string): Promise<Sm2Card | null>;
   upsertPcicCard(card: Sm2Card): Promise<void>;
-  // the beta switches (lib/beta.ts), app-wide; only the flags ever set are present.
-  getBetaFlags(): Promise<Record<string, boolean>>;
-  setBetaFlag(flag: string, on: boolean): Promise<void>;
   // the unfinished Practice-tab round (lib/practice/practiceRound.ts), one JSON string, app-wide;
   // null = no round saved.
   getPracticeRound(): Promise<string | null>;

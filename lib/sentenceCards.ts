@@ -1,47 +1,12 @@
-// Cadence of the sentence card and the sentence choice in the
-// deck run. A pure module: the deck screen (app/(tabs)/index.tsx) supplies
-// the cards, the lookup and the vocabulary list, there is no state and no
-// database here. The result of the card does not write SRS: practice only.
+// Shared sentence vocabulary, language gates and tile helpers.
 
 import type { PcicItem, PcicTarget } from '@/data/pcic';
-import { nearMissDistractors } from '@/lib/distractors';
 import { asDeLevel, deLevelRank, minDeLevel, type DeLevel } from '@/lib/deForms';
-import { isLearnedCard, isSentenceKnownIn, knownTokens, type LearnedEntry, type ResolvedTense } from '@/lib/knownSentence';
+import { isLearnedCard, type LearnedEntry } from '@/lib/knownSentence';
 import { posOf } from '@/lib/pcicPos';
 import { activeSourceFor } from '@/lib/languagePair';
 import { exampleIn, wordIn } from '@/lib/pcicItemText';
 import type { Sm2Card } from '@/lib/sm2';
-
-/** After this many NEW words comes a sentence card (review cards do not count). */
-export const NEW_WORDS_PER_SENTENCE = 4;
-
-export type SentenceKind = 'tiles' | 'typing';
-
-export interface CadenceState {
-  /** The ids of the latest new words that have not yet received a sentence (the counter). */
-  recent: string[];
-  /** The kind of the next sentence card; it only switches when a card appeared. */
-  next: SentenceKind;
-}
-
-export const INITIAL_CADENCE: CadenceState = { recent: [], next: 'tiles' };
-
-export type SentenceCardData =
-  | { kind: 'tiles'; itemId: string; source: string; target: string; targetWords: string[]; trapWords: string[] }
-  | { kind: 'typing'; itemId: string; source: string; target: string };
-
-export interface SentenceDeps {
-  target: PcicTarget;
-  /** Every card of the deck, including the one just rated (the "learned" gate is built from it). */
-  cards: Iterable<Sm2Card>;
-  /** The tenses unlocked by the grammar lessons (only matters with Spanish as the target language). */
-  tenses?: ReadonlySet<ResolvedTense>;
-  findItem: (id: string) => PcicItem | undefined;
-  /** The deck level of an item ("A1" ... "C1"): German has no grammar lesson that unlocks tenses, the learner's level decides. */
-  levelOf?: (id: string) => string | undefined;
-  /** Source of the trap tiles: the target-language words of the current level. */
-  vocab: () => string[];
-}
 
 /**
  * German: the grammar level the learner has reached = the highest deck level among the learned cards (A1 at least). Tenses
@@ -116,39 +81,4 @@ export function sentencePair(item: PcicItem, target: PcicTarget): { source: stri
   const sourceSentence = exampleIn(item, activeSourceFor(target))?.trim();
   if (!targetSentence || !sourceSentence) return null;
   return { source: sourceSentence, target: targetSentence };
-}
-
-/**
- * The cadence advances after a new word is rated: at the NEW_WORDS_PER_SENTENCE-th new
- * word, the first of the group's own example sentences that passes the
- * "learned words only" gate becomes a sentence card. If none passes, there is no card,
- * the counter resets, and it tries again at the next group.
- */
-export function nextSentenceStep(
-  state: CadenceState,
-  newItemId: string,
-  deps: SentenceDeps,
-): { state: CadenceState; card: SentenceCardData | null } {
-  const recent = [...state.recent, newItemId];
-  if (recent.length < NEW_WORDS_PER_SENTENCE) return { state: { ...state, recent }, card: null };
-
-  const cards = [...deps.cards];
-  const level = deps.target === 'de' ? learnerLevel(cards, deps.levelOf) : undefined;
-  const known = knownTokens(deps.target, { learned: learnedEntries(cards, deps.target, deps.findItem), tenses: deps.tenses, level });
-  for (const id of recent) {
-    const item = deps.findItem(id);
-    const pair = item ? sentencePair(item, deps.target) : null;
-    if (!pair || !isSentenceKnownIn(pair.target, deps.target, known, level && sentenceLevel(level, id, deps.levelOf))) continue;
-    const other: SentenceKind = state.next === 'tiles' ? 'typing' : 'tiles';
-    if (state.next === 'typing') {
-      return { state: { recent: [], next: other }, card: { kind: 'typing', itemId: id, ...pair } };
-    }
-    const targetWords = tileWords(pair.target);
-    const trapWords = nearMissDistractors(targetWords, deps.vocab().map((w) => w.split(' / ')[0]), deps.target);
-    return {
-      state: { recent: [], next: other },
-      card: { kind: 'tiles', itemId: id, ...pair, targetWords, trapWords },
-    };
-  }
-  return { state: { recent: [], next: state.next }, card: null };
 }

@@ -24,7 +24,7 @@ export default function StatsScreen() {
   const router = useRouter();
   const {
     usage, streak, known, graduated, reviewsToday, weeklyGoal, schedule, pcicLevel, levelKnown, levelTotal,
-    otherLevels, targetLang, sourceLang, mockLevels, mockOverview, mockOfficial, progressLevel, showLevels,
+    otherLevels, targetLang, sourceLang, mockLevels, mockOverview, mockOfficial, progressLevel,
     chartInMinutes, setChartInMinutes, maxMinutes, hasChartData, goal,
   } = useStatsScreen();
 
@@ -101,7 +101,7 @@ export default function StatsScreen() {
         </Text>
       </Card>
 
-      {showLevels && progressLevel && <LevelCard progress={progressLevel} />}
+      {progressLevel && <LevelCard progress={progressLevel} />}
 
       {mockLevels.length > 0 && (
         <MockExamCard

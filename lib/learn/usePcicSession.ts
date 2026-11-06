@@ -4,7 +4,6 @@ import { router } from 'expo-router';
 import { speak, speakAuto, speakSequence, stopSpeaking } from '@/lib/speech';
 import { getDb } from '@/lib/database';
 import { useLearner } from '@/lib/learner';
-import { getBeta, useBeta } from '@/lib/beta';
 import { useFocusOnNewCard } from '@/lib/learn/useFocusOnNewCard';
 import { noteCardGraded } from '@/lib/cloud/guest';
 import { pairOf, sourceFor, type Lang } from '@/lib/languagePair';
@@ -12,7 +11,7 @@ import { exampleIn, wordIn } from '@/lib/pcicItemText';
 import { speechLang } from '@/lib/languages';
 import { localDateString, DEFAULT_DAILY_NEW_LIMIT } from '@/lib/usageStats';
 import { addXp, getXp, wholeXp, xpForCard, type DailyXp } from '@/lib/dailyXp';
-import { pcicItemsForLevel, findPcicItem, levelOfItem, type PcicLevel, type PcicTarget } from '@/data/pcic';
+import { pcicItemsForLevel, findPcicItem, type PcicLevel, type PcicTarget } from '@/data/pcic';
 import { gradePcicAnswer, gradeSentenceAnswer, type PcicGrade } from '@/lib/pcicMatch';
 import { articleOf, composeAnswer, type ArticlePick } from '@/lib/articlePicker';
 import { sm2Review, pickSm2Session, sm2MarkKnown, type Sm2Card, type Sm2Grade } from '@/lib/sm2';
@@ -21,9 +20,7 @@ import { cardsForLevel } from '@/lib/pcicLevels';
 import { applyLearnResume, buildLearnResume, isLearnResumeFor, loadLearnResume, loadNewDeclinedDay, saveLearnResume, saveNewDeclinedDay } from '@/lib/learnResume';
 import { DOCK_RESERVE } from '@/components/learn/DockedAction';
 import { useDockLift } from '@/components/learn/useDockLift';
-import { GRAMMAR_PROGRESS_KEY, doneGrammarTopicProgress } from '@/lib/grammar/syllabus';
-import { resolvedTensesFromLessons, type ResolvedTense } from '@/lib/knownSentence';
-import { INITIAL_CADENCE, nextSentenceStep, type CadenceState, type SentenceCardData } from '@/lib/sentenceCards';
+import { GRAMMAR_PROGRESS_KEY } from '@/lib/grammar/syllabus';
 import { EXAM_LEVELS } from '@/lib/exam/types';
 import { examStatusFor, examUnlock, levelHasLesson, type ExamLevelStatus } from '@/lib/exam/unlock';
 import { useScreenLoad } from '@/lib/useScreenLoad';
@@ -50,8 +47,6 @@ interface UndoEntry {
   wasNew: boolean;
   g: Sm2Grade;
   counted: boolean;
-  // The sentence-card cadence as it was before the grade.
-  cadenceBefore: CadenceState;
   // The XP this grade added (undo takes it back); absent when it added none.
   xp?: { date: string; points: number };
 }
@@ -60,9 +55,6 @@ interface UndoEntry {
 // level switching and the resume snapshot. The screen (app/(tabs)/index.tsx) renders it
 // through components/learn/PcicCardView.tsx.
 export function usePcicSession() {
-  // beta: xpV2, the XP v2 values (lib/dailyXp.ts); off = the original 3/2 XP.
-  const xpV2 = useBeta('xpV2');
-
   const [loading, setLoading] = useState(true);
   // Counts the finished loads (the first one, a refocus, a level switch): the read-aloud + input-focus effect
   // below depends on it, so coming back to the tab reads the prompt again and refocuses the field, even though a
@@ -107,12 +99,6 @@ export function usePcicSession() {
   // Today's XP from the card grades (lib/dailyXp.ts); `date` tells when it was written,
   // so a screen left open past midnight shows 0 again (see xpToday below).
   const [dailyXp, setDailyXp] = useState<DailyXp>({ date: '', xp: 0 });
-  // After every 4th new word, 1 sentence card (alternating
-  // assemble and typing), practice only: it does not write SRS. `tenses` are the
-  // tenses unlocked by completed grammar lessons (lib/knownSentence.ts).
-  const [cadence, setCadence] = useState<CadenceState>(INITIAL_CADENCE);
-  const [sentenceCard, setSentenceCard] = useState<SentenceCardData | null>(null);
-  const [tenses, setTenses] = useState<ReadonlySet<ResolvedTense>>(new Set());
   // The daily budget expanded with the "+10 new words" button,
   // persisted in the learn_settings.new_bonus/new_bonus_date columns (it
   // expires with the calendar day); load() reads it back from the DB, it does not reset it.
@@ -179,16 +165,12 @@ export function usePcicSession() {
     const newLimit = await db.getDailyNewLimit();
     await refresh(['againDelaySec']);
     const bonus = await db.getPcicNewBonus(day);
-    // The tenses unlocked by completed grammar lessons
-    // (the tense gate exists only for Spanish as the target language).
-    const grammarRows = dir === 'es' ? await db.getGameProgress(GRAMMAR_PROGRESS_KEY) : [];
     const introducedToday = cards.filter((c) => c.introducedAt === day).length;
     // The daily budget is DAILY: items introduced today are counted across all levels (lib/pcicSession.ts pcicSessionNewLimit).
     const introducedAllLevels = dropOrphanCards(rawCards, (id) => findPcicItem(id) !== undefined).filter((c) => c.introducedAt === day).length;
-    setTenses(resolvedTensesFromLessons(doneGrammarTopicProgress(dir, grammarRows).keys()));
     setLevel(lvl);
     setAllLevelCards(rawCards);
-    const examGrammarRows = dir === 'es' ? grammarRows : await db.getGameProgress(GRAMMAR_PROGRESS_KEY);
+    const examGrammarRows = await db.getGameProgress(GRAMMAR_PROGRESS_KEY);
     // Only a level that has a written lesson has a row (otherwise the exam could never open).
     const examResults = await db.getExamResults();
     setExamLevels(
@@ -213,7 +195,6 @@ export function usePcicSession() {
     setSessionNew(0);
     setSessionAgain(0);
     setLastGraded(null);
-    setSentenceCard(null);
     setPcicBonus(bonus);
     setLoading(false);
     setLoadSeq((n) => n + 1);
@@ -269,20 +250,17 @@ export function usePcicSession() {
   // change of `current?.itemId` (`grade` is read from the closure and
   // decides that it is not revealed yet); on reveal (when the `grade` state
   // changes) it should not repeat.
-  // Under a sentence card the next prompt is not spoken;
-  // it is spoken when the card closes (sentenceOpen false), like on a new card.
-  // The same while the more-new-words question (FB542) replaces the card.
-  const sentenceOpen = sentenceCard !== null;
+  // The prompt waits while the more-new-words question (FB542) replaces the card.
   useEffect(() => {
-    if (!loading && !sentenceOpen && !askMoreNew && currentItem && promptSource && !grade) {
+    if (!loading && !askMoreNew && currentItem && promptSource && !grade) {
       speakAuto(promptSource, speechLang(sourceLang)); // silent right after the app opens (lib/speech.ts)
     }
     // On a card change, any read-aloud in progress
     // (e.g. the word + example sentence chain after Check) should stop (same pattern).
     return () => stopSpeaking();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [current?.itemId, loading, sentenceOpen, askMoreNew, loadSeq]);
-  useFocusOnNewCard(inputRef, !loading && !sentenceOpen && !askMoreNew && !!currentItem && !!promptSource && !grade, `${current?.itemId}-${cardSeq}-${loadSeq}`);
+  }, [current?.itemId, loading, askMoreNew, loadSeq]);
+  useFocusOnNewCard(inputRef, !loading && !askMoreNew && !!currentItem && !!promptSource && !grade, `${current?.itemId}-${cardSeq}-${loadSeq}`);
 
   // Card-level resume: after every queue / batch change it saves a snapshot (lib/learnResume.ts).
   useEffect(() => {
@@ -329,13 +307,13 @@ export function usePcicSession() {
     // Learn tab, the only earlier caller, was removed); after the first call of the day the method is
     // a no-op, so it is safe on Again too.
     await getDb().updateStreak();
-    // "Knew it" earns XP (new word 3, review 2; XP v2: lib/dailyXp.ts), "Didn't know" none.
-    const points = xpForCard({ isNew: wasNew, isDue: !wasNew && before.due <= today, reviewCount: before.reps, knew: g !== 'again' }, { v2: xpV2 });
+    // "Knew it" earns XP by the word's due state and repetitions (lib/dailyXp.ts), "Didn't know" none.
+    const points = xpForCard({ isNew: wasNew, isDue: !wasNew && before.due <= today, reviewCount: before.reps, knew: g !== 'again' });
     const earned = points > 0 ? await addXp(points) : null;
     if (earned) setDailyXp(earned);
 
     setAllCards((prev) => new Map(prev).set(next.itemId, next));
-    setLastGraded({ before, after: next, typed: typedAnswer, grade, wasNew, g, counted: true, cadenceBefore: cadence, xp: earned ? { date: earned.date, points } : undefined });
+    setLastGraded({ before, after: next, typed: typedAnswer, grade, wasNew, g, counted: true, xp: earned ? { date: earned.date, points } : undefined });
     setSessionAnswered((n) => n + 1);
     if (wasNew) setSessionNew((n) => n + 1);
     if (g === 'again') setSessionAgain((n) => n + 1);
@@ -434,28 +412,9 @@ export function usePcicSession() {
   };
 
   const gradeOnce = async (g: Sm2Grade) => {
-    const wasNew = current?.state === 'new';
     const next = await commitGrade(g);
     if (!next) return;
     advance(next, g); noteCardGraded(); // web guest mode counts the cards for its save offer (lib/cloud/guest.ts)
-    // After every 4th NEW word a sentence card can come
-    // (practice only, its result does not write SRS).
-    if (!wasNew) return;
-    // Beta "Sentences tab" on: the sentence cards live on that tab, none comes here.
-    if (getBeta('sentenceTab')) return;
-    const cardsById = new Map(allLevelCards.map((c) => [c.itemId, c]));
-    for (const [id, c] of allCards) cardsById.set(id, c);
-    cardsById.set(next.itemId, next);
-    const step = nextSentenceStep(cadence, next.itemId, {
-      target,
-      cards: cardsById.values(),
-      tenses,
-      findItem: findPcicItem,
-      levelOf: levelOfItem,
-      vocab: () => pcicItemsForLevel(level).map((i) => wordIn(i, target) ?? ''),
-    });
-    setCadence(step.state);
-    setSentenceCard(step.card);
   };
 
   const handleUndo = async () => {
@@ -475,8 +434,6 @@ export function usePcicSession() {
     setArticlePick('');
     setGrade(lastGraded.grade);
     setLastGraded(null);
-    setCadence(lastGraded.cadenceBefore);
-    setSentenceCard(null);
     setAskMoreNew(false);
   };
 
@@ -486,7 +443,7 @@ export function usePcicSession() {
     const next = sm2MarkKnown(current, today);
     await getDb().upsertPcicCard(next);
     setAllCards((prev) => new Map(prev).set(next.itemId, next));
-    setLastGraded({ before, after: next, typed: typedAnswer, grade, wasNew: false, g: 'good', counted: false, cadenceBefore: cadence });
+    setLastGraded({ before, after: next, typed: typedAnswer, grade, wasNew: false, g: 'good', counted: false });
     setQueue((prev) => mixNewCards(requeueAfterGrade(prev, next, today), today));
     setTypedAnswer('');
     setArticlePick('');
@@ -552,8 +509,6 @@ export function usePcicSession() {
     handleUndo,
     introducedTodayByKind,
     todayNewBudget,
-    sentenceCard,
-    setSentenceCard,
     askMoreNew,
     handleAskMoreNew,
     handleDeclineMoreNew,

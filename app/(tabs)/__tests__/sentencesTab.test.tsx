@@ -75,7 +75,6 @@ jest.mock('@/lib/sentenceHint', () => {
 import { act, fireEvent, render, within } from '@testing-library/react-native';
 
 import ResultBadge from '@/components/ResultBadge';
-import { __resetBetaForTest, setBeta } from '@/lib/beta';
 import { __resetForTests as resetDailyXp } from '@/lib/dailyXp';
 import { getDb } from '@/lib/database';
 import { setLanguage } from '@/lib/i18n';
@@ -211,12 +210,6 @@ beforeEach(async () => {
   await getDb().resetGameProgress('xp-items');
   // the new words of an empty tab (FB564) have their own describe at the end: the day's budget is the default here
   await getDb().setDailyNewLimit(DEFAULT_DAILY_NEW_LIMIT);
-  __resetBetaForTest();
-  await getDb().setBetaFlag('xpV2', false);
-  // the tap-a-word hints (beta sentenceHint, on by default) have their own describe at the end
-  await getDb().setBetaFlag('sentenceHint', false);
-  // the sentences taking turns (beta sentenceMix, on by default, FB536) have their own describe at the end
-  await getDb().setBetaFlag('sentenceMix', false);
   resetDailyXp();
   await getDb().addDailyXpTenths(localDateString(), -100000);
   mockRecord.mockClear();
@@ -414,7 +407,6 @@ describe('the steps of a round (FB524)', () => {
   });
 
   it('a build credits no half (its right sentence pays the table XP); the typing of the sentence on rung 3 does', async () => {
-    await setBeta('xpV2', true);
     await learnWords([1, 2, 3, 4, 5, 6], [3]); // the cat is due (so its sentence comes first), a credited build would move the schedule
     const r = render(<SentencesScreen />);
     await flush();
@@ -670,8 +662,8 @@ describe('the progress bar counts the same steps as the number (a block per step
   });
 });
 
-describe('beta xpV2', () => {
-  it('off (default): a typed word gets its half, the sentence pays the table XP', async () => {
+describe('sentence XP', () => {
+  it('a typed word gets its half, the sentence pays the table XP', async () => {
     await learnWords([3]);
     await ladderAt(3, [3]);
     const r = render(<SentencesScreen />);
@@ -681,8 +673,7 @@ describe('beta xpV2', () => {
     expect([10, 20]).toContain(await getDb().getDailyXpTenths(localDateString()));
   });
 
-  it('on: the sentence table pays, the per-word halves do not stack on top (the same sentence again adds nothing)', async () => {
-    await setBeta('xpV2', true);
+  it('the sentence table pays, the per-word halves do not stack on top (the same sentence again adds nothing)', async () => {
     await learnWords([3]);
     await ladderAt(3, [3]);
     const r = render(<SentencesScreen />);
@@ -1274,8 +1265,6 @@ describe('the parts of a split sentence (FB524)', () => {
   });
 
   it('a part has no tap-a-word hints; the whole sentence has', async () => {
-    await getDb().setBetaFlag('sentenceHint', true);
-    __resetBetaForTest();
     const r = render(<SentencesScreen />);
     await flush();
     expect(r.queryByTestId('sentence-hint-0')).toBeNull();
@@ -1289,11 +1278,10 @@ describe('the parts of a split sentence (FB524)', () => {
     await flush();
     expect(stepText(r)).toBe(STEP(1, 1, RUNG1));
     expect(r.getByTestId('sentence-hint-0')).toBeTruthy();
-    await getDb().setBetaFlag('sentenceHint', false);
   });
 });
 
-describe('mistake step (beta sentenceMistakes, BRIEF-B2)', () => {
+describe('mistake step (BRIEF-B2)', () => {
   const checked = validateMistakesPayload(sample);
   if (!checked.ok) throw new Error(checked.error);
   const BATCH: MistakesBatch = checked.batch;
@@ -1313,10 +1301,8 @@ describe('mistake step (beta sentenceMistakes, BRIEF-B2)', () => {
   const TILES_S1 = ['no', 'tengo', 'tomate'];
 
   beforeEach(async () => {
-    await getDb().setBetaFlag('sentenceMistakes', true);
     await getDb().upsertMistakeCard(sm2NewCard(S1));
     await getDb().upsertMistakeCard(sm2NewCard(S2));
-    __resetBetaForTest();
   });
   afterEach(async () => {
     await seedBatch({ ...BATCH, sentences: [] }); // there is no delete: an empty list is "no mistake sentence"
@@ -1392,24 +1378,6 @@ describe('mistake step (beta sentenceMistakes, BRIEF-B2)', () => {
     expect(await savedCard(S1)).toEqual(sm2Review(sm2NewCard(S1), 'good', localDateString()));
   });
 
-  it('the switch turned off while the saved round still holds the sentence: it is built, but nothing goes to the mistake deck', async () => {
-    await learnWords([1, 2, 3, 4, 5, 6]);
-    await seedBatch();
-    const first = render(<SentencesScreen />);
-    await flush();
-    await buildCurrent(first);
-    await buildCurrent(first);
-    first.unmount();
-    await getDb().setBetaFlag('sentenceMistakes', false);
-    __resetBetaForTest();
-    const again = render(<SentencesScreen />);
-    await flush();
-    expect(stepText(again)).toBe(STEP(3, 6, MISTAKE_BUILD));
-    await buildTiles(again, TILES_S1);
-    expect(await savedCard(S1)).toEqual(sm2NewCard(S1));
-    expect(stepText(again)).toBe(STEP(4, 6, RUNG1));
-  });
-
   it('a due sentence is chosen before one not seen yet', async () => {
     await learnWords([1, 2, 3, 4, 5, 6]);
     await seedBatch();
@@ -1423,7 +1391,7 @@ describe('mistake step (beta sentenceMistakes, BRIEF-B2)', () => {
     expect(r.getAllByText('es').length).toBeGreaterThan(0); // the faulty "Eso es bien."
   });
 
-  it('no list loaded, a list with only a doubtful sentence, or the switch off: the round is today\'s, nothing touches the mistake deck', async () => {
+  it('no list loaded or a list with only a doubtful sentence: the round is today\'s, nothing touches the mistake deck', async () => {
     await learnWords([1, 2, 3, 4, 5, 6]);
     const playRound = async () => {
       const r = render(<SentencesScreen />);
@@ -1442,10 +1410,6 @@ describe('mistake step (beta sentenceMistakes, BRIEF-B2)', () => {
     await playRound(); // no list
     await seedBatch({ ...BATCH, sentences: BATCH.sentences.filter((s) => s.doubtful) });
     await playRound(); // only a doubtful sentence
-    await seedBatch();
-    await getDb().setBetaFlag('sentenceMistakes', false);
-    __resetBetaForTest();
-    await playRound(); // switch off
     expect(await savedCard(S1)).toEqual(sm2NewCard(S1));
     expect(await savedCard(S2)).toEqual(sm2NewCard(S2));
   });
@@ -1466,19 +1430,12 @@ describe('mistake step (beta sentenceMistakes, BRIEF-B2)', () => {
   });
 });
 
-describe('tap-a-word hint (beta sentenceHint, BRIEF-B3)', () => {
+describe('tap-a-word hint (BRIEF-B3)', () => {
   const bubble = (r: R) => r.queryByTestId('sentence-hint-bubble');
   const tap = (r: R, index: number) => fireEvent.press(r.getByTestId(`sentence-hint-${index}`));
   // The bubble's own text (a tile with the same word is on screen too).
   const inBubble = (r: R) => within(r.getByTestId('sentence-hint-bubble'));
 
-  beforeEach(async () => {
-    await getDb().setBetaFlag('sentenceHint', true);
-    __resetBetaForTest();
-  });
-  afterEach(async () => {
-    await getDb().setBetaFlag('sentenceHint', false);
-  });
 
   it('the words of the English prompt that are glosses are tappable; a tap shows the Spanish form and "hint used", a second tap closes it', async () => {
     await learnWords([1, 2, 3, 4, 5, 6]);
@@ -1559,16 +1516,6 @@ describe('tap-a-word hint (beta sentenceHint, BRIEF-B3)', () => {
     expect(r.queryByTestId('sentence-hint-0')).toBeNull(); // plain text after the check
   });
 
-  it('switch off: the prompt is plain text, nothing is underlined', async () => {
-    await getDb().setBetaFlag('sentenceHint', false);
-    __resetBetaForTest();
-    await learnWords([1, 2, 3, 4, 5, 6]);
-    const r = render(<SentencesScreen />);
-    await flush();
-    expect(r.getByText('The cat.')).toBeTruthy();
-    expect(r.queryByTestId('sentence-hint-0')).toBeNull();
-  });
-
   it('Spanish UI: the mark in the bubble', async () => {
     setLanguage('es');
     await learnWords([1, 2, 3, 4, 5, 6]);
@@ -1579,11 +1526,9 @@ describe('tap-a-word hint (beta sentenceHint, BRIEF-B3)', () => {
   });
 });
 
-// FB536: "the same sentences come one after the other, shuffle them" (beta sentenceMix, lib/sentenceSteps.ts).
-describe('Sentences tab: the sentences take turns (beta sentenceMix)', () => {
+// FB536: "the same sentences come one after the other, shuffle them".
+describe('Sentences tab: the sentences take turns', () => {
   it('a round of 5 on the ladder: every sentence plays its rung, never the same sentence twice in a row', async () => {
-    await getDb().setBetaFlag('sentenceMix', true);
-    __resetBetaForTest();
     await learnWords([1, 2, 3, 4, 5, 6]);
     const r = render(<SentencesScreen />);
     await flush();
@@ -1596,8 +1541,6 @@ describe('Sentences tab: the sentences take turns (beta sentenceMix)', () => {
   });
 
   it('a wrong build still goes to the end of the round', async () => {
-    await getDb().setBetaFlag('sentenceMix', true);
-    __resetBetaForTest();
     await learnWords([1, 2, 3]);
     const r = render(<SentencesScreen />);
     await flush();

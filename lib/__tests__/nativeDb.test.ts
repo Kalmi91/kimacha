@@ -204,22 +204,6 @@ describe('practice counters and beta flags (native db)', () => {
     expect(tables.pcic_cards.map((r) => [r.item_id, r.half_steps, r.wrong_streak])).toEqual([['b1-0009', 1, 1], ['b1-0010', 0, 0]]);
   });
 
-  it('getBetaFlags reads the user_meta JSON; empty or broken = every flag unset', async () => {
-    tables.user_meta = [{ id: 1, beta_flags: '{"xpV2":true,"levels":false}' }];
-    expect(await getDb().getBetaFlags()).toEqual({ xpV2: true, levels: false });
-    tables.user_meta = [{ id: 1, beta_flags: null }];
-    expect(await getDb().getBetaFlags()).toEqual({});
-    tables.user_meta = [{ id: 1, beta_flags: '{broken' }];
-    expect(await getDb().getBetaFlags()).toEqual({});
-  });
-
-  it('setBetaFlag writes the merged JSON back to user_meta', async () => {
-    tables.user_meta = [{ id: 1, beta_flags: '{"xpV2":true}' }];
-    mockFakeDb.runAsync.mockClear();
-    await getDb().setBetaFlag('practiceTab', true);
-    expect(mockFakeDb.runAsync).toHaveBeenCalledWith('UPDATE user_meta SET beta_flags = ? WHERE id = 1', ['{"xpV2":true,"practiceTab":true}']);
-  });
-
   it('getPracticeRound reads the user_meta string; no row value = null', async () => {
     tables.user_meta = [{ id: 1, practice_round: '{"v":1}' }];
     expect(await getDb().getPracticeRound()).toBe('{"v":1}');

@@ -45,7 +45,6 @@ jest.mock('@/data/pcic', () => {
 
 import { fireEvent, render } from '@testing-library/react-native';
 
-import { __resetBetaForTest } from '@/lib/beta';
 import { getDb } from '@/lib/database';
 import { setLanguage } from '@/lib/i18n';
 import { LADDER_KEY, loadLadder, saveStage } from '@/lib/sentenceLadder';
@@ -89,8 +88,6 @@ beforeEach(async () => {
   await getDb().setPcicNewBonus(0, localDateString());
   await clearSentenceRound(getDb());
   await getDb().resetGameProgress(LADDER_KEY);
-  __resetBetaForTest();
-  for (const flag of ['xpV2', 'sentenceHint', 'sentenceMix'] as const) await getDb().setBetaFlag(flag, false);
   mockSpeak.mockClear();
 });
 afterEach(() => {

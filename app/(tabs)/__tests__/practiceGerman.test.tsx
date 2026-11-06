@@ -24,7 +24,6 @@ jest.mock('@/lib/buildFlavor', () => ({ IS_PLAY_BUILD: false, FEEDBACK_URL: 'htt
 import { fireEvent, render } from '@testing-library/react-native';
 
 import { findPcicItem, pcicItemsForLevel, setPcicTarget } from '@/data/pcic';
-import { __resetBetaForTest } from '@/lib/beta';
 import { getDb } from '@/lib/database';
 import { setLanguage } from '@/lib/i18n';
 import { loadSavedGame, saveGame } from '@/lib/practice/gameRound';
@@ -86,9 +85,6 @@ beforeEach(async () => {
   await getDb().resetPcicCards();
   await getDb().setPracticeRound(null);
   await getDb().setStrictAccents(false);
-  for (const flag of ['practiceDictation', 'practiceScramble', 'practiceMatch', 'practiceOpposites'] as const) await getDb().setBetaFlag(flag, true);
-  await getDb().setBetaFlag('xpV2', false);
-  __resetBetaForTest();
   for (const mode of ['dictation', 'scramble', 'match', 'opposites']) await saveGame(mode, null);
   await savePracticeMode('reading');
 });

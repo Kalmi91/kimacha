@@ -4,7 +4,6 @@ import { localDateString, summarizeUsage, DEFAULT_WEEKLY_GOAL_MINUTES, DEFAULT_D
 import { addDays, type Sm2Card } from '../sm2';
 import { PCIC_LEVELS, pcicItemsForLevel, type PcicLevel } from '@/data/pcic';
 import type { MistakeBatchRow } from '../mistakes/deck';
-import { parseBetaFlagMap } from '../betaFlags';
 import { DEFAULT_AGAIN_DELAY_SEC } from '../pcicSession';
 import { DEFAULT_GRAMMAR_PALETTE, isGrammarPaletteId, type GrammarPaletteId } from '@/constants/GrammarPalettes';
 import { isSkinSelection, parseSkinMix, type SkinMix, type SkinSelection } from '@/constants/Skins';
@@ -327,19 +326,8 @@ export class DbCore implements DB {
     await this.store.writePcicCard(card);
   }
 
-  // beta switches (lib/beta.ts), app-wide like the status-bar tint, so in user_meta
-  // as one JSON object; a missing / broken value reads as {} (every flag off).
-  async getBetaFlags(): Promise<Record<string, boolean>> {
-    return parseBetaFlagMap(await this.store.readMeta('beta_flags'));
-  }
-
-  async setBetaFlag(flag: string, on: boolean): Promise<void> {
-    const next = { ...(await this.getBetaFlags()), [flag]: on };
-    await this.store.writeMeta('beta_flags', JSON.stringify(next));
-  }
-
   // The unfinished Practice-tab round as one JSON string (lib/practice/practiceRound.ts parses it),
-  // app-wide like the beta flags, so in user_meta.practice_round; null = none.
+  // app-wide, so in user_meta.practice_round; null = none.
   async getPracticeRound(): Promise<string | null> {
     const v = await this.store.readMeta('practice_round');
     return typeof v === 'string' ? v : null;
@@ -349,8 +337,8 @@ export class DbCore implements DB {
     await this.store.writeMeta('practice_round', json);
   }
 
-  // The leaderboard identity ({ token, name }, lib/cloud/board.ts) as one JSON string, app-wide like the
-  // beta flags; a missing / broken value reads as null (not joined).
+  // The leaderboard identity ({ token, name }, lib/cloud/board.ts) as one JSON string, app-wide;
+  // a missing / broken value reads as null (not joined).
   async getBoardIdentity(): Promise<BoardIdentity | null> {
     const v = await this.store.readMeta('board_identity');
     if (typeof v !== 'string') return null;

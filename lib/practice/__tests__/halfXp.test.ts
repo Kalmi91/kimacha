@@ -27,33 +27,27 @@ describe('recordCorrectHalf', () => {
     await db.addDailyXpTenths(TODAY, -100000);
   });
 
-  it('switch off: the half is recorded, no XP', async () => {
-    await db.upsertPcicCard(learned('w1', 2));
-    expect(await recordCorrectHalf('w1', false)).toMatchObject({ halfSteps: 1, srs: 'none' });
-    expect(await db.getDailyXpTenths(TODAY)).toBe(0);
-  });
-
-  it('switch on: a half is worth 1 XP, 0.2 from the 3rd repetition on (exact tenths)', async () => {
+  it('a half is worth 1 XP, 0.2 from the 3rd repetition on (exact tenths)', async () => {
     await db.upsertPcicCard(learned('w2', 2));
-    await recordCorrectHalf('w2', true);
+    await recordCorrectHalf('w2');
     expect(await db.getDailyXpTenths(TODAY)).toBe(10);
     await db.upsertPcicCard(learned('w3', 3));
-    await recordCorrectHalf('w3', true);
+    await recordCorrectHalf('w3');
     expect(await db.getDailyXpTenths(TODAY)).toBe(12);
   });
 
   it('the second half moves the card, and still pays by the reps before that answer', async () => {
     await db.upsertPcicCard({ ...learned('w4', 2), due: TODAY });
-    await recordCorrectHalf('w4', true);
-    await recordCorrectHalf('w4', true);
+    await recordCorrectHalf('w4');
+    await recordCorrectHalf('w4');
     expect((await db.getPcicCard('w4'))?.reps).toBe(3);
     expect(await db.getDailyXpTenths(TODAY)).toBe(20);
   });
 
   it('a word with no card yet, or a still-new card: nothing recorded, no XP', async () => {
-    expect(await recordCorrectHalf('nope', true)).toBeNull();
+    expect(await recordCorrectHalf('nope')).toBeNull();
     await db.upsertPcicCard(sm2NewCard('fresh'));
-    expect(await recordCorrectHalf('fresh', true)).toBeNull();
+    expect(await recordCorrectHalf('fresh')).toBeNull();
     expect(await db.getDailyXpTenths(TODAY)).toBe(0);
   });
 });

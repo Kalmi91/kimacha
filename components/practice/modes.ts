@@ -1,7 +1,6 @@
-// The modes of the Practice tab: Reading (the tab's own round, app/(tabs)/practice.tsx) plus the beta games below.
-// To add a game: (1) a flag in lib/beta.ts (BetaFlag, BETA_FLAGS, BETA_DEFAULTS true) and its label in lib/i18n/{en,es}/settings.ts beta;
-// (2) its round logic in lib/practice/<mode>.ts as a GameLogic (start, parse) and its screen in components/practice/<Mode>Game.tsx,
-// built on useGameRound + GameFrame + creditRight / creditWrong (copy DictationGame.tsx); (3) one entry in PRACTICE_MODES below, and its
+// The modes of the Practice tab: Reading (the tab's own round, app/(tabs)/practice.tsx) plus the games below.
+// To add a game: (1) its round logic in lib/practice/<mode>.ts as a GameLogic (start, parse) and its screen in components/practice/<Mode>Game.tsx,
+// built on useGameRound + GameFrame + creditRight / creditWrong (copy DictationGame.tsx); (2) one entry in PRACTICE_MODES below, and its
 // chip title in practiceTab (lib/i18n/{en,es}/learn.ts). The chip row, the saved choice, the 8-word round, resume, summary and
 // empty state need nothing more. Every testID of the game starts with `<mode>-`.
 
@@ -12,7 +11,6 @@ import MatchGame from '@/components/practice/MatchGame';
 import OppositesGame from '@/components/practice/OppositesGame';
 import ScrambleGame from '@/components/practice/ScrambleGame';
 import SituationGame from '@/components/practice/SituationGame';
-import { useBetaEnabled, type BetaFlag } from '@/lib/beta';
 import type { t } from '@/lib/i18n';
 import { DICTATION_MODE } from '@/lib/practice/dictation';
 import { MATCH_MODE } from '@/lib/practice/match';
@@ -25,31 +23,25 @@ import { useLoadOnMount } from '@/lib/useLoadOnMount';
 export interface PracticeMode {
   /** Chip id, save key and testID prefix of the game. */
   id: string;
-  /** The beta switch that shows the game (Settings -> Beta); off = no chip. */
-  flag: BetaFlag;
   /** The chip title, from the UI strings. */
   title: (s: ReturnType<typeof t>) => string;
   Component: ComponentType;
 }
 
 export const PRACTICE_MODES: readonly PracticeMode[] = [
-  { id: DICTATION_MODE, flag: 'practiceDictation', title: (s) => s.practiceTab.modeDictation, Component: DictationGame },
-  { id: SCRAMBLE_MODE, flag: 'practiceScramble', title: (s) => s.practiceTab.modeScramble, Component: ScrambleGame },
-  { id: MATCH_MODE, flag: 'practiceMatch', title: (s) => s.practiceTab.modeMatch, Component: MatchGame },
-  { id: OPPOSITES_MODE, flag: 'practiceOpposites', title: (s) => s.practiceTab.modeOpposites, Component: OppositesGame },
-  { id: SITUATIONS_MODE, flag: 'practiceSituations', title: (s) => s.practiceTab.modeSituations, Component: SituationGame },
+  { id: DICTATION_MODE, title: (s) => s.practiceTab.modeDictation, Component: DictationGame },
+  { id: SCRAMBLE_MODE, title: (s) => s.practiceTab.modeScramble, Component: ScrambleGame },
+  { id: MATCH_MODE, title: (s) => s.practiceTab.modeMatch, Component: MatchGame },
+  { id: OPPOSITES_MODE, title: (s) => s.practiceTab.modeOpposites, Component: OppositesGame },
+  { id: SITUATIONS_MODE, title: (s) => s.practiceTab.modeSituations, Component: SituationGame },
 ];
 
-const MODE_FLAGS = PRACTICE_MODES.map((m) => m.flag);
-
 /**
- * The state of the Practice tab's mode chips: the games that are switched on, the mode to show (the last chosen one while
- * it is still on, otherwise Reading) and `select`. `ready` is false until the saved choice is read, but only while a game
- * is on; with only Reading on there is nothing to choose and the tab renders at once.
+ * The state of the Practice tab's mode chips: all games, the mode to show (the last chosen one,
+ * otherwise Reading) and `select`. `ready` is false until the saved choice is read.
  */
 export function usePracticeMode() {
-  const on = useBetaEnabled(MODE_FLAGS);
-  const enabled = PRACTICE_MODES.filter((m) => on.includes(m.flag));
+  const enabled = PRACTICE_MODES;
   // undefined = the saved choice is not read yet
   const [saved, setSaved] = useState<string | null | undefined>(undefined);
   const loadSaved = useCallback(async () => {
@@ -62,7 +54,7 @@ export function usePracticeMode() {
     void savePracticeMode(id);
   }, []);
   return {
-    ready: enabled.length === 0 || saved !== undefined,
+    ready: saved !== undefined,
     enabled,
     activeId,
     active: enabled.find((m) => m.id === activeId),

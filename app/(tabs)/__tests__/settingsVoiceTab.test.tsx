@@ -75,7 +75,7 @@ describe('Settings: the General and Voice tabs', () => {
     expect(getByText('Voice')).toBeTruthy();
     expect(getByTestId('settings-tab-general').props.accessibilityState.selected).toBe(true);
     expect(getByTestId('settings-theme-row')).toBeTruthy();
-    expect(getByTestId('settings-beta-title')).toBeTruthy();
+    expect(queryByTestId('settings-beta-title')).toBeNull();
     expect(queryByTestId('settings-better-voice')).toBeNull();
     expect(queryByTestId('settings-speaker-es')).toBeNull();
   });

@@ -1,5 +1,4 @@
-// The Beta section of Settings (every switch, EN + ES) and the three beta tabs of the tab bar (Practice, Sentences, Speak: hidden
-// while their switch is off, the existing tabs unchanged). Mock pattern: a11yLabels.test.tsx.
+// Released tabs stay visible and Settings no longer offers feature switches.
 
 jest.mock('expo-symbols', () => ({ SymbolView: () => null }));
 jest.mock('expo-router', () => {
@@ -34,12 +33,11 @@ jest.mock('expo-file-system', () => ({ File: jest.fn(), Paths: { cache: '' } }))
 jest.mock('expo-sharing', () => ({}));
 jest.mock('expo-document-picker', () => ({}));
 
-import { act, fireEvent, render } from '@testing-library/react-native';
+import { act, render } from '@testing-library/react-native';
 import { Platform } from 'react-native';
 
 import { clearSession, saveSession } from '@/lib/cloud/session';
 import { getDb } from '@/lib/database';
-import { BETA_FLAGS, __resetBetaForTest, getBeta, setBeta } from '@/lib/beta';
 import { setLanguage } from '@/lib/i18n';
 import { ThemeProvider } from '@/lib/ThemeContext';
 import TabLayout from '../_layout';
@@ -50,21 +48,21 @@ jest.setTimeout(30000);
 
 const flush = makeFlush(6);
 
-beforeEach(async () => {
-  __resetBetaForTest();
-  for (const f of BETA_FLAGS) await getDb().setBetaFlag(f, false);
-});
 afterEach(() => setLanguage('en'));
 
 const tabLine = (view: ReturnType<typeof render>, name: string) => String(view.getByTestId(`tab-${name}`).props.children);
 
-describe('tab bar: the three beta tabs', () => {
-  it('all are hidden while their switch is off, the existing tabs stay shown and in order', async () => {
+describe('tab bar: released features', () => {
+  it('all three tabs and the existing tabs are shown in order, ignoring old saved switches', async () => {
+    const db = getDb();
+    const backup = JSON.parse(JSON.stringify(await db.exportAll()));
+    backup.tables.user_meta[0].beta_flags = JSON.stringify({ practiceTab: false, sentenceTab: false, speechTab: false });
+    await db.importAll(backup);
     const view = render(<ThemeProvider><TabLayout /></ThemeProvider>);
     await flush();
-    expect(tabLine(view, 'practice')).toBe('practice|Practice|hidden');
-    expect(tabLine(view, 'sentences')).toBe('sentences|Sentences|hidden');
-    expect(tabLine(view, 'speak')).toBe('speak|Speak|hidden');
+    expect(tabLine(view, 'practice')).toBe('practice|Practice|shown');
+    expect(tabLine(view, 'sentences')).toBe('sentences|Sentences|shown');
+    expect(tabLine(view, 'speak')).toBe('speak|Speak|shown');
     for (const name of ['index', 'course', 'board', 'stats', 'settings']) expect(tabLine(view, name)).toMatch(/\|shown$/);
     const order = view.getAllByTestId(/^tab-/).map((n) => String(n.props.children).split('|')[0]);
     expect(order.filter((n) => n !== 'practice' && n !== 'sentences' && n !== 'speak')).toEqual(['index', 'course', 'board', 'stats', 'settings']);
@@ -78,38 +76,13 @@ describe('tab bar: the three beta tabs', () => {
     view.unmount();
   });
 
-  it('the Speak tab shows up when its own switch is on, and hides again when it goes off', async () => {
-    const view = render(<ThemeProvider><TabLayout /></ThemeProvider>);
-    await flush();
-    await act(async () => { await setBeta('speechTab', true); });
-    expect(tabLine(view, 'speak')).toBe('speak|Speak|shown');
-    expect(tabLine(view, 'practice')).toMatch(/\|hidden$/);
-    expect(tabLine(view, 'sentences')).toMatch(/\|hidden$/);
-    await act(async () => { await setBeta('speechTab', false); });
-    expect(tabLine(view, 'speak')).toMatch(/\|hidden$/);
-    view.unmount();
-  });
-
-  it('each shows up when its own switch is on, and hides again when it goes off', async () => {
-    const view = render(<ThemeProvider><TabLayout /></ThemeProvider>);
-    await flush();
-    await act(async () => { await setBeta('practiceTab', true); });
-    expect(tabLine(view, 'practice')).toMatch(/\|shown$/);
-    expect(tabLine(view, 'sentences')).toMatch(/\|hidden$/);
-    await act(async () => { await setBeta('sentenceTab', true); });
-    expect(tabLine(view, 'sentences')).toMatch(/\|shown$/);
-    await act(async () => { await setBeta('practiceTab', false); });
-    expect(tabLine(view, 'practice')).toMatch(/\|hidden$/);
-    view.unmount();
-  });
-
   it('Spanish titles', async () => {
     setLanguage('es');
     const view = render(<ThemeProvider><TabLayout /></ThemeProvider>);
     await flush();
-    expect(tabLine(view, 'practice')).toBe('practice|Práctica|hidden');
-    expect(tabLine(view, 'sentences')).toBe('sentences|Frases|hidden');
-    expect(tabLine(view, 'speak')).toBe('speak|Hablar|hidden');
+    expect(tabLine(view, 'practice')).toBe('practice|Práctica|shown');
+    expect(tabLine(view, 'sentences')).toBe('sentences|Frases|shown');
+    expect(tabLine(view, 'speak')).toBe('speak|Hablar|shown');
     view.unmount();
   });
 });
@@ -165,47 +138,15 @@ describe('tab bar: the leaderboard tab follows login and logout on web', () => {
   });
 });
 
-describe('Settings: Beta section', () => {
-  const EN = { practiceTab: 'Practice tab', sentenceTab: 'Sentences tab', xpV2: 'New XP values', levels: 'Levels A1-C1', practiceDictation: 'Dictation game', practiceScramble: 'Letter scramble game', practiceMatch: 'Quick match game', practiceOpposites: 'Opposites game', practiceSituations: 'Situations game', sentenceMistakes: 'Sentences: from my mistakes', sentenceHint: 'Sentences: tap-a-word hints', sentenceMix: 'Sentences: the sentences take turns', speechTab: 'Speak tab' } as const;
-  const ES = { practiceTab: 'Pestaña Práctica', sentenceTab: 'Pestaña Frases', xpV2: 'Nuevos valores de XP', levels: 'Niveles A1-C1', practiceDictation: 'Juego de dictado', practiceScramble: 'Juego de letras revueltas', practiceMatch: 'Juego de parejas rápidas', practiceOpposites: 'Juego de opuestos', practiceSituations: 'Juego de situaciones', sentenceMistakes: 'Frases: de mis errores', sentenceHint: 'Frases: pistas al tocar una palabra', sentenceMix: 'Frases: las frases se alternan', speechTab: 'Pestaña Hablar' } as const;
 
-  describe.each(['classic', 'brand'] as const)('palette %s', (palette) => {
-    it('every switch is named and set off; a toggle saves the flag', async () => {
-      await getDb().setGrammarPalette(palette);
-      const view = render(<ThemeProvider><SettingsScreen /></ThemeProvider>);
-      await flush();
-      expect(view.getByText('Beta')).toBeTruthy();
-      for (const flag of BETA_FLAGS) {
-        const sw = view.getByLabelText(EN[flag]);
-        expect(sw.props.testID).toBe(`settings-beta-${flag}`);
-        if (palette === 'brand') {
-          expect(sw.props.accessibilityRole).toBe('switch');
-          expect(sw.props.accessibilityState.checked).toBe(false);
-        } else {
-          expect(sw.props.value).toBe(false);
-        }
-        expect(getBeta(flag)).toBe(false);
-      }
-      const sw = view.getByLabelText(EN.xpV2);
-      if (palette === 'brand') fireEvent.press(sw);
-      else fireEvent(sw, 'valueChange', true);
-      await flush();
-      expect(getBeta('xpV2')).toBe(true);
-      expect(await getDb().getBetaFlags()).toMatchObject({ xpV2: true });
-      expect(getBeta('levels')).toBe(false);
-      const after = view.getByLabelText(EN.xpV2);
-      if (palette === 'brand') expect(after.props.accessibilityState.checked).toBe(true);
-      else expect(after.props.value).toBe(true);
-      view.unmount();
-    });
-  });
-
-  it('Spanish UI: the switch labels are Spanish', async () => {
-    await getDb().setGrammarPalette('classic');
-    setLanguage('es');
+describe.each(['classic', 'brand'] as const)('Settings palette %s', (palette) => {
+  it.each(['en', 'es', 'hu', 'de'] as const)('has no Beta section or switches in %s', async (language) => {
+    await getDb().setGrammarPalette(palette);
+    setLanguage(language);
     const view = render(<ThemeProvider><SettingsScreen /></ThemeProvider>);
     await flush();
-    for (const flag of BETA_FLAGS) expect(view.getByLabelText(ES[flag]).props.testID).toBe(`settings-beta-${flag}`);
+    expect(view.queryByTestId('settings-beta-title')).toBeNull();
+    expect(view.queryAllByTestId(/^settings-beta-/)).toHaveLength(0);
     view.unmount();
   });
 });

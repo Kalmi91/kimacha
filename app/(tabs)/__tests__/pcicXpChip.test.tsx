@@ -31,7 +31,6 @@ import { TextInput } from 'react-native';
 import { fireEvent, render } from '@testing-library/react-native';
 
 import { getDb } from '@/lib/database';
-import { __resetBetaForTest, setBeta } from '@/lib/beta';
 import { __resetForTests } from '@/lib/dailyXp';
 import { setLanguage } from '@/lib/i18n';
 import { RESUME_GAME_ID } from '@/lib/resumeRoute';
@@ -58,8 +57,6 @@ describe('Learn tab: XP today chip', () => {
 
   beforeEach(async () => {
     __resetForTests();
-    __resetBetaForTest();
-    await getDb().setBetaFlag('xpV2', false);
     setLanguage('en');
     await getDb().resetPcicCards();
     await getDb().resetGameProgress(RESUME_GAME_ID);
@@ -130,7 +127,7 @@ describe('Learn tab: XP today chip', () => {
       ...sm2NewCard('a1-w0'),
       state: 'review',
       interval: 2,
-      reps: 2,
+      reps: 1,
       due: today,
       lastReview: addDays(today, -2),
       introducedAt: addDays(today, -3),
@@ -165,17 +162,7 @@ describe('Learn tab: XP today chip', () => {
       introducedAt: addDays(today, -3),
     });
 
-  it('beta xpV2 off: a review with 3+ repetitions still earns the original 2 XP', async () => {
-    await dueReview(3);
-    const screen = render(<PcicScreen />);
-    await flush();
-    await gradeCard(screen, 'Knew it');
-    expect(screen.getByText('XP 2/50')).toBeTruthy();
-    expect(await getDb().getDailyXpTenths(today)).toBe(20);
-  });
-
-  it('beta xpV2 on: the 2nd repetition of a due word earns 1 XP', async () => {
-    await setBeta('xpV2', true);
+  it('the 2nd repetition of a due word earns 1 XP', async () => {
     await dueReview(2);
     const screen = render(<PcicScreen />);
     await flush();
@@ -184,8 +171,7 @@ describe('Learn tab: XP today chip', () => {
     expect(await getDb().getDailyXpTenths(today)).toBe(10);
   });
 
-  it('beta xpV2 on: from the 3rd repetition on 0.2 XP (exact tenths, chip rounds down)', async () => {
-    await setBeta('xpV2', true);
+  it('from the 3rd repetition on 0.2 XP (exact tenths, chip rounds down)', async () => {
     await dueReview(3);
     const screen = render(<PcicScreen />);
     await flush();

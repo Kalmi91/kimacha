@@ -44,7 +44,6 @@ jest.mock('@/data/pcic', () => {
 import { act, fireEvent, render } from '@testing-library/react-native';
 import { TextInput } from 'react-native';
 
-import { setBeta } from '@/lib/beta';
 import { getDb } from '@/lib/database';
 import { RESUME_GAME_ID } from '@/lib/resumeRoute';
 import { speak } from '@/lib/speech';
@@ -78,13 +77,8 @@ describe('PCIC tab: sentence card', () => {
     await getDb().setOnboarding('en', 'es');
     await getDb().setPcicLevel('A1');
     mockSpeak.mockClear();
-    // the cards on the Words tab come only while the Sentences tab is switched off (it is on by default)
-    await setBeta('sentenceTab', false);
   });
 
-  afterEach(async () => {
-    await setBeta('sentenceTab', false);
-  });
 
   // Answering a NEW word: types the correct form, Check, Next.
   const answerWord = async (r: ReturnType<typeof render>, prompt: string) => {
@@ -96,43 +90,7 @@ describe('PCIC tab: sentence card', () => {
     await flush();
   };
 
-  it('after the 4th new word a build-the-sentence card comes, after the 8th a type-it card, and neither writes SRS', async () => {
-    const r = render(<PcicScreen />);
-    await flush();
-
-    for (const prompt of ['the book', 'the table', 'the cat']) await answerWord(r, prompt);
-    expect(r.queryByText('Type the sentence')).toBeNull();
-    expect(r.queryByText('The book and the table.')).toBeNull();
-
-    await answerWord(r, 'the house');
-    // Assemble card: the source sentence on top, the next word does not speak yet.
-    expect(r.getByText('The book and the table.')).toBeTruthy();
-    expect(r.queryByText('the dog')).toBeNull();
-    expect(mockSpeak).not.toHaveBeenCalledWith('the dog', 'en-US');
-
-    for (const w of ['el', 'libro', 'y', 'la', 'mesa']) fireEvent.press(r.getAllByText(w)[0]);
-    fireEvent.press(r.getByText('Check'));
-    fireEvent.press(r.getByText(/^Next/));
-    await flush();
-
-    // The card closed: the prompt of the 5th word shows and is read aloud.
-    expect(r.getByText('the dog')).toBeTruthy();
-    expect(mockSpeak).toHaveBeenCalledWith('the dog', 'en-US');
-    expect((await getDb().getPcicCards()).length).toBe(4);
-
-    for (const prompt of ['the dog', 'the chair', 'the glass', 'the light']) await answerWord(r, prompt);
-    // Type-in card: the 5th word has no sentence, the 6th's (silla) goes through the gate.
-    expect(r.getByText('The chair and the table.')).toBeTruthy();
-    fireEvent.changeText(r.getByPlaceholderText('Type the sentence'), 'la silla y la mesa');
-    fireEvent.press(r.getByText('✓ Check'));
-    fireEvent.press(r.getByText(/^Next/));
-    await flush();
-
-    expect((await getDb().getPcicCards()).length).toBe(8);
-  });
-
-  it('with the Sentences tab beta on, no sentence card comes on the Words tab (the cards live on that tab)', async () => {
-    await setBeta('sentenceTab', true);
+  it('sentence cards stay on the Sentences tab, none interrupts the Words tab', async () => {
     const r = render(<PcicScreen />);
     await flush();
     for (const prompt of ['the book', 'the table', 'the cat', 'the house']) await answerWord(r, prompt);
@@ -143,40 +101,5 @@ describe('PCIC tab: sentence card', () => {
     expect(r.queryByPlaceholderText('Type the sentence')).toBeNull();
     expect(r.queryByText('The chair and the table.')).toBeNull();
     expect((await getDb().getPcicCards()).length).toBe(8);
-  });
-
-  it('Undo restores the cadence counter: the re-rated 4th word gives a sentence again', async () => {
-    const r = render(<PcicScreen />);
-    await flush();
-    for (const prompt of ['the book', 'the table', 'the cat']) await answerWord(r, prompt);
-    await answerWord(r, 'the house');
-    // It can also be closed with a wrong build: one tile, Check, Next.
-    fireEvent.press(r.getAllByText('mesa')[0]);
-    fireEvent.press(r.getByText('Check'));
-    fireEvent.press(r.getByText(/^Next/));
-    await flush();
-
-    fireEvent.press(r.getByLabelText('Undo'));
-    await flush();
-    // Undo restores the revealed state: Next grades again.
-    fireEvent.press(r.getByText('Next → Knew it'));
-    await flush();
-    expect(r.getByText('The book and the table.')).toBeTruthy();
-  });
-
-  it('the counter also counts across tab switches: 3 new words, focus reload, the card comes after the 4th', async () => {
-    const r = render(<PcicScreen />);
-    await flush();
-    for (const prompt of ['the book', 'the table', 'the cat']) await answerWord(r, prompt);
-
-    // To Settings and back: the tab gets focus again, load() rebuilds the queue.
-    await act(async () => {
-      (globalThis as { __focusCb?: () => void }).__focusCb?.();
-    });
-    await flush();
-    expect(r.queryByText('The book and the table.')).toBeNull();
-
-    await answerWord(r, 'the house');
-    expect(r.getByText('The book and the table.')).toBeTruthy();
   });
 });

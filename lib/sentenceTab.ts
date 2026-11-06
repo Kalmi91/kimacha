@@ -7,7 +7,6 @@
 
 import type { PcicItem, PcicTarget } from '@/data/pcic';
 import { detachedPrefixes, isSentenceKnownIn, knownTokens, ownerKeys, sentenceTokens, type ResolvedTense } from '@/lib/knownSentence';
-import { recordCorrectHalf } from '@/lib/practice/halfXp';
 import { recordPracticeResult } from '@/lib/practice/halfStep';
 import { learnedEntryOf, learnerLevel, sentenceLevel, sentencePair, tileWords } from '@/lib/sentenceCards';
 import { chunksFor, type SentenceChunk } from '@/lib/sentenceChunks';
@@ -179,12 +178,11 @@ export function afterSentence(queue: readonly SentenceEntry[], correct: boolean)
 /**
  * The typed sentence, word by word (spec 5.1, Kálmán 2026-10-12): a learned word typed right gets one half, even when
  * the rest of the sentence is wrong; a DUE word typed wrong (or missing) counts as a wrong typed answer. One result per
- * word however often it occurs. With `v2` (beta xpV2) each right half also earns its XP (lib/practice/halfXp.ts);
- * off = no XP, the old behavior. Returns how many words got a half / a wrong typed answer (a word with no card yet is skipped).
+ * word however often it occurs. XP is awarded per sentence by the screen (lib/xpAward.ts).
+ * Returns how many words got a half / a wrong typed answer (a word with no card yet is skipped).
  */
 export async function recordTypedWords(
   verdicts: readonly WordVerdict[],
-  v2 = false,
   today?: string,
 ): Promise<{ right: number; wrong: number }> {
   let right = 0;
@@ -194,7 +192,8 @@ export async function recordTypedWords(
     if (seen.has(v.id)) continue;
     seen.add(v.id);
     if (v.right) {
-      if (await recordCorrectHalf(v.id, v2, today)) right++;
+      const outcome = today === undefined ? await recordPracticeResult(v.id, 'correct') : await recordPracticeResult(v.id, 'correct', today);
+      if (outcome) right++;
     } else if (v.due) {
       const outcome = today === undefined ? await recordPracticeResult(v.id, 'wrongTyped') : await recordPracticeResult(v.id, 'wrongTyped', today);
       if (outcome) wrong++;

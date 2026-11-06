@@ -17,7 +17,6 @@ jest.mock('@/lib/buildFlavor', () => ({ IS_PLAY_BUILD: false, FEEDBACK_URL: 'htt
 import { fireEvent, render } from '@testing-library/react-native';
 
 import { findPcicItem, pcicItemsForLevel, setPcicTarget } from '@/data/pcic';
-import { __resetBetaForTest } from '@/lib/beta';
 import { getDb } from '@/lib/database';
 import { setLanguage } from '@/lib/i18n';
 import { speechLang } from '@/lib/languages';
@@ -98,24 +97,16 @@ beforeEach(async () => {
   mockSpeak.mockClear();
   await getDb().resetPcicCards();
   await getDb().setPracticeRound(null);
-  await getDb().setBetaFlag('practiceOpposites', true);
-  await getDb().setBetaFlag('xpV2', false);
-  __resetBetaForTest();
   await saveGame('opposites', null);
   await savePracticeMode('reading');
 });
 afterEach(() => setLanguage('en'));
 
 describe('Practice tab: the Opposites mode', () => {
-  it('has its chip; switched off the chip is gone and the other modes stay', async () => {
+  it('always has its chip alongside the other modes', async () => {
     await learnWords();
-    let view = await mount();
+    const view = await mount();
     expect(view.getByText('Opposites')).toBeTruthy();
-    view.unmount();
-    await getDb().setBetaFlag('practiceOpposites', false);
-    __resetBetaForTest();
-    view = await mount();
-    expect(view.queryByTestId('practice-mode-opposites')).toBeNull();
     expect(view.getByTestId('practice-mode-dictation')).toBeTruthy();
     view.unmount();
   });

@@ -17,7 +17,6 @@ jest.mock('@/lib/buildFlavor', () => ({ IS_PLAY_BUILD: false, FEEDBACK_URL: 'htt
 import { fireEvent, render } from '@testing-library/react-native';
 
 import { findPcicItem, pcicItemsForLevel, setPcicTarget } from '@/data/pcic';
-import { __resetBetaForTest } from '@/lib/beta';
 import { getDb } from '@/lib/database';
 import { setLanguage } from '@/lib/i18n';
 import { speechLang } from '@/lib/languages';
@@ -87,9 +86,6 @@ beforeEach(async () => {
   await getDb().resetPcicCards();
   await getDb().setPracticeRound(null);
   await getDb().setStrictAccents(false);
-  await getDb().setBetaFlag('practiceDictation', true);
-  await getDb().setBetaFlag('xpV2', false);
-  __resetBetaForTest();
   await saveGame('dictation', null);
   await savePracticeMode('reading');
 });
@@ -109,20 +105,7 @@ describe('Practice tab: the mode chips', () => {
     view.unmount();
   });
 
-  it('with the game switched off only Reading is left and the chip row is gone', async () => {
-    await learnWords();
-    await getDb().setBetaFlag('practiceDictation', false);
-    await getDb().setBetaFlag('practiceScramble', false);
-    await getDb().setBetaFlag('practiceMatch', false);
-    await getDb().setBetaFlag('practiceOpposites', false);
-    await getDb().setBetaFlag('practiceSituations', false);
-    const view = await mount();
-    expect(view.queryByTestId('practice-modes')).toBeNull();
-    expect(view.getByTestId('practice-screen')).toBeTruthy();
-    view.unmount();
-  });
-
-  it('a chosen mode is kept when the tab is opened again; switching the game off falls back to Reading', async () => {
+  it('a chosen mode is kept when the tab is opened again', async () => {
     await learnWords();
     let view = await mount();
     await startDictation(view);
@@ -133,11 +116,7 @@ describe('Practice tab: the mode chips', () => {
     expect(view.getByTestId('dictation-screen')).toBeTruthy();
     expect(view.queryByTestId('practice-screen')).toBeNull();
     view.unmount();
-    await getDb().setBetaFlag('practiceDictation', false);
-    __resetBetaForTest();
-    view = await mount();
-    expect(view.getByTestId('practice-screen')).toBeTruthy();
-    view.unmount();
+
   });
 
   it('Spanish UI: the chip titles are Spanish', async () => {
