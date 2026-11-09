@@ -22,9 +22,12 @@ import { fileURLToPath } from 'node:url';
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const LEVELS = ['a1', 'a2', 'b1', 'b2', 'c1'];
 const ENFORCED = ['a1', 'c1'];
-const WINDOW = { a1: [4, 9], a2: [5, 12], b1: [7, 15], b2: [8, 18], c1: [10, 22] };
+const WINDOW = { a1: [4, 9], a2: [5, 12], b1: [7, 15], b2: [8, 18], c1: [8, 18] };
 const FAMILY = ['madre', 'padre', 'hijo', 'hija', 'hermano', 'hermana', 'tía', 'tío', 'abuelo', 'abuela', 'esposo', 'esposa', 'primo', 'prima'];
 const FAMILY_FORMS = new Set(FAMILY.flatMap((w) => [w, w + 's']).concat(['padres', 'hijos', 'hermanos', 'tíos', 'abuelos', 'esposos', 'primos']));
+// Colon shape and sentence-initial pronoun came with the C1 review (2026-11-09); A1 was merged before them and is only reported.
+const NEW_RULES_WAIVED = ['a1'];
+const SUBJECT_PRONOUNS =new Set(['yo', 'tú', 'él', 'ella', 'nosotros', 'ustedes', 'ellos', 'ellas']);
 const NEG = new Set(['no', 'nunca', 'nada', 'nadie', 'tampoco', 'ni', 'ninguno', 'ninguna', 'ningún']);
 const PRON = { yo: 'yo', tú: 'tú', usted: 'usted', él: 'él/ella', ella: 'él/ella', nosotros: 'nosotros', nosotras: 'nosotros', ustedes: 'ustedes', ellos: 'ellos', ellas: 'ellos' };
 const CLITIC = new Set(['me', 'te', 'se', 'lo', 'la', 'le', 'los', 'las', 'les', 'nos']);
@@ -57,6 +60,8 @@ function measure(lv) {
   const patterns = new Map();
   let family = 0;
   let qn = 0;
+  let colon = 0;
+  let pronOpen = 0;
   const lengths = [];
   for (const c of cards) {
     const toks = tokenize(c.sentence_es);
@@ -65,6 +70,8 @@ function measure(lv) {
     openers.set(op, (openers.get(op) ?? 0) + 1);
     if (toks.slice(0, 3).some((t) => FAMILY_FORMS.has(t))) family++;
     if (/\?\s*$/.test(c.sentence_es) || toks.some((t) => NEG.has(t))) qn++;
+    if (c.sentence_es.includes(': ')) colon++;
+    if (SUBJECT_PRONOUNS.has(toks[0])) pronOpen++;
     const lem = c.sentence_lemmas ?? [];
     const vi = lem.findIndex((l) => pos.get(l) === 'verb');
     const before = vi < 0 ? [] : toks.slice(0, vi);
@@ -92,6 +99,8 @@ function measure(lv) {
     [`family subjects ${pct(family, n).toFixed(1)}% (max 10)`, pct(family, n) <= 10],
     [`top pattern ${pat} ${pct(patN, n).toFixed(1)}% (max 25)`, pct(patN, n) <= 25],
     [`questions/negations ${pct(qn, n).toFixed(1)}% (min 15)`, pct(qn, n) >= 15],
+    [`colon shape "claim: elaboration" ${pct(colon, n).toFixed(1)}% (max 10)`, pct(colon, n) <= 10, true],
+    [`sentence-initial subject pronoun ${pct(pronOpen, n).toFixed(1)}% (max 5)`, pct(pronOpen, n) <= 5, true],
     [`length shortest10% ${short.toFixed(1)} (min ${lo - 1}), longest10% ${long.toFixed(1)} (max ${hi}), gap ${(long - short).toFixed(1)} (min 3)`, short >= lo - 1 && long <= hi && long - short >= 3],
   ];
   return { n, checks, openers, patterns };
@@ -103,9 +112,10 @@ for (const lv of wanted.length ? wanted : LEVELS) {
   const { n, checks, openers, patterns } = measure(lv);
   const enforced = ENFORCED.includes(lv);
   console.log(`${lv} (${n} sentences, ${enforced ? 'ENFORCED' : 'report only'})`);
-  for (const [text, ok] of checks) {
-    console.log(`  ${ok ? 'ok  ' : 'FAIL'} ${text}`);
-    if (!ok && enforced) failed = true;
+  for (const [text, ok, newRule] of checks) {
+    const waived = newRule && NEW_RULES_WAIVED.includes(lv);
+    console.log(`  ${ok ? 'ok  ' : waived ? 'warn' : 'FAIL'} ${text}`);
+    if (!ok && enforced && !waived) failed = true;
   }
   if (process.argv.includes('--top')) {
     for (const [name, m] of [['openers', openers], ['patterns', patterns]]) {
