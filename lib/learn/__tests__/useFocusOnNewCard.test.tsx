@@ -44,9 +44,22 @@ describe('useFocusOnNewCard retry', () => {
     expect(focus).toHaveBeenCalledTimes(3);
   });
 
-  it('stops retrying once the field has the focus', () => {
+  it('a field that counts as focused but has no keyboard is blurred and focused again (the show request was lost)', () => {
+    const blur = jest.spyOn(TextInput.prototype as unknown as { blur: () => void }, 'blur').mockImplementation(() => {});
     focus.mockImplementation(() => { focused = true; });
     render(<Field />);
+    advance(150);
+    expect(blur).not.toHaveBeenCalled();
+    advance(5000);
+    expect(blur).toHaveBeenCalledTimes(2);
+    expect(focus).toHaveBeenCalledTimes(3);
+  });
+
+  it('stops retrying once the keyboard is up', () => {
+    focus.mockImplementation(() => { focused = true; });
+    render(<Field />);
+    advance(150);
+    (Keyboard.isVisible as jest.Mock).mockReturnValue(true);
     advance(5000);
     expect(focus).toHaveBeenCalledTimes(1);
   });
