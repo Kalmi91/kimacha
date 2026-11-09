@@ -193,7 +193,9 @@ export default function SentencesScreen() {
     }
     // The picker: the levels that have sentences for this pair and the saved choice (a pick comes through here as a fresh load).
     const available = levelsWithSentences(PCIC_LEVELS, pcicItemsForLevel, dir);
-    const chosen = resolveSentenceLevel(await loadSentenceLevel(db, pairOf(dir)), available, (await refresh(['level'])).level);
+    // No level chosen on the Learn tab yet (hasLevel false: its level is only a fallback) = the lowest level, never B1.
+    const own = await refresh(['level', 'hasLevel']);
+    const chosen = resolveSentenceLevel(await loadSentenceLevel(db, pairOf(dir)), available, own.hasLevel ? own.level : PCIC_LEVELS[0]);
     // A round that was left (other tab, app closed) continues where it stopped, the same day, direction and focus.
     const saved = await loadSentenceRound(db);
     let next: SentenceRound | null;

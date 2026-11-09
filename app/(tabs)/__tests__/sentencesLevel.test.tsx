@@ -106,6 +106,27 @@ describe('Sentences tab: level picker (FB556)', () => {
     expect(await roundItems()).toEqual(['b2-w1', 'b2-w2']);
   });
 
+  it('FB631: a learner with no level chosen yet gets the lowest level, not the B1 fallback', async () => {
+    await learn(ALL_WORDS);
+    await saveResumeValue(getDb(), 'sentences-level:en→es', null);
+    await (getDb() as any).setSettings({ pcic_level: null });
+    const r = render(screen());
+    await flush();
+    expect(['all', 'A1', 'B2'].map((id) => selected(r, id))).toEqual([false, true, false]);
+    expect(await roundItems()).toEqual(['a1-w1', 'a1-w2']);
+  });
+
+  it('FB631: es->en with nothing chosen opens on the saved learner level', async () => {
+    await learn(ALL_WORDS);
+    await getDb().setOnboarding('es', 'en');
+    await saveResumeValue(getDb(), 'sentences-level:es→en', null);
+    await getDb().setPcicLevel('B2');
+    const r = render(screen());
+    await flush();
+    expect(selected(r, 'B2')).toBe(true);
+    expect(selected(r, 'all')).toBe(false);
+  });
+
   it('B2 serves only the B2 sentences, All brings every level back', async () => {
     await learn(ALL_WORDS);
     const r = render(screen());
@@ -145,7 +166,7 @@ describe('Sentences tab: level picker (FB556)', () => {
     expect(selected(again, 'B2')).toBe(true);
     expect(await roundItems()).toEqual(['b2-w1', 'b2-w2']);
 
-    // back to All: the saved value is gone, a restart opens on All again
+    // back to All: 'all' is kept, a restart opens on All again
     fireEvent.press(again.getByTestId('sentences-level-all'));
     await flush();
     expect(await loadSentenceLevel(getDb(), 'en→es')).toBe('all');
