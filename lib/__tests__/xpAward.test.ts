@@ -23,6 +23,10 @@ describe('the XP table', () => {
     expect(await payouts('levelPractice', 'p1', 3)).toEqual([0.5, 0, 0]);
   });
 
+  it('level test: 0.5, then nothing (FB624)', async () => {
+    expect(await payouts('levelTest', 'lt1', 3)).toEqual([0.5, 0, 0]);
+  });
+
   it('Sentences right answer: 1, then nothing', async () => {
     expect(await payouts('sentence', 's1', 3)).toEqual([1, 0, 0]);
   });

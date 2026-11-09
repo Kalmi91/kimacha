@@ -381,7 +381,7 @@ export default function SentencesScreen() {
           </Text>
         )}
       </View>
-      {kbHeight === 0 && <XpChip earned={earned} />}
+      {kbHeight === 0 && <XpChip earned={earned} flush />}
       {total > 0 && (
         // One block per step while the round is short, so the bar and the "4 / 5" next to it count the same steps.
         <ProgressBar
