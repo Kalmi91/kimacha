@@ -376,8 +376,8 @@ export default function PcicCardView({
   // German decks carry the part of speech on the card itself: only a noun (or an unknown) gets the der / die / das row.
   const rowPos = target === 'de' ? (currentItem.pos ? { pos: currentItem.pos } : null) : pos;
   // FB622/FB623: an (i) whose note has the answer waits for Check; FB621/FB634: a hint-less card shows its prompt-language sentence.
-  const hasNote = (!!currentItem.note || !!currentItem.image) && infoButtonVisible(currentItem.note, answerText, !!grade);
-  const questionSentence = questionSentenceOf(currentItem, sourceLang);
+  const hasNote = (!!currentItem.note || !!currentItem.image) && infoButtonVisible(`${currentItem.note ?? ''} ${noteLessonFor(currentItem.noteLesson, target, sourceLang)?.title ?? ''}`, answerText, !!grade);
+  const questionSentence = grade ? undefined : questionSentenceOf(currentItem, sourceLang, answerText);
   const noteOpen = hasNote && noteOpenFor === currentItem.id;
 
   // The docked Check bar switches to "Next" after reveal,

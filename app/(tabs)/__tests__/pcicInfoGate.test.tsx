@@ -58,5 +58,6 @@ describe('Learn card: (i) gate and question sentence', () => {
     fireEvent.press(utils.getByText('✓ Check'));
     await flush();
     expect(utils.getByTestId('learn-info')).toBeTruthy();
+    expect(utils.queryByTestId('learn-question-sentence')).toBeNull(); // not repeated after Check
   });
 });

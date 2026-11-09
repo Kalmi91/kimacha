@@ -36,7 +36,8 @@ export function infoRevealsAnswer(info: string | undefined, answer: string | und
   const forms = Array.isArray(answer) ? answer.flatMap(answerForms) : answerForms(answer);
   if (forms.length === 0) return false;
   const hay = ` ${fold(info)} `;
-  return forms.some((f) => hay.includes(` ${f} `));
+  // plural / simple inflection: form + s / es (only for forms of 4+ letters, so short words do not over-match)
+  return forms.some((f) => hay.includes(` ${f} `) || (f.length >= 4 && (hay.includes(` ${f}s `) || hay.includes(` ${f}es `))));
 }
 
 /** Whether the "i" button is shown: always when the text hides the answer, after Check when it contains it. */
@@ -45,7 +46,9 @@ export function infoButtonVisible(info: string | undefined, answer: string | und
 }
 
 /** FB621/FB634: the example sentence in the prompt language for the question side of a word card (not when the card has a multi-meaning hint, nor on a sentence card). */
-export function questionSentenceOf(item: PcicItem, promptLang: Lang): string | undefined {
+export function questionSentenceOf(item: PcicItem, promptLang: Lang, answer?: string): string | undefined {
   if (item.hint || item.kind === 'sentence') return undefined;
-  return exampleIn(item, promptLang)?.trim() || undefined;
+  const sentence = exampleIn(item, promptLang)?.trim();
+  if (!sentence || infoRevealsAnswer(sentence, answer)) return undefined;
+  return sentence;
 }
