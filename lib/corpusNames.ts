@@ -21,6 +21,6 @@ export const CORPUS_NAMES: Record<'es' | 'en' | 'hu' | 'de', string[]> = {
     'spanyolországba', 'spanyolországban', 'spanyolországból', 'tom', 'wc-papír', 'önt',
   ],
   de: [
-    'anna', 'england', 'peter', 'spanien',
+    'amerika', 'anna', 'england', 'peter', 'spanien',
   ],
 };

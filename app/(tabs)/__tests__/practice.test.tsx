@@ -45,7 +45,7 @@ const TODAY = localDateString();
 const DUE = ['o19', 'o37', 'o20', 'o38', 'o3'];
 // The text follows the topics (E102): the words of one topic stand together, so the order differs from the due order above.
 const TEXT = ['o19', 'o20', 'o38', 'o37', 'o3'];
-const SENTENCES = ['Estoy en casa.', 'Tiene una casa.', 'Ella es mi madre.', 'Usted está bien.', 'Yo estoy bien.'];
+const SENTENCES = ['Ella no está en casa.', 'Él tiene una casa aquí.', '¿Está mi madre en casa?', '¿Usted quiere un café?', 'Yo estoy bien.'];
 
 const learned = (itemId: string, due: string, over: Partial<Sm2Card> = {}): Sm2Card => ({
   ...sm2NewCard(itemId),
