@@ -39,7 +39,7 @@ function normalizeWords(text: string, strictAccents = false): string[] {
     .toLowerCase()
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '')
-    .replace(/[.,!?;:¡¿"'()]/g, ' ')
+    .replace(/[.,!?;:¡¿…"'()]/g, ' ')
     .split(/\s+/)
     .filter(Boolean);
 }
@@ -52,7 +52,7 @@ function normalizeKeepingAccents(text: string): string[] {
   return text
     .toLowerCase()
     .normalize('NFC')
-    .replace(/[.,!?;:¡¿"'()]/g, ' ')
+    .replace(/[.,!?;:¡¿…"'()]/g, ' ')
     .split(/\s+/)
     .filter(Boolean);
 }
@@ -140,7 +140,7 @@ function normalizeHungarian(text: string): string[] {
   return text
     .toLowerCase()
     .normalize('NFC')
-    .replace(/[.,!?;:"'()]/g, ' ')
+    .replace(/[.,!?;:…"'()]/g, ' ')
     .split(/\s+/)
     .filter(Boolean);
 }

@@ -278,3 +278,13 @@ describe('strictAnswerMatch, German typing where the umlaut and the ß are grade
     expect(strictAnswerMatch('Vater', 'Väter', { lang: 'de', strictAccents: true })).toBe(false);
   });
 });
+
+describe('FB619: the "ni … ni" pair (neg-form-09) takes dots, spaces and marks', () => {
+  it.each(['ni … ni', 'ni ... ni', 'ni...ni', 'ni…ni', 'Ni, ni.', ' ni  ...  ni ', '¿ni ... ni?', 'ni ... ni!'])('accepts %j', (typed) => {
+    expect(strictAnswerMatch(typed, 'ni … ni', { strictAccents: true })).toBe(true);
+  });
+  it('still rejects the wrong pair', () => {
+    expect(strictAnswerMatch('no ... no', 'ni … ni', { strictAccents: true })).toBe(false);
+    expect(strictAnswerMatch('ni ... o', 'ni … ni', { strictAccents: true })).toBe(false);
+  });
+});

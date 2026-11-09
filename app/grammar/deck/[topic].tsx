@@ -1,6 +1,6 @@
 import XpChip from '@/components/XpChip';
 import { awardXpThen } from '@/lib/xpAward';
-import { useCallback, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
 import { ActivityIndicator, KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, TextInput, View } from 'react-native';
 import { Text } from '@/components/KText';
 import { useLocalSearchParams, useRouter } from 'expo-router';
@@ -24,6 +24,7 @@ import { speak } from '@/lib/speech';
 import { activeSourceFor, pairOf, type Lang } from '@/lib/languagePair';
 import { speechLang } from '@/lib/languages';
 import { answerInputProps } from '@/lib/inputProps';
+import { useFocusOnNewCard } from '@/lib/learn/useFocusOnNewCard';
 import { GRAMMAR_PROGRESS_KEY, lessonFor, syllabusTopic } from '@/lib/grammar/syllabus';
 import {
   answerCell,
@@ -180,6 +181,8 @@ export default function TableDeckScreen() {
   const currentId = nextCellId(deck, now);
   const current = currentId ? items.find((c) => c.id === currentId) : undefined;
   const complete = items.length > 0 && !current;
+  const inputRef = useRef<TextInput>(null);
+  useFocusOnNewCard(inputRef, !loading && !!current, `${current?.id}-${cellSeq}`);
 
   const handleCheck = () => {
     if (!current) return;
@@ -348,13 +351,13 @@ export default function TableDeckScreen() {
 
           <TextInput
             key={`deck-in-${current.id}-${cellSeq}`}
+            ref={inputRef}
             testID="tabledeck-input"
             style={[styles.input, { color: colors.text, borderColor: colors.tabIconDefault }, themedInputStyle(g)]}
             value={typed}
             onChangeText={setTyped}
             onSubmitEditing={checked ? handleNext : handleCheck}
             editable={!checked}
-            autoFocus
             placeholder={s.card.typeIn(learnedLang)}
             placeholderTextColor={colors.tabIconDefault}
             {...answerInputProps}

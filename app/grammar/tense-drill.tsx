@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
 import { ActivityIndicator, KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, TextInput, View } from 'react-native';
 import { Text } from '@/components/KText';
 import { useRouter } from 'expo-router';
@@ -19,6 +19,7 @@ import { speak } from '@/lib/speech';
 import { speechLang } from '@/lib/languages';
 import { sourceFor } from '@/lib/languagePair';
 import { answerInputProps } from '@/lib/inputProps';
+import { useFocusOnNewCard } from '@/lib/learn/useFocusOnNewCard';
 import type { DeLevel } from '@/lib/deForms';
 import type { DeDrillTense } from '@/lib/deConjugate';
 import { DE_DRILL_LEVELS, buildTenseRound, gradeTense, tensesAtLevel, type TenseQuestion } from '@/lib/games/deTenseDrill';
@@ -105,6 +106,8 @@ export default function TenseDrillScreen() {
   };
 
   const current = round[index];
+  const inputRef = useRef<TextInput>(null);
+  useFocusOnNewCard(inputRef, !loading && phase === 'play' && !!current, `${current?.id}-${seq}`);
 
   const handleCheck = () => {
     if (!current) return;
@@ -263,13 +266,13 @@ export default function TenseDrillScreen() {
 
           <TextInput
             key={`tense-in-${current.id}-${seq}`}
+            ref={inputRef}
             testID="tensedrill-input"
             style={[styles.input, { color: colors.text, borderColor: colors.tabIconDefault }, themedInputStyle(g)]}
             value={typed}
             onChangeText={setTyped}
             onSubmitEditing={checked ? handleNext : handleCheck}
             editable={!checked}
-            autoFocus
             placeholder={d.caption}
             placeholderTextColor={colors.tabIconDefault}
             {...answerInputProps}

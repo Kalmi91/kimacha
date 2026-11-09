@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Pressable, ScrollView, StyleSheet, View } from 'react-native';
+import { Pressable, StyleSheet, useWindowDimensions, View } from 'react-native';
 import { Text } from '@/components/KText';
 
 import Colors, { isDarkTheme } from '@/constants/Colors';
@@ -12,7 +12,7 @@ import { speak } from '@/lib/speech';
 import { t } from '@/lib/i18n';
 import { speechLang } from '@/lib/languages';
 import type { ContentLang, ExamplePair, Lang4, LessonBlock } from '@/lib/grammar/lessonTypes';
-import { isConjugationTable, personGloss, splitStemEnding, verbClassOf, verbColumnColor } from '@/lib/grammar/tableShape';
+import { isConjugationTable, planGridTable, personGloss, splitStemEnding, verbClassOf, verbColumnColor } from '@/lib/grammar/tableShape';
 import { groupTableRuns, type TableBlock } from '@/lib/grammar/tableGroups';
 
 // the short explanatory line under the legend, on every conjugation
@@ -133,17 +133,42 @@ function ConjugationTable({ header, rows, contentLang, colors, isDark }: {
 // the old grid view of non-conjugation (reference) tables, but with the system
 // font and flex cells so it fits without scrolling. Only with 5+ columns
 // does sideways scrolling remain (`scroll`), there the cells are content-wide.
-function GridTable({ header, rows, contentLang, colors, scroll }: {
+function GridTable({ header, rows, contentLang, colors }: {
   header: Lang4[];
   rows: string[][];
   contentLang: Props['contentLang'];
   colors: (typeof Colors)['light'];
-  scroll: boolean;
 }) {
   const g = useGrammarColors();
-  const cellStyle = scroll ? styles.gridCellWide : styles.gridCellFlex;
+  // the lesson body has a 16 px gutter on each side; the plan decides: fits, swapped to fit, or fixed column widths + scroll
+  const { width: screenW } = useWindowDimensions();
+  const plan = planGridTable(
+    header.map((h) => h[contentLang] ?? h.en),
+    rows,
+    screenW - 32
+  );
+  const cellFor = (ci: number) => ({ flex: plan.weights[ci] });
+  if (plan.mode === 'stack') {
+    // too wide for a grid on this screen: one small card per row, the row label on top, "column: value" lines below
+    return (
+      <View testID="grid-table-stack" style={styles.gridStack}>
+        {plan.rows.map((row, ri) => (
+          <View key={ri} style={[styles.gridStackCard, { borderColor: colors.tabIconDefault + '55' }, themedInkEdgeStyle(g)]}>
+            <Text style={[styles.gridStackTitle, { color: g.brutal ? g.onFill : colors.text, backgroundColor: g.brutal ? g.a : colors.tint + '22' }]}>{row[0]}</Text>
+            {row.slice(1).map((cell, ci) => (
+              <View key={ci} style={styles.gridStackLine}>
+                <Text style={[styles.gridStackLabel, { color: colors.tabIconDefault }]}>{plan.header[ci + 1]}</Text>
+                <Text style={[styles.gridStackValue, { color: colors.text }]}>{cell}</Text>
+              </View>
+            ))}
+          </View>
+        ))}
+      </View>
+    );
+  }
   const grid = (
     <View
+      testID="grid-table"
       style={[
         styles.grid,
         { borderColor: colors.tabIconDefault + '55' },
@@ -151,16 +176,16 @@ function GridTable({ header, rows, contentLang, colors, scroll }: {
       ]}
     >
       <View style={[styles.gridRow, { backgroundColor: g.brutal ? g.a : colors.tint + '22' }]}>
-        {header.map((cell, ci) => (
-          <Text key={ci} style={[styles.gridCell, cellStyle, styles.gridHeaderCell, { color: g.brutal ? g.onFill : colors.text }]}>
-            {cell[contentLang] ?? cell.en}
+        {plan.header.map((cell, ci) => (
+          <Text key={ci} style={[styles.gridCell, cellFor(ci), styles.gridHeaderCell, { color: g.brutal ? g.onFill : colors.text }]}>
+            {cell}
           </Text>
         ))}
       </View>
-      {rows.map((row, ri) => (
+      {plan.rows.map((row, ri) => (
         <View key={ri} style={[styles.gridRow, ri % 2 === 1 ? { backgroundColor: colors.tabIconDefault + '11' } : undefined]}>
           {row.map((cell, ci) => (
-            <Text key={ci} style={[styles.gridCell, cellStyle, { color: colors.text }]}>
+            <Text key={ci} style={[styles.gridCell, cellFor(ci), ci === 0 ? styles.gridHeaderCell : undefined, { color: colors.text }]}>
               {cell}
             </Text>
           ))}
@@ -168,7 +193,7 @@ function GridTable({ header, rows, contentLang, colors, scroll }: {
       ))}
     </View>
   );
-  return scroll ? <ScrollView horizontal>{grid}</ScrollView> : grid;
+  return grid;
 }
 
 // a one-verb conjugation table, compact: two columns (left: singular, right:
@@ -338,9 +363,6 @@ export default function LessonBody({ blocks, contentLang, learnedLang }: Props) 
                   rows={block.rows}
                   contentLang={contentLang}
                   colors={colors}
-                  // the grid stays, but scrolls sideways only with 5+
-                  // columns, where the text really does not fit on the screen.
-                  scroll={block.header.length >= 5}
                 />
               )}
             </View>
@@ -424,10 +446,14 @@ const styles = StyleSheet.create({
   // without a fixed minWidth; flex cells, unless scrolling because of 5+ columns.
   grid: { borderWidth: StyleSheet.hairlineWidth, borderRadius: 10, overflow: 'hidden' },
   gridRow: { flexDirection: 'row' },
-  gridCell: { paddingVertical: 8, paddingHorizontal: 10, fontSize: 14.5 },
-  gridCellFlex: { flex: 1 },
-  gridCellWide: { minWidth: 70 },
+  gridCell: { paddingVertical: 8, paddingHorizontal: 7, fontSize: 14.5 },
   gridHeaderCell: { fontWeight: '800' },
+  gridStack: { gap: 8 },
+  gridStackCard: { borderWidth: StyleSheet.hairlineWidth, borderRadius: 10, overflow: 'hidden' },
+  gridStackTitle: { paddingVertical: 8, paddingHorizontal: 10, fontSize: 14.5, fontWeight: '800' },
+  gridStackLine: { flexDirection: 'row', paddingVertical: 5, paddingHorizontal: 10, gap: 10 },
+  gridStackLabel: { flex: 4, fontSize: 13.5 },
+  gridStackValue: { flex: 5, fontSize: 14.5, fontWeight: '600' },
   contrastRow: { flexDirection: 'row', alignItems: 'center', gap: 8 },
   contrastSide: { fontSize: 15, fontWeight: '700', flex: 1 },
   contrastVs: { fontSize: 13 },

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Keyboard, Pressable, StyleSheet, TextInput, View } from 'react-native';
 import { Text } from '@/components/KText';
 import Colors from '@/constants/Colors';
@@ -11,6 +11,7 @@ import { t } from '@/lib/i18n';
 import { speechLang } from '@/lib/languages';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { answerInputProps } from '@/lib/inputProps';
+import { useFocusOnNewCard } from '@/lib/learn/useFocusOnNewCard';
 import {
   checkDictation,
   currentWordId,
@@ -55,6 +56,8 @@ export default function DictationGame() {
   const word = item ? dictationWord(item, target) : null;
   const checked = state?.checked ?? null;
   const turn = state?.turn ?? 0;
+  const inputRef = useRef<TextInput>(null);
+  useFocusOnNewCard(inputRef, !!game.loaded && !!word && !checked, `${headId}-${turn}`);
 
   // The word is read aloud when it comes up, and again when it comes back (a new turn); not after the check, and not
   // when a resumed round opens on the feedback.
@@ -145,6 +148,7 @@ export default function DictationGame() {
           </Pressable>
           <TextInput
             key={turn}
+            ref={inputRef}
             testID="dictation-input"
             style={[
               styles.input,
@@ -158,7 +162,6 @@ export default function DictationGame() {
             onChangeText={setTyped}
             onSubmitEditing={checked ? next : check}
             editable={!checked}
-            autoFocus
             {...answerInputProps}
           />
           {checked && (
