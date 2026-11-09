@@ -365,7 +365,7 @@ describe('the real words-open data', () => {
   beforeAll(() => setPcicTarget('es'));
 
   it('a real word yields its sentence with the word as written in it', () => {
-    expect(readingWordFor(findPcicItem('o33')!, 'es')).toMatchObject({ before: '', answer: 'Voy', sentence: 'Voy con ella.' });
+    expect(readingWordFor(findPcicItem('o33')!, 'es')).toMatchObject({ before: 'Ella ', answer: 'va', sentence: 'Ella va con él.' });
   });
 });
 

@@ -153,7 +153,7 @@ describe('the real words-open data', () => {
   it('knows the lemma data of a card; the inflected form is the answer', () => {
     expect(openGapInfo('o33')).toMatchObject({ lemma: 'ir' });
     const task = gapTaskFor(findPcicItem('o33')!, 'es');
-    expect(task).toMatchObject({ before: '', answer: 'Voy', after: ' con ella.', meaning: 'to go' });
+    expect(task).toMatchObject({ before: 'Ella ', answer: 'va', after: ' con él.', meaning: 'to go' });
   });
 
   it('almost every word with an example sentence yields a task (the lemma lists line up with the sentences)', () => {
