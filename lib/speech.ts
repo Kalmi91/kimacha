@@ -420,6 +420,9 @@ let appStateSub: { remove(): void } | null = null;
 let memorySub: { remove(): void } | null = null;
 
 export function watchAppStateForSpeech(): () => void {
+  // FB633: the phone's voice list is asked for at start, not by the first speech: a speech that comes before the list is
+  // known gets the engine's default voice, the next one the pinned voice (a different voice on the same card).
+  void loadVoices();
   void startNeural(); // reads the better voice's settings and loads its engines (once per run)
   memorySub?.remove();
   memorySub = AppState.addEventListener('memoryWarning', () => void releaseStandIns());
