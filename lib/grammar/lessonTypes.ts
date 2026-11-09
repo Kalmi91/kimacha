@@ -138,6 +138,9 @@ export interface FormItem {
   accept?: string[];
   table: string; // id of one of the body's `table` blocks
   tense?: { from: TenseId; to: TenseId };
+  // optional: what exactly to type (shown as the level test's hint instead of the generic one), for a task whose
+  // prompt alone does not say which word or form is wanted; it must not contain the answer.
+  ask?: Lang4;
   // optional: a typical wrong typed answer -> why it is wrong ({en, es}); the level test's result card looks the
   // typed answer up here (lowercase, accents removed). Where it is missing the card shows the table and the rule.
   wrong?: Record<string, Record<string, string>>;

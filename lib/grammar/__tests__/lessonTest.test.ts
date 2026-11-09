@@ -317,7 +317,7 @@ describe('form tasks and result data', () => {
 
   it('a verb table keeps verb (meaning) · person; any other table gets title, column label, the cell and "Type the <column>"', () => {
     const gu = byId('es', 'gustar', 'gu-form-12').view;
-    expect(gu).toMatchObject({ card: 'type', prompt: 'gustar + varias cosas (gustar + several things) · ellos/ellas/ustedes', hint: 'Type the form of the verb' });
+    expect(gu).toMatchObject({ card: 'type', prompt: 'gustar + varias cosas (gustar + several things) · ellos/ellas/ustedes', hint: 'Type the pronoun and the form of gustar for this person' });
     expect((gu as { heading?: string }).heading).toBeUndefined();
     const int = byId('es', 'interrogativos', 'int-form-04').view;
     expect(int).toMatchObject({
@@ -329,7 +329,9 @@ describe('form tasks and result data', () => {
     });
     const nh = byId('es', 'numeros-hora-fecha', 'nh-form-06').view;
     expect(nh).toMatchObject({ card: 'type', heading: 'Numbers', label: 'Number', prompt: '1:00' });
-    expect((nh as { hint?: string }).hint).toBe('Type the word');
+    expect((nh as { hint?: string }).hint).toBe('Write it in Spanish words');
+    // a plain verb table keeps the generic hint
+    expect(byId('es', 'presente-regular', 'pr-form-01').view).toMatchObject({ hint: 'Type the form of the verb' });
   });
 
   it('every item kind that has a translation carries it in detail.tr (why, spot, gap, mark), none repeats the sentence', () => {

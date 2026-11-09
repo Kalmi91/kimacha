@@ -831,6 +831,7 @@
       "kind": "form",
       "verb": "ir a + infinitivo",
       "person": "yo",
+      "ask": { "en": "Type the form of ir + a for this person (without the infinitive)", "es": "Escribe la forma de ir + a para esta persona (sin el infinitivo)" },
       "answer": "voy a",
       "table": "ir-a-presente",
       "tense": { "from": "presente", "to": "ir-a" },
@@ -850,6 +851,7 @@
       "kind": "form",
       "verb": "ir a + infinitivo",
       "person": "tú",
+      "ask": { "en": "Type the form of ir + a for this person (without the infinitive)", "es": "Escribe la forma de ir + a para esta persona (sin el infinitivo)" },
       "answer": "vas a",
       "table": "ir-a-presente",
       "tense": { "from": "presente", "to": "ir-a" },
@@ -869,6 +871,7 @@
       "kind": "form",
       "verb": "ir a + infinitivo",
       "person": "él/ella/usted",
+      "ask": { "en": "Type the form of ir + a for this person (without the infinitive)", "es": "Escribe la forma de ir + a para esta persona (sin el infinitivo)" },
       "answer": "va a",
       "table": "ir-a-presente",
       "tense": { "from": "presente", "to": "ir-a" },
@@ -888,6 +891,7 @@
       "kind": "form",
       "verb": "ir a + infinitivo",
       "person": "nosotros",
+      "ask": { "en": "Type the form of ir + a for this person (without the infinitive)", "es": "Escribe la forma de ir + a para esta persona (sin el infinitivo)" },
       "answer": "vamos a",
       "table": "ir-a-presente",
       "tense": { "from": "presente", "to": "ir-a" },
@@ -907,6 +911,7 @@
       "kind": "form",
       "verb": "ir a + infinitivo",
       "person": "ellos/ellas/ustedes",
+      "ask": { "en": "Type the form of ir + a for this person (without the infinitive)", "es": "Escribe la forma de ir + a para esta persona (sin el infinitivo)" },
       "answer": "van a",
       "table": "ir-a-presente",
       "tense": { "from": "presente", "to": "ir-a" },
@@ -959,46 +964,6 @@
         }
       ],
       "correctIndex": 0,
-      "tense": { "from": "presente", "to": "ir-a" }
-    },
-    {
-      "kind": "why",
-      "id": "iai-why-02",
-      "es": "Vas a terminar la tarea.",
-      "target": "Vas",
-      "tr": {
-        "en": "You are going to finish the homework.",
-        "es": "Vas a terminar la tarea."
-      },
-      "options": [
-        {
-          "text": {
-            "en": "third person singular: he, she or formal you",
-            "es": "tercera persona del singular"
-          },
-          "wrong": {
-            "en": "If it were él/ella, it would say 'Va a terminar la tarea', meaning HE/SHE is going to finish the homework, not you.",
-            "es": "Si fuera él/ella, diría 'Va a terminar la tarea', o sea que ÉL/ELLA va a terminarla, no tú."
-          }
-        },
-        {
-          "text": {
-            "en": "second person singular, informal",
-            "es": "segunda persona del singular, informal"
-          }
-        },
-        {
-          "text": {
-            "en": "third person plural: they or you all",
-            "es": "tercera persona del plural"
-          },
-          "wrong": {
-            "en": "If it were ellos, it would say 'Van a terminar la tarea', meaning THEY are going to finish it, not just you.",
-            "es": "Si fuera ellos, diría 'Van a terminar la tarea', o sea que ELLOS van a terminarla, no solo tú."
-          }
-        }
-      ],
-      "correctIndex": 1,
       "tense": { "from": "presente", "to": "ir-a" }
     },
     {

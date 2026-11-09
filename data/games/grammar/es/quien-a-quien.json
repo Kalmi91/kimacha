@@ -689,6 +689,7 @@
       "kind": "form",
       "verb": "objeto directo",
       "person": "yo",
+      "ask": { "en": "Type the pronoun for this person and this kind of object", "es": "Escribe el pronombre de esta persona y de este tipo de objeto" },
       "answer": "me",
       "table": "quien",
       "wrong": {
@@ -707,6 +708,7 @@
       "kind": "form",
       "verb": "objeto directo",
       "person": "tú",
+      "ask": { "en": "Type the pronoun for this person and this kind of object", "es": "Escribe el pronombre de esta persona y de este tipo de objeto" },
       "answer": "te",
       "table": "quien",
       "wrong": {
@@ -725,6 +727,7 @@
       "kind": "form",
       "verb": "objeto directo",
       "person": "él / usted (masculino)",
+      "ask": { "en": "Type the pronoun for this person and this kind of object", "es": "Escribe el pronombre de esta persona y de este tipo de objeto" },
       "answer": "lo",
       "table": "quien",
       "wrong": {
@@ -743,6 +746,7 @@
       "kind": "form",
       "verb": "objeto directo",
       "person": "nosotros",
+      "ask": { "en": "Type the pronoun for this person and this kind of object", "es": "Escribe el pronombre de esta persona y de este tipo de objeto" },
       "answer": "nos",
       "table": "quien",
       "wrong": {
@@ -761,6 +765,7 @@
       "kind": "form",
       "verb": "objeto directo",
       "person": "ellos / ustedes (masculino)",
+      "ask": { "en": "Type the pronoun for this person and this kind of object", "es": "Escribe el pronombre de esta persona y de este tipo de objeto" },
       "answer": "los",
       "table": "quien",
       "wrong": {
@@ -779,6 +784,7 @@
       "kind": "form",
       "verb": "objeto indirecto",
       "person": "yo",
+      "ask": { "en": "Type the pronoun for this person and this kind of object", "es": "Escribe el pronombre de esta persona y de este tipo de objeto" },
       "answer": "me",
       "table": "quien",
       "wrong": {
@@ -797,6 +803,7 @@
       "kind": "form",
       "verb": "objeto indirecto",
       "person": "tú",
+      "ask": { "en": "Type the pronoun for this person and this kind of object", "es": "Escribe el pronombre de esta persona y de este tipo de objeto" },
       "answer": "te",
       "table": "quien",
       "wrong": {
@@ -815,6 +822,7 @@
       "kind": "form",
       "verb": "objeto indirecto",
       "person": "él / usted (masculino)",
+      "ask": { "en": "Type the pronoun for this person and this kind of object", "es": "Escribe el pronombre de esta persona y de este tipo de objeto" },
       "answer": "le",
       "table": "quien",
       "wrong": {
@@ -833,6 +841,7 @@
       "kind": "form",
       "verb": "objeto indirecto",
       "person": "nosotros",
+      "ask": { "en": "Type the pronoun for this person and this kind of object", "es": "Escribe el pronombre de esta persona y de este tipo de objeto" },
       "answer": "nos",
       "table": "quien",
       "wrong": {
@@ -851,6 +860,7 @@
       "kind": "form",
       "verb": "objeto indirecto",
       "person": "ellos / ustedes (masculino)",
+      "ask": { "en": "Type the pronoun for this person and this kind of object", "es": "Escribe el pronombre de esta persona y de este tipo de objeto" },
       "answer": "les",
       "table": "quien",
       "wrong": {
