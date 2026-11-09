@@ -4,11 +4,11 @@ import { useFocusEffect } from 'expo-router';
 
 import BadgeRow from '@/components/learn/BadgeRow';
 import Colors from '@/constants/Colors';
-import { pcicItemsForLevel } from '@/data/pcic';
+import { PCIC_LEVELS, pcicItemsForLevel, type PcicLevel } from '@/data/pcic';
 import { getDb } from '@/lib/database';
 import { t } from '@/lib/i18n';
 import { useLearner } from '@/lib/learner';
-import { levelCounts, type LevelCounts } from '@/lib/levelCounter';
+import { levelCounts } from '@/lib/levelCounter';
 import { useTheme } from '@/lib/ThemeContext';
 import { localDateString } from '@/lib/usageStats';
 
@@ -16,12 +16,13 @@ import { localDateString } from '@/lib/usageStats';
 // tab header shows (e.g. A2 + "230 words", the same chips and labels) plus the words of that level still due.
 // It reads the db itself: it loads on mount, again every time the tab comes back into focus, and again whenever
 // `refreshKey` changes, so a screen bumps it after each credited answer and the due number drops at once.
-export default function LevelCounter({ refreshKey = 0 }: { refreshKey?: number }) {
+// `only` (the Sentences tab, FB631): show that level instead of the learner's, or 'all' = every level summed.
+export default function LevelCounter({ refreshKey = 0, only }: { refreshKey?: number; only?: 'all' | PcicLevel }) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const s = t();
   const { refresh } = useLearner();
-  const [counts, setCounts] = useState<LevelCounts | null>(null);
+  const [counts, setCounts] = useState<{ level: string; total: number; due: number } | null>(null);
   const [focusSeq, setFocusSeq] = useState(0);
   const mounted = useRef(false);
 
@@ -42,7 +43,13 @@ export default function LevelCounter({ refreshKey = 0 }: { refreshKey?: number }
       const db = getDb();
       // The store sets the direction's deck before the level's items are read.
       const { level } = await refresh(['direction', 'level']);
-      const next = levelCounts(await db.getPcicCards(), level, pcicItemsForLevel(level).length, localDateString());
+      const cards = await db.getPcicCards();
+      const today = localDateString();
+      const of = (l: PcicLevel) => levelCounts(cards, l, pcicItemsForLevel(l).length, today);
+      const next =
+        only === 'all'
+          ? { level: t().sentenceTab.levelAll, total: PCIC_LEVELS.reduce((n, l) => n + of(l).total, 0), due: PCIC_LEVELS.reduce((n, l) => n + of(l).due, 0) }
+          : of(only ?? level);
       if (alive) setCounts(next);
     })().catch(() => {
       // a failed read leaves the counts as they were
@@ -50,7 +57,7 @@ export default function LevelCounter({ refreshKey = 0 }: { refreshKey?: number }
     return () => {
       alive = false;
     };
-  }, [refreshKey, focusSeq, refresh]);
+  }, [refreshKey, focusSeq, refresh, only]);
 
   if (!counts) return null;
   return (

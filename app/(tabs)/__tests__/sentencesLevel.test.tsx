@@ -89,7 +89,7 @@ describe('Sentences tab: level picker (FB556)', () => {
     await flush();
     expect(r.getByTestId('sentences-levels')).toBeTruthy();
     expect(['all', 'A1', 'B2'].map((id) => selected(r, id))).toEqual([true, false, false]);
-    expect(r.getByText('All')).toBeTruthy();
+    expect(r.getAllByText('All').length).toBe(2); // the chip and the counter row
     expect(await roundItems()).toEqual(['a1-w1', 'a1-w2', 'b2-w1', 'b2-w2']);
     expect(String(r.getByTestId('sentences-progress-text').props.children)).toBe('0 / 4');
     // the feedback button stays on the screen
@@ -125,6 +125,19 @@ describe('Sentences tab: level picker (FB556)', () => {
     await flush();
     expect(selected(r, 'B2')).toBe(true);
     expect(selected(r, 'all')).toBe(false);
+  });
+
+  it('FB631: the counter row shows the chosen level and its counts, and All for all levels', async () => {
+    await learn(ALL_WORDS);
+    await getDb().setPcicLevel('A1');
+    const r = render(screen());
+    await flush();
+    fireEvent.press(r.getByTestId('sentences-level-B2'));
+    await flush();
+    expect(r.getByTestId('level-counter').props.accessibilityLabel).toBe('Level B2: 2 words, 0 due');
+    fireEvent.press(r.getByTestId('sentences-level-all'));
+    await flush();
+    expect(r.getByTestId('level-counter').props.accessibilityLabel).toBe('Level All: 4 words, 0 due');
   });
 
   it('B2 serves only the B2 sentences, All brings every level back', async () => {
@@ -272,7 +285,7 @@ describe('Sentences tab: level picker (FB556)', () => {
     setLanguage('es');
     const r = render(screen());
     await flush();
-    expect(r.getByText('Todos')).toBeTruthy();
+    expect(r.getAllByText('Todos').length).toBe(2);
     expect(r.getByLabelText('Nivel de las frases')).toBeTruthy();
     expect(r.getByLabelText('Todos los niveles')).toBeTruthy();
     expect(r.getByLabelText('Nivel B2')).toBeTruthy();

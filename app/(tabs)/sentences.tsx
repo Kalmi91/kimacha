@@ -376,7 +376,7 @@ export default function SentencesScreen() {
       {/* While typing the keyboard leaves little room: the level row steps aside, so the 🔊 and the answer fit together. */}
       {levels.length > 1 && kbHeight === 0 && <SentenceLevelPicker levels={levels} active={level} onSelect={onPickLevel} />}
       <View style={styles.headerRow}>
-        <LevelCounter refreshKey={creditSeq} />
+        <LevelCounter refreshKey={creditSeq} only={level} />
         {total > 0 && (
           <Text style={[styles.progressText, { color: colors.tabIconDefault }]} testID="sentences-progress-text" accessibilityLabel={s.sentenceTab.progressA11y(done, total)}>
             {s.sentenceTab.progress(done, total)}
