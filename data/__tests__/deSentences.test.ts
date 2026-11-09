@@ -57,7 +57,7 @@ describe('chunks-de.json', () => {
       }
     }
     expect(problems).toEqual([]);
-    expect(Object.keys(steps).length).toBeGreaterThanOrEqual(10); // was 80; the A1 sentences were rewritten (FB632) and their stale German steps (72) dropped, to be rewritten later
+    expect(Object.keys(steps).length).toBeGreaterThanOrEqual(80);
   });
 });
 
