@@ -11,7 +11,11 @@ import { nearMissDistractors } from '@/lib/distractors';
 import { cardsForBatches, type MistakeCard } from '@/lib/mistakes/deck';
 import type { MistakesBatch } from '@/lib/mistakes/format';
 import { gradeMistakeCard } from '@/lib/mistakes/grade';
+import type { PcicItem, PcicLevel } from '@/data/pcic';
+import { knownTokens, sentenceTokens, type LearnedEntry, type ResolvedTense } from '@/lib/knownSentence';
 import { tileWords } from '@/lib/sentenceCards';
+import { wordIn } from '@/lib/pcicItemText';
+import { posOf } from '@/lib/pcicPos';
 import { sentenceKey, type SentenceEntry } from '@/lib/sentenceTab';
 import { sm2NewCard, type Sm2Card } from '@/lib/sm2';
 
@@ -25,10 +29,10 @@ const TRAP_COUNT = 3;
  * scheduled for later is not offered; `skip` = sentence keys (lib/sentenceTab.ts sentenceKey) to leave out (done or already
  * in the round). `doubtful` sentences are not cards at all (lib/mistakes/deck.ts cardsForBatch).
  */
-export function chooseMistakeCard(batches: MistakesBatch[], progress: readonly Sm2Card[], today: string, skip: ReadonlySet<string> = new Set()): MistakeCard | null {
+export function chooseMistakeCard(batches: MistakesBatch[], progress: readonly Sm2Card[], today: string, skip: ReadonlySet<string> = new Set(), fits?: (answer: string) => boolean): MistakeCard | null {
   const byId = new Map(progress.map((c) => [c.itemId, c]));
   const usable = cardsForBatches(batches).filter(
-    (c) => c.kind === 'sentence' && tileWords(c.answer).length > 0 && !skip.has(sentenceKey({ target: c.answer })),
+    (c) => c.kind === 'sentence' && tileWords(c.answer).length > 0 && !skip.has(sentenceKey({ target: c.answer })) && (!fits || fits(c.answer)),
   );
   const due = usable
     .map((card) => ({ card, p: byId.get(card.cardId) }))
@@ -36,6 +40,20 @@ export function chooseMistakeCard(batches: MistakesBatch[], progress: readonly S
     .sort((a, b) => (a.p!.due < b.p!.due ? -1 : a.p!.due > b.p!.due ? 1 : 0));
   if (due.length > 0) return due[0].card;
   return usable.find((c) => (byId.get(c.cardId)?.state ?? 'new') === 'new') ?? null;
+}
+
+/**
+ * FB631: the mistake sentence follows the tab's level rule. With a level chosen, a sentence that uses a word known only from a
+ * HIGHER level is not offered (a word outside the corpus is the learner's own and stays); `all` = every sentence.
+ */
+export function mistakeFitsLevel(level: 'all' | PcicLevel, levels: readonly PcicLevel[], itemsFor: (l: PcicLevel) => readonly PcicItem[], tenses?: ReadonlySet<ResolvedTense>): ((answer: string) => boolean) | undefined {
+  if (level === 'all') return undefined;
+  const entries = (ls: readonly PcicLevel[]): LearnedEntry[] =>
+    ls.flatMap((l) => itemsFor(l)).map((item) => ({ text: wordIn(item, 'es') ?? '', pos: item.pos ?? posOf(item)?.pos }));
+  const upTo = levels.slice(0, levels.indexOf(level) + 1);
+  const low = knownTokens('es', { learned: entries(upTo), tenses });
+  const all = knownTokens('es', { learned: entries(levels), tenses });
+  return (answer) => sentenceTokens(answer, 'es').every((t) => low.has(t) || !all.has(t));
 }
 
 /** The mistake sentence as a round entry: it owns no learned word, `itemId` is the mistake card's id. */
@@ -87,7 +105,7 @@ export function mistakeTrapWords(targetWords: string[], wrong: string, vocab: st
 }
 
 /** The mistake sentence for a new round, or null (no list loaded, nothing due or new, an unreadable row is skipped). */
-export async function pickMistakeEntry(today: string, skip: ReadonlySet<string>): Promise<SentenceEntry | null> {
+export async function pickMistakeEntry(today: string, skip: ReadonlySet<string>, fits?: (answer: string) => boolean): Promise<SentenceEntry | null> {
   const db = getDb();
   const batches: MistakesBatch[] = [];
   for (const row of await db.getMistakeBatches()) {
@@ -98,7 +116,7 @@ export async function pickMistakeEntry(today: string, skip: ReadonlySet<string>)
     }
   }
   if (batches.length === 0) return null;
-  const card = chooseMistakeCard(batches, await db.getMistakeCards(), today, skip);
+  const card = chooseMistakeCard(batches, await db.getMistakeCards(), today, skip, fits);
   return card ? mistakeEntry(card) : null;
 }
 

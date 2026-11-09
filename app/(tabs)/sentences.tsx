@@ -58,7 +58,7 @@ import {
   type SentenceRound,
 } from '@/lib/sentenceRound';
 import { hintPieces, type HintPiece } from '@/lib/sentenceHint';
-import { mistakeTrapWords, pickMistakeEntry, recordMistakeBuild, withMistakeStep } from '@/lib/sentenceMistakes';
+import { mistakeFitsLevel, mistakeTrapWords, pickMistakeEntry, recordMistakeBuild, withMistakeStep } from '@/lib/sentenceMistakes';
 import type { RoundStep } from '@/lib/sentenceSteps';
 import { SENTENCE_ROUND_SIZE, buildSentenceQueue, recordTypedWords, sentenceKey, type SentenceEntry } from '@/lib/sentenceTab';
 import { gradeTypedWords } from '@/lib/sentenceTyping';
@@ -248,7 +248,7 @@ export default function SentencesScreen() {
       await loadBeta();
       if (picked.length > 0 && dir === 'es' && getBeta('sentenceMistakes')) {
         const skip = new Set([...played.current.rungs.keys(), ...played.current.mistakes, ...picked.map((e) => sentenceKey(e))]);
-        entries = withMistakeStep(picked, await pickMistakeEntry(today, skip));
+        entries = withMistakeStep(picked, await pickMistakeEntry(today, skip, mistakeFitsLevel(chosen, PCIC_LEVELS, pcicItemsForLevel, tenses)));
       }
       // beta sentenceMix: the sentences take turns (not the new words: each one is followed by its own sentence).
       next = entries.length > 0 ? startRound(entries, today, dir, focusKey, { mix: picked.length > 0 && getBeta('sentenceMix') }) : null;
