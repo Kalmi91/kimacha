@@ -98,8 +98,10 @@ export default function MistakesDeckScreen() {
   const current = queue[0];
   const currentCard = current ? cardsById.get(current.itemId) : undefined;
   const complete = !loading && queue.length === 0;
+  // bumped on every grade: the field remounts and the focus runs again, also when the last card comes straight back
+  const [seq, setSeq] = useState(0);
   const inputRef = useRef<TextInput>(null);
-  useFocusOnNewCard(inputRef, !loading && !!currentCard, `${current?.itemId}-${queue.length}`);
+  useFocusOnNewCard(inputRef, !loading && !!currentCard, `${current?.itemId}-${seq}`);
 
   const handleCheck = () => {
     if (!currentCard) return;
@@ -113,6 +115,7 @@ export default function MistakesDeckScreen() {
     setQueue((prev) => requeueAfterGrade(prev, next, today));
     setTyped('');
     setChecked(false);
+    setSeq((n) => n + 1);
   };
 
   if (loading) {
@@ -174,6 +177,7 @@ export default function MistakesDeckScreen() {
           )}
 
           <TextInput
+            key={`m-in-${seq}`}
             ref={inputRef}
             style={[styles.input, { color: colors.text, borderColor: colors.tabIconDefault }, themedInputStyle(g)]}
             value={typed}

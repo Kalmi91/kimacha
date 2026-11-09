@@ -10,20 +10,21 @@ function files(dir: string): string[] {
     const full = path.join(dir, f);
     if (fs.statSync(full).isDirectory()) {
       if (f !== '__tests__' && f !== 'node_modules') out.push(...files(full));
-    } else if (full.endsWith('.tsx')) out.push(full);
+    } else if (full.endsWith('.tsx') || full.endsWith('.ts')) out.push(full);
   }
   return out;
 }
 
 describe('no bare autoFocus on a TextInput', () => {
-  it('app/ and components/ use useFocusOnNewCard instead', () => {
+  it('app/, components/ and lib/ use useFocusOnNewCard instead', () => {
     const bad: string[] = [];
-    for (const dir of ['app', 'components']) {
+    for (const dir of ['app', 'components', 'lib']) {
       for (const file of files(path.join(ROOT, dir))) {
         const lines = fs.readFileSync(file, 'utf8').split('\n');
         lines.forEach((line, i) => {
-          // the JSX attribute (own line or inline), not a word in a comment
-          if (/^\s*autoFocus\b/.test(line) || /<TextInput[^>]*\sautoFocus\b/.test(line)) bad.push(`${path.relative(ROOT, file)}:${i + 1}`);
+          // the JSX attribute on any line (continuation lines too), not a word in a comment
+          if (/^\s*(\/\/|\*|\/\*)/.test(line)) return;
+          if (/autoFocus\s*(=|\/>|>|$)/.test(line)) bad.push(`${path.relative(ROOT, file)}:${i + 1}`);
         });
       }
     }
