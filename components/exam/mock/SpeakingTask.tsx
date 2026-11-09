@@ -8,6 +8,7 @@ import { countWords } from '@/lib/exam/mock/score';
 import { formatClock } from '@/lib/exam/mock/session';
 import type { MockSpeakingChoice, MockSpeakingTask } from '@/lib/exam/mock/types';
 import { t } from '@/lib/i18n';
+import { useFocusOnNewCard } from '@/lib/learn/useFocusOnNewCard';
 import { speechLang } from '@/lib/languages';
 import { speak, stop as stopSpeaking } from '@/lib/speech';
 import { speechBusy, useSpeechStatus } from '@/lib/speechStatus';
@@ -119,6 +120,9 @@ export default function SpeakingTask({ task, answer, onAnswer, target, canSpeak,
   const blockY = useRef(0);
   const focused = useRef(false);
   const keyboardUp = useRef(false);
+  const answerRef = useRef<TextInput>(null);
+  // with a photo or a written stimulus the learner looks first, so the keyboard does not open by itself
+  useFocusOnNewCard(answerRef, step === 'turns' && !!choice && !choice.photos?.length && !choice.input, `${choice?.id}-${turnIdx}`);
   const reveal = useCallback(() => latest.current.onScrollTo?.(blockY.current), []);
   useEffect(() => {
     if (step !== 'turns') return;
@@ -260,6 +264,7 @@ export default function SpeakingTask({ task, answer, onAnswer, target, canSpeak,
                   keyboard stays up) from one question to the next. With a photo or a written stimulus to look at it does not grab
                   the keyboard by itself: the learner looks first, then taps the field. */}
               <TextInput
+                ref={answerRef}
                 testID="mock-speaking-answer"
                 accessibilityLabel={turn.ask}
                 value={textOf(turn.id)}
@@ -274,7 +279,6 @@ export default function SpeakingTask({ task, answer, onAnswer, target, canSpeak,
                 placeholder={s.speakAnswerPlaceholder}
                 placeholderTextColor={colors.textMuted}
                 multiline
-                autoFocus={!choice.photos?.length && !choice.input}
                 style={[styles.input, local.answer, { color: colors.text, borderColor: colors.border, backgroundColor: colors.card }]}
               />
               <Text testID="mock-speaking-hint" style={[styles.small, { color: colors.textMuted }]}>

@@ -47,7 +47,7 @@ describe('PCIC tab: a fresh input field for every new card', () => {
   it('the first card field is not autoFocus, it gets the focus a moment after mounting', async () => {
     const { UNSAFE_getByType } = render(<PcicScreen />);
     await flush();
-    expect(UNSAFE_getByType(TextInput).props.autoFocus).toBe(false);
+    expect(UNSAFE_getByType(TextInput).props.autoFocus).toBeFalsy();
     await waitFor(() => expect(focusSpy).toHaveBeenCalled());
   });
 
@@ -75,7 +75,7 @@ describe('PCIC tab: a fresh input field for every new card', () => {
     const second = UNSAFE_getByType(TextInput);
     expect(second).not.toBe(first);
     expect(second.props.editable).toBe(true);
-    expect(second.props.autoFocus).toBe(false);
+    expect(second.props.autoFocus).toBeFalsy();
     expect(second.props.value).toBe('');
     await waitFor(() => expect(focusSpy.mock.calls.length).toBeGreaterThan(focusesBeforeCheck));
   });

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 
 import Colors from '@/constants/Colors';
@@ -9,6 +9,7 @@ import ResultBadge from '@/components/ResultBadge';
 import { useDockedAction } from '@/components/learn/DockSlot';
 import { compareDictation, type DictationResult, type DictationWord } from '@/lib/exam/dictation';
 import { useGrammarColors } from '@/lib/grammarColors';
+import { useFocusOnNewCard } from '@/lib/learn/useFocusOnNewCard';
 import { t } from '@/lib/i18n';
 import { useTheme } from '@/lib/ThemeContext';
 import ExamButton from './ExamButton';
@@ -54,6 +55,8 @@ export default function ExamSpeakCard({ prompt, expected, mode, targetLang, stri
   const s = t();
   const [typed, setTyped] = useState('');
   const [result, setResult] = useState<DictationResult | null>(null);
+  const inputRef = useRef<TextInput>(null);
+  useFocusOnNewCard(inputRef, true, `${mode}|${prompt}`);
 
   const check = () => {
     const r = compareDictation(typed, expected, { strictAccents, subjectDrop: targetLang === 'es' });
@@ -81,6 +84,7 @@ export default function ExamSpeakCard({ prompt, expected, mode, targetLang, stri
         {/* Intentionally no answerInputProps: it would turn off the suggestion bar, and with it could
             also hide the keyboard's microphone button; dictation needs the stock keyboard. */}
         <TextInput
+          ref={inputRef}
           testID="exam-speak-input"
           style={[
             styles.input,
@@ -93,7 +97,6 @@ export default function ExamSpeakCard({ prompt, expected, mode, targetLang, stri
           onChangeText={setTyped}
           editable={!missed}
           multiline
-          autoFocus
         />
         {!missed && (
           <Text testID="exam-speak-hint" style={[styles.hint, { color: colors.textMuted }]}>

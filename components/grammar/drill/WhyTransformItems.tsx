@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { Pressable, TextInput, View } from 'react-native';
 import { Text } from '@/components/KText';
 import Colors from '@/constants/Colors';
 import { t } from '@/lib/i18n';
 import { strictAnswerMatch } from '@/lib/answerMatch';
 import { answerInputProps } from '@/lib/inputProps';
+import { useFocusOnNewCard } from '@/lib/learn/useFocusOnNewCard';
 import { TENSE_NAMES, type ContentLang, type TransformItem, type WhyItem } from '@/lib/grammar/lessonTypes';
 import { speak } from '@/lib/speech';
 import { speechLang } from '@/lib/languages';
@@ -247,6 +248,8 @@ export function TransformDrillItem({
   const [input, setInput] = useState('');
   const [result, setResult] = useState<'ok' | 'bad' | null>(null);
   const g = useGrammarColors();
+  const inputRef = useRef<TextInput>(null);
+  useFocusOnNewCard(inputRef, true, item.id);
 
   const check = () => {
     const candidates = [item.answer, ...(item.accept ?? [])];
@@ -296,6 +299,7 @@ export function TransformDrillItem({
         </Text>
         <BrutalBox dashed={result === 'bad'} style={result === 'bad' ? styles.brutalDim : undefined} boxStyle={styles.brutalInputBox}>
           <TextInput
+            ref={inputRef}
             testID="transform-input"
             {...answerInputProps}
             style={[styles.brutalInput, { color: g.ink }]}
@@ -354,6 +358,7 @@ export function TransformDrillItem({
         {s.grammar.rewriteTo(TENSE_NAMES[item.tense.to][contentLang] ?? TENSE_NAMES[item.tense.to].en)}
       </Text>
       <TextInput
+        ref={inputRef}
         testID="transform-input"
         {...answerInputProps}
         style={[styles.transformInput, { color: colors.text, borderColor: inputBorder }]}

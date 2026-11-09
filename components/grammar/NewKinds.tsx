@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { StyleSheet, TextInput, View } from 'react-native';
 import { Text } from '@/components/KText';
 
@@ -10,6 +10,7 @@ import { useDockedAction } from '@/components/learn/DockSlot';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
 import { answerInputProps } from '@/lib/inputProps';
+import { useFocusOnNewCard } from '@/lib/learn/useFocusOnNewCard';
 import { speechLang } from '@/lib/languages';
 import { gradeSentenceAnswer, suggestedGrade } from '@/lib/pcicMatch';
 import { tileWords } from '@/lib/sentenceCards';
@@ -209,6 +210,8 @@ export function DictationDrillItem({
   const locale = speechLang(learnedLang);
   const [typed, setTyped] = useState('');
   const [result, setResult] = useState<{ correct: boolean } | null>(null);
+  const inputRef = useRef<TextInput>(null);
+  useFocusOnNewCard(inputRef, true, item.id);
   const audio = useSpeechStatus();
   const active = audio.text === item.es && speechBusy(audio.phase);
   const speakerIcon = active ? (audio.phase === 'loading' ? '⏳' : '🔉') : '🔊';
@@ -248,6 +251,7 @@ export function DictationDrillItem({
       </View>
       <BrutalBox dashed={!!result && !result.correct} boxStyle={styles.inputBox}>
         <TextInput
+          ref={inputRef}
           testID="dictation-input"
           {...answerInputProps}
           style={[styles.input, { color: g.ink }]}
@@ -301,6 +305,8 @@ export function WriteDrillItem({
   const locale = speechLang(learnedLang);
   const [typed, setTyped] = useState('');
   const [result, setResult] = useState<{ correct: boolean } | null>(null);
+  const inputRef = useRef<TextInput>(null);
+  useFocusOnNewCard(inputRef, true, item.id);
 
   // The right sentence is spoken after the answer only; leaving the task silences it.
   useEffect(() => () => stopSpeaking(), []);
@@ -330,6 +336,7 @@ export function WriteDrillItem({
       <Text style={[styles.writeLabel, { color: g.ink }]}>{s.grammar.writeHint}</Text>
       <BrutalBox dashed={!!result && !result.correct} boxStyle={styles.inputBox}>
         <TextInput
+          ref={inputRef}
           testID="write-input"
           {...answerInputProps}
           multiline

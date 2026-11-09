@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState, type ReactNode } from 'react';
+import { useContext, useEffect, useRef, useState, type ReactNode } from 'react';
 import { StyleSheet, View, Pressable, TextInput, Modal, PanResponder, Dimensions, Share, Platform } from 'react-native';
 import { Text } from '@/components/KText';
 import { TitleText, themedInputStyle } from '@/components/grammar/Themed';
@@ -10,6 +10,7 @@ import { useGrammarColors } from '@/lib/grammarColors';
 import { BrutalBox, BrutalButton } from '@/components/grammar/Brutal';
 import CheckMark from '@/components/CheckMark';
 import { t } from '@/lib/i18n';
+import { useFocusOnNewCard } from '@/lib/learn/useFocusOnNewCard';
 import { useLearner } from '@/lib/learner';
 import { feedbackBuildTag } from '@/lib/appBuild';
 import { IS_PLAY_BUILD, FEEDBACK_URL } from '@/lib/buildFlavor';
@@ -59,6 +60,8 @@ function FeedbackControl({ level, languagePair, currentCard, draggable = false, 
   const s = t();
 
   const [visible, setVisible] = useState(false);
+  const inputRef = useRef<TextInput>(null);
+  useFocusOnNewCard(inputRef, visible, 'feedback');
   const [text, setText] = useState('');
   const [sending, setSending] = useState(false);
   const [showThanks, setShowThanks] = useState(false);
@@ -208,6 +211,7 @@ function FeedbackControl({ level, languagePair, currentCard, draggable = false, 
             <TitleText variant="title" style={[styles.modalTitle, { color: colors.text }]}>{s.feedback.button}</TitleText>
 
             <TextInput
+              ref={inputRef}
               style={[styles.input, { color: colors.text, borderColor: colors.tabIconDefault }, themedInputStyle(g)]}
               placeholder={s.feedback.placeholder}
               placeholderTextColor={colors.tabIconDefault}
@@ -216,7 +220,6 @@ function FeedbackControl({ level, languagePair, currentCard, draggable = false, 
               multiline
               numberOfLines={4}
               textAlignVertical="top"
-              autoFocus
             />
 
             {sendError && <Text style={styles.sendError}>{s.feedback.errorTitle}</Text>}

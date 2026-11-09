@@ -156,3 +156,57 @@ export function verbColumnColor(index: number, isDark: boolean): string {
   const pair = VERB_COLUMN_COLORS[index % VERB_COLUMN_COLORS.length];
   return isDark ? pair.dark : pair.light;
 }
+
+// ---- reference (grid) table layout (FB628)
+// One width estimate for the grid table: 14.5 px text, about 7.6 px per character (bold header included),
+// 7 px padding on each side of a cell. The pure part lives here so every lesson table can be checked in a test.
+const GRID_CHAR_PX = 7.6;
+const GRID_CELL_PAD = 14;
+const GRID_MAX_COL_PX = 170;
+
+export interface GridPlan {
+  header: string[];
+  rows: string[][];
+  /** Rows and columns were swapped so the table fits the screen. */
+  transposed: boolean;
+  /** 'grid': a table whose columns share the width in `weights`. 'stack': does not fit as a grid, every row is drawn as its own small card. */
+  mode: 'grid' | 'stack';
+  weights: number[];
+}
+
+const longestWord = (text: string) => Math.max(0, ...text.split(/\s+/).map((w) => w.length));
+
+function columnNeeds(header: string[], rows: string[][]): { min: number[]; ideal: number[] } {
+  const cols = header.length;
+  const min: number[] = [];
+  const ideal: number[] = [];
+  for (let c = 0; c < cols; c++) {
+    const cells = [header[c], ...rows.map((r) => r[c] ?? '')];
+    min.push(Math.max(...cells.map(longestWord)) * GRID_CHAR_PX + GRID_CELL_PAD);
+    ideal.push(Math.min(Math.max(...cells.map((x) => x.length)) * GRID_CHAR_PX, GRID_MAX_COL_PX) + GRID_CELL_PAD);
+  }
+  return { min, ideal };
+}
+
+const sum = (xs: number[]) => xs.reduce((a, b) => a + b, 0);
+
+/**
+ * Decides how a reference table is drawn in `available` px: as a grid when every column can hold its longest word,
+ * swapped (rows become columns, the first column the header) when that makes it fit, otherwise as a stack of row cards
+ * (the row label as the title, "column name: value" lines under it). Nothing is ever cut off or scrolled sideways.
+ */
+export function planGridTable(header: string[], rows: string[][], available: number): GridPlan {
+  const direct = columnNeeds(header, rows);
+  if (sum(direct.min) <= available) {
+    return { header, rows, transposed: false, mode: 'grid', weights: direct.ideal };
+  }
+  if (header.length >= 3 && rows.length >= 1) {
+    const th = [header[0], ...rows.map((r) => r[0])];
+    const tr = header.slice(1).map((h, ci) => [h, ...rows.map((r) => r[ci + 1] ?? '')]);
+    const swapped = columnNeeds(th, tr);
+    if (sum(swapped.min) <= available) {
+      return { header: th, rows: tr, transposed: true, mode: 'grid', weights: swapped.ideal };
+    }
+  }
+  return { header, rows, transposed: false, mode: 'stack', weights: direct.ideal };
+}

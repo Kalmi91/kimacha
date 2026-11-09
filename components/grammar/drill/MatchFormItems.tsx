@@ -240,7 +240,7 @@ export function FormDrillItem({
         ? targets.some((c) => strictAnswerMatch(value, c, { lang: 'hu' }))
         : learnedLang === 'de'
           ? targets.some((c) => strictAnswerMatch(value, c, { lang: 'de', keepUmlauts: true, strictAccents }))
-          : targets.some((c) => value.trim().toLowerCase() === c.trim().toLowerCase());
+          : targets.some((c) => strictAnswerMatch(value, c, { strictAccents: true }));
     setCorrect(ok);
     setChecked(true);
     // the correct form is spoken after Check, after right and wrong answers alike, as on the

@@ -553,7 +553,6 @@ export default function PcicCardView({
             onChangeText={setTypedAnswer}
             onSubmitEditing={grade ? () => nextGrade && handleGrade(nextGrade) : handleCheck}
             editable={!grade}
-            autoFocus={Platform.OS === 'web' && !grade} // on Android the session's focus effect opens the keyboard
             placeholder={s.card.typeIn(target)}
             placeholderTextColor={colors.tabIconDefault}
             {...answerInputProps}
