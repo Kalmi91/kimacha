@@ -193,7 +193,7 @@ export default function SentencesScreen() {
     }
     // The picker: the levels that have sentences for this pair and the saved choice (a pick comes through here as a fresh load).
     const available = levelsWithSentences(PCIC_LEVELS, pcicItemsForLevel, dir);
-    const chosen = resolveSentenceLevel(await loadSentenceLevel(db, pairOf(dir)), available);
+    const chosen = resolveSentenceLevel(await loadSentenceLevel(db, pairOf(dir)), available, (await refresh(['level'])).level);
     // A round that was left (other tab, app closed) continues where it stopped, the same day, direction and focus.
     const saved = await loadSentenceRound(db);
     let next: SentenceRound | null;
@@ -420,7 +420,7 @@ export default function SentencesScreen() {
         <SkinBackdrop />
         {header}
         <Text testID="sentences-empty" style={[styles.hint, { color: colors.tabIconDefault }]}>
-          {budgetOut ? s.sentenceTab.emptyBudget : level === ALL_LEVELS ? s.sentenceTab.empty : s.sentenceTab.emptyLevel}
+          {budgetOut ? s.sentenceTab.emptyBudget : level === ALL_LEVELS || levels.length <= 1 ? s.sentenceTab.empty : s.sentenceTab.emptyLevel}
         </Text>
         {feedback}
       </View>

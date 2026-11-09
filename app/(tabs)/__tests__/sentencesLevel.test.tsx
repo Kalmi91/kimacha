@@ -1,4 +1,4 @@
-// The level picker on top of the Sentences tab (FB556): "All" is the default (the tab as it was), a level serves only the
+// The level picker on top of the Sentences tab (FB556): "All" is an explicit choice (FB631: the default is the learner's level), a level serves only the
 // sentences of that level's items, going back restores, the choice is kept per pair across a restart, a level with nothing
 // to offer says so and leaves the picker on screen, and a pair with sentences at one level only has no picker.
 // Mock pattern: sentencesTab.test.tsx.
@@ -42,6 +42,7 @@ import { getDb } from '@/lib/database';
 import { setLanguage } from '@/lib/i18n';
 import { LADDER_KEY, saveStage } from '@/lib/sentenceLadder';
 import { loadSentenceLevel, saveSentenceLevel } from '@/lib/sentenceLevel';
+import { saveResumeValue } from '@/lib/resumeStore';
 import { clearSentenceRound, loadSentenceRound } from '@/lib/sentenceRound';
 import { sm2NewCard, type Sm2Card } from '@/lib/sm2';
 import { makeFlush } from '@/test-utils/flush';
@@ -95,6 +96,16 @@ describe('Sentences tab: level picker (FB556)', () => {
     expect(r.getByLabelText('Feedback')).toBeTruthy();
   });
 
+  it('FB631: with nothing chosen the tab opens on the learner level and serves only its sentences', async () => {
+    await learn(ALL_WORDS);
+    await saveResumeValue(getDb(), 'sentences-level:en→es', null);
+    await getDb().setPcicLevel('B2');
+    const r = render(screen());
+    await flush();
+    expect(['all', 'A1', 'B2'].map((id) => selected(r, id))).toEqual([false, false, true]);
+    expect(await roundItems()).toEqual(['b2-w1', 'b2-w2']);
+  });
+
   it('B2 serves only the B2 sentences, All brings every level back', async () => {
     await learn(ALL_WORDS);
     const r = render(screen());
@@ -137,7 +148,7 @@ describe('Sentences tab: level picker (FB556)', () => {
     // back to All: the saved value is gone, a restart opens on All again
     fireEvent.press(again.getByTestId('sentences-level-all'));
     await flush();
-    expect(await loadSentenceLevel(getDb(), 'en→es')).toBeNull();
+    expect(await loadSentenceLevel(getDb(), 'en→es')).toBe('all');
     again.unmount();
     const last = render(screen());
     await flush();
