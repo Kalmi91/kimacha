@@ -32,6 +32,7 @@ import LevelPickerSheet from '@/components/LevelPickerSheet';
 import { BrutalBox, textOnFill } from '@/components/grammar/Brutal';
 import EasySentenceCard from '@/components/EasySentenceCard';
 import { wordSpeakerGender } from '@/lib/cardSpeaker';
+import { infoButtonVisible, questionSentenceOf } from '@/lib/infoGate';
 import { findPcicItem } from '@/data/pcic';
 import { noteLessonFor } from '@/lib/grammar/noteLesson';
 import FitText from '@/components/FitText';
@@ -374,8 +375,9 @@ export default function PcicCardView({
   const pos = target === 'es' ? posOf(currentItem) : null;
   // German decks carry the part of speech on the card itself: only a noun (or an unknown) gets the der / die / das row.
   const rowPos = target === 'de' ? (currentItem.pos ? { pos: currentItem.pos } : null) : pos;
-
-  const hasNote = !!currentItem.note || !!currentItem.image;
+  // FB622/FB623: an (i) whose note has the answer waits for Check; FB621/FB634: a hint-less card shows its prompt-language sentence.
+  const hasNote = (!!currentItem.note || !!currentItem.image) && infoButtonVisible(currentItem.note, answerText, !!grade);
+  const questionSentence = questionSentenceOf(currentItem, sourceLang);
   const noteOpen = hasNote && noteOpenFor === currentItem.id;
 
   // The docked Check bar switches to "Next" after reveal,
@@ -461,6 +463,7 @@ export default function PcicCardView({
               )}
             </Text>
           )}
+          {!!questionSentence && <Text testID="learn-question-sentence" style={[styles.hintText, { color: colors.tabIconDefault }]}>{questionSentence}</Text>}
           {/* the chip (part of speech) + the section appear in the same row
               while typing and after reveal, so that the item can be told apart even with an English
               prompt that repeats three times. */}

@@ -80,6 +80,10 @@ describe('PCIC tab: o1666 hint and o436 note with the lesson link', () => {
     const utils = render(<PcicScreen />);
     await flush();
 
+    expect(utils.queryByTestId('learn-info')).toBeNull(); // the note names the answers: (i) waits for Check (FB622)
+    fireEvent.changeText(utils.UNSAFE_getByType(TextInput), 'tal vez');
+    fireEvent.press(utils.getByText('✓ Check'));
+    await flush();
     expect(utils.queryByTestId('learn-note-lesson')).toBeNull(); // closed until (i) is tapped
     fireEvent.press(utils.getByTestId('learn-info'));
     expect(textOf(utils.getByTestId('learn-note').props.children)).toContain('Four ways to say "maybe"');
@@ -87,7 +91,6 @@ describe('PCIC tab: o1666 hint and o436 note with the lesson link', () => {
     expect(row.props.accessibilityRole).toBe('link');
     expect(textOf(row.props.children)).toContain('Open the lesson: Ojalá, quizás, tal vez');
 
-    fireEvent.changeText(utils.UNSAFE_getByType(TextInput), 'tal vez');
     fireEvent.press(row);
     expect(mockPush).toHaveBeenCalledTimes(1);
     expect(mockPush).toHaveBeenCalledWith('/grammar/ojala-quizas');
@@ -102,6 +105,9 @@ describe('PCIC tab: o1666 hint and o436 note with the lesson link', () => {
     const utils = render(<PcicScreen />);
     await flush();
 
+    fireEvent.changeText(utils.UNSAFE_getByType(TextInput), 'tal vez');
+    fireEvent.press(utils.getByText('✓ Check'));
+    await flush();
     fireEvent.press(utils.getByTestId('learn-info'));
     expect(textOf(utils.getByTestId('learn-note-lesson').props.children)).toBe('Open the lesson: Ojalá, quizás, tal vez ›');
   });
@@ -112,6 +118,9 @@ describe('PCIC tab: o1666 hint and o436 note with the lesson link', () => {
     const utils = render(<PcicScreen />);
     await flush();
 
+    fireEvent.changeText(utils.UNSAFE_getByType(TextInput), 'tal vez');
+    fireEvent.press(utils.getByText('✓ Check'));
+    await flush();
     fireEvent.press(utils.getByTestId('learn-info'));
     expect(utils.getByTestId('learn-note')).toBeTruthy();
     expect(utils.queryByTestId('learn-note-lesson')).toBeNull();
