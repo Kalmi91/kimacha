@@ -33,12 +33,20 @@ import { speakNeural, stopNeural } from './neuralTts';
 import { neuralEngineFor, neuralFallbackEngine, neuralPackFile, neuralSentenceFile, noteNeuralOk, noteNeuralTrouble, releaseStandIns, startNeural } from './neuralModels';
 import { playPackFile, stopPack } from './packAudio';
 import { neuralTimeLimitMs, voiceFor, type NeuralEngine, type NeuralLang, type VoiceGender } from './neuralVoices';
-import { getFastFallback, preferredGender } from './voicePreference';
+import { getFastFallback, onVoiceSettingsChange, preferredGender } from './voicePreference';
 import { setSpeechStatus } from './speechStatus';
 
 let voiceLanguages: Set<string> | null = null;
 let voicesByLanguage: Map<string, Speech.Voice[]> | null = null;
 let loading: Promise<void> | null = null;
+// FB633: the phone voice a language first spoke with in this app session stays (undefined = the engine's default),
+// so a voice list that arrives late cannot flip it; dropped on a voice setting change and on restart.
+const phoneVoiceLock = new Map<string, string | undefined>();
+onVoiceSettingsChange(() => phoneVoiceLock.clear());
+// True once a voice-list request has finished (found or not): from then on an unknown list is final for the lock.
+let voicesSettled = false;
+// The voice list was requested at app start (watchAppStateForSpeech): the first speech of a language waits for it.
+let startupList = false;
 let phoneTimer: ReturnType<typeof setTimeout> | undefined;
 const missing = new Set<string>();
 
@@ -91,6 +99,7 @@ export async function loadVoices(): Promise<void> {
     } finally {
       clearTimeout(timer);
       loading = null;
+      voicesSettled = true;
     }
   })();
   return loading;
@@ -102,7 +111,7 @@ function stopPhone(): void {
 }
 
 // Keep user feedback and callbacks tied to this run, including delayed voice discovery.
-function speakOnDevice(text: string, locale: string, options: Speech.SpeechOptions, run: number, reportErrors = true): void {
+function speakOnDevice(text: string, locale: string, options: Speech.SpeechOptions, run: number, reportErrors = true, waited = false): void {
   if (run !== speakingRun) return;
   const fail = (phase: 'noEngine' | 'noVoice' | 'failed', error: Error) => {
     if (run !== speakingRun) return;
@@ -122,7 +131,22 @@ function speakOnDevice(text: string, locale: string, options: Speech.SpeechOptio
     fail('noVoice', new Error('Speech voice unavailable'));
     return;
   }
-  const voice = voiceIdFor(locale);
+  // The first speech of a language waits (up to 1.5 s) for a voice list that is on its way, then locks what it found.
+  const lang = normalizeTag(locale);
+  if (!phoneVoiceLock.has(lang)) {
+    if (voiceLanguages || waited || (voicesSettled && !loading)) {
+      phoneVoiceLock.set(lang, voiceIdFor(locale));
+    } else if (startupList && loading) {
+      let giveUp: ReturnType<typeof setTimeout> | undefined;
+      const limit = new Promise<void>(resolve => { giveUp = setTimeout(resolve, 1500); });
+      void Promise.race([loading, limit]).then(() => {
+        clearTimeout(giveUp);
+        speakOnDevice(text, locale, options, run, reportErrors, true);
+      });
+      return;
+    }
+  }
+  const voice = phoneVoiceLock.has(lang) ? phoneVoiceLock.get(lang) : voiceIdFor(locale);
   let started = false;
   let finished = false;
   const timer = setTimeout(() => {
@@ -420,6 +444,10 @@ let appStateSub: { remove(): void } | null = null;
 let memorySub: { remove(): void } | null = null;
 
 export function watchAppStateForSpeech(): () => void {
+  // FB633: the phone's voice list is asked for at start, not by the first speech: a speech that comes before the list is
+  // known gets the engine's default voice, the next one the pinned voice (a different voice on the same card).
+  startupList = true;
+  void loadVoices();
   void startNeural(); // reads the better voice's settings and loads its engines (once per run)
   memorySub?.remove();
   memorySub = AppState.addEventListener('memoryWarning', () => void releaseStandIns());
@@ -540,6 +568,9 @@ export function resetVoiceCache(): void {
   voiceLanguages = null;
   voicesByLanguage = null;
   loading = null;
+  voicesSettled = false;
+  startupList = false;
+  phoneVoiceLock.clear();
   missing.clear();
   speakingRun += 1;
   setSpeechStatus(speakingRun, 'idle');
