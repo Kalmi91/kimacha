@@ -186,12 +186,13 @@ describe.each(lessons)('%s is a valid LessonV2', (_file, lesson) => {
   // "why this sentence": the audit rules for these items, plus:
   // the text of the correct option does not appear verbatim in the sentence (otherwise the
   // task would give itself away).
-  it('why items (once authored) are 6-8, each with 3 unique-en options and a translated sentence', () => {
+  it('why items (once authored) are 5-8, each with 3 unique-en options and a translated sentence', () => {
     const whyItems = lesson.items.filter((i) => i.kind === 'why');
     // the content is added lesson by lesson, in batches, AFTER the commit
     // that closes the code; a still untouched lesson has 0 why items, which is fine.
+    // 5 is the floor since FB618: a why task that gives the learner no use can be removed from a 6-item lesson.
     if (whyItems.length === 0) return;
-    expect(whyItems.length).toBeGreaterThanOrEqual(6);
+    expect(whyItems.length).toBeGreaterThanOrEqual(5);
     expect(whyItems.length).toBeLessThanOrEqual(8);
     const seenIds = new Set<string>();
     for (const item of whyItems) {

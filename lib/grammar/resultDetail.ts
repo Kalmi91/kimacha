@@ -80,7 +80,7 @@ export function formTask(item: FormItem, table: TableBlock | undefined, pick: Pi
     const headerCell = table ? table.header.find((h) => h.es === item.verb) : undefined;
     const localized = headerCell ? pick(headerCell) : undefined;
     const verbLabel = localized && localized !== item.verb ? `${item.verb} (${localized})` : item.verb;
-    return { prompt: `${verbLabel} · ${item.person}`, hint: table ? s.formVerbHint : fallbackHint };
+    return { prompt: `${verbLabel} · ${item.person}`, hint: item.ask ? pick(item.ask) : table ? s.formVerbHint : fallbackHint };
   }
   const ci = askedColumn(table, item.verb);
   // the cell is not a row of the table (or the column is unknown): the old stem `verb · person` is the only askable task
@@ -89,7 +89,7 @@ export function formTask(item: FormItem, table: TableBlock | undefined, pick: Pi
   return {
     prompt: item.person,
     // German nouns keep their capital letter
-    hint: s.formColumnHint(currentLanguage() === 'de' ? asked : lowerFirst(asked)),
+    hint: item.ask ? pick(item.ask) : s.formColumnHint(currentLanguage() === 'de' ? asked : lowerFirst(asked)),
     heading: pick(table.title),
     label: pick(table.header[0]),
   };

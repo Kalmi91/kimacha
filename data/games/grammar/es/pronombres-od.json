@@ -170,8 +170,30 @@
       "points": [
         {
           "text": {
-            "en": "Default case: it goes before the conjugated verb.",
-            "es": "Caso general: va antes del verbo conjugado."
+            "en": "A pronoun always leans on a verb. Before a conjugated verb it stands in front of it; a verb with no person of its own (infinitive, gerund) or an affirmative command takes it as an ending, written as one word.",
+            "es": "El pronombre siempre se apoya en un verbo. Antes de un verbo conjugado va delante; un verbo sin persona propia (infinitivo, gerundio) o un imperativo afirmativo lo lleva como terminación, escrito en una sola palabra."
+          },
+          "examples": [
+            {
+              "es": "Lo compro.",
+              "tr": {
+                "en": "I buy it.",
+                "es": "Lo compro."
+              }
+            },
+            {
+              "es": "Quiero comprarlo.",
+              "tr": {
+                "en": "I want to buy it.",
+                "es": "Quiero comprarlo."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Default case: it goes right before the conjugated verb (the verb that carries the person and the tense: veo, tengo, estoy).",
+            "es": "Caso general: va justo antes del verbo conjugado (el que lleva la persona y el tiempo: veo, tengo, estoy)."
           },
           "examples": [
             {
@@ -192,8 +214,8 @@
         },
         {
           "text": {
-            "en": "It can also attach to the end of an infinitive, or stay before the conjugated verb: both are correct.",
-            "es": "También puede pegarse al final de un infinitivo, o quedarse antes del verbo conjugado: las dos son correctas."
+            "en": "After a verb + infinitive (querer, poder, ir a…) both places are correct: attached to the end of the infinitive, or before the conjugated verb. The pronoun belongs to the infinitive, so it can attach to it; Spanish also lets it move in front of the whole verb group.",
+            "es": "Con un verbo + infinitivo (querer, poder, ir a…) las dos posiciones son correctas: pegado al final del infinitivo, o antes del verbo conjugado. El pronombre pertenece al infinitivo, por eso puede pegarse a él; el español también permite ponerlo delante de todo el grupo verbal."
           },
           "examples": [
             {
@@ -209,13 +231,27 @@
                 "en": "I want to see you.",
                 "es": "Te quiero ver."
               }
+            },
+            {
+              "es": "Voy a comprarlo.",
+              "tr": {
+                "en": "I am going to buy it.",
+                "es": "Voy a comprarlo."
+              }
+            },
+            {
+              "es": "Lo voy a comprar.",
+              "tr": {
+                "en": "I am going to buy it.",
+                "es": "Lo voy a comprar."
+              }
             }
           ]
         },
         {
           "text": {
-            "en": "It attaches to the end of a gerund, and gets a written accent.",
-            "es": "Se pega al final de un gerundio, y lleva tilde."
+            "en": "With estar + gerund, either attach it to the end of the gerund (with a written accent) or put it before estar (la estoy comiendo); it never stands between estar and the gerund.",
+            "es": "Con estar + gerundio, o se pega al final del gerundio (con tilde) o va antes de estar (la estoy comiendo); nunca queda entre estar y el gerundio."
           },
           "examples": [
             {
@@ -230,6 +266,13 @@
               "tr": {
                 "en": "We are helping them.",
                 "es": "Estamos ayudándolos."
+              }
+            },
+            {
+              "es": "La estoy comiendo.",
+              "tr": {
+                "en": "I am eating it.",
+                "es": "La estoy comiendo."
               }
             }
           ]
@@ -634,8 +677,8 @@
       "options": ["ayudarte", "te ayudar", "ayudando te"],
       "correct": 0,
       "why": {
-        "en": "The pronoun attaches to the end of the infinitive: ayudarte.",
-        "es": "El pronombre se pega al final del infinitivo: ayudarte."
+        "en": "Rule: an infinitive has no person of its own, so the pronoun does not stand in front of it but joins its END as one word: ayudar + te = ayudarte. (Before quiero it is also correct: Te quiero ayudar.)",
+        "es": "Regla: el infinitivo no tiene persona propia, por eso el pronombre no va delante de él sino que se pega a su FINAL, en una sola palabra: ayudar + te = ayudarte. (Antes de quiero también es correcto: Te quiero ayudar.)"
       },
       "wrong": {
         "te ayudar": {
@@ -684,8 +727,8 @@
       "options": ["comiéndola", "comiendola", "la comiendo"],
       "correct": 0,
       "why": {
-        "en": "The pronoun attaches to the end of the gerund (comiendo) and needs an accent: comiéndola.",
-        "es": "El pronombre se pega al final del gerundio (comiendo) y lleva acento: comiéndola."
+        "en": "Rule: after estoy comes a gerund, and the pronoun joins the END of the gerund as one word; the stress moves, so it needs an accent: comiendo + la = comiéndola. (Before estoy it is also correct: La estoy comiendo.)",
+        "es": "Regla: después de estoy viene un gerundio, y el pronombre se pega al FINAL del gerundio, en una sola palabra; el acento tónico se mueve, por eso lleva tilde: comiendo + la = comiéndola. (Antes de estoy también es correcto: La estoy comiendo.)"
       },
       "wrong": {
         "comiendola": {
@@ -693,13 +736,13 @@
           "es": "Esta forma no existe en la ortografía: al pegar el pronombre, la sílaba tónica necesita tilde; correctamente: comiéndola."
         },
         "la comiendo": {
-          "en": "With the gerund right after estoy, the pronoun attaches to its end, it does not go before it; correctly as one word, with an accent: Estoy comiéndola.",
-          "es": "Con el gerundio justo después de estoy, el pronombre se pega al final, no va antes; correctamente en una sola palabra, con acento: Estoy comiéndola."
+          "en": "The gap comes right after estoy, and the pronoun cannot stand alone in front of the gerund: it goes either at the end of the gerund (Estoy comiéndola) or before estoy (La estoy comiendo), never between estoy and comiendo.",
+          "es": "El hueco está justo después de estoy, y el pronombre no puede quedar suelto delante del gerundio: va o al final del gerundio (Estoy comiéndola) o antes de estoy (La estoy comiendo), nunca entre estoy y comiendo."
         }
       },
       "examples": [
-        "Estoy comiéndolo ahora.",
-        "Lo estoy comiendo."
+        "Estoy comiéndola ahora.",
+        "La estoy comiendo."
       ],
       "tr": { "en": "The food? I'm eating it right now.", "es": "¿La comida? Estoy comiéndola ahora mismo." }
     },
