@@ -81,7 +81,7 @@ describe('opening the app is silent', () => {
     expect(speech.speak).toHaveBeenLastCalledWith('perdonar', expect.objectContaining({ language: 'es-MX' }));
   });
 
-  it('back from the background it is silent again until the next touch', () => {
+  it('back from the background it is silent again until the next touch', async () => {
     let onChange: (state: string) => void = () => {};
     jest.spyOn(AppState, 'addEventListener').mockImplementation(((_: string, fn: (state: string) => void) => {
       onChange = fn;
@@ -95,6 +95,7 @@ describe('opening the app is silent', () => {
     expect(speech.speak).not.toHaveBeenCalled();
     noteSpeechTouch();
     speakAuto('disculpar', 'es-MX');
+    await new Promise<void>(resolve => setImmediate(resolve)); // the first speech waits for the voice list asked for at start
     expect(speech.speak).toHaveBeenCalledTimes(1);
     unwatch();
   });

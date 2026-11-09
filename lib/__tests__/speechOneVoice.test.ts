@@ -37,12 +37,12 @@ beforeEach(() => {
 afterEach(() => stop());
 
 describe('one phone voice per language', () => {
-  it('reproduces the cause: a speech before the list is loaded has no voice (and keeps it, see the lock)', async () => {
+  it('the old flip, when nothing asked for the list at start: first speech unpinned, the next one pinned', async () => {
     speak('el plomero', 'es-MX');
     await loadVoices();
     speak('El plomero viene hoy a mi casa.', 'es-MX');
     expect(voiceOfCall(0)).toBeUndefined();
-    expect(voiceOfCall(1)).toBeUndefined();
+    expect(voiceOfCall(1)).toBe('es-MX-enhanced');
   });
 
   it('the fix: with the list asked for at start, the first and the later speech use the same voice', async () => {
@@ -76,5 +76,16 @@ describe('one phone voice per language', () => {
     setSpeakerChoice('es', 'auto');
     speak('dos', 'es-MX');
     expect(voiceOfCall(1)).toBe('es-MX-enhanced');
+  });
+
+  it('the first speech waits for the list requested at start and locks the found voice, normalized per locale', async () => {
+    const off = watchAppStateForSpeech();
+    speak('el plomero', 'es-MX'); // list still on its way
+    expect(speech.speak).not.toHaveBeenCalled();
+    await new Promise<void>(resolve => setImmediate(resolve));
+    speak('Hola', 'es_mx'); // same locale, other spelling
+    expect(voiceOfCall(0)).toBe('es-MX-enhanced');
+    expect(voiceOfCall(1)).toBe('es-MX-enhanced');
+    off();
   });
 });
