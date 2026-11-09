@@ -18,6 +18,7 @@ import { t } from '@/lib/i18n';
 import { gradeSentenceAnswer, suggestedGrade, withoutLeadingSubjectPronoun } from '@/lib/pcicMatch';
 import { charDiff } from '@/lib/charDiff';
 import { useDiffStyles } from '@/lib/useDiffStyles';
+import { useFocusOnNewCard } from '@/lib/learn/useFocusOnNewCard';
 import { stripSentencePunct } from '@/lib/sentenceCards';
 import { answerInputProps } from '@/lib/inputProps';
 import { keyboardDismissOnDrag } from '@/lib/keyboardTap';
@@ -172,6 +173,8 @@ export default function TypedSentenceCard({
 
   const dockInsets = dockScrollInsets(dockH, dockLift, keyboardOpen);
   const scroller = useRef<ScrollView>(null);
+  const inputRef = useRef<TextInput>(null);
+  useFocusOnNewCard(inputRef, true, `${sourceSentence}|${targetSentence}`);
 
   // The correct sentence is shown after a miss; with something typed, it comes with the answer
   // marked up so the learner sees WHERE the mistake is (an empty answer has nothing to compare).
@@ -216,6 +219,7 @@ export default function TypedSentenceCard({
           {speakOnPress && !listening && <SpeakButton testID="sentence-speak" onPress={speakShown} style={styles.speakBtn} iconStyle={styles.speakIcon} brutalStyle={styles.speakBrutal} />}
 
           <TextInput
+            ref={inputRef}
             style={[
               styles.input,
               { color: colors.text, borderColor: result === 'correct' ? colors.successFill : result === 'wrong' ? colors.danger : colors.tabIconDefault },
@@ -235,7 +239,6 @@ export default function TypedSentenceCard({
             }}
             onSubmitEditing={result ? () => onResult(result === 'correct', typed) : handleCheck}
             editable={result !== 'correct'}
-            autoFocus
             {...answerInputProps}
           />
 

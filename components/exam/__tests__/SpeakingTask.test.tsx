@@ -4,7 +4,7 @@
 // The speech is mocked (nothing sounds), the photo register is replaced by one known key.
 
 import { useState } from 'react';
-import { DeviceEventEmitter, Linking, StyleSheet } from 'react-native';
+import { DeviceEventEmitter, Linking, StyleSheet, TextInput } from 'react-native';
 import { act, fireEvent, render } from '@testing-library/react-native';
 
 import { authoredTasks } from '@/lib/exam/mock/authored';
@@ -297,10 +297,16 @@ describe('the examiner turns', () => {
     const flat = StyleSheet.flatten(withStimulus.view.getByTestId('mock-speaking-answer').props.style);
     expect(flat.minHeight).toBeGreaterThanOrEqual(4 * 22);
     expect(flat.maxHeight).toBeGreaterThan(flat.minHeight);
-    expect(withStimulus.view.getByTestId('mock-speaking-answer').props.autoFocus).toBe(false);
+    jest.useFakeTimers();
+    const focusSpy = jest.spyOn(TextInput.prototype as unknown as { focus: () => void }, 'focus').mockImplementation(() => {});
+    act(() => { jest.advanceTimersByTime(300); });
+    expect(focusSpy).not.toHaveBeenCalled();
     withStimulus.view.unmount();
-    const plain = toTurns({}, 'b');
-    expect(plain.view.getByTestId('mock-speaking-answer').props.autoFocus).toBe(true);
+    toTurns({}, 'b');
+    act(() => { jest.advanceTimersByTime(300); });
+    expect(focusSpy).toHaveBeenCalled();
+    focusSpy.mockRestore();
+    jest.useRealTimers();
   });
 
   it('with the keyboard up the screen scroller is brought to the question and the field: when the keyboard comes up under the focused field, when the field is tapped with the keyboard up, and for the next question', () => {

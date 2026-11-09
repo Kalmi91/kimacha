@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
 import { ActivityIndicator, KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, TextInput, View } from 'react-native';
 import { Text } from '@/components/KText';
 import { TitleText, themedInputStyle, BackButton, ActionButton } from '@/components/grammar/Themed';
@@ -18,6 +18,7 @@ import { getPcicTarget } from '@/data/pcic';
 import { pairOf } from '@/lib/languagePair';
 import { speechLang } from '@/lib/languages';
 import { answerInputProps } from '@/lib/inputProps';
+import { useFocusOnNewCard } from '@/lib/learn/useFocusOnNewCard';
 import { requeueAfterGrade } from '@/lib/pcicSession';
 import type { Sm2Card, Sm2Grade } from '@/lib/sm2';
 import { gradeMistakeCard } from '@/lib/mistakes/grade';
@@ -97,6 +98,8 @@ export default function MistakesDeckScreen() {
   const current = queue[0];
   const currentCard = current ? cardsById.get(current.itemId) : undefined;
   const complete = !loading && queue.length === 0;
+  const inputRef = useRef<TextInput>(null);
+  useFocusOnNewCard(inputRef, !loading && !!currentCard, `${current?.itemId}-${queue.length}`);
 
   const handleCheck = () => {
     if (!currentCard) return;
@@ -171,12 +174,12 @@ export default function MistakesDeckScreen() {
           )}
 
           <TextInput
+            ref={inputRef}
             style={[styles.input, { color: colors.text, borderColor: colors.tabIconDefault }, themedInputStyle(g)]}
             value={typed}
             onChangeText={setTyped}
             onSubmitEditing={checked ? () => handleGrade(nextGrade) : handleCheck}
             editable={!checked}
-            autoFocus
             placeholder={s.card.typeIn('es')}
             placeholderTextColor={colors.tabIconDefault}
             {...answerInputProps}
