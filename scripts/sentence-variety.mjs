@@ -21,13 +21,8 @@ import { fileURLToPath } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const LEVELS = ['a1', 'a2', 'b1', 'b2', 'c1'];
-<<<<<<< HEAD
-const ENFORCED = ['a1', 'c1'];
+const ENFORCED = ['a1', 'b1', 'c1'];
 const WINDOW = { a1: [4, 9], a2: [5, 12], b1: [7, 15], b2: [8, 18], c1: [8, 18] };
-=======
-const ENFORCED = ['a1', 'b1'];
-const WINDOW = { a1: [4, 9], a2: [5, 12], b1: [7, 15], b2: [8, 18], c1: [10, 22] };
->>>>>>> 1ac72a7f (feat(words): B1 sentences without overlap, short ones fuller, b1 enforced in variety gate (WIP, German steps still open))
 const FAMILY = ['madre', 'padre', 'hijo', 'hija', 'hermano', 'hermana', 'tía', 'tío', 'abuelo', 'abuela', 'esposo', 'esposa', 'primo', 'prima'];
 const FAMILY_FORMS = new Set(FAMILY.flatMap((w) => [w, w + 's']).concat(['padres', 'hijos', 'hermanos', 'tíos', 'abuelos', 'esposos', 'primos']));
 // Colon shape and sentence-initial pronoun came with the C1 review (2026-11-09); A1 was merged before them and is only reported.
