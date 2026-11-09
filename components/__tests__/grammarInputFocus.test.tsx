@@ -1,6 +1,6 @@
 // FB617: every typed grammar input opens the keyboard on EVERY new item (useFocusOnNewCard, no bare autoFocus).
 import { act, render } from '@testing-library/react-native';
-import { TextInput } from 'react-native';
+import { Keyboard, TextInput } from 'react-native';
 import fs from 'fs';
 import path from 'path';
 
@@ -13,6 +13,7 @@ import Colors from '@/constants/Colors';
 jest.mock('@/lib/ThemeContext', () => ({ useTheme: () => ({ theme: 'light' }) }));
 
 const focusSpy = jest.spyOn(TextInput.prototype as unknown as { focus: () => void }, 'focus').mockImplementation(() => {});
+jest.spyOn(Keyboard, 'isVisible').mockReturnValue(true); // the retry stops once the keyboard is up
 beforeEach(() => {
   jest.useFakeTimers();
   focusSpy.mockClear();
