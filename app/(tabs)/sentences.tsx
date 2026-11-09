@@ -58,7 +58,7 @@ import {
   type SentenceRound,
 } from '@/lib/sentenceRound';
 import { hintPieces, type HintPiece } from '@/lib/sentenceHint';
-import { mistakeTrapWords, pickMistakeEntry, recordMistakeBuild, withMistakeStep } from '@/lib/sentenceMistakes';
+import { mistakeFitsLevel, mistakeTrapWords, pickMistakeEntry, recordMistakeBuild, withMistakeStep } from '@/lib/sentenceMistakes';
 import type { RoundStep } from '@/lib/sentenceSteps';
 import { SENTENCE_ROUND_SIZE, buildSentenceQueue, recordTypedWords, sentenceKey, type SentenceEntry } from '@/lib/sentenceTab';
 import { gradeTypedWords } from '@/lib/sentenceTyping';
@@ -193,7 +193,9 @@ export default function SentencesScreen() {
     }
     // The picker: the levels that have sentences for this pair and the saved choice (a pick comes through here as a fresh load).
     const available = levelsWithSentences(PCIC_LEVELS, pcicItemsForLevel, dir);
-    const chosen = resolveSentenceLevel(await loadSentenceLevel(db, pairOf(dir)), available);
+    // No level chosen on the Learn tab yet (hasLevel false: its level is only a fallback) = the lowest level, never B1.
+    const own = await refresh(['level', 'hasLevel']);
+    const chosen = resolveSentenceLevel(await loadSentenceLevel(db, pairOf(dir)), available, own.hasLevel ? own.level : PCIC_LEVELS[0]);
     // A round that was left (other tab, app closed) continues where it stopped, the same day, direction and focus.
     const saved = await loadSentenceRound(db);
     let next: SentenceRound | null;
@@ -248,7 +250,7 @@ export default function SentencesScreen() {
       await loadBeta();
       if (picked.length > 0 && dir === 'es' && getBeta('sentenceMistakes')) {
         const skip = new Set([...played.current.rungs.keys(), ...played.current.mistakes, ...picked.map((e) => sentenceKey(e))]);
-        entries = withMistakeStep(picked, await pickMistakeEntry(today, skip));
+        entries = withMistakeStep(picked, await pickMistakeEntry(today, skip, mistakeFitsLevel(chosen, PCIC_LEVELS, pcicItemsForLevel, tenses)));
       }
       // beta sentenceMix: the sentences take turns (not the new words: each one is followed by its own sentence).
       next = entries.length > 0 ? startRound(entries, today, dir, focusKey, { mix: picked.length > 0 && getBeta('sentenceMix') }) : null;
@@ -374,7 +376,7 @@ export default function SentencesScreen() {
       {/* While typing the keyboard leaves little room: the level row steps aside, so the 🔊 and the answer fit together. */}
       {levels.length > 1 && kbHeight === 0 && <SentenceLevelPicker levels={levels} active={level} onSelect={onPickLevel} />}
       <View style={styles.headerRow}>
-        <LevelCounter refreshKey={creditSeq} />
+        <LevelCounter refreshKey={creditSeq} only={level} />
         {total > 0 && (
           <Text style={[styles.progressText, { color: colors.tabIconDefault }]} testID="sentences-progress-text" accessibilityLabel={s.sentenceTab.progressA11y(done, total)}>
             {s.sentenceTab.progress(done, total)}
@@ -420,7 +422,7 @@ export default function SentencesScreen() {
         <SkinBackdrop />
         {header}
         <Text testID="sentences-empty" style={[styles.hint, { color: colors.tabIconDefault }]}>
-          {budgetOut ? s.sentenceTab.emptyBudget : level === ALL_LEVELS ? s.sentenceTab.empty : s.sentenceTab.emptyLevel}
+          {budgetOut ? s.sentenceTab.emptyBudget : level === ALL_LEVELS || levels.length <= 1 ? s.sentenceTab.empty : s.sentenceTab.emptyLevel}
         </Text>
         {feedback}
       </View>

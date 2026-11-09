@@ -38,15 +38,27 @@ describe('levelsWithSentences', () => {
 
 describe('resolveSentenceLevel', () => {
   it('keeps a saved level that has sentences', () => {
-    expect(resolveSentenceLevel('B2', ['A1', 'B2'])).toBe('B2');
+    expect(resolveSentenceLevel('B2', ['A1', 'B2'], 'A1')).toBe('B2');
   });
 
-  it('falls back to every level for a level without sentences, a wrong value or nothing saved', () => {
-    expect(resolveSentenceLevel('C1', ['A1', 'B2'])).toBe(ALL_LEVELS);
-    expect(resolveSentenceLevel('all', ['A1', 'B2'])).toBe(ALL_LEVELS);
-    expect(resolveSentenceLevel('B3', ['A1', 'B2'])).toBe(ALL_LEVELS);
-    expect(resolveSentenceLevel(42, ['A1', 'B2'])).toBe(ALL_LEVELS);
+  it('falls back to the learner level for a level without sentences, a wrong value or nothing saved', () => {
+    expect(resolveSentenceLevel('C1', ['A1', 'B2'], 'A1')).toBe('A1');
+    expect(resolveSentenceLevel('all', ['A1', 'B2'], 'B2')).toBe(ALL_LEVELS);
+    expect(resolveSentenceLevel('B3', ['A1', 'B2'], 'A1')).toBe('A1');
+    expect(resolveSentenceLevel(42, ['A1', 'B2'], 'B2')).toBe('B2');
+    expect(resolveSentenceLevel(null, ['A1', 'B2'], 'B2')).toBe('B2');
+  });
+
+  it('takes the nearest available level when the learner level has none, a tie goes to the one below', () => {
+    expect(resolveSentenceLevel(null, ['A1', 'B2'], 'B1')).toBe('B2');
+    expect(resolveSentenceLevel(null, ['A1', 'B1'], 'A2')).toBe('A1');
+    expect(resolveSentenceLevel(null, ['A1', 'B2'], 'C1')).toBe('B2');
+    expect(resolveSentenceLevel(null, ['B2'], 'A1')).toBe('B2');
+  });
+
+  it('is every level only when there is no learner level or no level at all', () => {
     expect(resolveSentenceLevel(null, ['A1', 'B2'])).toBe(ALL_LEVELS);
+    expect(resolveSentenceLevel(null, [], 'A1')).toBe(ALL_LEVELS);
   });
 });
 
@@ -62,7 +74,7 @@ describe('itemsForSentenceLevel', () => {
 });
 
 describe('the saved choice', () => {
-  it('reads back per language pair, and "all" removes it', async () => {
+  it('reads back per language pair, "all" included', async () => {
     const db = getDb();
     expect(await loadSentenceLevel(db, 'en→es')).toBeNull();
     await saveSentenceLevel(db, 'en→es', 'B2');
@@ -73,7 +85,7 @@ describe('the saved choice', () => {
     expect(await loadSentenceLevel(db, 'en→es')).toBe('B2');
     expect(await loadSentenceLevel(db, 'es→en')).toBe('A2');
     await saveSentenceLevel(db, 'en→es', ALL_LEVELS);
-    expect(await loadSentenceLevel(db, 'en→es')).toBeNull();
+    expect(await loadSentenceLevel(db, 'en→es')).toBe(ALL_LEVELS);
     expect(await loadSentenceLevel(db, 'es→en')).toBe('A2');
     await saveSentenceLevel(db, 'es→en', ALL_LEVELS);
   });

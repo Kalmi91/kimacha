@@ -1,4 +1,4 @@
-// The level picker on top of the Sentences tab (FB556): "All" is the default (the tab as it was), a level serves only the
+// The level picker on top of the Sentences tab (FB556): "All" is an explicit choice (FB631: the default is the learner's level), a level serves only the
 // sentences of that level's items, going back restores, the choice is kept per pair across a restart, a level with nothing
 // to offer says so and leaves the picker on screen, and a pair with sentences at one level only has no picker.
 // Mock pattern: sentencesTab.test.tsx.
@@ -42,6 +42,7 @@ import { getDb } from '@/lib/database';
 import { setLanguage } from '@/lib/i18n';
 import { LADDER_KEY, saveStage } from '@/lib/sentenceLadder';
 import { loadSentenceLevel, saveSentenceLevel } from '@/lib/sentenceLevel';
+import { saveResumeValue } from '@/lib/resumeStore';
 import { clearSentenceRound, loadSentenceRound } from '@/lib/sentenceRound';
 import { sm2NewCard, type Sm2Card } from '@/lib/sm2';
 import { makeFlush } from '@/test-utils/flush';
@@ -88,11 +89,55 @@ describe('Sentences tab: level picker (FB556)', () => {
     await flush();
     expect(r.getByTestId('sentences-levels')).toBeTruthy();
     expect(['all', 'A1', 'B2'].map((id) => selected(r, id))).toEqual([true, false, false]);
-    expect(r.getByText('All')).toBeTruthy();
+    expect(r.getAllByText('All').length).toBe(2); // the chip and the counter row
     expect(await roundItems()).toEqual(['a1-w1', 'a1-w2', 'b2-w1', 'b2-w2']);
     expect(String(r.getByTestId('sentences-progress-text').props.children)).toBe('0 / 4');
     // the feedback button stays on the screen
     expect(r.getByLabelText('Feedback')).toBeTruthy();
+  });
+
+  it('FB631: with nothing chosen the tab opens on the learner level and serves only its sentences', async () => {
+    await learn(ALL_WORDS);
+    await saveResumeValue(getDb(), 'sentences-level:en→es', null);
+    await getDb().setPcicLevel('B2');
+    const r = render(screen());
+    await flush();
+    expect(['all', 'A1', 'B2'].map((id) => selected(r, id))).toEqual([false, false, true]);
+    expect(await roundItems()).toEqual(['b2-w1', 'b2-w2']);
+  });
+
+  it('FB631: a learner with no level chosen yet gets the lowest level, not the B1 fallback', async () => {
+    await learn(ALL_WORDS);
+    await saveResumeValue(getDb(), 'sentences-level:en→es', null);
+    await (getDb() as any).setSettings({ pcic_level: null });
+    const r = render(screen());
+    await flush();
+    expect(['all', 'A1', 'B2'].map((id) => selected(r, id))).toEqual([false, true, false]);
+    expect(await roundItems()).toEqual(['a1-w1', 'a1-w2']);
+  });
+
+  it('FB631: es->en with nothing chosen opens on the saved learner level', async () => {
+    await learn(ALL_WORDS);
+    await getDb().setOnboarding('es', 'en');
+    await saveResumeValue(getDb(), 'sentences-level:es→en', null);
+    await getDb().setPcicLevel('B2');
+    const r = render(screen());
+    await flush();
+    expect(selected(r, 'B2')).toBe(true);
+    expect(selected(r, 'all')).toBe(false);
+  });
+
+  it('FB631: the counter row shows the chosen level and its counts, and All for all levels', async () => {
+    await learn(ALL_WORDS);
+    await getDb().setPcicLevel('A1');
+    const r = render(screen());
+    await flush();
+    fireEvent.press(r.getByTestId('sentences-level-B2'));
+    await flush();
+    expect(r.getByTestId('level-counter').props.accessibilityLabel).toBe('Level B2: 2 words, 0 due');
+    fireEvent.press(r.getByTestId('sentences-level-all'));
+    await flush();
+    expect(r.getByTestId('level-counter').props.accessibilityLabel).toBe('Level All: 4 words, 0 due');
   });
 
   it('B2 serves only the B2 sentences, All brings every level back', async () => {
@@ -134,10 +179,10 @@ describe('Sentences tab: level picker (FB556)', () => {
     expect(selected(again, 'B2')).toBe(true);
     expect(await roundItems()).toEqual(['b2-w1', 'b2-w2']);
 
-    // back to All: the saved value is gone, a restart opens on All again
+    // back to All: 'all' is kept, a restart opens on All again
     fireEvent.press(again.getByTestId('sentences-level-all'));
     await flush();
-    expect(await loadSentenceLevel(getDb(), 'en→es')).toBeNull();
+    expect(await loadSentenceLevel(getDb(), 'en→es')).toBe('all');
     again.unmount();
     const last = render(screen());
     await flush();
@@ -240,7 +285,7 @@ describe('Sentences tab: level picker (FB556)', () => {
     setLanguage('es');
     const r = render(screen());
     await flush();
-    expect(r.getByText('Todos')).toBeTruthy();
+    expect(r.getAllByText('Todos').length).toBe(2);
     expect(r.getByLabelText('Nivel de las frases')).toBeTruthy();
     expect(r.getByLabelText('Todos los niveles')).toBeTruthy();
     expect(r.getByLabelText('Nivel B2')).toBeTruthy();

@@ -4,7 +4,8 @@
 import { getDb } from '@/lib/database';
 import sample from '@/lib/mistakes/__fixtures__/sample.json';
 import { validateMistakesPayload, type MistakesBatch } from '@/lib/mistakes/format';
-import { chooseMistakeCard, mistakeEntry, mistakeTrapWords, pickMistakeEntry, recordMistakeBuild, withMistakeStep } from '../sentenceMistakes';
+import type { PcicItem, PcicLevel } from '@/data/pcic';
+import { chooseMistakeCard, mistakeEntry, mistakeFitsLevel, mistakeTrapWords, pickMistakeEntry, recordMistakeBuild, withMistakeStep } from '../sentenceMistakes';
 import { sm2NewCard, sm2Review, type Sm2Card } from '../sm2';
 import { sentenceKey, type SentenceEntry } from '../sentenceTab';
 
@@ -123,5 +124,40 @@ describe('the db steps', () => {
   it('a card with no row yet starts from a new card', async () => {
     const id = `${BATCH.batchId}:s:never-seen`;
     expect(await recordMistakeBuild(id, false, TODAY)).toEqual(sm2Review(sm2NewCard(id), 'again', TODAY));
+  });
+});
+
+describe('FB631: the mistake sentence follows the level rule', () => {
+  const it0 = (id: string, es: string): PcicItem => ({ id, es, en: es, kind: 'word', section: 'T', order: 0 });
+  const LEVELS: PcicLevel[] = ['A1', 'A2', 'B1'];
+  const BY: Record<string, PcicItem[]> = {
+    A1: [it0('a1', 'tomate'), it0('a1b', 'tener')],
+    A2: [it0('a2', 'bueno')],
+    B1: [],
+  };
+  const itemsFor = (l: PcicLevel) => BY[l] ?? [];
+
+  it('all = no filter', () => {
+    expect(mistakeFitsLevel('all', LEVELS, itemsFor)).toBeUndefined();
+  });
+
+  it('a level refuses a sentence with a word that only a higher level has; words outside the corpus stay', () => {
+    const a1 = mistakeFitsLevel('A1', LEVELS, itemsFor)!;
+    expect(a1('No tengo tomate.')).toBe(true);
+    expect(a1('Tengo tomate bueno.')).toBe(false);
+    expect(a1('Eso está perfecto.')).toBe(true);
+    expect(mistakeFitsLevel('A2', LEVELS, itemsFor)!('Tengo tomate bueno.')).toBe(true);
+  });
+
+  it('chooseMistakeCard skips a sentence that does not fit and takes the next one', () => {
+    const fits = (a: string) => a !== 'No tengo tomate.';
+    expect(chooseMistakeCard([BATCH], [], TODAY, new Set(), fits)?.cardId).toBe(S2);
+    expect(chooseMistakeCard([BATCH], [], TODAY, new Set(), () => false)).toBeNull();
+  });
+
+  it('pickMistakeEntry passes the filter on', async () => {
+    const db = getDb();
+    await db.saveMistakeBatch(BATCH.batchId, JSON.stringify(BATCH), '2026-10-02T00:00:00.000Z');
+    expect((await pickMistakeEntry(TODAY, new Set(), (a) => a === 'Eso está bien.'))?.itemId).toBe(S2);
   });
 });
