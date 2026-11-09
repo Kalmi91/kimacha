@@ -595,8 +595,8 @@
         },
         {
           "text": {
-            "en": "-abb is added to the whole word: tiszta + abb",
-            "es": "-abb se añade a la palabra entera: tiszta + abb"
+            "en": "Add -abb without changing the word: tiszta + abb",
+            "es": "-abb se añade a la palabra completa sin cambiar tiszta: tiszta + abb"
           },
           "wrong": {
             "en": "With this rule the form would be tisztaabb, which Hungarian does not use: the final -a becomes á.",

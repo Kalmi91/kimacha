@@ -528,8 +528,8 @@
       "options": [
         {
           "text": {
-            "en": "Female people are always feminine: die",
-            "es": "Las personas femeninas son siempre femeninas: die"
+            "en": "Words for female people always have the feminine article die",
+            "es": "Las palabras para personas femeninas siempre llevan el artículo femenino die"
           },
           "wrong": {
             "en": "The gender of a noun does not follow the sex. Mädchen ends in -chen, and -chen words are always neuter.",
@@ -703,8 +703,8 @@
         },
         {
           "text": {
-            "en": "Nouns ending in -ung are masculine: der",
-            "es": "Los sustantivos en -ung son masculinos: der"
+            "en": "The ending -ung makes nouns masculine, with the article der",
+            "es": "La terminación -ung hace masculinos los sustantivos, con el artículo der"
           },
           "wrong": {
             "en": "The opposite is true: -ung words are feminine, like die Wohnung and die Übung.",
@@ -846,8 +846,8 @@
       "options": [
         {
           "text": {
-            "en": "Nouns ending in -er are feminine",
-            "es": "Los sustantivos en -er son femeninos"
+            "en": "Nouns with the ending -er have feminine gender",
+            "es": "Los sustantivos con la terminación -er tienen género femenino"
           },
           "wrong": {
             "en": "Nouns in -er are mostly masculine (der Lehrer, der Computer), not feminine.",

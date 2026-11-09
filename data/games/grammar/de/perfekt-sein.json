@@ -570,8 +570,8 @@
         },
         {
           "text": {
-            "en": "sein, because ich is always followed by bin",
-            "es": "sein, porque ich siempre va seguido de bin"
+            "en": "sein is required because the subject ich is always followed by bin",
+            "es": "sein se exige porque el sujeto ich siempre va seguido de bin"
           },
           "wrong": {
             "en": "The helper depends on the verb, not on the person. Ich habe gegessen takes haben, Ich bin gefahren takes sein.",
@@ -1111,8 +1111,8 @@
         },
         {
           "text": {
-            "en": "bist is the present tense, so this is not a Perfekt",
-            "es": "bist es el presente, así que esto no es un Perfekt"
+            "en": "bist is a present-tense form, which means this cannot be a Perfekt",
+            "es": "bist es una forma de presente, lo que significa que esto no puede ser un Perfekt"
           },
           "wrong": {
             "en": "bist is only the helper here. The participle gewesen at the end makes the sentence a Perfekt: Where have you been?",

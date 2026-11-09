@@ -443,8 +443,8 @@
       "options": [
         {
           "text": {
-            "en": "der: the pronoun copies the article of der Mann in the main clause",
-            "es": "der: el pronombre copia el artículo de der Mann de la oración principal"
+            "en": "der: the relative pronoun copies the article of der Mann from the main clause",
+            "es": "der: el pronombre relativo copia el artículo de der Mann de la oración principal"
           },
           "wrong": {
             "en": "The gender comes from the noun, but the case does not. In the relative clause the man is the object of kenne, so the pronoun changes to den.",
@@ -990,8 +990,8 @@
         },
         {
           "text": {
-            "en": "den: einen Freund is accusative, so the relative pronoun is accusative too",
-            "es": "den: einen Freund es acusativo, así que el pronombre relativo también es acusativo"
+            "en": "den: einen Freund is accusative, so the relative pronoun must take that case too",
+            "es": "den: einen Freund es acusativo, así que el relativo debe llevar también ese caso"
           },
           "wrong": {
             "en": "The relative pronoun takes its case from its own clause. There the friend lives in Berlin, so he is the subject.",

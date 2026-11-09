@@ -440,8 +440,8 @@
       "options": [
         {
           "text": {
-            "en": "Accusative: the man is an object, and the masculine accusative is den",
-            "es": "Acusativo: el señor es un complemento, y el acusativo masculino es den"
+            "en": "Accusative: the man is the object, so he takes the masculine accusative den",
+            "es": "Acusativo: el señor es el complemento, por eso lleva el artículo acusativo masculino den"
           },
           "wrong": {
             "en": "The accusative object is das Buch. The man receives the book, and the receiver takes the dative, dem.",
@@ -758,8 +758,8 @@
       "options": [
         {
           "text": {
-            "en": "der is the nominative masculine, so the man is the subject",
-            "es": "der es el nominativo masculino, así que el señor es el sujeto"
+            "en": "der is the masculine nominative article, so the man serves as the subject",
+            "es": "der es el artículo de nominativo masculino, por lo que el señor es el sujeto de esta oración"
           },
           "wrong": {
             "en": "The subject is already Er, and Frau is feminine, not masculine. Here der is the feminine dative.",

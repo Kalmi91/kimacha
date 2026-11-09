@@ -337,7 +337,7 @@
       "tr": { "en": "The key is on the table.", "es": "La llave está sobre la mesa." },
       "options": [
         {
-          "text": { "en": "Inside a closed place: -ban", "es": "Dentro de un lugar cerrado: -ban" },
+          "text": { "en": "Inside an enclosed place: the ending -ban", "es": "Dentro de un lugar cerrado, sin movimiento: -ban" },
           "wrong": { "en": "With this rule the word would be asztalban ('inside the table'); the key lies on the surface, so -on.", "es": "Con esta regla la palabra sería asztalban («dentro de la mesa»); la llave está sobre la superficie, así que -on." }
         },
         {

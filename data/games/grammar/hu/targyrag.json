@@ -487,8 +487,8 @@
         },
         {
           "text": {
-            "en": "No ending: the object stays in the plain form",
-            "es": "Sin terminación: el objeto queda en la forma básica"
+            "en": "No object ending: the noun keeps its plain dictionary form",
+            "es": "No se añade terminación de objeto: el sustantivo conserva su forma básica"
           },
           "wrong": {
             "en": "With this rule the sentence would be Egy alma eszem; but what is eaten is the object, and it gets -t.",
@@ -603,8 +603,8 @@
       "options": [
         {
           "text": {
-            "en": "Ends in a consonant with a back vowel: linking vowel o + -t",
-            "es": "Acaba en consonante con vocal posterior: vocal de enlace o + -t"
+            "en": "A consonant after a back vowel: add the linking vowel o and then -t",
+            "es": "Consonante tras vocal posterior: se añade la vocal de enlace o y luego -t"
           },
           "wrong": {
             "en": "With this rule the form would be jegyot; but jegy has the front vowel e, so the linking vowel is e.",
@@ -757,8 +757,8 @@
         },
         {
           "text": {
-            "en": "Ends in a consonant: linking vowel + -t",
-            "es": "Acaba en consonante: vocal de enlace + -t"
+            "en": "After a consonant, add a linking vowel and then -t",
+            "es": "Tras una consonante, primero se añade una vocal de enlace y luego la terminación de objeto -t"
           },
           "wrong": {
             "en": "With this rule the form would be söröt; but sör is one of the words that add only -t.",

@@ -1107,8 +1107,8 @@
       "options": [
         {
           "text": {
-            "en": "I had to go, and I went",
-            "es": "Tuve que ir, y fui"
+            "en": "I was obliged to go, and I did go",
+            "es": "Había una obligación de ir y efectivamente fui"
           },
           "wrong": {
             "en": "With this rule the sentence would be Mennem kellett (I had to go and did); volna turns it into a missed duty.",
@@ -1282,8 +1282,8 @@
         },
         {
           "text": {
-            "en": "The prefix always goes behind volna",
-            "es": "El prefijo siempre va detrás de volna"
+            "en": "The prefix must always stand after the auxiliary volna",
+            "es": "El prefijo debe ir siempre detrás del auxiliar volna"
           },
           "wrong": {
             "en": "With this rule the positive sentence would be Mentem volna el; without nem the prefix stays attached: Elmentem volna.",
@@ -1337,8 +1337,8 @@
       "options": [
         {
           "text": {
-            "en": "A wish about now: I wish I were there",
-            "es": "Un deseo sobre el presente: ojalá estuviera allí"
+            "en": "A wish about the present: I wish I were there",
+            "es": "Un deseo sobre el presente: ojalá estuviera allí ahora"
           },
           "wrong": {
             "en": "With this rule the sentence would be Bárcsak ott lennék! (present conditional).",

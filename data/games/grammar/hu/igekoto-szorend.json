@@ -595,8 +595,8 @@
         },
         {
           "text": {
-            "en": "A plain sentence: the prefix stands in front of the verb",
-            "es": "Una frase simple: el prefijo va delante del verbo"
+            "en": "A plain affirmative: the prefix stands immediately before the verb",
+            "es": "Una oración afirmativa simple: el prefijo va inmediatamente delante del verbo"
           },
           "wrong": {
             "en": "With this rule the sentence would be Elmegyek, without nem.",
@@ -1125,8 +1125,8 @@
       "options": [
         {
           "text": {
-            "en": "A plain statement: the prefix stands in front",
-            "es": "Una afirmación simple: el prefijo va delante"
+            "en": "A plain affirmative: the prefix is immediately before the verb",
+            "es": "Una afirmación simple, con el prefijo inmediatamente delante del verbo"
           },
           "wrong": {
             "en": "With this rule the sentence would be Péter elmegy, with no stress on Péter.",

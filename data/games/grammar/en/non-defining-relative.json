@@ -954,8 +954,8 @@
       "options": [
         {
           "text": {
-            "en": "a non-defining clause: commas are needed",
-            "es": "una explicativa: hacen falta comas"
+            "en": "a non-defining relative clause: it needs enclosing commas",
+            "es": "una oración de relativo explicativa: necesita comas que la delimiten"
           },
           "wrong": {
             "en": "The clause says which woman we mean, so it is defining, without commas.",
@@ -993,8 +993,8 @@
       "options": [
         {
           "text": {
-            "en": "it refers only to the exam",
-            "es": "se refiere solo al examen"
+            "en": "it refers exclusively to the exam itself",
+            "es": "se refiere exclusivamente al examen mismo"
           },
           "wrong": {
             "en": "Which here refers to the whole previous clause (passing), not only to the exam.",

@@ -287,8 +287,8 @@
         },
         {
           "text": {
-            "en": "A known thing: a / az",
-            "es": "Algo conocido: a / az"
+            "en": "A thing we already know: a / az",
+            "es": "Una cosa concreta que ya conocemos: a / az"
           },
           "wrong": {
             "en": "With this rule the sentence would be Anna a tanár, 'Anna is THE teacher'.",
@@ -539,8 +539,8 @@
         },
         {
           "text": {
-            "en": "lány is a new thing: egy",
-            "es": "lány es algo nuevo: egy"
+            "en": "lány introduces someone new: use egy",
+            "es": "lány presenta a alguien nuevo, por eso el artículo es egy"
           },
           "wrong": {
             "en": "With this rule the sentence would be egy lány, 'a (new) girl'; here we mean the girl we already know.",
@@ -671,8 +671,8 @@
       "options": [
         {
           "text": {
-            "en": "egy turns into az before a vowel",
-            "es": "egy se convierte en az ante vocal"
+            "en": "The article egy changes into az before a vowel",
+            "es": "Ante una palabra que empieza por vocal, el artículo egy cambia a az"
           },
           "wrong": {
             "en": "With this rule the sentence would be Ez az alma, 'this apple'; az means 'the', and egy stays egy before every sound.",

@@ -497,8 +497,8 @@
         },
         {
           "text": {
-            "en": "Company ending -val: Annával",
-            "es": "Terminación de compañía -val: Annával"
+            "en": "Company ending -val: together with Anna, Annával",
+            "es": "La terminación de compañía -val expresa estar junto con Anna: Annával"
           },
           "wrong": {
             "en": "With this rule the sentence would be Annával segítek, 'I help together with Anna'.",
@@ -855,8 +855,8 @@
         },
         {
           "text": {
-            "en": "vele = with him or her",
-            "es": "vele = con él o con ella"
+            "en": "vele means with him or with her",
+            "es": "vele significa en compañía de él o de ella, con esa persona"
           },
           "wrong": {
             "en": "With this rule the sentence would be Küldök vele egy üzenetet, 'I send a message through him', not to him.",
@@ -996,8 +996,8 @@
         },
         {
           "text": {
-            "en": "Back vowels: the ending is -nak",
-            "es": "Vocales posteriores: la terminación es -nak"
+            "en": "Back vowels require the ending -nak",
+            "es": "Una palabra con vocales posteriores recibe la terminación -nak"
           },
           "wrong": {
             "en": "With this rule the form would be főnöknak; but ő and ö are front vowels, so the ending is -nek.",

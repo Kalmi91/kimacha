@@ -119,4 +119,18 @@ function overlayGiveaways(item, overlay) {
   return issues;
 }
 
-module.exports = { whyGiveaways, overlayGiveaways, containsTarget, sameWord };
+// Ties do not identify one answer. Keep the existing English-text character metric.
+function isUniqueLongestWhyOption(item) {
+  const options = item?.options ?? [];
+  const ci = item?.correctIndex;
+  if (item?.kind !== 'why' || !Number.isInteger(ci) || !options[ci] || options.length < 2) return false;
+  const lengths = options.map((o) => String(o?.text?.en ?? '').length);
+  return lengths.every((length, i) => i === ci || length < lengths[ci]);
+}
+
+function whyLengthIssue(longest, total) {
+  if (!total || longest * 100 < total * 45) return null;
+  return `why right option is the unique longest in ${((100 * longest) / total).toFixed(1)}% of items (${longest}/${total}); must be below 45%`;
+}
+
+module.exports = { whyGiveaways, overlayGiveaways, containsTarget, sameWord, isUniqueLongestWhyOption, whyLengthIssue };

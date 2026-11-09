@@ -603,8 +603,8 @@
       "options": [
         {
           "text": {
-            "en": "wird geöffnet describes the result: the window is open",
-            "es": "wird geöffnet describe el resultado: la ventana está abierta"
+            "en": "wird geöffnet expresses the resulting state: the window is now open",
+            "es": "wird geöffnet expresa el estado resultante: la ventana ahora está abierta"
           },
           "wrong": {
             "en": "The result is expressed with ist geöffnet. wird geöffnet describes the action that is going on.",
@@ -762,8 +762,8 @@
       "options": [
         {
           "text": {
-            "en": "lässt means to let someone do something: the problem lets someone act",
-            "es": "lässt significa dejar que alguien haga algo: el problema deja que alguien actúe"
+            "en": "lässt means allowing somebody to do something: the problem allows a person to act",
+            "es": "lässt significa permitir que alguien haga algo: el problema permite actuar a una persona"
           },
           "wrong": {
             "en": "With sich the verb lassen expresses a possibility with a passive meaning. It does not describe a person who lets someone act.",
