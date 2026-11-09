@@ -13,6 +13,7 @@ import Colors from '@/constants/Colors';
 jest.mock('@/lib/ThemeContext', () => ({ useTheme: () => ({ theme: 'light' }) }));
 
 const focusSpy = jest.spyOn(TextInput.prototype as unknown as { focus: () => void }, 'focus').mockImplementation(() => {});
+jest.spyOn(TextInput.prototype as unknown as { isFocused: () => boolean }, 'isFocused').mockReturnValue(true); // the retry stops once the field has the focus
 beforeEach(() => {
   jest.useFakeTimers();
   focusSpy.mockClear();
