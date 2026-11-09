@@ -18,6 +18,7 @@ jest.mock('../neuralTts', () => ({ speakNeural: jest.fn(), stopNeural: jest.fn()
 jest.mock('../packAudio', () => ({ playPackFile: jest.fn(), stopPack: jest.fn() }));
 
 import * as Speech from 'expo-speech';
+import { setSpeakerChoice } from '@/lib/voicePreference';
 import { loadVoices, noteSpeechTouch, resetVoiceCache, speak, stop, watchAppStateForSpeech } from '@/lib/speech';
 
 const speech = Speech as jest.Mocked<typeof Speech>;
@@ -36,12 +37,12 @@ beforeEach(() => {
 afterEach(() => stop());
 
 describe('one phone voice per language', () => {
-  it('reproduces the cause: a speech before the list is loaded has no voice, the next one has', async () => {
+  it('reproduces the cause: a speech before the list is loaded has no voice (and keeps it, see the lock)', async () => {
     speak('el plomero', 'es-MX');
     await loadVoices();
     speak('El plomero viene hoy a mi casa.', 'es-MX');
     expect(voiceOfCall(0)).toBeUndefined();
-    expect(voiceOfCall(1)).toBe('es-MX-enhanced');
+    expect(voiceOfCall(1)).toBeUndefined();
   });
 
   it('the fix: with the list asked for at start, the first and the later speech use the same voice', async () => {
@@ -52,5 +53,28 @@ describe('one phone voice per language', () => {
     expect(voiceOfCall(0)).toBe('es-MX-enhanced');
     expect(voiceOfCall(1)).toBe('es-MX-enhanced');
     off();
+  });
+
+  it('a list that arrives late does not flip the voice a language already spoke with', async () => {
+    (speech.getAvailableVoicesAsync as jest.Mock).mockResolvedValue([]); // list unknown for the first speeches
+    speak('el plomero', 'es-MX');
+    await loadVoices();
+    speak('Hola', 'es-MX');
+    (speech.getAvailableVoicesAsync as jest.Mock).mockResolvedValue(VOICES);
+    await loadVoices();
+    speak('El plomero viene hoy a mi casa.', 'es-MX');
+    expect([0, 1, 2].map(voiceOfCall)).toEqual([undefined, undefined, undefined]);
+  });
+
+  it('changing a voice setting releases the lock', async () => {
+    (speech.getAvailableVoicesAsync as jest.Mock).mockResolvedValue([]);
+    speak('uno', 'es-MX');
+    await loadVoices();
+    (speech.getAvailableVoicesAsync as jest.Mock).mockResolvedValue(VOICES);
+    await loadVoices();
+    setSpeakerChoice('es', 'm');
+    setSpeakerChoice('es', 'auto');
+    speak('dos', 'es-MX');
+    expect(voiceOfCall(1)).toBe('es-MX-enhanced');
   });
 });

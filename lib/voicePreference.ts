@@ -14,6 +14,11 @@ const subscribe = (fn: () => void) => {
   };
 };
 
+// FB633: lib/speech.ts drops its per-language phone voice lock when the learner changes a voice setting.
+export function onVoiceSettingsChange(fn: () => void): () => void {
+  return subscribe(fn);
+}
+
 export function getSpeakerChoices(): SpeakerChoices {
   return choices;
 }

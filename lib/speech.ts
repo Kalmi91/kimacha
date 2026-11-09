@@ -33,12 +33,16 @@ import { speakNeural, stopNeural } from './neuralTts';
 import { neuralEngineFor, neuralFallbackEngine, neuralPackFile, neuralSentenceFile, noteNeuralOk, noteNeuralTrouble, releaseStandIns, startNeural } from './neuralModels';
 import { playPackFile, stopPack } from './packAudio';
 import { neuralTimeLimitMs, voiceFor, type NeuralEngine, type NeuralLang, type VoiceGender } from './neuralVoices';
-import { getFastFallback, preferredGender } from './voicePreference';
+import { getFastFallback, onVoiceSettingsChange, preferredGender } from './voicePreference';
 import { setSpeechStatus } from './speechStatus';
 
 let voiceLanguages: Set<string> | null = null;
 let voicesByLanguage: Map<string, Speech.Voice[]> | null = null;
 let loading: Promise<void> | null = null;
+// FB633: the phone voice a language first spoke with in this app session stays (undefined = the engine's default),
+// so a voice list that arrives late cannot flip it; dropped on a voice setting change and on restart.
+const phoneVoiceLock = new Map<string, string | undefined>();
+onVoiceSettingsChange(() => phoneVoiceLock.clear());
 let phoneTimer: ReturnType<typeof setTimeout> | undefined;
 const missing = new Set<string>();
 
@@ -122,7 +126,9 @@ function speakOnDevice(text: string, locale: string, options: Speech.SpeechOptio
     fail('noVoice', new Error('Speech voice unavailable'));
     return;
   }
-  const voice = voiceIdFor(locale);
+  const lang = baseLanguage(locale);
+  if (!phoneVoiceLock.has(lang)) phoneVoiceLock.set(lang, voiceIdFor(locale));
+  const voice = phoneVoiceLock.get(lang);
   let started = false;
   let finished = false;
   const timer = setTimeout(() => {
@@ -543,6 +549,7 @@ export function resetVoiceCache(): void {
   voiceLanguages = null;
   voicesByLanguage = null;
   loading = null;
+  phoneVoiceLock.clear();
   missing.clear();
   speakingRun += 1;
   setSpeechStatus(speakingRun, 'idle');
