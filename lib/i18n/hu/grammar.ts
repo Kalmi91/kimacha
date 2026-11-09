@@ -131,6 +131,16 @@ const hu: typeof en = {
     leaveTitle: 'Kilépsz a körből?',
     leaveBody: 'A válaszaid mentve vannak, később folytathatod.',
   },
+  examStrip: {
+    title: (lvl: string) => `${lvl} vizsga`,
+    ready: (pct: number) => `${pct}% nyelvtani felkészültség`,
+    weakest: 'Most a leggyengébb',
+    noData: 'Még nincs teszteredmény. Indítsd el a szinttesztet.',
+    noWeak: 'Most nincs gyenge téma.',
+    levelExam: 'Szintvizsga',
+    mockExam: 'Próbavizsga',
+    needLesson: 'Fejezz be egy nyelvtani leckét ezen a szinten.',
+  },
   levelTest: {
     button: 'Szintteszt',
     header: (lvl: string, pos: number, total: number) => `${lvl} · ${pos}/${total}`,

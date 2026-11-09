@@ -131,6 +131,16 @@ const es: typeof en = {
     leaveTitle: '¿Salir de la ronda?',
     leaveBody: 'Tus respuestas se guardan. Puedes continuar después.',
   },
+  examStrip: {
+    title: (lvl: string) => `Examen ${lvl}`,
+    ready: (pct: number) => `${pct}% listo en gramática`,
+    weakest: 'Lo más débil ahora',
+    noData: 'Aún no hay resultados de pruebas. Empieza la prueba de nivel.',
+    noWeak: 'Ningún tema débil por ahora.',
+    levelExam: 'Examen de nivel',
+    mockExam: 'Simulacro',
+    needLesson: 'Termina una lección de gramática de este nivel.',
+  },
   levelTest: {
     button: 'Prueba de nivel',
     header: (lvl: string, pos: number, total: number) => `${lvl} · ${pos}/${total}`,

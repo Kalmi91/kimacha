@@ -148,9 +148,18 @@ describe.each([
     it('shows the level percent (no answers = 0) and opens the level test of that level', async () => {
       const view = render(<ThemeProvider><GrammarSyllabusScreen /></ThemeProvider>);
       await flush();
-      expect(screen.getByTestId('grammar-level-test-A1')).toHaveTextContent('🎯 Level test · 0%');
+      expect(screen.getByTestId('grammar-level-test-A1')).toHaveTextContent('🎯 Level test');
+      expect(screen.getByTestId('grammar-exam-strip-pct-A1')).toHaveTextContent('0% grammar ready');
       fireEvent.press(screen.getByTestId('grammar-level-test-A1'));
       expect(mockPush).toHaveBeenCalledWith('/grammar/level-test?level=A1');
+      view.unmount();
+    });
+
+    it('the exam strip loads the level exam status: a fresh install has the exam locked with its reason shown', async () => {
+      const view = render(<ThemeProvider><GrammarSyllabusScreen /></ThemeProvider>);
+      await flush();
+      expect(screen.getByTestId('grammar-exam-open-A1').props.accessibilityState).toMatchObject({ disabled: true });
+      expect(screen.getByTestId('grammar-exam-lock-A1')).toHaveTextContent(/Finish one grammar lesson of this level\./);
       view.unmount();
     });
 
@@ -161,7 +170,7 @@ describe.each([
       await flush();
       const pct = Math.round((100 + 67) / a1Written().length);
       expect(pct).toBeGreaterThan(0);
-      expect(screen.getByTestId('grammar-level-test-A1')).toHaveTextContent(`🎯 Level test · ${pct}%`);
+      expect(screen.getByTestId('grammar-exam-strip-pct-A1')).toHaveTextContent(`${pct}% grammar ready`);
       view.unmount();
     });
 
@@ -170,7 +179,7 @@ describe.each([
       await saveResumeValue(getDb(), levelShownKey('en→es', 'A1'), 41.3);
       const view = render(<ThemeProvider><GrammarSyllabusScreen /></ThemeProvider>);
       await flush();
-      expect(screen.getByTestId('grammar-level-test-A1')).toHaveTextContent('🎯 Level test · 41%');
+      expect(screen.getByTestId('grammar-exam-strip-pct-A1')).toHaveTextContent('41% grammar ready');
       expect(screen.getByTestId('grammar-level-standing-pct-A1')).toHaveTextContent('41%');
       expect(String(StyleSheet.flatten(screen.getByTestId('grammar-level-standing-fill-A1').props.style).width)).toBe('41.3%');
       view.unmount();
@@ -183,7 +192,8 @@ describe.each([
       }
       const view = render(<ThemeProvider><GrammarSyllabusScreen /></ThemeProvider>);
       await flush();
-      expect(screen.getByTestId('grammar-level-test-A1')).toHaveTextContent('✓ 🎯 Level test · 100%');
+      expect(screen.getByTestId('grammar-exam-strip-title-A1')).toHaveTextContent('✓ A1 exam');
+      expect(screen.getByTestId('grammar-exam-strip-pct-A1')).toHaveTextContent('100% grammar ready');
       fireEvent.press(screen.getByTestId('grammar-level-test-A1'));
       expect(mockPush).toHaveBeenCalledWith('/grammar/level-test?level=A1');
       view.unmount();

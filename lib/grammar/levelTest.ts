@@ -10,6 +10,7 @@ import {
   EVIDENCE_WINDOW,
   MIN_ANSWERS_FOR_PCT,
   seenIds,
+  TICK_PCT,
   topicPercent,
   topicTicked,
   type PickTopic,
@@ -238,6 +239,23 @@ export function weakestTopic(topicIds: string[], evidence: Map<string, TopicEvid
   }
   return best;
 }
+
+/**
+ * The weak topics of a level for the exam strip: topics with at least one recorded test answer and a percent under TICK_PCT
+ * (the percent of weakestTopic: no percent yet = 0), lowest first, ties in the given (syllabus) order, at most `max`.
+ */
+export function weakestTopics(topicIds: string[], evidence: Map<string, TopicEvidence>, max = 3): { id: string; pct: number }[] {
+  return topicIds
+    .map((id, i) => ({ id, i, pct: topicPercent(evidence.get(id)) ?? 0, asked: (evidence.get(id)?.answers.length ?? 0) > 0 }))
+    .filter((x) => x.asked && x.pct < TICK_PCT)
+    .sort((a, b) => a.pct - b.pct || a.i - b.i)
+    .slice(0, max)
+    .map(({ id, pct }) => ({ id, pct }));
+}
+
+/** Whether any topic of the list has a recorded test answer (the exam strip then shows weak rows or "no weak topic"). */
+export const hasTestData = (topicIds: string[], evidence: Map<string, TopicEvidence>): boolean =>
+  topicIds.some((id) => (evidence.get(id)?.answers.length ?? 0) > 0);
 
 // ---------------------------------------------------------------------------
 // The level's standing (FB593, FB594, FB616): the number on the level test's bar, the test button and the syllabus header.

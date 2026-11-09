@@ -19,7 +19,9 @@ import {
   roundTopicRows,
   shownLabel,
   shownPctOf,
+  hasTestData,
   weakestTopic,
+  weakestTopics,
   type LevelTestCtx,
 } from '@/lib/grammar/levelTest';
 
@@ -347,6 +349,27 @@ describe('rounds of 20 (FB581)', () => {
     expect(weakestTopic(['a', 'b'], ev)).toEqual({ id: 'b', pct: 50 });
     expect(weakestTopic(['d', 'c'], ev)).toEqual({ id: 'd', pct: 0 });
     expect(weakestTopic([], ev)).toBeNull();
+  });
+
+  it('weakestTopics: lowest percent first, ties in order, at most 3, ticked and unasked topics left out', () => {
+    const ev = new Map([
+      ['a', evOf(['c', 'c', 'x', 'x', 'x'])], // 40
+      ['b', evOf(['c', 'c', 'x', 'x', 'c'])], // 60
+      ['c', ticked()], // 100, ticked
+      ['d', evOf(['c', 'c', 'x', 'x', 'x'])], // 40, ties with a
+      ['e', evOf(['x', 'x', 'x', 'x', 'x'])], // 0
+      ['f', evOf(['x'])], // 1 answer: no percent yet = 0
+    ]);
+    expect(weakestTopics(['a', 'b', 'c', 'd', 'e', 'f', 'g'], ev)).toEqual([
+      { id: 'e', pct: 0 },
+      { id: 'f', pct: 0 },
+      { id: 'a', pct: 40 },
+    ]);
+    expect(weakestTopics(['d', 'a', 'b'], ev, 2)).toEqual([{ id: 'd', pct: 40 }, { id: 'a', pct: 40 }]);
+    expect(weakestTopics(['c', 'g'], ev)).toEqual([]);
+    expect(weakestTopics(['a', 'b'], new Map())).toEqual([]);
+    expect(hasTestData(['g'], ev)).toBe(false);
+    expect(hasTestData(['g', 'c'], ev)).toBe(true);
   });
 });
 
