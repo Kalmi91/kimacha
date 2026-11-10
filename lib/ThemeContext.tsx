@@ -52,7 +52,7 @@ export const ThemeContext = createContext<{
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const raw = useSystemScheme();
   const systemScheme: Theme = raw === 'light' ? 'light' : 'dark';
-  const [override, setOverride] = useState<ThemeOverride>(() => getWebTestParams()?.mode ?? 'system');
+  const [override, setOverrideState] = useState<ThemeOverride>(() => getWebTestParams()?.mode ?? 'system');
   const [grammarPalette, setPalette] = useState<GrammarPaletteId>(DEFAULT_GRAMMAR_PALETTE);
   // null = no theme chosen yet: the legacy (palette-based) behavior, see legacySkinFor.
   const [chosenSkin, setChosenSkin] = useState<SkinSelection | null>(null);
@@ -64,6 +64,17 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     let alive = true;
+    // the saved Auto / Light / Dark choice; a web-test URL mode wins
+    if (!getWebTestParams()?.mode) {
+      getDb()
+        .getThemeMode()
+        .then(m => {
+          if (alive) setOverrideState(prev => (prev === 'system' ? m : prev));
+        })
+        .catch(() => {
+          // a failed read keeps following the device
+        });
+    }
     getDb()
       .getGrammarPalette()
       .then(p => {
@@ -92,6 +103,13 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
       alive = false;
     };
   }, []);
+
+  const setOverride = (o: ThemeOverride) => {
+    setOverrideState(o);
+    getDb().setThemeMode(o).catch(() => {
+      // the choice is already applied; a failed write only means it is not remembered
+    });
+  };
 
   const setGrammarPalette = (p: GrammarPaletteId) => {
     setPalette(p);

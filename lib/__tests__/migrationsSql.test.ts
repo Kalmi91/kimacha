@@ -35,7 +35,7 @@ const ADDED_COLUMNS: Record<string, string[]> = {
     'repair_gap', 'again_delay_sec', 'pcic_level',
   ],
   user_meta: [
-    'last_open_date', 'status_bar_tint', 'grammar_palette', 'skin', 'skin_mix', 'beta_flags',
+    'last_open_date', 'status_bar_tint', 'grammar_palette', 'skin', 'skin_mix', 'theme_mode', 'beta_flags',
     'pcic_level', 'practice_round', 'board_identity',
   ],
   pcic_cards: ['known', 'half_steps', 'wrong_streak'],

@@ -88,6 +88,33 @@ describe('palette infrastructure', () => {
     expect(gc.b).toBe('#FFD23F');
   });
 
+  it('the Auto / Light / Dark choice survives an app kill and a resume, until the learner changes it', async () => {
+    const first = render(<ThemeProvider><Probe /></ThemeProvider>);
+    await flush();
+    act(() => ctx.setOverride('dark'));
+    await flush();
+    expect(await getDb().getThemeMode()).toBe('dark');
+    first.unmount();
+
+    // kill: a fresh provider, the device still says light
+    const second = render(<ThemeProvider><Probe /></ThemeProvider>);
+    await flush();
+    expect(ctx.override).toBe('dark');
+    expect(ctx.theme).toBe('brand-dark');
+    // resume from the background: the system scheme event must not override the choice
+    scheme.mockReturnValue('dark');
+    second.rerender(<ThemeProvider><Probe /></ThemeProvider>);
+    scheme.mockReturnValue('light');
+    second.rerender(<ThemeProvider><Probe /></ThemeProvider>);
+    await flush();
+    expect(ctx.theme).toBe('brand-dark');
+
+    act(() => ctx.setOverride('system'));
+    await flush();
+    expect(await getDb().getThemeMode()).toBe('system');
+    expect(ctx.theme).toBe('brand-light');
+  });
+
   it('classic gives the current Colors[light|dark] values, without brutalist shapes', async () => {
     render(<ThemeProvider><Probe /></ThemeProvider>);
     await flush();

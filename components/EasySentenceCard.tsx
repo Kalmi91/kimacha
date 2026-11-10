@@ -232,8 +232,8 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
           onPress={handleCheck}
           disabled={!canCheck}
           brutalStyle={styles.brutalBtn}
-          classicStyle={[styles.checkBtn, styles.checkBtnPrimary, { backgroundColor: colors.accent, opacity: canCheck ? 1 : 0.4 }]}
-          classicTextStyle={styles.checkBtnText}
+          classicStyle={[styles.checkBtn, styles.checkBtnPrimary, { backgroundColor: canCheck ? colors.accent : colors.border }]}
+          classicTextStyle={[styles.checkBtnText, !canCheck && { color: colors.textMuted }]}
           classicRole={null}
         />
       ) : (

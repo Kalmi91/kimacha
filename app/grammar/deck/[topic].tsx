@@ -237,7 +237,7 @@ export default function TableDeckScreen() {
         label={s.tableDeck.progress(doneCount(deck), items.length)}
         rotate={4}
         classicStyle={[styles.progressChip, { backgroundColor: colors.tint }]}
-        classicTextStyle={styles.progressChipText}
+        classicTextStyle={[styles.progressChipText, { color: colors.onTint }]}
       />
     </View>
   );
@@ -271,7 +271,7 @@ export default function TableDeckScreen() {
             onPress={handleStartAgain}
             brutalStyle={styles.brutalBtn}
             classicStyle={[styles.btn, { backgroundColor: colors.tint }]}
-            classicTextStyle={styles.btnTextOnTint}
+            classicTextStyle={[styles.btnTextOnTint, { color: colors.onTint }]}
             classicRole={null}
           />
           {/* same pill shape/size as "Start again" (outline instead

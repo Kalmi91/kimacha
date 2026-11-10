@@ -15,6 +15,7 @@ export type MetaColumn =
   | 'grammar_palette'
   | 'skin'
   | 'skin_mix'
+  | 'theme_mode'
   | 'beta_flags'
   | 'practice_round'
   | 'board_identity';

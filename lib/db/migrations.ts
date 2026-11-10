@@ -83,6 +83,7 @@ const SCHEMA_V1 = `
       grammar_palette TEXT,
       skin TEXT,
       skin_mix TEXT,
+      theme_mode TEXT,
       beta_flags TEXT,
       -- the old singleton PCIC level (moved to learn_settings.pcic_level); kept so a backup
       -- exported by an older build, which carries the column, still restores.
@@ -182,6 +183,7 @@ const LATE_COLUMNS: ReadonlyArray<readonly [string, string, string]> = [
   ['user_meta', 'grammar_palette', 'TEXT'],
   ['user_meta', 'skin', 'TEXT'],
   ['user_meta', 'skin_mix', 'TEXT'],
+  ['user_meta', 'theme_mode', 'TEXT'],
   ['learn_settings', 'daily_new_limit', 'INTEGER'],
   ['learn_settings', 'new_bonus', 'INTEGER'],
   ['learn_settings', 'new_bonus_date', 'TEXT'],

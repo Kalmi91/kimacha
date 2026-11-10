@@ -130,7 +130,7 @@ function ChoiceTranslation({
           onPress={onToggle}
           style={[styles.fButton, { borderColor: colors.tint, backgroundColor: show ? colors.tint : 'transparent' }]}
         >
-          <Text style={[styles.fButtonText, { color: show ? '#FFFFFF' : colors.tint }]}>F</Text>
+          <Text style={[styles.fButtonText, { color: show ? colors.onTint : colors.tint }]}>F</Text>
         </Pressable>
       )}
     </View>
@@ -601,7 +601,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
             />
           ))}
           <Pressable testID="grammar-next" style={[styles.btn, { backgroundColor: colors.tint, marginTop: 12 }]} onPress={next}>
-            <Text style={styles.btnText}>{s.games.understood}</Text>
+            <Text style={[styles.btnText, { color: colors.onTint }]}>{s.games.understood}</Text>
           </Pressable>
           {footer}
         </View>

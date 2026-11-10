@@ -232,17 +232,17 @@ function FeedbackControl({ level, languagePair, currentCard, draggable = false, 
             ) : (
             <View style={styles.modalButtons}>
               <Pressable
-                style={[styles.modalBtn, { backgroundColor: colors.tabIconDefault }]}
+                style={[styles.modalBtn, { backgroundColor: colors.border }]}
                 onPress={() => { setVisible(false); setText(''); setSendError(false); }}
               >
-                <Text style={styles.modalBtnText}>{s.feedback.cancel}</Text>
+                <Text style={[styles.modalBtnText, { color: colors.text }]}>{s.feedback.cancel}</Text>
               </Pressable>
               <Pressable
                 style={({ pressed }) => [styles.modalBtn, { backgroundColor: (pressed || sending) ? colors.successFill : colors.tint, opacity: text.trim() ? 1 : 0.4 }]}
                 onPress={handleSend}
                 disabled={!text.trim() || sending}
               >
-                <Text style={styles.modalBtnText}>{sending ? '...' : s.feedback.send}</Text>
+                <Text style={[styles.modalBtnText, { color: colors.onTint }]}>{sending ? '...' : s.feedback.send}</Text>
               </Pressable>
             </View>
             )}

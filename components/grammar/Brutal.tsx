@@ -351,7 +351,7 @@ export function BrutalSwitch({
   const { theme } = useTheme();
   const { shape } = useSkin().skin;
   if (!g.brutal) {
-    return <Switch testID={testID} accessibilityLabel={accessibilityLabel} value={value} onValueChange={onValueChange} disabled={disabled} trackColor={{ true: Colors[theme].tint }} />;
+    return <Switch testID={testID} accessibilityLabel={accessibilityLabel} value={value} onValueChange={onValueChange} disabled={disabled} trackColor={{ false: Colors[theme].tabIconDefault, true: Colors[theme].tint }} />;
   }
   const round = smallRadius(shape, 14);
   return (

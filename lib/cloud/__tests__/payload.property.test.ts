@@ -168,7 +168,7 @@ const stateArb = fc.record({
   streak: fc.record({ current_count: fc.nat(), last_date: fc.option(dayArb, { nil: null }), longest_count: fc.nat() }),
   onboarding: fc.option(fc.record({ source: fc.string({ maxLength: 4 }), target: fc.string({ maxLength: 4 }) }), { nil: null }),
   userLevels: entries(json),
-  meta: fc.record({ last_open_date: json, status_bar_tint: json, grammar_palette: json, skin: json, skin_mix: json, beta_flags: json, practice_round: json }),
+  meta: fc.record({ last_open_date: json, status_bar_tint: json, grammar_palette: json, skin: json, skin_mix: json, theme_mode: json, beta_flags: json, practice_round: json }),
   userMeta: fc.record({ userId: fc.string({ maxLength: 12 }), firstUseDate: fc.string({ maxLength: 24 }), lastSyncDate: fc.option(fc.string({ maxLength: 24 }), { nil: null }) }),
   settings: entries(json),
   usageMinutes: entries(fc.nat()),

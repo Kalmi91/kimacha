@@ -29,6 +29,8 @@ export interface DB {
   // the chosen theme and My mix (null = no choice yet; setSkin(null) resets).
   getSkin(): Promise<SkinSelection | null>;
   setSkin(id: SkinSelection | null): Promise<void>;
+  getThemeMode(): Promise<'system' | 'light' | 'dark'>;
+  setThemeMode(mode: 'system' | 'light' | 'dark'): Promise<void>;
   getSkinMix(): Promise<SkinMix | null>;
   setSkinMix(mix: SkinMix): Promise<void>;
   // the daily streak write is back (the Learn tab took
