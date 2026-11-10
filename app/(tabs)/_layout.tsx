@@ -93,6 +93,9 @@ export default function TabLayout() {
           backgroundColor: colors.background,
         },
         headerTintColor: colors.text,
+        // StatusBarStrip (app/_layout.tsx) already fills the status bar above the navigator, so the header must not add
+        // the status bar inset a second time: it showed as an empty band above the title of every tab with this header.
+        headerStatusBarHeight: 0,
         // On the brutalist palette an ink-lined, uppercase header (classic: empty).
         ...brutalHeaderOptions(g, skin),
         // ornament header (HeaderOrnament); without an ornament the native title stays.
