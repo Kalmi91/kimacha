@@ -88,6 +88,7 @@ export default function MockExamScreen() {
   const pausedAtRef = useRef<number | null>(null);
   const [timedOut, setTimedOut] = useState(false);
   const [result, setResult] = useState<MockResult | null>(null);
+  const [grammarMissed, setGrammarMissed] = useState(false);
   const [leaving, setLeaving] = useState(false);
   const runOnce = useSingleFlight();
   const { refresh } = useLearner();
@@ -165,10 +166,12 @@ export default function MockExamScreen() {
     const db = getDb();
     await saveMockLast(db, target, level, res, localDateString());
     // The tagged gaps are test evidence of their grammar topics (the ids keep a retried paper close from doubling it).
-    const merged = mergeExamAnswers(evidenceFromRows(await db.getGameProgress(GRAMMAR_RANDOM_KEY)), mockExamAnswers(ex, res, all), localDateString());
+    const graded = mockExamAnswers(ex, res, all);
+    const merged = mergeExamAnswers(evidenceFromRows(await db.getGameProgress(GRAMMAR_RANDOM_KEY)), graded, localDateString());
     for (const topic of merged.touched) await db.setGameProgress(GRAMMAR_RANDOM_KEY, topic, 'evidence', merged.evidence.get(topic));
     await clearMockSession(db, target, level);
     setSaved(null);
+    setGrammarMissed(graded.some((a) => !a.ok));
     setResult(res);
     setPhase('result');
   };
@@ -244,6 +247,7 @@ export default function MockExamScreen() {
     setDone([]);
     setTimedOut(false);
     setResult(null);
+    setGrammarMissed(false);
     setPaperIdx(0);
     setTaskIdx(0);
   };
@@ -393,7 +397,7 @@ export default function MockExamScreen() {
   }
 
   if (phase === 'result' && result) {
-    return shell(<MockResultView result={result} timedOut={timedOut} fullLength={mockIsFullLength(level)} onReview={() => setPhase('review')} onRetry={retry} onExit={() => router.back()} />, 'result');
+    return shell(<MockResultView result={result} timedOut={timedOut} fullLength={mockIsFullLength(level)} grammarMissed={grammarMissed} onReview={() => setPhase('review')} onRetry={retry} onExit={() => router.back()} />, 'result');
   }
 
   if (phase === 'review' && result) {

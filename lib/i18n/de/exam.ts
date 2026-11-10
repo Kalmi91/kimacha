@@ -102,6 +102,7 @@ const de: typeof en = {
       `Zum Bestehen: im Durchschnitt mindestens ${needed} Punkte auf der Prüfungsskala. Dein Skalenwert hier ist eine Schätzung aus deinen Rohpunkten.`,
     shortNote: 'Kürzer als die echte Prüfung, die Punkte sind skaliert. Die Uhr ist die echte.',
     fullNote: 'So lang wie die echte Prüfung. Die Uhr ist die echte.',
+    missedNote: 'Die Grammatikthemen der falschen Lücken stehen jetzt im Grammatik-Tab unter Jetzt am schwächsten ganz vorn.',
     unavailableBody: 'Für diese Stufe gibt es noch keine Probeprüfung.',
     emptyBody: 'Für diese Probeprüfung gibt es noch nicht genug Material.',
     begin: 'Beginnen',

@@ -100,6 +100,7 @@ const es: typeof en = {
       `Para aprobar: un promedio de al menos ${needed} puntos en la escala del examen. Tu puntaje en la escala aquí es una estimación a partir de tus puntos.`,
     shortNote: 'Más corto que el examen real, los puntos se escalan. El reloj es el real.',
     fullNote: 'Tan largo como el examen real. El reloj es el real.',
+    missedNote: 'Los temas de gramática de los huecos fallados ahora aparecen primero en Lo más débil ahora, en la pestaña Gramática.',
     unavailableBody: 'Todavía no hay examen de práctica para este nivel.',
     emptyBody: 'Todavía no hay material suficiente para este examen de práctica.',
     begin: 'Empezar',

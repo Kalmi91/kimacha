@@ -24,9 +24,11 @@ type Props = {
   onExit: () => void;
   /** The exam is at the official length (B1 and up), so the "shorter, scaled" note does not apply. */
   fullLength?: boolean;
+  /** A tagged gap was missed: its grammar topics now stand first in the Grammar tab's weakest list. */
+  grammarMissed?: boolean;
 };
 
-export function MockResultView({ result, timedOut, onReview, onRetry, onExit, fullLength }: Props) {
+export function MockResultView({ result, timedOut, onReview, onRetry, onExit, fullLength, grammarMissed }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const s = t().mockExam;
@@ -86,6 +88,11 @@ export function MockResultView({ result, timedOut, onReview, onRetry, onExit, fu
           </>
         )}
         <Text style={[styles.note, { color: colors.textMuted }]}>{fullLength ? s.fullNote : s.shortNote}</Text>
+        {grammarMissed && (
+          <Text testID="mock-missed-note" style={[styles.note, { color: colors.textMuted }]}>
+            {s.missedNote}
+          </Text>
+        )}
       </Card>
       <ExamButton testID="mock-review" label={s.checkAnswers} onPress={onReview} />
       <ExamButton testID="mock-retry" secondary label={s.tryAgain} onPress={onRetry} />
