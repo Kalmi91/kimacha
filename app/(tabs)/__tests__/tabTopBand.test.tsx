@@ -20,7 +20,9 @@ jest.mock('expo-router', () => {
     }));
     return null;
   };
-  Tabs.Screen = () => null;
+  Tabs.Screen = function Screen() {
+    return null;
+  };
   return { Tabs, router: { replace: jest.fn(), push: jest.fn() } };
 });
 
