@@ -109,7 +109,7 @@ export default function MistakesReportScreen() {
           label={s.mistakes.practice(dueCount)}
           onPress={() => router.push('/mistakes/deck' as never)}
           classicStyle={[styles.practiceBtn, { backgroundColor: colors.tint }]}
-          classicTextStyle={styles.practiceBtnText}
+          classicTextStyle={[styles.practiceBtnText, { color: colors.onTint }]}
           classicRole={null}
         />
 

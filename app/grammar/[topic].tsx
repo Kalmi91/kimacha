@@ -219,7 +219,7 @@ function GrammarLessonPhases({ topic }: { topic: ReturnType<typeof useGrammarTop
         ]}
         onPress={onPress}
       >
-        <Text style={[styles.btnText, filled ? styles.btnTextOnTint : { color: colors.tint }]}>{label}</Text>
+        <Text style={[styles.btnText, filled ? { color: colors.onTint } : { color: colors.tint }]}>{label}</Text>
       </Pressable>
     );
 

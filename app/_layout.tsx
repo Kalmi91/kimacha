@@ -38,6 +38,7 @@ function RootLayout() {
   const [loaded, error] = useFonts({
     ...FONT_FILES,
   });
+  const [themeReady, setThemeReady] = useState(false);
   const [onboardingDone, setOnboardingDone] = useState<boolean | null>(null);
   // The learner's settings (direction, level, switches); the startup check below fills the direction in.
   const [learner] = useState(() => new LearnerStore());
@@ -81,13 +82,13 @@ function RootLayout() {
   }, [loaded, learner]);
 
   useEffect(() => {
-    if (loaded && onboardingDone !== null) {
+    if (loaded && onboardingDone !== null && themeReady) {
       SplashScreen.hideAsync();
       if (!onboardingDone) {
         router.replace('/onboarding');
       }
     }
-  }, [loaded, onboardingDone]);
+  }, [loaded, onboardingDone, themeReady]);
 
   if (!loaded || onboardingDone === null) {
     return null;
@@ -95,7 +96,7 @@ function RootLayout() {
 
   return (
     <LearnerProvider store={learner}>
-      <ThemeProvider>
+      <ThemeProvider onReady={() => setThemeReady(true)}>
         <RootLayoutNav key={langVersion} />
       </ThemeProvider>
     </LearnerProvider>

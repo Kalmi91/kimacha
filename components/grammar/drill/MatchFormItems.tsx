@@ -185,7 +185,7 @@ export function MatchDrillItem({
         <View style={[styles.explainCard, { backgroundColor: colors.card }]}>
           <ResultBadge correct={!hadWrong} label={hadWrong ? s.games.wrongFeedback : s.games.correctFeedback} />
           <Pressable testID="grammar-next" style={[styles.btn, { backgroundColor: colors.tint, marginTop: 12 }]} onPress={() => onDone(!hadWrong, item.pairs.length - errLefts.size)}>
-            <Text style={styles.btnText}>{s.games.understood}</Text>
+            <Text style={[styles.btnText, { color: colors.onTint }]}>{s.games.understood}</Text>
           </Pressable>
         </View>
       ) : null}
@@ -341,7 +341,7 @@ export function FormDrillItem({
       {!checked ? (
         docked ? null : (
           <Pressable testID="formCheck" style={[styles.btn, { backgroundColor: colors.tint }]} onPress={check}>
-            <Text style={styles.btnText}>{s.grammar.check}</Text>
+            <Text style={[styles.btnText, { color: colors.onTint }]}>{s.grammar.check}</Text>
           </Pressable>
         )
       ) : (
@@ -351,7 +351,7 @@ export function FormDrillItem({
           <SpeakButton testID="form-speak" onPress={() => speak(item.answer, speechLang(learnedLang))} style={styles.formSpeak} iconStyle={styles.formSpeakIcon} />
           {docked ? null : (
             <Pressable testID="grammar-next" style={[styles.btn, { backgroundColor: colors.tint, marginTop: 12 }]} onPress={() => onDone(correct)}>
-              <Text style={styles.btnText}>{s.games.understood}</Text>
+              <Text style={[styles.btnText, { color: colors.onTint }]}>{s.games.understood}</Text>
             </Pressable>
           )}
         </View>

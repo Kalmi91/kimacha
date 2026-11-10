@@ -83,6 +83,7 @@ const SCHEMA_V1 = `
       grammar_palette TEXT,
       skin TEXT,
       skin_mix TEXT,
+      theme_mode TEXT,
       beta_flags TEXT,
       -- the old singleton PCIC level (moved to learn_settings.pcic_level); kept so a backup
       -- exported by an older build, which carries the column, still restores.
@@ -182,6 +183,7 @@ const LATE_COLUMNS: ReadonlyArray<readonly [string, string, string]> = [
   ['user_meta', 'grammar_palette', 'TEXT'],
   ['user_meta', 'skin', 'TEXT'],
   ['user_meta', 'skin_mix', 'TEXT'],
+  ['user_meta', 'theme_mode', 'TEXT'],
   ['learn_settings', 'daily_new_limit', 'INTEGER'],
   ['learn_settings', 'new_bonus', 'INTEGER'],
   ['learn_settings', 'new_bonus_date', 'TEXT'],
@@ -274,6 +276,12 @@ async function migrateToV2(db: SQLite.SQLiteDatabase) {
   await addColumnIfMissing(db, 'user_meta', 'board_identity', 'TEXT');
 }
 
+// v3: user_meta.theme_mode (Auto/Light/Dark). It was only added to SCHEMA_V1 and LATE_COLUMNS, and
+// LATE_COLUMNS runs inside v1 only, so a file already at user_version 2 never got it.
+async function migrateToV3(db: SQLite.SQLiteDatabase) {
+  await addColumnIfMissing(db, 'user_meta', 'theme_mode', 'TEXT');
+}
+
 export interface Migration {
   version: number;
   up: (db: SQLite.SQLiteDatabase) => Promise<void>;
@@ -282,6 +290,7 @@ export interface Migration {
 export const MIGRATIONS: readonly Migration[] = [
   { version: 1, up: migrateToV1 },
   { version: 2, up: migrateToV2 },
+  { version: 3, up: migrateToV3 },
 ];
 
 export const LATEST_SCHEMA_VERSION = MIGRATIONS[MIGRATIONS.length - 1].version;

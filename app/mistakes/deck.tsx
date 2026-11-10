@@ -149,7 +149,7 @@ export default function MistakesDeckScreen() {
             onPress={() => router.back()}
             brutalStyle={styles.brutalDone}
             classicStyle={[styles.btn, { backgroundColor: colors.tint }]}
-            classicTextStyle={styles.btnTextOnTint}
+            classicTextStyle={[styles.btnTextOnTint, { color: colors.onTint }]}
             classicRole={null}
           />
         </View>

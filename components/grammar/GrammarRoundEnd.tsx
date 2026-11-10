@@ -97,7 +97,7 @@ export default function GrammarRoundEnd({
             ]}
             onPress={startTest}
           >
-            <Text style={[styles.btnText, testReady ? styles.btnTextOnTint : { color: colors.tabIconDefault }]}>{s.lessonTest.take}</Text>
+            <Text style={[styles.btnText, testReady ? { color: colors.onTint } : { color: colors.tabIconDefault }]}>{s.lessonTest.take}</Text>
           </Pressable>
         )}
         <Text testID="grammar-lessontest-note" style={[styles.lessonTestNote, { color: mutedColor(g, colors.tabIconDefault) }]}>
@@ -249,7 +249,7 @@ export default function GrammarRoundEnd({
           <Text
             style={[
               styles.btnText,
-              (pct >= 80 && next) || testSize > 0 ? { color: colors.tint } : styles.btnTextOnTint,
+              (pct >= 80 && next) || testSize > 0 ? { color: colors.tint } : { color: colors.onTint },
             ]}
           >
             {s.grammar.backToRule}
@@ -277,7 +277,7 @@ export default function GrammarRoundEnd({
               setPhase('drill');
             }}
           >
-            <Text style={[styles.btnText, styles.btnTextOnTint]}>{s.grammar.moreRound(TRANSFORM_ROUND_SIZE)}</Text>
+            <Text style={[styles.btnText, { color: colors.onTint }]}>{s.grammar.moreRound(TRANSFORM_ROUND_SIZE)}</Text>
           </Pressable>
         ) : null}
         <Pressable style={styles.ghostBtn} onPress={() => router.back()}>

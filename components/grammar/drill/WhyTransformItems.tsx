@@ -218,7 +218,7 @@ export function WhyDrillItem({
             </Text>
           ) : null}
           <Pressable testID="grammar-next" style={[styles.btn, { backgroundColor: colors.tint, marginTop: 12 }]} onPress={() => onDone(isCorrect)}>
-            <Text style={styles.btnText}>{s.games.understood}</Text>
+            <Text style={[styles.btnText, { color: colors.onTint }]}>{s.games.understood}</Text>
           </Pressable>
         </View>
       ) : null}
@@ -344,7 +344,7 @@ export function TransformDrillItem({
             onPress={() => setShowF((v) => !v)}
             style={[styles.fButton, { borderColor: colors.tint, backgroundColor: showF ? colors.tint : 'transparent' }]}
           >
-            <Text style={[styles.fButtonText, { color: showF ? '#FFFFFF' : colors.tint }]}>F</Text>
+            <Text style={[styles.fButtonText, { color: showF ? colors.onTint : colors.tint }]}>F</Text>
           </Pressable>
         </View>
         {showF ? (
@@ -372,7 +372,7 @@ export function TransformDrillItem({
       {result === null ? (
         docked ? null : (
           <Pressable testID="transform-check" style={[styles.btn, { backgroundColor: colors.tint }]} onPress={check}>
-            <Text style={styles.btnText}>{s.grammar.check}</Text>
+            <Text style={[styles.btnText, { color: colors.onTint }]}>{s.grammar.check}</Text>
           </Pressable>
         )
       ) : (
@@ -401,7 +401,7 @@ export function TransformDrillItem({
 
       {result !== null && !docked ? (
         <Pressable testID="transform-next" style={[styles.btn, { backgroundColor: colors.text }]} onPress={() => onDone(result === 'ok')}>
-          <Text style={styles.btnText}>{s.grammar.next}</Text>
+          <Text style={[styles.btnText, { color: colors.background }]}>{s.grammar.next}</Text>
         </Pressable>
       ) : null}
 

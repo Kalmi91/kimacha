@@ -131,6 +131,16 @@ export class DbCore implements DB {
     await this.store.writeMeta('skin', id);
   }
 
+  // the Auto / Light / Dark choice ('system' = follow the device). App-wide, in user_meta.
+  async getThemeMode(): Promise<'system' | 'light' | 'dark'> {
+    const v = await this.store.readMeta('theme_mode');
+    return v === 'light' || v === 'dark' ? v : 'system';
+  }
+
+  async setThemeMode(mode: 'system' | 'light' | 'dark'): Promise<void> {
+    await this.store.writeMeta('theme_mode', mode);
+  }
+
   // The four sources of My mix as JSON; an invalid / missing value = null.
   async getSkinMix(): Promise<SkinMix | null> {
     return parseSkinMix(await this.store.readMeta('skin_mix'));

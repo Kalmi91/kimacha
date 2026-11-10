@@ -75,6 +75,7 @@ export class MemoryStore implements DbStore {
     grammar_palette: DEFAULT_GRAMMAR_PALETTE,
     skin: null,
     skin_mix: null,
+    theme_mode: null,
     beta_flags: null,
     practice_round: null,
     board_identity: null,
@@ -256,6 +257,7 @@ export class MemoryStore implements DbStore {
         grammar_palette: this.meta.grammar_palette,
         skin: this.meta.skin,
         skin_mix: this.meta.skin_mix,
+        theme_mode: this.meta.theme_mode,
         beta_flags: this.meta.beta_flags,
         practice_round: this.meta.practice_round,
       }],
@@ -306,6 +308,7 @@ export class MemoryStore implements DbStore {
     this.meta.skin = isSkinSelection(um?.skin) ? um.skin : null;
     const skinMix = parseSkinMix(um?.skin_mix);
     this.meta.skin_mix = skinMix ? JSON.stringify(skinMix) : null;
+    this.meta.theme_mode = um?.theme_mode === 'light' || um?.theme_mode === 'dark' ? um.theme_mode : null;
     const betaFlags = parseBetaFlagMap(um?.beta_flags);
     this.meta.beta_flags = Object.keys(betaFlags).length ? JSON.stringify(betaFlags) : null;
     this.meta.practice_round = typeof um?.practice_round === 'string' ? um.practice_round : null;
