@@ -115,6 +115,20 @@ describe('palette infrastructure', () => {
     expect(ctx.theme).toBe('brand-light');
   });
 
+  it('does not report ready (the splash stays up) until the saved mode is read', async () => {
+    let release: (m: 'dark') => void = () => {};
+    const spy = jest.spyOn(getDb(), 'getThemeMode').mockReturnValue(new Promise(r => { release = r; }));
+    const onReady = jest.fn();
+    render(<ThemeProvider onReady={onReady}><Probe /></ThemeProvider>);
+    await flush();
+    expect(onReady).not.toHaveBeenCalled();
+    release('dark');
+    await flush();
+    expect(onReady).toHaveBeenCalledTimes(1);
+    expect(ctx.override).toBe('dark');
+    spy.mockRestore();
+  });
+
   it('classic gives the current Colors[light|dark] values, without brutalist shapes', async () => {
     render(<ThemeProvider><Probe /></ThemeProvider>);
     await flush();

@@ -49,9 +49,11 @@ export const ThemeContext = createContext<{
   setSkinMix: () => {},
 });
 
-export function ThemeProvider({ children }: { children: ReactNode }) {
+// `onReady` fires once the saved Auto / Light / Dark choice is read; the app keeps its splash up until then (no wrong-scheme frame).
+export function ThemeProvider({ children, onReady }: { children: ReactNode; onReady?: () => void }) {
   const raw = useSystemScheme();
   const systemScheme: Theme = raw === 'light' ? 'light' : 'dark';
+  const [ready, setReady] = useState(() => !!getWebTestParams()?.mode);
   const [override, setOverrideState] = useState<ThemeOverride>(() => getWebTestParams()?.mode ?? 'system');
   const [grammarPalette, setPalette] = useState<GrammarPaletteId>(DEFAULT_GRAMMAR_PALETTE);
   // null = no theme chosen yet: the legacy (palette-based) behavior, see legacySkinFor.
@@ -73,6 +75,9 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
         })
         .catch(() => {
           // a failed read keeps following the device
+        })
+        .finally(() => {
+          if (alive) setReady(true);
         });
     }
     getDb()
@@ -103,6 +108,11 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
       alive = false;
     };
   }, []);
+
+  useEffect(() => {
+    if (ready) onReady?.();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [ready]);
 
   const setOverride = (o: ThemeOverride) => {
     setOverrideState(o);
