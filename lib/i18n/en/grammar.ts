@@ -145,6 +145,17 @@ export default {
     leaveTitle: 'Leave the round?',
     leaveBody: 'Your answers are saved. You can continue later.',
   },
+  // The exam strip under a level's header on the Grammar tab (components/grammar/ExamStrip.tsx).
+  examStrip: {
+    title: (lvl: string) => `${lvl} exam`,
+    ready: (pct: number) => `${pct}% grammar ready`,
+    weakest: 'Weakest now',
+    noData: 'Not enough test answers yet. Do the level test.',
+    noWeak: 'No weak topic right now.',
+    levelExam: 'Level exam',
+    mockExam: 'Mock exam',
+    needLesson: 'Finish one grammar lesson of this level.',
+  },
   // FB571: the level test (an endless stream of questions from one level's topics, the weakest first).
   levelTest: {
     button: 'Level test',
