@@ -109,7 +109,7 @@ export default function PcicRevealedAnswer({
         )}
         <View style={styles.answerRow}>
           <Text testID="pcic-correct-answer" variant="word" style={[styles.correctAnswer, { color: answerColor }]}>{grade.best}</Text>
-          <Pressable accessibilityRole="button" accessibilityLabel={t().a11y.speak} onPress={() => speak(grade.best, speechLang(target))} style={[styles.speakBtn, styles.answerSpeak]}>
+          <Pressable testID="pcic-correct-speak" accessibilityRole="button" accessibilityLabel={t().a11y.speak} onPress={() => speak(grade.best, speechLang(target))} style={[styles.speakBtn, styles.answerSpeak]}>
             <Text style={styles.speakIcon}>🔊</Text>
             <SkinSpeakLabel />
           </Pressable>
@@ -117,7 +117,7 @@ export default function PcicRevealedAnswer({
         {showAllAccepted && alsoAlternatives.map((alt, i) => (
           <View key={alt} style={styles.answerRow}>
             <Text testID={`pcic-correct-answer-${i + 2}`} variant="word" style={[styles.correctAnswer, { color: answerColor }]}>{alt}</Text>
-            <Pressable accessibilityRole="button" accessibilityLabel={t().a11y.speak} onPress={() => speak(alt, speechLang(target))} style={[styles.speakBtn, styles.answerSpeak]}>
+            <Pressable testID={`pcic-correct-speak-${i + 2}`} accessibilityRole="button" accessibilityLabel={t().a11y.speak} onPress={() => speak(alt, speechLang(target))} style={[styles.speakBtn, styles.answerSpeak]}>
               <Text style={styles.speakIcon}>🔊</Text>
               <SkinSpeakLabel />
             </Pressable>
@@ -137,7 +137,7 @@ export default function PcicRevealedAnswer({
         {/* accent strictness OFF + accent-only mismatch
             -> besides the yellow marking in the diff, it is also stated explicitly as counting for 100%. */}
         {grade.accentOnly && (
-          <Text style={[styles.accentNote, { color: colors.tabIconDefault }]}>{s.pcic.accentForgiven}</Text>
+          <Text testID="pcic-accent-note" style={[styles.accentNote, { color: colors.tabIconDefault }]}>{s.pcic.accentForgiven}</Text>
         )}
         {/* example sentence under the solution, only after Check
             and only if there is a match in the corpus (currentItem.exampleEs).
@@ -145,13 +145,13 @@ export default function PcicRevealedAnswer({
         {example && (
           <>
             <View style={[styles.frontRow, styles.exampleRow]}>
-              <Text style={[styles.exampleEs, { color: colors.text }]}>{example}</Text>
-              <Pressable accessibilityRole="button" accessibilityLabel={t().a11y.speak} onPress={() => speak(example, speechLang(target), { gender: speakerGenderFor(grade.best, speechLang(target)) })} style={styles.speakBtn}>
+              <Text testID="pcic-example" style={[styles.exampleEs, { color: colors.text }]}>{example}</Text>
+              <Pressable testID="pcic-example-speak" accessibilityRole="button" accessibilityLabel={t().a11y.speak} onPress={() => speak(example, speechLang(target), { gender: speakerGenderFor(grade.best, speechLang(target)) })} style={styles.speakBtn}>
                 <Text style={styles.speakIcon}>🔊</Text>
                 <SkinSpeakLabel />
               </Pressable>
             </View>
-            <Text style={[styles.exampleEn, { color: colors.tabIconDefault }]}>{exampleGloss}</Text>
+            <Text testID="pcic-example-gloss" style={[styles.exampleEn, { color: colors.tabIconDefault }]}>{exampleGloss}</Text>
           </>
         )}
       </View>
@@ -196,6 +196,7 @@ export default function PcicRevealedAnswer({
           return (
             <Pressable
               key={gr}
+              testID={`pcic-grade-${gr}`}
               style={({ pressed }) => [
                 styles.gradeBtn,
                 {
@@ -245,6 +246,7 @@ const styles = StyleSheet.create({
   },
   // correct answer: text centered on the full width, the speaker sits at the right edge without shifting it (equal padding both sides).
   answerRow: {
+    flexDirection: 'row',
     alignSelf: 'stretch',
     justifyContent: 'center',
     paddingHorizontal: 48,
