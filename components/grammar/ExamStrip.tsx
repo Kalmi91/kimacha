@@ -11,6 +11,7 @@ import { EXAM_LEVELS } from '@/lib/exam/types';
 import { mockAvailable } from '@/lib/exam/mock/blueprint';
 import { levelHasLesson, type ExamLevelStatus } from '@/lib/exam/unlock';
 import { useGrammarColors } from '@/lib/grammarColors';
+import { examRoundAvailable } from '@/lib/grammar/examRound';
 import { hasTopicPercent, levelDone, levelPercent, shownLabel, weakestTopics } from '@/lib/grammar/levelTest';
 import type { TopicEvidence } from '@/lib/grammar/randomRound';
 import { topicKindCount } from '@/lib/grammar/randomRoundView';
@@ -101,6 +102,7 @@ export default function ExamStrip({
   const weak = weakestTopics(ids, evidence);
   const examLevel = (EXAM_LEVELS as readonly string[]).includes(level) && levelHasLesson(level as ExamLevel, learnedLang);
   const mockOpen = mockAvailable(learnedLang as PcicTarget, level);
+  const roundOpen = examRoundAvailable(learnedLang, level);
   const ink = g.brutal ? g.ink : colors.text;
   const muted = g.brutal ? g.mu : colors.tabIconDefault;
 
@@ -145,6 +147,14 @@ export default function ExamStrip({
         <Text testID={`grammar-exam-nodata-${level}`} style={[styles.note, { color: muted }]}>{x.noData}</Text>
       )}
       <View style={styles.buttons}>
+        {roundOpen ? (
+          <StripButton
+            testID={`grammar-exam-round-${level}`}
+            label={x.examRound}
+            highlight
+            onPress={() => router.push(`/grammar/exam-round?level=${level}` as never)}
+          />
+        ) : null}
         <StripButton
           testID={`grammar-level-test-${level}`}
           label={`🎯 ${s.levelTest.button}`}
@@ -167,6 +177,9 @@ export default function ExamStrip({
           />
         ) : null}
       </View>
+      {roundOpen ? (
+        <Text testID={`grammar-exam-round-hint-${level}`} style={[styles.note, { color: muted }]}>{x.examRoundHint}</Text>
+      ) : null}
       {lockNotes.length > 0 ? (
         <View testID={`grammar-exam-lock-${level}`}>
           {lockNotes.map((note) => (

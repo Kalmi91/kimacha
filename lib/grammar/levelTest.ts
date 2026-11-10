@@ -9,6 +9,7 @@ import { shuffleArray } from '@/lib/shuffle';
 import {
   EVIDENCE_WINDOW,
   MIN_ANSWERS_FOR_PCT,
+  type EvidenceKind,
   seenIds,
   TICK_PCT,
   topicPercent,
@@ -138,7 +139,7 @@ export function pickLevelQuestion(topicId: string, ctx: LevelTestCtx, seed: numb
     const last = answers[answers.length - 1]?.id;
     fresh = fresh.filter((q) => q.id !== last);
   }
-  const kindCount = new Map<GrammarKind, number>();
+  const kindCount = new Map<EvidenceKind, number>();
   for (const a of answers) kindCount.set(a.kind, (kindCount.get(a.kind) ?? 0) + 1);
   const count = (q: { kind: GrammarKind }) => kindCount.get(q.kind) ?? 0;
   const least = Math.min(...fresh.map(count));
