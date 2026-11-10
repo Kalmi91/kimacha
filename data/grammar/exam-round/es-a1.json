@@ -1,0 +1,738 @@
+{
+  "lang": "es",
+  "level": "A1",
+  "texts": [
+    {
+      "id": "es-a1-01",
+      "title": "Mi familia",
+      "text": "Me llamo Laura y {{1}} de Puebla. {{2}} familia es grande y vivimos en una casa con jardín. Mi hermana pequeña {{3}} once años. Mis dos hermanos son muy {{4}}. Mi madre {{5}} en una escuela y mi padre trabaja en un banco. Mi abuela también vive con nosotros y cocina muy bien. A mi papá le {{6}} cocinar los domingos.",
+      "gaps": [
+        {
+          "options": [
+            "soy",
+            "estoy",
+            "es"
+          ],
+          "correct": 0,
+          "topic": "ser-estar"
+        },
+        {
+          "options": [
+            "Mis",
+            "Nuestro",
+            "Mi"
+          ],
+          "correct": 2,
+          "topic": "posesivos"
+        },
+        {
+          "options": [
+            "es",
+            "tiene",
+            "está"
+          ],
+          "correct": 1,
+          "topic": "tener-expresiones"
+        },
+        {
+          "options": [
+            "alto",
+            "altos",
+            "altas"
+          ],
+          "correct": 1,
+          "topic": "adjetivo-concordancia"
+        },
+        {
+          "options": [
+            "trabaja",
+            "trabajo",
+            "trabajan"
+          ],
+          "correct": 0,
+          "topic": "presente-regular"
+        },
+        {
+          "options": [
+            "gustan",
+            "gusto",
+            "gusta"
+          ],
+          "correct": 2,
+          "topic": "gustar"
+        }
+      ]
+    },
+    {
+      "id": "es-a1-02",
+      "title": "En el mercado",
+      "text": "Hoy es sábado y voy al mercado con mi tía Rosa. En el mercado hay {{1}} gente. Rosa dice: «Quiero {{2}} tacos, los que tengo aquí en la mano.» Rosa compra dos tacos y yo compro tres tacos: son {{3}} tacos. {{4}} manzanas cuestan veinte pesos. Rosa quiere comprar pan, pero hoy no {{5}} pagar mucho. Ella busca dinero en su bolsa y tiene siete {{6}} ocho pesos.",
+      "gaps": [
+        {
+          "options": [
+            "muy",
+            "mucho",
+            "mucha"
+          ],
+          "correct": 2,
+          "topic": "muy-mucho"
+        },
+        {
+          "options": [
+            "esos",
+            "estos",
+            "aquellos"
+          ],
+          "correct": 1,
+          "topic": "demostrativos"
+        },
+        {
+          "options": [
+            "cinco",
+            "seis",
+            "cuatro"
+          ],
+          "correct": 0,
+          "topic": "numeros-hora-fecha"
+        },
+        {
+          "options": [
+            "Las",
+            "Los",
+            "El"
+          ],
+          "correct": 0,
+          "topic": "articulos-genero"
+        },
+        {
+          "options": [
+            "poder",
+            "pueden",
+            "puede"
+          ],
+          "correct": 2,
+          "topic": "perifrasis-modales"
+        },
+        {
+          "options": [
+            "o",
+            "u",
+            "e"
+          ],
+          "correct": 1,
+          "topic": "conectores-basicos"
+        }
+      ]
+    },
+    {
+      "id": "es-a1-03",
+      "title": "Hambre en casa",
+      "text": "Luis llama a su mamá por teléfono: «Hola, mamá, ¿{{1}} estás?» Ella responde: «Estoy en el mercado, hijo.» Luis dice: «Tengo hambre, pero en el refrigerador no hay {{2}} de comida.» Mamá dice: «El pan {{3}} en la cocina, junto a la ventana.» Luis va {{4}} la cocina. El jugo está a la izquierda del pan. Entonces el pan está a la {{5}} del jugo. Alguien llama a la puerta. Es la señora Díaz. Luis le dice: «Buenos días, señora, ¿{{6}} busca a mi mamá?»",
+      "gaps": [
+        {
+          "options": [
+            "cuándo",
+            "dónde",
+            "quién"
+          ],
+          "correct": 1,
+          "topic": "interrogativos"
+        },
+        {
+          "options": [
+            "nada",
+            "nadie",
+            "nunca"
+          ],
+          "correct": 0,
+          "topic": "negacion"
+        },
+        {
+          "options": [
+            "hay",
+            "es",
+            "está"
+          ],
+          "correct": 2,
+          "topic": "hay-estar"
+        },
+        {
+          "options": [
+            "de",
+            "con",
+            "a"
+          ],
+          "correct": 2,
+          "topic": "preposiciones-basicas"
+        },
+        {
+          "options": [
+            "izquierda",
+            "derecha",
+            "enfrente"
+          ],
+          "correct": 1,
+          "topic": "lugar-direcciones"
+        },
+        {
+          "options": [
+            "usted",
+            "tú",
+            "ustedes"
+          ],
+          "correct": 0,
+          "topic": "tu-usted"
+        }
+      ]
+    },
+    {
+      "id": "es-a1-04",
+      "title": "El cumpleaños de Sofía",
+      "text": "Hoy es el cumpleaños de Sofía y hay una fiesta. Sus tíos {{1}} a llegar a las cinco. Yo {{2}} un pastel de chocolate. Mis padres compran una mochila y {{3}} dan el regalo a Sofía. Pedro canta tres {{4}} para ella. Ya {{5}} las cuatro de la tarde. Hay mucha música y todos comen pastel. En la fiesta hay padres {{6}} hijos.",
+      "gaps": [
+        {
+          "options": [
+            "van",
+            "va",
+            "vamos"
+          ],
+          "correct": 0,
+          "topic": "ir-a-infinitivo"
+        },
+        {
+          "options": [
+            "haco",
+            "hago",
+            "hace"
+          ],
+          "correct": 1,
+          "topic": "presente-irregular"
+        },
+        {
+          "options": [
+            "la",
+            "les",
+            "le"
+          ],
+          "correct": 2,
+          "topic": "pronombres-oi"
+        },
+        {
+          "options": [
+            "canción",
+            "canciones",
+            "canciónes"
+          ],
+          "correct": 1,
+          "topic": "sustantivo-numero"
+        },
+        {
+          "options": [
+            "es",
+            "está",
+            "son"
+          ],
+          "correct": 2,
+          "topic": "numeros-hora-fecha"
+        },
+        {
+          "options": [
+            "e",
+            "y",
+            "u"
+          ],
+          "correct": 0,
+          "topic": "conectores-basicos"
+        }
+      ]
+    },
+    {
+      "id": "es-a1-05",
+      "title": "Mi escuela",
+      "text": "Me gusta mi escuela. Es pequeña pero muy bonita. La escuela {{1}} cerca de mi casa. Mi profesora explica muy {{2}}. Tengo muchos amigos allí. Después de la clase mis compañeros {{3}} al fútbol. Un niño dice: «Profesora, ¿{{4}} puede repetir la pregunta?» Yo escribo mi tarea y la profesora {{5}} lee. Pero en la clase de inglés yo {{6}} entiendo nada.",
+      "gaps": [
+        {
+          "options": [
+            "es",
+            "hay",
+            "está"
+          ],
+          "correct": 2,
+          "topic": "ser-estar"
+        },
+        {
+          "options": [
+            "bien",
+            "buena",
+            "bueno"
+          ],
+          "correct": 0,
+          "topic": "clases-de-palabras"
+        },
+        {
+          "options": [
+            "jugan",
+            "juegan",
+            "jugamos"
+          ],
+          "correct": 1,
+          "topic": "verbos-diptongo"
+        },
+        {
+          "options": [
+            "usted",
+            "tú",
+            "ustedes"
+          ],
+          "correct": 0,
+          "topic": "tu-usted"
+        },
+        {
+          "options": [
+            "lo",
+            "la",
+            "le"
+          ],
+          "correct": 1,
+          "topic": "pronombres-od"
+        },
+        {
+          "options": [
+            "nada",
+            "nadie",
+            "no"
+          ],
+          "correct": 2,
+          "topic": "negacion"
+        }
+      ]
+    },
+    {
+      "id": "es-a1-06",
+      "title": "Un sábado en el parque",
+      "text": "El sábado es un día especial. Ana y yo {{1}} a ir al parque. Vamos {{2}} autobús. Hoy hace {{3}} calor y hay sol. En el parque {{4}} un río bonito y muchos amigos. Ana {{5}} hambre y quiere unos tacos. Mi mamá hace una comida para los dos. Hoy no hay clases en la escuela. A mí me {{6}} las manzanas.",
+      "gaps": [
+        {
+          "options": [
+            "va",
+            "vamos",
+            "van"
+          ],
+          "correct": 1,
+          "topic": "ir-a-infinitivo"
+        },
+        {
+          "options": [
+            "a",
+            "con",
+            "en"
+          ],
+          "correct": 2,
+          "topic": "preposiciones-basicas"
+        },
+        {
+          "options": [
+            "mucho",
+            "muy",
+            "mucha"
+          ],
+          "correct": 0,
+          "topic": "muy-mucho"
+        },
+        {
+          "options": [
+            "está",
+            "es",
+            "hay"
+          ],
+          "correct": 2,
+          "topic": "hay-estar"
+        },
+        {
+          "options": [
+            "tiene",
+            "está",
+            "es"
+          ],
+          "correct": 0,
+          "topic": "tener-expresiones"
+        },
+        {
+          "options": [
+            "gusta",
+            "gustan",
+            "gusto"
+          ],
+          "correct": 1,
+          "topic": "gustar"
+        }
+      ]
+    },
+    {
+      "id": "es-a1-07",
+      "title": "En el restaurante",
+      "text": "Ana y Luis comen en un restaurante. El mesero pregunta: «¿{{1}} quieren tomar?» Ana dice: «Dos cafés, por favor.» El mesero trae agua. {{2}} agua está muy fría, y los tacos son muy {{3}}. Ana tiene un café en la mano. Ella dice: «{{4}} café que tengo aquí está muy caliente.» Después Ana le dice a Luis: «Yo te {{5}} mi pastel.» Luis {{6}} que pagar la cuenta.",
+      "gaps": [
+        {
+          "options": [
+            "Qué",
+            "Quién",
+            "Dónde"
+          ],
+          "correct": 0,
+          "topic": "interrogativos"
+        },
+        {
+          "options": [
+            "La",
+            "Los",
+            "El"
+          ],
+          "correct": 2,
+          "topic": "articulos-genero"
+        },
+        {
+          "options": [
+            "bueno",
+            "buenos",
+            "buena"
+          ],
+          "correct": 1,
+          "topic": "adjetivo-concordancia"
+        },
+        {
+          "options": [
+            "Ese",
+            "Este",
+            "Aquel"
+          ],
+          "correct": 1,
+          "topic": "demostrativos"
+        },
+        {
+          "options": [
+            "das",
+            "da",
+            "doy"
+          ],
+          "correct": 2,
+          "topic": "quien-a-quien"
+        },
+        {
+          "options": [
+            "tiene",
+            "tener",
+            "tienen"
+          ],
+          "correct": 0,
+          "topic": "perifrasis-modales"
+        }
+      ]
+    },
+    {
+      "id": "es-a1-08",
+      "title": "Una pregunta en la plaza",
+      "text": "Un turista llega a la plaza. Pregunta a un señor mayor: «Por favor, señor, ¿{{1}} sabe dónde está el hotel?» El señor dice: «Está al otro lado de la calle, {{2}} del banco. Yo {{3}} al banco todos los lunes. Mi hija trabaja {{4}} el banco. Cerca de aquí {{5}} una farmacia y un restaurante.» El turista pregunta: «¿{{6}} cuesta una noche en el hotel?» El señor dice que cuesta cien pesos.",
+      "gaps": [
+        {
+          "options": [
+            "tú",
+            "ustedes",
+            "usted"
+          ],
+          "correct": 2,
+          "topic": "tu-usted"
+        },
+        {
+          "options": [
+            "derecha",
+            "enfrente",
+            "izquierda"
+          ],
+          "correct": 1,
+          "topic": "lugar-direcciones"
+        },
+        {
+          "options": [
+            "voy",
+            "va",
+            "vas"
+          ],
+          "correct": 0,
+          "topic": "presente-irregular"
+        },
+        {
+          "options": [
+            "en",
+            "a",
+            "por"
+          ],
+          "correct": 0,
+          "topic": "preposiciones-basicas"
+        },
+        {
+          "options": [
+            "está",
+            "hay",
+            "es"
+          ],
+          "correct": 1,
+          "topic": "hay-estar"
+        },
+        {
+          "options": [
+            "Cuándo",
+            "Quién",
+            "Cuánto"
+          ],
+          "correct": 2,
+          "topic": "interrogativos"
+        }
+      ]
+    },
+    {
+      "id": "es-a1-09",
+      "title": "En la oficina",
+      "text": "Me llamo Juan y trabajo en una oficina. {{1}} oficina está en el centro. Hoy es mi {{2}} día de trabajo. La oficina es grande y bonita. Mis compañeros {{3}} a las ocho. Yo escribo un mensaje y mi jefe {{4}} lee. Ana me pregunta: «¿Por qué no sales a comer?» Yo digo: «{{5}} tengo mucho trabajo.» Ya es de noche y {{6}} hay nadie en la oficina.",
+      "gaps": [
+        {
+          "options": [
+            "Nuestros",
+            "Nuestra",
+            "Nuestro"
+          ],
+          "correct": 1,
+          "topic": "posesivos"
+        },
+        {
+          "options": [
+            "primer",
+            "primero",
+            "uno"
+          ],
+          "correct": 0,
+          "topic": "numeros-hora-fecha"
+        },
+        {
+          "options": [
+            "llega",
+            "llego",
+            "llegan"
+          ],
+          "correct": 2,
+          "topic": "presente-regular"
+        },
+        {
+          "options": [
+            "la",
+            "le",
+            "lo"
+          ],
+          "correct": 2,
+          "topic": "pronombres-od"
+        },
+        {
+          "options": [
+            "Porque",
+            "Por qué",
+            "Por eso"
+          ],
+          "correct": 0,
+          "topic": "conectores-basicos"
+        },
+        {
+          "options": [
+            "nada",
+            "no",
+            "nadie"
+          ],
+          "correct": 1,
+          "topic": "negacion"
+        }
+      ]
+    },
+    {
+      "id": "es-a1-10",
+      "title": "Diego está enfermo",
+      "text": "Mi hijo Diego está enfermo y no va hoy a la escuela. Mi tío {{1}} médico y viene a ver a Diego. Diego no {{2}} bien por la noche y {{3}} frío. Hoy Diego no {{4}} ir a la escuela. Mi tío dice que Diego tiene que beber {{5}} agua. También tiene que comer sopa tres {{6}} al día. Pronto va a estar mejor.",
+      "gaps": [
+        {
+          "options": [
+            "es",
+            "está",
+            "tiene"
+          ],
+          "correct": 0,
+          "topic": "ser-estar"
+        },
+        {
+          "options": [
+            "dorme",
+            "duerme",
+            "dormimos"
+          ],
+          "correct": 1,
+          "topic": "verbos-diptongo"
+        },
+        {
+          "options": [
+            "está",
+            "es",
+            "tiene"
+          ],
+          "correct": 2,
+          "topic": "tener-expresiones"
+        },
+        {
+          "options": [
+            "puede",
+            "poder",
+            "pueden"
+          ],
+          "correct": 0,
+          "topic": "perifrasis-modales"
+        },
+        {
+          "options": [
+            "muy",
+            "mucha",
+            "mucho"
+          ],
+          "correct": 1,
+          "topic": "muy-mucho"
+        },
+        {
+          "options": [
+            "vezes",
+            "vez",
+            "veces"
+          ],
+          "correct": 2,
+          "topic": "sustantivo-numero"
+        }
+      ]
+    },
+    {
+      "id": "es-a1-11",
+      "title": "Un viernes con amigos",
+      "text": "Es viernes y quiero ver a mis amigos. A Lucía y a Pedro {{1}} gusta el cine. Yo escribo a Pedro y {{2}} mando una foto. Pedro me {{3}} un mensaje. Hoy yo {{4}} de mi casa a las cuatro. Mañana nosotros {{5}} a ver una película. Después vamos a la casa de Pedro. Su casa es grande y bonita. Él tiene un {{6}} muy grande.",
+      "gaps": [
+        {
+          "options": [
+            "le",
+            "nos",
+            "les"
+          ],
+          "correct": 2,
+          "topic": "gustar"
+        },
+        {
+          "options": [
+            "le",
+            "lo",
+            "les"
+          ],
+          "correct": 0,
+          "topic": "pronombres-oi"
+        },
+        {
+          "options": [
+            "mando",
+            "manda",
+            "mandamos"
+          ],
+          "correct": 1,
+          "topic": "quien-a-quien"
+        },
+        {
+          "options": [
+            "sale",
+            "salgo",
+            "salimos"
+          ],
+          "correct": 1,
+          "topic": "presente-irregular"
+        },
+        {
+          "options": [
+            "vamos",
+            "van",
+            "vas"
+          ],
+          "correct": 0,
+          "topic": "ir-a-infinitivo"
+        },
+        {
+          "options": [
+            "come",
+            "aquí",
+            "perro"
+          ],
+          "correct": 2,
+          "topic": "clases-de-palabras"
+        }
+      ]
+    },
+    {
+      "id": "es-a1-12",
+      "title": "Un viaje a Puebla",
+      "text": "Mañana mi familia y yo vamos {{1}} Puebla. Mi mochila es de dos {{2}}: blanco y azul. Salimos a las ocho. El viaje es de tres horas, y llegamos a las {{3}}. Mi mamá pregunta: «¿{{4}} compramos el boleto?» Mi papá dice: «En la estación.» Mis padres viajan con nosotros. Ellos {{5}} el domingo. En el autobús, mi hermano tiene una fruta en la mano. Él pregunta: «Mamá, ¿qué es {{6}}?»",
+      "gaps": [
+        {
+          "options": [
+            "en",
+            "a",
+            "de"
+          ],
+          "correct": 1,
+          "topic": "preposiciones-basicas"
+        },
+        {
+          "options": [
+            "color",
+            "colors",
+            "colores"
+          ],
+          "correct": 2,
+          "topic": "sustantivo-numero"
+        },
+        {
+          "options": [
+            "once",
+            "diez",
+            "doce"
+          ],
+          "correct": 0,
+          "topic": "numeros-hora-fecha"
+        },
+        {
+          "options": [
+            "Cuándo",
+            "Quién",
+            "Dónde"
+          ],
+          "correct": 2,
+          "topic": "interrogativos"
+        },
+        {
+          "options": [
+            "vuelve",
+            "vuelven",
+            "volvemos"
+          ],
+          "correct": 1,
+          "topic": "verbos-diptongo"
+        },
+        {
+          "options": [
+            "esto",
+            "este",
+            "ese"
+          ],
+          "correct": 0,
+          "topic": "demostrativos"
+        }
+      ]
+    }
+  ]
+}
