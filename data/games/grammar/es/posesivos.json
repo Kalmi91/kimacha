@@ -684,7 +684,7 @@
       "kind": "form",
       "verb": "Masculino singular",
       "person": "yo",
-      "ask": { "en": "Type the possessive (owner · gender and number of the thing owned)", "es": "Escribe el posesivo (poseedor · género y número de lo poseído)" },
+      "q": { "en": "What is the possessive for yo, for a masculine singular thing owned? (before the noun)", "es": "¿Cuál es el posesivo para «yo», con una cosa masculino singular? (antes del sustantivo)" },
       "answer": "mi",
       "table": "posesivos",
       "wrong": {
@@ -703,7 +703,7 @@
       "kind": "form",
       "verb": "Masculino plural",
       "person": "tú",
-      "ask": { "en": "Type the possessive (owner · gender and number of the thing owned)", "es": "Escribe el posesivo (poseedor · género y número de lo poseído)" },
+      "q": { "en": "What is the possessive for tú, for a masculine plural thing owned? (before the noun)", "es": "¿Cuál es el posesivo para «tú», con una cosa masculino plural? (antes del sustantivo)" },
       "answer": "tus",
       "table": "posesivos",
       "wrong": {
@@ -722,7 +722,7 @@
       "kind": "form",
       "verb": "Femenino singular",
       "person": "él/ella/usted",
-      "ask": { "en": "Type the possessive (owner · gender and number of the thing owned)", "es": "Escribe el posesivo (poseedor · género y número de lo poseído)" },
+      "q": { "en": "What is the possessive for él/ella/usted, for a feminine singular thing owned? (before the noun)", "es": "¿Cuál es el posesivo para «él/ella/usted», con una cosa femenino singular? (antes del sustantivo)" },
       "answer": "su",
       "table": "posesivos",
       "wrong": {
@@ -741,7 +741,7 @@
       "kind": "form",
       "verb": "Masculino singular",
       "person": "nosotros",
-      "ask": { "en": "Type the possessive (owner · gender and number of the thing owned)", "es": "Escribe el posesivo (poseedor · género y número de lo poseído)" },
+      "q": { "en": "What is the possessive for nosotros, for a masculine singular thing owned? (before the noun)", "es": "¿Cuál es el posesivo para «nosotros», con una cosa masculino singular? (antes del sustantivo)" },
       "answer": "nuestro",
       "table": "posesivos",
       "wrong": {
@@ -756,7 +756,7 @@
       "kind": "form",
       "verb": "Femenino singular",
       "person": "nosotros",
-      "ask": { "en": "Type the possessive (owner · gender and number of the thing owned)", "es": "Escribe el posesivo (poseedor · género y número de lo poseído)" },
+      "q": { "en": "What is the possessive for nosotros, for a feminine singular thing owned? (before the noun)", "es": "¿Cuál es el posesivo para «nosotros», con una cosa femenino singular? (antes del sustantivo)" },
       "answer": "nuestra",
       "table": "posesivos",
       "wrong": {
@@ -771,7 +771,7 @@
       "kind": "form",
       "verb": "Femenino plural",
       "person": "nosotros",
-      "ask": { "en": "Type the possessive (owner · gender and number of the thing owned)", "es": "Escribe el posesivo (poseedor · género y número de lo poseído)" },
+      "q": { "en": "What is the possessive for nosotros, for a feminine plural thing owned? (before the noun)", "es": "¿Cuál es el posesivo para «nosotros», con una cosa femenino plural? (antes del sustantivo)" },
       "answer": "nuestras",
       "table": "posesivos",
       "wrong": {
@@ -786,7 +786,7 @@
       "kind": "form",
       "verb": "Masculino plural",
       "person": "ellos/ellas/ustedes",
-      "ask": { "en": "Type the possessive (owner · gender and number of the thing owned)", "es": "Escribe el posesivo (poseedor · género y número de lo poseído)" },
+      "q": { "en": "What is the possessive for ellos/ellas/ustedes, for a masculine plural thing owned? (before the noun)", "es": "¿Cuál es el posesivo para «ellos/ellas/ustedes», con una cosa masculino plural? (antes del sustantivo)" },
       "answer": "sus",
       "table": "posesivos",
       "wrong": {
@@ -805,7 +805,7 @@
       "kind": "form",
       "verb": "Femenino singular",
       "person": "yo",
-      "ask": { "en": "Type the stressed possessive that comes after the noun (like una amiga ___)", "es": "Escribe el posesivo tónico que va después del sustantivo (como una amiga ___)" },
+      "q": { "en": "What is the stressed possessive for yo, for a feminine singular thing owned? (after the noun, like una amiga ___)", "es": "¿Cuál es el posesivo tónico para «yo», con una cosa femenino singular? (después del sustantivo, como una amiga ___)" },
       "answer": "mía",
       "table": "posesivos-tonicos",
       "wrong": {
@@ -824,7 +824,7 @@
       "kind": "form",
       "verb": "Masculino singular",
       "person": "tú",
-      "ask": { "en": "Type the stressed possessive that comes after the noun (like una amiga ___)", "es": "Escribe el posesivo tónico que va después del sustantivo (como una amiga ___)" },
+      "q": { "en": "What is the stressed possessive for tú, for a masculine singular thing owned? (after the noun, like una amiga ___)", "es": "¿Cuál es el posesivo tónico para «tú», con una cosa masculino singular? (después del sustantivo, como una amiga ___)" },
       "answer": "tuyo",
       "table": "posesivos-tonicos",
       "wrong": {
@@ -843,7 +843,7 @@
       "kind": "form",
       "verb": "Masculino plural",
       "person": "él/ella/usted",
-      "ask": { "en": "Type the stressed possessive that comes after the noun (like una amiga ___)", "es": "Escribe el posesivo tónico que va después del sustantivo (como una amiga ___)" },
+      "q": { "en": "What is the stressed possessive for él/ella/usted, for a masculine plural thing owned? (after the noun, like una amiga ___)", "es": "¿Cuál es el posesivo tónico para «él/ella/usted», con una cosa masculino plural? (después del sustantivo, como una amiga ___)" },
       "answer": "suyos",
       "table": "posesivos-tonicos",
       "wrong": {
@@ -862,7 +862,7 @@
       "kind": "form",
       "verb": "Femenino plural",
       "person": "ellos/ellas/ustedes",
-      "ask": { "en": "Type the stressed possessive that comes after the noun (like una amiga ___)", "es": "Escribe el posesivo tónico que va después del sustantivo (como una amiga ___)" },
+      "q": { "en": "What is the stressed possessive for ellos/ellas/ustedes, for a feminine plural thing owned? (after the noun, like una amiga ___)", "es": "¿Cuál es el posesivo tónico para «ellos/ellas/ustedes», con una cosa femenino plural? (después del sustantivo, como una amiga ___)" },
       "answer": "suyas",
       "table": "posesivos-tonicos",
       "wrong": {
@@ -881,7 +881,7 @@
       "kind": "form",
       "verb": "Femenino singular",
       "person": "ellos/ellas/ustedes",
-      "ask": { "en": "Type the stressed possessive that comes after the noun (like una amiga ___)", "es": "Escribe el posesivo tónico que va después del sustantivo (como una amiga ___)" },
+      "q": { "en": "What is the stressed possessive for ellos/ellas/ustedes, for a feminine singular thing owned? (after the noun, like una amiga ___)", "es": "¿Cuál es el posesivo tónico para «ellos/ellas/ustedes», con una cosa femenino singular? (después del sustantivo, como una amiga ___)" },
       "answer": "suya",
       "table": "posesivos-tonicos",
       "wrong": {

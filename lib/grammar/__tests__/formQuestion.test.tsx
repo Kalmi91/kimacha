@@ -10,7 +10,7 @@ import type { FormItem, LessonBlock } from '@/lib/grammar/lessonTypes';
 import { ThemeProvider } from '@/lib/ThemeContext';
 
 const FOUR: { topic: string; id: string; question: string }[] = [
-  { topic: 'quien-a-quien', id: 'qq-form-09', question: 'What is the indirect object pronoun for él / usted (masculino)?' },
+  { topic: 'quien-a-quien', id: 'qq-form-09', question: 'What is the indirect object pronoun for él / usted (masculine)?' },
   { topic: 'ir-a-infinitivo', id: 'ir-form-01', question: 'What is the yo form of ir a? (without the infinitive)' },
   { topic: 'tener-expresiones', id: 'te-form-06', question: 'How do you say "to be cold (a person)" with tener?' },
   { topic: 'tu-usted', id: 'tu-form-11', question: 'What is the form of querer for ustedes?' },

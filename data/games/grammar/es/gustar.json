@@ -599,7 +599,7 @@
       "kind": "form",
       "verb": "gustar + una cosa",
       "person": "yo",
-      "ask": { "en": "Type the pronoun and the form of gustar for this person", "es": "Escribe el pronombre y la forma de gustar para esta persona" },
+      "q": { "en": "What are the pronoun and the form of gustar for yo, with one thing liked? (two words)", "es": "¿Cuáles son el pronombre y la forma de «gustar» para «yo», con una cosa que gusta? (dos palabras)" },
       "answer": "me gusta",
       "table": "gustar-presente",
       "wrong": {
@@ -626,7 +626,7 @@
       "kind": "form",
       "verb": "gustar + una cosa",
       "person": "tú",
-      "ask": { "en": "Type the pronoun and the form of gustar for this person", "es": "Escribe el pronombre y la forma de gustar para esta persona" },
+      "q": { "en": "What are the pronoun and the form of gustar for tú, with one thing liked? (two words)", "es": "¿Cuáles son el pronombre y la forma de «gustar» para «tú», con una cosa que gusta? (dos palabras)" },
       "answer": "te gusta",
       "table": "gustar-presente",
       "wrong": {
@@ -653,7 +653,7 @@
       "kind": "form",
       "verb": "gustar + una cosa",
       "person": "él/ella/usted",
-      "ask": { "en": "Type the pronoun and the form of gustar for this person", "es": "Escribe el pronombre y la forma de gustar para esta persona" },
+      "q": { "en": "What are the pronoun and the form of gustar for él/ella/usted, with one thing liked? (two words)", "es": "¿Cuáles son el pronombre y la forma de «gustar» para «él/ella/usted», con una cosa que gusta? (dos palabras)" },
       "answer": "le gusta",
       "table": "gustar-presente",
       "wrong": {
@@ -684,7 +684,7 @@
       "kind": "form",
       "verb": "gustar + una cosa",
       "person": "nosotros",
-      "ask": { "en": "Type the pronoun and the form of gustar for this person", "es": "Escribe el pronombre y la forma de gustar para esta persona" },
+      "q": { "en": "What are the pronoun and the form of gustar for nosotros, with one thing liked? (two words)", "es": "¿Cuáles son el pronombre y la forma de «gustar» para «nosotros», con una cosa que gusta? (dos palabras)" },
       "answer": "nos gusta",
       "table": "gustar-presente",
       "wrong": {
@@ -711,7 +711,7 @@
       "kind": "form",
       "verb": "gustar + una cosa",
       "person": "ellos/ellas/ustedes",
-      "ask": { "en": "Type the pronoun and the form of gustar for this person", "es": "Escribe el pronombre y la forma de gustar para esta persona" },
+      "q": { "en": "What are the pronoun and the form of gustar for ellos/ellas/ustedes, with one thing liked? (two words)", "es": "¿Cuáles son el pronombre y la forma de «gustar» para «ellos/ellas/ustedes», con una cosa que gusta? (dos palabras)" },
       "answer": "les gusta",
       "table": "gustar-presente",
       "wrong": {
@@ -742,7 +742,7 @@
       "kind": "form",
       "verb": "gustar + varias cosas",
       "person": "yo",
-      "ask": { "en": "Type the pronoun and the form of gustar for this person", "es": "Escribe el pronombre y la forma de gustar para esta persona" },
+      "q": { "en": "What are the pronoun and the form of gustar for yo, with several things liked? (two words)", "es": "¿Cuáles son el pronombre y la forma de «gustar» para «yo», con varias cosas que gustan? (dos palabras)" },
       "answer": "me gustan",
       "table": "gustar-presente",
       "wrong": {
@@ -769,7 +769,7 @@
       "kind": "form",
       "verb": "gustar + varias cosas",
       "person": "tú",
-      "ask": { "en": "Type the pronoun and the form of gustar for this person", "es": "Escribe el pronombre y la forma de gustar para esta persona" },
+      "q": { "en": "What are the pronoun and the form of gustar for tú, with several things liked? (two words)", "es": "¿Cuáles son el pronombre y la forma de «gustar» para «tú», con varias cosas que gustan? (dos palabras)" },
       "answer": "te gustan",
       "table": "gustar-presente",
       "wrong": {
@@ -796,7 +796,7 @@
       "kind": "form",
       "verb": "gustar + varias cosas",
       "person": "él/ella/usted",
-      "ask": { "en": "Type the pronoun and the form of gustar for this person", "es": "Escribe el pronombre y la forma de gustar para esta persona" },
+      "q": { "en": "What are the pronoun and the form of gustar for él/ella/usted, with several things liked? (two words)", "es": "¿Cuáles son el pronombre y la forma de «gustar» para «él/ella/usted», con varias cosas que gustan? (dos palabras)" },
       "answer": "le gustan",
       "table": "gustar-presente",
       "wrong": {
@@ -827,7 +827,7 @@
       "kind": "form",
       "verb": "gustar + varias cosas",
       "person": "nosotros",
-      "ask": { "en": "Type the pronoun and the form of gustar for this person", "es": "Escribe el pronombre y la forma de gustar para esta persona" },
+      "q": { "en": "What are the pronoun and the form of gustar for nosotros, with several things liked? (two words)", "es": "¿Cuáles son el pronombre y la forma de «gustar» para «nosotros», con varias cosas que gustan? (dos palabras)" },
       "answer": "nos gustan",
       "table": "gustar-presente",
       "wrong": {
@@ -854,7 +854,7 @@
       "kind": "form",
       "verb": "gustar + varias cosas",
       "person": "ellos/ellas/ustedes",
-      "ask": { "en": "Type the pronoun and the form of gustar for this person", "es": "Escribe el pronombre y la forma de gustar para esta persona" },
+      "q": { "en": "What are the pronoun and the form of gustar for ellos/ellas/ustedes, with several things liked? (two words)", "es": "¿Cuáles son el pronombre y la forma de «gustar» para «ellos/ellas/ustedes», con varias cosas que gustan? (dos palabras)" },
       "answer": "les gustan",
       "table": "gustar-presente",
       "wrong": {

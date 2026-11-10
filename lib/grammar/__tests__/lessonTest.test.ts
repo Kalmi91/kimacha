@@ -308,20 +308,20 @@ describe('form tasks and result data', () => {
       }
     }
     expect(checked).toBeGreaterThan(2000);
-    expect(own).toBe(27);
+    expect(own).toBe(73);
     expect(tables).toBeGreaterThan(checked / 2);
   });
 
   it('a verb table asks "What is the form of verb (meaning) for person?"; any other table names the column, the cell and the table', () => {
     expect(byId('es', 'gustar', 'gu-form-12').view).toMatchObject({
       card: 'type',
-      prompt: 'What is the form of gustar + varias cosas (gustar + several things) for ellos/ellas/ustedes?',
+      prompt: 'What are the pronoun and the form of gustar for ellos/ellas/ustedes, with several things liked? (two words)',
     });
     expect(byId('es', 'interrogativos', 'int-form-04').view).toMatchObject({
       card: 'type',
       prompt: 'What is the question word for A la tienda? (From the answer to the question word)',
     });
-    expect(byId('es', 'numeros-hora-fecha', 'nh-form-06').view).toMatchObject({ card: 'type', prompt: 'What is the word for 1:00? (Numbers)' });
+    expect(byId('es', 'numeros-hora-fecha', 'nh-form-06').view).toMatchObject({ card: 'type', prompt: 'How do you write the time 1:00 in Spanish words?' });
     expect(byId('es', 'presente-regular', 'pr-form-01').view).toMatchObject({ prompt: 'What is the form of hablar for yo?' });
   });
   it('every item kind that has a translation carries it in detail.tr (why, spot, gap, mark), none repeats the sentence', () => {
