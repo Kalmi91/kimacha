@@ -9,16 +9,16 @@ export const CORPUS_NAMES: Record<'es' | 'en' | 'hu' | 'de', string[]> = {
   ],
   en: [
     'american', 'anna', 'april', 'atm', 'august', 'bermuda', 'bluetooth', 'budapest', 'chinese', 'christmas',
-    'cv', 'december', 'earth', 'england', 'english', 'europe', 'february', 'friday', 'fridays', 'german', 'god',
-    "i'd", "i'll", "i'm", "i've", 'id', 'italian', 'january', 'japanese', 'john', "john's", 'july', 'june',
-    'kings', 'london', 'mary', 'metrobús', 'mexican', 'monday', 'mondays', 'november', 'october', 'peter',
-    'péter', 'saturday', 'saturdays', 'september', 'sim', 'spain', 'spaniards', 'spanish', 'sunday', 'sundays',
-    'thursday', 'tom', 'tuesday', 'tuesdays', 'tv', 'u-turn', 'wednesday', 'wednesdays', 'wi-fi',
+    'cv', 'december', 'earth', 'england', 'english', 'europe', 'european', 'february', 'friday', 'fridays',
+    'german', 'god', "i'd", "i'll", "i'm", "i've", 'id', 'italian', 'january', 'japanese', 'john', "john's",
+    'july', 'june', 'kings', 'london', 'mary', 'metrobús', 'mexican', 'monday', 'mondays', 'november', 'october',
+    'peter', 'péter', 'saturday', 'saturdays', 'september', 'sim', 'spain', 'spaniards', 'spanish', 'sunday',
+    'sundays', 'thursday', 'thursdays', 'tom', 'tuesday', 'tv', 'u-turn', 'wednesday', 'wednesdays', 'wi-fi',
   ],
   hu: [
     'anglia', 'anna', 'budapesten', 'budapestre', 'európába', 'európában', 'holdra', 'isten', 'john', 'london',
-    'londonba', 'londonban', 'londonból', 'mary', 'metrobús', 'péter', 'sim-kártyáját', 'spanyolország',
-    'spanyolországba', 'spanyolországban', 'spanyolországból', 'tom', 'wc-papír', 'önt',
+    'londonba', 'londonban', 'londonból', 'mary', 'metrobusszal', 'metrobús', 'péter', 'sim-kártyáját',
+    'spanyolország', 'spanyolországba', 'spanyolországban', 'spanyolországból', 'tom', 'wc-papír', 'önt',
   ],
   de: [
     'amerika', 'anna', 'england', 'peter', 'spanien',
