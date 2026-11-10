@@ -145,7 +145,7 @@
             { "options": ["de", "que", "como"], "correct": 1, "topic": "comparativos-superlativos" },
             { "options": ["porque", "puesto que", "aunque"], "correct": 2, "topic": "concesivas" },
             { "options": ["lúcido", "lúcidos", "lúcida"], "correct": 2, "topic": "adjetivo-concordancia" },
-            { "options": ["lo", "la", "le"], "correct": 0, "topic": "pronombres-od" },
+            { "options": ["lo", "la", "le"], "correct": 0 },
             { "options": ["sobre", "por", "entre"], "correct": 1 },
             { "options": ["dejó", "ocupó", "rechazó"], "correct": 1 },
             { "options": ["pero", "sino", "pues"], "correct": 0, "topic": "conectores-basicos" }
