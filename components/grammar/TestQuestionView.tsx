@@ -29,8 +29,6 @@ export default function TestQuestionView({
       return (
         <ExamTypeCard
           prompt={v.prompt}
-          heading={v.heading}
-          label={v.label}
           bottomPad={bottomPad}
           hint={v.hint}
           answer={v.answer}

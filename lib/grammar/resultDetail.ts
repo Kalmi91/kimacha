@@ -66,33 +66,28 @@ export function askedColumn(table: TableBlock, verb: string): number {
 const lowerFirst = (s: string) => (s.length > 1 && s[1] === s[1].toLowerCase() ? s[0].toLowerCase() + s.slice(1) : s);
 
 export interface FormTask {
-  prompt: string;
-  hint: string;
-  /** Not a verb table: the table's title and the first column's header label the cell. */
-  heading?: string;
-  label?: string;
+  /** The whole question: the one thing the level test shows above the input (FB642-646). */
+  question: string;
 }
 
-/** The task of a form item: a verb table keeps `verb (meaning) · person`; any other table gets its title, the column label and the cell. */
-export function formTask(item: FormItem, table: TableBlock | undefined, pick: Pick, fallbackHint: string): FormTask {
+/** The question of a form item: the item's own `q`, else one sentence generated from its verb, person and table. */
+export function formTask(item: FormItem, table: TableBlock | undefined, pick: Pick): FormTask {
+  if (item.q) return { question: pick(item.q) };
   const s = t().levelTest;
+  // a sentence as the person (a gap in a sentence) must not end the question with ".?"
+  const person = item.person.replace(/[.!?]+$/, '');
   if (!table || isPersonTable(table)) {
     const headerCell = table ? table.header.find((h) => h.es === item.verb) : undefined;
     const localized = headerCell ? pick(headerCell) : undefined;
     const verbLabel = localized && localized !== item.verb ? `${item.verb} (${localized})` : item.verb;
-    return { prompt: `${verbLabel} · ${item.person}`, hint: item.ask ? pick(item.ask) : table ? s.formVerbHint : fallbackHint };
+    return { question: s.formQuestionVerb(verbLabel, person) };
   }
   const ci = askedColumn(table, item.verb);
-  // the cell is not a row of the table (or the column is unknown): the old stem `verb · person` is the only askable task
-  if (ci < 0 || !table.rows.some((r) => r[0] === item.person)) return { prompt: `${item.verb} · ${item.person}`, hint: fallbackHint };
+  // the cell is not a row of the table (or the column is unknown): verb and person are all there is to ask about
+  if (ci < 0 || !table.rows.some((r) => r[0] === item.person)) return { question: s.formQuestionVerb(item.verb, person) };
   const asked = pick(table.header[ci]);
-  return {
-    prompt: item.person,
-    // German nouns keep their capital letter
-    hint: item.ask ? pick(item.ask) : s.formColumnHint(currentLanguage() === 'de' ? asked : lowerFirst(asked)),
-    heading: pick(table.title),
-    label: pick(table.header[0]),
-  };
+  // German nouns keep their capital letter
+  return { question: s.formQuestionColumn(currentLanguage() === 'de' ? asked : lowerFirst(asked), person, pick(table.title)) };
 }
 
 /** The nearest text or tip block before the table, or undefined. */

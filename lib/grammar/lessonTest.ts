@@ -120,7 +120,7 @@ export function lessonTestUnlocked(lesson: GrammarTopicData, rows: Row[], topicI
 
 export type LessonTestView =
   | { card: 'choice'; heading: string; text: string; options: string[]; correctIndex: number }
-  | { card: 'type'; prompt: string; hint?: string; heading?: string; label?: string; answer: string; accept?: string[]; sentence: boolean; keepUmlauts?: boolean }
+  | { card: 'type'; prompt: string; hint?: string; answer: string; accept?: string[]; sentence: boolean; keepUmlauts?: boolean }
   | { card: 'tiles'; prompt: string; answerTokens: string[]; sentence: string }
   | { card: 'match'; pairs: { left: string; right: string }[] };
 
@@ -207,23 +207,20 @@ function toQuestion(r: GrammarRoundItem, ctx: Ctx): LessonTestQuestion | null {
   if (isFormItem(item)) {
     const table = ctx.topic.body.find((b) => b.kind === 'table' && b.id === item.table);
     const tableBlock = table && table.kind === 'table' ? table : undefined;
-    const task = formTask(item, tableBlock, pick, s.grammar.formHint);
+    const task = formTask(item, tableBlock, pick);
     return {
       id: item.id,
       kind,
       view: {
         card: 'type',
-        prompt: task.prompt,
-        hint: task.hint,
-        ...(task.heading ? { heading: task.heading, label: task.label } : {}),
+        prompt: task.question,
         answer: item.answer,
         accept: item.accept,
         sentence: false,
         // German: the umlaut and the ß of the inflected form are the thing asked (Väter), like in the form drill.
         ...(ctx.learnedLang === 'de' ? { keepUmlauts: true } : {}),
       },
-      // a non-verb table: the label goes with the cell, so the miss lists keep the context
-      review: { question: task.label ? `${task.label}: ${task.prompt}` : task.prompt, answer: item.answer },
+      review: { question: task.question, answer: item.answer },
       detail: formDetail(item, tableBlock, ctx.topic.body, pick, ctx.learnedLang),
     };
   }

@@ -755,6 +755,16 @@ function auditFormItem(item, itemPath, topic, tableIds, lang = 'es') {
     if (!Array.isArray(item.accept)) p1.push({ path: itemPath, issue: 'form accept must be an array' });
     else for (const alt of item.accept) if (alt === item.answer) p1.push({ path: itemPath, issue: `form accept entry equals answer: "${alt}"` });
   }
+  // optional whole question of the level test (FB642-646): { en, es }, a question that does not give the answer away
+  if (item.q !== undefined) {
+    checkLangs(item.q, `${itemPath} q`);
+    const words = (str) => String(str ?? '').toLowerCase().split(/[^\p{L}]+/u).filter(Boolean);
+    const answerWords = words(item.answer);
+    for (const lang of LANGS) {
+      const qWords = words(item.q?.[lang]);
+      if (answerWords.length > 0 && answerWords.every((w) => qWords.includes(w))) p1.push({ path: itemPath, issue: `form q (${lang}) contains the answer "${item.answer}"` });
+    }
+  }
   // optional typed-mistake texts for the level test's result card: typed answer -> { en, es }, never a right answer
   if (item.wrong !== undefined) {
     if (!item.wrong || typeof item.wrong !== 'object' || Array.isArray(item.wrong)) p1.push({ path: itemPath, issue: 'form wrong must be an object' });

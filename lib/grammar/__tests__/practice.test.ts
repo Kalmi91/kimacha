@@ -126,7 +126,7 @@ describe('buildPractice over the real lessons of all four courses', () => {
     const estar = col('estar-presente');
     // round robin: the missed verb and person first (ser, él/ella/usted = es), the first 6 hold both verbs on different persons
     expect(forms[0]).toBe('es');
-    const first6 = tasks.slice(0, 6).map((q) => (q.view.card === 'type' ? q.view.label ?? q.view.prompt : ''));
+    const first6 = tasks.slice(0, 6).map((q) => (q.view.card === 'type' ? q.view.prompt : ''));
     expect(forms.slice(0, 6).some((a, i) => i % 2 === 1 && estar.includes(a) && !ser.includes(a))).toBe(true);
     expect(new Set(first6).size).toBe(6);
     // every form of ser AND of estar is practised

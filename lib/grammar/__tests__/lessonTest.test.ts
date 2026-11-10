@@ -276,64 +276,54 @@ describe('form tasks and result data', () => {
     buildLessonTest(lessonFor(lang, topic)!, { seed: 1, learnedLang: lang, contentLang, size: 9999 });
   const byId = (lang: string, topic: string, id: string) => questionsOf(lang, topic).find((q) => q.id === id)!;
 
-  it('the task line of a form item is never a bare column header, in all four courses', () => {
+  it('every form item is ONE question: its own q or a generated one, never verb · person with a hint, in all four courses', () => {
     let checked = 0;
     let tables = 0;
+    let own = 0;
     for (const lang of COURSES) {
       for (const lesson of getGrammarTopics(lang)) {
-        const headers = new Set(
-          lesson.body.flatMap((b) => (b.kind === 'table' ? b.header.flatMap((h) => Object.values(h).map((v) => v.trim().toLowerCase())) : []))
-        );
         for (const q of buildLessonTest(lesson, { seed: 1, learnedLang: lang, contentLang: 'en', size: 9999 })) {
           if (q.kind !== 'form' || q.view.card !== 'type') continue;
           checked++;
           const v = q.view;
-          expect(v.prompt.trim()).not.toBe('');
-          // a cell may look like a header word ("um"), but then the card names its table and column; alone it never does
-          if (headers.has(v.prompt.trim().toLowerCase())) expect(v.heading && v.label).toBeTruthy();
-          expect(v.hint).toBeTruthy();
           const item = lesson.items.find((i) => i.id === q.id);
           if (!item || item.kind !== 'form') throw new Error(`no form item ${q.id}`);
-          const table = lesson.body.find((x) => x.kind === 'table' && x.id === item.table);
-          if (v.heading) {
-            // a non-verb table: the title heads the card and the first column's header labels the cell, which is a row of the table
-            expect(v.label).toBeTruthy();
-            expect(v.hint).not.toBe('Type the correct form');
-            expect(table && table.kind === 'table' && table.rows.some((r) => r[0] === v.prompt)).toBe(true);
-            expect(q.review.question).toBe(`${v.label}: ${v.prompt}`);
+          expect(v.prompt.trim()).not.toBe('');
+          // nothing else above the input: no hint, no table heading, no cell label
+          expect(v.hint).toBeUndefined();
+          expect((v as { heading?: string }).heading).toBeUndefined();
+          expect((v as { label?: string }).label).toBeUndefined();
+          expect(q.review.question).toBe(v.prompt);
+          expect(v.prompt).not.toContain(' · ');
+          if (item.q) {
+            own++;
+            expect(v.prompt).toBe(item.q.en);
           } else {
-            // askable: the stem (the verb or column, and the person or cell) is on the card
-            expect(v.prompt).toContain(' · ');
-            expect(v.prompt).toContain(item.person);
-            expect(v.prompt.startsWith(item.verb)).toBe(true);
+            // generated: a question, with the person or cell in it
+            expect(v.prompt).toMatch(/^What is the .*\?( \(.*\))?$/);
+            expect(v.prompt).toContain(item.person.replace(/[.!?]+$/, ''));
           }
           if (q.detail?.table) tables++;
         }
       }
     }
     expect(checked).toBeGreaterThan(2000);
+    expect(own).toBe(27);
     expect(tables).toBeGreaterThan(checked / 2);
   });
 
-  it('a verb table keeps verb (meaning) · person; any other table gets title, column label, the cell and "Type the <column>"', () => {
-    const gu = byId('es', 'gustar', 'gu-form-12').view;
-    expect(gu).toMatchObject({ card: 'type', prompt: 'gustar + varias cosas (gustar + several things) · ellos/ellas/ustedes', hint: 'Type the pronoun and the form of gustar for this person' });
-    expect((gu as { heading?: string }).heading).toBeUndefined();
-    const int = byId('es', 'interrogativos', 'int-form-04').view;
-    expect(int).toMatchObject({
+  it('a verb table asks "What is the form of verb (meaning) for person?"; any other table names the column, the cell and the table', () => {
+    expect(byId('es', 'gustar', 'gu-form-12').view).toMatchObject({
       card: 'type',
-      heading: 'From the answer to the question word',
-      label: 'Answer',
-      prompt: 'A la tienda.',
-      hint: 'Type the question word',
+      prompt: 'What is the form of gustar + varias cosas (gustar + several things) for ellos/ellas/ustedes?',
     });
-    const nh = byId('es', 'numeros-hora-fecha', 'nh-form-06').view;
-    expect(nh).toMatchObject({ card: 'type', heading: 'Numbers', label: 'Number', prompt: '1:00' });
-    expect((nh as { hint?: string }).hint).toBe('Write it in Spanish words');
-    // a plain verb table keeps the generic hint
-    expect(byId('es', 'presente-regular', 'pr-form-01').view).toMatchObject({ hint: 'Type the form of the verb' });
+    expect(byId('es', 'interrogativos', 'int-form-04').view).toMatchObject({
+      card: 'type',
+      prompt: 'What is the question word for A la tienda? (From the answer to the question word)',
+    });
+    expect(byId('es', 'numeros-hora-fecha', 'nh-form-06').view).toMatchObject({ card: 'type', prompt: 'What is the word for 1:00? (Numbers)' });
+    expect(byId('es', 'presente-regular', 'pr-form-01').view).toMatchObject({ prompt: 'What is the form of hablar for yo?' });
   });
-
   it('every item kind that has a translation carries it in detail.tr (why, spot, gap, mark), none repeats the sentence', () => {
     const seen = new Set<string>();
     for (const lesson of getGrammarTopics('es')) {
@@ -354,11 +344,11 @@ describe('form tasks and result data', () => {
     for (const kind of ['choice', 'why']) expect(seen.has(kind as never)).toBe(true);
   });
 
-  it('the hint keeps the capital of a German column label', () => {
+  it('the generated question keeps the capital of a German column label', () => {
     const { setLanguage } = require('@/lib/i18n');
     setLanguage('de');
     try {
-      expect((byId('es', 'interrogativos', 'int-form-04').view as { hint?: string }).hint).toBe('Gib ein: Question word');
+      expect((byId('es', 'interrogativos', 'int-form-04').view as { prompt: string }).prompt).toContain('„Question word”');
     } finally {
       setLanguage('en');
     }
