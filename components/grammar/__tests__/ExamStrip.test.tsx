@@ -7,6 +7,12 @@ jest.mock('expo-router', () => ({
   useRouter: () => ({ back: jest.fn(), push: mockPush }),
   usePathname: () => '/grammar',
 }));
+// the exam round button shows only where a gap-text file with texts exists (es A1 in these tests)
+const mockRound = jest.fn((_t: string, _l: string) => true);
+jest.mock('@/lib/grammar/examRound', () => ({
+  ...jest.requireActual('@/lib/grammar/examRound'),
+  examRoundAvailable: (t: string, l: string) => mockRound(t, l),
+}));
 const mockMock = jest.fn((_t: string, _l: string) => true);
 jest.mock('@/lib/exam/mock/blueprint', () => ({
   ...jest.requireActual('@/lib/exam/mock/blueprint'),
@@ -55,6 +61,8 @@ describe.each([
     mockPush.mockClear();
     mockMock.mockReset();
     mockMock.mockReturnValue(true);
+    mockRound.mockReset();
+    mockRound.mockReturnValue(true);
     const db = getDb();
     await db.setOnboarding('en', 'es');
     await db.setGrammarPalette(palette);
@@ -139,6 +147,34 @@ describe.each([
     expect(mockPush).toHaveBeenLastCalledWith({ pathname: '/mock-exam', params: { level: 'A1' } });
     expect(mockMock).toHaveBeenCalledWith('es', 'A1');
     expect(screen.queryByTestId('grammar-exam-lock-A1')).toBeNull();
+    view.unmount();
+  });
+
+  it('a level with gap texts: the exam round button first, highlighted, with its hint; it opens the route', async () => {
+    const view = await show({ examStatus: status() });
+    expect(mockRound).toHaveBeenCalledWith('es', 'A1');
+    expect(screen.getByTestId('grammar-exam-round-A1')).toBeTruthy();
+    expect(screen.getByText('Exam round')).toBeTruthy();
+    expect(screen.getByTestId('grammar-exam-round-hint-A1')).toHaveTextContent('Exam round: gap texts built around your weakest topics.');
+    // it is the first button of the strip
+    const labels = screen.getAllByRole('button').map((b) => b.props.testID).filter((id: string) => /^grammar-(exam-round|level-test|exam-open|mock-open)-A1$/.test(id));
+    expect(labels[0]).toBe('grammar-exam-round-A1');
+    fireEvent.press(screen.getByTestId('grammar-exam-round-A1'));
+    expect(mockPush).toHaveBeenLastCalledWith('/grammar/exam-round?level=A1');
+    // the other buttons stay
+    expect(screen.getByTestId('grammar-level-test-A1')).toBeTruthy();
+    expect(screen.getByTestId('grammar-exam-open-A1')).toBeTruthy();
+    expect(screen.getByTestId('grammar-mock-open-A1')).toBeTruthy();
+    view.unmount();
+  });
+
+  it('a level without gap texts: neither the exam round button nor its hint', async () => {
+    mockRound.mockReturnValue(false);
+    const view = await show({ examStatus: status() });
+    expect(screen.queryByTestId('grammar-exam-round-A1')).toBeNull();
+    expect(screen.queryByTestId('grammar-exam-round-hint-A1')).toBeNull();
+    expect(screen.queryByText('Exam round')).toBeNull();
+    expect(screen.getByTestId('grammar-level-test-A1')).toBeTruthy();
     view.unmount();
   });
 

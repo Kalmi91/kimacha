@@ -32,10 +32,13 @@ export const TICK_MIN_ANSWERS = 5;
 export const TICK_MIN_KINDS = 2;
 export const WEAK_PCT = 60;
 
+/** The kinds an evidence answer can have: a lesson item kind, or `cloze` (a gap of the exam round, no lesson item has it). */
+export type EvidenceKind = GrammarKind | 'cloze';
+
 /** `at` is `localDateString()` of the answer. */
 export interface EvidenceAnswer {
   id: string;
-  kind: GrammarKind;
+  kind: EvidenceKind;
   ok: boolean;
   at: string;
 }

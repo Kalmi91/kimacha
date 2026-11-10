@@ -155,6 +155,22 @@ export default {
     levelExam: 'Level exam',
     mockExam: 'Mock exam',
     needLesson: 'Finish one grammar lesson of this level.',
+    examRound: 'Exam round',
+    examRoundHint: 'Exam round: gap texts built around your weakest topics.',
+  },
+  // The exam round: two gap texts in exam format, the weakest topics get the most gaps.
+  examRound: {
+    title: (lvl: string) => `${lvl} exam round`,
+    textOf: (i: number, n: number) => `text ${i} of ${n}`,
+    leave: 'Leave the exam round',
+    instruction: 'Read the text and choose the right word for each gap.',
+    check: 'Check',
+    score: (right: number, of: number) => `${right} / ${of}`,
+    repeat: 'Repeat these',
+    countsNote: "Every answer counts into its topic's percent.",
+    nextText: 'Next text',
+    done: 'Done',
+    empty: 'There are no gap texts for this level yet.',
   },
   // FB571: the level test (an endless stream of questions from one level's topics, the weakest first).
   levelTest: {
