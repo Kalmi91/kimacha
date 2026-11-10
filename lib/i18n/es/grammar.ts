@@ -147,7 +147,7 @@ const es: typeof en = {
     title: (lvl: string) => `Ronda de examen ${lvl}`,
     textOf: (i: number, n: number) => `texto ${i} de ${n}`,
     leave: 'Salir de la ronda de examen',
-    instruction: 'Lee el texto y elige la palabra correcta para cada hueco.',
+    instruction: 'Dos textos, seis huecos cada uno. Ves el resultado después de Comprobar.',
     check: 'Comprobar',
     score: (right: number, of: number) => `${right} / ${of}`,
     repeat: 'Repite estos',

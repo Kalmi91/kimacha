@@ -42,7 +42,10 @@ const WORD_BANDS = { a1: [55, 95] };
 const SYLLABUS = { es: 'syllabus.json', hu: 'syllabus-hu.json', de: 'syllabus-de.json' };
 
 // es norm (same patterns as scripts/mock-exam-check.mjs ES_BLACKLIST): Mexican usage, no vosotros, no Spain-only words
-const ES_BLACKLIST = [/vosotr/iu, /(?<!\p{L})coche/iu, /(?<!\p{L})ordenador/iu, /(?<!\p{L})zumo(?!\p{L})/iu, /(?<!\p{L})móvil(?!\p{L})/iu, /(?<!\p{L})os(?!\p{L})/iu];
+const ES_BLACKLIST = [/vosotr/iu, /(?<!\p{L})coche/iu, /(?<!\p{L})ordenador/iu, /(?<!\p{L})zumo(?!\p{L})/iu, /(?<!\p{L})móvil(?!\p{L})/iu, /(?<!\p{L})os(?!\p{L})/iu,
+  // vosotros verb forms: -áis / -éis (not the numbers dieciséis, veintiséis) and the whole words sois, vais, dais, veis
+  /(?<!\p{L})(?!dieciséis(?!\p{L})|veintiséis(?!\p{L}))\p{L}*[áé]is(?!\p{L})/iu,
+  /(?<!\p{L})(sois|vais|dais|veis)(?!\p{L})/iu];
 const EM_DASH = new RegExp(`[${String.fromCharCode(0x2014)}${String.fromCharCode(0x2013)}]`);
 
 const args = process.argv.slice(2);

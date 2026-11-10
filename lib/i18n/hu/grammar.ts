@@ -147,7 +147,7 @@ const hu: typeof en = {
     title: (lvl: string) => `${lvl} vizsgakör`,
     textOf: (i: number, n: number) => `${i}. szöveg / ${n}`,
     leave: 'Kilépés a vizsgakörből',
-    instruction: 'Olvasd el a szöveget, és válaszd ki a megfelelő szót minden hézagba.',
+    instruction: 'Két szöveg, egyenként hat hézag. Az eredményt az Ellenőrzés után látod.',
     check: 'Ellenőrzés',
     score: (right: number, of: number) => `${right} / ${of}`,
     repeat: 'Ismételd ezeket',

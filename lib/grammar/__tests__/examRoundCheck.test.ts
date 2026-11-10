@@ -152,6 +152,19 @@ describe('exam-round-check', () => {
     fails(broken((d) => (d.texts[0].text += ' os llamo')), 'R7');
   });
 
+  it('R7: vosotros verb forms fail (tenéis, habláis, sois), the numbers dieciséis and veintiséis do not', () => {
+    fails(broken((d) => (d.texts[0].gaps[0].options[0] = 'tenéis')), 'R7');
+    fails(broken((d) => (d.texts[0].gaps[0].options[0] = 'habláis')), 'R7');
+    fails(broken((d) => (d.texts[0].text += ' vosotros sois')), 'R7');
+    fails(broken((d) => (d.texts[0].text += ' vais')), 'R7');
+    const ok = run(write((() => { const d = good(); d.texts[0].text += ' dieciséis y veintiséis'; return d; })()));
+    expect(ok.out).toBe('exam-round-check: OK (1 files, 0 errors, 0 warnings)');
+    // país and París end in ís and stay allowed
+    const pais = good();
+    pais.texts[0].gaps[0].options[0] = 'país';
+    expect(run(write(pais)).out).not.toMatch(/ERROR R7/);
+  });
+
   it('a file that is not JSON fails', () => {
     const dir = path.join(tmp, `case-${counter++}`);
     fs.mkdirSync(dir);

@@ -163,7 +163,7 @@ export default {
     title: (lvl: string) => `${lvl} exam round`,
     textOf: (i: number, n: number) => `text ${i} of ${n}`,
     leave: 'Leave the exam round',
-    instruction: 'Read the text and choose the right word for each gap.',
+    instruction: 'Two texts, six gaps each. You see the result after Check.',
     check: 'Check',
     score: (right: number, of: number) => `${right} / ${of}`,
     repeat: 'Repeat these',

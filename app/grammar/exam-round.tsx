@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { ActivityIndicator, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 
@@ -40,8 +40,14 @@ import { localDateString } from '@/lib/usageStats';
 // the most gaps (lib/grammar/examRound.ts). Every gap names its grammar topic: the result page shows the right word and the
 // topic of each gap, and every answer is saved as test evidence of its topic (kind `cloze`, the same game_progress rows
 // the level test writes), so the exam strip's percent and "Weakest now" move. The run (texts, position, picks, checked)
-// is kept in the resume store; the evidence of a text is written exactly once, in the same queue step that saves
-// `checked`, so a result page restored from the store writes nothing.
+// is kept in the resume store; the evidence of a text is written at most once: one queue step saves `checked` first and then
+// the evidence rows (at most once if the app dies between the two saves), and a result page restored from the store writes nothing.
+
+// the saves run one after the other, in the order of the actions; one queue for every mount of the screen
+let queue: Promise<void> = Promise.resolve();
+const enqueue = (job: () => Promise<void>) => {
+  queue = queue.then(job).catch(() => {});
+};
 
 interface Loaded {
   learnedLang: string;
@@ -67,15 +73,15 @@ export default function ExamRoundScreen() {
   const [state, setState] = useState<'loading' | 'empty' | Loaded>('loading');
   const [run, setRun] = useState<ExamRun | null>(null);
   const [evidence, setEvidence] = useState<Map<string, TopicEvidence>>(new Map());
-  // the saves run one after the other, in the order of the actions
-  const queue = useRef<Promise<void>>(Promise.resolve());
-  const enqueue = useCallback((job: () => Promise<void>) => {
-    queue.current = queue.current.then(job).catch(() => {});
-  }, []);
+  // two presses on Check that reach the handler before the re-render run it once
+  const checking = useRef(false);
 
   useEffect(() => {
     let alive = true;
     (async () => {
+      // a save of an earlier visit may still be running: read the stores only after it
+      await queue;
+      if (!alive) return;
       const db = getDb();
       const { target, source } = await refresh(['direction']);
       const level = params.level ?? '';
@@ -117,7 +123,9 @@ export default function ExamRoundScreen() {
         glossaryIndex: buildGlossaryIndex(pcicItemsForLevel(level as PcicLevel), target as PcicTarget, source),
         learned: new Set(cards.filter(isExamLearned).map((c) => c.itemId)),
       });
-    })().catch(() => {});
+    })().catch(() => {
+      if (alive) setState('empty');
+    });
     return () => {
       alive = false;
     };
@@ -180,6 +188,8 @@ export default function ExamRoundScreen() {
   };
 
   const check = () => {
+    if (run.checked || checking.current) return;
+    checking.current = true;
     const rows = scoreText(text, run.answers);
     // two gaps of one topic: both go onto the same evidence, in gap order, before the save
     const nextEvidence = new Map(evidence);
@@ -194,12 +204,14 @@ export default function ExamRoundScreen() {
     setRun(next);
     enqueue(async () => {
       const db = getDb();
-      for (const topic of touched) await db.setGameProgress(GRAMMAR_RANDOM_KEY, topic, 'evidence', nextEvidence.get(topic));
+      // `checked` first: a kill between the two saves loses answers, it can never write them twice
       await saveResumeValue(db, examRunKey(pair, loaded.level), next);
+      for (const topic of touched) await db.setGameProgress(GRAMMAR_RANDOM_KEY, topic, 'evidence', nextEvidence.get(topic));
     });
   };
 
   const nextText = () => {
+    checking.current = false;
     const next: ExamRun = { ...run, index: run.index + 1, answers: {}, checked: false };
     setRun(next);
     saveRun(next);
@@ -230,7 +242,7 @@ export default function ExamRoundScreen() {
     return shell(
       <View style={styles.flex}>
         {header}
-        <ScrollView testID="exam-round-scroll" contentContainerStyle={styles.body}>
+        <ScrollView key={part} testID="exam-round-scroll" contentContainerStyle={styles.body}>
           <ClozeTask
             key={text.id}
             task={task}
@@ -253,7 +265,7 @@ export default function ExamRoundScreen() {
   return shell(
     <View style={styles.flex}>
       {header}
-      <ScrollView testID="exam-round-scroll" contentContainerStyle={styles.body}>
+      <ScrollView key={part} testID="exam-round-scroll" contentContainerStyle={styles.body}>
         <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
           <Text testID="exam-round-score" style={[styles.title, { color: colors.text }]}>{s.score(right, rows.length)}</Text>
         </Card>
@@ -261,10 +273,10 @@ export default function ExamRoundScreen() {
           {rows.map((r, i) => (
             <View key={r.n} testID={`exam-round-gap-${r.n}`} style={styles.gapRow}>
               {r.ok ? (
-                <Text style={[styles.gapLine, { color: colors.success }]}>{`✓ ${wordOf(i, r.picked)}`}</Text>
+                <Text style={[styles.gapLine, { color: colors.success }]}>{`✓ ${r.n} ${wordOf(i, r.picked)}`}</Text>
               ) : (
                 <Text style={[styles.gapLine, { color: colors.danger }]}>
-                  {`✗ ${wordOf(i, r.picked)} → `}
+                  {`✗ ${r.n} ${wordOf(i, r.picked)} → `}
                   <Text style={styles.bold}>{wordOf(i, r.right)}</Text>
                 </Text>
               )}

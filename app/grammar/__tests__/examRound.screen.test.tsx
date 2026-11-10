@@ -50,7 +50,10 @@ jest.mock('@/lib/grammar/syllabus', () => {
 let mockFile: any;
 jest.mock('@/lib/grammar/examRound', () => ({
   ...jest.requireActual('@/lib/grammar/examRound'),
-  examRoundFile: () => mockFile,
+  examRoundFile: () => {
+    if (mockFile instanceof Error) throw mockFile;
+    return mockFile;
+  },
 }));
 
 import { act, fireEvent, render, screen } from '@testing-library/react-native';
@@ -58,6 +61,7 @@ import { act, fireEvent, render, screen } from '@testing-library/react-native';
 import { getDb } from '@/lib/database.web';
 import { examRunKey, type ExamRoundText } from '@/lib/grammar/examRound';
 import { GRAMMAR_RANDOM_KEY, evidenceFromRows, type EvidenceAnswer } from '@/lib/grammar/randomRound';
+import { RESUME_GAME_ID } from '@/lib/resumeRoute';
 import { loadResumeValue, saveResumeValue } from '@/lib/resumeStore';
 import { ThemeProvider } from '@/lib/ThemeContext';
 import ExamRoundScreen from '../exam-round';
@@ -125,10 +129,13 @@ describe.each(['brand', 'classic'] as const)('exam round screen (%s palette)', (
   };
 
   it('opens on the text with the most gaps of the weakest topic; header, instruction, feedback button', async () => {
+    // three texts, the clearly worst one (no gap of the weak topic) first in the file: it must be left out of the round
+    const worst = mk('EX-W', 'Texto malo', ['lt-1', 'lt-2', 'lt-3', 'lt-1', 'lt-2', 'lt-3'], [0, 1, 2, 0, 1, 2]);
+    mockFile = { lang: 'es', level: 'A1', texts: [worst, EX2(), EX1()] };
     await open();
     expect(text('exam-round-header')).toBe('A1 exam round · text 1 of 2');
     expect(screen.getByText('Texto uno')).toBeTruthy();
-    expect(screen.getByText('Read the text and choose the right word for each gap.')).toBeTruthy();
+    expect(screen.getByText('Two texts, six gaps each. You see the result after Check.')).toBeTruthy();
     expect(screen.getByTestId('fb-card')).toHaveTextContent('grammar-exam-round:A1:EX-1:text | en→es | A1');
     expect(screen.queryByTestId('exam-round-score')).toBeNull();
     // the open run is saved at once
@@ -153,9 +160,9 @@ describe.each(['brand', 'classic'] as const)('exam round screen (%s palette)', (
     await fill([0, 0, 2, 1, 1, 2]); // gap 2 and gap 4 wrong
     await press('exam-round-check');
     expect(screen.getByTestId('exam-round-score')).toHaveTextContent('4 / 6');
-    expect(text('exam-round-gap-1')).toBe('✓ a1wordAlpha topic');
-    expect(text('exam-round-gap-2')).toBe('✗ a2word → b2wordAlpha topic');
-    expect(text('exam-round-gap-4')).toBe('✗ b4word → a4wordGamma topic');
+    expect(text('exam-round-gap-1')).toBe('✓ 1 a1wordAlpha topic');
+    expect(text('exam-round-gap-2')).toBe('✗ 2 a2word → b2wordAlpha topic');
+    expect(text('exam-round-gap-4')).toBe('✗ 4 b4word → a4wordGamma topic');
     expect(screen.getByTestId('fb-card')).toHaveTextContent('grammar-exam-round:A1:EX-1:result | en→es | A1');
     expect(screen.getByText("Every answer counts into its topic's percent.")).toBeTruthy();
 
@@ -248,7 +255,7 @@ describe.each(['brand', 'classic'] as const)('exam round screen (%s palette)', (
     first.unmount();
     await open();
     expect(screen.getByTestId('exam-round-score')).toHaveTextContent('4 / 6');
-    expect(text('exam-round-gap-2')).toBe('✗ a2word → b2wordAlpha topic');
+    expect(text('exam-round-gap-2')).toBe('✗ 2 a2word → b2wordAlpha topic');
     await act(async () => {
       await flush();
     });
@@ -284,6 +291,74 @@ describe.each(['brand', 'classic'] as const)('exam round screen (%s palette)', (
     mockFile = undefined;
     await open();
     expect(screen.getByTestId('exam-round-empty')).toBeTruthy();
+  });
+
+  it('every page change opens a new scroll view (so it starts at the top); a pick on the same page keeps it', async () => {
+    await open();
+    const textPage = screen.getByTestId('exam-round-scroll');
+    await pick(0, 0);
+    expect(screen.getByTestId('exam-round-scroll')).toBe(textPage);
+    await fill([0, 1, 2, 0, 1, 2]);
+    await press('exam-round-check');
+    const resultPage = screen.getByTestId('exam-round-scroll');
+    expect(resultPage).not.toBe(textPage);
+    await press('exam-round-next');
+    expect(screen.getByTestId('exam-round-scroll')).not.toBe(resultPage);
+  });
+
+  it('two presses on Check in a row write each answer once', async () => {
+    await open();
+    await fill([0, 0, 2, 1, 1, 2]);
+    const spy = jest.spyOn(getDb(), 'setGameProgress');
+    const button = screen.getByTestId('exam-round-check');
+    // both presses reach the handler before the re-render
+    act(() => {
+      fireEvent.press(button);
+      fireEvent.press(button);
+    });
+    await flush();
+    const evidenceCalls = spy.mock.calls.filter((c) => c[0] === GRAMMAR_RANDOM_KEY);
+    expect(evidenceCalls.map((c) => c[1]).sort()).toEqual(['lt-0', 'lt-1', 'lt-2', 'lt-3']); // once per touched topic
+    spy.mockRestore();
+    const ev = await evidenceNow();
+    const ids = [...ev.values()].flatMap((e) => e.answers.map((a) => a.id)).filter((id) => id.startsWith('EX-1#'));
+    expect(ids.sort()).toEqual(['EX-1#1', 'EX-1#2', 'EX-1#3', 'EX-1#4', 'EX-1#5', 'EX-1#6']);
+  });
+
+  it('on Check the run is saved as checked before the first evidence write', async () => {
+    await open();
+    await fill([0, 0, 2, 1, 1, 2]);
+    const spy = jest.spyOn(getDb(), 'setGameProgress');
+    await press('exam-round-check');
+    const calls = spy.mock.calls;
+    spy.mockRestore();
+    const runIdx = calls.findIndex((c) => c[0] === RESUME_GAME_ID && (c[3] as any)?.checked === true);
+    const evIdx = calls.findIndex((c) => c[0] === GRAMMAR_RANDOM_KEY);
+    expect(runIdx).toBeGreaterThanOrEqual(0);
+    expect(evIdx).toBeGreaterThan(runIdx);
+  });
+
+  it('a restored result page of text 2, then "Done": no evidence write, the run is cleared, both texts are seen', async () => {
+    await saveResumeValue(getDb(), KEY, { texts: ['EX-1', 'EX-2'], index: 1, answers: { 0: 2, 1: 2, 2: 2, 3: 1, 4: 1, 5: 1 }, checked: true, seed: 1, seen: [] });
+    await open();
+    expect(screen.getByTestId('exam-round-score')).toHaveTextContent('6 / 6');
+    const spy = jest.spyOn(getDb(), 'setGameProgress');
+    await press('exam-round-done');
+    const evidenceCalls = spy.mock.calls.filter((c) => c[0] === GRAMMAR_RANDOM_KEY);
+    spy.mockRestore();
+    expect(evidenceCalls).toHaveLength(0);
+    const run = await savedRun();
+    expect(run.texts).toEqual([]);
+    expect([...run.seen].sort()).toEqual(['EX-1', 'EX-2']);
+    expect(mockBack).toHaveBeenCalledTimes(1);
+  });
+
+  it('a rejected load shows the empty state with the cross, not a spinner', async () => {
+    mockFile = new Error('boom');
+    await open();
+    expect(screen.getByTestId('exam-round-empty')).toBeTruthy();
+    await press('exam-round-close');
+    expect(mockBack).toHaveBeenCalledTimes(1);
   });
 
   it('the cross leaves at once', async () => {

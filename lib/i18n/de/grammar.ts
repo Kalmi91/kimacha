@@ -143,7 +143,7 @@ const de: typeof en = {
     title: (lvl: string) => `${lvl}-Prüfungsrunde`,
     textOf: (i: number, n: number) => `Text ${i} von ${n}`,
     leave: 'Prüfungsrunde verlassen',
-    instruction: 'Lies den Text und wähle für jede Lücke das passende Wort.',
+    instruction: 'Zwei Texte, je sechs Lücken. Das Ergebnis siehst du nach Prüfen.',
     check: 'Prüfen',
     score: (right: number, of: number) => `${right} / ${of}`,
     repeat: 'Das wiederholen',
