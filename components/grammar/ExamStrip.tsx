@@ -12,7 +12,8 @@ import { mockAvailable } from '@/lib/exam/mock/blueprint';
 import { levelHasLesson, type ExamLevelStatus } from '@/lib/exam/unlock';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { examRoundAvailable } from '@/lib/grammar/examRound';
-import { hasTopicPercent, levelDone, levelPercent, shownLabel, weakestTopics } from '@/lib/grammar/levelTest';
+import { examStripWeak } from '@/lib/grammar/examEvidence';
+import { hasTopicPercent, levelDone, levelPercent, shownLabel } from '@/lib/grammar/levelTest';
 import type { TopicEvidence } from '@/lib/grammar/randomRound';
 import { topicKindCount } from '@/lib/grammar/randomRoundView';
 import { hasLesson, syllabusForLevel, syllabusTopic } from '@/lib/grammar/syllabus';
@@ -99,7 +100,7 @@ export default function ExamStrip({
 
   const x = s.examStrip;
   const done = levelDone(ids, evidence, (id) => topicKindCount(learnedLang, contentLang, id));
-  const weak = weakestTopics(ids, evidence);
+  const weak = examStripWeak(ids, evidence);
   const examLevel = (EXAM_LEVELS as readonly string[]).includes(level) && levelHasLesson(level as ExamLevel, learnedLang);
   const mockOpen = mockAvailable(learnedLang as PcicTarget, level);
   const roundOpen = examRoundAvailable(learnedLang, level);
@@ -120,7 +121,7 @@ export default function ExamStrip({
           <Text testID={`grammar-exam-strip-pct-${level}`} style={[styles.ready, { color: muted }]}>{x.ready(shownLabel(pct))}</Text>
         )}
       </View>
-      {hasTopicPercent(ids, evidence) ? (
+      {weak.length > 0 || hasTopicPercent(ids, evidence) ? (
         weak.length > 0 ? (
           <View style={styles.weakBlock}>
             <Text style={[styles.weakLabel, { color: muted }]}>{x.weakest}</Text>
@@ -135,7 +136,13 @@ export default function ExamStrip({
                   onPress={() => router.push(`/grammar/${w.id}` as never)}
                 >
                   <Text style={[styles.weakTitle, { color: ink }]} numberOfLines={1}>{topic ? (topic.title[contentLang] ?? topic.title.en) : w.id}</Text>
-                  <Text style={[styles.weakPct, { color: muted }]}>{`${w.pct}%`}</Text>
+                  {w.missed ? (
+                    <Text testID={`grammar-exam-missed-${level}-${w.id}`} style={[styles.weakPct, { color: muted }]}>
+                      {w.pct === null ? x.missedInExam : `${x.missedInExam} · ${w.pct}%`}
+                    </Text>
+                  ) : (
+                    <Text style={[styles.weakPct, { color: muted }]}>{`${w.pct}%`}</Text>
+                  )}
                 </Pressable>
               );
             })}

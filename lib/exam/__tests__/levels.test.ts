@@ -101,7 +101,7 @@ describe.each(LEVELS)('%s exam items: only from the learned words and finished l
   });
 
   it('every word-based item comes from a learned card of the level, no unlearned word anywhere', () => {
-    const used = exam.flatMap((i) => ('itemId' in i ? [i.itemId] : 'itemIds' in i ? i.itemIds : []));
+    const used = exam.flatMap((i) => (i.kind !== 'gap_mc' && 'itemId' in i ? [i.itemId] : 'itemIds' in i ? i.itemIds : []));
     expect(used.length).toBeGreaterThan(0);
     for (const id of used) expect(learnedOfLevel.has(id)).toBe(true);
     for (const it of unlearned) expect(used).not.toContain(it.id);

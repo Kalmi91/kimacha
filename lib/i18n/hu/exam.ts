@@ -46,6 +46,7 @@ const hu: typeof en = {
     skillStrong: 'Erős',
     skillWeak: 'Gyenge',
     skillReviewLesson: (title: string) => `Lecke átnézése: ${title}`,
+    missedNote: 'Ezek a témák mostantól elöl állnak a Nyelvtan fül Most a leggyengébb listájában.',
     skillReviewWords: 'Nézd át ezeket a szavakat',
     skillPracticeSentences: 'Gyakorolj mondatokat',
     introSpeaking: (n: number) => `Beszéd: ${n} kérdés`,

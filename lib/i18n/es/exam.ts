@@ -46,6 +46,7 @@ const es: typeof en = {
     skillStrong: 'Fuerte',
     skillWeak: 'Débil',
     skillReviewLesson: (title: string) => `Repasa la lección: ${title}`,
+    missedNote: 'Estos temas ahora aparecen primero en Lo más débil ahora, en la pestaña Gramática.',
     skillReviewWords: 'Repasa estas palabras',
     skillPracticeSentences: 'Practica oraciones',
     introSpeaking: (n: number) => `Expresión oral: ${n} ${n === 1 ? 'pregunta' : 'preguntas'}`,

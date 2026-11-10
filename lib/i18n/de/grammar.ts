@@ -131,6 +131,7 @@ const de: typeof en = {
     title: (lvl: string) => `${lvl}-Prüfung`,
     ready: (pct: number) => `${pct}% Grammatik bereit`,
     weakest: 'Jetzt am schwächsten',
+    missedInExam: 'in der Prüfung falsch',
     noData: 'Noch nicht genug Testantworten. Mach den Niveautest.',
     noWeak: 'Gerade kein schwaches Thema.',
     levelExam: 'Niveauprüfung',

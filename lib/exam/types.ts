@@ -23,7 +23,7 @@ export type ExamItem =
   // Sentence typing: the prompt is the source-language sentence, the answer is the target-language one.
   | { kind: 'sent_type'; skill: 'words'; itemId: string; prompt: string; answer: string }
   // Grammar: a gap sentence with 3 options, taken from the items of a finished level lesson.
-  | { kind: 'gap_mc'; skill: 'grammar'; topicId: string; sentence: string; options: string[]; correctIndex: number }
+  | { kind: 'gap_mc'; skill: 'grammar'; itemId: string; topicId: string; sentence: string; options: string[]; correctIndex: number }
   // Reading: a target-language text made of two learned sentences; the source-language meaning must be chosen.
   | { kind: 'reading_mc'; skill: 'reading'; itemIds: string[]; text: string; options: string[]; correctIndex: number }
   // Speaking: a sentence dictated with the keyboard's microphone. `translate`: the prompt is the

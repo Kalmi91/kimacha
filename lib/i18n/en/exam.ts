@@ -47,6 +47,7 @@ export default {
     skillStrong: 'Strong',
     skillWeak: 'Weak',
     skillReviewLesson: (title: string) => `Review lesson: ${title}`,
+    missedNote: 'These topics now stand first under Weakest now on the Grammar tab.',
     skillReviewWords: 'Review these words',
     skillPracticeSentences: 'Practice sentences',
     // spoken item dictated with the keyboard's microphone.

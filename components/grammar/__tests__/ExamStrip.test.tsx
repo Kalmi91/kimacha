@@ -115,6 +115,19 @@ describe.each([
     view.unmount();
   });
 
+  it('an exam-missed topic shows its label, with the percent when it has one; with no percent on the level the block still shows', async () => {
+    const ids = writtenIds('A1');
+    const missed = { id: 'exam:L1:g1', kind: 'choice' as const, ok: false, at: '2026-11-09' };
+    const alone = await show({ evidence: new Map<string, TopicEvidence>([[ids[0], { answers: [missed] }]]) });
+    expect(screen.getByTestId(`grammar-exam-missed-A1-${ids[0]}`)).toHaveTextContent(/^missed in the exam$/);
+    expect(screen.queryByText('Weakest now')).toBeTruthy();
+    expect(screen.queryByTestId('grammar-exam-nodata-A1')).toBeNull();
+    alone.unmount();
+    const withPct = await show({ evidence: new Map<string, TopicEvidence>([[ids[0], { answers: [...answers(1, 3).answers, missed] }]]) });
+    expect(screen.getByTestId(`grammar-exam-missed-A1-${ids[0]}`)).toHaveTextContent('missed in the exam · 25%');
+    withPct.unmount();
+  });
+
   it('a level with no vocabulary cards has no level exam button', async () => {
     const view = await show({ examStatus: status({ total: 0, learned: 0, needed: 0, unlocked: false }) });
     expect(screen.queryByTestId('grammar-exam-open-A1')).toBeNull();
