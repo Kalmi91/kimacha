@@ -11,7 +11,7 @@ import { EXAM_LEVELS } from '@/lib/exam/types';
 import { mockAvailable } from '@/lib/exam/mock/blueprint';
 import { levelHasLesson, type ExamLevelStatus } from '@/lib/exam/unlock';
 import { useGrammarColors } from '@/lib/grammarColors';
-import { hasTestData, levelDone, levelPercent, shownLabel, weakestTopics } from '@/lib/grammar/levelTest';
+import { hasTopicPercent, levelDone, levelPercent, shownLabel, weakestTopics } from '@/lib/grammar/levelTest';
 import type { TopicEvidence } from '@/lib/grammar/randomRound';
 import { topicKindCount } from '@/lib/grammar/randomRoundView';
 import { hasLesson, syllabusForLevel, syllabusTopic } from '@/lib/grammar/syllabus';
@@ -118,7 +118,7 @@ export default function ExamStrip({
           <Text testID={`grammar-exam-strip-pct-${level}`} style={[styles.ready, { color: muted }]}>{x.ready(shownLabel(pct))}</Text>
         )}
       </View>
-      {hasTestData(ids, evidence) ? (
+      {hasTopicPercent(ids, evidence) ? (
         weak.length > 0 ? (
           <View style={styles.weakBlock}>
             <Text style={[styles.weakLabel, { color: muted }]}>{x.weakest}</Text>
@@ -151,7 +151,7 @@ export default function ExamStrip({
           highlight={done}
           onPress={() => router.push(`/grammar/level-test?level=${level}` as never)}
         />
-        {examLevel ? (
+        {examLevel && examStatus?.total !== 0 ? (
           <StripButton
             testID={`grammar-exam-open-${level}`}
             label={x.levelExam}

@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useMemo, useRef, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, View, useWindowDimensions } from 'react-native';
 import { Text } from '@/components/KText';
 import { useFocusEffect, useRouter } from 'expo-router';
@@ -91,11 +91,15 @@ export default function GrammarSyllabusScreen() {
   const [weekMinutes, setWeekMinutes] = useState(0);
   // the level exam's unlock state per level (the exam strip), loaded after everything else so it never delays the first paint.
   const [examStatus, setExamStatus] = useState<Map<string, ExamLevelStatus>>(new Map());
+  // the target of the previous load: another direction must not show the old direction's exam status while loading.
+  const examTarget = useRef<string | null>(null);
 
   const load = useCallback(async () => {
     const db = getDb();
     const { target, source } = await refresh(['direction']);
     setLearnedLang(target);
+    if (examTarget.current !== null && examTarget.current !== target) setExamStatus(new Map());
+    examTarget.current = target;
     // The explanation language is the learner's own (the pair's source), not the language being learned:
     // en→es English, es→en Spanish. A source without lesson text yet (hu) falls back to English per field.
     setContentLang(sourceFor(target, source));

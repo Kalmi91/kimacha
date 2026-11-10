@@ -135,7 +135,7 @@ const hu: typeof en = {
     title: (lvl: string) => `${lvl} vizsga`,
     ready: (pct: number) => `${pct}% nyelvtani felkészültség`,
     weakest: 'Most a leggyengébb',
-    noData: 'Még nincs teszteredmény. Indítsd el a szinttesztet.',
+    noData: 'Még nincs elég tesztválasz. Csináld meg a szinttesztet.',
     noWeak: 'Most nincs gyenge téma.',
     levelExam: 'Szintvizsga',
     mockExam: 'Próbavizsga',

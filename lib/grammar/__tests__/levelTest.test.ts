@@ -19,7 +19,7 @@ import {
   roundTopicRows,
   shownLabel,
   shownPctOf,
-  hasTestData,
+  hasTopicPercent,
   weakestTopic,
   weakestTopics,
   type LevelTestCtx,
@@ -351,25 +351,28 @@ describe('rounds of 20 (FB581)', () => {
     expect(weakestTopic([], ev)).toBeNull();
   });
 
-  it('weakestTopics: lowest percent first, ties in order, at most 3, ticked and unasked topics left out', () => {
+  it('weakestTopics: lowest percent first, ties in order, at most 3; ticked, unasked and no-percent topics left out', () => {
     const ev = new Map([
       ['a', evOf(['c', 'c', 'x', 'x', 'x'])], // 40
       ['b', evOf(['c', 'c', 'x', 'x', 'c'])], // 60
       ['c', ticked()], // 100, ticked
       ['d', evOf(['c', 'c', 'x', 'x', 'x'])], // 40, ties with a
       ['e', evOf(['x', 'x', 'x', 'x', 'x'])], // 0
-      ['f', evOf(['x'])], // 1 answer: no percent yet = 0
+      ['f', evOf(['x'])], // 1 answer: no percent yet, not listed
+      ['h', evOf(['c', 'c'])], // 2 right answers: no percent yet, not listed
+      ['i', evOf(['c', 'x', 'x'])], // 3 answers, 1 right: 33
     ]);
-    expect(weakestTopics(['a', 'b', 'c', 'd', 'e', 'f', 'g'], ev)).toEqual([
+    expect(weakestTopics(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i'], ev)).toEqual([
       { id: 'e', pct: 0 },
-      { id: 'f', pct: 0 },
+      { id: 'i', pct: 33 },
       { id: 'a', pct: 40 },
     ]);
+    expect(weakestTopics(['f', 'h'], ev)).toEqual([]);
     expect(weakestTopics(['d', 'a', 'b'], ev, 2)).toEqual([{ id: 'd', pct: 40 }, { id: 'a', pct: 40 }]);
     expect(weakestTopics(['c', 'g'], ev)).toEqual([]);
     expect(weakestTopics(['a', 'b'], new Map())).toEqual([]);
-    expect(hasTestData(['g'], ev)).toBe(false);
-    expect(hasTestData(['g', 'c'], ev)).toBe(true);
+    expect(hasTopicPercent(['g', 'f', 'h'], ev)).toBe(false);
+    expect(hasTopicPercent(['g', 'f', 'c'], ev)).toBe(true);
   });
 });
 

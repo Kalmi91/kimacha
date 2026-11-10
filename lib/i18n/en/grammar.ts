@@ -150,7 +150,7 @@ export default {
     title: (lvl: string) => `${lvl} exam`,
     ready: (pct: number) => `${pct}% grammar ready`,
     weakest: 'Weakest now',
-    noData: 'No test results yet. Start the level test.',
+    noData: 'Not enough test answers yet. Do the level test.',
     noWeak: 'No weak topic right now.',
     levelExam: 'Level exam',
     mockExam: 'Mock exam',

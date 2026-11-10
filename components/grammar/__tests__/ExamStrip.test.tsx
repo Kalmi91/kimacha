@@ -65,7 +65,7 @@ describe.each([
     expect(screen.getByTestId('grammar-exam-strip-A1')).toBeTruthy();
     expect(screen.getByTestId('grammar-exam-strip-title-A1')).toHaveTextContent('A1 exam');
     expect(screen.getByTestId('grammar-exam-strip-pct-A1')).toHaveTextContent('0% grammar ready');
-    expect(screen.getByTestId('grammar-exam-nodata-A1')).toHaveTextContent('No test results yet. Start the level test.');
+    expect(screen.getByTestId('grammar-exam-nodata-A1')).toHaveTextContent('Not enough test answers yet. Do the level test.');
     expect(screen.queryByTestId('grammar-exam-noweak-A1')).toBeNull();
     view.unmount();
   });
@@ -94,6 +94,23 @@ describe.each([
     expect(screen.queryByTestId('grammar-exam-nodata-A1')).toBeNull();
     fireEvent.press(screen.getByTestId(`grammar-exam-weak-A1-${ids[3]}`));
     expect(mockPush).toHaveBeenCalledWith(`/grammar/${ids[3]}`);
+    view.unmount();
+  });
+
+  it('topics with only 1-2 answers have no percent: not listed, the no-data line shows', async () => {
+    const ids = writtenIds('A1');
+    const view = await show({ evidence: new Map([[ids[0], answers(2, 2)], [ids[1], answers(0, 1)]]) });
+    expect(screen.getByTestId('grammar-exam-nodata-A1')).toBeTruthy();
+    expect(screen.queryByTestId(`grammar-exam-weak-A1-${ids[0]}`)).toBeNull();
+    expect(screen.queryByTestId(`grammar-exam-weak-A1-${ids[1]}`)).toBeNull();
+    expect(screen.queryByTestId('grammar-exam-noweak-A1')).toBeNull();
+    view.unmount();
+  });
+
+  it('a level with no vocabulary cards has no level exam button', async () => {
+    const view = await show({ examStatus: status({ total: 0, learned: 0, needed: 0, unlocked: false }) });
+    expect(screen.queryByTestId('grammar-exam-open-A1')).toBeNull();
+    expect(screen.getByTestId('grammar-level-test-A1')).toBeTruthy();
     view.unmount();
   });
 
