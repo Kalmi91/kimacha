@@ -312,6 +312,16 @@ export function getGrammarTier(topicId: string): GrammarTier {
   return GRAMMAR_TIER[topicId] ?? 'full';
 }
 
+/** The exam tiers: core+, core and exam (the tiers are cumulative, full and perfect are beyond the exam). */
+export function isExamTier(tier: GrammarTier): boolean {
+  return tier === 'core-plus' || tier === 'core' || tier === 'exam';
+}
+
+/** The topics whose tier is an exam tier (the "exam topics only" view of the Grammar tab). */
+export function examTopicsOnly<T extends { id: string }>(topics: T[]): T[] {
+  return topics.filter((tp) => isExamTier(getGrammarTier(tp.id)));
+}
+
 interface SyllabusData {
   units: SyllabusUnit[];
   topics: SyllabusTopic[];
