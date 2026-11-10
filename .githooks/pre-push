@@ -1,0 +1,8 @@
+#!/bin/sh
+# Stops a push that would publish the maintainer's personal data.
+# The check and why it exists: scripts/check-outgoing-personal-data.mjs
+#
+# Enable once per clone:  git config core.hooksPath .githooks
+
+command -v node >/dev/null 2>&1 || exit 0
+exec node "$(git rev-parse --show-toplevel)/scripts/check-outgoing-personal-data.mjs"
