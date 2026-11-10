@@ -55,14 +55,6 @@
       "hu": "Nem vagyok éhes."
     }
   ],
-  "d100179": [
-    {
-      "de": "Dein Schlüssel liegt dort.",
-      "en": "Your key is there.",
-      "es": "Tu llave está ahí.",
-      "hu": "A kulcsod ott van."
-    }
-  ],
   "d100183": [
     {
       "de": "Ich arbeite bis sechs Uhr.",
@@ -183,14 +175,6 @@
       "hu": "Menj az utcán."
     }
   ],
-  "d100222": [
-    {
-      "de": "Ich fühle mich müde.",
-      "en": "I feel tired.",
-      "es": "Me siento cansado.",
-      "hu": "Fáradtnak érzem magam."
-    }
-  ],
   "d100225": [
     {
       "de": "Ich beantworte die Frage.",
@@ -241,10 +225,10 @@
   ],
   "d100280": [
     {
-      "de": "Einen Moment, bitte.",
-      "en": "Just a moment, please.",
-      "es": "Un momento, por favor.",
-      "hu": "Egy pillanat, kérem."
+      "de": "Hast du einen Moment Zeit?",
+      "en": "Do you have a moment?",
+      "es": "¿Tienes un momento?",
+      "hu": "Van egy perced?"
     }
   ],
   "d100285": [
@@ -265,10 +249,10 @@
   ],
   "d100295": [
     {
-      "de": "Das Geschäft ist geöffnet.",
-      "en": "The store is open.",
-      "es": "La tienda está abierta.",
-      "hu": "A bolt nyitva van."
+      "de": "Die Bank ist geöffnet.",
+      "en": "The bank is open.",
+      "es": "El banco está abierto.",
+      "hu": "A bank nyitva van."
     }
   ],
   "d100305": [
@@ -289,18 +273,18 @@
   ],
   "d100365": [
     {
-      "de": "Was ist der Unterschied?",
-      "en": "What is the difference?",
-      "es": "¿Cuál es la diferencia?",
-      "hu": "Mi a különbség?"
+      "de": "Ich sehe keinen Unterschied.",
+      "en": "I see no difference.",
+      "es": "No veo ninguna diferencia.",
+      "hu": "Nem látok különbséget."
     }
   ],
   "d100499": [
     {
-      "de": "Ich möchte nicht viel Geld ausgeben.",
-      "en": "I don't want to spend a lot of money.",
-      "es": "No quiero gastar mucho dinero.",
-      "hu": "Nem akarok sok pénzt költeni."
+      "de": "Jeden Monat gebe ich wenig aus.",
+      "en": "Each month I spend little.",
+      "es": "Cada mes gasto poco.",
+      "hu": "Havonta keveset költök."
     }
   ],
   "d100540": [
@@ -361,10 +345,10 @@
   ],
   "d100719": [
     {
-      "de": "Die junge Dame ruft dich an.",
-      "en": "The young lady is calling you.",
-      "es": "La señorita te llama.",
-      "hu": "A kisasszony hív téged."
+      "de": "Bringen Sie mir die Rechnung?",
+      "en": "Could you bring me the check?",
+      "es": "¿Me trae la cuenta?",
+      "hu": "Hozná a számlát?"
     }
   ],
   "d100723": [
@@ -489,10 +473,10 @@
   ],
   "d100764": [
     {
-      "de": "Ich tanze gern.",
-      "en": "I love dancing.",
-      "es": "Me encanta bailar.",
-      "hu": "Imádok táncolni."
+      "de": "Die Kinder lieben es zu laufen.",
+      "en": "Kids love running.",
+      "es": "A los niños les encanta correr.",
+      "hu": "A gyerekek imádnak futni."
     }
   ],
   "d100766": [
@@ -713,26 +697,26 @@
   ],
   "d101028": [
     {
-      "de": "Heute schneit es.",
-      "en": "It is going to snow.",
-      "es": "Va a nevar.",
-      "hu": "Havazni fog."
+      "de": "Wir sehen es nie schneien.",
+      "en": "We never see it snow here.",
+      "es": "Nunca vemos nevar aquí.",
+      "hu": "Soha nem látjuk havazni."
     }
   ],
   "d101029": [
     {
-      "de": "Ich liebe meine Familie.",
-      "en": "I love my family.",
-      "es": "Amo a mi familia.",
-      "hu": "A családomat szeretem."
+      "de": "Ich liebe das Meer.",
+      "en": "I love the sea.",
+      "es": "Amo el mar.",
+      "hu": "Szeretem a tengert."
     }
   ],
   "d101033": [
     {
-      "de": "Kannst du erraten?",
-      "en": "Can you guess?",
-      "es": "¿Puedes adivinar?",
-      "hu": "Meg tudod találni?"
+      "de": "Rate, was ich habe.",
+      "en": "Guess what I have.",
+      "es": "Adivina qué tengo.",
+      "hu": "Találd ki, mi van."
     }
   ],
   "d101034": [
@@ -753,18 +737,18 @@
   ],
   "d101036": [
     {
-      "de": "Ich hänge meine Jacke.",
-      "en": "I am going to hang my jacket.",
-      "es": "Voy a colgar mi chamarra.",
-      "hu": "Fel fogom akasztani a kabátomat."
+      "de": "Du kannst deine Jacke hängen.",
+      "en": "You can hang your jacket.",
+      "es": "Puedes colgar tu chamarra.",
+      "hu": "Felakaszthatod a kabátodat."
     }
   ],
   "d101038": [
     {
-      "de": "Ich hebe die Hand.",
-      "en": "I raise my hand.",
-      "es": "Levanto la mano.",
-      "hu": "Felemelem a kezem."
+      "de": "Heb die Hand.",
+      "en": "Raise your hand.",
+      "es": "Levanta la mano.",
+      "hu": "Emeld fel a kezed."
     }
   ],
   "d101039": [
@@ -777,26 +761,26 @@
   ],
   "d101040": [
     {
-      "de": "Ich gähne viel.",
-      "en": "I yawn a lot.",
-      "es": "Bostezo mucho.",
-      "hu": "Sokat ásítok."
+      "de": "Wenn ich viel lese.",
+      "en": "When I read a lot.",
+      "es": "Cuando leo mucho.",
+      "hu": "Amikor sokat olvasok."
     }
   ],
   "d101041": [
     {
-      "de": "Wir überqueren die Straße.",
-      "en": "We cross the street.",
-      "es": "Cruzamos la calle.",
-      "hu": "Átkelünk az utcán."
+      "de": "Wo können wir gehen?",
+      "en": "Where can we cross?",
+      "es": "¿Dónde podemos cruzar?",
+      "hu": "Hol mehetünk át?"
     }
   ],
   "d101042": [
     {
-      "de": "Darf ich probieren?",
-      "en": "May I taste?",
-      "es": "¿Puedo probar?",
-      "hu": "Megkóstolhatom?"
+      "de": "Willst du ein bisschen probieren?",
+      "en": "Do you want to try a little?",
+      "es": "¿Quieres probar un poco?",
+      "hu": "Megkóstolsz egy kicsit?"
     }
   ],
   "d101045": [
@@ -5517,10 +5501,10 @@
   ],
   "d100232": [
     {
-      "de": "Sie verdient viel Geld.",
-      "en": "She earns a lot of money.",
-      "es": "Ella gana mucho dinero.",
-      "hu": "Sok pénzt keres."
+      "de": "Wie viel verdient ein Arzt?",
+      "en": "How much does a doctor earn?",
+      "es": "¿Cuánto gana un médico?",
+      "hu": "Mennyit keres egy orvos?"
     }
   ],
   "d100241": [
@@ -5533,10 +5517,10 @@
   ],
   "d100253": [
     {
-      "de": "Dieser Ort ist ruhig.",
-      "en": "This place is quiet.",
-      "es": "Este lugar es tranquilo.",
-      "hu": "Ez a hely nyugodt."
+      "de": "Ich möchte einen ruhigen Ort.",
+      "en": "I want a quiet place.",
+      "es": "Quiero un lugar tranquilo.",
+      "hu": "Egy csendes helyet szeretnék."
     }
   ],
   "d320044": [
@@ -5582,8 +5566,8 @@
   "d100730": [
     {
       "de": "Ich erzähle eine Geschichte.",
-      "en": "I am going to tell a story.",
-      "es": "Voy a contar una historia.",
+      "en": "I tell a story.",
+      "es": "Cuento una historia.",
       "hu": "Mesélek egy történetet."
     }
   ],
@@ -5629,10 +5613,10 @@
   ],
   "d100765": [
     {
-      "de": "Dieser Lärm stört mich.",
-      "en": "That noise bothers me.",
-      "es": "Ese ruido me molesta.",
-      "hu": "Az a zaj zavar."
+      "de": "Es stört mich nicht zu warten.",
+      "en": "I do not mind waiting.",
+      "es": "No me molesta esperar.",
+      "hu": "Nem zavar a várakozás."
     }
   ],
   "d100418": [
@@ -5701,18 +5685,18 @@
   ],
   "d100926": [
     {
-      "de": "Mittags essen wir.",
-      "en": "We eat at noon.",
-      "es": "Comemos al mediodía.",
-      "hu": "Délben eszünk."
+      "de": "Mittags ist es heiß.",
+      "en": "At noon it is hot.",
+      "es": "Al mediodía hace calor.",
+      "hu": "Délben meleg van."
     }
   ],
   "d101013": [
     {
-      "de": "Dieser Rucksack ist schwer.",
-      "en": "This backpack is heavy.",
-      "es": "Esta mochila es pesada.",
-      "hu": "Ez a hátizsák nehéz."
+      "de": "Hilfst du mir?",
+      "en": "Can you help me?",
+      "es": "¿Me ayudas?",
+      "hu": "Segítesz?"
     }
   ],
   "d101023": [
@@ -7591,10 +7575,10 @@
   ],
   "d100946": [
     {
-      "de": "Welches Getränk möchtest du?",
-      "en": "What drink do you want?",
-      "es": "¿Qué bebida quieres?",
-      "hu": "Milyen italt kérsz?"
+      "de": "Es gibt Essen und Getränke.",
+      "en": "There is food and drink.",
+      "es": "Hay comida y bebida.",
+      "hu": "Van étel és ital."
     }
   ],
   "d101094": [
@@ -8159,10 +8143,10 @@
   ],
   "d100763": [
     {
-      "de": "Mein Bruder spielt Gitarre.",
-      "en": "My brother plays the guitar.",
-      "es": "Mi hermano toca la guitarra.",
-      "hu": "A bátyám gitározik."
+      "de": "Ich möchte lernen.",
+      "en": "I want to learn.",
+      "es": "Quiero aprender.",
+      "hu": "Meg akarok tanulni."
     }
   ],
   "d100767": [
@@ -8239,10 +8223,10 @@
   ],
   "d100912": [
     {
-      "de": "Das Essen ist scharf.",
-      "en": "The food is spicy.",
-      "es": "La comida es picante.",
-      "hu": "Az étel csípős."
+      "de": "Wie scharf ist!",
+      "en": "How spicy it is!",
+      "es": "¡Qué picante está!",
+      "hu": "Milyen csípős!"
     }
   ],
   "d100960": [
