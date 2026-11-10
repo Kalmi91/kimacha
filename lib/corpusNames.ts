@@ -5,16 +5,16 @@
 export const CORPUS_NAMES: Record<'es' | 'en' | 'hu' | 'de', string[]> = {
   es: [
     'anna', 'budapest', 'dios', 'españa', 'europa', 'inglaterra', 'john', 'londres', 'mary', 'metrobús',
-    'navidad', 'pascua', 'peter', 'péter', 'tom',
+    'navidad', 'pascua', 'peter', 'puebla', 'péter', 'tom',
   ],
   en: [
     'american', 'anna', 'april', 'atm', 'august', 'bermuda', 'bluetooth', 'budapest', 'chinese', 'christmas',
     'cv', 'december', 'earth', 'england', 'english', 'europe', 'february', 'friday', "friday's", 'fridays',
     'german', 'god', "i'd", "i'll", "i'm", "i've", 'id', 'italian', 'january', 'japanese', 'john', "john's",
     'july', 'june', 'kings', 'london', 'mary', 'metrobús', 'mexican', 'monday', 'mondays', 'november', 'october',
-    'peter', 'péter', 'saturday', "saturday's", 'saturdays', 'september', 'sim', 'spain', 'spaniards', 'spanish',
-    'sunday', 'sundays', 'thursday', 'thursdays', 'tom', 'tuesday', 'tuesdays', 'tv', 'u-turn', 'wednesday',
-    'wednesdays', 'wi-fi',
+    'peter', 'puebla', 'péter', 'saturday', "saturday's", 'saturdays', 'september', 'sim', 'spain', 'spaniards',
+    'spanish', 'sunday', 'sundays', 'thursday', 'thursdays', 'tom', 'tuesday', 'tuesdays', 'tv', 'u-turn',
+    'wednesday', 'wednesdays', 'wi-fi',
   ],
   hu: [
     'anglia', 'anna', 'budapesten', 'budapestre', 'európába', 'európában', 'holdra', 'isten', 'john', 'london',
@@ -22,6 +22,6 @@ export const CORPUS_NAMES: Record<'es' | 'en' | 'hu' | 'de', string[]> = {
     'spanyolország', 'spanyolországba', 'spanyolországban', 'spanyolországból', 'tom', 'wc-papír',
   ],
   de: [
-    'amerika', 'anna', 'england', 'peter', 'spanien',
+    'amerika', 'anna', 'england', 'peter', 'puebla', 'spanien',
   ],
 };
