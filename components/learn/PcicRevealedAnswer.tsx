@@ -107,17 +107,17 @@ export default function PcicRevealedAnswer({
           ))}
         </Text>
         )}
-        <View style={styles.frontRow}>
+        <View style={styles.answerRow}>
           <Text testID="pcic-correct-answer" variant="word" style={[styles.correctAnswer, { color: answerColor }]}>{grade.best}</Text>
-          <Pressable accessibilityRole="button" accessibilityLabel={t().a11y.speak} onPress={() => speak(grade.best, speechLang(target))} style={styles.speakBtn}>
+          <Pressable accessibilityRole="button" accessibilityLabel={t().a11y.speak} onPress={() => speak(grade.best, speechLang(target))} style={[styles.speakBtn, styles.answerSpeak]}>
             <Text style={styles.speakIcon}>🔊</Text>
             <SkinSpeakLabel />
           </Pressable>
         </View>
         {showAllAccepted && alsoAlternatives.map((alt, i) => (
-          <View key={alt} style={styles.frontRow}>
+          <View key={alt} style={styles.answerRow}>
             <Text testID={`pcic-correct-answer-${i + 2}`} variant="word" style={[styles.correctAnswer, { color: answerColor }]}>{alt}</Text>
-            <Pressable accessibilityRole="button" accessibilityLabel={t().a11y.speak} onPress={() => speak(alt, speechLang(target))} style={styles.speakBtn}>
+            <Pressable accessibilityRole="button" accessibilityLabel={t().a11y.speak} onPress={() => speak(alt, speechLang(target))} style={[styles.speakBtn, styles.answerSpeak]}>
               <Text style={styles.speakIcon}>🔊</Text>
               <SkinSpeakLabel />
             </Pressable>
@@ -235,12 +235,25 @@ const styles = StyleSheet.create({
     flexShrink: 1,
     fontSize: 22,
     fontWeight: '600',
+    textAlign: 'center',
   },
   frontRow: {
     flexDirection: 'row',
     alignItems: 'flex-start',
     gap: 8,
     marginTop: 8,
+  },
+  // correct answer: text centered on the full width, the speaker sits at the right edge without shifting it (equal padding both sides).
+  answerRow: {
+    alignSelf: 'stretch',
+    justifyContent: 'center',
+    paddingHorizontal: 48,
+    marginTop: 8,
+  },
+  answerSpeak: {
+    position: 'absolute',
+    right: 0,
+    top: 0,
   },
   // "also: b · c" row under the correct form.
   alsoLine: {

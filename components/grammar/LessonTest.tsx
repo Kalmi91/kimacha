@@ -277,7 +277,7 @@ const styles = StyleSheet.create({
   missedList: { gap: spacing.md },
   sectionTitle: { fontSize: fontSize.sm, fontWeight: fontWeight.bold, textTransform: 'uppercase' },
   missedQuestion: { fontSize: fontSize.md, fontWeight: fontWeight.semibold },
-  missedLabel: { fontSize: fontSize.sm },
-  missedAnswer: { fontSize: fontSize.md, fontWeight: fontWeight.semibold },
+  missedLabel: { fontSize: fontSize.sm, textAlign: 'center' },
+  missedAnswer: { fontSize: fontSize.md, fontWeight: fontWeight.semibold, textAlign: 'center' },
   missedWhy: { fontSize: fontSize.sm },
 });
