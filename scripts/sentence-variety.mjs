@@ -42,7 +42,7 @@ const person = (t) => {
   if (IRREGULAR[t]) return IRREGULAR[t];
   if (/(amos|emos|imos)$/.test(t)) return '1p';
   if (/(aron|ieron|yeron)$/.test(t)) return '3p';
-  if (/(aste|iste)$/.test(t)) return '2s';
+  if (/(?<![sx])(aste|iste)$/.test(t)) return '2s'; // not present-tense existe, resiste, insiste, consiste
   if (/[éí]$/.test(t)) return '1s'; // preterite 1s: compré, vi, tuve is irregular and stays 3s-like
   if (/(an|en)$/.test(t)) return '3p';
   if (/(as|es)$/.test(t)) return '2s';
