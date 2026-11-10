@@ -121,8 +121,8 @@ export default function LevelTestFeedback({
               {d.tr}
             </Text>
           ) : null}
-          {!ok && q.review.why && q.review.why !== d?.tr ? (
-            <Text testID="level-test-feedback-why" style={[styles.why, { color: colors.textMuted }]}>
+          {q.review.why && q.review.why !== d?.tr ? (
+            <Text testID="level-test-feedback-why" style={[styles.why, { color: colors.success }]}>
               {q.review.why}
             </Text>
           ) : null}
