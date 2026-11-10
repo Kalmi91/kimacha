@@ -21,7 +21,7 @@ import { fileURLToPath } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const LEVELS = ['a1', 'a2', 'b1', 'b2', 'c1'];
-const ENFORCED = ['a1', 'b1', 'b2', 'c1'];
+const ENFORCED = ['a1', 'a2', 'b1', 'b2', 'c1'];
 const WINDOW = { a1: [4, 9], a2: [5, 12], b1: [7, 15], b2: [6, 16], c1: [8, 18] };
 const FAMILY = ['madre', 'padre', 'hijo', 'hija', 'hermano', 'hermana', 'tía', 'tío', 'abuelo', 'abuela', 'esposo', 'esposa', 'primo', 'prima'];
 const FAMILY_FORMS = new Set(FAMILY.flatMap((w) => [w, w + 's']).concat(['padres', 'hijos', 'hermanos', 'tíos', 'abuelos', 'esposos', 'primos']));
