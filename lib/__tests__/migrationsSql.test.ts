@@ -306,6 +306,31 @@ describe('a new install (real SQLite)', () => {
   });
 });
 
+describe('v3: user_meta.theme_mode on a file already at version 2', () => {
+  it('adds the missing column, keeps the row, and a saved mode reads back', async () => {
+    const db = await oldDb();
+    await applyMigrations(db as any, MIGRATIONS.slice(0, 2));
+    await db.execAsync('ALTER TABLE user_meta DROP COLUMN theme_mode; PRAGMA user_version = 2;');
+    expect(await userVersion(db)).toBe(2);
+    expect((await columnsOf(db, 'user_meta')).map((c) => c.name)).not.toContain('theme_mode');
+
+    await runMigrations(db as any);
+
+    expect(await userVersion(db)).toBe(LATEST_SCHEMA_VERSION);
+    expect((await columnsOf(db, 'user_meta')).map((c) => c.name)).toContain('theme_mode');
+    await db.runAsync('UPDATE user_meta SET theme_mode = ? WHERE id = 1', ['dark']);
+    expect(await db.getFirstAsync('SELECT theme_mode FROM user_meta WHERE id = 1')).toEqual({ theme_mode: 'dark' });
+  });
+
+  it('a fresh install that already has the column does not fail, and a saved mode reads back', async () => {
+    const fresh = await openSqlJsDb();
+    await runMigrations(fresh as any);
+    await fresh.runAsync('UPDATE user_meta SET theme_mode = ? WHERE id = 1', ['light']);
+    await runMigrations(fresh as any);
+    expect(await fresh.getFirstAsync('SELECT theme_mode FROM user_meta WHERE id = 1')).toEqual({ theme_mode: 'light' });
+  });
+});
+
 describe('a failing step rolls back completely', () => {
   it('the catch-up fails halfway: no column, no version, no data change; the next run succeeds', async () => {
     const db = await oldDb();
