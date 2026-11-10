@@ -100,7 +100,7 @@ const hu: typeof en = {
       `A sikerhez: átlagosan legalább ${needed} pont a vizsgaskálán. A skálapontszámod itt becslés a nyers pontjaidból.`,
     shortNote: 'Rövidebb, mint a valódi vizsga, a pontok át vannak számolva. Az óra viszont valódi.',
     fullNote: 'Ugyanolyan hosszú, mint a valódi vizsga. Az óra is valódi.',
-    missedNote: 'Az elrontott kihagyások nyelvtani témái mostantól elöl állnak a Nyelvtan fül Most a leggyengébb listájában.',
+    missedNote: 'Az elrontott hézagok nyelvtani témái mostantól elöl állnak a Nyelvtan fül Most a leggyengébb listájában.',
     unavailableBody: 'Ehhez a szinthez még nincs gyakorló vizsga.',
     emptyBody: 'Ehhez a gyakorló vizsgához még nincs elég anyag.',
     begin: 'Kezdés',
