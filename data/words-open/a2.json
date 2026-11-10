@@ -4399,9 +4399,9 @@
     "lemma": "pera",
     "es": "la pera",
     "en": "pear",
-    "sentence_es": "Quiero una pera y una manzana.",
-    "sentence_en": "I want a pear and an apple.",
-    "sentence_lemmas": ["querer", "un", "pera", "y", "un", "manzana"]
+    "sentence_es": "¿Pera o manzana, qué te gusta más?",
+    "sentence_en": "Pear or apple, which do you like more?",
+    "sentence_lemmas": ["pera", "o", "manzana", "qué", "te", "gustar", "más"]
   },
   {
     "order": 1501,
@@ -4410,9 +4410,9 @@
     "lemma": "cereza",
     "es": "la cereza",
     "en": "cherry",
-    "sentence_es": "Las cerezas son rojas y pequeñas.",
-    "sentence_en": "Cherries are red and small.",
-    "sentence_lemmas": ["el", "cereza", "ser", "rojo", "y", "pequeño"]
+    "sentence_es": "Me gustan las cerezas con helado.",
+    "sentence_en": "I like cherries with ice cream.",
+    "sentence_lemmas": ["me", "gustar", "el", "cereza", "con", "helado"]
   },
   {
     "order": 1502,
@@ -4454,9 +4454,9 @@
     "lemma": "pimienta",
     "es": "la pimienta",
     "en": "pepper (spice)",
-    "sentence_es": "Pongo sal y pimienta en la sopa.",
-    "sentence_en": "I put salt and pepper in the soup.",
-    "sentence_lemmas": ["poner", "sal", "y", "pimienta", "en", "el", "sopa"]
+    "sentence_es": "¿Me pasa la pimienta, por favor?",
+    "sentence_en": "Could you pass me the pepper, please?",
+    "sentence_lemmas": ["me", "pasar", "el", "pimienta", "por", "favor"]
   },
   {
     "order": 1506,
@@ -4520,9 +4520,9 @@
     "lemma": "cereal",
     "es": "el cereal",
     "en": "cereal",
-    "sentence_es": "Por la mañana yo como cereal con leche.",
-    "sentence_en": "In the morning I eat cereal with milk.",
-    "sentence_lemmas": ["por", "el", "mañana", "yo", "comer", "cereal", "con", "leche"]
+    "sentence_es": "¿Qué cereal quieres para el desayuno?",
+    "sentence_en": "Which cereal do you want for breakfast?",
+    "sentence_lemmas": ["qué", "cereal", "querer", "para", "el", "desayuno"]
   },
   {
     "order": 1512,
@@ -4564,9 +4564,9 @@
     "lemma": "navidad",
     "es": "la navidad",
     "en": "Christmas",
-    "sentence_es": "En Navidad toda la familia cena junta.",
-    "sentence_en": "At Christmas the whole family has dinner together.",
-    "sentence_lemmas": ["en", "navidad", "todo", "el", "familia", "cenar", "juntos"]
+    "sentence_es": "En diciembre cantamos canciones de Navidad.",
+    "sentence_en": "In December we sing Christmas songs.",
+    "sentence_lemmas": ["en", "diciembre", "cantar", "canción", "de", "navidad"]
   },
   {
     "order": 1516,
@@ -4619,9 +4619,9 @@
     "lemma": "librero",
     "es": "el librero",
     "en": "bookcase, bookshelf",
-    "sentence_es": "Los libros de español están en el librero.",
-    "sentence_en": "The Spanish books are in the bookcase.",
-    "sentence_lemmas": ["el", "libro", "de", "español", "estar", "en", "el", "librero"]
+    "sentence_es": "Necesito un librero más grande para mis libros.",
+    "sentence_en": "I need a bigger bookcase for my books.",
+    "sentence_lemmas": ["necesitar", "un", "librero", "más", "grande", "para", "mi", "libro"]
   },
   {
     "order": 1522,
@@ -4641,9 +4641,9 @@
     "lemma": "olla",
     "es": "la olla",
     "en": "pot",
-    "sentence_es": "Necesito una olla grande para la sopa.",
-    "sentence_en": "I need a big pot for the soup.",
-    "sentence_lemmas": ["necesitar", "un", "olla", "grande", "para", "el", "sopa"]
+    "sentence_es": "Compro una olla nueva para la cocina.",
+    "sentence_en": "I buy a new pot for the kitchen.",
+    "sentence_lemmas": ["comprar", "un", "olla", "nuevo", "para", "el", "cocina"]
   },
   {
     "order": 1524,
@@ -4764,9 +4764,9 @@
     "es": "la plancha",
     "en": "iron (for clothes)",
     "hint_en": "The *iron* is hot",
-    "sentence_es": "Necesito la plancha para mi camisa.",
-    "sentence_en": "I need the iron for my shirt.",
-    "sentence_lemmas": ["necesitar", "el", "plancha", "para", "mi", "camisa"]
+    "sentence_es": "Usamos la plancha los domingos.",
+    "sentence_en": "We use the iron on Sundays.",
+    "sentence_lemmas": ["usar", "el", "plancha", "el", "domingo"]
   },
   {
     "order": 1535,
@@ -4775,9 +4775,9 @@
     "lemma": "tijeras",
     "es": "las tijeras",
     "en": "scissors",
-    "sentence_es": "Corto el papel con las tijeras.",
-    "sentence_en": "I cut the paper with the scissors.",
-    "sentence_lemmas": ["cortar", "el", "papel", "con", "el", "tijeras"]
+    "sentence_es": "¿Me prestas tus tijeras un momento?",
+    "sentence_en": "Can you lend me your scissors for a moment?",
+    "sentence_lemmas": ["me", "prestar", "tu", "tijeras", "un", "momento"]
   },
   {
     "order": 1536,
@@ -4786,9 +4786,9 @@
     "lemma": "sandalias",
     "es": "las sandalias",
     "en": "sandals",
-    "sentence_es": "En la playa llevo sandalias.",
-    "sentence_en": "At the beach I wear sandals.",
-    "sentence_lemmas": ["en", "el", "playa", "llevar", "sandalias"]
+    "sentence_es": "¿Cuánto cuestan estas sandalias?",
+    "sentence_en": "How much do these sandals cost?",
+    "sentence_lemmas": ["cuánto", "costar", "este", "sandalias"]
   },
   {
     "order": 1537,
@@ -4908,9 +4908,9 @@
     "es": "el recreo",
     "en": "recess, break (school)",
     "hint_en": "Children play outside at *break*.",
-    "sentence_es": "En el recreo los niños juegan fútbol.",
-    "sentence_en": "At recess the children play soccer.",
-    "sentence_lemmas": ["en", "el", "recreo", "el", "niño", "jugar", "fútbol"]
+    "sentence_es": "Después del recreo escribimos en el cuaderno.",
+    "sentence_en": "After recess we write in the notebook.",
+    "sentence_lemmas": ["después", "de", "recreo", "escribir", "en", "el", "cuaderno"]
   },
   {
     "order": 1549,
@@ -4930,9 +4930,9 @@
     "lemma": "papelería",
     "es": "la papelería",
     "en": "stationery store",
-    "sentence_es": "Compro cuadernos en la papelería.",
-    "sentence_en": "I buy notebooks at the stationery store.",
-    "sentence_lemmas": ["comprar", "cuaderno", "en", "el", "papelería"]
+    "sentence_es": "¿Hay una papelería cerca de la escuela?",
+    "sentence_en": "Is there a stationery shop near the school?",
+    "sentence_lemmas": ["haber", "un", "papelería", "cerca", "de", "el", "escuela"]
   },
   {
     "order": 1551,
@@ -5018,9 +5018,9 @@
     "lemma": "cancha",
     "es": "la cancha",
     "en": "court, pitch",
-    "sentence_es": "Jugamos fútbol en la cancha de la escuela.",
-    "sentence_en": "We play soccer on the school court.",
-    "sentence_lemmas": ["jugar", "fútbol", "en", "el", "cancha", "de", "el", "escuela"]
+    "sentence_es": "¿A qué hora abren la cancha?",
+    "sentence_en": "What time do they open the court?",
+    "sentence_lemmas": ["a", "qué", "hora", "abrir", "el", "cancha"]
   },
   {
     "order": 1561,
@@ -5073,9 +5073,9 @@
     "lemma": "casco",
     "es": "el casco",
     "en": "helmet",
-    "sentence_es": "Para la moto necesitas un casco.",
-    "sentence_en": "For the motorcycle you need a helmet.",
-    "sentence_lemmas": ["para", "el", "moto", "necesitar", "un", "casco"]
+    "sentence_es": "¿Llevas casco cuando vas en bicicleta?",
+    "sentence_en": "Do you wear a helmet when you ride a bike?",
+    "sentence_lemmas": ["llevar", "casco", "cuando", "ir", "en", "bicicleta"]
   },
   {
     "order": 1568,
@@ -5084,9 +5084,9 @@
     "lemma": "llanta",
     "es": "la llanta",
     "en": "tire",
-    "sentence_es": "Cambiamos una llanta del carro.",
-    "sentence_en": "We change a tire on the car.",
-    "sentence_lemmas": ["cambiar", "un", "llanta", "de", "carro"]
+    "sentence_es": "Necesitamos llantas nuevas para el viaje.",
+    "sentence_en": "We need new tires for the trip.",
+    "sentence_lemmas": ["necesitar", "llanta", "nuevo", "para", "el", "viaje"]
   },
   {
     "order": 1569,
@@ -5095,9 +5095,9 @@
     "lemma": "autopista",
     "es": "la autopista",
     "en": "freeway, expressway",
-    "sentence_es": "Por la autopista el viaje es más rápido.",
-    "sentence_en": "On the freeway the trip is faster.",
-    "sentence_lemmas": ["por", "el", "autopista", "el", "viaje", "ser", "más", "rápido"]
+    "sentence_es": "Para ir a la playa tomamos la autopista.",
+    "sentence_en": "To get to the beach we take the highway.",
+    "sentence_lemmas": ["para", "ir", "a", "el", "playa", "tomar", "el", "autopista"]
   },
   {
     "order": 1570,
@@ -5106,9 +5106,9 @@
     "lemma": "medianoche",
     "es": "la medianoche",
     "en": "midnight",
-    "sentence_es": "A medianoche todos duermen en mi casa.",
-    "sentence_en": "At midnight everyone sleeps in my house.",
-    "sentence_lemmas": ["a", "medianoche", "todo", "dormir", "en", "mi", "casa"]
+    "sentence_es": "La fiesta termina a medianoche, ¿vienes?",
+    "sentence_en": "The party ends at midnight, are you coming?",
+    "sentence_lemmas": ["el", "fiesta", "terminar", "a", "medianoche", "venir"]
   },
   {
     "order": 1574,
@@ -5128,9 +5128,9 @@
     "lemma": "secar",
     "es": "secar",
     "en": "to dry",
-    "sentence_es": "Seco la ropa en el patio.",
-    "sentence_en": "I dry the clothes in the yard.",
-    "sentence_lemmas": ["secar", "el", "ropa", "en", "el", "patio"]
+    "sentence_es": "Después de la regadera me seco con la toalla.",
+    "sentence_en": "After the shower I dry myself with the towel.",
+    "sentence_lemmas": ["después", "de", "el", "regadera", "me", "secar", "con", "el", "toalla"]
   },
   {
     "order": 1577,
@@ -5161,9 +5161,9 @@
     "lemma": "hervir",
     "es": "hervir",
     "en": "to boil",
-    "sentence_es": "Voy a hervir agua para el té.",
-    "sentence_en": "I am going to boil water for tea.",
-    "sentence_lemmas": ["ir", "a", "hervir", "agua", "para", "el", "té"]
+    "sentence_es": "Para hacer té, es mejor hervir el agua.",
+    "sentence_en": "To make tea, it is better to boil the water.",
+    "sentence_lemmas": ["para", "hacer", "té", "ser", "mejor", "hervir", "el", "agua"]
   },
   {
     "order": 1580,
@@ -5238,9 +5238,9 @@
     "lemma": "montar",
     "es": "montar",
     "en": "to ride; to mount",
-    "sentence_es": "Monto a caballo los domingos.",
-    "sentence_en": "I ride a horse on Sundays.",
-    "sentence_lemmas": ["montar", "a", "caballo", "el", "domingo"]
+    "sentence_es": "¿Montamos en bicicleta por el parque?",
+    "sentence_en": "Shall we ride bikes through the park?",
+    "sentence_lemmas": ["montar", "en", "bicicleta", "por", "el", "parque"]
   },
   {
     "order": 1588,
@@ -5260,9 +5260,9 @@
     "lemma": "cuadrado",
     "es": "cuadrado",
     "en": "square-shaped",
-    "sentence_es": "La mesa de mi cocina es cuadrada.",
-    "sentence_en": "The table in my kitchen is square.",
-    "sentence_lemmas": ["el", "mesa", "de", "mi", "cocina", "ser", "cuadrado"]
+    "sentence_es": "El cuadrado tiene cuatro lados.",
+    "sentence_en": "A square has four sides.",
+    "sentence_lemmas": ["el", "cuadrado", "tener", "cuatro", "lado"]
   },
   {
     "order": 1592,
@@ -5381,9 +5381,9 @@
     "lemma": "pato",
     "es": "el pato",
     "en": "duck",
-    "sentence_es": "¿Ves el pato en el lago?",
-    "sentence_en": "Do you see the duck on the lake?",
-    "sentence_lemmas": ["ver", "el", "pato", "en", "el", "lago"]
+    "sentence_es": "Los niños dan pan a los patos en el parque.",
+    "sentence_en": "The children give bread to the ducks in the park.",
+    "sentence_lemmas": ["el", "niño", "dar", "pan", "a", "el", "pato", "en", "el", "parque"]
   },
   {
     "order": 1611,
@@ -5447,9 +5447,9 @@
     "lemma": "mariposa",
     "es": "la mariposa",
     "en": "butterfly",
-    "sentence_es": "Veo una mariposa amarilla en la flor.",
-    "sentence_en": "I see a yellow butterfly on the flower.",
-    "sentence_lemmas": ["ver", "un", "mariposa", "amarillo", "en", "el", "flor"]
+    "sentence_es": "Las mariposas viven poco tiempo.",
+    "sentence_en": "Butterflies live a short time.",
+    "sentence_lemmas": ["el", "mariposa", "vivir", "poco", "tiempo"]
   },
   {
     "order": 1620,
@@ -5480,9 +5480,9 @@
     "lemma": "mosquito",
     "es": "el mosquito",
     "en": "mosquito",
-    "sentence_es": "Muchos mosquitos llegan en verano.",
-    "sentence_en": "Many mosquitoes arrive in summer.",
-    "sentence_lemmas": ["mucho", "mosquito", "llegar", "en", "verano"]
+    "sentence_es": "¿Por qué hay tantos mosquitos en esta casa?",
+    "sentence_en": "Why are there so many mosquitos in this house?",
+    "sentence_lemmas": ["por", "qué", "haber", "tanto", "mosquito", "en", "este", "casa"]
   },
   {
     "order": 1623,
@@ -5491,9 +5491,9 @@
     "lemma": "araña",
     "es": "la araña",
     "en": "spider",
-    "sentence_es": "Hay una araña negra en la pared.",
-    "sentence_en": "There is a black spider on the wall.",
-    "sentence_lemmas": ["haber", "un", "araña", "negro", "en", "el", "pared"]
+    "sentence_es": "Tengo miedo de las arañas.",
+    "sentence_en": "I am afraid of spiders.",
+    "sentence_lemmas": ["tener", "miedo", "de", "el", "araña"]
   },
   {
     "order": 1624,
@@ -5569,9 +5569,9 @@
     "lemma": "ola",
     "es": "la ola",
     "en": "wave",
-    "sentence_es": "Las olas del mar son muy grandes hoy.",
-    "sentence_en": "The waves in the sea are very big today.",
-    "sentence_lemmas": ["el", "ola", "de", "mar", "ser", "muy", "grande", "hoy"]
+    "sentence_es": "Me gusta jugar con las olas en la playa.",
+    "sentence_en": "I like playing with the waves at the beach.",
+    "sentence_lemmas": ["me", "gustar", "jugar", "con", "el", "ola", "en", "el", "playa"]
   },
   {
     "order": 1631,
@@ -5647,9 +5647,9 @@
     "lemma": "decorar",
     "es": "decorar",
     "en": "to decorate",
-    "sentence_es": "Decoramos la casa en Navidad.",
-    "sentence_en": "We decorate the house at Christmas.",
-    "sentence_lemmas": ["decorar", "el", "casa", "en", "navidad"]
+    "sentence_es": "Quiero decorar mi casa con fotos.",
+    "sentence_en": "I want to decorate my home with photos.",
+    "sentence_lemmas": ["querer", "decorar", "mi", "casa", "con", "foto"]
   },
   {
     "order": 1639,
@@ -5671,9 +5671,9 @@
     "es": "echar",
     "en": "to add (to a dish); to throw (MX)",
     "hint_en": "Please *throw* me the ball.",
-    "sentence_es": "Voy a echar sal a la sopa.",
-    "sentence_en": "I am going to add salt to the soup.",
-    "sentence_lemmas": ["ir", "a", "echar", "sal", "a", "el", "sopa"]
+    "sentence_es": "Echa la carne a la olla.",
+    "sentence_en": "Put the meat in the pot.",
+    "sentence_lemmas": ["echar", "el", "carne", "a", "el", "olla"]
   },
   {
     "order": 1641,
@@ -5715,9 +5715,9 @@
     "lemma": "juntar",
     "es": "juntar",
     "en": "to gather, to save up",
-    "sentence_es": "Vamos a juntar dinero para el viaje.",
-    "sentence_en": "We are going to save up money for the trip.",
-    "sentence_lemmas": ["ir", "a", "juntar", "dinero", "para", "el", "viaje"]
+    "sentence_es": "Junta las dos mesas, somos muchos.",
+    "sentence_en": "Push the two tables together, there are many of us.",
+    "sentence_lemmas": ["juntar", "el", "dos", "mesa", "ser", "mucho"]
   },
   {
     "order": 1645,
@@ -5794,9 +5794,9 @@
     "lemma": "soplar",
     "es": "soplar",
     "en": "to blow",
-    "sentence_es": "Voy a soplar el té caliente.",
-    "sentence_en": "I am going to blow on the hot tea.",
-    "sentence_lemmas": ["ir", "a", "soplar", "el", "té", "caliente"]
+    "sentence_es": "Sopla fuerte, el té está caliente.",
+    "sentence_en": "Blow hard, the tea is hot.",
+    "sentence_lemmas": ["soplar", "fuerte", "el", "té", "estar", "caliente"]
   },
   {
     "order": 1652,
@@ -5805,9 +5805,9 @@
     "lemma": "sudar",
     "es": "sudar",
     "en": "to sweat",
-    "sentence_es": "Cuando hace calor, sudo.",
-    "sentence_en": "When it is hot, I sweat.",
-    "sentence_lemmas": ["cuando", "hacer", "calor", "sudar"]
+    "sentence_es": "Después de correr, sudo mucho.",
+    "sentence_en": "After running I sweat a lot.",
+    "sentence_lemmas": ["después", "de", "correr", "sudar", "mucho"]
   },
   {
     "order": 1653,
@@ -5816,9 +5816,9 @@
     "lemma": "tapar",
     "es": "tapar",
     "en": "to tuck in, to put a lid on",
-    "sentence_es": "Voy a tapar al bebé con la cobija.",
-    "sentence_en": "I am going to tuck the baby in with the blanket.",
-    "sentence_lemmas": ["ir", "a", "tapar", "a", "bebé", "con", "el", "cobija"]
+    "sentence_es": "Tapa la olla, por favor.",
+    "sentence_en": "Cover the pot, please.",
+    "sentence_lemmas": ["tapar", "el", "olla", "por", "favor"]
   },
   {
     "order": 1654,
@@ -5860,9 +5860,9 @@
     "lemma": "enfriar",
     "es": "enfriar",
     "en": "to cool down, to chill",
-    "sentence_es": "Voy a enfriar la sopa con un poco de agua.",
-    "sentence_en": "I am going to cool down the soup with a little water.",
-    "sentence_lemmas": ["ir", "a", "enfriar", "el", "sopa", "con", "un", "poco", "de", "agua"]
+    "sentence_es": "El pastel necesita una hora para enfriar.",
+    "sentence_en": "The cake needs an hour to cool.",
+    "sentence_lemmas": ["el", "pastel", "necesitar", "un", "hora", "para", "enfriar"]
   },
   {
     "order": 1658,
@@ -5871,9 +5871,9 @@
     "lemma": "derretir",
     "es": "derretir",
     "en": "to melt",
-    "sentence_es": "El helado puede derretirse al sol.",
-    "sentence_en": "The ice cream can melt in the sun.",
-    "sentence_lemmas": ["el", "helado", "poder", "derretir", "a", "sol"]
+    "sentence_es": "Con este calor, la mantequilla se derrite.",
+    "sentence_en": "In this heat the butter melts.",
+    "sentence_lemmas": ["con", "este", "calor", "el", "mantequilla", "se", "derretir"]
   },
   {
     "order": 1659,
