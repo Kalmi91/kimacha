@@ -10,7 +10,7 @@
 
 import type { PcicItem, PcicTarget } from '@/data/pcic';
 import { nearMissDistractors } from '@/lib/distractors';
-import { isSentenceKnown, type ResolvedTense } from '@/lib/knownSentence';
+import { isSentenceKnownIn, knownTokens, type ResolvedTense } from '@/lib/knownSentence';
 import { learnedEntries, tileWords } from '@/lib/sentenceCards';
 import { activeSourceFor } from '@/lib/languagePair';
 import { exampleIn, wordIn } from '@/lib/pcicItemText';
@@ -77,6 +77,8 @@ export function buildExam(input: ExamBuildInput): ExamItem[] {
     learned: learnedEntries(cards.filter(isExamLearned), target, input.lookup ?? ((id) => byId.get(id))),
     tenses: target === 'es' ? input.tenses : undefined,
   };
+  // The learned vocabulary set is built once for the whole pool (isSentenceKnown would rebuild it for every sentence).
+  const known = knownTokens(target, ctx);
   const pool: SentencePair[] = [];
   for (const it of learned) {
     const src = exampleIn(it, source)?.trim();
@@ -84,7 +86,7 @@ export function buildExam(input: ExamBuildInput): ExamItem[] {
     if (!src || !tgt) continue;
     const n = wordCount(tgt);
     if (n < MIN_SENTENCE_WORDS || n > MAX_SENTENCE_WORDS) continue;
-    if (!isSentenceKnown(tgt, target, ctx)) continue;
+    if (!isSentenceKnownIn(tgt, target, known)) continue;
     pool.push({ itemId: it.id, source: src, target: tgt });
   }
   const usedSentences = new Set<string>();
