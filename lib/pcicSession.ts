@@ -87,6 +87,8 @@ export function requeueAfterUndo(
 // one comes in only after this one was typed right ("Knew it" graduates it, it leaves the queue);
 // until then it rotates with the missed reviews. Once the reviews are done, the new words flow
 // as before (several missed ones may rotate together).
+const LEARNING_NEAR = 10;
+
 function isReview(card: Sm2Card, today: string): boolean {
   return card.state !== 'new' && card.introducedAt !== today;
 }
@@ -101,7 +103,9 @@ export function mixNewCards(queue: QueuedSm2Card[], today: string): QueuedSm2Car
   const fresh = queue.filter((c) => c.state === 'new');
   if (fresh.length === 0) return queue;
   const rest = queue.filter((c) => c.state !== 'new');
-  if (rest.some((c) => c.state === 'learning' && c.introducedAt === today)) return [...rest, ...fresh];
+  // FB636: a missed new word only blocks the next one while it is near; at the far end of a long review queue
+  // (after a reload it sits behind every due review) it would hold all new words back for hundreds of cards.
+  if (rest.slice(0, LEARNING_NEAR).some((c) => c.state === 'learning' && c.introducedAt === today)) return [...rest, ...fresh];
   const [first, ...later] = fresh;
   const at = queue[0] === first ? 0 : 1;
   return [...rest.slice(0, at), first, ...rest.slice(at), ...later];
