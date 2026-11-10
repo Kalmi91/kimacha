@@ -34,13 +34,10 @@ const es: typeof en = {
     },
   },
   mistakes: {
-    load: '📥 Cargar mis errores',
-    loaded: (sentences: number, words: number, drills: number) =>
-      `Cargado: ${sentences} oraciones, ${words} palabras, ${drills} ejercicios de gramática`,
     entry: (n: number) => `📕 Mis errores (${n})`,
     title: 'Mis errores',
     practice: (n: number) => `Practicar mis errores (${n} pendientes)`,
-    empty: 'Todavía no hay errores cargados. Ajustes → Cargar mis errores.',
+    empty: 'Aún no hay errores cargados.',
     wrongWordsTitle: 'Palabras que fallaste',
     reviewAgainTitle: 'Repasar otra vez',
     noLesson: 'No hay lección en la app, la baraja lo practica',

@@ -17,7 +17,6 @@ import LevelCounter from '@/components/practice/LevelCounter';
 import SentenceLevelPicker from '@/components/practice/SentenceLevelPicker';
 import { SkinBackdrop, SkinHeader } from '@/components/skins/Slots';
 import { PCIC_LEVELS, findPcicItem, levelOfItem, pcicItemsForLevel, type PcicLevel, type PcicTarget } from '@/data/pcic';
-import { getBeta, loadBeta, useBeta } from '@/lib/beta';
 import { getDb } from '@/lib/database';
 import XpChip from '@/components/XpChip';
 import { hashString } from '@/lib/shuffle';
@@ -132,11 +131,7 @@ export default function SentencesScreen() {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const s = t();
-  // XP comes only from the sentence table (lib/xpAward.ts), flag or not: the per-word halves earn nothing here.
-  // beta: sentenceMistakes, one build is a sentence from "My mistakes", credited to that deck (lib/sentenceMistakes.ts).
-  const mistakesBeta = useBeta('sentenceMistakes');
-  // beta: sentenceHint, the English prompt's words can be tapped for the Spanish form; a looked-at word earns no credit this round.
-  const hintBeta = useBeta('sentenceHint');
+  // XP comes only from the sentence table (lib/xpAward.ts): the per-word halves earn nothing here.
   // `focus` = card ids (comma separated): the sentences with those words come first (the Practice tab sends them here).
   const { focus } = useLocalSearchParams<{ focus?: string | string[] }>();
   const focusIds = (Array.isArray(focus) ? focus.join(',') : focus ?? '').split(',').map((id) => id.trim()).filter(Boolean);
@@ -238,7 +233,7 @@ export default function SentencesScreen() {
       const picked = pickSentences(queue, dir, SENTENCE_ROUND_SIZE, { seed, focus: focusSet, recent });
       // Remembered when the round is created, not when it ends: leaving at once must still bring other sentences next time.
       if (picked.length > 0) await rememberRound(db, pairOf(dir), picked.map((e) => sentenceKey(e)));
-      // beta sentenceMistakes: one sentence is from the learner's mistake list (Spanish direction only; none = the round as picked).
+      // One sentence is from the learner's mistake list (Spanish direction only; none = the round as picked).
       let entries = picked;
       if (picked.length === 0) {
         // Nothing to practise: new words instead, from the picked level (all levels = the level the Learn tab is on).
@@ -247,13 +242,12 @@ export default function SentencesScreen() {
         entries = plan.entries;
         outOfNewWords = plan.budgetOut;
       }
-      await loadBeta();
-      if (picked.length > 0 && dir === 'es' && getBeta('sentenceMistakes')) {
+      if (picked.length > 0 && dir === 'es') {
         const skip = new Set([...played.current.rungs.keys(), ...played.current.mistakes, ...picked.map((e) => sentenceKey(e))]);
         entries = withMistakeStep(picked, await pickMistakeEntry(today, skip, mistakeFitsLevel(chosen, PCIC_LEVELS, pcicItemsForLevel, tenses)));
       }
-      // beta sentenceMix: the sentences take turns (not the new words: each one is followed by its own sentence).
-      next = entries.length > 0 ? startRound(entries, today, dir, focusKey, { mix: picked.length > 0 && getBeta('sentenceMix') }) : null;
+      // The sentences take turns (not the new words: each one is followed by its own sentence).
+      next = entries.length > 0 ? startRound(entries, today, dir, focusKey, { mix: picked.length > 0 }) : null;
       // Saved at once (when there is a round): leaving before the first answer brings back the same sentences.
       if (next) await saveSentenceRound(db, next);
       else await clearSentenceRound(db);
@@ -278,7 +272,7 @@ export default function SentencesScreen() {
   const current = round ? currentEntry(round) : undefined;
   const { done, total } = round ? roundProgress(round) : { done: 0, total: 0 };
   // The tappable words of the prompt on screen (Spanish direction only; a part of a sentence and the listening step have none).
-  const hints = hintBeta && target === 'es' && activeSourceFor(target) !== 'de' && current && step && step.kind !== 'chunk' && step.kind !== 'listen' && step.kind !== 'newword' ? hintPieces(current) : null;
+  const hints = target === 'es' && activeSourceFor(target) !== 'de' && current && step && step.kind !== 'chunk' && step.kind !== 'listen' && step.kind !== 'newword' ? hintPieces(current) : null;
 
   // The item of the word card on screen (a new word, lib/sentenceNewWord.ts).
   const newWordItem = step?.kind === 'newword' && current ? findPcicItem(current.itemId) : undefined;
@@ -335,8 +329,8 @@ export default function SentencesScreen() {
         // A word that was looked at with a hint this round earns nothing (neither a half nor a step back).
         const hinted = new Set((roundRef.current ?? round).hinted ?? []);
         if (hinted.size > 0) verdicts = verdicts.filter((v) => !hinted.has(v.id));
-        await recordTypedWords(verdicts, false);
-      } else if (stepNow.kind === 'mistake' && mistakesBeta) {
+        await recordTypedWords(verdicts);
+      } else if (stepNow.kind === 'mistake') {
         // Credited to the mistake deck, as its Knew it / Didn't know: right = knew it, wrong = didn't know.
         await recordMistakeBuild(entry.itemId, correct, localDateString());
       }

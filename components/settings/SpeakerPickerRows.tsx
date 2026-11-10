@@ -1,10 +1,10 @@
-// Settings -> Voice: whose voice reads each language (lib/voicePreference.ts). One block per language the better voice
-// covers: "Automatic (fastest)" (each word's own recorded voice, today's behavior), then the two people of the
+// Settings -> Voice: whose voice reads each language (lib/voicePreference.ts). One card per active course language:
+// "Automatic (fastest)" (each word's own recorded voice, today's behavior), then the two people of the
 // language's current engine pair, named with their sex. Exactly one row of a block is checked. Hidden where the
 // better voice does not exist (the web build). Below the pickers, the temporary "Fast fallback" switch. The Row is
 // the Settings screen's own card row.
 
-import { View, StyleSheet } from 'react-native';
+import { Pressable, View, StyleSheet } from 'react-native';
 import { Text } from '@/components/KText';
 import { BrutalSwitch } from '@/components/grammar/Brutal';
 import Colors from '@/constants/Colors';
@@ -15,11 +15,9 @@ import { languages } from '@/lib/languages';
 import { setNeuralFastFallback, setNeuralSpeaker, useNeuralState } from '@/lib/neuralModels';
 import { voiceName, voicePair, type NeuralLang, type SpeakerChoice } from '@/lib/neuralVoices';
 import { useFastFallback, useSpeakerChoices } from '@/lib/voicePreference';
-import type { RowComponent } from './BetterVoiceRows';
+import { SentenceVoiceChoices, type RowComponent } from './BetterVoiceRows';
 
-const SPEAKER_LANGS: NeuralLang[] = ['es', 'en', 'hu', 'de'];
-
-export default function SpeakerPickerRows({ Row }: { Row: RowComponent }) {
+export default function SpeakerPickerRows({ Row, languages: voiceLanguages }: { Row: RowComponent; languages: NeuralLang[] }) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const g = useGrammarColors();
@@ -33,7 +31,7 @@ export default function SpeakerPickerRows({ Row }: { Row: RowComponent }) {
 
   return (
     <>
-      {SPEAKER_LANGS.map(lang => {
+      {voiceLanguages.map(lang => {
         const [female, male] = voicePair(lang, state.engines[lang]);
         const options: { choice: SpeakerChoice; label: string; hint?: string }[] = [
           { choice: 'auto', label: s.auto },
@@ -42,26 +40,32 @@ export default function SpeakerPickerRows({ Row }: { Row: RowComponent }) {
         ];
         return (
           <View key={lang} testID={`settings-speaker-${lang}`}>
-            <Text style={[styles.title, { color: colors.textMuted }]}>{s.title(langName(lang))}</Text>
-            {options.map(({ choice, label, hint }) => {
-              const checked = choices[lang] === choice;
-              return (
-                <Row key={choice} onPress={() => setNeuralSpeaker(lang, choice)}>
-                  <View
-                    testID={`settings-speaker-${lang}-${choice}`}
-                    accessibilityRole="radio"
-                    accessibilityState={{ checked }}
-                    style={styles.option}
-                  >
-                    <View style={styles.labelBox}>
-                      <Text style={[styles.label, { color: colors.text }]}>{label}</Text>
-                      {hint ? <Text style={[styles.hint, { color: colors.tabIconDefault }]}>{hint}</Text> : null}
-                    </View>
-                    {checked ? <Text style={[styles.check, { color: g.ink }]}>✓</Text> : null}
-                  </View>
-                </Row>
-              );
-            })}
+            <Text style={[styles.title, { color: colors.textMuted }]}>{langName(lang)}</Text>
+            <Row>
+              <View style={styles.card}>
+                <Text style={[styles.label, { color: colors.text }]}>{s.title}</Text>
+                {options.map(({ choice, label, hint }) => {
+                  const checked = choices[lang] === choice;
+                  return (
+                    <Pressable
+                      key={choice}
+                      onPress={() => setNeuralSpeaker(lang, choice)}
+                      testID={`settings-speaker-${lang}-${choice}`}
+                      accessibilityRole="radio"
+                      accessibilityState={{ checked }}
+                      style={styles.option}
+                    >
+                      <View style={styles.labelBox}>
+                        <Text style={[styles.label, { color: colors.text }]}>{label}</Text>
+                        {hint ? <Text style={[styles.hint, { color: colors.tabIconDefault }]}>{hint}</Text> : null}
+                      </View>
+                      {checked ? <Text style={[styles.check, { color: g.ink }]}>✓</Text> : null}
+                    </Pressable>
+                  );
+                })}
+                <SentenceVoiceChoices lang={lang} />
+              </View>
+            </Row>
           </View>
         );
       })}
@@ -79,7 +83,8 @@ export default function SpeakerPickerRows({ Row }: { Row: RowComponent }) {
 
 const styles = StyleSheet.create({
   title: { fontSize: 12, fontWeight: '500', marginTop: 20 },
-  option: { flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
+  card: { width: '100%' },
+  option: { paddingVertical: 12, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
   labelBox: { flex: 1, marginRight: 12 },
   label: { fontSize: 16, fontWeight: '600' },
   hint: { fontSize: 12, fontWeight: '500', marginTop: 2 },

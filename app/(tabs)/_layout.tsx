@@ -11,7 +11,6 @@ import { useSkin } from '@/lib/useSkin';
 import { brutalHeaderOptions } from '@/lib/brutalHeader';
 import { useSkinDecor } from '@/components/skins';
 import { t } from '@/lib/i18n';
-import { useBeta } from '@/lib/beta';
 import { useHasSession } from '@/lib/cloud/useHasSession';
 import { FeedbackHeaderProvider } from '@/lib/feedbackHeader';
 import { ScreenFeedbackFrame } from '@/lib/screenFeedback';
@@ -27,10 +26,6 @@ export default function TabLayout() {
   const { skin } = useSkin();
   const { HeaderOrnament } = useSkinDecor();
   const s = t();
-  // the three beta tabs (Practice, Sentences, Speak) are hidden (href: null) while their switch is off.
-  const showPractice = useBeta('practiceTab');
-  const showSentences = useBeta('sentenceTab');
-  const showSpeak = useBeta('speechTab');
   // the weekly leaderboard needs a cloud account on web; the tab follows login and logout
   const hasSession = useHasSession();
   const webKeyboardOpen = useWebKeyboardOpen();
@@ -145,7 +140,7 @@ export default function TabLayout() {
         options={{
           title: s.tabs.sentences,
           tabBarAccessibilityLabel: s.tabs.sentences,
-          ...(showSentences ? { tabBarButton: tabButton({ ios: 'text.bubble.fill', android: 'chat', web: 'chat' }) } : { href: null }),
+          tabBarButton: tabButton({ ios: 'text.bubble.fill', android: 'chat', web: 'chat' }),
         }}
       />
       <Tabs.Screen
@@ -153,7 +148,7 @@ export default function TabLayout() {
         options={{
           title: s.tabs.speak,
           tabBarAccessibilityLabel: s.tabs.speak,
-          ...(showSpeak ? { tabBarButton: tabButton({ ios: 'mic.fill', android: 'mic', web: 'mic' }) } : { href: null }),
+          tabBarButton: tabButton({ ios: 'mic.fill', android: 'mic', web: 'mic' }),
         }}
       />
       <Tabs.Screen
@@ -161,7 +156,7 @@ export default function TabLayout() {
         options={{
           title: s.tabs.practice,
           tabBarAccessibilityLabel: s.tabs.practice,
-          ...(showPractice ? { tabBarButton: tabButton({ ios: 'dumbbell.fill', android: 'fitness_center', web: 'fitness_center' }) } : { href: null }),
+          tabBarButton: tabButton({ ios: 'dumbbell.fill', android: 'fitness_center', web: 'fitness_center' }),
         }}
       />
       <Tabs.Screen

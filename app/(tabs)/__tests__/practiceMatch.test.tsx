@@ -18,7 +18,6 @@ jest.mock('@/lib/buildFlavor', () => ({ IS_PLAY_BUILD: false, FEEDBACK_URL: 'htt
 import { act, fireEvent, render } from '@testing-library/react-native';
 
 import { findPcicItem, pcicItemsForLevel, setPcicTarget } from '@/data/pcic';
-import { __resetBetaForTest } from '@/lib/beta';
 import { getDb } from '@/lib/database';
 import { setLanguage } from '@/lib/i18n';
 import { loadSavedGame, saveGame } from '@/lib/practice/gameRound';
@@ -97,11 +96,6 @@ beforeEach(async () => {
   jest.useFakeTimers();
   await getDb().resetPcicCards();
   await getDb().setPracticeRound(null);
-  await getDb().setBetaFlag('practiceDictation', true);
-  await getDb().setBetaFlag('practiceScramble', true);
-  await getDb().setBetaFlag('practiceMatch', true);
-  await getDb().setBetaFlag('xpV2', false);
-  __resetBetaForTest();
   await saveGame('match', null);
   await savePracticeMode('reading');
 });
@@ -111,15 +105,10 @@ afterEach(() => {
 });
 
 describe('Practice tab: the Match mode', () => {
-  it('has its chip; switched off the chip is gone', async () => {
+  it('always has its chip', async () => {
     await learnWords();
-    let view = await mount();
+    const view = await mount();
     expect(view.getByText('Match')).toBeTruthy();
-    view.unmount();
-    await getDb().setBetaFlag('practiceMatch', false);
-    __resetBetaForTest();
-    view = await mount();
-    expect(view.queryByTestId('practice-mode-match')).toBeNull();
     view.unmount();
   });
 

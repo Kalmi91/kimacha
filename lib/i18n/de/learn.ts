@@ -34,13 +34,10 @@ const de: typeof en = {
     },
   },
   mistakes: {
-    load: '📥 Meine Fehler laden',
-    loaded: (sentences: number, words: number, drills: number) =>
-      `Geladen: ${sentences} Sätze, ${words} Wörter, ${drills} Grammatikübungen`,
     entry: (n: number) => `📕 Meine Fehler (${n})`,
     title: 'Meine Fehler',
     practice: (n: number) => `Meine Fehler üben (${n} fällig)`,
-    empty: 'Noch keine Fehler geladen. Einstellungen → Meine Fehler laden.',
+    empty: 'Noch keine Fehler geladen.',
     wrongWordsTitle: 'Wörter, die du falsch hattest',
     reviewAgainTitle: 'Noch einmal wiederholen',
     noLesson: 'Dazu gibt es keine Lektion in der App, die Karten üben es',

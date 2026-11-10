@@ -37,7 +37,6 @@ jest.mock('@/data/pcic', () => {
 
 import { fireEvent, render } from '@testing-library/react-native';
 
-import { __resetBetaForTest } from '@/lib/beta';
 import { getDb } from '@/lib/database';
 import { setLanguage } from '@/lib/i18n';
 import { LADDER_KEY, saveStage } from '@/lib/sentenceLadder';
@@ -72,8 +71,6 @@ beforeEach(async () => {
   await getDb().setPcicLevel('A1');
   await getDb().setGrammarPalette('classic');
   await clearSentenceRound(getDb());
-  __resetBetaForTest();
-  for (const flag of ['xpV2', 'sentenceHint', 'sentenceMix'] as const) await getDb().setBetaFlag(flag, false);
   await getDb().resetGameProgress(LADDER_KEY);
   // back to the default after a test that picked a level
   await saveSentenceLevel(getDb(), 'en→es', 'all');

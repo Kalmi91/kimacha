@@ -19,7 +19,6 @@ jest.mock('@/lib/buildFlavor', () => ({ IS_PLAY_BUILD: false, FEEDBACK_URL: 'htt
 import { act, fireEvent, render } from '@testing-library/react-native';
 
 import { findPcicItem, pcicItemsForLevel, setPcicTarget } from '@/data/pcic';
-import { __resetBetaForTest, setBeta } from '@/lib/beta';
 import { __resetForTests as resetDailyXp } from '@/lib/dailyXp';
 import { getDb } from '@/lib/database';
 import { GRAMMAR_PROGRESS_KEY } from '@/lib/grammar/syllabus';
@@ -123,8 +122,6 @@ beforeEach(async () => {
   await getDb().setPracticeRound(null);
   await getDb().setStrictAccents(false);
   await getDb().setGameProgress(GRAMMAR_PROGRESS_KEY, 'presente-regular', 'done', { correct: 1, total: 1 });
-  __resetBetaForTest();
-  await getDb().setBetaFlag('xpV2', false);
   resetDailyXp();
   await getDb().addDailyXpTenths(TODAY, -100000);
 });
@@ -295,7 +292,6 @@ describe('Practice tab: the questions', () => {
   });
 
   it('the questions give no half and no XP, right or wrong', async () => {
-    await setBeta('xpV2', true);
     await learnWords();
     const view = await mount();
     await toQuestions(view);

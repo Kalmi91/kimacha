@@ -1,7 +1,6 @@
 import { useCallback, useState } from 'react';
 import { getDb } from '@/lib/database';
 import { useLearner } from '@/lib/learner';
-import { useBeta } from '@/lib/beta';
 import {
   weeklyGoalProgress,
   DEFAULT_WEEKLY_GOAL_MINUTES,
@@ -64,8 +63,6 @@ export function useStatsScreen() {
   // The daily bar is shown in hours above 60 minutes, and switches to minutes on tap.
   const [chartInMinutes, setChartInMinutes] = useState(false);
 
-  // beta: levels, the level card (Settings -> Beta); off = no card and no level data read.
-  const showLevels = useBeta('levels');
   const { refresh } = useLearner();
 
   // Refresh every time the tab gains focus so numbers stay current across app-wide activity.
@@ -84,7 +81,7 @@ export function useStatsScreen() {
         setMockOfficial(mockTarget === 'es');
         return Promise.all([
           readMockOverview(db, mockTarget, MOCK_LEVELS[mockTarget]).then(setMockOverview),
-          showLevels ? readProgressLevel(db, mockTarget).then(setProgressLevel) : undefined,
+          readProgressLevel(db, mockTarget).then(setProgressLevel),
         ]);
       }),
       // All PCIC computation comes from a single getPcicCards()
@@ -108,7 +105,7 @@ export function useStatsScreen() {
         setSchedule(buildSchedulePreview(dueDates, new Date()));
       }),
     ]);
-  }, [showLevels, refresh]);
+  }, [refresh]);
   useScreenLoad(load);
 
   const maxMinutes = Math.max(1, ...usage.last7Days.map(d => d.minutes));
@@ -133,7 +130,6 @@ export function useStatsScreen() {
     mockOverview,
     mockOfficial,
     progressLevel,
-    showLevels,
     chartInMinutes,
     setChartInMinutes,
     maxMinutes,

@@ -150,13 +150,13 @@ describe('recordTypedWords', () => {
     const db = getDb();
     await db.upsertPcicCard(learned(ITEMS[0], TODAY));
     await db.upsertPcicCard(learned(ITEMS[1]));
-    const n = await recordTypedWords([v('a1-s1', true), v('a1-s2', true), v('a1-nocard', true), v('a1-s1', true)], false, TODAY);
+    const n = await recordTypedWords([v('a1-s1', true), v('a1-s2', true), v('a1-nocard', true), v('a1-s1', true)], TODAY);
     expect(n).toEqual({ right: 2, wrong: 0 });
     const cards = new Map((await db.getPcicCards()).map((c) => [c.itemId, c]));
     expect(cards.get('a1-s1')?.halfSteps).toBe(1); // the repeated verdict did not count twice
     expect(cards.get('a1-s2')?.halfSteps).toBe(1);
     // a second typed sentence: 2 halves = one full step (the due date moves)
-    await recordTypedWords([v('a1-s1', true)], false, TODAY);
+    await recordTypedWords([v('a1-s1', true)], TODAY);
     const again = (await db.getPcicCards()).find((c) => c.itemId === 'a1-s1')!;
     expect(again.halfSteps).toBe(0);
     expect(again.reps).toBe(3);
@@ -166,28 +166,28 @@ describe('recordTypedWords', () => {
     const db = getDb();
     await db.upsertPcicCard(learned(ITEMS[0], '2026-10-10')); // due
     await db.upsertPcicCard(learned(ITEMS[1])); // not due
-    const n = await recordTypedWords([v('a1-s1', false, true), v('a1-s2', false, false)], false, TODAY);
+    const n = await recordTypedWords([v('a1-s1', false, true), v('a1-s2', false, false)], TODAY);
     expect(n).toEqual({ right: 0, wrong: 1 });
     let cards = new Map((await db.getPcicCards()).map((c) => [c.itemId, c]));
     expect(cards.get('a1-s1')?.wrongStreak).toBe(1);
     expect(cards.get('a1-s2')?.wrongStreak ?? 0).toBe(0);
-    await recordTypedWords([v('a1-s1', false, true)], false, TODAY);
+    await recordTypedWords([v('a1-s1', false, true)], TODAY);
     cards = new Map((await db.getPcicCards()).map((c) => [c.itemId, c]));
     expect(cards.get('a1-s1')?.wrongStreak).toBe(0); // the second miss moved it back one step
     expect(cards.get('a1-s1')?.interval).toBeLessThan(3);
   });
 
-  it('beta xpV2: off earns no XP; on, each right half earns XP by its own word reps (1, or 0.2 from the 3rd), a wrong word none', async () => {
+  it('word credit earns no extra XP because the screen awards it per sentence', async () => {
     const db = getDb();
     const day = localDateString();
     await db.addDailyXpTenths(day, -100000);
     await db.upsertPcicCard(learned(ITEMS[0]));
     await db.upsertPcicCard({ ...learned(ITEMS[1]), reps: 3 });
     await db.upsertPcicCard(learned(ITEMS[2], '2026-10-10'));
-    await recordTypedWords([v('a1-s1', true), v('a1-s2', true)], false, TODAY);
+    await recordTypedWords([v('a1-s1', true), v('a1-s2', true)], TODAY);
     expect(await db.getDailyXpTenths(day)).toBe(0);
-    await recordTypedWords([v('a1-s1', true), v('a1-s2', true), v('a1-nocard', true), v('a1-s3', false, true)], true, TODAY);
-    expect(await db.getDailyXpTenths(day)).toBe(10 + 2);
+    await recordTypedWords([v('a1-s1', true), v('a1-s2', true), v('a1-nocard', true), v('a1-s3', false, true)], TODAY);
+    expect(await db.getDailyXpTenths(day)).toBe(0);
   });
 });
 

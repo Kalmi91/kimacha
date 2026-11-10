@@ -1,6 +1,5 @@
-// The stored form of the beta switches (user_meta.beta_flags): a JSON object
-// {flagName: boolean}. Name-agnostic and import-free on purpose, so both DB
-// implementations can use it without a cycle through lib/beta.ts.
+// Legacy user_meta.beta_flags in backups: a JSON object {flagName: boolean}.
+// Kept for backup compatibility only; these values do not control app features.
 
 // A missing, invalid or non-object value gives {}; non-boolean entries are dropped.
 export function parseBetaFlagMap(raw: unknown): Record<string, boolean> {

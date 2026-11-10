@@ -8,7 +8,6 @@
 // is only resumed on the same local day and in the same direction; anything broken or older is just not resumed.
 
 import type { PcicItem, PcicTarget } from '@/data/pcic';
-import { getBeta } from '@/lib/beta';
 import { getDb } from '@/lib/database';
 import { countLearningToday } from '@/lib/learningDay';
 import { practiceCandidates } from '@/lib/practice/gapFill';
@@ -61,9 +60,9 @@ export function pickGameWords({ cards, today, findItem, avoid, size = GAME_ROUND
   return picked.length >= min ? picked : [];
 }
 
-/** A right answer: one half (with its XP under the xpV2 switch), and the day counts for the streak. */
+/** A right answer: one half with its XP, and the day counts for the streak. */
 export async function creditRight(itemId: string): Promise<void> {
-  await recordCorrectHalf(itemId, getBeta('xpV2'));
+  await recordCorrectHalf(itemId);
   await countLearningToday();
 }
 

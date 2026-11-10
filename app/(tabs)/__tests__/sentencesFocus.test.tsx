@@ -41,7 +41,6 @@ jest.mock('@/data/pcic', () => {
 
 import { act, fireEvent, render } from '@testing-library/react-native';
 
-import { __resetBetaForTest } from '@/lib/beta';
 import { __resetForTests as resetDailyXp } from '@/lib/dailyXp';
 import { getDb } from '@/lib/database';
 import { LADDER_KEY } from '@/lib/sentenceLadder';
@@ -97,10 +96,7 @@ beforeEach(async () => {
   await getDb().setOnboarding('en', 'es');
   await clearSentenceRound(getDb());
   await getDb().resetGameProgress(LADDER_KEY); // every test starts with fresh sentences (rung 1)
-  __resetBetaForTest();
-  await getDb().setBetaFlag('xpV2', false);
   // they also count on one sentence's steps following each other (beta sentenceMix, on by default, mixes them; FB536)
-  await getDb().setBetaFlag('sentenceMix', false);
   resetDailyXp();
   await getDb().addDailyXpTenths(localDateString(), -100000);
   for (const n of [1, 2, 3, 4, 5, 6]) await getDb().upsertPcicCard(learned(n));

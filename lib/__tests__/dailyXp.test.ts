@@ -12,25 +12,9 @@ import {
   onXpChanged,
   wholeXp,
   xpForCard,
-  xpForGrade,
   xpForHalf,
 } from '../dailyXp';
 import { localDateString } from '../usageStats';
-
-describe('xpForGrade', () => {
-  it('a new word graded "Knew it" is worth 3', () => {
-    expect(xpForGrade(true, 'good')).toBe(3);
-  });
-
-  it('a review graded "Knew it" is worth 2', () => {
-    expect(xpForGrade(false, 'good')).toBe(2);
-  });
-
-  it('"Didn\'t know" is worth nothing, new or not', () => {
-    expect(xpForGrade(true, 'again')).toBe(0);
-    expect(xpForGrade(false, 'again')).toBe(0);
-  });
-});
 
 describe('addXp / daily total', () => {
   const db = getDb();
@@ -130,56 +114,41 @@ describe('daily goal event', () => {
 // XP v2 (Kálmán, 2026-10-12): the value set, v1 stays as it was.
 describe('xpForCard', () => {
   const card = (o: Partial<Parameters<typeof xpForCard>[0]> = {}) => ({ isNew: false, isDue: true, reviewCount: 1, knew: true, ...o });
-  const v1 = { v2: false };
-  const v2 = { v2: true };
 
-  it('v2: a new word "Knew it" is worth 3', () => {
-    expect(xpForCard(card({ isNew: true, isDue: false, reviewCount: 0 }), v2)).toBe(3);
+  it('a new word "Knew it" is worth 3', () => {
+    expect(xpForCard(card({ isNew: true, isDue: false, reviewCount: 0 }))).toBe(3);
   });
 
-  it("v2: a due word's 1st repetition is worth 2, the 2nd 1, the 3rd and later 0.2", () => {
-    expect(xpForCard(card({ reviewCount: 1 }), v2)).toBe(2);
-    expect(xpForCard(card({ reviewCount: 2 }), v2)).toBe(1);
-    expect(xpForCard(card({ reviewCount: 3 }), v2)).toBe(0.2);
-    expect(xpForCard(card({ reviewCount: 5 }), v2)).toBe(0.2);
-    expect(xpForCard(card({ reviewCount: 40 }), v2)).toBe(0.2);
+  it("a due word's 1st repetition is worth 2, the 2nd 1, the 3rd and later 0.2", () => {
+    expect(xpForCard(card({ reviewCount: 1 }))).toBe(2);
+    expect(xpForCard(card({ reviewCount: 2 }))).toBe(1);
+    expect(xpForCard(card({ reviewCount: 3 }))).toBe(0.2);
+    expect(xpForCard(card({ reviewCount: 5 }))).toBe(0.2);
+    expect(xpForCard(card({ reviewCount: 40 }))).toBe(0.2);
   });
 
-  it('v2: a card with no reps yet (marked known by hand) counts as the 1st repetition', () => {
-    expect(xpForCard(card({ reviewCount: 0 }), v2)).toBe(2);
+  it('a card with no reps yet (marked known by hand) counts as the 1st repetition', () => {
+    expect(xpForCard(card({ reviewCount: 0 }))).toBe(2);
   });
 
-  it('v2: practising a word that is not due is worth 0', () => {
-    expect(xpForCard(card({ isDue: false, reviewCount: 1 }), v2)).toBe(0);
-    expect(xpForCard(card({ isDue: false, reviewCount: 5 }), v2)).toBe(0);
+  it('practising a word that is not due is worth 0', () => {
+    expect(xpForCard(card({ isDue: false, reviewCount: 1 }))).toBe(0);
+    expect(xpForCard(card({ isDue: false, reviewCount: 5 }))).toBe(0);
   });
 
-  it("v2: \"Didn't know\" is worth 0, new or not, due or not", () => {
-    expect(xpForCard(card({ isNew: true, knew: false }), v2)).toBe(0);
-    expect(xpForCard(card({ knew: false, reviewCount: 1 }), v2)).toBe(0);
-    expect(xpForCard(card({ knew: false, isDue: false }), v2)).toBe(0);
-  });
-
-  it('v1 (v2 off): exactly the old values, whatever the repetition count or due state', () => {
-    expect(xpForCard(card({ isNew: true, isDue: false, reviewCount: 0 }), v1)).toBe(3);
-    for (const reviewCount of [1, 2, 3, 5]) expect(xpForCard(card({ reviewCount }), v1)).toBe(2);
-    expect(xpForCard(card({ isDue: false, reviewCount: 4 }), v1)).toBe(2);
-    expect(xpForCard(card({ isNew: true, knew: false }), v1)).toBe(0);
-    expect(xpForCard(card({ knew: false }), v1)).toBe(0);
+  it("\"Didn't know\" is worth 0, new or not, due or not", () => {
+    expect(xpForCard(card({ isNew: true, knew: false }))).toBe(0);
+    expect(xpForCard(card({ knew: false, reviewCount: 1 }))).toBe(0);
+    expect(xpForCard(card({ knew: false, isDue: false }))).toBe(0);
   });
 });
 
 describe('xpForHalf', () => {
-  it('v2: a half is worth 1, but 0.2 once the word has 3+ repetitions', () => {
-    expect(xpForHalf({ reviewCount: 0 }, { v2: true })).toBe(1);
-    expect(xpForHalf({ reviewCount: 2 }, { v2: true })).toBe(1);
-    expect(xpForHalf({ reviewCount: 3 }, { v2: true })).toBe(0.2);
-    expect(xpForHalf({ reviewCount: 9 }, { v2: true })).toBe(0.2);
-  });
-
-  it('v1 (v2 off): the old rules know no halves, so 0', () => {
-    expect(xpForHalf({ reviewCount: 0 }, { v2: false })).toBe(0);
-    expect(xpForHalf({ reviewCount: 5 }, { v2: false })).toBe(0);
+  it('a half is worth 1, but 0.2 once the word has 3+ repetitions', () => {
+    expect(xpForHalf({ reviewCount: 0 })).toBe(1);
+    expect(xpForHalf({ reviewCount: 2 })).toBe(1);
+    expect(xpForHalf({ reviewCount: 3 })).toBe(0.2);
+    expect(xpForHalf({ reviewCount: 9 })).toBe(0.2);
   });
 });
 
@@ -226,11 +195,11 @@ describe('fractional XP', () => {
 
   it('undo takes back exactly what the card gave, fractions included', async () => {
     await addXp(10, '2027-02-04');
-    const give = xpForCard({ isNew: false, isDue: true, reviewCount: 4, knew: true }, { v2: true });
+    const give = xpForCard({ isNew: false, isDue: true, reviewCount: 4, knew: true });
     expect(give).toBe(0.2);
     expect((await addXp(give, '2027-02-04')).xp).toBe(10.2);
     expect((await addXp(-give, '2027-02-04')).xp).toBe(10);
-    const two = xpForCard({ isNew: false, isDue: true, reviewCount: 1, knew: true }, { v2: true });
+    const two = xpForCard({ isNew: false, isDue: true, reviewCount: 1, knew: true });
     await addXp(two, '2027-02-04');
     expect((await addXp(-two, '2027-02-04')).xp).toBe(10);
     expect(await getDb().getDailyXpTenths('2027-02-04')).toBe(100);

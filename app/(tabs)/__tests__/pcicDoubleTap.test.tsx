@@ -37,7 +37,6 @@ import { TextInput } from 'react-native';
 import { act, fireEvent, render } from '@testing-library/react-native';
 
 import { getDb } from '@/lib/database';
-import { __resetBetaForTest } from '@/lib/beta';
 import { __resetForTests } from '@/lib/dailyXp';
 import { setLanguage } from '@/lib/i18n';
 import { RESUME_GAME_ID } from '@/lib/resumeRoute';
@@ -60,8 +59,6 @@ describe('Learn tab: double tap on a grade button', () => {
 
   beforeEach(async () => {
     __resetForTests();
-    __resetBetaForTest();
-    await getDb().setBetaFlag('xpV2', false);
     setLanguage('en');
     await getDb().resetPcicCards();
     await getDb().resetGameProgress(RESUME_GAME_ID);

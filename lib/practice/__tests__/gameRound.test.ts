@@ -1,7 +1,6 @@
 // The part the Practice tab games share (lib/practice/gameRound.ts): the 8 words, the credit of an answer, the saved round.
 
 import type { PcicItem } from '@/data/pcic';
-import { __resetBetaForTest, loadBeta } from '@/lib/beta';
 import { __resetForTests as resetDailyXp } from '@/lib/dailyXp';
 import { getDb } from '@/lib/database';
 import { addDays, sm2NewCard, type Sm2Card } from '@/lib/sm2';
@@ -93,10 +92,8 @@ describe('pickGameWords', () => {
 describe('credit', () => {
   const db = getDb();
   beforeEach(async () => {
-    __resetBetaForTest();
     resetDailyXp();
     await db.resetPcicCards();
-    await db.setBetaFlag('xpV2', false);
     await db.addDailyXpTenths(TODAY, -100000);
   });
 
@@ -119,13 +116,7 @@ describe('credit', () => {
     expect(await db.getPcicCard('c2')).toMatchObject({ interval: 6, wrongStreak: 0 });
   });
 
-  it('under the xpV2 switch a half earns its XP, off it earns none', async () => {
-    await db.upsertPcicCard(learned('c3'));
-    await creditRight('c3');
-    expect(await db.getDailyXpTenths(TODAY)).toBe(0);
-    await db.setBetaFlag('xpV2', true);
-    __resetBetaForTest();
-    await loadBeta();
+  it('a right answer always earns half XP', async () => {
     await db.upsertPcicCard(learned('c4'));
     await creditRight('c4');
     expect(await db.getDailyXpTenths(TODAY)).toBeGreaterThan(0);

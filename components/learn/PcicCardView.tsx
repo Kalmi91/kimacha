@@ -30,14 +30,10 @@ import MoreNewAsk from '@/components/learn/MoreNewAsk';
 import { answerInputProps } from '@/lib/inputProps';
 import LevelPickerSheet from '@/components/LevelPickerSheet';
 import { BrutalBox, textOnFill } from '@/components/grammar/Brutal';
-import EasySentenceCard from '@/components/EasySentenceCard';
-import { wordSpeakerGender } from '@/lib/cardSpeaker';
 import { infoButtonVisible, questionSentenceOf } from '@/lib/infoGate';
-import { findPcicItem } from '@/data/pcic';
 import { noteLessonFor } from '@/lib/grammar/noteLesson';
 import FitText from '@/components/FitText';
 import DoneBadge from '@/components/DoneBadge';
-import TypedSentenceCard from '@/components/TypedSentenceCard';
 import type { usePcicSession } from '@/lib/learn/usePcicSession';
 import { styles } from './pcicStyles';
 
@@ -55,8 +51,6 @@ export default function PcicCardView({
   xpToday,
   lastGraded,
   handleUndo,
-  sentenceCard,
-  setSentenceCard,
   askMoreNew,
   handleAskMoreNew,
   handleDeclineMoreNew,
@@ -67,7 +61,6 @@ export default function PcicCardView({
   openPlacement,
   handleSelectLevel,
   sourceLang,
-  strictAccents,
   dockLift,
   kbHeight,
   dockH,
@@ -117,7 +110,7 @@ export default function PcicCardView({
 
   // The 💬 button sits in the header row's right end (the Learn tab has no navigator header); its card context follows the
   // screen: the sentence card, the done screen, or the word card on top.
-  const feedbackCard = sentenceCard ? `sentence:${sentenceCard.itemId}` : current && currentItem ? `pcic:${current.itemId}` : 'pcic';
+  const feedbackCard = current && currentItem ? `pcic:${current.itemId}` : 'pcic';
 
   const headerRow = (
     <SkinHeader>
@@ -170,72 +163,6 @@ export default function PcicCardView({
       <View style={[styles.container, styles.centered, { backgroundColor: colors.background }]}>
         <ActivityIndicator size="large" color={colors.tint} />
       </View>
-    );
-  }
-
-  // The sentence card comes before the next word card
-  // (before the done screen too). Its own button closes it; it does not write SRS.
-  if (sentenceCard) {
-    return (
-      <KeyboardAvoidingView
-        style={[styles.container, { backgroundColor: colors.background }, typingPadding]}
-        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
-      >
-        <SkinBackdrop />
-        {headerRow}
-        <LevelPickerSheet
-          visible={levelSheetOpen}
-          active={level}
-          cards={allLevelCards}
-          colors={colors}
-          title={s.pcic.chooseLevel}
-          target={target}
-          exam={examRow}
-          onPlacement={openPlacement}
-          onSelect={handleSelectLevel}
-          onClose={() => setLevelSheetOpen(false)}
-        />
-        {sentenceCard.kind === 'tiles' ? (
-          <ScrollView
-            style={styles.cardScroll}
-            contentContainerStyle={[styles.cardScrollContent, { paddingBottom: 24 }]}
-            keyboardShouldPersistTaps="handled"
-            keyboardDismissMode={keyboardDismissOnDrag()}
-          >
-            <EasySentenceCard
-              key={sentenceCard.itemId}
-              sourceSentence={sentenceCard.source}
-              targetWords={sentenceCard.targetWords}
-              trapWords={sentenceCard.trapWords}
-              speechLocale={speechLang(target)}
-              sourceSpeechLocale={speechLang(sourceLang)}
-              speakerGender={wordSpeakerGender(findPcicItem(sentenceCard.itemId), target)}
-              spokenSentence={sentenceCard.target}
-              onResult={() => setSentenceCard(null)}
-              gradeButtons
-            />
-          </ScrollView>
-        ) : (
-          // The typing sentence card has its own scroller + the docked Check bar above the
-          // keyboard (like on the word card), so there is no outer ScrollView.
-          <TypedSentenceCard
-            key={sentenceCard.itemId}
-            sourceSentence={sentenceCard.source}
-            targetSentence={sentenceCard.target}
-            strictAccents={strictAccents}
-            lang={target}
-            speechLocale={speechLang(target)}
-            sourceSpeechLocale={speechLang(sourceLang)}
-            speakerGender={wordSpeakerGender(findPcicItem(sentenceCard.itemId), target)}
-            onResult={() => setSentenceCard(null)}
-            dockLift={dockLift}
-            keyboardOpen={kbHeight > 0}
-            dockH={dockH}
-            onDockHeight={setDockH}
-            gradeButtons
-          />
-        )}
-      </KeyboardAvoidingView>
     );
   }
 

@@ -28,7 +28,7 @@ describe('Report (app/mistakes/index.tsx)', () => {
     const { getByText, queryByTestId } = render(<MistakesReportScreen />);
     await flush();
 
-    expect(getByText('No mistakes loaded yet. Settings → Load my mistakes.')).toBeTruthy();
+    expect(getByText('No mistakes loaded yet.')).toBeTruthy();
     expect(queryByTestId('mistakes-practice-btn')).toBeNull();
   });
 

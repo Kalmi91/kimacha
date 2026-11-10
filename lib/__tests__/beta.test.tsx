@@ -1,127 +1,10 @@
-// Beta switches (lib/beta.ts): all off by default, saved in the DB, the hook follows setBeta, and they
-// ride along in the backup (an old backup without them loads with every switch off).
-
-
-import { act, renderHook } from '@testing-library/react-native';
+// Legacy backup compatibility and practice counters.
 
 import { getDb } from '@/lib/database';
-import { BETA_DEFAULTS, BETA_FLAGS, __resetBetaForTest, getBeta, loadBeta, setBeta, useBeta, useBetaEnabled } from '../beta';
 import { parseBetaFlagMap } from '../betaFlags';
 import { validateBackupPayload } from '../backup';
 
-const flush = async () => {
-  for (let i = 0; i < 4; i++) await act(async () => { await Promise.resolve(); });
-};
-
-beforeEach(async () => {
-  __resetBetaForTest();
-  for (const f of BETA_FLAGS) await getDb().setBetaFlag(f, false);
-});
-
-describe('beta defaults', () => {
-  it('has xpV2 and levels off and every other flag on', () => {
-    expect([...BETA_FLAGS]).toEqual(['practiceTab', 'sentenceTab', 'xpV2', 'levels', 'practiceDictation', 'practiceScramble', 'practiceMatch', 'practiceOpposites', 'practiceSituations', 'sentenceMistakes', 'sentenceHint', 'sentenceMix', 'speechTab']);
-    for (const f of BETA_FLAGS) {
-      const on = !['xpV2', 'levels'].includes(f);
-      expect(BETA_DEFAULTS[f]).toBe(on);
-      expect(getBeta(f)).toBe(on);
-    }
-  });
-
-  it('the Speak tab is on from the start (a never-saved db shows it), and a saved off is read back off', async () => {
-    expect(BETA_DEFAULTS.speechTab).toBe(true);
-    expect(getBeta('speechTab')).toBe(true);
-    await getDb().setBetaFlag('speechTab', false);
-    __resetBetaForTest();
-    await loadBeta();
-    expect(getBeta('speechTab')).toBe(false);
-  });
-
-  it('a game switched off is read back off, a never-saved one is on', async () => {
-    await getDb().setBetaFlag('practiceDictation', false);
-    __resetBetaForTest();
-    await loadBeta();
-    expect(getBeta('practiceDictation')).toBe(false);
-  });
-
-  it('the removed sentenceListening switch (the listening rung is always on, FB570), still stored by an older version, is ignored', async () => {
-    await getDb().setBetaFlag('sentenceListening', false);
-    __resetBetaForTest();
-    await loadBeta();
-    expect((BETA_FLAGS as readonly string[]).includes('sentenceListening')).toBe(false);
-    expect(Object.keys(BETA_DEFAULTS)).not.toContain('sentenceListening');
-    expect(getBeta('sentenceListening' as never)).toBeUndefined();
-  });
-
-  it('a db with nothing stored loads as all off', async () => {
-    __resetBetaForTest();
-    await loadBeta();
-    for (const f of BETA_FLAGS) expect(getBeta(f)).toBe(false);
-  });
-});
-
-describe('setBeta / loadBeta', () => {
-  it('saves the flag in the db and keeps the others off', async () => {
-    await setBeta('xpV2', true);
-    expect(getBeta('xpV2')).toBe(true);
-    expect(getBeta('levels')).toBe(false);
-    expect(await getDb().getBetaFlags()).toMatchObject({ xpV2: true });
-  });
-
-  it('a new app run (cache cleared) reads the saved flags back', async () => {
-    await setBeta('xpV2', true);
-    __resetBetaForTest();
-    expect(getBeta('xpV2')).toBe(false);
-    await loadBeta();
-    expect(getBeta('xpV2')).toBe(true);
-    await setBeta('xpV2', false);
-    __resetBetaForTest();
-    await loadBeta();
-    expect(getBeta('xpV2')).toBe(false);
-  });
-});
-
-describe('useBeta', () => {
-  it('starts off, follows setBeta, and goes back off', async () => {
-    const { result } = renderHook(() => useBeta('xpV2'));
-    await flush();
-    expect(result.current).toBe(false);
-    await act(async () => { await setBeta('xpV2', true); });
-    expect(result.current).toBe(true);
-    await act(async () => { await setBeta('xpV2', false); });
-    expect(result.current).toBe(false);
-  });
-
-  it('useBetaEnabled lists the flags that are on, in the order asked, and follows setBeta', async () => {
-    const { result } = renderHook(() => useBetaEnabled(['levels', 'practiceDictation', 'xpV2']));
-    await flush();
-    expect(result.current).toEqual([]);
-    await act(async () => { await setBeta('xpV2', true); });
-    await act(async () => { await setBeta('practiceDictation', true); });
-    expect(result.current).toEqual(['practiceDictation', 'xpV2']);
-    await act(async () => { await setBeta('practiceDictation', false); });
-    expect(result.current).toEqual(['xpV2']);
-  });
-
-  it('shows a flag that was saved before the hook mounted', async () => {
-    await getDb().setBetaFlag('levels', true);
-    const { result } = renderHook(() => useBeta('levels'));
-    await flush();
-    expect(result.current).toBe(true);
-  });
-});
-
-describe('beta flags and practice counters in the backup', () => {
-  it('beta flags round-trip through exportAll / importAll', async () => {
-    const db = getDb();
-    await db.setBetaFlag('xpV2', true);
-    const payload = JSON.parse(JSON.stringify(await db.exportAll()));
-    expect(() => validateBackupPayload(payload)).not.toThrow();
-    expect(JSON.parse(payload.tables.user_meta[0].beta_flags)).toMatchObject({ xpV2: true });
-    await db.setBetaFlag('xpV2', false);
-    await db.importAll(payload);
-    expect(await db.getBetaFlags()).toMatchObject({ xpV2: true });
-  });
+describe('practice counters in the backup', () => {
 
   it('the unfinished practice round round-trips through exportAll / importAll; an old backup (no practice_round) loads as no round', async () => {
     const db = getDb();
@@ -163,9 +46,8 @@ describe('beta flags and practice counters in the backup', () => {
     expect(await db.getBoardIdentity()).toBeNull();
   });
 
-  it('an old backup (no beta_flags, no half_steps / wrong_streak) validates and loads: switches off, counters 0', async () => {
+  it('an old backup (no beta_flags, no half_steps / wrong_streak) validates and loads: counters 0', async () => {
     const db = getDb();
-    await db.setBetaFlag('levels', true);
     const payload = JSON.parse(JSON.stringify(await db.exportAll()));
     delete payload.tables.user_meta[0].beta_flags;
     payload.tables.pcic_cards = [
@@ -173,7 +55,6 @@ describe('beta flags and practice counters in the backup', () => {
     ];
     expect(() => validateBackupPayload(payload)).not.toThrow();
     await db.importAll(payload);
-    expect(await db.getBetaFlags()).toEqual({});
     expect(await db.getPcicCard('old-1')).toMatchObject({ halfSteps: 0, wrongStreak: 0, interval: 3 });
   });
 

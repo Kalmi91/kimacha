@@ -2,6 +2,13 @@ import type en from '../en/settings';
 
 const es: typeof en = {
   settings: {
+    folders: {
+      learning: 'Aprendizaje',
+      voice: 'Voz',
+      voiceHint: 'Quién lee, grabaciones',
+      data: 'Mis datos',
+      dataHint: 'Copia, restauración, reinicio',
+    },
     themeAuto: 'Automático',
     themeLight: 'Claro',
     themeDark: 'Oscuro',
@@ -45,7 +52,7 @@ const es: typeof en = {
       on: 'Activada',
       off: 'Desactivada: habla la voz del teléfono',
       retry: 'Parte de la descarga falló. Toca para reintentar',
-      sentences: (lang: string) => `Voz de las frases: ${lang}`,
+      sentences: 'Voz de las frases',
       piper: 'Piper (rápida)',
       kokoro: 'Kokoro (mejor, más lenta)',
       kokoroSize: (mb: string) => `Kokoro necesita una descarga de ${mb}`,
@@ -62,11 +69,8 @@ const es: typeof en = {
       confirmTitle: '¿Descargar la voz mejor?',
       confirmYes: 'Descargar',
     },
-    // Settings: the two tabs at the top, and the Voice tab's speaker picker (lib/voicePreference.ts).
-    tabGeneral: 'General',
-    tabVoice: 'Voz',
     speaker: {
-      title: (lang: string) => `Quién lee ${lang}`,
+      title: 'Quién lee',
       auto: 'Automático (el más rápido)',
       person: (name: string, female: boolean) => `${name}, ${female ? 'mujer' : 'hombre'}`,
       hint: 'Las grabaciones de las palabras de la otra persona empiezan un poco más lento.',
@@ -76,22 +80,6 @@ const es: typeof en = {
     },
     dailyNewLimit: 'Palabras nuevas al día',
     dailyNewLimitWords: (n: string) => `${n} palabras / día`,
-    beta: {
-      title: 'Beta',
-      practiceTab: 'Pestaña Práctica',
-      sentenceTab: 'Pestaña Frases',
-      speechTab: 'Pestaña Hablar',
-      xpV2: 'Nuevos valores de XP',
-      levels: 'Niveles A1-C1',
-      practiceDictation: 'Juego de dictado',
-      practiceScramble: 'Juego de letras revueltas',
-      practiceMatch: 'Juego de parejas rápidas',
-      practiceOpposites: 'Juego de opuestos',
-      practiceSituations: 'Juego de situaciones',
-      sentenceMistakes: 'Frases: de mis errores',
-      sentenceHint: 'Frases: pistas al tocar una palabra',
-      sentenceMix: 'Frases: las frases se alternan',
-    },
     strictAccents: 'Los acentos cuentan',
     strictAccentsHint: 'Un acento que falta (á, é, ñ) cuenta como error al escribir.',
     articlePicker: 'Botones de artículo',
@@ -100,7 +88,7 @@ const es: typeof en = {
     missedWordDelaySeconds: (n: string) => `${n} s`,
     learningDirection: 'Dirección de aprendizaje',
     chooseDirection: 'Elige la dirección de aprendizaje',
-    credits: 'Créditos',
+    credits: 'Fuentes y licencias',
     signIn: 'Iniciar sesión',
     // the row that resets the grammar progress, and its confirmation.
     resetGrammar: '🗑️ Reiniciar progreso de gramática',

@@ -39,7 +39,6 @@ async function fillEverything({ store, db }: ReturnType<typeof fresh>) {
   await db.setPcicNewBonus(10, today);
   await db.setFeedbackBtnSide('left');
   await db.setStatusBarTint(2);
-  await db.setBetaFlag('someFlag', true);
   await db.setPracticeRound('{"round":1}');
   await db.setSkin('brutal');
   await db.addDailyXpTenths(today, 30);
@@ -75,7 +74,6 @@ describe('web state round trip', () => {
     expect(await target.db.getPcicNewBonus(today)).toBe(10);
     expect(await target.db.getFeedbackBtnSide()).toBe('left');
     expect(await target.db.getStatusBarTint()).toBe(2);
-    expect(await target.db.getBetaFlags()).toEqual({ someFlag: true });
     expect(await target.db.getPracticeRound()).toBe('{"round":1}');
     expect(await target.db.getSkin()).toBe('brutal');
     expect(await target.db.getDailyXpTenths(today)).toBe(30);

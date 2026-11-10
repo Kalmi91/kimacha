@@ -3,7 +3,7 @@
 
 import type { PcicItem } from '@/data/pcic';
 import { setActiveSource } from '@/lib/languagePair';
-import { learnerLevel, nextSentenceStep, sentenceLevel, INITIAL_CADENCE } from '@/lib/sentenceCards';
+import { learnerLevel, sentenceLevel } from '@/lib/sentenceCards';
 import { buildSentenceQueue } from '@/lib/sentenceTab';
 import { sm2NewCard, type Sm2Card } from '@/lib/sm2';
 
@@ -75,19 +75,5 @@ describe('the learner level', () => {
     expect(sentenceLevel('B1', 'd1', levelOf)).toBe('A1');
     expect(sentenceLevel('A1', 'd7', levelOf)).toBe('A1');
     expect(sentenceLevel('B1', 'd7', levelOf)).toBe('B1');
-  });
-
-  it('the Words tab sentence card follows the same gate', () => {
-    const cards = [4, 5, 6, 3, 9].map((n) => learned(ITEMS[n - 1]));
-    const deps = { target: 'de' as const, cards, findItem, levelOf, vocab: () => ['hier', 'sein'] };
-    // four new words, all malen: its sentence has a perfect of a verb above A1
-    const run = (d: typeof deps) => {
-      let state = INITIAL_CADENCE;
-      let card = null as ReturnType<typeof nextSentenceStep>['card'];
-      for (let i = 0; i < 4; i++) ({ state, card } = nextSentenceStep(state, 'd6', d));
-      return card;
-    };
-    expect(run(deps)).toBeNull();
-    expect(run({ ...deps, levelOf: (id) => (id === 'd6' ? 'A2' : LEVELS[id]) })?.itemId).toBe('d6');
   });
 });

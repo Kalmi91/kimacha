@@ -1,21 +1,13 @@
 import { getDb } from './database';
-import type { Sm2Grade } from './sm2';
 import { localDateString } from './usageStats';
 
 // Daily XP + the fixed daily goal (first slice). XP comes from the Learn tab's
-// card grades: a NEW word graded "Knew it" is worth 3, a review "Knew it" 2,
-// "Didn't know" nothing (so tapping cannot manufacture XP). The gamer skin's
+// card grades: a NEW word graded "Knew it" is worth 3; due reviews earn less with
+// each repetition, and "Didn't know" nothing. The gamer skin's
 // time-based LVL (lib/xp.ts) is a separate number and stays as it is.
 export const DAILY_XP_GOAL = 50;
 const XP_NEW_KNEW = 3;
-const XP_REVIEW_KNEW = 2;
-
-export function xpForGrade(wasNew: boolean, g: Sm2Grade): number {
-  if (g === 'again') return 0;
-  return wasNew ? XP_NEW_KNEW : XP_REVIEW_KNEW;
-}
-
-// XP v2 (Kálmán, 2026-10-12): the first 2 repetitions of a due word are worth 2 and 1,
+// The first 2 repetitions of a due word are worth 2 and 1,
 // from the 3rd on 0.2; a word that is not due is worth 0; a "half" (a correct answer in a
 // practice task) is worth 1, 0.2 once the word has 3+ repetitions.
 // `reviewCount` = Sm2Card.reps BEFORE this answer (the introduction grade counts as 1, so
@@ -27,9 +19,8 @@ const XP_LATE_FROM = 3;
 
 export type CardXpInput = { isNew: boolean; isDue: boolean; reviewCount: number; knew: boolean };
 
-// XP for one main-card grade. `v2` false = the original values (3 new, 2 review, 0 for "Didn't know").
-export function xpForCard(c: CardXpInput, opts: { v2: boolean }): number {
-  if (!opts.v2) return xpForGrade(c.isNew, c.knew ? 'good' : 'again');
+// XP for one main-card grade.
+export function xpForCard(c: CardXpInput): number {
   if (!c.knew) return 0;
   if (c.isNew) return XP_NEW_KNEW;
   if (!c.isDue) return 0;
@@ -37,10 +28,8 @@ export function xpForCard(c: CardXpInput, opts: { v2: boolean }): number {
   return XP_REPETITION[Math.max(1, c.reviewCount) - 1];
 }
 
-// XP for one "half" (a correct answer in a practice task, steps 2-3). Without v2 the
-// original rules know no halves, so they earn nothing.
-export function xpForHalf(w: { reviewCount: number }, opts: { v2: boolean }): number {
-  if (!opts.v2) return 0;
+// XP for one "half" (a correct answer in a practice task, steps 2-3).
+export function xpForHalf(w: { reviewCount: number }): number {
   return w.reviewCount >= XP_LATE_FROM ? XP_REPEAT_LATE : XP_HALF;
 }
 

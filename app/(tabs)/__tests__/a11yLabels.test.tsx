@@ -37,7 +37,8 @@ import { getDb } from '@/lib/database';
 import { setLanguage } from '@/lib/i18n';
 import { ThemeProvider } from '@/lib/ThemeContext';
 import TabLayout from '../_layout';
-import SettingsScreen from '../settings';
+import SettingsScreen from '../../settings-learning';
+import DataSettingsScreen from '../../settings-data';
 import { makeFlush } from '@/test-utils/flush';
 
 jest.setTimeout(30000);
@@ -104,7 +105,7 @@ describe('a11y: Settings tab', () => {
 
     it('the settings rows are buttons', async () => {
       await getDb().setGrammarPalette(palette);
-      const view = render(<ThemeProvider><SettingsScreen /></ThemeProvider>);
+      const view = render(<ThemeProvider><DataSettingsScreen /></ThemeProvider>);
       await flush();
       expect(view.getByRole('button', { name: /Backup/ })).toBeTruthy();
       view.unmount();

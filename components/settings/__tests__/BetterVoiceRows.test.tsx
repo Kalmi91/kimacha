@@ -6,7 +6,7 @@ import { fireEvent, render } from '@testing-library/react-native';
 
 import { ThemeProvider } from '@/lib/ThemeContext';
 import { NEURAL_MODELS, PACK_BYTES, PACK_KEY, PIPER_MODEL_KEYS, SENTENCE_PACK_BYTES, SENTENCES_KEY, formatMegabytes } from '@/lib/neuralVoices';
-import BetterVoiceRows from '../BetterVoiceRows';
+import BetterVoiceRows, { SentenceVoiceChoices } from '../BetterVoiceRows';
 
 let mockState: any;
 const mockDownload = jest.fn();
@@ -39,6 +39,8 @@ const show = () =>
   render(
     <ThemeProvider>
       <BetterVoiceRows Row={Row} />
+        <SentenceVoiceChoices lang="es" />
+        <SentenceVoiceChoices lang="en" />
     </ThemeProvider>,
   );
 
@@ -170,6 +172,8 @@ describe('BetterVoiceRows: why the chosen voice is not speaking', () => {
     view.rerender(
       <ThemeProvider>
         <BetterVoiceRows Row={Row} />
+        <SentenceVoiceChoices lang="es" />
+        <SentenceVoiceChoices lang="en" />
       </ThemeProvider>,
     );
     expect(view.getByTestId('settings-better-voice-es-issue').props.children).toContain('could not be loaded');

@@ -1,5 +1,12 @@
 export default {
   settings: {
+    folders: {
+      learning: 'Learning',
+      voice: 'Voice',
+      voiceHint: 'Who reads, recordings',
+      data: 'My data',
+      dataHint: 'Backup, restore, reset',
+    },
     // the theme-picker buttons (previously hard-coded in English in settings.tsx).
     themeAuto: 'Auto',
     themeLight: 'Light',
@@ -45,7 +52,7 @@ export default {
       on: 'On',
       off: "Off: the phone's own voice speaks",
       retry: 'Part of the download failed. Tap to try again',
-      sentences: (lang: string) => `Sentence voice: ${lang}`,
+      sentences: 'Sentence voice',
       piper: 'Piper (fast)',
       kokoro: 'Kokoro (nicer, slower)',
       kokoroSize: (mb: string) => `Kokoro needs a ${mb} download`,
@@ -62,11 +69,8 @@ export default {
       confirmTitle: 'Download the better voice?',
       confirmYes: 'Download',
     },
-    // Settings: the two tabs at the top, and the Voice tab's speaker picker (lib/voicePreference.ts).
-    tabGeneral: 'General',
-    tabVoice: 'Voice',
     speaker: {
-      title: (lang: string) => `Who reads ${lang}`,
+      title: 'Who reads',
       auto: 'Automatic (fastest)',
       person: (name: string, female: boolean) => `${name}, ${female ? 'female' : 'male'}`,
       hint: "Recordings of the other person's words start a little slower.",
@@ -76,23 +80,6 @@ export default {
     },
     dailyNewLimit: 'New words a day',
     dailyNewLimitWords: (n: string) => `${n} words / day`,
-    // Settings -> Beta: early features, each one a switch; off = the app works as before.
-    beta: {
-      title: 'Beta',
-      practiceTab: 'Practice tab',
-      sentenceTab: 'Sentences tab',
-      speechTab: 'Speak tab',
-      xpV2: 'New XP values',
-      levels: 'Levels A1-C1',
-      practiceDictation: 'Dictation game',
-      practiceScramble: 'Letter scramble game',
-      practiceMatch: 'Quick match game',
-      practiceOpposites: 'Opposites game',
-      practiceSituations: 'Situations game',
-      sentenceMistakes: 'Sentences: from my mistakes',
-      sentenceHint: 'Sentences: tap-a-word hints',
-      sentenceMix: 'Sentences: the sentences take turns',
-    },
     strictAccents: 'Accents count',
     strictAccentsHint: 'A missing accent (á, é, ñ) is a mistake when typing.',
     articlePicker: 'Article buttons',
@@ -104,7 +91,7 @@ export default {
     // sheet (Settings, above the Backup row).
     learningDirection: 'Learning direction',
     chooseDirection: 'Choose learning direction',
-    credits: 'Credits',
+    credits: 'Sources and licenses',
     // the web guest's row that opens the cloud sign-in (components/cloud/CloudGate.tsx).
     signIn: 'Sign in',
     // the row that resets the grammar progress, and its confirmation.
