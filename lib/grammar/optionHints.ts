@@ -77,6 +77,9 @@ export const OPTION_HINTS: Record<string, Lang4> = {
   },
 };
 
+OPTION_HINTS['a temporary state'] = OPTION_HINTS['passing state'];
+OPTION_HINTS['a temporary state that will pass'] = OPTION_HINTS['passing state'];
+
 /** The example line under the rule option, in the lesson's language, or undefined if there is no entry. */
 export function optionHint(text: Lang4, lang: string): string | undefined {
   const hint = OPTION_HINTS[text.en];

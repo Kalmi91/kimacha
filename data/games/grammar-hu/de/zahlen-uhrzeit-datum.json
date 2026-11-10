@@ -61,7 +61,7 @@
   "halb drei is half an hour before three, so 2:30": "a halb drei három előtt fél órával van, vagyis 2:30",
   "halb drei is half past three, 3:30": "a halb drei fél négy, vagyis 3:30",
   "That is the English habit. German counts towards the next hour, so 3:30 is halb vier and 2:30 is halb drei.": "Ez az angol szokás. A német a következő óra felé számol, ezért a 3:30 halb vier, a 2:30 pedig halb drei.",
-  "halb drei is 3:30 in the 24-hour clock": "a halb drei a 24 órás órán 3:30",
+  "halb drei indicates 3:30 when expressed on a 24-hour clock": "a halb drei a huszonnégy órás időjelölés szerint a 3:30 időpontot jelenti",
   "The official form is a different style: zwei Uhr dreißig for 2:30. halb is only used in speech.": "A hivatalos forma más stílusú: zwei Uhr dreißig a 2:30-ra. A halb csak beszédben használatos.",
   "halb points to the next hour. 2:30 is half an hour before three, so halb drei.": "A halb a következő órára mutat. A 2:30 három előtt fél órával van, ezért halb drei.",
   "halb zwei would be 1:30. 2:30 is half an hour before three, so you need halb drei.": "A halb zwei 1:30 lenne. A 2:30 három előtt fél órával van, ezért halb drei kell.",
@@ -78,7 +78,7 @@
   "My birthday is on the first of May.": "Május elsején van a születésnapom.",
   "The -en is the plural ending": "az -en a többes szám végződése",
   "Here the -en is not a plural. It is the ending the ordinal gets after am, in the dative: am ersten Mai.": "Itt az -en nem többes szám. Ez a végződés, amelyet a sorszámnév az am után kap, részes esetben: am ersten Mai.",
-  "ersten is the cardinal number one": "az ersten az egy tőszám",
+  "ersten is the cardinal form expressing the number one": "az ersten az egy számot kifejező tőszámnévi alak",
   "The cardinal number is eins. erste is the ordinal, first, and dates use the ordinal.": "A tőszám eins. Az erste a sorszámnév, első, és a dátum sorszámnevet használ.",
   "After am the ordinal gets the ending -en": "az am után a sorszámnév -en végződést kap",
   "Before a noun like Uhr the number one is ein: Es ist ein Uhr.": "Főnév, például az Uhr előtt az egy ein: Es ist ein Uhr.",
@@ -119,6 +119,6 @@
   "This preposition goes with a clock time": "Ez az elöljárószó órával megadott időponttal áll",
   "am goes with every kind of time": "az am mindenféle időponttal áll",
   "am is for days and dates, such as am Montag and am ersten Mai. A clock time takes um.": "Az am napokhoz és dátumokhoz való, például am Montag és am ersten Mai. Az óra szerinti időpont um-ot kap.",
-  "im goes with all words about time": "az im minden időt kifejező szóval áll",
+  "im is the preposition used with every expression of time": "az im az az elöljáró, amely minden időt kifejező szókapcsolattal használatos",
   "im is for months and seasons, such as im Mai and im Sommer. A clock time takes um.": "Az im hónapokhoz és évszakokhoz való, például im Mai és im Sommer. Az óra szerinti időpont um-ot kap."
 }

@@ -1153,24 +1153,10 @@ for (const track of ['es', 'en']) {
   }
 }
 
-// ---------------------------------------------------------------------------
-// Report
-// ---------------------------------------------------------------------------
-
-console.log(`audit-games: ${p1.length} P1, ${p2.length} P2`);
-if (p1.length > 0) {
-  console.log('\n--- P1 (must fix) ---');
-  for (const issue of p1) console.log(`  [${issue.path}] ${issue.issue}`);
-}
-if (p2.length > 0) {
-  console.log('\n--- P2 (reported) ---');
-  for (const issue of p2) console.log(`  [${issue.path}] ${issue.issue}`);
-}
-
 // why items: the Hungarian/German overlays (data/games/grammar-hu|grammar-de/<course>/<lesson>.json, keyed by the English text)
-// must not bring a parenthesis or bracket back; info only: how often the right option is the unique longest one.
+// must not bring a parenthesis or bracket back; each course must stay below 45% unique-longest right options.
 {
-  const { overlayGiveaways } = createRequire(import.meta.url)('./whyGiveaway.cjs');
+  const { overlayGiveaways, isUniqueLongestWhyOption, whyLengthIssue } = createRequire(import.meta.url)('./whyGiveaway.cjs');
   const info = [];
   for (const course of ['es', 'en', 'de', 'hu']) {
     const dir = join(ROOT, 'data', 'games', 'grammar', course);
@@ -1183,21 +1169,33 @@ if (p2.length > 0) {
       for (const item of lesson.items ?? []) {
         if (item.kind !== 'why') continue;
         total += 1;
-        const len = (o) => String(o?.text?.en ?? '').length;
-        const lens = (item.options ?? []).map(len);
-        const best = Math.max(...lens);
-        if (lens[item.correctIndex] === best && lens.filter((l) => l === best).length === 1) longest += 1;
+        if (isUniqueLongestWhyOption(item)) longest += 1;
         for (const ov of overlays) {
           for (const issue of overlayGiveaways(item, ov.map)) {
             p1.push({ path: `${ov.name.replace(ROOT, '')} item ${item.id}`, issue });
-            console.log(`  [P1] ${ov.name.replace(ROOT, '')} item ${item.id}: ${issue}`);
           }
         }
       }
     }
     if (total) info.push(`${course} ${((100 * longest) / total).toFixed(1)}%`);
+    const issue = whyLengthIssue(longest, total);
+    if (issue) p1.push({ path: `grammar/${course}`, issue });
   }
-  console.log(`[info] why items whose right option is the unique longest one: ${info.join(', ')}`);
+  console.log(`[gate <45%] why items whose right option is the unique longest one: ${info.join(', ')}`);
+}
+
+// ---------------------------------------------------------------------------
+// Report
+// ---------------------------------------------------------------------------
+
+console.log(`audit-games: ${p1.length} P1, ${p2.length} P2`);
+if (p1.length > 0) {
+  console.log('\n--- P1 (must fix) ---');
+  for (const issue of p1) console.log(`  [${issue.path}] ${issue.issue}`);
+}
+if (p2.length > 0) {
+  console.log('\n--- P2 (reported) ---');
+  for (const issue of p2) console.log(`  [${issue.path}] ${issue.issue}`);
 }
 
 process.exit(p1.length > 0 ? 1 : 0);

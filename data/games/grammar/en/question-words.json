@@ -374,8 +374,8 @@
         },
         {
           "text": {
-            "en": "question word + subject + verb, as in Spanish",
-            "es": "palabra interrogativa + sujeto + verbo, como en español"
+            "en": "question word, then subject and verb, as in Spanish",
+            "es": "palabra interrogativa, luego sujeto y verbo, como en español"
           },
           "wrong": {
             "en": "In English the helper “do” is required: Where do you live?, not “Where you live?”.",
@@ -656,8 +656,8 @@
         },
         {
           "text": {
-            "en": "the verb is in its base form: Who live here?",
-            "es": "el verbo va en forma base: Who live here?"
+            "en": "the verb stays in the base form here: Who live here?",
+            "es": "el verbo se mantiene en la forma base: Who live here?"
           },
           "wrong": {
             "en": "“Who” takes a singular verb, so “lives”, with -s.",
@@ -772,8 +772,8 @@
         },
         {
           "text": {
-            "en": "age: How many years + have",
-            "es": "edad: How many years + have"
+            "en": "asking about age: How many years + have",
+            "es": "preguntar por la edad: How many years + have"
           },
           "wrong": {
             "en": "This copies Spanish “tener años”: English needs to be and “old”.",

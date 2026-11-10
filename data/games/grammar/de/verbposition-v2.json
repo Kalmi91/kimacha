@@ -524,8 +524,8 @@
         },
         {
           "text": {
-            "en": "The verb goes to the end of the sentence",
-            "es": "El verbo va al final de la oración"
+            "en": "The conjugated verb must stand at the very end of the sentence",
+            "es": "El verbo conjugado debe ir justo al final de la oración"
           },
           "wrong": {
             "en": "The end is only for a second verb part, as in Ich möchte Tee trinken. A single conjugated verb stays in second place.",
@@ -826,8 +826,8 @@
       "options": [
         {
           "text": {
-            "en": "Each word of the time phrase takes its own position",
-            "es": "Cada palabra de la frase de tiempo ocupa su propia posición"
+            "en": "Every individual word in the time phrase occupies a separate position",
+            "es": "Cada palabra individual de la expresión de tiempo ocupa una posición separada"
           },
           "wrong": {
             "en": "Words that belong together count as one element. Am Montag um acht Uhr is a single position 1, so the verb is not fifth.",

@@ -728,8 +728,8 @@
       "options": [
         {
           "text": {
-            "en": "a question word: asking about someone",
-            "es": "una palabra interrogativa: preguntar por alguien"
+            "en": "a question word: used to ask a question about someone",
+            "es": "una palabra interrogativa: se usa para preguntar por alguien"
           },
           "wrong": {
             "en": "Here who does not ask but links the woman to the clause; it is a relative word.",
@@ -773,8 +773,8 @@
         },
         {
           "text": {
-            "en": "that: a demonstrative",
-            "es": "that: un demostrativo"
+            "en": "that is used as a demonstrative pronoun",
+            "es": "that funciona como un pronombre demostrativo"
           },
           "wrong": {
             "en": "Here that does not point at anything; it links the book to the clause, so it is a relative word.",
@@ -806,8 +806,8 @@
       "options": [
         {
           "text": {
-            "en": "a wrong sentence: the relative word is missing",
-            "es": "una oración incorrecta: falta la palabra de relativo"
+            "en": "an incorrect sentence: it is missing the relative word",
+            "es": "una oración gramaticalmente incorrecta: falta la palabra de relativo"
           },
           "wrong": {
             "en": "The relative word here is the object of the clause (we saw it), so it may be left out; the sentence is correct.",
@@ -855,8 +855,8 @@
         },
         {
           "text": {
-            "en": "place: where it happened",
-            "es": "lugar: dónde pasó"
+            "en": "a place: the location where it happened",
+            "es": "un lugar: el sitio en el que ocurrió"
           },
           "wrong": {
             "en": "Where is for places; whose tells whose car it is.",

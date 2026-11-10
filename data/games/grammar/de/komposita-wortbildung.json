@@ -502,8 +502,8 @@
       "options": [
         {
           "text": {
-            "en": "The first part decides: das Haus makes it das Haustür",
-            "es": "La primera parte decide: das Haus lo convierte en das Haustür"
+            "en": "The first noun decides the gender: das Haus makes it das Haustür",
+            "es": "El primer sustantivo decide el género: das Haus lo hace das Haustür"
           },
           "wrong": {
             "en": "The first part only describes what kind of door it is. The gender and the article come from the last part, die Tür.",
@@ -1062,8 +1062,8 @@
         },
         {
           "text": {
-            "en": "-chen is masculine, like many other words in -en",
-            "es": "-chen es masculino, como muchas otras palabras en -en"
+            "en": "The ending -chen is masculine, like many other nouns ending in -en",
+            "es": "La terminación -chen tiene género masculino, como muchos otros sustantivos terminados en -en"
           },
           "wrong": {
             "en": "Words in -chen are not masculine. They are small things and always neuter, for example das Brötchen.",

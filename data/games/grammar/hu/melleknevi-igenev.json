@@ -782,8 +782,8 @@
         },
         {
           "text": {
-            "en": "-t participle: the task has been solved",
-            "es": "participio en -t: la tarea ya se resolvió"
+            "en": "-t participle: the task is already solved and finished",
+            "es": "Participio en -t: la tarea ya se ha resuelto y está terminada"
           },
           "wrong": {
             "en": "With this rule the sentence would be A megoldott feladat nehéz (the solved task is difficult); a task that is done no longer has to be solved.",
@@ -901,8 +901,8 @@
         },
         {
           "text": {
-            "en": "Possibility: a car that could break down",
-            "es": "Posibilidad: un coche que podría descomponerse"
+            "en": "Possibility: a car that might break down later",
+            "es": "Posibilidad: un coche que podría descomponerse en algún momento"
           },
           "wrong": {
             "en": "With this rule the sentence would use a -hat/-het participle (a car that could break); -ott says that the breakdown has already happened.",
@@ -1004,8 +1004,8 @@
       "options": [
         {
           "text": {
-            "en": "-t participle: the text has been read",
-            "es": "participio en -t: el texto ya se leyó"
+            "en": "-t participle: the action is over and the text was read",
+            "es": "Un participio en -t: la acción terminó y el texto ya se leyó"
           },
           "wrong": {
             "en": "With this rule the sentence would be Ez az olvasott szöveg (this text that has been read); -ható says nothing about having been read.",
@@ -1179,8 +1179,8 @@
         },
         {
           "text": {
-            "en": "An adjective before a noun: the working ...",
-            "es": "Un adjetivo delante de un sustantivo: los ... que trabajan"
+            "en": "An adjective modifying a following noun: the working people",
+            "es": "Un adjetivo que modifica al sustantivo siguiente: las personas o cosas que trabajan"
           },
           "wrong": {
             "en": "With this rule a noun would follow, as in dolgozó emberek; here dolgozók stands alone as the subject, so it is a noun.",

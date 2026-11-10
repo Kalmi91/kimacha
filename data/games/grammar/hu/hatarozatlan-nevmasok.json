@@ -981,8 +981,8 @@
         },
         {
           "text": {
-            "en": "Many people are meant, so the verb has to be plural: vannak",
-            "es": "Se trata de mucha gente, así que el verbo tiene que ir en plural: vannak"
+            "en": "Several people are meant, so the verb must have the plural form vannak",
+            "es": "Se habla de varias personas, por eso el verbo debe tomar la forma plural vannak"
           },
           "wrong": {
             "en": "With this rule the sentence would be Mindenki itt vannak, which Hungarian does not accept: mindenki always takes a singular verb.",
@@ -1331,8 +1331,8 @@
       "options": [
         {
           "text": {
-            "en": "Definite conjugation, because valakit ends in -t like every object",
-            "es": "Conjugación definida, porque valakit termina en -t como todo objeto"
+            "en": "Definite conjugation, because valakit has the same ending -t as every direct object",
+            "es": "Se usa conjugación definida porque valakit lleva la misma terminación -t que todo objeto"
           },
           "wrong": {
             "en": "With this rule the sentence would be Keresem valakit, which is wrong: -t only marks the object; the definite conjugation needs a definite object (a kulcsot, Annát).",

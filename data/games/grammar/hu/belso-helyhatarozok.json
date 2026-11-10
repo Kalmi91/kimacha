@@ -238,7 +238,7 @@
       "tr": { "en": "I eat in the restaurant.", "es": "Como en el restaurante." },
       "options": [
         {
-          "text": { "en": "Back-vowel word, where I am: -ban", "es": "Palabra con vocales posteriores, dónde estoy: -ban" },
+          "text": { "en": "Back vowels, describing where I am: -ban", "es": "Palabra de vocales posteriores que dice dónde estoy: -ban" },
           "wrong": { "en": "With this rule the word would be étteremban; étterem has only e (a front vowel), so it takes -ben.", "es": "Con esta regla la palabra sería étteremban; étterem solo tiene e (vocal anterior), así que lleva -ben." }
         },
         {
@@ -352,7 +352,7 @@
           "wrong": { "en": "With this rule the word would be boltban ('in the shop'); megyek is movement, so the ending has no n.", "es": "Con esta regla la palabra sería boltban («en la tienda»); megyek es movimiento, así que la terminación no lleva n." }
         },
         {
-          "text": { "en": "Coming out of the place: -ból", "es": "Salir del lugar: -ból" },
+          "text": { "en": "Moving out of the inside of a place: use -ból", "es": "Movimiento que sale del interior de un lugar, expresado con -ból" },
           "wrong": { "en": "With this rule the word would be boltból ('out of the shop'), but megyek means I go towards it.", "es": "Con esta regla la palabra sería boltból («de la tienda»), pero megyek significa que voy hacia ella." }
         },
         {

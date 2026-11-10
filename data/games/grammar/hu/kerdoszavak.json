@@ -451,8 +451,8 @@
       "options": [
         {
           "text": {
-            "en": "Plural noun, because the question asks about many",
-            "es": "Sustantivo en plural, porque la pregunta es por muchos"
+            "en": "Use a plural noun because the question asks about several things",
+            "es": "Se usa un sustantivo plural, porque la pregunta se refiere a varias cosas"
           },
           "wrong": {
             "en": "With this rule the noun would be gyerekek, but Hungarian keeps the singular after hány and after numbers.",
@@ -593,8 +593,8 @@
         },
         {
           "text": {
-            "en": "-e stands for a question word like 'where'",
-            "es": "-e sustituye a una palabra interrogativa como «dónde»"
+            "en": "-e replaces an interrogative word such as the word for where",
+            "es": "-e sustituye una palabra interrogativa, por ejemplo la que significa dónde"
           },
           "wrong": {
             "en": "With this rule the sentence would be Nem tudom, hol van a bolt; -e asks yes or no, it does not replace a question word.",

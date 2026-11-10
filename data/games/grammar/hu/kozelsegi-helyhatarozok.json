@@ -1226,8 +1226,8 @@
         },
         {
           "text": {
-            "en": "-nél, because of the é in kolléga",
-            "es": "-nél, por la é de kolléga"
+            "en": "Use -nél because kolléga contains the front vowel é",
+            "es": "Se usa -nél porque kolléga contiene la vocal anterior é"
           },
           "wrong": {
             "en": "With this rule the ending would be -nél; but the word ends in a back vowel (a), so it is -nál.",

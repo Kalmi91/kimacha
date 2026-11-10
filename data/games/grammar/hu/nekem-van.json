@@ -317,8 +317,8 @@
         },
         {
           "text": {
-            "en": "-m marks the plural: several cars",
-            "es": "-m marca el plural: varios coches"
+            "en": "-m marks the plural noun: several cars",
+            "es": "-m marca un sustantivo plural: hay varios coches"
           },
           "wrong": {
             "en": "With this rule the word would be autók: the plural is -k. The -m belongs to the owner, I.",
@@ -467,8 +467,8 @@
       "options": [
         {
           "text": {
-            "en": "-nak means 'in': Anna is a place",
-            "es": "-nak significa «en»: Anna es un lugar"
+            "en": "-nak means in a location, treating Anna as a place",
+            "es": "-nak describe un lugar y significa en, tomando a Anna como lugar"
           },
           "wrong": {
             "en": "With this rule it would be about a place; 'in' is -ban/-ben (a házban). Here -nak says who the owner is.",
@@ -615,8 +615,8 @@
       "options": [
         {
           "text": {
-            "en": "Nincs means 'I am not': the negative of vagyok",
-            "es": "Nincs significa «no soy»: la negación de vagyok"
+            "en": "Nincs means I am not: the negative of first-person vagyok",
+            "es": "Nincs significa no soy, como forma negativa de vagyok en primera persona"
           },
           "wrong": {
             "en": "With this rule the sentence would be Nem vagyok; nincs is the negative of van ('there is not').",
@@ -703,8 +703,8 @@
       "options": [
         {
           "text": {
-            "en": "-em is the plural, so két is not needed",
-            "es": "-em es el plural, así que két no hace falta"
+            "en": "-em is a plural ending, so the number két is unnecessary",
+            "es": "-em es una terminación plural, por eso no hace falta añadir el número két"
           },
           "wrong": {
             "en": "With this rule it would be gyerekek: the plural is -k, and after a number the noun stays singular. -em means 'my'.",

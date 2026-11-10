@@ -456,8 +456,8 @@
       "options": [
         {
           "text": {
-            "en": "zu is the preposition zu, so the following noun must be dative",
-            "es": "zu es la preposición zu, así que el sustantivo siguiente debe estar en dativo"
+            "en": "zu is a preposition here, requiring the following noun to be in the dative case",
+            "es": "zu es una preposición aquí y exige que el sustantivo siguiente esté en dativo"
           },
           "wrong": {
             "en": "This zu is not a preposition. It stands before a verb, is part of the infinitive, and has no influence on a noun.",
@@ -774,8 +774,8 @@
       "options": [
         {
           "text": {
-            "en": "aufstehen has no zu, because it is a separable verb",
-            "es": "aufstehen no lleva zu, porque es un verbo separable"
+            "en": "aufstehen requires no zu because it belongs to the separable verbs",
+            "es": "aufstehen no necesita la palabra zu porque pertenece a los verbos separables"
           },
           "wrong": {
             "en": "Separable verbs do take zu, inside the word: aufzustehen. The reason for the missing zu is a different one.",
