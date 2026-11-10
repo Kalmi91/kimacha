@@ -110,7 +110,7 @@ export default function LevelTestFeedback({
           ) : null}
           {q.review.answer !== '' && (ok ? !d?.filled : true) ? (
             <>
-              <Text style={[styles.label, { color: colors.textMuted }]}>{t().exam.correctAnswer}</Text>
+              <Text style={[styles.label, { color: colors.textMuted, textAlign: 'center' }]}>{t().exam.correctAnswer}</Text>
               <Text testID="level-test-feedback-answer" style={[styles.answer, { color: colors.success }]}>
                 {diff ? words(diff.right, false) : q.review.answer}
               </Text>
@@ -209,7 +209,7 @@ const styles = StyleSheet.create({
   question: { fontSize: fontSize.md, fontWeight: fontWeight.semibold },
   line: { fontSize: fontSize.md },
   label: { fontSize: fontSize.sm },
-  answer: { fontSize: fontSize.md, fontWeight: fontWeight.semibold },
+  answer: { fontSize: fontSize.md, fontWeight: fontWeight.semibold, textAlign: 'center' },
   tr: { fontSize: fontSize.sm, fontStyle: 'italic' },
   why: { fontSize: fontSize.sm },
   link: { fontSize: fontSize.md, fontWeight: fontWeight.semibold },

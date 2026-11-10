@@ -329,7 +329,7 @@ export default function RandomRoundScreen() {
             </Text>
             {q.review.answer !== '' && (
               <>
-                <Text style={[styles.missedLabel, { color: colors.textMuted }]}>{t().exam.correctAnswer}</Text>
+                <Text style={[styles.missedLabel, { color: colors.textMuted, textAlign: 'center' }]}>{t().exam.correctAnswer}</Text>
                 <View
                   testID={ok ? 'random-feedback-green' : undefined}
                   style={ok ? [styles.greenMark, { backgroundColor: colors.successFill, borderColor: g.ink }] : undefined}
@@ -584,7 +584,7 @@ const styles = StyleSheet.create({
   sectionTitle: { fontSize: fontSize.sm, fontWeight: fontWeight.bold, textTransform: 'uppercase' },
   missedQuestion: { fontSize: fontSize.md, fontWeight: fontWeight.semibold },
   missedLabel: { fontSize: fontSize.sm },
-  missedAnswer: { fontSize: fontSize.md, fontWeight: fontWeight.semibold },
+  missedAnswer: { fontSize: fontSize.md, fontWeight: fontWeight.semibold, textAlign: 'center' },
   greenMark: { borderWidth: 2.5, borderRadius: radius.sm, paddingVertical: spacing.sm, paddingHorizontal: spacing.md },
   rightMarkAnchor: { height: 0, zIndex: 10 },
   rightMark: { position: 'absolute', top: spacing.sm, left: 0, right: 0, alignItems: 'center' },

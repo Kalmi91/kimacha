@@ -143,7 +143,7 @@ const styles = StyleSheet.create({
     textAlignVertical: 'top',
   },
   reveal: { gap: spacing.xs },
-  revealLabel: { fontSize: fontSize.sm },
-  revealText: { fontSize: fontSize.lg, fontWeight: fontWeight.semibold },
+  revealLabel: { fontSize: fontSize.sm, textAlign: 'center' },
+  revealText: { fontSize: fontSize.lg, fontWeight: fontWeight.semibold, textAlign: 'center' },
   diff: { fontWeight: fontWeight.bold, textDecorationLine: 'underline' },
 });

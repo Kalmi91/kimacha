@@ -65,6 +65,6 @@ export default function AnswerCompare({
 
 const styles = StyleSheet.create({
   wrap: { gap: 2 },
-  label: { fontSize: 11, fontWeight: '700', textTransform: 'uppercase', marginTop: 4 },
-  line: { fontSize: 20, fontWeight: '700', flexShrink: 1 },
+  label: { fontSize: 11, fontWeight: '700', textTransform: 'uppercase', marginTop: 4, textAlign: 'center' },
+  line: { fontSize: 20, fontWeight: '700', flexShrink: 1, textAlign: 'center' },
 });

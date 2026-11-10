@@ -133,6 +133,6 @@ const styles = StyleSheet.create({
   chipText: { fontSize: fontSize.md, fontWeight: fontWeight.semibold },
   hidden: { opacity: 0 },
   reveal: { gap: spacing.xs },
-  revealLabel: { fontSize: fontSize.sm },
-  revealText: { fontSize: fontSize.lg, fontWeight: fontWeight.semibold },
+  revealLabel: { fontSize: fontSize.sm, textAlign: 'center' },
+  revealText: { fontSize: fontSize.lg, fontWeight: fontWeight.semibold, textAlign: 'center' },
 });

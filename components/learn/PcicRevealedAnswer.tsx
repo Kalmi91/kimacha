@@ -235,6 +235,7 @@ const styles = StyleSheet.create({
     flexShrink: 1,
     fontSize: 22,
     fontWeight: '600',
+    textAlign: 'center',
   },
   frontRow: {
     flexDirection: 'row',
