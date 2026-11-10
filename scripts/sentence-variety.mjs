@@ -21,7 +21,7 @@ import { fileURLToPath } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const LEVELS = ['a1', 'a2', 'b1', 'b2', 'c1'];
-const ENFORCED = ['a1', 'c1'];
+const ENFORCED = ['a1', 'b1', 'c1'];
 const WINDOW = { a1: [4, 9], a2: [5, 12], b1: [7, 15], b2: [8, 18], c1: [8, 18] };
 const FAMILY = ['madre', 'padre', 'hijo', 'hija', 'hermano', 'hermana', 'tía', 'tío', 'abuelo', 'abuela', 'esposo', 'esposa', 'primo', 'prima'];
 const FAMILY_FORMS = new Set(FAMILY.flatMap((w) => [w, w + 's']).concat(['padres', 'hijos', 'hermanos', 'tíos', 'abuelos', 'esposos', 'primos']));
@@ -41,6 +41,9 @@ const tokenize = (s) => s.toLowerCase().replace(/[¿?¡!.,;:()"«»…]/g, ' ').
 const person = (t) => {
   if (IRREGULAR[t]) return IRREGULAR[t];
   if (/(amos|emos|imos)$/.test(t)) return '1p';
+  if (/(aron|ieron|yeron)$/.test(t)) return '3p';
+  if (/(?<![sx])(aste|iste)$/.test(t)) return '2s'; // not present-tense existe, resiste, insiste, consiste
+  if (/[éí]$/.test(t)) return '1s'; // preterite 1s: compré, vi, tuve is irregular and stays 3s-like
   if (/(an|en)$/.test(t)) return '3p';
   if (/(as|es)$/.test(t)) return '2s';
   if (/o$/.test(t)) return '1s';
