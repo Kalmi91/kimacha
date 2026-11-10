@@ -35,6 +35,19 @@ describe('examMissed', () => {
     expect(examMissed(ev(ans('q1', false)))).toBe(false);
     expect(examMissed(undefined)).toBe(false);
   });
+  it('a right answer later in the same exam run does not clear it', () => {
+    expect(examMissed(ev(exam(1, false), exam(2, true)))).toBe(true);
+  });
+  it('ACCEPTANCE: ten gaps of one topic in one exam, six wrong, the last one right → true', () => {
+    const oks = [false, false, true, false, true, true, false, false, false, true];
+    let e: TopicEvidence | undefined;
+    for (const [i, ok] of oks.entries()) e = appendEvidence(e, exam(i + 1, ok));
+    expect(examMissed(e)).toBe(true);
+  });
+  it('a newer exam run without a mistake → false; a right answer after the run clears it', () => {
+    expect(examMissed(ev(exam(1, false), ans(`${EXAM_ID_PREFIX}L2:g1`, true)))).toBe(false);
+    expect(examMissed(ev(exam(1, false), exam(2, true), ans('q9', true, 'cloze')))).toBe(false);
+  });
   it('the exam answer pushed out of the window → false', () => {
     const later = Array.from({ length: EVIDENCE_WINDOW }, (_, i) => ans(`q${i}`, false));
     let e: TopicEvidence | undefined;

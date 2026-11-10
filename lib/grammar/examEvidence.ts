@@ -49,7 +49,16 @@ export function mergeExamAnswers(
   return { evidence: next, touched };
 }
 
-/** The latest exam answer of the topic's window is wrong and no right answer (any id, any kind) stands after it. */
+/** The exam run of an exam answer id: `exam:L<run>` / `exam:M<seed>`, the part before the item. */
+const runOf = (id: string): string => {
+  const end = id.indexOf(':', EXAM_ID_PREFIX.length);
+  return end < 0 ? id : id.slice(0, end);
+};
+
+/**
+ * The topic's latest exam run in the window holds a wrong answer, and no right answer (any id, any kind) stands after that
+ * run. A right answer inside the same run does not clear it: one exam asks the same topic several times.
+ */
 export function examMissed(ev?: TopicEvidence): boolean {
   if (!ev) return false;
   const w = ev.answers.slice(-EVIDENCE_WINDOW);
@@ -60,7 +69,9 @@ export function examMissed(ev?: TopicEvidence): boolean {
       break;
     }
   }
-  if (last < 0 || w[last].ok) return false;
+  if (last < 0) return false;
+  const run = runOf(w[last].id);
+  if (!w.some((a) => a.id.startsWith(EXAM_ID_PREFIX) && runOf(a.id) === run && !a.ok)) return false;
   return !w.slice(last + 1).some((a) => a.ok);
 }
 
