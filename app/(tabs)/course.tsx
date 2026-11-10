@@ -20,7 +20,6 @@ import {
   lessonCoverage,
   lessonKinds,
   getGrammarTier,
-  examTopicsOnly,
   syllabusForLevel,
   topicsForUnit,
   unitsForLevel,
@@ -45,8 +44,7 @@ import ScreenFeedback from '@/lib/screenFeedback';
 import { BrutalBox, SegmentBar, Sticker, segmentsFilled } from '@/components/grammar/Brutal';
 import ExamStrip from '@/components/grammar/ExamStrip';
 import LevelStanding from '@/components/grammar/LevelStanding';
-import { ExamOnlyChip, ExamOnlyNote, ExamTagClassic } from '@/components/grammar/ExamOnly';
-import { useExamOnly } from '@/lib/grammar/useExamOnly';
+import { ExamTagClassic } from '@/components/grammar/ExamTag';
 import { topicKindCount } from '@/lib/grammar/randomRoundView';
 import { SkinBackdrop, SkinHeader } from '@/components/skins/Slots';
 
@@ -136,20 +134,6 @@ export default function GrammarSyllabusScreen() {
       load();
     }, [load])
   );
-
-  // The "exam topics only" switch (remembered, lib/grammar/useExamOnly.ts). VIEW ONLY: it only changes which rows and units are
-  // drawn; the level percent, level test, exam round and exam strip keep counting every topic. A level with no exam-tier topic
-  // has no tier data: the filter hides nothing there, no note is drawn, and a unit left without a topic is not drawn.
-  const [examOnly, toggleExamOnly] = useExamOnly();
-  const levelHasTierData = (lvl: Level) => examTopicsOnly(syllabusForLevel(lvl, learnedLang)).length > 0;
-  const anyTierData = syllabusLevels(learnedLang).some(levelHasTierData);
-  const filterOn = (lvl: Level) => examOnly && levelHasTierData(lvl);
-  const examChip = <ExamOnlyChip on={examOnly} onPress={toggleExamOnly} />;
-  const examNote = (lvl: Level, color: string) =>
-    filterOn(lvl) ? <ExamOnlyNote level={lvl} learnedLang={learnedLang} color={color} /> : null;
-  const unitTopics = (lvl: Level, unitId: string) =>
-    filterOn(lvl) ? examTopicsOnly(topicsForUnit(unitId, learnedLang)) : topicsForUnit(unitId, learnedLang);
-  const unitsShown = (lvl: Level) => unitsForLevel(lvl, learnedLang).filter((u) => !filterOn(lvl) || unitTopics(lvl, u.id).length > 0);
 
   const coverage = lessonCoverage(learnedLang);
   const doneCount = [...progress.values()].filter((p) => p.state === 'done').length;
@@ -266,14 +250,12 @@ export default function GrammarSyllabusScreen() {
           </Text>
           <LevelStanding level={shownLevel} learnedLang={learnedLang} contentLang={contentLang} evidence={evidence} />
           <ExamStrip level={shownLevel} learnedLang={learnedLang} contentLang={contentLang} evidence={evidence} examStatus={examStatus.get(shownLevel)} />
-          {anyTierData ? examChip : null}
-          {examNote(shownLevel, g.mu)}
-          {unitsShown(shownLevel).map((unit) => (
+          {unitsForLevel(shownLevel, learnedLang).map((unit) => (
             <View key={unit.id} style={styles.brutalUnit}>
               <Text style={[styles.brutalUnitName, { color: g.mu }]}>
                 {unit.title[contentLang] ?? unit.title.en}
               </Text>
-              {unitTopics(shownLevel, unit.id).map((topic) => {
+              {topicsForUnit(unit.id, learnedLang).map((topic) => {
                 const written2 = hasLesson(learnedLang, topic.id);
                 const p = progress.get(topic.id);
                 const pct = percents.get(topic.id) ?? null;
@@ -395,7 +377,6 @@ export default function GrammarSyllabusScreen() {
           </Pressable>
         ) : null}
 
-        {anyTierData ? examChip : null}
         {syllabusLevels(learnedLang).map((lvl) => {
           const topics = syllabusForLevel(lvl, learnedLang);
           const written = topics.filter((tp) => hasLesson(learnedLang, tp.id)).length;
@@ -424,14 +405,13 @@ export default function GrammarSyllabusScreen() {
               </Pressable>
               <ExamStrip level={lvl} learnedLang={learnedLang} contentLang={contentLang} evidence={evidence} examStatus={examStatus.get(lvl)} />
 
-              {isOpen ? examNote(lvl, colors.tabIconDefault) : null}
               {isOpen
-                ? unitsShown(lvl).map((unit) => (
+                ? unitsForLevel(lvl, learnedLang).map((unit) => (
                     <View key={unit.id} style={styles.unitBlock}>
                       <Text style={[styles.unitName, { color: colors.tint }]}>
                         {unit.title[contentLang] ?? unit.title.en}
                       </Text>
-                      {unitTopics(lvl, unit.id).map((topic) => {
+                      {topicsForUnit(unit.id, learnedLang).map((topic) => {
                         const written2 = hasLesson(learnedLang, topic.id);
                         const p = progress.get(topic.id);
                         // null until a round has been played on the topic.

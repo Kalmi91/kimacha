@@ -317,11 +317,6 @@ export function isExamTier(tier: GrammarTier): boolean {
   return tier === 'core-plus' || tier === 'core' || tier === 'exam';
 }
 
-/** The topics whose tier is an exam tier (the "exam topics only" view of the Grammar tab). */
-export function examTopicsOnly<T extends { id: string }>(topics: T[]): T[] {
-  return topics.filter((tp) => isExamTier(getGrammarTier(tp.id)));
-}
-
 interface SyllabusData {
   units: SyllabusUnit[];
   topics: SyllabusTopic[];
