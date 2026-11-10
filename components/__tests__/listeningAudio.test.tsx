@@ -248,8 +248,11 @@ it('clears the failure timer when the feedback unmounts', async () => {
   await loadVoices();
   const view = render(<ListeningScreen />);
   fireEvent.press(view.getByTestId('listen'));
-  expect(jest.getTimerCount()).toBe(1);
+  // the failure timer + the tap flash of the speaker button
+  expect(jest.getTimerCount()).toBe(2);
   view.unmount();
+  // the flash and the unmount housekeeping of Animated end within a second; a failure timer left behind (6 s) would still be pending
+  jest.advanceTimersByTime(1000);
   expect(jest.getTimerCount()).toBe(0);
 });
 

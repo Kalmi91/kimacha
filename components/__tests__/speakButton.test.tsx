@@ -3,10 +3,11 @@
 // Mock pattern: feedbackBrutal.test.tsx.
 
 
-import { StyleSheet } from 'react-native';
+import { Animated, StyleSheet } from 'react-native';
 import { fireEvent, render } from '@testing-library/react-native';
 
 import { getDb } from '@/lib/database';
+import { useGrammarColors } from '@/lib/grammarColors';
 import { ThemeProvider } from '@/lib/ThemeContext';
 import SpeakButton from '../SpeakButton';
 import { makeFlush } from '@/test-utils/flush';
@@ -53,6 +54,32 @@ describe('SpeakButton', () => {
     expect(view.getByText('Read aloud')).toBeTruthy();
     fireEvent.press(view.getByTestId('sp'));
     expect(onPress).toHaveBeenCalledTimes(1);
+    view.unmount();
+  });
+
+  it.each(['brand', 'classic'] as const)('a tap flashes the theme main colour over the button and fades it out (%s)', async (palette) => {
+    await getDb().setGrammarPalette(palette);
+    let main = '';
+    function Probe() {
+      main = useGrammarColors().a;
+      return null;
+    }
+    const timing = jest.spyOn(Animated, 'timing');
+    const view = render(
+      <ThemeProvider>
+        <Probe />
+        <SpeakButton testID="sp" onPress={() => {}} />
+      </ThemeProvider>
+    );
+    await flush();
+    const layer = view.getByTestId('sp-flash');
+    expect(StyleSheet.flatten(layer.props.style).backgroundColor).toBe(main);
+    expect(layer.props.pointerEvents).toBe('none');
+    expect(timing).not.toHaveBeenCalled();
+    fireEvent.press(view.getByTestId('sp'));
+    expect(timing).toHaveBeenCalledTimes(1);
+    expect(timing.mock.calls[0][1]).toMatchObject({ toValue: 0 });
+    timing.mockRestore();
     view.unmount();
   });
 });

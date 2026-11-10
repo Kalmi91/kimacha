@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Pressable, StyleSheet, Text, type StyleProp, type TextStyle, type ViewStyle } from 'react-native';
+import { useEffect, useState } from 'react';
+import { Animated, Pressable, StyleSheet, Text, type StyleProp, type TextStyle, type ViewStyle } from 'react-native';
 
 import { BrutalBox } from '@/components/grammar/Brutal';
 import { useGrammarColors } from '@/lib/grammarColors';
@@ -10,6 +10,9 @@ import { speechBusy, speechStatus, useSpeechStatus } from '@/lib/speechStatus';
 // icon buttons of the games (✕ in the GrammarDrill header, ← on the lesson page):
 // BrutalBox, offset 2, paper fill, ink border + offset shadow. On the classic
 // palette today's look: the caller supplies the styles (style / iconStyle / labelStyle).
+// The tap flash: the theme's main colour covers the button and fades out in this many ms.
+const FLASH_MS = 300;
+
 type Props = {
   onPress: () => void;
   /** ⏹ instead of 🔊 (the play<->stop button of the lesson read-aloud). */
@@ -49,10 +52,23 @@ export default function SpeakButton({
   const status = useSpeechStatus();
   const [pressedRun, setPressedRun] = useState<number | null>(null);
   const active = pressedRun === status.id && speechBusy(status.phase);
+  const [flash] = useState(() => new Animated.Value(0));
+  // a flash still fading must not outlive the button
+  useEffect(() => () => flash.stopAnimation(), [flash]);
   const press = () => {
     onPress();
     if (!iconProp) setPressedRun(speechStatus().id);
+    flash.stopAnimation();
+    flash.setValue(1);
+    Animated.timing(flash, { toValue: 0, duration: FLASH_MS, useNativeDriver: true }).start();
   };
+  const flashLayer = (
+    <Animated.View
+      testID={testID ? `${testID}-flash` : undefined}
+      pointerEvents="none"
+      style={[StyleSheet.absoluteFill, g.brutal ? null : styles.classicFlash, { backgroundColor: g.a, opacity: flash }]}
+    />
+  );
   const icon = iconProp ?? (speaking ? '⏹' : active ? (status.phase === 'loading' ? '⏳' : '🔉') : '🔊');
   // icon-only (no visible label): a spoken name for the screen reader.
   const a11yLabel = accessibilityLabel ?? (label || iconProp ? undefined : speaking ? t().a11y.stopSpeaking : t().a11y.speak);
@@ -64,8 +80,9 @@ export default function SpeakButton({
         offset={2}
         onPress={press}
         style={[styles.brutalOuter, brutalStyle]}
-        boxStyle={label ? styles.brutalBoxLabel : styles.brutalBox}
+        boxStyle={[label ? styles.brutalBoxLabel : styles.brutalBox, styles.clip]}
       >
+        {flashLayer}
         <Text style={styles.brutalIcon}>{icon}</Text>
         {label ? <Text style={[labelStyle, { color: g.ink }]}>{label}</Text> : null}
       </BrutalBox>
@@ -73,6 +90,7 @@ export default function SpeakButton({
   }
   return (
     <Pressable testID={testID} accessibilityRole="button" accessibilityLabel={a11yLabel} accessibilityState={{ busy: active }} style={style} onPress={press} hitSlop={hitSlop}>
+      {flashLayer}
       <Text style={iconStyle}>{icon}</Text>
       {label ? <Text style={labelStyle}>{label}</Text> : null}
     </Pressable>
@@ -84,4 +102,6 @@ const styles = StyleSheet.create({
   brutalBox: { width: 34, height: 34, alignItems: 'center', justifyContent: 'center' },
   brutalBoxLabel: { height: 34, paddingHorizontal: 10, flexDirection: 'row', alignItems: 'center', gap: 8 },
   brutalIcon: { fontSize: 18 },
+  clip: { overflow: 'hidden' },
+  classicFlash: { borderRadius: 8 },
 });
