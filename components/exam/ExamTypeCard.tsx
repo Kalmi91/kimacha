@@ -22,9 +22,6 @@ import ExamButton from './ExamButton';
 // exam has no listening.
 type Props = {
   prompt: string;
-  /** The level test's form task on a non-verb table: the table's title above, and the label of the cell under it. */
-  heading?: string;
-  label?: string;
   /** Extra space under the buttons (a floating button of the screen must not sit on them). */
   bottomPad?: number;
   /** A short sentence for a word with several meanings; the `*marked*` part is highlighted. */
@@ -49,7 +46,7 @@ export function keyboardScrollY(cardBottom: number, viewportHeight: number, padB
   return Math.max(0, cardBottom - (viewportHeight - padBottom) + 8);
 }
 
-export default function ExamTypeCard({ prompt, heading, label, bottomPad, hint, answer, accept, sentence, targetLang, strictAccents, keepUmlauts = false, instant = false, onDone }: Props) {
+export default function ExamTypeCard({ prompt, bottomPad, hint, answer, accept, sentence, targetLang, strictAccents, keepUmlauts = false, instant = false, onDone }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const g = useGrammarColors();
@@ -116,16 +113,6 @@ export default function ExamTypeCard({ prompt, heading, label, bottomPad, hint, 
         }}
       >
       <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
-        {heading ? (
-          <Text testID="exam-heading" style={[styles.caption, { color: colors.textMuted }]}>
-            {heading}
-          </Text>
-        ) : null}
-        {label ? (
-          <Text testID="exam-label" style={[styles.caption, { color: colors.textMuted }]}>
-            {label}
-          </Text>
-        ) : null}
         <Text testID="exam-prompt" style={[styles.prompt, { color: colors.text }]}>{prompt}</Text>
         {hint ? (
           <Text testID="exam-hint" style={[styles.hint, { color: colors.textMuted }]}>
@@ -184,7 +171,6 @@ const styles = StyleSheet.create({
   scroll: { padding: spacing.lg, gap: spacing.md },
   card: { borderRadius: radius.lg, padding: spacing.lg, gap: spacing.md },
   brutalCard: { padding: spacing.lg, gap: spacing.md },
-  caption: { fontSize: fontSize.sm, textAlign: 'center' },
   prompt: { fontSize: fontSize.xl, fontWeight: fontWeight.bold, textAlign: 'center' },
   hint: { fontSize: fontSize.sm, textAlign: 'center' },
   input: {

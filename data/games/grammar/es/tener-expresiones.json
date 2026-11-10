@@ -863,7 +863,7 @@
       "id": "te-form-01",
       "verb": "tener + sustantivo",
       "person": "to be thirsty",
-      "ask": { "en": "Type the Spanish phrase with tener (tener + noun)", "es": "Escribe la expresión en español con tener (tener + sustantivo)" },
+      "q": { "en": "How do you say \"to be thirsty\" with tener?", "es": "¿Cómo se dice «to be thirsty» con tener?" },
       "answer": "tener sed",
       "table": "tener-expresiones",
       "wrong": {
@@ -882,7 +882,7 @@
       "id": "te-form-02",
       "verb": "tener + sustantivo",
       "person": "to be hungry",
-      "ask": { "en": "Type the Spanish phrase with tener (tener + noun)", "es": "Escribe la expresión en español con tener (tener + sustantivo)" },
+      "q": { "en": "How do you say \"to be hungry\" with tener?", "es": "¿Cómo se dice «to be hungry» con tener?" },
       "answer": "tener hambre",
       "table": "tener-expresiones",
       "wrong": {
@@ -901,7 +901,7 @@
       "id": "te-form-03",
       "verb": "tener + sustantivo",
       "person": "to be afraid",
-      "ask": { "en": "Type the Spanish phrase with tener (tener + noun)", "es": "Escribe la expresión en español con tener (tener + sustantivo)" },
+      "q": { "en": "How do you say \"to be afraid\" with tener?", "es": "¿Cómo se dice «to be afraid» con tener?" },
       "answer": "tener miedo",
       "table": "tener-expresiones",
       "wrong": {
@@ -920,7 +920,7 @@
       "id": "te-form-04",
       "verb": "tener + sustantivo",
       "person": "to be sleepy",
-      "ask": { "en": "Type the Spanish phrase with tener (tener + noun)", "es": "Escribe la expresión en español con tener (tener + sustantivo)" },
+      "q": { "en": "How do you say \"to be sleepy\" with tener?", "es": "¿Cómo se dice «to be sleepy» con tener?" },
       "answer": "tener sueño",
       "table": "tener-expresiones",
       "wrong": {
@@ -939,7 +939,7 @@
       "id": "te-form-05",
       "verb": "tener + sustantivo",
       "person": "to be right",
-      "ask": { "en": "Type the Spanish phrase with tener (tener + noun)", "es": "Escribe la expresión en español con tener (tener + sustantivo)" },
+      "q": { "en": "How do you say \"to be right\" with tener?", "es": "¿Cómo se dice «to be right» con tener?" },
       "answer": "tener razón",
       "table": "tener-expresiones",
       "wrong": {
@@ -958,7 +958,7 @@
       "id": "te-form-06",
       "verb": "tener + sustantivo",
       "person": "to be cold (a person)",
-      "ask": { "en": "Type the Spanish phrase with tener (tener + noun)", "es": "Escribe la expresión en español con tener (tener + sustantivo)" },
+      "q": { "en": "How do you say \"to be cold (a person)\" with tener?", "es": "¿Cómo se dice «to be cold (a person)» con tener?" },
       "answer": "tener frío",
       "table": "tener-expresiones",
       "wrong": {
@@ -977,7 +977,7 @@
       "id": "te-form-07",
       "verb": "tener + sustantivo",
       "person": "to be in a hurry",
-      "ask": { "en": "Type the Spanish phrase with tener (tener + noun)", "es": "Escribe la expresión en español con tener (tener + sustantivo)" },
+      "q": { "en": "How do you say \"to be in a hurry\" with tener?", "es": "¿Cómo se dice «to be in a hurry» con tener?" },
       "answer": "tener prisa",
       "table": "tener-expresiones",
       "wrong": {
@@ -996,7 +996,7 @@
       "id": "te-form-08",
       "verb": "tener + sustantivo",
       "person": "to be thirty years old",
-      "ask": { "en": "Type the Spanish phrase with tener (tener + noun)", "es": "Escribe la expresión en español con tener (tener + sustantivo)" },
+      "q": { "en": "How do you say \"to be thirty years old\" with tener?", "es": "¿Cómo se dice «to be thirty years old» con tener?" },
       "answer": "tener treinta años",
       "accept": [
         "tener 30 años"
@@ -1018,7 +1018,7 @@
       "id": "te-form-09",
       "verb": "tener + sustantivo",
       "person": "to be hot (a person)",
-      "ask": { "en": "Type the Spanish phrase with tener (tener + noun)", "es": "Escribe la expresión en español con tener (tener + sustantivo)" },
+      "q": { "en": "How do you say \"to be hot (a person)\" with tener?", "es": "¿Cómo se dice «to be hot (a person)» con tener?" },
       "answer": "tener calor",
       "table": "tener-expresiones",
       "wrong": {
@@ -1037,7 +1037,7 @@
       "id": "te-form-10",
       "verb": "tener + sustantivo",
       "person": "to be lucky",
-      "ask": { "en": "Type the Spanish phrase with tener (tener + noun)", "es": "Escribe la expresión en español con tener (tener + sustantivo)" },
+      "q": { "en": "How do you say \"to be lucky\" with tener?", "es": "¿Cómo se dice «to be lucky» con tener?" },
       "answer": "tener suerte",
       "table": "tener-expresiones",
       "wrong": {
@@ -1056,7 +1056,7 @@
       "id": "te-form-11",
       "verb": "tener + sustantivo",
       "person": "to feel like (doing)",
-      "ask": { "en": "Type the Spanish phrase with tener", "es": "Escribe la expresión en español con tener" },
+      "q": { "en": "How do you say \"to feel like (doing)\" with tener?", "es": "¿Cómo se dice «to feel like (doing)» con tener?" },
       "answer": "tener ganas de",
       "table": "tener-expresiones",
       "wrong": {
@@ -1075,7 +1075,7 @@
       "id": "te-form-12",
       "verb": "tener + sustantivo",
       "person": "to have to (must)",
-      "ask": { "en": "Type the Spanish phrase with tener", "es": "Escribe la expresión en español con tener" },
+      "q": { "en": "How do you say \"to have to (must)\" with tener?", "es": "¿Cómo se dice «to have to (must)» con tener?" },
       "answer": "tener que",
       "table": "tener-expresiones",
       "wrong": {

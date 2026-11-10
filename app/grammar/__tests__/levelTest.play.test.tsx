@@ -445,12 +445,14 @@ describe.each(['brand', 'classic'] as const)('grammar level test (%s palette)', 
       await press('exam-check');
     };
 
-    it('the task reads verb (meaning) · person with the hint to type the form of the verb', async () => {
+    it('the task is one generated question (verb with its meaning, person), no separate verb, person or hint line', async () => {
       mockParams = { level: 'B1' };
       await open();
       const { q } = formOnScreen();
-      expect(text('exam-prompt')).toMatch(/^(una|varias) cosas \(.*\) · (yo|ellos\/ellas\/ustedes)$/);
-      expect(text('exam-hint')).toBe('Type the form of the verb');
+      expect(text('exam-prompt')).toMatch(/^What is the form of (una cosa \(one thing\)|varias cosas \(several things\)) for (yo|ellos\/ellas\/ustedes)\?$/);
+      expect(screen.queryByTestId('exam-hint')).toBeNull();
+      expect(screen.queryByTestId('exam-heading')).toBeNull();
+      expect(screen.queryByTestId('exam-label')).toBeNull();
       expect(q.view).toMatchObject({ card: 'type' });
     });
 
@@ -717,8 +719,8 @@ describe.each(['brand', 'classic'] as const)('grammar level test (%s palette)', 
       const seen: string[] = [];
       for (let i = 0; i < 3; i++) {
         const prompt = text('exam-prompt');
-        const person = prompt.split(' · ')[1];
-        const col = prompt.startsWith('una') ? 0 : 1;
+        const person = prompt.split(' for ')[1].replace('?', '');
+        const col = prompt.startsWith('What is the form of una') ? 0 : 1;
         expect(flat('level-test-table-hl')).toBe(expected[person][col]);
         seen.push(flat('level-test-table-hl'));
         await press('exam-dont-know');

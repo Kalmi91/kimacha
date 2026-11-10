@@ -560,7 +560,7 @@
       "kind": "form",
       "verb": "palabra",
       "person": "4",
-      "ask": { "en": "Write it in Spanish words", "es": "Escríbelo con palabras en español" },
+      "q": { "en": "How do you write the number 4 in Spanish words?", "es": "¿Cómo se escribe el número 4 con letras?" },
       "answer": "cuatro",
       "table": "numeros",
       "wrong": {
@@ -579,7 +579,7 @@
       "kind": "form",
       "verb": "palabra",
       "person": "19",
-      "ask": { "en": "Write it in Spanish words", "es": "Escríbelo con palabras en español" },
+      "q": { "en": "How do you write the number 19 in Spanish words?", "es": "¿Cómo se escribe el número 19 con letras?" },
       "answer": "diecinueve",
       "table": "numeros",
       "wrong": {
@@ -598,7 +598,7 @@
       "kind": "form",
       "verb": "palabra",
       "person": "21",
-      "ask": { "en": "Write it in Spanish words", "es": "Escríbelo con palabras en español" },
+      "q": { "en": "How do you write the number 21 in Spanish words?", "es": "¿Cómo se escribe el número 21 con letras?" },
       "answer": "veintiuno",
       "table": "numeros",
       "wrong": {
@@ -617,7 +617,7 @@
       "kind": "form",
       "verb": "palabra",
       "person": "80",
-      "ask": { "en": "Write it in Spanish words", "es": "Escríbelo con palabras en español" },
+      "q": { "en": "How do you write the number 80 in Spanish words?", "es": "¿Cómo se escribe el número 80 con letras?" },
       "answer": "ochenta",
       "table": "numeros",
       "wrong": {
@@ -636,7 +636,7 @@
       "kind": "form",
       "verb": "palabra",
       "person": "100",
-      "ask": { "en": "Write it in Spanish words", "es": "Escríbelo con palabras en español" },
+      "q": { "en": "How do you write the number 100 in Spanish words?", "es": "¿Cómo se escribe el número 100 con letras?" },
       "answer": "cien",
       "table": "numeros",
       "wrong": {
@@ -655,7 +655,7 @@
       "kind": "form",
       "verb": "palabra",
       "person": "1:00",
-      "ask": { "en": "Write it in Spanish words", "es": "Escríbelo con palabras en español" },
+      "q": { "en": "How do you write the time 1:00 in Spanish words?", "es": "¿Cómo se escribe la hora 1:00 con letras?" },
       "answer": "la una",
       "table": "numeros",
       "wrong": {
@@ -678,7 +678,7 @@
       "kind": "form",
       "verb": "palabra",
       "person": "2:00",
-      "ask": { "en": "Write it in Spanish words", "es": "Escríbelo con palabras en español" },
+      "q": { "en": "How do you write the time 2:00 in Spanish words?", "es": "¿Cómo se escribe la hora 2:00 con letras?" },
       "answer": "las dos",
       "table": "numeros",
       "wrong": {
@@ -697,7 +697,7 @@
       "kind": "form",
       "verb": "palabra",
       "person": "3:30 (media)",
-      "ask": { "en": "Write it in Spanish words", "es": "Escríbelo con palabras en español" },
+      "q": { "en": "How do you write the time 3:30 (media) in Spanish words?", "es": "¿Cómo se escribe la hora 3:30 (media) con letras?" },
       "answer": "las tres y media",
       "table": "numeros",
       "wrong": {
@@ -716,7 +716,7 @@
       "kind": "form",
       "verb": "palabra",
       "person": "2:45 (menos)",
-      "ask": { "en": "Write it in Spanish words", "es": "Escríbelo con palabras en español" },
+      "q": { "en": "How do you write the time 2:45 (menos) in Spanish words?", "es": "¿Cómo se escribe la hora 2:45 (menos) con letras?" },
       "answer": "las tres menos cuarto",
       "table": "numeros",
       "wrong": {
@@ -735,7 +735,7 @@
       "kind": "form",
       "verb": "palabra",
       "person": "1 de enero",
-      "ask": { "en": "Write it in Spanish words", "es": "Escríbelo con palabras en español" },
+      "q": { "en": "How do you write the date 1 de enero in Spanish words?", "es": "¿Cómo se escribe la fecha 1 de enero con letras?" },
       "answer": "el primero de enero",
       "table": "numeros",
       "wrong": {
@@ -754,7 +754,7 @@
       "kind": "form",
       "verb": "palabra",
       "person": "5 de mayo",
-      "ask": { "en": "Write it in Spanish words", "es": "Escríbelo con palabras en español" },
+      "q": { "en": "How do you write the date 5 de mayo in Spanish words?", "es": "¿Cómo se escribe la fecha 5 de mayo con letras?" },
       "answer": "el cinco de mayo",
       "table": "numeros",
       "wrong": {
@@ -773,7 +773,7 @@
       "kind": "form",
       "verb": "palabra",
       "person": "21 años",
-      "ask": { "en": "Write it in Spanish words", "es": "Escríbelo con palabras en español" },
+      "q": { "en": "How do you write \"21 años\" in Spanish words?", "es": "¿Cómo se escribe «21 años» con letras?" },
       "answer": "veintiún años",
       "table": "numeros",
       "wrong": {

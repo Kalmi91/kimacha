@@ -126,32 +126,13 @@ describe('ExamTilesCard', () => {
   });
 });
 
-describe('ExamTypeCard: a form task on a non-verb table (FB576, FB577)', () => {
-  it('shows the table title, the column label and the cell as the task', () => {
-    wrap(
-      <ExamTypeCard
-        heading="From the answer to the question word"
-        label="Answer"
-        prompt="A la tienda."
-        hint="Type the question word"
-        answer="adónde"
-        sentence={false}
-        targetLang="es"
-        strictAccents={false}
-        instant
-        onDone={jest.fn()}
-      />
-    );
-    expect(screen.getByTestId('exam-heading')).toHaveTextContent('From the answer to the question word');
-    expect(screen.getByTestId('exam-label')).toHaveTextContent('Answer');
-    expect(screen.getByTestId('exam-prompt')).toHaveTextContent('A la tienda.');
-    expect(screen.getByTestId('exam-hint')).toHaveTextContent('Type the question word');
-  });
-
-  it('a card without them shows only the prompt', () => {
-    wrap(<ExamTypeCard prompt="hablar · yo" answer="hablo" sentence={false} targetLang="es" strictAccents={false} onDone={jest.fn()} />);
+describe('ExamTypeCard: a form task is one question (FB642-646)', () => {
+  it('shows the question as the prompt and nothing else above the input', () => {
+    wrap(<ExamTypeCard prompt="What is the form of hablar for yo?" answer="hablo" sentence={false} targetLang="es" strictAccents={false} instant onDone={jest.fn()} />);
+    expect(screen.getByTestId('exam-prompt')).toHaveTextContent('What is the form of hablar for yo?');
     expect(screen.queryByTestId('exam-heading')).toBeNull();
     expect(screen.queryByTestId('exam-label')).toBeNull();
+    expect(screen.queryByTestId('exam-hint')).toBeNull();
   });
 });
 

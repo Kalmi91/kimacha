@@ -646,7 +646,7 @@
       "kind": "form",
       "verb": "palabra",
       "person": "Estoy ___ contento hoy.",
-      "ask": { "en": "Type muy or mucho (mucha, muchos, muchas)", "es": "Escribe muy o mucho (mucha, muchos, muchas)" },
+      "q": { "en": "Which fits: muy or mucho (mucha, muchos, muchas)? Estoy ___ contento hoy.", "es": "¿Cuál va: muy o mucho (mucha, muchos, muchas)? Estoy ___ contento hoy." },
       "answer": "muy",
       "table": "muy-mucho-formas",
       "wrong": {
@@ -661,7 +661,7 @@
       "kind": "form",
       "verb": "palabra",
       "person": "Tengo ___ hambre.",
-      "ask": { "en": "Type muy or mucho (mucha, muchos, muchas)", "es": "Escribe muy o mucho (mucha, muchos, muchas)" },
+      "q": { "en": "Which fits: muy or mucho (mucha, muchos, muchas)? Tengo ___ hambre.", "es": "¿Cuál va: muy o mucho (mucha, muchos, muchas)? Tengo ___ hambre." },
       "answer": "mucha",
       "table": "muy-mucho-formas",
       "wrong": {
@@ -680,7 +680,7 @@
       "kind": "form",
       "verb": "palabra",
       "person": "Mi hermana corre ___.",
-      "ask": { "en": "Type muy or mucho (mucha, muchos, muchas)", "es": "Escribe muy o mucho (mucha, muchos, muchas)" },
+      "q": { "en": "Which fits: muy or mucho (mucha, muchos, muchas)? Mi hermana corre ___.", "es": "¿Cuál va: muy o mucho (mucha, muchos, muchas)? Mi hermana corre ___." },
       "answer": "mucho",
       "table": "muy-mucho-formas",
       "wrong": {
@@ -699,7 +699,7 @@
       "kind": "form",
       "verb": "palabra",
       "person": "Hay ___ libros en la mesa.",
-      "ask": { "en": "Type muy or mucho (mucha, muchos, muchas)", "es": "Escribe muy o mucho (mucha, muchos, muchas)" },
+      "q": { "en": "Which fits: muy or mucho (mucha, muchos, muchas)? Hay ___ libros en la mesa.", "es": "¿Cuál va: muy o mucho (mucha, muchos, muchas)? Hay ___ libros en la mesa." },
       "answer": "muchos",
       "table": "muy-mucho-formas",
       "wrong": {
@@ -722,7 +722,7 @@
       "kind": "form",
       "verb": "palabra",
       "person": "El restaurante está ___ lejos.",
-      "ask": { "en": "Type muy or mucho (mucha, muchos, muchas)", "es": "Escribe muy o mucho (mucha, muchos, muchas)" },
+      "q": { "en": "Which fits: muy or mucho (mucha, muchos, muchas)? El restaurante está ___ lejos.", "es": "¿Cuál va: muy o mucho (mucha, muchos, muchas)? El restaurante está ___ lejos." },
       "answer": "muy",
       "table": "muy-mucho-formas",
       "wrong": {
@@ -737,7 +737,7 @@
       "kind": "form",
       "verb": "palabra",
       "person": "Mi tía tiene ___ ropa.",
-      "ask": { "en": "Type muy or mucho (mucha, muchos, muchas)", "es": "Escribe muy o mucho (mucha, muchos, muchas)" },
+      "q": { "en": "Which fits: muy or mucho (mucha, muchos, muchas)? Mi tía tiene ___ ropa.", "es": "¿Cuál va: muy o mucho (mucha, muchos, muchas)? Mi tía tiene ___ ropa." },
       "answer": "mucha",
       "table": "muy-mucho-formas",
       "wrong": {
@@ -756,7 +756,7 @@
       "kind": "form",
       "verb": "palabra",
       "person": "Mi tío vende ___ zapatos.",
-      "ask": { "en": "Type muy or mucho (mucha, muchos, muchas)", "es": "Escribe muy o mucho (mucha, muchos, muchas)" },
+      "q": { "en": "Which fits: muy or mucho (mucha, muchos, muchas)? Mi tío vende ___ zapatos.", "es": "¿Cuál va: muy o mucho (mucha, muchos, muchas)? Mi tío vende ___ zapatos." },
       "answer": "muchos",
       "table": "muy-mucho-formas",
       "wrong": {
@@ -775,7 +775,7 @@
       "kind": "form",
       "verb": "palabra",
       "person": "Compro ___ manzanas en el mercado.",
-      "ask": { "en": "Type muy or mucho (mucha, muchos, muchas)", "es": "Escribe muy o mucho (mucha, muchos, muchas)" },
+      "q": { "en": "Which fits: muy or mucho (mucha, muchos, muchas)? Compro ___ manzanas en el mercado.", "es": "¿Cuál va: muy o mucho (mucha, muchos, muchas)? Compro ___ manzanas en el mercado." },
       "answer": "muchas",
       "table": "muy-mucho-formas",
       "wrong": {
@@ -794,7 +794,7 @@
       "kind": "form",
       "verb": "palabra",
       "person": "Mi jefe tiene ___ trabajo.",
-      "ask": { "en": "Type muy or mucho (mucha, muchos, muchas)", "es": "Escribe muy o mucho (mucha, muchos, muchas)" },
+      "q": { "en": "Which fits: muy or mucho (mucha, muchos, muchas)? Mi jefe tiene ___ trabajo.", "es": "¿Cuál va: muy o mucho (mucha, muchos, muchas)? Mi jefe tiene ___ trabajo." },
       "answer": "mucho",
       "table": "muy-mucho-formas",
       "wrong": {
@@ -813,7 +813,7 @@
       "kind": "form",
       "verb": "palabra",
       "person": "Esta sopa está ___ rica.",
-      "ask": { "en": "Type muy or mucho (mucha, muchos, muchas)", "es": "Escribe muy o mucho (mucha, muchos, muchas)" },
+      "q": { "en": "Which fits: muy or mucho (mucha, muchos, muchas)? Esta sopa está ___ rica.", "es": "¿Cuál va: muy o mucho (mucha, muchos, muchas)? Esta sopa está ___ rica." },
       "answer": "muy",
       "table": "muy-mucho-formas",
       "wrong": {
@@ -828,7 +828,7 @@
       "kind": "form",
       "verb": "palabra",
       "person": "Hablamos ___ en clase.",
-      "ask": { "en": "Type muy or mucho (mucha, muchos, muchas)", "es": "Escribe muy o mucho (mucha, muchos, muchas)" },
+      "q": { "en": "Which fits: muy or mucho (mucha, muchos, muchas)? Hablamos ___ en clase.", "es": "¿Cuál va: muy o mucho (mucha, muchos, muchas)? Hablamos ___ en clase." },
       "answer": "mucho",
       "table": "muy-mucho-formas",
       "wrong": {
@@ -847,7 +847,7 @@
       "kind": "form",
       "verb": "palabra",
       "person": "Mi amigo es ___ simpático.",
-      "ask": { "en": "Type muy or mucho (mucha, muchos, muchas)", "es": "Escribe muy o mucho (mucha, muchos, muchas)" },
+      "q": { "en": "Which fits: muy or mucho (mucha, muchos, muchas)? Mi amigo es ___ simpático.", "es": "¿Cuál va: muy o mucho (mucha, muchos, muchas)? Mi amigo es ___ simpático." },
       "answer": "muy",
       "table": "muy-mucho-formas",
       "wrong": {

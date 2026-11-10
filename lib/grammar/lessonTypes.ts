@@ -138,9 +138,13 @@ export interface FormItem {
   accept?: string[];
   table: string; // id of one of the body's `table` blocks
   tense?: { from: TenseId; to: TenseId };
-  // optional: what exactly to type (shown as the level test's hint instead of the generic one), for a task whose
-  // prompt alone does not say which word or form is wanted; it must not contain the answer.
+  // legacy: the old one-line hint of the level test. It is no longer shown (the question `q` replaced it, FB642-646);
+  // the items that still have it wait for their own `q`.
   ask?: Lang4;
+  // optional: the whole question of the level test as ONE properly written sentence ("What is the indirect object pronoun
+  // for él / usted?"); when it exists the level test shows only it. Without it a question is generated from verb, person
+  // and table (lib/grammar/resultDetail.ts, formTask). It must not contain the answer.
+  q?: Lang4;
   // optional: a typical wrong typed answer -> why it is wrong ({en, es}); the level test's result card looks the
   // typed answer up here (lowercase, accents removed). Where it is missing the card shows the table and the rule.
   wrong?: Record<string, Record<string, string>>;

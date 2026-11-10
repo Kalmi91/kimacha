@@ -689,7 +689,7 @@
       "kind": "form",
       "verb": "objeto directo",
       "person": "yo",
-      "ask": { "en": "Type the pronoun for this person and this kind of object", "es": "Escribe el pronombre de esta persona y de este tipo de objeto" },
+      "q": { "en": "What is the direct object pronoun for yo?", "es": "¿Cuál es el pronombre de objeto directo para «yo»?" },
       "answer": "me",
       "table": "quien",
       "wrong": {
@@ -708,7 +708,7 @@
       "kind": "form",
       "verb": "objeto directo",
       "person": "tú",
-      "ask": { "en": "Type the pronoun for this person and this kind of object", "es": "Escribe el pronombre de esta persona y de este tipo de objeto" },
+      "q": { "en": "What is the direct object pronoun for tú?", "es": "¿Cuál es el pronombre de objeto directo para «tú»?" },
       "answer": "te",
       "table": "quien",
       "wrong": {
@@ -727,7 +727,7 @@
       "kind": "form",
       "verb": "objeto directo",
       "person": "él / usted (masculino)",
-      "ask": { "en": "Type the pronoun for this person and this kind of object", "es": "Escribe el pronombre de esta persona y de este tipo de objeto" },
+      "q": { "en": "What is the direct object pronoun for él / usted (masculine)?", "es": "¿Cuál es el pronombre de objeto directo para «él / usted (masculino)»?" },
       "answer": "lo",
       "table": "quien",
       "wrong": {
@@ -746,7 +746,7 @@
       "kind": "form",
       "verb": "objeto directo",
       "person": "nosotros",
-      "ask": { "en": "Type the pronoun for this person and this kind of object", "es": "Escribe el pronombre de esta persona y de este tipo de objeto" },
+      "q": { "en": "What is the direct object pronoun for nosotros?", "es": "¿Cuál es el pronombre de objeto directo para «nosotros»?" },
       "answer": "nos",
       "table": "quien",
       "wrong": {
@@ -765,7 +765,7 @@
       "kind": "form",
       "verb": "objeto directo",
       "person": "ellos / ustedes (masculino)",
-      "ask": { "en": "Type the pronoun for this person and this kind of object", "es": "Escribe el pronombre de esta persona y de este tipo de objeto" },
+      "q": { "en": "What is the direct object pronoun for ellos / ustedes (masculine)?", "es": "¿Cuál es el pronombre de objeto directo para «ellos / ustedes (masculino)»?" },
       "answer": "los",
       "table": "quien",
       "wrong": {
@@ -784,7 +784,7 @@
       "kind": "form",
       "verb": "objeto indirecto",
       "person": "yo",
-      "ask": { "en": "Type the pronoun for this person and this kind of object", "es": "Escribe el pronombre de esta persona y de este tipo de objeto" },
+      "q": { "en": "What is the indirect object pronoun for yo?", "es": "¿Cuál es el pronombre de objeto indirecto para «yo»?" },
       "answer": "me",
       "table": "quien",
       "wrong": {
@@ -803,7 +803,7 @@
       "kind": "form",
       "verb": "objeto indirecto",
       "person": "tú",
-      "ask": { "en": "Type the pronoun for this person and this kind of object", "es": "Escribe el pronombre de esta persona y de este tipo de objeto" },
+      "q": { "en": "What is the indirect object pronoun for tú?", "es": "¿Cuál es el pronombre de objeto indirecto para «tú»?" },
       "answer": "te",
       "table": "quien",
       "wrong": {
@@ -822,7 +822,7 @@
       "kind": "form",
       "verb": "objeto indirecto",
       "person": "él / usted (masculino)",
-      "ask": { "en": "Type the pronoun for this person and this kind of object", "es": "Escribe el pronombre de esta persona y de este tipo de objeto" },
+      "q": { "en": "What is the indirect object pronoun for él / usted (masculine)?", "es": "¿Cuál es el pronombre de objeto indirecto para «él / usted (masculino)»?" },
       "answer": "le",
       "table": "quien",
       "wrong": {
@@ -841,7 +841,7 @@
       "kind": "form",
       "verb": "objeto indirecto",
       "person": "nosotros",
-      "ask": { "en": "Type the pronoun for this person and this kind of object", "es": "Escribe el pronombre de esta persona y de este tipo de objeto" },
+      "q": { "en": "What is the indirect object pronoun for nosotros?", "es": "¿Cuál es el pronombre de objeto indirecto para «nosotros»?" },
       "answer": "nos",
       "table": "quien",
       "wrong": {
@@ -860,7 +860,7 @@
       "kind": "form",
       "verb": "objeto indirecto",
       "person": "ellos / ustedes (masculino)",
-      "ask": { "en": "Type the pronoun for this person and this kind of object", "es": "Escribe el pronombre de esta persona y de este tipo de objeto" },
+      "q": { "en": "What is the indirect object pronoun for ellos / ustedes (masculine)?", "es": "¿Cuál es el pronombre de objeto indirecto para «ellos / ustedes (masculino)»?" },
       "answer": "les",
       "table": "quien",
       "wrong": {
