@@ -46,4 +46,21 @@ describe('FB636 new words keep coming among many reviews', () => {
     ];
     expect(mixNewCards(q, TODAY).map((c) => c.itemId)).toEqual(['r0', 'm0', 'n0']);
   });
+  it('a rebuilt missed word (no returnAt) is pulled to the front and shows again within 10 cards', () => {
+    const reviews: QueuedSm2Card[] = Array.from({ length: 300 }, (_, i) => ({ ...sm2NewCard('r' + i), state: 'review', interval: 3, due: '2026-11-01', introducedAt: '2026-10-20' }));
+    const m0: QueuedSm2Card = { ...sm2NewCard('m0'), state: 'learning', due: TODAY, introducedAt: TODAY };
+    const q = mixNewCards([...reviews, m0, { ...sm2NewCard('n0') }], TODAY);
+    expect(q.findIndex((c) => c.itemId === 'm0')).toBeLessThan(10);
+    // first grade (good on r0) and it is still within reach
+    const after = mixNewCards(requeueAfterGrade(q, sm2Review(q[0], 'good', TODAY), TODAY, 'good', 0, 60), TODAY);
+    expect(after.findIndex((c) => c.itemId === 'm0')).toBeLessThan(10);
+  });
+  it('cap: 2 missed words waiting (one with a timer, far back) hold the next new word', () => {
+    const reviews: QueuedSm2Card[] = Array.from({ length: 30 }, (_, i) => ({ ...sm2NewCard('r' + i), state: 'review', interval: 3, due: '2026-11-01', introducedAt: '2026-10-20' }));
+    const m = (id: string, returnAt?: number): QueuedSm2Card => ({ ...sm2NewCard(id), state: 'learning', due: TODAY, introducedAt: TODAY, returnAt });
+    const q = mixNewCards([...reviews, m('m0', 9e15), m('m1', 9e15), { ...sm2NewCard('n0') }], TODAY);
+    expect(q[q.length - 1].itemId).toBe('n0');
+    const one = mixNewCards([...reviews, m('m0', 9e15), { ...sm2NewCard('n0') }], TODAY);
+    expect(one.findIndex((c) => c.itemId === 'n0')).toBeLessThan(3);
+  });
 });
