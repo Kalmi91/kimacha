@@ -42,15 +42,12 @@ export default {
       whyQuestion: (target: string) => `Why «${target}»?`,
     },
   },
-  // the "Hibáim" import (Settings), report and practice deck.
+  // the mistakes report and practice deck.
   mistakes: {
-    load: '📥 Load my mistakes',
-    loaded: (sentences: number, words: number, drills: number) =>
-      `Loaded: ${sentences} sentences, ${words} words, ${drills} grammar drills`,
     entry: (n: number) => `📕 My mistakes (${n})`,
     title: 'My mistakes',
     practice: (n: number) => `Practice my mistakes (${n} due)`,
-    empty: 'No mistakes loaded yet. Settings → Load my mistakes.',
+    empty: 'No mistakes loaded yet.',
     wrongWordsTitle: 'Words you got wrong',
     reviewAgainTitle: 'Review again',
     noLesson: 'No lesson in the app, the deck drills it',

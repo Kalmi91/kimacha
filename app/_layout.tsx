@@ -157,6 +157,9 @@ function RootLayoutNav() {
           <Stack.Screen name="onboarding" options={{ headerShown: false }} />
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
           <Stack.Screen name="credits" options={{ headerShown: false }} />
+          <Stack.Screen name="settings-learning" options={{ headerShown: false }} />
+          <Stack.Screen name="settings-voice" options={{ headerShown: false }} />
+          <Stack.Screen name="settings-data" options={{ headerShown: false }} />
           <Stack.Screen name="themes" options={{ headerShown: false }} />
           <Stack.Screen name="theme-mix" options={{ headerShown: false }} />
           <Stack.Screen name="grammar" options={{ headerShown: false }} />

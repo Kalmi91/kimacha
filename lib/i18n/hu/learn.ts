@@ -34,13 +34,10 @@ const hu: typeof en = {
     },
   },
   mistakes: {
-    load: '📥 Hibáim betöltése',
-    loaded: (sentences: number, words: number, drills: number) =>
-      `Betöltve: ${sentences} mondat, ${words} szó, ${drills} nyelvtani gyakorlat`,
     entry: (n: number) => `📕 Hibáim (${n})`,
     title: 'Hibáim',
     practice: (n: number) => `Hibáim gyakorlása (${n} esedékes)`,
-    empty: 'Még nincs betöltött hiba. Beállítások → Hibáim betöltése.',
+    empty: 'Még nincsenek betöltött hibák.',
     wrongWordsTitle: 'Szavak, amiket elrontottál',
     reviewAgainTitle: 'Újra átnézendő',
     noLesson: 'Nincs hozzá lecke az appban, a pakli gyakoroltatja',

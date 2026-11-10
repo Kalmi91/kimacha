@@ -42,7 +42,7 @@ const Row = ({ onPress, children }: { onPress?: () => void; children: React.Reac
 const show = () =>
   render(
     <ThemeProvider>
-      <SpeakerPickerRows Row={Row} />
+      <SpeakerPickerRows Row={Row} languages={['es', 'en', 'hu', 'de']} />
     </ThemeProvider>,
   );
 const checked = (view: ReturnType<typeof show>, lang: string) =>
@@ -60,7 +60,7 @@ describe('SpeakerPickerRows', () => {
     mockState = stateWith();
     const view = show();
     for (const text of [
-      'Who reads Español', 'Who reads English', 'Who reads Magyar', 'Who reads Deutsch',
+      'Español', 'English', 'Magyar', 'Deutsch',
       'Claude, female', 'Ald, male', 'Kristin, female', 'John, male', 'Berta, female', 'Imre, male', 'Kerstin, female', 'Thorsten, male',
     ]) {
       expect(view.getByText(text)).toBeTruthy();

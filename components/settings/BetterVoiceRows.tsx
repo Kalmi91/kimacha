@@ -1,5 +1,5 @@
 // Settings: "Better voice (beta)", the on-device neural voices (lib/neuralModels.ts). One row for the
-// download / the switch, and under it one row per language that has a choice of sentence engine.
+// download / the switch. Sentence engine choices render inside the matching language cards.
 // Hidden where the voices do not exist (the web build). The Row is the Settings screen's own card row.
 
 import { type ReactNode } from 'react';
@@ -10,7 +10,6 @@ import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
-import { languages } from '@/lib/languages';
 import { downloadNeural, setNeuralEnabled, setNeuralEngine, useNeuralState } from '@/lib/neuralModels';
 import {
   LEGACY_PACK_KEY,
@@ -29,9 +28,6 @@ import {
 } from '@/lib/neuralVoices';
 
 export type RowComponent = (props: { onPress?: () => void; children: ReactNode }) => ReactNode;
-
-// Hungarian has no Kokoro voice, so only es and en get a choice.
-const CHOICE_LANGS: ('es' | 'en')[] = ['es', 'en'];
 
 export default function BetterVoiceRows({ Row }: { Row: RowComponent }) {
   const { theme } = useTheme();
@@ -54,22 +50,12 @@ export default function BetterVoiceRows({ Row }: { Row: RowComponent }) {
   const isPackKey = (key: string) => key === PACK_KEY || key === SENTENCES_KEY;
   const failed = state.download.failed.filter(key => !isPackKey(key));
   const packFailed = state.download.failed.filter(isPackKey);
-  const langName = (code: NeuralLang) => languages.find(l => l.code === code)?.name ?? code;
   // Nothing downloads without a question that names the size (the phone may be on mobile data).
   const confirmDownload = (bytes: number, go: () => void, message: (mb: string) => string = s.confirmModel) => {
     Alert.alert(s.confirmTitle, message(formatMegabytes(bytes)), [
       { text: t().feedback.cancel, style: 'cancel' },
       { text: s.confirmYes, onPress: go },
     ]);
-  };
-  // Why the chosen engine is not the one speaking right now, in plain words (lib/neuralModels.ts noteNeuralTrouble).
-  const issueText = (lang: NeuralLang): string | null => {
-    const issue = state.issues[lang];
-    if (!issue) return null;
-    const engineName = issue.engine === 'kokoro' ? 'Kokoro' : 'Piper';
-    if (issue.kind === 'standin-failed') return s.issueStandIn(engineName);
-    if (issue.engine !== state.engines[lang]) return null;
-    return issue.kind === 'slow' ? s.issueSlow(engineName) : issue.kind === 'load-failed' ? s.issueLoad(engineName) : s.issueFailed(engineName);
   };
   const askMissing = () => confirmDownload(missingBytes(items, state.installed), () => void downloadNeural(items), s.confirmModel);
   const askRecordings = () => confirmDownload(missingBytes(packs, state.installed), () => void downloadNeural(packs), s.confirmRecordings);
@@ -139,46 +125,72 @@ export default function BetterVoiceRows({ Row }: { Row: RowComponent }) {
           )}
         </Row>
       )}
-      {usable &&
-        CHOICE_LANGS.map(lang => (
-          <Row key={lang}>
-            <View style={styles.labelBox}>
-              <Text style={[styles.label, { color: colors.text }]}>{s.sentences(langName(lang))}</Text>
-              {issueText(lang) && (
-                <Text testID={`settings-better-voice-${lang}-issue`} style={[styles.hint, { color: colors.text }]}>
-                  {issueText(lang)}
-                </Text>
-              )}
-              {state.engines[lang] === 'kokoro' && !state.installed.kokoro && (
-                <Text style={[styles.hint, { color: colors.tabIconDefault }]}>{s.kokoroSize(formatMegabytes(NEURAL_MODELS.kokoro.bytes))}</Text>
-              )}
-            </View>
-            <View style={styles.pills}>
-              {(['piper', 'kokoro'] as NeuralEngine[]).map(engine => {
-                const selected = state.engines[lang] === engine;
-                return (
-                  <Pressable
-                    key={engine}
-                    testID={`settings-better-voice-${lang}-${engine}`}
-                    accessibilityRole="button"
-                    accessibilityState={{ selected }}
-                    disabled={running}
-                    style={[styles.pill, { borderColor: selected ? g.a : colors.tabIconDefault, borderWidth: selected ? 2 : 1 }]}
-                    onPress={() => {
-                      // picking an engine asks about and fetches that engine's model only, never a recordings pack
-                      const bytes = missingBytes(modelKeysFor(lang, engine), state.installed);
-                      if (engine === state.engines[lang] || bytes === 0) void setNeuralEngine(lang, engine);
-                      else confirmDownload(bytes, () => void setNeuralEngine(lang, engine), s.confirmModel);
-                    }}
-                  >
-                    <Text style={[styles.pillText, { color: selected ? g.ink : colors.tabIconDefault }]}>{engine === 'piper' ? s.piper : s.kokoro}</Text>
-                  </Pressable>
-                );
-              })}
-            </View>
-          </Row>
-        ))}
     </>
+  );
+}
+
+// Inside the matching language card, below the speaker choices.
+export function SentenceVoiceChoices({ lang }: { lang: NeuralLang }) {
+  const { theme } = useTheme();
+  const colors = Colors[theme];
+  const g = useGrammarColors();
+  const s = t().settings.betterVoice;
+  const state = useNeuralState();
+  if (!state.supported || (lang !== 'es' && lang !== 'en') || !PIPER_MODEL_KEYS.every(key => state.installed[key])) return null;
+  const { running } = state.download;
+  const confirmDownload = (bytes: number, go: () => void, message: (mb: string) => string) => {
+    Alert.alert(s.confirmTitle, message(formatMegabytes(bytes)), [
+      { text: t().feedback.cancel, style: 'cancel' },
+      { text: s.confirmYes, onPress: go },
+    ]);
+  };
+  // Why the chosen engine is not the one speaking right now, in plain words (lib/neuralModels.ts noteNeuralTrouble).
+  const issueText = (lang: NeuralLang): string | null => {
+    const issue = state.issues[lang];
+    if (!issue) return null;
+    const engineName = issue.engine === 'kokoro' ? 'Kokoro' : 'Piper';
+    if (issue.kind === 'standin-failed') return s.issueStandIn(engineName);
+    if (issue.engine !== state.engines[lang]) return null;
+    return issue.kind === 'slow' ? s.issueSlow(engineName) : issue.kind === 'load-failed' ? s.issueLoad(engineName) : s.issueFailed(engineName);
+  };
+
+  return (
+    <View testID={`settings-sentences-${lang}`} style={styles.sentenceBlock}>
+      <View style={styles.sentenceLabel}>
+        <Text style={[styles.label, { color: colors.text }]}>{s.sentences}</Text>
+        {issueText(lang) && (
+          <Text testID={`settings-better-voice-${lang}-issue`} style={[styles.hint, { color: colors.text }]}>
+            {issueText(lang)}
+          </Text>
+        )}
+        {state.engines[lang] === 'kokoro' && !state.installed.kokoro && (
+          <Text style={[styles.hint, { color: colors.tabIconDefault }]}>{s.kokoroSize(formatMegabytes(NEURAL_MODELS.kokoro.bytes))}</Text>
+        )}
+      </View>
+      <View style={styles.pills}>
+        {(['piper', 'kokoro'] as NeuralEngine[]).map(engine => {
+          const selected = state.engines[lang] === engine;
+          return (
+            <Pressable
+              key={engine}
+              testID={`settings-better-voice-${lang}-${engine}`}
+              accessibilityRole="button"
+              accessibilityState={{ selected }}
+              disabled={running}
+              style={[styles.pill, { borderColor: selected ? g.a : colors.tabIconDefault, borderWidth: selected ? 2 : 1 }]}
+              onPress={() => {
+                // picking an engine asks about and fetches that engine's model only, never a recordings pack
+                const bytes = missingBytes(modelKeysFor(lang, engine), state.installed);
+                if (engine === state.engines[lang] || bytes === 0) void setNeuralEngine(lang, engine);
+                else confirmDownload(bytes, () => void setNeuralEngine(lang, engine), s.confirmModel);
+              }}
+            >
+              <Text style={[styles.pillText, { color: selected ? g.ink : colors.tabIconDefault }]}>{engine === 'piper' ? s.piper : s.kokoro}</Text>
+            </Pressable>
+          );
+        })}
+      </View>
+    </View>
   );
 }
 
@@ -189,7 +201,9 @@ const styles = StyleSheet.create({
   status: { fontSize: 15, fontWeight: '600' },
   button: { borderWidth: 1.5, borderRadius: 18, paddingVertical: 8, paddingHorizontal: 14 },
   buttonText: { fontSize: 14, fontWeight: '700' },
-  pills: { flexDirection: 'row', flexWrap: 'wrap', gap: 8, justifyContent: 'flex-end', flexShrink: 1 },
-  pill: { borderRadius: 16, paddingVertical: 6, paddingHorizontal: 12 },
+  sentenceBlock: { width: '100%', marginTop: 16 },
+  sentenceLabel: { width: '100%', marginBottom: 8 },
+  pills: { width: '100%', flexDirection: 'row', gap: 8 },
+  pill: { flex: 1, alignItems: 'center', justifyContent: 'center', borderRadius: 16, paddingVertical: 6, paddingHorizontal: 12 },
   pillText: { fontSize: 13, fontWeight: '600' },
 });

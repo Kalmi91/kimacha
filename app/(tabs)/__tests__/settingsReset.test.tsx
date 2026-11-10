@@ -26,7 +26,7 @@ import { LADDER_KEY, loadLadder, saveStage } from '@/lib/sentenceLadder';
 import { sentenceKey } from '@/lib/sentenceTab';
 import { sm2NewCard } from '@/lib/sm2';
 import { ThemeProvider } from '@/lib/ThemeContext';
-import SettingsScreen from '../settings';
+import SettingsScreen from '../../settings-data';
 import { makeFlush } from '@/test-utils/flush';
 
 jest.setTimeout(30000);

@@ -2,6 +2,13 @@ import type en from '../en/settings';
 
 const de: typeof en = {
   settings: {
+    folders: {
+      learning: 'Lernen',
+      voice: 'Stimme',
+      voiceHint: 'Wer vorliest, Aufnahmen',
+      data: 'Meine Daten',
+      dataHint: 'Sichern, wiederherstellen, zurücksetzen',
+    },
     themeAuto: 'Auto',
     themeLight: 'Hell',
     themeDark: 'Dunkel',
@@ -44,7 +51,7 @@ const de: typeof en = {
       on: 'An',
       off: 'Aus: die Stimme des Telefons spricht',
       retry: 'Ein Teil des Downloads ist fehlgeschlagen. Tippe, um es erneut zu versuchen',
-      sentences: (lang: string) => `Satzstimme: ${lang}`,
+      sentences: 'Satzstimme',
       piper: 'Piper (schnell)',
       kokoro: 'Kokoro (schöner, langsamer)',
       kokoroSize: (mb: string) => `Kokoro braucht einen Download von ${mb}`,
@@ -61,11 +68,8 @@ const de: typeof en = {
       confirmTitle: 'Die bessere Stimme herunterladen?',
       confirmYes: 'Herunterladen',
     },
-    // Settings: the two tabs at the top, and the Voice tab's speaker picker (lib/voicePreference.ts).
-    tabGeneral: 'Allgemein',
-    tabVoice: 'Stimme',
     speaker: {
-      title: (lang: string) => `Wer liest ${lang}`,
+      title: 'Wer liest vor',
       auto: 'Automatisch (am schnellsten)',
       person: (name: string, female: boolean) => `${name}, ${female ? 'weiblich' : 'männlich'}`,
       hint: 'Aufnahmen der Wörter der anderen Person starten etwas langsamer.',

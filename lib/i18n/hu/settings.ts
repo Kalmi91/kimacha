@@ -2,6 +2,13 @@ import type en from '../en/settings';
 
 const hu: typeof en = {
   settings: {
+    folders: {
+      learning: 'Tanulás',
+      voice: 'Hang',
+      voiceHint: 'Ki olvassa fel, felvételek',
+      data: 'Adataim',
+      dataHint: 'Mentés, visszaállítás, törlés',
+    },
     themeAuto: 'Automatikus',
     themeLight: 'Világos',
     themeDark: 'Sötét',
@@ -45,7 +52,7 @@ const hu: typeof en = {
       on: 'Bekapcsolva',
       off: 'Kikapcsolva: a telefon hangja szól',
       retry: 'A letöltés egy része nem sikerült. Koppints az újrapróbáláshoz',
-      sentences: (lang: string) => `Mondatok hangja: ${lang}`,
+      sentences: 'Mondatok hangja',
       piper: 'Piper (gyors)',
       kokoro: 'Kokoro (szebb, lassabb)',
       kokoroSize: (mb: string) => `A Kokoro ${mb} letöltést kér`,
@@ -62,11 +69,8 @@ const hu: typeof en = {
       confirmTitle: 'Letöltöd a jobb hangot?',
       confirmYes: 'Letöltés',
     },
-    // Settings: the two tabs at the top, and the Voice tab's speaker picker (lib/voicePreference.ts).
-    tabGeneral: 'Általános',
-    tabVoice: 'Hang',
     speaker: {
-      title: (lang: string) => `Ki olvassa fel: ${lang}`,
+      title: 'Ki olvassa fel',
       auto: 'Automatikus (leggyorsabb)',
       person: (name: string, female: boolean) => `${name}, ${female ? 'nő' : 'férfi'}`,
       hint: 'A másik személy szavainak felvételei kicsit lassabban indulnak.',

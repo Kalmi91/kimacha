@@ -19,7 +19,7 @@ import { getDb } from '@/lib/database';
 import { FeedbackHeaderProvider } from '@/lib/feedbackHeader';
 import { pairLabel, supportedPairs } from '@/lib/languages';
 import { ThemeProvider } from '@/lib/ThemeContext';
-import SettingsScreen from '../settings';
+import SettingsScreen from '../../settings-learning';
 import { makeFlush } from '@/test-utils/flush';
 
 jest.setTimeout(30000);
