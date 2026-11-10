@@ -87,6 +87,9 @@ export function requeueAfterUndo(
 // one comes in only after this one was typed right ("Knew it" graduates it, it leaves the queue);
 // until then it rotates with the missed reviews. Once the reviews are done, the new words flow
 // as before (several missed ones may rotate together).
+const LEARNING_NEAR = 10;
+const LEARNING_PULL_AT = 3;
+
 function isReview(card: Sm2Card, today: string): boolean {
   return card.state !== 'new' && card.introducedAt !== today;
 }
@@ -98,12 +101,23 @@ function isReview(card: Sm2Card, today: string): boolean {
  */
 export function mixNewCards(queue: QueuedSm2Card[], today: string): QueuedSm2Card[] {
   if (!queue.some((c) => isReview(c, today))) return queue;
-  const fresh = queue.filter((c) => c.state === 'new');
-  if (fresh.length === 0) return queue;
-  const rest = queue.filter((c) => c.state !== 'new');
-  if (rest.some((c) => c.state === 'learning' && c.introducedAt === today)) return [...rest, ...fresh];
+  const isMissedToday = (c: Sm2Card) => c.state === 'learning' && c.introducedAt === today;
+  // FB636: a new word missed today and rebuilt without a timer (reload, level switch) sits behind every due
+  // review; pull it to about index 3, in its order. One with a timer is left to reorderForReturn.
+  let base = queue;
+  const far = queue.filter((c, i) => i >= LEARNING_PULL_AT && isMissedToday(c) && c.returnAt === undefined);
+  if (far.length > 0) {
+    const others = queue.filter((c) => !far.includes(c));
+    base = [...others.slice(0, LEARNING_PULL_AT), ...far, ...others.slice(LEARNING_PULL_AT)];
+  }
+  const fresh = base.filter((c) => c.state === 'new');
+  if (fresh.length === 0) return base;
+  const rest = base.filter((c) => c.state !== 'new');
+  // A missed new word near the front blocks the next new one (one at a time); so do 2 or more anywhere, so
+  // missed words cannot pile up. One far back with a timer does not hold all new words for hundreds of cards.
+  if (rest.slice(0, LEARNING_NEAR).some(isMissedToday) || rest.filter(isMissedToday).length >= 2) return [...rest, ...fresh];
   const [first, ...later] = fresh;
-  const at = queue[0] === first ? 0 : 1;
+  const at = base[0] === first ? 0 : 1;
   return [...rest.slice(0, at), first, ...rest.slice(at), ...later];
 }
 
