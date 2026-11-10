@@ -27,7 +27,10 @@ import { mockAvailable, mockIsFullLength, MOCK_LEVELS } from '@/lib/exam/mock/bl
 import { buildMockExam, mockExamSignature } from '@/lib/exam/mock/build';
 import { buildGlossaryIndex, mockGlossary } from '@/lib/exam/mock/glossary';
 import { buildLexicon } from '@/lib/exam/mock/writing';
+import { mockExamAnswers } from '@/lib/exam/mock/evidence';
 import { followedChoice, scoreMockExam, type MockResult } from '@/lib/exam/mock/score';
+import { mergeExamAnswers } from '@/lib/grammar/examEvidence';
+import { GRAMMAR_RANDOM_KEY, evidenceFromRows } from '@/lib/grammar/randomRound';
 import {
   CLOCK_WARNING_SECONDS,
   clearMockSession,
@@ -161,6 +164,9 @@ export default function MockExamScreen() {
     const res = scoreMockExam(ex, all, { lexicon });
     const db = getDb();
     await saveMockLast(db, target, level, res, localDateString());
+    // The tagged gaps are test evidence of their grammar topics (the ids keep a retried paper close from doubling it).
+    const merged = mergeExamAnswers(evidenceFromRows(await db.getGameProgress(GRAMMAR_RANDOM_KEY)), mockExamAnswers(ex, res, all), localDateString());
+    for (const topic of merged.touched) await db.setGameProgress(GRAMMAR_RANDOM_KEY, topic, 'evidence', merged.evidence.get(topic));
     await clearMockSession(db, target, level);
     setSaved(null);
     setResult(res);

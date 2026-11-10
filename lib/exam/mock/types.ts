@@ -179,7 +179,8 @@ export interface MockClozeTask extends MockTaskBase, MockPlays, MockMarks {
   title?: string;
   text: string;
   audio?: MockAudioLine[];
-  gaps: ({ options: string[]; correct: number } | { answers: string[]; stem?: string })[];
+  /** `topic`: the grammar syllabus topic (of the exam's language) the gap tests; a mistake there counts as evidence of the topic. */
+  gaps: ({ options: string[]; correct: number; topic?: string } | { answers: string[]; stem?: string; topic?: string })[];
 }
 
 /** Statements to pick: `pick` of them are right (`correct` = their indices). */
@@ -195,7 +196,7 @@ export interface MockPickStatementsTask extends MockTaskBase, MockPlays, MockMar
 /** Key word transformation: `first` + `key`, then `before ___ after`; `answers` are all the accepted fillings of the gap. */
 export interface MockTransformTask extends MockTaskBase, MockPlays, MockMarks {
   kind: 'transform';
-  items: { first: string; key: string; before: string; after: string; answers: string[] }[];
+  items: { first: string; key: string; before: string; after: string; answers: string[]; topic?: string }[];
 }
 
 /** An extended writing task: 1 choice = compulsory, 2-3 = pick one. `input` is the written, `audio` the heard prompt. */

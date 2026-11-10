@@ -135,20 +135,20 @@
           "title": "Rosario Castellanos, una voz entre dos mundos",
           "text": "Rosario Castellanos nació en la Ciudad de México en 1925, pero {{1}} su infancia en Comitán, un pueblo de Chiapas donde su familia poseía tierras. Aquel ambiente rural, {{2}} por una marcada desigualdad entre los terratenientes y las comunidades indígenas, dejó una huella profunda en su literatura. De niña, {{3}} más tiempo con la mujer indígena que la cuidaba que con sus propios padres, y de ella aprendió palabras, creencias y relatos que más tarde recogió {{4}} sus novelas. Esa mirada doble, la de quien pertenece a una clase privilegiada y a la vez observa de cerca a los marginados, marcaría toda su obra.\n\nCon el tiempo, la familia se trasladó a la capital, donde Rosario estudió Filosofía en la Universidad Nacional Autónoma de México. Allí se dio a conocer entre un grupo de jóvenes escritores {{5}} compartían la inquietud de renovar la literatura del país. Aunque su primera vocación fue la poesía, pronto descubrió que la narrativa le permitía {{6}} con mayor libertad los conflictos que había observado en Chiapas. A partir de 1956 trabajó en el Instituto Nacional Indigenista, en San Cristóbal de las Casas, donde conoció de cerca la vida de las comunidades tsotsiles y tseltales y escribió obras de teatro con títeres para acercar la educación a los niños.\n\nEn 1957 publicó «Balún Canán», una novela que {{7}} la vida de una familia de terratenientes desde la mirada de una niña. El libro tuvo muy buena acogida, y en 1962 apareció «Oficio de tinieblas», una obra más compleja {{8}} la anterior, que dramatiza un levantamiento indígena. Ambas novelas se consideran hoy fundamentales para entender el indigenismo literario en México, {{9}} la autora tomó distancia de esa etiqueta y prefería hablar simplemente de su experiencia.\n\nCastellanos fue también una ensayista {{10}} y una periodista incansable. En sus textos reflexionó sobre el papel de las mujeres en una sociedad que les negaba la voz, y {{11}} hizo con una ironía que a menudo desconcertaba a sus lectores. Sus ensayos, reunidos en libros como «Mujer que sabe latín», siguen siendo lectura obligada en muchos cursos de literatura. Su obra poética, {{12}} otro lado, alcanzó una intimidad poco común en la literatura de su tiempo.\n\nHacia el final de su vida trabajó como diplomática: en 1971 fue nombrada embajadora de México en Israel, cargo que {{13}} hasta su muerte en 1974. Murió en Tel Aviv, lejos del país que había retratado con tanta lucidez, {{14}} su obra sigue leyéndose en las escuelas y las universidades de toda América Latina.",
           "gaps": [
-            { "options": ["pasara", "pasará", "pasó"], "correct": 2 },
-            { "options": ["caracterizado", "caracterizando", "caracterizar"], "correct": 0 },
-            { "options": ["permanezca", "permanecía", "permanecerá"], "correct": 1 },
+            { "options": ["pasara", "pasará", "pasó"], "correct": 2, "topic": "indefinido-regular" },
+            { "options": ["caracterizado", "caracterizando", "caracterizar"], "correct": 0, "topic": "gerundio-participio-construcciones" },
+            { "options": ["permanezca", "permanecía", "permanecerá"], "correct": 1, "topic": "imperfecto" },
             { "options": ["en", "con", "por"], "correct": 0 },
-            { "options": ["cuyos", "donde", "que"], "correct": 2 },
+            { "options": ["cuyos", "donde", "que"], "correct": 2, "topic": "relativos" },
             { "options": ["ocultar", "explorar", "ignorar"], "correct": 1 },
-            { "options": ["narra", "narre", "narrando"], "correct": 0 },
-            { "options": ["de", "que", "como"], "correct": 1 },
-            { "options": ["porque", "puesto que", "aunque"], "correct": 2 },
-            { "options": ["lúcido", "lúcidos", "lúcida"], "correct": 2 },
-            { "options": ["lo", "la", "le"], "correct": 0 },
+            { "options": ["narra", "narre", "narrando"], "correct": 0, "topic": "subjuntivo-relativo" },
+            { "options": ["de", "que", "como"], "correct": 1, "topic": "comparativos-superlativos" },
+            { "options": ["porque", "puesto que", "aunque"], "correct": 2, "topic": "concesivas" },
+            { "options": ["lúcido", "lúcidos", "lúcida"], "correct": 2, "topic": "adjetivo-concordancia" },
+            { "options": ["lo", "la", "le"], "correct": 0, "topic": "pronombres-od" },
             { "options": ["sobre", "por", "entre"], "correct": 1 },
             { "options": ["dejó", "ocupó", "rechazó"], "correct": 1 },
-            { "options": ["pero", "sino", "pues"], "correct": 0 }
+            { "options": ["pero", "sino", "pues"], "correct": 0, "topic": "conectores-basicos" }
           ]
         }
       ]
