@@ -206,7 +206,7 @@ export function buildExam(input: ExamBuildInput): ExamItem[] {
       const g = q.shift();
       if (!g || grammarBlock.length >= EXAM_BLUEPRINT.gap) continue;
       const { options, correctIndex } = shuffleOptions(g.options, g.correct, hashString(`${g.topicId}:${g.itemId}:${seed}`));
-      grammarBlock.push({ kind: 'gap_mc', skill: 'grammar', topicId: g.topicId, sentence: g.sentence, options, correctIndex });
+      grammarBlock.push({ kind: 'gap_mc', skill: 'grammar', itemId: g.itemId, topicId: g.topicId, sentence: g.sentence, options, correctIndex });
     }
   }
 

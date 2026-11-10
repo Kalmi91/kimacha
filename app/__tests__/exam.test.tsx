@@ -29,7 +29,7 @@ const mockExam = [
   },
   { kind: 'sent_order', skill: 'words', itemId: 'o6', prompt: 'I eat at home.', answerTokens: ['yo', 'como', 'en', 'casa'], sentence: 'Yo como en casa.', distractors: ['tú', 'comes'] },
   { kind: 'sent_type', skill: 'words', itemId: 'o7', prompt: 'We live here.', answer: 'Vivimos aquí.' },
-  { kind: 'gap_mc', skill: 'grammar', topicId: 'presente-regular', sentence: 'Yo ___ español.', options: ['hablo', 'hablas', 'habla'], correctIndex: 0 },
+  { kind: 'gap_mc', skill: 'grammar', itemId: 'g1', topicId: 'presente-regular', sentence: 'Yo ___ español.', options: ['hablo', 'hablas', 'habla'], correctIndex: 0 },
   {
     kind: 'reading_mc',
     skill: 'reading',
@@ -316,7 +316,7 @@ describe.each([
 describe('level exam: a wrong word goes back into SM-2', () => {
   const realExam = (wordId: string) => [
     { kind: 'word_type', skill: 'words', itemId: wordId, prompt: 'the window', answer: 'la ventana' },
-    { kind: 'gap_mc', skill: 'grammar', topicId: 'presente-regular', sentence: 'Yo ___ español.', options: ['hablo', 'hablas', 'habla'], correctIndex: 0 },
+    { kind: 'gap_mc', skill: 'grammar', itemId: 'g1', topicId: 'presente-regular', sentence: 'Yo ___ español.', options: ['hablo', 'hablas', 'habla'], correctIndex: 0 },
   ];
 
   beforeEach(async () => {
@@ -437,7 +437,7 @@ describe('level exam: result per skill, link at the weak point', () => {
 
 describe('level exam: spoken item with the keyboard microphone', () => {
   const speak = { kind: 'speak', skill: 'speaking', itemId: 'o1', prompt: 'I eat at home.', expected: 'Yo como en casa.', mode: 'translate' };
-  const gap = { kind: 'gap_mc', skill: 'grammar', topicId: 'presente-regular', sentence: 'Yo ___ español.', options: ['hablo', 'hablas', 'habla'], correctIndex: 0 };
+  const gap = { kind: 'gap_mc', skill: 'grammar', itemId: 'g1', topicId: 'presente-regular', sentence: 'Yo ___ español.', options: ['hablo', 'hablas', 'habla'], correctIndex: 0 };
 
   beforeEach(async () => {
     mockBack.mockClear();

@@ -20,7 +20,7 @@ jest.mock('@/components/FeedbackModal', () => {
 
 const mockExam = [
   { kind: 'word_type', skill: 'words', itemId: 'o1', prompt: 'the window', answer: 'la ventana' },
-  { kind: 'gap_mc', skill: 'grammar', topicId: 'presente-regular', sentence: 'Yo ___ español.', options: ['hablo', 'hablas', 'habla'], correctIndex: 0 },
+  { kind: 'gap_mc', skill: 'grammar', itemId: 'g1', topicId: 'presente-regular', sentence: 'Yo ___ español.', options: ['hablo', 'hablas', 'habla'], correctIndex: 0 },
 ];
 jest.mock('@/lib/exam/builder', () => ({ buildExam: () => mockExam }));
 

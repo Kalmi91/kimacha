@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState, type ReactNode } from 'react';
+import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react';
 import { ActivityIndicator, KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 
@@ -7,6 +7,8 @@ import { fontSize, fontWeight, radius, spacing } from '@/constants/Theme';
 import { getDb } from '@/lib/database';
 import { useLearner } from '@/lib/learner';
 import { PCIC_LEVELS, findPcicItem, pcicItemsForLevel, type PcicLevel, type PcicTarget } from '@/data/pcic';
+import { levelExamAnswers, mergeExamAnswers } from '@/lib/grammar/examEvidence';
+import { GRAMMAR_RANDOM_KEY, evidenceFromRows } from '@/lib/grammar/randomRound';
 import { GRAMMAR_PROGRESS_KEY, doneGrammarTopicProgress, syllabusTopic } from '@/lib/grammar/syllabus';
 import { resolvedTensesFromLessons, type ResolvedTense } from '@/lib/knownSentence';
 import { t } from '@/lib/i18n';
@@ -117,6 +119,8 @@ export default function ExamScreen() {
   const [leaving, setLeaving] = useState(false);
   // The results of a last answer whose saving failed (offline, storage error): the retry button saves them again.
   const [finishFailed, setFinishFailed] = useState<ExamItemResult[] | null>(null);
+  // Tells the exam runs apart in the grammar evidence ids; set at every start, kept across the finishFailed retry.
+  const runId = useRef(0);
 
   const make = useCallback(
     (src: Source): ExamItem[] =>
@@ -166,6 +170,7 @@ export default function ExamScreen() {
   }, [level, make, refresh]);
 
   const start = () => {
+    runId.current = Date.now();
     setIndex(0);
     setResults([]);
     setScore(null);
@@ -183,6 +188,9 @@ export default function ExamScreen() {
     const db = getDb();
     const today = localDateString();
     await db.saveExamResult(level, sc.pct, sc.passed, today);
+    // Every grammar answer is test evidence of its topic (the ids keep a retried save from doubling it).
+    const merged = mergeExamAnswers(evidenceFromRows(await db.getGameProgress(GRAMMAR_RANDOM_KEY)), levelExamAnswers(all, runId.current), today);
+    for (const topic of merged.touched) await db.setGameProgress(GRAMMAR_RANDOM_KEY, topic, 'evidence', merged.evidence.get(topic));
     // The card of a missed word item goes back to SM-2 review with `again`
     // (a grammar mistake has no card; for it the result page's lesson link is the feedback).
     // The fresh cards are also refreshed in memory, so that a retry does not draw the word that was just missed again.
@@ -290,6 +298,7 @@ export default function ExamScreen() {
     const isWeak = (skill: ExamItem['skill']) => skills.some((r) => r.skill === skill && r.weak);
     const contentLang = sourceFor(source?.target ?? 'es');
     const lessonLinks = isWeak('grammar') ? weakLessons(results) : [];
+    const grammarMissed = results.some((r) => r.item.kind === 'gap_mc' && !r.correct);
     const skillLabels: Record<ExamItem['skill'], string> = {
       words: s.exam.skillWords,
       grammar: s.exam.skillGrammar,
@@ -324,6 +333,9 @@ export default function ExamScreen() {
             />
           );
         })}
+        {grammarMissed && (
+          <Text testID="exam-missed-note" style={[styles.line, { color: colors.textMuted }]}>{s.exam.missedNote}</Text>
+        )}
         {isWeak('words') && <ExamButton testID="exam-review-words" secondary label={s.exam.skillReviewWords} onPress={practiceWords} />}
         {!isWeak('words') && isWeak('reading') && (
           <ExamButton testID="exam-practice-sentences" secondary label={s.exam.skillPracticeSentences} onPress={practiceWords} />

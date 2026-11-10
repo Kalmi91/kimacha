@@ -5,6 +5,7 @@
 // (kind `cloze`, see the screen app/grammar/exam-round.tsx).
 
 import { TICK_PCT, topicPercent, type TopicEvidence } from '@/lib/grammar/randomRound';
+import { examMissedTopics } from '@/lib/grammar/examEvidence';
 import { weakestTopics } from '@/lib/grammar/levelTest';
 import { shuffleArray } from '@/lib/shuffle';
 
@@ -62,8 +63,8 @@ export const textScore = (text: ExamRoundText, evidence: Map<string, TopicEviden
   text.gaps.reduce((sum, g) => sum + gapWeight(g.topic, evidence, weakIds), 0);
 
 /**
- * The texts of a round: those whose id is not in `seen` first, then the higher score; ties in the seeded order of
- * shuffleArray(seed). `n` different texts (fewer if the file has fewer).
+ * The texts of a round: those with the most gaps of an exam-missed topic first (examMissed), then those whose id is not in
+ * `seen`, then the higher score; ties in the seeded order of shuffleArray(seed). `n` different texts (fewer if the file has fewer).
  */
 export function pickRoundTexts(
   texts: ExamRoundText[],
@@ -75,8 +76,15 @@ export function pickRoundTexts(
 ): ExamRoundText[] {
   const weakIds = weakestTopics(ids, evidence, 3).map((w) => w.id);
   const seenSet = new Set(seen);
-  const ranked = shuffleArray(texts, seed).map((text, order) => ({ text, order, unseen: !seenSet.has(text.id), score: textScore(text, evidence, weakIds) }));
-  ranked.sort((a, b) => Number(b.unseen) - Number(a.unseen) || b.score - a.score || a.order - b.order);
+  const missedSet = new Set(examMissedTopics(ids, evidence));
+  const ranked = shuffleArray(texts, seed).map((text, order) => ({
+    text,
+    order,
+    missed: text.gaps.filter((g) => missedSet.has(g.topic)).length,
+    unseen: !seenSet.has(text.id),
+    score: textScore(text, evidence, weakIds),
+  }));
+  ranked.sort((a, b) => b.missed - a.missed || Number(b.unseen) - Number(a.unseen) || b.score - a.score || a.order - b.order);
   return ranked.slice(0, n).map((r) => r.text);
 }
 

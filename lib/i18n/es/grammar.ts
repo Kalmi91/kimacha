@@ -135,6 +135,7 @@ const es: typeof en = {
     title: (lvl: string) => `Examen ${lvl}`,
     ready: (pct: number) => `${pct}% listo en gramática`,
     weakest: 'Lo más débil ahora',
+    missedInExam: 'fallado en el examen',
     noData: 'Aún no hay suficientes respuestas de prueba. Haz la prueba de nivel.',
     noWeak: 'Ningún tema débil por ahora.',
     levelExam: 'Examen de nivel',

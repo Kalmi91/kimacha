@@ -47,6 +47,7 @@ export default {
     skillStrong: 'Strong',
     skillWeak: 'Weak',
     skillReviewLesson: (title: string) => `Review lesson: ${title}`,
+    missedNote: 'These topics now stand first under Weakest now on the Grammar tab.',
     skillReviewWords: 'Review these words',
     skillPracticeSentences: 'Practice sentences',
     // spoken item dictated with the keyboard's microphone.
@@ -105,6 +106,7 @@ export default {
       `To pass: an average of at least ${needed} points on the exam scale. Your scale score here is an estimate from your raw points.`,
     shortNote: 'Shorter than the real exam, points are scaled. The clock is the real one.',
     fullNote: 'As long as the real exam. The clock is the real one.',
+    missedNote: 'The grammar topics of the gaps you missed now stand first under Weakest now on the Grammar tab.',
     unavailableBody: 'There is no practice exam for this level yet.',
     emptyBody: 'There is not enough material for this practice exam yet.',
     begin: 'Begin',

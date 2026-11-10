@@ -22,7 +22,7 @@ const match: ExamItem = {
 };
 const sentOrder: ExamItem = { kind: 'sent_order', skill: 'words', itemId: 's1', prompt: 'I eat at home.', answerTokens: ['yo', 'como', 'en', 'casa'], sentence: 'Yo como en casa.', distractors: [] };
 const sentType: ExamItem = { kind: 'sent_type', skill: 'words', itemId: 's2', prompt: 'We live here.', answer: 'Vivimos aquí.' };
-const gap: ExamItem = { kind: 'gap_mc', skill: 'grammar', topicId: 'presente-regular', sentence: 'Yo ___ español.', options: ['hablo', 'hablas', 'habla'], correctIndex: 0 };
+const gap: ExamItem = { kind: 'gap_mc', skill: 'grammar', itemId: 'g1', topicId: 'presente-regular', sentence: 'Yo ___ español.', options: ['hablo', 'hablas', 'habla'], correctIndex: 0 };
 const reading: ExamItem = { kind: 'reading_mc', skill: 'reading', itemIds: ['r1', 'r2'], text: 'Tengo un perro.', options: ['a', 'b', 'c'], correctIndex: 0 };
 
 const wrong = (item: ExamItem): ExamItemResult => ({ item, correct: false });

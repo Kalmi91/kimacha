@@ -7,7 +7,7 @@ const item = (skill: ExamSkill): ExamItem =>
   skill === 'words'
     ? { kind: 'word_type', skill, itemId: 'o1', prompt: 'a', answer: 'b' }
     : skill === 'grammar'
-      ? { kind: 'gap_mc', skill, topicId: 't', sentence: 'x ___', options: ['a', 'b'], correctIndex: 0 }
+      ? { kind: 'gap_mc', skill, itemId: 'g1', topicId: 't', sentence: 'x ___', options: ['a', 'b'], correctIndex: 0 }
       : skill === 'reading'
         ? { kind: 'reading_mc', skill, itemIds: ['o1'], text: 'x', options: ['a', 'b'], correctIndex: 0 }
         : { kind: 'speak', skill, itemId: 'o1', prompt: 'a', expected: 'b', mode: 'translate' };

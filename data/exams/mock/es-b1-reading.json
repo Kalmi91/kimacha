@@ -95,10 +95,10 @@
           "gaps": [
             { "options": ["hago", "soy", "tengo"], "correct": 2 },
             { "options": ["está", "tiene", "hay"], "correct": 1 },
-            { "options": ["fui", "iré", "voy"], "correct": 0 },
-            { "options": ["hablo", "hablaba", "hable"], "correct": 2 },
-            { "options": ["más", "muy", "tan"], "correct": 0 },
-            { "options": ["pasas", "pasaras", "pasarás"], "correct": 1 }
+            { "options": ["fui", "iré", "voy"], "correct": 0, "topic": "indefinido-irregular" },
+            { "options": ["hablo", "hablaba", "hable"], "correct": 2, "topic": "subjuntivo-disparadores" },
+            { "options": ["más", "muy", "tan"], "correct": 0, "topic": "comparativos-superlativos" },
+            { "options": ["pasas", "pasaras", "pasarás"], "correct": 1, "topic": "subjuntivo-imperfecto" }
           ]
         }
       ]

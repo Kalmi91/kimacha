@@ -6,7 +6,7 @@ import { MAX_LESSON_LINKS, skillResults, weakLessons } from '../skills';
 import type { ExamItem, ExamItemResult } from '../types';
 
 const word = (id: string): ExamItem => ({ kind: 'word_type', skill: 'words', itemId: id, prompt: 'p', answer: 'a' });
-const gap = (topicId: string): ExamItem => ({ kind: 'gap_mc', skill: 'grammar', topicId, sentence: 'Yo ___ .', options: ['a', 'b', 'c'], correctIndex: 0 });
+const gap = (topicId: string): ExamItem => ({ kind: 'gap_mc', skill: 'grammar', itemId: 'g1', topicId, sentence: 'Yo ___ .', options: ['a', 'b', 'c'], correctIndex: 0 });
 const reading = (id: string): ExamItem => ({ kind: 'reading_mc', skill: 'reading', itemIds: [id], text: 't', options: ['a', 'b', 'c'], correctIndex: 0 });
 const res = (item: ExamItem, correct: boolean): ExamItemResult => ({ item, correct });
 

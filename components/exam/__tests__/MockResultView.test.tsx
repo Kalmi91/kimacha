@@ -17,12 +17,19 @@ jest.mock('@/lib/speech', () => ({ speak: jest.fn(), speakSequence: jest.fn(), s
 const resultOf = (target: 'es' | 'en', level: 'B1' | 'B2' | 'C1') =>
   scoreMockExam(buildMockExam({ target, level, items: [], seed: 0, authored: fixturePapers(target, level) }), {});
 
-const show = (result: ReturnType<typeof resultOf>) =>
+const show = (result: ReturnType<typeof resultOf>, grammarMissed?: boolean) =>
   render(
     <ThemeProvider>
-      <MockResultView result={result} timedOut={false} onReview={jest.fn()} onRetry={jest.fn()} onExit={jest.fn()} />
+      <MockResultView result={result} timedOut={false} onReview={jest.fn()} onRetry={jest.fn()} onExit={jest.fn()} grammarMissed={grammarMissed} />
     </ThemeProvider>,
   );
+
+describe('MockResultView: missed grammar gaps', () => {
+  it('says where the missed gaps went only when grammarMissed is set', () => {
+    expect(show(resultOf('es', 'B2'), true).getByTestId('mock-missed-note').props.children).toMatch(/Weakest now/);
+    expect(show(resultOf('es', 'B2')).queryByTestId('mock-missed-note')).toBeNull();
+  });
+});
 
 describe('MockResultView: scale rule', () => {
   it('B2: Use of English is its own band; every counted skill has a scale score; the average is labelled approximate', () => {

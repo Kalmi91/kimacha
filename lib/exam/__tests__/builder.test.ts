@@ -88,7 +88,7 @@ describe('buildExam: the A1 exam build (en→es)', () => {
   });
 
   it('every word-based item comes from a learned card (no unknown word ends up in an item)', () => {
-    const ids = exam.flatMap((i) => ('itemId' in i ? [i.itemId] : 'itemIds' in i ? i.itemIds : []));
+    const ids = exam.flatMap((i) => (i.kind !== 'gap_mc' && 'itemId' in i ? [i.itemId] : 'itemIds' in i ? i.itemIds : []));
     expect(ids.length).toBeGreaterThan(0);
     for (const id of ids) expect(learned.has(id)).toBe(true);
   });
@@ -207,7 +207,7 @@ describe('buildExam: when conditions are scarce', () => {
     const cards: Sm2Card[] = items.map((it, i) => (i < 40 ? { ...sm2NewCard(it.id), state: 'review' as const } : { ...sm2NewCard(it.id), state: i % 2 ? ('learning' as const) : ('new' as const) }));
     const exam = buildExam({ ...input, cards });
     const allowed = new Set(items.slice(0, 40).map((i) => i.id));
-    const ids = exam.flatMap((i) => ('itemId' in i ? [i.itemId] : 'itemIds' in i ? i.itemIds : []));
+    const ids = exam.flatMap((i) => (i.kind !== 'gap_mc' && 'itemId' in i ? [i.itemId] : 'itemIds' in i ? i.itemIds : []));
     expect(ids.length).toBeGreaterThan(0);
     for (const id of ids) expect(allowed.has(id)).toBe(true);
   });
