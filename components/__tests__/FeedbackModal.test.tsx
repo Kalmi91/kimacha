@@ -3,8 +3,9 @@
 // Drive flavor → fetch to FEEDBACK_URL, Play flavor → Share.share, neither
 // should navigate away from the app (no router/Linking call on this path).
 import { act, fireEvent, render, waitFor } from '@testing-library/react-native';
-import { Share } from 'react-native';
+import { Platform, Share } from 'react-native';
 import FeedbackButton from '../FeedbackModal';
+import { loadSession } from '@/lib/cloud/session';
 
 // Plain mutable object (not a `const` referenced by the factory closure, to
 // dodge babel-plugin-jest-hoist's ordering rules): tests flip its fields
@@ -12,6 +13,7 @@ import FeedbackButton from '../FeedbackModal';
 // so no jest.resetModules()/re-require dance (that duplicates the React
 // module and breaks useContext, tried first, see FeedbackModal.tsx history).
 jest.mock('@/lib/buildFlavor', () => ({ IS_PLAY_BUILD: false, FEEDBACK_URL: 'https://example.test/feedback' }));
+jest.mock('@/lib/cloud/session', () => ({ loadSession: jest.fn(() => null) }));
 
 describe('FeedbackModal (FeedbackButton)', () => {
   beforeEach(() => {
@@ -66,6 +68,46 @@ describe('FeedbackModal (FeedbackButton)', () => {
     expect(body.currentCard).toContain('pcic:x1');
     expect(typeof body.appVersion).toBe('string');
     expect(shareSpy).not.toHaveBeenCalled();
+  });
+
+  // Sends one feedback and returns the posted body.
+  async function sendAndReadBody() {
+    global.fetch = jest.fn().mockResolvedValue({ ok: true } as never);
+    const { getByText, getByPlaceholderText } = render(
+      <FeedbackButton level="B1" languagePair="es→en" currentCard="pcic:x1" />
+    );
+    fireEvent.press(getByText('💬'));
+    fireEvent.changeText(getByPlaceholderText('Share your thoughts...'), 'Hola');
+    await act(async () => {
+      fireEvent.press(getByText('Send'));
+    });
+    await waitFor(() => expect(global.fetch).toHaveBeenCalledTimes(1));
+    const [, init] = (global.fetch as jest.Mock).mock.calls[0] as [string, RequestInit];
+    return JSON.parse(init.body as string);
+  }
+
+  it('on the web the signed-in account name goes into Current Card and its own field', async () => {
+    jest.replaceProperty(Platform, 'OS', 'web');
+    (loadSession as jest.Mock).mockReturnValueOnce({ name: 'Nicte Cruz', token: 't' });
+    const body = await sendAndReadBody();
+    expect(body.currentCard).toMatch(/^v.* · user:Nicte Cruz · pcic:x1$/);
+    expect(body.user).toBe('Nicte Cruz');
+  });
+
+  it('on the web without a sign-in the row says guest', async () => {
+    jest.replaceProperty(Platform, 'OS', 'web');
+    const body = await sendAndReadBody();
+    expect(body.currentCard).toMatch(/ · user:guest · pcic:x1$/);
+    expect(body.user).toBe('guest');
+  });
+
+  it('in the APK (native) no account is added', async () => {
+    jest.replaceProperty(Platform, 'OS', 'android');
+    (loadSession as jest.Mock).mockClear();
+    const body = await sendAndReadBody();
+    expect(body.currentCard).not.toContain('user:');
+    expect(body.user).toBeUndefined();
+    expect(loadSession).not.toHaveBeenCalled();
   });
 
   it('in the Play flavor sending calls the share sheet, not fetch', async () => {

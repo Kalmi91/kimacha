@@ -17,6 +17,15 @@ import { IS_PLAY_BUILD, FEEDBACK_URL } from '@/lib/buildFlavor';
 import { FeedbackHeaderContext } from '@/lib/feedbackHeader';
 import { HEADER_CHIP } from '@/components/learn/pcicStyles';
 import { useWebKeyboardOpen } from '@/lib/webKeyboard';
+import { loadSession } from '@/lib/cloud/session';
+
+// Maintainer: "if feedback comes from the web, show the account it was sent from".
+// Web only: the APK has no cloud account, its rows stay as they were. A web visitor
+// who has not signed in is "guest", so a web row is never mistaken for an APK row.
+function feedbackUser(): string | null {
+  if (Platform.OS !== 'web') return null;
+  return loadSession()?.name ?? 'guest';
+}
 
 interface Props {
   level: string;
@@ -112,13 +121,18 @@ function FeedbackControl({ level, languagePair, currentCard, draggable = false, 
         // a share-sheet error ends like a dismissed sheet: there is no server answer to wait for, the form closes as after a send
       }
     } else {
+      // The account rides in Current Card next to the build, for the same reason
+      // (the script writes five columns); `user` is its own field for later.
+      const user = feedbackUser();
+      const tag = user ? `${build} · user:${user}` : build;
       const payload = {
         timestamp: new Date().toISOString(),
         level,
         languagePair,
-        currentCard: `${build} · ${currentCard}`,
+        currentCard: `${tag} · ${currentCard}`,
         feedbackText: text.trim(),
         appVersion: build,
+        ...(user ? { user } : {}),
       };
 
       // Offline or a non-2xx answer: keep the typed text and show an error
