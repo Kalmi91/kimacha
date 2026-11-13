@@ -14,7 +14,7 @@ import { kindPercent, kindProgressFromRows, kindRunKey, runSummary, type KindRun
 import { tableCellsForLesson, wordCellsForLesson, WORD_DECK_MIN_CARDS } from '@/lib/grammar/tableDeck';
 import { TRANSFORM_ROUND_SIZE } from '@/lib/grammar/transformRounds';
 import { ARTICLE_ROUND_SIZE, isArticleLesson } from '@/lib/grammar/nounArticles';
-import { lessonTestFromRows, lessonTestKey } from '@/lib/grammar/lessonTest';
+import { lessonTestFromRows, lessonTestKey, lessonTestSize, lessonTestUnlocked } from '@/lib/grammar/lessonTest';
 import { KIND_ORDER, useGrammarTopic } from '@/lib/grammar/useGrammarTopic';
 import { getScrollY, setScrollY } from '@/lib/grammar/scrollMemory';
 import { speak } from '@/lib/speech';
@@ -147,6 +147,8 @@ function GrammarLessonPhases({ topic }: { topic: ReturnType<typeof useGrammarTop
   const wordDeckCells = tableDeckCells.length === 0 ? wordCellsForLesson(lesson, learnedLang) : [];
   // the end-of-lesson test's own row, not part of the lesson %.
   const lessonTestResult = lessonTestFromRows(progressRows, String(topicId));
+  const testReady = lessonTestUnlocked(lesson, progressRows, String(topicId));
+  const startTest = () => setPhase('test');
 
   // Two worked examples from the first items, so the lesson SHOWS the rule
   // before it asks anything.
@@ -198,24 +200,28 @@ function GrammarLessonPhases({ topic }: { topic: ReturnType<typeof useGrammarTop
   const accentText = accentColor(g, colors.tint);
 
   // main button: on the brutalist palette the filled box, on classic today's button.
-  const lessonButton = (testID: string, label: string, onPress: () => void, filled: boolean, first: boolean) =>
+  const lessonButton = (testID: string, label: string, onPress: () => void, filled: boolean, first: boolean, disabled = false) =>
     g.brutal ? (
       <BrutalBox
         testID={testID}
         fill={filled ? 'a' : 'paper'}
+        dashed={disabled}
+        disabled={disabled}
         style={[styles.brutalBtnWrap, first && styles.startBtn]}
         boxStyle={styles.brutalBtn}
         onPress={onPress}
       >
-        <Text style={[styles.brutalBtnText, { color: filled ? g.onFill : g.ink }]}>{label}</Text>
+        <Text style={[styles.brutalBtnText, { color: disabled ? g.mu : filled ? g.onFill : g.ink }]}>{label}</Text>
       </BrutalBox>
     ) : (
       <Pressable
         testID={testID}
+        disabled={disabled}
         style={[
           styles.btn,
           first && styles.startBtn,
           filled ? { backgroundColor: colors.tint } : { borderWidth: 1.5, borderColor: colors.tint },
+          disabled && { opacity: 0.5 },
         ]}
         onPress={onPress}
       >
@@ -294,6 +300,7 @@ function GrammarLessonPhases({ topic }: { topic: ReturnType<typeof useGrammarTop
         drillKind={drillKind}
         kindCounts={kindCounts}
         lessonTestResult={lessonTestResult}
+        onStartTest={startTest}
         header={header}
         lessonScoreOf={lessonScoreOf}
         setPhase={setPhase}
@@ -352,6 +359,16 @@ function GrammarLessonPhases({ topic }: { topic: ReturnType<typeof useGrammarTop
           <Text testID="grammar-test-passed" style={[styles.testPassedNote, { color: g.brutal ? g.ink : colors.success }]}>
             ✓ {s.lessonTest.passedBest(lessonTestResult.best)}
           </Text>
+        ) : null}
+        {lessonTestSize(lesson, learnedLang, contentLang) > 0 ? (
+          <>
+            {lessonButton('grammar-lesson-start-lessontest', s.lessonTest.take, startTest, testReady, true, !testReady)}
+            {!testReady ? (
+              <Text style={[styles.lessonTestNote, { color: g.brutal ? g.mu : colors.tabIconDefault }]}>
+                {s.lessonTest.finishFirst}
+              </Text>
+            ) : null}
+          </>
         ) : null}
         {availableKinds.map((kind, i) => {
           // for an abandoned round "3/10 · 30%" (an unanswered item counts 0), otherwise the
