@@ -2,6 +2,11 @@ import type en from '../en/settings';
 
 const hu: typeof en = {
   settings: {
+    diagnostics: {
+      export: 'Napló exportálása',
+      exportError: 'A napló exportálása nem sikerült.',
+      renderError: 'Hiba történt. Indítsd újra az appot.',
+    },
     folders: {
       learning: 'Tanulás',
       voice: 'Hang',

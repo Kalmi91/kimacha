@@ -1,5 +1,10 @@
 export default {
   settings: {
+    diagnostics: {
+      export: 'Export diagnostic log',
+      exportError: 'The diagnostic log could not be exported.',
+      renderError: 'Something went wrong. Restart the app.',
+    },
     folders: {
       learning: 'Learning',
       voice: 'Voice',
