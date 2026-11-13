@@ -17,6 +17,7 @@ import { SkinBackdrop } from '@/components/skins/Slots';
 import ThemeSwatch from '@/components/skins/ThemeSwatch';
 // version line in Settings, the same tag the feedback rows carry.
 import { appBuildTag } from '@/lib/appBuild';
+import { exportAppLog } from '@/lib/exportAppLog';
 import { languages, pairLabel, supportedPairs } from '@/lib/languages';
 import { articleOptionsFor } from '@/lib/articlePicker';
 import { requestCloudSignIn, useIsCloudGuest } from '@/lib/cloud/guest';
@@ -268,6 +269,11 @@ export default function SettingsScreen({ section = 'home' }: { section?: Setting
 
       <Row onPress={handleRestore}>
         <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>♻️ {s.backup.restore}</Text>
+        <Text style={[styles.rowArrow, { color: arrowColor }]}>→</Text>
+      </Row>
+
+      <Row onPress={exportAppLog}>
+        <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>📋 {s.settings.diagnostics.export}</Text>
         <Text style={[styles.rowArrow, { color: arrowColor }]}>→</Text>
       </Row>
 

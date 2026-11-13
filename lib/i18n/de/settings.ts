@@ -2,6 +2,11 @@ import type en from '../en/settings';
 
 const de: typeof en = {
   settings: {
+    diagnostics: {
+      export: 'Diagnoseprotokoll exportieren',
+      exportError: 'Das Diagnoseprotokoll konnte nicht exportiert werden.',
+      renderError: 'Ein Fehler ist aufgetreten. Starte die App neu.',
+    },
     folders: {
       learning: 'Lernen',
       voice: 'Stimme',

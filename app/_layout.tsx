@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Platform, View } from 'react-native';
 import { useFonts } from 'expo-font';
-import { Stack, ThemeProvider as NavThemeProvider, DarkTheme, DefaultTheme, router, useSegments } from 'expo-router';
+import { Stack, ThemeProvider as NavThemeProvider, DarkTheme, DefaultTheme, router, useSegments, ErrorBoundary as RouterErrorBoundary, type ErrorBoundaryProps } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import 'react-native-reanimated';
@@ -28,9 +28,15 @@ import UsageToast from '@/components/UsageToast';
 import StatusBarStrip from '@/components/StatusBarStrip';
 import SpeechFeedback from '@/components/SpeechFeedback';
 import { ScreenFeedbackFrame } from '@/lib/screenFeedback';
+import AppErrorBoundary from '@/components/AppErrorBoundary';
+import { collectProcessExits, installErrorLogging, logError } from '@/lib/appDiagnostics';
 
-export { ErrorBoundary } from 'expo-router';
+export function ErrorBoundary(props: ErrorBoundaryProps) {
+  useEffect(() => { logError('render-error', props.error); }, [props.error]);
+  return <RouterErrorBoundary {...props} />;
+}
 
+installErrorLogging();
 SplashScreen.preventAutoHideAsync();
 initI18n();
 
@@ -46,6 +52,8 @@ function RootLayout() {
   // so on a switch the whole navigation tree (including the tab labels) is re-rendered
   // fresh, not just the focused screen.
   const [langVersion, setLangVersion] = useState(0);
+
+  useEffect(() => { void collectProcessExits(); }, []);
 
   useEffect(() => {
     if (error) throw error;
@@ -104,7 +112,7 @@ function RootLayout() {
 }
 
 // Web only: the cloud sign-in gate sits above the whole tree, so the tree (and its DB start-up) mounts only after the
-// saved progress is loaded. On native the default export is RootLayout itself: no new render branch, no new hook.
+// saved progress is loaded.
 function WebRoot() {
   return (
     <CloudGate>
@@ -113,7 +121,13 @@ function WebRoot() {
   );
 }
 
-export default Platform.OS === 'web' ? WebRoot : RootLayout;
+export default function AppRoot() {
+  return (
+    <AppErrorBoundary>
+      {Platform.OS === 'web' ? <WebRoot /> : <RootLayout />}
+    </AppErrorBoundary>
+  );
+}
 
 function RootLayoutNav() {
   const { theme } = useTheme();
