@@ -30,6 +30,7 @@ interface Props {
   drillKind: GrammarKind;
   kindCounts: Record<GrammarKind, number>;
   lessonTestResult: LessonTestResult | null;
+  onStartTest: () => void;
   header: ReactElement;
   lessonScoreOf: (rows: ProgressRow[]) => number | null;
   setPhase: (phase: Phase) => void;
@@ -49,6 +50,7 @@ export default function GrammarRoundEnd({
   drillKind,
   kindCounts,
   lessonTestResult,
+  onStartTest,
   header,
   lessonScoreOf,
   setPhase,
@@ -71,7 +73,6 @@ export default function GrammarRoundEnd({
   // task kind of the lesson, until then it is grey with the to-do below it. The line under the button is the rule.
   const testSize = lessonTestSize(lesson, learnedLang, contentLang);
   const testReady = lessonTestUnlocked(lesson, progressRows, String(topicId));
-  const startTest = () => setPhase('test');
   const lessonTestCta =
     testSize > 0 ? (
       <>
@@ -83,7 +84,7 @@ export default function GrammarRoundEnd({
             disabled={!testReady}
             style={styles.brutalBtnWrap}
             boxStyle={styles.brutalBtn}
-            onPress={startTest}
+            onPress={onStartTest}
           >
             <Text style={[styles.brutalBtnText, { color: testReady ? g.onFill : g.mu }]}>{s.lessonTest.take}</Text>
           </BrutalBox>
@@ -95,7 +96,7 @@ export default function GrammarRoundEnd({
               styles.btn,
               testReady ? { backgroundColor: colors.tint } : { borderWidth: 1.5, borderColor: colors.tabIconDefault, opacity: 0.5 },
             ]}
-            onPress={startTest}
+            onPress={onStartTest}
           >
             <Text style={[styles.btnText, testReady ? { color: colors.onTint } : { color: colors.tabIconDefault }]}>{s.lessonTest.take}</Text>
           </Pressable>
