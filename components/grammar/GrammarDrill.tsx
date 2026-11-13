@@ -26,6 +26,8 @@ import { speak } from '@/lib/speech';
 import { speechLang } from '@/lib/languages';
 import { buildGrammarRound, grammarRoundItemKind, isChoiceRoundItem, wrongExplanation } from '@/lib/games/grammarChoice';
 import { pickTransformRound, TRANSFORM_ROUND_SIZE } from '@/lib/grammar/transformRounds';
+import type { KindRun } from '@/lib/grammar/lessonScore';
+import { useGrammarRoundProgress } from '@/lib/grammar/useGrammarRoundProgress';
 import { buildGlossMap } from '@/lib/games/gloss';
 import { hashString } from '@/lib/shuffle';
 import GlossText from '@/components/games/GlossText';
@@ -74,9 +76,9 @@ interface Props {
    * stopped. If the item list no longer matches (the lesson changed), the
    * round restarts from the beginning.
    */
-  resume?: { seed: number; ids: string[]; index: number; correct: number };
+  resume?: Omit<KindRun, 'total'>;
   /** the round state after every answered item; the parent persists it. */
-  onProgress?: (p: { seed: number; ids: string[]; index: number; correct: number; total: number }) => void;
+  onProgress?: (p: KindRun) => void;
 }
 
 // data for the end-of-round screen; in memory only, no DB write.
@@ -168,15 +170,10 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
   // pairs (the partial credit is the ratio of right pairs, so the round total is in pairs too).
   const roundIds = useMemo(() => round.map((r) => r.item.id), [round]);
   const totalUnits = useMemo(() => round.reduce((n, r) => n + (isMatchItem(r.item) ? r.item.pairs.length : 1), 0), [round]);
-  const resumeOk =
-    !!resume &&
-    resume.index > 0 &&
-    resume.index < roundIds.length &&
-    resume.ids.length === roundIds.length &&
-    resume.ids.every((id, i) => id === roundIds[i]);
-  const [index, setIndex] = useState(resumeOk ? resume.index : 0);
+  const { initialIndex, initialCorrect, recordChoice, saveProgress } = useGrammarRoundProgress({ seed, ids: roundIds, total: totalUnits, resume, onProgress });
+  const [index, setIndex] = useState(initialIndex);
   const [selected, setSelected] = useState<number | null>(null);
-  const [correctCount, setCorrectCount] = useState(resumeOk ? resume.correct : 0);
+  const [correctCount, setCorrectCount] = useState(initialCorrect);
   // whether the choice item's sentence translation (F button) is open; closed again for a new item.
   const [showTr, setShowTr] = useState(false);
   // consecutive right answers within the round, in memory only; resets on a mistake, the sticker shows from "x2".
@@ -214,7 +211,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
 
   const advance = (finalCorrectCount: number) => {
     if (index + 1 < round.length) {
-      onProgress?.({ seed, ids: roundIds, index: index + 1, correct: finalCorrectCount, total: totalUnits });
+      saveProgress(index + 1, finalCorrectCount);
       setIndex((i) => i + 1);
       setSelected(null);
       setShowTr(false);
@@ -360,7 +357,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
     setSelected(optIdx);
     // for the el / la item the noun's meaning (tr) opens by itself after the answer; the F button still toggles.
     if (isArticleSetItem(current.item)) setShowTr(true);
-    if (optIdx === current.correctIndex) setCorrectCount((c) => c + 1);
+    if (recordChoice(current.item.id, optIdx === current.correctIndex, index, correctCount)) setCorrectCount((c) => c + 1);
     // the correct, filled-in sentence is spoken, after right and wrong answers alike.
     speak(
       marking ? current.item.sentence : current.item.sentence.replace('___', current.options[current.correctIndex]),
