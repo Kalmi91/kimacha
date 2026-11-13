@@ -88,6 +88,8 @@ export interface KindRun {
   correct: number;
   /** The whole round in units (for matching, all pairs). */
   total: number;
+  /** Mistaken items keep their original score if feedback is left before Next and the item is answered again. */
+  mistakes?: string[];
 }
 
 export interface KindProgress {
