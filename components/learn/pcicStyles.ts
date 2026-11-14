@@ -32,6 +32,10 @@ export const styles = StyleSheet.create({
     gap: 8,
     marginBottom: 8,
   },
+  headerActions: { flex: 1, flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center', gap: 8 },
+  tiredButton: { flexShrink: 1, maxWidth: '100%' },
+  tiredButtonBox: { paddingHorizontal: 8, paddingVertical: 5 },
+  tiredButtonText: { fontSize: 13, fontWeight: '500' },
   // the five BadgeRow chips (row 2 of the header), 8 px above the bar / mistakes entry.
   badgeRowWrap: {
     marginBottom: 8,

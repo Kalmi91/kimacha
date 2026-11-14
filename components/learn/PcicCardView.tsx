@@ -75,6 +75,11 @@ export default function PcicCardView({
   sessionAgain,
   handleMoreNew,
   queue,
+  progressQueue = queue,
+  parkedCards = [],
+  tired,
+  showTired,
+  handleTired,
   today,
   batchBase,
   answerText,
@@ -120,6 +125,7 @@ export default function PcicCardView({
         land between the two rows (SkinHeader is a fragment when the skin has no header ornament). */}
     <View>
     <View style={styles.headerRow}>
+      <View style={styles.headerActions}>
       {g.brutal ? (
         // The level chip box (active = filled).
         <BrutalBox testID="learn-level-chip" fill="a" offset={2} boxStyle={styles.brutalLevelChip} onPress={() => setLevelSheetOpen(true)}>
@@ -130,6 +136,15 @@ export default function PcicCardView({
           <Text style={[styles.levelChipText, { color: colors.onTint }]}>{level} ▾</Text>
         </Pressable>
       )}
+      {showTired && (
+        <Pressable testID="learn-tired" accessibilityRole="button" accessibilityLabel={s.pcic.tired}
+          accessibilityState={{ selected: tired }} onPress={handleTired} style={styles.tiredButton}>
+          <BrutalBox fill={tired ? 'a' : 'paper'} offset={2} boxStyle={styles.tiredButtonBox}>
+            <Text style={[styles.tiredButtonText, { color: textOnFill(g, tired ? 'a' : 'paper') }]}>{s.pcic.tired}</Text>
+          </BrutalBox>
+        </Pressable>
+      )}
+      </View>
       <View style={styles.headerIcons}>
         {lastGraded && (
           <Pressable onPress={handleUndo} hitSlop={12} style={styles.resetBtn} accessibilityLabel={s.pcic.undo}>
@@ -217,6 +232,9 @@ export default function PcicCardView({
           <DoneBadge />
           <TitleText variant="title" style={[styles.title, { color: colors.text }]}>{s.pcic.doneTitle}</TitleText>
         </View>
+        {parkedCards.length > 0 && (
+          <Text testID="learn-parked-note" style={{ color: colors.text, textAlign: 'center' }}>{s.pcic.parkedNote(parkedCards.length)}</Text>
+        )}
         {g.brutal ? (
           <View style={styles.tilesRow}>
             {([['b', sessionAnswered, s.pcic.tileAnswered], ['paper', sessionNew, s.pcic.tileNew], ['a', sessionAgain, s.pcic.tileAgain]] as const).map(([fill, n, label]) => (
@@ -284,7 +302,7 @@ export default function PcicCardView({
   // dayProgressPercent). The earlier measurement by sets of 10 restarted at every 10th card.
   // After +N it shows the progress of the new batch (finishedInBatch), not the day's total.
   const barPct = dayProgressPercent(
-    finishedInBatch(countFinishedToday([...allCards.values()], queue, today), batchBase.day === today && batchBase.level === level ? batchBase.n : 0),
+    finishedInBatch(countFinishedToday([...allCards.values()], progressQueue, today), batchBase.day === today && batchBase.level === level ? batchBase.n : 0),
     queue.length
   );
 

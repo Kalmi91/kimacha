@@ -63,6 +63,8 @@ const de: typeof en = {
     empty: 'Hier gibt es noch keine Wörter',
   },
   pcic: {
+    tired: 'Ich bin müde',
+    parkedNote: (n: number) => `${n} ${n === 1 ? 'Karte kommt' : 'Karten kommen'} morgen wieder.`,
     spainLabel: 'Spanien',
     badgeTotal: (n: number) => `${n} Wörter`,
     badgeDue: (n: number) => `fällig ${n}`,

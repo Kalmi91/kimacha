@@ -282,6 +282,12 @@ async function migrateToV3(db: SQLite.SQLiteDatabase) {
   await addColumnIfMissing(db, 'user_meta', 'theme_mode', 'TEXT');
 }
 
+// v4: the two optional fatigue aids, per language pair; missing values remain off.
+async function migrateToV4(db: SQLite.SQLiteDatabase) {
+  await addColumnIfMissing(db, 'learn_settings', 'tired_button', 'INTEGER');
+  await addColumnIfMissing(db, 'learn_settings', 'miss_cap', 'INTEGER');
+}
+
 export interface Migration {
   version: number;
   up: (db: SQLite.SQLiteDatabase) => Promise<void>;
@@ -291,6 +297,7 @@ export const MIGRATIONS: readonly Migration[] = [
   { version: 1, up: migrateToV1 },
   { version: 2, up: migrateToV2 },
   { version: 3, up: migrateToV3 },
+  { version: 4, up: migrateToV4 },
 ];
 
 export const LATEST_SCHEMA_VERSION = MIGRATIONS[MIGRATIONS.length - 1].version;

@@ -23,6 +23,8 @@ export type MetaColumn =
 // learn_settings columns, one row per language pair.
 export type SettingColumn =
   | 'strict_accents'
+  | 'tired_button'
+  | 'miss_cap'
   | 'again_delay_sec'
   | 'article_picker'
   | 'weekly_goal_minutes'
