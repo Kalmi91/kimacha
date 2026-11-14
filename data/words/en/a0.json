@@ -6,8 +6,8 @@
     "en": "hello / hi",
     "topic": "greetings",
     "topicOrder": 1,
-    "sentence_es": "Hola, me llamo Tom.",
-    "sentence_en": "Hello, my name is Tom.",
+    "sentence_es": "Hola, ¿cómo estás?",
+    "sentence_en": "Hi, how are you?",
     "pos": "adv"
   },
   {
@@ -63,8 +63,8 @@
     "en": "goodbye / bye",
     "topic": "greetings",
     "topicOrder": 7,
-    "sentence_es": "¡Adiós, Tom! Ahora me voy al aeropuerto.",
-    "sentence_en": "Goodbye, Tom! I go to the airport now.",
+    "sentence_es": "¡Adiós! Ahora me voy al aeropuerto.",
+    "sentence_en": "Bye! I go to the airport now.",
     "pos": "adv"
   },
   {
@@ -174,7 +174,7 @@
     "topic": "courtesy",
     "topicOrder": 9,
     "sentence_es": "Perdón, ¿este es tu celular?",
-    "sentence_en": "Pardon, is this your phone?",
+    "sentence_en": "Sorry, is this your phone?",
     "pos": "adv"
   },
   {
@@ -1051,7 +1051,7 @@
     "topic": "places_survival",
     "topicOrder": 5,
     "sentence_es": "Voy a la tienda por agua.",
-    "sentence_en": "I go to the store for water.",
+    "sentence_en": "I go to the shop for water.",
     "pos": "noun",
     "gender": "f"
   },

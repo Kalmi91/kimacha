@@ -378,7 +378,7 @@
     "es": "a",
     "en": "to (direction, recipient)",
     "sentence_es": "¿Vas a casa?",
-    "sentence_en": "Are you going home?",
+    "sentence_en": "Are you going to your house?",
     "sentence_lemmas": ["ir", "a", "casa"]
   },
   {
@@ -569,7 +569,7 @@
     "es": "el trabajo / la chamba",
     "en": "work, job",
     "hint_en": "My *work* starts at eight.",
-    "sentence_es": "¿Tú tienes un trabajo?",
+    "sentence_es": "¿Tú tienes una chamba?",
     "sentence_en": "Do you have a job?",
     "sentence_lemmas": ["tú", "tener", "un", "trabajo"]
   },
@@ -637,7 +637,7 @@
     "en": "of, from",
     "hint_en": "I am *from* here",
     "sentence_es": "Es la casa de mi amigo.",
-    "sentence_en": "It is my friend's house.",
+    "sentence_en": "It is the house of a friend of mine.",
     "sentence_lemmas": ["ser", "el", "casa", "de", "mi", "amigo"]
   },
   {
@@ -694,7 +694,7 @@
     "lemma": "pequeño",
     "es": "pequeño / chico",
     "en": "small",
-    "sentence_es": "¿La casa de mi amigo es pequeña?",
+    "sentence_es": "¿La casa de mi amigo es chica?",
     "sentence_en": "Is my friend's house small?",
     "sentence_lemmas": ["el", "casa", "de", "mi", "amigo", "ser", "pequeño"]
   },
@@ -750,9 +750,9 @@
     "es": "mucho",
     "en": "much, a lot of",
     "hint_en": "I don't eat *much* meat.",
-    "sentence_es": "Tengo mucha hambre ahora.",
-    "sentence_en": "I am very hungry now.",
-    "sentence_lemmas": ["tener", "mucho", "hambre", "ahora"]
+    "sentence_es": "Tengo mucho trabajo hoy.",
+    "sentence_en": "I have a lot of work today.",
+    "sentence_lemmas": ["tener", "mucho", "trabajo", "hoy"]
   },
   {
     "order": 67,
@@ -967,9 +967,9 @@
     "es": "le",
     "en": "to him, to her",
     "hint_en": "I give *him* water.",
-    "sentence_es": "Le doy agua a mi amigo.",
-    "sentence_en": "I give my friend water.",
-    "sentence_lemmas": ["le", "dar", "agua", "a", "mi", "amigo"]
+    "sentence_es": "Le doy agua.",
+    "sentence_en": "I give him water.",
+    "sentence_lemmas": ["le", "dar", "agua"]
   },
   {
     "order": 86,
@@ -979,9 +979,9 @@
     "es": "se",
     "en": "himself, herself, themselves",
     "hint_en": "She sees *herself* in the mirror.",
-    "sentence_es": "Hoy el niño se ve feliz.",
-    "sentence_en": "Today the child looks happy.",
-    "sentence_lemmas": ["hoy", "el", "niño", "se", "ver", "feliz"]
+    "sentence_es": "Ella se ve en el agua.",
+    "sentence_en": "She sees herself in the water.",
+    "sentence_lemmas": ["ella", "se", "ver", "en", "el", "agua"]
   },
   {
     "order": 87,
@@ -1108,7 +1108,7 @@
     "en": "all, whole",
     "hint_en": "The *whole* family is here.",
     "sentence_es": "En casa todo está bien.",
-    "sentence_en": "At home everything is fine.",
+    "sentence_en": "All is well at home.",
     "sentence_lemmas": ["en", "casa", "todo", "estar", "bien"]
   },
   {
@@ -1119,7 +1119,7 @@
     "es": "nada",
     "en": "nothing",
     "sentence_es": "No quiero nada, gracias.",
-    "sentence_en": "I don't want anything, thank you.",
+    "sentence_en": "I want nothing, thank you.",
     "sentence_lemmas": ["no", "querer", "nada", "gracias"]
   },
   {
@@ -1298,8 +1298,8 @@
     "lemma": "carro",
     "es": "el carro / el coche / el auto",
     "en": "car",
-    "sentence_es": "Voy a casa en carro.",
-    "sentence_en": "I am driving home.",
+    "sentence_es": "Voy a casa en auto.",
+    "sentence_en": "I go home by car.",
     "sentence_lemmas": ["ir", "a", "casa", "en", "carro"]
   },
   {
@@ -1387,7 +1387,7 @@
     "lemma": "teléfono",
     "es": "el teléfono / el celular",
     "en": "phone",
-    "sentence_es": "No veo mi teléfono en la mesa.",
+    "sentence_es": "No veo mi celular en la mesa.",
     "sentence_en": "I don't see my phone on the table.",
     "sentence_lemmas": ["no", "ver", "mi", "teléfono", "en", "el", "mesa"]
   },
@@ -1519,7 +1519,7 @@
     "lemma": "bonito",
     "es": "bonito / lindo",
     "en": "pretty, nice",
-    "sentence_es": "La ciudad es bonita en la noche.",
+    "sentence_es": "La ciudad es linda en la noche.",
     "sentence_en": "The city is pretty at night.",
     "sentence_lemmas": ["el", "ciudad", "ser", "bonito", "en", "el", "noche"]
   },
@@ -1687,7 +1687,7 @@
     "es": "llegar",
     "en": "to arrive",
     "sentence_es": "Llego a casa a las cinco.",
-    "sentence_en": "I get home at five.",
+    "sentence_en": "I arrive home at five.",
     "sentence_lemmas": ["llegar", "a", "casa", "a", "el", "cinco"]
   },
   {
@@ -1854,7 +1854,7 @@
     "es": "la moto",
     "en": "motorcycle",
     "sentence_es": "Voy a trabajar en moto.",
-    "sentence_en": "I go to work by motorbike.",
+    "sentence_en": "I go to work by motorcycle.",
     "sentence_lemmas": ["ir", "a", "trabajar", "en", "moto"]
   },
   {
@@ -1942,7 +1942,7 @@
     "es": "el favor",
     "en": "favor",
     "sentence_es": "¿Me ayudas, por favor?",
-    "sentence_en": "Can you help me, please?",
+    "sentence_en": "Can you please do me a favor and help me?",
     "sentence_lemmas": ["me", "ayudar", "por", "favor"]
   },
   {
@@ -1964,7 +1964,7 @@
     "es": "la cuenta",
     "en": "bill",
     "sentence_es": "Necesito la cuenta, por favor.",
-    "sentence_en": "I need the check, please.",
+    "sentence_en": "I need the bill, please.",
     "sentence_lemmas": ["necesitar", "el", "cuenta", "por", "favor"]
   },
   {
@@ -2041,7 +2041,7 @@
     "es": "el cine",
     "en": "movie theater",
     "sentence_es": "Hay un cine en mi calle.",
-    "sentence_en": "There is a cinema on my street.",
+    "sentence_en": "There is a movie theater on my street.",
     "sentence_lemmas": ["haber", "un", "cine", "en", "mi", "calle"]
   },
   {
@@ -2074,7 +2074,7 @@
     "es": "el centro",
     "en": "downtown",
     "sentence_es": "Trabajo en el centro de la ciudad.",
-    "sentence_en": "I work in the city center.",
+    "sentence_en": "I work downtown.",
     "sentence_lemmas": ["trabajar", "en", "el", "centro", "de", "el", "ciudad"]
   },
   {
@@ -2262,7 +2262,7 @@
     "es": "el calor",
     "en": "heat",
     "sentence_es": "Tengo calor y quiero agua.",
-    "sentence_en": "I am hot and I want water.",
+    "sentence_en": "I feel the heat and want water.",
     "sentence_lemmas": ["tener", "calor", "y", "querer", "agua"]
   },
   {
@@ -2306,7 +2306,7 @@
     "es": "el fútbol",
     "en": "soccer",
     "sentence_es": "Me gusta el fútbol, pero no bailar.",
-    "sentence_en": "I like football, but not dancing.",
+    "sentence_en": "I like soccer, but not dancing.",
     "sentence_lemmas": ["me", "gustar", "el", "fútbol", "pero", "no", "bailar"]
   },
   {
@@ -2350,7 +2350,7 @@
     "es": "debajo",
     "en": "underneath",
     "sentence_es": "Debajo de la mesa está el perro.",
-    "sentence_en": "The dog is under the table.",
+    "sentence_en": "The dog is underneath the table.",
     "sentence_lemmas": ["debajo", "de", "el", "mesa", "estar", "el", "perro"]
   },
   {
@@ -2394,7 +2394,7 @@
     "es": "el metro",
     "en": "subway",
     "sentence_es": "¿Hay un metro en tu ciudad?",
-    "sentence_en": "Is there a metro in your city?",
+    "sentence_en": "Is there a subway in your city?",
     "sentence_lemmas": ["haber", "un", "metro", "en", "tu", "ciudad"]
   },
   {
@@ -2637,9 +2637,9 @@
     "lemma": "antiguo",
     "es": "antiguo",
     "en": "antique",
-    "sentence_es": "Vivo en una calle muy antigua.",
-    "sentence_en": "I live on a very old street.",
-    "sentence_lemmas": ["vivir", "en", "un", "calle", "muy", "antiguo"]
+    "sentence_es": "Mi mesa es muy antigua.",
+    "sentence_en": "My table is an antique.",
+    "sentence_lemmas": ["mi", "mesa", "ser", "muy", "antiguo"]
   },
   {
     "order": 687,
@@ -2827,9 +2827,9 @@
     "lemma": "profesor",
     "es": "el profesor / el maestro",
     "en": "teacher, professor",
-    "sentence_es": "Con nosotros el profesor habla español.",
-    "sentence_en": "With us the teacher speaks Spanish.",
-    "sentence_lemmas": ["con", "nosotros", "el", "profesor", "hablar", "español"]
+    "sentence_es": "El profesor habla español; es mi maestro.",
+    "sentence_en": "The professor speaks Spanish; he is my teacher.",
+    "sentence_lemmas": ["el", "profesor", "hablar", "español", "ser", "mi", "profesor"]
   },
   {
     "order": 193,
@@ -2929,7 +2929,7 @@
     "en": "time",
     "hint_en": "This is my first *time* here.",
     "sentence_es": "Una vez leo, dos veces escribo.",
-    "sentence_en": "I read once; I write twice.",
+    "sentence_en": "I read one time; I write two times.",
     "sentence_lemmas": ["un", "vez", "leer", "dos", "vez", "escribir"]
   },
   {
@@ -3195,7 +3195,7 @@
     "lemma": "rápido",
     "es": "rápido / veloz",
     "en": "fast, quick",
-    "sentence_es": "Rápido va el tren, rápido va el día.",
+    "sentence_es": "Veloz va el tren, veloz va el día.",
     "sentence_en": "The train goes fast, the day goes fast.",
     "sentence_lemmas": ["rápido", "ir", "el", "tren", "rápido", "ir", "el", "día"]
   },
@@ -3591,7 +3591,7 @@
     "en": "afterwards, after",
     "hint_en": "*After* eating I go home",
     "sentence_es": "Trabajo y después voy a casa.",
-    "sentence_en": "I work and then I go home.",
+    "sentence_en": "I work and afterwards I go home.",
     "sentence_lemmas": ["trabajar", "y", "después", "ir", "a", "casa"]
   },
   {
@@ -3625,7 +3625,7 @@
     "lemma": "televisión",
     "es": "la televisión / la tele",
     "en": "television",
-    "sentence_es": "Ella ve la televisión en casa.",
+    "sentence_es": "Ella ve la tele en casa.",
     "sentence_en": "She watches television at home.",
     "sentence_lemmas": ["ella", "ver", "el", "televisión", "en", "casa"]
   },
@@ -3760,7 +3760,7 @@
     "es": "la edad",
     "en": "age",
     "sentence_es": "¿Qué edad tienes?",
-    "sentence_en": "How old are you?",
+    "sentence_en": "What is your age?",
     "sentence_lemmas": ["qué", "edad", "tener"]
   },
   {
@@ -4281,7 +4281,7 @@
     "es": "el sofá",
     "en": "couch",
     "sentence_es": "El gato duerme en el sofá.",
-    "sentence_en": "The cat sleeps on the sofa.",
+    "sentence_en": "The cat sleeps on the couch.",
     "sentence_lemmas": ["el", "gato", "dormir", "en", "el", "sofá"]
   },
   {
@@ -4413,7 +4413,7 @@
     "lemma": "supermercado",
     "es": "el supermercado / el súper",
     "en": "supermarket",
-    "sentence_es": "Compro verdura y fruta en el supermercado.",
+    "sentence_es": "Compro verdura y fruta en el súper.",
     "sentence_en": "I buy vegetables and fruit at the supermarket.",
     "sentence_lemmas": ["comprar", "verdura", "y", "fruta", "en", "el", "supermercado"]
   },
@@ -4536,7 +4536,7 @@
     "es": "el sol",
     "en": "sun, sunshine",
     "sentence_es": "Hoy hace sol y mucho calor.",
-    "sentence_en": "Today it is sunny and very hot.",
+    "sentence_en": "The sun is out today and it is very hot.",
     "sentence_lemmas": ["hoy", "hacer", "sol", "y", "mucho", "calor"]
   },
   {
@@ -4690,7 +4690,7 @@
     "es": "llamarse",
     "en": "to be called",
     "sentence_es": "¿Cómo te llamas?",
-    "sentence_en": "What is your name?",
+    "sentence_en": "What are you called?",
     "sentence_lemmas": ["cómo", "te", "llamarse"]
   },
   {
@@ -4712,7 +4712,7 @@
     "es": "bañarse",
     "en": "to take a bath, to shower",
     "sentence_es": "Me baño con agua caliente.",
-    "sentence_en": "I bathe with hot water.",
+    "sentence_en": "I take a bath in hot water.",
     "sentence_lemmas": ["me", "bañarse", "con", "agua", "caliente"]
   },
   {
@@ -4789,7 +4789,7 @@
     "es": "la cafetería",
     "en": "coffee shop",
     "sentence_es": "En la cafetería hay café, té y galletas.",
-    "sentence_en": "The cafe has coffee, tea and cookies.",
+    "sentence_en": "The coffee shop has coffee, tea and cookies.",
     "sentence_lemmas": ["en", "el", "cafetería", "haber", "café", "té", "y", "galleta"]
   },
   {
@@ -5075,7 +5075,7 @@
     "es": "el gusto",
     "en": "pleasure; liking",
     "sentence_es": "Mucho gusto, soy ingeniero.",
-    "sentence_en": "Nice to meet you, I am an engineer.",
+    "sentence_en": "It is a pleasure to meet you; I am an engineer.",
     "sentence_lemmas": ["mucho", "gusto", "ser", "ingeniero"]
   },
   {
@@ -5163,7 +5163,7 @@
     "es": "el kilo",
     "en": "kilogram",
     "sentence_es": "Compro un kilo de papa.",
-    "sentence_en": "I buy a kilo of potatoes.",
+    "sentence_en": "I buy a kilogram of potatoes.",
     "sentence_lemmas": ["comprar", "un", "kilo", "de", "papa"]
   },
   {
@@ -5240,7 +5240,7 @@
     "es": "mil",
     "en": "one thousand",
     "sentence_es": "Mil gracias, eres muy amable.",
-    "sentence_en": "Thanks a lot, you are very kind.",
+    "sentence_en": "A thousand thanks, you are very kind.",
     "sentence_lemmas": ["mil", "gracias", "ser", "muy", "amable"]
   },
   {
@@ -5461,9 +5461,9 @@
     "es": "cuál",
     "en": "which (one)",
     "hint_en": "*Which* one is your book",
-    "sentence_es": "¿Cuál es tu apellido?",
-    "sentence_en": "What is your last name?",
-    "sentence_lemmas": ["cuál", "ser", "tu", "apellido"]
+    "sentence_es": "¿Cuál es tu carro?",
+    "sentence_en": "Which is your car?",
+    "sentence_lemmas": ["cuál", "ser", "tu", "carro"]
   },
   {
     "order": 162,
@@ -5705,7 +5705,7 @@
     "es": "la profesora",
     "en": "female professor",
     "sentence_es": "La profesora habla español y francés.",
-    "sentence_en": "The teacher speaks Spanish and French.",
+    "sentence_en": "The female professor speaks Spanish and French.",
     "sentence_lemmas": ["el", "profesora", "hablar", "español", "y", "francés"]
   }
 ]
