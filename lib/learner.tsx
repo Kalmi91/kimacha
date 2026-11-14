@@ -21,6 +21,8 @@ export type LearnerField =
   | 'hasLevel'
   | 'level'
   | 'strictAccents'
+  | 'tiredButton'
+  | 'missCap'
   | 'againDelaySec'
   | 'articlePicker'
   | 'feedbackBtnSide';
@@ -36,6 +38,8 @@ export interface LearnerState {
   // whether the active pair has an explicitly chosen level (the db fallback does not count).
   hasLevel: boolean;
   strictAccents: boolean;
+  tiredButton: boolean;
+  missCap: boolean;
   againDelaySec: number;
   articlePicker: boolean;
   feedbackBtnSide: 'left' | 'right';
@@ -48,6 +52,8 @@ export interface LearnerActions {
   previewTarget: (target: PcicTarget, source?: string) => void;
   setLevel: (level: PcicLevel) => Promise<void>;
   setStrictAccents: (v: boolean) => Promise<void>;
+  setTiredButton: (v: boolean) => Promise<void>;
+  setMissCap: (v: boolean) => Promise<void>;
   setAgainDelaySec: (sec: number) => Promise<void>;
   setArticlePicker: (v: boolean) => Promise<void>;
   setFeedbackBtnSide: (side: 'left' | 'right') => Promise<void>;
@@ -63,6 +69,8 @@ export class LearnerStore {
     level: 'B1',
     hasLevel: false,
     strictAccents: false,
+    tiredButton: false,
+    missCap: false,
     againDelaySec: DEFAULT_AGAIN_DELAY_SEC,
     articlePicker: true,
     feedbackBtnSide: 'right',
@@ -107,6 +115,8 @@ export class LearnerStore {
     if (want('hasLevel')) patch.hasLevel = await db.hasPcicLevel();
     if (want('level')) patch.level = await db.getPcicLevel();
     if (want('strictAccents')) patch.strictAccents = await db.getStrictAccents();
+    if (want('tiredButton')) patch.tiredButton = await db.getTiredButton();
+    if (want('missCap')) patch.missCap = await db.getMissCap();
     if (want('againDelaySec')) patch.againDelaySec = await db.getAgainDelaySec();
     if (want('articlePicker')) patch.articlePicker = await db.getArticlePicker();
     if (want('feedbackBtnSide')) patch.feedbackBtnSide = await db.getFeedbackBtnSide();
@@ -135,6 +145,16 @@ export class LearnerStore {
     await getDb().setStrictAccents(v);
   };
 
+  setTiredButton = async (v: boolean) => {
+    this.commit({ tiredButton: v });
+    await getDb().setTiredButton(v);
+  };
+
+  setMissCap = async (v: boolean) => {
+    this.commit({ missCap: v });
+    await getDb().setMissCap(v);
+  };
+
   setAgainDelaySec = async (sec: number) => {
     this.commit({ againDelaySec: sec });
     await getDb().setAgainDelaySec(sec);
@@ -156,6 +176,8 @@ export class LearnerStore {
     previewTarget: this.previewTarget,
     setLevel: this.setLevel,
     setStrictAccents: this.setStrictAccents,
+    setTiredButton: this.setTiredButton,
+    setMissCap: this.setMissCap,
     setAgainDelaySec: this.setAgainDelaySec,
     setArticlePicker: this.setArticlePicker,
     setFeedbackBtnSide: this.setFeedbackBtnSide,

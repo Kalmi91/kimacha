@@ -62,6 +62,8 @@ const es: typeof en = {
     empty: 'Todavía no hay palabras aquí',
   },
   pcic: {
+    tired: 'Sin energía',
+    parkedNote: (n: number) => `${n} ${n === 1 ? 'tarjeta volverá' : 'tarjetas volverán'} mañana.`,
     spainLabel: 'España',
     badgeTotal: (n: number) => `${n} palabras`,
     badgeDue: (n: number) => `pendientes ${n}`,

@@ -62,6 +62,8 @@ const hu: typeof en = {
     empty: 'Itt még nincsenek szavak',
   },
   pcic: {
+    tired: 'Fáradt vagyok',
+    parkedNote: (n: number) => `${n} kártya holnap jön vissza.`,
     spainLabel: 'spanyolországi',
     badgeTotal: (n: number) => `${n} szó`,
     badgeDue: (n: number) => `esedékes ${n}`,

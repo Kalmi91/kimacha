@@ -28,6 +28,7 @@ import {
 } from '@/lib/pcicSession';
 import { loadVoices, hasVoiceFor } from '@/lib/speech';
 import { clearLearnResume } from '@/lib/learnResume';
+import { clearFatigueMisses } from '@/lib/learn/fatigue';
 import { clearLadderKeys, ladderKeysOfLevel } from '@/lib/sentenceLadder';
 import { useScreenLoad } from '@/lib/useScreenLoad';
 
@@ -57,7 +58,7 @@ export function useSettingsScreen() {
   const [level, setLevel] = useState<Level>('A0');
   // The learner's settings live in the store (lib/learner.tsx); this screen reads and writes them through it.
   const learner = useLearner();
-  const { refresh, strictAccents, articlePicker, againDelaySec } = learner;
+  const { refresh, strictAccents, articlePicker, againDelaySec, tiredButton, missCap } = learner;
   const direction: [string, string] = [learner.source ?? 'en', learner.target];
   // The row of the learning-direction switch and its
   // small sheet.
@@ -93,6 +94,7 @@ export function useSettingsScreen() {
     const db = getDb();
     return Promise.all([
       refresh(['strictAccents']),
+      refresh(['tiredButton', 'missCap']),
       db.getWeeklyGoalMinutes().then(setWeeklyGoal),
       db.getUsageStats().then(u => setWeekMinutes(u.thisWeek)),
       db.getDailyNewLimit().then(setDailyNewLimit),
@@ -120,6 +122,14 @@ export function useSettingsScreen() {
   // The same loading point as for the other learning settings.
   const handleArticlePickerToggle = async (v: boolean) => {
     await learner.setArticlePicker(v);
+  };
+
+  const handleTiredButtonToggle = async (v: boolean) => {
+    await learner.setTiredButton(v);
+  };
+
+  const handleMissCapToggle = async (v: boolean) => {
+    await learner.setMissCap(v);
   };
 
   // Direction switch:
@@ -268,6 +278,7 @@ export function useSettingsScreen() {
       await clearLadderKeys(getDb(), ladderKeysOfLevel(lvl, PCIC_LEVELS, pcicItemsForLevel, target));
       // The saved Learn-round snapshot is no longer valid after the progress was reset.
       await clearLearnResume(getDb());
+      await clearFatigueMisses(getDb());
     });
   const handleResetGrammar = () =>
     confirmReset(s.settings.resetGrammarTitle, s.settings.resetGrammarMessage, async () => {
@@ -294,6 +305,8 @@ export function useSettingsScreen() {
     dailyNewLimit,
     againDelaySec,
     strictAccents,
+    tiredButton,
+    missCap,
     articlePicker,
     goalReached,
     missingVoices,
@@ -304,6 +317,8 @@ export function useSettingsScreen() {
     examSeeded,
     handleStrictAccentsToggle,
     handleArticlePickerToggle,
+    handleTiredButtonToggle,
+    handleMissCapToggle,
     handleSelectDirection,
     handleWeeklyGoalChange,
     handleDailyNewLimitChange,

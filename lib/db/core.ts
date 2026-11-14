@@ -185,6 +185,22 @@ export class DbCore implements DB {
     await this.setSettings({ strict_accents: v ? 1 : 0 });
   }
 
+  async getTiredButton(): Promise<boolean> {
+    return (await this.getSetting('tired_button')) === 1;
+  }
+
+  async setTiredButton(v: boolean): Promise<void> {
+    await this.setSettings({ tired_button: v ? 1 : 0 });
+  }
+
+  async getMissCap(): Promise<boolean> {
+    return (await this.getSetting('miss_cap')) === 1;
+  }
+
+  async setMissCap(v: boolean): Promise<void> {
+    await this.setSettings({ miss_cap: v ? 1 : 0 });
+  }
+
   // adjustable: after how many seconds a missed PCIC card
   // comes back no matter what (lib/pcicSession.ts).
   async getAgainDelaySec(): Promise<number> {

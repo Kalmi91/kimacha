@@ -29,6 +29,7 @@ async function prompt(es: string, exampleEs: string, sourceLang: Lang = 'es') {
     setDockH: noop, sessionAnswered: 0, sessionNew: 0, sessionAgain: 0, handleMoreNew: noop,
     noteOpenFor: null, setNoteOpenFor: noop, setArticlePick: noop, setTypedAnswer: noop,
     handleCheck: asyncNoop, handleGrade: asyncNoop, handleDontLearn: asyncNoop,
+    tired: false, showTired: false, handleTired: asyncNoop, parkedCards: [], progressQueue: [current],
   };
   const view = render(<ThemeProvider><PcicCardView {...props} /></ThemeProvider>);
   await makeFlush(6)();

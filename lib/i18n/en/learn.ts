@@ -76,6 +76,8 @@ export default {
   },
   // the PCIC tab (English -> Spanish typing, Anki buttons).
   pcic: {
+    tired: "I'm tired",
+    parkedNote: (n: number) => `${n} ${n === 1 ? 'card will' : 'cards will'} return tomorrow.`,
     spainLabel: 'Spain',
     // the four separate labels of the BadgeRow chip line.
     badgeTotal: (n: number) => `${n} words`,
