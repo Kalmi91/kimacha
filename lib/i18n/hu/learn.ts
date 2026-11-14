@@ -62,6 +62,7 @@ const hu: typeof en = {
     empty: 'Itt még nincsenek szavak',
   },
   pcic: {
+    spainLabel: 'spanyolországi',
     badgeTotal: (n: number) => `${n} szó`,
     badgeDue: (n: number) => `esedékes ${n}`,
     badgeNew: (n: number) => `új ${n}`,

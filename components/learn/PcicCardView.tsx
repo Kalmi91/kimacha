@@ -24,7 +24,7 @@ import CardNote from '@/components/learn/CardNote';
 import { SkinBackdrop, SkinHeader, SkinSpeakLabel, SkinWord } from '@/components/skins/Slots';
 import DockedAction from '@/components/learn/DockedAction';
 import { dockScrollInsets } from '@/components/learn/dockScrollInsets';
-import PcicRevealedAnswer from '@/components/learn/PcicRevealedAnswer';
+import PcicRevealedAnswer, { SpainFormLabel } from '@/components/learn/PcicRevealedAnswer';
 import MistakesEntry from '@/components/learn/MistakesEntry';
 import MoreNewAsk from '@/components/learn/MoreNewAsk';
 import { answerInputProps } from '@/lib/inputProps';
@@ -36,6 +36,7 @@ import FitText from '@/components/FitText';
 import DoneBadge from '@/components/DoneBadge';
 import type { usePcicSession } from '@/lib/learn/usePcicSession';
 import { styles } from './pcicStyles';
+import { spainFormsInAnswer, spainFormsInCardSentence } from '@/lib/spainForms';
 
 // Everything the PCIC card view reads from the session hook (lib/learn/usePcicSession.ts).
 export type PcicCardViewProps = ReturnType<typeof usePcicSession>;
@@ -376,6 +377,7 @@ export default function PcicCardView({
               <SkinSpeakLabel />
             </View>
           </View>
+          {sourceLang === 'es' && <SpainFormLabel forms={spainFormsInAnswer(promptSource ?? '')} label={s.pcic.spainLabel} color={colors.text} testID="pcic-prompt-spain" />}
           {/* a short sentence under the word when the question has several
               meanings; the part marked `*…*` is bold + pink underline, the asterisks are not
               visible. It stays while typing and after Check; the read-aloud does not change. */}
@@ -391,6 +393,7 @@ export default function PcicCardView({
             </Text>
           )}
           {!!questionSentence && <Text testID="learn-question-sentence" style={[styles.hintText, { color: colors.tabIconDefault }]}>{questionSentence}</Text>}
+          {!!questionSentence && sourceLang === 'es' && <SpainFormLabel forms={spainFormsInCardSentence(currentItem, questionSentence)} label={s.pcic.spainLabel} color={colors.text} testID="pcic-question-sentence-spain" />}
           {/* the chip (part of speech) + the section appear in the same row
               while typing and after reveal, so that the item can be told apart even with an English
               prompt that repeats three times. */}
