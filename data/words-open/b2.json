@@ -6,9 +6,9 @@
     "lemma": "si",
     "es": "si",
     "en": "if",
-    "sentence_es": "Si el día se apaga, mi guitarra lo vuelve a encender.",
-    "sentence_en": "If the day goes dark, my guitar lights it again.",
-    "sentence_lemmas": ["si", "el", "día", "se", "apagar", "mi", "guitarra", "lo", "volver", "a", "encender"]
+    "sentence_es": "Si el día se apaga, encendemos la luz de casa.",
+    "sentence_en": "If the day fades, we turn on the light at home.",
+    "sentence_lemmas": ["si", "el", "día", "se", "apagar", "encender", "el", "luz", "de", "casa"]
   },
   {
     "order": 452,
@@ -17,9 +17,9 @@
     "lemma": "lograr",
     "es": "lograr",
     "en": "to achieve, to succeed in",
-    "sentence_es": "Logro volver al jardín, logro empezar otra canción al fin.",
-    "sentence_en": "I manage to return to the garden, I finally manage to begin another song.",
-    "sentence_lemmas": ["lograr", "volver", "a", "jardín", "lograr", "empezar", "otro", "canción", "a", "fin"]
+    "sentence_es": "Logro volver al jardín, logro ver las flores abrirse al fin.",
+    "sentence_en": "I manage to return to the garden, finally manage to see the flowers open.",
+    "sentence_lemmas": ["lograr", "volver", "a", "jardín", "lograr", "ver", "el", "flor", "abrir", "a", "fin"]
   },
   {
     "order": 453,
@@ -28,9 +28,9 @@
     "lemma": "alcanzar",
     "es": "alcanzar",
     "en": "to reach, to catch up",
-    "sentence_es": "Alcanzo tu mano, alcanzo la calma de la mañana.",
-    "sentence_en": "I reach your hand, I reach the calm of the morning.",
-    "sentence_lemmas": ["alcanzar", "tu", "mano", "alcanzar", "el", "calmar", "de", "el", "mañana"]
+    "sentence_es": "Alcanzo la ventana, alcanzo a ver el mar desde mi casa.",
+    "sentence_en": "I reach the window; I can make out the sea from my house.",
+    "sentence_lemmas": ["alcanzar", "el", "ventana", "alcanzar", "a", "ver", "el", "mar", "desde", "mi", "casa"]
   },
   {
     "order": 454,
@@ -116,9 +116,9 @@
     "lemma": "imaginar",
     "es": "imaginar",
     "en": "to imagine",
-    "sentence_es": "Imagino un mar de flores, imagino un cielo de canciones.",
-    "sentence_en": "I imagine a sea of flowers, I imagine a sky of songs.",
-    "sentence_lemmas": ["imaginar", "un", "mar", "de", "flor", "imaginar", "un", "cielo", "de", "canción"]
+    "sentence_es": "Imagino un mar de flores, imagino tu casa entre sus colores.",
+    "sentence_en": "I imagine a sea of flowers, your house among their colors.",
+    "sentence_lemmas": ["imaginar", "un", "mar", "de", "flor", "imaginar", "tu", "casa", "entre", "su", "color"]
   },
   {
     "order": 462,
@@ -127,9 +127,9 @@
     "lemma": "aceptar",
     "es": "aceptar",
     "en": "to accept",
-    "sentence_es": "Acepto la lluvia de hoy, acepto el silencio de tu guitarra.",
-    "sentence_en": "I accept today's rain, I accept the silence of your guitar.",
-    "sentence_lemmas": ["aceptar", "el", "lluvia", "de", "hoy", "aceptar", "el", "silencio", "de", "tu", "guitarra"]
+    "sentence_es": "Acepto la lluvia de hoy, acepto esperar para salir contigo.",
+    "sentence_en": "I accept today's rain, accept waiting to go out with you.",
+    "sentence_lemmas": ["aceptar", "el", "lluvia", "de", "hoy", "aceptar", "esperar", "para", "salir", "contigo"]
   },
   {
     "order": 463,
@@ -149,9 +149,9 @@
     "lemma": "evitar",
     "es": "evitar",
     "en": "to avoid",
-    "sentence_es": "Evito pisar las flores, evito dejar mi canción sin terminar.",
-    "sentence_en": "I avoid stepping on flowers, I avoid leaving my song unfinished.",
-    "sentence_lemmas": ["evitar", "pisar", "el", "flor", "evitar", "dejar", "mi", "canción", "sin", "terminar"]
+    "sentence_es": "Evito pisar las flores, evito correr cuando puedo mirar el paisaje.",
+    "sentence_en": "I avoid stepping on flowers, avoid running when I can look at the landscape.",
+    "sentence_lemmas": ["evitar", "pisar", "el", "flor", "evitar", "correr", "cuando", "poder", "mirar", "el", "paisaje"]
   },
   {
     "order": 465,
@@ -172,9 +172,9 @@
     "lemma": "superar",
     "es": "superar",
     "en": "to overcome, to surpass",
-    "sentence_es": "Supero mi miedo al cantar, supero la noche al ver amanecer.",
-    "sentence_en": "I overcome my fear by singing, I get through the night watching dawn break.",
-    "sentence_lemmas": ["superar", "mi", "miedo", "a", "cantar", "superar", "el", "noche", "a", "ver", "amanecer"]
+    "sentence_es": "Supero mi miedo al preguntar, supero cada problema sin dejar de intentar.",
+    "sentence_en": "I overcome my fear by asking, overcome each problem without giving up trying.",
+    "sentence_lemmas": ["superar", "mi", "miedo", "a", "preguntar", "superar", "cada", "problema", "sin", "dejar", "de", "intentar"]
   },
   {
     "order": 467,
@@ -205,9 +205,9 @@
     "lemma": "mejorar",
     "es": "mejorar",
     "en": "to improve",
-    "sentence_es": "Mejoro mi canción despacio, mejoro mi día al escuchar tu voz.",
-    "sentence_en": "I improve my song slowly, I improve my day by hearing your voice.",
-    "sentence_lemmas": ["mejorar", "mi", "canción", "despacio", "mejorar", "mi", "día", "a", "escuchar", "tu", "voz"]
+    "sentence_es": "Mejoro mi trabajo despacio, mejoro cada detalle sin perder la paciencia.",
+    "sentence_en": "I improve my work slowly, every detail without losing patience.",
+    "sentence_lemmas": ["mejorar", "mi", "trabajo", "despacio", "mejorar", "cada", "detalle", "sin", "perder", "el", "paciencia"]
   },
   {
     "order": 470,
@@ -216,9 +216,9 @@
     "lemma": "aumentar",
     "es": "aumentar / incrementar",
     "en": "to increase",
-    "sentence_es": "Aumenta la lluvia en el campo, aumenta la música en mi casa.",
-    "sentence_en": "The rain increases in the countryside, the music increases in my house.",
-    "sentence_lemmas": ["aumentar", "el", "lluvia", "en", "el", "campo", "aumentar", "el", "música", "en", "mi", "casa"]
+    "sentence_es": "Aumenta la lluvia en el campo, aumenta el agua de nuestro río.",
+    "sentence_en": "The rain increases in the countryside; the water in our river rises.",
+    "sentence_lemmas": ["aumentar", "el", "lluvia", "en", "el", "campo", "aumentar", "el", "agua", "de", "nuestro", "río"]
   },
   {
     "order": 471,
@@ -227,9 +227,9 @@
     "lemma": "reducir",
     "es": "reducir",
     "en": "to reduce",
-    "sentence_es": "Reduzco la prisa al caminar, reduzco el ruido para escucharte cantar.",
-    "sentence_en": "I slow my hurried walk, I reduce the noise to hear you sing.",
-    "sentence_lemmas": ["reducir", "el", "prisa", "a", "caminar", "reducir", "el", "ruido", "para", "escuchar", "cantar"]
+    "sentence_es": "Reduzco la prisa al caminar, reduzco el ruido para escucharte mejor.",
+    "sentence_en": "I slow my hurried walk, reduce the noise to hear you better.",
+    "sentence_lemmas": ["reducir", "el", "prisa", "a", "caminar", "reducir", "el", "ruido", "para", "escuchar", "mejor"]
   },
   {
     "order": 472,
@@ -238,9 +238,9 @@
     "lemma": "aprovechar",
     "es": "aprovechar",
     "en": "to take advantage of, to make the most of",
-    "sentence_es": "Aprovecho el sol para secar mi ropa y estrenar otra canción.",
-    "sentence_en": "I use the sunshine to dry my clothes and try out another song.",
-    "sentence_lemmas": ["aprovechar", "el", "sol", "para", "secar", "mi", "ropa", "y", "estrenar", "otro", "canción"]
+    "sentence_es": "Aprovecho el sol para secar mi ropa, aprovecho la sombra para descansar.",
+    "sentence_en": "I use the sun to dry my clothes, the shade to rest.",
+    "sentence_lemmas": ["aprovechar", "el", "sol", "para", "secar", "mi", "ropa", "aprovechar", "el", "sombra", "para", "descansar"]
   },
   {
     "order": 473,
@@ -282,9 +282,9 @@
     "lemma": "participar",
     "es": "participar",
     "en": "to take part, to participate",
-    "sentence_es": "Participo con mi guitarra, participas con tus ganas de bailar.",
-    "sentence_en": "I take part with my guitar, you with your desire to dance.",
-    "sentence_lemmas": ["participar", "con", "mi", "guitarra", "participar", "con", "tu", "ganas", "de", "bailar"]
+    "sentence_es": "Participo en el trabajo del barrio, participas trayendo semillas para el jardín.",
+    "sentence_en": "I take part in neighborhood work; you take part by bringing seeds for the garden.",
+    "sentence_lemmas": ["participar", "en", "el", "trabajo", "de", "barrio", "participar", "traer", "semilla", "para", "el", "jardín"]
   },
   {
     "order": 477,
@@ -337,9 +337,9 @@
     "lemma": "resolver",
     "es": "resolver",
     "en": "to solve, to resolve",
-    "sentence_es": "Resuelvo un problema cantando, resuelvo el silencio con tu voz.",
-    "sentence_en": "I solve a problem by singing, I resolve the silence with your voice.",
-    "sentence_lemmas": ["resolver", "un", "problema", "cantar", "resolver", "el", "silencio", "con", "tu", "voz"]
+    "sentence_es": "Resuelvo un problema despacio, resuelvo otro con tu ayuda y un café.",
+    "sentence_en": "I solve one problem slowly, another with your help and a coffee.",
+    "sentence_lemmas": ["resolver", "un", "problema", "despacio", "resolver", "otro", "con", "tu", "ayuda", "y", "un", "café"]
   },
   {
     "order": 482,
@@ -359,9 +359,9 @@
     "lemma": "comparar",
     "es": "comparar",
     "en": "to compare",
-    "sentence_es": "Comparo tu voz con el río, comparo mi canción con el mar.",
-    "sentence_en": "I compare your voice to the river, my song to the sea.",
-    "sentence_lemmas": ["comparar", "tu", "voz", "con", "el", "río", "comparar", "mi", "canción", "con", "el", "mar"]
+    "sentence_es": "Comparo dos caminos al mar, comparo sus vueltas antes de elegir.",
+    "sentence_en": "I compare two paths to the sea, their turns before choosing.",
+    "sentence_lemmas": ["comparar", "dos", "camino", "a", "mar", "comparar", "su", "vuelta", "antes", "de", "elegir"]
   },
   {
     "order": 484,
@@ -370,9 +370,9 @@
     "lemma": "describir",
     "es": "describir",
     "en": "to describe",
-    "sentence_es": "Describo tu jardín con palabras, describo su alegría con mi guitarra.",
-    "sentence_en": "I describe your garden with words, its joy with my guitar.",
-    "sentence_lemmas": ["describir", "tu", "jardín", "con", "palabra", "describir", "su", "alegría", "con", "mi", "guitarra"]
+    "sentence_es": "Describo tu jardín con palabras, describo sus colores sin olvidar el olor.",
+    "sentence_en": "I describe your garden in words, its colors without forgetting the smell.",
+    "sentence_lemmas": ["describir", "tu", "jardín", "con", "palabra", "describir", "su", "color", "sin", "olvidar", "el", "olor"]
   },
   {
     "order": 485,
@@ -415,9 +415,9 @@
     "lemma": "agradecer",
     "es": "agradecer",
     "en": "to thank, to be grateful",
-    "sentence_es": "Agradezco la sombra del árbol, agradezco la luz de tu canción.",
-    "sentence_en": "I am grateful for the tree's shade, for the light of your song.",
-    "sentence_lemmas": ["agradecer", "el", "sombra", "de", "árbol", "agradecer", "el", "luz", "de", "tu", "canción"]
+    "sentence_es": "Agradezco la sombra del árbol, agradezco cada paso que compartes conmigo.",
+    "sentence_en": "I am grateful for the tree's shade, for every step you share with me.",
+    "sentence_lemmas": ["agradecer", "el", "sombra", "de", "árbol", "agradecer", "cada", "paso", "que", "compartir", "conmigo"]
   },
   {
     "order": 490,
@@ -515,9 +515,9 @@
     "lemma": "aparecer",
     "es": "aparecer",
     "en": "to appear, to show up",
-    "sentence_es": "Aparece el sol entre las nubes, aparece mi alegría entre tus canciones.",
-    "sentence_en": "The sun appears among the clouds, my joy appears among your songs.",
-    "sentence_lemmas": ["aparecer", "el", "sol", "entre", "el", "nube", "aparecer", "mi", "alegría", "entre", "tu", "canción"]
+    "sentence_es": "Aparece el sol entre las nubes, aparece tu sonrisa entre la gente.",
+    "sentence_en": "The sun appears among clouds, your smile among the crowd.",
+    "sentence_lemmas": ["aparecer", "el", "sol", "entre", "el", "nube", "aparecer", "tu", "sonrisa", "entre", "el", "gente"]
   },
   {
     "order": 502,
@@ -570,9 +570,9 @@
     "lemma": "éxito",
     "es": "el éxito",
     "en": "success",
-    "sentence_es": "Mi éxito es perder la prisa, mi premio es aprender tu canción.",
-    "sentence_en": "My success is losing my haste, my reward is learning your song.",
-    "sentence_lemmas": ["mi", "éxito", "ser", "perder", "el", "prisa", "mi", "premio", "ser", "aprender", "tu", "canción"]
+    "sentence_es": "Busco el éxito sin prisa, disfruto del camino sin pensar en el premio.",
+    "sentence_en": "I seek success without hurrying, enjoy the journey without thinking of the prize.",
+    "sentence_lemmas": ["buscar", "el", "éxito", "sin", "prisa", "disfrutar", "de", "camino", "sin", "pensar", "en", "el", "premio"]
   },
   {
     "order": 507,
@@ -592,9 +592,9 @@
     "lemma": "esfuerzo",
     "es": "el esfuerzo",
     "en": "effort",
-    "sentence_es": "Cada esfuerzo abre una puerta, cada canción abre una ventana.",
-    "sentence_en": "Every effort opens a door, every song opens a window.",
-    "sentence_lemmas": ["cada", "esfuerzo", "abrir", "un", "puerta", "cada", "canción", "abrir", "un", "ventana"]
+    "sentence_es": "Con cada esfuerzo abro una puerta, con cada intento dejo entrar la luz.",
+    "sentence_en": "With each effort I open a door, with each attempt I let the light in.",
+    "sentence_lemmas": ["con", "cada", "esfuerzo", "abrir", "un", "puerta", "con", "cada", "intento", "dejar", "entrar", "el", "luz"]
   },
   {
     "order": 509,
@@ -614,9 +614,9 @@
     "lemma": "solución",
     "es": "la solución",
     "en": "solution",
-    "sentence_es": "Está en tus manos la solución, la música está en las mías.",
-    "sentence_en": "The solution is in your hands, the music is in mine.",
-    "sentence_lemmas": ["estar", "en", "tu", "mano", "el", "solución", "el", "música", "estar", "en", "el", "mío"]
+    "sentence_es": "Buscamos juntos la solución, paso a paso, hasta encontrar un camino para todos.",
+    "sentence_en": "We seek the solution together, step by step, until we find a path for everyone.",
+    "sentence_lemmas": ["buscar", "juntos", "el", "solución", "paso", "a", "paso", "hasta", "encontrar", "un", "camino", "para", "todo"]
   },
   {
     "order": 511,
@@ -658,9 +658,9 @@
     "lemma": "acuerdo",
     "es": "el acuerdo",
     "en": "agreement",
-    "sentence_es": "Es escuchar nuestro acuerdo, nuestro regalo es dejar al otro cantar.",
-    "sentence_en": "Our agreement is to listen, our gift is to let the other sing.",
-    "sentence_lemmas": ["ser", "escuchar", "nuestro", "acuerdo", "nuestro", "regalo", "ser", "dejar", "a", "otro", "cantar"]
+    "sentence_es": "Para lograr un acuerdo, escuchamos primero, hablamos después y buscamos juntos una solución.",
+    "sentence_en": "To reach an agreement, we listen first, speak afterward and seek a solution together.",
+    "sentence_lemmas": ["para", "lograr", "un", "acuerdo", "escuchar", "primero", "hablar", "después", "y", "buscar", "juntos", "un", "solución"]
   },
   {
     "order": 515,
@@ -691,9 +691,9 @@
     "lemma": "esperanza",
     "es": "la esperanza",
     "en": "hope",
-    "sentence_es": "Tiene flores mi esperanza, mi canción tiene caminos para volver.",
-    "sentence_en": "My hope has flowers, my song has paths to return.",
-    "sentence_lemmas": ["tener", "flor", "mi", "esperanza", "mi", "canción", "tener", "camino", "para", "volver"]
+    "sentence_es": "Con esperanza miro las flores, miro el camino por donde vas a volver.",
+    "sentence_en": "With hope I watch the flowers, watch the path you will return along.",
+    "sentence_lemmas": ["con", "esperanza", "mirar", "el", "flor", "mirar", "el", "camino", "por", "donde", "ir", "a", "volver"]
   },
   {
     "order": 518,
@@ -713,9 +713,9 @@
     "lemma": "valor",
     "es": "el valor",
     "en": "value; courage",
-    "sentence_es": "No se cuenta en monedas el valor de tu canción.",
-    "sentence_en": "The value of your song cannot be counted in coins.",
-    "sentence_lemmas": ["no", "se", "contar", "en", "moneda", "el", "valor", "de", "tu", "canción"]
+    "sentence_es": "El valor de tu tiempo no se cuenta en monedas, se cuenta en recuerdos.",
+    "sentence_en": "The value of your time is measured in memories, not coins.",
+    "sentence_lemmas": ["el", "valor", "de", "tu", "tiempo", "no", "se", "contar", "en", "moneda", "se", "contar", "en", "recuerdo"]
   },
   {
     "order": 520,
@@ -790,9 +790,9 @@
     "lemma": "comunidad",
     "es": "la comunidad",
     "en": "community",
-    "sentence_es": "Comparte el pan nuestra comunidad, comparte la sombra y comparte canciones.",
-    "sentence_en": "Our community shares bread, shares shade, and shares songs.",
-    "sentence_lemmas": ["compartir", "el", "pan", "nuestro", "comunidad", "compartir", "el", "sombra", "y", "compartir", "canción"]
+    "sentence_es": "En nuestra comunidad compartimos pan, compartimos sombra y cuidamos juntos el jardín.",
+    "sentence_en": "In our community we share bread, share shade and tend the garden together.",
+    "sentence_lemmas": ["en", "nuestro", "comunidad", "compartir", "pan", "compartir", "sombra", "y", "cuidar", "juntos", "el", "jardín"]
   },
   {
     "order": 527,
@@ -823,9 +823,9 @@
     "lemma": "energía",
     "es": "la energía",
     "en": "energy",
-    "sentence_es": "Alimenta las flores la energía del sol, tu canción alimenta mi día.",
-    "sentence_en": "The sun's energy feeds the flowers, your song feeds my day.",
-    "sentence_lemmas": ["alimentar", "el", "flor", "el", "energía", "de", "sol", "tu", "canción", "alimentar", "mi", "día"]
+    "sentence_es": "Del sol recibo energía, del desayuno recibo fuerza para empezar otro día.",
+    "sentence_en": "From the sun I get energy, from breakfast the strength to start another day.",
+    "sentence_lemmas": ["de", "sol", "recibo", "energía", "de", "desayuno", "recibo", "fuerza", "para", "empezar", "otro", "día"]
   },
   {
     "order": 530,
@@ -933,9 +933,9 @@
     "lemma": "carrera",
     "es": "la carrera",
     "en": "career; degree course; race",
-    "sentence_es": "Va despacio mi carrera, mi guitarra no conoce la prisa.",
-    "sentence_en": "My career moves slowly, my guitar knows no haste.",
-    "sentence_lemmas": ["ir", "despacio", "mi", "carrera", "mi", "guitarra", "no", "conocer", "el", "prisa"]
+    "sentence_es": "Avanzo en mi carrera despacio, sin perder las ganas de aprender algo nuevo.",
+    "sentence_en": "I advance in my career slowly, without losing the desire to learn something new.",
+    "sentence_lemmas": ["avanzar", "en", "mi", "carrera", "despacio", "sin", "perder", "el", "ganas", "de", "aprender", "algo", "nuevo"]
   },
   {
     "order": 541,
@@ -1065,9 +1065,9 @@
     "lemma": "fuente",
     "es": "la fuente",
     "en": "source; fountain",
-    "sentence_es": "Canta agua la fuente, mi guitarra canta luz para la mañana.",
-    "sentence_en": "The fountain sings water, my guitar sings light for the morning.",
-    "sentence_lemmas": ["cantar", "agua", "el", "fuente", "mi", "guitarra", "cantar", "luz", "para", "el", "mañana"]
+    "sentence_es": "Escucho el agua de la fuente, escucho su camino entre las piedras.",
+    "sentence_en": "I listen to the fountain's water, listen to its path among the stones.",
+    "sentence_lemmas": ["escuchar", "el", "agua", "de", "el", "fuente", "escuchar", "su", "camino", "entre", "el", "piedra"]
   },
   {
     "order": 553,
@@ -1087,9 +1087,9 @@
     "lemma": "error",
     "es": "el error",
     "en": "mistake",
-    "sentence_es": "No termina la canción por un error, otra palabra cambia el camino.",
-    "sentence_en": "One mistake does not end the song, another word changes its path.",
-    "sentence_lemmas": ["no", "terminar", "el", "canción", "por", "un", "error", "otro", "palabra", "cambiar", "el", "camino"]
+    "sentence_es": "Aprendo de cada error, vuelvo a elegir y encuentro otro camino para seguir.",
+    "sentence_en": "I learn from each mistake, choose again and find another path to follow.",
+    "sentence_lemmas": ["aprender", "de", "cada", "error", "volver", "a", "elegir", "y", "encontrar", "otro", "camino", "para", "seguir"]
   },
   {
     "order": 555,
@@ -1199,9 +1199,9 @@
     "lemma": "profundo",
     "es": "profundo",
     "en": "deep",
-    "sentence_es": "Profundo es el mar, profunda la alegría de volver a casa.",
-    "sentence_en": "The sea is deep, the joy of returning home is deep.",
-    "sentence_lemmas": ["profundo", "ser", "el", "mar", "profundo", "el", "alegría", "de", "volver", "a", "casa"]
+    "sentence_es": "Miro el mar profundo, siento la alegría profunda de volver a casa.",
+    "sentence_en": "I look at the deep sea, feel the deep joy of coming home.",
+    "sentence_lemmas": ["mirar", "el", "mar", "profundo", "sentir", "el", "alegría", "profundo", "de", "volver", "a", "casa"]
   },
   {
     "order": 565,
@@ -1221,9 +1221,9 @@
     "lemma": "sencillo",
     "es": "sencillo / simple",
     "en": "simple",
-    "sentence_es": "Sencilla es mi casa, sencilla mi manera de abrazar la vida.",
-    "sentence_en": "My home is simple, my way of embracing life is simple.",
-    "sentence_lemmas": ["sencillo", "ser", "mi", "casa", "sencillo", "mi", "manera", "de", "abrazar", "el", "vida"]
+    "sentence_es": "Vivo en una casa sencilla, con tiempo para leer y espacio para compartir.",
+    "sentence_en": "I live in a simple house, with time to read and space to share.",
+    "sentence_lemmas": ["vivo", "en", "un", "casa", "sencillo", "con", "tiempo", "para", "leer", "y", "espacio", "para", "compartir"]
   },
   {
     "order": 567,
@@ -1298,9 +1298,9 @@
     "lemma": "suficiente",
     "es": "suficiente",
     "en": "enough, sufficient",
-    "sentence_es": "Una flor es suficiente para oír mi ventana cantar otra vez.",
-    "sentence_en": "One flower is enough to hear my window sing again.",
-    "sentence_lemmas": ["un", "flor", "ser", "suficiente", "para", "oír", "mi", "ventana", "cantar", "otro", "vez"]
+    "sentence_es": "Para regalar una sonrisa es suficiente una flor, una sola flor de tu jardín.",
+    "sentence_en": "To give someone a smile, one flower is enough, just one from your garden.",
+    "sentence_lemmas": ["para", "regalar", "un", "sonrisa", "ser", "suficiente", "un", "flor", "un", "solo", "flor", "de", "tu", "jardín"]
   },
   {
     "order": 574,
@@ -1310,9 +1310,9 @@
     "es": "entero",
     "en": "entire, whole (undivided)",
     "hint_en": "I read the *whole* book.",
-    "sentence_es": "El día entero entra en la canción que llevas contigo.",
-    "sentence_en": "The whole day enters the song you carry with you.",
-    "sentence_lemmas": ["el", "día", "entero", "entrar", "en", "el", "canción", "que", "llevar", "contigo"]
+    "sentence_es": "Leo el día entero, leo hasta que la noche llega a mi ventana.",
+    "sentence_en": "I read all day, read until night comes to my window.",
+    "sentence_lemmas": ["leer", "el", "día", "entero", "leer", "hasta", "que", "el", "noche", "llegar", "a", "mi", "ventana"]
   },
   {
     "order": 575,
@@ -1442,9 +1442,9 @@
     "lemma": "capaz",
     "es": "capaz",
     "en": "capable, able",
-    "sentence_es": "Soy capaz de empezar de nuevo, capaz de aprender otra canción.",
-    "sentence_en": "I can start again, I can learn another song.",
-    "sentence_lemmas": ["ser", "capaz", "de", "empezar", "de", "nuevo", "capaz", "de", "aprender", "otro", "canción"]
+    "sentence_es": "Soy capaz de empezar de nuevo, capaz de aprender de cada error.",
+    "sentence_en": "I am able to start again, able to learn from every mistake.",
+    "sentence_lemmas": ["ser", "capaz", "de", "empezar", "de", "nuevo", "capaz", "de", "aprender", "de", "cada", "error"]
   },
   {
     "order": 588,
@@ -1453,9 +1453,9 @@
     "lemma": "responsable",
     "es": "responsable",
     "en": "responsible",
-    "sentence_es": "Soy responsable de mi jardín, cuido sus flores y escucho su canción.",
-    "sentence_en": "I am responsible for my garden, I tend its flowers and listen to its song.",
-    "sentence_lemmas": ["ser", "responsable", "de", "mi", "jardín", "cuidar", "su", "flor", "y", "escuchar", "su", "canción"]
+    "sentence_es": "Soy responsable de mi jardín, cuido sus flores y respeto sus tiempos.",
+    "sentence_en": "I am responsible for my garden; I tend its flowers and respect their timing.",
+    "sentence_lemmas": ["ser", "responsable", "de", "mi", "jardín", "cuidar", "su", "flor", "y", "respeto", "su", "tiempo"]
   },
   {
     "order": 589,
@@ -1521,9 +1521,9 @@
     "lemma": "hacia",
     "es": "hacia",
     "en": "toward, towards",
-    "sentence_es": "Voy hacia la montaña, mi voz baja hacia el río.",
-    "sentence_en": "I head toward the mountain, my voice descends toward the river.",
-    "sentence_lemmas": ["ir", "hacia", "el", "montaña", "mi", "voz", "bajar", "hacia", "el", "río"]
+    "sentence_es": "Voy hacia la montaña, hacia el lugar donde empieza nuestro río.",
+    "sentence_en": "I head toward the mountain, toward the place where our river begins.",
+    "sentence_lemmas": ["ir", "hacia", "el", "montaña", "hacia", "el", "lugar", "donde", "empezar", "nuestro", "río"]
   },
   {
     "order": 595,
@@ -1587,9 +1587,9 @@
     "lemma": "mundo",
     "es": "el mundo",
     "en": "world",
-    "sentence_es": "Tiene un patio mi mundo, tu canción lo llena de estrellas.",
-    "sentence_en": "My world has a yard, your song fills it with stars.",
-    "sentence_lemmas": ["tener", "un", "patio", "mi", "mundo", "tu", "canción", "lo", "llenar", "de", "estrella"]
+    "sentence_es": "Imagino un mundo con patios, con mesas compartidas y ventanas abiertas para todos.",
+    "sentence_en": "I imagine a world with patios, shared tables and windows open to everyone.",
+    "sentence_lemmas": ["imaginar", "un", "mundo", "con", "patio", "con", "mesa", "compartir", "y", "ventana", "abierto", "para", "todo"]
   },
   {
     "order": 821,
@@ -1598,9 +1598,9 @@
     "lemma": "tierra",
     "es": "la tierra",
     "en": "land",
-    "sentence_es": "Guarda semillas la tierra, mi guitarra guarda historias para cantar.",
-    "sentence_en": "The soil holds seeds, my guitar holds stories to sing.",
-    "sentence_lemmas": ["guardar", "semilla", "el", "tierra", "mi", "guitarra", "guardar", "historia", "para", "cantar"]
+    "sentence_es": "Con las manos trabajo la tierra, con paciencia espero lo que crece.",
+    "sentence_en": "With my hands I work the soil, with patience I wait for what grows.",
+    "sentence_lemmas": ["con", "el", "mano", "trabajar", "el", "tierra", "con", "paciencia", "esperar", "lo", "que", "crecer"]
   },
   {
     "order": 822,
@@ -1642,9 +1642,9 @@
     "lemma": "repetir",
     "es": "repetir",
     "en": "to repeat",
-    "sentence_es": "Repito tu nombre al cantar, repito la alegría de aquella mañana.",
-    "sentence_en": "I repeat your name as I sing, I repeat the joy of that morning.",
-    "sentence_lemmas": ["repetir", "tu", "nombre", "a", "cantar", "repetir", "el", "alegría", "de", "aquel", "mañana"]
+    "sentence_es": "Repito la pregunta despacio, repito hasta entender lo que quiero saber.",
+    "sentence_en": "I repeat the question slowly, until I understand what I want to know.",
+    "sentence_lemmas": ["repetir", "el", "pregunta", "despacio", "repetir", "hasta", "entender", "lo", "que", "querer", "saber"]
   },
   {
     "order": 826,
@@ -1653,9 +1653,9 @@
     "lemma": "nota",
     "es": "la nota / la calificación",
     "en": "grade",
-    "sentence_es": "Una nota despierta el patio, otra nota lo invita a bailar.",
-    "sentence_en": "One note wakes the yard, another invites it to dance.",
-    "sentence_lemmas": ["un", "nota", "despertar", "el", "patio", "otro", "nota", "lo", "invitar", "a", "bailar"]
+    "sentence_es": "Tengo buena nota en el examen, buena nota después de estudiar.",
+    "sentence_en": "I get a good grade on the exam, a good grade after studying.",
+    "sentence_lemmas": ["tener", "bueno", "nota", "en", "el", "examen", "bueno", "nota", "después", "de", "estudiar"]
   },
   {
     "order": 827,
@@ -1741,9 +1741,9 @@
     "lemma": "construir",
     "es": "construir",
     "en": "to build",
-    "sentence_es": "Construyo un puente con palabras, construyo un hogar con canciones.",
-    "sentence_en": "I build a bridge with words, I build a home with songs.",
-    "sentence_lemmas": ["construir", "un", "puente", "con", "palabra", "construir", "un", "hogar", "con", "canción"]
+    "sentence_es": "Construyo un puente con tablas, construyo un hogar con tiempo y cuidado.",
+    "sentence_en": "I build a bridge with planks, a home with time and care.",
+    "sentence_lemmas": ["construir", "un", "puente", "con", "tabla", "construir", "un", "hogar", "con", "tiempo", "y", "cuidado"]
   },
   {
     "order": 835,
@@ -2016,9 +2016,9 @@
     "lemma": "reloj",
     "es": "el reloj",
     "en": "watch",
-    "sentence_es": "Mi reloj cuenta las horas, mi guitarra cuenta historias del mar.",
-    "sentence_en": "My clock counts the hours, my guitar tells stories of the sea.",
-    "sentence_lemmas": ["mi", "reloj", "contar", "el", "hora", "mi", "guitarra", "contar", "historia", "de", "mar"]
+    "sentence_es": "Miro el reloj por costumbre, olvido la hora y escucho a mi abuela.",
+    "sentence_en": "I glance at the clock out of habit, forget the time and listen to my grandmother.",
+    "sentence_lemmas": ["mirar", "el", "reloj", "por", "costumbre", "olvido", "el", "hora", "y", "escuchar", "a", "mi", "abuela"]
   },
   {
     "order": 864,
@@ -2095,9 +2095,9 @@
     "es": "adaptar",
     "en": "to adapt, to adjust",
     "hint_en": "I *adapt* the recipe for my family",
-    "sentence_es": "Adapto mi canción a tu paso, adapto mi camino a tus flores.",
-    "sentence_en": "I adapt my song to your pace, my path to your flowers.",
-    "sentence_lemmas": ["adaptar", "mi", "canción", "a", "tu", "paso", "adaptar", "mi", "camino", "a", "tu", "flor"]
+    "sentence_es": "Adapto mi paso a tu ritmo, adapto mis planes para ir contigo.",
+    "sentence_en": "I adjust my pace to your rhythm, my plans to go with you.",
+    "sentence_lemmas": ["adaptar", "mi", "paso", "a", "tu", "ritmo", "adaptar", "mi", "plan", "para", "ir", "contigo"]
   },
   {
     "order": 1335,
@@ -2128,9 +2128,9 @@
     "lemma": "aliviar",
     "es": "aliviar",
     "en": "to relieve, to ease",
-    "sentence_es": "Tu voz alivia mi cansancio, mi guitarra alivia el silencio.",
-    "sentence_en": "Your voice eases my tiredness, my guitar eases the silence.",
-    "sentence_lemmas": ["tu", "voz", "aliviar", "mi", "cansancio", "mi", "guitarra", "aliviar", "el", "silencio"]
+    "sentence_es": "Tu apoyo alivia mi cansancio, un vaso de agua alivia mi sed.",
+    "sentence_en": "Your support eases my fatigue; a glass of water eases my thirst.",
+    "sentence_lemmas": ["tu", "apoyo", "aliviar", "mi", "cansancio", "un", "vaso", "de", "agua", "aliviar", "mi", "sed"]
   },
   {
     "order": 1338,
@@ -2139,9 +2139,9 @@
     "lemma": "ampliar",
     "es": "ampliar",
     "en": "to expand, to enlarge",
-    "sentence_es": "Amplío mi jardín con flores, amplío mi canción con tu voz.",
-    "sentence_en": "I expand my garden with flowers, I expand my song with your voice.",
-    "sentence_lemmas": ["ampliar", "mi", "jardín", "con", "flor", "ampliar", "mi", "canción", "con", "tu", "voz"]
+    "sentence_es": "Amplío mi jardín con flores, amplío mis ideas al escucharte hablar.",
+    "sentence_en": "I expand my garden with flowers, my ideas by listening to you.",
+    "sentence_lemmas": ["ampliar", "mi", "jardín", "con", "flor", "ampliar", "mi", "idea", "a", "escuchar", "hablar"]
   },
   {
     "order": 1339,
@@ -2172,9 +2172,9 @@
     "lemma": "atraer",
     "es": "atraer",
     "en": "to attract",
-    "sentence_es": "El aroma atrae al viajero, la música atrae a quien quiere bailar.",
-    "sentence_en": "The aroma attracts the traveler, the music attracts whoever wants to dance.",
-    "sentence_lemmas": ["el", "aroma", "atraer", "a", "viajero", "el", "música", "atraer", "a", "quien", "querer", "bailar"]
+    "sentence_es": "El aroma del pan atrae al viajero, la sombra atrae sus pasos.",
+    "sentence_en": "The smell of bread draws the traveler; the shade draws his steps.",
+    "sentence_lemmas": ["el", "aroma", "de", "pan", "atraer", "a", "viajero", "el", "sombra", "atraer", "su", "paso"]
   },
   {
     "order": 1342,
@@ -2381,9 +2381,9 @@
     "lemma": "inspirar",
     "es": "inspirar",
     "en": "to inspire",
-    "sentence_es": "La lluvia inspira mi canción, tu regreso inspira mi alegría.",
-    "sentence_en": "The rain inspires my song, your return inspires my joy.",
-    "sentence_lemmas": ["el", "lluvia", "inspirar", "mi", "canción", "tu", "regreso", "inspirar", "mi", "alegría"]
+    "sentence_es": "La lluvia inspira mi dibujo, tu regreso inspira estas palabras.",
+    "sentence_en": "The rain inspires my drawing; your return inspires these words.",
+    "sentence_lemmas": ["el", "lluvia", "inspirar", "mi", "dibujo", "tu", "regreso", "inspirar", "este", "palabra"]
   },
   {
     "order": 1364,
@@ -2524,9 +2524,9 @@
     "lemma": "reflejar",
     "es": "reflejar",
     "en": "to reflect",
-    "sentence_es": "El lago refleja la luna, mi canción refleja las luces de casa.",
-    "sentence_en": "The lake reflects the moon, my song reflects the lights of home.",
-    "sentence_lemmas": ["el", "lago", "reflejar", "el", "luna", "mi", "canción", "reflejar", "el", "luz", "de", "casa"]
+    "sentence_es": "El lago refleja la luna, mi ventana refleja las luces de casa.",
+    "sentence_en": "The lake reflects the moon; my window reflects the lights at home.",
+    "sentence_lemmas": ["el", "lago", "reflejar", "el", "luna", "mi", "ventana", "reflejar", "el", "luz", "de", "casa"]
   },
   {
     "order": 1381,
@@ -2568,9 +2568,9 @@
     "lemma": "sostener",
     "es": "sostener",
     "en": "to hold up; to assert",
-    "sentence_es": "Sostengo la guitarra con mis manos, sostengo mi sueño con canciones.",
-    "sentence_en": "I hold the guitar with my hands, I sustain my dream with songs.",
-    "sentence_lemmas": ["sostener", "el", "guitarra", "con", "mi", "mano", "sostener", "mi", "sueño", "con", "canción"]
+    "sentence_es": "Sostengo la taza con mis manos, sostengo tu mirada mientras hablamos.",
+    "sentence_en": "I hold the cup with my hands, hold your gaze while we talk.",
+    "sentence_lemmas": ["sostener", "el", "taza", "con", "mi", "mano", "sostener", "tu", "mirada", "mientras", "hablar"]
   },
   {
     "order": 1385,
@@ -2601,9 +2601,9 @@
     "lemma": "actitud",
     "es": "la actitud",
     "en": "attitude",
-    "sentence_es": "Mi actitud es escuchar al río, aprender su calma y seguir contigo.",
-    "sentence_en": "My attitude is to listen to the river, learn its calm, and continue with you.",
-    "sentence_lemmas": ["mi", "actitud", "ser", "escuchar", "a", "río", "aprender", "su", "calmar", "y", "seguir", "contigo"]
+    "sentence_es": "Mi actitud es escuchar primero, aprender de otros y trabajar juntos.",
+    "sentence_en": "My approach is to listen first, learn from others and work together.",
+    "sentence_lemmas": ["mi", "actitud", "ser", "escuchar", "primero", "aprender", "de", "otro", "y", "trabajar", "juntos"]
   },
   {
     "order": 1390,
@@ -2668,9 +2668,9 @@
     "lemma": "calidad",
     "es": "la calidad",
     "en": "quality",
-    "sentence_es": "Se escucha la calidad de tu guitarra cuando la noche guarda silencio.",
-    "sentence_en": "The quality of your guitar can be heard when the night falls silent.",
-    "sentence_lemmas": ["se", "escuchar", "el", "calidad", "de", "tu", "guitarra", "cuando", "el", "noche", "guardar", "silencio"]
+    "sentence_es": "La calidad de tu trabajo se ve en cada detalle, en cada esquina.",
+    "sentence_en": "The quality of your work shows in every detail, every corner.",
+    "sentence_lemmas": ["el", "calidad", "de", "tu", "trabajo", "se", "ver", "en", "cada", "detalle", "en", "cada", "esquina"]
   },
   {
     "order": 1396,
@@ -2701,9 +2701,9 @@
     "lemma": "conciencia",
     "es": "la conciencia",
     "en": "conscience; awareness",
-    "sentence_es": "Tomo conciencia de mis pasos, de la tierra y de su canción.",
-    "sentence_en": "I become aware of my steps, of the ground and its song.",
-    "sentence_lemmas": ["tomar", "conciencia", "de", "mi", "paso", "de", "el", "tierra", "y", "de", "su", "canción"]
+    "sentence_es": "Tomo conciencia de mis pasos, de la tierra que cuido al caminar.",
+    "sentence_en": "I become aware of my steps, of the land I care for as I walk.",
+    "sentence_lemmas": ["tomar", "conciencia", "de", "mi", "paso", "de", "el", "tierra", "que", "cuidar", "a", "caminar"]
   },
   {
     "order": 1399,
@@ -2767,9 +2767,9 @@
     "lemma": "desafío",
     "es": "el desafío / el reto",
     "en": "challenge",
-    "sentence_es": "Mi desafío es cantar sin prisa, mi camino es empezar de nuevo.",
-    "sentence_en": "My challenge is singing without haste, my path is starting again.",
-    "sentence_lemmas": ["mi", "desafío", "ser", "cantar", "sin", "prisa", "mi", "camino", "ser", "empezar", "de", "nuevo"]
+    "sentence_es": "Mi desafío es volver a empezar, volver sin tener miedo de preguntar.",
+    "sentence_en": "My challenge is to start again, return without being afraid to ask.",
+    "sentence_lemmas": ["mi", "desafío", "ser", "volver", "a", "empezar", "volver", "sin", "tener", "miedo", "de", "preguntar"]
   },
   {
     "order": 1405,
@@ -2789,9 +2789,9 @@
     "lemma": "diálogo",
     "es": "el diálogo",
     "en": "dialogue",
-    "sentence_es": "Despierta flores en el patio el diálogo entre mi guitarra y la lluvia.",
-    "sentence_en": "The dialogue between my guitar and the rain wakes flowers in the yard.",
-    "sentence_lemmas": ["despertar", "flor", "en", "el", "patio", "el", "diálogo", "entre", "mi", "guitarra", "y", "el", "lluvia"]
+    "sentence_es": "El diálogo entre vecinos abre puertas, abre caminos para cuidar nuestro jardín.",
+    "sentence_en": "Dialogue among neighbors opens doors, opens ways to care for our garden.",
+    "sentence_lemmas": ["el", "diálogo", "entre", "vecino", "abrir", "puerta", "abrir", "camino", "para", "cuidar", "nuestro", "jardín"]
   },
   {
     "order": 1407,
@@ -2822,9 +2822,9 @@
     "lemma": "diversidad",
     "es": "la diversidad",
     "en": "diversity",
-    "sentence_es": "La diversidad del jardín tiene colores, la de nuestras voces tiene canciones.",
-    "sentence_en": "The garden's diversity has colors, the diversity of our voices has songs.",
-    "sentence_lemmas": ["el", "diversidad", "de", "jardín", "tener", "color", "el", "de", "nuestro", "voz", "tener", "canción"]
+    "sentence_es": "La diversidad del jardín tiene colores, la de nuestra mesa tiene sabores.",
+    "sentence_en": "The diversity of the garden has colors; that of our table has flavors.",
+    "sentence_lemmas": ["el", "diversidad", "de", "jardín", "tener", "color", "el", "de", "nuestro", "mesa", "tener", "sabor"]
   },
   {
     "order": 1410,
@@ -2844,9 +2844,9 @@
     "lemma": "equilibrio",
     "es": "el equilibrio",
     "en": "balance",
-    "sentence_es": "Busco equilibrio entre silencio y canción, entre tus pasos y mi corazón.",
-    "sentence_en": "I seek balance between silence and song, between your steps and my heart.",
-    "sentence_lemmas": ["buscar", "equilibrio", "entre", "silencio", "y", "canción", "entre", "tu", "paso", "y", "mi", "corazón"]
+    "sentence_es": "Busco equilibrio entre trabajo y descanso, entre cuidar la casa y salir contigo.",
+    "sentence_en": "I seek balance between work and rest, caring for the house and going out with you.",
+    "sentence_lemmas": ["buscar", "equilibrio", "entre", "trabajo", "y", "descanso", "entre", "cuidar", "el", "casa", "y", "salir", "contigo"]
   },
   {
     "order": 1413,
@@ -2954,9 +2954,9 @@
     "lemma": "identidad",
     "es": "la identidad",
     "en": "identity",
-    "sentence_es": "No cabe en un nombre mi identidad, canta en mis costumbres.",
-    "sentence_en": "My identity does not fit into a name, it sings in my customs.",
-    "sentence_lemmas": ["no", "caber", "en", "un", "nombre", "mi", "identidad", "cantar", "en", "mi", "costumbre"]
+    "sentence_es": "Mi identidad vive en mis costumbres, en mis palabras y en mi camino.",
+    "sentence_en": "My identity lives in my customs, my words and my path.",
+    "sentence_lemmas": ["mi", "identidad", "vivir", "en", "mi", "costumbre", "en", "mi", "palabra", "y", "en", "mi", "camino"]
   },
   {
     "order": 1424,
@@ -2998,9 +2998,9 @@
     "lemma": "instrumento",
     "es": "el instrumento",
     "en": "instrument",
-    "sentence_es": "Tiene cuerdas mi instrumento, mi sueño tiene caminos que llevan al mar.",
-    "sentence_en": "My instrument has strings, my dream has paths leading to the sea.",
-    "sentence_lemmas": ["tener", "cuerda", "mi", "instrumento", "mi", "sueño", "tener", "camino", "que", "llevar", "a", "mar"]
+    "sentence_es": "Toco un instrumento de cuerdas, imagino caminos que llevan al mar.",
+    "sentence_en": "I play a string instrument, imagine paths that lead to the sea.",
+    "sentence_lemmas": ["tocar", "un", "instrumento", "de", "cuerda", "imaginar", "camino", "que", "llevar", "a", "mar"]
   },
   {
     "order": 1428,
@@ -3020,9 +3020,9 @@
     "lemma": "límite",
     "es": "el límite",
     "en": "limit",
-    "sentence_es": "El límite del patio es la pared, el de mi canción, el cielo.",
-    "sentence_en": "The yard's limit is the wall, my song's limit is the sky.",
-    "sentence_lemmas": ["el", "límite", "de", "patio", "ser", "el", "pared", "el", "de", "mi", "canción", "el", "cielo"]
+    "sentence_es": "El límite del patio es la pared, el de nuestros planes todavía no aparece.",
+    "sentence_en": "The patio's boundary is the wall; the limit of our plans has not appeared yet.",
+    "sentence_lemmas": ["el", "límite", "de", "patio", "ser", "el", "pared", "el", "de", "nuestro", "plan", "todavía", "no", "aparecer"]
   },
   {
     "order": 1430,
@@ -3053,9 +3053,9 @@
     "lemma": "método",
     "es": "el método",
     "en": "method",
-    "sentence_es": "Es escuchar primero mi método, cantar después y volver a escuchar.",
-    "sentence_en": "My method is to listen first, sing next, and listen again.",
-    "sentence_lemmas": ["ser", "escuchar", "primero", "mi", "método", "cantar", "después", "y", "volver", "a", "escuchar"]
+    "sentence_es": "Mi método es escuchar primero, preguntar después y volver a intentar.",
+    "sentence_en": "My method is to listen first, ask afterward and try again.",
+    "sentence_lemmas": ["mi", "método", "ser", "escuchar", "primero", "preguntar", "después", "y", "volver", "a", "intentar"]
   },
   {
     "order": 1433,
@@ -3064,9 +3064,9 @@
     "lemma": "movimiento",
     "es": "el movimiento",
     "en": "movement, motion",
-    "sentence_es": "Lleva el ritmo el movimiento de las hojas, mis manos lo siguen.",
-    "sentence_en": "The movement of the leaves carries the rhythm, my hands follow it.",
-    "sentence_lemmas": ["llevar", "el", "ritmo", "el", "movimiento", "de", "el", "hoja", "mi", "mano", "lo", "seguir"]
+    "sentence_es": "El movimiento de las hojas muestra el viento, mis pasos siguen su ritmo.",
+    "sentence_en": "The movement of leaves reveals the wind; my steps follow its rhythm.",
+    "sentence_lemmas": ["el", "movimiento", "de", "el", "hoja", "muestra", "el", "viento", "mi", "paso", "seguir", "su", "ritmo"]
   },
   {
     "order": 1434,
@@ -3086,9 +3086,9 @@
     "lemma": "panorama",
     "es": "el panorama",
     "en": "view",
-    "sentence_es": "En el panorama de mi tarde, tu canción dibuja caminos de flores.",
-    "sentence_en": "In the panorama of my afternoon, your song draws paths of flowers.",
-    "sentence_lemmas": ["en", "el", "panorama", "de", "mi", "tarde", "tu", "canción", "dibujar", "camino", "de", "flor"]
+    "sentence_es": "El panorama desde mi ventana cambia: primero niebla, después montañas bajo el sol.",
+    "sentence_en": "The view from my window changes: first fog, then mountains in the sun.",
+    "sentence_lemmas": ["el", "panorama", "desde", "mi", "ventana", "cambiar", "primero", "niebla", "después", "montaña", "bajo", "el", "sol"]
   },
   {
     "order": 1436,
@@ -3108,9 +3108,9 @@
     "lemma": "perspectiva",
     "es": "la perspectiva",
     "en": "perspective",
-    "sentence_es": "Desde otra perspectiva, mi casa es una guitarra con ventanas al mar.",
-    "sentence_en": "From another perspective, my house is a guitar with windows facing the sea.",
-    "sentence_lemmas": ["desde", "otro", "perspectiva", "mi", "casa", "ser", "un", "guitarra", "con", "ventana", "a", "mar"]
+    "sentence_es": "Desde otra perspectiva, el mismo camino muestra flores que antes no veía.",
+    "sentence_en": "From another perspective, the same path reveals flowers I did not see before.",
+    "sentence_lemmas": ["desde", "otro", "perspectiva", "el", "mismo", "camino", "muestra", "flor", "que", "antes", "no", "ver"]
   },
   {
     "order": 1438,
@@ -3163,9 +3163,9 @@
     "lemma": "realidad",
     "es": "la realidad",
     "en": "reality",
-    "sentence_es": "Trae lluvia la realidad, mi canción la recibe con flores.",
-    "sentence_en": "Reality brings rain, my song welcomes it with flowers.",
-    "sentence_lemmas": ["traer", "lluvia", "el", "realidad", "mi", "canción", "el", "recibir", "con", "flor"]
+    "sentence_es": "La realidad trae lluvia, mis planes traen botas para caminar bajo ella.",
+    "sentence_en": "Reality brings rain; my plans bring boots for walking in it.",
+    "sentence_lemmas": ["el", "realidad", "traer", "lluvia", "mi", "plan", "traer", "botas", "para", "caminar", "bajo", "ella"]
   },
   {
     "order": 1444,
@@ -3295,9 +3295,9 @@
     "lemma": "esencial",
     "es": "esencial",
     "en": "essential",
-    "sentence_es": "Lo esencial de mi canción es sencillo: escucharte y dejarte cantar.",
-    "sentence_en": "The essence of my song is simple: to listen to you and let you sing.",
-    "sentence_lemmas": ["lo", "esencial", "de", "mi", "canción", "ser", "sencillo", "escuchar", "y", "dejar", "cantar"]
+    "sentence_es": "Lo esencial de nuestra tarde es sencillo: escucharnos y compartir el tiempo.",
+    "sentence_en": "The essential part of our afternoon is simple: listening to each other and sharing time.",
+    "sentence_lemmas": ["lo", "esencial", "de", "nuestro", "tarde", "ser", "sencillo", "escuchar", "y", "compartir", "el", "tiempo"]
   },
   {
     "order": 1456,
@@ -3462,9 +3462,9 @@
     "lemma": "original",
     "es": "original",
     "en": "original",
-    "sentence_es": "Mi canción original nació de una gota que cayó sobre la guitarra.",
-    "sentence_en": "My original song was born from a drop that fell on the guitar.",
-    "sentence_lemmas": ["mi", "canción", "original", "nacer", "de", "un", "gota", "que", "caer", "sobre", "el", "guitarra"]
+    "sentence_es": "Mi dibujo original nació de una hoja que cayó frente a mi ventana.",
+    "sentence_en": "My original drawing came from a leaf that fell in front of my window.",
+    "sentence_lemmas": ["mi", "dibujo", "original", "nacer", "de", "un", "hoja", "que", "caer", "frente", "a", "mi", "ventana"]
   },
   {
     "order": 1471,
@@ -3572,9 +3572,9 @@
     "lemma": "visible",
     "es": "visible",
     "en": "visible",
-    "sentence_es": "Es visible la luna, visible el río que aprende su canción.",
-    "sentence_en": "The moon is visible, so is the river learning its song.",
-    "sentence_lemmas": ["ser", "visible", "el", "luna", "visible", "el", "río", "que", "aprender", "su", "canción"]
+    "sentence_es": "La luna es visible, visible entre las nubes que pasan sobre el río.",
+    "sentence_en": "The moon is visible, visible among clouds passing over the river.",
+    "sentence_lemmas": ["el", "luna", "ser", "visible", "visible", "entre", "el", "nube", "que", "pasar", "sobre", "el", "río"]
   },
   {
     "order": 1481,
@@ -3682,9 +3682,9 @@
     "lemma": "apreciar",
     "es": "apreciar",
     "en": "to appreciate; to perceive",
-    "sentence_es": "Aprecio la sombra del patio, aprecio cada minuto de tu canción.",
-    "sentence_en": "I appreciate the shade in the yard, every minute of your song.",
-    "sentence_lemmas": ["apreciar", "el", "sombra", "de", "patio", "apreciar", "cada", "minuto", "de", "tu", "canción"]
+    "sentence_es": "Aprecio la sombra del patio, aprecio cada minuto que compartes conmigo.",
+    "sentence_en": "I appreciate the patio's shade, every minute you share with me.",
+    "sentence_lemmas": ["apreciar", "el", "sombra", "de", "patio", "apreciar", "cada", "minuto", "que", "compartir", "conmigo"]
   },
   {
     "order": 1943,
@@ -3739,9 +3739,9 @@
     "lemma": "combinar",
     "es": "combinar",
     "en": "to combine",
-    "sentence_es": "Combino tus palabras con mi guitarra, combino tu silencio con el mar.",
-    "sentence_en": "I combine your words with my guitar, your silence with the sea.",
-    "sentence_lemmas": ["combinar", "tu", "palabra", "con", "mi", "guitarra", "combinar", "tu", "silencio", "con", "el", "mar"]
+    "sentence_es": "Combino colores en mi dibujo, combino sabores cuando preparo nuestra cena.",
+    "sentence_en": "I combine colors in my drawing, flavors when preparing our dinner.",
+    "sentence_lemmas": ["combinar", "color", "en", "mi", "dibujo", "combinar", "sabor", "cuando", "preparar", "nuestro", "cena"]
   },
   {
     "order": 1949,
@@ -4005,9 +4005,9 @@
     "lemma": "preservar",
     "es": "preservar",
     "en": "to preserve",
-    "sentence_es": "Preservo las flores del patio, preservo las canciones de mi abuela.",
-    "sentence_en": "I preserve the flowers in the yard, I preserve my grandmother's songs.",
-    "sentence_lemmas": ["preservar", "el", "flor", "de", "patio", "preservar", "el", "canción", "de", "mi", "abuela"]
+    "sentence_es": "Preservo las semillas del patio, preservo las recetas que aprendí de mi abuela.",
+    "sentence_en": "I preserve seeds from the patio, recipes I learned from my grandmother.",
+    "sentence_lemmas": ["preservar", "el", "semilla", "de", "patio", "preservar", "el", "receta", "que", "aprender", "de", "mi", "abuela"]
   },
   {
     "order": 1982,
@@ -4016,9 +4016,9 @@
     "lemma": "transmitir",
     "es": "transmitir",
     "en": "to transmit, to broadcast",
-    "sentence_es": "El río transmite su calma, mi guitarra transmite la alegría de volver.",
-    "sentence_en": "The river conveys its calm, my guitar conveys the joy of returning.",
-    "sentence_lemmas": ["el", "río", "transmitir", "su", "calmar", "mi", "guitarra", "transmitir", "el", "alegría", "de", "volver"]
+    "sentence_es": "El río transmite su tranquilidad, tu sonrisa transmite la alegría de volver.",
+    "sentence_en": "The river conveys its tranquility; your smile conveys the joy of returning.",
+    "sentence_lemmas": ["el", "río", "transmitir", "su", "tranquilidad", "tu", "sonrisa", "transmitir", "el", "alegría", "de", "volver"]
   },
   {
     "order": 1983,
@@ -4060,9 +4060,9 @@
     "lemma": "aprendizaje",
     "es": "el aprendizaje",
     "en": "learning",
-    "sentence_es": "Va despacio mi aprendizaje, nota a nota, canción tras canción.",
-    "sentence_en": "My learning progresses slowly, note by note, song after song.",
-    "sentence_lemmas": ["ir", "despacio", "mi", "aprendizaje", "nota", "a", "nota", "canción", "tras", "canción"]
+    "sentence_es": "Mi aprendizaje avanza despacio, paso a paso, palabra tras palabra.",
+    "sentence_en": "My learning moves slowly, step by step, word after word.",
+    "sentence_lemmas": ["mi", "aprendizaje", "avanzar", "despacio", "paso", "a", "paso", "palabra", "tras", "palabra"]
   },
   {
     "order": 1990,
@@ -4115,9 +4115,9 @@
     "lemma": "certeza",
     "es": "la certeza",
     "en": "certainty",
-    "sentence_es": "Tengo la certeza de que el sol vuelve, mi guitarra espera cantando.",
-    "sentence_en": "I am certain the sun returns, my guitar waits while singing.",
-    "sentence_lemmas": ["tener", "el", "certeza", "de", "que", "el", "sol", "volver", "mi", "guitarra", "esperar", "cantar"]
+    "sentence_es": "Tengo la certeza de que vuelves, de que este camino lleva a casa.",
+    "sentence_en": "I am certain you will return, certain this road leads home.",
+    "sentence_lemmas": ["tener", "el", "certeza", "de", "que", "volver", "de", "que", "este", "camino", "llevar", "a", "casa"]
   },
   {
     "order": 1998,
@@ -4159,9 +4159,9 @@
     "lemma": "comunicación",
     "es": "la comunicación",
     "en": "communication",
-    "sentence_es": "Nuestra comunicación tiene palabras, pero también tiene silencios que saben cantar.",
-    "sentence_en": "Our communication has words, but also silences that know how to sing.",
-    "sentence_lemmas": ["nuestro", "comunicación", "tener", "palabra", "pero", "también", "tener", "silencio", "que", "saber", "cantar"]
+    "sentence_es": "Nuestra comunicación tiene palabras, pero también miradas que dicen todo sin hablar.",
+    "sentence_en": "Our communication has words, but also looks that say everything without speaking.",
+    "sentence_lemmas": ["nuestro", "comunicación", "tener", "palabra", "pero", "también", "mirada", "que", "decir", "todo", "sin", "hablar"]
   },
   {
     "order": 2002,
@@ -4313,9 +4313,9 @@
     "lemma": "expresión",
     "es": "la expresión",
     "en": "expression",
-    "sentence_es": "Cambia la expresión de tus ojos cuando el piano empieza a cantar.",
-    "sentence_en": "The expression in your eyes changes when the piano starts to sing.",
-    "sentence_lemmas": ["cambiar", "el", "expresión", "de", "tu", "ojo", "cuando", "el", "piano", "empezar", "a", "cantar"]
+    "sentence_es": "Cambia la expresión de tus ojos cuando llega mi abuela con flores.",
+    "sentence_en": "The expression in your eyes changes when my grandmother arrives with flowers.",
+    "sentence_lemmas": ["cambiar", "el", "expresión", "de", "tu", "ojo", "cuando", "llegar", "mi", "abuela", "con", "flor"]
   },
   {
     "order": 2022,
@@ -4390,9 +4390,9 @@
     "lemma": "horizonte",
     "es": "el horizonte",
     "en": "horizon",
-    "sentence_es": "Guarda el sol el horizonte, mi guitarra guarda su último color.",
-    "sentence_en": "The horizon holds the sun, my guitar holds its last color.",
-    "sentence_lemmas": ["guardar", "el", "sol", "el", "horizonte", "mi", "guitarra", "guardar", "su", "último", "color"]
+    "sentence_es": "El sol baja en el horizonte, deja su último color sobre el mar.",
+    "sentence_en": "The sun sinks on the horizon, leaves its last color over the sea.",
+    "sentence_lemmas": ["el", "sol", "bajar", "en", "el", "horizonte", "dejar", "su", "último", "color", "sobre", "el", "mar"]
   },
   {
     "order": 2030,
@@ -4467,9 +4467,9 @@
     "lemma": "libertad",
     "es": "la libertad",
     "en": "freedom",
-    "sentence_es": "Empieza la libertad de mi canción donde acaba la prisa.",
-    "sentence_en": "The freedom of my song begins where haste ends.",
-    "sentence_lemmas": ["empezar", "el", "libertad", "de", "mi", "canción", "donde", "acabar", "el", "prisa"]
+    "sentence_es": "Mi libertad empieza donde puedo elegir, elegir el camino sin mirar la hora.",
+    "sentence_en": "My freedom begins where I can choose, choose the path without watching the clock.",
+    "sentence_lemmas": ["mi", "libertad", "empezar", "donde", "poder", "elegir", "elegir", "el", "camino", "sin", "mirar", "el", "hora"]
   },
   {
     "order": 2039,
@@ -6256,9 +6256,9 @@
     "lemma": "infinito",
     "es": "infinito",
     "en": "infinite",
-    "sentence_es": "Parece infinito el mar, pero mi canción lo cruza en un instante.",
-    "sentence_en": "The sea seems infinite, but my song crosses it in an instant.",
-    "sentence_lemmas": ["parecer", "infinito", "el", "mar", "pero", "mi", "canción", "lo", "cruzar", "en", "un", "instante"]
+    "sentence_es": "El mar parece infinito, mi mirada vuelve a perderse en su azul.",
+    "sentence_en": "The sea seems infinite; my gaze loses itself in its blue again.",
+    "sentence_lemmas": ["el", "mar", "parecer", "infinito", "mi", "mirada", "volver", "a", "perder", "en", "su", "azul"]
   },
   {
     "order": 3723,
@@ -6289,9 +6289,9 @@
     "lemma": "invisible",
     "es": "invisible",
     "en": "invisible",
-    "sentence_es": "Invisible es el viento, visible es el baile de las hojas.",
-    "sentence_en": "The wind is invisible, the dance of the leaves is visible.",
-    "sentence_lemmas": ["invisible", "ser", "el", "viento", "visible", "ser", "el", "baile", "de", "el", "hoja"]
+    "sentence_es": "El viento es invisible, visible es el baile de las hojas.",
+    "sentence_en": "The wind is invisible; the dance of the leaves is visible.",
+    "sentence_lemmas": ["el", "viento", "ser", "invisible", "visible", "ser", "el", "baile", "de", "el", "hoja"]
   },
   {
     "order": 3726,
@@ -6322,9 +6322,9 @@
     "lemma": "nocturno",
     "es": "nocturno",
     "en": "nocturnal",
-    "sentence_es": "Mi paseo nocturno sigue las estrellas, mi guitarra sigue el río.",
-    "sentence_en": "My nightly walk follows the stars, my guitar follows the river.",
-    "sentence_lemmas": ["mi", "paseo", "nocturno", "seguir", "el", "estrella", "mi", "guitarra", "seguir", "el", "río"]
+    "sentence_es": "Mi paseo nocturno sigue las estrellas, mis pasos buscan el camino a casa.",
+    "sentence_en": "My night walk follows the stars; my steps seek the way home.",
+    "sentence_lemmas": ["mi", "paseo", "nocturno", "seguir", "el", "estrella", "mi", "paso", "buscar", "el", "camino", "a", "casa"]
   },
   {
     "order": 3729,
@@ -6476,9 +6476,9 @@
     "lemma": "sentimental",
     "es": "sentimental",
     "en": "sentimental",
-    "sentence_es": "Soy sentimental, guardo cartas entre flores y recuerdos entre canciones.",
-    "sentence_en": "I am sentimental, I keep letters among flowers and memories among songs.",
-    "sentence_lemmas": ["ser", "sentimental", "guardar", "carta", "entre", "flor", "y", "recuerdo", "entre", "canción"]
+    "sentence_es": "Soy sentimental, guardo cartas entre flores y recuerdos en cada rincón de casa.",
+    "sentence_en": "I am sentimental; I keep letters among flowers and memories in every corner of the house.",
+    "sentence_lemmas": ["ser", "sentimental", "guardar", "carta", "entre", "flor", "y", "recuerdo", "en", "cada", "rincón", "de", "casa"]
   },
   {
     "order": 3746,
@@ -6586,9 +6586,9 @@
     "lemma": "transparente",
     "es": "transparente",
     "en": "transparent",
-    "sentence_es": "Transparente es el agua, transparente mi alegría cuando vuelves a casa.",
-    "sentence_en": "The water is transparent, my joy is clear when you come home.",
-    "sentence_lemmas": ["transparente", "ser", "el", "agua", "transparente", "mi", "alegría", "cuando", "volver", "a", "casa"]
+    "sentence_es": "El agua es transparente, mi alegría también cuando vuelves a casa.",
+    "sentence_en": "The water is transparent; my joy is too when you come home.",
+    "sentence_lemmas": ["el", "agua", "ser", "transparente", "mi", "alegría", "también", "cuando", "volver", "a", "casa"]
   },
   {
     "order": 3758,
@@ -6916,9 +6916,9 @@
     "lemma": "suspirar",
     "es": "suspirar",
     "en": "to sigh",
-    "sentence_es": "Suspiro al escuchar el mar, suspiro cuando termina nuestra canción.",
-    "sentence_en": "I sigh when I hear the sea, I sigh when our song ends.",
-    "sentence_lemmas": ["suspirar", "a", "escuchar", "el", "mar", "suspirar", "cuando", "terminar", "nuestro", "canción"]
+    "sentence_es": "Suspiro al escuchar el mar, suspiro cuando recuerdo aquella tarde contigo.",
+    "sentence_en": "I sigh when hearing the sea, when remembering that afternoon with you.",
+    "sentence_lemmas": ["suspirar", "a", "escuchar", "el", "mar", "suspirar", "cuando", "recordar", "aquel", "tarde", "contigo"]
   },
   {
     "order": 3793,
@@ -6960,9 +6960,9 @@
     "lemma": "madurar",
     "es": "madurar",
     "en": "to ripen; to mature",
-    "sentence_es": "La fruta madura con el sol, mi canción madura con el tiempo.",
-    "sentence_en": "Fruit ripens in the sun, my song matures with time.",
-    "sentence_lemmas": ["el", "fruta", "madurar", "con", "el", "sol", "mi", "canción", "madurar", "con", "el", "tiempo"]
+    "sentence_es": "La fruta madura con el sol, mi paciencia madura con el tiempo.",
+    "sentence_en": "Fruit ripens with the sun; my patience matures with time.",
+    "sentence_lemmas": ["el", "fruta", "madurar", "con", "el", "sol", "mi", "paciencia", "madurar", "con", "el", "tiempo"]
   },
   {
     "order": 3797,
@@ -6971,9 +6971,9 @@
     "lemma": "reflexionar",
     "es": "reflexionar",
     "en": "to ponder, to think over",
-    "sentence_es": "Reflexiono al mirar el río, después mi guitarra responde por mí.",
-    "sentence_en": "I reflect while watching the river, then my guitar answers for me.",
-    "sentence_lemmas": ["reflexionar", "a", "mirar", "el", "río", "después", "mi", "guitarra", "responder", "por", "yo"]
+    "sentence_es": "Reflexiono al mirar el río, reflexiono sobre lo que cambia y lo que queda.",
+    "sentence_en": "I reflect while watching the river, on what changes and what remains.",
+    "sentence_lemmas": ["reflexionar", "a", "mirar", "el", "río", "reflexionar", "sobre", "lo", "que", "cambiar", "y", "lo", "que", "quedar"]
   },
   {
     "order": 3798,
@@ -7235,9 +7235,9 @@
     "lemma": "sensibilidad",
     "es": "la sensibilidad",
     "en": "sensitivity",
-    "sentence_es": "Tu sensibilidad escucha flores crecer, la mía escucha al sol amanecer.",
-    "sentence_en": "Your sensitivity hears flowers grow, mine hears the sun rise.",
-    "sentence_lemmas": ["tu", "sensibilidad", "escuchar", "flor", "crecer", "el", "mío", "escuchar", "a", "sol", "amanecer"]
+    "sentence_es": "Tu sensibilidad nota cada cambio, cada silencio, cada gesto pequeño de amor.",
+    "sentence_en": "Your sensitivity notices every change, every silence, every small gesture of love.",
+    "sentence_lemmas": ["tu", "sensibilidad", "notar", "cada", "cambio", "cada", "silencio", "cada", "gesto", "pequeño", "de", "amor"]
   },
   {
     "order": 3833,
@@ -7268,9 +7268,9 @@
     "lemma": "visión",
     "es": "la visión",
     "en": "outlook",
-    "sentence_es": "Mi visión del futuro tiene jardines, ventanas abiertas y canciones para todos.",
-    "sentence_en": "My vision of the future has gardens, open windows, and songs for everyone.",
-    "sentence_lemmas": ["mi", "visión", "de", "futuro", "tener", "jardín", "ventana", "abierto", "y", "canción", "para", "todo"]
+    "sentence_es": "Mi visión del futuro tiene jardines, ventanas abiertas y tiempo para todos.",
+    "sentence_en": "My vision of the future has gardens, open windows and time for everyone.",
+    "sentence_lemmas": ["mi", "visión", "de", "futuro", "tener", "jardín", "ventana", "abierto", "y", "tiempo", "para", "todo"]
   },
   {
     "order": 3836,

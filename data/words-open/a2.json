@@ -191,9 +191,9 @@
     "es": "ahí",
     "en": "there",
     "hint_en": "Your keys are *there*, next to you.",
-    "sentence_es": "Ahí está mi gato, ahí empieza mi canción.",
-    "sentence_en": "There is my cat, there my song begins.",
-    "sentence_lemmas": ["ahí", "estar", "mi", "gato", "ahí", "empezar", "mi", "canción"]
+    "sentence_es": "Ahí está mi gato, ahí quiere dormir.",
+    "sentence_en": "My cat is there; that is where it wants to sleep.",
+    "sentence_lemmas": ["ahí", "estar", "mi", "gato", "ahí", "querer", "dormir"]
   },
   {
     "order": 180,
@@ -202,9 +202,9 @@
     "lemma": "cerca",
     "es": "cerca",
     "en": "near, close",
-    "sentence_es": "Cerca de casa canto, cerca de ti bailo.",
-    "sentence_en": "I sing close to home, I dance close to you.",
-    "sentence_lemmas": ["cerca", "de", "casa", "cantar", "cerca", "de", "tú", "bailar"]
+    "sentence_es": "Cerca de casa juego, cerca de ti leo.",
+    "sentence_en": "I play near home; I read near you.",
+    "sentence_lemmas": ["cerca", "de", "casa", "jugar", "cerca", "de", "tú", "leer"]
   },
   {
     "order": 181,
@@ -224,9 +224,9 @@
     "lemma": "entre",
     "es": "entre",
     "en": "between, among",
-    "sentence_es": "Entre flores canto, entre amigos bailo.",
-    "sentence_en": "I sing among flowers, I dance among friends.",
-    "sentence_lemmas": ["entre", "flor", "cantar", "entre", "amigo", "bailar"]
+    "sentence_es": "Entre amigos como, entre flores leo.",
+    "sentence_en": "I eat among friends; I read among flowers.",
+    "sentence_lemmas": ["entre", "amigo", "comer", "entre", "flor", "leer"]
   },
   {
     "order": 183,
@@ -302,9 +302,9 @@
     "lemma": "poner",
     "es": "poner",
     "en": "to put, to place",
-    "sentence_es": "Pongo flores en la mesa, pongo música al día.",
-    "sentence_en": "I put flowers on the table, I bring music into the day.",
-    "sentence_lemmas": ["poner", "flor", "en", "el", "mesa", "poner", "música", "a", "día"]
+    "sentence_es": "¿Pones flores en la mesa, pones pan para dos?",
+    "sentence_en": "Do you put flowers on the table, put out bread for two?",
+    "sentence_lemmas": ["poner", "flor", "en", "el", "mesa", "poner", "pan", "para", "dos"]
   },
   {
     "order": 199,
@@ -429,9 +429,9 @@
     "es": "recordar",
     "en": "to remember",
     "hint_en": "I *remember* your name",
-    "sentence_es": "Recuerdo tu casa, recuerdo la música del mar.",
-    "sentence_en": "I remember your house, I remember the music of the sea.",
-    "sentence_lemmas": ["recordar", "tu", "casa", "recordar", "el", "música", "de", "mar"]
+    "sentence_es": "¿Recuerdas tu casa, recuerdas las flores de tu jardín?",
+    "sentence_en": "Do you remember your house, remember the flowers in your garden?",
+    "sentence_lemmas": ["recordar", "tu", "casa", "recordar", "el", "flor", "de", "tu", "jardín"]
   },
   {
     "order": 219,
@@ -475,9 +475,9 @@
     "es": "sentir",
     "en": "to feel; to be sorry",
     "hint_en": "I am so *sorry* for your loss.",
-    "sentence_es": "Siento el frío, siento el sol, quiero cantar.",
-    "sentence_en": "I feel the cold, I feel the sun, I want to sing.",
-    "sentence_lemmas": ["sentir", "el", "frío", "sentir", "el", "sol", "querer", "cantar"]
+    "sentence_es": "¿Sientes el frío, sientes el sol en tus manos?",
+    "sentence_en": "Do you feel the cold, feel the sun on your hands?",
+    "sentence_lemmas": ["sentir", "el", "frío", "sentir", "el", "sol", "en", "tu", "mano"]
   },
   {
     "order": 225,
@@ -620,9 +620,9 @@
     "lemma": "respuesta",
     "es": "la respuesta",
     "en": "answer",
-    "sentence_es": "Llega tu respuesta, llega con música y flores.",
-    "sentence_en": "Your answer arrives, arrives with music and flowers.",
-    "sentence_lemmas": ["llegar", "tu", "respuesta", "llegar", "con", "música", "y", "flor"]
+    "sentence_es": "¿Esperas mi respuesta, esperas hasta la noche?",
+    "sentence_en": "Do you wait for my answer, wait until night?",
+    "sentence_lemmas": ["esperar", "mi", "respuesta", "esperar", "hasta", "el", "noche"]
   },
   {
     "order": 249,
@@ -731,9 +731,9 @@
     "lemma": "número",
     "es": "el número",
     "en": "number",
-    "sentence_es": "Es dos mi número, dos somos para cantar.",
-    "sentence_en": "Two is my number, there are two of us to sing.",
-    "sentence_lemmas": ["ser", "dos", "mi", "número", "dos", "ser", "para", "cantar"]
+    "sentence_es": "Mi número es dos, en casa somos dos.",
+    "sentence_en": "My number is two; there are two of us at home.",
+    "sentence_lemmas": ["mi", "número", "ser", "dos", "en", "casa", "ser", "dos"]
   },
   {
     "order": 277,
@@ -764,9 +764,9 @@
     "lemma": "amor",
     "es": "el amor",
     "en": "love",
-    "sentence_es": "Con amor cocino, con amor canto para dos.",
-    "sentence_en": "I cook with love, I sing with love for two.",
-    "sentence_lemmas": ["con", "amor", "cocinar", "con", "amor", "cantar", "para", "dos"]
+    "sentence_es": "Con amor cocino, con amor te doy pan.",
+    "sentence_en": "I cook with love; I give you bread with love.",
+    "sentence_lemmas": ["con", "amor", "cocinar", "con", "amor", "te", "dar", "pan"]
   },
   {
     "order": 280,
@@ -819,9 +819,9 @@
     "lemma": "listo",
     "es": "listo",
     "en": "ready; clever",
-    "sentence_es": "Estoy listo para cantar, listo para escuchar el mar.",
-    "sentence_en": "I am ready to sing, ready to listen to the sea.",
-    "sentence_lemmas": ["estar", "listo", "para", "cantar", "listo", "para", "escuchar", "el", "mar"]
+    "sentence_es": "Estoy listo para viajar, listo para conocer el mar.",
+    "sentence_en": "I am ready to travel, ready to discover the sea.",
+    "sentence_lemmas": ["estar", "listo", "para", "viajar", "listo", "para", "conocer", "el", "mar"]
   },
   {
     "order": 295,
@@ -963,9 +963,9 @@
     "lemma": "fresa",
     "es": "la fresa",
     "en": "strawberry",
-    "sentence_es": "Está dulce mi fresa, mi canción también.",
-    "sentence_en": "My strawberry is sweet, my song is too.",
-    "sentence_lemmas": ["estar", "dulce", "mi", "fresa", "mi", "canción", "también"]
+    "sentence_es": "¿Quieres una fresa dulce, quieres una manzana también?",
+    "sentence_en": "Do you want a sweet strawberry, want an apple too?",
+    "sentence_lemmas": ["querer", "un", "fresa", "dulce", "querer", "un", "manzana", "también"]
   },
   {
     "order": 707,
@@ -1152,9 +1152,9 @@
     "lemma": "pueblo",
     "es": "el pueblo",
     "en": "town",
-    "sentence_es": "Canta el pueblo, la calle baila con nosotros.",
-    "sentence_en": "The village sings, the street dances with us.",
-    "sentence_lemmas": ["cantar", "el", "pueblo", "el", "calle", "bailar", "con", "nosotros"]
+    "sentence_es": "Caminamos por el pueblo, caminamos con amigos hasta casa.",
+    "sentence_en": "We walk through the town, walk home with friends.",
+    "sentence_lemmas": ["caminar", "por", "el", "pueblo", "caminar", "con", "amigo", "hasta", "casa"]
   },
   {
     "order": 726,
@@ -1585,9 +1585,9 @@
     "lemma": "importar",
     "es": "importar",
     "en": "to matter",
-    "sentence_es": "Me importa tu canción, me importa cantar contigo.",
-    "sentence_en": "Your song matters to me, singing with you matters to me.",
-    "sentence_lemmas": ["me", "importar", "tu", "canción", "me", "importar", "cantar", "contigo"]
+    "sentence_es": "Me importa tu tiempo, me importa estar contigo.",
+    "sentence_en": "Your time matters to me; being with you matters to me.",
+    "sentence_lemmas": ["me", "importar", "tu", "tiempo", "me", "importar", "estar", "contigo"]
   },
   {
     "order": 772,
@@ -1772,9 +1772,9 @@
     "lemma": "proyecto",
     "es": "el proyecto",
     "en": "project",
-    "sentence_es": "Tengo un proyecto de música, de música para todos.",
-    "sentence_en": "I have a music project, music for everyone.",
-    "sentence_lemmas": ["tener", "un", "proyecto", "de", "música", "de", "música", "para", "todo"]
+    "sentence_es": "Nuestro proyecto empieza hoy, empieza con una idea.",
+    "sentence_en": "Our project starts today; it starts with an idea.",
+    "sentence_lemmas": ["nuestro", "proyecto", "empezar", "hoy", "empezar", "con", "un", "idea"]
   },
   {
     "order": 362,
@@ -1906,9 +1906,9 @@
     "lemma": "faltar",
     "es": "faltar",
     "en": "to be missing, to lack",
-    "sentence_es": "Falta pan en la mesa, no falta nuestra canción.",
-    "sentence_en": "Bread is missing from the table, our song is not missing.",
-    "sentence_lemmas": ["faltar", "pan", "en", "el", "mesa", "no", "faltar", "nuestro", "canción"]
+    "sentence_es": "Falta pan en la mesa, no falta el amor.",
+    "sentence_en": "There is no bread on the table, but love is not missing.",
+    "sentence_lemmas": ["faltar", "pan", "en", "el", "mesa", "no", "faltar", "el", "amor"]
   },
   {
     "order": 396,
@@ -2272,9 +2272,9 @@
     "lemma": "cielo",
     "es": "el cielo",
     "en": "sky",
-    "sentence_es": "Tiene nubes el cielo, mi ventana tiene luz.",
-    "sentence_en": "The sky has clouds, my window has light.",
-    "sentence_lemmas": ["tener", "nube", "el", "cielo", "mi", "ventana", "tener", "luz"]
+    "sentence_es": "Mira el cielo, mira las nubes desde tu ventana.",
+    "sentence_en": "Look at the sky, look at the clouds from your window.",
+    "sentence_lemmas": ["mirar", "el", "cielo", "mirar", "el", "nube", "desde", "tu", "ventana"]
   },
   {
     "order": 992,
@@ -2283,9 +2283,9 @@
     "lemma": "estrella",
     "es": "la estrella",
     "en": "star",
-    "sentence_es": "Está arriba mi estrella, mi guitarra está aquí.",
-    "sentence_en": "My star is up above, my guitar is here.",
-    "sentence_lemmas": ["estar", "arriba", "mi", "estrella", "mi", "guitarra", "estar", "aquí"]
+    "sentence_es": "Busca una estrella, busca su luz entre las nubes.",
+    "sentence_en": "Look for a star, look for its light among the clouds.",
+    "sentence_lemmas": ["buscar", "un", "estrella", "buscar", "su", "luz", "entre", "el", "nube"]
   },
   {
     "order": 993,
@@ -2361,9 +2361,9 @@
     "lemma": "sueño",
     "es": "el sueño",
     "en": "sleepiness",
-    "sentence_es": "Tiene música mi sueño, mi canción tiene color.",
-    "sentence_en": "My dream has music, my song has color.",
-    "sentence_lemmas": ["tener", "música", "mi", "sueño", "mi", "canción", "tener", "color"]
+    "sentence_es": "Tengo sueño, mucho sueño; mi cama está cerca.",
+    "sentence_en": "I am sleepy, very sleepy; my bed is near.",
+    "sentence_lemmas": ["tener", "sueño", "mucho", "sueño", "mi", "cama", "estar", "cerca"]
   },
   {
     "order": 1007,
@@ -2427,9 +2427,9 @@
     "lemma": "sentarse",
     "es": "sentarse",
     "en": "to sit down",
-    "sentence_es": "Me siento a cantar, me siento para escuchar.",
-    "sentence_en": "I sit down to sing, I sit down to listen.",
-    "sentence_lemmas": ["me", "sentarse", "a", "cantar", "me", "sentarse", "para", "escuchar"]
+    "sentence_es": "Me siento cerca de ti, me siento para leer.",
+    "sentence_en": "I sit down near you; I sit down to read.",
+    "sentence_lemmas": ["me", "sentarse", "cerca", "de", "tú", "me", "sentarse", "para", "leer"]
   },
   {
     "order": 1022,
@@ -2631,9 +2631,9 @@
     "lemma": "bostezar",
     "es": "bostezar",
     "en": "to yawn",
-    "sentence_es": "Bostezo, bostezo, mi guitarra también quiere dormir.",
-    "sentence_en": "I yawn, I yawn, my guitar wants to sleep too.",
-    "sentence_lemmas": ["bostezar", "bostezar", "mi", "guitarra", "también", "querer", "dormir"]
+    "sentence_es": "Bostezo por la noche, bostezo antes de dormir.",
+    "sentence_en": "I yawn at night; I yawn before going to sleep.",
+    "sentence_lemmas": ["bostezar", "por", "el", "noche", "bostezar", "antes", "de", "dormir"]
   },
   {
     "order": 1041,
@@ -2676,9 +2676,9 @@
     "lemma": "quemar",
     "es": "quemar",
     "en": "to burn",
-    "sentence_es": "Se quema mi pan, mi canción sigue caliente.",
-    "sentence_en": "My bread burns, my song stays warm.",
-    "sentence_lemmas": ["se", "quemar", "mi", "pan", "mi", "canción", "seguir", "caliente"]
+    "sentence_es": "Se quema el pan, se quema nuestro desayuno.",
+    "sentence_en": "The bread is burning; our breakfast is burning.",
+    "sentence_lemmas": ["se", "quemar", "el", "pan", "se", "quemar", "nuestro", "desayuno"]
   },
   {
     "order": 1045,
@@ -2744,9 +2744,9 @@
     "lemma": "quitar",
     "es": "quitar",
     "en": "to take off, to remove",
-    "sentence_es": "Quito mis zapatos, quito el miedo con mi canción.",
-    "sentence_en": "I take off my shoes, I take away fear with my song.",
-    "sentence_lemmas": ["quitar", "mi", "zapato", "quitar", "el", "miedo", "con", "mi", "canción"]
+    "sentence_es": "Me quito los zapatos, la camisa para dormir.",
+    "sentence_en": "I take off my shoes and shirt to sleep.",
+    "sentence_lemmas": ["me", "quitar", "el", "zapato", "el", "camisa", "para", "dormir"]
   },
   {
     "order": 1051,
@@ -2789,9 +2789,9 @@
     "es": "sonreír",
     "en": "to smile",
     "hint_en": "She *smiles* quietly at me",
-    "sentence_es": "Sonrío por la mañana, sonrío cuando suena la guitarra.",
-    "sentence_en": "I smile in the morning, I smile when the guitar sounds.",
-    "sentence_lemmas": ["sonreír", "por", "el", "mañana", "sonreír", "cuando", "sonar", "el", "guitarra"]
+    "sentence_es": "Sonrío por la mañana, sonrío cuando llega mi abuela.",
+    "sentence_en": "I smile in the morning; I smile when my grandmother arrives.",
+    "sentence_lemmas": ["sonreír", "por", "el", "mañana", "sonreír", "cuando", "llegar", "mi", "abuela"]
   },
   {
     "order": 1055,
@@ -2845,9 +2845,9 @@
     "es": "platicar",
     "en": "to chat, to talk (Mexico)",
     "hint_en": "My friends and I *talk* a lot",
-    "sentence_es": "Platico con la luna, mi guitarra también le habla.",
-    "sentence_en": "I chat with the moon, my guitar talks to it too.",
-    "sentence_lemmas": ["platicar", "con", "el", "luna", "mi", "guitarra", "también", "le", "hablar"]
+    "sentence_es": "Platico con mi madre, platico de nuestro viaje.",
+    "sentence_en": "I chat with my mother; I chat about our trip.",
+    "sentence_lemmas": ["platicar", "con", "mi", "madre", "platicar", "de", "nuestro", "viaje"]
   },
   {
     "order": 1060,
@@ -2992,9 +2992,9 @@
     "lemma": "piel",
     "es": "la piel",
     "en": "skin",
-    "sentence_es": "Siente el viento mi piel, mi canción el mar.",
-    "sentence_en": "My skin feels the wind, my song feels the sea.",
-    "sentence_lemmas": ["sentir", "el", "viento", "mi", "piel", "mi", "canción", "el", "mar"]
+    "sentence_es": "Siento el sol en la piel, siento el calor.",
+    "sentence_en": "I feel the sun on my skin; I feel the warmth.",
+    "sentence_lemmas": ["sentir", "el", "sol", "en", "el", "piel", "sentir", "el", "calor"]
   },
   {
     "order": 1073,
@@ -3070,9 +3070,9 @@
     "lemma": "tos",
     "es": "la tos",
     "en": "cough",
-    "sentence_es": "Tengo tos, no canto, mi guitarra canta por mí.",
-    "sentence_en": "I have a cough, I do not sing, my guitar sings for me.",
-    "sentence_lemmas": ["tener", "tos", "no", "cantar", "mi", "guitarra", "cantar", "por", "yo"]
+    "sentence_es": "Tengo tos, tomo agua, no puedo hablar.",
+    "sentence_en": "I have a cough; I drink water; I cannot speak.",
+    "sentence_lemmas": ["tener", "tos", "tomar", "agua", "no", "poder", "hablar"]
   },
   {
     "order": 1080,
@@ -3137,9 +3137,9 @@
     "lemma": "barba",
     "es": "la barba",
     "en": "beard",
-    "sentence_es": "Baila al viento mi barba, baila con mi guitarra.",
-    "sentence_en": "My beard dances in the wind, dances with my guitar.",
-    "sentence_lemmas": ["bailar", "a", "viento", "mi", "barba", "bailar", "con", "mi", "guitarra"]
+    "sentence_es": "¿Tienes barba corta, tienes una nariz pequeña?",
+    "sentence_en": "Do you have a short beard, have a small nose?",
+    "sentence_lemmas": ["tener", "barba", "corto", "tener", "un", "nariz", "pequeño"]
   },
   {
     "order": 1086,
@@ -3181,9 +3181,9 @@
     "lemma": "mantequilla",
     "es": "la mantequilla",
     "en": "butter",
-    "sentence_es": "Pongo mantequilla al pan, pongo música al día.",
-    "sentence_en": "I put butter on the bread, I bring music into the day.",
-    "sentence_lemmas": ["poner", "mantequilla", "a", "pan", "poner", "música", "a", "día"]
+    "sentence_es": "Pongo mantequilla al pan, pongo pan en la mesa.",
+    "sentence_en": "I put butter on the bread; I put bread on the table.",
+    "sentence_lemmas": ["poner", "mantequilla", "a", "pan", "poner", "pan", "en", "el", "mesa"]
   },
   {
     "order": 1090,
@@ -3225,9 +3225,9 @@
     "lemma": "ajo",
     "es": "el ajo",
     "en": "garlic",
-    "sentence_es": "Con ajo cocino, con mi guitarra canto.",
-    "sentence_en": "I cook with garlic, I sing with my guitar.",
-    "sentence_lemmas": ["con", "ajo", "cocinar", "con", "mi", "guitarra", "cantar"]
+    "sentence_es": "Con ajo cocino, con amigos como.",
+    "sentence_en": "I cook with garlic; I eat with friends.",
+    "sentence_lemmas": ["con", "ajo", "cocinar", "con", "amigo", "comer"]
   },
   {
     "order": 1094,
@@ -3313,9 +3313,9 @@
     "lemma": "techo",
     "es": "el techo",
     "en": "roof, ceiling",
-    "sentence_es": "Canta el viento sobre el techo, canto con él.",
-    "sentence_en": "The wind sings over the roof, I sing with it.",
-    "sentence_lemmas": ["cantar", "el", "viento", "sobre", "el", "techo", "cantar", "con", "él"]
+    "sentence_es": "La lluvia toca el techo, el viento mi ventana.",
+    "sentence_en": "The rain touches the roof, the wind my window.",
+    "sentence_lemmas": ["el", "lluvia", "tocar", "el", "techo", "el", "viento", "mi", "ventana"]
   },
   {
     "order": 1102,
@@ -3346,9 +3346,9 @@
     "lemma": "regadera",
     "es": "la regadera",
     "en": "shower (the fixture)",
-    "sentence_es": "Canta agua la regadera, canto con su música.",
-    "sentence_en": "The shower sings water, I sing with its music.",
-    "sentence_lemmas": ["cantar", "agua", "el", "regadera", "cantar", "con", "su", "música"]
+    "sentence_es": "De la regadera sale agua, agua caliente para mí.",
+    "sentence_en": "Water comes from the shower, hot water for me.",
+    "sentence_lemmas": ["de", "el", "regadera", "salir", "agua", "agua", "caliente", "para", "yo"]
   },
   {
     "order": 1105,
@@ -3379,9 +3379,9 @@
     "lemma": "refrigerador",
     "es": "el refrigerador",
     "en": "refrigerator",
-    "sentence_es": "Hace ruido el refrigerador, mi guitarra le responde.",
-    "sentence_en": "The refrigerator makes noise, my guitar answers it.",
-    "sentence_lemmas": ["hacer", "ruido", "el", "refrigerador", "mi", "guitarra", "le", "responder"]
+    "sentence_es": "Guardamos leche en el refrigerador, guardamos fruta para mañana.",
+    "sentence_en": "We keep milk in the refrigerator, save fruit for tomorrow.",
+    "sentence_lemmas": ["guardar", "leche", "en", "el", "refrigerador", "guardar", "fruta", "para", "mañana"]
   },
   {
     "order": 1108,
@@ -3512,9 +3512,9 @@
     "lemma": "guante",
     "es": "el guante",
     "en": "glove",
-    "sentence_es": "Tiene frío mi guante, mi guitarra tiene calor.",
-    "sentence_en": "My glove is cold, my guitar is warm.",
-    "sentence_lemmas": ["tener", "frío", "mi", "guante", "mi", "guitarra", "tener", "calor"]
+    "sentence_es": "Tengo un guante para ti, otro para mí.",
+    "sentence_en": "I have a glove for you, another for me.",
+    "sentence_lemmas": ["tener", "un", "guante", "para", "tú", "otro", "para", "yo"]
   },
   {
     "order": 1120,
@@ -3523,9 +3523,9 @@
     "lemma": "traje",
     "es": "el traje",
     "en": "suit",
-    "sentence_es": "Va de fiesta mi traje, mis zapatos de concierto.",
-    "sentence_en": "My suit goes to a party, my shoes to a concert.",
-    "sentence_lemmas": ["ir", "de", "fiesta", "mi", "traje", "mi", "zapato", "de", "concierto"]
+    "sentence_es": "Con este traje salgo, con estos zapatos bailo.",
+    "sentence_en": "I go out in this suit, dance in these shoes.",
+    "sentence_lemmas": ["con", "este", "traje", "salir", "con", "este", "zapato", "bailar"]
   },
   {
     "order": 1121,
@@ -3578,9 +3578,9 @@
     "lemma": "gimnasio",
     "es": "el gimnasio",
     "en": "gym",
-    "sentence_es": "En el gimnasio salto, en mi casa canto.",
-    "sentence_en": "I jump at the gym, I sing at home.",
-    "sentence_lemmas": ["en", "el", "gimnasio", "saltar", "en", "mi", "casa", "cantar"]
+    "sentence_es": "En el gimnasio salto, en mi casa duermo.",
+    "sentence_en": "I jump at the gym; I sleep at home.",
+    "sentence_lemmas": ["en", "el", "gimnasio", "saltar", "en", "mi", "casa", "dormir"]
   },
   {
     "order": 1126,
@@ -3655,9 +3655,9 @@
     "lemma": "pasaporte",
     "es": "el pasaporte",
     "en": "passport",
-    "sentence_es": "Viaja mi pasaporte, viaja con mi guitarra.",
-    "sentence_en": "My passport travels, travels with my guitar.",
-    "sentence_lemmas": ["viajar", "mi", "pasaporte", "viajar", "con", "mi", "guitarra"]
+    "sentence_es": "Llevo mi pasaporte, llevo mi ropa para viajar.",
+    "sentence_en": "I take my passport; I take my clothes for the trip.",
+    "sentence_lemmas": ["llevar", "mi", "pasaporte", "llevar", "mi", "ropa", "para", "viajar"]
   },
   {
     "order": 1133,
@@ -3688,9 +3688,9 @@
     "lemma": "asiento",
     "es": "el asiento",
     "en": "seat",
-    "sentence_es": "En mi asiento duermo, en mi sueño canto.",
-    "sentence_en": "I sleep in my seat, I sing in my dream.",
-    "sentence_lemmas": ["en", "mi", "asiento", "dormir", "en", "mi", "sueño", "cantar"]
+    "sentence_es": "En mi asiento duermo, en la estación despierto.",
+    "sentence_en": "I sleep in my seat; I wake up at the station.",
+    "sentence_lemmas": ["en", "mi", "asiento", "dormir", "en", "el", "estación", "despertarse"]
   },
   {
     "order": 1136,
@@ -3721,9 +3721,9 @@
     "lemma": "mesero",
     "es": "el mesero",
     "en": "waiter",
-    "sentence_es": "Trae café el mesero, yo le llevo canciones.",
-    "sentence_en": "The waiter brings coffee, I bring him songs.",
-    "sentence_lemmas": ["traer", "café", "el", "mesero", "yo", "le", "llevar", "canción"]
+    "sentence_es": "Esperamos al mesero, esperamos el café y el pan.",
+    "sentence_en": "We wait for the waiter, wait for the coffee and bread.",
+    "sentence_lemmas": ["esperar", "a", "mesero", "esperar", "el", "café", "y", "el", "pan"]
   },
   {
     "order": 1139,
@@ -3832,9 +3832,9 @@
     "es": "el tamaño",
     "en": "size",
     "hint_en": "What *size* of pizza do you want",
-    "sentence_es": "Es de tamaño pequeño mi regalo, mi canción grande.",
-    "sentence_en": "My gift is small in size, my song is big.",
-    "sentence_lemmas": ["ser", "de", "tamaño", "pequeño", "mi", "regalo", "mi", "canción", "grande"]
+    "sentence_es": "¿Buscas un tamaño pequeño, pequeño como tu mano?",
+    "sentence_en": "Are you looking for a small size, as small as your hand?",
+    "sentence_lemmas": ["buscar", "un", "tamaño", "pequeño", "pequeño", "como", "tu", "mano"]
   },
   {
     "order": 1149,
@@ -3922,9 +3922,9 @@
     "lemma": "página",
     "es": "la página",
     "en": "page",
-    "sentence_es": "En cada página escribo, en cada palabra canto.",
-    "sentence_en": "I write on every page, I sing in every word.",
-    "sentence_lemmas": ["en", "cada", "página", "escribir", "en", "cada", "palabra", "cantar"]
+    "sentence_es": "Leo una página, otra página, hasta la noche.",
+    "sentence_en": "I read a page, another page, until night.",
+    "sentence_lemmas": ["leer", "un", "página", "otro", "página", "hasta", "el", "noche"]
   },
   {
     "order": 1157,
@@ -3933,9 +3933,9 @@
     "lemma": "contraseña",
     "es": "la contraseña",
     "en": "password",
-    "sentence_es": "Abre puertas mi contraseña, mi canción abre el día.",
-    "sentence_en": "My password opens doors, my song opens the day.",
-    "sentence_lemmas": ["abrir", "puerta", "mi", "contraseña", "mi", "canción", "abrir", "el", "día"]
+    "sentence_es": "Escribo mi contraseña, abro mi correo, empieza el día.",
+    "sentence_en": "I type my password, open my email; the day begins.",
+    "sentence_lemmas": ["escribir", "mi", "contraseña", "abrir", "mi", "correo", "empezar", "el", "día"]
   },
   {
     "order": 1158,
@@ -4111,9 +4111,9 @@
     "lemma": "detrás",
     "es": "detrás",
     "en": "behind",
-    "sentence_es": "Detrás de la puerta canta mi madre, canto también.",
-    "sentence_en": "My mother sings behind the door, I sing too.",
-    "sentence_lemmas": ["detrás", "de", "el", "puerta", "cantar", "mi", "madre", "cantar", "también"]
+    "sentence_es": "Detrás de la puerta espero, detrás de ti camino.",
+    "sentence_en": "I wait behind the door; I walk behind you.",
+    "sentence_lemmas": ["detrás", "de", "el", "puerta", "esperar", "detrás", "de", "tú", "caminar"]
   },
   {
     "order": 1174,
@@ -4122,9 +4122,9 @@
     "lemma": "delante",
     "es": "delante",
     "en": "in front of",
-    "sentence_es": "Delante de mi casa bailo, delante del mar canto.",
-    "sentence_en": "I dance in front of my house, I sing before the sea.",
-    "sentence_lemmas": ["delante", "de", "mi", "casa", "bailar", "delante", "de", "mar", "cantar"]
+    "sentence_es": "Delante de mi casa juego, delante de la tuya espero.",
+    "sentence_en": "I play in front of my house; I wait in front of yours.",
+    "sentence_lemmas": ["delante", "de", "mi", "casa", "jugar", "delante", "de", "el", "tuyo", "esperar"]
   },
   {
     "order": 1175,
@@ -4133,9 +4133,9 @@
     "lemma": "encima",
     "es": "encima",
     "en": "on top, over",
-    "sentence_es": "Encima de la mesa hay flores para mi canción.",
-    "sentence_en": "There are flowers on the table for my song.",
-    "sentence_lemmas": ["encima", "de", "el", "mesa", "haber", "flor", "para", "mi", "canción"]
+    "sentence_es": "Encima de la mesa hay flores, flores para ti.",
+    "sentence_en": "On the table there are flowers, flowers for you.",
+    "sentence_lemmas": ["encima", "de", "el", "mesa", "haber", "flor", "flor", "para", "tú"]
   },
   {
     "order": 1176,
@@ -4144,9 +4144,9 @@
     "lemma": "enfrente",
     "es": "enfrente",
     "en": "across from, facing",
-    "sentence_es": "Enfrente de tu casa canto, canto para verte bailar.",
-    "sentence_en": "I sing opposite your house, I sing to see you dance.",
-    "sentence_lemmas": ["enfrente", "de", "tu", "casa", "cantar", "cantar", "para", "ver", "bailar"]
+    "sentence_es": "Enfrente de tu casa vivo, enfrente te espero.",
+    "sentence_en": "I live across from your house; I wait for you across the street.",
+    "sentence_lemmas": ["enfrente", "de", "tu", "casa", "vivir", "enfrente", "te", "esperar"]
   },
   {
     "order": 1177,
@@ -4399,9 +4399,9 @@
     "lemma": "pera",
     "es": "la pera",
     "en": "pear",
-    "sentence_es": "Es verde mi pera, verde como el jardín.",
-    "sentence_en": "My pear is green, green like the garden.",
-    "sentence_lemmas": ["ser", "verde", "mi", "pera", "verde", "como", "el", "jardín"]
+    "sentence_es": "Mira tu pera verde, mira tu jardín también.",
+    "sentence_en": "Look at your green pear, look at your garden too.",
+    "sentence_lemmas": ["mirar", "tu", "pera", "verde", "mirar", "tu", "jardín", "también"]
   },
   {
     "order": 1501,
@@ -4421,9 +4421,9 @@
     "lemma": "coco",
     "es": "el coco",
     "en": "coconut",
-    "sentence_es": "Tengo un coco en la mesa, tengo música para dos.",
-    "sentence_en": "I have a coconut on the table, I have music for two.",
-    "sentence_lemmas": ["tener", "un", "coco", "en", "el", "mesa", "tener", "música", "para", "dos"]
+    "sentence_es": "Tengo un coco, tengo comida para dos.",
+    "sentence_en": "I have a coconut; I have food for two.",
+    "sentence_lemmas": ["tener", "un", "coco", "tener", "comida", "para", "dos"]
   },
   {
     "order": 1503,
@@ -4454,9 +4454,9 @@
     "lemma": "pimienta",
     "es": "la pimienta",
     "en": "pepper (spice)",
-    "sentence_es": "Pongo pimienta en la sopa, canto sin prisa.",
-    "sentence_en": "I put pepper in the soup, I sing without haste.",
-    "sentence_lemmas": ["poner", "pimienta", "en", "el", "sopa", "cantar", "sin", "prisa"]
+    "sentence_es": "Pongo pimienta en la sopa, sal en la carne.",
+    "sentence_en": "I put pepper in the soup, salt on the meat.",
+    "sentence_lemmas": ["poner", "pimienta", "en", "el", "sopa", "sal", "en", "el", "carne"]
   },
   {
     "order": 1506,
@@ -4619,9 +4619,9 @@
     "lemma": "librero",
     "es": "el librero",
     "en": "bookcase, bookshelf",
-    "sentence_es": "Guarda cuentos mi librero, mi guitarra guarda canciones.",
-    "sentence_en": "My bookcase holds stories, my guitar holds songs.",
-    "sentence_lemmas": ["guardar", "cuento", "mi", "librero", "mi", "guitarra", "guardar", "canción"]
+    "sentence_es": "En el librero guardo cuentos, en mi cuaderno dibujos.",
+    "sentence_en": "I keep stories in the bookcase, drawings in my notebook.",
+    "sentence_lemmas": ["en", "el", "librero", "guardar", "cuento", "en", "mi", "cuaderno", "dibujo"]
   },
   {
     "order": 1522,
@@ -4697,9 +4697,9 @@
     "lemma": "cepillo",
     "es": "el cepillo",
     "en": "brush",
-    "sentence_es": "Va despacio mi cepillo, mi canción va más rápido.",
-    "sentence_en": "My brush moves slowly, my song moves faster.",
-    "sentence_lemmas": ["ir", "despacio", "mi", "cepillo", "mi", "canción", "ir", "más", "rápido"]
+    "sentence_es": "Con el cepillo limpio, limpio todo con agua.",
+    "sentence_en": "I clean with the brush; I clean everything with water.",
+    "sentence_lemmas": ["con", "el", "cepillo", "limpiar", "limpiar", "todo", "con", "agua"]
   },
   {
     "order": 1529,
@@ -4930,9 +4930,9 @@
     "lemma": "papelería",
     "es": "la papelería",
     "en": "stationery store",
-    "sentence_es": "En la papelería compro colores, en casa pinto canciones.",
-    "sentence_en": "I buy colors at the stationery shop, at home I paint songs.",
-    "sentence_lemmas": ["en", "el", "papelería", "comprar", "color", "en", "casa", "pintar", "canción"]
+    "sentence_es": "En la papelería compro colores, en casa dibujo flores.",
+    "sentence_en": "I buy colors at the stationery store; at home I draw flowers.",
+    "sentence_lemmas": ["en", "el", "papelería", "comprar", "color", "en", "casa", "dibujar", "flor"]
   },
   {
     "order": 1551,
@@ -5018,9 +5018,9 @@
     "lemma": "cancha",
     "es": "la cancha",
     "en": "court, pitch",
-    "sentence_es": "Juego en la cancha, canto en la calle.",
-    "sentence_en": "I play on the court, I sing in the street.",
-    "sentence_lemmas": ["jugar", "en", "el", "cancha", "cantar", "en", "el", "calle"]
+    "sentence_es": "Juego en la cancha, corro por mi barrio.",
+    "sentence_en": "I play on the court; I run through my neighborhood.",
+    "sentence_lemmas": ["jugar", "en", "el", "cancha", "correr", "por", "mi", "barrio"]
   },
   {
     "order": 1561,
@@ -5106,9 +5106,9 @@
     "lemma": "medianoche",
     "es": "la medianoche",
     "en": "midnight",
-    "sentence_es": "Es medianoche, mi canción se duerme en mi guitarra.",
-    "sentence_en": "It is midnight, my song falls asleep in my guitar.",
-    "sentence_lemmas": ["ser", "medianoche", "mi", "canción", "se", "dormir", "en", "mi", "guitarra"]
+    "sentence_es": "Es medianoche, mi casa duerme, la luna no.",
+    "sentence_en": "It is midnight; my house sleeps, the moon does not.",
+    "sentence_lemmas": ["ser", "medianoche", "mi", "casa", "dormir", "el", "luna", "no"]
   },
   {
     "order": 1574,
@@ -5238,9 +5238,9 @@
     "lemma": "montar",
     "es": "montar",
     "en": "to ride; to mount",
-    "sentence_es": "Me gusta montar a caballo, cantar cuando voy despacio.",
-    "sentence_en": "I like riding a horse, singing as I go slowly.",
-    "sentence_lemmas": ["me", "gustar", "montar", "a", "caballo", "cantar", "cuando", "ir", "despacio"]
+    "sentence_es": "Me gusta montar a caballo, viajar sin prisa.",
+    "sentence_en": "I like riding a horse, traveling without hurrying.",
+    "sentence_lemmas": ["me", "gustar", "montar", "a", "caballo", "viajar", "sin", "prisa"]
   },
   {
     "order": 1588,
@@ -5260,9 +5260,9 @@
     "lemma": "cuadrado",
     "es": "cuadrado",
     "en": "square-shaped",
-    "sentence_es": "Es cuadrado mi cuadro, mi canción va en círculo.",
-    "sentence_en": "My picture is square, my song goes in a circle.",
-    "sentence_lemmas": ["ser", "cuadrado", "mi", "cuadro", "mi", "canción", "ir", "en", "círculo"]
+    "sentence_es": "Dibuja un cuadro cuadrado, dibuja una mesa también.",
+    "sentence_en": "Draw a square picture, draw a table too.",
+    "sentence_lemmas": ["dibujar", "un", "cuadro", "cuadrado", "dibujar", "un", "mesa", "también"]
   },
   {
     "order": 1592,
@@ -5282,9 +5282,9 @@
     "lemma": "mediano",
     "es": "mediano",
     "en": "medium",
-    "sentence_es": "Es mediano mi perro, mi concierto pequeño y bonito.",
-    "sentence_en": "My dog is medium-sized, my concert is small and lovely.",
-    "sentence_lemmas": ["ser", "mediano", "mi", "perro", "mi", "concierto", "pequeño", "y", "bonito"]
+    "sentence_es": "Tenemos un perro mediano, tenemos un gato pequeño.",
+    "sentence_en": "We have a medium-sized dog, have a small cat.",
+    "sentence_lemmas": ["tener", "un", "perro", "mediano", "tener", "un", "gato", "pequeño"]
   },
   {
     "order": 1595,
@@ -5326,9 +5326,9 @@
     "lemma": "dormido",
     "es": "dormido",
     "en": "asleep",
-    "sentence_es": "Está dormido mi gato, mi piano duerme también.",
-    "sentence_en": "My cat is asleep, my piano sleeps too.",
-    "sentence_lemmas": ["estar", "dormido", "mi", "gato", "mi", "piano", "dormir", "también"]
+    "sentence_es": "Vemos a nuestro gato dormido, tranquilo en su cama.",
+    "sentence_en": "We see our cat asleep, peaceful in its bed.",
+    "sentence_lemmas": ["ver", "a", "nuestro", "gato", "dormido", "tranquilo", "en", "su", "cama"]
   },
   {
     "order": 1605,
@@ -5447,9 +5447,9 @@
     "lemma": "mariposa",
     "es": "la mariposa",
     "en": "butterfly",
-    "sentence_es": "Va la mariposa de flor en flor, yo canto.",
-    "sentence_en": "The butterfly goes from flower to flower, I sing.",
-    "sentence_lemmas": ["ir", "el", "mariposa", "de", "flor", "en", "flor", "yo", "cantar"]
+    "sentence_es": "¿Ves la mariposa pasar de flor en flor?",
+    "sentence_en": "Do you see the butterfly moving from flower to flower?",
+    "sentence_lemmas": ["ver", "el", "mariposa", "pasar", "de", "flor", "en", "flor"]
   },
   {
     "order": 1620,
@@ -5513,9 +5513,9 @@
     "lemma": "tiburón",
     "es": "el tiburón",
     "en": "shark",
-    "sentence_es": "Nada el tiburón, mi canción nada con él.",
-    "sentence_en": "The shark swims, my song swims with it.",
-    "sentence_lemmas": ["nadar", "el", "tiburón", "mi", "canción", "nadar", "con", "él"]
+    "sentence_es": "Desde la playa veo al tiburón nadar muy lejos.",
+    "sentence_en": "From the beach I see the shark swimming far away.",
+    "sentence_lemmas": ["desde", "el", "playa", "ver", "a", "tiburón", "nadar", "muy", "lejos"]
   },
   {
     "order": 1626,
@@ -5591,9 +5591,9 @@
     "lemma": "avisar",
     "es": "avisar",
     "en": "to let know, to notify",
-    "sentence_es": "Te aviso que llego, mi guitarra canta primero.",
-    "sentence_en": "I let you know I am coming, my guitar sings first.",
-    "sentence_lemmas": ["te", "avisar", "que", "llegar", "mi", "guitarra", "cantar", "primero"]
+    "sentence_es": "Te aviso cuando llego, te aviso cuando salgo.",
+    "sentence_en": "I let you know when I arrive; I let you know when I leave.",
+    "sentence_lemmas": ["te", "avisar", "cuando", "llegar", "te", "avisar", "cuando", "salir"]
   },
   {
     "order": 1634,
@@ -5805,9 +5805,9 @@
     "lemma": "sudar",
     "es": "sudar",
     "en": "to sweat",
-    "sentence_es": "Sudo al bailar, canto cuando llega la noche.",
-    "sentence_en": "I sweat when dancing, I sing when night comes.",
-    "sentence_lemmas": ["sudar", "a", "bailar", "cantar", "cuando", "llegar", "el", "noche"]
+    "sentence_es": "Sudo al correr, sudo bajo el sol.",
+    "sentence_en": "I sweat when running; I sweat under the sun.",
+    "sentence_lemmas": ["sudar", "a", "correr", "sudar", "bajo", "el", "sol"]
   },
   {
     "order": 1653,
@@ -5960,9 +5960,9 @@
     "es": "la cintura",
     "en": "waist",
     "hint_en": "The pants are big for my *waist*.",
-    "sentence_es": "Sigue el baile mi cintura, mis manos la guitarra.",
-    "sentence_en": "My waist follows the dance, my hands follow the guitar.",
-    "sentence_lemmas": ["seguir", "el", "baile", "mi", "cintura", "mi", "mano", "el", "guitarra"]
+    "sentence_es": "Llevo flores en la cintura, flores para el baile.",
+    "sentence_en": "I wear flowers at my waist, flowers for the dance.",
+    "sentence_lemmas": ["llevar", "flor", "en", "el", "cintura", "flor", "para", "el", "baile"]
   },
   {
     "order": 1667,
@@ -5993,9 +5993,9 @@
     "lemma": "ceja",
     "es": "la ceja",
     "en": "eyebrow",
-    "sentence_es": "Se levanta una ceja, mi gato quiere bailar.",
-    "sentence_en": "An eyebrow rises, my cat wants to dance.",
-    "sentence_lemmas": ["se", "levantar", "un", "ceja", "mi", "gato", "querer", "bailar"]
+    "sentence_es": "Levanto una ceja, levanto las dos y sonrío.",
+    "sentence_en": "I raise one eyebrow; I raise both and smile.",
+    "sentence_lemmas": ["levantar", "un", "ceja", "levantar", "el", "dos", "y", "sonreír"]
   },
   {
     "order": 1670,
@@ -6037,9 +6037,9 @@
     "lemma": "vitamina",
     "es": "la vitamina",
     "en": "vitamin",
-    "sentence_es": "Tomo mi vitamina, tomo mi guitarra para cantar.",
-    "sentence_en": "I take my vitamin, I pick up my guitar to sing.",
-    "sentence_lemmas": ["tomar", "mi", "vitamina", "tomar", "mi", "guitarra", "para", "cantar"]
+    "sentence_es": "Tomo mi vitamina, tomo agua para empezar el día.",
+    "sentence_en": "I take my vitamin; I drink water to start the day.",
+    "sentence_lemmas": ["tomar", "mi", "vitamina", "tomar", "agua", "para", "empezar", "el", "día"]
   },
   {
     "order": 1674,
@@ -6180,9 +6180,9 @@
     "lemma": "nuez",
     "es": "la nuez",
     "en": "walnut, pecan (MX)",
-    "sentence_es": "Como nueces con miel, canto con mi guitarra.",
-    "sentence_en": "I eat walnuts with honey, I sing with my guitar.",
-    "sentence_lemmas": ["comer", "nuez", "con", "miel", "cantar", "con", "mi", "guitarra"]
+    "sentence_es": "Como nueces con miel, como pan con queso.",
+    "sentence_en": "I eat nuts with honey; I eat bread with cheese.",
+    "sentence_lemmas": ["comer", "nuez", "con", "miel", "comer", "pan", "con", "queso"]
   },
   {
     "order": 1687,
@@ -6369,9 +6369,9 @@
     "lemma": "teclado",
     "es": "el teclado",
     "en": "keyboard",
-    "sentence_es": "Escribo en el teclado, escribo canciones para ti.",
-    "sentence_en": "I type on the keyboard, I write songs for you.",
-    "sentence_lemmas": ["escribir", "en", "el", "teclado", "escribir", "canción", "para", "tú"]
+    "sentence_es": "Escribo en el teclado, escribo para estar cerca.",
+    "sentence_en": "I type on the keyboard; I write to feel close.",
+    "sentence_lemmas": ["escribir", "en", "el", "teclado", "escribir", "para", "estar", "cerca"]
   },
   {
     "order": 1704,
@@ -6723,9 +6723,9 @@
     "lemma": "graduación",
     "es": "la graduación",
     "en": "graduation",
-    "sentence_es": "En mi graduación canto, mi abuela baila conmigo.",
-    "sentence_en": "I sing at my graduation, my grandma dances with me.",
-    "sentence_lemmas": ["en", "mi", "graduación", "cantar", "mi", "abuela", "bailar", "conmigo"]
+    "sentence_es": "En mi graduación sonrío, mi abuela sonríe conmigo.",
+    "sentence_en": "I smile at my graduation; my grandmother smiles with me.",
+    "sentence_lemmas": ["en", "mi", "graduación", "sonreír", "mi", "abuela", "sonreír", "conmigo"]
   },
   {
     "order": 1736,
@@ -7131,9 +7131,9 @@
     "lemma": "finalmente",
     "es": "finalmente",
     "en": "finally, at last",
-    "sentence_es": "Finalmente llega el día, finalmente canto sin miedo.",
-    "sentence_en": "The day finally comes, I finally sing without fear.",
-    "sentence_lemmas": ["finalmente", "llegar", "el", "día", "finalmente", "cantar", "sin", "miedo"]
+    "sentence_es": "Finalmente llega el día, finalmente empieza nuestro viaje.",
+    "sentence_en": "The day finally arrives; our journey finally begins.",
+    "sentence_lemmas": ["finalmente", "llegar", "el", "día", "finalmente", "empezar", "nuestro", "viaje"]
   },
   {
     "order": 1773,
@@ -7198,9 +7198,9 @@
     "es": "la talla",
     "en": "size (clothing)",
     "hint_en": "What shirt *size* do you wear",
-    "sentence_es": "Es mediana mi talla, mi sombrero es grande.",
-    "sentence_en": "My size is medium, my hat is big.",
-    "sentence_lemmas": ["ser", "mediano", "mi", "talla", "mi", "sombrero", "ser", "grande"]
+    "sentence_es": "Busco mi talla, busco ropa para mí.",
+    "sentence_en": "I look for my size; I look for clothes for me.",
+    "sentence_lemmas": ["buscar", "mi", "talla", "buscar", "ropa", "para", "yo"]
   },
   {
     "order": 1779,
@@ -7264,9 +7264,9 @@
     "lemma": "frasco",
     "es": "el frasco",
     "en": "jar",
-    "sentence_es": "Guardo miel en el frasco, guardo canciones para ti.",
-    "sentence_en": "I keep honey in the jar, I keep songs for you.",
-    "sentence_lemmas": ["guardar", "miel", "en", "el", "frasco", "guardar", "canción", "para", "tú"]
+    "sentence_es": "Guardo miel en el frasco, guardo pan para mañana.",
+    "sentence_en": "I keep honey in the jar; I save bread for tomorrow.",
+    "sentence_lemmas": ["guardar", "miel", "en", "el", "frasco", "guardar", "pan", "para", "mañana"]
   },
   {
     "order": 2086,
@@ -7495,9 +7495,9 @@
     "lemma": "vela",
     "es": "la vela",
     "en": "candle; sail",
-    "sentence_es": "Da luz la vela, da calor mi canción.",
-    "sentence_en": "The candle gives light, my song gives warmth.",
-    "sentence_lemmas": ["dar", "luz", "el", "vela", "dar", "calor", "mi", "canción"]
+    "sentence_es": "Con una vela leo, con el sol despierto.",
+    "sentence_en": "I read by a candle, wake up with the sun.",
+    "sentence_lemmas": ["con", "un", "vela", "leer", "con", "el", "sol", "despertarse"]
   },
   {
     "order": 2116,
@@ -7551,9 +7551,9 @@
     "lemma": "cochera",
     "es": "la cochera",
     "en": "garage",
-    "sentence_es": "Duerme mi carro en la cochera, yo canto despierto.",
-    "sentence_en": "My car sleeps in the garage, I sing awake.",
-    "sentence_lemmas": ["dormir", "mi", "carro", "en", "el", "cochera", "yo", "cantar", "despierto"]
+    "sentence_es": "¿Guardas el carro en la cochera, guardas la bicicleta?",
+    "sentence_en": "Do you put the car in the garage, put the bicycle away too?",
+    "sentence_lemmas": ["guardar", "el", "carro", "en", "el", "cochera", "guardar", "el", "bicicleta"]
   },
   {
     "order": 2124,
@@ -7628,9 +7628,9 @@
     "lemma": "mezclilla",
     "es": "la mezclilla",
     "en": "denim",
-    "sentence_es": "Baila mi pantalón de mezclilla cuando suena la guitarra.",
-    "sentence_en": "My denim pants dance when the guitar sounds.",
-    "sentence_lemmas": ["bailar", "mi", "pantalón", "de", "mezclilla", "cuando", "sonar", "el", "guitarra"]
+    "sentence_es": "¿Viajas en pantalón de mezclilla, viajas siempre conmigo?",
+    "sentence_en": "Do you travel in denim pants, always travel with me?",
+    "sentence_lemmas": ["viajar", "en", "pantalón", "de", "mezclilla", "viajar", "siempre", "conmigo"]
   },
   {
     "order": 2133,
@@ -7650,9 +7650,9 @@
     "lemma": "pulgar",
     "es": "el pulgar",
     "en": "thumb",
-    "sentence_es": "Toca cuerdas mi pulgar, mi canción toca el cielo.",
-    "sentence_en": "My thumb touches strings, my song touches the sky.",
-    "sentence_lemmas": ["tocar", "cuerda", "mi", "pulgar", "mi", "canción", "tocar", "el", "cielo"]
+    "sentence_es": "Levanto el pulgar, levanto la mano para decir adiós.",
+    "sentence_en": "I raise my thumb; I raise my hand to say goodbye.",
+    "sentence_lemmas": ["levantar", "el", "pulgar", "levantar", "el", "mano", "para", "decir", "adiós"]
   },
   {
     "order": 2137,
@@ -7661,9 +7661,9 @@
     "lemma": "palma",
     "es": "la palma",
     "en": "palm (of the hand)",
-    "sentence_es": "Tiene arena mi palma, mi guitarra tiene mar.",
-    "sentence_en": "My palm has sand, my guitar has sea.",
-    "sentence_lemmas": ["tener", "arena", "mi", "palma", "mi", "guitarra", "tener", "mar"]
+    "sentence_es": "Tengo arena en la palma, tengo sol en la cara.",
+    "sentence_en": "I have sand in my palm; I have sun on my face.",
+    "sentence_lemmas": ["tener", "arena", "en", "el", "palma", "tener", "sol", "en", "el", "caro"]
   },
   {
     "order": 2138,
@@ -7772,9 +7772,9 @@
     "lemma": "gallo",
     "es": "el gallo",
     "en": "rooster",
-    "sentence_es": "Canta el gallo temprano, mi guitarra canta después.",
-    "sentence_en": "The rooster sings early, my guitar sings later.",
-    "sentence_lemmas": ["cantar", "el", "gallo", "temprano", "mi", "guitarra", "cantar", "después"]
+    "sentence_es": "Escuchamos al gallo temprano, escuchamos mientras la familia duerme.",
+    "sentence_en": "We listen to the rooster early, listen while the family sleeps.",
+    "sentence_lemmas": ["escuchar", "a", "gallo", "temprano", "escuchar", "mientras", "el", "familia", "dormir"]
   },
   {
     "order": 2153,
@@ -7937,9 +7937,9 @@
     "lemma": "cocodrilo",
     "es": "el cocodrilo",
     "en": "crocodile",
-    "sentence_es": "Nada el cocodrilo, mi canción sigue su camino.",
-    "sentence_en": "The crocodile swims, my song follows its path.",
-    "sentence_lemmas": ["nadar", "el", "cocodrilo", "mi", "canción", "seguir", "su", "camino"]
+    "sentence_es": "Desde mi barco veo al cocodrilo nadar muy lejos.",
+    "sentence_en": "From my boat I see the crocodile swimming far away.",
+    "sentence_lemmas": ["desde", "mi", "barco", "ver", "a", "cocodrilo", "nadar", "muy", "lejos"]
   },
   {
     "order": 2170,
@@ -8069,9 +8069,9 @@
     "lemma": "rama",
     "es": "la rama",
     "en": "branch",
-    "sentence_es": "La rama baila al viento, mi canción también baila.",
-    "sentence_en": "The branch dances in the wind, my song dances too.",
-    "sentence_lemmas": ["el", "rama", "bailar", "a", "viento", "mi", "canción", "también", "bailar"]
+    "sentence_es": "Una rama da sombra, otra rama da flores.",
+    "sentence_en": "One branch gives shade; another branch gives flowers.",
+    "sentence_lemmas": ["un", "rama", "dar", "sombra", "otro", "rama", "dar", "flor"]
   },
   {
     "order": 2183,
@@ -8135,9 +8135,9 @@
     "lemma": "crayón",
     "es": "el crayón",
     "en": "crayon",
-    "sentence_es": "Con un crayón dibujo, con mis palabras pinto canciones.",
-    "sentence_en": "I draw with a crayon, I paint songs with my words.",
-    "sentence_lemmas": ["con", "un", "crayón", "dibujar", "con", "mi", "palabra", "pintar", "canción"]
+    "sentence_es": "Con un crayón dibujo casas, con otro dibujo flores.",
+    "sentence_en": "With one crayon I draw houses; with another I draw flowers.",
+    "sentence_lemmas": ["con", "un", "crayón", "dibujar", "casa", "con", "otro", "dibujar", "flor"]
   },
   {
     "order": 2192,
@@ -8212,9 +8212,9 @@
     "lemma": "columpio",
     "es": "el columpio",
     "en": "swing",
-    "sentence_es": "Va el columpio, viene mi canción con el viento.",
-    "sentence_en": "The swing moves, my song comes with the wind.",
-    "sentence_lemmas": ["ir", "el", "columpio", "venir", "mi", "canción", "con", "el", "viento"]
+    "sentence_es": "En el columpio voy y vengo, voy y vengo.",
+    "sentence_en": "On the swing I go back and forth, back and forth.",
+    "sentence_lemmas": ["en", "el", "columpio", "ir", "y", "venir", "ir", "y", "venir"]
   },
   {
     "order": 2200,
@@ -8478,9 +8478,9 @@
     "lemma": "cartón",
     "es": "el cartón",
     "en": "cardboard",
-    "sentence_es": "Con cartón hago casas, con mi guitarra hago viajes.",
-    "sentence_en": "I make houses with cardboard, I make journeys with my guitar.",
-    "sentence_lemmas": ["con", "cartón", "hacer", "casa", "con", "mi", "guitarra", "hacer", "viaje"]
+    "sentence_es": "Con cartón hago casas, con papel hago flores.",
+    "sentence_en": "I make houses from cardboard; I make flowers from paper.",
+    "sentence_lemmas": ["con", "cartón", "hacer", "casa", "con", "papel", "hacer", "flor"]
   },
   {
     "order": 2237,
@@ -8578,9 +8578,9 @@
     "lemma": "manguera",
     "es": "la manguera",
     "en": "garden hose",
-    "sentence_es": "Da agua mi manguera, mi guitarra da canciones.",
-    "sentence_en": "My hose gives water, my guitar gives songs.",
-    "sentence_lemmas": ["dar", "agua", "mi", "manguera", "mi", "guitarra", "dar", "canción"]
+    "sentence_es": "La manguera lleva agua, las flores beben sin prisa.",
+    "sentence_en": "The hose carries water; the flowers drink without hurrying.",
+    "sentence_lemmas": ["el", "manguera", "llevar", "agua", "el", "flor", "beber", "sin", "prisa"]
   },
   {
     "order": 2246,
@@ -8646,9 +8646,9 @@
     "es": "la señal",
     "en": "signal; sign",
     "hint_en": "There is no *signal* on the mountain",
-    "sentence_es": "Te hago una señal, mi canción quiere empezar.",
-    "sentence_en": "I give you a signal, my song wants to begin.",
-    "sentence_lemmas": ["te", "hacer", "un", "señal", "mi", "canción", "querer", "empezar"]
+    "sentence_es": "Te hago una señal, es hora de volver.",
+    "sentence_en": "I give you a signal; it is time to return.",
+    "sentence_lemmas": ["te", "hacer", "un", "señal", "ser", "hora", "de", "volver"]
   },
   {
     "order": 2252,
@@ -8745,9 +8745,9 @@
     "lemma": "flan",
     "es": "el flan",
     "en": "egg custard dessert",
-    "sentence_es": "Está dulce mi flan, mi tarde también.",
-    "sentence_en": "My flan is sweet, my afternoon is too.",
-    "sentence_lemmas": ["estar", "dulce", "mi", "flan", "mi", "tarde", "también"]
+    "sentence_es": "Come un flan dulce, toma café caliente.",
+    "sentence_en": "Eat a sweet flan, drink hot coffee.",
+    "sentence_lemmas": ["comer", "un", "flan", "dulce", "tomar", "café", "caliente"]
   },
   {
     "order": 2261,
@@ -8778,9 +8778,9 @@
     "lemma": "atole",
     "es": "el atole",
     "en": "warm corn drink",
-    "sentence_es": "Caliente está el atole, caliente está mi canción.",
-    "sentence_en": "The atole is hot, my song is hot.",
-    "sentence_lemmas": ["caliente", "estar", "el", "atole", "caliente", "estar", "mi", "canción"]
+    "sentence_es": "Tomamos atole caliente, comemos pan para desayunar.",
+    "sentence_en": "We drink hot atole, eat bread for breakfast.",
+    "sentence_lemmas": ["tomar", "atole", "caliente", "comer", "pan", "para", "desayunar"]
   },
   {
     "order": 2264,
@@ -9023,9 +9023,9 @@
     "lemma": "tristeza",
     "es": "la tristeza",
     "en": "sadness",
-    "sentence_es": "Se va mi tristeza cuando mi guitarra canta.",
-    "sentence_en": "My sadness leaves when my guitar sings.",
-    "sentence_lemmas": ["se", "ir", "mi", "tristeza", "cuando", "mi", "guitarra", "cantar"]
+    "sentence_es": "Mi tristeza pasa cuando vuelves, cuando vuelves a casa.",
+    "sentence_en": "My sadness passes when you return, when you return home.",
+    "sentence_lemmas": ["mi", "tristeza", "pasar", "cuando", "volver", "cuando", "volver", "a", "casa"]
   },
   {
     "order": 2286,
@@ -9100,9 +9100,9 @@
     "lemma": "cuadra",
     "es": "la cuadra",
     "en": "block (street)",
-    "sentence_es": "En cada cuadra canto, en cada esquina bailo.",
-    "sentence_en": "I sing on every block, I dance on every corner.",
-    "sentence_lemmas": ["en", "cada", "cuadra", "cantar", "en", "cada", "esquina", "bailar"]
+    "sentence_es": "En cada cuadra camino, en cada esquina miro.",
+    "sentence_en": "I walk on every block; I look around at every corner.",
+    "sentence_lemmas": ["en", "cada", "cuadra", "caminar", "en", "cada", "esquina", "mirar"]
   },
   {
     "order": 2293,
@@ -9156,9 +9156,9 @@
     "lemma": "piñata",
     "es": "la piñata",
     "en": "papier-mache party figure",
-    "sentence_es": "Tiene colores la piñata, mi fiesta tiene canciones.",
-    "sentence_en": "The piñata has colors, my party has songs.",
-    "sentence_lemmas": ["tener", "color", "el", "piñata", "mi", "fiesta", "tener", "canción"]
+    "sentence_es": "Pon colores en la piñata, pon alegría en casa.",
+    "sentence_en": "Add colors to the piñata, bring joy into the house.",
+    "sentence_lemmas": ["poner", "color", "en", "el", "piñata", "poner", "alegría", "en", "casa"]
   },
   {
     "order": 2298,
@@ -9255,9 +9255,9 @@
     "lemma": "temporada",
     "es": "la temporada",
     "en": "season (time of year)",
-    "sentence_es": "Es temporada de flores, es temporada de canciones.",
-    "sentence_en": "It is the season of flowers, the season of songs.",
-    "sentence_lemmas": ["ser", "temporada", "de", "flor", "ser", "temporada", "de", "canción"]
+    "sentence_es": "Es temporada de flores, de sol y de calor.",
+    "sentence_en": "It is the season of flowers, sunshine and warmth.",
+    "sentence_lemmas": ["ser", "temporada", "de", "flor", "de", "sol", "y", "de", "calor"]
   },
   {
     "order": 2307,
@@ -9333,9 +9333,9 @@
     "lemma": "marea",
     "es": "la marea",
     "en": "tide",
-    "sentence_es": "Viene la marea, viene la música del mar.",
-    "sentence_en": "The tide comes, the music of the sea comes.",
-    "sentence_lemmas": ["venir", "el", "marea", "venir", "el", "música", "de", "mar"]
+    "sentence_es": "Con la marea viene el agua, después se va.",
+    "sentence_en": "With the tide the water comes, then it goes away.",
+    "sentence_lemmas": ["con", "el", "marea", "venir", "el", "agua", "después", "se", "ir"]
   },
   {
     "order": 2314,
@@ -9366,9 +9366,9 @@
     "lemma": "océano",
     "es": "el océano",
     "en": "ocean",
-    "sentence_es": "El océano canta fuerte, mi guitarra canta suave.",
-    "sentence_en": "The ocean sings loudly, my guitar sings softly.",
-    "sentence_lemmas": ["el", "océano", "cantar", "fuerte", "mi", "guitarra", "cantar", "suave"]
+    "sentence_es": "Mira el océano grande, mira tu barco pequeño.",
+    "sentence_en": "Look at the vast ocean, look at your small boat.",
+    "sentence_lemmas": ["mirar", "el", "océano", "grande", "mirar", "tu", "barco", "pequeño"]
   },
   {
     "order": 2317,
@@ -9729,9 +9729,9 @@
     "lemma": "invitación",
     "es": "la invitación",
     "en": "invitation",
-    "sentence_es": "Mi invitación es para ti, mi canción para todos.",
-    "sentence_en": "My invitation is for you, my song is for everyone.",
-    "sentence_lemmas": ["mi", "invitación", "ser", "para", "tú", "mi", "canción", "para", "todo"]
+    "sentence_es": "Mi invitación es para ti, mi mesa para todos.",
+    "sentence_en": "My invitation is for you; my table is for everyone.",
+    "sentence_lemmas": ["mi", "invitación", "ser", "para", "tú", "mi", "mesa", "para", "todo"]
   },
   {
     "order": 2350,
@@ -9908,9 +9908,9 @@
     "lemma": "pedalear",
     "es": "pedalear",
     "en": "to pedal",
-    "sentence_es": "Pedaleo por mi barrio, canto entre sus flores.",
-    "sentence_en": "I pedal through my neighborhood, I sing among its flowers.",
-    "sentence_lemmas": ["pedalear", "por", "mi", "barrio", "cantar", "entre", "su", "flor"]
+    "sentence_es": "Pedaleo por mi barrio, pedaleo para llegar al parque.",
+    "sentence_en": "I pedal through my neighborhood; I pedal to reach the park.",
+    "sentence_lemmas": ["pedalear", "por", "mi", "barrio", "pedalear", "para", "llegar", "a", "parque"]
   },
   {
     "order": 2366,
@@ -10062,9 +10062,9 @@
     "lemma": "avanzar",
     "es": "avanzar",
     "en": "to move forward, to advance",
-    "sentence_es": "Avanzo por el camino, mi canción avanza conmigo.",
-    "sentence_en": "I move along the path, my song moves with me.",
-    "sentence_lemmas": ["avanzar", "por", "el", "camino", "mi", "canción", "avanzar", "conmigo"]
+    "sentence_es": "Avanzo por el camino, avanzo hasta llegar a casa.",
+    "sentence_en": "I move forward along the path, until I get home.",
+    "sentence_lemmas": ["avanzar", "por", "el", "camino", "avanzar", "hasta", "llegar", "a", "casa"]
   },
   {
     "order": 2380,
@@ -10139,9 +10139,9 @@
     "lemma": "triángulo",
     "es": "el triángulo",
     "en": "triangle",
-    "sentence_es": "Tres lados tiene el triángulo, tres canciones tengo yo.",
-    "sentence_en": "The triangle has three sides, I have three songs.",
-    "sentence_lemmas": ["tres", "lado", "tener", "el", "triángulo", "tres", "canción", "tener", "yo"]
+    "sentence_es": "El triángulo tiene tres lados, mi casa cuatro paredes.",
+    "sentence_en": "A triangle has three sides; my house has four walls.",
+    "sentence_lemmas": ["el", "triángulo", "tener", "tres", "lado", "mi", "casa", "cuatro", "pared"]
   },
   {
     "order": 2690,
@@ -10205,9 +10205,9 @@
     "lemma": "pupitre",
     "es": "el pupitre",
     "en": "school desk",
-    "sentence_es": "En mi pupitre escribo, en mi patio canto.",
-    "sentence_en": "I write at my school desk, I sing in my yard.",
-    "sentence_lemmas": ["en", "mi", "pupitre", "escribir", "en", "mi", "patio", "cantar"]
+    "sentence_es": "En mi pupitre escribo, en el patio juego.",
+    "sentence_en": "I write at my school desk; I play in the yard.",
+    "sentence_lemmas": ["en", "mi", "pupitre", "escribir", "en", "el", "patio", "jugar"]
   },
   {
     "order": 2701,
@@ -10216,9 +10216,9 @@
     "lemma": "plumón",
     "es": "el plumón",
     "en": "marker pen (MX)",
-    "sentence_es": "Con mi plumón dibujo, con mi guitarra canto.",
-    "sentence_en": "I draw with my marker, I sing with my guitar.",
-    "sentence_lemmas": ["con", "mi", "plumón", "dibujar", "con", "mi", "guitarra", "cantar"]
+    "sentence_es": "Con mi plumón dibujo, dibujo un camino al mar.",
+    "sentence_en": "With my marker I draw, draw a path to the sea.",
+    "sentence_lemmas": ["con", "mi", "plumón", "dibujar", "dibujar", "un", "camino", "a", "mar"]
   },
   {
     "order": 2702,
@@ -10403,9 +10403,9 @@
     "lemma": "chimenea",
     "es": "la chimenea",
     "en": "fireplace",
-    "sentence_es": "La chimenea da calor, mi ventana da canciones.",
-    "sentence_en": "The fireplace gives warmth, my window gives songs.",
-    "sentence_lemmas": ["el", "chimenea", "dar", "calor", "mi", "ventana", "dar", "canción"]
+    "sentence_es": "La chimenea da calor, afuera todo está blanco.",
+    "sentence_en": "The fireplace gives warmth; outside everything is white.",
+    "sentence_lemmas": ["el", "chimenea", "dar", "calor", "fuera", "todo", "estar", "blanco"]
   },
   {
     "order": 2727,
@@ -10513,9 +10513,9 @@
     "lemma": "búho",
     "es": "el búho",
     "en": "owl",
-    "sentence_es": "El búho canta de noche, mi piano también.",
-    "sentence_en": "The owl sings at night, my piano does too.",
-    "sentence_lemmas": ["el", "búho", "cantar", "de", "noche", "mi", "piano", "también"]
+    "sentence_es": "Desde mi ventana veo al búho mirar la luna.",
+    "sentence_en": "From my window I see the owl watching the moon.",
+    "sentence_lemmas": ["desde", "mi", "ventana", "ver", "a", "búho", "mirar", "el", "luna"]
   },
   {
     "order": 2741,
@@ -10535,9 +10535,9 @@
     "lemma": "foca",
     "es": "la foca",
     "en": "seal",
-    "sentence_es": "Nada la foca, mi canción nada con ella.",
-    "sentence_en": "The seal swims, my song swims with it.",
-    "sentence_lemmas": ["nadar", "el", "foca", "mi", "canción", "nadar", "con", "ella"]
+    "sentence_es": "Mira una foca nadar, nadar en el agua fría.",
+    "sentence_en": "Watch a seal swim, swim in the cold water.",
+    "sentence_lemmas": ["mirar", "un", "foca", "nadar", "nadar", "en", "el", "agua", "frío"]
   },
   {
     "order": 2744,
@@ -10777,9 +10777,9 @@
     "lemma": "crema",
     "es": "la crema",
     "en": "cream",
-    "sentence_es": "Pongo crema en la sopa, pongo música al día.",
-    "sentence_en": "I put cream in the soup, I bring music into the day.",
-    "sentence_lemmas": ["poner", "crema", "en", "el", "sopa", "poner", "música", "a", "día"]
+    "sentence_es": "Pongo crema en la sopa, pongo amor al cocinar.",
+    "sentence_en": "I add cream to the soup; I put love into cooking.",
+    "sentence_lemmas": ["poner", "crema", "en", "el", "sopa", "poner", "amor", "a", "cocinar"]
   },
   {
     "order": 2781,
@@ -10810,9 +10810,9 @@
     "lemma": "naranjada",
     "es": "la naranjada",
     "en": "orangeade",
-    "sentence_es": "Mi naranjada está fría, mi canción sigue caliente.",
-    "sentence_en": "My orangeade is cold, my song stays warm.",
-    "sentence_lemmas": ["mi", "naranjada", "estar", "frío", "mi", "canción", "seguir", "caliente"]
+    "sentence_es": "Tomamos naranjada fría, comemos pan con la familia.",
+    "sentence_en": "We drink cold orangeade, eat bread with the family.",
+    "sentence_lemmas": ["tomar", "naranjada", "frío", "comer", "pan", "con", "el", "familia"]
   },
   {
     "order": 2785,
@@ -10843,9 +10843,9 @@
     "lemma": "vainilla",
     "es": "la vainilla",
     "en": "vanilla",
-    "sentence_es": "Huele a vainilla mi casa, suena a música también.",
-    "sentence_en": "My house smells of vanilla, it sounds of music too.",
-    "sentence_lemmas": ["oler", "a", "vainilla", "mi", "casa", "sonar", "a", "música", "también"]
+    "sentence_es": "Con vainilla hago pan, con leche hago el café.",
+    "sentence_en": "I make bread with vanilla, make coffee with milk.",
+    "sentence_lemmas": ["con", "vainilla", "hacer", "pan", "con", "leche", "hacer", "el", "café"]
   },
   {
     "order": 2788,
@@ -10876,9 +10876,9 @@
     "lemma": "garbanzo",
     "es": "el garbanzo",
     "en": "chickpea",
-    "sentence_es": "Cocino garbanzos despacio, canto con mi guitarra.",
-    "sentence_en": "I cook chickpeas slowly, I sing with my guitar.",
-    "sentence_lemmas": ["cocinar", "garbanzo", "despacio", "cantar", "con", "mi", "guitarra"]
+    "sentence_es": "Cocino garbanzos despacio, cocino para toda la familia.",
+    "sentence_en": "I cook chickpeas slowly; I cook for the whole family.",
+    "sentence_lemmas": ["cocinar", "garbanzo", "despacio", "cocinar", "para", "todo", "el", "familia"]
   },
   {
     "order": 2792,
@@ -11053,9 +11053,9 @@
     "lemma": "batir",
     "es": "batir",
     "en": "to whisk, to beat",
-    "sentence_es": "Bato huevos en la cocina, canto cuando horneo pan.",
-    "sentence_en": "I beat eggs in the kitchen, I sing when I bake bread.",
-    "sentence_lemmas": ["batir", "huevo", "en", "el", "cocina", "cantar", "cuando", "hornear", "pan"]
+    "sentence_es": "Bato huevos en la cocina, bato huevos para dos.",
+    "sentence_en": "I whisk eggs in the kitchen; I whisk eggs for two.",
+    "sentence_lemmas": ["batir", "huevo", "en", "el", "cocina", "batir", "huevo", "para", "dos"]
   },
   {
     "order": 2811,
@@ -11185,9 +11185,9 @@
     "lemma": "botana",
     "es": "la botana",
     "en": "snack (MX)",
-    "sentence_es": "Tengo botana para dos, tengo canciones para todos.",
-    "sentence_en": "I have snacks for two, I have songs for everyone.",
-    "sentence_lemmas": ["tener", "botana", "para", "dos", "tener", "canción", "para", "todo"]
+    "sentence_es": "Tengo botana para dos, tengo hambre para más.",
+    "sentence_en": "I have snacks for two; I have an appetite for more.",
+    "sentence_lemmas": ["tener", "botana", "para", "dos", "tener", "hambre", "para", "más"]
   },
   {
     "order": 2830,
@@ -11867,9 +11867,9 @@
     "lemma": "perfume",
     "es": "el perfume",
     "en": "perfume",
-    "sentence_es": "Tu perfume huele a flores, tu guitarra a mar.",
-    "sentence_en": "Your perfume smells of flowers, your guitar of the sea.",
-    "sentence_lemmas": ["tu", "perfume", "oler", "a", "flor", "tu", "guitarra", "a", "mar"]
+    "sentence_es": "Lleva tu perfume, lleva flores para tu madre.",
+    "sentence_en": "Take your perfume, take flowers for your mother.",
+    "sentence_lemmas": ["llevar", "tu", "perfume", "llevar", "flor", "para", "tu", "madre"]
   },
   {
     "order": 2913,
@@ -11922,9 +11922,9 @@
     "lemma": "gracioso",
     "es": "gracioso",
     "en": "witty, amusing",
-    "sentence_es": "Es gracioso mi gato, baila cuando suena mi guitarra.",
-    "sentence_en": "My cat is funny, he dances when my guitar sounds.",
-    "sentence_lemmas": ["ser", "gracioso", "mi", "gato", "bailar", "cuando", "sonar", "mi", "guitarra"]
+    "sentence_es": "Tenemos un gato gracioso, juega con todos nuestros zapatos.",
+    "sentence_en": "We have a funny cat; it plays with all our shoes.",
+    "sentence_lemmas": ["tener", "un", "gato", "gracioso", "jugar", "con", "todo", "nuestro", "zapato"]
   },
   {
     "order": 2918,
@@ -12065,9 +12065,9 @@
     "lemma": "roto",
     "es": "roto",
     "en": "torn, cracked",
-    "sentence_es": "Está roto mi vaso, pero mi canción sigue.",
-    "sentence_en": "My glass is broken, but my song goes on.",
-    "sentence_lemmas": ["estar", "roto", "mi", "vaso", "pero", "mi", "canción", "seguir"]
+    "sentence_es": "Mi vaso está roto, mi taza está rota también.",
+    "sentence_en": "My glass is broken, and my cup is broken too.",
+    "sentence_lemmas": ["mi", "vaso", "estar", "roto", "mi", "taza", "estar", "roto", "también"]
   },
   {
     "order": 2931,
@@ -12186,9 +12186,9 @@
     "lemma": "claxon",
     "es": "el claxon",
     "en": "vehicle horn (MX)",
-    "sentence_es": "Suena el claxon, mi guitarra responde desde casa.",
-    "sentence_en": "The horn sounds, my guitar answers from home.",
-    "sentence_lemmas": ["sonar", "el", "claxon", "mi", "guitarra", "responder", "desde", "casa"]
+    "sentence_es": "Suena el claxon, mi perro levanta las orejas.",
+    "sentence_en": "The horn sounds; my dog pricks up its ears.",
+    "sentence_lemmas": ["sonar", "el", "claxon", "mi", "perro", "levantar", "el", "oreja"]
   },
   {
     "order": 2962,
@@ -12329,9 +12329,9 @@
     "lemma": "cáscara",
     "es": "la cáscara",
     "en": "peel, shell",
-    "sentence_es": "Quito la cáscara del plátano, canto al desayunar.",
-    "sentence_en": "I remove the banana peel, I sing at breakfast.",
-    "sentence_lemmas": ["quitar", "el", "cáscara", "de", "plátano", "cantar", "a", "desayunar"]
+    "sentence_es": "Quito la cáscara del plátano, quito la del limón.",
+    "sentence_en": "I remove the banana peel; I remove the lemon peel.",
+    "sentence_lemmas": ["quitar", "el", "cáscara", "de", "plátano", "quitar", "el", "de", "limón"]
   },
   {
     "order": 2975,
@@ -12351,9 +12351,9 @@
     "lemma": "chorro",
     "es": "el chorro",
     "en": "jet of water, spout",
-    "sentence_es": "Un chorro de agua suena, mi guitarra también canta.",
-    "sentence_en": "A jet of water sounds, my guitar sings too.",
-    "sentence_lemmas": ["un", "chorro", "de", "agua", "sonar", "mi", "guitarra", "también", "cantar"]
+    "sentence_es": "Un chorro de agua sale, otro moja mis zapatos.",
+    "sentence_en": "One jet of water comes out; another wets my shoes.",
+    "sentence_lemmas": ["un", "chorro", "de", "agua", "salir", "otro", "mojar", "mi", "zapato"]
   },
   {
     "order": 2978,
@@ -12617,9 +12617,9 @@
     "lemma": "moda",
     "es": "la moda",
     "en": "fashion",
-    "sentence_es": "La moda cambia, mi vieja guitarra siempre va conmigo.",
-    "sentence_en": "Fashion changes, my old guitar always goes with me.",
-    "sentence_lemmas": ["el", "moda", "cambiar", "mi", "viejo", "guitarra", "siempre", "ir", "conmigo"]
+    "sentence_es": "La moda cambia, mi vieja chamarra sigue conmigo.",
+    "sentence_en": "Fashion changes; my old jacket stays with me.",
+    "sentence_lemmas": ["el", "moda", "cambiar", "mi", "viejo", "chamarra", "seguir", "conmigo"]
   },
   {
     "order": 3312,
@@ -12727,9 +12727,9 @@
     "lemma": "placer",
     "es": "el placer",
     "en": "delight, enjoyment",
-    "sentence_es": "Siento el placer de cantar, de cantar contigo.",
-    "sentence_en": "I feel the pleasure of singing, of singing with you.",
-    "sentence_lemmas": ["sentir", "el", "placer", "de", "cantar", "de", "cantar", "contigo"]
+    "sentence_es": "Siento el placer de viajar, de viajar contigo.",
+    "sentence_en": "I feel the pleasure of traveling, of traveling with you.",
+    "sentence_lemmas": ["sentir", "el", "placer", "de", "viajar", "de", "viajar", "contigo"]
   },
   {
     "order": 3322,
@@ -12760,9 +12760,9 @@
     "lemma": "remedio",
     "es": "el remedio",
     "en": "remedy, cure",
-    "sentence_es": "El remedio está en casa, mi canción también.",
-    "sentence_en": "The remedy is at home, my song is too.",
-    "sentence_lemmas": ["el", "remedio", "estar", "en", "casa", "mi", "canción", "también"]
+    "sentence_es": "Busco un remedio, busco volver a estar bien.",
+    "sentence_en": "I look for a remedy; I seek to feel well again.",
+    "sentence_lemmas": ["buscar", "un", "remedio", "buscar", "volver", "a", "estar", "bien"]
   },
   {
     "order": 3325,
@@ -12771,9 +12771,9 @@
     "lemma": "sabor",
     "es": "el sabor",
     "en": "flavor",
-    "sentence_es": "Mi sopa tiene sabor, mi tarde tiene canción.",
-    "sentence_en": "My soup has flavor, my afternoon has song.",
-    "sentence_lemmas": ["mi", "sopa", "tener", "sabor", "mi", "tarde", "tener", "canción"]
+    "sentence_es": "Mi sopa tiene sabor, mi casa tiene calor.",
+    "sentence_en": "My soup has flavor; my home has warmth.",
+    "sentence_lemmas": ["mi", "sopa", "tener", "sabor", "mi", "casa", "tener", "calor"]
   },
   {
     "order": 3326,
@@ -13466,9 +13466,9 @@
     "lemma": "viajero",
     "es": "el viajero",
     "en": "traveler",
-    "sentence_es": "El viajero lleva flores, lleva música en su maleta.",
-    "sentence_en": "The traveler carries flowers, carries music in his suitcase.",
-    "sentence_lemmas": ["el", "viajero", "llevar", "flor", "llevar", "música", "en", "su", "maleta"]
+    "sentence_es": "El viajero lleva mapas, lleva historias en su maleta.",
+    "sentence_en": "The traveler carries maps, carries stories in his suitcase.",
+    "sentence_lemmas": ["el", "viajero", "llevar", "mapa", "llevar", "historia", "en", "su", "maleta"]
   },
   {
     "order": 3861,
@@ -14577,9 +14577,9 @@
     "lemma": "cachorro",
     "es": "el cachorro",
     "en": "puppy, cub",
-    "sentence_es": "Mi cachorro corre al mar, corre cuando empiezo a cantar.",
-    "sentence_en": "My puppy runs to the sea, runs when I start singing.",
-    "sentence_lemmas": ["mi", "cachorro", "correr", "a", "mar", "correr", "cuando", "empezar", "a", "cantar"]
+    "sentence_es": "Mi cachorro corre al patio, corre para jugar conmigo.",
+    "sentence_en": "My puppy runs to the patio, runs to play with me.",
+    "sentence_lemmas": ["mi", "cachorro", "correr", "a", "patio", "correr", "para", "jugar", "conmigo"]
   },
   {
     "order": 4296,
@@ -14654,9 +14654,9 @@
     "lemma": "pollito",
     "es": "el pollito",
     "en": "chick",
-    "sentence_es": "Cuando se levantan, corren los pollitos.",
-    "sentence_en": "When they get up, the chicks run.",
-    "sentence_lemmas": ["cuando", "se", "levantarse", "correr", "el", "pollito"]
+    "sentence_es": "Hasta el otro día duermen los pollitos.",
+    "sentence_en": "The chicks sleep until the next day.",
+    "sentence_lemmas": ["hasta", "el", "otro", "día", "dormir", "el", "pollito"]
   },
   {
     "order": 4325,
@@ -14863,9 +14863,9 @@
     "lemma": "abuelita",
     "es": "la abuelita",
     "en": "granny",
-    "sentence_es": "Mi abuelita canta, toda la casa canta con ella.",
-    "sentence_en": "My granny sings, the whole house sings with her.",
-    "sentence_lemmas": ["mi", "abuelita", "cantar", "todo", "el", "casa", "cantar", "con", "ella"]
+    "sentence_es": "Con mi abuelita cocino, hago pan para el camino.",
+    "sentence_en": "I cook with my granny, make bread for the road.",
+    "sentence_lemmas": ["con", "mi", "abuelita", "cocinar", "hacer", "pan", "para", "el", "camino"]
   },
   {
     "order": 4381,
@@ -14896,9 +14896,9 @@
     "lemma": "hermanita",
     "es": "la hermanita",
     "en": "little sister",
-    "sentence_es": "Mi hermanita salta, salta cuando suena la guitarra.",
-    "sentence_en": "My little sister jumps, jumps when the guitar sounds.",
-    "sentence_lemmas": ["mi", "hermanita", "saltar", "saltar", "cuando", "sonar", "el", "guitarra"]
+    "sentence_es": "Jugamos con mi hermanita, jugamos hasta la noche.",
+    "sentence_en": "We play with my little sister, play until night.",
+    "sentence_lemmas": ["jugar", "con", "mi", "hermanita", "jugar", "hasta", "el", "noche"]
   },
   {
     "order": 4390,
