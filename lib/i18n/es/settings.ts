@@ -88,6 +88,8 @@ const es: typeof en = {
     strictAccents: 'Los acentos cuentan',
     tiredButton: 'Botón Sin energía',
     tiredButtonHint: (tab: string) => `Muestra el botón Sin energía en la pestaña ${tab}: las tarjetas que ya conoces bien salen primero en los repasos de hoy, y las palabras nuevas esperan.`,
+    fatigueDetector: 'Detector de cansancio',
+    fatigueDetectorHint: 'Mientras estudias, detecta si tardas más en responder o fallas las mismas tarjetas una y otra vez. En ese caso, te propone seguir con palabras que conoces bien. El calendario de repaso no cambia.',
     missCap: 'Las tarjetas falladas vuelven como máximo 3 veces',
     missCapHint: 'Una tarjeta fallada vuelve como máximo tres veces ese día; después espera hasta mañana. Su calendario de repaso no cambia.',
     strictAccentsHint: 'Un acento que falta (á, é, ñ) cuenta como error al escribir.',

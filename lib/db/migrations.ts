@@ -288,6 +288,11 @@ async function migrateToV4(db: SQLite.SQLiteDatabase) {
   await addColumnIfMissing(db, 'learn_settings', 'miss_cap', 'INTEGER');
 }
 
+// v5: automatic fatigue offers, opt-in for both existing and new databases.
+async function migrateToV5(db: SQLite.SQLiteDatabase) {
+  await addColumnIfMissing(db, 'learn_settings', 'fatigue_detector', 'INTEGER');
+}
+
 export interface Migration {
   version: number;
   up: (db: SQLite.SQLiteDatabase) => Promise<void>;
@@ -298,6 +303,7 @@ export const MIGRATIONS: readonly Migration[] = [
   { version: 2, up: migrateToV2 },
   { version: 3, up: migrateToV3 },
   { version: 4, up: migrateToV4 },
+  { version: 5, up: migrateToV5 },
 ];
 
 export const LATEST_SCHEMA_VERSION = MIGRATIONS[MIGRATIONS.length - 1].version;

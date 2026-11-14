@@ -86,6 +86,7 @@ export const TABLE_COLUMNS: Record<BackupTable, Record<string, ColumnSpec>> = {
     strict_accents: { type: 'number', nullable: true },
     tired_button: { type: 'number', nullable: true },
     miss_cap: { type: 'number', nullable: true },
+    fatigue_detector: { type: 'number', nullable: true },
     article_picker: { type: 'number', nullable: true },
     requeue_level: { type: 'string', nullable: true },
     feedback_btn_side: { type: 'string', nullable: true },

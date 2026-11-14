@@ -27,6 +27,7 @@ import { dockScrollInsets } from '@/components/learn/dockScrollInsets';
 import PcicRevealedAnswer, { SpainFormLabel } from '@/components/learn/PcicRevealedAnswer';
 import MistakesEntry from '@/components/learn/MistakesEntry';
 import MoreNewAsk from '@/components/learn/MoreNewAsk';
+import FatigueOffer from '@/components/learn/FatigueOffer';
 import { answerInputProps } from '@/lib/inputProps';
 import LevelPickerSheet from '@/components/LevelPickerSheet';
 import { BrutalBox, textOnFill } from '@/components/grammar/Brutal';
@@ -80,6 +81,9 @@ export default function PcicCardView({
   tired,
   showTired,
   handleTired,
+  fatigueOffer,
+  handleFatigueOfferAccept,
+  handleFatigueOfferDecline,
   today,
   batchBase,
   answerText,
@@ -202,6 +206,28 @@ export default function PcicCardView({
           onClose={() => setLevelSheetOpen(false)}
         />
         <MoreNewAsk colors={colors} onPick={handleAskMoreNew} onDecline={handleDeclineMoreNew} />
+      </View>
+    );
+  }
+
+  if (fatigueOffer && current && !grade) {
+    return (
+      <View style={[styles.container, styles.doneContainer, { backgroundColor: colors.background }]}>
+        <SkinBackdrop />
+        {headerRow}
+        <LevelPickerSheet
+          visible={levelSheetOpen}
+          active={level}
+          cards={allLevelCards}
+          colors={colors}
+          title={s.pcic.chooseLevel}
+          target={target}
+          exam={examRow}
+          onPlacement={openPlacement}
+          onSelect={handleSelectLevel}
+          onClose={() => setLevelSheetOpen(false)}
+        />
+        <FatigueOffer colors={colors} offer={fatigueOffer} onAccept={handleFatigueOfferAccept} onDecline={handleFatigueOfferDecline} />
       </View>
     );
   }

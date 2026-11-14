@@ -88,6 +88,8 @@ export default {
     strictAccents: 'Accents count',
     tiredButton: 'I’m tired button',
     tiredButtonHint: (tab: string) => `Shows the I’m tired button on the ${tab} tab: familiar cards come first among today’s reviews, with new words waiting until afterward.`,
+    fatigueDetector: 'Fatigue detector',
+    fatigueDetectorHint: 'While you study, it watches for slower answers or cards you keep missing. It then offers to continue with words you know well. Your review schedule stays the same.',
     missCap: 'Missed cards return at most 3 times',
     missCapHint: 'A missed card returns at most three times that day, then waits until tomorrow. Its review schedule stays the same.',
     strictAccentsHint: 'A missing accent (á, é, ñ) is a mistake when typing.',

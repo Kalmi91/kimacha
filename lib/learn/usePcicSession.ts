@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState, type SetStateAction } from 'react';
-import { TextInput } from 'react-native';
+import { Keyboard, TextInput } from 'react-native';
 import { router } from 'expo-router';
 import { speak, speakAuto, speakSequence, stopSpeaking } from '@/lib/speech';
 import { getDb } from '@/lib/database';
@@ -26,6 +26,8 @@ import { examStatusFor, examUnlock, levelHasLesson, type ExamLevelStatus } from 
 import { useScreenLoad } from '@/lib/useScreenLoad';
 import { loadResumeValue, saveResumeValue } from '@/lib/resumeStore';
 import { arrangeQueue, emptyFatigue, FATIGUE_KEY, isFatigueReview, readFatigue, recordMiss, undoMiss, type FatigueOptions, type FatigueState } from '@/lib/learn/fatigue';
+import { answerLog } from '@/lib/answerLog';
+import { currentRun, FATIGUE_DETECTOR, FATIGUE_OFFER_KEY, readFatigueOffer, shouldOfferFatigue, type FatigueOffer, type FatigueOfferState } from '@/lib/learn/fatigueDetector';
 
 // How long the level picker sheet takes to close (the RN-web Modal's 250 ms exit animation, which starts about 100 ms late, plus a margin).
 const SHEET_CLOSE_MS = 500;
@@ -52,6 +54,8 @@ interface UndoEntry {
   // The XP this grade added (undo takes it back); absent when it added none.
   xp?: { date: string; points: number };
   fatigueMiss?: { day: string; parked: boolean };
+  answerPair?: string;
+  answerThinkMs?: number;
 }
 
 // The PCIC tab's learning session: state, SRS stepping (SM-2), XP and streak writes,
@@ -90,6 +94,10 @@ export function usePcicSession() {
   const fatigueRef = useRef(fatigue);
   const [fatigueOptions, setFatigueOptions] = useState<FatigueOptions>({ tiredButton: false, missCap: false });
   const fatigueOptionsRef = useRef(fatigueOptions);
+  const [fatigueOffer, setFatigueOffer] = useState<FatigueOffer | null>(null);
+  const deferredFatigueOfferRef = useRef<FatigueOffer | null>(null);
+  const fatigueOfferStateRef = useRef<FatigueOfferState>(readFatigueOffer(null, ''));
+  const thinkRef = useRef<{ key: string; startedAt: number; thinkMs: number | null } | null>(null);
   // Every queue write, including functional updates, passes the same pure layer.
   const setQueue = useCallback((next: SetStateAction<Sm2Card[]>, opts: Pick<FatigueOptions, 'keepFirst' | 'mixNew'> = {}) => {
     setRawQueue((prev) => arrangeQueue(typeof next === 'function' ? next(prev) : next, todayRef.current, fatigueRef.current,
@@ -181,9 +189,12 @@ export function usePcicSession() {
     // session is built from them.
     const cards = dropOrphanCards(cardsForLevel(rawCards, lvl), (id) => findPcicItem(id) !== undefined);
     await refresh(['strictAccents']);
-    const { tiredButton, missCap } = await refresh(['tiredButton', 'missCap']);
-    const loadedOptions = { tiredButton, missCap };
-    const loadedFatigue = tiredButton || missCap ? readFatigue(await loadResumeValue(db, FATIGUE_KEY), day) : emptyFatigue(day);
+    const { tiredButton, missCap, fatigueDetector } = await refresh(['tiredButton', 'missCap', 'fatigueDetector']);
+    const loadedOptions = { tiredButton, missCap, detector: fatigueDetector };
+    const loadedFatigue = tiredButton || missCap || fatigueDetector ? readFatigue(await loadResumeValue(db, FATIGUE_KEY), day) : emptyFatigue(day);
+    fatigueOfferStateRef.current = readFatigueOffer(fatigueDetector ? await loadResumeValue(db, FATIGUE_OFFER_KEY) : null, day);
+    deferredFatigueOfferRef.current = null;
+    setFatigueOffer(null);
     fatigueOptionsRef.current = loadedOptions;
     setFatigueOptions(loadedOptions);
     fatigueRef.current = loadedFatigue;
@@ -210,6 +221,16 @@ export function usePcicSession() {
     // Card-level resume: the saved order and the "again" timers are put back on the rebuilt queue (invalid after a day change / level change).
     const resume = await loadLearnResume(db);
     const resumed = arrangeQueue(applyLearnResume(pickSm2Session(cards, pcicIntroOrder(newOrder), day, pcicSessionNewLimit({ limit: newLimit, bonus, introducedAllLevels, introducedThisLevel: introducedToday })), resume, day, lvl), day, loadedFatigue, { ...loadedOptions, mixNew: true });
+    if (fatigueDetector && !loadedFatigue.tired) {
+      const run = currentRun(answerLog.recent(pairOf(dir, sourceFor(dir, src)), FATIGUE_DETECTOR.MAX_RUN_ANSWERS), Date.now());
+      // Replay this run so an unanswered offer survives reopening even after later answers improve.
+      for (let end = 1; end <= run.length; end++) {
+        const offer = shouldOfferFatigue(run.slice(0, end), fatigueOfferStateRef.current, {
+          enabled: fatigueDetector, tired: loadedFatigue.tired, hasReview: resumed.some(c => isFatigueReview(c, day)),
+        });
+        if (offer) { setFatigueOffer(offer); break; }
+      }
+    }
     // FB542: reviews left with the new-word budget used up: ask about more new words (lib/pcicSession.ts shouldAskMoreNew).
     const declinedDay = await loadNewDeclinedDay(db);
     setNewDeclinedDay(declinedDay);
@@ -261,16 +282,16 @@ export function usePcicSession() {
   const newOrder = useMemo(() => pcicItemsForLevel(level).map((i) => i.id), [level]);
   const current = queue[0];
   const currentItem = current ? findPcicItem(current.itemId) : undefined;
-  const tired = fatigue.day === today && fatigueOptions.tiredButton && fatigue.tired;
-  const showTired = fatigueOptions.tiredButton && queue.some((c) => isFatigueReview(c, today));
+  const tired = fatigue.day === today && !!(fatigueOptions.tiredButton || fatigueOptions.detector) && fatigue.tired;
+  const showTired = (fatigueOptions.tiredButton && queue.some((c) => isFatigueReview(c, today))) || (!!fatigueOptions.detector && tired);
   const parkedCards = fatigueOptions.missCap && fatigue.day === today
     ? fatigue.parked.flatMap((id) => { const card = allCards.get(id); return card ? [card] : []; }) : [];
   const progressQueue = [...queue, ...parkedCards];
 
-  const handleTired = async () => {
-    if (gradingRef.current || pendingSkipRef.current > 0) return;
+  const setTiredMode = async (tired: boolean): Promise<boolean> => {
+    if (gradingRef.current || pendingSkipRef.current > 0) return false;
     const state = readFatigue(fatigueRef.current, todayRef.current);
-    const next = { ...state, tired: !state.tired };
+    const next = { ...state, tired };
     const arranged = arrangeQueue(queue, next.day, next, { ...fatigueOptionsRef.current, keepFirst: !!grade });
     const changedCard = arranged[0]?.itemId !== current?.itemId;
     const saved = persistFatigue(next);
@@ -282,11 +303,64 @@ export function usePcicSession() {
       setCardSeq((n) => n + 1);
     }
     await saved;
+    return true;
+  };
+
+  const handleFatigueOfferDecline = async () => {
+    if (!fatigueOptionsRef.current.detector) return;
+    const next = { day: todayRef.current, declinedAt: Date.now() };
+    fatigueOfferStateRef.current = next;
+    deferredFatigueOfferRef.current = null;
+    setFatigueOffer(null);
+    await saveResumeValue(getDb(), FATIGUE_OFFER_KEY, next);
+  };
+
+  const handleTired = async () => {
+    if (gradingRef.current || pendingSkipRef.current > 0) return;
+    const wasTired = readFatigue(fatigueRef.current, todayRef.current).tired;
+    if (wasTired && fatigueOptionsRef.current.detector) await handleFatigueOfferDecline();
+    await setTiredMode(!wasTired);
+  };
+
+  const handleFatigueOfferAccept = async () => {
+    if (!fatigueOptionsRef.current.detector || gradingRef.current || pendingSkipRef.current > 0) return;
+    if (await setTiredMode(true)) {
+      deferredFatigueOfferRef.current = null;
+      setFatigueOffer(null);
+    }
   };
 
   // The FeedbackButton's pair label with the active direction
   // (it used to be hard-coded to "es-en", although the actual behavior was en-es).
   const languagePair = pairOf(target, sourceLang);
+
+  useEffect(() => {
+    if (loading || !today) return;
+    const hasReview = queue.some(c => isFatigueReview(c, today));
+    if (!fatigueOptions.detector || tired || !hasReview) {
+      deferredFatigueOfferRef.current = null;
+      setFatigueOffer(null);
+      return;
+    }
+    if (fatigueOffer) return;
+    let offer = deferredFatigueOfferRef.current;
+    if (!offer) {
+      const run = currentRun(answerLog.recent(languagePair, FATIGUE_DETECTOR.MAX_RUN_ANSWERS), Date.now());
+      offer = shouldOfferFatigue(run, fatigueOfferStateRef.current, {
+        enabled: !!fatigueOptions.detector, tired, hasReview,
+      });
+    }
+    if (grade) {
+      deferredFatigueOfferRef.current = offer;
+      return;
+    }
+    deferredFatigueOfferRef.current = null;
+    if (offer) setFatigueOffer(previous => previous ?? offer);
+  }, [loading, today, languagePair, fatigueOptions.detector, tired, queue, fatigueOffer, grade]);
+
+  useEffect(() => {
+    if (fatigueOffer) Keyboard.dismiss();
+  }, [fatigueOffer]);
 
   // The prompt is the source-language field and the answer is the
   // target-language one; in en-es this is the old order (prompt en, answer es), in es-en
@@ -301,15 +375,30 @@ export function usePcicSession() {
   // changes) it should not repeat.
   // The prompt waits while the more-new-words question (FB542) replaces the card.
   useEffect(() => {
-    if (!loading && !askMoreNew && currentItem && promptSource && !grade) {
+    if (!loading && !askMoreNew && !fatigueOffer && currentItem && promptSource && !grade) {
       speakAuto(promptSource, speechLang(sourceLang)); // silent right after the app opens (lib/speech.ts)
     }
     // On a card change, any read-aloud in progress
     // (e.g. the word + example sentence chain after Check) should stop (same pattern).
     return () => stopSpeaking();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [current?.itemId, loading, askMoreNew, loadSeq]);
-  useFocusOnNewCard(inputRef, !loading && !askMoreNew && !!currentItem && !!promptSource && !grade, `${current?.itemId}-${cardSeq}-${loadSeq}`);
+  }, [current?.itemId, loading, askMoreNew, fatigueOffer, loadSeq]);
+  useFocusOnNewCard(inputRef, !loading && !askMoreNew && !fatigueOffer && !!currentItem && !!promptSource && !grade, `${current?.itemId}-${cardSeq}-${loadSeq}`);
+
+  const answerable = !loading && !askMoreNew && !fatigueOffer && !!currentItem && !!promptSource && !grade;
+  const answerKey = `${current?.itemId}-${cardSeq}-${loadSeq}`;
+  useEffect(() => {
+    if (answerable) {
+      thinkRef.current = { key: answerKey, startedAt: Date.now(), thinkMs: null };
+    }
+  }, [answerable, answerKey]);
+
+  const captureThinkMs = () => {
+    const timer = thinkRef.current;
+    if (!timer) return 0;
+    if (timer.thinkMs === null) timer.thinkMs = Math.min(FATIGUE_DETECTOR.MAX_THINK_MS, Math.max(0, Date.now() - timer.startedAt));
+    return timer.thinkMs;
+  };
 
   // Card-level resume: after every queue / batch change it saves a snapshot (lib/learnResume.ts).
   useEffect(() => {
@@ -348,6 +437,8 @@ export function usePcicSession() {
   // caller handleGrade, separately.
   const commitGrade = async (g: Sm2Grade): Promise<Sm2Card | null> => {
     if (!current) return null;
+    const thinkMs = captureThinkMs();
+    const answeredAt = Date.now();
     const wasNew = current.state === 'new';
     const before = { ...current };
     const next = sm2Review(current, g, today);
@@ -370,7 +461,8 @@ export function usePcicSession() {
       fatigueMiss = { day, parked: !previous.parked.includes(current.itemId) && updated.parked.includes(current.itemId) };
       await persistFatigue(updated);
     }
-    setLastGraded({ before, after: next, typed: typedAnswer, grade, wasNew, g, counted: true, xp: earned ? { date: earned.date, points } : undefined, fatigueMiss });
+    answerLog.append({ at: answeredAt, pair: languagePair, itemId: current.itemId, thinkMs, knew: g !== 'again' });
+    setLastGraded({ before, after: next, typed: typedAnswer, grade, wasNew, g, counted: true, xp: earned ? { date: earned.date, points } : undefined, fatigueMiss, answerPair: languagePair, answerThinkMs: thinkMs });
     setSessionAnswered((n) => n + 1);
     if (wasNew) setSessionNew((n) => n + 1);
     if (g === 'again') setSessionAgain((n) => n + 1);
@@ -437,6 +529,7 @@ export function usePcicSession() {
 
   const handleCheck = async () => {
     if (!current || !currentItem || !answerText) return;
+    captureThinkMs();
     const answer = composeAnswer(articlePick, typedAnswer);
     if (answer.trim().length === 0) {
       // An empty submission also reveals the correct form and
@@ -486,6 +579,8 @@ export function usePcicSession() {
     setQueue((prev) => requeueAfterUndo(prev, lastGraded.before, lastGraded.after, today), { keepFirst: true });
     // The floor is 0 because it can be pressed during a session reset (load) too.
     if (lastGraded.counted) {
+      answerLog.removeLast(lastGraded.answerPair ?? languagePair, lastGraded.before.itemId);
+      thinkRef.current = { key: `${lastGraded.before.itemId}-${cardSeq}-${loadSeq}`, startedAt: Date.now(), thinkMs: lastGraded.answerThinkMs ?? null };
       setSessionAnswered((n) => Math.max(0, n - 1));
       if (lastGraded.wasNew) setSessionNew((n) => Math.max(0, n - 1));
       if (lastGraded.g === 'again') setSessionAgain((n) => Math.max(0, n - 1));
@@ -615,6 +710,9 @@ export function usePcicSession() {
     tired,
     showTired,
     handleTired,
+    fatigueOffer,
+    handleFatigueOfferAccept,
+    handleFatigueOfferDecline,
     parkedCards,
     progressQueue,
   };
