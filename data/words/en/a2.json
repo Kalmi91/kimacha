@@ -368,7 +368,7 @@
     "topic": "travel",
     "topicOrder": 10,
     "sentence_es": "¡Nuestras vacaciones empiezan la próxima semana!",
-    "sentence_en": "Our vacation starts next week!",
+    "sentence_en": "Our holiday starts next week!",
     "pos": "noun",
     "gender": "f"
   },
@@ -731,7 +731,7 @@
     "topic": "shopping",
     "topicOrder": 6,
     "sentence_es": "El cliente preguntó por el precio.",
-    "sentence_en": "The customer asked about the price.",
+    "sentence_en": "The client asked about the price.",
     "pos": "noun",
     "gender": "m"
   },
@@ -1124,7 +1124,7 @@
     "topic": "feelings",
     "topicOrder": 6,
     "sentence_es": "Mi jefe estaba enojado por el informe.",
-    "sentence_en": "My boss was angry about the report.",
+    "sentence_en": "My boss was mad about the report.",
     "pos": "adj"
   },
   {
@@ -1179,7 +1179,7 @@
     "topic": "feelings",
     "topicOrder": 11,
     "sentence_es": "Ella se avergonzó porque olvidó su nombre.",
-    "sentence_en": "She was embarrassed because she forgot his name.",
+    "sentence_en": "She was ashamed because she forgot his name.",
     "pos": "adj"
   },
   {
@@ -1777,7 +1777,7 @@
     "topic": "office_work",
     "topicOrder": 2,
     "sentence_es": "Mi compañero de trabajo me ayudó con el informe.",
-    "sentence_en": "My colleague helped me with the report.",
+    "sentence_en": "My coworker helped me with the report.",
     "pos": "noun",
     "gender": "m"
   },
@@ -1848,8 +1848,8 @@
     "en": "break / rest",
     "topic": "office_work",
     "topicOrder": 8,
-    "sentence_es": "Tomemos un descanso de diez minutos.",
-    "sentence_en": "Let's take a break for ten minutes.",
+    "sentence_es": "Descansemos diez minutos.",
+    "sentence_en": "Let's rest for ten minutes.",
     "pos": "noun",
     "gender": "m"
   },
@@ -2397,7 +2397,7 @@
     "topic": "travel",
     "topicOrder": 17,
     "sentence_es": "El viernes en la noche tenemos una reservación.",
-    "sentence_en": "On Friday night we have a reservation.",
+    "sentence_en": "On Friday night we have a booking.",
     "pos": "noun",
     "gender": "f"
   },
@@ -2479,8 +2479,8 @@
     "en": "currency / coin",
     "topic": "travel",
     "topicOrder": 24,
-    "sentence_es": "¿Cuál es la moneda de España?",
-    "sentence_en": "What is the currency in Spain?",
+    "sentence_es": "Encontré una moneda debajo de la mesa.",
+    "sentence_en": "I found a coin under the table.",
     "pos": "noun",
     "gender": "f"
   },
@@ -2762,7 +2762,7 @@
     "topic": "will",
     "topicOrder": 22,
     "sentence_es": "Seguro te llamo mañana.",
-    "sentence_en": "I'll certainly call you tomorrow.",
+    "sentence_en": "I will surely call you tomorrow.",
     "pos": "adv"
   },
   {
@@ -2794,8 +2794,8 @@
     "en": "finally / eventually",
     "topic": "will",
     "topicOrder": 25,
-    "sentence_es": "Al final va a encontrar un trabajo.",
-    "sentence_en": "She will eventually find a job.",
+    "sentence_es": "Por fin encontré un trabajo.",
+    "sentence_en": "I finally found a job.",
     "pos": "adv"
   },
   {
@@ -2829,7 +2829,7 @@
     "topic": "shopping",
     "topicOrder": 14,
     "sentence_es": "¿Puedo cambiar esta camisa por una talla más grande?",
-    "sentence_en": "Can I exchange this shirt for a bigger size?",
+    "sentence_en": "Can I change this shirt for a bigger size?",
     "pos": "verb"
   },
   {
@@ -3859,7 +3859,7 @@
     "topic": "education",
     "topicOrder": 21,
     "sentence_es": "Cometí un error en el examen.",
-    "sentence_en": "I made a mistake in the exam.",
+    "sentence_en": "I made an error in the exam.",
     "pos": "noun",
     "gender": "m"
   },
@@ -4643,8 +4643,8 @@
     "en": "hand luggage / carry-on",
     "topic": "travel",
     "topicOrder": 30,
-    "sentence_es": "El equipaje de mano debe ser pequeño.",
-    "sentence_en": "Hand luggage must be small.",
+    "sentence_es": "Tu equipaje de mano debe ser pequeño.",
+    "sentence_en": "Your carry-on must be small.",
     "pos": "noun",
     "gender": "m"
   },
@@ -4786,7 +4786,7 @@
     "topic": "shopping",
     "topicOrder": 32,
     "sentence_es": "La laptop tiene dos años de garantía.",
-    "sentence_en": "The laptop has a two-year guarantee.",
+    "sentence_en": "The laptop has a two-year warranty.",
     "pos": "noun",
     "gender": "f"
   },
@@ -5436,7 +5436,7 @@
     "topic": "office_work",
     "topicOrder": 40,
     "sentence_es": "Me dieron un aumento en enero.",
-    "sentence_en": "I got a pay rise in January.",
+    "sentence_en": "I got a raise in January.",
     "pos": "noun",
     "gender": "m"
   },
@@ -6057,7 +6057,7 @@
     "topic": "comparatives",
     "topicOrder": 34,
     "sentence_es": "El precio es igual en las dos tiendas.",
-    "sentence_en": "The price is equal in the two stores.",
+    "sentence_en": "The price is the same in the two stores.",
     "pos": "adj"
   },
   {
@@ -6504,8 +6504,8 @@
     "en": "sentence / phrase",
     "topic": "education",
     "topicOrder": 41,
-    "sentence_es": "Esta oración es muy larga para mí.",
-    "sentence_en": "This sentence is too long for me.",
+    "sentence_es": "Esta frase es muy larga para mí.",
+    "sentence_en": "This phrase is too long for me.",
     "pos": "noun",
     "gender": "f"
   },
@@ -6702,7 +6702,7 @@
     "topic": "education",
     "topicOrder": 56,
     "sentence_es": "No recuerdo su nombre.",
-    "sentence_en": "I don't remember his name.",
+    "sentence_en": "I do not recall his name.",
     "pos": "verb"
   },
   {
@@ -6891,7 +6891,7 @@
     "topic": "office_work",
     "topicOrder": 47,
     "sentence_es": "Nuestro objetivo de este mes es claro.",
-    "sentence_en": "Our goal for this month is clear.",
+    "sentence_en": "Our aim for this month is clear.",
     "pos": "noun",
     "gender": "m"
   },
@@ -7847,7 +7847,7 @@
     "topic": "office_work",
     "topicOrder": 71,
     "sentence_es": "A todos en mi clase les cae bien el maestro.",
-    "sentence_en": "Everybody in my class likes the teacher.",
+    "sentence_en": "Everyone in my class likes the teacher.",
     "pos": "phrase"
   },
   {
@@ -8203,8 +8203,8 @@
     "en": "permission / permit",
     "topic": "must_have_to",
     "topicOrder": 41,
-    "sentence_es": "Necesito el permiso del jefe.",
-    "sentence_en": "I need the permission of the boss.",
+    "sentence_es": "Necesito un permiso para trabajar aquí.",
+    "sentence_en": "I need a permit to work here.",
     "pos": "noun",
     "gender": "m"
   },
@@ -8216,7 +8216,7 @@
     "topic": "office_work",
     "topicOrder": 72,
     "sentence_es": "El pasillo es largo y la luz es mala.",
-    "sentence_en": "The corridor is long, and the light is bad.",
+    "sentence_en": "The hallway is long, and the light is bad.",
     "pos": "noun",
     "gender": "m"
   },

@@ -6,9 +6,9 @@
     "lemma": "ofrecer",
     "es": "ofrecer",
     "en": "to offer",
-    "sentence_es": "Cuando llegan mis amigos, siempre les ofrezco café.",
-    "sentence_en": "When my friends arrive, I always offer them coffee.",
-    "sentence_lemmas": ["cuando", "llegar", "mi", "amigo", "siempre", "le", "ofrecer", "café"]
+    "sentence_es": "Ofrezco pan al viajero, ofrezco café al que llega.",
+    "sentence_en": "I offer bread to the traveler, coffee to whoever arrives.",
+    "sentence_lemmas": ["ofrecer", "pan", "a", "viajero", "ofrecer", "café", "a", "que", "llegar"]
   },
   {
     "order": 302,
@@ -17,9 +17,9 @@
     "lemma": "permitir",
     "es": "permitir",
     "en": "to allow, to permit",
-    "sentence_es": "¿Permite tu profesor usar el teléfono en clase?",
-    "sentence_en": "Does your teacher allow using the phone in class?",
-    "sentence_lemmas": ["permitir", "tu", "profesor", "usar", "el", "teléfono", "en", "clase"]
+    "sentence_es": "Mi madre permite jugar, permite correr por toda la casa.",
+    "sentence_en": "My mother allows playing, allows running all over the house.",
+    "sentence_lemmas": ["mi", "madre", "permitir", "jugar", "permitir", "correr", "por", "todo", "el", "casa"]
   },
   {
     "order": 303,
@@ -29,9 +29,9 @@
     "es": "intentar",
     "en": "to try, to attempt",
     "hint_en": "I am going to *try* to arrive early",
-    "sentence_es": "Ayer intenté llamarte tres veces, pero no respondiste.",
-    "sentence_en": "Yesterday I tried to call you three times, but you did not answer.",
-    "sentence_lemmas": ["ayer", "intentar", "llamar", "tres", "vez", "pero", "no", "responder"]
+    "sentence_es": "Intento llegar temprano, intento ver contigo el sol.",
+    "sentence_en": "I try to arrive early, try to see the sun with you.",
+    "sentence_lemmas": ["intentar", "llegar", "temprano", "intentar", "ver", "contigo", "el", "sol"]
   },
   {
     "order": 304,
@@ -40,9 +40,9 @@
     "lemma": "tratar",
     "es": "tratar",
     "en": "to treat, to deal with; to make an effort to do something",
-    "sentence_es": "Ella trata de dormir temprano para estar bien mañana.",
-    "sentence_en": "She tries to go to bed early so she feels well tomorrow.",
-    "sentence_lemmas": ["ella", "tratar", "de", "dormir", "temprano", "para", "estar", "bien", "mañana"]
+    "sentence_es": "Trato de escuchar primero, trato de entender después.",
+    "sentence_en": "I make an effort to listen first, an effort to understand afterward.",
+    "sentence_lemmas": ["tratar", "de", "escuchar", "primero", "tratar", "de", "entender", "después"]
   },
   {
     "order": 306,
@@ -51,9 +51,9 @@
     "lemma": "decidir",
     "es": "decidir",
     "en": "to decide",
-    "sentence_es": "Después de pensarlo mucho, decidimos vivir en otra ciudad.",
-    "sentence_en": "After thinking about it a lot, we decided to live in another city.",
-    "sentence_lemmas": ["después", "de", "pensar", "mucho", "decidir", "vivir", "en", "otro", "ciudad"]
+    "sentence_es": "Decido salir sin prisa, decido conocer otra calle.",
+    "sentence_en": "I decide to leave without hurrying, decide to discover another street.",
+    "sentence_lemmas": ["decidir", "salir", "sin", "prisa", "decidir", "conocer", "otro", "calle"]
   },
   {
     "order": 307,
@@ -62,9 +62,9 @@
     "lemma": "elegir",
     "es": "elegir / escoger",
     "en": "to choose",
-    "sentence_es": "¿Quieres elegir tú la película de esta noche?",
-    "sentence_en": "Do you want to choose tonight's movie yourself?",
-    "sentence_lemmas": ["querer", "elegir", "tú", "el", "película", "de", "este", "noche"]
+    "sentence_es": "Elijo el camino largo, elijo caminar contigo.",
+    "sentence_en": "I choose the long way, choose to walk with you.",
+    "sentence_lemmas": ["elegir", "el", "camino", "largo", "elegir", "caminar", "contigo"]
   },
   {
     "order": 309,
@@ -74,9 +74,9 @@
     "es": "enviar",
     "en": "to send (mail, parcel)",
     "hint_en": "I will *send* a letter today.",
-    "sentence_es": "Envié el paquete por correo hace dos días y todavía no llega.",
-    "sentence_en": "I sent the package by mail two days ago and it still has not arrived.",
-    "sentence_lemmas": ["enviar", "el", "paquete", "por", "correo", "hacer", "dos", "día", "y", "todavía", "no", "llegar"]
+    "sentence_es": "Envío una carta al mar, envío otra para verte sonreír.",
+    "sentence_en": "I send a letter to the sea, I send another to see you smile.",
+    "sentence_lemmas": ["enviar", "un", "carta", "a", "mar", "enviar", "otro", "para", "ver", "sonreír"]
   },
   {
     "order": 310,
@@ -86,9 +86,9 @@
     "es": "mandar",
     "en": "to send; to command",
     "hint_en": "My father *sends* me money every month",
-    "sentence_es": "¿Quién te manda mensajes tan tarde?",
-    "sentence_en": "Who sends you messages so late?",
-    "sentence_lemmas": ["quién", "te", "mandar", "mensaje", "tan", "tarde"]
+    "sentence_es": "Mando flores a tu casa, mando cartas cada mes.",
+    "sentence_en": "I send flowers to your house, send letters every month.",
+    "sentence_lemmas": ["mandar", "flor", "a", "tu", "casa", "mandar", "carta", "cada", "mes"]
   },
   {
     "order": 311,
@@ -97,9 +97,9 @@
     "lemma": "existir",
     "es": "existir",
     "en": "to exist",
-    "sentence_es": "¿Existe un autobús del centro al aeropuerto?",
-    "sentence_en": "Is there a bus from downtown to the airport?",
-    "sentence_lemmas": ["existir", "un", "autobús", "de", "centro", "a", "aeropuerto"]
+    "sentence_es": "Existe un lugar tranquilo, existe cerca de mi casa.",
+    "sentence_en": "A quiet place exists; it exists near my house.",
+    "sentence_lemmas": ["existir", "un", "lugar", "tranquilo", "existir", "cerca", "de", "mi", "casa"]
   },
   {
     "order": 312,
@@ -108,9 +108,9 @@
     "lemma": "ocurrir",
     "es": "ocurrir",
     "en": "to occur, to take place",
-    "sentence_es": "¿Qué ocurrió anoche? Escuché un ruido muy fuerte.",
-    "sentence_en": "What happened last night? I heard a very loud noise.",
-    "sentence_lemmas": ["qué", "ocurrir", "anoche", "escuchar", "un", "ruido", "muy", "fuerte"]
+    "sentence_es": "Ocurre cada mañana: sale el sol, despierta mi casa.",
+    "sentence_en": "It occurs every morning: the sun rises, my house wakes.",
+    "sentence_lemmas": ["ocurrir", "cada", "mañana", "salir", "el", "sol", "despertar", "mi", "casa"]
   },
   {
     "order": 313,
@@ -119,9 +119,9 @@
     "lemma": "descubrir",
     "es": "descubrir",
     "en": "to discover",
-    "sentence_es": "Descubrimos una tienda muy barata detrás del mercado.",
-    "sentence_en": "We discovered a very cheap shop behind the market.",
-    "sentence_lemmas": ["descubrir", "un", "tienda", "muy", "barato", "detrás", "de", "mercado"]
+    "sentence_es": "Descubro calles nuevas, descubro historias en cada esquina.",
+    "sentence_en": "I discover new streets, discover stories at every corner.",
+    "sentence_lemmas": ["descubrir", "calle", "nuevo", "descubrir", "historia", "en", "cada", "esquina"]
   },
   {
     "order": 314,
@@ -131,9 +131,9 @@
     "es": "conseguir",
     "en": "to get, to manage to",
     "hint_en": "I hope you *get* a better job",
-    "sentence_es": "Estudia mucho y conseguirás un buen trabajo.",
-    "sentence_en": "Study hard and you will get a good job.",
-    "sentence_lemmas": ["estudiar", "mucho", "y", "conseguir", "un", "bueno", "trabajo"]
+    "sentence_es": "Consigo pan para todos, consigo tiempo para estar contigo.",
+    "sentence_en": "I get bread for everyone, find time to be with you.",
+    "sentence_lemmas": ["conseguir", "pan", "para", "todo", "conseguir", "tiempo", "para", "estar", "contigo"]
   },
   {
     "order": 315,
@@ -142,9 +142,9 @@
     "lemma": "mantener",
     "es": "mantener",
     "en": "to keep, to maintain",
-    "sentence_es": "Mantenemos nuestro jardín limpio todo el año.",
-    "sentence_en": "We keep our garden clean all year round.",
-    "sentence_lemmas": ["mantener", "nuestro", "jardín", "limpiar", "todo", "el", "año"]
+    "sentence_es": "Mantengo la ventana abierta, mantengo mi casa con luz.",
+    "sentence_en": "I keep the window open, keep my house lit.",
+    "sentence_lemmas": ["mantener", "el", "ventana", "abierto", "mantener", "mi", "casa", "con", "luz"]
   },
   {
     "order": 316,
@@ -153,9 +153,9 @@
     "lemma": "crear",
     "es": "crear",
     "en": "to create",
-    "sentence_es": "Los niños crean un dibujo muy bonito con papel y colores.",
-    "sentence_en": "The children create a very pretty picture with paper and colors.",
-    "sentence_lemmas": ["el", "niño", "crear", "un", "dibujo", "muy", "bonito", "con", "papel", "y", "color"]
+    "sentence_es": "Creo un jardín pequeño, creo un lugar para volver.",
+    "sentence_en": "I create a small garden, create a place to return to.",
+    "sentence_lemmas": ["crear", "un", "jardín", "pequeño", "crear", "un", "lugar", "para", "volver"]
   },
   {
     "order": 317,
@@ -164,9 +164,9 @@
     "lemma": "incluir",
     "es": "incluir",
     "en": "to include",
-    "sentence_es": "¿El precio incluye la comida o solo la habitación?",
-    "sentence_en": "Does the price include the meal or only the room?",
-    "sentence_lemmas": ["el", "precio", "incluir", "el", "comida", "o", "solo", "el", "habitación"]
+    "sentence_es": "Mi maleta incluye mapas, mi viaje incluye tiempo para mirar.",
+    "sentence_en": "My suitcase includes maps; my trip includes time to look around.",
+    "sentence_lemmas": ["mi", "maleta", "incluir", "mapa", "mi", "viaje", "incluir", "tiempo", "para", "mirar"]
   },
   {
     "order": 318,
@@ -175,9 +175,9 @@
     "lemma": "presentar",
     "es": "presentar",
     "en": "to introduce, to present",
-    "sentence_es": "Mañana voy a presentar mi proyecto frente a toda la clase.",
-    "sentence_en": "Tomorrow I am going to present my project in front of the whole class.",
-    "sentence_lemmas": ["mañana", "ir", "a", "presentar", "mi", "proyecto", "frente", "a", "todo", "el", "clase"]
+    "sentence_es": "Presento mi proyecto, presento la idea de un jardín para todos.",
+    "sentence_en": "I present my project, present the idea of a garden for everyone.",
+    "sentence_lemmas": ["presentar", "mi", "proyecto", "presentar", "el", "idea", "de", "un", "jardín", "para", "todo"]
   },
   {
     "order": 319,
@@ -186,9 +186,9 @@
     "lemma": "considerar",
     "es": "considerar",
     "en": "to consider",
-    "sentence_es": "Considero que ustedes hicieron un buen trabajo.",
-    "sentence_en": "I think you did a good job.",
-    "sentence_lemmas": ["considerar", "que", "usted", "hacer", "un", "bueno", "trabajo"]
+    "sentence_es": "Considero cada oferta, considero cada idea antes de elegir.",
+    "sentence_en": "I consider every offer, every idea before choosing.",
+    "sentence_lemmas": ["considerar", "cada", "oferta", "considerar", "cada", "idea", "antes", "de", "elegir"]
   },
   {
     "order": 320,
@@ -197,9 +197,9 @@
     "lemma": "crecer",
     "es": "crecer",
     "en": "to grow",
-    "sentence_es": "Las plantas del jardín crecen rápido con tanta lluvia.",
-    "sentence_en": "The garden plants grow fast with so much rain.",
-    "sentence_lemmas": ["el", "planta", "de", "jardín", "crecer", "rápido", "con", "tanto", "lluvia"]
+    "sentence_es": "Crece la flor en mi patio, crece mi niño en casa.",
+    "sentence_en": "The flower grows in my patio; my child grows at home.",
+    "sentence_lemmas": ["crecer", "el", "flor", "en", "mi", "patio", "crecer", "mi", "niño", "en", "casa"]
   },
   {
     "order": 321,
@@ -219,9 +219,9 @@
     "lemma": "nacer",
     "es": "nacer",
     "en": "to be born",
-    "sentence_es": "¿En qué ciudad naciste y dónde creciste?",
-    "sentence_en": "In which city were you born and where did you grow up?",
-    "sentence_lemmas": ["en", "qué", "ciudad", "nacer", "y", "dónde", "crecer"]
+    "sentence_es": "Nace una flor en mi patio, nace una idea en mí.",
+    "sentence_en": "A flower is born in my patio; an idea is born in me.",
+    "sentence_lemmas": ["nacer", "un", "flor", "en", "mi", "patio", "nacer", "un", "idea", "en", "yo"]
   },
   {
     "order": 323,
@@ -231,9 +231,9 @@
     "es": "sacar",
     "en": "to take out, to get out, to pull out",
     "hint_en": "I *take* the keys out of my bag.",
-    "sentence_es": "Necesito sacar dinero del cajero antes de ir al mercado.",
-    "sentence_en": "I need to get money out of the ATM before going to the market.",
-    "sentence_lemmas": ["necesitar", "sacar", "dinero", "de", "cajero", "antes", "de", "ir", "a", "mercado"]
+    "sentence_es": "Saco la mesa al patio, saco los vasos al sol.",
+    "sentence_en": "I take the table out to the patio, take the glasses out into the sun.",
+    "sentence_lemmas": ["sacar", "el", "mesa", "a", "patio", "sacar", "el", "vaso", "a", "sol"]
   },
   {
     "order": 324,
@@ -243,9 +243,9 @@
     "es": "dejar",
     "en": "to leave (behind); to let",
     "hint_en": "Do not *leave* the door open",
-    "sentence_es": "Dejé mis llaves en la mesa y ahora no puedo entrar.",
-    "sentence_en": "I left my keys on the table and now I cannot get in.",
-    "sentence_lemmas": ["dejar", "mi", "llave", "en", "el", "mesa", "y", "ahora", "no", "poder", "entrar"]
+    "sentence_es": "Dejo flores en tu puerta, dejo pan en tu mesa.",
+    "sentence_en": "I leave flowers at your door, leave bread on your table.",
+    "sentence_lemmas": ["dejar", "flor", "en", "tu", "puerta", "dejar", "pan", "en", "tu", "mesa"]
   },
   {
     "order": 325,
@@ -255,9 +255,9 @@
     "es": "mover",
     "en": "to move",
     "hint_en": "Can you *move* your car",
-    "sentence_es": "Ayer moví los muebles de mi casa sin ayuda.",
-    "sentence_en": "Yesterday I moved the furniture in my house without help.",
-    "sentence_lemmas": ["ayer", "mover", "el", "mueble", "de", "mi", "casa", "sin", "ayudar"]
+    "sentence_es": "Muevo las sillas al patio, muevo la mesa también.",
+    "sentence_en": "I move the chairs to the patio, move the table too.",
+    "sentence_lemmas": ["mover", "el", "silla", "a", "patio", "mover", "el", "mesa", "también"]
   },
   {
     "order": 326,
@@ -266,9 +266,9 @@
     "lemma": "subir",
     "es": "subir",
     "en": "to go up, to get on",
-    "sentence_es": "Los pasajeros suben al autobús por la puerta de adelante.",
-    "sentence_en": "The passengers get on the bus by the front door.",
-    "sentence_lemmas": ["el", "pasajero", "subir", "a", "autobús", "por", "el", "puerta", "de", "adelante"]
+    "sentence_es": "Para subir al cielo se necesita una escalera grande.",
+    "sentence_en": "To go up to the sky, you need a big ladder.",
+    "sentence_lemmas": ["para", "subir", "a", "cielo", "se", "necesitar", "un", "escalera", "grande"]
   },
   {
     "order": 328,
@@ -277,9 +277,9 @@
     "lemma": "caer",
     "es": "caer",
     "en": "to fall",
-    "sentence_es": "Con la lluvia, muchas personas se cayeron en la calle.",
-    "sentence_en": "In the rain, many people fell down in the street.",
-    "sentence_lemmas": ["con", "el", "lluvia", "mucho", "persona", "se", "caer", "en", "el", "calle"]
+    "sentence_es": "Cae la lluvia en el patio, cae la tarde sobre el mar.",
+    "sentence_en": "Rain falls in the patio; evening falls over the sea.",
+    "sentence_lemmas": ["caer", "el", "lluvia", "en", "el", "patio", "caer", "el", "tarde", "sobre", "el", "mar"]
   },
   {
     "order": 331,
@@ -288,9 +288,9 @@
     "lemma": "lavar",
     "es": "lavar",
     "en": "to wash",
-    "sentence_es": "Antes de comer, lávate las manos con jabón.",
-    "sentence_en": "Before eating, wash your hands with soap.",
-    "sentence_lemmas": ["antes", "de", "comer", "lavar", "el", "mano", "con", "jabón"]
+    "sentence_es": "Lavo mis manos con agua, lavo mi cara también.",
+    "sentence_en": "I wash my hands with water, wash my face too.",
+    "sentence_lemmas": ["lavar", "mi", "mano", "con", "agua", "lavar", "mi", "caro", "también"]
   },
   {
     "order": 333,
@@ -299,9 +299,9 @@
     "lemma": "preparar",
     "es": "preparar",
     "en": "to prepare",
-    "sentence_es": "Esta noche los vecinos preparan una cena para todos.",
-    "sentence_en": "Tonight the neighbors are preparing a dinner for everyone.",
-    "sentence_lemmas": ["este", "noche", "el", "vecino", "preparar", "un", "cena", "para", "todo"]
+    "sentence_es": "Preparo café para dos, preparo pan para el camino.",
+    "sentence_en": "I prepare coffee for two, prepare bread for the road.",
+    "sentence_lemmas": ["preparar", "café", "para", "dos", "preparar", "pan", "para", "el", "camino"]
   },
   {
     "order": 334,
@@ -311,9 +311,9 @@
     "es": "practicar",
     "en": "to practice",
     "hint_en": "I *practice* Spanish with my friend every day",
-    "sentence_es": "Los jueves practico fútbol con mis compañeros de trabajo.",
-    "sentence_en": "On Thursdays I play soccer with my coworkers.",
-    "sentence_lemmas": ["el", "jueves", "practicar", "fútbol", "con", "mi", "compañero", "de", "trabajo"]
+    "sentence_es": "Practico una canción, practico otra, mi gato duerme tranquilo.",
+    "sentence_en": "I practice one song, then another, my cat sleeps peacefully.",
+    "sentence_lemmas": ["practicar", "un", "canción", "practicar", "otro", "mi", "gato", "dormir", "tranquilo"]
   },
   {
     "order": 335,
@@ -323,9 +323,9 @@
     "es": "celebrar",
     "en": "to celebrate",
     "hint_en": "We *celebrate* Christmas at home.",
-    "sentence_es": "Ayer celebramos el cumpleaños de mi vecina en el parque.",
-    "sentence_en": "Yesterday we celebrated my neighbor's birthday in the park.",
-    "sentence_lemmas": ["ayer", "celebrar", "el", "cumpleaños", "de", "mi", "vecina", "en", "el", "parque"]
+    "sentence_es": "Celebro la lluvia en el campo, celebro cada flor que nace.",
+    "sentence_en": "I celebrate rain in the countryside, celebrate every flower that blooms.",
+    "sentence_lemmas": ["celebrar", "el", "lluvia", "en", "el", "campo", "celebrar", "cada", "flor", "que", "nacer"]
   },
   {
     "order": 337,
@@ -334,9 +334,9 @@
     "lemma": "invitar",
     "es": "invitar",
     "en": "to invite",
-    "sentence_es": "¿Por qué no invitas a tus compañeros a la fiesta?",
-    "sentence_en": "Why don't you invite your classmates to the party?",
-    "sentence_lemmas": ["por", "qué", "no", "invitar", "a", "tu", "compañero", "a", "el", "fiesta"]
+    "sentence_es": "Invito a mis vecinos, invito a comer en mi casa.",
+    "sentence_en": "I invite my neighbors, invite them to eat at my house.",
+    "sentence_lemmas": ["invitar", "a", "mi", "vecino", "invitar", "a", "comer", "en", "mi", "casa"]
   },
   {
     "order": 338,
@@ -345,9 +345,9 @@
     "lemma": "compartir",
     "es": "compartir",
     "en": "to share",
-    "sentence_es": "Compartimos una computadora entre tres personas en la oficina.",
-    "sentence_en": "We share one computer among three people at the office.",
-    "sentence_lemmas": ["compartir", "un", "computadora", "entre", "tres", "persona", "en", "el", "oficina"]
+    "sentence_es": "Comparto mi pan contigo, comparto mi tiempo sin mirar la hora.",
+    "sentence_en": "I share my bread with you, share my time without watching the clock.",
+    "sentence_lemmas": ["compartir", "mi", "pan", "contigo", "compartir", "mi", "tiempo", "sin", "mirar", "el", "hora"]
   },
   {
     "order": 339,
@@ -356,9 +356,9 @@
     "lemma": "apoyar",
     "es": "apoyar",
     "en": "to support",
-    "sentence_es": "Todos los vecinos apoyan al equipo de la escuela.",
-    "sentence_en": "All the neighbors support the school team.",
-    "sentence_lemmas": ["todo", "el", "vecino", "apoyar", "a", "equipo", "de", "el", "escuela"]
+    "sentence_es": "Apoyo tu primer concierto, apoyo tu música con mi guitarra.",
+    "sentence_en": "I support your first concert, I support your music with my guitar.",
+    "sentence_lemmas": ["apoyar", "tu", "primero", "concierto", "apoyar", "tu", "música", "con", "mi", "guitarra"]
   },
   {
     "order": 341,
@@ -368,9 +368,9 @@
     "es": "arreglar / reparar",
     "en": "to fix, to repair, to arrange",
     "hint_en": "My father will *fix* the car tomorrow",
-    "sentence_es": "¿Puedes arreglar mi teléfono en una hora?",
-    "sentence_en": "Can you fix my phone in an hour?",
-    "sentence_lemmas": ["poder", "arreglar", "mi", "teléfono", "en", "un", "hora"]
+    "sentence_es": "Reparo mi vieja bicicleta, preparo mis planes para el verano.",
+    "sentence_en": "I repair my old bicycle, prepare my plans for summer.",
+    "sentence_lemmas": ["arreglar", "mi", "viejo", "bicicleta", "preparar", "mi", "plan", "para", "el", "verano"]
   },
   {
     "order": 342,
@@ -380,9 +380,9 @@
     "es": "funcionar",
     "en": "to function, to work (machine)",
     "hint_en": "My phone does not *work*",
-    "sentence_es": "¿Por qué no funciona el internet en tu habitación?",
-    "sentence_en": "Why is the internet not working in your room?",
-    "sentence_lemmas": ["por", "qué", "no", "funcionar", "el", "internet", "en", "tu", "habitación"]
+    "sentence_es": "Funciona mi radio, funciona mi plan de viajar.",
+    "sentence_en": "My radio works; my travel plan works.",
+    "sentence_lemmas": ["funcionar", "mi", "radio", "funcionar", "mi", "plan", "de", "viajar"]
   },
   {
     "order": 343,
@@ -391,9 +391,9 @@
     "lemma": "depender",
     "es": "depender",
     "en": "to depend",
-    "sentence_es": "No sé todavía; eso depende de cuánto dinero tengamos.",
-    "sentence_en": "I don't know yet; that depends on how much money we have.",
-    "sentence_lemmas": ["no", "saber", "todavía", "eso", "depender", "de", "cuánto", "dinero", "tener"]
+    "sentence_es": "La flor depende del agua, nuestro viaje depende de ti.",
+    "sentence_en": "The flower depends on water; our trip depends on you.",
+    "sentence_lemmas": ["el", "flor", "depender", "de", "agua", "nuestro", "viaje", "depender", "de", "tú"]
   },
   {
     "order": 344,
@@ -402,9 +402,9 @@
     "lemma": "significar",
     "es": "significar",
     "en": "to mean",
-    "sentence_es": "¿Qué significa una luz roja en el semáforo?",
-    "sentence_en": "What does a red light mean at the traffic light?",
-    "sentence_lemmas": ["qué", "significar", "un", "luz", "rojo", "en", "el", "semáforo"]
+    "sentence_es": "Tu carta significa mucho, tu visita significa todavía más.",
+    "sentence_en": "Your letter means a lot; your visit means even more.",
+    "sentence_lemmas": ["tu", "carta", "significar", "mucho", "tu", "visita", "significar", "todavía", "más"]
   },
   {
     "order": 346,
@@ -413,9 +413,9 @@
     "lemma": "acabar",
     "es": "acabar",
     "en": "to run out, to be over; to have just (done something)",
-    "sentence_es": "Se acabó el café; ¿puedes comprar más?",
-    "sentence_en": "The coffee ran out; can you buy more?",
-    "sentence_lemmas": ["se", "acabar", "el", "café", "poder", "comprar", "más"]
+    "sentence_es": "Acaba la lluvia, no acaba nuestro paseo por el campo.",
+    "sentence_en": "The rain is over; our walk through the countryside is not over.",
+    "sentence_lemmas": ["acabar", "el", "lluvia", "no", "acabar", "nuestro", "paseo", "por", "el", "campo"]
   },
   {
     "order": 347,
@@ -480,9 +480,9 @@
     "lemma": "cultura",
     "es": "la cultura",
     "en": "culture",
-    "sentence_es": "En clase aprendemos sobre la cultura de otros países.",
-    "sentence_en": "In class we learn about the culture of other countries.",
-    "sentence_lemmas": ["en", "clase", "aprender", "sobre", "el", "cultura", "de", "otro", "país"]
+    "sentence_es": "Nuestra cultura tiene música, nuestra mesa tiene lugar para todos.",
+    "sentence_en": "Our culture has music, our table has room for everyone.",
+    "sentence_lemmas": ["nuestro", "cultura", "tener", "música", "nuestro", "mesa", "tener", "lugar", "para", "todo"]
   },
   {
     "order": 353,
@@ -526,9 +526,9 @@
     "lemma": "paz",
     "es": "la paz",
     "en": "peace",
-    "sentence_es": "Después de la guerra, el país vive en paz.",
-    "sentence_en": "After the war, the country lives in peace.",
-    "sentence_lemmas": ["después", "de", "el", "guerra", "el", "país", "vivir", "en", "paz"]
+    "sentence_es": "Quiero paz en mi casa, paz al volver al jardín.",
+    "sentence_en": "I want peace in my home, peace when I return to the garden.",
+    "sentence_lemmas": ["querer", "paz", "en", "mi", "casa", "paz", "a", "volver", "a", "jardín"]
   },
   {
     "order": 357,
@@ -592,9 +592,9 @@
     "lemma": "posibilidad",
     "es": "la posibilidad",
     "en": "possibility",
-    "sentence_es": "Hay una posibilidad de que mañana llueva todo el día.",
-    "sentence_en": "There is a chance it will rain all day tomorrow.",
-    "sentence_lemmas": ["haber", "un", "posibilidad", "de", "que", "mañana", "llover", "todo", "el", "día"]
+    "sentence_es": "Hay posibilidad de lluvia, hay posibilidad de ver flores mañana.",
+    "sentence_en": "There is a possibility of rain, a possibility of seeing flowers tomorrow.",
+    "sentence_lemmas": ["haber", "posibilidad", "de", "lluvia", "haber", "posibilidad", "de", "ver", "flor", "mañana"]
   },
   {
     "order": 366,
@@ -625,9 +625,9 @@
     "lemma": "experiencia",
     "es": "la experiencia",
     "en": "experience",
-    "sentence_es": "Para este trabajo piden dos años de experiencia.",
-    "sentence_en": "For this job they ask for two years of experience.",
-    "sentence_lemmas": ["para", "este", "trabajo", "pedir", "dos", "año", "de", "experiencia"]
+    "sentence_es": "Cada viaje trae experiencia, cada experiencia abre otro camino.",
+    "sentence_en": "Each journey brings experience; each experience opens another path.",
+    "sentence_lemmas": ["cada", "viaje", "traer", "experiencia", "cada", "experiencia", "abrir", "otro", "camino"]
   },
   {
     "order": 369,
@@ -636,9 +636,9 @@
     "lemma": "opinión",
     "es": "la opinión",
     "en": "opinion",
-    "sentence_es": "Nos interesa tu opinión sobre el nuevo menú.",
-    "sentence_en": "We are interested in your opinion about the new menu.",
-    "sentence_lemmas": ["nos", "interesar", "tu", "opinión", "sobre", "el", "nuevo", "menú"]
+    "sentence_es": "Tu opinión cuenta, tu opinión también tiene lugar en la mesa.",
+    "sentence_en": "Your opinion counts; it too has a place at the table.",
+    "sentence_lemmas": ["tu", "opinión", "contar", "tu", "opinión", "también", "tener", "lugar", "en", "el", "mesa"]
   },
   {
     "order": 370,
@@ -647,9 +647,9 @@
     "lemma": "decisión",
     "es": "la decisión",
     "en": "decision",
-    "sentence_es": "Ya tomé la decisión: voy a cambiar de trabajo.",
-    "sentence_en": "I have made the decision: I am going to change jobs.",
-    "sentence_lemmas": ["ya", "tomar", "el", "decisión", "ir", "a", "cambiar", "de", "trabajo"]
+    "sentence_es": "Mi decisión es volver, volver a empezar cerca de casa.",
+    "sentence_en": "My decision is to return, to start again near home.",
+    "sentence_lemmas": ["mi", "decisión", "ser", "volver", "volver", "a", "empezar", "cerca", "de", "casa"]
   },
   {
     "order": 371,
@@ -658,9 +658,9 @@
     "lemma": "oportunidad",
     "es": "la oportunidad",
     "en": "opportunity, chance",
-    "sentence_es": "No pierdas la oportunidad de conocer a tus nuevos compañeros.",
-    "sentence_en": "Do not miss the chance to meet your new classmates.",
-    "sentence_lemmas": ["no", "perder", "el", "oportunidad", "de", "conocer", "a", "tu", "nuevo", "compañero"]
+    "sentence_es": "Cada día da otra oportunidad, otra oportunidad de bailar.",
+    "sentence_en": "Each day offers another opportunity, another opportunity to dance.",
+    "sentence_lemmas": ["cada", "día", "dar", "otro", "oportunidad", "otro", "oportunidad", "de", "bailar"]
   },
   {
     "order": 372,
@@ -669,9 +669,9 @@
     "lemma": "cambio",
     "es": "el cambio",
     "en": "change",
-    "sentence_es": "Necesito un cambio: quiero otra casa y otro trabajo.",
-    "sentence_en": "I need a change: I want another house and another job.",
-    "sentence_lemmas": ["necesitar", "un", "cambio", "querer", "otro", "casa", "y", "otro", "trabajo"]
+    "sentence_es": "Un cambio de viento trae un cambio de planes.",
+    "sentence_en": "A change in the wind brings a change of plans.",
+    "sentence_lemmas": ["un", "cambio", "de", "viento", "traer", "un", "cambio", "de", "plan"]
   },
   {
     "order": 373,
@@ -692,9 +692,9 @@
     "es": "el motivo",
     "en": "reason, motive",
     "hint_en": "I have no *reason* to be sad",
-    "sentence_es": "¿Tienes algún motivo para no venir a la fiesta?",
-    "sentence_en": "Do you have any reason not to come to the party?",
-    "sentence_lemmas": ["tener", "alguno", "motivo", "para", "no", "venir", "a", "el", "fiesta"]
+    "sentence_es": "Tengo un motivo para volver, tengo un motivo para sonreír.",
+    "sentence_en": "I have a reason to return, a reason to smile.",
+    "sentence_lemmas": ["tener", "un", "motivo", "para", "volver", "tener", "un", "motivo", "para", "sonreír"]
   },
   {
     "order": 375,
@@ -704,9 +704,9 @@
     "es": "el objetivo / la meta",
     "en": "goal, objective",
     "hint_en": "My *goal* is to learn Spanish well",
-    "sentence_es": "Mi objetivo este año es correr diez kilómetros.",
-    "sentence_en": "My goal this year is to run ten kilometers.",
-    "sentence_lemmas": ["mi", "objetivo", "este", "año", "ser", "correr", "diez", "kilómetro"]
+    "sentence_es": "Mi meta es llegar al mar, llegar antes de la noche.",
+    "sentence_en": "My goal is to reach the sea, reach it before night.",
+    "sentence_lemmas": ["mi", "objetivo", "ser", "llegar", "a", "mar", "llegar", "antes", "de", "el", "noche"]
   },
   {
     "order": 376,
@@ -726,9 +726,9 @@
     "lemma": "grupo",
     "es": "el grupo",
     "en": "group",
-    "sentence_es": "Un grupo de personas espera frente a la tienda.",
-    "sentence_en": "A group of people is waiting in front of the store.",
-    "sentence_lemmas": ["un", "grupo", "de", "persona", "esperar", "frente", "a", "el", "tienda"]
+    "sentence_es": "Nuestro grupo camina cerca del mar, nuestro grupo vuelve a casa.",
+    "sentence_en": "Our group walks near the sea; our group returns home.",
+    "sentence_lemmas": ["nuestro", "grupo", "caminar", "cerca", "de", "mar", "nuestro", "grupo", "volver", "a", "casa"]
   },
   {
     "order": 378,
@@ -748,9 +748,9 @@
     "lemma": "tema",
     "es": "el tema",
     "en": "topic, subject",
-    "sentence_es": "¿Sobre qué tema hablará el profesor mañana?",
-    "sentence_en": "What topic will the teacher talk about tomorrow?",
-    "sentence_lemmas": ["sobre", "qué", "tema", "hablar", "el", "profesor", "mañana"]
+    "sentence_es": "El tema de hoy es viajar, viajar sin prisa.",
+    "sentence_en": "Today's topic is traveling, traveling without hurrying.",
+    "sentence_lemmas": ["el", "tema", "de", "hoy", "ser", "viajar", "viajar", "sin", "prisa"]
   },
   {
     "order": 380,
@@ -759,9 +759,9 @@
     "lemma": "texto",
     "es": "el texto",
     "en": "text",
-    "sentence_es": "Lee este texto y responde las tres preguntas.",
-    "sentence_en": "Read this text and answer the three questions.",
-    "sentence_lemmas": ["leer", "este", "texto", "y", "responder", "el", "tres", "pregunta"]
+    "sentence_es": "Escribo un texto sobre flores, escribo otro sobre el mar.",
+    "sentence_en": "I write a text about flowers, another about the sea.",
+    "sentence_lemmas": ["escribir", "un", "texto", "sobre", "flor", "escribir", "otro", "sobre", "el", "mar"]
   },
   {
     "order": 381,
@@ -781,9 +781,9 @@
     "lemma": "naturaleza",
     "es": "la naturaleza",
     "en": "nature",
-    "sentence_es": "Los fines de semana salimos a la naturaleza a caminar.",
-    "sentence_en": "On weekends we go out into nature to walk.",
-    "sentence_lemmas": ["el", "fin", "de", "semana", "salir", "a", "el", "naturaleza", "a", "caminar"]
+    "sentence_es": "La naturaleza canta sin radio, canta sin pedir permiso.",
+    "sentence_en": "Nature sings without a radio, sings without asking permission.",
+    "sentence_lemmas": ["el", "naturaleza", "cantar", "sin", "radio", "cantar", "sin", "pedir", "permiso"]
   },
   {
     "order": 387,
@@ -792,9 +792,9 @@
     "lemma": "clima",
     "es": "el clima",
     "en": "climate, weather",
-    "sentence_es": "En el norte el clima es seco, pero en el sur llueve.",
-    "sentence_en": "In the north the climate is dry, but in the south it rains.",
-    "sentence_lemmas": ["en", "el", "norte", "el", "clima", "ser", "seco", "pero", "en", "el", "sur", "llover"]
+    "sentence_es": "Cambia el clima, cambia mi abrigo, mis planes también.",
+    "sentence_en": "The weather changes, my coat changes, my plans too.",
+    "sentence_lemmas": ["cambiar", "el", "clima", "cambiar", "mi", "abrigo", "mi", "plan", "también"]
   },
   {
     "order": 390,
@@ -803,9 +803,9 @@
     "lemma": "río",
     "es": "el río",
     "en": "river",
-    "sentence_es": "Para llegar al pueblo hay que cruzar el río.",
-    "sentence_en": "To get to the town you have to cross the river.",
-    "sentence_lemmas": ["para", "llegar", "a", "pueblo", "haber", "que", "cruzar", "el", "río"]
+    "sentence_es": "El río corre sin prisa, corre del campo hasta el mar.",
+    "sentence_en": "The river runs unhurriedly, from the countryside to the sea.",
+    "sentence_lemmas": ["el", "río", "correr", "sin", "prisa", "correr", "de", "campo", "hasta", "el", "mar"]
   },
   {
     "order": 395,
@@ -836,9 +836,9 @@
     "lemma": "brazo",
     "es": "el brazo",
     "en": "arm",
-    "sentence_es": "Me caí y me duele mucho el brazo derecho.",
-    "sentence_en": "I fell and my right arm hurts a lot.",
-    "sentence_lemmas": ["me", "caerse", "y", "me", "doler", "mucho", "el", "brazo", "derecho"]
+    "sentence_es": "Un brazo lleva la bolsa, el otro lleva las flores.",
+    "sentence_en": "One arm carries the bag; the other carries the flowers.",
+    "sentence_lemmas": ["un", "brazo", "llevar", "el", "bolsa", "el", "otro", "llevar", "el", "flor"]
   },
   {
     "order": 402,
@@ -858,9 +858,9 @@
     "lemma": "cara",
     "es": "la cara",
     "en": "face",
-    "sentence_es": "Lávate la cara con agua fría; te vas a sentir mejor.",
-    "sentence_en": "Wash your face with cold water; you will feel better.",
-    "sentence_lemmas": ["lavar", "el", "cara", "con", "agua", "frío", "te", "ir", "a", "sentir", "mejor"]
+    "sentence_es": "Tengo arena en la cara, tengo sol en las manos.",
+    "sentence_en": "I have sand on my face, sunshine on my hands.",
+    "sentence_lemmas": ["tener", "arena", "en", "el", "cara", "tener", "sol", "en", "el", "mano"]
   },
   {
     "order": 404,
@@ -869,9 +869,9 @@
     "lemma": "pelo",
     "es": "el pelo / el cabello",
     "en": "hair",
-    "sentence_es": "Mañana me corto el pelo; ya está muy largo.",
-    "sentence_en": "Tomorrow I am cutting my hair; it is already very long.",
-    "sentence_lemmas": ["mañana", "me", "cortar", "el", "pelo", "ya", "estar", "muy", "largo"]
+    "sentence_es": "El viento juega con mi pelo, la lluvia con mis zapatos.",
+    "sentence_en": "The wind plays with my hair, the rain with my shoes.",
+    "sentence_lemmas": ["el", "viento", "jugar", "con", "mi", "pelo", "el", "lluvia", "con", "mi", "zapato"]
   },
   {
     "order": 406,
@@ -880,9 +880,9 @@
     "lemma": "árbol",
     "es": "el árbol",
     "en": "tree",
-    "sentence_es": "Los niños juegan a la sombra de un árbol grande.",
-    "sentence_en": "The children play in the shade of a big tree.",
-    "sentence_lemmas": ["el", "niño", "jugar", "a", "el", "sombra", "de", "un", "árbol", "grande"]
+    "sentence_es": "El árbol da sombra, da casa a los pájaros.",
+    "sentence_en": "The tree gives shade, gives birds a home.",
+    "sentence_lemmas": ["el", "árbol", "dar", "sombra", "dar", "casa", "a", "el", "pájaro"]
   },
   {
     "order": 408,
@@ -892,7 +892,7 @@
     "es": "necesario",
     "en": "necessary",
     "sentence_es": "No es necesario traer comida, porque aquí hay un restaurante.",
-    "sentence_en": "You do not need to bring food, because there is a restaurant here.",
+    "sentence_en": "It is not necessary to bring food, because there is a restaurant here.",
     "sentence_lemmas": ["no", "ser", "necesario", "traer", "comida", "porque", "aquí", "haber", "un", "restaurante"]
   },
   {
@@ -913,9 +913,9 @@
     "lemma": "imposible",
     "es": "imposible",
     "en": "impossible",
-    "sentence_es": "Con tanta lluvia es imposible salir a caminar.",
-    "sentence_en": "With so much rain it is impossible to go out for a walk.",
-    "sentence_lemmas": ["con", "tanto", "lluvia", "ser", "imposible", "salir", "a", "caminar"]
+    "sentence_es": "Parece imposible bailar con la lluvia, pero mis pies pueden.",
+    "sentence_en": "Dancing with the rain seems impossible, but my feet can.",
+    "sentence_lemmas": ["parecer", "imposible", "bailar", "con", "el", "lluvia", "pero", "mi", "pie", "poder"]
   },
   {
     "order": 411,
@@ -925,9 +925,9 @@
     "es": "libre",
     "en": "free",
     "hint_en": "Tomorrow I will be *free* at five",
-    "sentence_es": "¿Estás libre el sábado por la tarde?",
-    "sentence_en": "Are you free on Saturday afternoon?",
-    "sentence_lemmas": ["estar", "libre", "el", "sábado", "por", "el", "tarde"]
+    "sentence_es": "El río corre libre, mi perro corre cerca de él.",
+    "sentence_en": "The river runs free; my dog runs near it.",
+    "sentence_lemmas": ["el", "río", "correr", "libre", "mi", "perro", "correr", "cerca", "de", "él"]
   },
   {
     "order": 412,
@@ -936,9 +936,9 @@
     "lemma": "lleno",
     "es": "lleno",
     "en": "full",
-    "sentence_es": "Llegamos tarde y el autobús ya iba lleno.",
-    "sentence_en": "We arrived late and the bus was already full.",
-    "sentence_lemmas": ["llegar", "tarde", "y", "el", "autobús", "ya", "ir", "lleno"]
+    "sentence_es": "Mi patio está lleno de flores, mi día lleno de visitas.",
+    "sentence_en": "My patio is full of flowers; my day is full of visitors.",
+    "sentence_lemmas": ["mi", "patio", "estar", "lleno", "de", "flor", "mi", "día", "lleno", "de", "visita"]
   },
   {
     "order": 413,
@@ -947,9 +947,9 @@
     "lemma": "vacío",
     "es": "vacío",
     "en": "empty",
-    "sentence_es": "El refrigerador está vacío; vamos al mercado.",
-    "sentence_en": "The refrigerator is empty; let us go to the market.",
-    "sentence_lemmas": ["el", "refrigerador", "estar", "vacío", "ir", "a", "mercado"]
+    "sentence_es": "El vaso está vacío, la mesa está llena de pan.",
+    "sentence_en": "The glass is empty; the table is full of bread.",
+    "sentence_lemmas": ["el", "vaso", "estar", "vacío", "el", "mesa", "estar", "lleno", "de", "pan"]
   },
   {
     "order": 415,
@@ -958,9 +958,9 @@
     "lemma": "claro",
     "es": "claro",
     "en": "clear; light-colored",
-    "sentence_es": "Tu respuesta fue muy clara, gracias.",
-    "sentence_en": "Your answer was very clear, thank you.",
-    "sentence_lemmas": ["tu", "respuesta", "ser", "muy", "claro", "gracias"]
+    "sentence_es": "El cielo está claro, el camino se ve hasta el mar.",
+    "sentence_en": "The sky is clear; the path is visible all the way to the sea.",
+    "sentence_lemmas": ["el", "cielo", "estar", "claro", "el", "camino", "se", "ver", "hasta", "el", "mar"]
   },
   {
     "order": 417,
@@ -1079,9 +1079,9 @@
     "lemma": "especial",
     "es": "especial",
     "en": "special",
-    "sentence_es": "Para la cena de hoy compré algo especial.",
-    "sentence_en": "For today's dinner I bought something special.",
-    "sentence_lemmas": ["para", "el", "cena", "de", "hoy", "comprar", "algo", "especial"]
+    "sentence_es": "Este día es especial, hoy vuelves, hoy preparo pan para dos.",
+    "sentence_en": "This day is special: you return today; today I prepare bread for two.",
+    "sentence_lemmas": ["este", "día", "ser", "especial", "hoy", "volver", "hoy", "preparar", "pan", "para", "dos"]
   },
   {
     "order": 431,
@@ -1124,9 +1124,9 @@
     "es": "único",
     "en": "only (adj.), unique",
     "hint_en": "You are my *only* friend here",
-    "sentence_es": "¿Es esta la única tienda abierta a esta hora?",
-    "sentence_en": "Is this the only shop open at this hour?",
-    "sentence_lemmas": ["ser", "este", "el", "único", "tienda", "abierto", "a", "este", "hora"]
+    "sentence_es": "Cada árbol es único, cada hoja tiene un color diferente.",
+    "sentence_en": "Each tree is unique; each leaf has a different color.",
+    "sentence_lemmas": ["cada", "árbol", "ser", "único", "cada", "hoja", "tener", "un", "color", "diferente"]
   },
   {
     "order": 435,
@@ -1168,9 +1168,9 @@
     "lemma": "aunque",
     "es": "aunque",
     "en": "although, even if",
-    "sentence_es": "Aunque estoy cansado, voy a ir al parque contigo.",
-    "sentence_en": "Although I am tired, I am going to the park with you.",
-    "sentence_lemmas": ["aunque", "estar", "cansado", "ir", "a", "ir", "a", "parque", "contigo"]
+    "sentence_es": "Aunque llueva, canto; aunque haga frío, bailo.",
+    "sentence_en": "Even if it rains, I sing; even if it is cold, I dance.",
+    "sentence_lemmas": ["aunque", "llover", "cantar", "aunque", "hacer", "frío", "bailar"]
   },
   {
     "order": 439,
@@ -1202,7 +1202,7 @@
     "es": "demasiado",
     "en": "too much, excessively",
     "sentence_es": "Hay demasiada gente aquí; salgamos a la calle.",
-    "sentence_en": "There are too many people here; let us go out to the street.",
+    "sentence_en": "There is too much of a crowd here; let us go out to the street.",
     "sentence_lemmas": ["haber", "demasiado", "gente", "aquí", "salir", "a", "el", "calle"]
   },
   {
@@ -1235,7 +1235,7 @@
     "es": "sino",
     "en": "but rather",
     "sentence_es": "No fuimos a la playa, sino a la montaña.",
-    "sentence_en": "We did not go to the beach, but to the mountains.",
+    "sentence_en": "We did not go to the beach, but rather to the mountains.",
     "sentence_lemmas": ["no", "ir", "a", "el", "playa", "sino", "a", "el", "montaña"]
   },
   {
@@ -1245,9 +1245,9 @@
     "lemma": "ni",
     "es": "ni",
     "en": "nor, not even",
-    "sentence_es": "Ni tú ni yo sabemos la respuesta.",
-    "sentence_en": "Neither you nor I know the answer.",
-    "sentence_lemmas": ["ni", "tú", "ni", "yo", "saber", "el", "respuesta"]
+    "sentence_es": "Ni la lluvia ni el viento pueden quitarme las ganas de volver.",
+    "sentence_en": "Neither rain nor wind can take away my desire to return.",
+    "sentence_lemmas": ["ni", "el", "lluvia", "ni", "el", "viento", "poder", "quitar", "el", "ganas", "de", "volver"]
   },
   {
     "order": 447,
@@ -1291,9 +1291,9 @@
     "lemma": "cualquier",
     "es": "cualquier",
     "en": "any",
-    "sentence_es": "Puedes llamarme a cualquier hora del día.",
-    "sentence_en": "You can call me at any hour of the day.",
-    "sentence_lemmas": ["poder", "llamar", "a", "cualquier", "hora", "de", "día"]
+    "sentence_es": "Cualquier esquina guarda historias, cualquier paseo puede traer amigos nuevos.",
+    "sentence_en": "Any corner holds stories; any walk can bring new friends.",
+    "sentence_lemmas": ["cualquier", "esquina", "guardar", "historia", "cualquier", "paseo", "poder", "traer", "amigo", "nuevo"]
   },
   {
     "order": 777,
@@ -1313,9 +1313,9 @@
     "lemma": "descansar",
     "es": "descansar",
     "en": "to rest",
-    "sentence_es": "Después de caminar tanto, necesito descansar un poco.",
-    "sentence_en": "After walking so much, I need to rest a bit.",
-    "sentence_lemmas": ["después", "de", "caminar", "tanto", "necesitar", "descansar", "un", "poco"]
+    "sentence_es": "Descanso bajo el árbol, descanso hasta que baja el sol.",
+    "sentence_en": "I rest beneath the tree, rest until the sun sinks.",
+    "sentence_lemmas": ["descansar", "bajo", "el", "árbol", "descansar", "hasta", "que", "bajar", "el", "sol"]
   },
   {
     "order": 779,
@@ -1336,9 +1336,9 @@
     "es": "la razón",
     "en": "reason; being right",
     "hint_en": "You have a good *reason*.",
-    "sentence_es": "Tienes razón: el autobús llega tarde casi siempre.",
-    "sentence_en": "You are right: the bus is late almost always.",
-    "sentence_lemmas": ["tener", "razón", "el", "autobús", "llegar", "tarde", "casi", "siempre"]
+    "sentence_es": "Tengo una razón para volver, tengo mil recuerdos de casa.",
+    "sentence_en": "I have a reason to return, a thousand memories of home.",
+    "sentence_lemmas": ["tener", "un", "razón", "para", "volver", "tener", "mil", "recuerdo", "de", "casa"]
   },
   {
     "order": 781,
@@ -1403,9 +1403,9 @@
     "lemma": "emocionado",
     "es": "emocionado",
     "en": "excited",
-    "sentence_es": "Estoy emocionado: mañana viajo a otra ciudad.",
-    "sentence_en": "I am excited: tomorrow I travel to another city.",
-    "sentence_lemmas": ["estar", "emocionado", "mañana", "viajar", "a", "otro", "ciudad"]
+    "sentence_es": "Estoy emocionado, mi primer concierto ya está preparado.",
+    "sentence_en": "I am excited, my first concert is ready.",
+    "sentence_lemmas": ["estar", "emocionado", "mi", "primero", "concierto", "ya", "estar", "preparar"]
   },
   {
     "order": 787,
@@ -1426,7 +1426,7 @@
     "es": "la gasolina",
     "en": "gasoline",
     "sentence_es": "Necesitamos gasolina antes de salir a la carretera.",
-    "sentence_en": "We need gas before heading onto the highway.",
+    "sentence_en": "We need gasoline before heading onto the highway.",
     "sentence_lemmas": ["necesitar", "gasolina", "antes", "de", "salir", "a", "el", "carretera"]
   },
   {
@@ -1470,9 +1470,9 @@
     "lemma": "premio",
     "es": "el premio",
     "en": "prize",
-    "sentence_es": "¿Qué premio te dieron por tu dibujo?",
-    "sentence_en": "What prize did they give you for your drawing?",
-    "sentence_lemmas": ["qué", "premio", "te", "dar", "por", "tu", "dibujar"]
+    "sentence_es": "Mi premio es verte llegar, mi regalo es caminar contigo.",
+    "sentence_en": "My prize is seeing you arrive; my gift is walking with you.",
+    "sentence_lemmas": ["mi", "premio", "ser", "ver", "llegar", "mi", "regalo", "ser", "caminar", "contigo"]
   },
   {
     "order": 794,
@@ -1481,9 +1481,9 @@
     "lemma": "llorar",
     "es": "llorar",
     "en": "to cry",
-    "sentence_es": "¿Por qué llora el bebé? ¿Tiene hambre?",
-    "sentence_en": "Why is the baby crying? Is he hungry?",
-    "sentence_lemmas": ["por", "qué", "llorar", "el", "bebé", "tener", "hambre"]
+    "sentence_es": "A veces quiero llorar, a veces solo necesito hablar.",
+    "sentence_en": "Sometimes I want to cry; sometimes I just need to talk.",
+    "sentence_lemmas": ["a", "vez", "querer", "llorar", "a", "vez", "solo", "necesitar", "hablar"]
   },
   {
     "order": 796,
@@ -1549,7 +1549,7 @@
     "es": "perdón",
     "en": "sorry",
     "sentence_es": "Perdón, ¿esta silla está libre o es de alguien?",
-    "sentence_en": "Excuse me, is this chair free or does it belong to someone?",
+    "sentence_en": "Sorry, is this chair free or does it belong to someone?",
     "sentence_lemmas": ["perdón", "este", "silla", "estar", "libre", "o", "ser", "de", "alguien"]
   },
   {
@@ -1570,9 +1570,9 @@
     "lemma": "apagar",
     "es": "apagar",
     "en": "to turn off",
-    "sentence_es": "Antes de salir, apago el gas y la televisión.",
-    "sentence_en": "Before leaving, I turn off the gas and the TV.",
-    "sentence_lemmas": ["antes", "de", "salir", "apagar", "el", "gas", "y", "el", "televisión"]
+    "sentence_es": "Apago la lámpara, apago el ruido de la televisión.",
+    "sentence_en": "I turn off the lamp, turn off the noise of the television.",
+    "sentence_lemmas": ["apagar", "el", "lámpara", "apagar", "el", "ruido", "de", "el", "televisión"]
   },
   {
     "order": 805,
@@ -1658,9 +1658,9 @@
     "lemma": "suerte",
     "es": "la suerte",
     "en": "luck",
-    "sentence_es": "Tuve suerte y encontré un buen trabajo en una semana.",
-    "sentence_en": "I was lucky and found a good job within a week.",
-    "sentence_lemmas": ["tener", "suerte", "y", "encontrar", "un", "bueno", "trabajo", "en", "un", "semana"]
+    "sentence_es": "Qué suerte encontrarte, qué suerte poder caminar contigo.",
+    "sentence_en": "What luck to find you, what luck to walk with you.",
+    "sentence_lemmas": ["qué", "suerte", "encontrar", "qué", "suerte", "poder", "caminar", "contigo"]
   },
   {
     "order": 814,
@@ -1669,9 +1669,9 @@
     "lemma": "balcón",
     "es": "el balcón",
     "en": "balcony",
-    "sentence_es": "En el balcón tengo tres plantas y una silla.",
-    "sentence_en": "On the balcony I have three plants and a chair.",
-    "sentence_lemmas": ["en", "el", "balcón", "tener", "tres", "planta", "y", "un", "silla"]
+    "sentence_es": "Desde mi balcón veo el cielo, desde tu patio el mar.",
+    "sentence_en": "From my balcony I see the sky, from your patio the sea.",
+    "sentence_lemmas": ["desde", "mi", "balcón", "ver", "el", "cielo", "desde", "tu", "patio", "el", "mar"]
   },
   {
     "order": 815,
@@ -1736,9 +1736,9 @@
     "lemma": "confiar",
     "es": "confiar",
     "en": "to trust",
-    "sentence_es": "Puedes confiar en mí; no voy a decir nada.",
-    "sentence_en": "You can trust me; I won't say anything.",
-    "sentence_lemmas": ["poder", "confiar", "en", "yo", "no", "ir", "a", "decir", "nada"]
+    "sentence_es": "Confío en tus manos, confío en nuestro trabajo de cada día.",
+    "sentence_en": "I trust your hands, trust our work every day.",
+    "sentence_lemmas": ["confiar", "en", "tu", "mano", "confiar", "en", "nuestro", "trabajo", "de", "cada", "día"]
   },
   {
     "order": 498,
@@ -1771,7 +1771,7 @@
     "es": "el horario",
     "en": "schedule, timetable",
     "sentence_es": "El horario de la tienda es de nueve a seis.",
-    "sentence_en": "The store's hours are from nine to six.",
+    "sentence_en": "The store's schedule runs from nine to six.",
     "sentence_lemmas": ["el", "horario", "de", "el", "tienda", "ser", "de", "nueve", "a", "seis"]
   },
   {
@@ -1793,7 +1793,7 @@
     "es": "el cuidado",
     "en": "care, caution",
     "sentence_es": "¡Cuidado! La calle está mojada y el carro viene rápido.",
-    "sentence_en": "Careful! The street is wet and the car is coming fast.",
+    "sentence_en": "Take care! The street is wet and the car is coming fast.",
     "sentence_lemmas": ["cuidado", "el", "calle", "estar", "mojado", "y", "el", "carro", "venir", "rápido"]
   },
   {
@@ -1803,9 +1803,9 @@
     "lemma": "recorrer",
     "es": "recorrer",
     "en": "to travel through, to go all over",
-    "sentence_es": "Recorrimos todo el centro caminando en una tarde.",
-    "sentence_en": "We covered the whole downtown on foot in one afternoon.",
-    "sentence_lemmas": ["recorrer", "todo", "el", "centro", "caminar", "en", "un", "tarde"]
+    "sentence_es": "Recorro mi barrio despacio, recorro el campo con los ojos abiertos.",
+    "sentence_en": "I travel through my neighborhood slowly, through the countryside with open eyes.",
+    "sentence_lemmas": ["recorrer", "mi", "barrio", "despacio", "recorrer", "el", "campo", "con", "el", "ojo", "abierto"]
   },
   {
     "order": 891,
@@ -1816,7 +1816,7 @@
     "en": "who",
     "hint_en": "*Whoever* is hungry, eats.",
     "sentence_es": "Quien llega primero elige la mesa.",
-    "sentence_en": "Whoever arrives first picks the table.",
+    "sentence_en": "The person who arrives first picks the table.",
     "sentence_lemmas": ["quien", "llegar", "primero", "elegir", "el", "mesa"]
   },
   {
@@ -1837,9 +1837,9 @@
     "lemma": "acompañar",
     "es": "acompañar",
     "en": "to accompany, to go with",
-    "sentence_es": "¿Me acompañas a comprar un regalo?",
-    "sentence_en": "Will you come with me to buy a gift?",
-    "sentence_lemmas": ["me", "acompañar", "a", "comprar", "un", "regalo"]
+    "sentence_es": "Acompaño tu canción con palmas, acompaño tu baile con música.",
+    "sentence_en": "I accompany your song with claps, your dance with music.",
+    "sentence_lemmas": ["acompañar", "tu", "canción", "con", "palma", "acompañar", "tu", "baile", "con", "música"]
   },
   {
     "order": 1185,
@@ -1848,9 +1848,9 @@
     "lemma": "acercarse",
     "es": "acercarse",
     "en": "to get close, to approach",
-    "sentence_es": "Ven, acércate un poco más a la mesa.",
-    "sentence_en": "Come, get a little closer to the table.",
-    "sentence_lemmas": ["ver", "acercarse", "un", "poco", "más", "a", "el", "mesa"]
+    "sentence_es": "Me acerco a tu ventana, me acerco a la luz.",
+    "sentence_en": "I approach your window, I approach the light.",
+    "sentence_lemmas": ["me", "acercarse", "a", "tu", "ventana", "me", "acercarse", "a", "el", "luz"]
   },
   {
     "order": 1186,
@@ -1881,9 +1881,9 @@
     "lemma": "animar",
     "es": "animar",
     "en": "to cheer up, to encourage",
-    "sentence_es": "Siempre me anima caminar por el parque.",
-    "sentence_en": "Walking in the park always cheers me up.",
-    "sentence_lemmas": ["siempre", "me", "animar", "caminar", "por", "el", "parque"]
+    "sentence_es": "Tu visita anima mi casa, tu alegría anima mi día.",
+    "sentence_en": "Your visit cheers up my house; your joy brightens my day.",
+    "sentence_lemmas": ["tu", "visita", "animar", "mi", "casa", "tu", "alegría", "animar", "mi", "día"]
   },
   {
     "order": 1189,
@@ -1904,7 +1904,7 @@
     "es": "atender",
     "en": "to attend to, to wait on",
     "sentence_es": "¿A qué hora atiende el doctor por la mañana?",
-    "sentence_en": "What time does the doctor see patients in the morning?",
+    "sentence_en": "What time does the doctor attend to patients in the morning?",
     "sentence_lemmas": ["a", "qué", "hora", "atender", "el", "doctora", "por", "el", "mañana"]
   },
   {
@@ -1925,9 +1925,9 @@
     "lemma": "calmar",
     "es": "calmar / tranquilizar",
     "en": "to calm down, to soothe",
-    "sentence_es": "Para calmar al bebé, ella le canta una canción.",
-    "sentence_en": "To calm the baby, she sings him a song.",
-    "sentence_lemmas": ["para", "calmar", "a", "bebé", "ella", "le", "cantar", "un", "canción"]
+    "sentence_es": "Calmo mi prisa con un paseo, calmo mi miedo al hablar.",
+    "sentence_en": "I calm my haste with a walk, calm my fear by talking.",
+    "sentence_lemmas": ["calmar", "mi", "prisa", "con", "un", "paseo", "calmar", "mi", "miedo", "a", "hablar"]
   },
   {
     "order": 1193,
@@ -1936,9 +1936,9 @@
     "lemma": "cansarse",
     "es": "cansarse",
     "en": "to get tired",
-    "sentence_es": "Mis piernas se cansan rápido cuando subo la escalera.",
-    "sentence_en": "My legs get tired fast when I climb the stairs.",
-    "sentence_lemmas": ["mi", "pierna", "se", "cansarse", "rápido", "cuando", "subir", "el", "escalera"]
+    "sentence_es": "Me canso de correr, nunca me canso de escuchar el mar.",
+    "sentence_en": "I get tired of running, I never tire of hearing the sea.",
+    "sentence_lemmas": ["me", "cansarse", "de", "correr", "nunca", "me", "cansarse", "de", "escuchar", "el", "mar"]
   },
   {
     "order": 1194,
@@ -1947,9 +1947,9 @@
     "lemma": "casarse",
     "es": "casarse",
     "en": "to get married",
-    "sentence_es": "Mis primos se casan el próximo año.",
-    "sentence_en": "My cousins are getting married next year.",
-    "sentence_lemmas": ["mi", "primo", "se", "casarse", "el", "próximo", "año"]
+    "sentence_es": "Arroz con leche, me quiero casar.",
+    "sentence_en": "Rice pudding, I want to get married.",
+    "sentence_lemmas": ["arroz", "con", "leche", "me", "querer", "casarse"]
   },
   {
     "order": 1195,
@@ -1970,7 +1970,7 @@
     "es": "controlar",
     "en": "to control",
     "sentence_es": "Controlo cuánto trabajo cada día.",
-    "sentence_en": "I keep track of how much I work every day.",
+    "sentence_en": "I control how much I work every day.",
     "sentence_lemmas": ["controlar", "cuánto", "trabajo", "cada", "día"]
   },
   {
@@ -1991,9 +1991,9 @@
     "lemma": "cubrir",
     "es": "cubrir",
     "en": "to cover",
-    "sentence_es": "Cubre la comida con un plato y ponla en el refrigerador.",
-    "sentence_en": "Cover the food with a plate and put it in the refrigerator.",
-    "sentence_lemmas": ["cubrir", "el", "comida", "con", "un", "plato", "y", "poner", "en", "el", "refrigerador"]
+    "sentence_es": "La nube cubre el sol, mi abrigo cubre mis manos.",
+    "sentence_en": "The cloud covers the sun; my coat covers my hands.",
+    "sentence_lemmas": ["el", "nube", "cubrir", "el", "sol", "mi", "abrigo", "cubrir", "mi", "mano"]
   },
   {
     "order": 1199,
@@ -2003,7 +2003,7 @@
     "es": "declarar",
     "en": "to declare, to testify",
     "sentence_es": "Declaré que no estaba en la calle esa noche.",
-    "sentence_en": "I stated that I was not on the street that night.",
+    "sentence_en": "I declared that I was not on the street that night.",
     "sentence_lemmas": ["declarar", "que", "no", "estar", "en", "el", "calle", "ese", "noche"]
   },
   {
@@ -2013,9 +2013,9 @@
     "lemma": "dedicarse",
     "es": "dedicarse",
     "en": "to work in, to devote oneself to",
-    "sentence_es": "¿A qué te dedicas? Yo trabajo en un banco.",
-    "sentence_en": "What do you do for a living? I work at a bank.",
-    "sentence_lemmas": ["a", "qué", "te", "dedicarse", "yo", "trabajo", "en", "un", "banco"]
+    "sentence_es": "Me dedico a cuidar jardines, a cuidar cada flor que nace.",
+    "sentence_en": "I work tending gardens, tending every flower that blooms.",
+    "sentence_lemmas": ["me", "dedicarse", "a", "cuidar", "jardín", "a", "cuidar", "cada", "flor", "que", "nacer"]
   },
   {
     "order": 1201,
@@ -2024,9 +2024,9 @@
     "lemma": "desaparecer",
     "es": "desaparecer",
     "en": "to disappear",
-    "sentence_es": "¿Dónde están mis llaves? Desaparecieron de la mesa esta mañana.",
-    "sentence_en": "Where are my keys? They disappeared from the table this morning.",
-    "sentence_lemmas": ["dónde", "estar", "mi", "llave", "desaparecer", "de", "el", "mesa", "este", "mañana"]
+    "sentence_es": "Desaparece la luna, no desaparece el camino a tu casa.",
+    "sentence_en": "The moon disappears; the path to your house does not.",
+    "sentence_lemmas": ["desaparecer", "el", "luna", "no", "desaparecer", "el", "camino", "a", "tu", "casa"]
   },
   {
     "order": 1202,
@@ -2047,9 +2047,9 @@
     "es": "dirigir",
     "en": "to run (a business), to lead",
     "hint_en": "My mother *runs* a small school",
-    "sentence_es": "Dirijo una empresa pequeña de ropa.",
-    "sentence_en": "I run a small clothing company.",
-    "sentence_lemmas": ["dirigir", "un", "empresa", "pequeño", "de", "ropa"]
+    "sentence_es": "Dirijo el equipo sin prisa, dirijo sin dejar de escuchar.",
+    "sentence_en": "I lead the team without hurrying, lead without stopping listening.",
+    "sentence_lemmas": ["dirigir", "el", "equipo", "sin", "prisa", "dirigir", "sin", "dejar", "de", "escuchar"]
   },
   {
     "order": 1204,
@@ -2058,9 +2058,9 @@
     "lemma": "divertirse",
     "es": "divertirse",
     "en": "to have fun",
-    "sentence_es": "¿Te divertiste en el concierto del sábado?",
-    "sentence_en": "Did you have fun at the concert on Saturday?",
-    "sentence_lemmas": ["te", "divertirse", "en", "el", "concierto", "de", "sábado"]
+    "sentence_es": "Me divierto con mi perro, me divierto cuando bailamos juntos.",
+    "sentence_en": "I have fun with my dog, I have fun when we dance together.",
+    "sentence_lemmas": ["me", "divertirse", "con", "mi", "perro", "me", "divertirse", "cuando", "bailar", "juntos"]
   },
   {
     "order": 1205,
@@ -2113,9 +2113,9 @@
     "lemma": "esconder",
     "es": "esconder",
     "en": "to hide",
-    "sentence_es": "Los niños esconden los zapatos debajo de la cama.",
-    "sentence_en": "The children hide the shoes under the bed.",
-    "sentence_lemmas": ["el", "niño", "esconder", "el", "zapato", "debajo", "de", "el", "cama"]
+    "sentence_es": "Escondo flores en tu libro, escondo regalos en tu mochila.",
+    "sentence_en": "I hide flowers in your book, hide gifts in your backpack.",
+    "sentence_lemmas": ["esconder", "flor", "en", "tu", "libro", "esconder", "regalo", "en", "tu", "mochila"]
   },
   {
     "order": 1210,
@@ -2135,9 +2135,9 @@
     "lemma": "expresar",
     "es": "expresar",
     "en": "to express",
-    "sentence_es": "Quiero expresar mi opinión sobre el proyecto.",
-    "sentence_en": "I want to express my opinion about the project.",
-    "sentence_lemmas": ["querer", "expresar", "mi", "opinión", "sobre", "el", "proyecto"]
+    "sentence_es": "Expreso mi alegría con risas, expreso mi tristeza con palabras.",
+    "sentence_en": "I express joy with laughter, sadness with words.",
+    "sentence_lemmas": ["expresar", "mi", "alegría", "con", "risa", "expresar", "mi", "tristeza", "con", "palabra"]
   },
   {
     "order": 1212,
@@ -2146,9 +2146,9 @@
     "lemma": "formar",
     "es": "formar",
     "en": "to form",
-    "sentence_es": "Los jugadores forman una fila antes del partido.",
-    "sentence_en": "The players form a line before the match.",
-    "sentence_lemmas": ["el", "jugador", "formar", "un", "fila", "antes", "de", "partido"]
+    "sentence_es": "Las gotas forman un río, los árboles forman un bosque.",
+    "sentence_en": "Drops form a river; trees form a forest.",
+    "sentence_lemmas": ["el", "gota", "formar", "un", "río", "el", "árbol", "formar", "un", "bosque"]
   },
   {
     "order": 1213,
@@ -2158,7 +2158,7 @@
     "es": "impedir",
     "en": "to prevent",
     "sentence_es": "¿Qué te impidió salir de casa ayer?",
-    "sentence_en": "What kept you from leaving the house yesterday?",
+    "sentence_en": "What prevented you from leaving the house yesterday?",
     "sentence_lemmas": ["qué", "te", "impedir", "salir", "de", "casa", "ayer"]
   },
   {
@@ -2169,7 +2169,7 @@
     "es": "informar",
     "en": "to inform",
     "sentence_es": "Por favor, infórmame cuando llegue el paquete.",
-    "sentence_en": "Please let me know when the package arrives.",
+    "sentence_en": "Please inform me when the package arrives.",
     "sentence_lemmas": ["por", "favor", "informar", "cuando", "llegar", "el", "paquete"]
   },
   {
@@ -2179,9 +2179,9 @@
     "lemma": "inventar",
     "es": "inventar",
     "en": "to invent, to make up",
-    "sentence_es": "Los niños inventan juegos nuevos en el patio.",
-    "sentence_en": "The children make up new games in the yard.",
-    "sentence_lemmas": ["el", "niño", "inventar", "juego", "nuevo", "en", "el", "patio"]
+    "sentence_es": "Invento un baile para la lluvia, otro para el viento.",
+    "sentence_en": "I invent a dance for the rain, another for the wind.",
+    "sentence_lemmas": ["inventar", "un", "baile", "para", "el", "lluvia", "otro", "para", "el", "viento"]
   },
   {
     "order": 1216,
@@ -2212,8 +2212,8 @@
     "lemma": "lastimar",
     "es": "lastimar / herir",
     "en": "to injure, to wound",
-    "sentence_es": "Cuidado con el fuego; te puedes lastimar.",
-    "sentence_en": "Be careful with the fire; you can hurt yourself.",
+    "sentence_es": "Cuidado con el fuego; te puedes herir.",
+    "sentence_en": "Be careful with the fire; you can injure yourself.",
     "sentence_lemmas": ["cuidado", "con", "el", "fuego", "te", "poder", "lastimar"]
   },
   {
@@ -2223,9 +2223,9 @@
     "lemma": "llenar",
     "es": "llenar",
     "en": "to fill",
-    "sentence_es": "Llena este vaso con agua fría, por favor.",
-    "sentence_en": "Fill this glass with cold water, please.",
-    "sentence_lemmas": ["llenar", "este", "vaso", "con", "agua", "frío", "por", "favor"]
+    "sentence_es": "Lleno tu taza de café, lleno mi día de visitas.",
+    "sentence_en": "I fill your cup with coffee, fill my day with visits.",
+    "sentence_lemmas": ["llenar", "tu", "taza", "de", "café", "llenar", "mi", "día", "de", "visita"]
   },
   {
     "order": 1220,
@@ -2245,9 +2245,9 @@
     "lemma": "merecer",
     "es": "merecer",
     "en": "to deserve",
-    "sentence_es": "Después de tanto trabajo, mereces un día libre.",
-    "sentence_en": "After so much work, you deserve a day off.",
-    "sentence_lemmas": ["después", "de", "tanto", "trabajo", "merecer", "un", "día", "libre"]
+    "sentence_es": "Mi jardín merece agua, mis manos cansadas merecen descansar.",
+    "sentence_en": "My garden deserves water; my tired hands deserve rest.",
+    "sentence_lemmas": ["mi", "jardín", "merecer", "agua", "mi", "mano", "cansado", "merecer", "descansar"]
   },
   {
     "order": 1222,
@@ -2256,9 +2256,9 @@
     "lemma": "notar",
     "es": "notar",
     "en": "to notice, to spot",
-    "sentence_es": "¿Notaste que la tienda ya no vende pan?",
-    "sentence_en": "Did you notice that the store no longer sells bread?",
-    "sentence_lemmas": ["notar", "que", "el", "tienda", "ya", "no", "vender", "pan"]
+    "sentence_es": "Noto tu alegría al llegar, noto mi prisa desaparecer.",
+    "sentence_en": "I notice your joy on arriving, notice my haste disappear.",
+    "sentence_lemmas": ["notar", "tu", "alegría", "a", "llegar", "notar", "mi", "prisa", "desaparecer"]
   },
   {
     "order": 1223,
@@ -2268,7 +2268,7 @@
     "es": "obligar",
     "en": "to force, to oblige",
     "sentence_es": "Me obligan a viajar cada semana por mi trabajo.",
-    "sentence_en": "I am required to travel every week for my job.",
+    "sentence_en": "My job obliges me to travel every week.",
     "sentence_lemmas": ["me", "obligar", "a", "viajar", "cada", "semana", "por", "mi", "trabajo"]
   },
   {
@@ -2301,7 +2301,7 @@
     "es": "ordenar / acomodar",
     "en": "to tidy up; to put in order; to give an order",
     "sentence_es": "Voy a ordenar mis papeles esta noche.",
-    "sentence_en": "I am going to sort my papers tonight.",
+    "sentence_en": "I am going to tidy up my papers tonight.",
     "sentence_lemmas": ["ir", "a", "ordenar", "mi", "papel", "este", "noche"]
   },
   {
@@ -2311,9 +2311,9 @@
     "lemma": "organizar",
     "es": "organizar",
     "en": "to organize",
-    "sentence_es": "Vamos a organizar una cena para los vecinos del edificio.",
-    "sentence_en": "We are going to organize a dinner for the neighbors in the building.",
-    "sentence_lemmas": ["ir", "a", "organizar", "un", "cena", "para", "el", "vecino", "de", "edificio"]
+    "sentence_es": "Organizo una fiesta en casa, organizo la mesa para todos.",
+    "sentence_en": "I organize a party at home, arrange the table for everyone.",
+    "sentence_lemmas": ["organizar", "un", "fiesta", "en", "casa", "organizar", "el", "mesa", "para", "todo"]
   },
   {
     "order": 1228,
@@ -2323,9 +2323,9 @@
     "es": "parar",
     "en": "to stop (moving)",
     "hint_en": "The bus *stops* at the corner",
-    "sentence_es": "Tomo el autobús que para frente a mi casa.",
-    "sentence_en": "I take the bus that stops in front of my house.",
-    "sentence_lemmas": ["tomar", "el", "autobús", "que", "parar", "frente", "a", "mi", "casa"]
+    "sentence_es": "El tren no quiere parar, sigue y sigue hasta el mar.",
+    "sentence_en": "The train will not stop; it keeps going to the sea.",
+    "sentence_lemmas": ["el", "tren", "no", "querer", "parar", "seguir", "y", "seguir", "hasta", "el", "mar"]
   },
   {
     "order": 1229,
@@ -2356,9 +2356,9 @@
     "lemma": "pertenecer",
     "es": "pertenecer",
     "en": "to belong",
-    "sentence_es": "¿A quién pertenece la casa grande de la esquina?",
-    "sentence_en": "Who does the big house on the corner belong to?",
-    "sentence_lemmas": ["a", "quién", "pertenecer", "el", "casa", "grande", "de", "el", "esquina"]
+    "sentence_es": "La flor pertenece al jardín, este lugar nos pertenece a todos.",
+    "sentence_en": "The flower belongs to the garden; this place belongs to us all.",
+    "sentence_lemmas": ["el", "flor", "pertenecer", "a", "jardín", "este", "lugar", "nos", "pertenecer", "a", "todo"]
   },
   {
     "order": 1232,
@@ -2379,7 +2379,7 @@
     "lemma": "proponer",
     "es": "proponer / sugerir",
     "en": "to suggest, to propose",
-    "sentence_es": "¿Qué propones para la fiesta del sábado?",
+    "sentence_es": "¿Qué sugieres para la fiesta del sábado?",
     "sentence_en": "What do you suggest for Saturday's party?",
     "sentence_lemmas": ["qué", "proponer", "para", "el", "fiesta", "de", "sábado"]
   },
@@ -2390,9 +2390,9 @@
     "lemma": "preferir",
     "es": "preferir",
     "en": "to prefer",
-    "sentence_es": "Prefiero viajar en autobús porque es más barato.",
-    "sentence_en": "I prefer to travel by bus because it is cheaper.",
-    "sentence_lemmas": ["preferir", "viajar", "en", "autobús", "porque", "ser", "más", "barato"]
+    "sentence_es": "Prefiero comer en casa, prefiero compartir la mesa contigo.",
+    "sentence_en": "I prefer eating at home, prefer sharing the table with you.",
+    "sentence_lemmas": ["preferir", "comer", "en", "casa", "preferir", "compartir", "el", "mesa", "contigo"]
   },
   {
     "order": 1235,
@@ -2401,9 +2401,9 @@
     "lemma": "proteger",
     "es": "proteger",
     "en": "to protect",
-    "sentence_es": "Los árboles nos protegen del sol en verano.",
-    "sentence_en": "Trees protect us from the sun in summer.",
-    "sentence_lemmas": ["el", "árbol", "nos", "proteger", "de", "sol", "en", "verano"]
+    "sentence_es": "Protejo mis libros de la lluvia, protejo mis flores del frío.",
+    "sentence_en": "I protect my books from rain, my flowers from cold.",
+    "sentence_lemmas": ["proteger", "mi", "libro", "de", "el", "lluvia", "proteger", "mi", "flor", "de", "frío"]
   },
   {
     "order": 1236,
@@ -2413,9 +2413,9 @@
     "es": "recoger",
     "en": "to pick up, to collect",
     "hint_en": "I *pick* up my kids at six.",
-    "sentence_es": "Recojo el pan fresco antes de llegar a casa.",
-    "sentence_en": "I pick up the fresh bread before getting home.",
-    "sentence_lemmas": ["recoger", "el", "pan", "fresco", "antes", "de", "llegar", "a", "casa"]
+    "sentence_es": "Recojo las hojas del patio, recojo las frutas del árbol.",
+    "sentence_en": "I collect leaves from the patio, fruit from the tree.",
+    "sentence_lemmas": ["recoger", "el", "hoja", "de", "patio", "recoger", "el", "fruta", "de", "árbol"]
   },
   {
     "order": 1237,
@@ -2435,9 +2435,9 @@
     "lemma": "respetar",
     "es": "respetar",
     "en": "to respect",
-    "sentence_es": "Respeto a mis profesores porque me enseñan mucho.",
-    "sentence_en": "I respect my teachers because they teach me a lot.",
-    "sentence_lemmas": ["respetar", "a", "mi", "profesor", "porque", "me", "enseñar", "mucho"]
+    "sentence_es": "Respeto tu silencio, respeto tus palabras aunque no las entienda.",
+    "sentence_en": "I respect your silence, your words even if I do not understand them.",
+    "sentence_lemmas": ["respetar", "tu", "silencio", "respetar", "tu", "palabra", "aunque", "no", "el", "entender"]
   },
   {
     "order": 1239,
@@ -2458,7 +2458,7 @@
     "es": "agarrar",
     "en": "to grab, to grasp",
     "sentence_es": "Agarra bien la bolsa; hay mucha gente en el metro.",
-    "sentence_en": "Hold the bag tight; there are lots of people on the metro.",
+    "sentence_en": "Grasp the bag firmly; there are lots of people on the subway.",
     "sentence_lemmas": ["agarrar", "bien", "el", "bolsa", "haber", "mucho", "gente", "en", "el", "metro"]
   },
   {
@@ -2468,9 +2468,9 @@
     "lemma": "soñar",
     "es": "soñar",
     "en": "to dream",
-    "sentence_es": "Anoche soñé que vivía cerca del mar.",
-    "sentence_en": "Last night I dreamed that I lived near the sea.",
-    "sentence_lemmas": ["anoche", "soñar", "que", "vivir", "cerca", "de", "mar"]
+    "sentence_es": "Quiero soñar con mi patio, soñar con volver a casa.",
+    "sentence_en": "I want to dream of my patio, dream of returning home.",
+    "sentence_lemmas": ["querer", "soñar", "con", "mi", "patio", "soñar", "con", "volver", "a", "casa"]
   },
   {
     "order": 1242,
@@ -2480,7 +2480,7 @@
     "es": "aguantar",
     "en": "to endure, to put up with",
     "sentence_es": "No aguanto más este ruido; voy a cerrar la ventana.",
-    "sentence_en": "I cannot stand this noise anymore; I am going to close the window.",
+    "sentence_en": "I cannot endure this noise anymore; I am going to close the window.",
     "sentence_lemmas": ["no", "aguantar", "más", "este", "ruido", "ir", "a", "cerrar", "el", "ventana"]
   },
   {
@@ -2490,9 +2490,9 @@
     "lemma": "regar",
     "es": "regar",
     "en": "to water (plants)",
-    "sentence_es": "Riego las plantas del balcón cada tarde.",
-    "sentence_en": "I water the balcony plants every afternoon.",
-    "sentence_lemmas": ["regar", "el", "planta", "de", "balcón", "cada", "tarde"]
+    "sentence_es": "Riego las flores temprano, riego antes de que llegue el calor.",
+    "sentence_en": "I water the flowers early, before the heat arrives.",
+    "sentence_lemmas": ["regar", "el", "flor", "temprano", "regar", "antes", "de", "que", "llegar", "el", "calor"]
   },
   {
     "order": 1244,
@@ -2545,9 +2545,9 @@
     "lemma": "mezclar",
     "es": "mezclar",
     "en": "to mix",
-    "sentence_es": "Mezclo el azúcar con los huevos para el pastel.",
-    "sentence_en": "I mix the sugar with the eggs for the cake.",
-    "sentence_lemmas": ["mezclar", "el", "azúcar", "con", "el", "huevo", "para", "el", "pastel"]
+    "sentence_es": "Mezclo harina con agua, mezclo trabajo con ganas de aprender.",
+    "sentence_en": "I mix flour with water, work with a desire to learn.",
+    "sentence_lemmas": ["mezclar", "harina", "con", "agua", "mezclar", "trabajo", "con", "ganas", "de", "aprender"]
   },
   {
     "order": 1249,
@@ -2556,9 +2556,9 @@
     "lemma": "amistad",
     "es": "la amistad",
     "en": "friendship",
-    "sentence_es": "Nuestra amistad empezó en la escuela.",
-    "sentence_en": "Our friendship began at school.",
-    "sentence_lemmas": ["nuestro", "amistad", "empezar", "en", "el", "escuela"]
+    "sentence_es": "Nuestra amistad cruza calles, nuestra amistad siempre encuentra tiempo para un café.",
+    "sentence_en": "Our friendship crosses streets, always finds time for a coffee.",
+    "sentence_lemmas": ["nuestro", "amistad", "cruzar", "calle", "nuestro", "amistad", "siempre", "encontrar", "tiempo", "para", "un", "café"]
   },
   {
     "order": 1250,
@@ -2589,9 +2589,9 @@
     "lemma": "arte",
     "es": "el arte",
     "en": "art",
-    "sentence_es": "Aprendo arte y música en la escuela.",
-    "sentence_en": "I learn art and music at school.",
-    "sentence_lemmas": ["aprender", "arte", "y", "música", "en", "el", "escuela"]
+    "sentence_es": "El arte abre ventanas, cada cuadro deja entrar otro color.",
+    "sentence_en": "Art opens windows; each painting lets another color in.",
+    "sentence_lemmas": ["el", "arte", "abrir", "ventana", "cada", "cuadro", "dejar", "entrar", "otro", "color"]
   },
   {
     "order": 1253,
@@ -2633,9 +2633,9 @@
     "lemma": "charla",
     "es": "la charla / la plática",
     "en": "talk, chat",
-    "sentence_es": "Tuvimos una charla larga en el parque.",
-    "sentence_en": "We had a long chat in the park.",
-    "sentence_lemmas": ["tener", "un", "charla", "largo", "en", "el", "parque"]
+    "sentence_es": "La charla sigue en la cocina, sigue mientras preparo el café.",
+    "sentence_en": "The chat continues in the kitchen, continues while I make coffee.",
+    "sentence_lemmas": ["el", "charla", "seguir", "en", "el", "cocina", "seguir", "mientras", "preparar", "el", "café"]
   },
   {
     "order": 1257,
@@ -2677,9 +2677,9 @@
     "lemma": "confianza",
     "es": "la confianza",
     "en": "trust, confidence",
-    "sentence_es": "Hablamos con confianza porque nos conocemos bien.",
-    "sentence_en": "We talk openly because we know each other well.",
-    "sentence_lemmas": ["hablar", "con", "confianza", "porque", "nos", "conocerse", "bien"]
+    "sentence_es": "Tengo confianza en tus manos, tengo confianza en nuestro trabajo.",
+    "sentence_en": "I trust your hands, trust our work.",
+    "sentence_lemmas": ["tener", "confianza", "en", "tu", "mano", "tener", "confianza", "en", "nuestro", "trabajo"]
   },
   {
     "order": 1261,
@@ -2699,9 +2699,9 @@
     "lemma": "consejo",
     "es": "el consejo",
     "en": "advice",
-    "sentence_es": "Dame un consejo: ¿qué carro debo comprar?",
-    "sentence_en": "Give me some advice: which car should I buy?",
-    "sentence_lemmas": ["dar", "un", "consejo", "qué", "carro", "deber", "comprar"]
+    "sentence_es": "Mi consejo es ir despacio, mirar el camino y luego avanzar.",
+    "sentence_en": "My advice is to go slowly, look at the road, then move forward.",
+    "sentence_lemmas": ["mi", "consejo", "ser", "ir", "despacio", "mirar", "el", "camino", "y", "luego", "avanzar"]
   },
   {
     "order": 1263,
@@ -2710,9 +2710,9 @@
     "lemma": "costumbre",
     "es": "la costumbre",
     "en": "custom, habit",
-    "sentence_es": "En mi barrio es costumbre saludar a todos los vecinos.",
-    "sentence_en": "In my neighborhood it is customary to greet all the neighbors.",
-    "sentence_lemmas": ["en", "mi", "barrio", "ser", "costumbre", "saludar", "a", "todo", "el", "vecino"]
+    "sentence_es": "Tengo la costumbre de leer, leer mientras tomo mi café.",
+    "sentence_en": "I have a habit of reading, reading while I drink my coffee.",
+    "sentence_lemmas": ["tener", "el", "costumbre", "de", "leer", "leer", "mientras", "tomar", "mi", "café"]
   },
   {
     "order": 1264,
@@ -2754,9 +2754,9 @@
     "lemma": "deseo",
     "es": "el deseo",
     "en": "wish, desire",
-    "sentence_es": "Mi deseo es vivir cerca del mar.",
-    "sentence_en": "My wish is to live near the sea.",
-    "sentence_lemmas": ["mi", "deseo", "ser", "vivir", "cerca", "de", "mar"]
+    "sentence_es": "Mi deseo es verte sonreír, ver tu casa llena de luz.",
+    "sentence_en": "My wish is to see you smile, see your house full of light.",
+    "sentence_lemmas": ["mi", "deseo", "ser", "ver", "sonreír", "ver", "tu", "casa", "lleno", "de", "luz"]
   },
   {
     "order": 1268,
@@ -2765,9 +2765,9 @@
     "lemma": "destino",
     "es": "el destino",
     "en": "destination; fate",
-    "sentence_es": "¿Cuál es el destino de este autobús?",
-    "sentence_en": "What is this bus's destination?",
-    "sentence_lemmas": ["cuál", "ser", "el", "destino", "de", "este", "autobús"]
+    "sentence_es": "Mi destino está en el mapa, mi alegría en el camino.",
+    "sentence_en": "My destination is on the map; my joy is on the road.",
+    "sentence_lemmas": ["mi", "destino", "estar", "en", "el", "mapa", "mi", "alegría", "en", "el", "camino"]
   },
   {
     "order": 1269,
@@ -2832,9 +2832,9 @@
     "lemma": "emoción",
     "es": "la emoción",
     "en": "excitement, emotion",
-    "sentence_es": "Lloró de emoción cuando ganó el premio.",
-    "sentence_en": "She cried with excitement when she won the prize.",
-    "sentence_lemmas": ["llorar", "de", "emoción", "cuando", "ganar", "el", "premio"]
+    "sentence_es": "Cada emoción tiene su momento, cada recuerdo su lugar.",
+    "sentence_en": "Each emotion has its moment, each memory its place.",
+    "sentence_lemmas": ["cada", "emoción", "tener", "su", "momento", "cada", "recuerdo", "su", "lugar"]
   },
   {
     "order": 1275,
@@ -2866,9 +2866,9 @@
     "es": "el espacio",
     "en": "space, room (to fit)",
     "hint_en": "There is no *room* in the car",
-    "sentence_es": "En esta sala hay espacio para veinte personas.",
-    "sentence_en": "In this room there is space for twenty people.",
-    "sentence_lemmas": ["en", "este", "sala", "haber", "espacio", "para", "veinte", "persona"]
+    "sentence_es": "Hay espacio para todos, hay espacio para una silla más.",
+    "sentence_en": "There is room for everyone, room for one more chair.",
+    "sentence_lemmas": ["haber", "espacio", "para", "todo", "haber", "espacio", "para", "un", "silla", "más"]
   },
   {
     "order": 1278,
@@ -2877,9 +2877,9 @@
     "lemma": "estilo",
     "es": "el estilo",
     "en": "style",
-    "sentence_es": "¿Qué estilo de ropa prefieres para una fiesta?",
-    "sentence_en": "What style of clothes do you prefer for a party?",
-    "sentence_lemmas": ["qué", "estilo", "de", "ropa", "preferir", "para", "un", "fiesta"]
+    "sentence_es": "Tu estilo es caminar rápido, mi estilo es mirar cada flor.",
+    "sentence_en": "Your style is to walk fast; mine is to look at every flower.",
+    "sentence_lemmas": ["tu", "estilo", "ser", "caminar", "rápido", "mi", "estilo", "ser", "mirar", "cada", "flor"]
   },
   {
     "order": 1279,
@@ -2911,7 +2911,7 @@
     "es": "el fondo",
     "en": "bottom, far end, background",
     "sentence_es": "¿El baño queda al fondo del restaurante?",
-    "sentence_en": "Is the bathroom at the back of the restaurant?",
+    "sentence_en": "Is the bathroom at the far end of the restaurant?",
     "sentence_lemmas": ["el", "baño", "quedar", "a", "fondo", "de", "restaurante"]
   },
   {
@@ -2967,9 +2967,9 @@
     "es": "el hogar",
     "en": "household, home (formal)",
     "hint_en": "My *home* is small but comfortable",
-    "sentence_es": "Todos queremos un hogar tranquilo y limpio.",
-    "sentence_en": "We all want a calm and clean home.",
-    "sentence_lemmas": ["todo", "querer", "un", "hogar", "tranquilo", "y", "limpiar"]
+    "sentence_es": "Mi hogar huele a pan, mi patio huele a flores.",
+    "sentence_en": "My home smells of bread, my patio of flowers.",
+    "sentence_lemmas": ["mi", "hogar", "oler", "a", "pan", "mi", "patio", "oler", "a", "flor"]
   },
   {
     "order": 1287,
@@ -3024,9 +3024,9 @@
     "es": "el paso",
     "en": "step; passage",
     "hint_en": "I take a *step* back",
-    "sentence_es": "Un paso más y llegamos a la puerta.",
-    "sentence_en": "One more step and we reach the door.",
-    "sentence_lemmas": ["un", "paso", "más", "y", "llegar", "a", "el", "puerta"]
+    "sentence_es": "Cada paso cuenta, cada paso me lleva cerca de casa.",
+    "sentence_en": "Every step counts; every step takes me close to home.",
+    "sentence_lemmas": ["cada", "paso", "contar", "cada", "paso", "me", "llevar", "cerca", "de", "casa"]
   },
   {
     "order": 1292,
@@ -3068,9 +3068,9 @@
     "lemma": "sentimiento",
     "es": "el sentimiento",
     "en": "feeling",
-    "sentence_es": "No puedo explicar el sentimiento que tengo hoy.",
-    "sentence_en": "I cannot explain the feeling I have today.",
-    "sentence_lemmas": ["no", "poder", "explicar", "el", "sentimiento", "que", "tener", "hoy"]
+    "sentence_es": "Mi sentimiento no tiene palabras, pero mis ojos lo dicen todo.",
+    "sentence_en": "My feeling has no words, but my eyes say it all.",
+    "sentence_lemmas": ["mi", "sentimiento", "no", "tener", "palabra", "pero", "mi", "ojo", "lo", "decir", "todo"]
   },
   {
     "order": 1296,
@@ -3112,9 +3112,9 @@
     "lemma": "agradable",
     "es": "agradable",
     "en": "pleasant",
-    "sentence_es": "Fue una tarde muy agradable en el parque.",
-    "sentence_en": "It was a very pleasant afternoon in the park.",
-    "sentence_lemmas": ["ser", "un", "tarde", "muy", "agradable", "en", "el", "parque"]
+    "sentence_es": "Es agradable escuchar la lluvia, es agradable compartir la tarde contigo.",
+    "sentence_en": "It is pleasant to hear the rain, pleasant to spend the afternoon with you.",
+    "sentence_lemmas": ["ser", "agradable", "escuchar", "el", "lluvia", "ser", "agradable", "compartir", "el", "tarde", "contigo"]
   },
   {
     "order": 1300,
@@ -3135,9 +3135,9 @@
     "es": "blando",
     "en": "soft (not hard)",
     "hint_en": "The bread is *soft* and fresh",
-    "sentence_es": "Me gustan las tortillas blandas, no las duras.",
-    "sentence_en": "I like soft tortillas, not hard ones.",
-    "sentence_lemmas": ["me", "gustar", "el", "tortilla", "blando", "no", "el", "duro"]
+    "sentence_es": "El pan está blando, la almohada también; ya quiero descansar.",
+    "sentence_en": "The bread is soft, the pillow too; I already want to rest.",
+    "sentence_lemmas": ["el", "pan", "estar", "blando", "el", "almohada", "también", "ya", "querer", "descansar"]
   },
   {
     "order": 1302,
@@ -3146,9 +3146,9 @@
     "lemma": "cercano",
     "es": "cercano",
     "en": "nearby, neighboring",
-    "sentence_es": "¿Dónde está el mercado más cercano?",
-    "sentence_en": "Where is the nearest market?",
-    "sentence_lemmas": ["dónde", "estar", "el", "mercado", "más", "cercano"]
+    "sentence_es": "El mar parece cercano, tan cercano que puedo oír sus olas.",
+    "sentence_en": "The sea seems nearby, so nearby I can hear its waves.",
+    "sentence_lemmas": ["el", "mar", "parecer", "cercano", "tan", "cercano", "que", "poder", "oír", "su", "ola"]
   },
   {
     "order": 1303,
@@ -3158,8 +3158,8 @@
     "es": "ordinario / vulgar",
     "en": "vulgar, coarse (MX)",
     "hint_en": "That joke is *coarse*, do not say it.",
-    "sentence_es": "No digas eso delante de los niños, es muy ordinario.",
-    "sentence_en": "Do not say that in front of the children, it is very vulgar.",
+    "sentence_es": "No digas eso delante de los niños, es muy vulgar.",
+    "sentence_en": "Do not say that in front of the children; it is very vulgar.",
     "sentence_lemmas": ["no", "decir", "eso", "delante", "de", "el", "niño", "ser", "muy", "ordinario"]
   },
   {
@@ -3169,9 +3169,9 @@
     "lemma": "completo",
     "es": "completo",
     "en": "complete, comprehensive",
-    "sentence_es": "Pedí un desayuno completo con huevos, pan y fruta.",
-    "sentence_en": "I ordered a full breakfast with eggs, bread, and fruit.",
-    "sentence_lemmas": ["pedir", "un", "desayuno", "completo", "con", "huevo", "pan", "y", "fruta"]
+    "sentence_es": "Mi día está completo cuando llegas, cuando comemos juntos otra vez.",
+    "sentence_en": "My day is complete when you arrive, when we eat together again.",
+    "sentence_lemmas": ["mi", "día", "estar", "completo", "cuando", "llegar", "cuando", "comer", "juntos", "otro", "vez"]
   },
   {
     "order": 1305,
@@ -3269,9 +3269,9 @@
     "lemma": "favorito",
     "es": "favorito / preferido",
     "en": "favorite",
-    "sentence_es": "Cocino mi plato favorito cada domingo.",
-    "sentence_en": "I cook my favorite dish every Sunday.",
-    "sentence_lemmas": ["cocinar", "mi", "plato", "favorito", "cada", "domingo"]
+    "sentence_es": "Mi lugar favorito tiene flores, mi libro favorito tiene tu nombre.",
+    "sentence_en": "My favorite place has flowers, my favorite book has your name.",
+    "sentence_lemmas": ["mi", "lugar", "favorito", "tener", "flor", "mi", "libro", "favorito", "tener", "tu", "nombre"]
   },
   {
     "order": 1314,
@@ -3314,7 +3314,7 @@
     "es": "grave",
     "en": "severe",
     "sentence_es": "El doctor dice que mi dolor no es grave.",
-    "sentence_en": "The doctor says my pain is not serious.",
+    "sentence_en": "The doctor says my pain is not severe.",
     "sentence_lemmas": ["el", "doctora", "decir", "que", "mi", "dolor", "no", "ser", "grave"]
   },
   {
@@ -3324,9 +3324,9 @@
     "lemma": "ideal",
     "es": "ideal",
     "en": "ideal",
-    "sentence_es": "Buscamos un lugar ideal para vivir con niños.",
-    "sentence_en": "We are looking for an ideal place to live with kids.",
-    "sentence_lemmas": ["buscar", "un", "lugar", "ideal", "para", "vivir", "con", "niño"]
+    "sentence_es": "Un día ideal tiene tiempo para aprender, tiempo para descansar.",
+    "sentence_en": "An ideal day has time to learn, time to rest.",
+    "sentence_lemmas": ["un", "día", "ideal", "tener", "tiempo", "para", "aprender", "tiempo", "para", "descansar"]
   },
   {
     "order": 1319,
@@ -3335,9 +3335,9 @@
     "lemma": "inesperado",
     "es": "inesperado",
     "en": "unexpected",
-    "sentence_es": "Tuvimos un gasto inesperado y no pudimos viajar.",
-    "sentence_en": "We had an unexpected expense and could not travel.",
-    "sentence_lemmas": ["tener", "un", "gasto", "inesperado", "y", "no", "poder", "viajar"]
+    "sentence_es": "Un regalo inesperado llegó: flores de tu jardín, flores para mí.",
+    "sentence_en": "An unexpected gift arrived: flowers from your garden, flowers for me.",
+    "sentence_lemmas": ["un", "regalo", "inesperado", "llegar", "flor", "de", "tu", "jardín", "flor", "para", "yo"]
   },
   {
     "order": 1320,
@@ -3368,9 +3368,9 @@
     "lemma": "magnífico",
     "es": "magnífico",
     "en": "magnificent, splendid",
-    "sentence_es": "La cena de anoche estuvo magnífica; ¡gracias!",
-    "sentence_en": "Last night's dinner was magnificent; thank you!",
-    "sentence_lemmas": ["el", "cena", "de", "anoche", "estar", "magnífico", "gracias"]
+    "sentence_es": "El cielo está magnífico, el mar también; quiero estar aquí.",
+    "sentence_en": "The sky is magnificent, the sea too; I want to be here.",
+    "sentence_lemmas": ["el", "cielo", "estar", "magnífico", "el", "mar", "también", "querer", "estar", "aquí"]
   },
   {
     "order": 1323,
@@ -3401,9 +3401,9 @@
     "lemma": "valiente",
     "es": "valiente",
     "en": "brave",
-    "sentence_es": "¡Fuiste valiente y no lloraste con el doctor!",
-    "sentence_en": "You were brave and did not cry at the doctor's!",
-    "sentence_lemmas": ["ser", "valiente", "y", "no", "llorar", "con", "el", "doctora"]
+    "sentence_es": "Soy valiente al preguntar, valiente aunque tenga miedo de hablar.",
+    "sentence_en": "I am brave when asking, brave even if I am afraid to speak.",
+    "sentence_lemmas": ["ser", "valiente", "a", "preguntar", "valiente", "aunque", "tener", "miedo", "de", "hablar"]
   },
   {
     "order": 1326,
@@ -3533,9 +3533,9 @@
     "lemma": "amanecer",
     "es": "el amanecer",
     "en": "sunrise, dawn",
-    "sentence_es": "Me levanto al amanecer para correr en el parque.",
-    "sentence_en": "I get up at dawn to run in the park.",
-    "sentence_lemmas": ["me", "levantar", "a", "amanecer", "para", "correr", "en", "el", "parque"]
+    "sentence_es": "Al amanecer despierta el campo, al amanecer salgo a caminar.",
+    "sentence_en": "At dawn the countryside wakes; at dawn I go walking.",
+    "sentence_lemmas": ["a", "amanecer", "despertar", "el", "campo", "a", "amanecer", "salir", "a", "caminar"]
   },
   {
     "order": 1572,
@@ -3544,9 +3544,9 @@
     "lemma": "atardecer",
     "es": "el atardecer",
     "en": "sunset, dusk",
-    "sentence_es": "Me gusta caminar por la playa al atardecer.",
-    "sentence_en": "I like walking on the beach at sunset.",
-    "sentence_lemmas": ["me", "gustar", "caminar", "por", "el", "playa", "a", "atardecer"]
+    "sentence_es": "El atardecer pinta el mar, pinta de naranja nuestra ventana.",
+    "sentence_en": "The sunset paints the sea, paints our window orange.",
+    "sentence_lemmas": ["el", "atardecer", "pintar", "el", "mar", "pintar", "de", "naranja", "nuestro", "ventana"]
   },
   {
     "order": 1573,
@@ -3555,9 +3555,9 @@
     "lemma": "madrugada",
     "es": "la madrugada",
     "en": "early morning, wee hours",
-    "sentence_es": "Salimos de madrugada, a las cuatro.",
-    "sentence_en": "We leave at dawn, at four.",
-    "sentence_lemmas": ["salir", "de", "madrugada", "a", "el", "cuatro"]
+    "sentence_es": "De madrugada canta el gallo, de madrugada salimos al campo.",
+    "sentence_en": "In the early morning the rooster crows; in the early morning we go to the fields.",
+    "sentence_lemmas": ["de", "madrugada", "cantar", "el", "gallo", "de", "madrugada", "salir", "a", "campo"]
   },
   {
     "order": 1575,
@@ -3566,9 +3566,9 @@
     "lemma": "campana",
     "es": "la campana",
     "en": "bell",
-    "sentence_es": "Cuando suena la campana, los niños entran a clase.",
-    "sentence_en": "When the bell rings, the children go into class.",
-    "sentence_lemmas": ["cuando", "sonar", "el", "campana", "el", "niño", "entrar", "a", "clase"]
+    "sentence_es": "Suena la campana en la plaza, suena la hora de volver.",
+    "sentence_en": "The bell rings in the square, rings the hour to return.",
+    "sentence_lemmas": ["sonar", "el", "campana", "en", "el", "plaza", "sonar", "el", "hora", "de", "volver"]
   },
   {
     "order": 1589,
@@ -3599,9 +3599,9 @@
     "lemma": "tibio",
     "es": "tibio",
     "en": "lukewarm",
-    "sentence_es": "Lavo al bebé con agua tibia, nunca caliente.",
-    "sentence_en": "I wash the baby with lukewarm water, never hot.",
-    "sentence_lemmas": ["lavarse", "a", "bebé", "con", "agua", "tibio", "nunca", "caliente"]
+    "sentence_es": "Tibio está el café, tibia la tarde que compartimos.",
+    "sentence_en": "The coffee is lukewarm, the afternoon we share is mild.",
+    "sentence_lemmas": ["tibio", "estar", "el", "café", "tibio", "el", "tarde", "que", "compartir"]
   },
   {
     "order": 1632,
@@ -3610,9 +3610,9 @@
     "lemma": "cerro",
     "es": "el cerro",
     "en": "hill",
-    "sentence_es": "Desde el cerro se ve toda la ciudad.",
-    "sentence_en": "From the hill you can see the whole city.",
-    "sentence_lemmas": ["desde", "el", "cerro", "se", "ver", "todo", "el", "ciudad"]
+    "sentence_es": "Desde el cerro miro el río, desde el río veo mi casa.",
+    "sentence_en": "From the hill I watch the river, from the river I see my house.",
+    "sentence_lemmas": ["desde", "el", "cerro", "mirar", "el", "río", "desde", "el", "río", "ver", "mi", "casa"]
   },
   {
     "order": 1783,
@@ -3687,9 +3687,9 @@
     "lemma": "anotar",
     "es": "anotar",
     "en": "to write down, to note",
-    "sentence_es": "Anota mi dirección en tu cuaderno.",
-    "sentence_en": "Write down my address in your notebook.",
-    "sentence_lemmas": ["anotar", "mi", "dirección", "en", "tu", "cuaderno"]
+    "sentence_es": "Anoto una palabra, anoto otra, mi cuaderno se llena de ideas.",
+    "sentence_en": "I write down a word, another word; my notebook fills with ideas.",
+    "sentence_lemmas": ["anotar", "un", "palabra", "anotar", "otro", "mi", "cuaderno", "se", "llenar", "de", "idea"]
   },
   {
     "order": 1790,
@@ -3798,9 +3798,9 @@
     "lemma": "colaborar",
     "es": "colaborar",
     "en": "to collaborate",
-    "sentence_es": "Todos los vecinos colaboran para limpiar el parque.",
-    "sentence_en": "All the neighbors work together to clean the park.",
-    "sentence_lemmas": ["todo", "el", "vecino", "colaborar", "para", "limpiar", "el", "parque"]
+    "sentence_es": "Colaboro contigo en el jardín, colaboramos para tener más flores.",
+    "sentence_en": "I collaborate with you in the garden; we collaborate to have more flowers.",
+    "sentence_lemmas": ["colaborar", "contigo", "en", "el", "jardín", "colaborar", "para", "tener", "más", "flor"]
   },
   {
     "order": 1800,
@@ -3855,7 +3855,7 @@
     "es": "conectar",
     "en": "to connect",
     "sentence_es": "Conecta el teléfono a la luz; no tiene batería.",
-    "sentence_en": "Plug the phone in; it has no battery.",
+    "sentence_en": "Connect the phone to the power; its battery is empty.",
     "sentence_lemmas": ["conectar", "el", "teléfono", "a", "el", "luz", "no", "tener", "batería"]
   },
   {
@@ -3876,9 +3876,9 @@
     "lemma": "convivir",
     "es": "convivir",
     "en": "to live together, to coexist",
-    "sentence_es": "En este edificio conviven personas de diez países.",
-    "sentence_en": "In this building people from ten countries live together.",
-    "sentence_lemmas": ["en", "este", "edificio", "convivir", "persona", "de", "diez", "país"]
+    "sentence_es": "Convivimos con la lluvia, convivimos con las flores del patio.",
+    "sentence_en": "We live with the rain, we live with the flowers in the yard.",
+    "sentence_lemmas": ["convivir", "con", "el", "lluvia", "convivir", "con", "el", "flor", "de", "patio"]
   },
   {
     "order": 1807,
@@ -3898,9 +3898,9 @@
     "lemma": "cultivar",
     "es": "cultivar",
     "en": "to cultivate, to farm",
-    "sentence_es": "Mis vecinos cultivan frutas y verduras en el patio.",
-    "sentence_en": "My neighbors grow fruit and vegetables in the yard.",
-    "sentence_lemmas": ["mi", "vecino", "cultivar", "fruta", "y", "verdura", "en", "el", "patio"]
+    "sentence_es": "Cultivo flores en el patio, cultivo paciencia mientras espero.",
+    "sentence_en": "I cultivate flowers in the patio, cultivate patience while I wait.",
+    "sentence_lemmas": ["cultivar", "flor", "en", "el", "patio", "cultivar", "paciencia", "mientras", "esperar"]
   },
   {
     "order": 1809,
@@ -3910,7 +3910,7 @@
     "es": "curar",
     "en": "to cure, to heal",
     "sentence_es": "Me curaron la mano con una medicina nueva.",
-    "sentence_en": "They treated my hand with a new medicine.",
+    "sentence_en": "They healed my hand with a new medicine.",
     "sentence_lemmas": ["me", "curar", "el", "mano", "con", "un", "medicina", "nuevo"]
   },
   {
@@ -3966,7 +3966,7 @@
     "es": "dividir",
     "en": "to divide",
     "sentence_es": "Dividimos la cuenta entre los cuatro.",
-    "sentence_en": "We split the bill among the four of us.",
+    "sentence_en": "We divide the bill among the four of us.",
     "sentence_lemmas": ["dividir", "el", "contar", "entre", "el", "cuatro"]
   },
   {
@@ -4043,9 +4043,9 @@
     "lemma": "grabar",
     "es": "grabar",
     "en": "to record",
-    "sentence_es": "Voy a grabar un mensaje para mi amigo con el teléfono.",
-    "sentence_en": "I am going to record a message for my friend with the phone.",
-    "sentence_lemmas": ["ir", "a", "grabar", "un", "mensaje", "para", "mi", "amigo", "con", "el", "teléfono"]
+    "sentence_es": "Grabo tu canción en casa, grabo la lluvia al amanecer.",
+    "sentence_en": "I record your song at home, I record the rain at dawn.",
+    "sentence_lemmas": ["grabar", "tu", "canción", "en", "casa", "grabar", "el", "lluvia", "a", "amanecer"]
   },
   {
     "order": 1822,
@@ -4054,9 +4054,9 @@
     "lemma": "imitar",
     "es": "imitar",
     "en": "to imitate",
-    "sentence_es": "Imito muy bien a mi profesor.",
-    "sentence_en": "I imitate my teacher very well.",
-    "sentence_lemmas": ["imitar", "muy", "bien", "a", "mi", "profesor"]
+    "sentence_es": "Imito al pájaro al cantar, imito a las olas al bailar.",
+    "sentence_en": "I imitate the bird when singing, the waves when dancing.",
+    "sentence_lemmas": ["imitar", "a", "pájaro", "a", "cantar", "imitar", "a", "el", "ola", "a", "bailar"]
   },
   {
     "order": 1823,
@@ -4077,7 +4077,7 @@
     "es": "ingresar",
     "en": "to be admitted (to), to join",
     "sentence_es": "Quiero ingresar a la universidad el próximo año.",
-    "sentence_en": "I want to enter university next year.",
+    "sentence_en": "I want to be admitted to university next year.",
     "sentence_lemmas": ["querer", "ingresar", "a", "el", "universidad", "el", "próximo", "año"]
   },
   {
@@ -4132,7 +4132,7 @@
     "es": "modificar",
     "en": "to modify, to alter",
     "sentence_es": "Puedes modificar tu nombre en la página.",
-    "sentence_en": "You can change your name on the page.",
+    "sentence_en": "You can modify your name on the page.",
     "sentence_lemmas": ["poder", "modificar", "tu", "nombre", "en", "el", "página"]
   },
   {
@@ -4142,9 +4142,9 @@
     "lemma": "navegar",
     "es": "navegar",
     "en": "to sail; to browse",
-    "sentence_es": "Navego por internet para buscar trabajo todas las noches.",
-    "sentence_en": "I browse the internet to look for work every night.",
-    "sentence_lemmas": ["navegar", "por", "internet", "para", "buscar", "trabajo", "todo", "el", "noche"]
+    "sentence_es": "Navego cerca de la costa, navego sin perder de vista la playa.",
+    "sentence_en": "I sail near the coast, without losing sight of the beach.",
+    "sentence_lemmas": ["navegar", "cerca", "de", "el", "costa", "navegar", "sin", "perder", "de", "vista", "el", "playa"]
   },
   {
     "order": 1831,
@@ -4165,7 +4165,7 @@
     "es": "operar",
     "en": "to operate",
     "sentence_es": "Voy a operarme la próxima semana.",
-    "sentence_en": "I am going to have surgery next week.",
+    "sentence_en": "I am going to be operated on next week.",
     "sentence_lemmas": ["ir", "a", "operar", "el", "próximo", "semana"]
   },
   {
@@ -4243,9 +4243,9 @@
     "lemma": "pronunciar",
     "es": "pronunciar",
     "en": "to pronounce",
-    "sentence_es": "¿Cómo se pronuncia esta palabra en español?",
-    "sentence_en": "How do you pronounce this word in Spanish?",
-    "sentence_lemmas": ["cómo", "se", "pronunciar", "este", "palabra", "en", "español"]
+    "sentence_es": "Pronuncio cada palabra despacio, pronuncio hasta que el miedo se va.",
+    "sentence_en": "I pronounce each word slowly, keep speaking until fear goes away.",
+    "sentence_lemmas": ["pronunciar", "cada", "palabra", "despacio", "pronunciar", "hasta", "que", "el", "miedo", "se", "ir"]
   },
   {
     "order": 1840,
@@ -4343,7 +4343,7 @@
     "es": "el anciano",
     "en": "elderly person",
     "sentence_es": "El anciano del edificio vive solo y necesita ayuda.",
-    "sentence_en": "The elderly man in the building lives alone and needs help.",
+    "sentence_en": "The elderly person in the building lives alone and needs help.",
     "sentence_lemmas": ["el", "anciano", "de", "edificio", "vivir", "solo", "y", "necesitar", "ayuda"]
   },
   {
@@ -4353,9 +4353,9 @@
     "lemma": "apoyo",
     "es": "el apoyo",
     "en": "support",
-    "sentence_es": "Necesito tu apoyo para cambiar los muebles de lugar.",
-    "sentence_en": "I need your support to move the furniture to another place.",
-    "sentence_lemmas": ["necesitar", "tu", "apoyo", "para", "cambiar", "el", "mueble", "de", "lugar"]
+    "sentence_es": "Tu apoyo me da fuerza, tu visita me da alegría.",
+    "sentence_en": "Your support gives me strength, your visit gives me joy.",
+    "sentence_lemmas": ["tu", "apoyo", "me", "dar", "fuerza", "tu", "visita", "me", "dar", "alegría"]
   },
   {
     "order": 1850,
@@ -4430,9 +4430,9 @@
     "lemma": "broma",
     "es": "la broma",
     "en": "joke, prank",
-    "sentence_es": "No es una broma: de verdad voy a viajar mañana.",
-    "sentence_en": "It is not a joke: I really am going to travel tomorrow.",
-    "sentence_lemmas": ["no", "ser", "un", "broma", "de", "verdad", "ir", "a", "viajar", "mañana"]
+    "sentence_es": "La broma nos hizo reír, la canción nos hizo bailar.",
+    "sentence_en": "The joke made us laugh, the song made us dance.",
+    "sentence_lemmas": ["el", "broma", "nos", "hacer", "reír", "el", "canción", "nos", "hacer", "bailar"]
   },
   {
     "order": 1857,
@@ -4542,7 +4542,7 @@
     "en": "code, key (cipher)",
     "hint_en": "Enter the secret *key* to log in.",
     "sentence_es": "No le digas a nadie la clave de tu tarjeta.",
-    "sentence_en": "Do not tell anyone the PIN of your card.",
+    "sentence_en": "Do not tell anyone your card's code.",
     "sentence_lemmas": ["no", "le", "decir", "a", "nadie", "el", "clave", "de", "tu", "tarjeta"]
   },
   {
@@ -4619,9 +4619,9 @@
     "es": "la corriente",
     "en": "current (water, electric)",
     "hint_en": "The *current* of the river is strong",
-    "sentence_es": "Nadamos contra la corriente durante una hora.",
-    "sentence_en": "We swam against the current for an hour.",
-    "sentence_lemmas": ["nadar", "contra", "el", "corriente", "durante", "un", "hora"]
+    "sentence_es": "Camarón que se duerme, se lo lleva la corriente.",
+    "sentence_en": "If you snooze, you lose.",
+    "sentence_lemmas": ["camarón", "que", "se", "dormir", "se", "lo", "llevar", "el", "corriente"]
   },
   {
     "order": 1874,
@@ -4675,9 +4675,9 @@
     "es": "el descanso",
     "en": "rest, break",
     "hint_en": "I need a *break* after work.",
-    "sentence_es": "Tomo un descanso de diez minutos cada dos horas.",
-    "sentence_en": "I take a ten-minute break every two hours.",
-    "sentence_lemmas": ["tomar", "un", "descanso", "de", "diez", "minuto", "cada", "dos", "hora"]
+    "sentence_es": "Necesito descanso para mis manos, necesito tiempo para mirar las nubes.",
+    "sentence_en": "I need rest for my hands, time to watch the clouds.",
+    "sentence_lemmas": ["necesitar", "descanso", "para", "mi", "mano", "necesitar", "tiempo", "para", "mirar", "el", "nube"]
   },
   {
     "order": 1879,
@@ -4686,9 +4686,9 @@
     "lemma": "detalle",
     "es": "el detalle",
     "en": "detail",
-    "sentence_es": "Dame todos los detalles del viaje, por favor.",
-    "sentence_en": "Give me all the details of the trip, please.",
-    "sentence_lemmas": ["dar", "todo", "el", "detalle", "de", "viaje", "por", "favor"]
+    "sentence_es": "Cada detalle cuenta, cada flor pequeña cambia el jardín.",
+    "sentence_en": "Every detail counts; every small flower changes the garden.",
+    "sentence_lemmas": ["cada", "detalle", "contar", "cada", "flor", "pequeño", "cambiar", "el", "jardín"]
   },
   {
     "order": 1880,
@@ -4775,7 +4775,7 @@
     "es": "el exceso",
     "en": "excess",
     "sentence_es": "Tomar café en exceso no te deja dormir.",
-    "sentence_en": "Drinking too much coffee keeps you from sleeping.",
+    "sentence_en": "Drinking coffee in excess keeps you from sleeping.",
     "sentence_lemmas": ["tomar", "café", "en", "exceso", "no", "te", "dejar", "dormir"]
   },
   {
@@ -4840,9 +4840,9 @@
     "lemma": "habilidad",
     "es": "la habilidad",
     "en": "skill, ability",
-    "sentence_es": "Ella tiene mucha habilidad para arreglar cosas.",
-    "sentence_en": "She has a lot of skill at fixing things.",
-    "sentence_lemmas": ["ella", "tener", "mucho", "habilidad", "para", "arreglar", "cosa"]
+    "sentence_es": "Mi habilidad es escuchar, escuchar hasta entender lo que sientes.",
+    "sentence_en": "My skill is listening, listening until I understand what you feel.",
+    "sentence_lemmas": ["mi", "habilidad", "ser", "escuchar", "escuchar", "hasta", "entender", "lo", "que", "sentir"]
   },
   {
     "order": 1894,
@@ -4863,9 +4863,9 @@
     "lemma": "escala",
     "es": "la escala",
     "en": "scale",
-    "sentence_es": "Tengo una escala de dos horas en el aeropuerto.",
-    "sentence_en": "I have a two-hour layover at the airport.",
-    "sentence_lemmas": ["tener", "un", "escala", "de", "dos", "hora", "en", "el", "aeropuerto"]
+    "sentence_es": "La escala tiene números del uno al diez.",
+    "sentence_en": "The scale has numbers from one to ten.",
+    "sentence_lemmas": ["el", "escala", "tener", "número", "de", "uno", "a", "diez"]
   },
   {
     "order": 1896,
@@ -4874,9 +4874,9 @@
     "lemma": "felicidad",
     "es": "la felicidad",
     "en": "happiness",
-    "sentence_es": "La felicidad es pasar tiempo con mi familia.",
-    "sentence_en": "Happiness is spending time with my family.",
-    "sentence_lemmas": ["el", "felicidad", "ser", "pasar", "tiempo", "con", "mi", "familia"]
+    "sentence_es": "La felicidad entra en casa, entra cuando vuelves a sonreír.",
+    "sentence_en": "Happiness enters the house, enters when you smile again.",
+    "sentence_lemmas": ["el", "felicidad", "entrar", "en", "casa", "entrar", "cuando", "volver", "a", "sonreír"]
   },
   {
     "order": 1897,
@@ -4984,9 +4984,9 @@
     "lemma": "brillante",
     "es": "brillante",
     "en": "bright; brilliant",
-    "sentence_es": "Ella es una estudiante brillante y siempre gana premios.",
-    "sentence_en": "She is a brilliant student and always wins prizes.",
-    "sentence_lemmas": ["ella", "ser", "un", "estudiante", "brillante", "y", "siempre", "ganar", "premio"]
+    "sentence_es": "La luna está brillante, brillante sobre el río tranquilo.",
+    "sentence_en": "The moon is bright, bright above the quiet river.",
+    "sentence_lemmas": ["el", "luna", "estar", "brillante", "brillante", "sobre", "el", "río", "tranquilo"]
   },
   {
     "order": 1907,
@@ -5017,9 +5017,9 @@
     "lemma": "delicado",
     "es": "delicado",
     "en": "delicate, tender",
-    "sentence_es": "Usa este vaso con cuidado: es delicado.",
-    "sentence_en": "Use this glass carefully: it is delicate.",
-    "sentence_lemmas": ["usar", "este", "vaso", "con", "cuidado", "ser", "delicado"]
+    "sentence_es": "La flor es delicada, delicada como el papel de tu carta.",
+    "sentence_en": "The flower is delicate, delicate like the paper of your letter.",
+    "sentence_lemmas": ["el", "flor", "ser", "delicado", "delicado", "como", "el", "papel", "de", "tu", "carta"]
   },
   {
     "order": 1910,
@@ -5072,9 +5072,9 @@
     "lemma": "elegante",
     "es": "elegante",
     "en": "elegant",
-    "sentence_es": "Para la cena, mi vecina llevaba ropa muy elegante.",
-    "sentence_en": "For the dinner, my neighbor wore very elegant clothes.",
-    "sentence_lemmas": ["para", "el", "cena", "mi", "vecina", "llevar", "ropa", "muy", "elegante"]
+    "sentence_es": "Mi gato parece elegante, camina despacio y levanta la cabeza.",
+    "sentence_en": "My cat looks elegant; it walks slowly and raises its head.",
+    "sentence_lemmas": ["mi", "gato", "parecer", "elegante", "caminar", "despacio", "y", "levantar", "el", "cabeza"]
   },
   {
     "order": 1915,
@@ -5116,7 +5116,7 @@
     "lemma": "estrecho",
     "es": "estrecho / angosto",
     "en": "narrow, tight",
-    "sentence_es": "No puedo pasar con el camión: la calle es estrecha.",
+    "sentence_es": "No puedo pasar con el camión: la calle es angosta.",
     "sentence_en": "I can't get through with the truck: the street is narrow.",
     "sentence_lemmas": ["no", "poder", "pasar", "con", "el", "camión", "el", "calle", "ser", "estrecho"]
   },
@@ -5160,9 +5160,9 @@
     "lemma": "firme",
     "es": "firme",
     "en": "firm, steady",
-    "sentence_es": "Pon la mesa en un lugar firme para que no se mueva.",
-    "sentence_en": "Put the table in a firm spot so it does not move.",
-    "sentence_lemmas": ["poner", "el", "mesa", "en", "un", "lugar", "firme", "para", "que", "no", "se", "mover"]
+    "sentence_es": "Mi mano está firme, firme mientras dibujo el camino.",
+    "sentence_en": "My hand is steady, steady as I draw the path.",
+    "sentence_lemmas": ["mi", "mano", "estar", "firme", "firme", "mientras", "dibujar", "el", "camino"]
   },
   {
     "order": 1923,
@@ -5182,9 +5182,9 @@
     "lemma": "frágil",
     "es": "frágil",
     "en": "fragile",
-    "sentence_es": "Ten cuidado con ese vaso: es muy frágil.",
-    "sentence_en": "Be careful with that glass: it is very fragile.",
-    "sentence_lemmas": ["tener", "cuidado", "con", "ese", "vaso", "ser", "muy", "frágil"]
+    "sentence_es": "La flor es frágil, frágil frente al viento del norte.",
+    "sentence_en": "The flower is fragile, fragile before the north wind.",
+    "sentence_lemmas": ["el", "flor", "ser", "frágil", "frágil", "frente", "a", "viento", "de", "norte"]
   },
   {
     "order": 1925,
@@ -5205,7 +5205,7 @@
     "es": "horrible",
     "en": "awful",
     "sentence_es": "Hace un clima horrible: llueve y hace mucho frío.",
-    "sentence_en": "The weather is horrible: it rains and it is very cold.",
+    "sentence_en": "The weather is awful: it rains and it is very cold.",
     "sentence_lemmas": ["hacer", "un", "clima", "horrible", "llover", "y", "hacer", "mucho", "frío"]
   },
   {
@@ -5512,9 +5512,9 @@
     "lemma": "charco",
     "es": "el charco",
     "en": "puddle",
-    "sentence_es": "Salté un charco para no mojarme los zapatos.",
-    "sentence_en": "I jumped over a puddle so I wouldn't get my shoes wet.",
-    "sentence_lemmas": ["saltar", "un", "charco", "para", "no", "mojar", "el", "zapato"]
+    "sentence_es": "En el charco veo el cielo, en tus ojos veo alegría.",
+    "sentence_en": "In the puddle I see the sky; in your eyes I see joy.",
+    "sentence_lemmas": ["en", "el", "charco", "ver", "el", "cielo", "en", "tu", "ojo", "ver", "alegría"]
   },
   {
     "order": 2185,
@@ -5667,9 +5667,9 @@
     "lemma": "faro",
     "es": "el faro",
     "en": "lighthouse",
-    "sentence_es": "El faro de la playa se ve desde mi balcón.",
-    "sentence_en": "The lighthouse on the beach can be seen from my balcony.",
-    "sentence_lemmas": ["el", "faro", "de", "el", "playa", "se", "ver", "desde", "mi", "balcón"]
+    "sentence_es": "El faro muestra el camino, la luz de casa también.",
+    "sentence_en": "The lighthouse shows the way, and so does the light at home.",
+    "sentence_lemmas": ["el", "faro", "mostrar", "el", "camino", "el", "luz", "de", "casa", "también"]
   },
   {
     "order": 2230,
@@ -5790,9 +5790,9 @@
     "lemma": "atrapar",
     "es": "atrapar / cachar",
     "en": "to catch, to trap",
-    "sentence_es": "Atrapa la pelota antes de que caiga al río.",
-    "sentence_en": "Catch the ball before it falls into the river.",
-    "sentence_lemmas": ["atrapar", "el", "pelota", "antes", "de", "que", "caer", "a", "río"]
+    "sentence_es": "Puedes cachar la pelota antes de que caiga al río.",
+    "sentence_en": "You can catch the ball before it falls into the river.",
+    "sentence_lemmas": ["poder", "atrapar", "el", "pelota", "antes", "de", "que", "caer", "a", "río"]
   },
   {
     "order": 2393,
@@ -5846,7 +5846,7 @@
     "es": "ceder",
     "en": "to yield, to hand over",
     "sentence_es": "En el autobús cedí mi lugar a una señora.",
-    "sentence_en": "On the bus I gave my seat to a lady.",
+    "sentence_en": "On the bus I yielded my seat to a lady.",
     "sentence_lemmas": ["en", "el", "autobús", "ceder", "mi", "lugar", "a", "un", "señora"]
   },
   {
@@ -5889,9 +5889,9 @@
     "lemma": "conquistar",
     "es": "conquistar",
     "en": "to conquer",
-    "sentence_es": "Ella quiere conquistar el primer lugar en el concurso.",
-    "sentence_en": "She wants to win first place in the contest.",
-    "sentence_lemmas": ["ella", "querer", "conquistar", "el", "primero", "lugar", "en", "el", "concurso"]
+    "sentence_es": "Queremos conquistar el mercado con un producto nuevo.",
+    "sentence_en": "We want to conquer the market with a new product.",
+    "sentence_lemmas": ["querer", "conquistar", "el", "mercado", "con", "un", "producto", "nuevo"]
   },
   {
     "order": 2402,
@@ -5944,9 +5944,9 @@
     "lemma": "desafiar",
     "es": "desafiar",
     "en": "to defy, to stand up to",
-    "sentence_es": "Ella desafía a su equipo a correr diez kilómetros.",
-    "sentence_en": "She challenges her team to run ten kilometers.",
-    "sentence_lemmas": ["ella", "desafiar", "a", "su", "equipo", "a", "correr", "diez", "kilómetro"]
+    "sentence_es": "Ella desafía a su jefe y sale antes de tiempo.",
+    "sentence_en": "She defies her boss and leaves ahead of time.",
+    "sentence_lemmas": ["ella", "desafiar", "a", "su", "jefe", "y", "salir", "antes", "de", "tiempo"]
   },
   {
     "order": 2407,
@@ -5978,7 +5978,7 @@
     "es": "despegar",
     "en": "to lift off; to unstick",
     "sentence_es": "Llegamos tarde y el avión ya despegó.",
-    "sentence_en": "We arrived late and the plane had already taken off.",
+    "sentence_en": "We arrived late and the plane had already lifted off.",
     "sentence_lemmas": ["llegar", "tarde", "y", "el", "avión", "ya", "despegar"]
   },
   {
@@ -6077,7 +6077,7 @@
     "es": "empatar",
     "en": "to end in a tie",
     "sentence_es": "Ayer nuestro equipo empató uno a uno.",
-    "sentence_en": "Yesterday our team tied one to one.",
+    "sentence_en": "Yesterday our team's game ended in a one-to-one tie.",
     "sentence_lemmas": ["ayer", "nuestro", "equipo", "empatar", "uno", "a", "uno"]
   },
   {
@@ -6155,7 +6155,7 @@
     "es": "estrenar",
     "en": "to use for the first time",
     "sentence_es": "Estrenamos la cocina nueva con una cena para amigos.",
-    "sentence_en": "We christened the new kitchen with a dinner for friends.",
+    "sentence_en": "We used the new kitchen for the first time with a dinner for friends.",
     "sentence_lemmas": ["estrenar", "el", "cocina", "nuevo", "con", "un", "cena", "para", "amigo"]
   },
   {
@@ -6188,7 +6188,7 @@
     "es": "fabricar",
     "en": "to manufacture",
     "sentence_es": "En esta ciudad fabrican ropa y zapatos.",
-    "sentence_en": "In this city they make clothes and shoes.",
+    "sentence_en": "In this city they manufacture clothes and shoes.",
     "sentence_lemmas": ["en", "este", "ciudad", "fabricar", "ropa", "y", "zapato"]
   },
   {
@@ -6255,9 +6255,9 @@
     "lemma": "florecer",
     "es": "florecer",
     "en": "to bloom",
-    "sentence_es": "Los árboles florecen cuando llega la primavera.",
-    "sentence_en": "The trees bloom when spring arrives.",
-    "sentence_lemmas": ["el", "árbol", "florecer", "cuando", "llegar", "el", "primavera"]
+    "sentence_es": "Florece mi jardín, florece después de cada lluvia.",
+    "sentence_en": "My garden blooms, blooms after every rain.",
+    "sentence_lemmas": ["florecer", "mi", "jardín", "florecer", "después", "de", "cada", "lluvia"]
   },
   {
     "order": 2435,
@@ -6334,7 +6334,7 @@
     "es": "el ánimo",
     "en": "spirits, encouragement",
     "sentence_es": "¡Ánimo! Ya casi terminas el examen.",
-    "sentence_en": "Cheer up! You are almost done with the exam.",
+    "sentence_en": "Keep your spirits up! You are almost done with the exam.",
     "sentence_lemmas": ["ánimo", "ya", "casi", "terminar", "el", "examen"]
   },
   {
@@ -6388,9 +6388,9 @@
     "lemma": "armonía",
     "es": "la armonía",
     "en": "harmony",
-    "sentence_es": "Los vecinos viven en armonía en este edificio.",
-    "sentence_en": "The neighbors live in harmony in this building.",
-    "sentence_lemmas": ["el", "vecino", "vivir", "en", "armonía", "en", "este", "edificio"]
+    "sentence_es": "Hay armonía en nuestra casa, cada quien escucha a los demás.",
+    "sentence_en": "There is harmony in our house; everyone listens to the others.",
+    "sentence_lemmas": ["haber", "armonía", "en", "nuestro", "casa", "cada", "quien", "escuchar", "a", "el", "demás"]
   },
   {
     "order": 2447,
@@ -6466,7 +6466,7 @@
     "es": "la burla",
     "en": "mockery, ridicule",
     "sentence_es": "¿Por qué haces burla de mí? Me siento mal.",
-    "sentence_en": "Why do you make fun of me? I feel bad.",
+    "sentence_en": "Why do you ridicule me? I feel bad.",
     "sentence_lemmas": ["por", "qué", "hacer", "burla", "de", "yo", "me", "sentir", "mal"]
   },
   {
@@ -6674,9 +6674,9 @@
     "lemma": "eco",
     "es": "el eco",
     "en": "echo",
-    "sentence_es": "En el cerro hay mucho eco cuando hablas fuerte.",
-    "sentence_en": "On the hill there is a lot of echo when you talk loudly.",
-    "sentence_lemmas": ["en", "el", "cerro", "haber", "mucho", "eco", "cuando", "hablar", "fuerte"]
+    "sentence_es": "El eco devuelve mi canción, el río se la lleva.",
+    "sentence_en": "The echo returns my song, the river carries it away.",
+    "sentence_lemmas": ["el", "eco", "devolver", "mi", "canción", "el", "río", "se", "el", "llevar"]
   },
   {
     "order": 2473,
@@ -6785,7 +6785,7 @@
     "es": "el aroma",
     "en": "scent",
     "sentence_es": "Me despierta el aroma del pan caliente.",
-    "sentence_en": "The aroma of warm bread wakes me up.",
+    "sentence_en": "The scent of warm bread wakes me up.",
     "sentence_lemmas": ["me", "despertarse", "el", "aroma", "de", "pan", "caliente"]
   },
   {
@@ -6796,7 +6796,7 @@
     "es": "el azar",
     "en": "randomness, luck of the draw",
     "sentence_es": "Elegí el número al azar, sin pensar.",
-    "sentence_en": "I chose the number at random, without thinking.",
+    "sentence_en": "I chose the number by the luck of the draw, without thinking.",
     "sentence_lemmas": ["elegir", "el", "número", "a", "azar", "sin", "pensar"]
   },
   {
@@ -6840,9 +6840,9 @@
     "lemma": "sonrisa",
     "es": "la sonrisa",
     "en": "smile",
-    "sentence_es": "Ella saluda a todos con una sonrisa grande.",
-    "sentence_en": "She greets everyone with a big smile.",
-    "sentence_lemmas": ["ella", "saludar", "a", "todo", "con", "un", "sonrisa", "grande"]
+    "sentence_es": "Tu sonrisa abre el día, abre la puerta a la alegría.",
+    "sentence_en": "Your smile opens the day, opens the door to joy.",
+    "sentence_lemmas": ["tu", "sonrisa", "abrir", "el", "día", "abrir", "el", "puerta", "a", "el", "alegría"]
   },
   {
     "order": 2488,
@@ -6919,7 +6919,7 @@
     "es": "ardiente",
     "en": "burning, fiery",
     "sentence_es": "Caminamos bajo un sol ardiente durante toda la tarde.",
-    "sentence_en": "We walked under a blazing sun all afternoon.",
+    "sentence_en": "We walked under a burning sun all afternoon.",
     "sentence_lemmas": ["caminar", "bajo", "un", "sol", "ardiente", "durante", "todo", "el", "tarde"]
   },
   {
@@ -7007,7 +7007,7 @@
     "es": "bondadoso",
     "en": "kindhearted",
     "sentence_es": "Conozco a un señor bondadoso que ayuda a todos.",
-    "sentence_en": "I know a kind man who helps everyone.",
+    "sentence_en": "I know a kindhearted man who helps everyone.",
     "sentence_lemmas": ["conocer", "a", "un", "señor", "bondadoso", "que", "ayudar", "a", "todo"]
   },
   {
@@ -7064,7 +7064,7 @@
     "es": "cobarde",
     "en": "cowardly",
     "sentence_es": "No seas cobarde: dile la verdad al jefe.",
-    "sentence_en": "Do not be a coward: tell the boss the truth.",
+    "sentence_en": "Do not be cowardly: tell the boss the truth.",
     "sentence_lemmas": ["no", "ser", "cobarde", "decir", "el", "verdad", "a", "jefe"]
   },
   {
@@ -7074,8 +7074,8 @@
     "lemma": "cortés",
     "es": "cortés",
     "en": "courteous",
-    "sentence_es": "Los empleados de esa tienda son siempre muy cortés.",
-    "sentence_en": "The employees of that store are always very polite.",
+    "sentence_es": "Los empleados de esa tienda son siempre muy corteses.",
+    "sentence_en": "The employees of that store are always very courteous.",
     "sentence_lemmas": ["el", "empleado", "de", "ese", "tienda", "ser", "siempre", "muy", "cortés"]
   },
   {
@@ -7119,7 +7119,7 @@
     "es": "dócil",
     "en": "docile, tame",
     "sentence_es": "Puedes tocarlo: es un perro dócil y nunca ataca a nadie.",
-    "sentence_en": "You can touch him: he is a gentle dog and never attacks anyone.",
+    "sentence_en": "You can touch him: he is a docile dog and never attacks anyone.",
     "sentence_lemmas": ["poder", "tocar", "ser", "un", "perro", "dócil", "y", "nunca", "atacar", "a", "nadie"]
   },
   {
@@ -7218,7 +7218,7 @@
     "es": "hábil",
     "en": "skillful, handy",
     "sentence_es": "¿Quién es hábil con las computadoras en tu oficina?",
-    "sentence_en": "Who in your office is good with computers?",
+    "sentence_en": "Who in your office is skillful with computers?",
     "sentence_lemmas": ["quién", "ser", "hábil", "con", "el", "computadora", "en", "tu", "oficina"]
   },
   {
@@ -7229,7 +7229,7 @@
     "es": "gentil",
     "en": "gracious, considerate",
     "sentence_es": "Fue muy gentil traerme el café hasta la oficina.",
-    "sentence_en": "It was very kind to bring me the coffee all the way to the office.",
+    "sentence_en": "It was very considerate to bring me the coffee all the way to the office.",
     "sentence_lemmas": ["ser", "muy", "gentil", "traer", "el", "café", "hasta", "el", "oficina"]
   },
   {
@@ -7250,9 +7250,9 @@
     "lemma": "sabio",
     "es": "sabio",
     "en": "wise",
-    "sentence_es": "El sabio del pueblo da buenos consejos a todos.",
-    "sentence_en": "The village sage gives good advice to everyone.",
-    "sentence_lemmas": ["el", "sabio", "de", "pueblo", "dar", "bueno", "consejo", "a", "todo"]
+    "sentence_es": "El hombre sabio del pueblo da buenos consejos a todos.",
+    "sentence_en": "The wise man in the village gives good advice to everyone.",
+    "sentence_lemmas": ["el", "hombre", "sabio", "de", "pueblo", "dar", "bueno", "consejo", "a", "todo"]
   },
   {
     "order": 2525,
@@ -7395,7 +7395,7 @@
     "es": "la dulcería",
     "en": "candy store",
     "sentence_es": "Compré dulces para los niños en la dulcería.",
-    "sentence_en": "I bought candy for the children at the candy shop.",
+    "sentence_en": "I bought candy for the children at the candy store.",
     "sentence_lemmas": ["comprar", "dulce", "para", "el", "niño", "en", "el", "dulcería"]
   },
   {
@@ -7572,7 +7572,7 @@
     "es": "el perico",
     "en": "parakeet",
     "sentence_es": "Tengo un perico verde que habla.",
-    "sentence_en": "I have a green parrot that talks.",
+    "sentence_en": "I have a green parakeet that talks.",
     "sentence_lemmas": ["tener", "un", "perico", "verde", "que", "hablar"]
   },
   {
@@ -7616,7 +7616,7 @@
     "es": "el chayote",
     "en": "chayote squash",
     "sentence_es": "Hoy cocino una sopa de chayote con papas y zanahoria.",
-    "sentence_en": "Today I cook a soup of chayote with potatoes and carrot.",
+    "sentence_en": "Today I cook a soup of chayote squash with potatoes and carrot.",
     "sentence_lemmas": ["hoy", "cocinar", "un", "sopa", "de", "chayote", "con", "papa", "y", "zanahoria"]
   },
   {
@@ -7638,7 +7638,7 @@
     "es": "la cajeta",
     "en": "goat-milk caramel",
     "sentence_es": "Me gusta el pan con cajeta en el desayuno.",
-    "sentence_en": "I like bread with cajeta for breakfast.",
+    "sentence_en": "I like bread with goat-milk caramel for breakfast.",
     "sentence_lemmas": ["me", "gustar", "el", "pan", "con", "cajeta", "en", "el", "desayuno"]
   },
   {
@@ -7649,7 +7649,7 @@
     "es": "los esquites",
     "en": "corn in a cup",
     "sentence_es": "Compré unos esquites con limón en el parque.",
-    "sentence_en": "I bought some esquites with lime at the park.",
+    "sentence_en": "I bought corn in a cup with lime at the park.",
     "sentence_lemmas": ["comprar", "un", "esquites", "con", "limón", "en", "el", "parque"]
   },
   {
@@ -7782,7 +7782,7 @@
     "es": "habitar",
     "en": "to inhabit",
     "sentence_es": "Dos familias habitan esta casa grande.",
-    "sentence_en": "Two families live in this big house.",
+    "sentence_en": "Two families inhabit this big house.",
     "sentence_lemmas": ["dos", "familia", "habitar", "este", "casa", "grande"]
   },
   {
@@ -7793,7 +7793,7 @@
     "es": "observar",
     "en": "to observe",
     "sentence_es": "Observo a los pájaros desde el balcón cada mañana.",
-    "sentence_en": "I watch the birds from the balcony every morning.",
+    "sentence_en": "I observe the birds from the balcony every morning.",
     "sentence_lemmas": ["observar", "a", "el", "pájaro", "desde", "el", "balcón", "cada", "mañana"]
   },
   {
@@ -7815,7 +7815,7 @@
     "es": "repasar",
     "en": "to go over again, to study again",
     "sentence_es": "Repaso las palabras nuevas antes de dormir.",
-    "sentence_en": "I review the new words before sleeping.",
+    "sentence_en": "I go over the new words again before sleeping.",
     "sentence_lemmas": ["repasar", "el", "palabra", "nuevo", "antes", "de", "dormir"]
   },
   {
@@ -7969,7 +7969,7 @@
     "es": "el comprobante",
     "en": "proof document",
     "sentence_es": "Guarda el comprobante de pago; lo van a pedir.",
-    "sentence_en": "Keep the payment receipt; they will ask for it.",
+    "sentence_en": "Keep the payment document as proof; they will ask for it.",
     "sentence_lemmas": ["guardar", "el", "comprobante", "de", "pagar", "lo", "ir", "a", "pedir"]
   },
   {
@@ -8080,7 +8080,7 @@
     "es": "rozar",
     "en": "to brush against",
     "sentence_es": "Rocé la pared con el carro al entrar al estacionamiento.",
-    "sentence_en": "I scraped the wall with the car when entering the parking lot.",
+    "sentence_en": "I brushed against the wall with the car when entering the parking lot.",
     "sentence_lemmas": ["rozar", "el", "pared", "con", "el", "carro", "a", "entrar", "a", "estacionamiento"]
   },
   {
@@ -8270,7 +8270,7 @@
     "es": "continuar",
     "en": "to carry on, to resume",
     "sentence_es": "Después del descanso, continuamos con la clase.",
-    "sentence_en": "After the break, we continue with the class.",
+    "sentence_en": "After the break, we resume the class.",
     "sentence_lemmas": ["después", "de", "descanso", "continuar", "con", "el", "clase"]
   },
   {
@@ -8303,7 +8303,7 @@
     "es": "ocultar",
     "en": "to conceal",
     "sentence_es": "Ella oculta el regalo para que nadie lo vea.",
-    "sentence_en": "She hides the gift so that nobody sees it.",
+    "sentence_en": "She conceals the gift so that nobody sees it.",
     "sentence_lemmas": ["ella", "ocultar", "el", "regalo", "para", "que", "nadie", "lo", "ver"]
   },
   {
@@ -8313,9 +8313,9 @@
     "lemma": "unir",
     "es": "unir",
     "en": "to unite, to bind together",
-    "sentence_es": "Una las dos mesas para tener más espacio.",
-    "sentence_en": "Join the two tables to have more space.",
-    "sentence_lemmas": ["unir", "el", "dos", "mesa", "para", "tener", "más", "espacio"]
+    "sentence_es": "La música une a los vecinos en la plaza.",
+    "sentence_en": "Music unites the neighbors in the square.",
+    "sentence_lemmas": ["el", "música", "unir", "a", "el", "vecino", "en", "el", "plaza"]
   },
   {
     "order": 2988,
@@ -8415,7 +8415,7 @@
     "es": "transformar",
     "en": "to transform",
     "sentence_es": "Mira cómo la lluvia transforma la calle en un río.",
-    "sentence_en": "Look how the rain turns the street into a river.",
+    "sentence_en": "Look how the rain transforms the street into a river.",
     "sentence_lemmas": ["mirar", "cómo", "el", "lluvia", "transformar", "el", "calle", "en", "un", "río"]
   },
   {
@@ -8437,7 +8437,7 @@
     "es": "vencer / derrotar",
     "en": "to defeat, to triumph over",
     "sentence_es": "Vencimos a la escuela vecina en el último partido.",
-    "sentence_en": "We beat the neighboring school in the last game.",
+    "sentence_en": "We defeated the neighboring school in the last game.",
     "sentence_lemmas": ["vencer", "a", "el", "escuela", "vecina", "en", "el", "último", "partido"]
   },
   {
@@ -8524,9 +8524,9 @@
     "lemma": "manera",
     "es": "la manera",
     "en": "manner of doing something",
-    "sentence_es": "Hay muchas maneras de aprender inglés.",
-    "sentence_en": "There are many ways to learn English.",
-    "sentence_lemmas": ["haber", "mucho", "manera", "de", "aprender", "inglés"]
+    "sentence_es": "No me gusta su manera de hablar con los niños.",
+    "sentence_en": "I do not like his manner of speaking to the children.",
+    "sentence_lemmas": ["no", "me", "gustar", "su", "manera", "de", "hablar", "con", "el", "niño"]
   },
   {
     "order": 3007,
@@ -8546,9 +8546,9 @@
     "lemma": "voz",
     "es": "la voz",
     "en": "voice",
-    "sentence_es": "Hablas bajo; no escucho tu voz con este ruido.",
-    "sentence_en": "You speak low; I cannot hear your voice with this noise.",
-    "sentence_lemmas": ["hablar", "bajo", "no", "escuchar", "tu", "voz", "con", "este", "ruido"]
+    "sentence_es": "Tu voz me trae el mar, mi voz te lleva flores.",
+    "sentence_en": "Your voice brings me the sea, my voice brings you flowers.",
+    "sentence_lemmas": ["tu", "voz", "me", "traer", "el", "mar", "mi", "voz", "te", "llevar", "flor"]
   },
   {
     "order": 3009,
@@ -8569,7 +8569,7 @@
     "es": "el alma",
     "en": "soul",
     "sentence_es": "Es una persona de buena alma y todos la quieren.",
-    "sentence_en": "She is a kind-hearted person and everyone loves her.",
+    "sentence_en": "She has a good soul and everyone loves her.",
     "sentence_lemmas": ["ser", "un", "persona", "de", "bueno", "alma", "y", "todo", "el", "querer"]
   },
   {
@@ -8646,7 +8646,7 @@
     "es": "la colegiatura",
     "en": "tuition fee (MX)",
     "sentence_es": "Pagamos la colegiatura el primer día del mes.",
-    "sentence_en": "We pay the tuition on the first day of the month.",
+    "sentence_en": "We pay the tuition fee on the first day of the month.",
     "sentence_lemmas": ["pagar", "el", "colegiatura", "el", "primero", "día", "de", "mes"]
   },
   {
@@ -8701,7 +8701,7 @@
     "es": "el título",
     "en": "degree certificate, title",
     "sentence_es": "Recibí mi título de profesor hace un año.",
-    "sentence_en": "I received my teaching degree a year ago.",
+    "sentence_en": "I received my teaching degree certificate a year ago.",
     "sentence_lemmas": ["recibir", "mi", "título", "de", "profesor", "hacer", "un", "año"]
   },
   {
@@ -8910,7 +8910,7 @@
     "es": "el diputado",
     "en": "member of congress",
     "sentence_es": "El diputado de mi barrio propone una ley nueva.",
-    "sentence_en": "The congressman of my neighborhood proposes a new law.",
+    "sentence_en": "The member of congress for my neighborhood proposes a new law.",
     "sentence_lemmas": ["el", "diputado", "de", "mi", "barrio", "proponer", "un", "ley", "nuevo"]
   },
   {
@@ -8987,7 +8987,7 @@
     "es": "el asalto",
     "en": "mugging, holdup",
     "sentence_es": "En la calle sufrió un asalto y perdió su teléfono.",
-    "sentence_en": "He was mugged on the street and lost his phone.",
+    "sentence_en": "He suffered a mugging on the street and lost his phone.",
     "sentence_lemmas": ["en", "el", "calle", "sufrir", "un", "asalto", "y", "perder", "su", "teléfono"]
   },
   {
@@ -9020,7 +9020,7 @@
     "es": "la ganancia",
     "en": "earnings, gain",
     "sentence_es": "Tenemos poca ganancia este mes porque vendimos menos.",
-    "sentence_en": "We have little profit this month because we sold less.",
+    "sentence_en": "We have little in earnings this month because we sold less.",
     "sentence_lemmas": ["tener", "poco", "ganancia", "este", "mes", "porque", "vender", "menos"]
   },
   {
@@ -9075,7 +9075,7 @@
     "es": "la jornada",
     "en": "workday",
     "sentence_es": "Después de una jornada larga, duermo muy bien.",
-    "sentence_en": "After a long working day, I sleep very well.",
+    "sentence_en": "After a long workday, I sleep very well.",
     "sentence_lemmas": ["después", "de", "un", "jornada", "largo", "dormir", "muy", "bien"]
   },
   {
@@ -9142,7 +9142,7 @@
     "es": "el ascenso",
     "en": "career advancement",
     "sentence_es": "Con este ascenso voy a ser gerente de la tienda.",
-    "sentence_en": "With this promotion I will become manager of the store.",
+    "sentence_en": "With this career advancement I will become manager of the store.",
     "sentence_lemmas": ["con", "este", "ascenso", "ir", "a", "ser", "gerente", "de", "el", "tienda"]
   },
   {
@@ -9240,9 +9240,9 @@
     "lemma": "fama",
     "es": "la fama",
     "en": "fame",
-    "sentence_es": "¿Tiene ese restaurante fama de ser caro?",
-    "sentence_en": "Does that restaurant have a reputation for being expensive?",
-    "sentence_lemmas": ["tener", "ese", "restaurante", "fama", "de", "ser", "caro"]
+    "sentence_es": "La fama del restaurante crece cada año.",
+    "sentence_en": "The restaurant's fame grows every year.",
+    "sentence_lemmas": ["el", "fama", "de", "restaurante", "crecer", "cada", "año"]
   },
   {
     "order": 3073,
@@ -9329,7 +9329,7 @@
     "es": "la electricidad",
     "en": "electric power",
     "sentence_es": "Sin electricidad no funcionan ni la luz ni el refrigerador.",
-    "sentence_en": "Without electricity neither the light nor the refrigerator works.",
+    "sentence_en": "Without electric power neither the light nor the refrigerator works.",
     "sentence_lemmas": ["sin", "electricidad", "no", "funcionar", "ni", "el", "luz", "ni", "el", "refrigerador"]
   },
   {
@@ -9406,7 +9406,7 @@
     "es": "astuto",
     "en": "cunning",
     "sentence_es": "Tengo un gato astuto: siempre encuentra comida.",
-    "sentence_en": "I have a clever cat: he always finds food.",
+    "sentence_en": "I have a cunning cat: he always finds food.",
     "sentence_lemmas": ["tener", "un", "gato", "astuto", "siempre", "encontrar", "comida"]
   },
   {
@@ -9417,7 +9417,7 @@
     "es": "sincero",
     "en": "sincere",
     "sentence_es": "Sé sincero conmigo: ¿te gustó la comida?",
-    "sentence_en": "Be honest with me: did you like the food?",
+    "sentence_en": "Be sincere with me: did you like the food?",
     "sentence_lemmas": ["saber", "sincero", "conmigo", "te", "gustar", "el", "comida"]
   },
   {
@@ -9505,7 +9505,7 @@
     "es": "lujoso",
     "en": "luxurious",
     "sentence_es": "Nunca voy a ese hotel lujoso: cuesta mucho dinero.",
-    "sentence_en": "I never go to that luxury hotel: it costs a lot of money.",
+    "sentence_en": "I never go to that luxurious hotel: it costs a lot of money.",
     "sentence_lemmas": ["nunca", "ir", "a", "ese", "hotel", "lujoso", "costar", "mucho", "dinero"]
   },
   {
@@ -9515,9 +9515,9 @@
     "lemma": "rodear",
     "es": "rodear",
     "en": "to surround",
-    "sentence_es": "Rodeamos el lago a pie en tres horas.",
-    "sentence_en": "We walked around the lake in three hours.",
-    "sentence_lemmas": ["rodear", "el", "lago", "a", "pie", "en", "tres", "hora"]
+    "sentence_es": "Los árboles rodean el lago, las flores rodean mi casa.",
+    "sentence_en": "The trees surround the lake; the flowers surround my house.",
+    "sentence_lemmas": ["el", "árbol", "rodear", "el", "lago", "el", "flor", "rodear", "mi", "casa"]
   },
   {
     "order": 3098,
@@ -9571,7 +9571,7 @@
     "es": "indiferente",
     "en": "indifferent",
     "sentence_es": "Me es indiferente el color; elige tú.",
-    "sentence_en": "The color is all the same to me; you choose.",
+    "sentence_en": "I am indifferent to the color; you choose.",
     "sentence_lemmas": ["me", "ser", "indiferente", "el", "color", "elegir", "tú"]
   },
   {
@@ -9648,7 +9648,7 @@
     "es": "aproximadamente",
     "en": "approximately",
     "sentence_es": "Tardo aproximadamente tres horas en autobús.",
-    "sentence_en": "It takes me about three hours by bus.",
+    "sentence_en": "It takes me approximately three hours by bus.",
     "sentence_lemmas": ["tardar", "aproximadamente", "tres", "hora", "en", "autobús"]
   },
   {
@@ -9670,7 +9670,7 @@
     "es": "directamente",
     "en": "directly",
     "sentence_es": "Ve directamente a casa después del trabajo.",
-    "sentence_en": "Go straight home after work.",
+    "sentence_en": "Go directly home after work.",
     "sentence_lemmas": ["ver", "directamente", "a", "casa", "después", "de", "trabajo"]
   },
   {
@@ -9725,7 +9725,7 @@
     "es": "el chiste",
     "en": "gag, funny story",
     "sentence_es": "¿Conoces un chiste bueno para los niños?",
-    "sentence_en": "Do you know a good joke for children?",
+    "sentence_en": "Do you know a good funny story for children?",
     "sentence_lemmas": ["conocer", "un", "chiste", "bueno", "para", "el", "niño"]
   },
   {
@@ -9802,9 +9802,9 @@
     "lemma": "ritmo",
     "es": "el ritmo",
     "en": "rhythm",
-    "sentence_es": "Cuenta hasta cuatro para seguir el ritmo.",
-    "sentence_en": "Count to four to keep the rhythm.",
-    "sentence_lemmas": ["contar", "hasta", "cuatro", "para", "seguir", "el", "ritmo"]
+    "sentence_es": "El ritmo está en la lluvia, el ritmo vive en mis pies.",
+    "sentence_en": "The rhythm is in the rain, the rhythm lives in my feet.",
+    "sentence_lemmas": ["el", "ritmo", "estar", "en", "el", "lluvia", "el", "ritmo", "vivir", "en", "mi", "pie"]
   },
   {
     "order": 3124,
@@ -9813,9 +9813,9 @@
     "lemma": "melodía",
     "es": "la melodía",
     "en": "melody",
-    "sentence_es": "No sé el nombre, pero conozco esa melodía.",
-    "sentence_en": "I do not know the name, but I know that melody.",
-    "sentence_lemmas": ["no", "saber", "el", "nombre", "pero", "conocer", "ese", "melodía"]
+    "sentence_es": "La melodía va despacio, cruza el río sin tocar el agua.",
+    "sentence_en": "The melody goes slowly, it crosses the river without touching the water.",
+    "sentence_lemmas": ["el", "melodía", "ir", "despacio", "cruzar", "el", "río", "sin", "tocar", "el", "agua"]
   },
   {
     "order": 3125,
@@ -9835,9 +9835,9 @@
     "lemma": "poema",
     "es": "el poema",
     "en": "poem",
-    "sentence_es": "Ella escribió un poema para su amiga.",
-    "sentence_en": "She wrote a poem for her friend.",
-    "sentence_lemmas": ["ella", "escribir", "un", "poema", "para", "su", "amiga"]
+    "sentence_es": "Mi poema habla de flores, habla de volver a tu jardín.",
+    "sentence_en": "My poem speaks of flowers, speaks of returning to your garden.",
+    "sentence_lemmas": ["mi", "poema", "hablar", "de", "flor", "hablar", "de", "volver", "a", "tu", "jardín"]
   },
   {
     "order": 3127,
@@ -9846,9 +9846,9 @@
     "lemma": "poesía",
     "es": "la poesía",
     "en": "poetry",
-    "sentence_es": "Los domingos leo poesía en el parque.",
-    "sentence_en": "On Sundays I read poetry in the park.",
-    "sentence_lemmas": ["el", "domingo", "leer", "poesía", "en", "el", "parque"]
+    "sentence_es": "Hay poesía en tus manos, hay poesía en el pan de casa.",
+    "sentence_en": "There is poetry in your hands, there is poetry in homemade bread.",
+    "sentence_lemmas": ["haber", "poesía", "en", "tu", "mano", "haber", "poesía", "en", "el", "pan", "de", "casa"]
   },
   {
     "order": 3128,
@@ -9934,9 +9934,9 @@
     "lemma": "valer",
     "es": "valer",
     "en": "to be worth",
-    "sentence_es": "¿Cuánto vale este libro en la librería de la esquina?",
-    "sentence_en": "How much does this book cost at the bookstore on the corner?",
-    "sentence_lemmas": ["cuánto", "valer", "este", "libro", "en", "el", "librería", "de", "el", "esquina"]
+    "sentence_es": "Más vale tarde que nunca.",
+    "sentence_en": "Better late than never.",
+    "sentence_lemmas": ["más", "valer", "tarde", "que", "nunca"]
   },
   {
     "order": 3382,
@@ -9968,7 +9968,7 @@
     "es": "el alimento",
     "en": "food item, nourishment",
     "sentence_es": "El pan y el arroz son alimentos básicos.",
-    "sentence_en": "Bread and rice are staple foods.",
+    "sentence_en": "Bread and rice are staple food items.",
     "sentence_lemmas": ["el", "pan", "y", "el", "arroz", "ser", "alimento", "básico"]
   },
   {
@@ -10012,7 +10012,7 @@
     "es": "la caída",
     "en": "tumble, drop in level",
     "sentence_es": "Tuvo una caída en la escalera y se lastimó el pie.",
-    "sentence_en": "He had a fall on the stairs and hurt his foot.",
+    "sentence_en": "He took a tumble on the stairs and hurt his foot.",
     "sentence_lemmas": ["tener", "un", "caída", "en", "el", "escalera", "y", "se", "lastimar", "el", "pie"]
   },
   {
@@ -10068,7 +10068,7 @@
     "es": "la comparación",
     "en": "comparison",
     "sentence_es": "En comparación con ayer, hoy hace menos frío.",
-    "sentence_en": "Compared with yesterday, it is less cold today.",
+    "sentence_en": "In comparison with yesterday, it is less cold today.",
     "sentence_lemmas": ["en", "comparación", "con", "ayer", "hoy", "hacer", "menos", "frío"]
   },
   {
@@ -10090,7 +10090,7 @@
     "es": "la cuestión",
     "en": "issue, question at hand",
     "sentence_es": "La cuestión es: ¿puedes venir o no?",
-    "sentence_en": "The question is: can you come or not?",
+    "sentence_en": "The issue is: can you come or not?",
     "sentence_lemmas": ["el", "cuestión", "ser", "poder", "venir", "o", "no"]
   },
   {
@@ -10134,7 +10134,7 @@
     "es": "la duración",
     "en": "duration",
     "sentence_es": "¿Sabes cuál es la duración del viaje en tren?",
-    "sentence_en": "Do you know how long the train trip takes?",
+    "sentence_en": "Do you know the duration of the train trip?",
     "sentence_lemmas": ["saber", "cuál", "ser", "el", "duración", "de", "viaje", "en", "tren"]
   },
   {
@@ -10354,7 +10354,7 @@
     "es": "las matemáticas",
     "en": "mathematics",
     "sentence_es": "Me gustan las matemáticas porque trabajo con números.",
-    "sentence_en": "I like math because I work with numbers.",
+    "sentence_en": "I like mathematics because I work with numbers.",
     "sentence_lemmas": ["me", "gustar", "el", "matemáticas", "porque", "trabajo", "con", "número"]
   },
   {
@@ -10520,7 +10520,7 @@
     "es": "el olvido",
     "en": "oblivion, forgetting",
     "sentence_es": "Por un olvido, dejé mi teléfono en el autobús.",
-    "sentence_en": "Because of forgetfulness, I left my phone on the bus.",
+    "sentence_en": "Forgetting my phone, I left it on the bus.",
     "sentence_lemmas": ["por", "un", "olvido", "dejar", "mi", "teléfono", "en", "el", "autobús"]
   },
   {
@@ -10652,9 +10652,9 @@
     "lemma": "posición",
     "es": "la posición",
     "en": "placement; location",
-    "sentence_es": "Mi equipo está en la primera posición de la liga.",
-    "sentence_en": "My team is in first position in the league.",
-    "sentence_lemmas": ["mi", "equipo", "estar", "en", "el", "primero", "posición", "de", "el", "liga"]
+    "sentence_es": "La posición de la mesa deja espacio para caminar.",
+    "sentence_en": "The placement of the table leaves room to walk.",
+    "sentence_lemmas": ["el", "posición", "de", "el", "mesa", "dejar", "espacio", "para", "caminar"]
   },
   {
     "order": 3447,
@@ -10708,7 +10708,7 @@
     "es": "la prenda",
     "en": "garment",
     "sentence_es": "Busco una prenda abrigadora para el invierno.",
-    "sentence_en": "I am looking for a warm piece of clothing for winter.",
+    "sentence_en": "I am looking for a warm garment for winter.",
     "sentence_lemmas": ["buscar", "un", "prenda", "abrir", "para", "el", "invierno"]
   },
   {
@@ -10796,7 +10796,7 @@
     "es": "el progreso",
     "en": "headway, step forward",
     "sentence_es": "¡Qué gran progreso hiciste este mes!",
-    "sentence_en": "What great progress you made this month!",
+    "sentence_en": "What great headway you made this month!",
     "sentence_lemmas": ["qué", "grande", "progreso", "hacer", "este", "mes"]
   },
   {
@@ -10829,7 +10829,7 @@
     "es": "la propiedad",
     "en": "property, ownership",
     "sentence_es": "La casa de la esquina es propiedad de mis abuelos.",
-    "sentence_en": "The house on the corner belongs to my grandparents.",
+    "sentence_en": "The house on the corner is my grandparents' property.",
     "sentence_lemmas": ["el", "casa", "de", "el", "esquina", "ser", "propiedad", "de", "mi", "abuelo"]
   },
   {
@@ -10906,7 +10906,7 @@
     "es": "la redacción",
     "en": "written composition",
     "sentence_es": "Tengo que escribir una redacción de dos páginas.",
-    "sentence_en": "I have to write a two-page essay.",
+    "sentence_en": "I have to write a two-page written composition.",
     "sentence_lemmas": ["tener", "que", "escribir", "un", "redacción", "de", "dos", "página"]
   },
   {
@@ -11049,7 +11049,7 @@
     "es": "el resto",
     "en": "remainder, leftovers",
     "sentence_es": "Yo como el arroz y tú comes el resto.",
-    "sentence_en": "I eat the rice and you eat the rest.",
+    "sentence_en": "I eat the rice and you eat the remainder.",
     "sentence_lemmas": ["yo", "comer", "el", "arroz", "y", "tú", "comer", "el", "resto"]
   },
   {
@@ -11258,7 +11258,7 @@
     "es": "el terror",
     "en": "terror",
     "sentence_es": "La película me dio terror y no pude dormir.",
-    "sentence_en": "The movie terrified me and I could not sleep.",
+    "sentence_en": "The movie filled me with terror and I could not sleep.",
     "sentence_lemmas": ["el", "película", "me", "dar", "terror", "y", "no", "poder", "dormir"]
   },
   {
@@ -11324,7 +11324,7 @@
     "es": "el trayecto",
     "en": "stretch of the way, trip leg",
     "sentence_es": "El trayecto en autobús tarda veinte minutos desde mi casa.",
-    "sentence_en": "The bus ride takes twenty minutes from my house.",
+    "sentence_en": "The bus leg of the trip takes twenty minutes from my house.",
     "sentence_lemmas": ["el", "trayecto", "en", "autobús", "tardar", "veinte", "minuto", "desde", "mi", "casa"]
   },
   {
@@ -11357,7 +11357,7 @@
     "es": "la urgencia",
     "en": "urgency",
     "sentence_es": "Es una urgencia: necesito hablar con el doctor ahora.",
-    "sentence_en": "It is urgent: I need to talk to the doctor now.",
+    "sentence_en": "This is a matter of urgency: I need to talk to the doctor now.",
     "sentence_lemmas": ["ser", "un", "urgencia", "necesitar", "hablar", "con", "el", "doctora", "ahora"]
   },
   {
@@ -11368,7 +11368,7 @@
     "es": "la utilidad",
     "en": "usefulness",
     "sentence_es": "No veo la utilidad de este aparato; nunca lo uso.",
-    "sentence_en": "I do not see the use of this appliance; I never use it.",
+    "sentence_en": "I do not see the usefulness of this appliance; I never use it.",
     "sentence_lemmas": ["no", "ver", "el", "utilidad", "de", "este", "aparato", "nunca", "lo", "usar"]
   },
   {
@@ -11400,9 +11400,9 @@
     "lemma": "velocidad",
     "es": "la velocidad / la rapidez",
     "en": "speed",
-    "sentence_es": "No vayas a tanta velocidad; la calle está mojada.",
+    "sentence_es": "No vayas con tanta rapidez; la calle está mojada.",
     "sentence_en": "Do not go at such speed; the street is wet.",
-    "sentence_lemmas": ["no", "ir", "a", "tanto", "velocidad", "el", "calle", "estar", "mojado"]
+    "sentence_lemmas": ["no", "ir", "con", "tanto", "velocidad", "el", "calle", "estar", "mojado"]
   },
   {
     "order": 3515,
@@ -11533,7 +11533,7 @@
     "es": "el instante",
     "en": "instant",
     "sentence_es": "Volví en un instante, porque la tienda estaba cerca.",
-    "sentence_en": "I came back in a moment because the shop was close.",
+    "sentence_en": "I came back in an instant because the shop was close.",
     "sentence_lemmas": ["volver", "en", "un", "instante", "porque", "el", "tienda", "estar", "cerca"]
   },
   {
@@ -11665,7 +11665,7 @@
     "es": "la migración",
     "en": "migration; immigration office (MX)",
     "sentence_es": "En migración me pidieron mi visa y mis papeles.",
-    "sentence_en": "At immigration they asked me for my visa and my papers.",
+    "sentence_en": "At the immigration office they asked me for my visa and my papers.",
     "sentence_lemmas": ["en", "migración", "me", "pedir", "mi", "visa", "y", "mi", "papel"]
   },
   {
@@ -11775,7 +11775,7 @@
     "es": "el borde",
     "en": "rim, brink",
     "sentence_es": "No camines por el borde del río; es peligroso.",
-    "sentence_en": "Do not walk along the edge of the river; it is dangerous.",
+    "sentence_en": "Do not walk along the river's brink; it is dangerous.",
     "sentence_lemmas": ["no", "caminar", "por", "el", "borde", "de", "río", "ser", "peligroso"]
   },
   {
@@ -11830,7 +11830,7 @@
     "es": "el oficio",
     "en": "craft, skilled job",
     "sentence_es": "Aprender un buen oficio te da trabajo toda la vida.",
-    "sentence_en": "Learning a good trade gives you work for life.",
+    "sentence_en": "Learning a good craft gives you work for life.",
     "sentence_lemmas": ["aprender", "un", "bueno", "oficio", "te", "dar", "trabajo", "todo", "el", "vida"]
   },
   {
@@ -11973,7 +11973,7 @@
     "es": "la alimentación",
     "en": "feeding, nutrition",
     "sentence_es": "Una buena alimentación incluye frutas, verduras y agua.",
-    "sentence_en": "A good diet includes fruit, vegetables and water.",
+    "sentence_en": "Good nutrition includes fruit, vegetables and water.",
     "sentence_lemmas": ["un", "bueno", "alimentación", "incluir", "fruta", "verdura", "y", "agua"]
   },
   {
@@ -11984,7 +11984,7 @@
     "es": "el arreglo",
     "en": "repair; arrangement",
     "sentence_es": "Pagué trescientos pesos por el arreglo de mi bicicleta.",
-    "sentence_en": "I paid three hundred pesos for fixing my bicycle.",
+    "sentence_en": "I paid three hundred pesos for the repair of my bicycle.",
     "sentence_lemmas": ["pagar", "trescientos", "peso", "por", "el", "arreglo", "de", "mi", "bicicleta"]
   },
   {
@@ -12083,7 +12083,7 @@
     "es": "el empate",
     "en": "draw, level score",
     "sentence_es": "Un empate es mejor que perder, ¿no crees?",
-    "sentence_en": "A tie is better than losing, don't you think?",
+    "sentence_en": "A draw is better than losing, don't you think?",
     "sentence_lemmas": ["un", "empate", "ser", "mejor", "que", "perder", "no", "creer"]
   },
   {
@@ -12094,7 +12094,7 @@
     "es": "el encargo",
     "en": "assignment, special order",
     "sentence_es": "Me hicieron un encargo: recoger un paquete en la tienda.",
-    "sentence_en": "I was given an errand: pick up a package at the store.",
+    "sentence_en": "I was given an assignment: pick up a package at the store.",
     "sentence_lemmas": ["me", "hacer", "un", "encargo", "recoger", "un", "paquete", "en", "el", "tienda"]
   },
   {
@@ -12138,7 +12138,7 @@
     "es": "la confusión",
     "en": "confusion",
     "sentence_es": "Hubo una confusión con los nombres y llegué al lugar equivocado.",
-    "sentence_en": "There was a mix-up with the names and I arrived at the wrong place.",
+    "sentence_en": "There was confusion over the names and I arrived at the wrong place.",
     "sentence_lemmas": ["haber", "un", "confusión", "con", "el", "nombre", "y", "llegar", "a", "lugar", "equivocado"]
   },
   {
@@ -12193,7 +12193,7 @@
     "es": "el mirador",
     "en": "lookout point",
     "sentence_es": "Subimos mucho rato para llegar al mirador.",
-    "sentence_en": "We climbed for a long time to reach the viewpoint.",
+    "sentence_en": "We climbed for a long time to reach the lookout point.",
     "sentence_lemmas": ["subir", "mucho", "rato", "para", "llegar", "a", "mirador"]
   },
   {
@@ -12501,7 +12501,7 @@
     "es": "cómico",
     "en": "comic, comical",
     "sentence_es": "Ese actor es muy cómico y todos nos divertimos con él.",
-    "sentence_en": "That actor is very funny and we all have fun with him.",
+    "sentence_en": "That actor is very comical and we all have fun with him.",
     "sentence_lemmas": ["ese", "actor", "ser", "muy", "cómico", "y", "todo", "nos", "divertirse", "con", "él"]
   },
   {
@@ -12600,7 +12600,7 @@
     "es": "electrónico",
     "en": "electronic",
     "sentence_es": "Recibí un correo electrónico del banco esta mañana.",
-    "sentence_en": "I received an email from the bank this morning.",
+    "sentence_en": "I received an electronic message from the bank this morning.",
     "sentence_lemmas": ["recibir", "un", "correo", "electrónico", "de", "banco", "este", "mañana"]
   },
   {
@@ -12677,7 +12677,7 @@
     "es": "fino",
     "en": "refined; slender",
     "sentence_es": "Esta ropa es fina y cuesta mucho dinero.",
-    "sentence_en": "These clothes are fine and cost a lot of money.",
+    "sentence_en": "These clothes are refined and cost a lot of money.",
     "sentence_lemmas": ["este", "ropa", "ser", "fino", "y", "costar", "mucho", "dinero"]
   },
   {
@@ -12831,7 +12831,7 @@
     "es": "militar",
     "en": "military",
     "sentence_es": "Mi vecino es militar y trabaja en el ejército.",
-    "sentence_en": "My neighbor is a soldier and works in the army.",
+    "sentence_en": "My neighbor is in the military and works in the army.",
     "sentence_lemmas": ["mi", "vecino", "ser", "militar", "y", "trabajar", "en", "el", "ejército"]
   },
   {
@@ -12864,7 +12864,7 @@
     "es": "numeroso",
     "en": "numerous",
     "sentence_es": "Somos una familia numerosa y vivimos en una casa grande.",
-    "sentence_en": "We are a large family and live in a big house.",
+    "sentence_en": "Our family members are numerous and we live in a big house.",
     "sentence_lemmas": ["ser", "un", "familia", "numeroso", "y", "vivir", "en", "un", "casa", "grande"]
   },
   {
@@ -12930,7 +12930,7 @@
     "es": "presente",
     "en": "in attendance, on hand",
     "sentence_es": "Tres compañeros no están presentes hoy.",
-    "sentence_en": "Three classmates are not present today.",
+    "sentence_en": "Three classmates are not in attendance today.",
     "sentence_lemmas": ["tres", "compañero", "no", "estar", "presente", "hoy"]
   },
   {
@@ -12952,7 +12952,7 @@
     "es": "quieto",
     "en": "motionless, staying put",
     "sentence_es": "Mantente quieto un momento mientras tomo la foto.",
-    "sentence_en": "Stay still for a moment while I take the photo.",
+    "sentence_en": "Stay motionless for a moment while I take the photo.",
     "sentence_lemmas": ["mantener", "quieto", "un", "momento", "mientras", "tomar", "el", "foto"]
   },
   {
@@ -13007,7 +13007,7 @@
     "es": "silencioso",
     "en": "noiseless, silent",
     "sentence_es": "Mi nuevo vecino es silencioso; casi no lo escucho.",
-    "sentence_en": "My new neighbor is quiet; I hardly hear him.",
+    "sentence_en": "My new neighbor is silent; I hardly hear him.",
     "sentence_lemmas": ["mi", "nuevo", "vecino", "ser", "silencioso", "casi", "no", "lo", "escuchar"]
   },
   {
@@ -13062,7 +13062,7 @@
     "es": "chido",
     "en": "awesome (MX slang)",
     "sentence_es": "Tu fiesta estuvo muy chida y todos bailamos mucho.",
-    "sentence_en": "Your party was really cool and we all danced a lot.",
+    "sentence_en": "Your party was awesome and we all danced a lot.",
     "sentence_lemmas": ["tu", "fiesta", "estar", "muy", "chido", "y", "todo", "bailar", "mucho"]
   },
   {
@@ -13096,7 +13096,7 @@
     "es": "emocionar",
     "en": "to move emotionally, to thrill",
     "sentence_es": "Me emociona mucho viajar a un país nuevo.",
-    "sentence_en": "Traveling to a new country excites me a lot.",
+    "sentence_en": "Traveling to a new country really thrills me.",
     "sentence_lemmas": ["me", "emocionar", "mucho", "viajar", "a", "un", "país", "nuevo"]
   },
   {
@@ -13172,9 +13172,9 @@
     "lemma": "prevenir",
     "es": "prevenir",
     "en": "to forestall, to guard against",
-    "sentence_es": "Para prevenir una enfermedad, lávate las manos con jabón.",
-    "sentence_en": "To prevent an illness, wash your hands with soap.",
-    "sentence_lemmas": ["para", "prevenir", "un", "enfermedad", "lavar", "el", "mano", "con", "jabón"]
+    "sentence_es": "Más vale prevenir que curar.",
+    "sentence_en": "Prevention is better than cure.",
+    "sentence_lemmas": ["más", "valer", "prevenir", "que", "curar"]
   },
   {
     "order": 3680,
@@ -13250,7 +13250,7 @@
     "es": "retrasar",
     "en": "to hold back, to set behind schedule",
     "sentence_es": "La lluvia retrasó el tren una hora.",
-    "sentence_en": "The rain delayed the train by an hour.",
+    "sentence_en": "The rain set the train an hour behind schedule.",
     "sentence_lemmas": ["el", "lluvia", "retrasar", "el", "tren", "un", "hora"]
   },
   {
@@ -13294,7 +13294,7 @@
     "es": "partir",
     "en": "to depart; to split",
     "sentence_es": "Mi autobús parte a las siete, así que salgo temprano.",
-    "sentence_en": "My bus leaves at seven, so I leave early.",
+    "sentence_en": "My bus departs at seven, so I leave early.",
     "sentence_lemmas": ["mi", "autobús", "partir", "a", "el", "siete", "así", "que", "salir", "temprano"]
   },
   {
@@ -13305,7 +13305,7 @@
     "es": "indicar",
     "en": "to signal; to point to",
     "sentence_es": "Indícame dónde está la entrada, por favor.",
-    "sentence_en": "Show me where the entrance is, please.",
+    "sentence_en": "Point to where the entrance is, please.",
     "sentence_lemmas": ["indicar", "dónde", "estar", "el", "entrada", "por", "favor"]
   },
   {
@@ -13338,7 +13338,7 @@
     "es": "aconsejar",
     "en": "to give advice to",
     "sentence_es": "Te aconsejo salir temprano; habrá mucha gente.",
-    "sentence_en": "I advise you to leave early; there will be a lot of people.",
+    "sentence_en": "I give you this advice: leave early; there will be a lot of people.",
     "sentence_lemmas": ["te", "aconsejar", "salir", "temprano", "haber", "mucho", "gente"]
   },
   {
@@ -13371,7 +13371,7 @@
     "es": "coleccionar",
     "en": "to amass a collection of",
     "sentence_es": "Mi vecino colecciona libros viejos de cocina.",
-    "sentence_en": "My neighbor collects old cookbooks.",
+    "sentence_en": "My neighbor amasses a collection of old cookbooks.",
     "sentence_lemmas": ["mi", "vecino", "coleccionar", "libro", "viejo", "de", "cocina"]
   },
   {
@@ -13404,7 +13404,7 @@
     "es": "disminuir",
     "en": "to diminish, to shrink",
     "sentence_es": "Cuando la música disminuye, puedo hablar contigo.",
-    "sentence_en": "When the music gets quieter, I can talk to you.",
+    "sentence_en": "When the music diminishes, I can talk to you.",
     "sentence_lemmas": ["cuando", "el", "música", "disminuir", "poder", "hablar", "contigo"]
   },
   {
@@ -13437,7 +13437,7 @@
     "es": "atravesar",
     "en": "to go through, to pass across",
     "sentence_es": "Atravesamos el parque a pie para llegar a la escuela.",
-    "sentence_en": "We cross the park on foot to get to school.",
+    "sentence_en": "We go through the park on foot to get to school.",
     "sentence_lemmas": ["atravesar", "el", "parque", "a", "pie", "para", "llegar", "a", "el", "escuela"]
   },
   {
@@ -13536,7 +13536,7 @@
     "es": "la bajada",
     "en": "downhill slope",
     "sentence_es": "¿Hay una bajada fuerte antes de llegar al pueblo?",
-    "sentence_en": "Is there a steep descent before reaching the town?",
+    "sentence_en": "Is there a steep downhill slope before reaching the town?",
     "sentence_lemmas": ["haber", "un", "bajada", "fuerte", "antes", "de", "llegar", "a", "pueblo"]
   },
   {
@@ -13569,7 +13569,7 @@
     "es": "el monopatín",
     "en": "kick scooter",
     "sentence_es": "Mi sobrino aprende a andar en monopatín.",
-    "sentence_en": "My nephew is learning to ride a skateboard.",
+    "sentence_en": "My nephew is learning to ride a kick scooter.",
     "sentence_lemmas": ["mi", "sobrino", "aprender", "a", "andar", "en", "monopatín"]
   },
   {
@@ -13690,7 +13690,7 @@
     "es": "el dátil",
     "en": "date fruit",
     "sentence_es": "El dátil es muy dulce; solo como dos.",
-    "sentence_en": "The date is very sweet; I only eat two.",
+    "sentence_en": "The date fruit is very sweet; I only eat two.",
     "sentence_lemmas": ["el", "dátil", "ser", "muy", "dulce", "solo", "comer", "dos"]
   },
   {
@@ -13888,7 +13888,7 @@
     "es": "el habanero",
     "en": "habanero pepper",
     "sentence_es": "Cuidado con el habanero: es muy picante.",
-    "sentence_en": "Careful with the habanero: it is very spicy.",
+    "sentence_en": "Be careful with the habanero pepper: it is very spicy.",
     "sentence_lemmas": ["cuidado", "con", "el", "habanero", "ser", "muy", "picante"]
   },
   {
@@ -13943,7 +13943,7 @@
     "es": "la hierbabuena",
     "en": "spearmint",
     "sentence_es": "Me tomo un té de hierbabuena cuando me duele el estómago.",
-    "sentence_en": "I drink mint tea when my stomach hurts.",
+    "sentence_en": "I drink spearmint tea when my stomach hurts.",
     "sentence_lemmas": ["me", "tomar", "un", "té", "de", "hierbabuena", "cuando", "me", "doler", "el", "estómago"]
   },
   {
@@ -14107,9 +14107,9 @@
     "lemma": "trigo",
     "es": "el trigo",
     "en": "wheat",
-    "sentence_es": "Mi abuela compra harina de trigo para hacer tortillas.",
-    "sentence_en": "My grandmother buys wheat flour to make tortillas.",
-    "sentence_lemmas": ["mi", "abuela", "comprar", "harina", "de", "trigo", "para", "hacer", "tortilla"]
+    "sentence_es": "La gallina busca el maíz y el trigo.",
+    "sentence_en": "The hen looks for corn and wheat.",
+    "sentence_lemmas": ["el", "gallina", "buscar", "el", "maíz", "y", "el", "trigo"]
   },
   {
     "order": 3962,
@@ -14207,7 +14207,7 @@
     "es": "el asado / la carne asada",
     "en": "grilled beef, barbecue",
     "sentence_es": "Prefiero la carne asada con mucha cebolla.",
-    "sentence_en": "I prefer grilled meat with lots of onion.",
+    "sentence_en": "I prefer grilled beef with lots of onion.",
     "sentence_lemmas": ["preferir", "el", "carne", "asado", "con", "mucho", "cebolla"]
   },
   {
@@ -14262,7 +14262,7 @@
     "es": "el licor",
     "en": "liqueur",
     "sentence_es": "No me gusta el licor; prefiero el jugo.",
-    "sentence_en": "I don't like liquor; I prefer juice.",
+    "sentence_en": "I don't like liqueur; I prefer juice.",
     "sentence_lemmas": ["no", "me", "gustar", "el", "licor", "preferir", "el", "jugo"]
   },
   {
@@ -14328,7 +14328,7 @@
     "es": "el retorno",
     "en": "U-turn spot",
     "sentence_es": "Da la vuelta en el retorno que está junto al cruce.",
-    "sentence_en": "Make a U-turn at the turnaround next to the intersection.",
+    "sentence_en": "Make a U-turn at the spot next to the intersection.",
     "sentence_lemmas": ["dar", "el", "vuelta", "en", "el", "retorno", "que", "estar", "junto", "a", "cruce"]
   },
   {
@@ -14449,7 +14449,7 @@
     "es": "el lavadero",
     "en": "laundry area",
     "sentence_es": "Tengo un lavadero pequeño en el patio de mi casa.",
-    "sentence_en": "I have a small laundry sink in the patio of my house.",
+    "sentence_en": "I have a small laundry area in the patio of my house.",
     "sentence_lemmas": ["tener", "un", "lavadero", "pequeño", "en", "el", "patio", "de", "mi", "casa"]
   },
   {
@@ -14460,7 +14460,7 @@
     "es": "la bodega",
     "en": "storage room",
     "sentence_es": "Trabajo en una bodega de ropa cerca del centro.",
-    "sentence_en": "I work in a clothing warehouse near downtown.",
+    "sentence_en": "I work in a clothing storage room near downtown.",
     "sentence_lemmas": ["trabajar", "en", "un", "bodega", "de", "ropa", "cerca", "de", "centro"]
   },
   {
@@ -14482,7 +14482,7 @@
     "es": "el tapete",
     "en": "doormat, small mat",
     "sentence_es": "Compramos un tapete nuevo para la sala.",
-    "sentence_en": "We bought a new rug for the living room.",
+    "sentence_en": "We bought a new small mat for the living room.",
     "sentence_lemmas": ["comprar", "un", "tapete", "nuevo", "para", "el", "sala"]
   },
   {
@@ -14515,7 +14515,7 @@
     "es": "el condominio",
     "en": "condominium",
     "sentence_es": "Queremos comprar un condominio cerca del metro.",
-    "sentence_en": "We want to buy a condo near the metro.",
+    "sentence_en": "We want to buy a condominium near the subway.",
     "sentence_lemmas": ["querer", "comprar", "un", "condominio", "cerca", "de", "metro"]
   },
   {
@@ -14790,7 +14790,7 @@
     "es": "la lotería",
     "en": "bingo-style card game",
     "sentence_es": "Esta noche juego a la lotería con mis amigos.",
-    "sentence_en": "Tonight I am playing lotería with my friends.",
+    "sentence_en": "Tonight I am playing the bingo-style card game with my friends.",
     "sentence_lemmas": ["este", "noche", "jugar", "a", "el", "lotería", "con", "mi", "amigo"]
   },
   {
@@ -14966,7 +14966,7 @@
     "es": "el delantero",
     "en": "striker",
     "sentence_es": "Quiero ser delantero en el equipo de la escuela.",
-    "sentence_en": "I want to be a forward on the school team.",
+    "sentence_en": "I want to be a striker on the school team.",
     "sentence_lemmas": ["querer", "ser", "delantero", "en", "el", "equipo", "de", "el", "escuela"]
   },
   {
@@ -14999,7 +14999,7 @@
     "es": "la óptica",
     "en": "optician's shop",
     "sentence_es": "Mis lentes se rompieron, así que fui a la óptica.",
-    "sentence_en": "My glasses broke, so I went to the optician's.",
+    "sentence_en": "My glasses broke, so I went to the optician's shop.",
     "sentence_lemmas": ["mi", "lentes", "se", "romper", "así", "que", "ir", "a", "el", "óptica"]
   },
   {
@@ -15076,7 +15076,7 @@
     "es": "la sucursal",
     "en": "branch office",
     "sentence_es": "Esta sucursal del banco abre a las nueve.",
-    "sentence_en": "This branch of the bank opens at nine.",
+    "sentence_en": "This branch office of the bank opens at nine.",
     "sentence_lemmas": ["este", "sucursal", "de", "banco", "abrir", "a", "el", "nueve"]
   },
   {
@@ -15131,7 +15131,7 @@
     "es": "la envoltura",
     "en": "wrapping",
     "sentence_es": "Quita la envoltura antes de comer el dulce.",
-    "sentence_en": "Remove the wrapper before eating the candy.",
+    "sentence_en": "Remove the wrapping before eating the candy.",
     "sentence_lemmas": ["quitar", "el", "envoltura", "antes", "de", "comer", "el", "dulce"]
   },
   {
@@ -15450,7 +15450,7 @@
     "es": "el mareo",
     "en": "dizziness",
     "sentence_es": "Siento un mareo cuando viajo en autobús.",
-    "sentence_en": "I feel dizzy when I travel by bus.",
+    "sentence_en": "I experience dizziness when I travel by bus.",
     "sentence_lemmas": ["sentir", "un", "mareo", "cuando", "viajar", "en", "autobús"]
   },
   {
@@ -15461,7 +15461,7 @@
     "es": "la náusea",
     "en": "nausea",
     "sentence_es": "Tengo náusea y no quiero comer nada.",
-    "sentence_en": "I feel nauseous and I do not want to eat anything.",
+    "sentence_en": "I feel nausea and I do not want to eat anything.",
     "sentence_lemmas": ["tener", "náusea", "y", "no", "querer", "comer", "nada"]
   },
   {
@@ -15626,7 +15626,7 @@
     "es": "el bastón",
     "en": "walking stick",
     "sentence_es": "Mi vecino anciano camina con bastón por el parque.",
-    "sentence_en": "My elderly neighbor walks with a cane through the park.",
+    "sentence_en": "My elderly neighbor walks with a walking stick through the park.",
     "sentence_lemmas": ["mi", "vecino", "anciano", "caminar", "con", "bastón", "por", "el", "parque"]
   },
   {
@@ -16043,9 +16043,9 @@
     "lemma": "bloqueado",
     "es": "bloqueado",
     "en": "locked",
-    "sentence_es": "Encontré el camino bloqueado por un árbol.",
-    "sentence_en": "I found the road blocked by a tree.",
-    "sentence_lemmas": ["encontrar", "el", "camino", "bloqueado", "por", "un", "árbol"]
+    "sentence_es": "Mi teléfono está bloqueado y no puedo llamar.",
+    "sentence_en": "My phone is locked and I cannot make a call.",
+    "sentence_lemmas": ["mi", "teléfono", "estar", "bloqueado", "y", "no", "poder", "llamar"]
   },
   {
     "order": 4272,
@@ -16077,7 +16077,7 @@
     "es": "desconectar",
     "en": "to disconnect",
     "sentence_es": "¿Puedes desconectar la lavadora antes de moverla?",
-    "sentence_en": "Can you unplug the washing machine before moving it?",
+    "sentence_en": "Can you disconnect the washing machine before moving it?",
     "sentence_lemmas": ["poder", "desconectar", "el", "lavadora", "antes", "de", "mover"]
   },
   {
@@ -16307,9 +16307,9 @@
     "lemma": "gorrión",
     "es": "el gorrión",
     "en": "sparrow",
-    "sentence_es": "Escucho un gorrión cantar cada mañana.",
-    "sentence_en": "I hear a sparrow sing every morning.",
-    "sentence_lemmas": ["escuchar", "un", "gorrión", "cantar", "cada", "mañana"]
+    "sentence_es": "El gorrión canta temprano, canta desde el árbol de mi patio.",
+    "sentence_en": "The sparrow sings early, sings from the tree in my patio.",
+    "sentence_lemmas": ["el", "gorrión", "cantar", "temprano", "cantar", "desde", "el", "árbol", "de", "mi", "patio"]
   },
   {
     "order": 4309,
@@ -16329,9 +16329,9 @@
     "lemma": "nido",
     "es": "el nido",
     "en": "nest",
-    "sentence_es": "Hay un nido pequeño en el techo de mi casa.",
-    "sentence_en": "There is a small nest on the roof of my house.",
-    "sentence_lemmas": ["haber", "un", "nido", "pequeño", "en", "el", "techo", "de", "mi", "casa"]
+    "sentence_es": "En el nido duerme un pájaro, en casa duerme mi niño.",
+    "sentence_en": "A bird sleeps in the nest; my child sleeps at home.",
+    "sentence_lemmas": ["en", "el", "nido", "dormir", "un", "pájaro", "en", "casa", "dormir", "mi", "niño"]
   },
   {
     "order": 4313,
@@ -16418,7 +16418,7 @@
     "es": "el ternero",
     "en": "baby cow",
     "sentence_es": "Vimos nacer un ternero en el campo.",
-    "sentence_en": "We saw a calf being born in the countryside.",
+    "sentence_en": "We saw a baby cow being born in the countryside.",
     "sentence_lemmas": ["ver", "nacer", "un", "ternero", "en", "el", "campo"]
   },
   {
@@ -16429,7 +16429,7 @@
     "es": "la cría",
     "en": "offspring (animal)",
     "sentence_es": "La perra tuvo cinco crías la semana pasada.",
-    "sentence_en": "The dog had five puppies last week.",
+    "sentence_en": "The dog had five offspring last week.",
     "sentence_lemmas": ["el", "perro", "tener", "cinco", "cría", "el", "semana", "pasado"]
   },
   {
@@ -16440,7 +16440,7 @@
     "es": "la telaraña",
     "en": "spider web",
     "sentence_es": "Quité una telaraña de la esquina del techo.",
-    "sentence_en": "I removed a cobweb from the corner of the ceiling.",
+    "sentence_en": "I removed a spider web from the corner of the ceiling.",
     "sentence_lemmas": ["quitar", "un", "telaraña", "de", "el", "esquina", "de", "techo"]
   },
   {
@@ -16593,9 +16593,9 @@
     "lemma": "sendero",
     "es": "el sendero",
     "en": "hiking trail",
-    "sentence_es": "Este sendero lleva al río y es fácil de caminar.",
-    "sentence_en": "This trail leads to the river and is easy to walk.",
-    "sentence_lemmas": ["este", "sendero", "llevar", "a", "río", "y", "ser", "fácil", "de", "caminar"]
+    "sentence_es": "Por el sendero voy, paso a paso hasta llegar al río.",
+    "sentence_en": "I follow the trail, step by step until I reach the river.",
+    "sentence_lemmas": ["por", "el", "sendero", "ir", "paso", "a", "paso", "hasta", "llegar", "a", "río"]
   },
   {
     "order": 4353,
@@ -16627,7 +16627,7 @@
     "es": "la neblina",
     "en": "mist",
     "sentence_es": "Salimos temprano, pero la neblina nos retrasó.",
-    "sentence_en": "We left early, but the fog delayed us.",
+    "sentence_en": "We left early, but the mist delayed us.",
     "sentence_lemmas": ["salir", "temprano", "pero", "el", "neblina", "nos", "retrasar"]
   },
   {
@@ -16638,7 +16638,7 @@
     "es": "despejado",
     "en": "cloudless",
     "sentence_es": "El día estaba despejado y sin viento cuando salimos.",
-    "sentence_en": "The day was clear and windless when we left.",
+    "sentence_en": "The day was cloudless and windless when we left.",
     "sentence_lemmas": ["el", "día", "estar", "despejado", "y", "sin", "viento", "cuando", "salir"]
   },
   {
@@ -16681,9 +16681,9 @@
     "lemma": "bahía",
     "es": "la bahía",
     "en": "bay",
-    "sentence_es": "Desde mi hotel se ve toda la bahía.",
-    "sentence_en": "From my hotel you can see the whole bay.",
-    "sentence_lemmas": ["desde", "mi", "hotel", "se", "ver", "todo", "el", "bahía"]
+    "sentence_es": "En la bahía suena el mar, en mi casa suena tu risa.",
+    "sentence_en": "In the bay the sea sounds; in my house your laughter sounds.",
+    "sentence_lemmas": ["en", "el", "bahía", "sonar", "el", "mar", "en", "mi", "casa", "sonar", "tu", "risa"]
   },
   {
     "order": 4376,
@@ -16737,7 +16737,7 @@
     "es": "encendido",
     "en": "switched on",
     "sentence_es": "Dejé el horno encendido toda la noche.",
-    "sentence_en": "I left the oven on all night.",
+    "sentence_en": "I left the oven switched on all night.",
     "sentence_lemmas": ["dejar", "el", "horno", "encendido", "todo", "el", "noche"]
   },
   {
@@ -16770,7 +16770,7 @@
     "es": "maquillarse",
     "en": "to put on makeup",
     "sentence_es": "Me maquillo poco: solo un poco de color en los ojos.",
-    "sentence_en": "I wear little makeup: just a little color on my eyes.",
+    "sentence_en": "I put on little makeup: just a little color on my eyes.",
     "sentence_lemmas": ["me", "maquillarse", "poco", "solo", "un", "poco", "de", "color", "en", "el", "ojo"]
   },
   {
@@ -17089,7 +17089,7 @@
     "es": "el módulo",
     "en": "service booth, kiosk",
     "sentence_es": "Fuimos al módulo de información y esperamos poco.",
-    "sentence_en": "We went to the information desk and waited only a little.",
+    "sentence_en": "We went to the information kiosk and waited only a little.",
     "sentence_lemmas": ["ir", "a", "módulo", "de", "información", "y", "espera", "poco"]
   },
   {
@@ -17111,7 +17111,7 @@
     "es": "el recordatorio",
     "en": "reminder message",
     "sentence_es": "Mi teléfono me manda un recordatorio cada mañana.",
-    "sentence_en": "My phone sends me a reminder every morning.",
+    "sentence_en": "My phone sends me a reminder message every morning.",
     "sentence_lemmas": ["mi", "teléfono", "me", "mandar", "un", "recordatorio", "cada", "mañana"]
   },
   {
@@ -17122,7 +17122,7 @@
     "es": "facturar",
     "en": "to get or issue an invoice (MX)",
     "sentence_es": "¿Puede facturarme esta compra, por favor?",
-    "sentence_en": "Can you invoice this purchase for me, please?",
+    "sentence_en": "Can you issue an invoice for this purchase, please?",
     "sentence_lemmas": ["poder", "facturar", "este", "comprar", "por", "favor"]
   },
   {
@@ -17144,7 +17144,7 @@
     "es": "tardado",
     "en": "time-consuming, drawn-out",
     "sentence_es": "El trámite es tardado: tarda tres semanas.",
-    "sentence_en": "The procedure is slow: it takes three weeks.",
+    "sentence_en": "The procedure is time-consuming: it takes three weeks.",
     "sentence_lemmas": ["el", "trámite", "ser", "tardado", "tardar", "tres", "semana"]
   },
   {
@@ -17199,7 +17199,7 @@
     "es": "la anticipación",
     "en": "advance notice, lead time",
     "sentence_es": "Reservé el hotel con un mes de anticipación.",
-    "sentence_en": "I booked the hotel a month in advance.",
+    "sentence_en": "I booked the hotel with a month's lead time.",
     "sentence_lemmas": ["reservar", "el", "hotel", "con", "un", "mes", "de", "anticipación"]
   },
   {
@@ -17232,7 +17232,7 @@
     "es": "el reembolso",
     "en": "reimbursement, money back",
     "sentence_es": "Todavía espero mi reembolso de la tienda.",
-    "sentence_en": "I am still waiting for my refund from the store.",
+    "sentence_en": "I am still waiting for my reimbursement from the store.",
     "sentence_lemmas": ["todavía", "esperar", "mi", "reembolso", "de", "el", "tienda"]
   },
   {
@@ -17254,7 +17254,7 @@
     "es": "la mensualidad",
     "en": "monthly payment",
     "sentence_es": "Pago la mensualidad del gimnasio con tarjeta.",
-    "sentence_en": "I pay the monthly gym fee by card.",
+    "sentence_en": "I make the monthly gym payment by card.",
     "sentence_lemmas": ["pagar", "el", "mensualidad", "de", "gimnasio", "con", "tarjeta"]
   },
   {
@@ -17452,7 +17452,7 @@
     "es": "la paquetería",
     "en": "courier service (MX)",
     "sentence_es": "Mi paquete llega por paquetería en tres días.",
-    "sentence_en": "My package arrives by courier in three days.",
+    "sentence_en": "My package arrives by courier service in three days.",
     "sentence_lemmas": ["mi", "paquete", "llegar", "por", "paquetería", "en", "tres", "día"]
   },
   {
@@ -17485,7 +17485,7 @@
     "es": "reenviar",
     "en": "to resend, to pass along",
     "sentence_es": "Reenvía este mensaje a tus amigos, por favor.",
-    "sentence_en": "Forward this message to your friends, please.",
+    "sentence_en": "Pass this message along to your friends, please.",
     "sentence_lemmas": ["reenviar", "este", "mensaje", "a", "tu", "amigo", "por", "favor"]
   },
   {
@@ -17518,7 +17518,7 @@
     "es": "el retardo",
     "en": "late arrival (MX)",
     "sentence_es": "Tuve un retardo de diez minutos por la lluvia.",
-    "sentence_en": "I was ten minutes late because of the rain.",
+    "sentence_en": "My arrival was ten minutes late because of the rain.",
     "sentence_lemmas": ["tener", "un", "retardo", "de", "diez", "minuto", "por", "el", "lluvia"]
   },
   {
@@ -17595,7 +17595,7 @@
     "es": "chambear",
     "en": "to do one's job (slang, MX)",
     "sentence_es": "Mi amigo chambea toda la semana y descansa el domingo.",
-    "sentence_en": "My friend works all week and rests on Sunday.",
+    "sentence_en": "My friend does his job all week and rests on Sunday.",
     "sentence_lemmas": ["mi", "amigo", "chambear", "todo", "el", "semana", "y", "descansar", "el", "domingo"]
   },
   {
@@ -17616,9 +17616,9 @@
     "lemma": "opinar",
     "es": "opinar",
     "en": "to give an opinion",
-    "sentence_es": "¿Qué opinas tú del nuevo horario de trabajo?",
-    "sentence_en": "What do you think about the new work schedule?",
-    "sentence_lemmas": ["qué", "opinar", "tú", "de", "nuevo", "horario", "de", "trabajo"]
+    "sentence_es": "¿Puedes opinar sobre el nuevo horario de trabajo?",
+    "sentence_en": "Can you give an opinion on the new work schedule?",
+    "sentence_lemmas": ["poder", "opinar", "sobre", "el", "nuevo", "horario", "de", "trabajo"]
   },
   {
     "order": 4618,
@@ -17793,7 +17793,7 @@
     "es": "respaldar",
     "en": "to make a backup of",
     "sentence_es": "Respalda tus fotos antes de cambiar de teléfono.",
-    "sentence_en": "Back up your photos before changing phones.",
+    "sentence_en": "Make a backup of your photos before changing phones.",
     "sentence_lemmas": ["respaldar", "tu", "foto", "antes", "de", "cambiar", "de", "teléfono"]
   },
   {
@@ -17859,7 +17859,7 @@
     "es": "la web",
     "en": "the web",
     "sentence_es": "Visité la web del banco para ver mi cuenta.",
-    "sentence_en": "I visited the bank's website to see my account.",
+    "sentence_en": "I visited the bank's web page to see my account.",
     "sentence_lemmas": ["visitar", "el", "web", "de", "banco", "para", "ver", "mi", "cuenta"]
   },
   {

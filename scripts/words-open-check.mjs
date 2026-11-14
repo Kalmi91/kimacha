@@ -255,6 +255,30 @@ if (!listOnly) {
   }
   const plausible = (token, lemma) => {
     if (IRREG.has(`${token}>${lemma}`)) return true;
+    // A card's accepted alternative is tagged with that card's canonical lemma.
+    const alternatives = (byLemma.get(lemma) || []).flatMap((c) => c.es.split(' / '))
+      .map((s) => s.replace(/^(?:el|la|los|las) /, ''));
+    for (const alternative of alternatives) {
+      if (alternative === lemma || /\s/.test(alternative)) continue;
+      if (token === alternative || IRREG.has(`${token}>${alternative}`)) return true;
+      if (!/(?:ar|er|ir)(?:se)?$/.test(alternative)) {
+        const forms = [alternative + 's', alternative + 'es'];
+        if (/o$/.test(alternative)) forms.push(alternative.slice(0, -1) + 'a', alternative.slice(0, -1) + 'as');
+        if (/z$/.test(alternative)) forms.push(alternative.slice(0, -1) + 'ces');
+        if (forms.includes(token)) return true;
+      } else {
+        const infinitive = alternative.replace(/se$/, '');
+        const unclitic = token.replace(/(?:me|te|se|nos|lo|la|los|las|le|les){1,2}$/, '');
+        if (unclitic === infinitive) return true;
+        const stem = infinitive.slice(0, -2);
+        const stems = new Set([stem, stem.replace(/e([^aeiou]*)$/, 'ie$1'), stem.replace(/e([^aeiou]*)$/, 'i$1'),
+          stem.replace(/o([^aeiou]*)$/, 'ue$1'), stem.replace(/o([^aeiou]*)$/, 'u$1'),
+          stem.replace(/c$/, 'qu'), stem.replace(/g$/, 'gu'), stem.replace(/z$/, 'c')]);
+        const ending = /^(?:o|as|a|amos|an|es|e|emos|en|imos|ís|é|aste|ó|aron|í|iste|ió|ieron|aba|abas|ábamos|aban|ía|ías|íamos|ían|ando|iendo|ado|ada|ados|adas|ido|ida|idos|idas)$/;
+        if ([token, unclitic].some((form) => [...stems].some((s) => form.startsWith(s) && ending.test(form.slice(s.length))))) return true;
+        if (token.startsWith(infinitive) && /^(?:é|ás|á|emos|án|ía|ías|íamos|ían)$/.test(token.slice(infinitive.length))) return true;
+      }
+    }
     const a = strip(token);
     const b = strip(lemma);
     const n = Math.min(2, a.length, b.length);

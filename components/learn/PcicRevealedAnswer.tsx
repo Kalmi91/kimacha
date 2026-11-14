@@ -2,6 +2,7 @@ import { Pressable, StyleSheet, View } from 'react-native';
 import { Text } from '@/components/KText';
 
 import Colors from '@/constants/Colors';
+import { fontSize, fontWeight } from '@/constants/Theme';
 import { speak, speakerGenderFor } from '@/lib/speech';
 import { t } from '@/lib/i18n';
 import { charDiff } from '@/lib/charDiff';
@@ -18,6 +19,21 @@ import { SkinSpeakLabel } from '@/components/skins/Slots';
 import { legibleOn, textContrastMin } from '@/constants/Skins';
 import { useDiffStyles } from '@/lib/useDiffStyles';
 import { useSkin } from '@/lib/useSkin';
+import { spainFormsInAnswer, spainFormsInCardSentence } from '@/lib/spainForms';
+
+export function SpainFormLabel({ forms, label, color, testID }: {
+  forms: string[];
+  label: string;
+  color: string;
+  testID: string;
+}) {
+  if (forms.length === 0) return null;
+  return (
+    <Text testID={testID} accessible accessibilityLabel={`${label}: ${forms.join(', ')}`} style={[styles.spainLabel, { color }]}>
+      {` 🇪🇸 ${label}: ${forms.join(', ')}`}
+    </Text>
+  );
+}
 
 // the revealed-state block of the PCIC card
 // (extracted from app/(tabs)/index.tsx, split by responsibility, no
@@ -68,6 +84,9 @@ export default function PcicRevealedAnswer({
   ) as Record<Sm2Grade, string>;
   const example = currentItem ? exampleIn(currentItem, target) : undefined;
   const exampleGloss = currentItem ? exampleIn(currentItem, sourceLang ?? sourceFor(target)) : undefined;
+  const sentenceForms = target === 'es' || (sourceLang ?? sourceFor(target)) === 'es'
+    ? spainFormsInCardSentence(currentItem)
+    : [];
 
   // if the typed answer exactly matches the target letter for letter and accent
   // (ignoring case and edge whitespace), the green echo is left out, the
@@ -108,7 +127,10 @@ export default function PcicRevealedAnswer({
         </Text>
         )}
         <View style={styles.answerRow}>
-          <Text testID="pcic-correct-answer" variant="word" style={[styles.correctAnswer, { color: answerColor }]}>{grade.best}</Text>
+          <Text testID="pcic-correct-answer" variant="word" style={[styles.correctAnswer, { color: answerColor }]}>
+            {grade.best}
+            <SpainFormLabel forms={target === 'es' ? spainFormsInAnswer(grade.best) : []} label={s.pcic.spainLabel} color={colors.text} testID="pcic-answer-spain" />
+          </Text>
           <Pressable testID="pcic-correct-speak" accessibilityRole="button" accessibilityLabel={t().a11y.speak} onPress={() => speak(grade.best, speechLang(target))} style={[styles.speakBtn, styles.answerSpeak]}>
             <Text style={styles.speakIcon}>🔊</Text>
             <SkinSpeakLabel />
@@ -116,7 +138,10 @@ export default function PcicRevealedAnswer({
         </View>
         {showAllAccepted && alsoAlternatives.map((alt, i) => (
           <View key={alt} style={styles.answerRow}>
-            <Text testID={`pcic-correct-answer-${i + 2}`} variant="word" style={[styles.correctAnswer, { color: answerColor }]}>{alt}</Text>
+            <Text testID={`pcic-correct-answer-${i + 2}`} variant="word" style={[styles.correctAnswer, { color: answerColor }]}>
+              {alt}
+              <SpainFormLabel forms={target === 'es' ? spainFormsInAnswer(alt) : []} label={s.pcic.spainLabel} color={colors.text} testID={`pcic-alternative-spain-${i}`} />
+            </Text>
             <Pressable testID={`pcic-correct-speak-${i + 2}`} accessibilityRole="button" accessibilityLabel={t().a11y.speak} onPress={() => speak(alt, speechLang(target))} style={[styles.speakBtn, styles.answerSpeak]}>
               <Text style={styles.speakIcon}>🔊</Text>
               <SkinSpeakLabel />
@@ -130,6 +155,7 @@ export default function PcicRevealedAnswer({
               <Text key={alt}>
                 {i > 0 ? ' · ' : ''}
                 <Text style={styles.alsoAlt}>{alt}</Text>
+                <SpainFormLabel forms={target === 'es' ? spainFormsInAnswer(alt) : []} label={s.pcic.spainLabel} color={colors.text} testID={`pcic-also-spain-${i}`} />
               </Text>
             ))}
           </Text>
@@ -151,7 +177,9 @@ export default function PcicRevealedAnswer({
                 <SkinSpeakLabel />
               </Pressable>
             </View>
+            {target === 'es' && <SpainFormLabel forms={sentenceForms} label={s.pcic.spainLabel} color={colors.text} testID="pcic-example-spain" />}
             <Text testID="pcic-example-gloss" style={[styles.exampleEn, { color: colors.tabIconDefault }]}>{exampleGloss}</Text>
+            {target !== 'es' && <SpainFormLabel forms={sentenceForms} label={s.pcic.spainLabel} color={colors.text} testID="pcic-example-gloss-spain" />}
           </>
         )}
       </View>
@@ -218,6 +246,11 @@ export default function PcicRevealedAnswer({
 }
 
 const styles = StyleSheet.create({
+  spainLabel: {
+    fontSize: fontSize.xs,
+    fontWeight: fontWeight.semibold,
+    textAlign: 'center',
+  },
   resultSection: {
     alignItems: 'center',
     marginTop: 16,

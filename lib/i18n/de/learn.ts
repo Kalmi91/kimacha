@@ -63,6 +63,7 @@ const de: typeof en = {
     empty: 'Hier gibt es noch keine Wörter',
   },
   pcic: {
+    spainLabel: 'Spanien',
     badgeTotal: (n: number) => `${n} Wörter`,
     badgeDue: (n: number) => `fällig ${n}`,
     badgeNew: (n: number) => `neu ${n}`,
