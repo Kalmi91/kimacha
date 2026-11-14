@@ -63,6 +63,13 @@ const de: typeof en = {
     empty: 'Hier gibt es noch keine Wörter',
   },
   pcic: {
+    fatigueOffer: {
+      repeatMisses: 'Dieselben Karten machen dir immer wieder Schwierigkeiten.',
+      slowdown: 'Du brauchst länger zum Antworten.',
+      question: 'Möchtest du mit gut bekannten Wörtern leichter weitermachen?',
+      yes: 'Ja, leichter weiter',
+      no: 'Nein, weiter wie bisher',
+    },
     tired: 'Ich bin müde',
     parkedNote: (n: number) => `${n} ${n === 1 ? 'Karte kommt' : 'Karten kommen'} morgen wieder.`,
     spainLabel: 'Spanien',

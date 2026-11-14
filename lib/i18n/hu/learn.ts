@@ -62,6 +62,13 @@ const hu: typeof en = {
     empty: 'Itt még nincsenek szavak',
   },
   pcic: {
+    fatigueOffer: {
+      repeatMisses: 'Ugyanazok a kártyák mennek el újra és újra.',
+      slowdown: 'Lassulnak a válaszaid.',
+      question: 'Folytatod a jól ismert szavakkal, könnyebben?',
+      yes: 'Igen, könnyebben',
+      no: 'Nem, folytatom',
+    },
     tired: 'Fáradt vagyok',
     parkedNote: (n: number) => `${n} kártya holnap jön vissza.`,
     spainLabel: 'spanyolországi',

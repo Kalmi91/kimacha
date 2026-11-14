@@ -87,6 +87,8 @@ const de: typeof en = {
     strictAccents: 'Akzente zählen',
     tiredButton: 'Schaltfläche Ich bin müde',
     tiredButtonHint: (tab: string) => `Zeigt die Schaltfläche Ich bin müde im Tab ${tab}: Gut bekannte Karten kommen bei den heutigen Wiederholungen zuerst, neue Wörter warten bis danach.`,
+    fatigueDetector: 'Müdigkeitserkennung',
+    fatigueDetectorHint: 'Beim Lernen erkennt sie langsamere Antworten oder Karten, die du immer wieder falsch beantwortest. Dann bietet sie dir an, mit gut bekannten Wörtern weiterzumachen. Der Wiederholungsplan bleibt unverändert.',
     missCap: 'Falsch beantwortete Karten höchstens 3-mal wiederholen',
     missCapHint: 'Eine falsch beantwortete Karte kommt an diesem Tag höchstens dreimal zurück und wartet danach bis morgen. Ihr Wiederholungsplan bleibt unverändert.',
     strictAccentsHint: 'Ein fehlender Akzent (á, é, ñ) gilt beim Tippen als Fehler.',

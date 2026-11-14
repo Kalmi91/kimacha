@@ -201,6 +201,14 @@ export class DbCore implements DB {
     await this.setSettings({ miss_cap: v ? 1 : 0 });
   }
 
+  async getFatigueDetector(): Promise<boolean> {
+    return (await this.getSetting('fatigue_detector')) === 1;
+  }
+
+  async setFatigueDetector(v: boolean): Promise<void> {
+    await this.setSettings({ fatigue_detector: v ? 1 : 0 });
+  }
+
   // adjustable: after how many seconds a missed PCIC card
   // comes back no matter what (lib/pcicSession.ts).
   async getAgainDelaySec(): Promise<number> {

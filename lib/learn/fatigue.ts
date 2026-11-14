@@ -14,6 +14,7 @@ export interface FatigueState {
 export interface FatigueOptions {
   tiredButton: boolean;
   missCap: boolean;
+  detector?: boolean;
   keepFirst?: boolean;
   // Session callers request the existing normal ordering here, so every queue build has one entry point.
   mixNew?: boolean;
@@ -59,7 +60,7 @@ export const isFatigueReview = (card: QueuedSm2Card, day: string): boolean => ca
 export function arrangeQueue(queue: QueuedSm2Card[], day: string, value: FatigueState, opts: FatigueOptions): QueuedSm2Card[] {
   const state = value.day === day ? value : emptyFatigue(day);
   const base = opts.missCap && state.parked.length > 0 ? queue.filter((c) => !state.parked.includes(c.itemId)) : queue;
-  if (!opts.tiredButton || !state.tired) return opts.mixNew ? mixNewCards(base, day) : base;
+  if (!(opts.tiredButton || opts.detector) || !state.tired) return opts.mixNew ? mixNewCards(base, day) : base;
   const head = opts.keepFirst ? base.slice(0, 1) : [];
   const rest = opts.keepFirst ? base.slice(1) : base;
   const ordinary = (c: QueuedSm2Card) => isFatigueReview(c, day) && c.returnAt === undefined;

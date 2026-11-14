@@ -88,6 +88,8 @@ const hu: typeof en = {
     strictAccents: 'Az ékezetek számítanak',
     tiredButton: 'Fáradt vagyok gomb',
     tiredButtonHint: (tab: string) => `A ${tab} fülön megjelenik a Fáradt vagyok gomb: a mai ismétlésekből a jól ismert kártyák jönnek előre, új szó addig nem.`,
+    fatigueDetector: 'Fáradtság-figyelő',
+    fatigueDetectorHint: 'Tanulás közben figyeli, lassulnak-e a válaszaid, vagy ugyanazok a kártyák mennek-e el újra és újra. Ilyenkor felajánlja, hogy a jól ismert szavakkal folytasd. Az ismétlés ütemezése nem változik.',
     missCap: 'Elrontott kártya legfeljebb 3-szor',
     missCapHint: 'Az elrontott kártya aznap legfeljebb háromszor jön vissza, utána holnapig vár. Az ismétlés ütemezése nem változik.',
     strictAccentsHint: 'A hiányzó ékezet (á, é, ñ) hibának számít gépeléskor.',

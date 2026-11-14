@@ -76,6 +76,13 @@ export default {
   },
   // the PCIC tab (English -> Spanish typing, Anki buttons).
   pcic: {
+    fatigueOffer: {
+      repeatMisses: 'The same cards keep tripping you up.',
+      slowdown: 'Your answers are getting slower.',
+      question: 'Want to take it easier with words you know well?',
+      yes: 'Yes, take it easier',
+      no: 'No, keep going',
+    },
     tired: "I'm tired",
     parkedNote: (n: number) => `${n} ${n === 1 ? 'card will' : 'cards will'} return tomorrow.`,
     spainLabel: 'Spain',

@@ -42,6 +42,8 @@ export interface DB {
   setTiredButton(v: boolean): Promise<void>;
   getMissCap(): Promise<boolean>;
   setMissCap(v: boolean): Promise<void>;
+  getFatigueDetector(): Promise<boolean>;
+  setFatigueDetector(v: boolean): Promise<void>;
   // a PCIC "missed" (again) card comes back after this many seconds
   // no matter what (lib/pcicSession.ts); the table-deck cooldown
   // (lib/grammar/tableDeck.ts) reads from the same value.

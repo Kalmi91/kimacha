@@ -25,6 +25,7 @@ export type SettingColumn =
   | 'strict_accents'
   | 'tired_button'
   | 'miss_cap'
+  | 'fatigue_detector'
   | 'again_delay_sec'
   | 'article_picker'
   | 'weekly_goal_minutes'

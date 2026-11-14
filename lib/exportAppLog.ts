@@ -2,12 +2,14 @@ import { Alert, Platform } from 'react-native';
 import { File, Paths } from 'expo-file-system';
 import * as Sharing from 'expo-sharing';
 import { appLog } from './appLog';
+import { answerLog } from './answerLog';
 import { t } from './i18n';
 
 export async function exportAppLog(): Promise<void> {
   const s = t().settings.diagnostics;
   try {
-    const text = appLog.exportText();
+    const answers = answerLog.exportText();
+    const text = appLog.exportText() + (answers ? `\n${answers}` : '');
     const name = 'kimacha-diagnostics.txt';
     if (Platform.OS === 'web') {
       const url = URL.createObjectURL(new Blob([text], { type: 'text/plain;charset=utf-8' }));

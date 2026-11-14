@@ -62,6 +62,13 @@ const es: typeof en = {
     empty: 'Todavía no hay palabras aquí',
   },
   pcic: {
+    fatigueOffer: {
+      repeatMisses: 'Las mismas tarjetas te siguen costando trabajo.',
+      slowdown: 'Estás tardando más en responder.',
+      question: '¿Quieres seguir con palabras que conoces bien y bajar el ritmo?',
+      yes: 'Sí, más fácil',
+      no: 'No, sigo igual',
+    },
     tired: 'Sin energía',
     parkedNote: (n: number) => `${n} ${n === 1 ? 'tarjeta volverá' : 'tarjetas volverán'} mañana.`,
     spainLabel: 'España',
