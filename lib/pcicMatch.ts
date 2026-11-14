@@ -9,6 +9,13 @@ import { germanReadings, germanRegionalVariants } from './answerMatch';
 import { levenshtein } from './levenshtein';
 import { stripTrailingPunct } from './charDiff';
 import type { Sm2Grade } from './sm2';
+import spainForms from '@/data/words-open/spain-forms.json';
+
+// Spanish forms used in Spain but not in Mexico (data/words-open/spain-forms.json). The course norm is
+// Mexican, so an empty answer reveals a Mexican alternative when the card has one; the Spain form stays accepted.
+const SPAIN_ONLY = new Set(spainForms.map((entry) => entry.form));
+const isSpainOnly = (alt: string) =>
+  SPAIN_ONLY.has(alt.normalize('NFC').toLowerCase().trim().replace(/^(el|la|los|las|un|una|unos|unas)\s+/, ''));
 
 // question and exclamation marks, the period and the comma are never
 // an error, neither at the start (¿ ¡), nor at the end (? ! .), nor mid-sentence (comma). The
@@ -132,10 +139,12 @@ export function gradePcicAnswer(typed: string, target: string, strictAccents = f
     }
   }
 
-  let best = alternatives[0];
+  const mexican = lang === 'es' && typedNorm === '' ? alternatives.filter((alt) => !isSpainOnly(alt)) : [];
+  const pool = mexican.length > 0 ? mexican : alternatives;
+  let best = pool[0];
   let bestNorm = stripTrailingPunct(norm(best));
   let bestDist = Infinity;
-  for (const alt of alternatives) {
+  for (const alt of pool) {
     const altNorm = stripTrailingPunct(norm(alt));
     const dist = levenshtein(typedNorm, altNorm);
     if (dist < bestDist) {

@@ -229,3 +229,20 @@ describe('gradePcicAnswer on the quizá / quizás / tal vez / acaso card (o436)'
     expect(gradePcicAnswer('quizas', es, true).match).toBe('wrong');
   });
 });
+
+describe('gradePcicAnswer, empty Spanish answer and Spain-only forms', () => {
+  it('reveals the Mexican alternative even when the Spain-only one is shorter', () => {
+    expect(gradePcicAnswer('', 'descomponerse / estropearse', false, 'es').best).toBe('descomponerse');
+    expect(gradePcicAnswer('', 'la aeromoza / la azafata', false, 'es').best).toBe('la aeromoza');
+  });
+
+  it('still accepts the Spain-only form when it is typed', () => {
+    expect(gradePcicAnswer('estropearse', 'descomponerse / estropearse', false, 'es')).toEqual({ match: 'exact', best: 'estropearse' });
+    expect(gradePcicAnswer('la azafata', 'la aeromoza / la azafata', false, 'es')).toEqual({ match: 'exact', best: 'la azafata' });
+  });
+
+  it('keeps the shortest alternative when no Spain-only form is involved, and outside Spanish', () => {
+    expect(gradePcicAnswer('', 'el trabajo / la chamba', false, 'es').best).toBe('la chamba');
+    expect(gradePcicAnswer('', 'descomponerse / estropearse').best).toBe('estropearse');
+  });
+});

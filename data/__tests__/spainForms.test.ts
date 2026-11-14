@@ -27,13 +27,21 @@ describe('Spain-form data integrity', () => {
     }
   });
 
-  it.each([4216, 4666])('flags card #%s in both the displayed answer and its actual sentence, even with stale lemmas', order => {
+  it.each([4216, 4666])('card #%s reveals its Mexican form on an empty answer, keeps the Spain form as a labelled alternative, and its sentence is Mexican', order => {
     const card = b1.find(entry => entry.order === order)!;
     expect(card).toBeDefined();
-    const grade = gradePcicAnswer('', card.es);
-    expect(isSpainForm(grade.best)).toBe(true);
-    expect(spainFormsInSentence(card.sentence_es, card.sentence_lemmas).length).toBeGreaterThan(0);
-    expect(spainFormsInCardSentence({ id: `o${order}`, exampleEs: card.sentence_es }).length).toBeGreaterThan(0);
+    const grade = gradePcicAnswer('', card.es, false, 'es');
+    expect(isSpainForm(grade.best)).toBe(false);
+    expect(pcicAlternatives(card.es).some(alt => isSpainForm(alt))).toBe(true);
+    expect(spainFormsInSentence(card.sentence_es, card.sentence_lemmas)).toEqual([]);
+    expect(spainFormsInCardSentence({ id: `o${order}`, exampleEs: card.sentence_es })).toEqual([]);
+  });
+
+  it('never reveals a Spain-only form on an empty answer while the card has a Mexican alternative', () => {
+    const shownSpain = corpus
+      .filter((card: { es: string }) => pcicAlternatives(card.es).some(alt => !isSpainForm(alt)))
+      .filter((card: { es: string }) => isSpainForm(gradePcicAnswer('', card.es, false, 'es').best));
+    expect(shownSpain).toEqual([]);
   });
 
   it('does not mislabel the Mexican equivalents or shared everyday alternatives', () => {
