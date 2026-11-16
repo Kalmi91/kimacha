@@ -24,7 +24,7 @@ import CardShell from '@/components/learn/CardShell';
 import CardNote from '@/components/learn/CardNote';
 import { SkinBackdrop, SkinHeader, SkinSpeakLabel, SkinWord } from '@/components/skins/Slots';
 import DockedAction from '@/components/learn/DockedAction';
-import { answerScrollTarget, dockScrollInsets } from '@/components/learn/dockScrollInsets';
+import { answerScrollTarget, dockScrollInsets, dockStepsAside } from '@/components/learn/dockScrollInsets';
 import PcicRevealedAnswer, { SpainFormLabel } from '@/components/learn/PcicRevealedAnswer';
 import MistakesEntry from '@/components/learn/MistakesEntry';
 import MoreNewAsk from '@/components/learn/MoreNewAsk';
@@ -129,6 +129,7 @@ export default function PcicCardView({
   // Android pans the whole window and the bar floats mid-screen. Re-run when the keyboard shows or the picture toggles.
   const [scrollerH, setScrollerH] = useState(0);
   const [relayout, setRelayout] = useState(0);
+  const stepAside = kbHeight > 0 && dockStepsAside(scrollerH, dockH, dockLift);
   useEffect(() => {
     if (kbHeight <= 0 || scrollerH <= 0) return;
     const timer = setTimeout(() => {
@@ -136,13 +137,13 @@ export default function PcicCardView({
       const field = inputRef.current;
       if (!inner || !field) return;
       field.measureLayout(inner as never, (_x, y, _w, h) => {
-        scrollRef.current?.scrollTo({ y: answerScrollTarget(y, h, scrollerH, dockH, dockLift), animated: false });
+        scrollRef.current?.scrollTo({ y: answerScrollTarget(y, h, scrollerH, stepAside ? 0 : dockH, dockLift), animated: false });
         // a scroll alone does not make Android recompute the window pan it already applied; a 1 px layout change does
         setRelayout((n) => n ^ 1);
       }, () => {});
     }, 60);
     return () => clearTimeout(timer);
-  }, [kbHeight, noteOpenFor, scrollerH, dockH, dockLift, inputRef]);
+  }, [kbHeight, noteOpenFor, scrollerH, dockH, dockLift, inputRef, stepAside]);
 
   // The header's FIRST chip is the selected level,
   // tapping it opens the level picker sheet; the existing four chips are unchanged.
@@ -600,7 +601,7 @@ export default function PcicCardView({
       {/* After Check, the SAME docked bar (place+size
           unchanged) switches to "Next", its label states the suggested grade;
           the two buttons in the card remain for override. */}
-      {!(retypeFocused && kbHeight > 0) && <DockedAction
+      {!(retypeFocused && kbHeight > 0) && !(stepAside && !grade) && <DockedAction
         label={grade && nextGrade ? s.pcic.next(s.pcic[nextGrade]) : `✓ ${s.card.check}`}
         onPress={grade && nextGrade ? () => handleGrade(nextGrade) : handleCheck}
         tone={grade ? 'next' : 'check'}
