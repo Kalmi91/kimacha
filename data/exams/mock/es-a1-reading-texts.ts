@@ -58,7 +58,7 @@ export const ES_A1_READING_TEXTS: A1ReadingText[] = [
   },
   {
     id: 'aviso-autobus',
-    text: 'Aviso: el autobús número doce sale de la estación a las siete y cuarto y llega a la universidad a las ocho menos diez. Si no tiene boleto, puede comprarlo con el conductor. El boleto cuesta diez pesos.',
+    text: 'Aviso: el autobús número doce sale de la estación a las siete y cuarto y llega a la universidad a las siete cincuenta. Si no tiene boleto, puede comprarlo con el conductor. El boleto cuesta diez pesos.',
     question: '¿Cuánto cuesta el boleto?',
     correct: 'Diez pesos.',
     wrong: ['Doce pesos.', 'Cincuenta pesos.'],
