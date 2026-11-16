@@ -30,7 +30,7 @@ import { fireEvent, render } from '@testing-library/react-native';
 import { TextInput } from 'react-native';
 
 import { getDb } from '@/lib/database';
-import { saveNewDeclinedDay } from '@/lib/learnResume';
+import { loadNewDeclinedDay, saveNewDeclinedDay } from '@/lib/learnResume';
 import { RESUME_GAME_ID } from '@/lib/resumeRoute';
 import { addDays, sm2NewCard, sm2Review, type Sm2Card } from '@/lib/sm2';
 import { localDateString } from '@/lib/usageStats';
@@ -146,9 +146,27 @@ describe('PCIC tab: asks before more new words when the day\'s batch runs out (F
     expect(again.getByText('new 0')).toBeTruthy();
   });
 
+  it('a "No" given on another level does not silence the question on this level (FB652)', async () => {
+    await seed(10);
+    await saveNewDeclinedDay(getDb(), today, 'B2');
+    const screen = render(<PcicScreen />);
+    await flush();
+    expect(screen.getByTestId('learn-ask-more-new')).toBeTruthy();
+  });
+
+  it('"No" on two levels the same day: both stay remembered (FB652)', async () => {
+    await seed(10);
+    await saveNewDeclinedDay(getDb(), today, 'B2');
+    await saveNewDeclinedDay(getDb(), today, 'B1');
+    const screen = render(<PcicScreen />);
+    await flush();
+    expect(screen.queryByTestId('learn-ask-more-new')).toBeNull();
+    expect(await loadNewDeclinedDay(getDb(), 'B2')).toBe(today);
+  });
+
   it('a "No" from an earlier day does not count: a new day asks again', async () => {
     await seed(10);
-    await saveNewDeclinedDay(getDb(), yesterday);
+    await saveNewDeclinedDay(getDb(), yesterday, 'B1');
     const screen = render(<PcicScreen />);
     await flush();
     expect(screen.getByTestId('learn-ask-more-new')).toBeTruthy();
