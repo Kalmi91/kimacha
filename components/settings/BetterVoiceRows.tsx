@@ -10,6 +10,9 @@ import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
+import { playVoiceSample, stopVoiceSample, useSamplePlaying } from '@/lib/voiceSample';
+import { sampleKey } from '@/lib/voiceSampleData';
+import { useSpeakerChoices } from '@/lib/voicePreference';
 import { downloadNeural, setNeuralEnabled, setNeuralEngine, useNeuralState } from '@/lib/neuralModels';
 import {
   LEGACY_PACK_KEY,
@@ -136,6 +139,8 @@ export function SentenceVoiceChoices({ lang }: { lang: NeuralLang }) {
   const g = useGrammarColors();
   const s = t().settings.betterVoice;
   const state = useNeuralState();
+  const choices = useSpeakerChoices();
+  const samplePlaying = useSamplePlaying();
   if (!state.supported || (lang !== 'es' && lang !== 'en') || !PIPER_MODEL_KEYS.every(key => state.installed[key])) return null;
   const { running } = state.download;
   const confirmDownload = (bytes: number, go: () => void, message: (mb: string) => string) => {
@@ -170,9 +175,14 @@ export function SentenceVoiceChoices({ lang }: { lang: NeuralLang }) {
       <View style={styles.pills}>
         {(['piper', 'kokoro'] as NeuralEngine[]).map(engine => {
           const selected = state.engines[lang] === engine;
+          // the sample of this engine in the picked person's voice (m = male, f or Automatic = female); it never picks the engine
+          const gender = choices[lang] === 'm' ? 'm' : 'f';
+          const key = sampleKey(lang, engine, gender);
+          const playing = samplePlaying === key;
+          const name = engine === 'piper' ? s.piper : s.kokoro;
           return (
+            <View key={engine} style={styles.engineBox}>
             <Pressable
-              key={engine}
               testID={`settings-better-voice-${lang}-${engine}`}
               accessibilityRole="button"
               accessibilityState={{ selected }}
@@ -185,8 +195,20 @@ export function SentenceVoiceChoices({ lang }: { lang: NeuralLang }) {
                 else confirmDownload(bytes, () => void setNeuralEngine(lang, engine), s.confirmModel);
               }}
             >
-              <Text style={[styles.pillText, { color: selected ? g.ink : colors.tabIconDefault }]}>{engine === 'piper' ? s.piper : s.kokoro}</Text>
+              <Text style={[styles.pillText, { color: selected ? g.ink : colors.tabIconDefault }]}>{name}</Text>
             </Pressable>
+            <Pressable
+              testID={`voice-sample-${lang}-engine-${engine}`}
+              accessibilityRole="button"
+              accessibilityLabel={t().settings.speaker.playSample(engine === 'piper' ? 'Piper' : 'Kokoro')}
+              accessibilityState={{ selected: playing }}
+              hitSlop={6}
+              style={[styles.play, { borderColor: g.a }]}
+              onPress={() => (playing ? stopVoiceSample() : playVoiceSample(lang, engine, gender))}
+            >
+              <Text style={[styles.playText, { color: g.ink }]}>{playing ? '■' : '▶'}</Text>
+            </Pressable>
+            </View>
           );
         })}
       </View>
@@ -205,5 +227,8 @@ const styles = StyleSheet.create({
   sentenceLabel: { width: '100%', marginBottom: 8 },
   pills: { width: '100%', flexDirection: 'row', gap: 8 },
   pill: { flex: 1, alignItems: 'center', justifyContent: 'center', borderRadius: 16, paddingVertical: 6, paddingHorizontal: 12 },
+  engineBox: { flex: 1, flexDirection: 'row', alignItems: 'center', gap: 6 },
+  play: { width: 32, height: 32, borderWidth: 1.5, borderRadius: 16, alignItems: 'center', justifyContent: 'center' },
+  playText: { fontSize: 12, fontWeight: '700' },
   pillText: { fontSize: 13, fontWeight: '600' },
 });
