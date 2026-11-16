@@ -409,6 +409,7 @@
       "kind": "form",
       "verb": "forma",
       "person": "a + el",
+      "q": { "en": "How do you combine \"a\" with the masculine singular article?", "es": "¿Cómo se combina «a» con el artículo masculino singular?" },
       "answer": "al",
       "table": "contracciones",
       "wrong": {
@@ -427,6 +428,7 @@
       "kind": "form",
       "verb": "forma",
       "person": "a + la",
+      "q": { "en": "How do you combine \"a\" with the feminine singular article?", "es": "¿Cómo se combina «a» con el artículo femenino singular?" },
       "answer": "a la",
       "table": "contracciones",
       "wrong": {
@@ -445,6 +447,7 @@
       "kind": "form",
       "verb": "forma",
       "person": "a + los",
+      "q": { "en": "How do you combine \"a\" with the masculine plural article?", "es": "¿Cómo se combina «a» con el artículo masculino plural?" },
       "answer": "a los",
       "table": "contracciones",
       "wrong": {
@@ -463,6 +466,7 @@
       "kind": "form",
       "verb": "forma",
       "person": "a + las",
+      "q": { "en": "How do you combine \"a\" with the feminine plural article?", "es": "¿Cómo se combina «a» con el artículo femenino plural?" },
       "answer": "a las",
       "table": "contracciones",
       "wrong": {
@@ -481,6 +485,7 @@
       "kind": "form",
       "verb": "forma",
       "person": "de + el",
+      "q": { "en": "How do you combine \"de\" with the masculine singular article?", "es": "¿Cómo se combina «de» con el artículo masculino singular?" },
       "answer": "del",
       "table": "contracciones",
       "wrong": {
@@ -499,6 +504,7 @@
       "kind": "form",
       "verb": "forma",
       "person": "de + la",
+      "q": { "en": "How do you combine \"de\" with the feminine singular article?", "es": "¿Cómo se combina «de» con el artículo femenino singular?" },
       "answer": "de la",
       "table": "contracciones",
       "wrong": {
@@ -517,6 +523,7 @@
       "kind": "form",
       "verb": "forma",
       "person": "de + los",
+      "q": { "en": "How do you combine \"de\" with the masculine plural article?", "es": "¿Cómo se combina «de» con el artículo masculino plural?" },
       "answer": "de los",
       "table": "contracciones",
       "wrong": {
@@ -535,6 +542,7 @@
       "kind": "form",
       "verb": "forma",
       "person": "de + las",
+      "q": { "en": "How do you combine \"de\" with the feminine plural article?", "es": "¿Cómo se combina «de» con el artículo femenino plural?" },
       "answer": "de las",
       "table": "contracciones",
       "wrong": {
@@ -553,6 +561,7 @@
       "kind": "form",
       "verb": "forma",
       "person": "a + el",
+      "q": { "en": "How do you combine \"a\" with the masculine singular article?", "es": "¿Cómo se combina «a» con el artículo masculino singular?" },
       "answer": "al",
       "table": "contracciones",
       "wrong": {
@@ -571,6 +580,7 @@
       "kind": "form",
       "verb": "forma",
       "person": "de + el",
+      "q": { "en": "How do you combine \"de\" with the masculine singular article?", "es": "¿Cómo se combina «de» con el artículo masculino singular?" },
       "answer": "del",
       "table": "contracciones",
       "wrong": {
@@ -589,6 +599,7 @@
       "kind": "form",
       "verb": "forma",
       "person": "a + la",
+      "q": { "en": "How do you combine \"a\" with the feminine singular article?", "es": "¿Cómo se combina «a» con el artículo femenino singular?" },
       "answer": "a la",
       "table": "contracciones",
       "wrong": {
@@ -607,6 +618,7 @@
       "kind": "form",
       "verb": "forma",
       "person": "de + la",
+      "q": { "en": "How do you combine \"de\" with the feminine singular article?", "es": "¿Cómo se combina «de» con el artículo femenino singular?" },
       "answer": "de la",
       "table": "contracciones",
       "wrong": {

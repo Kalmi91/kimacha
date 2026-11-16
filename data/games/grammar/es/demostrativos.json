@@ -616,6 +616,7 @@
       "kind": "form",
       "verb": "Masculino singular",
       "person": "este",
+      "q": { "en": "What is the masculine singular form of the demonstrative that points at something close to me?", "es": "¿Cuál es la forma en masculino singular del demostrativo que señala algo cerca de mí?" },
       "answer": "este",
       "table": "demostrativos",
       "wrong": {
@@ -634,6 +635,7 @@
       "kind": "form",
       "verb": "Femenino singular",
       "person": "este",
+      "q": { "en": "What is the feminine singular form of the demonstrative that points at something close to me?", "es": "¿Cuál es la forma en femenino singular del demostrativo que señala algo cerca de mí?" },
       "answer": "esta",
       "table": "demostrativos",
       "wrong": {
@@ -652,6 +654,7 @@
       "kind": "form",
       "verb": "Masculino plural",
       "person": "este",
+      "q": { "en": "What is the masculine plural form of the demonstrative that points at something close to me?", "es": "¿Cuál es la forma en masculino plural del demostrativo que señala algo cerca de mí?" },
       "answer": "estos",
       "table": "demostrativos",
       "wrong": {
@@ -670,6 +673,7 @@
       "kind": "form",
       "verb": "Femenino plural",
       "person": "este",
+      "q": { "en": "What is the feminine plural form of the demonstrative that points at something close to me?", "es": "¿Cuál es la forma en femenino plural del demostrativo que señala algo cerca de mí?" },
       "answer": "estas",
       "table": "demostrativos",
       "wrong": {
@@ -688,6 +692,7 @@
       "kind": "form",
       "verb": "Masculino singular",
       "person": "ese",
+      "q": { "en": "What is the masculine singular form of the demonstrative that points at something close to you?", "es": "¿Cuál es la forma en masculino singular del demostrativo que señala algo cerca de ti?" },
       "answer": "ese",
       "table": "demostrativos",
       "wrong": {
@@ -706,6 +711,7 @@
       "kind": "form",
       "verb": "Femenino singular",
       "person": "ese",
+      "q": { "en": "What is the feminine singular form of the demonstrative that points at something close to you?", "es": "¿Cuál es la forma en femenino singular del demostrativo que señala algo cerca de ti?" },
       "answer": "esa",
       "table": "demostrativos",
       "wrong": {
@@ -724,6 +730,7 @@
       "kind": "form",
       "verb": "Masculino plural",
       "person": "ese",
+      "q": { "en": "What is the masculine plural form of the demonstrative that points at something close to you?", "es": "¿Cuál es la forma en masculino plural del demostrativo que señala algo cerca de ti?" },
       "answer": "esos",
       "table": "demostrativos",
       "wrong": {
@@ -742,6 +749,7 @@
       "kind": "form",
       "verb": "Femenino plural",
       "person": "ese",
+      "q": { "en": "What is the feminine plural form of the demonstrative that points at something close to you?", "es": "¿Cuál es la forma en femenino plural del demostrativo que señala algo cerca de ti?" },
       "answer": "esas",
       "table": "demostrativos",
       "wrong": {
@@ -760,6 +768,7 @@
       "kind": "form",
       "verb": "Masculino singular",
       "person": "aquel",
+      "q": { "en": "What is the masculine singular form of the demonstrative that points at something far from both of us?", "es": "¿Cuál es la forma en masculino singular del demostrativo que señala algo lejos de los dos?" },
       "answer": "aquel",
       "table": "demostrativos",
       "wrong": {
@@ -778,6 +787,7 @@
       "kind": "form",
       "verb": "Femenino singular",
       "person": "aquel",
+      "q": { "en": "What is the feminine singular form of the demonstrative that points at something far from both of us?", "es": "¿Cuál es la forma en femenino singular del demostrativo que señala algo lejos de los dos?" },
       "answer": "aquella",
       "table": "demostrativos",
       "wrong": {
@@ -796,6 +806,7 @@
       "kind": "form",
       "verb": "Masculino plural",
       "person": "aquel",
+      "q": { "en": "What is the masculine plural form of the demonstrative that points at something far from both of us?", "es": "¿Cuál es la forma en masculino plural del demostrativo que señala algo lejos de los dos?" },
       "answer": "aquellos",
       "table": "demostrativos",
       "wrong": {
@@ -814,6 +825,7 @@
       "kind": "form",
       "verb": "Femenino plural",
       "person": "aquel",
+      "q": { "en": "What is the feminine plural form of the demonstrative that points at something far from both of us?", "es": "¿Cuál es la forma en femenino plural del demostrativo que señala algo lejos de los dos?" },
       "answer": "aquellas",
       "table": "demostrativos",
       "wrong": {

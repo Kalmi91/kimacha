@@ -87,4 +87,32 @@ describe('every sk has a q (data/games/grammar/**)', () => {
     expect(forms).toBeGreaterThan(900);
     expect(bad).toEqual([]);
   });
+
+  // E122: the generated question ("What is the form of Masculino plural for rojo?") is only fine for a conjugation (a person table);
+  // every other A1 form task of the Spanish course says in its own words what to type.
+  it('every non-verb A1 form task of the Spanish course has its own q (en and es)', () => {
+    const dir = path.join(process.cwd(), 'data', 'games', 'grammar', 'es');
+    const personHeader = /^(person|persona|pronoun|pronombre)$/i;
+    const bad: string[] = [];
+    let nonVerb = 0;
+    for (const file of fs.readdirSync(dir).filter((f) => f.endsWith('.json'))) {
+      const lesson = JSON.parse(fs.readFileSync(path.join(dir, file), 'utf8')) as {
+        level?: string;
+        body?: { kind: string; id?: string; header?: { en?: string; es?: string }[] }[];
+        items?: { id: string; kind: string; table?: string; q?: { en?: string; es?: string } }[];
+      };
+      if (lesson.level !== 'A1') continue;
+      for (const it of lesson.items ?? []) {
+        if (it.kind !== 'form') continue;
+        const table = (lesson.body ?? []).find((b) => b.kind === 'table' && b.id === it.table);
+        const h = table?.header?.[0];
+        const conjugation = !table || (!!h && (personHeader.test(h.en ?? '') || personHeader.test(h.es ?? '')));
+        if (conjugation) continue;
+        nonVerb++;
+        if (!it.q?.en || !it.q?.es || !/^¿.*\?/.test(it.q.es)) bad.push(`${file}#${it.id}`);
+      }
+    }
+    expect(nonVerb).toBeGreaterThan(100);
+    expect(bad).toEqual([]);
+  });
 });

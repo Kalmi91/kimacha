@@ -947,6 +947,7 @@
       "kind": "form",
       "verb": "pronombre de objeto indirecto",
       "person": "yo",
+      "q": { "en": "What is the indirect object pronoun for yo?", "es": "¿Cuál es el pronombre de objeto indirecto para «yo»?" },
       "answer": "me",
       "table": "pronombres-oi",
       "wrong": {
@@ -965,6 +966,7 @@
       "kind": "form",
       "verb": "pronombre de objeto indirecto",
       "person": "tú",
+      "q": { "en": "What is the indirect object pronoun for tú?", "es": "¿Cuál es el pronombre de objeto indirecto para «tú»?" },
       "answer": "te",
       "table": "pronombres-oi",
       "wrong": {
@@ -983,6 +985,7 @@
       "kind": "form",
       "verb": "pronombre de objeto indirecto",
       "person": "él/ella/usted",
+      "q": { "en": "What is the indirect object pronoun for él/ella/usted?", "es": "¿Cuál es el pronombre de objeto indirecto para «él/ella/usted»?" },
       "answer": "le",
       "table": "pronombres-oi",
       "wrong": {
@@ -1001,6 +1004,7 @@
       "kind": "form",
       "verb": "pronombre de objeto indirecto",
       "person": "nosotros",
+      "q": { "en": "What is the indirect object pronoun for nosotros?", "es": "¿Cuál es el pronombre de objeto indirecto para «nosotros»?" },
       "answer": "nos",
       "table": "pronombres-oi",
       "wrong": {
@@ -1019,6 +1023,7 @@
       "kind": "form",
       "verb": "pronombre de objeto indirecto",
       "person": "ellos/ellas/ustedes",
+      "q": { "en": "What is the indirect object pronoun for ellos/ellas/ustedes?", "es": "¿Cuál es el pronombre de objeto indirecto para «ellos/ellas/ustedes»?" },
       "answer": "les",
       "table": "pronombres-oi",
       "wrong": {
