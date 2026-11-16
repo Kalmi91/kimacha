@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { View, Pressable, TextInput, ScrollView, KeyboardAvoidingView, Platform, ActivityIndicator, useWindowDimensions } from 'react-native';
 import { Text } from '@/components/KText';
 import { TitleText, themedInkEdgeStyle, themedInputStyle, ProgressBar, ActionButton } from '@/components/grammar/Themed';
@@ -24,7 +24,7 @@ import CardShell from '@/components/learn/CardShell';
 import CardNote from '@/components/learn/CardNote';
 import { SkinBackdrop, SkinHeader, SkinSpeakLabel, SkinWord } from '@/components/skins/Slots';
 import DockedAction from '@/components/learn/DockedAction';
-import { dockScrollInsets } from '@/components/learn/dockScrollInsets';
+import { answerScrollTarget, dockScrollInsets } from '@/components/learn/dockScrollInsets';
 import PcicRevealedAnswer, { SpainFormLabel } from '@/components/learn/PcicRevealedAnswer';
 import MistakesEntry from '@/components/learn/MistakesEntry';
 import MoreNewAsk from '@/components/learn/MoreNewAsk';
@@ -125,6 +125,19 @@ export default function PcicCardView({
     const inner = (scrollRef.current as unknown as { getInnerViewRef?: () => View | null } | null)?.getInnerViewRef?.();
     if (inner) block.measureLayout(inner as never, (_x, y) => scrollRef.current?.scrollTo({ y: Math.max(0, y - 16), animated: false }), () => {});
   };
+  // E119: with the keyboard open the answer field has to end above the docked bar, else (picture open, a long card)
+  // Android pans the whole window and the bar floats mid-screen. Re-run when the keyboard shows or the picture toggles.
+  const [scrollerH, setScrollerH] = useState(0);
+  useEffect(() => {
+    if (kbHeight <= 0 || scrollerH <= 0) return;
+    const timer = setTimeout(() => {
+      const inner = (scrollRef.current as unknown as { getInnerViewRef?: () => View | null } | null)?.getInnerViewRef?.();
+      const field = inputRef.current;
+      if (!inner || !field) return;
+      field.measureLayout(inner as never, (_x, y, _w, h) => scrollRef.current?.scrollTo({ y: answerScrollTarget(y, h, scrollerH, dockH, dockLift), animated: false }), () => {});
+    }, 60);
+    return () => clearTimeout(timer);
+  }, [kbHeight, noteOpenFor, scrollerH, dockH, dockLift, inputRef]);
 
   // The header's FIRST chip is the selected level,
   // tapping it opens the level picker sheet; the existing four chips are unchanged.
@@ -410,6 +423,7 @@ export default function PcicCardView({
 
       <ScrollView
         ref={scrollRef}
+        onLayout={(e) => setScrollerH(e.nativeEvent.layout.height)}
         style={[styles.cardScroll, { marginBottom: dockInsets.marginBottom }]}
         contentContainerStyle={[styles.cardScrollContent, { paddingBottom: retypeOpen ? Math.max(dockInsets.paddingBottom, windowH * 0.6) : dockInsets.paddingBottom }]}
         keyboardShouldPersistTaps="handled"

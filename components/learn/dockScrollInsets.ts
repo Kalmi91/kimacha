@@ -4,6 +4,14 @@
 // row shows over / beside Next. With the keyboard closed the scroller's viewport therefore ends at the bar's top edge
 // (margin), so the card gets all the room above the bar. With the keyboard open the old full-height viewport is kept
 // (the window pans to the answer field), so the room under the bar stays as padding there.
+// E119: where to scroll the card so the answer field ends above the docked bar (and so above the keys) while typing.
+// With the picture open the field sits below the keys' top edge, and Android then pans the whole window, which leaves
+// the docked bar floating mid-screen. 0 when the field already fits, so a card without the problem stays as it is.
+export function answerScrollTarget(fieldY: number, fieldH: number, viewportH: number, dockH: number, dockLift: number): number {
+  const visibleH = viewportH - dockH - dockLift;
+  return Math.max(0, Math.round(fieldY + fieldH + 12 - visibleH));
+}
+
 export function dockScrollInsets(dockH: number, dockLift: number, keyboardOpen: boolean) {
   return keyboardOpen
     ? { marginBottom: 0, paddingBottom: dockH + dockLift }
