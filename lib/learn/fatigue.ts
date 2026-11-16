@@ -1,4 +1,5 @@
 import { mixNewCards, type QueuedSm2Card } from '@/lib/pcicSession';
+import { holdNewUntilMissedTyped } from '@/lib/learn/newGate';
 import type { DB } from '@/lib/dbTypes';
 import { loadResumeValue, saveResumeValue } from '@/lib/resumeStore';
 
@@ -15,6 +16,7 @@ export interface FatigueOptions {
   tiredButton: boolean;
   missCap: boolean;
   detector?: boolean;
+  newGate?: boolean;
   keepFirst?: boolean;
   // Session callers request the existing normal ordering here, so every queue build has one entry point.
   mixNew?: boolean;
@@ -58,6 +60,13 @@ export const isFatigueReview = (card: QueuedSm2Card, day: string): boolean => ca
 
 /** A separate queue-only layer: never changes cards or their scheduler state. */
 export function arrangeQueue(queue: QueuedSm2Card[], day: string, value: FatigueState, opts: FatigueOptions): QueuedSm2Card[] {
+  const arranged = arrangeFatigue(queue, day, value, opts);
+  if (!opts.newGate) return arranged;
+  // keepFirst: the card on screen stays where it is, the gate only orders what follows it.
+  return opts.keepFirst ? [...arranged.slice(0, 1), ...holdNewUntilMissedTyped(arranged.slice(1), day)] : holdNewUntilMissedTyped(arranged, day);
+}
+
+function arrangeFatigue(queue: QueuedSm2Card[], day: string, value: FatigueState, opts: FatigueOptions): QueuedSm2Card[] {
   const state = value.day === day ? value : emptyFatigue(day);
   const base = opts.missCap && state.parked.length > 0 ? queue.filter((c) => !state.parked.includes(c.itemId)) : queue;
   if (!(opts.tiredButton || opts.detector) || !state.tired) return opts.mixNew ? mixNewCards(base, day) : base;

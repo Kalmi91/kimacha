@@ -28,6 +28,7 @@ import PcicRevealedAnswer, { SpainFormLabel } from '@/components/learn/PcicRevea
 import MistakesEntry from '@/components/learn/MistakesEntry';
 import MoreNewAsk from '@/components/learn/MoreNewAsk';
 import FatigueOffer from '@/components/learn/FatigueOffer';
+import RetypePractice from '@/components/learn/RetypePractice';
 import { answerInputProps } from '@/lib/inputProps';
 import LevelPickerSheet from '@/components/LevelPickerSheet';
 import { BrutalBox, textOnFill } from '@/components/grammar/Brutal';
@@ -94,6 +95,7 @@ export default function PcicCardView({
   articlePick,
   setArticlePick,
   typedAnswer,
+  strictAccents,
   setTypedAnswer,
   cardSeq,
   inputRef,
@@ -547,6 +549,10 @@ export default function PcicCardView({
               sourceLang={sourceLang}
               onGrade={handleGrade}
             />
+          )}
+          {grade && !!answerText && (
+            <RetypePractice key={`pcic-retype-${current.itemId}-${cardSeq}`} colors={colors} answerText={answerText} target={target}
+              strictAccents={strictAccents} sentence={currentItem.kind === 'sentence'} />
           )}
 
           <View style={styles.bottomRow}>

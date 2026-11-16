@@ -293,6 +293,11 @@ async function migrateToV5(db: SQLite.SQLiteDatabase) {
   await addColumnIfMissing(db, 'learn_settings', 'fatigue_detector', 'INTEGER');
 }
 
+// v6: new-word gate (a missed new word holds back the next one); empty = on, so only an explicit 0 turns it off.
+async function migrateToV6(db: SQLite.SQLiteDatabase) {
+  await addColumnIfMissing(db, 'learn_settings', 'new_word_gate', 'INTEGER');
+}
+
 export interface Migration {
   version: number;
   up: (db: SQLite.SQLiteDatabase) => Promise<void>;
@@ -304,6 +309,7 @@ export const MIGRATIONS: readonly Migration[] = [
   { version: 3, up: migrateToV3 },
   { version: 4, up: migrateToV4 },
   { version: 5, up: migrateToV5 },
+  { version: 6, up: migrateToV6 },
 ];
 
 export const LATEST_SCHEMA_VERSION = MIGRATIONS[MIGRATIONS.length - 1].version;

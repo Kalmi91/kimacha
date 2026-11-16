@@ -83,6 +83,13 @@ export default {
       yes: 'Yes, take it easier',
       no: 'No, keep going',
     },
+    retype: {
+      button: 'Type it again',
+      placeholder: 'Type it again, just for fun',
+      check: 'Check',
+      right: 'Correct',
+      wrong: 'Not quite, try again',
+    },
     tired: "I'm tired",
     parkedNote: (n: number) => `${n} ${n === 1 ? 'card will' : 'cards will'} return tomorrow.`,
     spainLabel: 'Spain',

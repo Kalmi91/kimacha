@@ -64,6 +64,8 @@ export const styles = StyleSheet.create({
   moreNewAsk: { fontSize: 18, fontWeight: '600', textAlign: 'center' },
   moreNewRow: { flexDirection: 'row', gap: 10 },
   moreNewBtn: { flex: 1, width: 'auto', marginTop: 0 },
+  retypeBlock: { gap: 10, marginTop: 12 },
+  retypeBtn: { alignSelf: 'stretch', width: '100%', minHeight: 44, marginTop: 12 },
   brutalProgress: { marginBottom: 16 },
   brutalArticle: { minWidth: 48, paddingVertical: 6, paddingHorizontal: 10, alignItems: 'center' },
   brutalDim: { opacity: 0.6 },

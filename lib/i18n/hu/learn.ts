@@ -69,6 +69,13 @@ const hu: typeof en = {
       yes: 'Igen, könnyebben',
       no: 'Nem, folytatom',
     },
+    retype: {
+      button: 'Írd be újra',
+      placeholder: 'Írd be újra, csak kíváncsiságból',
+      check: 'Ellenőrzés',
+      right: 'Helyes',
+      wrong: 'Nem egészen, próbáld újra',
+    },
     tired: 'Fáradt vagyok',
     parkedNote: (n: number) => `${n} kártya holnap jön vissza.`,
     spainLabel: 'spanyolországi',

@@ -209,6 +209,15 @@ export class DbCore implements DB {
     await this.setSettings({ fatigue_detector: v ? 1 : 0 });
   }
 
+  // On unless the learner switched it off (a never-set column reads as on).
+  async getNewWordGate(): Promise<boolean> {
+    return (await this.getSetting('new_word_gate')) !== 0;
+  }
+
+  async setNewWordGate(v: boolean): Promise<void> {
+    await this.setSettings({ new_word_gate: v ? 1 : 0 });
+  }
+
   // adjustable: after how many seconds a missed PCIC card
   // comes back no matter what (lib/pcicSession.ts).
   async getAgainDelaySec(): Promise<number> {

@@ -69,6 +69,13 @@ const es: typeof en = {
       yes: 'Sí, más fácil',
       no: 'No, sigo igual',
     },
+    retype: {
+      button: 'Escríbela otra vez',
+      placeholder: 'Escríbela otra vez, solo por curiosidad',
+      check: 'Comprobar',
+      right: 'Correcto',
+      wrong: 'Casi, inténtalo otra vez',
+    },
     tired: 'Sin energía',
     parkedNote: (n: number) => `${n} ${n === 1 ? 'tarjeta volverá' : 'tarjetas volverán'} mañana.`,
     spainLabel: 'España',

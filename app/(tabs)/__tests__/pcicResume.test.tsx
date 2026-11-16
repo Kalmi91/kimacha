@@ -61,6 +61,7 @@ describe('PCIC tab: on reopening, the round resumes where it left off', () => {
   });
 
   it('the missed card stays in place: the current card is the same after reopening (the missed one does not jump ahead)', async () => {
+    await getDb().setNewWordGate(false); // the old order; the new-word gate has its own tests (pcicNewGate)
     const first = render(<PcicScreen />);
     await flush();
     expect(promptShown(first, 0)).toBe(true);

@@ -87,11 +87,11 @@ export default function SettingsScreen({ section = 'home' }: { section?: Setting
   const isCloudGuest = useIsCloudGuest();
   const {
     level, direction, directionSheetOpen, setDirectionSheetOpen, weeklyGoal, dailyNewLimit, againDelaySec,
-    strictAccents, articlePicker, tiredButton, missCap, fatigueDetector, goalReached, missingVoices, resetLevels, hasGrammarProgress, resetOpen,
+    strictAccents, articlePicker, tiredButton, missCap, fatigueDetector, newWordGate, goalReached, missingVoices, resetLevels, hasGrammarProgress, resetOpen,
     setResetOpen, examSeeded, handleStrictAccentsToggle, handleArticlePickerToggle, handleSelectDirection,
     handleWeeklyGoalChange, handleDailyNewLimitChange, handleAgainDelayChange, handleBackup, handleRestore,
     handleResetDeck, handleResetGrammar, handleSeedExamA1,
-    handleTiredButtonToggle, handleMissCapToggle, handleFatigueDetectorToggle,
+    handleTiredButtonToggle, handleMissCapToggle, handleFatigueDetectorToggle, handleNewWordGateToggle,
   } = useSettingsScreen();
 
   // the language's own name for the hint ("Magyar"), not its code.
@@ -279,6 +279,14 @@ export default function SettingsScreen({ section = 'home' }: { section?: Setting
           <Text style={[styles.sectionHint, { color: colors.tabIconDefault }]}>{s.settings.fatigueDetectorHint}</Text>
         </View>
         <BrutalSwitch testID="settings-fatigue-detector" accessibilityLabel={s.settings.fatigueDetector} value={fatigueDetector} onValueChange={handleFatigueDetectorToggle} />
+      </Row>
+
+      <Row>
+        <View style={styles.difficultyLabelBox}>
+          <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.newWordGate}</Text>
+          <Text style={[styles.sectionHint, { color: colors.tabIconDefault }]}>{s.settings.newWordGateHint}</Text>
+        </View>
+        <BrutalSwitch testID="settings-new-word-gate" accessibilityLabel={s.settings.newWordGate} value={newWordGate} onValueChange={handleNewWordGateToggle} />
       </Row>
 
       </>
