@@ -308,7 +308,7 @@ describe('form tasks and result data', () => {
       }
     }
     expect(checked).toBeGreaterThan(2000);
-    expect(own).toBe(73);
+    expect(own).toBe(213); // 73 + the 140 non-verb A1 form tasks of the Spanish course (E122)
     expect(tables).toBeGreaterThan(checked / 2);
   });
 
@@ -317,9 +317,10 @@ describe('form tasks and result data', () => {
       card: 'type',
       prompt: 'What are the pronoun and the form of gustar for ellos/ellas/ustedes, with several things liked? (two words)',
     });
-    expect(byId('es', 'interrogativos', 'int-form-04').view).toMatchObject({
+    // the A1 non-verb tasks have their own q (E122), so the generated one is shown with an A2 lesson
+    expect(byId('es', 'combinacion-pronombres', 'cp-form-01').view).toMatchObject({
       card: 'type',
-      prompt: 'What is the question word for A la tienda? (From the answer to the question word)',
+      prompt: 'What is the pronoun pair for ¿Me das el libro? Sí, ___ doy? (Which pronoun pair is needed?)',
     });
     expect(byId('es', 'numeros-hora-fecha', 'nh-form-06').view).toMatchObject({ card: 'type', prompt: 'How do you write the time 1:00 in Spanish words?' });
     expect(byId('es', 'presente-regular', 'pr-form-01').view).toMatchObject({ prompt: 'What is the form of hablar for yo?' });
@@ -348,7 +349,7 @@ describe('form tasks and result data', () => {
     const { setLanguage } = require('@/lib/i18n');
     setLanguage('de');
     try {
-      expect((byId('es', 'interrogativos', 'int-form-04').view as { prompt: string }).prompt).toContain('„Question word”');
+      expect((byId('es', 'comparativos-superlativos', 'cs-form-01').view as { prompt: string }).prompt).toContain('„Comparative”');
     } finally {
       setLanguage('en');
     }

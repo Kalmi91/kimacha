@@ -875,6 +875,7 @@
       "kind": "form",
       "verb": "pronombre de objeto directo",
       "person": "yo",
+      "q": { "en": "What is the direct object pronoun for yo?", "es": "¿Cuál es el pronombre de objeto directo para «yo»?" },
       "answer": "me",
       "table": "pronombres-od",
       "wrong": {
@@ -893,6 +894,7 @@
       "kind": "form",
       "verb": "pronombre de objeto directo",
       "person": "tú",
+      "q": { "en": "What is the direct object pronoun for tú?", "es": "¿Cuál es el pronombre de objeto directo para «tú»?" },
       "answer": "te",
       "table": "pronombres-od",
       "wrong": {
@@ -911,6 +913,7 @@
       "kind": "form",
       "verb": "pronombre de objeto directo",
       "person": "él / usted (masculino)",
+      "q": { "en": "What is the direct object pronoun for él / usted (masculine)?", "es": "¿Cuál es el pronombre de objeto directo para «él / usted (masculino)»?" },
       "answer": "lo",
       "table": "pronombres-od",
       "wrong": {
@@ -929,6 +932,7 @@
       "kind": "form",
       "verb": "pronombre de objeto directo",
       "person": "ella / usted (femenino)",
+      "q": { "en": "What is the direct object pronoun for ella / usted (feminine)?", "es": "¿Cuál es el pronombre de objeto directo para «ella / usted (femenino)»?" },
       "answer": "la",
       "table": "pronombres-od",
       "wrong": {
@@ -947,6 +951,7 @@
       "kind": "form",
       "verb": "pronombre de objeto directo",
       "person": "nosotros",
+      "q": { "en": "What is the direct object pronoun for nosotros?", "es": "¿Cuál es el pronombre de objeto directo para «nosotros»?" },
       "answer": "nos",
       "table": "pronombres-od",
       "wrong": {
@@ -965,6 +970,7 @@
       "kind": "form",
       "verb": "pronombre de objeto directo",
       "person": "ellos / ustedes (masculino)",
+      "q": { "en": "What is the direct object pronoun for ellos / ustedes (masculine)?", "es": "¿Cuál es el pronombre de objeto directo para «ellos / ustedes (masculino)»?" },
       "answer": "los",
       "table": "pronombres-od",
       "wrong": {
@@ -983,6 +989,7 @@
       "kind": "form",
       "verb": "pronombre de objeto directo",
       "person": "ellas / ustedes (femenino)",
+      "q": { "en": "What is the direct object pronoun for ellas / ustedes (feminine)?", "es": "¿Cuál es el pronombre de objeto directo para «ellas / ustedes (femenino)»?" },
       "answer": "las",
       "table": "pronombres-od",
       "wrong": {

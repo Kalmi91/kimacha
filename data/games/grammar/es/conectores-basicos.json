@@ -898,6 +898,7 @@
       "id": "cb-form-01",
       "verb": "conector",
       "person": "Ana ___ yo somos amigos.",
+      "q": { "en": "Which connector is missing? Ana ___ yo somos amigos.", "es": "¿Qué conector falta? Ana ___ yo somos amigos." },
       "answer": "y",
       "table": "conectores-basicos-frases",
       "wrong": {
@@ -916,6 +917,7 @@
       "id": "cb-form-02",
       "verb": "conector",
       "person": "Padre ___ hijo juegan fútbol en el parque.",
+      "q": { "en": "Which connector is missing? Padre ___ hijo juegan fútbol en el parque.", "es": "¿Qué conector falta? Padre ___ hijo juegan fútbol en el parque." },
       "answer": "e",
       "table": "conectores-basicos-frases",
       "wrong": {
@@ -934,6 +936,7 @@
       "id": "cb-form-03",
       "verb": "conector",
       "person": "Es una ciudad grande ___ importante.",
+      "q": { "en": "Which connector is missing? Es una ciudad grande ___ importante.", "es": "¿Qué conector falta? Es una ciudad grande ___ importante." },
       "answer": "e",
       "table": "conectores-basicos-frases",
       "wrong": {
@@ -952,6 +955,7 @@
       "id": "cb-form-04",
       "verb": "conector",
       "person": "¿Hoy es lunes ___ martes?",
+      "q": { "en": "Which connector is missing? ¿Hoy es lunes ___ martes?", "es": "¿Qué conector falta? ¿Hoy es lunes ___ martes?" },
       "answer": "o",
       "table": "conectores-basicos-frases",
       "wrong": {
@@ -970,6 +974,7 @@
       "id": "cb-form-05",
       "verb": "conector",
       "person": "Hay diez ___ once personas en la sala.",
+      "q": { "en": "Which connector is missing? Hay diez ___ once personas en la sala.", "es": "¿Qué conector falta? Hay diez ___ once personas en la sala." },
       "answer": "u",
       "table": "conectores-basicos-frases",
       "wrong": {
@@ -988,6 +993,7 @@
       "id": "cb-form-06",
       "verb": "conector",
       "person": "¿Estamos en septiembre ___ octubre?",
+      "q": { "en": "Which connector is missing? ¿Estamos en septiembre ___ octubre?", "es": "¿Qué conector falta? ¿Estamos en septiembre ___ octubre?" },
       "answer": "u",
       "table": "conectores-basicos-frases",
       "wrong": {
@@ -1006,6 +1012,7 @@
       "id": "cb-form-07",
       "verb": "conector",
       "person": "Bailo bien, ___ canto mal.",
+      "q": { "en": "Which connector is missing? Bailo bien, ___ canto mal.", "es": "¿Qué conector falta? Bailo bien, ___ canto mal." },
       "answer": "pero",
       "table": "conectores-basicos-frases",
       "wrong": {
@@ -1024,6 +1031,7 @@
       "id": "cb-form-08",
       "verb": "conector",
       "person": "Mi hermano duerme mucho, ___ siempre está cansado.",
+      "q": { "en": "Which connector is missing? Mi hermano duerme mucho, ___ siempre está cansado.", "es": "¿Qué conector falta? Mi hermano duerme mucho, ___ siempre está cansado." },
       "answer": "pero",
       "table": "conectores-basicos-frases",
       "wrong": {
@@ -1042,6 +1050,7 @@
       "id": "cb-form-09",
       "verb": "conector",
       "person": "No llamo a mi mamá ___ es muy tarde.",
+      "q": { "en": "Which connector is missing? No llamo a mi mamá ___ es muy tarde.", "es": "¿Qué conector falta? No llamo a mi mamá ___ es muy tarde." },
       "answer": "porque",
       "table": "conectores-basicos-frases",
       "wrong": {
@@ -1060,6 +1069,7 @@
       "id": "cb-form-10",
       "verb": "conector",
       "person": "Hoy es domingo, ___ no trabajo.",
+      "q": { "en": "Which connector is missing? Hoy es domingo, ___ no trabajo.", "es": "¿Qué conector falta? Hoy es domingo, ___ no trabajo." },
       "answer": "por eso",
       "accept": [
         "así que",
@@ -1083,6 +1093,7 @@
       "id": "cb-form-11",
       "verb": "conector",
       "person": "El metro está cerrado, ___ camino al banco.",
+      "q": { "en": "Which connector is missing? El metro está cerrado, ___ camino al banco.", "es": "¿Qué conector falta? El metro está cerrado, ___ camino al banco." },
       "answer": "así que",
       "accept": [
         "asi que",
@@ -1106,6 +1117,7 @@
       "id": "cb-form-12",
       "verb": "conector",
       "person": "La tienda está cerrada, ¿___ vamos al súper?",
+      "q": { "en": "Which connector is missing? La tienda está cerrada, ¿___ vamos al súper?", "es": "¿Qué conector falta? La tienda está cerrada, ¿___ vamos al súper?" },
       "answer": "entonces",
       "accept": [
         "así que",
