@@ -128,13 +128,18 @@ export default function PcicCardView({
   // E119: with the keyboard open the answer field has to end above the docked bar, else (picture open, a long card)
   // Android pans the whole window and the bar floats mid-screen. Re-run when the keyboard shows or the picture toggles.
   const [scrollerH, setScrollerH] = useState(0);
+  const [relayout, setRelayout] = useState(0);
   useEffect(() => {
     if (kbHeight <= 0 || scrollerH <= 0) return;
     const timer = setTimeout(() => {
       const inner = (scrollRef.current as unknown as { getInnerViewRef?: () => View | null } | null)?.getInnerViewRef?.();
       const field = inputRef.current;
       if (!inner || !field) return;
-      field.measureLayout(inner as never, (_x, y, _w, h) => scrollRef.current?.scrollTo({ y: answerScrollTarget(y, h, scrollerH, dockH, dockLift), animated: false }), () => {});
+      field.measureLayout(inner as never, (_x, y, _w, h) => {
+        scrollRef.current?.scrollTo({ y: answerScrollTarget(y, h, scrollerH, dockH, dockLift), animated: false });
+        // a scroll alone does not make Android recompute the window pan it already applied; a 1 px layout change does
+        setRelayout((n) => n ^ 1);
+      }, () => {});
     }, 60);
     return () => clearTimeout(timer);
   }, [kbHeight, noteOpenFor, scrollerH, dockH, dockLift, inputRef]);
@@ -425,7 +430,7 @@ export default function PcicCardView({
         ref={scrollRef}
         onLayout={(e) => setScrollerH(e.nativeEvent.layout.height)}
         style={[styles.cardScroll, { marginBottom: dockInsets.marginBottom }]}
-        contentContainerStyle={[styles.cardScrollContent, { paddingBottom: retypeOpen ? Math.max(dockInsets.paddingBottom, windowH * 0.6) : dockInsets.paddingBottom }]}
+        contentContainerStyle={[styles.cardScrollContent, { paddingBottom: retypeOpen ? Math.max(dockInsets.paddingBottom, windowH * 0.6) : dockInsets.paddingBottom + (kbHeight > 0 ? relayout : 0) }]}
         keyboardShouldPersistTaps="handled"
         keyboardDismissMode={keyboardDismissOnDrag()}
       >
