@@ -71,7 +71,7 @@ const hu: typeof en = {
     },
     retype: {
       button: 'Írd be újra',
-      placeholder: 'Írd be újra, csak kíváncsiságból',
+      placeholder: 'Írd be a szót',
       check: 'Ellenőrzés',
       right: 'Helyes',
       wrong: 'Nem egészen, próbáld újra',

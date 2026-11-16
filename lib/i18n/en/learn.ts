@@ -85,7 +85,7 @@ export default {
     },
     retype: {
       button: 'Type it again',
-      placeholder: 'Type it again, just for fun',
+      placeholder: 'Type the word',
       check: 'Check',
       right: 'Correct',
       wrong: 'Not quite, try again',

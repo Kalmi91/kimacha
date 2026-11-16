@@ -72,7 +72,7 @@ const de: typeof en = {
     },
     retype: {
       button: 'Noch einmal tippen',
-      placeholder: 'Noch einmal tippen, nur aus Neugier',
+      placeholder: 'Tippe das Wort',
       check: 'Prüfen',
       right: 'Richtig',
       wrong: 'Nicht ganz, versuch es nochmal',

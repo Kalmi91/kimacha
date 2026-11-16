@@ -71,7 +71,7 @@ const es: typeof en = {
     },
     retype: {
       button: 'Escríbela otra vez',
-      placeholder: 'Escríbela otra vez, solo por curiosidad',
+      placeholder: 'Escribe la palabra',
       check: 'Comprobar',
       right: 'Correcto',
       wrong: 'Casi, inténtalo otra vez',
