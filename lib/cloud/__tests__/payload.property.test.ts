@@ -163,8 +163,10 @@ describe('toAdminStats properties', () => {
 // A state exactly as serializeState writes it (every field, Maps as [key, value][] with unique keys).
 const entries = <T>(value: fc.Arbitrary<T>) => fc.uniqueArray(fc.tuple(fc.string({ maxLength: 10 }), value), { selector: (e) => e[0], maxLength: 5 });
 const json = fc.jsonValue();
+// card keys carry their pair (E123): `${pair}|${itemId}`
+const cardEntries = fc.uniqueArray(fc.tuple(fc.string({ maxLength: 10 }).map((id) => `en-es|${id}`), json), { selector: (e) => e[0], maxLength: 5 });
 const stateArb = fc.record({
-  v: fc.constant(1),
+  v: fc.constant(2),
   streak: fc.record({ current_count: fc.nat(), last_date: fc.option(dayArb, { nil: null }), longest_count: fc.nat() }),
   onboarding: fc.option(fc.record({ source: fc.string({ maxLength: 4 }), target: fc.string({ maxLength: 4 }) }), { nil: null }),
   userLevels: entries(json),
@@ -174,9 +176,9 @@ const stateArb = fc.record({
   usageMinutes: entries(fc.nat()),
   dailyXp: entries(fc.nat()),
   gameProgress: entries(entries(fc.record({ state: fc.string({ maxLength: 6 }), data: json }))),
-  pcicCards: entries(json),
+  pcicCards: cardEntries,
   mistakeBatches: entries(json),
-  mistakeCards: entries(json),
+  mistakeCards: cardEntries,
 });
 
 describe('MemoryStore state properties', () => {

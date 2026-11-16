@@ -29,26 +29,26 @@ describe('mergeCloudPayloads: usageMinutes and dailyXp', () => {
 
 describe('mergeCloudPayloads: pcicCards', () => {
   it('keeps, per card, the one with the later lastReview, and the cards only one side has', () => {
-    const local = payload({ pcicCards: [['a', card('a', '2026-10-25', 5)], ['b', card('b', '2026-10-20', 2)], ['only-local', card('only-local', null, 0)]] });
-    const remote = payload({ pcicCards: [['a', card('a', '2026-10-24', 4)], ['b', card('b', '2026-10-26', 3)], ['only-remote', card('only-remote', '2026-10-22', 1)]] });
+    const local = payload({ pcicCards: [['en-es|a', card('a', '2026-10-25', 5)], ['en-es|b', card('b', '2026-10-20', 2)], ['en-es|only-local', card('only-local', null, 0)]] });
+    const remote = payload({ pcicCards: [['en-es|a', card('a', '2026-10-24', 4)], ['en-es|b', card('b', '2026-10-26', 3)], ['en-es|only-remote', card('only-remote', '2026-10-22', 1)]] });
     const cards = new Map<string, any>(storeOf(mergeCloudPayloads(local, remote)).pcicCards);
-    expect([...cards.keys()]).toEqual(['a', 'b', 'only-local', 'only-remote']);
-    expect(cards.get('a').reps).toBe(5);
-    expect(cards.get('b').reps).toBe(3);
-    expect(cards.get('only-remote').lastReview).toBe('2026-10-22');
+    expect([...cards.keys()]).toEqual(['en-es|a', 'en-es|b', 'en-es|only-local', 'en-es|only-remote']);
+    expect(cards.get('en-es|a').reps).toBe(5);
+    expect(cards.get('en-es|b').reps).toBe(3);
+    expect(cards.get('en-es|only-remote').lastReview).toBe('2026-10-22');
   });
 
   it('keeps the local card on a tie, when neither was reviewed, and when the remote has a card without a usable lastReview', () => {
-    const local = payload({ pcicCards: [['a', card('a', '2026-10-25', 5)], ['b', card('b', null, 1)], ['c', card('c', '2026-10-25', 6)]] });
-    const remote = payload({ pcicCards: [['a', card('a', '2026-10-25', 9)], ['b', card('b', null, 8)], ['c', { itemId: 'c', reps: 9 }]] });
+    const local = payload({ pcicCards: [['en-es|a', card('a', '2026-10-25', 5)], ['en-es|b', card('b', null, 1)], ['en-es|c', card('c', '2026-10-25', 6)]] });
+    const remote = payload({ pcicCards: [['en-es|a', card('a', '2026-10-25', 9)], ['en-es|b', card('b', null, 8)], ['en-es|c', { itemId: 'c', reps: 9 }]] });
     const cards = new Map<string, any>(storeOf(mergeCloudPayloads(local, remote)).pcicCards);
-    expect([cards.get('a').reps, cards.get('b').reps, cards.get('c').reps]).toEqual([5, 1, 6]);
+    expect([cards.get('en-es|a').reps, cards.get('en-es|b').reps, cards.get('en-es|c').reps]).toEqual([5, 1, 6]);
   });
 
   it('takes the remote card that was reviewed over a local one that never was', () => {
-    const local = payload({ pcicCards: [['a', card('a', null, 0)]] });
-    const remote = payload({ pcicCards: [['a', card('a', '2026-10-24', 4)]] });
-    expect(new Map<string, any>(storeOf(mergeCloudPayloads(local, remote)).pcicCards).get('a').reps).toBe(4);
+    const local = payload({ pcicCards: [['en-es|a', card('a', null, 0)]] });
+    const remote = payload({ pcicCards: [['en-es|a', card('a', '2026-10-24', 4)]] });
+    expect(new Map<string, any>(storeOf(mergeCloudPayloads(local, remote)).pcicCards).get('en-es|a').reps).toBe(4);
   });
 });
 
@@ -109,8 +109,8 @@ describe('mergeCloudPayloads: what it cannot read', () => {
 
 describe('mergeCloudPayloads: repeating it', () => {
   it('does not change a merged state by merging the same remote again, and merging a state with itself changes nothing', () => {
-    const local = payload({ usageMinutes: [['2026-10-20', 5]], streak: { current_count: 1, last_date: '2026-10-20', longest_count: 1 }, pcicCards: [['a', card('a', '2026-10-20')]] });
-    const remote = payload({ usageMinutes: [['2026-10-21', 7]], streak: { current_count: 2, last_date: '2026-10-21', longest_count: 2 }, pcicCards: [['a', card('a', '2026-10-21', 3)]] });
+    const local = payload({ usageMinutes: [['2026-10-20', 5]], streak: { current_count: 1, last_date: '2026-10-20', longest_count: 1 }, pcicCards: [['en-es|a', card('a', '2026-10-20')]] });
+    const remote = payload({ usageMinutes: [['2026-10-21', 7]], streak: { current_count: 2, last_date: '2026-10-21', longest_count: 2 }, pcicCards: [['en-es|a', card('a', '2026-10-21', 3)]] });
     const once = mergeCloudPayloads(local, remote);
     expect(mergeCloudPayloads(once, remote)).toBe(once);
     expect(mergeCloudPayloads(local, local)).toBe(local);

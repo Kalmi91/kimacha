@@ -312,7 +312,7 @@ describe('CloudGate: a guest signs in', () => {
     const merged = JSON.parse(JSON.parse(sent).store);
     expect(merged.level).toBe('account-level');
     expect(merged.streak).toEqual({ longest_count: 9 });
-    expect(merged.pcicCards.map(([id]: [string]) => id).sort()).toEqual(['a', 'b']);
+    expect(merged.pcicCards.map(([id]: [string]) => id).sort()).toEqual(['en-es|a', 'en-es|b']);
     expect(loadSession()).toEqual({ name: 'Kálmán', token: 'tok' });
     expect(reload).toHaveBeenCalledTimes(1);
     expect(mockStartSync).not.toHaveBeenCalled();

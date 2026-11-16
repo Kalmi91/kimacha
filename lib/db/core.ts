@@ -11,6 +11,7 @@ import { readExamResults, writeExamResult } from '../exam/result';
 import type { ExamResult, ExamResults } from '../exam/types';
 import type { BoardIdentity, DB } from '../dbTypes';
 import type { DbStore, SettingColumn } from './store';
+import { pairBackupCards } from './cardPairs';
 
 // on an existing installation the progress currently runs with "b1-..." ids,
 // so a missing column (old DB) falls back to B1, not A1.
@@ -345,18 +346,18 @@ export class DbCore implements DB {
     return writeExamResult(this, level, pct, passed, date);
   }
 
-  // PCIC tab, SM-2, independent of the FSRS `cards`. Not
-  // tied to a pair (the tab only works with es→en items).
+  // PCIC tab, SM-2, independent of the FSRS `cards`. Every card belongs to the active
+  // language pair (E123): en→es and hu→es share the id space but not the progress.
   async getPcicCards(): Promise<Sm2Card[]> {
-    return this.store.readPcicCards();
+    return this.store.readPcicCards(await this.ready());
   }
 
   async getPcicCard(itemId: string): Promise<Sm2Card | null> {
-    return this.store.readPcicCard(itemId);
+    return this.store.readPcicCard(await this.ready(), itemId);
   }
 
   async upsertPcicCard(card: Sm2Card): Promise<void> {
-    await this.store.writePcicCard(card);
+    await this.store.writePcicCard(await this.ready(), card);
   }
 
   // The unfinished Practice-tab round as one JSON string (lib/practice/practiceRound.ts parses it),
@@ -392,10 +393,11 @@ export class DbCore implements DB {
   // see matchesLevel in lib/pcicLevels.ts), it is the name of the level to clear; the
   // real id list is fetched from the loaded corpus.
   async resetPcicCards(levelPrefix?: string): Promise<void> {
-    if (!levelPrefix) return this.store.deletePcicCards();
+    const pair = await this.ready();
+    if (!levelPrefix) return this.store.deletePcicCards(pair);
     const ids = pcicItemsForLevel(levelPrefix.toUpperCase() as PcicLevel).map((i) => i.id);
     if (ids.length === 0) return;
-    await this.store.deletePcicCards(ids);
+    await this.store.deletePcicCards(pair, ids);
   }
 
   // the batch's JSON goes into the `json` column as a whole
@@ -409,11 +411,11 @@ export class DbCore implements DB {
   }
 
   async getMistakeCards(): Promise<Sm2Card[]> {
-    return this.store.readMistakeCards();
+    return this.store.readMistakeCards(await this.ready());
   }
 
   async upsertMistakeCard(card: Sm2Card): Promise<void> {
-    await this.store.writeMistakeCard(card);
+    await this.store.writeMistakeCard(await this.ready(), card);
   }
 
   // Q0: full learning-state backup, every table across all pairs.
@@ -438,7 +440,7 @@ export class DbCore implements DB {
     // The backup carries no leaderboard token (exportAll blanks it): the import keeps this device's own, otherwise
     // the server row would be orphaned and the nickname could not be taken again.
     const boardIdentity = await this.store.readMeta('board_identity');
-    await this.store.importTables(payload.tables);
+    await this.store.importTables(pairBackupCards(payload.tables, this.activePair));
     await this.store.writeMeta('board_identity', boardIdentity ?? null);
     // The imported onboarding decides the active pair from here on, corrected
     // to the single supported pair if the backup carries an older one (same

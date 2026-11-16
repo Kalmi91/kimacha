@@ -12,14 +12,15 @@ function select(sql: string, params: any[]): Row[] {
   const s = sql.replace(/\s+/g, ' ').trim();
   let m = s.match(/^SELECT COUNT\(\*\) AS n FROM (\w+) WHERE (\w+) = \?$/);
   if (m) return [{ n: rowsOf(m[1]).filter(r => r[m![2]] === params[0]).length }];
-  m = s.match(/^SELECT ([\w, *]+) FROM (\w+)(?: WHERE (\w+) = (\?|\d+))?$/);
+  m = s.match(/^SELECT ([\w, *]+) FROM (\w+)(?: WHERE (\w+) = (\?|\d+)(?: AND (\w+) = \?)?)?$/);
   if (!m) return [];
-  const [, cols, table, whereCol, whereVal] = m;
+  const [, cols, table, whereCol, whereVal, andCol] = m;
   let rows = rowsOf(table);
   if (whereCol) {
     const want = whereVal === '?' ? params[0] : Number(whereVal);
     rows = rows.filter(r => r[whereCol] === want);
   }
+  if (andCol) rows = rows.filter(r => r[andCol] === params[1]);
   if (cols.trim() === '*') return rows.map(r => ({ ...r }));
   const names = cols.split(',').map(c => c.trim());
   return rows.map(r => Object.fromEntries(names.map(n => [n, r[n]])));
@@ -33,6 +34,16 @@ const mockFakeDb = {
     let m = s.match(/^DELETE FROM (\w+)$/);
     if (m) {
       tables[m[1]] = [];
+      return {};
+    }
+    m = s.match(/^DELETE FROM (\w+) WHERE pair = \?$/);
+    if (m) {
+      tables[m[1]] = rowsOf(m[1]).filter(r => r.pair !== params[0]);
+      return {};
+    }
+    m = s.match(/^DELETE FROM (\w+) WHERE pair = \? AND (\w+) IN \(/);
+    if (m) {
+      tables[m[1]] = rowsOf(m[1]).filter(r => !(r.pair === params[0] && params.slice(1).includes(r[m![2]])));
       return {};
     }
     m = s.match(/^DELETE FROM (\w+) WHERE (\w+) IN \(/);
@@ -66,6 +77,7 @@ beforeEach(() => {
 });
 
 const pcicRow = (item_id: string, introduced_at: string | null): Row => ({
+  pair: 'en-es',
   item_id,
   state: introduced_at ? 'learning' : 'new',
   step: 0,
@@ -119,7 +131,7 @@ describe('exportAll / importAll (native db)', () => {
   it('exports pcic_cards, mistake_* and usage_minutes, not the dead FSRS tables, and restores them', async () => {
     seedAll();
     const payload = await getDb().exportAll();
-    expect(payload.schemaVersion).toBe(2);
+    expect(payload.schemaVersion).toBe(3);
     expect(payload.tables.pcic_cards).toHaveLength(2);
     expect(payload.tables.mistake_cards).toHaveLength(1);
     expect(payload.tables.mistake_batches).toHaveLength(1);
@@ -251,6 +263,7 @@ describe('resetPcicCards by level (native db)', () => {
     expect(tables.pcic_cards.map(r => r.item_id)).toEqual(['keep-me']);
     const deletes = mockFakeDb.runAsync.mock.calls.filter(c => String(c[0]).includes('IN ('));
     expect(deletes.length).toBe(Math.ceil(ids.length / 500));
-    expect(deletes.every(c => (c[1] ?? []).length <= 500)).toBe(true);
+    // the pair is the first parameter of every chunk, so at most 500 ids + 1
+    expect(deletes.every(c => (c[1] ?? []).length <= 501)).toBe(true);
   });
 });

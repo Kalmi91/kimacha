@@ -34,10 +34,9 @@ describe('pcic_cards (memory db)', () => {
     expect(await db.getPcicCards()).toEqual([]);
   });
 
-  // the pcic_cards table is not tied to a pair (the two
-  // directions are told apart by the w<id>/e<id> id prefix, data/pcic.ts), so
-  // switching direction (setOnboarding) on its own does not delete the progress of either direction.
-  it("a direction change (setOnboarding) does not reset the other direction's cards", async () => {
+  // E123: every card belongs to a language pair, so switching direction (setOnboarding) neither deletes
+  // the progress of either pair nor shows it in the other one.
+  it("a direction change (setOnboarding) keeps each pair's cards apart and does not reset them", async () => {
     await db.resetPcicCards();
     await db.setOnboarding('en', 'es');
     await db.upsertPcicCard({ ...sm2NewCard('w1'), state: 'review', interval: 5, due: '2026-09-20', introducedAt: '2026-09-18' });
@@ -48,7 +47,10 @@ describe('pcic_cards (memory db)', () => {
     await db.setOnboarding('en', 'es');
     const cards = await db.getPcicCards();
     expect(cards.find(c => c.itemId === 'w1')?.interval).toBe(5);
-    expect(cards.find(c => c.itemId === 'e1')?.state).toBe('learning');
+    expect(cards.find(c => c.itemId === 'e1')).toBeUndefined();
+
+    await db.setOnboarding('es', 'en');
+    expect((await db.getPcicCards()).find(c => c.itemId === 'e1')?.state).toBe('learning');
   });
 
   // pcic_level moved into the per-pair row of learn_settings (it used to be a
