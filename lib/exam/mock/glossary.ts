@@ -60,9 +60,10 @@ const GAP_MARK = /\{\{\d+\}\}/g;
 export function mockTaskTexts(task: MockTask): string[] {
   switch (task.kind) {
     case 'read_mc':
-      return task.passages.map((p) => p.text);
+      // The authored A1 texts have a Spanish question and Spanish answers; the generated ones have source-language answers (not glossed).
+      return task.passages.flatMap((p) => (p.question ? [p.text, p.question, ...p.options] : [p.text]));
     case 'match':
-      return task.prompts.map((p) => p.text);
+      return task.optionsInTarget ? [...task.prompts.map((p) => p.text), ...task.options.map((o) => o.text)] : task.prompts.map((p) => p.text);
     case 'true_false':
       return [task.text];
     case 'gap_mc':

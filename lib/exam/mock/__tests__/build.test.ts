@@ -126,12 +126,13 @@ describe('buildMockExam: es A1 (an English speaker learns Spanish)', () => {
     expect(paper(e, 'writing').tasks.map((t) => t.instruction.slice(0, 9))).toEqual(['TAREA 1. ', 'TAREA 2. ']);
   });
 
-  it('every read sentence is an example sentence of an item of the level (no hand-written text)', () => {
+  it('every generated read sentence is an example sentence of an item of the level (the authored A1 reading is in a1Reading.test.ts)', () => {
     const sentences = new Set(items.map((i) => i.exampleEs?.trim()));
     for (const task of paper(e, 'reading').tasks) {
-      if (task.kind === 'match') for (const p of task.prompts) expect(sentences.has(p.text)).toBe(true);
+      if (task.kind === 'match' && !task.optionsInTarget) for (const p of task.prompts) expect(sentences.has(p.text)).toBe(true);
       if (task.kind === 'read_mc') {
         for (const p of task.passages) {
+          if (p.question) continue;
           const whole = [...sentences].filter((s) => s && p.text.includes(s));
           expect(whole.length).toBeGreaterThanOrEqual(2);
         }
@@ -144,7 +145,8 @@ describe('buildMockExam: es A1 (an English speaker learns Spanish)', () => {
       if (task.kind !== 'match' && task.kind !== 'listen_match') continue;
       expect(task.options.length).toBe(task.prompts.length + 1);
       const sources = new Set(items.map((i) => i.exampleEn?.trim()));
-      for (const p of task.prompts) expect(sources.has(task.options.find((o) => o.id === task.answer[p.id])!.text)).toBe(true);
+      // the authored A1 signs have Spanish meanings: a1Reading.test.ts
+      if (!(task.kind === 'match' && task.optionsInTarget)) for (const p of task.prompts) expect(sources.has(task.options.find((o) => o.id === task.answer[p.id])!.text)).toBe(true);
       expect(new Set(Object.values(task.answer)).size).toBe(task.prompts.length);
       expect(new Set(task.options.map((o) => o.text)).size).toBe(task.options.length);
       if (task.kind === 'listen_match') expect(task.audio).toHaveLength(task.prompts.length);

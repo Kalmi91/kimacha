@@ -49,12 +49,15 @@ export interface MockMatchTask extends MockTaskBase, MockPlays {
   /** The source-language meanings (one more than the number of prompts). */
   options: { id: string; text: string }[];
   answer: Record<string, string>;
+  /** The options are target-language texts too (the authored A1 reading match), so the glossary covers them. */
+  optionsInTarget?: boolean;
 }
 
 export interface MockReadMcTask extends MockTaskBase {
   kind: 'read_mc';
-  /** A short target-language text + a question (the UI supplies the question text), the answers are in the source language. */
-  passages: ({ text: string } & MockChoice)[];
+  /** A short target-language text + a question (the UI supplies the question text), the answers are in the source language.
+   * With `question` (the authored A1 texts) the question and the answers are target-language: real comprehension, not a translation. */
+  passages: ({ text: string; question?: string } & MockChoice)[];
 }
 
 export interface MockTrueFalseTask extends MockTaskBase {

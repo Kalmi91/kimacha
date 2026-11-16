@@ -154,6 +154,18 @@ export default function MockTaskCard({ task, answer, onAnswer, target, canSpeak,
 
   const box = (children: ReactNode) => <View style={[styles.box, { backgroundColor: colors.card, borderColor: colors.border }]}>{children}</View>;
 
+  // The reading text: a tinted left bar, the page background and a "Text N" label, so it cannot be mistaken for an answer option
+  // (the options are rounded card-coloured rows with a letter).
+  const textBox = (label: string, children: ReactNode) => (
+    <View
+      testID="mock-text-box"
+      style={[styles.box, styles.textBox, { backgroundColor: colors.background, borderColor: colors.border, borderLeftColor: colors.tint }]}
+    >
+      <Text style={[styles.textLabel, { color: colors.tint }]}>{label}</Text>
+      {children}
+    </View>
+  );
+
   return (
     <View style={styles.wrap}>
       <Text testID="mock-instruction" style={[styles.instruction, { color: colors.tint }]}>
@@ -199,9 +211,9 @@ export default function MockTaskCard({ task, answer, onAnswer, target, canSpeak,
       {task.kind === 'read_mc' &&
         task.passages.map((p, i) => (
           <View key={`p-${i}`} style={styles.item}>
-            {box(<Text style={[styles.body, { color: colors.text }]}>{p.text}</Text>)}
+            {textBox(s.mockClipText(i + 1), <Text style={[styles.body, { color: colors.text }]}>{p.text}</Text>)}
             <Text style={[styles.question, { color: colors.text }]}>
-              {i + 1}. {s.whatSays}
+              {i + 1}. {p.question ?? s.whatSays}
             </Text>
             {optionRow(p.options, answer[String(i)], (idx) => onAnswer(String(i), idx), `r${i}`)}
           </View>
@@ -219,7 +231,7 @@ export default function MockTaskCard({ task, answer, onAnswer, target, canSpeak,
 
       {task.kind === 'true_false' && (
         <>
-          {box(<Text style={[styles.body, { color: colors.text }]}>{task.text}</Text>)}
+          {textBox(s.mockClipText(1), <Text style={[styles.body, { color: colors.text }]}>{task.text}</Text>)}
           {task.statements.map((st, i) => {
             const given = answer[String(i)];
             return (
@@ -404,6 +416,8 @@ const styles = StyleSheet.create({
   item: { gap: spacing.sm },
   question: { fontSize: fontSize.md, fontWeight: fontWeight.semibold, lineHeight: lineHeight.md },
   box: { borderWidth: 1, borderRadius: radius.md, padding: spacing.md, gap: spacing.xs },
+  textBox: { borderLeftWidth: 4, borderRadius: radius.xs, marginBottom: spacing.sm },
+  textLabel: { fontSize: fontSize.xs, fontWeight: fontWeight.bold, lineHeight: lineHeight.xs, textTransform: 'uppercase' },
   options: { gap: spacing.sm },
   option: { minHeight: tapTarget, flexDirection: 'row', alignItems: 'center', gap: spacing.md, borderWidth: 1, borderRadius: radius.md, paddingHorizontal: spacing.md, paddingVertical: spacing.sm },
   optionLetter: { fontSize: fontSize.md, fontWeight: fontWeight.bold, width: spacing.lg },
