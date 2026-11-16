@@ -13,7 +13,9 @@ import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
 import { languages } from '@/lib/languages';
 import { setNeuralFastFallback, setNeuralSpeaker, useNeuralState } from '@/lib/neuralModels';
-import { voiceName, voicePair, type NeuralLang, type SpeakerChoice } from '@/lib/neuralVoices';
+import { isPiperOnly, voiceName, voicePair, type NeuralLang, type SpeakerChoice } from '@/lib/neuralVoices';
+import { playVoiceSample, stopVoiceSample, useSamplePlaying } from '@/lib/voiceSample';
+import { SAMPLE_SENTENCES, sampleKey, type SampleGender } from '@/lib/voiceSampleData';
 import { useFastFallback, useSpeakerChoices } from '@/lib/voicePreference';
 import { SentenceVoiceChoices, type RowComponent } from './BetterVoiceRows';
 
@@ -25,6 +27,7 @@ export default function SpeakerPickerRows({ Row, languages: voiceLanguages }: { 
   const state = useNeuralState();
   const choices = useSpeakerChoices();
   const fastFallback = useFastFallback();
+  const samplePlaying = useSamplePlaying();
   if (!state.supported) return null;
 
   const langName = (code: NeuralLang) => languages.find(l => l.code === code)?.name ?? code;
@@ -33,10 +36,12 @@ export default function SpeakerPickerRows({ Row, languages: voiceLanguages }: { 
     <>
       {voiceLanguages.map(lang => {
         const [female, male] = voicePair(lang, state.engines[lang]);
-        const options: { choice: SpeakerChoice; label: string; hint?: string }[] = [
+        // the sample of the engine the card shows (Hungarian and German: always Piper)
+        const engine = isPiperOnly(lang) ? 'piper' : state.engines[lang];
+        const options: { choice: SpeakerChoice; label: string; hint?: string; sample?: { gender: SampleGender; name: string } }[] = [
           { choice: 'auto', label: s.auto },
-          { choice: 'f', label: s.person(voiceName(female), true), hint: s.hint },
-          { choice: 'm', label: s.person(voiceName(male), false), hint: s.hint },
+          { choice: 'f', label: s.person(voiceName(female), true), hint: s.hint, sample: { gender: 'f', name: voiceName(female) } },
+          { choice: 'm', label: s.person(voiceName(male), false), hint: s.hint, sample: { gender: 'm', name: voiceName(male) } },
         ];
         return (
           <View key={lang} testID={`settings-speaker-${lang}`}>
@@ -44,7 +49,11 @@ export default function SpeakerPickerRows({ Row, languages: voiceLanguages }: { 
             <Row>
               <View style={styles.card}>
                 <Text style={[styles.label, { color: colors.text }]}>{s.title}</Text>
-                {options.map(({ choice, label, hint }) => {
+                <View style={styles.sampleBox}>
+                  <Text style={[styles.hint, { color: colors.tabIconDefault }]}>{s.sample}</Text>
+                  <Text testID={`voice-sample-text-${lang}`} style={[styles.sampleText, { color: colors.text }]}>{SAMPLE_SENTENCES[lang]}</Text>
+                </View>
+                {options.map(({ choice, label, hint, sample }) => {
                   const checked = choices[lang] === choice;
                   return (
                     <Pressable
@@ -59,6 +68,19 @@ export default function SpeakerPickerRows({ Row, languages: voiceLanguages }: { 
                         <Text style={[styles.label, { color: colors.text }]}>{label}</Text>
                         {hint ? <Text style={[styles.hint, { color: colors.tabIconDefault }]}>{hint}</Text> : null}
                       </View>
+                      {sample ? (
+                        <Pressable
+                          testID={`voice-sample-${lang}-${sample.gender}`}
+                          accessibilityRole="button"
+                          accessibilityLabel={s.playSample(sample.name)}
+                          accessibilityState={{ selected: samplePlaying === sampleKey(lang, engine, sample.gender) }}
+                          hitSlop={8}
+                          style={[styles.play, { borderColor: g.a }]}
+                          onPress={() => (samplePlaying === sampleKey(lang, engine, sample.gender) ? stopVoiceSample() : playVoiceSample(lang, engine, sample.gender))}
+                        >
+                          <Text style={[styles.playText, { color: g.ink }]}>{samplePlaying === sampleKey(lang, engine, sample.gender) ? '■' : '▶'}</Text>
+                        </Pressable>
+                      ) : null}
                       {checked ? <Text style={[styles.check, { color: g.ink }]}>✓</Text> : null}
                     </Pressable>
                   );
@@ -89,4 +111,8 @@ const styles = StyleSheet.create({
   label: { fontSize: 16, fontWeight: '600' },
   hint: { fontSize: 12, fontWeight: '500', marginTop: 2 },
   check: { fontSize: 20, fontWeight: '700' },
+  sampleBox: { marginTop: 4, marginBottom: 4 },
+  sampleText: { fontSize: 15, fontWeight: '500', marginTop: 2 },
+  play: { width: 36, height: 36, borderWidth: 1.5, borderRadius: 18, alignItems: 'center', justifyContent: 'center', marginRight: 8 },
+  playText: { fontSize: 14, fontWeight: '700' },
 });
