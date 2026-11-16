@@ -15,6 +15,7 @@ import { sm2PreviewDays, type Sm2Card, type Sm2Grade } from '@/lib/sm2';
 import ResultBadge from '@/components/ResultBadge';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { BrutalBox, actionTextColor, useButtonVariant } from '@/components/grammar/Brutal';
+import SpeakButton from '@/components/SpeakButton';
 import { SkinSpeakLabel } from '@/components/skins/Slots';
 import { legibleOn, textContrastMin } from '@/constants/Skins';
 import { useDiffStyles } from '@/lib/useDiffStyles';
@@ -131,10 +132,10 @@ export default function PcicRevealedAnswer({
             {grade.best}
             <SpainFormLabel forms={target === 'es' ? spainFormsInAnswer(grade.best) : []} label={s.pcic.spainLabel} color={colors.text} testID="pcic-answer-spain" />
           </Text>
-          <Pressable testID="pcic-correct-speak" accessibilityRole="button" accessibilityLabel={t().a11y.speak} onPress={() => speak(grade.best, speechLang(target))} style={[styles.speakBtn, styles.answerSpeak]}>
-            <Text style={styles.speakIcon}>🔊</Text>
+          <View style={[{ alignItems: 'center' }, styles.answerSpeak]}>
+            <SpeakButton testID="pcic-correct-speak" onPress={() => speak(grade.best, speechLang(target))} style={styles.speakBtn} iconStyle={styles.speakIcon} />
             <SkinSpeakLabel />
-          </Pressable>
+          </View>
         </View>
         {showAllAccepted && alsoAlternatives.map((alt, i) => (
           <View key={alt} style={styles.answerRow}>
@@ -142,10 +143,10 @@ export default function PcicRevealedAnswer({
               {alt}
               <SpainFormLabel forms={target === 'es' ? spainFormsInAnswer(alt) : []} label={s.pcic.spainLabel} color={colors.text} testID={`pcic-alternative-spain-${i}`} />
             </Text>
-            <Pressable testID={`pcic-correct-speak-${i + 2}`} accessibilityRole="button" accessibilityLabel={t().a11y.speak} onPress={() => speak(alt, speechLang(target))} style={[styles.speakBtn, styles.answerSpeak]}>
-              <Text style={styles.speakIcon}>🔊</Text>
+            <View style={[{ alignItems: 'center' }, styles.answerSpeak]}>
+              <SpeakButton testID={`pcic-correct-speak-${i + 2}`} onPress={() => speak(alt, speechLang(target))} style={styles.speakBtn} iconStyle={styles.speakIcon} />
               <SkinSpeakLabel />
-            </Pressable>
+            </View>
           </View>
         ))}
         {!showAllAccepted && alsoAlternatives.length > 0 && (
@@ -172,10 +173,10 @@ export default function PcicRevealedAnswer({
           <>
             <View style={[styles.frontRow, styles.exampleRow]}>
               <Text testID="pcic-example" style={[styles.exampleEs, { color: colors.text }]}>{example}</Text>
-              <Pressable testID="pcic-example-speak" accessibilityRole="button" accessibilityLabel={t().a11y.speak} onPress={() => speak(example, speechLang(target), { gender: speakerGenderFor(grade.best, speechLang(target)) })} style={styles.speakBtn}>
-                <Text style={styles.speakIcon}>🔊</Text>
+              <View style={{ alignItems: 'center' }}>
+                <SpeakButton testID="pcic-example-speak" onPress={() => speak(example, speechLang(target), { gender: speakerGenderFor(grade.best, speechLang(target)) })} style={styles.speakBtn} iconStyle={styles.speakIcon} />
                 <SkinSpeakLabel />
-              </Pressable>
+              </View>
             </View>
             {target === 'es' && <SpainFormLabel forms={sentenceForms} label={s.pcic.spainLabel} color={colors.text} testID="pcic-example-spain" />}
             <Text testID="pcic-example-gloss" style={[styles.exampleEn, { color: colors.tabIconDefault }]}>{exampleGloss}</Text>

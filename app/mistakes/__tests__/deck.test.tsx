@@ -15,7 +15,7 @@ jest.mock('react-native-safe-area-context', () => ({
 }));
 
 import { fireEvent, render } from '@testing-library/react-native';
-import { TextInput } from 'react-native';
+import { Animated, TextInput } from 'react-native';
 
 import { getDb } from '@/lib/database';
 import { validateMistakesPayload } from '@/lib/mistakes/format';
@@ -90,5 +90,19 @@ describe('Deck (app/mistakes/deck.tsx)', () => {
     await flush();
 
     expect((await getDb().getMistakeCards()).find((c) => c.itemId === id)).toEqual(sm2Review(sm2NewCard(id), 'good', localDateString()));
+  });
+
+  it('FB656: the sound button next to the checked answer flashes when tapped', async () => {
+    await seedBatch();
+    const { getByText, getByTestId, UNSAFE_getByType } = render(<MistakesDeckScreen />);
+    await flush();
+    fireEvent.changeText(UNSAFE_getByType(TextInput), 'algo mal');
+    fireEvent.press(getByText('✓ Check'));
+    await flush();
+    const timing = jest.spyOn(Animated, 'timing');
+    expect(getByTestId('mistake-answer-speak-flash')).toBeTruthy();
+    fireEvent.press(getByTestId('mistake-answer-speak'));
+    expect(timing).toHaveBeenCalledTimes(1);
+    timing.mockRestore();
   });
 });

@@ -3,6 +3,7 @@ import { Modal, Pressable, StyleSheet, View, type StyleProp, type TextStyle } fr
 import { Text } from '@/components/KText';
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
+import SpeakButton from '@/components/SpeakButton';
 import { speak } from '@/lib/speech';
 import { t } from '@/lib/i18n';
 import { speechLang } from '@/lib/languages';
@@ -104,14 +105,13 @@ export default function GlossText({
             <Text style={[styles.learned, { color: colors.text }]}>{shown?.learned}</Text>
             <Text style={[styles.native, { color: colors.tabIconDefault }]}>{shown?.native}</Text>
             <View style={styles.row}>
-              <Pressable
-                accessibilityRole="button"
+              <SpeakButton
+                testID="gloss-speak"
                 accessibilityLabel={t().a11y.speak}
                 style={[styles.iconBtn, { borderColor: colors.tabIconDefault }]}
+                iconStyle={styles.iconBtnText}
                 onPress={() => shown && speak(shown.learned, speechLang(learnedLang))}
-              >
-                <Text style={styles.iconBtnText}>🔊</Text>
-              </Pressable>
+              />
             </View>
           </Pressable>
         </Pressable>
