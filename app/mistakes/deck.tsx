@@ -13,6 +13,7 @@ import { getDb } from '@/lib/database';
 import { useLoadOnMount } from '@/lib/useLoadOnMount';
 import { localDateString } from '@/lib/usageStats';
 import { charDiff } from '@/lib/charDiff';
+import SpeakButton from '@/components/SpeakButton';
 import { speak } from '@/lib/speech';
 import { getPcicTarget } from '@/data/pcic';
 import { pairOf } from '@/lib/languagePair';
@@ -200,9 +201,7 @@ export default function MistakesDeckScreen() {
               </Text>
               <View style={styles.frontRow}>
                 <Text variant="word" style={[styles.correctAnswer, { color: colors.tint }]}>{currentCard.answer}</Text>
-                <Pressable accessibilityRole="button" accessibilityLabel={s.a11y.speak} onPress={() => speak(currentCard.answer, speechLang('es'))} style={styles.speakBtn}>
-                  <Text style={styles.speakIcon}>🔊</Text>
-                </Pressable>
+                <SpeakButton testID="mistake-answer-speak" accessibilityLabel={s.a11y.speak} onPress={() => speak(currentCard.answer, speechLang('es'))} style={styles.speakBtn} iconStyle={styles.speakIcon} />
               </View>
 
               {currentCard.wrong && (

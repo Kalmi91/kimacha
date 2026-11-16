@@ -344,7 +344,8 @@ export default function PcicCardView({
   // Part-of-speech chip under the word, from the Spanish form (lib/pcicPos.ts).
   // posOf runs only for es as the target language (the
   // rule/corpus is built on Spanish word forms, it makes no sense for English as the target).
-  const pos = target === 'es' ? posOf(currentItem) : null;
+  // English decks carry the part of speech on the card itself (FB660); a sentence never gets a chip.
+  const pos = target === 'es' ? posOf(currentItem) : target === 'en' && currentItem.kind !== 'sentence' && currentItem.pos ? { pos: currentItem.pos } : null;
   // German decks carry the part of speech on the card itself: only a noun (or an unknown) gets the der / die / das row.
   const rowPos = target === 'de' ? (currentItem.pos ? { pos: currentItem.pos } : null) : pos;
   // FB622/FB623: an (i) whose note has the answer waits for Check; FB621/FB634: a hint-less card shows its prompt-language sentence.
@@ -443,7 +444,7 @@ export default function PcicCardView({
               prompt that repeats three times. */}
           <View style={styles.sectionRow}>
             {pos && (
-              <View style={[styles.posChip, { backgroundColor: colors.background }, themedInkEdgeStyle(g)]}>
+              <View testID="learn-pos" style={[styles.posChip, { backgroundColor: colors.background }, themedInkEdgeStyle(g)]}>
                 <Text style={[styles.posChipText, { color: colors.tabIconDefault }]}>
                   {pos.gender ? `${s.pos[pos.pos]} · ${pos.gender}` : s.pos[pos.pos]}
                 </Text>
