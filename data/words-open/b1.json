@@ -2210,11 +2210,22 @@
     "level": "B1",
     "pos": "verb",
     "lemma": "lastimar",
-    "es": "lastimar / herir",
-    "en": "to injure, to wound",
-    "sentence_es": "Cuidado con el fuego; te puedes herir.",
+    "es": "lastimar",
+    "en": "to injure",
+    "sentence_es": "Cuidado con el fuego; te puedes lastimar.",
     "sentence_en": "Be careful with the fire; you can injure yourself.",
     "sentence_lemmas": ["cuidado", "con", "el", "fuego", "te", "poder", "lastimar"]
+  },
+  {
+    "order": 4684,
+    "level": "B1",
+    "pos": "verb",
+    "lemma": "herir",
+    "es": "herir",
+    "en": "to wound",
+    "sentence_es": "Un vidrio roto puede herir a un niño.",
+    "sentence_en": "Broken glass can wound a child.",
+    "sentence_lemmas": ["un", "vidrio", "roto", "poder", "herir", "a", "un", "niño"]
   },
   {
     "order": 1219,
