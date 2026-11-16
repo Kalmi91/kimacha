@@ -41,6 +41,8 @@ import { EXAM_LEVELS } from '@/lib/exam/types';
 import { examStatusFor, levelHasLesson, type ExamLevelStatus } from '@/lib/exam/unlock';
 import { DEFAULT_WEEKLY_GOAL_MINUTES } from '@/lib/usageStats';
 import ScreenFeedback from '@/lib/screenFeedback';
+import { loadBigTestCard } from '@/lib/grammar/bigTest';
+import BigTestCard from '@/components/grammar/BigTestCard';
 import { BrutalBox, SegmentBar, Sticker, segmentsFilled } from '@/components/grammar/Brutal';
 import ExamStrip from '@/components/grammar/ExamStrip';
 import LevelStanding from '@/components/grammar/LevelStanding';
@@ -86,6 +88,8 @@ export default function GrammarSyllabusScreen() {
   // the random grammar round (lib/grammar/randomRound.ts): per-topic test evidence + the open round, if any.
   const [evidence, setEvidence] = useState<Map<string, TopicEvidence>>(new Map());
   const [randomRun, setRandomRun] = useState<RoundRun | null>(null);
+  // the Big test card: a run in progress and the last stored result level, reloaded on every focus.
+  const [bigTest, setBigTest] = useState<{ running: boolean; level: string | null }>({ running: false, level: null });
   // streak sticker + weekly goal box (from the existing getStreak / weekly goal / usage values).
   const [streak, setStreak] = useState(0);
   const [weeklyGoal, setWeeklyGoal] = useState(DEFAULT_WEEKLY_GOAL_MINUTES);
@@ -121,6 +125,7 @@ export default function GrammarSyllabusScreen() {
     const randomRows = await db.getGameProgress(GRAMMAR_RANDOM_KEY);
     setEvidence(evidenceFromRows(randomRows));
     setRandomRun(runFromRows(randomRows));
+    setBigTest(await loadBigTestCard(db, `${sourceFor(target, source)}→${target}`, target));
     setStreak((await db.getStreak())?.current_count ?? 0);
     setWeeklyGoal(await db.getWeeklyGoalMinutes());
     setWeekMinutes((await db.getUsageStats()).thisWeek);
@@ -207,6 +212,8 @@ export default function GrammarSyllabusScreen() {
           <Text style={[styles.brutalSmall, { color: g.mu }]}>
             {s.grammar.coverage(doneCount, coverage.written, coverage.planned)}
           </Text>
+
+          <BigTestCard learnedLang={learnedLang} {...bigTest} />
 
           <BrutalBox
             testID="grammar-random-start"
@@ -357,6 +364,8 @@ export default function GrammarSyllabusScreen() {
       </Text>
 
       <ScrollView contentContainerStyle={styles.body}>
+        <BigTestCard learnedLang={learnedLang} {...bigTest} />
+
         <Pressable
           testID="grammar-random-start"
           style={[styles.randomCard, { backgroundColor: colors.card, borderColor: colors.tint }]}
