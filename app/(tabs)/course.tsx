@@ -89,7 +89,7 @@ export default function GrammarSyllabusScreen() {
   const [evidence, setEvidence] = useState<Map<string, TopicEvidence>>(new Map());
   const [randomRun, setRandomRun] = useState<RoundRun | null>(null);
   // the Big test card: a run in progress and the last stored result level, reloaded on every focus.
-  const [bigTest, setBigTest] = useState<{ running: boolean; level: string | null }>({ running: false, level: null });
+  const [bigTest, setBigTest] = useState<{ running: boolean; level: string | null; ready: boolean }>({ running: false, level: null, ready: false });
   // streak sticker + weekly goal box (from the existing getStreak / weekly goal / usage values).
   const [streak, setStreak] = useState(0);
   const [weeklyGoal, setWeeklyGoal] = useState(DEFAULT_WEEKLY_GOAL_MINUTES);
@@ -125,7 +125,7 @@ export default function GrammarSyllabusScreen() {
     const randomRows = await db.getGameProgress(GRAMMAR_RANDOM_KEY);
     setEvidence(evidenceFromRows(randomRows));
     setRandomRun(runFromRows(randomRows));
-    setBigTest(await loadBigTestCard(db, `${sourceFor(target, source)}→${target}`, target));
+    setBigTest({ ...(await loadBigTestCard(db, `${sourceFor(target, source)}→${target}`, target)), ready: true });
     setStreak((await db.getStreak())?.current_count ?? 0);
     setWeeklyGoal(await db.getWeeklyGoalMinutes());
     setWeekMinutes((await db.getUsageStats()).thisWeek);

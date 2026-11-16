@@ -23,6 +23,7 @@ import { getDb } from '@/lib/database.web';
 import { bigTestItems, bigTestResultKey, bigTestRunKey, answerBigTest, newBigTestRun } from '@/lib/grammar/bigTest';
 import { saveResumeValue } from '@/lib/resumeStore';
 import GrammarSyllabusScreen from '@/app/(tabs)/course';
+import BigTestCard from '@/components/grammar/BigTestCard';
 import { ThemeProvider } from '@/lib/ThemeContext';
 import { makeFlush } from '@/test-utils/flush';
 
@@ -90,6 +91,18 @@ describe.each([
     expect(screen.queryByTestId('grammar-no-course')).toBeNull();
     expect(screen.queryByTestId('big-test-card')).toBeNull();
     expect(screen.queryByTestId('big-test-start')).toBeNull();
+  });
+
+  it('before the saved state is loaded the button opens the screen without ?new=1, so a run in progress is never dropped', async () => {
+    render(
+      <ThemeProvider>
+        <BigTestCard learnedLang="es" running={false} level={null} ready={false} />
+      </ThemeProvider>
+    );
+    await flush();
+    expect(screen.getByTestId('big-test-start')).toHaveTextContent('Start');
+    fireEvent.press(screen.getByTestId('big-test-start'));
+    expect(mockPush).toHaveBeenLastCalledWith('/grammar/big-test');
   });
 
   it('a stored result: "Start again" to a new run and the tappable last-result line to the stored result', async () => {

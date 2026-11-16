@@ -12,7 +12,7 @@ import { hasBigTest } from '@/lib/grammar/bigTest';
 
 // The Big test card at the top of the Grammar tab (both skins): the start / continue / start again button and, once a
 // result is stored, the "Last result" line that opens it. Nothing for a language without test data.
-export default function BigTestCard({ learnedLang, running, level }: { learnedLang: string; running: boolean; level: string | null }) {
+export default function BigTestCard({ learnedLang, running, level, ready }: { learnedLang: string; running: boolean; level: string | null; ready: boolean }) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const g = useGrammarColors();
@@ -40,7 +40,9 @@ export default function BigTestCard({ learnedLang, running, level }: { learnedLa
         accessibilityRole="button"
         accessibilityLabel={label}
         style={[styles.button, g.brutal && styles.brutalButton, { backgroundColor: colors.tint }]}
-        onPress={() => router.push((running ? '/grammar/big-test' : '/grammar/big-test?new=1') as never)}
+        // until the saved state is loaded the tap must not drop a run in progress: without ?new=1 the screen resumes the run,
+        // shows the stored result or starts a new run by itself
+        onPress={() => router.push((running || !ready ? '/grammar/big-test' : '/grammar/big-test?new=1') as never)}
       >
         <Text style={[styles.title, { color: colors.onTint }]}>{label}</Text>
       </Pressable>
