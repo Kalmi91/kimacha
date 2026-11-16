@@ -78,6 +78,8 @@ const de: typeof en = {
       auto: 'Automatisch (am schnellsten)',
       person: (name: string, female: boolean) => `${name}, ${female ? 'weiblich' : 'männlich'}`,
       hint: 'Aufnahmen der Wörter der anderen Person starten etwas langsamer.',
+      sample: 'Beispielsatz',
+      playSample: (name: string) => `Probe abspielen: ${name}`,
       // Temporary until EJSZAKA E101 (both voices recorded), Kálmán 2026-11-03.
       fastFallback: 'Schnelle Ausweichstimme',
       fastFallbackHint: 'Wenn die gewählte Person keine Aufnahme hat, wird sofort die vorhandene Aufnahme der anderen Person abgespielt statt einer langsameren, erzeugten Stimme.',
