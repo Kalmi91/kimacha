@@ -68,7 +68,7 @@ export const styles = StyleSheet.create({
   retypeBtn: { alignSelf: 'stretch', width: '100%', minHeight: 44, marginTop: 12 },
   retypeRow: { alignSelf: 'stretch', width: '100%', flexDirection: 'row', alignItems: 'stretch', justifyContent: 'center', gap: 10 },
   retypeInput: { flex: 1, width: 'auto', minWidth: 0 },
-  retypeCheck: { flexShrink: 0, width: 'auto', minHeight: 54, marginTop: 0, paddingHorizontal: 20 },
+  retypeCheck: { flexShrink: 0, width: 'auto', minHeight: 58, marginTop: 0, paddingHorizontal: 20 },
   brutalProgress: { marginBottom: 16 },
   brutalArticle: { minWidth: 48, paddingVertical: 6, paddingHorizontal: 10, alignItems: 'center' },
   brutalDim: { opacity: 0.6 },
