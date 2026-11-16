@@ -232,7 +232,7 @@ export function usePcicSession() {
       }
     }
     // FB542: reviews left with the new-word budget used up: ask about more new words (lib/pcicSession.ts shouldAskMoreNew).
-    const declinedDay = await loadNewDeclinedDay(db);
+    const declinedDay = await loadNewDeclinedDay(db, lvl);
     setNewDeclinedDay(declinedDay);
     setAskMoreNew(shouldAskMoreNew(resumed, cards, pcicIntroOrder(newOrder), day, { limit: newLimit, bonus, introducedAllLevels, introducedThisLevel: introducedToday }, declinedDay));
     setQueue(resumed, { mixNew: false });
@@ -498,7 +498,7 @@ export function usePcicSession() {
   const handleDeclineMoreNew = () => {
     setAskMoreNew(false);
     setNewDeclinedDay(today);
-    void saveNewDeclinedDay(getDb(), today);
+    void saveNewDeclinedDay(getDb(), today, level);
   };
 
   // It also passes `grade` to requeue, so that only the "Didn't know"

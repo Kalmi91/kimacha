@@ -80,13 +80,13 @@ export async function clearLearnResume(db: DB): Promise<void> {
 // not come back that day (not after a grade, a tab switch or an app restart), a new calendar day asks again.
 const NEW_DECLINED_KEY = 'learn-new-declined';
 
-/** The day of the last "No" answer, '' when there is none. */
-export async function loadNewDeclinedDay(db: DB): Promise<string> {
+/** FB652: the "No" belongs to the level it was given on: the day of the last "No" on `level`, '' when there is none. */
+export async function loadNewDeclinedDay(db: DB, level: string): Promise<string> {
   const raw = await loadResumeValue(db, NEW_DECLINED_KEY);
-  const day = typeof raw === 'object' && raw !== null ? (raw as { day?: unknown }).day : undefined;
-  return typeof day === 'string' ? day : '';
+  const r = typeof raw === 'object' && raw !== null ? (raw as { day?: unknown; level?: unknown }) : {};
+  return typeof r.day === 'string' && r.level === level ? r.day : '';
 }
 
-export async function saveNewDeclinedDay(db: DB, day: string): Promise<void> {
-  await saveResumeValue(db, NEW_DECLINED_KEY, { day });
+export async function saveNewDeclinedDay(db: DB, day: string, level: string): Promise<void> {
+  await saveResumeValue(db, NEW_DECLINED_KEY, { day, level });
 }

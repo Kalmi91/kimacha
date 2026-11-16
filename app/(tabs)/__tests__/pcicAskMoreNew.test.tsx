@@ -146,9 +146,17 @@ describe('PCIC tab: asks before more new words when the day\'s batch runs out (F
     expect(again.getByText('new 0')).toBeTruthy();
   });
 
+  it('a "No" given on another level does not silence the question on this level (FB652)', async () => {
+    await seed(10);
+    await saveNewDeclinedDay(getDb(), today, 'B2');
+    const screen = render(<PcicScreen />);
+    await flush();
+    expect(screen.getByTestId('learn-ask-more-new')).toBeTruthy();
+  });
+
   it('a "No" from an earlier day does not count: a new day asks again', async () => {
     await seed(10);
-    await saveNewDeclinedDay(getDb(), yesterday);
+    await saveNewDeclinedDay(getDb(), yesterday, 'B1');
     const screen = render(<PcicScreen />);
     await flush();
     expect(screen.getByTestId('learn-ask-more-new')).toBeTruthy();
