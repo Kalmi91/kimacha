@@ -1,4 +1,5 @@
-import { View, Pressable, TextInput, ScrollView, KeyboardAvoidingView, Platform, ActivityIndicator } from 'react-native';
+import { useRef, useState } from 'react';
+import { View, Pressable, TextInput, ScrollView, KeyboardAvoidingView, Platform, ActivityIndicator, useWindowDimensions } from 'react-native';
 import { Text } from '@/components/KText';
 import { TitleText, themedInkEdgeStyle, themedInputStyle, ProgressBar, ActionButton } from '@/components/grammar/Themed';
 import { dismissKeyboardOnTap, keyboardDismissOnDrag } from '@/lib/keyboardTap';
@@ -28,6 +29,7 @@ import PcicRevealedAnswer, { SpainFormLabel } from '@/components/learn/PcicRevea
 import MistakesEntry from '@/components/learn/MistakesEntry';
 import MoreNewAsk from '@/components/learn/MoreNewAsk';
 import FatigueOffer from '@/components/learn/FatigueOffer';
+import RetypePractice from '@/components/learn/RetypePractice';
 import { answerInputProps } from '@/lib/inputProps';
 import LevelPickerSheet from '@/components/LevelPickerSheet';
 import { BrutalBox, textOnFill } from '@/components/grammar/Brutal';
@@ -94,6 +96,7 @@ export default function PcicCardView({
   articlePick,
   setArticlePick,
   typedAnswer,
+  strictAccents,
   setTypedAnswer,
   cardSeq,
   inputRef,
@@ -109,6 +112,19 @@ export default function PcicCardView({
   // bar step aside while typing, so the prompt and the field fit together.
   const webKeyboardOpen = useWebKeyboardOpen();
   const typingPadding = webKeyboardOpen ? WEB_TYPING_PADDING : null;
+  // FB659 retype: while its field has the keyboard the docked bar steps aside, and the card is scrolled so the field sits
+  // above the keys before they open (otherwise the window pans and the header slides under the status bar).
+  const scrollRef = useRef<ScrollView>(null);
+  const [retypeOpenKey, setRetypeOpenKey] = useState('');
+  const [retypeFocused, setRetypeFocused] = useState(false);
+  const { height: windowH } = useWindowDimensions();
+  const retypeKey = current ? `${current.itemId}-${cardSeq}` : '';
+  const retypeOpen = !!retypeKey && retypeOpenKey === retypeKey;
+  const scrollToRetype = (block: View) => {
+    setRetypeFocused(true);
+    const inner = (scrollRef.current as unknown as { getInnerViewRef?: () => View | null } | null)?.getInnerViewRef?.();
+    if (inner) block.measureLayout(inner as never, (_x, y) => scrollRef.current?.scrollTo({ y: Math.max(0, y - 16), animated: false }), () => {});
+  };
 
   // The header's FIRST chip is the selected level,
   // tapping it opens the level picker sheet; the existing four chips are unchanged.
@@ -393,8 +409,9 @@ export default function PcicCardView({
       )}
 
       <ScrollView
+        ref={scrollRef}
         style={[styles.cardScroll, { marginBottom: dockInsets.marginBottom }]}
-        contentContainerStyle={[styles.cardScrollContent, { paddingBottom: dockInsets.paddingBottom }]}
+        contentContainerStyle={[styles.cardScrollContent, { paddingBottom: retypeOpen ? Math.max(dockInsets.paddingBottom, windowH * 0.6) : dockInsets.paddingBottom }]}
         keyboardShouldPersistTaps="handled"
         keyboardDismissMode={keyboardDismissOnDrag()}
       >
@@ -548,6 +565,10 @@ export default function PcicCardView({
               onGrade={handleGrade}
             />
           )}
+          {grade && !!answerText && (
+            <RetypePractice key={`pcic-retype-${retypeKey}`} onOpen={() => setRetypeOpenKey(retypeKey)} onFocusField={scrollToRetype} onBlurField={() => setRetypeFocused(false)} colors={colors} answerText={answerText} target={target}
+              strictAccents={strictAccents} sentence={currentItem.kind === 'sentence'} />
+          )}
 
           <View style={styles.bottomRow}>
             <Pressable onPress={handleDontLearn} hitSlop={8}>
@@ -560,7 +581,7 @@ export default function PcicCardView({
       {/* After Check, the SAME docked bar (place+size
           unchanged) switches to "Next", its label states the suggested grade;
           the two buttons in the card remain for override. */}
-      <DockedAction
+      {!(retypeFocused && kbHeight > 0) && <DockedAction
         label={grade && nextGrade ? s.pcic.next(s.pcic[nextGrade]) : `✓ ${s.card.check}`}
         onPress={grade && nextGrade ? () => handleGrade(nextGrade) : handleCheck}
         tone={grade ? 'next' : 'check'}
@@ -568,7 +589,7 @@ export default function PcicCardView({
         bottom={dockLift}
         colors={colors}
         onHeight={setDockH}
-      />
+      />}
     </KeyboardAvoidingView>
   );
 }

@@ -189,8 +189,8 @@ export function usePcicSession() {
     // session is built from them.
     const cards = dropOrphanCards(cardsForLevel(rawCards, lvl), (id) => findPcicItem(id) !== undefined);
     await refresh(['strictAccents']);
-    const { tiredButton, missCap, fatigueDetector } = await refresh(['tiredButton', 'missCap', 'fatigueDetector']);
-    const loadedOptions = { tiredButton, missCap, detector: fatigueDetector };
+    const { tiredButton, missCap, fatigueDetector, newWordGate } = await refresh(['tiredButton', 'missCap', 'fatigueDetector', 'newWordGate']);
+    const loadedOptions = { tiredButton, missCap, detector: fatigueDetector, newGate: newWordGate };
     const loadedFatigue = tiredButton || missCap || fatigueDetector ? readFatigue(await loadResumeValue(db, FATIGUE_KEY), day) : emptyFatigue(day);
     fatigueOfferStateRef.current = readFatigueOffer(fatigueDetector ? await loadResumeValue(db, FATIGUE_OFFER_KEY) : null, day);
     deferredFatigueOfferRef.current = null;

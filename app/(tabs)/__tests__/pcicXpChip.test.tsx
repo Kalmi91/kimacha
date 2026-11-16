@@ -112,6 +112,7 @@ describe('Learn tab: XP today chip', () => {
   });
 
   it('"Knew it" on a new word adds 3, "Didn\'t know" adds nothing', async () => {
+    await getDb().setNewWordGate(false); // the next new word must follow the miss here; the gate has its own tests (pcicNewGate)
     const screen = render(<PcicScreen />);
     await flush();
     await gradeCard(screen, "Didn't know");

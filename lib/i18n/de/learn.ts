@@ -70,6 +70,13 @@ const de: typeof en = {
       yes: 'Ja, leichter weiter',
       no: 'Nein, weiter wie bisher',
     },
+    retype: {
+      button: 'Noch einmal tippen',
+      placeholder: 'Tippe das Wort',
+      check: 'Prüfen',
+      right: 'Richtig',
+      wrong: 'Nicht ganz, versuch es nochmal',
+    },
     tired: 'Ich bin müde',
     parkedNote: (n: number) => `${n} ${n === 1 ? 'Karte kommt' : 'Karten kommen'} morgen wieder.`,
     spainLabel: 'Spanien',

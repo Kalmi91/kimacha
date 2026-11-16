@@ -24,6 +24,7 @@ export type LearnerField =
   | 'tiredButton'
   | 'missCap'
   | 'fatigueDetector'
+  | 'newWordGate'
   | 'againDelaySec'
   | 'articlePicker'
   | 'feedbackBtnSide';
@@ -42,6 +43,7 @@ export interface LearnerState {
   tiredButton: boolean;
   missCap: boolean;
   fatigueDetector: boolean;
+  newWordGate: boolean;
   againDelaySec: number;
   articlePicker: boolean;
   feedbackBtnSide: 'left' | 'right';
@@ -57,6 +59,7 @@ export interface LearnerActions {
   setTiredButton: (v: boolean) => Promise<void>;
   setMissCap: (v: boolean) => Promise<void>;
   setFatigueDetector: (v: boolean) => Promise<void>;
+  setNewWordGate: (v: boolean) => Promise<void>;
   setAgainDelaySec: (sec: number) => Promise<void>;
   setArticlePicker: (v: boolean) => Promise<void>;
   setFeedbackBtnSide: (side: 'left' | 'right') => Promise<void>;
@@ -75,6 +78,7 @@ export class LearnerStore {
     tiredButton: false,
     missCap: false,
     fatigueDetector: false,
+    newWordGate: true,
     againDelaySec: DEFAULT_AGAIN_DELAY_SEC,
     articlePicker: true,
     feedbackBtnSide: 'right',
@@ -122,6 +126,7 @@ export class LearnerStore {
     if (want('tiredButton')) patch.tiredButton = await db.getTiredButton();
     if (want('missCap')) patch.missCap = await db.getMissCap();
     if (want('fatigueDetector')) patch.fatigueDetector = await db.getFatigueDetector();
+    if (want('newWordGate')) patch.newWordGate = await db.getNewWordGate();
     if (want('againDelaySec')) patch.againDelaySec = await db.getAgainDelaySec();
     if (want('articlePicker')) patch.articlePicker = await db.getArticlePicker();
     if (want('feedbackBtnSide')) patch.feedbackBtnSide = await db.getFeedbackBtnSide();
@@ -165,6 +170,11 @@ export class LearnerStore {
     await getDb().setFatigueDetector(v);
   };
 
+  setNewWordGate = async (v: boolean) => {
+    this.commit({ newWordGate: v });
+    await getDb().setNewWordGate(v);
+  };
+
   setAgainDelaySec = async (sec: number) => {
     this.commit({ againDelaySec: sec });
     await getDb().setAgainDelaySec(sec);
@@ -189,6 +199,7 @@ export class LearnerStore {
     setTiredButton: this.setTiredButton,
     setMissCap: this.setMissCap,
     setFatigueDetector: this.setFatigueDetector,
+    setNewWordGate: this.setNewWordGate,
     setAgainDelaySec: this.setAgainDelaySec,
     setArticlePicker: this.setArticlePicker,
     setFeedbackBtnSide: this.setFeedbackBtnSide,
