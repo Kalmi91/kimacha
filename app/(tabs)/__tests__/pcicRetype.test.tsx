@@ -9,7 +9,8 @@ jest.mock('@/data/pcic', () => ({
   findPcicItem: (id: string) => mockItems.find(i => i.id === id), levelOfItem: () => 'A1', setPcicTarget: () => {},
 }));
 
-import { fireEvent, render } from '@testing-library/react-native';
+import { DeviceEventEmitter } from 'react-native';
+import { act, fireEvent, render } from '@testing-library/react-native';
 import { getDb } from '@/lib/database';
 import { answerLog } from '@/lib/answerLog';
 import { getXp } from '@/lib/dailyXp';
@@ -73,4 +74,23 @@ it('resets on the next card', async () => {
   fireEvent.press(screen.getByText(/^Next →/)); await flush();
   expect(screen.queryByTestId('learn-retype-input')).toBeNull();
   expect(screen.queryByTestId('learn-retype-result')).toBeNull();
+});
+it('hides the docked bar while the retype field has the keyboard, and shows it again after', async () => {
+  const screen = render(<PcicScreen />); await flush();
+  await reveal(screen, 'nope');
+  fireEvent.press(screen.getByTestId('learn-retype')); await flush();
+  expect(screen.getByTestId('learn-dock')).toBeTruthy();
+  fireEvent(screen.getByTestId('learn-retype-input'), 'focus');
+  act(() => { DeviceEventEmitter.emit('keyboardDidShow', { endCoordinates: { height: 300 } }); }); await flush();
+  expect(screen.queryByTestId('learn-dock')).toBeNull();
+  expect(screen.getByTestId('learn-retype-input')).toBeTruthy();
+  fireEvent(screen.getByTestId('learn-retype-input'), 'blur'); await flush();
+  expect(screen.getByTestId('learn-dock')).toBeTruthy();
+});
+it('puts the field and its Check button in one row', async () => {
+  const screen = render(<PcicScreen />); await flush();
+  await reveal(screen, 'nope');
+  fireEvent.press(screen.getByTestId('learn-retype')); await flush();
+  const row = screen.getByTestId('learn-retype-input').parent!.parent!;
+  expect(row.findAll((n) => n.props?.testID === 'learn-retype-check').length).toBeGreaterThan(0);
 });
