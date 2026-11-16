@@ -80,13 +80,24 @@ export async function clearLearnResume(db: DB): Promise<void> {
 // not come back that day (not after a grade, a tab switch or an app restart), a new calendar day asks again.
 const NEW_DECLINED_KEY = 'learn-new-declined';
 
-/** FB652: the "No" belongs to the level it was given on: the day of the last "No" on `level`, '' when there is none. */
-export async function loadNewDeclinedDay(db: DB, level: string): Promise<string> {
-  const raw = await loadResumeValue(db, NEW_DECLINED_KEY);
-  const r = typeof raw === 'object' && raw !== null ? (raw as { day?: unknown; level?: unknown }) : {};
-  return typeof r.day === 'string' && r.level === level ? r.day : '';
+/** The levels answered "No" on `day`; old shapes: {day, level} = one level, {day} without a level = none (asks once more). */
+function declinedLevels(raw: unknown): { day: string; levels: string[] } | null {
+  if (typeof raw !== 'object' || raw === null) return null;
+  const r = raw as { day?: unknown; level?: unknown; levels?: unknown };
+  if (typeof r.day !== 'string') return null;
+  const levels = Array.isArray(r.levels) ? r.levels.filter((l): l is string => typeof l === 'string') : typeof r.level === 'string' ? [r.level] : [];
+  return { day: r.day, levels };
 }
 
+/** FB652: the "No" belongs to the level it was given on: the day of the last "No" on `level`, '' when there is none. */
+export async function loadNewDeclinedDay(db: DB, level: string): Promise<string> {
+  const d = declinedLevels(await loadResumeValue(db, NEW_DECLINED_KEY));
+  return d !== null && d.levels.includes(level) ? d.day : '';
+}
+
+/** Adds `level` to the day's list (a new day starts a new list), so a "No" on another level is not overwritten. */
 export async function saveNewDeclinedDay(db: DB, day: string, level: string): Promise<void> {
-  await saveResumeValue(db, NEW_DECLINED_KEY, { day, level });
+  const d = declinedLevels(await loadResumeValue(db, NEW_DECLINED_KEY));
+  const levels = d !== null && d.day === day ? [...new Set([...d.levels, level])] : [level];
+  await saveResumeValue(db, NEW_DECLINED_KEY, { day, levels });
 }
