@@ -1146,6 +1146,396 @@
         "en": "I don't want coffee and neither do you.",
         "es": "Yo no quiero café y tú tampoco."
       }
+    },
+    {
+      "id": "neg-tr-01",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "I don't eat meat.",
+        "es": "No como carne."
+      },
+      "answer": "No voy a comer carne.",
+      "wordIds": [
+        "33",
+        "25",
+        "130"
+      ],
+      "why": {
+        "en": "The negative word goes in front of ir and ir a + infinitive stays together: no voy a comer, nunca voy a beber.",
+        "es": "La palabra negativa va delante de ir y ir a + infinitivo queda junto: no voy a comer, nunca voy a beber."
+      }
+    },
+    {
+      "id": "neg-tr-02",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "I never eat at home.",
+        "es": "Nunca como en casa."
+      },
+      "answer": "Nunca voy a comer en casa.",
+      "wordIds": [
+        "33",
+        "25",
+        "19"
+      ],
+      "why": {
+        "en": "The negative word goes in front of ir and ir a + infinitive stays together: no voy a comer, nunca voy a beber.",
+        "es": "La palabra negativa va delante de ir y ir a + infinitivo queda junto: no voy a comer, nunca voy a beber."
+      }
+    },
+    {
+      "id": "neg-tr-03",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "I don't talk to anyone.",
+        "es": "No hablo con nadie."
+      },
+      "answer": "No voy a hablar con nadie.",
+      "wordIds": [
+        "33",
+        "47"
+      ],
+      "why": {
+        "en": "The negative word goes in front of ir and ir a + infinitive stays together: no voy a comer, nunca voy a beber.",
+        "es": "La palabra negativa va delante de ir y ir a + infinitivo queda junto: no voy a comer, nunca voy a beber."
+      }
+    },
+    {
+      "id": "neg-tr-04",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "Nobody works today.",
+        "es": "Nadie trabaja hoy."
+      },
+      "answer": "Nadie va a trabajar hoy.",
+      "wordIds": [
+        "33",
+        "49",
+        "52"
+      ],
+      "why": {
+        "en": "The negative word goes in front of ir and ir a + infinitive stays together: no voy a comer, nunca voy a beber.",
+        "es": "La palabra negativa va delante de ir y ir a + infinitivo queda junto: no voy a comer, nunca voy a beber."
+      }
+    },
+    {
+      "id": "neg-tr-05",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "I don't read any book.",
+        "es": "No leo ningún libro."
+      },
+      "answer": "No voy a leer ningún libro.",
+      "wordIds": [
+        "33",
+        "145",
+        "124"
+      ],
+      "why": {
+        "en": "The negative word goes in front of ir and ir a + infinitive stays together: no voy a comer, nunca voy a beber.",
+        "es": "La palabra negativa va delante de ir y ir a + infinitivo queda junto: no voy a comer, nunca voy a beber."
+      }
+    },
+    {
+      "id": "neg-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Siempre como carne, pero hoy ___ como carne. Siempre hay alguien aquí, pero hoy ___ está aquí.",
+      "answers": [
+        "no",
+        "nadie"
+      ],
+      "tr": {
+        "en": "I always eat meat, but today I do not eat meat. There is always someone here, but today nobody is here.",
+        "es": "Siempre como carne, pero hoy no como carne. Siempre hay alguien aquí, pero hoy nadie está aquí."
+      },
+      "why": {
+        "en": "After no + verb or before the verb, a negative sentence is built with no or with a negative word like nadie in front of the verb.",
+        "es": "Una frase negativa se forma con no delante del verbo o con una palabra negativa como nadie delante del verbo."
+      }
+    },
+    {
+      "id": "neg-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Quiero algo de beber, pero aquí no hay ___. Yo no bebo café y mi hermano ___.",
+      "answers": [
+        "nada",
+        "tampoco"
+      ],
+      "tr": {
+        "en": "I want something to drink, but there is nothing here. I don't drink coffee and my brother doesn't either.",
+        "es": "Quiero algo de beber, pero aquí no hay nada. Yo no bebo café y mi hermano tampoco."
+      },
+      "why": {
+        "en": "Nada is the negative of algo; tampoco is the negative of también.",
+        "es": "Nada es lo negativo de algo; tampoco es lo negativo de también."
+      }
+    },
+    {
+      "id": "neg-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Siempre llego temprano, pero mi hermano ___ llega temprano. No tengo libros: no tengo ___ libro.",
+      "answers": [
+        "nunca",
+        "ningún"
+      ],
+      "accept": [
+        [
+          "no"
+        ],
+        []
+      ],
+      "tr": {
+        "en": "I always arrive early, but my brother never arrives early. I have no books: I do not have any book.",
+        "es": "Siempre llego temprano, pero mi hermano nunca llega temprano. No tengo libros: no tengo ningún libro."
+      },
+      "why": {
+        "en": "Nunca is the negative of siempre; before a masculine singular noun ninguno becomes ningún.",
+        "es": "Nunca es lo negativo de siempre; delante de un sustantivo masculino singular ninguno pasa a ningún."
+      }
+    },
+    {
+      "id": "neg-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "No bebo café ___ té. No tengo ___ en la mesa.",
+      "answers": [
+        "ni",
+        "nada"
+      ],
+      "tr": {
+        "en": "I drink neither coffee nor tea. I have nothing on the table.",
+        "es": "No bebo café ni té. No tengo nada en la mesa."
+      },
+      "why": {
+        "en": "Ni links two negated things (neither ... nor); nada means nothing and needs no in front of the verb.",
+        "es": "Ni une dos cosas negadas (ni ... ni); nada significa ninguna cosa y pide no delante del verbo."
+      }
+    },
+    {
+      "id": "neg-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Mi amiga no habla español. Yo ___ hablo español. No tengo tiempo ___ dinero.",
+      "answers": [
+        "tampoco",
+        "ni"
+      ],
+      "tr": {
+        "en": "My friend doesn't speak Spanish. I don't speak Spanish either. I have neither time nor money.",
+        "es": "Mi amiga no habla español. Yo tampoco hablo español. No tengo tiempo ni dinero."
+      },
+      "why": {
+        "en": "Tampoco adds a second negative (\"not either\"); ni joins two negated things.",
+        "es": "Tampoco añade un segundo negativo (\"tampoco\"); ni une dos cosas negadas."
+      }
+    },
+    {
+      "id": "neg-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "No hablo con alguien aquí.",
+      "wrongIndex": 3,
+      "answer": "nadie",
+      "explain": {
+        "en": "After no + verb a negative word is needed: nadie, not alguien.",
+        "es": "Después de no + verbo hace falta una palabra negativa: nadie, no alguien."
+      },
+      "tr": {
+        "en": "I don't talk to anyone here.",
+        "es": "No hablo con nadie aquí."
+      }
+    },
+    {
+      "id": "neg-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "No quiero algo hoy.",
+      "wrongIndex": 2,
+      "answer": "nada",
+      "explain": {
+        "en": "After no + verb the negative word is needed: nada, not algo.",
+        "es": "Después de no + verbo hace falta la palabra negativa: nada, no algo."
+      },
+      "tr": {
+        "en": "I don't want anything today.",
+        "es": "No quiero nada hoy."
+      }
+    },
+    {
+      "id": "neg-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "No trabajo hoy y mi hermano también.",
+      "wrongIndex": 6,
+      "answer": "tampoco",
+      "explain": {
+        "en": "After a negative sentence the \"me too\" is tampoco, not también.",
+        "es": "Después de una frase negativa el \"yo también\" es tampoco, no también."
+      },
+      "tr": {
+        "en": "I don't work today and my brother doesn't either.",
+        "es": "No trabajo hoy y mi hermano tampoco."
+      }
+    },
+    {
+      "id": "neg-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "Nadie trabajan aquí.",
+      "wrongIndex": 1,
+      "answer": "trabaja",
+      "explain": {
+        "en": "Nadie is singular, so the verb is trabaja, not trabajan.",
+        "es": "Nadie es singular, así que el verbo es trabaja, no trabajan."
+      },
+      "tr": {
+        "en": "Nobody works here.",
+        "es": "Nadie trabaja aquí."
+      }
+    },
+    {
+      "id": "neg-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "No tengo hermanos y hermanas.",
+      "wrongIndex": 3,
+      "answer": "ni",
+      "explain": {
+        "en": "Two negated things are joined with ni: ni hermanos ni hermanas.",
+        "es": "Dos cosas negadas se unen con ni: ni hermanos ni hermanas."
+      },
+      "tr": {
+        "en": "I have neither brothers nor sisters.",
+        "es": "No tengo hermanos ni hermanas."
+      }
+    },
+    {
+      "id": "neg-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "ningún",
+        "ninguna",
+        "nada"
+      ],
+      "es": "No tengo ___ casa.",
+      "word": "ninguna",
+      "answer": "ninguna",
+      "tr": {
+        "en": "I don't have any house.",
+        "es": "No tengo ninguna casa."
+      },
+      "why": {
+        "en": "Casa is feminine singular, so the form is ninguna.",
+        "es": "Casa es femenino singular, así que la forma es ninguna."
+      }
+    },
+    {
+      "id": "neg-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "ningún",
+        "ninguna",
+        "nunca"
+      ],
+      "es": "No quiero ___ café, gracias.",
+      "word": "ningún",
+      "answer": "ningún",
+      "tr": {
+        "en": "I don't want any coffee, thank you.",
+        "es": "No quiero ningún café, gracias."
+      },
+      "why": {
+        "en": "Before a masculine singular noun ninguno becomes ningún.",
+        "es": "Delante de un sustantivo masculino singular ninguno pasa a ningún."
+      }
+    },
+    {
+      "id": "neg-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "nadie",
+        "nada",
+        "nunca"
+      ],
+      "es": "No conozco a ___ en esta ciudad.",
+      "word": "nadie",
+      "answer": "nadie",
+      "tr": {
+        "en": "I don't know anyone in this city.",
+        "es": "No conozco a nadie en esta ciudad."
+      },
+      "why": {
+        "en": "A person is nadie; the personal a stays in front of it.",
+        "es": "Una persona es nadie; la a personal queda delante."
+      }
+    },
+    {
+      "id": "neg-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "nada",
+        "nadie",
+        "nunca"
+      ],
+      "es": "No tengo ___ para comer.",
+      "word": "nada",
+      "answer": "nada",
+      "tr": {
+        "en": "I have nothing to eat.",
+        "es": "No tengo nada para comer."
+      },
+      "why": {
+        "en": "A thing is nada: no tengo nada.",
+        "es": "Una cosa es nada: no tengo nada."
+      }
+    },
+    {
+      "id": "neg-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "venir",
+        "comer",
+        "dormir"
+      ],
+      "es": "Nadie ___ hoy a la oficina.",
+      "word": "venir",
+      "answer": "viene",
+      "tr": {
+        "en": "Nobody comes to the office today.",
+        "es": "Nadie viene hoy a la oficina."
+      },
+      "why": {
+        "en": "Nadie is singular, so venir becomes viene.",
+        "es": "Nadie es singular, así que venir pasa a viene."
+      }
     }
   ]
 }
