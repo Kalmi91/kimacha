@@ -867,7 +867,10 @@
         "Si yo tuviera tiempo, yo viajaría a Oaxaca.",
         "Si yo tuviese tiempo, yo viajaría a Oaxaca.",
         "Si yo tuviera tiempo, viajaría a Oaxaca.",
-        "Si yo tuviese tiempo, viajaría a Oaxaca."
+        "Si yo tuviese tiempo, viajaría a Oaxaca.",
+        "Viajaría a Oaxaca si tuviera tiempo.",
+        "Viajaría a Oaxaca si tuviese tiempo.",
+        "Yo viajaría a Oaxaca si yo tuviera tiempo."
       ],
       "wordIds": [
         "16",
@@ -902,7 +905,13 @@
         "Si tú hubieras estudiado más, tú hubieses aprobado el examen.",
         "Si tú hubieses estudiado más, tú habrías aprobado el examen.",
         "Si tú hubieses estudiado más, tú hubieras aprobado el examen.",
-        "Si tú hubieses estudiado más, tú hubieses aprobado el examen."
+        "Si tú hubieses estudiado más, tú hubieses aprobado el examen.",
+        "Habrías aprobado el examen si hubieras estudiado más.",
+        "Habrías aprobado el examen si hubieses estudiado más.",
+        "Hubieras aprobado el examen si hubieras estudiado más.",
+        "Hubieras aprobado el examen si hubieses estudiado más.",
+        "Hubieses aprobado el examen si hubieras estudiado más.",
+        "Hubieses aprobado el examen si hubieses estudiado más."
       ],
       "wordIds": [
         "212",
@@ -927,7 +936,9 @@
       },
       "answer": "Si lloviera, no saldríamos.",
       "accept": [
-        "Si lloviese, no saldríamos."
+        "Si lloviese, no saldríamos.",
+        "No saldríamos si lloviera.",
+        "No saldríamos si lloviese."
       ],
       "wordIds": [
         "670",
@@ -955,7 +966,13 @@
         "Si hubiéramos tenido más dinero, hubiésemos comprado un carro nuevo.",
         "Si hubiésemos tenido más dinero, habríamos comprado un carro nuevo.",
         "Si hubiésemos tenido más dinero, hubiéramos comprado un carro nuevo.",
-        "Si hubiésemos tenido más dinero, hubiésemos comprado un carro nuevo."
+        "Si hubiésemos tenido más dinero, hubiésemos comprado un carro nuevo.",
+        "Habríamos comprado un carro nuevo si hubiéramos tenido más dinero.",
+        "Habríamos comprado un carro nuevo si hubiésemos tenido más dinero.",
+        "Hubiéramos comprado un carro nuevo si hubiéramos tenido más dinero.",
+        "Hubiéramos comprado un carro nuevo si hubiésemos tenido más dinero.",
+        "Hubiésemos comprado un carro nuevo si hubiéramos tenido más dinero.",
+        "Hubiésemos comprado un carro nuevo si hubiésemos tenido más dinero."
       ],
       "wordIds": [
         "16",
@@ -992,7 +1009,13 @@
         "Si tú me hubieras ayudado, yo hubiese terminado el trabajo.",
         "Si tú me hubieses ayudado, yo habría terminado el trabajo.",
         "Si tú me hubieses ayudado, yo hubiera terminado el trabajo.",
-        "Si tú me hubieses ayudado, yo hubiese terminado el trabajo."
+        "Si tú me hubieses ayudado, yo hubiese terminado el trabajo.",
+        "Habría terminado el trabajo si me hubieras ayudado.",
+        "Habría terminado el trabajo si me hubieses ayudado.",
+        "Hubiera terminado el trabajo si me hubieras ayudado.",
+        "Hubiera terminado el trabajo si me hubieses ayudado.",
+        "Hubiese terminado el trabajo si me hubieras ayudado.",
+        "Hubiese terminado el trabajo si me hubieses ayudado."
       ],
       "wordIds": [
         "148",
@@ -1353,10 +1376,10 @@
       "kind": "order",
       "trial": true,
       "prompt": {
-        "en": "What would you do if you won the lottery?",
-        "es": "¿Qué harías si ganaras la lotería?"
+        "en": "If I were you.",
+        "es": "Si yo fuera tú."
       },
-      "es": "¿Qué harías si ganaras la lotería?"
+      "es": "Si yo fuera tú."
     },
     {
       "id": "ct2-order-02",
@@ -1373,30 +1396,30 @@
       "kind": "order",
       "trial": true,
       "prompt": {
-        "en": "I would not have done it like that.",
-        "es": "Yo no lo habría hecho así."
+        "en": "I would not have done it.",
+        "es": "No lo habría hecho."
       },
-      "es": "Yo no lo habría hecho así."
+      "es": "No lo habría hecho."
     },
     {
       "id": "ct2-order-04",
       "kind": "order",
       "trial": true,
       "prompt": {
-        "en": "What would you have done in my place?",
-        "es": "¿Qué habrías hecho tú en mi lugar?"
+        "en": "If I had known.",
+        "es": "Si lo hubiera sabido."
       },
-      "es": "¿Qué habrías hecho tú en mi lugar?"
+      "es": "Si lo hubiera sabido."
     },
     {
       "id": "ct2-order-05",
       "kind": "order",
       "trial": true,
       "prompt": {
-        "en": "We would not have arrived without your help.",
-        "es": "No habríamos llegado sin tu ayuda."
+        "en": "We would never have arrived.",
+        "es": "Nunca habríamos llegado."
       },
-      "es": "No habríamos llegado sin tu ayuda."
+      "es": "Nunca habríamos llegado."
     }
   ]
 }

@@ -1107,15 +1107,22 @@
       "id": "sp-cloze-01",
       "kind": "opencloze",
       "trial": true,
-      "text": "Cuando ___ (llegar) a casa, siempre ceno. Mañana, cuando ___ (llegar) a casa, te llamo. En cuanto nosotros ___ (tener) tiempo, vamos al cine.",
+      "text": "Cuando yo ___ (llegar) a casa, siempre ceno. Mañana, cuando yo ___ (llegar) a casa, te llamo. En cuanto nosotros ___ (tener) tiempo, vamos al cine.",
       "answers": [
         "llego",
         "llegue",
         "tengamos"
       ],
+      "accept": [
+        [],
+        [],
+        [
+          "tenemos"
+        ]
+      ],
       "tr": {
         "en": "When I get home, I always have dinner. Tomorrow, when I get home, I will call you. As soon as we have time, we go to the cinema.",
-        "es": "Cuando llego (llegar) a casa, siempre ceno. Mañana, cuando llegue (llegar) a casa, te llamo. En cuanto nosotros tengamos (tener) tiempo, vamos al cine."
+        "es": "Cuando yo llego (llegar) a casa, siempre ceno. Mañana, cuando yo llegue (llegar) a casa, te llamo. En cuanto nosotros tengamos (tener) tiempo, vamos al cine."
       },
       "why": {
         "en": "A habit takes the indicative (llego); a future event takes the subjunctive (llegue, tengamos).",
@@ -1126,7 +1133,7 @@
       "id": "sp-cloze-02",
       "kind": "opencloze",
       "trial": true,
-      "text": "Siempre llamo a mi mamá cuando ___ (salir) del trabajo. Hoy la voy a llamar cuando ___ (salir) a las cinco. Después de que nosotros ___ (comer), vamos al parque.",
+      "text": "Siempre llamo a mi mamá cuando yo ___ (salir) del trabajo. Hoy la voy a llamar cuando yo ___ (salir) a las cinco. Después de que nosotros ___ (comer), vamos al parque.",
       "answers": [
         "salgo",
         "salga",
@@ -1134,7 +1141,7 @@
       ],
       "tr": {
         "en": "I always call my mom when I leave work. Today I am going to call her when I leave at five. After we eat, we go to the park.",
-        "es": "Siempre llamo a mi mamá cuando salgo (salir) del trabajo. Hoy la voy a llamar cuando salga (salir) a las cinco. Después de que nosotros comamos (comer), vamos al parque."
+        "es": "Siempre llamo a mi mamá cuando yo salgo (salir) del trabajo. Hoy la voy a llamar cuando yo salga (salir) a las cinco. Después de que nosotros comamos (comer), vamos al parque."
       },
       "why": {
         "en": "A habit takes the indicative (salgo); a future event takes the subjunctive (salga, comamos).",
@@ -1150,6 +1157,15 @@
         "venga",
         "llegue",
         "esté"
+      ],
+      "accept": [
+        [
+          "viene"
+        ],
+        [],
+        [
+          "está"
+        ]
       ],
       "tr": {
         "en": "I am not leaving until my mother comes. Before she arrives, I clean my room. When she is here, we have dinner.",
@@ -1170,6 +1186,13 @@
         "haga",
         "sepa"
       ],
+      "accept": [
+        [],
+        [],
+        [
+          "sé"
+        ]
+      ],
       "tr": {
         "en": "Every day, when it is hot, we eat ice cream. Tomorrow, when it is hot, we go to the beach. As soon as I know the time, I will write to you.",
         "es": "Cada día, cuando hace (hacer) calor, comemos helado. Mañana, cuando haga (hacer) calor, vamos a la playa. Tan pronto como yo sepa (saber) la hora, te escribo."
@@ -1183,7 +1206,7 @@
       "id": "sp-cloze-05",
       "kind": "opencloze",
       "trial": true,
-      "text": "Mi hermano siempre me ayuda cuando ___ (tener) tiempo. Mañana, en cuanto él ___ (terminar) su tarea, me ayuda con la mía. Cuando nosotros ___ (ir) a México, vamos a ver a mis tíos.",
+      "text": "Mi hermano siempre me ayuda cuando él ___ (tener) tiempo. Mañana, en cuanto él ___ (terminar) su tarea, me ayuda con la mía. Cuando nosotros ___ (ir) a México, vamos a ver a mis tíos.",
       "answers": [
         "tiene",
         "termine",
@@ -1191,7 +1214,7 @@
       ],
       "tr": {
         "en": "My brother always helps me when he has time. Tomorrow, as soon as he finishes his homework, he helps me with mine. When we go to Mexico, we are going to see my aunts and uncles.",
-        "es": "Mi hermano siempre me ayuda cuando tiene (tener) tiempo. Mañana, en cuanto él termine (terminar) su tarea, me ayuda con la mía. Cuando nosotros vayamos (ir) a México, vamos a ver a mis tíos."
+        "es": "Mi hermano siempre me ayuda cuando él tiene (tener) tiempo. Mañana, en cuanto él termine (terminar) su tarea, me ayuda con la mía. Cuando nosotros vayamos (ir) a México, vamos a ver a mis tíos."
       },
       "why": {
         "en": "A habit takes the indicative (tiene); a future event takes the subjunctive (termine, vayamos).",
@@ -1329,12 +1352,12 @@
         "comer",
         "dormir"
       ],
-      "es": "En cuanto yo ___ la tarea, te llamo.",
+      "es": "Mañana, en cuanto yo ___ la tarea, te llamo.",
       "word": "terminar",
       "answer": "termine",
       "tr": {
-        "en": "As soon as I finish the homework, I will call you.",
-        "es": "En cuanto yo termine la tarea, te llamo."
+        "en": "Tomorrow, as soon as I finish the homework, I will call you.",
+        "es": "Mañana, en cuanto yo termine la tarea, te llamo."
       },
       "why": {
         "en": "A future event takes the subjunctive after en cuanto; terminar, yo: termine.",
@@ -1353,6 +1376,9 @@
       "es": "Hasta que ella ___ lista, no salimos.",
       "word": "estar",
       "answer": "esté",
+      "accept": [
+        "está"
+      ],
       "tr": {
         "en": "Until she is ready, we are not leaving.",
         "es": "Hasta que ella esté lista, no salimos."
@@ -1389,49 +1415,49 @@
       "trial": true,
       "prompt": {
         "en": "Wait until I arrive.",
-        "es": "Espera hasta que yo llegue."
+        "es": "Espera hasta que llegue."
       },
-      "es": "Espera hasta que yo llegue."
+      "es": "Espera hasta que llegue."
     },
     {
       "id": "sp-order-02",
       "kind": "order",
       "trial": true,
       "prompt": {
-        "en": "I will call you as soon as I arrive.",
-        "es": "Te llamo en cuanto llegue."
+        "en": "I stay until you arrive.",
+        "es": "Me quedo hasta que llegues."
       },
-      "es": "Te llamo en cuanto llegue."
+      "es": "Me quedo hasta que llegues."
     },
     {
       "id": "sp-order-03",
       "kind": "order",
       "trial": true,
       "prompt": {
-        "en": "I am not leaving until you come.",
-        "es": "No salgo hasta que vengas."
+        "en": "We keep going until we finish.",
+        "es": "Seguimos hasta que terminemos."
       },
-      "es": "No salgo hasta que vengas."
+      "es": "Seguimos hasta que terminemos."
     },
     {
       "id": "sp-order-04",
       "kind": "order",
       "trial": true,
       "prompt": {
-        "en": "I want to talk before you leave.",
-        "es": "Quiero hablar antes de que te vayas."
+        "en": "Walk until you get tired.",
+        "es": "Camina hasta que te canses."
       },
-      "es": "Quiero hablar antes de que te vayas."
+      "es": "Camina hasta que te canses."
     },
     {
       "id": "sp-order-05",
       "kind": "order",
       "trial": true,
       "prompt": {
-        "en": "We have dinner after you arrive.",
-        "es": "Cenamos después de que llegues."
+        "en": "I study until I understand.",
+        "es": "Estudio hasta que entienda."
       },
-      "es": "Cenamos después de que llegues."
+      "es": "Estudio hasta que entienda."
     }
   ]
 }

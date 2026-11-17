@@ -1475,16 +1475,16 @@
       "id": "ei-fix-03",
       "kind": "fix",
       "trial": true,
-      "es": "Ana dijo que mi carro era nuevo.",
-      "wrongIndex": 3,
+      "es": "Ana dijo: \"Mi carro es nuevo\" y dijo que mi carro era nuevo.",
+      "wrongIndex": 9,
       "answer": "su",
       "explain": {
         "en": "The person changes in reported speech: Ana said \"mi carro\", so it is su carro (her car).",
         "es": "La persona cambia en el estilo indirecto: Ana dijo «mi carro», así que es su carro."
       },
       "tr": {
-        "en": "Ana said that her car was new.",
-        "es": "Ana dijo que su carro era nuevo."
+        "en": "Ana said: \"My car is new\" and she said that her car was new.",
+        "es": "Ana dijo: \"Mi carro es nuevo\" y dijo que su carro era nuevo."
       }
     },
     {
@@ -1638,10 +1638,10 @@
       "kind": "order",
       "trial": true,
       "prompt": {
-        "en": "He told me that he had already eaten.",
-        "es": "Me dijo que ya había comido."
+        "en": "He told me that he had eaten.",
+        "es": "Me dijo que había comido."
       },
-      "es": "Me dijo que ya había comido."
+      "es": "Me dijo que había comido."
     },
     {
       "id": "ei-order-02",
@@ -1668,10 +1668,10 @@
       "kind": "order",
       "trial": true,
       "prompt": {
-        "en": "They said they would come the next day.",
-        "es": "Dijeron que vendrían al día siguiente."
+        "en": "They said they would come.",
+        "es": "Dijeron que vendrían."
       },
-      "es": "Dijeron que vendrían al día siguiente."
+      "es": "Dijeron que vendrían."
     },
     {
       "id": "ei-order-05",

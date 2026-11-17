@@ -844,7 +844,9 @@
       },
       "answer": "Si hace frío, no saldremos.",
       "accept": [
-        "No saldremos si hace frío."
+        "No saldremos si hace frío.",
+        "Si hace frío, nosotros no saldremos.",
+        "Nosotros no saldremos si hace frío."
       ],
       "wordIds": [
         "6",
@@ -1233,50 +1235,50 @@
       "kind": "order",
       "trial": true,
       "prompt": {
-        "en": "If it is sunny, we go to the park.",
-        "es": "Si hace sol, vamos al parque."
+        "en": "And what if it is cold?",
+        "es": "¿Y si hace frío?"
       },
-      "es": "Si hace sol, vamos al parque."
+      "es": "¿Y si hace frío?"
     },
     {
       "id": "ct-order-02",
       "kind": "order",
       "trial": true,
       "prompt": {
-        "en": "If you are thirsty, drink water.",
-        "es": "Si tienes sed, bebe agua."
+        "en": "And what if you don't know?",
+        "es": "¿Y si no sabes?"
       },
-      "es": "Si tienes sed, bebe agua."
+      "es": "¿Y si no sabes?"
     },
     {
       "id": "ct-order-03",
       "kind": "order",
       "trial": true,
       "prompt": {
-        "en": "If you study a lot, you will pass the exam.",
-        "es": "Si estudias mucho, aprobarás el examen."
+        "en": "Only if you have time.",
+        "es": "Solo si tienes tiempo."
       },
-      "es": "Si estudias mucho, aprobarás el examen."
+      "es": "Solo si tienes tiempo."
     },
     {
       "id": "ct-order-04",
       "kind": "order",
       "trial": true,
       "prompt": {
-        "en": "If she comes, I make dinner.",
-        "es": "Si ella viene, yo hago la cena."
+        "en": "And what if you don't come?",
+        "es": "¿Y si no vienes?"
       },
-      "es": "Si ella viene, yo hago la cena."
+      "es": "¿Y si no vienes?"
     },
     {
       "id": "ct-order-05",
       "kind": "order",
       "trial": true,
       "prompt": {
-        "en": "If you do not know, ask.",
-        "es": "Si no sabes, pregunta."
+        "en": "Only if it doesn't rain.",
+        "es": "Solo si no llueve."
       },
-      "es": "Si no sabes, pregunta."
+      "es": "Solo si no llueve."
     }
   ]
 }

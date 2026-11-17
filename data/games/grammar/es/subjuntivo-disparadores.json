@@ -1150,6 +1150,13 @@
         "tenga",
         "pueda"
       ],
+      "accept": [
+        [
+          "vendrá"
+        ],
+        [],
+        []
+      ],
       "tr": {
         "en": "I think she is coming tomorrow, but I don't think she has time for dinner. I hope she can arrive early.",
         "es": "Creo que ella viene (venir) mañana, pero no creo que tenga (tener) tiempo para la cena. Espero que pueda (poder) llegar temprano."
@@ -1168,6 +1175,15 @@
         "llego",
         "llegue",
         "esté"
+      ],
+      "accept": [
+        [
+          "llegué",
+          "llegaba",
+          "llegaré"
+        ],
+        [],
+        []
       ],
       "tr": {
         "en": "My boss knows that I arrive late. He wants me to arrive early and to be at the office at eight.",
@@ -1201,15 +1217,22 @@
       "id": "sp-cloze-04",
       "kind": "opencloze",
       "trial": true,
-      "text": "Me gusta que ustedes ___ (hablar) español. Sé que ___ (ir) a México en verano y espero que ___ (ver) muchas cosas.",
+      "text": "Me gusta que ustedes ___ (hablar) español. Sé que ustedes ___ (ir) a México en verano y espero que ___ (ver) muchas cosas.",
       "answers": [
         "hablen",
         "van",
         "vean"
       ],
+      "accept": [
+        [],
+        [
+          "irán"
+        ],
+        []
+      ],
       "tr": {
         "en": "I like that you speak Spanish. I know that you are going to Mexico in summer and I hope you see many things.",
-        "es": "Me gusta que ustedes hablen (hablar) español. Sé que van (ir) a México en verano y espero que vean (ver) muchas cosas."
+        "es": "Me gusta que ustedes hablen (hablar) español. Sé que ustedes van (ir) a México en verano y espero que vean (ver) muchas cosas."
       },
       "why": {
         "en": "Me gusta que and esperar que take the subjunctive (hablen, vean). Sé que states a fact: indicative (van).",

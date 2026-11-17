@@ -1282,7 +1282,9 @@
       },
       "answer": "Ya que hacía buen tiempo, fuimos al parque.",
       "accept": [
-        "Ya que hacía buen tiempo, íbamos al parque."
+        "Ya que hacía buen tiempo, íbamos al parque.",
+        "Fuimos al parque ya que hacía buen tiempo.",
+        "Íbamos al parque ya que hacía buen tiempo."
       ],
       "wordIds": [
         "76",
@@ -1406,6 +1408,15 @@
         "obliguen",
         "para"
       ],
+      "accept": [
+        [],
+        [
+          "obligue",
+          "obligan",
+          "obliga"
+        ],
+        []
+      ],
       "tr": {
         "en": "I study Spanish because I like it, not because they force me at work. I do it so that my family is proud.",
         "es": "Estudio español porque me gusta (gustar), no porque me obliguen (obligar) en el trabajo. Lo hago para que mi familia esté orgullosa."
@@ -1512,6 +1523,10 @@
       "es": "Te escribo ___ sepas la verdad.",
       "word": "para que",
       "answer": "para que",
+      "accept": [
+        "a fin de que",
+        "con el fin de que"
+      ],
       "tr": {
         "en": "I am writing to you so that you know the truth.",
         "es": "Te escribo para que sepas la verdad."
@@ -1584,6 +1599,9 @@
       "es": "Lo logré ___ tu ayuda.",
       "word": "gracias a",
       "answer": "gracias a",
+      "accept": [
+        "por"
+      ],
       "tr": {
         "en": "I made it thanks to your help.",
         "es": "Lo logré gracias a tu ayuda."
@@ -1623,10 +1641,10 @@
       "kind": "order",
       "trial": true,
       "prompt": {
-        "en": "I speak slowly so that everyone understands me.",
-        "es": "Hablo despacio para que todos me entiendan."
+        "en": "This is useful so that you learn.",
+        "es": "Esto sirve para que aprendas."
       },
-      "es": "Hablo despacio para que todos me entiendan."
+      "es": "Esto sirve para que aprendas."
     },
     {
       "id": "fc-order-02",
@@ -1643,10 +1661,10 @@
       "kind": "order",
       "trial": true,
       "prompt": {
-        "en": "I am telling you so that you know.",
-        "es": "Te lo digo para que lo sepas."
+        "en": "That is so that you do not get angry.",
+        "es": "Eso es para que no te enojes."
       },
-      "es": "Te lo digo para que lo sepas."
+      "es": "Eso es para que no te enojes."
     },
     {
       "id": "fc-order-04",
@@ -1663,10 +1681,10 @@
       "kind": "order",
       "trial": true,
       "prompt": {
-        "en": "I arrived late because of the traffic.",
-        "es": "Llegué tarde por el tráfico."
+        "en": "Since it was raining, we did not go out.",
+        "es": "Como llovía, no salimos."
       },
-      "es": "Llegué tarde por el tráfico."
+      "es": "Como llovía, no salimos."
     }
   ]
 }

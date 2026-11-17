@@ -1408,17 +1408,25 @@
         [
           "No obstante",
           "Pero",
-          "Aun así"
+          "Aun así",
+          "Con todo",
+          "Pese a ello"
         ],
         [
           "Por lo tanto",
           "En consecuencia",
           "Por ello",
-          "Por eso"
+          "Por eso",
+          "Por tanto",
+          "Así pues",
+          "Por ende",
+          "Entonces"
         ],
         [
           "Asimismo",
-          "Por otra parte"
+          "Por otra parte",
+          "Por otro lado",
+          "Igualmente"
         ]
       ],
       "tr": {
@@ -1444,7 +1452,9 @@
         [
           "o sea",
           "en otras palabras",
-          "esto es"
+          "esto es",
+          "de hecho",
+          "en efecto"
         ],
         [
           "por caso"
@@ -1504,10 +1514,10 @@
       "id": "md-cloze-04",
       "kind": "opencloze",
       "trial": true,
-      "text": "Algunos dicen que el proyecto es un fracaso. ___, creo que ha tenido éxitos importantes. ___ los críticos, los resultados son mejores de lo esperado. ___, hay que reconocer que aún faltan mejoras.",
+      "text": "Algunos dicen que el proyecto es un fracaso. ___, creo que ha tenido éxitos importantes. ___ lo que dicen los críticos, los resultados son mejores de lo esperado. ___, hay que reconocer que aún faltan mejoras.",
       "answers": [
         "Por mi parte",
-        "A diferencia de",
+        "Contrario a",
         "Eso sí"
       ],
       "accept": [
@@ -1519,8 +1529,8 @@
           "En cambio"
         ],
         [
-          "Contrariamente a",
-          "Al contrario de"
+          "Al contrario de",
+          "Contrariamente a"
         ],
         [
           "No obstante",
@@ -1530,12 +1540,12 @@
         ]
       ],
       "tr": {
-        "en": "Some say the project is a failure. For my part, I think it has had important successes. Unlike the critics, the results are better than expected. However, it must be admitted that improvements are still missing.",
-        "es": "Algunos dicen que el proyecto es un fracaso. Por mi parte, creo que ha tenido éxitos importantes. A diferencia de los críticos, los resultados son mejores de lo esperado. Eso sí, hay que reconocer que aún faltan mejoras."
+        "en": "Some say the project is a failure. For my part, I think it has had important successes. Contrary to what the critics say, the results are better than expected. However, it must be admitted that improvements are still missing.",
+        "es": "Algunos dicen que el proyecto es un fracaso. Por mi parte, creo que ha tenido éxitos importantes. Contrario a lo que dicen los críticos, los resultados son mejores de lo esperado. Eso sí, hay que reconocer que aún faltan mejoras."
       },
       "why": {
-        "en": "Opinion (por mi parte), contrast with other people (a diferencia de) and a concession (eso sí): the register stays formal.",
-        "es": "Opinión (por mi parte), contraste con otras personas (a diferencia de) y una concesión (eso sí): el registro sigue siendo formal."
+        "en": "Opinion (por mi parte), contrast with what other people say (contrario a) and a concession (eso sí): the register stays formal.",
+        "es": "Opinión (por mi parte), contraste con lo que dicen otros (contrario a) y una concesión (eso sí): el registro sigue siendo formal."
       }
     },
     {
@@ -1698,7 +1708,8 @@
       "answer": "por lo tanto",
       "accept": [
         "por consiguiente",
-        "en consecuencia"
+        "en consecuencia",
+        "por tanto"
       ],
       "tr": {
         "en": "There is no budget; therefore, the project is cancelled.",
@@ -1746,6 +1757,10 @@
       "es": "Ana vive en Madrid; su hermano, ___, vive en Lima.",
       "word": "en cambio",
       "answer": "en cambio",
+      "accept": [
+        "por el contrario",
+        "sin embargo"
+      ],
       "tr": {
         "en": "Ana lives in Madrid; her brother, on the other hand, lives in Lima.",
         "es": "Ana vive en Madrid; su hermano, en cambio, vive en Lima."
@@ -1785,50 +1800,50 @@
       "kind": "order",
       "trial": true,
       "prompt": {
-        "en": "However, the plan was approved.",
-        "es": "Sin embargo, el plan fue aprobado."
+        "en": "It is not only expensive but also slow.",
+        "es": "No solo es caro, sino también lento."
       },
-      "es": "Sin embargo, el plan fue aprobado."
+      "es": "No solo es caro, sino también lento."
     },
     {
       "id": "md-order-02",
       "kind": "order",
       "trial": true,
       "prompt": {
-        "en": "Therefore, we cannot accept the offer.",
-        "es": "Por lo tanto, no podemos aceptar la oferta."
+        "en": "Now then, there is a problem.",
+        "es": "Ahora bien, hay un problema."
       },
-      "es": "Por lo tanto, no podemos aceptar la oferta."
+      "es": "Ahora bien, hay un problema."
     },
     {
       "id": "md-order-03",
       "kind": "order",
       "trial": true,
       "prompt": {
-        "en": "As for the prices, there are no changes.",
-        "es": "En cuanto a los precios, no hay cambios."
+        "en": "What is more, the plan was a success.",
+        "es": "Es más, el plan fue un éxito."
       },
-      "es": "En cuanto a los precios, no hay cambios."
+      "es": "Es más, el plan fue un éxito."
     },
     {
       "id": "md-order-04",
       "kind": "order",
       "trial": true,
       "prompt": {
-        "en": "Likewise, the budget was approved.",
-        "es": "Asimismo, se aprobó el presupuesto."
+        "en": "Hence it failed.",
+        "es": "De ahí que fracasara."
       },
-      "es": "Asimismo, se aprobó el presupuesto."
+      "es": "De ahí que fracasara."
     },
     {
       "id": "md-order-05",
       "kind": "order",
       "trial": true,
       "prompt": {
-        "en": "All in all, the result was positive.",
-        "es": "En definitiva, el resultado fue positivo."
+        "en": "That said, we move on.",
+        "es": "Dicho esto, seguimos adelante."
       },
-      "es": "En definitiva, el resultado fue positivo."
+      "es": "Dicho esto, seguimos adelante."
     }
   ]
 }
