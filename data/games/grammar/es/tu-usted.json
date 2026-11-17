@@ -1490,6 +1490,241 @@
         }
       ],
       "correctIndex": 2
+    },
+    {
+      "id": "tu-tr-01",
+      "kind": "transform",
+      "tense": { "from": "ir-a", "to": "presente" },
+      "prompt": { "en": "Are you going to eat here? (formal)", "es": "¿Usted va a comer aquí?" },
+      "answer": "¿Usted come aquí?",
+      "accept": ["¿Come usted aquí?"],
+      "wordIds": ["33", "25", "37", "9"],
+      "why": { "en": "Present tense, usted: it uses the same form as él / ella: come.", "es": "Presente, usted: usa la misma forma que él / ella: come." }
+    },
+    {
+      "id": "tu-tr-02",
+      "kind": "transform",
+      "tense": { "from": "ir-a", "to": "presente" },
+      "prompt": { "en": "Are you all going to work today?", "es": "¿Ustedes van a trabajar hoy?" },
+      "answer": "¿Ustedes trabajan hoy?",
+      "accept": ["¿Trabajan ustedes hoy?"],
+      "wordIds": ["33", "49", "37", "52"],
+      "why": { "en": "Present tense, ustedes: it uses the same form as ellos: trabajan.", "es": "Presente, ustedes: usa la misma forma que ellos: trabajan." }
+    },
+    {
+      "id": "tu-tr-03",
+      "kind": "transform",
+      "tense": { "from": "ir-a", "to": "presente" },
+      "prompt": { "en": "Are you going to have time? (formal)", "es": "¿Usted va a tener tiempo?" },
+      "answer": "¿Usted tiene tiempo?",
+      "accept": ["¿Tiene usted tiempo?"],
+      "wordIds": ["33", "16", "37", "22"],
+      "why": { "en": "Present tense, usted: tener becomes tiene, as with él / ella.", "es": "Presente, usted: tener se dice tiene, como con él / ella." }
+    },
+    {
+      "id": "tu-tr-04",
+      "kind": "transform",
+      "tense": { "from": "ir-a", "to": "presente" },
+      "prompt": { "en": "You are going to talk to your mother.", "es": "Tú vas a hablar con tu madre." },
+      "answer": "Tú hablas con tu madre.",
+      "accept": ["Hablas con tu madre."],
+      "wordIds": ["33", "47", "38"],
+      "why": { "en": "Present tense, tú: the familiar person ends in -s: hablas.", "es": "Presente, tú: la persona de confianza termina en -s: hablas." }
+    },
+    {
+      "id": "tu-tr-05",
+      "kind": "transform",
+      "tense": { "from": "ir-a", "to": "presente" },
+      "prompt": { "en": "You all are going to be friends.", "es": "Ustedes van a ser amigos." },
+      "answer": "Ustedes son amigos.",
+      "accept": ["Son amigos."],
+      "wordIds": ["33", "11", "37", "40"],
+      "why": { "en": "Present tense, ustedes: ser becomes son, as with ellos.", "es": "Presente, ustedes: ser se dice son, como con ellos." }
+    },
+    {
+      "id": "tu-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Tú hablas español. Y usted, ¿también ___ español? Y ustedes, ¿también ___ español?",
+      "answers": ["habla", "hablan"],
+      "tr": { "en": "You speak Spanish. And you (formal), do you also speak Spanish? And you all, do you also speak Spanish?", "es": "Tú hablas español. Y usted, ¿también habla español? Y ustedes, ¿también hablan español?" },
+      "why": { "en": "Usted uses the él form (habla); ustedes uses the ellos form (hablan).", "es": "Usted usa la forma de él (habla); ustedes usa la forma de ellos (hablan)." }
+    },
+    {
+      "id": "tu-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Tú trabajas en un banco. Y usted, ¿también ___ en un banco? Y ustedes, ¿también ___ en un banco?",
+      "answers": ["trabaja", "trabajan"],
+      "tr": { "en": "You work in a bank. And you (formal), do you also work in a bank? And you all, do you also work in a bank?", "es": "Tú trabajas en un banco. Y usted, ¿también trabaja en un banco? Y ustedes, ¿también trabajan en un banco?" },
+      "why": { "en": "Usted trabaja (like él); ustedes trabajan (like ellos).", "es": "Usted trabaja (como él); ustedes trabajan (como ellos)." }
+    },
+    {
+      "id": "tu-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Tú tienes un perro. Y usted, ¿también ___ un perro? Y ustedes, ¿también ___ un perro?",
+      "answers": ["tiene", "tienen"],
+      "tr": { "en": "You have a dog. And you (formal), do you also have a dog? And you all, do you also have a dog?", "es": "Tú tienes un perro. Y usted, ¿también tiene un perro? Y ustedes, ¿también tienen un perro?" },
+      "why": { "en": "Usted tiene (like él); ustedes tienen (like ellos).", "es": "Usted tiene (como él); ustedes tienen (como ellos)." }
+    },
+    {
+      "id": "tu-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Tú eres médica. Y usted, ¿también ___ médica? Sí, yo también ___ médica.",
+      "answers": ["es", "soy"],
+      "tr": { "en": "You are a doctor. And you (formal), are you also a doctor? Yes, I am also a doctor.", "es": "Tú eres médica. Y usted, ¿también es médica? Sí, yo también soy médica." },
+      "why": { "en": "Usted es (like ella); yo soy.", "es": "Usted es (como ella); yo soy." }
+    },
+    {
+      "id": "tu-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Tú quieres un café. Y usted, ¿también ___ un café? Y ustedes, ¿también ___ un café?",
+      "answers": ["quiere", "quieren"],
+      "tr": { "en": "You want a coffee. And you (formal), do you also want a coffee? And you all, do you also want a coffee?", "es": "Tú quieres un café. Y usted, ¿también quiere un café? Y ustedes, ¿también quieren un café?" },
+      "why": { "en": "Usted quiere (like él); ustedes quieren (like ellos).", "es": "Usted quiere (como él); ustedes quieren (como ellos)." }
+    },
+    {
+      "id": "tu-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "Señora, ¿cómo estás?",
+      "wrongIndex": 2,
+      "answer": "está",
+      "explain": { "en": "You address a lady with usted: ¿cómo está?", "es": "A una señora se le habla de usted: ¿cómo está?" },
+      "tr": { "en": "Madam, how are you?", "es": "Señora, ¿cómo está?" }
+    },
+    {
+      "id": "tu-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "Señor, ¿dónde vives?",
+      "wrongIndex": 2,
+      "answer": "vive",
+      "explain": { "en": "You address a gentleman with usted: ¿dónde vive?", "es": "A un señor se le habla de usted: ¿dónde vive?" },
+      "tr": { "en": "Sir, where do you live?", "es": "Señor, ¿dónde vive?" }
+    },
+    {
+      "id": "tu-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "Niños, ¿cómo está?",
+      "wrongIndex": 2,
+      "answer": "están",
+      "explain": { "en": "With several children you use ustedes: ¿cómo están?", "es": "Con varios niños se usa ustedes: ¿cómo están?" },
+      "tr": { "en": "Children, how are you?", "es": "Niños, ¿cómo están?" }
+    },
+    {
+      "id": "tu-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "Señor, ¿cuál es tu nombre?",
+      "wrongIndex": 3,
+      "answer": "su",
+      "explain": { "en": "You address a gentleman with usted and the possessive is su, not tu.", "es": "A un señor se le habla de usted y el posesivo es su, no tu." },
+      "tr": { "en": "Sir, what is your name?", "es": "Señor, ¿cuál es su nombre?" }
+    },
+    {
+      "id": "tu-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "Niños, ¿ya quieres un helado?",
+      "wrongIndex": 2,
+      "answer": "quieren",
+      "explain": { "en": "With several children you use ustedes: quieren.", "es": "Con varios niños se usa ustedes: quieren." },
+      "tr": { "en": "Children, do you want an ice cream already?", "es": "Niños, ¿ya quieren un helado?" }
+    },
+    {
+      "id": "tu-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": ["hablar", "comer", "vivir"],
+      "es": "Señora, ¿usted ___ español?",
+      "word": "hablar",
+      "answer": "habla",
+      "tr": { "en": "Madam, do you speak Spanish?", "es": "Señora, ¿usted habla español?" },
+      "why": { "en": "Usted uses the él / ella form: habla.", "es": "Usted usa la forma de él / ella: habla." }
+    },
+    {
+      "id": "tu-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": ["tener", "ser", "estar"],
+      "es": "¿Ustedes ___ hambre?",
+      "word": "tener",
+      "answer": "tienen",
+      "tr": { "en": "Are you all hungry?", "es": "¿Ustedes tienen hambre?" },
+      "why": { "en": "Ustedes uses the ellos form: tienen.", "es": "Ustedes usa la forma de ellos: tienen." }
+    },
+    {
+      "id": "tu-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": ["querer", "ser", "estar"],
+      "es": "Señor, ¿usted ___ un café?",
+      "word": "querer",
+      "answer": "quiere",
+      "tr": { "en": "Sir, do you want a coffee?", "es": "Señor, ¿usted quiere un café?" },
+      "why": { "en": "Usted uses the él form: quiere.", "es": "Usted usa la forma de él: quiere." }
+    },
+    {
+      "id": "tu-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": ["trabajar", "comer", "leer"],
+      "es": "Tú ___ en una oficina.",
+      "word": "trabajar",
+      "answer": "trabajas",
+      "tr": { "en": "You work in an office.", "es": "Tú trabajas en una oficina." },
+      "why": { "en": "Tú ends in -s: trabajas.", "es": "Tú termina en -s: trabajas." }
+    },
+    {
+      "id": "tu-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": ["ser", "tener", "querer"],
+      "es": "Ustedes ___ muy amables.",
+      "word": "ser",
+      "answer": "son",
+      "tr": { "en": "You all are very kind.", "es": "Ustedes son muy amables." },
+      "why": { "en": "Ustedes uses the ellos form: son.", "es": "Ustedes usa la forma de ellos: son." }
+    },
+    {
+      "id": "tu-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "Do you live in the city? (formal)", "es": "¿Usted vive en la ciudad?" },
+      "es": "¿Usted vive en la ciudad?"
+    },
+    {
+      "id": "tu-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "Do you all want a coffee?", "es": "¿Ustedes quieren un café?" },
+      "es": "¿Ustedes quieren un café?"
+    },
+    {
+      "id": "tu-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "You work at the bank.", "es": "Tú trabajas en el banco." },
+      "es": "Tú trabajas en el banco."
+    },
+    {
+      "id": "tu-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "Sir, how are you?", "es": "Señor, ¿cómo está usted?" },
+      "es": "Señor, ¿cómo está usted?"
+    },
+    {
+      "id": "tu-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "Where are you all from?", "es": "¿De dónde son ustedes?" },
+      "es": "¿De dónde son ustedes?"
     }
   ]
 }
