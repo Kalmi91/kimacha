@@ -2485,6 +2485,240 @@
           "es": "La forma yo de valer lleva -lg-, no -ig-: valgo."
         }
       }
+    },
+    {
+      "id": "pi-tr-01",
+      "kind": "transform",
+      "tense": { "from": "ir-a", "to": "presente" },
+      "prompt": { "en": "I am going to make dinner.", "es": "Voy a hacer la cena." },
+      "answer": "Hago la cena.",
+      "accept": ["Yo hago la cena."],
+      "wordIds": ["76", "261"],
+      "why": { "en": "Present tense, yo: hacer is irregular and the form is hago.", "es": "Presente, yo: hacer es irregular y la forma es hago." }
+    },
+    {
+      "id": "pi-tr-02",
+      "kind": "transform",
+      "tense": { "from": "ir-a", "to": "presente" },
+      "prompt": { "en": "We are going to have time.", "es": "Vamos a tener tiempo." },
+      "answer": "Tenemos tiempo.",
+      "accept": ["Nosotros tenemos tiempo."],
+      "wordIds": ["16", "22"],
+      "why": { "en": "Present tense, nosotros: the form is regular, tenemos. Only yo is irregular: tengo.", "es": "Presente, nosotros: la forma es regular, tenemos. Solo yo es irregular: tengo." }
+    },
+    {
+      "id": "pi-tr-03",
+      "kind": "transform",
+      "tense": { "from": "ir-a", "to": "presente" },
+      "prompt": { "en": "My mother is going to come today.", "es": "Mi madre va a venir hoy." },
+      "answer": "Mi madre viene hoy.",
+      "wordIds": ["80", "38", "52"],
+      "why": { "en": "Present tense, ella: venir changes the vowel e → ie: viene.", "es": "Presente, ella: venir cambia la vocal e → ie: viene." }
+    },
+    {
+      "id": "pi-tr-04",
+      "kind": "transform",
+      "tense": { "from": "ir-a", "to": "presente" },
+      "prompt": { "en": "You are going to tell the truth.", "es": "Vas a decir la verdad." },
+      "answer": "Dices la verdad.",
+      "accept": ["Tú dices la verdad."],
+      "wordIds": ["79", "286"],
+      "why": { "en": "Present tense, tú: decir changes the vowel e → i: dices.", "es": "Presente, tú: decir cambia la vocal e → i: dices." }
+    },
+    {
+      "id": "pi-tr-05",
+      "kind": "transform",
+      "tense": { "from": "ir-a", "to": "presente" },
+      "prompt": { "en": "They are going to watch a movie.", "es": "Ellos van a ver una película." },
+      "answer": "Ellos ven una película.",
+      "accept": ["Ven una película."],
+      "wordIds": ["78", "284"],
+      "why": { "en": "Present tense, ellos: ver follows the regular pattern, ven. Only yo is irregular: veo.", "es": "Presente, ellos: ver sigue el patrón regular, ven. Solo yo es irregular: veo." }
+    },
+    {
+      "id": "pi-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Mi madre hace la cena. Yo también ___ la cena y mis hermanos también ___ la cena.",
+      "answers": ["hago", "hacen"],
+      "tr": { "en": "My mother makes dinner. I also make dinner and my brothers also make dinner.", "es": "Mi madre hace la cena. Yo también hago la cena y mis hermanos también hacen la cena." },
+      "why": { "en": "Hacer is irregular only in yo: hago. With ellos the form is regular: hacen.", "es": "Hacer es irregular solo en yo: hago. Con ellos la forma es regular: hacen." }
+    },
+    {
+      "id": "pi-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Ana tiene un perro. Yo también ___ un perro y mis amigos también ___ un perro.",
+      "answers": ["tengo", "tienen"],
+      "tr": { "en": "Ana has a dog. I also have a dog and my friends also have a dog.", "es": "Ana tiene un perro. Yo también tengo un perro y mis amigos también tienen un perro." },
+      "why": { "en": "Tener: yo tengo (irregular), ellos tienen (e → ie).", "es": "Tener: yo tengo (irregular), ellos tienen (e → ie)." }
+    },
+    {
+      "id": "pi-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Mi padre viene a casa a las seis. Yo también ___ a casa a las seis y mis hermanos también ___ a casa a las seis.",
+      "answers": ["vengo", "vienen"],
+      "tr": { "en": "My father comes home at six. I also come home at six and my brothers also come home at six.", "es": "Mi padre viene a casa a las seis. Yo también vengo a casa a las seis y mis hermanos también vienen a casa a las seis." },
+      "why": { "en": "Venir: yo vengo (irregular), ellos vienen (e → ie).", "es": "Venir: yo vengo (irregular), ellos vienen (e → ie)." }
+    },
+    {
+      "id": "pi-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Tú vas al banco. Yo también ___ al banco y mi madre también ___ al banco.",
+      "answers": ["voy", "va"],
+      "tr": { "en": "You go to the bank. I also go to the bank and my mother also goes to the bank.", "es": "Tú vas al banco. Yo también voy al banco y mi madre también va al banco." },
+      "why": { "en": "Ir is very irregular: yo voy, ella va.", "es": "Ir es muy irregular: yo voy, ella va." }
+    },
+    {
+      "id": "pi-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Tú dices la verdad. Yo también ___ la verdad y ellos también ___ la verdad.",
+      "answers": ["digo", "dicen"],
+      "tr": { "en": "You tell the truth. I also tell the truth and they also tell the truth.", "es": "Tú dices la verdad. Yo también digo la verdad y ellos también dicen la verdad." },
+      "why": { "en": "Decir: yo digo (irregular), ellos dicen (e → i).", "es": "Decir: yo digo (irregular), ellos dicen (e → i)." }
+    },
+    {
+      "id": "pi-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "Mis amigos va al cine.",
+      "wrongIndex": 2,
+      "answer": "van",
+      "explain": { "en": "Mis amigos is plural (ellos): ir becomes van.", "es": "Mis amigos es plural (ellos): ir se dice van." },
+      "tr": { "en": "My friends go to the movies.", "es": "Mis amigos van al cine." }
+    },
+    {
+      "id": "pi-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "Mi hermano y yo tengo hambre.",
+      "wrongIndex": 4,
+      "answer": "tenemos",
+      "explain": { "en": "Mi hermano y yo means nosotros: tener becomes tenemos.", "es": "Mi hermano y yo equivale a nosotros: tener se dice tenemos." },
+      "tr": { "en": "My brother and I are hungry.", "es": "Mi hermano y yo tenemos hambre." }
+    },
+    {
+      "id": "pi-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "Mi padre dices la verdad.",
+      "wrongIndex": 2,
+      "answer": "dice",
+      "explain": { "en": "Mi padre is él: decir becomes dice, not dices.", "es": "Mi padre es él: decir se dice dice, no dices." },
+      "tr": { "en": "My father tells the truth.", "es": "Mi padre dice la verdad." }
+    },
+    {
+      "id": "pi-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "Los niños viene a la escuela.",
+      "wrongIndex": 2,
+      "answer": "vienen",
+      "explain": { "en": "Los niños is plural (ellos): venir becomes vienen.", "es": "Los niños es plural (ellos): venir se dice vienen." },
+      "tr": { "en": "The children come to school.", "es": "Los niños vienen a la escuela." }
+    },
+    {
+      "id": "pi-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "Mi madre veo una película.",
+      "wrongIndex": 2,
+      "answer": "ve",
+      "explain": { "en": "Mi madre is ella: ver becomes ve. Veo is only for yo.", "es": "Mi madre es ella: ver se dice ve. Veo es solo para yo." },
+      "tr": { "en": "My mother watches a movie.", "es": "Mi madre ve una película." }
+    },
+    {
+      "id": "pi-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": ["hacer", "leer", "beber"],
+      "es": "Yo ___ la cena para mi familia.",
+      "word": "hacer",
+      "answer": "hago",
+      "tr": { "en": "I make dinner for my family.", "es": "Yo hago la cena para mi familia." },
+      "why": { "en": "Hacer is irregular in yo: hago.", "es": "Hacer es irregular en yo: hago." }
+    },
+    {
+      "id": "pi-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": ["tener", "correr", "cerrar"],
+      "es": "Mis amigos ___ dos perros.",
+      "word": "tener",
+      "answer": "tienen",
+      "tr": { "en": "My friends have two dogs.", "es": "Mis amigos tienen dos perros." },
+      "why": { "en": "Tener with ellos: the vowel changes e → ie, tienen.", "es": "Tener con ellos: la vocal cambia e → ie, tienen." }
+    },
+    {
+      "id": "pi-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": ["venir", "comer", "abrir"],
+      "es": "Mi tío ___ a mi casa hoy.",
+      "word": "venir",
+      "answer": "viene",
+      "tr": { "en": "My uncle comes to my house today.", "es": "Mi tío viene a mi casa hoy." },
+      "why": { "en": "Venir with él: e → ie, viene.", "es": "Venir con él: e → ie, viene." }
+    },
+    {
+      "id": "pi-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": ["decir", "vender", "correr"],
+      "es": "Tú ___ que sí.",
+      "word": "decir",
+      "answer": "dices",
+      "tr": { "en": "You say yes.", "es": "Tú dices que sí." },
+      "why": { "en": "Decir with tú: e → i, dices.", "es": "Decir con tú: e → i, dices." }
+    },
+    {
+      "id": "pi-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": ["ir", "comprar", "vivir"],
+      "es": "Nosotros ___ al cine los domingos.",
+      "word": "ir",
+      "answer": "vamos",
+      "tr": { "en": "We go to the movies on Sundays.", "es": "Nosotros vamos al cine los domingos." },
+      "why": { "en": "Ir with nosotros: vamos.", "es": "Ir con nosotros: vamos." }
+    },
+    {
+      "id": "pi-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "My father has a new car.", "es": "Mi padre tiene un carro nuevo." },
+      "es": "Mi padre tiene un carro nuevo."
+    },
+    {
+      "id": "pi-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "My mother makes sweet bread.", "es": "Mi madre hace pan dulce." },
+      "es": "Mi madre hace pan dulce."
+    },
+    {
+      "id": "pi-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "We go to the movies.", "es": "Nosotros vamos al cine." },
+      "es": "Nosotros vamos al cine."
+    },
+    {
+      "id": "pi-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "My friends come to my house.", "es": "Mis amigos vienen a mi casa." },
+      "es": "Mis amigos vienen a mi casa."
+    },
+    {
+      "id": "pi-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "Ana tells the truth.", "es": "Ana dice la verdad." },
+      "es": "Ana dice la verdad."
     }
   ]
 }

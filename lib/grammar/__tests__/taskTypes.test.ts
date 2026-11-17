@@ -10,11 +10,11 @@ describe('task types', () => {
     expect(TASK_TYPE_IDS).toEqual(['choice', 'form', 'transform', 'why', 'opencloze', 'fix', 'bank', 'order']);
   });
 
-  it('every level uses the 8 types and no level is switched on yet', () => {
+  it('every level uses the 8 types and only A1 is switched on (E132)', () => {
     for (const level of ['A1', 'A2', 'B1', 'B2', 'C1'] as const) {
       expect(taskConfigForLevel(level).types).toEqual(TASK_TYPE_IDS);
     }
-    expect(enabledTaskLevels()).toEqual([]);
+    expect(enabledTaskLevels()).toEqual(['A1']);
   });
 
   it('counts the typed noun form under type 2 (form)', () => {
@@ -46,9 +46,14 @@ describe('task types', () => {
   });
 
   it('the gap list names every missing (topic, type) of a level, with the count it has', () => {
+    // E132 fills the A1 topics one by one: whatever gap is left is a core topic with fewer items than needed
     const gaps = taskTypeGaps('A1');
-    const serEstar = gaps.find((g) => g.topic === 'ser-estar' && g.type === 'opencloze');
-    expect(serEstar).toEqual({ topic: 'ser-estar', type: 'opencloze', have: 0, need: 5 });
+    for (const g of gaps) {
+      expect(coreTopicsForLevel('A1')).toContain(g.topic);
+      expect(g.need).toBe(5);
+      expect(g.have).toBeLessThan(g.need);
+    }
+    expect(gaps.some((g) => g.topic === 'ser-estar')).toBe(false); // ser-estar has all 8 types since E132
   });
 
   it('the sample items: two A1 topics have one of each new type, marked trial', () => {

@@ -2204,6 +2204,231 @@
     {"id": "sn-noun-01", "kind": "noun", "trial": true, "base": "la ciudad", "ask": {"en": "Give the plural, with its article", "es": "Escribe el plural, con su artículo"}, "answer": "las ciudades", "why": {"en": "A noun that ends in a consonant adds -es (ciudad, ciudades), and la becomes las.", "es": "Un sustantivo que termina en consonante añade -es (ciudad, ciudades), y la pasa a las."}},
     {"id": "sn-cloze-01", "kind": "opencloze", "trial": true, "text": "Tengo una hermana y dos hermanos. ___ hermana es alta. ___ hermanos son altos.", "answers": ["La", "Los"], "accept": [["Mi"], ["Mis"]], "tr": {"en": "I have a sister and two brothers. The sister is tall. The brothers are tall.", "es": "Tengo una hermana y dos hermanos. La hermana es alta. Los hermanos son altos."}, "why": {"en": "The article agrees with the noun: la hermana (feminine singular), los hermanos (masculine plural).", "es": "El artículo concuerda con el sustantivo: la hermana (femenino singular), los hermanos (masculino plural)."}},
     {"id": "sn-fix-01", "kind": "fix", "trial": true, "es": "Hay dos ciudad en el mapa.", "wrongIndex": 2, "answer": "ciudades", "explain": {"en": "After dos the noun is plural: ciudades.", "es": "Después de dos el sustantivo va en plural: ciudades."}, "tr": {"en": "There are two cities on the map.", "es": "Hay dos ciudades en el mapa."}},
-    {"id": "sn-bank-01", "kind": "bank", "trial": true, "bank": ["lápiz", "ciudad", "mapa"], "es": "Escribo con dos ___ azules.", "word": "lápiz", "answer": "lápices", "tr": {"en": "I write with two blue pencils.", "es": "Escribo con dos lápices azules."}, "why": {"en": "A noun that ends in -z changes it to -c before -es: lápiz, lápices.", "es": "Un sustantivo que termina en -z cambia la z por c antes de -es: lápiz, lápices."}}
+    {"id": "sn-bank-01", "kind": "bank", "trial": true, "bank": ["lápiz", "ciudad", "mapa"], "es": "Escribo con dos ___ azules.", "word": "lápiz", "answer": "lápices", "tr": {"en": "I write with two blue pencils.", "es": "Escribo con dos lápices azules."}, "why": {"en": "A noun that ends in -z changes it to -c before -es: lápiz, lápices.", "es": "Un sustantivo que termina en -z cambia la z por c antes de -es: lápiz, lápices."}},
+    {
+      "id": "sn-tr-01",
+      "kind": "transform",
+      "tense": { "from": "presente", "to": "ir-a" },
+      "prompt": { "en": "I buy two pencils.", "es": "Compro dos lápices." },
+      "answer": "Voy a comprar dos lápices.",
+      "accept": ["Yo voy a comprar dos lápices."],
+      "wordIds": ["33", "144", "106", "995"],
+      "why": { "en": "A plan: ir a + infinitive. Comprar stays in the infinitive and lápices stays plural.", "es": "Un plan: ir a + infinitivo. Comprar queda en infinitivo y lápices sigue en plural." }
+    },
+    {
+      "id": "sn-tr-02",
+      "kind": "transform",
+      "tense": { "from": "presente", "to": "ir-a" },
+      "prompt": { "en": "We read the books.", "es": "Leemos los libros." },
+      "answer": "Vamos a leer los libros.",
+      "accept": ["Nosotros vamos a leer los libros."],
+      "wordIds": ["33", "145", "124"],
+      "why": { "en": "A plan in the plural: nosotros uses vamos a + infinitive. Los libros does not change.", "es": "Un plan en plural: nosotros usa vamos a + infinitivo. Los libros no cambian." }
+    },
+    {
+      "id": "sn-tr-03",
+      "kind": "transform",
+      "tense": { "from": "presente", "to": "ir-a" },
+      "prompt": { "en": "I open the windows.", "es": "Abro las ventanas." },
+      "answer": "Voy a abrir las ventanas.",
+      "accept": ["Yo voy a abrir las ventanas."],
+      "wordIds": ["33", "147", "270"],
+      "why": { "en": "Ir a + infinitive expresses a plan. The article and the plural of las ventanas stay the same.", "es": "Ir a + infinitivo expresa un plan. El artículo y el plural de las ventanas se quedan igual." }
+    },
+    {
+      "id": "sn-tr-04",
+      "kind": "transform",
+      "tense": { "from": "presente", "to": "ir-a" },
+      "prompt": { "en": "I sell the shirts.", "es": "Vendo las camisas." },
+      "answer": "Voy a vender las camisas.",
+      "accept": ["Yo voy a vender las camisas."],
+      "wordIds": ["33", "238", "603"],
+      "why": { "en": "A plan uses ir a + infinitive: voy a vender. Las camisas stays plural.", "es": "Para un plan se usa ir a + infinitivo: voy a vender. Las camisas sigue en plural." }
+    },
+    {
+      "id": "sn-tr-05",
+      "kind": "transform",
+      "tense": { "from": "presente", "to": "ir-a" },
+      "prompt": { "en": "The children eat the fruits.", "es": "Los niños comen las frutas." },
+      "answer": "Los niños van a comer las frutas.",
+      "wordIds": ["33", "25", "45", "131"],
+      "why": { "en": "With ellos the plan is van a + infinitive. Los niños and las frutas stay plural.", "es": "Con ellos el plan es van a + infinitivo. Los niños y las frutas quedan en plural." }
+    },
+    {
+      "id": "sn-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Tengo un gato y dos perros. ___ gato es negro y ___ perros son grandes.",
+      "answers": ["El", "los"],
+      "accept": [
+        [
+          "Mi",
+          "Este"
+        ],
+        [
+          "Mis",
+          "Estos"
+        ]
+      ],
+      "tr": { "en": "I have a cat and two dogs. The cat is black and the dogs are big.", "es": "Tengo un gato y dos perros. El gato es negro y los perros son grandes." },
+      "why": { "en": "The article agrees with the noun: el gato (masculine singular), los perros (masculine plural).", "es": "El artículo concuerda con el sustantivo: el gato (masculino singular), los perros (masculino plural)." }
+    },
+    {
+      "id": "sn-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Compro una papa y tres limones en el mercado. ___ papa es barata y ___ limones son caros.",
+      "answers": ["La", "los"],
+      "accept": [["Esta"], ["Estos"]],
+      "tr": { "en": "I buy a potato and three lemons at the market. The potato is cheap and the lemons are expensive.", "es": "Compro una papa y tres limones en el mercado. La papa es barata y los limones son caros." },
+      "why": { "en": "Papa is feminine and limones is masculine plural: la papa, los limones.", "es": "Papa es femenino y limones es masculino plural: la papa, los limones." }
+    },
+    {
+      "id": "sn-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Mi hermana tiene un libro y dos cuadernos. ___ libro es nuevo y ___ cuadernos son viejos.",
+      "answers": ["El", "los"],
+      "accept": [["Su", "Este"], ["Sus", "Estos"]],
+      "tr": { "en": "My sister has a book and two notebooks. The book is new and the notebooks are old.", "es": "Mi hermana tiene un libro y dos cuadernos. El libro es nuevo y los cuadernos son viejos." },
+      "why": { "en": "Nouns in -o are usually masculine: el libro, los cuadernos.", "es": "Los sustantivos en -o suelen ser masculinos: el libro, los cuadernos." }
+    },
+    {
+      "id": "sn-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "En la ciudad hay un parque y dos plazas. ___ parque es grande y ___ plazas son bonitas.",
+      "answers": ["El", "las"],
+      "accept": [["Este"], ["Estas"]],
+      "tr": { "en": "In the city there is a park and two squares. The park is big and the squares are pretty.", "es": "En la ciudad hay un parque y dos plazas. El parque es grande y las plazas son bonitas." },
+      "why": { "en": "Parque is masculine and plaza is feminine: el parque, las plazas.", "es": "Parque es masculino y plaza es femenino: el parque, las plazas." }
+    },
+    {
+      "id": "sn-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "Tengo dos libro en la mochila.",
+      "wrongIndex": 2,
+      "answer": "libros",
+      "explain": { "en": "After dos the noun is plural: libros.", "es": "Después de dos el sustantivo va en plural: libros." },
+      "tr": { "en": "I have two books in my backpack.", "es": "Tengo dos libros en la mochila." }
+    },
+    {
+      "id": "sn-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "El mano está limpia.",
+      "wrongIndex": 0,
+      "answer": "La",
+      "explain": { "en": "Mano is feminine even though it ends in -o, and limpia confirms it: la mano.", "es": "Mano es femenino aunque acabe en -o, y limpia lo confirma: la mano." },
+      "tr": { "en": "The hand is clean.", "es": "La mano está limpia." }
+    },
+    {
+      "id": "sn-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "La problema es difícil.",
+      "wrongIndex": 0,
+      "answer": "El",
+      "explain": { "en": "Problema ends in -a but is masculine (a word of Greek origin): el problema.", "es": "Problema acaba en -a, pero es masculino (palabra de origen griego): el problema." },
+      "tr": { "en": "The problem is difficult.", "es": "El problema es difícil." }
+    },
+    {
+      "id": "sn-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "Hay dos luz en la sala.",
+      "wrongIndex": 2,
+      "answer": "luces",
+      "explain": { "en": "After dos the plural of luz is luces: the z turns into c.", "es": "Después de dos el plural de luz es luces: la z pasa a c." },
+      "tr": { "en": "There are two lights in the living room.", "es": "Hay dos luces en la sala." }
+    },
+    {
+      "id": "sn-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "pez",
+        "mes",
+        "canción"
+      ],
+      "es": "Hay tres ___ en el agua.",
+      "word": "pez",
+      "answer": "peces",
+      "tr": { "en": "There are three fish in the water.", "es": "Hay tres peces en el agua." },
+      "why": { "en": "A final -z turns into c before -es: pez, peces.", "es": "La -z final pasa a c antes de -es: pez, peces." }
+    },
+    {
+      "id": "sn-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": ["mes", "papel", "canción"],
+      "es": "Hay doce ___ en un año.",
+      "word": "mes",
+      "answer": "meses",
+      "tr": { "en": "There are twelve months in a year.", "es": "Hay doce meses en un año." },
+      "why": { "en": "After a consonant you add -es: mes, meses.", "es": "Tras consonante se añade -es: mes, meses." }
+    },
+    {
+      "id": "sn-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": ["canción", "ciudad", "mes"],
+      "es": "Mi hermana canta tres ___ .",
+      "word": "canción",
+      "answer": "canciones",
+      "tr": { "en": "My sister sings three songs.", "es": "Mi hermana canta tres canciones." },
+      "why": { "en": "Words in -ción lose the written accent in the plural: canción, canciones.", "es": "Las palabras en -ción pierden el acento escrito en plural: canción, canciones." }
+    },
+    {
+      "id": "sn-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "examen",
+        "pez",
+        "ciudad"
+      ],
+      "es": "Mañana tengo dos ___ en la escuela.",
+      "word": "examen",
+      "answer": "exámenes",
+      "tr": { "en": "Tomorrow I have two exams at school.", "es": "Mañana tengo dos exámenes en la escuela." },
+      "why": { "en": "In the plural examen gains a written accent: examen, exámenes.", "es": "En plural examen gana un acento escrito: examen, exámenes." }
+    },
+    {
+      "id": "sn-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "I have two blue pencils.", "es": "Tengo dos lápices azules." },
+      "es": "Tengo dos lápices azules."
+    },
+    {
+      "id": "sn-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "The cities are very big.", "es": "Las ciudades son muy grandes." },
+      "es": "Las ciudades son muy grandes."
+    },
+    {
+      "id": "sn-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "The problem is very difficult.", "es": "El problema es muy difícil." },
+      "es": "El problema es muy difícil."
+    },
+    {
+      "id": "sn-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "My parents have two dogs.", "es": "Mis padres tienen dos perros." },
+      "es": "Mis padres tienen dos perros."
+    },
+    {
+      "id": "sn-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "The children are very small.", "es": "Los niños son muy pequeños." },
+      "es": "Los niños son muy pequeños."
+    }
   ]
 }

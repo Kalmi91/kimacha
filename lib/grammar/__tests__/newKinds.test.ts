@@ -9,11 +9,11 @@ const serEstar = lessonFor('es', 'ser-estar') as LessonV2;
 const negacion = lessonFor('es', 'negacion') as LessonV2;
 
 describe('new task kinds in the two trial lessons', () => {
-  it('ser-estar: no error spotting, dictation 5, no word order', () => {
+  it('ser-estar: no error spotting, dictation 5, word order 5 (E132)', () => {
     const c = grammarKindCounts(serEstar);
     expect(c.spot).toBe(0);
     expect(c.dictation).toBe(5);
-    expect(c.order).toBe(0);
+    expect(c.order).toBe(5);
   });
 
   it('negacion: word order 5 + error spotting 5, no dictation', () => {
@@ -23,13 +23,13 @@ describe('new task kinds in the two trial lessons', () => {
     expect(c.dictation).toBe(0);
   });
 
-  it('every new item is marked trial, and only these two lessons have a new kind', () => {
+  it('every new item is marked trial, and the old lessons outside A1 have no new kind', () => {
     for (const lesson of [serEstar, negacion]) {
       const fresh = lesson.items.filter((i) => ['spot', 'order', 'dictation'].includes(i.kind ?? ''));
-      expect(fresh.length).toBe(lesson === serEstar ? 5 : 10);
+      expect(fresh.length).toBe(10); // ser-estar: dictation 5 + order 5 (E132); negacion: order 5 + spot 5
       expect(fresh.every((i) => isTrialItem(i))).toBe(true);
     }
-    const others = ['presente-irregular', 'sustantivo-numero', 'gustar', 'por-para', 'perfecto'];
+    const others = ['por-para', 'perfecto']; // (the A1 topics get word order from E132 on)
     for (const id of others) {
       const l = lessonFor('es', id)!;
       const c = grammarKindCounts(l);
@@ -37,7 +37,7 @@ describe('new task kinds in the two trial lessons', () => {
     }
   });
 
-  it('the lessons of the es→en direction have not changed', () => {
+  it('the lessons of the esâ†’en direction have not changed', () => {
     for (const id of ['to_be', 'articles']) {
       const l = lessonFor('en', id)!;
       const c = grammarKindCounts(l);
@@ -56,9 +56,11 @@ describe('new task kinds in the two trial lessons', () => {
   it('the round puts the new items at the end, with their own kind label', () => {
     const round = buildGrammarRound(negacion, 7);
     const kinds = round.map((r) => grammarRoundItemKind(r));
-    const firstNew = kinds.findIndex((k) => k === 'order' || k === 'spot');
+    // the typed task kinds of the A1 task content (opencloze, fix, bank) are new kinds too and follow the same rule
+    const isNew = (k: string) => ['order', 'spot', 'opencloze', 'fix', 'bank'].includes(k);
+    const firstNew = kinds.findIndex((k) => isNew(k));
     expect(firstNew).toBeGreaterThan(0);
-    expect(kinds.slice(firstNew).every((k) => k === 'order' || k === 'spot')).toBe(true);
+    expect(kinds.slice(firstNew).every((k) => isNew(k))).toBe(true);
     expect(round.filter((r) => grammarRoundItemKind(r) === 'choice').every((r) => 'options' in r)).toBe(true);
   });
 });

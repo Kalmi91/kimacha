@@ -1418,6 +1418,240 @@
         }
       ],
       "correctIndex": 2
+    },
+    {
+      "id": "pm-tr-01",
+      "kind": "transform",
+      "tense": { "from": "ir-a", "to": "presente" },
+      "prompt": { "en": "I am going to have to work today.", "es": "Voy a tener que trabajar hoy." },
+      "answer": "Tengo que trabajar hoy.",
+      "accept": ["Yo tengo que trabajar hoy."],
+      "wordIds": ["16", "49", "52"],
+      "why": { "en": "Obligation: tener que + infinitive. In the present tense, yo: tengo que trabajar.", "es": "Obligación: tener que + infinitivo. En presente, yo: tengo que trabajar." }
+    },
+    {
+      "id": "pm-tr-02",
+      "kind": "transform",
+      "tense": { "from": "ir-a", "to": "presente" },
+      "prompt": { "en": "We are going to be able to swim.", "es": "Vamos a poder nadar." },
+      "answer": "Podemos nadar.",
+      "accept": ["Nosotros podemos nadar."],
+      "wordIds": ["77", "1020"],
+      "why": { "en": "Ability: poder + infinitive. In the present tense, nosotros: podemos nadar.", "es": "Capacidad: poder + infinitivo. En presente, nosotros: podemos nadar." }
+    },
+    {
+      "id": "pm-tr-03",
+      "kind": "transform",
+      "tense": { "from": "ir-a", "to": "presente" },
+      "prompt": { "en": "My brother is going to want to eat here.", "es": "Mi hermano va a querer comer aquí." },
+      "answer": "Mi hermano quiere comer aquí.",
+      "wordIds": ["23", "25", "42", "9"],
+      "why": { "en": "Wish: querer + infinitive. In the present tense, él: quiere comer.", "es": "Deseo: querer + infinitivo. En presente, él: quiere comer." }
+    },
+    {
+      "id": "pm-tr-04",
+      "kind": "transform",
+      "tense": { "from": "ir-a", "to": "presente" },
+      "prompt": { "en": "You are going to have to study more.", "es": "Vas a deber estudiar más." },
+      "answer": "Debes estudiar más.",
+      "accept": ["Tú debes estudiar más."],
+      "wordIds": ["212", "65"],
+      "why": { "en": "Advice or moral duty: deber + infinitive. In the present tense, tú: debes estudiar.", "es": "Consejo u obligación moral: deber + infinitivo. En presente, tú: debes estudiar." }
+    },
+    {
+      "id": "pm-tr-05",
+      "kind": "transform",
+      "tense": { "from": "ir-a", "to": "presente" },
+      "prompt": { "en": "They are going to have to wait.", "es": "Ellos van a tener que esperar." },
+      "answer": "Ellos tienen que esperar.",
+      "accept": ["Tienen que esperar."],
+      "wordIds": ["16", "150"],
+      "why": { "en": "Obligation: tener que + infinitive. In the present tense, ellos: tienen que esperar.", "es": "Obligación: tener que + infinitivo. En presente, ellos: tienen que esperar." }
+    },
+    {
+      "id": "pm-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Mi madre quiere ir al cine. Yo también ___ ir al cine y mis amigos también ___ ir al cine.",
+      "answers": ["quiero", "quieren"],
+      "tr": { "en": "My mother wants to go to the movies. I also want to go to the movies and my friends also want to go to the movies.", "es": "Mi madre quiere ir al cine. Yo también quiero ir al cine y mis amigos también quieren ir al cine." },
+      "why": { "en": "Querer + infinitive expresses a wish: yo quiero ir, ellos quieren ir.", "es": "Querer + infinitivo expresa un deseo: yo quiero ir, ellos quieren ir." }
+    },
+    {
+      "id": "pm-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Tú puedes nadar muy bien. Yo también ___ nadar muy bien y mi hermano también ___ nadar muy bien.",
+      "answers": ["puedo", "puede"],
+      "tr": { "en": "You can swim very well. I can also swim very well and my brother can also swim very well.", "es": "Tú puedes nadar muy bien. Yo también puedo nadar muy bien y mi hermano también puede nadar muy bien." },
+      "why": { "en": "Poder + infinitive expresses ability: yo puedo nadar, él puede nadar.", "es": "Poder + infinitivo expresa capacidad: yo puedo nadar, él puede nadar." }
+    },
+    {
+      "id": "pm-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Mi padre tiene que trabajar hoy. Yo también ___ que trabajar hoy y mis hermanos también ___ que trabajar hoy.",
+      "answers": ["tengo", "tienen"],
+      "tr": { "en": "My father has to work today. I also have to work today and my brothers also have to work today.", "es": "Mi padre tiene que trabajar hoy. Yo también tengo que trabajar hoy y mis hermanos también tienen que trabajar hoy." },
+      "why": { "en": "Tener que + infinitive expresses obligation: tener changes with the person, que does not.", "es": "Tener que + infinitivo expresa obligación: tener cambia con la persona, que no cambia." }
+    },
+    {
+      "id": "pm-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Ana debe estudiar mucho. Yo también ___ estudiar mucho y tú también ___ estudiar mucho.",
+      "answers": ["debo", "debes"],
+      "tr": { "en": "Ana should study a lot. I should also study a lot and you should also study a lot.", "es": "Ana debe estudiar mucho. Yo también debo estudiar mucho y tú también debes estudiar mucho." },
+      "why": { "en": "Deber + infinitive expresses advice or moral duty: yo debo, tú debes.", "es": "Deber + infinitivo expresa consejo u obligación moral: yo debo, tú debes." }
+    },
+    {
+      "id": "pm-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Mi hermano quiere comer pizza. Yo también ___ comer pizza y nosotros también ___ comer pizza.",
+      "answers": ["quiero", "queremos"],
+      "tr": { "en": "My brother wants to eat pizza. I also want to eat pizza and we also want to eat pizza.", "es": "Mi hermano quiere comer pizza. Yo también quiero comer pizza y nosotros también queremos comer pizza." },
+      "why": { "en": "Querer changes e → ie in yo (quiero), but nosotros is regular: queremos.", "es": "Querer cambia e → ie en yo (quiero), pero nosotros es regular: queremos." }
+    },
+    {
+      "id": "pm-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "Mi madre quieren comer aquí.",
+      "wrongIndex": 2,
+      "answer": "quiere",
+      "explain": { "en": "Mi madre is ella: querer becomes quiere.", "es": "Mi madre es ella: querer se dice quiere." },
+      "tr": { "en": "My mother wants to eat here.", "es": "Mi madre quiere comer aquí." }
+    },
+    {
+      "id": "pm-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "Mis hermanos tiene que estudiar.",
+      "wrongIndex": 2,
+      "answer": "tienen",
+      "explain": { "en": "Mis hermanos is plural (ellos): tener becomes tienen.", "es": "Mis hermanos es plural (ellos): tener se dice tienen." },
+      "tr": { "en": "My brothers have to study.", "es": "Mis hermanos tienen que estudiar." }
+    },
+    {
+      "id": "pm-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "Mi hermana y yo puede nadar.",
+      "wrongIndex": 4,
+      "answer": "podemos",
+      "explain": { "en": "Mi hermana y yo means nosotros: poder becomes podemos.", "es": "Mi hermana y yo equivale a nosotros: poder se dice podemos." },
+      "tr": { "en": "My sister and I can swim.", "es": "Mi hermana y yo podemos nadar." }
+    },
+    {
+      "id": "pm-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "Tengo de estudiar hoy.",
+      "wrongIndex": 1,
+      "answer": "que",
+      "explain": { "en": "Obligation is tener que + infinitive, not tener de.", "es": "La obligación se dice tener que + infinitivo, no tener de." },
+      "tr": { "en": "I have to study today.", "es": "Tengo que estudiar hoy." }
+    },
+    {
+      "id": "pm-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "Hay de estudiar mucho.",
+      "wrongIndex": 1,
+      "answer": "que",
+      "explain": { "en": "The impersonal obligation is hay que + infinitive, not hay de.", "es": "La obligación impersonal se dice hay que + infinitivo, no hay de." },
+      "tr": { "en": "You have to study a lot.", "es": "Hay que estudiar mucho." }
+    },
+    {
+      "id": "pm-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": ["poder", "tener", "ir"],
+      "es": "Mi bebé no ___ caminar.",
+      "word": "poder",
+      "answer": "puede",
+      "tr": { "en": "My baby cannot walk.", "es": "Mi bebé no puede caminar." },
+      "why": { "en": "Poder + infinitive, ella: puede caminar.", "es": "Poder + infinitivo, ella: puede caminar." }
+    },
+    {
+      "id": "pm-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": ["querer", "tener", "ir"],
+      "es": "Yo ___ comer pizza hoy.",
+      "word": "querer",
+      "answer": "quiero",
+      "tr": { "en": "I want to eat pizza today.", "es": "Yo quiero comer pizza hoy." },
+      "why": { "en": "Querer + infinitive, yo: quiero comer.", "es": "Querer + infinitivo, yo: quiero comer." }
+    },
+    {
+      "id": "pm-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": ["tener", "poder", "querer"],
+      "es": "Mis hermanos ___ que limpiar la casa.",
+      "word": "tener",
+      "answer": "tienen",
+      "tr": { "en": "My brothers have to clean the house.", "es": "Mis hermanos tienen que limpiar la casa." },
+      "why": { "en": "Que goes with tener: tener que + infinitive, ellos: tienen que.", "es": "Con que se usa tener: tener que + infinitivo, ellos: tienen que." }
+    },
+    {
+      "id": "pm-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": ["deber", "tener", "ir"],
+      "es": "Tú ___ cuidar tu salud.",
+      "word": "deber",
+      "answer": "debes",
+      "tr": { "en": "You should take care of your health.", "es": "Tú debes cuidar tu salud." },
+      "why": { "en": "Deber + infinitive, tú: debes cuidar.", "es": "Deber + infinitivo, tú: debes cuidar." }
+    },
+    {
+      "id": "pm-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": ["poder", "tener", "ir"],
+      "es": "Nosotros ___ nadar muy bien en el mar.",
+      "word": "poder",
+      "answer": "podemos",
+      "tr": { "en": "We can swim very well in the sea.", "es": "Nosotros podemos nadar muy bien en el mar." },
+      "why": { "en": "Poder + infinitive, nosotros: podemos nadar.", "es": "Poder + infinitivo, nosotros: podemos nadar." }
+    },
+    {
+      "id": "pm-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "I have to study Spanish.", "es": "Tengo que estudiar español." },
+      "es": "Tengo que estudiar español."
+    },
+    {
+      "id": "pm-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "My friends want to go to the movies.", "es": "Mis amigos quieren ir al cine." },
+      "es": "Mis amigos quieren ir al cine."
+    },
+    {
+      "id": "pm-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "Can I open the window?", "es": "¿Puedo abrir la ventana?" },
+      "es": "¿Puedo abrir la ventana?"
+    },
+    {
+      "id": "pm-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "You should eat more fruit.", "es": "Debes comer más fruta." },
+      "es": "Debes comer más fruta."
+    },
+    {
+      "id": "pm-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "You have to drink a lot of water.", "es": "Hay que beber mucha agua." },
+      "es": "Hay que beber mucha agua."
     }
   ]
 }

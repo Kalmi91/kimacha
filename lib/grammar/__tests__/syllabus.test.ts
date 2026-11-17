@@ -6,7 +6,7 @@ import { getGrammarTopic, getGrammarTopicIds, grammarKindCounts, type GrammarKin
 import { doneGrammarTopicProgress } from '../syllabus';
 
 describe('doneGrammarTopicProgress', () => {
-  // hay-estar (es): 12 choice + 2 match + 7 why + 0 form items, so it has exactly three kinds.
+  // hay-estar (es): 12 choice + 2 match + 7 why + 5 form items (the estar forms, E132) + the E132 transform and order kinds (5 each).
   it('needs every existing kind done, not just one', () => {
     const oneKindDone = [{ itemId: 'hay-estar:choice', state: 'done', data: { correct: 12, total: 12 } }];
     expect(doneGrammarTopicProgress('es', oneKindDone).has('hay-estar')).toBe(false);
@@ -20,6 +20,9 @@ describe('doneGrammarTopicProgress', () => {
     const allKindsDone = [
       ...twoKindsDone,
       { itemId: 'hay-estar:why', state: 'done', data: { correct: 7, total: 7 } },
+      { itemId: 'hay-estar:form', state: 'done', data: { correct: 5, total: 5 } },
+      { itemId: 'hay-estar:transform', state: 'done', data: { correct: 5, total: 5 } },
+      { itemId: 'hay-estar:order', state: 'done', data: { correct: 5, total: 5 } },
     ];
     expect(doneGrammarTopicProgress('es', allKindsDone).has('hay-estar')).toBe(true);
   });

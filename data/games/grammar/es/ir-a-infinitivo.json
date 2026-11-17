@@ -1925,6 +1925,331 @@
         "en": "A question about a planned action: ir a + infinitive. Ir is irregular, ellos: van.",
         "es": "Una pregunta sobre una acción planeada: ir a + infinitivo. Ir es irregular, ellos: van."
       }
+    },
+    {
+      "id": "iai-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Hoy es sábado. Mi hermano y yo ___ a ver una película. Mis padres ___ a comer en casa.",
+      "answers": [
+        "vamos",
+        "van"
+      ],
+      "tr": {
+        "en": "Today is Saturday. My brother and I are going to watch a movie. My parents are going to eat at home.",
+        "es": "Hoy es sábado. Mi hermano y yo vamos a ver una película. Mis padres van a comer en casa."
+      },
+      "why": {
+        "en": "Ir is irregular: yo voy, tú vas, él va, nosotros vamos, ellos van; then always a + infinitive.",
+        "es": "Ir es irregular: yo voy, tú vas, él va, nosotros vamos, ellos van; después siempre a + infinitivo."
+      }
+    },
+    {
+      "id": "iai-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Mañana yo ___ a estudiar en casa. Tú ___ a trabajar en la oficina.",
+      "answers": [
+        "voy",
+        "vas"
+      ],
+      "tr": {
+        "en": "Tomorrow I am going to study at home. You are going to work in the office.",
+        "es": "Mañana yo voy a estudiar en casa. Tú vas a trabajar en la oficina."
+      },
+      "why": {
+        "en": "Ir is irregular: yo voy, tú vas, él va, nosotros vamos, ellos van; then always a + infinitive.",
+        "es": "Ir es irregular: yo voy, tú vas, él va, nosotros vamos, ellos van; después siempre a + infinitivo."
+      }
+    },
+    {
+      "id": "iai-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Esta noche ella ___ a beber un café. Yo ___ a comer con ella.",
+      "answers": [
+        "va",
+        "voy"
+      ],
+      "tr": {
+        "en": "Tonight she is going to drink a coffee. I am going to eat with her.",
+        "es": "Esta noche ella va a beber un café. Yo voy a comer con ella."
+      },
+      "why": {
+        "en": "Ir is irregular: yo voy, tú vas, él va, nosotros vamos, ellos van; then always a + infinitive.",
+        "es": "Ir es irregular: yo voy, tú vas, él va, nosotros vamos, ellos van; después siempre a + infinitivo."
+      }
+    },
+    {
+      "id": "iai-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Mi amigo va ___ comprar pan. Nosotros vamos ___ comer aquí.",
+      "answers": [
+        "a",
+        "a"
+      ],
+      "tr": {
+        "en": "My friend is going to buy bread. We are going to eat here.",
+        "es": "Mi amigo va a comprar pan. Nosotros vamos a comer aquí."
+      },
+      "why": {
+        "en": "In ir a + infinitive the little word a is obligatory between ir and the infinitive.",
+        "es": "En ir a + infinitivo la palabrita a es obligatoria entre ir y el infinitivo."
+      }
+    },
+    {
+      "id": "iai-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Esta tarde tú ___ a llamar a tu mamá. Ustedes ___ a comer pan.",
+      "answers": [
+        "vas",
+        "van"
+      ],
+      "tr": {
+        "en": "This afternoon you are going to call your mom. You all are going to eat bread.",
+        "es": "Esta tarde tú vas a llamar a tu mamá. Ustedes van a comer pan."
+      },
+      "why": {
+        "en": "Ir is irregular: yo voy, tú vas, él va, nosotros vamos, ellos van; then always a + infinitive.",
+        "es": "Ir es irregular: yo voy, tú vas, él va, nosotros vamos, ellos van; después siempre a + infinitivo."
+      }
+    },
+    {
+      "id": "iai-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "Yo va a estudiar hoy.",
+      "wrongIndex": 1,
+      "answer": "voy",
+      "explain": {
+        "en": "The subject is yo, so the verb is voy, not va.",
+        "es": "El sujeto es yo, así que el verbo es voy, no va."
+      },
+      "tr": {
+        "en": "I am going to study today.",
+        "es": "Yo voy a estudiar hoy."
+      }
+    },
+    {
+      "id": "iai-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "Nosotros van a caminar al parque.",
+      "wrongIndex": 1,
+      "answer": "vamos",
+      "explain": {
+        "en": "The subject is nosotros, so the verb is vamos, not van.",
+        "es": "El sujeto es nosotros, así que el verbo es vamos, no van."
+      },
+      "tr": {
+        "en": "We are going to walk to the park.",
+        "es": "Nosotros vamos a caminar al parque."
+      }
+    },
+    {
+      "id": "iai-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "Ellos va a trabajar mañana.",
+      "wrongIndex": 1,
+      "answer": "van",
+      "explain": {
+        "en": "The subject is ellos, so the verb is van, not va.",
+        "es": "El sujeto es ellos, así que el verbo es van, no va."
+      },
+      "tr": {
+        "en": "They are going to work tomorrow.",
+        "es": "Ellos van a trabajar mañana."
+      }
+    },
+    {
+      "id": "iai-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "Voy de comer en casa.",
+      "wrongIndex": 1,
+      "answer": "a",
+      "explain": {
+        "en": "Between ir and the infinitive the word is a, not de.",
+        "es": "Entre ir y el infinitivo la palabra es a, no de."
+      },
+      "tr": {
+        "en": "I am going to eat at home.",
+        "es": "Voy a comer en casa."
+      }
+    },
+    {
+      "id": "iai-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "Mañana voy a estudio en casa.",
+      "wrongIndex": 3,
+      "answer": "estudiar",
+      "explain": {
+        "en": "After ir a the verb stays in the infinitive: estudiar.",
+        "es": "Después de ir a el verbo queda en infinitivo: estudiar."
+      },
+      "tr": {
+        "en": "Tomorrow I am going to study at home.",
+        "es": "Mañana voy a estudiar en casa."
+      }
+    },
+    {
+      "id": "iai-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "ir",
+        "tener",
+        "estar"
+      ],
+      "es": "Ellos ___ a viajar mañana.",
+      "word": "ir",
+      "answer": "van",
+      "tr": {
+        "en": "They are going to travel tomorrow.",
+        "es": "Ellos van a viajar mañana."
+      },
+      "why": {
+        "en": "Ir is irregular: yo voy, tú vas, él va, nosotros vamos, ellos van; then always a + infinitive.",
+        "es": "Ir es irregular: yo voy, tú vas, él va, nosotros vamos, ellos van; después siempre a + infinitivo."
+      }
+    },
+    {
+      "id": "iai-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "ir",
+        "tener",
+        "estar"
+      ],
+      "es": "Nosotros ___ a beber agua.",
+      "word": "ir",
+      "answer": "vamos",
+      "tr": {
+        "en": "We are going to drink water.",
+        "es": "Nosotros vamos a beber agua."
+      },
+      "why": {
+        "en": "Ir is irregular: yo voy, tú vas, él va, nosotros vamos, ellos van; then always a + infinitive.",
+        "es": "Ir es irregular: yo voy, tú vas, él va, nosotros vamos, ellos van; después siempre a + infinitivo."
+      }
+    },
+    {
+      "id": "iai-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "ir",
+        "tener",
+        "estar"
+      ],
+      "es": "Tú ___ a llegar tarde.",
+      "word": "ir",
+      "answer": "vas",
+      "tr": {
+        "en": "You are going to arrive late.",
+        "es": "Tú vas a llegar tarde."
+      },
+      "why": {
+        "en": "Ir is irregular: yo voy, tú vas, él va, nosotros vamos, ellos van; then always a + infinitive.",
+        "es": "Ir es irregular: yo voy, tú vas, él va, nosotros vamos, ellos van; después siempre a + infinitivo."
+      }
+    },
+    {
+      "id": "iai-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "ir",
+        "ser",
+        "hacer"
+      ],
+      "es": "Ana ___ a leer un libro.",
+      "word": "ir",
+      "answer": "va",
+      "tr": {
+        "en": "Ana is going to read a book.",
+        "es": "Ana va a leer un libro."
+      },
+      "why": {
+        "en": "Ir is irregular: yo voy, tú vas, él va, nosotros vamos, ellos van; then always a + infinitive.",
+        "es": "Ir es irregular: yo voy, tú vas, él va, nosotros vamos, ellos van; después siempre a + infinitivo."
+      }
+    },
+    {
+      "id": "iai-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "ir",
+        "ser",
+        "dar"
+      ],
+      "es": "Yo ___ a hablar con mi hermana.",
+      "word": "ir",
+      "answer": "voy",
+      "tr": {
+        "en": "I am going to talk with my sister.",
+        "es": "Yo voy a hablar con mi hermana."
+      },
+      "why": {
+        "en": "Ir is irregular: yo voy, tú vas, él va, nosotros vamos, ellos van; then always a + infinitive.",
+        "es": "Ir es irregular: yo voy, tú vas, él va, nosotros vamos, ellos van; después siempre a + infinitivo."
+      }
+    },
+    {
+      "id": "iai-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "I am going to eat bread.",
+        "es": "Voy a comer pan."
+      },
+      "es": "Voy a comer pan."
+    },
+    {
+      "id": "iai-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "We are going to study Spanish.",
+        "es": "Vamos a estudiar español."
+      },
+      "es": "Vamos a estudiar español."
+    },
+    {
+      "id": "iai-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "She is going to call her mom.",
+        "es": "Ella va a llamar a su mamá."
+      },
+      "es": "Ella va a llamar a su mamá."
+    },
+    {
+      "id": "iai-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "They are going to travel.",
+        "es": "Ellos van a viajar."
+      },
+      "es": "Ellos van a viajar."
+    },
+    {
+      "id": "iai-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "Are you going to eat pizza?",
+        "es": "¿Vas a comer pizza?"
+      },
+      "es": "¿Vas a comer pizza?"
     }
   ]
 }

@@ -390,7 +390,7 @@
     {
       "id": "ld-05",
       "sentence": "¿Dónde está el libro? Está ___.",
-      "options": ["encima", "encima de"],
+      "options": ["encima", "encima de", "sobre"],
       "correct": 0,
       "why": {
         "en": "No noun follows, so the de drops: Está encima.",
@@ -400,6 +400,10 @@
         "encima de": {
           "en": "De needs a noun after it (encima de la mesa); at the end of a sentence it is left out, so just Está encima.",
           "es": "De necesita un sustantivo después (encima de la mesa); al final de la frase se omite, así que solo Está encima."
+        },
+        "sobre": {
+          "en": "Sobre also needs a noun after it (sobre la mesa) and cannot stand alone at the end of the sentence; here the one-word answer is encima.",
+          "es": "Sobre también necesita un sustantivo después (sobre la mesa) y no puede quedar solo al final de la frase; aquí la respuesta de una palabra es encima."
         }
       },
       "examples": ["¿Dónde está el gato? Está debajo.", "¿Dónde está mi mochila? Está detrás."],
@@ -433,7 +437,7 @@
     {
       "id": "ld-07",
       "sentence": "El gato está entre ___ silla y la mesa.",
-      "options": ["la", "de la"],
+      "options": ["la", "de la", "a la"],
       "correct": 0,
       "why": {
         "en": "Entre takes no de: entre la silla y la mesa.",
@@ -443,6 +447,10 @@
         "de la": {
           "en": "Entre never takes de, unlike encima de or detrás de; it goes straight to the noun: entre la silla y la mesa.",
           "es": "Entre nunca lleva de, a diferencia de encima de o detrás de; va directo al sustantivo: entre la silla y la mesa."
+        },
+        "a la": {
+          "en": "A la marks direction (voy a la silla), not a position between two things; entre goes straight to the noun: entre la silla y la mesa.",
+          "es": "A la marca dirección (voy a la silla), no una posición entre dos cosas; entre va directo al sustantivo: entre la silla y la mesa."
         }
       },
       "examples": ["Mi libro está entre la silla y el sofá.", "Ana está entre Luis y María."],
@@ -803,6 +811,641 @@
           "es": "Esta expresión de lugar se forma con de, no con a: detrás del."
         }
       }
+    },
+    {
+      "id": "ld-tr-01",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "I walk to the park.",
+        "es": "Camino hasta el parque."
+      },
+      "answer": "Voy a caminar hasta el parque.",
+      "wordIds": [
+        "33",
+        "229",
+        "254"
+      ],
+      "why": {
+        "en": "With ir a + infinitive the place phrase stays unchanged: voy a poner el libro encima de la mesa.",
+        "es": "Con ir a + infinitivo la expresión de lugar no cambia: voy a poner el libro encima de la mesa."
+      }
+    },
+    {
+      "id": "ld-tr-02",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "I cross the street.",
+        "es": "Cruzo la calle."
+      },
+      "answer": "Voy a cruzar la calle.",
+      "wordIds": [
+        "33",
+        "120"
+      ],
+      "why": {
+        "en": "With ir a + infinitive the place phrase stays unchanged: voy a poner el libro encima de la mesa.",
+        "es": "Con ir a + infinitivo la expresión de lugar no cambia: voy a poner el libro encima de la mesa."
+      }
+    },
+    {
+      "id": "ld-tr-03",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "I keep going straight.",
+        "es": "Sigo recto."
+      },
+      "answer": "Voy a seguir recto.",
+      "wordIds": [
+        "33"
+      ],
+      "why": {
+        "en": "With ir a + infinitive the place phrase stays unchanged: voy a poner el libro encima de la mesa.",
+        "es": "Con ir a + infinitivo la expresión de lugar no cambia: voy a poner el libro encima de la mesa."
+      }
+    },
+    {
+      "id": "ld-tr-04",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "I sleep next to my brother.",
+        "es": "Duermo al lado de mi hermano."
+      },
+      "answer": "Voy a dormir al lado de mi hermano.",
+      "wordIds": [
+        "33",
+        "213",
+        "42"
+      ],
+      "why": {
+        "en": "With ir a + infinitive the place phrase stays unchanged: voy a poner el libro encima de la mesa.",
+        "es": "Con ir a + infinitivo la expresión de lugar no cambia: voy a poner el libro encima de la mesa."
+      }
+    },
+    {
+      "id": "ld-tr-05",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "I put the book on the table.",
+        "es": "Pongo el libro encima de la mesa."
+      },
+      "answer": "Voy a poner el libro encima de la mesa.",
+      "wordIds": [
+        "33",
+        "124",
+        "115"
+      ],
+      "why": {
+        "en": "With ir a + infinitive the place phrase stays unchanged: voy a poner el libro encima de la mesa.",
+        "es": "Con ir a + infinitivo la expresión de lugar no cambia: voy a poner el libro encima de la mesa."
+      }
+    },
+    {
+      "id": "ld-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "El banco está a la derecha ___ la farmacia. La farmacia está a la izquierda ___ banco.",
+      "answers": [
+        "de",
+        "del"
+      ],
+      "tr": {
+        "en": "The bank is to the right of the pharmacy. The pharmacy is to the left of the bank.",
+        "es": "El banco está a la derecha de la farmacia. La farmacia está a la izquierda del banco."
+      },
+      "why": {
+        "en": "After a place phrase comes de; de + el becomes del before a masculine noun.",
+        "es": "Después de una expresión de lugar viene de; de + el se convierte en del delante de un sustantivo masculino."
+      }
+    },
+    {
+      "id": "ld-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Ana está delante de Luis, y Luis está ___ de Ana. El perro está debajo de la silla, y la silla está ___ del perro.",
+      "answers": [
+        "detrás",
+        "encima"
+      ],
+      "accept": [
+        [
+          "atrás"
+        ],
+        [
+          "arriba"
+        ]
+      ],
+      "tr": {
+        "en": "Ana is in front of Luis, and Luis is behind Ana. The dog is under the chair, and the chair is on top of the dog.",
+        "es": "Ana está delante de Luis, y Luis está detrás de Ana. El perro está debajo de la silla, y la silla está encima del perro."
+      },
+      "why": {
+        "en": "Opposites: delante / detrás and debajo / encima.",
+        "es": "Los opuestos: delante / detrás y debajo / encima."
+      }
+    },
+    {
+      "id": "ld-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "La farmacia está enfrente ___ banco. Mi casa está cerca ___ la escuela.",
+      "answers": [
+        "del",
+        "de"
+      ],
+      "tr": {
+        "en": "The pharmacy is across from the bank. My house is near the school.",
+        "es": "La farmacia está enfrente del banco. Mi casa está cerca de la escuela."
+      },
+      "why": {
+        "en": "Enfrente and cerca take de; before el it becomes del, before la it stays de.",
+        "es": "Enfrente y cerca llevan de; delante de el pasa a del, delante de la queda de."
+      }
+    },
+    {
+      "id": "ld-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "¿Dónde ___ el baño? ___ un gato debajo de la mesa.",
+      "answers": [
+        "está",
+        "Hay"
+      ],
+      "tr": {
+        "en": "Where is the bathroom? There is a cat under the table.",
+        "es": "¿Dónde está el baño? Hay un gato debajo de la mesa."
+      },
+      "why": {
+        "en": "Está says where a known thing is; hay says that something new exists in a place.",
+        "es": "Está dice dónde está una cosa conocida; hay dice que algo nuevo existe en un lugar."
+      }
+    },
+    {
+      "id": "ld-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "La tienda está entre el banco ___ la farmacia. El baño está ___ la derecha de la sala.",
+      "answers": [
+        "y",
+        "a"
+      ],
+      "tr": {
+        "en": "The shop is between the bank and the pharmacy. The bathroom is to the right of the living room.",
+        "es": "La tienda está entre el banco y la farmacia. El baño está a la derecha de la sala."
+      },
+      "why": {
+        "en": "Entre needs y between the two places; the side is given with a la derecha / a la izquierda.",
+        "es": "Entre pide y entre los dos lugares; el lado se da con a la derecha / a la izquierda."
+      }
+    },
+    {
+      "id": "ld-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "El hospital está cerca al parque.",
+      "wrongIndex": 4,
+      "answer": "del",
+      "explain": {
+        "en": "After cerca the word is de, and de + el becomes del: cerca del parque.",
+        "es": "Después de cerca la palabra es de, y de + el se convierte en del: cerca del parque."
+      },
+      "tr": {
+        "en": "The hospital is near the park.",
+        "es": "El hospital está cerca del parque."
+      }
+    },
+    {
+      "id": "ld-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "Mi casa está lejos a la escuela.",
+      "wrongIndex": 4,
+      "answer": "de",
+      "explain": {
+        "en": "After lejos the word is de: lejos de la escuela.",
+        "es": "Después de lejos la palabra es de: lejos de la escuela."
+      },
+      "tr": {
+        "en": "My house is far from the school.",
+        "es": "Mi casa está lejos de la escuela."
+      }
+    },
+    {
+      "id": "ld-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "El baño está entre la cocina con la sala.",
+      "wrongIndex": 6,
+      "answer": "y",
+      "explain": {
+        "en": "Entre joins the two places with y: entre la cocina y la sala.",
+        "es": "Entre une los dos lugares con y: entre la cocina y la sala."
+      },
+      "tr": {
+        "en": "The bathroom is between the kitchen and the living room.",
+        "es": "El baño está entre la cocina y la sala."
+      }
+    },
+    {
+      "id": "ld-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "El baño está en la derecha.",
+      "wrongIndex": 3,
+      "answer": "a",
+      "explain": {
+        "en": "The side is given with a: a la derecha.",
+        "es": "El lado se da con a: a la derecha."
+      },
+      "tr": {
+        "en": "The bathroom is on the right.",
+        "es": "El baño está a la derecha."
+      }
+    },
+    {
+      "id": "ld-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "Está un perro debajo de la silla.",
+      "wrongIndex": 0,
+      "answer": "Hay",
+      "explain": {
+        "en": "A new thing that exists in a place is introduced with hay, not está.",
+        "es": "Una cosa nueva que existe en un lugar se presenta con hay, no con está."
+      },
+      "tr": {
+        "en": "There is a dog under the chair.",
+        "es": "Hay un perro debajo de la silla."
+      }
+    },
+    {
+      "id": "ld-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "del",
+        "de la",
+        "al"
+      ],
+      "es": "El gato está encima ___ sofá.",
+      "word": "del",
+      "answer": "del",
+      "tr": {
+        "en": "The cat is on top of the sofa.",
+        "es": "El gato está encima del sofá."
+      },
+      "why": {
+        "en": "De + el always becomes del.",
+        "es": "De + el siempre se convierte en del."
+      }
+    },
+    {
+      "id": "ld-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "del",
+        "de la",
+        "al"
+      ],
+      "es": "La tienda está enfrente ___ escuela.",
+      "word": "de la",
+      "answer": "de la",
+      "tr": {
+        "en": "The shop is across from the school.",
+        "es": "La tienda está enfrente de la escuela."
+      },
+      "why": {
+        "en": "Escuela is feminine, so de stays separate: de la.",
+        "es": "Escuela es femenino, así que de queda separado: de la."
+      }
+    },
+    {
+      "id": "ld-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "delante",
+        "detrás",
+        "encima"
+      ],
+      "es": "Ana está delante de Luis, y Luis está ___ de Ana.",
+      "word": "detrás",
+      "answer": "detrás",
+      "tr": {
+        "en": "Ana is in front of Luis, and Luis is behind Ana.",
+        "es": "Ana está delante de Luis, y Luis está detrás de Ana."
+      },
+      "why": {
+        "en": "The opposite of delante is detrás.",
+        "es": "El opuesto de delante es detrás."
+      }
+    },
+    {
+      "id": "ld-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "está",
+        "hay",
+        "son"
+      ],
+      "es": "¿Dónde ___ la farmacia?",
+      "word": "está",
+      "answer": "está",
+      "tr": {
+        "en": "Where is the pharmacy?",
+        "es": "¿Dónde está la farmacia?"
+      },
+      "why": {
+        "en": "A known thing (la farmacia) is located with está.",
+        "es": "Una cosa conocida (la farmacia) se localiza con está."
+      }
+    },
+    {
+      "id": "ld-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "está",
+        "hay",
+        "son"
+      ],
+      "es": "En mi calle ___ una farmacia.",
+      "word": "hay",
+      "answer": "hay",
+      "tr": {
+        "en": "There is a pharmacy on my street.",
+        "es": "En mi calle hay una farmacia."
+      },
+      "why": {
+        "en": "Something new (una farmacia) that exists in a place takes hay.",
+        "es": "Algo nuevo (una farmacia) que existe en un lugar lleva hay."
+      }
+    },
+    {
+      "id": "ld-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "Where is the pharmacy?",
+        "es": "¿Dónde está la farmacia?"
+      },
+      "es": "¿Dónde está la farmacia?"
+    },
+    {
+      "id": "ld-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "Is it near the bank?",
+        "es": "¿Está cerca del banco?"
+      },
+      "es": "¿Está cerca del banco?"
+    },
+    {
+      "id": "ld-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "Is it far from the school?",
+        "es": "¿Está lejos de la escuela?"
+      },
+      "es": "¿Está lejos de la escuela?"
+    },
+    {
+      "id": "ld-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "We go to the right.",
+        "es": "Vamos a la derecha."
+      },
+      "es": "Vamos a la derecha."
+    },
+    {
+      "id": "ld-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "Where is the school?",
+        "es": "¿Dónde está la escuela?"
+      },
+      "es": "¿Dónde está la escuela?"
+    },
+    {
+      "kind": "why",
+      "id": "ld-why-01",
+      "es": "El gato duerme debajo del sofá.",
+      "target": "del",
+      "tr": {
+        "en": "The cat sleeps under the sofa.",
+        "es": "El gato duerme debajo del sofá."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "de and the article el merge into one word",
+            "es": "de y el artículo el se unen en una sola palabra"
+          }
+        },
+        {
+          "text": {
+            "en": "a and the article el merge into one word",
+            "es": "a y el artículo el se unen en una sola palabra"
+          },
+          "wrong": {
+            "en": "That merge is al, and it marks direction; after debajo you need de, so it is del.",
+            "es": "Esa unión es al y marca dirección; después de debajo hace falta de, así que es del."
+          }
+        },
+        {
+          "text": {
+            "en": "de stays separate and el keeps its own place",
+            "es": "de queda separado y el conserva su lugar"
+          },
+          "wrong": {
+            "en": "De + el never stays apart: it always merges into del.",
+            "es": "De + el nunca queda separado: siempre se une en del."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "ld-why-02",
+      "es": "La escuela está lejos de mi casa.",
+      "target": "lejos de",
+      "tr": {
+        "en": "The school is far from my house.",
+        "es": "La escuela está lejos de mi casa."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "a place phrase that needs de before the next noun",
+            "es": "una expresión de lugar que pide de antes del sustantivo"
+          }
+        },
+        {
+          "text": {
+            "en": "a place phrase that needs a before the next noun",
+            "es": "una expresión de lugar que pide a antes del sustantivo"
+          },
+          "wrong": {
+            "en": "Lejos is followed by de, not by a: lejos de mi casa.",
+            "es": "Después de lejos viene de, no a: lejos de mi casa."
+          }
+        },
+        {
+          "text": {
+            "en": "a place phrase that needs no word before the next noun",
+            "es": "una expresión de lugar que no pide ninguna palabra antes del sustantivo"
+          },
+          "wrong": {
+            "en": "A noun cannot follow lejos directly; the little word de is needed.",
+            "es": "Un sustantivo no puede seguir a lejos directamente; hace falta la palabrita de."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "ld-why-03",
+      "es": "La farmacia está a la derecha del banco.",
+      "target": "a la derecha",
+      "tr": {
+        "en": "The pharmacy is to the right of the bank.",
+        "es": "La farmacia está a la derecha del banco."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "a position on one side of something",
+            "es": "una posición a un lado de algo"
+          }
+        },
+        {
+          "text": {
+            "en": "a position in front or behind",
+            "es": "una posición delante o detrás"
+          },
+          "wrong": {
+            "en": "In front or behind would be enfrente or detrás de; derecha is the side.",
+            "es": "Delante o detrás sería enfrente o detrás de; derecha es el lado."
+          }
+        },
+        {
+          "text": {
+            "en": "a position above or below",
+            "es": "una posición arriba o abajo"
+          },
+          "wrong": {
+            "en": "Above or below would be encima or debajo de; derecha is the side.",
+            "es": "Arriba o abajo sería encima o debajo de; derecha es el lado."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "ld-why-04",
+      "es": "Hay un gato debajo de la mesa.",
+      "target": "Hay",
+      "tr": {
+        "en": "There is a cat under the table.",
+        "es": "Hay un gato debajo de la mesa."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "it presents something new",
+            "es": "presenta algo nuevo"
+          }
+        },
+        {
+          "text": {
+            "en": "it says where something known is",
+            "es": "dice dónde está algo conocido"
+          },
+          "wrong": {
+            "en": "That is está: El gato está debajo de la mesa. The word hay introduces something new with un or una.",
+            "es": "Eso es está: El gato está debajo de la mesa. La palabra hay presenta algo nuevo con un o una."
+          }
+        },
+        {
+          "text": {
+            "en": "it is the plural of está",
+            "es": "es el plural de está"
+          },
+          "wrong": {
+            "en": "Hay does not change for one or many things, and the plural of está is están.",
+            "es": "Hay no cambia para una o varias cosas, y el plural de está es están."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "ld-why-05",
+      "es": "El baño está entre la cocina y la sala.",
+      "target": "entre",
+      "tr": {
+        "en": "The bathroom is between the kitchen and the living room.",
+        "es": "El baño está entre la cocina y la sala."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "a place in the middle of two things",
+            "es": "un lugar en medio de dos cosas"
+          }
+        },
+        {
+          "text": {
+            "en": "a place in front of one thing, joined with de",
+            "es": "un lugar delante de una cosa, unida con de"
+          },
+          "wrong": {
+            "en": "In front of one thing is enfrente de or delante de; entre needs two things.",
+            "es": "Delante de una cosa es enfrente de o delante de; entre necesita dos cosas."
+          }
+        },
+        {
+          "text": {
+            "en": "a place next to one thing, joined with a",
+            "es": "un lugar junto a una cosa, unida con a"
+          },
+          "wrong": {
+            "en": "Next to one thing is al lado de; entre needs two things joined with y.",
+            "es": "Junto a una cosa es al lado de; entre necesita dos cosas unidas con y."
+          }
+        }
+      ],
+      "correctIndex": 0
     }
   ]
 }

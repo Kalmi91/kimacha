@@ -766,7 +766,8 @@
       "sentence": "La tienda ___ cerca de mi casa.",
       "options": [
         "está",
-        "es"
+        "es",
+        "hay"
       ],
       "correct": 0,
       "why": {
@@ -777,6 +778,10 @@
         "es": {
           "en": "\"Es\" is not correct here: a place’s location is never expressed with ser + cerca. Correctly: La tienda está cerca de mi casa.",
           "es": "\"Es\" no es correcto aquí: la ubicación de un lugar nunca se dice con ser + cerca. Correctamente: La tienda está cerca de mi casa."
+        },
+        "hay": {
+          "en": "\"Hay\" only says that something exists and is not used with a known place. Correctly: La tienda está cerca de mi casa.",
+          "es": "«Hay» solo dice que algo existe y no se usa con un lugar conocido. Correctamente: La tienda está cerca de mi casa."
         }
       },
       "examples": [
@@ -814,7 +819,8 @@
       "sentence": "Este café ___ frío ahora.",
       "options": [
         "está",
-        "es"
+        "es",
+        "tiene"
       ],
       "correct": 0,
       "why": {
@@ -825,6 +831,10 @@
         "es": {
           "en": "\"Es\" also makes a correct sentence, but a different one: \"Este café es frío\" would mean this is a KIND of cold coffee, like iced coffee, not that it has cooled down.",
           "es": "\"Es\" también forma una frase correcta, pero distinta: \"Este café es frío\" significaría que es un TIPO de café frío, como un café helado, no que se haya enfriado."
+        },
+        "tiene": {
+          "en": "\"Tiene frío\" is said about people; a cup of coffee is cold with estar. Correctly: Este café está frío ahora.",
+          "es": "«Tiene frío» se dice de las personas; un café está frío con estar. Correctamente: Este café está frío ahora."
         }
       },
       "examples": [
@@ -838,7 +848,8 @@
       "sentence": "___ las tres de la tarde.",
       "options": [
         "Son",
-        "Están"
+        "Están",
+        "Es"
       ],
       "correct": 0,
       "why": {
@@ -849,6 +860,10 @@
         "Están": {
           "en": "\"Están\" does not make a correct sentence: estar is never used to tell time, this is a fixed exception. Correctly: Son las tres de la tarde.",
           "es": "\"Están\" no forma una frase correcta: estar nunca se usa para decir la hora, es una excepción fija. Correctamente: Son las tres de la tarde."
+        },
+        "Es": {
+          "en": "\"Es\" is singular, but the hour here is plural (las tres). Correctly: Son las tres de la tarde.",
+          "es": "«Es» es singular, pero la hora aquí es plural (las tres). Correctamente: Son las tres de la tarde."
         }
       },
       "examples": [
@@ -886,7 +901,8 @@
       "sentence": "Hoy ___ muy contento.",
       "options": [
         "estoy",
-        "soy"
+        "soy",
+        "tengo"
       ],
       "correct": 0,
       "why": {
@@ -897,6 +913,10 @@
         "soy": {
           "en": "\"Soy\" is not natural here: contento describes how you feel right now, and that takes estar: Hoy estoy muy contento.",
           "es": "\"Soy\" no es natural aquí: contento dice cómo te sientes ahora, y eso lleva estar: Hoy estoy muy contento."
+        },
+        "tengo": {
+          "en": "\"Tengo\" is not used for a feeling like contento; a feeling takes estar. Correctly: Hoy estoy muy contento.",
+          "es": "«Tengo» no se usa para un sentimiento como contento; un sentimiento lleva estar. Correctamente: Hoy estoy muy contento."
         }
       },
       "examples": [
@@ -934,7 +954,8 @@
       "sentence": "La fiesta ___ en mi casa esta noche.",
       "options": [
         "es",
-        "está"
+        "está",
+        "hay"
       ],
       "correct": 0,
       "why": {
@@ -945,6 +966,10 @@
         "está": {
           "en": "\"Está\" would treat the party like an OBJECT sitting there, not an organized event; an event’s location takes ser: La fiesta es en mi casa.",
           "es": "\"Está\" trataría la fiesta como un OBJETO colocado ahí, no como un evento organizado; el lugar de un evento lleva ser: La fiesta es en mi casa."
+        },
+        "hay": {
+          "en": "\"Hay\" does not go with a known event like la fiesta; the place of an event takes ser. Correctly: La fiesta es en mi casa esta noche.",
+          "es": "«Hay» no va con un evento conocido como la fiesta; el lugar de un evento lleva ser. Correctamente: La fiesta es en mi casa esta noche."
         }
       },
       "examples": [
@@ -1521,6 +1546,243 @@
         "en": "The door is open.",
         "es": "La puerta está abierta."
       }
+    },
+    {
+      "id": "se-tr-01",
+      "kind": "transform",
+      "tense": { "from": "ir-a", "to": "presente" },
+      "prompt": { "en": "I am going to be at home.", "es": "Voy a estar en casa." },
+      "answer": "Estoy en casa.",
+      "accept": ["Yo estoy en casa."],
+      "wordIds": ["33", "2", "19"],
+      "why": { "en": "Present tense, yo: a place is said with estar: estoy en casa.", "es": "Presente, yo: el lugar se dice con estar: estoy en casa." }
+    },
+    {
+      "id": "se-tr-02",
+      "kind": "transform",
+      "tense": { "from": "ir-a", "to": "presente" },
+      "prompt": { "en": "My mother is going to be a teacher.", "es": "Mi madre va a ser profesora." },
+      "answer": "Mi madre es profesora.",
+      "wordIds": ["33", "11", "38", "4384"],
+      "why": { "en": "Present tense, ella: a profession is said with ser: es profesora.", "es": "Presente, ella: la profesión se dice con ser: es profesora." }
+    },
+    {
+      "id": "se-tr-03",
+      "kind": "transform",
+      "tense": { "from": "ir-a", "to": "presente" },
+      "prompt": { "en": "We are going to be tired.", "es": "Vamos a estar cansados." },
+      "answer": "Estamos cansados.",
+      "accept": ["Nosotros estamos cansados."],
+      "wordIds": ["33", "2", "69"],
+      "why": { "en": "Present tense, nosotros: a temporary state is said with estar: estamos cansados.", "es": "Presente, nosotros: un estado temporal se dice con estar: estamos cansados." }
+    },
+    {
+      "id": "se-tr-04",
+      "kind": "transform",
+      "tense": { "from": "ir-a", "to": "presente" },
+      "prompt": { "en": "My friends are going to be engineers.", "es": "Mis amigos van a ser ingenieros." },
+      "answer": "Mis amigos son ingenieros.",
+      "wordIds": ["33", "11", "40", "685"],
+      "why": { "en": "Present tense, ellos: a profession is said with ser: son ingenieros.", "es": "Presente, ellos: la profesión se dice con ser: son ingenieros." }
+    },
+    {
+      "id": "se-tr-05",
+      "kind": "transform",
+      "tense": { "from": "ir-a", "to": "presente" },
+      "prompt": { "en": "You are going to be at school.", "es": "Vas a estar en la escuela." },
+      "answer": "Estás en la escuela.",
+      "accept": ["Tú estás en la escuela."],
+      "wordIds": ["33", "2", "118"],
+      "why": { "en": "Present tense, tú: a place is said with estar: estás en la escuela.", "es": "Presente, tú: el lugar se dice con estar: estás en la escuela." }
+    },
+    {
+      "id": "se-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Mi padre ___ médico. Hoy ___ en el hospital.",
+      "answers": ["es", "está"],
+      "tr": { "en": "My father is a doctor. Today he is at the hospital.", "es": "Mi padre es médico. Hoy está en el hospital." },
+      "why": { "en": "A profession is said with ser (es médico) and a place with estar (está en el hospital).", "es": "La profesión se dice con ser (es médico) y el lugar con estar (está en el hospital)." }
+    },
+    {
+      "id": "se-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Yo ___ estudiante. Ahora ___ en la biblioteca.",
+      "answers": ["soy", "estoy"],
+      "tr": { "en": "I am a student. Right now I am at the library.", "es": "Yo soy estudiante. Ahora estoy en la biblioteca." },
+      "why": { "en": "Identity is said with ser (soy estudiante) and a place with estar (estoy en la biblioteca).", "es": "La identidad se dice con ser (soy estudiante) y el lugar con estar (estoy en la biblioteca)." }
+    },
+    {
+      "id": "se-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Mis amigos ___ mexicanos. Ellos ___ en la ciudad.",
+      "answers": ["son", "están"],
+      "tr": { "en": "My friends are Mexican. They are in the city.", "es": "Mis amigos son mexicanos. Ellos están en la ciudad." },
+      "why": { "en": "Nationality is said with ser (son mexicanos) and a place with estar (están en la ciudad).", "es": "La nacionalidad se dice con ser (son mexicanos) y el lugar con estar (están en la ciudad)." }
+    },
+    {
+      "id": "se-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Ana ___ muy alta. Hoy ___ cansada.",
+      "answers": ["es", "está"],
+      "tr": { "en": "Ana is very tall. Today she is tired.", "es": "Ana es muy alta. Hoy está cansada." },
+      "why": { "en": "A characteristic is said with ser (es alta) and a temporary state with estar (está cansada).", "es": "Una característica se dice con ser (es alta) y un estado temporal con estar (está cansada)." }
+    },
+    {
+      "id": "se-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Nosotros ___ hermanos. Mi hermano ___ en la escuela.",
+      "answers": ["somos", "está"],
+      "tr": { "en": "We are brothers. My brother is at school.", "es": "Nosotros somos hermanos. Mi hermano está en la escuela." },
+      "why": { "en": "A relationship between people is said with ser (somos hermanos) and a place with estar (está en la escuela).", "es": "La relación entre personas se dice con ser (somos hermanos) y el lugar con estar (está en la escuela)." }
+    },
+    {
+      "id": "se-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "Mi madre es en la oficina.",
+      "wrongIndex": 2,
+      "answer": "está",
+      "explain": { "en": "The place of a person is said with estar: está en la oficina.", "es": "El lugar de una persona se dice con estar: está en la oficina." },
+      "tr": { "en": "My mother is at the office.", "es": "Mi madre está en la oficina." }
+    },
+    {
+      "id": "se-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "Yo estoy médico.",
+      "wrongIndex": 1,
+      "answer": "soy",
+      "explain": { "en": "A profession is said with ser: soy médico.", "es": "La profesión se dice con ser: soy médico." },
+      "tr": { "en": "I am a doctor.", "es": "Yo soy médico." }
+    },
+    {
+      "id": "se-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "Mis padres están mexicanos.",
+      "wrongIndex": 2,
+      "answer": "son",
+      "explain": { "en": "Nationality is said with ser: son mexicanos.", "es": "La nacionalidad se dice con ser: son mexicanos." },
+      "tr": { "en": "My parents are Mexican.", "es": "Mis padres son mexicanos." }
+    },
+    {
+      "id": "se-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "La tienda es cerrada.",
+      "wrongIndex": 2,
+      "answer": "está",
+      "explain": { "en": "A temporary state is said with estar: está cerrada.", "es": "Un estado temporal se dice con estar: está cerrada." },
+      "tr": { "en": "The store is closed.", "es": "La tienda está cerrada." }
+    },
+    {
+      "id": "se-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "Hoy soy muy cansado.",
+      "wrongIndex": 1,
+      "answer": "estoy",
+      "explain": { "en": "Tired is a temporary state: estoy cansado.", "es": "Cansado es un estado temporal: estoy cansado." },
+      "tr": { "en": "Today I am very tired.", "es": "Hoy estoy muy cansado." }
+    },
+    {
+      "id": "se-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": ["ser", "estar", "tener"],
+      "es": "Mi hermano ___ ingeniero.",
+      "word": "ser",
+      "answer": "es",
+      "tr": { "en": "My brother is an engineer.", "es": "Mi hermano es ingeniero." },
+      "why": { "en": "A profession is said with ser: él es ingeniero.", "es": "La profesión se dice con ser: él es ingeniero." }
+    },
+    {
+      "id": "se-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": ["ser", "estar", "tener"],
+      "es": "Los libros ___ en la mesa.",
+      "word": "estar",
+      "answer": "están",
+      "tr": { "en": "The books are on the table.", "es": "Los libros están en la mesa." },
+      "why": { "en": "A place is said with estar: ellos están en la mesa.", "es": "El lugar se dice con estar: ellos están en la mesa." }
+    },
+    {
+      "id": "se-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "ser",
+        "estar",
+        "ir"
+      ],
+      "es": "Nosotros ___ amigos.",
+      "word": "ser",
+      "answer": "somos",
+      "tr": { "en": "We are friends.", "es": "Nosotros somos amigos." },
+      "why": { "en": "A relationship between people is said with ser: nosotros somos amigos.", "es": "La relación entre personas se dice con ser: nosotros somos amigos." }
+    },
+    {
+      "id": "se-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": ["ser", "estar", "tener"],
+      "es": "Ahora yo ___ cansado.",
+      "word": "estar",
+      "answer": "estoy",
+      "tr": { "en": "Right now I am tired.", "es": "Ahora yo estoy cansado." },
+      "why": { "en": "A temporary state is said with estar: yo estoy cansado.", "es": "Un estado temporal se dice con estar: yo estoy cansado." }
+    },
+    {
+      "id": "se-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": ["ser", "estar", "tener"],
+      "es": "Tú ___ de México.",
+      "word": "ser",
+      "answer": "eres",
+      "tr": { "en": "You are from Mexico.", "es": "Tú eres de México." },
+      "why": { "en": "Origin is said with ser: tú eres de México.", "es": "El origen se dice con ser: tú eres de México." }
+    },
+    {
+      "id": "se-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "My mother is a teacher.", "es": "Mi madre es profesora." },
+      "es": "Mi madre es profesora."
+    },
+    {
+      "id": "se-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "The children are very happy.", "es": "Los niños están muy contentos." },
+      "es": "Los niños están muy contentos."
+    },
+    {
+      "id": "se-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "We are from Mexico.", "es": "Nosotros somos de México." },
+      "es": "Nosotros somos de México."
+    },
+    {
+      "id": "se-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "I am very tired.", "es": "Yo estoy muy cansado." },
+      "es": "Yo estoy muy cansado."
+    },
+    {
+      "id": "se-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "My car is very dirty.", "es": "Mi carro está muy sucio." },
+      "es": "Mi carro está muy sucio."
     },
     {
       "id": "se-01-w",

@@ -502,10 +502,7 @@
     {
       "id": "cb-01",
       "sentence": "Mi madre ___ mi padre trabajan en un banco.",
-      "options": [
-        "y",
-        "e"
-      ],
+      "options": ["y", "e", "pero"],
       "correct": 0,
       "why": {
         "en": "Y is the normal «and». It changes to e only before a word that starts with the sound i, and «mi» starts with m, so it stays y: mi madre y mi padre.",
@@ -515,6 +512,10 @@
         "e": {
           "en": "e: the form of «and» before the sound i (padre e hijo). It does not fit here, because «mi» starts with m, not with i. Correct: Mi madre y mi padre trabajan en un banco.",
           "es": "e: la forma de «y» delante del sonido i (padre e hijo). Aquí no encaja, porque «mi» empieza con m, no con i. Correcto: Mi madre y mi padre trabajan en un banco."
+        },
+        "pero": {
+          "en": "This would give Mi madre pero mi padre trabajan en un banco, but pero joins two ideas that clash; here two people are simply added; correctly: Mi madre y mi padre trabajan en un banco.",
+          "es": "Esto daría Mi madre pero mi padre trabajan en un banco, pero pero une dos ideas que chocan; aquí solo se suman dos personas; correctamente: Mi madre y mi padre trabajan en un banco."
         }
       },
       "examples": [
@@ -529,10 +530,7 @@
     {
       "id": "cb-02",
       "sentence": "Mi abuela es amable ___ inteligente.",
-      "options": [
-        "y",
-        "e"
-      ],
+      "options": ["y", "e", "u"],
       "correct": 1,
       "why": {
         "en": "«Inteligente» starts with the sound i, so «and» becomes e: amable e inteligente. Y + i would run together.",
@@ -542,6 +540,10 @@
         "y": {
           "en": "y: the usual «and». It does not fit here, because «inteligente» starts with the vowel sound i, and before that sound «and» is written e. Correct: Mi abuela es amable e inteligente.",
           "es": "y: la «y» de siempre. Aquí no encaja, porque «inteligente» empieza con el sonido de vocal i, y delante de ese sonido «y» se escribe e. Correcto: Mi abuela es amable e inteligente."
+        },
+        "u": {
+          "en": "This would give Mi abuela es amable u inteligente, but u is the form of «or» before an o-sound; it does not mean «and»; correctly: Mi abuela es amable e inteligente.",
+          "es": "Esto daría Mi abuela es amable u inteligente, pero u es la forma de «o» delante de un sonido o; no significa «y»; correctamente: Mi abuela es amable e inteligente."
         }
       },
       "examples": [
@@ -556,10 +558,7 @@
     {
       "id": "cb-03",
       "sentence": "Quiero agua ___ hielo, por favor.",
-      "options": [
-        "e",
-        "y"
-      ],
+      "options": ["e", "y", "u"],
       "correct": 1,
       "why": {
         "en": "«Hielo» is written with hi-, but it sounds like «yelo»: it starts with a consonant, not with the vowel i. So «and» stays y: agua y hielo. The change to e is only for the vowel sound i, as in hijo.",
@@ -569,6 +568,10 @@
         "e": {
           "en": "e: the form of «and» before the vowel sound i (hijo, inteligente). It does not fit here, because «hielo» starts with the consonant sound of «yelo». Correct: Quiero agua y hielo, por favor.",
           "es": "e: la forma de «y» delante del sonido de vocal i (hijo, inteligente). Aquí no encaja, porque «hielo» empieza con el sonido consonante de «yelo». Correcto: Quiero agua y hielo, por favor."
+        },
+        "u": {
+          "en": "This would give Quiero agua u hielo, but u is the form of «or» before an o-sound; it does not mean «and»; correctly: Quiero agua y hielo, por favor.",
+          "es": "Esto daría Quiero agua u hielo, pero u es la forma de «o» delante de un sonido o; no significa «y»; correctamente: Quiero agua y hielo, por favor."
         }
       },
       "examples": [
@@ -615,10 +618,7 @@
     {
       "id": "cb-05",
       "sentence": "Somos siete ___ ocho en la oficina.",
-      "options": [
-        "u",
-        "o"
-      ],
+      "options": ["u", "o", "e"],
       "correct": 0,
       "why": {
         "en": "«Ocho» starts with the sound o, so «or» becomes u: siete u ocho. O + o would run together.",
@@ -628,6 +628,10 @@
         "o": {
           "en": "o: the usual «or». It does not fit here, because «ocho» starts with the sound o, and before that sound «or» is written u. Correct: Somos siete u ocho en la oficina.",
           "es": "o: la «o» de siempre. Aquí no encaja, porque «ocho» empieza con el sonido o, y delante de ese sonido «o» se escribe u. Correcto: Somos siete u ocho en la oficina."
+        },
+        "e": {
+          "en": "This would give Somos siete e ocho en la oficina, but e is the form of «and» before an i-sound; it does not mean «or»; correctly: Somos siete u ocho en la oficina.",
+          "es": "Esto daría Somos siete e ocho en la oficina, pero e es la forma de «y» delante de un sonido i; no significa «o»; correctamente: Somos siete u ocho en la oficina."
         }
       },
       "examples": [
@@ -1407,6 +1411,481 @@
         }
       ],
       "correctIndex": 0
+    },
+    {
+      "id": "cb-tr-01",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "I study and work.",
+        "es": "Estudio y trabajo."
+      },
+      "answer": "Voy a estudiar y trabajar.",
+      "accept": [
+        "Voy a estudiar y a trabajar."
+      ],
+      "wordIds": [
+        "33",
+        "212",
+        "49"
+      ],
+      "why": {
+        "en": "With ir a + infinitive the connector stays where it was: voy a estudiar y trabajar, voy a comer porque tengo hambre.",
+        "es": "Con ir a + infinitivo el conector queda donde estaba: voy a estudiar y trabajar, voy a comer porque tengo hambre."
+      }
+    },
+    {
+      "id": "cb-tr-02",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "I eat at home because I am hungry.",
+        "es": "Como en casa porque tengo hambre."
+      },
+      "answer": "Voy a comer en casa porque tengo hambre.",
+      "wordIds": [
+        "33",
+        "25",
+        "19",
+        "17"
+      ],
+      "why": {
+        "en": "With ir a + infinitive the connector stays where it was: voy a estudiar y trabajar, voy a comer porque tengo hambre.",
+        "es": "Con ir a + infinitivo el conector queda donde estaba: voy a estudiar y trabajar, voy a comer porque tengo hambre."
+      }
+    },
+    {
+      "id": "cb-tr-03",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "I am tired, so I sleep.",
+        "es": "Estoy cansado, por eso duermo."
+      },
+      "answer": "Estoy cansado, por eso voy a dormir.",
+      "wordIds": [
+        "33",
+        "213",
+        "69"
+      ],
+      "why": {
+        "en": "With ir a + infinitive the connector stays where it was: voy a estudiar y trabajar, voy a comer porque tengo hambre.",
+        "es": "Con ir a + infinitivo el conector queda donde estaba: voy a estudiar y trabajar, voy a comer porque tengo hambre."
+      }
+    },
+    {
+      "id": "cb-tr-04",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "I drink water or coffee.",
+        "es": "Bebo agua o café."
+      },
+      "answer": "Voy a beber agua o café.",
+      "wordIds": [
+        "33",
+        "29",
+        "24",
+        "28"
+      ],
+      "why": {
+        "en": "Each verb that follows ir a stays in the infinitive: voy a beber agua o café.",
+        "es": "Cada verbo después de ir a queda en infinitivo: voy a beber agua o café."
+      }
+    },
+    {
+      "id": "cb-tr-05",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "It is hot, so I drink water.",
+        "es": "Hace calor, así que bebo agua."
+      },
+      "answer": "Hace calor, así que voy a beber agua.",
+      "wordIds": [
+        "33",
+        "29",
+        "24",
+        "652"
+      ],
+      "why": {
+        "en": "With ir a + infinitive the connector stays where it was: voy a estudiar y trabajar, voy a comer porque tengo hambre.",
+        "es": "Con ir a + infinitivo el conector queda donde estaba: voy a estudiar y trabajar, voy a comer porque tengo hambre."
+      }
+    },
+    {
+      "id": "cb-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Mi padre ___ mi madre trabajan en una oficina. Mi madre es amable ___ inteligente.",
+      "answers": [
+        "y",
+        "e"
+      ],
+      "tr": {
+        "en": "My father and my mother work in an office. My mother is kind and intelligent.",
+        "es": "Mi padre y mi madre trabajan en una oficina. Mi madre es amable e inteligente."
+      },
+      "why": {
+        "en": "Y joins two things; before a word that starts with i- the y becomes e.",
+        "es": "Y une dos cosas; delante de una palabra que empieza con i- la y pasa a e."
+      }
+    },
+    {
+      "id": "cb-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "¿Quieres agua ___ café? Hay cinco ___ ocho personas en la sala.",
+      "answers": [
+        "o",
+        "u"
+      ],
+      "accept": [
+        [
+          "y"
+        ],
+        []
+      ],
+      "tr": {
+        "en": "Do you want water or coffee? There are five or eight people in the room.",
+        "es": "¿Quieres agua o café? Hay cinco u ocho personas en la sala."
+      },
+      "why": {
+        "en": "O offers a choice; before a word that starts with o- the o becomes u.",
+        "es": "O ofrece una elección; delante de una palabra que empieza con o- la o pasa a u."
+      }
+    },
+    {
+      "id": "cb-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Tengo hambre, ___ no tengo dinero. No como en el restaurante ___ es caro.",
+      "answers": [
+        "pero",
+        "porque"
+      ],
+      "accept": [
+        [
+          "y"
+        ],
+        []
+      ],
+      "tr": {
+        "en": "I am hungry, but I have no money. I do not eat at the restaurant because it is expensive.",
+        "es": "Tengo hambre, pero no tengo dinero. No como en el restaurante porque es caro."
+      },
+      "why": {
+        "en": "Pero joins two ideas that clash; porque gives the reason.",
+        "es": "Pero une dos ideas que chocan; porque da la razón."
+      }
+    },
+    {
+      "id": "cb-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Mañana hay examen, ___ estudio hoy. Hace frío, ___ tomo un café.",
+      "answers": [
+        "por eso",
+        "así que"
+      ],
+      "accept": [
+        [
+          "así que",
+          "entonces",
+          "y"
+        ],
+        [
+          "por eso",
+          "entonces",
+          "y"
+        ]
+      ],
+      "tr": {
+        "en": "There is an exam tomorrow, so I study today. It is cold, so I have a coffee.",
+        "es": "Mañana hay examen, por eso estudio hoy. Hace frío, así que tomo un café."
+      },
+      "why": {
+        "en": "Por eso and así que both give the result after a reason.",
+        "es": "Por eso y así que dan el resultado después de una razón."
+      }
+    },
+    {
+      "id": "cb-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Mi hermano está enfermo. ___ voy al médico con él. Él no come ___ no tiene hambre.",
+      "answers": [
+        "Entonces",
+        "porque"
+      ],
+      "accept": [
+        [
+          "Por eso",
+          "Así que"
+        ],
+        []
+      ],
+      "tr": {
+        "en": "My brother is sick. Then I go to the doctor with him. He does not eat because he is not hungry.",
+        "es": "Mi hermano está enfermo. Entonces voy al médico con él. Él no come porque no tiene hambre."
+      },
+      "why": {
+        "en": "Entonces gives a conclusion; porque gives a reason.",
+        "es": "Entonces da una conclusión; porque da una razón."
+      }
+    },
+    {
+      "id": "cb-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "Tengo siete o ocho libros.",
+      "wrongIndex": 2,
+      "answer": "u",
+      "explain": {
+        "en": "Before a word that starts with o- the o becomes u: siete u ocho.",
+        "es": "Delante de una palabra que empieza con o- la o pasa a u: siete u ocho."
+      },
+      "tr": {
+        "en": "I have seven or eight books.",
+        "es": "Tengo siete u ocho libros."
+      }
+    },
+    {
+      "id": "cb-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "Mi padre e mi madre trabajan aquí.",
+      "wrongIndex": 2,
+      "answer": "y",
+      "explain": {
+        "en": "The word e is only used before i-; here the word is y.",
+        "es": "La palabra e solo se usa delante de i-; aquí la palabra es y."
+      },
+      "tr": {
+        "en": "My father and my mother work here.",
+        "es": "Mi padre y mi madre trabajan aquí."
+      }
+    },
+    {
+      "id": "cb-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "Quiero ir a la playa, porque no tengo dinero.",
+      "wrongIndex": 5,
+      "answer": "pero",
+      "explain": {
+        "en": "The two ideas clash, so the connector is pero, not porque.",
+        "es": "Las dos ideas chocan, así que el conector es pero, no porque."
+      },
+      "tr": {
+        "en": "I want to go to the beach, but I have no money.",
+        "es": "Quiero ir a la playa, pero no tengo dinero."
+      }
+    },
+    {
+      "id": "cb-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "Hoy no voy a la escuela pero estoy enfermo.",
+      "wrongIndex": 6,
+      "answer": "porque",
+      "explain": {
+        "en": "The second idea is the reason, so the connector is porque, not pero.",
+        "es": "La segunda idea es la razón, así que el conector es porque, no pero."
+      },
+      "tr": {
+        "en": "I am not going to school today because I am sick.",
+        "es": "Hoy no voy a la escuela porque estoy enfermo."
+      }
+    },
+    {
+      "id": "cb-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "Hay padres y hijos en el parque.",
+      "wrongIndex": 2,
+      "answer": "e",
+      "explain": {
+        "en": "Before a word that starts with i- the y becomes e: padres e hijos.",
+        "es": "Delante de una palabra que empieza con i- la y pasa a e: padres e hijos."
+      },
+      "tr": {
+        "en": "There are parents and children in the park.",
+        "es": "Hay padres e hijos en el parque."
+      }
+    },
+    {
+      "id": "cb-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "y",
+        "e",
+        "u"
+      ],
+      "es": "Mi madre es alta ___ inteligente.",
+      "word": "e",
+      "answer": "e",
+      "tr": {
+        "en": "My mother is tall and intelligent.",
+        "es": "Mi madre es alta e inteligente."
+      },
+      "why": {
+        "en": "Before a word that starts with i- the y becomes e.",
+        "es": "Delante de una palabra que empieza con i- la y pasa a e."
+      }
+    },
+    {
+      "id": "cb-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "o",
+        "u",
+        "y"
+      ],
+      "es": "Hay nueve ___ once personas aquí.",
+      "word": "u",
+      "answer": "u",
+      "tr": {
+        "en": "There are nine or eleven people here.",
+        "es": "Hay nueve u once personas aquí."
+      },
+      "why": {
+        "en": "Before a word that starts with o- (once) the o becomes u.",
+        "es": "Delante de una palabra que empieza con o- (once) la o pasa a u."
+      }
+    },
+    {
+      "id": "cb-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "pero",
+        "porque",
+        "entonces"
+      ],
+      "es": "Estoy en casa ___ estoy enfermo.",
+      "word": "porque",
+      "answer": "porque",
+      "tr": {
+        "en": "I am at home because I am sick.",
+        "es": "Estoy en casa porque estoy enfermo."
+      },
+      "why": {
+        "en": "Porque gives the reason for staying at home.",
+        "es": "Porque da la razón de estar en casa."
+      }
+    },
+    {
+      "id": "cb-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "porque",
+        "por eso",
+        "pero"
+      ],
+      "es": "Estoy cansado, ___ duermo.",
+      "word": "por eso",
+      "answer": "por eso",
+      "accept": [
+        "así que"
+      ],
+      "tr": {
+        "en": "I am tired, so I sleep.",
+        "es": "Estoy cansado, por eso duermo."
+      },
+      "why": {
+        "en": "Por eso gives the result after the reason (tired).",
+        "es": "Por eso da el resultado después de la razón (cansado)."
+      }
+    },
+    {
+      "id": "cb-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "y",
+        "e",
+        "u"
+      ],
+      "es": "Hablo con mi madre ___ mi padre.",
+      "word": "y",
+      "answer": "y",
+      "tr": {
+        "en": "I talk with my mother and my father.",
+        "es": "Hablo con mi madre y mi padre."
+      },
+      "why": {
+        "en": "Y joins two things; mi padre does not start with i-, so it stays y.",
+        "es": "Y une dos cosas; mi padre no empieza con i-, así que queda y."
+      }
+    },
+    {
+      "id": "cb-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "I eat bread and drink water.",
+        "es": "Como pan y bebo agua."
+      },
+      "es": "Como pan y bebo agua."
+    },
+    {
+      "id": "cb-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "There are six or eight people.",
+        "es": "Hay seis u ocho personas."
+      },
+      "es": "Hay seis u ocho personas."
+    },
+    {
+      "id": "cb-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "I want to go, but I have no money.",
+        "es": "Quiero ir, pero no tengo dinero."
+      },
+      "es": "Quiero ir, pero no tengo dinero."
+    },
+    {
+      "id": "cb-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "I am at home because I am sick.",
+        "es": "Estoy en casa porque estoy enfermo."
+      },
+      "es": "Estoy en casa porque estoy enfermo."
+    },
+    {
+      "id": "cb-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "My mother is kind and intelligent.",
+        "es": "Mi madre es amable e inteligente."
+      },
+      "es": "Mi madre es amable e inteligente."
     }
   ]
 }

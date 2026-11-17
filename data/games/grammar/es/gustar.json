@@ -1152,6 +1152,456 @@
         }
       ],
       "correctIndex": 1
+    },
+    {
+      "id": "gu-tr-01",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "I like the house.",
+        "es": "Me gusta la casa."
+      },
+      "answer": "Me va a gustar la casa.",
+      "accept": [
+        "Va a gustarme la casa."
+      ],
+      "wordIds": [
+        "33",
+        "88",
+        "19"
+      ],
+      "why": {
+        "en": "With ir a + infinitive, ir agrees with what pleases: me gusta → me va a gustar (one thing), me gustan → me van a gustar (several things).",
+        "es": "Con ir a + infinitivo, ir concuerda con lo que gusta: me gusta → me va a gustar (una cosa), me gustan → me van a gustar (varias cosas)."
+      }
+    },
+    {
+      "id": "gu-tr-02",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "I like tacos.",
+        "es": "Me gustan los tacos."
+      },
+      "answer": "Me van a gustar los tacos.",
+      "accept": [
+        "Van a gustarme los tacos."
+      ],
+      "wordIds": [
+        "33",
+        "88"
+      ],
+      "why": {
+        "en": "With ir a + infinitive, ir agrees with what pleases: me gusta → me va a gustar (one thing), me gustan → me van a gustar (several things).",
+        "es": "Con ir a + infinitivo, ir concuerda con lo que gusta: me gusta → me va a gustar (una cosa), me gustan → me van a gustar (varias cosas)."
+      }
+    },
+    {
+      "id": "gu-tr-03",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "Do you like the coffee?",
+        "es": "¿Te gusta el café?"
+      },
+      "answer": "¿Te va a gustar el café?",
+      "accept": [
+        "¿Va a gustarte el café?"
+      ],
+      "wordIds": [
+        "33",
+        "88",
+        "28"
+      ],
+      "why": {
+        "en": "With ir a + infinitive, ir agrees with what pleases: me gusta → me va a gustar (one thing), me gustan → me van a gustar (several things).",
+        "es": "Con ir a + infinitivo, ir concuerda con lo que gusta: me gusta → me va a gustar (una cosa), me gustan → me van a gustar (varias cosas)."
+      }
+    },
+    {
+      "id": "gu-tr-04",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "Ana likes dancing.",
+        "es": "A Ana le gusta bailar."
+      },
+      "answer": "A Ana le va a gustar bailar.",
+      "accept": [
+        "A Ana va a gustarle bailar."
+      ],
+      "wordIds": [
+        "33",
+        "88",
+        "653"
+      ],
+      "why": {
+        "en": "With ir a + infinitive, ir agrees with what pleases: me gusta → me va a gustar (one thing), me gustan → me van a gustar (several things).",
+        "es": "Con ir a + infinitivo, ir concuerda con lo que gusta: me gusta → me va a gustar (una cosa), me gustan → me van a gustar (varias cosas)."
+      }
+    },
+    {
+      "id": "gu-tr-05",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "We like this song.",
+        "es": "Nos gusta esta canción."
+      },
+      "answer": "Nos va a gustar esta canción.",
+      "accept": [
+        "Va a gustarnos esta canción."
+      ],
+      "wordIds": [
+        "33",
+        "88",
+        "1001"
+      ],
+      "why": {
+        "en": "With ir a + infinitive, ir agrees with what pleases: me gusta → me va a gustar (one thing), me gustan → me van a gustar (several things).",
+        "es": "Con ir a + infinitivo, ir concuerda con lo que gusta: me gusta → me va a gustar (una cosa), me gustan → me van a gustar (varias cosas)."
+      }
+    },
+    {
+      "id": "gu-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Me ___ el café y me ___ los tacos.",
+      "answers": [
+        "gusta",
+        "gustan"
+      ],
+      "tr": {
+        "en": "I like coffee and I like tacos.",
+        "es": "Me gusta el café y me gustan los tacos."
+      },
+      "why": {
+        "en": "Gusta goes with one thing (el café); gustan goes with several things (los tacos).",
+        "es": "Gusta va con una sola cosa (el café); gustan va con varias cosas (los tacos)."
+      }
+    },
+    {
+      "id": "gu-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "A mi hermana ___ gusta bailar. A mis amigos ___ gusta la música.",
+      "answers": [
+        "le",
+        "les"
+      ],
+      "tr": {
+        "en": "My sister likes dancing. My friends like music.",
+        "es": "A mi hermana le gusta bailar. A mis amigos les gusta la música."
+      },
+      "why": {
+        "en": "Le is for one person (mi hermana); les is for several people (mis amigos).",
+        "es": "Le es para una persona (mi hermana); les es para varias personas (mis amigos)."
+      }
+    },
+    {
+      "id": "gu-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "¿A ti ___ gustan las películas? A mí ___ gustan mucho.",
+      "answers": [
+        "te",
+        "me"
+      ],
+      "tr": {
+        "en": "Do you like movies? I like them a lot.",
+        "es": "¿A ti te gustan las películas? A mí me gustan mucho."
+      },
+      "why": {
+        "en": "Te is for a ti (you); me is for a mí (me).",
+        "es": "Te es para a ti (tú); me es para a mí (yo)."
+      }
+    },
+    {
+      "id": "gu-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "A mi hermano y a mí ___ gusta el cine. A ellos no ___ gusta.",
+      "answers": [
+        "nos",
+        "les"
+      ],
+      "tr": {
+        "en": "My brother and I like the cinema. They do not like it.",
+        "es": "A mi hermano y a mí nos gusta el cine. A ellos no les gusta."
+      },
+      "why": {
+        "en": "Nos is for we (my brother and me); les is for they (ellos).",
+        "es": "Nos es para nosotros (mi hermano y yo); les es para ellos."
+      }
+    },
+    {
+      "id": "gu-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Me ___ el cine y me ___ las películas de miedo. Me ___ ver películas con mis amigos.",
+      "answers": [
+        "gusta",
+        "gustan",
+        "gusta"
+      ],
+      "tr": {
+        "en": "I like the cinema and I like scary movies. I like watching movies with my friends.",
+        "es": "Me gusta el cine y me gustan las películas de miedo. Me gusta ver películas con mis amigos."
+      },
+      "why": {
+        "en": "One thing and an action (an infinitive) take gusta; several things take gustan.",
+        "es": "Una cosa y una acción (un infinitivo) llevan gusta; varias cosas llevan gustan."
+      }
+    },
+    {
+      "id": "gu-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "Me gustan la música.",
+      "wrongIndex": 1,
+      "answer": "gusta",
+      "explain": {
+        "en": "La música is one thing, so the verb is gusta, not gustan.",
+        "es": "La música es una sola cosa, así que el verbo es gusta, no gustan."
+      },
+      "tr": {
+        "en": "I like music.",
+        "es": "Me gusta la música."
+      }
+    },
+    {
+      "id": "gu-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "Me gusta las canciones.",
+      "wrongIndex": 1,
+      "answer": "gustan",
+      "explain": {
+        "en": "Las canciones are several things, so the verb is gustan, not gusta.",
+        "es": "Las canciones son varias cosas, así que el verbo es gustan, no gusta."
+      },
+      "tr": {
+        "en": "I like the songs.",
+        "es": "Me gustan las canciones."
+      }
+    },
+    {
+      "id": "gu-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "A mi hermano me gusta leer.",
+      "wrongIndex": 3,
+      "answer": "le",
+      "explain": {
+        "en": "A mi hermano is he, so the pronoun is le, not me.",
+        "es": "A mi hermano es él, así que el pronombre es le, no me."
+      },
+      "tr": {
+        "en": "My brother likes reading.",
+        "es": "A mi hermano le gusta leer."
+      }
+    },
+    {
+      "id": "gu-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "A nosotros les gusta el cine.",
+      "wrongIndex": 2,
+      "answer": "nos",
+      "explain": {
+        "en": "A nosotros is we, so the pronoun is nos, not les.",
+        "es": "A nosotros es nosotros, así que el pronombre es nos, no les."
+      },
+      "tr": {
+        "en": "We like the cinema.",
+        "es": "A nosotros nos gusta el cine."
+      }
+    },
+    {
+      "id": "gu-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "¿A ti me gustan los deportes?",
+      "wrongIndex": 2,
+      "answer": "te",
+      "explain": {
+        "en": "A ti is you (informal), so the pronoun is te, not me.",
+        "es": "A ti es tú, así que el pronombre es te, no me."
+      },
+      "tr": {
+        "en": "Do you like sports?",
+        "es": "¿A ti te gustan los deportes?"
+      }
+    },
+    {
+      "id": "gu-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "gusta",
+        "gustan",
+        "gustas"
+      ],
+      "es": "Me ___ las flores.",
+      "word": "gustan",
+      "answer": "gustan",
+      "tr": {
+        "en": "I like flowers.",
+        "es": "Me gustan las flores."
+      },
+      "why": {
+        "en": "Las flores are several things, so the verb is gustan.",
+        "es": "Las flores son varias cosas, así que el verbo es gustan."
+      }
+    },
+    {
+      "id": "gu-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "gusta",
+        "gustan",
+        "gustas"
+      ],
+      "es": "Me ___ bailar.",
+      "word": "gusta",
+      "answer": "gusta",
+      "tr": {
+        "en": "I like dancing.",
+        "es": "Me gusta bailar."
+      },
+      "why": {
+        "en": "An action (an infinitive) always takes gusta.",
+        "es": "Una acción (un infinitivo) siempre lleva gusta."
+      }
+    },
+    {
+      "id": "gu-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "me",
+        "te",
+        "nos"
+      ],
+      "es": "A nosotros ___ gusta el cine.",
+      "word": "nos",
+      "answer": "nos",
+      "tr": {
+        "en": "We like the cinema.",
+        "es": "A nosotros nos gusta el cine."
+      },
+      "why": {
+        "en": "A nosotros is we, so the pronoun is nos.",
+        "es": "A nosotros es nosotros, así que el pronombre es nos."
+      }
+    },
+    {
+      "id": "gu-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "le",
+        "les",
+        "te"
+      ],
+      "es": "A mis abuelos ___ gusta viajar.",
+      "word": "les",
+      "answer": "les",
+      "tr": {
+        "en": "My grandparents like traveling.",
+        "es": "A mis abuelos les gusta viajar."
+      },
+      "why": {
+        "en": "Mis abuelos are several people, so the pronoun is les.",
+        "es": "Mis abuelos son varias personas, así que el pronombre es les."
+      }
+    },
+    {
+      "id": "gu-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "le",
+        "les",
+        "me"
+      ],
+      "es": "A Ana ___ gusta la música.",
+      "word": "le",
+      "answer": "le",
+      "tr": {
+        "en": "Ana likes music.",
+        "es": "A Ana le gusta la música."
+      },
+      "why": {
+        "en": "Ana is one person, so the pronoun is le.",
+        "es": "Ana es una sola persona, así que el pronombre es le."
+      }
+    },
+    {
+      "id": "gu-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "I like music.",
+        "es": "Me gusta la música."
+      },
+      "es": "Me gusta la música."
+    },
+    {
+      "id": "gu-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "I like the tacos.",
+        "es": "Me gustan los tacos."
+      },
+      "es": "Me gustan los tacos."
+    },
+    {
+      "id": "gu-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "Do you like dancing?",
+        "es": "¿Te gusta bailar?"
+      },
+      "es": "¿Te gusta bailar?"
+    },
+    {
+      "id": "gu-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "She likes the book.",
+        "es": "Le gusta el libro."
+      },
+      "es": "Le gusta el libro."
+    },
+    {
+      "id": "gu-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "We like the song.",
+        "es": "Nos gusta la canción."
+      },
+      "es": "Nos gusta la canción."
     }
   ]
 }

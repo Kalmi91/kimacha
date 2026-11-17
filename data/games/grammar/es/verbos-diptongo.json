@@ -1432,6 +1432,244 @@
         }
       ],
       "correctIndex": 1
+    },
+    {
+      "id": "vd-tr-01",
+      "kind": "transform",
+      "tense": { "from": "ir-a", "to": "presente" },
+      "prompt": { "en": "I am going to order a coffee.", "es": "Voy a pedir un café." },
+      "answer": "Pido un café.",
+      "accept": ["Yo pido un café."],
+      "wordIds": ["223", "28"],
+      "why": { "en": "Present tense, yo: pedir changes the vowel e → i: pido.", "es": "Presente, yo: pedir cambia la vocal e → i: pido." }
+    },
+    {
+      "id": "vd-tr-02",
+      "kind": "transform",
+      "tense": { "from": "ir-a", "to": "presente" },
+      "prompt": { "en": "My brother is going to sleep in the living room.", "es": "Mi hermano va a dormir en la sala." },
+      "answer": "Mi hermano duerme en la sala.",
+      "wordIds": ["213", "42", "954"],
+      "why": { "en": "Present tense, él: dormir changes the vowel o → ue: duerme.", "es": "Presente, él: dormir cambia la vocal o → ue: duerme." }
+    },
+    {
+      "id": "vd-tr-03",
+      "kind": "transform",
+      "tense": { "from": "ir-a", "to": "presente" },
+      "prompt": { "en": "You are going to play soccer.", "es": "Vas a jugar fútbol." },
+      "answer": "Juegas fútbol.",
+      "accept": ["Tú juegas fútbol."],
+      "wordIds": ["227", "656"],
+      "why": { "en": "Present tense, tú: jugar changes the vowel u → ue: juegas.", "es": "Presente, tú: jugar cambia la vocal u → ue: juegas." }
+    },
+    {
+      "id": "vd-tr-04",
+      "kind": "transform",
+      "tense": { "from": "ir-a", "to": "presente" },
+      "prompt": { "en": "I am going to close the door.", "es": "Voy a cerrar la puerta." },
+      "answer": "Cierro la puerta.",
+      "accept": ["Yo cierro la puerta."],
+      "wordIds": ["235", "117"],
+      "why": { "en": "Present tense, yo: cerrar changes the vowel e → ie: cierro.", "es": "Presente, yo: cerrar cambia la vocal e → ie: cierro." }
+    },
+    {
+      "id": "vd-tr-05",
+      "kind": "transform",
+      "tense": { "from": "ir-a", "to": "presente" },
+      "prompt": { "en": "They are going to start today.", "es": "Ellos van a empezar hoy." },
+      "answer": "Ellos empiezan hoy.",
+      "accept": ["Empiezan hoy."],
+      "wordIds": ["218", "52"],
+      "why": { "en": "Present tense, ellos: empezar changes the vowel e → ie: empiezan.", "es": "Presente, ellos: empezar cambia la vocal e → ie: empiezan." }
+    },
+    {
+      "id": "vd-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Ana quiere un café. Yo también ___ un café y mis amigos también ___ un café.",
+      "answers": ["quiero", "quieren"],
+      "tr": { "en": "Ana wants a coffee. I also want a coffee and my friends also want a coffee.", "es": "Ana quiere un café. Yo también quiero un café y mis amigos también quieren un café." },
+      "why": { "en": "Querer changes e → ie: yo quiero, ellos quieren.", "es": "Querer cambia e → ie: yo quiero, ellos quieren." }
+    },
+    {
+      "id": "vd-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Mi padre puede trabajar hoy. Yo también ___ trabajar hoy y mis hermanos también ___ trabajar hoy.",
+      "answers": ["puedo", "pueden"],
+      "tr": { "en": "My father can work today. I can also work today and my brothers can also work today.", "es": "Mi padre puede trabajar hoy. Yo también puedo trabajar hoy y mis hermanos también pueden trabajar hoy." },
+      "why": { "en": "Poder changes o → ue: yo puedo, ellos pueden.", "es": "Poder cambia o → ue: yo puedo, ellos pueden." }
+    },
+    {
+      "id": "vd-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Los niños juegan en el parque. Yo también ___ en el parque y tú también ___ en el parque.",
+      "answers": ["juego", "juegas"],
+      "tr": { "en": "The children play in the park. I also play in the park and you also play in the park.", "es": "Los niños juegan en el parque. Yo también juego en el parque y tú también juegas en el parque." },
+      "why": { "en": "Jugar changes u → ue: yo juego, tú juegas.", "es": "Jugar cambia u → ue: yo juego, tú juegas." }
+    },
+    {
+      "id": "vd-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Ana pide la cuenta. Yo también ___ la cuenta y nosotros también ___ la cuenta.",
+      "answers": ["pido", "pedimos"],
+      "tr": { "en": "Ana asks for the bill. I also ask for the bill and we also ask for the bill.", "es": "Ana pide la cuenta. Yo también pido la cuenta y nosotros también pedimos la cuenta." },
+      "why": { "en": "Pedir changes e → i in yo (pido), but nosotros is regular: pedimos.", "es": "Pedir cambia e → i en yo (pido), pero nosotros es regular: pedimos." }
+    },
+    {
+      "id": "vd-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Mi hijo duerme mucho. Yo también ___ mucho y ustedes también ___ mucho.",
+      "answers": ["duermo", "duermen"],
+      "tr": { "en": "My son sleeps a lot. I also sleep a lot and you also sleep a lot.", "es": "Mi hijo duerme mucho. Yo también duermo mucho y ustedes también duermen mucho." },
+      "why": { "en": "Dormir changes o → ue: yo duermo, ustedes duermen.", "es": "Dormir cambia o → ue: yo duermo, ustedes duermen." }
+    },
+    {
+      "id": "vd-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "Mi hermana duermen mucho.",
+      "wrongIndex": 2,
+      "answer": "duerme",
+      "explain": { "en": "Mi hermana is ella: dormir becomes duerme, with o → ue.", "es": "Mi hermana es ella: dormir se dice duerme, con o → ue." },
+      "tr": { "en": "My sister sleeps a lot.", "es": "Mi hermana duerme mucho." }
+    },
+    {
+      "id": "vd-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "Los niños juega en el parque.",
+      "wrongIndex": 2,
+      "answer": "juegan",
+      "explain": { "en": "Los niños is plural (ellos): jugar becomes juegan.", "es": "Los niños es plural (ellos): jugar se dice juegan." },
+      "tr": { "en": "The children play in the park.", "es": "Los niños juegan en el parque." }
+    },
+    {
+      "id": "vd-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "Mis padres pide la cuenta.",
+      "wrongIndex": 2,
+      "answer": "piden",
+      "explain": { "en": "Mis padres is plural (ellos): pedir becomes piden.", "es": "Mis padres es plural (ellos): pedir se dice piden." },
+      "tr": { "en": "My parents ask for the bill.", "es": "Mis padres piden la cuenta." }
+    },
+    {
+      "id": "vd-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "Mi madre cerramos la puerta.",
+      "wrongIndex": 2,
+      "answer": "cierra",
+      "explain": { "en": "Mi madre is ella: cerrar becomes cierra, with e → ie. Cerramos is for nosotros.", "es": "Mi madre es ella: cerrar se dice cierra, con e → ie. Cerramos es para nosotros." },
+      "tr": { "en": "My mother closes the door.", "es": "Mi madre cierra la puerta." }
+    },
+    {
+      "id": "vd-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "Mis amigos puede venir hoy.",
+      "wrongIndex": 2,
+      "answer": "pueden",
+      "explain": { "en": "Mis amigos is plural (ellos): poder becomes pueden.", "es": "Mis amigos es plural (ellos): poder se dice pueden." },
+      "tr": { "en": "My friends can come today.", "es": "Mis amigos pueden venir hoy." }
+    },
+    {
+      "id": "vd-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": ["querer", "correr", "abrir"],
+      "es": "Yo ___ un café con leche.",
+      "word": "querer",
+      "answer": "quiero",
+      "tr": { "en": "I want a coffee with milk.", "es": "Yo quiero un café con leche." },
+      "why": { "en": "Querer with yo: e → ie, quiero.", "es": "Querer con yo: e → ie, quiero." }
+    },
+    {
+      "id": "vd-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": ["poder", "comer", "vivir"],
+      "es": "Mis padres no ___ venir hoy.",
+      "word": "poder",
+      "answer": "pueden",
+      "tr": { "en": "My parents cannot come today.", "es": "Mis padres no pueden venir hoy." },
+      "why": { "en": "Poder with ellos: o → ue, pueden.", "es": "Poder con ellos: o → ue, pueden." }
+    },
+    {
+      "id": "vd-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": ["jugar", "leer", "vender"],
+      "es": "Los niños ___ fútbol en la escuela.",
+      "word": "jugar",
+      "answer": "juegan",
+      "tr": { "en": "The children play soccer at school.", "es": "Los niños juegan fútbol en la escuela." },
+      "why": { "en": "Jugar with ellos: u → ue, juegan.", "es": "Jugar con ellos: u → ue, juegan." }
+    },
+    {
+      "id": "vd-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": ["pedir", "correr", "cantar"],
+      "es": "Yo ___ la cuenta en el restaurante.",
+      "word": "pedir",
+      "answer": "pido",
+      "tr": { "en": "I ask for the bill at the restaurant.", "es": "Yo pido la cuenta en el restaurante." },
+      "why": { "en": "Pedir with yo: e → i, pido.", "es": "Pedir con yo: e → i, pido." }
+    },
+    {
+      "id": "vd-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "dormir",
+        "vender",
+        "abrir"
+      ],
+      "es": "Mi bebé ___ en la cama.",
+      "word": "dormir",
+      "answer": "duerme",
+      "tr": { "en": "My baby sleeps in the bed.", "es": "Mi bebé duerme en la cama." },
+      "why": { "en": "Dormir with ella: o → ue, duerme.", "es": "Dormir con ella: o → ue, duerme." }
+    },
+    {
+      "id": "vd-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "I want a coffee with milk.", "es": "Yo quiero un café con leche." },
+      "es": "Yo quiero un café con leche."
+    },
+    {
+      "id": "vd-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "We can help my mother.", "es": "Nosotros podemos ayudar a mi madre." },
+      "es": "Nosotros podemos ayudar a mi madre."
+    },
+    {
+      "id": "vd-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "My brother plays soccer.", "es": "Mi hermano juega fútbol." },
+      "es": "Mi hermano juega fútbol."
+    },
+    {
+      "id": "vd-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "You think about your family.", "es": "Tú piensas en tu familia." },
+      "es": "Tú piensas en tu familia."
+    },
+    {
+      "id": "vd-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "I start the Spanish class.", "es": "Yo empiezo la clase de español." },
+      "es": "Yo empiezo la clase de español."
     }
   ]
 }

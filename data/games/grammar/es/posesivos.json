@@ -1167,6 +1167,243 @@
         }
       ],
       "correctIndex": 2
+    },
+    {
+      "id": "pos-tr-01",
+      "kind": "transform",
+      "tense": { "from": "ir-a", "to": "presente" },
+      "prompt": { "en": "I am going to open my backpack.", "es": "Voy a abrir mi mochila." },
+      "answer": "Abro mi mochila.",
+      "accept": ["Yo abro mi mochila."],
+      "wordIds": ["33", "147", "666"],
+      "why": { "en": "Present tense, yo: abrir ends in -o. The possessive mi does not change.", "es": "Presente, yo: abrir termina en -o. El posesivo mi no cambia." }
+    },
+    {
+      "id": "pos-tr-02",
+      "kind": "transform",
+      "tense": { "from": "ir-a", "to": "presente" },
+      "prompt": { "en": "My friends are going to call their parents.", "es": "Mis amigos van a llamar a sus padres." },
+      "answer": "Mis amigos llaman a sus padres.",
+      "wordIds": ["33", "89", "40", "39"],
+      "why": { "en": "Present tense, ellos: llamar ends in -an. Mis and sus stay plural.", "es": "Presente, ellos: llamar termina en -an. Mis y sus quedan en plural." }
+    },
+    {
+      "id": "pos-tr-03",
+      "kind": "transform",
+      "tense": { "from": "ir-a", "to": "presente" },
+      "prompt": { "en": "We are going to sell our car.", "es": "Vamos a vender nuestro carro." },
+      "answer": "Vendemos nuestro carro.",
+      "accept": ["Nosotros vendemos nuestro carro."],
+      "wordIds": ["33", "238", "114"],
+      "why": { "en": "Present tense, nosotros: vender ends in -emos. Nuestro agrees with carro.", "es": "Presente, nosotros: vender termina en -emos. Nuestro concuerda con carro." }
+    },
+    {
+      "id": "pos-tr-04",
+      "kind": "transform",
+      "tense": { "from": "ir-a", "to": "presente" },
+      "prompt": { "en": "Your brother is going to write his name.", "es": "Tu hermano va a escribir su nombre." },
+      "answer": "Tu hermano escribe su nombre.",
+      "wordIds": ["33", "146", "42", "125"],
+      "why": { "en": "Present tense, él: escribir ends in -e. Tu and su do not change.", "es": "Presente, él: escribir termina en -e. Tu y su no cambian." }
+    },
+    {
+      "id": "pos-tr-05",
+      "kind": "transform",
+      "tense": { "from": "ir-a", "to": "presente" },
+      "prompt": { "en": "You are going to close your windows.", "es": "Vas a cerrar tus ventanas." },
+      "answer": "Cierras tus ventanas.",
+      "accept": ["Tú cierras tus ventanas."],
+      "wordIds": ["33", "235", "270"],
+      "why": { "en": "Present tense, tú: cerrar changes e → ie and ends in -as: cierras. Tus stays plural.", "es": "Presente, tú: cerrar cambia e → ie y termina en -as: cierras. Tus queda en plural." }
+    },
+    {
+      "id": "pos-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Ana tiene dos hermanos. ___ hermanos viven en la ciudad y ___ madre vive aquí.",
+      "answers": ["Sus", "su"],
+      "accept": [["Los"], ["la"]],
+      "tr": { "en": "Ana has two brothers. Her brothers live in the city and her mother lives here.", "es": "Ana tiene dos hermanos. Sus hermanos viven en la ciudad y su madre vive aquí." },
+      "why": { "en": "The possessive agrees with the thing owned: sus hermanos (plural), su madre (singular).", "es": "El posesivo concuerda con lo poseído: sus hermanos (plural), su madre (singular)." }
+    },
+    {
+      "id": "pos-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Yo tengo una casa. ___ casa es grande y ___ ventanas son nuevas.",
+      "answers": ["Mi", "mis"],
+      "accept": [["La"], ["las"]],
+      "tr": { "en": "I have a house. My house is big and my windows are new.", "es": "Yo tengo una casa. Mi casa es grande y mis ventanas son nuevas." },
+      "why": { "en": "Mi goes with one thing (mi casa); mis goes with several (mis ventanas).", "es": "Mi va con una sola cosa (mi casa); mis va con varias (mis ventanas)." }
+    },
+    {
+      "id": "pos-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Tú tienes un hermano y dos amigas. ¿Cómo se llama ___ hermano? ¿Dónde viven ___ amigas?",
+      "answers": ["tu", "tus"],
+      "tr": { "en": "You have a brother and two female friends. What is your brother called? Where do your friends live?", "es": "Tú tienes un hermano y dos amigas. ¿Cómo se llama tu hermano? ¿Dónde viven tus amigas?" },
+      "why": { "en": "Tu goes with one thing (tu hermano); tus goes with several (tus amigas).", "es": "Tu va con una sola cosa (tu hermano); tus va con varias (tus amigas)." }
+    },
+    {
+      "id": "pos-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Mis padres tienen un carro. ___ carro es nuevo y ___ casa es grande.",
+      "answers": ["Su", "su"],
+      "accept": [["El"], ["la"]],
+      "tr": { "en": "My parents have a car. Their car is new and their house is big.", "es": "Mis padres tienen un carro. Su carro es nuevo y su casa es grande." },
+      "why": { "en": "Su means their and goes with one thing: su carro, su casa.", "es": "Su significa de ellos y va con una sola cosa: su carro, su casa." }
+    },
+    {
+      "id": "pos-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Nosotros tenemos una casa. ___ casa es grande y ___ perros son pequeños.",
+      "answers": ["Nuestra", "nuestros"],
+      "accept": [["La"], ["los"]],
+      "tr": { "en": "We have a house. Our house is big and our dogs are small.", "es": "Nosotros tenemos una casa. Nuestra casa es grande y nuestros perros son pequeños." },
+      "why": { "en": "Nuestro agrees in gender and number with the thing owned: nuestra casa, nuestros perros.", "es": "Nuestro concuerda en género y número con lo poseído: nuestra casa, nuestros perros." }
+    },
+    {
+      "id": "pos-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "Mi padres viven aquí.",
+      "wrongIndex": 0,
+      "answer": "Mis",
+      "explain": { "en": "Padres is plural, so the possessive is too: mis padres.", "es": "Padres es plural, así que el posesivo también: mis padres." },
+      "tr": { "en": "My parents live here.", "es": "Mis padres viven aquí." }
+    },
+    {
+      "id": "pos-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "Ana y su hermanos viven aquí.",
+      "wrongIndex": 2,
+      "answer": "sus",
+      "explain": { "en": "Hermanos is plural, so the possessive is too: sus hermanos.", "es": "Hermanos es plural, así que el posesivo también: sus hermanos." },
+      "tr": { "en": "Ana and her brothers live here.", "es": "Ana y sus hermanos viven aquí." }
+    },
+    {
+      "id": "pos-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "¿Dónde están tu llaves?",
+      "wrongIndex": 2,
+      "answer": "tus",
+      "explain": { "en": "Llaves is plural, so the possessive is too: tus llaves.", "es": "Llaves es plural, así que el posesivo también: tus llaves." },
+      "tr": { "en": "Where are your keys?", "es": "¿Dónde están tus llaves?" }
+    },
+    {
+      "id": "pos-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "El libro es mía.",
+      "wrongIndex": 3,
+      "answer": "mío",
+      "explain": { "en": "The long form agrees with libro, masculine singular: mío.", "es": "La forma larga concuerda con libro, masculino singular: mío." },
+      "tr": { "en": "The book is mine.", "es": "El libro es mío." }
+    },
+    {
+      "id": "pos-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "La casa es tuyo.",
+      "wrongIndex": 3,
+      "answer": "tuya",
+      "explain": { "en": "The long form agrees with casa, feminine singular: tuya.", "es": "La forma larga concuerda con casa, femenino singular: tuya." },
+      "tr": { "en": "The house is yours.", "es": "La casa es tuya." }
+    },
+    {
+      "id": "pos-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": ["mi", "tu", "su"],
+      "es": "Yo tengo dos hermanas y ___ hermanas viven aquí.",
+      "word": "mi",
+      "answer": "mis",
+      "tr": { "en": "I have two sisters and my sisters live here.", "es": "Yo tengo dos hermanas y mis hermanas viven aquí." },
+      "why": { "en": "Hermanas is plural and yo is the owner: mis hermanas.", "es": "Hermanas es plural y yo es el dueño: mis hermanas." }
+    },
+    {
+      "id": "pos-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": ["mi", "tu", "su"],
+      "es": "Tú tienes dos gatos y ___ gatos son negros.",
+      "word": "tu",
+      "answer": "tus",
+      "tr": { "en": "You have two cats and your cats are black.", "es": "Tú tienes dos gatos y tus gatos son negros." },
+      "why": { "en": "Gatos is plural and tú is the owner: tus gatos.", "es": "Gatos es plural y tú es el dueño: tus gatos." }
+    },
+    {
+      "id": "pos-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": ["mi", "tu", "su"],
+      "es": "Ana tiene dos perros y ___ perros son grandes.",
+      "word": "su",
+      "answer": "sus",
+      "tr": { "en": "Ana has two dogs and her dogs are big.", "es": "Ana tiene dos perros y sus perros son grandes." },
+      "why": { "en": "Perros is plural and Ana is the owner: sus perros.", "es": "Perros es plural y Ana es la dueña: sus perros." }
+    },
+    {
+      "id": "pos-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": ["mío", "tuyo", "suyo"],
+      "es": "Yo tengo las llaves. Las llaves son ___.",
+      "word": "mío",
+      "answer": "mías",
+      "tr": { "en": "I have the keys. The keys are mine.", "es": "Yo tengo las llaves. Las llaves son mías." },
+      "why": { "en": "The long form agrees with llaves, feminine plural: mías.", "es": "La forma larga concuerda con llaves, femenino plural: mías." }
+    },
+    {
+      "id": "pos-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": ["tuyo", "mío", "suyo"],
+      "es": "Tú tienes una casa. La casa es ___.",
+      "word": "tuyo",
+      "answer": "tuya",
+      "tr": { "en": "You have a house. The house is yours.", "es": "Tú tienes una casa. La casa es tuya." },
+      "why": { "en": "The long form agrees with casa, feminine singular: tuya.", "es": "La forma larga concuerda con casa, femenino singular: tuya." }
+    },
+    {
+      "id": "pos-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "My parents sell their house.", "es": "Mis padres venden su casa." },
+      "es": "Mis padres venden su casa."
+    },
+    {
+      "id": "pos-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "Where is your phone?", "es": "¿Dónde está tu teléfono?" },
+      "es": "¿Dónde está tu teléfono?"
+    },
+    {
+      "id": "pos-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "Your friends are very kind.", "es": "Tus amigos son muy amables." },
+      "es": "Tus amigos son muy amables."
+    },
+    {
+      "id": "pos-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "His brother is an engineer.", "es": "Su hermano es ingeniero." },
+      "es": "Su hermano es ingeniero."
+    },
+    {
+      "id": "pos-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "My dog is called Max.", "es": "Mi perro se llama Max." },
+      "es": "Mi perro se llama Max."
     }
   ]
 }
