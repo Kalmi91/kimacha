@@ -1100,6 +1100,455 @@
         }
       ],
       "correctIndex": 0
+    },
+    {
+      "id": "rf-tr-01",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "I get up at seven.",
+        "es": "Me levanto a las siete."
+      },
+      "answer": "Me voy a levantar a las siete.",
+      "accept": [
+        "Voy a levantarme a las siete.",
+        "Yo me voy a levantar a las siete.",
+        "Yo voy a levantarme a las siete."
+      ],
+      "wordIds": [
+        "731",
+        "57"
+      ],
+      "why": {
+        "en": "With ir a + infinitive the pronoun goes before ir or is attached to the infinitive: me voy a levantar / voy a levantarme.",
+        "es": "Con ir a + infinitivo, el pronombre va delante de ir o pegado al infinitivo: me voy a levantar / voy a levantarme."
+      }
+    },
+    {
+      "id": "rf-tr-02",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "Ana showers in the morning.",
+        "es": "Ana se ducha por la mañana."
+      },
+      "answer": "Ana se va a duchar por la mañana.",
+      "accept": [
+        "Ana va a ducharse por la mañana."
+      ],
+      "wordIds": [
+        "4402",
+        "173"
+      ],
+      "why": {
+        "en": "With ir a + infinitive the pronoun goes before ir or is attached to the infinitive: me voy a levantar / voy a levantarme.",
+        "es": "Con ir a + infinitivo, el pronombre va delante de ir o pegado al infinitivo: me voy a levantar / voy a levantarme."
+      }
+    },
+    {
+      "id": "rf-tr-03",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "en": "I wake up at six.",
+        "es": "Me despierto a las seis."
+      },
+      "answer": "Me desperté a las seis.",
+      "accept": [
+        "Yo me desperté a las seis."
+      ],
+      "wordIds": [
+        "773",
+        "57"
+      ],
+      "why": {
+        "en": "The pronoun stays before the verb in the indefinido too: me desperté, se levantaron.",
+        "es": "El pronombre sigue delante del verbo también en indefinido: me desperté, se levantaron."
+      }
+    },
+    {
+      "id": "rf-tr-04",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "en": "My parents get up early.",
+        "es": "Mis padres se levantan temprano."
+      },
+      "answer": "Mis padres se levantaron temprano.",
+      "wordIds": [
+        "731",
+        "176"
+      ],
+      "why": {
+        "en": "The pronoun stays before the verb in the indefinido too: me desperté, se levantaron.",
+        "es": "El pronombre sigue delante del verbo también en indefinido: me desperté, se levantaron."
+      }
+    },
+    {
+      "id": "rf-tr-05",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "en": "I always get up early.",
+        "es": "Siempre me levanto temprano."
+      },
+      "answer": "Siempre me levantaba temprano.",
+      "accept": [
+        "Yo siempre me levantaba temprano.",
+        "Me levantaba temprano siempre."
+      ],
+      "wordIds": [
+        "731",
+        "102",
+        "176"
+      ],
+      "why": {
+        "en": "A habit in the past (siempre) takes the imperfect, and the pronoun stays before the verb: me levanto → me levantaba.",
+        "es": "Una costumbre en el pasado (siempre) va en imperfecto y el pronombre sigue delante del verbo: me levanto → me levantaba."
+      }
+    },
+    {
+      "id": "rf-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Mis padres ___ despiertan a las seis. Yo ___ levanto a las siete y mi hermana ___ levanta a las ocho.",
+      "answers": [
+        "se",
+        "me",
+        "se"
+      ],
+      "tr": {
+        "en": "My parents wake up at six. I get up at seven and my sister gets up at eight.",
+        "es": "Mis padres se despiertan a las seis. Yo me levanto a las siete y mi hermana se levanta a las ocho."
+      },
+      "why": {
+        "en": "The pronoun follows the subject: mis padres → se, yo → me, mi hermana → se.",
+        "es": "El pronombre sigue al sujeto: mis padres → se, yo → me, mi hermana → se."
+      }
+    },
+    {
+      "id": "rf-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Nosotros ___ acostamos tarde. Mi mamá ___ duerme rápido, pero yo ___ siento cansado.",
+      "answers": [
+        "nos",
+        "se",
+        "me"
+      ],
+      "tr": {
+        "en": "We go to bed late. My mom falls asleep fast, but I feel tired.",
+        "es": "Nosotros nos acostamos tarde. Mi mamá se duerme rápido, pero yo me siento cansado."
+      },
+      "why": {
+        "en": "nosotros → nos, mi mamá → se, yo → me: the pronoun always matches the subject.",
+        "es": "nosotros → nos, mi mamá → se, yo → me: el pronombre siempre concuerda con el sujeto."
+      }
+    },
+    {
+      "id": "rf-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Tú ___ llamas Ana, ¿verdad? ¿___ acuerdas de mí? Yo ___ llamo Diego.",
+      "answers": [
+        "te",
+        "te",
+        "me"
+      ],
+      "tr": {
+        "en": "Your name is Ana, right? Do you remember me? My name is Diego.",
+        "es": "Tú te llamas Ana, ¿verdad? ¿Te acuerdas de mí? Yo me llamo Diego."
+      },
+      "why": {
+        "en": "tú → te (te llamas, te acuerdas); yo → me (me llamo).",
+        "es": "tú → te (te llamas, te acuerdas); yo → me (me llamo)."
+      }
+    },
+    {
+      "id": "rf-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Mi hermana ___ (vestirse) muy elegante, pero yo ___ (vestirse) rápido.",
+      "answers": [
+        "se viste",
+        "me visto"
+      ],
+      "tr": {
+        "en": "My sister dresses very elegantly, but I get dressed fast.",
+        "es": "Mi hermana se viste muy elegante, pero yo me visto rápido."
+      },
+      "why": {
+        "en": "Vestirse changes e → i in the present (viste, visto) and keeps its pronoun: se viste, me visto.",
+        "es": "Vestirse cambia e → i en presente (viste, visto) y mantiene su pronombre: se viste, me visto."
+      }
+    },
+    {
+      "id": "rf-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Los niños ___ (lavarse) las manos y luego ___ (irse) a dormir.",
+      "answers": [
+        "se lavan",
+        "se van"
+      ],
+      "tr": {
+        "en": "The children wash their hands and then go to sleep.",
+        "es": "Los niños se lavan las manos y luego se van a dormir."
+      },
+      "why": {
+        "en": "Los niños = ellos: the pronoun is se in both parts (se lavan, se van).",
+        "es": "Los niños = ellos: el pronombre es se en las dos partes (se lavan, se van)."
+      }
+    },
+    {
+      "id": "rf-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "Yo se levanto a las siete.",
+      "wrongIndex": 1,
+      "answer": "me",
+      "explain": {
+        "en": "With yo the pronoun is me: me levanto.",
+        "es": "Con yo el pronombre es me: me levanto."
+      },
+      "tr": {
+        "en": "I get up at seven.",
+        "es": "Yo me levanto a las siete."
+      }
+    },
+    {
+      "id": "rf-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "Nosotros se acostamos tarde.",
+      "wrongIndex": 1,
+      "answer": "nos",
+      "explain": {
+        "en": "With nosotros the pronoun is nos: nos acostamos.",
+        "es": "Con nosotros el pronombre es nos: nos acostamos."
+      },
+      "tr": {
+        "en": "We go to bed late.",
+        "es": "Nosotros nos acostamos tarde."
+      }
+    },
+    {
+      "id": "rf-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "Tú se duchas por la mañana.",
+      "wrongIndex": 1,
+      "answer": "te",
+      "explain": {
+        "en": "With tú the pronoun is te: te duchas.",
+        "es": "Con tú el pronombre es te: te duchas."
+      },
+      "tr": {
+        "en": "You shower in the morning.",
+        "es": "Tú te duchas por la mañana."
+      }
+    },
+    {
+      "id": "rf-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "Usted te viste muy elegante hoy.",
+      "wrongIndex": 1,
+      "answer": "se",
+      "explain": {
+        "en": "Usted takes the third person, so the pronoun is se: se viste.",
+        "es": "Usted lleva la tercera persona, así que el pronombre es se: se viste."
+      },
+      "tr": {
+        "en": "You dress very elegantly today.",
+        "es": "Usted se viste muy elegante hoy."
+      }
+    },
+    {
+      "id": "rf-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "Nosotros no se lavamos las manos.",
+      "wrongIndex": 2,
+      "answer": "nos",
+      "explain": {
+        "en": "With nosotros the pronoun is nos: no nos lavamos.",
+        "es": "Con nosotros el pronombre es nos: no nos lavamos."
+      },
+      "tr": {
+        "en": "We do not wash our hands.",
+        "es": "Nosotros no nos lavamos las manos."
+      }
+    },
+    {
+      "id": "rf-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "lavar",
+        "acostar",
+        "despertar"
+      ],
+      "es": "Nosotros nos ___ las manos antes de comer.",
+      "word": "lavar",
+      "answer": "lavamos",
+      "tr": {
+        "en": "We wash our hands before eating.",
+        "es": "Nosotros nos lavamos las manos antes de comer."
+      },
+      "why": {
+        "en": "Only lavarse goes with las manos: nos lavamos (acostar and despertar do not fit).",
+        "es": "Solo lavarse va con las manos: nos lavamos (acostar y despertar no encajan)."
+      }
+    },
+    {
+      "id": "rf-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "llamar",
+        "acostar",
+        "vestir"
+      ],
+      "es": "Yo me ___ Diego y soy de México.",
+      "word": "llamar",
+      "answer": "llamo",
+      "tr": {
+        "en": "My name is Diego and I am from Mexico.",
+        "es": "Yo me llamo Diego y soy de México."
+      },
+      "why": {
+        "en": "Only llamarse says your name: me llamo Diego.",
+        "es": "Solo llamarse dice el nombre: me llamo Diego."
+      }
+    },
+    {
+      "id": "rf-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "acordar",
+        "lavar",
+        "vestir"
+      ],
+      "es": "¿Te ___ de mi cumpleaños?",
+      "word": "acordar",
+      "answer": "acuerdas",
+      "tr": {
+        "en": "Do you remember my birthday?",
+        "es": "¿Te acuerdas de mi cumpleaños?"
+      },
+      "why": {
+        "en": "Only acordarse goes with de + something you remember: te acuerdas (o → ue).",
+        "es": "Solo acordarse va con de + lo que recuerdas: te acuerdas (o → ue)."
+      }
+    },
+    {
+      "id": "rf-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "dormir",
+        "ir",
+        "sentir"
+      ],
+      "es": "Ella se ___ temprano del trabajo.",
+      "word": "ir",
+      "answer": "va",
+      "tr": {
+        "en": "She leaves work early.",
+        "es": "Ella se va temprano del trabajo."
+      },
+      "why": {
+        "en": "Irse del trabajo = to leave work: se va (dormir and sentir do not fit \"del trabajo\").",
+        "es": "Irse del trabajo = salir del trabajo: se va (dormir y sentir no encajan con \"del trabajo\")."
+      }
+    },
+    {
+      "id": "rf-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "sentir",
+        "llamar",
+        "vestir"
+      ],
+      "es": "Yo me ___ cansado hoy.",
+      "word": "sentir",
+      "answer": "siento",
+      "tr": {
+        "en": "I feel tired today.",
+        "es": "Yo me siento cansado hoy."
+      },
+      "why": {
+        "en": "Only sentirse goes with a state like cansado: me siento (e → ie).",
+        "es": "Solo sentirse va con un estado como cansado: me siento (e → ie)."
+      }
+    },
+    {
+      "id": "rf-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "I get up at seven.",
+        "es": "Me levanto a las siete."
+      },
+      "es": "Me levanto a las siete."
+    },
+    {
+      "id": "rf-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "My parents wake up at six.",
+        "es": "Mis padres se despiertan a las seis."
+      },
+      "es": "Mis padres se despiertan a las seis."
+    },
+    {
+      "id": "rf-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "We go to bed late.",
+        "es": "Nosotros nos acostamos tarde."
+      },
+      "es": "Nosotros nos acostamos tarde."
+    },
+    {
+      "id": "rf-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "Ana showers in the morning.",
+        "es": "Ana se ducha por la mañana."
+      },
+      "es": "Ana se ducha por la mañana."
+    },
+    {
+      "id": "rf-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "Do you remember me?",
+        "es": "¿Te acuerdas de mí?"
+      },
+      "es": "¿Te acuerdas de mí?"
     }
   ]
 }
