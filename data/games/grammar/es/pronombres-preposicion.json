@@ -1596,16 +1596,16 @@
         "tú",
         "ella"
       ],
-      "es": "Mi hermana nunca sale sin ___; siempre me espera.",
+      "es": "Mis amigos van al cine sin ___ porque estoy enfermo.",
       "word": "yo",
       "answer": "mí",
       "tr": {
-        "en": "My sister never goes out without me; she always waits for me.",
-        "es": "Mi hermana nunca sale sin mí; siempre me espera."
+        "en": "My friends are going to the movies without me because I am sick.",
+        "es": "Mis amigos van al cine sin mí porque estoy enfermo."
       },
       "why": {
-        "en": "She waits for me, so without me: sin + yo = sin mí.",
-        "es": "Ella me espera a mí, así que sin mí: sin + yo = sin mí."
+        "en": "They go without me, so sin + yo = sin mí.",
+        "es": "Van sin mí, así que sin + yo = sin mí."
       }
     },
     {
@@ -1664,10 +1664,10 @@
       "kind": "order",
       "trial": true,
       "prompt": {
-        "en": "My sister never eats without me.",
-        "es": "Mi hermana nunca come sin mí."
+        "en": "Ana is coming with me.",
+        "es": "Ana viene conmigo."
       },
-      "es": "Mi hermana nunca come sin mí."
+      "es": "Ana viene conmigo."
     },
     {
       "id": "pp-order-05",

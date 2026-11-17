@@ -1488,10 +1488,12 @@
       ],
       "accept": [
         [
-          "mucha"
+          "mucha",
+          "bastante"
         ],
         [
-          "muy"
+          "muy",
+          "bastante"
         ]
       ],
       "tr": {
@@ -1540,7 +1542,8 @@
       ],
       "accept": [
         [
-          "un"
+          "un",
+          "más"
         ]
       ],
       "tr": {
@@ -1752,20 +1755,20 @@
       "kind": "order",
       "trial": true,
       "prompt": {
-        "en": "In every house there is a kitchen.",
-        "es": "En cada casa hay una cocina."
+        "en": "Is there a kitchen in every house?",
+        "es": "¿Hay una cocina en cada casa?"
       },
-      "es": "En cada casa hay una cocina."
+      "es": "¿Hay una cocina en cada casa?"
     },
     {
       "id": "c-order-03",
       "kind": "order",
       "trial": true,
       "prompt": {
-        "en": "There are too many people on the subway.",
-        "es": "Hay demasiada gente en el metro."
+        "en": "There are too many people.",
+        "es": "Hay demasiada gente."
       },
-      "es": "Hay demasiada gente en el metro."
+      "es": "Hay demasiada gente."
     },
     {
       "id": "c-order-04",

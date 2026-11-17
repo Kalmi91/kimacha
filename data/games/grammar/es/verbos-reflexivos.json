@@ -1505,20 +1505,20 @@
       "kind": "order",
       "trial": true,
       "prompt": {
-        "en": "I get up at seven.",
-        "es": "Me levanto a las siete."
+        "en": "What time do you get up?",
+        "es": "¿A qué hora te levantas?"
       },
-      "es": "Me levanto a las siete."
+      "es": "¿A qué hora te levantas?"
     },
     {
       "id": "rf-order-02",
       "kind": "order",
       "trial": true,
       "prompt": {
-        "en": "My parents wake up at six.",
-        "es": "Mis padres se despiertan a las seis."
+        "en": "My parents do not wake up early.",
+        "es": "Mis padres no se despiertan temprano."
       },
-      "es": "Mis padres se despiertan a las seis."
+      "es": "Mis padres no se despiertan temprano."
     },
     {
       "id": "rf-order-03",
@@ -1535,10 +1535,10 @@
       "kind": "order",
       "trial": true,
       "prompt": {
-        "en": "Ana showers in the morning.",
-        "es": "Ana se ducha por la mañana."
+        "en": "Ana showers quickly.",
+        "es": "Ana se ducha rápido."
       },
-      "es": "Ana se ducha por la mañana."
+      "es": "Ana se ducha rápido."
     },
     {
       "id": "rf-order-05",

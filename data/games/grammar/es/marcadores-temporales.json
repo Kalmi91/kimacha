@@ -1286,8 +1286,8 @@
         "153"
       ],
       "why": {
-        "en": "With últimamente or esta semana (a time that is not over yet) we use the present perfect: he + participle.",
-        "es": "Con últimamente o esta semana (un tiempo que no ha terminado) usamos el pretérito perfecto: he + participio."
+        "en": "With últimamente or hasta ahora (a situation that lasts until now) we use the present perfect: he + participle.",
+        "es": "Con últimamente o hasta ahora (una situación que dura hasta ahora) usamos el pretérito perfecto: he + participio."
       }
     },
     {
@@ -1298,13 +1298,13 @@
         "to": "perfecto"
       },
       "prompt": {
-        "en": "This week I work a lot.",
-        "es": "Esta semana trabajo mucho."
+        "en": "Until now I work a lot.",
+        "es": "Hasta ahora trabajo mucho."
       },
-      "answer": "Esta semana he trabajado mucho.",
+      "answer": "Hasta ahora he trabajado mucho.",
       "accept": [
-        "Esta semana yo he trabajado mucho.",
-        "He trabajado mucho esta semana."
+        "Hasta ahora yo he trabajado mucho.",
+        "He trabajado mucho hasta ahora."
       ],
       "wordIds": [
         "49",
@@ -1312,8 +1312,8 @@
         "66"
       ],
       "why": {
-        "en": "With últimamente or esta semana (a time that is not over yet) we use the present perfect: he + participle.",
-        "es": "Con últimamente o esta semana (un tiempo que no ha terminado) usamos el pretérito perfecto: he + participio."
+        "en": "With últimamente or hasta ahora (a situation that lasts until now) we use the present perfect: he + participle.",
+        "es": "Con últimamente o hasta ahora (una situación que dura hasta ahora) usamos el pretérito perfecto: he + participio."
       }
     },
     {
@@ -1330,7 +1330,8 @@
       "answer": "Los domingos comía con mi familia.",
       "accept": [
         "Los domingos yo comía con mi familia.",
-        "Comía con mi familia los domingos."
+        "Comía con mi familia los domingos.",
+        "Yo comía con mi familia los domingos."
       ],
       "wordIds": [
         "25",
@@ -1356,7 +1357,8 @@
       "answer": "Esta mañana llegué tarde al trabajo.",
       "accept": [
         "Esta mañana yo llegué tarde al trabajo.",
-        "Llegué tarde al trabajo esta mañana."
+        "Llegué tarde al trabajo esta mañana.",
+        "Yo llegué tarde al trabajo esta mañana."
       ],
       "wordIds": [
         "149",
@@ -1427,19 +1429,19 @@
       "id": "mt-cloze-04",
       "kind": "opencloze",
       "trial": true,
-      "text": "Esta semana ___ (yo, trabajar) mucho. Hoy ___ (yo, dormir) poco y ya ___ (yo, tomar) tres cafés.",
+      "text": "Últimamente ___ (yo, trabajar) mucho y ___ (yo, dormir) poco. Hasta ahora ___ (yo, tomar) tres cafés.",
       "answers": [
         "he trabajado",
         "he dormido",
         "he tomado"
       ],
       "tr": {
-        "en": "This week I have worked a lot. Today I have slept little and I have already had three coffees.",
-        "es": "Esta semana he trabajado mucho. Hoy he dormido poco y ya he tomado tres cafés."
+        "en": "Lately I have worked a lot and I have slept little. So far I have had three coffees.",
+        "es": "Últimamente he trabajado mucho y he dormido poco. Hasta ahora he tomado tres cafés."
       },
       "why": {
-        "en": "Esta semana, hoy and ya belong to a time that is not over yet: present perfect (he trabajado, he dormido, he tomado).",
-        "es": "Esta semana, hoy y ya pertenecen a un tiempo que no ha terminado: pretérito perfecto (he trabajado, he dormido, he tomado)."
+        "en": "Últimamente and hasta ahora describe a situation that lasts until now: present perfect (he trabajado, he dormido, he tomado).",
+        "es": "Últimamente y hasta ahora describen una situación que dura hasta ahora: pretérito perfecto (he trabajado, he dormido, he tomado)."
       }
     },
     {
@@ -1506,7 +1508,8 @@
       "wrongIndex": 1,
       "answer": "voy",
       "accept": [
-        "iré"
+        "iré",
+        "voy a ir"
       ],
       "explain": {
         "en": "Mañana looks ahead, so the verb is in the present or the future: voy / iré, not fui.",
@@ -1541,7 +1544,8 @@
       "wrongIndex": 4,
       "answer": "llegaré",
       "accept": [
-        "llego"
+        "llego",
+        "voy a llegar"
       ],
       "explain": {
         "en": "Dentro de dos días looks ahead: future (llegaré) or present (llego), not llegué.",
@@ -1592,7 +1596,10 @@
       "why": {
         "en": "De niño describes the past as a situation: imperfect, tener → tenía.",
         "es": "De niño describe el pasado como una situación: imperfecto, tener → tenía."
-      }
+      },
+      "accept": [
+        "tuve"
+      ]
     },
     {
       "id": "mt-bank-03",
@@ -1603,16 +1610,16 @@
         "comer",
         "dormir"
       ],
-      "es": "Esta semana mi hermana ya ha ___ a México.",
+      "es": "Hasta ahora mi hermana ha ___ a México tres veces.",
       "word": "viajar",
       "answer": "viajado",
       "tr": {
-        "en": "This week my sister has already traveled to Mexico.",
-        "es": "Esta semana mi hermana ya ha viajado a México."
+        "en": "So far my sister has traveled to Mexico three times.",
+        "es": "Hasta ahora mi hermana ha viajado a México tres veces."
       },
       "why": {
-        "en": "Esta semana and ya go with the present perfect: ha + participle (viajar → viajado).",
-        "es": "Esta semana y ya van con el pretérito perfecto: ha + participio (viajar → viajado)."
+        "en": "Hasta ahora goes with the present perfect: ha + participle (viajar → viajado).",
+        "es": "Hasta ahora va con el pretérito perfecto: ha + participio (viajar → viajado)."
       }
     },
     {
@@ -1662,50 +1669,50 @@
       "kind": "order",
       "trial": true,
       "prompt": {
-        "en": "Yesterday we went to the movies.",
-        "es": "Ayer fuimos al cine."
+        "en": "What did you do yesterday?",
+        "es": "¿Qué hiciste ayer?"
       },
-      "es": "Ayer fuimos al cine."
+      "es": "¿Qué hiciste ayer?"
     },
     {
       "id": "mt-order-02",
       "kind": "order",
       "trial": true,
       "prompt": {
-        "en": "As a child, I lived in Puebla.",
-        "es": "De niño vivía en Puebla."
+        "en": "Where did you live as a child?",
+        "es": "¿Dónde vivías de niño?"
       },
-      "es": "De niño vivía en Puebla."
+      "es": "¿Dónde vivías de niño?"
     },
     {
       "id": "mt-order-03",
       "kind": "order",
       "trial": true,
       "prompt": {
-        "en": "Lately I have worked a lot at home.",
-        "es": "Últimamente he trabajado mucho en casa."
+        "en": "Have you worked a lot lately?",
+        "es": "¿Has trabajado mucho últimamente?"
       },
-      "es": "Últimamente he trabajado mucho en casa."
+      "es": "¿Has trabajado mucho últimamente?"
     },
     {
       "id": "mt-order-04",
       "kind": "order",
       "trial": true,
       "prompt": {
-        "en": "Next year we will buy a new car.",
-        "es": "El año que viene compraremos un carro nuevo."
+        "en": "What are we going to buy next year?",
+        "es": "¿Qué vamos a comprar el año que viene?"
       },
-      "es": "El año que viene compraremos un carro nuevo."
+      "es": "¿Qué vamos a comprar el año que viene?"
     },
     {
       "id": "mt-order-05",
       "kind": "order",
       "trial": true,
       "prompt": {
-        "en": "While I was cooking, my brother was studying.",
-        "es": "Mientras yo cocinaba, mi hermano estudiaba."
+        "en": "What were you doing while I was cooking?",
+        "es": "¿Qué hacías mientras yo cocinaba?"
       },
-      "es": "Mientras yo cocinaba, mi hermano estudiaba."
+      "es": "¿Qué hacías mientras yo cocinaba?"
     }
   ]
 }

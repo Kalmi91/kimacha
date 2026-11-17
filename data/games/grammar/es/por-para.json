@@ -1106,7 +1106,7 @@
       "bank": [
         "por",
         "para",
-        "en"
+        "sin"
       ],
       "es": "Compro esta camisa ___ cien pesos.",
       "word": "por",
@@ -1208,10 +1208,10 @@
       "kind": "order",
       "trial": true,
       "prompt": {
-        "en": "We talk on the phone with my mom.",
-        "es": "Hablamos por teléfono con mi mamá."
+        "en": "We talk on the phone.",
+        "es": "Hablamos por teléfono."
       },
-      "es": "Hablamos por teléfono con mi mamá."
+      "es": "Hablamos por teléfono."
     },
     {
       "id": "pr-order-04",
