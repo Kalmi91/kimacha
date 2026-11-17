@@ -1,7 +1,7 @@
 // Which test a level's row on the Grammar tab starts. One place decides it: a level with a Small test
-// (app/grammar/small-test.tsx) opens that, every other level keeps the level test (app/grammar/level-test.tsx).
-// A level that gets its Small test later is added to SMALL_TEST_LEVELS, nothing else changes.
-export const SMALL_TEST_LEVELS: readonly string[] = ['A1'];
+// (app/grammar/small-test.tsx) opens that, a level without one keeps the level test (app/grammar/level-test.tsx).
+// Every level of the course has its Small test; the old level test stays reachable from the level header's button.
+export const SMALL_TEST_LEVELS: readonly string[] = ['A1', 'A2', 'B1', 'B2', 'C1'];
 
 export const hasSmallTest = (level: string): boolean => SMALL_TEST_LEVELS.includes(level);
 

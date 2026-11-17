@@ -41,11 +41,14 @@ const storedResult = (level: string) => ({
   at: '2026-11-16T10:00:00.000Z',
 });
 
-it('the small-test decision lives in one place: A1 has a Small test, the other levels use the level test', () => {
-  expect(hasSmallTest('A1')).toBe(true);
-  expect(hasSmallTest('A2')).toBe(false);
-  expect(levelTestRoute('A1')).toBe('/grammar/small-test?level=a1');
-  expect(levelTestRoute('B2')).toBe('/grammar/level-test?level=B2');
+it('the small-test decision lives in one place: every level has a Small test, an unknown level keeps the level test', () => {
+  for (const l of LEVELS) {
+    expect(hasSmallTest(l)).toBe(true);
+    expect(levelTestRoute(l)).toBe(`/grammar/small-test?level=${l.toLowerCase()}`);
+  }
+  expect(levelTestRoute('B2')).toBe('/grammar/small-test?level=b2');
+  expect(hasSmallTest('C2')).toBe(false);
+  expect(levelTestRoute('C2')).toBe('/grammar/level-test?level=C2');
 });
 
 describe.each([
@@ -110,6 +113,21 @@ describe.each([
     await saveResumeValue(getDb(), key, null);
   });
 
+  it.each(['A2', 'B1', 'B2', 'C1'])('the %s test row starts the Small test and carries its own Continue mark', async (lvl) => {
+    const key = smallKey(PAIR, lvl);
+    await open();
+    expect(screen.queryByTestId(`grammar-test-row-resume-${lvl}`)).toBeNull();
+    screen.unmount();
+    const run = { round: 1, seed: 1, phase: 'learn', topics: [{ id: 'x', isNew: true }], topicRuns: { x: {} }, answers: [], pending: [], current: null, stopTopic: null, mini: null };
+    await saveResumeValue(getDb(), key, { ...newSmallState(), run });
+    await open();
+    expect(screen.getByTestId(`grammar-test-row-resume-${lvl}`)).toHaveTextContent('Continue');
+    for (const other of LEVELS.filter((l) => l !== lvl)) expect(screen.queryByTestId(`grammar-test-row-resume-${other}`)).toBeNull();
+    fireEvent.press(screen.getByTestId(`grammar-test-row-${lvl}`));
+    expect(mockPush).toHaveBeenCalledWith(`/grammar/small-test?level=${lvl.toLowerCase()}`);
+    await saveResumeValue(getDb(), key, null);
+  });
+
   it('one level at a time: pressing a level button shows its lessons and hides the other level\'s', async () => {
     await open();
     const a1 = syllabusForLevel('A1', 'es')[0].id;
@@ -154,14 +172,16 @@ describe.each([
     expect(selected('A1')).toBe(true);
   });
 
-  it('the A1 test row starts the Small test, the other rows start the level test', async () => {
+  it('every test row starts the Small test of its level, the old level-test button of the level header stays', async () => {
     await open();
-    fireEvent.press(screen.getByTestId('grammar-test-row-A1'));
-    expect(mockPush).toHaveBeenLastCalledWith('/grammar/small-test?level=a1');
-    for (const l of ['A2', 'B1', 'B2', 'C1']) {
+    for (const l of LEVELS) {
       fireEvent.press(screen.getByTestId(`grammar-test-row-${l}`));
-      expect(mockPush).toHaveBeenLastCalledWith(`/grammar/level-test?level=${l}`);
+      expect(mockPush).toHaveBeenLastCalledWith(`/grammar/small-test?level=${l.toLowerCase()}`);
     }
+    fireEvent.press(screen.getByTestId('grammar-level-A2'));
+    await flush();
+    fireEvent.press(screen.getByTestId('grammar-level-test-A2'));
+    expect(mockPush).toHaveBeenLastCalledWith('/grammar/level-test?level=A2');
   });
 
   it('a test row reads "A1 level test N%" and is a named button', async () => {
