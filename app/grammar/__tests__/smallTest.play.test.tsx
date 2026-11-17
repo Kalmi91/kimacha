@@ -262,7 +262,9 @@ describe.each(['brand', 'classic'] as const)('grammar small test (%s palette)', 
     await answerNext(true);
     expect(text('small-test-header')).toBe('Quick check · 2/3');
     await answerNext(true);
-    await answerNext(false);
+    await answer(false); // a miss in the quick check shows the right answer too
+    expect(text('level-test-feedback-answer')).toBeTruthy();
+    await press('level-test-next');
     expect(text('small-test-header')).toBe(`A1 test · ${answered + 1}/10`); // the check did not count as a test question
     expect(onScreen().topic).not.toBe(topic);
     expect((await stateNow()).run!.answers).toHaveLength(answered);
@@ -365,6 +367,8 @@ describe.each(['brand', 'classic'] as const)('grammar small test (%s palette)', 
     await press('bank-check');
     await press('grammar-next');
     expect(has('small-test-miss')).toBe(true);
+    expect(text('small-test-miss-answer')).toMatch(/^Los coches \d son rojos\.$/);
+    expect(text('small-test-miss-why')).toBe('Agrees in number.');
     await press('small-test-mistyped');
     expect(text('small-test-header')).toBe('A2 test · 2/10');
     const st = await loadSmallState(getDb(), 'en→es', 'A2');
