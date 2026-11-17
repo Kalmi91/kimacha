@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
+import { Fragment, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import { StyleSheet, TextInput, View } from 'react-native';
 import { Text } from '@/components/KText';
 
@@ -139,7 +139,7 @@ function TypedItem({
               <Text style={[styles.nextText, { color: inkButtonText(g) }]}>{s.grammar.check}</Text>
             </BrutalBox>
           )}
-          {!strictAccents ? (
+          {!strictAccents && !result ? (
             <Text testID={`${prefix}-accent-hint`} style={[styles.explain, { color: g.mu }]}>
               {s.grammar.accentHint}
             </Text>
@@ -201,9 +201,9 @@ export function ClozeDrillItem({ item, learnedLang, contentLang, strictAccents, 
     <View style={styles.body} testID="cloze-item">
       <ItemHead title={s.grammar.clozeHint} />
       <BrutalBox boxStyle={styles.sentenceBox}>
-        <View style={styles.clozeRow}>
+        <View testID="cloze-row" style={styles.clozeRow}>
           {parts.map((piece, i) => (
-            <View key={i} style={styles.clozeSeg}>
+            <Fragment key={i}>
               {piece
                 .split(/\s+/)
                 .filter(Boolean)
@@ -231,7 +231,7 @@ export function ClozeDrillItem({ item, learnedLang, contentLang, strictAccents, 
                   />
                 </BrutalBox>
               ) : null}
-            </View>
+            </Fragment>
           ))}
         </View>
       </BrutalBox>
@@ -258,7 +258,7 @@ export function ClozeDrillItem({ item, learnedLang, contentLang, strictAccents, 
           <Text style={[styles.nextText, { color: inkButtonText(g) }]}>{s.grammar.check}</Text>
         </BrutalBox>
       )}
-      {!strictAccents ? (
+      {!strictAccents && !result ? (
         <Text testID="cloze-accent-hint" style={[styles.explain, { color: g.mu }]}>
           {s.grammar.accentHint}
         </Text>
@@ -419,8 +419,7 @@ const styles = StyleSheet.create({
   input: { paddingVertical: 12, paddingHorizontal: 14, fontSize: 18 },
   promptBox: { padding: 16 },
   promptText: { fontSize: 22, lineHeight: 29, fontWeight: '600' },
-  clozeRow: { flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center' },
-  clozeSeg: { flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center', gap: 6 },
+  clozeRow: { flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center', columnGap: 6 },
   clozeWord: { fontSize: 20, lineHeight: 30 },
   clozeBox: { paddingVertical: 2, paddingHorizontal: 6, minWidth: 84 },
   clozeInput: { fontSize: 18, paddingVertical: 4, minWidth: 72 },

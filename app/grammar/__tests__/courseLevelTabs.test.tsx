@@ -21,6 +21,7 @@ import { StyleSheet } from 'react-native';
 
 import { getDb } from '@/lib/database.web';
 import { bigTestResultKey, bigTestRunKey } from '@/lib/grammar/bigTest';
+import { newSmallState, smallKey } from '@/lib/grammar/smallTest';
 import { grammarTabLevelKey, hasSmallTest, levelTestRoute } from '@/lib/grammar/levelTestRoute';
 import { syllabusForLevel } from '@/lib/grammar/syllabus';
 import { loadResumeValue, saveResumeValue } from '@/lib/resumeStore';
@@ -92,6 +93,21 @@ describe.each([
     expect(screen.getByTestId('grammar-level-standing-A1')).toBeTruthy();
     expect(screen.getByTestId('grammar-exam-strip-A1')).toBeTruthy();
     expect(screen.getByTestId(`grammar-topic-${syllabusForLevel('A1', 'es')[0].id}`)).toBeTruthy();
+  });
+
+  it('the A1 test row carries a Continue mark only while a Small test round is saved and unfinished', async () => {
+    const key = smallKey(PAIR, 'A1');
+    await open();
+    expect(screen.queryByTestId('grammar-test-row-resume-A1')).toBeNull();
+    screen.unmount();
+    const run = { round: 1, seed: 1, phase: 'learn', topics: [{ id: 'x', isNew: true }], topicRuns: { x: {} }, answers: [], pending: [], current: null, stopTopic: null, mini: null };
+    await saveResumeValue(getDb(), key, { ...newSmallState(), run });
+    await open();
+    expect(screen.getByTestId('grammar-test-row-resume-A1')).toHaveTextContent('Continue');
+    expect(screen.queryByTestId('grammar-test-row-resume-A2')).toBeNull();
+    fireEvent.press(screen.getByTestId('grammar-test-row-A1'));
+    expect(mockPush).toHaveBeenCalledWith(levelTestRoute('A1'));
+    await saveResumeValue(getDb(), key, null);
   });
 
   it('one level at a time: pressing a level button shows its lessons and hides the other level\'s', async () => {

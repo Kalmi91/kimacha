@@ -279,6 +279,7 @@ const es: typeof en = {
   levelTabs: {
     yourOverall: (lvl: string, pct: number) => `Tu nivel: ${lvl} · total ${pct}%`,
     testRow: (lvl: string, pct: number | null) => (pct === null ? `Prueba de nivel ${lvl}` : `Prueba de nivel ${lvl} ${pct}%`),
+    resume: 'Continuar',
     levelButton: (lvl: string) => `Nivel ${lvl}`,
   },
 };

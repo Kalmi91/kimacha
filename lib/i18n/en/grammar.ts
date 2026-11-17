@@ -296,6 +296,7 @@ export default {
   levelTabs: {
     yourOverall: (lvl: string, pct: number) => `Your level: ${lvl} · overall ${pct}%`,
     testRow: (lvl: string, pct: number | null) => (pct === null ? `${lvl} level test` : `${lvl} level test ${pct}%`),
+    resume: 'Continue',
     levelButton: (lvl: string) => `Level ${lvl}`,
   },
 };

@@ -134,6 +134,11 @@ export function parseSmallState(raw: unknown): SmallState {
   };
 }
 
+/** True when a Small test round of this level is saved and not finished (the Grammar tab's Continue mark). */
+export async function hasSavedSmallRun(db: DB, pair: string, level: string): Promise<boolean> {
+  return (await loadSmallState(db, pair, level)).run !== null;
+}
+
 export async function loadSmallState(db: DB, pair: string, level: string): Promise<SmallState> {
   return parseSmallState(await loadResumeValue(db, smallKey(pair, level)));
 }
