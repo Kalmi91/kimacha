@@ -9,6 +9,7 @@ import {
   newSmallState,
   openLesson,
   parseSmallState,
+  repairSmallRun,
   resolveAnswer,
   roundRows,
   saveSmallState,
@@ -263,6 +264,27 @@ describe('small test: level done and the saved run', () => {
     const rest = (st: SmallState) => play(st, () => true).run!.answers.map((x) => x.qid);
     expect(rest(loaded)).toEqual(rest(a));
     expect(mid.run!.phase).toBe('end');
+  });
+
+  it('a saved run whose round topic has no topicRuns entry is dropped (it would crash the next pick)', () => {
+    const a = JSON.parse(JSON.stringify(begin(5)));
+    delete a.run.topicRuns[a.run.topics[0].id];
+    expect(parseSmallState(a).run).toBeNull();
+    expect(parseSmallState(JSON.parse(JSON.stringify(begin(5)))).run).not.toBeNull();
+  });
+
+  it('a current question that left the pool is replaced by another one of the same topic; with none left the run is dropped', () => {
+    const s = begin(6);
+    const cur = s.run!.current!;
+    const gone: SmallPool = (topic) => pool(topic).filter((q) => q.id !== cur.qid);
+    const fixed = repairSmallRun(s, gone);
+    expect(fixed.run!.current!.topic).toBe(cur.topic);
+    expect(fixed.run!.current!.qid).not.toBe(cur.qid);
+    expect(gone(cur.topic).some((q) => q.id === fixed.run!.current!.qid)).toBe(true);
+    const none: SmallPool = (topic) => (topic === cur.topic ? [] : pool(topic));
+    expect(repairSmallRun(s, none).run).toBeNull();
+    // a run that is fine is left as it is
+    expect(repairSmallRun(s, pool)).toBe(s);
   });
 
   it('a damaged save becomes a fresh state', () => {

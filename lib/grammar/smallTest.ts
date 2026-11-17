@@ -11,8 +11,8 @@ import { TASK_TYPE_IDS, type TaskTypeId } from './taskTypes';
 // pure (no React); the screen is app/grammar/small-test.tsx. The state lives in the resume store.
 //
 // How a topic is learned (decided here, the spec names only the miss path): miss -> 2 right -> 3rd right, or mixed -> 3rd
-// right; or the topic's questions were all right in two rounds in a row (a topic that is never missed would never be learned
-// otherwise). A topic that stops the test loses its learned mark.
+// right; or 3 right answers in a row on the topic without a miss, counted across rounds (a topic that is never missed would
+// never be learned otherwise; a miss resets the count). A topic that stops the test loses its learned mark.
 
 export const SMALL_TEST_SIZE = 10;
 export const SMALL_TEST_TOPICS = 6;
@@ -120,6 +120,8 @@ export function parseSmallState(raw: unknown): SmallState {
   for (const [k, v] of Object.entries((r.clean ?? {}) as Record<string, unknown>)) if (typeof v === 'number' && Number.isFinite(v)) clean[k] = v;
   const run = r.run as SmallRun | null | undefined;
   const okRun = !!run && typeof run === 'object' && typeof run.seed === 'number' && Array.isArray(run.topics) && Array.isArray(run.answers) && !!run.topicRuns && typeof run.phase === 'string';
+  // every round topic needs its topicRuns entry, or the next pick would throw
+  const whole = okRun && run!.topics.every((tp) => !!tp && typeof tp.id === 'string' && !!run!.topicRuns[tp.id] && typeof run!.topicRuns[tp.id] === 'object');
   return {
     v: 1,
     learned: strings(r.learned),
@@ -128,7 +130,7 @@ export function parseSmallState(raw: unknown): SmallState {
     history: (r.history as unknown[]).filter((v): v is number => typeof v === 'number').slice(-HISTORY_MAX),
     recent: strings(r.recent),
     rounds: typeof r.rounds === 'number' ? r.rounds : 0,
-    run: okRun ? { ...(run as SmallRun), pending: Array.isArray(run!.pending) ? run!.pending : [], mini: run!.mini ?? null, stopTopic: run!.stopTopic ?? null, current: run!.current ?? null } : null,
+    run: okRun && whole ? { ...(run as SmallRun), pending: Array.isArray(run!.pending) ? run!.pending : [], mini: run!.mini ?? null, stopTopic: run!.stopTopic ?? null, current: run!.current ?? null } : null,
   };
 }
 
@@ -172,6 +174,30 @@ export function startRound(st: SmallState, topics: SmallTopicInfo[], pool: Small
     mini: null,
   };
   return { ...st, rounds: st.rounds + 1, seen: [...new Set([...st.seen, ...picked.map((tp) => tp.id)])], run };
+}
+
+/**
+ * A loaded run whose current question (or quick-check question) is no longer in the content (a content update): another
+ * question of the same topic comes; with none left the run is dropped (the screen starts a new round).
+ */
+export function repairSmallRun(st: SmallState, pool: SmallPool): SmallState {
+  const run = st.run;
+  if (!run) return st;
+  const has = (c: SmallCur) => pool(c.topic).some((q) => q.id === c.qid);
+  if (run.phase === 'ask') {
+    if (run.current && has(run.current)) return st;
+    if (run.current) {
+      const cur = pickQuestion(st, run, run.current.topic, run.current.role, pool, [], [], run.answers.length);
+      return cur ? { ...st, run: { ...run, current: cur } } : { ...st, run: null };
+    }
+    return withNext(st, run, pool);
+  }
+  if (run.phase === 'mini') {
+    if (run.mini && run.current && run.mini.cur.every(has)) return st;
+    if (!run.stopTopic) return { ...st, run: null };
+    return finishLesson({ ...st, run: { ...run, phase: 'lesson', mini: null, current: null } }, pool);
+  }
+  return st;
 }
 
 /** From the intro to the first question. */

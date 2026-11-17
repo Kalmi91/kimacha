@@ -25,6 +25,7 @@ import {
   levelProgress,
   loadSmallState,
   openLesson,
+  repairSmallRun,
   resolveAnswer,
   roundRight,
   roundRows,
@@ -126,6 +127,7 @@ export default function SmallTestScreen() {
         setData(d);
         return;
       }
+      if (state.run) state = repairSmallRun(state, v.pool);
       if (!state.run) state = startRound(state, v.topics, v.pool, seed);
       else if (state.run.phase === 'lesson') state = finishLesson(state, v.pool);
       pairRef.current = pair;
@@ -162,6 +164,19 @@ export default function SmallTestScreen() {
 
   const shell = (children: ReactNode) => <View style={[styles.screen, { backgroundColor: colors.background }]}>{children}</View>;
 
+  // the loading spinner never traps the learner: the X is there too
+  const waiting = () =>
+    shell(
+      <View style={styles.flex}>
+        <View style={styles.header}>
+          <Pressable testID="small-test-close" accessibilityRole="button" accessibilityLabel={s.leave} hitSlop={12} onPress={() => router.back()}>
+            <Text style={[styles.close, { color: colors.textMuted }]}>✕</Text>
+          </Pressable>
+        </View>
+        <ActivityIndicator style={styles.flex} color={colors.tint} />
+      </View>,
+    );
+
   if (empty) {
     return shell(
       <View style={styles.flex}>
@@ -174,7 +189,7 @@ export default function SmallTestScreen() {
       </View>,
     );
   }
-  if (!data || !view || !st || !st.run) return shell(<ActivityIndicator style={styles.flex} color={colors.tint} />);
+  if (!data || !view || !st || !st.run) return waiting();
 
   const run = st.run;
   const pair = `${data.contentLang}→${data.learnedLang}`;
@@ -394,7 +409,7 @@ export default function SmallTestScreen() {
   // ---------------------------------------------------------------- the questions (round and quick check)
   const cur = run.current;
   const found = cur ? view.find(cur.topic, cur.qid) : null;
-  if (!cur || !found) return shell(<ActivityIndicator style={styles.flex} color={colors.tint} />);
+  if (!cur || !found) return waiting();
   const part = `${inMini ? 'mini:' : ''}${cur.qid}`;
   const mistypedButton = (
     <ExamButton testID="small-test-mistyped" secondary label={s.mistyped} onPress={() => settle(true, true)} />

@@ -281,8 +281,12 @@ describe.each(['brand', 'classic'] as const)('grammar small test (%s palette)', 
     expect(text('small-test-header')).toBe('A1 test · round 1');
     expect(text('small-test-end-title')).toBe('Round done · 10 of 10');
     expect(text('fb-card')).toBe('grammar-small-test:A1:end | en→es | A1');
-    for (const id of TOPICS) expect(text(`small-test-end-status-${id}`)).toBe('1 more round'); // one clean round is not enough yet
-    expect(text('small-test-end-level')).toBe('A1 level · 0 of 2 core topics learned');
+    // 3 right answers in a row learn a topic: the topics asked 3+ times are learned, the others need one more round
+    const asked = (id: string) => ((state) => state.run!.answers.filter((a) => a.topic === id).length)(round1);
+    const round1 = await stateNow();
+    for (const id of TOPICS) expect(text(`small-test-end-status-${id}`)).toBe(asked(id) >= 3 ? 'learned' : '1 more round');
+    const coreLearned = ['lt-0', 'lt-1'].filter((id) => asked(id) >= 3).length;
+    expect(text('small-test-end-level')).toBe(`A1 level · ${coreLearned} of 2 core topics learned`);
     expect(has('small-test-end-bar-0')).toBe(true);
     expect(screen.getByTestId('small-test-end-bar-0')).toHaveProp('accessibilityLabel', '100%');
     // a second round: the same topics are "repeat"
@@ -291,7 +295,7 @@ describe.each(['brand', 'classic'] as const)('grammar small test (%s palette)', 
     for (const id of TOPICS) expect(text(`small-test-intro-tag-${id}`)).toBe('repeat');
     await press('small-test-start');
     for (let i = 0; i < 10; i++) await answerNext(true);
-    // two clean rounds in a row: the core topics are learned and the level is done
+    // two clean rounds: every topic has 3+ right answers in a row by now, the core topics are learned and the level is done
     expect(text('small-test-end-level')).toBe('A1 level · 2 of 2 core topics learned');
     expect(has('small-test-end-level-done')).toBe(true);
     expect(screen.getByTestId('small-test-end-bar-1')).toBeTruthy();
@@ -314,6 +318,19 @@ describe.each(['brand', 'classic'] as const)('grammar small test (%s palette)', 
     expect(has('small-test-intro')).toBe(false);
     expect(text('small-test-header')).toBe('A1 test · 3/10');
     expect(onScreen().q.id).toBe(seen);
+  });
+
+  it('a saved question that is no longer in the content: another question of the topic comes, and the X is on the screen', async () => {
+    const first = await start();
+    const db = getDb();
+    const st = await stateNow();
+    const gone = { ...st.run!.current!, qid: 'gone-after-update' };
+    await saveResumeValue(db, smallKey('en→es', 'A1'), { ...st, run: { ...st.run!, current: gone } });
+    first.unmount();
+    await open();
+    expect(has('small-test-question')).toBe(true);
+    expect(has('small-test-close')).toBe(true);
+    expect((await stateNow()).run!.current!.qid).not.toBe('gone-after-update');
   });
 
   it('a typed task kind (word bank, A2): its own card; a wrong answer gets the short miss card with "I mistyped"', async () => {
