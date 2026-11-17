@@ -10,11 +10,11 @@ describe('task types', () => {
     expect(TASK_TYPE_IDS).toEqual(['choice', 'form', 'transform', 'why', 'opencloze', 'fix', 'bank', 'order']);
   });
 
-  it('every level uses the 8 types and no level is switched on yet', () => {
+  it('every level uses the 8 types and only A1 is switched on (E132)', () => {
     for (const level of ['A1', 'A2', 'B1', 'B2', 'C1'] as const) {
       expect(taskConfigForLevel(level).types).toEqual(TASK_TYPE_IDS);
     }
-    expect(enabledTaskLevels()).toEqual([]);
+    expect(enabledTaskLevels()).toEqual(['A1']);
   });
 
   it('counts the typed noun form under type 2 (form)', () => {

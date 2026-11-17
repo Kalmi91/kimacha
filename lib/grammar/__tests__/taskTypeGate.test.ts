@@ -46,7 +46,7 @@ function fixture(name: string, enabled: boolean, perType: Record<string, number>
 }
 
 describe('grammar-task-gate', () => {
-  it('is green on the shipped files (no level is switched on)', () => {
+  it('is green on the shipped files (A1 is switched on and complete)', () => {
     const r = run();
     expect(r.status).toBe(0);
     expect(r.last).toMatch(/^grammar-task-gate: OK/);
@@ -92,7 +92,6 @@ describe('grammar-task-gate', () => {
     fs.mkdirSync(empty, { recursive: true });
     const r = run('--all', '--lessons', empty);
     const scriptTopics = new Set([...r.out.matchAll(/^ERROR A1 (\S+) /gm)].map((m) => m[1]));
-    // E132 fills the A1 topics one by one, so the script names only the core topics that still have a gap
-    for (const id of scriptTopics) expect(coreTopicsForLevel('A1')).toContain(id);
+    expect([...scriptTopics].sort()).toEqual([...coreTopicsForLevel('A1')].sort());
   });
 });
