@@ -29,8 +29,12 @@ jest.mock('@/components/FeedbackModal', () => {
   };
 });
 
+// the right / wrong sounds are audio: not in jest
+jest.mock('@/lib/chime', () => ({ playChime: jest.fn(), playWrongSound: jest.fn() }));
+
 import { fireEvent, render, screen } from '@testing-library/react-native';
 
+import { playChime, playWrongSound } from '@/lib/chime';
 import { getDb } from '@/lib/database.web';
 import { BIG_TEST_LEVELS, bigTestOptionOrder, bigTestPool, bigTestResultKey, bigTestRunKey, type BigTestRun } from '@/lib/grammar/bigTest';
 import { hasLesson } from '@/lib/grammar/syllabus';
@@ -190,6 +194,22 @@ describe.each(['brand', 'classic'] as const)('grammar Big test (%s palette)', (p
     mockNow += 600;
     await press('big-test-idk');
     expect(has('big-test-next')).toBe(true);
+  });
+
+  it('a right answer chimes, a wrong one plays the wrong sound, "I don\'t know" and a locked option stay silent', async () => {
+    await open();
+    await answerRight();
+    expect(playChime).toHaveBeenCalledTimes(1);
+    expect(playWrongSound).not.toHaveBeenCalled();
+    await press(`big-test-option-${await shown((current().correct + 1) % 4)}`); // locked: no sound
+    await press('big-test-next');
+    await answerWrong();
+    expect(playWrongSound).toHaveBeenCalledTimes(1);
+    expect(playChime).toHaveBeenCalledTimes(1);
+    await press('big-test-next');
+    await press('big-test-idk');
+    expect(playChime).toHaveBeenCalledTimes(1);
+    expect(playWrongSound).toHaveBeenCalledTimes(1);
   });
 
   it('"I don\'t know" counts as wrong and offers no "I mistyped"', async () => {

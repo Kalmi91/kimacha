@@ -13,6 +13,15 @@ import { makeChimePlayer } from './chimePlayer';
 const CHIME_MAX_MS = 1500;
 
 export function playChime(onDone?: () => void): void {
+  playSound('right', onDone);
+}
+
+// The Big test's wrong-answer sound (assets/sounds/wrong.wav, scripts/make-wrong-sound.mjs), played the same way.
+export function playWrongSound(onDone?: () => void): void {
+  playSound('wrong', onDone);
+}
+
+function playSound(sound: 'right' | 'wrong', onDone?: () => void): void {
   let finished = false;
   let timer: ReturnType<typeof setTimeout> | null = null;
   let sub: { remove(): void } | null = null;
@@ -35,7 +44,7 @@ export function playChime(onDone?: () => void): void {
     return;
   }
   try {
-    const created = makeChimePlayer();
+    const created = makeChimePlayer(sound);
     player = created;
     sub = created.addListener('playbackStatusUpdate', status => {
       if (status.didJustFinish) finish();
