@@ -236,7 +236,8 @@ export function scoreMockTask(task: MockTask, answer: MockTaskAnswer = {}, ctx: 
       });
       break;
     case 'read_mc':
-      task.passages.forEach((p, i) => items.push(choiceItem(p.text, p.options, p.correct, answer[String(i)])));
+      task.passages.forEach((p, i) => items.push(choiceItem(p.question ? `${p.text}
+${p.question}` : p.text, p.options, p.correct, answer[String(i)])));
       break;
     case 'gap_mc':
       task.gaps.forEach((g, i) => items.push(choiceItem(g.text, g.options, g.correct, answer[String(i)])));

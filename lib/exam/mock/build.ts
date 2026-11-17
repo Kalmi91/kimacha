@@ -11,6 +11,7 @@
 //
 // Pure module: no database, no loaded corpus, the caller supplies the data.
 
+import { ES_A1_READING_SIGNS, ES_A1_READING_TEXTS, ES_A1_TRUE_FALSE_TEXTS } from '@/data/exams/mock/es-a1-reading-texts';
 import type { PcicItem } from '@/data/pcic';
 import { wordIn } from '@/lib/pcicItemText';
 import { hashString, shuffleArray, shuffleOptions } from '@/lib/shuffle';
@@ -238,6 +239,28 @@ export function buildMockExam(input: MockBuildInput): MockExam {
     return passages.length ? draft('reading', 'read_mc', { kind: 'read_mc', passages }) : null;
   };
 
+  // The authored A1 reading (es): texts of several sentences with a Spanish comprehension question, not a translation.
+  const authoredReadMc = (): Draft => {
+    const picked = shuffleArray(ES_A1_READING_TEXTS, rank('a1text')).slice(0, c.readPassages);
+    const passages: MockReadMcTask['passages'] = picked.map((p) => ({ text: p.text, question: p.question, ...choice(p.correct, p.wrong, `a1o:${p.id}`) }));
+    return draft('reading', 'read_mc', { kind: 'read_mc', passages });
+  };
+
+  // The authored A1 match: Spanish signs matched to the Spanish sentence that says what they mean (one meaning too many).
+  const authoredMatch = (): Draft => {
+    const picked = shuffleArray(ES_A1_READING_SIGNS, rank('a1sign')).slice(0, c.readMatch + 1);
+    const used = picked.slice(0, c.readMatch);
+    const texts = shuffleArray(picked.map((x) => x.meaning), rank('a1sign:order'));
+    const options = texts.map((text, i) => ({ id: String.fromCharCode(97 + i), text }));
+    const answer: Record<string, string> = {};
+    const prompts = used.map((x, i) => {
+      const pid = `p${i + 1}`;
+      answer[pid] = options.find((o) => o.text === x.meaning)!.id;
+      return { id: pid, text: x.sign };
+    });
+    return draft('reading', 'match', { kind: 'match', prompts, options, answer, optionsInTarget: true });
+  };
+
   // Matching sentences to their meanings (one extra meaning), read or heard.
   const matchDraft = (kind: 'match' | 'listen_match', n: number, part: string, plays?: number): Draft | null => {
     const picked = take(n);
@@ -273,6 +296,14 @@ export function buildMockExam(input: MockBuildInput): MockExam {
     );
     const body: Omit<MockTrueFalseTask, 'id' | 'instruction' | 'skill'> = { kind: 'true_false', text: text.map((s) => s.target).join(' '), statements };
     return draft('reading', 'true_false', body);
+  };
+
+  // The authored A1 true / false: a Spanish text of several sentences and Spanish statements decidable from it (2 true, 2 false).
+  const authoredTrueFalse = (): Draft => {
+    const t = shuffleArray(ES_A1_TRUE_FALSE_TEXTS, rank('a1tf'))[0];
+    const pick = (answer: boolean, n: number) => shuffleArray(t.statements.filter((x) => x.answer === answer), rank(`a1tf:${answer}`)).slice(0, n);
+    const statements = shuffleArray([...pick(true, c.readTrue), ...pick(false, c.readTrueFalse - c.readTrue)], rank('a1tf:order'));
+    return draft('reading', 'true_false', { kind: 'true_false', text: t.text, statements, statementsInTarget: true });
   };
 
   const gapMc = (): Draft | null => {
@@ -324,7 +355,8 @@ export function buildMockExam(input: MockBuildInput): MockExam {
 
   const drafts: Record<MockSkill, (Draft | null)[]> = { reading: [], writing, listening: [], speaking: [], use: [] };
   if (bp.plan === 'es-official') {
-    drafts.reading = [readMc(), matchDraft('match', c.readMatch, 'rm'), trueFalse(), gapMc()];
+    const a1 = level === 'A1';
+    drafts.reading = [a1 ? authoredReadMc() : readMc(), a1 ? authoredMatch() : matchDraft('match', c.readMatch, 'rm'), a1 ? authoredTrueFalse() : trueFalse(), gapMc()];
     drafts.listening = [
       listenDraft('listen_mc', c.listenMc, 'lm', DEFAULT_PLAYS),
       matchDraft('listen_match', c.listenMatch, 'lx'),
