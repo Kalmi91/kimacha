@@ -496,7 +496,7 @@ export function doneGrammarTopicProgress(
     if (result.has(topicId)) continue; // the old row already means every kind is done
     const lesson = lessonFor(lang, topicId);
     // sentence writing is never required for the done state: lessons finished before it existed must stay done.
-    const required = lesson ? lessonButtonKinds(lesson).filter((k) => !OPTIONAL_KINDS.includes(k)) : [];
+    const required = lesson ? requiredKinds(lesson) : [];
     if (required.length === 0 || !required.every((k) => kinds.has(k))) continue;
     let correct = 0;
     let total = 0;
@@ -524,16 +524,29 @@ const TRIAL_KINDS: readonly GrammarKind[] = ['spot', 'order', 'dictation', 'noun
 // Never required for a lesson's done state (lessons finished before these kinds existed must stay done).
 const OPTIONAL_KINDS: readonly GrammarKind[] = ['noun', 'opencloze', 'fix', 'bank', 'write'];
 
+// Kinds added to a lesson after the 4.2.1 release (data/grammar/late-kinds.json): the button stays and the kind can be
+// practised, but it is left out of the done state and the lesson %, so a lesson finished in 4.2.1 stays finished.
+const LATE_KINDS: { kinds: Record<string, string[]> } = require('@/data/grammar/late-kinds.json');
+
+function isLateKind(lesson: GrammarTopicData, kind: GrammarKind): boolean {
+  return (LATE_KINDS.kinds[lesson.topic] ?? []).includes(kind);
+}
+
 /** The lesson's buttons: every kind that has items. */
 function lessonButtonKinds(lesson: GrammarTopicData): GrammarKind[] {
   const counts = grammarKindCounts(lesson);
   return LESSON_KIND_ORDER.filter((k) => counts[k] > 0);
 }
 
+/** The kinds a lesson needs for the done state: the buttons, without the never-required kinds. */
+export function requiredKinds(lesson: GrammarTopicData): GrammarKind[] {
+  return lessonButtonKinds(lesson).filter((k) => !OPTIONAL_KINDS.includes(k) && !isLateKind(lesson, k));
+}
+
 /** The kinds that count toward the lesson's %: the kinds of the buttons, without the temporary (all-trial-item) kinds. */
 export function scoredKinds(lesson: GrammarTopicData): GrammarKind[] {
   return lessonButtonKinds(lesson).filter(
-    (k) => !TRIAL_KINDS.includes(k) || lesson.items.some((it) => (it as { kind?: string; trial?: boolean }).kind === k && !(it as { trial?: boolean }).trial)
+    (k) => !isLateKind(lesson, k) && (!TRIAL_KINDS.includes(k) || lesson.items.some((it) => (it as { kind?: string; trial?: boolean }).kind === k && !(it as { trial?: boolean }).trial))
   );
 }
 

@@ -254,6 +254,6 @@ describe.each(['brand', 'classic'] as const)('end-of-lesson test (%s palette)', 
   });
 
   it('the rule of the test button matches the lesson kinds (no kind left out)', () => {
-    expect(scoredKinds(lessonFor('es', TOPIC)!)).toEqual(['choice', 'match', 'form', 'why', 'transform']);
+    expect(scoredKinds(lessonFor('es', TOPIC)!)).toEqual(['choice', 'match', 'form', 'why']);
   });
 });
