@@ -243,6 +243,47 @@
       ]
     },
     {
+      "kind": "table",
+      "id": "hay-estar-estar",
+      "title": {
+        "en": "Estar, present tense",
+        "es": "Estar, presente"
+      },
+      "header": [
+        {
+          "en": "Person",
+          "es": "Persona"
+        },
+        {
+          "en": "estar",
+          "es": "estar"
+        }
+      ],
+      "rows": [
+        [
+          "yo",
+          "estoy"
+        ],
+        [
+          "tú",
+          "estás"
+        ],
+        [
+          "él/ella/usted",
+          "está"
+        ],
+        [
+          "nosotros",
+          "estamos"
+        ],
+        [
+          "ellos/ellas/ustedes",
+          "están"
+        ]
+      ],
+      "noTableDeck": true
+    },
+    {
       "kind": "usage",
       "title": {
         "en": "When which one?",
@@ -1192,6 +1233,287 @@
         }
       ],
       "correctIndex": 0
+    },
+    {
+      "id": "he-form-01",
+      "kind": "form",
+      "verb": "estar",
+      "person": "yo",
+      "q": { "en": "What is the form of estar for yo?", "es": "¿Cuál es la forma de estar para yo?" },
+      "answer": "estoy",
+      "table": "hay-estar-estar",
+      "wrong": { "soy": { "en": "Soy is a form of ser, but this task asks for estar: estoy.", "es": "Soy es una forma de ser, pero esta tarea pide estar: estoy." } }
+    },
+    {
+      "id": "he-form-02",
+      "kind": "form",
+      "verb": "estar",
+      "person": "tú",
+      "q": { "en": "What is the form of estar for tú?", "es": "¿Cuál es la forma de estar para tú?" },
+      "answer": "estás",
+      "table": "hay-estar-estar",
+      "wrong": { "eres": { "en": "Eres is a form of ser, but this task asks for estar: estás.", "es": "Eres es una forma de ser, pero esta tarea pide estar: estás." } }
+    },
+    {
+      "id": "he-form-03",
+      "kind": "form",
+      "verb": "estar",
+      "person": "él/ella/usted",
+      "q": { "en": "What is the form of estar for él/ella/usted?", "es": "¿Cuál es la forma de estar para él/ella/usted?" },
+      "answer": "está",
+      "table": "hay-estar-estar",
+      "wrong": { "hay": { "en": "Hay does not change with the person and is not a form of estar: está.", "es": "Hay no cambia con la persona y no es una forma de estar: está." } }
+    },
+    {
+      "id": "he-form-04",
+      "kind": "form",
+      "verb": "estar",
+      "person": "nosotros",
+      "q": { "en": "What is the form of estar for nosotros?", "es": "¿Cuál es la forma de estar para nosotros?" },
+      "answer": "estamos",
+      "table": "hay-estar-estar",
+      "wrong": { "somos": { "en": "Somos is a form of ser, but this task asks for estar: estamos.", "es": "Somos es una forma de ser, pero esta tarea pide estar: estamos." } }
+    },
+    {
+      "id": "he-form-05",
+      "kind": "form",
+      "verb": "estar",
+      "person": "ellos/ellas/ustedes",
+      "q": { "en": "What is the form of estar for ellos/ellas/ustedes?", "es": "¿Cuál es la forma de estar para ellos/ellas/ustedes?" },
+      "answer": "están",
+      "table": "hay-estar-estar",
+      "wrong": { "hay": { "en": "Hay does not change to plural: for several known things you use están.", "es": "Hay no cambia a plural: para varias cosas conocidas se usa están." } }
+    },
+    {
+      "id": "he-tr-01",
+      "kind": "transform",
+      "tense": { "from": "ir-a", "to": "presente" },
+      "prompt": { "en": "My phone is going to be on the table.", "es": "Mi teléfono va a estar en la mesa." },
+      "answer": "Mi teléfono está en la mesa.",
+      "wordIds": ["33", "2", "122", "115"],
+      "why": { "en": "Something known (with mi) is located with estar, not with hay: está en la mesa.", "es": "Algo conocido (con mi) se ubica con estar, no con hay: está en la mesa." }
+    },
+    {
+      "id": "he-tr-02",
+      "kind": "transform",
+      "tense": { "from": "ir-a", "to": "presente" },
+      "prompt": { "en": "The shoes are going to be in the house.", "es": "Los zapatos van a estar en la casa." },
+      "answer": "Los zapatos están en la casa.",
+      "wordIds": ["33", "2", "604", "19"],
+      "why": { "en": "Known things (with los) in the plural: están, not hay.", "es": "Cosas conocidas (con los) en plural: están, no hay." }
+    },
+    {
+      "id": "he-tr-03",
+      "kind": "transform",
+      "tense": { "from": "ir-a", "to": "presente" },
+      "prompt": { "en": "I am going to be at the bank.", "es": "Voy a estar en el banco." },
+      "answer": "Estoy en el banco.",
+      "accept": ["Yo estoy en el banco."],
+      "wordIds": ["33", "2", "633"],
+      "why": { "en": "A person is located with estar, not with hay: estoy en el banco.", "es": "Una persona se ubica con estar, no con hay: estoy en el banco." }
+    },
+    {
+      "id": "he-tr-04",
+      "kind": "transform",
+      "tense": { "from": "ir-a", "to": "presente" },
+      "prompt": { "en": "My keys are going to be on the door.", "es": "Mis llaves van a estar en la puerta." },
+      "answer": "Mis llaves están en la puerta.",
+      "wordIds": ["33", "2", "271", "117"],
+      "why": { "en": "Things with a possessive (mis) are located with están, not with hay.", "es": "Cosas con un posesivo (mis) se ubican con están, no con hay." }
+    },
+    {
+      "id": "he-tr-05",
+      "kind": "transform",
+      "tense": { "from": "ir-a", "to": "presente" },
+      "prompt": { "en": "Ana is going to be in the office.", "es": "Ana va a estar en la oficina." },
+      "answer": "Ana está en la oficina.",
+      "wordIds": ["33", "2", "258"],
+      "why": { "en": "With a proper name (Ana) you use estar: está en la oficina.", "es": "Con un nombre propio (Ana) se usa estar: está en la oficina." }
+    },
+    {
+      "id": "he-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "En la plaza ___ un cine. El cine ___ al lado de la farmacia.",
+      "answers": ["hay", "está"],
+      "tr": { "en": "In the square there is a movie theater. The movie theater is next to the pharmacy.", "es": "En la plaza hay un cine. El cine está al lado de la farmacia." },
+      "why": { "en": "Something new (un cine) is introduced with hay; something already known (el cine) is located with está.", "es": "Algo nuevo (un cine) se presenta con hay; algo ya conocido (el cine) se ubica con está." }
+    },
+    {
+      "id": "he-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "En la sala ___ dos sillas. Las sillas ___ al lado de la ventana.",
+      "answers": ["hay", "están"],
+      "tr": { "en": "In the living room there are two chairs. The chairs are next to the window.", "es": "En la sala hay dos sillas. Las sillas están al lado de la ventana." },
+      "why": { "en": "Hay introduces dos sillas (new); están locates the already known sillas.", "es": "Hay presenta dos sillas (nuevas); están ubica las sillas ya conocidas." }
+    },
+    {
+      "id": "he-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "En el parque ___ muchos niños. Mis hijos ___ en el parque.",
+      "answers": ["hay", "están"],
+      "tr": { "en": "In the park there are many children. My children are in the park.", "es": "En el parque hay muchos niños. Mis hijos están en el parque." },
+      "why": { "en": "Hay goes with a quantity (muchos niños); están goes with mis hijos, something known.", "es": "Hay va con una cantidad (muchos niños); están va con mis hijos, algo conocido." }
+    },
+    {
+      "id": "he-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "¿___ un banco aquí? Sí, el banco ___ en la calle.",
+      "answers": ["Hay", "está"],
+      "tr": { "en": "Is there a bank here? Yes, the bank is on the street.", "es": "¿Hay un banco aquí? Sí, el banco está en la calle." },
+      "why": { "en": "The question of existence uses hay; the already known banco is located with está.", "es": "La pregunta de existencia usa hay; el banco ya conocido se ubica con está." }
+    },
+    {
+      "id": "he-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "En la mesa ___ tres vasos. Mi vaso ___ al lado del libro.",
+      "answers": ["hay", "está"],
+      "tr": { "en": "On the table there are three glasses. My glass is next to the book.", "es": "En la mesa hay tres vasos. Mi vaso está al lado del libro." },
+      "why": { "en": "Hay goes with a number (tres vasos); está goes with a possessive (mi vaso).", "es": "Hay va con un número (tres vasos); está va con un posesivo (mi vaso)." }
+    },
+    {
+      "id": "he-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "El banco hay en la calle.",
+      "wrongIndex": 2,
+      "answer": "está",
+      "explain": { "en": "A known bank (el banco) is located with está, not with hay.", "es": "Un banco conocido (el banco) se ubica con está, no con hay." },
+      "tr": { "en": "The bank is on the street.", "es": "El banco está en la calle." }
+    },
+    {
+      "id": "he-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "Está una tienda en mi calle.",
+      "wrongIndex": 0,
+      "answer": "Hay",
+      "explain": { "en": "A new shop (una tienda) is introduced with hay.", "es": "Una tienda nueva (una tienda) se presenta con hay." },
+      "tr": { "en": "There is a shop on my street.", "es": "Hay una tienda en mi calle." }
+    },
+    {
+      "id": "he-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "Mis llaves hay en la mesa.",
+      "wrongIndex": 2,
+      "answer": "están",
+      "explain": { "en": "With a possessive (mis llaves) you use están, not hay.", "es": "Con un posesivo (mis llaves) se usa están, no hay." },
+      "tr": { "en": "My keys are on the table.", "es": "Mis llaves están en la mesa." }
+    },
+    {
+      "id": "he-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "En el parque están muchos niños.",
+      "wrongIndex": 3,
+      "answer": "hay",
+      "explain": { "en": "A quantity (muchos niños) is introduced with hay.", "es": "Una cantidad (muchos niños) se presenta con hay." },
+      "tr": { "en": "There are many children in the park.", "es": "En el parque hay muchos niños." }
+    },
+    {
+      "id": "he-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "Hay mi teléfono en la mesa.",
+      "wrongIndex": 0,
+      "answer": "Está",
+      "explain": { "en": "Hay never goes with a possessive (mi teléfono): you use está.", "es": "Hay nunca va con un posesivo (mi teléfono): se usa está." },
+      "tr": { "en": "My phone is on the table.", "es": "Está mi teléfono en la mesa." }
+    },
+    {
+      "id": "he-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": ["haber", "estar", "ser"],
+      "es": "En la mesa ___ dos libros.",
+      "word": "haber",
+      "answer": "hay",
+      "tr": { "en": "On the table there are two books.", "es": "En la mesa hay dos libros." },
+      "why": { "en": "Dos libros is something new and is introduced with hay.", "es": "Dos libros es algo nuevo y se presenta con hay." }
+    },
+    {
+      "id": "he-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": ["haber", "estar", "ser"],
+      "es": "Mis libros ___ en la mesa.",
+      "word": "estar",
+      "answer": "están",
+      "tr": { "en": "My books are on the table.", "es": "Mis libros están en la mesa." },
+      "why": { "en": "Mis libros is something known and plural: están.", "es": "Mis libros es algo conocido y plural: están." }
+    },
+    {
+      "id": "he-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": ["haber", "estar", "ser"],
+      "es": "El baño ___ al lado de la sala.",
+      "word": "estar",
+      "answer": "está",
+      "tr": { "en": "The bathroom is next to the living room.", "es": "El baño está al lado de la sala." },
+      "why": { "en": "El baño is something known and singular: está.", "es": "El baño es algo conocido y singular: está." }
+    },
+    {
+      "id": "he-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": ["haber", "estar", "ser"],
+      "es": "En mi barrio ___ un cine.",
+      "word": "haber",
+      "answer": "hay",
+      "tr": { "en": "In my neighborhood there is a movie theater.", "es": "En mi barrio hay un cine." },
+      "why": { "en": "Un cine is something new and is introduced with hay.", "es": "Un cine es algo nuevo y se presenta con hay." }
+    },
+    {
+      "id": "he-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": ["haber", "estar", "ser"],
+      "es": "Nosotros ___ en el parque.",
+      "word": "estar",
+      "answer": "estamos",
+      "tr": { "en": "We are in the park.", "es": "Nosotros estamos en el parque." },
+      "why": { "en": "A person is located with estar: nosotros estamos.", "es": "Una persona se ubica con estar: nosotros estamos." }
+    },
+    {
+      "id": "he-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "Where is the bathroom?", "es": "¿Dónde está el baño?" },
+      "es": "¿Dónde está el baño?"
+    },
+    {
+      "id": "he-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "There is a bank on the street.", "es": "Hay un banco en la calle." },
+      "es": "Hay un banco en la calle."
+    },
+    {
+      "id": "he-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "My friends are in the park.", "es": "Mis amigos están en el parque." },
+      "es": "Mis amigos están en el parque."
+    },
+    {
+      "id": "he-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "Is there a pharmacy here?", "es": "¿Hay una farmacia aquí?" },
+      "es": "¿Hay una farmacia aquí?"
+    },
+    {
+      "id": "he-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "The book is in my backpack.", "es": "El libro está en mi mochila." },
+      "es": "El libro está en mi mochila."
     }
   ]
 }
