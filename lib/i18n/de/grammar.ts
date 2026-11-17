@@ -197,12 +197,12 @@ const de: typeof en = {
   // Der Grammatik-Großtest (Einstufungstest: 45 Fragen, A1 bis C1, ohne Erklärungen).
   bigTest: {
     cardTitle: 'Großer Test',
-    cardSubtitle: 'A1–C1 · 45 Fragen',
+    cardSubtitle: 'A1–C1 · passt sich deinen Antworten an',
     start: 'Starten',
     continue: 'Weiter',
     startAgain: 'Neu starten',
     lastResult: (lvl: string) => `Letztes Ergebnis: ${lvl}`,
-    header: (lvl: string, pos: number, total: number) => `${lvl} · ${pos}/${total}`,
+    questionNumber: (n: number) => `Frage ${n}`,
     leave: 'Großen Test verlassen',
     instructionGap: 'Fülle die Lücke',
     instructionWhich: 'Welche Aussage ist richtig?',
@@ -217,7 +217,7 @@ const de: typeof en = {
     next: 'Weiter',
     passedTitle: (lvl: string, right: number, total: number) => `${lvl} bestanden · ${right} von ${total} richtig`,
     failedTitle: (lvl: string, right: number, total: number) => `${lvl} · ${right} von ${total} richtig`,
-    nextLevel: (lvl: string, n: number) => `Als Nächstes: ${lvl} · ${n} Fragen`,
+    nextLevel: (lvl: string) => `Als Nächstes: ${lvl}`,
     testEnds: 'Der Test endet hier',
     seeResult: 'Ergebnis ansehen',
     stopHere: 'Hier aufhören',
@@ -230,7 +230,7 @@ const de: typeof en = {
     optionLabel: (n: number, text: string) => `Antwort ${n}: ${text}`,
     levelRowLabel: (lvl: string, right: number, total: number) => `${lvl}: ${right} von ${total} richtig`,
     levelRowSkipped: (lvl: string) => `${lvl}: nicht gemacht`,
-    progressLabel: (n: number, total: number) => `Frage ${n} von ${total}`,
+    progressLabel: (pct: number) => `Testfortschritt: ${pct} %`,
   },
 };
 

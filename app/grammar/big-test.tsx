@@ -12,15 +12,17 @@ import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
 import {
   BIG_TEST_LEVELS,
-  BIG_TEST_PASS,
-  BIG_TEST_PER_LEVEL,
-  BIG_TEST_TOTAL,
   answerBigTest,
-  bigTestItems,
   bigTestLevelPassed,
   bigTestLevelScore,
+  bigTestOptionOrder,
+  bigTestPool,
+  bigTestProgress,
+  bigTestQuestionNumber,
   bigTestResult,
+  bigTestStepFill,
   continueBigTest,
+  currentBigTestItem,
   finishBigTest,
   hasBigTest,
   loadBigTestResult,
@@ -40,8 +42,9 @@ import ExamButton from '@/components/exam/ExamButton';
 import { FAB_CLEARANCE } from '@/components/learn/DockedAction';
 import ScreenFeedback from '@/lib/screenFeedback';
 
-// The grammar Big test (placement test, 45 questions A1 to C1, logic in lib/grammar/bigTest.ts). It measures and does not
-// teach: a tap on an option locks it and shows the right one, with no explanation, and Next moves on. The run is saved in
+// The grammar Big test (adaptive placement test A1 to C1, logic in lib/grammar/bigTest.ts). It measures and does not
+// teach: a tap on an option locks it and shows the right one, with no explanation, and Next moves on. The header shows the
+// level and a progress bar of the whole test (no question count: the test adapts). The run is saved in
 // the resume store after every step, so the ✕ leaves at once and the next visit lands on the same question (an app kill
 // too). Without ?new=1 a run in progress resumes, else the stored result shows, else a new run starts. Nothing here
 // writes grammar evidence: the test must not move the level percent of any lesson.
@@ -91,7 +94,7 @@ export default function BigTestScreen() {
       if (!alive) return;
       let current = resumed;
       if (!current && (fresh || !result)) {
-        current = newBigTestRun();
+        current = newBigTestRun(bigTestPool(target));
         await saveBigTestRun(db, pair, current);
       }
       if (!alive) return;
@@ -112,7 +115,8 @@ export default function BigTestScreen() {
   // the screen shows the stored result when there is no run (the card's "Last result" line opens it)
   const result: BigTestResult | null = run?.phase === 'result' ? bigTestResult(run) : run ? null : stored;
   const level = run ? BIG_TEST_LEVELS[run.levelIdx] : null;
-  const item: BigTestItem | undefined = run && level && (run.phase === 'question' || run.phase === 'answered') ? bigTestItems(ctx.learnedLang, level)[run.pos] : undefined;
+  const pool = bigTestPool(ctx.learnedLang);
+  const item: BigTestItem | undefined = run ? currentBigTestItem(run, pool) : undefined;
 
   const step = (next: BigTestRun) => {
     if (next.phase === 'question') armTapGuard(tapGuardUntil);
@@ -122,7 +126,7 @@ export default function BigTestScreen() {
   const guarded = (act: () => void) => {
     if (tapGuardOpen(tapGuardUntil)) act();
   };
-  const restart = () => step(newBigTestRun());
+  const restart = () => step(newBigTestRun(pool));
 
   const titleOf = (id: string) => {
     const tp = syllabusTopic(id, ctx.learnedLang);
@@ -155,6 +159,27 @@ export default function BigTestScreen() {
     </View>
   );
 
+  // the five level steps A1 to C1: passed ones full, the current one fills with its answered main questions, the rest empty
+  const stepper = (r: BigTestRun) => {
+    const fill = bigTestStepFill(r);
+    const pct = Math.round(bigTestProgress(r) * 100);
+    return (
+      <View accessible accessibilityRole="progressbar" accessibilityLabel={s.progressLabel(pct)} testID="big-test-progress" style={styles.steps}>
+        {BIG_TEST_LEVELS.map((lv, i) => {
+          const isCurrent = i === r.levelIdx;
+          return (
+            <View key={lv} testID={`big-test-step-${lv}`} accessibilityState={{ selected: isCurrent }} style={styles.step}>
+              <Text style={[styles.stepName, { color: isCurrent ? colors.text : colors.textMuted }, isCurrent && styles.stepNameCurrent]}>{lv}</Text>
+              <View style={[styles.stepTrack, { backgroundColor: colors.card, borderColor: isCurrent ? colors.text : colors.border }]}>
+                <View style={[styles.stepFill, { width: `${fill[i] * 100}%`, backgroundColor: colors.tint }]} />
+              </View>
+            </View>
+          );
+        })}
+      </View>
+    );
+  };
+
   // State D: the result
   if (result) {
     return shell(
@@ -180,7 +205,8 @@ export default function BigTestScreen() {
                     trackStyle={styles.rowTrack}
                     trackColor={colors.card}
                     fillStyle={styles.fill}
-                    fillColor={row.right >= BIG_TEST_PASS ? colors.success : colors.tint}
+                    // a result stored before the adaptive test has no `passed`: its pass mark was 6 of 9
+                    fillColor={(row.passed ?? row.right / row.total >= 2 / 3) ? colors.success : colors.tint}
                   />
                 </View>
                 <Text style={[styles.levelScore, { color: row.taken ? colors.text : colors.textMuted }]}>{row.taken ? `${row.right}/${row.total}` : '–'}</Text>
@@ -232,21 +258,22 @@ export default function BigTestScreen() {
     const nextLevel = BIG_TEST_LEVELS[run.levelIdx + 1];
     return shell(
       <View style={styles.flex}>
-        {header(`grammar-big-test:level-end:${level}`, s.header(level, (run.levelIdx + 1) * BIG_TEST_PER_LEVEL, BIG_TEST_TOTAL))}
+        {header(`grammar-big-test:level-end:${level}`, null)}
+        {stepper(run)}
         <ScrollView testID="big-test-scroll" contentContainerStyle={styles.body}>
           <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
             <Text testID="big-test-level-title" style={[styles.title, { color: colors.text }]}>
-              {passed ? s.passedTitle(level, score.right, BIG_TEST_PER_LEVEL) : s.failedTitle(level, score.right, BIG_TEST_PER_LEVEL)}
+              {passed ? s.passedTitle(level, score.right, score.total) : s.failedTitle(level, score.right, score.total)}
             </Text>
-            {bar((score.right / BIG_TEST_PER_LEVEL) * 100, s.levelRowLabel(level, score.right, BIG_TEST_PER_LEVEL))}
+            {bar(score.total ? (score.right / score.total) * 100 : 0, s.levelRowLabel(level, score.right, score.total))}
             {passed && nextLevel ? (
-              <Text testID="big-test-next-level" style={[styles.line, { color: colors.textMuted }]}>{s.nextLevel(nextLevel, BIG_TEST_PER_LEVEL)}</Text>
+              <Text testID="big-test-next-level" style={[styles.line, { color: colors.textMuted }]}>{s.nextLevel(nextLevel)}</Text>
             ) : null}
             {!passed ? <Text testID="big-test-ends" style={[styles.line, { color: colors.textMuted }]}>{s.testEnds}</Text> : null}
           </Card>
           {passed && nextLevel ? (
             <>
-              <ExamButton testID="big-test-continue" label={s.continue} onPress={() => step(continueBigTest(run))} />
+              <ExamButton testID="big-test-continue" label={s.continue} onPress={() => step(continueBigTest(run, pool))} />
               <ExamButton testID="big-test-stop" secondary label={s.stopHere} onPress={() => step(finishBigTest(run))} />
             </>
           ) : (
@@ -260,20 +287,21 @@ export default function BigTestScreen() {
   if (!item) return shell(<ActivityIndicator style={styles.flex} color={colors.tint} />);
 
   // States A and B: a question, then the same screen with the options locked
-  const n = run.levelIdx * BIG_TEST_PER_LEVEL + run.pos + 1;
   const answered = run.phase === 'answered';
   const last = run.answers[run.answers.length - 1];
   const picked = answered ? last.picked : null;
-  const options =
-    item.kind === 'which' ? [s.whichFirst, s.whichSecond, s.whichBoth, s.whichNeither] : item.options;
+  // the options are shown in the order of this run; position i shows option order[i], and `picked` stays the original index
+  const order = bigTestOptionOrder(run, item);
+  const original = item.kind === 'which' ? [s.whichFirst, s.whichSecond, s.whichBoth, s.whichNeither] : item.options;
+  const options = order.map((o) => original[o]);
   const instruction = item.kind === 'gap' ? s.instructionGap : item.kind === 'which' ? s.instructionWhich : s.instructionRegister;
   const lines = item.kind === 'gap' ? item.lines : item.kind === 'which' ? item.lines.map((l, i) => `(${i + 1}) ${l}`) : [];
   const canMistype = answered && !last.right && last.picked !== null;
 
   return shell(
     <View style={styles.flex}>
-      {header(`grammar-big-test:${level}:${item.id}`, s.header(level, n, BIG_TEST_TOTAL))}
-      {bar((n / BIG_TEST_TOTAL) * 100, s.progressLabel(n, BIG_TEST_TOTAL), 'big-test-progress')}
+      {header(`grammar-big-test:${level}:${item.id}`, s.questionNumber(bigTestQuestionNumber(run)))}
+      {stepper(run)}
       <ScrollView testID="big-test-scroll" contentContainerStyle={styles.body} keyboardShouldPersistTaps="handled">
         <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
           <Text testID="big-test-instruction" style={[styles.instruction, { color: colors.textMuted }]}>{instruction}</Text>
@@ -283,8 +311,8 @@ export default function BigTestScreen() {
         </Card>
         <View style={styles.options}>
           {options.map((option, i) => {
-            const right = answered && i === item.correct;
-            const wrong = answered && picked === i && i !== item.correct;
+            const right = answered && order[i] === item.correct;
+            const wrong = answered && picked === order[i] && order[i] !== item.correct;
             return (
               <Pressable
                 key={`${i}-${option}`}
@@ -293,7 +321,7 @@ export default function BigTestScreen() {
                 accessibilityLabel={s.optionLabel(i + 1, option)}
                 accessibilityState={{ disabled: answered }}
                 disabled={answered}
-                onPress={() => guarded(() => step(answerBigTest(run, item, i)))}
+                onPress={() => guarded(() => step(answerBigTest(run, item, order[i])))}
                 style={[
                   styles.option,
                   themedEdgeStyle(g),
@@ -328,7 +356,7 @@ export default function BigTestScreen() {
               </View>
             ) : null}
             <View style={styles.flex}>
-              <ExamButton testID="big-test-next" label={s.next} onPress={() => step(nextBigTest(run))} />
+              <ExamButton testID="big-test-next" label={s.next} onPress={() => step(nextBigTest(run, pool))} />
             </View>
           </View>
         )}
@@ -354,6 +382,12 @@ const styles = StyleSheet.create({
   track: { height: 8, borderRadius: radius.xs, marginHorizontal: spacing.lg, marginTop: spacing.sm, overflow: 'hidden' },
   fill: { height: '100%', borderRadius: radius.xs },
   brutalProgress: { marginHorizontal: spacing.lg, marginTop: spacing.sm },
+  steps: { flexDirection: 'row', gap: spacing.xs, marginHorizontal: spacing.lg, marginTop: spacing.sm },
+  step: { flex: 1, gap: spacing.xs },
+  stepName: { fontSize: fontSize.sm, textAlign: 'center' },
+  stepNameCurrent: { fontWeight: fontWeight.bold },
+  stepTrack: { height: 8, borderRadius: radius.xs, borderWidth: 1, overflow: 'hidden' },
+  stepFill: { height: '100%' },
   instruction: { fontSize: fontSize.sm, textAlign: 'center' },
   text: { fontSize: fontSize.lg, fontWeight: fontWeight.semibold, textAlign: 'center', lineHeight: lineHeight.lg },
   options: { gap: spacing.sm },
