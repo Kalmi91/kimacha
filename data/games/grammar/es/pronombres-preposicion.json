@@ -1232,6 +1232,452 @@
         }
       ],
       "correctIndex": 0
+    },
+    {
+      "id": "pp-tr-01",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "Today I study with you.",
+        "es": "Hoy estudio contigo."
+      },
+      "answer": "Hoy voy a estudiar contigo.",
+      "accept": [
+        "Yo hoy voy a estudiar contigo.",
+        "Voy a estudiar contigo hoy."
+      ],
+      "wordIds": [
+        "212",
+        "52"
+      ],
+      "why": {
+        "en": "Ir a + infinitive: the pronoun after the preposition does not change (contigo, para mí stay).",
+        "es": "Ir a + infinitivo: el pronombre después de la preposición no cambia (contigo, para mí se quedan)."
+      }
+    },
+    {
+      "id": "pp-tr-02",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "My mom cooks for me.",
+        "es": "Mi mamá cocina para mí."
+      },
+      "answer": "Mi mamá va a cocinar para mí.",
+      "wordIds": [
+        "226",
+        "695"
+      ],
+      "why": {
+        "en": "Ir a + infinitive: the pronoun after the preposition does not change (contigo, para mí stay).",
+        "es": "Ir a + infinitivo: el pronombre después de la preposición no cambia (contigo, para mí se quedan)."
+      }
+    },
+    {
+      "id": "pp-tr-03",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "en": "I buy a gift for you.",
+        "es": "Compro un regalo para ti."
+      },
+      "answer": "Compré un regalo para ti.",
+      "accept": [
+        "Yo compré un regalo para ti."
+      ],
+      "wordIds": [
+        "144",
+        "694"
+      ],
+      "why": {
+        "en": "Indefinido, yo: -ar → -é (compré, viajé); the pronoun after the preposition stays the same.",
+        "es": "Indefinido, yo: -ar → -é (compré, viajé); el pronombre después de la preposición queda igual."
+      }
+    },
+    {
+      "id": "pp-tr-04",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "en": "I travel with them.",
+        "es": "Viajo con ellos."
+      },
+      "answer": "Viajé con ellos.",
+      "accept": [
+        "Yo viajé con ellos."
+      ],
+      "wordIds": [
+        "230"
+      ],
+      "why": {
+        "en": "Indefinido, yo: -ar → -é (compré, viajé); the pronoun after the preposition stays the same.",
+        "es": "Indefinido, yo: -ar → -é (compré, viajé); el pronombre después de la preposición queda igual."
+      }
+    },
+    {
+      "id": "pp-tr-05",
+      "kind": "transform",
+      "tense": {
+        "from": "ir-a",
+        "to": "presente"
+      },
+      "prompt": {
+        "en": "I am going to talk with you tomorrow.",
+        "es": "Voy a hablar contigo mañana."
+      },
+      "answer": "Hablo contigo mañana.",
+      "accept": [
+        "Yo hablo contigo mañana.",
+        "Mañana hablo contigo."
+      ],
+      "wordIds": [
+        "47",
+        "173"
+      ],
+      "why": {
+        "en": "Present, yo: the ending -ar → -o (hablo); the pronoun after the preposition stays the same.",
+        "es": "Presente, yo: la terminación -ar → -o (hablo); el pronombre después de la preposición queda igual."
+      }
+    },
+    {
+      "id": "pp-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Ana, esta carta es para ___. Mi mamá quiere hablar ___ hoy y no quiere salir sin ___.",
+      "answers": [
+        "ti",
+        "contigo",
+        "ti"
+      ],
+      "tr": {
+        "en": "Ana, this letter is for you. My mom wants to talk with you today and does not want to leave without you.",
+        "es": "Ana, esta carta es para ti. Mi mamá quiere hablar contigo hoy y no quiere salir sin ti."
+      },
+      "why": {
+        "en": "After para and sin, tú becomes ti; with con it becomes contigo.",
+        "es": "Después de para y sin, tú se convierte en ti; con tú da contigo."
+      }
+    },
+    {
+      "id": "pp-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Ana es mi amiga. Voy al cine con ___ y ella viene ___. Entre ___ y yo no hay secretos.",
+      "answers": [
+        "ella",
+        "conmigo",
+        "ella"
+      ],
+      "tr": {
+        "en": "Ana is my friend. I go to the movies with her and she comes with me. There are no secrets between her and me.",
+        "es": "Ana es mi amiga. Voy al cine con ella y ella viene conmigo. Entre ella y yo no hay secretos."
+      },
+      "why": {
+        "en": "After con, ella stays ella; but con + yo is the special word conmigo.",
+        "es": "Después de con, ella sigue siendo ella; pero con + yo es la palabra especial conmigo."
+      }
+    },
+    {
+      "id": "pp-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Mamá y papá, esta mesa es para ___. Yo siempre estoy con ___ y no salgo sin ___.",
+      "answers": [
+        "ustedes",
+        "ustedes",
+        "ustedes"
+      ],
+      "tr": {
+        "en": "Mom and Dad, this table is for you. I am always with you and I do not go out without you.",
+        "es": "Mamá y papá, esta mesa es para ustedes. Yo siempre estoy con ustedes y no salgo sin ustedes."
+      },
+      "why": {
+        "en": "For several people the pronoun after a preposition is ustedes and it does not change.",
+        "es": "Para varias personas el pronombre después de preposición es ustedes y no cambia."
+      }
+    },
+    {
+      "id": "pp-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "A mí me gusta el café y a ___ te gusta el té. Mi hermano dice que, según ___, el café es mejor.",
+      "answers": [
+        "ti",
+        "él"
+      ],
+      "tr": {
+        "en": "I like coffee and you like tea. My brother says that, according to him, coffee is better.",
+        "es": "A mí me gusta el café y a ti te gusta el té. Mi hermano dice que, según él, el café es mejor."
+      },
+      "why": {
+        "en": "A + prepositional pronoun goes with me/te (a mí me, a ti te); after según, for él nothing changes.",
+        "es": "A + pronombre preposicional va con me/te (a mí me, a ti te); después de según, para él nada cambia."
+      }
+    },
+    {
+      "id": "pp-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Hoy ceno con mi mamá. Siempre salgo con ___ y ella nunca sale sin ___.",
+      "answers": [
+        "ella",
+        "mí"
+      ],
+      "tr": {
+        "en": "Today I have dinner with my mom. I always go out with her and she never goes out without me.",
+        "es": "Hoy ceno con mi mamá. Siempre salgo con ella y ella nunca sale sin mí."
+      },
+      "why": {
+        "en": "After a preposition, yo becomes mí (sin mí); ella stays ella (con ella).",
+        "es": "Después de una preposición, yo se convierte en mí (sin mí); ella sigue siendo ella (con ella)."
+      }
+    },
+    {
+      "id": "pp-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "Este regalo es para tú, mamá.",
+      "wrongIndex": 4,
+      "answer": "ti",
+      "explain": {
+        "en": "After para, tú becomes ti: para ti.",
+        "es": "Después de para, tú se convierte en ti: para ti."
+      },
+      "tr": {
+        "en": "This gift is for you, Mom.",
+        "es": "Este regalo es para ti, mamá."
+      }
+    },
+    {
+      "id": "pp-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "Ana, ¿quieres ir al cine contigo?",
+      "wrongIndex": 5,
+      "answer": "conmigo",
+      "explain": {
+        "en": "The speaker invites Ana to come along, so it is with me: conmigo, not contigo.",
+        "es": "El que habla invita a Ana a ir con él, así que es conmigo, no contigo."
+      },
+      "tr": {
+        "en": "Ana, do you want to go to the movies with me?",
+        "es": "Ana, ¿quieres ir al cine conmigo?"
+      }
+    },
+    {
+      "id": "pp-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "Mi hermana nunca come sin yo; siempre me espera.",
+      "wrongIndex": 5,
+      "answer": "mí",
+      "explain": {
+        "en": "After sin, yo becomes mí: sin mí.",
+        "es": "Después de sin, yo se convierte en mí: sin mí."
+      },
+      "tr": {
+        "en": "My sister never eats without me; she always waits for me.",
+        "es": "Mi hermana nunca come sin mí; siempre me espera."
+      }
+    },
+    {
+      "id": "pp-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "Según mí, la película empieza a las ocho.",
+      "wrongIndex": 1,
+      "answer": "yo",
+      "explain": {
+        "en": "After según the subject pronoun is used: según yo, not según mí.",
+        "es": "Después de según se usa el pronombre de sujeto: según yo, no según mí."
+      },
+      "tr": {
+        "en": "According to me, the movie starts at eight.",
+        "es": "Según yo, la película empieza a las ocho."
+      }
+    },
+    {
+      "id": "pp-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "Entre ti y yo no hay secretos.",
+      "wrongIndex": 1,
+      "answer": "tú",
+      "explain": {
+        "en": "After entre the subject pronouns are used: entre tú y yo.",
+        "es": "Después de entre se usan los pronombres de sujeto: entre tú y yo."
+      },
+      "tr": {
+        "en": "There are no secrets between you and me.",
+        "es": "Entre tú y yo no hay secretos."
+      }
+    },
+    {
+      "id": "pp-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "yo",
+        "tú",
+        "ella"
+      ],
+      "es": "Ana, este regalo es para ___, porque hoy es tu cumpleaños.",
+      "word": "tú",
+      "answer": "ti",
+      "tr": {
+        "en": "Ana, this gift is for you, because today is your birthday.",
+        "es": "Ana, este regalo es para ti, porque hoy es tu cumpleaños."
+      },
+      "why": {
+        "en": "Tu cumpleaños shows that the gift is for the person we talk to: tú → ti after para.",
+        "es": "Tu cumpleaños muestra que el regalo es para la persona con la que hablamos: tú → ti después de para."
+      }
+    },
+    {
+      "id": "pp-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "yo",
+        "tú",
+        "él"
+      ],
+      "es": "Ana, yo quiero estudiar ___, no con Diego.",
+      "word": "tú",
+      "answer": "contigo",
+      "tr": {
+        "en": "Ana, I want to study with you, not with Diego.",
+        "es": "Ana, yo quiero estudiar contigo, no con Diego."
+      },
+      "why": {
+        "en": "I talk to Ana, so with you: con + tú = contigo.",
+        "es": "Le hablo a Ana, así que es con ella: con + tú = contigo."
+      }
+    },
+    {
+      "id": "pp-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "yo",
+        "tú",
+        "él"
+      ],
+      "es": "A ti te gusta el té; a ___ me gusta el café.",
+      "word": "yo",
+      "answer": "mí",
+      "tr": {
+        "en": "You like tea; I like coffee.",
+        "es": "A ti te gusta el té; a mí me gusta el café."
+      },
+      "why": {
+        "en": "The pronoun me points to the speaker: a + yo = a mí.",
+        "es": "El pronombre me señala al que habla: a + yo = a mí."
+      }
+    },
+    {
+      "id": "pp-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "yo",
+        "tú",
+        "ella"
+      ],
+      "es": "Mi hermana nunca sale sin ___; siempre me espera.",
+      "word": "yo",
+      "answer": "mí",
+      "tr": {
+        "en": "My sister never goes out without me; she always waits for me.",
+        "es": "Mi hermana nunca sale sin mí; siempre me espera."
+      },
+      "why": {
+        "en": "She waits for me, so without me: sin + yo = sin mí.",
+        "es": "Ella me espera a mí, así que sin mí: sin + yo = sin mí."
+      }
+    },
+    {
+      "id": "pp-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "ellos",
+        "nosotros",
+        "tú"
+      ],
+      "es": "Esta mesa es para mis padres. Es para ___, no para mí.",
+      "word": "ellos",
+      "answer": "ellos",
+      "tr": {
+        "en": "This table is for my parents. It is for them, not for me.",
+        "es": "Esta mesa es para mis padres. Es para ellos, no para mí."
+      },
+      "why": {
+        "en": "My parents are not me and not you, so the third person plural: para ellos.",
+        "es": "Mis padres no soy yo ni eres tú, así que es la tercera persona del plural: para ellos."
+      }
+    },
+    {
+      "id": "pp-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "This gift is for you.",
+        "es": "Este regalo es para ti."
+      },
+      "es": "Este regalo es para ti."
+    },
+    {
+      "id": "pp-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "There are no secrets between you and me.",
+        "es": "Entre tú y yo no hay secretos."
+      },
+      "es": "Entre tú y yo no hay secretos."
+    },
+    {
+      "id": "pp-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "This letter is for my brother, not for you.",
+        "es": "Esta carta es para mi hermano, no para ti."
+      },
+      "es": "Esta carta es para mi hermano, no para ti."
+    },
+    {
+      "id": "pp-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "My sister never eats without me.",
+        "es": "Mi hermana nunca come sin mí."
+      },
+      "es": "Mi hermana nunca come sin mí."
+    },
+    {
+      "id": "pp-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "I go to the movies with her.",
+        "es": "Voy al cine con ella."
+      },
+      "es": "Voy al cine con ella."
     }
   ]
 }
