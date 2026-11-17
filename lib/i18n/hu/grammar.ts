@@ -280,6 +280,7 @@ const hu: typeof en = {
   levelTabs: {
     yourOverall: (lvl: string, pct: number) => `A szinted: ${lvl} · összesen ${pct}%`,
     testRow: (lvl: string, pct: number | null) => (pct === null ? `${lvl} szintteszt` : `${lvl} szintteszt ${pct}%`),
+    resume: 'Folytatás',
     levelButton: (lvl: string) => `${lvl} szint`,
   },
 };

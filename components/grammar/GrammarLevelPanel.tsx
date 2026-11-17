@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
 import { useRouter } from 'expo-router';
 
@@ -9,7 +9,9 @@ import Colors from '@/constants/Colors';
 import { fontSize, fontWeight, radius, spacing, tapTarget } from '@/constants/Theme';
 import type { Level } from '@/data/words';
 import { levelPercent, shownLabel } from '@/lib/grammar/levelTest';
-import { levelTestRoute } from '@/lib/grammar/levelTestRoute';
+import { levelTestRoute, hasSmallTest } from '@/lib/grammar/levelTestRoute';
+import { hasSavedSmallRun } from '@/lib/grammar/smallTest';
+import { getDb } from '@/lib/database';
 import type { TopicEvidence } from '@/lib/grammar/randomRound';
 import { hasLesson, syllabusForLevel } from '@/lib/grammar/syllabus';
 import { useLevelShown } from '@/lib/grammar/useLevelShown';
@@ -127,6 +129,20 @@ function LevelTestRow({
   const shown = pct === null ? null : shownLabel(pct);
   const label = s.testRow(level, shown);
   const empty = ids.length === 0;
+  const pair = `${contentLang}→${learnedLang}`;
+  const [saved, setSaved] = useState(false);
+  useEffect(() => {
+    let alive = true;
+    if (!hasSmallTest(level)) return;
+    hasSavedSmallRun(getDb(), pair, level)
+      .catch(() => false)
+      .then((v) => {
+        if (alive) setSaved(v);
+      });
+    return () => {
+      alive = false;
+    };
+  }, [pair, level, evidence]);
   const open = () => router.push(levelTestRoute(level) as never);
   const bar = (
     <ProgressBar
@@ -152,6 +168,7 @@ function LevelTestRow({
         onPress={open}
       >
         <Text style={[styles.rowText, { color: empty ? g.mu : g.ink }]}>{label}</Text>
+        {saved && hasSmallTest(level) ? <Text testID={`grammar-test-row-resume-${level}`} style={[styles.rowText, { color: g.mu }]}>{s.resume}</Text> : null}
         {bar}
       </BrutalBox>
     );
@@ -167,6 +184,7 @@ function LevelTestRow({
       onPress={open}
     >
       <Text style={[styles.rowText, { color: colors.text }]}>{label}</Text>
+      {saved && hasSmallTest(level) ? <Text testID={`grammar-test-row-resume-${level}`} style={[styles.rowText, { color: colors.tabIconDefault }]}>{s.resume}</Text> : null}
       {bar}
     </Pressable>
   );
