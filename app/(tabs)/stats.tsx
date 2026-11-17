@@ -167,7 +167,7 @@ export default function StatsScreen() {
         ) : (
           <>
             <Text style={styles.goalDoneEmoji}>🏆</Text>
-            <Text variant="title" style={styles.goalDoneTitle}>{s.stats.goalReached}</Text>
+            <Text variant="title" style={[styles.goalDoneTitle, { color: colors.success }]}>{s.stats.goalReached}</Text>
           </>
         )}
       </Card>
@@ -383,7 +383,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   },
   goalDoneEmoji: { fontSize: 48, textAlign: 'center', marginTop: 4 },
-  goalDoneTitle: { fontSize: 24, fontWeight: '800', color: '#22C55E', textAlign: 'center' },
+  goalDoneTitle: { fontSize: 24, fontWeight: '800', textAlign: 'center' },
   goalStatus: {
     fontSize: 13,
     fontWeight: '600',
