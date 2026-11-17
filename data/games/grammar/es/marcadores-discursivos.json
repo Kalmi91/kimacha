@@ -1273,6 +1273,562 @@
         }
       ],
       "correctIndex": 0
+    },
+    {
+      "id": "md-tr-01",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "en": "The project is expensive; nevertheless, the committee approves it.",
+        "es": "El proyecto es caro; no obstante, el comité lo aprueba."
+      },
+      "answer": "El proyecto era caro; no obstante, el comité lo aprobó.",
+      "accept": [
+        "El proyecto fue caro; no obstante, el comité lo aprobó."
+      ],
+      "wordIds": [
+        "358",
+        "135",
+        "781"
+      ],
+      "why": {
+        "en": "No obstante (formal) marks a contrast and stays the same in any tense; only the verbs move to the past (era or fue, aprobó).",
+        "es": "No obstante (formal) marca un contraste y no cambia con el tiempo; solo los verbos pasan al pasado (era o fue, aprobó)."
+      }
+    },
+    {
+      "id": "md-tr-02",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "en": "The company has no funds; therefore, it cancels the project.",
+        "es": "La empresa no tiene fondos; por lo tanto, cancela el proyecto."
+      },
+      "answer": "La empresa no tenía fondos; por lo tanto, canceló el proyecto.",
+      "accept": [
+        "La empresa no tuvo fondos; por lo tanto, canceló el proyecto."
+      ],
+      "wordIds": [
+        "348",
+        "1796",
+        "358"
+      ],
+      "why": {
+        "en": "Por lo tanto links cause and result and does not change; the first verb is a state (tenía) and the second a finished action (canceló).",
+        "es": "Por lo tanto une causa y resultado y no cambia; el primer verbo es un estado (tenía) y el segundo una acción terminada (canceló)."
+      }
+    },
+    {
+      "id": "md-tr-03",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "en": "Ana does not arrive on time; consequently, she misses the flight.",
+        "es": "Ana no llega a tiempo; en consecuencia, pierde el vuelo."
+      },
+      "answer": "Ana no llegó a tiempo; en consecuencia, perdió el vuelo.",
+      "wordIds": [
+        "149",
+        "22",
+        "233",
+        "1130"
+      ],
+      "why": {
+        "en": "En consecuencia is a formal connector of result; both actions are finished, so both verbs are in the indefinido.",
+        "es": "En consecuencia es un conector formal de resultado; las dos acciones están terminadas, así que los dos verbos van en indefinido."
+      }
+    },
+    {
+      "id": "md-tr-04",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "en": "He works a lot; on the other hand, his brother does nothing.",
+        "es": "Trabaja mucho; en cambio, su hermano no hace nada."
+      },
+      "answer": "Trabajaba mucho; en cambio, su hermano no hacía nada.",
+      "accept": [
+        "Trabajó mucho; en cambio, su hermano no hizo nada."
+      ],
+      "wordIds": [
+        "49",
+        "42",
+        "76"
+      ],
+      "why": {
+        "en": "En cambio contrasts two people or situations; as a habit in the past both verbs take the imperfect (trabajaba, hacía).",
+        "es": "En cambio contrasta dos personas o situaciones; como hábito en el pasado, los dos verbos van en imperfecto (trabajaba, hacía)."
+      }
+    },
+    {
+      "id": "md-tr-05",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "en": "First we analyze the data; then we write the report; finally, we present it.",
+        "es": "Primero analizamos los datos; después, escribimos el informe; por último, lo presentamos."
+      },
+      "answer": "Primero analizaremos los datos; después, escribiremos el informe; por último, lo presentaremos.",
+      "wordIds": [
+        "482",
+        "853",
+        "318"
+      ],
+      "why": {
+        "en": "The order markers (primero, después, por último) stay; each verb moves to the simple future: analizaremos, escribiremos, presentaremos.",
+        "es": "Los marcadores de orden (primero, después, por último) se quedan; cada verbo pasa al futuro simple: analizaremos, escribiremos, presentaremos."
+      }
+    },
+    {
+      "id": "md-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "El comité evaluó tres propuestas. ___, ninguna cumplía todos los requisitos. ___, decidió pedir una cuarta. ___, el plazo se extendió hasta marzo.",
+      "answers": [
+        "Sin embargo",
+        "Por consiguiente",
+        "Además"
+      ],
+      "accept": [
+        [
+          "No obstante",
+          "Pero",
+          "Aun así"
+        ],
+        [
+          "Por lo tanto",
+          "En consecuencia",
+          "Por ello",
+          "Por eso"
+        ],
+        [
+          "Asimismo",
+          "Por otra parte"
+        ]
+      ],
+      "tr": {
+        "en": "The committee evaluated three proposals. However, none met all the requirements. Consequently, it decided to ask for a fourth. In addition, the deadline was extended until March.",
+        "es": "El comité evaluó tres propuestas. Sin embargo, ninguna cumplía todos los requisitos. Por consiguiente, decidió pedir una cuarta. Además, el plazo se extendió hasta marzo."
+      },
+      "why": {
+        "en": "Three relations, three connectors: contrast (sin embargo), result (por consiguiente) and addition (además).",
+        "es": "Tres relaciones, tres conectores: contraste (sin embargo), resultado (por consiguiente) y adición (además)."
+      }
+    },
+    {
+      "id": "md-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "El nuevo sistema es más eficiente; ___, reduce mucho los costos. Hay cambios importantes; ___, se eliminan los trámites en papel. ___, el personal necesita capacitación.",
+      "answers": [
+        "es decir",
+        "por ejemplo",
+        "Eso sí"
+      ],
+      "accept": [
+        [
+          "o sea",
+          "en otras palabras",
+          "esto es"
+        ],
+        [
+          "por caso"
+        ],
+        [
+          "Sin embargo",
+          "No obstante",
+          "Ahora bien"
+        ]
+      ],
+      "tr": {
+        "en": "The new system is more efficient; that is, it greatly reduces costs. There are important changes; for example, paper procedures are eliminated. However, the staff needs training.",
+        "es": "El nuevo sistema es más eficiente; es decir, reduce mucho los costos. Hay cambios importantes; por ejemplo, se eliminan los trámites en papel. Eso sí, el personal necesita capacitación."
+      },
+      "why": {
+        "en": "Es decir restates an idea, por ejemplo gives an example, and eso sí adds a condition or a limit (also sin embargo, ahora bien).",
+        "es": "Es decir reformula una idea, por ejemplo da un ejemplo, y eso sí añade una condición o un límite (también sin embargo, ahora bien)."
+      }
+    },
+    {
+      "id": "md-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "En primer lugar, quiero agradecerles su presencia. ___, voy a explicar el objetivo. ___, presentaré los resultados. ___, responderé a sus preguntas.",
+      "answers": [
+        "En segundo lugar",
+        "En tercer lugar",
+        "Por último"
+      ],
+      "accept": [
+        [
+          "Después",
+          "A continuación",
+          "Luego"
+        ],
+        [
+          "Luego",
+          "Después",
+          "A continuación"
+        ],
+        [
+          "Finalmente",
+          "Para terminar",
+          "Para concluir"
+        ]
+      ],
+      "tr": {
+        "en": "First of all, I want to thank you for being here. Second, I will explain the goal. Third, I will present the results. Finally, I will answer your questions.",
+        "es": "En primer lugar, quiero agradecerles su presencia. En segundo lugar, voy a explicar el objetivo. En tercer lugar, presentaré los resultados. Por último, responderé a sus preguntas."
+      },
+      "why": {
+        "en": "A talk follows a fixed order: en primer lugar, en segundo lugar, en tercer lugar, por último.",
+        "es": "Una exposición sigue un orden fijo: en primer lugar, en segundo lugar, en tercer lugar, por último."
+      }
+    },
+    {
+      "id": "md-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Algunos dicen que el proyecto es un fracaso. ___, creo que ha tenido éxitos importantes. ___ los críticos, los resultados son mejores de lo esperado. ___, hay que reconocer que aún faltan mejoras.",
+      "answers": [
+        "Por mi parte",
+        "A diferencia de",
+        "Eso sí"
+      ],
+      "accept": [
+        [
+          "En mi opinión",
+          "Personalmente",
+          "Yo, por mi parte",
+          "Sin embargo",
+          "En cambio"
+        ],
+        [
+          "Contrariamente a",
+          "Al contrario de"
+        ],
+        [
+          "No obstante",
+          "Sin embargo",
+          "Aun así",
+          "Ahora bien"
+        ]
+      ],
+      "tr": {
+        "en": "Some say the project is a failure. For my part, I think it has had important successes. Unlike the critics, the results are better than expected. However, it must be admitted that improvements are still missing.",
+        "es": "Algunos dicen que el proyecto es un fracaso. Por mi parte, creo que ha tenido éxitos importantes. A diferencia de los críticos, los resultados son mejores de lo esperado. Eso sí, hay que reconocer que aún faltan mejoras."
+      },
+      "why": {
+        "en": "Opinion (por mi parte), contrast with other people (a diferencia de) and a concession (eso sí): the register stays formal.",
+        "es": "Opinión (por mi parte), contraste con otras personas (a diferencia de) y una concesión (eso sí): el registro sigue siendo formal."
+      }
+    },
+    {
+      "id": "md-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Los costos aumentaron y la empresa subió los precios. ___, las ventas no bajaron. ___, la competencia perdió clientes. En ___, la decisión fue buena.",
+      "answers": [
+        "Pese a ello",
+        "Más aún",
+        "definitiva"
+      ],
+      "accept": [
+        [
+          "A pesar de ello",
+          "Aun así",
+          "Sin embargo",
+          "No obstante",
+          "Con todo"
+        ],
+        [
+          "Es más",
+          "Incluso",
+          "De hecho"
+        ],
+        [
+          "conclusión",
+          "resumen",
+          "suma"
+        ]
+      ],
+      "tr": {
+        "en": "Costs went up and the company raised its prices. Even so, sales did not fall. What is more, the competition lost customers. All in all, the decision was right.",
+        "es": "Los costos aumentaron y la empresa subió los precios. Pese a ello, las ventas no bajaron. Más aún, la competencia perdió clientes. En definitiva, la decisión fue buena."
+      },
+      "why": {
+        "en": "Concession (pese a ello), reinforcement (es más) and conclusion (en definitiva) build an argument in formal writing.",
+        "es": "Concesión (pese a ello), refuerzo (es más) y conclusión (en definitiva) construyen un argumento en la escritura formal."
+      }
+    },
+    {
+      "id": "md-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "No es un problema técnico, pero un problema de comunicación.",
+      "wrongIndex": 5,
+      "answer": "sino",
+      "explain": {
+        "en": "After a negative, a correction uses sino, not pero: no es A, sino B.",
+        "es": "Tras una negación, una corrección usa sino, no pero: no es A, sino B."
+      },
+      "tr": {
+        "en": "It is not a technical problem, but a communication problem.",
+        "es": "No es un problema técnico, sino un problema de comunicación."
+      }
+    },
+    {
+      "id": "md-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "Llegó tarde debido de la lluvia.",
+      "wrongIndex": 3,
+      "answer": "a",
+      "explain": {
+        "en": "The formal cause connector is debido a (not debido de): debido a la lluvia.",
+        "es": "El conector formal de causa es debido a (no debido de): debido a la lluvia."
+      },
+      "tr": {
+        "en": "He arrived late because of the rain.",
+        "es": "Llegó tarde debido a la lluvia."
+      }
+    },
+    {
+      "id": "md-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "Aunque llueva ayer, salimos a caminar.",
+      "wrongIndex": 1,
+      "answer": "llovió",
+      "accept": [
+        "llovía"
+      ],
+      "explain": {
+        "en": "Aunque + a fact that already happened takes the indicative: aunque llovió.",
+        "es": "Aunque + un hecho que ya ocurrió lleva indicativo: aunque llovió."
+      },
+      "tr": {
+        "en": "Although it rained yesterday, we went out for a walk.",
+        "es": "Aunque llovió ayer, salimos a caminar."
+      }
+    },
+    {
+      "id": "md-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "En cuanto de los salarios, el sindicato está de acuerdo.",
+      "wrongIndex": 2,
+      "answer": "a",
+      "explain": {
+        "en": "The topic marker is en cuanto a: en cuanto a los salarios.",
+        "es": "El marcador de tema es en cuanto a: en cuanto a los salarios."
+      },
+      "tr": {
+        "en": "As for the salaries, the union agrees.",
+        "es": "En cuanto a los salarios, el sindicato está de acuerdo."
+      }
+    },
+    {
+      "id": "md-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "Le escribo a fin de que me envió el informe.",
+      "wrongIndex": 7,
+      "answer": "envíe",
+      "explain": {
+        "en": "A fin de que (formal purpose) always takes the subjunctive: me envíe.",
+        "es": "A fin de que (finalidad formal) siempre lleva subjuntivo: me envíe."
+      },
+      "tr": {
+        "en": "I am writing to you so that you send me the report.",
+        "es": "Le escribo a fin de que me envíe el informe."
+      }
+    },
+    {
+      "id": "md-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "sin embargo",
+        "por lo tanto",
+        "además"
+      ],
+      "es": "Llovía mucho; ___, salimos a caminar.",
+      "word": "sin embargo",
+      "answer": "sin embargo",
+      "accept": [
+        "no obstante",
+        "aun así"
+      ],
+      "tr": {
+        "en": "It was raining a lot; nevertheless, we went out for a walk.",
+        "es": "Llovía mucho; sin embargo, salimos a caminar."
+      },
+      "why": {
+        "en": "Going out in the rain is the opposite of what you expect, so the contrast is sin embargo; por lo tanto and además do not fit.",
+        "es": "Salir bajo la lluvia es lo contrario de lo esperado, así que el contraste es sin embargo; por lo tanto y además no encajan."
+      }
+    },
+    {
+      "id": "md-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "por lo tanto",
+        "sin embargo",
+        "en cambio"
+      ],
+      "es": "No hay presupuesto; ___, el proyecto se cancela.",
+      "word": "por lo tanto",
+      "answer": "por lo tanto",
+      "accept": [
+        "por consiguiente",
+        "en consecuencia"
+      ],
+      "tr": {
+        "en": "There is no budget; therefore, the project is cancelled.",
+        "es": "No hay presupuesto; por lo tanto, el proyecto se cancela."
+      },
+      "why": {
+        "en": "The cancellation is the result of having no money: por lo tanto. Sin embargo and en cambio would mark a contrast.",
+        "es": "La cancelación es el resultado de no tener dinero: por lo tanto. Sin embargo y en cambio marcarían un contraste."
+      }
+    },
+    {
+      "id": "md-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "es decir",
+        "sin embargo",
+        "por último"
+      ],
+      "es": "El sistema es bilingüe; ___, funciona en español y en inglés.",
+      "word": "es decir",
+      "answer": "es decir",
+      "accept": [
+        "o sea",
+        "esto es"
+      ],
+      "tr": {
+        "en": "The system is bilingual; that is, it works in Spanish and in English.",
+        "es": "El sistema es bilingüe; es decir, funciona en español y en inglés."
+      },
+      "why": {
+        "en": "The second part explains the first, so es decir; sin embargo would contrast and por último would give an order.",
+        "es": "La segunda parte explica la primera, así que es decir; sin embargo contrastaría y por último daría un orden."
+      }
+    },
+    {
+      "id": "md-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "en cambio",
+        "además",
+        "por consiguiente"
+      ],
+      "es": "Ana vive en Madrid; su hermano, ___, vive en Lima.",
+      "word": "en cambio",
+      "answer": "en cambio",
+      "tr": {
+        "en": "Ana lives in Madrid; her brother, on the other hand, lives in Lima.",
+        "es": "Ana vive en Madrid; su hermano, en cambio, vive en Lima."
+      },
+      "why": {
+        "en": "Two people are set against each other: en cambio. Además adds, and por consiguiente gives a result.",
+        "es": "Se contraponen dos personas: en cambio. Además suma, y por consiguiente da un resultado."
+      }
+    },
+    {
+      "id": "md-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "finalmente",
+        "por ejemplo",
+        "en cambio"
+      ],
+      "es": "Primero revisamos los datos, luego los analizamos y ___ escribimos el informe.",
+      "word": "finalmente",
+      "answer": "finalmente",
+      "accept": [
+        "por último",
+        "al final"
+      ],
+      "tr": {
+        "en": "First we checked the data, then we analyzed it, and finally we wrote the report.",
+        "es": "Primero revisamos los datos, luego los analizamos y finalmente escribimos el informe."
+      },
+      "why": {
+        "en": "The last step of a sequence takes finalmente; por ejemplo and en cambio do not mark an order.",
+        "es": "El último paso de una secuencia lleva finalmente; por ejemplo y en cambio no marcan un orden."
+      }
+    },
+    {
+      "id": "md-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "However, the plan was approved.",
+        "es": "Sin embargo, el plan fue aprobado."
+      },
+      "es": "Sin embargo, el plan fue aprobado."
+    },
+    {
+      "id": "md-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "Therefore, we cannot accept the offer.",
+        "es": "Por lo tanto, no podemos aceptar la oferta."
+      },
+      "es": "Por lo tanto, no podemos aceptar la oferta."
+    },
+    {
+      "id": "md-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "As for the prices, there are no changes.",
+        "es": "En cuanto a los precios, no hay cambios."
+      },
+      "es": "En cuanto a los precios, no hay cambios."
+    },
+    {
+      "id": "md-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "Likewise, the budget was approved.",
+        "es": "Asimismo, se aprobó el presupuesto."
+      },
+      "es": "Asimismo, se aprobó el presupuesto."
+    },
+    {
+      "id": "md-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "All in all, the result was positive.",
+        "es": "En definitiva, el resultado fue positivo."
+      },
+      "es": "En definitiva, el resultado fue positivo."
     }
   ]
 }
