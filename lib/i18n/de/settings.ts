@@ -56,7 +56,6 @@ const de: typeof en = {
       on: 'An',
       off: 'Aus: die Stimme des Telefons spricht',
       retry: 'Ein Teil des Downloads ist fehlgeschlagen. Tippe, um es erneut zu versuchen',
-      sentences: 'Satzstimme',
       piper: 'Piper (schnell)',
       kokoro: 'Kokoro (schöner, langsamer)',
       kokoroSize: (mb: string) => `Kokoro braucht einen Download von ${mb}`,
@@ -75,14 +74,9 @@ const de: typeof en = {
     },
     speaker: {
       title: 'Wer liest vor',
-      auto: 'Automatisch (am schnellsten)',
       person: (name: string, female: boolean) => `${name}, ${female ? 'weiblich' : 'männlich'}`,
-      hint: 'Aufnahmen der Wörter der anderen Person starten etwas langsamer.',
       sample: 'Beispielsatz',
       playSample: (name: string) => `Probe abspielen: ${name}`,
-      // Temporary until EJSZAKA E101 (both voices recorded), Kálmán 2026-11-03.
-      fastFallback: 'Schnelle Ausweichstimme',
-      fastFallbackHint: 'Wenn die gewählte Person keine Aufnahme hat, wird sofort die vorhandene Aufnahme der anderen Person abgespielt statt einer langsameren, erzeugten Stimme.',
     },
     dailyNewLimit: 'Neue Wörter pro Tag',
     dailyNewLimitWords: (n: string) => `${n} Wörter / Tag`,

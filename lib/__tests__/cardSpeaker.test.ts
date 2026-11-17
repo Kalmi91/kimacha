@@ -4,22 +4,21 @@
 
 import type { PcicItem } from '@/data/pcic';
 import { wordSpeakerGender } from '../cardSpeaker';
-import { DEFAULT_SPEAKERS, voiceFor } from '../neuralVoices';
+import { DEFAULT_SPEAKERS } from '../neuralVoices';
 import { setSpeakerChoice, setSpeakerChoices } from '../voicePreference';
 
 const item = (over: Partial<PcicItem>): PcicItem => ({ id: 'o1', es: 'casa', en: 'house', kind: 'word', section: '', order: 1, ...over });
 
 describe('wordSpeakerGender', () => {
-  it('is the sex of the word voice of the full field in the target language', () => {
+  it('is the one voice of the language (female by default) for every word, whatever its own hash voice', () => {
     for (const es of ['casa', 'el carro / el coche', 'estar']) {
-      expect(wordSpeakerGender(item({ es }), 'es')).toBe(voiceFor('es', 'kokoro', es).gender);
+      expect(wordSpeakerGender(item({ es }), 'es')).toBe('f');
     }
-    expect(wordSpeakerGender(item({ en: 'the dog' }), 'en')).toBe(voiceFor('en', 'kokoro', 'the dog').gender);
+    expect(wordSpeakerGender(item({ en: 'the dog' }), 'en')).toBe('f');
   });
 
-  it('the whole field decides, not its first alternative', () => {
-    const whole = 'el carro / el coche';
-    expect(wordSpeakerGender(item({ es: whole }), 'es')).toBe(voiceFor('es', 'kokoro', whole).gender);
+  it('the whole field decides nothing: the chosen person speaks every alternative', () => {
+    expect(wordSpeakerGender(item({ es: 'el carro / el coche' }), 'es')).toBe('f');
   });
 
   it('is undefined without an item, without a word, and for a language the packs do not cover', () => {
@@ -39,14 +38,14 @@ describe('wordSpeakerGender with a person chosen in Settings -> Voice', () => {
     expect(wordSpeakerGender(item({ es: 'perro' }), 'es')).toBe('f');
   });
 
-  it("is per language: Spanish chosen leaves English on the word's own voice", () => {
+  it('is per language: Spanish chosen male leaves English on its own choice', () => {
     setSpeakerChoice('es', 'm');
-    expect(wordSpeakerGender(item({ en: 'the dog' }), 'en')).toBe(voiceFor('en', 'kokoro', 'the dog').gender);
+    expect(wordSpeakerGender(item({ en: 'the dog' }), 'en')).toBe('f');
   });
 
-  it("Automatic again is the word's own voice", () => {
+  it('choosing the female voice again is female', () => {
     setSpeakerChoice('en', 'm');
-    setSpeakerChoice('en', 'auto');
-    expect(wordSpeakerGender(item({ en: 'the dog' }), 'en')).toBe(voiceFor('en', 'kokoro', 'the dog').gender);
+    setSpeakerChoice('en', 'f');
+    expect(wordSpeakerGender(item({ en: 'the dog' }), 'en')).toBe('f');
   });
 });

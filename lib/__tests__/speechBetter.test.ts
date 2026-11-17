@@ -12,6 +12,7 @@ jest.mock('../neuralModels', () => ({
   neuralPackFile: jest.fn(() => null),
   neuralSentenceFile: jest.fn(() => null),
   neuralEngineFor: jest.fn(() => null),
+  chosenNeuralEngine: jest.fn(() => 'kokoro'),
   neuralFallbackEngine: jest.fn(() => null),
   noteNeuralTrouble: jest.fn(),
   noteNeuralOk: jest.fn(),
@@ -70,7 +71,7 @@ describe('speak(): the levels', () => {
     engineFor.mockReturnValue('piper');
     const onDone = jest.fn();
     speak('el perro', 'es-MX', { rate: 0.8, onDone });
-    expect(packFile).toHaveBeenCalledWith('es', 'el perro', undefined);
+    expect(packFile).toHaveBeenCalledWith('es', 'el perro', 'f');
     expect(playPack).toHaveBeenCalledWith('/files/tts/pack/es/27956ac4.mp3', expect.objectContaining({ rate: 0.8, onDone: expect.any(Function) }));
     playPack.mock.calls[0][1].onDone();
     expect(onDone).toHaveBeenCalledTimes(1);
@@ -78,12 +79,12 @@ describe('speak(): the levels', () => {
     expect(speech.speak).not.toHaveBeenCalled();
   });
 
-  it('a text that is not in the pack goes to the sentence engine, with the voice the hash picks', () => {
+  it('a text that is not in the pack goes to the sentence engine, with the chosen voice, whatever the hash picks', () => {
     engineFor.mockReturnValue('piper');
     speak('el perro', 'es-MX', { rate: 1.1 });
     expect(speakNeural).toHaveBeenCalledWith('el perro', 'es', expect.objectContaining({ id: 'es_MX-claude-high' }), expect.objectContaining({ rate: 1.1 }));
     speak('Mañana', 'es-MX');
-    expect(speakNeural).toHaveBeenLastCalledWith('Mañana', 'es', expect.objectContaining({ id: 'es_MX-ald-medium' }), expect.anything());
+    expect(speakNeural).toHaveBeenLastCalledWith('Mañana', 'es', expect.objectContaining({ id: 'es_MX-claude-high' }), expect.anything());
     expect(speech.speak).not.toHaveBeenCalled();
   });
 
@@ -375,8 +376,8 @@ describe('speak(): the sentence pack (Audio round B)', () => {
     engineFor.mockReturnValue('piper');
     const onDone = jest.fn();
     speak(SENTENCE, 'es-MX', { rate: 0.9, onDone });
-    expect(packFile).toHaveBeenCalledWith('es', SENTENCE, undefined);
-    expect(sentenceFile).toHaveBeenCalledWith('es', SENTENCE, undefined); // no gender: the pack uses the text's own hash gender
+    expect(packFile).toHaveBeenCalledWith('es', SENTENCE, 'f');
+    expect(sentenceFile).toHaveBeenCalledWith('es', SENTENCE, 'f'); // the chosen person's recording
     expect(playPack).toHaveBeenCalledWith('/files/tts/sentences/es/f/abc.mp3', expect.objectContaining({ rate: 0.9, onDone: expect.any(Function) }));
     playPack.mock.calls[0][1].onDone();
     expect(onDone).toHaveBeenCalledTimes(1);

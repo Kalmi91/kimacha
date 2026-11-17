@@ -1,11 +1,11 @@
 // EJSZAKA E109: the sample sentence and the play buttons on the Settings -> Voice cards. The button plays the sample
-// of the engine the card shows, shows its state, and never changes the picked person; Automatic has no button.
+// of its own voice (engine + person), shows its state, and never changes the picked voice.
 
 import { Pressable, View } from 'react-native';
 import { fireEvent, render } from '@testing-library/react-native';
 
 import { ThemeProvider } from '@/lib/ThemeContext';
-import { DEFAULT_SPEAKERS } from '@/lib/neuralVoices';
+import { DEFAULT_SPEAKERS, PIPER_MODEL_KEYS } from '@/lib/neuralVoices';
 import { setSpeakerChoices } from '@/lib/voicePreference';
 import { SAMPLE_SENTENCES } from '@/lib/voiceSampleData';
 import SpeakerPickerRows from '../SpeakerPickerRows';
@@ -16,7 +16,7 @@ const mockPlay = jest.fn();
 const mockStop = jest.fn();
 jest.mock('@/lib/neuralModels', () => ({
   useNeuralState: () => mockState,
-  setNeuralFastFallback: jest.fn(),
+  setNeuralEngine: jest.fn(),
   setNeuralSpeaker: jest.fn(),
 }));
 jest.mock('@/lib/voiceSample', () => ({
@@ -30,8 +30,9 @@ const stateWith = (over: Record<string, unknown> = {}) => ({
   ready: true,
   enabled: false,
   engines: { es: 'piper', en: 'piper', hu: 'piper', de: 'piper' },
-  installed: {},
+  installed: { ...Object.fromEntries(PIPER_MODEL_KEYS.map(key => [key, true])), kokoro: true },
   download: { running: false, percent: 0, phase: 'download', failed: [] },
+  issues: {},
   ...over,
 });
 const Row = ({ onPress, children }: { onPress?: () => void; children: React.ReactNode }) => (
@@ -55,36 +56,37 @@ beforeEach(() => {
 });
 
 describe('voice samples on the Voice cards', () => {
-  it('every card shows the label and its sentence and a play button per person, none for Automatic, with nothing downloaded and the Better voice off', () => {
+  it('every card shows the label and its sentence and a play button per voice, with the Better voice off', () => {
     const view = show();
     expect(view.getAllByText('Example sentence')).toHaveLength(4);
     for (const lang of ['es', 'en', 'hu', 'de'] as const) {
       expect(view.getByText(SAMPLE_SENTENCES[lang])).toBeTruthy();
-      expect(view.getByTestId(`voice-sample-${lang}-f`)).toBeTruthy();
-      expect(view.getByTestId(`voice-sample-${lang}-m`)).toBeTruthy();
+      expect(view.getByTestId(`voice-sample-${lang}-piper-f`)).toBeTruthy();
+      expect(view.getByTestId(`voice-sample-${lang}-piper-m`)).toBeTruthy();
     }
-    expect(view.queryByTestId('voice-sample-es-auto')).toBeNull();
+    expect(view.getByTestId('voice-sample-es-kokoro-f')).toBeTruthy();
+    expect(view.getByTestId('voice-sample-en-kokoro-m')).toBeTruthy();
+    expect(view.queryByTestId('voice-sample-hu-kokoro-f')).toBeNull();
   });
 
-  it('the play button plays the sample of the engine the card shows, and does not change the choice', () => {
-    mockState = stateWith({ engines: { es: 'kokoro', en: 'piper', hu: 'piper', de: 'piper' } });
+  it('the play button plays the sample of its own engine and person, and does not change the choice', () => {
     const view = show();
-    fireEvent.press(view.getByTestId('voice-sample-es-m'));
+    fireEvent.press(view.getByTestId('voice-sample-es-kokoro-m'));
     expect(mockPlay).toHaveBeenLastCalledWith('es', 'kokoro', 'm');
-    fireEvent.press(view.getByTestId('voice-sample-en-f'));
+    fireEvent.press(view.getByTestId('voice-sample-en-piper-f'));
     expect(mockPlay).toHaveBeenLastCalledWith('en', 'piper', 'f');
-    fireEvent.press(view.getByTestId('voice-sample-hu-m'));
+    fireEvent.press(view.getByTestId('voice-sample-hu-piper-m'));
     expect(mockPlay).toHaveBeenLastCalledWith('hu', 'piper', 'm');
-    expect(view.getByTestId('settings-speaker-es-auto').props.accessibilityState.checked).toBe(true);
-    expect(view.getByTestId('settings-speaker-es-m').props.accessibilityState.checked).toBe(false);
+    expect(view.getByTestId('settings-speaker-es-piper-f').props.accessibilityState.checked).toBe(true);
+    expect(view.getByTestId('settings-speaker-es-kokoro-m').props.accessibilityState.checked).toBe(false);
   });
 
   it('the playing button shows a stop sign and a selected state, and a second tap stops it', () => {
     mockPlaying = 'en-piper-m';
     const view = show();
-    const playing = view.getByTestId('voice-sample-en-m');
+    const playing = view.getByTestId('voice-sample-en-piper-m');
     expect(playing.props.accessibilityState.selected).toBe(true);
-    expect(view.getByTestId('voice-sample-en-f').props.accessibilityState.selected).toBe(false);
+    expect(view.getByTestId('voice-sample-en-piper-f').props.accessibilityState.selected).toBe(false);
     expect(view.getAllByText('■')).toHaveLength(1);
     fireEvent.press(playing);
     expect(mockStop).toHaveBeenCalledTimes(1);
@@ -93,6 +95,6 @@ describe('voice samples on the Voice cards', () => {
 
   it('the labels name the person', () => {
     const view = show();
-    expect(view.getByTestId('voice-sample-de-m').props.accessibilityLabel).toBe('Play sample: Thorsten');
+    expect(view.getByTestId('voice-sample-de-piper-m').props.accessibilityLabel).toBe('Play sample: Thorsten');
   });
 });

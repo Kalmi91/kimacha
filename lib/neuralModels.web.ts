@@ -3,7 +3,7 @@
 
 import { useSyncExternalStore } from 'react';
 import { DEFAULT_ENGINES, type NeuralEngine, type NeuralLang, type SpeakerChoice, type VoiceGender } from './neuralVoices';
-import { setFastFallback, setSpeakerChoice } from './voicePreference';
+import { setSpeakerChoice } from './voicePreference';
 import type { NeuralState } from './neuralModels';
 
 const state: NeuralState = {
@@ -52,8 +52,8 @@ export function setNeuralSpeaker(lang: NeuralLang, choice: SpeakerChoice): void 
   setSpeakerChoice(lang, choice); // in memory only: nothing is saved on the web
 }
 
-export function setNeuralFastFallback(on: boolean): void {
-  setFastFallback(on); // in memory only: nothing is saved on the web
+export function chosenNeuralEngine(_lang: NeuralLang): NeuralEngine {
+  return 'piper';
 }
 
 export async function setNeuralEnabled(_enabled: boolean): Promise<void> {}

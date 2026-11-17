@@ -250,10 +250,10 @@ describe('sentence pack lookup', () => {
 });
 
 describe('the speaker choice of Settings -> Voice', () => {
-  it('normalizeSpeakers: only f and m are a person, anything else (and nothing) is Automatic', () => {
-    expect(normalizeSpeakers(undefined)).toEqual({ es: 'auto', en: 'auto', hu: 'auto', de: 'auto' });
-    expect(normalizeSpeakers({ es: 'm', en: 'f', hu: 'n' })).toEqual({ es: 'm', en: 'f', hu: 'auto', de: 'auto' });
-    expect(normalizeSpeakers({ es: 1, en: null, hu: 'F' })).toEqual({ es: 'auto', en: 'auto', hu: 'auto', de: 'auto' });
+  it('normalizeSpeakers: m is the man, anything else (an old auto, junk, nothing) is the woman', () => {
+    expect(normalizeSpeakers(undefined)).toEqual({ es: 'f', en: 'f', hu: 'f', de: 'f' });
+    expect(normalizeSpeakers({ es: 'm', en: 'f', hu: 'n' })).toEqual({ es: 'm', en: 'f', hu: 'f', de: 'f' });
+    expect(normalizeSpeakers({ es: 1, en: null, hu: 'F' })).toEqual({ es: 'f', en: 'f', hu: 'f', de: 'f' });
   });
 
   it('voiceName: the first name of every voice of both engines, as Settings shows it', () => {
