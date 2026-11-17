@@ -11,6 +11,8 @@ export default function GrammarLayout() {
       <Stack.Screen name="level-test" />
       {/* the Big test (placement test, 45 questions A1 to C1). */}
       <Stack.Screen name="big-test" />
+      {/* the Small test (one per level, 10 adaptive questions per round). */}
+      <Stack.Screen name="small-test" />
       {/* the exam round (two gap texts built around the weakest topics). */}
       <Stack.Screen name="exam-round" />
       {/* the German tense drill. */}
