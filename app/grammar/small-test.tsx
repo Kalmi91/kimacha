@@ -25,6 +25,7 @@ import {
   levelProgress,
   loadSmallState,
   openLesson,
+  repairSmallRun,
   resolveAnswer,
   roundRight,
   roundRows,
@@ -59,6 +60,10 @@ interface Result {
   given?: string;
 }
 
+// A double tap on Next must not answer the next question too (same guard as the Nagy teszt): for TAP_GUARD_MS after a new
+// question appears, an answer is dropped and the question starts again.
+const TAP_GUARD_MS = 500;
+
 const STATUS_COLOR: Record<RowStatus, 'success' | 'warning' | 'danger'> = { learned: 'success', more: 'warning', lesson: 'danger' };
 
 export default function SmallTestScreen() {
@@ -83,6 +88,8 @@ export default function SmallTestScreen() {
   const levelRef = useRef<Level>('A1');
   const seedRef = useRef(0);
   const away = useRef(false);
+  const tapGuardUntil = useRef(0);
+  const [redo, setRedo] = useState(0);
   const queue = useRef<Promise<void>>(Promise.resolve());
   const enqueue = useCallback((job: () => Promise<void>) => {
     queue.current = queue.current.then(job).catch(() => {});
@@ -90,6 +97,7 @@ export default function SmallTestScreen() {
 
   const commit = useCallback(
     (next: SmallState) => {
+      if (next.run?.current && next.run.current !== stRef.current?.run?.current) tapGuardUntil.current = Date.now() + TAP_GUARD_MS;
       stRef.current = next;
       setSt(next);
       enqueue(async () => void (await saveSmallState(getDb(), pairRef.current, levelRef.current, next)));
@@ -126,6 +134,7 @@ export default function SmallTestScreen() {
         setData(d);
         return;
       }
+      if (state.run) state = repairSmallRun(state, v.pool);
       if (!state.run) state = startRound(state, v.topics, v.pool, seed);
       else if (state.run.phase === 'lesson') state = finishLesson(state, v.pool);
       pairRef.current = pair;
@@ -134,6 +143,7 @@ export default function SmallTestScreen() {
       viewRef.current = v;
       evRef.current = ev;
       stRef.current = state;
+      tapGuardUntil.current = Date.now() + TAP_GUARD_MS;
       enqueue(async () => void (await saveSmallState(db, pair, lvl, state)));
       setLevel(lvl);
       setView(v);
@@ -162,6 +172,19 @@ export default function SmallTestScreen() {
 
   const shell = (children: ReactNode) => <View style={[styles.screen, { backgroundColor: colors.background }]}>{children}</View>;
 
+  // the loading spinner never traps the learner: the X is there too
+  const waiting = () =>
+    shell(
+      <View style={styles.flex}>
+        <View style={styles.header}>
+          <Pressable testID="small-test-close" accessibilityRole="button" accessibilityLabel={s.leave} hitSlop={12} onPress={() => router.back()}>
+            <Text style={[styles.close, { color: colors.textMuted }]}>✕</Text>
+          </Pressable>
+        </View>
+        <ActivityIndicator style={styles.flex} color={colors.tint} />
+      </View>,
+    );
+
   if (empty) {
     return shell(
       <View style={styles.flex}>
@@ -174,7 +197,7 @@ export default function SmallTestScreen() {
       </View>,
     );
   }
-  if (!data || !view || !st || !st.run) return shell(<ActivityIndicator style={styles.flex} color={colors.tint} />);
+  if (!data || !view || !st || !st.run) return waiting();
 
   const run = st.run;
   const pair = `${data.contentLang}→${data.learnedLang}`;
@@ -394,8 +417,9 @@ export default function SmallTestScreen() {
   // ---------------------------------------------------------------- the questions (round and quick check)
   const cur = run.current;
   const found = cur ? view.find(cur.topic, cur.qid) : null;
-  if (!cur || !found) return shell(<ActivityIndicator style={styles.flex} color={colors.tint} />);
+  if (!cur || !found) return waiting();
   const part = `${inMini ? 'mini:' : ''}${cur.qid}`;
+  const guardOpen = () => Date.now() >= tapGuardUntil.current;
   const mistypedButton = (
     <ExamButton testID="small-test-mistyped" secondary label={s.mistyped} onPress={() => settle(true, true)} />
   );
@@ -441,22 +465,22 @@ export default function SmallTestScreen() {
         <DockSlotProvider host={dock}>
           {found.q ? (
             <TestQuestionView
-              key={`${run.answers.length}:${part}`}
+              key={`${run.answers.length}:${part}:${redo}`}
               q={found.q}
               learnedLang={data.learnedLang}
               strictAccents={strictAccents}
               instant
-              onDone={(ok, given) => setResult({ cur, ok, given })}
+              onDone={(ok, given) => (guardOpen() ? setResult({ cur, ok, given }) : setRedo((n) => n + 1))}
             />
           ) : (
             <ScrollView contentContainerStyle={styles.drill} keyboardShouldPersistTaps="handled">
               <NewKindDrillItem
-                key={`${run.answers.length}:${part}`}
+                key={`${run.answers.length}:${part}:${redo}`}
                 item={found.item!}
                 learnedLang={data.learnedLang}
                 contentLang={data.contentLang as never}
                 strictAccents={strictAccents}
-                onDone={(ok) => (ok ? settle(true) : setResult({ cur, ok: false }))}
+                onDone={(ok) => (!guardOpen() ? setRedo((n) => n + 1) : ok ? settle(true) : setResult({ cur, ok: false }))}
               />
             </ScrollView>
           )}

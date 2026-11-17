@@ -240,6 +240,11 @@ export function nextBigTest(run: BigTestRun, pool: BigTestItem[]): BigTestRun {
       const slots = follows.length === 2 ? [[2, 4], [2, 5], [3, 5]][Math.floor(rand() * 3)] : [2 + Math.floor(rand() * 4)];
       const rest = queue.slice(run.pos + 1);
       follows.forEach((f, k) => rest.splice(Math.min(slots[k] - 1, rest.length), 0, f));
+      // late in the level the slots pile up at the end: keep the two apart while another question can sit between them
+      if (follows.length === 2) {
+        const at = rest.findIndex((q) => q.id === follows[0].id);
+        if (rest[at + 1]?.id === follows[1].id && at > 0 && !rest[at - 1].follow) [rest[at - 1], rest[at]] = [rest[at], rest[at - 1]];
+      }
       queue = [...queue.slice(0, run.pos + 1), ...rest];
       answers = answers.slice(0, -1).concat({ ...last, due: follows.length });
     }

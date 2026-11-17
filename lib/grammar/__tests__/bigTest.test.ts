@@ -251,6 +251,22 @@ describe('big test follow-up questions', () => {
     }
   });
 
+  it('a late wrong main answer (7th or 8th) still keeps its two follow-ups apart, and not right after the mistake', () => {
+    for (const mains of ['WRRRRRW', 'WRRRRRRW']) {
+      for (const seed of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]) {
+        let r = drive(fresh(rich, seed), rich, mains.slice(0, -1), 'RR');
+        r = answerOnly(r, rich, 'W');
+        const wrongId = r.answers[r.answers.length - 1].itemId;
+        r = nextBigTest(r, rich);
+        const idx = r.queue.map((q, i) => (q.of === wrongId ? i : -1)).filter((i) => i >= 0);
+        expect(idx).toHaveLength(2);
+        expect(idx[1] - idx[0]).toBeGreaterThanOrEqual(2);
+        // with a single main question left the follow-ups have to wrap it, so only the 7th case keeps slot 1 a main question
+        if (mains.length === 7) expect(r.queue[r.pos].follow).toBeUndefined();
+      }
+    }
+  });
+
   it('each new wrong main answer brings 2 more follow-ups from its own topic', () => {
     const r = drive(fresh(rich, 3), rich, 'WW', 'R');
     const mainIds = r.answers.filter((a) => !a.follow).map((a) => a.itemId);
