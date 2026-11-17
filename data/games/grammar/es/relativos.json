@@ -1152,6 +1152,448 @@
         }
       ],
       "correctIndex": 1
+    },
+    {
+      "id": "rel-tr-01",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "en": "The man who works here is very kind. (imperfect)",
+        "es": "El señor que trabaja aquí es muy amable. (imperfecto)"
+      },
+      "answer": "El señor que trabajaba aquí era muy amable.",
+      "wordIds": [
+        "49",
+        "9",
+        "11",
+        "64",
+        "626"
+      ],
+      "why": {
+        "en": "A description in the past: imperfecto. The relative clause and the main clause both shift: trabaja → trabajaba, es → era. Que stays the same.",
+        "es": "Una descripción en el pasado: imperfecto. La oración de relativo y la principal cambian: trabaja → trabajaba, es → era. Que no cambia."
+      }
+    },
+    {
+      "id": "rel-tr-02",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "en": "The book that I buy is expensive. (preterite)",
+        "es": "El libro que compro es caro. (indefinido)"
+      },
+      "answer": "El libro que compré fue caro.",
+      "wordIds": [
+        "144",
+        "11",
+        "135"
+      ],
+      "why": {
+        "en": "A finished past action: indefinido. Both verbs shift: compro → compré, es → fue. Que stays the same.",
+        "es": "Una acción pasada y terminada: indefinido. Los dos verbos cambian: compro → compré, es → fue. Que no cambia."
+      }
+    },
+    {
+      "id": "rel-tr-03",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "en": "The house where we live has a garden. (future)",
+        "es": "La casa donde vivimos tiene jardín. (futuro)"
+      },
+      "answer": "La casa donde viviremos tendrá jardín.",
+      "wordIds": [
+        "1194",
+        "91",
+        "48",
+        "16"
+      ],
+      "why": {
+        "en": "A future situation: futuro simple. Both verbs shift: vivimos → viviremos, tiene → tendrá (short stem). Donde stays the same.",
+        "es": "Una situación futura: futuro simple. Los dos verbos cambian: vivimos → viviremos, tiene → tendrá (raíz corta). Donde no cambia."
+      }
+    },
+    {
+      "id": "rel-tr-04",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "en": "My grandfather, whom I visit a lot, lives in Oaxaca. (imperfect)",
+        "es": "Mi abuelo, a quien visito mucho, vive en Oaxaca. (imperfecto)"
+      },
+      "answer": "Mi abuelo, a quien visitaba mucho, vivía en Oaxaca.",
+      "wordIds": [
+        "336",
+        "48"
+      ],
+      "why": {
+        "en": "A habit and a description in the past: imperfecto. Both verbs shift: visito → visitaba, vive → vivía. A quien stays the same.",
+        "es": "Una costumbre y una descripción en el pasado: imperfecto. Los dos verbos cambian: visito → visitaba, vive → vivía. A quien no cambia."
+      }
+    },
+    {
+      "id": "rel-tr-05",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "en": "The friends I work with travel to Mexico. (preterite)",
+        "es": "Los amigos con quienes trabajo viajan a México. (indefinido)"
+      },
+      "answer": "Los amigos con quienes trabajé viajaron a México.",
+      "wordIds": [
+        "40",
+        "49",
+        "230"
+      ],
+      "why": {
+        "en": "A finished past action: indefinido. Both verbs shift: trabajo → trabajé, viajan → viajaron. Con quienes stays the same.",
+        "es": "Una acción pasada y terminada: indefinido. Los dos verbos cambian: trabajo → trabajé, viajan → viajaron. Con quienes no cambia."
+      }
+    },
+    {
+      "id": "rel-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "La casa ___ vivo es pequeña. El hombre con ___ hablo es mi tío. El libro ___ leo es muy bueno.",
+      "answers": [
+        "donde",
+        "quien",
+        "que"
+      ],
+      "tr": {
+        "en": "The house where I live is small. The man I talk to is my uncle. The book I am reading is very good.",
+        "es": "La casa donde vivo es pequeña. El hombre con quien hablo es mi tío. El libro que leo es muy bueno."
+      },
+      "why": {
+        "en": "Donde = a place; quien = a person after a preposition (con quien); que = a thing as the object.",
+        "es": "Donde = un lugar; quien = una persona después de una preposición (con quien); que = una cosa como objeto."
+      }
+    },
+    {
+      "id": "rel-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Los amigos a ___ conocí ayer son de Puebla. La ciudad ___ nací es muy grande. La ropa ___ compré es barata.",
+      "answers": [
+        "quienes",
+        "donde",
+        "que"
+      ],
+      "tr": {
+        "en": "The friends I met yesterday are from Puebla. The city where I was born is very big. The clothes I bought are cheap.",
+        "es": "Los amigos a quienes conocí ayer son de Puebla. La ciudad donde nací es muy grande. La ropa que compré es barata."
+      },
+      "why": {
+        "en": "Quienes = several people after a preposition (a quienes); donde = a place; que = a thing as the object.",
+        "es": "Quienes = varias personas después de una preposición (a quienes); donde = un lugar; que = una cosa como objeto."
+      }
+    },
+    {
+      "id": "rel-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Los chicos con ___ juego al fútbol viven cerca. La tienda ___ compro pan está en la esquina. La señora ___ vende el pan es muy amable.",
+      "answers": [
+        "quienes",
+        "donde",
+        "que"
+      ],
+      "tr": {
+        "en": "The boys I play football with live nearby. The shop where I buy bread is on the corner. The lady who sells the bread is very kind.",
+        "es": "Los chicos con quienes juego al fútbol viven cerca. La tienda donde compro pan está en la esquina. La señora que vende el pan es muy amable."
+      },
+      "why": {
+        "en": "Quienes = several people after a preposition (con quienes); donde = a place; que = a person as the subject.",
+        "es": "Quienes = varias personas después de una preposición (con quienes); donde = un lugar; que = una persona como sujeto."
+      }
+    },
+    {
+      "id": "rel-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Mi vecina, a ___ conozco bien, trabaja en un banco. El restaurante ___ comemos hoy es nuevo. La comida ___ cocinó mi mamá es deliciosa.",
+      "answers": [
+        "quien",
+        "donde",
+        "que"
+      ],
+      "tr": {
+        "en": "My neighbor, whom I know well, works at a bank. The restaurant where we eat today is new. The food my mom cooked is delicious.",
+        "es": "Mi vecina, a quien conozco bien, trabaja en un banco. El restaurante donde comemos hoy es nuevo. La comida que cocinó mi mamá es deliciosa."
+      },
+      "why": {
+        "en": "Quien = one person after a preposition (a quien); donde = a place; que = a thing as the object.",
+        "es": "Quien = una persona después de una preposición (a quien); donde = un lugar; que = una cosa como objeto."
+      }
+    },
+    {
+      "id": "rel-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Esta es la escuela ___ estudié. El profesor de ___ te hablé es muy joven. Los libros ___ leo son de la biblioteca.",
+      "answers": [
+        "donde",
+        "quien",
+        "que"
+      ],
+      "tr": {
+        "en": "This is the school where I studied. The teacher I told you about is very young. The books I read are from the library.",
+        "es": "Esta es la escuela donde estudié. El profesor de quien te hablé es muy joven. Los libros que leo son de la biblioteca."
+      },
+      "why": {
+        "en": "Donde = a place; quien = one person after a preposition (de quien); que = a thing as the object.",
+        "es": "Donde = un lugar; quien = una persona después de una preposición (de quien); que = una cosa como objeto."
+      }
+    },
+    {
+      "id": "rel-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "La casa que vivo es pequeña.",
+      "wrongIndex": 2,
+      "answer": "donde",
+      "explain": {
+        "en": "A place needs donde here: the house is where I live, not an object of vivo.",
+        "es": "Un lugar necesita donde aquí: la casa es donde vivo, no el objeto de vivo."
+      },
+      "tr": {
+        "en": "The house where I live is small.",
+        "es": "La casa donde vivo es pequeña."
+      }
+    },
+    {
+      "id": "rel-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "El señor con que hablé es mi jefe.",
+      "wrongIndex": 3,
+      "answer": "quien",
+      "explain": {
+        "en": "A person after a preposition takes quien: con quien, not con que.",
+        "es": "Una persona después de una preposición lleva quien: con quien, no con que."
+      },
+      "tr": {
+        "en": "The man I talked to is my boss.",
+        "es": "El señor con quien hablé es mi jefe."
+      }
+    },
+    {
+      "id": "rel-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "Los amigos con quien trabajo son de Oaxaca.",
+      "wrongIndex": 3,
+      "answer": "quienes",
+      "explain": {
+        "en": "Several people take the plural quienes: con quienes, not con quien.",
+        "es": "Varias personas llevan el plural quienes: con quienes, no con quien."
+      },
+      "tr": {
+        "en": "The friends I work with are from Oaxaca.",
+        "es": "Los amigos con quienes trabajo son de Oaxaca."
+      }
+    },
+    {
+      "id": "rel-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "El restaurante dónde comimos es bueno.",
+      "wrongIndex": 2,
+      "answer": "donde",
+      "explain": {
+        "en": "The relative donde has no accent; dónde with an accent is only the question word.",
+        "es": "El relativo donde no lleva tilde; dónde con tilde es solo la palabra interrogativa."
+      },
+      "tr": {
+        "en": "The restaurant where we ate is good.",
+        "es": "El restaurante donde comimos es bueno."
+      }
+    },
+    {
+      "id": "rel-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "La señora a que ayudé es muy amable.",
+      "wrongIndex": 3,
+      "answer": "quien",
+      "explain": {
+        "en": "A person after a preposition takes quien: a quien, not a que.",
+        "es": "Una persona después de una preposición lleva quien: a quien, no a que."
+      },
+      "tr": {
+        "en": "The lady I helped is very kind.",
+        "es": "La señora a quien ayudé es muy amable."
+      }
+    },
+    {
+      "id": "rel-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "que",
+        "quien",
+        "donde"
+      ],
+      "es": "La ciudad ___ nací es grande.",
+      "word": "donde",
+      "answer": "donde",
+      "tr": {
+        "en": "The city where I was born is big.",
+        "es": "La ciudad donde nací es grande."
+      },
+      "why": {
+        "en": "A place takes donde; que and quien do not fit.",
+        "es": "Un lugar lleva donde; que y quien no encajan."
+      }
+    },
+    {
+      "id": "rel-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "que",
+        "quien",
+        "donde"
+      ],
+      "es": "El niño con ___ juego es mi vecino.",
+      "word": "quien",
+      "answer": "quien",
+      "tr": {
+        "en": "The boy I play with is my neighbor.",
+        "es": "El niño con quien juego es mi vecino."
+      },
+      "why": {
+        "en": "A person after a preposition takes quien; que and donde do not fit.",
+        "es": "Una persona después de una preposición lleva quien; que y donde no encajan."
+      }
+    },
+    {
+      "id": "rel-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "que",
+        "quienes",
+        "donde"
+      ],
+      "es": "Los amigos con ___ trabajo son simpáticos.",
+      "word": "quienes",
+      "answer": "quienes",
+      "tr": {
+        "en": "The friends I work with are nice.",
+        "es": "Los amigos con quienes trabajo son simpáticos."
+      },
+      "why": {
+        "en": "Several people after a preposition take quienes; que and donde do not fit.",
+        "es": "Varias personas después de una preposición llevan quienes; que y donde no encajan."
+      }
+    },
+    {
+      "id": "rel-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "que",
+        "quien",
+        "donde"
+      ],
+      "es": "El carro ___ compré es azul.",
+      "word": "que",
+      "answer": "que",
+      "tr": {
+        "en": "The car I bought is blue.",
+        "es": "El carro que compré es azul."
+      },
+      "why": {
+        "en": "A thing as the object takes que; quien and donde do not fit.",
+        "es": "Una cosa como objeto lleva que; quien y donde no encajan."
+      }
+    },
+    {
+      "id": "rel-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "que",
+        "quien",
+        "donde"
+      ],
+      "es": "Mi mamá, a ___ quiero mucho, vive en Puebla.",
+      "word": "quien",
+      "answer": "quien",
+      "tr": {
+        "en": "My mom, whom I love very much, lives in Puebla.",
+        "es": "Mi mamá, a quien quiero mucho, vive en Puebla."
+      },
+      "why": {
+        "en": "A person after a preposition (a) takes quien; que and donde do not fit.",
+        "es": "Una persona después de una preposición (a) lleva quien; que y donde no encajan."
+      }
+    },
+    {
+      "id": "rel-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "The house where I live is small.",
+        "es": "La casa donde vivo es pequeña."
+      },
+      "es": "La casa donde vivo es pequeña."
+    },
+    {
+      "id": "rel-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "The book that I am reading is very good.",
+        "es": "El libro que leo es muy bueno."
+      },
+      "es": "El libro que leo es muy bueno."
+    },
+    {
+      "id": "rel-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "The friends I work with are nice.",
+        "es": "Los amigos con quienes trabajo son simpáticos."
+      },
+      "es": "Los amigos con quienes trabajo son simpáticos."
+    },
+    {
+      "id": "rel-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "The city where I was born is big.",
+        "es": "La ciudad donde nací es grande."
+      },
+      "es": "La ciudad donde nací es grande."
+    },
+    {
+      "id": "rel-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "The lady who sells bread is kind.",
+        "es": "La señora que vende pan es amable."
+      },
+      "es": "La señora que vende pan es amable."
     }
   ]
 }
