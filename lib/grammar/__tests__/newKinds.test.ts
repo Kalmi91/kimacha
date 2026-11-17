@@ -37,7 +37,7 @@ describe('new task kinds in the two trial lessons', () => {
     }
   });
 
-  it('the lessons of the es→en direction have not changed', () => {
+  it('the lessons of the esâ†’en direction have not changed', () => {
     for (const id of ['to_be', 'articles']) {
       const l = lessonFor('en', id)!;
       const c = grammarKindCounts(l);
@@ -56,9 +56,11 @@ describe('new task kinds in the two trial lessons', () => {
   it('the round puts the new items at the end, with their own kind label', () => {
     const round = buildGrammarRound(negacion, 7);
     const kinds = round.map((r) => grammarRoundItemKind(r));
-    const firstNew = kinds.findIndex((k) => k === 'order' || k === 'spot');
+    // the typed task kinds of the A1 task content (opencloze, fix, bank) are new kinds too and follow the same rule
+    const isNew = (k: string) => ['order', 'spot', 'opencloze', 'fix', 'bank'].includes(k);
+    const firstNew = kinds.findIndex((k) => isNew(k));
     expect(firstNew).toBeGreaterThan(0);
-    expect(kinds.slice(firstNew).every((k) => k === 'order' || k === 'spot')).toBe(true);
+    expect(kinds.slice(firstNew).every((k) => isNew(k))).toBe(true);
     expect(round.filter((r) => grammarRoundItemKind(r) === 'choice').every((r) => 'options' in r)).toBe(true);
   });
 });

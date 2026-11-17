@@ -87,7 +87,10 @@ describe('grammar-task-gate', () => {
   });
 
   it('the script and the app read the same core topics (one marking: the syllabus tier)', () => {
-    const r = run('--all');
+    // an empty lessons folder: every core topic counts 0 items, so the script names all of them whatever the shipped data holds
+    const empty = path.join(tmp, 'empty-lessons');
+    fs.mkdirSync(empty, { recursive: true });
+    const r = run('--all', '--lessons', empty);
     const scriptTopics = new Set([...r.out.matchAll(/^ERROR A1 (\S+) /gm)].map((m) => m[1]));
     // E132 fills the A1 topics one by one, so the script names only the core topics that still have a gap
     for (const id of scriptTopics) expect(coreTopicsForLevel('A1')).toContain(id);
