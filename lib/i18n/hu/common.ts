@@ -1,6 +1,9 @@
 import type en from '../en/common';
 
 const hu: typeof en = {
+  common: {
+    beta: 'Béta',
+  },
   audio: {
     loading: 'Hang előkészítése…',
     playing: 'Hang lejátszása…',
@@ -43,6 +46,7 @@ const hu: typeof en = {
     comingSoon: 'Hamarosan',
   },
   a11y: {
+    beta: 'Béta: még nincs kész',
     back: 'Vissza',
     close: 'Bezárás',
     speak: 'Hang lejátszása',

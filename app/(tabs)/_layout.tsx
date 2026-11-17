@@ -2,8 +2,10 @@ import type { ComponentProps } from 'react';
 import { Platform, Pressable, StyleSheet, View, type ColorValue } from 'react-native';
 import { Text } from '@/components/KText';
 import { Tabs } from 'expo-router';
+import { HeaderTitle, useRoute } from 'expo-router/react-navigation';
 import { SymbolView, type SymbolViewProps } from 'expo-symbols';
 
+import { BetaSticker } from '@/components/BetaSticker';
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
@@ -19,12 +21,44 @@ import { useWebKeyboardOpen } from '@/lib/webKeyboard';
 type TabOptions = Exclude<NonNullable<ComponentProps<typeof Tabs.Screen>['options']>, (...args: never[]) => unknown>;
 type TabButtonProps = Parameters<NonNullable<TabOptions['tabBarButton']>>[0];
 
+function TabHeaderTitle({ onLayout, ...props }: ComponentProps<typeof HeaderTitle>) {
+  const { name } = useRoute();
+  const beta = name === 'sentences' || name === 'speak' || name === 'practice';
+  const { theme } = useTheme();
+  const g = useGrammarColors();
+  const { HeaderOrnament } = useSkinDecor();
+  const title = HeaderOrnament ? (
+    <HeaderOrnament>
+      <Text
+        variant="title"
+        numberOfLines={beta ? 1 : undefined}
+        style={[
+          g.brutal
+            ? { color: g.ink, fontSize: 17, fontWeight: '500', textTransform: 'uppercase' }
+            : { color: Colors[theme].text, fontSize: 17, fontWeight: '600' },
+          beta && styles.headerTitle,
+        ]}
+      >
+        {props.children}
+      </Text>
+    </HeaderOrnament>
+  ) : (
+    <HeaderTitle {...props} onLayout={beta ? undefined : onLayout} />
+  );
+  if (!beta) return title;
+  return (
+    <View onLayout={onLayout} style={styles.headerRow}>
+      <View style={styles.headerTitle}>{title}</View>
+      <BetaSticker testID={`beta-sticker-${name}`} />
+    </View>
+  );
+}
+
 export default function TabLayout() {
   const { theme, grammarPalette } = useTheme();
   const colors = Colors[theme];
   const g = useGrammarColors();
   const { skin } = useSkin();
-  const { HeaderOrnament } = useSkinDecor();
   const s = t();
   // the weekly leaderboard needs a cloud account on web; the tab follows login and logout
   const hasSession = useHasSession();
@@ -98,25 +132,8 @@ export default function TabLayout() {
         headerStatusBarHeight: 0,
         // On the brutalist palette an ink-lined, uppercase header (classic: empty).
         ...brutalHeaderOptions(g, skin),
-        // ornament header (HeaderOrnament); without an ornament the native title stays.
-        ...(HeaderOrnament
-          ? {
-              headerTitle: ({ children }: { children: string }) => (
-                <HeaderOrnament>
-                  <Text
-                    variant="title"
-                    style={
-                      g.brutal
-                        ? { color: g.ink, fontSize: 17, fontWeight: '500', textTransform: 'uppercase' }
-                        : { color: colors.text, fontSize: 17, fontWeight: '600' }
-                    }
-                  >
-                    {children}
-                  </Text>
-                </HeaderOrnament>
-              ),
-            }
-          : null),
+        // Keep one shared header; its route decides whether the title needs a beta sticker.
+        headerTitle: (props) => <TabHeaderTitle {...props} />,
       }}>
       <Tabs.Screen
         name="index"
@@ -194,6 +211,8 @@ export default function TabLayout() {
 }
 
 const styles = StyleSheet.create({
+  headerRow: { flexDirection: 'row', alignItems: 'center', gap: 8, maxWidth: '100%' },
+  headerTitle: { flexShrink: 1, minWidth: 0 },
   // the place React Navigation gives the icon (uikit variant, 31 x 28), so the icon sits where it did before
   iconSlot: { width: 31, height: 28, alignItems: 'center', justifyContent: 'center' },
 });
