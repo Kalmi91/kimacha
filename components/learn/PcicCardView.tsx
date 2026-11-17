@@ -24,7 +24,7 @@ import CardShell from '@/components/learn/CardShell';
 import CardNote from '@/components/learn/CardNote';
 import { SkinBackdrop, SkinHeader, SkinSpeakLabel, SkinWord } from '@/components/skins/Slots';
 import DockedAction from '@/components/learn/DockedAction';
-import { compactTypingNeeded, dockScrollInsets } from '@/components/learn/dockScrollInsets';
+import { compactTypingNeeded, dockScrollInsets, shortWindow } from '@/components/learn/dockScrollInsets';
 import { useAnswerAboveKeys } from '@/components/learn/useAnswerAboveKeys';
 import PcicRevealedAnswer, { SpainFormLabel } from '@/components/learn/PcicRevealedAnswer';
 import MistakesEntry from '@/components/learn/MistakesEntry';
@@ -120,6 +120,7 @@ export default function PcicCardView({
   const [retypeOpenKey, setRetypeOpenKey] = useState('');
   const [retypeFocused, setRetypeFocused] = useState(false);
   const { height: windowH } = useWindowDimensions();
+  const fieldBesidePrompt = Platform.OS === 'android' && shortWindow(windowH);
   const compactTyping = Platform.OS === 'android' && !grade && compactTypingNeeded(windowH, kbHeight, dockLift);
   const retypeKey = current ? `${current.itemId}-${cardSeq}` : '';
   const retypeOpen = !!retypeKey && retypeOpenKey === retypeKey;
@@ -380,7 +381,7 @@ export default function PcicCardView({
   // The keyed field stays mounted beside the prompt while optional details move below it on short screens.
   const answerField = <TextInput
     key={`pcic-in-${current.itemId}-${cardSeq}`} ref={inputRef} onLayout={onFieldLayout}
-    style={[styles.input, { color: colors.text, borderColor: colors.tabIconDefault }, themedInputStyle(g), compactTyping && { marginTop: 8 }]}
+    style={[styles.input, { color: colors.text, borderColor: colors.tabIconDefault }, themedInputStyle(g), fieldBesidePrompt && { marginTop: 8 }]}
     value={typedAnswer} onChangeText={setTypedAnswer}
     onSubmitEditing={grade ? () => nextGrade && handleGrade(nextGrade) : handleCheck}
     returnKeyType={compactTyping ? 'done' : undefined} editable={!grade}
@@ -454,7 +455,7 @@ export default function PcicCardView({
               <SkinSpeakLabel />
             </View>
           </View>
-          {compactTyping && answerField}
+          {fieldBesidePrompt && answerField}
           {sourceLang === 'es' && <SpainFormLabel forms={spainFormsInAnswer(promptSource ?? '')} label={s.pcic.spainLabel} color={colors.text} testID="pcic-prompt-spain" />}
           {/* a short sentence under the word when the question has several
               meanings; the part marked `*…*` is bold + pink underline, the asterisks are not
@@ -553,7 +554,7 @@ export default function PcicCardView({
             </View>
           )}
 
-          {!compactTyping && answerField}
+          {!fieldBesidePrompt && answerField}
 
           {grade && (
             <PcicRevealedAnswer

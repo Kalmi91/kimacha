@@ -1,4 +1,4 @@
-import { answerScrollTarget, compactTypingNeeded, dockStepsAside } from '../dockScrollInsets';
+import { answerScrollTarget, compactTypingNeeded, dockStepsAside, shortWindow } from '../dockScrollInsets';
 
 describe('short-screen typing geometry', () => {
   it('compacts the 1080x1600 layout while the keys cover the lower screen', () => {
@@ -8,6 +8,12 @@ describe('short-screen typing geometry', () => {
   it('keeps the 1080x2400 layout and the keyboard-closed layout unchanged', () => {
     expect(compactTypingNeeded(914, 308, 332)).toBe(false);
     expect(compactTypingNeeded(609, 0, 24)).toBe(false);
+  });
+
+  it('places the field by window height only, never by keyboard state', () => {
+    expect(shortWindow(609)).toBe(true);
+    expect(shortWindow(914)).toBe(false);
+    expect(shortWindow(0)).toBe(false);
   });
 
   it('uses keyboard clearance, not a device-height breakpoint', () => {

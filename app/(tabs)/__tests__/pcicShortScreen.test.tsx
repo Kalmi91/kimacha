@@ -58,10 +58,13 @@ it.each([false, true])('keeps the focused input mounted when compacting, picture
   if (pictureOpen) fireEvent.press(screen.getByTestId('learn-info'));
   const input = screen.UNSAFE_getByType(TextInput);
   fireEvent.changeText(input, 'aga');
+  // The field's slot in the card must not move when the keys open: a moved slot remounts it and Android closes the keyboard.
+  const fieldSlot = cardOrder(screen).field;
 
   showKeyboard();
   await flush();
   expect(screen.UNSAFE_getByType(TextInput)).toBe(input);
+  expect(cardOrder(screen).field).toBe(fieldSlot);
   expect(input.props.value).toBe('aga');
   expect(input.props.returnKeyType).toBe('done');
   expect(screen.getByText('agave liquor')).toBeTruthy();
@@ -81,7 +84,8 @@ it.each([false, true])('keeps the focused input mounted when compacting, picture
   expect(screen.UNSAFE_getByType(BadgeRow)).toBeTruthy();
   expect(screen.getByTestId('learn-progress-fill')).toBeTruthy();
   expect(screen.getByTestId('learn-dock')).toBeTruthy();
-  if (pictureOpen) expect(cardOrder(screen).field).toBeGreaterThan(cardOrder(screen).picture);
+  expect(cardOrder(screen).field).toBe(fieldSlot);
+  if (pictureOpen) expect(cardOrder(screen).field).toBeLessThan(cardOrder(screen).picture);
 });
 
 it('submits with the keyboard action while Check is hidden', async () => {

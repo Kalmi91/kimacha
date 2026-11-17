@@ -19,6 +19,13 @@ export function dockStepsAside(noteOpen: boolean, viewportH: number, dockH: numb
   return noteOpen && viewportH > 0 && viewportH - dockH - dockLift < answerRoom;
 }
 
+// The answer field changes its place in the tree on short screens, so this must not depend on the keyboard:
+// moving the field when the keys open would remount it and Android would close the keyboard again.
+export const SHORT_WINDOW_DP = 700;
+export function shortWindow(windowH: number): boolean {
+  return windowH > 0 && windowH < SHORT_WINDOW_DP;
+}
+
 // Below this keyboard clearance, use the compact header and keep the prompt next to the field.
 // Window height stays independent of those layout changes, so collapsing the header cannot toggle itself back off.
 export function compactTypingNeeded(windowH: number, kbHeight: number, dockLift: number): boolean {
