@@ -235,6 +235,7 @@
       "kind": "form",
       "verb": "ház",
       "person": "Anna",
+      "q": { "en": "How do you say \"Anna's ház\" in Hungarian? (the owner first, then the possessed word with its ending)", "es": "¿Cómo se dice en húngaro «ház de Anna»? (primero el poseedor, después la palabra poseída con su terminación)" },
       "answer": "Anna háza",
       "accept": ["Annának a háza"],
       "table": "poss-phrases"
@@ -266,6 +267,7 @@
       "kind": "form",
       "verb": "autó",
       "person": "Péter",
+      "q": { "en": "How do you say \"Péter's autó\" in Hungarian? (the owner first, then the possessed word with its ending)", "es": "¿Cómo se dice en húngaro «autó de Péter»? (primero el poseedor, después la palabra poseída con su terminación)" },
       "answer": "Péter autója",
       "accept": ["Péternek az autója"],
       "table": "poss-phrases"
@@ -297,6 +299,7 @@
       "kind": "form",
       "verb": "kutya",
       "person": "a fiú",
+      "q": { "en": "How do you say \"a fiú's kutya\" in Hungarian? (the owner first, then the possessed word with its ending)", "es": "¿Cómo se dice en húngaro «kutya de a fiú»? (primero el poseedor, después la palabra poseída con su terminación)" },
       "answer": "a fiú kutyája",
       "accept": ["a fiúnak a kutyája"],
       "table": "poss-phrases"
@@ -328,6 +331,7 @@
       "kind": "form",
       "verb": "könyv",
       "person": "ő",
+      "q": { "en": "Put \"könyv\" into the possessive form for ő (his, her). How does the word read?", "es": "Pon «könyv» en la forma posesiva de ő (su). ¿Cómo queda la palabra?" },
       "answer": "könyve",
       "table": "poss-endings"
     },
@@ -394,6 +398,7 @@
       "kind": "form",
       "verb": "szoba",
       "person": "ő",
+      "q": { "en": "Put \"szoba\" into the possessive form for ő (his, her). How does the word read?", "es": "Pon «szoba» en la forma posesiva de ő (su). ¿Cómo queda la palabra?" },
       "answer": "szobája",
       "table": "poss-endings"
     },
@@ -424,6 +429,7 @@
       "kind": "form",
       "verb": "Anna háza",
       "person": "-nak/-nek a",
+      "q": { "en": "Write the longer form of \"Anna háza\": the owner takes -nak/-nek, then the article follows. How does the phrase read?", "es": "Escribe la forma larga de «Anna háza»: el poseedor lleva -nak/-nek y después va el artículo. ¿Cómo queda la expresión?" },
       "answer": "Annának a háza",
       "table": "nak-long"
     },
@@ -454,6 +460,7 @@
       "kind": "form",
       "verb": "a tanár könyve",
       "person": "-nak/-nek a",
+      "q": { "en": "Write the longer form of \"a tanár könyve\": the owner takes -nak/-nek, then the article follows. How does the phrase read?", "es": "Escribe la forma larga de «a tanár könyve»: el poseedor lleva -nak/-nek y después va el artículo. ¿Cómo queda la expresión?" },
       "answer": "a tanárnak a könyve",
       "table": "nak-long"
     },
@@ -484,6 +491,7 @@
       "kind": "form",
       "verb": "ház",
       "person": "a tanár",
+      "q": { "en": "How do you say \"a tanár's ház\" in Hungarian? (the owner first, then the possessed word with its ending)", "es": "¿Cómo se dice en húngaro «ház de a tanár»? (primero el poseedor, después la palabra poseída con su terminación)" },
       "answer": "a tanár háza",
       "accept": ["a tanárnak a háza"],
       "table": "poss-phrases"
@@ -551,6 +559,7 @@
       "kind": "form",
       "verb": "Péter autója",
       "person": "-nak/-nek a",
+      "q": { "en": "Write the longer form of \"Péter autója\": the owner takes -nak/-nek, then the article follows. How does the phrase read?", "es": "Escribe la forma larga de «Péter autója»: el poseedor lleva -nak/-nek y después va el artículo. ¿Cómo queda la expresión?" },
       "answer": "Péternek az autója",
       "table": "nak-long"
     },
@@ -581,6 +590,7 @@
       "kind": "form",
       "verb": "bicikli",
       "person": "ő",
+      "q": { "en": "Put \"bicikli\" into the possessive form for ő (his, her). How does the word read?", "es": "Pon «bicikli» en la forma posesiva de ő (su). ¿Cómo queda la palabra?" },
       "answer": "biciklije",
       "table": "poss-endings"
     },
@@ -611,6 +621,7 @@
       "kind": "form",
       "verb": "autó",
       "person": "a barátom",
+      "q": { "en": "How do you say \"a barátom's autó\" in Hungarian? (the owner first, then the possessed word with its ending)", "es": "¿Cómo se dice en húngaro «autó de a barátom»? (primero el poseedor, después la palabra poseída con su terminación)" },
       "answer": "a barátom autója",
       "accept": ["a barátomnak az autója"],
       "table": "poss-phrases"
@@ -642,6 +653,7 @@
       "kind": "form",
       "verb": "a fiú anyja",
       "person": "-nak/-nek a",
+      "q": { "en": "Write the longer form of \"a fiú anyja\": the owner takes -nak/-nek, then the article follows. How does the phrase read?", "es": "Escribe la forma larga de «a fiú anyja»: el poseedor lleva -nak/-nek y después va el artículo. ¿Cómo queda la expresión?" },
       "answer": "a fiúnak az anyja",
       "table": "nak-long"
     },

@@ -932,6 +932,7 @@
       "kind": "form",
       "verb": "25",
       "person": "szám",
+      "q": { "en": "How do you write the number 25 in Hungarian words?", "es": "¿Cómo se escribe en húngaro, con letras, el número 25?" },
       "answer": "huszonöt",
       "table": "number-builder"
     },
@@ -972,6 +973,7 @@
       "kind": "form",
       "verb": "12",
       "person": "szám",
+      "q": { "en": "How do you write the number 12 in Hungarian words?", "es": "¿Cómo se escribe en húngaro, con letras, el número 12?" },
       "answer": "tizenkettő",
       "table": "number-builder"
     },
@@ -1044,6 +1046,7 @@
       "kind": "form",
       "verb": "55",
       "person": "szám",
+      "q": { "en": "How do you write the number 55 in Hungarian words?", "es": "¿Cómo se escribe en húngaro, con letras, el número 55?" },
       "answer": "ötvenöt",
       "table": "number-builder"
     },
@@ -1187,6 +1190,7 @@
       "kind": "form",
       "verb": "három",
       "person": "-kor",
+      "q": { "en": "Add -kor (\"at\", for a clock time) to the number word \"három\". How does it read?", "es": "Añade -kor («a las», para la hora) a la palabra numeral «három». ¿Cómo queda?" },
       "answer": "háromkor",
       "table": "kor-forms"
     },
@@ -1227,6 +1231,7 @@
       "kind": "form",
       "verb": "nyolc",
       "person": "-kor",
+      "q": { "en": "Add -kor (\"at\", for a clock time) to the number word \"nyolc\". How does it read?", "es": "Añade -kor («a las», para la hora) a la palabra numeral «nyolc». ¿Cómo queda?" },
       "answer": "nyolckor",
       "table": "kor-forms"
     },
@@ -1306,6 +1311,7 @@
       "kind": "form",
       "verb": "hétfő",
       "person": "-n/-on/-en/-ön",
+      "q": { "en": "Add the ending -n/-on/-en/-ön (\"on that day\") to the weekday \"hétfő\". How does the word read?", "es": "Añade la terminación -n/-on/-en/-ön («el» ese día) al día de la semana «hétfő». ¿Cómo queda la palabra?" },
       "answer": "hétfőn",
       "table": "day-forms"
     },
@@ -1346,6 +1352,7 @@
       "kind": "form",
       "verb": "szerda",
       "person": "-n/-on/-en/-ön",
+      "q": { "en": "Add the ending -n/-on/-en/-ön (\"on that day\") to the weekday \"szerda\". How does the word read?", "es": "Añade la terminación -n/-on/-en/-ön («el» ese día) al día de la semana «szerda». ¿Cómo queda la palabra?" },
       "answer": "szerdán",
       "table": "day-forms"
     },
@@ -1354,6 +1361,7 @@
       "kind": "form",
       "verb": "csütörtök",
       "person": "-n/-on/-en/-ön",
+      "q": { "en": "Add the ending -n/-on/-en/-ön (\"on that day\") to the weekday \"csütörtök\". How does the word read?", "es": "Añade la terminación -n/-on/-en/-ön («el» ese día) al día de la semana «csütörtök». ¿Cómo queda la palabra?" },
       "answer": "csütörtökön",
       "table": "day-forms"
     },
@@ -1433,6 +1441,7 @@
       "kind": "form",
       "verb": "május",
       "person": "-ban/-ben",
+      "q": { "en": "Add the ending -ban/-ben (\"in that month\") to the month \"május\". How does the word read?", "es": "Añade la terminación -ban/-ben («en» ese mes) al mes «május». ¿Cómo queda la palabra?" },
       "answer": "májusban",
       "table": "month-forms"
     },
@@ -1473,6 +1482,7 @@
       "kind": "form",
       "verb": "szeptember",
       "person": "-ban/-ben",
+      "q": { "en": "Add the ending -ban/-ben (\"in that month\") to the month \"szeptember\". How does the word read?", "es": "Añade la terminación -ban/-ben («en» ese mes) al mes «szeptember». ¿Cómo queda la palabra?" },
       "answer": "szeptemberben",
       "table": "month-forms"
     },
@@ -1545,6 +1555,7 @@
       "kind": "form",
       "verb": "ötödike",
       "person": "-n",
+      "q": { "en": "Add -n (\"on that day\") to the date word \"ötödike\". How does it read?", "es": "Añade -n («el» ese día) a la palabra de fecha «ötödike». ¿Cómo queda?" },
       "answer": "ötödikén",
       "table": "date-forms"
     },
@@ -1585,6 +1596,7 @@
       "kind": "form",
       "verb": "huszadika",
       "person": "-n",
+      "q": { "en": "Add -n (\"on that day\") to the date word \"huszadika\". How does it read?", "es": "Añade -n («el» ese día) a la palabra de fecha «huszadika». ¿Cómo queda?" },
       "answer": "huszadikán",
       "table": "date-forms"
     },

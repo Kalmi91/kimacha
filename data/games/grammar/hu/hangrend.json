@@ -268,6 +268,7 @@
       "kind": "form",
       "verb": "ház",
       "person": "-ban/-ben",
+      "q": { "en": "Which form of the ending -ban/-ben (\"in\", hol?) fits \"ház\" by vowel harmony? Write the whole word.", "es": "¿Qué forma de la terminación -ban/-ben («en», ¿hol?) corresponde a «ház» según la armonía vocálica? Escribe la palabra completa." },
       "answer": "házban",
       "table": "ending-two"
     },
@@ -298,6 +299,7 @@
       "kind": "form",
       "verb": "kert",
       "person": "-ban/-ben",
+      "q": { "en": "Which form of the ending -ban/-ben (\"in\", hol?) fits \"kert\" by vowel harmony? Write the whole word.", "es": "¿Qué forma de la terminación -ban/-ben («en», ¿hol?) corresponde a «kert» según la armonía vocálica? Escribe la palabra completa." },
       "answer": "kertben",
       "table": "ending-two"
     },
@@ -328,6 +330,7 @@
       "kind": "form",
       "verb": "fül",
       "person": "-ban/-ben",
+      "q": { "en": "Which form of the ending -ban/-ben (\"in\", hol?) fits \"fül\" by vowel harmony? Write the whole word.", "es": "¿Qué forma de la terminación -ban/-ben («en», ¿hol?) corresponde a «fül» según la armonía vocálica? Escribe la palabra completa." },
       "answer": "fülben",
       "table": "ending-two"
     },
@@ -394,6 +397,7 @@
       "kind": "form",
       "verb": "kert",
       "person": "-ból/-ből",
+      "q": { "en": "Which form of the ending -ból/-ből (\"out of\", honnan?) fits \"kert\" by vowel harmony? Write the whole word.", "es": "¿Qué forma de la terminación -ból/-ből («de dentro de», ¿honnan?) corresponde a «kert» según la armonía vocálica? Escribe la palabra completa." },
       "answer": "kertből",
       "table": "ending-two"
     },
@@ -424,6 +428,7 @@
       "kind": "form",
       "verb": "ház",
       "person": "-on/-en/-ön",
+      "q": { "en": "Which form of the ending -on/-en/-ön (\"on, at\", hol?) fits \"ház\" by vowel harmony? Write the whole word.", "es": "¿Qué forma de la terminación -on/-en/-ön («sobre, en», ¿hol?) corresponde a «ház» según la armonía vocálica? Escribe la palabra completa." },
       "answer": "házon",
       "table": "ending-three"
     },
@@ -454,6 +459,7 @@
       "kind": "form",
       "verb": "kert",
       "person": "-hoz/-hez/-höz",
+      "q": { "en": "Which form of the ending -hoz/-hez/-höz (\"to someone\", kihez?) fits \"kert\" by vowel harmony? Write the whole word.", "es": "¿Qué forma de la terminación -hoz/-hez/-höz («hacia alguien», ¿kihez?) corresponde a «kert» según la armonía vocálica? Escribe la palabra completa." },
       "answer": "kerthez",
       "table": "ending-three"
     },
@@ -520,6 +526,7 @@
       "kind": "form",
       "verb": "fül",
       "person": "-hoz/-hez/-höz",
+      "q": { "en": "Which form of the ending -hoz/-hez/-höz (\"to someone\", kihez?) fits \"fül\" by vowel harmony? Write the whole word.", "es": "¿Qué forma de la terminación -hoz/-hez/-höz («hacia alguien», ¿kihez?) corresponde a «fül» según la armonía vocálica? Escribe la palabra completa." },
       "answer": "fülhöz",
       "table": "ending-three"
     },
@@ -698,6 +705,7 @@
       "kind": "form",
       "verb": "papír",
       "person": "-on/-en/-ön",
+      "q": { "en": "Which form of the ending -on/-en/-ön (\"on, at\", hol?) fits \"papír\" by vowel harmony? Write the whole word.", "es": "¿Qué forma de la terminación -on/-en/-ön («sobre, en», ¿hol?) corresponde a «papír» según la armonía vocálica? Escribe la palabra completa." },
       "answer": "papíron",
       "table": "mixed-words"
     },
@@ -786,6 +794,7 @@
       "kind": "form",
       "verb": "Budapest",
       "person": "-hoz/-hez/-höz",
+      "q": { "en": "Which form of the ending -hoz/-hez/-höz (\"to someone\", kihez?) fits \"Budapest\" by vowel harmony? Write the whole word.", "es": "¿Qué forma de la terminación -hoz/-hez/-höz («hacia alguien», ¿kihez?) corresponde a «Budapest» según la armonía vocálica? Escribe la palabra completa." },
       "answer": "Budapesthez",
       "table": "mixed-words"
     }

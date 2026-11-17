@@ -356,6 +356,7 @@
       "kind": "form",
       "verb": "ö",
       "person": "hosszú",
+      "q": { "en": "Which long vowel belongs to the short vowel \"ö\"?", "es": "¿Qué vocal larga corresponde a la vocal breve «ö»?" },
       "answer": "ő",
       "table": "vowel-length"
     },
@@ -386,6 +387,7 @@
       "kind": "form",
       "verb": "ü",
       "person": "hosszú",
+      "q": { "en": "Which long vowel belongs to the short vowel \"ü\"?", "es": "¿Qué vocal larga corresponde a la vocal breve «ü»?" },
       "answer": "ű",
       "table": "vowel-length"
     },
@@ -416,6 +418,7 @@
       "kind": "form",
       "verb": "a",
       "person": "hosszú",
+      "q": { "en": "Which long vowel belongs to the short vowel \"a\"?", "es": "¿Qué vocal larga corresponde a la vocal breve «a»?" },
       "answer": "á",
       "table": "vowel-length"
     },
@@ -482,6 +485,7 @@
       "kind": "form",
       "verb": "e",
       "person": "hosszú",
+      "q": { "en": "Which long vowel belongs to the short vowel \"e\"?", "es": "¿Qué vocal larga corresponde a la vocal breve «e»?" },
       "answer": "é",
       "table": "vowel-length"
     },
@@ -512,6 +516,7 @@
       "kind": "form",
       "verb": "o",
       "person": "hosszú",
+      "q": { "en": "Which long vowel belongs to the short vowel \"o\"?", "es": "¿Qué vocal larga corresponde a la vocal breve «o»?" },
       "answer": "ó",
       "table": "vowel-length"
     },
@@ -542,6 +547,7 @@
       "kind": "form",
       "verb": "u",
       "person": "hosszú",
+      "q": { "en": "Which long vowel belongs to the short vowel \"u\"?", "es": "¿Qué vocal larga corresponde a la vocal breve «u»?" },
       "answer": "ú",
       "table": "vowel-length"
     },
@@ -572,6 +578,7 @@
       "kind": "form",
       "verb": "sz",
       "person": "hosszú",
+      "q": { "en": "How do you write the long (doubled) consonant that belongs to \"sz\"?", "es": "¿Cómo se escribe la consonante larga (doble) que corresponde a «sz»?" },
       "answer": "ssz",
       "table": "consonant-length"
     },
@@ -638,6 +645,7 @@
       "kind": "form",
       "verb": "cs",
       "person": "hosszú",
+      "q": { "en": "How do you write the long (doubled) consonant that belongs to \"cs\"?", "es": "¿Cómo se escribe la consonante larga (doble) que corresponde a «cs»?" },
       "answer": "ccs",
       "table": "consonant-length"
     },
@@ -668,6 +676,7 @@
       "kind": "form",
       "verb": "gy",
       "person": "hosszú",
+      "q": { "en": "How do you write the long (doubled) consonant that belongs to \"gy\"?", "es": "¿Cómo se escribe la consonante larga (doble) que corresponde a «gy»?" },
       "answer": "ggy",
       "table": "consonant-length"
     },
@@ -698,6 +707,7 @@
       "kind": "form",
       "verb": "ny",
       "person": "hosszú",
+      "q": { "en": "How do you write the long (doubled) consonant that belongs to \"ny\"?", "es": "¿Cómo se escribe la consonante larga (doble) que corresponde a «ny»?" },
       "answer": "nny",
       "table": "consonant-length"
     },
@@ -764,6 +774,7 @@
       "kind": "form",
       "verb": "t",
       "person": "hosszú",
+      "q": { "en": "How do you write the long (doubled) consonant that belongs to \"t\"?", "es": "¿Cómo se escribe la consonante larga (doble) que corresponde a «t»?" },
       "answer": "tt",
       "table": "consonant-length"
     },
@@ -794,6 +805,7 @@
       "kind": "form",
       "verb": "l",
       "person": "hosszú",
+      "q": { "en": "How do you write the long (doubled) consonant that belongs to \"l\"?", "es": "¿Cómo se escribe la consonante larga (doble) que corresponde a «l»?" },
       "answer": "ll",
       "table": "consonant-length"
     },

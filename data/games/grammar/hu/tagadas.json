@@ -496,6 +496,7 @@
       "kind": "form",
       "verb": "lenni",
       "person": "sem van",
+      "q": { "en": "Write \"sem van\" as one word.", "es": "Escribe «sem van» como una sola palabra." },
       "answer": "sincs",
       "table": "neg-fusion"
     },
@@ -562,6 +563,7 @@
       "kind": "form",
       "verb": "lenni",
       "person": "sem vannak",
+      "q": { "en": "Write \"sem vannak\" as one word.", "es": "Escribe «sem vannak» como una sola palabra." },
       "answer": "sincsenek",
       "table": "neg-fusion"
     },
@@ -592,6 +594,7 @@
       "kind": "form",
       "verb": "tagadószó",
       "person": "ki",
+      "q": { "en": "Which negative word is built from the question word \"ki\"?", "es": "¿Qué palabra negativa se forma a partir de la palabra interrogativa «ki»?" },
       "answer": "senki",
       "table": "neg-words"
     },
@@ -622,6 +625,7 @@
       "kind": "form",
       "verb": "tagadószó",
       "person": "mi",
+      "q": { "en": "Which negative word is built from the question word \"mi\"?", "es": "¿Qué palabra negativa se forma a partir de la palabra interrogativa «mi»?" },
       "answer": "semmi",
       "table": "neg-words"
     },
@@ -688,6 +692,7 @@
       "kind": "form",
       "verb": "tagadószó",
       "person": "hol",
+      "q": { "en": "Which negative word is built from the question word \"hol\"?", "es": "¿Qué palabra negativa se forma a partir de la palabra interrogativa «hol»?" },
       "answer": "sehol",
       "table": "neg-words"
     },
@@ -718,6 +723,7 @@
       "kind": "form",
       "verb": "tagadószó",
       "person": "mikor",
+      "q": { "en": "Which negative word is built from the question word \"mikor\"?", "es": "¿Qué palabra negativa se forma a partir de la palabra interrogativa «mikor»?" },
       "answer": "soha",
       "table": "neg-words"
     },

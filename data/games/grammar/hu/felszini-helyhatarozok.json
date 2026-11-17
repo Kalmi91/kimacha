@@ -284,6 +284,7 @@
       "kind": "form",
       "verb": "asztal",
       "person": "-on/-en/-ön",
+      "q": { "en": "Add the ending -on/-en/-ön (\"on, at\", hol?) to \"asztal\". How does the whole word read?", "es": "Añade la terminación -on/-en/-ön («sobre, en», ¿hol?) a «asztal». ¿Cómo queda la palabra completa?" },
       "answer": "asztalon",
       "table": "felszini-szavak"
     },
@@ -305,6 +306,7 @@
       "kind": "form",
       "verb": "szék",
       "person": "-ra/-re",
+      "q": { "en": "Add the ending -ra/-re (\"onto, to\", hova?) to \"szék\". How does the whole word read?", "es": "Añade la terminación -ra/-re («sobre, hacia», ¿hova?) a «szék». ¿Cómo queda la palabra completa?" },
       "answer": "székre",
       "table": "felszini-szavak"
     },
@@ -326,6 +328,7 @@
       "kind": "form",
       "verb": "piac",
       "person": "-ról/-ről",
+      "q": { "en": "Add the ending -ról/-ről (\"from\", honnan?) to \"piac\". How does the whole word read?", "es": "Añade la terminación -ról/-ről («de, desde», ¿honnan?) a «piac». ¿Cómo queda la palabra completa?" },
       "answer": "piacról",
       "table": "felszini-szavak"
     },
@@ -368,6 +371,7 @@
       "kind": "form",
       "verb": "utca",
       "person": "-on/-en/-ön",
+      "q": { "en": "Add the ending -on/-en/-ön (\"on, at\", hol?) to \"utca\". How does the whole word read?", "es": "Añade la terminación -on/-en/-ön («sobre, en», ¿hol?) a «utca». ¿Cómo queda la palabra completa?" },
       "answer": "utcán",
       "table": "felszini-szavak"
     },
@@ -389,6 +393,7 @@
       "kind": "form",
       "verb": "állomás",
       "person": "-ra/-re",
+      "q": { "en": "Add the ending -ra/-re (\"onto, to\", hova?) to \"állomás\". How does the whole word read?", "es": "Añade la terminación -ra/-re («sobre, hacia», ¿hova?) a «állomás». ¿Cómo queda la palabra completa?" },
       "answer": "állomásra",
       "table": "felszini-szavak"
     },
@@ -410,6 +415,7 @@
       "kind": "form",
       "verb": "föld",
       "person": "-on/-en/-ön",
+      "q": { "en": "Add the ending -on/-en/-ön (\"on, at\", hol?) to \"föld\". How does the whole word read?", "es": "Añade la terminación -on/-en/-ön («sobre, en», ¿hol?) a «föld». ¿Cómo queda la palabra completa?" },
       "answer": "földön",
       "table": "felszini-szavak"
     },
@@ -465,6 +471,7 @@
       "kind": "form",
       "verb": "busz",
       "person": "-ról/-ről",
+      "q": { "en": "Add the ending -ról/-ről (\"from\", honnan?) to \"busz\". How does the whole word read?", "es": "Añade la terminación -ról/-ről («de, desde», ¿honnan?) a «busz». ¿Cómo queda la palabra completa?" },
       "answer": "buszról",
       "table": "felszini-szavak"
     },
@@ -486,6 +493,7 @@
       "kind": "form",
       "verb": "posta",
       "person": "-ra/-re",
+      "q": { "en": "Add the ending -ra/-re (\"onto, to\", hova?) to \"posta\". How does the whole word read?", "es": "Añade la terminación -ra/-re («sobre, hacia», ¿hova?) a «posta». ¿Cómo queda la palabra completa?" },
       "answer": "postára",
       "table": "felszini-szavak"
     },
@@ -541,6 +549,7 @@
       "kind": "form",
       "verb": "egyetem",
       "person": "-on/-en/-ön",
+      "q": { "en": "Add the ending -on/-en/-ön (\"on, at\", hol?) to \"egyetem\". How does the whole word read?", "es": "Añade la terminación -on/-en/-ön («sobre, en», ¿hol?) a «egyetem». ¿Cómo queda la palabra completa?" },
       "answer": "egyetemen",
       "table": "felszini-szavak"
     },
@@ -562,6 +571,7 @@
       "kind": "form",
       "verb": "Budapest",
       "person": "-on/-en/-ön",
+      "q": { "en": "Add the ending -on/-en/-ön (\"on, at\", hol?) to \"Budapest\". How does the whole word read?", "es": "Añade la terminación -on/-en/-ön («sobre, en», ¿hol?) a «Budapest». ¿Cómo queda la palabra completa?" },
       "answer": "Budapesten",
       "table": "varos-nevek"
     },
@@ -583,6 +593,7 @@
       "kind": "form",
       "verb": "Szeged",
       "person": "-ra/-re",
+      "q": { "en": "Add the ending -ra/-re (\"onto, to\", hova?) to \"Szeged\". How does the whole word read?", "es": "Añade la terminación -ra/-re («sobre, hacia», ¿hova?) a «Szeged». ¿Cómo queda la palabra completa?" },
       "answer": "Szegedre",
       "table": "varos-nevek"
     },
@@ -625,6 +636,7 @@
       "kind": "form",
       "verb": "Debrecen",
       "person": "-ban/-ben",
+      "q": { "en": "Add the ending -ban/-ben (\"in\", hol?) to \"Debrecen\". How does the whole word read?", "es": "Añade la terminación -ban/-ben («en», ¿hol?) a «Debrecen». ¿Cómo queda la palabra completa?" },
       "answer": "Debrecenben",
       "table": "varos-nevek"
     }
