@@ -87,6 +87,17 @@ it('hides the docked bar while the retype field has the keyboard, and shows it a
   fireEvent(screen.getByTestId('learn-retype-input'), 'blur'); await flush();
   expect(screen.getByTestId('learn-dock')).toBeTruthy();
 });
+it('shows the docked bar on the next card when the retype field never got a blur', async () => {
+  const screen = render(<PcicScreen />); await flush();
+  await reveal(screen, 'nope');
+  fireEvent.press(screen.getByTestId('learn-retype')); await flush();
+  fireEvent(screen.getByTestId('learn-retype-input'), 'focus');
+  act(() => { DeviceEventEmitter.emit('keyboardDidShow', { endCoordinates: { height: 300 } }); }); await flush();
+  expect(screen.queryByTestId('learn-dock')).toBeNull();
+  fireEvent.press(screen.getByText("Knew it")); await flush();
+  expect(screen.queryByTestId('learn-retype-input')).toBeNull();
+  expect(screen.getByTestId('learn-dock')).toBeTruthy();
+});
 it('puts the field and its Check button in one row', async () => {
   const screen = render(<PcicScreen />); await flush();
   await reveal(screen, 'nope');

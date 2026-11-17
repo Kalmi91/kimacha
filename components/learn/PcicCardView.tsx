@@ -584,7 +584,7 @@ export default function PcicCardView({
       {/* After Check, the SAME docked bar (place+size
           unchanged) switches to "Next", its label states the suggested grade;
           the two buttons in the card remain for override. */}
-      {!(retypeFocused && kbHeight > 0) && !(stepAside && !grade) && <DockedAction
+      {!(retypeOpen && retypeFocused && kbHeight > 0) && !(stepAside && !grade) && <DockedAction
         label={grade && nextGrade ? s.pcic.next(s.pcic[nextGrade]) : `✓ ${s.card.check}`}
         onPress={grade && nextGrade ? () => handleGrade(nextGrade) : handleCheck}
         tone={grade ? 'next' : 'check'}
