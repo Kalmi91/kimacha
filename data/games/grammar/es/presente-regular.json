@@ -1177,6 +1177,240 @@
         }
       ],
       "correctIndex": 0
+    },
+    {
+      "id": "pr-tr-01",
+      "kind": "transform",
+      "tense": { "from": "ir-a", "to": "presente" },
+      "prompt": { "en": "We are going to talk to my mother.", "es": "Vamos a hablar con mi madre." },
+      "answer": "Hablamos con mi madre.",
+      "accept": ["Nosotros hablamos con mi madre."],
+      "wordIds": ["47", "38"],
+      "why": { "en": "Present tense, nosotros: -AR verbs end in -amos. Hablar → hablamos.", "es": "Presente, nosotros: los verbos en -AR terminan en -amos. Hablar → hablamos." }
+    },
+    {
+      "id": "pr-tr-02",
+      "kind": "transform",
+      "tense": { "from": "ir-a", "to": "presente" },
+      "prompt": { "en": "I am going to live in the city.", "es": "Voy a vivir en la ciudad." },
+      "answer": "Vivo en la ciudad.",
+      "accept": ["Yo vivo en la ciudad."],
+      "wordIds": ["48", "51"],
+      "why": { "en": "Present tense, yo: every regular verb ends in -o. Vivir → vivo.", "es": "Presente, yo: todos los verbos regulares terminan en -o. Vivir → vivo." }
+    },
+    {
+      "id": "pr-tr-03",
+      "kind": "transform",
+      "tense": { "from": "ir-a", "to": "presente" },
+      "prompt": { "en": "You are going to write a letter.", "es": "Vas a escribir una carta." },
+      "answer": "Escribes una carta.",
+      "accept": ["Tú escribes una carta."],
+      "wordIds": ["146", "274"],
+      "why": { "en": "Present tense, tú: -IR verbs end in -es. Escribir → escribes.", "es": "Presente, tú: los verbos en -IR terminan en -es. Escribir → escribes." }
+    },
+    {
+      "id": "pr-tr-04",
+      "kind": "transform",
+      "tense": { "from": "ir-a", "to": "presente" },
+      "prompt": { "en": "My brother is going to read a book.", "es": "Mi hermano va a leer un libro." },
+      "answer": "Mi hermano lee un libro.",
+      "wordIds": ["145", "42", "124"],
+      "why": { "en": "Present tense, él: -ER verbs end in -e. Leer → lee.", "es": "Presente, él: los verbos en -ER terminan en -e. Leer → lee." }
+    },
+    {
+      "id": "pr-tr-05",
+      "kind": "transform",
+      "tense": { "from": "ir-a", "to": "presente" },
+      "prompt": { "en": "They are going to open the door.", "es": "Ellos van a abrir la puerta." },
+      "answer": "Ellos abren la puerta.",
+      "accept": ["Abren la puerta."],
+      "wordIds": ["147", "117"],
+      "why": { "en": "Present tense, ellos: -IR verbs end in -en. Abrir → abren.", "es": "Presente, ellos: los verbos en -IR terminan en -en. Abrir → abren." }
+    },
+    {
+      "id": "pr-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Ana habla español. Yo también ___ español y mis padres también ___ español.",
+      "answers": ["hablo", "hablan"],
+      "tr": { "en": "Ana speaks Spanish. I also speak Spanish and my parents also speak Spanish.", "es": "Ana habla español. Yo también hablo español y mis padres también hablan español." },
+      "why": { "en": "Each person has its own ending: yo hablo (-o), mis padres hablan (-an).", "es": "Cada persona tiene su terminación: yo hablo (-o), mis padres hablan (-an)." }
+    },
+    {
+      "id": "pr-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Mis amigos viven en la ciudad. Yo también ___ en la ciudad y mi hermana también ___ en la ciudad.",
+      "answers": ["vivo", "vive"],
+      "tr": { "en": "My friends live in the city. I also live in the city and my sister also lives in the city.", "es": "Mis amigos viven en la ciudad. Yo también vivo en la ciudad y mi hermana también vive en la ciudad." },
+      "why": { "en": "Vivir is an -IR verb: yo vivo (-o), ella vive (-e).", "es": "Vivir es un verbo en -IR: yo vivo (-o), ella vive (-e)." }
+    },
+    {
+      "id": "pr-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Tú comes pan. Yo también ___ pan y mis hijos también ___ pan.",
+      "answers": ["como", "comen"],
+      "tr": { "en": "You eat bread. I also eat bread and my children also eat bread.", "es": "Tú comes pan. Yo también como pan y mis hijos también comen pan." },
+      "why": { "en": "Comer is an -ER verb: yo como (-o), ellos comen (-en).", "es": "Comer es un verbo en -ER: yo como (-o), ellos comen (-en)." }
+    },
+    {
+      "id": "pr-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Mi padre trabaja en un banco. Mi madre y yo también ___ en un banco. Y tú, ¿también ___ en un banco?",
+      "answers": ["trabajamos", "trabajas"],
+      "tr": { "en": "My father works in a bank. My mother and I also work in a bank. And you, do you also work in a bank?", "es": "Mi padre trabaja en un banco. Mi madre y yo también trabajamos en un banco. Y tú, ¿también trabajas en un banco?" },
+      "why": { "en": "Trabajar is an -AR verb: nosotros trabajamos (-amos), tú trabajas (-as).", "es": "Trabajar es un verbo en -AR: nosotros trabajamos (-amos), tú trabajas (-as)." }
+    },
+    {
+      "id": "pr-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Ellos escriben cartas. Yo también ___ cartas y tú también ___ cartas.",
+      "answers": ["escribo", "escribes"],
+      "tr": { "en": "They write letters. I also write letters and you also write letters.", "es": "Ellos escriben cartas. Yo también escribo cartas y tú también escribes cartas." },
+      "why": { "en": "Escribir is an -IR verb: yo escribo (-o), tú escribes (-es).", "es": "Escribir es un verbo en -IR: yo escribo (-o), tú escribes (-es)." }
+    },
+    {
+      "id": "pr-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "Mis padres vive en la ciudad.",
+      "wrongIndex": 2,
+      "answer": "viven",
+      "explain": { "en": "Mis padres is plural, so the verb ends in -en: viven.", "es": "Mis padres es plural, así que el verbo termina en -en: viven." },
+      "tr": { "en": "My parents live in the city.", "es": "Mis padres viven en la ciudad." }
+    },
+    {
+      "id": "pr-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "Mi hermana y yo come pan.",
+      "wrongIndex": 4,
+      "answer": "comemos",
+      "explain": { "en": "Mi hermana y yo means nosotros: the verb ends in -emos, comemos.", "es": "Mi hermana y yo equivale a nosotros: el verbo termina en -emos, comemos." },
+      "tr": { "en": "My sister and I eat bread.", "es": "Mi hermana y yo comemos pan." }
+    },
+    {
+      "id": "pr-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "Mi madre lees un libro.",
+      "wrongIndex": 2,
+      "answer": "lee",
+      "explain": { "en": "Mi madre is ella: the verb ends in -e, not in -es: lee.", "es": "Mi madre es ella: el verbo termina en -e, no en -es: lee." },
+      "tr": { "en": "My mother reads a book.", "es": "Mi madre lee un libro." }
+    },
+    {
+      "id": "pr-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "Los niños bebe leche en casa.",
+      "wrongIndex": 2,
+      "answer": "beben",
+      "explain": { "en": "Los niños is plural (ellos): beber ends in -en, beben.", "es": "Los niños es plural (ellos): beber termina en -en, beben." },
+      "tr": { "en": "The children drink milk at home.", "es": "Los niños beben leche en casa." }
+    },
+    {
+      "id": "pr-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "Mis amigos abre la puerta.",
+      "wrongIndex": 2,
+      "answer": "abren",
+      "explain": { "en": "Mis amigos is plural (ellos): abrir ends in -en, abren.", "es": "Mis amigos es plural (ellos): abrir termina en -en, abren." },
+      "tr": { "en": "My friends open the door.", "es": "Mis amigos abren la puerta." }
+    },
+    {
+      "id": "pr-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": ["vivir", "leer", "beber"],
+      "es": "Mi hermana ___ en una casa grande.",
+      "word": "vivir",
+      "answer": "vive",
+      "tr": { "en": "My sister lives in a big house.", "es": "Mi hermana vive en una casa grande." },
+      "why": { "en": "Vivir is an -IR verb, ella: vive.", "es": "Vivir es un verbo en -IR, ella: vive." }
+    },
+    {
+      "id": "pr-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": ["comer", "hablar", "abrir"],
+      "es": "Los niños ___ pan con leche.",
+      "word": "comer",
+      "answer": "comen",
+      "tr": { "en": "The children eat bread with milk.", "es": "Los niños comen pan con leche." },
+      "why": { "en": "Comer is an -ER verb, ellos: comen.", "es": "Comer es un verbo en -ER, ellos: comen." }
+    },
+    {
+      "id": "pr-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": ["hablar", "vender", "correr"],
+      "es": "Yo ___ español con mi familia.",
+      "word": "hablar",
+      "answer": "hablo",
+      "tr": { "en": "I speak Spanish with my family.", "es": "Yo hablo español con mi familia." },
+      "why": { "en": "Hablar is an -AR verb, yo: hablo.", "es": "Hablar es un verbo en -AR, yo: hablo." }
+    },
+    {
+      "id": "pr-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": ["abrir", "beber", "trabajar"],
+      "es": "Tú ___ la puerta de la casa.",
+      "word": "abrir",
+      "answer": "abres",
+      "tr": { "en": "You open the door of the house.", "es": "Tú abres la puerta de la casa." },
+      "why": { "en": "Abrir is an -IR verb, tú: abres.", "es": "Abrir es un verbo en -IR, tú: abres." }
+    },
+    {
+      "id": "pr-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": ["escribir", "vivir", "comer"],
+      "es": "Ellos ___ cartas a su madre.",
+      "word": "escribir",
+      "answer": "escriben",
+      "tr": { "en": "They write letters to their mother.", "es": "Ellos escriben cartas a su madre." },
+      "why": { "en": "Escribir is an -IR verb, ellos: escriben.", "es": "Escribir es un verbo en -IR, ellos: escriben." }
+    },
+    {
+      "id": "pr-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "My mother works in an office.", "es": "Mi madre trabaja en una oficina." },
+      "es": "Mi madre trabaja en una oficina."
+    },
+    {
+      "id": "pr-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "We eat bread with cheese.", "es": "Nosotros comemos pan con queso." },
+      "es": "Nosotros comemos pan con queso."
+    },
+    {
+      "id": "pr-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "The children drink water at school.", "es": "Los niños beben agua en la escuela." },
+      "es": "Los niños beben agua en la escuela."
+    },
+    {
+      "id": "pr-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "You read a new book.", "es": "Tú lees un libro nuevo." },
+      "es": "Tú lees un libro nuevo."
+    },
+    {
+      "id": "pr-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "My grandparents live with us.", "es": "Mis abuelos viven con nosotros." },
+      "es": "Mis abuelos viven con nosotros."
     }
   ]
 }
