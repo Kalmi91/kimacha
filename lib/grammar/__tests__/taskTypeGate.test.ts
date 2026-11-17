@@ -27,13 +27,13 @@ afterAll(() => fs.rmSync(tmp, { recursive: true, force: true }));
 const TYPES = { choice: ['choice'], form: ['form', 'noun'], opencloze: ['opencloze'] };
 const items = (kind: string, n: number) => Array.from({ length: n }, (_, i) => ({ id: `${kind}-${i}`, kind: kind === 'choice' ? 'gap' : kind }));
 
-function fixture(name: string, enabled: boolean, perType: Record<string, number>) {
+function fixture(name: string, enabled: boolean, perType: Record<string, number>, exempt?: Record<string, string[]>) {
   const dir = path.join(tmp, name);
   fs.mkdirSync(path.join(dir, 'lessons'), { recursive: true });
   const config = path.join(dir, 'config.json');
   fs.writeFileSync(
     config,
-    JSON.stringify({ minPerType: 5, coreTiers: ['core', 'core-plus'], types: TYPES, levels: { A1: { enabled, types: ['choice', 'form', 'opencloze'] } } })
+    JSON.stringify({ minPerType: 5, ...(exempt ? { exempt } : {}), coreTiers: ['core', 'core-plus'], types: TYPES, levels: { A1: { enabled, types: ['choice', 'form', 'opencloze'] } } })
   );
   const syllabus = path.join(dir, 'syllabus.json');
   fs.writeFileSync(syllabus, JSON.stringify({ topics: [{ id: 'topic-core', level: 'A1' }, { id: 'topic-exam', level: 'A1' }] }));
@@ -46,10 +46,10 @@ function fixture(name: string, enabled: boolean, perType: Record<string, number>
 }
 
 describe('grammar-task-gate', () => {
-  it('is green on the shipped files (A1 is switched on and complete)', () => {
+  it('is green on the shipped files (A1 and A2 are switched on and complete)', () => {
     const r = run();
     expect(r.status).toBe(0);
-    expect(r.last).toMatch(/^grammar-task-gate: OK/);
+    expect(r.last).toBe('grammar-task-gate: OK (2 levels checked, 0 gaps)');
   });
 
   it('a switched-on level with a missing type FAILS, naming the topic and the type', () => {
@@ -74,6 +74,23 @@ describe('grammar-task-gate', () => {
     expect(r.last).toMatch(/^grammar-task-gate: OK/);
   });
 
+  it('an exempt type is not required for that topic; without the exemption the gap shows', () => {
+    const perType = { choice: 5, form: 0, opencloze: 5 };
+    expect(run(...fixture('noexempt', true, perType)).out).toContain('topic-core form: 0/5');
+    const r = run(...fixture('exempt', true, perType, { 'topic-core': ['form'] }));
+    expect(r.status).toBe(0);
+    expect(r.last).toMatch(/^grammar-task-gate: OK/);
+  });
+
+  it('an unknown topic or type in the exempt list is an error', () => {
+    const topic = run(...fixture('exempt-topic', true, { choice: 5, form: 5, opencloze: 5 }, { nope: ['form'] }));
+    expect(topic.status).toBe(1);
+    expect(topic.out).toContain('unknown topic "nope"');
+    const type = run(...fixture('exempt-type', true, { choice: 5, form: 5, opencloze: 5 }, { 'topic-core': ['nope'] }));
+    expect(type.status).toBe(1);
+    expect(type.out).toContain('unknown type "nope"');
+  });
+
   it('a level that is switched off is not checked', () => {
     expect(run(...fixture('off', false, {})).status).toBe(0);
   });
@@ -83,7 +100,7 @@ describe('grammar-task-gate', () => {
     const gaps = r.out.split('\n').filter((l) => l.startsWith('ERROR '));
     expect(r.status).toBe(gaps.length > 0 ? 1 : 0);
     expect(r.last).toMatch(/^grammar-task-gate: (OK|FAIL)/);
-    expect(r.out).toMatch(/ERROR (A2|B1|B2|C1) \S+ \S+: \d\/5/); // the levels above A1 are not written yet (E132 fills A1 first)
+    expect(r.out).toMatch(/ERROR (B1|B2|C1) \S+ \S+: \d\/5/); // the levels above A2 are not written yet
   });
 
   it('the script and the app read the same core topics (one marking: the syllabus tier)', () => {

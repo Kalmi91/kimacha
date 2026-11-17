@@ -11,10 +11,9 @@ import { WORD_DECK_MIN_CARDS, wordCellsForLesson } from '../tableDeck';
 describe('indefinido-imperfecto', () => {
   const lesson = lessonFor('es', 'indefinido-imperfecto')!;
 
-  // the A2 task-type gate needs 5 form items per core topic (E133), so the form items are back, only those 5
-  it('has only the 5 form items the task-type gate asks for', () => {
-    expect(lesson.items.filter((i) => i.kind === 'form').every((i) => i.id.startsWith('ii2-form-'))).toBe(true);
-    expect(grammarKindCounts(lesson).form).toBe(5);
+  it('has no form items, so no form drill button', () => {
+    expect(lesson.items.some((i) => i.kind === 'form')).toBe(false);
+    expect(grammarKindCounts(lesson).form).toBe(0);
   });
 
   it('keeps its other drills', () => {
