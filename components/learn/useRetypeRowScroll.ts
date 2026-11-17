@@ -13,6 +13,7 @@ export function useRetypeRowScroll(scrollRef: RefObject<ScrollView | null>) {
       if (to > 0) scrollRef.current?.scrollTo({ y: to, animated: false });
     }, () => {});
   };
-  const setViewportH = (h: number) => { viewportH.current = h; };
+  // The viewport also changes after the row showed (the keyboard closes on Enter): measure the row again then.
+  const setViewportH = (h: number) => { const changed = viewportH.current !== h; viewportH.current = h; if (changed && rowRef.current) onRowLayout(); };
   return { setViewportH, rowRef, onRowLayout };
 }
