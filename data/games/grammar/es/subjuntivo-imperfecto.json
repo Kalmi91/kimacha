@@ -1144,6 +1144,552 @@
         }
       ],
       "correctIndex": 2
+    },
+    {
+      "id": "sp-tr-01",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "en": "I want you to come to my house.",
+        "es": "Quiero que vengas a mi casa."
+      },
+      "answer": "Quería que vinieras a mi casa.",
+      "accept": [
+        "Quería que vinieses a mi casa.",
+        "Yo quería que vinieras a mi casa.",
+        "Yo quería que vinieses a mi casa."
+      ],
+      "wordIds": [
+        "23",
+        "80",
+        "19"
+      ],
+      "why": {
+        "en": "The main verb moves to the past (quiero → quería), so the subjunctive follows: vengas → vinieras (or vinieses).",
+        "es": "El verbo principal pasa al pasado (quiero → quería), así que el subjuntivo lo sigue: vengas → vinieras (o vinieses)."
+      }
+    },
+    {
+      "id": "sp-tr-02",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "en": "They ask me to speak more slowly.",
+        "es": "Me piden que hable más despacio."
+      },
+      "answer": "Me pedían que hablara más despacio.",
+      "accept": [
+        "Me pedían que hablase más despacio.",
+        "Me pidieron que hablara más despacio.",
+        "Me pidieron que hablase más despacio."
+      ],
+      "wordIds": [
+        "223",
+        "47",
+        "703"
+      ],
+      "why": {
+        "en": "Pedir in the past (pedían or pidieron) asks for the past subjunctive: hable → hablara (or hablase).",
+        "es": "Pedir en pasado (pedían o pidieron) pide el subjuntivo imperfecto: hable → hablara (o hablase)."
+      }
+    },
+    {
+      "id": "sp-tr-03",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "en": "I doubt that they know the answer.",
+        "es": "Dudo que ellos sepan la respuesta."
+      },
+      "answer": "Dudaba que ellos supieran la respuesta.",
+      "accept": [
+        "Dudaba que ellos supiesen la respuesta.",
+        "Dudaba que supieran la respuesta.",
+        "Dudaba que supiesen la respuesta.",
+        "Dudé que ellos supieran la respuesta.",
+        "Dudé que ellos supiesen la respuesta."
+      ],
+      "wordIds": [
+        "817",
+        "74",
+        "248"
+      ],
+      "why": {
+        "en": "Doubt (dudaba) keeps the subjunctive, and in the past it is the imperfect: sepan → supieran (or supiesen).",
+        "es": "La duda (dudaba) mantiene el subjuntivo, y en el pasado es el imperfecto: sepan → supieran (o supiesen)."
+      }
+    },
+    {
+      "id": "sp-tr-04",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "en": "It is important that everyone arrives early.",
+        "es": "Es importante que todos lleguen temprano."
+      },
+      "answer": "Era importante que todos llegaran temprano.",
+      "accept": [
+        "Era importante que todos llegasen temprano."
+      ],
+      "wordIds": [
+        "298",
+        "149",
+        "176"
+      ],
+      "why": {
+        "en": "With an impersonal expression in the past (era importante), the subjunctive goes to the past too: lleguen → llegaran (or llegasen).",
+        "es": "Con una expresión impersonal en pasado (era importante), el subjuntivo también pasa al pasado: lleguen → llegaran (o llegasen)."
+      }
+    },
+    {
+      "id": "sp-tr-05",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "en": "I am looking for an employee who speaks English.",
+        "es": "Busco un empleado que hable inglés."
+      },
+      "answer": "Buscaba un empleado que hablara inglés.",
+      "accept": [
+        "Buscaba un empleado que hablase inglés.",
+        "Yo buscaba un empleado que hablara inglés.",
+        "Yo buscaba un empleado que hablase inglés."
+      ],
+      "wordIds": [
+        "206",
+        "1882",
+        "47",
+        "715"
+      ],
+      "why": {
+        "en": "A person who may not exist takes the subjunctive; in the past: hable → hablara (or hablase).",
+        "es": "Una persona que quizá no existe lleva subjuntivo; en pasado: hable → hablara (o hablase)."
+      }
+    },
+    {
+      "id": "sp-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Cuando era niña, mi mamá quería que yo ___ (estudiar) música, pero mi papá prefería que ___ (jugar) fútbol. Siempre les pedía que me ___ (dejar) en paz.",
+      "answers": [
+        "estudiara",
+        "jugara",
+        "dejaran"
+      ],
+      "accept": [
+        [
+          "estudiase"
+        ],
+        [
+          "jugase"
+        ],
+        [
+          "dejasen"
+        ]
+      ],
+      "tr": {
+        "en": "When I was a girl, my mom wanted me to study music, but my dad preferred that I play soccer. I always asked them to leave me in peace.",
+        "es": "Cuando era niña, mi mamá quería que yo estudiara (estudiar) música, pero mi papá prefería que jugara (jugar) fútbol. Siempre les pedía que me dejaran (dejar) en paz."
+      },
+      "why": {
+        "en": "Querer, preferir and pedir in the past ask for the past subjunctive: estudiara, jugara, dejaran (the -se forms are also right).",
+        "es": "Querer, preferir y pedir en pasado piden el subjuntivo imperfecto: estudiara, jugara, dejaran (las formas en -se también son correctas)."
+      }
+    },
+    {
+      "id": "sp-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Si yo ___ (tener) más tiempo, ___ (viajar) por todo México. Ojalá ___ (poder) hacerlo algún día.",
+      "answers": [
+        "tuviera",
+        "viajaría",
+        "pudiera"
+      ],
+      "accept": [
+        [
+          "tuviese"
+        ],
+        [],
+        [
+          "pudiese"
+        ]
+      ],
+      "tr": {
+        "en": "If I had more time, I would travel all over Mexico. I wish I could do it someday.",
+        "es": "Si yo tuviera (tener) más tiempo, viajaría (viajar) por todo México. Ojalá pudiera (poder) hacerlo algún día."
+      },
+      "why": {
+        "en": "Si + imperfect subjunctive (tuviera) goes with the conditional (viajaría); ojalá also takes the imperfect subjunctive for a wish that is not real now (pudiera).",
+        "es": "Si + imperfecto de subjuntivo (tuviera) va con el condicional (viajaría); ojalá también lleva el imperfecto de subjuntivo para un deseo que hoy no es real (pudiera)."
+      }
+    },
+    {
+      "id": "sp-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Mi jefe me dijo que ___ (llegar) temprano, que ___ (traer) la computadora y que no ___ (olvidar) la reunión.",
+      "answers": [
+        "llegara",
+        "trajera",
+        "olvidara"
+      ],
+      "accept": [
+        [
+          "llegase"
+        ],
+        [
+          "trajese"
+        ],
+        [
+          "olvidase"
+        ]
+      ],
+      "tr": {
+        "en": "My boss told me to arrive early, to bring the computer and not to forget the meeting.",
+        "es": "Mi jefe me dijo que llegara (llegar) temprano, que trajera (traer) la computadora y que no olvidara (olvidar) la reunión."
+      },
+      "why": {
+        "en": "Decir used as an order (me dijo que) takes the subjunctive: llegara, trajera, olvidara. Traer has a strong stem: trajera.",
+        "es": "Decir como orden (me dijo que) lleva subjuntivo: llegara, trajera, olvidara. Traer tiene raíz fuerte: trajera."
+      }
+    },
+    {
+      "id": "sp-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Habla como si ___ (ser) el dueño de la empresa, se comporta como si nadie ___ (poder) decirle nada y gasta como si ___ (tener) todo el dinero del mundo.",
+      "answers": [
+        "fuera",
+        "pudiera",
+        "tuviera"
+      ],
+      "accept": [
+        [
+          "fuese"
+        ],
+        [
+          "pudiese"
+        ],
+        [
+          "tuviese"
+        ]
+      ],
+      "tr": {
+        "en": "He talks as if he were the owner of the company, behaves as if no one could tell him anything and spends as if he had all the money in the world.",
+        "es": "Habla como si fuera (ser) el dueño de la empresa, se comporta como si nadie pudiera (poder) decirle nada y gasta como si tuviera (tener) todo el dinero del mundo."
+      },
+      "why": {
+        "en": "Como si always takes the imperfect subjunctive: fuera, pudiera, tuviera (also fuese, pudiese, tuviese).",
+        "es": "Como si siempre lleva el imperfecto de subjuntivo: fuera, pudiera, tuviera (también fuese, pudiese, tuviese)."
+      }
+    },
+    {
+      "id": "sp-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "___ (querer) pedirle un favor, señora. Me gustaría que usted ___ (venir) mañana y ___ (traer) los documentos.",
+      "answers": [
+        "Quisiera",
+        "viniera",
+        "trajera"
+      ],
+      "accept": [
+        [
+          "Quisiese"
+        ],
+        [
+          "viniese"
+        ],
+        [
+          "trajese"
+        ]
+      ],
+      "tr": {
+        "en": "I would like to ask you a favor, ma'am. I would like you to come tomorrow and bring the documents.",
+        "es": "Quisiera (querer) pedirle un favor, señora. Me gustaría que usted viniera (venir) mañana y trajera (traer) los documentos."
+      },
+      "why": {
+        "en": "Quisiera is the polite way to ask for something; me gustaría que asks for the past subjunctive: viniera, trajera.",
+        "es": "Quisiera es la forma cortés de pedir algo; me gustaría que pide el imperfecto de subjuntivo: viniera, trajera."
+      }
+    },
+    {
+      "id": "sp-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "Mi mamá quería que yo estudie medicina.",
+      "wrongIndex": 5,
+      "answer": "estudiara",
+      "accept": [
+        "estudiase"
+      ],
+      "explain": {
+        "en": "Quería is in the past, so the subjunctive must be in the past too: estudiara (or estudiase).",
+        "es": "Quería está en pasado, así que el subjuntivo también debe ir en pasado: estudiara (o estudiase)."
+      },
+      "tr": {
+        "en": "My mom wanted me to study medicine.",
+        "es": "Mi mamá quería que yo estudiara medicina."
+      }
+    },
+    {
+      "id": "sp-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "Si yo tuviera más dinero, compraré una casa.",
+      "wrongIndex": 5,
+      "answer": "compraría",
+      "explain": {
+        "en": "Si + imperfect subjunctive (tuviera) takes the conditional in the other half: compraría.",
+        "es": "Si + imperfecto de subjuntivo (tuviera) lleva el condicional en la otra parte: compraría."
+      },
+      "tr": {
+        "en": "If I had more money, I would buy a house.",
+        "es": "Si yo tuviera más dinero, compraría una casa."
+      }
+    },
+    {
+      "id": "sp-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "Si nosotros tuvieramos tiempo, iríamos al cine.",
+      "wrongIndex": 2,
+      "answer": "tuviéramos",
+      "accept": [
+        "tuviésemos"
+      ],
+      "explain": {
+        "en": "The nosotros form of the imperfect subjunctive has a written accent: tuviéramos (tuviésemos).",
+        "es": "La forma nosotros del imperfecto de subjuntivo lleva tilde: tuviéramos (tuviésemos)."
+      },
+      "tr": {
+        "en": "If we had time, we would go to the movies.",
+        "es": "Si nosotros tuviéramos tiempo, iríamos al cine."
+      }
+    },
+    {
+      "id": "sp-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "Hablaba como si lo sabía todo.",
+      "wrongIndex": 4,
+      "answer": "supiera",
+      "accept": [
+        "supiese"
+      ],
+      "explain": {
+        "en": "Como si always needs the imperfect subjunctive, never the indicative: supiera (supiese).",
+        "es": "Como si siempre exige el imperfecto de subjuntivo, nunca el indicativo: supiera (supiese)."
+      },
+      "tr": {
+        "en": "He talked as if he knew everything.",
+        "es": "Hablaba como si lo supiera todo."
+      }
+    },
+    {
+      "id": "sp-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "Ojalá yo podría ir contigo, pero tengo que trabajar.",
+      "wrongIndex": 2,
+      "answer": "pudiera",
+      "accept": [
+        "pudiese"
+      ],
+      "explain": {
+        "en": "Ojalá for an unreal wish takes the imperfect subjunctive, not the conditional: pudiera (pudiese).",
+        "es": "Ojalá para un deseo irreal lleva el imperfecto de subjuntivo, no el condicional: pudiera (pudiese)."
+      },
+      "tr": {
+        "en": "I wish I could go with you, but I have to work.",
+        "es": "Ojalá yo pudiera ir contigo, pero tengo que trabajar."
+      }
+    },
+    {
+      "id": "sp-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "tener",
+        "ir",
+        "decir"
+      ],
+      "es": "Si yo ___ más tiempo, aprendería alemán.",
+      "word": "tener",
+      "answer": "tuviera",
+      "accept": [
+        "tuviese"
+      ],
+      "tr": {
+        "en": "If I had more time, I would learn German.",
+        "es": "Si yo tuviera más tiempo, aprendería alemán."
+      },
+      "why": {
+        "en": "Tener fits: si + tuviera. Ir and decir do not make sense with más tiempo.",
+        "es": "Tener encaja: si + tuviera. Ir y decir no tienen sentido con más tiempo."
+      }
+    },
+    {
+      "id": "sp-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "decir",
+        "venir",
+        "comer"
+      ],
+      "es": "Ella me pidió que le ___ la verdad.",
+      "word": "decir",
+      "answer": "dijera",
+      "accept": [
+        "dijese"
+      ],
+      "tr": {
+        "en": "She asked me to tell her the truth.",
+        "es": "Ella me pidió que le dijera la verdad."
+      },
+      "why": {
+        "en": "Only decir goes with la verdad; the past subjunctive is dijera (strong stem, no i: dijeran, not dijieran).",
+        "es": "Solo decir va con la verdad; el imperfecto de subjuntivo es dijera (raíz fuerte, sin i: dijeran, no dijieran)."
+      }
+    },
+    {
+      "id": "sp-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "ser",
+        "hacer",
+        "poner"
+      ],
+      "es": "Habla como si ___ el jefe de todos.",
+      "word": "ser",
+      "answer": "fuera",
+      "accept": [
+        "fuese"
+      ],
+      "tr": {
+        "en": "He talks as if he were everybody's boss.",
+        "es": "Habla como si fuera el jefe de todos."
+      },
+      "why": {
+        "en": "El jefe is a noun, so only ser fits: como si + fuera.",
+        "es": "El jefe es un sustantivo, así que solo ser encaja: como si + fuera."
+      }
+    },
+    {
+      "id": "sp-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "querer",
+        "dormir",
+        "leer"
+      ],
+      "es": "___ un café, por favor.",
+      "word": "querer",
+      "answer": "quisiera",
+      "accept": [
+        "quisiese"
+      ],
+      "tr": {
+        "en": "I would like a coffee, please.",
+        "es": "quisiera un café, por favor."
+      },
+      "why": {
+        "en": "The polite request uses quisiera; dormir and leer do not take a coffee as an object.",
+        "es": "La petición cortés usa quisiera; dormir y leer no llevan un café como objeto."
+      }
+    },
+    {
+      "id": "sp-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "traer",
+        "saber",
+        "salir"
+      ],
+      "es": "Mi madre quería que yo le ___ el pan.",
+      "word": "traer",
+      "answer": "trajera",
+      "accept": [
+        "trajese"
+      ],
+      "tr": {
+        "en": "My mother wanted me to bring her the bread.",
+        "es": "Mi madre quería que yo le trajera el pan."
+      },
+      "why": {
+        "en": "Only traer takes el pan as an object here; strong stem: trajera (no i).",
+        "es": "Solo traer lleva aquí el pan como objeto; raíz fuerte: trajera (sin i)."
+      }
+    },
+    {
+      "id": "sp-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "My mom wanted me to study medicine.",
+        "es": "Mi mamá quería que estudiara medicina."
+      },
+      "es": "Mi mamá quería que estudiara medicina."
+    },
+    {
+      "id": "sp-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "I would like you to sing with us.",
+        "es": "Me gustaría que cantaras con nosotros."
+      },
+      "es": "Me gustaría que cantaras con nosotros."
+    },
+    {
+      "id": "sp-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "She doubted that we had time.",
+        "es": "Ella dudaba que tuviéramos tiempo."
+      },
+      "es": "Ella dudaba que tuviéramos tiempo."
+    },
+    {
+      "id": "sp-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "He talks as if he were the boss.",
+        "es": "Habla como si fuera el jefe."
+      },
+      "es": "Habla como si fuera el jefe."
+    },
+    {
+      "id": "sp-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "I wish I could travel to Oaxaca.",
+        "es": "Ojalá pudiera viajar a Oaxaca."
+      },
+      "es": "Ojalá pudiera viajar a Oaxaca."
     }
   ]
 }
