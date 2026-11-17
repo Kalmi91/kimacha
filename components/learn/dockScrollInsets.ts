@@ -15,8 +15,8 @@ export function answerScrollTarget(fieldY: number, fieldH: number, viewportH: nu
 // On a short screen the header, the keys and the docked bar leave no room for the field itself (a field is ~58 dp plus a
 // gap): then the bar steps aside while typing (the keyboard's ✓ submits), as it already does for the retype field.
 export const MIN_ANSWER_ROOM = 72;
-export function dockStepsAside(viewportH: number, dockH: number, dockLift: number): boolean {
-  return viewportH > 0 && viewportH - dockH - dockLift < MIN_ANSWER_ROOM;
+export function dockStepsAside(noteOpen: boolean, viewportH: number, dockH: number, dockLift: number): boolean {
+  return noteOpen && viewportH > 0 && viewportH - dockH - dockLift < MIN_ANSWER_ROOM;
 }
 
 export function dockScrollInsets(dockH: number, dockLift: number, keyboardOpen: boolean) {

@@ -12,13 +12,14 @@ export function useAnswerAboveKeys(
   kbHeight: number,
   dockH: number,
   dockLift: number,
-  noteOpenFor: unknown,
+  noteOpen: boolean,
 ) {
   const [scrollerH, setScrollerH] = useState(0);
   const [relayout, setRelayout] = useState(0);
-  const stepAside = kbHeight > 0 && dockStepsAside(scrollerH, dockH, dockLift);
+  // Only while the picture / note of the current card is open; with it closed everything stays as it is on main.
+  const stepAside = kbHeight > 0 && dockStepsAside(noteOpen, scrollerH, dockH, dockLift);
   useEffect(() => {
-    if (kbHeight <= 0 || scrollerH <= 0) return;
+    if (!noteOpen || kbHeight <= 0 || scrollerH <= 0) return;
     const timer = setTimeout(() => {
       const inner = (scrollRef.current as unknown as { getInnerViewRef?: () => View | null } | null)?.getInnerViewRef?.();
       const field = inputRef.current;
@@ -30,6 +31,6 @@ export function useAnswerAboveKeys(
       }, () => {});
     }, 60);
     return () => clearTimeout(timer);
-  }, [kbHeight, noteOpenFor, scrollerH, dockH, dockLift, scrollRef, inputRef, stepAside]);
-  return { setScrollerH, stepAside, relayout };
+  }, [kbHeight, noteOpen, scrollerH, dockH, dockLift, scrollRef, inputRef, stepAside]);
+  return { setScrollerH, stepAside, relayout: noteOpen ? relayout : 0 };
 }

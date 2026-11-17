@@ -126,7 +126,7 @@ export default function PcicCardView({
     const inner = (scrollRef.current as unknown as { getInnerViewRef?: () => View | null } | null)?.getInnerViewRef?.();
     if (inner) block.measureLayout(inner as never, (_x, y) => scrollRef.current?.scrollTo({ y: Math.max(0, y - 16), animated: false }), () => {});
   };
-  const { setScrollerH, stepAside, relayout } = useAnswerAboveKeys(scrollRef, inputRef, kbHeight, dockH, dockLift, noteOpenFor);
+  const { setScrollerH, stepAside, relayout } = useAnswerAboveKeys(scrollRef, inputRef, kbHeight, dockH, dockLift, !!currentItem && noteOpenFor === currentItem.id);
 
   // The header's FIRST chip is the selected level,
   // tapping it opens the level picker sheet; the existing four chips are unchanged.
