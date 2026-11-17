@@ -4,7 +4,8 @@
 // where playChime never reached the player.
 import type { AudioPlayer } from 'expo-audio';
 
-export function makeChimePlayer(): AudioPlayer {
+export function makeChimePlayer(sound: 'right' | 'wrong' = 'right'): AudioPlayer {
   const { createAudioPlayer } = require('expo-audio') as typeof import('expo-audio');
-  return createAudioPlayer(require('../assets/sounds/correct.wav'));
+  // wrong.wav is the Big test's wrong-answer sound (scripts/make-wrong-sound.mjs)
+  return createAudioPlayer(sound === 'wrong' ? require('../assets/sounds/wrong.wav') : require('../assets/sounds/correct.wav'));
 }

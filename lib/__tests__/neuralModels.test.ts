@@ -353,12 +353,12 @@ describe('better voice: the chosen speaker', () => {
   };
   const saved = () => JSON.parse(mockFs.get(`${TTS}/settings.json`) as string);
 
-  it('starts on Automatic everywhere, also from a settings file written before the choice existed', async () => {
+  it('starts on the female voice everywhere, also from a settings file written before the choice existed', async () => {
     mockFs.set(`${TTS}/settings.json`, JSON.stringify({ enabled: true, engines: { es: 'piper', en: 'piper', hu: 'piper' } }));
     const { m, prefs } = loadBoth();
     await m.startNeural();
-    expect(prefs.getSpeakerChoices()).toEqual({ es: 'auto', en: 'auto', hu: 'auto', de: 'auto' });
-    expect(prefs.preferredGender('es')).toBeUndefined();
+    expect(prefs.getSpeakerChoices()).toEqual({ es: 'f', en: 'f', hu: 'f', de: 'f' });
+    expect(prefs.preferredGender('es')).toBe('f');
   });
 
   it('a choice is saved with the switch and the engines, and comes back after a restart', async () => {
@@ -368,70 +368,53 @@ describe('better voice: the chosen speaker', () => {
     first.m.setNeuralSpeaker('hu', 'f');
     await flush();
     expect(first.prefs.preferredGender('es')).toBe('m');
-    expect(saved()).toEqual({ enabled: true, engines: { es: 'piper', en: 'piper', hu: 'piper', de: 'piper' }, speakers: { es: 'm', en: 'auto', hu: 'f', de: 'auto' }, fastFallback: true });
+    expect(saved()).toEqual({ enabled: true, engines: { es: 'piper', en: 'piper', hu: 'piper', de: 'piper' }, speakers: { es: 'm', en: 'f', hu: 'f', de: 'f' } });
 
     const second = loadBoth(); // the app restarted: a fresh module registry reads the file
-    expect(second.prefs.preferredGender('es')).toBeUndefined();
     await second.m.startNeural();
-    expect(second.prefs.getSpeakerChoices()).toEqual({ es: 'm', en: 'auto', hu: 'f', de: 'auto' });
+    expect(second.prefs.getSpeakerChoices()).toEqual({ es: 'm', en: 'f', hu: 'f', de: 'f' });
     expect(second.prefs.preferredGender('hu')).toBe('f');
   });
 
-  it('Automatic again is saved, an unchanged choice writes nothing, and the other settings are kept', async () => {
-    mockFs.set(`${TTS}/settings.json`, JSON.stringify({ enabled: false, engines: { es: 'kokoro', en: 'piper', hu: 'piper' }, speakers: { es: 'm', en: 'f', hu: 'auto' } }));
+  it('the female voice again is saved, an unchanged choice writes nothing, and the other settings are kept', async () => {
+    mockFs.set(`${TTS}/settings.json`, JSON.stringify({ enabled: false, engines: { es: 'kokoro', en: 'piper', hu: 'piper' }, speakers: { es: 'm', en: 'f', hu: 'f' } }));
     const { m, prefs } = loadBoth();
     await m.startNeural();
-    m.setNeuralSpeaker('es', 'auto');
+    m.setNeuralSpeaker('es', 'f');
     await flush();
-    expect(saved()).toEqual({ enabled: false, engines: { es: 'kokoro', en: 'piper', hu: 'piper', de: 'piper' }, speakers: { es: 'auto', en: 'f', hu: 'auto', de: 'auto' }, fastFallback: true });
+    expect(saved()).toEqual({ enabled: false, engines: { es: 'kokoro', en: 'piper', hu: 'piper', de: 'piper' }, speakers: { es: 'f', en: 'f', hu: 'f', de: 'f' } });
     mockFs.set(`${TTS}/settings.json`, 'untouched');
-    m.setNeuralSpeaker('es', 'auto');
+    m.setNeuralSpeaker('es', 'f');
     await flush();
     expect(mockFs.get(`${TTS}/settings.json`)).toBe('untouched');
     expect(prefs.preferredGender('en')).toBe('f');
   });
 
-  it('a damaged value in the file is Automatic, not a crash', async () => {
+  it('a damaged value in the file is the female voice, not a crash', async () => {
     mockFs.set(`${TTS}/settings.json`, JSON.stringify({ enabled: true, engines: {}, speakers: { es: 'x', en: 3, hu: 'm' } }));
     const { m, prefs } = loadBoth();
     await m.startNeural();
-    expect(prefs.getSpeakerChoices()).toEqual({ es: 'auto', en: 'auto', hu: 'm', de: 'auto' });
+    expect(prefs.getSpeakerChoices()).toEqual({ es: 'f', en: 'f', hu: 'm', de: 'f' });
   });
 
-  // "Fast fallback" (temporary until EJSZAKA E101): a missing key is on.
-  it('the fast fallback is on from a settings file written before it existed, and from no file at all', async () => {
-    mockFs.set(`${TTS}/settings.json`, JSON.stringify({ enabled: true, engines: { es: 'piper', en: 'piper', hu: 'piper' }, speakers: { es: 'm' } }));
-    const withFile = loadBoth();
-    await withFile.m.startNeural();
-    expect(withFile.prefs.getFastFallback()).toBe(true);
-    mockFs.delete(`${TTS}/settings.json`);
-    const noFile = loadBoth();
-    await noFile.m.startNeural();
-    expect(noFile.prefs.getFastFallback()).toBe(true);
+  it("an old settings file with speakers 'auto' and fastFallback loads as the female voice; the field is not written back", async () => {
+    mockFs.set(`${TTS}/settings.json`, JSON.stringify({ enabled: true, engines: { es: 'piper', en: 'piper', hu: 'piper' }, speakers: { es: 'auto' }, fastFallback: true }));
+    const { m, prefs } = loadBoth();
+    await m.startNeural();
+    expect(prefs.getSpeakerChoices().es).toBe('f');
+    m.setNeuralSpeaker('es', 'm');
+    await flush();
+    expect(saved()).not.toHaveProperty('fastFallback');
+    expect(saved().speakers.es).toBe('m');
   });
 
-  it('the fast fallback is saved next to the speakers and comes back after a restart; an unchanged value writes nothing', async () => {
-    const first = loadBoth();
-    await first.m.startNeural();
-    first.m.setNeuralSpeaker('es', 'm');
-    first.m.setNeuralFastFallback(false);
-    await flush();
-    expect(first.prefs.getFastFallback()).toBe(false);
-    expect(saved()).toEqual({ enabled: true, engines: { es: 'piper', en: 'piper', hu: 'piper', de: 'piper' }, speakers: { es: 'm', en: 'auto', hu: 'auto', de: 'auto' }, fastFallback: false });
-    const written = mockFs.get(`${TTS}/settings.json`) as string;
-    mockFs.set(`${TTS}/settings.json`, 'untouched');
-    first.m.setNeuralFastFallback(false);
-    await flush();
-    expect(mockFs.get(`${TTS}/settings.json`)).toBe('untouched');
-    mockFs.set(`${TTS}/settings.json`, written);
-
-    const second = loadBoth(); // the app restarted: a fresh module registry reads the file
-    expect(second.prefs.getFastFallback()).toBe(true);
-    await second.m.startNeural();
-    expect(second.prefs.getFastFallback()).toBe(false);
-    second.m.setNeuralFastFallback(true);
-    await flush();
-    expect(saved().fastFallback).toBe(true);
+  it('chosenNeuralEngine follows the engine of the language', async () => {
+    mockFs.set(`${TTS}/settings.json`, JSON.stringify({ enabled: true, engines: { es: 'kokoro', en: 'piper', hu: 'piper' } }));
+    const { m } = loadBoth();
+    await m.startNeural();
+    expect(m.chosenNeuralEngine('es')).toBe('kokoro');
+    expect(m.chosenNeuralEngine('en')).toBe('piper');
+    expect(m.chosenNeuralEngine('hu')).toBe('piper');
   });
 });
 

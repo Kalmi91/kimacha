@@ -4,6 +4,7 @@ import { useLocalSearchParams, useRouter } from 'expo-router';
 
 import Colors from '@/constants/Colors';
 import { fontSize, fontWeight, lineHeight, radius, spacing, tapTarget } from '@/constants/Theme';
+import { playChime, playWrongSound } from '@/lib/chime';
 import { getDb } from '@/lib/database';
 import { useLearner } from '@/lib/learner';
 import { sourceFor } from '@/lib/languagePair';
@@ -321,7 +322,15 @@ export default function BigTestScreen() {
                 accessibilityLabel={s.optionLabel(i + 1, option)}
                 accessibilityState={{ disabled: answered }}
                 disabled={answered}
-                onPress={() => guarded(() => step(answerBigTest(run, item, order[i])))}
+                onPress={() =>
+                  guarded(() => {
+                    // Kálmán 2026-11-17: a right answer chimes like the grammar round, a wrong one gets its own low
+                    // sound; "I don't know" stays silent (it is no answer)
+                    if (order[i] === item.correct) playChime();
+                    else playWrongSound();
+                    step(answerBigTest(run, item, order[i]));
+                  })
+                }
                 style={[
                   styles.option,
                   themedEdgeStyle(g),

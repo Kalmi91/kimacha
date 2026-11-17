@@ -147,15 +147,15 @@ describe('Practice tab: the text', () => {
     view.unmount();
   });
 
-  it('FB552 + Audio round B: reads the paragraph aloud sentence by sentence, in Spanish, each by the voice of its own word', async () => {
+  it('FB552 + one voice per language: reads the paragraph aloud sentence by sentence, in Spanish, all by the chosen voice', async () => {
     await learnWords();
     const view = await mount();
     await press(view, 'practice-speak');
     expect(mockSequence).toHaveBeenCalledTimes(1);
-    // the gender is the sex of the word-pack voice of the card's Spanish field (the speaker the sentence pack holds it under)
-    const genders = TEXT.map((id) => voiceFor('es', 'kokoro', findPcicItem(id)!.es).gender);
-    expect(new Set(genders).size).toBe(2); // the five words really do not share one speaker, so the rule is exercised
-    expect(mockSequence).toHaveBeenCalledWith(SENTENCES.map((text, i) => ({ text, locale: 'es-MX', gender: genders[i] })));
+    // one voice per language (Kálmán 2026-11-17): every sentence takes the person chosen in Settings (the woman by default),
+    // whatever the sex of the card word's own hash voice
+    expect(new Set(TEXT.map(id => voiceFor('es', 'kokoro', findPcicItem(id)!.es).gender)).size).toBe(2);
+    expect(mockSequence).toHaveBeenCalledWith(SENTENCES.map(text => ({ text, locale: 'es-MX', gender: 'f' })));
     expect(mockSpeak).not.toHaveBeenCalled();
     view.unmount();
   });

@@ -2,7 +2,7 @@ jest.mock('expo-speech', () => ({
   speak: jest.fn(), stop: jest.fn(), getAvailableVoicesAsync: jest.fn(),
 }));
 jest.mock('@/lib/neuralModels', () => ({
-  neuralPackFile: jest.fn(() => null), neuralSentenceFile: jest.fn(() => null), neuralEngineFor: jest.fn(() => null),
+  neuralPackFile: jest.fn(() => null), neuralSentenceFile: jest.fn(() => null), neuralEngineFor: jest.fn(() => null), chosenNeuralEngine: jest.fn(() => 'kokoro'),
 }));
 
 import { act, fireEvent, render } from '@testing-library/react-native';

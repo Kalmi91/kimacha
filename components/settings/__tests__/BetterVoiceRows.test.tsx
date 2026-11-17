@@ -6,7 +6,8 @@ import { fireEvent, render } from '@testing-library/react-native';
 
 import { ThemeProvider } from '@/lib/ThemeContext';
 import { NEURAL_MODELS, PACK_BYTES, PACK_KEY, PIPER_MODEL_KEYS, SENTENCE_PACK_BYTES, SENTENCES_KEY, formatMegabytes } from '@/lib/neuralVoices';
-import BetterVoiceRows, { SentenceVoiceChoices } from '../BetterVoiceRows';
+import BetterVoiceRows from '../BetterVoiceRows';
+import SpeakerPickerRows from '../SpeakerPickerRows';
 
 let mockState: any;
 const mockDownload = jest.fn();
@@ -15,6 +16,7 @@ jest.mock('@/lib/neuralModels', () => ({
   downloadNeural: (...args: unknown[]) => mockDownload(...args),
   setNeuralEnabled: jest.fn(),
   setNeuralEngine: (...args: unknown[]) => mockSetEngine(...args),
+  setNeuralSpeaker: jest.fn(),
   useNeuralState: () => mockState,
 }));
 
@@ -39,8 +41,7 @@ const show = () =>
   render(
     <ThemeProvider>
       <BetterVoiceRows Row={Row} />
-        <SentenceVoiceChoices lang="es" />
-        <SentenceVoiceChoices lang="en" />
+        <SpeakerPickerRows Row={Row} languages={['es', 'en']} />
     </ThemeProvider>,
   );
 
@@ -77,7 +78,7 @@ describe('BetterVoiceRows: the size question', () => {
     mockState = stateWith({});
     const view = show();
     expect(view.getByText('Recordings: both speakers')).toBeTruthy();
-    expect(view.getByText(/Optional: recordings of every word and sentence by both speakers/)).toBeTruthy();
+    expect(view.getByText(/Optional: recordings of every word and sentence in both Kokoro voices/)).toBeTruthy();
     expect(view.queryByTestId('settings-recordings-newer')).toBeNull();
     fireEvent.press(view.getByTestId('settings-recordings-download'));
     expect(alertSpy.mock.calls[0][1]).toContain(PACKS_MB);
@@ -104,7 +105,7 @@ describe('BetterVoiceRows: the size question', () => {
   it('choosing Kokoro asks with its size and switches only after the confirm', () => {
     mockState = stateWith({ ...allPiper, [PACK_KEY]: true, [SENTENCES_KEY]: true });
     const view = show();
-    fireEvent.press(view.getByTestId('settings-better-voice-es-kokoro'));
+    fireEvent.press(view.getByTestId('settings-speaker-es-kokoro-f'));
     expect(alertSpy.mock.calls[0][1]).toContain('126 MB');
     expect(mockSetEngine).not.toHaveBeenCalled();
     lastButtons(alertSpy).find(b => b.text === 'Download')?.onPress?.();
@@ -115,9 +116,9 @@ describe('BetterVoiceRows: the size question', () => {
     mockState = stateWith({ ...allPiper, [PACK_KEY]: true, [SENTENCES_KEY]: true, kokoro: true }, { es: 'kokoro', en: 'piper', hu: 'piper', de: 'piper' });
     expect(NEURAL_MODELS.kokoro.bytes).toBeGreaterThan(0);
     const view = show();
-    fireEvent.press(view.getByTestId('settings-better-voice-es-piper'));
+    fireEvent.press(view.getByTestId('settings-speaker-es-piper-f'));
     expect(mockSetEngine).toHaveBeenCalledWith('es', 'piper');
-    fireEvent.press(view.getByTestId('settings-better-voice-en-kokoro')); // Kokoro is on the phone already
+    fireEvent.press(view.getByTestId('settings-speaker-en-kokoro-f')); // Kokoro is on the phone already
     expect(mockSetEngine).toHaveBeenCalledWith('en', 'kokoro');
     expect(alertSpy).not.toHaveBeenCalled();
   });
@@ -147,7 +148,7 @@ describe('BetterVoiceRows: the size question', () => {
   it('Kokoro with only the v1 recordings: the question names the model size alone and no pack is fetched', () => {
     mockState = stateWith({ ...allPiper, 'legacy-pack': true, 'legacy-sentences': true });
     const view = show();
-    fireEvent.press(view.getByTestId('settings-better-voice-es-kokoro'));
+    fireEvent.press(view.getByTestId('settings-speaker-es-kokoro-f'));
     expect(alertSpy.mock.calls[0][1]).toContain(formatMegabytes(NEURAL_MODELS.kokoro.bytes));
     expect(alertSpy.mock.calls[0][1]).not.toContain(formatMegabytes(NEURAL_MODELS.kokoro.bytes + PACK_BYTES + SENTENCE_PACK_BYTES));
     lastButtons(alertSpy).find(b => b.text === 'Download')?.onPress?.();
@@ -172,8 +173,7 @@ describe('BetterVoiceRows: why the chosen voice is not speaking', () => {
     view.rerender(
       <ThemeProvider>
         <BetterVoiceRows Row={Row} />
-        <SentenceVoiceChoices lang="es" />
-        <SentenceVoiceChoices lang="en" />
+        <SpeakerPickerRows Row={Row} languages={['es', 'en']} />
       </ThemeProvider>,
     );
     expect(view.getByTestId('settings-better-voice-es-issue').props.children).toContain('could not be loaded');

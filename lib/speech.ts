@@ -30,10 +30,10 @@
 import { AppState, Platform } from 'react-native';
 import * as Speech from 'expo-speech';
 import { speakNeural, stopNeural } from './neuralTts';
-import { neuralEngineFor, neuralFallbackEngine, neuralPackFile, neuralSentenceFile, noteNeuralOk, noteNeuralTrouble, releaseStandIns, startNeural } from './neuralModels';
+import { chosenNeuralEngine, neuralEngineFor, neuralFallbackEngine, neuralPackFile, neuralSentenceFile, noteNeuralOk, noteNeuralTrouble, releaseStandIns, startNeural } from './neuralModels';
 import { playPackFile, stopPack } from './packAudio';
 import { neuralTimeLimitMs, voiceFor, type NeuralEngine, type NeuralLang, type VoiceGender } from './neuralVoices';
-import { getFastFallback, onVoiceSettingsChange, preferredGender } from './voicePreference';
+import { onVoiceSettingsChange, preferredGender } from './voicePreference';
 import { setSpeechStatus } from './speechStatus';
 
 let voiceLanguages: Set<string> | null = null;
@@ -333,19 +333,12 @@ function speakBetter(text: string, locale: string, opts: BetterOptions, phone: (
   const explicitSex = opts.gender === 'f' || opts.gender === 'm';
   const picked = preferredGender(lang);
   const gender = explicitSex ? opts.gender : picked ?? opts.gender;
-  // v2 of the word pack has both people of the pair: the recording of the speaking sex, none of the other.
-  const wordFile = neuralPackFile(lang, text, gender);
-  // The sentence pack (Audio round B) after the word pack: the speaker is the explicit gender (a sequence's shared
-  // speaker, a card's word), else the text's own hash gender, the one the engine would pick.
-  let pack = wordFile ?? neuralSentenceFile(lang, text, gender);
-  // Temporary until EJSZAKA E101 (both voices recorded), Kálmán 2026-11-03: the picked person has no recording of
-  // this text, so with the "Fast fallback" switch on the existing recording of the other person plays at once
-  // (the word's own voice, else the sentence pack's other speaker) instead of a slower generated one. It applies
-  // when the speaking gender is the picked person (handed in explicitly by withSharedSpeaker / wordSpeakerGender
-  // or not); a different explicit sex and a strict line (the practice exam's dialogue) never take the other sex.
-  if (!pack && picked && gender === picked && !opts.strict && getFastFallback()) {
-    pack = neuralPackFile(lang, text) ?? neuralSentenceFile(lang, text, picked === 'f' ? 'm' : 'f') ?? neuralSentenceFile(lang, text);
-  }
+  // The word pack and the sentence pack are Kokoro recordings (both people of the pair): they play only when Kokoro is
+  // the chosen engine, and then the recording of the speaking sex (none of the other). With Piper chosen `pack` stays
+  // null and the Piper engine speaks the text, so a language never mixes two people (Kálmán 2026-11-17).
+  // The sentence pack's speaker is the explicit gender (a sequence's shared speaker, a card's word), else the picked one.
+  const wordFile = chosenNeuralEngine(lang) === 'kokoro' ? neuralPackFile(lang, text, gender) : null;
+  const pack = wordFile ?? (chosenNeuralEngine(lang) === 'kokoro' ? neuralSentenceFile(lang, text, gender) : null);
   const engine = neuralEngineFor(lang);
   if (!pack && !engine) return false;
   stopPhone();

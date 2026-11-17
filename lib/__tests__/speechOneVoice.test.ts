@@ -12,6 +12,7 @@ jest.mock('../neuralModels', () => ({
   neuralPackFile: jest.fn(() => null),
   neuralSentenceFile: jest.fn(() => null),
   neuralEngineFor: jest.fn(() => null),
+  chosenNeuralEngine: jest.fn(() => 'kokoro'),
   releaseStandIns: jest.fn(async () => {}),
 }));
 jest.mock('../neuralTts', () => ({ speakNeural: jest.fn(), stopNeural: jest.fn() }));
@@ -73,7 +74,7 @@ describe('one phone voice per language', () => {
     (speech.getAvailableVoicesAsync as jest.Mock).mockResolvedValue(VOICES);
     await loadVoices();
     setSpeakerChoice('es', 'm');
-    setSpeakerChoice('es', 'auto');
+    setSpeakerChoice('es', 'f');
     speak('dos', 'es-MX');
     expect(voiceOfCall(1)).toBe('es-MX-enhanced');
   });

@@ -20,7 +20,6 @@ jest.mock('@/lib/neuralModels', () => ({
   downloadNeural: jest.fn(),
   setNeuralEnabled: jest.fn(),
   setNeuralEngine: jest.fn(),
-  setNeuralFastFallback: jest.fn(),
   setNeuralSpeaker: (lang: string, choice: string) => {
     mockSetSpeaker(lang, choice);
     require('@/lib/voicePreference').setSpeakerChoice(lang, choice);
@@ -28,7 +27,7 @@ jest.mock('@/lib/neuralModels', () => ({
 }));
 
 import { fireEvent, render, within } from '@testing-library/react-native';
-import { Platform, StyleSheet, View } from 'react-native';
+import { Platform } from 'react-native';
 import { setPcicTarget } from '@/data/pcic';
 import { getDb } from '@/lib/database';
 import { setLanguage, t } from '@/lib/i18n';
@@ -103,22 +102,16 @@ describe.each(['brand', 'classic'] as const)('Settings folders on %s', palette =
     expect(mockBack).toHaveBeenCalledTimes(1);
   });
 
-  it('groups only target/source voices, with sentence buttons below their label across the card', async () => {
+  it('groups only target/source voices, one radio list of voices per card', async () => {
     const view = await show(VoiceSettingsScreen);
     expect(view.getAllByTestId(/^settings-speaker-(es|en)$/).map(node => node.props.testID)).toEqual(['settings-speaker-es', 'settings-speaker-en']);
     expect(view.queryByTestId('settings-speaker-hu')).toBeNull();
     expect(view.queryByTestId('settings-speaker-de')).toBeNull();
     expect(view.getByText('Better voice (beta)')).toBeTruthy();
-    expect(view.getByText('Fast fallback')).toBeTruthy();
+    expect(view.queryByText('Fast fallback')).toBeNull();
     const card = view.getByTestId('settings-speaker-es');
-    expect(within(card).getAllByRole('radio')).toHaveLength(3);
-    const sentence = within(card).getByTestId('settings-sentences-es');
-    expect(StyleSheet.flatten(sentence.props.style).width).toBe('100%');
-    const blocks = within(sentence).UNSAFE_getAllByType(View);
-    const pills = blocks.find(node => StyleSheet.flatten(node.props.style)?.flexDirection === 'row');
-    expect(StyleSheet.flatten(pills?.props.style).width).toBe('100%');
-    expect(within(sentence).getByText('Sentence voice')).toBeTruthy();
-    expect(within(sentence).getByTestId('settings-better-voice-es-kokoro')).toBeTruthy();
+    expect(within(card).getAllByRole('radio')).toHaveLength(4);
+    expect(within(card).getByTestId('settings-speaker-es-kokoro-m')).toBeTruthy();
     expect(view.queryByTestId('settings-theme-row')).toBeNull();
     expect(view.queryByText(/Load my mistakes/)).toBeNull();
     expect(view.queryByText('Beta')).toBeNull();
@@ -126,12 +119,12 @@ describe.each(['brand', 'classic'] as const)('Settings folders on %s', palette =
 
   it('keeps a picked speaker when leaving and reopening Voice', async () => {
     const first = await show(VoiceSettingsScreen);
-    fireEvent.press(first.getByTestId('settings-speaker-es-m'));
+    fireEvent.press(first.getByTestId('settings-speaker-es-piper-m'));
     expect(mockSetSpeaker).toHaveBeenCalledWith('es', 'm');
     first.unmount();
     const next = await show(VoiceSettingsScreen);
-    expect(next.getByTestId('settings-speaker-es-m').props.accessibilityState.checked).toBe(true);
-    expect(next.getByTestId('settings-speaker-es-auto').props.accessibilityState.checked).toBe(false);
+    expect(next.getByTestId('settings-speaker-es-piper-m').props.accessibilityState.checked).toBe(true);
+    expect(next.getByTestId('settings-speaker-es-piper-f').props.accessibilityState.checked).toBe(false);
   });
 
   it('persists a daily limit after reopening Learning and refreshes the home subtitle', async () => {
@@ -159,8 +152,8 @@ it('shows the new two languages, target first, after changing direction in Learn
   expect(voice.getAllByTestId(/^settings-speaker-(de|hu)$/).map(node => node.props.testID)).toEqual(['settings-speaker-de', 'settings-speaker-hu']);
   expect(voice.queryByTestId('settings-speaker-en')).toBeNull();
   expect(voice.queryByTestId('settings-speaker-es')).toBeNull();
-  expect(voice.queryByTestId('settings-sentences-hu')).toBeNull();
-  expect(voice.queryByTestId('settings-sentences-de')).toBeNull();
+  expect(voice.queryByTestId('settings-speaker-hu-kokoro-f')).toBeNull();
+  expect(voice.queryByTestId('settings-speaker-de-kokoro-f')).toBeNull();
 });
 
 it('has no Voice entry on web', async () => {
