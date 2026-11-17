@@ -1,6 +1,9 @@
 import type en from '../en/common';
 
 const es: typeof en = {
+  common: {
+    beta: 'Beta',
+  },
   audio: {
     loading: 'Preparando audio…',
     playing: 'Reproduciendo audio…',
@@ -43,6 +46,7 @@ const es: typeof en = {
     comingSoon: 'Próximamente',
   },
   a11y: {
+    beta: 'Beta: todavía no está terminado',
     back: 'Atrás',
     close: 'Cerrar',
     speak: 'Reproducir audio',

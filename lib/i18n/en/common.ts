@@ -1,4 +1,7 @@
 export default {
+  common: {
+    beta: 'Beta',
+  },
   audio: {
     loading: 'Preparing audio…',
     playing: 'Playing audio…',
@@ -46,6 +49,7 @@ export default {
   },
   // accessibility labels (screen readers) of the controls that show only an icon or a symbol.
   a11y: {
+    beta: 'Beta: not finished yet',
     back: 'Back',
     close: 'Close',
     speak: 'Play audio',
