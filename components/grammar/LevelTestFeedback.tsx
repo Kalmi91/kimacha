@@ -85,7 +85,7 @@ export default function LevelTestFeedback({
 
   return (
     <View style={styles.flex}>
-      <ScrollView contentContainerStyle={styles.body} keyboardShouldPersistTaps="handled">
+      <ScrollView testID="level-test-scroll" persistentScrollbar contentContainerStyle={styles.body} keyboardShouldPersistTaps="handled">
         <Text testID="level-test-topic" style={[styles.topicTitle, { color: colors.text }]}>
           {topicTitle}
         </Text>

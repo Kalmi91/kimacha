@@ -1,6 +1,6 @@
 // FB641: after the check the item's `why` stands under the correct answer in the success colour, right or wrong.
 
-import { render, screen } from '@testing-library/react-native';
+import { render, screen, within } from '@testing-library/react-native';
 import { StyleSheet, Text } from 'react-native';
 
 import LevelTestFeedback from '@/components/grammar/LevelTestFeedback';
@@ -58,5 +58,16 @@ describe('the reason under the correct answer (FB641)', () => {
     screen.unmount();
     show(q, false);
     expect(screen.queryByTestId('level-test-feedback-why')).toBeNull();
+  });
+});
+
+describe('the wrong choice view scrolls (E151)', () => {
+  it('keeps the long "why not" list in a scroller with a visible scrollbar, Next and the lesson button outside it', () => {
+    show(od01(), false);
+    const scroll = screen.getByTestId('level-test-scroll');
+    expect(scroll.props.persistentScrollbar).toBe(true);
+    expect(within(scroll).getByTestId('level-test-whynot')).toBeTruthy();
+    expect(within(scroll).queryByTestId('level-test-next')).toBeNull();
+    expect(screen.getByTestId('level-test-next')).toBeTruthy();
   });
 });
