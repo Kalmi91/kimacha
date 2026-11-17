@@ -586,12 +586,12 @@
       "id": "gu-match-01",
       "kind": "match",
       "pairs": [
-        { "es": "me gusta el café", "en": "I like coffee" },
-        { "es": "me gustan los libros", "en": "I like books" },
+        { "es": "me gusta eso", "en": "I like that" },
+        { "es": "me gustan estos", "en": "I like these" },
         { "es": "le gusta bailar", "en": "he/she likes to dance" },
-        { "es": "nos gusta la playa", "en": "we like the beach" },
-        { "es": "les gusta el fútbol", "en": "they like soccer" },
-        { "es": "no me gusta el frío", "en": "I do not like the cold" }
+        { "es": "nos gusta esto", "en": "we like this" },
+        { "es": "les gusta correr", "en": "they like running" },
+        { "es": "no me gusta", "en": "I don't like it" }
       ]
     },
     {

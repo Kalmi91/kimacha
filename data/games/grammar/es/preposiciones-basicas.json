@@ -396,12 +396,12 @@
       "id": "pb-match-01",
       "kind": "match",
       "pairs": [
-        { "es": "a", "en": "direction or a point in time" },
+        { "es": "a", "en": "direction or time" },
         { "es": "de", "en": "possession or origin" },
-        { "es": "en", "en": "place, month, or means of transport" },
+        { "es": "en", "en": "place, month" },
         { "es": "con", "en": "together with" },
-        { "es": "por", "en": "reason or a rough part of day" },
-        { "es": "al / del", "en": "a + el / de + el contraction" }
+        { "es": "por", "en": "reason, rough time" },
+        { "es": "al / del", "en": "a+el, de+el" }
       ]
     },
     {

@@ -547,11 +547,11 @@
       "id": "nh-match-01",
       "kind": "match",
       "pairs": [
-        { "es": "las tres y media", "en": "half past three" },
-        { "es": "las tres menos cuarto", "en": "a quarter to three" },
-        { "es": "el cinco de mayo", "en": "May fifth" },
-        { "es": "tengo veintiún años", "en": "I am twenty-one years old" },
-        { "es": "cuesta cien pesos", "en": "it costs a hundred pesos" },
+        { "es": "y media", "en": "half past" },
+        { "es": "menos cuarto", "en": "a quarter to" },
+        { "es": "cinco de mayo", "en": "May fifth" },
+        { "es": "veintiún años", "en": "twenty-one years" },
+        { "es": "cien pesos", "en": "a hundred pesos" },
         { "es": "es la una", "en": "it is one o'clock" }
       ]
     },
