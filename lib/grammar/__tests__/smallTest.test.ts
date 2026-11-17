@@ -208,23 +208,42 @@ describe('small test: the adaptive rule', () => {
 describe('small test: level done and the saved run', () => {
   const core = TOPICS.filter((x) => x.core).map((x) => x.id);
 
-  it('the level is done when every core topic is learned (two clean rounds learn a topic)', () => {
-    const few = TOPICS.slice(0, 3);
+  it('the level is done when every core topic is learned (three right answers in a row, across rounds, learn a topic)', () => {
+    const few = TOPICS.slice(0, 2);
     const fewCore = few.map((x) => x.id);
     let s = play(begin(1, newSmallState(), few), () => true);
-    expect(levelProgress(s, fewCore)).toEqual({ learned: 0, total: 3 });
-    expect(isLevelDone(s, fewCore)).toBe(false);
-    s = play(begin(2, { ...s, run: null }, few), () => true);
-    expect(levelProgress(s, fewCore)).toEqual({ learned: 3, total: 3 });
+    // 10 questions over 2 topics: both get at least 3 clean answers in the first round
+    expect(levelProgress(s, fewCore)).toEqual({ learned: 2, total: 2 });
     expect(isLevelDone(s, fewCore)).toBe(true);
-    expect(s.history).toEqual([100, 100]);
+    expect(s.history).toEqual([100]);
+  });
+
+  it('a topic asked fewer than 3 times in a clean round is not learned yet; the next clean answers add up', () => {
+    // 6 topics, 10 questions: some topics get 1 or 2 questions
+    let s = play(begin(3), () => true);
+    const asked = (t: string) => s.run!.answers.filter((a) => a.topic === t).length;
+    const light = s.run!.topics.map((x) => x.id).filter((t) => asked(t) > 0 && asked(t) < 3);
+    expect(light.length).toBeGreaterThan(0);
+    for (const t of light) {
+      expect(s.learned).not.toContain(t);
+      expect(s.clean[t]).toBe(asked(t));
+    }
+    // the same topics, a second clean round: the answers count on from the first round
+    const before = { ...s.clean };
+    s = begin(4, { ...s, run: null });
+    s = play(s, () => true);
+    for (const t of light) {
+      const now = s.run!.answers.filter((a) => a.topic === t).length;
+      if (now > 0) expect(s.clean[t]).toBe(before[t] + now);
+      expect(s.learned.includes(t)).toBe((s.clean[t] ?? 0) >= 3);
+    }
   });
 
   it('a miss in a round resets the clean count of the topic', () => {
     const few = TOPICS.slice(0, 3);
     let s = play(begin(1, newSmallState(), few), () => true);
     const t = few[0].id;
-    expect(s.clean[t]).toBe(1);
+    expect(s.clean[t]).toBeGreaterThan(0);
     s = begin(2, { ...s, run: null }, few);
     s = play(s, (n, cur) => !(cur.topic === t && cur.role === 'base'));
     expect(s.clean[t] ?? 0).toBe(0);

@@ -20,7 +20,7 @@ export const MINI_CHECK_SIZE = 3;
 const RECENT_TYPES = 6;
 const RECENT_QUESTIONS = 60;
 const HISTORY_MAX = 12;
-const CLEAN_ROUNDS = 2;
+const CLEAN_ANSWERS = 3;
 
 // the task type of a lesson item kind (data/grammar/task-types.json is the one place that says it)
 const TYPE_FILE: { types: Record<TaskTypeId, GrammarKind[]> } = require('@/data/grammar/task-types.json');
@@ -93,7 +93,7 @@ export interface SmallState {
   v: 1;
   /** Learned topic ids of the level. */
   learned: string[];
-  /** Rounds in a row in which the topic's questions were all right. */
+  /** Right answers in a row on the topic (across rounds, a miss resets it). */
   clean: Record<string, number>;
   /** Every topic that was ever in a round (the "repeat" mark). */
   seen: string[];
@@ -364,8 +364,8 @@ function endRound(st: SmallState, run: SmallRun): SmallState {
       learned.delete(tp.id);
       clean[tp.id] = 0;
     } else if (tr.stage === 'base' && tr.asked > 0 && tr.right === tr.asked) {
-      clean[tp.id] = (clean[tp.id] ?? 0) + 1;
-      if (clean[tp.id] >= CLEAN_ROUNDS) learned.add(tp.id);
+      clean[tp.id] = (clean[tp.id] ?? 0) + tr.asked;
+      if (clean[tp.id] >= CLEAN_ANSWERS) learned.add(tp.id);
     } else if (tr.asked > 0) {
       clean[tp.id] = 0;
     }
