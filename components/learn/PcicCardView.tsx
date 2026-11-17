@@ -30,7 +30,7 @@ import PcicRevealedAnswer, { SpainFormLabel } from '@/components/learn/PcicRevea
 import MistakesEntry from '@/components/learn/MistakesEntry';
 import MoreNewAsk from '@/components/learn/MoreNewAsk';
 import FatigueOffer from '@/components/learn/FatigueOffer';
-import RetypePractice from '@/components/learn/RetypePractice';
+import RetypePractice, { useRetypeRowScroll } from '@/components/learn/RetypePractice';
 import { answerInputProps } from '@/lib/inputProps';
 import LevelPickerSheet from '@/components/LevelPickerSheet';
 import { BrutalBox, textOnFill } from '@/components/grammar/Brutal';
@@ -117,7 +117,7 @@ export default function PcicCardView({
   // above the keys before they open (otherwise the window pans and the header slides under the status bar).
   const scrollRef = useRef<ScrollView>(null), promptRef = useRef<View>(null);
   const [retypeOpenKey, setRetypeOpenKey] = useState('');
-  const [retypeFocused, setRetypeFocused] = useState(false);
+  const [retypeFocused, setRetypeFocused] = useState(false); const rowScroll = useRetypeRowScroll(scrollRef);
   const { height: windowH } = useWindowDimensions();
   const fieldBesidePrompt = Platform.OS === 'android' && shortWindow(windowH);
   const compactTyping = Platform.OS === 'android' && !grade && compactTypingNeeded(windowH, kbHeight, dockLift);
@@ -424,7 +424,7 @@ export default function PcicCardView({
 
       <ScrollView
         ref={scrollRef}
-        onLayout={(e) => setScrollerH(e.nativeEvent.layout.height)}
+        onLayout={(e) => { rowScroll.setViewportH(e.nativeEvent.layout.height); setScrollerH(e.nativeEvent.layout.height); }}
         style={[styles.cardScroll, { marginBottom: dockInsets.marginBottom }]}
         contentContainerStyle={[styles.cardScrollContent, { paddingBottom: retypeOpen ? Math.max(dockInsets.paddingBottom, windowH * 0.6) : dockInsets.paddingBottom + (kbHeight > 0 ? relayout : 0) }]}
         keyboardShouldPersistTaps="handled"
@@ -571,7 +571,7 @@ export default function PcicCardView({
             />
           )}
           {grade && !!answerText && (
-            <RetypePractice key={`pcic-retype-${retypeKey}`} onOpen={() => setRetypeOpenKey(retypeKey)} onFocusField={scrollToRetype} onBlurField={() => setRetypeFocused(false)} colors={colors} answerText={answerText} target={target}
+            <RetypePractice key={`pcic-retype-${retypeKey}`} onOpen={() => setRetypeOpenKey(retypeKey)} onFocusField={scrollToRetype} onBlurField={() => setRetypeFocused(false)} rowScroll={rowScroll} colors={colors} answerText={answerText} target={target}
               strictAccents={strictAccents} sentence={currentItem.kind === 'sentence'} />
           )}
 

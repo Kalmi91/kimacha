@@ -12,6 +12,13 @@ export function answerScrollTarget(fieldY: number, fieldH: number, viewportH: nu
   return Math.max(0, Math.round(fieldY + fieldH + 12 - visibleH));
 }
 
+// E148: where to scroll the card so the retype row (shown after a wrong or revealed answer) sits fully inside the viewport.
+// 0 when it already fits or the viewport is not measured yet, so the other card states stay as they are.
+export function retypeRowScrollTarget(rowY: number, rowH: number, viewportH: number, gap = 12): number {
+  if (viewportH <= 0) return 0;
+  return Math.max(0, Math.round(rowY + rowH + gap - viewportH));
+}
+
 // On a short screen the header, the keys and the docked bar leave no room for the field itself (a field is ~58 dp plus a
 // gap): then the bar steps aside while typing (the keyboard's ✓ submits), as it already does for the retype field.
 export const MIN_ANSWER_ROOM = 72;
