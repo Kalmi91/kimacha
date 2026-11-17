@@ -820,6 +820,445 @@
         }
       ],
       "correctIndex": 2
+    },
+    {
+      "id": "pb-tr-01",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "I study with my friend.",
+        "es": "Estudio con mi amigo."
+      },
+      "answer": "Voy a estudiar con mi amigo.",
+      "wordIds": [
+        "33",
+        "212",
+        "40"
+      ],
+      "why": {
+        "en": "With ir a + infinitive the other prepositions stay where they are: voy a hablar con mi mamá.",
+        "es": "Con ir a + infinitivo las otras preposiciones quedan donde estaban: voy a hablar con mi mamá."
+      }
+    },
+    {
+      "id": "pb-tr-02",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "I leave the house at eight.",
+        "es": "Salgo de casa a las ocho."
+      },
+      "answer": "Voy a salir de casa a las ocho.",
+      "wordIds": [
+        "33",
+        "19"
+      ],
+      "why": {
+        "en": "With ir a + infinitive the other prepositions stay where they are: voy a hablar con mi mamá.",
+        "es": "Con ir a + infinitivo las otras preposiciones quedan donde estaban: voy a hablar con mi mamá."
+      }
+    },
+    {
+      "id": "pb-tr-03",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "I drink coffee with milk.",
+        "es": "Tomo café con leche."
+      },
+      "answer": "Voy a tomar café con leche.",
+      "wordIds": [
+        "33",
+        "204",
+        "28",
+        "30"
+      ],
+      "why": {
+        "en": "With ir a + infinitive the other prepositions stay where they are: voy a hablar con mi mamá.",
+        "es": "Con ir a + infinitivo las otras preposiciones quedan donde estaban: voy a hablar con mi mamá."
+      }
+    },
+    {
+      "id": "pb-tr-04",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "I arrive by subway.",
+        "es": "Llego en metro."
+      },
+      "answer": "Voy a llegar en metro.",
+      "wordIds": [
+        "33",
+        "149",
+        "664"
+      ],
+      "why": {
+        "en": "With ir a + infinitive the other prepositions stay where they are: voy a hablar con mi mamá.",
+        "es": "Con ir a + infinitivo las otras preposiciones quedan donde estaban: voy a hablar con mi mamá."
+      }
+    },
+    {
+      "id": "pb-tr-05",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "I talk with my mom.",
+        "es": "Hablo con mi mamá."
+      },
+      "answer": "Voy a hablar con mi mamá.",
+      "wordIds": [
+        "33",
+        "47",
+        "695"
+      ],
+      "why": {
+        "en": "With ir a + infinitive the other prepositions stay where they are: voy a hablar con mi mamá.",
+        "es": "Con ir a + infinitivo las otras preposiciones quedan donde estaban: voy a hablar con mi mamá."
+      }
+    },
+    {
+      "id": "pb-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Soy ___ México. Vivo ___ una casa pequeña ___ mi familia.",
+      "answers": [
+        "de",
+        "en",
+        "con"
+      ],
+      "tr": {
+        "en": "I am from Mexico. I live in a small house with my family.",
+        "es": "Soy de México. Vivo en una casa pequeña con mi familia."
+      },
+      "why": {
+        "en": "De gives origin, en gives the place where you are, con gives company.",
+        "es": "De da el origen, en da el lugar donde estás, con da la compañía."
+      }
+    },
+    {
+      "id": "pb-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Voy ___ la escuela ___ metro. Llego ___ las ocho.",
+      "answers": [
+        "a",
+        "en",
+        "a"
+      ],
+      "tr": {
+        "en": "I go to school by subway. I arrive at eight.",
+        "es": "Voy a la escuela en metro. Llego a las ocho."
+      },
+      "why": {
+        "en": "A gives the direction and the hour; en gives the means of transport.",
+        "es": "A da la dirección y la hora; en da el medio de transporte."
+      }
+    },
+    {
+      "id": "pb-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Es el libro ___ Ana. Tomo café ___ leche. Gracias ___ la ayuda.",
+      "answers": [
+        "de",
+        "con",
+        "por"
+      ],
+      "tr": {
+        "en": "It is Ana's book. I drink coffee with milk. Thanks for the help.",
+        "es": "Es el libro de Ana. Tomo café con leche. Gracias por la ayuda."
+      },
+      "why": {
+        "en": "De shows who owns it, con shows what goes with it, por gives thanks for something.",
+        "es": "De muestra de quién es, con muestra lo que lo acompaña, por da las gracias por algo."
+      }
+    },
+    {
+      "id": "pb-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Hace calor ___ mayo. Veo ___ mi hermano en el parque.",
+      "answers": [
+        "en",
+        "a"
+      ],
+      "tr": {
+        "en": "It is hot in May. I see my brother in the park.",
+        "es": "Hace calor en mayo. Veo a mi hermano en el parque."
+      },
+      "why": {
+        "en": "En goes with a month; a goes before a person who is the object of the verb.",
+        "es": "En va con un mes; a va delante de una persona que es el objeto del verbo."
+      }
+    },
+    {
+      "id": "pb-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Voy ___ la playa ___ mis amigos. Vamos ___ carro.",
+      "answers": [
+        "a",
+        "con",
+        "en"
+      ],
+      "tr": {
+        "en": "I go to the beach with my friends. We go by car.",
+        "es": "Voy a la playa con mis amigos. Vamos en carro."
+      },
+      "why": {
+        "en": "A gives the direction, con gives company, en gives the means of transport.",
+        "es": "A da la dirección, con da la compañía, en da el medio de transporte."
+      }
+    },
+    {
+      "id": "pb-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "Vamos en la playa.",
+      "wrongIndex": 1,
+      "answer": "a",
+      "explain": {
+        "en": "For direction (going somewhere) the word is a, not en.",
+        "es": "Para la dirección (ir a un lugar) la palabra es a, no en."
+      },
+      "tr": {
+        "en": "We go to the beach.",
+        "es": "Vamos a la playa."
+      }
+    },
+    {
+      "id": "pb-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "Es el carro a mi hermano.",
+      "wrongIndex": 3,
+      "answer": "de",
+      "explain": {
+        "en": "Whose it is is shown with de: el carro de mi hermano.",
+        "es": "De quién es se muestra con de: el carro de mi hermano."
+      },
+      "tr": {
+        "en": "It is my brother's car.",
+        "es": "Es el carro de mi hermano."
+      }
+    },
+    {
+      "id": "pb-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "Mis padres están a casa.",
+      "wrongIndex": 3,
+      "answer": "en",
+      "explain": {
+        "en": "Where you are is shown with en: en casa.",
+        "es": "Dónde estás se muestra con en: en casa."
+      },
+      "tr": {
+        "en": "My parents are at home.",
+        "es": "Mis padres están en casa."
+      }
+    },
+    {
+      "id": "pb-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "Voy al parque de mi amigo.",
+      "wrongIndex": 3,
+      "answer": "con",
+      "explain": {
+        "en": "Company is shown with con: con mi amigo.",
+        "es": "La compañía se muestra con con: con mi amigo."
+      },
+      "tr": {
+        "en": "I go to the park with my friend.",
+        "es": "Voy al parque con mi amigo."
+      }
+    },
+    {
+      "id": "pb-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "Vamos con carro.",
+      "wrongIndex": 1,
+      "answer": "en",
+      "explain": {
+        "en": "A means of transport goes with en: en carro.",
+        "es": "Un medio de transporte va con en: en carro."
+      },
+      "tr": {
+        "en": "We go by car.",
+        "es": "Vamos en carro."
+      }
+    },
+    {
+      "id": "pb-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "a",
+        "de",
+        "en"
+      ],
+      "es": "Estoy ___ el parque.",
+      "word": "en",
+      "answer": "en",
+      "tr": {
+        "en": "I am in the park.",
+        "es": "Estoy en el parque."
+      },
+      "why": {
+        "en": "Where you are is shown with en.",
+        "es": "Dónde estás se muestra con en."
+      }
+    },
+    {
+      "id": "pb-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "a",
+        "de",
+        "con"
+      ],
+      "es": "Hablo ___ mi mamá.",
+      "word": "con",
+      "answer": "con",
+      "tr": {
+        "en": "I talk with my mom.",
+        "es": "Hablo con mi mamá."
+      },
+      "why": {
+        "en": "Company is shown with con.",
+        "es": "La compañía se muestra con con."
+      }
+    },
+    {
+      "id": "pb-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "a",
+        "de",
+        "por"
+      ],
+      "es": "Gracias ___ el café.",
+      "word": "por",
+      "answer": "por",
+      "tr": {
+        "en": "Thanks for the coffee.",
+        "es": "Gracias por el café."
+      },
+      "why": {
+        "en": "Thanks for something is gracias por.",
+        "es": "Dar las gracias por algo es gracias por."
+      }
+    },
+    {
+      "id": "pb-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "a",
+        "en",
+        "de"
+      ],
+      "es": "Llamo ___ mi hermana.",
+      "word": "a",
+      "answer": "a",
+      "tr": {
+        "en": "I call my sister.",
+        "es": "Llamo a mi hermana."
+      },
+      "why": {
+        "en": "A comes before a person who is the object of the verb.",
+        "es": "A va delante de una persona que es el objeto del verbo."
+      }
+    },
+    {
+      "id": "pb-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "al",
+        "a el",
+        "del"
+      ],
+      "es": "Vamos ___ parque.",
+      "word": "al",
+      "answer": "al",
+      "tr": {
+        "en": "We go to the park.",
+        "es": "Vamos al parque."
+      },
+      "why": {
+        "en": "A + el always becomes al.",
+        "es": "A + el siempre se convierte en al."
+      }
+    },
+    {
+      "id": "pb-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "I live in a house.",
+        "es": "Vivo en una casa."
+      },
+      "es": "Vivo en una casa."
+    },
+    {
+      "id": "pb-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "The book is Ana's.",
+        "es": "El libro es de Ana."
+      },
+      "es": "El libro es de Ana."
+    },
+    {
+      "id": "pb-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "I go to school by subway.",
+        "es": "Voy a la escuela en metro."
+      },
+      "es": "Voy a la escuela en metro."
+    },
+    {
+      "id": "pb-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "I drink coffee with milk.",
+        "es": "Tomo café con leche."
+      },
+      "es": "Tomo café con leche."
+    },
+    {
+      "id": "pb-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "We talk with my friend.",
+        "es": "Hablamos con mi amigo."
+      },
+      "es": "Hablamos con mi amigo."
     }
   ]
 }
