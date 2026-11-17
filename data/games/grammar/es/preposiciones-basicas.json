@@ -396,11 +396,11 @@
       "id": "pb-match-01",
       "kind": "match",
       "pairs": [
-        { "es": "a", "en": "direction or time" },
+        { "es": "a", "en": "direction, exact time" },
         { "es": "de", "en": "possession or origin" },
         { "es": "en", "en": "place, month" },
         { "es": "con", "en": "together with" },
-        { "es": "por", "en": "reason, rough time" },
+        { "es": "por", "en": "reason, part of day" },
         { "es": "al / del", "en": "a+el, de+el" }
       ]
     },
