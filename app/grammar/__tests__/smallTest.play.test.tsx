@@ -106,7 +106,10 @@ const TOPICS = ['lt-0', 'lt-1', 'lt-2', 'lt-3'];
 const TITLES: Record<string, string> = { 'lt-0': 'Alpha topic', 'lt-1': 'Beta topic', 'lt-2': 'Gamma topic', 'lt-3': 'Delta topic' };
 
 const flush = makeFlush(4);
+// the clock the screen's double-tap guard reads: every press is 600 ms after the one before it
+let mockNow = NOW;
 const press = async (testID: string) => {
+  mockNow += 600;
   fireEvent.press(screen.getByTestId(testID));
   await flush();
 };
@@ -149,7 +152,8 @@ describe.each(['brand', 'classic'] as const)('grammar small test (%s palette)', 
     mockParams = { level: 'a1' };
     mockFocusCb = null;
     mockFocusCleanup = undefined;
-    jest.spyOn(Date, 'now').mockReturnValue(NOW);
+    mockNow = NOW;
+    jest.spyOn(Date, 'now').mockImplementation(() => mockNow);
     const db = getDb();
     await db.setOnboarding('en', 'es');
     (db as any).__setLevelForTest('A1');
@@ -318,6 +322,22 @@ describe.each(['brand', 'classic'] as const)('grammar small test (%s palette)', 
     expect(has('small-test-intro')).toBe(false);
     expect(text('small-test-header')).toBe('A1 test · 3/10');
     expect(onScreen().q.id).toBe(seen);
+  });
+
+  it('a tap on an answer within 500 ms of a new question records nothing (the double tap after Next)', async () => {
+    await start();
+    const first = onScreen();
+    const v = first.q.view;
+    if (v.card !== 'choice') throw new Error('choice only');
+    // no time passed since the question appeared: the option is ignored, the same question is still there
+    fireEvent.press(screen.getByTestId(`exam-option-${v.correctIndex}`));
+    await flush();
+    expect(has('level-test-next')).toBe(false);
+    expect(onScreen().q.id).toBe(first.q.id);
+    expect(text('small-test-header')).toBe('A1 test · 1/10');
+    // after the guard time the same tap counts
+    await press(`exam-option-${v.correctIndex}`);
+    expect(has('level-test-next')).toBe(true);
   });
 
   it('a saved question that is no longer in the content: another question of the topic comes, and the X is on the screen', async () => {

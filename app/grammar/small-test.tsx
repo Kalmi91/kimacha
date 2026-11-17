@@ -60,6 +60,10 @@ interface Result {
   given?: string;
 }
 
+// A double tap on Next must not answer the next question too (same guard as the Nagy teszt): for TAP_GUARD_MS after a new
+// question appears, an answer is dropped and the question starts again.
+const TAP_GUARD_MS = 500;
+
 const STATUS_COLOR: Record<RowStatus, 'success' | 'warning' | 'danger'> = { learned: 'success', more: 'warning', lesson: 'danger' };
 
 export default function SmallTestScreen() {
@@ -84,6 +88,8 @@ export default function SmallTestScreen() {
   const levelRef = useRef<Level>('A1');
   const seedRef = useRef(0);
   const away = useRef(false);
+  const tapGuardUntil = useRef(0);
+  const [redo, setRedo] = useState(0);
   const queue = useRef<Promise<void>>(Promise.resolve());
   const enqueue = useCallback((job: () => Promise<void>) => {
     queue.current = queue.current.then(job).catch(() => {});
@@ -91,6 +97,7 @@ export default function SmallTestScreen() {
 
   const commit = useCallback(
     (next: SmallState) => {
+      if (next.run?.current && next.run.current !== stRef.current?.run?.current) tapGuardUntil.current = Date.now() + TAP_GUARD_MS;
       stRef.current = next;
       setSt(next);
       enqueue(async () => void (await saveSmallState(getDb(), pairRef.current, levelRef.current, next)));
@@ -136,6 +143,7 @@ export default function SmallTestScreen() {
       viewRef.current = v;
       evRef.current = ev;
       stRef.current = state;
+      tapGuardUntil.current = Date.now() + TAP_GUARD_MS;
       enqueue(async () => void (await saveSmallState(db, pair, lvl, state)));
       setLevel(lvl);
       setView(v);
@@ -411,6 +419,7 @@ export default function SmallTestScreen() {
   const found = cur ? view.find(cur.topic, cur.qid) : null;
   if (!cur || !found) return waiting();
   const part = `${inMini ? 'mini:' : ''}${cur.qid}`;
+  const guardOpen = () => Date.now() >= tapGuardUntil.current;
   const mistypedButton = (
     <ExamButton testID="small-test-mistyped" secondary label={s.mistyped} onPress={() => settle(true, true)} />
   );
@@ -456,22 +465,22 @@ export default function SmallTestScreen() {
         <DockSlotProvider host={dock}>
           {found.q ? (
             <TestQuestionView
-              key={`${run.answers.length}:${part}`}
+              key={`${run.answers.length}:${part}:${redo}`}
               q={found.q}
               learnedLang={data.learnedLang}
               strictAccents={strictAccents}
               instant
-              onDone={(ok, given) => setResult({ cur, ok, given })}
+              onDone={(ok, given) => (guardOpen() ? setResult({ cur, ok, given }) : setRedo((n) => n + 1))}
             />
           ) : (
             <ScrollView contentContainerStyle={styles.drill} keyboardShouldPersistTaps="handled">
               <NewKindDrillItem
-                key={`${run.answers.length}:${part}`}
+                key={`${run.answers.length}:${part}:${redo}`}
                 item={found.item!}
                 learnedLang={data.learnedLang}
                 contentLang={data.contentLang as never}
                 strictAccents={strictAccents}
-                onDone={(ok) => (ok ? settle(true) : setResult({ cur, ok: false }))}
+                onDone={(ok) => (!guardOpen() ? setRedo((n) => n + 1) : ok ? settle(true) : setResult({ cur, ok: false }))}
               />
             </ScrollView>
           )}
