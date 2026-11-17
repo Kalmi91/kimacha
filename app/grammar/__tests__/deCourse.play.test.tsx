@@ -37,6 +37,7 @@ import { syllabusForLevel } from '@/lib/grammar/syllabus';
 import GrammarLessonScreen from '../[topic]';
 import GrammarSyllabusScreen from '@/app/(tabs)/course';
 import { makeFlush } from '@/test-utils/flush';
+import { resetGrammarTabLevel } from '@/test-utils/grammarTab';
 
 const flush = makeFlush(3);
 const written = new Set(
@@ -55,6 +56,7 @@ describe.each([
     await db.setOnboarding(source, 'de');
     setLanguage(source);
     (db as any).__setLevelForTest('A1');
+    await resetGrammarTabLevel(db);
     mockPush.mockClear();
     (speak as jest.Mock).mockClear();
     (speakSequence as jest.Mock).mockClear();

@@ -292,4 +292,10 @@ export default {
     done: 'Done',
     progressLabel: (n: number, total: number) => `Question ${n} of ${total}`,
   },
+  // The Grammar tab's level buttons, overall bar and per-level test rows.
+  levelTabs: {
+    yourOverall: (lvl: string, pct: number) => `Your level: ${lvl} · overall ${pct}%`,
+    testRow: (lvl: string, pct: number | null) => (pct === null ? `${lvl} level test` : `${lvl} level test ${pct}%`),
+    levelButton: (lvl: string) => `Level ${lvl}`,
+  },
 };

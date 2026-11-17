@@ -11,7 +11,7 @@ import { t } from '@/lib/i18n';
 import { getDb } from '@/lib/database';
 import { useLearner } from '@/lib/learner';
 import { sourceFor } from '@/lib/languagePair';
-import { LEVELS, type Level } from '@/data/words';
+import type { Level } from '@/data/words';
 import {
   doneGrammarTopicProgress,
   GRAMMAR_PROGRESS_KEY,
@@ -42,7 +42,10 @@ import { examStatusFor, levelHasLesson, type ExamLevelStatus } from '@/lib/exam/
 import { DEFAULT_WEEKLY_GOAL_MINUTES } from '@/lib/usageStats';
 import ScreenFeedback from '@/lib/screenFeedback';
 import { loadBigTestCard } from '@/lib/grammar/bigTest';
+import { grammarTabLevelKey, parseTabLevel } from '@/lib/grammar/levelTestRoute';
+import { loadResumeValue, saveResumeValue } from '@/lib/resumeStore';
 import BigTestCard from '@/components/grammar/BigTestCard';
+import { LevelButtons, LevelTestRows, OverallBar } from '@/components/grammar/GrammarLevelPanel';
 import { BrutalBox, SegmentBar, Sticker, segmentsFilled } from '@/components/grammar/Brutal';
 import ExamStrip from '@/components/grammar/ExamStrip';
 import LevelStanding from '@/components/grammar/LevelStanding';
@@ -103,7 +106,8 @@ export default function GrammarSyllabusScreen() {
     const db = getDb();
     const { target, source } = await refresh(['direction']);
     setLearnedLang(target);
-    if (examTarget.current !== null && examTarget.current !== target) setExamStatus(new Map());
+    const directionChanged = examTarget.current !== null && examTarget.current !== target;
+    if (directionChanged) setExamStatus(new Map());
     examTarget.current = target;
     // The explanation language is the learner's own (the pair's source), not the language being learned:
     // en→es English, es→en Spanish. A source without lesson text yet (hu) falls back to English per field.
@@ -112,7 +116,6 @@ export default function GrammarSyllabusScreen() {
     const levelData = await db.getLevel();
     const lvl = (levelData.level as Level) ?? 'A1';
     setLevel(lvl);
-    setOpenLevel((current) => current ?? (LEVELS.includes(lvl) && lvl !== 'A0' ? lvl : 'A1'));
 
     // A topic is only "done" if there is a finished row for every
     // kind that exists in its lesson (doneGrammarTopicProgress, lib/grammar/syllabus.ts).
@@ -125,7 +128,14 @@ export default function GrammarSyllabusScreen() {
     const randomRows = await db.getGameProgress(GRAMMAR_RANDOM_KEY);
     setEvidence(evidenceFromRows(randomRows));
     setRandomRun(runFromRows(randomRows));
-    setBigTest({ ...(await loadBigTestCard(db, `${sourceFor(target, source)}→${target}`, target)), ready: true });
+    const pair = `${sourceFor(target, source)}→${target}`;
+    const card = await loadBigTestCard(db, pair, target);
+    setBigTest({ ...card, ready: true });
+    // the selected level: the learner's own last pick, else the last Big test's level, else the current level
+    const tabLevels: string[] = syllabusLevels(target);
+    const saved = parseTabLevel(await loadResumeValue(db, grammarTabLevelKey(pair)), tabLevels);
+    const fallback = [card.level, lvl, tabLevels[0]].find((l): l is Level => !!l && tabLevels.includes(l)) ?? 'A1';
+    setOpenLevel((current) => (directionChanged ? null : current) ?? (saved as Level | null) ?? fallback);
     setStreak((await db.getStreak())?.current_count ?? 0);
     setWeeklyGoal(await db.getWeeklyGoalMinutes());
     setWeekMinutes((await db.getUsageStats()).thisWeek);
@@ -172,7 +182,16 @@ export default function GrammarSyllabusScreen() {
     }
     return m;
   }, [writtenIds, percents, progress]);
-  const randomScore = rr.score(overallScore(writtenIds, lessonPcts, evidence), weakTopicCount(evidence));
+  const overallPct = overallScore(writtenIds, lessonPcts, evidence);
+  const randomScore = rr.score(overallPct, weakTopicCount(evidence));
+
+  // the selected level (its lessons are listed), kept per language pair for the next visit
+  const shownLevel: Level = openLevel ?? level;
+  const selectLevel = (l: Level) => {
+    setOpenLevel(l);
+    void saveResumeValue(getDb(), grammarTabLevelKey(`${contentLang}→${learnedLang}`), l);
+  };
+  const tabLevels = syllabusLevels(learnedLang);
 
   // A German course with no written lesson at all: say so, never list the Spanish syllabus or an empty one.
   // (With any lesson written the course is listed like the others; a topic without a lesson file shows the "coming soon" badge.)
@@ -189,7 +208,6 @@ export default function GrammarSyllabusScreen() {
   // Neo-brutalist:
   // the classic palette renders today's look below.
   if (g.brutal) {
-    const shownLevel: Level = openLevel ?? 'A1';
     const shownTopics = syllabusForLevel(shownLevel, learnedLang);
     const shownWritten = shownTopics.filter((tp) => hasLesson(learnedLang, tp.id)).length;
     const shownDone = shownTopics.filter((tp) => progress.get(tp.id)?.state === 'done').length;
@@ -237,20 +255,9 @@ export default function GrammarSyllabusScreen() {
             </BrutalBox>
           ) : null}
 
-          <View style={styles.brutalLevelRow}>
-            {syllabusLevels(learnedLang).map((lvl) => (
-              <BrutalBox
-                key={lvl}
-                testID={`grammar-level-${lvl}`}
-                fill={shownLevel === lvl ? 'a' : 'paper'}
-                style={styles.brutalLevelBox}
-                boxStyle={styles.brutalLevelInner}
-                onPress={() => setOpenLevel(lvl)}
-              >
-                <Text style={[styles.brutalLevelText, { color: shownLevel === lvl ? g.onFill : g.ink }]}>{lvl}</Text>
-              </BrutalBox>
-            ))}
-          </View>
+          <LevelButtons levels={tabLevels} selected={shownLevel} current={level} onSelect={selectLevel} />
+          <OverallBar level={bigTest.level ?? level} pct={overallPct} />
+          <LevelTestRows levels={tabLevels} learnedLang={learnedLang} contentLang={contentLang} evidence={evidence} />
           <Text style={[styles.brutalSmall, { color: g.mu }]}>
             {s.grammar.levelMeta(shownDone, shownTopics.length, shownWritten)}
             {shownLevel === level ? ` · ${s.grammar.yourLevel}` : ''}
@@ -386,32 +393,35 @@ export default function GrammarSyllabusScreen() {
           </Pressable>
         ) : null}
 
-        {syllabusLevels(learnedLang).map((lvl) => {
+        <LevelButtons levels={tabLevels} selected={shownLevel} current={level} onSelect={selectLevel} />
+        <OverallBar level={bigTest.level ?? level} pct={overallPct} />
+        <LevelTestRows levels={tabLevels} learnedLang={learnedLang} contentLang={contentLang} evidence={evidence} />
+
+        {[shownLevel].map((lvl) => {
           const topics = syllabusForLevel(lvl, learnedLang);
           const written = topics.filter((tp) => hasLesson(learnedLang, tp.id)).length;
           const done = topics.filter((tp) => progress.get(tp.id)?.state === 'done').length;
-          const isOpen = openLevel === lvl;
+          const isOpen = lvl === shownLevel;
           const isCurrent = lvl === level;
 
           return (
             <View key={lvl} style={styles.levelBlock}>
-              <Pressable
-                testID={`grammar-level-${lvl}`}
+              <View
+                testID={`grammar-level-header-${lvl}`}
                 style={[
                   styles.levelHeader,
                   { backgroundColor: colors.card, borderColor: isCurrent ? colors.tint : 'transparent' },
                 ]}
-                onPress={() => setOpenLevel(isOpen ? null : lvl)}
               >
                 <Text style={[styles.levelName, { color: colors.text }]}>
-                  {isOpen ? '▾' : '▸'} {lvl}
+                  {lvl}
                   {isCurrent ? ` · ${s.grammar.yourLevel}` : ''}
                 </Text>
                 <Text style={[styles.levelMeta, { color: colors.tabIconDefault }]}>
                   {s.grammar.levelMeta(done, topics.length, written)}
                 </Text>
                 <LevelStanding level={lvl} learnedLang={learnedLang} contentLang={contentLang} evidence={evidence} />
-              </Pressable>
+              </View>
               <ExamStrip level={lvl} learnedLang={learnedLang} contentLang={contentLang} evidence={evidence} examStatus={examStatus.get(lvl)} />
 
               {isOpen
@@ -570,10 +580,6 @@ const styles = StyleSheet.create({
   brutalTitle: { flexShrink: 1, fontSize: 30, fontWeight: '500', textTransform: 'uppercase' },
   brutalTitleNarrow: { fontSize: 22 },
   brutalSmall: { fontSize: 11, fontWeight: '500' },
-  brutalLevelRow: { flexDirection: 'row', gap: 8 },
-  brutalLevelBox: { flex: 1 },
-  brutalLevelInner: { paddingVertical: 8, alignItems: 'center' },
-  brutalLevelText: { fontSize: 14, fontWeight: '500' },
   brutalUnit: { gap: 10 },
   brutalUnitName: { fontSize: 11, fontWeight: '500', textTransform: 'uppercase', letterSpacing: 0.5, marginTop: 6 },
   brutalTopic: { padding: 12, gap: 6 },

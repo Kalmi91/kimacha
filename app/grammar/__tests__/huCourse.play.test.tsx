@@ -31,6 +31,7 @@ import { speak, speakSequence } from '@/lib/speech';
 import GrammarLessonScreen from '../[topic]';
 import GrammarSyllabusScreen from '@/app/(tabs)/course';
 import { makeFlush } from '@/test-utils/flush';
+import { resetGrammarTabLevel } from '@/test-utils/grammarTab';
 
 const flush = makeFlush(3);
 
@@ -42,6 +43,7 @@ describe.each([
     const db = getDb();
     await db.setOnboarding(source, 'hu');
     (db as any).__setLevelForTest('A1');
+    await resetGrammarTabLevel(db);
     mockPush.mockClear();
     (speak as jest.Mock).mockClear();
     (speakSequence as jest.Mock).mockClear();

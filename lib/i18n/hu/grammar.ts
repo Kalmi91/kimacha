@@ -275,6 +275,12 @@ const hu: typeof en = {
     done: 'Kész',
     progressLabel: (n: number, total: number) => `${n}. kérdés ${total}-ből`,
   },
+  // The Grammar tab's level buttons, overall bar and per-level test rows.
+  levelTabs: {
+    yourOverall: (lvl: string, pct: number) => `A szinted: ${lvl} · összesen ${pct}%`,
+    testRow: (lvl: string, pct: number | null) => (pct === null ? `${lvl} szintteszt` : `${lvl} szintteszt ${pct}%`),
+    levelButton: (lvl: string) => `${lvl} szint`,
+  },
 };
 
 export default hu;

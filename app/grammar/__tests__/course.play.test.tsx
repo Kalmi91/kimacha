@@ -44,6 +44,7 @@ import { hashString } from '@/lib/shuffle';
 import GrammarLessonScreen from '../[topic]';
 import GrammarSyllabusScreen from '@/app/(tabs)/course';
 import { makeFlush } from '@/test-utils/flush';
+import { resetGrammarTabLevel } from '@/test-utils/grammarTab';
 
 const flush = makeFlush(3);
 
@@ -52,6 +53,7 @@ describe('grammar course', () => {
     const db = getDb();
     await db.setOnboarding('en', 'es');
     (db as any).__setLevelForTest('A1');
+    await resetGrammarTabLevel(db);
   });
 
   it('lists the whole syllabus, A1 open, later levels reachable', async () => {

@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { Pressable, StyleSheet, Switch, View, type StyleProp, type TextStyle, type ViewStyle } from 'react-native';
+import { Pressable, StyleSheet, Switch, View, type AccessibilityState, type StyleProp, type TextStyle, type ViewStyle } from 'react-native';
 import { Text } from '@/components/KText';
 
 import Colors from '@/constants/Colors';
@@ -108,6 +108,7 @@ export function BrutalBox({
   action = false,
   testID,
   accessibilityLabel,
+  accessibilityState,
 }: {
   children?: ReactNode;
   fill?: BrutalFill;
@@ -125,6 +126,7 @@ export function BrutalBox({
   action?: boolean;
   testID?: string;
   accessibilityLabel?: string;
+  accessibilityState?: AccessibilityState;
 }) {
   const g = useGrammarColors();
   const { shape } = useSkin().skin;
@@ -167,6 +169,7 @@ export function BrutalBox({
           testID={testID}
           accessibilityRole="button"
           accessibilityLabel={accessibilityLabel}
+          accessibilityState={accessibilityState}
           disabled={disabled}
           onPress={onPress}
           style={front}

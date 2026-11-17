@@ -271,6 +271,12 @@ const de: typeof en = {
     done: 'Fertig',
     progressLabel: (n: number, total: number) => `Frage ${n} von ${total}`,
   },
+  // The Grammar tab's level buttons, overall bar and per-level test rows.
+  levelTabs: {
+    yourOverall: (lvl: string, pct: number) => `Dein Niveau: ${lvl} · gesamt ${pct}%`,
+    testRow: (lvl: string, pct: number | null) => (pct === null ? `${lvl} Niveautest` : `${lvl} Niveautest ${pct}%`),
+    levelButton: (lvl: string) => `Niveau ${lvl}`,
+  },
 };
 
 export default de;
