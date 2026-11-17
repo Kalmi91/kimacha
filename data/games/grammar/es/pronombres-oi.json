@@ -1270,6 +1270,451 @@
         }
       ],
       "correctIndex": 0
+    },
+    {
+      "id": "oi-tr-01",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "I give my mom a gift.",
+        "es": "Le doy un regalo a mi mamá."
+      },
+      "answer": "Le voy a dar un regalo a mi mamá.",
+      "accept": [
+        "Voy a darle un regalo a mi mamá."
+      ],
+      "wordIds": [
+        "33",
+        "81",
+        "695"
+      ],
+      "why": {
+        "en": "With ir a + infinitive the pronoun goes before ir (le voy a dar) or attaches to the infinitive (voy a darle).",
+        "es": "Con ir a + infinitivo el pronombre va antes de ir (le voy a dar) o pegado al infinitivo (voy a darle)."
+      }
+    },
+    {
+      "id": "oi-tr-02",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "I write you a message.",
+        "es": "Te escribo un mensaje."
+      },
+      "answer": "Te voy a escribir un mensaje.",
+      "accept": [
+        "Voy a escribirte un mensaje."
+      ],
+      "wordIds": [
+        "33",
+        "146"
+      ],
+      "why": {
+        "en": "With ir a + infinitive the pronoun goes before ir (le voy a dar) or attaches to the infinitive (voy a darle).",
+        "es": "Con ir a + infinitivo el pronombre va antes de ir (le voy a dar) o pegado al infinitivo (voy a darle)."
+      }
+    },
+    {
+      "id": "oi-tr-03",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "I send them the report.",
+        "es": "Les mando el reporte."
+      },
+      "answer": "Les voy a mandar el reporte.",
+      "accept": [
+        "Voy a mandarles el reporte."
+      ],
+      "wordIds": [
+        "33"
+      ],
+      "why": {
+        "en": "With ir a + infinitive the pronoun goes before ir (le voy a dar) or attaches to the infinitive (voy a darle).",
+        "es": "Con ir a + infinitivo el pronombre va antes de ir (le voy a dar) o pegado al infinitivo (voy a darle)."
+      }
+    },
+    {
+      "id": "oi-tr-04",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "She explains the homework to us.",
+        "es": "Nos explica la tarea."
+      },
+      "answer": "Nos va a explicar la tarea.",
+      "accept": [
+        "Va a explicarnos la tarea."
+      ],
+      "wordIds": [
+        "33"
+      ],
+      "why": {
+        "en": "With ir a + infinitive the pronoun goes before ir (le voy a dar) or attaches to the infinitive (voy a darle).",
+        "es": "Con ir a + infinitivo el pronombre va antes de ir (le voy a dar) o pegado al infinitivo (voy a darle)."
+      }
+    },
+    {
+      "id": "oi-tr-05",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "You bring me a coffee.",
+        "es": "Me traes un café."
+      },
+      "answer": "Me vas a traer un café.",
+      "accept": [
+        "Vas a traerme un café."
+      ],
+      "wordIds": [
+        "33",
+        "203",
+        "28"
+      ],
+      "why": {
+        "en": "With ir a + infinitive the pronoun goes before ir (le voy a dar) or attaches to the infinitive (voy a darle).",
+        "es": "Con ir a + infinitivo el pronombre va antes de ir (le voy a dar) o pegado al infinitivo (voy a darle)."
+      }
+    },
+    {
+      "id": "oi-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Tengo una hermana. ___ compro un libro y ___ doy un beso.",
+      "answers": [
+        "Le",
+        "le"
+      ],
+      "tr": {
+        "en": "I have a sister. I buy her a book and give her a kiss.",
+        "es": "Tengo una hermana. Le compro un libro y le doy un beso."
+      },
+      "why": {
+        "en": "The pronoun le stands for one person: to him, to her, to you (formal).",
+        "es": "El pronombre le representa a una persona: a él, a ella, a usted."
+      }
+    },
+    {
+      "id": "oi-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Mis papás viven lejos. ___ escribo todos los días y ___ mando un correo.",
+      "answers": [
+        "Les",
+        "les"
+      ],
+      "tr": {
+        "en": "My parents live far away. I write to them every day and send them an email.",
+        "es": "Mis papás viven lejos. Les escribo todos los días y les mando un correo."
+      },
+      "why": {
+        "en": "The pronoun les stands for several people: to them, to you all.",
+        "es": "El pronombre les representa a varias personas: a ellos, a ellas, a ustedes."
+      }
+    },
+    {
+      "id": "oi-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Tú eres mi amigo. ___ doy un café y ___ escribo un mensaje.",
+      "answers": [
+        "Te",
+        "te"
+      ],
+      "tr": {
+        "en": "You are my friend. I give you a coffee and write you a message.",
+        "es": "Tú eres mi amigo. Te doy un café y te escribo un mensaje."
+      },
+      "why": {
+        "en": "The pronoun te means to you, for you (informal).",
+        "es": "El pronombre te significa a ti."
+      }
+    },
+    {
+      "id": "oi-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Mi jefa habla con nosotros. ___ explica el trabajo y ___ da la tarea.",
+      "answers": [
+        "Nos",
+        "nos"
+      ],
+      "tr": {
+        "en": "My boss talks with us. She explains the work to us and gives us the homework.",
+        "es": "Mi jefa habla con nosotros. Nos explica el trabajo y nos da la tarea."
+      },
+      "why": {
+        "en": "The pronoun nos means to us, for us.",
+        "es": "El pronombre nos significa a nosotros."
+      }
+    },
+    {
+      "id": "oi-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Mi hermano está en casa. Yo ___ traigo un café y él ___ cuenta una historia.",
+      "answers": [
+        "le",
+        "me"
+      ],
+      "tr": {
+        "en": "My brother is at home. I bring him a coffee and he tells me a story.",
+        "es": "Mi hermano está en casa. Yo le traigo un café y él me cuenta una historia."
+      },
+      "why": {
+        "en": "Le means to him; me means to me. The pronoun says who receives the action.",
+        "es": "Le es a él; me es a mí. El pronombre dice quién recibe la acción."
+      }
+    },
+    {
+      "id": "oi-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "Yo les doy un regalo a mi hermana.",
+      "wrongIndex": 1,
+      "answer": "le",
+      "explain": {
+        "en": "One person (mi hermana) needs le, not les.",
+        "es": "Una sola persona (mi hermana) pide le, no les."
+      },
+      "tr": {
+        "en": "I give a gift to my sister.",
+        "es": "Yo le doy un regalo a mi hermana."
+      }
+    },
+    {
+      "id": "oi-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "A mis papás le escribo un mensaje.",
+      "wrongIndex": 3,
+      "answer": "les",
+      "explain": {
+        "en": "Several people (mis papás) need les, not le.",
+        "es": "Varias personas (mis papás) piden les, no le."
+      },
+      "tr": {
+        "en": "I write a message to my parents.",
+        "es": "A mis papás les escribo un mensaje."
+      }
+    },
+    {
+      "id": "oi-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "Ella lo da el libro a Juan.",
+      "wrongIndex": 1,
+      "answer": "le",
+      "explain": {
+        "en": "To whom something is given is le, not lo.",
+        "es": "A quién se le da algo es le, no lo."
+      },
+      "tr": {
+        "en": "She gives the book to Juan.",
+        "es": "Ella le da el libro a Juan."
+      }
+    },
+    {
+      "id": "oi-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "Mi mamá me da un regalo a mi hermano y a mí.",
+      "wrongIndex": 2,
+      "answer": "nos",
+      "explain": {
+        "en": "My brother and me together means we, so the pronoun is nos.",
+        "es": "Mi hermano y yo juntos es nosotros, así que el pronombre es nos."
+      },
+      "tr": {
+        "en": "My mom gives a gift to my brother and me.",
+        "es": "Mi mamá nos da un regalo a mi hermano y a mí."
+      }
+    },
+    {
+      "id": "oi-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "A ti le compro un café.",
+      "wrongIndex": 2,
+      "answer": "te",
+      "explain": {
+        "en": "A ti means you (informal), so the pronoun is te.",
+        "es": "A ti es tú, así que el pronombre es te."
+      },
+      "tr": {
+        "en": "I buy you a coffee.",
+        "es": "A ti te compro un café."
+      }
+    },
+    {
+      "id": "oi-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "me",
+        "le",
+        "les"
+      ],
+      "es": "A mi mamá ___ doy un beso.",
+      "word": "le",
+      "answer": "le",
+      "tr": {
+        "en": "I give my mom a kiss.",
+        "es": "A mi mamá le doy un beso."
+      },
+      "why": {
+        "en": "The pronoun le stands for one person: to him, to her, to you (formal).",
+        "es": "El pronombre le representa a una persona: a él, a ella, a usted."
+      }
+    },
+    {
+      "id": "oi-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "te",
+        "le",
+        "nos"
+      ],
+      "es": "Mi amigo ___ escribe a mi hermano y a mí.",
+      "word": "nos",
+      "answer": "nos",
+      "tr": {
+        "en": "My friend writes to my brother and me.",
+        "es": "Mi amigo nos escribe a mi hermano y a mí."
+      },
+      "why": {
+        "en": "The pronoun nos means to us, for us.",
+        "es": "El pronombre nos significa a nosotros."
+      }
+    },
+    {
+      "id": "oi-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "les",
+        "te",
+        "me"
+      ],
+      "es": "A mis hermanos ___ explico la tarea.",
+      "word": "les",
+      "answer": "les",
+      "tr": {
+        "en": "I explain the homework to my brothers and sisters.",
+        "es": "A mis hermanos les explico la tarea."
+      },
+      "why": {
+        "en": "The pronoun les stands for several people: to them, to you all.",
+        "es": "El pronombre les representa a varias personas: a ellos, a ellas, a ustedes."
+      }
+    },
+    {
+      "id": "oi-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "escribir",
+        "comprar",
+        "cantar"
+      ],
+      "es": "Le ___ un mensaje a mi amiga.",
+      "word": "escribir",
+      "answer": "escribo",
+      "tr": {
+        "en": "I write a message to my friend.",
+        "es": "Le escribo un mensaje a mi amiga."
+      },
+      "why": {
+        "en": "After the pronoun le the verb agrees with yo: escribir becomes escribo.",
+        "es": "Después del pronombre le el verbo concuerda con yo: escribir pasa a escribo."
+      }
+    },
+    {
+      "id": "oi-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "mandar",
+        "caminar",
+        "dormir"
+      ],
+      "es": "Les ___ la tarea a los estudiantes.",
+      "word": "mandar",
+      "answer": "mando",
+      "tr": {
+        "en": "I send the homework to the students.",
+        "es": "Les mando la tarea a los estudiantes."
+      },
+      "why": {
+        "en": "After the pronoun les the verb agrees with yo: mandar becomes mando.",
+        "es": "Después del pronombre les el verbo concuerda con yo: mandar pasa a mando."
+      }
+    },
+    {
+      "id": "oi-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "I give her a gift.",
+        "es": "Le doy un regalo."
+      },
+      "es": "Le doy un regalo."
+    },
+    {
+      "id": "oi-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "I write you a message.",
+        "es": "Te escribo un mensaje."
+      },
+      "es": "Te escribo un mensaje."
+    },
+    {
+      "id": "oi-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "They send us the report.",
+        "es": "Nos mandan el reporte."
+      },
+      "es": "Nos mandan el reporte."
+    },
+    {
+      "id": "oi-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "Do you bring me a coffee?",
+        "es": "¿Me traes un café?"
+      },
+      "es": "¿Me traes un café?"
+    },
+    {
+      "id": "oi-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "I write him an email.",
+        "es": "Le escribo un correo."
+      },
+      "es": "Le escribo un correo."
     }
   ]
 }
