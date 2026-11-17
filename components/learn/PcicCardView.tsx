@@ -24,7 +24,7 @@ import CardShell from '@/components/learn/CardShell';
 import CardNote from '@/components/learn/CardNote';
 import { SkinBackdrop, SkinHeader, SkinSpeakLabel, SkinWord } from '@/components/skins/Slots';
 import DockedAction from '@/components/learn/DockedAction';
-import { dockScrollInsets } from '@/components/learn/dockScrollInsets';
+import { compactTypingNeeded, dockScrollInsets, shortWindow } from '@/components/learn/dockScrollInsets';
 import { useAnswerAboveKeys } from '@/components/learn/useAnswerAboveKeys';
 import PcicRevealedAnswer, { SpainFormLabel } from '@/components/learn/PcicRevealedAnswer';
 import MistakesEntry from '@/components/learn/MistakesEntry';
@@ -115,10 +115,12 @@ export default function PcicCardView({
   const typingPadding = webKeyboardOpen ? WEB_TYPING_PADDING : null;
   // FB659 retype: while its field has the keyboard the docked bar steps aside, and the card is scrolled so the field sits
   // above the keys before they open (otherwise the window pans and the header slides under the status bar).
-  const scrollRef = useRef<ScrollView>(null);
+  const scrollRef = useRef<ScrollView>(null), promptRef = useRef<View>(null);
   const [retypeOpenKey, setRetypeOpenKey] = useState('');
   const [retypeFocused, setRetypeFocused] = useState(false);
   const { height: windowH } = useWindowDimensions();
+  const fieldBesidePrompt = Platform.OS === 'android' && shortWindow(windowH);
+  const compactTyping = Platform.OS === 'android' && !grade && compactTypingNeeded(windowH, kbHeight, dockLift);
   const retypeKey = current ? `${current.itemId}-${cardSeq}` : '';
   const retypeOpen = !!retypeKey && retypeOpenKey === retypeKey;
   const scrollToRetype = (block: View) => {
@@ -126,7 +128,7 @@ export default function PcicCardView({
     const inner = (scrollRef.current as unknown as { getInnerViewRef?: () => View | null } | null)?.getInnerViewRef?.();
     if (inner) block.measureLayout(inner as never, (_x, y) => scrollRef.current?.scrollTo({ y: Math.max(0, y - 16), animated: false }), () => {});
   };
-  const { setScrollerH, stepAside, relayout } = useAnswerAboveKeys(scrollRef, inputRef, kbHeight, dockH, dockLift, !!currentItem && noteOpenFor === currentItem.id);
+  const { setScrollerH, stepAside, onFieldLayout, relayout } = useAnswerAboveKeys(scrollRef, inputRef, kbHeight, dockH, dockLift, !!currentItem && noteOpenFor === currentItem.id, { compact: compactTyping, promptRef, cardKey: retypeKey });
 
   // The header's FIRST chip is the selected level,
   // tapping it opens the level picker sheet; the existing four chips are unchanged.
@@ -176,7 +178,7 @@ export default function PcicCardView({
         <ScreenFeedback placement="inline" compact level={level} languagePair={languagePair} currentCard={feedbackCard} />
       </View>
     </View>
-    {!webKeyboardOpen && (
+    {!webKeyboardOpen && !compactTyping && (
     <View style={styles.badgeRowWrap}>
       <BadgeRow
         singleLine
@@ -192,7 +194,7 @@ export default function PcicCardView({
     </View>
     )}
     </View>
-    {!webKeyboardOpen && <MistakesEntry colors={colors} />}
+    {!webKeyboardOpen && !compactTyping && <MistakesEntry colors={colors} />}
     </SkinHeader>
   );
 
@@ -375,6 +377,16 @@ export default function PcicCardView({
   // in the same place/size, with the suggested grade in the label.
   const nextGrade = grade ? suggestedGrade(grade) : null;
   const dockInsets = dockScrollInsets(dockH, dockLift, kbHeight > 0);
+  // The keyed field stays mounted beside the prompt while optional details move below it on short screens.
+  const answerField = <TextInput
+    key={`pcic-in-${current.itemId}-${cardSeq}`} ref={inputRef} onLayout={onFieldLayout}
+    style={[styles.input, { color: colors.text, borderColor: colors.tabIconDefault }, themedInputStyle(g), fieldBesidePrompt && { marginTop: 8 }]}
+    value={typedAnswer} onChangeText={setTypedAnswer}
+    onSubmitEditing={grade ? () => nextGrade && handleGrade(nextGrade) : handleCheck}
+    returnKeyType={compactTyping ? 'done' : undefined} editable={!grade}
+    placeholder={s.card.typeIn(target)} placeholderTextColor={colors.tabIconDefault}
+    {...answerInputProps}
+  />;
 
   return (
     <KeyboardAvoidingView
@@ -396,7 +408,7 @@ export default function PcicCardView({
         onClose={() => setLevelSheetOpen(false)}
       />
 
-      {!webKeyboardOpen && (
+      {!webKeyboardOpen && !compactTyping && (
       <ProgressBar
         testID="learn-progress"
         continuous
@@ -427,12 +439,12 @@ export default function PcicCardView({
         >
           {/* the 🔊 next to the word speaks the English again (added afterwards),
               with the same call as the read-aloud on opening a card. */}
-          <View style={styles.wordRow}>
+          <View ref={promptRef} collapsable={false} style={styles.wordRow}>
             {/* a long word / sentence ("reason (justification)", "they are
                 going to arrive") with a font size that depends on its length and a shrinking width;
                 without this the native row extended beyond the card and its left edge was clipped. */}
             <SkinWord word={promptSource ?? ''} lang={sourceLang}>
-              <FitText variant="word" base={32} maxLines={3} reserve={150} style={[styles.frontText, { color: colors.text }]}>
+              <FitText variant="word" base={32} maxLines={compactTyping ? 2 : 3} reserve={150} style={[styles.frontText, { color: colors.text }]}>
                 {promptSource ?? ''}
               </FitText>
             </SkinWord>
@@ -442,6 +454,7 @@ export default function PcicCardView({
               <SkinSpeakLabel />
             </View>
           </View>
+          {fieldBesidePrompt && answerField}
           {sourceLang === 'es' && <SpainFormLabel forms={spainFormsInAnswer(promptSource ?? '')} label={s.pcic.spainLabel} color={colors.text} testID="pcic-prompt-spain" />}
           {/* a short sentence under the word when the question has several
               meanings; the part marked `*…*` is bold + pink underline, the asterisks are not
@@ -540,18 +553,7 @@ export default function PcicCardView({
             </View>
           )}
 
-          <TextInput
-            key={`pcic-in-${current.itemId}-${cardSeq}`}
-            ref={inputRef}
-            style={[styles.input, { color: colors.text, borderColor: colors.tabIconDefault }, themedInputStyle(g)]}
-            value={typedAnswer}
-            onChangeText={setTypedAnswer}
-            onSubmitEditing={grade ? () => nextGrade && handleGrade(nextGrade) : handleCheck}
-            editable={!grade}
-            placeholder={s.card.typeIn(target)}
-            placeholderTextColor={colors.tabIconDefault}
-            {...answerInputProps}
-          />
+          {!fieldBesidePrompt && answerField}
 
           {grade && (
             <PcicRevealedAnswer

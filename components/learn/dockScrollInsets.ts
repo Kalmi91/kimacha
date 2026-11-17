@@ -15,8 +15,21 @@ export function answerScrollTarget(fieldY: number, fieldH: number, viewportH: nu
 // On a short screen the header, the keys and the docked bar leave no room for the field itself (a field is ~58 dp plus a
 // gap): then the bar steps aside while typing (the keyboard's ✓ submits), as it already does for the retype field.
 export const MIN_ANSWER_ROOM = 72;
-export function dockStepsAside(noteOpen: boolean, viewportH: number, dockH: number, dockLift: number): boolean {
-  return noteOpen && viewportH > 0 && viewportH - dockH - dockLift < MIN_ANSWER_ROOM;
+export function dockStepsAside(noteOpen: boolean, viewportH: number, dockH: number, dockLift: number, answerRoom = MIN_ANSWER_ROOM): boolean {
+  return noteOpen && viewportH > 0 && viewportH - dockH - dockLift < answerRoom;
+}
+
+// The answer field changes its place in the tree on short screens, so this must not depend on the keyboard:
+// moving the field when the keys open would remount it and Android would close the keyboard again.
+export const SHORT_WINDOW_DP = 700;
+export function shortWindow(windowH: number): boolean {
+  return windowH > 0 && windowH < SHORT_WINDOW_DP;
+}
+
+// Below this keyboard clearance, use the compact header and keep the prompt next to the field.
+// Window height stays independent of those layout changes, so collapsing the header cannot toggle itself back off.
+export function compactTypingNeeded(windowH: number, kbHeight: number, dockLift: number): boolean {
+  return kbHeight > 0 && windowH - dockLift < 360;
 }
 
 export function dockScrollInsets(dockH: number, dockLift: number, keyboardOpen: boolean) {
