@@ -308,7 +308,7 @@ describe('form tasks and result data', () => {
       }
     }
     expect(checked).toBeGreaterThan(2000);
-    expect(own).toBe(218); // 73 + the 140 non-verb A1 form tasks of the Spanish course (E122) + the 5 estar forms of hay-estar (E132)
+    expect(own).toBe(667); // 73 + the 140 non-verb A1 form tasks of the Spanish course (E122) + the 5 estar forms of hay-estar (E132) + 449 of the German, English and Hungarian courses (E137)
     expect(tables).toBeGreaterThan(checked / 2);
   });
 

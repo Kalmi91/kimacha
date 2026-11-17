@@ -89,9 +89,11 @@ describe('every sk has a q (data/games/grammar/**)', () => {
   });
 
   // E122: the generated question ("What is the form of Masculino plural for rojo?") is only fine for a conjugation (a person table);
-  // every other A1 form task of the Spanish course says in its own words what to type.
-  it('every non-verb A1 form task of the Spanish course has its own q (en and es)', () => {
-    const dir = path.join(process.cwd(), 'data', 'games', 'grammar', 'es');
+  // every other A1 form task of every course says in its own words what to type (E122 es, E137 de, en, hu).
+  const minNonVerb: Record<string, number> = { es: 140, de: 232, en: 16, hu: 201 };
+  it.each(Object.keys(minNonVerb))('every non-verb A1 form task of the %s course has its own q (en and es) and its sidecar translations', (course) => {
+    const games = path.join(process.cwd(), 'data', 'games');
+    const dir = path.join(games, 'grammar', course);
     const personHeader = /^(person|persona|pronoun|pronombre)$/i;
     const bad: string[] = [];
     let nonVerb = 0;
@@ -102,6 +104,10 @@ describe('every sk has a q (data/games/grammar/**)', () => {
         items?: { id: string; kind: string; table?: string; q?: { en?: string; es?: string } }[];
       };
       if (lesson.level !== 'A1') continue;
+      const sidecars = ['grammar-de', 'grammar-hu']
+        .map((d) => path.join(games, d, course, file))
+        .filter((p) => fs.existsSync(p))
+        .map((p) => JSON.parse(fs.readFileSync(p, 'utf8')) as Record<string, string>);
       for (const it of lesson.items ?? []) {
         if (it.kind !== 'form') continue;
         const table = (lesson.body ?? []).find((b) => b.kind === 'table' && b.id === it.table);
@@ -109,10 +115,11 @@ describe('every sk has a q (data/games/grammar/**)', () => {
         const conjugation = !table || (!!h && (personHeader.test(h.en ?? '') || personHeader.test(h.es ?? '')));
         if (conjugation) continue;
         nonVerb++;
-        if (!it.q?.en || !it.q?.es || !/^¿.*\?/.test(it.q.es)) bad.push(`${file}#${it.id}`);
+        if (!it.q?.en || !it.q?.es || (course === 'es' && !/^¿.*\?/.test(it.q.es))) bad.push(`${file}#${it.id}`);
+        else if (sidecars.some((s) => !s[it.q!.en!])) bad.push(`${file}#${it.id} (sidecar)`);
       }
     }
-    expect(nonVerb).toBeGreaterThan(100);
+    expect(nonVerb).toBeGreaterThanOrEqual(minNonVerb[course]);
     expect(bad).toEqual([]);
   });
 });
