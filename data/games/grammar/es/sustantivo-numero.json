@@ -1578,7 +1578,7 @@
       "id": "sn-art-01",
       "set": "article",
       "sentence": "Mi madre tiene ___ carro nuevo.",
-      "options": ["el", "la", "los"],
+      "options": ["el", "la"],
       "correct": 0,
       "why": {
         "en": "«carro» ends in -o, so it is masculine: el carro.",
@@ -1588,10 +1588,6 @@
         "la": {
           "en": "This would make «carro» feminine, but it is masculine; correct: Mi madre tiene el carro nuevo.",
           "es": "Esto haría femenino a «carro», pero es masculino; correcto: Mi madre tiene el carro nuevo."
-        },
-        "los": {
-          "en": "This is the plural article, but here the noun is singular; correct: Mi madre tiene el carro nuevo.",
-          "es": "Este es el artículo plural, pero aquí el sustantivo está en singular; correcto: Mi madre tiene el carro nuevo."
         }
       },
       "examples": ["El carro es nuevo.", "El gato está en la mesa."],
@@ -1601,7 +1597,7 @@
       "id": "sn-art-02",
       "set": "article",
       "sentence": "Necesito ___ papel para escribir.",
-      "options": ["el", "la", "los"],
+      "options": ["el", "la"],
       "correct": 0,
       "why": {
         "en": "The ending of «papel» does not show its gender, so learn it with its article: el papel (masculine).",
@@ -1611,10 +1607,6 @@
         "la": {
           "en": "This would make «papel» feminine, but it is masculine; correct: Necesito el papel para escribir.",
           "es": "Esto haría femenino a «papel», pero es masculino; correcto: Necesito el papel para escribir."
-        },
-        "los": {
-          "en": "This is the plural article, but here the noun is singular; correct: Necesito el papel para escribir.",
-          "es": "Este es el artículo plural, pero aquí el sustantivo está en singular; correcto: Necesito el papel para escribir."
         }
       },
       "examples": ["El libro está en la mesa.", "El lunes tengo clase."],
@@ -1624,7 +1616,7 @@
       "id": "sn-art-03",
       "set": "article",
       "sentence": "Creo que ___ hombre está en la calle.",
-      "options": ["el", "la", "los"],
+      "options": ["el", "la"],
       "correct": 0,
       "why": {
         "en": "The ending of «hombre» does not show its gender, so learn it with its article: el hombre (masculine).",
@@ -1634,10 +1626,6 @@
         "la": {
           "en": "This would make «hombre» feminine, but it is masculine; correct: Creo que el hombre está en la calle.",
           "es": "Esto haría femenino a «hombre», pero es masculino; correcto: Creo que el hombre está en la calle."
-        },
-        "los": {
-          "en": "This is the plural article, but here the noun is singular; correct: Creo que el hombre está en la calle.",
-          "es": "Este es el artículo plural, pero aquí el sustantivo está en singular; correcto: Creo que el hombre está en la calle."
         }
       },
       "examples": ["El libro está en la mesa.", "El lunes tengo clase."],
@@ -1647,7 +1635,7 @@
       "id": "sn-art-04",
       "set": "article",
       "sentence": "Me gusta ___ café con leche.",
-      "options": ["el", "la", "los"],
+      "options": ["el", "la"],
       "correct": 0,
       "why": {
         "en": "The ending of «café» does not show its gender, so learn it with its article: el café (masculine).",
@@ -1657,10 +1645,6 @@
         "la": {
           "en": "This would make «café» feminine, but it is masculine; correct: Me gusta el café con leche.",
           "es": "Esto haría femenino a «café», pero es masculino; correcto: Me gusta el café con leche."
-        },
-        "los": {
-          "en": "This is the plural article, but here the noun is singular; correct: Me gusta el café con leche.",
-          "es": "Este es el artículo plural, pero aquí el sustantivo está en singular; correcto: Me gusta el café con leche."
         }
       },
       "examples": ["El libro está en la mesa.", "El lunes tengo clase."],
@@ -1670,7 +1654,7 @@
       "id": "sn-art-05",
       "set": "article",
       "sentence": "___ viaje es muy largo.",
-      "options": ["El", "La", "Los"],
+      "options": ["El", "La"],
       "correct": 0,
       "why": {
         "en": "Nouns ending in -aje are masculine: el viaje.",
@@ -1680,10 +1664,6 @@
         "La": {
           "en": "This would make «viaje» feminine, but it is masculine; correct: El viaje es muy largo.",
           "es": "Esto haría femenino a «viaje», pero es masculino; correcto: El viaje es muy largo."
-        },
-        "Los": {
-          "en": "This is the plural article, but here the noun is singular; correct: El viaje es muy largo.",
-          "es": "Este es el artículo plural, pero aquí el sustantivo está en singular; correcto: El viaje es muy largo."
         }
       },
       "examples": ["El color es azul.", "El viaje es largo."],
@@ -1693,7 +1673,7 @@
       "id": "sn-art-06",
       "set": "article",
       "sentence": "Me gusta ___ país donde vivo.",
-      "options": ["el", "la", "los"],
+      "options": ["el", "la"],
       "correct": 0,
       "why": {
         "en": "The ending of «país» does not show its gender, so learn it with its article: el país (masculine).",
@@ -1703,10 +1683,6 @@
         "la": {
           "en": "This would make «país» feminine, but it is masculine; correct: Me gusta el país donde vivo.",
           "es": "Esto haría femenino a «país», pero es masculino; correcto: Me gusta el país donde vivo."
-        },
-        "los": {
-          "en": "This is the plural article, but here the noun is singular; correct: Me gusta el país donde vivo.",
-          "es": "Este es el artículo plural, pero aquí el sustantivo está en singular; correcto: Me gusta el país donde vivo."
         }
       },
       "examples": ["El libro está en la mesa.", "El lunes tengo clase."],
@@ -1735,7 +1711,7 @@
       "id": "sn-art-08",
       "set": "article",
       "sentence": "Me gusta ___ mar.",
-      "options": ["el", "la", "los"],
+      "options": ["el", "la"],
       "correct": 0,
       "why": {
         "en": "The ending of «mar» does not show its gender, so learn it with its article: el mar (masculine).",
@@ -1745,10 +1721,6 @@
         "la": {
           "en": "This would make «mar» feminine, but it is masculine; correct: Me gusta el mar.",
           "es": "Esto haría femenino a «mar», pero es masculino; correcto: Me gusta el mar."
-        },
-        "los": {
-          "en": "This is the plural article, but here the noun is singular; correct: Me gusta el mar.",
-          "es": "Este es el artículo plural, pero aquí el sustantivo está en singular; correcto: Me gusta el mar."
         }
       },
       "examples": ["El libro está en la mesa.", "El lunes tengo clase."],
@@ -1758,7 +1730,7 @@
       "id": "sn-art-09",
       "set": "article",
       "sentence": "Tengo ___ día libre.",
-      "options": ["el", "la", "los"],
+      "options": ["el", "la"],
       "correct": 0,
       "why": {
         "en": "«día» ends in -a but is masculine, one of the exceptions to learn: el día.",
@@ -1768,10 +1740,6 @@
         "la": {
           "en": "This would make «día» feminine, but it is masculine; correct: Tengo el día libre.",
           "es": "Esto haría femenino a «día», pero es masculino; correcto: Tengo el día libre."
-        },
-        "los": {
-          "en": "This is the plural article, but here the noun is singular; correct: Tengo el día libre.",
-          "es": "Este es el artículo plural, pero aquí el sustantivo está en singular; correcto: Tengo el día libre."
         }
       },
       "examples": ["El problema es difícil.", "El idioma es bonito."],
@@ -1781,7 +1749,7 @@
       "id": "sn-art-10",
       "set": "article",
       "sentence": "Tengo ___ mapa de la ciudad.",
-      "options": ["el", "la", "los"],
+      "options": ["el", "la"],
       "correct": 0,
       "why": {
         "en": "«mapa» ends in -a but is masculine, one of the exceptions to learn: el mapa.",
@@ -1791,10 +1759,6 @@
         "la": {
           "en": "This would make «mapa» feminine, but it is masculine; correct: Tengo el mapa de la ciudad.",
           "es": "Esto haría femenino a «mapa», pero es masculino; correcto: Tengo el mapa de la ciudad."
-        },
-        "los": {
-          "en": "This is the plural article, but here the noun is singular; correct: Tengo el mapa de la ciudad.",
-          "es": "Este es el artículo plural, pero aquí el sustantivo está en singular; correcto: Tengo el mapa de la ciudad."
         }
       },
       "examples": ["El problema es difícil.", "El idioma es bonito."],
@@ -1804,7 +1768,7 @@
       "id": "sn-art-11",
       "set": "article",
       "sentence": "___ problema es muy difícil.",
-      "options": ["El", "La", "Los"],
+      "options": ["El", "La"],
       "correct": 0,
       "why": {
         "en": "«problema» ends in -a but is masculine, one of the exceptions to learn: el problema.",
@@ -1814,10 +1778,6 @@
         "La": {
           "en": "This would make «problema» feminine, but it is masculine; correct: El problema es muy difícil.",
           "es": "Esto haría femenino a «problema», pero es masculino; correcto: El problema es muy difícil."
-        },
-        "Los": {
-          "en": "This is the plural article, but here the noun is singular; correct: El problema es muy difícil.",
-          "es": "Este es el artículo plural, pero aquí el sustantivo está en singular; correcto: El problema es muy difícil."
         }
       },
       "examples": ["El problema es difícil.", "El idioma es bonito."],
@@ -1827,7 +1787,7 @@
       "id": "sn-art-12",
       "set": "article",
       "sentence": "Me gusta ___ idioma español.",
-      "options": ["el", "la", "los"],
+      "options": ["el", "la"],
       "correct": 0,
       "why": {
         "en": "«idioma» ends in -a but is masculine, one of the exceptions to learn: el idioma.",
@@ -1837,10 +1797,6 @@
         "la": {
           "en": "This would make «idioma» feminine, but it is masculine; correct: Me gusta el idioma español.",
           "es": "Esto haría femenino a «idioma», pero es masculino; correcto: Me gusta el idioma español."
-        },
-        "los": {
-          "en": "This is the plural article, but here the noun is singular; correct: Me gusta el idioma español.",
-          "es": "Este es el artículo plural, pero aquí el sustantivo está en singular; correcto: Me gusta el idioma español."
         }
       },
       "examples": ["El problema es difícil.", "El idioma es bonito."],
@@ -1850,7 +1806,7 @@
       "id": "sn-art-13",
       "set": "article",
       "sentence": "___ tema es interesante.",
-      "options": ["El", "La", "Los"],
+      "options": ["El", "La"],
       "correct": 0,
       "why": {
         "en": "«tema» ends in -a but is masculine, one of the exceptions to learn: el tema.",
@@ -1860,10 +1816,6 @@
         "La": {
           "en": "This would make «tema» feminine, but it is masculine; correct: El tema es interesante.",
           "es": "Esto haría femenino a «tema», pero es masculino; correcto: El tema es interesante."
-        },
-        "Los": {
-          "en": "This is the plural article, but here the noun is singular; correct: El tema es interesante.",
-          "es": "Este es el artículo plural, pero aquí el sustantivo está en singular; correcto: El tema es interesante."
         }
       },
       "examples": ["El problema es difícil.", "El idioma es bonito."],
@@ -1873,7 +1825,7 @@
       "id": "sn-art-14",
       "set": "article",
       "sentence": "___ sistema es nuevo.",
-      "options": ["El", "La", "Los"],
+      "options": ["El", "La"],
       "correct": 0,
       "why": {
         "en": "«sistema» ends in -a but is masculine, one of the exceptions to learn: el sistema.",
@@ -1883,10 +1835,6 @@
         "La": {
           "en": "This would make «sistema» feminine, but it is masculine; correct: El sistema es nuevo.",
           "es": "Esto haría femenino a «sistema», pero es masculino; correcto: El sistema es nuevo."
-        },
-        "Los": {
-          "en": "This is the plural article, but here the noun is singular; correct: El sistema es nuevo.",
-          "es": "Este es el artículo plural, pero aquí el sustantivo está en singular; correcto: El sistema es nuevo."
         }
       },
       "examples": ["El problema es difícil.", "El idioma es bonito."],
@@ -1896,7 +1844,7 @@
       "id": "sn-art-15",
       "set": "article",
       "sentence": "___ clima de México es bueno.",
-      "options": ["El", "La", "Los"],
+      "options": ["El", "La"],
       "correct": 0,
       "why": {
         "en": "«clima» ends in -a but is masculine, one of the exceptions to learn: el clima.",
@@ -1906,10 +1854,6 @@
         "La": {
           "en": "This would make «clima» feminine, but it is masculine; correct: El clima de México es bueno.",
           "es": "Esto haría femenino a «clima», pero es masculino; correcto: El clima de México es bueno."
-        },
-        "Los": {
-          "en": "This is the plural article, but here the noun is singular; correct: El clima de México es bueno.",
-          "es": "Este es el artículo plural, pero aquí el sustantivo está en singular; correcto: El clima de México es bueno."
         }
       },
       "examples": ["El problema es difícil.", "El idioma es bonito."],
@@ -1919,7 +1863,7 @@
       "id": "sn-art-16",
       "set": "article",
       "sentence": "Me gusta ___ programa de radio.",
-      "options": ["el", "la", "los"],
+      "options": ["el", "la"],
       "correct": 0,
       "why": {
         "en": "«programa» ends in -a but is masculine, one of the exceptions to learn: el programa.",
@@ -1929,10 +1873,6 @@
         "la": {
           "en": "This would make «programa» feminine, but it is masculine; correct: Me gusta el programa de radio.",
           "es": "Esto haría femenino a «programa», pero es masculino; correcto: Me gusta el programa de radio."
-        },
-        "los": {
-          "en": "This is the plural article, but here the noun is singular; correct: Me gusta el programa de radio.",
-          "es": "Este es el artículo plural, pero aquí el sustantivo está en singular; correcto: Me gusta el programa de radio."
         }
       },
       "examples": ["El problema es difícil.", "El idioma es bonito."],
@@ -1942,7 +1882,7 @@
       "id": "sn-art-17",
       "set": "article",
       "sentence": "Pongo ___ mano en la mesa.",
-      "options": ["la", "el", "las"],
+      "options": ["la", "el"],
       "correct": 0,
       "why": {
         "en": "«mano» ends in -o but is feminine (an exception): la mano.",
@@ -1952,10 +1892,6 @@
         "el": {
           "en": "This would make «mano» masculine, but it is feminine; correct: Pongo la mano en la mesa.",
           "es": "Esto haría masculino a «mano», pero es femenino; correcto: Pongo la mano en la mesa."
-        },
-        "las": {
-          "en": "This is the plural article, but here the noun is singular; correct: Pongo la mano en la mesa.",
-          "es": "Este es el artículo plural, pero aquí el sustantivo está en singular; correcto: Pongo la mano en la mesa."
         }
       },
       "examples": ["Me duele la mano.", "La foto es bonita."],
@@ -1965,7 +1901,7 @@
       "id": "sn-art-18",
       "set": "article",
       "sentence": "Tengo ___ foto de mi familia.",
-      "options": ["la", "el", "las"],
+      "options": ["la", "el"],
       "correct": 0,
       "why": {
         "en": "«foto» ends in -o but is feminine (an exception, often a shortened word): la foto.",
@@ -1975,10 +1911,6 @@
         "el": {
           "en": "This would make «foto» masculine, but it is feminine; correct: Tengo la foto de mi familia.",
           "es": "Esto haría masculino a «foto», pero es femenino; correcto: Tengo la foto de mi familia."
-        },
-        "las": {
-          "en": "This is the plural article, but here the noun is singular; correct: Tengo la foto de mi familia.",
-          "es": "Este es el artículo plural, pero aquí el sustantivo está en singular; correcto: Tengo la foto de mi familia."
         }
       },
       "examples": ["Me duele la mano.", "La foto es bonita."],
@@ -1988,7 +1920,7 @@
       "id": "sn-art-19",
       "set": "article",
       "sentence": "Mi hermano tiene ___ moto nueva.",
-      "options": ["la", "el", "las"],
+      "options": ["la", "el"],
       "correct": 0,
       "why": {
         "en": "«moto» ends in -o but is feminine (an exception, often a shortened word): la moto.",
@@ -1998,10 +1930,6 @@
         "el": {
           "en": "This would make «moto» masculine, but it is feminine; correct: Mi hermano tiene la moto nueva.",
           "es": "Esto haría masculino a «moto», pero es femenino; correcto: Mi hermano tiene la moto nueva."
-        },
-        "las": {
-          "en": "This is the plural article, but here the noun is singular; correct: Mi hermano tiene la moto nueva.",
-          "es": "Este es el artículo plural, pero aquí el sustantivo está en singular; correcto: Mi hermano tiene la moto nueva."
         }
       },
       "examples": ["Me duele la mano.", "La foto es bonita."],
@@ -2011,7 +1939,7 @@
       "id": "sn-art-20",
       "set": "article",
       "sentence": "Mi tío trabaja en ___ radio.",
-      "options": ["la", "el", "las"],
+      "options": ["la", "el"],
       "correct": 0,
       "why": {
         "en": "«radio» ends in -o but is feminine (an exception, often a shortened word): la radio.",
@@ -2021,10 +1949,6 @@
         "el": {
           "en": "This would make «radio» masculine; in Mexico the device is indeed el radio, but radio as a medium is feminine; correct: Mi tío trabaja en la radio.",
           "es": "Esto haría masculino a «radio»; en México el aparato sí es el radio, pero la radio como medio es femenina; correcto: Mi tío trabaja en la radio."
-        },
-        "las": {
-          "en": "This is the plural article, but here the noun is singular; correct: Mi tío trabaja en la radio.",
-          "es": "Este es el artículo plural, pero aquí el sustantivo está en singular; correcto: Mi tío trabaja en la radio."
         }
       },
       "examples": ["Me duele la mano.", "La foto es bonita."],
@@ -2034,7 +1958,7 @@
       "id": "sn-art-21",
       "set": "article",
       "sentence": "Quiero ___ agua fría.",
-      "options": ["el", "la", "los"],
+      "options": ["el", "la"],
       "correct": 0,
       "why": {
         "en": "Agua is feminine, but before a stressed a- the article la becomes el: el agua (the adjective stays feminine: el agua fría).",
@@ -2044,10 +1968,6 @@
         "la": {
           "en": "\"La agua\" is not used: before a stressed a- Spanish uses el (el agua), while the word stays feminine; correct: Quiero el agua fría.",
           "es": "«La agua» no se usa: ante una a- tónica se dice el (el agua), aunque la palabra sigue siendo femenina; correcto: Quiero el agua fría."
-        },
-        "los": {
-          "en": "This is the plural article, but here the noun is singular; correct: Quiero el agua fría.",
-          "es": "Este es el artículo plural, pero aquí el sustantivo está en singular; correcto: Quiero el agua fría."
         }
       },
       "examples": ["El agua está fría.", "El aula está cerrada."],
@@ -2057,7 +1977,7 @@
       "id": "sn-art-22",
       "set": "article",
       "sentence": "Me gusta ___ canción.",
-      "options": ["la", "el", "las"],
+      "options": ["la", "el"],
       "correct": 0,
       "why": {
         "en": "«canción» ends in -ción, -sión or -dad, and these nouns are feminine: la canción.",
@@ -2067,10 +1987,6 @@
         "el": {
           "en": "This would make «canción» masculine, but it is feminine; correct: Me gusta la canción.",
           "es": "Esto haría masculino a «canción», pero es femenino; correcto: Me gusta la canción."
-        },
-        "las": {
-          "en": "This is the plural article, but here the noun is singular; correct: Me gusta la canción.",
-          "es": "Este es el artículo plural, pero aquí el sustantivo está en singular; correcto: Me gusta la canción."
         }
       },
       "examples": ["La ciudad es grande.", "La universidad está cerca."],
@@ -2080,7 +1996,7 @@
       "id": "sn-art-23",
       "set": "article",
       "sentence": "___ lección es fácil.",
-      "options": ["La", "El", "Las"],
+      "options": ["La", "El"],
       "correct": 0,
       "why": {
         "en": "«lección» ends in -ción, -sión or -dad, and these nouns are feminine: la lección.",
@@ -2090,10 +2006,6 @@
         "El": {
           "en": "This would make «lección» masculine, but it is feminine; correct: La lección es fácil.",
           "es": "Esto haría masculino a «lección», pero es femenino; correcto: La lección es fácil."
-        },
-        "Las": {
-          "en": "This is the plural article, but here the noun is singular; correct: La lección es fácil.",
-          "es": "Este es el artículo plural, pero aquí el sustantivo está en singular; correcto: La lección es fácil."
         }
       },
       "examples": ["La ciudad es grande.", "La universidad está cerca."],
@@ -2103,7 +2015,7 @@
       "id": "sn-art-24",
       "set": "article",
       "sentence": "Vivo en ___ ciudad grande.",
-      "options": ["la", "el", "las"],
+      "options": ["la", "el"],
       "correct": 0,
       "why": {
         "en": "«ciudad» ends in -ción, -sión or -dad, and these nouns are feminine: la ciudad.",
@@ -2113,10 +2025,6 @@
         "el": {
           "en": "This would make «ciudad» masculine, but it is feminine; correct: Vivo en la ciudad grande.",
           "es": "Esto haría masculino a «ciudad», pero es femenino; correcto: Vivo en la ciudad grande."
-        },
-        "las": {
-          "en": "This is the plural article, but here the noun is singular; correct: Vivo en la ciudad grande.",
-          "es": "Este es el artículo plural, pero aquí el sustantivo está en singular; correcto: Vivo en la ciudad grande."
         }
       },
       "examples": ["La ciudad es grande.", "La universidad está cerca."],
@@ -2126,7 +2034,7 @@
       "id": "sn-art-25",
       "set": "article",
       "sentence": "___ verdad es importante.",
-      "options": ["La", "El", "Las"],
+      "options": ["La", "El"],
       "correct": 0,
       "why": {
         "en": "«verdad» ends in -ción, -sión or -dad, and these nouns are feminine: la verdad.",
@@ -2136,10 +2044,6 @@
         "El": {
           "en": "This would make «verdad» masculine, but it is feminine; correct: La verdad es importante.",
           "es": "Esto haría masculino a «verdad», pero es femenino; correcto: La verdad es importante."
-        },
-        "Las": {
-          "en": "This is the plural article, but here the noun is singular; correct: La verdad es importante.",
-          "es": "Este es el artículo plural, pero aquí el sustantivo está en singular; correcto: La verdad es importante."
         }
       },
       "examples": ["La ciudad es grande.", "La universidad está cerca."],
@@ -2149,7 +2053,7 @@
       "id": "sn-art-26",
       "set": "article",
       "sentence": "___ salud es muy importante.",
-      "options": ["La", "El", "Las"],
+      "options": ["La", "El"],
       "correct": 0,
       "why": {
         "en": "The ending of «salud» does not show its gender, so learn it with its article: la salud (feminine).",
@@ -2159,10 +2063,6 @@
         "El": {
           "en": "This would make «salud» masculine, but it is feminine; correct: La salud es muy importante.",
           "es": "Esto haría masculino a «salud», pero es femenino; correcto: La salud es muy importante."
-        },
-        "Las": {
-          "en": "This is the plural article, but here the noun is singular; correct: La salud es muy importante.",
-          "es": "Este es el artículo plural, pero aquí el sustantivo está en singular; correcto: La salud es muy importante."
         }
       },
       "examples": ["La casa es grande.", "La foto es bonita."],
@@ -2172,7 +2072,7 @@
       "id": "sn-art-27",
       "set": "article",
       "sentence": "Por ___ noche estudio español.",
-      "options": ["la", "el", "las"],
+      "options": ["la", "el"],
       "correct": 0,
       "why": {
         "en": "Nouns ending in -e can be either gender, so learn the article with the word: la noche.",
@@ -2182,10 +2082,6 @@
         "el": {
           "en": "This would make «noche» masculine, but it is feminine; correct: Por la noche estudio español.",
           "es": "Esto haría masculino a «noche», pero es femenino; correcto: Por la noche estudio español."
-        },
-        "las": {
-          "en": "This is the plural article, but here the noun is singular; correct: Por la noche estudio español.",
-          "es": "Este es el artículo plural, pero aquí el sustantivo está en singular; correcto: Por la noche estudio español."
         }
       },
       "examples": ["La casa es grande.", "El carro es nuevo."],
@@ -2195,7 +2091,7 @@
       "id": "sn-art-28",
       "set": "article",
       "sentence": "Mi casa está en ___ calle grande.",
-      "options": ["la", "el", "las"],
+      "options": ["la", "el"],
       "correct": 0,
       "why": {
         "en": "Nouns ending in -e can be either gender, so learn the article with the word: la calle.",
@@ -2205,10 +2101,6 @@
         "el": {
           "en": "This would make «calle» masculine, but it is feminine; correct: Mi casa está en la calle grande.",
           "es": "Esto haría masculino a «calle», pero es femenino; correcto: Mi casa está en la calle grande."
-        },
-        "las": {
-          "en": "This is the plural article, but here the noun is singular; correct: Mi casa está en la calle grande.",
-          "es": "Este es el artículo plural, pero aquí el sustantivo está en singular; correcto: Mi casa está en la calle grande."
         }
       },
       "examples": ["La casa es grande.", "El carro es nuevo."],
@@ -2218,7 +2110,7 @@
       "id": "sn-art-29",
       "set": "article",
       "sentence": "Quiero ___ leche fría.",
-      "options": ["la", "el", "las"],
+      "options": ["la", "el"],
       "correct": 0,
       "why": {
         "en": "Nouns ending in -e can be either gender, so learn the article with the word: la leche.",
@@ -2228,10 +2120,6 @@
         "el": {
           "en": "This would make «leche» masculine, but it is feminine; correct: Quiero la leche fría.",
           "es": "Esto haría masculino a «leche», pero es femenino; correcto: Quiero la leche fría."
-        },
-        "las": {
-          "en": "This is the plural article, but here the noun is singular; correct: Quiero la leche fría.",
-          "es": "Este es el artículo plural, pero aquí el sustantivo está en singular; correcto: Quiero la leche fría."
         }
       },
       "examples": ["La casa es grande.", "El carro es nuevo."],
@@ -2241,7 +2129,7 @@
       "id": "sn-art-30",
       "set": "article",
       "sentence": "___ clase es a las nueve.",
-      "options": ["La", "El", "Las"],
+      "options": ["La", "El"],
       "correct": 0,
       "why": {
         "en": "Nouns ending in -e can be either gender, so learn the article with the word: la clase.",
@@ -2251,10 +2139,6 @@
         "El": {
           "en": "This would make «clase» masculine, but it is feminine; correct: La clase es a las nueve.",
           "es": "Esto haría masculino a «clase», pero es femenino; correcto: La clase es a las nueve."
-        },
-        "Las": {
-          "en": "This is the plural article, but here the noun is singular; correct: La clase es a las nueve.",
-          "es": "Este es el artículo plural, pero aquí el sustantivo está en singular; correcto: La clase es a las nueve."
         }
       },
       "examples": ["La casa es grande.", "El carro es nuevo."],
@@ -2264,7 +2148,7 @@
       "id": "sn-art-31",
       "set": "article",
       "sentence": "Creo que ___ mujer está en la calle.",
-      "options": ["la", "el", "las"],
+      "options": ["la", "el"],
       "correct": 0,
       "why": {
         "en": "The ending of «mujer» does not show its gender, so learn it with its article: la mujer (feminine).",
@@ -2274,10 +2158,6 @@
         "el": {
           "en": "This would make «mujer» masculine, but it is feminine; correct: Creo que la mujer está en la calle.",
           "es": "Esto haría masculino a «mujer», pero es femenino; correcto: Creo que la mujer está en la calle."
-        },
-        "las": {
-          "en": "This is the plural article, but here the noun is singular; correct: Creo que la mujer está en la calle.",
-          "es": "Este es el artículo plural, pero aquí el sustantivo está en singular; correcto: Creo que la mujer está en la calle."
         }
       },
       "examples": ["La casa es grande.", "La foto es bonita."],
@@ -2287,7 +2167,7 @@
       "id": "sn-art-32",
       "set": "article",
       "sentence": "Pongo ___ flor en la mesa.",
-      "options": ["la", "el", "las"],
+      "options": ["la", "el"],
       "correct": 0,
       "why": {
         "en": "The ending of «flor» does not show its gender, so learn it with its article: la flor (feminine).",
@@ -2297,10 +2177,6 @@
         "el": {
           "en": "This would make «flor» masculine, but it is feminine; correct: Pongo la flor en la mesa.",
           "es": "Esto haría masculino a «flor», pero es femenino; correcto: Pongo la flor en la mesa."
-        },
-        "las": {
-          "en": "This is the plural article, but here the noun is singular; correct: Pongo la flor en la mesa.",
-          "es": "Este es el artículo plural, pero aquí el sustantivo está en singular; correcto: Pongo la flor en la mesa."
         }
       },
       "examples": ["La casa es grande.", "La foto es bonita."],
@@ -2310,7 +2186,7 @@
       "id": "sn-art-33",
       "set": "article",
       "sentence": "___ luz está encendida.",
-      "options": ["La", "El", "Las"],
+      "options": ["La", "El"],
       "correct": 0,
       "why": {
         "en": "The ending of «luz» does not show its gender, so learn it with its article: la luz (feminine).",
@@ -2320,10 +2196,6 @@
         "El": {
           "en": "This would make «luz» masculine, but it is feminine; correct: La luz está encendida.",
           "es": "Esto haría masculino a «luz», pero es femenino; correcto: La luz está encendida."
-        },
-        "Las": {
-          "en": "This is the plural article, but here the noun is singular; correct: La luz está encendida.",
-          "es": "Este es el artículo plural, pero aquí el sustantivo está en singular; correcto: La luz está encendida."
         }
       },
       "examples": ["La casa es grande.", "La foto es bonita."],
