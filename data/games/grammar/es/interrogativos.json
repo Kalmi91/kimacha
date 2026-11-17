@@ -982,6 +982,441 @@
         }
       ],
       "correctIndex": 0
+    },
+    {
+      "id": "int-tr-01",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "What do you eat?",
+        "es": "¿Qué comes?"
+      },
+      "answer": "¿Qué vas a comer?",
+      "wordIds": [
+        "33",
+        "25",
+        "92"
+      ],
+      "why": {
+        "en": "In a question with ir a + infinitive the question word stays in front: ¿Qué vas a comer?",
+        "es": "En una pregunta con ir a + infinitivo la palabra interrogativa queda delante: ¿Qué vas a comer?"
+      }
+    },
+    {
+      "id": "int-tr-02",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "When do you arrive?",
+        "es": "¿Cuándo llegas?"
+      },
+      "answer": "¿Cuándo vas a llegar?",
+      "wordIds": [
+        "33",
+        "149",
+        "161"
+      ],
+      "why": {
+        "en": "In a question with ir a + infinitive the question word stays in front: ¿Qué vas a comer?",
+        "es": "En una pregunta con ir a + infinitivo la palabra interrogativa queda delante: ¿Qué vas a comer?"
+      }
+    },
+    {
+      "id": "int-tr-03",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "What do you study?",
+        "es": "¿Qué estudias?"
+      },
+      "answer": "¿Qué vas a estudiar?",
+      "wordIds": [
+        "33",
+        "212",
+        "92"
+      ],
+      "why": {
+        "en": "In a question with ir a + infinitive the question word stays in front: ¿Qué vas a comer?",
+        "es": "En una pregunta con ir a + infinitivo la palabra interrogativa queda delante: ¿Qué vas a comer?"
+      }
+    },
+    {
+      "id": "int-tr-04",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "Who do you talk to?",
+        "es": "¿Con quién hablas?"
+      },
+      "answer": "¿Con quién vas a hablar?",
+      "wordIds": [
+        "33",
+        "47",
+        "93"
+      ],
+      "why": {
+        "en": "In a question with ir a + infinitive the question word stays in front: ¿Qué vas a comer?",
+        "es": "En una pregunta con ir a + infinitivo la palabra interrogativa queda delante: ¿Qué vas a comer?"
+      }
+    },
+    {
+      "id": "int-tr-05",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "When do we eat?",
+        "es": "¿Cuándo comemos?"
+      },
+      "answer": "¿Cuándo vamos a comer?",
+      "wordIds": [
+        "33",
+        "25",
+        "161"
+      ],
+      "why": {
+        "en": "In a question with ir a + infinitive the question word stays in front: ¿Qué vas a comer?",
+        "es": "En una pregunta con ir a + infinitivo la palabra interrogativa queda delante: ¿Qué vas a comer?"
+      }
+    },
+    {
+      "id": "int-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Me llamo Ana. ¿___ te llamas tú? Tengo veinte años. ¿___ años tienes tú?",
+      "answers": [
+        "Cómo",
+        "Cuántos"
+      ],
+      "tr": {
+        "en": "My name is Ana. What is your name? I am twenty years old. How old are you?",
+        "es": "Me llamo Ana. ¿Cómo te llamas tú? Tengo veinte años. ¿Cuántos años tienes tú?"
+      },
+      "why": {
+        "en": "Cómo asks how, here for a name; cuántos asks how many, here for years of age.",
+        "es": "Cómo pregunta de qué manera, aquí por un nombre; cuántos pregunta por la cantidad, aquí por los años."
+      }
+    },
+    {
+      "id": "int-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Vivo cerca del parque. ¿___ vives tú? Trabajo con mi hermano. ¿Con ___ trabajas tú?",
+      "answers": [
+        "Dónde",
+        "quién"
+      ],
+      "tr": {
+        "en": "I live near the park. Where do you live? I work with my brother. Who do you work with?",
+        "es": "Vivo cerca del parque. ¿Dónde vives tú? Trabajo con mi hermano. ¿Con quién trabajas tú?"
+      },
+      "why": {
+        "en": "Dónde asks about a place; quién asks about a person, and con stays in front of it.",
+        "es": "Dónde pregunta por un lugar; quién pregunta por una persona, y con se queda delante."
+      }
+    },
+    {
+      "id": "int-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "La clase empieza a las ocho. ¿___ empieza tu clase? El café cuesta veinte pesos. ¿___ cuesta tu café?",
+      "answers": [
+        "Cuándo",
+        "Cuánto"
+      ],
+      "tr": {
+        "en": "The class starts at eight. When does your class start? The coffee costs twenty pesos. How much does your coffee cost?",
+        "es": "La clase empieza a las ocho. ¿Cuándo empieza tu clase? El café cuesta veinte pesos. ¿Cuánto cuesta tu café?"
+      },
+      "why": {
+        "en": "Cuándo asks about time; cuánto asks about an amount or a price.",
+        "es": "Cuándo pregunta por el tiempo; cuánto pregunta por una cantidad o un precio."
+      }
+    },
+    {
+      "id": "int-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Estudio español porque me gusta. ¿___ estudias tú español? Mi libro es el azul. ¿___ es tu libro?",
+      "answers": [
+        "Por qué",
+        "Cuál"
+      ],
+      "tr": {
+        "en": "I study Spanish because I like it. Why do you study Spanish? My book is the blue one. Which is your book?",
+        "es": "Estudio español porque me gusta. ¿Por qué estudias tú español? Mi libro es el azul. ¿Cuál es tu libro?"
+      },
+      "why": {
+        "en": "Por qué asks for a reason (two words, with an accent); cuál asks to choose among several.",
+        "es": "Por qué pregunta la razón (dos palabras, con tilde); cuál pide elegir entre varias cosas."
+      }
+    },
+    {
+      "id": "int-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Mi hermana tiene tres hijos. ¿___ hijos tienes tú? Mi examen es en mayo. ¿___ es tu examen?",
+      "answers": [
+        "Cuántos",
+        "Cuándo"
+      ],
+      "tr": {
+        "en": "My sister has three children. How many children do you have? My exam is in May. When is your exam?",
+        "es": "Mi hermana tiene tres hijos. ¿Cuántos hijos tienes tú? Mi examen es en mayo. ¿Cuándo es tu examen?"
+      },
+      "why": {
+        "en": "Cuántos asks how many (masculine plural, like hijos); cuándo asks about time.",
+        "es": "Cuántos pregunta cuántos (masculino plural, como hijos); cuándo pregunta por el tiempo."
+      }
+    },
+    {
+      "id": "int-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "No sé donde vive Ana.",
+      "wrongIndex": 2,
+      "answer": "dónde",
+      "explain": {
+        "en": "The question word dónde keeps its accent even inside a sentence.",
+        "es": "La palabra interrogativa dónde lleva tilde también dentro de una frase."
+      },
+      "tr": {
+        "en": "I don't know where Ana lives.",
+        "es": "No sé dónde vive Ana."
+      }
+    },
+    {
+      "id": "int-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "¿Por que no vienes?",
+      "wrongIndex": 1,
+      "answer": "qué",
+      "explain": {
+        "en": "Why? is por qué: the word qué carries an accent in a question.",
+        "es": "«¿Por qué?» se escribe con tilde en qué en una pregunta."
+      },
+      "tr": {
+        "en": "Why don't you come?",
+        "es": "¿Por qué no vienes?"
+      }
+    },
+    {
+      "id": "int-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "¿Cuánto cuestan el café?",
+      "wrongIndex": 1,
+      "answer": "cuesta",
+      "explain": {
+        "en": "One coffee is singular, so the verb is cuesta, not cuestan.",
+        "es": "Un café es singular, así que el verbo es cuesta, no cuestan."
+      },
+      "tr": {
+        "en": "How much does the coffee cost?",
+        "es": "¿Cuánto cuesta el café?"
+      }
+    },
+    {
+      "id": "int-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "¿Dónde estás tu hermano?",
+      "wrongIndex": 1,
+      "answer": "está",
+      "explain": {
+        "en": "The subject is tu hermano (he), so the verb is está, not estás.",
+        "es": "El sujeto es tu hermano (él), así que el verbo es está, no estás."
+      },
+      "tr": {
+        "en": "Where is your brother?",
+        "es": "¿Dónde está tu hermano?"
+      }
+    },
+    {
+      "id": "int-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "No sé quien es él.",
+      "wrongIndex": 2,
+      "answer": "quién",
+      "explain": {
+        "en": "The question word quién carries an accent also in a sentence like this one.",
+        "es": "La palabra interrogativa quién lleva tilde también en una frase como esta."
+      },
+      "tr": {
+        "en": "I don't know who he is.",
+        "es": "No sé quién es él."
+      }
+    },
+    {
+      "id": "int-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "cuánto",
+        "cuánta",
+        "cuántos"
+      ],
+      "es": "No sé ___ cuesta el café.",
+      "word": "cuánto",
+      "answer": "cuánto",
+      "tr": {
+        "en": "I don't know how much the coffee costs.",
+        "es": "No sé cuánto cuesta el café."
+      },
+      "why": {
+        "en": "The price of one coffee is a single amount: cuánto.",
+        "es": "El precio de un café es una cantidad única: cuánto."
+      }
+    },
+    {
+      "id": "int-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "cuántos",
+        "cuántas",
+        "cuánto"
+      ],
+      "es": "No sé ___ hermanas tiene Ana.",
+      "word": "cuántas",
+      "answer": "cuántas",
+      "tr": {
+        "en": "I don't know how many sisters Ana has.",
+        "es": "No sé cuántas hermanas tiene Ana."
+      },
+      "why": {
+        "en": "Hermanas is feminine plural, so the question word is cuántas.",
+        "es": "Hermanas es femenino plural, así que la palabra interrogativa es cuántas."
+      }
+    },
+    {
+      "id": "int-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "cuántos",
+        "cuántas",
+        "cuánto"
+      ],
+      "es": "No sé ___ libros tiene Ana.",
+      "word": "cuántos",
+      "answer": "cuántos",
+      "tr": {
+        "en": "I don't know how many books Ana has.",
+        "es": "No sé cuántos libros tiene Ana."
+      },
+      "why": {
+        "en": "Libros is masculine plural, so the question word is cuántos.",
+        "es": "Libros es masculino plural, así que la palabra interrogativa es cuántos."
+      }
+    },
+    {
+      "id": "int-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "quién",
+        "quiénes",
+        "qué"
+      ],
+      "es": "No sé ___ son esos hombres.",
+      "word": "quiénes",
+      "answer": "quiénes",
+      "tr": {
+        "en": "I don't know who those men are.",
+        "es": "No sé quiénes son esos hombres."
+      },
+      "why": {
+        "en": "Those men are several people, so the question word is quiénes (plural).",
+        "es": "Esos hombres son varias personas, así que la palabra interrogativa es quiénes (plural)."
+      }
+    },
+    {
+      "id": "int-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "cuál",
+        "cuáles",
+        "qué"
+      ],
+      "es": "No sé ___ son mis libros.",
+      "word": "cuáles",
+      "answer": "cuáles",
+      "tr": {
+        "en": "I don't know which ones are my books.",
+        "es": "No sé cuáles son mis libros."
+      },
+      "why": {
+        "en": "Choosing among several things in the plural: cuáles.",
+        "es": "Elegir entre varias cosas en plural: cuáles."
+      }
+    },
+    {
+      "id": "int-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "Where are you from?",
+        "es": "¿De dónde eres?"
+      },
+      "es": "¿De dónde eres?"
+    },
+    {
+      "id": "int-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "How much does the coffee cost?",
+        "es": "¿Cuánto cuesta el café?"
+      },
+      "es": "¿Cuánto cuesta el café?"
+    },
+    {
+      "id": "int-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "Who is your brother?",
+        "es": "¿Quién es tu hermano?"
+      },
+      "es": "¿Quién es tu hermano?"
+    },
+    {
+      "id": "int-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "Why don't you come?",
+        "es": "¿Por qué no vienes?"
+      },
+      "es": "¿Por qué no vienes?"
+    },
+    {
+      "id": "int-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "When does your brother arrive?",
+        "es": "¿Cuándo llega tu hermano?"
+      },
+      "es": "¿Cuándo llega tu hermano?"
     }
   ]
 }
