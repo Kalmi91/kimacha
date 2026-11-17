@@ -1361,6 +1361,239 @@
         }
       ],
       "correctIndex": 0
+    },
+    {
+      "id": "te-tr-01",
+      "kind": "transform",
+      "tense": { "from": "ir-a", "to": "presente" },
+      "prompt": { "en": "I am going to be hungry.", "es": "Voy a tener hambre." },
+      "answer": "Tengo hambre.",
+      "accept": ["Yo tengo hambre."],
+      "wordIds": ["33", "16", "17"],
+      "why": { "en": "Present tense, yo: hunger is something you have, not something you are. Tengo hambre, not estoy hambre.", "es": "Presente, yo: el hambre se tiene, no se es. Tengo hambre, no estoy hambre." }
+    },
+    {
+      "id": "te-tr-02",
+      "kind": "transform",
+      "tense": { "from": "ir-a", "to": "presente" },
+      "prompt": { "en": "My son is going to be sleepy.", "es": "Mi hijo va a tener sueño." },
+      "answer": "Mi hijo tiene sueño.",
+      "wordIds": ["16", "110"],
+      "why": { "en": "Present tense, él: tener + sueño. Tener changes with the person: tiene sueño.", "es": "Presente, él: tener + sueño. Tener cambia con la persona: tiene sueño." }
+    },
+    {
+      "id": "te-tr-03",
+      "kind": "transform",
+      "tense": { "from": "ir-a", "to": "presente" },
+      "prompt": { "en": "We are going to be cold.", "es": "Vamos a tener frío." },
+      "answer": "Tenemos frío.",
+      "accept": ["Nosotros tenemos frío."],
+      "wordIds": ["33", "16", "138"],
+      "why": { "en": "Present tense, nosotros: a person has cold: tenemos frío.", "es": "Presente, nosotros: el frío de una persona se tiene: tenemos frío." }
+    },
+    {
+      "id": "te-tr-04",
+      "kind": "transform",
+      "tense": { "from": "ir-a", "to": "presente" },
+      "prompt": { "en": "The children are going to be thirsty.", "es": "Los niños van a tener sed." },
+      "answer": "Los niños tienen sed.",
+      "wordIds": ["33", "16", "45", "3284"],
+      "why": { "en": "Present tense, ellos: tener + sed. With ellos, tener becomes tienen.", "es": "Presente, ellos: tener + sed. Con ellos, tener cambia a tienen." }
+    },
+    {
+      "id": "te-tr-05",
+      "kind": "transform",
+      "tense": { "from": "ir-a", "to": "presente" },
+      "prompt": { "en": "You are going to be hot.", "es": "Vas a tener calor." },
+      "answer": "Tienes calor.",
+      "accept": ["Tú tienes calor."],
+      "wordIds": ["33", "16", "652"],
+      "why": { "en": "Present tense, tú: tener + calor. Tener changes with the person: tienes calor.", "es": "Presente, tú: tener + calor. Tener cambia con la persona: tienes calor." }
+    },
+    {
+      "id": "te-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Mi bebé ___ ___ y quiere dormir en la cama.",
+      "answers": ["tiene", "sueño"],
+      "tr": { "en": "My baby is sleepy and wants to sleep in the bed.", "es": "Mi bebé tiene sueño y quiere dormir en la cama." },
+      "why": { "en": "Sleepiness is something you have: tener sueño. With él: tiene.", "es": "El sueño se tiene: tener sueño. Con él: tiene." }
+    },
+    {
+      "id": "te-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Hay una sopa en la mesa y yo ___ mucha ___.",
+      "answers": ["tengo", "hambre"],
+      "tr": { "en": "There is a soup on the table and I am very hungry.", "es": "Hay una sopa en la mesa y yo tengo mucha hambre." },
+      "why": { "en": "Hunger is something you have: tener hambre. With yo: tengo. Hambre takes mucha, not muy.", "es": "El hambre se tiene: tener hambre. Con yo: tengo. Hambre lleva mucha, no muy." }
+    },
+    {
+      "id": "te-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Quiero un vaso de agua porque ___ mucha ___.",
+      "answers": ["tengo", "sed"],
+      "tr": { "en": "I want a glass of water because I am very thirsty.", "es": "Quiero un vaso de agua porque tengo mucha sed." },
+      "why": { "en": "Thirst is something you have: tener sed. With yo: tengo.", "es": "La sed se tiene: tener sed. Con yo: tengo." }
+    },
+    {
+      "id": "te-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "En la calle hace frío y no llevo abrigo. Yo ___ ___.",
+      "answers": ["tengo", "frío"],
+      "tr": { "en": "It is cold in the street and I am not wearing a coat. I am cold.", "es": "En la calle hace frío y no llevo abrigo. Yo tengo frío." },
+      "why": { "en": "A person has cold: tener frío. With yo: tengo.", "es": "El frío de una persona se tiene: tener frío. Con yo: tengo." }
+    },
+    {
+      "id": "te-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Mi hermana tiene diez años. Yo ___ quince ___.",
+      "answers": ["tengo", "años"],
+      "tr": { "en": "My sister is ten years old. I am fifteen years old.", "es": "Mi hermana tiene diez años. Yo tengo quince años." },
+      "why": { "en": "Age is said with tener + number + años: tengo quince años.", "es": "La edad se dice con tener + número + años: tengo quince años." }
+    },
+    {
+      "id": "te-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "Estoy hambre.",
+      "wrongIndex": 0,
+      "answer": "Tengo",
+      "explain": { "en": "Hunger is had, not been: tengo hambre.", "es": "El hambre se tiene, no se está: tengo hambre." },
+      "tr": { "en": "I am hungry.", "es": "Tengo hambre." }
+    },
+    {
+      "id": "te-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "Mi hijo es sed.",
+      "wrongIndex": 2,
+      "answer": "tiene",
+      "explain": { "en": "Thirst is had, not been: tiene sed.", "es": "La sed se tiene, no se es: tiene sed." },
+      "tr": { "en": "My son is thirsty.", "es": "Mi hijo tiene sed." }
+    },
+    {
+      "id": "te-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "Tengo muy hambre.",
+      "wrongIndex": 1,
+      "answer": "mucha",
+      "explain": { "en": "Hambre is a noun: it takes mucha, not muy.", "es": "Hambre es un sustantivo: lleva mucha, no muy." },
+      "tr": { "en": "I am very hungry.", "es": "Tengo mucha hambre." }
+    },
+    {
+      "id": "te-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "Los niños tienen cinco año.",
+      "wrongIndex": 4,
+      "answer": "años",
+      "explain": { "en": "After a number higher than one, años is plural.", "es": "Con un número mayor que uno, años va en plural." },
+      "tr": { "en": "The children are five years old.", "es": "Los niños tienen cinco años." }
+    },
+    {
+      "id": "te-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "Ana está frío.",
+      "wrongIndex": 1,
+      "answer": "tiene",
+      "explain": { "en": "A person has cold: tiene frío.", "es": "El frío de una persona se tiene: tiene frío." },
+      "tr": { "en": "Ana is cold.", "es": "Ana tiene frío." }
+    },
+    {
+      "id": "te-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": ["tener", "ser", "estar"],
+      "es": "Mi hermana ___ sed.",
+      "word": "tener",
+      "answer": "tiene",
+      "tr": { "en": "My sister is thirsty.", "es": "Mi hermana tiene sed." },
+      "why": { "en": "Tener sed: with él, tiene.", "es": "Tener sed: con él, tiene." }
+    },
+    {
+      "id": "te-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": ["tener", "ser", "estar"],
+      "es": "Nosotros ___ mucha hambre.",
+      "word": "tener",
+      "answer": "tenemos",
+      "tr": { "en": "We are very hungry.", "es": "Nosotros tenemos mucha hambre." },
+      "why": { "en": "Tener hambre: with nosotros, tenemos.", "es": "Tener hambre: con nosotros, tenemos." }
+    },
+    {
+      "id": "te-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": ["tener", "ir", "querer"],
+      "es": "Yo ___ frío en la noche.",
+      "word": "tener",
+      "answer": "tengo",
+      "tr": { "en": "I am cold at night.", "es": "Yo tengo frío en la noche." },
+      "why": { "en": "Tener frío: with yo, tengo.", "es": "Tener frío: con yo, tengo." }
+    },
+    {
+      "id": "te-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": ["mucho", "muy", "bien"],
+      "es": "Tengo ___ hambre.",
+      "word": "mucho",
+      "answer": "mucha",
+      "tr": { "en": "I am very hungry.", "es": "Tengo mucha hambre." },
+      "why": { "en": "Hambre is feminine: mucho becomes mucha.", "es": "Hambre es femenino: mucho cambia a mucha." }
+    },
+    {
+      "id": "te-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": ["tener", "ser", "estar"],
+      "es": "Mis padres ___ cuarenta años.",
+      "word": "tener",
+      "answer": "tienen",
+      "tr": { "en": "My parents are forty years old.", "es": "Mis padres tienen cuarenta años." },
+      "why": { "en": "Age is said with tener: with ellos, tienen.", "es": "La edad se dice con tener: con ellos, tienen." }
+    },
+    {
+      "id": "te-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "My mother is very hungry.", "es": "Mi madre tiene mucha hambre." },
+      "es": "Mi madre tiene mucha hambre."
+    },
+    {
+      "id": "te-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "My son is very sleepy.", "es": "Mi hijo tiene mucho sueño." },
+      "es": "Mi hijo tiene mucho sueño."
+    },
+    {
+      "id": "te-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "My parents are cold.", "es": "Mis padres tienen frío." },
+      "es": "Mis padres tienen frío."
+    },
+    {
+      "id": "te-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "How old are you?", "es": "¿Cuántos años tienes?" },
+      "es": "¿Cuántos años tienes?"
+    },
+    {
+      "id": "te-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "She is twenty years old.", "es": "Ella tiene veinte años." },
+      "es": "Ella tiene veinte años."
     }
   ]
 }
