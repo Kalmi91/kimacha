@@ -17,7 +17,7 @@ headwords of the owner's own Spanish word list (`data/words-open/`, all rights r
 
 ## Word photos: Wikimedia Commons
 
-29 photos in `assets/word-images/` are shown on word cards. Author, licence and source of each are
+30 photos in `assets/word-images/` are shown on word cards. Author, licence and source of each are
 recorded in `data/words-open/images.json` and shown with the photo on the card. The files were resized
 to 480 px; where listed, they were also cropped to 4:3.
 
@@ -52,6 +52,7 @@ to 480 px; where listed, they were also cropped to 4:3.
 | o2774 | `o2774.jpg` | Ypsilon | [CC0](https://creativecommons.org/publicdomain/zero/1.0/) | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Milanesa_and_papas_fritas.JPG) | resized to 480 px |
 | o2791 | `o2791.jpg` | Kimberly Vardeman | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/) | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Champurrado.jpg) | resized to 480 px |
 | o2828 | `o2828.jpg` | Dahyana Yasada R. R. | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Antojitos_Mexicanos.jpg) | resized to 480 px |
+| o3903 | `o3903.jpg` | Missvain | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Nachos_at_Maya_in_Sonoma_California_-_Sarah_Stierch.jpg) | resized to 480 px |
 
 ## Exam photos: Wikimedia Commons
 
