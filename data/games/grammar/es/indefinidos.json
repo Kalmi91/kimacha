@@ -1229,6 +1229,453 @@
         }
       ],
       "correctIndex": 0
+    },
+    {
+      "id": "indef-tr-01",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "Today I do not eat anything.",
+        "es": "Hoy no como nada."
+      },
+      "answer": "Hoy no voy a comer nada.",
+      "accept": [
+        "Hoy yo no voy a comer nada.",
+        "No voy a comer nada hoy."
+      ],
+      "wordIds": [
+        "25",
+        "98",
+        "52"
+      ],
+      "why": {
+        "en": "Ir a + infinitive: the indefinite word does not change, and the negative word still goes after the verb with no (no voy a comer nada).",
+        "es": "Ir a + infinitivo: el indefinido no cambia, y la palabra negativa sigue detrás del verbo con no (no voy a comer nada)."
+      }
+    },
+    {
+      "id": "indef-tr-02",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "Do you want something?",
+        "es": "¿Quieres algo?"
+      },
+      "answer": "¿Vas a querer algo?",
+      "accept": [
+        "¿Tú vas a querer algo?"
+      ],
+      "wordIds": [
+        "23",
+        "99"
+      ],
+      "why": {
+        "en": "Ir a + infinitive: the indefinite word does not change, and the negative word still goes after the verb with no (no voy a comer nada).",
+        "es": "Ir a + infinitivo: el indefinido no cambia, y la palabra negativa sigue detrás del verbo con no (no voy a comer nada)."
+      }
+    },
+    {
+      "id": "indef-tr-03",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "en": "I do not see anyone in the street.",
+        "es": "No veo a nadie en la calle."
+      },
+      "answer": "No vi a nadie en la calle.",
+      "accept": [
+        "Yo no vi a nadie en la calle."
+      ],
+      "wordIds": [
+        "78",
+        "164",
+        "120"
+      ],
+      "why": {
+        "en": "Indefinido: only the verb changes (veo → vi, llama → llamó); algo, nada, alguien and nadie stay the same.",
+        "es": "Indefinido: solo cambia el verbo (veo → vi, llama → llamó); algo, nada, alguien y nadie quedan igual."
+      }
+    },
+    {
+      "id": "indef-tr-04",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "en": "Someone calls my mom.",
+        "es": "Alguien llama a mi mamá."
+      },
+      "answer": "Alguien llamó a mi mamá.",
+      "wordIds": [
+        "163",
+        "89",
+        "695"
+      ],
+      "why": {
+        "en": "Indefinido: only the verb changes (veo → vi, llama → llamó); algo, nada, alguien and nadie stay the same.",
+        "es": "Indefinido: solo cambia el verbo (veo → vi, llama → llamó); algo, nada, alguien y nadie quedan igual."
+      }
+    },
+    {
+      "id": "indef-tr-05",
+      "kind": "transform",
+      "tense": {
+        "from": "ir-a",
+        "to": "presente"
+      },
+      "prompt": {
+        "en": "I am not going to buy any book.",
+        "es": "No voy a comprar ningún libro."
+      },
+      "answer": "No compro ningún libro.",
+      "accept": [
+        "Yo no compro ningún libro."
+      ],
+      "wordIds": [
+        "144",
+        "124"
+      ],
+      "why": {
+        "en": "Present, yo: comprar → compro; ningún stays the same before the noun.",
+        "es": "Presente, yo: comprar → compro; ningún queda igual delante del sustantivo."
+      }
+    },
+    {
+      "id": "indef-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "¿Quieres ___ de beber? No, gracias, no quiero ___.",
+      "answers": [
+        "algo",
+        "nada"
+      ],
+      "tr": {
+        "en": "\"Do you want something to drink?\" \"No, thanks, I do not want anything.\"",
+        "es": "¿Quieres algo de beber? No, gracias, no quiero nada."
+      },
+      "why": {
+        "en": "A question or an offer uses algo; after no, the negative word nada goes after the verb.",
+        "es": "Una pregunta o un ofrecimiento usa algo; después de no, la palabra negativa nada va detrás del verbo."
+      }
+    },
+    {
+      "id": "indef-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Hoy ___ está en casa porque todos están en el trabajo. Tengo hambre, pero no hay ___ de comer.",
+      "answers": [
+        "nadie",
+        "nada"
+      ],
+      "tr": {
+        "en": "Today nobody is at home because everybody is at work. I am hungry, but there is nothing to eat.",
+        "es": "Hoy nadie está en casa porque todos están en el trabajo. Tengo hambre, pero no hay nada de comer."
+      },
+      "why": {
+        "en": "Nadie is about people (nobody) and nada is about things (nothing); before the verb nadie needs no extra no.",
+        "es": "Nadie es de personas (ninguna persona) y nada es de cosas; delante del verbo, nadie no necesita otro no."
+      }
+    },
+    {
+      "id": "indef-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Quiero visitar Oaxaca ___ día. ¿Hay ___ restaurante bueno aquí? No, no hay ___.",
+      "answers": [
+        "algún",
+        "algún",
+        "ninguno"
+      ],
+      "tr": {
+        "en": "I want to visit Oaxaca some day. Is there a good restaurant here? No, there is none.",
+        "es": "Quiero visitar Oaxaca algún día. ¿Hay algún restaurante bueno aquí? No, no hay ninguno."
+      },
+      "why": {
+        "en": "Algún goes before a masculine singular noun (algún día, algún restaurante); alone, the negative is ninguno.",
+        "es": "Algún va delante de un sustantivo masculino singular (algún día, algún restaurante); solo, el negativo es ninguno."
+      }
+    },
+    {
+      "id": "indef-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "¿Hay ___ mesa libre en el restaurante? No, no hay ___ mesa libre.",
+      "answers": [
+        "alguna",
+        "ninguna"
+      ],
+      "tr": {
+        "en": "Is there a free table in the restaurant? No, there is no free table.",
+        "es": "¿Hay alguna mesa libre en el restaurante? No, no hay ninguna mesa libre."
+      },
+      "why": {
+        "en": "Mesa is feminine, so alguna and ninguna take the feminine ending.",
+        "es": "Mesa es femenino, así que alguna y ninguna llevan la terminación femenina."
+      }
+    },
+    {
+      "id": "indef-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "No tengo ___ problema con eso. ¿Tienes tú ___ problema?",
+      "answers": [
+        "ningún",
+        "algún"
+      ],
+      "tr": {
+        "en": "I have no problem with that. Do you have a problem?",
+        "es": "No tengo ningún problema con eso. ¿Tienes tú algún problema?"
+      },
+      "why": {
+        "en": "Before a masculine singular noun ninguno and alguno lose the -o: ningún problema, algún problema.",
+        "es": "Delante de un sustantivo masculino singular ninguno y alguno pierden la -o: ningún problema, algún problema."
+      }
+    },
+    {
+      "id": "indef-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "No quiero algo más, gracias.",
+      "wrongIndex": 2,
+      "answer": "nada",
+      "explain": {
+        "en": "After no the negative word is needed: no quiero nada.",
+        "es": "Después de no hace falta la palabra negativa: no quiero nada."
+      },
+      "tr": {
+        "en": "I do not want anything else, thanks.",
+        "es": "No quiero nada más, gracias."
+      }
+    },
+    {
+      "id": "indef-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "No veo a alguien en la calle.",
+      "wrongIndex": 3,
+      "answer": "nadie",
+      "explain": {
+        "en": "After no the negative word is needed: no veo a nadie.",
+        "es": "Después de no hace falta la palabra negativa: no veo a nadie."
+      },
+      "tr": {
+        "en": "I do not see anyone in the street.",
+        "es": "No veo a nadie en la calle."
+      }
+    },
+    {
+      "id": "indef-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "No tengo alguno problema con eso.",
+      "wrongIndex": 2,
+      "answer": "ningún",
+      "explain": {
+        "en": "The negative sentence needs ningún, and it loses the -o before a masculine noun.",
+        "es": "La frase negativa necesita ningún, que pierde la -o delante de un sustantivo masculino."
+      },
+      "tr": {
+        "en": "I have no problem with that.",
+        "es": "No tengo ningún problema con eso."
+      }
+    },
+    {
+      "id": "indef-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "Quiero visitar Oaxaca alguno día.",
+      "wrongIndex": 3,
+      "answer": "algún",
+      "explain": {
+        "en": "Alguno loses the -o before a masculine singular noun: algún día.",
+        "es": "Alguno pierde la -o delante de un sustantivo masculino singular: algún día."
+      },
+      "tr": {
+        "en": "I want to visit Oaxaca some day.",
+        "es": "Quiero visitar Oaxaca algún día."
+      }
+    },
+    {
+      "id": "indef-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "No hay ningún mesa libre.",
+      "wrongIndex": 2,
+      "answer": "ninguna",
+      "explain": {
+        "en": "Mesa is feminine, so the word is ninguna, not ningún.",
+        "es": "Mesa es femenino, así que la palabra es ninguna, no ningún."
+      },
+      "tr": {
+        "en": "There is no free table.",
+        "es": "No hay ninguna mesa libre."
+      }
+    },
+    {
+      "id": "indef-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "algo",
+        "alguien",
+        "nadie"
+      ],
+      "es": "Tengo hambre. ¿Hay ___ de comer?",
+      "word": "algo",
+      "answer": "algo",
+      "tr": {
+        "en": "I am hungry. Is there something to eat?",
+        "es": "Tengo hambre. ¿Hay algo de comer?"
+      },
+      "why": {
+        "en": "Something to eat is a thing, so algo (alguien and nadie are for people).",
+        "es": "Algo de comer es una cosa, así que algo (alguien y nadie son para personas)."
+      }
+    },
+    {
+      "id": "indef-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "algo",
+        "alguien",
+        "nada"
+      ],
+      "es": "¿Conoces a ___ en Oaxaca?",
+      "word": "alguien",
+      "answer": "alguien",
+      "tr": {
+        "en": "Do you know anyone in Oaxaca?",
+        "es": "¿Conoces a alguien en Oaxaca?"
+      },
+      "why": {
+        "en": "You know a person, so alguien (algo and nada are for things).",
+        "es": "Conoces a una persona, así que alguien (algo y nada son para cosas)."
+      }
+    },
+    {
+      "id": "indef-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "nada",
+        "nadie",
+        "algo"
+      ],
+      "es": "No veo a ___ en la calle.",
+      "word": "nadie",
+      "answer": "nadie",
+      "tr": {
+        "en": "I do not see anyone in the street.",
+        "es": "No veo a nadie en la calle."
+      },
+      "why": {
+        "en": "After no and a + a person: nadie (nada is for things, algo is not negative).",
+        "es": "Después de no y a + una persona: nadie (nada es para cosas, algo no es negativo)."
+      }
+    },
+    {
+      "id": "indef-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "algún",
+        "alguno",
+        "ninguno"
+      ],
+      "es": "Quiero visitar Oaxaca ___ día.",
+      "word": "algún",
+      "answer": "algún",
+      "tr": {
+        "en": "I want to visit Oaxaca some day.",
+        "es": "Quiero visitar Oaxaca algún día."
+      },
+      "why": {
+        "en": "Before día (masculine singular) it is algún; the sentence is positive, so not ninguno.",
+        "es": "Delante de día (masculino singular) es algún; la frase es afirmativa, así que no ninguno."
+      }
+    },
+    {
+      "id": "indef-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "alguno",
+        "ninguno",
+        "algo"
+      ],
+      "es": "¿Hay mesas libres? No hay ___.",
+      "word": "ninguno",
+      "answer": "ninguna",
+      "tr": {
+        "en": "Are there free tables? There are none.",
+        "es": "¿Hay mesas libres? No hay ninguna."
+      },
+      "why": {
+        "en": "After no hay the negative word is needed, and it agrees with mesas: ninguna.",
+        "es": "Después de no hay hace falta la palabra negativa, y concuerda con mesas: ninguna."
+      }
+    },
+    {
+      "id": "indef-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "I do not want anything else, thanks.",
+        "es": "No quiero nada más, gracias."
+      },
+      "es": "No quiero nada más, gracias."
+    },
+    {
+      "id": "indef-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "Do you know anyone in Oaxaca?",
+        "es": "¿Conoces a alguien en Oaxaca?"
+      },
+      "es": "¿Conoces a alguien en Oaxaca?"
+    },
+    {
+      "id": "indef-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "I do not see anyone in the street.",
+        "es": "No veo a nadie en la calle."
+      },
+      "es": "No veo a nadie en la calle."
+    },
+    {
+      "id": "indef-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "I have no problem with that.",
+        "es": "No tengo ningún problema con eso."
+      },
+      "es": "No tengo ningún problema con eso."
+    },
+    {
+      "id": "indef-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "Is there a free table in the restaurant?",
+        "es": "¿Hay alguna mesa libre en el restaurante?"
+      },
+      "es": "¿Hay alguna mesa libre en el restaurante?"
     }
   ]
 }

@@ -80,16 +80,17 @@ describe('write is never required, never scored', () => {
       expect(scoredKinds(lesson(id))).not.toContain('write');
       expect(lessonKinds('es', id)).not.toContain('write');
     }
-    expect(scoredKinds(lesson('por-para'))).toEqual(['choice', 'match', 'form', 'why']);
+    expect(scoredKinds(lesson('por-para'))).toEqual(['choice', 'match', 'form', 'why', 'transform']);
   });
 
   it('a lesson done before the new kind existed stays done (por-para: no write row needed)', () => {
-    const before = ['choice', 'match', 'form', 'why'];
+    // E133: por-para also has the transform and order tasks of the grammar tests, so they are part of the done state too
+    const before = ['choice', 'match', 'form', 'why', 'transform', 'order'];
     const done = doneGrammarTopicProgress('es', doneRows('por-para', before));
-    expect(done.get('por-para')).toEqual({ state: 'done', correct: 36, total: 40 });
+    expect(done.get('por-para')).toEqual({ state: 'done', correct: 54, total: 60 });
     // a done write row changes nothing: neither the state nor the totals
     const withWrite = doneGrammarTopicProgress('es', doneRows('por-para', [...before, 'write']));
-    expect(withWrite.get('por-para')).toEqual({ state: 'done', correct: 36, total: 40 });
+    expect(withWrite.get('por-para')).toEqual({ state: 'done', correct: 54, total: 60 });
   });
 
   it('ser-estar still needs its dictation (the existing behaviour did not change), but not the write row', () => {

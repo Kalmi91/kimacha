@@ -52,6 +52,12 @@ function main() {
   const tiers = tiersFile ? JSON.parse(fs.readFileSync(tiersFile, 'utf8')) : tiersFromSource();
   const errors = [];
   let checked = 0;
+  // `exempt`: { topicId: [type, ...] } the type is not required for that topic (a decision for the lesson, e.g. no typed form drill)
+  const exempt = config.exempt ?? {};
+  for (const [topicId, types] of Object.entries(exempt)) {
+    if (!syllabus.some((t) => t.id === topicId)) errors.push(`exempt: unknown topic "${topicId}"`);
+    for (const type of types) if (!config.types[type]) errors.push(`exempt: unknown type "${type}" for topic "${topicId}"`);
+  }
 
   for (const [level, spec] of Object.entries(config.levels)) {
     if (!flag('--all') && !spec.enabled) continue;
@@ -66,6 +72,7 @@ function main() {
       const perKind = {};
       for (const it of items) perKind[kindOf(it)] = (perKind[kindOf(it)] ?? 0) + 1;
       for (const type of spec.types) {
+        if ((exempt[topic.id] ?? []).includes(type)) continue;
         const kinds = config.types[type] ?? [];
         const have = kinds.reduce((n, k) => n + (perKind[k] ?? 0), 0);
         if (have < config.minPerType) errors.push(`${level} ${topic.id} ${type}: ${have}/${config.minPerType}`);

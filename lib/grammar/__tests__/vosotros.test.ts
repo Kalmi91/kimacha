@@ -145,7 +145,7 @@ describe('indefinido-10-verbos (real lesson)', () => {
 
   // the 4 vosotros transform items became ustedes items, nothing is dropped any more.
   it('has no vosotros transform item left, all 50 are played', () => {
-    const all = lesson.items as TransformItem[];
+    const all = (lesson.items as TransformItem[]).filter((i) => i.kind === 'transform');
     expect(all).toHaveLength(50);
     expect(filterVosotros(all)).toHaveLength(50);
   });

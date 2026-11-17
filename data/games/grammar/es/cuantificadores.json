@@ -1318,6 +1318,477 @@
         }
       ],
       "correctIndex": 0
+    },
+    {
+      "id": "c-tr-01",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "I study all day.",
+        "es": "Estudio todo el día."
+      },
+      "answer": "Voy a estudiar todo el día.",
+      "accept": [
+        "Yo voy a estudiar todo el día."
+      ],
+      "wordIds": [
+        "212",
+        "97",
+        "53"
+      ],
+      "why": {
+        "en": "Ir a + infinitive: the quantity word does not change (todo el día, bastante interesante).",
+        "es": "Ir a + infinitivo: la palabra de cantidad no cambia (todo el día, bastante interesante)."
+      }
+    },
+    {
+      "id": "c-tr-02",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "en": "I work all week.",
+        "es": "Trabajo toda la semana."
+      },
+      "answer": "Trabajé toda la semana.",
+      "accept": [
+        "Yo trabajé toda la semana."
+      ],
+      "wordIds": [
+        "49",
+        "97",
+        "133"
+      ],
+      "why": {
+        "en": "Indefinido: only the verb changes (trabajo → trabajé, comemos → comimos); toda and misma stay the same.",
+        "es": "Indefinido: solo cambia el verbo (trabajo → trabajé, comemos → comimos); toda y misma quedan igual."
+      }
+    },
+    {
+      "id": "c-tr-03",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "en": "Every Monday I go to class.",
+        "es": "Todos los lunes voy a clase."
+      },
+      "answer": "Todos los lunes iba a clase.",
+      "accept": [
+        "Todos los lunes yo iba a clase.",
+        "Iba a clase todos los lunes."
+      ],
+      "wordIds": [
+        "33",
+        "639",
+        "246"
+      ],
+      "why": {
+        "en": "A habit in the past (todos los lunes) takes the imperfect: voy → iba; todos stays the same.",
+        "es": "Una costumbre en el pasado (todos los lunes) va en imperfecto: voy → iba; todos queda igual."
+      }
+    },
+    {
+      "id": "c-tr-04",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "My new job is quite interesting.",
+        "es": "Mi nuevo trabajo es bastante interesante."
+      },
+      "answer": "Mi nuevo trabajo va a ser bastante interesante.",
+      "wordIds": [
+        "50",
+        "67",
+        "611"
+      ],
+      "why": {
+        "en": "Ir a + infinitive: the quantity word does not change (todo el día, bastante interesante).",
+        "es": "Ir a + infinitivo: la palabra de cantidad no cambia (todo el día, bastante interesante)."
+      }
+    },
+    {
+      "id": "c-tr-05",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "en": "My brother and I eat in the same house.",
+        "es": "Mi hermano y yo comemos en la misma casa."
+      },
+      "answer": "Mi hermano y yo comimos en la misma casa.",
+      "wordIds": [
+        "25",
+        "152",
+        "19"
+      ],
+      "why": {
+        "en": "Indefinido: only the verb changes (trabajo → trabajé, comemos → comimos); toda and misma stay the same.",
+        "es": "Indefinido: solo cambia el verbo (trabajo → trabajé, comemos → comimos); toda y misma quedan igual."
+      }
+    },
+    {
+      "id": "c-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Estudio ___ el día y trabajo ___ la semana, pero voy a clase ___ los lunes.",
+      "answers": [
+        "todo",
+        "toda",
+        "todos"
+      ],
+      "tr": {
+        "en": "I study all day and work all week, but I go to class every Monday.",
+        "es": "Estudio todo el día y trabajo toda la semana, pero voy a clase todos los lunes."
+      },
+      "why": {
+        "en": "Todo agrees with the noun: el día → todo, la semana → toda, los lunes → todos.",
+        "es": "Todo concuerda con el sustantivo: el día → todo, la semana → toda, los lunes → todos."
+      }
+    },
+    {
+      "id": "c-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "En ___ casa hay una cocina. Esta casa es pequeña, pero la ___ es grande. Mi hermano y yo vivimos juntos, en la ___ casa.",
+      "answers": [
+        "cada",
+        "otra",
+        "misma"
+      ],
+      "tr": {
+        "en": "In every house there is a kitchen. This house is small, but the other one is big. My brother and I live together, in the same house.",
+        "es": "En cada casa hay una cocina. Esta casa es pequeña, pero la otra es grande. Mi hermano y yo vivimos juntos, en la misma casa."
+      },
+      "why": {
+        "en": "Cada never changes; otra and misma agree with casa (feminine).",
+        "es": "Cada nunca cambia; otra y misma concuerdan con casa (femenino)."
+      }
+    },
+    {
+      "id": "c-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Hay ___ gente en el metro y el café está ___ caliente para mí.",
+      "answers": [
+        "demasiada",
+        "demasiado"
+      ],
+      "accept": [
+        [
+          "mucha",
+          "bastante"
+        ],
+        [
+          "muy",
+          "bastante"
+        ]
+      ],
+      "tr": {
+        "en": "There are too many people on the subway and the coffee is too hot for me.",
+        "es": "Hay demasiada gente en el metro y el café está demasiado caliente para mí."
+      },
+      "why": {
+        "en": "Demasiado means too much: before a noun it agrees (demasiada gente), before an adjective it does not change (demasiado caliente).",
+        "es": "Demasiado significa más de lo necesario: delante de un sustantivo concuerda (demasiada gente), delante de un adjetivo no cambia (demasiado caliente)."
+      }
+    },
+    {
+      "id": "c-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Tengo ___ amigos en esta ciudad y mi nuevo trabajo es ___ interesante.",
+      "answers": [
+        "bastantes",
+        "bastante"
+      ],
+      "accept": [
+        [
+          "muchos"
+        ],
+        [
+          "muy"
+        ]
+      ],
+      "tr": {
+        "en": "I have quite a few friends in this city and my new job is quite interesting.",
+        "es": "Tengo bastantes amigos en esta ciudad y mi nuevo trabajo es bastante interesante."
+      },
+      "why": {
+        "en": "Bastante changes only in the plural before a noun (bastantes amigos); before an adjective it stays bastante.",
+        "es": "Bastante cambia solo en plural delante de un sustantivo (bastantes amigos); delante de un adjetivo queda bastante."
+      }
+    },
+    {
+      "id": "c-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Este café está frío. Quiero ___ café, por favor. Llámame ahora ___, por favor.",
+      "answers": [
+        "otro",
+        "mismo"
+      ],
+      "accept": [
+        [
+          "un",
+          "más"
+        ]
+      ],
+      "tr": {
+        "en": "This coffee is cold. I want another coffee, please. Call me right now, please.",
+        "es": "Este café está frío. Quiero otro café, por favor. Llámame ahora mismo, por favor."
+      },
+      "why": {
+        "en": "Otro already means another, so there is no \"un\" before it; ahora mismo (right now) uses mismo, which does not change here.",
+        "es": "Otro ya significa otro, así que no lleva \"un\" delante; ahora mismo usa mismo, que aquí no cambia."
+      }
+    },
+    {
+      "id": "c-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "Estudio todos el día.",
+      "wrongIndex": 1,
+      "answer": "todo",
+      "explain": {
+        "en": "El día is masculine singular, so it is todo, not todos.",
+        "es": "El día es masculino singular, así que es todo, no todos."
+      },
+      "tr": {
+        "en": "I study all day.",
+        "es": "Estudio todo el día."
+      }
+    },
+    {
+      "id": "c-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "Trabajo todo la semana.",
+      "wrongIndex": 1,
+      "answer": "toda",
+      "explain": {
+        "en": "La semana is feminine, so it is toda, not todo.",
+        "es": "La semana es femenino, así que es toda, no todo."
+      },
+      "tr": {
+        "en": "I work all week.",
+        "es": "Trabajo toda la semana."
+      }
+    },
+    {
+      "id": "c-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "Esta casa es pequeña, pero la otro es grande.",
+      "wrongIndex": 6,
+      "answer": "otra",
+      "explain": {
+        "en": "Otro agrees with casa (feminine): la otra.",
+        "es": "Otro concuerda con casa (femenino): la otra."
+      },
+      "tr": {
+        "en": "This house is small, but the other one is big.",
+        "es": "Esta casa es pequeña, pero la otra es grande."
+      }
+    },
+    {
+      "id": "c-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "Hay demasiado gente en el metro.",
+      "wrongIndex": 1,
+      "answer": "demasiada",
+      "explain": {
+        "en": "Before a noun demasiado agrees: demasiada gente (gente is feminine).",
+        "es": "Delante de un sustantivo demasiado concuerda: demasiada gente (gente es femenino)."
+      },
+      "tr": {
+        "en": "There are too many people on the subway.",
+        "es": "Hay demasiada gente en el metro."
+      }
+    },
+    {
+      "id": "c-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "Mi hermano y yo vivimos en la mismo casa.",
+      "wrongIndex": 7,
+      "answer": "misma",
+      "explain": {
+        "en": "Mismo agrees with casa (feminine): la misma casa.",
+        "es": "Mismo concuerda con casa (femenino): la misma casa."
+      },
+      "tr": {
+        "en": "My brother and I live in the same house.",
+        "es": "Mi hermano y yo vivimos en la misma casa."
+      }
+    },
+    {
+      "id": "c-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "todo",
+        "otro",
+        "mismo"
+      ],
+      "es": "Trabajo ___ la semana, pero el domingo estoy en casa.",
+      "word": "todo",
+      "answer": "toda",
+      "tr": {
+        "en": "I work all week, but on Sunday I am at home.",
+        "es": "Trabajo toda la semana, pero el domingo estoy en casa."
+      },
+      "why": {
+        "en": "All week = toda la semana; otra and misma do not fit before la semana.",
+        "es": "Toda la semana = la semana entera; otra y misma no encajan delante de la semana."
+      }
+    },
+    {
+      "id": "c-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "todo",
+        "cada",
+        "otro"
+      ],
+      "es": "Voy a clase ___ los lunes.",
+      "word": "todo",
+      "answer": "todos",
+      "tr": {
+        "en": "I go to class every Monday.",
+        "es": "Voy a clase todos los lunes."
+      },
+      "why": {
+        "en": "Todos los lunes = every Monday; cada does not go before los, and otros does not fit.",
+        "es": "Todos los lunes = cada lunes; cada no va delante de los, y otros no encaja."
+      }
+    },
+    {
+      "id": "c-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "demasiado",
+        "cada",
+        "todo"
+      ],
+      "es": "Hay ___ gente en el metro: no puedo ni caminar.",
+      "word": "demasiado",
+      "answer": "demasiada",
+      "tr": {
+        "en": "There are too many people on the subway: I cannot even walk.",
+        "es": "Hay demasiada gente en el metro: no puedo ni caminar."
+      },
+      "why": {
+        "en": "Too many people = demasiada gente; cada gente and toda gente do not work here.",
+        "es": "Demasiada gente = más gente de la necesaria; cada gente y toda gente no sirven aquí."
+      }
+    },
+    {
+      "id": "c-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "mismo",
+        "cada",
+        "demasiado"
+      ],
+      "es": "Mi hermano y yo vivimos juntos, en la ___ casa.",
+      "word": "mismo",
+      "answer": "misma",
+      "tr": {
+        "en": "My brother and I live together, in the same house.",
+        "es": "Mi hermano y yo vivimos juntos, en la misma casa."
+      },
+      "why": {
+        "en": "Together means the same house: la misma casa, agreeing with casa.",
+        "es": "Juntos significa la misma casa: la misma casa, concordando con casa."
+      }
+    },
+    {
+      "id": "c-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "otro",
+        "mismo",
+        "cada"
+      ],
+      "es": "Este café está frío. Quiero ___ café, por favor.",
+      "word": "otro",
+      "answer": "otro",
+      "tr": {
+        "en": "This coffee is cold. I want another coffee, please.",
+        "es": "Este café está frío. Quiero otro café, por favor."
+      },
+      "why": {
+        "en": "Another coffee = otro café (mismo and cada do not fit after quiero).",
+        "es": "Otro café = un café más (mismo y cada no encajan después de quiero)."
+      }
+    },
+    {
+      "id": "c-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "I study all day.",
+        "es": "Estudio todo el día."
+      },
+      "es": "Estudio todo el día."
+    },
+    {
+      "id": "c-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "Is there a kitchen in every house?",
+        "es": "¿Hay una cocina en cada casa?"
+      },
+      "es": "¿Hay una cocina en cada casa?"
+    },
+    {
+      "id": "c-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "There are too many people.",
+        "es": "Hay demasiada gente."
+      },
+      "es": "Hay demasiada gente."
+    },
+    {
+      "id": "c-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "My brother and I live in the same house.",
+        "es": "Mi hermano y yo vivimos en la misma casa."
+      },
+      "es": "Mi hermano y yo vivimos en la misma casa."
+    },
+    {
+      "id": "c-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "My new job is quite interesting.",
+        "es": "Mi nuevo trabajo es bastante interesante."
+      },
+      "es": "Mi nuevo trabajo es bastante interesante."
     }
   ]
 }

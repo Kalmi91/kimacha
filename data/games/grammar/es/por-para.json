@@ -780,6 +780,460 @@
       "correctIndex": 0
     },
     {
+      "id": "pr-tr-01",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "I study Spanish to travel to Mexico.",
+        "es": "Estudio español para viajar a México."
+      },
+      "answer": "Voy a estudiar español para viajar a México.",
+      "accept": [
+        "Yo voy a estudiar español para viajar a México."
+      ],
+      "wordIds": [
+        "212",
+        "128",
+        "230"
+      ],
+      "why": {
+        "en": "Ir a + infinitive: por and para do not change (para viajar, por la lluvia stay).",
+        "es": "Ir a + infinitivo: por y para no cambian (para viajar, por la lluvia se quedan)."
+      }
+    },
+    {
+      "id": "pr-tr-02",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "en": "I buy this shirt for a hundred pesos.",
+        "es": "Compro esta camisa por cien pesos."
+      },
+      "answer": "Compré esta camisa por cien pesos.",
+      "accept": [
+        "Yo compré esta camisa por cien pesos."
+      ],
+      "wordIds": [
+        "144",
+        "603",
+        "890"
+      ],
+      "why": {
+        "en": "Indefinido, yo: -ar → -é (compré, hablé); por stays the same.",
+        "es": "Indefinido, yo: -ar → -é (compré, hablé); por queda igual."
+      }
+    },
+    {
+      "id": "pr-tr-03",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "en": "I talk on the phone with my mom.",
+        "es": "Hablo por teléfono con mi mamá."
+      },
+      "answer": "Hablé por teléfono con mi mamá.",
+      "accept": [
+        "Yo hablé por teléfono con mi mamá."
+      ],
+      "wordIds": [
+        "47",
+        "122",
+        "695"
+      ],
+      "why": {
+        "en": "Indefinido, yo: -ar → -é (compré, hablé); por stays the same.",
+        "es": "Indefinido, yo: -ar → -é (compré, hablé); por queda igual."
+      }
+    },
+    {
+      "id": "pr-tr-04",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "I do not work today because of the rain.",
+        "es": "No trabajo hoy por la lluvia."
+      },
+      "answer": "No voy a trabajar hoy por la lluvia.",
+      "accept": [
+        "Hoy no voy a trabajar por la lluvia.",
+        "Yo no voy a trabajar hoy por la lluvia."
+      ],
+      "wordIds": [
+        "49",
+        "988"
+      ],
+      "why": {
+        "en": "Ir a + infinitive: por and para do not change (para viajar, por la lluvia stay).",
+        "es": "Ir a + infinitivo: por y para no cambian (para viajar, por la lluvia se quedan)."
+      }
+    },
+    {
+      "id": "pr-tr-05",
+      "kind": "transform",
+      "tense": {
+        "from": "ir-a",
+        "to": "presente"
+      },
+      "prompt": {
+        "en": "We are going to leave for Mexico tomorrow.",
+        "es": "Vamos a salir para México mañana."
+      },
+      "answer": "Salimos para México mañana.",
+      "accept": [
+        "Mañana salimos para México.",
+        "Nosotros salimos para México mañana."
+      ],
+      "wordIds": [
+        "199",
+        "173"
+      ],
+      "why": {
+        "en": "Present, nosotros: salir → salimos; para stays the same.",
+        "es": "Presente, nosotros: salir → salimos; para queda igual."
+      }
+    },
+    {
+      "id": "pr-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Estudio español ___ viajar a México. Compro esta camisa ___ cien pesos. Gracias ___ tu ayuda.",
+      "answers": [
+        "para",
+        "por",
+        "por"
+      ],
+      "tr": {
+        "en": "I study Spanish to travel to Mexico. I buy this shirt for a hundred pesos. Thanks for your help.",
+        "es": "Estudio español para viajar a México. Compro esta camisa por cien pesos. Gracias por tu ayuda."
+      },
+      "why": {
+        "en": "Para + infinitive says the purpose (to travel); por says the price (for a hundred pesos) and the reason for thanks (por tu ayuda).",
+        "es": "Para + infinitivo dice la finalidad (para viajar); por dice el precio (por cien pesos) y el motivo del agradecimiento (por tu ayuda)."
+      }
+    },
+    {
+      "id": "pr-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "No trabajo hoy ___ la lluvia. El trabajo es ___ el lunes. Hablamos ___ teléfono.",
+      "answers": [
+        "por",
+        "para",
+        "por"
+      ],
+      "tr": {
+        "en": "I do not work today because of the rain. The work is for Monday. We talk on the phone.",
+        "es": "No trabajo hoy por la lluvia. El trabajo es para el lunes. Hablamos por teléfono."
+      },
+      "why": {
+        "en": "Por gives the cause (por la lluvia) and the means (por teléfono); para gives a deadline (para el lunes).",
+        "es": "Por da la causa (por la lluvia) y el medio (por teléfono); para da un plazo (para el lunes)."
+      }
+    },
+    {
+      "id": "pr-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Toma, este regalo es ___ ti, mamá. Estuve en México ___ dos semanas. Necesito una taza ___ el café.",
+      "answers": [
+        "para",
+        "por",
+        "para"
+      ],
+      "tr": {
+        "en": "Here, this gift is for you, Mom. I was in Mexico for two weeks. I need a cup for the coffee.",
+        "es": "Toma, este regalo es para ti, mamá. Estuve en México por dos semanas. Necesito una taza para el café."
+      },
+      "why": {
+        "en": "Para marks the receiver (para ti) and the use of a thing (una taza para el café); por marks how long (por dos semanas).",
+        "es": "Para marca al destinatario (para ti) y el uso de una cosa (una taza para el café); por marca cuánto tiempo (por dos semanas)."
+      }
+    },
+    {
+      "id": "pr-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Vamos a salir ___ México mañana y ___ eso hoy compramos todo.",
+      "answers": [
+        "para",
+        "por"
+      ],
+      "tr": {
+        "en": "We are going to leave for Mexico tomorrow and that is why we buy everything today.",
+        "es": "Vamos a salir para México mañana y por eso hoy compramos todo."
+      },
+      "why": {
+        "en": "Para + place = the destination (salir para México); por eso = for that reason.",
+        "es": "Para + lugar = el destino (salir para México); por eso = por esa razón."
+      }
+    },
+    {
+      "id": "pr-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Paseamos ___ el parque. Mi hermano estudia ___ ser médico y trabaja ___ la noche.",
+      "answers": [
+        "por",
+        "para",
+        "por"
+      ],
+      "tr": {
+        "en": "We walk through the park. My brother studies to become a doctor and works at night.",
+        "es": "Paseamos por el parque. Mi hermano estudia para ser médico y trabaja por la noche."
+      },
+      "why": {
+        "en": "Por is the place you move through (por el parque) and a part of the day (por la noche); para + infinitive is the purpose (para ser médico).",
+        "es": "Por es el lugar por donde te mueves (por el parque) y una parte del día (por la noche); para + infinitivo es la finalidad (para ser médico)."
+      }
+    },
+    {
+      "id": "pr-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "Compro esta camisa para cien pesos.",
+      "wrongIndex": 3,
+      "answer": "por",
+      "explain": {
+        "en": "A price takes por: por cien pesos.",
+        "es": "Un precio lleva por: por cien pesos."
+      },
+      "tr": {
+        "en": "I buy this shirt for a hundred pesos.",
+        "es": "Compro esta camisa por cien pesos."
+      }
+    },
+    {
+      "id": "pr-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "No trabajo hoy para la lluvia.",
+      "wrongIndex": 3,
+      "answer": "por",
+      "explain": {
+        "en": "A cause takes por: por la lluvia.",
+        "es": "Una causa lleva por: por la lluvia."
+      },
+      "tr": {
+        "en": "I do not work today because of the rain.",
+        "es": "No trabajo hoy por la lluvia."
+      }
+    },
+    {
+      "id": "pr-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "El trabajo es por el lunes.",
+      "wrongIndex": 3,
+      "answer": "para",
+      "explain": {
+        "en": "A deadline takes para: para el lunes.",
+        "es": "Un plazo lleva para: para el lunes."
+      },
+      "tr": {
+        "en": "The work is for Monday.",
+        "es": "El trabajo es para el lunes."
+      }
+    },
+    {
+      "id": "pr-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "Gracias para tu ayuda.",
+      "wrongIndex": 1,
+      "answer": "por",
+      "explain": {
+        "en": "The reason for thanks takes por: gracias por tu ayuda.",
+        "es": "El motivo del agradecimiento lleva por: gracias por tu ayuda."
+      },
+      "tr": {
+        "en": "Thanks for your help.",
+        "es": "Gracias por tu ayuda."
+      }
+    },
+    {
+      "id": "pr-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "Hablamos para teléfono.",
+      "wrongIndex": 1,
+      "answer": "por",
+      "explain": {
+        "en": "The means of communication takes por: por teléfono.",
+        "es": "El medio de comunicación lleva por: por teléfono."
+      },
+      "tr": {
+        "en": "We talk on the phone.",
+        "es": "Hablamos por teléfono."
+      }
+    },
+    {
+      "id": "pr-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "por",
+        "para",
+        "en"
+      ],
+      "es": "Hablamos ___ teléfono.",
+      "word": "por",
+      "answer": "por",
+      "tr": {
+        "en": "We talk on the phone.",
+        "es": "Hablamos por teléfono."
+      },
+      "why": {
+        "en": "The means of communication takes por (para and en do not fit).",
+        "es": "El medio de comunicación lleva por (para y en no encajan)."
+      }
+    },
+    {
+      "id": "pr-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "por",
+        "para",
+        "sin"
+      ],
+      "es": "Compro esta camisa ___ cien pesos.",
+      "word": "por",
+      "answer": "por",
+      "tr": {
+        "en": "I buy this shirt for a hundred pesos.",
+        "es": "Compro esta camisa por cien pesos."
+      },
+      "why": {
+        "en": "A price takes por (para and en do not fit).",
+        "es": "Un precio lleva por (para y en no encajan)."
+      }
+    },
+    {
+      "id": "pr-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "por",
+        "para",
+        "en"
+      ],
+      "es": "El trabajo es ___ el lunes.",
+      "word": "para",
+      "answer": "para",
+      "tr": {
+        "en": "The work is for Monday.",
+        "es": "El trabajo es para el lunes."
+      },
+      "why": {
+        "en": "A deadline takes para (en el lunes would be a place in time, not a deadline).",
+        "es": "Un plazo lleva para (en el lunes sería un momento, no un plazo)."
+      }
+    },
+    {
+      "id": "pr-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "por",
+        "para",
+        "en"
+      ],
+      "es": "Estudio ___ ser médico.",
+      "word": "para",
+      "answer": "para",
+      "tr": {
+        "en": "I study to become a doctor.",
+        "es": "Estudio para ser médico."
+      },
+      "why": {
+        "en": "Para + infinitive says the purpose (por ser médico would mean \"because I am a doctor\").",
+        "es": "Para + infinitivo dice la finalidad (por ser médico significaría \"porque soy médico\")."
+      }
+    },
+    {
+      "id": "pr-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "por",
+        "para",
+        "en"
+      ],
+      "es": "Gracias ___ tu ayuda.",
+      "word": "por",
+      "answer": "por",
+      "tr": {
+        "en": "Thanks for your help.",
+        "es": "Gracias por tu ayuda."
+      },
+      "why": {
+        "en": "The reason for thanks takes por (para and en do not fit).",
+        "es": "El motivo del agradecimiento lleva por (para y en no encajan)."
+      }
+    },
+    {
+      "id": "pr-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "I study Spanish to travel to Mexico.",
+        "es": "Estudio español para viajar a México."
+      },
+      "es": "Estudio español para viajar a México."
+    },
+    {
+      "id": "pr-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "Thanks for your help.",
+        "es": "Gracias por tu ayuda."
+      },
+      "es": "Gracias por tu ayuda."
+    },
+    {
+      "id": "pr-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "We talk on the phone.",
+        "es": "Hablamos por teléfono."
+      },
+      "es": "Hablamos por teléfono."
+    },
+    {
+      "id": "pr-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "I buy this shirt for a hundred pesos.",
+        "es": "Compro esta camisa por cien pesos."
+      },
+      "es": "Compro esta camisa por cien pesos."
+    },
+    {
+      "id": "pr-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "The work is for Monday.",
+        "es": "El trabajo es para el lunes."
+      },
+      "es": "El trabajo es para el lunes."
+    },
+    {
       "id": "pp-01-w",
       "kind": "write",
       "trial": true,

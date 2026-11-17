@@ -3,18 +3,29 @@
 
 import { getGrammarTopics, grammarKindCounts } from '@/lib/games/content';
 import { getGrammarTier, syllabusForLevel } from '../syllabus';
-import { TASK_TYPE_IDS, coreTopicsForLevel, enabledTaskLevels, taskConfigForLevel, taskTypeCounts, taskTypeGaps } from '../taskTypes';
+import { TASK_TYPE_IDS, coreTopicsForLevel, enabledTaskLevels, exemptErrors, taskConfigForLevel, taskTypeCounts, taskTypeGaps } from '../taskTypes';
 
 describe('task types', () => {
   it('has the 8 types of the spec, in the spec order', () => {
     expect(TASK_TYPE_IDS).toEqual(['choice', 'form', 'transform', 'why', 'opencloze', 'fix', 'bank', 'order']);
   });
 
-  it('every level uses the 8 types and only A1 is switched on (E132)', () => {
+  it('every level uses the 8 types and A1 and A2 are switched on (E132, E133)', () => {
     for (const level of ['A1', 'A2', 'B1', 'B2', 'C1'] as const) {
       expect(taskConfigForLevel(level).types).toEqual(TASK_TYPE_IDS);
     }
-    expect(enabledTaskLevels()).toEqual(['A1']);
+    expect(enabledTaskLevels()).toEqual(['A1', 'A2']);
+  });
+
+  it('indefinido-imperfecto is exempt from the typed form drill: no form gap, and the lesson has no form item', () => {
+    expect(taskTypeGaps('A2').some((g) => g.topic === 'indefinido-imperfecto' && g.type === 'form')).toBe(false);
+    expect(taskTypeGaps('A2')).toEqual([]);
+  });
+
+  it('the exempt list names real topics and types only', () => {
+    expect(exemptErrors()).toEqual([]);
+    expect(exemptErrors({ nope: ['form'] }, ['ser-estar'])).toEqual(['unknown topic nope']);
+    expect(exemptErrors({ 'ser-estar': ['nope'] }, ['ser-estar'])).toEqual(['unknown type nope for ser-estar']);
   });
 
   it('counts the typed noun form under type 2 (form)', () => {

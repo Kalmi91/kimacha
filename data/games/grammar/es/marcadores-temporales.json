@@ -1237,6 +1237,482 @@
         }
       ],
       "correctIndex": 1
+    },
+    {
+      "id": "mt-tr-01",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "en": "I always go to the park with my brother.",
+        "es": "Siempre voy al parque con mi hermano."
+      },
+      "answer": "Siempre iba al parque con mi hermano.",
+      "accept": [
+        "Yo siempre iba al parque con mi hermano.",
+        "Iba siempre al parque con mi hermano."
+      ],
+      "wordIds": [
+        "33",
+        "254",
+        "42"
+      ],
+      "why": {
+        "en": "A habit in the past (siempre, los domingos, todos los días) takes the imperfect: voy → iba, como → comía.",
+        "es": "Costumbre en el pasado (siempre, los domingos, todos los días): imperfecto. Voy → iba, como → comía."
+      }
+    },
+    {
+      "id": "mt-tr-02",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "en": "Lately I sleep little.",
+        "es": "Últimamente duermo poco."
+      },
+      "answer": "Últimamente he dormido poco.",
+      "accept": [
+        "Últimamente yo he dormido poco.",
+        "Yo últimamente he dormido poco.",
+        "He dormido poco últimamente."
+      ],
+      "wordIds": [
+        "213",
+        "153"
+      ],
+      "why": {
+        "en": "With últimamente or hasta ahora (a situation that lasts until now) we use the present perfect: he + participle.",
+        "es": "Con últimamente o hasta ahora (una situación que dura hasta ahora) usamos el pretérito perfecto: he + participio."
+      }
+    },
+    {
+      "id": "mt-tr-03",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "en": "Until now I work a lot.",
+        "es": "Hasta ahora trabajo mucho."
+      },
+      "answer": "Hasta ahora he trabajado mucho.",
+      "accept": [
+        "Hasta ahora yo he trabajado mucho.",
+        "He trabajado mucho hasta ahora."
+      ],
+      "wordIds": [
+        "49",
+        "133",
+        "66"
+      ],
+      "why": {
+        "en": "With últimamente or hasta ahora (a situation that lasts until now) we use the present perfect: he + participle.",
+        "es": "Con últimamente o hasta ahora (una situación que dura hasta ahora) usamos el pretérito perfecto: he + participio."
+      }
+    },
+    {
+      "id": "mt-tr-04",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "en": "On Sundays I eat with my family.",
+        "es": "Los domingos como con mi familia."
+      },
+      "answer": "Los domingos comía con mi familia.",
+      "accept": [
+        "Los domingos yo comía con mi familia.",
+        "Comía con mi familia los domingos.",
+        "Yo comía con mi familia los domingos."
+      ],
+      "wordIds": [
+        "25",
+        "636",
+        "41"
+      ],
+      "why": {
+        "en": "A habit in the past (siempre, los domingos, todos los días) takes the imperfect: voy → iba, como → comía.",
+        "es": "Costumbre en el pasado (siempre, los domingos, todos los días): imperfecto. Voy → iba, como → comía."
+      }
+    },
+    {
+      "id": "mt-tr-05",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "en": "This morning I arrive late to work.",
+        "es": "Esta mañana llego tarde al trabajo."
+      },
+      "answer": "Esta mañana llegué tarde al trabajo.",
+      "accept": [
+        "Esta mañana yo llegué tarde al trabajo.",
+        "Llegué tarde al trabajo esta mañana.",
+        "Yo llegué tarde al trabajo esta mañana."
+      ],
+      "wordIds": [
+        "149",
+        "174",
+        "50"
+      ],
+      "why": {
+        "en": "Esta mañana is already over: a finished moment in the past takes the indefinido: llego → llegué.",
+        "es": "Esta mañana ya terminó: un momento cerrado del pasado va en indefinido. Llego → llegué."
+      }
+    },
+    {
+      "id": "mt-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Ayer ___ (yo, llegar) tarde a casa y ___ (yo, cenar) solo. Después ___ (yo, ver) una película.",
+      "answers": [
+        "llegué",
+        "cené",
+        "vi"
+      ],
+      "tr": {
+        "en": "Yesterday I got home late and had dinner alone. Then I watched a movie.",
+        "es": "Ayer llegué tarde a casa y cené solo. Después vi una película."
+      },
+      "why": {
+        "en": "Ayer and después tell about finished moments in the past: indefinido (llegué, cené, vi).",
+        "es": "Ayer y después hablan de momentos terminados del pasado: indefinido (llegué, cené, vi)."
+      }
+    },
+    {
+      "id": "mt-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "De niño, mi familia y yo ___ (vivir) en una casa pequeña. Todos los días ___ (yo, jugar) en la calle con mis amigos.",
+      "answers": [
+        "vivíamos",
+        "jugaba"
+      ],
+      "tr": {
+        "en": "As a child, my family and I lived in a small house. Every day I played in the street with my friends.",
+        "es": "De niño, mi familia y yo vivíamos en una casa pequeña. Todos los días jugaba en la calle con mis amigos."
+      },
+      "why": {
+        "en": "De niño and todos los días mark a habit or a situation in the past: imperfect (vivíamos, jugaba).",
+        "es": "De niño y todos los días marcan una costumbre o una situación del pasado: imperfecto (vivíamos, jugaba)."
+      }
+    },
+    {
+      "id": "mt-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Ayer, mientras yo ___ (cocinar), mi mamá ___ (llegar) a casa.",
+      "answers": [
+        "cocinaba",
+        "llegó"
+      ],
+      "tr": {
+        "en": "Yesterday, while I was cooking, my mom got home.",
+        "es": "Ayer, mientras yo cocinaba, mi mamá llegó a casa."
+      },
+      "why": {
+        "en": "Mientras gives the background that goes on (imperfect: cocinaba); the event that interrupts it is a finished moment (indefinido: llegó).",
+        "es": "Mientras da el fondo que dura (imperfecto: cocinaba); el hecho que lo interrumpe es un momento terminado (indefinido: llegó)."
+      }
+    },
+    {
+      "id": "mt-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Últimamente ___ (yo, trabajar) mucho y ___ (yo, dormir) poco. Hasta ahora ___ (yo, tomar) tres cafés.",
+      "answers": [
+        "he trabajado",
+        "he dormido",
+        "he tomado"
+      ],
+      "tr": {
+        "en": "Lately I have worked a lot and I have slept little. So far I have had three coffees.",
+        "es": "Últimamente he trabajado mucho y he dormido poco. Hasta ahora he tomado tres cafés."
+      },
+      "why": {
+        "en": "Últimamente and hasta ahora describe a situation that lasts until now: present perfect (he trabajado, he dormido, he tomado).",
+        "es": "Últimamente y hasta ahora describen una situación que dura hasta ahora: pretérito perfecto (he trabajado, he dormido, he tomado)."
+      }
+    },
+    {
+      "id": "mt-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "El año pasado ___ (nosotros, viajar) a México. El año que viene ___ (nosotros, viajar) a Guadalajara.",
+      "answers": [
+        "viajamos",
+        "viajaremos"
+      ],
+      "accept": [
+        [],
+        [
+          "vamos a viajar"
+        ]
+      ],
+      "tr": {
+        "en": "Last year we traveled to Mexico. Next year we will travel to Guadalajara.",
+        "es": "El año pasado viajamos a México. El año que viene viajaremos a Guadalajara."
+      },
+      "why": {
+        "en": "El año pasado looks back: indefinido (viajamos). El año que viene looks ahead: future (viajaremos) or ir a + infinitive.",
+        "es": "El año pasado mira atrás: indefinido (viajamos). El año que viene mira adelante: futuro (viajaremos) o ir a + infinitivo."
+      }
+    },
+    {
+      "id": "mt-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "Ayer voy al cine con mis amigos.",
+      "wrongIndex": 1,
+      "answer": "fui",
+      "explain": {
+        "en": "Ayer is in the past, so the verb is in the indefinido: fui, not voy.",
+        "es": "Ayer es pasado, así que el verbo va en indefinido: fui, no voy."
+      },
+      "tr": {
+        "en": "Yesterday I went to the movies with my friends.",
+        "es": "Ayer fui al cine con mis amigos."
+      }
+    },
+    {
+      "id": "mt-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "Cuando era niño, fui al parque todos los días.",
+      "wrongIndex": 3,
+      "answer": "iba",
+      "explain": {
+        "en": "Todos los días is a habit in the past: imperfect, iba, not fui.",
+        "es": "Todos los días es una costumbre en el pasado: imperfecto, iba, no fui."
+      },
+      "tr": {
+        "en": "When I was a child, I went to the park every day.",
+        "es": "Cuando era niño, iba al parque todos los días."
+      }
+    },
+    {
+      "id": "mt-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "Mañana fui al banco con mi mamá.",
+      "wrongIndex": 1,
+      "answer": "voy",
+      "accept": [
+        "iré",
+        "voy a ir"
+      ],
+      "explain": {
+        "en": "Mañana looks ahead, so the verb is in the present or the future: voy / iré, not fui.",
+        "es": "Mañana mira adelante, así que el verbo va en presente o futuro: voy / iré, no fui."
+      },
+      "tr": {
+        "en": "Tomorrow I go to the bank with my mom.",
+        "es": "Mañana voy al banco con mi mamá."
+      }
+    },
+    {
+      "id": "mt-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "El lunes pasado tengo una fiesta en mi casa.",
+      "wrongIndex": 3,
+      "answer": "tuve",
+      "explain": {
+        "en": "El lunes pasado is a finished moment in the past: indefinido, tuve, not tengo.",
+        "es": "El lunes pasado es un momento terminado del pasado: indefinido, tuve, no tengo."
+      },
+      "tr": {
+        "en": "Last Monday I had a party at my house.",
+        "es": "El lunes pasado tuve una fiesta en mi casa."
+      }
+    },
+    {
+      "id": "mt-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "Dentro de dos días llegué a México.",
+      "wrongIndex": 4,
+      "answer": "llegaré",
+      "accept": [
+        "llego",
+        "voy a llegar"
+      ],
+      "explain": {
+        "en": "Dentro de dos días looks ahead: future (llegaré) or present (llego), not llegué.",
+        "es": "Dentro de dos días mira adelante: futuro (llegaré) o presente (llego), no llegué."
+      },
+      "tr": {
+        "en": "In two days I will arrive in Mexico.",
+        "es": "Dentro de dos días llegaré a México."
+      }
+    },
+    {
+      "id": "mt-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "comprar",
+        "dormir",
+        "llegar"
+      ],
+      "es": "Ayer mi mamá ___ pan en el mercado.",
+      "word": "comprar",
+      "answer": "compró",
+      "tr": {
+        "en": "Yesterday my mom bought bread at the market.",
+        "es": "Ayer mi mamá compró pan en el mercado."
+      },
+      "why": {
+        "en": "Ayer asks for the indefinido: comprar → compró (the bread needs a verb that takes an object).",
+        "es": "Ayer pide indefinido: comprar → compró (el pan necesita un verbo que lleve objeto)."
+      }
+    },
+    {
+      "id": "mt-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "tener",
+        "llegar",
+        "nadar"
+      ],
+      "es": "De niño, yo ___ un perro muy grande.",
+      "word": "tener",
+      "answer": "tenía",
+      "tr": {
+        "en": "As a child, I had a very big dog.",
+        "es": "De niño, yo tenía un perro muy grande."
+      },
+      "why": {
+        "en": "De niño describes the past as a situation: imperfect, tener → tenía.",
+        "es": "De niño describe el pasado como una situación: imperfecto, tener → tenía."
+      },
+      "accept": [
+        "tuve"
+      ]
+    },
+    {
+      "id": "mt-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "viajar",
+        "comer",
+        "dormir"
+      ],
+      "es": "Hasta ahora mi hermana ha ___ a México tres veces.",
+      "word": "viajar",
+      "answer": "viajado",
+      "tr": {
+        "en": "So far my sister has traveled to Mexico three times.",
+        "es": "Hasta ahora mi hermana ha viajado a México tres veces."
+      },
+      "why": {
+        "en": "Hasta ahora goes with the present perfect: ha + participle (viajar → viajado).",
+        "es": "Hasta ahora va con el pretérito perfecto: ha + participio (viajar → viajado)."
+      }
+    },
+    {
+      "id": "mt-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "ayer",
+        "mañana",
+        "anoche"
+      ],
+      "es": "___ voy a visitar a mis abuelos.",
+      "word": "mañana",
+      "answer": "mañana",
+      "tr": {
+        "en": "Tomorrow I am going to visit my grandparents.",
+        "es": "Mañana voy a visitar a mis abuelos."
+      },
+      "why": {
+        "en": "Voy a + infinitive talks about the future, so the marker looks ahead: mañana (ayer and anoche look back).",
+        "es": "Voy a + infinitivo habla del futuro, así que el marcador mira adelante: mañana (ayer y anoche miran atrás)."
+      }
+    },
+    {
+      "id": "mt-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "ayer",
+        "mañana",
+        "ahora"
+      ],
+      "es": "___ fuimos a la playa y comimos muy bien.",
+      "word": "ayer",
+      "answer": "ayer",
+      "tr": {
+        "en": "Yesterday we went to the beach and ate very well.",
+        "es": "Ayer fuimos a la playa y comimos muy bien."
+      },
+      "why": {
+        "en": "Fuimos and comimos are indefinido: a finished past needs ayer (mañana and ahora do not fit).",
+        "es": "Fuimos y comimos son indefinido: un pasado terminado necesita ayer (mañana y ahora no encajan)."
+      }
+    },
+    {
+      "id": "mt-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "What did you do yesterday?",
+        "es": "¿Qué hiciste ayer?"
+      },
+      "es": "¿Qué hiciste ayer?"
+    },
+    {
+      "id": "mt-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "Where did you live as a child?",
+        "es": "¿Dónde vivías de niño?"
+      },
+      "es": "¿Dónde vivías de niño?"
+    },
+    {
+      "id": "mt-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "Have you worked a lot lately?",
+        "es": "¿Has trabajado mucho últimamente?"
+      },
+      "es": "¿Has trabajado mucho últimamente?"
+    },
+    {
+      "id": "mt-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "What are we going to buy next year?",
+        "es": "¿Qué vamos a comprar el año que viene?"
+      },
+      "es": "¿Qué vamos a comprar el año que viene?"
+    },
+    {
+      "id": "mt-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "What were you doing while I was cooking?",
+        "es": "¿Qué hacías mientras yo cocinaba?"
+      },
+      "es": "¿Qué hacías mientras yo cocinaba?"
     }
   ]
 }

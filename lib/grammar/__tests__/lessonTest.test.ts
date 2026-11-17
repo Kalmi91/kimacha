@@ -214,9 +214,9 @@ describe('every item kind turns into an exam card', () => {
     expect(why.some((q) => /^Why «/.test(q.review.question))).toBe(true);
   });
 
-  it('a test also comes from the "transform only" lesson (indefinido-10-verbos)', () => {
+  it('a test also comes from the transform-heavy lesson (indefinido-10-verbos: 50 transform + 5 choice, form and why each; trial kinds are left out)', () => {
     const qs = all('indefinido-10-verbos');
-    expect(qs.length).toBe(50);
+    expect(qs.length).toBe(65);
     expect(buildLessonTest(lessonFor('es', 'indefinido-10-verbos')!, opts()).length).toBe(LESSON_TEST_SIZE);
   });
 });

@@ -13,6 +13,8 @@ export const TASK_TYPE_IDS: readonly TaskTypeId[] = ['choice', 'form', 'transfor
 
 interface TaskTypesFile {
   minPerType: number;
+  /** { topicId: [type, ...] }: the type is not required for that topic. */
+  exempt?: Record<string, TaskTypeId[]>;
   coreTiers: GrammarTier[];
   types: Record<TaskTypeId, GrammarKind[]>;
   levels: Partial<Record<Level, { enabled: boolean; types: TaskTypeId[] }>>;
@@ -24,6 +26,17 @@ export const MIN_ITEMS_PER_TYPE: number = FILE.minPerType;
 
 export function taskConfigForLevel(level: Level): { enabled: boolean; types: TaskTypeId[] } {
   return FILE.levels[level] ?? { enabled: false, types: [] };
+}
+
+/** The exempt entries that name a topic not in the syllabus or an unknown type (must be empty). */
+export function exemptErrors(exempt: Record<string, string[]> = FILE.exempt ?? {}, topicIds?: string[]): string[] {
+  const known = new Set(topicIds ?? (Object.keys(FILE.levels) as Level[]).flatMap((l) => syllabusForLevel(l).map((t) => t.id)));
+  const errors: string[] = [];
+  for (const [topic, types] of Object.entries(exempt)) {
+    if (!known.has(topic)) errors.push(`unknown topic ${topic}`);
+    for (const type of types) if (!(TASK_TYPE_IDS as readonly string[]).includes(type)) errors.push(`unknown type ${type} for ${topic}`);
+  }
+  return errors;
 }
 
 /** The levels whose task types the content gate checks. */
@@ -61,6 +74,7 @@ export function taskTypeGaps(level: Level, lang = 'es'): TaskTypeGap[] {
     const lesson = getGrammarTopic(lang, topic);
     const counts = lesson ? taskTypeCounts(lesson) : null;
     for (const type of types) {
+      if ((FILE.exempt?.[topic] ?? []).includes(type)) continue;
       const have = counts ? counts[type] : 0;
       if (have < FILE.minPerType) gaps.push({ topic, type, have, need: FILE.minPerType });
     }
