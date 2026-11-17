@@ -1625,7 +1625,11 @@
       "id": "vd-bank-05",
       "kind": "bank",
       "trial": true,
-      "bank": ["dormir", "vender", "correr"],
+      "bank": [
+        "dormir",
+        "vender",
+        "abrir"
+      ],
       "es": "Mi bebé ___ en la cama.",
       "word": "dormir",
       "answer": "duerme",
@@ -1650,8 +1654,8 @@
       "id": "vd-order-03",
       "kind": "order",
       "trial": true,
-      "prompt": { "en": "My brother plays soccer on Sundays.", "es": "Mi hermano juega fútbol los domingos." },
-      "es": "Mi hermano juega fútbol los domingos."
+      "prompt": { "en": "My brother plays soccer.", "es": "Mi hermano juega fútbol." },
+      "es": "Mi hermano juega fútbol."
     },
     {
       "id": "vd-order-04",
@@ -1664,8 +1668,8 @@
       "id": "vd-order-05",
       "kind": "order",
       "trial": true,
-      "prompt": { "en": "My class starts at eight.", "es": "Mi clase empieza a las ocho." },
-      "es": "Mi clase empieza a las ocho."
+      "prompt": { "en": "I start the Spanish class.", "es": "Yo empiezo la clase de español." },
+      "es": "Yo empiezo la clase de español."
     }
   ]
 }

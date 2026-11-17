@@ -1395,14 +1395,14 @@
       "id": "oi-cloze-01",
       "kind": "opencloze",
       "trial": true,
-      "text": "Tengo una hermana. ___ compro un libro y ___ doy un beso.",
+      "text": "Tengo una hermana. A ella ___ compro un libro y ___ doy un beso.",
       "answers": [
         "Le",
         "le"
       ],
       "tr": {
         "en": "I have a sister. I buy her a book and give her a kiss.",
-        "es": "Tengo una hermana. Le compro un libro y le doy un beso."
+        "es": "Tengo una hermana. A ella le compro un libro y le doy un beso."
       },
       "why": {
         "en": "The pronoun le stands for one person: to him, to her, to you (formal).",

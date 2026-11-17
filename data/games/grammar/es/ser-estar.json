@@ -1716,7 +1716,11 @@
       "id": "se-bank-03",
       "kind": "bank",
       "trial": true,
-      "bank": ["ser", "estar", "tener"],
+      "bank": [
+        "ser",
+        "estar",
+        "ir"
+      ],
       "es": "Nosotros ___ amigos.",
       "word": "ser",
       "answer": "somos",
@@ -1756,8 +1760,8 @@
       "id": "se-order-02",
       "kind": "order",
       "trial": true,
-      "prompt": { "en": "The children are at school.", "es": "Los niños están en la escuela." },
-      "es": "Los niños están en la escuela."
+      "prompt": { "en": "The children are very happy.", "es": "Los niños están muy contentos." },
+      "es": "Los niños están muy contentos."
     },
     {
       "id": "se-order-03",
@@ -1777,8 +1781,8 @@
       "id": "se-order-05",
       "kind": "order",
       "trial": true,
-      "prompt": { "en": "My car is on the street.", "es": "Mi carro está en la calle." },
-      "es": "Mi carro está en la calle."
+      "prompt": { "en": "My car is very dirty.", "es": "Mi carro está muy sucio." },
+      "es": "Mi carro está muy sucio."
     },
     {
       "id": "se-01-w",

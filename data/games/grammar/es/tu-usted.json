@@ -1673,7 +1673,11 @@
       "id": "tu-bank-04",
       "kind": "bank",
       "trial": true,
-      "bank": ["trabajar", "comer", "leer"],
+      "bank": [
+        "trabajar",
+        "abrir",
+        "vender"
+      ],
       "es": "Tú ___ en una oficina.",
       "word": "trabajar",
       "answer": "trabajas",
@@ -1695,29 +1699,29 @@
       "id": "tu-order-01",
       "kind": "order",
       "trial": true,
-      "prompt": { "en": "Do you live in the city? (formal)", "es": "¿Usted vive en la ciudad?" },
-      "es": "¿Usted vive en la ciudad?"
+      "prompt": { "en": "Where do you live? (formal)", "es": "¿Dónde vive usted?" },
+      "es": "¿Dónde vive usted?"
     },
     {
       "id": "tu-order-02",
       "kind": "order",
       "trial": true,
-      "prompt": { "en": "Do you all want a coffee?", "es": "¿Ustedes quieren un café?" },
-      "es": "¿Ustedes quieren un café?"
+      "prompt": { "en": "What do you all want?", "es": "¿Qué quieren ustedes?" },
+      "es": "¿Qué quieren ustedes?"
     },
     {
       "id": "tu-order-03",
       "kind": "order",
       "trial": true,
-      "prompt": { "en": "You work at the bank.", "es": "Tú trabajas en el banco." },
-      "es": "Tú trabajas en el banco."
+      "prompt": { "en": "You work a lot.", "es": "Tú trabajas mucho." },
+      "es": "Tú trabajas mucho."
     },
     {
       "id": "tu-order-04",
       "kind": "order",
       "trial": true,
-      "prompt": { "en": "Sir, how are you?", "es": "Señor, ¿cómo está usted?" },
-      "es": "Señor, ¿cómo está usted?"
+      "prompt": { "en": "How are you? (formal)", "es": "¿Cómo está usted?" },
+      "es": "¿Cómo está usted?"
     },
     {
       "id": "tu-order-05",

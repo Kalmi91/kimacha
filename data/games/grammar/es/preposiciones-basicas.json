@@ -1027,6 +1027,13 @@
         "con",
         "por"
       ],
+      "accept": [
+        [],
+        [
+          "sin"
+        ],
+        []
+      ],
       "tr": {
         "en": "It is Ana's book. I drink coffee with milk. Thanks for the help.",
         "es": "Es el libro de Ana. Tomo café con leche. Gracias por la ayuda."
@@ -1183,12 +1190,12 @@
         "de",
         "con"
       ],
-      "es": "Hablo ___ mi mamá.",
+      "es": "Vivo ___ mi mamá.",
       "word": "con",
       "answer": "con",
       "tr": {
-        "en": "I talk with my mom.",
-        "es": "Hablo con mi mamá."
+        "en": "I live with my mom.",
+        "es": "Vivo con mi mamá."
       },
       "why": {
         "en": "Company is shown with con.",
@@ -1283,10 +1290,10 @@
       "kind": "order",
       "trial": true,
       "prompt": {
-        "en": "I go to school by subway.",
-        "es": "Voy a la escuela en metro."
+        "en": "I go to school.",
+        "es": "Voy a la escuela."
       },
-      "es": "Voy a la escuela en metro."
+      "es": "Voy a la escuela."
     },
     {
       "id": "pb-order-04",

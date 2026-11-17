@@ -1555,6 +1555,12 @@
         "o",
         "u"
       ],
+      "accept": [
+        [
+          "y"
+        ],
+        []
+      ],
       "tr": {
         "en": "Do you want water or coffee? There are five or eight people in the room.",
         "es": "¿Quieres agua o café? Hay cinco u ocho personas en la sala."
@@ -1572,6 +1578,12 @@
       "answers": [
         "pero",
         "porque"
+      ],
+      "accept": [
+        [
+          "y"
+        ],
+        []
       ],
       "tr": {
         "en": "I am hungry, but I have no money. I do not eat at the restaurant because it is expensive.",
@@ -1594,11 +1606,13 @@
       "accept": [
         [
           "así que",
-          "entonces"
+          "entonces",
+          "y"
         ],
         [
           "por eso",
-          "entonces"
+          "entonces",
+          "y"
         ]
       ],
       "tr": {

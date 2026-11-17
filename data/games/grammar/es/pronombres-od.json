@@ -1480,29 +1480,29 @@
       "id": "od-order-01",
       "kind": "order",
       "trial": true,
-      "prompt": { "en": "I buy it at the market.", "es": "Lo compro en el mercado." },
-      "es": "Lo compro en el mercado."
+      "prompt": { "en": "I don't buy it.", "es": "No lo compro." },
+      "es": "No lo compro."
     },
     {
       "id": "od-order-02",
       "kind": "order",
       "trial": true,
-      "prompt": { "en": "The keys? I have them.", "es": "¿Las llaves? Las tengo yo." },
-      "es": "¿Las llaves? Las tengo yo."
+      "prompt": { "en": "The keys? Yes, I have them.", "es": "¿Las llaves? Sí, las tengo." },
+      "es": "¿Las llaves? Sí, las tengo."
     },
     {
       "id": "od-order-03",
       "kind": "order",
       "trial": true,
-      "prompt": { "en": "I see you at school.", "es": "Te veo en la escuela." },
-      "es": "Te veo en la escuela."
+      "prompt": { "en": "I see you very well.", "es": "Te veo muy bien." },
+      "es": "Te veo muy bien."
     },
     {
       "id": "od-order-04",
       "kind": "order",
       "trial": true,
-      "prompt": { "en": "I am going to call her now.", "es": "Voy a llamarla ahora." },
-      "es": "Voy a llamarla ahora."
+      "prompt": { "en": "I am going to call her.", "es": "Voy a llamarla." },
+      "es": "Voy a llamarla."
     },
     {
       "id": "od-order-05",

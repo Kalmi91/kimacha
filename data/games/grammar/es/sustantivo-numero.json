@@ -2260,7 +2260,16 @@
       "trial": true,
       "text": "Tengo un gato y dos perros. ___ gato es negro y ___ perros son grandes.",
       "answers": ["El", "los"],
-      "accept": [["Mi"], ["Mis"]],
+      "accept": [
+        [
+          "Mi",
+          "Este"
+        ],
+        [
+          "Mis",
+          "Estos"
+        ]
+      ],
       "tr": { "en": "I have a cat and two dogs. The cat is black and the dogs are big.", "es": "Tengo un gato y dos perros. El gato es negro y los perros son grandes." },
       "why": { "en": "The article agrees with the noun: el gato (masculine singular), los perros (masculine plural).", "es": "El artículo concuerda con el sustantivo: el gato (masculino singular), los perros (masculino plural)." }
     },
@@ -2338,7 +2347,11 @@
       "id": "sn-bank-02",
       "kind": "bank",
       "trial": true,
-      "bank": ["pez", "papel", "luz"],
+      "bank": [
+        "pez",
+        "mes",
+        "canción"
+      ],
       "es": "Hay tres ___ en el agua.",
       "word": "pez",
       "answer": "peces",
@@ -2371,7 +2384,11 @@
       "id": "sn-bank-05",
       "kind": "bank",
       "trial": true,
-      "bank": ["examen", "luz", "papel"],
+      "bank": [
+        "examen",
+        "pez",
+        "ciudad"
+      ],
       "es": "Mañana tengo dos ___ en la escuela.",
       "word": "examen",
       "answer": "exámenes",
@@ -2410,8 +2427,8 @@
       "id": "sn-order-05",
       "kind": "order",
       "trial": true,
-      "prompt": { "en": "The children play in the park.", "es": "Los niños juegan en el parque." },
-      "es": "Los niños juegan en el parque."
+      "prompt": { "en": "The children are very small.", "es": "Los niños son muy pequeños." },
+      "es": "Los niños son muy pequeños."
     }
   ]
 }

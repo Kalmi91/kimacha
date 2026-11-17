@@ -1363,6 +1363,12 @@
         "ni",
         "nada"
       ],
+      "accept": [
+        [
+          "o"
+        ],
+        []
+      ],
       "tr": {
         "en": "I drink neither coffee nor tea. I have nothing on the table.",
         "es": "No bebo café ni té. No tengo nada en la mesa."
@@ -1385,7 +1391,9 @@
         [
           "no"
         ],
-        []
+        [
+          "o"
+        ]
       ],
       "tr": {
         "en": "My friend doesn't speak Spanish. I don't speak Spanish either. I have neither time nor money.",

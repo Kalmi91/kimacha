@@ -1425,6 +1425,12 @@
       "trial": true,
       "text": "Hay una sopa en la mesa y yo ___ mucha ___.",
       "answers": ["tengo", "hambre"],
+      "accept": [
+        [],
+        [
+          "sed"
+        ]
+      ],
       "tr": { "en": "There is a soup on the table and I am very hungry.", "es": "Hay una sopa en la mesa y yo tengo mucha hambre." },
       "why": { "en": "Hunger is something you have: tener hambre. With yo: tengo. Hambre takes mucha, not muy.", "es": "El hambre se tiene: tener hambre. Con yo: tengo. Hambre lleva mucha, no muy." }
     },
@@ -1531,7 +1537,11 @@
       "id": "te-bank-03",
       "kind": "bank",
       "trial": true,
-      "bank": ["tener", "ir", "querer"],
+      "bank": [
+        "tener",
+        "ir",
+        "hacer"
+      ],
       "es": "Yo ___ frío en la noche.",
       "word": "tener",
       "answer": "tengo",

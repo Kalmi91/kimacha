@@ -2696,8 +2696,8 @@
       "id": "pi-order-02",
       "kind": "order",
       "trial": true,
-      "prompt": { "en": "My mother makes bread at home.", "es": "Mi madre hace pan en casa." },
-      "es": "Mi madre hace pan en casa."
+      "prompt": { "en": "My mother makes sweet bread.", "es": "Mi madre hace pan dulce." },
+      "es": "Mi madre hace pan dulce."
     },
     {
       "id": "pi-order-03",
@@ -2717,8 +2717,8 @@
       "id": "pi-order-05",
       "kind": "order",
       "trial": true,
-      "prompt": { "en": "Ana always tells the truth.", "es": "Ana siempre dice la verdad." },
-      "es": "Ana siempre dice la verdad."
+      "prompt": { "en": "Ana tells the truth.", "es": "Ana dice la verdad." },
+      "es": "Ana dice la verdad."
     }
   ]
 }

@@ -1343,7 +1343,7 @@
       "bank": [
         "quién",
         "quiénes",
-        "qué"
+        "cuándo"
       ],
       "es": "No sé ___ son esos hombres.",
       "word": "quiénes",
@@ -1423,10 +1423,10 @@
       "kind": "order",
       "trial": true,
       "prompt": {
-        "en": "When does your brother arrive?",
-        "es": "¿Cuándo llega tu hermano?"
+        "en": "When do you arrive?",
+        "es": "¿Cuándo llegas?"
       },
-      "es": "¿Cuándo llega tu hermano?"
+      "es": "¿Cuándo llegas?"
     }
   ]
 }

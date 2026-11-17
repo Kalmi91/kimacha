@@ -1242,14 +1242,14 @@
       "id": "nh-cloze-02",
       "kind": "opencloze",
       "trial": true,
-      "text": "Tengo veintiún ___. Mi hermano tiene treinta y ___ años.",
+      "text": "Tengo veintiún ___ de edad. Mi hermano tiene treinta y ___ años.",
       "answers": [
         "años",
         "un"
       ],
       "tr": {
         "en": "I am twenty-one years old. My brother is thirty-one years old.",
-        "es": "Tengo veintiún años. Mi hermano tiene treinta y un años."
+        "es": "Tengo veintiún años de edad. Mi hermano tiene treinta y un años."
       },
       "why": {
         "en": "Uno shortens to un before a masculine noun: veintiún años, treinta y un años.",
@@ -1516,20 +1516,20 @@
       "kind": "order",
       "trial": true,
       "prompt": {
-        "en": "The class starts at eight.",
-        "es": "La clase empieza a las ocho."
+        "en": "At what time does the class start?",
+        "es": "¿A qué hora empieza la clase?"
       },
-      "es": "La clase empieza a las ocho."
+      "es": "¿A qué hora empieza la clase?"
     },
     {
       "id": "nh-order-03",
       "kind": "order",
       "trial": true,
       "prompt": {
-        "en": "Today is the tenth of January.",
-        "es": "Hoy es el diez de enero."
+        "en": "It is the tenth of January.",
+        "es": "Es el diez de enero."
       },
-      "es": "Hoy es el diez de enero."
+      "es": "Es el diez de enero."
     },
     {
       "id": "nh-order-04",

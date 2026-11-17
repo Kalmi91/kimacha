@@ -2206,20 +2206,20 @@
       "kind": "order",
       "trial": true,
       "prompt": {
-        "en": "I am going to eat at home.",
-        "es": "Voy a comer en casa."
+        "en": "I am going to eat bread.",
+        "es": "Voy a comer pan."
       },
-      "es": "Voy a comer en casa."
+      "es": "Voy a comer pan."
     },
     {
       "id": "iai-order-02",
       "kind": "order",
       "trial": true,
       "prompt": {
-        "en": "We are going to study together.",
-        "es": "Vamos a estudiar juntos."
+        "en": "We are going to study Spanish.",
+        "es": "Vamos a estudiar español."
       },
-      "es": "Vamos a estudiar juntos."
+      "es": "Vamos a estudiar español."
     },
     {
       "id": "iai-order-03",
@@ -2246,10 +2246,10 @@
       "kind": "order",
       "trial": true,
       "prompt": {
-        "en": "Are you going to eat with us?",
-        "es": "¿Vas a comer con nosotros?"
+        "en": "Are you going to eat pizza?",
+        "es": "¿Vas a comer pizza?"
       },
-      "es": "¿Vas a comer con nosotros?"
+      "es": "¿Vas a comer pizza?"
     }
   ]
 }

@@ -1491,29 +1491,29 @@
       "id": "he-order-02",
       "kind": "order",
       "trial": true,
-      "prompt": { "en": "There is a bank on the street.", "es": "Hay un banco en la calle." },
-      "es": "Hay un banco en la calle."
+      "prompt": { "en": "There is a big bank.", "es": "Hay un banco grande." },
+      "es": "Hay un banco grande."
     },
     {
       "id": "he-order-03",
       "kind": "order",
       "trial": true,
-      "prompt": { "en": "My friends are in the park.", "es": "Mis amigos están en el parque." },
-      "es": "Mis amigos están en el parque."
+      "prompt": { "en": "Where are my friends?", "es": "¿Dónde están mis amigos?" },
+      "es": "¿Dónde están mis amigos?"
     },
     {
       "id": "he-order-04",
       "kind": "order",
       "trial": true,
-      "prompt": { "en": "Is there a pharmacy here?", "es": "¿Hay una farmacia aquí?" },
-      "es": "¿Hay una farmacia aquí?"
+      "prompt": { "en": "Is there a pharmacy?", "es": "¿Hay una farmacia?" },
+      "es": "¿Hay una farmacia?"
     },
     {
       "id": "he-order-05",
       "kind": "order",
       "trial": true,
-      "prompt": { "en": "The book is in my backpack.", "es": "El libro está en mi mochila." },
-      "es": "El libro está en mi mochila."
+      "prompt": { "en": "Where is my book?", "es": "¿Dónde está mi libro?" },
+      "es": "¿Dónde está mi libro?"
     }
   ]
 }

@@ -946,6 +946,14 @@
         "detrás",
         "encima"
       ],
+      "accept": [
+        [
+          "atrás"
+        ],
+        [
+          "arriba"
+        ]
+      ],
       "tr": {
         "en": "Ana is in front of Luis, and Luis is behind Ana. The dog is under the chair, and the chair is on top of the dog.",
         "es": "Ana está delante de Luis, y Luis está detrás de Ana. El perro está debajo de la silla, y la silla está encima del perro."
@@ -1199,50 +1207,50 @@
       "kind": "order",
       "trial": true,
       "prompt": {
-        "en": "The pharmacy is to the left of the bank.",
-        "es": "La farmacia está a la izquierda del banco."
+        "en": "Where is the pharmacy?",
+        "es": "¿Dónde está la farmacia?"
       },
-      "es": "La farmacia está a la izquierda del banco."
+      "es": "¿Dónde está la farmacia?"
     },
     {
       "id": "ld-order-02",
       "kind": "order",
       "trial": true,
       "prompt": {
-        "en": "The cat is under the table.",
-        "es": "El gato está debajo de la mesa."
+        "en": "Is it near the bank?",
+        "es": "¿Está cerca del banco?"
       },
-      "es": "El gato está debajo de la mesa."
+      "es": "¿Está cerca del banco?"
     },
     {
       "id": "ld-order-03",
       "kind": "order",
       "trial": true,
       "prompt": {
-        "en": "My house is far from the school.",
-        "es": "Mi casa está lejos de la escuela."
+        "en": "Is it far from the school?",
+        "es": "¿Está lejos de la escuela?"
       },
-      "es": "Mi casa está lejos de la escuela."
+      "es": "¿Está lejos de la escuela?"
     },
     {
       "id": "ld-order-04",
       "kind": "order",
       "trial": true,
       "prompt": {
-        "en": "The bathroom is to the right.",
-        "es": "El baño está a la derecha."
+        "en": "We go to the right.",
+        "es": "Vamos a la derecha."
       },
-      "es": "El baño está a la derecha."
+      "es": "Vamos a la derecha."
     },
     {
       "id": "ld-order-05",
       "kind": "order",
       "trial": true,
       "prompt": {
-        "en": "There is a shop near here.",
-        "es": "Hay una tienda cerca de aquí."
+        "en": "Where is the school?",
+        "es": "¿Dónde está la escuela?"
       },
-      "es": "Hay una tienda cerca de aquí."
+      "es": "¿Dónde está la escuela?"
     },
     {
       "kind": "why",
