@@ -6,7 +6,7 @@
 //                          A side from an older build has bare item-id keys: they get a pair first (lib/db/cardPairs.ts), by the local state
 //   streak                 the whole row of the side with the larger longest_count (a tie keeps local)
 
-import { activePairOf, pairLegacyEntries } from '../db/cardPairs';
+import { activePairOf, learnDaysFromWebProgress, pairLegacyEntries } from '../db/cardPairs';
 
 type Entries = [string, unknown][];
 
@@ -53,7 +53,7 @@ function pairedCards(cards: unknown, local: Record<string, unknown>): unknown {
   const keys = (x: unknown) => (entriesOf(x) ?? []).map(([k]) => k);
   const known = [...new Set([...keys(local.settings), ...keys(local.userLevels)])];
   const ob = isRecord(local.onboarding) ? local.onboarding : null;
-  return pairLegacyEntries(entries, activePairOf(ob), known);
+  return pairLegacyEntries(entries, activePairOf(ob), known, undefined, learnDaysFromWebProgress(local.gameProgress));
 }
 
 /** The merged payload string; `local` itself when either side is not a readable cloud payload. */

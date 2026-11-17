@@ -174,3 +174,64 @@ describe('the cloud payload (web sync)', () => {
     expect(await ids(db)).toEqual(['o7']);
   });
 });
+
+// The fallback pair of a card whose target is not the active pair's: where the Learn tab ran last (lib/learnResume.ts
+// writes the resume row per pair, 4.1.41 too), not the newest row.
+describe('the Learn day decides the fallback pair', () => {
+  const resume = (pair: string, day: string | null) => [`${pair}:app-resume`, [['learn', { state: day ? 'saved' : 'cleared', data: day ? { day, level: 'A1', order: [], returns: {}, base: null } : null }]]];
+
+  it('the resume row key matches the one the app writes', () => {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    expect(require('../resumeRoute').RESUME_GAME_ID).toBe('app-resume');
+  });
+
+  it('web v1 state: the older pair with the later Learn day wins over the newer pair', async () => {
+    const s = JSON.parse(oldState(['es', 'en'], ['o1', 'e2'], ['m:w:1'], ['hu-es', 'en-es']));
+    s.gameProgress = [resume('hu-es', '2026-11-14'), resume('en-es', '2026-11-02')];
+    const db = new MemoryDB();
+    await db.importState(JSON.stringify(s));
+    await db.setOnboarding('hu', 'es');
+    expect(await ids(db)).toEqual(['o1']);
+    expect((await db.getMistakeCards()).map((c) => c.itemId)).toEqual(['m:w:1']);
+    await db.setOnboarding('en', 'es');
+    expect(await ids(db)).toEqual([]);
+  });
+
+  it('a cleared resume row, a tie and no signal fall back to the newest known pair', async () => {
+    for (const progress of [[resume('hu-es', null), resume('en-es', null)], [resume('hu-es', '2026-11-14'), resume('en-es', '2026-11-14')], []]) {
+      const s = JSON.parse(oldState(['es', 'en'], ['o1'], [], ['hu-es', 'en-es']));
+      s.gameProgress = progress;
+      const db = new MemoryDB();
+      await db.importState(JSON.stringify(s));
+      await db.setOnboarding('en', 'es');
+      expect(await ids(db)).toEqual(['o1']);
+    }
+  });
+
+  it('backup v2: the older pair with the later Learn day wins', async () => {
+    const db = new MemoryDB();
+    await db.setOnboarding('es', 'en');
+    await db.upsertPcicCard(card('o1'));
+    await db.upsertMistakeCard(card('m:w:1'));
+    const v3 = JSON.parse(JSON.stringify(await db.exportAll()));
+    const row = (pair: string, day: string) => ({ pair, game_id: 'app-resume', item_id: 'learn', state: 'saved', data_json: JSON.stringify({ day, level: 'A1', order: [], returns: {}, base: null }) });
+    const v2 = {
+      ...v3,
+      schemaVersion: 2,
+      tables: {
+        ...v3.tables,
+        learn_settings: [{ pair: 'hu-es' }, { pair: 'en-es' }],
+        game_progress: [row('hu-es', '2026-11-14'), row('en-es', '2026-11-02')],
+        pcic_cards: v3.tables.pcic_cards.map(({ pair, ...r }: any) => r),
+        mistake_cards: v3.tables.mistake_cards.map(({ pair, ...r }: any) => r),
+      },
+    };
+    const target = new MemoryDB();
+    await target.importAll(validateBackupPayload(v2));
+    await target.setOnboarding('hu', 'es');
+    expect(await ids(target)).toEqual(['o1']);
+    expect((await target.getMistakeCards()).map((c) => c.itemId)).toEqual(['m:w:1']);
+    await target.setOnboarding('en', 'es');
+    expect(await ids(target)).toEqual([]);
+  });
+});

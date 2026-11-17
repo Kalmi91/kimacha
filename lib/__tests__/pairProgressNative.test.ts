@@ -130,3 +130,25 @@ describe('the pair switch and the backup on the native store', () => {
     expect((await old.getPcicCards()).map((c) => c.itemId)).toEqual(['o1']);
   });
 });
+
+describe('the Learn day decides the fallback pair (real SQLite)', () => {
+  const resume = (pair: string, day: string | null) =>
+    `INSERT INTO game_progress (pair, game_id, item_id, state, data_json) VALUES ('${pair}', 'app-resume', 'learn', '${day ? 'saved' : 'cleared'}', ${day ? `'{"day":"${day}","level":"A1","order":[],"returns":{},"base":null}'` : 'NULL'});`;
+
+  it('the older pair with the later Learn day wins over the newer one; the mistakes deck follows it', async () => {
+    const db = await oldFile(['es', 'en'], ['hu-es', 'en-es'], [['o1', 4], ['e2', 6]], [['b:w:1', 5]]);
+    await db.execAsync(resume('hu-es', '2026-11-14') + resume('en-es', '2026-11-02'));
+    await nativeDb(db).getStreak();
+    expect(await pairsOf(db)).toEqual({ o1: 'hu-es', e2: 'es-en' });
+    expect(await pairsOf(db, 'mistake_cards')).toEqual({ 'b:w:1': 'hu-es' });
+  });
+
+  it('a cleared row, a tie and no signal pick the newest known pair', async () => {
+    for (const rows of [resume('hu-es', null) + resume('en-es', null), resume('hu-es', '2026-11-14') + resume('en-es', '2026-11-14'), '']) {
+      const db = await oldFile(['es', 'en'], ['hu-es', 'en-es'], [['o1', 4]]);
+      if (rows) await db.execAsync(rows);
+      await nativeDb(db).getStreak();
+      expect(await pairsOf(db)).toEqual({ o1: 'en-es' });
+    }
+  });
+});

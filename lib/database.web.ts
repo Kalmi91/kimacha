@@ -8,7 +8,7 @@ import { DbCore, decodeGameData, encodeGameData } from './db/core';
 import type { DbStore, MetaColumn, SettingColumn, StreakRow } from './db/store';
 import type { DB } from './dbTypes';
 import { FORCED_PAIR, needsPairCorrection } from './languages';
-import { activePairOf, cardKey, pairLegacyEntries, pairOfKey } from './db/cardPairs';
+import { activePairOf, cardKey, learnDaysFromWebProgress, pairLegacyEntries, pairOfKey } from './db/cardPairs';
 
 // pcic_cards / mistake_cards row <-> Sm2Card, the same shapes the SQLite side stores.
 const sm2ToRow = (c: Sm2Card) => ({
@@ -368,9 +368,10 @@ export class MemoryStore implements DbStore {
     // cards of a v1 state (or keys of one merged in by an older build) carry no pair: the rule of lib/db/cardPairs.ts
     const active = activePairOf(s.onboarding);
     const known = [...new Set([...settings.keys(), ...userLevels.keys()])];
-    const pcicCards = new Map<string, Sm2Card>(pairLegacyEntries(entriesOf(s.pcicCards), active, known));
+    const days = learnDaysFromWebProgress(s.gameProgress);
+    const pcicCards = new Map<string, Sm2Card>(pairLegacyEntries(entriesOf(s.pcicCards), active, known, undefined, days));
     const mistakeBatches = new Map<string, { json: string; importedAt: string }>(entriesOf(s.mistakeBatches));
-    const mistakeCards = new Map<string, Sm2Card>(pairLegacyEntries(entriesOf(s.mistakeCards), active, known, 'es'));
+    const mistakeCards = new Map<string, Sm2Card>(pairLegacyEntries(entriesOf(s.mistakeCards), active, known, 'es', days));
     this.streak = { ...fresh.streak, ...s.streak };
     this.onboarding = s.onboarding ?? null;
     this.userLevels = userLevels;

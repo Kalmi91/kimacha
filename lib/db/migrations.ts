@@ -1,5 +1,5 @@
 import * as SQLite from 'expo-sqlite';
-import { CARD_ID_PREFIXES, legacyCardPair, legacyPairByPrefix } from './cardPairs';
+import { CARD_ID_PREFIXES, LEARN_RESUME_GAME_ID, LEARN_RESUME_ITEM_ID, learnDaysFromRows, legacyCardPair, legacyPairByPrefix } from './cardPairs';
 
 // the schema creation + every migration
 // (formerly SQLiteDB.open(), lib/database.ts),
@@ -300,7 +300,7 @@ async function migrateToV6(db: SQLite.SQLiteDatabase) {
 }
 
 // v7 (E123): the SM-2 cards belong to a language pair (primary key (pair, item_id)). The old rows stay with the pair
-// that is active now when its target is the card's own, else with the newest known pair of the card's target
+// that is active now when its target is the card's own, else with the known pair of the card's target where the Learn tab ran last
 // (lib/db/cardPairs.ts). Every row is copied, none is dropped; the other pairs of the same target start empty.
 async function rebuildCardsPerPair(db: SQLite.SQLiteDatabase, table: 'pcic_cards' | 'mistake_cards', pairOf: (prefix: string) => string, fallback: string) {
   const extra = table === 'pcic_cards' ? ', half_steps, wrong_streak' : '';
@@ -342,10 +342,16 @@ async function migrateToV7(db: SQLite.SQLiteDatabase) {
     ...(await db.getAllAsync<{ pair: string }>('SELECT pair FROM user_level ORDER BY rowid')),
   ];
   const known = [...new Set(rows.map((r) => r.pair))];
-  const byPrefix = legacyPairByPrefix(active, known);
+  // the last day the Learn tab ran in each pair (the resume row 4.1.41 already wrote): the signal of where the learner studied
+  const resumeRows = await db.getAllAsync<{ pair: string; data_json: string | null }>(
+    'SELECT pair, data_json FROM game_progress WHERE game_id = ? AND item_id = ?',
+    [LEARN_RESUME_GAME_ID, LEARN_RESUME_ITEM_ID]
+  );
+  const days = learnDaysFromRows(resumeRows.map((r) => ({ ...r, game_id: LEARN_RESUME_GAME_ID, item_id: LEARN_RESUME_ITEM_ID })));
+  const byPrefix = legacyPairByPrefix(active, known, days);
   await rebuildCardsPerPair(db, 'pcic_cards', (prefix) => byPrefix[prefix], active);
   // the mistakes deck is always Spanish (the answer is typed in Spanish)
-  const mistakePair = legacyCardPair('es', active, known);
+  const mistakePair = legacyCardPair('es', active, known, days);
   await rebuildCardsPerPair(db, 'mistake_cards', () => mistakePair, mistakePair);
 }
 
