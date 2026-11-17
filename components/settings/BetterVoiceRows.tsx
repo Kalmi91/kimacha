@@ -100,7 +100,10 @@ export default function BetterVoiceRows({ Row }: { Row: RowComponent }) {
       </Row>
       {packsMissing.length > 0 && (
         <Row>
-          <View style={styles.labelBox}>
+          {/* One column: the text takes the full card width and the button sits under it, so a narrow screen
+              never squeezes the text into a few characters per line next to the wide button. */}
+          <View style={styles.stackBox}>
+          <View>
             <Text style={[styles.label, { color: colors.text }]}>{s.recordingsTitle}</Text>
             <Text style={[styles.hint, { color: colors.tabIconDefault }]}>{s.recordingsHint}</Text>
             {!running && state.download.lowSpace ? (
@@ -120,12 +123,13 @@ export default function BetterVoiceRows({ Row }: { Row: RowComponent }) {
             )}
           </View>
           {running ? (
-            <Text style={[styles.status, { color: colors.text }]}>{phase === 'unpack' ? s.unpacking : s.downloading(percent)}</Text>
+            <Text style={[styles.status, styles.stackAction, { color: colors.text }]}>{phase === 'unpack' ? s.unpacking : s.downloading(percent)}</Text>
           ) : (
-            <Pressable testID="settings-recordings-download" accessibilityRole="button" style={[styles.button, { borderColor: g.a }]} onPress={askRecordings}>
+            <Pressable testID="settings-recordings-download" accessibilityRole="button" style={[styles.button, styles.stackAction, { borderColor: g.a }]} onPress={askRecordings}>
               <Text style={[styles.buttonText, { color: g.ink }]}>{s.download(formatMegabytes(missingBytes(packs, state.installed)))}</Text>
             </Pressable>
           )}
+          </View>
         </Row>
       )}
     </>
@@ -218,6 +222,8 @@ export function SentenceVoiceChoices({ lang }: { lang: NeuralLang }) {
 
 const styles = StyleSheet.create({
   labelBox: { flex: 1, marginRight: 12 },
+  stackBox: { flex: 1 },
+  stackAction: { alignSelf: 'flex-start', marginTop: 8 },
   label: { fontSize: 16, fontWeight: '600' },
   hint: { fontSize: 12, fontWeight: '500', marginTop: 2 },
   status: { fontSize: 15, fontWeight: '600' },
