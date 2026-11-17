@@ -137,7 +137,7 @@ describe.each(['brand', 'classic'] as const)('end-of-lesson test (%s palette)', 
   });
 
   it('B1 b: once a round of every kind is done, the button is live, with "10 questions, pass 80%" under it', async () => {
-    await seedBest(['match', 'form', 'why']);
+    await seedBest(['match', 'form', 'why', 'transform']);
     await open();
     await playChoiceRound();
     expect(screen.getByTestId('grammar-start-lessontest')).not.toBeDisabled();
@@ -145,7 +145,7 @@ describe.each(['brand', 'classic'] as const)('end-of-lesson test (%s palette)', 
   });
 
   it('on the done page the test button is the only filled button, "Next topic" is secondary (outlined)', async () => {
-    await seedBest(['match', 'form', 'why']);
+    await seedBest(['match', 'form', 'why', 'transform']);
     await open();
     await playChoiceRound();
     const fill = (id: string) => StyleSheet.flatten(screen.getByTestId(id).props.style)?.backgroundColor;
@@ -157,7 +157,7 @@ describe.each(['brand', 'classic'] as const)('end-of-lesson test (%s palette)', 
   });
 
   it('B2 a + 80%: 10 questions, no feedback after a correct one; 10/10 passed, saved, "Next topic"', async () => {
-    await seedBest(['match', 'form', 'why']);
+    await seedBest(['match', 'form', 'why', 'transform']);
     await open();
     await playChoiceRound();
     const before = await bestRows();
@@ -183,7 +183,7 @@ describe.each(['brand', 'classic'] as const)('end-of-lesson test (%s palette)', 
   });
 
   it('B4 a + 80% boundary: 7/10 is not yet a pass, the wrong ones with the correct answer; no lock; retry', async () => {
-    await seedBest(['match', 'form', 'why']);
+    await seedBest(['match', 'form', 'why', 'transform']);
     await open();
     await playChoiceRound();
     const before = await bestRows();
@@ -205,7 +205,7 @@ describe.each(['brand', 'classic'] as const)('end-of-lesson test (%s palette)', 
   });
 
   it('for a wrong "why" item the question text also shows on the result page', async () => {
-    await seedBest(['match', 'form', 'why']);
+    await seedBest(['match', 'form', 'why', 'transform']);
     await open();
     await playChoiceRound();
     await press('grammar-start-lessontest');
@@ -218,7 +218,7 @@ describe.each(['brand', 'classic'] as const)('end-of-lesson test (%s palette)', 
   });
 
   it('8/10 passed (at the boundary)', async () => {
-    await seedBest(['match', 'form', 'why']);
+    await seedBest(['match', 'form', 'why', 'transform']);
     await open();
     await playChoiceRound();
     await press('grammar-start-lessontest');
@@ -228,7 +228,7 @@ describe.each(['brand', 'classic'] as const)('end-of-lesson test (%s palette)', 
   });
 
   it('after confirming ✕ back to the lesson, without saving', async () => {
-    await seedBest(['match', 'form', 'why']);
+    await seedBest(['match', 'form', 'why', 'transform']);
     await open();
     await playChoiceRound();
     await press('grammar-start-lessontest');
@@ -254,6 +254,6 @@ describe.each(['brand', 'classic'] as const)('end-of-lesson test (%s palette)', 
   });
 
   it('the rule of the test button matches the lesson kinds (no kind left out)', () => {
-    expect(scoredKinds(lessonFor('es', TOPIC)!)).toEqual(['choice', 'match', 'form', 'why']);
+    expect(scoredKinds(lessonFor('es', TOPIC)!)).toEqual(['choice', 'match', 'form', 'why', 'transform']);
   });
 });

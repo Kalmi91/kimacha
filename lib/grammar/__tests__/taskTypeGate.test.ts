@@ -78,15 +78,18 @@ describe('grammar-task-gate', () => {
     expect(run(...fixture('off', false, {})).status).toBe(0);
   });
 
-  it('--all checks every level whatever its switch: the shipped A1 still lacks the new types', () => {
+  it('--all checks every level whatever its switch: the exit code says whether any gap is left', () => {
     const r = run('--all');
-    expect(r.status).toBe(1);
-    expect(r.out).toMatch(/ser-estar.*opencloze/);
+    const gaps = r.out.split('\n').filter((l) => l.startsWith('ERROR '));
+    expect(r.status).toBe(gaps.length > 0 ? 1 : 0);
+    expect(r.last).toMatch(/^grammar-task-gate: (OK|FAIL)/);
+    expect(r.out).toMatch(/ERROR (A2|B1|B2|C1) \S+ \S+: \d\/5/); // the levels above A1 are not written yet (E132 fills A1 first)
   });
 
   it('the script and the app read the same core topics (one marking: the syllabus tier)', () => {
     const r = run('--all');
     const scriptTopics = new Set([...r.out.matchAll(/^ERROR A1 (\S+) /gm)].map((m) => m[1]));
-    expect([...scriptTopics].sort()).toEqual([...coreTopicsForLevel('A1')].sort());
+    // E132 fills the A1 topics one by one, so the script names only the core topics that still have a gap
+    for (const id of scriptTopics) expect(coreTopicsForLevel('A1')).toContain(id);
   });
 });

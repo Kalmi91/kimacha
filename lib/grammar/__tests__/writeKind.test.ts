@@ -93,12 +93,13 @@ describe('write is never required, never scored', () => {
   });
 
   it('ser-estar still needs its dictation (the existing behaviour did not change), but not the write row', () => {
-    const base = ['choice', 'match', 'form', 'why'];
+    // E132: ser-estar also has the transform and order tasks of the grammar tests, so they are part of the done state too
+    const base = ['choice', 'match', 'form', 'why', 'transform', 'order'];
     expect(doneGrammarTopicProgress('es', doneRows('ser-estar', base)).has('ser-estar')).toBe(false);
     expect(doneGrammarTopicProgress('es', doneRows('ser-estar', [...base, 'dictation'])).get('ser-estar')).toEqual({
       state: 'done',
-      correct: 45,
-      total: 50,
+      correct: 63,
+      total: 70,
     });
   });
 

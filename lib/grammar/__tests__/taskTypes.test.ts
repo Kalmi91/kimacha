@@ -46,9 +46,14 @@ describe('task types', () => {
   });
 
   it('the gap list names every missing (topic, type) of a level, with the count it has', () => {
+    // E132 fills the A1 topics one by one: whatever gap is left is a core topic with fewer items than needed
     const gaps = taskTypeGaps('A1');
-    const serEstar = gaps.find((g) => g.topic === 'ser-estar' && g.type === 'opencloze');
-    expect(serEstar).toEqual({ topic: 'ser-estar', type: 'opencloze', have: 0, need: 5 });
+    for (const g of gaps) {
+      expect(coreTopicsForLevel('A1')).toContain(g.topic);
+      expect(g.need).toBe(5);
+      expect(g.have).toBeLessThan(g.need);
+    }
+    expect(gaps.some((g) => g.topic === 'ser-estar')).toBe(false); // ser-estar has all 8 types since E132
   });
 
   it('the sample items: two A1 topics have one of each new type, marked trial', () => {

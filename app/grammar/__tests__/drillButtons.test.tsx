@@ -68,14 +68,14 @@ describe('grammar lesson screen: per-kind drill buttons', () => {
     view.unmount();
   });
 
-  it('hay-estar has no form items, so no form button', async () => {
+  it('hay-estar has 5 form items (the estar forms, E132), so it shows a form button with its count', async () => {
     mockTopicId = 'hay-estar';
     const view = render(<GrammarLessonScreen />);
     await flush(4);
 
     expect(screen.queryByTestId('grammar-start-choice')).toBeTruthy();
     expect(screen.queryByTestId('grammar-start-match')).toBeTruthy();
-    expect(screen.queryByTestId('grammar-start-form')).toBeFalsy();
+    expect(within(screen.getByTestId('grammar-start-form')).getByText(/\(5\)/)).toBeTruthy();
 
     view.unmount();
   });

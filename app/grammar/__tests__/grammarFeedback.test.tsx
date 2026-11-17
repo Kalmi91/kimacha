@@ -143,7 +143,7 @@ describe.each(['brand', 'classic'] as const)('grammar lesson: 💬 on every part
   });
 
   it('overview, during an exercise, exercise END (done): all with their own identifier', async () => {
-    await seedBest(['match', 'form', 'why']);
+    await seedBest(['match', 'form', 'why', 'transform']);
     const view = render(
       <ThemeProvider>
         <GrammarLessonScreen />
@@ -161,7 +161,7 @@ describe.each(['brand', 'classic'] as const)('grammar lesson: 💬 on every part
   });
 
   it('lesson test: question (above the docked bar for typed ones), exit, back, result', async () => {
-    await seedBest(['match', 'form', 'why']);
+    await seedBest(['match', 'form', 'why', 'transform']);
     const view = render(
       <ThemeProvider>
         <GrammarLessonScreen />
