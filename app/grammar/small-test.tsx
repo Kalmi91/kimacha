@@ -46,7 +46,7 @@ import { DockSlotProvider, useDockSlot } from '@/components/learn/DockSlot';
 import { FAB_CLEARANCE } from '@/components/learn/DockedAction';
 import ScreenFeedback from '@/lib/screenFeedback';
 
-// The grammar Small test ("A1 test", route /grammar/small-test?level=a1): 10 adaptive questions per round, the level's
+// The grammar Small test ("A1 test" .. "C1 test", route /grammar/small-test?level=a1 .. c1): 10 adaptive questions per round, the level's
 // topics (core first), the engine and the saved run are lib/grammar/smallTest.ts. Screens: the round start (topic list with
 // new / repeat), the questions (the level test's question cards; the four typed kinds use the drill components), the stop
 // after a topic's repeated misses (lesson, then a 3-question check), the end of the round. Every wrong answer has an "I
@@ -64,6 +64,9 @@ interface Result {
 // question appears, an answer is dropped and the question starts again.
 const TAP_GUARD_MS = 500;
 
+// the level the route names, until the load settles the real one (an unknown name starts as A1)
+const asLevel = (raw: unknown): Level => (['A1', 'A2', 'B1', 'B2', 'C1'] as Level[]).find((l) => l.toLowerCase() === String(raw ?? '').toLowerCase()) ?? 'A1';
+
 const STATUS_COLOR: Record<RowStatus, 'success' | 'warning' | 'danger'> = { learned: 'success', more: 'warning', lesson: 'danger' };
 
 export default function SmallTestScreen() {
@@ -77,7 +80,7 @@ export default function SmallTestScreen() {
 
   const [data, setData] = useState<RoundData | null>(null);
   const [view, setView] = useState<SmallView | null>(null);
-  const [level, setLevel] = useState<Level>('A1');
+  const [level, setLevel] = useState<Level>(() => asLevel(params.level));
   const [st, setSt] = useState<SmallState | null>(null);
   const [empty, setEmpty] = useState(false);
   const [result, setResult] = useState<Result | null>(null);
@@ -85,7 +88,7 @@ export default function SmallTestScreen() {
   const viewRef = useRef<SmallView | null>(null);
   const evRef = useRef<Map<string, TopicEvidence>>(new Map());
   const pairRef = useRef('');
-  const levelRef = useRef<Level>('A1');
+  const levelRef = useRef<Level>(asLevel(params.level));
   const seedRef = useRef(0);
   const away = useRef(false);
   const tapGuardUntil = useRef(0);
