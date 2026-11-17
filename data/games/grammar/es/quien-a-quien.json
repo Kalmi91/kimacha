@@ -1089,6 +1089,459 @@
         }
       ],
       "correctIndex": 2
+    },
+    {
+      "id": "qq-tr-01",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "I call you tomorrow.",
+        "es": "Te llamo mañana."
+      },
+      "answer": "Te voy a llamar mañana.",
+      "accept": [
+        "Voy a llamarte mañana."
+      ],
+      "wordIds": [
+        "33",
+        "89",
+        "173"
+      ],
+      "why": {
+        "en": "With ir a + infinitive the pronoun goes before ir (te voy a llamar) or attaches to the infinitive (voy a llamarte).",
+        "es": "Con ir a + infinitivo el pronombre va antes de ir (te voy a llamar) o pegado al infinitivo (voy a llamarte)."
+      }
+    },
+    {
+      "id": "qq-tr-02",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "You help me a lot.",
+        "es": "Me ayudas mucho."
+      },
+      "answer": "Me vas a ayudar mucho.",
+      "accept": [
+        "Vas a ayudarme mucho.",
+        "Tú me vas a ayudar mucho."
+      ],
+      "wordIds": [
+        "33",
+        "148",
+        "66"
+      ],
+      "why": {
+        "en": "With ir a + infinitive the pronoun goes before ir (te voy a llamar) or attaches to the infinitive (voy a llamarte).",
+        "es": "Con ir a + infinitivo el pronombre va antes de ir (te voy a llamar) o pegado al infinitivo (voy a llamarte)."
+      }
+    },
+    {
+      "id": "qq-tr-03",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "You see me tomorrow.",
+        "es": "Me ves mañana."
+      },
+      "answer": "Me vas a ver mañana.",
+      "accept": [
+        "Vas a verme mañana."
+      ],
+      "wordIds": [
+        "33",
+        "78",
+        "173"
+      ],
+      "why": {
+        "en": "With ir a + infinitive the pronoun goes before ir (te voy a llamar) or attaches to the infinitive (voy a llamarte).",
+        "es": "Con ir a + infinitivo el pronombre va antes de ir (te voy a llamar) o pegado al infinitivo (voy a llamarte)."
+      }
+    },
+    {
+      "id": "qq-tr-04",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "She calls us today.",
+        "es": "Ella nos llama hoy."
+      },
+      "answer": "Ella nos va a llamar hoy.",
+      "accept": [
+        "Ella va a llamarnos hoy.",
+        "Nos va a llamar hoy.",
+        "Va a llamarnos hoy."
+      ],
+      "wordIds": [
+        "33",
+        "89",
+        "52"
+      ],
+      "why": {
+        "en": "With ir a + infinitive the pronoun goes before ir (te voy a llamar) or attaches to the infinitive (voy a llamarte).",
+        "es": "Con ir a + infinitivo el pronombre va antes de ir (te voy a llamar) o pegado al infinitivo (voy a llamarte)."
+      }
+    },
+    {
+      "id": "qq-tr-05",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "I give them a book.",
+        "es": "Les doy un libro."
+      },
+      "answer": "Les voy a dar un libro.",
+      "accept": [
+        "Voy a darles un libro."
+      ],
+      "wordIds": [
+        "33",
+        "81",
+        "124"
+      ],
+      "why": {
+        "en": "With ir a + infinitive the pronoun goes before ir (te voy a llamar) or attaches to the infinitive (voy a llamarte).",
+        "es": "Con ir a + infinitivo el pronombre va antes de ir (te voy a llamar) o pegado al infinitivo (voy a llamarte)."
+      }
+    },
+    {
+      "id": "qq-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Mi hermano está aquí. ___ veo todos los días y ___ doy un libro.",
+      "answers": [
+        "Lo",
+        "le"
+      ],
+      "tr": {
+        "en": "My brother is here. I see him every day and give him a book.",
+        "es": "Mi hermano está aquí. Lo veo todos los días y le doy un libro."
+      },
+      "why": {
+        "en": "Lo is the direct object (whom I see); le is the indirect object (to whom I give).",
+        "es": "Lo es el objeto directo (a quién veo); le es el objeto indirecto (a quién le doy)."
+      }
+    },
+    {
+      "id": "qq-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Ana es mi amiga. Yo ___ llamo todos los días y ___ doy un café.",
+      "answers": [
+        "la",
+        "le"
+      ],
+      "tr": {
+        "en": "Ana is my friend. I call her every day and give her a coffee.",
+        "es": "Ana es mi amiga. Yo la llamo todos los días y le doy un café."
+      },
+      "why": {
+        "en": "La is the direct object for a woman (whom I call); le is to whom I give.",
+        "es": "La es el objeto directo para una mujer (a quién llamo); le es a quién le doy."
+      }
+    },
+    {
+      "id": "qq-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Mis amigas viven cerca. Yo ___ veo en la escuela y ___ doy mis libros.",
+      "answers": [
+        "las",
+        "les"
+      ],
+      "tr": {
+        "en": "My friends live nearby. I see them at school and give them my books.",
+        "es": "Mis amigas viven cerca. Yo las veo en la escuela y les doy mis libros."
+      },
+      "why": {
+        "en": "Las is the direct object for several women (whom I see); les is to whom I give.",
+        "es": "Las es el objeto directo para varias mujeres (a quiénes veo); les es a quiénes les doy."
+      }
+    },
+    {
+      "id": "qq-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Tú me llamas y yo ___ ayudo. Tú me das agua y yo ___ doy un café.",
+      "answers": [
+        "te",
+        "te"
+      ],
+      "tr": {
+        "en": "You call me and I help you. You give me water and I give you a coffee.",
+        "es": "Tú me llamas y yo te ayudo. Tú me das agua y yo te doy un café."
+      },
+      "why": {
+        "en": "Te means you, both as the direct object (I help you) and as the indirect object (I give you).",
+        "es": "Te significa tú, tanto como objeto directo (te ayudo) como indirecto (te doy)."
+      }
+    },
+    {
+      "id": "qq-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Mis padres están lejos. Yo ___ llamo y ___ escribo todos los días.",
+      "answers": [
+        "los",
+        "les"
+      ],
+      "tr": {
+        "en": "My parents are far away. I call them and write to them every day.",
+        "es": "Mis padres están lejos. Yo los llamo y les escribo todos los días."
+      },
+      "why": {
+        "en": "Los is the direct object (whom I call); les is the indirect object (to whom I write).",
+        "es": "Los es el objeto directo (a quiénes llamo); les es el objeto indirecto (a quiénes les escribo)."
+      }
+    },
+    {
+      "id": "qq-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "Tú me ayudo con esto.",
+      "wrongIndex": 2,
+      "answer": "ayudas",
+      "explain": {
+        "en": "The subject is tú, so the verb is ayudas, not ayudo.",
+        "es": "El sujeto es tú, así que el verbo es ayudas, no ayudo."
+      },
+      "tr": {
+        "en": "You help me with this.",
+        "es": "Tú me ayudas con esto."
+      }
+    },
+    {
+      "id": "qq-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "Yo te das un libro.",
+      "wrongIndex": 2,
+      "answer": "doy",
+      "explain": {
+        "en": "The subject is yo, so the verb is doy, not das.",
+        "es": "El sujeto es yo, así que el verbo es doy, no das."
+      },
+      "tr": {
+        "en": "I give you a book.",
+        "es": "Yo te doy un libro."
+      }
+    },
+    {
+      "id": "qq-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "Ella lo escribe un mensaje a su amigo.",
+      "wrongIndex": 1,
+      "answer": "le",
+      "explain": {
+        "en": "To whom she writes is the indirect object: le, not lo.",
+        "es": "A quién le escribe es el objeto indirecto: le, no lo."
+      },
+      "tr": {
+        "en": "She writes a message to her friend.",
+        "es": "Ella le escribe un mensaje a su amigo."
+      }
+    },
+    {
+      "id": "qq-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "Ana es mi amiga y yo le veo todos los días.",
+      "wrongIndex": 6,
+      "answer": "la",
+      "explain": {
+        "en": "Whom I see is the direct object, and Ana is a woman: la, not le.",
+        "es": "A quién veo es el objeto directo, y Ana es una mujer: la, no le."
+      },
+      "tr": {
+        "en": "Ana is my friend and I see her every day.",
+        "es": "Ana es mi amiga y yo la veo todos los días."
+      }
+    },
+    {
+      "id": "qq-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "Mis padres te ayudan a mi hermano y a mí.",
+      "wrongIndex": 2,
+      "answer": "nos",
+      "explain": {
+        "en": "My brother and me together means we, so the pronoun is nos.",
+        "es": "Mi hermano y yo juntos es nosotros, así que el pronombre es nos."
+      },
+      "tr": {
+        "en": "My parents help my brother and me.",
+        "es": "Mis padres nos ayudan a mi hermano y a mí."
+      }
+    },
+    {
+      "id": "qq-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "me",
+        "te",
+        "nos"
+      ],
+      "es": "A ti ___ veo todos los días.",
+      "word": "te",
+      "answer": "te",
+      "tr": {
+        "en": "I see you every day.",
+        "es": "A ti te veo todos los días."
+      },
+      "why": {
+        "en": "A ti means you, so the pronoun is te.",
+        "es": "A ti es tú, así que el pronombre es te."
+      }
+    },
+    {
+      "id": "qq-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "me",
+        "la",
+        "los"
+      ],
+      "es": "Ana es mi amiga y yo ___ llamo hoy.",
+      "word": "la",
+      "answer": "la",
+      "tr": {
+        "en": "Ana is my friend and I call her today.",
+        "es": "Ana es mi amiga y yo la llamo hoy."
+      },
+      "why": {
+        "en": "The direct object for one woman is la.",
+        "es": "El objeto directo para una mujer es la."
+      }
+    },
+    {
+      "id": "qq-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "le",
+        "les",
+        "nos"
+      ],
+      "es": "A mis amigos ___ escribo un mensaje.",
+      "word": "les",
+      "answer": "les",
+      "tr": {
+        "en": "I write a message to my friends.",
+        "es": "A mis amigos les escribo un mensaje."
+      },
+      "why": {
+        "en": "The indirect object for several people is les.",
+        "es": "El objeto indirecto para varias personas es les."
+      }
+    },
+    {
+      "id": "qq-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "ayudar",
+        "caminar",
+        "dormir"
+      ],
+      "es": "Tú me ___ con esto.",
+      "word": "ayudar",
+      "answer": "ayudas",
+      "tr": {
+        "en": "You help me with this.",
+        "es": "Tú me ayudas con esto."
+      },
+      "why": {
+        "en": "The subject is tú, so ayudar becomes ayudas.",
+        "es": "El sujeto es tú, así que ayudar pasa a ayudas."
+      }
+    },
+    {
+      "id": "qq-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "dar",
+        "correr",
+        "vivir"
+      ],
+      "es": "Yo te ___ agua.",
+      "word": "dar",
+      "answer": "doy",
+      "tr": {
+        "en": "I give you water.",
+        "es": "Yo te doy agua."
+      },
+      "why": {
+        "en": "The subject is yo, so dar becomes doy.",
+        "es": "El sujeto es yo, así que dar pasa a doy."
+      }
+    },
+    {
+      "id": "qq-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "I love you.",
+        "es": "Te amo."
+      },
+      "es": "Te amo."
+    },
+    {
+      "id": "qq-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "You give me water.",
+        "es": "Me das agua."
+      },
+      "es": "Me das agua."
+    },
+    {
+      "id": "qq-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "She calls us.",
+        "es": "Ella nos llama."
+      },
+      "es": "Ella nos llama."
+    },
+    {
+      "id": "qq-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "Do you help me?",
+        "es": "¿Me ayudas?"
+      },
+      "es": "¿Me ayudas?"
+    },
+    {
+      "id": "qq-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "I see them.",
+        "es": "Los veo."
+      },
+      "es": "Los veo."
     }
   ]
 }
