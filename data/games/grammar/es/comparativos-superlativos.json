@@ -1177,6 +1177,446 @@
         }
       ],
       "correctIndex": 0
+    },
+    {
+      "id": "cs-tr-01",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "My brother buys a bigger car.",
+        "es": "Mi hermano compra un carro más grande."
+      },
+      "answer": "Mi hermano va a comprar un carro más grande.",
+      "wordIds": [
+        "144",
+        "42",
+        "114",
+        "60"
+      ],
+      "why": {
+        "en": "Ir a + infinitive: the comparison does not change (más grande que, mejor que).",
+        "es": "Ir a + infinitivo: la comparación no cambia (más grande que, mejor que)."
+      }
+    },
+    {
+      "id": "cs-tr-02",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "This movie is better than the other one.",
+        "es": "Esta película es mejor que la otra."
+      },
+      "answer": "Esta película va a ser mejor que la otra.",
+      "wordIds": [
+        "284",
+        "151"
+      ],
+      "why": {
+        "en": "Ir a + infinitive: the comparison does not change (más grande que, mejor que).",
+        "es": "Ir a + infinitivo: la comparación no cambia (más grande que, mejor que)."
+      }
+    },
+    {
+      "id": "cs-tr-03",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "en": "She studies more than I do.",
+        "es": "Ella estudia más que yo."
+      },
+      "answer": "Ella estudió más que yo.",
+      "wordIds": [
+        "212"
+      ],
+      "why": {
+        "en": "Indefinido: only the verb changes; the comparison stays the same (más que, la mejor).",
+        "es": "Indefinido: solo cambia el verbo; la comparación queda igual (más que, la mejor)."
+      }
+    },
+    {
+      "id": "cs-tr-04",
+      "kind": "transform",
+      "tense": {
+        "from": "ir-a",
+        "to": "presente"
+      },
+      "prompt": {
+        "en": "My sister is going to eat as much as I do.",
+        "es": "Mi hermana va a comer tanto como yo."
+      },
+      "answer": "Mi hermana come tanto como yo.",
+      "wordIds": [
+        "25",
+        "4368"
+      ],
+      "why": {
+        "en": "Present: the comparison does not change (tanto como); only ir a + infinitive becomes a normal verb: va a comer → come.",
+        "es": "Presente: la comparación no cambia (tanto como); solo ir a + infinitivo pasa a un verbo normal: va a comer → come."
+      }
+    },
+    {
+      "id": "cs-tr-05",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "en": "She is the best student in the class.",
+        "es": "Ella es la mejor estudiante de la clase."
+      },
+      "answer": "Ella fue la mejor estudiante de la clase.",
+      "wordIds": [
+        "382",
+        "246"
+      ],
+      "why": {
+        "en": "Indefinido: only the verb changes; the comparison stays the same (más que, la mejor).",
+        "es": "Indefinido: solo cambia el verbo; la comparación queda igual (más que, la mejor)."
+      }
+    },
+    {
+      "id": "cs-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Mi hermano tiene veinte años y yo tengo quince: él es ___ que yo y yo soy más ___ que él.",
+      "answers": [
+        "mayor",
+        "joven"
+      ],
+      "accept": [
+        [
+          "más grande"
+        ],
+        [
+          "pequeño"
+        ]
+      ],
+      "tr": {
+        "en": "My brother is twenty and I am fifteen: he is older than I am and I am younger than he is.",
+        "es": "Mi hermano tiene veinte años y yo tengo quince: él es mayor que yo y yo soy más joven que él."
+      },
+      "why": {
+        "en": "For age, mayor (older) is irregular: not \"más viejo\"; the younger one is más joven.",
+        "es": "Para la edad, mayor es irregular: no \"más viejo\"; el más joven es más joven."
+      }
+    },
+    {
+      "id": "cs-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Este restaurante cuesta cien pesos, el otro cuesta ochenta: el otro es ___ barato ___ este.",
+      "answers": [
+        "más",
+        "que"
+      ],
+      "tr": {
+        "en": "This restaurant costs a hundred pesos, the other one costs eighty: the other one is cheaper than this one.",
+        "es": "Este restaurante cuesta cien pesos, el otro cuesta ochenta: el otro es más barato que este."
+      },
+      "why": {
+        "en": "Superiority: más + adjective + que (más caro que).",
+        "es": "Superioridad: más + adjetivo + que (más caro que)."
+      }
+    },
+    {
+      "id": "cs-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Tú tienes tres libros y yo tengo tres libros: yo tengo ___ libros ___ tú.",
+      "answers": [
+        "tantos",
+        "como"
+      ],
+      "tr": {
+        "en": "You have three books and I have three books: I have as many books as you.",
+        "es": "Tú tienes tres libros y yo tengo tres libros: yo tengo tantos libros como tú."
+      },
+      "why": {
+        "en": "Equality with a noun: tanto/tanta/tantos/tantas + noun + como; tantos agrees with libros.",
+        "es": "Igualdad con un sustantivo: tanto/tanta/tantos/tantas + sustantivo + como; tantos concuerda con libros."
+      }
+    },
+    {
+      "id": "cs-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Este pastel es riquísimo, es el ___ pastel ___ la tienda.",
+      "answers": [
+        "mejor",
+        "de"
+      ],
+      "tr": {
+        "en": "This cake is delicious, it is the best cake in the store.",
+        "es": "Este pastel es riquísimo, es el mejor pastel de la tienda."
+      },
+      "why": {
+        "en": "Superlative: el mejor (irregular, not \"más bueno\") + de + the group (de la tienda).",
+        "es": "Superlativo: el mejor (irregular, no \"más bueno\") + de + el grupo (de la tienda)."
+      }
+    },
+    {
+      "id": "cs-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "En la clase hay más ___ veinte estudiantes. Mi amigo es el ___ alto ___ la clase.",
+      "answers": [
+        "de",
+        "más",
+        "de"
+      ],
+      "tr": {
+        "en": "In the class there are more than twenty students. My friend is the tallest in the class.",
+        "es": "En la clase hay más de veinte estudiantes. Mi amigo es el más alto de la clase."
+      },
+      "why": {
+        "en": "Before a number it is más de (not más que); the superlative takes de + the group: el más alto de la clase.",
+        "es": "Delante de un número es más de (no más que); el superlativo lleva de + el grupo: el más alto de la clase."
+      }
+    },
+    {
+      "id": "cs-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "Este carro es más caro como el otro.",
+      "wrongIndex": 5,
+      "answer": "que",
+      "explain": {
+        "en": "With más, the comparison uses que, not como: más caro que.",
+        "es": "Con más, la comparación usa que, no como: más caro que."
+      },
+      "tr": {
+        "en": "This car is more expensive than the other one.",
+        "es": "Este carro es más caro que el otro."
+      }
+    },
+    {
+      "id": "cs-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "Mi hermana es tan alta que yo.",
+      "wrongIndex": 5,
+      "answer": "como",
+      "explain": {
+        "en": "With tan, the comparison uses como, not que: tan alta como.",
+        "es": "Con tan, la comparación usa como, no que: tan alta como."
+      },
+      "tr": {
+        "en": "My sister is as tall as I am.",
+        "es": "Mi hermana es tan alta como yo."
+      }
+    },
+    {
+      "id": "cs-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "Hay más que diez estudiantes en la clase.",
+      "wrongIndex": 2,
+      "answer": "de",
+      "explain": {
+        "en": "Before a number it is más de, not más que.",
+        "es": "Delante de un número es más de, no más que."
+      },
+      "tr": {
+        "en": "There are more than ten students in the class.",
+        "es": "Hay más de diez estudiantes en la clase."
+      }
+    },
+    {
+      "id": "cs-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "Ella es la mejor estudiante que la clase.",
+      "wrongIndex": 5,
+      "answer": "de",
+      "explain": {
+        "en": "The superlative takes de before the group: la mejor estudiante de la clase.",
+        "es": "El superlativo lleva de delante del grupo: la mejor estudiante de la clase."
+      },
+      "tr": {
+        "en": "She is the best student in the class.",
+        "es": "Ella es la mejor estudiante de la clase."
+      }
+    },
+    {
+      "id": "cs-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "Mi hermano es mayor de yo.",
+      "wrongIndex": 4,
+      "answer": "que",
+      "explain": {
+        "en": "The second part of a comparison with a person or thing takes que: mayor que yo.",
+        "es": "La segunda parte de una comparación con una persona o cosa lleva que: mayor que yo."
+      },
+      "tr": {
+        "en": "My brother is older than I am.",
+        "es": "Mi hermano es mayor que yo."
+      }
+    },
+    {
+      "id": "cs-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "que",
+        "como",
+        "de"
+      ],
+      "es": "Mi casa es más grande ___ la casa de mi amigo.",
+      "word": "que",
+      "answer": "que",
+      "tr": {
+        "en": "My house is bigger than my friend's house.",
+        "es": "Mi casa es más grande que la casa de mi amigo."
+      },
+      "why": {
+        "en": "After más + adjective, the comparison continues with que (como and de do not fit).",
+        "es": "Después de más + adjetivo, la comparación sigue con que (como y de no encajan)."
+      }
+    },
+    {
+      "id": "cs-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "que",
+        "como",
+        "de"
+      ],
+      "es": "Mi hermana es tan alta ___ yo.",
+      "word": "como",
+      "answer": "como",
+      "tr": {
+        "en": "My sister is as tall as I am.",
+        "es": "Mi hermana es tan alta como yo."
+      },
+      "why": {
+        "en": "Tan + adjective asks for como (tan alta como), never que.",
+        "es": "Tan + adjetivo pide como (tan alta como), nunca que."
+      }
+    },
+    {
+      "id": "cs-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "que",
+        "como",
+        "de"
+      ],
+      "es": "Hay más ___ veinte estudiantes en el restaurante.",
+      "word": "de",
+      "answer": "de",
+      "tr": {
+        "en": "There are more than twenty students in the restaurant.",
+        "es": "Hay más de veinte estudiantes en el restaurante."
+      },
+      "why": {
+        "en": "Before a number: más de (not más que, not más como).",
+        "es": "Delante de un número: más de (no más que, no más como)."
+      }
+    },
+    {
+      "id": "cs-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "mejor",
+        "peor",
+        "mayor"
+      ],
+      "es": "Ella es la ___ estudiante de la clase: siempre tiene diez.",
+      "word": "mejor",
+      "answer": "mejor",
+      "tr": {
+        "en": "She is the best student in the class: she always has a ten.",
+        "es": "Ella es la mejor estudiante de la clase: siempre tiene diez."
+      },
+      "why": {
+        "en": "Always a ten means good: la mejor (peor means the opposite, mayor is about age).",
+        "es": "Siempre diez significa bueno: la mejor (peor es lo contrario, mayor es de edad)."
+      }
+    },
+    {
+      "id": "cs-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "mayor",
+        "mejor",
+        "peor"
+      ],
+      "es": "Mi hermano tiene treinta años y yo veinte: él es ___ que yo.",
+      "word": "mayor",
+      "answer": "mayor",
+      "tr": {
+        "en": "My brother is thirty and I am twenty: he is older than I am.",
+        "es": "Mi hermano tiene treinta años y yo veinte: él es mayor que yo."
+      },
+      "why": {
+        "en": "Thirty is more than twenty: mayor (older); mejor and peor are about quality.",
+        "es": "Treinta es más que veinte: mayor; mejor y peor son de calidad."
+      }
+    },
+    {
+      "id": "cs-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "This car is more expensive than the other one.",
+        "es": "Este carro es más caro que el otro."
+      },
+      "es": "Este carro es más caro que el otro."
+    },
+    {
+      "id": "cs-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "My sister is as tall as I am.",
+        "es": "Mi hermana es tan alta como yo."
+      },
+      "es": "Mi hermana es tan alta como yo."
+    },
+    {
+      "id": "cs-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "She is the best student in the class.",
+        "es": "Ella es la mejor estudiante de la clase."
+      },
+      "es": "Ella es la mejor estudiante de la clase."
+    },
+    {
+      "id": "cs-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "I have as many books as you.",
+        "es": "Tengo tantos libros como tú."
+      },
+      "es": "Tengo tantos libros como tú."
+    },
+    {
+      "id": "cs-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "This movie is worse than the other one.",
+        "es": "Esta película es peor que la otra."
+      },
+      "es": "Esta película es peor que la otra."
     }
   ]
 }
