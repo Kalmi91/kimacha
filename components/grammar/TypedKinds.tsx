@@ -4,6 +4,7 @@ import { Text } from '@/components/KText';
 
 import AnswerCompare from '@/components/grammar/AnswerCompare';
 import { BrutalBox, inkButtonText } from '@/components/grammar/Brutal';
+import { tapTarget } from '@/constants/Theme';
 import { useDockedAction } from '@/components/learn/DockSlot';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
@@ -167,8 +168,21 @@ export function ClozeDrillItem({ item, learnedLang, contentLang, strictAccents, 
   const [typed, setTyped] = useState<string[]>(() => item.answers.map(() => ''));
   const [result, setResult] = useState<boolean[] | null>(null);
   const firstRef = useRef<TextInput>(null);
+  const inputs = useRef<(TextInput | null)[]>([]);
   useFocusOnNewCard(firstRef, true, item.id);
   useEffect(() => () => stopSpeaking(), []);
+
+  // the next empty gap after gap i (then from the start), or -1 when i is the only one left
+  const nextEmpty = (i: number) => {
+    const order = [...typed.keys()].filter((k) => k > i).concat([...typed.keys()].filter((k) => k < i));
+    return order.find((k) => typed[k].trim() === '') ?? -1;
+  };
+  const submitGap = (i: number) => {
+    if (result) return;
+    const n = nextEmpty(i);
+    if (n >= 0) inputs.current[n]?.focus();
+    else check();
+  };
 
   const allRight = result !== null && result.every(Boolean);
   const check = () => {
@@ -201,14 +215,19 @@ export function ClozeDrillItem({ item, learnedLang, contentLang, strictAccents, 
               {i < parts.length - 1 ? (
                 <BrutalBox dashed={!!result && !result[i]} boxStyle={styles.clozeBox}>
                   <TextInput
-                    ref={i === 0 ? firstRef : undefined}
+                    ref={(el) => {
+                      inputs.current[i] = el;
+                      if (i === 0) firstRef.current = el;
+                    }}
                     testID={`cloze-input-${i}`}
                     {...answerInputProps}
                     style={[styles.clozeInput, { color: g.ink }]}
                     value={typed[i]}
                     onChangeText={(v) => setTyped((prev) => prev.map((x, k) => (k === i ? v : x)))}
                     editable={!result}
-                    onSubmitEditing={result ? undefined : check}
+                    returnKeyType={result || nextEmpty(i) < 0 ? 'done' : 'next'}
+                    submitBehavior={result || nextEmpty(i) < 0 ? 'blurAndSubmit' : 'submit'}
+                    onSubmitEditing={result ? undefined : () => submitGap(i)}
                   />
                 </BrutalBox>
               ) : null}
@@ -385,7 +404,7 @@ const styles = StyleSheet.create({
   headText: { fontSize: 12, fontWeight: '700', textTransform: 'uppercase', flexShrink: 1 },
   sentenceBox: { padding: 14 },
   wordRow: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
-  chip: { paddingVertical: 8, paddingHorizontal: 10 },
+  chip: { paddingVertical: 8, paddingHorizontal: 10, minHeight: tapTarget, justifyContent: 'center' },
   chipText: { fontSize: 18, fontWeight: '600', flexShrink: 1 },
   dim: { opacity: 0.55 },
   note: { fontSize: 13, textAlign: 'center' },

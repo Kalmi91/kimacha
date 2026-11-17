@@ -2,6 +2,7 @@
 // in both skins: the brutal one and the classic one. Every screen element has a testID; the result is right only if
 // every typed part is right; the accent setting decides on the accents.
 
+import { StyleSheet, TextInput } from 'react-native';
 import { fireEvent, render, screen } from '@testing-library/react-native';
 
 import { BankDrillItem, ClozeDrillItem, FixDrillItem, NounDrillItem } from '../grammar/TypedKinds';
@@ -62,6 +63,35 @@ describe.each([
     expect(screen.getByTestId('cloze-input-0').props.editable).toBe(false);
     fireEvent.press(screen.getByTestId('grammar-next'));
     expect(onDone).toHaveBeenCalledWith(false);
+  });
+
+  it('open cloze: Enter moves to the next empty gap (keyboard stays), on the last one it checks', () => {
+    const focus = jest.spyOn(TextInput.prototype as unknown as { focus: () => void }, 'focus').mockImplementation(() => {});
+    render(<ClozeDrillItem item={CLOZE} learnedLang="es" contentLang="en" strictAccents onDone={onDone} />);
+    focus.mockClear();
+    expect(screen.getByTestId('cloze-input-0').props.returnKeyType).toBe('next');
+    fireEvent.changeText(screen.getByTestId('cloze-input-0'), 'soy');
+    fireEvent(screen.getByTestId('cloze-input-0'), 'submitEditing');
+    expect(screen.queryByTestId('cloze-wrong')).toBeNull();
+    expect(screen.queryByTestId('cloze-correct')).toBeNull();
+    expect(focus).toHaveBeenCalledTimes(1);
+    fireEvent.changeText(screen.getByTestId('cloze-input-1'), 'tengo');
+    // the third gap is the only empty one left: from the second gap Enter goes there, from the third it checks
+    expect(screen.getByTestId('cloze-input-1').props.returnKeyType).toBe('next');
+    expect(screen.getByTestId('cloze-input-2').props.returnKeyType).toBe('done');
+    fireEvent.changeText(screen.getByTestId('cloze-input-2'), 'está');
+    expect(screen.getByTestId('cloze-input-2').props.returnKeyType).toBe('done');
+    fireEvent(screen.getByTestId('cloze-input-2'), 'submitEditing');
+    expect(screen.getByTestId('cloze-correct')).toBeTruthy();
+    focus.mockRestore();
+  });
+
+  it('fix and word bank: the word chips are at least a tap target high', () => {
+    render(<FixDrillItem item={FIX} learnedLang="es" contentLang="en" strictAccents onDone={onDone} />);
+    expect(StyleSheet.flatten(screen.getByTestId('fix-word-0').props.style)?.minHeight).toBeGreaterThanOrEqual(44);
+    screen.unmount();
+    render(<BankDrillItem item={BANK} learnedLang="es" contentLang="en" strictAccents onDone={onDone} />);
+    expect(StyleSheet.flatten(screen.getByTestId('bank-word-0').props.style)?.minHeight).toBeGreaterThanOrEqual(44);
   });
 
   it('open cloze: all gaps right', () => {
