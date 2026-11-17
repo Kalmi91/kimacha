@@ -16,8 +16,8 @@
   "levels": {
     "A1": { "enabled": true, "types": ["choice", "form", "transform", "why", "opencloze", "fix", "bank", "order"] },
     "A2": { "enabled": true, "types": ["choice", "form", "transform", "why", "opencloze", "fix", "bank", "order"] },
-    "B1": { "enabled": false, "types": ["choice", "form", "transform", "why", "opencloze", "fix", "bank", "order"] },
-    "B2": { "enabled": false, "types": ["choice", "form", "transform", "why", "opencloze", "fix", "bank", "order"] },
-    "C1": { "enabled": false, "types": ["choice", "form", "transform", "why", "opencloze", "fix", "bank", "order"] }
+    "B1": { "enabled": true, "types": ["choice", "form", "transform", "why", "opencloze", "fix", "bank", "order"] },
+    "B2": { "enabled": true, "types": ["choice", "form", "transform", "why", "opencloze", "fix", "bank", "order"] },
+    "C1": { "enabled": true, "types": ["choice", "form", "transform", "why", "opencloze", "fix", "bank", "order"] }
   }
 }

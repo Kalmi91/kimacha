@@ -3,7 +3,7 @@
 // rows mean everything is done (backward compatibility).
 
 import { getGrammarTopic, getGrammarTopicIds, grammarKindCounts, type GrammarKind, type GrammarTopicData } from '@/lib/games/content';
-import { doneGrammarTopicProgress } from '../syllabus';
+import { doneGrammarTopicProgress, requiredKinds } from '../syllabus';
 
 describe('doneGrammarTopicProgress', () => {
   // hay-estar (es): 12 choice + 2 match + 7 why + 5 form items (the estar forms, E132) + the E132 transform and order kinds (5 each).
@@ -66,7 +66,9 @@ describe('doneGrammarTopicProgress, all nine task kinds', () => {
     for (const l of lessons) {
       // `write` (sentence writing) is never required: see lib/grammar/__tests__/writeKind.test.ts. The typed kinds of the grammar
       // tests (noun, opencloze, fix, bank) are never required either, so a lesson finished before they existed stays done.
-      for (const missing of l.kinds.filter((k) => !['write', 'noun', 'opencloze', 'fix', 'bank'].includes(k))) {
+      // Kinds added after 4.2.1 (data/grammar/late-kinds.json) are not required either (E149).
+      const required = requiredKinds(getGrammarTopic(l.lang, l.id)!);
+      for (const missing of l.kinds.filter((k) => (required as string[]).includes(k))) {
         const rows = done(l.id, l.kinds.filter((k) => k !== missing));
         expect(doneGrammarTopicProgress(l.lang, rows).has(l.id)).toBe(false);
       }

@@ -10,11 +10,11 @@ describe('task types', () => {
     expect(TASK_TYPE_IDS).toEqual(['choice', 'form', 'transform', 'why', 'opencloze', 'fix', 'bank', 'order']);
   });
 
-  it('every level uses the 8 types and A1 and A2 are switched on (E132, E133)', () => {
+  it('every level uses the 8 types and all five levels are switched on (E132, E133, E149)', () => {
     for (const level of ['A1', 'A2', 'B1', 'B2', 'C1'] as const) {
       expect(taskConfigForLevel(level).types).toEqual(TASK_TYPE_IDS);
     }
-    expect(enabledTaskLevels()).toEqual(['A1', 'A2']);
+    expect(enabledTaskLevels()).toEqual(['A1', 'A2', 'B1', 'B2', 'C1']);
   });
 
   it('indefinido-imperfecto is exempt from the typed form drill: no form gap, and the lesson has no form item', () => {

@@ -46,10 +46,10 @@ function fixture(name: string, enabled: boolean, perType: Record<string, number>
 }
 
 describe('grammar-task-gate', () => {
-  it('is green on the shipped files (A1 and A2 are switched on and complete)', () => {
+  it('is green on the shipped files (all five levels are switched on and complete)', () => {
     const r = run();
     expect(r.status).toBe(0);
-    expect(r.last).toBe('grammar-task-gate: OK (2 levels checked, 0 gaps)');
+    expect(r.last).toBe('grammar-task-gate: OK (5 levels checked, 0 gaps)');
   });
 
   it('a switched-on level with a missing type FAILS, naming the topic and the type', () => {

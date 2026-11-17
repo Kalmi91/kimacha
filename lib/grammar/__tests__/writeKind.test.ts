@@ -80,27 +80,27 @@ describe('write is never required, never scored', () => {
       expect(scoredKinds(lesson(id))).not.toContain('write');
       expect(lessonKinds('es', id)).not.toContain('write');
     }
-    expect(scoredKinds(lesson('por-para'))).toEqual(['choice', 'match', 'form', 'why', 'transform']);
+    expect(scoredKinds(lesson('por-para'))).toEqual(['choice', 'match', 'form', 'why']);
   });
 
   it('a lesson done before the new kind existed stays done (por-para: no write row needed)', () => {
-    // E133: por-para also has the transform and order tasks of the grammar tests, so they are part of the done state too
-    const before = ['choice', 'match', 'form', 'why', 'transform', 'order'];
+    // E149: the transform and order tasks of the grammar tests came after 4.2.1 (data/grammar/late-kinds.json), so they are not part of the done state
+    const before = ['choice', 'match', 'form', 'why'];
     const done = doneGrammarTopicProgress('es', doneRows('por-para', before));
-    expect(done.get('por-para')).toEqual({ state: 'done', correct: 54, total: 60 });
+    expect(done.get('por-para')).toEqual({ state: 'done', correct: 36, total: 40 });
     // a done write row changes nothing: neither the state nor the totals
     const withWrite = doneGrammarTopicProgress('es', doneRows('por-para', [...before, 'write']));
-    expect(withWrite.get('por-para')).toEqual({ state: 'done', correct: 54, total: 60 });
+    expect(withWrite.get('por-para')).toEqual({ state: 'done', correct: 36, total: 40 });
   });
 
   it('ser-estar still needs its dictation (the existing behaviour did not change), but not the write row', () => {
-    // E132: ser-estar also has the transform and order tasks of the grammar tests, so they are part of the done state too
-    const base = ['choice', 'match', 'form', 'why', 'transform', 'order'];
+    // E149: the transform and order tasks of the grammar tests came after 4.2.1, so they are not part of the done state
+    const base = ['choice', 'match', 'form', 'why'];
     expect(doneGrammarTopicProgress('es', doneRows('ser-estar', base)).has('ser-estar')).toBe(false);
     expect(doneGrammarTopicProgress('es', doneRows('ser-estar', [...base, 'dictation'])).get('ser-estar')).toEqual({
       state: 'done',
-      correct: 63,
-      total: 70,
+      correct: 45,
+      total: 50,
     });
   });
 
