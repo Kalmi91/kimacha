@@ -13,6 +13,7 @@ export default {
     notStarted: 'new',
     // brutalist course list.
     doneTag: 'done',
+    knownFromTestTag: 'Known from the test',
     continueTag: 'continue →',
     weeklyGoalTitle: 'Weekly goal',
     weeklyGoalValue: (done: string, goal: string) => `${done} h / ${goal} h`,

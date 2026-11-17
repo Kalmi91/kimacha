@@ -41,7 +41,7 @@ import { EXAM_LEVELS } from '@/lib/exam/types';
 import { examStatusFor, levelHasLesson, type ExamLevelStatus } from '@/lib/exam/unlock';
 import { DEFAULT_WEEKLY_GOAL_MINUTES } from '@/lib/usageStats';
 import ScreenFeedback from '@/lib/screenFeedback';
-import { loadBigTestCard } from '@/lib/grammar/bigTest';
+import { loadBigTestCard, loadBigTestKnownTopics } from '@/lib/grammar/bigTest';
 import { grammarTabLevelKey, parseTabLevel } from '@/lib/grammar/levelTestRoute';
 import { loadResumeValue, saveResumeValue } from '@/lib/resumeStore';
 import BigTestCard from '@/components/grammar/BigTestCard';
@@ -93,6 +93,8 @@ export default function GrammarSyllabusScreen() {
   const [randomRun, setRandomRun] = useState<RoundRun | null>(null);
   // the Big test card: a run in progress and the last stored result level, reloaded on every focus.
   const [bigTest, setBigTest] = useState<{ running: boolean; level: string | null; ready: boolean }>({ running: false, level: null, ready: false });
+  // Strong topics of the last Big test: a mark only, no evidence, no percent.
+  const [knownFromTest, setKnownFromTest] = useState<Set<string>>(new Set());
   // streak sticker + weekly goal box (from the existing getStreak / weekly goal / usage values).
   const [streak, setStreak] = useState(0);
   const [weeklyGoal, setWeeklyGoal] = useState(DEFAULT_WEEKLY_GOAL_MINUTES);
@@ -131,6 +133,7 @@ export default function GrammarSyllabusScreen() {
     const pair = `${sourceFor(target, source)}→${target}`;
     const card = await loadBigTestCard(db, pair, target);
     setBigTest({ ...card, ready: true });
+    setKnownFromTest(await loadBigTestKnownTopics(db, pair));
     // the selected level: the learner's own last pick, else the last Big test's level, else the current level
     const tabLevels: string[] = syllabusLevels(target);
     const saved = parseTabLevel(await loadResumeValue(db, grammarTabLevelKey(pair)), tabLevels);
@@ -310,7 +313,7 @@ export default function GrammarSyllabusScreen() {
                         {topic.title[contentLang] ?? topic.title.en}
                       </Text>
                     </View>
-                    {tier || isDone || testPassed.has(topic.id) ? (
+                    {tier || isDone || testPassed.has(topic.id) || knownFromTest.has(topic.id) ? (
                       <View style={styles.brutalStickers}>
                         {tier === 'core-plus' ? (
                           <Sticker testID={`grammar-core-plus-${topic.id}`} label={s.grammar.corePlusTag} fill="paper" rotate={-4} />
@@ -323,6 +326,7 @@ export default function GrammarSyllabusScreen() {
                         {testPassed.has(topic.id) ? (
                           <Sticker testID={`grammar-test-passed-${topic.id}`} label={s.lessonTest.passedTag} fill="b" rotate={-3} />
                         ) : null}
+                        {knownFromTest.has(topic.id) ? <Sticker testID={`grammar-known-${topic.id}`} label={s.grammar.knownFromTestTag} fill="paper" rotate={3} /> : null}
                       </View>
                     ) : null}
                     {/* No numberOfLines clipping: a theme with a wide / tall font wraps onto 3+ lines, we do not truncate it. */}
@@ -512,6 +516,7 @@ export default function GrammarSyllabusScreen() {
                                   ✓ {s.lessonTest.passedTag}
                                 </Text>
                               ) : null}
+                              {knownFromTest.has(topic.id) ? <Text testID={`grammar-known-${topic.id}`} style={[styles.topicBadge, { color: colors.tabIconDefault }]}>{s.grammar.knownFromTestTag}</Text> : null}
                             </View>
                           </Pressable>
                         );

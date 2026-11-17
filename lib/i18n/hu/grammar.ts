@@ -14,6 +14,7 @@ const hu: typeof en = {
     started: 'elkezdve',
     notStarted: 'új',
     doneTag: 'kész',
+    knownFromTestTag: 'A tesztből tudod',
     continueTag: 'folytatás →',
     weeklyGoalTitle: 'Heti cél',
     weeklyGoalValue: (done: string, goal: string) => `${done} ó / ${goal} ó`,

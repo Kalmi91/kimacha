@@ -406,3 +406,9 @@ export async function loadBigTestCard(db: DB, pair: string, learnedLang: string)
   if (!hasBigTest(learnedLang)) return { running: false, level: null };
   return { running: (await loadBigTestRun(db, pair, learnedLang)) !== null, level: (await loadBigTestResult(db, pair))?.level ?? null };
 }
+
+/** The topics whose main answer was right in the LAST Big test and that never needed practice (its "Strong" list); empty when there is no result or it has no such list. */
+export async function loadBigTestKnownTopics(db: DB, pair: string): Promise<Set<string>> {
+  const r = await loadBigTestResult(db, pair);
+  return new Set(Array.isArray(r?.strong) ? r.strong.filter((x): x is string => typeof x === 'string') : []);
+}
