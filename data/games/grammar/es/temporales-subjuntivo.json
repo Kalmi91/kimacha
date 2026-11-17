@@ -961,6 +961,477 @@
       ],
       "correctIndex": 0,
       "tense": { "from": "presente", "to": "subjuntivo-presente" }
+    },
+    {
+      "id": "sp-tr-01",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      },
+      "prompt": {
+        "en": "You get home. I call you. (When…)",
+        "es": "Llegas a casa. Te llamo. (Cuando…)"
+      },
+      "answer": "Cuando llegues a casa, te llamo.",
+      "accept": [
+        "Te llamo cuando llegues a casa.",
+        "Cuando tú llegues a casa, te llamo.",
+        "Te llamo cuando tú llegues a casa."
+      ],
+      "wordIds": [
+        "149",
+        "1194",
+        "89",
+        "161"
+      ],
+      "why": {
+        "en": "A future event that has not happened yet: cuando takes the subjunctive. Llegar, tú: llegas → llegues.",
+        "es": "Un evento futuro que todavía no ha pasado: cuando lleva subjuntivo. Llegar, tú: llegas → llegues."
+      }
+    },
+    {
+      "id": "sp-tr-02",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      },
+      "prompt": {
+        "en": "She finishes the work. We leave. (As soon as…)",
+        "es": "Ella termina el trabajo. Salimos. (En cuanto…)"
+      },
+      "answer": "En cuanto ella termine el trabajo, salimos.",
+      "accept": [
+        "En cuanto termine el trabajo, salimos.",
+        "Salimos en cuanto ella termine el trabajo.",
+        "Salimos en cuanto termine el trabajo."
+      ],
+      "wordIds": [
+        "219",
+        "49",
+        "199",
+        "1328"
+      ],
+      "why": {
+        "en": "A future event: en cuanto takes the subjunctive. Terminar, ella: termina → termine.",
+        "es": "Un evento futuro: en cuanto lleva subjuntivo. Terminar, ella: termina → termine."
+      }
+    },
+    {
+      "id": "sp-tr-03",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      },
+      "prompt": {
+        "en": "You eat. I do the homework. (Before…)",
+        "es": "Tú comes. Yo hago la tarea. (Antes de que…)"
+      },
+      "answer": "Antes de que tú comas, hago la tarea.",
+      "accept": [
+        "Antes de que comas, hago la tarea.",
+        "Hago la tarea antes de que comas.",
+        "Hago la tarea antes de que tú comas."
+      ],
+      "wordIds": [
+        "25",
+        "76",
+        "171",
+        "81"
+      ],
+      "why": {
+        "en": "Antes de que always takes the subjunctive. Comer, tú: comes → comas.",
+        "es": "Antes de que siempre lleva subjuntivo. Comer, tú: comes → comas."
+      }
+    },
+    {
+      "id": "sp-tr-04",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      },
+      "prompt": {
+        "en": "My parents come. We clean the house. (When…)",
+        "es": "Mis padres vienen. Limpiamos la casa. (Cuando…)"
+      },
+      "answer": "Cuando mis padres vengan, limpiamos la casa.",
+      "accept": [
+        "Cuando vengan mis padres, limpiamos la casa.",
+        "Limpiamos la casa cuando mis padres vengan.",
+        "Limpiamos la casa cuando vengan mis padres."
+      ],
+      "wordIds": [
+        "39",
+        "80",
+        "332",
+        "1194",
+        "161"
+      ],
+      "why": {
+        "en": "A future event: cuando takes the subjunctive. Venir, ellos: vienen → vengan.",
+        "es": "Un evento futuro: cuando lleva subjuntivo. Venir, ellos: vienen → vengan."
+      }
+    },
+    {
+      "id": "sp-tr-05",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      },
+      "prompt": {
+        "en": "I am ready. We do not leave. (Until…)",
+        "es": "Yo estoy listo. No salimos. (Hasta que…)"
+      },
+      "answer": "No salimos hasta que yo esté listo.",
+      "accept": [
+        "No salimos hasta que esté listo.",
+        "Hasta que yo esté listo, no salimos.",
+        "Hasta que esté listo, no salimos."
+      ],
+      "wordIds": [
+        "2",
+        "294",
+        "5",
+        "199"
+      ],
+      "why": {
+        "en": "A future event: hasta que takes the subjunctive. Estar, yo: estoy → esté.",
+        "es": "Un evento futuro: hasta que lleva subjuntivo. Estar, yo: estoy → esté."
+      }
+    },
+    {
+      "id": "sp-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Cuando ___ (llegar) a casa, siempre ceno. Mañana, cuando ___ (llegar) a casa, te llamo. En cuanto nosotros ___ (tener) tiempo, vamos al cine.",
+      "answers": [
+        "llego",
+        "llegue",
+        "tengamos"
+      ],
+      "tr": {
+        "en": "When I get home, I always have dinner. Tomorrow, when I get home, I will call you. As soon as we have time, we go to the cinema.",
+        "es": "Cuando llego (llegar) a casa, siempre ceno. Mañana, cuando llegue (llegar) a casa, te llamo. En cuanto nosotros tengamos (tener) tiempo, vamos al cine."
+      },
+      "why": {
+        "en": "A habit takes the indicative (llego); a future event takes the subjunctive (llegue, tengamos).",
+        "es": "Una costumbre lleva indicativo (llego); un evento futuro lleva subjuntivo (llegue, tengamos)."
+      }
+    },
+    {
+      "id": "sp-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Siempre llamo a mi mamá cuando ___ (salir) del trabajo. Hoy la voy a llamar cuando ___ (salir) a las cinco. Después de que nosotros ___ (comer), vamos al parque.",
+      "answers": [
+        "salgo",
+        "salga",
+        "comamos"
+      ],
+      "tr": {
+        "en": "I always call my mom when I leave work. Today I am going to call her when I leave at five. After we eat, we go to the park.",
+        "es": "Siempre llamo a mi mamá cuando salgo (salir) del trabajo. Hoy la voy a llamar cuando salga (salir) a las cinco. Después de que nosotros comamos (comer), vamos al parque."
+      },
+      "why": {
+        "en": "A habit takes the indicative (salgo); a future event takes the subjunctive (salga, comamos).",
+        "es": "Una costumbre lleva indicativo (salgo); un evento futuro lleva subjuntivo (salga, comamos)."
+      }
+    },
+    {
+      "id": "sp-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "No salgo hasta que mi madre ___ (venir). Antes de que ella ___ (llegar), limpio mi cuarto. Cuando ella ___ (estar) aquí, cenamos.",
+      "answers": [
+        "venga",
+        "llegue",
+        "esté"
+      ],
+      "tr": {
+        "en": "I am not leaving until my mother comes. Before she arrives, I clean my room. When she is here, we have dinner.",
+        "es": "No salgo hasta que mi madre venga (venir). Antes de que ella llegue (llegar), limpio mi cuarto. Cuando ella esté (estar) aquí, cenamos."
+      },
+      "why": {
+        "en": "Hasta que, antes de que and a future cuando all take the subjunctive: venga, llegue, esté.",
+        "es": "Hasta que, antes de que y un cuando futuro llevan subjuntivo: venga, llegue, esté."
+      }
+    },
+    {
+      "id": "sp-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Cada día, cuando ___ (hacer) calor, comemos helado. Mañana, cuando ___ (hacer) calor, vamos a la playa. Tan pronto como yo ___ (saber) la hora, te escribo.",
+      "answers": [
+        "hace",
+        "haga",
+        "sepa"
+      ],
+      "tr": {
+        "en": "Every day, when it is hot, we eat ice cream. Tomorrow, when it is hot, we go to the beach. As soon as I know the time, I will write to you.",
+        "es": "Cada día, cuando hace (hacer) calor, comemos helado. Mañana, cuando haga (hacer) calor, vamos a la playa. Tan pronto como yo sepa (saber) la hora, te escribo."
+      },
+      "why": {
+        "en": "A habit takes the indicative (hace); a future event takes the subjunctive (haga, sepa).",
+        "es": "Una costumbre lleva indicativo (hace); un evento futuro lleva subjuntivo (haga, sepa)."
+      }
+    },
+    {
+      "id": "sp-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Mi hermano siempre me ayuda cuando ___ (tener) tiempo. Mañana, en cuanto él ___ (terminar) su tarea, me ayuda con la mía. Cuando nosotros ___ (ir) a México, vamos a ver a mis tíos.",
+      "answers": [
+        "tiene",
+        "termine",
+        "vayamos"
+      ],
+      "tr": {
+        "en": "My brother always helps me when he has time. Tomorrow, as soon as he finishes his homework, he helps me with mine. When we go to Mexico, we are going to see my aunts and uncles.",
+        "es": "Mi hermano siempre me ayuda cuando tiene (tener) tiempo. Mañana, en cuanto él termine (terminar) su tarea, me ayuda con la mía. Cuando nosotros vayamos (ir) a México, vamos a ver a mis tíos."
+      },
+      "why": {
+        "en": "A habit takes the indicative (tiene); a future event takes the subjunctive (termine, vayamos).",
+        "es": "Una costumbre lleva indicativo (tiene); un evento futuro lleva subjuntivo (termine, vayamos)."
+      }
+    },
+    {
+      "id": "sp-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "Mañana, cuando llegas a casa, te llamo.",
+      "wrongIndex": 2,
+      "answer": "llegues",
+      "explain": {
+        "en": "The arrival is in the future (mañana), so cuando takes the subjunctive: llegues, not llegas.",
+        "es": "La llegada es futura (mañana), por eso cuando lleva subjuntivo: llegues, no llegas."
+      },
+      "tr": {
+        "en": "Tomorrow, when you get home, I will call you.",
+        "es": "Mañana, cuando llegues a casa, te llamo."
+      }
+    },
+    {
+      "id": "sp-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "Mañana, en cuanto ella termina el trabajo, salimos.",
+      "wrongIndex": 4,
+      "answer": "termine",
+      "explain": {
+        "en": "A future event after en cuanto takes the subjunctive: termine, not termina.",
+        "es": "Un evento futuro después de en cuanto lleva subjuntivo: termine, no termina."
+      },
+      "tr": {
+        "en": "Tomorrow, as soon as she finishes the work, we leave.",
+        "es": "Mañana, en cuanto ella termine el trabajo, salimos."
+      }
+    },
+    {
+      "id": "sp-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "Antes de que tú comes, hago la tarea.",
+      "wrongIndex": 4,
+      "answer": "comas",
+      "explain": {
+        "en": "Antes de que always takes the subjunctive: comas, not comes.",
+        "es": "Antes de que siempre lleva subjuntivo: comas, no comes."
+      },
+      "tr": {
+        "en": "Before you eat, I do the homework.",
+        "es": "Antes de que tú comas, hago la tarea."
+      }
+    },
+    {
+      "id": "sp-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "Mañana no salgo hasta que mi mamá viene.",
+      "wrongIndex": 7,
+      "answer": "venga",
+      "explain": {
+        "en": "A future event after hasta que takes the subjunctive: venga, not viene.",
+        "es": "Un evento futuro después de hasta que lleva subjuntivo: venga, no viene."
+      },
+      "tr": {
+        "en": "Tomorrow I am not leaving until my mom comes.",
+        "es": "Mañana no salgo hasta que mi mamá venga."
+      }
+    },
+    {
+      "id": "sp-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "Mañana, tan pronto como yo llego, te escribo.",
+      "wrongIndex": 5,
+      "answer": "llegue",
+      "explain": {
+        "en": "A future event after tan pronto como takes the subjunctive: llegue, not llego.",
+        "es": "Un evento futuro después de tan pronto como lleva subjuntivo: llegue, no llego."
+      },
+      "tr": {
+        "en": "Tomorrow, as soon as I arrive, I will write to you.",
+        "es": "Mañana, tan pronto como yo llegue, te escribo."
+      }
+    },
+    {
+      "id": "sp-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "llegar",
+        "comer",
+        "salir"
+      ],
+      "es": "Cuando yo ___ a casa, siempre ceno.",
+      "word": "llegar",
+      "answer": "llego",
+      "tr": {
+        "en": "When I get home, I always have dinner.",
+        "es": "Cuando yo llego a casa, siempre ceno."
+      },
+      "why": {
+        "en": "A habit (siempre) takes the indicative; llegar, yo: llego.",
+        "es": "Una costumbre (siempre) lleva indicativo; llegar, yo: llego."
+      }
+    },
+    {
+      "id": "sp-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "venir",
+        "ser",
+        "saber"
+      ],
+      "es": "Mañana, cuando mis padres ___ a la casa, hacemos tacos.",
+      "word": "venir",
+      "answer": "vengan",
+      "tr": {
+        "en": "Tomorrow, when my parents come to the house, we make tacos.",
+        "es": "Mañana, cuando mis padres vengan a la casa, hacemos tacos."
+      },
+      "why": {
+        "en": "A future event takes the subjunctive after cuando; venir, ellos: vengan.",
+        "es": "Un evento futuro lleva subjuntivo después de cuando; venir, ellos: vengan."
+      }
+    },
+    {
+      "id": "sp-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "terminar",
+        "comer",
+        "dormir"
+      ],
+      "es": "En cuanto yo ___ la tarea, te llamo.",
+      "word": "terminar",
+      "answer": "termine",
+      "tr": {
+        "en": "As soon as I finish the homework, I will call you.",
+        "es": "En cuanto yo termine la tarea, te llamo."
+      },
+      "why": {
+        "en": "A future event takes the subjunctive after en cuanto; terminar, yo: termine.",
+        "es": "Un evento futuro lleva subjuntivo después de en cuanto; terminar, yo: termine."
+      }
+    },
+    {
+      "id": "sp-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "tener",
+        "estar",
+        "hacer"
+      ],
+      "es": "Hasta que ella ___ lista, no salimos.",
+      "word": "estar",
+      "answer": "esté",
+      "tr": {
+        "en": "Until she is ready, we are not leaving.",
+        "es": "Hasta que ella esté lista, no salimos."
+      },
+      "why": {
+        "en": "Hasta que takes the subjunctive; estar, ella: esté.",
+        "es": "Hasta que lleva subjuntivo; estar, ella: esté."
+      }
+    },
+    {
+      "id": "sp-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "salir",
+        "comer",
+        "hacer"
+      ],
+      "es": "Quiero hablar contigo antes de que ustedes ___ de la casa.",
+      "word": "salir",
+      "answer": "salgan",
+      "tr": {
+        "en": "I want to talk to you before you leave the house.",
+        "es": "Quiero hablar contigo antes de que ustedes salgan de la casa."
+      },
+      "why": {
+        "en": "Antes de que always takes the subjunctive; salir, ustedes: salgan.",
+        "es": "Antes de que siempre lleva subjuntivo; salir, ustedes: salgan."
+      }
+    },
+    {
+      "id": "sp-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "Wait until I arrive.",
+        "es": "Espera hasta que yo llegue."
+      },
+      "es": "Espera hasta que yo llegue."
+    },
+    {
+      "id": "sp-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "I will call you as soon as I arrive.",
+        "es": "Te llamo en cuanto llegue."
+      },
+      "es": "Te llamo en cuanto llegue."
+    },
+    {
+      "id": "sp-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "I am not leaving until you come.",
+        "es": "No salgo hasta que vengas."
+      },
+      "es": "No salgo hasta que vengas."
+    },
+    {
+      "id": "sp-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "I want to talk before you leave.",
+        "es": "Quiero hablar antes de que te vayas."
+      },
+      "es": "Quiero hablar antes de que te vayas."
+    },
+    {
+      "id": "sp-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "We have dinner after you arrive.",
+        "es": "Cenamos después de que llegues."
+      },
+      "es": "Cenamos después de que llegues."
     }
   ]
 }
