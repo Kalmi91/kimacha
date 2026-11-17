@@ -1297,6 +1297,12 @@
         "no",
         "nadie"
       ],
+      "accept": [
+        [],
+        [
+          "no"
+        ]
+      ],
       "tr": {
         "en": "I always eat meat, but today I do not eat meat. There is always someone here, but today nobody is here.",
         "es": "Siempre como carne, pero hoy no como carne. Siempre hay alguien aquí, pero hoy nadie está aquí."
@@ -1374,6 +1380,12 @@
       "answers": [
         "tampoco",
         "ni"
+      ],
+      "accept": [
+        [
+          "no"
+        ],
+        []
       ],
       "tr": {
         "en": "My friend doesn't speak Spanish. I don't speak Spanish either. I have neither time nor money.",

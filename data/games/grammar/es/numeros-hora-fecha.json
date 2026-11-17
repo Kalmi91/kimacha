@@ -1301,6 +1301,12 @@
         "primero",
         "de"
       ],
+      "accept": [
+        [
+          "uno"
+        ],
+        []
+      ],
       "tr": {
         "en": "Today is the first of January. Tomorrow is the second of January.",
         "es": "Hoy es el primero de enero (1). Mañana es el dos de enero."
@@ -1438,7 +1444,7 @@
       "trial": true,
       "bank": [
         "primero",
-        "uno",
+        "primer",
         "un"
       ],
       "es": "Hoy es el ___ de mayo.",

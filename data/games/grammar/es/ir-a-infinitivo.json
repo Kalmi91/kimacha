@@ -1948,14 +1948,14 @@
       "id": "iai-cloze-02",
       "kind": "opencloze",
       "trial": true,
-      "text": "Mañana ___ a estudiar en casa. Tú ___ a trabajar en la oficina.",
+      "text": "Mañana yo ___ a estudiar en casa. Tú ___ a trabajar en la oficina.",
       "answers": [
         "voy",
         "vas"
       ],
       "tr": {
         "en": "Tomorrow I am going to study at home. You are going to work in the office.",
-        "es": "Mañana voy a estudiar en casa. Tú vas a trabajar en la oficina."
+        "es": "Mañana yo voy a estudiar en casa. Tú vas a trabajar en la oficina."
       },
       "why": {
         "en": "Ir is irregular: yo voy, tú vas, él va, nosotros vamos, ellos van; then always a + infinitive.",
