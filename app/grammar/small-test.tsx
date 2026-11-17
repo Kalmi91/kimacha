@@ -38,6 +38,7 @@ import {
 import { smallTestView, type SmallView } from '@/lib/grammar/smallTestView';
 import { Card } from '@/components/grammar/Brutal';
 import { NewKindDrillItem } from '@/components/grammar/NewKinds';
+import ItemAnswer from '@/components/grammar/ItemAnswer';
 import LevelTestFeedback from '@/components/grammar/LevelTestFeedback';
 import { ProgressBar } from '@/components/grammar/Themed';
 import TestQuestionView from '@/components/grammar/TestQuestionView';
@@ -450,12 +451,13 @@ export default function SmallTestScreen() {
       <View style={styles.flex}>
         {headerFor(part)}
         {progress}
-        <View testID="small-test-miss" style={styles.body}>
+        <ScrollView testID="small-test-miss" contentContainerStyle={styles.body}>
           <Text style={[styles.title, { color: colors.text }]}>{s.missTitle}</Text>
           <Text style={[styles.line, { color: colors.textMuted }]}>{titleOf(cur.topic)}</Text>
+          {found.item ? <ItemAnswer item={found.item} contentLang={data.contentLang as never} /> : null}
           {mistypedButton}
           <ExamButton testID="small-test-miss-next" label={s.next} onPress={() => settle(false)} />
-        </View>
+        </ScrollView>
       </View>,
     );
   }
