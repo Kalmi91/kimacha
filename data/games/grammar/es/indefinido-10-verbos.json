@@ -1849,6 +1849,6 @@
     {"id":"i10-order-02","kind":"order","trial":true,"prompt":{"en":"Did you have time to wait?","es":"¿Tuviste tiempo para esperar?"},"es":"¿Tuviste tiempo para esperar?"},
     {"id":"i10-order-03","kind":"order","trial":true,"prompt":{"en":"We stopped by the store.","es":"Pasamos por la tienda."},"es":"Pasamos por la tienda."},
     {"id":"i10-order-04","kind":"order","trial":true,"prompt":{"en":"We did not know anything.","es":"No supimos nada."},"es":"No supimos nada."},
-    {"id":"i10-order-05","kind":"order","trial":true,"prompt":{"en":"My mother liked the party.","es":"A mi madre le gustó la fiesta."},"es":"A mi madre le gustó la fiesta."}
+    {"id":"i10-order-05","kind":"order","trial":true,"prompt":{"en":"My mother liked the party.","es":"A mi madre le gustó la fiesta."},"es":"A mi madre le gustó la fiesta.","accept":["La fiesta le gustó a mi madre.","Le gustó la fiesta a mi madre."]}
   ]
 }

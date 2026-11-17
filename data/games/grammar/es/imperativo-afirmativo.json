@@ -1344,7 +1344,8 @@
         "en": "Children, be quiet.",
         "es": "Niños, hagan silencio."
       },
-      "es": "Niños, hagan silencio."
+      "es": "Niños, hagan silencio.",
+      "accept": ["Hagan silencio, niños."]
     },
     {
       "id": "ia-order-03",
@@ -1354,7 +1355,8 @@
         "en": "Sir, eat slowly.",
         "es": "Señor, coma despacio."
       },
-      "es": "Señor, coma despacio."
+      "es": "Señor, coma despacio.",
+      "accept": ["Coma despacio, señor."]
     },
     {
       "id": "ia-order-04",
@@ -1374,7 +1376,8 @@
         "en": "Doctor, be careful with the door.",
         "es": "Doctora, tenga cuidado con la puerta."
       },
-      "es": "Doctora, tenga cuidado con la puerta."
+      "es": "Doctora, tenga cuidado con la puerta.",
+      "accept": ["Tenga cuidado con la puerta, doctora."]
     }
   ]
 }
