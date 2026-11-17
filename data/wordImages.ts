@@ -56,6 +56,7 @@ export const IMAGE_SOURCES: Record<string, ImageSourcePropType> = {
   'o2774.jpg': require('../assets/word-images/o2774.jpg'),
   'o2791.jpg': require('../assets/word-images/o2791.jpg'),
   'o2828.jpg': require('../assets/word-images/o2828.jpg'),
+  'o3903.jpg': require('../assets/word-images/o3903.jpg'),
 };
 
 export const IMAGE_META = imagesJson as Record<string, WordImageMeta>;
