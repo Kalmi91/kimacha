@@ -4,7 +4,9 @@ import Constants from 'expo-constants';
 // table; written by DB.exportAll(), consumed by DB.importAll().
 // v2 adds the main learning progress (pcic_cards, the mistake_* tables) and the
 // usage minutes; a v1 file is still restored (see V1_BACKUP_TABLES).
-export const BACKUP_SCHEMA_VERSION = 2;
+// v3 gives pcic_cards / mistake_cards a `pair` column (E123, separate progress per language pair); a v1 / v2 file
+// is still restored, its cards go to the pair DbCore.importAll picks (lib/db/cardPairs.ts). An older build refuses a v3 file.
+export const BACKUP_SCHEMA_VERSION = 3;
 
 // Every persisted table, in import order. importAll clears + refills each
 // table the payload carries.
@@ -133,6 +135,8 @@ export const TABLE_COLUMNS: Record<BackupTable, Record<string, ColumnSpec>> = {
     board_identity: { type: 'string', nullable: true },
   },
   pcic_cards: {
+    // absent in a v1 / v2 file (the shared set of the old builds); never null where present
+    pair: { type: 'string', nullable: false },
     item_id: { type: 'string', nullable: false },
     state: { type: 'string', nullable: false },
     step: { type: 'number', nullable: false },
@@ -154,6 +158,7 @@ export const TABLE_COLUMNS: Record<BackupTable, Record<string, ColumnSpec>> = {
     imported_at: { type: 'string', nullable: false },
   },
   mistake_cards: {
+    pair: { type: 'string', nullable: false },
     item_id: { type: 'string', nullable: false },
     state: { type: 'string', nullable: false },
     step: { type: 'number', nullable: false },
@@ -180,7 +185,7 @@ export function validateBackupPayload(raw: unknown): BackupPayload {
     throw new Error('Not a Kimacha backup file');
   }
   const p = raw as any;
-  if (p.schemaVersion !== 1 && p.schemaVersion !== BACKUP_SCHEMA_VERSION) {
+  if (p.schemaVersion !== 1 && p.schemaVersion !== 2 && p.schemaVersion !== BACKUP_SCHEMA_VERSION) {
     throw new Error(`Unsupported backup schema version: ${p.schemaVersion}`);
   }
   if (!p.tables || typeof p.tables !== 'object' || Array.isArray(p.tables)) {

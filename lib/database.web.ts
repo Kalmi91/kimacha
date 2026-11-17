@@ -8,6 +8,7 @@ import { DbCore, decodeGameData, encodeGameData } from './db/core';
 import type { DbStore, MetaColumn, SettingColumn, StreakRow } from './db/store';
 import type { DB } from './dbTypes';
 import { FORCED_PAIR, needsPairCorrection } from './languages';
+import { activePairOf, cardKey, learnDaysFromWebProgress, pairLegacyEntries, pairOfKey } from './db/cardPairs';
 
 // pcic_cards / mistake_cards row <-> Sm2Card, the same shapes the SQLite side stores.
 const sm2ToRow = (c: Sm2Card) => ({
@@ -46,7 +47,9 @@ const rowToPcic = (r: any): Sm2Card => ({
   ...(r.wrong_streak ? { wrongStreak: r.wrong_streak } : null),
 });
 
-const WEB_STATE_VERSION = 1;
+// 2 (E123): pcicCards / mistakeCards keys are `${pair}|${itemId}`. A v1 state (the old shared set, keys are bare item ids) is
+// still read; an older build refuses a v2 state ('Not a Kimacha web state'), so it cannot take it for its own shape.
+const WEB_STATE_VERSION = 2;
 
 const isObject = (x: unknown): x is Record<string, any> => !!x && typeof x === 'object' && !Array.isArray(x);
 
@@ -93,7 +96,7 @@ export class MemoryStore implements DbStore {
   // `${pair}:${gameId}` -> itemId -> progress
   private gameProgress: Map<string, Map<string, { state: string; data: unknown }>> = new Map();
 
-  // Session-scoped Maps, not tied to a pair (the PCIC tab only works with es→en items).
+  // card key (`${pair}|${itemId}`, lib/db/cardPairs.ts) -> card: every language pair keeps its own progress.
   private pcicCards: Map<string, Sm2Card> = new Map();
   private mistakeBatches: Map<string, { json: string; importedAt: string }> = new Map();
   private mistakeCards: Map<string, Sm2Card> = new Map();
@@ -156,6 +159,12 @@ export class MemoryStore implements DbStore {
     return this.usageMinutes.get(date) ?? 0;
   }
 
+  // the cards of one pair, in insertion order
+  private cardsOf(map: Map<string, Sm2Card>, pair: string): Sm2Card[] {
+    const prefix = `${pair}|`;
+    return [...map].filter(([key]) => key.startsWith(prefix)).map(([, c]) => ({ ...c }));
+  }
+
   async countPcicIntroducedOn(date: string) {
     return [...this.pcicCards.values()].filter(c => c.introducedAt === date).length;
   }
@@ -187,25 +196,25 @@ export class MemoryStore implements DbStore {
     this.gameProgress.delete(this.gameKey(pair, gameId));
   }
 
-  async readPcicCards() {
-    return [...this.pcicCards.values()].map(c => ({ ...c }));
+  async readPcicCards(pair: string) {
+    return this.cardsOf(this.pcicCards, pair);
   }
 
-  async readPcicCard(itemId: string) {
-    const c = this.pcicCards.get(itemId);
+  async readPcicCard(pair: string, itemId: string) {
+    const c = this.pcicCards.get(cardKey(pair, itemId));
     return c ? { ...c, halfSteps: c.halfSteps ?? 0, wrongStreak: c.wrongStreak ?? 0 } : null;
   }
 
-  async writePcicCard(card: Sm2Card) {
-    this.pcicCards.set(card.itemId, { ...card });
+  async writePcicCard(pair: string, card: Sm2Card) {
+    this.pcicCards.set(cardKey(pair, card.itemId), { ...card });
   }
 
-  async deletePcicCards(itemIds?: string[]) {
+  async deletePcicCards(pair: string, itemIds?: string[]) {
     if (!itemIds) {
-      this.pcicCards.clear();
+      for (const key of [...this.pcicCards.keys()]) if (pairOfKey(key) === pair) this.pcicCards.delete(key);
       return;
     }
-    for (const id of itemIds) this.pcicCards.delete(id);
+    for (const id of itemIds) this.pcicCards.delete(cardKey(pair, id));
   }
 
   async writeMistakeBatch(batchId: string, json: string, importedAt: string) {
@@ -218,12 +227,12 @@ export class MemoryStore implements DbStore {
       .sort((a, b) => (a.importedAt < b.importedAt ? 1 : a.importedAt > b.importedAt ? -1 : 0));
   }
 
-  async readMistakeCards() {
-    return [...this.mistakeCards.values()].map((c) => ({ ...c }));
+  async readMistakeCards(pair: string) {
+    return this.cardsOf(this.mistakeCards, pair);
   }
 
-  async writeMistakeCard(card: Sm2Card) {
-    this.mistakeCards.set(card.itemId, { ...card });
+  async writeMistakeCard(pair: string, card: Sm2Card) {
+    this.mistakeCards.set(cardKey(pair, card.itemId), { ...card });
   }
 
   // Memory state is serialized into the same table-row shapes as the SQLite implementation, so a
@@ -261,9 +270,9 @@ export class MemoryStore implements DbStore {
         beta_flags: this.meta.beta_flags,
         practice_round: this.meta.practice_round,
       }],
-      pcic_cards: [...this.pcicCards.values()].map(pcicToRow),
+      pcic_cards: [...this.pcicCards].map(([key, c]) => ({ pair: pairOfKey(key), ...pcicToRow(c) })),
       mistake_batches: [...this.mistakeBatches].map(([batch_id, v]) => ({ batch_id, json: v.json, imported_at: v.importedAt })),
-      mistake_cards: [...this.mistakeCards.values()].map(sm2ToRow),
+      mistake_cards: [...this.mistakeCards].map(([key, c]) => ({ pair: pairOfKey(key), ...sm2ToRow(c) })),
       usage_minutes: [...this.usageMinutes].map(([date, minutes]) => ({ date, minutes })),
     };
   }
@@ -313,9 +322,9 @@ export class MemoryStore implements DbStore {
     this.meta.beta_flags = Object.keys(betaFlags).length ? JSON.stringify(betaFlags) : null;
     this.meta.practice_round = typeof um?.practice_round === 'string' ? um.practice_round : null;
     // A v1 file has no pcic_cards / mistake_* / usage_minutes: keep the local ones.
-    if (t.pcic_cards) this.pcicCards = new Map(t.pcic_cards.map((r: any) => [r.item_id, rowToPcic(r)]));
+    if (t.pcic_cards) this.pcicCards = new Map(t.pcic_cards.map((r: any) => [cardKey(r.pair, r.item_id), rowToPcic(r)]));
     if (t.mistake_batches) this.mistakeBatches = new Map(t.mistake_batches.map((r: any) => [r.batch_id, { json: r.json, importedAt: r.imported_at }]));
-    if (t.mistake_cards) this.mistakeCards = new Map(t.mistake_cards.map((r: any) => [r.item_id, rowToSm2(r)]));
+    if (t.mistake_cards) this.mistakeCards = new Map(t.mistake_cards.map((r: any) => [cardKey(r.pair, r.item_id), rowToSm2(r)]));
     if (t.usage_minutes) this.usageMinutes = new Map(t.usage_minutes.map((r: any) => [r.date, r.minutes]));
   }
 
@@ -346,7 +355,7 @@ export class MemoryStore implements DbStore {
   // (all the parts are built before the first assignment). A field missing from the string takes its fresh default.
   restoreState(raw: string): void {
     const s = JSON.parse(raw);
-    if (!isObject(s) || s.v !== WEB_STATE_VERSION) throw new Error('Not a Kimacha web state');
+    if (!isObject(s) || (s.v !== WEB_STATE_VERSION && s.v !== 1)) throw new Error('Not a Kimacha web state');
     if (!isObject(s.streak) || !isObject(s.meta) || !isObject(s.userMeta) || (s.onboarding != null && !isObject(s.onboarding))) {
       throw new Error('Not a Kimacha web state');
     }
@@ -356,9 +365,13 @@ export class MemoryStore implements DbStore {
     const usageMinutes = new Map(entriesOf(s.usageMinutes));
     const dailyXp = new Map(entriesOf(s.dailyXp));
     const gameProgress = new Map(entriesOf(s.gameProgress).map(([key, items]): [string, Map<string, { state: string; data: unknown }>] => [key, new Map(entriesOf(items))]));
-    const pcicCards = new Map<string, Sm2Card>(entriesOf(s.pcicCards));
+    // cards of a v1 state (or keys of one merged in by an older build) carry no pair: the rule of lib/db/cardPairs.ts
+    const active = activePairOf(s.onboarding);
+    const known = [...new Set([...settings.keys(), ...userLevels.keys()])];
+    const days = learnDaysFromWebProgress(s.gameProgress);
+    const pcicCards = new Map<string, Sm2Card>(pairLegacyEntries(entriesOf(s.pcicCards), active, known, undefined, days));
     const mistakeBatches = new Map<string, { json: string; importedAt: string }>(entriesOf(s.mistakeBatches));
-    const mistakeCards = new Map<string, Sm2Card>(entriesOf(s.mistakeCards));
+    const mistakeCards = new Map<string, Sm2Card>(pairLegacyEntries(entriesOf(s.mistakeCards), active, known, 'es', days));
     this.streak = { ...fresh.streak, ...s.streak };
     this.onboarding = s.onboarding ?? null;
     this.userLevels = userLevels;

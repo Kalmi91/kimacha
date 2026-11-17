@@ -173,42 +173,42 @@ class SqliteStore implements DbStore {
     await db.runAsync('DELETE FROM game_progress WHERE pair = ? AND game_id = ?', [pair, gameId]);
   }
 
-  async readPcicCards() {
+  async readPcicCards(pair: string) {
     const db = await this.connect();
-    const rows = await db.getAllAsync<any>('SELECT * FROM pcic_cards');
+    const rows = await db.getAllAsync<any>('SELECT * FROM pcic_cards WHERE pair = ?', [pair]);
     return rows.map(rowToPcicCard);
   }
 
-  async readPcicCard(itemId: string) {
+  async readPcicCard(pair: string, itemId: string) {
     const db = await this.connect();
-    const row = await db.getFirstAsync<any>('SELECT * FROM pcic_cards WHERE item_id = ?', [itemId]);
+    const row = await db.getFirstAsync<any>('SELECT * FROM pcic_cards WHERE pair = ? AND item_id = ?', [pair, itemId]);
     return row ? rowToPcicCard(row) : null;
   }
 
-  async writePcicCard(card: Sm2Card) {
+  async writePcicCard(pair: string, card: Sm2Card) {
     const db = await this.connect();
     await db.runAsync(
-      `INSERT INTO pcic_cards (item_id, state, step, ease, interval, reps, lapses, due, last_review, introduced_at, known, half_steps, wrong_streak)
-       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-       ON CONFLICT(item_id) DO UPDATE SET
+      `INSERT INTO pcic_cards (pair, item_id, state, step, ease, interval, reps, lapses, due, last_review, introduced_at, known, half_steps, wrong_streak)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+       ON CONFLICT(pair, item_id) DO UPDATE SET
          state = excluded.state, step = excluded.step, ease = excluded.ease,
          interval = excluded.interval, reps = excluded.reps, lapses = excluded.lapses,
          due = excluded.due, last_review = excluded.last_review, introduced_at = excluded.introduced_at,
          known = excluded.known, half_steps = excluded.half_steps, wrong_streak = excluded.wrong_streak`,
-      [card.itemId, card.state, card.step, card.ease, card.interval, card.reps, card.lapses, card.due, card.lastReview, card.introducedAt, card.known ? 1 : 0, card.halfSteps ?? 0, card.wrongStreak ?? 0]
+      [pair, card.itemId, card.state, card.step, card.ease, card.interval, card.reps, card.lapses, card.due, card.lastReview, card.introducedAt, card.known ? 1 : 0, card.halfSteps ?? 0, card.wrongStreak ?? 0]
     );
   }
 
-  async deletePcicCards(itemIds?: string[]) {
+  async deletePcicCards(pair: string, itemIds?: string[]) {
     const db = await this.connect();
     if (!itemIds) {
-      await db.runAsync('DELETE FROM pcic_cards');
+      await db.runAsync('DELETE FROM pcic_cards WHERE pair = ?', [pair]);
       return;
     }
     for (let i = 0; i < itemIds.length; i += 500) {
       const chunk = itemIds.slice(i, i + 500);
       const placeholders = chunk.map(() => '?').join(',');
-      await db.runAsync(`DELETE FROM pcic_cards WHERE item_id IN (${placeholders})`, chunk);
+      await db.runAsync(`DELETE FROM pcic_cards WHERE pair = ? AND item_id IN (${placeholders})`, [pair, ...chunk]);
     }
   }
 
@@ -227,9 +227,9 @@ class SqliteStore implements DbStore {
     return rows.map((r: any) => ({ batchId: r.batch_id, json: r.json, importedAt: r.imported_at }));
   }
 
-  async readMistakeCards() {
+  async readMistakeCards(pair: string) {
     const db = await this.connect();
-    const rows = await db.getAllAsync<any>('SELECT * FROM mistake_cards');
+    const rows = await db.getAllAsync<any>('SELECT * FROM mistake_cards WHERE pair = ?', [pair]);
     return rows.map((r: any) => ({
       itemId: r.item_id,
       state: r.state,
@@ -245,17 +245,17 @@ class SqliteStore implements DbStore {
     }));
   }
 
-  async writeMistakeCard(card: Sm2Card) {
+  async writeMistakeCard(pair: string, card: Sm2Card) {
     const db = await this.connect();
     await db.runAsync(
-      `INSERT INTO mistake_cards (item_id, state, step, ease, interval, reps, lapses, due, last_review, introduced_at, known)
-       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-       ON CONFLICT(item_id) DO UPDATE SET
+      `INSERT INTO mistake_cards (pair, item_id, state, step, ease, interval, reps, lapses, due, last_review, introduced_at, known)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+       ON CONFLICT(pair, item_id) DO UPDATE SET
          state = excluded.state, step = excluded.step, ease = excluded.ease,
          interval = excluded.interval, reps = excluded.reps, lapses = excluded.lapses,
          due = excluded.due, last_review = excluded.last_review, introduced_at = excluded.introduced_at,
          known = excluded.known`,
-      [card.itemId, card.state, card.step, card.ease, card.interval, card.reps, card.lapses, card.due, card.lastReview, card.introducedAt, card.known ? 1 : 0]
+      [pair, card.itemId, card.state, card.step, card.ease, card.interval, card.reps, card.lapses, card.due, card.lastReview, card.introducedAt, card.known ? 1 : 0]
     );
   }
 

@@ -70,15 +70,16 @@ export interface DbStore {
   writeGameProgress(pair: string, gameId: string, itemId: string, state: string, data: unknown): Promise<void>;
   deleteGameProgress(pair: string, gameId: string): Promise<void>;
 
-  readPcicCards(): Promise<Sm2Card[]>;
-  readPcicCard(itemId: string): Promise<Sm2Card | null>;
-  writePcicCard(card: Sm2Card): Promise<void>;
-  // No ids = the whole table.
-  deletePcicCards(itemIds?: string[]): Promise<void>;
+  // The cards belong to a language pair (E123): every card call names it.
+  readPcicCards(pair: string): Promise<Sm2Card[]>;
+  readPcicCard(pair: string, itemId: string): Promise<Sm2Card | null>;
+  writePcicCard(pair: string, card: Sm2Card): Promise<void>;
+  // No ids = every card of the pair.
+  deletePcicCards(pair: string, itemIds?: string[]): Promise<void>;
   writeMistakeBatch(batchId: string, json: string, importedAt: string): Promise<void>;
   readMistakeBatches(): Promise<MistakeBatchRow[]>;
-  readMistakeCards(): Promise<Sm2Card[]>;
-  writeMistakeCard(card: Sm2Card): Promise<void>;
+  readMistakeCards(pair: string): Promise<Sm2Card[]>;
+  writeMistakeCard(pair: string, card: Sm2Card): Promise<void>;
 
   // Every backup table as plain rows / replaces the stored state from them (lib/backup.ts).
   exportTables(): Promise<BackupPayload['tables']>;

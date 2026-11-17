@@ -123,7 +123,7 @@ describe('web state round trip', () => {
       'not json',
       'null',
       JSON.stringify({ schemaVersion: 2, tables: {} }),
-      JSON.stringify({ ...good, v: 2 }),
+      JSON.stringify({ ...good, v: 3 }),
       JSON.stringify({ ...good, streak: null }),
       JSON.stringify({ ...good, settings: 'x' }),
       JSON.stringify({ ...good, pcicCards: [['a', 'b'], 5] }),

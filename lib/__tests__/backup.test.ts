@@ -51,7 +51,14 @@ describe('backup export/import round-trip (memory db)', () => {
     // Play cut: restore forces the active pair to the single
     // supported one (en-es), so the onboarding row differs from the backup's
     // own pt-en; every other table round-trips byte for byte.
-    expect(roundTrip.tables).toEqual({ ...payload.tables, onboarding: [{ id: 1, source: 'en', target: 'es' }] });
+    // The cards written under the drifted pair move with it (E123): their pair column reads en-es afterwards.
+    const toEnEs = (rows: any[]) => rows.map((r) => ({ ...r, pair: 'en-es' }));
+    expect(roundTrip.tables).toEqual({
+      ...payload.tables,
+      onboarding: [{ id: 1, source: 'en', target: 'es' }],
+      pcic_cards: toEnEs(payload.tables.pcic_cards),
+      mistake_cards: toEnEs(payload.tables.mistake_cards),
+    });
     expect(await db.getOnboarding()).toEqual({ source: 'en', target: 'es' });
     expect(await db.getGrammarPalette()).toBe('lime');
     expect((await db.getPcicCards()).find(c => c.itemId === 'b1-0001')).toEqual(pcic);

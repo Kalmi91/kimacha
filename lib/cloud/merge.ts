@@ -2,8 +2,11 @@
 // has not seen. `local` is the state of this device, `remote` the one the server holds. Only the fields below have a rule;
 // every other field of the store, and the resume keys, stay as `local` has them (what an upload did before the merge existed).
 //   usageMinutes, dailyXp  per day, the larger number
-//   pcicCards              per card, the one with the later lastReview (a tie keeps local); a card only one side has is kept
+//   pcicCards              per card (key `${pair}|${itemId}`), the one with the later lastReview (a tie keeps local); a card only one side has is kept.
+//                          A side from an older build has bare item-id keys: they get a pair first (lib/db/cardPairs.ts), by the local state
 //   streak                 the whole row of the side with the larger longest_count (a tie keeps local)
+
+import { activePairOf, learnDaysFromWebProgress, pairLegacyEntries } from '../db/cardPairs';
 
 type Entries = [string, unknown][];
 
@@ -43,6 +46,16 @@ function parseCloud(payload: string): { outer: Record<string, unknown>; store: R
   }
 }
 
+// The card keys of a side that predates the pair keys, given a pair by the local state's rule.
+function pairedCards(cards: unknown, local: Record<string, unknown>): unknown {
+  const entries = entriesOf(cards);
+  if (!entries) return cards;
+  const keys = (x: unknown) => (entriesOf(x) ?? []).map(([k]) => k);
+  const known = [...new Set([...keys(local.settings), ...keys(local.userLevels)])];
+  const ob = isRecord(local.onboarding) ? local.onboarding : null;
+  return pairLegacyEntries(entries, activePairOf(ob), known, undefined, learnDaysFromWebProgress(local.gameProgress));
+}
+
 /** The merged payload string; `local` itself when either side is not a readable cloud payload. */
 export function mergeCloudPayloads(local: string, remote: string): string {
   const l = parseCloud(local);
@@ -53,7 +66,7 @@ export function mergeCloudPayloads(local: string, remote: string): string {
     streak: longerStreak(l.store.streak, r.store.streak),
     usageMinutes: mergeEntries(l.store.usageMinutes, r.store.usageMinutes, larger),
     dailyXp: mergeEntries(l.store.dailyXp, r.store.dailyXp, larger),
-    pcicCards: mergeEntries(l.store.pcicCards, r.store.pcicCards, laterReview),
+    pcicCards: mergeEntries(pairedCards(l.store.pcicCards, l.store), pairedCards(r.store.pcicCards, l.store), laterReview),
   };
   return JSON.stringify({ ...l.outer, store: JSON.stringify(store) });
 }

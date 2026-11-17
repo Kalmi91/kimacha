@@ -1,4 +1,5 @@
 import * as SQLite from 'expo-sqlite';
+import { CARD_ID_PREFIXES, LEARN_RESUME_GAME_ID, LEARN_RESUME_ITEM_ID, learnDaysFromRows, legacyCardPair, legacyPairByPrefix } from './cardPairs';
 
 // the schema creation + every migration
 // (formerly SQLiteDB.open(), lib/database.ts),
@@ -298,6 +299,62 @@ async function migrateToV6(db: SQLite.SQLiteDatabase) {
   await addColumnIfMissing(db, 'learn_settings', 'new_word_gate', 'INTEGER');
 }
 
+// v7 (E123): the SM-2 cards belong to a language pair (primary key (pair, item_id)). The old rows stay with the pair
+// that is active now when its target is the card's own, else with the known pair of the card's target where the Learn tab ran last
+// (lib/db/cardPairs.ts). Every row is copied, none is dropped; the other pairs of the same target start empty.
+async function rebuildCardsPerPair(db: SQLite.SQLiteDatabase, table: 'pcic_cards' | 'mistake_cards', pairOf: (prefix: string) => string, fallback: string) {
+  const extra = table === 'pcic_cards' ? ', half_steps, wrong_streak' : '';
+  const extraDdl = table === 'pcic_cards' ? ', half_steps INTEGER DEFAULT 0, wrong_streak INTEGER DEFAULT 0' : '';
+  const cols = `item_id, state, step, ease, interval, reps, lapses, due, last_review, introduced_at, known${extra}`;
+  // pcic_cards.known came with a bare ALTER: rows from before it hold NULL
+  const selectCols = cols.replace(' known', ' COALESCE(known, 0)');
+  await db.execAsync(`
+    DROP TABLE IF EXISTS ${table}_new;
+    CREATE TABLE ${table}_new (
+      pair TEXT NOT NULL,
+      item_id TEXT NOT NULL,
+      state TEXT NOT NULL DEFAULT 'new',
+      step INTEGER NOT NULL DEFAULT 0,
+      ease REAL NOT NULL DEFAULT 2.5,
+      interval INTEGER NOT NULL DEFAULT 0,
+      reps INTEGER NOT NULL DEFAULT 0,
+      lapses INTEGER NOT NULL DEFAULT 0,
+      due TEXT NOT NULL DEFAULT '',
+      last_review TEXT,
+      introduced_at TEXT,
+      known INTEGER NOT NULL DEFAULT 0${extraDdl},
+      PRIMARY KEY (pair, item_id)
+    );
+  `);
+  for (const prefix of CARD_ID_PREFIXES) {
+    await db.runAsync(`INSERT INTO ${table}_new (pair, ${cols}) SELECT ?, ${selectCols} FROM ${table} WHERE substr(item_id, 1, 1) = ?`, [pairOf(prefix), prefix]);
+  }
+  const placeholders = CARD_ID_PREFIXES.map(() => '?').join(', ');
+  await db.runAsync(`INSERT INTO ${table}_new (pair, ${cols}) SELECT ?, ${selectCols} FROM ${table} WHERE substr(item_id, 1, 1) NOT IN (${placeholders})`, [fallback, ...CARD_ID_PREFIXES]);
+  await db.execAsync(`DROP TABLE ${table}; ALTER TABLE ${table}_new RENAME TO ${table};`);
+}
+
+async function migrateToV7(db: SQLite.SQLiteDatabase) {
+  const active = await readActivePair(db);
+  // the pairs the file knows, oldest first: a pair has a learn_settings row once a setting was saved and a user_level row from its first use
+  const rows = [
+    ...(await db.getAllAsync<{ pair: string }>('SELECT pair FROM learn_settings ORDER BY rowid')),
+    ...(await db.getAllAsync<{ pair: string }>('SELECT pair FROM user_level ORDER BY rowid')),
+  ];
+  const known = [...new Set(rows.map((r) => r.pair))];
+  // the last day the Learn tab ran in each pair (the resume row 4.1.41 already wrote): the signal of where the learner studied
+  const resumeRows = await db.getAllAsync<{ pair: string; data_json: string | null }>(
+    'SELECT pair, data_json FROM game_progress WHERE game_id = ? AND item_id = ?',
+    [LEARN_RESUME_GAME_ID, LEARN_RESUME_ITEM_ID]
+  );
+  const days = learnDaysFromRows(resumeRows.map((r) => ({ ...r, game_id: LEARN_RESUME_GAME_ID, item_id: LEARN_RESUME_ITEM_ID })));
+  const byPrefix = legacyPairByPrefix(active, known, days);
+  await rebuildCardsPerPair(db, 'pcic_cards', (prefix) => byPrefix[prefix], active);
+  // the mistakes deck is always Spanish (the answer is typed in Spanish)
+  const mistakePair = legacyCardPair('es', active, known, days);
+  await rebuildCardsPerPair(db, 'mistake_cards', () => mistakePair, mistakePair);
+}
+
 export interface Migration {
   version: number;
   up: (db: SQLite.SQLiteDatabase) => Promise<void>;
@@ -310,6 +367,7 @@ export const MIGRATIONS: readonly Migration[] = [
   { version: 4, up: migrateToV4 },
   { version: 5, up: migrateToV5 },
   { version: 6, up: migrateToV6 },
+  { version: 7, up: migrateToV7 },
 ];
 
 export const LATEST_SCHEMA_VERSION = MIGRATIONS[MIGRATIONS.length - 1].version;

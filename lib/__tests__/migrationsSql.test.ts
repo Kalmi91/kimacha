@@ -38,7 +38,8 @@ const ADDED_COLUMNS: Record<string, string[]> = {
     'last_open_date', 'status_bar_tint', 'grammar_palette', 'skin', 'skin_mix', 'theme_mode', 'beta_flags',
     'pcic_level', 'practice_round', 'board_identity',
   ],
-  pcic_cards: ['known', 'half_steps', 'wrong_streak'],
+  pcic_cards: ['known', 'half_steps', 'wrong_streak', 'pair'],
+  mistake_cards: ['pair'],
   daily_xp: ['xp_tenths'],
 };
 
@@ -197,9 +198,9 @@ describe('migration of an old, unversioned file (real SQLite)', () => {
     // the converted / defaulted values
     expect((await rowsOf(db, 'daily_xp')).map((r) => r.xp_tenths)).toEqual([70, 0, 630]);
     expect((await rowsOf(db, 'pcic_cards')).map((r) => [r.known, r.half_steps, r.wrong_streak])).toEqual([
-      [null, 0, 0],
-      [null, 0, 0],
-      [null, 0, 0],
+      [0, 0, 0],
+      [0, 0, 0],
+      [0, 0, 0],
     ]);
     expect(await rowsOf(db, 'user_level')).toEqual([
       { pair: 'en-es', level: 'A2', correct_streak: 3, mistakes_in_window: 1, fail_streak: 0 },
@@ -233,7 +234,7 @@ describe('migration of an old, unversioned file (real SQLite)', () => {
     const db = await oldDb("INSERT INTO pcic_cards (item_id) VALUES ('a1-9f3c'), ('w12');");
     await runMigrations(db as any);
     expect((await rowsOf(db, 'pcic_cards')).map((r) => r.item_id)).toEqual(['o1', 'o2', 'e3']);
-    await db.execAsync("INSERT INTO pcic_cards (item_id) VALUES ('b2-77aa')");
+    await db.execAsync("INSERT INTO pcic_cards (pair, item_id) VALUES ('en-es', 'b2-77aa')");
     await runMigrations(db as any);
     expect((await rowsOf(db, 'pcic_cards')).map((r) => r.item_id)).toEqual(['o1', 'o2', 'e3', 'b2-77aa']);
   });
@@ -420,7 +421,7 @@ describe('the native SQLiteDB on the migrated file (backup round trip, XP, PCIC 
     const columns = sql.match(/INSERT INTO pcic_cards \(([^)]*)\)/)![1].split(',').length;
     const placeholders = (sql.match(/VALUES \(([^)]*)\)/)![1].match(/\?/g) ?? []).length;
     const values = (call[1] as unknown[]).length;
-    expect([columns, placeholders, values]).toEqual([13, 13, 13]);
+    expect([columns, placeholders, values]).toEqual([14, 14, 14]);
     expect(await getDb().getPcicCard('o9')).toMatchObject(card);
     // updating the same card goes through the ON CONFLICT branch with the same values
     await getDb().upsertPcicCard({ ...card, reps: 5, halfSteps: 0, wrongStreak: 0 });
