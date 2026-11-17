@@ -9,12 +9,14 @@ import { answerInputProps } from '@/lib/inputProps';
 import { gradePcicAnswer, gradeSentenceAnswer, suggestedGrade } from '@/lib/pcicMatch';
 import { styles } from './pcicStyles';
 
+export { useRetypeRowScroll } from './useRetypeRowScroll';
+
 /**
  * FB659: a just-for-curiosity retype of the revealed word. Fully local: it only reads the answer and shows a
  * verdict, so it never touches the card, XP, counters, progress, mistakes or logs. The parent keys it per card.
  */
-export default function RetypePractice({ colors, answerText, target, strictAccents, sentence, onOpen, onFocusField, onBlurField }: {
-  colors: (typeof Colors)['light']; answerText: string; target: string; strictAccents: boolean; sentence: boolean;
+export default function RetypePractice({ colors, answerText, target, strictAccents, sentence, rowScroll, onOpen, onFocusField, onBlurField }: {
+  colors: (typeof Colors)['light']; answerText: string; target: string; strictAccents: boolean; sentence: boolean; rowScroll?: { rowRef: React.RefObject<View | null>; onRowLayout: () => void };
   // The card scrolls the block up before the keyboard opens, so the window does not pan under the status bar.
   onOpen?: () => void; onFocusField?: (block: View) => void; onBlurField?: () => void;
 }) {
@@ -30,8 +32,8 @@ export default function RetypePractice({ colors, answerText, target, strictAccen
   };
   if (!open) {
     return (
-      <ActionButton testID="learn-retype" label={s.button} accessibilityLabel={s.button} onPress={() => { setOpen(true); onOpen?.(); }} fill="paper"
-        brutalStyle={styles.retypeBtn} classicStyle={[styles.retypeBtn, styles.checkBtn, { backgroundColor: colors.tabIconDefault }]} classicTextStyle={styles.checkBtnText} />
+      <View ref={rowScroll?.rowRef} collapsable={false} onLayout={rowScroll?.onRowLayout}><ActionButton testID="learn-retype" label={s.button} accessibilityLabel={s.button} onPress={() => { setOpen(true); onOpen?.(); }} fill="paper"
+        brutalStyle={styles.retypeBtn} classicStyle={[styles.retypeBtn, styles.checkBtn, { backgroundColor: colors.tabIconDefault }]} classicTextStyle={styles.checkBtnText} /></View>
     );
   }
   return (
