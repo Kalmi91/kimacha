@@ -264,6 +264,7 @@ export function BrutalButton({
   testID,
   accessibilityLabel,
   style,
+  boxStyle,
   icon,
 }: {
   label: string;
@@ -273,6 +274,7 @@ export function BrutalButton({
   testID?: string;
   accessibilityLabel?: string;
   style?: StyleProp<ViewStyle>;
+  boxStyle?: StyleProp<ViewStyle>;
   // the icon placed before the label on the senior (stacked) theme; not shown on other themes.
   icon?: string;
 }) {
@@ -302,7 +304,7 @@ export function BrutalButton({
       disabled={disabled}
       onPress={onPress}
       style={[disabled ? { opacity: 0.4 } : null, style]}
-      boxStyle={styles.button}
+      boxStyle={[styles.button, boxStyle]}
     >
       <Text
         style={[

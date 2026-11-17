@@ -4,6 +4,7 @@ import { Text } from '@/components/KText';
 import { ActionButton, themedInputStyle } from '@/components/grammar/Themed';
 import Colors from '@/constants/Colors';
 import { useGrammarColors } from '@/lib/grammarColors';
+import { useSkin } from '@/lib/useSkin';
 import { t } from '@/lib/i18n';
 import { answerInputProps } from '@/lib/inputProps';
 import { gradePcicAnswer, gradeSentenceAnswer, suggestedGrade } from '@/lib/pcicMatch';
@@ -21,6 +22,7 @@ export default function RetypePractice({ colors, answerText, target, strictAccen
   const blockRef = useRef<View>(null);
   const s = t().pcic.retype;
   const g = useGrammarColors();
+  const { id: skin } = useSkin();
   const [open, setOpen] = useState(false);
   const [typed, setTyped] = useState('');
   const [right, setRight] = useState<boolean | null>(null);
@@ -50,6 +52,7 @@ export default function RetypePractice({ colors, answerText, target, strictAccen
         {...answerInputProps}
       />
       <ActionButton testID="learn-retype-check" label={s.check} accessibilityLabel={s.check} onPress={check}
+        brutalBoxStyle={skin === 'popart' ? { flex: 1 } : undefined}
         brutalStyle={styles.retypeCheck} classicStyle={[styles.checkBtn, styles.retypeCheck, { backgroundColor: colors.tint }]} classicTextStyle={styles.checkBtnText} />
       </View>
       {right !== null && (
