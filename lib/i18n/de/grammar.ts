@@ -14,6 +14,7 @@ const de: typeof en = {
     started: 'begonnen',
     notStarted: 'neu',
     doneTag: 'fertig',
+    knownFromTestTag: 'Aus dem Test bekannt',
     continueTag: 'weiter →',
     weeklyGoalTitle: 'Wochenziel',
     weeklyGoalValue: (done: string, goal: string) => `${done} h / ${goal} h`,
