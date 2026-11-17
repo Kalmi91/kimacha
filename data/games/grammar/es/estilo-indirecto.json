@@ -1191,6 +1191,497 @@
         }
       ],
       "correctIndex": 0
+    },
+    {
+      "id": "ei-tr-01",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "en": "Ana says: \"I live in Puebla.\"",
+        "es": "Ana dice: «Vivo en Puebla»."
+      },
+      "answer": "Ana dijo que vivía en Puebla.",
+      "accept": [
+        "Ana dijo que vive en Puebla.",
+        "Ana decía que vivía en Puebla.",
+        "Ana decía que vive en Puebla."
+      ],
+      "wordIds": [
+        "79",
+        "48"
+      ],
+      "why": {
+        "en": "Reported speech after a past verb of saying: the present moves back to the imperfect (vivo → vivía). The present can stay if it is still true.",
+        "es": "Estilo indirecto tras un verbo de decir en pasado: el presente retrocede al imperfecto (vivo → vivía). El presente puede quedarse si sigue siendo verdad."
+      }
+    },
+    {
+      "id": "ei-tr-02",
+      "kind": "transform",
+      "tense": {
+        "from": "indefinido",
+        "to": "pluscuamperfecto"
+      },
+      "prompt": {
+        "en": "My brother told me: \"I finished the work.\"",
+        "es": "Mi hermano me dijo: «Terminé el trabajo»."
+      },
+      "answer": "Mi hermano me dijo que había terminado el trabajo.",
+      "accept": [
+        "Mi hermano me dijo que terminó el trabajo."
+      ],
+      "wordIds": [
+        "42",
+        "219",
+        "50"
+      ],
+      "why": {
+        "en": "The finished past of the quote moves one step further back: terminé → había terminado.",
+        "es": "El pasado terminado de la cita retrocede un paso más: terminé → había terminado."
+      }
+    },
+    {
+      "id": "ei-tr-03",
+      "kind": "transform",
+      "tense": {
+        "from": "futuro-simple",
+        "to": "condicional"
+      },
+      "prompt": {
+        "en": "Marta said: \"I will arrive late.\"",
+        "es": "Marta dijo: «Llegaré tarde»."
+      },
+      "answer": "Marta dijo que llegaría tarde.",
+      "accept": [
+        "Marta dijo que llegará tarde."
+      ],
+      "wordIds": [
+        "149",
+        "174"
+      ],
+      "why": {
+        "en": "The future of the quote becomes the conditional when the reporting verb is in the past: llegaré → llegaría.",
+        "es": "El futuro de la cita pasa a condicional cuando el verbo que introduce está en pasado: llegaré → llegaría."
+      }
+    },
+    {
+      "id": "ei-tr-04",
+      "kind": "transform",
+      "tense": {
+        "from": "perfecto",
+        "to": "pluscuamperfecto"
+      },
+      "prompt": {
+        "en": "Pedro said: \"I have seen Ana.\"",
+        "es": "Pedro dijo: «He visto a Ana»."
+      },
+      "answer": "Pedro dijo que había visto a Ana.",
+      "accept": [
+        "Pedro dijo que ha visto a Ana."
+      ],
+      "wordIds": [
+        "78"
+      ],
+      "why": {
+        "en": "The present perfect of the quote becomes the pluperfect: he visto → había visto.",
+        "es": "El pretérito perfecto de la cita pasa al pluscuamperfecto: he visto → había visto."
+      }
+    },
+    {
+      "id": "ei-tr-05",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "en": "My mom tells me: \"Call your grandmother.\"",
+        "es": "Mi mamá me dice: «Llama a tu abuela»."
+      },
+      "answer": "Mi mamá me dijo que llamara a mi abuela.",
+      "accept": [
+        "Mi mamá me dijo que llamase a mi abuela.",
+        "Mi mamá me pidió que llamara a mi abuela.",
+        "Mi mamá me pidió que llamase a mi abuela."
+      ],
+      "wordIds": [
+        "89",
+        "620"
+      ],
+      "why": {
+        "en": "A reported order needs que + subjunctive, in the past after a past verb: llama → llamara (or llamase); tu → mi.",
+        "es": "Una orden en estilo indirecto necesita que + subjuntivo, en pasado tras un verbo en pasado: llama → llamara (o llamase); tu → mi."
+      }
+    },
+    {
+      "id": "ei-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Ana me dijo: \"Vivo en Puebla y trabajo en una escuela\". Me dijo que ___ (vivir) en Puebla y que ___ (trabajar) en una escuela.",
+      "answers": [
+        "vivía",
+        "trabajaba"
+      ],
+      "accept": [
+        [
+          "vive"
+        ],
+        [
+          "trabaja"
+        ]
+      ],
+      "tr": {
+        "en": "Ana told me: \"I live in Puebla and I work at a school.\" She told me that she lived in Puebla and worked at a school.",
+        "es": "Ana me dijo: \"Vivo en Puebla y trabajo en una escuela\". Me dijo que vivía (vivir) en Puebla y que trabajaba (trabajar) en una escuela."
+      },
+      "why": {
+        "en": "The present of the quote goes back to the imperfect after a past verb of saying: vivía, trabajaba.",
+        "es": "El presente de la cita retrocede al imperfecto tras un verbo de decir en pasado: vivía, trabajaba."
+      }
+    },
+    {
+      "id": "ei-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Carlos me contó: \"Ya comí, pero no hice la tarea\". Me contó que ya ___ (comer) y que no ___ (hacer) la tarea.",
+      "answers": [
+        "había comido",
+        "había hecho"
+      ],
+      "accept": [
+        [
+          "comió"
+        ],
+        [
+          "hizo"
+        ]
+      ],
+      "tr": {
+        "en": "Carlos told me: \"I already ate, but I did not do the homework.\" He told me that he had already eaten and had not done the homework.",
+        "es": "Carlos me contó: \"Ya comí, pero no hice la tarea\". Me contó que ya había comido (comer) y que no había hecho (hacer) la tarea."
+      },
+      "why": {
+        "en": "The finished past of the quote becomes the pluperfect: había comido, había hecho (hacer: participle hecho).",
+        "es": "El pasado terminado de la cita pasa al pluscuamperfecto: había comido, había hecho (hacer: participio hecho)."
+      }
+    },
+    {
+      "id": "ei-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Mi jefa me dijo: \"Mañana te llamaré y te daré el informe\". Me dijo que al día siguiente me ___ (llamar) y me ___ (dar) el informe.",
+      "answers": [
+        "llamaría",
+        "daría"
+      ],
+      "tr": {
+        "en": "My boss told me: \"Tomorrow I will call you and give you the report.\" She told me that the next day she would call me and give me the report.",
+        "es": "Mi jefa me dijo: \"Mañana te llamaré y te daré el informe\". Me dijo que al día siguiente me llamaría (llamar) y me daría (dar) el informe."
+      },
+      "why": {
+        "en": "The future of the quote becomes the conditional (llamaría, daría) and mañana becomes al día siguiente.",
+        "es": "El futuro de la cita pasa a condicional (llamaría, daría) y mañana pasa a al día siguiente."
+      }
+    },
+    {
+      "id": "ei-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Mi amigo me preguntó: \"¿Tienes tiempo? ¿Dónde vives?\". Me preguntó ___ tenía tiempo y ___ vivía.",
+      "answers": [
+        "si",
+        "dónde"
+      ],
+      "tr": {
+        "en": "My friend asked me: \"Do you have time? Where do you live?\" He asked me whether I had time and where I lived.",
+        "es": "Mi amigo me preguntó: \"¿Tienes tiempo? ¿Dónde vives?\". Me preguntó si tenía tiempo y dónde vivía."
+      },
+      "why": {
+        "en": "A yes/no question is reported with si; a question word stays and keeps its accent: dónde.",
+        "es": "Una pregunta de sí o no se reporta con si; la palabra interrogativa se queda y conserva la tilde: dónde."
+      }
+    },
+    {
+      "id": "ei-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Lucía dijo: \"Hoy voy a descansar y mañana trabajaré aquí\". Dijo que ___ iba a descansar y que ___ trabajaría ___.",
+      "answers": [
+        "ese día",
+        "al día siguiente",
+        "allí"
+      ],
+      "accept": [
+        [
+          "aquel día"
+        ],
+        [
+          "al otro día",
+          "el día siguiente"
+        ],
+        [
+          "allá",
+          "ahí"
+        ]
+      ],
+      "tr": {
+        "en": "Lucía said: \"Today I am going to rest and tomorrow I will work here.\" She said that that day she was going to rest and that the next day she would work there.",
+        "es": "Lucía dijo: \"Hoy voy a descansar y mañana trabajaré aquí\". Dijo que ese día iba a descansar y que al día siguiente trabajaría allí."
+      },
+      "why": {
+        "en": "Time and place words shift in reported speech: hoy → ese día, mañana → al día siguiente, aquí → allí.",
+        "es": "Las palabras de tiempo y lugar cambian en el estilo indirecto: hoy → ese día, mañana → al día siguiente, aquí → allí."
+      }
+    },
+    {
+      "id": "ei-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "Dijo que quería que yo lo ayude con la tarea.",
+      "wrongIndex": 6,
+      "answer": "ayudara",
+      "accept": [
+        "ayudase"
+      ],
+      "explain": {
+        "en": "After a past main verb (quería) the subjunctive goes to the past too: ayudara (ayudase).",
+        "es": "Tras un verbo principal en pasado (quería) el subjuntivo también pasa al pasado: ayudara (ayudase)."
+      },
+      "tr": {
+        "en": "He said he wanted me to help him with the homework.",
+        "es": "Dijo que quería que yo lo ayudara con la tarea."
+      }
+    },
+    {
+      "id": "ei-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "Me preguntó que tenía tiempo.",
+      "wrongIndex": 2,
+      "answer": "si",
+      "explain": {
+        "en": "A yes/no question is reported with si, not que: me preguntó si tenía tiempo.",
+        "es": "Una pregunta de sí o no se reporta con si, no con que: me preguntó si tenía tiempo."
+      },
+      "tr": {
+        "en": "He asked me whether I had time.",
+        "es": "Me preguntó si tenía tiempo."
+      }
+    },
+    {
+      "id": "ei-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "Ana dijo: \"Mi carro es nuevo\" y dijo que mi carro era nuevo.",
+      "wrongIndex": 9,
+      "answer": "su",
+      "explain": {
+        "en": "The person changes in reported speech: Ana said \"mi carro\", so it is su carro (her car).",
+        "es": "La persona cambia en el estilo indirecto: Ana dijo «mi carro», así que es su carro."
+      },
+      "tr": {
+        "en": "Ana said: \"My car is new\" and she said that her car was new.",
+        "es": "Ana dijo: \"Mi carro es nuevo\" y dijo que su carro era nuevo."
+      }
+    },
+    {
+      "id": "ei-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "Me preguntó donde vivía.",
+      "wrongIndex": 2,
+      "answer": "dónde",
+      "explain": {
+        "en": "The question word keeps its written accent in an indirect question: dónde.",
+        "es": "La palabra interrogativa conserva la tilde en una pregunta indirecta: dónde."
+      },
+      "tr": {
+        "en": "He asked me where I lived.",
+        "es": "Me preguntó dónde vivía."
+      }
+    },
+    {
+      "id": "ei-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "Mi mamá me pidió que llamo a mi abuela.",
+      "wrongIndex": 5,
+      "answer": "llamara",
+      "accept": [
+        "llamase"
+      ],
+      "explain": {
+        "en": "A reported request needs the subjunctive, in the past after pidió: llamara (llamase).",
+        "es": "Un ruego en estilo indirecto necesita subjuntivo, en pasado tras pidió: llamara (llamase)."
+      },
+      "tr": {
+        "en": "My mom asked me to call my grandmother.",
+        "es": "Mi mamá me pidió que llamara a mi abuela."
+      }
+    },
+    {
+      "id": "ei-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "pidió",
+        "preguntó",
+        "contó"
+      ],
+      "es": "Mi mamá me ___ que llamara a mi abuela.",
+      "word": "pidió",
+      "answer": "pidió",
+      "accept": [
+        "dijo"
+      ],
+      "tr": {
+        "en": "My mom asked me to call my grandmother.",
+        "es": "Mi mamá me pidió que llamara a mi abuela."
+      },
+      "why": {
+        "en": "A request with que + subjunctive (llamara) needs pidió; preguntó and contó do not take a subjunctive here.",
+        "es": "Un ruego con que + subjuntivo (llamara) necesita pidió; preguntó y contó no llevan aquí subjuntivo."
+      }
+    },
+    {
+      "id": "ei-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "preguntó",
+        "pidió",
+        "contó"
+      ],
+      "es": "Mi hermano me ___ si podía ayudarlo.",
+      "word": "preguntó",
+      "answer": "preguntó",
+      "tr": {
+        "en": "My brother asked me if I could help him.",
+        "es": "Mi hermano me preguntó si podía ayudarlo."
+      },
+      "why": {
+        "en": "A reported question with si needs preguntó; pidió and contó do not introduce a question.",
+        "es": "Una pregunta indirecta con si necesita preguntó; pidió y contó no introducen una pregunta."
+      }
+    },
+    {
+      "id": "ei-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "contó",
+        "preguntó",
+        "pidió"
+      ],
+      "es": "Mi hermano me ___ que ya había comido.",
+      "word": "contó",
+      "answer": "contó",
+      "accept": [
+        "dijo"
+      ],
+      "tr": {
+        "en": "My brother told me that he had already eaten.",
+        "es": "Mi hermano me contó que ya había comido."
+      },
+      "why": {
+        "en": "A statement (había comido) is reported with contó or dijo; preguntó would need si, and pidió a subjunctive.",
+        "es": "Una afirmación (había comido) se reporta con contó o dijo; preguntó necesitaría si, y pidió un subjuntivo."
+      }
+    },
+    {
+      "id": "ei-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "había",
+        "hay",
+        "hubo"
+      ],
+      "es": "Dijo que ya ___ terminado el trabajo.",
+      "word": "había",
+      "answer": "había",
+      "tr": {
+        "en": "He said that he had already finished the work.",
+        "es": "Dijo que ya había terminado el trabajo."
+      },
+      "why": {
+        "en": "The pluperfect is había + participle; hay and hubo do not form a compound tense with terminado.",
+        "es": "El pluscuamperfecto es había + participio; hay y hubo no forman un tiempo compuesto con terminado."
+      }
+    },
+    {
+      "id": "ei-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "si",
+        "que",
+        "de"
+      ],
+      "es": "Preguntó ___ me gustaba el café.",
+      "word": "si",
+      "answer": "si",
+      "tr": {
+        "en": "He asked whether I liked coffee.",
+        "es": "Preguntó si me gustaba el café."
+      },
+      "why": {
+        "en": "An indirect yes/no question uses si; que and de do not work after preguntó here.",
+        "es": "Una pregunta indirecta de sí o no usa si; que y de no funcionan aquí tras preguntó."
+      }
+    },
+    {
+      "id": "ei-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "He told me that he had eaten.",
+        "es": "Me dijo que había comido."
+      },
+      "es": "Me dijo que había comido."
+    },
+    {
+      "id": "ei-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "Ana asked whether we were going to the party.",
+        "es": "Ana preguntó si íbamos a la fiesta."
+      },
+      "es": "Ana preguntó si íbamos a la fiesta."
+    },
+    {
+      "id": "ei-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "My boss asked us to arrive early.",
+        "es": "Mi jefe nos pidió que llegáramos temprano."
+      },
+      "es": "Mi jefe nos pidió que llegáramos temprano."
+    },
+    {
+      "id": "ei-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "They said they would come.",
+        "es": "Dijeron que vendrían."
+      },
+      "es": "Dijeron que vendrían."
+    },
+    {
+      "id": "ei-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "They asked us how old we were.",
+        "es": "Nos preguntaron cuántos años teníamos."
+      },
+      "es": "Nos preguntaron cuántos años teníamos."
     }
   ]
 }

@@ -2770,6 +2770,336 @@
         "en": "Negation in the conditional, no goes before the verb: condicional. Venir is an irregular-stem verb (vendr-), ellos: vendrían.",
         "es": "Negación en condicional, no va antes del verbo: condicional. venir es un verbo de raíz irregular (vendr-), ellos: vendrían."
       }
+    },
+    {
+      "id": "cd-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Si yo tuviera mucho dinero, ___ (viajar) por México, ___ (comprar) una casa y ___ (ayudar) a mi familia.",
+      "answers": [
+        "viajaría",
+        "compraría",
+        "ayudaría"
+      ],
+      "tr": {
+        "en": "If I had a lot of money, I would travel around Mexico, buy a house and help my family.",
+        "es": "Si yo tuviera mucho dinero, viajaría (viajar) por México, compraría (comprar) una casa y ayudaría (ayudar) a mi familia."
+      },
+      "why": {
+        "en": "An imagined situation (si + tuviera): the result takes the condicional, yo: viajaría, compraría, ayudaría. Regular verbs: the whole infinitive + -ía.",
+        "es": "Una situación imaginada (si + tuviera): el resultado lleva condicional, yo: viajaría, compraría, ayudaría. Verbos regulares: el infinitivo completo + -ía."
+      }
+    },
+    {
+      "id": "cd-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Yo, en tu lugar, ___ (hablar) con el jefe, ___ (descansar) un poco y no ___ (trabajar) tanto.",
+      "answers": [
+        "hablaría",
+        "descansaría",
+        "trabajaría"
+      ],
+      "tr": {
+        "en": "If I were you, I would talk to the boss, rest a little and not work so much.",
+        "es": "Yo, en tu lugar, hablaría (hablar) con el jefe, descansaría (descansar) un poco y no trabajaría (trabajar) tanto."
+      },
+      "why": {
+        "en": "Advice from an imagined place (en tu lugar) takes the condicional, yo: hablaría, descansaría, trabajaría.",
+        "es": "Un consejo desde un lugar imaginado (en tu lugar) lleva condicional, yo: hablaría, descansaría, trabajaría."
+      }
+    },
+    {
+      "id": "cd-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Si pudiera, yo ___ (vivir) en la playa, ___ (comer) pescado todos los días y ___ (ser) muy feliz.",
+      "answers": [
+        "viviría",
+        "comería",
+        "sería"
+      ],
+      "tr": {
+        "en": "If I could, I would live on the beach, eat fish every day and be very happy.",
+        "es": "Si pudiera, yo viviría (vivir) en la playa, comería (comer) pescado todos los días y sería (ser) muy feliz."
+      },
+      "why": {
+        "en": "A wish that is not real (si pudiera): condicional, yo: viviría, comería, sería (ser is irregular: ser + -ía).",
+        "es": "Un deseo que no es real (si pudiera): condicional, yo: viviría, comería, sería (ser es irregular: ser + -ía)."
+      }
+    },
+    {
+      "id": "cd-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Si mis amigos vinieran a mi casa, nosotros ___ (hacer) tacos, ___ (hablar) toda la noche y ___ (poder) ver una película.",
+      "answers": [
+        "haríamos",
+        "hablaríamos",
+        "podríamos"
+      ],
+      "tr": {
+        "en": "If my friends came to my house, we would make tacos, talk all night and be able to watch a movie.",
+        "es": "Si mis amigos vinieran a mi casa, nosotros haríamos (hacer) tacos, hablaríamos (hablar) toda la noche y podríamos (poder) ver una película."
+      },
+      "why": {
+        "en": "An imagined situation: condicional, nosotros: haríamos (hacer → har-), hablaríamos, podríamos (poder → podr-).",
+        "es": "Una situación imaginada: condicional, nosotros: haríamos (hacer → har-), hablaríamos, podríamos (poder → podr-)."
+      }
+    },
+    {
+      "id": "cd-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Si ella supiera la verdad, no ___ (decir) nada, ___ (tener) miedo y ___ (venir) conmigo.",
+      "answers": [
+        "diría",
+        "tendría",
+        "vendría"
+      ],
+      "tr": {
+        "en": "If she knew the truth, she would not say anything, she would be afraid and she would come with me.",
+        "es": "Si ella supiera la verdad, no diría (decir) nada, tendría (tener) miedo y vendría (venir) conmigo."
+      },
+      "why": {
+        "en": "An imagined situation: condicional, ella: diría (decir → dir-), tendría (tener → tendr-), vendría (venir → vendr-).",
+        "es": "Una situación imaginada: condicional, ella: diría (decir → dir-), tendría (tener → tendr-), vendría (venir → vendr-)."
+      }
+    },
+    {
+      "id": "cd-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "Yo podería ayudarte con la tarea.",
+      "wrongIndex": 1,
+      "answer": "podría",
+      "explain": {
+        "en": "Poder has a short stem in the condicional: podr- + -ía, so podría (not podería).",
+        "es": "Poder tiene una raíz corta en el condicional: podr- + -ía, por eso podría (no podería)."
+      },
+      "tr": {
+        "en": "I could help you with the homework.",
+        "es": "Yo podría ayudarte con la tarea."
+      }
+    },
+    {
+      "id": "cd-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "Nosotros haceríamos la cena si pudiéramos.",
+      "wrongIndex": 1,
+      "answer": "haríamos",
+      "explain": {
+        "en": "Hacer has a short stem in the condicional: har- + -íamos, so haríamos (not haceríamos).",
+        "es": "Hacer tiene una raíz corta en el condicional: har- + -íamos, por eso haríamos (no haceríamos)."
+      },
+      "tr": {
+        "en": "We would make dinner if we could.",
+        "es": "Nosotros haríamos la cena si pudiéramos."
+      }
+    },
+    {
+      "id": "cd-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "Si tuviera dinero, yo comeré en un restaurante caro.",
+      "wrongIndex": 4,
+      "answer": "comería",
+      "explain": {
+        "en": "An imagined situation (si tuviera) needs the condicional in the result: comería, not the future comeré.",
+        "es": "Una situación imaginada (si tuviera) pide condicional en el resultado: comería, no el futuro comeré."
+      },
+      "tr": {
+        "en": "If I had money, I would eat at an expensive restaurant.",
+        "es": "Si tuviera dinero, yo comería en un restaurante caro."
+      }
+    },
+    {
+      "id": "cd-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "Mis padres vendirían a mi fiesta si pudieran.",
+      "wrongIndex": 2,
+      "answer": "vendrían",
+      "explain": {
+        "en": "Venir has a short stem in the condicional: vendr- + -ían, so vendrían (not vendirían).",
+        "es": "Venir tiene una raíz corta en el condicional: vendr- + -ían, por eso vendrían (no vendirían)."
+      },
+      "tr": {
+        "en": "My parents would come to my party if they could.",
+        "es": "Mis padres vendrían a mi fiesta si pudieran."
+      }
+    },
+    {
+      "id": "cd-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "Tú tendría más tiempo con otro trabajo.",
+      "wrongIndex": 1,
+      "answer": "tendrías",
+      "explain": {
+        "en": "The ending must agree with tú: tendrías (-ías), not tendría.",
+        "es": "La terminación debe concordar con tú: tendrías (-ías), no tendría."
+      },
+      "tr": {
+        "en": "You would have more time with another job.",
+        "es": "Tú tendrías más tiempo con otro trabajo."
+      }
+    },
+    {
+      "id": "cd-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "hablar",
+        "comer",
+        "vivir"
+      ],
+      "es": "Si estudiara más, yo ___ tres idiomas.",
+      "word": "hablar",
+      "answer": "hablaría",
+      "tr": {
+        "en": "If I studied more, I would speak three languages.",
+        "es": "Si estudiara más, yo hablaría tres idiomas."
+      },
+      "why": {
+        "en": "An imagined situation takes the condicional; hablar, yo: hablaría.",
+        "es": "Una situación imaginada lleva condicional; hablar, yo: hablaría."
+      }
+    },
+    {
+      "id": "cd-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "vivir",
+        "tener",
+        "ser"
+      ],
+      "es": "Si fuera rico, yo ___ en una casa grande.",
+      "word": "vivir",
+      "answer": "viviría",
+      "tr": {
+        "en": "If I were rich, I would live in a big house.",
+        "es": "Si fuera rico, yo viviría en una casa grande."
+      },
+      "why": {
+        "en": "An imagined situation takes the condicional; vivir, yo: viviría.",
+        "es": "Una situación imaginada lleva condicional; vivir, yo: viviría."
+      }
+    },
+    {
+      "id": "cd-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "poder",
+        "decir",
+        "venir"
+      ],
+      "es": "Si tuviéramos un carro, nosotros ___ ir a la playa.",
+      "word": "poder",
+      "answer": "podríamos",
+      "tr": {
+        "en": "If we had a car, we could go to the beach.",
+        "es": "Si tuviéramos un carro, nosotros podríamos ir a la playa."
+      },
+      "why": {
+        "en": "An imagined situation takes the condicional; poder, nosotros: podríamos (short stem podr-).",
+        "es": "Una situación imaginada lleva condicional; poder, nosotros: podríamos (raíz corta podr-)."
+      }
+    },
+    {
+      "id": "cd-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "hacer",
+        "venir",
+        "vivir"
+      ],
+      "es": "Si ella tuviera tiempo, ___ una torta para la fiesta.",
+      "word": "hacer",
+      "answer": "haría",
+      "tr": {
+        "en": "If she had time, she would make a cake for the party.",
+        "es": "Si ella tuviera tiempo, haría una torta para la fiesta."
+      },
+      "why": {
+        "en": "An imagined situation takes the condicional; hacer, ella: haría (short stem har-).",
+        "es": "Una situación imaginada lleva condicional; hacer, ella: haría (raíz corta har-)."
+      }
+    },
+    {
+      "id": "cd-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "deber",
+        "comer",
+        "vivir"
+      ],
+      "es": "En tu lugar, yo ___ descansar más.",
+      "word": "deber",
+      "answer": "debería",
+      "tr": {
+        "en": "If I were you, I would rest more.",
+        "es": "En tu lugar, yo debería descansar más."
+      },
+      "why": {
+        "en": "Advice from an imagined place takes the condicional; deber, yo: debería.",
+        "es": "Un consejo desde un lugar imaginado lleva condicional; deber, yo: debería."
+      }
+    },
+    {
+      "id": "cd-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "Could you help me with the homework?",
+        "es": "¿Podrías ayudarme con la tarea?"
+      },
+      "es": "¿Podrías ayudarme con la tarea?"
+    },
+    {
+      "id": "cd-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "It would be a good idea.",
+        "es": "Sería una buena idea."
+      },
+      "es": "Sería una buena idea."
+    },
+    {
+      "id": "cd-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "You should rest more.",
+        "es": "Deberías descansar más."
+      },
+      "es": "Deberías descansar más."
+    },
+    {
+      "id": "cd-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "I would not say that.",
+        "es": "No diría eso."
+      },
+      "es": "No diría eso."
+    },
+    {
+      "id": "cd-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "My brother would come with you.",
+        "es": "Mi hermano vendría contigo."
+      },
+      "es": "Mi hermano vendría contigo."
     }
   ]
 }

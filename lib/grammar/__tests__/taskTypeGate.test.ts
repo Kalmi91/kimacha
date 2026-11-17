@@ -100,7 +100,7 @@ describe('grammar-task-gate', () => {
     const gaps = r.out.split('\n').filter((l) => l.startsWith('ERROR '));
     expect(r.status).toBe(gaps.length > 0 ? 1 : 0);
     expect(r.last).toMatch(/^grammar-task-gate: (OK|FAIL)/);
-    expect(r.out).toMatch(/ERROR (B1|B2|C1) \S+ \S+: \d\/5/); // the levels above A2 are not written yet
+    expect(gaps).toEqual([]); // the core topics of every level, A1 to C1, have the content now
   });
 
   it('the script and the app read the same core topics (one marking: the syllabus tier)', () => {

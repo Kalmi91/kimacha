@@ -849,6 +849,577 @@
         }
       ],
       "correctIndex": 1
+    },
+    {
+      "id": "ct2-tr-01",
+      "kind": "transform",
+      "tense": {
+        "from": "futuro-simple",
+        "to": "condicional"
+      },
+      "prompt": {
+        "en": "If I have time, I will travel to Oaxaca.",
+        "es": "Si tengo tiempo, viajaré a Oaxaca."
+      },
+      "answer": "Si tuviera tiempo, viajaría a Oaxaca.",
+      "accept": [
+        "Si tuviese tiempo, viajaría a Oaxaca.",
+        "Si yo tuviera tiempo, yo viajaría a Oaxaca.",
+        "Si yo tuviese tiempo, yo viajaría a Oaxaca.",
+        "Si yo tuviera tiempo, viajaría a Oaxaca.",
+        "Si yo tuviese tiempo, viajaría a Oaxaca.",
+        "Viajaría a Oaxaca si tuviera tiempo.",
+        "Viajaría a Oaxaca si tuviese tiempo.",
+        "Yo viajaría a Oaxaca si yo tuviera tiempo."
+      ],
+      "wordIds": [
+        "16",
+        "22",
+        "230"
+      ],
+      "why": {
+        "en": "From a real condition to an unreal one: si + imperfect subjunctive (tuviera) and the conditional (viajaría).",
+        "es": "De una condición real a una irreal: si + imperfecto de subjuntivo (tuviera) y el condicional (viajaría)."
+      }
+    },
+    {
+      "id": "ct2-tr-02",
+      "kind": "transform",
+      "tense": {
+        "from": "condicional",
+        "to": "futuro-condicional-perfecto"
+      },
+      "prompt": {
+        "en": "If you studied more, you would pass the exam.",
+        "es": "Si estudiaras más, aprobarías el examen."
+      },
+      "answer": "Si hubieras estudiado más, habrías aprobado el examen.",
+      "accept": [
+        "Si hubieras estudiado más, hubieras aprobado el examen.",
+        "Si hubieras estudiado más, hubieses aprobado el examen.",
+        "Si hubieses estudiado más, habrías aprobado el examen.",
+        "Si hubieses estudiado más, hubieras aprobado el examen.",
+        "Si hubieses estudiado más, hubieses aprobado el examen.",
+        "Si tú hubieras estudiado más, tú habrías aprobado el examen.",
+        "Si tú hubieras estudiado más, tú hubieras aprobado el examen.",
+        "Si tú hubieras estudiado más, tú hubieses aprobado el examen.",
+        "Si tú hubieses estudiado más, tú habrías aprobado el examen.",
+        "Si tú hubieses estudiado más, tú hubieras aprobado el examen.",
+        "Si tú hubieses estudiado más, tú hubieses aprobado el examen.",
+        "Habrías aprobado el examen si hubieras estudiado más.",
+        "Habrías aprobado el examen si hubieses estudiado más.",
+        "Hubieras aprobado el examen si hubieras estudiado más.",
+        "Hubieras aprobado el examen si hubieses estudiado más.",
+        "Hubieses aprobado el examen si hubieras estudiado más.",
+        "Hubieses aprobado el examen si hubieses estudiado más."
+      ],
+      "wordIds": [
+        "212",
+        "781",
+        "610"
+      ],
+      "why": {
+        "en": "For the past: si + pluperfect subjunctive (hubieras estudiado) and the conditional perfect (habrías aprobado, also hubieras aprobado).",
+        "es": "Para el pasado: si + pluscuamperfecto de subjuntivo (hubieras estudiado) y el condicional compuesto (habrías aprobado, también hubieras aprobado)."
+      }
+    },
+    {
+      "id": "ct2-tr-03",
+      "kind": "transform",
+      "tense": {
+        "from": "futuro-simple",
+        "to": "condicional"
+      },
+      "prompt": {
+        "en": "If it rains, we will not go out.",
+        "es": "Si llueve, no saldremos."
+      },
+      "answer": "Si lloviera, no saldríamos.",
+      "accept": [
+        "Si lloviese, no saldríamos.",
+        "No saldríamos si lloviera.",
+        "No saldríamos si lloviese."
+      ],
+      "wordIds": [
+        "670",
+        "199"
+      ],
+      "why": {
+        "en": "Unreal version: si + lloviera (imperfect subjunctive) and saldríamos (conditional, strong stem: sald-).",
+        "es": "Versión irreal: si + lloviera (imperfecto de subjuntivo) y saldríamos (condicional, raíz fuerte: sald-)."
+      }
+    },
+    {
+      "id": "ct2-tr-04",
+      "kind": "transform",
+      "tense": {
+        "from": "condicional",
+        "to": "futuro-condicional-perfecto"
+      },
+      "prompt": {
+        "en": "If we had more money, we would buy a new car.",
+        "es": "Si tuviéramos más dinero, compraríamos un carro nuevo."
+      },
+      "answer": "Si hubiéramos tenido más dinero, habríamos comprado un carro nuevo.",
+      "accept": [
+        "Si hubiéramos tenido más dinero, hubiéramos comprado un carro nuevo.",
+        "Si hubiéramos tenido más dinero, hubiésemos comprado un carro nuevo.",
+        "Si hubiésemos tenido más dinero, habríamos comprado un carro nuevo.",
+        "Si hubiésemos tenido más dinero, hubiéramos comprado un carro nuevo.",
+        "Si hubiésemos tenido más dinero, hubiésemos comprado un carro nuevo.",
+        "Habríamos comprado un carro nuevo si hubiéramos tenido más dinero.",
+        "Habríamos comprado un carro nuevo si hubiésemos tenido más dinero.",
+        "Hubiéramos comprado un carro nuevo si hubiéramos tenido más dinero.",
+        "Hubiéramos comprado un carro nuevo si hubiésemos tenido más dinero.",
+        "Hubiésemos comprado un carro nuevo si hubiéramos tenido más dinero.",
+        "Hubiésemos comprado un carro nuevo si hubiésemos tenido más dinero."
+      ],
+      "wordIds": [
+        "16",
+        "123",
+        "144",
+        "114",
+        "67"
+      ],
+      "why": {
+        "en": "The unreal past: si + hubiéramos tenido and habríamos comprado (the -ra / -se forms of hubiera are both right).",
+        "es": "El pasado irreal: si + hubiéramos tenido y habríamos comprado (las formas -ra / -se de hubiera son correctas)."
+      }
+    },
+    {
+      "id": "ct2-tr-05",
+      "kind": "transform",
+      "tense": {
+        "from": "condicional",
+        "to": "futuro-condicional-perfecto"
+      },
+      "prompt": {
+        "en": "If you helped me, I would finish the work.",
+        "es": "Si me ayudaras, terminaría el trabajo."
+      },
+      "answer": "Si me hubieras ayudado, habría terminado el trabajo.",
+      "accept": [
+        "Si me hubieras ayudado, hubiera terminado el trabajo.",
+        "Si me hubieras ayudado, hubiese terminado el trabajo.",
+        "Si me hubieses ayudado, habría terminado el trabajo.",
+        "Si me hubieses ayudado, hubiera terminado el trabajo.",
+        "Si me hubieses ayudado, hubiese terminado el trabajo.",
+        "Si tú me hubieras ayudado, yo habría terminado el trabajo.",
+        "Si tú me hubieras ayudado, yo hubiera terminado el trabajo.",
+        "Si tú me hubieras ayudado, yo hubiese terminado el trabajo.",
+        "Si tú me hubieses ayudado, yo habría terminado el trabajo.",
+        "Si tú me hubieses ayudado, yo hubiera terminado el trabajo.",
+        "Si tú me hubieses ayudado, yo hubiese terminado el trabajo.",
+        "Habría terminado el trabajo si me hubieras ayudado.",
+        "Habría terminado el trabajo si me hubieses ayudado.",
+        "Hubiera terminado el trabajo si me hubieras ayudado.",
+        "Hubiera terminado el trabajo si me hubieses ayudado.",
+        "Hubiese terminado el trabajo si me hubieras ayudado.",
+        "Hubiese terminado el trabajo si me hubieses ayudado."
+      ],
+      "wordIds": [
+        "148",
+        "219",
+        "50"
+      ],
+      "why": {
+        "en": "Si me hubieras ayudado (pluperfect subjunctive) goes with habría terminado (conditional perfect).",
+        "es": "Si me hubieras ayudado (pluscuamperfecto de subjuntivo) va con habría terminado (condicional compuesto)."
+      }
+    },
+    {
+      "id": "ct2-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Si ___ (tener) más tiempo, ___ (hacer) ejercicio todos los días, pero ahora trabajo demasiado.",
+      "answers": [
+        "tuviera",
+        "haría"
+      ],
+      "accept": [
+        [
+          "tuviese"
+        ],
+        []
+      ],
+      "tr": {
+        "en": "If I had more time, I would exercise every day, but now I work too much.",
+        "es": "Si tuviera (tener) más tiempo, haría (hacer) ejercicio todos los días, pero ahora trabajo demasiado."
+      },
+      "why": {
+        "en": "An unreal present: si + imperfect subjunctive (tuviera) and the conditional (haría, irregular stem har-).",
+        "es": "Un presente irreal: si + imperfecto de subjuntivo (tuviera) y el condicional (haría, raíz irregular har-)."
+      }
+    },
+    {
+      "id": "ct2-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Si nosotros ___ (llegar) antes, ___ (conseguir) buenos lugares, pero había mucho tráfico.",
+      "answers": [
+        "hubiéramos llegado",
+        "habríamos conseguido"
+      ],
+      "accept": [
+        [
+          "hubiésemos llegado"
+        ],
+        [
+          "hubiéramos conseguido",
+          "hubiésemos conseguido"
+        ]
+      ],
+      "tr": {
+        "en": "If we had arrived earlier, we would have gotten good seats, but there was a lot of traffic.",
+        "es": "Si nosotros hubiéramos llegado (llegar) antes, habríamos conseguido (conseguir) buenos lugares, pero había mucho tráfico."
+      },
+      "why": {
+        "en": "An unreal past: si + hubiéramos llegado and habríamos conseguido (haber + participle in both halves).",
+        "es": "Un pasado irreal: si + hubiéramos llegado y habríamos conseguido (haber + participio en las dos mitades)."
+      }
+    },
+    {
+      "id": "ct2-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Si yo ___ (ser) tú, ___ (hablar) con él. Si ___ (ser, yo) más joven, ___ (estudiar) otra carrera.",
+      "answers": [
+        "fuera",
+        "hablaría",
+        "fuera",
+        "estudiaría"
+      ],
+      "accept": [
+        [
+          "fuese"
+        ],
+        [],
+        [
+          "fuese"
+        ],
+        []
+      ],
+      "tr": {
+        "en": "If I were you, I would talk to him. If I were younger, I would study another degree.",
+        "es": "Si yo fuera (ser) tú, hablaría (hablar) con él. Si fuera (ser, yo) más joven, estudiaría (estudiar) otra carrera."
+      },
+      "why": {
+        "en": "Si + fuera (imperfect subjunctive of ser) always goes with the conditional: hablaría, estudiaría.",
+        "es": "Si + fuera (imperfecto de subjuntivo de ser) siempre va con el condicional: hablaría, estudiaría."
+      }
+    },
+    {
+      "id": "ct2-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Si no ___ (llover) tanto ayer, nosotros ___ (ir) a la playa. Ahora ___ (estar) contentos.",
+      "answers": [
+        "hubiera llovido",
+        "habríamos ido",
+        "estaríamos"
+      ],
+      "accept": [
+        [
+          "hubiese llovido"
+        ],
+        [
+          "hubiéramos ido",
+          "hubiésemos ido"
+        ],
+        []
+      ],
+      "tr": {
+        "en": "If it had not rained so much yesterday, we would have gone to the beach. Now we would be happy.",
+        "es": "Si no hubiera llovido (llover) tanto ayer, nosotros habríamos ido (ir) a la playa. Ahora estaríamos (estar) contentos."
+      },
+      "why": {
+        "en": "A mixed condition: the past cause (hubiera llovido, habríamos ido) and a result in the present (estaríamos).",
+        "es": "Una condición mixta: la causa pasada (hubiera llovido, habríamos ido) y un resultado en el presente (estaríamos)."
+      }
+    },
+    {
+      "id": "ct2-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Si tú me ___ (decir) la verdad, yo no ___ (enojarse) tanto. Pero me mentiste.",
+      "answers": [
+        "hubieras dicho",
+        "me habría enojado"
+      ],
+      "accept": [
+        [
+          "hubieses dicho"
+        ],
+        [
+          "me hubiera enojado",
+          "me hubiese enojado"
+        ]
+      ],
+      "tr": {
+        "en": "If you had told me the truth, I would not have gotten so angry. But you lied to me.",
+        "es": "Si tú me hubieras dicho (decir) la verdad, yo no me habría enojado (enojarse) tanto. Pero me mentiste."
+      },
+      "why": {
+        "en": "Decir has an irregular participle (dicho); the reflexive pronoun goes before haber: me habría enojado.",
+        "es": "Decir tiene participio irregular (dicho); el pronombre reflexivo va antes de haber: me habría enojado."
+      }
+    },
+    {
+      "id": "ct2-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "Si tendría tiempo, aprendería francés.",
+      "wrongIndex": 1,
+      "answer": "tuviera",
+      "accept": [
+        "tuviese"
+      ],
+      "explain": {
+        "en": "After si, an unreal condition takes the imperfect subjunctive, never the conditional: tuviera (tuviese).",
+        "es": "Tras si, una condición irreal lleva el imperfecto de subjuntivo, nunca el condicional: tuviera (tuviese)."
+      },
+      "tr": {
+        "en": "If I had time, I would learn French.",
+        "es": "Si tuviera tiempo, aprendería francés."
+      }
+    },
+    {
+      "id": "ct2-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "Si habría estudiado más, habría aprobado el examen.",
+      "wrongIndex": 1,
+      "answer": "hubiera",
+      "accept": [
+        "hubiese"
+      ],
+      "explain": {
+        "en": "In the si-clause the past needs the pluperfect subjunctive: hubiera estudiado, not habría estudiado.",
+        "es": "En la cláusula con si, el pasado necesita el pluscuamperfecto de subjuntivo: hubiera estudiado, no habría estudiado."
+      },
+      "tr": {
+        "en": "If I had studied more, I would have passed the exam.",
+        "es": "Si hubiera estudiado más, habría aprobado el examen."
+      }
+    },
+    {
+      "id": "ct2-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "Si hubieramos llegado antes, habríamos conseguido lugar.",
+      "wrongIndex": 1,
+      "answer": "hubiéramos",
+      "accept": [
+        "hubiésemos"
+      ],
+      "explain": {
+        "en": "The nosotros form of hubiera has a written accent: hubiéramos (hubiésemos).",
+        "es": "La forma nosotros de hubiera lleva tilde: hubiéramos (hubiésemos)."
+      },
+      "tr": {
+        "en": "If we had arrived earlier, we would have found a place.",
+        "es": "Si hubiéramos llegado antes, habríamos conseguido lugar."
+      }
+    },
+    {
+      "id": "ct2-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "Si yo fuera tú, hablé con él.",
+      "wrongIndex": 4,
+      "answer": "hablaría",
+      "explain": {
+        "en": "The other half of an unreal present condition takes the conditional: hablaría.",
+        "es": "La otra mitad de una condición irreal de presente lleva el condicional: hablaría."
+      },
+      "tr": {
+        "en": "If I were you, I would talk to him.",
+        "es": "Si yo fuera tú, hablaría con él."
+      }
+    },
+    {
+      "id": "ct2-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "Si hubiera hacido ejercicio, estaría más sano.",
+      "wrongIndex": 2,
+      "answer": "hecho",
+      "explain": {
+        "en": "Hacer has an irregular participle: hecho, not hacido.",
+        "es": "Hacer tiene participio irregular: hecho, no hacido."
+      },
+      "tr": {
+        "en": "If I had exercised, I would be healthier.",
+        "es": "Si hubiera hecho ejercicio, estaría más sano."
+      }
+    },
+    {
+      "id": "ct2-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "tener",
+        "comer",
+        "correr"
+      ],
+      "es": "Si ___ más dinero, compraría ese carro.",
+      "word": "tener",
+      "answer": "tuviera",
+      "accept": [
+        "tuviese"
+      ],
+      "tr": {
+        "en": "If I had more money, I would buy that car.",
+        "es": "Si tuviera más dinero, compraría ese carro."
+      },
+      "why": {
+        "en": "Only tener makes sense with más dinero: si + tuviera.",
+        "es": "Solo tener tiene sentido con más dinero: si + tuviera."
+      }
+    },
+    {
+      "id": "ct2-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "saber",
+        "dormir",
+        "beber"
+      ],
+      "es": "Si yo ___ tu número, te llamaría.",
+      "word": "saber",
+      "answer": "supiera",
+      "accept": [
+        "supiese"
+      ],
+      "tr": {
+        "en": "If I knew your number, I would call you.",
+        "es": "Si yo supiera tu número, te llamaría."
+      },
+      "why": {
+        "en": "You know a number, so saber fits: supiera (strong stem sup-).",
+        "es": "Un número se sabe, así que saber encaja: supiera (raíz fuerte sup-)."
+      }
+    },
+    {
+      "id": "ct2-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "estudiar",
+        "reír",
+        "cocinar"
+      ],
+      "es": "Si ___ más, habrías aprobado el examen.",
+      "word": "estudiar",
+      "answer": "hubieras estudiado",
+      "accept": [
+        "hubieses estudiado"
+      ],
+      "tr": {
+        "en": "If you had studied more, you would have passed the exam.",
+        "es": "Si hubieras estudiado más, habrías aprobado el examen."
+      },
+      "why": {
+        "en": "Only estudiar leads to passing an exam: hubieras estudiado.",
+        "es": "Solo estudiar lleva a aprobar un examen: hubieras estudiado."
+      }
+    },
+    {
+      "id": "ct2-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "venir",
+        "pagar",
+        "romper"
+      ],
+      "es": "Si tuvieras tiempo, ___ a mi fiesta.",
+      "word": "venir",
+      "answer": "vendrías",
+      "tr": {
+        "en": "If you had time, you would come to my party.",
+        "es": "Si tuvieras tiempo, vendrías a mi fiesta."
+      },
+      "why": {
+        "en": "Only venir takes a (to my party); the conditional has a strong stem: vendrías.",
+        "es": "Solo venir lleva a (a mi fiesta); el condicional tiene raíz fuerte: vendrías."
+      }
+    },
+    {
+      "id": "ct2-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "aprobar",
+        "viajar",
+        "cocinar"
+      ],
+      "es": "Si él hubiera estudiado, ___ el examen.",
+      "word": "aprobar",
+      "answer": "habría aprobado",
+      "accept": [
+        "hubiera aprobado",
+        "hubiese aprobado"
+      ],
+      "tr": {
+        "en": "If he had studied, he would have passed the exam.",
+        "es": "Si él hubiera estudiado, habría aprobado el examen."
+      },
+      "why": {
+        "en": "You pass an exam, so aprobar fits: habría aprobado (conditional perfect).",
+        "es": "Un examen se aprueba, así que aprobar encaja: habría aprobado (condicional compuesto)."
+      }
+    },
+    {
+      "id": "ct2-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "If I were you.",
+        "es": "Si yo fuera tú."
+      },
+      "es": "Si yo fuera tú."
+    },
+    {
+      "id": "ct2-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "I wish I had studied more.",
+        "es": "Ojalá hubiera estudiado más."
+      },
+      "es": "Ojalá hubiera estudiado más."
+    },
+    {
+      "id": "ct2-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "I would not have done it.",
+        "es": "No lo habría hecho."
+      },
+      "es": "No lo habría hecho."
+    },
+    {
+      "id": "ct2-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "If I had known.",
+        "es": "Si lo hubiera sabido."
+      },
+      "es": "Si lo hubiera sabido."
+    },
+    {
+      "id": "ct2-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "We would never have arrived.",
+        "es": "Nunca habríamos llegado."
+      },
+      "es": "Nunca habríamos llegado."
     }
   ]
 }

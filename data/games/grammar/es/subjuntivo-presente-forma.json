@@ -2666,6 +2666,336 @@
         "en": "Negated “pienso” expresses doubt, so it takes the subjunctive. Pedir is a stem-changing verb (e→i), it changes in nosotros too: pidan.",
         "es": "El “pienso” negado expresa duda, por eso pide subjuntivo. Pedir es un verbo con cambio vocálico (e→i), también cambia en nosotros: pidan."
       }
+    },
+    {
+      "id": "sp-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Mi mamá quiere que yo ___ (comer) más verduras, que ___ (tener) cuidado y que ___ (ser) feliz.",
+      "answers": [
+        "coma",
+        "tenga",
+        "sea"
+      ],
+      "tr": {
+        "en": "My mom wants me to eat more vegetables, to be careful and to be happy.",
+        "es": "Mi mamá quiere que yo coma (comer) más verduras, que tenga (tener) cuidado y que sea (ser) feliz."
+      },
+      "why": {
+        "en": "After querer + que the verb is subjunctive: yo coma (regular, ending swapped), tenga (tengo → tenga), sea (ser is irregular).",
+        "es": "Después de querer + que el verbo va en subjuntivo: yo coma (regular, terminación invertida), tenga (tengo → tenga), sea (ser es irregular)."
+      }
+    },
+    {
+      "id": "sp-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Es posible que mañana ___ (hacer) frío y que nosotros no ___ (poder) salir. Dudo que mi hermano ___ (saber) qué hacer.",
+      "answers": [
+        "haga",
+        "podamos",
+        "sepa"
+      ],
+      "tr": {
+        "en": "It is possible that it will be cold tomorrow and that we cannot go out. I doubt that my brother knows what to do.",
+        "es": "Es posible que mañana haga (hacer) frío y que nosotros no podamos (poder) salir. Dudo que mi hermano sepa (saber) qué hacer."
+      },
+      "why": {
+        "en": "Es posible que and dudar que take the subjunctive: haga (hago → haga), podamos (poder changes o→ue only for yo, tú, él, ellos), sepa (irregular).",
+        "es": "Es posible que y dudar que llevan subjuntivo: haga (hago → haga), podamos (poder cambia o→ue solo en yo, tú, él, ellos), sepa (irregular)."
+      }
+    },
+    {
+      "id": "sp-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Espero que ustedes ___ (ir) a la fiesta y que ___ (pedir) pizza. Es mejor que yo ___ (hablar) poco.",
+      "answers": [
+        "vayan",
+        "pidan",
+        "hable"
+      ],
+      "tr": {
+        "en": "I hope you go to the party and order pizza. It is better that I talk little.",
+        "es": "Espero que ustedes vayan (ir) a la fiesta y que pidan (pedir) pizza. Es mejor que yo hable (hablar) poco."
+      },
+      "why": {
+        "en": "Esperar que and es mejor que take the subjunctive: vayan (ir is irregular), pidan (pedir: pido → pida), hable (-ar verb, the ending swaps to -e).",
+        "es": "Esperar que y es mejor que llevan subjuntivo: vayan (ir es irregular), pidan (pedir: pido → pida), hable (verbo en -ar, la terminación pasa a -e)."
+      }
+    },
+    {
+      "id": "sp-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Ojalá que tú ___ (vivir) cerca y que ___ (venir) a mi casa. No creo que yo ___ (tener) tiempo hoy.",
+      "answers": [
+        "vivas",
+        "vengas",
+        "tenga"
+      ],
+      "tr": {
+        "en": "I hope you live nearby and come to my house. I don't think I have time today.",
+        "es": "Ojalá que tú vivas (vivir) cerca y que vengas (venir) a mi casa. No creo que yo tenga (tener) tiempo hoy."
+      },
+      "why": {
+        "en": "Ojalá que and no creer que take the subjunctive: vivas (-ir verb, ending swaps to -as), vengas (vengo → vengas), tenga (tengo → tenga).",
+        "es": "Ojalá que y no creer que llevan subjuntivo: vivas (verbo en -ir, la terminación pasa a -as), vengas (vengo → vengas), tenga (tengo → tenga)."
+      }
+    },
+    {
+      "id": "sp-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Mi profesora pide que nosotros ___ (hablar) español, que ___ (ser) puntuales y que ___ (pedir) ayuda.",
+      "answers": [
+        "hablemos",
+        "seamos",
+        "pidamos"
+      ],
+      "tr": {
+        "en": "My teacher asks us to speak Spanish, to be on time and to ask for help.",
+        "es": "Mi profesora pide que nosotros hablemos (hablar) español, que seamos (ser) puntuales y que pidamos (pedir) ayuda."
+      },
+      "why": {
+        "en": "Pedir que takes the subjunctive; for nosotros: hablemos (-ar: -emos), seamos, pidamos.",
+        "es": "Pedir que lleva subjuntivo; para nosotros: hablemos (-ar: -emos), seamos, pidamos."
+      }
+    },
+    {
+      "id": "sp-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "Espero que tú hablas con ella.",
+      "wrongIndex": 3,
+      "answer": "hables",
+      "explain": {
+        "en": "After esperar que the verb is subjunctive: tú hables, not the indicative hablas.",
+        "es": "Después de esperar que el verbo va en subjuntivo: tú hables, no el indicativo hablas."
+      },
+      "tr": {
+        "en": "I hope you talk to her.",
+        "es": "Espero que tú hables con ella."
+      }
+    },
+    {
+      "id": "sp-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "Quiero que ella tiene más tiempo.",
+      "wrongIndex": 3,
+      "answer": "tenga",
+      "explain": {
+        "en": "After querer que the verb is subjunctive: tengo → tenga for ella.",
+        "es": "Después de querer que el verbo va en subjuntivo: tengo → tenga para ella."
+      },
+      "tr": {
+        "en": "I want her to have more time.",
+        "es": "Quiero que ella tenga más tiempo."
+      }
+    },
+    {
+      "id": "sp-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "Es posible que yo sepo la respuesta.",
+      "wrongIndex": 4,
+      "answer": "sepa",
+      "explain": {
+        "en": "Saber is irregular in the subjunctive: sepa, not sepo.",
+        "es": "Saber es irregular en el subjuntivo: sepa, no sepo."
+      },
+      "tr": {
+        "en": "It is possible that I know the answer.",
+        "es": "Es posible que yo sepa la respuesta."
+      }
+    },
+    {
+      "id": "sp-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "Espero que ustedes van a la fiesta.",
+      "wrongIndex": 3,
+      "answer": "vayan",
+      "explain": {
+        "en": "Ir is irregular in the subjunctive: ustedes vayan, not the indicative van.",
+        "es": "Ir es irregular en el subjuntivo: ustedes vayan, no el indicativo van."
+      },
+      "tr": {
+        "en": "I hope you go to the party.",
+        "es": "Espero que ustedes vayan a la fiesta."
+      }
+    },
+    {
+      "id": "sp-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "Mi madre quiere que yo soy feliz.",
+      "wrongIndex": 5,
+      "answer": "sea",
+      "explain": {
+        "en": "After querer que the verb is subjunctive: ser → yo sea, not soy.",
+        "es": "Después de querer que el verbo va en subjuntivo: ser → yo sea, no soy."
+      },
+      "tr": {
+        "en": "My mother wants me to be happy.",
+        "es": "Mi madre quiere que yo sea feliz."
+      }
+    },
+    {
+      "id": "sp-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "comer",
+        "vivir",
+        "hablar"
+      ],
+      "es": "Es posible que nosotros ___ tacos esta noche.",
+      "word": "comer",
+      "answer": "comamos",
+      "tr": {
+        "en": "It is possible that we eat tacos tonight.",
+        "es": "Es posible que nosotros comamos tacos esta noche."
+      },
+      "why": {
+        "en": "Es posible que takes the subjunctive; comer, nosotros: comamos.",
+        "es": "Es posible que lleva subjuntivo; comer, nosotros: comamos."
+      }
+    },
+    {
+      "id": "sp-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "tener",
+        "ser",
+        "ir"
+      ],
+      "es": "Espero que tú ___ muy feliz.",
+      "word": "ser",
+      "answer": "seas",
+      "tr": {
+        "en": "I hope you are very happy.",
+        "es": "Espero que tú seas muy feliz."
+      },
+      "why": {
+        "en": "Esperar que takes the subjunctive; ser is irregular, tú: seas.",
+        "es": "Esperar que lleva subjuntivo; ser es irregular, tú: seas."
+      }
+    },
+    {
+      "id": "sp-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "ir",
+        "hacer",
+        "saber"
+      ],
+      "es": "Quiero que ustedes ___ al cine conmigo.",
+      "word": "ir",
+      "answer": "vayan",
+      "tr": {
+        "en": "I want you to go to the cinema with me.",
+        "es": "Quiero que ustedes vayan al cine conmigo."
+      },
+      "why": {
+        "en": "Querer que takes the subjunctive; ir is irregular, ustedes: vayan.",
+        "es": "Querer que lleva subjuntivo; ir es irregular, ustedes: vayan."
+      }
+    },
+    {
+      "id": "sp-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "pedir",
+        "poder",
+        "vivir"
+      ],
+      "es": "Es mejor que yo ___ la cuenta ahora.",
+      "word": "pedir",
+      "answer": "pida",
+      "tr": {
+        "en": "It is better that I ask for the bill now.",
+        "es": "Es mejor que yo pida la cuenta ahora."
+      },
+      "why": {
+        "en": "Es mejor que takes the subjunctive; pedir, yo: pido → pida.",
+        "es": "Es mejor que lleva subjuntivo; pedir, yo: pido → pida."
+      }
+    },
+    {
+      "id": "sp-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "saber",
+        "vivir",
+        "ir"
+      ],
+      "es": "Dudo que él ___ la respuesta.",
+      "word": "saber",
+      "answer": "sepa",
+      "tr": {
+        "en": "I doubt that he knows the answer.",
+        "es": "Dudo que él sepa la respuesta."
+      },
+      "why": {
+        "en": "Dudar que takes the subjunctive; saber is irregular, él: sepa.",
+        "es": "Dudar que lleva subjuntivo; saber es irregular, él: sepa."
+      }
+    },
+    {
+      "id": "sp-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "I want you to have a lot of luck.",
+        "es": "Quiero que tengas mucha suerte."
+      },
+      "es": "Quiero que tengas mucha suerte."
+    },
+    {
+      "id": "sp-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "It is possible that she goes to the cinema.",
+        "es": "Es posible que ella vaya al cine."
+      },
+      "es": "Es posible que ella vaya al cine."
+    },
+    {
+      "id": "sp-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "I hope you know the truth.",
+        "es": "Espero que ustedes sepan la verdad."
+      },
+      "es": "Espero que ustedes sepan la verdad."
+    },
+    {
+      "id": "sp-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "My mom wants me to eat more.",
+        "es": "Mi mamá quiere que yo coma más."
+      },
+      "es": "Mi mamá quiere que yo coma más."
+    },
+    {
+      "id": "sp-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "I doubt that he can come.",
+        "es": "Dudo que él pueda venir."
+      },
+      "es": "Dudo que él pueda venir."
     }
   ]
 }

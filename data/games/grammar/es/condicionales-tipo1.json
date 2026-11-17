@@ -803,6 +803,482 @@
         }
       ],
       "correctIndex": 0
+    },
+    {
+      "id": "ct-tr-01",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "en": "If you study, you pass the exam. (future)",
+        "es": "Si estudias, apruebas el examen. (futuro)"
+      },
+      "answer": "Si estudias, aprobarás el examen.",
+      "accept": [
+        "Aprobarás el examen si estudias.",
+        "Si tú estudias, aprobarás el examen.",
+        "Si estudias, tú aprobarás el examen."
+      ],
+      "wordIds": [
+        "6",
+        "212",
+        "781"
+      ],
+      "why": {
+        "en": "Si + present, future: a certain consequence. The si-clause stays in the present (estudias), the result goes into the futuro: aprobar → aprobarás.",
+        "es": "Si + presente, futuro: una consecuencia segura. La oración con si queda en presente (estudias), el resultado pasa al futuro: aprobar → aprobarás."
+      }
+    },
+    {
+      "id": "ct-tr-02",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "en": "If it is cold, we do not go out. (future)",
+        "es": "Si hace frío, no salimos. (futuro)"
+      },
+      "answer": "Si hace frío, no saldremos.",
+      "accept": [
+        "No saldremos si hace frío.",
+        "Si hace frío, nosotros no saldremos.",
+        "Nosotros no saldremos si hace frío."
+      ],
+      "wordIds": [
+        "6",
+        "76",
+        "138",
+        "5",
+        "199"
+      ],
+      "why": {
+        "en": "Si + present, future: a certain consequence. Salir has a short stem in the futuro: saldremos.",
+        "es": "Si + presente, futuro: una consecuencia segura. Salir tiene raíz corta en el futuro: saldremos."
+      }
+    },
+    {
+      "id": "ct-tr-03",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "en": "If I have time, I call you. (future)",
+        "es": "Si tengo tiempo, te llamo. (futuro)"
+      },
+      "answer": "Si tengo tiempo, te llamaré.",
+      "accept": [
+        "Te llamaré si tengo tiempo.",
+        "Si tengo tiempo, yo te llamaré.",
+        "Yo te llamaré si tengo tiempo."
+      ],
+      "wordIds": [
+        "6",
+        "16",
+        "89"
+      ],
+      "why": {
+        "en": "Si + present, future: after si the verb stays in the present (tengo, not tendré); the result takes the futuro: llamaré.",
+        "es": "Si + presente, futuro: después de si el verbo queda en presente (tengo, no tendré); el resultado lleva futuro: llamaré."
+      }
+    },
+    {
+      "id": "ct-tr-04",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "en": "If she comes, I make dinner. (future)",
+        "es": "Si ella viene, yo hago la cena. (futuro)"
+      },
+      "answer": "Si ella viene, yo haré la cena.",
+      "accept": [
+        "Si ella viene, haré la cena.",
+        "Haré la cena si ella viene.",
+        "Yo haré la cena si ella viene."
+      ],
+      "wordIds": [
+        "6",
+        "80",
+        "76",
+        "877"
+      ],
+      "why": {
+        "en": "Si + present, future: the si-clause stays in the present (viene), the result takes the futuro. Hacer has a short stem: haré.",
+        "es": "Si + presente, futuro: la oración con si queda en presente (viene), el resultado lleva futuro. Hacer tiene raíz corta: haré."
+      }
+    },
+    {
+      "id": "ct-tr-05",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "If I have money, I buy a car. (ir a)",
+        "es": "Si tengo dinero, compro un carro. (ir a)"
+      },
+      "answer": "Si tengo dinero, voy a comprar un carro.",
+      "accept": [
+        "Voy a comprar un carro si tengo dinero.",
+        "Si tengo dinero, yo voy a comprar un carro.",
+        "Yo voy a comprar un carro si tengo dinero."
+      ],
+      "wordIds": [
+        "6",
+        "16",
+        "144",
+        "33"
+      ],
+      "why": {
+        "en": "Si + present, ir a + infinitive: a certain plan. The si-clause stays in the present (tengo), the result takes ir a + infinitivo: voy a comprar.",
+        "es": "Si + presente, ir a + infinitivo: un plan seguro. La oración con si queda en presente (tengo), el resultado lleva ir a + infinitivo: voy a comprar."
+      }
+    },
+    {
+      "id": "ct-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Si ___ (hacer) sol mañana, ___ (ir, nosotros, futuro) al parque y ___ (comer, nosotros, futuro) afuera.",
+      "answers": [
+        "hace",
+        "iremos",
+        "comeremos"
+      ],
+      "tr": {
+        "en": "If it is sunny tomorrow, we will go to the park and eat outside.",
+        "es": "Si hace (hacer) sol mañana, iremos (ir, nosotros, futuro) al parque y comeremos (comer, nosotros, futuro) afuera."
+      },
+      "why": {
+        "en": "After si the verb stays in the present (hace, not hará); the result takes the futuro: iremos, comeremos.",
+        "es": "Después de si el verbo queda en presente (hace, no hará); el resultado lleva futuro: iremos, comeremos."
+      }
+    },
+    {
+      "id": "ct-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Si ___ (tener, tú) sed, ___ (beber, ¡tú!) agua. Si no ___ (saber, tú) la respuesta, ___ (preguntar, ¡tú!) a tu profesora.",
+      "answers": [
+        "tienes",
+        "bebe",
+        "sabes",
+        "pregunta"
+      ],
+      "tr": {
+        "en": "If you are thirsty, drink water. If you do not know the answer, ask your teacher.",
+        "es": "Si tienes (tener, tú) sed, bebe (beber, ¡tú!) agua. Si no sabes (saber, tú) la respuesta, pregunta (preguntar, ¡tú!) a tu profesora."
+      },
+      "why": {
+        "en": "Si + present, imperative: advice or an instruction. The si-clause stays in the present (tienes, sabes); the result is a command (bebe, pregunta).",
+        "es": "Si + presente, imperativo: un consejo o una instrucción. La oración con si queda en presente (tienes, sabes); el resultado es una orden (bebe, pregunta)."
+      }
+    },
+    {
+      "id": "ct-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Si ___ (estudiar, yo) mucho, ___ (aprobar, yo, futuro) el examen. Si ___ (aprobar, yo), ___ (celebrar, yo, futuro) con mi familia.",
+      "answers": [
+        "estudio",
+        "aprobaré",
+        "apruebo",
+        "celebraré"
+      ],
+      "tr": {
+        "en": "If I study a lot, I will pass the exam. If I pass, I will celebrate with my family.",
+        "es": "Si estudio (estudiar, yo) mucho, aprobaré (aprobar, yo, futuro) el examen. Si apruebo (aprobar, yo), celebraré (celebrar, yo, futuro) con mi familia."
+      },
+      "why": {
+        "en": "After si the verb stays in the present (estudio, apruebo); the result takes the futuro: aprobaré, celebraré.",
+        "es": "Después de si el verbo queda en presente (estudio, apruebo); el resultado lleva futuro: aprobaré, celebraré."
+      }
+    },
+    {
+      "id": "ct-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Si mi amigo ___ (venir) a México, nosotros ___ (ir, futuro) a Oaxaca. Si ___ (hacer) calor, ___ (comer, nosotros, futuro) en el jardín.",
+      "answers": [
+        "viene",
+        "iremos",
+        "hace",
+        "comeremos"
+      ],
+      "tr": {
+        "en": "If my friend comes to Mexico, we will go to Oaxaca. If it is hot, we will eat in the garden.",
+        "es": "Si mi amigo viene (venir) a México, nosotros iremos (ir, futuro) a Oaxaca. Si hace (hacer) calor, comeremos (comer, nosotros, futuro) en el jardín."
+      },
+      "why": {
+        "en": "After si the verb stays in the present (viene, hace); the result takes the futuro: iremos, comeremos.",
+        "es": "Después de si el verbo queda en presente (viene, hace); el resultado lleva futuro: iremos, comeremos."
+      }
+    },
+    {
+      "id": "ct-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Si ___ (tener, nosotros) tiempo, ___ (hablar, nosotros, presente) con el jefe. Si él ___ (decir) que sí, ___ (empezar, nosotros, futuro) el lunes.",
+      "answers": [
+        "tenemos",
+        "hablamos",
+        "dice",
+        "empezaremos"
+      ],
+      "tr": {
+        "en": "If we have time, we talk to the boss. If he says yes, we will start on Monday.",
+        "es": "Si tenemos (tener, nosotros) tiempo, hablamos (hablar, nosotros, presente) con el jefe. Si él dice (decir) que sí, empezaremos (empezar, nosotros, futuro) el lunes."
+      },
+      "why": {
+        "en": "After si the verb stays in the present (tenemos, dice); the result takes the present (a habit or plan) or the futuro: hablamos, empezaremos.",
+        "es": "Después de si el verbo queda en presente (tenemos, dice); el resultado lleva presente (un hábito o plan) o futuro: hablamos, empezaremos."
+      }
+    },
+    {
+      "id": "ct-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "Si tendré tiempo, te llamo.",
+      "wrongIndex": 1,
+      "answer": "tengo",
+      "explain": {
+        "en": "After si the verb stays in the present: tengo, not the future tendré.",
+        "es": "Después de si el verbo queda en presente: tengo, no el futuro tendré."
+      },
+      "tr": {
+        "en": "If I have time, I will call you.",
+        "es": "Si tengo tiempo, te llamo."
+      }
+    },
+    {
+      "id": "ct-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "Si estudiarás, aprobarás el examen.",
+      "wrongIndex": 1,
+      "answer": "estudias",
+      "explain": {
+        "en": "After si the verb stays in the present: estudias, not the future estudiarás.",
+        "es": "Después de si el verbo queda en presente: estudias, no el futuro estudiarás."
+      },
+      "tr": {
+        "en": "If you study, you will pass the exam.",
+        "es": "Si estudias, aprobarás el examen."
+      }
+    },
+    {
+      "id": "ct-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "Si tienes sed, bebas agua.",
+      "wrongIndex": 3,
+      "answer": "bebe",
+      "explain": {
+        "en": "A command after si + present is the imperative: bebe (tú), not the subjunctive bebas.",
+        "es": "Una orden después de si + presente es el imperativo: bebe (tú), no el subjuntivo bebas."
+      },
+      "tr": {
+        "en": "If you are thirsty, drink water.",
+        "es": "Si tienes sed, bebe agua."
+      }
+    },
+    {
+      "id": "ct-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "Si ella viene, yo haga la cena.",
+      "wrongIndex": 4,
+      "answer": "haré",
+      "accept": [
+        "hago"
+      ],
+      "explain": {
+        "en": "The result of si + present is in the indicative (futuro haré or present hago), not in the subjunctive haga.",
+        "es": "El resultado de si + presente va en indicativo (futuro haré o presente hago), no en subjuntivo haga."
+      },
+      "tr": {
+        "en": "If she comes, I will make dinner.",
+        "es": "Si ella viene, yo haré la cena."
+      }
+    },
+    {
+      "id": "ct-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "Si ustedes llegarían temprano, cenamos juntos.",
+      "wrongIndex": 2,
+      "answer": "llegan",
+      "explain": {
+        "en": "A real condition takes the present after si: llegan, not the condicional llegarían.",
+        "es": "Una condición real lleva presente después de si: llegan, no el condicional llegarían."
+      },
+      "tr": {
+        "en": "If you arrive early, we have dinner together.",
+        "es": "Si ustedes llegan temprano, cenamos juntos."
+      }
+    },
+    {
+      "id": "ct-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "estudiar",
+        "comer",
+        "vivir"
+      ],
+      "es": "Si tú ___ mucho, apruebas el examen.",
+      "word": "estudiar",
+      "answer": "estudias",
+      "tr": {
+        "en": "If you study a lot, you pass the exam.",
+        "es": "Si tú estudias mucho, apruebas el examen."
+      },
+      "why": {
+        "en": "After si the verb stays in the present; estudiar, tú: estudias.",
+        "es": "Después de si el verbo queda en presente; estudiar, tú: estudias."
+      }
+    },
+    {
+      "id": "ct-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "tener",
+        "ser",
+        "ir"
+      ],
+      "es": "Si yo ___ frío, me pongo un abrigo.",
+      "word": "tener",
+      "answer": "tengo",
+      "tr": {
+        "en": "If I am cold, I put on a coat.",
+        "es": "Si yo tengo frío, me pongo un abrigo."
+      },
+      "why": {
+        "en": "After si the verb stays in the present; tener, yo: tengo.",
+        "es": "Después de si el verbo queda en presente; tener, yo: tengo."
+      }
+    },
+    {
+      "id": "ct-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "venir",
+        "hacer",
+        "ser"
+      ],
+      "es": "Si ella ___ a mi casa, hacemos la cena.",
+      "word": "venir",
+      "answer": "viene",
+      "tr": {
+        "en": "If she comes to my house, we make dinner.",
+        "es": "Si ella viene a mi casa, hacemos la cena."
+      },
+      "why": {
+        "en": "After si the verb stays in the present; venir, ella: viene.",
+        "es": "Después de si el verbo queda en presente; venir, ella: viene."
+      }
+    },
+    {
+      "id": "ct-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "llegar",
+        "comer",
+        "leer"
+      ],
+      "es": "Si nosotros ___ a casa temprano, vemos la película.",
+      "word": "llegar",
+      "answer": "llegamos",
+      "tr": {
+        "en": "If we get home early, we watch the movie.",
+        "es": "Si nosotros llegamos a casa temprano, vemos la película."
+      },
+      "why": {
+        "en": "After si the verb stays in the present; llegar, nosotros: llegamos.",
+        "es": "Después de si el verbo queda en presente; llegar, nosotros: llegamos."
+      }
+    },
+    {
+      "id": "ct-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "saber",
+        "ir",
+        "vivir"
+      ],
+      "es": "Si tú ___ la respuesta, ayuda a tu hermano.",
+      "word": "saber",
+      "answer": "sabes",
+      "tr": {
+        "en": "If you know the answer, help your brother.",
+        "es": "Si tú sabes la respuesta, ayuda a tu hermano."
+      },
+      "why": {
+        "en": "After si the verb stays in the present; saber, tú: sabes.",
+        "es": "Después de si el verbo queda en presente; saber, tú: sabes."
+      }
+    },
+    {
+      "id": "ct-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "And what if it is cold?",
+        "es": "¿Y si hace frío?"
+      },
+      "es": "¿Y si hace frío?"
+    },
+    {
+      "id": "ct-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "And what if you don't know?",
+        "es": "¿Y si no sabes?"
+      },
+      "es": "¿Y si no sabes?"
+    },
+    {
+      "id": "ct-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "Only if you have time.",
+        "es": "Solo si tienes tiempo."
+      },
+      "es": "Solo si tienes tiempo."
+    },
+    {
+      "id": "ct-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "And what if you don't come?",
+        "es": "¿Y si no vienes?"
+      },
+      "es": "¿Y si no vienes?"
+    },
+    {
+      "id": "ct-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "Only if it doesn't rain.",
+        "es": "Solo si no llueve."
+      },
+      "es": "Solo si no llueve."
     }
   ]
 }

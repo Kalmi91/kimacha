@@ -1017,6 +1017,481 @@
       ],
       "correctIndex": 0,
       "tense": { "from": "presente", "to": "subjuntivo-presente" }
+    },
+    {
+      "id": "sp-tr-01",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      },
+      "prompt": {
+        "en": "You come soon. (I want…)",
+        "es": "Vienes pronto. (Quiero que…)"
+      },
+      "answer": "Quiero que vengas pronto.",
+      "accept": [
+        "Quiero que tú vengas pronto."
+      ],
+      "wordIds": [
+        "80",
+        "175",
+        "23"
+      ],
+      "why": {
+        "en": "A wish about someone else: querer que takes the subjunctive. Venir, tú: vienes → vengas.",
+        "es": "Un deseo sobre otra persona: querer que pide subjuntivo. Venir, tú: vienes → vengas."
+      }
+    },
+    {
+      "id": "sp-tr-02",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      },
+      "prompt": {
+        "en": "She has time. (I doubt that…)",
+        "es": "Ella tiene tiempo. (Dudo que…)"
+      },
+      "answer": "Dudo que ella tenga tiempo.",
+      "accept": [
+        "Dudo que tenga tiempo."
+      ],
+      "wordIds": [
+        "16",
+        "817"
+      ],
+      "why": {
+        "en": "Doubt: dudar que takes the subjunctive. Tener, ella: tiene → tenga.",
+        "es": "Duda: dudar que pide subjuntivo. Tener, ella: tiene → tenga."
+      }
+    },
+    {
+      "id": "sp-tr-03",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      },
+      "prompt": {
+        "en": "We do the homework today. (It is important that…)",
+        "es": "Hacemos la tarea hoy. (Es importante que…)"
+      },
+      "answer": "Es importante que hagamos la tarea hoy.",
+      "accept": [
+        "Es importante que nosotros hagamos la tarea hoy."
+      ],
+      "wordIds": [
+        "76",
+        "52",
+        "11",
+        "298"
+      ],
+      "why": {
+        "en": "An evaluation: es importante que takes the subjunctive. Hacer, nosotros: hacemos → hagamos.",
+        "es": "Una valoración: es importante que pide subjuntivo. Hacer, nosotros: hacemos → hagamos."
+      }
+    },
+    {
+      "id": "sp-tr-04",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      },
+      "prompt": {
+        "en": "You know the truth. (I don't think that…)",
+        "es": "Ustedes saben la verdad. (No creo que…)"
+      },
+      "answer": "No creo que ustedes sepan la verdad.",
+      "accept": [
+        "No creo que sepan la verdad."
+      ],
+      "wordIds": [
+        "74",
+        "5",
+        "215"
+      ],
+      "why": {
+        "en": "A denied opinion: no creer que takes the subjunctive. Saber, ustedes: saben → sepan.",
+        "es": "Una opinión negada: no creer que pide subjuntivo. Saber, ustedes: saben → sepan."
+      }
+    },
+    {
+      "id": "sp-tr-05",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "subjuntivo-presente"
+      },
+      "prompt": {
+        "en": "My brother comes to the party. (I am glad that…)",
+        "es": "Mi hermano viene a la fiesta. (Me alegro de que…)"
+      },
+      "answer": "Me alegro de que mi hermano venga a la fiesta.",
+      "wordIds": [
+        "80",
+        "812",
+        "81"
+      ],
+      "why": {
+        "en": "An emotion: me alegro de que takes the subjunctive. Venir, él: viene → venga.",
+        "es": "Una emoción: me alegro de que pide subjuntivo. Venir, él: viene → venga."
+      }
+    },
+    {
+      "id": "sp-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Creo que ella ___ (venir) mañana, pero no creo que ___ (tener) tiempo para la cena. Espero que ___ (poder) llegar temprano.",
+      "answers": [
+        "viene",
+        "tenga",
+        "pueda"
+      ],
+      "accept": [
+        [
+          "vendrá"
+        ],
+        [],
+        []
+      ],
+      "tr": {
+        "en": "I think she is coming tomorrow, but I don't think she has time for dinner. I hope she can arrive early.",
+        "es": "Creo que ella viene (venir) mañana, pero no creo que tenga (tener) tiempo para la cena. Espero que pueda (poder) llegar temprano."
+      },
+      "why": {
+        "en": "Creo que states a belief: indicative (viene). No creo que and esperar que take the subjunctive (tenga, pueda).",
+        "es": "Creo que afirma una creencia: indicativo (viene). No creo que y esperar que llevan subjuntivo (tenga, pueda)."
+      }
+    },
+    {
+      "id": "sp-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Mi jefe sabe que yo ___ (llegar) tarde. Quiere que yo ___ (llegar) temprano y que ___ (estar) en la oficina a las ocho.",
+      "answers": [
+        "llego",
+        "llegue",
+        "esté"
+      ],
+      "accept": [
+        [
+          "llegué",
+          "llegaba",
+          "llegaré"
+        ],
+        [],
+        []
+      ],
+      "tr": {
+        "en": "My boss knows that I arrive late. He wants me to arrive early and to be at the office at eight.",
+        "es": "Mi jefe sabe que yo llego (llegar) tarde. Quiere que yo llegue (llegar) temprano y que esté (estar) en la oficina a las ocho."
+      },
+      "why": {
+        "en": "Saber que states a fact: indicative (llego). Querer que takes the subjunctive (llegue, esté).",
+        "es": "Saber que afirma un hecho: indicativo (llego). Querer que lleva subjuntivo (llegue, esté)."
+      }
+    },
+    {
+      "id": "sp-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Es verdad que Ana ___ (ser) mexicana. Dudo que ___ (vivir) en la ciudad y es posible que ___ (venir) mañana.",
+      "answers": [
+        "es",
+        "viva",
+        "venga"
+      ],
+      "tr": {
+        "en": "It is true that Ana is Mexican. I doubt that she lives in the city and it is possible that she comes tomorrow.",
+        "es": "Es verdad que Ana es (ser) mexicana. Dudo que viva (vivir) en la ciudad y es posible que venga (venir) mañana."
+      },
+      "why": {
+        "en": "Es verdad que states a fact: indicative (es). Dudar que and es posible que take the subjunctive (viva, venga).",
+        "es": "Es verdad que afirma un hecho: indicativo (es). Dudar que y es posible que llevan subjuntivo (viva, venga)."
+      }
+    },
+    {
+      "id": "sp-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Me gusta que ustedes ___ (hablar) español. Sé que ustedes ___ (ir) a México en verano y espero que ___ (ver) muchas cosas.",
+      "answers": [
+        "hablen",
+        "van",
+        "vean"
+      ],
+      "accept": [
+        [],
+        [
+          "irán"
+        ],
+        []
+      ],
+      "tr": {
+        "en": "I like that you speak Spanish. I know that you are going to Mexico in summer and I hope you see many things.",
+        "es": "Me gusta que ustedes hablen (hablar) español. Sé que ustedes van (ir) a México en verano y espero que vean (ver) muchas cosas."
+      },
+      "why": {
+        "en": "Me gusta que and esperar que take the subjunctive (hablen, vean). Sé que states a fact: indicative (van).",
+        "es": "Me gusta que y esperar que llevan subjuntivo (hablen, vean). Sé que afirma un hecho: indicativo (van)."
+      }
+    },
+    {
+      "id": "sp-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Pienso que tú ___ (tener) razón. No pienso que ellos ___ (poder) ayudarnos hoy. Es mejor que nosotros ___ (pedir) ayuda mañana.",
+      "answers": [
+        "tienes",
+        "puedan",
+        "pidamos"
+      ],
+      "tr": {
+        "en": "I think you are right. I don't think they can help us today. It is better that we ask for help tomorrow.",
+        "es": "Pienso que tú tienes (tener) razón. No pienso que ellos puedan (poder) ayudarnos hoy. Es mejor que nosotros pidamos (pedir) ayuda mañana."
+      },
+      "why": {
+        "en": "Pienso que states an opinion: indicative (tienes). No pienso que and es mejor que take the subjunctive (puedan, pidamos).",
+        "es": "Pienso que expresa una opinión: indicativo (tienes). No pienso que y es mejor que llevan subjuntivo (puedan, pidamos)."
+      }
+    },
+    {
+      "id": "sp-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "No creo que ella viene hoy.",
+      "wrongIndex": 4,
+      "answer": "venga",
+      "explain": {
+        "en": "No creo que expresses a denied opinion, so the subjunctive follows: venga, not viene.",
+        "es": "No creo que expresa una opinión negada, por eso sigue el subjuntivo: venga, no viene."
+      },
+      "tr": {
+        "en": "I don't think she is coming today.",
+        "es": "No creo que ella venga hoy."
+      }
+    },
+    {
+      "id": "sp-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "Creo que ellos vengan mañana.",
+      "wrongIndex": 3,
+      "answer": "vienen",
+      "explain": {
+        "en": "Creo que states a belief, so the indicative follows: vienen, not vengan.",
+        "es": "Creo que afirma una creencia, por eso sigue el indicativo: vienen, no vengan."
+      },
+      "tr": {
+        "en": "I think they are coming tomorrow.",
+        "es": "Creo que ellos vienen mañana."
+      }
+    },
+    {
+      "id": "sp-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "Quiero que tú haces la tarea.",
+      "wrongIndex": 3,
+      "answer": "hagas",
+      "explain": {
+        "en": "Querer que takes the subjunctive: hacer → tú hagas, not haces.",
+        "es": "Querer que lleva subjuntivo: hacer → tú hagas, no haces."
+      },
+      "tr": {
+        "en": "I want you to do the homework.",
+        "es": "Quiero que tú hagas la tarea."
+      }
+    },
+    {
+      "id": "sp-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "Es posible que nosotros vamos al cine.",
+      "wrongIndex": 4,
+      "answer": "vayamos",
+      "explain": {
+        "en": "Es posible que takes the subjunctive: ir → nosotros vayamos, not vamos.",
+        "es": "Es posible que lleva subjuntivo: ir → nosotros vayamos, no vamos."
+      },
+      "tr": {
+        "en": "It is possible that we go to the cinema.",
+        "es": "Es posible que nosotros vayamos al cine."
+      }
+    },
+    {
+      "id": "sp-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "Sé que él tenga razón.",
+      "wrongIndex": 3,
+      "answer": "tiene",
+      "explain": {
+        "en": "Saber que states a fact, so the indicative follows: tiene, not tenga.",
+        "es": "Saber que afirma un hecho, por eso sigue el indicativo: tiene, no tenga."
+      },
+      "tr": {
+        "en": "I know that he is right.",
+        "es": "Sé que él tiene razón."
+      }
+    },
+    {
+      "id": "sp-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "venir",
+        "tener",
+        "saber"
+      ],
+      "es": "Me alegro de que tú ___ a mi fiesta.",
+      "word": "venir",
+      "answer": "vengas",
+      "tr": {
+        "en": "I am glad you are coming to my party.",
+        "es": "Me alegro de que tú vengas a mi fiesta."
+      },
+      "why": {
+        "en": "An emotion: me alegro de que takes the subjunctive; venir, tú: vengas.",
+        "es": "Una emoción: me alegro de que lleva subjuntivo; venir, tú: vengas."
+      }
+    },
+    {
+      "id": "sp-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "ser",
+        "ir",
+        "hacer"
+      ],
+      "es": "No creo que ella ___ la jefa.",
+      "word": "ser",
+      "answer": "sea",
+      "tr": {
+        "en": "I don't think she is the boss.",
+        "es": "No creo que ella sea la jefa."
+      },
+      "why": {
+        "en": "A denied opinion: no creer que takes the subjunctive; ser, ella: sea.",
+        "es": "Una opinión negada: no creer que lleva subjuntivo; ser, ella: sea."
+      }
+    },
+    {
+      "id": "sp-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "saber",
+        "ir",
+        "venir"
+      ],
+      "es": "Es importante que todos ___ la hora.",
+      "word": "saber",
+      "answer": "sepan",
+      "tr": {
+        "en": "It is important that everyone knows the time.",
+        "es": "Es importante que todos sepan la hora."
+      },
+      "why": {
+        "en": "An evaluation: es importante que takes the subjunctive; saber, todos: sepan.",
+        "es": "Una valoración: es importante que lleva subjuntivo; saber, todos: sepan."
+      }
+    },
+    {
+      "id": "sp-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "hacer",
+        "ser",
+        "ir"
+      ],
+      "es": "Quiero que ustedes ___ la cena hoy.",
+      "word": "hacer",
+      "answer": "hagan",
+      "tr": {
+        "en": "I want you to make dinner today.",
+        "es": "Quiero que ustedes hagan la cena hoy."
+      },
+      "why": {
+        "en": "A wish: querer que takes the subjunctive; hacer, ustedes: hagan.",
+        "es": "Un deseo: querer que lleva subjuntivo; hacer, ustedes: hagan."
+      }
+    },
+    {
+      "id": "sp-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "tener",
+        "ir",
+        "saber"
+      ],
+      "es": "Sé que mi hermano ___ muchos amigos.",
+      "word": "tener",
+      "answer": "tiene",
+      "tr": {
+        "en": "I know that my brother has many friends.",
+        "es": "Sé que mi hermano tiene muchos amigos."
+      },
+      "why": {
+        "en": "Saber que states a fact, so the indicative follows; tener, él: tiene.",
+        "es": "Saber que afirma un hecho, por eso sigue el indicativo; tener, él: tiene."
+      }
+    },
+    {
+      "id": "sp-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "I don't think she is right.",
+        "es": "No creo que ella tenga razón."
+      },
+      "es": "No creo que ella tenga razón."
+    },
+    {
+      "id": "sp-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "I want you to come with me.",
+        "es": "Quiero que vengas conmigo."
+      },
+      "es": "Quiero que vengas conmigo."
+    },
+    {
+      "id": "sp-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "I know my brother has a car.",
+        "es": "Sé que mi hermano tiene un carro."
+      },
+      "es": "Sé que mi hermano tiene un carro."
+    },
+    {
+      "id": "sp-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "It is important that everyone knows the truth.",
+        "es": "Es importante que todos sepan la verdad."
+      },
+      "es": "Es importante que todos sepan la verdad."
+    },
+    {
+      "id": "sp-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "I am glad you are coming.",
+        "es": "Me alegro de que vengas."
+      },
+      "es": "Me alegro de que vengas."
     }
   ]
 }
