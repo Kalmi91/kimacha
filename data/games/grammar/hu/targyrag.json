@@ -279,6 +279,7 @@
       "kind": "form",
       "verb": "tea",
       "person": "-t",
+      "q": { "en": "Add the object ending to \"tea\". How does the word read when it is the object of the sentence?", "es": "Añade la terminación de objeto a «tea». ¿Cómo queda la palabra cuando es el objeto de la oración?" },
       "answer": "teát",
       "table": "acc-vowel"
     },
@@ -309,6 +310,7 @@
       "kind": "form",
       "verb": "kutya",
       "person": "-t",
+      "q": { "en": "Add the object ending to \"kutya\". How does the word read when it is the object of the sentence?", "es": "Añade la terminación de objeto a «kutya». ¿Cómo queda la palabra cuando es el objeto de la oración?" },
       "answer": "kutyát",
       "table": "acc-vowel"
     },
@@ -339,6 +341,7 @@
       "kind": "form",
       "verb": "autó",
       "person": "-t",
+      "q": { "en": "Add the object ending to \"autó\". How does the word read when it is the object of the sentence?", "es": "Añade la terminación de objeto a «autó». ¿Cómo queda la palabra cuando es el objeto de la oración?" },
       "answer": "autót",
       "table": "acc-vowel"
     },
@@ -405,6 +408,7 @@
       "kind": "form",
       "verb": "macska",
       "person": "-t",
+      "q": { "en": "Add the object ending to \"macska\". How does the word read when it is the object of the sentence?", "es": "Añade la terminación de objeto a «macska». ¿Cómo queda la palabra cuando es el objeto de la oración?" },
       "answer": "macskát",
       "table": "acc-vowel"
     },
@@ -435,6 +439,7 @@
       "kind": "form",
       "verb": "ablak",
       "person": "-t",
+      "q": { "en": "Add the object ending to \"ablak\". How does the word read when it is the object of the sentence?", "es": "Añade la terminación de objeto a «ablak». ¿Cómo queda la palabra cuando es el objeto de la oración?" },
       "answer": "ablakot",
       "table": "acc-consonant"
     },
@@ -465,6 +470,7 @@
       "kind": "form",
       "verb": "bérlet",
       "person": "-t",
+      "q": { "en": "Add the object ending to \"bérlet\". How does the word read when it is the object of the sentence?", "es": "Añade la terminación de objeto a «bérlet». ¿Cómo queda la palabra cuando es el objeto de la oración?" },
       "answer": "bérletet",
       "table": "acc-consonant"
     },
@@ -531,6 +537,7 @@
       "kind": "form",
       "verb": "gyümölcs",
       "person": "-t",
+      "q": { "en": "Add the object ending to \"gyümölcs\". How does the word read when it is the object of the sentence?", "es": "Añade la terminación de objeto a «gyümölcs». ¿Cómo queda la palabra cuando es el objeto de la oración?" },
       "answer": "gyümölcsöt",
       "table": "acc-consonant"
     },
@@ -561,6 +568,7 @@
       "kind": "form",
       "verb": "hal",
       "person": "-t",
+      "q": { "en": "Add the object ending to \"hal\". How does the word read when it is the object of the sentence?", "es": "Añade la terminación de objeto a «hal». ¿Cómo queda la palabra cuando es el objeto de la oración?" },
       "answer": "halat",
       "table": "acc-consonant"
     },
@@ -591,6 +599,7 @@
       "kind": "form",
       "verb": "hús",
       "person": "-t",
+      "q": { "en": "Add the object ending to \"hús\". How does the word read when it is the object of the sentence?", "es": "Añade la terminación de objeto a «hús». ¿Cómo queda la palabra cuando es el objeto de la oración?" },
       "answer": "húst",
       "table": "acc-only-t"
     },
@@ -657,6 +666,7 @@
       "kind": "form",
       "verb": "levél",
       "person": "-t",
+      "q": { "en": "Add the object ending to \"levél\". How does the word read when it is the object of the sentence?", "es": "Añade la terminación de objeto a «levél». ¿Cómo queda la palabra cuando es el objeto de la oración?" },
       "answer": "levelet",
       "table": "acc-short"
     },
@@ -687,6 +697,7 @@
       "kind": "form",
       "verb": "én",
       "person": "tárgyeset",
+      "q": { "en": "What is the object form (tárgyeset) of the pronoun \"én\"?", "es": "¿Cuál es la forma de objeto (tárgyeset) del pronombre «én»?" },
       "answer": "engem",
       "table": "acc-pronouns"
     },
@@ -717,6 +728,7 @@
       "kind": "form",
       "verb": "te",
       "person": "tárgyeset",
+      "q": { "en": "What is the object form (tárgyeset) of the pronoun \"te\"?", "es": "¿Cuál es la forma de objeto (tárgyeset) del pronombre «te»?" },
       "answer": "téged",
       "table": "acc-pronouns"
     },

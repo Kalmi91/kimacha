@@ -401,6 +401,7 @@
       "kind": "form",
       "verb": "maskulin",
       "person": "Akkusativ",
+      "q": { "en": "What is the definite article of a masculine noun in the accusative?", "es": "¿Cuál es el artículo determinado de un sustantivo masculino en acusativo?" },
       "answer": "den",
       "table": "kasus-bestimmt"
     },
@@ -441,6 +442,7 @@
       "kind": "form",
       "verb": "maskulin",
       "person": "Akkusativ",
+      "q": { "en": "What is the indefinite article of a masculine noun in the accusative?", "es": "¿Cuál es el artículo indeterminado de un sustantivo masculino en acusativo?" },
       "answer": "einen",
       "table": "kasus-unbestimmt"
     },
@@ -481,6 +483,7 @@
       "kind": "form",
       "verb": "bestimmt",
       "person": "der Hund",
+      "q": { "en": "Put \"der Hund\" into the accusative, with the definite article. How does it read as a direct object?", "es": "Pon «der Hund» en acusativo, con artículo determinado. ¿Cómo queda como complemento directo?" },
       "answer": "den Hund",
       "table": "nomen-akkusativ"
     },
@@ -560,6 +563,7 @@
       "kind": "form",
       "verb": "maskulin",
       "person": "Nominativ",
+      "q": { "en": "What is the definite article of a masculine noun in the nominative?", "es": "¿Cuál es el artículo determinado de un sustantivo masculino en nominativo?" },
       "answer": "der",
       "table": "kasus-bestimmt"
     },
@@ -600,6 +604,7 @@
       "kind": "form",
       "verb": "feminin",
       "person": "Akkusativ",
+      "q": { "en": "What is the indefinite article of a feminine noun in the accusative?", "es": "¿Cuál es el artículo indeterminado de un sustantivo femenino en acusativo?" },
       "answer": "eine",
       "table": "kasus-unbestimmt"
     },
@@ -640,6 +645,7 @@
       "kind": "form",
       "verb": "unbestimmt",
       "person": "der Tisch",
+      "q": { "en": "Put \"der Tisch\" into the accusative, with the indefinite article. How does it read as a direct object?", "es": "Pon «der Tisch» en acusativo, con artículo indeterminado. ¿Cómo queda como complemento directo?" },
       "answer": "einen Tisch",
       "table": "nomen-akkusativ"
     },
@@ -719,6 +725,7 @@
       "kind": "form",
       "verb": "feminin",
       "person": "Akkusativ",
+      "q": { "en": "What is the definite article of a feminine noun in the accusative?", "es": "¿Cuál es el artículo determinado de un sustantivo femenino en acusativo?" },
       "answer": "die",
       "table": "kasus-bestimmt"
     },
@@ -759,6 +766,7 @@
       "kind": "form",
       "verb": "neutral",
       "person": "Akkusativ",
+      "q": { "en": "What is the indefinite article of a neuter noun in the accusative?", "es": "¿Cuál es el artículo indeterminado de un sustantivo neutro en acusativo?" },
       "answer": "ein",
       "table": "kasus-unbestimmt"
     },
@@ -799,6 +807,7 @@
       "kind": "form",
       "verb": "bestimmt",
       "person": "die Katze",
+      "q": { "en": "Write the noun \"Katze\" with its definite article as a direct object (accusative).", "es": "Escribe el sustantivo «Katze» con su artículo determinado como complemento directo (acusativo)." },
       "answer": "die Katze",
       "table": "nomen-akkusativ"
     },
@@ -878,6 +887,7 @@
       "kind": "form",
       "verb": "Plural",
       "person": "Akkusativ",
+      "q": { "en": "What is the definite article of a plural noun in the accusative?", "es": "¿Cuál es el artículo determinado de un sustantivo plural en acusativo?" },
       "answer": "die",
       "table": "kasus-bestimmt"
     },
@@ -918,6 +928,7 @@
       "kind": "form",
       "verb": "maskulin",
       "person": "Nominativ",
+      "q": { "en": "What is the indefinite article of a masculine noun in the nominative?", "es": "¿Cuál es el artículo indeterminado de un sustantivo masculino en nominativo?" },
       "answer": "ein",
       "table": "kasus-unbestimmt"
     },
@@ -958,6 +969,7 @@
       "kind": "form",
       "verb": "unbestimmt",
       "person": "das Auto",
+      "q": { "en": "Put \"das Auto\" into the accusative, with the indefinite article. How does it read as a direct object?", "es": "Pon «das Auto» en acusativo, con artículo indeterminado. ¿Cómo queda como complemento directo?" },
       "answer": "ein Auto",
       "table": "nomen-akkusativ"
     },

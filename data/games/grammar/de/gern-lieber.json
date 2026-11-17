@@ -423,6 +423,7 @@
       "kind": "form",
       "verb": "gern",
       "person": "Komparativ",
+      "q": { "en": "What is the comparative of \"gern\"?", "es": "¿Cuál es el comparativo de «gern»?" },
       "answer": "lieber",
       "table": "gern-steigerung"
     },
@@ -582,6 +583,7 @@
       "kind": "form",
       "verb": "gern",
       "person": "Superlativ",
+      "q": { "en": "What is the superlative of \"gern\"? (with \"am\")", "es": "¿Cuál es el superlativo de «gern»? (con «am»)" },
       "answer": "am liebsten",
       "table": "gern-steigerung"
     },
@@ -741,6 +743,7 @@
       "kind": "form",
       "verb": "gut",
       "person": "Komparativ",
+      "q": { "en": "What is the comparative of \"gut\"?", "es": "¿Cuál es el comparativo de «gut»?" },
       "answer": "besser",
       "table": "gern-steigerung"
     },
@@ -900,6 +903,7 @@
       "kind": "form",
       "verb": "viel",
       "person": "Superlativ",
+      "q": { "en": "What is the superlative of \"viel\"? (with \"am\")", "es": "¿Cuál es el superlativo de «viel»? (con «am»)" },
       "answer": "am meisten",
       "table": "gern-steigerung"
     },

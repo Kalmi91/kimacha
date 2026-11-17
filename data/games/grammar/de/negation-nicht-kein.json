@@ -431,6 +431,7 @@
       "kind": "form",
       "verb": "Das ist ...",
       "person": "der Hund",
+      "q": { "en": "Which negative article completes \"Das ist ___ ...\" for \"der Hund\"?", "es": "¿Qué artículo negativo completa «Das ist ___ ...» para «der Hund»?" },
       "answer": "kein",
       "table": "kein-formen"
     },
@@ -471,6 +472,7 @@
       "kind": "form",
       "verb": "Negation",
       "person": "ein Auto",
+      "q": { "en": "How do you negate \"ein Auto\"? (write the negated phrase)", "es": "¿Cómo se niega «ein Auto»? (escribe la expresión negada)" },
       "answer": "kein Auto",
       "table": "negation-wort"
     },
@@ -511,6 +513,7 @@
       "kind": "form",
       "verb": "Ich habe ...",
       "person": "der Hund",
+      "q": { "en": "Which negative article completes \"Ich habe ___ ...\" for \"der Hund\"?", "es": "¿Qué artículo negativo completa «Ich habe ___ ...» para «der Hund»?" },
       "answer": "keinen",
       "table": "kein-formen"
     },
@@ -590,6 +593,7 @@
       "kind": "form",
       "verb": "Negation",
       "person": "eine Katze",
+      "q": { "en": "How do you negate \"eine Katze\"? (write the negated phrase)", "es": "¿Cómo se niega «eine Katze»? (escribe la expresión negada)" },
       "answer": "keine Katze",
       "table": "negation-wort"
     },
@@ -630,6 +634,7 @@
       "kind": "form",
       "verb": "Das ist ...",
       "person": "die Katze",
+      "q": { "en": "Which negative article completes \"Das ist ___ ...\" for \"die Katze\"?", "es": "¿Qué artículo negativo completa «Das ist ___ ...» para «die Katze»?" },
       "answer": "keine",
       "table": "kein-formen"
     },
@@ -670,6 +675,7 @@
       "kind": "form",
       "verb": "Negation",
       "person": "Zeit",
+      "q": { "en": "How do you negate \"Zeit\"? (write the negated phrase)", "es": "¿Cómo se niega «Zeit»? (escribe la expresión negada)" },
       "answer": "keine Zeit",
       "table": "negation-wort"
     },
@@ -749,6 +755,7 @@
       "kind": "form",
       "verb": "Ich habe ...",
       "person": "das Auto",
+      "q": { "en": "Which negative article completes \"Ich habe ___ ...\" for \"das Auto\"?", "es": "¿Qué artículo negativo completa «Ich habe ___ ...» para «das Auto»?" },
       "answer": "kein",
       "table": "kein-formen"
     },
@@ -789,6 +796,7 @@
       "kind": "form",
       "verb": "Negation",
       "person": "Kinder",
+      "q": { "en": "How do you negate \"Kinder\"? (write the negated phrase)", "es": "¿Cómo se niega «Kinder»? (escribe la expresión negada)" },
       "answer": "keine Kinder",
       "table": "negation-wort"
     },
@@ -829,6 +837,7 @@
       "kind": "form",
       "verb": "Ich habe ...",
       "person": "die Kinder",
+      "q": { "en": "Which negative article completes \"Ich habe ___ ...\" for \"die Kinder\"?", "es": "¿Qué artículo negativo completa «Ich habe ___ ...» para «die Kinder»?" },
       "answer": "keine",
       "table": "kein-formen"
     },
@@ -908,6 +917,7 @@
       "kind": "form",
       "verb": "Negation",
       "person": "gut",
+      "q": { "en": "How do you negate \"gut\"? (write the negated phrase)", "es": "¿Cómo se niega «gut»? (escribe la expresión negada)" },
       "answer": "nicht gut",
       "table": "negation-wort"
     },
@@ -948,6 +958,7 @@
       "kind": "form",
       "verb": "Ich habe ...",
       "person": "der Tisch",
+      "q": { "en": "Which negative article completes \"Ich habe ___ ...\" for \"der Tisch\"?", "es": "¿Qué artículo negativo completa «Ich habe ___ ...» para «der Tisch»?" },
       "answer": "keinen",
       "table": "kein-formen"
     },
@@ -988,6 +999,7 @@
       "kind": "form",
       "verb": "Negation",
       "person": "in Berlin",
+      "q": { "en": "How do you negate \"in Berlin\"? (write the negated phrase)", "es": "¿Cómo se niega «in Berlin»? (escribe la expresión negada)" },
       "answer": "nicht in Berlin",
       "table": "negation-wort"
     },

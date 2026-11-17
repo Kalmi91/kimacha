@@ -235,6 +235,7 @@
       "kind": "form",
       "verb": "singular",
       "person": "here",
+      "q": { "en": "Which word points at one thing close to you?", "es": "¿Qué palabra señala una sola cosa que está cerca de ti?" },
       "answer": "this",
       "table": "tt-forms"
     },
@@ -398,6 +399,7 @@
       "kind": "form",
       "verb": "plural",
       "person": "there",
+      "q": { "en": "Which word points at several things far from you?", "es": "¿Qué palabra señala varias cosas que están lejos de ti?" },
       "answer": "those",
       "table": "tt-forms"
     },
@@ -561,6 +563,7 @@
       "kind": "form",
       "verb": "plural",
       "person": "here",
+      "q": { "en": "Which word points at several things close to you?", "es": "¿Qué palabra señala varias cosas que están cerca de ti?" },
       "answer": "these",
       "table": "tt-forms"
     },
@@ -754,6 +757,7 @@
       "kind": "form",
       "verb": "singular",
       "person": "there",
+      "q": { "en": "Which word points at one thing far from you?", "es": "¿Qué palabra señala una sola cosa que está lejos de ti?" },
       "answer": "that",
       "table": "tt-forms"
     },

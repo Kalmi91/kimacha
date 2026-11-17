@@ -411,6 +411,7 @@
       "kind": "form",
       "verb": "feminin",
       "person": "ich",
+      "q": { "en": "Which possessive article for \"ich\" goes before a feminine noun (nominative)?", "es": "¿Qué artículo posesivo de «ich» va delante de un sustantivo femenino (nominativo)?" },
       "answer": "meine",
       "table": "possessiv"
     },
@@ -451,6 +452,7 @@
       "kind": "form",
       "verb": "Akkusativ",
       "person": "ich",
+      "q": { "en": "Which possessive article for \"ich\" goes before a masculine noun in the accusative?", "es": "¿Qué artículo posesivo de «ich» va delante de un sustantivo masculino en acusativo?" },
       "answer": "meinen",
       "table": "possessiv-akkusativ"
     },
@@ -491,6 +493,7 @@
       "kind": "form",
       "verb": "maskulin",
       "person": "du",
+      "q": { "en": "Which possessive article for \"du\" goes before a masculine noun (nominative)?", "es": "¿Qué artículo posesivo de «du» va delante de un sustantivo masculino (nominativo)?" },
       "answer": "dein",
       "table": "possessiv"
     },
@@ -570,6 +573,7 @@
       "kind": "form",
       "verb": "Akkusativ",
       "person": "du",
+      "q": { "en": "Which possessive article for \"du\" goes before a masculine noun in the accusative?", "es": "¿Qué artículo posesivo de «du» va delante de un sustantivo masculino en acusativo?" },
       "answer": "deinen",
       "table": "possessiv-akkusativ"
     },
@@ -610,6 +614,7 @@
       "kind": "form",
       "verb": "neutral",
       "person": "wir",
+      "q": { "en": "Which possessive article for \"wir\" goes before a neuter noun (nominative)?", "es": "¿Qué artículo posesivo de «wir» va delante de un sustantivo neutro (nominativo)?" },
       "answer": "unser",
       "table": "possessiv"
     },
@@ -650,6 +655,7 @@
       "kind": "form",
       "verb": "Akkusativ",
       "person": "sie",
+      "q": { "en": "Which possessive article for \"sie\" goes before a masculine noun in the accusative?", "es": "¿Qué artículo posesivo de «sie» va delante de un sustantivo masculino en acusativo?" },
       "answer": "ihren",
       "table": "possessiv-akkusativ"
     },
@@ -729,6 +735,7 @@
       "kind": "form",
       "verb": "Plural",
       "person": "ihr",
+      "q": { "en": "Which possessive article for \"ihr\" goes before a plural noun (nominative)?", "es": "¿Qué artículo posesivo de «ihr» va delante de un sustantivo plural (nominativo)?" },
       "answer": "eure",
       "table": "possessiv"
     },
@@ -769,6 +776,7 @@
       "kind": "form",
       "verb": "Akkusativ",
       "person": "wir",
+      "q": { "en": "Which possessive article for \"wir\" goes before a masculine noun in the accusative?", "es": "¿Qué artículo posesivo de «wir» va delante de un sustantivo masculino en acusativo?" },
       "answer": "unseren",
       "table": "possessiv-akkusativ"
     },
@@ -809,6 +817,7 @@
       "kind": "form",
       "verb": "feminin",
       "person": "er/es",
+      "q": { "en": "Which possessive article for \"er/es\" goes before a feminine noun (nominative)?", "es": "¿Qué artículo posesivo de «er/es» va delante de un sustantivo femenino (nominativo)?" },
       "answer": "seine",
       "table": "possessiv"
     },
@@ -888,6 +897,7 @@
       "kind": "form",
       "verb": "Akkusativ",
       "person": "ihr",
+      "q": { "en": "Which possessive article for \"ihr\" goes before a masculine noun in the accusative?", "es": "¿Qué artículo posesivo de «ihr» va delante de un sustantivo masculino en acusativo?" },
       "answer": "euren",
       "table": "possessiv-akkusativ"
     },
@@ -928,6 +938,7 @@
       "kind": "form",
       "verb": "maskulin",
       "person": "sie (Singular)",
+      "q": { "en": "Which possessive article for \"sie (Singular)\" goes before a masculine noun (nominative)?", "es": "¿Qué artículo posesivo de «sie (Singular)» va delante de un sustantivo masculino (nominativo)?" },
       "answer": "ihr",
       "table": "possessiv"
     },
@@ -968,6 +979,7 @@
       "kind": "form",
       "verb": "Nominativ",
       "person": "ihr",
+      "q": { "en": "Which possessive article for \"ihr\" goes before a masculine noun in the nominative?", "es": "¿Qué artículo posesivo de «ihr» va delante de un sustantivo masculino en nominativo?" },
       "answer": "euer",
       "table": "possessiv-akkusativ"
     },

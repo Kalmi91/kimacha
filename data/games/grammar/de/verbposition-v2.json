@@ -413,6 +413,7 @@
       "kind": "form",
       "verb": "ich",
       "person": "Heute + lernen",
+      "q": { "en": "The sentence starts with \"Heute\", the verb is \"lernen\" and the subject is \"I\". What follows \"Heute\"? (the verb form, then the subject)", "es": "La oración empieza con «Heute», el verbo es «lernen» y el sujeto es «yo». ¿Qué sigue a «Heute»? (el verbo conjugado y luego el sujeto)" },
       "answer": "lerne ich",
       "table": "v2-ich-du-wir"
     },
@@ -453,6 +454,7 @@
       "kind": "form",
       "verb": "er",
       "person": "Morgen + kommen",
+      "q": { "en": "The sentence starts with \"Morgen\", the verb is \"kommen\" and the subject is \"he\". What follows \"Morgen\"? (the verb form, then the subject)", "es": "La oración empieza con «Morgen», el verbo es «kommen» y el sujeto es «él». ¿Qué sigue a «Morgen»? (el verbo conjugado y luego el sujeto)" },
       "answer": "kommt er",
       "table": "v2-er-ihr-anna"
     },
@@ -493,6 +495,7 @@
       "kind": "form",
       "verb": "du",
       "person": "Morgen + kommen",
+      "q": { "en": "The sentence starts with \"Morgen\", the verb is \"kommen\" and the subject is \"you (informal, singular)\". What follows \"Morgen\"? (the verb form, then the subject)", "es": "La oración empieza con «Morgen», el verbo es «kommen» y el sujeto es «tú (informal, singular)». ¿Qué sigue a «Morgen»? (el verbo conjugado y luego el sujeto)" },
       "answer": "kommst du",
       "table": "v2-ich-du-wir"
     },
@@ -572,6 +575,7 @@
       "kind": "form",
       "verb": "ihr",
       "person": "Dann + gehen",
+      "q": { "en": "The sentence starts with \"Dann\", the verb is \"gehen\" and the subject is \"you (informal, plural)\". What follows \"Dann\"? (the verb form, then the subject)", "es": "La oración empieza con «Dann», el verbo es «gehen» y el sujeto es «vosotros (informal, plural)». ¿Qué sigue a «Dann»? (el verbo conjugado y luego el sujeto)" },
       "answer": "geht ihr",
       "table": "v2-er-ihr-anna"
     },
@@ -612,6 +616,7 @@
       "kind": "form",
       "verb": "wir",
       "person": "Dann + gehen",
+      "q": { "en": "The sentence starts with \"Dann\", the verb is \"gehen\" and the subject is \"we\". What follows \"Dann\"? (the verb form, then the subject)", "es": "La oración empieza con «Dann», el verbo es «gehen» y el sujeto es «nosotros». ¿Qué sigue a «Dann»? (el verbo conjugado y luego el sujeto)" },
       "answer": "gehen wir",
       "table": "v2-ich-du-wir"
     },
@@ -652,6 +657,7 @@
       "kind": "form",
       "verb": "Anna",
       "person": "Jetzt + arbeiten",
+      "q": { "en": "The sentence starts with \"Jetzt\", the verb is \"arbeiten\" and the subject is \"Anna\". What follows \"Jetzt\"? (the verb form, then the subject)", "es": "La oración empieza con «Jetzt», el verbo es «arbeiten» y el sujeto es «Anna». ¿Qué sigue a «Jetzt»? (el verbo conjugado y luego el sujeto)" },
       "answer": "arbeitet Anna",
       "table": "v2-er-ihr-anna"
     },
@@ -731,6 +737,7 @@
       "kind": "form",
       "verb": "du",
       "person": "Jetzt + arbeiten",
+      "q": { "en": "The sentence starts with \"Jetzt\", the verb is \"arbeiten\" and the subject is \"you (informal, singular)\". What follows \"Jetzt\"? (the verb form, then the subject)", "es": "La oración empieza con «Jetzt», el verbo es «arbeiten» y el sujeto es «tú (informal, singular)». ¿Qué sigue a «Jetzt»? (el verbo conjugado y luego el sujeto)" },
       "answer": "arbeitest du",
       "table": "v2-ich-du-wir"
     },
@@ -771,6 +778,7 @@
       "kind": "form",
       "verb": "ihr",
       "person": "In Köln + wohnen",
+      "q": { "en": "The sentence starts with \"In Köln\", the verb is \"wohnen\" and the subject is \"you (informal, plural)\". What follows \"In Köln\"? (the verb form, then the subject)", "es": "La oración empieza con «In Köln», el verbo es «wohnen» y el sujeto es «vosotros (informal, plural)». ¿Qué sigue a «In Köln»? (el verbo conjugado y luego el sujeto)" },
       "answer": "wohnt ihr",
       "table": "v2-er-ihr-anna"
     },
@@ -811,6 +819,7 @@
       "kind": "form",
       "verb": "ich",
       "person": "In Köln + wohnen",
+      "q": { "en": "The sentence starts with \"In Köln\", the verb is \"wohnen\" and the subject is \"I\". What follows \"In Köln\"? (the verb form, then the subject)", "es": "La oración empieza con «In Köln», el verbo es «wohnen» y el sujeto es «yo». ¿Qué sigue a «In Köln»? (el verbo conjugado y luego el sujeto)" },
       "answer": "wohne ich",
       "table": "v2-ich-du-wir"
     },
@@ -890,6 +899,7 @@
       "kind": "form",
       "verb": "Anna",
       "person": "Heute + lernen",
+      "q": { "en": "The sentence starts with \"Heute\", the verb is \"lernen\" and the subject is \"Anna\". What follows \"Heute\"? (the verb form, then the subject)", "es": "La oración empieza con «Heute», el verbo es «lernen» y el sujeto es «Anna». ¿Qué sigue a «Heute»? (el verbo conjugado y luego el sujeto)" },
       "answer": "lernt Anna",
       "table": "v2-er-ihr-anna"
     },
@@ -930,6 +940,7 @@
       "kind": "form",
       "verb": "wir",
       "person": "Heute + lernen",
+      "q": { "en": "The sentence starts with \"Heute\", the verb is \"lernen\" and the subject is \"we\". What follows \"Heute\"? (the verb form, then the subject)", "es": "La oración empieza con «Heute», el verbo es «lernen» y el sujeto es «nosotros». ¿Qué sigue a «Heute»? (el verbo conjugado y luego el sujeto)" },
       "answer": "lernen wir",
       "table": "v2-ich-du-wir"
     },
@@ -970,6 +981,7 @@
       "kind": "form",
       "verb": "er",
       "person": "Dann + gehen",
+      "q": { "en": "The sentence starts with \"Dann\", the verb is \"gehen\" and the subject is \"he\". What follows \"Dann\"? (the verb form, then the subject)", "es": "La oración empieza con «Dann», el verbo es «gehen» y el sujeto es «él». ¿Qué sigue a «Dann»? (el verbo conjugado y luego el sujeto)" },
       "answer": "geht er",
       "table": "v2-er-ihr-anna"
     },

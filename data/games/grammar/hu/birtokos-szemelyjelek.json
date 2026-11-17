@@ -731,6 +731,7 @@
       "kind": "form",
       "verb": "ház",
       "person": "én",
+      "q": { "en": "Put \"ház\" into the possessive form for én (my). How does the word read?", "es": "Pon «ház» en la forma posesiva de én (mi). ¿Cómo queda la palabra?" },
       "answer": "házam",
       "accept": [
         "a házam"
@@ -774,6 +775,7 @@
       "kind": "form",
       "verb": "kulcs",
       "person": "én",
+      "q": { "en": "Put \"kulcs\" into the possessive form for én (my). How does the word read?", "es": "Pon «kulcs» en la forma posesiva de én (mi). ¿Cómo queda la palabra?" },
       "answer": "kulcsom",
       "accept": [
         "a kulcsom"
@@ -817,6 +819,7 @@
       "kind": "form",
       "verb": "könyv",
       "person": "te",
+      "q": { "en": "Put \"könyv\" into the possessive form for te (your). How does the word read?", "es": "Pon «könyv» en la forma posesiva de te (tu). ¿Cómo queda la palabra?" },
       "answer": "könyved",
       "accept": [
         "a könyved"
@@ -899,6 +902,7 @@
       "kind": "form",
       "verb": "autó",
       "person": "én",
+      "q": { "en": "Put \"autó\" into the possessive form for én (my). How does the word read?", "es": "Pon «autó» en la forma posesiva de én (mi). ¿Cómo queda la palabra?" },
       "answer": "autóm",
       "accept": [
         "az autóm"
@@ -942,6 +946,7 @@
       "kind": "form",
       "verb": "kutya",
       "person": "te",
+      "q": { "en": "Put \"kutya\" into the possessive form for te (your). How does the word read?", "es": "Pon «kutya» en la forma posesiva de te (tu). ¿Cómo queda la palabra?" },
       "answer": "kutyád",
       "accept": [
         "a kutyád"
@@ -985,6 +990,7 @@
       "kind": "form",
       "verb": "főnök",
       "person": "ti",
+      "q": { "en": "Put \"főnök\" into the possessive form for ti (your, plural). How does the word read?", "es": "Pon «főnök» en la forma posesiva de ti (vuestro). ¿Cómo queda la palabra?" },
       "answer": "főnökötök",
       "accept": [
         "a főnökötök"
@@ -1028,6 +1034,7 @@
       "kind": "form",
       "verb": "ház",
       "person": "ti",
+      "q": { "en": "Put \"ház\" into the possessive form for ti (your, plural). How does the word read?", "es": "Pon «ház» en la forma posesiva de ti (vuestro). ¿Cómo queda la palabra?" },
       "answer": "házatok",
       "accept": [
         "a házatok"
@@ -1071,6 +1078,7 @@
       "kind": "form",
       "verb": "cipő",
       "person": "mi",
+      "q": { "en": "Put \"cipő\" into the possessive form for mi (our). How does the word read?", "es": "Pon «cipő» en la forma posesiva de mi (nuestro). ¿Cómo queda la palabra?" },
       "answer": "cipőnk",
       "accept": [
         "a cipőnk"
@@ -1114,6 +1122,7 @@
       "kind": "form",
       "verb": "barát",
       "person": "ő",
+      "q": { "en": "Put \"barát\" into the possessive form for ő (his, her). How does the word read?", "es": "Pon «barát» en la forma posesiva de ő (su). ¿Cómo queda la palabra?" },
       "answer": "barátja",
       "accept": [
         "a barátja"
@@ -1196,6 +1205,7 @@
       "kind": "form",
       "verb": "kutya",
       "person": "ők",
+      "q": { "en": "Put \"kutya\" into the possessive form for ők (their). How does the word read?", "es": "Pon «kutya» en la forma posesiva de ők (su, de ellos). ¿Cómo queda la palabra?" },
       "answer": "kutyájuk",
       "accept": [
         "a kutyájuk"
@@ -1239,6 +1249,7 @@
       "kind": "form",
       "verb": "apa",
       "person": "ő",
+      "q": { "en": "Put \"apa\" into the possessive form for ő (his, her). How does the word read?", "es": "Pon «apa» en la forma posesiva de ő (su). ¿Cómo queda la palabra?" },
       "answer": "apja",
       "accept": [
         "az apja"
@@ -1282,6 +1293,7 @@
       "kind": "form",
       "verb": "ház",
       "person": "mi",
+      "q": { "en": "Put \"ház\" into the possessive form for mi (our). How does the word read?", "es": "Pon «ház» en la forma posesiva de mi (nuestro). ¿Cómo queda la palabra?" },
       "answer": "házunk",
       "accept": [
         "a házunk"

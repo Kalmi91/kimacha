@@ -416,6 +416,7 @@
       "kind": "form",
       "verb": "maskulin",
       "person": "mit",
+      "q": { "en": "How do you write \"mit\" plus the definite article of a masculine noun (dative)?", "es": "¿Cómo se escribe «mit» con el artículo determinado de un sustantivo masculino (dativo)?" },
       "answer": "mit dem",
       "table": "dativ-artikel"
     },
@@ -456,6 +457,7 @@
       "kind": "form",
       "verb": "Kurzform",
       "person": "zu dem",
+      "q": { "en": "What is the contracted form of \"zu dem\"?", "es": "¿Cuál es la forma contraída de «zu dem»?" },
       "answer": "zum",
       "table": "dativ-kontraktion"
     },
@@ -496,6 +498,7 @@
       "kind": "form",
       "verb": "mit",
       "person": "der Zug",
+      "q": { "en": "Write \"mit\" followed by \"der Zug\" in the correct case (the dative).", "es": "Escribe «mit» seguido de «der Zug» en el caso correcto (dativo)." },
       "answer": "mit dem Zug",
       "table": "dativ-phrasen"
     },
@@ -575,6 +578,7 @@
       "kind": "form",
       "verb": "feminin",
       "person": "aus",
+      "q": { "en": "How do you write \"aus\" plus the definite article of a feminine noun (dative)?", "es": "¿Cómo se escribe «aus» con el artículo determinado de un sustantivo femenino (dativo)?" },
       "answer": "aus der",
       "table": "dativ-artikel"
     },
@@ -615,6 +619,7 @@
       "kind": "form",
       "verb": "Kurzform",
       "person": "zu der",
+      "q": { "en": "What is the contracted form of \"zu der\"?", "es": "¿Cuál es la forma contraída de «zu der»?" },
       "answer": "zur",
       "table": "dativ-kontraktion"
     },
@@ -655,6 +660,7 @@
       "kind": "form",
       "verb": "aus",
       "person": "die Familie",
+      "q": { "en": "Write \"aus\" followed by \"die Familie\" in the correct case (the dative).", "es": "Escribe «aus» seguido de «die Familie» en el caso correcto (dativo)." },
       "answer": "aus der Familie",
       "table": "dativ-phrasen"
     },
@@ -734,6 +740,7 @@
       "kind": "form",
       "verb": "Plural",
       "person": "bei",
+      "q": { "en": "How do you write \"bei\" plus the definite article of a plural noun (dative)?", "es": "¿Cómo se escribe «bei» con el artículo determinado de un sustantivo plural (dativo)?" },
       "answer": "bei den",
       "table": "dativ-artikel"
     },
@@ -774,6 +781,7 @@
       "kind": "form",
       "verb": "Kurzform",
       "person": "bei dem",
+      "q": { "en": "What is the contracted form of \"bei dem\"?", "es": "¿Cuál es la forma contraída de «bei dem»?" },
       "answer": "beim",
       "table": "dativ-kontraktion"
     },
@@ -814,6 +822,7 @@
       "kind": "form",
       "verb": "mit",
       "person": "die Kinder",
+      "q": { "en": "Write \"mit\" followed by \"die Kinder\" in the correct case (the dative).", "es": "Escribe «mit» seguido de «die Kinder» en el caso correcto (dativo)." },
       "answer": "mit den Kindern",
       "table": "dativ-phrasen"
     },
@@ -893,6 +902,7 @@
       "kind": "form",
       "verb": "neutral",
       "person": "nach",
+      "q": { "en": "How do you write \"nach\" plus the definite article of a neuter noun (dative)?", "es": "¿Cómo se escribe «nach» con el artículo determinado de un sustantivo neutro (dativo)?" },
       "answer": "nach dem",
       "table": "dativ-artikel"
     },
@@ -933,6 +943,7 @@
       "kind": "form",
       "verb": "Kurzform",
       "person": "von dem",
+      "q": { "en": "What is the contracted form of \"von dem\"?", "es": "¿Cuál es la forma contraída de «von dem»?" },
       "answer": "vom",
       "table": "dativ-kontraktion"
     },
@@ -973,6 +984,7 @@
       "kind": "form",
       "verb": "aus",
       "person": "das Haus",
+      "q": { "en": "Write \"aus\" followed by \"das Haus\" in the correct case (the dative).", "es": "Escribe «aus» seguido de «das Haus» en el caso correcto (dativo)." },
       "answer": "aus dem Haus",
       "table": "dativ-phrasen"
     },

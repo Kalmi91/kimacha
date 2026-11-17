@@ -330,6 +330,7 @@
       "kind": "form",
       "verb": "plural",
       "person": "city",
+      "q": { "en": "What is the plural of \"city\"?", "es": "¿Cuál es el plural de «city»?" },
       "answer": "cities",
       "table": "pl-forms"
     },
@@ -552,6 +553,7 @@
       "kind": "form",
       "verb": "plural",
       "person": "day",
+      "q": { "en": "What is the plural of \"day\"?", "es": "¿Cuál es el plural de «day»?" },
       "answer": "days",
       "table": "pl-forms"
     },
@@ -715,6 +717,7 @@
       "kind": "form",
       "verb": "plural",
       "person": "tooth",
+      "q": { "en": "What is the plural of \"tooth\"?", "es": "¿Cuál es el plural de «tooth»?" },
       "answer": "teeth",
       "table": "pl-forms"
     },
@@ -878,6 +881,7 @@
       "kind": "form",
       "verb": "plural",
       "person": "fish",
+      "q": { "en": "What is the plural of the noun for the animal that swims in a river or the sea and breathes through gills? (write the plural)", "es": "¿Cuál es el plural del sustantivo que nombra al animal que nada en el río o en el mar y respira por branquias?" },
       "answer": "fish",
       "table": "pl-forms"
     },

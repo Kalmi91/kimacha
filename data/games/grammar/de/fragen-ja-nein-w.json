@@ -381,6 +381,7 @@
       "kind": "form",
       "verb": "Fragewort",
       "person": "Anna kommt.",
+      "q": { "en": "Which question word asks for the answer \"Anna kommt.\"?", "es": "¿Qué palabra interrogativa pregunta por la respuesta «Anna kommt.»?" },
       "answer": "wer",
       "table": "fragewoerter"
     },
@@ -421,6 +422,7 @@
       "kind": "form",
       "verb": "du",
       "person": "wo + wohnen",
+      "q": { "en": "The question word is \"wo\", the verb is \"wohnen\" and the subject is \"you (informal, singular)\". What follows the question word? (verb form, then the pronoun)", "es": "La palabra interrogativa es «wo», el verbo es «wohnen» y el sujeto es «tú (informal, singular)». ¿Qué sigue a la palabra interrogativa? (el verbo conjugado y el pronombre)" },
       "answer": "wohnst du",
       "table": "frage-verb"
     },
@@ -461,6 +463,7 @@
       "kind": "form",
       "verb": "Fragewort",
       "person": "aus Mexiko",
+      "q": { "en": "Which question word asks for the answer \"aus Mexiko\"?", "es": "¿Qué palabra interrogativa pregunta por la respuesta «aus Mexiko»?" },
       "answer": "woher",
       "table": "fragewoerter"
     },
@@ -540,6 +543,7 @@
       "kind": "form",
       "verb": "ihr",
       "person": "woher + kommen",
+      "q": { "en": "The question word is \"woher\", the verb is \"kommen\" and the subject is \"you (informal, plural)\". What follows the question word? (verb form, then the pronoun)", "es": "La palabra interrogativa es «woher», el verbo es «kommen» y el sujeto es «vosotros (informal, plural)». ¿Qué sigue a la palabra interrogativa? (el verbo conjugado y el pronombre)" },
       "answer": "kommt ihr",
       "table": "frage-verb"
     },
@@ -580,6 +584,7 @@
       "kind": "form",
       "verb": "Fragewort",
       "person": "nach Hause",
+      "q": { "en": "Which question word asks for the answer \"nach Hause\"?", "es": "¿Qué palabra interrogativa pregunta por la respuesta «nach Hause»?" },
       "answer": "wohin",
       "table": "fragewoerter"
     },
@@ -620,6 +625,7 @@
       "kind": "form",
       "verb": "Sie",
       "person": "was + machen",
+      "q": { "en": "The question word is \"was\", the verb is \"machen\" and the subject is \"you (formal)\". What follows the question word? (verb form, then the pronoun)", "es": "La palabra interrogativa es «was», el verbo es «machen» y el sujeto es «usted (formal)». ¿Qué sigue a la palabra interrogativa? (el verbo conjugado y el pronombre)" },
       "answer": "machen Sie",
       "table": "frage-verb"
     },
@@ -699,6 +705,7 @@
       "kind": "form",
       "verb": "Fragewort",
       "person": "um acht Uhr",
+      "q": { "en": "Which question word asks for the answer \"um acht Uhr\"?", "es": "¿Qué palabra interrogativa pregunta por la respuesta «um acht Uhr»?" },
       "answer": "wann",
       "table": "fragewoerter"
     },
@@ -739,6 +746,7 @@
       "kind": "form",
       "verb": "du",
       "person": "wann + arbeiten",
+      "q": { "en": "The question word is \"wann\", the verb is \"arbeiten\" and the subject is \"you (informal, singular)\". What follows the question word? (verb form, then the pronoun)", "es": "La palabra interrogativa es «wann», el verbo es «arbeiten» y el sujeto es «tú (informal, singular)». ¿Qué sigue a la palabra interrogativa? (el verbo conjugado y el pronombre)" },
       "answer": "arbeitest du",
       "table": "frage-verb"
     },
@@ -779,6 +787,7 @@
       "kind": "form",
       "verb": "Fragewort",
       "person": "zwei",
+      "q": { "en": "Which question word asks for the answer \"zwei\"?", "es": "¿Qué palabra interrogativa pregunta por la respuesta «zwei»?" },
       "answer": "wie viele",
       "table": "fragewoerter"
     },
@@ -858,6 +867,7 @@
       "kind": "form",
       "verb": "Sie",
       "person": "wie + heißen",
+      "q": { "en": "The question word is \"wie\", the verb is \"heißen\" and the subject is \"you (formal)\". What follows the question word? (verb form, then the pronoun)", "es": "La palabra interrogativa es «wie», el verbo es «heißen» y el sujeto es «usted (formal)». ¿Qué sigue a la palabra interrogativa? (el verbo conjugado y el pronombre)" },
       "answer": "heißen Sie",
       "table": "frage-verb"
     },
@@ -898,6 +908,7 @@
       "kind": "form",
       "verb": "Fragewort",
       "person": "zehn Euro",
+      "q": { "en": "Which question word asks for the answer \"zehn Euro\"?", "es": "¿Qué palabra interrogativa pregunta por la respuesta «zehn Euro»?" },
       "answer": "wie viel",
       "table": "fragewoerter"
     },
@@ -938,6 +949,7 @@
       "kind": "form",
       "verb": "ihr",
       "person": "wo + wohnen",
+      "q": { "en": "The question word is \"wo\", the verb is \"wohnen\" and the subject is \"you (informal, plural)\". What follows the question word? (verb form, then the pronoun)", "es": "La palabra interrogativa es «wo», el verbo es «wohnen» y el sujeto es «vosotros (informal, plural)». ¿Qué sigue a la palabra interrogativa? (el verbo conjugado y el pronombre)" },
       "answer": "wohnt ihr",
       "table": "frage-verb"
     },

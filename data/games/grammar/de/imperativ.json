@@ -435,6 +435,7 @@
       "kind": "form",
       "verb": "kommen",
       "person": "du",
+      "q": { "en": "What is the imperative of \"kommen\" when you speak to \"du\"?", "es": "¿Cuál es el imperativo de «kommen» cuando le hablas a «du»?" },
       "answer": "komm",
       "table": "imperativ-regelmaessig"
     },
@@ -475,6 +476,7 @@
       "kind": "form",
       "verb": "sprechen",
       "person": "du",
+      "q": { "en": "What is the imperative of \"sprechen\" when you speak to \"du\"?", "es": "¿Cuál es el imperativo de «sprechen» cuando le hablas a «du»?" },
       "answer": "sprich",
       "table": "imperativ-stammwechsel"
     },
@@ -515,6 +517,7 @@
       "kind": "form",
       "verb": "aufstehen",
       "person": "du",
+      "q": { "en": "What is the imperative of \"aufstehen\" for \"du\"? (with the prefix separated)", "es": "¿Cuál es el imperativo de «aufstehen» para «du»? (con el prefijo separado)" },
       "answer": "steh auf",
       "table": "imperativ-trennbar"
     },
@@ -594,6 +597,7 @@
       "kind": "form",
       "verb": "arbeiten",
       "person": "du",
+      "q": { "en": "What is the imperative of \"arbeiten\" when you speak to \"du\"?", "es": "¿Cuál es el imperativo de «arbeiten» cuando le hablas a «du»?" },
       "answer": "arbeite",
       "table": "imperativ-regelmaessig"
     },
@@ -634,6 +638,7 @@
       "kind": "form",
       "verb": "nehmen",
       "person": "du",
+      "q": { "en": "What is the imperative of \"nehmen\" when you speak to \"du\"?", "es": "¿Cuál es el imperativo de «nehmen» cuando le hablas a «du»?" },
       "answer": "nimm",
       "table": "imperativ-stammwechsel"
     },
@@ -674,6 +679,7 @@
       "kind": "form",
       "verb": "aufmachen",
       "person": "ihr",
+      "q": { "en": "What is the imperative of \"aufmachen\" for \"ihr\"? (with the prefix separated)", "es": "¿Cuál es el imperativo de «aufmachen» para «ihr»? (con el prefijo separado)" },
       "answer": "macht auf",
       "table": "imperativ-trennbar"
     },
@@ -753,6 +759,7 @@
       "kind": "form",
       "verb": "sein",
       "person": "ihr",
+      "q": { "en": "What is the imperative of \"sein\" when you speak to \"ihr\"?", "es": "¿Cuál es el imperativo de «sein» cuando le hablas a «ihr»?" },
       "answer": "seid",
       "table": "imperativ-regelmaessig"
     },
@@ -793,6 +800,7 @@
       "kind": "form",
       "verb": "lesen",
       "person": "du",
+      "q": { "en": "What is the imperative of \"lesen\" when you speak to \"du\"?", "es": "¿Cuál es el imperativo de «lesen» cuando le hablas a «du»?" },
       "answer": "lies",
       "table": "imperativ-stammwechsel"
     },
@@ -833,6 +841,7 @@
       "kind": "form",
       "verb": "zumachen",
       "person": "Sie",
+      "q": { "en": "What is the imperative of \"zumachen\" for \"Sie\"? (with the prefix separated)", "es": "¿Cuál es el imperativo de «zumachen» para «Sie»? (con el prefijo separado)" },
       "answer": "machen Sie zu",
       "table": "imperativ-trennbar"
     },
@@ -912,6 +921,7 @@
       "kind": "form",
       "verb": "machen",
       "person": "Sie",
+      "q": { "en": "What is the imperative of \"machen\" when you address someone politely, in the formal way?", "es": "¿Cuál es el imperativo de «machen» cuando le hablas a alguien con cortesía, de forma formal?" },
       "answer": "machen Sie",
       "table": "imperativ-regelmaessig"
     },
@@ -952,6 +962,7 @@
       "kind": "form",
       "verb": "fahren",
       "person": "du",
+      "q": { "en": "What is the imperative of \"fahren\" when you speak to \"du\"?", "es": "¿Cuál es el imperativo de «fahren» cuando le hablas a «du»?" },
       "answer": "fahr",
       "table": "imperativ-stammwechsel"
     },
@@ -992,6 +1003,7 @@
       "kind": "form",
       "verb": "mitkommen",
       "person": "du",
+      "q": { "en": "What is the imperative of \"mitkommen\" for \"du\"? (with the prefix separated)", "es": "¿Cuál es el imperativo de «mitkommen» para «du»? (con el prefijo separado)" },
       "answer": "komm mit",
       "table": "imperativ-trennbar"
     },

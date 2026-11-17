@@ -421,6 +421,7 @@
       "kind": "form",
       "verb": "látni",
       "person": "én → téged",
+      "q": { "en": "Which form of the verb \"látni\" fits \"én → téged\" (subject → object)?", "es": "¿Qué forma del verbo «látni» corresponde a «én → téged» (sujeto → objeto)?" },
       "answer": "látlak",
       "table": "lak-lek-forms"
     },
@@ -461,6 +462,7 @@
       "kind": "form",
       "verb": "várni",
       "person": "én → titeket",
+      "q": { "en": "Which form of the verb \"várni\" fits \"én → titeket\" (subject → object)?", "es": "¿Qué forma del verbo «várni» corresponde a «én → titeket» (sujeto → objeto)?" },
       "answer": "várlak",
       "table": "lak-lek-forms"
     },
@@ -501,6 +503,7 @@
       "kind": "form",
       "verb": "hívni",
       "person": "én → téged",
+      "q": { "en": "Which form of the verb \"hívni\" fits \"én → téged\" (subject → object)?", "es": "¿Qué forma del verbo «hívni» corresponde a «én → téged» (sujeto → objeto)?" },
       "answer": "hívlak",
       "table": "lak-lek-forms"
     },
@@ -541,6 +544,7 @@
       "kind": "form",
       "verb": "hallgatni",
       "person": "én → téged",
+      "q": { "en": "Which form of the verb \"hallgatni\" fits \"én → téged\" (subject → object)?", "es": "¿Qué forma del verbo «hallgatni» corresponde a «én → téged» (sujeto → objeto)?" },
       "answer": "hallgatlak",
       "table": "lak-lek-forms"
     },
@@ -620,6 +624,7 @@
       "kind": "form",
       "verb": "szeretni",
       "person": "én → téged",
+      "q": { "en": "Which form of the verb \"szeretni\" fits \"én → téged\" (subject → object)?", "es": "¿Qué forma del verbo «szeretni» corresponde a «én → téged» (sujeto → objeto)?" },
       "answer": "szeretlek",
       "table": "lak-lek-forms"
     },
@@ -660,6 +665,7 @@
       "kind": "form",
       "verb": "keresni",
       "person": "én → titeket",
+      "q": { "en": "Which form of the verb \"keresni\" fits \"én → titeket\" (subject → object)?", "es": "¿Qué forma del verbo «keresni» corresponde a «én → titeket» (sujeto → objeto)?" },
       "answer": "kereslek",
       "table": "lak-lek-forms"
     },
@@ -700,6 +706,7 @@
       "kind": "form",
       "verb": "kérdezni",
       "person": "én → téged",
+      "q": { "en": "Which form of the verb \"kérdezni\" fits \"én → téged\" (subject → object)?", "es": "¿Qué forma del verbo «kérdezni» corresponde a «én → téged» (sujeto → objeto)?" },
       "answer": "kérdezlek",
       "table": "lak-lek-forms"
     },
@@ -811,6 +818,7 @@
       "kind": "form",
       "verb": "kérni",
       "person": "én → téged",
+      "q": { "en": "Which form of the verb \"kérni\" fits \"én → téged\" (subject → object)?", "es": "¿Qué forma del verbo «kérni» corresponde a «én → téged» (sujeto → objeto)?" },
       "answer": "kérlek",
       "table": "lak-lek-forms"
     },
@@ -851,6 +859,7 @@
       "kind": "form",
       "verb": "szeretni",
       "person": "én → őt",
+      "q": { "en": "Which form of the verb \"szeretni\" fits \"én → őt\" (subject → object)?", "es": "¿Qué forma del verbo «szeretni» corresponde a «én → őt» (sujeto → objeto)?" },
       "answer": "szeretem",
       "table": "lak-lek-overview"
     },
@@ -930,6 +939,7 @@
       "kind": "form",
       "verb": "szeretni",
       "person": "te → engem",
+      "q": { "en": "Which form of the verb \"szeretni\" fits \"te → engem\" (subject → object)?", "es": "¿Qué forma del verbo «szeretni» corresponde a «te → engem» (sujeto → objeto)?" },
       "answer": "szeretsz",
       "table": "lak-lek-overview"
     },
@@ -970,6 +980,7 @@
       "kind": "form",
       "verb": "szeretni",
       "person": "mi → téged",
+      "q": { "en": "Which form of the verb \"szeretni\" fits \"mi → téged\" (subject → object)?", "es": "¿Qué forma del verbo «szeretni» corresponde a «mi → téged» (sujeto → objeto)?" },
       "answer": "szeretünk",
       "table": "lak-lek-overview"
     },
@@ -1049,6 +1060,7 @@
       "kind": "form",
       "verb": "szeretni",
       "person": "ők → titeket",
+      "q": { "en": "Which form of the verb \"szeretni\" fits \"ők → titeket\" (subject → object)?", "es": "¿Qué forma del verbo «szeretni» corresponde a «ők → titeket» (sujeto → objeto)?" },
       "answer": "szeretnek",
       "table": "lak-lek-overview"
     },

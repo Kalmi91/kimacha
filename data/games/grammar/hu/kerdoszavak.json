@@ -230,6 +230,7 @@
       "kind": "form",
       "verb": "kérdőszó",
       "person": "válasz: otthon",
+      "q": { "en": "Which question word asks for the answer \"otthon\"?", "es": "¿Qué palabra interrogativa pregunta por la respuesta «otthon»?" },
       "answer": "hol",
       "table": "qw-answers"
     },
@@ -260,6 +261,7 @@
       "kind": "form",
       "verb": "kérdőszó",
       "person": "válasz: a boltba",
+      "q": { "en": "Which question word asks for the answer \"a boltba\"?", "es": "¿Qué palabra interrogativa pregunta por la respuesta «a boltba»?" },
       "answer": "hova",
       "accept": ["hová"],
       "table": "qw-answers"
@@ -291,6 +293,7 @@
       "kind": "form",
       "verb": "kérdőszó",
       "person": "válasz: holnap",
+      "q": { "en": "Which question word asks for the answer \"holnap\"?", "es": "¿Qué palabra interrogativa pregunta por la respuesta «holnap»?" },
       "answer": "mikor",
       "table": "qw-answers"
     },
@@ -357,6 +360,7 @@
       "kind": "form",
       "verb": "kérdőszó",
       "person": "válasz: mert fáradt vagyok",
+      "q": { "en": "Which question word asks for the answer \"mert fáradt vagyok\"?", "es": "¿Qué palabra interrogativa pregunta por la respuesta «mert fáradt vagyok»?" },
       "answer": "miért",
       "table": "qw-answers"
     },
@@ -387,6 +391,7 @@
       "kind": "form",
       "verb": "kérdőszó",
       "person": "válasz: Kati",
+      "q": { "en": "Which question word asks for the answer \"Kati\"?", "es": "¿Qué palabra interrogativa pregunta por la respuesta «Kati»?" },
       "answer": "ki",
       "table": "qw-answers"
     },
@@ -417,6 +422,7 @@
       "kind": "form",
       "verb": "kérdőszó",
       "person": "válasz: három gyerek",
+      "q": { "en": "Which question word asks for the answer \"három gyerek\"?", "es": "¿Qué palabra interrogativa pregunta por la respuesta «három gyerek»?" },
       "answer": "hány",
       "table": "qw-answers"
     },
@@ -483,6 +489,7 @@
       "kind": "form",
       "verb": "kérdőszó",
       "person": "válasz: tíz euró",
+      "q": { "en": "Which question word asks for the answer \"tíz euró\"?", "es": "¿Qué palabra interrogativa pregunta por la respuesta «tíz euró»?" },
       "answer": "mennyi",
       "table": "qw-answers"
     },
@@ -513,6 +520,7 @@
       "kind": "form",
       "verb": "kérdőszó",
       "person": "válasz: a kettes",
+      "q": { "en": "Which question word asks for the answer \"a kettes\"?", "es": "¿Qué palabra interrogativa pregunta por la respuesta «a kettes»?" },
       "answer": "melyik",
       "table": "qw-answers"
     },
@@ -543,6 +551,7 @@
       "kind": "form",
       "verb": "kérdőszó",
       "person": "válasz: nagy és olcsó",
+      "q": { "en": "Which question word asks for the answer \"nagy és olcsó\"?", "es": "¿Qué palabra interrogativa pregunta por la respuesta «nagy és olcsó»?" },
       "answer": "milyen",
       "table": "qw-answers"
     },
@@ -609,6 +618,7 @@
       "kind": "form",
       "verb": "kérdőszó",
       "person": "válasz: busszal",
+      "q": { "en": "Which question word asks for the answer \"busszal\"?", "es": "¿Qué palabra interrogativa pregunta por la respuesta «busszal»?" },
       "answer": "hogyan",
       "accept": ["hogy"],
       "table": "qw-answers"
@@ -640,6 +650,7 @@
       "kind": "form",
       "verb": "kérdőszó",
       "person": "válasz: Szegedről",
+      "q": { "en": "Which question word asks for the answer \"Szegedről\"?", "es": "¿Qué palabra interrogativa pregunta por la respuesta «Szegedről»?" },
       "answer": "honnan",
       "table": "qw-answers"
     },
@@ -670,6 +681,7 @@
       "kind": "form",
       "verb": "kérdőszó",
       "person": "válasz: egy telefon",
+      "q": { "en": "Which question word asks for the answer \"egy telefon\"?", "es": "¿Qué palabra interrogativa pregunta por la respuesta «egy telefon»?" },
       "answer": "mi",
       "table": "qw-answers"
     },

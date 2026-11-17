@@ -433,6 +433,7 @@
       "kind": "form",
       "verb": "bestimmt",
       "person": "maskulin",
+      "q": { "en": "What is the definite article of a masculine noun?", "es": "¿Cuál es el artículo determinado de un sustantivo masculino?" },
       "answer": "der",
       "table": "artikel-tabelle"
     },
@@ -473,6 +474,7 @@
       "kind": "form",
       "verb": "Artikel",
       "person": "Katze",
+      "q": { "en": "Which definite article goes with the noun \"Katze\"?", "es": "¿Qué artículo determinado lleva el sustantivo «Katze»?" },
       "answer": "die",
       "table": "nomen-artikel"
     },
@@ -513,6 +515,7 @@
       "kind": "form",
       "verb": "unbestimmt",
       "person": "feminin",
+      "q": { "en": "What is the indefinite article of a feminine noun?", "es": "¿Cuál es el artículo indeterminado de un sustantivo femenino?" },
       "answer": "eine",
       "table": "artikel-tabelle"
     },
@@ -592,6 +595,7 @@
       "kind": "form",
       "verb": "Artikel",
       "person": "Hund",
+      "q": { "en": "Which definite article goes with the noun \"Hund\"?", "es": "¿Qué artículo determinado lleva el sustantivo «Hund»?" },
       "answer": "der",
       "table": "nomen-artikel"
     },
@@ -632,6 +636,7 @@
       "kind": "form",
       "verb": "Pronomen",
       "person": "neutral",
+      "q": { "en": "Which pronoun replaces a neuter noun (like he, she or it)?", "es": "¿Qué pronombre sustituye a un sustantivo neutro?" },
       "answer": "es",
       "table": "artikel-tabelle"
     },
@@ -672,6 +677,7 @@
       "kind": "form",
       "verb": "Artikel",
       "person": "Kind",
+      "q": { "en": "Which definite article goes with the noun \"Kind\"?", "es": "¿Qué artículo determinado lleva el sustantivo «Kind»?" },
       "answer": "das",
       "table": "nomen-artikel"
     },
@@ -751,6 +757,7 @@
       "kind": "form",
       "verb": "bestimmt",
       "person": "feminin",
+      "q": { "en": "What is the definite article of a feminine noun?", "es": "¿Cuál es el artículo determinado de un sustantivo femenino?" },
       "answer": "die",
       "table": "artikel-tabelle"
     },
@@ -791,6 +798,7 @@
       "kind": "form",
       "verb": "Artikel",
       "person": "Zeitung",
+      "q": { "en": "Which definite article goes with the noun \"Zeitung\"?", "es": "¿Qué artículo determinado lleva el sustantivo «Zeitung»?" },
       "answer": "die",
       "table": "nomen-artikel"
     },
@@ -831,6 +839,7 @@
       "kind": "form",
       "verb": "unbestimmt",
       "person": "maskulin",
+      "q": { "en": "What is the indefinite article of a masculine noun?", "es": "¿Cuál es el artículo indeterminado de un sustantivo masculino?" },
       "answer": "ein",
       "table": "artikel-tabelle"
     },
@@ -910,6 +919,7 @@
       "kind": "form",
       "verb": "Artikel",
       "person": "Lehrer",
+      "q": { "en": "Which definite article goes with the noun \"Lehrer\"?", "es": "¿Qué artículo determinado lleva el sustantivo «Lehrer»?" },
       "answer": "der",
       "table": "nomen-artikel"
     },
@@ -950,6 +960,7 @@
       "kind": "form",
       "verb": "Pronomen",
       "person": "feminin",
+      "q": { "en": "Which pronoun replaces a feminine noun (like he, she or it)?", "es": "¿Qué pronombre sustituye a un sustantivo femenino?" },
       "answer": "sie",
       "table": "artikel-tabelle"
     },
@@ -990,6 +1001,7 @@
       "kind": "form",
       "verb": "Artikel",
       "person": "Auto",
+      "q": { "en": "Which definite article goes with the noun \"Auto\"?", "es": "¿Qué artículo determinado lleva el sustantivo «Auto»?" },
       "answer": "das",
       "table": "nomen-artikel"
     },

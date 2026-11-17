@@ -407,6 +407,7 @@
       "kind": "form",
       "verb": "maskulin",
       "person": "ohne",
+      "q": { "en": "How do you write \"ohne\" plus the definite article of a masculine noun?", "es": "¿Cómo se escribe «ohne» con el artículo determinado de un sustantivo masculino?" },
       "answer": "ohne den",
       "table": "akk-artikel"
     },
@@ -447,6 +448,7 @@
       "kind": "form",
       "verb": "für",
       "person": "der Lehrer",
+      "q": { "en": "Write \"für\" followed by \"der Lehrer\" in the correct case (the accusative).", "es": "Escribe «für» seguido de «der Lehrer» en el caso correcto (acusativo)." },
       "answer": "für den Lehrer",
       "table": "akk-fuer-ohne"
     },
@@ -487,6 +489,7 @@
       "kind": "form",
       "verb": "durch",
       "person": "der Park",
+      "q": { "en": "Write \"durch\" followed by \"der Park\" in the correct case (the accusative).", "es": "Escribe «durch» seguido de «der Park» en el caso correcto (acusativo)." },
       "answer": "durch den Park",
       "table": "akk-durch-um"
     },
@@ -566,6 +569,7 @@
       "kind": "form",
       "verb": "feminin",
       "person": "für",
+      "q": { "en": "How do you write \"für\" plus the definite article of a feminine noun?", "es": "¿Cómo se escribe «für» con el artículo determinado de un sustantivo femenino?" },
       "answer": "für die",
       "table": "akk-artikel"
     },
@@ -606,6 +610,7 @@
       "kind": "form",
       "verb": "ohne",
       "person": "das Kind",
+      "q": { "en": "Write \"ohne\" followed by the neuter noun \"Kind\" with its definite article, in the accusative.", "es": "Escribe «ohne» seguido del sustantivo neutro «Kind» con su artículo determinado, en acusativo." },
       "answer": "ohne das Kind",
       "table": "akk-fuer-ohne"
     },
@@ -646,6 +651,7 @@
       "kind": "form",
       "verb": "um",
       "person": "das Haus",
+      "q": { "en": "Write \"um\" followed by the neuter noun \"Haus\" with its definite article, in the accusative.", "es": "Escribe «um» seguido del sustantivo neutro «Haus» con su artículo determinado, en acusativo." },
       "answer": "um das Haus",
       "table": "akk-durch-um"
     },
@@ -725,6 +731,7 @@
       "kind": "form",
       "verb": "neutral",
       "person": "um",
+      "q": { "en": "How do you write \"um\" plus the definite article of a neuter noun?", "es": "¿Cómo se escribe «um» con el artículo determinado de un sustantivo neutro?" },
       "answer": "um das",
       "table": "akk-artikel"
     },
@@ -765,6 +772,7 @@
       "kind": "form",
       "verb": "für",
       "person": "die Familie",
+      "q": { "en": "Write \"für\" followed by the feminine noun \"Familie\" with its definite article, in the accusative.", "es": "Escribe «für» seguido del sustantivo femenino «Familie» con su artículo determinado, en acusativo." },
       "answer": "für die Familie",
       "table": "akk-fuer-ohne"
     },
@@ -805,6 +813,7 @@
       "kind": "form",
       "verb": "durch",
       "person": "die Stadt",
+      "q": { "en": "Write \"durch\" followed by the feminine noun \"Stadt\" with its definite article, in the accusative.", "es": "Escribe «durch» seguido del sustantivo femenino «Stadt» con su artículo determinado, en acusativo." },
       "answer": "durch die Stadt",
       "table": "akk-durch-um"
     },
@@ -884,6 +893,7 @@
       "kind": "form",
       "verb": "Plural",
       "person": "durch",
+      "q": { "en": "How do you write \"durch\" plus the definite article of a plural noun?", "es": "¿Cómo se escribe «durch» con el artículo determinado de un sustantivo plural?" },
       "answer": "durch die",
       "table": "akk-artikel"
     },
@@ -924,6 +934,7 @@
       "kind": "form",
       "verb": "ohne",
       "person": "der Hund",
+      "q": { "en": "Write \"ohne\" followed by \"der Hund\" in the correct case (the accusative).", "es": "Escribe «ohne» seguido de «der Hund» en el caso correcto (acusativo)." },
       "answer": "ohne den Hund",
       "table": "akk-fuer-ohne"
     },
@@ -964,6 +975,7 @@
       "kind": "form",
       "verb": "um",
       "person": "der Tisch",
+      "q": { "en": "Write \"um\" followed by \"der Tisch\" in the correct case (the accusative).", "es": "Escribe «um» seguido de «der Tisch» en el caso correcto (acusativo)." },
       "answer": "um den Tisch",
       "table": "akk-durch-um"
     },
