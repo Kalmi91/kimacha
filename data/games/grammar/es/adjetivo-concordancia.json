@@ -1339,6 +1339,10 @@
         }
       ],
       "correctIndex": 0
-    }
+    },
+    {"id": "ac-noun-01", "kind": "noun", "trial": true, "base": "el chico alto", "ask": {"en": "Give the plural, with its article", "es": "Escribe el plural, con su artículo"}, "answer": "los chicos altos", "why": {"en": "Article, noun and adjective all take the plural: el chico alto, los chicos altos.", "es": "El artículo, el sustantivo y el adjetivo pasan al plural: el chico alto, los chicos altos."}},
+    {"id": "ac-cloze-01", "kind": "opencloze", "trial": true, "text": "Mi padre es alto y delgado. Mi madre es ___ y delgada. Mis hermanos son ___ y delgados.", "answers": ["alta", "altos"], "tr": {"en": "My father is tall and thin. My mother is tall and thin. My brothers are tall and thin.", "es": "Mi padre es alto y delgado. Mi madre es alta y delgada. Mis hermanos son altos y delgados."}, "why": {"en": "The adjective agrees in gender and number: alta (feminine), altos (masculine plural).", "es": "El adjetivo concuerda en género y número: alta (femenino), altos (masculino plural)."}},
+    {"id": "ac-fix-01", "kind": "fix", "trial": true, "es": "Las casas son blancos.", "wrongIndex": 3, "answer": "blancas", "explain": {"en": "Casas is feminine plural, so the adjective is blancas.", "es": "Casas es femenino plural, así que el adjetivo es blancas."}, "tr": {"en": "The houses are white.", "es": "Las casas son blancas."}},
+    {"id": "ac-bank-01", "kind": "bank", "trial": true, "bank": ["alto", "rojo", "pequeño"], "es": "Los coches ___ son nuevos.", "word": "rojo", "answer": "rojos", "accept": ["altos"], "tr": {"en": "The red cars are new.", "es": "Los coches rojos son nuevos."}, "why": {"en": "The adjective agrees with coches: masculine plural, rojos.", "es": "El adjetivo concuerda con coches: masculino plural, rojos."}}
   ]
 }

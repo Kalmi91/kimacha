@@ -61,8 +61,9 @@ describe('doneGrammarTopicProgress, all nine task kinds', () => {
 
   it('is not done while any one existing kind (including article/why/spot/order/dictation) is missing', () => {
     for (const l of lessons) {
-      // `write` (sentence writing) is the one kind that is never required: see lib/grammar/__tests__/writeKind.test.ts.
-      for (const missing of l.kinds.filter((k) => k !== 'write')) {
+      // `write` (sentence writing) is never required: see lib/grammar/__tests__/writeKind.test.ts. The typed kinds of the grammar
+      // tests (noun, opencloze, fix, bank) are never required either, so a lesson finished before they existed stays done.
+      for (const missing of l.kinds.filter((k) => !['write', 'noun', 'opencloze', 'fix', 'bank'].includes(k))) {
         const rows = done(l.id, l.kinds.filter((k) => k !== missing));
         expect(doneGrammarTopicProgress(l.lang, rows).has(l.id)).toBe(false);
       }

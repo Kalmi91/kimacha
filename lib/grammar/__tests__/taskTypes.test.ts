@@ -1,0 +1,65 @@
+// The per-level task-type file (data/grammar/task-types.json) and its reader: which level uses which of the 8 task
+// types, and which topics are core (read from the syllabus tier, nothing invented here).
+
+import { getGrammarTopics, grammarKindCounts } from '@/lib/games/content';
+import { getGrammarTier, syllabusForLevel } from '../syllabus';
+import { TASK_TYPE_IDS, coreTopicsForLevel, enabledTaskLevels, taskConfigForLevel, taskTypeCounts, taskTypeGaps } from '../taskTypes';
+
+describe('task types', () => {
+  it('has the 8 types of the spec, in the spec order', () => {
+    expect(TASK_TYPE_IDS).toEqual(['choice', 'form', 'transform', 'why', 'opencloze', 'fix', 'bank', 'order']);
+  });
+
+  it('every level uses the 8 types and no level is switched on yet', () => {
+    for (const level of ['A1', 'A2', 'B1', 'B2', 'C1'] as const) {
+      expect(taskConfigForLevel(level).types).toEqual(TASK_TYPE_IDS);
+    }
+    expect(enabledTaskLevels()).toEqual([]);
+  });
+
+  it('counts the typed noun form under type 2 (form)', () => {
+    const lesson = {
+      items: [
+        { kind: 'form', id: 'f1', person: 'yo', answer: 'soy' },
+        { kind: 'noun', id: 'n1' },
+        { kind: 'opencloze', id: 'c1' },
+        { kind: 'spot', id: 's1' },
+        { id: 'g1', sentence: 'Yo ___ aqui.', options: ['estoy', 'soy'], correct: 0 },
+      ],
+    } as never;
+    const c = taskTypeCounts(lesson);
+    expect(c.form).toBe(2);
+    expect(c.opencloze).toBe(1);
+    expect(c.choice).toBe(1);
+    expect(c.fix).toBe(0);
+    expect(c.order).toBe(0);
+  });
+
+  it('core topics of a level = the syllabus topics whose tier is core or core-plus', () => {
+    const core = coreTopicsForLevel('A1');
+    expect(core.length).toBeGreaterThan(5);
+    for (const id of core) expect(['core', 'core-plus']).toContain(getGrammarTier(id));
+    expect(core).toContain('ser-estar');
+    expect(core).not.toContain('clases-de-palabras'); // tier exam
+    const all = syllabusForLevel('A1').map((t) => t.id);
+    expect(all.filter((id) => ['core', 'core-plus'].includes(getGrammarTier(id)))).toEqual(core);
+  });
+
+  it('the gap list names every missing (topic, type) of a level, with the count it has', () => {
+    const gaps = taskTypeGaps('A1');
+    const serEstar = gaps.find((g) => g.topic === 'ser-estar' && g.type === 'opencloze');
+    expect(serEstar).toEqual({ topic: 'ser-estar', type: 'opencloze', have: 0, need: 5 });
+  });
+
+  it('the sample items: two A1 topics have one of each new type, marked trial', () => {
+    const withSamples = getGrammarTopics('es').filter((t) => ['opencloze', 'fix', 'bank', 'noun'].every((k) => grammarKindCounts(t)[k as 'fix'] > 0));
+    expect(withSamples.map((t) => t.topic).sort()).toEqual(['adjetivo-concordancia', 'sustantivo-numero']);
+    for (const t of withSamples) {
+      expect(t.level).toBe('A1');
+      const kinds = ['opencloze', 'fix', 'bank', 'noun'];
+      const samples = t.items.filter((i) => kinds.includes((i as { kind?: string }).kind ?? ''));
+      expect(samples.length).toBeGreaterThanOrEqual(4);
+      for (const it of samples) expect((it as { trial?: boolean }).trial).toBe(true);
+    }
+  });
+});

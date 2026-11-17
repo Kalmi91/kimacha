@@ -85,6 +85,11 @@ export function isVosotrosItem(item: GrammarItem): boolean {
     case 'order':
     case 'dictation':
     case 'write':
+    // the four typed kinds of the grammar tests (open cloze, fix, word bank, noun form) are never vosotros tasks either.
+    case 'opencloze':
+    case 'fix':
+    case 'bank':
+    case 'noun':
       return false;
     default: {
       // GrammarGapItem: `kind` is undefined or 'gap', the only member left

@@ -398,7 +398,15 @@ function GrammarLessonPhases({ topic }: { topic: ReturnType<typeof useGrammarTop
                                 ? s.grammar.startDictation(kindCounts.dictation)
                                 : kind === 'write'
                                   ? s.grammar.startWrite(kindCounts.write)
-                                  : kindCounts.transform > TRANSFORM_ROUND_SIZE
+                                  : kind === 'noun'
+                                    ? s.grammar.startNoun(kindCounts.noun)
+                                    : kind === 'opencloze'
+                                      ? s.grammar.startCloze(kindCounts.opencloze)
+                                      : kind === 'fix'
+                                        ? s.grammar.startFix(kindCounts.fix)
+                                        : kind === 'bank'
+                                          ? s.grammar.startBank(kindCounts.bank)
+                                          : kindCounts.transform > TRANSFORM_ROUND_SIZE
                                     ? s.grammar.startTransformRound(TRANSFORM_ROUND_SIZE, kindCounts.transform)
                                     : s.grammar.startTransform(kindCounts.transform),
                 () => {

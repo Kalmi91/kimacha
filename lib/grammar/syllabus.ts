@@ -496,7 +496,7 @@ export function doneGrammarTopicProgress(
     if (result.has(topicId)) continue; // the old row already means every kind is done
     const lesson = lessonFor(lang, topicId);
     // sentence writing is never required for the done state: lessons finished before it existed must stay done.
-    const required = lesson ? lessonButtonKinds(lesson).filter((k) => k !== 'write') : [];
+    const required = lesson ? lessonButtonKinds(lesson).filter((k) => !OPTIONAL_KINDS.includes(k)) : [];
     if (required.length === 0 || !required.every((k) => kinds.has(k))) continue;
     let correct = 0;
     let total = 0;
@@ -515,11 +515,14 @@ export function doneGrammarTopicProgress(
  * (the "done" condition above requires all of them, including the trial
  * kinds, except `write`, which is never required): the lesson's % is the average of these, a kind not yet started counts as 0.
  */
-const LESSON_KIND_ORDER: readonly GrammarKind[] = ['choice', 'article', 'match', 'form', 'why', 'transform', 'spot', 'order', 'dictation', 'write'];
+const LESSON_KIND_ORDER: readonly GrammarKind[] = ['choice', 'article', 'match', 'form', 'why', 'transform', 'spot', 'order', 'dictation', 'noun', 'opencloze', 'fix', 'bank', 'write'];
 
 // The button of the temporary (trial) kinds appears, but they do not
 // pull down the lesson's % (until the developer approves them, they are not part of the lesson).
-const TRIAL_KINDS: readonly GrammarKind[] = ['spot', 'order', 'dictation', 'write'];
+const TRIAL_KINDS: readonly GrammarKind[] = ['spot', 'order', 'dictation', 'noun', 'opencloze', 'fix', 'bank', 'write'];
+
+// Never required for a lesson's done state (lessons finished before these kinds existed must stay done).
+const OPTIONAL_KINDS: readonly GrammarKind[] = ['noun', 'opencloze', 'fix', 'bank', 'write'];
 
 /** The lesson's buttons: every kind that has items. */
 function lessonButtonKinds(lesson: GrammarTopicData): GrammarKind[] {
