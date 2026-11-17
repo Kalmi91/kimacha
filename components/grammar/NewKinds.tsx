@@ -161,6 +161,7 @@ export function OrderDrillItem({
         key={item.id}
         sourceSentence={item.prompt[contentLang] ?? item.prompt.en}
         targetWords={tileWords(item.es)}
+        acceptWords={item.accept?.map(tileWords)}
         trapWords={[]}
         speechLocale={speechLang(learnedLang)}
         spokenSentence={item.es}

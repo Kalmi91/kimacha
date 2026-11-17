@@ -42,7 +42,7 @@ export default function TestQuestionView({
         />
       );
     case 'tiles':
-      return <ExamTilesCard prompt={v.prompt} answerTokens={v.answerTokens} sentence={v.sentence} distractors={[]} instant={instant} onDone={onDone} />;
+      return <ExamTilesCard prompt={v.prompt} answerTokens={v.answerTokens} acceptTokens={v.acceptTokens} sentence={v.sentence} distractors={[]} instant={instant} onDone={onDone} />;
     case 'match':
       return <ExamMatchCard pairs={v.pairs} onDone={onDone} />;
   }

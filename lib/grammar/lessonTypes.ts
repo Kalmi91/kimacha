@@ -212,6 +212,8 @@ export interface OrderItem {
   prompt: Lang4;
   /** The correct Spanish sentence (the tiles are made from its words). */
   es: string;
+  /** Further correct sentences made of the same words in another order; never shown (the answer shown stays `es`). */
+  accept?: string[];
 }
 
 /** Dictation: the sentence is played (replayable, also slower), the learner types it in. */
