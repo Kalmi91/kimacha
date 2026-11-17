@@ -29,7 +29,7 @@ describe('new task kinds in the two trial lessons', () => {
       expect(fresh.length).toBe(10); // ser-estar: dictation 5 + order 5 (E132); negacion: order 5 + spot 5
       expect(fresh.every((i) => isTrialItem(i))).toBe(true);
     }
-    const others = ['por-para', 'perfecto']; // (the A1 topics get word order from E132 on)
+    const others = ['perfecto']; // (the A1 topics get word order from E132 on; por-para got its task kinds with the A2 content)
     for (const id of others) {
       const l = lessonFor('es', id)!;
       const c = grammarKindCounts(l);

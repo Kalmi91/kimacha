@@ -94,7 +94,7 @@ describe('write: the button', () => {
     await flush(4);
     expect(screen.getByTestId('grammar-start-write')).toHaveTextContent('Write the sentence (12)');
     const ids = kindButtonIds();
-    expect(ids).toEqual(['grammar-start-choice', 'grammar-start-match', 'grammar-start-form', 'grammar-start-why', 'grammar-start-write']);
+    expect(ids).toEqual(['grammar-start-choice', 'grammar-start-match', 'grammar-start-form', 'grammar-start-why', 'grammar-start-transform', 'grammar-start-order', 'grammar-start-write']);
     expect(ids).toEqual(KIND_ORDER.filter((k) => ids.includes(`grammar-start-${k}`)).map((k) => `grammar-start-${k}`));
     expect(KIND_ORDER[KIND_ORDER.length - 1]).toBe('write');
   });
