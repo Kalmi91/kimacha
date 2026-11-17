@@ -207,15 +207,15 @@ export default {
     practiceEnd: (r: number, n: number) => `${r} of ${n} right`,
     backToTest: 'Back to the test',
   },
-  // The grammar Big test (placement test: 45 questions, A1 to C1, no explanations).
+  // The grammar Big test (adaptive placement test, A1 to C1, no explanations).
   bigTest: {
     cardTitle: 'Big test',
-    cardSubtitle: 'A1–C1 · 45 questions',
+    cardSubtitle: 'A1–C1 · adapts to your answers',
     start: 'Start',
     continue: 'Continue',
     startAgain: 'Start again',
     lastResult: (lvl: string) => `Last result: ${lvl}`,
-    header: (lvl: string, pos: number, total: number) => `${lvl} · ${pos}/${total}`,
+    questionNumber: (n: number) => `Question ${n}`,
     leave: 'Leave the Big test',
     instructionGap: 'Fill the gap',
     instructionWhich: 'Which statement is correct?',
@@ -230,7 +230,7 @@ export default {
     next: 'Next',
     passedTitle: (lvl: string, right: number, total: number) => `${lvl} passed · ${right} of ${total} right`,
     failedTitle: (lvl: string, right: number, total: number) => `${lvl} · ${right} of ${total} right`,
-    nextLevel: (lvl: string, n: number) => `Next: ${lvl} · ${n} questions`,
+    nextLevel: (lvl: string) => `Next: ${lvl}`,
     testEnds: 'The test ends here',
     seeResult: 'See result',
     stopHere: 'Stop here',
@@ -243,6 +243,6 @@ export default {
     optionLabel: (n: number, text: string) => `Option ${n}: ${text}`,
     levelRowLabel: (lvl: string, right: number, total: number) => `${lvl}: ${right} of ${total} right`,
     levelRowSkipped: (lvl: string) => `${lvl}: not taken`,
-    progressLabel: (n: number, total: number) => `Question ${n} of ${total}`,
+    progressLabel: (pct: number) => `Test progress: ${pct}%`,
   },
 };

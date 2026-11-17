@@ -20,7 +20,7 @@ jest.mock('expo-router', () => ({
 import { fireEvent, render, screen } from '@testing-library/react-native';
 
 import { getDb } from '@/lib/database.web';
-import { bigTestItems, bigTestResultKey, bigTestRunKey, answerBigTest, newBigTestRun } from '@/lib/grammar/bigTest';
+import { bigTestPool, bigTestResultKey, bigTestRunKey, answerBigTest, currentBigTestItem, newBigTestRun } from '@/lib/grammar/bigTest';
 import { saveResumeValue } from '@/lib/resumeStore';
 import GrammarSyllabusScreen from '@/app/(tabs)/course';
 import BigTestCard from '@/components/grammar/BigTestCard';
@@ -70,7 +70,7 @@ describe.each([
     await open();
     expect(screen.getByTestId('big-test-card')).toBeTruthy();
     expect(screen.getByText('Big test')).toBeTruthy();
-    expect(screen.getByText('A1–C1 · 45 questions')).toBeTruthy();
+    expect(screen.getByText('A1–C1 · adapts to your answers')).toBeTruthy();
     expect(screen.getByTestId('big-test-start')).toHaveTextContent('Start');
     expect(screen.queryByTestId('big-test-last-result')).toBeNull();
     fireEvent.press(screen.getByTestId('big-test-start'));
@@ -117,7 +117,8 @@ describe.each([
   });
 
   it('a run in progress: "Continue" opens the screen without ?new=1, even with a stored result', async () => {
-    const run = answerBigTest(newBigTestRun(), bigTestItems('es', 'A1')[0], 0);
+    const start = newBigTestRun(bigTestPool('es'), 7);
+    const run = answerBigTest(start, currentBigTestItem(start, bigTestPool('es'))!, 0);
     await saveResumeValue(getDb(), bigTestRunKey(PAIR), run);
     await saveResumeValue(getDb(), bigTestResultKey(PAIR), storedResult('A2'));
     await open();

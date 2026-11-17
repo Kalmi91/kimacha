@@ -193,12 +193,12 @@ const hu: typeof en = {
   // A nyelvtani Nagy teszt (szintfelmérő: 45 kérdés, A1-től C1-ig, magyarázat nélkül).
   bigTest: {
     cardTitle: 'Nagy teszt',
-    cardSubtitle: 'A1–C1 · 45 kérdés',
+    cardSubtitle: 'A1–C1 · a válaszaidhoz igazodik',
     start: 'Indítás',
     continue: 'Folytatás',
     startAgain: 'Újrakezdés',
     lastResult: (lvl: string) => `Utolsó eredmény: ${lvl}`,
-    header: (lvl: string, pos: number, total: number) => `${lvl} · ${pos}/${total}`,
+    questionNumber: (n: number) => `${n}. kérdés`,
     leave: 'Kilépés a Nagy tesztből',
     instructionGap: 'Töltsd ki a hiányzó részt',
     instructionWhich: 'Melyik állítás helyes?',
@@ -213,7 +213,7 @@ const hu: typeof en = {
     next: 'Tovább',
     passedTitle: (lvl: string, right: number, total: number) => `${lvl} teljesítve · ${right} / ${total} helyes`,
     failedTitle: (lvl: string, right: number, total: number) => `${lvl} · ${right} / ${total} helyes`,
-    nextLevel: (lvl: string, n: number) => `Következő: ${lvl} · ${n} kérdés`,
+    nextLevel: (lvl: string) => `Következő: ${lvl}`,
     testEnds: 'A teszt itt véget ér',
     seeResult: 'Eredmény megtekintése',
     stopHere: 'Megállok itt',
@@ -226,7 +226,7 @@ const hu: typeof en = {
     optionLabel: (n: number, text: string) => `${n}. válasz: ${text}`,
     levelRowLabel: (lvl: string, right: number, total: number) => `${lvl}: ${right} / ${total} helyes`,
     levelRowSkipped: (lvl: string) => `${lvl}: nem került sorra`,
-    progressLabel: (n: number, total: number) => `${n}. kérdés ${total} közül`,
+    progressLabel: (pct: number) => `A teszt haladása: ${pct}%`,
   },
 };
 
