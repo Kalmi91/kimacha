@@ -501,6 +501,7 @@
       "kind": "form",
       "verb": "Zahlwort",
       "person": "2",
+      "q": { "en": "How do you write the number 2 in German words?", "es": "¿Cómo se escribe en alemán, con letras, el número 2?" },
       "answer": "zwei",
       "table": "zahlwoerter"
     },
@@ -541,6 +542,7 @@
       "kind": "form",
       "verb": "Mann",
       "person": "Plural",
+      "q": { "en": "What is the plural of \"Mann\", with its article?", "es": "¿Cuál es el plural de «Mann», con su artículo?" },
       "answer": "die Männer",
       "accept": [
         "Männer"
@@ -584,6 +586,7 @@
       "kind": "form",
       "verb": "ä",
       "person": "Ersatz",
+      "q": { "en": "What do you write instead of \"ä\" when you cannot type it?", "es": "¿Qué se escribe en lugar de «ä» cuando no se puede teclear?" },
       "answer": "ae",
       "table": "umlaut-ersatz"
     },
@@ -663,6 +666,7 @@
       "kind": "form",
       "verb": "Zahlwort",
       "person": "4",
+      "q": { "en": "How do you write the number 4 in German words?", "es": "¿Cómo se escribe en alemán, con letras, el número 4?" },
       "answer": "vier",
       "table": "zahlwoerter"
     },
@@ -703,6 +707,7 @@
       "kind": "form",
       "verb": "Apfel",
       "person": "Plural",
+      "q": { "en": "What is the plural of \"Apfel\", with its article?", "es": "¿Cuál es el plural de «Apfel», con su artículo?" },
       "answer": "die Äpfel",
       "accept": [
         "Äpfel"
@@ -746,6 +751,7 @@
       "kind": "form",
       "verb": "Zahlwort",
       "person": "5",
+      "q": { "en": "How do you write the number 5 in German words?", "es": "¿Cómo se escribe en alemán, con letras, el número 5?" },
       "answer": "fünf",
       "table": "zahlwoerter"
     },
@@ -825,6 +831,7 @@
       "kind": "form",
       "verb": "ß",
       "person": "Ersatz",
+      "q": { "en": "What do you write instead of \"ß\" when you cannot type it?", "es": "¿Qué se escribe en lugar de «ß» cuando no se puede teclear?" },
       "answer": "ss",
       "table": "umlaut-ersatz"
     },
@@ -865,6 +872,7 @@
       "kind": "form",
       "verb": "Buch",
       "person": "Plural",
+      "q": { "en": "What is the plural of \"Buch\", with its article?", "es": "¿Cuál es el plural de «Buch», con su artículo?" },
       "answer": "die Bücher",
       "accept": [
         "Bücher"
@@ -908,6 +916,7 @@
       "kind": "form",
       "verb": "Zahlwort",
       "person": "7",
+      "q": { "en": "How do you write the number 7 in German words?", "es": "¿Cómo se escribe en alemán, con letras, el número 7?" },
       "answer": "sieben",
       "table": "zahlwoerter"
     },
@@ -987,6 +996,7 @@
       "kind": "form",
       "verb": "ü",
       "person": "Ersatz",
+      "q": { "en": "What do you write instead of \"ü\" when you cannot type it?", "es": "¿Qué se escribe en lugar de «ü» cuando no se puede teclear?" },
       "answer": "ue",
       "table": "umlaut-ersatz"
     },
@@ -1027,6 +1037,7 @@
       "kind": "form",
       "verb": "Haus",
       "person": "Plural",
+      "q": { "en": "What is the plural of \"Haus\", with its article?", "es": "¿Cuál es el plural de «Haus», con su artículo?" },
       "answer": "die Häuser",
       "accept": [
         "Häuser"
@@ -1070,6 +1081,7 @@
       "kind": "form",
       "verb": "Zahlwort",
       "person": "12",
+      "q": { "en": "How do you write the number 12 in German words?", "es": "¿Cómo se escribe en alemán, con letras, el número 12?" },
       "answer": "zwölf",
       "table": "zahlwoerter"
     },

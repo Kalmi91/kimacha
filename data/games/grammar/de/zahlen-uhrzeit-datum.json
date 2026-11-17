@@ -502,6 +502,7 @@
       "kind": "form",
       "verb": "Wort",
       "person": "21",
+      "q": { "en": "How do you write the number 21 in German words?", "es": "¿Cómo se escribe en alemán, con letras, el número 21?" },
       "answer": "einundzwanzig",
       "table": "zahlen"
     },
@@ -542,6 +543,7 @@
       "kind": "form",
       "verb": "umgangssprachlich",
       "person": "8:30",
+      "q": { "en": "How do you say the time 8:30 in everyday German?", "es": "¿Cómo se dice la hora 8:30 en alemán coloquial?" },
       "answer": "halb neun",
       "table": "uhrzeit"
     },
@@ -582,6 +584,7 @@
       "kind": "form",
       "verb": "Datum",
       "person": "1. Mai",
+      "q": { "en": "How do you say the date \"1. Mai\" in German? (with \"am\")", "es": "¿Cómo se dice la fecha «1. Mai» en alemán? (con «am»)" },
       "answer": "am ersten Mai",
       "table": "datum"
     },
@@ -661,6 +664,7 @@
       "kind": "form",
       "verb": "Wort",
       "person": "30",
+      "q": { "en": "How do you write the number 30 in German words?", "es": "¿Cómo se escribe en alemán, con letras, el número 30?" },
       "answer": "dreißig",
       "table": "zahlen"
     },
@@ -701,6 +705,7 @@
       "kind": "form",
       "verb": "umgangssprachlich",
       "person": "8:15",
+      "q": { "en": "How do you say the time 8:15 in everyday German?", "es": "¿Cómo se dice la hora 8:15 en alemán coloquial?" },
       "answer": "Viertel nach acht",
       "accept": [
         "viertel nach acht"
@@ -744,6 +749,7 @@
       "kind": "form",
       "verb": "Datum",
       "person": "3. Mai",
+      "q": { "en": "How do you say the date \"3. Mai\" in German? (with \"am\")", "es": "¿Cómo se dice la fecha «3. Mai» en alemán? (con «am»)" },
       "answer": "am dritten Mai",
       "table": "datum"
     },
@@ -823,6 +829,7 @@
       "kind": "form",
       "verb": "Wort",
       "person": "12",
+      "q": { "en": "How do you write the number 12 in German words?", "es": "¿Cómo se escribe en alemán, con letras, el número 12?" },
       "answer": "zwölf",
       "table": "zahlen"
     },
@@ -863,6 +870,7 @@
       "kind": "form",
       "verb": "offiziell",
       "person": "8:45",
+      "q": { "en": "How do you say the time 8:45 in official German, with \"Uhr\"?", "es": "¿Cómo se dice la hora 8:45 en alemán oficial, con «Uhr»?" },
       "answer": "acht Uhr fünfundvierzig",
       "table": "uhrzeit"
     },
@@ -903,6 +911,7 @@
       "kind": "form",
       "verb": "Datum",
       "person": "7. März",
+      "q": { "en": "How do you say the date \"7. März\" in German? (with \"am\")", "es": "¿Cómo se dice la fecha «7. März» en alemán? (con «am»)" },
       "answer": "am siebten März",
       "table": "datum"
     },
@@ -982,6 +991,7 @@
       "kind": "form",
       "verb": "Wort",
       "person": "45",
+      "q": { "en": "How do you write the number 45 in German words?", "es": "¿Cómo se escribe en alemán, con letras, el número 45?" },
       "answer": "fünfundvierzig",
       "table": "zahlen"
     },
@@ -1022,6 +1032,7 @@
       "kind": "form",
       "verb": "umgangssprachlich",
       "person": "8:10",
+      "q": { "en": "How do you say the time 8:10 in everyday German?", "es": "¿Cómo se dice la hora 8:10 en alemán coloquial?" },
       "answer": "zehn nach acht",
       "table": "uhrzeit"
     },
@@ -1062,6 +1073,7 @@
       "kind": "form",
       "verb": "Datum",
       "person": "20. Juli",
+      "q": { "en": "How do you say the date \"20. Juli\" in German? (with \"am\")", "es": "¿Cómo se dice la fecha «20. Juli» en alemán? (con «am»)" },
       "answer": "am zwanzigsten Juli",
       "table": "datum"
     },

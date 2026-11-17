@@ -354,6 +354,7 @@
       "kind": "form",
       "verb": "Konjunktion",
       "person": "Addition",
+      "q": { "en": "Which conjunction links two clauses to express an addition?", "es": "¿Qué conjunción une dos oraciones para expresar una adición?" },
       "answer": "und",
       "table": "konjunktionen"
     },
@@ -394,6 +395,7 @@
       "kind": "form",
       "verb": "ich",
       "person": "denn + wohnen",
+      "q": { "en": "Join the conjunction \"denn\", the subject \"I\" and the verb \"wohnen\": how does the clause read? (conjunction, subject, verb)", "es": "Une la conjunción «denn», el sujeto «yo» y el verbo «wohnen»: ¿cómo queda la oración? (conjunción, sujeto, verbo)" },
       "answer": "denn ich wohne",
       "table": "konjunktion-satz"
     },
@@ -434,6 +436,7 @@
       "kind": "form",
       "verb": "Konjunktion",
       "person": "Gegensatz",
+      "q": { "en": "Which conjunction links two clauses to express a contrast?", "es": "¿Qué conjunción une dos oraciones para expresar un contraste?" },
       "answer": "aber",
       "table": "konjunktionen"
     },
@@ -513,6 +516,7 @@
       "kind": "form",
       "verb": "du",
       "person": "aber + arbeiten",
+      "q": { "en": "Join the conjunction \"aber\", the subject \"you (informal, singular)\" and the verb \"arbeiten\": how does the clause read? (conjunction, subject, verb)", "es": "Une la conjunción «aber», el sujeto «tú (informal, singular)» y el verbo «arbeiten»: ¿cómo queda la oración? (conjunción, sujeto, verbo)" },
       "answer": "aber du arbeitest",
       "table": "konjunktion-satz"
     },
@@ -553,6 +557,7 @@
       "kind": "form",
       "verb": "Konjunktion",
       "person": "Alternative",
+      "q": { "en": "Which conjunction links two clauses to express an alternative?", "es": "¿Qué conjunción une dos oraciones para expresar una alternativa?" },
       "answer": "oder",
       "table": "konjunktionen"
     },
@@ -593,6 +598,7 @@
       "kind": "form",
       "verb": "wir",
       "person": "und + kommen",
+      "q": { "en": "Join the conjunction \"und\", the subject \"we\" and the verb \"kommen\": how does the clause read? (conjunction, subject, verb)", "es": "Une la conjunción «und», el sujeto «nosotros» y el verbo «kommen»: ¿cómo queda la oración? (conjunción, sujeto, verbo)" },
       "answer": "und wir kommen",
       "table": "konjunktion-satz"
     },
@@ -672,6 +678,7 @@
       "kind": "form",
       "verb": "Konjunktion",
       "person": "Grund",
+      "q": { "en": "Which conjunction links two clauses to express a reason?", "es": "¿Qué conjunción une dos oraciones para expresar una causa?" },
       "answer": "denn",
       "table": "konjunktionen"
     },
@@ -712,6 +719,7 @@
       "kind": "form",
       "verb": "du",
       "person": "oder + gehen",
+      "q": { "en": "Join the conjunction \"oder\", the subject \"you (informal, singular)\" and the verb \"gehen\": how does the clause read? (conjunction, subject, verb)", "es": "Une la conjunción «oder», el sujeto «tú (informal, singular)» y el verbo «gehen»: ¿cómo queda la oración? (conjunción, sujeto, verbo)" },
       "answer": "oder du gehst",
       "table": "konjunktion-satz"
     },
@@ -752,6 +760,7 @@
       "kind": "form",
       "verb": "Konjunktion",
       "person": "Korrektur",
+      "q": { "en": "Which conjunction links two clauses to express a correction after a negation?", "es": "¿Qué conjunción une dos oraciones para expresar una corrección después de una negación?" },
       "answer": "sondern",
       "table": "konjunktionen"
     },
@@ -831,6 +840,7 @@
       "kind": "form",
       "verb": "wir",
       "person": "denn + lernen",
+      "q": { "en": "Join the conjunction \"denn\", the subject \"we\" and the verb \"lernen\": how does the clause read? (conjunction, subject, verb)", "es": "Une la conjunción «denn», el sujeto «nosotros» y el verbo «lernen»: ¿cómo queda la oración? (conjunción, sujeto, verbo)" },
       "answer": "denn wir lernen",
       "table": "konjunktion-satz"
     },
@@ -871,6 +881,7 @@
       "kind": "form",
       "verb": "ich",
       "person": "aber + arbeiten",
+      "q": { "en": "Join the conjunction \"aber\", the subject \"I\" and the verb \"arbeiten\": how does the clause read? (conjunction, subject, verb)", "es": "Une la conjunción «aber», el sujeto «yo» y el verbo «arbeiten»: ¿cómo queda la oración? (conjunción, sujeto, verbo)" },
       "answer": "aber ich arbeite",
       "table": "konjunktion-satz"
     },
@@ -911,6 +922,7 @@
       "kind": "form",
       "verb": "du",
       "person": "und + kommen",
+      "q": { "en": "Join the conjunction \"und\", the subject \"you (informal, singular)\" and the verb \"kommen\": how does the clause read? (conjunction, subject, verb)", "es": "Une la conjunción «und», el sujeto «tú (informal, singular)» y el verbo «kommen»: ¿cómo queda la oración? (conjunción, sujeto, verbo)" },
       "answer": "und du kommst",
       "table": "konjunktion-satz"
     },

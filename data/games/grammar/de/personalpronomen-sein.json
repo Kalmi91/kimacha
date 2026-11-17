@@ -450,6 +450,7 @@
       "kind": "form",
       "verb": "Pronomen",
       "person": "Anna",
+      "q": { "en": "Which personal pronoun replaces \"Anna\"?", "es": "¿Qué pronombre personal sustituye a «Anna»?" },
       "answer": "sie",
       "table": "pronomen-ersatz"
     },
@@ -569,6 +570,7 @@
       "kind": "form",
       "verb": "Pronomen",
       "person": "Paul",
+      "q": { "en": "Which personal pronoun replaces \"Paul\"?", "es": "¿Qué pronombre personal sustituye a «Paul»?" },
       "answer": "er",
       "table": "pronomen-ersatz"
     },
@@ -649,6 +651,7 @@
       "kind": "form",
       "verb": "Pronomen",
       "person": "das Kind",
+      "q": { "en": "Which personal pronoun replaces \"das Kind\"?", "es": "¿Qué pronombre personal sustituye a «das Kind»?" },
       "answer": "es",
       "table": "pronomen-ersatz"
     },
@@ -768,6 +771,7 @@
       "kind": "form",
       "verb": "Pronomen",
       "person": "Anna und Paul",
+      "q": { "en": "Which personal pronoun replaces \"Anna und Paul\"?", "es": "¿Qué pronombre personal sustituye a «Anna und Paul»?" },
       "answer": "sie",
       "table": "pronomen-ersatz"
     },
@@ -887,6 +891,7 @@
       "kind": "form",
       "verb": "Pronomen",
       "person": "Paul und ich",
+      "q": { "en": "Which personal pronoun replaces \"Paul und ich\"?", "es": "¿Qué pronombre personal sustituye a «Paul und ich»?" },
       "answer": "wir",
       "table": "pronomen-ersatz"
     },
@@ -967,6 +972,7 @@
       "kind": "form",
       "verb": "Pronomen",
       "person": "Paul und du",
+      "q": { "en": "Which personal pronoun replaces \"Paul und du\"?", "es": "¿Qué pronombre personal sustituye a «Paul und du»?" },
       "answer": "ihr",
       "table": "pronomen-ersatz"
     },
