@@ -922,24 +922,24 @@
       "id": "oi-match-01",
       "kind": "match",
       "pairs": [
-        { "es": "le doy el libro", "en": "I give him/her the book" },
-        { "es": "les mando un mensaje", "en": "I send them a message" },
-        { "es": "me traes un café", "en": "you bring me a coffee" },
-        { "es": "te compro un regalo", "en": "I buy you a gift" },
+        { "es": "le doy esto", "en": "I give him/her this" },
+        { "es": "les mando dinero", "en": "I send them money" },
+        { "es": "me traes agua", "en": "you bring me water" },
+        { "es": "te compro pan", "en": "I buy you bread" },
         { "es": "nos cuenta historias", "en": "he/she tells us stories" },
-        { "es": "les escribo pronto", "en": "I'll write to them soon" }
+        { "es": "les escribo", "en": "I write to them" }
       ]
     },
     {
       "id": "oi-match-02",
       "kind": "match",
       "pairs": [
-        { "es": "quiero escribirle", "en": "I want to write to him/her" },
-        { "es": "estoy mandándole un correo", "en": "I'm sending him/her an email" },
+        { "es": "escribirle", "en": "to write to him" },
+        { "es": "estoy mandándole", "en": "I'm sending him" },
         { "es": "escríbele hoy", "en": "write to him/her today" },
-        { "es": "no le digo nada", "en": "I don't tell him/her anything" },
+        { "es": "no le digo", "en": "I don't tell him" },
         { "es": "cuéntanos la historia", "en": "tell us the story" },
-        { "es": "les explico la tarea", "en": "I explain the homework to them" }
+        { "es": "les explico", "en": "I explain to them" }
       ]
     },
     {

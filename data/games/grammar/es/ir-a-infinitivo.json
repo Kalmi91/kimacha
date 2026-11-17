@@ -817,12 +817,12 @@
       "id": "ir-match-01",
       "kind": "match",
       "pairs": [
-        { "es": "voy a comer", "en": "I am going to eat" },
-        { "es": "vas a estudiar", "en": "you are going to study" },
-        { "es": "va a llover", "en": "it is going to rain" },
-        { "es": "vamos a viajar", "en": "we are going to travel" },
-        { "es": "van a trabajar", "en": "they are going to work" },
-        { "es": "voy a salir temprano", "en": "I am going to leave early" }
+        { "es": "voy a comer", "en": "I'm going to eat" },
+        { "es": "vas a estudiar", "en": "you're going to study" },
+        { "es": "va a llover", "en": "it's going to rain" },
+        { "es": "vamos a viajar", "en": "we're going to travel" },
+        { "es": "van a trabajar", "en": "they're going to work" },
+        { "es": "voy a salir", "en": "I'm going to leave" }
       ],
       "tense": { "from": "presente", "to": "ir-a" }
     },
