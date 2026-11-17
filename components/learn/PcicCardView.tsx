@@ -115,8 +115,7 @@ export default function PcicCardView({
   const typingPadding = webKeyboardOpen ? WEB_TYPING_PADDING : null;
   // FB659 retype: while its field has the keyboard the docked bar steps aside, and the card is scrolled so the field sits
   // above the keys before they open (otherwise the window pans and the header slides under the status bar).
-  const scrollRef = useRef<ScrollView>(null);
-  const promptRef = useRef<View>(null);
+  const scrollRef = useRef<ScrollView>(null), promptRef = useRef<View>(null);
   const [retypeOpenKey, setRetypeOpenKey] = useState('');
   const [retypeFocused, setRetypeFocused] = useState(false);
   const { height: windowH } = useWindowDimensions();
