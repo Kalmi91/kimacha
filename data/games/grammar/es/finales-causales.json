@@ -1161,6 +1161,512 @@
         }
       ],
       "correctIndex": 2
+    },
+    {
+      "id": "fc-tr-01",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "en": "I call Ana so that she helps me.",
+        "es": "Llamo a Ana para que me ayude."
+      },
+      "answer": "Llamé a Ana para que me ayudara.",
+      "accept": [
+        "Llamé a Ana para que me ayudase.",
+        "Yo llamé a Ana para que me ayudara.",
+        "Yo llamé a Ana para que me ayudase."
+      ],
+      "wordIds": [
+        "89",
+        "148"
+      ],
+      "why": {
+        "en": "Para que needs the subjunctive; when the main verb is in the past, so is the subjunctive: llamo → llamé, ayude → ayudara (or ayudase).",
+        "es": "Para que pide subjuntivo; cuando el verbo principal está en pasado, el subjuntivo también: llamo → llamé, ayude → ayudara (o ayudase)."
+      }
+    },
+    {
+      "id": "fc-tr-02",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "en": "Since I have no time, I do not go to the party.",
+        "es": "Como no tengo tiempo, no voy a la fiesta."
+      },
+      "answer": "Como no tenía tiempo, no fui a la fiesta.",
+      "accept": [
+        "Como no tenía tiempo, no iba a la fiesta.",
+        "Como no tuve tiempo, no fui a la fiesta.",
+        "Como no tuve tiempo, no iba a la fiesta."
+      ],
+      "wordIds": [
+        "16",
+        "22",
+        "285"
+      ],
+      "why": {
+        "en": "Como + indicative gives the cause at the start of the sentence; in the past the cause is usually in the imperfect: tenía.",
+        "es": "Como + indicativo da la causa al principio de la oración; en pasado la causa suele ir en imperfecto: tenía."
+      }
+    },
+    {
+      "id": "fc-tr-03",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "en": "I study a lot so that my parents are happy.",
+        "es": "Estudio mucho para que mis padres estén contentos."
+      },
+      "answer": "Estudié mucho para que mis padres estuvieran contentos.",
+      "accept": [
+        "Estudié mucho para que mis padres estuviesen contentos.",
+        "Yo estudié mucho para que mis padres estuvieran contentos.",
+        "Yo estudié mucho para que mis padres estuviesen contentos."
+      ],
+      "wordIds": [
+        "212",
+        "39",
+        "291"
+      ],
+      "why": {
+        "en": "Past purpose clause: estudio → estudié and estén → estuvieran (or estuviesen).",
+        "es": "Oración final en pasado: estudio → estudié y estén → estuvieran (o estuviesen)."
+      }
+    },
+    {
+      "id": "fc-tr-04",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "en": "I do not go out because it rains a lot.",
+        "es": "No salgo porque llueve mucho."
+      },
+      "answer": "No salía porque llovía mucho.",
+      "accept": [
+        "No salí porque llovía mucho.",
+        "Yo no salía porque llovía mucho.",
+        "Yo no salí porque llovía mucho."
+      ],
+      "wordIds": [
+        "199",
+        "670",
+        "66"
+      ],
+      "why": {
+        "en": "Porque takes the indicative; in the past the background cause is in the imperfect: llueve → llovía.",
+        "es": "Porque lleva indicativo; en pasado la causa de fondo va en imperfecto: llueve → llovía."
+      }
+    },
+    {
+      "id": "fc-tr-05",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "en": "Since the weather is nice, we go to the park.",
+        "es": "Ya que hace buen tiempo, vamos al parque."
+      },
+      "answer": "Ya que hacía buen tiempo, fuimos al parque.",
+      "accept": [
+        "Ya que hacía buen tiempo, íbamos al parque."
+      ],
+      "wordIds": [
+        "76",
+        "22",
+        "254"
+      ],
+      "why": {
+        "en": "Ya que + indicative states a known reason; in the past: hace → hacía, and the main verb moves back too.",
+        "es": "Ya que + indicativo expresa una razón conocida; en pasado: hace → hacía, y el verbo principal también retrocede."
+      }
+    },
+    {
+      "id": "fc-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Trabajo mucho ___ ganar más dinero, pero hoy no fui a trabajar ___ estaba enfermo. Mi jefe me llamó ___ que le explicara todo.",
+      "answers": [
+        "para",
+        "porque",
+        "para"
+      ],
+      "accept": [
+        [
+          "a fin de"
+        ],
+        [
+          "ya que",
+          "puesto que"
+        ],
+        []
+      ],
+      "tr": {
+        "en": "I work a lot to earn more money, but today I did not go to work because I was sick. My boss called me so that I would explain everything to him.",
+        "es": "Trabajo mucho para ganar más dinero, pero hoy no fui a trabajar porque estaba enfermo. Mi jefe me llamó para que le explicara todo."
+      },
+      "why": {
+        "en": "Para + infinitive gives the purpose, porque gives the cause, and para que + subjunctive (explicara) gives a purpose with a new subject.",
+        "es": "Para + infinitivo da la finalidad, porque da la causa, y para que + subjuntivo (explicara) da una finalidad con otro sujeto."
+      }
+    },
+    {
+      "id": "fc-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Te llamo ___ que me ayudes con la tarea. No quiero molestarte, pero ___ no entiendo nada, necesito tu ayuda.",
+      "answers": [
+        "para",
+        "como"
+      ],
+      "accept": [
+        [],
+        [
+          "ya que",
+          "puesto que",
+          "dado que"
+        ]
+      ],
+      "tr": {
+        "en": "I am calling you so that you help me with the homework. I do not want to bother you, but since I understand nothing, I need your help.",
+        "es": "Te llamo para que me ayudes con la tarea. No quiero molestarte, pero como no entiendo nada, necesito tu ayuda."
+      },
+      "why": {
+        "en": "Para que + subjunctive (ayudes) for the purpose; como (also ya que, puesto que) opens a clause that gives the reason first.",
+        "es": "Para que + subjuntivo (ayudes) para la finalidad; como (también ya que, puesto que) abre una cláusula que da primero la razón."
+      }
+    },
+    {
+      "id": "fc-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "No pude venir ___ el tráfico. Perdimos el vuelo ___ a la tormenta. Lo logré ___ a tu ayuda.",
+      "answers": [
+        "por",
+        "debido",
+        "gracias"
+      ],
+      "tr": {
+        "en": "I could not come because of the traffic. We missed the flight because of the storm. I made it thanks to your help.",
+        "es": "No pude venir por el tráfico. Perdimos el vuelo debido a la tormenta. Lo logré gracias a tu ayuda."
+      },
+      "why": {
+        "en": "A noun as cause: por + noun (neutral), debido a (formal, usually a problem), gracias a (a positive cause).",
+        "es": "Un sustantivo como causa: por + sustantivo (neutro), debido a (formal, suele ser un problema), gracias a (una causa positiva)."
+      }
+    },
+    {
+      "id": "fc-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Fui a la tienda ___ comprar leche. Vine ___ que me ayudaras. Hablo despacio ___ que todos me entiendan.",
+      "answers": [
+        "para",
+        "a",
+        "para"
+      ],
+      "accept": [
+        [
+          "a"
+        ],
+        [
+          "para"
+        ],
+        []
+      ],
+      "tr": {
+        "en": "I went to the store to buy milk. I came so that you would help me. I speak slowly so that everyone understands me.",
+        "es": "Fui a la tienda para comprar leche. Vine a que me ayudaras. Hablo despacio para que todos me entiendan."
+      },
+      "why": {
+        "en": "Same subject: para + infinitive (para comprar). Different subject: para que + subjunctive; after verbs of motion, a que also works (vine a que me ayudaras).",
+        "es": "Mismo sujeto: para + infinitivo (para comprar). Sujeto distinto: para que + subjuntivo; tras verbos de movimiento también sirve a que (vine a que me ayudaras)."
+      }
+    },
+    {
+      "id": "fc-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Estudio español porque me ___ (gustar), no porque me ___ (obligar) en el trabajo. Lo hago ___ que mi familia esté orgullosa.",
+      "answers": [
+        "gusta",
+        "obliguen",
+        "para"
+      ],
+      "tr": {
+        "en": "I study Spanish because I like it, not because they force me at work. I do it so that my family is proud.",
+        "es": "Estudio español porque me gusta (gustar), no porque me obliguen (obligar) en el trabajo. Lo hago para que mi familia esté orgullosa."
+      },
+      "why": {
+        "en": "Porque + indicative states a real cause (me gusta); no porque + subjunctive denies a cause (me obliguen); para que + subjunctive gives the purpose.",
+        "es": "Porque + indicativo expresa una causa real (me gusta); no porque + subjuntivo niega una causa (me obliguen); para que + subjuntivo da la finalidad."
+      }
+    },
+    {
+      "id": "fc-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "Estudio mucho para que apruebo el examen.",
+      "wrongIndex": 4,
+      "answer": "apruebe",
+      "explain": {
+        "en": "Para que always takes the subjunctive: para que apruebe.",
+        "es": "Para que siempre lleva subjuntivo: para que apruebe."
+      },
+      "tr": {
+        "en": "I study a lot so that I pass the exam.",
+        "es": "Estudio mucho para que apruebe el examen."
+      }
+    },
+    {
+      "id": "fc-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "No fui a la fiesta porque la lluvia.",
+      "wrongIndex": 5,
+      "answer": "por",
+      "explain": {
+        "en": "Porque is followed by a verb; before a noun the cause takes por: por la lluvia.",
+        "es": "Porque va seguido de un verbo; ante un sustantivo la causa lleva por: por la lluvia."
+      },
+      "tr": {
+        "en": "I did not go to the party because of the rain.",
+        "es": "No fui a la fiesta por la lluvia."
+      }
+    },
+    {
+      "id": "fc-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "Ya que estés aquí, ayúdame con esto.",
+      "wrongIndex": 2,
+      "answer": "estás",
+      "explain": {
+        "en": "Ya que gives a known reason, so it takes the indicative: ya que estás.",
+        "es": "Ya que da una razón conocida, así que lleva indicativo: ya que estás."
+      },
+      "tr": {
+        "en": "Since you are here, help me with this.",
+        "es": "Ya que estás aquí, ayúdame con esto."
+      }
+    },
+    {
+      "id": "fc-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "Porque no tengo dinero, no puedo viajar.",
+      "wrongIndex": 0,
+      "answer": "Como",
+      "accept": [
+        "Ya que",
+        "Puesto que",
+        "Dado que"
+      ],
+      "explain": {
+        "en": "To start a sentence with the reason, use como (or ya que, puesto que), not porque.",
+        "es": "Para empezar la oración con la razón se usa como (o ya que, puesto que), no porque."
+      },
+      "tr": {
+        "en": "Since I have no money, I cannot travel.",
+        "es": "Como no tengo dinero, no puedo viajar."
+      }
+    },
+    {
+      "id": "fc-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "Salí temprano para no llegué tarde.",
+      "wrongIndex": 4,
+      "answer": "llegar",
+      "explain": {
+        "en": "With the same subject, para takes an infinitive: para no llegar tarde.",
+        "es": "Con el mismo sujeto, para lleva infinitivo: para no llegar tarde."
+      },
+      "tr": {
+        "en": "I left early so as not to arrive late.",
+        "es": "Salí temprano para no llegar tarde."
+      }
+    },
+    {
+      "id": "fc-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "para que",
+        "porque",
+        "si"
+      ],
+      "es": "Te escribo ___ sepas la verdad.",
+      "word": "para que",
+      "answer": "para que",
+      "tr": {
+        "en": "I am writing to you so that you know the truth.",
+        "es": "Te escribo para que sepas la verdad."
+      },
+      "why": {
+        "en": "The purpose with a new subject takes para que + subjunctive (sepas); porque and si do not fit.",
+        "es": "La finalidad con otro sujeto lleva para que + subjuntivo (sepas); porque y si no encajan."
+      }
+    },
+    {
+      "id": "fc-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "porque",
+        "para que",
+        "sin que"
+      ],
+      "es": "No fui a la escuela ___ estaba enfermo.",
+      "word": "porque",
+      "answer": "porque",
+      "accept": [
+        "ya que",
+        "puesto que"
+      ],
+      "tr": {
+        "en": "I did not go to school because I was sick.",
+        "es": "No fui a la escuela porque estaba enfermo."
+      },
+      "why": {
+        "en": "A real cause with an indicative verb (estaba) takes porque; para que and sin que need a subjunctive.",
+        "es": "Una causa real con verbo en indicativo (estaba) lleva porque; para que y sin que necesitan subjuntivo."
+      }
+    },
+    {
+      "id": "fc-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "ya que",
+        "a que",
+        "para que"
+      ],
+      "es": "___ estás aquí, ayúdame con esto.",
+      "word": "ya que",
+      "answer": "Ya que",
+      "accept": [
+        "Puesto que",
+        "Dado que",
+        "Como"
+      ],
+      "tr": {
+        "en": "Since you are here, help me with this.",
+        "es": "Ya que estás aquí, ayúdame con esto."
+      },
+      "why": {
+        "en": "A known reason with the indicative (estás) takes ya que; a que and para que do not fit here.",
+        "es": "Una razón conocida con indicativo (estás) lleva ya que; a que y para que no encajan aquí."
+      }
+    },
+    {
+      "id": "fc-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "gracias a",
+        "debido",
+        "hacia"
+      ],
+      "es": "Lo logré ___ tu ayuda.",
+      "word": "gracias a",
+      "answer": "gracias a",
+      "tr": {
+        "en": "I made it thanks to your help.",
+        "es": "Lo logré gracias a tu ayuda."
+      },
+      "why": {
+        "en": "A positive cause is gracias a; debido needs a (debido a) and hacia does not express a cause.",
+        "es": "Una causa positiva es gracias a; debido necesita a (debido a) y hacia no expresa causa."
+      }
+    },
+    {
+      "id": "fc-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "con el fin de",
+        "debido a",
+        "por culpa de"
+      ],
+      "es": "Estudio ___ conseguir una beca.",
+      "word": "con el fin de",
+      "answer": "con el fin de",
+      "accept": [
+        "para",
+        "a fin de"
+      ],
+      "tr": {
+        "en": "I study in order to get a scholarship.",
+        "es": "Estudio con el fin de conseguir una beca."
+      },
+      "why": {
+        "en": "A formal purpose with an infinitive is con el fin de (or a fin de, para); debido a and por culpa de give a cause.",
+        "es": "Una finalidad formal con infinitivo es con el fin de (o a fin de, para); debido a y por culpa de dan una causa."
+      }
+    },
+    {
+      "id": "fc-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "I speak slowly so that everyone understands me.",
+        "es": "Hablo despacio para que todos me entiendan."
+      },
+      "es": "Hablo despacio para que todos me entiendan."
+    },
+    {
+      "id": "fc-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "We did not go to the beach because it was raining.",
+        "es": "No fuimos a la playa porque llovía."
+      },
+      "es": "No fuimos a la playa porque llovía."
+    },
+    {
+      "id": "fc-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "I am telling you so that you know.",
+        "es": "Te lo digo para que lo sepas."
+      },
+      "es": "Te lo digo para que lo sepas."
+    },
+    {
+      "id": "fc-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "I did it for you, not for money.",
+        "es": "Lo hice por ti, no por dinero."
+      },
+      "es": "Lo hice por ti, no por dinero."
+    },
+    {
+      "id": "fc-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "I arrived late because of the traffic.",
+        "es": "Llegué tarde por el tráfico."
+      },
+      "es": "Llegué tarde por el tráfico."
     }
   ]
 }
