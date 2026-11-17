@@ -1,12 +1,12 @@
 // The authored A1 reading of the Spanish practice exam (FB648-FB651): texts of several sentences with a Spanish comprehension
 // question (not a one-sentence translation), and a match of Spanish signs to Spanish meanings (no English options).
 
-import { ES_A1_READING_SIGNS, ES_A1_READING_TEXTS } from '@/data/exams/mock/es-a1-reading-texts';
+import { ES_A1_READING_SIGNS, ES_A1_READING_TEXTS, ES_A1_TRUE_FALSE_TEXTS } from '@/data/exams/mock/es-a1-reading-texts';
 import { pcicItemsForLevel, setPcicTarget } from '@/data/pcic';
 import { buildMockExam } from '../build';
 import { buildGlossaryIndex, mockGlossary } from '../glossary';
 import { scoreMockTask } from '../score';
-import type { MockExam, MockLevel, MockMatchTask, MockReadMcTask } from '../types';
+import type { MockExam, MockLevel, MockMatchTask, MockReadMcTask, MockTrueFalseTask } from '../types';
 
 afterAll(() => setPcicTarget('es'));
 
@@ -96,5 +96,43 @@ describe('es A1 reading paper', () => {
     const words = (t: ReturnType<typeof reading>[number]) => mockGlossary(t, index, new Set()).map((g) => g.term);
     expect(words(r1).length).toBeGreaterThan(0);
     expect(words(r2).length).toBeGreaterThan(0);
+  });
+});
+
+describe('es A1 reading: true / false (task 3)', () => {
+  it('data: 3+ sentence texts, at least 2 true and 2 false Spanish statements', () => {
+    for (const t of ES_A1_TRUE_FALSE_TEXTS) {
+      expect(t.text.split(/(?<=[.!?])\s+/).length).toBeGreaterThanOrEqual(3);
+      expect(t.statements.filter((x) => x.answer).length).toBeGreaterThanOrEqual(2);
+      expect(t.statements.filter((x) => !x.answer).length).toBeGreaterThanOrEqual(2);
+      for (const x of t.statements) expect(/^[A-ZÁÉÍÓÚÑ].*\.$/.test(x.s)).toBe(true);
+    }
+  });
+
+  it.each([1, 2, 3, 5, 9])('seed %i: reading-3 is an authored text with 2 true and 2 false Spanish statements', (seed) => {
+    const t = reading(es('A1', seed))[2] as MockTrueFalseTask;
+    expect(t.id).toBe('reading-3');
+    expect(t.kind).toBe('true_false');
+    expect(t.statementsInTarget).toBe(true);
+    const src = ES_A1_TRUE_FALSE_TEXTS.find((x) => x.text === t.text)!;
+    expect(src).toBeDefined();
+    expect(t.statements).toHaveLength(4);
+    expect(t.statements.filter((x) => x.answer)).toHaveLength(2);
+    for (const st of t.statements) expect(src.statements).toContainEqual(st);
+  });
+
+  it('A2 keeps the generated true / false', () => {
+    expect((reading(es('A2', 1))[2] as MockTrueFalseTask).statementsInTarget).toBeUndefined();
+  });
+});
+
+describe('es A1 reading: the review carries the question', () => {
+  it('the review label of an authored text is the text and its question; a generated one only the text', () => {
+    const r1 = reading(es('A1', 1))[0] as MockReadMcTask;
+    const res = scoreMockTask(r1, {});
+    expect(res.items[0].label).toBe(`${r1.passages[0].text}
+${r1.passages[0].question}`);
+    const a2 = reading(es('A2', 1))[0] as MockReadMcTask;
+    expect(scoreMockTask(a2, {}).items[0].label).toBe(a2.passages[0].text);
   });
 });

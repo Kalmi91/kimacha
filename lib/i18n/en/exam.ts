@@ -138,6 +138,8 @@ export default {
     hint: {
       read_mc: 'Read each short text and choose what it means.',
       match: 'Match each sentence with its meaning. There is one meaning too many.',
+      read_mc_q: 'Read the text and answer the question.',
+      match_text: 'Match each sign or note with the sentence that explains it. There is one sentence too many.',
       true_false: 'Read the text. Mark each statement true or false.',
       gap_mc: 'Choose the word that fits each gap.',
       listen_mc: 'Listen to the sentences (twice) and choose what you heard.',

@@ -134,6 +134,8 @@ const de: typeof en = {
     hint: {
       read_mc: 'Lies jeden kurzen Text und wähle, was er bedeutet.',
       match: 'Ordne jedem Satz seine Bedeutung zu. Es gibt eine Bedeutung zu viel.',
+      read_mc_q: 'Lies den Text und beantworte die Frage.',
+      match_text: 'Ordne jedem Schild oder jeder Notiz den Satz zu, der es erklärt. Ein Satz ist zu viel.',
       true_false: 'Lies den Text. Markiere jede Aussage als richtig oder falsch.',
       gap_mc: 'Wähle für jede Lücke das passende Wort.',
       listen_mc: 'Höre dir die Sätze (zweimal) an und wähle, was du gehört hast.',

@@ -65,7 +65,7 @@ export function mockTaskTexts(task: MockTask): string[] {
     case 'match':
       return task.optionsInTarget ? [...task.prompts.map((p) => p.text), ...task.options.map((o) => o.text)] : task.prompts.map((p) => p.text);
     case 'true_false':
-      return [task.text];
+      return task.statementsInTarget ? [task.text, ...task.statements.map((x) => x.s)] : [task.text];
     case 'gap_mc':
       return task.gaps.flatMap((g) => [g.text.replace('___', ' '), ...g.options]);
     case 'gap_type':

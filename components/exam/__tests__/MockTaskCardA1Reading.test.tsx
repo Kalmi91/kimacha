@@ -40,4 +40,10 @@ describe('MockTaskCard read_mc (A1 reading)', () => {
     expect(getByText('1. ¿Dónde duerme el gato?')).toBeTruthy();
     expect(getByText('2. What does the text say?')).toBeTruthy();
   });
+
+  it('the help line matches the authored task, the generated one keeps the translation help', () => {
+    const { getByText, queryByText } = show();
+    expect(getByText('Read the text and answer the question.')).toBeTruthy();
+    expect(queryByText('Read each short text and choose what it means.')).toBeNull();
+  });
 });

@@ -64,6 +64,8 @@ export interface MockTrueFalseTask extends MockTaskBase {
   kind: 'true_false';
   text: string;
   statements: { s: string; answer: boolean }[];
+  /** The statements are target-language sentences (the authored A1 reading), so the glossary covers them. */
+  statementsInTarget?: boolean;
 }
 
 export interface MockGapMcTask extends MockTaskBase {

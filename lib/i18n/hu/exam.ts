@@ -132,6 +132,8 @@ const hu: typeof en = {
     hint: {
       read_mc: 'Olvasd el a rövid szövegeket, és válaszd ki, mit jelentenek.',
       match: 'Párosíts minden mondatot a jelentésével. Egy jelentés felesleges.',
+      read_mc_q: 'Olvasd el a szöveget, és válaszolj a kérdésre.',
+      match_text: 'Párosíts minden táblát vagy üzenetet a magyarázó mondattal. Egy mondat felesleges.',
       true_false: 'Olvasd el a szöveget. Jelöld meg minden állításról, hogy igaz vagy hamis.',
       gap_mc: 'Válaszd ki a megfelelő szót minden hézagba.',
       listen_mc: 'Hallgasd meg a mondatokat (kétszer), és válaszd ki, mit hallottál.',

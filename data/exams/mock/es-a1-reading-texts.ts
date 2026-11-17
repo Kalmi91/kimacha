@@ -75,3 +75,58 @@ export const ES_A1_READING_SIGNS: A1ReadingSign[] = [
   { id: 'silencio', sign: 'Silencio, por favor. Hay examen.', meaning: 'No se debe hacer ruido.' },
   { id: 'ninos', sign: 'Los niños menores de cinco años entran gratis.', meaning: 'Un niño pequeño no paga la entrada.' },
 ];
+
+/** A text with Spanish statements, each decidable from the text: true / false marking (the builder takes 2 true and 2 false). */
+export interface A1TrueFalseText {
+  id: string;
+  text: string;
+  /** At least two true and two false statements. */
+  statements: { s: string; answer: boolean }[];
+}
+
+export const ES_A1_TRUE_FALSE_TEXTS: A1TrueFalseText[] = [
+  {
+    id: 'biblioteca',
+    text: 'La biblioteca de mi barrio abre a las nueve de la mañana. Tiene muchos libros para niños y una sala con mesas grandes. Los jueves hay una hora de cuentos para los más pequeños. La entrada es gratis.',
+    statements: [
+      { s: 'La biblioteca abre por la mañana.', answer: true },
+      { s: 'Hay una hora de cuentos los jueves.', answer: true },
+      { s: 'Para entrar hay que pagar.', answer: false },
+      { s: 'En la biblioteca no hay libros para niños.', answer: false },
+      { s: 'La sala tiene mesas grandes.', answer: true },
+    ],
+  },
+  {
+    id: 'viaje-playa',
+    text: 'Este fin de semana vamos a la playa con mis primos. Salimos el sábado a las seis de la mañana en autobús. El viaje dura cuatro horas. Llevamos sándwiches, agua y una sombrilla.',
+    statements: [
+      { s: 'Van a la playa con sus primos.', answer: true },
+      { s: 'Salen el domingo.', answer: false },
+      { s: 'Viajan en autobús.', answer: true },
+      { s: 'El viaje dura una hora.', answer: false },
+      { s: 'Llevan agua y sándwiches.', answer: true },
+    ],
+  },
+  {
+    id: 'clase-musica',
+    text: 'Lucía tiene clase de guitarra los martes y los viernes. La clase empieza a las cinco y termina a las seis. Su maestro se llama Rafael y es muy simpático. Lucía practica en casa todos los días.',
+    statements: [
+      { s: 'Lucía tiene clase dos veces por semana.', answer: true },
+      { s: 'La clase termina a las cinco.', answer: false },
+      { s: 'Su maestro es simpático.', answer: true },
+      { s: 'Lucía solo toca la guitarra en la clase.', answer: false },
+      { s: 'Rafael es el maestro de Lucía.', answer: true },
+    ],
+  },
+  {
+    id: 'tienda-ropa',
+    text: 'En la tienda de la esquina venden ropa para toda la familia. Esta semana las camisas cuestan doscientos pesos y los zapatos tienen descuento. La tienda está abierta de diez a ocho, todos los días menos el domingo.',
+    statements: [
+      { s: 'En la tienda venden ropa.', answer: true },
+      { s: 'La tienda abre los domingos.', answer: false },
+      { s: 'Los zapatos tienen descuento esta semana.', answer: true },
+      { s: 'Las camisas cuestan veinte pesos.', answer: false },
+      { s: 'La tienda cierra a las ocho.', answer: true },
+    ],
+  },
+];

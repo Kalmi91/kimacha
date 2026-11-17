@@ -11,7 +11,7 @@
 //
 // Pure module: no database, no loaded corpus, the caller supplies the data.
 
-import { ES_A1_READING_SIGNS, ES_A1_READING_TEXTS } from '@/data/exams/mock/es-a1-reading-texts';
+import { ES_A1_READING_SIGNS, ES_A1_READING_TEXTS, ES_A1_TRUE_FALSE_TEXTS } from '@/data/exams/mock/es-a1-reading-texts';
 import type { PcicItem } from '@/data/pcic';
 import { wordIn } from '@/lib/pcicItemText';
 import { hashString, shuffleArray, shuffleOptions } from '@/lib/shuffle';
@@ -298,6 +298,14 @@ export function buildMockExam(input: MockBuildInput): MockExam {
     return draft('reading', 'true_false', body);
   };
 
+  // The authored A1 true / false: a Spanish text of several sentences and Spanish statements decidable from it (2 true, 2 false).
+  const authoredTrueFalse = (): Draft => {
+    const t = shuffleArray(ES_A1_TRUE_FALSE_TEXTS, rank('a1tf'))[0];
+    const pick = (answer: boolean, n: number) => shuffleArray(t.statements.filter((x) => x.answer === answer), rank(`a1tf:${answer}`)).slice(0, n);
+    const statements = shuffleArray([...pick(true, c.readTrue), ...pick(false, c.readTrueFalse - c.readTrue)], rank('a1tf:order'));
+    return draft('reading', 'true_false', { kind: 'true_false', text: t.text, statements, statementsInTarget: true });
+  };
+
   const gapMc = (): Draft | null => {
     if (gapMcHosts.length < 2) return null;
     const gaps: MockGapMcTask['gaps'] = gapMcHosts.map((g) => ({ text: g.text, options: g.options!, correct: g.correct! }));
@@ -348,7 +356,7 @@ export function buildMockExam(input: MockBuildInput): MockExam {
   const drafts: Record<MockSkill, (Draft | null)[]> = { reading: [], writing, listening: [], speaking: [], use: [] };
   if (bp.plan === 'es-official') {
     const a1 = level === 'A1';
-    drafts.reading = [a1 ? authoredReadMc() : readMc(), a1 ? authoredMatch() : matchDraft('match', c.readMatch, 'rm'), trueFalse(), gapMc()];
+    drafts.reading = [a1 ? authoredReadMc() : readMc(), a1 ? authoredMatch() : matchDraft('match', c.readMatch, 'rm'), a1 ? authoredTrueFalse() : trueFalse(), gapMc()];
     drafts.listening = [
       listenDraft('listen_mc', c.listenMc, 'lm', DEFAULT_PLAYS),
       matchDraft('listen_match', c.listenMatch, 'lx'),

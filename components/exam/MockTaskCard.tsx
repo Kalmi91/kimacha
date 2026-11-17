@@ -97,7 +97,15 @@ export default function MockTaskCard({ task, answer, onAnswer, target, canSpeak,
   const isListening = audioLines.length > 0;
   const maxPlays = 'plays' in task && typeof task.plays === 'number' ? task.plays : DEFAULT_PLAYS;
   // The listening gap task gets separate help (the text of the gaps is visible, the sentences are spoken).
-  const hintKey = task.kind === 'gap_type' && audioLines.length > 0 ? 'listen_fill' : task.kind;
+  // The authored A1 reading (a question per text, Spanish signs) has its own help; the generated tasks keep the translation help.
+  const hintKey =
+    task.kind === 'gap_type' && audioLines.length > 0
+      ? 'listen_fill'
+      : task.kind === 'read_mc' && task.passages.some((p) => p.question)
+        ? 'read_mc_q'
+        : task.kind === 'match' && task.optionsInTarget
+          ? 'match_text'
+          : task.kind;
   const isDialogue = task.kind === 'listen_dialogue';
 
   const playAudio = () => {

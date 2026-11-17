@@ -132,6 +132,8 @@ const es: typeof en = {
     hint: {
       read_mc: 'Lee cada texto corto y elige qué significa.',
       match: 'Relaciona cada oración con su significado. Sobra un significado.',
+      read_mc_q: 'Lee el texto y contesta la pregunta.',
+      match_text: 'Relaciona cada letrero o nota con la frase que lo explica. Sobra una frase.',
       true_false: 'Lee el texto. Marca cada frase como verdadera o falsa.',
       gap_mc: 'Elige la palabra que encaja en cada hueco.',
       listen_mc: 'Escucha las oraciones (dos veces) y elige lo que oíste.',
