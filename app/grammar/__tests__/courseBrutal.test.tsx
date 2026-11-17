@@ -26,6 +26,7 @@ import { GRAMMAR_PROGRESS_KEY } from '@/lib/grammar/syllabus';
 import GrammarSyllabusScreen from '@/app/(tabs)/course';
 import { ThemeProvider } from '@/lib/ThemeContext';
 import { makeFlush } from '@/test-utils/flush';
+import { resetGrammarTabLevel } from '@/test-utils/grammarTab';
 
 const flush = makeFlush(4);
 
@@ -36,6 +37,7 @@ describe('course list, neo-brutalist', () => {
     const db = getDb();
     await db.setOnboarding('en', 'es');
     (db as any).__setLevelForTest('A1');
+    await resetGrammarTabLevel(db);
     await db.setGrammarPalette('brand');
   });
 
