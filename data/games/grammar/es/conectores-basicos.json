@@ -502,10 +502,7 @@
     {
       "id": "cb-01",
       "sentence": "Mi madre ___ mi padre trabajan en un banco.",
-      "options": [
-        "y",
-        "e"
-      ],
+      "options": ["y", "e", "pero"],
       "correct": 0,
       "why": {
         "en": "Y is the normal «and». It changes to e only before a word that starts with the sound i, and «mi» starts with m, so it stays y: mi madre y mi padre.",
@@ -515,6 +512,10 @@
         "e": {
           "en": "e: the form of «and» before the sound i (padre e hijo). It does not fit here, because «mi» starts with m, not with i. Correct: Mi madre y mi padre trabajan en un banco.",
           "es": "e: la forma de «y» delante del sonido i (padre e hijo). Aquí no encaja, porque «mi» empieza con m, no con i. Correcto: Mi madre y mi padre trabajan en un banco."
+        },
+        "pero": {
+          "en": "This would give Mi madre pero mi padre trabajan en un banco, but pero joins two ideas that clash; here two people are simply added; correctly: Mi madre y mi padre trabajan en un banco.",
+          "es": "Esto daría Mi madre pero mi padre trabajan en un banco, pero pero une dos ideas que chocan; aquí solo se suman dos personas; correctamente: Mi madre y mi padre trabajan en un banco."
         }
       },
       "examples": [
@@ -529,10 +530,7 @@
     {
       "id": "cb-02",
       "sentence": "Mi abuela es amable ___ inteligente.",
-      "options": [
-        "y",
-        "e"
-      ],
+      "options": ["y", "e", "u"],
       "correct": 1,
       "why": {
         "en": "«Inteligente» starts with the sound i, so «and» becomes e: amable e inteligente. Y + i would run together.",
@@ -542,6 +540,10 @@
         "y": {
           "en": "y: the usual «and». It does not fit here, because «inteligente» starts with the vowel sound i, and before that sound «and» is written e. Correct: Mi abuela es amable e inteligente.",
           "es": "y: la «y» de siempre. Aquí no encaja, porque «inteligente» empieza con el sonido de vocal i, y delante de ese sonido «y» se escribe e. Correcto: Mi abuela es amable e inteligente."
+        },
+        "u": {
+          "en": "This would give Mi abuela es amable u inteligente, but u is the form of «or» before an o-sound; it does not mean «and»; correctly: Mi abuela es amable e inteligente.",
+          "es": "Esto daría Mi abuela es amable u inteligente, pero u es la forma de «o» delante de un sonido o; no significa «y»; correctamente: Mi abuela es amable e inteligente."
         }
       },
       "examples": [
@@ -556,10 +558,7 @@
     {
       "id": "cb-03",
       "sentence": "Quiero agua ___ hielo, por favor.",
-      "options": [
-        "e",
-        "y"
-      ],
+      "options": ["e", "y", "u"],
       "correct": 1,
       "why": {
         "en": "«Hielo» is written with hi-, but it sounds like «yelo»: it starts with a consonant, not with the vowel i. So «and» stays y: agua y hielo. The change to e is only for the vowel sound i, as in hijo.",
@@ -569,6 +568,10 @@
         "e": {
           "en": "e: the form of «and» before the vowel sound i (hijo, inteligente). It does not fit here, because «hielo» starts with the consonant sound of «yelo». Correct: Quiero agua y hielo, por favor.",
           "es": "e: la forma de «y» delante del sonido de vocal i (hijo, inteligente). Aquí no encaja, porque «hielo» empieza con el sonido consonante de «yelo». Correcto: Quiero agua y hielo, por favor."
+        },
+        "u": {
+          "en": "This would give Quiero agua u hielo, but u is the form of «or» before an o-sound; it does not mean «and»; correctly: Quiero agua y hielo, por favor.",
+          "es": "Esto daría Quiero agua u hielo, pero u es la forma de «o» delante de un sonido o; no significa «y»; correctamente: Quiero agua y hielo, por favor."
         }
       },
       "examples": [
@@ -615,10 +618,7 @@
     {
       "id": "cb-05",
       "sentence": "Somos siete ___ ocho en la oficina.",
-      "options": [
-        "u",
-        "o"
-      ],
+      "options": ["u", "o", "e"],
       "correct": 0,
       "why": {
         "en": "«Ocho» starts with the sound o, so «or» becomes u: siete u ocho. O + o would run together.",
@@ -628,6 +628,10 @@
         "o": {
           "en": "o: the usual «or». It does not fit here, because «ocho» starts with the sound o, and before that sound «or» is written u. Correct: Somos siete u ocho en la oficina.",
           "es": "o: la «o» de siempre. Aquí no encaja, porque «ocho» empieza con el sonido o, y delante de ese sonido «o» se escribe u. Correcto: Somos siete u ocho en la oficina."
+        },
+        "e": {
+          "en": "This would give Somos siete e ocho en la oficina, but e is the form of «and» before an i-sound; it does not mean «or»; correctly: Somos siete u ocho en la oficina.",
+          "es": "Esto daría Somos siete e ocho en la oficina, pero e es la forma de «y» delante de un sonido i; no significa «o»; correctamente: Somos siete u ocho en la oficina."
         }
       },
       "examples": [

@@ -269,10 +269,7 @@
     {
       "id": "int-01",
       "sentence": "¿___ vives?",
-      "options": [
-        "Dónde",
-        "Cuándo"
-      ],
+      "options": ["Dónde", "Cuándo", "Quién"],
       "correct": 0,
       "why": {
         "en": "Vives (you live) asks about a PLACE: dónde = where.",
@@ -282,6 +279,10 @@
         "Cuándo": {
           "en": "This would give ¿Cuándo vives?, but cuándo asks about TIME, while here we are asking about a PLACE; correctly: ¿Dónde vives?",
           "es": "Esto daría ¿Cuándo vives?, pero cuándo pregunta por el TIEMPO, y aquí se pregunta por el LUGAR; correctamente: ¿Dónde vives?"
+        },
+        "Quién": {
+          "en": "This would give ¿Quién vives?, but quién asks about a PERSON, while here we ask about a PLACE; correctly: ¿Dónde vives?",
+          "es": "Esto daría ¿Quién vives?, pero quién pregunta por una PERSONA, y aquí se pregunta por el LUGAR; correctamente: ¿Dónde vives?"
         }
       },
       "examples": [
@@ -293,10 +294,7 @@
     {
       "id": "int-02",
       "sentence": "¿___ vive contigo?",
-      "options": [
-        "Quién",
-        "Qué"
-      ],
+      "options": ["Quién", "Qué", "Dónde"],
       "correct": 0,
       "why": {
         "en": "For a person you ask quién (who).",
@@ -306,6 +304,10 @@
         "Qué": {
           "en": "This would give ¿Qué vive contigo?, but qué asks about a THING, while the one living with you is a PERSON; correctly: ¿Quién vive contigo?",
           "es": "Esto daría ¿Qué vive contigo?, pero qué pregunta por una COSA, y quien vive contigo es una PERSONA; correctamente: ¿Quién vive contigo?"
+        },
+        "Dónde": {
+          "en": "This would give ¿Dónde vive contigo?, but dónde asks about a PLACE, while the one living with you is a PERSON; correctly: ¿Quién vive contigo?",
+          "es": "Esto daría ¿Dónde vive contigo?, pero dónde pregunta por un LUGAR, y quien vive contigo es una PERSONA; correctamente: ¿Quién vive contigo?"
         }
       },
       "examples": [
@@ -317,10 +319,7 @@
     {
       "id": "int-03",
       "sentence": "¿___ estás?",
-      "options": [
-        "Cómo",
-        "Cuánto"
-      ],
+      "options": ["Cómo", "Cuánto", "Quién"],
       "correct": 0,
       "why": {
         "en": "Cómo asks about manner or state: how are you?",
@@ -330,6 +329,10 @@
         "Cuánto": {
           "en": "This would give ¿Cuánto estás?, but cuánto asks about QUANTITY, while with estar we ask about a STATE; correctly: ¿Cómo estás?",
           "es": "Esto daría ¿Cuánto estás?, pero cuánto pregunta por la CANTIDAD, y con estar se pregunta el ESTADO; correctamente: ¿Cómo estás?"
+        },
+        "Quién": {
+          "en": "This would give ¿Quién estás?, but quién asks about a PERSON, while with estar we ask about a STATE; correctly: ¿Cómo estás?",
+          "es": "Esto daría ¿Quién estás?, pero quién pregunta por una PERSONA, y con estar se pregunta el ESTADO; correctamente: ¿Cómo estás?"
         }
       },
       "examples": [
@@ -341,10 +344,7 @@
     {
       "id": "int-04",
       "sentence": "¿___ cuesta el libro?",
-      "options": [
-        "Cuánto",
-        "Cómo"
-      ],
+      "options": ["Cuánto", "Cómo", "Cuántos"],
       "correct": 0,
       "why": {
         "en": "A price is a quantity question: cuánto.",
@@ -354,6 +354,10 @@
         "Cómo": {
           "en": "This would give ¿Cómo cuesta el libro?, but cómo asks HOW (in what way), while a price is a NUMBER; correctly: ¿Cuánto cuesta el libro?",
           "es": "Esto daría ¿Cómo cuesta el libro?, pero cómo pregunta de qué MANERA, y el precio es un NÚMERO; correctamente: ¿Cuánto cuesta el libro?"
+        },
+        "Cuántos": {
+          "en": "This would give ¿Cuántos cuesta el libro?, but cuántos is the plural form, while the price of one book is a single amount; correctly: ¿Cuánto cuesta el libro?",
+          "es": "Esto daría ¿Cuántos cuesta el libro?, pero cuántos es la forma plural, y el precio de un libro es una sola cantidad; correctamente: ¿Cuánto cuesta el libro?"
         }
       },
       "examples": [
@@ -365,10 +369,7 @@
     {
       "id": "int-05",
       "sentence": "¿___ no vienes con nosotros?",
-      "options": [
-        "Por qué",
-        "Porque"
-      ],
+      "options": ["Por qué", "Porque", "Por que"],
       "correct": 0,
       "why": {
         "en": "The question takes por qué (two words, accented): why.",
@@ -378,6 +379,10 @@
         "Porque": {
           "en": "This would give ¿Porque no vienes con nosotros?, but porque (one word, no accent) is the ANSWER word; a question takes the two-word, accented por qué; correctly: ¿Por qué no vienes con nosotros?",
           "es": "Esto daría ¿Porque no vienes con nosotros?, pero porque (una palabra, sin tilde) es la palabra de la RESPUESTA; en la pregunta va por qué, dos palabras con tilde; correctamente: ¿Por qué no vienes con nosotros?"
+        },
+        "Por que": {
+          "en": "This would give ¿Por que no vienes con nosotros?, but a question needs the accent: por qué; correctly: ¿Por qué no vienes con nosotros?",
+          "es": "Esto daría ¿Por que no vienes con nosotros?, pero una pregunta necesita la tilde: por qué; correctamente: ¿Por qué no vienes con nosotros?"
         }
       },
       "examples": [
@@ -389,10 +394,7 @@
     {
       "id": "int-06",
       "sentence": "¿___ es esto?",
-      "options": [
-        "Qué",
-        "Quién"
-      ],
+      "options": ["Qué", "Quién", "Cuál"],
       "correct": 0,
       "why": {
         "en": "For an unknown THING you ask qué.",
@@ -402,6 +404,10 @@
         "Quién": {
           "en": "This would give ¿Quién es esto?, but quién asks about a PERSON, while esto points at an unknown THING; correctly: ¿Qué es esto?",
           "es": "Esto daría ¿Quién es esto?, pero quién pregunta por una PERSONA, y esto señala una COSA desconocida; correctamente: ¿Qué es esto?"
+        },
+        "Cuál": {
+          "en": "This would give ¿Cuál es esto?, but cuál asks to choose among known things, while esto is something unknown; correctly: ¿Qué es esto?",
+          "es": "Esto daría ¿Cuál es esto?, pero cuál pide elegir entre cosas conocidas, y esto es algo desconocido; correctamente: ¿Qué es esto?"
         }
       },
       "examples": [
@@ -413,10 +419,7 @@
     {
       "id": "int-07",
       "sentence": "¿___ llegas a casa?",
-      "options": [
-        "Cuándo",
-        "Dónde"
-      ],
+      "options": ["Cuándo", "Dónde", "Quién"],
       "correct": 0,
       "why": {
         "en": "For the TIME of arriving you ask cuándo.",
@@ -426,6 +429,10 @@
         "Dónde": {
           "en": "This would give ¿Dónde llegas a casa?, but the place is already in the sentence (a casa); what is missing is the TIME; correctly: ¿Cuándo llegas a casa?",
           "es": "Esto daría ¿Dónde llegas a casa?, pero el lugar ya está en la frase (a casa); falta el MOMENTO; correctamente: ¿Cuándo llegas a casa?"
+        },
+        "Quién": {
+          "en": "This would give ¿Quién llegas a casa?, but quién asks about a PERSON, while what is missing is the TIME; correctly: ¿Cuándo llegas a casa?",
+          "es": "Esto daría ¿Quién llegas a casa?, pero quién pregunta por una PERSONA, y lo que falta es el TIEMPO; correctamente: ¿Cuándo llegas a casa?"
         }
       },
       "examples": [
@@ -437,10 +444,7 @@
     {
       "id": "int-08",
       "sentence": "¿___ libros tienes?",
-      "options": [
-        "Cuántos",
-        "Cuánto"
-      ],
+      "options": ["Cuántos", "Cuánto", "Cuántas"],
       "correct": 0,
       "why": {
         "en": "Cuánto agrees with the noun: libros is masculine plural, so cuántos.",
@@ -450,6 +454,10 @@
         "Cuánto": {
           "en": "This would give ¿Cuánto libros tienes?, but cuánto is the singular form, while libros is masculine PLURAL; correctly: ¿Cuántos libros tienes?",
           "es": "Esto daría ¿Cuánto libros tienes?, pero cuánto es la forma singular, y libros es masculino PLURAL; correctamente: ¿Cuántos libros tienes?"
+        },
+        "Cuántas": {
+          "en": "This would give ¿Cuántas libros tienes?, but cuántas is feminine, while libros is masculine; correctly: ¿Cuántos libros tienes?",
+          "es": "Esto daría ¿Cuántas libros tienes?, pero cuántas es femenino, y libros es masculino; correctamente: ¿Cuántos libros tienes?"
         }
       },
       "examples": [
@@ -461,10 +469,7 @@
     {
       "id": "int-09",
       "sentence": "No sé ___ vive.",
-      "options": [
-        "dónde",
-        "donde"
-      ],
+      "options": ["dónde", "donde", "adónde"],
       "correct": 0,
       "why": {
         "en": "This is an embedded question: I do not know WHERE he lives. The question keeps its accent even with no question mark.",
@@ -474,6 +479,10 @@
         "donde": {
           "en": "This would give No sé donde vive., but unaccented donde LINKS a place (la casa donde vivo); here a hidden question stands instead; correctly: No sé dónde vive.",
           "es": "Esto daría No sé donde vive., pero donde sin tilde ENLAZA un lugar (la casa donde vivo); aquí hay una pregunta escondida; correctamente: No sé dónde vive."
+        },
+        "adónde": {
+          "en": "This would give No sé adónde vive., but adónde asks about a destination (where to), while living is not a movement; correctly: No sé dónde vive.",
+          "es": "Esto daría No sé adónde vive., pero adónde pregunta por un destino (hacia dónde), y vivir no es un movimiento; correctamente: No sé dónde vive."
         }
       },
       "examples": [
@@ -485,10 +494,7 @@
     {
       "id": "int-10",
       "sentence": "¿___ son esos hombres?",
-      "options": [
-        "Quiénes",
-        "Quién"
-      ],
+      "options": ["Quiénes", "Quién", "Dónde"],
       "correct": 0,
       "why": {
         "en": "For several people you use the plural of quién: quiénes.",
@@ -498,6 +504,10 @@
         "Quién": {
           "en": "This would give ¿Quién son esos hombres?, but quién asks about one person, while son and esos hombres are PLURAL; correctly: ¿Quiénes son esos hombres?",
           "es": "Esto daría ¿Quién son esos hombres?, pero quién pregunta por una persona, y son y esos hombres están en PLURAL; correctamente: ¿Quiénes son esos hombres?"
+        },
+        "Dónde": {
+          "en": "This would give ¿Dónde son esos hombres?, but dónde asks about a PLACE, while here we ask about WHO those people are; correctly: ¿Quiénes son esos hombres?",
+          "es": "Esto daría ¿Dónde son esos hombres?, pero dónde pregunta por un LUGAR, y aquí se pregunta QUIÉNES son; correctamente: ¿Quiénes son esos hombres?"
         }
       },
       "examples": [

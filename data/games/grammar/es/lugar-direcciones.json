@@ -390,7 +390,7 @@
     {
       "id": "ld-05",
       "sentence": "¿Dónde está el libro? Está ___.",
-      "options": ["encima", "encima de"],
+      "options": ["encima", "encima de", "sobre"],
       "correct": 0,
       "why": {
         "en": "No noun follows, so the de drops: Está encima.",
@@ -400,6 +400,10 @@
         "encima de": {
           "en": "De needs a noun after it (encima de la mesa); at the end of a sentence it is left out, so just Está encima.",
           "es": "De necesita un sustantivo después (encima de la mesa); al final de la frase se omite, así que solo Está encima."
+        },
+        "sobre": {
+          "en": "Sobre also needs a noun after it (sobre la mesa) and cannot stand alone at the end of the sentence; here the one-word answer is encima.",
+          "es": "Sobre también necesita un sustantivo después (sobre la mesa) y no puede quedar solo al final de la frase; aquí la respuesta de una palabra es encima."
         }
       },
       "examples": ["¿Dónde está el gato? Está debajo.", "¿Dónde está mi mochila? Está detrás."],
@@ -433,7 +437,7 @@
     {
       "id": "ld-07",
       "sentence": "El gato está entre ___ silla y la mesa.",
-      "options": ["la", "de la"],
+      "options": ["la", "de la", "a la"],
       "correct": 0,
       "why": {
         "en": "Entre takes no de: entre la silla y la mesa.",
@@ -443,6 +447,10 @@
         "de la": {
           "en": "Entre never takes de, unlike encima de or detrás de; it goes straight to the noun: entre la silla y la mesa.",
           "es": "Entre nunca lleva de, a diferencia de encima de o detrás de; va directo al sustantivo: entre la silla y la mesa."
+        },
+        "a la": {
+          "en": "A la marks direction (voy a la silla), not a position between two things; entre goes straight to the noun: entre la silla y la mesa.",
+          "es": "A la marca dirección (voy a la silla), no una posición entre dos cosas; entre va directo al sustantivo: entre la silla y la mesa."
         }
       },
       "examples": ["Mi libro está entre la silla y el sofá.", "Ana está entre Luis y María."],

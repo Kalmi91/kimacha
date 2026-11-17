@@ -179,7 +179,7 @@
     {
       "id": "pb-01",
       "sentence": "Voy ___ la escuela.",
-      "options": ["a", "en"],
+      "options": ["a", "en", "de"],
       "correct": 0,
       "why": {
         "en": "Direction (where to?) is expressed with a: voy a la escuela.",
@@ -189,6 +189,10 @@
         "en": {
           "en": "En would mean I'm already there (estoy en la escuela); to say I'm heading there, a is needed: voy a la escuela.",
           "es": "En significaría que ya estoy allí (estoy en la escuela); si voy hacia allá, hace falta a: voy a la escuela."
+        },
+        "de": {
+          "en": "De would mean where you come from (vengo de la escuela), not where you are going; the direction needs a: voy a la escuela.",
+          "es": "De significaría de dónde vienes (vengo de la escuela), no hacia dónde vas; la dirección pide a: voy a la escuela."
         }
       },
       "examples": ["Vamos a la playa.", "Voy a casa."],
@@ -197,7 +201,7 @@
     {
       "id": "pb-02",
       "sentence": "El tren llega ___ las tres.",
-      "options": ["a", "en"],
+      "options": ["a", "en", "de"],
       "correct": 0,
       "why": {
         "en": "A specific point in time is expressed with a las: llega a las tres.",
@@ -207,6 +211,10 @@
         "en": {
           "en": "En is not used to express an exact clock time, only a las is: llega a las tres.",
           "es": "En no se usa para expresar una hora exacta, solo a las: llega a las tres."
+        },
+        "de": {
+          "en": "De is used for the starting point (de las ocho a las nueve), not for an exact arrival time; an exact hour needs a las: llega a las tres.",
+          "es": "De se usa para el punto de partida (de las ocho a las nueve), no para una hora exacta de llegada; una hora exacta pide a las: llega a las tres."
         }
       },
       "examples": ["Llegamos a las dos.", "El autobús llega a las cinco."],
@@ -215,7 +223,7 @@
     {
       "id": "pb-03",
       "sentence": "Veo ___ mi amigo en la calle.",
-      "options": ["a", "de"],
+      "options": ["a", "de", "para"],
       "correct": 0,
       "why": {
         "en": "A specific person as the object is introduced with a: veo a mi amigo.",
@@ -225,6 +233,10 @@
         "de": {
           "en": "De would mark possession or origin (el amigo de mi hermano); here a person is the object I see, which needs a: veo a mi amigo.",
           "es": "De marcaría posesión u origen (el amigo de mi hermano); aquí una persona es el objeto que veo, y eso pide a: veo a mi amigo."
+        },
+        "para": {
+          "en": "Para marks a purpose or a receiver (un regalo para mi amigo); a person who is the object of the verb ver needs a: veo a mi amigo.",
+          "es": "Para marca un fin o un destinatario (un regalo para mi amigo); una persona que es el objeto del verbo ver pide a: veo a mi amigo."
         }
       },
       "examples": ["Veo a mi madre los domingos.", "Veo a mi hermano en el parque."],
@@ -233,7 +245,7 @@
     {
       "id": "pb-04",
       "sentence": "Es el libro ___ Ana.",
-      "options": ["de", "a"],
+      "options": ["de", "a", "en"],
       "correct": 0,
       "why": {
         "en": "Possession is expressed with de: el libro de Ana.",
@@ -243,6 +255,10 @@
         "a": {
           "en": "A would mark direction or a point in time, not possession; possession needs de: el libro de Ana.",
           "es": "A marcaría dirección o un momento, no posesión; para la posesión hace falta de: el libro de Ana."
+        },
+        "en": {
+          "en": "En would mark a place or a month, not possession; possession needs de: el libro de Ana.",
+          "es": "En marcaría un lugar o un mes, no posesión; para la posesión hace falta de: el libro de Ana."
         }
       },
       "examples": ["Es la casa de mi amigo.", "Es el carro de mi hermano."],
@@ -251,7 +267,7 @@
     {
       "id": "pb-05",
       "sentence": "La mesa es ___ madera.",
-      "options": ["de", "en"],
+      "options": ["de", "en", "con"],
       "correct": 0,
       "why": {
         "en": "The material something is made of is expressed with de: la mesa es de madera.",
@@ -261,6 +277,10 @@
         "en": {
           "en": "En would mark a place, not a material; the material needs de: la mesa es de madera.",
           "es": "En marcaría un lugar, no un material; el material pide de: la mesa es de madera."
+        },
+        "con": {
+          "en": "Con would mark company or what goes together (café con leche), not the material; the material needs de: la mesa es de madera.",
+          "es": "Con marcaría compañía o lo que va junto (café con leche), no el material; el material pide de: la mesa es de madera."
         }
       },
       "examples": ["Esta silla es de madera.", "La mesa es de madera."],
@@ -269,7 +289,7 @@
     {
       "id": "pb-06",
       "sentence": "Hablamos ___ la comida.",
-      "options": ["de", "con"],
+      "options": ["de", "con", "a"],
       "correct": 0,
       "why": {
         "en": "What you talk about is introduced with de: hablamos de la comida.",
@@ -279,6 +299,10 @@
         "con": {
           "en": "Con would mean who you talk with (hablamos con mi amigo), not what about; the topic needs de: hablamos de la comida.",
           "es": "Con significaría con quién se habla (hablamos con mi amigo), no de qué; el tema pide de: hablamos de la comida."
+        },
+        "a": {
+          "en": "A would mark direction or a point in time (voy a casa), not the topic; the topic needs de: hablamos de la comida.",
+          "es": "A marcaría dirección o un momento (voy a casa), no el tema; el tema pide de: hablamos de la comida."
         }
       },
       "examples": ["Hablamos de la familia.", "Hablamos de mi trabajo."],
@@ -287,7 +311,7 @@
     {
       "id": "pb-07",
       "sentence": "Estoy ___ casa.",
-      "options": ["en", "a"],
+      "options": ["en", "a", "de"],
       "correct": 0,
       "why": {
         "en": "Where I am is expressed with en: estoy en casa.",
@@ -297,6 +321,10 @@
         "a": {
           "en": "A would mean where I'm heading (voy a casa), not where I am; the place needs en: estoy en casa.",
           "es": "A significaría hacia dónde voy (voy a casa), no dónde estoy; el lugar pide en: estoy en casa."
+        },
+        "de": {
+          "en": "De would mark origin or possession (soy de México), not where you are; the place needs en: estoy en casa.",
+          "es": "De marcaría origen o posesión (soy de México), no dónde estás; el lugar pide en: estoy en casa."
         }
       },
       "examples": ["Estoy en la escuela.", "Estamos en el metro."],
@@ -305,7 +333,7 @@
     {
       "id": "pb-08",
       "sentence": "Hace calor ___ mayo.",
-      "options": ["en", "de"],
+      "options": ["en", "de", "a"],
       "correct": 0,
       "why": {
         "en": "A month is introduced with en: hace calor en mayo.",
@@ -315,6 +343,10 @@
         "de": {
           "en": "De would mark possession or origin, not a month; a month needs en: hace calor en mayo.",
           "es": "De marcaría posesión u origen, no un mes; el mes pide en: hace calor en mayo."
+        },
+        "a": {
+          "en": "A would mark direction or an hour (a las ocho), not a month; a month needs en: hace calor en mayo.",
+          "es": "A marcaría dirección o una hora (a las ocho), no un mes; el mes pide en: hace calor en mayo."
         }
       },
       "examples": ["Vamos a España en mayo.", "Mi examen es en mayo."],
@@ -323,7 +355,7 @@
     {
       "id": "pb-09",
       "sentence": "Vamos ___ metro.",
-      "options": ["en", "con"],
+      "options": ["en", "con", "por"],
       "correct": 0,
       "why": {
         "en": "The means of transport is introduced with en: vamos en metro.",
@@ -333,6 +365,10 @@
         "con": {
           "en": "Con would mark company (vamos con mi amigo), not the means of transport; the means of transport needs en: vamos en metro.",
           "es": "Con marcaría compañía (vamos con mi amigo), no el medio de transporte; el medio de transporte pide en: vamos en metro."
+        },
+        "por": {
+          "en": "Por marks a reason or a route (gracias por la ayuda), not the means of transport; the means of transport needs en: vamos en metro.",
+          "es": "Por marca una razón o un recorrido (gracias por la ayuda), no el medio de transporte; el medio de transporte pide en: vamos en metro."
         }
       },
       "examples": ["Vamos en carro.", "Vamos en autobús."],
@@ -341,7 +377,7 @@
     {
       "id": "pb-10",
       "sentence": "Tomo café ___ leche.",
-      "options": ["con", "de"],
+      "options": ["con", "de", "en"],
       "correct": 0,
       "why": {
         "en": "What something comes together with is introduced with con: café con leche.",
@@ -351,6 +387,10 @@
         "de": {
           "en": "De would mark possession or material, not what goes together; coffee with milk needs con: café con leche.",
           "es": "De marcaría posesión o material, no lo que va junto; café con leche pide con: café con leche."
+        },
+        "en": {
+          "en": "En would mark a place or a month, not what goes together; coffee with milk needs con: café con leche.",
+          "es": "En marcaría un lugar o un mes, no lo que va junto; café con leche pide con: café con leche."
         }
       },
       "examples": ["Voy al cine con mi amigo.", "Hablo con mi madre."],
@@ -359,7 +399,7 @@
     {
       "id": "pb-11",
       "sentence": "Gracias ___ la ayuda.",
-      "options": ["por", "de"],
+      "options": ["por", "de", "para"],
       "correct": 0,
       "why": {
         "en": "The reason for thanking someone is introduced with por: gracias por la ayuda.",
@@ -369,6 +409,10 @@
         "de": {
           "en": "De would mark possession or origin, not a reason; the reason for thanks needs por: gracias por la ayuda.",
           "es": "De marcaría posesión u origen, no una razón; el motivo del agradecimiento pide por: gracias por la ayuda."
+        },
+        "para": {
+          "en": "Para marks a purpose (para estudiar), not the reason for thanks; the reason for thanks needs por: gracias por la ayuda.",
+          "es": "Para marca un fin (para estudiar), no el motivo del agradecimiento; el motivo del agradecimiento pide por: gracias por la ayuda."
         }
       },
       "examples": ["Gracias por todo.", "Gracias por la comida."],
@@ -377,7 +421,7 @@
     {
       "id": "pb-12",
       "sentence": "Voy ___ cine con mi amigo.",
-      "options": ["al", "a el"],
+      "options": ["al", "a el", "del"],
       "correct": 0,
       "why": {
         "en": "A and el always contract to al, they never stay separate: voy al cine.",
@@ -387,6 +431,10 @@
         "a el": {
           "en": "A el is never written separately; a and el always become al: voy al cine.",
           "es": "A el nunca se escribe por separado; a y el siempre se convierten en al: voy al cine."
+        },
+        "del": {
+          "en": "Del is de + el and marks origin or possession (el libro del profesor); to go to a place you need a + el = al: voy al cine.",
+          "es": "Del es de + el y marca origen o posesión (el libro del profesor); para ir a un lugar hace falta a + el = al: voy al cine."
         }
       },
       "examples": ["Voy al parque.", "Vamos al cine."],

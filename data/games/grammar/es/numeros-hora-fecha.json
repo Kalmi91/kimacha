@@ -330,7 +330,7 @@
     {
       "id": "nh-01",
       "sentence": "Tengo ___ hermano mayor.",
-      "options": ["un", "una"],
+      "options": ["un", "una", "uno"],
       "correct": 0,
       "why": {
         "en": "Hermano is a masculine noun, so un is used before it, the shortened form of uno.",
@@ -340,6 +340,10 @@
         "una": {
           "en": "Una goes before a feminine noun (una hermana); hermano is masculine, so this is not correct.",
           "es": "Una va ante un sustantivo femenino (una hermana); hermano es masculino, por eso no es correcto."
+        },
+        "uno": {
+          "en": "Uno shortens to un before a masculine noun (un hermano); uno alone stands without a noun, so this is not correct.",
+          "es": "Uno se acorta a un delante de un sustantivo masculino (un hermano); uno solo va sin sustantivo, por eso no es correcto."
         }
       },
       "examples": ["Tengo una hermana mayor.", "Compro un libro nuevo."],
@@ -348,7 +352,7 @@
     {
       "id": "nh-02",
       "sentence": "Mi hermano tiene ___ años.",
-      "options": ["dieciséis", "diez y seis"],
+      "options": ["dieciséis", "diez y seis", "dieciseis"],
       "correct": 0,
       "why": {
         "en": "From sixteen to twenty-nine the numbers are written as one word: dieciséis, the modern, standard form.",
@@ -358,6 +362,10 @@
         "diez y seis": {
           "en": "Diez y seis is an old-fashioned, three-word spelling; today dieciséis is the accepted form.",
           "es": "Diez y seis es una grafía anticuada en tres palabras; hoy la forma aceptada es dieciséis."
+        },
+        "dieciseis": {
+          "en": "Dieciseis without the accent is a spelling mistake; the stress needs the written accent: dieciséis.",
+          "es": "Dieciseis sin tilde es una falta de ortografía; el acento necesita la tilde escrita: dieciséis."
         }
       },
       "examples": ["Mi hermana tiene diecisiete años.", "Tenemos dieciocho años."],
@@ -366,7 +374,7 @@
     {
       "id": "nh-03",
       "sentence": "Tenemos ___ estudiantes en la clase.",
-      "options": ["treinta y dos", "treinta dos"],
+      "options": ["treinta y dos", "treinta dos", "treinta e dos"],
       "correct": 0,
       "why": {
         "en": "From thirty-one to ninety-nine 'y' joins the tens and the units: treinta y dos.",
@@ -376,6 +384,10 @@
         "treinta dos": {
           "en": "The 'y' is missing; above thirty an 'y' is always needed between the tens and the unit.",
           "es": "Falta la 'y'; por encima de treinta siempre hace falta la 'y' entre la decena y la unidad."
+        },
+        "treinta e dos": {
+          "en": "E replaces y only before an i-sound (padre e hijo); dos starts with d, so the word stays y: treinta y dos.",
+          "es": "E sustituye a y solo delante de un sonido i (padre e hijo); dos empieza con d, así que la palabra sigue siendo y: treinta y dos."
         }
       },
       "examples": ["Hay cuarenta y cinco personas.", "Compramos sesenta y ocho libros."],
@@ -384,7 +396,7 @@
     {
       "id": "nh-04",
       "sentence": "Hay ___ estudiantes en la clase.",
-      "options": ["cien", "ciento"],
+      "options": ["cien", "ciento", "cientos"],
       "correct": 0,
       "why": {
         "en": "Cien stands alone directly before a noun.",
@@ -394,6 +406,10 @@
         "ciento": {
           "en": "Ciento is only used when followed by another number (ciento cinco), not directly before a noun.",
           "es": "Ciento solo se usa cuando le sigue otro número (ciento cinco), no directamente ante un sustantivo."
+        },
+        "cientos": {
+          "en": "Cientos means hundreds and needs de before a noun (cientos de estudiantes); exactly one hundred is cien.",
+          "es": "Cientos significa centenares y necesita de delante de un sustantivo (cientos de estudiantes); cien exactos es cien."
         }
       },
       "examples": ["Cien personas esperan el tren.", "Tenemos ciento diez libros."],
@@ -402,7 +418,7 @@
     {
       "id": "nh-05",
       "sentence": "___ la una de la tarde.",
-      "options": ["Es", "Son"],
+      "options": ["Es", "Son", "Hay"],
       "correct": 0,
       "why": {
         "en": "La una is singular, so es is the correct verb.",
@@ -412,6 +428,10 @@
         "Son": {
           "en": "Son is for plural hours (son las dos); la una is singular, so this is not correct.",
           "es": "Son es para las horas en plural (son las dos); la una es singular, por eso no es correcto."
+        },
+        "Hay": {
+          "en": "Hay says that something exists (hay un libro); it does not tell the time, which needs es or son.",
+          "es": "Hay dice que algo existe (hay un libro); no dice la hora, que necesita es o son."
         }
       },
       "examples": ["Es la una y media.", "Son las dos de la tarde."],
@@ -420,7 +440,7 @@
     {
       "id": "nh-06",
       "sentence": "El tren sale ___ las ocho.",
-      "options": ["a", "en"],
+      "options": ["a", "en", "de"],
       "correct": 0,
       "why": {
         "en": "A specific point in time is expressed with a las: a las ocho.",
@@ -430,6 +450,10 @@
         "en": {
           "en": "En is not used in this construction to express an exact clock time, only a las is.",
           "es": "En no se usa en esta construcción para expresar una hora exacta, solo a las."
+        },
+        "de": {
+          "en": "De would mean from or of (de las ocho a las nueve); to say when something happens at an exact hour, a las is needed.",
+          "es": "De significaría desde o de (de las ocho a las nueve); para decir cuándo pasa algo a una hora exacta hace falta a las."
         }
       },
       "examples": ["Salimos a las nueve.", "La clase empieza a las diez."],
@@ -438,7 +462,7 @@
     {
       "id": "nh-07",
       "sentence": "___ las tres y media de la tarde.",
-      "options": ["Son", "Es"],
+      "options": ["Son", "Es", "Hay"],
       "correct": 0,
       "why": {
         "en": "Las tres is plural, so son is the correct verb, not es.",
@@ -448,6 +472,10 @@
         "Es": {
           "en": "Es only goes with the singular la una; las tres is plural, so son is needed.",
           "es": "Es solo va con la una, singular; las tres es plural, por eso hace falta son."
+        },
+        "Hay": {
+          "en": "Hay says that something exists (hay tres libros); it does not tell the time, which needs es or son.",
+          "es": "Hay dice que algo existe (hay tres libros); no dice la hora, que necesita es o son."
         }
       },
       "examples": ["Son las cuatro y media.", "Son las nueve y media de la mañana."],
@@ -456,7 +484,7 @@
     {
       "id": "nh-08",
       "sentence": "Llegamos a las tres menos ___.",
-      "options": ["cuarto", "media"],
+      "options": ["cuarto", "media", "cuarta"],
       "correct": 0,
       "why": {
         "en": "A quarter of an hour is expressed with menos cuarto: cuarto here means a quarter, not a room.",
@@ -466,6 +494,10 @@
         "media": {
           "en": "Media only goes with y (las tres y media); after menos the quarter hour needs cuarto: las tres menos cuarto.",
           "es": "Media solo va con y (las tres y media); después de menos el cuarto de hora pide cuarto: las tres menos cuarto."
+        },
+        "cuarta": {
+          "en": "The quarter hour is the masculine word cuarto (un cuarto), so cuarta does not fit; correctly: las tres menos cuarto.",
+          "es": "El cuarto de hora es la palabra masculina cuarto (un cuarto), por eso cuarta no encaja; correctamente: las tres menos cuarto."
         }
       },
       "examples": ["Salimos a las ocho menos cuarto.", "La clase empieza a las dos menos cuarto."],
@@ -474,7 +506,7 @@
     {
       "id": "nh-09",
       "sentence": "Hoy es el cinco ___ mayo.",
-      "options": ["de", "en"],
+      "options": ["de", "en", "del"],
       "correct": 0,
       "why": {
         "en": "The date is formed as el + number + de + month: el cinco de mayo.",
@@ -484,6 +516,10 @@
         "en": {
           "en": "En does not go between the day number and the month name; de is always needed there.",
           "es": "En no va entre el número del día y el nombre del mes; ahí siempre hace falta de."
+        },
+        "del": {
+          "en": "Del is de + el and only goes before a masculine noun with its article; a month name has no article here: el cinco de mayo.",
+          "es": "Del es de + el y solo va delante de un sustantivo masculino con su artículo; el nombre del mes aquí no lleva artículo: el cinco de mayo."
         }
       },
       "examples": ["El examen es el nueve de octubre.", "Llegamos el veinte de julio."],
@@ -492,7 +528,7 @@
     {
       "id": "nh-10",
       "sentence": "Hoy es el ___ de enero.",
-      "options": ["primero", "un"],
+      "options": ["primero", "un", "primer"],
       "correct": 0,
       "why": {
         "en": "In Mexico, the first day of the month is said as el primero de...",
@@ -502,6 +538,10 @@
         "un": {
           "en": "Un only stands directly before a noun (un libro); it is not used in a date: el primero de enero.",
           "es": "Un solo va directamente ante un sustantivo (un libro); en una fecha no se usa: el primero de enero."
+        },
+        "primer": {
+          "en": "Primer is the short form before a masculine noun (el primer día); in a date with de the word is primero: el primero de enero.",
+          "es": "Primer es la forma corta delante de un sustantivo masculino (el primer día); en una fecha con de la palabra es primero: el primero de enero."
         }
       },
       "examples": ["Mañana es el primero de marzo.", "El examen es el primero de agosto."],
@@ -510,7 +550,7 @@
     {
       "id": "nh-11",
       "sentence": "Tengo veintiún ___.",
-      "options": ["años", "año"],
+      "options": ["años", "año", "edad"],
       "correct": 0,
       "why": {
         "en": "Even though veintiún looks shortened, the noun stays plural: veintiún años.",
@@ -520,6 +560,10 @@
         "año": {
           "en": "Año is singular; from twenty-one up a plural noun is always needed, so veintiún años is correct.",
           "es": "Año es singular; a partir de veintiuno siempre hace falta un sustantivo en plural, por eso veintiún años es correcto."
+        },
+        "edad": {
+          "en": "Edad is a noun in the singular (mi edad); after veintiún the noun needs to be años, because years of age are counted: tengo veintiún años.",
+          "es": "Edad es un sustantivo en singular (mi edad); después de veintiún el sustantivo debe ser años, porque se cuentan los años: tengo veintiún años."
         }
       },
       "examples": ["Mi hermana tiene veintiún años.", "Ella tiene veintiún años también."],
@@ -528,7 +572,7 @@
     {
       "id": "nh-12",
       "sentence": "El café ___ treinta pesos.",
-      "options": ["cuesta", "tiene"],
+      "options": ["cuesta", "tiene", "cuestan"],
       "correct": 0,
       "why": {
         "en": "The price of a thing is expressed with costar: el café cuesta treinta pesos.",
@@ -538,6 +582,10 @@
         "tiene": {
           "en": "Tiene comes from tener and expresses age (tiene veinte años), not price; a price needs costar: el café cuesta treinta pesos.",
           "es": "Tiene viene de tener y expresa la edad (tiene veinte años), no el precio; para el precio hace falta costar: el café cuesta treinta pesos."
+        },
+        "cuestan": {
+          "en": "Cuestan is the plural form, but the subject el café is singular, so the verb is cuesta.",
+          "es": "Cuestan es la forma plural, pero el sujeto el café es singular, así que el verbo es cuesta."
         }
       },
       "examples": ["El libro cuesta cien pesos.", "La comida cuesta treinta pesos."],
