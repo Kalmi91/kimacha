@@ -14,6 +14,10 @@ import {
   isMatchItem,
   isOrderItem,
   isSpotItem,
+  isBankItem,
+  isClozeItem,
+  isFixItem,
+  isNounItem,
   isTransformItem,
   isWhyItem,
   isWriteItem,
@@ -23,7 +27,7 @@ import {
   type GrammarMarkItem,
   type GrammarTopicData,
 } from './content';
-import type { DictationItem, FormItem, MatchItem, OrderItem, SpotItem, TransformItem, WhyItem, WriteItem } from '../grammar/lessonTypes';
+import type { BankItem, ClozeItem, DictationItem, FixItem, FormItem, MatchItem, NounItem, OrderItem, SpotItem, TransformItem, WhyItem, WriteItem } from '../grammar/lessonTypes';
 import { markAnswerIndex, markTokens } from './grammarMark';
 import { filterVosotros, filterVosotrosPairs } from '../grammar/vosotros';
 import { ARTICLE_ROUND_SIZE, isArticleLesson } from '../grammar/nounArticles';
@@ -61,7 +65,7 @@ export interface GrammarTransformRoundItem {
 // The new kinds (error spotting, word order, dictation, sentence writing) also in their own
 // round-item shape, following the pattern of why/transform.
 export interface GrammarNewKindRoundItem {
-  item: SpotItem | OrderItem | DictationItem | WriteItem;
+  item: SpotItem | OrderItem | DictationItem | WriteItem | ClozeItem | FixItem | BankItem | NounItem;
 }
 
 export type GrammarRoundItem =
@@ -85,6 +89,10 @@ export function grammarRoundItemKind(r: GrammarRoundItem): GrammarKind {
   if (isOrderItem(r.item)) return 'order';
   if (isDictationItem(r.item)) return 'dictation';
   if (isWriteItem(r.item)) return 'write';
+  if (isClozeItem(r.item)) return 'opencloze';
+  if (isFixItem(r.item)) return 'fix';
+  if (isBankItem(r.item)) return 'bank';
+  if (isNounItem(r.item)) return 'noun';
   return isTransformItem(r.item) ? 'transform' : 'why';
 }
 
@@ -109,7 +117,11 @@ export function buildGrammarRound(topic: GrammarTopicData, seed: number): Gramma
       !isSpotItem(item) &&
       !isOrderItem(item) &&
       !isDictationItem(item) &&
-      !isWriteItem(item)
+      !isWriteItem(item) &&
+      !isClozeItem(item) &&
+      !isFixItem(item) &&
+      !isBankItem(item) &&
+      !isNounItem(item)
   );
   // the articulos-genero el / la set is every noun in the app, which is longer than one
   // run; a run gets ARTICLE_ROUND_SIZE items from it (seeded sample). No other lesson is affected.
@@ -157,8 +169,15 @@ export function buildGrammarRound(topic: GrammarTopicData, seed: number): Gramma
   // the new kinds also go at the END of the round, in authored order.
   const newKindItems: GrammarNewKindRoundItem[] = allItems
     .filter(
-      (item): item is SpotItem | OrderItem | DictationItem | WriteItem =>
-        isSpotItem(item) || isOrderItem(item) || isDictationItem(item) || isWriteItem(item)
+      (item): item is SpotItem | OrderItem | DictationItem | WriteItem | ClozeItem | FixItem | BankItem | NounItem =>
+        isSpotItem(item) ||
+        isOrderItem(item) ||
+        isDictationItem(item) ||
+        isWriteItem(item) ||
+        isClozeItem(item) ||
+        isFixItem(item) ||
+        isBankItem(item) ||
+        isNounItem(item)
     )
     .map((item) => ({ item }));
 

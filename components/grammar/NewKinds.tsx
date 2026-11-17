@@ -17,8 +17,10 @@ import { tileWords } from '@/lib/sentenceCards';
 import { hashString, shuffleOptions } from '@/lib/shuffle';
 import { speak, stopSpeaking } from '@/lib/speech';
 import { speechBusy, useSpeechStatus } from '@/lib/speechStatus';
-import type { ContentLang, DictationItem, OrderItem, SpotItem, WriteItem } from '@/lib/grammar/lessonTypes';
+import { fixedSentence } from '@/lib/grammar/fixedSentence';
+import type { BankItem, ClozeItem, ContentLang, DictationItem, FixItem, NounItem, OrderItem, SpotItem, WriteItem } from '@/lib/grammar/lessonTypes';
 import { isWriteAnswerRight } from '@/lib/grammar/writeAnswer';
+import { BankDrillItem, ClozeDrillItem, FixDrillItem, NounDrillItem } from './TypedKinds';
 
 // three new task kinds, FOR NOW only in the
 // ser-estar (error spotting + dictation) and negacion (word order + error spotting) lessons. All three are 1 unit in
@@ -27,30 +29,7 @@ import { isWriteAnswerRight } from '@/lib/grammar/writeAnswer';
 
 type Lang = ContentLang;
 
-const PUNCT_TAIL = /[.,;:!?¡¿]+$/;
-
-/** The word without the punctuation at its end, and the punctuation separately. */
-function splitPunct(token: string): { core: string; tail: string } {
-  const m = token.match(PUNCT_TAIL);
-  return m ? { core: token.slice(0, -m[0].length), tail: m[0] } : { core: token, tail: '' };
-}
-
-/** The corrected sentence: the wrong word replaced by the option (or removed if the option is empty), the punctuation stays in place. */
-export function fixedSentence(es: string, wrongIndex: number, fix: string): string {
-  const words = es.split(/\s+/).filter(Boolean);
-  const wrong = words[wrongIndex] ?? '';
-  const { tail } = splitPunct(wrong);
-  if (fix === '') {
-    const rest = words.filter((_, i) => i !== wrongIndex);
-    if (tail && rest.length > 0) {
-      const at = Math.min(wrongIndex, rest.length) - 1;
-      if (at >= 0) rest[at] = `${splitPunct(rest[at]).core}${tail}`;
-    }
-    return rest.join(' ');
-  }
-  words[wrongIndex] = `${fix}${tail}`;
-  return words.join(' ');
-}
+export { fixedSentence };
 
 function ItemHead({ title }: { title: string }) {
   const g = useGrammarColors();
@@ -397,7 +376,7 @@ export function NewKindDrillItem({
   strictAccents,
   onDone,
 }: {
-  item: SpotItem | OrderItem | DictationItem | WriteItem;
+  item: SpotItem | OrderItem | DictationItem | WriteItem | ClozeItem | FixItem | BankItem | NounItem;
   learnedLang: string;
   contentLang: Lang;
   strictAccents: boolean;
@@ -412,6 +391,14 @@ export function NewKindDrillItem({
       return <DictationDrillItem item={item} learnedLang={learnedLang} contentLang={contentLang} strictAccents={strictAccents} onDone={onDone} />;
     case 'write':
       return <WriteDrillItem item={item} learnedLang={learnedLang} contentLang={contentLang} strictAccents={strictAccents} onDone={onDone} />;
+    case 'opencloze':
+      return <ClozeDrillItem item={item} learnedLang={learnedLang} contentLang={contentLang} strictAccents={strictAccents} onDone={onDone} />;
+    case 'fix':
+      return <FixDrillItem item={item} learnedLang={learnedLang} contentLang={contentLang} strictAccents={strictAccents} onDone={onDone} />;
+    case 'bank':
+      return <BankDrillItem item={item} learnedLang={learnedLang} contentLang={contentLang} strictAccents={strictAccents} onDone={onDone} />;
+    case 'noun':
+      return <NounDrillItem item={item} learnedLang={learnedLang} contentLang={contentLang} strictAccents={strictAccents} onDone={onDone} />;
   }
 }
 

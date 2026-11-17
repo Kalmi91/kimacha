@@ -942,6 +942,75 @@ function auditNewKindItem(item, itemPath, topic, checkWords) {
   }
 }
 
+// Check of the four typed task kinds of the grammar tests (noun, opencloze, fix, bank). The sentences the learner sees go
+// through the word gate (checkWords) with the answers filled in; explanations and translations in both languages; the
+// accepted variants are only compared with what the learner typed, never shown, so the word gate does not apply to them.
+function auditTypedKindItem(item, itemPath, topic, checkWords) {
+  const nonEmpty = (v) => typeof v === 'string' && v.trim() !== '';
+  if (item.trial !== undefined && typeof item.trial !== 'boolean') p1.push({ path: itemPath, issue: 'trial must be a boolean' });
+  const acceptList = (acc) => {
+    if (acc === undefined) return;
+    if (!Array.isArray(acc) || acc.some((a) => !nonEmpty(a))) p1.push({ path: itemPath, issue: `${item.kind} accept must be an array of non-empty strings` });
+    else if (acc.includes(item.answer)) p1.push({ path: itemPath, issue: `${item.kind} accept entry equals answer` });
+  };
+  if (item.kind === 'noun') {
+    if (!nonEmpty(item.base)) p1.push({ path: itemPath, issue: 'noun item missing base' });
+    if (!nonEmpty(item.answer)) p1.push({ path: itemPath, issue: 'noun item missing answer' });
+    if (item.base === item.answer) p1.push({ path: itemPath, issue: 'noun answer equals base' });
+    checkLangs(item.ask, `${itemPath} ask`);
+    checkLangs(item.why, `${itemPath} why`);
+    acceptList(item.accept);
+    if (nonEmpty(item.base)) checkWords(item.base);
+    if (nonEmpty(item.answer)) checkWords(item.answer);
+  } else if (item.kind === 'opencloze') {
+    const text = typeof item.text === 'string' ? item.text : '';
+    const gaps = text.split('___').length - 1;
+    if (gaps < 1) p1.push({ path: itemPath, issue: 'opencloze text has no "___" gap' });
+    const answers = Array.isArray(item.answers) ? item.answers : [];
+    if (answers.length !== gaps || answers.some((a) => !nonEmpty(a))) {
+      p1.push({ path: itemPath, issue: `opencloze needs one non-empty answer per gap (${gaps} gaps, ${answers.length} answers)` });
+    }
+    if (item.accept !== undefined) {
+      if (!Array.isArray(item.accept) || item.accept.length > gaps || item.accept.some((a) => !Array.isArray(a) || a.some((x) => !nonEmpty(x)))) {
+        p1.push({ path: itemPath, issue: 'opencloze accept must be one array of strings per gap' });
+      }
+    }
+    checkLangs(item.tr, `${itemPath} tr`);
+    checkLangs(item.why, `${itemPath} why`);
+    let k = 0;
+    checkWords(text.replace(/___/g, () => answers[k++] ?? ''));
+  } else if (item.kind === 'fix') {
+    const es = typeof item.es === 'string' ? item.es.trim() : '';
+    const words = es.split(/\s+/).filter(Boolean);
+    if (!es) p1.push({ path: itemPath, issue: 'fix item missing es' });
+    if (!Number.isInteger(item.wrongIndex) || item.wrongIndex < 0 || item.wrongIndex >= words.length) {
+      p1.push({ path: itemPath, issue: `fix wrongIndex ${item.wrongIndex} out of range (${words.length} words)` });
+    }
+    if (!nonEmpty(item.answer)) p1.push({ path: itemPath, issue: 'fix item missing answer (a deletion is a spot item)' });
+    const wrongWord = (words[item.wrongIndex] ?? '').replace(/[.,;:!?¡¿]+$/, '');
+    if (nonEmpty(item.answer) && item.answer.toLowerCase() === wrongWord.toLowerCase()) p1.push({ path: itemPath, issue: 'fix answer equals the wrong word' });
+    checkLangs(item.explain, `${itemPath} explain`);
+    checkLangs(item.tr, `${itemPath} tr`);
+    acceptList(item.accept);
+    if (es) checkWords(es);
+    if (nonEmpty(item.answer)) checkWords(item.answer);
+  } else if (item.kind === 'bank') {
+    const es = typeof item.es === 'string' ? item.es : '';
+    if (es.split('___').length !== 2) p1.push({ path: itemPath, issue: 'bank sentence needs exactly one "___" gap' });
+    const bank = Array.isArray(item.bank) ? item.bank : [];
+    if (bank.length < 2 || bank.some((w) => !nonEmpty(w)) || new Set(bank).size !== bank.length) {
+      p1.push({ path: itemPath, issue: 'bank needs at least 2 different non-empty words' });
+    }
+    if (!bank.includes(item.word)) p1.push({ path: itemPath, issue: `bank word "${item.word}" is not in the bank` });
+    if (!nonEmpty(item.answer)) p1.push({ path: itemPath, issue: 'bank item missing answer' });
+    checkLangs(item.tr, `${itemPath} tr`);
+    checkLangs(item.why, `${itemPath} why`);
+    acceptList(item.accept);
+    for (const w of bank) if (nonEmpty(w)) checkWords(w);
+    if (es) checkWords(es.replace('___', item.answer ?? ''));
+  }
+}
+
 function auditTransformItem(item, itemPath, topic) {
   auditTenseField(item.tense, itemPath);
   checkLangs(item.prompt, `${itemPath} prompt`);
@@ -1042,6 +1111,15 @@ function auditGrammarTopic(topic, filePath, lang = 'es') {
     // error spotting / word order / dictation / sentence writing, temporary ("trial") items.
     if (item.kind === 'spot' || item.kind === 'order' || item.kind === 'dictation' || item.kind === 'write') {
       auditNewKindItem(item, itemPath, topic, (text) => {
+        if (isHu) return;
+        for (const tok of toks(text)) auditGrammarWord(tok, taughtSet, extra, itemPath, lang);
+      });
+      continue;
+    }
+
+    // the four typed kinds of the grammar tests: typed noun form, open cloze, error correction by typing, word bank.
+    if (item.kind === 'noun' || item.kind === 'opencloze' || item.kind === 'fix' || item.kind === 'bank') {
+      auditTypedKindItem(item, itemPath, topic, (text) => {
         if (isHu) return;
         for (const tok of toks(text)) auditGrammarWord(tok, taughtSet, extra, itemPath, lang);
       });

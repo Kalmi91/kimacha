@@ -2200,6 +2200,10 @@
       },
       "examples": ["La casa es grande.", "La foto es bonita."],
       "tr": { "en": "The light is on.", "es": "La luz está encendida." }
-    }
+    },
+    {"id": "sn-noun-01", "kind": "noun", "trial": true, "base": "la ciudad", "ask": {"en": "Give the plural, with its article", "es": "Escribe el plural, con su artículo"}, "answer": "las ciudades", "why": {"en": "A noun that ends in a consonant adds -es (ciudad, ciudades), and la becomes las.", "es": "Un sustantivo que termina en consonante añade -es (ciudad, ciudades), y la pasa a las."}},
+    {"id": "sn-cloze-01", "kind": "opencloze", "trial": true, "text": "Tengo una hermana y dos hermanos. ___ hermana es alta. ___ hermanos son altos.", "answers": ["La", "Los"], "accept": [["Mi"], ["Mis"]], "tr": {"en": "I have a sister and two brothers. The sister is tall. The brothers are tall.", "es": "Tengo una hermana y dos hermanos. La hermana es alta. Los hermanos son altos."}, "why": {"en": "The article agrees with the noun: la hermana (feminine singular), los hermanos (masculine plural).", "es": "El artículo concuerda con el sustantivo: la hermana (femenino singular), los hermanos (masculino plural)."}},
+    {"id": "sn-fix-01", "kind": "fix", "trial": true, "es": "Hay dos ciudad en el mapa.", "wrongIndex": 2, "answer": "ciudades", "explain": {"en": "After dos the noun is plural: ciudades.", "es": "Después de dos el sustantivo va en plural: ciudades."}, "tr": {"en": "There are two cities on the map.", "es": "Hay dos ciudades en el mapa."}},
+    {"id": "sn-bank-01", "kind": "bank", "trial": true, "bank": ["lápiz", "ciudad", "mapa"], "es": "Escribo con dos ___ azules.", "word": "lápiz", "answer": "lápices", "tr": {"en": "I write with two blue pencils.", "es": "Escribo con dos lápices azules."}, "why": {"en": "A noun that ends in -z changes it to -c before -es: lápiz, lápices.", "es": "Un sustantivo que termina en -z cambia la z por c antes de -es: lápiz, lápices."}}
   ]
 }

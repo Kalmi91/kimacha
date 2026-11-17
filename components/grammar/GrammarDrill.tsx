@@ -192,7 +192,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
   // the Settings accent-strictness switch, fetched once, only if the round needs it (transform, dictation, write, a German form:
   // there it decides whether the digraph spelling counts for the umlaut and the ß).
   const { strictAccents, refresh } = useLearner();
-  const hasTransform = kinds.includes('transform') || kinds.includes('dictation') || kinds.includes('write') || (kinds.includes('form') && learnedLang === 'de');
+  const hasTransform = kinds.some((k) => ['transform', 'dictation', 'write', 'opencloze', 'fix', 'bank', 'noun'].includes(k)) || (kinds.includes('form') && learnedLang === 'de');
   useEffect(() => {
     if (!hasTransform) return;
     refresh(['strictAccents']).catch(() => {

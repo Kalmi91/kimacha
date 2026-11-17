@@ -239,6 +239,75 @@ export interface WriteItem {
   why: Lang4;
 }
 
+/** Open cloze: a short text with gaps (`___`), no options; the learner types every gap. One item = one text, right only if every gap is right. */
+export interface ClozeItem {
+  kind: 'opencloze';
+  id: string;
+  trial?: boolean;
+  /** The text with one `___` per gap. */
+  text: string;
+  /** The right word per gap, in order (as many as `___` in `text`). */
+  answers: string[];
+  /** Further accepted forms per gap (same index as `answers`), never shown. */
+  accept?: string[][];
+  /** Translation of the whole text. */
+  tr: Lang4;
+  /** Short explanation of the rule, shown after the answer. */
+  why: Lang4;
+}
+
+/** Error correction: find the wrong word (tap), then TYPE the fix (the `spot` kind picks the fix from options instead). */
+export interface FixItem {
+  kind: 'fix';
+  id: string;
+  trial?: boolean;
+  /** The faulty sentence, split by spaces into tappable words. */
+  es: string;
+  /** Index of the faulty word (0-based). */
+  wrongIndex: number;
+  /** The word that replaces the faulty one (not empty: a deletion is a `spot` item). */
+  answer: string;
+  /** Further accepted fixes, never shown. */
+  accept?: string[];
+  explain: Lang4;
+  /** Translation of the CORRECT sentence. */
+  tr: Lang4;
+}
+
+/** Word bank: the given word (in its base form) goes into the sentence in the right, agreed form; the learner types it. */
+export interface BankItem {
+  kind: 'bank';
+  id: string;
+  trial?: boolean;
+  /** The words offered (base forms), shown above the sentence. */
+  bank: string[];
+  /** The sentence with ONE `___`. */
+  es: string;
+  /** The bank word this sentence needs (must be in `bank`). */
+  word: string;
+  /** The word in its agreed form. */
+  answer: string;
+  accept?: string[];
+  /** Translation of the completed sentence. */
+  tr: Lang4;
+  why: Lang4;
+}
+
+/** Typed noun form: article + plural ("la ciudad" -> "las ciudades"); the learner types the whole form. */
+export interface NounItem {
+  kind: 'noun';
+  id: string;
+  trial?: boolean;
+  /** The given form, e.g. "la ciudad". */
+  base: string;
+  /** What is asked, e.g. plural. */
+  ask: Lang4;
+  /** The right form with the article, e.g. "las ciudades". */
+  answer: string;
+  accept?: string[];
+  why: Lang4;
+}
+
 export interface LessonV2 {
   schema: 2;
   topic: string;
@@ -247,7 +316,7 @@ export interface LessonV2 {
   body: LessonBlock[];
   speak: Lang4; // text written for the read-aloud, the Spanish stretches between «...»
   glossary?: { word: string; gloss: Lang4 }[];
-  items: (GrammarGapItem | GrammarMarkItem | MatchItem | FormItem | WhyItem | TransformItem | SpotItem | OrderItem | DictationItem | WriteItem)[];
+  items: (GrammarGapItem | GrammarMarkItem | MatchItem | FormItem | WhyItem | TransformItem | SpotItem | OrderItem | DictationItem | WriteItem | ClozeItem | FixItem | BankItem | NounItem)[];
   focusTopic?: string; // word topic whose cards belong to the lesson's word set alongside the transform words
   noWordDeck?: boolean; // this lesson has no "Practice the words" deck (switches off the automatic word deck)
 }

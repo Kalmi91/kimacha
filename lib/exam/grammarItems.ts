@@ -12,6 +12,10 @@ import {
   isMatchItem,
   isOrderItem,
   isSpotItem,
+  isBankItem,
+  isClozeItem,
+  isFixItem,
+  isNounItem,
   isTransformItem,
   isWhyItem,
   isWriteItem,
@@ -41,7 +45,11 @@ function isGapChoice(item: GrammarItem): item is GrammarGapItem {
     !isSpotItem(item) &&
     !isOrderItem(item) &&
     !isDictationItem(item) &&
-    !isWriteItem(item)
+    !isWriteItem(item) &&
+    !isClozeItem(item) &&
+    !isFixItem(item) &&
+    !isBankItem(item) &&
+    !isNounItem(item)
   );
 }
 
