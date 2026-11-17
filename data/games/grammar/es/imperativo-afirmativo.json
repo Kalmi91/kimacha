@@ -937,6 +937,444 @@
         }
       ],
       "correctIndex": 0
+    },
+    {
+      "id": "ia-tr-01",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "Open the window, because it is hot.",
+        "es": "Abre la ventana, porque hace calor."
+      },
+      "answer": "Abre la ventana, porque va a hacer calor.",
+      "wordIds": [
+        "147",
+        "270",
+        "76",
+        "652"
+      ],
+      "why": {
+        "en": "The command stays as it is; only the verb of the second part changes: present → ir a + infinitive (hace → va a hacer).",
+        "es": "El mandato no cambia; solo cambia el verbo de la segunda parte: presente → ir a + infinitivo (hace → va a hacer)."
+      }
+    },
+    {
+      "id": "ia-tr-02",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "Come early, because my mom is cooking.",
+        "es": "Ven temprano, porque mi mamá cocina."
+      },
+      "answer": "Ven temprano, porque mi mamá va a cocinar.",
+      "wordIds": [
+        "80",
+        "176",
+        "226"
+      ],
+      "why": {
+        "en": "The command stays as it is; only the verb of the second part changes: present → ir a + infinitive (hace → va a hacer).",
+        "es": "El mandato no cambia; solo cambia el verbo de la segunda parte: presente → ir a + infinitivo (hace → va a hacer)."
+      }
+    },
+    {
+      "id": "ia-tr-03",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "Sleep well, because tomorrow you work early.",
+        "es": "Duerme bien, porque mañana trabajas temprano."
+      },
+      "answer": "Duerme bien, porque mañana vas a trabajar temprano.",
+      "wordIds": [
+        "213",
+        "49",
+        "176"
+      ],
+      "why": {
+        "en": "The command stays as it is; only the verb of the second part changes: present → ir a + infinitive (hace → va a hacer).",
+        "es": "El mandato no cambia; solo cambia el verbo de la segunda parte: presente → ir a + infinitivo (hace → va a hacer)."
+      }
+    },
+    {
+      "id": "ia-tr-04",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "Call Ana, because I arrive late.",
+        "es": "Llama a Ana, porque llego tarde."
+      },
+      "answer": "Llama a Ana, porque voy a llegar tarde.",
+      "wordIds": [
+        "89",
+        "149",
+        "174"
+      ],
+      "why": {
+        "en": "The command stays as it is; only the verb of the second part changes: present → ir a + infinitive (hace → va a hacer).",
+        "es": "El mandato no cambia; solo cambia el verbo de la segunda parte: presente → ir a + infinitivo (hace → va a hacer)."
+      }
+    },
+    {
+      "id": "ia-tr-05",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "Close the door, because my brothers sleep.",
+        "es": "Cierra la puerta, porque mis hermanos duermen."
+      },
+      "answer": "Cierra la puerta, porque mis hermanos van a dormir.",
+      "wordIds": [
+        "235",
+        "117",
+        "42",
+        "213"
+      ],
+      "why": {
+        "en": "The command stays as it is; only the verb of the second part changes: present → ir a + infinitive (hace → va a hacer).",
+        "es": "El mandato no cambia; solo cambia el verbo de la segunda parte: presente → ir a + infinitivo (hace → va a hacer)."
+      }
+    },
+    {
+      "id": "ia-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Ana, ___ (venir) aquí y ___ (decir) la verdad, por favor.",
+      "answers": [
+        "ven",
+        "di"
+      ],
+      "tr": {
+        "en": "Ana, come here and tell the truth, please.",
+        "es": "Ana, ven aquí y di la verdad, por favor."
+      },
+      "why": {
+        "en": "Ana is addressed with tú: the affirmative command of venir is ven and that of decir is di (both irregular).",
+        "es": "A Ana se le habla de tú: el imperativo afirmativo de venir es ven y el de decir es di (los dos irregulares)."
+      }
+    },
+    {
+      "id": "ia-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Señor, ___ (comer) despacio y ___ (tener) cuidado, por favor.",
+      "answers": [
+        "coma",
+        "tenga"
+      ],
+      "tr": {
+        "en": "Sir, eat slowly and be careful, please.",
+        "es": "Señor, coma despacio y tenga cuidado, por favor."
+      },
+      "why": {
+        "en": "Señor is addressed with usted: the command takes the usted form with the opposite vowel (comer → coma, tener → tenga).",
+        "es": "Al señor se le habla de usted: el mandato lleva la forma de usted con la vocal contraria (comer → coma, tener → tenga)."
+      }
+    },
+    {
+      "id": "ia-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Niños, ___ (hacer) silencio y ___ (escribir) su nombre en el libro.",
+      "answers": [
+        "hagan",
+        "escriban"
+      ],
+      "tr": {
+        "en": "Children, be quiet and write your name in the book.",
+        "es": "Niños, hagan silencio y escriban su nombre en el libro."
+      },
+      "why": {
+        "en": "Niños means ustedes: the command ends in -n (hacer → hagan, escribir → escriban).",
+        "es": "Niños significa ustedes: el mandato termina en -n (hacer → hagan, escribir → escriban)."
+      }
+    },
+    {
+      "id": "ia-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Diego, ___ (salir) de casa, ___ (ir) a la escuela y ___ (ser) amable.",
+      "answers": [
+        "sal",
+        "ve",
+        "sé"
+      ],
+      "tr": {
+        "en": "Diego, leave the house, go to school and be kind.",
+        "es": "Diego, sal de casa, ve a la escuela y sé amable."
+      },
+      "why": {
+        "en": "Diego is addressed with tú: salir → sal, ir → ve, ser → sé (three short irregular commands).",
+        "es": "A Diego se le habla de tú: salir → sal, ir → ve, ser → sé (tres mandatos cortos e irregulares)."
+      }
+    },
+    {
+      "id": "ia-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Doctora, ___ (poner) los papeles aquí y ___ (hablar) más despacio, por favor.",
+      "answers": [
+        "ponga",
+        "hable"
+      ],
+      "tr": {
+        "en": "Doctor, put the papers here and speak more slowly, please.",
+        "es": "Doctora, ponga los papeles aquí y hable más despacio, por favor."
+      },
+      "why": {
+        "en": "Doctora is addressed with usted: poner → ponga (from pongo) and hablar → hable.",
+        "es": "A la doctora se le habla de usted: poner → ponga (de pongo) y hablar → hable."
+      }
+    },
+    {
+      "id": "ia-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "Ana, vienes aquí ahora, por favor.",
+      "wrongIndex": 1,
+      "answer": "ven",
+      "explain": {
+        "en": "A request needs the command form: ven, not vienes (that is the present).",
+        "es": "Un pedido necesita la forma del mandato: ven, no vienes (eso es el presente)."
+      },
+      "tr": {
+        "en": "Ana, come here now, please.",
+        "es": "Ana, ven aquí ahora, por favor."
+      }
+    },
+    {
+      "id": "ia-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "Señor, come despacio, por favor.",
+      "wrongIndex": 1,
+      "answer": "coma",
+      "explain": {
+        "en": "With usted the command is coma, not come (come is the tú form).",
+        "es": "Con usted el mandato es coma, no come (come es la forma de tú)."
+      },
+      "tr": {
+        "en": "Sir, eat slowly, please.",
+        "es": "Señor, coma despacio, por favor."
+      }
+    },
+    {
+      "id": "ia-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "Niños, hace silencio, por favor.",
+      "wrongIndex": 1,
+      "answer": "hagan",
+      "explain": {
+        "en": "Niños means ustedes, so the command is hagan, not hace.",
+        "es": "Niños significa ustedes, así que el mandato es hagan, no hace."
+      },
+      "tr": {
+        "en": "Children, be quiet, please.",
+        "es": "Niños, hagan silencio, por favor."
+      }
+    },
+    {
+      "id": "ia-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "Rosa, eres amable con tu hermano, por favor.",
+      "wrongIndex": 1,
+      "answer": "sé",
+      "explain": {
+        "en": "The request needs the command of ser: sé, not eres.",
+        "es": "El pedido necesita el mandato de ser: sé, no eres."
+      },
+      "tr": {
+        "en": "Rosa, be kind to your brother, please.",
+        "es": "Rosa, sé amable con tu hermano, por favor."
+      }
+    },
+    {
+      "id": "ia-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "Doctora, tiene cuidado con la puerta, por favor.",
+      "wrongIndex": 1,
+      "answer": "tenga",
+      "explain": {
+        "en": "A request needs the command form: tenga, not tiene (that is the present).",
+        "es": "Un pedido necesita la forma del mandato: tenga, no tiene (eso es el presente)."
+      },
+      "tr": {
+        "en": "Doctor, be careful with the door, please.",
+        "es": "Doctora, tenga cuidado con la puerta, por favor."
+      }
+    },
+    {
+      "id": "ia-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "venir",
+        "comer",
+        "escribir"
+      ],
+      "es": "Ana, ___ a mi casa mañana, por favor.",
+      "word": "venir",
+      "answer": "ven",
+      "tr": {
+        "en": "Ana, come to my house tomorrow, please.",
+        "es": "Ana, ven a mi casa mañana, por favor."
+      },
+      "why": {
+        "en": "Ana is addressed with tú: venir → ven (comer and escribir do not fit \"a mi casa\").",
+        "es": "A Ana se le habla de tú: venir → ven (comer y escribir no encajan con \"a mi casa\")."
+      }
+    },
+    {
+      "id": "ia-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "hacer",
+        "salir",
+        "hablar"
+      ],
+      "es": "Niños, ___ una pregunta ahora, por favor.",
+      "word": "hacer",
+      "answer": "hagan",
+      "tr": {
+        "en": "Children, ask a question now, please.",
+        "es": "Niños, hagan una pregunta ahora, por favor."
+      },
+      "why": {
+        "en": "Niños means ustedes: hacer → hagan (salir and hablar do not take \"una pregunta\").",
+        "es": "Niños significa ustedes: hacer → hagan (salir y hablar no llevan \"una pregunta\")."
+      }
+    },
+    {
+      "id": "ia-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "tener",
+        "ir",
+        "ser"
+      ],
+      "es": "Señor, ___ cuidado con el perro, por favor.",
+      "word": "tener",
+      "answer": "tenga",
+      "tr": {
+        "en": "Sir, be careful with the dog, please.",
+        "es": "Señor, tenga cuidado con el perro, por favor."
+      },
+      "why": {
+        "en": "Señor is addressed with usted: tener → tenga (tener cuidado is the fixed phrase; ir and ser do not fit).",
+        "es": "Al señor se le habla de usted: tener → tenga (tener cuidado es la expresión fija; ir y ser no encajan)."
+      }
+    },
+    {
+      "id": "ia-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "decir",
+        "poner",
+        "salir"
+      ],
+      "es": "Rosa, ___ la verdad, por favor.",
+      "word": "decir",
+      "answer": "di",
+      "tr": {
+        "en": "Rosa, tell the truth, please.",
+        "es": "Rosa, di la verdad, por favor."
+      },
+      "why": {
+        "en": "Rosa is addressed with tú: decir → di (poner and salir do not go with \"la verdad\").",
+        "es": "A Rosa se le habla de tú: decir → di (poner y salir no van con \"la verdad\")."
+      }
+    },
+    {
+      "id": "ia-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "poner",
+        "ir",
+        "ser"
+      ],
+      "es": "Doctor, ___ los papeles aquí, por favor.",
+      "word": "poner",
+      "answer": "ponga",
+      "tr": {
+        "en": "Doctor, put the papers here, please.",
+        "es": "Doctor, ponga los papeles aquí, por favor."
+      },
+      "why": {
+        "en": "The doctor is addressed with usted: poner → ponga (ir and ser cannot take \"los papeles\").",
+        "es": "Al doctor se le habla de usted: poner → ponga (ir y ser no pueden llevar \"los papeles\")."
+      }
+    },
+    {
+      "id": "ia-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "Ana, come here now.",
+        "es": "Ana, ven aquí ahora."
+      },
+      "es": "Ana, ven aquí ahora."
+    },
+    {
+      "id": "ia-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "Children, be quiet, please.",
+        "es": "Niños, hagan silencio, por favor."
+      },
+      "es": "Niños, hagan silencio, por favor."
+    },
+    {
+      "id": "ia-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "Sir, eat slowly, please.",
+        "es": "Señor, coma despacio, por favor."
+      },
+      "es": "Señor, coma despacio, por favor."
+    },
+    {
+      "id": "ia-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "Rosa, be kind to your brother.",
+        "es": "Rosa, sé amable con tu hermano."
+      },
+      "es": "Rosa, sé amable con tu hermano."
+    },
+    {
+      "id": "ia-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "Doctor, be careful with the door.",
+        "es": "Doctora, tenga cuidado con la puerta."
+      },
+      "es": "Doctora, tenga cuidado con la puerta."
     }
   ]
 }
