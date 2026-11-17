@@ -1063,6 +1063,439 @@
         }
       ],
       "correctIndex": 0
+    },
+    {
+      "id": "nh-tr-01",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "The class starts at eight.",
+        "es": "La clase empieza a las ocho."
+      },
+      "answer": "La clase va a empezar a las ocho.",
+      "wordIds": [
+        "33",
+        "218",
+        "246"
+      ],
+      "why": {
+        "en": "With ir a + infinitive the time or number phrase stays unchanged: voy a llegar a las nueve.",
+        "es": "Con ir a + infinitivo la expresión de hora o número no cambia: voy a llegar a las nueve."
+      }
+    },
+    {
+      "id": "nh-tr-02",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "I arrive at nine.",
+        "es": "Llego a las nueve."
+      },
+      "answer": "Voy a llegar a las nueve.",
+      "wordIds": [
+        "33",
+        "149"
+      ],
+      "why": {
+        "en": "With ir a + infinitive the time or number phrase stays unchanged: voy a llegar a las nueve.",
+        "es": "Con ir a + infinitivo la expresión de hora o número no cambia: voy a llegar a las nueve."
+      }
+    },
+    {
+      "id": "nh-tr-03",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "I buy three books.",
+        "es": "Compro tres libros."
+      },
+      "answer": "Voy a comprar tres libros.",
+      "wordIds": [
+        "33",
+        "144",
+        "124",
+        "107"
+      ],
+      "why": {
+        "en": "With ir a + infinitive the time or number phrase stays unchanged: voy a llegar a las nueve.",
+        "es": "Con ir a + infinitivo la expresión de hora o número no cambia: voy a llegar a las nueve."
+      }
+    },
+    {
+      "id": "nh-tr-04",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "We leave at half past three.",
+        "es": "Salimos a las tres y media."
+      },
+      "answer": "Vamos a salir a las tres y media.",
+      "wordIds": [
+        "33"
+      ],
+      "why": {
+        "en": "With ir a + infinitive the time or number phrase stays unchanged: voy a llegar a las nueve.",
+        "es": "Con ir a + infinitivo la expresión de hora o número no cambia: voy a llegar a las nueve."
+      }
+    },
+    {
+      "id": "nh-tr-05",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "ir-a"
+      },
+      "prompt": {
+        "en": "I eat at two.",
+        "es": "Como a las dos."
+      },
+      "answer": "Voy a comer a las dos.",
+      "wordIds": [
+        "33",
+        "25",
+        "106"
+      ],
+      "why": {
+        "en": "With ir a + infinitive the time or number phrase stays unchanged: voy a llegar a las nueve.",
+        "es": "Con ir a + infinitivo la expresión de hora o número no cambia: voy a llegar a las nueve."
+      }
+    },
+    {
+      "id": "nh-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Hoy es el cinco ___ mayo. Mi clase empieza ___ las ocho.",
+      "answers": [
+        "de",
+        "a"
+      ],
+      "tr": {
+        "en": "Today is the fifth of May. My class starts at eight.",
+        "es": "Hoy es el cinco de mayo. Mi clase empieza a las ocho."
+      },
+      "why": {
+        "en": "In a date the word de joins the day and the month; a gives the hour.",
+        "es": "En una fecha la palabra de une el día y el mes; a da la hora."
+      }
+    },
+    {
+      "id": "nh-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Tengo veintiún ___. Mi hermano tiene treinta y ___ años.",
+      "answers": [
+        "años",
+        "un"
+      ],
+      "tr": {
+        "en": "I am twenty-one years old. My brother is thirty-one years old.",
+        "es": "Tengo veintiún años. Mi hermano tiene treinta y un años."
+      },
+      "why": {
+        "en": "Uno shortens to un before a masculine noun: veintiún años, treinta y un años.",
+        "es": "Uno se acorta a un delante de un sustantivo masculino: veintiún años, treinta y un años."
+      }
+    },
+    {
+      "id": "nh-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "El café cuesta treinta pesos y el libro cuesta ___ pesos (100). Mi hermano tiene ___ años (16).",
+      "answers": [
+        "cien",
+        "dieciséis"
+      ],
+      "tr": {
+        "en": "The coffee costs thirty pesos and the book costs one hundred pesos. My brother is sixteen years old.",
+        "es": "El café cuesta treinta pesos y el libro cuesta cien pesos (100). Mi hermano tiene dieciséis años (16)."
+      },
+      "why": {
+        "en": "100 is cien; 16 is written as one word with an accent: dieciséis.",
+        "es": "100 es cien; 16 se escribe en una palabra con tilde: dieciséis."
+      }
+    },
+    {
+      "id": "nh-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Son las dos y ___ (2:30). Llegamos a las tres menos ___ (2:45).",
+      "answers": [
+        "media",
+        "cuarto"
+      ],
+      "tr": {
+        "en": "It is half past two. We arrive at a quarter to three.",
+        "es": "Son las dos y media (2:30). Llegamos a las tres menos cuarto (2:45)."
+      },
+      "why": {
+        "en": "Y media is the half hour; menos cuarto is a quarter before the hour.",
+        "es": "Y media es la media hora; menos cuarto es un cuarto antes de la hora."
+      }
+    },
+    {
+      "id": "nh-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Hoy es el ___ de enero (1). Mañana es el dos ___ enero.",
+      "answers": [
+        "primero",
+        "de"
+      ],
+      "tr": {
+        "en": "Today is the first of January. Tomorrow is the second of January.",
+        "es": "Hoy es el primero de enero (1). Mañana es el dos de enero."
+      },
+      "why": {
+        "en": "The first day of the month is primero; the other days use the normal number; de comes before the month.",
+        "es": "El primer día del mes es primero; los otros días usan el número normal; de va delante del mes."
+      }
+    },
+    {
+      "id": "nh-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "El examen es el diez en junio.",
+      "wrongIndex": 5,
+      "answer": "de",
+      "explain": {
+        "en": "In a date de joins the day and the month: el diez de junio.",
+        "es": "En una fecha de une el día y el mes: el diez de junio."
+      },
+      "tr": {
+        "en": "The exam is on the tenth of June.",
+        "es": "El examen es el diez de junio."
+      }
+    },
+    {
+      "id": "nh-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "La clase empieza en las nueve.",
+      "wrongIndex": 3,
+      "answer": "a",
+      "explain": {
+        "en": "The hour is given with a: a las nueve.",
+        "es": "La hora se da con a: a las nueve."
+      },
+      "tr": {
+        "en": "The class starts at nine.",
+        "es": "La clase empieza a las nueve."
+      }
+    },
+    {
+      "id": "nh-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "Es las tres de la tarde.",
+      "wrongIndex": 0,
+      "answer": "Son",
+      "explain": {
+        "en": "For every hour except one the verb is plural: Son las tres.",
+        "es": "Con todas las horas menos la una el verbo va en plural: Son las tres."
+      },
+      "tr": {
+        "en": "It is three in the afternoon.",
+        "es": "Son las tres de la tarde."
+      }
+    },
+    {
+      "id": "nh-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "Son la una y media.",
+      "wrongIndex": 0,
+      "answer": "Es",
+      "explain": {
+        "en": "For one o clock the verb is singular: Es la una y media.",
+        "es": "Con la una el verbo va en singular: Es la una y media."
+      },
+      "tr": {
+        "en": "It is half past one.",
+        "es": "Es la una y media."
+      }
+    },
+    {
+      "id": "nh-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "Mi hermano tiene veintiuno años.",
+      "wrongIndex": 3,
+      "answer": "veintiún",
+      "explain": {
+        "en": "Before a masculine noun the number shortens: veintiún años.",
+        "es": "Delante de un sustantivo masculino el número se acorta: veintiún años."
+      },
+      "tr": {
+        "en": "My brother is twenty-one years old.",
+        "es": "Mi hermano tiene veintiún años."
+      }
+    },
+    {
+      "id": "nh-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "un",
+        "una",
+        "uno"
+      ],
+      "es": "Tengo ___ amiga en la clase.",
+      "word": "una",
+      "answer": "una",
+      "tr": {
+        "en": "I have a friend in the class.",
+        "es": "Tengo una amiga en la clase."
+      },
+      "why": {
+        "en": "Amiga is feminine, so the number one is una.",
+        "es": "Amiga es femenino, así que el número uno es una."
+      }
+    },
+    {
+      "id": "nh-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "cien",
+        "ciento",
+        "cinco"
+      ],
+      "es": "Hay ___ veinte estudiantes en la escuela.",
+      "word": "ciento",
+      "answer": "ciento",
+      "tr": {
+        "en": "There are one hundred and twenty students at the school.",
+        "es": "Hay ciento veinte estudiantes en la escuela."
+      },
+      "why": {
+        "en": "Cien becomes ciento when more numbers follow: ciento veinte.",
+        "es": "Cien pasa a ciento cuando siguen más números: ciento veinte."
+      }
+    },
+    {
+      "id": "nh-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "primero",
+        "uno",
+        "un"
+      ],
+      "es": "Hoy es el ___ de mayo.",
+      "word": "primero",
+      "answer": "primero",
+      "tr": {
+        "en": "Today is the first of May.",
+        "es": "Hoy es el primero de mayo."
+      },
+      "why": {
+        "en": "The first day of the month is primero.",
+        "es": "El primer día del mes es primero."
+      }
+    },
+    {
+      "id": "nh-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "es",
+        "son",
+        "hay"
+      ],
+      "es": "Ahora ___ las cinco.",
+      "word": "son",
+      "answer": "son",
+      "tr": {
+        "en": "It is five o clock now.",
+        "es": "Ahora son las cinco."
+      },
+      "why": {
+        "en": "For every hour except one the verb is plural: son las cinco.",
+        "es": "Con todas las horas menos la una el verbo va en plural: son las cinco."
+      }
+    },
+    {
+      "id": "nh-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "es",
+        "son",
+        "hay"
+      ],
+      "es": "Ahora ___ la una.",
+      "word": "es",
+      "answer": "es",
+      "tr": {
+        "en": "It is one o clock now.",
+        "es": "Ahora es la una."
+      },
+      "why": {
+        "en": "For one o clock the verb is singular: es la una.",
+        "es": "Con la una el verbo va en singular: es la una."
+      }
+    },
+    {
+      "id": "nh-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "It is half past three.",
+        "es": "Son las tres y media."
+      },
+      "es": "Son las tres y media."
+    },
+    {
+      "id": "nh-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "The class starts at eight.",
+        "es": "La clase empieza a las ocho."
+      },
+      "es": "La clase empieza a las ocho."
+    },
+    {
+      "id": "nh-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "Today is the tenth of January.",
+        "es": "Hoy es el diez de enero."
+      },
+      "es": "Hoy es el diez de enero."
+    },
+    {
+      "id": "nh-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "My brother is sixteen years old.",
+        "es": "Mi hermano tiene dieciséis años."
+      },
+      "es": "Mi hermano tiene dieciséis años."
+    },
+    {
+      "id": "nh-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "The book costs one hundred pesos.",
+        "es": "El libro cuesta cien pesos."
+      },
+      "es": "El libro cuesta cien pesos."
     }
   ]
 }
