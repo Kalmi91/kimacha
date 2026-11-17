@@ -61,7 +61,7 @@ const es: typeof en = {
       kokoro: 'Kokoro (mejor, más lenta)',
       kokoroSize: (mb: string) => `Kokoro necesita una descarga de ${mb}`,
       recordingsTitle: 'Grabaciones: ambos hablantes',
-      recordingsHint: 'Opcional: grabaciones de cada palabra y frase por ambos hablantes, así la persona que elijas suena al instante. La app funciona sin ellas.',
+      recordingsHint: 'Opcional: grabaciones de cada palabra y frase en las dos voces Kokoro, así una voz Kokoro suena al instante. Una voz Piper no las usa. La app funciona sin ellas.',
       recordingsLowSpace: (mb: string) => `No hay espacio libre suficiente: hacen falta unos ${mb} libres para la descarga y la descompresión.`,
       recordingsNewer: 'Hay grabaciones más nuevas (ambos hablantes). La app funciona sin ellas.',
       confirmRecordings: (mb: string) => `Esto descarga ${mb} (las grabaciones de palabras y frases de ambos hablantes). Con datos móviles cuenta en tu plan, por eso se recomienda Wi-Fi.`,

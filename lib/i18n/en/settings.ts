@@ -61,7 +61,7 @@ export default {
       kokoro: 'Kokoro (nicer, slower)',
       kokoroSize: (mb: string) => `Kokoro needs a ${mb} download`,
       recordingsTitle: 'Recordings: both speakers',
-      recordingsHint: 'Optional: recordings of every word and sentence by both speakers, so the person you pick plays at once. The app works without them.',
+      recordingsHint: 'Optional: recordings of every word and sentence in both Kokoro voices, so a Kokoro voice plays at once. A Piper voice does not use them. The app works without them.',
       recordingsLowSpace: (mb: string) => `Not enough free space: about ${mb} must be free for the download and unpacking.`,
       recordingsNewer: 'Newer recordings are available (both speakers). The app works without them.',
       confirmRecordings: (mb: string) => `This downloads ${mb} (the word and sentence recordings of both speakers). On mobile data it counts against your plan, so Wi-Fi is recommended.`,

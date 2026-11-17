@@ -61,7 +61,7 @@ const hu: typeof en = {
       kokoro: 'Kokoro (szebb, lassabb)',
       kokoroSize: (mb: string) => `A Kokoro ${mb} letöltést kér`,
       recordingsTitle: 'Felvételek: mindkét beszélő',
-      recordingsHint: 'Választható: minden szó és mondat felvétele mindkét beszélővel, így a választott személy azonnal szól. Az app nélkülük is működik.',
+      recordingsHint: 'Választható: minden szó és mondat felvétele mindkét Kokoro-hanggal, így a Kokoro-hang azonnal szól. A Piper-hang nem használja őket. Az app nélkülük is működik.',
       recordingsLowSpace: (mb: string) => `Nincs elég szabad hely: a letöltéshez és a kicsomagoláshoz kb. ${mb} szabad hely kell.`,
       recordingsNewer: 'Újabb felvételek érhetők el (mindkét beszélő). Az app nélkülük is működik.',
       confirmRecordings: (mb: string) => `Ez ${mb} letöltés (a szavak és mondatok felvételei mindkét beszélővel). Mobiladaton a csomagodba számít, ezért Wi-Fi ajánlott.`,

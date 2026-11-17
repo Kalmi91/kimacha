@@ -78,7 +78,7 @@ describe('BetterVoiceRows: the size question', () => {
     mockState = stateWith({});
     const view = show();
     expect(view.getByText('Recordings: both speakers')).toBeTruthy();
-    expect(view.getByText(/Optional: recordings of every word and sentence by both speakers/)).toBeTruthy();
+    expect(view.getByText(/Optional: recordings of every word and sentence in both Kokoro voices/)).toBeTruthy();
     expect(view.queryByTestId('settings-recordings-newer')).toBeNull();
     fireEvent.press(view.getByTestId('settings-recordings-download'));
     expect(alertSpy.mock.calls[0][1]).toContain(PACKS_MB);
