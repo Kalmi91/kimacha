@@ -25,7 +25,9 @@ import {
   levelProgress,
   loadSmallState,
   openLesson,
+  markShown,
   repairSmallRun,
+  settleShown,
   resolveAnswer,
   roundRight,
   roundRows,
@@ -138,7 +140,7 @@ export default function SmallTestScreen() {
         setData(d);
         return;
       }
-      if (state.run) state = repairSmallRun(state, v.pool);
+      if (state.run) state = repairSmallRun(settleShown(state, v.pool), v.pool);
       if (!state.run) state = startRound(state, v.topics, v.pool, seed);
       else if (state.run.phase === 'lesson') state = finishLesson(state, v.pool);
       pairRef.current = pair;
@@ -266,6 +268,12 @@ export default function SmallTestScreen() {
     Keyboard.dismiss();
     setResult(null);
     commit(resolveAnswer(stRef.current, v.pool, ok, mistyped));
+  };
+
+  // the result card opens: the answer is saved at once, so the X on the card does not lose it
+  const show = (cur: SmallCur, ok: boolean, given?: Result['given']) => {
+    setResult({ cur, ok, given });
+    if (stRef.current) commit(markShown(stRef.current, ok));
   };
 
   // ---------------------------------------------------------------- 1. the round start
@@ -477,7 +485,7 @@ export default function SmallTestScreen() {
               learnedLang={data.learnedLang}
               strictAccents={strictAccents}
               instant
-              onDone={(ok, given) => (guardOpen() ? setResult({ cur, ok, given }) : setRedo((n) => n + 1))}
+              onDone={(ok, given) => (guardOpen() ? show(cur, ok, given) : setRedo((n) => n + 1))}
             />
           ) : (
             <ScrollView contentContainerStyle={styles.drill} keyboardShouldPersistTaps="handled">
@@ -487,7 +495,7 @@ export default function SmallTestScreen() {
                 learnedLang={data.learnedLang}
                 contentLang={data.contentLang as never}
                 strictAccents={strictAccents}
-                onDone={(ok) => (!guardOpen() ? setRedo((n) => n + 1) : ok ? settle(true) : setResult({ cur, ok: false }))}
+                onDone={(ok) => (!guardOpen() ? setRedo((n) => n + 1) : ok ? settle(true) : show(cur, false))}
               />
             </ScrollView>
           )}

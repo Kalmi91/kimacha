@@ -333,6 +333,22 @@ describe.each(['brand', 'classic'] as const)('grammar small test (%s palette)', 
     expect(onScreen().q.id).toBe(seen);
   });
 
+  it('a wrong answer, leaving with the X on its result card and coming back: the next question comes, the miss stays in the run', async () => {
+    const first = await start();
+    const { q } = await answer(false);
+    expect(has('level-test-next')).toBe(true);
+    await press('small-test-close');
+    first.unmount();
+    await open();
+    expect(has('small-test-intro')).toBe(false);
+    expect(text('small-test-header')).toBe('A1 test · 2/10');
+    expect(onScreen().q.id).not.toBe(q.id);
+    const st = await stateNow();
+    expect(st.run!.answers).toHaveLength(1);
+    expect(st.run!.answers[0]).toMatchObject({ qid: q.id, ok: false });
+    expect(st.run!.pending.length).toBeGreaterThan(0); // the miss plans its follow-ups
+  });
+
   it('a tap on an answer within 500 ms of a new question records nothing (the double tap after Next)', async () => {
     await start();
     const first = onScreen();
