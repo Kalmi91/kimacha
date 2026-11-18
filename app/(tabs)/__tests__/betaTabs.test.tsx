@@ -9,13 +9,17 @@ jest.mock('expo-router', () => {
     React.createElement(
       React.Fragment,
       null,
-      React.Children.map(children, (c: React.ReactElement<any>) =>
-        React.createElement(
+      React.Children.map(children, (c: React.ReactElement<any>) => {
+        // like expo-router: a screen with both `href` and `tabBarButton` crashes the app at start
+        if (c.props.options.href !== undefined && c.props.options.tabBarButton) {
+          throw new Error(`${c.props.name}: Cannot use \`href\` and \`tabBarButton\` together.`);
+        }
+        return React.createElement(
           Text,
           { testID: `tab-${c.props.name}` },
           `${c.props.name}|${c.props.options.title}|${c.props.options.href === null ? 'hidden' : 'shown'}`
-        )
-      )
+        );
+      })
     );
   Tabs.Screen = function Screen() {
     return null;
