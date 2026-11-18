@@ -63,11 +63,13 @@ describe('tab bar: released features', () => {
     expect(tabLine(view, 'practice')).toBe('practice|Practice|shown');
     expect(tabLine(view, 'sentences')).toBe('sentences|Sentences|shown');
     expect(tabLine(view, 'speak')).toBe('speak|Speak|shown');
-    for (const name of ['index', 'course', 'board', 'stats', 'settings']) expect(tabLine(view, name)).toMatch(/\|shown$/);
+    for (const name of ['index', 'course', 'exam-tab', 'board', 'stats', 'settings']) expect(tabLine(view, name)).toMatch(/\|shown$/);
     const order = view.getAllByTestId(/^tab-/).map((n) => String(n.props.children).split('|')[0]);
-    expect(order.filter((n) => n !== 'practice' && n !== 'sentences' && n !== 'speak')).toEqual(['index', 'course', 'board', 'stats', 'settings']);
-    // Grammar, Sentences, Speak, Practice, Stats: Practice comes after the tabs that teach (Kálmán, 2026-11-04)
-    expect(order.indexOf('sentences')).toBe(order.indexOf('course') + 1);
+    expect(order.filter((n) => n !== 'practice' && n !== 'sentences' && n !== 'speak')).toEqual(['index', 'course', 'exam-tab', 'board', 'stats', 'settings']);
+    // the Exam tab comes right after Grammar (E153)
+    expect(order.indexOf('exam-tab')).toBe(order.indexOf('course') + 1);
+    // Grammar, Exam, Sentences, Speak, Practice, Stats: Practice comes after the tabs that teach (Kálmán, 2026-11-04)
+    expect(order.indexOf('sentences')).toBe(order.indexOf('exam-tab') + 1);
     expect(order.indexOf('speak')).toBe(order.indexOf('sentences') + 1);
     expect(order.indexOf('practice')).toBe(order.indexOf('speak') + 1);
     // the weekly leaderboard tab sits right before Stats

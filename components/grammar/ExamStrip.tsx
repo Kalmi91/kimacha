@@ -69,7 +69,22 @@ function StripButton({
   );
 }
 
-// The exam strip of the Grammar tab (under a level's header, in place of the old lone level test button): the level's
+// The level test entry alone: the Grammar tab keeps it (the strip moved to the Exam tab, which has the same button).
+export function LevelTestButton({ level }: { level: Level }) {
+  const router = useRouter();
+  const s = t();
+  return (
+    <View style={styles.buttons}>
+      <StripButton
+        testID={`grammar-level-test-${level}`}
+        label={`🎯 ${s.levelTest.button}`}
+        onPress={() => router.push(`/grammar/level-test?level=${level}` as never)}
+      />
+    </View>
+  );
+}
+
+// The exam strip of the Exam tab (under a level's header, in place of the old lone level test button): the level's
 // grammar readiness, its weakest topics, and the entries to the level test, the level exam and the mock exam.
 // A level without any written lesson has no strip. `examStatus` undefined = not loaded yet (the exam button is disabled).
 export default function ExamStrip({

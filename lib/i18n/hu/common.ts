@@ -37,6 +37,7 @@ const hu: typeof en = {
   tabs: {
     settings: 'Beállítások',
     grammar: 'Nyelvtan',
+    exam: 'Vizsga',
     stats: 'Statisztika',
     board: 'Heti rangsor',
     pcic: 'Tanulás',

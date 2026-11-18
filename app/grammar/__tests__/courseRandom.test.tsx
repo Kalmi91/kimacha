@@ -149,51 +149,29 @@ describe.each([
       const view = render(<ThemeProvider><GrammarSyllabusScreen /></ThemeProvider>);
       await flush();
       expect(screen.getByTestId('grammar-level-test-A1')).toHaveTextContent('🎯 Level test');
-      expect(screen.getByTestId('grammar-exam-strip-pct-A1')).toHaveTextContent('0% grammar ready');
+      expect(screen.queryByTestId('grammar-exam-strip-A1')).toBeNull();
       fireEvent.press(screen.getByTestId('grammar-level-test-A1'));
       expect(mockPush).toHaveBeenCalledWith('/grammar/level-test?level=A1');
       view.unmount();
     });
 
-    it('the exam strip loads the level exam status: a fresh install has the exam locked with its reason shown', async () => {
-      const view = render(<ThemeProvider><GrammarSyllabusScreen /></ThemeProvider>);
-      await flush();
-      expect(screen.getByTestId('grammar-exam-open-A1').props.accessibilityState).toMatchObject({ disabled: true });
-      expect(screen.getByTestId('grammar-exam-lock-A1')).toHaveTextContent(/Finish one grammar lesson of this level\./);
-      view.unmount();
-    });
-
-    it('is the average of the topics test percent: one topic at 100% among all the written A1 ones', async () => {
-      await getDb().setGameProgress(GRAMMAR_RANDOM_KEY, 'presente-regular', 'evidence', answers(4, 4)); // 100%, not ticked
-      await getDb().setGameProgress(GRAMMAR_RANDOM_KEY, 'presente-irregular', 'evidence', answers(2, 2)); // 2 right answers: 2/3 of a percent share
-      const view = render(<ThemeProvider><GrammarSyllabusScreen /></ThemeProvider>);
-      await flush();
-      const pct = Math.round((100 + 67) / a1Written().length);
-      expect(pct).toBeGreaterThan(0);
-      expect(screen.getByTestId('grammar-exam-strip-pct-A1')).toHaveTextContent(`${pct}% grammar ready`);
-      view.unmount();
-    });
-
-    it('the standing is one number: the button and every level header (with its bar) show the stored standing, never less than the real percent (FB616)', async () => {
+    it('the standing is one number: every level header (with its bar) show the stored standing, never less than the real percent (FB616)', async () => {
       await getDb().setGameProgress(GRAMMAR_RANDOM_KEY, 'presente-regular', 'evidence', answers(4, 4));
       await saveResumeValue(getDb(), levelShownKey('en→es', 'A1'), 41.3);
       const view = render(<ThemeProvider><GrammarSyllabusScreen /></ThemeProvider>);
       await flush();
-      expect(screen.getByTestId('grammar-exam-strip-pct-A1')).toHaveTextContent('41% grammar ready');
       expect(screen.getByTestId('grammar-level-standing-pct-A1')).toHaveTextContent('41%');
       expect(String(StyleSheet.flatten(screen.getByTestId('grammar-level-standing-fill-A1').props.style).width)).toBe('41.3%');
       view.unmount();
       await saveResumeValue(getDb(), levelShownKey('en→es', 'A1'), null);
     });
 
-    it('a done mark once every topic of the level is ticked off; it still opens the test', async () => {
+    it('the level test button still opens the test once every topic of the level is ticked off', async () => {
       for (const tp of a1Written()) {
         await getDb().setGameProgress(GRAMMAR_RANDOM_KEY, tp.id, 'evidence', answers(5, 5, ['choice', 'form']));
       }
       const view = render(<ThemeProvider><GrammarSyllabusScreen /></ThemeProvider>);
       await flush();
-      expect(screen.getByTestId('grammar-exam-strip-title-A1')).toHaveTextContent('✓ A1 exam');
-      expect(screen.getByTestId('grammar-exam-strip-pct-A1')).toHaveTextContent('100% grammar ready');
       fireEvent.press(screen.getByTestId('grammar-level-test-A1'));
       expect(mockPush).toHaveBeenCalledWith('/grammar/level-test?level=A1');
       view.unmount();

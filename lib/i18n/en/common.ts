@@ -38,6 +38,7 @@ export default {
   tabs: {
     settings: 'Settings',
     grammar: 'Grammar',
+    exam: 'Exam',
     stats: 'Stats',
     board: 'Weekly leaderboard',
     pcic: 'Learn',

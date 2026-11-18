@@ -37,8 +37,6 @@ import {
   type RoundRun,
   type TopicEvidence,
 } from '@/lib/grammar/randomRound';
-import { EXAM_LEVELS } from '@/lib/exam/types';
-import { examStatusFor, levelHasLesson, type ExamLevelStatus } from '@/lib/exam/unlock';
 import { DEFAULT_WEEKLY_GOAL_MINUTES } from '@/lib/usageStats';
 import ScreenFeedback from '@/lib/screenFeedback';
 import { loadBigTestCard, loadBigTestKnownTopics } from '@/lib/grammar/bigTest';
@@ -47,7 +45,7 @@ import { loadResumeValue, saveResumeValue } from '@/lib/resumeStore';
 import BigTestCard from '@/components/grammar/BigTestCard';
 import { LevelButtons, LevelTestRows, OverallBar } from '@/components/grammar/GrammarLevelPanel';
 import { BrutalBox, SegmentBar, Sticker, segmentsFilled } from '@/components/grammar/Brutal';
-import ExamStrip from '@/components/grammar/ExamStrip';
+import { LevelTestButton } from '@/components/grammar/ExamStrip';
 import LevelStanding from '@/components/grammar/LevelStanding';
 import { ExamTagClassic } from '@/components/grammar/ExamTag';
 import { topicKindCount } from '@/lib/grammar/randomRoundView';
@@ -99,9 +97,7 @@ export default function GrammarSyllabusScreen() {
   const [streak, setStreak] = useState(0);
   const [weeklyGoal, setWeeklyGoal] = useState(DEFAULT_WEEKLY_GOAL_MINUTES);
   const [weekMinutes, setWeekMinutes] = useState(0);
-  // the level exam's unlock state per level (the exam strip), loaded after everything else so it never delays the first paint.
-  const [examStatus, setExamStatus] = useState<Map<string, ExamLevelStatus>>(new Map());
-  // the target of the previous load: another direction must not show the old direction's exam status while loading.
+  // the target of the previous load: another direction must not keep the old direction's open level.
   const examTarget = useRef<string | null>(null);
 
   const load = useCallback(async () => {
@@ -109,7 +105,6 @@ export default function GrammarSyllabusScreen() {
     const { target, source } = await refresh(['direction']);
     setLearnedLang(target);
     const directionChanged = examTarget.current !== null && examTarget.current !== target;
-    if (directionChanged) setExamStatus(new Map());
     examTarget.current = target;
     // The explanation language is the learner's own (the pair's source), not the language being learned:
     // en→es English, es→en Spanish. A source without lesson text yet (hu) falls back to English per field.
@@ -142,9 +137,6 @@ export default function GrammarSyllabusScreen() {
     setStreak((await db.getStreak())?.current_count ?? 0);
     setWeeklyGoal(await db.getWeeklyGoalMinutes());
     setWeekMinutes((await db.getUsageStats()).thisWeek);
-    // The same sources as app/exam.tsx: the cards and the grammar rows (refresh(['direction']) above has set the word corpus of this direction).
-    const cards = await db.getPcicCards();
-    setExamStatus(new Map(EXAM_LEVELS.filter((l) => levelHasLesson(l, target)).map((l) => [l, examStatusFor(l, target, cards, rows)])));
   }, [refresh]);
 
   useFocusEffect(
@@ -266,7 +258,7 @@ export default function GrammarSyllabusScreen() {
             {shownLevel === level ? ` · ${s.grammar.yourLevel}` : ''}
           </Text>
           <LevelStanding level={shownLevel} learnedLang={learnedLang} contentLang={contentLang} evidence={evidence} />
-          <ExamStrip level={shownLevel} learnedLang={learnedLang} contentLang={contentLang} evidence={evidence} examStatus={examStatus.get(shownLevel)} />
+          <LevelTestButton level={shownLevel} />
           {unitsForLevel(shownLevel, learnedLang).map((unit) => (
             <View key={unit.id} style={styles.brutalUnit}>
               <Text style={[styles.brutalUnitName, { color: g.mu }]}>
@@ -426,7 +418,7 @@ export default function GrammarSyllabusScreen() {
                 </Text>
                 <LevelStanding level={lvl} learnedLang={learnedLang} contentLang={contentLang} evidence={evidence} />
               </View>
-              <ExamStrip level={lvl} learnedLang={learnedLang} contentLang={contentLang} evidence={evidence} examStatus={examStatus.get(lvl)} />
+              <LevelTestButton level={lvl} />
 
               {isOpen
                 ? unitsForLevel(lvl, learnedLang).map((unit) => (

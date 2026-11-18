@@ -37,6 +37,7 @@ const de: typeof en = {
   tabs: {
     settings: 'Einstellungen',
     grammar: 'Grammatik',
+    exam: 'Prüfung',
     stats: 'Statistik',
     board: 'Wochenrangliste',
     pcic: 'Lernen',
