@@ -4,7 +4,7 @@
 Run it with the venv that has kokoro-onnx + soundfile, always isolated:
   <venv>\\Scripts\\python.exe -I scripts\\tts-pack.py <command>
 
-Commands (count, gen, verify, pack take --set words|sentences; words is the default and unchanged):
+Commands (count, gen, verify, pack, coverage take --set words|sentences; words is the default and unchanged):
   selftest                      FNV-1a test vectors + the (g, key) rule of the sentence pack
   count                         unique keys per language, characters, collisions; writes keys.json
                                 (--set sentences: per source and language entries, characters, estimated
@@ -13,10 +13,12 @@ Commands (count, gen, verify, pack take --set words|sentences; words is the defa
                                 synthesize the missing files (resumable: existing files are kept);
                                 --order (sentences): sources by priority, deck-examples first, instead of by key
   verify [--n 20]               sample check: length > 0.2 s, peak > 0.05, file name = FNV-1a of the key
+  coverage --set sentences --index <index.json> --levels a1,a2
+                                missing deck sentence recordings in the selected levels (read-only)
   migrate                       (words) copy the v1 recordings (work/<lang>/<hash>.mp3, the word's own hash voice) into
                                 the v2 layout work/<lang>/<g>/<hash>.mp3; only the other person is then generated
   pack                          kimacha-tts-pack-v2.tar.bz2 with index.json
-                                (--set sentences: kimacha-tts-sentences-v2.tar.bz2)
+                                (--set sentences: kimacha-tts-sentences-v3.tar.bz2)
 
 Contract (shared with lib/neuralTts.ts of the app):
   key   = text.trim().normalize('NFC')       (case and article stay: "el perro")
@@ -38,7 +40,8 @@ Which text the card reads aloud (checked in the app code):
   Example sentences are NOT in the word pack (they go to the on-device engine, or to the sentence pack).
 
 Sentence pack contract (PLAN-fb1102.md "Audio round B"; shared with the app, lib/neuralModels.ts / lib/speech.ts):
-  separate archive kimacha-tts-sentences-v2.tar.bz2 (installs to the folder kimacha-tts-sentences-v2)
+  separate archive kimacha-tts-sentences-v3.tar.bz2 (installs to the folder kimacha-tts-sentences-v3)
+  v3 (2026-11-17) re-recorded the sentences changed since v2.
   v2 (EJSZAKA E101): every sentence in BOTH speakers (f and m), and the Speak tab's story lines (speech-stories)
   index = { "version": 2, "engine": "kokoro-v1.0",
             "files": { "es": { "<g>|<key>": "es/<g>/<hash>.mp3" }, "en": { ... } } }
@@ -91,7 +94,7 @@ PACK_FILE = OUT / "kimacha-tts-pack-v2.tar.bz2"
 # --set sentences: the sentence pack (keys are "<g>|<text>", files es/<g>/<hash>.mp3), its own output folder.
 SET = "words"
 SENT_OUT = Path(os.environ.get("TTS_PACK_OUT_SENTENCES", r"C:\AI\_work\tts-sentences"))
-SENT_PACK_NAME = "kimacha-tts-sentences-v2.tar.bz2"
+SENT_PACK_NAME = "kimacha-tts-sentences-v3.tar.bz2"
 PACK_VERSION = 2
 SENT_MP3_LEVEL = 0.7  # libsndfile MP3 compression_level (VBR quality scale 0..1) of the sentence pack only
 GRAMMAR_DIRS = ("es", "en", "hu")  # data/games/grammar/<dir>: the language the lessons teach
@@ -677,6 +680,49 @@ def cmd_count(_args) -> int:
     return 0
 
 
+def cmd_coverage(args) -> int:
+    if SET != "sentences":
+        print("coverage is for the sentence set")
+        return 1
+    index = json.loads(args.index.read_text(encoding="utf-8"))["files"]
+    keys, _ = collect_sentences()
+    expected = {lang: set(keys[lang]) for lang in LANGS}
+    levels = {level.strip() for level in args.levels.split(",")}
+    missing_any, texts = False, {}
+    for rel, tl, tfield, sl, sfield in (
+        ("data/words-open", "es", "sentence_es", "en", "sentence_en"),
+        ("data/words/en", "en", "sentence_en", "es", "sentence_es"),
+    ):
+        for f in sorted((ROOT / rel).glob("*.json")):
+            if f.stem not in levels:
+                continue
+            cards = load_cards(f)
+            if not cards:
+                continue
+            per = {lang: set() for lang in LANGS}
+            for c in cards:
+                if rel == "data/words/en" and c.get("vosotros"):
+                    continue
+                for lang, field in ((tl, tfield), (sl, sfield)):
+                    text = c.get(field)
+                    if isinstance(text, str) and any(ch.isalnum() for ch in text):
+                        for g in ("f", "m"):
+                            per[lang].add(sent_key(g, text))
+            line = []
+            for lang in LANGS:
+                ks = per[lang] & expected[lang]
+                missing = sorted(k for k in ks if k not in index.get(lang, {}))
+                missing_any |= bool(missing)
+                line.append(f"{lang} {len(missing)}/{len(ks)} missing")
+                for k in missing:
+                    if len(texts) < 10:
+                        texts[(lang, split_key(k)[1])] = True
+            print(f"{rel}/{f.name}: " + ", ".join(line))
+    for lang, text in texts:
+        print(f"  {lang}: {text}")
+    return 1 if missing_any else 0
+
+
 def trim_silence(a, thr=0.004, pad_ms=25):
     import numpy as np
 
@@ -880,9 +926,30 @@ def cmd_migrate(_args) -> int:
 def cmd_pack(_args) -> int:
     keys = load_keys()
     files = assign_files(keys)
+    idx_path = OUT / "index.json"
+    if idx_path.exists():
+        previous = json.loads(idx_path.read_text(encoding="utf-8"))["files"]
+        repairs = []
+        for lang in LANGS:
+            old = previous.get(lang, {})
+            owners = {name: k for k, name in old.items()}
+            for k in keys[lang]:
+                name = files[lang][k]
+                if name in owners and owners[name] != k:
+                    src = AUDIO / old[k] if k in old else None
+                    # Snapshot before any writes: one moved name can be another repair's source.
+                    data = src.read_bytes() if src is not None and src.exists() else None
+                    repairs.append((lang, k, name, data))
+        for lang, k, name, data in repairs:
+            dst = AUDIO / name
+            if data is not None:
+                dst.parent.mkdir(parents=True, exist_ok=True)
+                dst.write_bytes(data)
+            else:
+                dst.unlink(missing_ok=True)
+            print(f"heal {lang} {k!r}: {name} {'copied previous recording' if data is not None else 'removed stale recording'}")
     have = present(keys, files)
     index = {"version": PACK_VERSION, "engine": "kokoro-v1.0", "files": {l: {k: files[l][k] for k in have[l]} for l in LANGS}}
-    idx_path = OUT / "index.json"
     idx_path.write_text(json.dumps(index, ensure_ascii=False, indent=0), encoding="utf-8")
     t0 = time.time()
     tmp = PACK_FILE.with_name(PACK_FILE.name + ".part")
@@ -892,6 +959,7 @@ def cmd_pack(_args) -> int:
             for k in have[l]:
                 tar.add(AUDIO / files[l][k], arcname=files[l][k])
     os.replace(tmp, PACK_FILE)
+    PACK_FILE.with_name(PACK_FILE.name.removesuffix(".tar.bz2") + ".index.json").write_bytes(idx_path.read_bytes())
     missing = {l: len(keys[l]) - len(have[l]) for l in LANGS}
     size_mb = PACK_FILE.stat().st_size / 1e6
     print(f"pack {PACK_FILE} {size_mb:.1f} MB, files {({l: len(have[l]) for l in LANGS})}, missing {missing}, {time.time() - t0:.0f}s")
@@ -908,6 +976,9 @@ def main() -> int:
 
     sub.add_parser("selftest")
     with_set(sub.add_parser("count"))
+    c = with_set(sub.add_parser("coverage"))
+    c.add_argument("--index", type=Path, required=True)
+    c.add_argument("--levels", required=True, help="comma-separated deck levels")
     g = with_set(sub.add_parser("gen"))
     g.add_argument("--lang", choices=LANGS)
     g.add_argument("--limit", type=int, default=0)
@@ -931,7 +1002,7 @@ def main() -> int:
         global SET, OUT, AUDIO, PACK_FILE
         SET, OUT = "sentences", SENT_OUT
         AUDIO, PACK_FILE = OUT / "work", OUT / SENT_PACK_NAME
-    return {"selftest": cmd_selftest, "count": cmd_count, "gen": cmd_gen, "verify": cmd_verify, "pack": cmd_pack, "migrate": cmd_migrate}[args.cmd](args)
+    return {"selftest": cmd_selftest, "count": cmd_count, "gen": cmd_gen, "verify": cmd_verify, "pack": cmd_pack, "migrate": cmd_migrate, "coverage": cmd_coverage}[args.cmd](args)
 
 
 if __name__ == "__main__":

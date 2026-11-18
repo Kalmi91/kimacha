@@ -1,0 +1,33 @@
+name: TTS coverage
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'data/words-open/**'
+      - 'data/words/en/**'
+      - 'scripts/tts-pack.py'
+      - 'lib/neuralVoices.ts'
+  pull_request:
+    paths:
+      - 'data/words-open/**'
+      - 'data/words/en/**'
+      - 'scripts/tts-pack.py'
+      - 'lib/neuralVoices.ts'
+
+permissions:
+  contents: read
+
+jobs:
+  coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+
+      - name: Download sentence pack index
+        run: |
+          url=$(grep '^export const SENTENCE_PACK_URL = ' lib/neuralVoices.ts | sed "s/.*= '\([^']*\)'.*/\1/")
+          curl -fsSL "${url%.tar.bz2}.index.json" -o index.json
+
+      - name: Check deck sentence coverage
+        run: python3 scripts/tts-pack.py coverage --set sentences --index index.json --levels a0,a1,a2

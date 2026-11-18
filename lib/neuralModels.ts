@@ -22,7 +22,7 @@ import {
   DEFAULT_SPEAKERS,
   LEGACY_PACK_DIR,
   LEGACY_PACK_KEY,
-  LEGACY_SENTENCE_PACK_DIR,
+  LEGACY_SENTENCE_PACK_DIRS,
   LEGACY_SENTENCES_KEY,
   NEURAL_MODELS,
   PACK_DIR,
@@ -139,19 +139,21 @@ async function readInstalled(fs: Fs): Promise<Record<string, boolean>> {
     installed[key] = await fs.exists(itemMarker(fs, key)).catch(() => false);
   }
   installed[LEGACY_PACK_KEY] = await fs.exists(`${ttsDir(fs)}/${LEGACY_PACK_DIR}.ok`).catch(() => false);
-  installed[LEGACY_SENTENCES_KEY] = await fs.exists(`${ttsDir(fs)}/${LEGACY_SENTENCE_PACK_DIR}.ok`).catch(() => false);
+  installed[LEGACY_SENTENCES_KEY] = (await Promise.all(LEGACY_SENTENCE_PACK_DIRS.map(dir => fs.exists(`${ttsDir(fs)}/${dir}.ok`).catch(() => false)))).some(Boolean);
   return installed;
 }
 
-// A v2 pack that is installed (its .ok marker is there) replaces the v1 pack: the v1 folder and marker go, about 462 MB.
-// A v1 pack stays as long as its v2 is not installed (a failed or cancelled download leaves v1 playing).
+// An installed current pack (its .ok marker is there) replaces all its legacy folders and markers:
+// word v2 replaces v1, sentence v3 replaces v2 and v1. A failed or cancelled download leaves legacy packs playing.
 async function removeSupersededPacks(fs: Fs): Promise<void> {
-  for (const [key, legacyDir] of [[PACK_KEY, LEGACY_PACK_DIR], [SENTENCES_KEY, LEGACY_SENTENCE_PACK_DIR]] as const) {
+  for (const [key, legacyDirs] of [[PACK_KEY, [LEGACY_PACK_DIR]], [SENTENCES_KEY, LEGACY_SENTENCE_PACK_DIRS]] as const) {
     try {
       if (!(await fs.exists(itemMarker(fs, key)))) continue;
-      const legacy = `${ttsDir(fs)}/${legacyDir}`;
-      await fs.unlink(`${legacy}.ok`).catch(() => {});
-      await fs.unlink(legacy).catch(() => {});
+      for (const legacyDir of legacyDirs) {
+        const legacy = `${ttsDir(fs)}/${legacyDir}`;
+        await fs.unlink(`${legacy}.ok`).catch(() => {});
+        await fs.unlink(legacy).catch(() => {});
+      }
     } catch {
       // keep what is there
     }
@@ -187,12 +189,20 @@ async function writeSettings(): Promise<void> {
 
 // A pack's index.json, from the pack folder (or one folder below it, if the archive had a top folder). A pack
 // that is not installed or whose index is unreadable is simply absent: the other levels keep speaking.
-async function readPackIndex(fs: Fs, key: string, label: string, legacyDir?: string): Promise<{ index: PackIndex; root: string } | null> {
-  // A phone that has only the v1 pack keeps speaking from it (its index has the old keys, packFileFor reads both)
-  // until the v2 download is installed.
-  const legacy = !state.installed[key] && legacyDir && (await fs.exists(`${ttsDir(fs)}/${legacyDir}.ok`).catch(() => false));
-  if (!state.installed[key] && !legacy) return null;
-  const dirName = legacy && legacyDir ? legacyDir : packDirName(key);
+async function readPackIndex(fs: Fs, key: string, label: string, legacyDirs: readonly string[]): Promise<{ index: PackIndex; root: string } | null> {
+  // Keep speaking from the first installed legacy pack until the current download is installed.
+  let dirName = packDirName(key);
+  if (!state.installed[key]) {
+    let legacyDir: string | undefined;
+    for (const dir of legacyDirs) {
+      if (await fs.exists(`${ttsDir(fs)}/${dir}.ok`).catch(() => false)) {
+        legacyDir = dir;
+        break;
+      }
+    }
+    if (!legacyDir) return null;
+    dirName = legacyDir;
+  }
   const base = `${ttsDir(fs)}/${dirName}`;
   for (const root of [base, `${base}/${dirName}`]) {
     try {
@@ -207,10 +217,10 @@ async function readPackIndex(fs: Fs, key: string, label: string, legacyDir?: str
 }
 
 async function loadPackIndex(fs: Fs): Promise<void> {
-  const word = await readPackIndex(fs, PACK_KEY, 'word pack', LEGACY_PACK_DIR);
+  const word = await readPackIndex(fs, PACK_KEY, 'word pack', [LEGACY_PACK_DIR]);
   packIndex = word?.index ?? null;
   packRoot = word?.root ?? null;
-  const sentences = await readPackIndex(fs, SENTENCES_KEY, 'sentence pack', LEGACY_SENTENCE_PACK_DIR);
+  const sentences = await readPackIndex(fs, SENTENCES_KEY, 'sentence pack', LEGACY_SENTENCE_PACK_DIRS);
   sentenceIndex = sentences?.index ?? null;
   sentenceRoot = sentences?.root ?? null;
 }
