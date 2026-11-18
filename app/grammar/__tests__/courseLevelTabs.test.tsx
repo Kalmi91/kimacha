@@ -94,7 +94,7 @@ describe.each([
     expect(screen.getByTestId('grammar-random-start')).toBeTruthy();
     expect(screen.getByTestId('grammar-level-test-A1')).toBeTruthy();
     expect(screen.getByTestId('grammar-level-standing-A1')).toBeTruthy();
-    expect(screen.getByTestId('grammar-exam-strip-A1')).toBeTruthy();
+    expect(screen.queryByTestId('grammar-exam-strip-A1')).toBeNull();
     expect(screen.getByTestId(`grammar-topic-${syllabusForLevel('A1', 'es')[0].id}`)).toBeTruthy();
   });
 

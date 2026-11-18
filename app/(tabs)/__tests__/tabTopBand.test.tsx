@@ -42,7 +42,7 @@ describe('tab navigator header top', () => {
       </ThemeProvider>
     );
     await flush();
-    expect(captured.screens.map((s) => s.name)).toEqual(['index', 'course', 'sentences', 'speak', 'practice', 'board', 'stats', 'settings']);
+    expect(captured.screens.map((s) => s.name)).toEqual(['index', 'course', 'exam-tab', 'sentences', 'speak', 'practice', 'board', 'stats', 'settings']);
     expect(captured.screenOptions?.headerStatusBarHeight).toBe(0);
     for (const s of captured.screens) {
       // a tab may only switch its header off (it draws its own); any other header option on a tab is a second top handling

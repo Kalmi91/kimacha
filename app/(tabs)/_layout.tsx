@@ -156,6 +156,14 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
+        name="exam-tab"
+        options={{
+          title: s.tabs.exam,
+          tabBarAccessibilityLabel: s.tabs.exam,
+          tabBarButton: tabButton({ ios: 'checkmark.seal.fill', android: 'fact_check', web: 'fact_check' }),
+        }}
+      />
+      <Tabs.Screen
         name="sentences"
         options={{
           title: s.tabs.sentences,

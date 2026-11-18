@@ -37,6 +37,7 @@ const es: typeof en = {
   tabs: {
     settings: 'Ajustes',
     grammar: 'Gramática',
+    exam: 'Examen',
     stats: 'Estadísticas',
     board: 'Clasificación semanal',
     pcic: 'Aprender',
