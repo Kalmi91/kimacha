@@ -131,6 +131,7 @@ export default function DictationGame() {
             testID="dictation-speak"
             accessibilityLabel={speakLabel}
             onPress={play}
+            size={BIG}
             style={[styles.big, { backgroundColor: colors.tint }]}
             iconStyle={styles.bigIcon}
             brutalStyle={styles.bigBrutal}

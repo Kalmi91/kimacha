@@ -203,6 +203,7 @@ export default function TypedSentenceCard({
                 testID="sentence-listen-play"
                 accessibilityLabel={s.sentenceTab.listenPlay}
                 onPress={replay}
+                size={96}
                 style={[styles.listenBtn, { backgroundColor: colors.accent }]}
                 iconStyle={styles.listenIcon}
                 brutalStyle={styles.speakBrutal}

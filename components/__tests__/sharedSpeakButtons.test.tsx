@@ -4,6 +4,7 @@
 import fs from 'fs';
 import path from 'path';
 import { render, screen } from '@testing-library/react-native';
+import { StyleSheet } from 'react-native';
 
 import MockPlayer from '../exam/mock/MockPlayer';
 import { DictationDrillItem } from '../grammar/NewKinds';
@@ -46,6 +47,8 @@ describe('shared speak button everywhere', () => {
       />
     );
     expect(screen.getByTestId('sentence-listen-play-flash')).toBeTruthy();
+    const st = StyleSheet.flatten(screen.getByTestId('sentence-listen-play').props.style);
+    expect([st.width, st.height]).toEqual([96, 96]);
   });
 
   it('no component or screen draws a speaker glyph of its own (only SpeakButton does)', () => {

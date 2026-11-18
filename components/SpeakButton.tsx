@@ -35,6 +35,8 @@ type Props = {
   hitSlop?: number;
   /** No press (e.g. the plays of a recording are used up). */
   disabled?: boolean;
+  /** Fixed width and height (px) on every palette (the big round dictation / listening buttons). */
+  size?: number;
 };
 
 export default function SpeakButton({
@@ -50,6 +52,7 @@ export default function SpeakButton({
   brutalStyle,
   hitSlop,
   disabled,
+  size,
 }: Props) {
   const g = useGrammarColors();
   const status = useSpeechStatus();
@@ -84,16 +87,16 @@ export default function SpeakButton({
         onPress={press}
         disabled={disabled}
         style={[styles.brutalOuter, brutalStyle]}
-        boxStyle={[label ? styles.brutalBoxLabel : styles.brutalBox, styles.clip]}
+        boxStyle={[label ? styles.brutalBoxLabel : styles.brutalBox, styles.clip, size ? { width: size, height: size } : null]}
       >
         {flashLayer}
-        <Text style={styles.brutalIcon}>{icon}</Text>
+        <Text style={[styles.brutalIcon, size ? iconStyle : null]}>{icon}</Text>
         {label ? <Text style={[labelStyle, { color: g.ink }]}>{label}</Text> : null}
       </BrutalBox>
     );
   }
   return (
-    <Pressable testID={testID} accessibilityRole="button" accessibilityLabel={a11yLabel} accessibilityState={{ busy: active }} style={style} onPress={press} hitSlop={hitSlop} disabled={disabled}>
+    <Pressable testID={testID} accessibilityRole="button" accessibilityLabel={a11yLabel} accessibilityState={{ busy: active }} style={[style, size ? { width: size, height: size } : null]} onPress={press} hitSlop={hitSlop} disabled={disabled}>
       {flashLayer}
       <Text style={iconStyle}>{icon}</Text>
       {label ? <Text style={labelStyle}>{label}</Text> : null}

@@ -83,3 +83,19 @@ describe('SpeakButton', () => {
     view.unmount();
   });
 });
+
+describe('SpeakButton size', () => {
+  it.each(['brand', 'classic'] as const)('size keeps the button exactly that big on the %s palette', async (palette) => {
+    await getDb().setGrammarPalette(palette);
+    const view = render(
+      <ThemeProvider>
+        <SpeakButton testID="sp" onPress={jest.fn()} size={96} />
+      </ThemeProvider>
+    );
+    await flush();
+    const style = StyleSheet.flatten(view.getByTestId('sp').props.style);
+    expect(style.width).toBe(96);
+    expect(style.height).toBe(96);
+    view.unmount();
+  });
+});
