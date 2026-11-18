@@ -1,14 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
-import { Pressable, ScrollView, StyleSheet, TextInput, Keyboard, View } from 'react-native';
+import { ScrollView, StyleSheet, TextInput, Keyboard, View } from 'react-native';
 import { Text } from '@/components/KText';
 import { speak, speakAuto, stop as stopSpeech } from '@/lib/speech';
-import { speechBusy, useSpeechStatus } from '@/lib/speechStatus';
 import type { VoiceGender } from '@/lib/neuralVoices';
 import Colors from '@/constants/Colors';
 import { ON_FILL } from '@/constants/GrammarPalettes';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
-import { BrutalBox, Card } from '@/components/grammar/Brutal';
+import { Card } from '@/components/grammar/Brutal';
 import { themedInputStyle } from '@/components/grammar/Themed';
 import ResultBadge from '@/components/ResultBadge';
 import DockedAction, { DOCK_RESERVE } from '@/components/learn/DockedAction';
@@ -120,9 +119,6 @@ export default function TypedSentenceCard({
   const g = useGrammarColors();
   const diff = useDiffStyles();
   const s = t();
-  const audio = useSpeechStatus();
-  const audioActive = audio.text === targetSentence && speechBusy(audio.phase);
-  const speakerIcon = audioActive ? (audio.phase === 'loading' ? '⏳' : '🔉') : '🔊';
 
   const [typed, setTyped] = useState('');
   const [result, setResult] = useState<'correct' | 'wrong' | null>(null);
@@ -203,15 +199,14 @@ export default function TypedSentenceCard({
         <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
           {listening && (
             <>
-              {g.brutal ? (
-                <BrutalBox testID="sentence-listen-play" accessibilityLabel={s.sentenceTab.listenPlay} fill="a" offset={3} onPress={replay} boxStyle={styles.listenBrutal}>
-                  <Text style={styles.listenIcon}>{speakerIcon}</Text>
-                </BrutalBox>
-              ) : (
-                <Pressable testID="sentence-listen-play" accessibilityRole="button" accessibilityLabel={s.sentenceTab.listenPlay} accessibilityState={{ busy: audioActive }} style={[styles.listenBtn, { backgroundColor: colors.accent }]} onPress={replay}>
-                  <Text style={styles.listenIcon}>{speakerIcon}</Text>
-                </Pressable>
-              )}
+              <SpeakButton
+                testID="sentence-listen-play"
+                accessibilityLabel={s.sentenceTab.listenPlay}
+                onPress={replay}
+                style={[styles.listenBtn, { backgroundColor: colors.accent }]}
+                iconStyle={styles.listenIcon}
+                brutalStyle={styles.speakBrutal}
+              />
               {!result && <Text style={[styles.listenHint, { color: colors.tabIconDefault }]}>{s.sentenceTab.listenTypeHint}</Text>}
             </>
           )}
@@ -286,7 +281,6 @@ const styles = StyleSheet.create({
   scroll: { flex: 1 },
   sourceText: { fontSize: 20, fontWeight: '700', textAlign: 'center' },
   listenBtn: { width: 96, height: 96, borderRadius: 48, alignItems: 'center', justifyContent: 'center' },
-  listenBrutal: { width: 96, height: 96, alignItems: 'center', justifyContent: 'center' },
   listenIcon: { fontSize: 44 },
   speakBtn: { alignSelf: 'center', padding: 4 },
   speakIcon: { fontSize: 22 },

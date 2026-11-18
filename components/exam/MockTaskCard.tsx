@@ -11,6 +11,7 @@ import { t } from '@/lib/i18n';
 import { speechLang } from '@/lib/languages';
 import { speakSequence, stop as stopSpeaking } from '@/lib/speech';
 import { useTheme } from '@/lib/ThemeContext';
+import SpeakButton from '@/components/SpeakButton';
 import ClipsMcTask from './mock/ClipsMcTask';
 import ClozeTask from './mock/ClozeTask';
 import EssayTask from './mock/EssayTask';
@@ -185,16 +186,16 @@ export default function MockTaskCard({ task, answer, onAnswer, target, canSpeak,
         <View style={[styles.audioBox, { borderColor: colors.border, backgroundColor: colors.card }]}>
           {canSpeak ? (
             <>
-              <Pressable
+              <SpeakButton
                 testID="mock-play"
-                accessibilityRole="button"
+                icon={playing ? '🔉' : '🔊'}
+                label={playing ? t().audio.playing : s.play}
                 onPress={playAudio}
                 disabled={playing || plays >= maxPlays}
-                accessibilityState={{ busy: playing }}
-                style={[styles.playBtn, { backgroundColor: plays >= maxPlays ? colors.border : colors.tint }]}
-              >
-                <Text style={[styles.playText, { color: colors.onTint }]}>{playing ? `🔉 ${t().audio.playing}` : `🔊 ${s.play}`}</Text>
-              </Pressable>
+                style={[styles.playBtn, styles.playRow, { backgroundColor: plays >= maxPlays ? colors.border : colors.tint }]}
+                iconStyle={[styles.playText, { color: colors.onTint }]}
+                labelStyle={[styles.playText, { color: colors.onTint }]}
+              />
               <Text testID="mock-plays-left" style={[styles.small, { color: colors.textMuted }]}>
                 {s.playsLeft(Math.max(0, maxPlays - plays))}
               </Text>
@@ -438,6 +439,7 @@ const styles = StyleSheet.create({
   letterText: { fontSize: fontSize.md, fontWeight: fontWeight.bold },
   audioBox: { borderWidth: 1, borderRadius: radius.md, padding: spacing.md, gap: spacing.sm, alignItems: 'flex-start' },
   playBtn: { minHeight: tapTarget, borderRadius: radius.md, paddingHorizontal: spacing.lg, justifyContent: 'center' },
+  playRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm },
   playText: { fontSize: fontSize.md, fontWeight: fontWeight.semibold },
   input: { borderWidth: 1, borderRadius: radius.md, paddingHorizontal: spacing.md, paddingVertical: spacing.sm, minHeight: tapTarget, fontSize: fontSize.md },
   textarea: { minHeight: tapTarget * 3, textAlignVertical: 'top' },

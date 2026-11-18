@@ -33,6 +33,8 @@ type Props = {
   brutalStyle?: StyleProp<ViewStyle>;
   /** Classic: hitSlop (px), where today's button has one. */
   hitSlop?: number;
+  /** No press (e.g. the plays of a recording are used up). */
+  disabled?: boolean;
 };
 
 export default function SpeakButton({
@@ -47,6 +49,7 @@ export default function SpeakButton({
   labelStyle,
   brutalStyle,
   hitSlop,
+  disabled,
 }: Props) {
   const g = useGrammarColors();
   const status = useSpeechStatus();
@@ -79,6 +82,7 @@ export default function SpeakButton({
         accessibilityLabel={a11yLabel}
         offset={2}
         onPress={press}
+        disabled={disabled}
         style={[styles.brutalOuter, brutalStyle]}
         boxStyle={[label ? styles.brutalBoxLabel : styles.brutalBox, styles.clip]}
       >
@@ -89,7 +93,7 @@ export default function SpeakButton({
     );
   }
   return (
-    <Pressable testID={testID} accessibilityRole="button" accessibilityLabel={a11yLabel} accessibilityState={{ busy: active }} style={style} onPress={press} hitSlop={hitSlop}>
+    <Pressable testID={testID} accessibilityRole="button" accessibilityLabel={a11yLabel} accessibilityState={{ busy: active }} style={style} onPress={press} hitSlop={hitSlop} disabled={disabled}>
       {flashLayer}
       <Text style={iconStyle}>{icon}</Text>
       {label ? <Text style={labelStyle}>{label}</Text> : null}

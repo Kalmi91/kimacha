@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 
 import Colors from '@/constants/Colors';
+import SpeakButton from '@/components/SpeakButton';
 import { audioTranscript } from '@/lib/exam/mock/audio';
 import type { MockAudioLine } from '@/lib/exam/mock/types';
 import { t } from '@/lib/i18n';
@@ -34,16 +35,16 @@ export default function MockPlayer({ audio, id, lines, canSpeak, testKey }: Prop
     <View style={[styles.audioBox, { borderColor: colors.border, backgroundColor: colors.card }]}>
       {canSpeak ? (
         <>
-          <Pressable
+          <SpeakButton
             testID={`mock-play${suffix}`}
-            accessibilityRole="button"
+            icon={playing ? '🔉' : '🔊'}
+            label={playing ? t().audio.playing : s.play}
             onPress={() => audio.play(id, lines)}
             disabled={left <= 0 || audio.playingId !== null}
-            accessibilityState={{ busy: playing }}
-            style={[styles.playBtn, { backgroundColor: left <= 0 ? colors.border : colors.tint }]}
-          >
-            <Text style={[styles.playText, { color: colors.onTint }]}>{playing ? `🔉 ${t().audio.playing}` : `🔊 ${s.play}`}</Text>
-          </Pressable>
+            style={[styles.playBtn, styles.playRow, { backgroundColor: left <= 0 ? colors.border : colors.tint }]}
+            iconStyle={[styles.playText, { color: colors.onTint }]}
+            labelStyle={[styles.playText, { color: colors.onTint }]}
+          />
           <Text testID={`mock-plays-left${suffix}`} style={[styles.small, { color: colors.textMuted }]}>
             {s.playsLeft(left)}
           </Text>

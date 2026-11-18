@@ -115,7 +115,7 @@ it('shows runtime speech failures and refunds the exam listen, with a transcript
   await loadVoices();
   const view = render(<ExamScreen />);
   fireEvent.press(view.getByTestId('mock-play'));
-  expect(view.getByText(`🔉 ${t().audio.playing}`)).toBeTruthy();
+  expect(view.getByText(t().audio.playing)).toBeTruthy();
   act(() => speech.speak.mock.calls[0][1]!.onError!(new Error('failed')));
   expect(view.getByText(t().audio.failed)).toBeTruthy();
   expect(view.getByTestId('mock-plays-left').props.children).toBe(t().mockExam.playsLeft(2));
