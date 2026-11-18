@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Animated, Pressable, StyleSheet, Text, type StyleProp, type TextStyle, type ViewStyle } from 'react-native';
 
-import { BrutalBox } from '@/components/grammar/Brutal';
+import { BrutalBox, type BrutalFill } from '@/components/grammar/Brutal';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
 import { speechBusy, speechStatus, useSpeechStatus } from '@/lib/speechStatus';
@@ -37,6 +37,8 @@ type Props = {
   disabled?: boolean;
   /** Fixed width and height (px) on every palette (the big round dictation / listening buttons). */
   size?: number;
+  /** Brutalist: the box's fill (default paper), e.g. 'a' for the accent-filled listening button. */
+  fill?: BrutalFill;
 };
 
 export default function SpeakButton({
@@ -53,6 +55,7 @@ export default function SpeakButton({
   hitSlop,
   disabled,
   size,
+  fill,
 }: Props) {
   const g = useGrammarColors();
   const status = useSpeechStatus();
@@ -84,6 +87,7 @@ export default function SpeakButton({
         testID={testID}
         accessibilityLabel={a11yLabel}
         offset={2}
+        fill={fill}
         onPress={press}
         disabled={disabled}
         style={[styles.brutalOuter, brutalStyle]}
