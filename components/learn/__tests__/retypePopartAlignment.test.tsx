@@ -13,7 +13,7 @@ const themes = SKIN_IDS.flatMap(skin => SKINS[skin].modes.map(mode => ({ skin, m
 
 beforeEach(() => setLanguage('en'));
 
-it.each(themes)('aligns the pop art Check face with its field without changing $skin/$mode', ({ skin, mode }) => {
+it.each(themes)('aligns the pop art Retype face with its field without changing $skin/$mode', ({ skin, mode }) => {
   const theme = themeKeyFor(skin, mode, 'brand');
   const view = render(
     <ThemeContext.Provider value={{
@@ -24,8 +24,11 @@ it.each(themes)('aligns the pop art Check face with its field without changing $
     </ThemeContext.Provider>,
   );
   fireEvent.press(view.getByTestId('learn-retype'));
+  fireEvent.changeText(view.getByTestId('learn-retype-input'), 'vida');
+  fireEvent(view.getByTestId('learn-retype-input'), 'submitEditing');
+  expect(view.getByTestId('learn-retype-result').props.children).toBe('Correct');
 
-  const check = view.getByTestId('learn-retype-check');
+  const check = view.getByTestId('learn-retype-again');
   const face = StyleSheet.flatten(check.props.style);
   expect(face.flex).toBe(skin === 'popart' ? 1 : undefined);
   if (skin === 'popart') {
@@ -37,7 +40,7 @@ it.each(themes)('aligns the pop art Check face with its field without changing $
     expect(face.marginTop).toBeUndefined();
   }
 
-  fireEvent.changeText(view.getByTestId('learn-retype-input'), 'vida');
   fireEvent.press(check);
-  expect(view.getByTestId('learn-retype-result').props.children).toBe('Correct');
+  expect(view.getByTestId('learn-retype-input').props.value).toBe('');
+  expect(view.queryByTestId('learn-retype-result')).toBeNull();
 });

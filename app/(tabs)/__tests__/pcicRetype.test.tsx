@@ -75,17 +75,20 @@ it('resets on the next card', async () => {
   expect(screen.queryByTestId('learn-retype-input')).toBeNull();
   expect(screen.queryByTestId('learn-retype-result')).toBeNull();
 });
-it('hides the docked bar while the retype field has the keyboard, and shows it again after', async () => {
+it('makes the docked bar the retype Check while typing, even with the keyboard open, then Next again', async () => {
   const screen = render(<PcicScreen />); await flush();
   await reveal(screen, 'nope');
   fireEvent.press(screen.getByTestId('learn-retype')); await flush();
-  expect(screen.getByTestId('learn-dock')).toBeTruthy();
   fireEvent(screen.getByTestId('learn-retype-input'), 'focus');
   act(() => { DeviceEventEmitter.emit('keyboardDidShow', { endCoordinates: { height: 300 } }); }); await flush();
-  expect(screen.queryByTestId('learn-dock')).toBeNull();
-  expect(screen.getByTestId('learn-retype-input')).toBeTruthy();
-  fireEvent(screen.getByTestId('learn-retype-input'), 'blur'); await flush();
   expect(screen.getByTestId('learn-dock')).toBeTruthy();
+  fireEvent.changeText(screen.getByTestId('learn-retype-input'), 'palabrx');
+  fireEvent.press(screen.getByText('✓ Check')); await flush();
+  expect(screen.getByTestId('learn-retype-result').props.children).toBe('Not quite, try again');
+  expect(screen.getByTestId('learn-retype-diff')).toBeTruthy();
+  fireEvent(screen.getByTestId('learn-retype-input'), 'blur');
+  act(() => { DeviceEventEmitter.emit('keyboardDidHide', {}); }); await flush();
+  expect(screen.getByText(/^Next →/)).toBeTruthy();
 });
 it('shows the docked bar on the next card when the retype field never got a blur', async () => {
   const screen = render(<PcicScreen />); await flush();
@@ -93,15 +96,22 @@ it('shows the docked bar on the next card when the retype field never got a blur
   fireEvent.press(screen.getByTestId('learn-retype')); await flush();
   fireEvent(screen.getByTestId('learn-retype-input'), 'focus');
   act(() => { DeviceEventEmitter.emit('keyboardDidShow', { endCoordinates: { height: 300 } }); }); await flush();
+  fireEvent.changeText(screen.getByTestId('learn-retype-input'), 'x'); fireEvent(screen.getByTestId('learn-retype-input'), 'submitEditing'); await flush();
   expect(screen.queryByTestId('learn-dock')).toBeNull();
   fireEvent.press(screen.getByText("Knew it")); await flush();
   expect(screen.queryByTestId('learn-retype-input')).toBeNull();
   expect(screen.getByTestId('learn-dock')).toBeTruthy();
 });
-it('puts the field and its Check button in one row', async () => {
+it('puts a Retype button beside the field after Check, which clears the field for a new try', async () => {
   const screen = render(<PcicScreen />); await flush();
   await reveal(screen, 'nope');
   fireEvent.press(screen.getByTestId('learn-retype')); await flush();
+  expect(screen.queryByTestId('learn-retype-again')).toBeNull();
+  fireEvent.changeText(screen.getByTestId('learn-retype-input'), 'x'); fireEvent(screen.getByTestId('learn-retype-input'), 'submitEditing'); await flush();
   const row = screen.getByTestId('learn-retype-input').parent!.parent!;
-  expect(row.findAll((n) => n.props?.testID === 'learn-retype-check').length).toBeGreaterThan(0);
+  expect(row.findAll((n) => n.props?.testID === 'learn-retype-again').length).toBeGreaterThan(0);
+  fireEvent.press(screen.getAllByTestId('learn-retype-again')[0]); await flush();
+  expect(screen.getByTestId('learn-retype-input').props.value).toBe('');
+  expect(screen.queryByTestId('learn-retype-result')).toBeNull();
+  expect(screen.getByText('✓ Check')).toBeTruthy();
 });

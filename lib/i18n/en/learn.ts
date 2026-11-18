@@ -89,6 +89,7 @@ export default {
       check: 'Check',
       right: 'Correct',
       wrong: 'Not quite, try again',
+      again: 'Retype',
     },
     tired: "I'm tired",
     parkedNote: (n: number) => `${n} ${n === 1 ? 'card will' : 'cards will'} return tomorrow.`,
