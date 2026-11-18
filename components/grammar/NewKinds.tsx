@@ -394,6 +394,7 @@ export function NewKindDrillItem({
   strictAccents,
   lessonItems,
   onDone,
+  onShown,
 }: {
   item: SpotItem | OrderItem | DictationItem | WriteItem | ClozeItem | FixItem | BankItem | NounItem;
   learnedLang: string;
@@ -402,6 +403,8 @@ export function NewKindDrillItem({
   /** The items of the lesson (the word order task takes its unneeded tiles from them). */
   lessonItems?: readonly unknown[];
   onDone: (correct: boolean) => void;
+  /** The typed kinds: the answer is checked and its feedback is on screen, before Next. */
+  onShown?: (correct: boolean) => void;
 }) {
   switch (item.kind) {
     case 'spot':
@@ -413,13 +416,13 @@ export function NewKindDrillItem({
     case 'write':
       return <WriteDrillItem item={item} learnedLang={learnedLang} contentLang={contentLang} strictAccents={strictAccents} onDone={onDone} />;
     case 'opencloze':
-      return <ClozeDrillItem item={item} learnedLang={learnedLang} contentLang={contentLang} strictAccents={strictAccents} onDone={onDone} />;
+      return <ClozeDrillItem item={item} learnedLang={learnedLang} contentLang={contentLang} strictAccents={strictAccents} onDone={onDone} onShown={onShown} />;
     case 'fix':
-      return <FixDrillItem item={item} learnedLang={learnedLang} contentLang={contentLang} strictAccents={strictAccents} onDone={onDone} />;
+      return <FixDrillItem item={item} learnedLang={learnedLang} contentLang={contentLang} strictAccents={strictAccents} onDone={onDone} onShown={onShown} />;
     case 'bank':
-      return <BankDrillItem item={item} learnedLang={learnedLang} contentLang={contentLang} strictAccents={strictAccents} onDone={onDone} />;
+      return <BankDrillItem item={item} learnedLang={learnedLang} contentLang={contentLang} strictAccents={strictAccents} onDone={onDone} onShown={onShown} />;
     case 'noun':
-      return <NounDrillItem item={item} learnedLang={learnedLang} contentLang={contentLang} strictAccents={strictAccents} onDone={onDone} />;
+      return <NounDrillItem item={item} learnedLang={learnedLang} contentLang={contentLang} strictAccents={strictAccents} onDone={onDone} onShown={onShown} />;
   }
 }
 
