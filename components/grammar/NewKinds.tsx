@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { StyleSheet, TextInput, View } from 'react-native';
+import { Keyboard, StyleSheet, TextInput, View } from 'react-native';
 import { Text } from '@/components/KText';
 
 import EasySentenceCard from '@/components/EasySentenceCard';
@@ -204,6 +204,7 @@ export function DictationDrillItem({
 
   const check = () => {
     if (result) return;
+    Keyboard.dismiss();
     // Lenient check (punctuation, sentence without a pronoun, accent setting), as on the sentence card.
     const grade = gradeSentenceAnswer(typed, item.es, strictAccents, learnedLang);
     const ok = suggestedGrade(grade) === 'good';
@@ -293,6 +294,7 @@ export function WriteDrillItem({
 
   const check = () => {
     if (result || typed.trim() === '') return;
+    Keyboard.dismiss();
     setResult({ correct: isWriteAnswerRight(typed, item, strictAccents) });
     speak(item.es, locale);
   };
