@@ -23,7 +23,7 @@ type TabButtonProps = Parameters<NonNullable<TabOptions['tabBarButton']>>[0];
 
 function TabHeaderTitle({ onLayout, ...props }: ComponentProps<typeof HeaderTitle>) {
   const { name } = useRoute();
-  const beta = name === 'sentences' || name === 'speak' || name === 'practice';
+  const beta = name === 'sentences' || name === 'speak' || name === 'exam-tab' || name === 'practice';
   const { theme } = useTheme();
   const g = useGrammarColors();
   const { HeaderOrnament } = useSkinDecor();
@@ -156,14 +156,6 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="exam-tab"
-        options={{
-          title: s.tabs.exam,
-          tabBarAccessibilityLabel: s.tabs.exam,
-          tabBarButton: tabButton({ ios: 'checkmark.seal.fill', android: 'fact_check', web: 'fact_check' }),
-        }}
-      />
-      <Tabs.Screen
         name="sentences"
         options={{
           title: s.tabs.sentences,
@@ -177,6 +169,15 @@ export default function TabLayout() {
           title: s.tabs.speak,
           tabBarAccessibilityLabel: s.tabs.speak,
           tabBarButton: tabButton({ ios: 'mic.fill', android: 'mic', web: 'mic' }),
+        }}
+      />
+      <Tabs.Screen
+        name="exam-tab"
+        // after Speak, with a Beta sticker (FB674)
+        options={{
+          title: s.tabs.exam,
+          tabBarAccessibilityLabel: s.tabs.exam,
+          tabBarButton: tabButton({ ios: 'checkmark.seal.fill', android: 'fact_check', web: 'fact_check' }),
         }}
       />
       <Tabs.Screen

@@ -75,16 +75,20 @@ const skinModes = skins.flatMap((id) => SKINS[id].modes.map((mode) => [id, mode]
 const betaTabs = ['sentences', 'speak', 'practice'] as const;
 
 describe('beta tab headers', () => {
-  it.each(skinModes)('%s %s labels exactly the three unfinished tabs', (skin, mode) => {
+  it.each(skinModes)('%s %s labels exactly the four unfinished tabs', (skin, mode) => {
     selectSkin(skin, mode);
     const view = renderTabs();
-    expect(view.getAllByTestId(/^beta-sticker-/)).toHaveLength(3);
-    expect(view.getAllByLabelText('Beta: not finished yet')).toHaveLength(3);
+    expect(view.getAllByTestId(/^beta-sticker-/)).toHaveLength(4);
+    expect(view.getAllByLabelText('Beta: not finished yet')).toHaveLength(4);
     for (const tab of betaTabs) {
       const header = within(view.getByTestId(`header-${tab}`));
       expect(header.getByTestId(`beta-sticker-${tab}`)).toBeTruthy();
       expect(header.getByText(t().tabs[tab])).toBeTruthy();
     }
+    // the Exam tab is Beta too (FB674)
+    const exam = within(view.getByTestId('header-exam-tab'));
+    expect(exam.getByTestId('beta-sticker-exam-tab')).toBeTruthy();
+    expect(exam.getByText(t().tabs.exam)).toBeTruthy();
     for (const tab of ['index', 'course', 'board', 'stats', 'settings']) {
       expect(view.queryByTestId(`beta-sticker-${tab}`)).toBeNull();
       const header = view.queryByTestId(`header-${tab}`);
@@ -102,7 +106,7 @@ describe('beta tab headers', () => {
   ])('%s translates the badge and its screen-reader explanation', (language, label, explanation) => {
     setLanguage(language);
     const view = renderTabs();
-    expect(view.getAllByLabelText(explanation)).toHaveLength(3);
+    expect(view.getAllByLabelText(explanation)).toHaveLength(4);
     for (const tab of betaTabs) {
       const sticker = view.getByTestId(`beta-sticker-${tab}`);
       expect(sticker.props.accessible).toBe(true);

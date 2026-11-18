@@ -1,4 +1,4 @@
-// The Exam tab (after Grammar, E153): A1 opens first without a Beta sticker, the levels above A1 carry one, and the
+// The Exam tab (after Speak since FB674; E153): A1 opens first without a Beta sticker, the levels above A1 carry one, and the
 // exam strip (percent, lock reason, done mark, buttons) lives here, not on the Grammar tab. The strip tests moved
 // here from app/grammar/__tests__/courseRandom.test.tsx. Mock pattern: courseRandom.test.tsx.
 
