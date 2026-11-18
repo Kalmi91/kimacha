@@ -645,7 +645,7 @@
     },
     {
       "id": "oi-02",
-      "sentence": "Voy a ___ un mensaje a mis papás.",
+      "sentence": "Vas a ___ un mensaje a mis papás.",
       "options": ["escribirles", "les escribir", "escribirlos"],
       "correct": 0,
       "why": {
@@ -654,8 +654,8 @@
       },
       "wrong": {
         "les escribir": {
-          "en": "The pronoun cannot stand alone right before a bare infinitive; to use this word order, it would need to go before the conjugated verb (voy): Les voy a escribir un mensaje a mis papás.",
-          "es": "El pronombre no puede ir solo justo antes de un infinitivo suelto; para este orden, tendría que ir antes del verbo conjugado (voy): Les voy a escribir un mensaje a mis papás."
+          "en": "The pronoun cannot stand alone right before a bare infinitive; to use this word order, it would need to go before the conjugated verb (vas): Les vas a escribir un mensaje a mis papás.",
+          "es": "El pronombre no puede ir solo justo antes de un infinitivo suelto; para este orden, tendría que ir antes del verbo conjugado (vas): Les vas a escribir un mensaje a mis papás."
         },
         "escribirlos": {
           "en": "\"Los\" is a direct object pronoun, pointing to masculine things or people as the direct target; here it is about the letter's RECIPIENTS, which always takes the indirect object: escribirles.",
@@ -663,10 +663,10 @@
         }
       },
       "examples": [
-        "Les voy a escribir mañana.",
+        "Les vas a escribir mañana.",
         "Quiero escribirle un mensaje a mi hermano."
       ],
-      "tr": { "en": "I'm going to write a message to my parents.", "es": "Voy a escribirles un mensaje a mis papás." }
+      "tr": { "en": "You are going to write a message to my parents.", "es": "Vas a escribirles un mensaje a mis papás." }
     },
     {
       "id": "oi-03",
@@ -721,31 +721,31 @@
     {
       "id": "oi-05",
       "sentence": "A mi hermano ___ un regalo.",
-      "options": ["le compro", "compro", "les compro"],
+      "options": ["le compramos", "compramos", "les compramos"],
       "correct": 0,
       "why": {
         "en": "Even though the person is named (a mi hermano), the pronoun le is still required, this is the normal Spanish doubling.",
         "es": "Aunque la persona esté nombrada (a mi hermano), el pronombre le sigue siendo obligatorio, es la duplicación normal del español."
       },
       "wrong": {
-        "compro": {
-          "en": "\"Compro\" without the pronoun is wrong: Spanish still adds the pronoun even when the person is already named in the sentence: A mi hermano le compro un regalo.",
-          "es": "\"Compro\" sin el pronombre es incorrecto: el español sigue poniendo el pronombre aunque la persona ya esté nombrada: A mi hermano le compro un regalo."
+        "compramos": {
+          "en": "\"Compramos\" without the pronoun is wrong: Spanish still adds the pronoun even when the person is already named in the sentence: A mi hermano le compramos un regalo.",
+          "es": "\"Compramos\" sin el pronombre es incorrecto: el español sigue poniendo el pronombre aunque la persona ya esté nombrada: A mi hermano le compramos un regalo."
         },
-        "les compro": {
-          "en": "\"Les\" would be the plural indirect object, but \"mi hermano\" is just one person; in the singular the pronoun is le: A mi hermano le compro un regalo.",
-          "es": "\"Les\" sería el objeto indirecto plural, pero \"mi hermano\" es una sola persona; en singular el pronombre es le: A mi hermano le compro un regalo."
+        "les compramos": {
+          "en": "\"Les\" would be the plural indirect object, but \"mi hermano\" is just one person; in the singular the pronoun is le: A mi hermano le compramos un regalo.",
+          "es": "\"Les\" sería el objeto indirecto plural, pero \"mi hermano\" es una sola persona; en singular el pronombre es le: A mi hermano le compramos un regalo."
         }
       },
       "examples": [
-        "A mi hermana le compro un regalo.",
-        "A mis amigos les compro un café."
+        "A mi hermana le compramos un regalo.",
+        "A mis amigos les compramos un café."
       ],
-      "tr": { "en": "I buy a gift for my brother.", "es": "A mi hermano le compro un regalo." }
+      "tr": { "en": "We buy a gift for my brother.", "es": "A mi hermano le compramos un regalo." }
     },
     {
       "id": "oi-06",
-      "sentence": "A mi jefa ___ mando el reporte.",
+      "sentence": "A mi jefa ___ mandan el reporte.",
       "options": ["le", "la", "les"],
       "correct": 0,
       "why": {
@@ -754,23 +754,23 @@
       },
       "wrong": {
         "la": {
-          "en": "\"La\" is a direct object pronoun, which would mean sending the boss herself as the direct target; here she is the RECIPIENT of the report, which is always le, even for a feminine person: A mi jefa le mando el reporte.",
-          "es": "\"La\" es un pronombre de objeto directo, que significaría enviar a la propia jefa como blanco directo; aquí ella es la DESTINATARIA del reporte, que siempre lleva le, aunque sea mujer: A mi jefa le mando el reporte."
+          "en": "\"La\" is a direct object pronoun, which would mean sending the boss herself as the direct target; here she is the RECIPIENT of the report, which is always le, even for a feminine person: A mi jefa le mandan el reporte.",
+          "es": "\"La\" es un pronombre de objeto directo, que significaría enviar a la propia jefa como blanco directo; aquí ella es la DESTINATARIA del reporte, que siempre lleva le, aunque sea mujer: A mi jefa le mandan el reporte."
         },
         "les": {
-          "en": "\"Les\" would be plural, but \"mi jefa\" is just one person; in the singular the pronoun is le: A mi jefa le mando el reporte.",
-          "es": "\"Les\" sería plural, pero \"mi jefa\" es una sola persona; en singular el pronombre es le: A mi jefa le mando el reporte."
+          "en": "\"Les\" would be plural, but \"mi jefa\" is just one person; in the singular the pronoun is le: A mi jefa le mandan el reporte.",
+          "es": "\"Les\" sería plural, pero \"mi jefa\" es una sola persona; en singular el pronombre es le: A mi jefa le mandan el reporte."
         }
       },
       "examples": [
-        "A mi jefe le mando el reporte.",
+        "A mi jefe le mandan el reporte.",
         "Le mando un mensaje a mi jefa."
       ],
-      "tr": { "en": "I send the report to my boss.", "es": "A mi jefa le mando el reporte." }
+      "tr": { "en": "They send the report to my boss.", "es": "A mi jefa le mandan el reporte." }
     },
     {
       "id": "oi-07",
-      "sentence": "A los estudiantes ___ explico la lección.",
+      "sentence": "Ella ___ explica la lección a los estudiantes.",
       "options": ["les", "le", "los"],
       "correct": 0,
       "why": {
@@ -779,19 +779,19 @@
       },
       "wrong": {
         "le": {
-          "en": "\"Le\" would be the singular indirect object, but here there are several students; in the plural the pronoun is les: A los estudiantes les explico la lección.",
-          "es": "\"Le\" sería el objeto indirecto singular, pero aquí hay varios estudiantes; en plural el pronombre es les: A los estudiantes les explico la lección."
+          "en": "\"Le\" would be the singular indirect object, but here there are several students; in the plural the pronoun is les: Ella les explica la lección a los estudiantes.",
+          "es": "\"Le\" sería el objeto indirecto singular, pero aquí hay varios estudiantes; en plural el pronombre es les: Ella les explica la lección a los estudiantes."
         },
         "los": {
-          "en": "\"Los\" is a direct object pronoun, which would mean explaining the students themselves as the direct target; here they are the RECIPIENTS of the explanation, which is always les: A los estudiantes les explico la lección.",
-          "es": "\"Los\" es un pronombre de objeto directo, que significaría explicar a los propios estudiantes como blanco directo; aquí ellos son los DESTINATARIOS de la explicación, que siempre lleva les: A los estudiantes les explico la lección."
+          "en": "\"Los\" is a direct object pronoun, which would mean explaining the students themselves as the direct target; here they are the RECIPIENTS of the explanation, which is always les: Ella les explica la lección a los estudiantes.",
+          "es": "\"Los\" es un pronombre de objeto directo, que significaría explicar a los propios estudiantes como blanco directo; aquí ellos son los DESTINATARIOS de la explicación, que siempre lleva les: Ella les explica la lección a los estudiantes."
         }
       },
       "examples": [
         "A mis alumnos les explico todo.",
         "Les explico la tarea a los niños."
       ],
-      "tr": { "en": "I explain the lesson to the students.", "es": "A los estudiantes les explico la lección." }
+      "tr": { "en": "She explains the lesson to the students.", "es": "Ella les explica la lección a los estudiantes." }
     },
     {
       "id": "oi-08",
@@ -845,7 +845,7 @@
     },
     {
       "id": "oi-10",
-      "sentence": "___ escribo un correo a mi jefe.",
+      "sentence": "___ escribimos un correo a mi jefe.",
       "options": ["Le", "Lo", "Los"],
       "correct": 0,
       "why": {
@@ -854,28 +854,28 @@
       },
       "wrong": {
         "Lo": {
-          "en": "\"Lo\" is a direct object pronoun, which would mean sending the boss himself as the direct target; here he is the RECIPIENT of the email, which is always le: Le escribo un correo a mi jefe.",
-          "es": "\"Lo\" es un pronombre de objeto directo, que significaría enviar al propio jefe como blanco directo; aquí él es el DESTINATARIO del correo, que siempre lleva le: Le escribo un correo a mi jefe."
+          "en": "\"Lo\" is a direct object pronoun, which would mean sending the boss himself as the direct target; here he is the RECIPIENT of the email, which is always le: Le escribimos un correo a mi jefe.",
+          "es": "\"Lo\" es un pronombre de objeto directo, que significaría enviar al propio jefe como blanco directo; aquí él es el DESTINATARIO del correo, que siempre lleva le: Le escribimos un correo a mi jefe."
         },
         "Los": {
-          "en": "\"Los\" would be plural, but here there is only one boss; in the singular the pronoun is le: Le escribo un correo a mi jefe.",
-          "es": "\"Los\" sería plural, pero aquí hay un solo jefe; en singular el pronombre es le: Le escribo un correo a mi jefe."
+          "en": "\"Los\" would be plural, but here there is only one boss; in the singular the pronoun is le: Le escribimos un correo a mi jefe.",
+          "es": "\"Los\" sería plural, pero aquí hay un solo jefe; en singular el pronombre es le: Le escribimos un correo a mi jefe."
         }
       },
       "examples": [
-        "Le escribo un correo a mi jefa.",
+        "Le escribimos un correo a mi jefa.",
         "Le mando un mensaje a mi amigo."
       ],
-      "tr": { "en": "I write an email to my boss.", "es": "Le escribo un correo a mi jefe." }
+      "tr": { "en": "We write an email to my boss.", "es": "Le escribimos un correo a mi jefe." }
     },
     {
       "id": "oi-11",
-      "sentence": "Estoy ___ un mensaje a mi amiga.",
+      "sentence": "Mi hermano está ___ un mensaje a mi amiga.",
       "options": ["mandándole", "mandandole", "mandarle"],
       "correct": 0,
       "why": {
-        "en": "After estoy a gerund is needed, and the pronoun attaches to the end, with an accent: mandándole.",
-        "es": "Después de estoy hace falta gerundio, y el pronombre se pega al final, con acento: mandándole."
+        "en": "After está a gerund is needed, and the pronoun attaches to the end, with an accent: mandándole.",
+        "es": "Después de está hace falta gerundio, y el pronombre se pega al final, con acento: mandándole."
       },
       "wrong": {
         "mandandole": {
@@ -883,51 +883,51 @@
           "es": "Esta forma no existe en la ortografía: al pegar el pronombre, la sílaba tónica necesita tilde; correctamente: mandándole."
         },
         "mandarle": {
-          "en": "After estoy a gerund is needed (mandando), not an infinitive; the infinitive + pronoun form would be correct in a different structure, like \"Voy a mandarle un mensaje\".",
-          "es": "Después de estoy hace falta gerundio (mandando), no infinitivo; la forma infinitivo + pronombre sería correcta en otra estructura, como \"Voy a mandarle un mensaje\"."
+          "en": "After está a gerund is needed (mandando), not an infinitive; the infinitive + pronoun form would be correct in a different structure, like \"Voy a mandarle un mensaje\".",
+          "es": "Después de está hace falta gerundio (mandando), no infinitivo; la forma infinitivo + pronombre sería correcta en otra estructura, como \"Voy a mandarle un mensaje\"."
         }
       },
       "examples": [
-        "Estoy mandándole un correo a mi papá.",
-        "Le estoy mandando un mensaje."
+        "Está mandándole un correo a mi papá.",
+        "Le está mandando un mensaje."
       ],
-      "tr": { "en": "I am sending a message to my friend.", "es": "Estoy mandándole un mensaje a mi amiga." }
+      "tr": { "en": "My brother is sending a message to my friend.", "es": "Mi hermano está mandándole un mensaje a mi amiga." }
     },
     {
       "id": "oi-12",
-      "sentence": "___ regalo unas flores a mi mamá en su cumpleaños.",
-      "options": ["Le", "La", "Les"],
+      "sentence": "Mis hermanos ___ regalan unas flores a mi mamá en su cumpleaños.",
+      "options": ["le", "la", "les"],
       "correct": 0,
       "why": {
         "en": "Le does not change for gender; even though mamá is feminine, it stays le.",
         "es": "Le no cambia de género; aunque mamá es femenino, se queda en le."
       },
       "wrong": {
-        "La": {
-          "en": "\"La\" is a direct object pronoun, which would mean giving away your mother herself as the direct target; here she is the RECIPIENT of the flowers, which is always le, even for a feminine person: Le regalo unas flores a mi mamá.",
-          "es": "\"La\" es un pronombre de objeto directo, que significaría entregar a tu propia mamá como blanco directo; aquí ella es la DESTINATARIA de las flores, que siempre lleva le, aunque sea mujer: Le regalo unas flores a mi mamá."
+        "la": {
+          "en": "\"La\" is a direct object pronoun, which would mean giving away your mother herself as the direct target; here she is the RECIPIENT of the flowers, which is always le, even for a feminine person: Mis hermanos le regalan unas flores a mi mamá.",
+          "es": "\"La\" es un pronombre de objeto directo, que significaría entregar a tu propia mamá como blanco directo; aquí ella es la DESTINATARIA de las flores, que siempre lleva le, aunque sea mujer: Mis hermanos le regalan unas flores a mi mamá."
         },
-        "Les": {
-          "en": "\"Les\" would be plural, but mamá is just one person; in the singular the pronoun is le: Le regalo unas flores a mi mamá.",
-          "es": "\"Les\" sería plural, pero mamá es una sola persona; en singular el pronombre es le: Le regalo unas flores a mi mamá."
+        "les": {
+          "en": "\"Les\" would be plural, but mamá is just one person; in the singular the pronoun is le: Mis hermanos le regalan unas flores a mi mamá.",
+          "es": "\"Les\" sería plural, pero mamá es una sola persona; en singular el pronombre es le: Mis hermanos le regalan unas flores a mi mamá."
         }
       },
       "examples": [
         "Le regalo flores a mi abuela.",
         "Le doy un beso a mi mamá."
       ],
-      "tr": { "en": "I give flowers to my mom on her birthday.", "es": "Le regalo unas flores a mi mamá en su cumpleaños." }
+      "tr": { "en": "My brothers give flowers to my mom on her birthday.", "es": "Mis hermanos le regalan unas flores a mi mamá en su cumpleaños." }
     },
     {
       "id": "oi-match-01",
       "kind": "match",
       "pairs": [
-        { "es": "le doy esto", "en": "I give him/her this" },
+        { "es": "le damos esto", "en": "we give him/her this" },
         { "es": "les mando dinero", "en": "I send them money" },
         { "es": "me traes agua", "en": "you bring me water" },
-        { "es": "te compro pan", "en": "I buy you bread" },
+        { "es": "te compra pan", "en": "he/she buys you bread" },
         { "es": "nos cuenta historias", "en": "he/she tells us stories" },
-        { "es": "les escribo", "en": "I write to them" }
+        { "es": "les escribe", "en": "he/she writes to them" }
       ]
     },
     {
@@ -935,9 +935,9 @@
       "kind": "match",
       "pairs": [
         { "es": "escribirle", "en": "to write to him" },
-        { "es": "estoy mandándole", "en": "I'm sending him" },
+        { "es": "estamos mandándole", "en": "we're sending him" },
         { "es": "escríbele hoy", "en": "write to him/her today" },
-        { "es": "no le digo", "en": "I don't tell him" },
+        { "es": "no le dices", "en": "you don't tell him" },
         { "es": "cuéntanos la historia", "en": "tell us the story" },
         { "es": "les explico", "en": "I explain to them" }
       ]
@@ -1118,11 +1118,11 @@
     {
       "kind": "why",
       "id": "poi-why-03",
-      "es": "Le doy el libro a Juan.",
+      "es": "Le damos el libro a Juan.",
       "target": "Le",
       "tr": {
-        "en": "I give the book to Juan.",
-        "es": "Le doy el libro a Juan."
+        "en": "We give the book to Juan.",
+        "es": "Le damos el libro a Juan."
       },
       "options": [
         {
@@ -1131,8 +1131,8 @@
             "es": "segunda persona del singular, informal"
           },
           "wrong": {
-            "en": "Te would be to the person I am talking to (\"Te doy el libro\" = I give it to you); here it is to a THIRD person, Juan, so le.",
-            "es": "Te sería para mi interlocutor (\"Te doy el libro\" = te lo doy a ti); aquí es para una TERCERA persona, Juan, por eso le."
+            "en": "Te would be to the person I am talking to (\"Te damos el libro\" = we give it to you); here it is to a THIRD person, Juan, so le.",
+            "es": "Te sería para mi interlocutor (\"Te damos el libro\" = te lo damos a ti); aquí es para una TERCERA persona, Juan, por eso le."
           }
         },
         {
@@ -1235,11 +1235,11 @@
     {
       "kind": "why",
       "id": "poi-why-07",
-      "es": "Le doy el libro a María.",
+      "es": "Le da el libro a María.",
       "target": "Le",
       "tr": {
-        "en": "I give the book to María.",
-        "es": "Le doy el libro a María."
+        "en": "He/she gives the book to María.",
+        "es": "Le da el libro a María."
       },
       "options": [
         {
@@ -1254,8 +1254,8 @@
             "es": "primera persona del singular"
           },
           "wrong": {
-            "en": "Me would mark that I receive the book (\"Me da el libro\" = he/she gives it to me); here I give it to María, so le.",
-            "es": "Me marcaría que YO recibo el libro (\"Me da el libro\" = él/ella me lo da); aquí YO se lo doy a María, por eso le."
+            "en": "Me would mark that I receive the book (\"Me da el libro\" = he/she gives it to me); here he/she gives it to María, so le.",
+            "es": "Me marcaría que YO recibo el libro (\"Me da el libro\" = él/ella me lo da); aquí él/ella se lo da a María, por eso le."
           }
         },
         {
@@ -1279,12 +1279,12 @@
         "to": "ir-a"
       },
       "prompt": {
-        "en": "I give my mom a gift.",
-        "es": "Le doy un regalo a mi mamá."
+        "en": "We give my mom a gift.",
+        "es": "Le damos un regalo a mi mamá."
       },
-      "answer": "Le voy a dar un regalo a mi mamá.",
+      "answer": "Le vamos a dar un regalo a mi mamá.",
       "accept": [
-        "Voy a darle un regalo a mi mamá."
+        "Vamos a darle un regalo a mi mamá."
       ],
       "wordIds": [
         "33",
@@ -1292,8 +1292,8 @@
         "695"
       ],
       "why": {
-        "en": "With ir a + infinitive the pronoun goes before ir (le voy a dar) or attaches to the infinitive (voy a darle).",
-        "es": "Con ir a + infinitivo el pronombre va antes de ir (le voy a dar) o pegado al infinitivo (voy a darle)."
+        "en": "With ir a + infinitive the pronoun goes before ir (le vamos a dar) or attaches to the infinitive (vamos a darle).",
+        "es": "Con ir a + infinitivo el pronombre va antes de ir (le vamos a dar) o pegado al infinitivo (vamos a darle)."
       }
     },
     {
@@ -1328,12 +1328,12 @@
         "to": "ir-a"
       },
       "prompt": {
-        "en": "I send them the report.",
-        "es": "Les mando el reporte."
+        "en": "They send them the report.",
+        "es": "Les mandan el reporte."
       },
-      "answer": "Les voy a mandar el reporte.",
+      "answer": "Les van a mandar el reporte.",
       "accept": [
-        "Voy a mandarles el reporte."
+        "Van a mandarles el reporte."
       ],
       "wordIds": [
         "33"
@@ -1395,14 +1395,14 @@
       "id": "oi-cloze-01",
       "kind": "opencloze",
       "trial": true,
-      "text": "Tengo una hermana. A ella ___ compro un libro y ___ doy un beso.",
+      "text": "Mi amigo tiene una hermana. A ella ___ compra un libro y ___ da un beso.",
       "answers": [
         "Le",
         "le"
       ],
       "tr": {
-        "en": "I have a sister. I buy her a book and give her a kiss.",
-        "es": "Tengo una hermana. A ella le compro un libro y le doy un beso."
+        "en": "My friend has a sister. He buys her a book and gives her a kiss.",
+        "es": "Mi amigo tiene una hermana. A ella le compra un libro y le da un beso."
       },
       "why": {
         "en": "The pronoun le stands for one person: to him, to her, to you (formal).",
@@ -1413,14 +1413,14 @@
       "id": "oi-cloze-02",
       "kind": "opencloze",
       "trial": true,
-      "text": "Mis papás viven lejos. ___ escribo todos los días y ___ mando un correo.",
+      "text": "Mis abuelos viven lejos. ___ escribimos todos los días y ___ mandamos un correo.",
       "answers": [
         "Les",
         "les"
       ],
       "tr": {
-        "en": "My parents live far away. I write to them every day and send them an email.",
-        "es": "Mis papás viven lejos. Les escribo todos los días y les mando un correo."
+        "en": "My grandparents live far away. We write to them every day and send them an email.",
+        "es": "Mis abuelos viven lejos. Les escribimos todos los días y les mandamos un correo."
       },
       "why": {
         "en": "The pronoun les stands for several people: to them, to you all.",
@@ -1467,18 +1467,18 @@
       "id": "oi-cloze-05",
       "kind": "opencloze",
       "trial": true,
-      "text": "Mi hermano está en casa. Yo ___ traigo un café y él ___ cuenta una historia.",
+      "text": "Mi hermano está en casa. Tú ___ traes un café y él ___ cuenta una historia.",
       "answers": [
         "le",
-        "me"
+        "te"
       ],
       "tr": {
-        "en": "My brother is at home. I bring him a coffee and he tells me a story.",
-        "es": "Mi hermano está en casa. Yo le traigo un café y él me cuenta una historia."
+        "en": "My brother is at home. You bring him a coffee and he tells you a story.",
+        "es": "Mi hermano está en casa. Tú le traes un café y él te cuenta una historia."
       },
       "why": {
-        "en": "Le means to him; me means to me. The pronoun says who receives the action.",
-        "es": "Le es a él; me es a mí. El pronombre dice quién recibe la acción."
+        "en": "Le means to him; te means to you. The pronoun says who receives the action.",
+        "es": "Le es a él; te es a ti. El pronombre dice quién recibe la acción."
       }
     },
     {
@@ -1501,7 +1501,7 @@
       "id": "oi-fix-02",
       "kind": "fix",
       "trial": true,
-      "es": "A mis papás le escribo un mensaje.",
+      "es": "A mis papás le escribimos un mensaje.",
       "wrongIndex": 3,
       "answer": "les",
       "explain": {
@@ -1509,8 +1509,8 @@
         "es": "Varias personas (mis papás) piden les, no le."
       },
       "tr": {
-        "en": "I write a message to my parents.",
-        "es": "A mis papás les escribo un mensaje."
+        "en": "We write a message to my parents.",
+        "es": "A mis papás les escribimos un mensaje."
       }
     },
     {
@@ -1549,7 +1549,7 @@
       "id": "oi-fix-05",
       "kind": "fix",
       "trial": true,
-      "es": "A ti le compro un café.",
+      "es": "A ti le compran un café.",
       "wrongIndex": 2,
       "answer": "te",
       "explain": {
@@ -1557,8 +1557,8 @@
         "es": "A ti es tú, así que el pronombre es te."
       },
       "tr": {
-        "en": "I buy you a coffee.",
-        "es": "A ti te compro un café."
+        "en": "They buy you a coffee.",
+        "es": "A ti te compran un café."
       }
     },
     {
@@ -1570,12 +1570,12 @@
         "le",
         "les"
       ],
-      "es": "A mi mamá ___ doy un beso.",
+      "es": "A mi mamá ___ damos un beso.",
       "word": "le",
       "answer": "le",
       "tr": {
-        "en": "I give my mom a kiss.",
-        "es": "A mi mamá le doy un beso."
+        "en": "We give my mom a kiss.",
+        "es": "A mi mamá le damos un beso."
       },
       "why": {
         "en": "The pronoun le stands for one person: to him, to her, to you (formal).",
@@ -1612,12 +1612,12 @@
         "te",
         "me"
       ],
-      "es": "A mis hermanos ___ explico la tarea.",
+      "es": "A mis hermanos ___ explicas la tarea.",
       "word": "les",
       "answer": "les",
       "tr": {
-        "en": "I explain the homework to my brothers and sisters.",
-        "es": "A mis hermanos les explico la tarea."
+        "en": "You explain the homework to my brothers and sisters.",
+        "es": "A mis hermanos les explicas la tarea."
       },
       "why": {
         "en": "The pronoun les stands for several people: to them, to you all.",
@@ -1654,16 +1654,16 @@
         "caminar",
         "dormir"
       ],
-      "es": "Les ___ la tarea a los estudiantes.",
+      "es": "Ellos les ___ la tarea a los estudiantes.",
       "word": "mandar",
-      "answer": "mando",
+      "answer": "mandan",
       "tr": {
-        "en": "I send the homework to the students.",
-        "es": "Les mando la tarea a los estudiantes."
+        "en": "They send the homework to the students.",
+        "es": "Ellos les mandan la tarea a los estudiantes."
       },
       "why": {
-        "en": "After the pronoun les the verb agrees with yo: mandar becomes mando.",
-        "es": "Después del pronombre les el verbo concuerda con yo: mandar pasa a mando."
+        "en": "After the pronoun les the verb agrees with ellos: mandar becomes mandan.",
+        "es": "Después del pronombre les el verbo concuerda con ellos: mandar pasa a mandan."
       }
     },
     {
@@ -1681,10 +1681,10 @@
       "kind": "order",
       "trial": true,
       "prompt": {
-        "en": "I write you a message.",
-        "es": "Te escribo un mensaje."
+        "en": "We write you a message.",
+        "es": "Te escribimos un mensaje."
       },
-      "es": "Te escribo un mensaje."
+      "es": "Te escribimos un mensaje."
     },
     {
       "id": "oi-order-03",
@@ -1711,10 +1711,10 @@
       "kind": "order",
       "trial": true,
       "prompt": {
-        "en": "I write him an email.",
-        "es": "Le escribo un correo."
+        "en": "She writes him an email.",
+        "es": "Ella le escribe un correo."
       },
-      "es": "Le escribo un correo."
+      "es": "Ella le escribe un correo."
     }
   ]
 }
