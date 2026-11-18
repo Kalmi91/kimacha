@@ -196,7 +196,9 @@ describe('every item kind turns into an exam card', () => {
       if (q.view.card === 'choice') expect(q.say).toBe(q.view.text);
     }
     for (const q of all('ir-a-infinitivo').filter((x) => x.kind === 'transform')) expect(q.say).toBe(q.review.answer);
-    for (const q of allApproved('negacion').filter((x) => x.kind === 'spot' || x.kind === 'order')) expect(q.say).toBe(q.review.answer);
+    for (const q of allApproved('negacion').filter((x) => x.kind === 'spot')) expect(q.say).toBe(q.review.answer);
+    // FB671: the word order task is never read aloud
+    for (const q of allApproved('negacion').filter((x) => x.kind === 'order')) expect(q.say).toBeUndefined();
     for (const q of qs.filter((x) => x.kind === 'form')) expect(q.say).toBeUndefined();
   });
 
