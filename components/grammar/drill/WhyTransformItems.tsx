@@ -13,7 +13,8 @@ import { findWholeWord } from '@/lib/grammar/whyTarget';
 import { optionHint } from '@/lib/grammar/optionHints';
 import { hashString, shuffleOptions } from '@/lib/shuffle';
 import { useDockedAction } from '@/components/learn/DockSlot';
-import { BrutalBox } from '@/components/grammar/Brutal';
+import { BrutalBox, resultInk } from '@/components/grammar/Brutal';
+import MistypedButton from '@/components/grammar/MistypedButton';
 import ResultBadge from '@/components/ResultBadge';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { BrutalFeedback, BrutalInkButton, TenseBadge } from '@/components/grammar/drill/shared';
@@ -320,8 +321,9 @@ export function TransformDrillItem({
               {result === 'bad' ? (
                 <Text style={[styles.brutalAnswer, { backgroundColor: g.a, color: g.onFill }]}> {item.answer} </Text>
               ) : null}
-              <Text style={[styles.explainText, { color: g.onB }]}>{item.why[contentLang] ?? item.why.en}</Text>
+              <Text style={[styles.explainText, { color: resultInk(g, result === 'ok') }]}>{item.why[contentLang] ?? item.why.en}</Text>
             </BrutalFeedback>
+            {result === 'bad' ? <MistypedButton onPress={() => onDone(true)} /> : null}
             {docked ? null : <BrutalInkButton g={g} testID="transform-next" label={s.grammar.next} onPress={() => onDone(result === 'ok')} />}
           </>
         )}
@@ -399,6 +401,8 @@ export function TransformDrillItem({
           )}
         </View>
       )}
+
+      {result === 'bad' ? <MistypedButton onPress={() => onDone(true)} /> : null}
 
       {result !== null && !docked ? (
         <Pressable testID="transform-next" style={[styles.btn, { backgroundColor: colors.text }]} onPress={() => onDone(result === 'ok')}>

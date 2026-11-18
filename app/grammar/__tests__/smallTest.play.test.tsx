@@ -216,6 +216,13 @@ describe.each(['brand', 'classic'] as const)('grammar small test (%s palette)', 
     expect(ev.get(topic)?.answers).toEqual([{ id: q.id, kind: q.kind, ok: true, at: expect.any(String) }]);
   });
 
+  it('a wrong tapped (choice) answer offers "I misclicked", not "I mistyped"', async () => {
+    await start();
+    await answer(false);
+    expect(screen.getByTestId('small-test-mistyped')).toHaveTextContent('I misclicked');
+    expect(screen.queryByText('I mistyped')).toBeNull();
+  });
+
   it('a right answer has no "I mistyped"; a wrong one without it is a miss: the same topic comes back within 5 questions', async () => {
     await start();
     const first = await answer(true);

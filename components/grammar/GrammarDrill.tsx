@@ -31,7 +31,7 @@ import { useGrammarRoundProgress } from '@/lib/grammar/useGrammarRoundProgress';
 import { buildGlossMap } from '@/lib/games/gloss';
 import { hashString } from '@/lib/shuffle';
 import GlossText from '@/components/games/GlossText';
-import { BrutalBox, SegmentBar, Sticker, inkButtonText, segmentsFilled, textOnFill, mutedColor, themedDockPad } from '@/components/grammar/Brutal';
+import { BrutalBox, SegmentBar, Sticker, inkButtonText, resultFill, resultInk, segmentsFilled, textOnFill, mutedColor, themedDockPad } from '@/components/grammar/Brutal';
 import ResultBadge from '@/components/ResultBadge';
 import { NewKindDrillItem } from '@/components/grammar/NewKinds';
 import { useGrammarColors, type GrammarColors } from '@/lib/grammarColors';
@@ -467,8 +467,8 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
         {answered ? (
           <>
           <ResultBadge correct={isCorrect} label={isCorrect ? s.grammar.perfect : s.games.wrongFeedback} />
-          <BrutalBox fill="b" boxStyle={styles.brutalFeedback}>
-            <Text style={[styles.explainText, { color: g.onB }]}>{current.item.why[contentLang] ?? current.item.why.en}</Text>
+          <BrutalBox fill={resultFill(isCorrect)} boxStyle={styles.brutalFeedback}>
+            <Text style={[styles.explainText, { color: resultInk(g, isCorrect) }]}>{current.item.why[contentLang] ?? current.item.why.en}</Text>
             {!isCorrect && pickedText !== undefined ? (
               <Text style={[styles.explainText, { color: g.onB }]}>
                 {wrongExplanation(current.item, pickedText, contentLang) ??
@@ -481,7 +481,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
                 text={ex}
                 glosses={buildGlossMap(ex, { learnedLang, nativeLang: contentLang, knownWordIds: knownIds, overrides })}
                 learnedLang={learnedLang}
-                style={[styles.example, { color: g.onB }]}
+                style={[styles.example, { color: resultInk(g, isCorrect) }]}
               />
             ))}
           </BrutalBox>

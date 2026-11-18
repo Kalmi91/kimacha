@@ -361,7 +361,7 @@ export default function BigTestScreen() {
           <View style={styles.actions}>
             {canMistype ? (
               <View style={styles.flex}>
-                <ExamButton testID="big-test-mistyped" secondary label={s.mistyped} onPress={() => step(markBigTestMistyped(run))} />
+                <ExamButton testID="big-test-mistyped" secondary label={s.misclicked} onPress={() => step(markBigTestMistyped(run))} />
               </View>
             ) : null}
             <View style={styles.flex}>

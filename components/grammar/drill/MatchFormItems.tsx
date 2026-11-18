@@ -14,6 +14,7 @@ import { useFocusOnNewCard } from '@/lib/learn/useFocusOnNewCard';
 import LessonBody from '@/components/grammar/LessonBody';
 import { BrutalBox } from '@/components/grammar/Brutal';
 import AnswerCompare from '@/components/grammar/AnswerCompare';
+import MistypedButton from '@/components/grammar/MistypedButton';
 import ResultBadge from '@/components/ResultBadge';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { BrutalFeedback, BrutalInkButton, TenseBadge } from '@/components/grammar/drill/shared';
@@ -301,6 +302,7 @@ export function FormDrillItem({
               {!correct ? <AnswerCompare typed={value} correct={item.answer} g={g} onFill /> : null}
             </BrutalFeedback>
             <SpeakButton testID="form-speak" onPress={() => speak(item.answer, speechLang(learnedLang))} brutalStyle={styles.formSpeakBrutal} />
+            {!correct ? <MistypedButton onPress={() => onDone(true)} /> : null}
             {docked ? null : <BrutalInkButton g={g} testID="grammar-next" label={s.grammar.nextArrow} onPress={() => onDone(correct)} />}
           </>
         )}
@@ -350,6 +352,7 @@ export function FormDrillItem({
           <ResultBadge correct={correct} label={correct ? s.games.correctFeedback : s.games.wrongFeedback} />
           {!correct ? <AnswerCompare typed={value} correct={item.answer} g={g} /> : null}
           <SpeakButton testID="form-speak" onPress={() => speak(item.answer, speechLang(learnedLang))} style={styles.formSpeak} iconStyle={styles.formSpeakIcon} />
+          {!correct ? <MistypedButton onPress={() => onDone(true)} /> : null}
           {docked ? null : (
             <Pressable testID="grammar-next" style={[styles.btn, { backgroundColor: colors.tint, marginTop: 12 }]} onPress={() => onDone(correct)}>
               <Text style={[styles.btnText, { color: colors.onTint }]}>{s.games.understood}</Text>
