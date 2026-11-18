@@ -96,8 +96,7 @@ export default function GrammarSyllabusScreen() {
   const [bigTest, setBigTest] = useState<{ running: boolean; level: string | null; ready: boolean }>({ running: false, level: null, ready: false });
   // Strong topics of the last Big test: a mark only, no evidence, no percent.
   const [knownFromTest, setKnownFromTest] = useState<Set<string>>(new Set());
-  // streak sticker + weekly goal box (from the existing getStreak / weekly goal / usage values).
-  const [streak, setStreak] = useState(0);
+  // weekly goal box (from the existing weekly goal / usage values).
   const [weeklyGoal, setWeeklyGoal] = useState(DEFAULT_WEEKLY_GOAL_MINUTES);
   const [weekMinutes, setWeekMinutes] = useState(0);
   // the lesson search text; while it is not empty the list shows the matching lessons of every level.
@@ -139,7 +138,6 @@ export default function GrammarSyllabusScreen() {
     const saved = parseTabLevel(await loadResumeValue(db, grammarTabLevelKey(pair)), tabLevels);
     const fallback = [card.level, lvl, tabLevels[0]].find((l): l is Level => !!l && tabLevels.includes(l)) ?? 'A1';
     setOpenLevel((current) => (directionChanged ? null : current) ?? (saved as Level | null) ?? fallback);
-    setStreak((await db.getStreak())?.current_count ?? 0);
     setWeeklyGoal(await db.getWeeklyGoalMinutes());
     setWeekMinutes((await db.getUsageStats()).thisWeek);
   }, [refresh]);
@@ -243,7 +241,6 @@ export default function GrammarSyllabusScreen() {
             <View style={styles.brutalHeader}>
               <Text variant="title" style={[styles.brutalTitle, narrow && styles.brutalTitleNarrow, { color: g.ink }]}>{s.tabs.grammar}</Text>
               <View style={styles.brutalHeaderRight}>
-                <Sticker testID="grammar-streak" label={`🔥 ${streak}`} fill="b" rotate={6} />
                 <ScreenFeedback placement="inline" level={level} languagePair={`${contentLang}→${learnedLang}`} currentCard="grammar-syllabus" />
               </View>
             </View>

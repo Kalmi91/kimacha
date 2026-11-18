@@ -184,12 +184,12 @@ describe.each([
     expect(mockPush).toHaveBeenLastCalledWith('/grammar/level-test?level=A2');
   });
 
-  it('a test row reads "A1 level test N%" and is a named button', async () => {
+  it('a test row reads "A1 topic test N%" and is a named button', async () => {
     await open();
     const row = screen.getByTestId('grammar-test-row-A1');
-    expect(row).toHaveTextContent(/A1 level test \d+%/);
+    expect(row).toHaveTextContent(/A1 topic test \d+%/);
     expect(row.props.accessibilityRole).toBe('button');
-    expect(row.props.accessibilityLabel).toMatch(/A1 level test/);
+    expect(row.props.accessibilityLabel).toMatch(/A1 topic test/);
   });
 
   it('level buttons and test rows are at least tap-target sized', async () => {

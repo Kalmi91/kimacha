@@ -41,7 +41,7 @@ export default {
     exam: 'Exam',
     stats: 'Stats',
     board: 'Weekly leaderboard',
-    pcic: 'Learn',
+    pcic: 'Words',
     // the two beta tabs (Settings -> Beta) and the line on their placeholder screens.
     practice: 'Practice',
     sentences: 'Sentences',

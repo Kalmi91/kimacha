@@ -25,15 +25,14 @@ export interface MyWeekPanelProps {
   days: (number | null)[];
   todayIndex: number;
   lastWeek: number;
-  streak: number;
   onLayout?: (e: LayoutChangeEvent) => void;
   // 'time': every figure is minutes (`me.xp`, `days`, `lastWeek` carry them), written as `3 h 25 min`, and there is no daily XP goal
   metric?: BoardMetric;
 }
 
 // The own-week panel: a dark panel in both themes with the place on split-flap digits, the week's XP, the days left, a bar
-// chart of the week with the daily goal line, and six small figures.
-export default function MyWeekPanel({ me, rows, days, todayIndex, lastWeek, streak, onLayout, metric = 'xp' }: MyWeekPanelProps) {
+// chart of the week with the daily goal line, and a few small figures.
+export default function MyWeekPanel({ me, rows, days, todayIndex, lastWeek, onLayout, metric = 'xp' }: MyWeekPanelProps) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const s = t().board;
@@ -54,8 +53,8 @@ export default function MyWeekPanel({ me, rows, days, todayIndex, lastWeek, stre
     ...(time ? [] : [[s.toGoal, sum.toGoal > 0 ? `${sum.toGoal} XP` : s.goalDone]]),
     [s.bestDay, sum.best.xp > 0 ? `${s.days[sum.best.index]} · ${time ? formatMinutes(sum.best.xp) : sum.best.xp}` : DASH],
     [s.average, fig(sum.average)],
-    [s.streak, s.daysCount(streak)],
   ];
+  const half = Math.ceil(cells.length / 2);
   return (
     <View testID="board-panel" onLayout={onLayout} style={[styles.panel, { backgroundColor: panel }]}>
       <View style={styles.score}>
@@ -106,7 +105,7 @@ export default function MyWeekPanel({ me, rows, days, todayIndex, lastWeek, stre
         ))}
       </View>
       <View style={styles.cells}>
-        {[cells.slice(0, 3), cells.slice(3)].map((line, r) => (
+        {[cells.slice(0, half), cells.slice(half)].map((line, r) => (
           <View key={r} style={styles.cellRow}>
             {line.map(([label, value]) => (
               <View key={label} style={[styles.cell, { backgroundColor: mixColor(fg, panel, 0.1) }]}>

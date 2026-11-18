@@ -10,9 +10,6 @@ const es: typeof en = {
     // the grey placeholder of the answer input field, with the name of the target language.
     typeIn: (lang: string): string => (lang === 'es' ? 'Escribe en español' : lang === 'hu' ? 'Escribe en húngaro' : lang === 'de' ? 'Escribe en alemán' : 'Escribe en inglés'),
   },
-  done: {
-    streak: 'días seguidos',
-  },
   games: {
     understood: 'Entendido',
     correctFeedback: '¡Correcto!',

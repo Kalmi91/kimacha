@@ -94,7 +94,6 @@ function GrammarLessonPhases({ topic }: { topic: ReturnType<typeof useGrammarTop
     roundStats,
     setRoundStats,
     prevPct,
-    streak,
     toggleLessonSpeech,
     saveRow,
     lessonScoreOf,
@@ -295,7 +294,6 @@ function GrammarLessonPhases({ topic }: { topic: ReturnType<typeof useGrammarTop
         lesson={lesson}
         progressRows={progressRows}
         roundStats={roundStats}
-        streak={streak}
         prevPct={prevPct}
         drillKind={drillKind}
         kindCounts={kindCounts}

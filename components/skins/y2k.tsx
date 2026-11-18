@@ -2,13 +2,12 @@ import type { ReactNode } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Text } from '@/components/KText';
 
-import { useStreakCount } from '@/components/skins/useSkinStats';
 import type { SkinDecor } from '@/components/skins/types';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
 
 // Y2K: a rotated (+8°) "new word / palabra nueva" sticker in the card's top right
-// corner, star icons around the card, a streak chip in the header with the real daily streak.
+// corner, star icons around the card and in the header.
 
 const STICKER_FALLBACK = '#FF9BD2';
 
@@ -43,15 +42,10 @@ function Y2kCardFrame({ children }: { children: ReactNode }) {
 }
 
 function Y2kHeader({ children }: { children: ReactNode }) {
-  const g = useGrammarColors();
-  const streak = useStreakCount();
   return (
     <View>
       <View style={styles.headRow}>
         <Star size={14} style={styles.inline} />
-        <View testID="skin-y2k-streak" style={[styles.chip, { backgroundColor: g.b, borderColor: g.ink }]}>
-          <Text style={[styles.chipText, { color: g.ink }]}>🔥 {streak}</Text>
-        </View>
         <Star size={10} style={styles.inline} />
       </View>
       {children}
@@ -73,8 +67,6 @@ const styles = StyleSheet.create({
   },
   stickerText: { fontSize: 11, fontWeight: '700', textTransform: 'uppercase' },
   headRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8, marginBottom: 6 },
-  chip: { borderWidth: 2, borderRadius: 999, paddingHorizontal: 10, paddingVertical: 2 },
-  chipText: { fontSize: 13, fontWeight: '700' },
 });
 
 export const y2kDecor: SkinDecor = {

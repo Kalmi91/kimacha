@@ -25,7 +25,6 @@ interface Props {
   lesson: GrammarTopicData;
   progressRows: ProgressRow[];
   roundStats: RoundStats | null;
-  streak: number;
   prevPct: number | null;
   drillKind: GrammarKind;
   kindCounts: Record<GrammarKind, number>;
@@ -45,7 +44,6 @@ export default function GrammarRoundEnd({
   lesson,
   progressRows,
   roundStats,
-  streak,
   prevPct,
   drillKind,
   kindCounts,
@@ -143,7 +141,6 @@ export default function GrammarRoundEnd({
           <View style={styles.brutalStats}>
             {stat(s.grammar.statCorrect, String(score.correct), 'paper')}
             {stat(s.grammar.statTime, time, 'paper')}
-            {stat(s.grammar.statStreak, `🔥 ${streak}`, 'b')}
           </View>
 
           {cumulativePct !== null ? (

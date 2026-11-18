@@ -51,7 +51,7 @@ describe('a11y: tab bar (the tab labels are hidden, so each tab needs its own na
   it('every tab has an accessibility label', async () => {
     const view = render(<ThemeProvider><TabLayout /></ThemeProvider>);
     await flush();
-    expect(view.getByTestId('tab-a11y-index').props.children).toBe('Learn');
+    expect(view.getByTestId('tab-a11y-index').props.children).toBe('Words');
     expect(view.getByTestId('tab-a11y-course').props.children).toBe('Grammar');
     expect(view.getByTestId('tab-a11y-stats').props.children).toBe('Stats');
     expect(view.getByTestId('tab-a11y-settings').props.children).toBe('Settings');
@@ -62,7 +62,7 @@ describe('a11y: tab bar (the tab labels are hidden, so each tab needs its own na
     setLanguage('es');
     const view = render(<ThemeProvider><TabLayout /></ThemeProvider>);
     await flush();
-    expect(view.getByTestId('tab-a11y-index').props.children).toBe('Aprender');
+    expect(view.getByTestId('tab-a11y-index').props.children).toBe('Palabras');
     expect(view.getByTestId('tab-a11y-settings').props.children).toBe('Ajustes');
     view.unmount();
   });

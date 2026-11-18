@@ -40,7 +40,7 @@ const de: typeof en = {
     exam: 'Prüfung',
     stats: 'Statistik',
     board: 'Wochenrangliste',
-    pcic: 'Lernen',
+    pcic: 'Wörter',
     practice: 'Üben',
     sentences: 'Sätze',
     speak: 'Sprechen',

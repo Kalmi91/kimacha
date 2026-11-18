@@ -68,7 +68,7 @@ describe('round end, neo-brutalist', () => {
     expect(screen.queryByTestId('grammar-practice-this')).toBeNull();
     expect(screen.queryByText('correct')).toBeTruthy();
     expect(screen.queryByText('time')).toBeTruthy();
-    expect(screen.queryByText('streak')).toBeTruthy();
+    expect(screen.queryByText('streak')).toBeNull();
     expect(screen.queryByTestId('grammar-practice-again')).toBeTruthy();
     expect(screen.queryByTestId('grammar-lesson-percent')).toBeTruthy();
     // No XP: only the correct-ratio is in the big box.

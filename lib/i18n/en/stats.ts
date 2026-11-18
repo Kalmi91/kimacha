@@ -102,7 +102,6 @@ export default {
     goalDone: 'done',
     bestDay: 'Best day',
     average: 'Daily average',
-    streak: 'Streak',
     atTop: 'you lead',
     none: 'none',
     needToPass: (n: number) => `${n} XP to pass`,

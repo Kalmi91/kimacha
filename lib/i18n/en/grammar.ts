@@ -28,7 +28,6 @@ export default {
     // brutalist round end.
     statCorrect: 'correct',
     statTime: 'time',
-    statStreak: 'streak',
     practiceThis: 'practice this',
     progressChange: (from: number | null, to: number) => (from === null ? `${to}%` : `${from}% → ${to}%`),
     oneMoreRound: 'one more round',
@@ -261,9 +260,9 @@ export default {
   },
   // The grammar Small test (one per level: 10 adaptive questions per round, the lesson opens after repeated misses).
   smallTest: {
-    header: (lvl: string, pos: number, total: number) => `${lvl} test · ${pos}/${total}`,
-    headerRound: (lvl: string, round: number) => `${lvl} test · round ${round}`,
-    leave: 'Leave the test',
+    header: (lvl: string, pos: number, total: number) => `${lvl} topic test · ${pos}/${total}`,
+    headerRound: (lvl: string, round: number) => `${lvl} topic test · round ${round}`,
+    leave: 'Leave the topic test',
     introTitle: (n: number) => `This round: ${n} questions`,
     introTopics: 'Topics you will get',
     tagNew: 'new',
@@ -302,7 +301,7 @@ export default {
   // The Grammar tab's level buttons, overall bar and per-level test rows.
   levelTabs: {
     yourOverall: (lvl: string, pct: number) => `Your level: ${lvl} · overall ${pct}%`,
-    testRow: (lvl: string, pct: number | null) => (pct === null ? `${lvl} level test` : `${lvl} level test ${pct}%`),
+    testRow: (lvl: string, pct: number | null) => (pct === null ? `${lvl} topic test` : `${lvl} topic test ${pct}%`),
     resume: 'Continue',
     levelButton: (lvl: string) => `Level ${lvl}`,
   },

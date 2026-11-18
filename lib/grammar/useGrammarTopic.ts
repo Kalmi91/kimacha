@@ -65,10 +65,9 @@ export function useGrammarTopic() {
   // the lesson % is the average over ALL kinds (lib/grammar/lessonScore.ts), a kind not yet done counts as 0.
   const [progressRows, setProgressRows] = useState<ProgressRow[]>([]);
   // data for the round-end screen (memory only): the drill's stats, the
-  // cumulative % from BEFORE the round, and the streak days.
+  // cumulative % from BEFORE the round.
   const [roundStats, setRoundStats] = useState<RoundStats | null>(null);
   const [prevPct, setPrevPct] = useState<number | null>(null);
-  const [streak, setStreak] = useState(0);
 
   const load = useCallback(async () => {
     const db = getDb();
@@ -78,7 +77,6 @@ export function useGrammarTopic() {
     setContentLang(sourceFor(target, source));
     const levelData = await db.getLevel();
     setLevel((levelData.level as Level) ?? 'A1');
-    setStreak((await db.getStreak())?.current_count ?? 0);
     const loadedLesson = lessonFor(target, String(topicId)) ?? null;
     setLesson(loadedLesson);
     if (loadedLesson) {
@@ -152,13 +150,10 @@ export function useGrammarTopic() {
     setProgressRows((prev) => [...prev.filter((r) => r.itemId !== itemId), { itemId, state, data }]);
     persistRow(GRAMMAR_PROGRESS_KEY, itemId, state, data);
     // Every row saved here comes from an answered task (a drill step, a finished round, a lesson test), so it counts
-    // for the daily streak; the round-end screen shows the streak, so it is read again after the write.
-    void countLearningToday()
-      .then(() => getDb().getStreak())
-      .then((row) => setStreak(row?.current_count ?? 0))
-      .catch(() => {
-        // a failed write or read leaves the streak shown as it was
-      });
+    // for the daily streak (the data is kept, the app no longer shows it).
+    void countLearningToday().catch(() => {
+      // a failed write leaves the streak as it was
+    });
   };
   // The lesson %: the average over ALL existing kinds, a kind not yet started counts as 0 (null: nothing done yet).
   // Provisional kinds do not pull the lesson % down (scoredKinds).
@@ -215,7 +210,6 @@ export function useGrammarTopic() {
     roundStats,
     setRoundStats,
     prevPct,
-    streak,
     toggleLessonSpeech,
     saveRow,
     lessonScoreOf,

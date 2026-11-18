@@ -27,7 +27,6 @@ const es: typeof en = {
     nextArrow: 'siguiente →',
     statCorrect: 'correctas',
     statTime: 'tiempo',
-    statStreak: 'racha',
     practiceThis: 'practica esto',
     progressChange: (from: number | null, to: number) => (from === null ? `${to}%` : `${from}% → ${to}%`),
     oneMoreRound: 'una ronda más',
@@ -244,9 +243,9 @@ const es: typeof en = {
   },
   // El test breve de gramática (uno por nivel: 10 preguntas adaptativas por ronda, la lección se abre tras fallos repetidos).
   smallTest: {
-    header: (lvl: string, pos: number, total: number) => `Test ${lvl} · ${pos}/${total}`,
-    headerRound: (lvl: string, round: number) => `Test ${lvl} · ronda ${round}`,
-    leave: 'Salir del test',
+    header: (lvl: string, pos: number, total: number) => `Prueba de temas ${lvl} · ${pos}/${total}`,
+    headerRound: (lvl: string, round: number) => `Prueba de temas ${lvl} · ronda ${round}`,
+    leave: 'Salir de la prueba de temas',
     introTitle: (n: number) => `Esta ronda: ${n} preguntas`,
     introTopics: 'Temas que te tocan',
     tagNew: 'nuevo',
@@ -285,7 +284,7 @@ const es: typeof en = {
   // The Grammar tab's level buttons, overall bar and per-level test rows.
   levelTabs: {
     yourOverall: (lvl: string, pct: number) => `Tu nivel: ${lvl} · total ${pct}%`,
-    testRow: (lvl: string, pct: number | null) => (pct === null ? `Prueba de nivel ${lvl}` : `Prueba de nivel ${lvl} ${pct}%`),
+    testRow: (lvl: string, pct: number | null) => (pct === null ? `Prueba de temas ${lvl}` : `Prueba de temas ${lvl} ${pct}%`),
     resume: 'Continuar',
     levelButton: (lvl: string) => `Nivel ${lvl}`,
   },

@@ -37,7 +37,6 @@ const availableMockLevels = (target: MockTarget): readonly MockLevel[] => MOCK_L
 
 export function useStatsScreen() {
   const [usage, setUsage] = useState<UsageStats>(EMPTY_STATS);
-  const [streak, setStreak] = useState(0);
   // "known" = interval >= 21 days, globally (the 4
   // PCIC levels combined); "graduated" = got past the learning steps
   // (state 'review'), even below the threshold (lib/pcicStats.ts).
@@ -70,7 +69,6 @@ export function useStatsScreen() {
     const db = getDb();
     return Promise.all([
       db.getUsageStats().then(setUsage),
-      db.getStreak().then(r => setStreak(r.current_count)),
       db.getWeeklyGoalMinutes().then(setWeeklyGoal),
       refresh(['direction']).then(ob => {
         setTargetLang(ob.target);
@@ -114,7 +112,6 @@ export function useStatsScreen() {
 
   return {
     usage,
-    streak,
     known,
     graduated,
     reviewsToday,

@@ -10,9 +10,6 @@ const de: typeof en = {
     typeIn: (lang: string): string =>
       lang === 'es' ? 'Gib es auf Spanisch ein' : lang === 'hu' ? 'Gib es auf Ungarisch ein' : lang === 'de' ? 'Gib es auf Deutsch ein' : 'Gib es auf Englisch ein',
   },
-  done: {
-    streak: 'Tage in Folge',
-  },
   games: {
     understood: 'Verstanden',
     correctFeedback: 'Richtig!',
