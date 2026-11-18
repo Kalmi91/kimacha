@@ -67,7 +67,7 @@ interface ActiveRun {
   slowTimer: ReturnType<typeof setTimeout> | null;
   finished: boolean;
   onStopped?: () => void;
-  /** Settles when generateSpeechStream has returned (the controller exists then) or failed. */
+  /** Settles when the pending player start or generation start has returned or failed. */
   started: Promise<unknown>;
   /** Settles when the native generation has really ended (its end event, also after a cancel), or never began. */
   ended: Promise<void>;
@@ -81,7 +81,7 @@ const generating = new Map<StreamingTtsEngine, Promise<void>>();
 // The native side has one PCM player per engine, and stopping is asynchronous (cancel, then the player
 // release). Every release goes through this chain, and a new speech waits for it: a stopPcmPlayer that lands
 // after the next startPcmPlayer leaves the new speech without a player ("PCM player not initialized").
-let stopping: Promise<void> = Promise.resolve();
+let stopping: Promise<void> | null = null;
 
 // The native side runs one generation per engine, and a cancel only takes effect when the generation reaches
 // its next chunk (for one sentence that is when it is all generated: seconds on a slow phone). A new
@@ -179,8 +179,14 @@ export async function releaseNeuralPair(lang: NeuralLang, engine: NeuralEngine):
 }
 
 // Queues the release of an engine's PCM player behind the stops that are under way.
+function queueStop(stop: () => Promise<void>): void {
+  const pending = (stopping ?? Promise.resolve()).then(stop);
+  stopping = pending;
+  void pending.then(() => { if (stopping === pending) stopping = null; });
+}
+
 function releasePlayer(engine: StreamingTtsEngine): void {
-  stopping = stopping.then(() => engine.stopPcmPlayer().catch(() => {}));
+  queueStop(() => engine.stopPcmPlayer().catch(() => {}));
 }
 
 // Resolves when the promise settles, or after `ms`, whichever comes first.
@@ -216,7 +222,7 @@ async function generateWhenFree(
 }
 
 // Cuts the run in flight; resolves when it and every stop before it are done (a new speech awaits this).
-function stopActive(): Promise<void> {
+function stopActive(): Promise<void> | void {
   const run = active;
   if (run) {
     active = null;
@@ -224,8 +230,9 @@ function stopActive(): Promise<void> {
     if (run.slowTimer) clearTimeout(run.slowTimer);
     const wasInFlight = !run.finished;
     run.finished = true;
-    stopping = stopping.then(async () => {
-      await run.started; // a generation that is just starting can only be cancelled once it has started
+    queueStop(async () => {
+      // A late player start must finish before its release, or it can recreate a player after the stop.
+      try { await run.started; } catch { /* the player failed to start */ }
       try {
         // the engine's own cancel, not the controller's: that one also drops the listeners, and with them the end event
         await run.engine.cancelSpeechStream();
@@ -240,12 +247,12 @@ function stopActive(): Promise<void> {
       if (wasInFlight) run.onStopped?.();
     });
   }
-  return stopping;
+  return stopping ?? undefined;
 }
 
-export function stopNeural(): void {
+export function stopNeural(): Promise<void> | void {
   runCounter += 1;
-  void stopActive();
+  return stopActive();
 }
 
 // Resolves when the generation has finished and the audio is queued (onDone
@@ -288,7 +295,8 @@ export async function speakNeural(
   let writeChain: Promise<void> = Promise.resolve();
 
   try {
-    await engine.startPcmPlayer(sampleRate, 1);
+    run.started = engine.startPcmPlayer(sampleRate, 1);
+    await run.started;
   } catch (err) {
     // the run never started: it must not stay `active` (a later stop would report it as cut off)
     const superseded = run.finished;

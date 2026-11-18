@@ -35,3 +35,27 @@ if (!existsSync(file)) {
     console.warn('patch-expo-speech: expected block not found, expo-speech changed (see lib/__tests__/expoSpeechPatch.test.ts)');
   }
 }
+
+// FB675: stop() must also drop speech waiting for TextToSpeech initialization; otherwise onInit speaks it
+// after the learner has already stopped it or started a word-pack recording. Share onInit's lock.
+const stopBefore = `    AsyncFunction<Unit>("stop") {
+      textToSpeech.stop()
+    }`;
+const stopAfter = `    AsyncFunction<Unit>("stop") {
+      synchronized(this@SpeechModule) {
+        delayedUtterances.clear()
+        textToSpeech.stop()
+      }
+    }`;
+
+if (existsSync(file)) {
+  const source = readFileSync(file, 'utf8').replace(/\r\n/g, '\n');
+  if (source.includes(stopAfter)) {
+    console.log('patch-expo-speech: pending speech stop already patched');
+  } else if (source.includes(stopBefore)) {
+    writeFileSync(file, source.replace(stopBefore, stopAfter));
+    console.log('patch-expo-speech: stop now clears pending speech');
+  } else {
+    throw new Error('patch-expo-speech: stop block changed; pending speech cancellation was not patched');
+  }
+}

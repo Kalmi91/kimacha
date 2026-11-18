@@ -105,14 +105,43 @@ export async function loadVoices(): Promise<void> {
   return loading;
 }
 
+// Native stops finish asynchronously. Every route waits for them, including a switch between engines.
+let stoppingPlayback: Promise<void> | null = null;
+
+function trackStop(stopped: Promise<void> | void): void {
+  if (!stopped) return;
+  const pending = Promise.all([stoppingPlayback, stopped.catch(() => {})]).then(() => {});
+  stoppingPlayback = pending;
+  void pending.then(() => { if (stoppingPlayback === pending) stoppingPlayback = null; });
+}
+
+function afterPlaybackStop(run: number, play: () => void): void {
+  if (run !== speakingRun) return;
+  if (stoppingPlayback) {
+    void stoppingPlayback.then(() => afterPlaybackStop(run, play));
+  } else {
+    play();
+  }
+}
+
 function stopPhone(): void {
   clearTimeout(phoneTimer);
-  try { void Promise.resolve(Speech.stop()).catch(() => {}); } catch { /* no speech engine */ }
+  try { trackStop(Speech.stop()); } catch { /* no speech engine */ }
+}
+
+function stopPlayback(): void {
+  stopPhone();
+  trackStop(stopNeural());
+  stopPack();
 }
 
 // Keep user feedback and callbacks tied to this run, including delayed voice discovery.
 function speakOnDevice(text: string, locale: string, options: Speech.SpeechOptions, run: number, reportErrors = true, waited = false): void {
   if (run !== speakingRun) return;
+  if (stoppingPlayback) {
+    afterPlaybackStop(run, () => speakOnDevice(text, locale, options, run, reportErrors, waited));
+    return;
+  }
   const fail = (phase: 'noEngine' | 'noVoice' | 'failed', error: Error) => {
     if (run !== speakingRun) return;
     if (!reportErrors) missing.add(baseLanguage(locale));
@@ -326,6 +355,8 @@ interface BetterOptions {
 }
 
 function speakBetter(text: string, locale: string, opts: BetterOptions, phone: () => void): boolean {
+  // A completed neural segment can still have its PCM release pending when the next segment uses the phone.
+  stopPlayback();
   const lang = neuralLangFor(locale);
   if (!lang) return false;
   // A male / female line (practice exam) keeps its sex; any other speech takes the person chosen in Settings -> Voice.
@@ -343,13 +374,10 @@ function speakBetter(text: string, locale: string, opts: BetterOptions, phone: (
   // a recording, or when the recording fails (viaEngine).
   const engine = pack ? null : neuralEngineFor(lang);
   if (!pack && !engine) return false;
-  stopPhone();
-  stopNeural();
-  stopPack();
   // The phone takes over from a level that failed: whatever of that level still sounds is cut first.
   const toPhone = () => {
     if (run !== speakingRun) return;
-    stopNeural();
+    trackStop(stopNeural());
     stopPack();
     phone();
   };
@@ -388,11 +416,13 @@ function speakBetter(text: string, locale: string, opts: BetterOptions, phone: (
     }
     attempt(now, true);
   };
-  if (pack) {
-    playPackFile(pack, { rate: opts.rate, onDone: opts.onDone, onStopped: opts.onStopped, onFail: viaEngine });
-  } else {
-    viaEngine();
-  }
+  afterPlaybackStop(run, () => {
+    if (pack) {
+      playPackFile(pack, { rate: opts.rate, onDone: opts.onDone, onStopped: opts.onStopped, onFail: viaEngine });
+    } else {
+      viaEngine();
+    }
+  });
   return true;
 }
 
@@ -402,9 +432,7 @@ export function stop(): void {
   speakingRun += 1; // no running segment chain may continue after the stop
   cancel?.();
   setSpeechStatus(speakingRun, 'idle');
-  stopPhone();
-  stopNeural();
-  stopPack();
+  stopPlayback();
 }
 
 // Opening the app must not talk (Kálmán, 2026-11-02). An automatic read-aloud (a new card's prompt, a new
