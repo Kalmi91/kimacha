@@ -9,6 +9,8 @@ English speakers learn Spanish, Spanish speakers learn English. You learn words 
 grammar by building sentences, and check your progress with level exams. Spanish audio is Mexican
 Spanish (`es-MX`).
 
+Website: [kimacha-site.kichata.workers.dev](https://kimacha-site.kichata.workers.dev/)
+
 The repository is published for viewing and evaluation. It is not open source: see
 [Licence](#licence).
 
