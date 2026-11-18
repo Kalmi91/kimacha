@@ -22,12 +22,12 @@ export function wrongWordItemIds(results: ExamItemResult[]): string[] {
  * The cards to send back: the existing SM-2 card of the wrong words with an `again` rating, due
  * `today`. A word without a card is skipped (only learned words that have cards get into the exam).
  */
-export function requeueWrongWords(cards: Sm2Card[], results: ExamItemResult[], today: string): Sm2Card[] {
+export function requeueWrongWords(cards: Sm2Card[], results: ExamItemResult[], today: string, calendarDay: string = today): Sm2Card[] {
   const byId = new Map(cards.map((c) => [c.itemId, c]));
   const out: Sm2Card[] = [];
   for (const id of wrongWordItemIds(results)) {
     const card = byId.get(id);
-    if (card) out.push(sm2Review(card, 'again', today));
+    if (card) out.push(sm2Review(card, 'again', today, calendarDay));
   }
   return out;
 }

@@ -87,6 +87,8 @@ const es: typeof en = {
     fatigueDetector: 'Detector de cansancio',
     fatigueDetectorHint: 'Mientras estudias, detecta si tardas más en responder o fallas las mismas tarjetas una y otra vez. En ese caso, te propone seguir con palabras que conoces bien. El calendario de repaso no cambia.',
     newWordGate: 'Palabra nueva solo tras acertar la anterior',
+    noPileUp: 'Los días sin estudiar no se acumulan',
+    noPileUpHint: 'Tus palabras solo avanzan un día cuando terminas los repasos de ese día, así que un día sin estudiar no añade nada. Las palabras nuevas llegan después de terminar los repasos.',
     newWordGateHint: 'Una palabra nueva que fallaste vuelve hasta que la escribas bien; no empieza otra nueva antes. El calendario de repaso no cambia.',
     missCap: 'Las tarjetas falladas vuelven como máximo 3 veces',
     missCapHint: 'Una tarjeta fallada vuelve como máximo tres veces ese día; después espera hasta mañana. Su calendario de repaso no cambia.',

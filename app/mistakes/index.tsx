@@ -10,6 +10,7 @@ import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
 import { getDb } from '@/lib/database';
 import { localDateString } from '@/lib/usageStats';
+import { loadSrsDay } from '@/lib/learn/srsDay';
 import { hasLesson, syllabusTopic } from '@/lib/grammar/syllabus';
 import { getPcicTarget } from '@/data/pcic';
 import { activeSourceFor, pairOf } from '@/lib/languagePair';
@@ -58,7 +59,8 @@ export default function MistakesReportScreen() {
     }
     const cards = cardsForBatches(parsed);
     const progress = await db.getMistakeCards();
-    const session = pickMistakeSession(progress, cards, localDateString());
+    const today = localDateString();
+    const session = pickMistakeSession(progress, cards, await loadSrsDay(db, today), undefined, today);
     const levelData = await db.getLevel();
     setLevel((levelData.level as Level) ?? 'A1');
     setBatches(parsed);

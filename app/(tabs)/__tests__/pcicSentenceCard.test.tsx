@@ -75,6 +75,7 @@ describe('PCIC tab: sentence card', () => {
     await getDb().resetPcicCards();
     await getDb().resetGameProgress(RESUME_GAME_ID);
     await getDb().setOnboarding('en', 'es');
+    await getDb().setDailyNewLimit(10);
     await getDb().setPcicLevel('A1');
     mockSpeak.mockClear();
   });

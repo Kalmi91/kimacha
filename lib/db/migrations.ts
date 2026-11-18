@@ -355,6 +355,13 @@ async function migrateToV7(db: SQLite.SQLiteDatabase) {
   await rebuildCardsPerPair(db, 'mistake_cards', () => mistakePair, mistakePair);
 }
 
+// v8: review days advance independently of the calendar, per language pair; empty = enabled.
+async function migrateToV8(db: SQLite.SQLiteDatabase) {
+  await addColumnIfMissing(db, 'learn_settings', 'no_pile_up', 'INTEGER');
+  await addColumnIfMissing(db, 'learn_settings', 'srs_day', 'TEXT');
+  await addColumnIfMissing(db, 'learn_settings', 'srs_day_step_on', 'TEXT');
+}
+
 export interface Migration {
   version: number;
   up: (db: SQLite.SQLiteDatabase) => Promise<void>;
@@ -368,6 +375,7 @@ export const MIGRATIONS: readonly Migration[] = [
   { version: 5, up: migrateToV5 },
   { version: 6, up: migrateToV6 },
   { version: 7, up: migrateToV7 },
+  { version: 8, up: migrateToV8 },
 ];
 
 export const LATEST_SCHEMA_VERSION = MIGRATIONS[MIGRATIONS.length - 1].version;

@@ -76,8 +76,8 @@ export function sm2NewCard(itemId: string): Sm2Card {
   };
 }
 
-export function sm2Review(card: Sm2Card, grade: Sm2Grade, today: string): Sm2Card {
-  const next: Sm2Card = { ...card, reps: card.reps + 1, lastReview: today };
+export function sm2Review(card: Sm2Card, grade: Sm2Grade, today: string, calendarDay: string = today): Sm2Card {
+  const next: Sm2Card = { ...card, reps: card.reps + 1, lastReview: calendarDay };
 
   if (card.state === 'new' || card.state === 'learning') {
     switch (grade) {
@@ -113,7 +113,7 @@ export function sm2Review(card: Sm2Card, grade: Sm2Grade, today: string): Sm2Car
         break;
     }
     if (card.state === 'new') {
-      next.introducedAt = card.introducedAt ?? today;
+      next.introducedAt = card.introducedAt ?? calendarDay;
     }
     return next;
   }
@@ -174,7 +174,8 @@ export function pickSm2Session(
   cards: Sm2Card[],
   newOrder: string[],
   today: string,
-  newLimit: number = DEFAULT_NEW_LIMIT
+  newLimit: number = DEFAULT_NEW_LIMIT,
+  calendarDay: string = today
 ): Sm2Card[] {
   const byId = new Map(cards.map(c => [c.itemId, c]));
 
@@ -184,7 +185,7 @@ export function pickSm2Session(
 
   const learning = cards.filter(c => c.state === 'learning' && c.due <= today);
 
-  const introducedToday = cards.filter(c => c.introducedAt === today).length;
+  const introducedToday = cards.filter(c => c.introducedAt === calendarDay).length;
   const newBudget = Math.max(0, newLimit - introducedToday);
 
   const newCards: Sm2Card[] = [];
@@ -200,15 +201,15 @@ export function pickSm2Session(
 
 /** The word counts as known,
  *  but still comes back for a check rarely (KNOWN_INTERVAL_DAYS). Ease untouched. */
-export function sm2MarkKnown(card: Sm2Card, today: string): Sm2Card {
+export function sm2MarkKnown(card: Sm2Card, today: string, calendarDay: string = today): Sm2Card {
   return {
     ...card,
     state: 'review',
     step: 0,
     interval: KNOWN_INTERVAL_DAYS,
     due: addDays(today, KNOWN_INTERVAL_DAYS),
-    lastReview: today,
-    introducedAt: card.introducedAt ?? today,
+    lastReview: calendarDay,
+    introducedAt: card.introducedAt ?? calendarDay,
     known: true,
   };
 }

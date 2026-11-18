@@ -12,6 +12,7 @@ import type { ExamResult, ExamResults } from '../exam/types';
 import type { BoardIdentity, DB } from '../dbTypes';
 import type { DbStore, SettingColumn } from './store';
 import { pairBackupCards } from './cardPairs';
+import type { SrsDayState } from '../learn/srsDay';
 
 // on an existing installation the progress currently runs with "b1-..." ids,
 // so a missing column (old DB) falls back to B1, not A1.
@@ -217,6 +218,24 @@ export class DbCore implements DB {
 
   async setNewWordGate(v: boolean): Promise<void> {
     await this.setSettings({ new_word_gate: v ? 1 : 0 });
+  }
+
+  async getNoPileUp(): Promise<boolean> {
+    return (await this.getSetting('no_pile_up')) !== 0;
+  }
+
+  async setNoPileUp(v: boolean): Promise<void> {
+    await this.setSettings({ no_pile_up: v ? 1 : 0 });
+  }
+
+  async getSrsDay(): Promise<SrsDayState | null> {
+    const row = await this.store.readSettings(await this.ready(), ['srs_day', 'srs_day_step_on']);
+    return typeof row?.srs_day === 'string' && typeof row?.srs_day_step_on === 'string'
+      ? { srsDay: row.srs_day, srsDayStepOn: row.srs_day_step_on } : null;
+  }
+
+  async setSrsDay(value: SrsDayState): Promise<void> {
+    await this.setSettings({ srs_day: value.srsDay, srs_day_step_on: value.srsDayStepOn });
   }
 
   // adjustable: after how many seconds a missed PCIC card

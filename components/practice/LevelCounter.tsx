@@ -11,6 +11,7 @@ import { useLearner } from '@/lib/learner';
 import { levelCounts } from '@/lib/levelCounter';
 import { useTheme } from '@/lib/ThemeContext';
 import { localDateString } from '@/lib/usageStats';
+import { loadSrsDay } from '@/lib/learn/srsDay';
 
 // The counter at the top of the Sentences and Practice tabs (Kálmán 2026-10-12: "lássam fogyni"): the level the Words
 // tab header shows (e.g. A2 + "230 words", the same chips and labels) plus the words of that level still due.
@@ -44,7 +45,7 @@ export default function LevelCounter({ refreshKey = 0, only }: { refreshKey?: nu
       // The store sets the direction's deck before the level's items are read.
       const { level } = await refresh(['direction', 'level']);
       const cards = await db.getPcicCards();
-      const today = localDateString();
+      const today = await loadSrsDay(db, localDateString());
       const of = (l: PcicLevel) => levelCounts(cards, l, pcicItemsForLevel(l).length, today);
       const next =
         only === 'all'

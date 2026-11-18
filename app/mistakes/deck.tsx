@@ -12,6 +12,7 @@ import { t } from '@/lib/i18n';
 import { getDb } from '@/lib/database';
 import { useLoadOnMount } from '@/lib/useLoadOnMount';
 import { localDateString } from '@/lib/usageStats';
+import { loadSrsDay } from '@/lib/learn/srsDay';
 import { charDiff } from '@/lib/charDiff';
 import SpeakButton from '@/components/SpeakButton';
 import { speak } from '@/lib/speech';
@@ -85,7 +86,7 @@ export default function MistakesDeckScreen() {
     setLevel((levelData.level as Level) ?? 'A1');
     setToday(day);
     setCardsById(new Map(cards.map((c) => [c.cardId, c])));
-    setQueue(pickMistakeSession(progress, cards, day));
+    setQueue(pickMistakeSession(progress, cards, await loadSrsDay(db, day), undefined, day));
     setTyped('');
     setChecked(false);
     setLoading(false);
@@ -113,7 +114,8 @@ export default function MistakesDeckScreen() {
   const handleGrade = async (grade: Sm2Grade) => {
     if (!current) return;
     const next = await gradeMistakeCard(current, grade, today);
-    setQueue((prev) => requeueAfterGrade(prev, next, today));
+    const srsDay = await loadSrsDay(getDb(), today);
+    setQueue((prev) => requeueAfterGrade(prev, next, srsDay));
     setTyped('');
     setChecked(false);
     setSeq((n) => n + 1);

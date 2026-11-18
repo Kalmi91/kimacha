@@ -7,6 +7,7 @@
 // Only the Spanish direction (the list is English -> Spanish). Pure choice functions plus the two db steps.
 
 import { getDb } from '@/lib/database';
+import { loadSrsDay } from '@/lib/learn/srsDay';
 import { nearMissDistractors } from '@/lib/distractors';
 import { cardsForBatches, type MistakeCard } from '@/lib/mistakes/deck';
 import type { MistakesBatch } from '@/lib/mistakes/format';
@@ -116,7 +117,7 @@ export async function pickMistakeEntry(today: string, skip: ReadonlySet<string>,
     }
   }
   if (batches.length === 0) return null;
-  const card = chooseMistakeCard(batches, await db.getMistakeCards(), today, skip, fits);
+  const card = chooseMistakeCard(batches, await db.getMistakeCards(), await loadSrsDay(db, today), skip, fits);
   return card ? mistakeEntry(card) : null;
 }
 

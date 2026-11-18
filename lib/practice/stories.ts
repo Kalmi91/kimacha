@@ -109,7 +109,7 @@ export function pickStory(deps: ReadingDeps, known: ReadonlySet<string>, stories
   const target = deps.target;
   const cardOf = new Map(deps.cards.map((c) => [c.itemId, c]));
   const levelFor = readingLevelFor(deps);
-  const due = new Set(practiceCandidates(deps.cards, deps.today).map((c) => c.itemId));
+  const due = new Set(practiceCandidates(deps.cards, deps.srsDay ?? deps.today, deps.today).map((c) => c.itemId));
   const usable: { story: Story; words: ReadingWord[]; score: number; index: number }[] = [];
   stories.forEach((story, index) => {
     if (!story.sentences.every((s) => isSentenceKnownIn(s[target] ?? '', target, known, levelFor(s.word)))) return;

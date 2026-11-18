@@ -10,6 +10,7 @@ import { t } from '@/lib/i18n';
 import { getDb } from '@/lib/database';
 import { useLoadOnMount } from '@/lib/useLoadOnMount';
 import { localDateString } from '@/lib/usageStats';
+import { loadSrsDay } from '@/lib/learn/srsDay';
 import { cardsForBatches, pickMistakeSession } from '@/lib/mistakes/deck';
 import type { MistakesBatch } from '@/lib/mistakes/format';
 
@@ -41,7 +42,8 @@ export default function MistakesEntry({ colors }: { colors: ColorScheme }) {
     }
     const cards = cardsForBatches(batches);
     const progress = await db.getMistakeCards();
-    const session = pickMistakeSession(progress, cards, localDateString());
+    const today = localDateString();
+    const session = pickMistakeSession(progress, cards, await loadSrsDay(db, today), undefined, today);
     setDueCount(session.length);
     setVisible(true);
   }, []);

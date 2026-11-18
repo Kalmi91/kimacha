@@ -51,9 +51,9 @@ describe('PCIC tab: the daily new-word budget is shared across levels', () => {
     await getDb().setPcicNewBonus(0, today);
   });
 
-  it('40 words introduced on A1 today + 32 bonus: the B1 header shows the 2 remaining new words, not 42', async () => {
+  it('40 words introduced on A1 today + 37 bonus: the B1 header shows the 2 remaining new words, not 42', async () => {
     for (const item of mockA1Items.slice(0, 40)) await getDb().upsertPcicCard(sm2Review(sm2NewCard(item.id), 'good', today));
-    await getDb().setPcicNewBonus(32, today);
+    await getDb().setPcicNewBonus(37, today);
     await getDb().setPcicLevel('B1');
 
     const { getByText, queryByText } = render(<PcicScreen />);
@@ -64,10 +64,10 @@ describe('PCIC tab: the daily new-word budget is shared across levels', () => {
     expect(queryByText('new 42')).toBeNull();
   });
 
-  it('without a bonus, with no introductions on another level: the level gets the full daily budget (10)', async () => {
+  it('without a bonus, with no introductions on another level: the level gets the full daily budget (5)', async () => {
     await getDb().setPcicLevel('B1');
     const { getByText } = render(<PcicScreen />);
     await flush();
-    expect(getByText('new 10')).toBeTruthy();
+    expect(getByText('new 5')).toBeTruthy();
   });
 });

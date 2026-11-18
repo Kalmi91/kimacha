@@ -22,6 +22,7 @@ import {
 } from '@/lib/practice/gameRound';
 import { stopSpeaking } from '@/lib/speech';
 import { localDateString } from '@/lib/usageStats';
+import { loadSrsDay } from '@/lib/learn/srsDay';
 import { useScreenLoad } from '@/lib/useScreenLoad';
 
 export interface UseGameRound<S> {
@@ -62,6 +63,7 @@ export function useGameRound<S>(logic: GameLogic<S>): UseGameRound<S> {
       const items = pickGameWords({
         cards,
         today,
+        srsDay: await loadSrsDay(getDb(), today),
         findItem: findPcicItem,
         size: logic.size,
         min: logic.minWords,

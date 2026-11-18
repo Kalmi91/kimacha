@@ -67,6 +67,8 @@ describe('PCIC tab: asks before more new words when the day\'s batch runs out (F
 
   beforeEach(async () => {
     await getDb().resetPcicCards();
+    await getDb().setNoPileUp(false);
+    await getDb().setDailyNewLimit(10);
     await getDb().resetGameProgress(RESUME_GAME_ID);
     await getDb().setPcicNewBonus(0, today);
     await getDb().setPcicLevel('B1');

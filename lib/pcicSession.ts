@@ -12,6 +12,31 @@ import type { PcicKind } from '@/data/pcic';
 // graduated cards get no timer (the old append-to-the-end behavior applies).
 export type QueuedSm2Card = Sm2Card & { returnAt?: number };
 
+export interface LearnSessionOptions {
+  srsDay: string;
+  calendarDay: string;
+  newLimit: number;
+  noPileUp: boolean;
+  parked?: readonly string[];
+}
+
+/** Reviews use the learning clock; the new-word budget always uses the calendar. */
+export function pickLearnSession(cards: Sm2Card[], order: string[], opts: LearnSessionOptions): Sm2Card[] {
+  const queue = pickSm2Session(cards, order, opts.srsDay, opts.newLimit, opts.calendarDay)
+    .filter((c) => !opts.parked?.includes(c.itemId));
+  const reviews = queue.filter((c) => c.state !== 'new');
+  return opts.noPileUp && reviews.length > 0 ? reviews : queue;
+}
+
+/** Add the remaining daily budget as soon as the reviews finish, including after a parked miss. */
+export function continueLearnSession(queue: QueuedSm2Card[], cards: Sm2Card[], order: string[], opts: LearnSessionOptions, reviewIds: ReadonlySet<string>): QueuedSm2Card[] {
+  if (!opts.noPileUp) return queue;
+  const active = queue.filter((c) => !opts.parked?.includes(c.itemId));
+  // Undoing the last review hides the fresh cards again; misses in the new-word phase keep their existing gate.
+  if (active.some((c) => c.state !== 'new' && reviewIds.has(c.itemId))) return active.filter((c) => c.state !== 'new');
+  return active.length > 0 ? active : pickLearnSession(cards, order, opts);
+}
+
 export const DEFAULT_AGAIN_DELAY_SEC = 60;
 export const MIN_AGAIN_DELAY_SEC = 15;
 export const MAX_AGAIN_DELAY_SEC = 300;

@@ -10,6 +10,7 @@ import type { ExamResult, ExamResults } from './exam/types';
 import type { MistakeBatchRow } from './mistakes/deck';
 import type { Sm2Card } from './sm2';
 import type { UsageStats } from './usageStats';
+import type { SrsDayState } from './learn/srsDay';
 
 export interface BoardIdentity {
   token: string;
@@ -46,6 +47,10 @@ export interface DB {
   setFatigueDetector(v: boolean): Promise<void>;
   getNewWordGate(): Promise<boolean>;
   setNewWordGate(v: boolean): Promise<void>;
+  getNoPileUp(): Promise<boolean>;
+  setNoPileUp(v: boolean): Promise<void>;
+  getSrsDay(): Promise<SrsDayState | null>;
+  setSrsDay(value: SrsDayState): Promise<void>;
   // a PCIC "missed" (again) card comes back after this many seconds
   // no matter what (lib/pcicSession.ts); the table-deck cooldown
   // (lib/grammar/tableDeck.ts) reads from the same value.

@@ -15,6 +15,7 @@ import { t } from '@/lib/i18n';
 import { pairOf, sourceFor } from '@/lib/languagePair';
 import { useTheme } from '@/lib/ThemeContext';
 import { localDateString } from '@/lib/usageStats';
+import { loadSrsDay } from '@/lib/learn/srsDay';
 import { Card } from '@/components/grammar/Brutal';
 import { ProgressBar } from '@/components/grammar/Themed';
 import ResultBadge from '@/components/ResultBadge';
@@ -194,7 +195,7 @@ export default function ExamScreen() {
     // The card of a missed word item goes back to SM-2 review with `again`
     // (a grammar mistake has no card; for it the result page's lesson link is the feedback).
     // The fresh cards are also refreshed in memory, so that a retry does not draw the word that was just missed again.
-    const back = source ? requeueWrongWords(source.cards, all, today) : [];
+    const back = source ? requeueWrongWords(source.cards, all, await loadSrsDay(db, today), today) : [];
     for (const card of back) await db.upsertPcicCard(card);
     if (source && back.length > 0) {
       const fresh = new Map(back.map((c) => [c.itemId, c]));

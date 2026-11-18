@@ -43,7 +43,7 @@ import { styles } from './pcicStyles';
 import { spainFormsInAnswer, spainFormsInCardSentence } from '@/lib/spainForms';
 
 // Everything the PCIC card view reads from the session hook (lib/learn/usePcicSession.ts).
-export type PcicCardViewProps = ReturnType<typeof usePcicSession>;
+export type PcicCardViewProps = Omit<ReturnType<typeof usePcicSession>, 'srsDay'> & { srsDay?: string };
 
 export default function PcicCardView({
   loading,
@@ -87,7 +87,7 @@ export default function PcicCardView({
   fatigueOffer,
   handleFatigueOfferAccept,
   handleFatigueOfferDecline,
-  today,
+  today, srsDay = today,
   batchBase,
   answerText,
   promptSource,
@@ -216,7 +216,7 @@ export default function PcicCardView({
         <LevelPickerSheet
           visible={levelSheetOpen}
           active={level}
-          cards={allLevelCards}
+          cards={allLevelCards} srsDay={srsDay}
           colors={colors}
           title={s.pcic.chooseLevel}
           target={target}
@@ -238,7 +238,7 @@ export default function PcicCardView({
         <LevelPickerSheet
           visible={levelSheetOpen}
           active={level}
-          cards={allLevelCards}
+          cards={allLevelCards} srsDay={srsDay}
           colors={colors}
           title={s.pcic.chooseLevel}
           target={target}
@@ -264,7 +264,7 @@ export default function PcicCardView({
         <LevelPickerSheet
           visible={levelSheetOpen}
           active={level}
-          cards={allLevelCards}
+          cards={allLevelCards} srsDay={srsDay}
           colors={colors}
           title={s.pcic.chooseLevel}
           target={target}
@@ -398,7 +398,7 @@ export default function PcicCardView({
       <LevelPickerSheet
         visible={levelSheetOpen}
         active={level}
-        cards={allLevelCards}
+        cards={allLevelCards} srsDay={srsDay}
         colors={colors}
         title={s.pcic.chooseLevel}
         target={target}
@@ -564,7 +564,7 @@ export default function PcicCardView({
               nextGrade={nextGrade}
               current={current}
               currentItem={currentItem}
-              today={today}
+              today={srsDay}
               target={target}
               sourceLang={sourceLang}
               onGrade={handleGrade}

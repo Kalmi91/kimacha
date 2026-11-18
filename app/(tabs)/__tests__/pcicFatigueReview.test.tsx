@@ -42,6 +42,7 @@ beforeEach(async () => {
   await db.setDailyNewLimit(5);
   await db.setTiredButton(false);
   await db.setMissCap(false);
+  await db.setNoPileUp(true);
   for (let i = 0; i < 3; i++) {
     await db.upsertPcicCard({ ...sm2NewCard(`a1-w${i}`), state: i === 2 ? 'learning' : 'review',
       introducedAt: i === 2 ? day : '2000-01-01', due: day, interval: 10 });
@@ -49,6 +50,7 @@ beforeEach(async () => {
 });
 
 it('keeps the loaded day and the exact legacy queue after midnight with both settings off', async () => {
+  await getDb().setNoPileUp(false);
   const screen = render(<PcicScreen />);
   await flush();
   const before = (await loadLearnResume(getDb()))!;

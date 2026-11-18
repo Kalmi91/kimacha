@@ -63,6 +63,7 @@ import { SENTENCE_ROUND_SIZE, buildSentenceQueue, recordTypedWords, sentenceKey,
 import { gradeTypedWords } from '@/lib/sentenceTyping';
 import { useTheme } from '@/lib/ThemeContext';
 import { localDateString } from '@/lib/usageStats';
+import { loadSrsDay } from '@/lib/learn/srsDay';
 import { useScreenLoad } from '@/lib/useScreenLoad';
 import { useSingleFlight } from '@/lib/useSingleFlight';
 
@@ -223,7 +224,7 @@ export default function SentencesScreen() {
         items: itemsForSentenceLevel(chosen, PCIC_LEVELS, pcicItemsForLevel),
         findItem: findPcicItem,
         levelOf: levelOfItem,
-        today,
+        today: await loadSrsDay(db, today),
         done: stillOnPlayedRung(played.current.rungs, ladder),
         ladder,
         focus: focusSet,
@@ -238,7 +239,7 @@ export default function SentencesScreen() {
       if (picked.length === 0) {
         // Nothing to practise: new words instead, from the picked level (all levels = the level the Learn tab is on).
         const wordLevel = chosen === ALL_LEVELS ? (await refresh(['level'])).level : chosen;
-        const plan = await planNewWords({ db, target: dir, today, order: pcicItemsForLevel(wordLevel).map((i) => i.id), cards, findItem: findPcicItem, tenses, levelOf: levelOfItem, ladder });
+        const plan = await planNewWords({ db, target: dir, today, srsDay: await loadSrsDay(db, today), order: pcicItemsForLevel(wordLevel).map((i) => i.id), cards, findItem: findPcicItem, tenses, levelOf: levelOfItem, ladder });
         entries = plan.entries;
         outOfNewWords = plan.budgetOut;
       }
