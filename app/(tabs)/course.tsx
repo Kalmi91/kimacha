@@ -44,6 +44,9 @@ import { grammarTabLevelKey, parseTabLevel } from '@/lib/grammar/levelTestRoute'
 import { loadResumeValue, saveResumeValue } from '@/lib/resumeStore';
 import BigTestCard from '@/components/grammar/BigTestCard';
 import { LevelButtons, LevelTestRows, OverallBar } from '@/components/grammar/GrammarLevelPanel';
+import LessonSearch from '@/components/grammar/LessonSearch';
+import { styles } from '@/components/grammar/courseStyles';
+import { filterTopicsBySearch, normalizeSearch } from '@/lib/grammar/lessonSearch';
 import { BrutalBox, SegmentBar, Sticker, segmentsFilled } from '@/components/grammar/Brutal';
 import { LevelTestButton } from '@/components/grammar/ExamStrip';
 import LevelStanding from '@/components/grammar/LevelStanding';
@@ -97,6 +100,8 @@ export default function GrammarSyllabusScreen() {
   const [streak, setStreak] = useState(0);
   const [weeklyGoal, setWeeklyGoal] = useState(DEFAULT_WEEKLY_GOAL_MINUTES);
   const [weekMinutes, setWeekMinutes] = useState(0);
+  // the lesson search text; while it is not empty the list shows the matching lessons of every level.
+  const [query, setQuery] = useState('');
   // the target of the previous load: another direction must not keep the old direction's open level.
   const examTarget = useRef<string | null>(null);
 
@@ -188,6 +193,29 @@ export default function GrammarSyllabusScreen() {
   };
   const tabLevels = syllabusLevels(learnedLang);
 
+  // The lists below: one block per unit of the selected level, or (while searching) one block with the
+  // lessons of every level whose title matches, each with its level shown.
+  const searching = normalizeSearch(query) !== '';
+  const groups: { id: string; name: string | null; topics: ReturnType<typeof topicsForUnit> }[] = searching
+    ? [
+        {
+          id: 'search',
+          name: null,
+          topics: filterTopicsBySearch(
+            tabLevels.flatMap((l) => syllabusForLevel(l, learnedLang)),
+            query,
+            [contentLang, learnedLang]
+          ),
+        },
+      ]
+    : unitsForLevel(shownLevel, learnedLang).map((unit) => ({
+        id: unit.id,
+        name: unit.title[contentLang] ?? unit.title.en,
+        topics: topicsForUnit(unit.id, learnedLang),
+      }));
+  const noMatch = searching && groups[0].topics.length === 0;
+  const levelTag = (topic: { level: string }) => (searching ? ` · ${topic.level}` : '');
+
   // A German course with no written lesson at all: say so, never list the Spanish syllabus or an empty one.
   // (With any lesson written the course is listed like the others; a topic without a lesson file shows the "coming soon" badge.)
   if (learnedLang === 'de' && coverage.written === 0) {
@@ -221,7 +249,11 @@ export default function GrammarSyllabusScreen() {
             </View>
           </SkinHeader>
         </View>
-        <ScrollView contentContainerStyle={styles.brutalBody}>
+        <LessonSearch value={query} onChange={setQuery} />
+        <ScrollView contentContainerStyle={styles.brutalBody} keyboardShouldPersistTaps="handled">
+          {/* While searching, the rest of the tab (cards, level buttons, tests) steps aside so only the matching lessons show. */}
+          {!searching ? (
+          <>
           <Text style={[styles.brutalSmall, { color: g.mu }]}>
             {s.grammar.coverage(doneCount, coverage.written, coverage.planned)}
           </Text>
@@ -259,12 +291,17 @@ export default function GrammarSyllabusScreen() {
           </Text>
           <LevelStanding level={shownLevel} learnedLang={learnedLang} contentLang={contentLang} evidence={evidence} />
           <LevelTestButton level={shownLevel} />
-          {unitsForLevel(shownLevel, learnedLang).map((unit) => (
+          </>
+          ) : null}
+          {noMatch ? <Text testID="grammar-search-none" style={[styles.brutalSmall, { color: g.mu }]}>{s.grammar.searchNone}</Text> : null}
+          {groups.map((unit) => (
             <View key={unit.id} style={styles.brutalUnit}>
-              <Text style={[styles.brutalUnitName, { color: g.mu }]}>
-                {unit.title[contentLang] ?? unit.title.en}
-              </Text>
-              {topicsForUnit(unit.id, learnedLang).map((topic) => {
+              {unit.name ? (
+                <Text style={[styles.brutalUnitName, { color: g.mu }]}>
+                  {unit.name}
+                </Text>
+              ) : null}
+              {unit.topics.map((topic) => {
                 const written2 = hasLesson(learnedLang, topic.id);
                 const p = progress.get(topic.id);
                 const pct = percents.get(topic.id) ?? null;
@@ -302,7 +339,7 @@ export default function GrammarSyllabusScreen() {
                   >
                     <View style={styles.brutalTopicTop}>
                       <Text variant="title" style={[styles.brutalTopicTitle, { color: textColor }]}>
-                        {topic.title[contentLang] ?? topic.title.en}
+                        {`${topic.title[contentLang] ?? topic.title.en}${levelTag(topic)}`}
                       </Text>
                     </View>
                     {tier || isDone || testPassed.has(topic.id) || knownFromTest.has(topic.id) ? (
@@ -337,6 +374,8 @@ export default function GrammarSyllabusScreen() {
             </View>
           ))}
 
+          {!searching ? (
+          <>
           <BrutalBox style={styles.brutalGoal} boxStyle={styles.brutalTopic}>
             <Text style={[styles.brutalUnitName, { color: g.ink }]}>{s.grammar.weeklyGoalTitle}</Text>
             <Text style={[styles.brutalBadge, { color: g.ink }]}>
@@ -353,6 +392,8 @@ export default function GrammarSyllabusScreen() {
           </BrutalBox>
 
           <Text style={[styles.footNote, { color: g.mu }]}>{s.grammar.footNote}</Text>
+          </>
+          ) : null}
         </ScrollView>
       </View>
     );
@@ -362,11 +403,19 @@ export default function GrammarSyllabusScreen() {
     <View style={[styles.container, { backgroundColor: colors.background }]}>
       {/* This is now the root of the Grammar tab, not a pushed screen,
           the title+back row comes from the tab navigator's own header (s.tabs.grammar). */}
-      <Text style={[styles.subtitle, { color: colors.tabIconDefault, marginTop: 12 }]}>
-        {s.grammar.coverage(doneCount, coverage.written, coverage.planned)}
-      </Text>
+      {!searching ? (
+        <Text style={[styles.subtitle, { color: colors.tabIconDefault, marginTop: 12 }]}>
+          {s.grammar.coverage(doneCount, coverage.written, coverage.planned)}
+        </Text>
+      ) : (
+        <View style={{ height: 12 }} />
+      )}
+      <LessonSearch value={query} onChange={setQuery} />
 
-      <ScrollView contentContainerStyle={styles.body}>
+      <ScrollView contentContainerStyle={styles.body} keyboardShouldPersistTaps="handled">
+        {/* While searching, the rest of the tab (cards, level buttons, tests) steps aside so only the matching lessons show. */}
+        {!searching ? (
+        <>
         <BigTestCard learnedLang={learnedLang} {...bigTest} />
 
         <Pressable
@@ -392,6 +441,9 @@ export default function GrammarSyllabusScreen() {
         <LevelButtons levels={tabLevels} selected={shownLevel} current={level} onSelect={selectLevel} />
         <OverallBar level={bigTest.level ?? level} pct={overallPct} />
         <LevelTestRows levels={tabLevels} learnedLang={learnedLang} contentLang={contentLang} evidence={evidence} />
+        </>
+        ) : null}
+        {noMatch ? <Text testID="grammar-search-none" style={[styles.levelMeta, { color: colors.tabIconDefault }]}>{s.grammar.searchNone}</Text> : null}
 
         {[shownLevel].map((lvl) => {
           const topics = syllabusForLevel(lvl, learnedLang);
@@ -402,6 +454,8 @@ export default function GrammarSyllabusScreen() {
 
           return (
             <View key={lvl} style={styles.levelBlock}>
+              {!searching ? (
+              <>
               <View
                 testID={`grammar-level-header-${lvl}`}
                 style={[
@@ -419,14 +473,18 @@ export default function GrammarSyllabusScreen() {
                 <LevelStanding level={lvl} learnedLang={learnedLang} contentLang={contentLang} evidence={evidence} />
               </View>
               <LevelTestButton level={lvl} />
+              </>
+              ) : null}
 
               {isOpen
-                ? unitsForLevel(lvl, learnedLang).map((unit) => (
+                ? groups.map((unit) => (
                     <View key={unit.id} style={styles.unitBlock}>
-                      <Text style={[styles.unitName, { color: colors.tint }]}>
-                        {unit.title[contentLang] ?? unit.title.en}
-                      </Text>
-                      {topicsForUnit(unit.id, learnedLang).map((topic) => {
+                      {unit.name ? (
+                        <Text style={[styles.unitName, { color: colors.tint }]}>
+                          {unit.name}
+                        </Text>
+                      ) : null}
+                      {unit.topics.map((topic) => {
                         const written2 = hasLesson(learnedLang, topic.id);
                         const p = progress.get(topic.id);
                         // null until a round has been played on the topic.
@@ -478,14 +536,14 @@ export default function GrammarSyllabusScreen() {
                             <View style={{ flex: 1 }}>
                               <View style={styles.topicTitleRow}>
                                 <Text variant="title" style={[styles.topicTitle, { color: colors.text }]}>
-                                  {topic.title[contentLang] ?? topic.title.en}
+                                  {`${topic.title[contentLang] ?? topic.title.en}${levelTag(topic)}`}
                                 </Text>
                                 {getGrammarTier(topic.id) === 'core-plus' ? (
-                                  <Text testID={`grammar-core-plus-${topic.id}`} style={styles.corePlusTag}>
+                                  <Text testID={`grammar-core-plus-${topic.id}`} style={tagStyles.corePlusTag}>
                                     {s.grammar.corePlusTag}
                                   </Text>
                                 ) : getGrammarTier(topic.id) === 'core' ? (
-                                  <Text testID={`grammar-core-${topic.id}`} style={[styles.coreTag, { color: legibleOn('#7C3AED', colors.card) }]}>
+                                  <Text testID={`grammar-core-${topic.id}`} style={[tagStyles.coreTag, { color: legibleOn('#7C3AED', colors.card) }]}>
                                     {s.grammar.coreTag}
                                   </Text>
                                 ) : getGrammarTier(topic.id) === 'exam' ? (
@@ -520,7 +578,7 @@ export default function GrammarSyllabusScreen() {
           );
         })}
 
-        <Text style={[styles.footNote, { color: colors.tabIconDefault }]}>{s.grammar.footNote}</Text>
+        {!searching ? <Text style={[styles.footNote, { color: colors.tabIconDefault }]}>{s.grammar.footNote}</Text> : null}
       </ScrollView>
 
       <ScreenFeedback placement="header" level={level} languagePair={`${contentLang}→${learnedLang}`} currentCard="grammar-syllabus" />
@@ -528,64 +586,9 @@ export default function GrammarSyllabusScreen() {
   );
 }
 
-const styles = StyleSheet.create({
-  container: { flex: 1 },
-  subtitle: { fontSize: 13, textAlign: 'center', marginTop: 2, marginBottom: 8 },
-  body: { padding: 14, paddingBottom: 24, gap: 10 },
-  levelBlock: { gap: 8 },
-  levelHeader: { borderRadius: 14, borderWidth: 1.5, padding: 14, gap: 2 },
-  randomCard: { borderRadius: 14, borderWidth: 1.5, padding: 14, gap: 2 },
-  levelName: { fontSize: 17, fontWeight: '800' },
-  levelMeta: { fontSize: 12 },
-  unitBlock: { gap: 6, paddingLeft: 6 },
-  unitName: { fontSize: 13, fontWeight: '700', marginTop: 6, textTransform: 'uppercase', letterSpacing: 0.5 },
-  topicRow: { flexDirection: 'row', alignItems: 'center', gap: 10, borderRadius: 12, padding: 12 },
-  topicTitleRow: { flexDirection: 'row', alignItems: 'center', gap: 6, flexWrap: 'wrap' },
-  topicTitle: { fontSize: 15, fontWeight: '600' },
-  // Filled purple: the speech core, this gets built first.
-  corePlusTag: {
-    fontSize: 10,
-    fontWeight: '700',
-    textTransform: 'uppercase',
-    color: '#FFFFFF',
-    backgroundColor: '#7C3AED',
-    borderRadius: 6,
-    paddingHorizontal: 5,
-    paddingVertical: 1,
-  },
-  // Purple marker: this topic is needed to be able to speak, and it shows even
-  // if the lesson is not written yet.
-  coreTag: {
-    fontSize: 10,
-    fontWeight: '700',
-    textTransform: 'uppercase',
-    color: '#7C3AED',
-    borderColor: '#7C3AED',
-    borderWidth: 1,
-    borderRadius: 6,
-    paddingHorizontal: 5,
-    paddingVertical: 1,
-  },
-  topicBlurb: { fontSize: 12, marginTop: 2, lineHeight: 17 },
-  topicBadgeCol: { alignItems: 'flex-end', gap: 2 },
-  topicBadge: { fontSize: 12, fontWeight: '700' },
-  // neo-brutalist form styles (titles and buttons uppercase, weight 500).
-  brutalBody: { padding: 16, paddingTop: 0, paddingBottom: 32, gap: 10 },
-  brutalHeaderWrap: { paddingHorizontal: 16, paddingTop: 16, paddingBottom: 10 },
-  brutalHeader: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
-  brutalHeaderRight: { flexShrink: 0, flexDirection: 'row', alignItems: 'center', gap: 8 },
-  brutalTitle: { flexShrink: 1, fontSize: 30, fontWeight: '500', textTransform: 'uppercase' },
-  brutalTitleNarrow: { fontSize: 22 },
-  brutalSmall: { fontSize: 11, fontWeight: '500' },
-  brutalUnit: { gap: 10 },
-  brutalUnitName: { fontSize: 11, fontWeight: '500', textTransform: 'uppercase', letterSpacing: 0.5, marginTop: 6 },
-  brutalTopic: { padding: 12, gap: 6 },
-  brutalTopicTop: { flexDirection: 'row', alignItems: 'flex-start', justifyContent: 'space-between', gap: 8 },
-  brutalTopicTitle: { flexShrink: 1, fontSize: 15, fontWeight: '500', textTransform: 'uppercase' },
-  brutalStickers: { flexDirection: 'row', alignItems: 'center', flexWrap: 'wrap', gap: 6 },
-  brutalBlurb: { fontSize: 12, lineHeight: 17 },
-  brutalBar: { marginTop: 2 },
-  brutalBadge: { fontSize: 12, fontWeight: '500', textTransform: 'uppercase' },
-  brutalGoal: { marginTop: 10 },
-  footNote: { fontSize: 12, textAlign: 'center', marginTop: 18, lineHeight: 17 },
+// The tier tags carry their own purple (a fixed brand colour, not a theme token).
+const tagBase = { fontSize: 10, fontWeight: '700', textTransform: 'uppercase', borderRadius: 6, paddingHorizontal: 5, paddingVertical: 1 } as const;
+const tagStyles = StyleSheet.create({
+  corePlusTag: { ...tagBase, color: '#FFFFFF', backgroundColor: '#7C3AED' },
+  coreTag: { ...tagBase, color: '#7C3AED', borderColor: '#7C3AED', borderWidth: 1 },
 });
