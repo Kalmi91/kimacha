@@ -548,7 +548,7 @@
   "items": [
     {
       "id": "od-01",
-      "sentence": "¿El libro? ___ tengo aquí.",
+      "sentence": "¿El libro? ___ tienen aquí.",
       "options": ["Lo", "La", "Le"],
       "correct": 0,
       "why": {
@@ -557,8 +557,8 @@
       },
       "wrong": {
         "La": {
-          "en": "\"La\" is for feminine things, but \"el libro\" is masculine; \"La\" would be correct with a feminine noun instead, for example \"la revista\": ¿La revista? La tengo aquí.",
-          "es": "\"La\" es para cosas femeninas, pero \"el libro\" es masculino; \"La\" sería correcto con un sustantivo femenino, por ejemplo \"la revista\": ¿La revista? La tengo aquí."
+          "en": "\"La\" is for feminine things, but \"el libro\" is masculine; \"La\" would be correct with a feminine noun instead, for example \"la revista\": ¿La revista? La tienen aquí.",
+          "es": "\"La\" es para cosas femeninas, pero \"el libro\" es masculino; \"La\" sería correcto con un sustantivo femenino, por ejemplo \"la revista\": ¿La revista? La tienen aquí."
         },
         "Le": {
           "en": "\"Le\" is the indirect object pronoun (to whom), not the direct object (what); that would be leísmo here. \"Le\" is correct with a verb that takes an indirect object: Le doy el libro (I give him the book).",
@@ -569,11 +569,11 @@
         "¿La mesa? La tengo aquí.",
         "¿Los libros? Los tengo aquí."
       ],
-      "tr": { "en": "The book? I have it here.", "es": "¿El libro? Lo tengo aquí." }
+      "tr": { "en": "The book? They have it here.", "es": "¿El libro? Lo tienen aquí." }
     },
     {
       "id": "od-02",
-      "sentence": "¿La mochila? ___ llevo yo.",
+      "sentence": "¿La mochila? ___ lleva ella.",
       "options": ["La", "Lo", "Las"],
       "correct": 0,
       "why": {
@@ -582,23 +582,23 @@
       },
       "wrong": {
         "Lo": {
-          "en": "\"Lo\" is for masculine things, but \"mochila\" is feminine; \"Lo\" would be correct with a masculine noun instead, like \"el abrigo\": ¿El abrigo? Lo llevo yo.",
-          "es": "\"Lo\" es para cosas masculinas, pero \"mochila\" es femenina; \"Lo\" sería correcto con un sustantivo masculino, como \"el abrigo\": ¿El abrigo? Lo llevo yo."
+          "en": "\"Lo\" is for masculine things, but \"mochila\" is feminine; \"Lo\" would be correct with a masculine noun instead, like \"el abrigo\": ¿El abrigo? Lo lleva ella.",
+          "es": "\"Lo\" es para cosas masculinas, pero \"mochila\" es femenina; \"Lo\" sería correcto con un sustantivo masculino, como \"el abrigo\": ¿El abrigo? Lo lleva ella."
         },
         "Las": {
-          "en": "\"Las\" is plural, but here there is only one backpack; \"Las\" would be correct if you were carrying several backpacks: ¿Las mochilas? Las llevo yo.",
-          "es": "\"Las\" es plural, pero aquí hay solo una mochila; \"Las\" sería correcto si llevaras varias mochilas: ¿Las mochilas? Las llevo yo."
+          "en": "\"Las\" is plural, but here there is only one backpack; \"Las\" would be correct if she were carrying several backpacks: ¿Las mochilas? Las lleva ella.",
+          "es": "\"Las\" es plural, pero aquí hay solo una mochila; \"Las\" sería correcto si ella llevara varias mochilas: ¿Las mochilas? Las lleva ella."
         }
       },
       "examples": [
-        "¿El carro? Lo llevo yo.",
-        "¿Las llaves? Las llevo yo."
+        "¿El carro? Lo lleva ella.",
+        "¿Las llaves? Las lleva ella."
       ],
-      "tr": { "en": "The backpack? I'm carrying it.", "es": "¿La mochila? La llevo yo." }
+      "tr": { "en": "The backpack? She is carrying it.", "es": "¿La mochila? La lleva ella." }
     },
     {
       "id": "od-03",
-      "sentence": "¿Conoces a Juan? Sí, ___ conozco bien.",
+      "sentence": "¿Conocen a Juan? Sí, ___ conocemos bien.",
       "options": ["lo", "la", "los"],
       "correct": 0,
       "why": {
@@ -607,19 +607,19 @@
       },
       "wrong": {
         "la": {
-          "en": "\"La\" is for a feminine person, but Juan is male; \"La\" would be correct if you knew a woman this way: ¿Conoces a Ana? Sí, la conozco bien.",
-          "es": "\"La\" es para una persona femenina, pero Juan es hombre; \"La\" sería correcto si conocieras así a una mujer: ¿Conoces a Ana? Sí, la conozco bien."
+          "en": "\"La\" is for a feminine person, but Juan is male; \"La\" would be correct if you all knew a woman this way: ¿Conocen a Ana? Sí, la conocemos bien.",
+          "es": "\"La\" es para una persona femenina, pero Juan es hombre; \"La\" sería correcto si conocieran así a una mujer: ¿Conocen a Ana? Sí, la conocemos bien."
         },
         "los": {
-          "en": "\"Los\" is plural, but here it is only about Juan; \"Los\" would be correct if you knew several of them: ¿Conoces a Juan y a Pedro? Sí, los conozco bien.",
-          "es": "\"Los\" es plural, pero aquí se habla solo de Juan; \"Los\" sería correcto si conocieras a varios: ¿Conoces a Juan y a Pedro? Sí, los conozco bien."
+          "en": "\"Los\" is plural, but here it is only about Juan; \"Los\" would be correct if you all knew several of them: ¿Conocen a Juan y a Pedro? Sí, los conocemos bien.",
+          "es": "\"Los\" es plural, pero aquí se habla solo de Juan; \"Los\" sería correcto si conocieran a varios: ¿Conocen a Juan y a Pedro? Sí, los conocemos bien."
         }
       },
       "examples": [
         "¿Conoces a mi hermano? Sí, lo conozco.",
         "Lo veo cada semana."
       ],
-      "tr": { "en": "Do you know Juan? Yes, I know him well.", "es": "¿Conoces a Juan? Sí, lo conozco bien." }
+      "tr": { "en": "Do you all know Juan? Yes, we know him well.", "es": "¿Conocen a Juan? Sí, lo conocemos bien." }
     },
     {
       "id": "od-04",
@@ -648,28 +648,28 @@
     },
     {
       "id": "od-05",
-      "sentence": "Yo ___ todos los días.",
-      "options": ["te veo", "veo te", "tú veo"],
+      "sentence": "Ellos ___ todos los días.",
+      "options": ["te ven", "ven te", "tú ven"],
       "correct": 0,
       "why": {
-        "en": "The pronoun goes BEFORE the conjugated verb: te veo, not veo te.",
-        "es": "El pronombre va ANTES del verbo conjugado: te veo, no veo te."
+        "en": "The pronoun goes BEFORE the conjugated verb: te ven, not ven te.",
+        "es": "El pronombre va ANTES del verbo conjugado: te ven, no ven te."
       },
       "wrong": {
-        "veo te": {
-          "en": "In \"veo te\" the pronoun comes AFTER the conjugated verb, which Spanish does not allow; correctly the pronoun goes before it: Te veo todos los días.",
-          "es": "En \"veo te\" el pronombre va DESPUÉS del verbo conjugado, y el español no lo permite; correctamente el pronombre va antes: Te veo todos los días."
+        "ven te": {
+          "en": "In \"ven te\" the pronoun comes AFTER the conjugated verb, which Spanish does not allow; correctly the pronoun goes before it: Te ven todos los días.",
+          "es": "En \"ven te\" el pronombre va DESPUÉS del verbo conjugado, y el español no lo permite; correctamente el pronombre va antes: Te ven todos los días."
         },
-        "tú veo": {
-          "en": "\"Tú\" is a subject pronoun, but an object pronoun is needed here, and the verb does not agree either (tú takes \"ves\", not \"veo\"); correctly: Te veo todos los días.",
-          "es": "\"Tú\" es pronombre de sujeto, pero aquí hace falta uno de objeto, y además el verbo no concuerda (con tú sería \"ves\", no \"veo\"); correctamente: Te veo todos los días."
+        "tú ven": {
+          "en": "\"Tú\" is a subject pronoun, but an object pronoun is needed here, and the verb does not agree either (tú takes \"ves\", not \"ven\"); correctly: Te ven todos los días.",
+          "es": "\"Tú\" es pronombre de sujeto, pero aquí hace falta uno de objeto, y además el verbo no concuerda (con tú sería \"ves\", no \"ven\"); correctamente: Te ven todos los días."
         }
       },
       "examples": [
         "Te veo mañana.",
         "Los veo a ustedes pronto."
       ],
-      "tr": { "en": "I see you every day.", "es": "Yo te veo todos los días." }
+      "tr": { "en": "They see you every day.", "es": "Ellos te ven todos los días." }
     },
     {
       "id": "od-06",
@@ -698,7 +698,7 @@
     },
     {
       "id": "od-07",
-      "sentence": "¿Vas a llamar a Pedro? Sí, ___ voy a llamar.",
+      "sentence": "¿Van a llamar a Pedro? Sí, ___ van a llamar.",
       "options": ["lo", "la", "los"],
       "correct": 0,
       "why": {
@@ -707,19 +707,19 @@
       },
       "wrong": {
         "la": {
-          "en": "\"La\" is for a feminine person, but Pedro is male; \"La\" would be correct if you were calling Ana: ¿Vas a llamar a Ana? Sí, la voy a llamar.",
-          "es": "\"La\" es para una persona femenina, pero Pedro es hombre; \"La\" sería correcto si llamaras a Ana: ¿Vas a llamar a Ana? Sí, la voy a llamar."
+          "en": "\"La\" is for a feminine person, but Pedro is male; \"La\" would be correct if they were calling Ana: ¿Van a llamar a Ana? Sí, la van a llamar.",
+          "es": "\"La\" es para una persona femenina, pero Pedro es hombre; \"La\" sería correcto si llamaran a Ana: ¿Van a llamar a Ana? Sí, la van a llamar."
         },
         "los": {
-          "en": "\"Los\" is plural, but Pedro is just one person; \"Los\" would be correct if you were calling several people: ¿Vas a llamar a Pedro y a Juan? Sí, los voy a llamar.",
-          "es": "\"Los\" es plural, pero Pedro es una sola persona; \"Los\" sería correcto si llamaras a varios: ¿Vas a llamar a Pedro y a Juan? Sí, los voy a llamar."
+          "en": "\"Los\" is plural, but Pedro is just one person; \"Los\" would be correct if they were calling several people: ¿Van a llamar a Pedro y a Juan? Sí, los van a llamar.",
+          "es": "\"Los\" es plural, pero Pedro es una sola persona; \"Los\" sería correcto si llamaran a varios: ¿Van a llamar a Pedro y a Juan? Sí, los van a llamar."
         }
       },
       "examples": [
         "Voy a llamarlo mañana.",
         "La voy a llamar esta noche."
       ],
-      "tr": { "en": "Are you going to call Pedro? Yes, I'm going to call him.", "es": "¿Vas a llamar a Pedro? Sí, lo voy a llamar." }
+      "tr": { "en": "Are they going to call Pedro? Yes, they are going to call him.", "es": "¿Van a llamar a Pedro? Sí, lo van a llamar." }
     },
     {
       "id": "od-08",
@@ -748,7 +748,7 @@
     },
     {
       "id": "od-09",
-      "sentence": "¿Las llaves? ___ tengo en la bolsa.",
+      "sentence": "¿Las llaves? ___ tienes en la bolsa.",
       "options": ["Las", "Los", "La"],
       "correct": 0,
       "why": {
@@ -757,23 +757,23 @@
       },
       "wrong": {
         "Los": {
-          "en": "\"Los\" is masculine, but \"llaves\" is feminine; \"Los\" would be correct with a masculine plural noun, like \"los papeles\": ¿Los papeles? Los tengo en la bolsa.",
-          "es": "\"Los\" es masculino, pero \"llaves\" es femenino; \"Los\" sería correcto con un sustantivo masculino plural, como \"los papeles\": ¿Los papeles? Los tengo en la bolsa."
+          "en": "\"Los\" is masculine, but \"llaves\" is feminine; \"Los\" would be correct with a masculine plural noun, like \"los papeles\": ¿Los papeles? Los tienes en la bolsa.",
+          "es": "\"Los\" es masculino, pero \"llaves\" es femenino; \"Los\" sería correcto con un sustantivo masculino plural, como \"los papeles\": ¿Los papeles? Los tienes en la bolsa."
         },
         "La": {
-          "en": "\"La\" is singular, but here there are several keys; \"La\" would be correct if you were holding only one key: ¿La llave? La tengo en la bolsa.",
-          "es": "\"La\" es singular, pero aquí hay varias llaves; \"La\" sería correcto si tuvieras solo una llave: ¿La llave? La tengo en la bolsa."
+          "en": "\"La\" is singular, but here there are several keys; \"La\" would be correct if you were holding only one key: ¿La llave? La tienes en la bolsa.",
+          "es": "\"La\" es singular, pero aquí hay varias llaves; \"La\" sería correcto si tuvieras solo una llave: ¿La llave? La tienes en la bolsa."
         }
       },
       "examples": [
         "¿Las llaves? Las tengo aquí.",
         "¿El libro? Lo tengo aquí."
       ],
-      "tr": { "en": "The keys? I have them in my bag.", "es": "¿Las llaves? Las tengo en la bolsa." }
+      "tr": { "en": "The keys? You have them in your bag.", "es": "¿Las llaves? Las tienes en la bolsa." }
     },
     {
       "id": "od-10",
-      "sentence": "¿Conoces a mis padres? Sí, ___ conozco.",
+      "sentence": "¿Ella conoce a mis padres? Sí, ___ conoce.",
       "options": ["los", "las", "les"],
       "correct": 0,
       "why": {
@@ -782,8 +782,8 @@
       },
       "wrong": {
         "las": {
-          "en": "\"Las\" is only for a purely feminine group; \"padres\" (a mixed or masculine group) defaults to the masculine form. \"Las\" would be correct if it were only about your sisters: ¿Conoces a mis hermanas? Sí, las conozco.",
-          "es": "\"Las\" es solo para un grupo totalmente femenino; \"padres\" (grupo mixto o masculino) lleva por defecto la forma masculina. \"Las\" sería correcto si se tratara solo de tus hermanas: ¿Conoces a mis hermanas? Sí, las conozco."
+          "en": "\"Las\" is only for a purely feminine group; \"padres\" (a mixed or masculine group) defaults to the masculine form. \"Las\" would be correct if it were only about your sisters: ¿Ella conoce a mis hermanas? Sí, las conoce.",
+          "es": "\"Las\" es solo para un grupo totalmente femenino; \"padres\" (grupo mixto o masculino) lleva por defecto la forma masculina. \"Las\" sería correcto si se tratara solo de tus hermanas: ¿Ella conoce a mis hermanas? Sí, las conoce."
         },
         "les": {
           "en": "\"Conocer a alguien\" takes a direct object pronoun (los), while \"les\" is the indirect object; \"les\" is correct with a verb that takes an indirect object: Les escribo a mis padres (I write to my parents).",
@@ -794,7 +794,7 @@
         "Conozco a tus papás. Los conozco bien.",
         "A tus papás los veo pronto."
       ],
-      "tr": { "en": "Do you know my parents? Yes, I know them.", "es": "¿Conoces a mis padres? Sí, los conozco." }
+      "tr": { "en": "Does she know my parents? Yes, she knows them.", "es": "¿Ella conoce a mis padres? Sí, los conoce." }
     },
     {
       "id": "od-11",
@@ -823,12 +823,12 @@
     },
     {
       "id": "od-12",
-      "sentence": "A mis papás ___ quiero mucho.",
+      "sentence": "A nuestros papás ___ queremos mucho.",
       "options": ["los", "les", "las"],
       "correct": 0,
       "why": {
-        "en": "Mis papás → los (direct object, masculine by default).",
-        "es": "Mis papás → los (objeto directo, forma masculina por defecto)."
+        "en": "Nuestros papás → los (direct object, masculine by default).",
+        "es": "Nuestros papás → los (objeto directo, forma masculina por defecto)."
       },
       "wrong": {
         "les": {
@@ -836,24 +836,24 @@
           "es": "\"Les\" es objeto indirecto (a quién), pero \"querer a alguien\" pide pronombre de objeto directo; \"les\" es correcto con un verbo que pida objeto indirecto: Les llamo cada semana."
         },
         "las": {
-          "en": "\"Las\" is only for a purely feminine group; \"papás\" (parents) defaults to the masculine form; \"Las\" would be correct if it were only about your mothers: A mis mamás las quiero mucho.",
-          "es": "\"Las\" es solo para un grupo totalmente femenino; \"papás\" (padres) lleva por defecto la forma masculina; \"Las\" sería correcto si se tratara solo de tus mamás: A mis mamás las quiero mucho."
+          "en": "\"Las\" is only for a purely feminine group; \"papás\" (parents) defaults to the masculine form; \"Las\" would be correct if it were only about our mothers: A nuestras mamás las queremos mucho.",
+          "es": "\"Las\" es solo para un grupo totalmente femenino; \"papás\" (padres) lleva por defecto la forma masculina; \"Las\" sería correcto si se tratara solo de nuestras mamás: A nuestras mamás las queremos mucho."
         }
       },
       "examples": [
-        "A mis papás los quiero mucho.",
+        "A nuestros papás los queremos mucho.",
         "A mi mamá la quiero mucho."
       ],
-      "tr": { "en": "I love my parents very much.", "es": "A mis papás los quiero mucho." }
+      "tr": { "en": "We love our parents very much.", "es": "A nuestros papás los queremos mucho." }
     },
     {
       "id": "od-match-01",
       "kind": "match",
       "pairs": [
-        { "es": "lo tengo aquí", "en": "I have it here" },
-        { "es": "la conozco bien", "en": "I know her well" },
-        { "es": "los veo mañana", "en": "I'll see them tomorrow" },
-        { "es": "las llevo yo", "en": "I carry them" },
+        { "es": "lo tienes aquí", "en": "you have it here" },
+        { "es": "la conoce bien", "en": "he/she knows her well" },
+        { "es": "los vemos mañana", "en": "we'll see them tomorrow" },
+        { "es": "las llevan", "en": "they carry them" },
         { "es": "te ayudo", "en": "I help you" },
         { "es": "nos espera", "en": "he/she waits for us" }
       ]
@@ -862,9 +862,9 @@
       "id": "od-match-02",
       "kind": "match",
       "pairs": [
-        { "es": "voy a verte", "en": "I'll see you" },
-        { "es": "voy a llamarlo", "en": "I'll call him" },
-        { "es": "estoy comiéndola", "en": "I'm eating it" },
+        { "es": "va a verte", "en": "he/she will see you" },
+        { "es": "vamos a llamarlo", "en": "we'll call him" },
+        { "es": "están comiéndola", "en": "they're eating it" },
         { "es": "no lo tengo", "en": "I don't have it" },
         { "es": "llámalo ahora", "en": "call him now" },
         { "es": "cómprala mañana", "en": "buy it tomorrow" }
@@ -1045,11 +1045,11 @@
     {
       "kind": "why",
       "id": "pod-why-02",
-      "es": "La llevo yo.",
+      "es": "La lleva ella.",
       "target": "La",
       "tr": {
-        "en": "I'll carry it.",
-        "es": "La llevo yo."
+        "en": "She carries it.",
+        "es": "La lleva ella."
       },
       "options": [
         {
@@ -1058,8 +1058,8 @@
             "es": "masculino singular"
           },
           "wrong": {
-            "en": "Lo would replace a masculine thing (\"¿El libro? Lo llevo yo\"); here \"la mochila\" is feminine, so la.",
-            "es": "Lo sustituiría algo masculino (\"¿El libro? Lo llevo yo\"); aquí \"la mochila\" es femenino, por eso la."
+            "en": "Lo would replace a masculine thing (\"¿El libro? Lo lleva ella\"); here \"la mochila\" is feminine, so la.",
+            "es": "Lo sustituiría algo masculino (\"¿El libro? Lo lleva ella\"); aquí \"la mochila\" es femenino, por eso la."
           }
         },
         {
@@ -1074,8 +1074,8 @@
             "es": "femenino plural"
           },
           "wrong": {
-            "en": "Las would replace PLURAL feminine things (\"¿Las llaves? Las llevo yo\"); here it is a single backpack, so singular: la.",
-            "es": "Las sustituiría cosas femeninas PLURALES (\"¿Las llaves? Las llevo yo\"); aquí es una sola mochila, por eso singular: la."
+            "en": "Las would replace PLURAL feminine things (\"¿Las llaves? Las lleva ella\"); here it is a single backpack, so singular: la.",
+            "es": "Las sustituiría cosas femeninas PLURALES (\"¿Las llaves? Las lleva ella\"); aquí es una sola mochila, por eso singular: la."
           }
         }
       ],
@@ -1084,11 +1084,11 @@
     {
       "kind": "why",
       "id": "pod-why-03",
-      "es": "Los tengo aquí.",
+      "es": "Los tienen aquí.",
       "target": "Los",
       "tr": {
-        "en": "I have them here.",
-        "es": "Los tengo aquí."
+        "en": "They have them here.",
+        "es": "Los tienen aquí."
       },
       "options": [
         {
@@ -1097,8 +1097,8 @@
             "es": "masculino singular"
           },
           "wrong": {
-            "en": "Lo would replace a SINGULAR masculine thing (\"¿El libro? Lo tengo aquí\"); here it is SEVERAL books, so plural: los.",
-            "es": "Lo sustituiría algo masculino SINGULAR (\"¿El libro? Lo tengo aquí\"); aquí son VARIOS libros, por eso plural: los."
+            "en": "Lo would replace a SINGULAR masculine thing (\"¿El libro? Lo tienen aquí\"); here it is SEVERAL books, so plural: los.",
+            "es": "Lo sustituiría algo masculino SINGULAR (\"¿El libro? Lo tienen aquí\"); aquí son VARIOS libros, por eso plural: los."
           }
         },
         {
@@ -1113,8 +1113,8 @@
             "es": "femenino plural"
           },
           "wrong": {
-            "en": "Las would replace feminine, plural things (\"¿Las llaves? Las tengo aquí\"); here \"los libros\" is masculine, so los.",
-            "es": "Las sustituiría cosas femeninas y plurales (\"¿Las llaves? Las tengo aquí\"); aquí \"los libros\" es masculino, por eso los."
+            "en": "Las would replace feminine, plural things (\"¿Las llaves? Las tienen aquí\"); here \"los libros\" is masculine, so los.",
+            "es": "Las sustituiría cosas femeninas y plurales (\"¿Las llaves? Las tienen aquí\"); aquí \"los libros\" es masculino, por eso los."
           }
         }
       ],
@@ -1123,11 +1123,11 @@
     {
       "kind": "why",
       "id": "pod-why-04",
-      "es": "Las tengo en la bolsa.",
+      "es": "Las tienes en la bolsa.",
       "target": "Las",
       "tr": {
-        "en": "I have them in the bag.",
-        "es": "Las tengo en la bolsa."
+        "en": "You have them in the bag.",
+        "es": "Las tienes en la bolsa."
       },
       "options": [
         {
@@ -1136,8 +1136,8 @@
             "es": "masculino o mixto plural"
           },
           "wrong": {
-            "en": "Los would replace a masculine or mixed group (\"¿Los libros? Los tengo en la bolsa\"); here \"las llaves\" are all feminine, so las.",
-            "es": "Los sustituiría un grupo masculino o mixto (\"¿Los libros? Los tengo en la bolsa\"); aquí \"las llaves\" son todas femeninas, por eso las."
+            "en": "Los would replace a masculine or mixed group (\"¿Los libros? Los tienes en la bolsa\"); here \"las llaves\" are all feminine, so las.",
+            "es": "Los sustituiría un grupo masculino o mixto (\"¿Los libros? Los tienes en la bolsa\"); aquí \"las llaves\" son todas femeninas, por eso las."
           }
         },
         {
@@ -1148,12 +1148,12 @@
         },
         {
           "text": {
-            "en": "1st/2nd person",
-            "es": "1.ª/2.ª persona"
+            "en": "second person singular, informal",
+            "es": "segunda persona del singular, informal"
           },
           "wrong": {
-            "en": "Me/te/nos/os would mark myself or the person I am talking to; here we replace a THING (las llaves), so las.",
-            "es": "Me/te/nos/os marcaría a mí mismo o a mi interlocutor; aquí sustituimos una COSA (las llaves), por eso las."
+            "en": "Te would mark the person I am talking to; here we replace a THING (las llaves), so las.",
+            "es": "Te marcaría a mi interlocutor; aquí sustituimos una COSA (las llaves), por eso las."
           }
         }
       ],
@@ -1191,8 +1191,8 @@
         },
         {
           "text": {
-            "en": "1st/2nd person",
-            "es": "1.ª/2.ª persona"
+            "en": "second person singular, informal",
+            "es": "segunda persona del singular, informal"
           }
         }
       ],
@@ -1220,8 +1220,8 @@
         },
         {
           "text": {
-            "en": "1st/2nd person",
-            "es": "1.ª/2.ª persona"
+            "en": "first person plural: we or us",
+            "es": "primera persona del plural: nosotros"
           }
         },
         {
@@ -1240,11 +1240,11 @@
     {
       "kind": "why",
       "id": "pod-why-07",
-      "es": "La conozco.",
+      "es": "La conocemos.",
       "target": "La",
       "tr": {
-        "en": "I know her.",
-        "es": "La conozco."
+        "en": "We know her.",
+        "es": "La conocemos."
       },
       "options": [
         {
@@ -1253,8 +1253,8 @@
             "es": "masculino singular"
           },
           "wrong": {
-            "en": "Lo would replace a masculine person (\"¿Conoces a Juan? Sí, lo conozco\"); here it is a FEMININE person, so la.",
-            "es": "Lo sustituiría a una persona masculina (\"¿Conoces a Juan? Sí, lo conozco\"); aquí es una persona FEMENINA, por eso la."
+            "en": "Lo would replace a masculine person (\"¿Conocen a Juan? Sí, lo conocemos\"); here it is a FEMININE person, so la.",
+            "es": "Lo sustituiría a una persona masculina (\"¿Conocen a Juan? Sí, lo conocemos\"); aquí es una persona FEMENINA, por eso la."
           }
         },
         {
@@ -1290,21 +1290,21 @@
       "id": "od-tr-02",
       "kind": "transform",
       "tense": { "from": "presente", "to": "ir-a" },
-      "prompt": { "en": "I see her.", "es": "La veo." },
-      "answer": "La voy a ver.",
-      "accept": ["Voy a verla."],
+      "prompt": { "en": "We see her.", "es": "La vemos." },
+      "answer": "La vamos a ver.",
+      "accept": ["Vamos a verla."],
       "wordIds": ["33", "78"],
-      "why": { "en": "With ir a + infinitive la can go before voy a or attached to the infinitive: la voy a ver / voy a verla.", "es": "Con ir a + infinitivo la puede ir antes de voy a o pegada al infinitivo: la voy a ver / voy a verla." }
+      "why": { "en": "With ir a + infinitive la can go before vamos a or attached to the infinitive: la vamos a ver / vamos a verla.", "es": "Con ir a + infinitivo la puede ir antes de vamos a o pegada al infinitivo: la vamos a ver / vamos a verla." }
     },
     {
       "id": "od-tr-03",
       "kind": "transform",
       "tense": { "from": "presente", "to": "ir-a" },
-      "prompt": { "en": "I take them.", "es": "Los llevo." },
-      "answer": "Los voy a llevar.",
-      "accept": ["Voy a llevarlos."],
+      "prompt": { "en": "They take them.", "es": "Los llevan." },
+      "answer": "Los van a llevar.",
+      "accept": ["Van a llevarlos."],
       "wordIds": ["33", "202"],
-      "why": { "en": "Los (masculine plural) stays the same: los voy a llevar / voy a llevarlos.", "es": "Los (masculino plural) se queda igual: los voy a llevar / voy a llevarlos." }
+      "why": { "en": "Los (masculine plural) stays the same: los van a llevar / van a llevarlos.", "es": "Los (masculino plural) se queda igual: los van a llevar / van a llevarlos." }
     },
     {
       "id": "od-tr-04",
@@ -1320,37 +1320,37 @@
       "id": "od-tr-05",
       "kind": "transform",
       "tense": { "from": "presente", "to": "ir-a" },
-      "prompt": { "en": "I call you.", "es": "Te llamo." },
-      "answer": "Te voy a llamar.",
-      "accept": ["Voy a llamarte."],
+      "prompt": { "en": "He calls you.", "es": "Te llama." },
+      "answer": "Te va a llamar.",
+      "accept": ["Va a llamarte."],
       "wordIds": ["33", "89"],
-      "why": { "en": "Te stays the same: te voy a llamar / voy a llamarte.", "es": "Te se queda igual: te voy a llamar / voy a llamarte." }
+      "why": { "en": "Te stays the same: te va a llamar / va a llamarte.", "es": "Te se queda igual: te va a llamar / va a llamarte." }
     },
     {
       "id": "od-cloze-01",
       "kind": "opencloze",
       "trial": true,
-      "text": "¿Mi padre? ___ llamo hoy. ¿Mis padres? ___ llamo mañana.",
+      "text": "¿Tu padre? ___ llamas hoy. ¿Tus padres? ___ llamas mañana.",
       "answers": ["Lo", "Los"],
-      "tr": { "en": "My father? I call him today. My parents? I call them tomorrow.", "es": "¿Mi padre? Lo llamo hoy. ¿Mis padres? Los llamo mañana." },
-      "why": { "en": "Lo replaces one man (singular) and los several people: lo llamo, los llamo.", "es": "Lo sustituye a un hombre (singular) y los a varias personas: lo llamo, los llamo." }
+      "tr": { "en": "Your father? You call him today. Your parents? You call them tomorrow.", "es": "¿Tu padre? Lo llamas hoy. ¿Tus padres? Los llamas mañana." },
+      "why": { "en": "Lo replaces one man (singular) and los several people: lo llamas, los llamas.", "es": "Lo sustituye a un hombre (singular) y los a varias personas: lo llamas, los llamas." }
     },
     {
       "id": "od-cloze-02",
       "kind": "opencloze",
       "trial": true,
-      "text": "¿El pan? ___ como en casa. ¿Las frutas? ___ compro en el mercado.",
+      "text": "¿El pan? ___ comemos en casa. ¿Las frutas? ___ compramos en el mercado.",
       "answers": ["Lo", "Las"],
-      "tr": { "en": "The bread? I eat it at home. The fruits? I buy them at the market.", "es": "¿El pan? Lo como en casa. ¿Las frutas? Las compro en el mercado." },
+      "tr": { "en": "The bread? We eat it at home. The fruits? We buy them at the market.", "es": "¿El pan? Lo comemos en casa. ¿Las frutas? Las compramos en el mercado." },
       "why": { "en": "Lo replaces pan (masculine singular) and las replaces frutas (feminine plural).", "es": "Lo sustituye a pan (masculino singular) y las a frutas (femenino plural)." }
     },
     {
       "id": "od-cloze-03",
       "kind": "opencloze",
       "trial": true,
-      "text": "¿Mi carro? ___ vendo hoy. ¿Mis zapatos? ___ vendo mañana.",
+      "text": "¿El carro de Ana? ___ vende hoy. ¿Los zapatos de Ana? ___ vende mañana.",
       "answers": ["Lo", "Los"],
-      "tr": { "en": "My car? I sell it today. My shoes? I sell them tomorrow.", "es": "¿Mi carro? Lo vendo hoy. ¿Mis zapatos? Los vendo mañana." },
+      "tr": { "en": "Ana's car? She sells it today. Ana's shoes? She sells them tomorrow.", "es": "¿El carro de Ana? Lo vende hoy. ¿Los zapatos de Ana? Los vende mañana." },
       "why": { "en": "Lo replaces carro (masculine singular) and los replaces zapatos (masculine plural).", "es": "Lo sustituye a carro (masculino singular) y los a zapatos (masculino plural)." }
     },
     {
@@ -1366,40 +1366,40 @@
       "id": "od-cloze-05",
       "kind": "opencloze",
       "trial": true,
-      "text": "¿Mi libro? Sí, ___ tengo. ¿Mis llaves? No, no ___ tengo.",
+      "text": "¿Su libro? Sí, ___ tienen. ¿Sus llaves? No, no ___ tienen.",
       "answers": ["lo", "las"],
-      "tr": { "en": "My book? Yes, I have it. My keys? No, I do not have them.", "es": "¿Mi libro? Sí, lo tengo. ¿Mis llaves? No, no las tengo." },
+      "tr": { "en": "Their book? Yes, they have it. Their keys? No, they do not have them.", "es": "¿Su libro? Sí, lo tienen. ¿Sus llaves? No, no las tienen." },
       "why": { "en": "Lo replaces libro (masculine singular) and las replaces llaves (feminine plural).", "es": "Lo sustituye a libro (masculino singular) y las a llaves (femenino plural)." }
     },
     {
       "id": "od-fix-01",
       "kind": "fix",
       "trial": true,
-      "es": "¿La mochila? Lo llevo yo.",
+      "es": "¿La mochila? Lo lleva ella.",
       "wrongIndex": 2,
       "answer": "La",
       "explain": { "en": "Mochila is feminine singular, so the pronoun is la.", "es": "Mochila es femenino singular, así que el pronombre es la." },
-      "tr": { "en": "The backpack? I carry it.", "es": "¿La mochila? La llevo yo." }
+      "tr": { "en": "The backpack? She carries it.", "es": "¿La mochila? La lleva ella." }
     },
     {
       "id": "od-fix-02",
       "kind": "fix",
       "trial": true,
-      "es": "¿Los libros? Lo tengo aquí.",
+      "es": "¿Los libros? Lo tienen aquí.",
       "wrongIndex": 2,
       "answer": "Los",
       "explain": { "en": "Libros is masculine plural, so the pronoun is los.", "es": "Libros es masculino plural, así que el pronombre es los." },
-      "tr": { "en": "The books? I have them here.", "es": "¿Los libros? Los tengo aquí." }
+      "tr": { "en": "The books? They have them here.", "es": "¿Los libros? Los tienen aquí." }
     },
     {
       "id": "od-fix-03",
       "kind": "fix",
       "trial": true,
-      "es": "¿Las llaves? La tengo en la bolsa.",
+      "es": "¿Las llaves? La tienes en la bolsa.",
       "wrongIndex": 2,
       "answer": "Las",
       "explain": { "en": "Llaves is feminine plural, so the pronoun is las.", "es": "Llaves es femenino plural, así que el pronombre es las." },
-      "tr": { "en": "The keys? I have them in the bag.", "es": "¿Las llaves? Las tengo en la bolsa." }
+      "tr": { "en": "The keys? You have them in the bag.", "es": "¿Las llaves? Las tienes en la bolsa." }
     },
     {
       "id": "od-fix-04",
@@ -1415,11 +1415,11 @@
       "id": "od-fix-05",
       "kind": "fix",
       "trial": true,
-      "es": "¿Ana? Sí, lo conozco.",
+      "es": "¿Ana? Sí, lo conocemos.",
       "wrongIndex": 2,
       "answer": "la",
       "explain": { "en": "Ana is a woman, so the pronoun is la.", "es": "Ana es una mujer, así que el pronombre es la." },
-      "tr": { "en": "Ana? Yes, I know her.", "es": "¿Ana? Sí, la conozco." }
+      "tr": { "en": "Ana? Yes, we know her.", "es": "¿Ana? Sí, la conocemos." }
     },
     {
       "id": "od-bank-01",
@@ -1437,44 +1437,44 @@
       "kind": "bank",
       "trial": true,
       "bank": ["leer", "beber", "correr"],
-      "es": "¿La carta? Yo la ___ ahora.",
+      "es": "¿La carta? Ella la ___ ahora.",
       "word": "leer",
-      "answer": "leo",
-      "tr": { "en": "The letter? I read it now.", "es": "¿La carta? Yo la leo ahora." },
-      "why": { "en": "The pronoun goes before the conjugated verb: la leo.", "es": "El pronombre va antes del verbo conjugado: la leo." }
+      "answer": "lee",
+      "tr": { "en": "The letter? She reads it now.", "es": "¿La carta? Ella la lee ahora." },
+      "why": { "en": "The pronoun goes before the conjugated verb: la lee.", "es": "El pronombre va antes del verbo conjugado: la lee." }
     },
     {
       "id": "od-bank-03",
       "kind": "bank",
       "trial": true,
       "bank": ["abrir", "comer", "escribir"],
-      "es": "¿Las ventanas? Yo las ___ ahora.",
+      "es": "¿Las ventanas? Nosotros las ___ ahora.",
       "word": "abrir",
-      "answer": "abro",
-      "tr": { "en": "The windows? I open them now.", "es": "¿Las ventanas? Yo las abro ahora." },
-      "why": { "en": "The pronoun goes before the conjugated verb: las abro.", "es": "El pronombre va antes del verbo conjugado: las abro." }
+      "answer": "abrimos",
+      "tr": { "en": "The windows? We open them now.", "es": "¿Las ventanas? Nosotros las abrimos ahora." },
+      "why": { "en": "The pronoun goes before the conjugated verb: las abrimos.", "es": "El pronombre va antes del verbo conjugado: las abrimos." }
     },
     {
       "id": "od-bank-04",
       "kind": "bank",
       "trial": true,
       "bank": ["ver", "beber", "comer"],
-      "es": "¿Mis padres? Yo los ___ hoy.",
+      "es": "¿Mis padres? Tú los ___ hoy.",
       "word": "ver",
-      "answer": "veo",
-      "tr": { "en": "My parents? I see them today.", "es": "¿Mis padres? Yo los veo hoy." },
-      "why": { "en": "The pronoun goes before the conjugated verb: los veo.", "es": "El pronombre va antes del verbo conjugado: los veo." }
+      "answer": "ves",
+      "tr": { "en": "My parents? You see them today.", "es": "¿Mis padres? Tú los ves hoy." },
+      "why": { "en": "The pronoun goes before the conjugated verb: los ves.", "es": "El pronombre va antes del verbo conjugado: los ves." }
     },
     {
       "id": "od-bank-05",
       "kind": "bank",
       "trial": true,
       "bank": ["llamar", "comer", "beber"],
-      "es": "¿Tu madre? Yo la ___ mañana.",
+      "es": "¿Tu madre? Ellos la ___ mañana.",
       "word": "llamar",
-      "answer": "llamo",
-      "tr": { "en": "Your mother? I call her tomorrow.", "es": "¿Tu madre? Yo la llamo mañana." },
-      "why": { "en": "The pronoun goes before the conjugated verb: la llamo.", "es": "El pronombre va antes del verbo conjugado: la llamo." }
+      "answer": "llaman",
+      "tr": { "en": "Your mother? They call her tomorrow.", "es": "¿Tu madre? Ellos la llaman mañana." },
+      "why": { "en": "The pronoun goes before the conjugated verb: la llaman.", "es": "El pronombre va antes del verbo conjugado: la llaman." }
     },
     {
       "id": "od-order-01",
@@ -1487,22 +1487,22 @@
       "id": "od-order-02",
       "kind": "order",
       "trial": true,
-      "prompt": { "en": "The keys? Yes, I have them.", "es": "¿Las llaves? Sí, las tengo." },
-      "es": "¿Las llaves? Sí, las tengo."
+      "prompt": { "en": "The keys? Yes, we have them.", "es": "¿Las llaves? Sí, las tenemos." },
+      "es": "¿Las llaves? Sí, las tenemos."
     },
     {
       "id": "od-order-03",
       "kind": "order",
       "trial": true,
-      "prompt": { "en": "I see you very well.", "es": "Te veo muy bien." },
-      "es": "Te veo muy bien."
+      "prompt": { "en": "She sees you very well.", "es": "Ella te ve muy bien." },
+      "es": "Ella te ve muy bien."
     },
     {
       "id": "od-order-04",
       "kind": "order",
       "trial": true,
-      "prompt": { "en": "I am going to call her.", "es": "Voy a llamarla." },
-      "es": "Voy a llamarla."
+      "prompt": { "en": "You are going to call her.", "es": "Vas a llamarla." },
+      "es": "Vas a llamarla."
     },
     {
       "id": "od-order-05",
