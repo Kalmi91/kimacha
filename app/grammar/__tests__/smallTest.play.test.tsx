@@ -13,6 +13,8 @@ jest.mock('@/lib/speech', () => require('@/test-utils/mocks').speechMock());
 jest.mock('@/lib/chime', () => ({ playChime: jest.fn((done?: () => void) => done?.()) }));
 const mockBack = jest.fn();
 const mockPush = jest.fn();
+// which typed task kind the B1 topic lt-5 holds (the resume test below plays each of them)
+let mockB1Kind = 'opencloze';
 let mockParams: { level?: string } = { level: 'a1' };
 // the focus hook is driven by hand: `blur()` / `focus()` play leaving the screen for the lesson and coming back
 let mockFocusCb: (() => void | (() => void)) | null = null;
@@ -49,6 +51,7 @@ jest.mock('@/lib/grammar/syllabus', () => {
     { id: 'lt-2', level: 'A1', title: 'Gamma topic', tier: 'exam' },
     { id: 'lt-3', level: 'A1', title: 'Delta topic', tier: 'full' },
     { id: 'lt-4', level: 'A2', title: 'Epsilon topic', tier: 'core' },
+    { id: 'lt-5', level: 'B1', title: 'Zeta topic', tier: 'core' },
   ];
   const lessons: Record<string, unknown> = {};
   for (const d of defs) {
@@ -80,7 +83,18 @@ jest.mock('@/lib/grammar/syllabus', () => {
     syllabusLevels: () => ['A1', 'A2', 'B1', 'C1'],
     syllabusForLevel: (level: string) => topics.filter((tp) => tp.level === level),
     hasLesson: (_lang: string, id: string) => id in lessons,
-    lessonFor: (_lang: string, id: string) => lessons[id],
+    lessonFor: (_lang: string, id: string) => {
+      if (id !== 'lt-5') return lessons[id];
+      const tr = { en: 'tr' };
+      const why = { en: 'why' };
+      const make: Record<string, (i: number) => object> = {
+        opencloze: (i) => ({ kind: 'opencloze', text: `Mi hermano está aquí ${i}. ___ veo todos los días.`, answers: ['Lo'], tr, why }),
+        fix: (i) => ({ kind: 'fix', es: `Los casa ${i} son rojas.`, wrongIndex: 1, answer: 'casas', tr, explain: why }),
+        bank: (i) => ({ kind: 'bank', bank: ['rojo', 'alto'], es: `Los coches ${i} son ___.`, word: 'rojo', answer: 'rojos', tr, why }),
+        noun: (i) => ({ kind: 'noun', base: `la ciudad ${i}`, ask: { en: 'plural' }, answer: 'las ciudades', why }),
+      };
+      return { ...base, topic: id, level: 'B1', items: Array.from({ length: 8 }, (_, i) => ({ ...make[mockB1Kind](i), id: `lt-5-x${i}` })) };
+    },
     getGrammarTier: (id: string) => defs.find((d) => d.id === id)?.tier ?? 'full',
   };
 });
@@ -403,5 +417,66 @@ describe.each(['brand', 'classic'] as const)('grammar small test (%s palette)', 
     await press('bank-check');
     await press('grammar-next');
     expect(text('small-test-header')).toBe('A2 test · 3/10');
+  });
+});
+
+// FB677: a typed task (open cloze, error correction, word bank, noun form) answered WRONG shows its own feedback; leaving
+// with the X there and coming back must not show the same question again (the answer is saved when it is checked).
+describe.each([
+  ['opencloze', async () => {
+    fireEvent.changeText(screen.getByTestId('cloze-input-0'), 'zzz');
+    await press('cloze-check');
+  }],
+  ['fix', async () => {
+    await press('fix-word-1');
+    fireEvent.changeText(screen.getByTestId('fix-input'), 'zzz');
+    await press('fix-check');
+  }],
+  ['bank', async () => {
+    fireEvent.changeText(screen.getByTestId('bank-input'), 'zzz');
+    await press('bank-check');
+  }],
+  ['noun', async () => {
+    fireEvent.changeText(screen.getByTestId('noun-input'), 'zzz');
+    await press('noun-check');
+  }],
+] as const)('grammar small test, typed kind %s: leaving on its own feedback card', (kind, answerWrong) => {
+  beforeEach(async () => {
+    jest.clearAllMocks();
+    mockB1Kind = kind;
+    mockParams = { level: 'b1' };
+    mockNow = NOW;
+    jest.spyOn(Date, 'now').mockImplementation(() => mockNow);
+    const db = getDb();
+    await db.setOnboarding('en', 'es');
+    (db as any).__setLevelForTest('A1');
+    await db.resetGameProgress(GRAMMAR_RANDOM_KEY);
+    await saveResumeValue(db, smallKey('en→es', 'B1'), null);
+  });
+  afterEach(() => (Date.now as jest.Mock).mockRestore());
+
+  const open = async () => {
+    const view = render(
+      <ThemeProvider>
+        <SmallTestScreen />
+      </ThemeProvider>
+    );
+    await flush();
+    return view;
+  };
+
+  it('a wrong answer, X on the feedback, back in: the next question comes, the miss is in the run', async () => {
+    const first = await open();
+    await press('small-test-start');
+    const before = (await loadSmallState(getDb(), 'en→es', 'B1')).run!.current!.qid;
+    await answerWrong();
+    await press('small-test-close');
+    first.unmount();
+    await open();
+    const st = await loadSmallState(getDb(), 'en→es', 'B1');
+    expect(st.run!.answers).toHaveLength(1);
+    expect(st.run!.answers[0]).toMatchObject({ qid: before, ok: false });
+    expect(st.run!.current!.qid).not.toBe(before);
+    expect(text('small-test-header')).toBe('B1 test · 2/10');
   });
 });

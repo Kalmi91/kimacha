@@ -48,6 +48,7 @@ function TypedItem({
   learnedLang,
   strictAccents,
   onDone,
+  onShown,
 }: {
   prefix: string;
   itemId: string;
@@ -67,6 +68,8 @@ function TypedItem({
   learnedLang: string;
   strictAccents: boolean;
   onDone: (correct: boolean) => void;
+  /** The answer is checked (its feedback is on screen), before Next. */
+  onShown?: (correct: boolean) => void;
 }) {
   const g = useGrammarColors();
   const s = t();
@@ -82,6 +85,7 @@ function TypedItem({
     Keyboard.dismiss(); // the feedback (right answer, why) must not sit behind the keyboard
     const typedRight = isRight(typed);
     setResult({ correct: typedRight && !forceWrong, typedRight });
+    onShown?.(typedRight && !forceWrong);
     speak(filled, locale);
   };
 
@@ -160,10 +164,11 @@ type TypedProps<T> = {
   contentLang: Lang;
   strictAccents: boolean;
   onDone: (correct: boolean) => void;
+  onShown?: (correct: boolean) => void;
 };
 
 // ---------------------------------------------------------------- open cloze
-export function ClozeDrillItem({ item, learnedLang, contentLang, strictAccents, onDone }: TypedProps<ClozeItem>) {
+export function ClozeDrillItem({ item, learnedLang, contentLang, strictAccents, onDone, onShown }: TypedProps<ClozeItem>) {
   const g = useGrammarColors();
   const s = t();
   const locale = speechLang(learnedLang);
@@ -191,7 +196,9 @@ export function ClozeDrillItem({ item, learnedLang, contentLang, strictAccents, 
   const check = () => {
     if (result || typed.some((x) => x.trim() === '')) return;
     Keyboard.dismiss();
-    setResult(gradeCloze(item, typed, strictAccents));
+    const graded = gradeCloze(item, typed, strictAccents);
+    setResult(graded);
+    onShown?.(graded.every(Boolean));
     speak(filledCloze(item.text, item.answers), locale);
   };
 
@@ -274,7 +281,7 @@ export function ClozeDrillItem({ item, learnedLang, contentLang, strictAccents, 
 }
 
 // ---------------------------------------------------------------- error correction: find AND type the fix
-export function FixDrillItem({ item, learnedLang, contentLang, strictAccents, onDone }: TypedProps<FixItem>) {
+export function FixDrillItem({ item, learnedLang, contentLang, strictAccents, onDone, onShown }: TypedProps<FixItem>) {
   const g = useGrammarColors();
   const s = t();
   const words = useMemo(() => item.es.split(/\s+/).filter(Boolean), [item.es]);
@@ -330,12 +337,13 @@ export function FixDrillItem({ item, learnedLang, contentLang, strictAccents, on
       learnedLang={learnedLang}
       strictAccents={strictAccents}
       onDone={onDone}
+      onShown={onShown}
     />
   );
 }
 
 // ---------------------------------------------------------------- word bank
-export function BankDrillItem({ item, learnedLang, contentLang, strictAccents, onDone }: TypedProps<BankItem>) {
+export function BankDrillItem({ item, learnedLang, contentLang, strictAccents, onDone, onShown }: TypedProps<BankItem>) {
   const g = useGrammarColors();
   const s = t();
   const head = (
@@ -369,12 +377,13 @@ export function BankDrillItem({ item, learnedLang, contentLang, strictAccents, o
       learnedLang={learnedLang}
       strictAccents={strictAccents}
       onDone={onDone}
+      onShown={onShown}
     />
   );
 }
 
 // ---------------------------------------------------------------- typed noun form (article + plural)
-export function NounDrillItem({ item, learnedLang, contentLang, strictAccents, onDone }: TypedProps<NounItem>) {
+export function NounDrillItem({ item, learnedLang, contentLang, strictAccents, onDone, onShown }: TypedProps<NounItem>) {
   const g = useGrammarColors();
   const head = (
     <>
@@ -399,6 +408,7 @@ export function NounDrillItem({ item, learnedLang, contentLang, strictAccents, o
       learnedLang={learnedLang}
       strictAccents={strictAccents}
       onDone={onDone}
+      onShown={onShown}
     />
   );
 }

@@ -510,6 +510,7 @@ export default function SmallTestScreen() {
                 learnedLang={data.learnedLang}
                 contentLang={data.contentLang as never}
                 strictAccents={strictAccents}
+                onShown={(ok) => guardOpen() && stRef.current && commit(markShown(stRef.current, ok))}
                 onDone={(ok) => (!guardOpen() ? setRedo((n) => n + 1) : ok ? settle(true) : show(cur, false))}
               />
             </ScrollView>
