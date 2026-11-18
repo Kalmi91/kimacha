@@ -2,7 +2,7 @@
 // of its own voice (engine + person), shows its state, and never changes the picked voice.
 
 import { Pressable, View } from 'react-native';
-import { fireEvent, render } from '@testing-library/react-native';
+import { fireEvent, render, within } from '@testing-library/react-native';
 
 import { ThemeProvider } from '@/lib/ThemeContext';
 import { DEFAULT_SPEAKERS, PIPER_MODEL_KEYS } from '@/lib/neuralVoices';
@@ -88,6 +88,9 @@ describe('voice samples on the Voice cards', () => {
     expect(playing.props.accessibilityState.selected).toBe(true);
     expect(view.getByTestId('voice-sample-en-piper-f').props.accessibilityState.selected).toBe(false);
     expect(view.getAllByText('■')).toHaveLength(1);
+    expect(within(playing).getByText('Stop')).toBeTruthy();
+    expect(within(playing).queryByText('Listen')).toBeNull();
+    expect(view.getAllByText('Listen')).toHaveLength(11);
     fireEvent.press(playing);
     expect(mockStop).toHaveBeenCalledTimes(1);
     expect(mockPlay).not.toHaveBeenCalled();

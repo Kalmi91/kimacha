@@ -91,7 +91,8 @@ export default function SpeakerPickerRows({ Row, languages: voiceLanguages }: { 
             <Text style={[styles.title, { color: colors.textMuted }]}>{langName(lang)}</Text>
             <Row>
               <View style={styles.card}>
-                <Text style={[styles.label, { color: colors.text }]}>{s.title}</Text>
+                <Text style={[styles.label, { color: colors.text }]}>{s.question(lang)}</Text>
+                <Text style={[styles.hint, { color: colors.textMuted }]}>{s.pickHint}</Text>
                 <View style={styles.sampleBox}>
                   <Text style={[styles.hint, { color: colors.tabIconDefault }]}>{s.sample}</Text>
                   <Text testID={`voice-sample-text-${lang}`} style={[styles.sampleText, { color: colors.text }]}>{SAMPLE_SENTENCES[lang]}</Text>
@@ -109,12 +110,22 @@ export default function SpeakerPickerRows({ Row, languages: voiceLanguages }: { 
                       disabled={running}
                       testID={`settings-speaker-${lang}-${engine}-${gender}`}
                       accessibilityRole="radio"
+                      accessibilityLabel={s.person(name, voice.gender === 'f')}
                       accessibilityState={{ checked }}
-                      style={styles.option}
+                      style={[styles.option, { borderWidth: checked ? 2.5 : 1.5, borderColor: checked ? g.a : colors.textMuted }]}
                     >
+                      <View style={[styles.radio, { borderColor: checked ? g.a : colors.textMuted }]}>
+                        {checked ? <View style={[styles.radioDot, { backgroundColor: g.a }]} /> : null}
+                      </View>
                       <View style={styles.labelBox}>
-                        <Text style={[styles.label, { color: colors.text }]}>{s.person(name, voice.gender === 'f')}</Text>
-                        <Text style={[styles.hint, { color: colors.tabIconDefault }]}>{engine === 'kokoro' ? b.kokoro : b.piper}</Text>
+                        <View style={styles.nameRow}>
+                          <Text style={[styles.name, { color: colors.text }]}>{name}</Text>
+                          {checked ? <Text style={[styles.inUse, { backgroundColor: g.a, color: g.onA }]}>{s.inUse}</Text> : null}
+                        </View>
+                        <Text style={[styles.gender, { color: colors.textMuted }]}>{voice.gender === 'f' ? s.femaleVoice : s.maleVoice}</Text>
+                        {engines.length > 1 ? (
+                          <Text style={[styles.hint, { color: colors.tabIconDefault }]}>{engine === 'kokoro' ? b.kokoro : b.piper}</Text>
+                        ) : null}
                         {kokoroMissing ? (
                           <Text style={[styles.hint, { color: colors.tabIconDefault }]}>{b.kokoroSize(formatMegabytes(NEURAL_MODELS.kokoro.bytes))}</Text>
                         ) : null}
@@ -129,8 +140,8 @@ export default function SpeakerPickerRows({ Row, languages: voiceLanguages }: { 
                         onPress={() => (playing ? stopVoiceSample() : playVoiceSample(lang, engine, gender))}
                       >
                         <Text style={[styles.playText, { color: g.ink }]}>{playing ? '■' : '▶'}</Text>
+                        <Text style={[styles.playText, { color: g.ink }]}>{playing ? s.stop : s.listen}</Text>
                       </Pressable>
-                      {checked ? <Text style={[styles.check, { color: g.ink }]}>✓</Text> : null}
                     </Pressable>
                   );
                 })}
@@ -151,13 +162,18 @@ export default function SpeakerPickerRows({ Row, languages: voiceLanguages }: { 
 const styles = StyleSheet.create({
   title: { fontSize: 12, fontWeight: '500', marginTop: 20 },
   card: { width: '100%' },
-  option: { paddingVertical: 12, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
+  option: { borderRadius: 12, padding: 12, marginTop: 8, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
+  radio: { width: 22, height: 22, borderWidth: 2, borderRadius: 11, alignItems: 'center', justifyContent: 'center', marginRight: 12 },
+  radioDot: { width: 10, height: 10, borderRadius: 5 },
   labelBox: { flex: 1, marginRight: 12 },
+  nameRow: { flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center', gap: 6 },
+  name: { fontSize: 17, fontWeight: '700', flexShrink: 1 },
+  inUse: { fontSize: 11, fontWeight: '700', borderRadius: 4, paddingHorizontal: 6, paddingVertical: 2, overflow: 'hidden' },
+  gender: { fontSize: 13, marginTop: 2 },
   label: { fontSize: 16, fontWeight: '600' },
   hint: { fontSize: 12, fontWeight: '500', marginTop: 2 },
-  check: { fontSize: 20, fontWeight: '700' },
   sampleBox: { marginTop: 4, marginBottom: 4 },
   sampleText: { fontSize: 15, fontWeight: '500', marginTop: 2 },
-  play: { width: 36, height: 36, borderWidth: 1.5, borderRadius: 18, alignItems: 'center', justifyContent: 'center', marginRight: 8 },
+  play: { height: 36, paddingHorizontal: 12, borderWidth: 1.5, borderRadius: 18, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 6 },
   playText: { fontSize: 14, fontWeight: '700' },
 });
