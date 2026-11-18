@@ -102,50 +102,50 @@
           "es": "Persona"
         },
         {
-          "en": "ver",
-          "es": "ver"
+          "en": "ver (ella)",
+          "es": "ver (ella)"
         },
         {
-          "en": "invitar",
-          "es": "invitar"
+          "en": "invitar (nosotros)",
+          "es": "invitar (nosotros)"
         },
         {
-          "en": "escribir",
-          "es": "escribir"
+          "en": "escribir (ellos)",
+          "es": "escribir (ellos)"
         },
         {
-          "en": "preguntar",
-          "es": "preguntar"
+          "en": "preguntar (tú)",
+          "es": "preguntar (tú)"
         }
       ],
       "rows": [
         [
           "a Juan",
-          "lo veo",
-          "lo invito",
-          "le escribo",
-          "le pregunto"
+          "lo ve",
+          "lo invitamos",
+          "le escriben",
+          "le preguntas"
         ],
         [
           "a María",
-          "la veo",
-          "la invito",
-          "le escribo",
-          "le pregunto"
+          "la ve",
+          "la invitamos",
+          "le escriben",
+          "le preguntas"
         ],
         [
           "a mis hermanos",
-          "los veo",
-          "los invito",
-          "les escribo",
-          "les pregunto"
+          "los ve",
+          "los invitamos",
+          "les escriben",
+          "les preguntas"
         ],
         [
           "a mis hermanas",
-          "las veo",
-          "las invito",
-          "les escribo",
-          "les pregunto"
+          "las ve",
+          "las invitamos",
+          "les escriben",
+          "les preguntas"
         ]
       ]
     },
@@ -374,7 +374,7 @@
     },
     {
       "id": "ll-ch-02",
-      "sentence": "A mi hermana ___ invité a mi fiesta.",
+      "sentence": "A nuestra hermana ___ invitamos a la fiesta.",
       "options": [
         "le",
         "la",
@@ -382,8 +382,8 @@
       ],
       "correct": 1,
       "why": {
-        "en": "Invité (I invited) takes a direct object: whom did I invite? My sister, a direct object. Feminine singular: la.",
-        "es": "Invité lleva objeto directo: ¿a quién invité? A mi hermana, un objeto directo. Femenino singular: la."
+        "en": "Invitamos (we invited) takes a direct object: whom did we invite? Our sister, a direct object. Feminine singular: la.",
+        "es": "Invitamos lleva objeto directo: ¿a quién invitamos? A nuestra hermana, un objeto directo. Femenino singular: la."
       },
       "wrong": {
         "le": {
@@ -395,11 +395,11 @@
           "es": "Las es para varias mujeres; aquí es una sola hermana, por eso singular: la. Con plural: A mis hermanas las invité."
         }
       },
-      "tr": { "en": "I invited my sister to my party.", "es": "A mi hermana la invité a mi fiesta." }
+      "tr": { "en": "We invited our sister to the party.", "es": "A nuestra hermana la invitamos a la fiesta." }
     },
     {
       "id": "ll-ch-03",
-      "sentence": "A mis vecinos ___ veo todos los días.",
+      "sentence": "A tus vecinos ___ ves todos los días.",
       "options": [
         "les",
         "los",
@@ -407,24 +407,24 @@
       ],
       "correct": 1,
       "why": {
-        "en": "Veo (I see) takes a direct object: whom do I see? My neighbors, a direct object. Masculine or mixed plural: los.",
-        "es": "Veo lleva objeto directo: ¿a quién veo? A mis vecinos, un objeto directo. Plural masculino o mixto: los."
+        "en": "Ves (you see) takes a direct object: whom do you see? Your neighbors, a direct object. Masculine or mixed plural: los.",
+        "es": "Ves lleva objeto directo: ¿a quién ves? A tus vecinos, un objeto directo. Plural masculino o mixto: los."
       },
       "wrong": {
         "les": {
-          "en": "The plural leísmo les in the direct object is less accepted even in Spain, and the Latin American norm does not know it: los veo. Les is for the indirect object: Les escribo a mis vecinos.",
-          "es": "El leísmo plural les en objeto directo se admite menos incluso en España, y la norma latinoamericana no lo conoce: los veo. Les es para el objeto indirecto: Les escribo a mis vecinos."
+          "en": "The plural leísmo les in the direct object is less accepted even in Spain, and the Latin American norm does not know it: los ves. Les is for the indirect object: Les escribes a tus vecinos.",
+          "es": "El leísmo plural les en objeto directo se admite menos incluso en España, y la norma latinoamericana no lo conoce: los ves. Les es para el objeto indirecto: Les escribes a tus vecinos."
         },
         "las": {
-          "en": "Las is only for a group of women; vecinos is masculine or mixed, so los. For women: A mis vecinas las veo todos los días.",
-          "es": "Las es solo para un grupo de mujeres; vecinos es masculino o mixto, por eso los. Con mujeres: A mis vecinas las veo todos los días."
+          "en": "Las is only for a group of women; vecinos is masculine or mixed, so los. For women: A tus vecinas las ves todos los días.",
+          "es": "Las es solo para un grupo de mujeres; vecinos es masculino o mixto, por eso los. Con mujeres: A tus vecinas las ves todos los días."
         }
       },
-      "tr": { "en": "I see my neighbors every day.", "es": "A mis vecinos los veo todos los días." }
+      "tr": { "en": "You see your neighbors every day.", "es": "A tus vecinos los ves todos los días." }
     },
     {
       "id": "ll-ch-04",
-      "sentence": "El regalo ___ compré ayer en el centro.",
+      "sentence": "El regalo ___ compraron ayer en el centro.",
       "options": [
         "la",
         "lo",
@@ -432,20 +432,20 @@
       ],
       "correct": 1,
       "why": {
-        "en": "The regalo is the thing bought: what did I buy? A direct object, masculine singular: lo.",
-        "es": "El regalo es lo que compré: ¿qué compré? Un objeto directo, masculino singular: lo."
+        "en": "The regalo is the thing bought: what did they buy? A direct object, masculine singular: lo.",
+        "es": "El regalo es lo que compraron: ¿qué compraron? Un objeto directo, masculino singular: lo."
       },
       "wrong": {
         "la": {
-          "en": "La is for a feminine thing, but regalo is masculine. With a feminine thing, la: La casa la compré ayer.",
-          "es": "La es para una cosa femenina, pero regalo es masculino. Con una cosa femenina, la: La casa la compré ayer."
+          "en": "La is for a feminine thing, but regalo is masculine. With a feminine thing, la: La casa la compraron ayer.",
+          "es": "La es para una cosa femenina, pero regalo es masculino. Con una cosa femenina, la: La casa la compraron ayer."
         },
         "le": {
           "en": "Le for a thing (leísmo de cosa) is accepted in no norm: leísmo only exists with male persons. The regalo is the object, not the recipient, so lo.",
           "es": "Le con una cosa (leísmo de cosa) no se admite en ninguna norma: el leísmo solo existe con personas masculinas. El regalo es el objeto, no el destinatario, por eso lo."
         }
       },
-      "tr": { "en": "I bought the gift downtown yesterday.", "es": "El regalo lo compré ayer en el centro." }
+      "tr": { "en": "They bought the gift downtown yesterday.", "es": "El regalo lo compraron ayer en el centro." }
     },
     {
       "id": "ll-ch-05",
@@ -474,7 +474,7 @@
     },
     {
       "id": "ll-ch-06",
-      "sentence": "A mi jefe ___ pedí un favor ayer.",
+      "sentence": "A tu jefe ___ pediste un favor ayer.",
       "options": [
         "lo",
         "le",
@@ -487,19 +487,19 @@
       },
       "wrong": {
         "lo": {
-          "en": "This is loísmo: lo would mark the direct object, but the object is already un favor; the boss is indirect, so le: Le pedí un favor.",
-          "es": "Esto es loísmo: lo marcaría el objeto directo, pero el objeto ya es un favor; el jefe es indirecto, por eso le: Le pedí un favor."
+          "en": "This is loísmo: lo would mark the direct object, but the object is already un favor; the boss is indirect, so le: Le pediste un favor.",
+          "es": "Esto es loísmo: lo marcaría el objeto directo, pero el objeto ya es un favor; el jefe es indirecto, por eso le: Le pediste un favor."
         },
         "la": {
-          "en": "La would mark a feminine direct object, but the boss is not the object, he is the recipient. With a woman as recipient it stays le: A mi tía le pedí un favor.",
-          "es": "La marcaría un objeto directo femenino, pero el jefe no es el objeto, sino el destinatario. Con una mujer como destinataria sigue siendo le: A mi tía le pedí un favor."
+          "en": "La would mark a feminine direct object, but the boss is not the object, he is the recipient. With a woman as recipient it stays le: A tu tía le pediste un favor.",
+          "es": "La marcaría un objeto directo femenino, pero el jefe no es el objeto, sino el destinatario. Con una mujer como destinataria sigue siendo le: A tu tía le pediste un favor."
         }
       },
-      "tr": { "en": "I asked my boss for a favor yesterday.", "es": "A mi jefe le pedí un favor ayer." }
+      "tr": { "en": "You asked your boss for a favor yesterday.", "es": "A tu jefe le pediste un favor ayer." }
     },
     {
       "id": "ll-ch-07",
-      "sentence": "A mis tías ___ mandé un mensaje anoche.",
+      "sentence": "A mis tías ___ mandaron un mensaje anoche.",
       "options": [
         "las",
         "le",
@@ -507,8 +507,8 @@
       ],
       "correct": 2,
       "why": {
-        "en": "Un mensaje is the object (what did I send?), my aunts are the recipients: indirect object, plural: les.",
-        "es": "Un mensaje es el objeto (¿qué mandé?), mis tías son las destinatarias: objeto indirecto, plural: les."
+        "en": "Un mensaje is the object (what did they send?), my aunts are the recipients: indirect object, plural: les.",
+        "es": "Un mensaje es el objeto (¿qué mandaron?), mis tías son las destinatarias: objeto indirecto, plural: les."
       },
       "wrong": {
         "las": {
@@ -516,11 +516,11 @@
           "es": "Esto es laísmo: las marcaría un objeto directo femenino plural, pero el objeto ya es un mensaje. Las destinatarias son indirectas: les."
         },
         "le": {
-          "en": "Le marks a singular recipient; mis tías is plural, so les. For one aunt: A mi tía le mandé un mensaje.",
-          "es": "Le marca a un destinatario singular; mis tías es plural, por eso les. Para una sola tía: A mi tía le mandé un mensaje."
+          "en": "Le marks a singular recipient; mis tías is plural, so les. For one aunt: A mi tía le mandaron un mensaje.",
+          "es": "Le marca a un destinatario singular; mis tías es plural, por eso les. Para una sola tía: A mi tía le mandaron un mensaje."
         }
       },
-      "tr": { "en": "I sent my aunts a message last night.", "es": "A mis tías les mandé un mensaje anoche." }
+      "tr": { "en": "They sent my aunts a message last night.", "es": "A mis tías les mandaron un mensaje anoche." }
     },
     {
       "id": "ll-ch-08",
@@ -624,7 +624,7 @@
     },
     {
       "id": "ll-ch-12",
-      "sentence": "A mi abuelo ___ visito cada domingo.",
+      "sentence": "A mi abuelo ___ visita mi hermana cada domingo.",
       "options": [
         "le",
         "lo",
@@ -632,44 +632,44 @@
       ],
       "correct": 1,
       "why": {
-        "en": "Visitar takes a direct object: whom do I visit? My grandfather, a direct object. Masculine singular: lo.",
-        "es": "Visitar lleva objeto directo: ¿a quién visito? A mi abuelo, un objeto directo. Masculino singular: lo."
+        "en": "Visitar takes a direct object: whom does my sister visit? My grandfather, a direct object. Masculine singular: lo.",
+        "es": "Visitar lleva objeto directo: ¿a quién visita mi hermana? A mi abuelo, un objeto directo. Masculino singular: lo."
       },
       "wrong": {
         "le": {
-          "en": "In Spain, le visito for a man (leísmo) is accepted, but the Latin American norm, which this lesson drills, is lo visito. For things and women, le is correct in no norm.",
-          "es": "En España le visito para un hombre (leísmo) se admite, pero la norma latinoamericana, que practica esta lección, es lo visito. Con cosas y con mujeres, le no es correcto en ninguna norma."
+          "en": "In Spain, le visita for a man (leísmo) is accepted, but the Latin American norm, which this lesson drills, is lo visita. For things and women, le is correct in no norm.",
+          "es": "En España le visita para un hombre (leísmo) se admite, pero la norma latinoamericana, que practica esta lección, es lo visita. Con cosas y con mujeres, le no es correcto en ninguna norma."
         },
         "la": {
-          "en": "La is for a woman; my grandfather is a man, so lo. For a grandmother: A mi abuela la visito cada domingo.",
-          "es": "La es para una mujer; mi abuelo es un hombre, por eso lo. Con una abuela: A mi abuela la visito cada domingo."
+          "en": "La is for a woman; my grandfather is a man, so lo. For a grandmother: A mi abuela la visita mi hermana cada domingo.",
+          "es": "La es para una mujer; mi abuelo es un hombre, por eso lo. Con una abuela: A mi abuela la visita mi hermana cada domingo."
         }
       },
-      "tr": { "en": "I visit my grandfather every Sunday.", "es": "A mi abuelo lo visito cada domingo." }
+      "tr": { "en": "My sister visits my grandfather every Sunday.", "es": "A mi abuelo lo visita mi hermana cada domingo." }
     },
     {
       "id": "ll-match-01",
       "kind": "match",
       "pairs": [
         {
-          "es": "lo vi ayer",
-          "en": "I saw him yesterday"
+          "es": "lo vimos ayer",
+          "en": "We saw him yesterday"
         },
         {
-          "es": "la vi ayer",
-          "en": "I saw her yesterday"
+          "es": "la viste ayer",
+          "en": "You saw her yesterday"
         },
         {
-          "es": "los vi",
-          "en": "I saw them (men)"
+          "es": "los vieron",
+          "en": "They saw them (men)"
         },
         {
-          "es": "las vi",
-          "en": "I saw them (women)"
+          "es": "las vio",
+          "en": "She saw them (women)"
         },
         {
-          "es": "le escribí",
-          "en": "I wrote to him/her"
+          "es": "le escribimos",
+          "en": "We wrote to him/her"
         },
         {
           "es": "les escribí",
@@ -680,196 +680,196 @@
     {
       "id": "ll-form-01",
       "kind": "form",
-      "verb": "ver",
+      "verb": "ver (ella)",
       "person": "a Juan",
-      "answer": "lo veo",
+      "answer": "lo ve",
       "table": "leismo-laismo",
       "wrong": {
-        "le veo": {
-          "en": "Le and les as a direct object (leísmo) are used in parts of Spain. In Mexican Spanish, a Juan is replaced by lo: lo veo.",
-          "es": "Le y les como objeto directo (leísmo) se usan en partes de España. En el español de México, a Juan se sustituye por lo: lo veo."
+        "le ve": {
+          "en": "Le and les as a direct object (leísmo) are used in parts of Spain. In Mexican Spanish, a Juan is replaced by lo: lo ve.",
+          "es": "Le y les como objeto directo (leísmo) se usan en partes de España. En el español de México, a Juan se sustituye por lo: lo ve."
         },
-        "la veo": {
-          "en": "The pronoun replaces Juan, which is masculine singular: lo veo.",
-          "es": "El pronombre sustituye a Juan, que es masculino singular: lo veo."
+        "la ve": {
+          "en": "The pronoun replaces Juan, which is masculine singular: lo ve.",
+          "es": "El pronombre sustituye a Juan, que es masculino singular: lo ve."
         }
       }
     },
     {
       "id": "ll-form-02",
       "kind": "form",
-      "verb": "ver",
+      "verb": "ver (ella)",
       "person": "a María",
-      "answer": "la veo",
+      "answer": "la ve",
       "table": "leismo-laismo",
       "wrong": {
-        "le veo": {
-          "en": "Le and les as a direct object (leísmo) are used in parts of Spain. In Mexican Spanish, a María is replaced by la: la veo.",
-          "es": "Le y les como objeto directo (leísmo) se usan en partes de España. En el español de México, a María se sustituye por la: la veo."
+        "le ve": {
+          "en": "Le and les as a direct object (leísmo) are used in parts of Spain. In Mexican Spanish, a María is replaced by la: la ve.",
+          "es": "Le y les como objeto directo (leísmo) se usan en partes de España. En el español de México, a María se sustituye por la: la ve."
         },
-        "lo veo": {
-          "en": "The pronoun replaces María, which is feminine singular: la veo.",
-          "es": "El pronombre sustituye a María, que es femenino singular: la veo."
+        "lo ve": {
+          "en": "The pronoun replaces María, which is feminine singular: la ve.",
+          "es": "El pronombre sustituye a María, que es femenino singular: la ve."
         }
       }
     },
     {
       "id": "ll-form-03",
       "kind": "form",
-      "verb": "ver",
+      "verb": "ver (ella)",
       "person": "a mis hermanos",
-      "answer": "los veo",
+      "answer": "los ve",
       "table": "leismo-laismo",
       "wrong": {
-        "les veo": {
-          "en": "Le and les as a direct object (leísmo) are used in parts of Spain. In Mexican Spanish, a mis hermanos is replaced by los: los veo.",
-          "es": "Le y les como objeto directo (leísmo) se usan en partes de España. En el español de México, a mis hermanos se sustituye por los: los veo."
+        "les ve": {
+          "en": "Le and les as a direct object (leísmo) are used in parts of Spain. In Mexican Spanish, a mis hermanos is replaced by los: los ve.",
+          "es": "Le y les como objeto directo (leísmo) se usan en partes de España. En el español de México, a mis hermanos se sustituye por los: los ve."
         },
-        "las veo": {
-          "en": "The pronoun replaces mis hermanos, which is masculine plural: los veo.",
-          "es": "El pronombre sustituye a mis hermanos, que es masculino plural: los veo."
+        "las ve": {
+          "en": "The pronoun replaces mis hermanos, which is masculine plural: los ve.",
+          "es": "El pronombre sustituye a mis hermanos, que es masculino plural: los ve."
         }
       }
     },
     {
       "id": "ll-form-04",
       "kind": "form",
-      "verb": "ver",
+      "verb": "ver (ella)",
       "person": "a mis hermanas",
-      "answer": "las veo",
+      "answer": "las ve",
       "table": "leismo-laismo",
       "wrong": {
-        "les veo": {
-          "en": "Le and les as a direct object (leísmo) are used in parts of Spain. In Mexican Spanish, a mis hermanas is replaced by las: las veo.",
-          "es": "Le y les como objeto directo (leísmo) se usan en partes de España. En el español de México, a mis hermanas se sustituye por las: las veo."
+        "les ve": {
+          "en": "Le and les as a direct object (leísmo) are used in parts of Spain. In Mexican Spanish, a mis hermanas is replaced by las: las ve.",
+          "es": "Le y les como objeto directo (leísmo) se usan en partes de España. En el español de México, a mis hermanas se sustituye por las: las ve."
         },
-        "los veo": {
-          "en": "The pronoun replaces mis hermanas, which is feminine plural: las veo.",
-          "es": "El pronombre sustituye a mis hermanas, que es femenino plural: las veo."
+        "los ve": {
+          "en": "The pronoun replaces mis hermanas, which is feminine plural: las ve.",
+          "es": "El pronombre sustituye a mis hermanas, que es femenino plural: las ve."
         }
       }
     },
     {
       "id": "ll-form-05",
       "kind": "form",
-      "verb": "invitar",
+      "verb": "invitar (nosotros)",
       "person": "a María",
-      "answer": "la invito",
+      "answer": "la invitamos",
       "table": "leismo-laismo",
       "wrong": {
-        "le invito": {
-          "en": "Le and les as a direct object (leísmo) are used in parts of Spain. In Mexican Spanish, a María is replaced by la: la invito.",
-          "es": "Le y les como objeto directo (leísmo) se usan en partes de España. En el español de México, a María se sustituye por la: la invito."
+        "le invitamos": {
+          "en": "Le and les as a direct object (leísmo) are used in parts of Spain. In Mexican Spanish, a María is replaced by la: la invitamos.",
+          "es": "Le y les como objeto directo (leísmo) se usan en partes de España. En el español de México, a María se sustituye por la: la invitamos."
         },
-        "lo invito": {
-          "en": "The pronoun replaces María, which is feminine singular: la invito.",
-          "es": "El pronombre sustituye a María, que es femenino singular: la invito."
+        "lo invitamos": {
+          "en": "The pronoun replaces María, which is feminine singular: la invitamos.",
+          "es": "El pronombre sustituye a María, que es femenino singular: la invitamos."
         }
       }
     },
     {
       "id": "ll-form-06",
       "kind": "form",
-      "verb": "invitar",
+      "verb": "invitar (nosotros)",
       "person": "a mis hermanos",
-      "answer": "los invito",
+      "answer": "los invitamos",
       "table": "leismo-laismo",
       "wrong": {
-        "les invito": {
-          "en": "Le and les as a direct object (leísmo) are used in parts of Spain. In Mexican Spanish, a mis hermanos is replaced by los: los invito.",
-          "es": "Le y les como objeto directo (leísmo) se usan en partes de España. En el español de México, a mis hermanos se sustituye por los: los invito."
+        "les invitamos": {
+          "en": "Le and les as a direct object (leísmo) are used in parts of Spain. In Mexican Spanish, a mis hermanos is replaced by los: los invitamos.",
+          "es": "Le y les como objeto directo (leísmo) se usan en partes de España. En el español de México, a mis hermanos se sustituye por los: los invitamos."
         },
-        "las invito": {
-          "en": "The pronoun replaces mis hermanos, which is masculine plural: los invito.",
-          "es": "El pronombre sustituye a mis hermanos, que es masculino plural: los invito."
+        "las invitamos": {
+          "en": "The pronoun replaces mis hermanos, which is masculine plural: los invitamos.",
+          "es": "El pronombre sustituye a mis hermanos, que es masculino plural: los invitamos."
         }
       }
     },
     {
       "id": "ll-form-07",
       "kind": "form",
-      "verb": "invitar",
+      "verb": "invitar (nosotros)",
       "person": "a mis hermanas",
-      "answer": "las invito",
+      "answer": "las invitamos",
       "table": "leismo-laismo",
       "wrong": {
-        "les invito": {
-          "en": "Le and les as a direct object (leísmo) are used in parts of Spain. In Mexican Spanish, a mis hermanas is replaced by las: las invito.",
-          "es": "Le y les como objeto directo (leísmo) se usan en partes de España. En el español de México, a mis hermanas se sustituye por las: las invito."
+        "les invitamos": {
+          "en": "Le and les as a direct object (leísmo) are used in parts of Spain. In Mexican Spanish, a mis hermanas is replaced by las: las invitamos.",
+          "es": "Le y les como objeto directo (leísmo) se usan en partes de España. En el español de México, a mis hermanas se sustituye por las: las invitamos."
         },
-        "los invito": {
-          "en": "The pronoun replaces mis hermanas, which is feminine plural: las invito.",
-          "es": "El pronombre sustituye a mis hermanas, que es femenino plural: las invito."
+        "los invitamos": {
+          "en": "The pronoun replaces mis hermanas, which is feminine plural: las invitamos.",
+          "es": "El pronombre sustituye a mis hermanas, que es femenino plural: las invitamos."
         }
       }
     },
     {
       "id": "ll-form-08",
       "kind": "form",
-      "verb": "escribir",
+      "verb": "escribir (ellos)",
       "person": "a Juan",
-      "answer": "le escribo",
+      "answer": "le escriben",
       "table": "leismo-laismo",
       "wrong": {
-        "lo escribo": {
-          "en": "Lo and los are direct object pronouns, for example \"it\" or \"them\" for things. The person who receives what you write is an indirect object: le escribo.",
-          "es": "Lo y los son pronombres de objeto directo, por ejemplo \"lo\" o \"los\" para cosas. La persona que recibe lo que se escribe es objeto indirecto: le escribo."
+        "lo escriben": {
+          "en": "Lo and los are direct object pronouns, for example \"it\" or \"them\" for things. The person who receives what you write is an indirect object: le escriben.",
+          "es": "Lo y los son pronombres de objeto directo, por ejemplo \"lo\" o \"los\" para cosas. La persona que recibe lo que se escribe es objeto indirecto: le escriben."
         }
       }
     },
     {
       "id": "ll-form-09",
       "kind": "form",
-      "verb": "escribir",
+      "verb": "escribir (ellos)",
       "person": "a María",
-      "answer": "le escribo",
+      "answer": "le escriben",
       "table": "leismo-laismo",
       "wrong": {
-        "la escribo": {
-          "en": "La and las are direct object pronouns. The person who receives what you write is an indirect object, and that is le or les for both genders: le escribo.",
-          "es": "La y las son pronombres de objeto directo. La persona que recibe lo que se escribe es objeto indirecto, y ese es le o les para los dos géneros: le escribo."
+        "la escriben": {
+          "en": "La and las are direct object pronouns. The person who receives what you write is an indirect object, and that is le or les for both genders: le escriben.",
+          "es": "La y las son pronombres de objeto directo. La persona que recibe lo que se escribe es objeto indirecto, y ese es le o les para los dos géneros: le escriben."
         }
       }
     },
     {
       "id": "ll-form-10",
       "kind": "form",
-      "verb": "escribir",
+      "verb": "escribir (ellos)",
       "person": "a mis hermanos",
-      "answer": "les escribo",
+      "answer": "les escriben",
       "table": "leismo-laismo",
       "wrong": {
-        "los escribo": {
-          "en": "Lo and los are direct object pronouns, for example \"it\" or \"them\" for things. The person who receives what you write is an indirect object: les escribo.",
-          "es": "Lo y los son pronombres de objeto directo, por ejemplo \"lo\" o \"los\" para cosas. La persona que recibe lo que se escribe es objeto indirecto: les escribo."
+        "los escriben": {
+          "en": "Lo and los are direct object pronouns, for example \"it\" or \"them\" for things. The person who receives what you write is an indirect object: les escriben.",
+          "es": "Lo y los son pronombres de objeto directo, por ejemplo \"lo\" o \"los\" para cosas. La persona que recibe lo que se escribe es objeto indirecto: les escriben."
         }
       }
     },
     {
       "id": "ll-form-11",
       "kind": "form",
-      "verb": "preguntar",
+      "verb": "preguntar (tú)",
       "person": "a María",
-      "answer": "le pregunto",
+      "answer": "le preguntas",
       "table": "leismo-laismo",
       "wrong": {
-        "la pregunto": {
-          "en": "La and las are direct object pronouns. The person who is asked is an indirect object, and that is le or les for both genders: le pregunto.",
-          "es": "La y las son pronombres de objeto directo. La persona que recibe la pregunta es objeto indirecto, y ese es le o les para los dos géneros: le pregunto."
+        "la preguntas": {
+          "en": "La and las are direct object pronouns. The person who is asked is an indirect object, and that is le or les for both genders: le preguntas.",
+          "es": "La y las son pronombres de objeto directo. La persona que recibe la pregunta es objeto indirecto, y ese es le o les para los dos géneros: le preguntas."
         }
       }
     },
     {
       "id": "ll-form-12",
       "kind": "form",
-      "verb": "preguntar",
+      "verb": "preguntar (tú)",
       "person": "a mis hermanas",
-      "answer": "les pregunto",
+      "answer": "les preguntas",
       "table": "leismo-laismo",
       "wrong": {
-        "las pregunto": {
-          "en": "La and las are direct object pronouns. The person who is asked is an indirect object, and that is le or les for both genders: les pregunto.",
-          "es": "La y las son pronombres de objeto directo. La persona que recibe la pregunta es objeto indirecto, y ese es le o les para los dos géneros: les pregunto."
+        "las preguntas": {
+          "en": "La and las are direct object pronouns. The person who is asked is an indirect object, and that is le or les for both genders: les preguntas.",
+          "es": "La y las son pronombres de objeto directo. La persona que recibe la pregunta es objeto indirecto, y ese es le o les para los dos géneros: les preguntas."
         }
       }
     },
@@ -915,11 +915,11 @@
     {
       "kind": "why",
       "id": "ll-why-02",
-      "es": "A mi profesor lo veo en la escuela.",
+      "es": "A nuestro profesor lo vemos en la escuela.",
       "target": "lo",
       "tr": {
-        "en": "I see my teacher at school.",
-        "es": "A mi profesor lo veo en la escuela."
+        "en": "We see our teacher at school.",
+        "es": "A nuestro profesor lo vemos en la escuela."
       },
       "options": [
         {
@@ -938,8 +938,8 @@
             "es": "con un objeto expreso, la persona es indirecta"
           },
           "wrong": {
-            "en": "There is no explicit object next to the person in the sentence; the object of veo is the teacher himself.",
-            "es": "En la oración no hay objeto expreso junto a la persona; el objeto de veo es el propio profesor."
+            "en": "There is no explicit object next to the person in the sentence; the object of vemos is the teacher himself.",
+            "es": "En la oración no hay objeto expreso junto a la persona; el objeto de vemos es el propio profesor."
           }
         },
         {
@@ -954,11 +954,11 @@
     {
       "kind": "why",
       "id": "ll-why-03",
-      "es": "A mi mamá le di un regalo.",
+      "es": "A mi mamá le dieron un regalo.",
       "target": "le",
       "tr": {
-        "en": "I gave my mother a gift.",
-        "es": "A mi mamá le di un regalo."
+        "en": "They gave my mother a gift.",
+        "es": "A mi mamá le dieron un regalo."
       },
       "options": [
         {
@@ -983,8 +983,8 @@
             "es": "objeto directo: a quién afecta directamente el verbo"
           },
           "wrong": {
-            "en": "Un regalo is the object (what did I give?), my mother is only the recipient, so it is not the direct object.",
-            "es": "Un regalo es el objeto (¿qué di?), mi mamá es solo la destinataria, por eso no es objeto directo."
+            "en": "Un regalo is the object (what did they give?), my mother is only the recipient, so it is not the direct object.",
+            "es": "Un regalo es el objeto (¿qué dieron?), mi mamá es solo la destinataria, por eso no es objeto directo."
           }
         }
       ],
@@ -993,11 +993,11 @@
     {
       "kind": "why",
       "id": "ll-why-04",
-      "es": "A mis tíos les escribo cada semana.",
+      "es": "A tus tíos les escribes cada semana.",
       "target": "les",
       "tr": {
-        "en": "I write to my uncles every week.",
-        "es": "A mis tíos les escribo cada semana."
+        "en": "You write to your uncles every week.",
+        "es": "A tus tíos les escribes cada semana."
       },
       "options": [
         {
@@ -1016,8 +1016,8 @@
             "es": "objeto directo: a quién afecta directamente el verbo"
           },
           "wrong": {
-            "en": "Escribir takes the indirect object with a person (to whom do I write?), not the direct one; los or las would be an error here.",
-            "es": "Escribir pide el objeto indirecto con una persona (¿a quién escribo?), no el directo; los o las serían un error aquí."
+            "en": "Escribir takes the indirect object with a person (to whom do you write?), not the direct one; los or las would be an error here.",
+            "es": "Escribir pide el objeto indirecto con una persona (¿a quién escribes?), no el directo; los o las serían un error aquí."
           }
         },
         {
@@ -1071,11 +1071,11 @@
     {
       "kind": "why",
       "id": "ll-why-06",
-      "es": "A mi tía la conozco bien.",
+      "es": "A mi tía la conocen bien.",
       "target": "la",
       "tr": {
-        "en": "I know my aunt well.",
-        "es": "A mi tía la conozco bien."
+        "en": "They know my aunt well.",
+        "es": "A mi tía la conocen bien."
       },
       "options": [
         {
@@ -1110,11 +1110,11 @@
     {
       "kind": "why",
       "id": "ll-why-07",
-      "es": "A mi mamá le hablo todos los días.",
+      "es": "A mi mamá le hablamos todos los días.",
       "target": "le",
       "tr": {
-        "en": "I talk to my mother every day.",
-        "es": "A mi mamá le hablo todos los días."
+        "en": "We talk to my mother every day.",
+        "es": "A mi mamá le hablamos todos los días."
       },
       "options": [
         {

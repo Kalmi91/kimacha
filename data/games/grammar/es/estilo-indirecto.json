@@ -178,17 +178,17 @@
       ],
       "rows": [
         [
-          "tengo → imperfecto",
+          "tiene → imperfecto",
           "tenía",
           "Dijo que tenía hambre."
         ],
         [
-          "vivo → imperfecto",
+          "vive → imperfecto",
           "vivía",
           "Contó que vivía en Madrid."
         ],
         [
-          "comí → pluscuamperfecto",
+          "comió → pluscuamperfecto",
           "había comido",
           "Dijo que había comido."
         ],
@@ -198,12 +198,12 @@
           "Contó que había llegado tarde."
         ],
         [
-          "he trabajado → pluscuamperfecto",
+          "ha trabajado → pluscuamperfecto",
           "había trabajado",
           "Dijo que había trabajado mucho."
         ],
         [
-          "he estudiado → pluscuamperfecto",
+          "ha estudiado → pluscuamperfecto",
           "había estudiado",
           "Contó que había estudiado toda la noche."
         ],
@@ -501,7 +501,7 @@
     },
     {
       "id": "ei-07",
-      "sentence": "Preguntó ___ tenía tiempo.",
+      "sentence": "Le preguntó ___ tenía tiempo.",
       "options": [
         "si",
         "que",
@@ -526,7 +526,7 @@
         "Preguntó si vivía cerca.",
         "Preguntó si tenía hambre."
       ],
-      "tr": { "en": "He asked if I had time.", "es": "Preguntó si tenía tiempo." }
+      "tr": { "en": "He asked her if she had time.", "es": "Le preguntó si tenía tiempo." }
     },
     {
       "id": "ei-08",
@@ -683,15 +683,15 @@
         },
         {
           "es": "«¿Vienes?»",
-          "en": "asked if I'd come"
+          "en": "asked if she'd come"
         },
         {
           "es": "«¿Dónde vives?»",
-          "en": "asked where I lived"
+          "en": "asked where she lived"
         },
         {
           "es": "«He comido ya.»",
-          "en": "said I'd already eaten"
+          "en": "said he'd already eaten"
         },
         {
           "es": "«¡Ven aquí!»",
@@ -707,17 +707,17 @@
       "id": "ei-form-01",
       "kind": "form",
       "verb": "indirecto",
-      "person": "tengo → imperfecto",
+      "person": "tiene → imperfecto",
       "answer": "tenía",
       "table": "cambio",
       "wrong": {
-        "tuve": {
-          "en": "Tuve is the preterite form. After a past reporting verb the present becomes the imperfect: tenía.",
-          "es": "Tuve es la forma del pretérito indefinido. Después de un verbo de decir en pasado el presente pasa al imperfecto: tenía."
+        "tuvo": {
+          "en": "Tuvo is the preterite form. After a past reporting verb the present becomes the imperfect: tenía.",
+          "es": "Tuvo es la forma del pretérito indefinido. Después de un verbo de decir en pasado el presente pasa al imperfecto: tenía."
         },
-        "tengo": {
-          "en": "Tengo is the present indicative form. After a past reporting verb the present becomes the imperfect: tenía.",
-          "es": "Tengo es la forma del presente de indicativo. Después de un verbo de decir en pasado el presente pasa al imperfecto: tenía."
+        "tiene": {
+          "en": "Tiene is the present indicative form. After a past reporting verb the present becomes the imperfect: tenía.",
+          "es": "Tiene es la forma del presente de indicativo. Después de un verbo de decir en pasado el presente pasa al imperfecto: tenía."
         }
       }
     },
@@ -725,17 +725,17 @@
       "id": "ei-form-02",
       "kind": "form",
       "verb": "indirecto",
-      "person": "vivo → imperfecto",
+      "person": "vive → imperfecto",
       "answer": "vivía",
       "table": "cambio",
       "wrong": {
-        "viví": {
-          "en": "Viví is the preterite form. After a past reporting verb the present becomes the imperfect: vivía.",
-          "es": "Viví es la forma del pretérito indefinido. Después de un verbo de decir en pasado el presente pasa al imperfecto: vivía."
+        "vivió": {
+          "en": "Vivió is the preterite form. After a past reporting verb the present becomes the imperfect: vivía.",
+          "es": "Vivió es la forma del pretérito indefinido. Después de un verbo de decir en pasado el presente pasa al imperfecto: vivía."
         },
-        "vivo": {
-          "en": "Vivo is the present indicative form. After a past reporting verb the present becomes the imperfect: vivía.",
-          "es": "Vivo es la forma del presente de indicativo. Después de un verbo de decir en pasado el presente pasa al imperfecto: vivía."
+        "vive": {
+          "en": "Vive is the present indicative form. After a past reporting verb the present becomes the imperfect: vivía.",
+          "es": "Vive es la forma del presente de indicativo. Después de un verbo de decir en pasado el presente pasa al imperfecto: vivía."
         }
       }
     },
@@ -743,13 +743,13 @@
       "id": "ei-form-03",
       "kind": "form",
       "verb": "indirecto",
-      "person": "comí → pluscuamperfecto",
+      "person": "comió → pluscuamperfecto",
       "answer": "había comido",
       "table": "cambio",
       "wrong": {
-        "comí": {
-          "en": "Comí is the preterite form. After a past reporting verb the preterite becomes the pluscuamperfecto: había comido.",
-          "es": "Comí es la forma del pretérito indefinido. Después de un verbo de decir en pasado el pretérito indefinido pasa al pluscuamperfecto: había comido."
+        "comió": {
+          "en": "Comió is the preterite form. After a past reporting verb the preterite becomes the pluscuamperfecto: había comido.",
+          "es": "Comió es la forma del pretérito indefinido. Después de un verbo de decir en pasado el pretérito indefinido pasa al pluscuamperfecto: había comido."
         },
         "comía": {
           "en": "Comía is the imperfect form. After a past reporting verb the preterite becomes the pluscuamperfecto: había comido.",
@@ -779,13 +779,13 @@
       "id": "ei-form-05",
       "kind": "form",
       "verb": "indirecto",
-      "person": "he trabajado → pluscuamperfecto",
+      "person": "ha trabajado → pluscuamperfecto",
       "answer": "había trabajado",
       "table": "cambio",
       "wrong": {
-        "he trabajado": {
-          "en": "He trabajado is the present perfect form. After a past reporting verb the pretérito perfecto becomes the pluscuamperfecto: había trabajado.",
-          "es": "He trabajado es la forma del pretérito perfecto. Después de un verbo de decir en pasado el pretérito perfecto pasa al pluscuamperfecto: había trabajado."
+        "ha trabajado": {
+          "en": "Ha trabajado is the present perfect form. After a past reporting verb the pretérito perfecto becomes the pluscuamperfecto: había trabajado.",
+          "es": "Ha trabajado es la forma del pretérito perfecto. Después de un verbo de decir en pasado el pretérito perfecto pasa al pluscuamperfecto: había trabajado."
         },
         "trabajaba": {
           "en": "Trabajaba is the imperfect form. After a past reporting verb the pretérito perfecto becomes the pluscuamperfecto: había trabajado.",
@@ -797,13 +797,13 @@
       "id": "ei-form-06",
       "kind": "form",
       "verb": "indirecto",
-      "person": "he estudiado → pluscuamperfecto",
+      "person": "ha estudiado → pluscuamperfecto",
       "answer": "había estudiado",
       "table": "cambio",
       "wrong": {
-        "he estudiado": {
-          "en": "He estudiado is the present perfect form. After a past reporting verb the pretérito perfecto becomes the pluscuamperfecto: había estudiado.",
-          "es": "He estudiado es la forma del pretérito perfecto. Después de un verbo de decir en pasado el pretérito perfecto pasa al pluscuamperfecto: había estudiado."
+        "ha estudiado": {
+          "en": "Ha estudiado is the present perfect form. After a past reporting verb the pretérito perfecto becomes the pluscuamperfecto: había estudiado.",
+          "es": "Ha estudiado es la forma del pretérito perfecto. Después de un verbo de decir en pasado el pretérito perfecto pasa al pluscuamperfecto: había estudiado."
         },
         "estudiaba": {
           "en": "Estudiaba is the imperfect form. After a past reporting verb the pretérito perfecto becomes the pluscuamperfecto: había estudiado.",
@@ -1200,14 +1200,14 @@
         "to": "imperfecto"
       },
       "prompt": {
-        "en": "Ana says: \"I live in Puebla.\"",
-        "es": "Ana dice: «Vivo en Puebla»."
+        "en": "Ana says: \"We live in Puebla.\"",
+        "es": "Ana dice: «Vivimos en Puebla»."
       },
-      "answer": "Ana dijo que vivía en Puebla.",
+      "answer": "Ana dijo que vivían en Puebla.",
       "accept": [
-        "Ana dijo que vive en Puebla.",
-        "Ana decía que vivía en Puebla.",
-        "Ana decía que vive en Puebla."
+        "Ana dijo que viven en Puebla.",
+        "Ana decía que vivían en Puebla.",
+        "Ana decía que viven en Puebla."
       ],
       "wordIds": [
         "79",
@@ -1251,12 +1251,12 @@
         "to": "condicional"
       },
       "prompt": {
-        "en": "Marta said: \"I will arrive late.\"",
-        "es": "Marta dijo: «Llegaré tarde»."
+        "en": "Marta said: \"We will arrive late.\"",
+        "es": "Marta dijo: «Llegaremos tarde»."
       },
-      "answer": "Marta dijo que llegaría tarde.",
+      "answer": "Marta dijo que llegarían tarde.",
       "accept": [
-        "Marta dijo que llegará tarde."
+        "Marta dijo que llegarán tarde."
       ],
       "wordIds": [
         "149",
@@ -1275,12 +1275,12 @@
         "to": "pluscuamperfecto"
       },
       "prompt": {
-        "en": "Pedro said: \"I have seen Ana.\"",
-        "es": "Pedro dijo: «He visto a Ana»."
+        "en": "Pedro said: \"They have seen Ana.\"",
+        "es": "Pedro dijo: «Han visto a Ana»."
       },
-      "answer": "Pedro dijo que había visto a Ana.",
+      "answer": "Pedro dijo que habían visto a Ana.",
       "accept": [
-        "Pedro dijo que ha visto a Ana."
+        "Pedro dijo que han visto a Ana."
       ],
       "wordIds": [
         "78"
@@ -1320,70 +1320,70 @@
       "id": "ei-cloze-01",
       "kind": "opencloze",
       "trial": true,
-      "text": "Ana me dijo: \"Vivo en Puebla y trabajo en una escuela\". Me dijo que ___ (vivir) en Puebla y que ___ (trabajar) en una escuela.",
+      "text": "Ana me dijo: \"Vivimos en Puebla y trabajamos en una escuela\". Me dijo que ___ (vivir) en Puebla y que ___ (trabajar) en una escuela.",
       "answers": [
-        "vivía",
-        "trabajaba"
+        "vivían",
+        "trabajaban"
       ],
       "accept": [
         [
-          "vive"
+          "viven"
         ],
         [
-          "trabaja"
+          "trabajan"
         ]
       ],
       "tr": {
-        "en": "Ana told me: \"I live in Puebla and I work at a school.\" She told me that she lived in Puebla and worked at a school.",
-        "es": "Ana me dijo: \"Vivo en Puebla y trabajo en una escuela\". Me dijo que vivía (vivir) en Puebla y que trabajaba (trabajar) en una escuela."
+        "en": "Ana told me: \"We live in Puebla and we work at a school.\" She told me that they lived in Puebla and worked at a school.",
+        "es": "Ana me dijo: \"Vivimos en Puebla y trabajamos en una escuela\". Me dijo que vivían (vivir) en Puebla y que trabajaban (trabajar) en una escuela."
       },
       "why": {
-        "en": "The present of the quote goes back to the imperfect after a past verb of saying: vivía, trabajaba.",
-        "es": "El presente de la cita retrocede al imperfecto tras un verbo de decir en pasado: vivía, trabajaba."
+        "en": "The present of the quote goes back to the imperfect after a past verb of saying: vivían, trabajaban.",
+        "es": "El presente de la cita retrocede al imperfecto tras un verbo de decir en pasado: vivían, trabajaban."
       }
     },
     {
       "id": "ei-cloze-02",
       "kind": "opencloze",
       "trial": true,
-      "text": "Carlos me contó: \"Ya comí, pero no hice la tarea\". Me contó que ya ___ (comer) y que no ___ (hacer) la tarea.",
+      "text": "Carlos me contó: \"Ya comimos, pero no hicimos la tarea\". Me contó que ya ___ (comer) y que no ___ (hacer) la tarea.",
       "answers": [
-        "había comido",
-        "había hecho"
+        "habían comido",
+        "habían hecho"
       ],
       "accept": [
         [
-          "comió"
+          "comieron"
         ],
         [
-          "hizo"
+          "hicieron"
         ]
       ],
       "tr": {
-        "en": "Carlos told me: \"I already ate, but I did not do the homework.\" He told me that he had already eaten and had not done the homework.",
-        "es": "Carlos me contó: \"Ya comí, pero no hice la tarea\". Me contó que ya había comido (comer) y que no había hecho (hacer) la tarea."
+        "en": "Carlos told me: \"We already ate, but we did not do the homework.\" He told me that they had already eaten and had not done the homework.",
+        "es": "Carlos me contó: \"Ya comimos, pero no hicimos la tarea\". Me contó que ya habían comido (comer) y que no habían hecho (hacer) la tarea."
       },
       "why": {
-        "en": "The finished past of the quote becomes the pluperfect: había comido, había hecho (hacer: participle hecho).",
-        "es": "El pasado terminado de la cita pasa al pluscuamperfecto: había comido, había hecho (hacer: participio hecho)."
+        "en": "The finished past of the quote becomes the pluperfect: habían comido, habían hecho (hacer: participle hecho).",
+        "es": "El pasado terminado de la cita pasa al pluscuamperfecto: habían comido, habían hecho (hacer: participio hecho)."
       }
     },
     {
       "id": "ei-cloze-03",
       "kind": "opencloze",
       "trial": true,
-      "text": "Mi jefa me dijo: \"Mañana te llamaré y te daré el informe\". Me dijo que al día siguiente me ___ (llamar) y me ___ (dar) el informe.",
+      "text": "Mis jefes me dijeron: \"Mañana te llamaremos y te daremos el informe\". Me dijeron que al día siguiente me ___ (llamar) y me ___ (dar) el informe.",
       "answers": [
-        "llamaría",
-        "daría"
+        "llamarían",
+        "darían"
       ],
       "tr": {
-        "en": "My boss told me: \"Tomorrow I will call you and give you the report.\" She told me that the next day she would call me and give me the report.",
-        "es": "Mi jefa me dijo: \"Mañana te llamaré y te daré el informe\". Me dijo que al día siguiente me llamaría (llamar) y me daría (dar) el informe."
+        "en": "My bosses told me: \"Tomorrow we will call you and give you the report.\" They told me that the next day they would call me and give me the report.",
+        "es": "Mis jefes me dijeron: \"Mañana te llamaremos y te daremos el informe\". Me dijeron que al día siguiente me llamarían (llamar) y me darían (dar) el informe."
       },
       "why": {
-        "en": "The future of the quote becomes the conditional (llamaría, daría) and mañana becomes al día siguiente.",
-        "es": "El futuro de la cita pasa a condicional (llamaría, daría) y mañana pasa a al día siguiente."
+        "en": "The future of the quote becomes the conditional (llamarían, darían) and mañana becomes al día siguiente.",
+        "es": "El futuro de la cita pasa a condicional (llamarían, darían) y mañana pasa a al día siguiente."
       }
     },
     {
@@ -1408,7 +1408,7 @@
       "id": "ei-cloze-05",
       "kind": "opencloze",
       "trial": true,
-      "text": "Lucía dijo: \"Hoy voy a descansar y mañana trabajaré aquí\". Dijo que ___ iba a descansar y que ___ trabajaría ___.",
+      "text": "Lucía y Marta dijeron: \"Hoy vamos a descansar y mañana trabajaremos aquí\". Dijeron que ___ iban a descansar y que ___ trabajarían ___.",
       "answers": [
         "ese día",
         "al día siguiente",
@@ -1428,8 +1428,8 @@
         ]
       ],
       "tr": {
-        "en": "Lucía said: \"Today I am going to rest and tomorrow I will work here.\" She said that that day she was going to rest and that the next day she would work there.",
-        "es": "Lucía dijo: \"Hoy voy a descansar y mañana trabajaré aquí\". Dijo que ese día iba a descansar y que al día siguiente trabajaría allí."
+        "en": "Lucía and Marta said: \"Today we are going to rest and tomorrow we will work here.\" They said that that day they were going to rest and that the next day they would work there.",
+        "es": "Lucía y Marta dijeron: \"Hoy vamos a descansar y mañana trabajaremos aquí\". Dijeron que ese día iban a descansar y que al día siguiente trabajarían allí."
       },
       "why": {
         "en": "Time and place words shift in reported speech: hoy → ese día, mañana → al día siguiente, aquí → allí.",
@@ -1459,16 +1459,16 @@
       "id": "ei-fix-02",
       "kind": "fix",
       "trial": true,
-      "es": "Me preguntó que tenía tiempo.",
+      "es": "Le preguntó que tenía tiempo.",
       "wrongIndex": 2,
       "answer": "si",
       "explain": {
-        "en": "A yes/no question is reported with si, not que: me preguntó si tenía tiempo.",
-        "es": "Una pregunta de sí o no se reporta con si, no con que: me preguntó si tenía tiempo."
+        "en": "A yes/no question is reported with si, not que: le preguntó si tenía tiempo.",
+        "es": "Una pregunta de sí o no se reporta con si, no con que: le preguntó si tenía tiempo."
       },
       "tr": {
-        "en": "He asked me whether I had time.",
-        "es": "Me preguntó si tenía tiempo."
+        "en": "He asked her whether she had time.",
+        "es": "Le preguntó si tenía tiempo."
       }
     },
     {
@@ -1491,7 +1491,7 @@
       "id": "ei-fix-04",
       "kind": "fix",
       "trial": true,
-      "es": "Me preguntó donde vivía.",
+      "es": "Le preguntó donde vivía.",
       "wrongIndex": 2,
       "answer": "dónde",
       "explain": {
@@ -1499,8 +1499,8 @@
         "es": "La palabra interrogativa conserva la tilde en una pregunta indirecta: dónde."
       },
       "tr": {
-        "en": "He asked me where I lived.",
-        "es": "Me preguntó dónde vivía."
+        "en": "He asked her where she lived.",
+        "es": "Le preguntó dónde vivía."
       }
     },
     {
@@ -1555,12 +1555,12 @@
         "pidió",
         "contó"
       ],
-      "es": "Mi hermano me ___ si podía ayudarlo.",
+      "es": "Mi hermano le ___ si podía ayudarlo.",
       "word": "preguntó",
       "answer": "preguntó",
       "tr": {
-        "en": "My brother asked me if I could help him.",
-        "es": "Mi hermano me preguntó si podía ayudarlo."
+        "en": "My brother asked her if she could help him.",
+        "es": "Mi hermano le preguntó si podía ayudarlo."
       },
       "why": {
         "en": "A reported question with si needs preguntó; pidió and contó do not introduce a question.",

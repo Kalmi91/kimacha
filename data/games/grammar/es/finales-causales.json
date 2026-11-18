@@ -362,7 +362,7 @@
     },
     {
       "id": "fc-02",
-      "sentence": "Te llamo para que me ___ tú.",
+      "sentence": "Ana te llama para que la ___ tú.",
       "options": [
         "ayudes",
         "ayudas",
@@ -370,8 +370,8 @@
       ],
       "correct": 0,
       "why": {
-        "en": "Different subject (yo llamo, tú ayudas): para que + subjunctive, ayudar → ayudes.",
-        "es": "Sujeto distinto (yo llamo, tú ayudas): para que + subjuntivo, ayudar → ayudes."
+        "en": "Different subject (Ana llama, tú ayudas): para que + subjunctive, ayudar → ayudes.",
+        "es": "Sujeto distinto (Ana llama, tú ayudas): para que + subjuntivo, ayudar → ayudes."
       },
       "wrong": {
         "ayudas": {
@@ -387,7 +387,7 @@
         "Te escribo para que lo sepas.",
         "Te lo explico para que lo entiendas."
       ],
-      "tr": { "en": "I'm calling you so that you can help me.", "es": "Te llamo para que me ayudes tú." }
+      "tr": { "en": "Ana is calling you so that you can help her.", "es": "Ana te llama para que la ayudes tú." }
     },
     {
       "id": "fc-03",
@@ -449,7 +449,7 @@
     },
     {
       "id": "fc-05",
-      "sentence": "No estudio porque me ___, sino porque debo.",
+      "sentence": "No estudias porque te ___, sino porque debes.",
       "options": [
         "guste",
         "gustara",
@@ -474,7 +474,7 @@
         "No lo hago porque quieran, sino porque es necesario.",
         "No voy porque me guste, sino porque debo."
       ],
-      "tr": { "en": "I don't study because I like it, but because I have to.", "es": "No estudio porque me guste, sino porque debo." }
+      "tr": { "en": "You don't study because you like it, but because you have to.", "es": "No estudias porque te guste, sino porque debes." }
     },
     {
       "id": "fc-06",
@@ -536,7 +536,7 @@
     },
     {
       "id": "fc-08",
-      "sentence": "Vengo ___ me ayudes con esto.",
+      "sentence": "Vienen ___ nos ayudes con esto.",
       "options": [
         "a que",
         "porque",
@@ -544,8 +544,8 @@
       ],
       "correct": 0,
       "why": {
-        "en": "After a verb of motion (vengo), \"a que\" + subjunctive introduces the purpose.",
-        "es": "Después de un verbo de movimiento (vengo), «a que» + subjuntivo introduce la finalidad."
+        "en": "After a verb of motion (vienen), \"a que\" + subjunctive introduces the purpose.",
+        "es": "Después de un verbo de movimiento (vienen), «a que» + subjuntivo introduce la finalidad."
       },
       "wrong": {
         "porque": {
@@ -561,7 +561,7 @@
         "Vengo a que me ayudes.",
         "Vino a que le ayudara."
       ],
-      "tr": { "en": "I've come so you can help me with this.", "es": "Vengo a que me ayudes con esto." }
+      "tr": { "en": "They've come so you can help us with this.", "es": "Vienen a que nos ayudes con esto." }
     },
     {
       "id": "fc-09",
@@ -594,7 +594,7 @@
     },
     {
       "id": "fc-10",
-      "sentence": "Puesto que ya lo ___, no necesito repetirlo.",
+      "sentence": "Puesto que ya lo ___, no necesitamos repetirlo.",
       "options": [
         "sabes",
         "sepas",
@@ -619,13 +619,13 @@
         "Puesto que lo sabes, no hace falta repetirlo.",
         "Puesto que llueve, nos quedamos."
       ],
-      "tr": { "en": "Since you already know, I don't need to repeat it.", "es": "Puesto que ya lo sabes, no necesito repetirlo." }
+      "tr": { "en": "Since you already know, we don't need to repeat it.", "es": "Puesto que ya lo sabes, no necesitamos repetirlo." }
     },
     {
       "id": "fc-11",
-      "sentence": "Es que no ___ tiempo hoy.",
+      "sentence": "Es que ella no ___ tiempo hoy.",
       "options": [
-        "tengo",
+        "tiene",
         "tenga",
         "tener"
       ],
@@ -636,19 +636,19 @@
       },
       "wrong": {
         "tenga": {
-          "en": "\"Tenga\" as a subjunctive doesn't fit here, the indicative is needed, correctly: tengo.",
-          "es": "«Tenga» en subjuntivo no encaja aquí, hace falta indicativo, correcto: tengo."
+          "en": "\"Tenga\" as a subjunctive doesn't fit here, the indicative is needed, correctly: tiene.",
+          "es": "«Tenga» en subjuntivo no encaja aquí, hace falta indicativo, correcto: tiene."
         },
         "tener": {
-          "en": "\"Tener\" as an infinitive doesn't fit here, a conjugated form is needed, correctly: tengo.",
-          "es": "«Tener» en infinitivo no encaja aquí, hace falta una forma conjugada, correcto: tengo."
+          "en": "\"Tener\" as an infinitive doesn't fit here, a conjugated form is needed, correctly: tiene.",
+          "es": "«Tener» en infinitivo no encaja aquí, hace falta una forma conjugada, correcto: tiene."
         }
       },
       "examples": [
         "Es que no tengo dinero.",
         "Es que se me hizo tarde."
       ],
-      "tr": { "en": "It's just that I don't have time today.", "es": "Es que no tengo tiempo hoy." }
+      "tr": { "en": "It's just that she doesn't have time today.", "es": "Es que ella no tiene tiempo hoy." }
     },
     {
       "id": "fc-12",
@@ -892,11 +892,11 @@
     {
       "kind": "why",
       "id": "fc-why-01",
-      "es": "Te llamo para que me ayudes.",
+      "es": "Ana te llama para que la ayudes.",
       "target": "para que",
       "tr": {
-        "en": "I'm calling you so that you help me.",
-        "es": "Te llamo para que me ayudes."
+        "en": "Ana is calling you so that you help her.",
+        "es": "Ana te llama para que la ayudes."
       },
       "options": [
         {
@@ -921,8 +921,8 @@
             "es": "finalidad, mismo sujeto → infinitivo"
           },
           "wrong": {
-            "en": "The subject here differs (yo llamo, tú ayudas), so the infinitive isn't enough.",
-            "es": "El sujeto aquí es distinto (yo llamo, tú ayudas), por eso no basta el infinitivo."
+            "en": "The subject here differs (Ana llama, tú ayudas), so the infinitive isn't enough.",
+            "es": "El sujeto aquí es distinto (Ana llama, tú ayudas), por eso no basta el infinitivo."
           }
         }
       ],
@@ -931,11 +931,11 @@
     {
       "kind": "why",
       "id": "fc-why-02",
-      "es": "No salgo porque llueve mucho.",
+      "es": "No salimos porque llueve mucho.",
       "target": "porque",
       "tr": {
-        "en": "I'm not going out because it's raining a lot.",
-        "es": "No salgo porque llueve mucho."
+        "en": "We're not going out because it's raining a lot.",
+        "es": "No salimos porque llueve mucho."
       },
       "options": [
         {
@@ -1009,11 +1009,11 @@
     {
       "kind": "why",
       "id": "fc-why-04",
-      "es": "Como llueve, no salgo.",
+      "es": "Como llueve, no salen.",
       "target": "Como",
       "tr": {
-        "en": "Since it's raining, I'm not going out.",
-        "es": "Como llueve, no salgo."
+        "en": "Since it's raining, they're not going out.",
+        "es": "Como llueve, no salen."
       },
       "options": [
         {
@@ -1048,11 +1048,11 @@
     {
       "kind": "why",
       "id": "fc-why-05",
-      "es": "Vengo a que me ayudes.",
+      "es": "Viene a que lo ayudes.",
       "target": "a que",
       "tr": {
-        "en": "I've come for you to help me.",
-        "es": "Vengo a que me ayudes."
+        "en": "He's come for you to help him.",
+        "es": "Viene a que lo ayudes."
       },
       "options": [
         {
@@ -1077,8 +1077,8 @@
             "es": "finalidad, mismo sujeto → infinitivo"
           },
           "wrong": {
-            "en": "The subject here differs (yo vengo, tú ayudas), so the infinitive isn't enough.",
-            "es": "El sujeto aquí es distinto (yo vengo, tú ayudas), por eso no basta el infinitivo."
+            "en": "The subject here differs (él viene, tú ayudas), so the infinitive isn't enough.",
+            "es": "El sujeto aquí es distinto (él viene, tú ayudas), por eso no basta el infinitivo."
           }
         }
       ],
@@ -1170,22 +1170,22 @@
         "to": "indefinido"
       },
       "prompt": {
-        "en": "I call Ana so that she helps me.",
-        "es": "Llamo a Ana para que me ayude."
+        "en": "They call Ana so that she helps them.",
+        "es": "Llaman a Ana para que los ayude."
       },
-      "answer": "Llamé a Ana para que me ayudara.",
+      "answer": "Llamaron a Ana para que los ayudara.",
       "accept": [
-        "Llamé a Ana para que me ayudase.",
-        "Yo llamé a Ana para que me ayudara.",
-        "Yo llamé a Ana para que me ayudase."
+        "Llamaron a Ana para que los ayudase.",
+        "Ellos llamaron a Ana para que los ayudara.",
+        "Ellos llamaron a Ana para que los ayudase."
       ],
       "wordIds": [
         "89",
         "148"
       ],
       "why": {
-        "en": "Para que needs the subjunctive; when the main verb is in the past, so is the subjunctive: llamo → llamé, ayude → ayudara (or ayudase).",
-        "es": "Para que pide subjuntivo; cuando el verbo principal está en pasado, el subjuntivo también: llamo → llamé, ayude → ayudara (o ayudase)."
+        "en": "Para que needs the subjunctive; when the main verb is in the past, so is the subjunctive: llaman → llamaron, ayude → ayudara (or ayudase).",
+        "es": "Para que pide subjuntivo; cuando el verbo principal está en pasado, el subjuntivo también: llaman → llamaron, ayude → ayudara (o ayudase)."
       }
     },
     {
@@ -1196,14 +1196,14 @@
         "to": "imperfecto"
       },
       "prompt": {
-        "en": "Since I have no time, I do not go to the party.",
-        "es": "Como no tengo tiempo, no voy a la fiesta."
+        "en": "Since you have no time, you do not go to the party.",
+        "es": "Como no tienes tiempo, no vas a la fiesta."
       },
-      "answer": "Como no tenía tiempo, no fui a la fiesta.",
+      "answer": "Como no tenías tiempo, no fuiste a la fiesta.",
       "accept": [
-        "Como no tenía tiempo, no iba a la fiesta.",
-        "Como no tuve tiempo, no fui a la fiesta.",
-        "Como no tuve tiempo, no iba a la fiesta."
+        "Como no tenías tiempo, no ibas a la fiesta.",
+        "Como no tuviste tiempo, no fuiste a la fiesta.",
+        "Como no tuviste tiempo, no ibas a la fiesta."
       ],
       "wordIds": [
         "16",
@@ -1211,8 +1211,8 @@
         "285"
       ],
       "why": {
-        "en": "Como + indicative gives the cause at the start of the sentence; in the past the cause is usually in the imperfect: tenía.",
-        "es": "Como + indicativo da la causa al principio de la oración; en pasado la causa suele ir en imperfecto: tenía."
+        "en": "Como + indicative gives the cause at the start of the sentence; in the past the cause is usually in the imperfect: tenías.",
+        "es": "Como + indicativo da la causa al principio de la oración; en pasado la causa suele ir en imperfecto: tenías."
       }
     },
     {
@@ -1250,14 +1250,14 @@
         "to": "imperfecto"
       },
       "prompt": {
-        "en": "I do not go out because it rains a lot.",
-        "es": "No salgo porque llueve mucho."
+        "en": "She does not go out because it rains a lot.",
+        "es": "No sale porque llueve mucho."
       },
       "answer": "No salía porque llovía mucho.",
       "accept": [
-        "No salí porque llovía mucho.",
-        "Yo no salía porque llovía mucho.",
-        "Yo no salí porque llovía mucho."
+        "No salió porque llovía mucho.",
+        "Ella no salía porque llovía mucho.",
+        "Ella no salió porque llovía mucho."
       ],
       "wordIds": [
         "199",
@@ -1300,7 +1300,7 @@
       "id": "fc-cloze-01",
       "kind": "opencloze",
       "trial": true,
-      "text": "Trabajo mucho ___ ganar más dinero, pero hoy no fui a trabajar ___ estaba enfermo. Mi jefe me llamó ___ que le explicara todo.",
+      "text": "Trabaja mucho ___ ganar más dinero, pero hoy no fue a trabajar ___ estaba enfermo. Su jefe lo llamó ___ que le explicara todo.",
       "answers": [
         "para",
         "porque",
@@ -1317,8 +1317,8 @@
         []
       ],
       "tr": {
-        "en": "I work a lot to earn more money, but today I did not go to work because I was sick. My boss called me so that I would explain everything to him.",
-        "es": "Trabajo mucho para ganar más dinero, pero hoy no fui a trabajar porque estaba enfermo. Mi jefe me llamó para que le explicara todo."
+        "en": "He works a lot to earn more money, but today he did not go to work because he was sick. His boss called him so that he would explain everything to him.",
+        "es": "Trabaja mucho para ganar más dinero, pero hoy no fue a trabajar porque estaba enfermo. Su jefe lo llamó para que le explicara todo."
       },
       "why": {
         "en": "Para + infinitive gives the purpose, porque gives the cause, and para que + subjunctive (explicara) gives a purpose with a new subject.",
@@ -1329,7 +1329,7 @@
       "id": "fc-cloze-02",
       "kind": "opencloze",
       "trial": true,
-      "text": "Te llamo ___ que me ayudes con la tarea. No quiero molestarte, pero ___ no entiendo nada, necesito tu ayuda.",
+      "text": "Ana te llama ___ que la ayudes con la tarea. No quiere molestarte, pero ___ no entiende nada, necesita tu ayuda.",
       "answers": [
         "para",
         "como"
@@ -1343,8 +1343,8 @@
         ]
       ],
       "tr": {
-        "en": "I am calling you so that you help me with the homework. I do not want to bother you, but since I understand nothing, I need your help.",
-        "es": "Te llamo para que me ayudes con la tarea. No quiero molestarte, pero como no entiendo nada, necesito tu ayuda."
+        "en": "Ana is calling you so that you help her with the homework. She does not want to bother you, but since she understands nothing, she needs your help.",
+        "es": "Ana te llama para que la ayudes con la tarea. No quiere molestarte, pero como no entiende nada, necesita tu ayuda."
       },
       "why": {
         "en": "Para que + subjunctive (ayudes) for the purpose; como (also ya que, puesto que) opens a clause that gives the reason first.",
@@ -1374,7 +1374,7 @@
       "id": "fc-cloze-04",
       "kind": "opencloze",
       "trial": true,
-      "text": "Fui a la tienda ___ comprar leche. Vine ___ que me ayudaras. Hablo despacio ___ que todos me entiendan.",
+      "text": "Fueron a la tienda ___ comprar leche. Vinieron ___ que los ayudaras. Hablan despacio ___ que todos los entiendan.",
       "answers": [
         "para",
         "a",
@@ -1390,19 +1390,19 @@
         []
       ],
       "tr": {
-        "en": "I went to the store to buy milk. I came so that you would help me. I speak slowly so that everyone understands me.",
-        "es": "Fui a la tienda para comprar leche. Vine a que me ayudaras. Hablo despacio para que todos me entiendan."
+        "en": "They went to the store to buy milk. They came so that you would help them. They speak slowly so that everyone understands them.",
+        "es": "Fueron a la tienda para comprar leche. Vinieron a que los ayudaras. Hablan despacio para que todos los entiendan."
       },
       "why": {
-        "en": "Same subject: para + infinitive (para comprar). Different subject: para que + subjunctive; after verbs of motion, a que also works (vine a que me ayudaras).",
-        "es": "Mismo sujeto: para + infinitivo (para comprar). Sujeto distinto: para que + subjuntivo; tras verbos de movimiento también sirve a que (vine a que me ayudaras)."
+        "en": "Same subject: para + infinitive (para comprar). Different subject: para que + subjunctive; after verbs of motion, a que also works (vinieron a que los ayudaras).",
+        "es": "Mismo sujeto: para + infinitivo (para comprar). Sujeto distinto: para que + subjuntivo; tras verbos de movimiento también sirve a que (vinieron a que los ayudaras)."
       }
     },
     {
       "id": "fc-cloze-05",
       "kind": "opencloze",
       "trial": true,
-      "text": "Estudio español porque me ___ (gustar), no porque me ___ (obligar) en el trabajo. Lo hago ___ que mi familia esté orgullosa.",
+      "text": "Estudia español porque le ___ (gustar), no porque lo ___ (obligar) en el trabajo. Lo hace ___ que su familia esté orgullosa.",
       "answers": [
         "gusta",
         "obliguen",
@@ -1418,35 +1418,35 @@
         []
       ],
       "tr": {
-        "en": "I study Spanish because I like it, not because they force me at work. I do it so that my family is proud.",
-        "es": "Estudio español porque me gusta (gustar), no porque me obliguen (obligar) en el trabajo. Lo hago para que mi familia esté orgullosa."
+        "en": "He studies Spanish because he likes it, not because they force him at work. He does it so that his family is proud.",
+        "es": "Estudia español porque le gusta (gustar), no porque lo obliguen (obligar) en el trabajo. Lo hace para que su familia esté orgullosa."
       },
       "why": {
-        "en": "Porque + indicative states a real cause (me gusta); no porque + subjunctive denies a cause (me obliguen); para que + subjunctive gives the purpose.",
-        "es": "Porque + indicativo expresa una causa real (me gusta); no porque + subjuntivo niega una causa (me obliguen); para que + subjuntivo da la finalidad."
+        "en": "Porque + indicative states a real cause (le gusta); no porque + subjunctive denies a cause (lo obliguen); para que + subjunctive gives the purpose.",
+        "es": "Porque + indicativo expresa una causa real (le gusta); no porque + subjuntivo niega una causa (lo obliguen); para que + subjuntivo da la finalidad."
       }
     },
     {
       "id": "fc-fix-01",
       "kind": "fix",
       "trial": true,
-      "es": "Estudio mucho para que apruebo el examen.",
+      "es": "Estudia mucho para que sus padres están contentos.",
       "wrongIndex": 4,
-      "answer": "apruebe",
+      "answer": "estén",
       "explain": {
-        "en": "Para que always takes the subjunctive: para que apruebe.",
-        "es": "Para que siempre lleva subjuntivo: para que apruebe."
+        "en": "Para que always takes the subjunctive: para que estén.",
+        "es": "Para que siempre lleva subjuntivo: para que estén."
       },
       "tr": {
-        "en": "I study a lot so that I pass the exam.",
-        "es": "Estudio mucho para que apruebe el examen."
+        "en": "He studies a lot so that his parents are happy.",
+        "es": "Estudia mucho para que sus padres estén contentos."
       }
     },
     {
       "id": "fc-fix-02",
       "kind": "fix",
       "trial": true,
-      "es": "No fui a la fiesta porque la lluvia.",
+      "es": "No fuimos a la fiesta porque la lluvia.",
       "wrongIndex": 5,
       "answer": "por",
       "explain": {
@@ -1454,8 +1454,8 @@
         "es": "Porque va seguido de un verbo; ante un sustantivo la causa lleva por: por la lluvia."
       },
       "tr": {
-        "en": "I did not go to the party because of the rain.",
-        "es": "No fui a la fiesta por la lluvia."
+        "en": "We did not go to the party because of the rain.",
+        "es": "No fuimos a la fiesta por la lluvia."
       }
     },
     {
@@ -1478,7 +1478,7 @@
       "id": "fc-fix-04",
       "kind": "fix",
       "trial": true,
-      "es": "Porque no tengo dinero, no puedo viajar.",
+      "es": "Porque no tienes dinero, no puedes viajar.",
       "wrongIndex": 0,
       "answer": "Como",
       "accept": [
@@ -1491,8 +1491,8 @@
         "es": "Para empezar la oración con la razón se usa como (o ya que, puesto que), no porque."
       },
       "tr": {
-        "en": "Since I have no money, I cannot travel.",
-        "es": "Como no tengo dinero, no puedo viajar."
+        "en": "Since you have no money, you cannot travel.",
+        "es": "Como no tienes dinero, no puedes viajar."
       }
     },
     {
@@ -1520,7 +1520,7 @@
         "porque",
         "si"
       ],
-      "es": "Te escribo ___ sepas la verdad.",
+      "es": "Te escribimos ___ sepas la verdad.",
       "word": "para que",
       "answer": "para que",
       "accept": [
@@ -1528,8 +1528,8 @@
         "con el fin de que"
       ],
       "tr": {
-        "en": "I am writing to you so that you know the truth.",
-        "es": "Te escribo para que sepas la verdad."
+        "en": "We are writing to you so that you know the truth.",
+        "es": "Te escribimos para que sepas la verdad."
       },
       "why": {
         "en": "The purpose with a new subject takes para que + subjunctive (sepas); porque and si do not fit.",
@@ -1545,7 +1545,7 @@
         "para que",
         "sin que"
       ],
-      "es": "No fui a la escuela ___ estaba enfermo.",
+      "es": "No fueron a la escuela ___ estaban enfermos.",
       "word": "porque",
       "answer": "porque",
       "accept": [
@@ -1553,12 +1553,12 @@
         "puesto que"
       ],
       "tr": {
-        "en": "I did not go to school because I was sick.",
-        "es": "No fui a la escuela porque estaba enfermo."
+        "en": "They did not go to school because they were sick.",
+        "es": "No fueron a la escuela porque estaban enfermos."
       },
       "why": {
-        "en": "A real cause with an indicative verb (estaba) takes porque; para que and sin que need a subjunctive.",
-        "es": "Una causa real con verbo en indicativo (estaba) lleva porque; para que y sin que necesitan subjuntivo."
+        "en": "A real cause with an indicative verb (estaban) takes porque; para que and sin que need a subjunctive.",
+        "es": "Una causa real con verbo en indicativo (estaban) lleva porque; para que y sin que necesitan subjuntivo."
       }
     },
     {
@@ -1596,15 +1596,15 @@
         "debido",
         "hacia"
       ],
-      "es": "Lo logré ___ tu ayuda.",
+      "es": "Lo lograron ___ tu ayuda.",
       "word": "gracias a",
       "answer": "gracias a",
       "accept": [
         "por"
       ],
       "tr": {
-        "en": "I made it thanks to your help.",
-        "es": "Lo logré gracias a tu ayuda."
+        "en": "They made it thanks to your help.",
+        "es": "Lo lograron gracias a tu ayuda."
       },
       "why": {
         "en": "A positive cause is gracias a; debido needs a (debido a) and hacia does not express a cause.",

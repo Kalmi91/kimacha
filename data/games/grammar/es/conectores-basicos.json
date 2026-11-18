@@ -445,7 +445,7 @@
           "u"
         ],
         [
-          "Bailo bien, ___ canto mal.",
+          "Baila bien, ___ canta mal.",
           "pero"
         ],
         [
@@ -453,7 +453,7 @@
           "pero"
         ],
         [
-          "No llamo a mi mamá ___ es muy tarde.",
+          "No llamas a tu mamá ___ es muy tarde.",
           "porque"
         ],
         [
@@ -461,7 +461,7 @@
           "por eso"
         ],
         [
-          "El metro está cerrado, ___ camino al banco.",
+          "El metro está cerrado, ___ caminamos al banco.",
           "así que"
         ],
         [
@@ -645,7 +645,7 @@
     },
     {
       "id": "cb-06",
-      "sentence": "Quiero ir al cine, ___ no tengo dinero.",
+      "sentence": "Quieres ir al cine, ___ no tienes dinero.",
       "options": [
         "porque",
         "pero",
@@ -653,17 +653,17 @@
       ],
       "correct": 1,
       "why": {
-        "en": "The second idea goes against the first: I want to go, but I cannot pay. That is what pero (but) is for, and a comma goes before it.",
-        "es": "La segunda idea va contra la primera: quiero ir, pero no puedo pagar. Para eso sirve pero, y antes de pero va una coma."
+        "en": "The second idea goes against the first: you want to go, but you cannot pay. That is what pero (but) is for, and a comma goes before it.",
+        "es": "La segunda idea va contra la primera: quieres ir, pero no puedes pagar. Para eso sirve pero, y antes de pero va una coma."
       },
       "wrong": {
         "porque": {
-          "en": "porque: «because». It does not fit here, because it would say that you want to go to the cinema BECAUSE you have no money, which is not the idea. Correct: Quiero ir al cine, pero no tengo dinero.",
-          "es": "porque: da la razón. Aquí no encaja, porque diría que quieres ir al cine PORQUE no tienes dinero, y esa no es la idea. Correcto: Quiero ir al cine, pero no tengo dinero."
+          "en": "porque: «because». It does not fit here, because it would say that you want to go to the cinema BECAUSE you have no money, which is not the idea. Correct: Quieres ir al cine, pero no tienes dinero.",
+          "es": "porque: da la razón. Aquí no encaja, porque diría que quieres ir al cine PORQUE no tienes dinero, y esa no es la idea. Correcto: Quieres ir al cine, pero no tienes dinero."
         },
         "por eso": {
-          "en": "por eso: «that is why». It does not fit here, because it would say that wanting to go is the reason why you have no money. Correct: Quiero ir al cine, pero no tengo dinero.",
-          "es": "por eso: da el resultado. Aquí no encaja, porque diría que querer ir es la razón de tu falta de dinero. Correcto: Quiero ir al cine, pero no tengo dinero."
+          "en": "por eso: «that is why». It does not fit here, because it would say that wanting to go is the reason why you have no money. Correct: Quieres ir al cine, pero no tienes dinero.",
+          "es": "por eso: da el resultado. Aquí no encaja, porque diría que querer ir es la razón de tu falta de dinero. Correcto: Quieres ir al cine, pero no tienes dinero."
         }
       },
       "examples": [
@@ -671,8 +671,8 @@
         "Hablo español, pero no muy bien."
       ],
       "tr": {
-        "en": "I want to go to the cinema, but I have no money.",
-        "es": "Quiero ir al cine, pero no tengo dinero."
+        "en": "You want to go to the cinema, but you have no money.",
+        "es": "Quieres ir al cine, pero no tienes dinero."
       }
     },
     {
@@ -709,7 +709,7 @@
     },
     {
       "id": "cb-08",
-      "sentence": "No voy al trabajo ___ estoy enfermo.",
+      "sentence": "Marta no va al trabajo ___ está enferma.",
       "options": [
         "porque",
         "por eso",
@@ -717,17 +717,17 @@
       ],
       "correct": 0,
       "why": {
-        "en": "The second half gives the reason for the first: I am not going BECAUSE I am sick. The reason comes after porque, with no comma before it.",
-        "es": "La segunda mitad da la razón de la primera: no voy PORQUE estoy enfermo. La razón va después de porque, sin coma antes."
+        "en": "The second half gives the reason for the first: Marta is not going BECAUSE she is sick. The reason comes after porque, with no comma before it.",
+        "es": "La segunda mitad da la razón de la primera: Marta no va PORQUE está enferma. La razón va después de porque, sin coma antes."
       },
       "wrong": {
         "por eso": {
-          "en": "por eso: «that is why». It does not fit here, because the reason would have to come before it: «No voy al trabajo, por eso estoy enfermo» says that not going to work makes you sick. Correct: No voy al trabajo porque estoy enfermo.",
-          "es": "por eso: da el resultado. Aquí no encaja, porque la razón tendría que ir antes: «No voy al trabajo, por eso estoy enfermo» diría que no ir al trabajo te enferma. Correcto: No voy al trabajo porque estoy enfermo."
+          "en": "por eso: «that is why». It does not fit here, because the reason would have to come before it: «Marta no va al trabajo, por eso está enferma» says that not going to work makes you sick. Correct: Marta no va al trabajo porque está enferma.",
+          "es": "por eso: da el resultado. Aquí no encaja, porque la razón tendría que ir antes: «Marta no va al trabajo, por eso está enferma» diría que no ir al trabajo te enferma. Correcto: Marta no va al trabajo porque está enferma."
         },
         "pero": {
-          "en": "pero: «but». It does not fit here, because being sick does not go against staying home; it explains it. Correct: No voy al trabajo porque estoy enfermo.",
-          "es": "pero: opone dos ideas. Aquí no encaja, porque estar enfermo no va contra quedarse en casa, sino que lo explica. Correcto: No voy al trabajo porque estoy enfermo."
+          "en": "pero: «but». It does not fit here, because being sick does not go against staying home; it explains it. Correct: Marta no va al trabajo porque está enferma.",
+          "es": "pero: opone dos ideas. Aquí no encaja, porque estar enfermo no va contra quedarse en casa, sino que lo explica. Correcto: Marta no va al trabajo porque está enferma."
         }
       },
       "examples": [
@@ -735,8 +735,8 @@
         "Estoy en casa porque llueve."
       ],
       "tr": {
-        "en": "I am not going to work because I am sick.",
-        "es": "No voy al trabajo porque estoy enfermo."
+        "en": "Marta is not going to work because she is sick.",
+        "es": "Marta no va al trabajo porque está enferma."
       }
     },
     {
@@ -805,7 +805,7 @@
     },
     {
       "id": "cb-11",
-      "sentence": "Tengo sed, ___ bebo agua.",
+      "sentence": "Mis hijos tienen sed, ___ beben agua.",
       "options": [
         "pero",
         "porque",
@@ -813,17 +813,17 @@
       ],
       "correct": 2,
       "why": {
-        "en": "Así que (so) joins the reason and the result in one sentence: I am thirsty, so I drink water. The reason comes first, then a comma.",
-        "es": "Así que une la razón y el resultado en una frase: tengo sed, así que bebo agua. Primero va la razón, luego una coma."
+        "en": "Así que (so) joins the reason and the result in one sentence: my kids are thirsty, so they drink water. The reason comes first, then a comma.",
+        "es": "Así que une la razón y el resultado en una frase: mis hijos tienen sed, así que beben agua. Primero va la razón, luego una coma."
       },
       "wrong": {
         "pero": {
-          "en": "pero: «but». It does not fit here, because drinking water does not go against being thirsty; it is the result. Correct: Tengo sed, así que bebo agua.",
-          "es": "pero: opone dos ideas. Aquí no encaja, porque beber agua no va contra tener sed, sino que es el resultado. Correcto: Tengo sed, así que bebo agua."
+          "en": "pero: «but». It does not fit here, because drinking water does not go against being thirsty; it is the result. Correct: Mis hijos tienen sed, así que beben agua.",
+          "es": "pero: opone dos ideas. Aquí no encaja, porque beber agua no va contra tener sed, sino que es el resultado. Correcto: Mis hijos tienen sed, así que beben agua."
         },
         "porque": {
-          "en": "porque: «because». It does not fit here, because it would say that you are thirsty BECAUSE you drink water, the wrong way round. Correct: Tengo sed, así que bebo agua.",
-          "es": "porque: da la razón. Aquí no encaja, porque diría que tienes sed PORQUE bebes agua, y es al revés. Correcto: Tengo sed, así que bebo agua."
+          "en": "porque: «because». It does not fit here, because it would say that you are thirsty BECAUSE you drink water, the wrong way round. Correct: Mis hijos tienen sed, así que beben agua.",
+          "es": "porque: da la razón. Aquí no encaja, porque diría que tienes sed PORQUE bebes agua, y es al revés. Correcto: Mis hijos tienen sed, así que beben agua."
         }
       },
       "examples": [
@@ -831,8 +831,8 @@
         "Mi mamá llega mañana, así que limpio la casa."
       ],
       "tr": {
-        "en": "I am thirsty, so I drink water.",
-        "es": "Tengo sed, así que bebo agua."
+        "en": "My kids are thirsty, so they drink water.",
+        "es": "Mis hijos tienen sed, así que beben agua."
       }
     },
     {
@@ -1015,8 +1015,8 @@
       "kind": "form",
       "id": "cb-form-07",
       "verb": "conector",
-      "person": "Bailo bien, ___ canto mal.",
-      "q": { "en": "Which connector is missing? Bailo bien, ___ canto mal.", "es": "¿Qué conector falta? Bailo bien, ___ canto mal." },
+      "person": "Baila bien, ___ canta mal.",
+      "q": { "en": "Which connector is missing? Baila bien, ___ canta mal.", "es": "¿Qué conector falta? Baila bien, ___ canta mal." },
       "answer": "pero",
       "table": "conectores-basicos-frases",
       "wrong": {
@@ -1053,8 +1053,8 @@
       "kind": "form",
       "id": "cb-form-09",
       "verb": "conector",
-      "person": "No llamo a mi mamá ___ es muy tarde.",
-      "q": { "en": "Which connector is missing? No llamo a mi mamá ___ es muy tarde.", "es": "¿Qué conector falta? No llamo a mi mamá ___ es muy tarde." },
+      "person": "No llamas a tu mamá ___ es muy tarde.",
+      "q": { "en": "Which connector is missing? No llamas a tu mamá ___ es muy tarde.", "es": "¿Qué conector falta? No llamas a tu mamá ___ es muy tarde." },
       "answer": "porque",
       "table": "conectores-basicos-frases",
       "wrong": {
@@ -1096,8 +1096,8 @@
       "kind": "form",
       "id": "cb-form-11",
       "verb": "conector",
-      "person": "El metro está cerrado, ___ camino al banco.",
-      "q": { "en": "Which connector is missing? El metro está cerrado, ___ camino al banco.", "es": "¿Qué conector falta? El metro está cerrado, ___ camino al banco." },
+      "person": "El metro está cerrado, ___ caminamos al banco.",
+      "q": { "en": "Which connector is missing? El metro está cerrado, ___ caminamos al banco.", "es": "¿Qué conector falta? El metro está cerrado, ___ caminamos al banco." },
       "answer": "así que",
       "accept": [
         "asi que",
@@ -1259,11 +1259,11 @@
     {
       "kind": "why",
       "id": "cb-why-04",
-      "es": "Llego tarde porque el metro es lento.",
+      "es": "Llegamos tarde porque el metro es lento.",
       "target": "porque",
       "tr": {
-        "en": "I arrive late because the metro is slow.",
-        "es": "Llego tarde porque el metro es lento."
+        "en": "We arrive late because the metro is slow.",
+        "es": "Llegamos tarde porque el metro es lento."
       },
       "options": [
         {
@@ -1298,11 +1298,11 @@
     {
       "kind": "why",
       "id": "cb-why-05",
-      "es": "Mañana hay examen, por eso estudio hoy.",
+      "es": "Mañana hay examen, por eso estudian hoy.",
       "target": "por eso",
       "tr": {
-        "en": "Tomorrow there is an exam, that is why I study today.",
-        "es": "Mañana hay examen, por eso estudio hoy."
+        "en": "Tomorrow there is an exam, that is why they study today.",
+        "es": "Mañana hay examen, por eso estudian hoy."
       },
       "options": [
         {
@@ -1337,11 +1337,11 @@
     {
       "kind": "why",
       "id": "cb-why-06",
-      "es": "Mi amigo está enfermo, así que llamo al médico.",
+      "es": "Mi amigo está enfermo, así que llamas al médico.",
       "target": "así que",
       "tr": {
-        "en": "My friend is sick, so I call the doctor.",
-        "es": "Mi amigo está enfermo, así que llamo al médico."
+        "en": "My friend is sick, so you call the doctor.",
+        "es": "Mi amigo está enfermo, así que llamas al médico."
       },
       "options": [
         {
@@ -1445,10 +1445,10 @@
         "to": "ir-a"
       },
       "prompt": {
-        "en": "I eat at home because I am hungry.",
-        "es": "Como en casa porque tengo hambre."
+        "en": "She eats at home because she is hungry.",
+        "es": "Come en casa porque tiene hambre."
       },
-      "answer": "Voy a comer en casa porque tengo hambre.",
+      "answer": "Va a comer en casa porque tiene hambre.",
       "wordIds": [
         "33",
         "25",
@@ -1468,10 +1468,10 @@
         "to": "ir-a"
       },
       "prompt": {
-        "en": "I am tired, so I sleep.",
-        "es": "Estoy cansado, por eso duermo."
+        "en": "We are tired, so we sleep.",
+        "es": "Estamos cansados, por eso dormimos."
       },
-      "answer": "Estoy cansado, por eso voy a dormir.",
+      "answer": "Estamos cansados, por eso vamos a dormir.",
       "wordIds": [
         "33",
         "213",
@@ -1490,10 +1490,10 @@
         "to": "ir-a"
       },
       "prompt": {
-        "en": "I drink water or coffee.",
-        "es": "Bebo agua o café."
+        "en": "You drink water or coffee.",
+        "es": "Bebes agua o café."
       },
-      "answer": "Voy a beber agua o café.",
+      "answer": "Vas a beber agua o café.",
       "wordIds": [
         "33",
         "29",
@@ -1513,10 +1513,10 @@
         "to": "ir-a"
       },
       "prompt": {
-        "en": "It is hot, so I drink water.",
-        "es": "Hace calor, así que bebo agua."
+        "en": "It is hot, so they drink water.",
+        "es": "Hace calor, así que beben agua."
       },
-      "answer": "Hace calor, así que voy a beber agua.",
+      "answer": "Hace calor, así que van a beber agua.",
       "wordIds": [
         "33",
         "29",
@@ -1598,7 +1598,7 @@
       "id": "cb-cloze-04",
       "kind": "opencloze",
       "trial": true,
-      "text": "Mañana hay examen, ___ estudio hoy. Hace frío, ___ tomo un café.",
+      "text": "Mañana hay examen, ___ estudiamos hoy. Hace frío, ___ tomamos un café.",
       "answers": [
         "por eso",
         "así que"
@@ -1616,8 +1616,8 @@
         ]
       ],
       "tr": {
-        "en": "There is an exam tomorrow, so I study today. It is cold, so I have a coffee.",
-        "es": "Mañana hay examen, por eso estudio hoy. Hace frío, así que tomo un café."
+        "en": "There is an exam tomorrow, so we study today. It is cold, so we have a coffee.",
+        "es": "Mañana hay examen, por eso estudiamos hoy. Hace frío, así que tomamos un café."
       },
       "why": {
         "en": "Por eso and así que both give the result after a reason.",
@@ -1628,7 +1628,7 @@
       "id": "cb-cloze-05",
       "kind": "opencloze",
       "trial": true,
-      "text": "Mi hermano está enfermo. ___ voy al médico con él. Él no come ___ no tiene hambre.",
+      "text": "Mi hermano está enfermo. ___ vas al médico con él. Él no come ___ no tiene hambre.",
       "answers": [
         "Entonces",
         "porque"
@@ -1641,8 +1641,8 @@
         []
       ],
       "tr": {
-        "en": "My brother is sick. Then I go to the doctor with him. He does not eat because he is not hungry.",
-        "es": "Mi hermano está enfermo. Entonces voy al médico con él. Él no come porque no tiene hambre."
+        "en": "My brother is sick. Then you go to the doctor with him. He does not eat because he is not hungry.",
+        "es": "Mi hermano está enfermo. Entonces vas al médico con él. Él no come porque no tiene hambre."
       },
       "why": {
         "en": "Entonces gives a conclusion; porque gives a reason.",
@@ -1685,7 +1685,7 @@
       "id": "cb-fix-03",
       "kind": "fix",
       "trial": true,
-      "es": "Quiero ir a la playa, porque no tengo dinero.",
+      "es": "Queremos ir a la playa, porque no tenemos dinero.",
       "wrongIndex": 5,
       "answer": "pero",
       "explain": {
@@ -1693,15 +1693,15 @@
         "es": "Las dos ideas chocan, así que el conector es pero, no porque."
       },
       "tr": {
-        "en": "I want to go to the beach, but I have no money.",
-        "es": "Quiero ir a la playa, pero no tengo dinero."
+        "en": "We want to go to the beach, but we have no money.",
+        "es": "Queremos ir a la playa, pero no tenemos dinero."
       }
     },
     {
       "id": "cb-fix-04",
       "kind": "fix",
       "trial": true,
-      "es": "Hoy no voy a la escuela pero estoy enfermo.",
+      "es": "Hoy no van a la escuela pero están enfermos.",
       "wrongIndex": 6,
       "answer": "porque",
       "explain": {
@@ -1709,8 +1709,8 @@
         "es": "La segunda idea es la razón, así que el conector es porque, no pero."
       },
       "tr": {
-        "en": "I am not going to school today because I am sick.",
-        "es": "Hoy no voy a la escuela porque estoy enfermo."
+        "en": "They are not going to school today because they are sick.",
+        "es": "Hoy no van a la escuela porque están enfermos."
       }
     },
     {
@@ -1801,15 +1801,15 @@
         "por eso",
         "pero"
       ],
-      "es": "Estoy cansado, ___ duermo.",
+      "es": "Estamos cansados, ___ dormimos.",
       "word": "por eso",
       "answer": "por eso",
       "accept": [
         "así que"
       ],
       "tr": {
-        "en": "I am tired, so I sleep.",
-        "es": "Estoy cansado, por eso duermo."
+        "en": "We are tired, so we sleep.",
+        "es": "Estamos cansados, por eso dormimos."
       },
       "why": {
         "en": "Por eso gives the result after the reason (tired).",
@@ -1825,12 +1825,12 @@
         "e",
         "u"
       ],
-      "es": "Hablo con mi madre ___ mi padre.",
+      "es": "Ella habla con mi madre ___ mi padre.",
       "word": "y",
       "answer": "y",
       "tr": {
-        "en": "I talk with my mother and my father.",
-        "es": "Hablo con mi madre y mi padre."
+        "en": "She talks with my mother and my father.",
+        "es": "Ella habla con mi madre y mi padre."
       },
       "why": {
         "en": "Y joins two things; mi padre does not start with i-, so it stays y.",
@@ -1862,20 +1862,20 @@
       "kind": "order",
       "trial": true,
       "prompt": {
-        "en": "I want to go, but I have no money.",
-        "es": "Quiero ir, pero no tengo dinero."
+        "en": "We want to go, but we have no money.",
+        "es": "Queremos ir, pero no tenemos dinero."
       },
-      "es": "Quiero ir, pero no tengo dinero."
+      "es": "Queremos ir, pero no tenemos dinero."
     },
     {
       "id": "cb-order-04",
       "kind": "order",
       "trial": true,
       "prompt": {
-        "en": "I am at home because I am sick.",
-        "es": "Estoy en casa porque estoy enfermo."
+        "en": "They are at home because they are sick.",
+        "es": "Están en casa porque están enfermos."
       },
-      "es": "Estoy en casa porque estoy enfermo."
+      "es": "Están en casa porque están enfermos."
     },
     {
       "id": "cb-order-05",
