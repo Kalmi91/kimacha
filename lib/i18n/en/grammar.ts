@@ -1,5 +1,6 @@
 export default {
   grammar: {
+    mistyped: 'I mistyped',
     coverage: (done: number, written: number, planned: number) =>
       `${done} lessons finished · ${written} of ${planned} written`,
     levelMeta: (done: number, topics: number, written: number) =>
@@ -235,6 +236,7 @@ export default {
     whichNeither: 'Neither',
     dontKnow: "I don't know",
     mistyped: 'I mistyped',
+    misclicked: 'I misclicked',
     countedRight: 'Counted as right',
     next: 'Next',
     passedTitle: (lvl: string, right: number, total: number) => `${lvl} passed · ${right} of ${total} right`,
@@ -279,6 +281,7 @@ export default {
     miniHeader: (i: number, n: number) => `Quick check · ${i}/${n}`,
     missTitle: 'Not quite',
     mistyped: 'I mistyped',
+    misclicked: 'I misclicked',
     next: 'Next',
     endTitle: (right: number, total: number) => `Round done · ${right} of ${total}`,
     statusLearned: 'learned',

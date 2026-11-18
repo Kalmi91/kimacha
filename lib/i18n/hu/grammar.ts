@@ -2,6 +2,7 @@ import type en from '../en/grammar';
 
 const hu: typeof en = {
   grammar: {
+    mistyped: 'Elgépeltem',
     coverage: (done: number, written: number, planned: number) =>
       `${done} lecke kész · ${written} / ${planned} megírva`,
     levelMeta: (done: number, topics: number, written: number) =>
@@ -218,6 +219,7 @@ const hu: typeof en = {
     whichNeither: 'Egyik sem',
     dontKnow: 'Nem tudom',
     mistyped: 'Elgépeltem',
+    misclicked: 'Félrekattintottam',
     countedRight: 'Helyesnek számít',
     next: 'Tovább',
     passedTitle: (lvl: string, right: number, total: number) => `${lvl} teljesítve · ${right} / ${total} helyes`,
@@ -262,6 +264,7 @@ const hu: typeof en = {
     miniHeader: (i: number, n: number) => `Gyors ellenőrzés · ${i}/${n}`,
     missTitle: 'Nem egészen',
     mistyped: 'Elgépeltem',
+    misclicked: 'Félrekattintottam',
     next: 'Tovább',
     endTitle: (right: number, total: number) => `Kör kész · ${right} / ${total}`,
     statusLearned: 'megtanulva',

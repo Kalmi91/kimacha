@@ -2,6 +2,7 @@ import type en from '../en/grammar';
 
 const de: typeof en = {
   grammar: {
+    mistyped: 'Vertippt',
     coverage: (done: number, written: number, planned: number) =>
       `${done} Lektionen abgeschlossen · ${written} von ${planned} geschrieben`,
     levelMeta: (done: number, topics: number, written: number) =>
@@ -214,6 +215,7 @@ const de: typeof en = {
     whichNeither: 'Keine',
     dontKnow: 'Ich weiß es nicht',
     mistyped: 'Vertippt',
+    misclicked: 'Verklickt',
     countedRight: 'Als richtig gewertet',
     next: 'Weiter',
     passedTitle: (lvl: string, right: number, total: number) => `${lvl} bestanden · ${right} von ${total} richtig`,
@@ -258,6 +260,7 @@ const de: typeof en = {
     miniHeader: (i: number, n: number) => `Kurzcheck · ${i}/${n}`,
     missTitle: 'Nicht ganz',
     mistyped: 'Vertippt',
+    misclicked: 'Verklickt',
     next: 'Weiter',
     endTitle: (right: number, total: number) => `Runde fertig · ${right} von ${total}`,
     statusLearned: 'gelernt',

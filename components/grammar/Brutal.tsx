@@ -5,6 +5,7 @@ import { Text } from '@/components/KText';
 import Colors from '@/constants/Colors';
 import { useSkinDecor } from '@/components/skins';
 import type { SkinDecor } from '@/components/skins/types';
+import { ON_FILL } from '@/constants/GrammarPalettes';
 import type { ColorRole, CornerRadii, SkinShape } from '@/constants/Skins';
 import { useGrammarColors, type GrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
@@ -15,12 +16,14 @@ import { useTheme } from '@/lib/ThemeContext';
 // We only use them when useGrammarColors().brutal is true; the classic
 // palette gives today's look, without these.
 
-export type BrutalFill = 'paper' | 'a' | 'b' | 'ink';
+// 'ok' is the right-answer green (the theme's success fill), 'b' stays the accent for explanations.
+export type BrutalFill = 'paper' | 'a' | 'b' | 'ink' | 'ok';
 
 // The Neo-brutal shadow offset (px): the `offset` prop is scaled relative to it onto the theme's shadowOffset.
 const BRUTAL_SHADOW = 3;
 
-function fillColor(g: GrammarColors, fill: BrutalFill): string {
+function fillColor(g: GrammarColors, fill: BrutalFill, ok: string = Colors.light.successFill): string {
+  if (fill === 'ok') return ok;
   if (fill === 'a') return g.a;
   if (fill === 'b') return g.b;
   if (fill === 'ink') return g.ink;
@@ -30,10 +33,20 @@ function fillColor(g: GrammarColors, fill: BrutalFill): string {
 // The text colour on the given fill: on a coloured (a / b) fill onA / onB (always onFill on the
 // brutal theme), on tint the paper base, on paper the ink.
 export function textOnFill(g: GrammarColors, fill: BrutalFill): string {
+  if (fill === 'ok') return ON_FILL;
   if (fill === 'a') return g.onA;
   if (fill === 'b') return g.onB;
   if (fill === 'ink') return g.bg;
   return g.ink;
+}
+
+// A feedback box is green after a right answer (fill 'ok'), the b accent after a wrong one / for plain explanations.
+export function resultFill(correct: boolean): BrutalFill {
+  return correct ? 'ok' : 'b';
+}
+
+export function resultInk(g: GrammarColors, correct: boolean): string {
+  return correct ? ON_FILL : g.onB;
 }
 
 // The text of the main button (ink fill): in Neo-brutal light mode the b colour, in dark mode (where
@@ -129,6 +142,7 @@ export function BrutalBox({
   accessibilityState?: AccessibilityState;
 }) {
   const g = useGrammarColors();
+  const { theme } = useTheme();
   const { shape } = useSkin().skin;
   const variant = useButtonVariant();
   const textOnly = action && variant === 'text';
@@ -138,7 +152,7 @@ export function BrutalBox({
   const shift = textOnly ? 0 : (offset * shape.shadowOffset) / BRUTAL_SHADOW;
   const front: StyleProp<ViewStyle> = [
     {
-      backgroundColor: textOnly ? 'transparent' : fillColor(g, fill),
+      backgroundColor: textOnly ? 'transparent' : fillColor(g, fill, Colors[theme].successFill),
       borderWidth: textOnly ? 0 : shape.borderWidth,
       borderColor: roleColor(g, borderRole),
       borderStyle: dashed || shape.borderStyle === 'dashed' ? 'dashed' : 'solid',

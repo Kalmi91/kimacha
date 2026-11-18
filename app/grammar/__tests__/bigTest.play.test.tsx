@@ -165,6 +165,13 @@ describe.each(['brand', 'classic'] as const)('grammar Big test (%s palette)', (p
     expect(saved.answers[0].picked).toBe((item.correct + 1) % 4);
   });
 
+  it('the tapped (choice) task names its button "I misclicked", not "I mistyped"', async () => {
+    await open();
+    await answerWrong();
+    expect(screen.getByTestId('big-test-mistyped')).toHaveTextContent('I misclicked');
+    expect(screen.queryByText('I mistyped')).toBeNull();
+  });
+
   it('a tap on "I don\'t know" or an option within 500 ms of a new question records nothing', async () => {
     await open();
     await answerRight();
