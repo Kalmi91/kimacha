@@ -384,7 +384,7 @@ export default function SmallTestScreen() {
                 accessibilityRole="button"
                 accessibilityLabel={s.topicRowLabel(titleOf(r.id), label(r.status))}
                 style={styles.topicRow}
-                onPress={r.status === 'lesson' ? () => router.push(`/grammar/${r.id}` as never) : undefined}
+                onPress={() => router.push(`/grammar/${r.id}` as never)}
               >
                 <Text style={[styles.topicName, { color: colors.text }]} numberOfLines={2}>{titleOf(r.id)}</Text>
                 <Text testID={`small-test-end-status-${r.id}`} style={[styles.status, { color: colors[STATUS_COLOR[r.status]] }]}>{label(r.status)}</Text>

@@ -333,6 +333,20 @@ describe.each(['brand', 'classic'] as const)('grammar small test (%s palette)', 
     expect((await stateNow()).run).toBeNull();
   });
 
+  it('FB678: every lesson row of the end card (learned or not) opens that lesson; the end card stays under it', async () => {
+    await start();
+    for (let i = 0; i < 10; i++) await answerNext(true);
+    expect(has('small-test-end')).toBe(true);
+    for (const id of TOPICS) {
+      expect(screen.getByTestId(`small-test-end-topic-${id}`)).toHaveProp('accessibilityRole', 'button');
+      mockPush.mockClear();
+      await press(`small-test-end-topic-${id}`);
+      expect(mockPush).toHaveBeenCalledTimes(1);
+      expect(mockPush).toHaveBeenCalledWith(`/grammar/${id}`);
+      expect(has('small-test-end')).toBe(true);
+    }
+  });
+
   it('leaving with the X and coming back continues on the same question', async () => {
     const first = await start();
     await answerNext(true);
