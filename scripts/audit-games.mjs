@@ -917,6 +917,20 @@ function auditNewKindItem(item, itemPath, topic, checkWords) {
   } else if (item.kind === 'order') {
     if (words.length < 2) p1.push({ path: itemPath, issue: 'order item needs at least 2 words' });
     checkLangs(item.prompt, `${itemPath} prompt`);
+    // further right word orders: only compared with what the learner builds, never shown (the data test checks the words).
+    if (item.accept !== undefined) {
+      if (!Array.isArray(item.accept)) {
+        p1.push({ path: itemPath, issue: 'order accept must be an array' });
+      } else {
+        for (const alt of item.accept) {
+          if (typeof alt !== 'string' || !alt.trim()) {
+            p1.push({ path: itemPath, issue: 'order accept entry must be a non-empty string' });
+            continue;
+          }
+          if (alt === item.es) p1.push({ path: itemPath, issue: `order accept entry equals es: "${alt}"` });
+        }
+      }
+    }
   } else if (item.kind === 'dictation') {
     checkLangs(item.tr, `${itemPath} tr`);
   } else if (item.kind === 'write') {

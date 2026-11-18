@@ -1191,7 +1191,8 @@
         "en": "I study Spanish to travel to Mexico.",
         "es": "Estudio español para viajar a México."
       },
-      "es": "Estudio español para viajar a México."
+      "es": "Estudio español para viajar a México.",
+      "accept": ["Para viajar a México estudio español."]
     },
     {
       "id": "pr-order-02",
@@ -1221,7 +1222,8 @@
         "en": "I buy this shirt for a hundred pesos.",
         "es": "Compro esta camisa por cien pesos."
       },
-      "es": "Compro esta camisa por cien pesos."
+      "es": "Compro esta camisa por cien pesos.",
+      "accept": ["Por cien pesos compro esta camisa."]
     },
     {
       "id": "pr-order-05",

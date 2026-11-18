@@ -20,6 +20,8 @@ import ExamButton from './ExamButton';
 type Props = {
   prompt: string;
   answerTokens: string[];
+  /** Further right orders of the same tiles (other word orders that are also correct); never shown. */
+  acceptTokens?: string[][];
   /** The original sentence with capital letter and punctuation; shown after a wrong answer (if absent, the tiles joined together). */
   sentence?: string;
   distractors: string[];
@@ -29,7 +31,7 @@ type Props = {
   onDone: (correct: boolean, given?: string) => void;
 };
 
-export default function ExamTilesCard({ prompt, answerTokens, sentence, distractors, instant = false, onDone }: Props) {
+export default function ExamTilesCard({ prompt, answerTokens, acceptTokens, sentence, distractors, instant = false, onDone }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const g = useGrammarColors();
@@ -47,7 +49,7 @@ export default function ExamTilesCard({ prompt, answerTokens, sentence, distract
   };
   const check = () => {
     const built = placed.map((i) => bank[i]);
-    if (sentenceBuildMatch(built, answerTokens)) onDone(true, built.join(' '));
+    if ([answerTokens, ...(acceptTokens ?? [])].some((tokens) => sentenceBuildMatch(built, tokens))) onDone(true, built.join(' '));
     else if (instant) onDone(false, built.join(' '));
     else setMissed(true);
   };

@@ -2813,7 +2813,7 @@
     {"id":"im-bank-05","kind":"bank","trial":true,"bank":["ser","tener","ir"],"es":"Cuando era niño, mi escuela ___ muy grande.","word":"ser","answer":"era","tr":{"en":"When I was a child, my school was very big.","es":"Cuando era niño, mi escuela era muy grande."},"why":{"en":"Ser describes how something was: era.","es":"Ser describe cómo era algo: era."}},
     {"id":"im-order-01","kind":"order","trial":true,"prompt":{"en":"My grandmother cooked very well.","es":"Mi abuela cocinaba muy bien."},"es":"Mi abuela cocinaba muy bien."},
     {"id":"im-order-02","kind":"order","trial":true,"prompt":{"en":"We lived near the school.","es":"Nosotros vivíamos cerca de la escuela."},"es":"Nosotros vivíamos cerca de la escuela."},
-    {"id":"im-order-03","kind":"order","trial":true,"prompt":{"en":"Where did you live when you were a child?","es":"¿Dónde vivías cuando eras niño?"},"es":"¿Dónde vivías cuando eras niño?"},
+    {"id":"im-order-03","kind":"order","trial":true,"prompt":{"en":"Where did you live when you were a child?","es":"¿Dónde vivías cuando eras niño?"},"es":"¿Dónde vivías cuando eras niño?","accept":["Cuando eras niño, ¿dónde vivías?"]},
     {"id":"im-order-04","kind":"order","trial":true,"prompt":{"en":"My cousins went to the beach.","es":"Mis primos iban a la playa."},"es":"Mis primos iban a la playa."},
     {"id":"im-order-05","kind":"order","trial":true,"prompt":{"en":"My sister had a big dog.","es":"Mi hermana tenía un perro grande."},"es":"Mi hermana tenía un perro grande."}
   ]

@@ -1561,7 +1561,8 @@
         "en": "I like music.",
         "es": "Me gusta la música."
       },
-      "es": "Me gusta la música."
+      "es": "Me gusta la música.",
+      "accept": ["La música me gusta."]
     },
     {
       "id": "gu-order-02",
@@ -1571,7 +1572,8 @@
         "en": "I like the tacos.",
         "es": "Me gustan los tacos."
       },
-      "es": "Me gustan los tacos."
+      "es": "Me gustan los tacos.",
+      "accept": ["Los tacos me gustan."]
     },
     {
       "id": "gu-order-03",
@@ -1591,7 +1593,8 @@
         "en": "She likes the book.",
         "es": "Le gusta el libro."
       },
-      "es": "Le gusta el libro."
+      "es": "Le gusta el libro.",
+      "accept": ["El libro le gusta."]
     },
     {
       "id": "gu-order-05",
@@ -1601,7 +1604,8 @@
         "en": "We like the song.",
         "es": "Nos gusta la canción."
       },
-      "es": "Nos gusta la canción."
+      "es": "Nos gusta la canción.",
+      "accept": ["La canción nos gusta."]
     }
   ]
 }

@@ -22,6 +22,8 @@ import type { HintPiece } from '@/lib/sentenceHint';
 interface Props {
   sourceSentence: string;
   targetWords: string[];
+  // Further right orders of the same tiles (word order task `accept`); the target stays the one that is shown.
+  acceptWords?: string[][];
   trapWords: string[];
   onResult: (correct: boolean) => void;
   // speech locale of the learned language, so a placed tile can be heard.
@@ -47,7 +49,7 @@ interface Props {
   speakOnPress?: boolean;
 }
 
-export default function EasySentenceCard({ sourceSentence, targetWords, trapWords, onResult, speechLocale, sourceSpeechLocale, gradeButtons = false, sourceHints, onSourceHint, speakerGender, spokenSentence, speakOnPress = false }: Props) {
+export default function EasySentenceCard({ sourceSentence, targetWords, acceptWords, trapWords, onResult, speechLocale, sourceSpeechLocale, gradeButtons = false, sourceHints, onSourceHint, speakerGender, spokenSentence, speakOnPress = false }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const g = useGrammarColors();
@@ -129,7 +131,7 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
 
   const handleCheck = () => {
     // tile for tile, no character tolerance, see sentenceBuildMatch.
-    const isCorrect = sentenceBuildMatch(placed.map(i => bank[i]), targetWords);
+    const isCorrect = [targetWords, ...(acceptWords ?? [])].some((words) => sentenceBuildMatch(placed.map(i => bank[i]), words));
     setResult(isCorrect ? 'correct' : 'wrong');
     setMissed(!isCorrect);
     // The correct sentence is ALWAYS spoken, after a good and after a bad

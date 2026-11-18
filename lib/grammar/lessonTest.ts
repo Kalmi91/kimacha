@@ -121,7 +121,7 @@ export function lessonTestUnlocked(lesson: GrammarTopicData, rows: Row[], topicI
 export type LessonTestView =
   | { card: 'choice'; heading: string; text: string; options: string[]; correctIndex: number }
   | { card: 'type'; prompt: string; hint?: string; answer: string; accept?: string[]; sentence: boolean; keepUmlauts?: boolean }
-  | { card: 'tiles'; prompt: string; answerTokens: string[]; sentence: string }
+  | { card: 'tiles'; prompt: string; answerTokens: string[]; sentence: string; acceptTokens?: string[][] }
   | { card: 'match'; pairs: { left: string; right: string }[] };
 
 export interface LessonTestQuestion {
@@ -289,7 +289,7 @@ function toQuestion(r: GrammarRoundItem, ctx: Ctx): LessonTestQuestion | null {
     return {
       id: item.id,
       kind,
-      view: { card: 'tiles', prompt: pick(item.prompt), answerTokens, sentence: item.es },
+      view: { card: 'tiles', prompt: pick(item.prompt), answerTokens, sentence: item.es, ...(item.accept?.length ? { acceptTokens: item.accept.map(tileWords) } : {}) },
       review: { question: pick(item.prompt), answer: item.es },
       say: item.es,
     };
