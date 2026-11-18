@@ -57,7 +57,7 @@ function nativeDb(db: SqlJsDriver): import('../dbTypes').DB {
 describe('migration v7: the cards get a pair (real SQLite)', () => {
   it('the cards stay with the active pair when the target matches; no row is lost, no value changes', async () => {
     const db = await oldFile(['en', 'es'], ['en-es', 'es-en', 'hu-es'], [['o1', 4], ['o2', 6], ['e3', 8]], [['b:w:1', 5]]);
-    expect(LATEST_SCHEMA_VERSION).toBe(7);
+    expect(LATEST_SCHEMA_VERSION).toBe(8);
     const db7 = nativeDb(db);
     await db7.getStreak(); // opens the file: runs the migration
     // o* (Spanish deck) -> the active en-es; e3 (English deck) -> the known pair of that target, es-en; the Spanish mistakes -> en-es

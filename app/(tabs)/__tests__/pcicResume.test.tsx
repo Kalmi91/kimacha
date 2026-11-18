@@ -55,12 +55,14 @@ describe('PCIC tab: on reopening, the round resumes where it left off', () => {
 
   beforeEach(async () => {
     await getDb().resetPcicCards();
+    await getDb().setNoPileUp(true);
     await getDb().resetGameProgress(RESUME_GAME_ID);
     await getDb().setPcicNewBonus(0, today);
     await getDb().setPcicLevel('A1');
   });
 
   it('the missed card stays in place: the current card is the same after reopening (the missed one does not jump ahead)', async () => {
+    await getDb().setNoPileUp(false); // resume of the legacy mixed queue
     await getDb().setNewWordGate(false); // the old order; the new-word gate has its own tests (pcicNewGate)
     const first = render(<PcicScreen />);
     await flush();

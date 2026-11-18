@@ -87,6 +87,8 @@ const hu: typeof en = {
     fatigueDetector: 'Fáradtság-figyelő',
     fatigueDetectorHint: 'Tanulás közben figyeli, lassulnak-e a válaszaid, vagy ugyanazok a kártyák mennek-e el újra és újra. Ilyenkor felajánlja, hogy a jól ismert szavakkal folytasd. Az ismétlés ütemezése nem változik.',
     newWordGate: 'Új szó csak az előző helyes beírása után',
+    noPileUp: 'A kihagyott nap nem halmozódik',
+    noPileUpHint: 'A szavak napja csak akkor lép tovább, ha az aznapi ismétléssel végeztél, így a kihagyott nap nem tesz hozzá semmit. Új szó csak az ismétlés után jön.',
     newWordGateHint: 'Az elrontott új szó addig jön vissza, amíg helyesen be nem írod; előtte másik új szó nem indul. Az ismétlés ütemezése nem változik.',
     missCap: 'Elrontott kártya legfeljebb 3-szor',
     missCapHint: 'Az elrontott kártya aznap legfeljebb háromszor jön vissza, utána holnapig vár. Az ismétlés ütemezése nem változik.',

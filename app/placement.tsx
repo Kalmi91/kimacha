@@ -11,6 +11,7 @@ import { t } from '@/lib/i18n';
 import { activeSourceFor, pairOf } from '@/lib/languagePair';
 import { useTheme } from '@/lib/ThemeContext';
 import { localDateString } from '@/lib/usageStats';
+import { loadSrsDay } from '@/lib/learn/srsDay';
 import { levelProgress } from '@/lib/pcicLevels';
 import type { Sm2Card } from '@/lib/sm2';
 import { Card } from '@/components/grammar/Brutal';
@@ -93,7 +94,8 @@ export default function PlacementScreen() {
 
   const finish = async (words: string[]) => {
     const db = getDb();
-    setKnown(await saveKnownWords(db, words, localDateString()));
+    const today = localDateString();
+    setKnown(await saveKnownWords(db, words, await loadSrsDay(db, today), today));
     setCards(await db.getPcicCards());
   };
 

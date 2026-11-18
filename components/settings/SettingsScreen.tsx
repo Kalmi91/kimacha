@@ -87,11 +87,11 @@ export default function SettingsScreen({ section = 'home' }: { section?: Setting
   const isCloudGuest = useIsCloudGuest();
   const {
     level, direction, directionSheetOpen, setDirectionSheetOpen, weeklyGoal, dailyNewLimit, againDelaySec,
-    strictAccents, articlePicker, tiredButton, missCap, fatigueDetector, newWordGate, goalReached, missingVoices, resetLevels, hasGrammarProgress, resetOpen,
+    strictAccents, articlePicker, tiredButton, missCap, fatigueDetector, newWordGate, noPileUp, goalReached, missingVoices, resetLevels, hasGrammarProgress, resetOpen,
     setResetOpen, examSeeded, handleStrictAccentsToggle, handleArticlePickerToggle, handleSelectDirection,
     handleWeeklyGoalChange, handleDailyNewLimitChange, handleAgainDelayChange, handleBackup, handleRestore,
     handleResetDeck, handleResetGrammar, handleSeedExamA1,
-    handleTiredButtonToggle, handleMissCapToggle, handleFatigueDetectorToggle, handleNewWordGateToggle,
+    handleTiredButtonToggle, handleMissCapToggle, handleFatigueDetectorToggle, handleNewWordGateToggle, handleNoPileUpToggle,
   } = useSettingsScreen();
 
   // the language's own name for the hint ("Magyar"), not its code.
@@ -287,6 +287,14 @@ export default function SettingsScreen({ section = 'home' }: { section?: Setting
           <Text style={[styles.sectionHint, { color: colors.tabIconDefault }]}>{s.settings.newWordGateHint}</Text>
         </View>
         <BrutalSwitch testID="settings-new-word-gate" accessibilityLabel={s.settings.newWordGate} value={newWordGate} onValueChange={handleNewWordGateToggle} />
+      </Row>
+
+      <Row>
+        <View style={styles.difficultyLabelBox}>
+          <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.noPileUp}</Text>
+          <Text style={[styles.sectionHint, { color: colors.tabIconDefault }]}>{s.settings.noPileUpHint}</Text>
+        </View>
+        <BrutalSwitch testID="settings-no-pile-up" accessibilityLabel={s.settings.noPileUp} value={noPileUp} onValueChange={handleNoPileUpToggle} />
       </Row>
 
       </>

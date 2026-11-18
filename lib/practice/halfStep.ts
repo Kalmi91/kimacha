@@ -6,6 +6,7 @@
 import { getDb } from '@/lib/database';
 import { addDays, sm2Review, type Sm2Card } from '@/lib/sm2';
 import { localDateString } from '@/lib/usageStats';
+import { loadSrsDay } from '@/lib/learn/srsDay';
 
 export type PracticeResult = 'correct' | 'wrongTyped' | 'wrongOther';
 export type SrsMove = 'forward' | 'back' | 'none';
@@ -36,12 +37,12 @@ export function applyPracticeResult(state: HalfState, result: PracticeResult): P
 // One step back on the SM-2 ladder, the inverse of a "good" (sm2.ts has no such move):
 // a review card's interval shrinks by its ease (down to 1 day), a card on its first review
 // interval (1 day) drops back to learning, due today. Ease and lapses stay untouched.
-export function sm2StepBack(card: Sm2Card, today: string): Sm2Card {
+export function sm2StepBack(card: Sm2Card, today: string, calendarDay: string = today): Sm2Card {
   if (card.state === 'new') return card;
-  if (card.state === 'learning') return { ...card, step: Math.max(0, card.step - 1), due: today, lastReview: today };
-  if (card.interval <= 1) return { ...card, state: 'learning', step: 0, due: today, lastReview: today };
+  if (card.state === 'learning') return { ...card, step: Math.max(0, card.step - 1), due: today, lastReview: calendarDay };
+  if (card.interval <= 1) return { ...card, state: 'learning', step: 0, due: today, lastReview: calendarDay };
   const interval = Math.max(1, Math.round(card.interval / card.ease));
-  return { ...card, interval, due: addDays(today, interval), lastReview: today };
+  return { ...card, interval, due: addDays(today, interval), lastReview: calendarDay };
 }
 
 // Saves the counters and, when they say so, moves the word on the SRS ladder: forward = the same
@@ -56,7 +57,8 @@ export async function recordPracticeResult(
   const card = await db.getPcicCard(cardId);
   if (!card || card.state === 'new') return null;
   const outcome = applyPracticeResult({ halfSteps: card.halfSteps ?? 0, wrongStreak: card.wrongStreak ?? 0 }, result);
-  const moved = outcome.srs === 'forward' && card.due <= today ? sm2Review(card, 'good', today) : outcome.srs === 'back' ? sm2StepBack(card, today) : card;
+  const srsDay = await loadSrsDay(db, today);
+  const moved = outcome.srs === 'forward' && card.due <= srsDay ? sm2Review(card, 'good', srsDay, today) : outcome.srs === 'back' ? sm2StepBack(card, srsDay, today) : card;
   await db.upsertPcicCard({ ...moved, halfSteps: outcome.halfSteps, wrongStreak: outcome.wrongStreak });
   return outcome;
 }

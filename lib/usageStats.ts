@@ -29,7 +29,7 @@ export const WEEKLY_GOAL_STEP_MINUTES = 60;
 // daily new-word budget. A topic full of unknown words is overwhelming,
 // so only this many brand-new WORD cards enter the queue per day; the learner
 // can raise it for today with the "+5 new words" button (bonus, see database).
-export const DEFAULT_DAILY_NEW_LIMIT = 10;
+export const DEFAULT_DAILY_NEW_LIMIT = 5;
 export const MIN_DAILY_NEW_LIMIT = 5;
 export const MAX_DAILY_NEW_LIMIT = 100;
 export const DAILY_NEW_LIMIT_STEP = 5;

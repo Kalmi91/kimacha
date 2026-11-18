@@ -239,12 +239,15 @@ export class MemoryStore implements DbStore {
   // backup made on one platform restores on the other.
   async exportTables(): Promise<BackupPayload['tables']> {
     const learn_settings = [...this.settings]
-      .filter(([, s]) => s.words_only !== undefined || s.random_topics !== undefined || s.feedback_btn_side !== undefined)
+      .filter(([, s]) => s.words_only !== undefined || s.random_topics !== undefined || s.feedback_btn_side !== undefined || s.no_pile_up !== undefined || s.srs_day !== undefined)
       .map(([pair, s]) => ({
         pair,
         words_only: s.words_only !== undefined ? (s.words_only ? 1 : 0) : null,
         random_topics: s.random_topics !== undefined ? (s.random_topics ? 1 : 0) : null,
         feedback_btn_side: s.feedback_btn_side ?? null,
+        no_pile_up: s.no_pile_up ?? null,
+        srs_day: s.srs_day ?? null,
+        srs_day_step_on: s.srs_day_step_on ?? null,
       }));
     return {
       game_progress: [...this.gameProgress].flatMap(([key, items]) => {
@@ -304,6 +307,9 @@ export class MemoryStore implements DbStore {
       if (row.words_only != null) s.words_only = row.words_only === 1 ? 1 : 0;
       if (row.random_topics != null) s.random_topics = row.random_topics === 1 ? 1 : 0;
       if (row.feedback_btn_side != null) s.feedback_btn_side = row.feedback_btn_side;
+      if (row.no_pile_up != null) s.no_pile_up = row.no_pile_up;
+      if (row.srs_day != null) s.srs_day = row.srs_day;
+      if (row.srs_day_step_on != null) s.srs_day_step_on = row.srs_day_step_on;
       this.settings.set(row.pair, s);
     }
     const ob = t.onboarding[0];

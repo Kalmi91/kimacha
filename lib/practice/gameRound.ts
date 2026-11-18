@@ -25,6 +25,7 @@ export interface GameWordsDeps {
   /** Every card of the deck. */
   cards: Sm2Card[];
   today: string;
+  srsDay?: string;
   findItem: (id: string) => PcicItem | undefined;
   /** Card ids of the round this one replaces: they go to the end of the candidates (kept, not dropped), so a new round differs. */
   avoid?: ReadonlySet<string>;
@@ -47,10 +48,10 @@ export function learnedCardIds(cards: Iterable<Sm2Card>): Set<string> {
  * in the last days (lib/practice/gapFill.ts practiceCandidates). Never a word without a card, never an unknown word.
  * Fewer than GAME_MIN_WORDS words: [] (= no round).
  */
-export function pickGameWords({ cards, today, findItem, avoid, size = GAME_ROUND_SIZE, min = GAME_MIN_WORDS, usable }: GameWordsDeps): PcicItem[] {
+export function pickGameWords({ cards, today, srsDay = today, findItem, avoid, size = GAME_ROUND_SIZE, min = GAME_MIN_WORDS, usable }: GameWordsDeps): PcicItem[] {
   const items: PcicItem[] = [];
   const learned = usable ? learnedCardIds(cards) : new Set<string>();
-  for (const card of practiceCandidates(cards, today)) {
+  for (const card of practiceCandidates(cards, srsDay, today)) {
     const item = findItem(card.itemId);
     if (item && (!usable || usable(item, learned))) items.push(item);
   }

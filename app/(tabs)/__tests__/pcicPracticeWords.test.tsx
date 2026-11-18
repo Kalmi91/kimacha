@@ -39,6 +39,7 @@ describe('Learn tab: the exam row "Practice words" button draws from the missing
   beforeEach(async () => {
     setPcicTarget('es');
     await getDb().setOnboarding('en', 'es');
+    await getDb().setDailyNewLimit(10);
     await getDb().resetPcicCards();
     await getDb().resetGameProgress(GRAMMAR_PROGRESS_KEY);
     await getDb().resetGameProgress(EXAM_PROGRESS_KEY);

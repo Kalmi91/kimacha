@@ -100,10 +100,11 @@ export function pickMistakeSession(
   progress: Sm2Card[],
   cards: MistakeCard[],
   today: string,
-  newLimit: number = DEFAULT_NEW_LIMIT
+  newLimit: number = DEFAULT_NEW_LIMIT,
+  calendarDay: string = today
 ): Sm2Card[] {
   const order = cards.map((c) => c.cardId);
-  return pickSm2Session(progress, order, today, newLimit);
+  return pickSm2Session(progress, order, today, newLimit, calendarDay);
 }
 
 /**

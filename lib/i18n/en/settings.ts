@@ -87,6 +87,8 @@ export default {
     fatigueDetector: 'Fatigue detector',
     fatigueDetectorHint: 'While you study, it watches for slower answers or cards you keep missing. It then offers to continue with words you know well. Your review schedule stays the same.',
     newWordGate: 'New word only after the last one is right',
+    noPileUp: "Missed days don't pile up",
+    noPileUpHint: "Your words move on a day only after you finish that day's reviews, so a missed day adds nothing. New words come after the reviews are done.",
     newWordGateHint: 'A new word you missed keeps coming back until you type it right; no other new word starts before that. Your review schedule stays the same.',
     missCap: 'Missed cards return at most 3 times',
     missCapHint: 'A missed card returns at most three times that day, then waits until tomorrow. Its review schedule stays the same.',

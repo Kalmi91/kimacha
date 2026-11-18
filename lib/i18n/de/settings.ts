@@ -86,6 +86,8 @@ const de: typeof en = {
     fatigueDetector: 'Müdigkeitserkennung',
     fatigueDetectorHint: 'Beim Lernen erkennt sie langsamere Antworten oder Karten, die du immer wieder falsch beantwortest. Dann bietet sie dir an, mit gut bekannten Wörtern weiterzumachen. Der Wiederholungsplan bleibt unverändert.',
     newWordGate: 'Neues Wort erst nach dem richtigen vorigen',
+    noPileUp: 'Ausgelassene Tage häufen sich nicht an',
+    noPileUpHint: 'Deine Wörter rücken erst einen Tag weiter, wenn du die Wiederholungen dieses Tages erledigt hast. Ein ausgelassener Tag fügt nichts hinzu. Neue Wörter kommen erst nach den Wiederholungen.',
     newWordGateHint: 'Ein verfehltes neues Wort kommt zurück, bis du es richtig tippst; vorher beginnt kein anderes neues. Dein Wiederholungsplan bleibt gleich.',
     missCap: 'Falsch beantwortete Karten höchstens 3-mal wiederholen',
     missCapHint: 'Eine falsch beantwortete Karte kommt an diesem Tag höchstens dreimal zurück und wartet danach bis morgen. Ihr Wiederholungsplan bleibt unverändert.',

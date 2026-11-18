@@ -41,6 +41,7 @@ import { buildReadingSet, readingWordFor, type ReadingSet } from '@/lib/practice
 import { speakSequence, stopSpeaking } from '@/lib/speech';
 import { wordSpeakerGender } from '@/lib/cardSpeaker';
 import { localDateString } from '@/lib/usageStats';
+import { loadSrsDay } from '@/lib/learn/srsDay';
 import { useScreenLoad } from '@/lib/useScreenLoad';
 
 // Beta tab (Settings -> Beta -> Practice tab), spec HAROM-JATEK.md 5: a short text of five sentences with a due
@@ -107,6 +108,7 @@ function ReadingMode() {
         findItem: findPcicItem,
         levelOf: levelOfItem,
         today,
+        srsDay: await loadSrsDay(db, today),
         // the button or a new day replaces a round of this direction; a broken round of today is just dropped
         avoid: stored && stored.target === dir && (fresh || stored.date !== today) ? new Set(stored.ids) : undefined,
         avoidStory: stored && stored.target === dir && (fresh || stored.date !== today) ? stored.story : undefined,

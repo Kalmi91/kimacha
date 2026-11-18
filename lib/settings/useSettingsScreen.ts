@@ -58,7 +58,7 @@ export function useSettingsScreen() {
   const [level, setLevel] = useState<Level>('A0');
   // The learner's settings live in the store (lib/learner.tsx); this screen reads and writes them through it.
   const learner = useLearner();
-  const { refresh, strictAccents, articlePicker, againDelaySec, tiredButton, missCap, fatigueDetector, newWordGate } = learner;
+  const { refresh, strictAccents, articlePicker, againDelaySec, tiredButton, missCap, fatigueDetector, newWordGate, noPileUp } = learner;
   const direction: [string, string] = [learner.source ?? 'en', learner.target];
   // The row of the learning-direction switch and its
   // small sheet.
@@ -94,7 +94,7 @@ export function useSettingsScreen() {
     const db = getDb();
     return Promise.all([
       refresh(['strictAccents']),
-      refresh(['tiredButton', 'missCap', 'fatigueDetector', 'newWordGate']),
+      refresh(['tiredButton', 'missCap', 'fatigueDetector', 'newWordGate', 'noPileUp']),
       db.getWeeklyGoalMinutes().then(setWeeklyGoal),
       db.getUsageStats().then(u => setWeekMinutes(u.thisWeek)),
       db.getDailyNewLimit().then(setDailyNewLimit),
@@ -138,6 +138,10 @@ export function useSettingsScreen() {
 
   const handleNewWordGateToggle = async (v: boolean) => {
     await learner.setNewWordGate(v);
+  };
+
+  const handleNoPileUpToggle = async (v: boolean) => {
+    await learner.setNoPileUp(v);
   };
 
   // Direction switch:
@@ -317,6 +321,7 @@ export function useSettingsScreen() {
     missCap,
     fatigueDetector,
     newWordGate,
+    noPileUp,
     articlePicker,
     goalReached,
     missingVoices,
@@ -331,6 +336,7 @@ export function useSettingsScreen() {
     handleMissCapToggle,
     handleFatigueDetectorToggle,
     handleNewWordGateToggle,
+    handleNoPileUpToggle,
     handleSelectDirection,
     handleWeeklyGoalChange,
     handleDailyNewLimitChange,

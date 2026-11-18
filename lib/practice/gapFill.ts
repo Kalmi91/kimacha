@@ -131,11 +131,11 @@ export function gapTaskFor(
  * marked known by hand ("Don't learn this") was never learned, so it is left out; an older word that is not
  * due is left out too.
  */
-export function practiceCandidates(cards: Iterable<Sm2Card>, today: string): Sm2Card[] {
+export function practiceCandidates(cards: Iterable<Sm2Card>, today: string, calendarDay: string = today): Sm2Card[] {
   const learned = [...cards].filter((c) => c.state !== 'new' && !c.known);
   const isDue = (c: Sm2Card) => c.due !== '' && c.due <= today;
   const due = learned.filter(isDue).sort((a, b) => (a.due < b.due ? -1 : a.due > b.due ? 1 : 0));
-  const since = addDays(today, -PRACTICE_RECENT_DAYS);
+  const since = addDays(calendarDay, -PRACTICE_RECENT_DAYS);
   const fresh = (c: Sm2Card) => !isDue(c) && !!c.introducedAt && c.introducedAt >= since;
   const recent = learned.filter(fresh).sort((a, b) => (a.introducedAt! > b.introducedAt! ? -1 : a.introducedAt! < b.introducedAt! ? 1 : 0));
   return [...due, ...recent];

@@ -15,6 +15,7 @@ import type { ResolvedTense } from '@/lib/knownSentence';
 import { dropOrphanCards, pcicNewBudget } from '@/lib/pcicSession';
 import type { Ladder } from '@/lib/sentenceLadder';
 import { buildSentenceQueue, type SentenceEntry } from '@/lib/sentenceTab';
+import { loadSrsDay } from '@/lib/learn/srsDay';
 import { sm2NewCard, sm2Review, type Sm2Card } from '@/lib/sm2';
 
 /** A round brings at most this many new words (each with its sentence when it has one). */
@@ -56,6 +57,7 @@ export interface NewWordPlanDeps {
   db: Pick<DB, 'getDailyNewLimit' | 'getPcicNewBonus'>;
   target: PcicTarget;
   today: string;
+  srsDay?: string;
   /** The ids the new words are taken from, in the Learn tab's order. */
   order: readonly string[];
   /** Every card of the learner (orphans already dropped). */
@@ -80,7 +82,7 @@ export interface NewWordPlan {
  * here, the word is then the card alone.
  */
 export async function planNewWords(deps: NewWordPlanDeps): Promise<NewWordPlan> {
-  const { db, target, today, order, cards, findItem, tenses, levelOf, ladder } = deps;
+  const { db, target, today, srsDay = today, order, cards, findItem, tenses, levelOf, ladder } = deps;
   const kindOf = (id: string) => findItem(id)?.kind;
   const left = await wordsLeftToday(db, cards, today);
   const ids = nextNewWordIds(order, cards, kindOf, Math.min(MAX_NEW_WORDS_PER_ROUND, left));
@@ -91,9 +93,9 @@ export async function planNewWords(deps: NewWordPlanDeps): Promise<NewWordPlan> 
   for (const id of ids) {
     const item = findItem(id);
     if (!item) continue;
-    introduced.push(sm2Review(byId.get(id) ?? sm2NewCard(id), 'good', today));
+    introduced.push(sm2Review(byId.get(id) ?? sm2NewCard(id), 'good', srsDay, today));
     const known = [...cards.filter((c) => !introduced.some((i) => i.itemId === c.itemId)), ...introduced];
-    const own = buildSentenceQueue({ target, cards: known, tenses, items: [item], findItem, levelOf, today, ladder }).find((e) => e.itemId === id && e.rung === undefined);
+    const own = buildSentenceQueue({ target, cards: known, tenses, items: [item], findItem, levelOf, today: srsDay, ladder }).find((e) => e.itemId === id && e.rung === undefined);
     entries.push(own ? { ...own, newWord: true } : { itemId: id, source: '', target: '', wordCount: 0, wordIds: [], due: false, dueIds: [], staleness: '', slots: [], newWord: true });
   }
   return { entries, budgetOut: false };
@@ -109,7 +111,7 @@ export type Introduction = 'introduced' | 'started' | 'no-budget';
  * costs nothing. `exists` = whether an item id is in the loaded corpus (an orphan card does not count in the budget).
  */
 export async function introduceNewWord(
-  db: Pick<DB, 'getPcicCard' | 'getPcicCards' | 'upsertPcicCard' | 'getDailyNewLimit' | 'getPcicNewBonus'>,
+  db: Pick<DB, 'getPcicCard' | 'getPcicCards' | 'upsertPcicCard' | 'getDailyNewLimit' | 'getPcicNewBonus' | 'getSrsDay' | 'getNoPileUp'>,
   itemId: string,
   today: string,
   exists: (id: string) => boolean = () => true,
@@ -117,6 +119,6 @@ export async function introduceNewWord(
   const card = await db.getPcicCard(itemId);
   if (card && card.state !== 'new') return 'started';
   if ((await wordsLeftToday(db, dropOrphanCards(await db.getPcicCards(), exists), today)) <= 0) return 'no-budget';
-  await db.upsertPcicCard(sm2Review(card ?? sm2NewCard(itemId), 'good', today));
+  await db.upsertPcicCard(sm2Review(card ?? sm2NewCard(itemId), 'good', await loadSrsDay(db, today), today));
   return 'introduced';
 }

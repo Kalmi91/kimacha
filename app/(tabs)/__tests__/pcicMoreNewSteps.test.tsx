@@ -46,11 +46,11 @@ const flush = makeFlush(8);
 describe('PCIC tab: +5 / +10 / +15 new words on the "done for today" screen', () => {
   const today = localDateString();
 
-  // The daily budget (10) is used up: 10 words introduced and done today, the queue is empty, the "done for today" screen shows up.
+  // The daily budget (5) is used up: 5 words introduced and done today, the queue is empty, the "done for today" screen shows up.
   beforeEach(async () => {
     await getDb().resetPcicCards();
     await getDb().setPcicNewBonus(0, today);
-    for (const item of mockB1Items.slice(0, 10)) await getDb().upsertPcicCard(sm2Review(sm2NewCard(item.id), 'good', today));
+    for (const item of mockB1Items.slice(0, 5)) await getDb().upsertPcicCard(sm2Review(sm2NewCard(item.id), 'good', today));
     await getDb().setPcicLevel('B1');
   });
 

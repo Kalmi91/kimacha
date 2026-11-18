@@ -26,6 +26,7 @@ type Props = {
   visible: boolean;
   active: PcicLevel;
   cards: Sm2Card[];
+  srsDay?: string;
   colors: ColorScheme;
   title: string;
   // For es→en it always offers A1,
@@ -42,9 +43,9 @@ type Props = {
   onClose: () => void;
 };
 
-export default function LevelPickerSheet({ visible, active, cards, colors, title, exam, onPlacement, onSelect, onClose }: Props) {
+export default function LevelPickerSheet({ visible, active, cards, srsDay, colors, title, exam, onPlacement, onSelect, onClose }: Props) {
   const s = t();
-  const today = localDateString();
+  const today = srsDay ?? localDateString();
   const g = useGrammarColors();
   const levelLabels: Partial<Record<PcicLevel, string>> = {
     A1: s.pcic.levelBeginner,
