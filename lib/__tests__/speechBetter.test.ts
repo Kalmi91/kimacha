@@ -106,6 +106,25 @@ describe('speak(): the levels', () => {
     expect(speech.speak).toHaveBeenCalledWith('el perro', expect.objectContaining({ language: 'es-MX' }));
   });
 
+  it('a recording that plays asks for no engine, so no engine load starts', () => {
+    packFile.mockReturnValue('/files/tts/pack/es/27956ac4.mp3');
+    engineFor.mockReturnValue('piper');
+    speak('el perro', 'es-MX');
+    expect(playPack).toHaveBeenCalledTimes(1);
+    expect(engineFor).not.toHaveBeenCalled();
+    expect(speakNeural).not.toHaveBeenCalled();
+  });
+
+  it('a recording that fails hands the same text to the engine, which is asked for only then', () => {
+    packFile.mockReturnValue('/files/tts/pack/es/x.mp3');
+    engineFor.mockReturnValue('piper');
+    speak('el perro', 'es-MX');
+    expect(engineFor).not.toHaveBeenCalled();
+    playPack.mock.calls[0][1].onFail();
+    expect(engineFor).toHaveBeenCalledWith('es');
+    expect(speakNeural).toHaveBeenCalledWith('el perro', 'es', expect.objectContaining({ id: 'es_MX-claude-high' }), expect.anything());
+  });
+
   it('the phone takes over from a failed level only after whatever of the better voice still sounds is cut', async () => {
     engineFor.mockReturnValue('piper');
     speakNeural.mockRejectedValue(new Error('write failed'));
@@ -177,7 +196,7 @@ describe('speak(): the levels', () => {
 
   it('the engine going away between the levels goes straight to the phone', () => {
     packFile.mockReturnValue('/files/tts/pack/es/x.mp3');
-    engineFor.mockReturnValueOnce('piper').mockReturnValue(null);
+    engineFor.mockReturnValue(null);
     speak('el perro', 'es-MX');
     playPack.mock.calls[0][1].onFail();
     expect(speakNeural).not.toHaveBeenCalled();
