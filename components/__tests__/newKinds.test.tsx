@@ -95,7 +95,7 @@ describe('error spotting (spot)', () => {
 });
 
 describe('word order (order)', () => {
-  it('the sentence in the UI language, the tiles in a row, the correct sentence is spoken, Next scores', async () => {
+  it('the sentence in the UI language, the tiles in a row, nothing is spoken (FB671), Next scores', async () => {
     const onFinish = jest.fn();
     render(<GrammarDrill topic={only(negacion, 'order')} learnedLang="es" contentLang="en" onFinish={onFinish} kinds={['order']} />);
     await flush();
@@ -104,10 +104,11 @@ describe('word order (order)', () => {
     for (const w of ['no', 'hablo', 'español']) fireEvent.press(screen.getAllByText(w)[0]);
     fireEvent.press(screen.getByText('Check'));
     expect(screen.getByText(/^Correct/)).toBeTruthy();
-    // Audio round B: the sentence as written (the sentence pack holds it so), not the joined tiles
-    expect(speech.speak).toHaveBeenLastCalledWith('No hablo español.', 'es-MX');
+    // FB671: neither the tiles nor the right sentence are read aloud in a word order task
+    expect(speech.speak).not.toHaveBeenCalled();
     fireEvent.press(screen.getByText(/Next/));
     expect(onFinish).toHaveBeenCalledWith(1, 1);
+    expect(speech.speak).not.toHaveBeenCalled();
   });
 });
 

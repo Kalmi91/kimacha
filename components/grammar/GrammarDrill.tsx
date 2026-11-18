@@ -328,6 +328,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
             learnedLang={learnedLang}
             contentLang={contentLang as ContentLang}
             strictAccents={strictAccents}
+            lessonItems={topic.items}
             onDone={completeItem}
           />
         )}

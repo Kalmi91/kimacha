@@ -27,6 +27,7 @@ import { scoredKinds } from '@/lib/grammar/syllabus';
 import { kindProgressFromRows } from '@/lib/grammar/lessonScore';
 import { TENSE_NAMES } from '@/lib/grammar/lessonTypes';
 import { t } from '@/lib/i18n';
+import { orderDistractors } from '@/lib/grammar/orderTiles';
 import { tileWords } from '@/lib/sentenceCards';
 import { hashString, shuffleArray, shuffleOptions } from '@/lib/shuffle';
 import { fixedSentence } from '@/components/grammar/NewKinds';
@@ -121,7 +122,7 @@ export function lessonTestUnlocked(lesson: GrammarTopicData, rows: Row[], topicI
 export type LessonTestView =
   | { card: 'choice'; heading: string; text: string; options: string[]; correctIndex: number }
   | { card: 'type'; prompt: string; hint?: string; answer: string; accept?: string[]; sentence: boolean; keepUmlauts?: boolean }
-  | { card: 'tiles'; prompt: string; answerTokens: string[]; sentence: string; acceptTokens?: string[][] }
+  | { card: 'tiles'; prompt: string; answerTokens: string[]; sentence: string; acceptTokens?: string[][]; distractors?: string[] }
   | { card: 'match'; pairs: { left: string; right: string }[] };
 
 export interface LessonTestQuestion {
@@ -289,9 +290,16 @@ function toQuestion(r: GrammarRoundItem, ctx: Ctx): LessonTestQuestion | null {
     return {
       id: item.id,
       kind,
-      view: { card: 'tiles', prompt: pick(item.prompt), answerTokens, sentence: item.es, ...(item.accept?.length ? { acceptTokens: item.accept.map(tileWords) } : {}) },
+      view: {
+        card: 'tiles',
+        prompt: pick(item.prompt),
+        answerTokens,
+        sentence: item.es,
+        ...(item.accept?.length ? { acceptTokens: item.accept.map(tileWords) } : {}),
+        distractors: orderDistractors(item, ctx.topic.items),
+      },
       review: { question: pick(item.prompt), answer: item.es },
-      say: item.es,
+      // no `say`: the word order task is never read aloud (FB671)
     };
   }
   // Dictation would require listening, and the test (like the exam) runs without sound: it is left out.

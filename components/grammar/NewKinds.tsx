@@ -19,6 +19,7 @@ import { hashString, shuffleOptions } from '@/lib/shuffle';
 import { speak, stopSpeaking } from '@/lib/speech';
 import { speechBusy, useSpeechStatus } from '@/lib/speechStatus';
 import { fixedSentence } from '@/lib/grammar/fixedSentence';
+import { orderDistractors } from '@/lib/grammar/orderTiles';
 import type { BankItem, ClozeItem, ContentLang, DictationItem, FixItem, NounItem, OrderItem, SpotItem, WriteItem } from '@/lib/grammar/lessonTypes';
 import { isWriteAnswerRight } from '@/lib/grammar/writeAnswer';
 import { BankDrillItem, ClozeDrillItem, FixDrillItem, NounDrillItem } from './TypedKinds';
@@ -142,16 +143,18 @@ export function SpotDrillItem({
 // ---------------------------------------------------------------- word order
 // It reuses the existing tap-tile card (EasySentenceCard): the sentence at
 // the top is in the UI language, below it the tiles of the Spanish words; Check and Next are
-// the card's own buttons, the right sentence is spoken.
+// the card's own buttons. Nothing is read aloud (no tile, no sentence; FB671); 2 or 3 tiles are not needed (FB672).
 export function OrderDrillItem({
   item,
-  learnedLang,
   contentLang,
+  lessonItems = [],
   onDone,
 }: {
   item: OrderItem;
-  learnedLang: string;
+  learnedLang?: string;
   contentLang: Lang;
+  /** The items of the item's lesson: the unneeded tiles are words of their sentences. */
+  lessonItems?: readonly unknown[];
   onDone: (correct: boolean) => void;
 }) {
   const s = t();
@@ -163,9 +166,7 @@ export function OrderDrillItem({
         sourceSentence={item.prompt[contentLang] ?? item.prompt.en}
         targetWords={tileWords(item.es)}
         acceptWords={item.accept?.map(tileWords)}
-        trapWords={[]}
-        speechLocale={speechLang(learnedLang)}
-        spokenSentence={item.es}
+        trapWords={orderDistractors(item, lessonItems)}
         onResult={onDone}
       />
     </View>
@@ -380,19 +381,22 @@ export function NewKindDrillItem({
   learnedLang,
   contentLang,
   strictAccents,
+  lessonItems,
   onDone,
 }: {
   item: SpotItem | OrderItem | DictationItem | WriteItem | ClozeItem | FixItem | BankItem | NounItem;
   learnedLang: string;
   contentLang: Lang;
   strictAccents: boolean;
+  /** The items of the lesson (the word order task takes its unneeded tiles from them). */
+  lessonItems?: readonly unknown[];
   onDone: (correct: boolean) => void;
 }) {
   switch (item.kind) {
     case 'spot':
       return <SpotDrillItem item={item} learnedLang={learnedLang} contentLang={contentLang} onDone={onDone} />;
     case 'order':
-      return <OrderDrillItem item={item} learnedLang={learnedLang} contentLang={contentLang} onDone={onDone} />;
+      return <OrderDrillItem item={item} contentLang={contentLang} lessonItems={lessonItems} onDone={onDone} />;
     case 'dictation':
       return <DictationDrillItem item={item} learnedLang={learnedLang} contentLang={contentLang} strictAccents={strictAccents} onDone={onDone} />;
     case 'write':
