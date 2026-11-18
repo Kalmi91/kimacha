@@ -15,6 +15,9 @@ import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
 import { useTheme } from '@/lib/ThemeContext';
 import { useSkin } from '@/lib/useSkin';
+import ScreenFeedback from '@/lib/screenFeedback';
+import { getPcicTarget } from '@/data/pcic';
+import { pairOf } from '@/lib/languagePair';
 
 // The theme picker. A 4-column grid per group (the theme's background, "Aa" in the title font,
 // a 5 px `a`-colour stripe, the name below it); tapping applies it at once. At the top the My mix entry; for a
@@ -159,6 +162,7 @@ export default function ThemesScreen() {
           </View>
         ))}
       </ScrollView>
+      <ScreenFeedback placement="header" level="-" languagePair={pairOf(getPcicTarget())} currentCard="settings-themes" />
     </View>
   );
 }
