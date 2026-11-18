@@ -75,6 +75,7 @@ const hu: typeof en = {
       check: 'Ellenőrzés',
       right: 'Helyes',
       wrong: 'Nem egészen, próbáld újra',
+      again: 'Újra beírom',
     },
     tired: 'Fáradt vagyok',
     parkedNote: (n: number) => `${n} kártya holnap jön vissza.`,

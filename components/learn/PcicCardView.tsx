@@ -30,7 +30,7 @@ import PcicRevealedAnswer, { SpainFormLabel } from '@/components/learn/PcicRevea
 import MistakesEntry from '@/components/learn/MistakesEntry';
 import MoreNewAsk from '@/components/learn/MoreNewAsk';
 import FatigueOffer from '@/components/learn/FatigueOffer';
-import RetypePractice, { useRetypeRowScroll } from '@/components/learn/RetypePractice';
+import RetypePractice, { useRetypeRowScroll, type RetypeHandle } from '@/components/learn/RetypePractice';
 import { answerInputProps } from '@/lib/inputProps';
 import LevelPickerSheet from '@/components/LevelPickerSheet';
 import { BrutalBox, textOnFill } from '@/components/grammar/Brutal';
@@ -113,16 +113,16 @@ export default function PcicCardView({
   // bar step aside while typing, so the prompt and the field fit together.
   const webKeyboardOpen = useWebKeyboardOpen();
   const typingPadding = webKeyboardOpen ? WEB_TYPING_PADDING : null;
-  // FB659 retype: while its field has the keyboard the docked bar steps aside, and the card is scrolled so the field sits
+  // FB659 retype: the docked bar is its Check until it is checked, then steps aside while the field keeps the keyboard; the card is scrolled so the field sits
   // above the keys before they open (otherwise the window pans and the header slides under the status bar).
   const scrollRef = useRef<ScrollView>(null), promptRef = useRef<View>(null);
-  const [retypeOpenKey, setRetypeOpenKey] = useState('');
+  const [retypeOpenKey, setRetypeOpenKey] = useState(''); const retypeRef = useRef<RetypeHandle>(null); const [retypePending, setRetypePending] = useState(false);
   const [retypeFocused, setRetypeFocused] = useState(false); const rowScroll = useRetypeRowScroll(scrollRef);
   const { height: windowH } = useWindowDimensions();
   const fieldBesidePrompt = Platform.OS === 'android' && shortWindow(windowH);
   const compactTyping = Platform.OS === 'android' && !grade && compactTypingNeeded(windowH, kbHeight, dockLift);
   const retypeKey = current ? `${current.itemId}-${cardSeq}` : '';
-  const retypeOpen = !!retypeKey && retypeOpenKey === retypeKey;
+  const retypeOpen = !!retypeKey && retypeOpenKey === retypeKey, retypeChecking = retypeOpen && retypePending;
   const scrollToRetype = (block: View) => {
     setRetypeFocused(true);
     const inner = (scrollRef.current as unknown as { getInnerViewRef?: () => View | null } | null)?.getInnerViewRef?.();
@@ -571,7 +571,7 @@ export default function PcicCardView({
             />
           )}
           {grade && !!answerText && (
-            <RetypePractice key={`pcic-retype-${retypeKey}`} onOpen={() => setRetypeOpenKey(retypeKey)} onFocusField={scrollToRetype} onBlurField={() => setRetypeFocused(false)} rowScroll={rowScroll} colors={colors} answerText={answerText} target={target}
+            <RetypePractice ref={retypeRef} key={`pcic-retype-${retypeKey}`} onPendingChange={setRetypePending} onOpen={() => setRetypeOpenKey(retypeKey)} onFocusField={scrollToRetype} onBlurField={() => setRetypeFocused(false)} rowScroll={rowScroll} colors={colors} answerText={answerText} target={target}
               strictAccents={strictAccents} sentence={currentItem.kind === 'sentence'} />
           )}
 
@@ -586,11 +586,11 @@ export default function PcicCardView({
       {/* After Check, the SAME docked bar (place+size
           unchanged) switches to "Next", its label states the suggested grade;
           the two buttons in the card remain for override. */}
-      {!(retypeOpen && retypeFocused && kbHeight > 0) && !(stepAside && !grade) && <DockedAction
-        label={grade && nextGrade ? s.pcic.next(s.pcic[nextGrade]) : `✓ ${s.card.check}`}
-        onPress={grade && nextGrade ? () => handleGrade(nextGrade) : handleCheck}
-        tone={grade ? 'next' : 'check'}
-        color={grade ? colors.successFill : undefined}
+      {!(retypeOpen && retypeFocused && kbHeight > 0 && !retypeChecking) && !(stepAside && !grade) && <DockedAction
+        label={grade && nextGrade && !retypeChecking ? s.pcic.next(s.pcic[nextGrade]) : `✓ ${s.card.check}`}
+        onPress={retypeChecking ? () => retypeRef.current?.check() : grade && nextGrade ? () => handleGrade(nextGrade) : handleCheck}
+        tone={grade && !retypeChecking ? 'next' : 'check'}
+        color={grade && !retypeChecking ? colors.successFill : undefined}
         bottom={dockLift}
         colors={colors}
         onHeight={setDockH}

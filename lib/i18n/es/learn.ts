@@ -75,6 +75,7 @@ const es: typeof en = {
       check: 'Comprobar',
       right: 'Correcto',
       wrong: 'Casi, inténtalo otra vez',
+      again: 'Otra vez',
     },
     tired: 'Sin energía',
     parkedNote: (n: number) => `${n} ${n === 1 ? 'tarjeta volverá' : 'tarjetas volverán'} mañana.`,
