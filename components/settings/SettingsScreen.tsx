@@ -25,7 +25,9 @@ import { useSettingsScreen } from '@/lib/settings/useSettingsScreen';
 import BetterVoiceRows from '@/components/settings/BetterVoiceRows';
 import SpeakerPickerRows from '@/components/settings/SpeakerPickerRows';
 import { brutalHeaderRowStyle } from '@/lib/brutalHeader';
-import type { NeuralLang } from '@/lib/neuralVoices';
+import { voiceName, voicePair, type NeuralLang } from '@/lib/neuralVoices';
+import { useNeuralState } from '@/lib/neuralModels';
+import { useSpeakerChoices } from '@/lib/voicePreference';
 
 const appVersionLabel = appBuildTag();
 
@@ -85,6 +87,8 @@ export default function SettingsScreen({ section = 'home' }: { section?: Setting
   const sheetListMax = useWindowDimensions().height * 0.6;
   // web guest (no cloud account yet): the sign-in row below
   const isCloudGuest = useIsCloudGuest();
+  const state = useNeuralState();
+  const choices = useSpeakerChoices();
   const {
     level, direction, directionSheetOpen, setDirectionSheetOpen, weeklyGoal, dailyNewLimit, againDelaySec,
     strictAccents, articlePicker, tiredButton, missCap, fatigueDetector, newWordGate, noPileUp, goalReached, missingVoices, resetLevels, hasGrammarProgress, resetOpen,
@@ -95,11 +99,14 @@ export default function SettingsScreen({ section = 'home' }: { section?: Setting
   } = useSettingsScreen();
 
   // the language's own name for the hint ("Magyar"), not its code.
-  const voiceName = (code: string) => languages.find(l => l.code === code)?.name ?? code;
+  const languageName = (code: string) => languages.find(l => l.code === code)?.name ?? code;
 
   const voiceLanguages = [direction[1], direction[0]].filter(
     (code): code is NeuralLang => ['es', 'en', 'hu', 'de'].includes(code),
   );
+  const currentVoices = state.supported && voiceLanguages.length > 0
+    ? voiceLanguages.map(lang => `${languageName(lang)}: ${voiceName(voicePair(lang, state.engines[lang])[choices[lang] === 'f' ? 0 : 1])}`).join(' · ')
+    : null;
 
   return (
     <View style={[styles.screen, { backgroundColor: colors.background }]}>
@@ -130,7 +137,7 @@ export default function SettingsScreen({ section = 'home' }: { section?: Setting
       {missingVoices.length > 0 && (
         <Row>
           <Text style={[styles.missingVoiceText, { color: legibleOn('#EAB308', colors.card) }]}>
-            {s.settings.missingVoice(missingVoices.map(voiceName).join(', '))}
+            {s.settings.missingVoice(missingVoices.map(languageName).join(', '))}
           </Text>
         </Row>
       )}
@@ -146,7 +153,8 @@ export default function SettingsScreen({ section = 'home' }: { section?: Setting
         <Row onPress={() => router.push('/settings-voice')}>
           <View style={styles.difficultyLabelBox}>
             <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.folders.voice}</Text>
-            <Text style={[styles.sectionHint, { color: colors.textMuted }]}>{s.settings.folders.voiceHint}</Text>
+            <Text style={[styles.sectionHint, { color: colors.textMuted }]}>{currentVoices ?? s.settings.folders.voiceHint}</Text>
+            {currentVoices ? <Text style={[styles.sectionHint, { color: colors.textMuted }]}>{s.settings.folders.voiceTapHint}</Text> : null}
           </View>
           <Text style={[styles.rowArrow, { color: arrowColor }]}>›</Text>
         </Row>
@@ -178,8 +186,9 @@ export default function SettingsScreen({ section = 'home' }: { section?: Setting
 
       {section === 'voice' && Platform.OS !== 'web' && (
         <>
-          <BetterVoiceRows Row={Row} />
           <SpeakerPickerRows Row={Row} languages={voiceLanguages} />
+          <Text style={[styles.advancedTitle, { color: colors.textMuted }]}>{s.settings.speaker.advanced}</Text>
+          <BetterVoiceRows Row={Row} />
         </>
       )}
 
@@ -474,6 +483,7 @@ const styles = StyleSheet.create({
   // Content of the Themes row (sample + name + arrow).
   themeRow: { flex: 1, flexDirection: 'row', alignItems: 'center', gap: 12 },
   themeChevron: { marginLeft: 'auto', fontSize: 22, fontWeight: '700' },
+  advancedTitle: { fontSize: 12, fontWeight: '500', marginTop: 28 },
   sectionHint: {
     fontSize: 12,
     fontWeight: '500',

@@ -2,9 +2,10 @@
 // row checked per language, the choice handed to lib/neuralModels (Kálmán 2026-11-17).
 
 import { Alert, Pressable, View } from 'react-native';
-import { fireEvent, render } from '@testing-library/react-native';
+import { fireEvent, render, within } from '@testing-library/react-native';
 
 import { ThemeProvider } from '@/lib/ThemeContext';
+import { t } from '@/lib/i18n';
 import { DEFAULT_SPEAKERS, PIPER_MODEL_KEYS } from '@/lib/neuralVoices';
 import { setSpeakerChoices } from '@/lib/voicePreference';
 import SpeakerPickerRows from '../SpeakerPickerRows';
@@ -69,12 +70,15 @@ describe('SpeakerPickerRows', () => {
     expect(rowIds(view, 'en')).toHaveLength(4);
     expect(rowIds(view, 'hu')).toHaveLength(2);
     expect(rowIds(view, 'de')).toHaveLength(2);
-    for (const text of [
-      'Español', 'English', 'Magyar', 'Deutsch',
+    for (const text of ['Español', 'English', 'Magyar', 'Deutsch']) expect(view.getByText(text)).toBeTruthy();
+    for (const label of [
       'Claude, female', 'Ald, male', 'Dora, female', 'Alex, male', 'Kristin, female', 'John, male', 'Heart, female', 'Michael, male',
       'Berta, female', 'Imre, male', 'Kerstin, female', 'Thorsten, male',
     ]) {
-      expect(view.getByText(text)).toBeTruthy();
+      const row = view.getByRole('radio', { name: label });
+      const [name, gender] = label.split(', ');
+      expect(within(row).getByText(name)).toBeTruthy();
+      expect(within(row).getByText(`${gender} voice`)).toBeTruthy();
     }
     expect(view.queryByText('Automatic (fastest)')).toBeNull();
   });
@@ -83,14 +87,14 @@ describe('SpeakerPickerRows', () => {
     mockState = stateWith({ installed: {} });
     const view = show();
     expect(rowIds(view, 'es')).toHaveLength(2);
-    expect(view.queryByText('Dora, female')).toBeNull();
+    expect(view.queryByText('Dora')).toBeNull();
   });
 
   it('exactly one row is checked per language to begin with: the Piper female', () => {
     mockState = stateWith();
     const view = show();
     for (const lang of ['es', 'en', 'hu', 'de']) expect(checked(view, lang)).toEqual(['piper-f']);
-    expect(view.getAllByText('✓')).toHaveLength(4);
+    expect(view.getAllByText(t().settings.speaker.inUse)).toHaveLength(4);
   });
 
   it('tapping Kokoro male (model installed) sets the engine and the person, and only that row is checked', () => {
@@ -102,6 +106,9 @@ describe('SpeakerPickerRows', () => {
     view.rerender(tree());
     expect(checked(view, 'es')).toEqual(['kokoro-m']);
     expect(checked(view, 'en')).toEqual(['piper-f']);
+    expect(within(view.getByTestId('settings-speaker-es')).getAllByText(t().settings.speaker.inUse)).toHaveLength(1);
+    expect(within(view.getByTestId('settings-speaker-es-kokoro-m')).getByText(t().settings.speaker.inUse)).toBeTruthy();
+    expect(within(view.getByTestId('settings-speaker-es-piper-f')).queryByText(t().settings.speaker.inUse)).toBeNull();
   });
 
   it('a person of the engine already chosen changes the person only', () => {
@@ -135,6 +142,54 @@ describe('SpeakerPickerRows', () => {
     const view = show();
     expect(view.getByTestId('voice-sample-es-kokoro-m')).toBeTruthy();
     expect(view.getByTestId('voice-sample-hu-piper-f')).toBeTruthy();
+  });
+
+  it('asks which voice reads each language and puts one in-use tag inside its checked radio', () => {
+    mockState = stateWith();
+    const view = show();
+    const s = t().settings.speaker;
+    for (const lang of ['es', 'en', 'hu', 'de']) {
+      const card = within(view.getByTestId(`settings-speaker-${lang}`));
+      expect(card.getByText(s.question(lang))).toBeTruthy();
+      expect(card.getByText(s.pickHint)).toBeTruthy();
+      expect(card.getAllByText(s.inUse)).toHaveLength(1);
+      for (const row of card.getAllByRole('radio')) {
+        expect(within(row).queryAllByText(s.inUse)).toHaveLength(row.props.accessibilityState.checked ? 1 : 0);
+        expect(within(row).getByText(s.listen)).toBeTruthy();
+      }
+    }
+  });
+
+  it('shows engine labels only when the card offers multiple engines', () => {
+    mockState = stateWith();
+    const view = show();
+    const b = t().settings.betterVoice;
+    for (const lang of ['es', 'en']) {
+      const card = within(view.getByTestId(`settings-speaker-${lang}`));
+      expect(card.getAllByText(b.piper)).toHaveLength(2);
+      expect(card.getAllByText(b.kokoro)).toHaveLength(2);
+    }
+    for (const lang of ['hu', 'de']) {
+      const card = within(view.getByTestId(`settings-speaker-${lang}`));
+      expect(card.queryByText(b.piper)).toBeNull();
+      expect(card.queryByText(b.kokoro)).toBeNull();
+    }
+    mockState = stateWith({ installed: {} });
+    view.rerender(tree());
+    expect(view.queryByText(b.piper)).toBeNull();
+    expect(view.queryByText(b.kokoro)).toBeNull();
+  });
+
+  it('keeps voice selection disabled during a download', () => {
+    mockState = stateWith({ download: { running: true, percent: 30, phase: 'download', failed: [] } });
+    const view = show();
+    for (const row of view.getAllByRole('radio')) {
+      expect(row).toBeDisabled();
+      fireEvent.press(row);
+    }
+    expect(mockSetEngine).not.toHaveBeenCalled();
+    expect(mockSetSpeaker).not.toHaveBeenCalled();
+    for (const lang of ['es', 'en', 'hu', 'de']) expect(checked(view, lang)).toEqual(['piper-f']);
   });
 
   it('is hidden where the better voice does not exist (the web build)', () => {

@@ -127,6 +127,43 @@ describe.each(['brand', 'classic'] as const)('Settings folders on %s', palette =
     expect(next.getByTestId('settings-speaker-es-piper-f').props.accessibilityState.checked).toBe(false);
   });
 
+  it('puts the speaker cards before the advanced voice switch', async () => {
+    const view = await show(VoiceSettingsScreen);
+    expect(view.getAllByTestId(/^(settings-speaker-(es|en)|settings-better-voice)$/).map(node => node.props.testID)).toEqual([
+      'settings-speaker-es', 'settings-speaker-en', 'settings-better-voice',
+    ]);
+    expect(view.getByText('Advanced')).toBeTruthy();
+  });
+
+  it('shows the current voices and tap hint on Home, including a changed speaker', async () => {
+    const home = await show();
+    expect(home.getByText('Español: Claude · English: Kristin')).toBeTruthy();
+    expect(home.getByText('Tap to change the voice')).toBeTruthy();
+    expect(home.queryByText(t().settings.folders.voiceHint)).toBeNull();
+    home.unmount();
+    const voice = await show(VoiceSettingsScreen);
+    fireEvent.press(voice.getByTestId('settings-speaker-es-piper-m'));
+    voice.unmount();
+    const next = await show();
+    expect(next.getByText('Español: Ald · English: Kristin')).toBeTruthy();
+  });
+
+  it('uses the chosen engine and person for each Home voice', async () => {
+    mockNeural.engines.es = 'kokoro';
+    setSpeakerChoices({ ...DEFAULT_SPEAKERS, es: 'm' });
+    const view = await show();
+    expect(view.getByText('Español: Alex · English: Kristin')).toBeTruthy();
+    expect(view.getByText('Tap to change the voice')).toBeTruthy();
+  });
+
+  it('keeps only the original Home hint when neural voices are unsupported', async () => {
+    mockNeural.supported = false;
+    const view = await show();
+    expect(view.getByText(t().settings.folders.voiceHint)).toBeTruthy();
+    expect(view.queryByText('Tap to change the voice')).toBeNull();
+    expect(view.queryByText('Español: Claude · English: Kristin')).toBeNull();
+  });
+
   it('persists a daily limit after reopening Learning and refreshes the home subtitle', async () => {
     const first = await show(LearningSettingsScreen);
     fireEvent.press(first.getByLabelText('Increase new words a day'));
@@ -170,6 +207,18 @@ it.each(['en', 'es', 'hu', 'de'])('translates the folder labels and has no Beta 
   expect(Object.values(s.folders).every(label => label.length > 0)).toBe(true);
   expect((s as Record<string, unknown>).beta).toBeUndefined();
   expect(s.speaker.title).toBeTruthy();
+});
+
+it.each([
+  ['hu', ['Ki olvassa fel a spanyolt?', 'Ki olvassa fel az angolt?', 'Ki olvassa fel a magyart?', 'Ki olvassa fel a németet?']],
+  ['en', ['Who reads Spanish aloud?', 'Who reads English aloud?', 'Who reads Hungarian aloud?', 'Who reads German aloud?']],
+  ['de', ['Wer liest Spanisch vor?', 'Wer liest Englisch vor?', 'Wer liest Ungarisch vor?', 'Wer liest Deutsch vor?']],
+  ['es', ['¿Quién lee el español?', '¿Quién lee el inglés?', '¿Quién lee el húngaro?', '¿Quién lee el alemán?']],
+] as const)('translates every course-language question and the unknown-language fallback in %s', (locale, questions) => {
+  setLanguage(locale);
+  const s = t().settings.speaker;
+  expect(['es', 'en', 'hu', 'de'].map(lang => s.question(lang))).toEqual(questions);
+  expect(s.question('fr')).toBe(s.title);
 });
 
 it.each(['settings-learning', 'settings-voice', 'settings-data'])('does not count time browsing %s as learning', route => {
