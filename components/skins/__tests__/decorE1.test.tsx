@@ -246,7 +246,7 @@ describe('decor of the 9 E1 themes', () => {
     view.unmount();
   });
 
-  it('y2k: +8° "new word" sticker, stars, streak chip with the real streak', async () => {
+  it('y2k: +8° "new word" sticker, stars, no streak chip', async () => {
     await getDb().updateStreak();
     const view = await mountSkin('y2k');
     const sticker = view.getByTestId('decor-y2k-sticker');
@@ -254,7 +254,8 @@ describe('decor of the 9 E1 themes', () => {
     expect(flat(sticker.props.style).backgroundColor).toBe(SKINS.y2k.colors.light?.extra?.sticker);
     expect(view.getByText('new word')).toBeTruthy();
     expect(view.getAllByTestId('decor-y2k-star').length).toBeGreaterThanOrEqual(3);
-    expect(view.getByText('🔥 1')).toBeTruthy();
+    expect(view.queryByTestId('skin-y2k-streak')).toBeNull();
+    expect(view.queryByText('🔥 1')).toBeNull();
     view.unmount();
   });
 
@@ -267,12 +268,12 @@ describe('decor of the 9 E1 themes', () => {
     view.unmount();
   });
 
-  it('gamer: XP bar "LVL n" from the real minutes, combo "x1" without a streak, "+15 XP" on the card', async () => {
+  it('gamer: XP bar "LVL n" from the real minutes, no combo, "+15 XP" on the card', async () => {
     for (let i = 0; i < 4; i++) await getDb().addUsageMinute();
     const view = await mountSkin('gamer');
     expect(view.getByTestId('skin-gamer-level').props.children.join('')).toBe('LVL 1');
     expect(flat(view.getByTestId('skin-gamer-xp-fill').props.style).width).toBe('40%');
-    expect(view.getByTestId('skin-gamer-combo').props.children.join('')).toBe('x1');
+    expect(view.queryByTestId('skin-gamer-combo')).toBeNull();
     expect(view.getByText('+15 XP')).toBeTruthy();
     view.unmount();
   });

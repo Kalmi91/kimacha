@@ -10,9 +10,6 @@ const hu: typeof en = {
     // the grey placeholder of the answer input field, with the name of the target language.
     typeIn: (lang: string): string => (lang === 'es' ? 'Írd be spanyolul' : lang === 'hu' ? 'Írd be magyarul' : lang === 'de' ? 'Írd be németül' : 'Írd be angolul'),
   },
-  done: {
-    streak: 'nap egymás után',
-  },
   games: {
     understood: 'Értem',
     correctFeedback: 'Helyes!',

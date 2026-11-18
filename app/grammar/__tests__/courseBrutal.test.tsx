@@ -41,11 +41,12 @@ describe('course list, neo-brutalist', () => {
     await db.setGrammarPalette('brand');
   });
 
-  it('streak sticker, active level box with a, core sticker, weekly goal box', async () => {
+  it('no streak sticker, active level box with a, core sticker, weekly goal box', async () => {
     await getDb().updateStreak();
     const view = render(<ThemeProvider><GrammarSyllabusScreen /></ThemeProvider>);
     await flush();
-    expect(screen.queryByText('🔥 1')).toBeTruthy();
+    expect(screen.queryByTestId('grammar-streak')).toBeNull();
+    expect(screen.queryByText('🔥 1')).toBeNull();
     expect(style('grammar-level-A1').backgroundColor).toBe(PALETTE_FILLS.brand.a);
     expect(style('grammar-level-A2').backgroundColor).toBe('#FFFFFF');
     expect(screen.queryAllByTestId(/^grammar-core(-plus)?-/).length).toBeGreaterThan(0);
@@ -92,6 +93,14 @@ describe('course list, neo-brutalist', () => {
     fireEvent.press(screen.getByTestId('grammar-level-A2'));
     await flush(1);
     expect(screen.queryByTestId('grammar-topic-diminutivos')).toBeTruthy();
+    view.unmount();
+  });
+  it('the Grammar tab shows no daily streak, even with a streak in the database', async () => {
+    await getDb().updateStreak();
+    const view = render(<ThemeProvider><GrammarSyllabusScreen /></ThemeProvider>);
+    await flush(6);
+    expect(screen.queryByTestId('grammar-streak')).toBeNull();
+    expect(screen.queryByText(/🔥/)).toBeNull();
     view.unmount();
   });
   it('with the classic palette the current (non-brutalist) list shows: no sticker rotation', async () => {

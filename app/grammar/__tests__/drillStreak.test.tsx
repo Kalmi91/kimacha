@@ -58,7 +58,7 @@ describe('grammar drill: the daily streak', () => {
     (db as any).__setStreakForTest({ current_count: 4, last_date: YESTERDAY, longest_count: 4 });
   });
 
-  it('the first answered item counts the day (opening and starting do not); the round end shows it; a second round adds nothing', async () => {
+  it('the first answered item counts the day (opening and starting do not); the round end does not show it; a second round adds nothing', async () => {
     render(<ThemeProvider><GrammarLessonScreen /></ThemeProvider>);
     await flush(4);
     fireEvent.press(screen.getByTestId('grammar-start-form'));
@@ -70,7 +70,7 @@ describe('grammar drill: the daily streak', () => {
     for (let i = 1; i < 10; i++) await answerForm(i);
     await flush(2);
     expect(screen.getByTestId('grammar-score')).toBeTruthy();
-    expect(screen.queryByText('🔥 5')).toBeTruthy();
+    expect(screen.queryByText('🔥 5')).toBeNull();
 
     fireEvent.press(screen.getByTestId('grammar-practice-again'));
     await flush(1);

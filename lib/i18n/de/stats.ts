@@ -102,7 +102,6 @@ const de: typeof en = {
     goalDone: 'geschafft',
     bestDay: 'Bester Tag',
     average: 'Tagesschnitt',
-    streak: 'Serie',
     atTop: 'du führst',
     none: 'keiner',
     needToPass: (n: number) => `${n} XP zum Überholen`,

@@ -9,13 +9,17 @@ jest.mock('expo-router', () => {
     React.createElement(
       React.Fragment,
       null,
-      React.Children.map(children, (c: React.ReactElement<any>) =>
-        React.createElement(
+      React.Children.map(children, (c: React.ReactElement<any>) => {
+        // like expo-router: a screen with both `href` and `tabBarButton` crashes the app at start
+        if (c.props.options.href !== undefined && c.props.options.tabBarButton) {
+          throw new Error(`${c.props.name}: Cannot use \`href\` and \`tabBarButton\` together.`);
+        }
+        return React.createElement(
           Text,
           { testID: `tab-${c.props.name}` },
           `${c.props.name}|${c.props.options.title}|${c.props.options.href === null ? 'hidden' : 'shown'}`
-        )
-      )
+        );
+      })
     );
   Tabs.Screen = function Screen() {
     return null;
@@ -63,14 +67,14 @@ describe('tab bar: released features', () => {
     expect(tabLine(view, 'practice')).toBe('practice|Practice|shown');
     expect(tabLine(view, 'sentences')).toBe('sentences|Sentences|shown');
     expect(tabLine(view, 'speak')).toBe('speak|Speak|shown');
-    for (const name of ['index', 'course', 'exam-tab', 'board', 'stats', 'settings']) expect(tabLine(view, name)).toMatch(/\|shown$/);
+    for (const name of ['index', 'course', 'board', 'stats', 'settings']) expect(tabLine(view, name)).toMatch(/\|shown$/);
+    // the Exam tab is hidden from the tab bar (Kálmán, 2026-11-18)
+    expect(tabLine(view, 'exam-tab')).toMatch(/\|hidden$/);
     const order = view.getAllByTestId(/^tab-/).map((n) => String(n.props.children).split('|')[0]);
     expect(order.filter((n) => n !== 'practice' && n !== 'sentences' && n !== 'speak')).toEqual(['index', 'course', 'exam-tab', 'board', 'stats', 'settings']);
     // Grammar, Sentences, Speak, Exam, Practice, Stats: Practice comes after the tabs that teach (Kálmán, 2026-11-04)
     expect(order.indexOf('sentences')).toBe(order.indexOf('course') + 1);
     expect(order.indexOf('speak')).toBe(order.indexOf('sentences') + 1);
-    // the Exam tab comes right after Speak (FB674)
-    expect(order.indexOf('exam-tab')).toBe(order.indexOf('speak') + 1);
     expect(order.indexOf('practice')).toBe(order.indexOf('exam-tab') + 1);
     // the weekly leaderboard tab sits right before Stats
     expect(order.indexOf('board')).toBe(order.indexOf('practice') + 1);

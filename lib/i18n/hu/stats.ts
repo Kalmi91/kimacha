@@ -101,7 +101,6 @@ const hu: typeof en = {
     goalDone: 'kész',
     bestDay: 'Legjobb nap',
     average: 'Napi átlag',
-    streak: 'Sorozat',
     atTop: 'élen vagy',
     none: 'nincs',
     needToPass: (n: number) => `${n} XP az előzéshez`,

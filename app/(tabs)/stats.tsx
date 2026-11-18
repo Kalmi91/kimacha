@@ -23,7 +23,7 @@ export default function StatsScreen() {
   const s = t();
   const router = useRouter();
   const {
-    usage, streak, known, graduated, reviewsToday, weeklyGoal, schedule, pcicLevel, levelKnown, levelTotal,
+    usage, known, graduated, reviewsToday, weeklyGoal, schedule, pcicLevel, levelKnown, levelTotal,
     otherLevels, targetLang, sourceLang, mockLevels, mockOverview, mockOfficial, progressLevel,
     chartInMinutes, setChartInMinutes, maxMinutes, hasChartData, goal,
   } = useStatsScreen();
@@ -204,20 +204,16 @@ export default function StatsScreen() {
         {s.stats.learningProgress}
       </Text>
       <View style={styles.tileRow}>
-        <Card fill="b" style={styles.tile} classicStyle={styles.tileClassic} boxStyle={styles.tileBox}>
-          <Text style={[tileValueStyle(colors.accent), g.brutal && { color: g.onB }]}>{streak}</Text>
-          <Text style={[styles.tileLabel, { color: colors.tabIconDefault }, g.brutal && { color: g.onB }]}>{s.done.streak}</Text>
-        </Card>
         <Card style={styles.tile} classicStyle={styles.tileClassic} boxStyle={styles.tileBox}>
           <Text style={tileValueStyle(colors.accent)}>{known}</Text>
           <Text style={[styles.tileLabel, { color: colors.tabIconDefault }]}>{s.stats.known21}</Text>
         </Card>
-      </View>
-      <View style={styles.tileRow}>
         <Card style={styles.tile} classicStyle={styles.tileClassic} boxStyle={styles.tileBox}>
           <Text style={tileValueStyle(colors.accent)}>{graduated}</Text>
           <Text style={[styles.tileLabel, { color: colors.tabIconDefault }]}>{s.stats.graduatedLabel}</Text>
         </Card>
+      </View>
+      <View style={styles.tileRow}>
         <Card style={styles.tile} classicStyle={styles.tileClassic} boxStyle={styles.tileBox}>
           <Text style={tileValueStyle(colors.accent)}>{reviewsToday}</Text>
           <Text style={[styles.tileLabel, { color: colors.tabIconDefault }]}>{s.stats.reviewsToday}</Text>

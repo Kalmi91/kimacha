@@ -27,7 +27,6 @@ const hu: typeof en = {
     nextArrow: 'tovább →',
     statCorrect: 'helyes',
     statTime: 'idő',
-    statStreak: 'sorozat',
     practiceThis: 'gyakorold ezt',
     progressChange: (from: number | null, to: number) => (from === null ? `${to}%` : `${from}% → ${to}%`),
     oneMoreRound: 'még egy kör',
@@ -242,11 +241,11 @@ const hu: typeof en = {
     levelRowSkipped: (lvl: string) => `${lvl}: nem került sorra`,
     progressLabel: (pct: number) => `A teszt haladása: ${pct}%`,
   },
-  // A nyelvtani Kis teszt (szintenként egy: körönként 10 adaptív kérdés, ismételt hibák után megnyílik a lecke).
+  // A nyelvtani Kis teszt (a felületen: Témazáró) (szintenként egy: körönként 10 adaptív kérdés, ismételt hibák után megnyílik a lecke).
   smallTest: {
-    header: (lvl: string, pos: number, total: number) => `${lvl} teszt · ${pos}/${total}`,
-    headerRound: (lvl: string, round: number) => `${lvl} teszt · ${round}. kör`,
-    leave: 'Kilépés a tesztből',
+    header: (lvl: string, pos: number, total: number) => `${lvl} témazáró · ${pos}/${total}`,
+    headerRound: (lvl: string, round: number) => `${lvl} témazáró · ${round}. kör`,
+    leave: 'Kilépés a témazáróból',
     introTitle: (n: number) => `Ez a kör: ${n} kérdés`,
     introTopics: 'Témák, amikből kérdezünk',
     tagNew: 'új',
@@ -285,7 +284,7 @@ const hu: typeof en = {
   // The Grammar tab's level buttons, overall bar and per-level test rows.
   levelTabs: {
     yourOverall: (lvl: string, pct: number) => `A szinted: ${lvl} · összesen ${pct}%`,
-    testRow: (lvl: string, pct: number | null) => (pct === null ? `${lvl} szintteszt` : `${lvl} szintteszt ${pct}%`),
+    testRow: (lvl: string, pct: number | null) => (pct === null ? `${lvl} témazáró` : `${lvl} témazáró ${pct}%`),
     resume: 'Folytatás',
     levelButton: (lvl: string) => `${lvl} szint`,
   },

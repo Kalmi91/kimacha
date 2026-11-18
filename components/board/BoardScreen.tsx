@@ -123,7 +123,6 @@ export default function BoardScreen() {
               todayIndex={todayIndex}
               lastWeek={time ? b.week.lastWeekMinutes : b.week.lastWeek}
               metric={b.shown}
-              streak={b.week.streak}
               onLayout={(e) => {
                 panelY.current = e.nativeEvent.layout.y;
               }}

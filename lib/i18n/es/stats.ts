@@ -106,7 +106,6 @@ const es: typeof en = {
     goalDone: 'lista',
     bestDay: 'Mejor día',
     average: 'Promedio diario',
-    streak: 'Racha',
     atTop: 'vas primero',
     none: 'nadie',
     needToPass: (n: number) => `${n} XP para rebasar`,

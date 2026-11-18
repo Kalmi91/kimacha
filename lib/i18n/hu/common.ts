@@ -40,7 +40,7 @@ const hu: typeof en = {
     exam: 'Vizsga',
     stats: 'Statisztika',
     board: 'Heti rangsor',
-    pcic: 'Tanulás',
+    pcic: 'Szavak',
     practice: 'Gyakorlás',
     sentences: 'Mondatok',
     speak: 'Beszéd',

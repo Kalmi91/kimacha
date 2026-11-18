@@ -173,11 +173,11 @@ export default function TabLayout() {
       />
       <Tabs.Screen
         name="exam-tab"
-        // after Speak, with a Beta sticker (FB674)
+        // hidden from the tab bar (2026-11-18); Level exam / mock exam open from Learn and Stats.
+        // No tabBarButton: expo-router throws when `href` and `tabBarButton` are set together.
         options={{
+          href: null,
           title: s.tabs.exam,
-          tabBarAccessibilityLabel: s.tabs.exam,
-          tabBarButton: tabButton({ ios: 'checkmark.seal.fill', android: 'fact_check', web: 'fact_check' }),
         }}
       />
       <Tabs.Screen

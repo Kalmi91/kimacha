@@ -12,11 +12,6 @@ export default {
     // the grey placeholder of the answer input field, with the name of the target language.
     typeIn: (lang: string): string => (lang === 'es' ? 'Type in Spanish' : lang === 'hu' ? 'Type in Hungarian' : lang === 'de' ? 'Type in German' : 'Type in English'),
   },
-  done: {
-    // Play cut: the Learn tab (Done screen) is gone, this
-    // key stays, the Stats tab's daily-streak tile uses it.
-    streak: 'day streak',
-  },
   // Play cut: the Game/Talk tabs were removed, this
   // namespace keeps only the feedback and mark-item labels of components/grammar/GrammarDrill.tsx
   // (the hub/confusables/myth/… keys went).

@@ -195,7 +195,7 @@ describe.each(['brand', 'classic'] as const)('grammar small test (%s palette)', 
 
   it('opens on the round start: the 10-question title, the round topics with new / repeat tags, the 💬 on the start card', async () => {
     await open();
-    expect(text('small-test-header')).toBe('A1 test · round 1');
+    expect(text('small-test-header')).toBe('A1 topic test · round 1');
     expect(text('small-test-intro-title')).toBe('This round: 10 questions');
     for (const id of TOPICS) {
       expect(has(`small-test-intro-topic-${id}`)).toBe(true);
@@ -208,12 +208,12 @@ describe.each(['brand', 'classic'] as const)('grammar small test (%s palette)', 
 
   it('Start shows the first question with the position in the header; the 💬 names the question', async () => {
     await start();
-    expect(text('small-test-header')).toBe('A1 test · 1/10');
+    expect(text('small-test-header')).toBe('A1 topic test · 1/10');
     expect(has('small-test-question')).toBe(true);
     const first = onScreen();
     expect(text('fb-card')).toBe(`grammar-small-test:A1:${first.q.id} | en→es | A1`);
     await answerNext(true);
-    expect(text('small-test-header')).toBe('A1 test · 2/10');
+    expect(text('small-test-header')).toBe('A1 topic test · 2/10');
   });
 
   it('a wrong answer: the card shows "I mistyped"; pressing it counts the answer as right, in the run and in the topic evidence', async () => {
@@ -222,7 +222,7 @@ describe.each(['brand', 'classic'] as const)('grammar small test (%s palette)', 
     expect(has('small-test-mistyped')).toBe(true);
     expect(text('fb-card')).toBe(`grammar-small-test:A1:${q.id} | en→es | A1`);
     await press('small-test-mistyped');
-    expect(text('small-test-header')).toBe('A1 test · 2/10');
+    expect(text('small-test-header')).toBe('A1 topic test · 2/10');
     const st = await stateNow();
     expect(st.run!.answers[0]).toMatchObject({ qid: q.id, ok: true, mistyped: true });
     expect(st.run!.pending).toHaveLength(0); // no follow-up: it is not a miss
@@ -265,7 +265,7 @@ describe.each(['brand', 'classic'] as const)('grammar small test (%s palette)', 
     expect(text('small-test-stop-topic')).toBe(TITLES[topic]);
     expect(text('fb-card')).toBe('grammar-small-test:A1:stop | en→es | A1');
     const answered = (await stateNow()).run!.answers.length;
-    expect(text('small-test-header')).toBe(`A1 test · ${answered}/10`);
+    expect(text('small-test-header')).toBe(`A1 topic test · ${answered}/10`);
     expect(text('small-test-stop-then')).toBe(`Then the test continues at question ${answered + 1}.`);
     await press('small-test-stop-open');
     expect(mockPush).toHaveBeenCalledWith(`/grammar/${topic}`);
@@ -286,7 +286,7 @@ describe.each(['brand', 'classic'] as const)('grammar small test (%s palette)', 
     await answer(false); // a miss in the quick check shows the right answer too
     expect(text('level-test-feedback-answer')).toBeTruthy();
     await press('level-test-next');
-    expect(text('small-test-header')).toBe(`A1 test · ${answered + 1}/10`); // the check did not count as a test question
+    expect(text('small-test-header')).toBe(`A1 topic test · ${answered + 1}/10`); // the check did not count as a test question
     expect(onScreen().topic).not.toBe(topic);
     expect((await stateNow()).run!.answers).toHaveLength(answered);
   });
@@ -305,7 +305,7 @@ describe.each(['brand', 'classic'] as const)('grammar small test (%s palette)', 
     await start();
     for (let i = 0; i < 10; i++) await answerNext(true);
     expect(has('small-test-end')).toBe(true);
-    expect(text('small-test-header')).toBe('A1 test · round 1');
+    expect(text('small-test-header')).toBe('A1 topic test · round 1');
     expect(text('small-test-end-title')).toBe('Round done · 10 of 10');
     expect(text('fb-card')).toBe('grammar-small-test:A1:end | en→es | A1');
     // 3 right answers in a row learn a topic: the topics asked 3+ times are learned, the others need one more round
@@ -318,7 +318,7 @@ describe.each(['brand', 'classic'] as const)('grammar small test (%s palette)', 
     expect(screen.getByTestId('small-test-end-bar-0')).toHaveProp('accessibilityLabel', '100%');
     // a second round: the same topics are "repeat"
     await press('small-test-end-new');
-    expect(text('small-test-header')).toBe('A1 test · round 2');
+    expect(text('small-test-header')).toBe('A1 topic test · round 2');
     for (const id of TOPICS) expect(text(`small-test-intro-tag-${id}`)).toBe('repeat');
     await press('small-test-start');
     for (let i = 0; i < 10; i++) await answerNext(true);
@@ -357,7 +357,7 @@ describe.each(['brand', 'classic'] as const)('grammar small test (%s palette)', 
     first.unmount();
     await open();
     expect(has('small-test-intro')).toBe(false);
-    expect(text('small-test-header')).toBe('A1 test · 3/10');
+    expect(text('small-test-header')).toBe('A1 topic test · 3/10');
     expect(onScreen().q.id).toBe(seen);
   });
 
@@ -369,7 +369,7 @@ describe.each(['brand', 'classic'] as const)('grammar small test (%s palette)', 
     first.unmount();
     await open();
     expect(has('small-test-intro')).toBe(false);
-    expect(text('small-test-header')).toBe('A1 test · 2/10');
+    expect(text('small-test-header')).toBe('A1 topic test · 2/10');
     expect(onScreen().q.id).not.toBe(q.id);
     const st = await stateNow();
     expect(st.run!.answers).toHaveLength(1);
@@ -389,7 +389,7 @@ describe.each(['brand', 'classic'] as const)('grammar small test (%s palette)', 
     await flush();
     expect(has('level-test-next')).toBe(false);
     expect(onScreen().q.id).toBe(first.q.id);
-    expect(text('small-test-header')).toBe('A1 test · 1/10');
+    expect(text('small-test-header')).toBe('A1 topic test · 1/10');
     // after the guard time the same tap counts
     await press(`exam-option-${v.correctIndex}`);
     expect(has('level-test-next')).toBe(true);
@@ -411,7 +411,7 @@ describe.each(['brand', 'classic'] as const)('grammar small test (%s palette)', 
   it('a typed task kind (word bank, A2): its own card; a wrong answer gets the short miss card with "I mistyped"', async () => {
     mockParams = { level: 'a2' };
     await open();
-    expect(text('small-test-header')).toBe('A2 test · round 1');
+    expect(text('small-test-header')).toBe('A2 topic test · round 1');
     await press('small-test-start');
     expect(has('small-test-question')).toBe(true);
     expect(has('bank-item')).toBe(true);
@@ -423,14 +423,14 @@ describe.each(['brand', 'classic'] as const)('grammar small test (%s palette)', 
     expect(text('small-test-miss-answer')).toMatch(/^Los coches \d son rojos\.$/);
     expect(text('small-test-miss-why')).toBe('Agrees in number.');
     await press('small-test-mistyped');
-    expect(text('small-test-header')).toBe('A2 test · 2/10');
+    expect(text('small-test-header')).toBe('A2 topic test · 2/10');
     const st = await loadSmallState(getDb(), 'en→es', 'A2');
     expect(st.run!.answers[0]).toMatchObject({ ok: true, mistyped: true, type: 'bank' });
     // a right typed answer goes straight on
     fireEvent.changeText(screen.getByTestId('bank-input'), 'rojos');
     await press('bank-check');
     await press('grammar-next');
-    expect(text('small-test-header')).toBe('A2 test · 3/10');
+    expect(text('small-test-header')).toBe('A2 topic test · 3/10');
   });
 });
 
@@ -491,6 +491,6 @@ describe.each([
     expect(st.run!.answers).toHaveLength(1);
     expect(st.run!.answers[0]).toMatchObject({ qid: before, ok: false });
     expect(st.run!.current!.qid).not.toBe(before);
-    expect(text('small-test-header')).toBe('B1 test · 2/10');
+    expect(text('small-test-header')).toBe('B1 topic test · 2/10');
   });
 });

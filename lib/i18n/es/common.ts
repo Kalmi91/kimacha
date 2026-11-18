@@ -40,7 +40,7 @@ const es: typeof en = {
     exam: 'Examen',
     stats: 'Estadísticas',
     board: 'Clasificación semanal',
-    pcic: 'Aprender',
+    pcic: 'Palabras',
     practice: 'Práctica',
     sentences: 'Frases',
     speak: 'Hablar',
