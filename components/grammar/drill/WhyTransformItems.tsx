@@ -16,6 +16,7 @@ import { useDockedAction } from '@/components/learn/DockSlot';
 import { BrutalBox, resultInk } from '@/components/grammar/Brutal';
 import MistypedButton from '@/components/grammar/MistypedButton';
 import ResultBadge from '@/components/ResultBadge';
+import SpeakButton from '@/components/SpeakButton';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { BrutalFeedback, BrutalInkButton, TenseBadge } from '@/components/grammar/drill/shared';
 import { styles } from '@/components/grammar/GrammarDrill.styles';
@@ -78,9 +79,7 @@ export function WhyDrillItem({
                 item.es
               )}
             </Text>
-            <Pressable accessibilityRole="button" accessibilityLabel={t().a11y.speak} onPress={() => speak(item.es, speechLang(learnedLang))} hitSlop={10}>
-              <Text style={styles.speak}>🔊</Text>
-            </Pressable>
+            <SpeakButton testID="why-speak" onPress={() => speak(item.es, speechLang(learnedLang))} iconStyle={styles.speak} hitSlop={10} />
           </View>
           {answered || showTr ? (
             <Text style={[styles.whyTranslation, { color: g.mu }]}>{item.tr[contentLang] ?? item.tr.en}</Text>
@@ -158,9 +157,7 @@ export function WhyDrillItem({
               item.es
             )}
           </Text>
-          <Pressable accessibilityRole="button" accessibilityLabel={t().a11y.speak} onPress={() => speak(item.es, speechLang(learnedLang))} hitSlop={10}>
-            <Text style={styles.speak}>🔊</Text>
-          </Pressable>
+          <SpeakButton testID="why-speak" onPress={() => speak(item.es, speechLang(learnedLang))} iconStyle={styles.speak} hitSlop={10} />
         </View>
         {answered || showTr ? (
           <Text style={[styles.whyTranslation, { color: colors.tabIconDefault }]}>

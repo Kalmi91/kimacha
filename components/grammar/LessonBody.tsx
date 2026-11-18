@@ -8,8 +8,8 @@ import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { Card } from '@/components/grammar/Brutal';
 import { accentColor, themedInkEdgeStyle } from '@/components/grammar/Themed';
+import SpeakButton from '@/components/SpeakButton';
 import { speak } from '@/lib/speech';
-import { t } from '@/lib/i18n';
 import { speechLang } from '@/lib/languages';
 import type { ContentLang, ExamplePair, Lang4, LessonBlock } from '@/lib/grammar/lessonTypes';
 import { isConjugationTable, planGridTable, personGloss, splitStemEnding, verbClassOf, verbColumnColor } from '@/lib/grammar/tableShape';
@@ -44,9 +44,7 @@ function ExampleRow({ ex, contentLang, learnedLang, colors }: {
     <View style={styles.exampleBlock}>
       <View style={styles.exampleRow}>
         <Text style={[styles.exampleEs, { color: colors.text }]}>{ex.es}</Text>
-        <Text testID="lessonbody-speak" accessibilityRole="button" accessibilityLabel={t().a11y.speak} onPress={() => speak(ex.es, speechLang(learnedLang))} style={styles.speak}>
-          🔊
-        </Text>
+        <SpeakButton testID="lessonbody-speak" onPress={() => speak(ex.es, speechLang(learnedLang))} iconStyle={styles.speak} hitSlop={10} />
       </View>
       <Text style={[styles.exampleTr, { color: colors.tabIconDefault }]}>{ex.tr[contentLang] ?? ex.tr.en}</Text>
     </View>
