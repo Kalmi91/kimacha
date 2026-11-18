@@ -3,6 +3,7 @@ import { Keyboard, Pressable, StyleSheet, Text, TextInput, View } from 'react-na
 
 import Colors from '@/constants/Colors';
 import { lineHeight, spacing } from '@/constants/Theme';
+import SpeakButton from '@/components/SpeakButton';
 import { useDockedAction } from '@/components/learn/DockSlot';
 import { countWords } from '@/lib/exam/mock/score';
 import { formatClock } from '@/lib/exam/mock/session';
@@ -250,9 +251,15 @@ export default function SpeakingTask({ task, answer, onAnswer, target, canSpeak,
                   {turn.ask}
                 </Text>
                 {canSpeak ? (
-                  <Pressable testID="mock-speaking-replay" accessibilityRole="button" onPress={replay} style={styles.linkBox}>
-                    <Text style={[styles.link, { color: colors.tint }]}>{audio.text === turn.ask && speechBusy(audio.phase) ? `🔉 ${t().audio[audio.phase === 'loading' ? 'loading' : 'playing']}` : `🔊 ${s.speakReplay}`}</Text>
-                  </Pressable>
+                  <SpeakButton
+                    testID="mock-speaking-replay"
+                    icon={audio.text === turn.ask && speechBusy(audio.phase) ? '🔉' : '🔊'}
+                    label={audio.text === turn.ask && speechBusy(audio.phase) ? t().audio[audio.phase === 'loading' ? 'loading' : 'playing'] : s.speakReplay}
+                    onPress={replay}
+                    style={[styles.linkBox, styles.playRow]}
+                    iconStyle={[styles.link, { color: colors.tint }]}
+                    labelStyle={[styles.link, { color: colors.tint }]}
+                  />
                 ) : (
                   <Text testID="mock-speaking-no-voice" style={[styles.small, { color: colors.warning }]}>
                     {s.speakNoVoice}

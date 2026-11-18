@@ -48,6 +48,7 @@ export const mockStyles = StyleSheet.create({
   wideChip: { minHeight: tapTarget, alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderRadius: radius.md, paddingHorizontal: spacing.md },
   audioBox: { borderWidth: 1, borderRadius: radius.md, padding: spacing.md, gap: spacing.sm, alignItems: 'flex-start' },
   playBtn: { minHeight: tapTarget, borderRadius: radius.md, paddingHorizontal: spacing.lg, justifyContent: 'center' },
+  playRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm },
   playText: { fontSize: fontSize.md, fontWeight: fontWeight.semibold },
   row: { flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center', gap: spacing.sm },
   input: { borderWidth: 1, borderRadius: radius.md, paddingHorizontal: spacing.md, paddingVertical: spacing.sm, minHeight: tapTarget, fontSize: fontSize.md },

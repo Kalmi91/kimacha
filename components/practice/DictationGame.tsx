@@ -3,7 +3,8 @@ import { Keyboard, Pressable, StyleSheet, TextInput, View } from 'react-native';
 import { Text } from '@/components/KText';
 import Colors from '@/constants/Colors';
 import { fontSize, fontWeight, radius, spacing, tapTarget } from '@/constants/Theme';
-import { BrutalBox, Card } from '@/components/grammar/Brutal';
+import { Card } from '@/components/grammar/Brutal';
+import SpeakButton from '@/components/SpeakButton';
 import { themedInputStyle } from '@/components/grammar/Themed';
 import GameFrame, { GameEmpty, GameSummary } from '@/components/practice/GameFrame';
 import ResultBadge from '@/components/ResultBadge';
@@ -111,7 +112,6 @@ export default function DictationGame() {
   const position = dictationPosition(state, round.items.length);
   const speakLabel = s.practiceTab.dictation.listen;
   const active = audio.text === word.say && speechBusy(audio.phase);
-  const speakerIcon = active ? (audio.phase === 'loading' ? '⏳' : '🔉') : '🔊';
   return (
     <GameFrame
       testID="dictation-screen"
@@ -127,22 +127,15 @@ export default function DictationGame() {
     >
       <View style={styles.box}>
         <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
-          {g.brutal ? (
-            <BrutalBox testID="dictation-speak" accessibilityLabel={speakLabel} onPress={play} style={styles.bigBrutal} boxStyle={styles.bigBrutalBox}>
-              <Text style={styles.bigIcon}>{speakerIcon}</Text>
-            </BrutalBox>
-          ) : (
-            <Pressable
-              testID="dictation-speak"
-              accessibilityRole="button"
-              accessibilityLabel={speakLabel}
-              accessibilityState={{ busy: active }}
-              onPress={play}
-              style={[styles.big, { backgroundColor: colors.tint }]}
-            >
-              <Text style={styles.bigIcon}>{speakerIcon}</Text>
-            </Pressable>
-          )}
+          <SpeakButton
+            testID="dictation-speak"
+            accessibilityLabel={speakLabel}
+            onPress={play}
+            size={BIG}
+            style={[styles.big, { backgroundColor: colors.tint }]}
+            iconStyle={styles.bigIcon}
+            brutalStyle={styles.bigBrutal}
+          />
           <Pressable testID="dictation-replay" accessibilityRole="button" onPress={play} style={styles.link}>
             <Text style={[styles.linkText, { color: colors.tint }]}>{active ? s.audio[audio.phase === 'loading' ? 'loading' : 'playing'] : s.practiceTab.dictation.listenAgain}</Text>
           </Pressable>
@@ -185,7 +178,6 @@ const styles = StyleSheet.create({
   brutalCard: { padding: spacing.xl, gap: spacing.lg, alignItems: 'center' },
   big: { width: BIG, height: BIG, borderRadius: radius.full, alignItems: 'center', justifyContent: 'center' },
   bigBrutal: { alignSelf: 'center' },
-  bigBrutalBox: { width: BIG, height: BIG, alignItems: 'center', justifyContent: 'center' },
   bigIcon: { fontSize: fontSize.xxl },
   link: { minHeight: tapTarget, justifyContent: 'center', paddingHorizontal: spacing.lg },
   linkText: { fontSize: fontSize.md, fontWeight: fontWeight.semibold },

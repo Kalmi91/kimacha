@@ -6,6 +6,7 @@
 import { Animated, StyleSheet } from 'react-native';
 import { fireEvent, render } from '@testing-library/react-native';
 
+import { BrutalBox } from '@/components/grammar/Brutal';
 import { getDb } from '@/lib/database';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { ThemeProvider } from '@/lib/ThemeContext';
@@ -80,6 +81,40 @@ describe('SpeakButton', () => {
     expect(timing).toHaveBeenCalledTimes(1);
     expect(timing.mock.calls[0][1]).toMatchObject({ toValue: 0 });
     timing.mockRestore();
+    view.unmount();
+  });
+});
+
+describe('SpeakButton size', () => {
+  it.each(['brand', 'classic'] as const)('size keeps the button exactly that big on the %s palette', async (palette) => {
+    await getDb().setGrammarPalette(palette);
+    const view = render(
+      <ThemeProvider>
+        <SpeakButton testID="sp" onPress={jest.fn()} size={96} />
+      </ThemeProvider>
+    );
+    await flush();
+    const style = StyleSheet.flatten(view.getByTestId('sp').props.style);
+    expect(style.width).toBe(96);
+    expect(style.height).toBe(96);
+    view.unmount();
+  });
+});
+
+describe('SpeakButton fill', () => {
+  it('on the brand palette fill="a" paints the accent, the default stays paper', async () => {
+    await getDb().setGrammarPalette('brand');
+    const view = render(
+      <ThemeProvider>
+        <SpeakButton testID="plain" onPress={jest.fn()} />
+        <SpeakButton testID="acc" onPress={jest.fn()} fill="a" />
+        <BrutalBox testID="ref" fill="a" onPress={jest.fn()} />
+      </ThemeProvider>
+    );
+    await flush();
+    const bg = (id: string) => StyleSheet.flatten(view.getByTestId(id).props.style).backgroundColor;
+    expect(bg('acc')).toBe(bg('ref'));
+    expect(bg('acc')).not.toBe(bg('plain'));
     view.unmount();
   });
 });

@@ -138,6 +138,10 @@ describe('Dictation', () => {
     expect(round.ids).toEqual(due.slice(0, 8));
     expect(mockSpeak).toHaveBeenCalledWith(sayOf(due[0]), speechLang('es'));
     for (const id of ['dictation-speak', 'dictation-replay', 'dictation-input', 'dictation-check']) expect(view.getByTestId(id)).toBeTruthy();
+    // the speaker is the shared button (flash layer) and keeps its big size
+    expect(view.getByTestId('dictation-speak-flash')).toBeTruthy();
+    const big = require('react-native').StyleSheet.flatten(view.getByTestId('dictation-speak').props.style);
+    expect([big.width, big.height]).toEqual([88, 88]);
     expect(view.getByText('1/8')).toBeTruthy();
     expect(view.getByTestId('level-counter')).toBeTruthy();
     mockSpeak.mockClear();

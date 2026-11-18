@@ -5,6 +5,7 @@ import { Text } from '@/components/KText';
 import EasySentenceCard from '@/components/EasySentenceCard';
 import ResultBadge from '@/components/ResultBadge';
 import AnswerCompare from '@/components/grammar/AnswerCompare';
+import SpeakButton from '@/components/SpeakButton';
 import { BrutalBox, inkButtonText, resultFill, resultInk } from '@/components/grammar/Brutal';
 import MistypedButton from '@/components/grammar/MistypedButton';
 import { useDockedAction } from '@/components/learn/DockSlot';
@@ -196,7 +197,6 @@ export function DictationDrillItem({
   useFocusOnNewCard(inputRef, true, item.id);
   const audio = useSpeechStatus();
   const active = audio.text === item.es && speechBusy(audio.phase);
-  const speakerIcon = active ? (audio.phase === 'loading' ? '⏳' : '🔉') : '🔊';
 
   // The sentence is spoken once, when the task appears.
   useEffect(() => {
@@ -225,12 +225,23 @@ export function DictationDrillItem({
     <View style={styles.body} testID="dictation-item">
       <ItemHead title={s.grammar.dictationHint} />
       <View style={styles.playRow}>
-        <BrutalBox testID="dictation-play" fill="a" offset={3} boxStyle={styles.playBtn} onPress={() => speak(item.es, locale)} accessibilityLabel={s.grammar.dictationPlay}>
-          <Text style={[styles.playText, { color: g.onFill }]}>{speakerIcon} {s.grammar.dictationPlay}</Text>
-        </BrutalBox>
-        <BrutalBox testID="dictation-slow" fill="paper" offset={3} boxStyle={styles.playBtn} onPress={() => speak(item.es, locale, { rate: 0.55 })} accessibilityLabel={s.grammar.dictationSlow}>
-          <Text style={[styles.playText, { color: g.ink }]}>{active ? speakerIcon : '🐢'} {s.grammar.dictationSlow}</Text>
-        </BrutalBox>
+        <SpeakButton
+          testID="dictation-play"
+          label={s.grammar.dictationPlay}
+          onPress={() => speak(item.es, locale)}
+          style={[styles.playBtn, styles.playClassic, { backgroundColor: g.a }]}
+          iconStyle={[styles.playText, { color: g.onFill }]}
+          labelStyle={[styles.playText, { color: g.onFill }]}
+        />
+        <SpeakButton
+          testID="dictation-slow"
+          icon={active ? '🔉' : '🐢'}
+          label={s.grammar.dictationSlow}
+          onPress={() => speak(item.es, locale, { rate: 0.55 })}
+          style={[styles.playBtn, styles.playClassic, { backgroundColor: g.paper }]}
+          iconStyle={[styles.playText, { color: g.ink }]}
+          labelStyle={[styles.playText, { color: g.ink }]}
+        />
       </View>
       <BrutalBox dashed={!!result && !result.correct} boxStyle={styles.inputBox}>
         <TextInput
@@ -435,6 +446,7 @@ const styles = StyleSheet.create({
   nextText: { fontSize: 16, fontWeight: '700', textTransform: 'uppercase' },
   playRow: { flexDirection: 'row', gap: 12 },
   playBtn: { paddingVertical: 12, paddingHorizontal: 14, alignItems: 'center' },
+  playClassic: { flexDirection: 'row', alignItems: 'center', gap: 6, borderRadius: 8 },
   playText: { fontSize: 15, fontWeight: '700', flexShrink: 1 },
   inputBox: { padding: 0 },
   input: { paddingVertical: 12, paddingHorizontal: 14, fontSize: 18 },
