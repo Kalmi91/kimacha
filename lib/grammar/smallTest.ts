@@ -87,6 +87,8 @@ export interface SmallRun {
   current: SmallCur | null;
   stopTopic: string | null;
   mini: { cur: SmallCur[]; answers: boolean[] } | null;
+  /** The answer on the result card, not yet settled with Next: leaving there still counts it. */
+  shown?: { ok: boolean };
 }
 
 export interface SmallState {
@@ -179,6 +181,20 @@ export function startRound(st: SmallState, topics: SmallTopicInfo[], pool: Small
     mini: null,
   };
   return { ...st, rounds: st.rounds + 1, seen: [...new Set([...st.seen, ...picked.map((tp) => tp.id)])], run };
+}
+
+/** The answer is on the result card: it is saved, so leaving before Next does not lose it. */
+export function markShown(st: SmallState, ok: boolean): SmallState {
+  if (!st.run || !st.run.current) return st;
+  return { ...st, run: { ...st.run, shown: { ok } } };
+}
+
+/** A loaded run that was left on a result card: that answer is settled now (the next question comes). */
+export function settleShown(st: SmallState, pool: SmallPool): SmallState {
+  const run = st.run;
+  if (!run || !run.shown) return st;
+  if (!run.current || (run.phase !== 'ask' && run.phase !== 'mini')) return { ...st, run: { ...run, shown: undefined } };
+  return resolveAnswer(st, pool, run.shown.ok);
 }
 
 /**
@@ -300,7 +316,7 @@ function withNext(st: SmallState, run: SmallRun, pool: SmallPool): SmallState {
  * question of the mini check follows.
  */
 export function resolveAnswer(st: SmallState, pool: SmallPool, ok: boolean, mistyped = false): SmallState {
-  const run = st.run;
+  const run = st.run && st.run.shown ? { ...st.run, shown: undefined } : st.run;
   if (!run || !run.current) return st;
   if (run.phase === 'mini') return resolveMini(st, run, pool, ok);
   if (run.phase !== 'ask') return st;

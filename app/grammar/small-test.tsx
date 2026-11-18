@@ -25,7 +25,9 @@ import {
   levelProgress,
   loadSmallState,
   openLesson,
+  markShown,
   repairSmallRun,
+  settleShown,
   resolveAnswer,
   roundRight,
   roundRows,
@@ -69,6 +71,21 @@ const TAP_GUARD_MS = 500;
 const asLevel = (raw: unknown): Level => (['A1', 'A2', 'B1', 'B2', 'C1'] as Level[]).find((l) => l.toLowerCase() === String(raw ?? '').toLowerCase()) ?? 'A1';
 
 const STATUS_COLOR: Record<RowStatus, 'success' | 'warning' | 'danger'> = { learned: 'success', more: 'warning', lesson: 'danger' };
+
+// The one place a settled main question becomes the topic's evidence (Next and the load of a run left on a result card).
+function evidenceOf(d: RoundData, seed: number, v: SmallView, ev: Map<string, TopicEvidence>, cur: SmallCur, ok: boolean) {
+  if (cur.role === 'mini') return null;
+  const found = v.find(cur.topic, cur.qid);
+  const kind = found?.q?.kind ?? found?.item?.kind;
+  if (!kind) return null;
+  const topicEvidence = appendEvidence(
+    ev.get(cur.topic),
+    { id: cur.qid, kind, ok, at: localDateString() },
+    undefined,
+    questionsOf(d, seed, cur.topic).map((x) => x.id),
+  );
+  return { topicEvidence, map: new Map(ev).set(cur.topic, topicEvidence) };
+}
 
 export default function SmallTestScreen() {
   const { theme } = useTheme();
@@ -138,14 +155,23 @@ export default function SmallTestScreen() {
         setData(d);
         return;
       }
-      if (state.run) state = repairSmallRun(state, v.pool);
+      let evNow = ev;
+      const left = state.run;
+      if (left?.shown && left.phase === 'ask' && left.current) {
+        const written = evidenceOf(d, seed, v, ev, left.current, left.shown.ok);
+        if (written) {
+          evNow = written.map;
+          enqueue(() => getDb().setGameProgress(GRAMMAR_RANDOM_KEY, left.current!.topic, 'evidence', written.topicEvidence));
+        }
+      }
+      if (state.run) state = repairSmallRun(settleShown(state, v.pool), v.pool);
       if (!state.run) state = startRound(state, v.topics, v.pool, seed);
       else if (state.run.phase === 'lesson') state = finishLesson(state, v.pool);
       pairRef.current = pair;
       levelRef.current = lvl;
       seedRef.current = seed;
       viewRef.current = v;
-      evRef.current = ev;
+      evRef.current = evNow;
       stRef.current = state;
       tapGuardUntil.current = Date.now() + TAP_GUARD_MS;
       enqueue(async () => void (await saveSmallState(db, pair, lvl, state)));
@@ -249,23 +275,20 @@ export default function SmallTestScreen() {
     const cur = stRef.current?.run?.current;
     const v = viewRef.current;
     if (!cur || !v || !stRef.current) return;
-    if (cur.role !== 'mini') {
-      const found = v.find(cur.topic, cur.qid);
-      const kind = found?.q?.kind ?? found?.item?.kind;
-      if (kind) {
-        const topicEvidence = appendEvidence(
-          evRef.current.get(cur.topic),
-          { id: cur.qid, kind, ok, at: localDateString() },
-          undefined,
-          questionsOf(data, seedRef.current, cur.topic).map((x) => x.id),
-        );
-        evRef.current = new Map(evRef.current).set(cur.topic, topicEvidence);
-        enqueue(() => getDb().setGameProgress(GRAMMAR_RANDOM_KEY, cur.topic, 'evidence', topicEvidence));
-      }
+    const written = evidenceOf(data, seedRef.current, v, evRef.current, cur, ok);
+    if (written) {
+      evRef.current = written.map;
+      enqueue(() => getDb().setGameProgress(GRAMMAR_RANDOM_KEY, cur.topic, 'evidence', written.topicEvidence));
     }
     Keyboard.dismiss();
     setResult(null);
     commit(resolveAnswer(stRef.current, v.pool, ok, mistyped));
+  };
+
+  // the result card opens: the answer is saved at once, so the X on the card does not lose it
+  const show = (cur: SmallCur, ok: boolean, given?: Result['given']) => {
+    setResult({ cur, ok, given });
+    if (stRef.current) commit(markShown(stRef.current, ok));
   };
 
   // ---------------------------------------------------------------- 1. the round start
@@ -477,7 +500,7 @@ export default function SmallTestScreen() {
               learnedLang={data.learnedLang}
               strictAccents={strictAccents}
               instant
-              onDone={(ok, given) => (guardOpen() ? setResult({ cur, ok, given }) : setRedo((n) => n + 1))}
+              onDone={(ok, given) => (guardOpen() ? show(cur, ok, given) : setRedo((n) => n + 1))}
             />
           ) : (
             <ScrollView contentContainerStyle={styles.drill} keyboardShouldPersistTaps="handled">
@@ -487,7 +510,7 @@ export default function SmallTestScreen() {
                 learnedLang={data.learnedLang}
                 contentLang={data.contentLang as never}
                 strictAccents={strictAccents}
-                onDone={(ok) => (!guardOpen() ? setRedo((n) => n + 1) : ok ? settle(true) : setResult({ cur, ok: false }))}
+                onDone={(ok) => (!guardOpen() ? setRedo((n) => n + 1) : ok ? settle(true) : show(cur, false))}
               />
             </ScrollView>
           )}
