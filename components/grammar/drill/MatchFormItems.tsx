@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { Pressable, TextInput, View } from 'react-native';
+import { Keyboard, Pressable, TextInput, View } from 'react-native';
 import { Text } from '@/components/KText';
 import Colors from '@/constants/Colors';
 import { t } from '@/lib/i18n';
@@ -231,6 +231,7 @@ export function FormDrillItem({
   useFocusOnNewCard(inputRef, true, item.id);
 
   const check = () => {
+    Keyboard.dismiss();
     const targets = [item.answer, ...(item.accept ?? [])];
     // Hungarian: the word cards' rule (accents are phonemic, öt/őt, never forgiven; case and punctuation are).
     // German: the umlaut and the ß are the grammar point (Vater / Väter), so they are never dropped; the accent switch only

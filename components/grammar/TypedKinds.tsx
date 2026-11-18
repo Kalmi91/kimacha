@@ -1,5 +1,5 @@
 import { Fragment, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
-import { StyleSheet, TextInput, View } from 'react-native';
+import { Keyboard, StyleSheet, TextInput, View } from 'react-native';
 import { Text } from '@/components/KText';
 
 import AnswerCompare from '@/components/grammar/AnswerCompare';
@@ -78,6 +78,7 @@ function TypedItem({
 
   const check = () => {
     if (result || typed.trim() === '') return;
+    Keyboard.dismiss(); // the feedback (right answer, why) must not sit behind the keyboard
     const typedRight = isRight(typed);
     setResult({ correct: typedRight && !forceWrong, typedRight });
     speak(filled, locale);
@@ -187,6 +188,7 @@ export function ClozeDrillItem({ item, learnedLang, contentLang, strictAccents, 
   const allRight = result !== null && result.every(Boolean);
   const check = () => {
     if (result || typed.some((x) => x.trim() === '')) return;
+    Keyboard.dismiss();
     setResult(gradeCloze(item, typed, strictAccents));
     speak(filledCloze(item.text, item.answers), locale);
   };

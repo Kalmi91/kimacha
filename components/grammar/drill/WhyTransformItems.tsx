@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { Pressable, TextInput, View } from 'react-native';
+import { Keyboard, Pressable, TextInput, View } from 'react-native';
 import { Text } from '@/components/KText';
 import Colors from '@/constants/Colors';
 import { t } from '@/lib/i18n';
@@ -252,6 +252,7 @@ export function TransformDrillItem({
   useFocusOnNewCard(inputRef, true, item.id);
 
   const check = () => {
+    Keyboard.dismiss();
     const candidates = [item.answer, ...(item.accept ?? [])];
     const ok = candidates.some((c) => strictAnswerMatch(input, c, { strictAccents }));
     setResult(ok ? 'ok' : 'bad');
