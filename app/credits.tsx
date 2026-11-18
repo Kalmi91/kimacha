@@ -11,6 +11,9 @@ import { t } from '@/lib/i18n';
 import { Card } from '@/components/grammar/Brutal';
 import { brutalHeaderRowStyle } from '@/lib/brutalHeader';
 import { FONT_LICENSES } from '@/constants/Fonts';
+import ScreenFeedback from '@/lib/screenFeedback';
+import { getPcicTarget } from '@/data/pcic';
+import { pairOf } from '@/lib/languagePair';
 
 // the font weights (e.g. Jost + Jost-Bold) appear as one family.
 const FONT_CREDITS = Object.values(FONT_LICENSES).filter(
@@ -63,6 +66,7 @@ export default function CreditsScreen() {
         </Pressable>
         </Wrap>
       </ScrollView>
+      <ScreenFeedback placement="header" level="-" languagePair={pairOf(getPcicTarget())} currentCard="settings-credits" />
     </View>
   );
 }
