@@ -116,7 +116,7 @@ export const PACK_BYTES = 269171160;
 export const PACK_URL = 'https://github.com/Kalmi91/kimacha/releases/download/tts-pack-v2/kimacha-tts-pack-v2.tar.bz2';
 export const PACK_DIR = 'kimacha-tts-pack-v2';
 export const LEGACY_PACK_DIR = 'kimacha-tts-pack-v1';
-// state.installed keys of the v1 packs (not downloadable items: they only tell Settings that older recordings are in use)
+// state.installed keys of the legacy packs (not downloadable items: they only tell Settings that older recordings are in use)
 export const LEGACY_PACK_KEY = 'legacy-pack';
 export const LEGACY_SENTENCES_KEY = 'legacy-sentences';
 
@@ -124,13 +124,13 @@ export const LEGACY_SENTENCES_KEY = 'legacy-sentences';
 // Kokoro recording of the fixed sentences the screens speak, one per (speaker sex, sentence). Its index.json
 // is { version, engine, files: { es: { "<g>|<key>": "es/<g>/<hash>.mp3" }, en: { ... } } }, g = f | m, key = packKey(text).
 // An empty URL keeps today's behavior: the item is not required and nothing is downloaded.
-// v2 (EJSZAKA E101) has both speakers of every sentence and the Speak tab's story lines; v1 (343 377 219 bytes, the
-// sex the app asked at the time) stays readable (LEGACY_SENTENCE_PACK_DIR). Sizes as packed 2026-11-05.
+// v3 (2026-11-17) re-records v2 with the deck sentences changed since v2; v2 and v1 stay readable
+// (LEGACY_SENTENCE_PACK_DIRS). The size is the v3 archive's, packed 2026-11-17.
 export const SENTENCES_KEY = 'sentences';
-export const SENTENCE_PACK_BYTES = 686281987;
-export const SENTENCE_PACK_URL = 'https://github.com/Kalmi91/kimacha/releases/download/tts-sentences-v2/kimacha-tts-sentences-v2.tar.bz2';
-export const SENTENCE_PACK_DIR = 'kimacha-tts-sentences-v2';
-export const LEGACY_SENTENCE_PACK_DIR = 'kimacha-tts-sentences-v1';
+export const SENTENCE_PACK_BYTES = 530462098;
+export const SENTENCE_PACK_URL = 'https://github.com/Kalmi91/kimacha/releases/download/tts-sentences-v3/kimacha-tts-sentences-v3.tar.bz2';
+export const SENTENCE_PACK_DIR = 'kimacha-tts-sentences-v3';
+export const LEGACY_SENTENCE_PACK_DIRS = ['kimacha-tts-sentences-v2', 'kimacha-tts-sentences-v1'] as const;
 
 // espeak-ng voice the Kokoro engine speaks each language with. es-419 is Latin-American Spanish and is
 // in the espeak-ng data of the Kokoro archive (espeak-ng-data/lang/roa/es-419, checked 2026-11-02).

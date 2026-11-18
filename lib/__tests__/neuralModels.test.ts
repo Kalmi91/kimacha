@@ -109,8 +109,8 @@ const flush = async () => {
   for (let i = 0; i < 20; i += 1) await new Promise(resolve => setTimeout(resolve, 0));
 };
 const installSentences = () => {
-  mockFs.set(`${TTS}/kimacha-tts-sentences-v2/index.json`, JSON.stringify(SENTENCE_INDEX));
-  mockFs.set(`${TTS}/kimacha-tts-sentences-v2.ok`, '1');
+  mockFs.set(`${TTS}/kimacha-tts-sentences-v3/index.json`, JSON.stringify(SENTENCE_INDEX));
+  mockFs.set(`${TTS}/kimacha-tts-sentences-v3.ok`, '1');
 };
 const installModel = (key: string) => {
   mockFs.set(`${TTS}/${NEURAL_MODELS[key].dir}/tokens.txt`, 't');
@@ -437,10 +437,10 @@ describe('better voice: download', () => {
     await m.downloadNeural(ALL);
     expect(mockDownloads.map(d => d.url)[0]).toContain('kimacha-tts-pack-v2.tar.bz2');
     expect(mockDownloads).toHaveLength(2 + PIPER_MODEL_KEYS.length);
-    expect(mockDownloads[mockDownloads.length - 1].url).toContain('kimacha-tts-sentences-v2.tar.bz2');
+    expect(mockDownloads[mockDownloads.length - 1].url).toContain('kimacha-tts-sentences-v3.tar.bz2');
     expect(mockDownloads.some(d => d.url.includes('kokoro'))).toBe(false);
     expect(mockExtracted.find(e => e.id === PACK_KEY)?.target).toBe(`${TTS}/kimacha-tts-pack-v2`);
-    expect(mockExtracted.find(e => e.id === SENTENCES_KEY)?.target).toBe(`${TTS}/kimacha-tts-sentences-v2`);
+    expect(mockExtracted.find(e => e.id === SENTENCES_KEY)?.target).toBe(`${TTS}/kimacha-tts-sentences-v3`);
     expect(mockExtracted.find(e => e.id === 'es_MX-claude-high')?.target).toBe(TTS);
     const s = m.getNeuralState();
     expect(s.download).toEqual({ running: false, percent: 100, phase: 'download', failed: [] });
@@ -448,7 +448,7 @@ describe('better voice: download', () => {
     expect([...mockFs.keys()].some(k => k.includes('/dl/') && !k.endsWith('.dir'))).toBe(false); // no archive left behind
     expect(m.neuralPackFile('es', 'el perro')).toBe(`${TTS}/kimacha-tts-pack-v2/es/27956ac4.mp3`);
     expect(m.neuralPackFile('es', 'la casa')).toBeNull();
-    expect(m.neuralSentenceFile('es', SENTENCE, 'f')).toBe(`${TTS}/kimacha-tts-sentences-v2/es/f/aaaaaaaa.mp3`);
+    expect(m.neuralSentenceFile('es', SENTENCE, 'f')).toBe(`${TTS}/kimacha-tts-sentences-v3/es/f/aaaaaaaa.mp3`);
     expect(m.neuralEngineFor('en')).toBeNull(); // the first ask loads the language
     await flush();
     expect(m.neuralEngineFor('en')).toBe('piper');
@@ -507,7 +507,7 @@ describe('better voice: download', () => {
   });
 
   it('the sentence pack answering 404 fails only itself: the word pack, the models and the engines are fine', async () => {
-    mockStatusFor['https://github.com/Kalmi91/kimacha/releases/download/tts-sentences-v2/kimacha-tts-sentences-v2.tar.bz2'] = 404;
+    mockStatusFor['https://github.com/Kalmi91/kimacha/releases/download/tts-sentences-v3/kimacha-tts-sentences-v3.tar.bz2'] = 404;
     const m = load();
     await m.startNeural();
     await m.downloadNeural(ALL);
@@ -529,21 +529,21 @@ describe('better voice: download', () => {
     await m.startNeural();
     await m.downloadNeural(ALL);
     expect(m.getNeuralState().download.failed).toEqual([SENTENCES_KEY]);
-    expect(under(`${TTS}/kimacha-tts-sentences-v2`)).toEqual([]);
+    expect(under(`${TTS}/kimacha-tts-sentences-v3`)).toEqual([]);
     mockFailExtract.clear();
     mockDownloads.length = 0;
     await m.downloadNeural(ALL);
-    expect(mockDownloads.map(d => d.url)).toEqual([expect.stringContaining('kimacha-tts-sentences-v2')]);
-    expect(m.neuralSentenceFile('es', SENTENCE, 'm')).toBe(`${TTS}/kimacha-tts-sentences-v2/es/m/bbbbbbbb.mp3`);
+    expect(mockDownloads.map(d => d.url)).toEqual([expect.stringContaining('kimacha-tts-sentences-v3')]);
+    expect(m.neuralSentenceFile('es', SENTENCE, 'm')).toBe(`${TTS}/kimacha-tts-sentences-v3/es/m/bbbbbbbb.mp3`);
   });
 
   it('an installed sentence pack is found at the next start: the speaker decides, no gender means the hash gender', async () => {
     installSentences();
     const m = load();
     await m.startNeural();
-    expect(m.neuralSentenceFile('es', SENTENCE, 'f')).toBe(`${TTS}/kimacha-tts-sentences-v2/es/f/aaaaaaaa.mp3`);
-    expect(m.neuralSentenceFile('es', SENTENCE, 'm')).toBe(`${TTS}/kimacha-tts-sentences-v2/es/m/bbbbbbbb.mp3`);
-    expect(m.neuralSentenceFile('es', SENTENCE)).toBe(`${TTS}/kimacha-tts-sentences-v2/es/${HASH_GENDER}/${HASH_GENDER === 'f' ? 'aaaaaaaa' : 'bbbbbbbb'}.mp3`);
+    expect(m.neuralSentenceFile('es', SENTENCE, 'f')).toBe(`${TTS}/kimacha-tts-sentences-v3/es/f/aaaaaaaa.mp3`);
+    expect(m.neuralSentenceFile('es', SENTENCE, 'm')).toBe(`${TTS}/kimacha-tts-sentences-v3/es/m/bbbbbbbb.mp3`);
+    expect(m.neuralSentenceFile('es', SENTENCE)).toBe(`${TTS}/kimacha-tts-sentences-v3/es/${HASH_GENDER}/${HASH_GENDER === 'f' ? 'aaaaaaaa' : 'bbbbbbbb'}.mp3`);
     expect(m.neuralSentenceFile('es', 'Otra oración.', 'f')).toBeNull();
     expect(m.neuralSentenceFile('hu', SENTENCE, 'f')).toBeNull();
   });
@@ -551,15 +551,15 @@ describe('better voice: download', () => {
   it('a sentence pack with an unreadable index is just absent: the word pack still works', async () => {
     mockFs.set(`${TTS}/kimacha-tts-pack-v2/index.json`, JSON.stringify({ version: 1, engine: 'x', files: { es: { 'el perro': 'es/a.mp3' } } }));
     mockFs.set(`${TTS}/kimacha-tts-pack-v2.ok`, '1');
-    mockFs.set(`${TTS}/kimacha-tts-sentences-v2/index.json`, '{not json');
-    mockFs.set(`${TTS}/kimacha-tts-sentences-v2.ok`, '1');
+    mockFs.set(`${TTS}/kimacha-tts-sentences-v3/index.json`, '{not json');
+    mockFs.set(`${TTS}/kimacha-tts-sentences-v3.ok`, '1');
     const m = load();
     await m.startNeural();
     expect(m.neuralSentenceFile('es', SENTENCE, 'f')).toBeNull();
     expect(m.neuralPackFile('es', 'el perro')).toBe(`${TTS}/kimacha-tts-pack-v2/es/a.mp3`);
   });
 
-  it('a phone that has only the v1 packs keeps speaking from them (old keys) until v2 is installed', async () => {
+  it('a phone that has only the v1 packs keeps speaking from them (old keys) until the current packs are installed', async () => {
     mockFs.set(`${TTS}/kimacha-tts-pack-v1/index.json`, JSON.stringify({ version: 1, engine: 'x', files: { es: { 'el perro': 'es/27956ac4.mp3' } } }));
     mockFs.set(`${TTS}/kimacha-tts-pack-v1.ok`, '1');
     mockFs.set(`${TTS}/kimacha-tts-sentences-v1/index.json`, JSON.stringify(SENTENCE_INDEX));
@@ -568,8 +568,41 @@ describe('better voice: download', () => {
     await m.startNeural();
     expect(m.neuralPackFile('es', 'el perro')).toBe(`${TTS}/kimacha-tts-pack-v1/es/27956ac4.mp3`);
     expect(m.neuralSentenceFile('es', SENTENCE, 'f')).toBe(`${TTS}/kimacha-tts-sentences-v1/es/f/aaaaaaaa.mp3`);
-    // the v2 items are still missing, so they are fetched
+    // the current items are still missing, so they are fetched
     expect(m.getNeuralState().installed[PACK_KEY]).toBe(false);
+  });
+
+  it('a phone with only sentence v2 installed keeps reading it until v3 is installed', async () => {
+    mockFs.set(`${TTS}/kimacha-tts-sentences-v2/index.json`, JSON.stringify(SENTENCE_INDEX));
+    mockFs.set(`${TTS}/kimacha-tts-sentences-v2.ok`, '1');
+    mockFs.set(`${TTS}/kimacha-tts-sentences-v3/index.json`, '{}'); // unfinished download, no marker
+    const m = load();
+    await m.startNeural();
+    expect(m.getNeuralState().installed[SENTENCES_KEY]).toBe(false);
+    expect(m.neuralSentenceFile('es', SENTENCE, 'f')).toBe(`${TTS}/kimacha-tts-sentences-v2/es/f/aaaaaaaa.mp3`);
+    expect(m.neuralSentenceFile('es', SENTENCE, 'm')).toBe(`${TTS}/kimacha-tts-sentences-v2/es/m/bbbbbbbb.mp3`);
+    expect(mockFs.has(`${TTS}/kimacha-tts-sentences-v2.ok`)).toBe(true);
+    expect(mockDownloads).toEqual([]);
+  });
+
+  it('sentence v2 is read before v1 when both legacy markers exist', async () => {
+    for (const dir of ['kimacha-tts-sentences-v1', 'kimacha-tts-sentences-v2']) {
+      mockFs.set(`${TTS}/${dir}/index.json`, JSON.stringify(SENTENCE_INDEX));
+      mockFs.set(`${TTS}/${dir}.ok`, '1');
+    }
+    const m = load();
+    await m.startNeural();
+    expect(m.neuralSentenceFile('es', SENTENCE, 'f')).toBe(`${TTS}/kimacha-tts-sentences-v2/es/f/aaaaaaaa.mp3`);
+    expect(mockFs.has(`${TTS}/kimacha-tts-sentences-v1.ok`)).toBe(true);
+    expect(mockFs.has(`${TTS}/kimacha-tts-sentences-v2.ok`)).toBe(true);
+  });
+
+  it('legacy-sentences is true when only the sentence v2 marker exists', async () => {
+    mockFs.set(`${TTS}/kimacha-tts-sentences-v2.ok`, '1');
+    const m = load();
+    await m.startNeural();
+    expect(m.getNeuralState().installed['legacy-sentences']).toBe(true);
+    expect(m.getNeuralState().installed[SENTENCES_KEY]).toBe(false);
   });
 
   it('the v2 pack is read once it is installed, even when the v1 folder is still there', async () => {
@@ -594,6 +627,28 @@ describe('better voice: download', () => {
 });
 
 describe('better voice: recordings housekeeping (EJSZAKA E101 review)', () => {
+  it.each(['startup', 'download'])('sentence v3 removes both legacy folders and markers after %s', async mode => {
+    for (const dir of ['kimacha-tts-sentences-v2', 'kimacha-tts-sentences-v1']) {
+      mockFs.set(`${TTS}/${dir}/index.json`, JSON.stringify(SENTENCE_INDEX));
+      mockFs.set(`${TTS}/${dir}/es/f/aaaaaaaa.mp3`, 'audio');
+      mockFs.set(`${TTS}/${dir}.ok`, '1');
+    }
+    if (mode === 'startup') installSentences();
+    const m = load();
+    await m.startNeural();
+    if (mode === 'download') {
+      expect(m.neuralSentenceFile('es', SENTENCE, 'f')).toBe(`${TTS}/kimacha-tts-sentences-v2/es/f/aaaaaaaa.mp3`);
+      await m.downloadNeural([SENTENCES_KEY]);
+    }
+    for (const dir of ['kimacha-tts-sentences-v2', 'kimacha-tts-sentences-v1']) {
+      expect(under(`${TTS}/${dir}`)).toEqual([]);
+      expect(mockFs.has(`${TTS}/${dir}.ok`)).toBe(false);
+    }
+    expect(m.getNeuralState().installed['legacy-sentences']).toBe(false);
+    expect(m.getNeuralState().installed[SENTENCES_KEY]).toBe(true);
+    expect(m.neuralSentenceFile('es', SENTENCE, 'f')).toBe(`${TTS}/kimacha-tts-sentences-v3/es/f/aaaaaaaa.mp3`);
+  });
+
   it('the first download of the better voice fetches the voice models only, never a pack', async () => {
     const m = load();
     await m.startNeural();
@@ -603,7 +658,7 @@ describe('better voice: recordings housekeeping (EJSZAKA E101 review)', () => {
     expect(m.getNeuralState().installed[PACK_KEY]).toBe(false);
   });
 
-  it('a verified v2 pack deletes its v1 folder and marker, the other v1 pack stays until its own v2 is in', async () => {
+  it('a verified v2 pack deletes its v1 folder and marker, the sentence v1 pack stays until v3 is in', async () => {
     for (const key of PIPER_MODEL_KEYS) installModel(key);
     mockFs.set(`${TTS}/kimacha-tts-pack-v1/index.json`, '{}');
     mockFs.set(`${TTS}/kimacha-tts-pack-v1.ok`, '1');
@@ -627,12 +682,12 @@ describe('better voice: recordings housekeeping (EJSZAKA E101 review)', () => {
       mockFs.set(`${TTS}/${dir}/index.json`, JSON.stringify(SENTENCE_INDEX));
       mockFs.set(`${TTS}/${dir}.ok`, '1');
     }
-    mockStatusFor['https://github.com/Kalmi91/kimacha/releases/download/tts-sentences-v2/kimacha-tts-sentences-v2.tar.bz2'] = 404;
+    mockStatusFor['https://github.com/Kalmi91/kimacha/releases/download/tts-sentences-v3/kimacha-tts-sentences-v3.tar.bz2'] = 404;
     const m = load();
     await m.startNeural();
     await m.downloadNeural([PACK_KEY, SENTENCES_KEY]);
     expect(mockFs.has(`${TTS}/kimacha-tts-pack-v1.ok`)).toBe(false); // its v2 is in
-    expect(mockFs.has(`${TTS}/kimacha-tts-sentences-v1.ok`)).toBe(true); // its v2 failed: v1 keeps playing
+    expect(mockFs.has(`${TTS}/kimacha-tts-sentences-v1.ok`)).toBe(true); // its v3 failed: v1 keeps playing
     expect(m.neuralSentenceFile('es', SENTENCE, 'f')).toBe(`${TTS}/kimacha-tts-sentences-v1/es/f/aaaaaaaa.mp3`);
   });
 
@@ -700,10 +755,10 @@ describe('better voice: nothing downloads by itself (EJSZAKA E101, Kálmán: "ne
     expect(m.getNeuralState().installed.pack).toBe(false);
   });
 
-  it('a failed v2 download (the recordings row) leaves the v1 packs playing', async () => {
+  it('a failed recordings download (the recordings row) leaves the v1 packs playing', async () => {
     installV1();
     mockStatusFor['https://github.com/Kalmi91/kimacha/releases/download/tts-pack-v2/kimacha-tts-pack-v2.tar.bz2'] = 404;
-    mockStatusFor['https://github.com/Kalmi91/kimacha/releases/download/tts-sentences-v2/kimacha-tts-sentences-v2.tar.bz2'] = 404;
+    mockStatusFor['https://github.com/Kalmi91/kimacha/releases/download/tts-sentences-v3/kimacha-tts-sentences-v3.tar.bz2'] = 404;
     const m = load();
     await m.startNeural();
     await m.downloadNeural([PACK_KEY, SENTENCES_KEY]);
