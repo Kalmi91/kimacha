@@ -982,7 +982,7 @@ def main() -> int:
     g = with_set(sub.add_parser("gen"))
     g.add_argument("--lang", choices=LANGS)
     g.add_argument("--limit", type=int, default=0)
-    g.add_argument("--shard", help="I/N: only keys whose position % N == I")
+    g.add_argument("--shard", help="I/N: only keys whose position %% N == I")
     g.add_argument("--threads", type=int, default=0)
     g.add_argument("--force", action="store_true")
     g.add_argument(
