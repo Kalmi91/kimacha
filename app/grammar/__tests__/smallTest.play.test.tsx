@@ -335,7 +335,7 @@ describe.each(['brand', 'classic'] as const)('grammar small test (%s palette)', 
 
   it('a wrong answer, leaving with the X on its result card and coming back: the next question comes, the miss stays in the run', async () => {
     const first = await start();
-    const { q } = await answer(false);
+    const { q, topic } = await answer(false);
     expect(has('level-test-next')).toBe(true);
     await press('small-test-close');
     first.unmount();
@@ -347,6 +347,8 @@ describe.each(['brand', 'classic'] as const)('grammar small test (%s palette)', 
     expect(st.run!.answers).toHaveLength(1);
     expect(st.run!.answers[0]).toMatchObject({ qid: q.id, ok: false });
     expect(st.run!.pending.length).toBeGreaterThan(0); // the miss plans its follow-ups
+    const ev = evidenceFromRows(await getDb().getGameProgress(GRAMMAR_RANDOM_KEY));
+    expect(ev.get(topic)?.answers).toEqual([{ id: q.id, kind: q.kind, ok: false, at: expect.any(String) }]);
   });
 
   it('a tap on an answer within 500 ms of a new question records nothing (the double tap after Next)', async () => {
