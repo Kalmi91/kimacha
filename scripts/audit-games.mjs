@@ -1003,6 +1003,14 @@ function auditTypedKindItem(item, itemPath, topic, checkWords) {
     if (!nonEmpty(item.answer)) p1.push({ path: itemPath, issue: 'fix item missing answer (a deletion is a spot item)' });
     const wrongWord = (words[item.wrongIndex] ?? '').replace(/[.,;:!?¡¿]+$/, '');
     if (nonEmpty(item.answer) && item.answer.toLowerCase() === wrongWord.toLowerCase()) p1.push({ path: itemPath, issue: 'fix answer equals the wrong word' });
+    // the word at wrongIndex must be the wrong one: in the corrected sentence (tr.es) that slot holds the answer
+    const fixedEs = typeof item.tr?.es === 'string' ? item.tr.es.trim().split(/\s+/).filter(Boolean) : [];
+    if (nonEmpty(item.answer) && fixedEs.length === words.length && words.length > 0) {
+      const strip = (w) => (w ?? '').replace(/[.,;:!?¡¿]+$/, '').toLowerCase();
+      if (strip(fixedEs[item.wrongIndex]) !== strip(item.answer)) {
+        p1.push({ path: itemPath, issue: `fix wrongIndex ${item.wrongIndex} points at "${wrongWord}", but the corrected sentence has "${fixedEs[item.wrongIndex]}" there (answer "${item.answer}")` });
+      }
+    }
     checkLangs(item.explain, `${itemPath} explain`);
     checkLangs(item.tr, `${itemPath} tr`);
     acceptList(item.accept);
