@@ -250,7 +250,15 @@ function loadEngines(lang: NeuralLang): void {
   if (loadedLangs.has(tag) && (failedAt === undefined || Date.now() - failedAt < LOAD_RETRY_MS)) return;
   loadFailedAt.delete(tag);
   loadedLangs.add(tag);
+  // One engine pair at a time across languages: the other languages' pairs go, and their load tags with them, so a
+  // later speech in that language loads its pair again.
+  const others = [...loadedLangs].filter(t => !t.startsWith(`${lang}:`));
+  for (const t of others) if (!loadFailedAt.has(t)) loadedLangs.delete(t);
   loadingChain = loadingChain.then(async () => {
+    for (const t of others) {
+      const [otherLang, otherEngine] = t.split(':') as [NeuralLang, NeuralEngine];
+      await releaseNeuralPair(otherLang, otherEngine);
+    }
     const fs = getFs();
     for (const voice of pair) {
       try {
@@ -308,33 +316,12 @@ export function neuralEngineFor(lang: NeuralLang): NeuralEngine | null {
   return null;
 }
 
-// The engine that takes over when `failed` did not deliver audio in time or broke: the language's other engine
-// if it is loaded. If it is installed but not loaded (Piper is released while Kokoro is the chosen one) it loads
-// now, in the background, and this speech goes to the phone; null = the phone speaks.
+// The engine that takes over when `failed` did not deliver audio in time or broke: the language's other engine,
+// only if it is already loaded. It never starts a load (the memory peak); null = the phone speaks.
 export function neuralFallbackEngine(lang: NeuralLang, failed: NeuralEngine): NeuralEngine | null {
   if (!state.supported || !state.enabled || isPiperOnly(lang)) return null;
   const other: NeuralEngine = failed === 'piper' ? 'kokoro' : 'piper';
-  if (isNeuralReady(lang, other)) return other;
-  const pair = voicePair(lang, other);
-  if (pair.every(v => state.installed[v.model]) && !standIns.has(lang)) {
-    standIns.add(lang);
-    loadingChain = loadingChain.then(async () => {
-      const fs = getFs();
-      await releaseStandIns(lang); // only this language keeps a stand-in
-      for (const voice of pair) {
-        try {
-          await loadNeuralVoice(voice, lang, itemDir(fs, voice.model));
-        } catch (e) {
-          console.log(`[neural] stand-in load failed ${lang}/${voice.id}: ${String(e).slice(0, 120)}`);
-          standIns.delete(lang);
-          setIssue(lang, { engine: other, kind: 'standin-failed', at: Date.now() });
-          return;
-        }
-      }
-      update({});
-    });
-  }
-  return null;
+  return isNeuralReady(lang, other) ? other : null;
 }
 
 // lib/speech.ts reports an engine that could not speak (too slow, an error): the Settings row says so in words.

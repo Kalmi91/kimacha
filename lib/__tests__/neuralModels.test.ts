@@ -239,9 +239,8 @@ describe('better voice: state at start', () => {
       m.neuralEngineFor('es');
       await flush();
       expect(m.neuralEngineFor('es')).toBe('kokoro');
-      expect(m.neuralFallbackEngine('es', 'kokoro')).toBeNull(); // Piper is freed while Kokoro is chosen: it loads now
-      await flush();
-      expect(m.neuralFallbackEngine('es', 'kokoro')).toBe('piper'); // loaded, the next hand-over is immediate
+      mockReady.add('es:piper:es_MX-claude-high'); // Piper is freed while Kokoro is chosen; here it is loaded again
+      mockReady.add('es:piper:es_MX-ald-medium');
       m.noteNeuralTrouble('es', 'kokoro', 'slow');
       expect(m.getNeuralState().issues.es).toMatchObject({ engine: 'kokoro', kind: 'slow' });
       expect(m.neuralEngineFor('es')).toBe('piper'); // no ten-second wait on every speech
@@ -284,27 +283,40 @@ describe('better voice: state at start', () => {
     expect(m.getNeuralState().issues.es).toMatchObject({ kind: 'slow' });
   });
 
-  it('a stand-in that fails to load is reported, only one language keeps a stand-in, and releaseStandIns drops it', async () => {
+  it('the other engine is a fallback only when it is already loaded, and asking never starts a load', async () => {
     for (const key of [...PIPER_MODEL_KEYS, 'kokoro']) installModel(key);
     mockFs.set(`${TTS}/settings.json`, JSON.stringify({ enabled: true, engines: { es: 'kokoro', en: 'kokoro', hu: 'piper', de: 'piper' } }));
     const m = load();
     await m.startNeural();
     m.neuralEngineFor('es');
+    await flush();
+    const loadedBefore = mockLoaded.length;
+    expect(m.neuralFallbackEngine('es', 'kokoro')).toBeNull(); // Piper is installed but not loaded: the phone speaks
+    await flush();
+    expect(mockLoaded).toHaveLength(loadedBefore);
+    mockReady.add('es:piper:es_MX-claude-high');
+    mockReady.add('es:piper:es_MX-ald-medium');
+    expect(m.neuralFallbackEngine('es', 'kokoro')).toBe('piper'); // loaded already: the hand-over is immediate
+    expect(mockLoaded).toHaveLength(loadedBefore);
+  });
+
+  it('one engine pair at a time across languages: es then en leaves only en loaded, and es can load again', async () => {
+    for (const key of PIPER_MODEL_KEYS) installModel(key);
+    const m = load();
+    await m.startNeural();
+    m.neuralEngineFor('es');
+    await flush();
+    expect(m.neuralEngineFor('es')).toBe('piper');
     m.neuralEngineFor('en');
     await flush();
-    m.neuralFallbackEngine('es', 'kokoro');
-    await flush();
-    expect(m.neuralFallbackEngine('es', 'kokoro')).toBe('piper');
-    m.neuralFallbackEngine('en', 'kokoro'); // the speaking language changes: es loses its stand-in
-    await flush();
     expect(mockPairReleased).toContain('es:piper');
-    expect(m.neuralFallbackEngine('en', 'kokoro')).toBe('piper');
-    await m.releaseStandIns();
-    expect(mockPairReleased).toContain('en:piper');
-    mockFailLoad.add('en_US-john-medium');
-    m.neuralFallbackEngine('en', 'kokoro');
+    expect(m.neuralEngineFor('en')).toBe('piper');
+    const loadedBefore = mockLoaded.length;
+    m.neuralEngineFor('es'); // es lost its pair and its load tag: it loads again (and releases en)
     await flush();
-    expect(m.getNeuralState().issues.en).toMatchObject({ engine: 'piper', kind: 'standin-failed' });
+    expect(mockLoaded.length).toBeGreaterThan(loadedBefore);
+    expect(mockPairReleased).toContain('en:piper');
+    expect(m.neuralEngineFor('es')).toBe('piper');
   });
 
   it('trouble of the stand-in engine is not reported as the chosen voice, and Hungarian has no fallback', async () => {
@@ -729,18 +741,17 @@ describe('better voice: switch and engine choice', () => {
     const m = load();
     await m.startNeural();
     m.neuralEngineFor('es');
-    m.neuralEngineFor('en');
     await flush();
-    expect(mockPairReleased).toEqual(['es:kokoro', 'en:kokoro']); // the chosen Piper is loaded: nothing else of the language is kept
+    expect(mockPairReleased).toEqual(['es:kokoro']); // the chosen Piper is loaded: nothing else of the language is kept
     mockPairReleased.length = 0;
     await m.setNeuralEngine('es', 'kokoro');
     await flush();
     expect(mockPairReleased).toEqual(['es:piper']);
     expect(m.neuralEngineFor('es')).toBe('kokoro');
-    expect(m.neuralEngineFor('en')).toBe('piper');
+    mockPairReleased.length = 0;
     await m.setNeuralEngine('es', 'piper');
     await flush();
-    expect(mockPairReleased).toEqual(['es:piper', 'es:kokoro']);
+    expect(mockPairReleased).toEqual(['es:kokoro']);
     expect(m.neuralEngineFor('es')).toBe('piper');
   });
 

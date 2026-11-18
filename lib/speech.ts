@@ -339,7 +339,9 @@ function speakBetter(text: string, locale: string, opts: BetterOptions, phone: (
   // The sentence pack's speaker is the explicit gender (a sequence's shared speaker, a card's word), else the picked one.
   const wordFile = chosenNeuralEngine(lang) === 'kokoro' ? neuralPackFile(lang, text, gender) : null;
   const pack = wordFile ?? (chosenNeuralEngine(lang) === 'kokoro' ? neuralSentenceFile(lang, text, gender) : null);
-  const engine = neuralEngineFor(lang);
+  // A recording plays at once and asks for no engine (asking starts its load); the engine is asked for only without
+  // a recording, or when the recording fails (viaEngine).
+  const engine = pack ? null : neuralEngineFor(lang);
   if (!pack && !engine) return false;
   stopPhone();
   stopNeural();
