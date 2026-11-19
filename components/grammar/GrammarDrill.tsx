@@ -288,7 +288,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
       <ScrollView contentContainerStyle={[styles.body, themedDockPad(g)]} keyboardShouldPersistTaps="handled">
         {header}
         {isMatchItem(roundItem.item) ? (
-          <MatchDrillItem key={roundItem.item.id} item={roundItem.item} learnedLang={learnedLang} colors={colors} s={s} onDone={completeItem} />
+          <MatchDrillItem key={roundItem.item.id} item={roundItem.item} lesson={topic} contentLang={contentLang} learnedLang={learnedLang} colors={colors} s={s} onDone={completeItem} />
         ) : isFormItem(roundItem.item) ? (
           <FormDrillItem
             key={roundItem.item.id}

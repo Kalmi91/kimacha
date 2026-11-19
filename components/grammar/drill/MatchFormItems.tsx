@@ -7,6 +7,8 @@ import { type ContentLang, type FormItem, type LessonBlock, type MatchItem } fro
 import { speak } from '@/lib/speech';
 import SpeakButton from '@/components/SpeakButton';
 import { speechLang } from '@/lib/languages';
+import type { GrammarTopicData } from '@/lib/games/content';
+import { pickMatchDistractors } from '@/lib/grammar/matchDistractors';
 import { strictAnswerMatch } from '@/lib/answerMatch';
 import { hashString, shuffleNoFixedPoints } from '@/lib/shuffle';
 import { useDockedAction } from '@/components/learn/DockSlot';
@@ -25,19 +27,35 @@ import { styles } from '@/components/grammar/GrammarDrill.styles';
 // (seed computed from item.id, not Date.now()).
 export function MatchDrillItem({
   item,
+  lesson,
+  contentLang,
   learnedLang,
   colors,
   s,
   onDone,
 }: {
   item: MatchItem;
+  // source of the unmatched extras (one per side); without it the item has none.
+  lesson?: GrammarTopicData;
+  contentLang?: string;
   learnedLang: string;
   colors: (typeof Colors)['light'];
   s: ReturnType<typeof t>;
   // the second argument is the number of right pairs (one mistake = one pair lost).
   onDone: (correct: boolean, correctUnits?: number) => void;
 }) {
-  const [rightOrder] = useState(() => shuffleNoFixedPoints(item.pairs.length, hashString(item.id)));
+  const [extra] = useState(() =>
+    pickMatchDistractors(
+      item,
+      lesson,
+      contentLang ?? 'es',
+      (p) => (learnedLang === 'en' ? p.es : p.en),
+      (p) => (learnedLang === 'en' ? p.en : p.es)
+    )
+  );
+  const n = item.pairs.length;
+  // index n = the extra element (left and right), which belongs to no pair.
+  const [rightOrder] = useState(() => shuffleNoFixedPoints(n + (extra ? 1 : 0), hashString(item.id)));
   const [selectedLeft, setSelectedLeft] = useState<number | null>(null);
   const [matched, setMatched] = useState<Set<number>>(new Set());
   const [wrongPair, setWrongPair] = useState<{ left: number; right: number } | null>(null);
@@ -50,8 +68,14 @@ export function MatchDrillItem({
   // (English in the es→en direction), the left one is the other.
   const leftText = (p: MatchItem['pairs'][number]) => (learnedLang === 'en' ? p.es : p.en);
   const rightText = (p: MatchItem['pairs'][number]) => (learnedLang === 'en' ? p.en : p.es);
+  const leftAt = (li: number) => (li === n ? extra!.left : leftText(item.pairs[li]));
+  const rightAt = (id: number) => (id === n ? extra!.right : rightText(item.pairs[id]));
+  // the extra sits at a fixed, item.id-based place, not always at the bottom.
+  const leftIds = Array.from({ length: n }, (_, i) => i);
+  if (extra) leftIds.splice(hashString(`${item.id}:extra`) % (n + 1), 0, n);
 
-  const done = matched.size === item.pairs.length;
+  const done = matched.size === n;
+  const lostPairs = [...errLefts].filter((li) => li < n).length;
 
   const pressLeft = (li: number) => {
     if (matched.has(li) || done) return;
@@ -63,7 +87,7 @@ export function MatchDrillItem({
     if (done || selectedLeft === null) return;
     const pairId = rightOrder[pos];
     if (matched.has(pairId)) return;
-    if (selectedLeft === pairId) {
+    if (selectedLeft === pairId && pairId < n) {
       const next = new Set(matched);
       next.add(pairId);
       setMatched(next);
@@ -104,13 +128,14 @@ export function MatchDrillItem({
     return (
       <View style={styles.matchBody}>
         <Text style={[styles.brutalHint, { color: g.mu }]}>{s.grammar.matchHint}</Text>
+        {extra ? <Text testID="match-extra-hint" style={[styles.brutalHint, { color: g.mu }]}>{s.grammar.matchExtraHint}</Text> : null}
         <View style={styles.matchColumns}>
           <View style={styles.matchColumn}>
-            {item.pairs.map((p, li) =>
+            {leftIds.map((li) =>
               cell(
                 `l${li}`,
                 `match-left-${li}`,
-                leftText(p),
+                leftAt(li),
                 matched.has(li) ? 'matched' : wrongPair?.left === li ? 'wrong' : selectedLeft === li ? 'selected' : 'idle',
                 () => pressLeft(li)
               )
@@ -121,7 +146,7 @@ export function MatchDrillItem({
               cell(
                 `r${pos}`,
                 `match-right-${pos}`,
-                rightText(item.pairs[pairId]),
+                rightAt(pairId),
                 matched.has(pairId) ? 'matched' : wrongPair?.right === pos ? 'wrong' : 'idle',
                 () => pressRight(pos)
               )
@@ -131,7 +156,7 @@ export function MatchDrillItem({
         {done ? (
           <>
             <BrutalFeedback correct={!hadWrong} title={hadWrong ? s.games.wrongFeedback : s.games.correctFeedback} />
-            <BrutalInkButton g={g} testID="grammar-next" label={s.grammar.nextArrow} onPress={() => onDone(!hadWrong, item.pairs.length - errLefts.size)} />
+            <BrutalInkButton g={g} testID="grammar-next" label={s.grammar.nextArrow} onPress={() => onDone(!hadWrong, n - lostPairs)} />
           </>
         ) : null}
       </View>
@@ -141,9 +166,10 @@ export function MatchDrillItem({
   return (
     <View style={styles.matchBody}>
       <Text style={[styles.hint, { color: colors.tabIconDefault }]}>{s.grammar.matchHint}</Text>
+      {extra ? <Text testID="match-extra-hint" style={[styles.hint, { color: colors.tabIconDefault }]}>{s.grammar.matchExtraHint}</Text> : null}
       <View style={styles.matchColumns}>
         <View style={styles.matchColumn}>
-          {item.pairs.map((p, li) => {
+          {leftIds.map((li) => {
             const isMatched = matched.has(li);
             const isSelected = selectedLeft === li;
             const isWrong = wrongPair?.left === li;
@@ -157,7 +183,7 @@ export function MatchDrillItem({
                 onPress={() => pressLeft(li)}
                 disabled={isMatched}
               >
-                <Text style={[styles.matchCellText, { color: colors.text }]}>{leftText(p)}</Text>
+                <Text style={[styles.matchCellText, { color: colors.text }]}>{leftAt(li)}</Text>
               </Pressable>
             );
           })}
@@ -176,7 +202,7 @@ export function MatchDrillItem({
                 onPress={() => pressRight(pos)}
                 disabled={isMatched}
               >
-                <Text style={[styles.matchCellText, { color: colors.text }]}>{rightText(item.pairs[pairId])}</Text>
+                <Text style={[styles.matchCellText, { color: colors.text }]}>{rightAt(pairId)}</Text>
               </Pressable>
             );
           })}
@@ -185,7 +211,7 @@ export function MatchDrillItem({
       {done ? (
         <View style={[styles.explainCard, { backgroundColor: colors.card }]}>
           <ResultBadge correct={!hadWrong} label={hadWrong ? s.games.wrongFeedback : s.games.correctFeedback} />
-          <Pressable testID="grammar-next" style={[styles.btn, { backgroundColor: colors.tint, marginTop: 12 }]} onPress={() => onDone(!hadWrong, item.pairs.length - errLefts.size)}>
+          <Pressable testID="grammar-next" style={[styles.btn, { backgroundColor: colors.tint, marginTop: 12 }]} onPress={() => onDone(!hadWrong, n - lostPairs)}>
             <Text style={[styles.btnText, { color: colors.onTint }]}>{s.games.understood}</Text>
           </Pressable>
         </View>

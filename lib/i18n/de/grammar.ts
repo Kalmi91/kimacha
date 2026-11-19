@@ -47,6 +47,7 @@ const de: typeof en = {
     doneAgain: 'Lies die Regel lieber noch einmal, bevor es weitergeht.',
     readAloud: 'Vorlesen',
     matchHint: 'Ordne die Wörter zu',
+    matchExtraHint: 'Auf jeder Seite gibt es ein Element ohne Partner.',
     formHint: 'Gib die richtige Form ein',
     showTable: 'Tabelle',
     check: 'Prüfen',

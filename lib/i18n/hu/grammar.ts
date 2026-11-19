@@ -47,6 +47,7 @@ const hu: typeof en = {
     doneAgain: 'Érdemes még egyszer elolvasni a szabályt, mielőtt továbblépsz.',
     readAloud: 'Felolvasás',
     matchHint: 'Párosítsd a szavakat',
+    matchExtraHint: 'Mindkét oldalon van egy elem, aminek nincs párja.',
     formHint: 'Írd be a helyes alakot',
     showTable: 'Táblázat',
     check: 'Ellenőrzés',

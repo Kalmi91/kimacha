@@ -47,6 +47,7 @@ const es: typeof en = {
     doneAgain: 'Vale la pena leer la regla una vez más antes de seguir.',
     readAloud: 'Leer en voz alta',
     matchHint: 'Relaciona las palabras',
+    matchExtraHint: 'En cada lado hay un elemento sin pareja.',
     formHint: 'Escribe la forma correcta',
     showTable: 'Tabla',
     check: 'Comprobar',

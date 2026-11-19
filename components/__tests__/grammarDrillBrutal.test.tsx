@@ -98,7 +98,8 @@ describe('GrammarDrill, neo-brutalist', () => {
       id: string;
       pairs: { en: string; es: string }[];
     };
-    const rightOrder = shuffleNoFixedPoints(match.pairs.length, hashString(match.id));
+    // +1: the lesson has two match items, so each gets one unmatched extra on the right.
+    const rightOrder = shuffleNoFixedPoints(match.pairs.length + 1, hashString(match.id));
     // wrong pair: left 1 with right 0 (if that one is not its match)
     const wrongPos = rightOrder.findIndex((p) => p !== 0);
     fireEvent.press(screen.getByTestId('match-left-0'));
@@ -117,7 +118,7 @@ describe('GrammarDrill, neo-brutalist', () => {
       id: string;
       pairs: { en: string; es: string }[];
     };
-    const secondOrder = shuffleNoFixedPoints(second.pairs.length, hashString(second.id));
+    const secondOrder = shuffleNoFixedPoints(second.pairs.length + 1, hashString(second.id));
     second.pairs.forEach((_, li) => {
       fireEvent.press(screen.getByTestId(`match-left-${li}`));
       fireEvent.press(screen.getByTestId(`match-right-${secondOrder.indexOf(li)}`));
