@@ -22,14 +22,16 @@ const isSpainOnly = (alt: string) =>
 // apostrophe and the hyphen stay (in English "don't", "well-known" they are part of the word).
 const IGNORED_PUNCT = /[¿?¡!.,;:…]/g;
 
+// A keyboard or a paste can send an accented letter decomposed (base letter + combining mark, NFD);
+// composing it first (NFC) makes it equal to the same letter in the stored answer.
 function normalize(s: string): string {
-  return s.trim().toLowerCase().replace(IGNORED_PUNCT, ' ').replace(/\s+/g, ' ').trim();
+  return s.normalize('NFC').trim().toLowerCase().replace(IGNORED_PUNCT, ' ').replace(/\s+/g, ' ').trim();
 }
 
 const IGNORED_PUNCT_HU = /[?!.,;:…]/g;
 
 function normalizeHu(s: string): string {
-  return s.trim().toLowerCase().replace(IGNORED_PUNCT_HU, ' ').replace(/\s+/g, ' ').trim();
+  return s.normalize('NFC').trim().toLowerCase().replace(IGNORED_PUNCT_HU, ' ').replace(/\s+/g, ' ').trim();
 }
 
 function foldAccents(s: string): string {
