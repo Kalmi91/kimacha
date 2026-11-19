@@ -36,11 +36,11 @@ describe('to_be lesson, es→en direction', () => {
     (db as any).__setLevelForTest('A1');
   });
 
-  it('is registered as an English V2 lesson with 51 items', () => {
+  it('is registered as an English V2 lesson with 56 items', () => {
     expect(hasLesson('en', 'to_be')).toBe(true);
     expect(hasLesson('es', 'to_be')).toBe(false);
     const lesson = lessonFor('en', 'to_be');
-    expect(lesson?.items).toHaveLength(51);
+    expect(lesson?.items).toHaveLength(56);
   });
 
   it('shows the English example sentence with its Spanish translation', async () => {
