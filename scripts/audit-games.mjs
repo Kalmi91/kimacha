@@ -1038,11 +1038,11 @@ function auditTypedKindItem(item, itemPath, topic, checkWords) {
         p1.push({ path: itemPath, issue: `fix answer "${item.answer}" lands next to the same word: the corrected sentence reads "${answer} ${answer}"` });
       }
       // the same slip one word further away ("Do you can cook?" -> "Can you can cook?"): a hint to read the item
-      // only inside the same sentence: "¿La mochila? La lleva ella." is two sentences and is fine
+      // only inside the same clause: "¿La mochila? La lleva ella." and "While I was studying, my brother was playing." are fine
       let from = item.wrongIndex;
-      while (from > 0 && !/[.!?]$/.test(words[from - 1])) from -= 1;
+      while (from > 0 && !/[.,;:!?]$/.test(words[from - 1])) from -= 1;
       let to = item.wrongIndex;
-      while (to < words.length - 1 && !/[.!?]$/.test(words[to])) to += 1;
+      while (to < words.length - 1 && !/[.,;:!?]$/.test(words[to])) to += 1;
       const elsewhere = words.some((w, i) => i !== item.wrongIndex && i >= from && i <= to && bare(w) === answer);
       if (answer !== '' && !doubled && elsewhere && !FIX_REPEAT_OK.has(answer)) {
         p2.push({ path: itemPath, issue: `fix answer "${item.answer}" is already in the sentence: read the corrected sentence` });
