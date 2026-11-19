@@ -275,13 +275,29 @@ export function getGrammarTopics(lang: string): GrammarTopicData[] {
   return topics;
 }
 
+// Every item kind this build can show. On the web the lessons come from a pack fetched at start, so a bundle kept open from
+// before a deploy can meet lessons written for a newer one (2026-11-19: such a tab crashed on the new typed kinds, which have
+// no `options`). An item of a kind not listed here is dropped on load instead. The Record type fails the typecheck until a new
+// kind of GrammarItem is listed.
+const KNOWN_ITEM_KINDS: Record<NonNullable<GrammarItem['kind']>, true> = {
+  gap: true, mark: true, match: true, form: true, why: true, transform: true, spot: true, order: true, dictation: true,
+  write: true, opencloze: true, fix: true, bank: true, noun: true,
+};
+
+/** The lesson without the items of a kind this build does not know; the same object when it has none. */
+export function withKnownKinds(lesson: GrammarTopicData): GrammarTopicData {
+  const items = lesson.items as GrammarItem[];
+  const known = items.filter((i) => i.kind === undefined || Object.prototype.hasOwnProperty.call(KNOWN_ITEM_KINDS, i.kind));
+  return known.length === items.length ? lesson : ({ ...lesson, items: known } as GrammarTopicData);
+}
+
 export function getGrammarTopic(lang: string, topic: string): GrammarTopicData | undefined {
   const key = `${lang}/${topic}`;
   let lesson = grammarTopicCache.get(key);
   if (!lesson) {
     const entry = grammarIndexByLang[lang]?.find((e) => e.id === topic);
     if (!entry) return undefined;
-    lesson = entry.load();
+    lesson = withKnownKinds(entry.load());
     grammarTopicCache.set(key, lesson);
   }
   return lesson;

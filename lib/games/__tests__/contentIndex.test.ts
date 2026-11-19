@@ -1,6 +1,6 @@
 import { existsSync, readdirSync } from 'fs';
 import { join } from 'path';
-import { getGrammarTopic, getGrammarTopicIds, getGrammarTopics } from '../content';
+import { getGrammarTopic, getGrammarTopicIds, getGrammarTopics, grammarKindCounts, withKnownKinds, type GrammarTopicData } from '../content';
 import { EN_GRAMMAR_INDEX } from '../content/en.index';
 import { ES_GRAMMAR_INDEX } from '../content/es.index';
 import { HU_GRAMMAR_INDEX } from '../content/hu.index';
@@ -73,4 +73,22 @@ describe.each(['es', 'en', 'hu', 'de'] as const)('lazy grammar registry (%s)', (
 it('an unknown language has no lessons', () => {
   expect(getGrammarTopics('xx')).toEqual([]);
   expect(getGrammarTopicIds('xx')).toEqual([]);
+});
+
+// A web bundle kept open from before a deploy reads lessons written for the newer build: an item of a kind it does not know
+// (here 'future', with no `options`) must drop out on load, not crash the course tab or the drill.
+describe('withKnownKinds', () => {
+  const gap = { id: 'g1', sentence: 'Yo ___ aquí.', options: ['estoy', 'está'], correct: 0, why: { en: '' } };
+  const lessonOf = (items: unknown[]) => ({ topic: 't', items }) as unknown as GrammarTopicData;
+
+  it('drops the items of an unknown kind and keeps the rest', () => {
+    const out = withKnownKinds(lessonOf([gap, { id: 'x1', kind: 'future', sentence: 'Yo ___.' }, { ...gap, id: 'g2', kind: 'gap' }]));
+    expect(out.items.map((i) => i.id)).toEqual(['g1', 'g2']);
+    expect(grammarKindCounts(out).choice).toBe(2);
+  });
+
+  it('gives back the same lesson object when every kind is known', () => {
+    const lesson = lessonOf([gap, { id: 'f1', kind: 'form', verb: 'ser', person: 'yo', answer: 'soy' }]);
+    expect(withKnownKinds(lesson)).toBe(lesson);
+  });
 });

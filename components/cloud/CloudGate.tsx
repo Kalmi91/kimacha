@@ -13,6 +13,7 @@ import { getProgress, putProgress, type LoginData } from '@/lib/cloud/api';
 import { GUEST_OFFER_AFTER, hasVisited, isOfferDone, markOfferDone, markVisited, setCloudGuest, subscribeCardsGraded, subscribeSignInRequests } from '@/lib/cloud/guest';
 import { mergeCloudPayloads } from '@/lib/cloud/merge';
 import { clearSession, loadSession, saveSession } from '@/lib/cloud/session';
+import { reloadIfStale } from '@/lib/cloud/staleBundle';
 import { exportCloudPayload, restoreFromCloud, snapshotKey, startSync } from '@/lib/cloud/sync';
 import { prefetchContentPacks } from '@/lib/games/content/webPacks';
 import { useGrammarColors } from '@/lib/grammarColors';
@@ -150,13 +151,17 @@ export default function CloudGate({ children }: { children: ReactNode }) {
   );
 
   // The lesson packs come first (lib/games/content/webPacks.ts: the web bundle holds no lesson JSON), then the decision.
+  // Meanwhile the bundle check (lib/cloud/staleBundle.ts) runs: a bundle older than the deployed one reloads instead of going on.
   const start = useCallback(async () => {
+    const stale = reloadIfStale();
     try {
       await prefetchContentPacks();
     } catch {
+      if (await stale) return;
       setPhase('contentError');
       return;
     }
+    if (await stale) return;
     const returning = hasVisited();
     // the language of the last visit, for the welcome screen; a restored session's own language replaces it later
     const lang = rememberedLanguage();
