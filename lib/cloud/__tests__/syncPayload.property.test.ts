@@ -121,7 +121,7 @@ describe('payload size limits', () => {
     afterEach(() => jest.useRealTimers());
 
     // FINDING D2-4 (skipped: red = the bug; see report-d2.md): sync.ts ignores 'too_large' and PUTs the same body every 5 s.
-    it.skip('is not uploaded again every round while it stays the same', async () => {
+    it('is not uploaded again every round while it stays the same', async () => {
       mockExport.mockResolvedValue('x'.repeat(MAX_PAYLOAD_CHARS));
       mockPut.mockResolvedValue({ ok: false, error: 'too_large' });
       const stop = startSync('tok', null, jest.fn());

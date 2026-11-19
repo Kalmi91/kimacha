@@ -86,6 +86,7 @@ export async function snapshotKey(): Promise<string | null> {
 // A 401 (bad_token) stops the sync and calls onBadToken. Returns the function that stops it.
 export function startSync(token: string, baseline: string | null, onBadToken: () => void, baseRev?: number): () => void {
   let last = baseline;
+  let rejected: string | null = null; // the payload the server refused as too_large; not sent again until it changes
   let rev = baseRev;
   let stopped = false;
   let busy = false;
@@ -127,10 +128,14 @@ export function startSync(token: string, baseline: string | null, onBadToken: ()
   const upload = async (keepalive: boolean) => {
     const payload = await exportCloudPayload();
     if (!detectChange(payload, last)) return;
+    if (payload === rejected) return;
     const res = await putProgress(token, payload, keepalive, rev);
     if (res.ok) {
       last = payload;
       rev = res.data.rev;
+      rejected = null;
+    } else if (res.error === 'too_large') {
+      rejected = payload;
     } else if (res.error === 'conflict' && res.current) {
       await adopt(res.current);
       if (++conflicts < MAX_CONFLICTS) again = true;
