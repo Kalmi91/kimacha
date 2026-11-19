@@ -319,6 +319,41 @@
         "en": "used in would rather",
         "es": "condicional (would rather)"
       }
+    },
+    {
+      "word": "careful",
+      "gloss": {
+        "en": "taking care not to make mistakes",
+        "es": "cuidadoso"
+      }
+    },
+    {
+      "word": "law",
+      "gloss": {
+        "en": "a rule made by the government",
+        "es": "la ley"
+      }
+    },
+    {
+      "word": "might",
+      "gloss": {
+        "en": "used for a possibility",
+        "es": "podría (una posibilidad)"
+      }
+    },
+    {
+      "word": "seatbelt",
+      "gloss": {
+        "en": "a belt that keeps you in your seat in a car",
+        "es": "el cinturón de seguridad"
+      }
+    },
+    {
+      "word": "weekdays",
+      "gloss": {
+        "en": "Monday to Friday",
+        "es": "de lunes a viernes"
+      }
     }
   ],
   "items": [
@@ -1137,6 +1172,332 @@
           "es": "se permite",
           "en": "be allowed to"
         }
+      ]
+    },
+    {
+      "id": "moa-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "You ___ wear a seatbelt in a car. It is the law.",
+      "answers": [
+        "must"
+      ],
+      "tr": {
+        "en": "You must wear a seatbelt in a car. It is the law.",
+        "es": "Hay que llevar el cinturón de seguridad en el coche. Es la ley."
+      },
+      "why": {
+        "en": "Must + base verb is a strong obligation, often a law or a rule: You must wear a seatbelt. There is no -s and no to after must.",
+        "es": "Must + verbo base es una obligación fuerte, a menudo una ley o una regla: You must wear a seatbelt. Después de must no hay -s ni to."
+      }
+    },
+    {
+      "id": "moa-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "You ___ not park here. It is forbidden.",
+      "answers": [
+        "must"
+      ],
+      "tr": {
+        "en": "You must not park here. It is forbidden.",
+        "es": "No debes aparcar aquí. Está prohibido."
+      },
+      "why": {
+        "en": "Do not have to means it is not necessary: you can, but you do not need to. It is not the same as must not, which means it is forbidden.",
+        "es": "Do not have to significa que no es necesario: puedes, pero no hace falta. No es lo mismo que must not, que significa que está prohibido."
+      }
+    },
+    {
+      "id": "moa-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "She ___ to get up early on weekdays because her bus leaves at six.",
+      "answers": [
+        "has"
+      ],
+      "tr": {
+        "en": "She has to get up early on weekdays because her bus leaves at six.",
+        "es": "Tiene que levantarse temprano entre semana porque su autobús sale a las seis."
+      },
+      "why": {
+        "en": "Have to is an obligation that comes from outside (a schedule, a rule). With he / she / it we say has to: She has to get up early.",
+        "es": "Have to es una obligación que viene de fuera (un horario, una regla). Con he / she / it se dice has to: She has to get up early."
+      }
+    },
+    {
+      "id": "moa-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "You ___ not have to pay. The museum is free today.",
+      "answers": [
+        "do"
+      ],
+      "tr": {
+        "en": "You do not have to pay. The museum is free today.",
+        "es": "No hace falta que pagues. Hoy el museo es gratis."
+      },
+      "why": {
+        "en": "Do not have to means it is not necessary: you can, but you do not need to. It is not the same as must not, which means it is forbidden.",
+        "es": "Do not have to significa que no es necesario: puedes, pero no hace falta. No es lo mismo que must not, que significa que está prohibido."
+      }
+    },
+    {
+      "id": "moa-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "You look tired. You ___ go to bed early.",
+      "answers": [
+        "should"
+      ],
+      "tr": {
+        "en": "You look tired. You should go to bed early.",
+        "es": "Pareces cansado. Deberías acostarte temprano."
+      },
+      "why": {
+        "en": "Should + base verb gives advice: You should see a doctor. There is no -s and no to after should.",
+        "es": "Should + verbo base da un consejo: You should see a doctor. Después de should no hay -s ni to."
+      }
+    },
+    {
+      "id": "moa-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "She have to get up early on weekdays.",
+      "wrongIndex": 1,
+      "answer": "has",
+      "explain": {
+        "en": "Have to is an obligation that comes from outside (a schedule, a rule). With he / she / it we say has to: She has to get up early.",
+        "es": "Have to es una obligación que viene de fuera (un horario, una regla). Con he / she / it se dice has to: She has to get up early."
+      },
+      "tr": {
+        "en": "She has to get up early on weekdays.",
+        "es": "Tiene que levantarse temprano entre semana."
+      }
+    },
+    {
+      "id": "moa-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "You should sees a doctor.",
+      "wrongIndex": 2,
+      "answer": "see",
+      "explain": {
+        "en": "Should + base verb gives advice: You should see a doctor. There is no -s and no to after should.",
+        "es": "Should + verbo base da un consejo: You should see a doctor. Después de should no hay -s ni to."
+      },
+      "tr": {
+        "en": "You should see a doctor.",
+        "es": "Deberías ver a un médico."
+      }
+    },
+    {
+      "id": "moa-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "You had better hurries.",
+      "wrongIndex": 3,
+      "answer": "hurry",
+      "explain": {
+        "en": "Had better + base verb is strong advice with a warning: You had better hurry (or something bad will happen). Always had, even for the present.",
+        "es": "Had better + verbo base es un consejo fuerte con una advertencia: You had better hurry (si no, pasará algo malo). Siempre had, también para el presente."
+      },
+      "tr": {
+        "en": "You had better hurry.",
+        "es": "Más te vale darte prisa."
+      }
+    },
+    {
+      "id": "moa-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "He is suppose to be here at nine.",
+      "wrongIndex": 2,
+      "answer": "supposed",
+      "explain": {
+        "en": "Be supposed to means what is planned or expected: He is supposed to be here at nine. The form is supposed, with -d.",
+        "es": "Be supposed to significa lo que está planeado o se espera: He is supposed to be here at nine. La forma es supposed, con -d."
+      },
+      "tr": {
+        "en": "He is supposed to be here at nine.",
+        "es": "Se supone que está aquí a las nueve."
+      }
+    },
+    {
+      "id": "moa-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "You will better hurry.",
+      "wrongIndex": 1,
+      "answer": "had",
+      "explain": {
+        "en": "Had better + base verb is strong advice with a warning: You had better hurry (or something bad will happen). Always had, even for the present.",
+        "es": "Had better + verbo base es un consejo fuerte con una advertencia: You had better hurry (si no, pasará algo malo). Siempre had, también para el presente."
+      },
+      "tr": {
+        "en": "You had better hurry.",
+        "es": "Más te vale darte prisa."
+      }
+    },
+    {
+      "id": "moa-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "must",
+        "might",
+        "would"
+      ],
+      "es": "You ___ stop at a red light. It is the law.",
+      "word": "must",
+      "answer": "must",
+      "tr": {
+        "en": "You must stop at a red light. It is the law.",
+        "es": "Hay que parar en un semáforo en rojo. Es la ley."
+      },
+      "why": {
+        "en": "Must + base verb is a strong obligation, often a law or a rule: You must wear a seatbelt. There is no -s and no to after must.",
+        "es": "Must + verbo base es una obligación fuerte, a menudo una ley o una regla: You must wear a seatbelt. Después de must no hay -s ni to."
+      }
+    },
+    {
+      "id": "moa-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "should",
+        "would",
+        "did"
+      ],
+      "es": "You look ill. You ___ see a doctor.",
+      "word": "should",
+      "answer": "should",
+      "tr": {
+        "en": "You look ill. You should see a doctor.",
+        "es": "Te ves enfermo. Deberías ver a un médico."
+      },
+      "why": {
+        "en": "Should + base verb gives advice: You should see a doctor. There is no -s and no to after should.",
+        "es": "Should + verbo base da un consejo: You should see a doctor. Después de should no hay -s ni to."
+      }
+    },
+    {
+      "id": "moa-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "have",
+        "sleep",
+        "wait"
+      ],
+      "es": "She ___ to wear a uniform at work.",
+      "word": "have",
+      "answer": "has",
+      "tr": {
+        "en": "She has to wear a uniform at work.",
+        "es": "Tiene que llevar uniforme en el trabajo."
+      },
+      "why": {
+        "en": "Have to is an obligation that comes from outside (a schedule, a rule). With he / she / it we say has to: She has to get up early.",
+        "es": "Have to es una obligación que viene de fuera (un horario, una regla). Con he / she / it se dice has to: She has to get up early."
+      }
+    },
+    {
+      "id": "moa-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "hurry",
+        "smile",
+        "dance"
+      ],
+      "es": "You had better ___ or you will miss the train.",
+      "word": "hurry",
+      "answer": "hurry",
+      "tr": {
+        "en": "You had better hurry or you will miss the train.",
+        "es": "Más te vale darte prisa o perderás el tren."
+      },
+      "why": {
+        "en": "Had better + base verb is strong advice with a warning: You had better hurry (or something bad will happen). Always had, even for the present.",
+        "es": "Had better + verbo base es un consejo fuerte con una advertencia: You had better hurry (si no, pasará algo malo). Siempre had, también para el presente."
+      }
+    },
+    {
+      "id": "moa-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "be",
+        "go",
+        "see"
+      ],
+      "es": "You should ___ more careful.",
+      "word": "be",
+      "answer": "be",
+      "tr": {
+        "en": "You should be more careful.",
+        "es": "Deberías ser más cuidadoso."
+      },
+      "why": {
+        "en": "Should + base verb gives advice: You should see a doctor. There is no -s and no to after should.",
+        "es": "Should + verbo base da un consejo: You should see a doctor. Después de should no hay -s ni to."
+      }
+    },
+    {
+      "id": "moa-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "You must wear a seatbelt in a car.",
+        "es": "Hay que llevar el cinturón de seguridad en el coche."
+      },
+      "es": "You must wear a seatbelt in a car."
+    },
+    {
+      "id": "moa-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "She has to get up early on weekdays.",
+        "es": "Tiene que levantarse temprano entre semana."
+      },
+      "es": "She has to get up early on weekdays.",
+      "accept": [
+        "On weekdays she has to get up early."
+      ]
+    },
+    {
+      "id": "moa-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "You should see a doctor.",
+        "es": "Deberías ver a un médico."
+      },
+      "es": "You should see a doctor."
+    },
+    {
+      "id": "moa-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "You had better hurry.",
+        "es": "Más te vale darte prisa."
+      },
+      "es": "You had better hurry."
+    },
+    {
+      "id": "moa-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "We do not have to pay today.",
+        "es": "Hoy no tenemos que pagar."
+      },
+      "es": "We do not have to pay today.",
+      "accept": [
+        "Today we do not have to pay."
       ]
     }
   ]

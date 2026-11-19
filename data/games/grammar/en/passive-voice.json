@@ -237,6 +237,62 @@
         "en": "past form of break",
         "es": "rompió (pasado de break)"
       }
+    },
+    {
+      "word": "build",
+      "gloss": {
+        "en": "to make a house or a bridge",
+        "es": "construir"
+      }
+    },
+    {
+      "word": "built",
+      "gloss": {
+        "en": "participle of build",
+        "es": "construido (participio de build)"
+      }
+    },
+    {
+      "word": "Italy",
+      "gloss": {
+        "en": "a country in Europe",
+        "es": "un país de Europa"
+      }
+    },
+    {
+      "word": "jump",
+      "gloss": {
+        "en": "to push yourself up into the air",
+        "es": "saltar"
+      }
+    },
+    {
+      "word": "song",
+      "gloss": {
+        "en": "words and music that you sing",
+        "es": "la canción"
+      }
+    },
+    {
+      "word": "Spanish",
+      "gloss": {
+        "en": "the language of Spain and Mexico",
+        "es": "el español"
+      }
+    },
+    {
+      "word": "steal",
+      "gloss": {
+        "en": "to take something that is not yours",
+        "es": "robar"
+      }
+    },
+    {
+      "word": "stolen",
+      "gloss": {
+        "en": "participle of steal",
+        "es": "robado (participio de steal)"
+      }
     }
   ],
   "items": [
@@ -1034,6 +1090,333 @@
           "es": "se vende",
           "en": "is sold"
         }
+      ]
+    },
+    {
+      "id": "pv-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "English ___ spoken in many countries.",
+      "answers": [
+        "is"
+      ],
+      "tr": {
+        "en": "English is spoken in many countries.",
+        "es": "En muchos países se habla inglés."
+      },
+      "why": {
+        "en": "The form of be agrees with the subject and the time: is (one thing, now), are (more than one, now), was / were (past).",
+        "es": "La forma de be concuerda con el sujeto y el tiempo: is (una cosa, ahora), are (más de una, ahora), was / were (pasado)."
+      }
+    },
+    {
+      "id": "pv-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "This bridge ___ built in 1990.",
+      "answers": [
+        "was"
+      ],
+      "tr": {
+        "en": "This bridge was built in 1990.",
+        "es": "Este puente se construyó en 1990."
+      },
+      "why": {
+        "en": "The form of be agrees with the subject and the time: is (one thing, now), are (more than one, now), was / were (past).",
+        "es": "La forma de be concuerda con el sujeto y el tiempo: is (una cosa, ahora), are (más de una, ahora), was / were (pasado)."
+      }
+    },
+    {
+      "id": "pv-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "The cars ___ made in Mexico.",
+      "answers": [
+        "are"
+      ],
+      "tr": {
+        "en": "The cars are made in Mexico.",
+        "es": "Los coches se fabrican en México."
+      },
+      "why": {
+        "en": "The form of be agrees with the subject and the time: is (one thing, now), are (more than one, now), was / were (past).",
+        "es": "La forma de be concuerda con el sujeto y el tiempo: is (una cosa, ahora), are (más de una, ahora), was / were (pasado)."
+      }
+    },
+    {
+      "id": "pv-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "The report will ___ finished tomorrow.",
+      "answers": [
+        "be"
+      ],
+      "tr": {
+        "en": "The report will be finished tomorrow.",
+        "es": "El informe estará terminado mañana."
+      },
+      "why": {
+        "en": "The future passive is will be + past participle: The report will be finished tomorrow. After will we need be, not is.",
+        "es": "La pasiva de futuro es will be + participio: The report will be finished tomorrow. Después de will hace falta be, no is."
+      }
+    },
+    {
+      "id": "pv-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "The window ___ ___ (break) by the children yesterday.",
+      "answers": [
+        "was",
+        "broken"
+      ],
+      "tr": {
+        "en": "The window was broken by the children yesterday.",
+        "es": "La ventana fue rota por los niños ayer."
+      },
+      "why": {
+        "en": "The verb in the passive is the past participle, not the base form: built, written, broken, made. Many are irregular.",
+        "es": "El verbo en la pasiva es el participio, no la forma base: built, written, broken, made. Muchos son irregulares."
+      }
+    },
+    {
+      "id": "pv-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "The window was break yesterday.",
+      "wrongIndex": 3,
+      "answer": "broken",
+      "explain": {
+        "en": "The verb in the passive is the past participle, not the base form: built, written, broken, made. Many are irregular.",
+        "es": "El verbo en la pasiva es el participio, no la forma base: built, written, broken, made. Muchos son irregulares."
+      },
+      "tr": {
+        "en": "The window was broken yesterday.",
+        "es": "La ventana se rompió ayer."
+      }
+    },
+    {
+      "id": "pv-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "These cars is made in Mexico.",
+      "wrongIndex": 2,
+      "answer": "are",
+      "explain": {
+        "en": "The form of be agrees with the subject and the time: is (one thing, now), are (more than one, now), was / were (past).",
+        "es": "La forma de be concuerda con el sujeto y el tiempo: is (una cosa, ahora), are (más de una, ahora), was / were (pasado)."
+      },
+      "tr": {
+        "en": "These cars are made in Mexico.",
+        "es": "Estos coches se fabrican en México."
+      }
+    },
+    {
+      "id": "pv-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "The letter was wrote by my sister.",
+      "wrongIndex": 3,
+      "answer": "written",
+      "explain": {
+        "en": "The verb in the passive is the past participle, not the base form: built, written, broken, made. Many are irregular.",
+        "es": "El verbo en la pasiva es el participio, no la forma base: built, written, broken, made. Muchos son irregulares."
+      },
+      "tr": {
+        "en": "The letter was written by my sister.",
+        "es": "La carta fue escrita por mi hermana."
+      }
+    },
+    {
+      "id": "pv-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "The report will is finished tomorrow.",
+      "wrongIndex": 3,
+      "answer": "be",
+      "explain": {
+        "en": "The future passive is will be + past participle: The report will be finished tomorrow. After will we need be, not is.",
+        "es": "La pasiva de futuro es will be + participio: The report will be finished tomorrow. Después de will hace falta be, no is."
+      },
+      "tr": {
+        "en": "The report will be finished tomorrow.",
+        "es": "El informe estará terminado mañana."
+      }
+    },
+    {
+      "id": "pv-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "The song was written from my brother.",
+      "wrongIndex": 4,
+      "answer": "by",
+      "explain": {
+        "en": "We use by + the doer only when it matters: The letter was written by my sister. Not from, with or of.",
+        "es": "Se usa by + quien hace la acción solo cuando importa: The letter was written by my sister. No from, with ni of."
+      },
+      "tr": {
+        "en": "The song was written by my brother.",
+        "es": "La canción fue escrita por mi hermano."
+      }
+    },
+    {
+      "id": "pv-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "write",
+        "sleep",
+        "smile"
+      ],
+      "es": "This book was ___ in 1990.",
+      "word": "write",
+      "answer": "written",
+      "tr": {
+        "en": "This book was written in 1990.",
+        "es": "Este libro fue escrito en 1990."
+      },
+      "why": {
+        "en": "The verb in the passive is the past participle, not the base form: built, written, broken, made. Many are irregular.",
+        "es": "El verbo en la pasiva es el participio, no la forma base: built, written, broken, made. Muchos son irregulares."
+      }
+    },
+    {
+      "id": "pv-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "build",
+        "laugh",
+        "dance"
+      ],
+      "es": "The house was ___ by my grandfather.",
+      "word": "build",
+      "answer": "built",
+      "tr": {
+        "en": "The house was built by my grandfather.",
+        "es": "La casa fue construida por mi abuelo."
+      },
+      "why": {
+        "en": "The verb in the passive is the past participle, not the base form: built, written, broken, made. Many are irregular.",
+        "es": "El verbo en la pasiva es el participio, no la forma base: built, written, broken, made. Muchos son irregulares."
+      }
+    },
+    {
+      "id": "pv-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "speak",
+        "jump",
+        "swim"
+      ],
+      "es": "Spanish is ___ in Mexico.",
+      "word": "speak",
+      "answer": "spoken",
+      "tr": {
+        "en": "Spanish is spoken in Mexico.",
+        "es": "En México se habla español."
+      },
+      "why": {
+        "en": "The verb in the passive is the past participle, not the base form: built, written, broken, made. Many are irregular.",
+        "es": "El verbo en la pasiva es el participio, no la forma base: built, written, broken, made. Muchos son irregulares."
+      }
+    },
+    {
+      "id": "pv-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "steal",
+        "wait",
+        "arrive"
+      ],
+      "es": "My bike was ___ last night.",
+      "word": "steal",
+      "answer": "stolen",
+      "tr": {
+        "en": "My bike was stolen last night.",
+        "es": "Anoche me robaron la bicicleta."
+      },
+      "why": {
+        "en": "The verb in the passive is the past participle, not the base form: built, written, broken, made. Many are irregular.",
+        "es": "El verbo en la pasiva es el participio, no la forma base: built, written, broken, made. Muchos son irregulares."
+      }
+    },
+    {
+      "id": "pv-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "make",
+        "sleep",
+        "smile"
+      ],
+      "es": "These shoes are ___ in Italy.",
+      "word": "make",
+      "answer": "made",
+      "tr": {
+        "en": "These shoes are made in Italy.",
+        "es": "Estos zapatos se fabrican en Italia."
+      },
+      "why": {
+        "en": "The verb in the passive is the past participle, not the base form: built, written, broken, made. Many are irregular.",
+        "es": "El verbo en la pasiva es el participio, no la forma base: built, written, broken, made. Muchos son irregulares."
+      }
+    },
+    {
+      "id": "pv-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "This bridge was built in 1990.",
+        "es": "Este puente se construyó en 1990."
+      },
+      "es": "This bridge was built in 1990.",
+      "accept": [
+        "In 1990 this bridge was built."
+      ]
+    },
+    {
+      "id": "pv-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "The letter was written by my sister.",
+        "es": "La carta fue escrita por mi hermana."
+      },
+      "es": "The letter was written by my sister."
+    },
+    {
+      "id": "pv-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "These cars are made in Mexico.",
+        "es": "Estos coches se fabrican en México."
+      },
+      "es": "These cars are made in Mexico."
+    },
+    {
+      "id": "pv-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "Was your bike stolen last night?",
+        "es": "¿Te robaron la bicicleta anoche?"
+      },
+      "es": "Was your bike stolen last night?"
+    },
+    {
+      "id": "pv-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "The room will be cleaned tomorrow.",
+        "es": "La habitación se limpiará mañana."
+      },
+      "es": "The room will be cleaned tomorrow.",
+      "accept": [
+        "Tomorrow the room will be cleaned."
       ]
     }
   ]
