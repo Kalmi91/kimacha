@@ -1285,6 +1285,9 @@
         "es": "La fiesta es el sábado. (When)"
       },
       "answer": "When is the party?",
+      "accept": [
+        "When's the party?"
+      ],
       "wordIds": [],
       "why": {
         "en": "With to be there is no do / does: the question word comes first, then is and the subject.",
@@ -1303,6 +1306,9 @@
         "es": "Ese hombre es mi hermano. (Who)"
       },
       "answer": "Who is that man?",
+      "accept": [
+        "Who's that man?"
+      ],
       "wordIds": [],
       "why": {
         "en": "Who asks about a person. With to be, put is before the subject.",
