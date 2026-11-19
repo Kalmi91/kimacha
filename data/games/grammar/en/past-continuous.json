@@ -1441,6 +1441,107 @@
       "accept": [
         "When we left it was raining."
       ]
+    },
+    {
+      "id": "pco-transform-01",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-negative"
+      },
+      "prompt": {
+        "en": "I was cooking dinner when the lights went out.",
+        "es": "Yo estaba cocinando la cena cuando se fue la luz."
+      },
+      "answer": "I was not cooking dinner when the lights went out.",
+      "accept": [
+        "I wasn't cooking dinner when the lights went out."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "Negative past continuous: was not (wasn’t) / were not (weren’t) + verb-ing. Only the long action changes; the short event (went out) stays in the past simple.",
+        "es": "Negativo del past continuous: was not (wasn’t) / were not (weren’t) + verbo-ing. Solo cambia la acción larga; el hecho corto (went out) sigue en past simple."
+      }
+    },
+    {
+      "id": "pco-transform-02",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-question"
+      },
+      "prompt": {
+        "en": "You were sleeping when I called.",
+        "es": "Tú estabas durmiendo cuando llamé."
+      },
+      "answer": "Were you sleeping when I called?",
+      "wordIds": [],
+      "why": {
+        "en": "Question: Was / Were goes before the subject, and the -ing form stays. The second part (when I called) does not change.",
+        "es": "Pregunta: Was / Were va antes del sujeto y la forma -ing se queda. La segunda parte (when I called) no cambia."
+      }
+    },
+    {
+      "id": "pco-transform-03",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-question"
+      },
+      "prompt": {
+        "en": "He was reading while we were cooking.",
+        "es": "Él estaba leyendo mientras nosotros cocinábamos."
+      },
+      "answer": "Was he reading while we were cooking?",
+      "wordIds": [],
+      "why": {
+        "en": "Only the first part becomes a question: Was + he + reading. The while part stays as a statement, with were cooking.",
+        "es": "Solo la primera parte pasa a pregunta: Was + he + reading. La parte con while queda afirmativa, con were cooking."
+      }
+    },
+    {
+      "id": "pco-transform-04",
+      "kind": "transform",
+      "tense": {
+        "from": "en-i-you-we-they",
+        "to": "en-he-she-it"
+      },
+      "prompt": {
+        "en": "We were walking to work when it started to rain.",
+        "es": "Nosotros íbamos caminando al trabajo cuando empezó a llover."
+      },
+      "answer": "She was walking to work when it started to rain.",
+      "accept": [
+        "He was walking to work when it started to rain."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "With I, he, she, it the past continuous uses was; with you, we, they it uses were. So we were becomes she was.",
+        "es": "Con I, he, she, it el past continuous usa was; con you, we, they usa were. Así we were pasa a she was."
+      }
+    },
+    {
+      "id": "pco-transform-05",
+      "kind": "transform",
+      "tense": {
+        "from": "en-he-she-it",
+        "to": "en-i-you-we-they"
+      },
+      "prompt": {
+        "en": "He was driving when the accident happened.",
+        "es": "Él iba manejando cuando ocurrió el accidente."
+      },
+      "answer": "They were driving when the accident happened.",
+      "accept": [
+        "We were driving when the accident happened.",
+        "You were driving when the accident happened.",
+        "I was driving when the accident happened."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "With they, we, you the helper is were, not was. The -ing form and the past simple event (happened) stay the same.",
+        "es": "Con they, we, you el auxiliar es were, no was. La forma -ing y el hecho en past simple (happened) no cambian."
+      }
     }
   ]
 }

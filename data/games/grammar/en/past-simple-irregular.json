@@ -1389,6 +1389,102 @@
         }
       ],
       "correctIndex": 0
+    },
+    {
+      "id": "pi-transform-01",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-negative"
+      },
+      "prompt": {
+        "en": "She went to Mexico last year.",
+        "es": "Ella fue a México el año pasado."
+      },
+      "answer": "She did not go to Mexico last year.",
+      "accept": [
+        "She didn't go to Mexico last year."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "Past negative: did not (didn’t) + the base verb. The irregular past form goes away: went → go.",
+        "es": "Negación en pasado: did not (didn’t) + verbo base. La forma irregular del pasado desaparece: went → go."
+      }
+    },
+    {
+      "id": "pi-transform-02",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-negative"
+      },
+      "prompt": {
+        "en": "I saw my friend on Monday.",
+        "es": "Vi a mi amigo el lunes."
+      },
+      "answer": "I did not see my friend on Monday.",
+      "accept": [
+        "I didn't see my friend on Monday."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "“I did not saw” is a common mistake: after did not the verb is always the base form (see).",
+        "es": "«I did not saw» es un error frecuente: después de did not el verbo siempre va en forma base (see)."
+      }
+    },
+    {
+      "id": "pi-transform-03",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-question"
+      },
+      "prompt": {
+        "en": "You bought a new phone.",
+        "es": "Compraste un teléfono nuevo."
+      },
+      "answer": "Did you buy a new phone?",
+      "wordIds": [],
+      "why": {
+        "en": "Past question: Did + subject + base verb. The irregular form goes back to the base verb: bought → buy.",
+        "es": "Pregunta en pasado: Did + sujeto + verbo base. La forma irregular vuelve al verbo base: bought → buy."
+      }
+    },
+    {
+      "id": "pi-transform-04",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-question"
+      },
+      "prompt": {
+        "en": "He ate all the cake.",
+        "es": "Él se comió todo el pastel."
+      },
+      "answer": "Did he eat all the cake?",
+      "wordIds": [],
+      "why": {
+        "en": "Did already shows the past, so the verb is not changed again: ate → eat, not “Did he ate”.",
+        "es": "Did ya indica el pasado, así que el verbo no se vuelve a cambiar: ate → eat, no «Did he ate»."
+      }
+    },
+    {
+      "id": "pi-transform-05",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-question"
+      },
+      "prompt": {
+        "en": "They took the bus to work.",
+        "es": "Tomaron el autobús al trabajo."
+      },
+      "answer": "Did they take the bus to work?",
+      "wordIds": [],
+      "why": {
+        "en": "The same pattern works for every irregular verb: took → take, not “Did they took”.",
+        "es": "El mismo patrón sirve para todos los verbos irregulares: took → take, no «Did they took»."
+      }
     }
   ]
 }

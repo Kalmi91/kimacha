@@ -1336,6 +1336,105 @@
         }
       ],
       "correctIndex": 0
+    },
+    {
+      "id": "bv-transform-01",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-negative"
+      },
+      "prompt": {
+        "en": "I have a brother.",
+        "es": "Tengo un hermano."
+      },
+      "answer": "I do not have a brother.",
+      "accept": [
+        "I don't have a brother."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "With have, go, want and other basic verbs the negative is do not (don’t) with I, you, we, they, then the base verb.",
+        "es": "Con have, go, want y otros verbos básicos la negación es do not (don’t) con I, you, we, they, y después el verbo base."
+      }
+    },
+    {
+      "id": "bv-transform-02",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-negative"
+      },
+      "prompt": {
+        "en": "She goes to school by bus.",
+        "es": "Ella va a la escuela en autobús."
+      },
+      "answer": "She does not go to school by bus.",
+      "accept": [
+        "She doesn't go to school by bus."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "With he / she / it the negative is does not (doesn’t). After it the verb loses its -s and its special form: goes → go.",
+        "es": "Con he / she / it la negación es does not (doesn’t). Después el verbo pierde la -s y su forma especial: goes → go."
+      }
+    },
+    {
+      "id": "bv-transform-03",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-question"
+      },
+      "prompt": {
+        "en": "You want a coffee.",
+        "es": "Quieres un café."
+      },
+      "answer": "Do you want a coffee?",
+      "wordIds": [],
+      "why": {
+        "en": "Questions with basic verbs start with Do (I, you, we, they), then the subject and the base verb: Do you want…?",
+        "es": "Las preguntas con verbos básicos empiezan con Do (I, you, we, they), luego el sujeto y el verbo base: Do you want…?"
+      }
+    },
+    {
+      "id": "bv-transform-04",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-question"
+      },
+      "prompt": {
+        "en": "He has a car.",
+        "es": "Él tiene un coche."
+      },
+      "answer": "Does he have a car?",
+      "wordIds": [],
+      "why": {
+        "en": "With he / she / it use Does and the base verb: has → have, not “Does he has”.",
+        "es": "Con he / she / it se usa Does y el verbo base: has → have, no «Does he has»."
+      }
+    },
+    {
+      "id": "bv-transform-05",
+      "kind": "transform",
+      "tense": {
+        "from": "en-i-you-we-they",
+        "to": "en-he-she-it"
+      },
+      "prompt": {
+        "en": "I go to work by train.",
+        "es": "Voy al trabajo en tren."
+      },
+      "answer": "She goes to work by train.",
+      "accept": [
+        "He goes to work by train."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "With he / she / it the verb takes -s, and go becomes goes (also do → does, have → has).",
+        "es": "Con he / she / it el verbo lleva -s, y go pasa a goes (también do → does, have → has)."
+      }
     }
   ]
 }

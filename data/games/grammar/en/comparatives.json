@@ -1307,6 +1307,105 @@
         }
       ],
       "correctIndex": 1
+    },
+    {
+      "id": "cm-transform-01",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-negative"
+      },
+      "prompt": {
+        "en": "My brother is taller than me.",
+        "es": "Mi hermano es más alto que yo."
+      },
+      "answer": "My brother is not taller than me.",
+      "accept": [
+        "My brother isn't taller than me."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "Negation of to be: put not after is / are: is not (isn’t). The comparative form stays: taller than.",
+        "es": "Negación de to be: not va después de is / are: is not (isn’t). La forma comparativa se mantiene: taller than."
+      }
+    },
+    {
+      "id": "cm-transform-02",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-negative"
+      },
+      "prompt": {
+        "en": "This phone is more expensive than that phone.",
+        "es": "Este teléfono es más caro que ese teléfono."
+      },
+      "answer": "This phone is not more expensive than that phone.",
+      "accept": [
+        "This phone isn't more expensive than that phone."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "A long adjective keeps more: not more expensive than. Do not use do / does with to be.",
+        "es": "Un adjetivo largo mantiene more: not more expensive than. No uses do / does con to be."
+      }
+    },
+    {
+      "id": "cm-transform-03",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-question"
+      },
+      "prompt": {
+        "en": "Your car is faster than my car.",
+        "es": "Tu coche es más rápido que mi coche."
+      },
+      "answer": "Is your car faster than my car?",
+      "wordIds": [],
+      "why": {
+        "en": "Question: move is / are before the subject and keep the comparative and than: Is your car faster than my car?",
+        "es": "Pregunta: is / are va antes del sujeto y se mantienen el comparativo y than: Is your car faster than my car?"
+      }
+    },
+    {
+      "id": "cm-transform-04",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-question"
+      },
+      "prompt": {
+        "en": "Bikes are cheaper than cars.",
+        "es": "Las bicicletas son más baratas que los coches."
+      },
+      "answer": "Are bikes cheaper than cars?",
+      "wordIds": [],
+      "why": {
+        "en": "With a plural subject use are. The comparative cheaper does not change in the plural.",
+        "es": "Con un sujeto plural se usa are. El comparativo cheaper no cambia en plural."
+      }
+    },
+    {
+      "id": "cm-transform-05",
+      "kind": "transform",
+      "tense": {
+        "from": "en-i-you-we-they",
+        "to": "en-he-she-it"
+      },
+      "prompt": {
+        "en": "I am taller than Ana.",
+        "es": "Soy más alto que Ana."
+      },
+      "answer": "She is taller than Ana.",
+      "accept": [
+        "He is taller than Ana."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "Only to be changes with the person: I am → she is. The comparative taller and than stay the same.",
+        "es": "Solo cambia to be con la persona: I am → she is. El comparativo taller y than no cambian."
+      }
     }
   ]
 }

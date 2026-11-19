@@ -1255,6 +1255,106 @@
         }
       ],
       "correctIndex": 2
+    },
+    {
+      "id": "gg-transform-01",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-negative"
+      },
+      "prompt": {
+        "en": "I am going to visit my aunt.",
+        "es": "Voy a visitar a mi tía."
+      },
+      "answer": "I am not going to visit my aunt.",
+      "accept": [
+        "I'm not going to visit my aunt."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "Negation: put not after am / is / are: I am not going to visit. The base verb after to stays the same.",
+        "es": "Negación: not va después de am / is / are: I am not going to visit. El verbo base después de to no cambia."
+      }
+    },
+    {
+      "id": "gg-transform-02",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-negative"
+      },
+      "prompt": {
+        "en": "They are going to travel in July.",
+        "es": "Van a viajar en julio."
+      },
+      "answer": "They are not going to travel in July.",
+      "accept": [
+        "They aren't going to travel in July.",
+        "They're not going to travel in July."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "Short forms: aren’t going to, isn’t going to and I’m not going to. Do not use do / does: “they don’t going to” is wrong.",
+        "es": "Formas cortas: aren’t going to, isn’t going to y I’m not going to. No uses do / does: «they don’t going to» es incorrecto."
+      }
+    },
+    {
+      "id": "gg-transform-03",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-question"
+      },
+      "prompt": {
+        "en": "You are going to buy a car.",
+        "es": "Vas a comprar un coche."
+      },
+      "answer": "Are you going to buy a car?",
+      "wordIds": [],
+      "why": {
+        "en": "Question: move am / is / are before the subject: you are going to buy → are you going to buy?",
+        "es": "Pregunta: am / is / are va antes del sujeto: you are going to buy → are you going to buy?"
+      }
+    },
+    {
+      "id": "gg-transform-04",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-question"
+      },
+      "prompt": {
+        "en": "She is going to cook dinner.",
+        "es": "Ella va a preparar la cena."
+      },
+      "answer": "Is she going to cook dinner?",
+      "wordIds": [],
+      "why": {
+        "en": "With she the question starts with Is. The base verb after to takes no -s: Is she going to cook, not “cooks”.",
+        "es": "Con she la pregunta empieza con Is. El verbo base después de to no lleva -s: Is she going to cook, no «cooks»."
+      }
+    },
+    {
+      "id": "gg-transform-05",
+      "kind": "transform",
+      "tense": {
+        "from": "en-i-you-we-they",
+        "to": "en-he-she-it"
+      },
+      "prompt": {
+        "en": "I am going to wait here.",
+        "es": "Voy a esperar aquí."
+      },
+      "answer": "She is going to wait here.",
+      "accept": [
+        "He is going to wait here."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "Only to be changes with the person (am → is). The base verb after to never takes -s: she is going to wait, not “waits”.",
+        "es": "Solo cambia to be con la persona (am → is). El verbo base después de to nunca lleva -s: she is going to wait, no «waits»."
+      }
     }
   ]
 }

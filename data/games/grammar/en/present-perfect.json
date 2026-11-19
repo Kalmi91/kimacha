@@ -1399,6 +1399,107 @@
         }
       ],
       "correctIndex": 2
+    },
+    {
+      "id": "pf-transform-01",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-negative"
+      },
+      "prompt": {
+        "en": "I have seen this film.",
+        "es": "He visto esta película."
+      },
+      "answer": "I have not seen this film.",
+      "accept": [
+        "I haven't seen this film.",
+        "I've not seen this film."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "Negation: have / has + not + past participle: I have not seen. Short forms: haven’t, hasn’t. The participle stays the same.",
+        "es": "Negación: have / has + not + participio: I have not seen. Formas cortas: haven’t, hasn’t. El participio no cambia."
+      }
+    },
+    {
+      "id": "pf-transform-02",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-negative"
+      },
+      "prompt": {
+        "en": "She has finished her homework.",
+        "es": "Ella ha terminado su tarea."
+      },
+      "answer": "She has not finished her homework.",
+      "accept": [
+        "She hasn't finished her homework.",
+        "She's not finished her homework."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "With he / she / it use has not (hasn’t). The participle does not change: finished, not “has not finish”.",
+        "es": "Con he / she / it se usa has not (hasn’t). El participio no cambia: finished, no «has not finish»."
+      }
+    },
+    {
+      "id": "pf-transform-03",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-question"
+      },
+      "prompt": {
+        "en": "You have been to Peru.",
+        "es": "Has estado en Perú."
+      },
+      "answer": "Have you been to Peru?",
+      "wordIds": [],
+      "why": {
+        "en": "Question: have / has goes before the subject, then the past participle: you have been → have you been?",
+        "es": "Pregunta: have / has va antes del sujeto, luego el participio: you have been → have you been?"
+      }
+    },
+    {
+      "id": "pf-transform-04",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-question"
+      },
+      "prompt": {
+        "en": "He has eaten lunch.",
+        "es": "Él ha almorzado."
+      },
+      "answer": "Has he eaten lunch?",
+      "wordIds": [],
+      "why": {
+        "en": "With he / she / it the question starts with Has. The participle stays: Has he eaten, not “Has he ate”.",
+        "es": "Con he / she / it la pregunta empieza con Has. El participio se mantiene: Has he eaten, no «Has he ate»."
+      }
+    },
+    {
+      "id": "pf-transform-05",
+      "kind": "transform",
+      "tense": {
+        "from": "en-i-you-we-they",
+        "to": "en-he-she-it"
+      },
+      "prompt": {
+        "en": "I have lived here for two years.",
+        "es": "Llevo dos años viviendo aquí."
+      },
+      "answer": "She has lived here for two years.",
+      "accept": [
+        "He has lived here for two years."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "Have changes to has with he / she / it: I have lived → she has lived. The participle (lived) stays the same.",
+        "es": "Have pasa a has con he / she / it: I have lived → she has lived. El participio (lived) no cambia."
+      }
     }
   ]
 }

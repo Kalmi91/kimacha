@@ -1376,6 +1376,105 @@
       "trial": true,
       "prompt": { "en": "They wish they had stayed at home.", "es": "Ojalá se hubieran quedado en casa." },
       "es": "They wish they had stayed at home."
+    },
+    {
+      "id": "wsh-transform-01",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-negative"
+      },
+      "prompt": {
+        "en": "I wish we lived in the city.",
+        "es": "Ojalá viviéramos en la ciudad."
+      },
+      "answer": "I wish we did not live in the city.",
+      "accept": [
+        "I wish we didn't live in the city."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "After wish the past simple talks about the present. Its negative is did not (didn’t) + base verb: we did not live, not “we would not live”.",
+        "es": "Después de wish el past simple habla del presente. Su negación es did not (didn’t) + verbo base: we did not live, no «we would not live»."
+      }
+    },
+    {
+      "id": "wsh-transform-02",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-question"
+      },
+      "prompt": {
+        "en": "She wishes she had a bigger house.",
+        "es": "Ella desea tener una casa más grande."
+      },
+      "answer": "Does she wish she had a bigger house?",
+      "wordIds": [],
+      "why": {
+        "en": "The question is about the verb wish, so it takes does + she + base verb: Does she wish. The part after it (she had) does not change.",
+        "es": "La pregunta es sobre el verbo wish, así que lleva does + she + verbo base: Does she wish. La parte siguiente (she had) no cambia."
+      }
+    },
+    {
+      "id": "wsh-transform-03",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-negative"
+      },
+      "prompt": {
+        "en": "I wish I had gone to the party.",
+        "es": "Ojalá hubiera ido a la fiesta."
+      },
+      "answer": "I wish I had not gone to the party.",
+      "accept": [
+        "I wish I hadn't gone to the party."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "A regret about the past uses the past perfect. Its negative is had not (hadn’t) + past participle.",
+        "es": "Un arrepentimiento del pasado usa el past perfect. Su negación es had not (hadn’t) + participio."
+      }
+    },
+    {
+      "id": "wsh-transform-04",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-question"
+      },
+      "prompt": {
+        "en": "You wish you had a dog.",
+        "es": "Tú deseas tener un perro."
+      },
+      "answer": "Do you wish you had a dog?",
+      "wordIds": [],
+      "why": {
+        "en": "Question: Do + you + wish, and the clause after it stays as it is (you had a dog). Not “Do you wish you do have”.",
+        "es": "Pregunta: Do + you + wish, y la cláusula siguiente queda igual (you had a dog). No «Do you wish you do have»."
+      }
+    },
+    {
+      "id": "wsh-transform-05",
+      "kind": "transform",
+      "tense": {
+        "from": "en-i-you-we-they",
+        "to": "en-he-she-it"
+      },
+      "prompt": {
+        "en": "I wish I knew his name.",
+        "es": "Ojalá supiera su nombre."
+      },
+      "answer": "She wishes she knew his name.",
+      "accept": [
+        "He wishes he knew his name."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "Wish takes -s with he / she / it: wishes. The verb after it stays in the past simple (knew), and the second pronoun follows the first.",
+        "es": "Wish lleva -s con he / she / it: wishes. El verbo siguiente queda en past simple (knew) y el segundo pronombre sigue al primero."
+      }
     }
   ]
 }

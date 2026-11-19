@@ -1428,6 +1428,105 @@
       "accept": [
         "If we lived near the sea we would go swimming every day."
       ]
+    },
+    {
+      "id": "sc-transform-01",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-negative"
+      },
+      "prompt": {
+        "en": "If we had a car, we would drive to the beach.",
+        "es": "Si tuviéramos un coche, iríamos a la playa en coche."
+      },
+      "answer": "If we had a car, we would not drive to the beach.",
+      "accept": [
+        "If we had a car, we wouldn't drive to the beach."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "Negative result: would not (wouldn’t) + base verb. The if-clause stays in the past simple: not “If we would have”.",
+        "es": "Resultado negativo: would not (wouldn’t) + verbo base. La cláusula con if sigue en past simple: no «If we would have»."
+      }
+    },
+    {
+      "id": "sc-transform-02",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-question"
+      },
+      "prompt": {
+        "en": "If you won the lottery, you would travel the world.",
+        "es": "Si ganaras la lotería, viajarías por el mundo."
+      },
+      "answer": "If you won the lottery, would you travel the world?",
+      "wordIds": [],
+      "why": {
+        "en": "Question about the result: would goes before the subject in the main clause. The if-clause stays in the past simple, without would.",
+        "es": "Pregunta sobre el resultado: would va antes del sujeto en la oración principal. La cláusula con if sigue en past simple, sin would."
+      }
+    },
+    {
+      "id": "sc-transform-03",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-negative"
+      },
+      "prompt": {
+        "en": "If I were you, I would take the job.",
+        "es": "Si yo fuera tú, aceptaría el trabajo."
+      },
+      "answer": "If I were you, I would not take the job.",
+      "accept": [
+        "If I were you, I wouldn't take the job."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "Only the main clause becomes negative: would not (wouldn’t) + base verb. In the if-clause “were” stays, even after I.",
+        "es": "Solo la oración principal pasa a negativa: would not (wouldn’t) + verbo base. En la cláusula con if «were» se queda, también tras I."
+      }
+    },
+    {
+      "id": "sc-transform-04",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-question"
+      },
+      "prompt": {
+        "en": "If she had a day off, she would visit her parents.",
+        "es": "Si ella tuviera un día libre, visitaría a sus padres."
+      },
+      "answer": "If she had a day off, would she visit her parents?",
+      "wordIds": [],
+      "why": {
+        "en": "Question: would goes before she in the main clause, and the verb stays in the base form (visit). The if-clause does not change.",
+        "es": "Pregunta: would va antes de she en la oración principal y el verbo queda en forma base (visit). La cláusula con if no cambia."
+      }
+    },
+    {
+      "id": "sc-transform-05",
+      "kind": "transform",
+      "tense": {
+        "from": "en-i-you-we-they",
+        "to": "en-he-she-it"
+      },
+      "prompt": {
+        "en": "If I had a bike, I would ride it to work.",
+        "es": "Si tuviera una bicicleta, iría en ella al trabajo."
+      },
+      "answer": "If she had a bike, she would ride it to work.",
+      "accept": [
+        "If he had a bike, he would ride it to work."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "The verb forms do not change with the person: had and would ride stay the same. There is no -s after would.",
+        "es": "Las formas verbales no cambian con la persona: had y would ride se quedan igual. Después de would no hay -s."
+      }
     }
   ]
 }

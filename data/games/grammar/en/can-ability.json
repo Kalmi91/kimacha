@@ -1299,6 +1299,105 @@
       "person": "you",
       "answer": "can swim",
       "table": "ca-forms"
+    },
+    {
+      "id": "ca-transform-01",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-negative"
+      },
+      "prompt": {
+        "en": "She can swim.",
+        "es": "Ella sabe nadar."
+      },
+      "answer": "She cannot swim.",
+      "accept": [
+        "She can't swim."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "Negation: can + not is written cannot (one word) or shortened to can’t. The verb after it stays in the base form: she cannot swim.",
+        "es": "Negación: can + not se escribe cannot (una palabra) o se acorta a can’t. El verbo siguiente queda en forma base: she cannot swim."
+      }
+    },
+    {
+      "id": "ca-transform-02",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-negative"
+      },
+      "prompt": {
+        "en": "They can drive a car.",
+        "es": "Ellos saben conducir un coche."
+      },
+      "answer": "They cannot drive a car.",
+      "accept": [
+        "They can't drive a car."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "Negation: can + not is written cannot (one word) or shortened to can’t. The verb after it stays in the base form: she cannot swim.",
+        "es": "Negación: can + not se escribe cannot (una palabra) o se acorta a can’t. El verbo siguiente queda en forma base: she cannot swim."
+      }
+    },
+    {
+      "id": "ca-transform-03",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-question"
+      },
+      "prompt": {
+        "en": "You can speak French.",
+        "es": "Sabes hablar francés."
+      },
+      "answer": "Can you speak French?",
+      "wordIds": [],
+      "why": {
+        "en": "Question: put can before the subject. No do / does and no -s: can he play, not “does he can play”.",
+        "es": "Pregunta: can va antes del sujeto. Sin do / does y sin -s: can he play, no «does he can play»."
+      }
+    },
+    {
+      "id": "ca-transform-04",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-question"
+      },
+      "prompt": {
+        "en": "He can play the guitar.",
+        "es": "Él sabe tocar la guitarra."
+      },
+      "answer": "Can he play the guitar?",
+      "wordIds": [],
+      "why": {
+        "en": "Question: put can before the subject. No do / does and no -s: can he play, not “does he can play”.",
+        "es": "Pregunta: can va antes del sujeto. Sin do / does y sin -s: can he play, no «does he can play»."
+      }
+    },
+    {
+      "id": "ca-transform-05",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-negative"
+      },
+      "prompt": {
+        "en": "He can find the key.",
+        "es": "Él puede encontrar la llave."
+      },
+      "answer": "He cannot find the key.",
+      "accept": [
+        "He can't find the key."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "Can has no -s with he / she and needs no do / does: he cannot find, not “he does not can find”.",
+        "es": "Can no lleva -s con he / she y no necesita do / does: he cannot find, no «he does not can find»."
+      }
     }
   ]
 }

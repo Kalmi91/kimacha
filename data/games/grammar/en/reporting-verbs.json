@@ -1481,6 +1481,105 @@
       "trial": true,
       "prompt": { "en": "She apologized for the mistake.", "es": "Se disculpó por el error." },
       "es": "She apologized for the mistake."
+    },
+    {
+      "id": "rep-transform-01",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-negative"
+      },
+      "prompt": {
+        "en": "She said that she was tired.",
+        "es": "Ella dijo que estaba cansada."
+      },
+      "answer": "She did not say that she was tired.",
+      "accept": [
+        "She didn't say that she was tired."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "The negative goes on the reporting verb: did not (didn’t) + base verb (say). The reported part (she was tired) does not change.",
+        "es": "La negación va en el verbo de reporte: did not (didn’t) + verbo base (say). La parte reportada (she was tired) no cambia."
+      }
+    },
+    {
+      "id": "rep-transform-02",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-question"
+      },
+      "prompt": {
+        "en": "He told us that he was late.",
+        "es": "Él nos dijo que iba tarde."
+      },
+      "answer": "Did he tell us that he was late?",
+      "wordIds": [],
+      "why": {
+        "en": "The question is about the reporting verb: Did + he + base verb (tell). The reported part stays as it is.",
+        "es": "La pregunta es sobre el verbo de reporte: Did + he + verbo base (tell). La parte reportada queda igual."
+      }
+    },
+    {
+      "id": "rep-transform-03",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-negative"
+      },
+      "prompt": {
+        "en": "They admitted that they had made a mistake.",
+        "es": "Ellos admitieron que habían cometido un error."
+      },
+      "answer": "They did not admit that they had made a mistake.",
+      "accept": [
+        "They didn't admit that they had made a mistake."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "Did not (didn’t) + base verb: admit, not “admitted”. The reported part stays in the past perfect.",
+        "es": "Did not (didn’t) + verbo base: admit, no «admitted». La parte reportada sigue en past perfect."
+      }
+    },
+    {
+      "id": "rep-transform-04",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-question"
+      },
+      "prompt": {
+        "en": "He promised to help us.",
+        "es": "Él prometió ayudarnos."
+      },
+      "answer": "Did he promise to help us?",
+      "wordIds": [],
+      "why": {
+        "en": "Question: Did + he + base verb (promise). The structure to + base verb after it stays: not “Did she promised”.",
+        "es": "Pregunta: Did + he + verbo base (promise). La estructura to + verbo base se mantiene: no «Did she promised»."
+      }
+    },
+    {
+      "id": "rep-transform-05",
+      "kind": "transform",
+      "tense": {
+        "from": "en-i-you-we-they",
+        "to": "en-he-she-it"
+      },
+      "prompt": {
+        "en": "They say that they are ready.",
+        "es": "Ellos dicen que están listos."
+      },
+      "answer": "She says that she is ready.",
+      "accept": [
+        "He says that he is ready."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "The reporting verb takes -s (says), and the verb in the reported part changes too: they are becomes she is.",
+        "es": "El verbo de reporte lleva -s (says) y el verbo de la parte reportada también cambia: they are pasa a she is."
+      }
     }
   ]
 }

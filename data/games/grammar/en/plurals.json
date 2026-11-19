@@ -1329,6 +1329,107 @@
       },
       "answer": "buses",
       "table": "pl-forms"
+    },
+    {
+      "id": "pl-transform-01",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-negative"
+      },
+      "prompt": {
+        "en": "The children play in the park.",
+        "es": "Los niños juegan en el parque."
+      },
+      "answer": "The children do not play in the park.",
+      "accept": [
+        "The children don't play in the park."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "The negative with do / does not does not change the noun: the irregular plural children stays. A plural subject takes do not (don’t).",
+        "es": "La negación con do / does not no cambia el sustantivo: el plural irregular children se mantiene. Un sujeto plural lleva do not (don’t)."
+      }
+    },
+    {
+      "id": "pl-transform-02",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-negative"
+      },
+      "prompt": {
+        "en": "Two women work here.",
+        "es": "Dos mujeres trabajan aquí."
+      },
+      "answer": "Two women do not work here.",
+      "accept": [
+        "Two women don't work here."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "A plural subject like “two women” takes do not (don’t) and the verb without -s: work, not “works”.",
+        "es": "Un sujeto plural como «two women» lleva do not (don’t) y el verbo sin -s: work, no «works»."
+      }
+    },
+    {
+      "id": "pl-transform-03",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-question"
+      },
+      "prompt": {
+        "en": "The boxes are heavy.",
+        "es": "Las cajas son pesadas."
+      },
+      "answer": "Are the boxes heavy?",
+      "wordIds": [],
+      "why": {
+        "en": "With a plural noun, to be agrees: are, not “is”. Question: Are + the boxes + adjective.",
+        "es": "Con un sustantivo plural, to be concuerda: are, no «is». Pregunta: Are + the boxes + adjetivo."
+      }
+    },
+    {
+      "id": "pl-transform-04",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-question"
+      },
+      "prompt": {
+        "en": "You have two brothers.",
+        "es": "Tienes dos hermanos."
+      },
+      "answer": "Do you have two brothers?",
+      "wordIds": [],
+      "why": {
+        "en": "Do + you + have + a plural noun: the noun stays plural (two brothers, not “two brother”).",
+        "es": "Do + you + have + sustantivo plural: el sustantivo sigue en plural (two brothers, no «two brother»)."
+      }
+    },
+    {
+      "id": "pl-transform-05",
+      "kind": "transform",
+      "tense": {
+        "from": "en-he-she-it",
+        "to": "en-i-you-we-they"
+      },
+      "prompt": {
+        "en": "He washes the dishes.",
+        "es": "Él lava los platos."
+      },
+      "answer": "They wash the dishes.",
+      "accept": [
+        "We wash the dishes.",
+        "You wash the dishes.",
+        "I wash the dishes."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "A plural subject takes the verb without -s (washes → wash). The noun dishes is already plural (dish + es).",
+        "es": "Un sujeto plural lleva el verbo sin -s (washes → wash). El sustantivo dishes ya es plural (dish + es)."
+      }
     }
   ]
 }

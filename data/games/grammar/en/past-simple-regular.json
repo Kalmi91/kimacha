@@ -1368,6 +1368,102 @@
         }
       ],
       "correctIndex": 1
+    },
+    {
+      "id": "pr-transform-01",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-negative"
+      },
+      "prompt": {
+        "en": "She watched a film last night.",
+        "es": "Anoche vio una película."
+      },
+      "answer": "She did not watch a film last night.",
+      "accept": [
+        "She didn't watch a film last night."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "Past negative: did not (didn’t) + the base verb for every person. The -ed goes away: watched → watch.",
+        "es": "Negación en pasado: did not (didn’t) + verbo base con todas las personas. La -ed desaparece: watched → watch."
+      }
+    },
+    {
+      "id": "pr-transform-02",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-negative"
+      },
+      "prompt": {
+        "en": "They played football yesterday.",
+        "es": "Ayer jugaron al fútbol."
+      },
+      "answer": "They did not play football yesterday.",
+      "accept": [
+        "They didn't play football yesterday."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "Did is the same for every person (she, they, I). Do not keep -ed on the verb: “did not played” is wrong.",
+        "es": "Did es igual para todas las personas (she, they, I). No dejes -ed en el verbo: «did not played» es incorrecto."
+      }
+    },
+    {
+      "id": "pr-transform-03",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-question"
+      },
+      "prompt": {
+        "en": "You visited your grandmother.",
+        "es": "Visitaste a tu abuela."
+      },
+      "answer": "Did you visit your grandmother?",
+      "wordIds": [],
+      "why": {
+        "en": "Past question: Did + subject + base verb. Did carries the past, so visited → visit.",
+        "es": "Pregunta en pasado: Did + sujeto + verbo base. Did lleva el pasado, así que visited → visit."
+      }
+    },
+    {
+      "id": "pr-transform-04",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-question"
+      },
+      "prompt": {
+        "en": "He cleaned the kitchen.",
+        "es": "Él limpió la cocina."
+      },
+      "answer": "Did he clean the kitchen?",
+      "wordIds": [],
+      "why": {
+        "en": "Did is also the same for he / she / it: Did he clean…? not “Does he cleaned” or “Did he cleaned”.",
+        "es": "Did también es igual con he / she / it: Did he clean…? no «Does he cleaned» ni «Did he cleaned»."
+      }
+    },
+    {
+      "id": "pr-transform-05",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-question"
+      },
+      "prompt": {
+        "en": "The children stayed at home.",
+        "es": "Los niños se quedaron en casa."
+      },
+      "answer": "Did the children stay at home?",
+      "wordIds": [],
+      "why": {
+        "en": "With a noun subject the question is built the same way: Did + the children + base verb, with no -ed.",
+        "es": "Con un sustantivo como sujeto la pregunta se forma igual: Did + the children + verbo base, sin -ed."
+      }
     }
   ]
 }
