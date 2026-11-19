@@ -171,7 +171,6 @@ type TypedProps<T> = {
 export function ClozeDrillItem({ item, learnedLang, contentLang, strictAccents, onDone, onShown }: TypedProps<ClozeItem>) {
   const g = useGrammarColors();
   const s = t();
-  const locale = speechLang(learnedLang);
   const parts = useMemo(() => clozeParts(item.text), [item.text]);
   const [typed, setTyped] = useState<string[]>(() => item.answers.map(() => ''));
   const [result, setResult] = useState<boolean[] | null>(null);
@@ -199,7 +198,6 @@ export function ClozeDrillItem({ item, learnedLang, contentLang, strictAccents, 
     const graded = gradeCloze(item, typed, strictAccents);
     setResult(graded);
     onShown?.(graded.every(Boolean));
-    speak(filledCloze(item.text, item.answers), locale);
   };
 
   const { docked, padBottom } = useDockedAction(
