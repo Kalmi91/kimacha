@@ -21,6 +21,8 @@ interface DockSpec {
   color?: string;
   testID?: string;
   disabled?: boolean;
+  /** A second, quieter button above the main one (the drill's "I mistyped" after a wrong typed answer). */
+  secondary?: { label: string; testID?: string; onPress: () => void };
 }
 
 interface DockContextValue {
@@ -52,6 +54,7 @@ export function useDockSlot(colors: ColorScheme): DockSlotHost {
       color={spec.color}
       testID={spec.testID}
       disabled={spec.disabled}
+      secondary={spec.secondary}
       bottom={dockLift}
       colors={colors}
       onHeight={setDockH}
@@ -77,11 +80,19 @@ export function useDockedAction(spec: DockSpec | null): { docked: boolean; padBo
   useEffect(() => {
     latest.current = spec;
   });
-  const key = spec ? `${spec.label}|${spec.tone}|${spec.color ?? ''}|${spec.testID ?? ''}|${spec.disabled ? 1 : 0}` : '';
+  const key = spec ? `${spec.label}|${spec.tone}|${spec.color ?? ''}|${spec.testID ?? ''}|${spec.disabled ? 1 : 0}|${spec.secondary?.label ?? ''}` : '';
   useEffect(() => {
     if (!register) return;
     const cur = latest.current;
-    register(cur ? { ...cur, onPress: () => latest.current?.onPress() } : null);
+    register(
+      cur
+        ? {
+            ...cur,
+            onPress: () => latest.current?.onPress(),
+            secondary: cur.secondary ? { ...cur.secondary, onPress: () => latest.current?.secondary?.onPress() } : undefined,
+          }
+        : null
+    );
     return () => register(null);
   }, [register, key]);
   return { docked: !!ctx, padBottom: ctx?.padBottom ?? 0 };

@@ -4,6 +4,7 @@ import { Text } from '@/components/KText';
 import Colors from '@/constants/Colors';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { BrutalButton } from '@/components/grammar/Brutal';
+import ExamButton from '@/components/exam/ExamButton';
 import { useSkinDecor } from '@/components/skins';
 import { legibleOn } from '@/constants/Skins';
 
@@ -39,9 +40,11 @@ type Props = {
   testID?: string;
   /** Disabled button (on the exam's typed card when the answer is empty). */
   disabled?: boolean;
+  /** A quieter second button above the main one. */
+  secondary?: { label: string; testID?: string; onPress: () => void };
 };
 
-export default function DockedAction({ label, onPress, tone, color, bottom, colors, onHeight, testID, disabled }: Props) {
+export default function DockedAction({ label, onPress, tone, color, bottom, colors, onHeight, testID, disabled, secondary }: Props) {
   const g = useGrammarColors();
   const checkFill = useSkinDecor().checkFill;
   return (
@@ -50,6 +53,7 @@ export default function DockedAction({ label, onPress, tone, color, bottom, colo
       style={[styles.dockedAction, { bottom, backgroundColor: colors.background }]}
       onLayout={onHeight ? (e: LayoutChangeEvent) => onHeight(e.nativeEvent.layout.height) : undefined}
     >
+      {secondary ? <ExamButton testID={secondary.testID} secondary label={secondary.label} onPress={secondary.onPress} /> : null}
       {g.brutal ? (
         // Check = ink fill, Next = the fill.
         <BrutalButton testID={testID ?? 'learn-docked-action'} label={label} fill={tone === 'next' ? 'a' : checkFill ?? 'ink'} icon={tone === 'next' ? '→' : '✓'} disabled={disabled} onPress={onPress} />

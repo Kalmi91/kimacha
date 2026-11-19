@@ -7,7 +7,7 @@ import ResultBadge from '@/components/ResultBadge';
 import AnswerCompare from '@/components/grammar/AnswerCompare';
 import SpeakButton from '@/components/SpeakButton';
 import { BrutalBox, inkButtonText, resultFill, resultInk } from '@/components/grammar/Brutal';
-import MistypedButton from '@/components/grammar/MistypedButton';
+import MistypedButton, { mistypedDock } from '@/components/grammar/MistypedButton';
 import { useDockedAction } from '@/components/learn/DockSlot';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
@@ -186,7 +186,7 @@ export function DictationDrillItem({
   learnedLang: string;
   contentLang: Lang;
   strictAccents: boolean;
-  onDone: (correct: boolean) => void;
+  onDone: (correct: boolean, mistyped?: boolean) => void;
 }) {
   const g = useGrammarColors();
   const s = t();
@@ -217,7 +217,7 @@ export function DictationDrillItem({
   // Check (and then Next) is a bar docked above the keyboard, as on the word card (DockSlot).
   const { docked, padBottom } = useDockedAction(
     result
-      ? { label: s.grammar.nextArrow, tone: 'next', testID: 'grammar-next', onPress: () => onDone(result.correct) }
+      ? { label: s.grammar.nextArrow, tone: 'next', testID: 'grammar-next', onPress: () => onDone(result.correct), secondary: mistypedDock(!result.correct, () => onDone(true, true)) }
       : { label: `✓ ${s.grammar.check}`, tone: 'check', testID: 'dictation-check', onPress: check }
   );
 
@@ -264,7 +264,7 @@ export function DictationDrillItem({
             {!result.correct ? <AnswerCompare typed={typed} correct={item.es} g={g} onFill /> : <Text style={[styles.fixedLine, { color: resultInk(g, true) }]}>{item.es}</Text>}
             <Text style={[styles.translation, { color: resultInk(g, result.correct) }]}>{item.tr[contentLang] ?? item.tr.en}</Text>
           </BrutalBox>
-          {!result.correct ? <MistypedButton onPress={() => onDone(true)} /> : null}
+          {!result.correct && !docked ? <MistypedButton onPress={() => onDone(true, true)} /> : null}
           {docked ? null : (
             <BrutalBox testID="grammar-next" fill="ink" boxStyle={styles.next} onPress={() => onDone(result.correct)}>
               <Text style={[styles.nextText, { color: inkButtonText(g) }]}>{s.grammar.nextArrow}</Text>
@@ -293,7 +293,7 @@ export function WriteDrillItem({
   learnedLang: string;
   contentLang: Lang;
   strictAccents: boolean;
-  onDone: (correct: boolean) => void;
+  onDone: (correct: boolean, mistyped?: boolean) => void;
 }) {
   const g = useGrammarColors();
   const s = t();
@@ -316,7 +316,7 @@ export function WriteDrillItem({
   // Check (and then Next) is a bar docked above the keyboard, as on the dictation (DockSlot).
   const { docked, padBottom } = useDockedAction(
     result
-      ? { label: s.grammar.nextArrow, tone: 'next', testID: 'grammar-next', onPress: () => onDone(result.correct) }
+      ? { label: s.grammar.nextArrow, tone: 'next', testID: 'grammar-next', onPress: () => onDone(result.correct), secondary: mistypedDock(!result.correct, () => onDone(true, true)) }
       : { label: `✓ ${s.grammar.check}`, tone: 'check', testID: 'write-check', onPress: check }
   );
 
@@ -364,7 +364,7 @@ export function WriteDrillItem({
               {why}
             </Text>
           </BrutalBox>
-          {!result.correct ? <MistypedButton onPress={() => onDone(true)} /> : null}
+          {!result.correct && !docked ? <MistypedButton onPress={() => onDone(true, true)} /> : null}
           {docked ? null : (
             <BrutalBox testID="grammar-next" fill="ink" boxStyle={styles.next} onPress={() => onDone(result.correct)}>
               <Text style={[styles.nextText, { color: inkButtonText(g) }]}>{s.grammar.nextArrow}</Text>
@@ -402,7 +402,7 @@ export function NewKindDrillItem({
   strictAccents: boolean;
   /** The items of the lesson (the word order task takes its unneeded tiles from them). */
   lessonItems?: readonly unknown[];
-  onDone: (correct: boolean) => void;
+  onDone: (correct: boolean, mistyped?: boolean) => void;
   /** The typed kinds: the answer is checked and its feedback is on screen, before Next. */
   onShown?: (correct: boolean) => void;
 }) {
