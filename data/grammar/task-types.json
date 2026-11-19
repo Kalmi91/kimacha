@@ -1,7 +1,7 @@
 {
   "_about": "Which grammar task types a level uses (SPEC-grammar-tests.md, the 8 types) and how the content gate counts them. A new level is a data change: switch `enabled` on once its core topics have `minPerType` items of every type in `types`. The core topics are NOT listed here: they are the syllabus topics whose tier (GRAMMAR_TIER in lib/grammar/syllabus.ts) is one of `coreTiers`.",
   "minPerType": 5,
-  "exempt": { "indefinido-imperfecto": ["form"] },
+  "exempt": { "indefinido-imperfecto": ["form"], "question_words": ["form"] },
   "coreTiers": ["core-plus", "core"],
   "types": {
     "choice": ["choice"],
