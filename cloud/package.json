@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "wrangler dev",
     "build:web": "cd .. && npx expo export -p web && node scripts/build-web-content.mjs dist",
-    "deploy": "npm run build:web && wrangler deploy"
+    "deploy": "npm run build:web && node ../scripts/skew-check.mjs --packs ../dist && wrangler deploy"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^5.20261023.1",

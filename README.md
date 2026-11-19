@@ -168,7 +168,7 @@ The web build is served by the Cloudflare Worker in `cloud/`, and goes out by ha
 
 ```bash
 npm run smoke:web-keyboard   # builds dist/; 0 = go on, 1 = do not deploy, 2 = the check could not run
-cd cloud && npm run deploy   # builds dist/ again, then wrangler deploy
+cd cloud && npm run deploy   # builds dist/ again, runs the skew check on it, then wrangler deploy
 ```
 
 `smoke:web-keyboard` (`scripts/web-keyboard-smoke.mjs`) walks onboarding and checks the Learn card, the feedback form,
@@ -180,6 +180,12 @@ scroll log of the page and saves a screenshot.
 It is not a CI job. A fresh emulator needs minutes before Chrome answers reliably, even on a desktop machine; the Chrome
 in the stock system image is old (124, against 156 on the updated AVD), while this bug class depends on the real browser;
 and since web deploys are manual, the step before the deploy already stops a bad build before it reaches anyone.
+
+`npm run deploy` stops before `wrangler deploy` when the skew check fails (`scripts/skew-check.mjs`, also
+`npm run smoke:web-skew`). A tab opened before a deploy keeps the old bundle but fetches the new lesson packs, so the
+check opens the site as it is deployed now, answers its `/content/*.json` requests with the packs in `dist/`, onboards
+every language pair and opens every grammar lesson in headless Chrome; any page error fails it (exit 1, 2 = it could
+not run). `--pairs en-es,es-en`, `--limit <n>` and `--jobs <n>` shorten a run, `--url` checks another deployment.
 
 ## Privacy
 
