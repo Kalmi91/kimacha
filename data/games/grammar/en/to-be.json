@@ -1002,6 +1002,281 @@
         "My brother is ten years old."
       ],
       "tr": { "en": "She is ten years old.", "es": "Ella tiene diez años." }
+    },
+    {
+      "id": "tb-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "My sister ___ a nurse. My brothers ___ at school.",
+      "answers": [
+        "is",
+        "are"
+      ],
+      "tr": {
+        "en": "My sister is a nurse. My brothers are at school.",
+        "es": "Mi hermana es enfermera. Mis hermanos están en la escuela."
+      },
+      "why": {
+        "en": "One person (my sister) takes “is”; “my brothers” is plural, so “are”.",
+        "es": "Una persona (my sister) lleva «is»; «my brothers» es plural, así que «are»."
+      }
+    },
+    {
+      "id": "tb-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "I ___ happy today, but my friends ___ tired.",
+      "answers": [
+        "am",
+        "are"
+      ],
+      "tr": {
+        "en": "I am happy today, but my friends are tired.",
+        "es": "Hoy estoy contento, pero mis amigos están cansados."
+      },
+      "why": {
+        "en": "With “I” you always need “am”; “my friends” is plural, so “are”.",
+        "es": "Con «I» siempre va «am»; «my friends» es plural, así que «are»."
+      }
+    },
+    {
+      "id": "tb-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "It ___ cold today. We ___ at home.",
+      "answers": [
+        "is",
+        "are"
+      ],
+      "tr": {
+        "en": "It is cold today. We are at home.",
+        "es": "Hoy hace frío. Estamos en casa."
+      },
+      "why": {
+        "en": "“It” takes “is”, for the weather too; “we” takes “are”.",
+        "es": "«It» lleva «is», también para el tiempo; «we» lleva «are»."
+      }
+    },
+    {
+      "id": "tb-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "___ you a student? Yes, I ___.",
+      "answers": [
+        "Are",
+        "am"
+      ],
+      "tr": {
+        "en": "Are you a student? Yes, I am.",
+        "es": "¿Eres estudiante? Sí, lo soy."
+      },
+      "why": {
+        "en": "In a question, to be goes first: “Are you…?”. The short answer repeats the subject: “Yes, I am.”",
+        "es": "En una pregunta, to be va primero: «Are you…?». La respuesta corta repite el sujeto: «Yes, I am.»"
+      }
+    },
+    {
+      "id": "tb-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "He ___ not hungry. They ___ not late.",
+      "answers": [
+        "is",
+        "are"
+      ],
+      "tr": {
+        "en": "He is not hungry. They are not late.",
+        "es": "Él no tiene hambre. Ellos no llegan tarde."
+      },
+      "why": {
+        "en": "“Not” goes after to be: “he is not”, “they are not”.",
+        "es": "«Not» va después de to be: «he is not», «they are not»."
+      }
+    },
+    {
+      "id": "tb-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "She are a good teacher.",
+      "wrongIndex": 1,
+      "answer": "is",
+      "explain": {
+        "en": "With “she”, use “is”: She is a good teacher.",
+        "es": "Con «she» se usa «is»: She is a good teacher."
+      },
+      "tr": {
+        "en": "She is a good teacher.",
+        "es": "Ella es una buena profesora."
+      }
+    },
+    {
+      "id": "tb-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "I is ten years old.",
+      "wrongIndex": 1,
+      "answer": "am",
+      "explain": {
+        "en": "With “I”, always use “am”: I am ten years old.",
+        "es": "Con «I» siempre se usa «am»: I am ten years old."
+      },
+      "tr": {
+        "en": "I am ten years old.",
+        "es": "Tengo diez años."
+      }
+    },
+    {
+      "id": "tb-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "They is at the park.",
+      "wrongIndex": 1,
+      "answer": "are",
+      "explain": {
+        "en": "“They” is plural, so use “are”: They are at the park.",
+        "es": "«They» es plural, así que se usa «are»: They are at the park."
+      },
+      "tr": {
+        "en": "They are at the park.",
+        "es": "Ellos están en el parque."
+      }
+    },
+    {
+      "id": "tb-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "My brother has twelve years old.",
+      "wrongIndex": 2,
+      "answer": "is",
+      "explain": {
+        "en": "In English, age uses to be, not “have”: My brother is twelve years old.",
+        "es": "En inglés la edad lleva to be, no «have»: My brother is twelve years old."
+      },
+      "tr": {
+        "en": "My brother is twelve years old.",
+        "es": "Mi hermano tiene doce años."
+      }
+    },
+    {
+      "id": "tb-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "We am very tired.",
+      "wrongIndex": 1,
+      "answer": "are",
+      "explain": {
+        "en": "With “we”, use “are”: We are very tired.",
+        "es": "Con «we» se usa «are»: We are very tired."
+      },
+      "tr": {
+        "en": "We are very tired.",
+        "es": "Estamos muy cansados."
+      }
+    },
+    {
+      "id": "tb-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "be",
+        "have",
+        "go"
+      ],
+      "es": "My mother ___ a doctor.",
+      "word": "be",
+      "answer": "is",
+      "tr": {
+        "en": "My mother is a doctor.",
+        "es": "Mi madre es doctora."
+      },
+      "why": {
+        "en": "A profession uses to be; with “my mother” (she) it is “is”.",
+        "es": "La profesión lleva to be; con «my mother» (she) es «is»."
+      }
+    },
+    {
+      "id": "tb-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "be",
+        "have",
+        "go"
+      ],
+      "es": "We ___ good friends.",
+      "word": "be",
+      "answer": "are",
+      "tr": {
+        "en": "We are good friends.",
+        "es": "Somos buenos amigos."
+      },
+      "why": {
+        "en": "With “we”, to be is “are”.",
+        "es": "Con «we», to be es «are»."
+      }
+    },
+    {
+      "id": "tb-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "be",
+        "have",
+        "like"
+      ],
+      "es": "I ___ twenty years old.",
+      "word": "be",
+      "answer": "am",
+      "tr": {
+        "en": "I am twenty years old.",
+        "es": "Tengo veinte años."
+      },
+      "why": {
+        "en": "Age uses to be, and with “I” it is “am”.",
+        "es": "La edad lleva to be, y con «I» es «am»."
+      }
+    },
+    {
+      "id": "tb-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "be",
+        "have",
+        "like"
+      ],
+      "es": "She ___ two sisters.",
+      "word": "have",
+      "answer": "has",
+      "tr": {
+        "en": "She has two sisters.",
+        "es": "Ella tiene dos hermanas."
+      },
+      "why": {
+        "en": "Having family is “have”, not to be; with “she” it becomes “has”.",
+        "es": "Tener familia es «have», no to be; con «she» se convierte en «has»."
+      }
+    },
+    {
+      "id": "tb-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "be",
+        "do",
+        "want"
+      ],
+      "es": "It ___ sunny today.",
+      "word": "be",
+      "answer": "is",
+      "tr": {
+        "en": "It is sunny today.",
+        "es": "Hoy hace sol."
+      },
+      "why": {
+        "en": "The weather uses “it” and to be: “It is sunny.”",
+        "es": "El tiempo lleva «it» y to be: «It is sunny.»"
+      }
     }
   ]
 }

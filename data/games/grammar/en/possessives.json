@@ -847,6 +847,333 @@
           "en": "their"
         }
       ]
+    },
+    {
+      "id": "po-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "I love ___ family. She loves ___ dog.",
+      "answers": [
+        "my",
+        "her"
+      ],
+      "tr": {
+        "en": "I love my family. She loves her dog.",
+        "es": "Quiero a mi familia. Ella quiere a su perro."
+      },
+      "why": {
+        "en": "“My” belongs to “I”; “her” belongs to “she”.",
+        "es": "«My» pertenece a «I»; «her» pertenece a «she»."
+      }
+    },
+    {
+      "id": "po-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "He washes ___ hands. We wash ___ hands.",
+      "answers": [
+        "his",
+        "our"
+      ],
+      "tr": {
+        "en": "He washes his hands. We wash our hands.",
+        "es": "Él se lava las manos. Nosotros nos lavamos las manos."
+      },
+      "why": {
+        "en": "“His” belongs to “he”; “our” belongs to “we”.",
+        "es": "«His» pertenece a «he»; «our» pertenece a «we»."
+      }
+    },
+    {
+      "id": "po-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Is this ___ bag? No, it is ___ bag.",
+      "answers": [
+        "your",
+        "my"
+      ],
+      "tr": {
+        "en": "Is this your bag? No, it is my bag.",
+        "es": "¿Es esta tu bolsa? No, es mi bolsa."
+      },
+      "why": {
+        "en": "“Your” belongs to “you”; “my” belongs to “I”.",
+        "es": "«Your» pertenece a «you»; «my» pertenece a «I»."
+      }
+    },
+    {
+      "id": "po-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "They love ___ children. The dog eats ___ food.",
+      "answers": [
+        "their",
+        "its"
+      ],
+      "tr": {
+        "en": "They love their children. The dog eats its food.",
+        "es": "Ellos quieren a sus hijos. El perro come su comida."
+      },
+      "why": {
+        "en": "“Their” belongs to “they”; “its” belongs to “it” (an animal or a thing).",
+        "es": "«Their» pertenece a «they»; «its» pertenece a «it» (un animal o una cosa)."
+      }
+    },
+    {
+      "id": "po-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "My brother is Carlos. ___ wife is Maria.",
+      "answers": [
+        "His"
+      ],
+      "tr": {
+        "en": "My brother is Carlos. His wife is Maria.",
+        "es": "Mi hermano es Carlos. Su esposa es Maria."
+      },
+      "why": {
+        "en": "The wife of a man (he) is “his wife”.",
+        "es": "La esposa de un hombre (he) es «his wife»."
+      }
+    },
+    {
+      "id": "po-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "I love me family.",
+      "wrongIndex": 2,
+      "answer": "my",
+      "explain": {
+        "en": "The possessive for “I” is “my”: I love my family.",
+        "es": "El posesivo de «I» es «my»: I love my family."
+      },
+      "tr": {
+        "en": "I love my family.",
+        "es": "Quiero a mi familia."
+      }
+    },
+    {
+      "id": "po-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "We love ours house.",
+      "wrongIndex": 2,
+      "answer": "our",
+      "explain": {
+        "en": "Before a noun use “our”, not “ours”: We love our house.",
+        "es": "Delante de un sustantivo se usa «our», no «ours»: We love our house."
+      },
+      "tr": {
+        "en": "We love our house.",
+        "es": "Queremos nuestra casa."
+      }
+    },
+    {
+      "id": "po-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "They love there children.",
+      "wrongIndex": 2,
+      "answer": "their",
+      "explain": {
+        "en": "“Their” shows who the children belong to; “there” means a place: They love their children.",
+        "es": "«Their» dice de quién son los niños; «there» indica un lugar: They love their children."
+      },
+      "tr": {
+        "en": "They love their children.",
+        "es": "Quieren a sus hijos."
+      }
+    },
+    {
+      "id": "po-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "The dog eats it’s food.",
+      "wrongIndex": 3,
+      "answer": "its",
+      "explain": {
+        "en": "“Its” without an apostrophe is the possessive; “it’s” means “it is”: The dog eats its food.",
+        "es": "«Its» sin apóstrofo es el posesivo; «it’s» significa «it is»: The dog eats its food."
+      },
+      "tr": {
+        "en": "The dog eats its food.",
+        "es": "El perro come su comida."
+      }
+    },
+    {
+      "id": "po-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "My brother washes he hands.",
+      "wrongIndex": 3,
+      "answer": "his",
+      "explain": {
+        "en": "Before a noun use “his”, not “he”: My brother washes his hands.",
+        "es": "Delante de un sustantivo se usa «his», no «he»: My brother washes his hands."
+      },
+      "tr": {
+        "en": "My brother washes his hands.",
+        "es": "Mi hermano se lava las manos."
+      }
+    },
+    {
+      "id": "po-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "my",
+        "your",
+        "his"
+      ],
+      "es": "I wash ___ face every morning.",
+      "word": "my",
+      "answer": "my",
+      "tr": {
+        "en": "I wash my face every morning.",
+        "es": "Me lavo la cara cada mañana."
+      },
+      "why": {
+        "en": "The possessive for “I” is “my”.",
+        "es": "El posesivo de «I» es «my»."
+      }
+    },
+    {
+      "id": "po-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "your",
+        "her",
+        "our"
+      ],
+      "es": "Is this ___ bag, Maria?",
+      "word": "your",
+      "answer": "your",
+      "tr": {
+        "en": "Is this your bag, Maria?",
+        "es": "¿Es este tu bolso, Maria?"
+      },
+      "why": {
+        "en": "We talk to Maria (“you”), so we use “your”.",
+        "es": "Hablamos con Maria («you»), así que usamos «your»."
+      }
+    },
+    {
+      "id": "po-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "his",
+        "her",
+        "their"
+      ],
+      "es": "My brother loves ___ job.",
+      "word": "his",
+      "answer": "his",
+      "tr": {
+        "en": "My brother loves his job.",
+        "es": "Mi hermano ama su trabajo."
+      },
+      "why": {
+        "en": "My brother is “he”, so we use “his”.",
+        "es": "Mi hermano es «he», así que usamos «his»."
+      }
+    },
+    {
+      "id": "po-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "her",
+        "his",
+        "its"
+      ],
+      "es": "My mother is a doctor. ___ office is in the city.",
+      "word": "her",
+      "answer": "Her",
+      "tr": {
+        "en": "My mother is a doctor. Her office is in the city.",
+        "es": "Mi madre es doctora. Su consultorio está en la ciudad."
+      },
+      "why": {
+        "en": "My mother is “she”, so we use “her”.",
+        "es": "Mi madre es «she», así que usamos «her»."
+      }
+    },
+    {
+      "id": "po-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "our",
+        "their",
+        "my"
+      ],
+      "es": "We love ___ house.",
+      "word": "our",
+      "answer": "our",
+      "tr": {
+        "en": "We love our house.",
+        "es": "Queremos nuestra casa."
+      },
+      "why": {
+        "en": "“Our” belongs to “we”.",
+        "es": "«Our» pertenece a «we»."
+      }
+    },
+    {
+      "id": "po-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "My brother loves his job.",
+        "es": "Mi hermano ama su trabajo."
+      },
+      "es": "My brother loves his job."
+    },
+    {
+      "id": "po-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "Is this your bag?",
+        "es": "¿Es este tu bolso?"
+      },
+      "es": "Is this your bag?"
+    },
+    {
+      "id": "po-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "They love their children.",
+        "es": "Quieren a sus hijos."
+      },
+      "es": "They love their children."
+    },
+    {
+      "id": "po-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "We wash our hands every day.",
+        "es": "Nos lavamos las manos todos los días."
+      },
+      "es": "We wash our hands every day.",
+      "accept": [
+        "Every day we wash our hands."
+      ]
+    },
+    {
+      "id": "po-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "Her dog sleeps on the sofa.",
+        "es": "Su perro duerme en el sofá."
+      },
+      "es": "Her dog sleeps on the sofa."
     }
   ]
 }

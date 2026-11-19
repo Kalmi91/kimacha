@@ -988,6 +988,331 @@
           "en": "studying"
         }
       ]
+    },
+    {
+      "id": "pc-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "I ___ working now. My sister ___ sleeping.",
+      "answers": [
+        "am",
+        "is"
+      ],
+      "tr": {
+        "en": "I am working now. My sister is sleeping.",
+        "es": "Estoy trabajando ahora. Mi hermana está durmiendo."
+      },
+      "why": {
+        "en": "“Am” goes with I; “is” goes with he, she, it.",
+        "es": "«Am» va con I; «is» va con he, she, it."
+      }
+    },
+    {
+      "id": "pc-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "We ___ eating now. They ___ playing in the park.",
+      "answers": [
+        "are",
+        "are"
+      ],
+      "tr": {
+        "en": "We are eating now. They are playing in the park.",
+        "es": "Estamos comiendo ahora. Ellos están jugando en el parque."
+      },
+      "why": {
+        "en": "“Are” goes with we, you and they.",
+        "es": "«Are» va con we, you y they."
+      }
+    },
+    {
+      "id": "pc-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "___ you watching TV? No, I ___ not.",
+      "answers": [
+        "Are",
+        "am"
+      ],
+      "tr": {
+        "en": "Are you watching TV? No, I am not.",
+        "es": "¿Estás viendo la tele? No, no estoy."
+      },
+      "why": {
+        "en": "Questions: put “are” before “you”. Short answer: “No, I’m not.”",
+        "es": "Preguntas: «are» va antes de «you». Respuesta corta: «No, I’m not.»"
+      }
+    },
+    {
+      "id": "pc-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "He is ___ a book. She is ___ a letter.",
+      "answers": [
+        "reading",
+        "writing"
+      ],
+      "tr": {
+        "en": "He is reading a book. She is writing a letter.",
+        "es": "Él está leyendo un libro. Ella está escribiendo una carta."
+      },
+      "why": {
+        "en": "Add -ing to the verb; if it ends in -e, drop the -e: write → writing.",
+        "es": "Se añade -ing al verbo; si acaba en -e, se quita la -e: write → writing."
+      }
+    },
+    {
+      "id": "pc-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "The baby is ___ now. We are ___ at the bus station.",
+      "answers": [
+        "sleeping",
+        "waiting"
+      ],
+      "tr": {
+        "en": "The baby is sleeping now. We are waiting at the bus station.",
+        "es": "El bebé está durmiendo ahora. Estamos esperando en la estación de autobuses."
+      },
+      "why": {
+        "en": "Present continuous = am / is / are + verb-ing.",
+        "es": "Presente continuo = am / is / are + verbo-ing."
+      }
+    },
+    {
+      "id": "pc-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "She is work now.",
+      "wrongIndex": 2,
+      "answer": "working",
+      "explain": {
+        "en": "After “is” the verb takes -ing: She is working now.",
+        "es": "Después de «is» el verbo lleva -ing: She is working now."
+      },
+      "tr": {
+        "en": "She is working now.",
+        "es": "Ella está trabajando ahora."
+      }
+    },
+    {
+      "id": "pc-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "We is eating lunch.",
+      "wrongIndex": 1,
+      "answer": "are",
+      "explain": {
+        "en": "“We” goes with “are”: We are eating lunch.",
+        "es": "«We» va con «are»: We are eating lunch."
+      },
+      "tr": {
+        "en": "We are eating lunch.",
+        "es": "Estamos comiendo el almuerzo."
+      }
+    },
+    {
+      "id": "pc-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "I am play with my dog.",
+      "wrongIndex": 2,
+      "answer": "playing",
+      "explain": {
+        "en": "After “am” the verb takes -ing: I am playing with my dog.",
+        "es": "Después de «am» el verbo lleva -ing: I am playing with my dog."
+      },
+      "tr": {
+        "en": "I am playing with my dog.",
+        "es": "Estoy jugando con mi perro."
+      }
+    },
+    {
+      "id": "pc-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "Is they waiting for the bus?",
+      "wrongIndex": 0,
+      "answer": "Are",
+      "explain": {
+        "en": "“They” goes with “are”: Are they waiting for the bus?",
+        "es": "«They» va con «are»: Are they waiting for the bus?"
+      },
+      "tr": {
+        "en": "Are they waiting for the bus?",
+        "es": "¿Están esperando el autobús?"
+      }
+    },
+    {
+      "id": "pc-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "He is write a letter.",
+      "wrongIndex": 2,
+      "answer": "writing",
+      "explain": {
+        "en": "After “is” the verb takes -ing; drop the -e: He is writing a letter.",
+        "es": "Después de «is» el verbo lleva -ing; se quita la -e: He is writing a letter."
+      },
+      "tr": {
+        "en": "He is writing a letter.",
+        "es": "Él está escribiendo una carta."
+      }
+    },
+    {
+      "id": "pc-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "work",
+        "working",
+        "works"
+      ],
+      "es": "My father is ___ now.",
+      "word": "working",
+      "answer": "working",
+      "tr": {
+        "en": "My father is working now.",
+        "es": "Mi padre está trabajando ahora."
+      },
+      "why": {
+        "en": "Present continuous = am / is / are + verb-ing.",
+        "es": "Presente continuo = am / is / are + verbo-ing."
+      }
+    },
+    {
+      "id": "pc-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "am",
+        "is",
+        "are"
+      ],
+      "es": "I ___ eating now.",
+      "word": "am",
+      "answer": "am",
+      "tr": {
+        "en": "I am eating now.",
+        "es": "Estoy comiendo ahora."
+      },
+      "why": {
+        "en": "“Am” goes with I.",
+        "es": "«Am» va con I."
+      }
+    },
+    {
+      "id": "pc-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "am",
+        "is",
+        "are"
+      ],
+      "es": "The children ___ playing in the park.",
+      "word": "are",
+      "answer": "are",
+      "tr": {
+        "en": "The children are playing in the park.",
+        "es": "Los niños están jugando en el parque."
+      },
+      "why": {
+        "en": "“The children” is plural, so “are”.",
+        "es": "«The children» es plural, así que «are»."
+      }
+    },
+    {
+      "id": "pc-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "sleeping",
+        "sleep",
+        "sleeps"
+      ],
+      "es": "The dog is ___ on the sofa.",
+      "word": "sleeping",
+      "answer": "sleeping",
+      "tr": {
+        "en": "The dog is sleeping on the sofa.",
+        "es": "El perro está durmiendo en el sofá."
+      },
+      "why": {
+        "en": "Present continuous = am / is / are + verb-ing.",
+        "es": "Presente continuo = am / is / are + verbo-ing."
+      }
+    },
+    {
+      "id": "pc-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "Are",
+        "Is",
+        "Do"
+      ],
+      "es": "___ you waiting for the bus?",
+      "word": "Are",
+      "answer": "Are",
+      "tr": {
+        "en": "Are you waiting for the bus?",
+        "es": "¿Estás esperando el autobús?"
+      },
+      "why": {
+        "en": "Questions: “are” goes before “you”.",
+        "es": "Preguntas: «are» va antes de «you»."
+      }
+    },
+    {
+      "id": "pc-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "My sister is sleeping now.",
+        "es": "Mi hermana está durmiendo ahora."
+      },
+      "es": "My sister is sleeping now."
+    },
+    {
+      "id": "pc-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "We are waiting for the bus.",
+        "es": "Estamos esperando el autobús."
+      },
+      "es": "We are waiting for the bus."
+    },
+    {
+      "id": "pc-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "Are you watching TV?",
+        "es": "¿Estás viendo la tele?"
+      },
+      "es": "Are you watching TV?"
+    },
+    {
+      "id": "pc-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "The children are playing in the park.",
+        "es": "Los niños están jugando en el parque."
+      },
+      "es": "The children are playing in the park."
+    },
+    {
+      "id": "pc-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "He is writing a letter.",
+        "es": "Él está escribiendo una carta."
+      },
+      "es": "He is writing a letter."
     }
   ]
 }

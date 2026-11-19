@@ -880,6 +880,331 @@
           "en": "can they"
         }
       ]
+    },
+    {
+      "id": "ca-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "I ___ speak English. My brother ___ speak English too.",
+      "answers": [
+        "can",
+        "can"
+      ],
+      "tr": {
+        "en": "I can speak English. My brother can speak English too.",
+        "es": "Puedo hablar inglés. Mi hermano también puede hablar inglés."
+      },
+      "why": {
+        "en": "“Can” is the same for every person: I can, he can, they can.",
+        "es": "«Can» es igual para todas las personas: I can, he can, they can."
+      }
+    },
+    {
+      "id": "ca-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "___ you swim? No, I ___ not.",
+      "answers": [
+        "Can",
+        "can"
+      ],
+      "tr": {
+        "en": "Can you swim? No, I can not.",
+        "es": "¿Sabes nadar? No, no sé."
+      },
+      "why": {
+        "en": "Questions start with “Can”; the short answer is “No, I can’t.”",
+        "es": "Las preguntas empiezan con «Can»; la respuesta corta es «No, I can’t.»"
+      }
+    },
+    {
+      "id": "ca-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "She ___ not cook, but she ___ sing.",
+      "answers": [
+        "can",
+        "can"
+      ],
+      "tr": {
+        "en": "She can not cook, but she can sing.",
+        "es": "Ella no sabe cocinar, pero sabe cantar."
+      },
+      "why": {
+        "en": "The negative is “cannot” or “can’t”.",
+        "es": "La negación es «cannot» o «can’t»."
+      }
+    },
+    {
+      "id": "ca-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "My dog ___ swim, but it ___ not talk.",
+      "answers": [
+        "can",
+        "can"
+      ],
+      "tr": {
+        "en": "My dog can swim, but it can not talk.",
+        "es": "Mi perro sabe nadar, pero no sabe hablar."
+      },
+      "why": {
+        "en": "After “can” the verb has no -s and no “to”: She can swim.",
+        "es": "Después de «can» el verbo no lleva -s ni «to»: She can swim."
+      }
+    },
+    {
+      "id": "ca-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "___ your mother cook? Yes, she ___.",
+      "answers": [
+        "Can",
+        "can"
+      ],
+      "tr": {
+        "en": "Can your mother cook? Yes, she can.",
+        "es": "¿Sabe cocinar tu madre? Sí, sabe."
+      },
+      "why": {
+        "en": "With “can” there is no “does”: Can your mother cook?",
+        "es": "Con «can» no hay «does»: Can your mother cook?"
+      }
+    },
+    {
+      "id": "ca-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "She can speaks English.",
+      "wrongIndex": 2,
+      "answer": "speak",
+      "explain": {
+        "en": "After “can” the verb has no -s: She can speak English.",
+        "es": "Después de «can» el verbo no lleva -s: She can speak English."
+      },
+      "tr": {
+        "en": "She can speak English.",
+        "es": "Ella sabe hablar inglés."
+      }
+    },
+    {
+      "id": "ca-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "I can to swim.",
+      "wrongIndex": 2,
+      "answer": "swim",
+      "explain": {
+        "en": "After “can” we do not use “to”: I can swim.",
+        "es": "Después de «can» no se usa «to»: I can swim."
+      },
+      "tr": {
+        "en": "I can swim swim.",
+        "es": "Sé nadar."
+      }
+    },
+    {
+      "id": "ca-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "Do you can cook?",
+      "wrongIndex": 0,
+      "answer": "Can",
+      "explain": {
+        "en": "Questions with “can” start with “Can”, not “do”: Can you cook?",
+        "es": "Las preguntas con «can» empiezan con «Can», no con «do»: Can you cook?"
+      },
+      "tr": {
+        "en": "Can you can cook?",
+        "es": "¿Sabes cocinar?"
+      }
+    },
+    {
+      "id": "ca-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "He cans cook.",
+      "wrongIndex": 1,
+      "answer": "can",
+      "explain": {
+        "en": "“Can” never takes -s: He can cook.",
+        "es": "«Can» nunca lleva -s: He can cook."
+      },
+      "tr": {
+        "en": "He can cook.",
+        "es": "Él sabe cocinar."
+      }
+    },
+    {
+      "id": "ca-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "Can she to cook?",
+      "wrongIndex": 2,
+      "answer": "cook",
+      "explain": {
+        "en": "After “can” we do not use “to”: Can she cook?",
+        "es": "Después de «can» no se usa «to»: Can she cook?"
+      },
+      "tr": {
+        "en": "Can she cook cook?",
+        "es": "¿Sabe cocinar?"
+      }
+    },
+    {
+      "id": "ca-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "swim",
+        "swims",
+        "to swim"
+      ],
+      "es": "My sister can ___ and sing.",
+      "word": "swim",
+      "answer": "swim",
+      "tr": {
+        "en": "My sister can swim and sing.",
+        "es": "Mi hermana sabe nadar y cantar."
+      },
+      "why": {
+        "en": "After “can” the verb has no -s and no “to”: She can swim.",
+        "es": "Después de «can» el verbo no lleva -s ni «to»: She can swim."
+      }
+    },
+    {
+      "id": "ca-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "can",
+        "cans",
+        "does"
+      ],
+      "es": "I ___ cook, but I can’t sing.",
+      "word": "can",
+      "answer": "can",
+      "tr": {
+        "en": "I can cook, but I can’t sing.",
+        "es": "Sé cocinar, pero no sé cantar."
+      },
+      "why": {
+        "en": "“Can” is the same for every person, with no -s.",
+        "es": "«Can» es igual para todas las personas, sin -s."
+      }
+    },
+    {
+      "id": "ca-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "Can",
+        "Do",
+        "Does"
+      ],
+      "es": "___ you help me, please?",
+      "word": "Can",
+      "answer": "Can",
+      "tr": {
+        "en": "Can you help me, please?",
+        "es": "¿Puedes ayudarme, por favor?"
+      },
+      "why": {
+        "en": "Questions with “can” start with “Can”.",
+        "es": "Las preguntas con «can» empiezan con «Can»."
+      }
+    },
+    {
+      "id": "ca-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "can’t",
+        "don’t",
+        "doesn’t"
+      ],
+      "es": "My dog ___ talk.",
+      "word": "can’t",
+      "answer": "can’t",
+      "tr": {
+        "en": "My dog can’t talk.",
+        "es": "Mi perro no sabe hablar."
+      },
+      "why": {
+        "en": "The negative of “can” is “can’t”.",
+        "es": "La negación de «can» es «can’t»."
+      }
+    },
+    {
+      "id": "ca-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "cook",
+        "cooks",
+        "cooking"
+      ],
+      "es": "He can ___ for his family.",
+      "word": "cook",
+      "answer": "cook",
+      "tr": {
+        "en": "He can cook for his family.",
+        "es": "Él sabe cocinar."
+      },
+      "why": {
+        "en": "After “can” the verb has no -s and no “to”: She can swim.",
+        "es": "Después de «can» el verbo no lleva -s ni «to»: She can swim."
+      }
+    },
+    {
+      "id": "ca-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "I can speak English.",
+        "es": "Sé hablar inglés."
+      },
+      "es": "I can speak English."
+    },
+    {
+      "id": "ca-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "Can you help me?",
+        "es": "¿Puedes ayudarme?"
+      },
+      "es": "Can you help me?"
+    },
+    {
+      "id": "ca-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "My brother can cook.",
+        "es": "Mi hermano sabe cocinar."
+      },
+      "es": "My brother can cook."
+    },
+    {
+      "id": "ca-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "She cannot swim.",
+        "es": "Ella no sabe nadar."
+      },
+      "es": "She cannot swim."
+    },
+    {
+      "id": "ca-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "Can your mother cook?",
+        "es": "¿Sabe cocinar tu madre?"
+      },
+      "es": "Can your mother cook?"
     }
   ]
 }

@@ -933,6 +933,331 @@
           "en": "to live"
         }
       ]
+    },
+    {
+      "id": "bv-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "I ___ a new phone. I ___ to help my friend.",
+      "answers": [
+        "have",
+        "want"
+      ],
+      "tr": {
+        "en": "I have a new phone. I want to help my friend.",
+        "es": "Tengo un teléfono nuevo. Quiero ayudar a mi amigo."
+      },
+      "why": {
+        "en": "“Have” says what you own; “want” says what you wish to do.",
+        "es": "«Have» dice lo que tienes; «want» dice lo que quieres hacer."
+      }
+    },
+    {
+      "id": "bv-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "She ___ in a small city. He ___ to the market.",
+      "answers": [
+        "lives",
+        "goes"
+      ],
+      "tr": {
+        "en": "She lives in a small city. He goes to the market.",
+        "es": "Ella vive en una ciudad pequeña. Él va al mercado."
+      },
+      "why": {
+        "en": "With he, she or it the verb takes -s: has, goes, lives, wants.",
+        "es": "Con he, she o it el verbo lleva -s: has, goes, lives, wants."
+      }
+    },
+    {
+      "id": "bv-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "We ___ a map, but we ___ money.",
+      "answers": [
+        "have",
+        "need"
+      ],
+      "tr": {
+        "en": "We have a map, but we need money.",
+        "es": "Tenemos un mapa, pero necesitamos dinero."
+      },
+      "why": {
+        "en": "“Have” says what you own; “need” says what you must get. With “we” there is no -s.",
+        "es": "«Have» dice lo que tienes; «need» dice lo que debes conseguir. Con «we» no hay -s."
+      }
+    },
+    {
+      "id": "bv-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "I ___ tired. My friends ___ to the hotel now.",
+      "answers": [
+        "am",
+        "go"
+      ],
+      "tr": {
+        "en": "I am tired. My friends go to the hotel now.",
+        "es": "Estoy cansado. Mis amigos van al hotel ahora."
+      },
+      "why": {
+        "en": "“Am” goes with “I”; with the plural “my friends” the verb “go” has no -s.",
+        "es": "«Am» va con «I»; con el plural «my friends» el verbo «go» no lleva -s."
+      }
+    },
+    {
+      "id": "bv-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "He ___ a job. He ___ in a big city.",
+      "answers": [
+        "has",
+        "lives"
+      ],
+      "tr": {
+        "en": "He has a job. He lives in a big city.",
+        "es": "Él tiene un trabajo. Vive en una ciudad grande."
+      },
+      "why": {
+        "en": "With he, she or it the verb takes -s: has, goes, lives, wants.",
+        "es": "Con he, she o it el verbo lleva -s: has, goes, lives, wants."
+      }
+    },
+    {
+      "id": "bv-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "She have a good job.",
+      "wrongIndex": 1,
+      "answer": "has",
+      "explain": {
+        "en": "With “she”, “have” becomes “has”: She has a good job.",
+        "es": "Con «she», «have» se convierte en «has»: She has a good job."
+      },
+      "tr": {
+        "en": "She has a good job.",
+        "es": "Ella tiene un buen trabajo."
+      }
+    },
+    {
+      "id": "bv-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "He go to the hospital.",
+      "wrongIndex": 1,
+      "answer": "goes",
+      "explain": {
+        "en": "With “he”, “go” becomes “goes”: He goes to the hospital.",
+        "es": "Con «he», «go» se convierte en «goes»: He goes to the hospital."
+      },
+      "tr": {
+        "en": "He goes to the hospital.",
+        "es": "Él va al hospital."
+      }
+    },
+    {
+      "id": "bv-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "We needs water.",
+      "wrongIndex": 1,
+      "answer": "need",
+      "explain": {
+        "en": "With “we”, the verb has no -s: We need water.",
+        "es": "Con «we», el verbo no lleva -s: We need water."
+      },
+      "tr": {
+        "en": "We need water.",
+        "es": "Necesitamos agua."
+      }
+    },
+    {
+      "id": "bv-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "They lives in a small city.",
+      "wrongIndex": 1,
+      "answer": "live",
+      "explain": {
+        "en": "With “they”, the verb has no -s: They live in a small city.",
+        "es": "Con «they», el verbo no lleva -s: They live in a small city."
+      },
+      "tr": {
+        "en": "They live in a small city.",
+        "es": "Ellos viven en una ciudad pequeña."
+      }
+    },
+    {
+      "id": "bv-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "My friend want a taxi.",
+      "wrongIndex": 2,
+      "answer": "wants",
+      "explain": {
+        "en": "“My friend” is “he” or “she”, so the verb takes -s: My friend wants a taxi.",
+        "es": "«My friend» es «he» o «she», así que el verbo lleva -s: My friend wants a taxi."
+      },
+      "tr": {
+        "en": "My friend wants a taxi.",
+        "es": "Mi amigo quiere un taxi."
+      }
+    },
+    {
+      "id": "bv-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "have",
+        "go",
+        "live"
+      ],
+      "es": "My friend ___ in a big city.",
+      "word": "live",
+      "answer": "lives",
+      "tr": {
+        "en": "My friend lives in a big city.",
+        "es": "Mi amigo vive en una ciudad grande."
+      },
+      "why": {
+        "en": "With he, she or it the verb takes -s: has, goes, lives, wants.",
+        "es": "Con he, she o it el verbo lleva -s: has, goes, lives, wants."
+      }
+    },
+    {
+      "id": "bv-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "have",
+        "go",
+        "want"
+      ],
+      "es": "She ___ to the market today.",
+      "word": "go",
+      "answer": "goes",
+      "tr": {
+        "en": "She goes to the market today.",
+        "es": "Ella va hoy al mercado."
+      },
+      "why": {
+        "en": "With he, she or it the verb takes -s: has, goes, lives, wants.",
+        "es": "Con he, she o it el verbo lleva -s: has, goes, lives, wants."
+      }
+    },
+    {
+      "id": "bv-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "have",
+        "need",
+        "live"
+      ],
+      "es": "My friend ___ a new phone.",
+      "word": "have",
+      "answer": "has",
+      "tr": {
+        "en": "My friend has a new phone.",
+        "es": "Mi amigo tiene un teléfono nuevo."
+      },
+      "why": {
+        "en": "With he, she or it the verb takes -s: has, goes, lives, wants.",
+        "es": "Con he, she o it el verbo lleva -s: has, goes, lives, wants."
+      }
+    },
+    {
+      "id": "bv-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "want",
+        "go",
+        "need"
+      ],
+      "es": "They ___ help.",
+      "word": "need",
+      "answer": "need",
+      "tr": {
+        "en": "They need help.",
+        "es": "Necesitan ayuda."
+      },
+      "why": {
+        "en": "With I, we, you and they the verb stays in its base form, with no -s.",
+        "es": "Con I, we, you y they el verbo queda en su forma base, sin -s."
+      }
+    },
+    {
+      "id": "bv-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "have",
+        "want",
+        "live"
+      ],
+      "es": "He ___ water.",
+      "word": "want",
+      "answer": "wants",
+      "tr": {
+        "en": "He wants water.",
+        "es": "Él quiere agua."
+      },
+      "why": {
+        "en": "With he, she or it the verb takes -s: has, goes, lives, wants.",
+        "es": "Con he, she o it el verbo lleva -s: has, goes, lives, wants."
+      }
+    },
+    {
+      "id": "bv-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "We live in a small city.",
+        "es": "Vivimos en una ciudad pequeña."
+      },
+      "es": "We live in a small city."
+    },
+    {
+      "id": "bv-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "She has a new phone.",
+        "es": "Ella tiene un teléfono nuevo."
+      },
+      "es": "She has a new phone."
+    },
+    {
+      "id": "bv-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "He goes to the hospital.",
+        "es": "Él va al hospital."
+      },
+      "es": "He goes to the hospital."
+    },
+    {
+      "id": "bv-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "They want a new hotel.",
+        "es": "Quieren un hotel nuevo."
+      },
+      "es": "They want a new hotel."
+    },
+    {
+      "id": "bv-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "My friends go to the market.",
+        "es": "Mis amigos van al mercado."
+      },
+      "es": "My friends go to the market."
     }
   ]
 }

@@ -824,6 +824,330 @@
           "en": "are there"
         }
       ]
+    },
+    {
+      "id": "ta-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "There ___ a bank near here. There ___ two shops.",
+      "answers": [
+        "is",
+        "are"
+      ],
+      "tr": {
+        "en": "There is a bank near here. There are two shops.",
+        "es": "Hay un banco cerca de aquí. Hay dos tiendas."
+      },
+      "why": {
+        "en": "“There is” goes with one thing; “there are” goes with more than one.",
+        "es": "«There is» va con una cosa; «there are» va con más de una."
+      }
+    },
+    {
+      "id": "ta-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "___ there a park in your city? Yes, there ___.",
+      "answers": [
+        "Is",
+        "is"
+      ],
+      "tr": {
+        "en": "Is there a park in your city? Yes, there is.",
+        "es": "¿Hay un parque en tu ciudad? Sí, hay."
+      },
+      "why": {
+        "en": "Questions: “Is there …?” and the short answer “Yes, there is.”",
+        "es": "Preguntas: «Is there …?» y la respuesta corta «Yes, there is.»"
+      }
+    },
+    {
+      "id": "ta-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "___ there children here? No, there ___ not.",
+      "answers": [
+        "Are",
+        "are"
+      ],
+      "tr": {
+        "en": "Are there children here? No, there are not.",
+        "es": "¿Hay niños aquí? No, no hay."
+      },
+      "why": {
+        "en": "With a plural noun use “Are there …?” and “there are not”.",
+        "es": "Con un sustantivo plural se usa «Are there …?» y «there are not»."
+      }
+    },
+    {
+      "id": "ta-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "There ___ not a bus today. There ___ not two taxis.",
+      "answers": [
+        "is",
+        "are"
+      ],
+      "tr": {
+        "en": "There is not a bus today. There are not two taxis.",
+        "es": "Hoy no hay autobús. No hay dos taxis."
+      },
+      "why": {
+        "en": "Negative: “there is not” + one thing; “there are not” + plural.",
+        "es": "Negativa: «there is not» + una cosa; «there are not» + plural."
+      }
+    },
+    {
+      "id": "ta-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "There ___ a book and two phones on the table.",
+      "answers": [
+        "is"
+      ],
+      "tr": {
+        "en": "There is a book and two phones on the table.",
+        "es": "Hay un libro y dos teléfonos sobre la mesa."
+      },
+      "why": {
+        "en": "With a list, the verb agrees with the first noun: “a book” is one thing, so “is”.",
+        "es": "Con una lista, el verbo concuerda con el primer sustantivo: «a book» es una cosa, así que «is»."
+      }
+    },
+    {
+      "id": "ta-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "There is two dogs in the park.",
+      "wrongIndex": 1,
+      "answer": "are",
+      "explain": {
+        "en": "“Two dogs” is plural, so use “are”: There are two dogs in the park.",
+        "es": "«Two dogs» es plural, así que se usa «are»: There are two dogs in the park."
+      },
+      "tr": {
+        "en": "There are two dogs in the park.",
+        "es": "Hay dos perros en el parque."
+      }
+    },
+    {
+      "id": "ta-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "There are a bank near here.",
+      "wrongIndex": 1,
+      "answer": "is",
+      "explain": {
+        "en": "“A bank” is one thing, so use “is”: There is a bank near here.",
+        "es": "«A bank» es una cosa, así que se usa «is»: There is a bank near here."
+      },
+      "tr": {
+        "en": "There is a bank near here.",
+        "es": "Hay un banco cerca de aquí."
+      }
+    },
+    {
+      "id": "ta-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "Are there a school in your city?",
+      "wrongIndex": 0,
+      "answer": "Is",
+      "explain": {
+        "en": "“A school” is one thing, so the question starts with “Is”: Is there a school in your city?",
+        "es": "«A school» es una cosa, así que la pregunta empieza con «Is»: Is there a school in your city?"
+      },
+      "tr": {
+        "en": "Is there a school in your city?",
+        "es": "¿Hay una escuela en tu ciudad?"
+      }
+    },
+    {
+      "id": "ta-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "There isn’t two buses today.",
+      "wrongIndex": 1,
+      "answer": "aren’t",
+      "explain": {
+        "en": "“Buses” is plural, so the negative is “aren’t”: There aren’t two buses today.",
+        "es": "«Buses» es plural, así que la negación es «aren’t»: There aren’t two buses today."
+      },
+      "tr": {
+        "en": "There aren’t two buses today.",
+        "es": "Hoy no hay autobuses."
+      }
+    },
+    {
+      "id": "ta-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "Is there two cars in the street?",
+      "wrongIndex": 0,
+      "answer": "Are",
+      "explain": {
+        "en": "“Two cars” is plural, so the question starts with “Are”: Are there two cars in the street?",
+        "es": "«Two cars» es plural, así que la pregunta empieza con «Are»: Are there two cars in the street?"
+      },
+      "tr": {
+        "en": "Are there two cars in the street?",
+        "es": "¿Hay dos coches en la calle?"
+      }
+    },
+    {
+      "id": "ta-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "is",
+        "are",
+        "am"
+      ],
+      "es": "There ___ a map on the wall.",
+      "word": "is",
+      "answer": "is",
+      "tr": {
+        "en": "There is a map on the wall.",
+        "es": "Hay un mapa en la pared."
+      },
+      "why": {
+        "en": "“A map” is one thing, so “there is”.",
+        "es": "«A map» es una cosa, así que «there is»."
+      }
+    },
+    {
+      "id": "ta-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "is",
+        "are",
+        "be"
+      ],
+      "es": "There ___ three books on the table.",
+      "word": "are",
+      "answer": "are",
+      "tr": {
+        "en": "There are three books on the table.",
+        "es": "Hay tres libros sobre la mesa."
+      },
+      "why": {
+        "en": "“Three books” is plural, so “there are”.",
+        "es": "«Three books» es plural, así que «there are»."
+      }
+    },
+    {
+      "id": "ta-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "Is",
+        "Are",
+        "Do"
+      ],
+      "es": "___ there a bathroom in the hotel?",
+      "word": "Is",
+      "answer": "Is",
+      "tr": {
+        "en": "Is there a bathroom in the hotel?",
+        "es": "¿Hay un baño en el hotel?"
+      },
+      "why": {
+        "en": "A question about one thing: “Is there …?”",
+        "es": "Una pregunta sobre una cosa: «Is there …?»"
+      }
+    },
+    {
+      "id": "ta-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "two",
+        "a",
+        "one"
+      ],
+      "es": "There are ___ taxis here.",
+      "word": "two",
+      "answer": "two",
+      "tr": {
+        "en": "There are two taxis here.",
+        "es": "Hay dos taxis aquí."
+      },
+      "why": {
+        "en": "“Taxis” is plural, so it needs a plural number like “two”, not “a” or “one”.",
+        "es": "«Taxis» es plural, así que necesita un número plural como «two», no «a» ni «one»."
+      }
+    },
+    {
+      "id": "ta-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "isn’t",
+        "aren’t",
+        "don’t"
+      ],
+      "es": "There ___ a park near my house.",
+      "word": "isn’t",
+      "answer": "isn’t",
+      "tr": {
+        "en": "There isn’t a park near my house.",
+        "es": "No hay un parque cerca de mi casa."
+      },
+      "why": {
+        "en": "Negative with one thing: “there isn’t”.",
+        "es": "Negativa con una cosa: «there isn’t»."
+      }
+    },
+    {
+      "id": "ta-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "There is a bank near here.",
+        "es": "Hay un banco cerca de aquí."
+      },
+      "es": "There is a bank near here."
+    },
+    {
+      "id": "ta-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "Are there two taxis today?",
+        "es": "¿Hay taxis hoy?"
+      },
+      "es": "Are there two taxis today?"
+    },
+    {
+      "id": "ta-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "There are two dogs in the park.",
+        "es": "Hay dos perros en el parque."
+      },
+      "es": "There are two dogs in the park."
+    },
+    {
+      "id": "ta-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "Is there a bathroom in the hotel?",
+        "es": "¿Hay un baño en el hotel?"
+      },
+      "es": "Is there a bathroom in the hotel?"
+    },
+    {
+      "id": "ta-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "There is not a bus today.",
+        "es": "Hoy no hay autobús."
+      },
+      "es": "There is not a bus today."
     }
   ]
 }

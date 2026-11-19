@@ -1047,6 +1047,280 @@
         "He is an uncle."
       ],
       "tr": { "en": "I have an uncle in Mexico.", "es": "Tengo un tío en México." }
+    },
+    {
+      "id": "ar-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "I have ___ apple and ___ banana.",
+      "answers": [
+        "an",
+        "a"
+      ],
+      "tr": {
+        "en": "I have an apple and a banana.",
+        "es": "Tengo una manzana y un plátano."
+      },
+      "why": {
+        "en": "“An” goes before a vowel sound (an apple); “a” goes before a consonant sound (a banana).",
+        "es": "«An» va ante un sonido vocálico (an apple); «a» va ante un sonido consonántico (a banana)."
+      }
+    },
+    {
+      "id": "ar-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "She is ___ teacher. ___ teacher is very kind.",
+      "answers": [
+        "a",
+        "The"
+      ],
+      "tr": {
+        "en": "She is a teacher. The teacher is very kind.",
+        "es": "Ella es profesora. La profesora es muy amable."
+      },
+      "why": {
+        "en": "First mention: “a teacher”. Then we know which one: “the teacher”.",
+        "es": "Primera mención: «a teacher». Después ya sabemos cuál: «the teacher»."
+      }
+    },
+    {
+      "id": "ar-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "We have ___ egg and ___ orange.",
+      "answers": [
+        "an",
+        "an"
+      ],
+      "tr": {
+        "en": "We have an egg and an orange.",
+        "es": "Tenemos un huevo y una naranja."
+      },
+      "why": {
+        "en": "Egg and orange start with a vowel sound, so both take “an”.",
+        "es": "Egg y orange empiezan con sonido vocálico, así que las dos llevan «an»."
+      }
+    },
+    {
+      "id": "ar-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Please close ___ door. It is cold.",
+      "answers": [
+        "the"
+      ],
+      "tr": {
+        "en": "Please close the door. It is cold.",
+        "es": "Cierra la puerta, por favor. Hace frío."
+      },
+      "why": {
+        "en": "We both know which one it is, so we use “the”.",
+        "es": "Los dos sabemos de cuál se trata, así que usamos «the»."
+      }
+    },
+    {
+      "id": "ar-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "My brother is ___ engineer. He works in ___ hospital.",
+      "answers": [
+        "an",
+        "a"
+      ],
+      "tr": {
+        "en": "My brother is an engineer. He works in a hospital.",
+        "es": "Mi hermano es ingeniero. Trabaja en un hospital."
+      },
+      "why": {
+        "en": "“Engineer” starts with a vowel sound, so “an”; “hospital” starts with a consonant sound, so “a”.",
+        "es": "«Engineer» empieza con sonido vocálico, así que «an»; «hospital» con sonido consonántico, así que «a»."
+      }
+    },
+    {
+      "id": "ar-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "I have a orange.",
+      "wrongIndex": 2,
+      "answer": "an",
+      "explain": {
+        "en": "“Orange” starts with a vowel sound, so use “an”: I have an orange.",
+        "es": "«Orange» empieza con sonido vocálico, así que se usa «an»: I have an orange."
+      },
+      "tr": {
+        "en": "I have an orange.",
+        "es": "Tengo una naranja."
+      }
+    },
+    {
+      "id": "ar-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "She is an teacher.",
+      "wrongIndex": 2,
+      "answer": "a",
+      "explain": {
+        "en": "“Teacher” starts with a consonant sound, so use “a”: She is a teacher.",
+        "es": "«Teacher» empieza con sonido consonántico, así que se usa «a»: She is a teacher."
+      },
+      "tr": {
+        "en": "She is a teacher.",
+        "es": "Ella es profesora."
+      }
+    },
+    {
+      "id": "ar-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "We live in a apartment.",
+      "wrongIndex": 3,
+      "answer": "an",
+      "explain": {
+        "en": "“Apartment” starts with a vowel sound, so use “an”: We live in an apartment.",
+        "es": "«Apartment» empieza con sonido vocálico, así que se usa «an»: We live in an apartment."
+      },
+      "tr": {
+        "en": "We live in an apartment.",
+        "es": "Vivimos en un apartamento."
+      }
+    },
+    {
+      "id": "ar-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "My father has a old car.",
+      "wrongIndex": 3,
+      "answer": "an",
+      "explain": {
+        "en": "“Old” starts with a vowel sound, so use “an”: My father has an old car.",
+        "es": "«Old» empieza con sonido vocálico, así que se usa «an»: My father has an old car."
+      },
+      "tr": {
+        "en": "My father has an old car.",
+        "es": "Mi padre tiene un coche viejo."
+      }
+    },
+    {
+      "id": "ar-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "Where is a bathroom?",
+      "wrongIndex": 2,
+      "answer": "the",
+      "explain": {
+        "en": "We ask about one specific place we both know, so use “the”: Where is the bathroom?",
+        "es": "Preguntamos por un lugar concreto que los dos conocemos, así que se usa «the»: Where is the bathroom?"
+      },
+      "tr": {
+        "en": "Where is the bathroom?",
+        "es": "¿Dónde está el baño?"
+      }
+    },
+    {
+      "id": "ar-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "a",
+        "an",
+        "the"
+      ],
+      "es": "She has ___ umbrella.",
+      "word": "an",
+      "answer": "an",
+      "tr": {
+        "en": "She has an umbrella.",
+        "es": "Ella tiene un paraguas."
+      },
+      "why": {
+        "en": "“An” goes before a vowel sound (an apple); “a” goes before a consonant sound (a banana).",
+        "es": "«An» va ante un sonido vocálico (an apple); «a» va ante un sonido consonántico (a banana)."
+      }
+    },
+    {
+      "id": "ar-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "a",
+        "an",
+        "the"
+      ],
+      "es": "He is ___ good student.",
+      "word": "a",
+      "answer": "a",
+      "tr": {
+        "en": "He is a good student.",
+        "es": "Él es un buen estudiante."
+      },
+      "why": {
+        "en": "“An” goes before a vowel sound (an apple); “a” goes before a consonant sound (a banana).",
+        "es": "«An» va ante un sonido vocálico (an apple); «a» va ante un sonido consonántico (a banana)."
+      }
+    },
+    {
+      "id": "ar-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "a",
+        "an",
+        "the"
+      ],
+      "es": "___ sun is hot today.",
+      "word": "the",
+      "answer": "The",
+      "tr": {
+        "en": "The sun is hot today.",
+        "es": "El sol está fuerte hoy."
+      },
+      "why": {
+        "en": "There is only one sun, so we use “the”.",
+        "es": "Solo hay un sol, así que usamos «the»."
+      }
+    },
+    {
+      "id": "ar-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "a",
+        "an",
+        "the"
+      ],
+      "es": "Can I have ___ egg, please?",
+      "word": "an",
+      "answer": "an",
+      "tr": {
+        "en": "Can I have an egg, please?",
+        "es": "¿Me das un huevo, por favor?"
+      },
+      "why": {
+        "en": "“An” goes before a vowel sound (an apple); “a” goes before a consonant sound (a banana).",
+        "es": "«An» va ante un sonido vocálico (an apple); «a» va ante un sonido consonántico (a banana)."
+      }
+    },
+    {
+      "id": "ar-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "a",
+        "an",
+        "the"
+      ],
+      "es": "We go to ___ park on Sundays.",
+      "word": "the",
+      "answer": "the",
+      "tr": {
+        "en": "We go to the park on Sundays.",
+        "es": "Vamos al parque los domingos."
+      },
+      "why": {
+        "en": "We both know which one it is, so we use “the”.",
+        "es": "Los dos sabemos de cuál se trata, así que usamos «the»."
+      }
     }
   ]
 }
