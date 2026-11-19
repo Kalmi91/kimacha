@@ -73,6 +73,8 @@ const LANGS = ['en', 'es'];
 // Target languages whose lessons get only the language-neutral schema checks (the Spanish tokenizer, the vosotros rule and the
 // tense gate do not apply): the Hungarian course (word gate: the hu course check) and the German course (scripts/grammar-de-course-check.mjs).
 const NEUTRAL_TARGETS = new Set(['hu', 'de']);
+// words that can stand twice in a row in a correct sentence ("She had had enough."), for the fix-item check
+const FIX_DOUBLED_OK = new Set(['had', 'that']);
 const LEVELS = ['A0', 'A1', 'A2', 'B1', 'B2', 'C1']; // C2 frozen, excluded
 
 // ---------------------------------------------------------------------------
@@ -1016,6 +1018,32 @@ function auditTypedKindItem(item, itemPath, topic, checkWords) {
       const strip = (w) => (w ?? '').replace(/[.,;:!?¡¿]+$/, '').toLowerCase();
       if (strip(fixedEs[item.wrongIndex]) !== strip(item.answer)) {
         p1.push({ path: itemPath, issue: `fix wrongIndex ${item.wrongIndex} points at "${wrongWord}", but the corrected sentence has "${fixedEs[item.wrongIndex]}" there (answer "${item.answer}")` });
+      }
+    }
+    // a one-word replacement cannot repair an extra or a missing word: then the answer lands next to
+    // its own copy ("I can to swim." -> "I can swim swim."), and a corrected sentence built by the same
+    // replacement hides it from the check above
+    if (nonEmpty(item.answer) && Number.isInteger(item.wrongIndex) && item.wrongIndex >= 0 && item.wrongIndex < words.length) {
+      const bare = (w) => (w ?? '').replace(/^[¡¿"'(]+|[.,;:!?"')]+$/g, '').toLowerCase();
+      const answer = bare(item.answer);
+      const left = item.wrongIndex > 0 ? words[item.wrongIndex - 1] : '';
+      const right = item.wrongIndex < words.length - 1 ? words[item.wrongIndex + 1] : '';
+      // a comma or a full stop between the two words makes it a real repetition ("No, no quiero.")
+      const leftJoined = left !== '' && !/[.,;:!?]$/.test(left);
+      const rightJoined = right !== '' && !/[.,;:!?]$/.test(item.answer) && !/[.,;:!?]$/.test(words[item.wrongIndex]);
+      const doubled = (leftJoined && bare(left) === answer) || (rightJoined && bare(right) === answer);
+      if (answer !== '' && doubled && !FIX_DOUBLED_OK.has(answer)) {
+        p1.push({ path: itemPath, issue: `fix answer "${item.answer}" lands next to the same word: the corrected sentence reads "${answer} ${answer}"` });
+      }
+      // the same slip one word further away ("Do you can cook?" -> "Can you can cook?"): a hint to read the item
+      // only inside the same sentence: "¿La mochila? La lleva ella." is two sentences and is fine
+      let from = item.wrongIndex;
+      while (from > 0 && !/[.!?]$/.test(words[from - 1])) from -= 1;
+      let to = item.wrongIndex;
+      while (to < words.length - 1 && !/[.!?]$/.test(words[to])) to += 1;
+      const elsewhere = words.some((w, i) => i !== item.wrongIndex && i >= from && i <= to && bare(w) === answer);
+      if (answer !== '' && !doubled && elsewhere) {
+        p2.push({ path: itemPath, issue: `fix answer "${item.answer}" is already in the sentence: read the corrected sentence` });
       }
     }
     checkLangs(item.explain, `${itemPath} explain`);
