@@ -254,6 +254,41 @@
         "en": "a game with prizes",
         "es": "lotería"
       }
+    },
+    {
+      "word": "dollars",
+      "gloss": {
+        "en": "money used in the USA",
+        "es": "dólares"
+      }
+    },
+    {
+      "word": "drive",
+      "gloss": {
+        "en": "to control a car",
+        "es": "conducir"
+      }
+    },
+    {
+      "word": "ghost",
+      "gloss": {
+        "en": "the spirit of a dead person",
+        "es": "el fantasma"
+      }
+    },
+    {
+      "word": "Japanese",
+      "gloss": {
+        "en": "the language of Japan",
+        "es": "el japonés"
+      }
+    },
+    {
+      "word": "million",
+      "gloss": {
+        "en": "a thousand thousands (1,000,000)",
+        "es": "un millón"
+      }
     }
   ],
   "items": [
@@ -1055,6 +1090,343 @@
           "es": "viajaría",
           "en": "I'd travel"
         }
+      ]
+    },
+    {
+      "id": "sc-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "If I ___ (win) the lottery, I ___ buy a house.",
+      "answers": [
+        "won",
+        "would"
+      ],
+      "tr": {
+        "en": "If I won the lottery, I would buy a house.",
+        "es": "Si ganara la lotería, compraría una casa."
+      },
+      "why": {
+        "en": "The if part of the second conditional is in the past simple (won, had, saw), even though we talk about now. It does not mean the past.",
+        "es": "La parte con if del segundo condicional va en pasado simple (won, had, saw), aunque hablemos del presente. No significa pasado."
+      }
+    },
+    {
+      "id": "sc-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "If she ___ (have) more time, she ___ learn Japanese.",
+      "answers": [
+        "had",
+        "would"
+      ],
+      "tr": {
+        "en": "If she had more time, she would learn Japanese.",
+        "es": "Si tuviera más tiempo, aprendería japonés."
+      },
+      "why": {
+        "en": "The if part of the second conditional is in the past simple (won, had, saw), even though we talk about now. It does not mean the past.",
+        "es": "La parte con if del segundo condicional va en pasado simple (won, had, saw), aunque hablemos del presente. No significa pasado."
+      }
+    },
+    {
+      "id": "sc-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "If I ___ you, I ___ talk to him.",
+      "answers": [
+        "were",
+        "would"
+      ],
+      "tr": {
+        "en": "If I were you, I would talk to him.",
+        "es": "Yo, en tu lugar, hablaría con él."
+      },
+      "why": {
+        "en": "In advice and unreal situations we say If I were you, with were for I as well. Then would + base verb: I would talk to him.",
+        "es": "En consejos y situaciones irreales se dice If I were you, con were también para I. Después, would + verbo base: I would talk to him."
+      }
+    },
+    {
+      "id": "sc-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "What ___ you do if you ___ (see) a ghost?",
+      "answers": [
+        "would",
+        "saw"
+      ],
+      "tr": {
+        "en": "What would you do if you saw a ghost?",
+        "es": "¿Qué harías si vieras un fantasma?"
+      },
+      "why": {
+        "en": "Second conditional: if + past simple, would + base verb. It is about an unreal or unlikely situation now: If I won the lottery, I would buy a house.",
+        "es": "Segundo condicional: if + pasado simple, would + verbo base. Habla de una situación irreal o poco probable ahora: If I won the lottery, I would buy a house."
+      }
+    },
+    {
+      "id": "sc-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "If we ___ (live) near the sea, we ___ go swimming every day.",
+      "answers": [
+        "lived",
+        "would"
+      ],
+      "tr": {
+        "en": "If we lived near the sea, we would go swimming every day.",
+        "es": "Si viviéramos cerca del mar, iríamos a nadar todos los días."
+      },
+      "why": {
+        "en": "Second conditional: if + past simple, would + base verb. It is about an unreal or unlikely situation now: If I won the lottery, I would buy a house.",
+        "es": "Segundo condicional: if + pasado simple, would + verbo base. Habla de una situación irreal o poco probable ahora: If I won the lottery, I would buy a house."
+      }
+    },
+    {
+      "id": "sc-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "If I had a car, I will drive to work.",
+      "wrongIndex": 6,
+      "answer": "would",
+      "explain": {
+        "en": "In the result part of the second conditional we use would + the base verb: I would drive, she would pass. Will belongs to the first conditional.",
+        "es": "En la parte del resultado del segundo condicional se usa would + verbo base: I would drive, she would pass. Will es del primer condicional."
+      },
+      "tr": {
+        "en": "If I had a car, I would drive to work.",
+        "es": "Si tuviera coche, iría al trabajo conduciendo."
+      }
+    },
+    {
+      "id": "sc-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "If I win the lottery, I would buy a house.",
+      "wrongIndex": 2,
+      "answer": "won",
+      "explain": {
+        "en": "The if part of the second conditional is in the past simple (won, had, saw), even though we talk about now. It does not mean the past.",
+        "es": "La parte con if del segundo condicional va en pasado simple (won, had, saw), aunque hablemos del presente. No significa pasado."
+      },
+      "tr": {
+        "en": "If I won the lottery, I would buy a house.",
+        "es": "Si ganara la lotería, compraría una casa."
+      }
+    },
+    {
+      "id": "sc-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "If he have more money, he would travel more.",
+      "wrongIndex": 2,
+      "answer": "had",
+      "explain": {
+        "en": "The if part of the second conditional is in the past simple (won, had, saw), even though we talk about now. It does not mean the past.",
+        "es": "La parte con if del segundo condicional va en pasado simple (won, had, saw), aunque hablemos del presente. No significa pasado."
+      },
+      "tr": {
+        "en": "If he had more money, he would travel more.",
+        "es": "Si tuviera más dinero, viajaría más."
+      }
+    },
+    {
+      "id": "sc-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "If she studied more, she would passes the exam.",
+      "wrongIndex": 6,
+      "answer": "pass",
+      "explain": {
+        "en": "After would the verb stays in its base form, without -s or -ed: she would pass, we would go.",
+        "es": "Después de would el verbo queda en forma base, sin -s ni -ed: she would pass, we would go."
+      },
+      "tr": {
+        "en": "If she studied more, she would pass the exam.",
+        "es": "Si estudiara más, aprobaría el examen."
+      }
+    },
+    {
+      "id": "sc-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "What will you do if you saw a ghost?",
+      "wrongIndex": 1,
+      "answer": "would",
+      "explain": {
+        "en": "Second conditional: if + past simple, would + base verb. It is about an unreal or unlikely situation now: If I won the lottery, I would buy a house.",
+        "es": "Segundo condicional: if + pasado simple, would + verbo base. Habla de una situación irreal o poco probable ahora: If I won the lottery, I would buy a house."
+      },
+      "tr": {
+        "en": "What would you do if you saw a ghost?",
+        "es": "¿Qué harías si vieras un fantasma?"
+      }
+    },
+    {
+      "id": "sc-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "win",
+        "sleep",
+        "smile"
+      ],
+      "es": "If I ___ the lottery, I would buy a house.",
+      "word": "win",
+      "answer": "won",
+      "tr": {
+        "en": "If I won the lottery, I would buy a house.",
+        "es": "Si ganara la lotería, compraría una casa."
+      },
+      "why": {
+        "en": "The if part of the second conditional is in the past simple (won, had, saw), even though we talk about now. It does not mean the past.",
+        "es": "La parte con if del segundo condicional va en pasado simple (won, had, saw), aunque hablemos del presente. No significa pasado."
+      }
+    },
+    {
+      "id": "sc-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "have",
+        "cook",
+        "arrive"
+      ],
+      "es": "If she ___ more time, she would learn Japanese.",
+      "word": "have",
+      "answer": "had",
+      "tr": {
+        "en": "If she had more time, she would learn Japanese.",
+        "es": "Si tuviera más tiempo, aprendería japonés."
+      },
+      "why": {
+        "en": "The if part of the second conditional is in the past simple (won, had, saw), even though we talk about now. It does not mean the past.",
+        "es": "La parte con if del segundo condicional va en pasado simple (won, had, saw), aunque hablemos del presente. No significa pasado."
+      }
+    },
+    {
+      "id": "sc-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "be",
+        "go",
+        "do"
+      ],
+      "es": "If I ___ you, I would talk to him.",
+      "word": "be",
+      "answer": "were",
+      "tr": {
+        "en": "If I were you, I would talk to him.",
+        "es": "Yo, en tu lugar, hablaría con él."
+      },
+      "why": {
+        "en": "In advice and unreal situations we say If I were you, with were for I as well. Then would + base verb: I would talk to him.",
+        "es": "En consejos y situaciones irreales se dice If I were you, con were también para I. Después, would + verbo base: I would talk to him."
+      }
+    },
+    {
+      "id": "sc-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "will",
+        "would",
+        "did"
+      ],
+      "es": "If I had a car, I ___ drive to work.",
+      "word": "would",
+      "answer": "would",
+      "tr": {
+        "en": "If I had a car, I would drive to work.",
+        "es": "Si tuviera coche, iría al trabajo conduciendo."
+      },
+      "why": {
+        "en": "In the result part of the second conditional we use would + the base verb: I would drive, she would pass. Will belongs to the first conditional.",
+        "es": "En la parte del resultado del segundo condicional se usa would + verbo base: I would drive, she would pass. Will es del primer condicional."
+      }
+    },
+    {
+      "id": "sc-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "will",
+        "would",
+        "has"
+      ],
+      "es": "What ___ you do if you won a million dollars?",
+      "word": "would",
+      "answer": "would",
+      "tr": {
+        "en": "What would you do if you won a million dollars?",
+        "es": "¿Qué harías si ganaras un millón de dólares?"
+      },
+      "why": {
+        "en": "Second conditional: if + past simple, would + base verb. It is about an unreal or unlikely situation now: If I won the lottery, I would buy a house.",
+        "es": "Segundo condicional: if + pasado simple, would + verbo base. Habla de una situación irreal o poco probable ahora: If I won the lottery, I would buy a house."
+      }
+    },
+    {
+      "id": "sc-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "I would buy a house if I won the lottery.",
+        "es": "Compraría una casa si ganara la lotería."
+      },
+      "es": "I would buy a house if I won the lottery.",
+      "accept": [
+        "If I won the lottery I would buy a house."
+      ]
+    },
+    {
+      "id": "sc-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "She would learn Japanese if she had more time.",
+        "es": "Aprendería japonés si tuviera más tiempo."
+      },
+      "es": "She would learn Japanese if she had more time.",
+      "accept": [
+        "If she had more time she would learn Japanese."
+      ]
+    },
+    {
+      "id": "sc-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "I would talk to him if I were you.",
+        "es": "Yo hablaría con él si fuera tú."
+      },
+      "es": "I would talk to him if I were you.",
+      "accept": [
+        "If I were you I would talk to him."
+      ]
+    },
+    {
+      "id": "sc-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "What would you do if you saw a ghost?",
+        "es": "¿Qué harías si vieras un fantasma?"
+      },
+      "es": "What would you do if you saw a ghost?"
+    },
+    {
+      "id": "sc-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "We would go swimming every day if we lived near the sea.",
+        "es": "Iríamos a nadar todos los días si viviéramos cerca del mar."
+      },
+      "es": "We would go swimming every day if we lived near the sea.",
+      "accept": [
+        "If we lived near the sea we would go swimming every day."
       ]
     }
   ]

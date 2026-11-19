@@ -1344,6 +1344,276 @@
           "en": "to sum up"
         }
       ]
+    },
+    {
+      "id": "dmk-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "The plan is cheap. ___, it is easy to carry out.",
+      "answers": [
+        "Moreover"
+      ],
+      "accept": [
+        [
+          "Furthermore"
+        ]
+      ],
+      "tr": { "en": "The plan is cheap. Moreover, it is easy to carry out.", "es": "El plan es barato. Además, es fácil de llevar a cabo." },
+      "why": {
+        "en": "Moreover adds a further point on the same side as the first one.",
+        "es": "Moreover añade otro punto en el mismo sentido que el primero."
+      }
+    },
+    {
+      "id": "dmk-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "The test was successful, ___ limited.",
+      "answers": [
+        "albeit"
+      ],
+      "tr": { "en": "The test was successful, albeit limited.", "es": "La prueba fue un éxito, aunque limitado." },
+      "why": {
+        "en": "Albeit means although and comes before a short phrase, not a full clause.",
+        "es": "Albeit significa aunque y va antes de una expresión corta, no de una oración completa."
+      }
+    },
+    {
+      "id": "dmk-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "___ the rain, the match went ahead.",
+      "answers": [
+        "Despite"
+      ],
+      "accept": [
+        [
+          "Notwithstanding"
+        ]
+      ],
+      "tr": { "en": "Despite the rain, the match went ahead.", "es": "A pesar de la lluvia, el partido se jugó." },
+      "why": {
+        "en": "Despite is followed by a noun (the rain), not by a full clause.",
+        "es": "Despite va seguido de un sustantivo (the rain), no de una oración completa."
+      }
+    },
+    {
+      "id": "dmk-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "___ to the heavy traffic, we arrived late.",
+      "answers": [
+        "Owing"
+      ],
+      "tr": { "en": "Owing to the heavy traffic, we arrived late.", "es": "Debido al tráfico denso, llegamos tarde." },
+      "why": {
+        "en": "Owing to + noun gives a reason: Owing to the traffic.",
+        "es": "Owing to + sustantivo da una razón: Owing to the traffic."
+      }
+    },
+    {
+      "id": "dmk-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "The food was excellent, ___ the service was slow.",
+      "answers": [
+        "whereas"
+      ],
+      "tr": { "en": "The food was excellent, whereas the service was slow.", "es": "La comida era excelente, mientras que el servicio era lento." },
+      "why": {
+        "en": "Whereas sets two facts side by side in one sentence.",
+        "es": "Whereas pone dos hechos en contraste en una sola oración."
+      }
+    },
+    {
+      "id": "dmk-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "Although the traffic, we arrived on time.",
+      "wrongIndex": 0,
+      "answer": "Despite",
+      "explain": {
+        "en": "Before a noun (the traffic) we need despite; although needs a full clause.",
+        "es": "Antes de un sustantivo (the traffic) hace falta despite; although necesita una oración completa."
+      },
+      "tr": { "en": "Despite the traffic, we arrived on time.", "es": "A pesar del tráfico, llegamos a tiempo." }
+    },
+    {
+      "id": "dmk-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "Despite it was cold, we went out.",
+      "wrongIndex": 0,
+      "answer": "Although",
+      "explain": {
+        "en": "Before a full clause (it was cold) we need although; despite needs a noun.",
+        "es": "Antes de una oración completa (it was cold) hace falta although; despite necesita un sustantivo."
+      },
+      "tr": { "en": "Although it was cold, we went out.", "es": "Aunque hacía frío, salimos." }
+    },
+    {
+      "id": "dmk-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "We canceled the trip in view for the weather.",
+      "wrongIndex": 6,
+      "answer": "of",
+      "explain": {
+        "en": "The fixed phrase is in view of: in view of the weather.",
+        "es": "La expresión fija es in view of: in view of the weather."
+      },
+      "tr": { "en": "We canceled the trip in view of the weather.", "es": "Cancelamos el viaje en vista del tiempo." }
+    },
+    {
+      "id": "dmk-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "Some animals, such like elephants, live in groups.",
+      "wrongIndex": 3,
+      "answer": "as",
+      "explain": {
+        "en": "The phrase for examples is such as, not such like.",
+        "es": "La expresión para dar ejemplos es such as, no such like."
+      },
+      "tr": { "en": "Some animals, such as elephants, live in groups.", "es": "Algunos animales, como los elefantes, viven en grupos." }
+    },
+    {
+      "id": "dmk-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "In other word, we need more data.",
+      "wrongIndex": 2,
+      "answer": "words",
+      "explain": {
+        "en": "The fixed phrase is in other words, with an -s.",
+        "es": "La expresión fija es in other words, con -s."
+      },
+      "tr": { "en": "In other words, we need more data.", "es": "Es decir, necesitamos más datos." }
+    },
+    {
+      "id": "dmk-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "Moreover",
+        "Although",
+        "Despite"
+      ],
+      "es": "The hotel is clean. ___, it is very cheap.",
+      "word": "Moreover",
+      "answer": "Moreover",
+      "tr": { "en": "The hotel is clean. Moreover, it is very cheap.", "es": "El hotel está limpio. Además, es muy barato." },
+      "why": {
+        "en": "Moreover adds a further point to the same side; although and despite show contrast.",
+        "es": "Moreover añade otro punto en el mismo sentido; although y despite expresan contraste."
+      }
+    },
+    {
+      "id": "dmk-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "Although",
+        "Despite",
+        "Because"
+      ],
+      "es": "___ the service was slow, we stayed there.",
+      "word": "Although",
+      "answer": "Although",
+      "tr": { "en": "Although the service was slow, we stayed there.", "es": "Aunque el servicio fue lento, nos quedamos." },
+      "why": {
+        "en": "Although introduces a full clause (the service was slow); despite needs a noun.",
+        "es": "Although introduce una oración completa (the service was slow); despite necesita un sustantivo."
+      }
+    },
+    {
+      "id": "dmk-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "namely",
+        "albeit",
+        "whereas"
+      ],
+      "es": "Two countries joined, ___ France and Spain.",
+      "word": "namely",
+      "answer": "namely",
+      "tr": { "en": "Two countries joined, namely France and Spain.", "es": "Se unieron dos países, a saber, Francia y España." },
+      "why": {
+        "en": "Namely introduces exactly which ones we mean.",
+        "es": "Namely introduce exactamente a cuáles nos referimos."
+      }
+    },
+    {
+      "id": "dmk-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "Owing",
+        "Despite",
+        "Although"
+      ],
+      "es": "___ to the snow, the trains were late.",
+      "word": "Owing",
+      "answer": "Owing",
+      "tr": { "en": "Owing to the snow, the trains were late.", "es": "Debido a la nieve, los trenes llegaron tarde." },
+      "why": {
+        "en": "Only owing combines with to to give a reason: owing to the snow.",
+        "es": "Solo owing se combina con to para dar una razón: owing to the snow."
+      }
+    },
+    {
+      "id": "dmk-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "Firstly",
+        "Subsequently",
+        "Albeit"
+      ],
+      "es": "___, the budget is too small. In addition, we have no time.",
+      "word": "Firstly",
+      "answer": "Firstly",
+      "tr": { "en": "Firstly, the budget is too small. In addition, we have no time.", "es": "En primer lugar, el presupuesto es demasiado pequeño. Además, no tenemos tiempo." },
+      "why": {
+        "en": "Firstly starts a list of points; the next point is added with in addition.",
+        "es": "Firstly abre una lista de puntos; el siguiente punto se añade con in addition."
+      }
+    },
+    {
+      "id": "dmk-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "Moreover, the new office is close to the station.", "es": "Además, la nueva oficina está cerca de la estación." },
+      "es": "Moreover, the new office is close to the station."
+    },
+    {
+      "id": "dmk-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "Owing to the snow, the school stayed closed.", "es": "Debido a la nieve, la escuela permaneció cerrada." },
+      "es": "Owing to the snow, the school stayed closed."
+    },
+    {
+      "id": "dmk-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "The meeting was good, albeit very short.", "es": "La reunión fue buena, aunque muy corta." },
+      "es": "The meeting was good, albeit very short."
+    },
+    {
+      "id": "dmk-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "In other words, we have no time left.", "es": "Es decir, no nos queda tiempo." },
+      "es": "In other words, we have no time left."
+    },
+    {
+      "id": "dmk-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "Several cities, such as Rome and Paris, joined.", "es": "Varias ciudades, como Roma y París, se unieron." },
+      "es": "Several cities, such as Rome and Paris, joined."
     }
   ]
 }

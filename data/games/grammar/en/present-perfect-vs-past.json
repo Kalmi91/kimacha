@@ -302,6 +302,76 @@
         "en": "participle of go",
         "es": "ido (participio de go)"
       }
+    },
+    {
+      "word": "each",
+      "gloss": {
+        "en": "every one of two or more",
+        "es": "cada uno (de dos o más)"
+      }
+    },
+    {
+      "word": "other",
+      "gloss": {
+        "en": "not the same; different",
+        "es": "otro; diferente"
+      }
+    },
+    {
+      "word": "known",
+      "gloss": {
+        "en": "participle of know",
+        "es": "conocido (participio de know)"
+      }
+    },
+    {
+      "word": "taken",
+      "gloss": {
+        "en": "participle of take",
+        "es": "tomado (participio de take)"
+      }
+    },
+    {
+      "word": "jump",
+      "gloss": {
+        "en": "to push yourself up into the air",
+        "es": "saltar"
+      }
+    },
+    {
+      "word": "stay",
+      "gloss": {
+        "en": "to remain in a place",
+        "es": "quedarse"
+      }
+    },
+    {
+      "word": "lose",
+      "gloss": {
+        "en": "to stop having something",
+        "es": "perder"
+      }
+    },
+    {
+      "word": "mango",
+      "gloss": {
+        "en": "a sweet tropical fruit",
+        "es": "mango (una fruta tropical dulce)"
+      }
+    },
+    {
+      "word": "London",
+      "gloss": {
+        "en": "the capital city of England",
+        "es": "la capital de Inglaterra"
+      }
+    },
+    {
+      "word": "Spain",
+      "gloss": {
+        "en": "a country in Europe",
+        "es": "un país de Europa"
+      }
     }
   ],
   "items": [
@@ -1090,6 +1160,382 @@
           "en": "ever"
         }
       ]
+    },
+    {
+      "id": "ppvp-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "She ___ to Mexico in 2019, and she ___ lived there ever since.",
+      "answers": [
+        "moved",
+        "has"
+      ],
+      "tr": {
+        "en": "She moved to Mexico in 2019, and she has lived there ever since.",
+        "es": "Se mudó a México en 2019 y vive allí desde entonces."
+      },
+      "why": {
+        "en": "With a finished time (yesterday, last year, in 2019, two days ago) we use the past simple, not the present perfect.",
+        "es": "Con un tiempo terminado (yesterday, last year, in 2019, two days ago) se usa el pasado simple, no el present perfect."
+      }
+    },
+    {
+      "id": "ppvp-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "___ you ever been to Spain? Yes, I ___ there in 2018.",
+      "answers": [
+        "Have",
+        "went"
+      ],
+      "tr": {
+        "en": "Have you ever been to Spain? Yes, I went there in 2018.",
+        "es": "¿Has estado alguna vez en España? Sí, fui en 2018."
+      },
+      "why": {
+        "en": "A question about life experience uses the present perfect with ever: Have you ever been to Peru? When we give the time of one trip, we switch to the past simple.",
+        "es": "Una pregunta sobre la experiencia de vida usa el present perfect con ever: Have you ever been to Peru? Cuando damos el momento de un viaje, pasamos al pasado simple."
+      }
+    },
+    {
+      "id": "ppvp-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "I ___ lost my keys, so I cannot get in. I ___ them on the bus yesterday.",
+      "answers": [
+        "have",
+        "lost"
+      ],
+      "tr": {
+        "en": "I have lost my keys, so I cannot get in. I lost them on the bus yesterday.",
+        "es": "He perdido las llaves, así que no puedo entrar. Las perdí ayer en el autobús."
+      },
+      "why": {
+        "en": "The present perfect shows a result that matters now (I have lost my keys: I cannot get in). When we say when it happened (yesterday), we use the past simple.",
+        "es": "El present perfect muestra un resultado que importa ahora (I have lost my keys: no puedo entrar). Cuando decimos cuándo pasó (yesterday), se usa el pasado simple."
+      }
+    },
+    {
+      "id": "ppvp-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "They ___ in London for three years, but they ___ to Madrid last month.",
+      "answers": [
+        "lived",
+        "moved"
+      ],
+      "tr": {
+        "en": "They lived in London for three years, but they moved to Madrid last month.",
+        "es": "Vivieron en Londres tres años, pero se mudaron a Madrid el mes pasado."
+      },
+      "why": {
+        "en": "With a finished time (yesterday, last year, in 2019, two days ago) we use the past simple, not the present perfect.",
+        "es": "Con un tiempo terminado (yesterday, last year, in 2019, two days ago) se usa el pasado simple, no el present perfect."
+      }
+    },
+    {
+      "id": "ppvp-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "It ___ not rained this week, but it ___ a lot last week.",
+      "answers": [
+        "has",
+        "rained"
+      ],
+      "tr": {
+        "en": "It has not rained this week, but it rained a lot last week.",
+        "es": "Esta semana no ha llovido, pero la semana pasada llovió mucho."
+      },
+      "why": {
+        "en": "With a time that is not over (today, this week, ever, never, already) or with no time at all, we use the present perfect.",
+        "es": "Con un tiempo que no ha terminado (today, this week, ever, never, already) o sin ningún tiempo, se usa el present perfect."
+      }
+    },
+    {
+      "id": "ppvp-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "Did you ever been to Peru?",
+      "wrongIndex": 0,
+      "answer": "Have",
+      "explain": {
+        "en": "A question about life experience uses the present perfect with ever: Have you ever been to Peru? When we give the time of one trip, we switch to the past simple.",
+        "es": "Una pregunta sobre la experiencia de vida usa el present perfect con ever: Have you ever been to Peru? Cuando damos el momento de un viaje, pasamos al pasado simple."
+      },
+      "tr": {
+        "en": "Have you ever been to Peru?",
+        "es": "¿Has estado alguna vez en Perú?"
+      }
+    },
+    {
+      "id": "ppvp-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "I have seen that film yesterday.",
+      "wrongIndex": 5,
+      "answer": "already",
+      "accept": [
+        "before"
+      ],
+      "explain": {
+        "en": "With a finished time (yesterday, last year, in 2019, two days ago) we use the past simple, not the present perfect.",
+        "es": "Con un tiempo terminado (yesterday, last year, in 2019, two days ago) se usa el pasado simple, no el present perfect."
+      },
+      "tr": {
+        "en": "I have seen that film already.",
+        "es": "Ya he visto esa película."
+      }
+    },
+    {
+      "id": "ppvp-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "We have known each other since ten years.",
+      "wrongIndex": 5,
+      "answer": "for",
+      "explain": {
+        "en": "For + a length of time (for ten years); since + a starting point (since 2019).",
+        "es": "For + una duración (for ten years); since + un punto de inicio (since 2019)."
+      },
+      "tr": {
+        "en": "We have known each other for ten years.",
+        "es": "Nos conocemos desde hace diez años."
+      }
+    },
+    {
+      "id": "ppvp-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "She has wrote three emails today.",
+      "wrongIndex": 2,
+      "answer": "written",
+      "explain": {
+        "en": "Many participles are irregular and must be learned: buy → bought, break → broken, take → taken. Not the simple past!",
+        "es": "Muchos participios son irregulares y hay que aprenderlos: buy → bought, break → broken, take → taken. ¡No el pasado simple!"
+      },
+      "tr": {
+        "en": "She has written three emails today.",
+        "es": "Hoy ha escrito tres correos."
+      }
+    },
+    {
+      "id": "ppvp-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "She lived here since 2019.",
+      "wrongIndex": 3,
+      "answer": "in",
+      "explain": {
+        "en": "With a finished time (yesterday, last year, in 2019, two days ago) we use the past simple, not the present perfect.",
+        "es": "Con un tiempo terminado (yesterday, last year, in 2019, two days ago) se usa el pasado simple, no el present perfect."
+      },
+      "tr": {
+        "en": "She lived here in 2019.",
+        "es": "Vivió aquí en 2019."
+      }
+    },
+    {
+      "id": "ppvp-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "buy",
+        "cook",
+        "wait"
+      ],
+      "es": "I have just ___ a new phone.",
+      "word": "buy",
+      "answer": "bought",
+      "tr": {
+        "en": "I have just bought a new phone.",
+        "es": "Acabo de comprar un teléfono nuevo."
+      },
+      "why": {
+        "en": "Many participles are irregular and must be learned: buy → bought, break → broken, take → taken. Not the simple past!",
+        "es": "Muchos participios son irregulares y hay que aprenderlos: buy → bought, break → broken, take → taken. ¡No el pasado simple!"
+      }
+    },
+    {
+      "id": "ppvp-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "break",
+        "smile",
+        "stay"
+      ],
+      "es": "She has ___ her phone again!",
+      "word": "break",
+      "answer": "broken",
+      "tr": {
+        "en": "She has broken her phone again!",
+        "es": "¡Ha roto su teléfono otra vez!"
+      },
+      "why": {
+        "en": "Many participles are irregular and must be learned: buy → bought, break → broken, take → taken. Not the simple past!",
+        "es": "Muchos participios son irregulares y hay que aprenderlos: buy → bought, break → broken, take → taken. ¡No el pasado simple!"
+      }
+    },
+    {
+      "id": "ppvp-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "take",
+        "dance",
+        "arrive"
+      ],
+      "es": "We have ___ the train to work for years.",
+      "word": "take",
+      "answer": "taken",
+      "tr": {
+        "en": "We have taken the train to work for years.",
+        "es": "Llevamos años yendo al trabajo en tren."
+      },
+      "why": {
+        "en": "Many participles are irregular and must be learned: buy → bought, break → broken, take → taken. Not the simple past!",
+        "es": "Muchos participios son irregulares y hay que aprenderlos: buy → bought, break → broken, take → taken. ¡No el pasado simple!"
+      }
+    },
+    {
+      "id": "ppvp-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "drink",
+        "jump",
+        "close"
+      ],
+      "es": "He has never ___ coffee.",
+      "word": "drink",
+      "answer": "drunk",
+      "tr": {
+        "en": "He has never drunk coffee.",
+        "es": "Nunca ha bebido café."
+      },
+      "why": {
+        "en": "Many participles are irregular and must be learned: buy → bought, break → broken, take → taken. Not the simple past!",
+        "es": "Muchos participios son irregulares y hay que aprenderlos: buy → bought, break → broken, take → taken. ¡No el pasado simple!"
+      }
+    },
+    {
+      "id": "ppvp-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "go",
+        "win",
+        "lose"
+      ],
+      "es": "Last night we ___ to the cinema.",
+      "word": "go",
+      "answer": "went",
+      "tr": {
+        "en": "Last night we went to the cinema.",
+        "es": "Anoche fuimos al cine."
+      },
+      "why": {
+        "en": "With a finished time (yesterday, last year, in 2019, two days ago) we use the past simple, not the present perfect.",
+        "es": "Con un tiempo terminado (yesterday, last year, in 2019, two days ago) se usa el pasado simple, no el present perfect."
+      }
+    },
+    {
+      "id": "ppvp-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "I have never been to Mexico.",
+        "es": "Nunca he estado en México."
+      },
+      "es": "I have never been to Mexico."
+    },
+    {
+      "id": "ppvp-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "She went to Spain last summer.",
+        "es": "Fue a España el verano pasado."
+      },
+      "es": "She went to Spain last summer.",
+      "accept": [
+        "Last summer she went to Spain."
+      ]
+    },
+    {
+      "id": "ppvp-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "Have you ever eaten a mango?",
+        "es": "¿Has comido alguna vez un mango?"
+      },
+      "es": "Have you ever eaten a mango?"
+    },
+    {
+      "id": "ppvp-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "They have lived here for ten years.",
+        "es": "Llevan diez años viviendo aquí."
+      },
+      "es": "They have lived here for ten years.",
+      "accept": [
+        "For ten years they have lived here."
+      ]
+    },
+    {
+      "id": "ppvp-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "I saw him two days ago.",
+        "es": "Lo vi hace dos días."
+      },
+      "es": "I saw him two days ago.",
+      "accept": [
+        "Two days ago I saw him."
+      ]
+    },
+    {
+      "kind": "why",
+      "id": "ppvp-why-01",
+      "es": "She has lost her keys.",
+      "target": "has lost",
+      "tr": {
+        "en": "She has lost her keys.",
+        "es": "Ha perdido las llaves."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "a finished time: past simple",
+            "es": "un tiempo terminado: pasado simple"
+          },
+          "wrong": {
+            "en": "No finished time (yesterday, last year) is given, and the result matters now: the present perfect fits.",
+            "es": "No se da un tiempo terminado (yesterday, last year) y el resultado importa ahora: va el present perfect."
+          }
+        },
+        {
+          "text": {
+            "en": "a result that matters now: she cannot get in",
+            "es": "un resultado que importa ahora: no puede entrar"
+          }
+        },
+        {
+          "text": {
+            "en": "a habit: present simple",
+            "es": "un hábito: presente simple"
+          },
+          "wrong": {
+            "en": "A habit would need a routine word like always; here we look at the result now.",
+            "es": "Un hábito necesitaría una palabra de rutina como always; aquí miramos el resultado ahora."
+          }
+        }
+      ],
+      "correctIndex": 1
     }
   ]
 }

@@ -252,6 +252,48 @@
         "en": "sleeping (fall asleep)",
         "es": "dormido (fall asleep: dormirse)"
       }
+    },
+    {
+      "word": "climb",
+      "gloss": {
+        "en": "to go up using hands and feet",
+        "es": "trepar, escalar"
+      }
+    },
+    {
+      "word": "drive",
+      "gloss": {
+        "en": "to control a car",
+        "es": "conducir"
+      }
+    },
+    {
+      "word": "football",
+      "gloss": {
+        "en": "a game with a ball played with the feet",
+        "es": "el fútbol"
+      }
+    },
+    {
+      "word": "heavily",
+      "gloss": {
+        "en": "a lot, with great force",
+        "es": "fuerte, mucho"
+      }
+    },
+    {
+      "word": "slip",
+      "gloss": {
+        "en": "to slide by accident",
+        "es": "resbalar"
+      }
+    },
+    {
+      "word": "slipped",
+      "gloss": {
+        "en": "past form of slip",
+        "es": "resbaló (pasado de slip)"
+      }
     }
   ],
   "items": [
@@ -1061,6 +1103,343 @@
           "es": "no estaba durmiendo",
           "en": "I wasn't sleeping"
         }
+      ]
+    },
+    {
+      "id": "pco-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "I ___ cooking when the phone ___ (ring).",
+      "answers": [
+        "was",
+        "rang"
+      ],
+      "tr": {
+        "en": "I was cooking when the phone rang.",
+        "es": "Estaba cocinando cuando sonó el teléfono."
+      },
+      "why": {
+        "en": "A longer action in progress (past continuous) is interrupted by a shorter one (past simple), joined with when: I was cooking when the phone rang.",
+        "es": "Una acción larga en curso (past continuous) es interrumpida por otra corta (pasado simple), unidas con when: I was cooking when the phone rang."
+      }
+    },
+    {
+      "id": "pco-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "While we ___ watching TV, the lights ___ (go) out.",
+      "answers": [
+        "were",
+        "went"
+      ],
+      "tr": {
+        "en": "While we were watching TV, the lights went out.",
+        "es": "Mientras veíamos la tele, se apagaron las luces."
+      },
+      "why": {
+        "en": "A longer action in progress (past continuous) is interrupted by a shorter one (past simple), joined with when: I was cooking when the phone rang.",
+        "es": "Una acción larga en curso (past continuous) es interrumpida por otra corta (pasado simple), unidas con when: I was cooking when the phone rang."
+      }
+    },
+    {
+      "id": "pco-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "What ___ you doing at nine last night? I ___ sleeping.",
+      "answers": [
+        "were",
+        "was"
+      ],
+      "tr": {
+        "en": "What were you doing at nine last night? I was sleeping.",
+        "es": "¿Qué hacías anoche a las nueve? Yo estaba durmiendo."
+      },
+      "why": {
+        "en": "The past continuous is was / were + verb-ing: I / he / she / it was cooking; you / we / they were cooking.",
+        "es": "El past continuous es was / were + verbo-ing: I / he / she / it was cooking; you / we / they were cooking."
+      }
+    },
+    {
+      "id": "pco-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "He ___ walking home when he ___ (slip) on the ice.",
+      "answers": [
+        "was",
+        "slipped"
+      ],
+      "tr": {
+        "en": "He was walking home when he slipped on the ice.",
+        "es": "Caminaba a casa cuando resbaló en el hielo."
+      },
+      "why": {
+        "en": "A longer action in progress (past continuous) is interrupted by a shorter one (past simple), joined with when: I was cooking when the phone rang.",
+        "es": "Una acción larga en curso (past continuous) es interrumpida por otra corta (pasado simple), unidas con when: I was cooking when the phone rang."
+      }
+    },
+    {
+      "id": "pco-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "The children ___ playing in the garden while their mother ___ cooking.",
+      "answers": [
+        "were",
+        "was"
+      ],
+      "tr": {
+        "en": "The children were playing in the garden while their mother was cooking.",
+        "es": "Los niños jugaban en el jardín mientras su madre cocinaba."
+      },
+      "why": {
+        "en": "While joins two actions that were in progress at the same time: both use the past continuous.",
+        "es": "While une dos acciones que estaban en curso al mismo tiempo: las dos van en past continuous."
+      }
+    },
+    {
+      "id": "pco-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "I was cook when the phone rang.",
+      "wrongIndex": 2,
+      "answer": "cooking",
+      "explain": {
+        "en": "The past continuous is was / were + verb-ing: I / he / she / it was cooking; you / we / they were cooking.",
+        "es": "El past continuous es was / were + verbo-ing: I / he / she / it was cooking; you / we / they were cooking."
+      },
+      "tr": {
+        "en": "I was cooking when the phone rang.",
+        "es": "Estaba cocinando cuando sonó el teléfono."
+      }
+    },
+    {
+      "id": "pco-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "They was watching a film.",
+      "wrongIndex": 1,
+      "answer": "were",
+      "explain": {
+        "en": "The past continuous is was / were + verb-ing: I / he / she / it was cooking; you / we / they were cooking.",
+        "es": "El past continuous es was / were + verbo-ing: I / he / she / it was cooking; you / we / they were cooking."
+      },
+      "tr": {
+        "en": "They were watching a film.",
+        "es": "Estaban viendo una película."
+      }
+    },
+    {
+      "id": "pco-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "While I was studying, my brother were playing.",
+      "wrongIndex": 6,
+      "answer": "was",
+      "explain": {
+        "en": "The past continuous is was / were + verb-ing: I / he / she / it was cooking; you / we / they were cooking.",
+        "es": "El past continuous es was / were + verbo-ing: I / he / she / it was cooking; you / we / they were cooking."
+      },
+      "tr": {
+        "en": "While I was studying, my brother was playing.",
+        "es": "Mientras yo estudiaba, mi hermano jugaba."
+      }
+    },
+    {
+      "id": "pco-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "I was cooking while the phone rang.",
+      "wrongIndex": 3,
+      "answer": "when",
+      "explain": {
+        "en": "A longer action in progress (past continuous) is interrupted by a shorter one (past simple), joined with when: I was cooking when the phone rang.",
+        "es": "Una acción larga en curso (past continuous) es interrumpida por otra corta (pasado simple), unidas con when: I was cooking when the phone rang."
+      },
+      "tr": {
+        "en": "I was cooking when the phone rang.",
+        "es": "Estaba cocinando cuando sonó el teléfono."
+      }
+    },
+    {
+      "id": "pco-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "Were he sleeping when you called?",
+      "wrongIndex": 0,
+      "answer": "Was",
+      "explain": {
+        "en": "The past continuous is was / were + verb-ing: I / he / she / it was cooking; you / we / they were cooking.",
+        "es": "El past continuous es was / were + verbo-ing: I / he / she / it was cooking; you / we / they were cooking."
+      },
+      "tr": {
+        "en": "Was he sleeping when you called?",
+        "es": "¿Estaba durmiendo cuando llamaste?"
+      }
+    },
+    {
+      "id": "pco-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "play",
+        "close",
+        "wash"
+      ],
+      "es": "The children were ___ football in the park.",
+      "word": "play",
+      "answer": "playing",
+      "tr": {
+        "en": "The children were playing football in the park.",
+        "es": "Los niños jugaban al fútbol en el parque."
+      },
+      "why": {
+        "en": "The past continuous is was / were + verb-ing: I / he / she / it was cooking; you / we / they were cooking.",
+        "es": "El past continuous es was / were + verbo-ing: I / he / she / it was cooking; you / we / they were cooking."
+      }
+    },
+    {
+      "id": "pco-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "cook",
+        "arrive",
+        "sleep"
+      ],
+      "es": "My mother was ___ dinner when I got home.",
+      "word": "cook",
+      "answer": "cooking",
+      "tr": {
+        "en": "My mother was cooking dinner when I got home.",
+        "es": "Mi madre preparaba la cena cuando llegué a casa."
+      },
+      "why": {
+        "en": "The past continuous is was / were + verb-ing: I / he / she / it was cooking; you / we / they were cooking.",
+        "es": "El past continuous es was / were + verbo-ing: I / he / she / it was cooking; you / we / they were cooking."
+      }
+    },
+    {
+      "id": "pco-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "read",
+        "swim",
+        "drive"
+      ],
+      "es": "He was ___ a book on the sofa.",
+      "word": "read",
+      "answer": "reading",
+      "tr": {
+        "en": "He was reading a book on the sofa.",
+        "es": "Leía un libro en el sofá."
+      },
+      "why": {
+        "en": "The past continuous is was / were + verb-ing: I / he / she / it was cooking; you / we / they were cooking.",
+        "es": "El past continuous es was / were + verbo-ing: I / he / she / it was cooking; you / we / they were cooking."
+      }
+    },
+    {
+      "id": "pco-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "rain",
+        "write",
+        "teach"
+      ],
+      "es": "It was ___ heavily when we left.",
+      "word": "rain",
+      "answer": "raining",
+      "tr": {
+        "en": "It was raining heavily when we left.",
+        "es": "Llovía fuerte cuando salimos."
+      },
+      "why": {
+        "en": "The past continuous is was / were + verb-ing: I / he / she / it was cooking; you / we / they were cooking.",
+        "es": "El past continuous es was / were + verbo-ing: I / he / she / it was cooking; you / we / they were cooking."
+      }
+    },
+    {
+      "id": "pco-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "drive",
+        "listen",
+        "climb"
+      ],
+      "es": "They were ___ to music in the car.",
+      "word": "listen",
+      "answer": "listening",
+      "tr": {
+        "en": "They were listening to music in the car.",
+        "es": "Escuchaban música en el coche."
+      },
+      "why": {
+        "en": "The past continuous is was / were + verb-ing: I / he / she / it was cooking; you / we / they were cooking.",
+        "es": "El past continuous es was / were + verbo-ing: I / he / she / it was cooking; you / we / they were cooking."
+      }
+    },
+    {
+      "id": "pco-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "I was cooking when the phone rang.",
+        "es": "Estaba cocinando cuando sonó el teléfono."
+      },
+      "es": "I was cooking when the phone rang.",
+      "accept": [
+        "When the phone rang I was cooking."
+      ]
+    },
+    {
+      "id": "pco-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "She was sleeping when I called.",
+        "es": "Estaba durmiendo cuando llamé."
+      },
+      "es": "She was sleeping when I called.",
+      "accept": [
+        "When I called she was sleeping."
+      ]
+    },
+    {
+      "id": "pco-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "We were watching TV at nine last night.",
+        "es": "Anoche a las nueve veíamos la tele."
+      },
+      "es": "We were watching TV at nine last night.",
+      "accept": [
+        "At nine last night we were watching TV."
+      ]
+    },
+    {
+      "id": "pco-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "What were you doing last night?",
+        "es": "¿Qué hacías anoche?"
+      },
+      "es": "What were you doing last night?"
+    },
+    {
+      "id": "pco-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "It was raining when we left.",
+        "es": "Llovía cuando salimos."
+      },
+      "es": "It was raining when we left.",
+      "accept": [
+        "When we left it was raining."
       ]
     }
   ]

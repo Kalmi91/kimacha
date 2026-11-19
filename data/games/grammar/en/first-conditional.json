@@ -233,6 +233,20 @@
         "en": "used for imagined situations",
         "es": "condicional (situación imaginada)"
       }
+    },
+    {
+      "word": "catch",
+      "gloss": {
+        "en": "to get on a bus or train before it leaves",
+        "es": "alcanzar, coger (un tren)"
+      }
+    },
+    {
+      "word": "invite",
+      "gloss": {
+        "en": "to ask someone to come",
+        "es": "invitar"
+      }
     }
   ],
   "items": [
@@ -1033,6 +1047,343 @@
           "es": "ella se quedará",
           "en": "she will stay"
         }
+      ]
+    },
+    {
+      "id": "fc-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "If it ___ (rain) tomorrow, we ___ stay at home.",
+      "answers": [
+        "rains",
+        "will"
+      ],
+      "tr": {
+        "en": "If it rains tomorrow, we will stay at home.",
+        "es": "Si mañana llueve, nos quedaremos en casa."
+      },
+      "why": {
+        "en": "After if we do not use will: the condition is in the present simple (If it rains), and will goes in the other part.",
+        "es": "Después de if no se usa will: la condición va en presente simple (If it rains) y will va en la otra parte."
+      }
+    },
+    {
+      "id": "fc-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "If you ___ (study) hard, you ___ pass the exam.",
+      "answers": [
+        "study",
+        "will"
+      ],
+      "tr": {
+        "en": "If you study hard, you will pass the exam.",
+        "es": "Si estudias mucho, aprobarás el examen."
+      },
+      "why": {
+        "en": "First conditional: if + present simple, will + base verb. It is a real possibility in the future: If it rains, we will stay home.",
+        "es": "Primer condicional: if + presente simple, will + verbo base. Es una posibilidad real en el futuro: If it rains, we will stay home."
+      }
+    },
+    {
+      "id": "fc-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "I ___ call you if I ___ (have) time.",
+      "answers": [
+        "will",
+        "have"
+      ],
+      "tr": {
+        "en": "I will call you if I have time.",
+        "es": "Te llamaré si tengo tiempo."
+      },
+      "why": {
+        "en": "After if we do not use will: the condition is in the present simple (If it rains), and will goes in the other part.",
+        "es": "Después de if no se usa will: la condición va en presente simple (If it rains) y will va en la otra parte."
+      }
+    },
+    {
+      "id": "fc-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "She ___ not come to the party unless you ___ (invite) her.",
+      "answers": [
+        "will",
+        "invite"
+      ],
+      "tr": {
+        "en": "She will not come to the party unless you invite her.",
+        "es": "No vendrá a la fiesta a menos que la invites."
+      },
+      "why": {
+        "en": "Unless means if … not: I will not go unless you come = I will not go if you do not come. The verb after unless is in the present simple.",
+        "es": "Unless significa if … not: I will not go unless you come = no iré si tú no vienes. El verbo después de unless va en presente simple."
+      }
+    },
+    {
+      "id": "fc-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "If we ___ (miss) the bus, we ___ be late.",
+      "answers": [
+        "miss",
+        "will"
+      ],
+      "tr": {
+        "en": "If we miss the bus, we will be late.",
+        "es": "Si perdemos el autobús, llegaremos tarde."
+      },
+      "why": {
+        "en": "First conditional: if + present simple, will + base verb. It is a real possibility in the future: If it rains, we will stay home.",
+        "es": "Primer condicional: if + presente simple, will + verbo base. Es una posibilidad real en el futuro: If it rains, we will stay home."
+      }
+    },
+    {
+      "id": "fc-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "If it rain tomorrow, we will stay home.",
+      "wrongIndex": 2,
+      "answer": "rains",
+      "explain": {
+        "en": "With he / she / it the present simple verb takes -s: if it rains, if she studies.",
+        "es": "Con he / she / it el verbo en presente simple lleva -s: if it rains, if she studies."
+      },
+      "tr": {
+        "en": "If it rains tomorrow, we will stay home.",
+        "es": "Si mañana llueve, nos quedaremos en casa."
+      }
+    },
+    {
+      "id": "fc-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "If you study hard, you would pass the exam.",
+      "wrongIndex": 5,
+      "answer": "will",
+      "explain": {
+        "en": "In the result part of the first conditional we use will + the base verb: we will stay, she will pass. Would belongs to the second conditional.",
+        "es": "En la parte del resultado del primer condicional se usa will + verbo base: we will stay, she will pass. Would es del segundo condicional."
+      },
+      "tr": {
+        "en": "If you study hard, you will pass the exam.",
+        "es": "Si estudias mucho, aprobarás el examen."
+      }
+    },
+    {
+      "id": "fc-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "If we do not hurry, we will missed the bus.",
+      "wrongIndex": 7,
+      "answer": "miss",
+      "explain": {
+        "en": "After will the verb stays in its base form, without -s or -ed: we will go, she will miss.",
+        "es": "Después de will el verbo queda en forma base, sin -s ni -ed: we will go, she will miss."
+      },
+      "tr": {
+        "en": "If we do not hurry, we will miss the bus.",
+        "es": "Si no nos damos prisa, perderemos el autobús."
+      }
+    },
+    {
+      "id": "fc-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "If it is sunny, we will goes to the beach.",
+      "wrongIndex": 6,
+      "answer": "go",
+      "explain": {
+        "en": "After will the verb stays in its base form, without -s or -ed: we will go, she will miss.",
+        "es": "Después de will el verbo queda en forma base, sin -s ni -ed: we will go, she will miss."
+      },
+      "tr": {
+        "en": "If it is sunny, we will go to the beach.",
+        "es": "Si hace sol, iremos a la playa."
+      }
+    },
+    {
+      "id": "fc-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "I will not go unless you coming with me.",
+      "wrongIndex": 6,
+      "answer": "come",
+      "explain": {
+        "en": "Unless means if … not: I will not go unless you come = I will not go if you do not come. The verb after unless is in the present simple.",
+        "es": "Unless significa if … not: I will not go unless you come = no iré si tú no vienes. El verbo después de unless va en presente simple."
+      },
+      "tr": {
+        "en": "I will not go unless you come with me.",
+        "es": "No iré a menos que vengas conmigo."
+      }
+    },
+    {
+      "id": "fc-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "rain",
+        "smile",
+        "wait"
+      ],
+      "es": "If it ___ tomorrow, we will stay at home.",
+      "word": "rain",
+      "answer": "rains",
+      "tr": {
+        "en": "If it rains tomorrow, we will stay at home.",
+        "es": "Si mañana llueve, nos quedaremos en casa."
+      },
+      "why": {
+        "en": "With he / she / it the present simple verb takes -s: if it rains, if she studies.",
+        "es": "Con he / she / it el verbo en presente simple lleva -s: if it rains, if she studies."
+      }
+    },
+    {
+      "id": "fc-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "study",
+        "arrive",
+        "smile"
+      ],
+      "es": "If she ___ hard, she will pass the exam.",
+      "word": "study",
+      "answer": "studies",
+      "tr": {
+        "en": "If she studies hard, she will pass the exam.",
+        "es": "Si estudia mucho, aprobará el examen."
+      },
+      "why": {
+        "en": "With he / she / it the present simple verb takes -s: if it rains, if she studies.",
+        "es": "Con he / she / it el verbo en presente simple lleva -s: if it rains, if she studies."
+      }
+    },
+    {
+      "id": "fc-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "will",
+        "would",
+        "did"
+      ],
+      "es": "If you help me, I ___ help you.",
+      "word": "will",
+      "answer": "will",
+      "tr": {
+        "en": "If you help me, I will help you.",
+        "es": "Si me ayudas, te ayudaré."
+      },
+      "why": {
+        "en": "In the result part of the first conditional we use will + the base verb: we will stay, she will pass. Would belongs to the second conditional.",
+        "es": "En la parte del resultado del primer condicional se usa will + verbo base: we will stay, she will pass. Would es del segundo condicional."
+      }
+    },
+    {
+      "id": "fc-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "will",
+        "would",
+        "did"
+      ],
+      "es": "If we miss the bus, we ___ be late.",
+      "word": "will",
+      "answer": "will",
+      "tr": {
+        "en": "If we miss the bus, we will be late.",
+        "es": "Si perdemos el autobús, llegaremos tarde."
+      },
+      "why": {
+        "en": "In the result part of the first conditional we use will + the base verb: we will stay, she will pass. Would belongs to the second conditional.",
+        "es": "En la parte del resultado del primer condicional se usa will + verbo base: we will stay, she will pass. Would es del segundo condicional."
+      }
+    },
+    {
+      "id": "fc-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "have",
+        "be",
+        "go"
+      ],
+      "es": "I will call you if I ___ time.",
+      "word": "have",
+      "answer": "have",
+      "tr": {
+        "en": "I will call you if I have time.",
+        "es": "Te llamaré si tengo tiempo."
+      },
+      "why": {
+        "en": "After if we do not use will: the condition is in the present simple (If it rains), and will goes in the other part.",
+        "es": "Después de if no se usa will: la condición va en presente simple (If it rains) y will va en la otra parte."
+      }
+    },
+    {
+      "id": "fc-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "We will stay home if it rains.",
+        "es": "Nos quedaremos en casa si llueve."
+      },
+      "es": "We will stay home if it rains.",
+      "accept": [
+        "If it rains we will stay home."
+      ]
+    },
+    {
+      "id": "fc-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "You will catch the train if you hurry.",
+        "es": "Alcanzarás el tren si te das prisa."
+      },
+      "es": "You will catch the train if you hurry.",
+      "accept": [
+        "If you hurry you will catch the train."
+      ]
+    },
+    {
+      "id": "fc-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "She will be late if she misses the bus.",
+        "es": "Llegará tarde si pierde el autobús."
+      },
+      "es": "She will be late if she misses the bus.",
+      "accept": [
+        "If she misses the bus she will be late."
+      ]
+    },
+    {
+      "id": "fc-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "What will you do if it rains?",
+        "es": "¿Qué harás si llueve?"
+      },
+      "es": "What will you do if it rains?"
+    },
+    {
+      "id": "fc-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "I will not go unless you come with me.",
+        "es": "No iré a menos que vengas conmigo."
+      },
+      "es": "I will not go unless you come with me.",
+      "accept": [
+        "Unless you come with me I will not go."
       ]
     }
   ]
