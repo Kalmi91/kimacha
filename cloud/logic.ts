@@ -177,11 +177,13 @@ export function usageSummary(payload: string | null, today: string): UsageSummar
 
   const streak = asRecord(state.streak);
   if (streak) {
-    const current = typeof streak.current_count === 'number' ? streak.current_count : 0;
+    const current = typeof streak.current_count === 'number' && Number.isFinite(streak.current_count) ? streak.current_count : 0;
     const broken = typeof streak.last_date === 'string' && streak.last_date < shiftDay(today, -1);
     sum.streak = broken ? 0 : current;
-    if (typeof streak.longest_count === 'number') sum.longestStreak = streak.longest_count;
+    if (typeof streak.longest_count === 'number' && Number.isFinite(streak.longest_count)) sum.longestStreak = streak.longest_count;
   }
+  // A sum of finite values can still overflow to Infinity: cap it, so the admin JSON never holds a non-finite number.
+  for (const k of ['minutesTotal', 'minutes7d', 'xpTotal'] as const) if (!Number.isFinite(sum[k])) sum[k] = Number.MAX_SAFE_INTEGER;
   return sum;
 }
 

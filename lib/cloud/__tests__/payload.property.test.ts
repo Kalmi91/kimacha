@@ -104,7 +104,7 @@ describe('usageSummary properties', () => {
 
   // FINDING D2-1 (skipped: red = the bug; see report-d2.md). The figures end up in the admin JSON: an Infinity there
   // turns into null / breaks the page. Remove the .skip when usageSummary no longer overflows.
-  it.skip('keeps every counter a finite number, whatever huge values the fields hold', () => {
+  it('keeps every counter a finite number, whatever huge values the fields hold', () => {
     const huge = fc.double({ noNaN: true, noDefaultInfinity: true, min: 1e300, max: Number.MAX_VALUE });
     fc.assert(
       fc.property(fc.array(fc.tuple(dayArb, huge), { minLength: 2, maxLength: 5 }), (entries) => {
@@ -117,7 +117,7 @@ describe('usageSummary properties', () => {
   });
 
   // FINDING D2-2 (skipped: red = the bug; see report-d2.md). JSON.parse('1e999') is Infinity and typeof says number.
-  it.skip.each(['1e999', '-1e999'])('keeps the streak finite when the stored count is the numeral %s', (numeral) => {
+  it.each(['1e999', '-1e999'])('keeps the streak finite when the stored count is the numeral %s', (numeral) => {
     const store = `{"v":1,"streak":{"current_count":${numeral},"last_date":"${TODAY}","longest_count":${numeral}}}`;
     const sum = usageSummary(JSON.stringify({ v: 1, store, resume: {} }), TODAY);
     expect(Number.isFinite(sum.streak)).toBe(true);
