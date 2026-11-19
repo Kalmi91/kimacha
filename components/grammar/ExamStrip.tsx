@@ -84,6 +84,20 @@ export function LevelTestButton({ level }: { level: Level }) {
   );
 }
 
+// The exam round entry alone (the strip uses it too; the Grammar tab shows it under the A1 lessons).
+export function ExamRoundButton({ level }: { level: Level }) {
+  const router = useRouter();
+  const s = t();
+  return (
+    <StripButton
+      testID={`grammar-exam-round-${level}`}
+      label={s.examStrip.examRound}
+      highlight
+      onPress={() => router.push(`/grammar/exam-round?level=${level}` as never)}
+    />
+  );
+}
+
 // The exam strip of the Exam tab (under a level's header, in place of the old lone level test button): the level's
 // grammar readiness, its weakest topics, and the entries to the level test, the level exam and the mock exam.
 // A level without any written lesson has no strip. `examStatus` undefined = not loaded yet (the exam button is disabled).
@@ -169,14 +183,7 @@ export default function ExamStrip({
         <Text testID={`grammar-exam-nodata-${level}`} style={[styles.note, { color: muted }]}>{x.noData}</Text>
       )}
       <View style={styles.buttons}>
-        {roundOpen ? (
-          <StripButton
-            testID={`grammar-exam-round-${level}`}
-            label={x.examRound}
-            highlight
-            onPress={() => router.push(`/grammar/exam-round?level=${level}` as never)}
-          />
-        ) : null}
+        {roundOpen ? <ExamRoundButton level={level} /> : null}
         <StripButton
           testID={`grammar-level-test-${level}`}
           label={`🎯 ${s.levelTest.button}`}

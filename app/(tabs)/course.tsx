@@ -48,7 +48,8 @@ import LessonSearch from '@/components/grammar/LessonSearch';
 import { styles } from '@/components/grammar/courseStyles';
 import { filterTopicsBySearch, normalizeSearch } from '@/lib/grammar/lessonSearch';
 import { BrutalBox, SegmentBar, Sticker, segmentsFilled } from '@/components/grammar/Brutal';
-import { LevelTestButton } from '@/components/grammar/ExamStrip';
+import { ExamRoundButton, LevelTestButton } from '@/components/grammar/ExamStrip';
+import { examRoundAvailable } from '@/lib/grammar/examRound';
 import LevelStanding from '@/components/grammar/LevelStanding';
 import { ExamTagClassic } from '@/components/grammar/ExamTag';
 import { topicKindCount } from '@/lib/grammar/randomRoundView';
@@ -212,6 +213,9 @@ export default function GrammarSyllabusScreen() {
         topics: topicsForUnit(unit.id, learnedLang),
       }));
   const noMatch = searching && groups[0].topics.length === 0;
+  // the exam round entry sits under the A1 lesson list (not while searching)
+  const showExamRound = !searching && shownLevel === 'A1' && examRoundAvailable(learnedLang, 'A1');
+  const examRoundWrap = { alignItems: 'flex-start', marginTop: 8 } as const;
   const levelTag = (topic: { level: string }) => (searching ? ` · ${topic.level}` : '');
 
   // A German course with no written lesson at all: say so, never list the Spanish syllabus or an empty one.
@@ -370,6 +374,8 @@ export default function GrammarSyllabusScreen() {
               })}
             </View>
           ))}
+
+          {showExamRound ? <View style={examRoundWrap}><ExamRoundButton level="A1" /></View> : null}
 
           {!searching ? (
           <>
@@ -574,6 +580,8 @@ export default function GrammarSyllabusScreen() {
             </View>
           );
         })}
+
+        {showExamRound ? <View style={examRoundWrap}><ExamRoundButton level="A1" /></View> : null}
 
         {!searching ? <Text style={[styles.footNote, { color: colors.tabIconDefault }]}>{s.grammar.footNote}</Text> : null}
       </ScrollView>
