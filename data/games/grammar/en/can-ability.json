@@ -991,32 +991,32 @@
       "id": "ca-fix-02",
       "kind": "fix",
       "trial": true,
-      "es": "I can to swim.",
+      "es": "He can't cooks.",
       "wrongIndex": 2,
-      "answer": "swim",
+      "answer": "cook",
       "explain": {
-        "en": "After “can” we do not use “to”: I can swim.",
-        "es": "Después de «can» no se usa «to»: I can swim."
+        "en": "After “can’t” the verb stays in the base form, with no -s: He can't cook.",
+        "es": "Después de «can’t» el verbo queda en la forma base, sin -s: He can't cook."
       },
       "tr": {
-        "en": "I can swim swim.",
-        "es": "Sé nadar."
+        "en": "He can't cook.",
+        "es": "Él no sabe cocinar."
       }
     },
     {
       "id": "ca-fix-03",
       "kind": "fix",
       "trial": true,
-      "es": "Do you can cook?",
-      "wrongIndex": 0,
-      "answer": "Can",
+      "es": "Can she dances?",
+      "wrongIndex": 2,
+      "answer": "dance",
       "explain": {
-        "en": "Questions with “can” start with “Can”, not “do”: Can you cook?",
-        "es": "Las preguntas con «can» empiezan con «Can», no con «do»: Can you cook?"
+        "en": "In a question with “can” the verb stays in the base form: Can she dance?",
+        "es": "En una pregunta con «can» el verbo queda en la forma base: Can she dance?"
       },
       "tr": {
-        "en": "Can you can cook?",
-        "es": "¿Sabes cocinar?"
+        "en": "Can she dance?",
+        "es": "¿Sabe bailar?"
       }
     },
     {
@@ -1039,16 +1039,16 @@
       "id": "ca-fix-05",
       "kind": "fix",
       "trial": true,
-      "es": "Can she to cook?",
+      "es": "I can speaking English.",
       "wrongIndex": 2,
-      "answer": "cook",
+      "answer": "speak",
       "explain": {
-        "en": "After “can” we do not use “to”: Can she cook?",
-        "es": "Después de «can» no se usa «to»: Can she cook?"
+        "en": "After “can” the verb is the base form, with no -ing: I can speak English.",
+        "es": "Después de «can» el verbo es la forma base, sin -ing: I can speak English."
       },
       "tr": {
-        "en": "Can she cook cook?",
-        "es": "¿Sabe cocinar?"
+        "en": "I can speak English.",
+        "es": "Sé hablar inglés."
       }
     },
     {
@@ -1205,6 +1205,100 @@
         "es": "¿Sabe cocinar tu madre?"
       },
       "es": "Can your mother cook?"
+    },
+    {
+      "kind": "why",
+      "id": "ca-25",
+      "es": "I can run fast.",
+      "target": "can",
+      "tr": {
+        "en": "I can run fast.",
+        "es": "Puedo correr rápido."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "ability: I am able to do it",
+            "es": "habilidad: soy capaz de hacerlo"
+          }
+        },
+        {
+          "text": {
+            "en": "obligation: I have to do it",
+            "es": "obligación: tengo que hacerlo"
+          },
+          "wrong": {
+            "en": "Obligation is must or have to. Can says what someone is able to do.",
+            "es": "La obligación es must o have to. Can dice lo que alguien es capaz de hacer."
+          }
+        },
+        {
+          "text": {
+            "en": "a promise about the future: I will",
+            "es": "una promesa sobre el futuro: I will"
+          },
+          "wrong": {
+            "en": "A promise or plan uses will. Here the sentence says I am able to run fast now.",
+            "es": "Una promesa o un plan usa will. Aquí la oración dice que ahora soy capaz de correr rápido."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "ca-26",
+      "es": "He can speak three languages.",
+      "target": "speak",
+      "tr": {
+        "en": "He can speak three languages.",
+        "es": "Él habla tres idiomas."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "the base form after can: no -s, no to",
+            "es": "la forma base tras can: sin -s ni to"
+          }
+        },
+        {
+          "text": {
+            "en": "speaks: the -s of he",
+            "es": "speaks: la -s de he"
+          },
+          "wrong": {
+            "en": "After can the verb stays in the base form, even with he: he can speak.",
+            "es": "Tras can el verbo queda en la forma base, incluso con he: he can speak."
+          }
+        },
+        {
+          "text": {
+            "en": "to speak: can needs to",
+            "es": "to speak: can necesita to"
+          },
+          "wrong": {
+            "en": "Can is followed straight by the base verb: he can speak, not he can to speak.",
+            "es": "Can va seguido directamente del verbo base: he can speak, no he can to speak."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "ca-23",
+      "kind": "form",
+      "verb": "speak",
+      "person": "I",
+      "answer": "can speak",
+      "table": "ca-forms"
+    },
+    {
+      "id": "ca-24",
+      "kind": "form",
+      "verb": "swim",
+      "person": "you",
+      "answer": "can swim",
+      "table": "ca-forms"
     }
   ]
 }

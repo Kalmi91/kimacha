@@ -1148,6 +1148,108 @@
         "es": "Hoy no hay autobús."
       },
       "es": "There is not a bus today."
+    },
+    {
+      "kind": "why",
+      "id": "ta-25",
+      "es": "There are some books on the desk.",
+      "target": "are",
+      "tr": {
+        "en": "There are some books on the desk.",
+        "es": "Hay algunos libros en el escritorio."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "the noun after it is plural, so the verb is plural too",
+            "es": "el nombre que sigue es plural, así que el verbo también es plural"
+          }
+        },
+        {
+          "text": {
+            "en": "There always takes is",
+            "es": "There siempre lleva is"
+          },
+          "wrong": {
+            "en": "There does not decide the verb: it agrees with the noun that comes after it, books, so are.",
+            "es": "There no decide el verbo: este concuerda con el nombre que va después, books, así que are."
+          }
+        },
+        {
+          "text": {
+            "en": "the question form, with the verb first",
+            "es": "la forma de pregunta, con el verbo primero"
+          },
+          "wrong": {
+            "en": "This is a statement, so there goes first. The verb goes before there only in questions.",
+            "es": "Esto es una afirmación, así que there va primero. El verbo va antes de there solo en las preguntas."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "ta-26",
+      "es": "There isn't any juice.",
+      "target": "any",
+      "tr": {
+        "en": "There isn't any juice.",
+        "es": "No hay jugo."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "in negatives we use this word, not some",
+            "es": "en negativas se usa esta palabra, no some"
+          }
+        },
+        {
+          "text": {
+            "en": "this word works with the plural only",
+            "es": "esta palabra solo se usa con plurales"
+          },
+          "wrong": {
+            "en": "Any works with plural and uncountable nouns: juice is uncountable, and any still fits.",
+            "es": "Any se usa con plurales e incontables: juice es incontable, y any sigue valiendo."
+          }
+        },
+        {
+          "text": {
+            "en": "some is needed: There isn't some juice",
+            "es": "hace falta some: There isn't some juice"
+          },
+          "wrong": {
+            "en": "After a negative, English uses any: There isn't any juice. Some belongs in statements.",
+            "es": "Tras una negación el inglés usa any: There isn't any juice. Some va en las afirmaciones."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "ta-23",
+      "kind": "form",
+      "verb": "singular",
+      "person": "negative",
+      "q": {
+        "en": "Which words do you use to say that one thing does not exist? (___ a pen on the desk.)",
+        "es": "¿Qué palabras se usan para decir que una sola cosa no existe? (___ a pen on the desk.)"
+      },
+      "answer": "there isn't",
+      "table": "te-forms"
+    },
+    {
+      "id": "ta-24",
+      "kind": "form",
+      "verb": "plural",
+      "person": "negative",
+      "q": {
+        "en": "Which words do you use to say that several things do not exist? (___ any pens on the desk.)",
+        "es": "¿Qué palabras se usan para decir que varias cosas no existen? (___ any pens on the desk.)"
+      },
+      "answer": "there aren't",
+      "table": "te-forms"
     }
   ]
 }

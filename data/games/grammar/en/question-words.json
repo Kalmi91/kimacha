@@ -1176,6 +1176,84 @@
         "es": "¿Cuándo abre el banco?"
       },
       "es": "When does the bank open?"
+    },
+    {
+      "kind": "why",
+      "id": "qw-21",
+      "es": "Who is that woman?",
+      "target": "Who",
+      "tr": {
+        "en": "Who is that woman?",
+        "es": "¿Quién es esa mujer?"
+      },
+      "options": [
+        {
+          "text": {
+            "en": "it asks about a person",
+            "es": "pregunta por una persona"
+          }
+        },
+        {
+          "text": {
+            "en": "it asks about a thing: What",
+            "es": "pregunta por una cosa: What"
+          },
+          "wrong": {
+            "en": "What asks about things. For a person we say Who.",
+            "es": "What pregunta por cosas. Para una persona decimos Who."
+          }
+        },
+        {
+          "text": {
+            "en": "it asks about a place: Where",
+            "es": "pregunta por un lugar: Where"
+          },
+          "wrong": {
+            "en": "Where asks about a place. The answer here is a person, so Who.",
+            "es": "Where pregunta por un lugar. Aquí la respuesta es una persona, así que Who."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "qw-22",
+      "es": "How much is this bag?",
+      "target": "How much",
+      "tr": {
+        "en": "How much is this bag?",
+        "es": "¿Cuánto cuesta esta bolsa?"
+      },
+      "options": [
+        {
+          "text": {
+            "en": "it asks about the price or an amount",
+            "es": "pregunta por el precio o una cantidad"
+          }
+        },
+        {
+          "text": {
+            "en": "it asks about a number of things: How many",
+            "es": "pregunta por un número de cosas: How many"
+          },
+          "wrong": {
+            "en": "How many is for things we count: how many bags. The price is asked with How much.",
+            "es": "How many es para cosas que contamos: how many bags. El precio se pregunta con How much."
+          }
+        },
+        {
+          "text": {
+            "en": "it asks about age: How old",
+            "es": "pregunta por la edad: How old"
+          },
+          "wrong": {
+            "en": "How old asks about age. A price or an amount is asked with How much.",
+            "es": "How old pregunta por la edad. El precio o la cantidad se pregunta con How much."
+          }
+        }
+      ],
+      "correctIndex": 0
     }
   ]
 }

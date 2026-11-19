@@ -1321,6 +1321,134 @@
         "en": "We both know which one it is, so we use “the”.",
         "es": "Los dos sabemos de cuál se trata, así que usamos «the»."
       }
+    },
+    {
+      "id": "ar-noun-01",
+      "kind": "noun",
+      "trial": true,
+      "base": "umbrella",
+      "ask": {
+        "en": "Write it with a or an (one of many)",
+        "es": "Escríbelo con a o an (uno cualquiera)"
+      },
+      "answer": "an umbrella",
+      "why": {
+        "en": "Umbrella starts with a vowel sound, so we use an.",
+        "es": "Umbrella empieza con sonido vocálico, así que se usa an."
+      }
+    },
+    {
+      "id": "ar-noun-02",
+      "kind": "noun",
+      "trial": true,
+      "base": "hour",
+      "ask": {
+        "en": "Write it with a or an (one of many)",
+        "es": "Escríbelo con a o an (uno cualquiera)"
+      },
+      "answer": "an hour",
+      "why": {
+        "en": "The h in hour is silent, so the word starts with a vowel sound: an hour.",
+        "es": "La h de hour es muda, así que la palabra empieza con sonido vocálico: an hour."
+      }
+    },
+    {
+      "id": "ar-noun-03",
+      "kind": "noun",
+      "trial": true,
+      "base": "university",
+      "ask": {
+        "en": "Write it with a or an (one of many)",
+        "es": "Escríbelo con a o an (uno cualquiera)"
+      },
+      "answer": "a university",
+      "why": {
+        "en": "University starts with the sound “yoo”, a consonant sound, so we use a.",
+        "es": "University empieza con el sonido «yu», un sonido consonántico, así que se usa a."
+      }
+    },
+    {
+      "id": "ar-noun-04",
+      "kind": "noun",
+      "trial": true,
+      "base": "banana",
+      "ask": {
+        "en": "Write it with a or an (one of many)",
+        "es": "Escríbelo con a o an (uno cualquiera)"
+      },
+      "answer": "a banana",
+      "why": {
+        "en": "Banana starts with a consonant sound, so we use a.",
+        "es": "Banana empieza con sonido consonántico, así que se usa a."
+      }
+    },
+    {
+      "id": "ar-noun-05",
+      "kind": "noun",
+      "trial": true,
+      "base": "orange",
+      "ask": {
+        "en": "Write it with a or an (one of many)",
+        "es": "Escríbelo con a o an (uno cualquiera)"
+      },
+      "answer": "an orange",
+      "why": {
+        "en": "Orange starts with a vowel sound, so we use an.",
+        "es": "Orange empieza con sonido vocálico, así que se usa an."
+      }
+    },
+    {
+      "id": "ar-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "I eat an apple.",
+        "es": "Como una manzana."
+      },
+      "es": "I eat an apple."
+    },
+    {
+      "id": "ar-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "He is an engineer.",
+        "es": "Él es ingeniero."
+      },
+      "es": "He is an engineer."
+    },
+    {
+      "id": "ar-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "Please open the window.",
+        "es": "Abre la ventana, por favor."
+      },
+      "es": "Please open the window."
+    },
+    {
+      "id": "ar-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "We have a dog and a cat.",
+        "es": "Tenemos un perro y un gato."
+      },
+      "es": "We have a dog and a cat.",
+      "accept": [
+        "We have a cat and a dog."
+      ]
+    },
+    {
+      "id": "ar-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "The teacher has a red bag.",
+        "es": "El profesor tiene una bolsa roja."
+      },
+      "es": "The teacher has a red bag."
     }
   ]
 }

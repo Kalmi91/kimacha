@@ -1277,6 +1277,64 @@
         "en": "The weather uses “it” and to be: “It is sunny.”",
         "es": "El tiempo lleva «it» y to be: «It is sunny.»"
       }
+    },
+    {
+      "id": "tb-31",
+      "kind": "form",
+      "verb": "to be",
+      "person": "they",
+      "answer": "are",
+      "table": "be-present"
+    },
+    {
+      "id": "tb-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "My mother is at home.",
+        "es": "Mi madre está en casa."
+      },
+      "es": "My mother is at home."
+    },
+    {
+      "id": "tb-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "We are not tired.",
+        "es": "No estamos cansados."
+      },
+      "es": "We are not tired."
+    },
+    {
+      "id": "tb-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "Are you from Mexico?",
+        "es": "¿Eres de México?"
+      },
+      "es": "Are you from Mexico?"
+    },
+    {
+      "id": "tb-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "The keys are on the table.",
+        "es": "Las llaves están en la mesa."
+      },
+      "es": "The keys are on the table."
+    },
+    {
+      "id": "tb-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "They are my friends.",
+        "es": "Ellos son mis amigos."
+      },
+      "es": "They are my friends."
     }
   ]
 }

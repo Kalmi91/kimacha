@@ -1313,6 +1313,84 @@
         "es": "Él está escribiendo una carta."
       },
       "es": "He is writing a letter."
+    },
+    {
+      "kind": "why",
+      "id": "pc-26",
+      "es": "Look! It is raining.",
+      "target": "is raining",
+      "tr": {
+        "en": "Look! It is raining.",
+        "es": "¡Mira! Está lloviendo."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "it is happening right now",
+            "es": "está ocurriendo ahora mismo"
+          }
+        },
+        {
+          "text": {
+            "en": "it is a habit, like every day",
+            "es": "es un hábito, como todos los días"
+          },
+          "wrong": {
+            "en": "A habit uses the present simple: It rains a lot here. Look! points to this moment.",
+            "es": "Un hábito usa el presente simple: It rains a lot here. Look! señala este momento."
+          }
+        },
+        {
+          "text": {
+            "en": "it is in the past: it rained",
+            "es": "es pasado: it rained"
+          },
+          "wrong": {
+            "en": "Is raining is present: the rain is falling now. The past would be it rained.",
+            "es": "Is raining es presente: la lluvia cae ahora. El pasado sería it rained."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "pc-27",
+      "es": "I am not sleeping.",
+      "target": "not",
+      "tr": {
+        "en": "I am not sleeping.",
+        "es": "No estoy durmiendo."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "not goes after am / is / are, before the -ing verb",
+            "es": "not va después de am / is / are, antes del verbo con -ing"
+          }
+        },
+        {
+          "text": {
+            "en": "do not goes before the verb: I do not sleeping",
+            "es": "do not va antes del verbo: I do not sleeping"
+          },
+          "wrong": {
+            "en": "The helper here is to be, so not goes after it. Do is for the present simple.",
+            "es": "Aquí el auxiliar es to be, así que not va después. Do es para el presente simple."
+          }
+        },
+        {
+          "text": {
+            "en": "not goes at the end: I am sleeping not",
+            "es": "not va al final: I am sleeping not"
+          },
+          "wrong": {
+            "en": "Not goes right after am, is or are: I am not sleeping.",
+            "es": "Not va justo después de am, is o are: I am not sleeping."
+          }
+        }
+      ],
+      "correctIndex": 0
     }
   ]
 }
