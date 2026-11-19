@@ -85,7 +85,7 @@ describe.each([
   });
 
   it('a course that has lessons but no Big test data (Spanish speaker learning English): the normal list, no card', async () => {
-    await getDb().setOnboarding('es', 'en');
+    await getDb().setOnboarding('es', 'de');
     await open();
     expect(screen.getByTestId('grammar-random-start')).toBeTruthy();
     expect(screen.queryByTestId('grammar-no-course')).toBeNull();

@@ -1,0 +1,3619 @@
+{
+  "lang": "en",
+  "version": 1,
+  "items": [
+    {
+      "id": "en-bt-a1-01",
+      "level": "A1",
+      "topic": "basic_verbs",
+      "kind": "gap",
+      "lines": [
+        "– What do you do on Sundays?",
+        "– I ___ football with my friends."
+      ],
+      "options": [
+        "plays",
+        "playing",
+        "play",
+        "am play"
+      ],
+      "correct": 2,
+      "why": "After I the base verb is used: play."
+    },
+    {
+      "id": "en-bt-a1-02",
+      "level": "A1",
+      "topic": "basic_verbs",
+      "kind": "gap",
+      "lines": [
+        "– Why are you so tired?",
+        "– I ___ up at five every day."
+      ],
+      "options": [
+        "get",
+        "gets",
+        "getting",
+        "am get"
+      ],
+      "correct": 0,
+      "why": "With I the base form get is used."
+    },
+    {
+      "id": "en-bt-a1-03",
+      "level": "A1",
+      "topic": "basic_verbs",
+      "kind": "gap",
+      "lines": [
+        "– Can you help me with this?",
+        "– Sorry, I ___ the answer."
+      ],
+      "options": [
+        "no know",
+        "doesn't know",
+        "not know",
+        "don't know"
+      ],
+      "correct": 3,
+      "why": "Negative with I: don't + base verb."
+    },
+    {
+      "id": "en-bt-a1-04",
+      "level": "A1",
+      "topic": "basic_verbs",
+      "kind": "gap",
+      "lines": [
+        "– What time does she start?",
+        "– She ___ work at nine."
+      ],
+      "options": [
+        "start",
+        "starts",
+        "starting",
+        "is start"
+      ],
+      "correct": 1,
+      "why": "After she the verb takes -s: starts."
+    },
+    {
+      "id": "en-bt-a1-05",
+      "level": "A1",
+      "topic": "to_be",
+      "kind": "gap",
+      "lines": [
+        "– Where are you from?",
+        "– I ___ from Canada."
+      ],
+      "options": [
+        "is",
+        "are",
+        "am",
+        "be"
+      ],
+      "correct": 2,
+      "why": "With I the form of be is am."
+    },
+    {
+      "id": "en-bt-a1-06",
+      "level": "A1",
+      "topic": "to_be",
+      "kind": "gap",
+      "lines": [
+        "– Is your brother at home?",
+        "– No, he ___ at school."
+      ],
+      "options": [
+        "is",
+        "are",
+        "am",
+        "be"
+      ],
+      "correct": 0,
+      "why": "With he the form of be is is."
+    },
+    {
+      "id": "en-bt-a1-07",
+      "level": "A1",
+      "topic": "to_be",
+      "kind": "gap",
+      "lines": [
+        "– ___ your parents here?",
+        "– No, they are at work."
+      ],
+      "options": [
+        "Is",
+        "Am",
+        "Do",
+        "Are"
+      ],
+      "correct": 3,
+      "why": "Parents is plural, so Are comes first."
+    },
+    {
+      "id": "en-bt-a1-08",
+      "level": "A1",
+      "topic": "to_be",
+      "kind": "gap",
+      "lines": [
+        "– How old is Tom?",
+        "– He ___ ten years old."
+      ],
+      "options": [
+        "has",
+        "is",
+        "are",
+        "does"
+      ],
+      "correct": 1,
+      "why": "Age uses be: He is ten."
+    },
+    {
+      "id": "en-bt-a1-09",
+      "level": "A1",
+      "topic": "articles",
+      "kind": "gap",
+      "lines": [
+        "– What do you have in your bag?",
+        "– I have ___ apple and a book."
+      ],
+      "options": [
+        "a",
+        "the",
+        "an",
+        "some"
+      ],
+      "correct": 2,
+      "why": "Apple starts with a vowel sound, so an."
+    },
+    {
+      "id": "en-bt-a1-10",
+      "level": "A1",
+      "topic": "articles",
+      "kind": "gap",
+      "lines": [
+        "– Look! ___ sun is very bright today."
+      ],
+      "options": [
+        "The",
+        "A",
+        "An",
+        "–"
+      ],
+      "correct": 0,
+      "why": "There is only one sun, so we use the."
+    },
+    {
+      "id": "en-bt-a1-11",
+      "level": "A1",
+      "topic": "articles",
+      "kind": "gap",
+      "lines": [
+        "– What does your sister do?",
+        "– She is ___ doctor."
+      ],
+      "options": [
+        "an",
+        "the",
+        "–",
+        "a"
+      ],
+      "correct": 3,
+      "why": "Jobs take a/an; doctor starts with a consonant sound."
+    },
+    {
+      "id": "en-bt-a1-12",
+      "level": "A1",
+      "topic": "articles",
+      "kind": "gap",
+      "lines": [
+        "– Is there a bank near here?",
+        "– Yes, it is next to ___ hotel."
+      ],
+      "options": [
+        "a",
+        "the",
+        "an",
+        "–"
+      ],
+      "correct": 1,
+      "why": "Both speakers know which hotel, so the."
+    },
+    {
+      "id": "en-bt-a1-13",
+      "level": "A1",
+      "topic": "present_simple",
+      "kind": "gap",
+      "lines": [
+        "– Does Maria like pizza?",
+        "– Yes, she ___ it every Friday."
+      ],
+      "options": [
+        "eat",
+        "eating",
+        "eats",
+        "is eat"
+      ],
+      "correct": 2,
+      "why": "She takes the -s form: eats."
+    },
+    {
+      "id": "en-bt-a1-14",
+      "level": "A1",
+      "topic": "present_simple",
+      "kind": "gap",
+      "lines": [
+        "– Where do they live?",
+        "– They ___ in a small town."
+      ],
+      "options": [
+        "live",
+        "lives",
+        "living",
+        "are live"
+      ],
+      "correct": 0,
+      "why": "With they the base form live is used."
+    },
+    {
+      "id": "en-bt-a1-15",
+      "level": "A1",
+      "topic": "present_simple",
+      "kind": "gap",
+      "lines": [
+        "– Do you work on Saturdays?",
+        "– No, I ___ on weekends."
+      ],
+      "options": [
+        "doesn't work",
+        "not work",
+        "no work",
+        "don't work"
+      ],
+      "correct": 3,
+      "why": "Negative with I: don't + base verb."
+    },
+    {
+      "id": "en-bt-a1-16",
+      "level": "A1",
+      "topic": "present_simple",
+      "kind": "gap",
+      "lines": [
+        "– What does your father do?",
+        "– He ___ at a bank."
+      ],
+      "options": [
+        "work",
+        "works",
+        "working",
+        "is work"
+      ],
+      "correct": 1,
+      "why": "He takes -s: works."
+    },
+    {
+      "id": "en-bt-a1-17",
+      "level": "A1",
+      "topic": "plurals",
+      "kind": "gap",
+      "lines": [
+        "– How many children do you have?",
+        "– I have two ___."
+      ],
+      "options": [
+        "boyes",
+        "boy",
+        "boys",
+        "boies"
+      ],
+      "correct": 2,
+      "why": "Regular nouns add -s: boys."
+    },
+    {
+      "id": "en-bt-a1-18",
+      "level": "A1",
+      "topic": "plurals",
+      "kind": "gap",
+      "lines": [
+        "– What are those?",
+        "– They are my ___."
+      ],
+      "options": [
+        "children",
+        "childs",
+        "childrens",
+        "childes"
+      ],
+      "correct": 0,
+      "why": "Child has an irregular plural: children."
+    },
+    {
+      "id": "en-bt-a1-19",
+      "level": "A1",
+      "topic": "plurals",
+      "kind": "gap",
+      "lines": [
+        "– Do you need anything from the shop?",
+        "– Yes, three ___, please."
+      ],
+      "options": [
+        "tomatos",
+        "tomatoe",
+        "tomatoies",
+        "tomatoes"
+      ],
+      "correct": 3,
+      "why": "Nouns ending in -o like tomato add -es."
+    },
+    {
+      "id": "en-bt-a1-20",
+      "level": "A1",
+      "topic": "plurals",
+      "kind": "gap",
+      "lines": [
+        "– Is that your cat?",
+        "– No, I have two ___, and both are black."
+      ],
+      "options": [
+        "mouses",
+        "mice",
+        "mices",
+        "mouse"
+      ],
+      "correct": 1,
+      "why": "Mouse has an irregular plural: mice."
+    },
+    {
+      "id": "en-bt-a1-21",
+      "level": "A1",
+      "topic": "possessives",
+      "kind": "gap",
+      "lines": [
+        "– Whose bag is this?",
+        "– It is ___ bag. I am Anna."
+      ],
+      "options": [
+        "me",
+        "mine",
+        "my",
+        "I"
+      ],
+      "correct": 2,
+      "why": "Before a noun we use my, not me."
+    },
+    {
+      "id": "en-bt-a1-22",
+      "level": "A1",
+      "topic": "possessives",
+      "kind": "gap",
+      "lines": [
+        "– Is that Tom's car?",
+        "– Yes, it is ___ car."
+      ],
+      "options": [
+        "his",
+        "he",
+        "him",
+        "her"
+      ],
+      "correct": 0,
+      "why": "For a man, the possessive is his."
+    },
+    {
+      "id": "en-bt-a1-23",
+      "level": "A1",
+      "topic": "possessives",
+      "kind": "gap",
+      "lines": [
+        "– Where do you and Ben live?",
+        "– ___ house is near the park."
+      ],
+      "options": [
+        "We",
+        "Us",
+        "Ours",
+        "Our"
+      ],
+      "correct": 3,
+      "why": "Our is the possessive for we."
+    },
+    {
+      "id": "en-bt-a1-24",
+      "level": "A1",
+      "topic": "possessives",
+      "kind": "gap",
+      "lines": [
+        "– Do you like Ana and Luis?",
+        "– Yes, I love ___ new apartment."
+      ],
+      "options": [
+        "they",
+        "their",
+        "them",
+        "there"
+      ],
+      "correct": 1,
+      "why": "Their is the possessive for they."
+    },
+    {
+      "id": "en-bt-a1-25",
+      "level": "A1",
+      "topic": "there_is_are",
+      "kind": "gap",
+      "lines": [
+        "– What is in the room?",
+        "– ___ a table and two chairs."
+      ],
+      "options": [
+        "There are",
+        "It are",
+        "There is",
+        "They is"
+      ],
+      "correct": 2,
+      "why": "A table is singular, so There is."
+    },
+    {
+      "id": "en-bt-a1-26",
+      "level": "A1",
+      "topic": "there_is_are",
+      "kind": "gap",
+      "lines": [
+        "– ___ any milk in the fridge?",
+        "– No, we need to buy some."
+      ],
+      "options": [
+        "Is there",
+        "Are there",
+        "Have there",
+        "There is"
+      ],
+      "correct": 0,
+      "why": "Milk is uncountable, so Is there."
+    },
+    {
+      "id": "en-bt-a1-27",
+      "level": "A1",
+      "topic": "there_is_are",
+      "kind": "gap",
+      "lines": [
+        "– Look at the sky!",
+        "– Yes, there ___ many clouds."
+      ],
+      "options": [
+        "is",
+        "be",
+        "have",
+        "are"
+      ],
+      "correct": 3,
+      "why": "Clouds is plural, so there are."
+    },
+    {
+      "id": "en-bt-a1-28",
+      "level": "A1",
+      "topic": "there_is_are",
+      "kind": "gap",
+      "lines": [
+        "– Is the park big?",
+        "– Yes, but there ___ any benches."
+      ],
+      "options": [
+        "isn't",
+        "aren't",
+        "not",
+        "don't"
+      ],
+      "correct": 1,
+      "why": "Negative with plural benches: there aren't."
+    },
+    {
+      "id": "en-bt-a1-29",
+      "level": "A1",
+      "topic": "can_ability",
+      "kind": "gap",
+      "lines": [
+        "– Can your sister swim?",
+        "– Yes, she ___ very well."
+      ],
+      "options": [
+        "cans",
+        "is can",
+        "can",
+        "does can"
+      ],
+      "correct": 2,
+      "why": "Can does not change with she."
+    },
+    {
+      "id": "en-bt-a1-30",
+      "level": "A1",
+      "topic": "can_ability",
+      "kind": "gap",
+      "lines": [
+        "– Can you play the piano?",
+        "– No, I ___."
+      ],
+      "options": [
+        "can't",
+        "don't can",
+        "can not to",
+        "am not can"
+      ],
+      "correct": 0,
+      "why": "The short negative of can is can't."
+    },
+    {
+      "id": "en-bt-a1-31",
+      "level": "A1",
+      "topic": "can_ability",
+      "kind": "gap",
+      "lines": [
+        "– Let's go to the beach.",
+        "– I can't ___; I have a broken arm."
+      ],
+      "options": [
+        "swimming",
+        "to swim",
+        "swims",
+        "swim"
+      ],
+      "correct": 3,
+      "why": "After can we use the base verb."
+    },
+    {
+      "id": "en-bt-a1-32",
+      "level": "A1",
+      "topic": "can_ability",
+      "kind": "gap",
+      "lines": [
+        "– ___ you help me with my homework?",
+        "– Of course."
+      ],
+      "options": [
+        "Do",
+        "Can",
+        "Are",
+        "Does"
+      ],
+      "correct": 1,
+      "why": "For a question about ability we put Can first."
+    },
+    {
+      "id": "en-bt-a1-33",
+      "level": "A1",
+      "topic": "question_words",
+      "kind": "gap",
+      "lines": [
+        "– ___ is your birthday?",
+        "– It is in May."
+      ],
+      "options": [
+        "Where",
+        "Who",
+        "When",
+        "Why"
+      ],
+      "correct": 2,
+      "why": "The answer is a time, so we ask When."
+    },
+    {
+      "id": "en-bt-a1-34",
+      "level": "A1",
+      "topic": "question_words",
+      "kind": "gap",
+      "lines": [
+        "– ___ do you live?",
+        "– In Madrid."
+      ],
+      "options": [
+        "Where",
+        "When",
+        "What",
+        "Who"
+      ],
+      "correct": 0,
+      "why": "The answer is a place, so we ask Where."
+    },
+    {
+      "id": "en-bt-a1-35",
+      "level": "A1",
+      "topic": "question_words",
+      "kind": "gap",
+      "lines": [
+        "– ___ is that man?",
+        "– He is my uncle."
+      ],
+      "options": [
+        "What",
+        "Where",
+        "How",
+        "Who"
+      ],
+      "correct": 3,
+      "why": "The answer is a person, so we ask Who."
+    },
+    {
+      "id": "en-bt-a1-36",
+      "level": "A1",
+      "topic": "question_words",
+      "kind": "gap",
+      "lines": [
+        "– ___ do you go to bed so late?",
+        "– Because I work at night."
+      ],
+      "options": [
+        "What",
+        "Why",
+        "Who",
+        "Where"
+      ],
+      "correct": 1,
+      "why": "The answer is a reason (Because), so we ask Why."
+    },
+    {
+      "id": "en-bt-a1-37",
+      "level": "A1",
+      "topic": "present_continuous",
+      "kind": "gap",
+      "lines": [
+        "– Where is Sara?",
+        "– She ___ a shower now."
+      ],
+      "options": [
+        "takes",
+        "take",
+        "is taking",
+        "taking"
+      ],
+      "correct": 2,
+      "why": "An action now uses is + verb-ing."
+    },
+    {
+      "id": "en-bt-a1-38",
+      "level": "A1",
+      "topic": "present_continuous",
+      "kind": "gap",
+      "lines": [
+        "– What are the kids doing?",
+        "– They ___ in the garden."
+      ],
+      "options": [
+        "are playing",
+        "play",
+        "is playing",
+        "plays"
+      ],
+      "correct": 0,
+      "why": "They needs are + verb-ing."
+    },
+    {
+      "id": "en-bt-a1-39",
+      "level": "A1",
+      "topic": "present_continuous",
+      "kind": "gap",
+      "lines": [
+        "– Can I call you now?",
+        "– Not now. I ___ dinner."
+      ],
+      "options": [
+        "cook",
+        "cooks",
+        "am cook",
+        "am cooking"
+      ],
+      "correct": 3,
+      "why": "I needs am + verb-ing for something happening now."
+    },
+    {
+      "id": "en-bt-a1-40",
+      "level": "A1",
+      "topic": "present_continuous",
+      "kind": "gap",
+      "lines": [
+        "– Is it raining?",
+        "– No, it ___."
+      ],
+      "options": [
+        "doesn't rain",
+        "isn't raining",
+        "not raining",
+        "isn't rain"
+      ],
+      "correct": 1,
+      "why": "Negative: isn't + verb-ing."
+    },
+    {
+      "id": "en-bt-a1-41",
+      "level": "A1",
+      "topic": "prepositions",
+      "kind": "gap",
+      "lines": [
+        "– Where is my phone?",
+        "– It is ___ the table."
+      ],
+      "options": [
+        "in",
+        "at",
+        "on",
+        "to"
+      ],
+      "correct": 2,
+      "why": "A phone lies on top of a table, so on."
+    },
+    {
+      "id": "en-bt-a1-42",
+      "level": "A1",
+      "topic": "prepositions",
+      "kind": "gap",
+      "lines": [
+        "– Where is the cat?",
+        "– It is ___ the box."
+      ],
+      "options": [
+        "in",
+        "on",
+        "at",
+        "to"
+      ],
+      "correct": 0,
+      "why": "The cat is inside the box, so in."
+    },
+    {
+      "id": "en-bt-a1-43",
+      "level": "A1",
+      "topic": "prepositions",
+      "kind": "gap",
+      "lines": [
+        "– What time is the class?",
+        "– It is ___ nine o'clock."
+      ],
+      "options": [
+        "in",
+        "on",
+        "to",
+        "at"
+      ],
+      "correct": 3,
+      "why": "Clock times use at."
+    },
+    {
+      "id": "en-bt-a1-44",
+      "level": "A1",
+      "topic": "prepositions",
+      "kind": "gap",
+      "lines": [
+        "– When is the party?",
+        "– It is ___ Saturday."
+      ],
+      "options": [
+        "in",
+        "on",
+        "at",
+        "to"
+      ],
+      "correct": 1,
+      "why": "Days use on."
+    },
+    {
+      "id": "en-bt-a1-45",
+      "level": "A1",
+      "topic": "have_got",
+      "kind": "gap",
+      "lines": [
+        "– Have you got a car?",
+        "– No, but I ___ a bike."
+      ],
+      "options": [
+        "has got",
+        "am got",
+        "have got",
+        "got have"
+      ],
+      "correct": 2,
+      "why": "With I we use have got."
+    },
+    {
+      "id": "en-bt-a1-46",
+      "level": "A1",
+      "topic": "have_got",
+      "kind": "gap",
+      "lines": [
+        "– Does Lily have a brother?",
+        "– Yes, she ___ two brothers."
+      ],
+      "options": [
+        "has got",
+        "have got",
+        "is got",
+        "got"
+      ],
+      "correct": 0,
+      "why": "With she we use has got."
+    },
+    {
+      "id": "en-bt-a1-47",
+      "level": "A1",
+      "topic": "have_got",
+      "kind": "gap",
+      "lines": [
+        "– ___ they got any children?",
+        "– Yes, they have a daughter."
+      ],
+      "options": [
+        "Has",
+        "Do",
+        "Are",
+        "Have"
+      ],
+      "correct": 3,
+      "why": "Question with they: Have they got."
+    },
+    {
+      "id": "en-bt-a1-48",
+      "level": "A1",
+      "topic": "have_got",
+      "kind": "gap",
+      "lines": [
+        "– Is the apartment big?",
+        "– No, it ___ a garden."
+      ],
+      "options": [
+        "haven't got",
+        "hasn't got",
+        "doesn't got",
+        "isn't got"
+      ],
+      "correct": 1,
+      "why": "Negative with it: hasn't got."
+    },
+    {
+      "id": "en-bt-a2-01",
+      "level": "A2",
+      "topic": "past_simple_regular",
+      "kind": "gap",
+      "lines": [
+        "– Did you enjoy the film?",
+        "– Yes, we ___ it a lot."
+      ],
+      "options": [
+        "like",
+        "did liked",
+        "liked",
+        "were like"
+      ],
+      "correct": 2,
+      "why": "Regular verbs add -ed in the past: liked."
+    },
+    {
+      "id": "en-bt-a2-02",
+      "level": "A2",
+      "topic": "past_simple_regular",
+      "kind": "gap",
+      "lines": [
+        "– Where were you yesterday?",
+        "– I ___ at home all day."
+      ],
+      "options": [
+        "stayed",
+        "stay",
+        "did stay",
+        "staying"
+      ],
+      "correct": 0,
+      "why": "Past of stay: stayed."
+    },
+    {
+      "id": "en-bt-a2-03",
+      "level": "A2",
+      "topic": "past_simple_regular",
+      "kind": "gap",
+      "lines": [
+        "– Did he call you?",
+        "– No, he ___ me."
+      ],
+      "options": [
+        "didn't called",
+        "not called",
+        "doesn't call",
+        "didn't call"
+      ],
+      "correct": 3,
+      "why": "After didn't we use the base verb."
+    },
+    {
+      "id": "en-bt-a2-04",
+      "level": "A2",
+      "topic": "past_simple_regular",
+      "kind": "gap",
+      "lines": [
+        "– Why is the kitchen clean?",
+        "– I ___ it this morning."
+      ],
+      "options": [
+        "clean",
+        "cleaned",
+        "cleans",
+        "did cleaned"
+      ],
+      "correct": 1,
+      "why": "Regular past of clean: cleaned."
+    },
+    {
+      "id": "en-bt-a2-05",
+      "level": "A2",
+      "topic": "past_simple_regular",
+      "kind": "gap",
+      "lines": [
+        "– How did you get home?",
+        "– We ___ for ten minutes and then took a taxi."
+      ],
+      "options": [
+        "walk",
+        "walkd",
+        "walked",
+        "did walked"
+      ],
+      "correct": 2,
+      "why": "Regular past of walk: walked."
+    },
+    {
+      "id": "en-bt-a2-06",
+      "level": "A2",
+      "topic": "past_simple_regular",
+      "kind": "gap",
+      "lines": [
+        "– ___ you study last night?",
+        "– Yes, for two hours."
+      ],
+      "options": [
+        "Did",
+        "Do",
+        "Were",
+        "Have"
+      ],
+      "correct": 0,
+      "why": "Past question: Did + subject + base verb."
+    },
+    {
+      "id": "en-bt-a2-07",
+      "level": "A2",
+      "topic": "past_simple_irregular",
+      "kind": "gap",
+      "lines": [
+        "– What did you do on Saturday?",
+        "– I ___ to the cinema."
+      ],
+      "options": [
+        "goed",
+        "gone",
+        "did went",
+        "went"
+      ],
+      "correct": 3,
+      "why": "Irregular past of go: went."
+    },
+    {
+      "id": "en-bt-a2-08",
+      "level": "A2",
+      "topic": "past_simple_irregular",
+      "kind": "gap",
+      "lines": [
+        "– Did you see Mark?",
+        "– Yes, I ___ him at the bus stop."
+      ],
+      "options": [
+        "seed",
+        "saw",
+        "seen",
+        "did saw"
+      ],
+      "correct": 1,
+      "why": "Irregular past of see: saw."
+    },
+    {
+      "id": "en-bt-a2-09",
+      "level": "A2",
+      "topic": "past_simple_irregular",
+      "kind": "gap",
+      "lines": [
+        "– Why are you late?",
+        "– I ___ my keys and had to go back."
+      ],
+      "options": [
+        "losed",
+        "lose",
+        "lost",
+        "did lost"
+      ],
+      "correct": 2,
+      "why": "Irregular past of lose: lost."
+    },
+    {
+      "id": "en-bt-a2-10",
+      "level": "A2",
+      "topic": "past_simple_irregular",
+      "kind": "gap",
+      "lines": [
+        "– Did she buy the dress?",
+        "– Yes, she ___ it for fifty dollars."
+      ],
+      "options": [
+        "bought",
+        "buyed",
+        "buy",
+        "boughted"
+      ],
+      "correct": 0,
+      "why": "Irregular past of buy: bought."
+    },
+    {
+      "id": "en-bt-a2-11",
+      "level": "A2",
+      "topic": "past_simple_irregular",
+      "kind": "gap",
+      "lines": [
+        "– What did you eat?",
+        "– I ___ rice and chicken."
+      ],
+      "options": [
+        "eated",
+        "eaten",
+        "did ate",
+        "ate"
+      ],
+      "correct": 3,
+      "why": "Irregular past of eat: ate."
+    },
+    {
+      "id": "en-bt-a2-12",
+      "level": "A2",
+      "topic": "past_simple_irregular",
+      "kind": "gap",
+      "lines": [
+        "– Did they come to the party?",
+        "– No, they ___ come."
+      ],
+      "options": [
+        "don't",
+        "didn't",
+        "weren't",
+        "hadn't"
+      ],
+      "correct": 1,
+      "why": "Past negative: didn't + base verb."
+    },
+    {
+      "id": "en-bt-a2-13",
+      "level": "A2",
+      "topic": "going_to",
+      "kind": "gap",
+      "lines": [
+        "– What are your plans for tomorrow?",
+        "– I ___ visit my grandmother."
+      ],
+      "options": [
+        "going to",
+        "will to",
+        "am going to",
+        "am go to"
+      ],
+      "correct": 2,
+      "why": "A plan: am going to + base verb."
+    },
+    {
+      "id": "en-bt-a2-14",
+      "level": "A2",
+      "topic": "going_to",
+      "kind": "gap",
+      "lines": [
+        "– Look at those clouds!",
+        "– Yes, it ___ rain."
+      ],
+      "options": [
+        "is going to",
+        "going to",
+        "are going to",
+        "does going to"
+      ],
+      "correct": 0,
+      "why": "A prediction from evidence: is going to."
+    },
+    {
+      "id": "en-bt-a2-15",
+      "level": "A2",
+      "topic": "going_to",
+      "kind": "gap",
+      "lines": [
+        "– Are they moving to a new house?",
+        "– Yes, they ___ buy one next month."
+      ],
+      "options": [
+        "is going to",
+        "going to",
+        "do going to",
+        "are going to"
+      ],
+      "correct": 3,
+      "why": "With they: are going to."
+    },
+    {
+      "id": "en-bt-a2-16",
+      "level": "A2",
+      "topic": "going_to",
+      "kind": "gap",
+      "lines": [
+        "– Is Jack going to come?",
+        "– No, he ___ come."
+      ],
+      "options": [
+        "doesn't going to",
+        "isn't going to",
+        "not going to",
+        "isn't go to"
+      ],
+      "correct": 1,
+      "why": "Negative: isn't going to + base verb."
+    },
+    {
+      "id": "en-bt-a2-17",
+      "level": "A2",
+      "topic": "going_to",
+      "kind": "gap",
+      "lines": [
+        "– ___ you going to study tonight?",
+        "– Yes, I have an exam."
+      ],
+      "options": [
+        "Do",
+        "Is",
+        "Are",
+        "Will"
+      ],
+      "correct": 2,
+      "why": "Question with you: Are you going to."
+    },
+    {
+      "id": "en-bt-a2-18",
+      "level": "A2",
+      "topic": "going_to",
+      "kind": "gap",
+      "lines": [
+        "– What is she going to do after school?",
+        "– She ___ to play tennis."
+      ],
+      "options": [
+        "is going",
+        "goes",
+        "going",
+        "is go"
+      ],
+      "correct": 0,
+      "why": "She is going to play: is going."
+    },
+    {
+      "id": "en-bt-a2-19",
+      "level": "A2",
+      "topic": "will",
+      "kind": "gap",
+      "lines": [
+        "– The phone is ringing.",
+        "– I ___ answer it."
+      ],
+      "options": [
+        "am going",
+        "going to",
+        "do",
+        "will"
+      ],
+      "correct": 3,
+      "why": "A decision at the moment of speaking: will."
+    },
+    {
+      "id": "en-bt-a2-20",
+      "level": "A2",
+      "topic": "will",
+      "kind": "gap",
+      "lines": [
+        "– I think it ___ be sunny tomorrow."
+      ],
+      "options": [
+        "going",
+        "will",
+        "does",
+        "is"
+      ],
+      "correct": 1,
+      "why": "A prediction (I think) with will + base verb."
+    },
+    {
+      "id": "en-bt-a2-21",
+      "level": "A2",
+      "topic": "will",
+      "kind": "gap",
+      "lines": [
+        "– We need more milk.",
+        "– OK, I ___ buy some on my way home."
+      ],
+      "options": [
+        "am buy",
+        "buying",
+        "will",
+        "do"
+      ],
+      "correct": 2,
+      "why": "An offer made now takes will + base verb."
+    },
+    {
+      "id": "en-bt-a2-22",
+      "level": "A2",
+      "topic": "will",
+      "kind": "gap",
+      "lines": [
+        "– Will you be at the party?",
+        "– No, I ___."
+      ],
+      "options": [
+        "won't",
+        "don't",
+        "am not",
+        "wasn't"
+      ],
+      "correct": 0,
+      "why": "Short negative answer: I won't."
+    },
+    {
+      "id": "en-bt-a2-23",
+      "level": "A2",
+      "topic": "will",
+      "kind": "gap",
+      "lines": [
+        "– I'm cold.",
+        "– I ___ close the window."
+      ],
+      "options": [
+        "am going",
+        "closing",
+        "close",
+        "will"
+      ],
+      "correct": 3,
+      "why": "A quick decision to help: will close."
+    },
+    {
+      "id": "en-bt-a2-24",
+      "level": "A2",
+      "topic": "will",
+      "kind": "gap",
+      "lines": [
+        "– Will you be at home tonight?",
+        "– Yes, I ___ be there."
+      ],
+      "options": [
+        "am",
+        "will",
+        "do",
+        "going to"
+      ],
+      "correct": 1,
+      "why": "Will + base verb answers a will question."
+    },
+    {
+      "id": "en-bt-a2-25",
+      "level": "A2",
+      "topic": "present_perfect",
+      "kind": "gap",
+      "lines": [
+        "– Is Anna here?",
+        "– No, she ___ to the market."
+      ],
+      "options": [
+        "have gone",
+        "is gone",
+        "has gone",
+        "gone"
+      ],
+      "correct": 2,
+      "why": "With she: has + past participle."
+    },
+    {
+      "id": "en-bt-a2-26",
+      "level": "A2",
+      "topic": "present_perfect",
+      "kind": "gap",
+      "lines": [
+        "– Have you ever ___ sushi?",
+        "– Yes, once."
+      ],
+      "options": [
+        "eaten",
+        "ate",
+        "eat",
+        "eating"
+      ],
+      "correct": 0,
+      "why": "Present perfect: have + past participle (eaten)."
+    },
+    {
+      "id": "en-bt-a2-27",
+      "level": "A2",
+      "topic": "present_perfect",
+      "kind": "gap",
+      "lines": [
+        "– How long have you lived here?",
+        "– I ___ here since 2020."
+      ],
+      "options": [
+        "live",
+        "am living",
+        "lived",
+        "have lived"
+      ],
+      "correct": 3,
+      "why": "Since + a point in time takes the present perfect."
+    },
+    {
+      "id": "en-bt-a2-28",
+      "level": "A2",
+      "topic": "present_perfect",
+      "kind": "gap",
+      "lines": [
+        "– I ___ my homework yet."
+      ],
+      "options": [
+        "didn't finished",
+        "haven't finished",
+        "don't finish",
+        "hasn't finished"
+      ],
+      "correct": 1,
+      "why": "With I: haven't + past participle."
+    },
+    {
+      "id": "en-bt-a2-29",
+      "level": "A2",
+      "topic": "present_perfect",
+      "kind": "gap",
+      "lines": [
+        "– Have they arrived?",
+        "– Yes, they ___ just arrived."
+      ],
+      "options": [
+        "has",
+        "are",
+        "have",
+        "did"
+      ],
+      "correct": 2,
+      "why": "Present perfect with they: have + arrived."
+    },
+    {
+      "id": "en-bt-a2-30",
+      "level": "A2",
+      "topic": "present_perfect",
+      "kind": "gap",
+      "lines": [
+        "– Is he a good pianist?",
+        "– Yes, he ___ the piano for ten years."
+      ],
+      "options": [
+        "has played",
+        "plays",
+        "have played",
+        "is playing"
+      ],
+      "correct": 0,
+      "why": "For + a period takes has played with he."
+    },
+    {
+      "id": "en-bt-a2-31",
+      "level": "A2",
+      "topic": "comparatives",
+      "kind": "gap",
+      "lines": [
+        "– Which bag is better?",
+        "– This one is ___ than that one."
+      ],
+      "options": [
+        "more big",
+        "biggest",
+        "more bigger",
+        "bigger"
+      ],
+      "correct": 3,
+      "why": "One-syllable adjectives add -er (and double the g)."
+    },
+    {
+      "id": "en-bt-a2-32",
+      "level": "A2",
+      "topic": "comparatives",
+      "kind": "gap",
+      "lines": [
+        "– Is the test difficult?",
+        "– It is ___ than the last one."
+      ],
+      "options": [
+        "difficulter",
+        "more difficult",
+        "most difficult",
+        "more difficulter"
+      ],
+      "correct": 1,
+      "why": "Long adjectives take more + adjective."
+    },
+    {
+      "id": "en-bt-a2-33",
+      "level": "A2",
+      "topic": "comparatives",
+      "kind": "gap",
+      "lines": [
+        "– Who is taller, you or Paul?",
+        "– Paul is ___ than me."
+      ],
+      "options": [
+        "more tall",
+        "tallest",
+        "taller",
+        "the taller"
+      ],
+      "correct": 2,
+      "why": "Short adjective: tall + -er."
+    },
+    {
+      "id": "en-bt-a2-34",
+      "level": "A2",
+      "topic": "comparatives",
+      "kind": "gap",
+      "lines": [
+        "– Is this restaurant cheap?",
+        "– It is ___ than the one near the station."
+      ],
+      "options": [
+        "cheaper",
+        "more cheap",
+        "cheapest",
+        "more cheaper"
+      ],
+      "correct": 0,
+      "why": "Short adjective: cheap + -er."
+    },
+    {
+      "id": "en-bt-a2-35",
+      "level": "A2",
+      "topic": "comparatives",
+      "kind": "gap",
+      "lines": [
+        "– Is today hot?",
+        "– Yes, it is ___ than yesterday."
+      ],
+      "options": [
+        "more hot",
+        "hoter",
+        "hottest",
+        "hotter"
+      ],
+      "correct": 3,
+      "why": "Hot doubles the t: hotter."
+    },
+    {
+      "id": "en-bt-a2-36",
+      "level": "A2",
+      "topic": "comparatives",
+      "kind": "gap",
+      "lines": [
+        "– Which phone is better?",
+        "– This one is ___ expensive than that one."
+      ],
+      "options": [
+        "most",
+        "more",
+        "-er",
+        "less than"
+      ],
+      "correct": 1,
+      "why": "Expensive takes more to compare."
+    },
+    {
+      "id": "en-bt-a2-37",
+      "level": "A2",
+      "topic": "superlatives",
+      "kind": "gap",
+      "lines": [
+        "– Who is the ___ student in your class?",
+        "– Julia."
+      ],
+      "options": [
+        "taller",
+        "most tall",
+        "tallest",
+        "more tall"
+      ],
+      "correct": 2,
+      "why": "The + adjective + -est: tallest."
+    },
+    {
+      "id": "en-bt-a2-38",
+      "level": "A2",
+      "topic": "superlatives",
+      "kind": "gap",
+      "lines": [
+        "– What is the best hotel here?",
+        "– This is ___ hotel in town."
+      ],
+      "options": [
+        "the most beautiful",
+        "the more beautiful",
+        "most beautiful the",
+        "the beautifulest"
+      ],
+      "correct": 0,
+      "why": "Long adjectives: the most + adjective."
+    },
+    {
+      "id": "en-bt-a2-39",
+      "level": "A2",
+      "topic": "superlatives",
+      "kind": "gap",
+      "lines": [
+        "– How was your trip?",
+        "– It was ___ holiday of my life!"
+      ],
+      "options": [
+        "the better",
+        "best",
+        "the most good",
+        "the best"
+      ],
+      "correct": 3,
+      "why": "Good has an irregular superlative: the best."
+    },
+    {
+      "id": "en-bt-a2-40",
+      "level": "A2",
+      "topic": "superlatives",
+      "kind": "gap",
+      "lines": [
+        "– Is this the shortest way?",
+        "– No, the other road is ___."
+      ],
+      "options": [
+        "shorter",
+        "the shortest",
+        "most short",
+        "the shorter"
+      ],
+      "correct": 1,
+      "why": "Superlative needs the + -est: the shortest."
+    },
+    {
+      "id": "en-bt-a2-41",
+      "level": "A2",
+      "topic": "superlatives",
+      "kind": "gap",
+      "lines": [
+        "– Which is the ___ month of the year?",
+        "– February."
+      ],
+      "options": [
+        "more short",
+        "shorter",
+        "shortest",
+        "most short"
+      ],
+      "correct": 2,
+      "why": "The + adjective + -est: shortest."
+    },
+    {
+      "id": "en-bt-a2-42",
+      "level": "A2",
+      "topic": "superlatives",
+      "kind": "gap",
+      "lines": [
+        "– Who is the ___ person you know?",
+        "– My grandpa. He is 95."
+      ],
+      "options": [
+        "oldest",
+        "older",
+        "most old",
+        "more old"
+      ],
+      "correct": 0,
+      "why": "The + adjective + -est: oldest."
+    },
+    {
+      "id": "en-bt-a2-43",
+      "level": "A2",
+      "topic": "must_have_to",
+      "kind": "gap",
+      "lines": [
+        "– Can I play now?",
+        "– No, you ___ do your homework first."
+      ],
+      "options": [
+        "has to",
+        "must to",
+        "are to",
+        "have to"
+      ],
+      "correct": 3,
+      "why": "With you: have to + base verb."
+    },
+    {
+      "id": "en-bt-a2-44",
+      "level": "A2",
+      "topic": "must_have_to",
+      "kind": "gap",
+      "lines": [
+        "– Why is Tim at the office on Sunday?",
+        "– He ___ finish a report."
+      ],
+      "options": [
+        "have to",
+        "has to",
+        "must to",
+        "is have to"
+      ],
+      "correct": 1,
+      "why": "With he: has to + base verb."
+    },
+    {
+      "id": "en-bt-a2-45",
+      "level": "A2",
+      "topic": "must_have_to",
+      "kind": "gap",
+      "lines": [
+        "– You ___ drive fast near the school. It is dangerous."
+      ],
+      "options": [
+        "don't have to",
+        "haven't to",
+        "mustn't",
+        "not must"
+      ],
+      "correct": 2,
+      "why": "Mustn't means it is forbidden."
+    },
+    {
+      "id": "en-bt-a2-46",
+      "level": "A2",
+      "topic": "must_have_to",
+      "kind": "gap",
+      "lines": [
+        "– Do I have to wear a tie?",
+        "– No, you ___. It is a casual party."
+      ],
+      "options": [
+        "don't have to",
+        "mustn't",
+        "haven't to",
+        "don't must"
+      ],
+      "correct": 0,
+      "why": "No obligation: don't have to."
+    },
+    {
+      "id": "en-bt-a2-47",
+      "level": "A2",
+      "topic": "must_have_to",
+      "kind": "gap",
+      "lines": [
+        "– I ___ go now. My bus leaves in five minutes."
+      ],
+      "options": [
+        "am must",
+        "must to",
+        "do must",
+        "must"
+      ],
+      "correct": 3,
+      "why": "Must + base verb expresses obligation."
+    },
+    {
+      "id": "en-bt-a2-48",
+      "level": "A2",
+      "topic": "must_have_to",
+      "kind": "gap",
+      "lines": [
+        "– Does she have to work tomorrow?",
+        "– No, she ___."
+      ],
+      "options": [
+        "don't",
+        "doesn't",
+        "hasn't",
+        "isn't"
+      ],
+      "correct": 1,
+      "why": "Short answer with she: she doesn't."
+    },
+    {
+      "id": "en-bt-b1-01",
+      "level": "B1",
+      "topic": "present_perfect_vs_past",
+      "kind": "gap",
+      "lines": [
+        "– When did you move to Lima?",
+        "– I ___ here in 2019."
+      ],
+      "options": [
+        "have moved",
+        "have been moving",
+        "moved",
+        "move"
+      ],
+      "correct": 2,
+      "why": "A finished past time (in 2019) needs the past simple."
+    },
+    {
+      "id": "en-bt-b1-02",
+      "level": "B1",
+      "topic": "present_perfect_vs_past",
+      "kind": "gap",
+      "lines": [
+        "– Have you finished the report?",
+        "– Yes, I ___ it ten minutes ago."
+      ],
+      "options": [
+        "finished",
+        "have finished",
+        "had finished",
+        "finish"
+      ],
+      "correct": 0,
+      "why": "\"Ten minutes ago\" is a finished time: past simple."
+    },
+    {
+      "id": "en-bt-b1-03",
+      "level": "B1",
+      "topic": "present_perfect_vs_past",
+      "kind": "gap",
+      "lines": [
+        "– Do you know Carlos?",
+        "– Yes, I ___ him since primary school."
+      ],
+      "options": [
+        "knew",
+        "know",
+        "am knowing",
+        "have known"
+      ],
+      "correct": 3,
+      "why": "Since + a starting point continues to now: present perfect."
+    },
+    {
+      "id": "en-bt-b1-04",
+      "level": "B1",
+      "topic": "present_perfect_vs_past",
+      "kind": "gap",
+      "lines": [
+        "– Is Maya at home?",
+        "– No, she ___ out an hour ago."
+      ],
+      "options": [
+        "has gone",
+        "went",
+        "has been going",
+        "goes"
+      ],
+      "correct": 1,
+      "why": "A time reference with ago needs the past simple."
+    },
+    {
+      "id": "en-bt-b1-05",
+      "level": "B1",
+      "topic": "past_continuous",
+      "kind": "gap",
+      "lines": [
+        "– Why didn't you answer the phone?",
+        "– I ___ a shower when you called."
+      ],
+      "options": [
+        "took",
+        "am taking",
+        "was taking",
+        "have taken"
+      ],
+      "correct": 2,
+      "why": "An action in progress at a past moment: was + -ing."
+    },
+    {
+      "id": "en-bt-b1-06",
+      "level": "B1",
+      "topic": "past_continuous",
+      "kind": "gap",
+      "lines": [
+        "– What happened to Jo?",
+        "– He fell while he ___ down the stairs."
+      ],
+      "options": [
+        "was running",
+        "ran",
+        "is running",
+        "has run"
+      ],
+      "correct": 0,
+      "why": "The longer background action takes the past continuous."
+    },
+    {
+      "id": "en-bt-b1-07",
+      "level": "B1",
+      "topic": "past_continuous",
+      "kind": "gap",
+      "lines": [
+        "– What ___ you doing at eight last night?",
+        "– I was watching a series."
+      ],
+      "options": [
+        "did",
+        "are",
+        "have",
+        "were"
+      ],
+      "correct": 3,
+      "why": "Past continuous with you: were + -ing."
+    },
+    {
+      "id": "en-bt-b1-08",
+      "level": "B1",
+      "topic": "past_continuous",
+      "kind": "gap",
+      "lines": [
+        "– It was loud outside.",
+        "– Yes, the children ___ in the street."
+      ],
+      "options": [
+        "shouted",
+        "were shouting",
+        "was shouting",
+        "are shouting"
+      ],
+      "correct": 1,
+      "why": "Children is plural: were + -ing."
+    },
+    {
+      "id": "en-bt-b1-09",
+      "level": "B1",
+      "topic": "first_conditional",
+      "kind": "gap",
+      "lines": [
+        "– What if it rains tomorrow?",
+        "– If it rains, we ___ at home."
+      ],
+      "options": [
+        "would stay",
+        "stay",
+        "will stay",
+        "stayed"
+      ],
+      "correct": 2,
+      "why": "If + present, then will + base verb."
+    },
+    {
+      "id": "en-bt-b1-10",
+      "level": "B1",
+      "topic": "first_conditional",
+      "kind": "gap",
+      "lines": [
+        "– If you ___ hard, you will pass the exam."
+      ],
+      "options": [
+        "study",
+        "will study",
+        "studied",
+        "would study"
+      ],
+      "correct": 0,
+      "why": "The if-clause of a real future condition uses the present."
+    },
+    {
+      "id": "en-bt-b1-11",
+      "level": "B1",
+      "topic": "first_conditional",
+      "kind": "gap",
+      "lines": [
+        "– Shall we go for a walk?",
+        "– Only if the weather ___ nice."
+      ],
+      "options": [
+        "will be",
+        "would be",
+        "was",
+        "is"
+      ],
+      "correct": 3,
+      "why": "No will in the if-clause: the weather is nice."
+    },
+    {
+      "id": "en-bt-b1-12",
+      "level": "B1",
+      "topic": "first_conditional",
+      "kind": "gap",
+      "lines": [
+        "– I won't go if she ___ me."
+      ],
+      "options": [
+        "won't invite",
+        "doesn't invite",
+        "didn't invite",
+        "wouldn't invite"
+      ],
+      "correct": 1,
+      "why": "The if-clause stays in the present: doesn't invite."
+    },
+    {
+      "id": "en-bt-b1-13",
+      "level": "B1",
+      "topic": "second_conditional",
+      "kind": "gap",
+      "lines": [
+        "– What would you do if you won the lottery?",
+        "– I ___ a house by the sea."
+      ],
+      "options": [
+        "will buy",
+        "bought",
+        "would buy",
+        "buy"
+      ],
+      "correct": 2,
+      "why": "An imaginary situation: would + base verb."
+    },
+    {
+      "id": "en-bt-b1-14",
+      "level": "B1",
+      "topic": "second_conditional",
+      "kind": "gap",
+      "lines": [
+        "– If I ___ more time, I would learn another language."
+      ],
+      "options": [
+        "had",
+        "have",
+        "would have",
+        "will have"
+      ],
+      "correct": 0,
+      "why": "Unreal present: if + past simple."
+    },
+    {
+      "id": "en-bt-b1-15",
+      "level": "B1",
+      "topic": "second_conditional",
+      "kind": "gap",
+      "lines": [
+        "– If he ___ taller, he would play basketball."
+      ],
+      "options": [
+        "would be",
+        "is",
+        "will be",
+        "were"
+      ],
+      "correct": 3,
+      "why": "In the second conditional we often say were after he."
+    },
+    {
+      "id": "en-bt-b1-16",
+      "level": "B1",
+      "topic": "second_conditional",
+      "kind": "gap",
+      "lines": [
+        "– Would you move abroad?",
+        "– If I ___ a good job there, yes."
+      ],
+      "options": [
+        "get",
+        "got",
+        "would get",
+        "will get"
+      ],
+      "correct": 1,
+      "why": "The if-clause takes the past simple: got."
+    },
+    {
+      "id": "en-bt-b1-17",
+      "level": "B1",
+      "topic": "modals_obligation_advice",
+      "kind": "gap",
+      "lines": [
+        "– I have a terrible headache.",
+        "– You ___ see a doctor."
+      ],
+      "options": [
+        "must to",
+        "are should",
+        "should",
+        "would to"
+      ],
+      "correct": 2,
+      "why": "Advice: should + base verb."
+    },
+    {
+      "id": "en-bt-b1-18",
+      "level": "B1",
+      "topic": "modals_obligation_advice",
+      "kind": "gap",
+      "lines": [
+        "– Do I need a passport for the trip?",
+        "– Yes, you ___ have one. It is required."
+      ],
+      "options": [
+        "must",
+        "should to",
+        "may",
+        "can't"
+      ],
+      "correct": 0,
+      "why": "A strong rule: must."
+    },
+    {
+      "id": "en-bt-b1-19",
+      "level": "B1",
+      "topic": "modals_obligation_advice",
+      "kind": "gap",
+      "lines": [
+        "– Is the exam compulsory?",
+        "– No, you ___ take it if you don't want to."
+      ],
+      "options": [
+        "mustn't",
+        "shouldn't to",
+        "can't",
+        "don't have to"
+      ],
+      "correct": 3,
+      "why": "No obligation: don't have to."
+    },
+    {
+      "id": "en-bt-b1-20",
+      "level": "B1",
+      "topic": "modals_obligation_advice",
+      "kind": "gap",
+      "lines": [
+        "– You ___ smoke in the hospital. It is not allowed."
+      ],
+      "options": [
+        "don't have to",
+        "mustn't",
+        "needn't to",
+        "shouldn't to"
+      ],
+      "correct": 1,
+      "why": "Prohibition: mustn't."
+    },
+    {
+      "id": "en-bt-b1-21",
+      "level": "B1",
+      "topic": "passive_voice",
+      "kind": "gap",
+      "lines": [
+        "– Who painted this picture?",
+        "– It ___ by a famous artist."
+      ],
+      "options": [
+        "painted",
+        "is painting",
+        "was painted",
+        "has paint"
+      ],
+      "correct": 2,
+      "why": "Passive past: was + past participle."
+    },
+    {
+      "id": "en-bt-b1-22",
+      "level": "B1",
+      "topic": "passive_voice",
+      "kind": "gap",
+      "lines": [
+        "– English ___ in many countries."
+      ],
+      "options": [
+        "is spoken",
+        "speaks",
+        "is speaking",
+        "are spoken"
+      ],
+      "correct": 0,
+      "why": "Passive present singular: is + past participle."
+    },
+    {
+      "id": "en-bt-b1-23",
+      "level": "B1",
+      "topic": "passive_voice",
+      "kind": "gap",
+      "lines": [
+        "– The windows ___ every week."
+      ],
+      "options": [
+        "cleans",
+        "is cleaned",
+        "are cleaning",
+        "are cleaned"
+      ],
+      "correct": 3,
+      "why": "Plural subject: are + past participle."
+    },
+    {
+      "id": "en-bt-b1-24",
+      "level": "B1",
+      "topic": "passive_voice",
+      "kind": "gap",
+      "lines": [
+        "– Where was the phone made?",
+        "– It ___ in China."
+      ],
+      "options": [
+        "made",
+        "was made",
+        "was make",
+        "has made"
+      ],
+      "correct": 1,
+      "why": "Passive past: was + made."
+    },
+    {
+      "id": "en-bt-b1-25",
+      "level": "B1",
+      "topic": "past_perfect",
+      "kind": "gap",
+      "lines": [
+        "– Why was she upset?",
+        "– Because she ___ her wallet on the bus."
+      ],
+      "options": [
+        "has lost",
+        "lost",
+        "had lost",
+        "was losing"
+      ],
+      "correct": 2,
+      "why": "The earlier past event takes the past perfect."
+    },
+    {
+      "id": "en-bt-b1-26",
+      "level": "B1",
+      "topic": "past_perfect",
+      "kind": "gap",
+      "lines": [
+        "– The film ___ when we arrived at the cinema."
+      ],
+      "options": [
+        "had already started",
+        "already started",
+        "has already started",
+        "was already start"
+      ],
+      "correct": 0,
+      "why": "Earlier past action: had + past participle."
+    },
+    {
+      "id": "en-bt-b1-27",
+      "level": "B1",
+      "topic": "past_perfect",
+      "kind": "gap",
+      "lines": [
+        "– Did you eat lunch with Ben?",
+        "– No, he ___ by the time I got there."
+      ],
+      "options": [
+        "already ate",
+        "has already eaten",
+        "was already eating",
+        "had already eaten"
+      ],
+      "correct": 3,
+      "why": "An action done before another past moment: had eaten."
+    },
+    {
+      "id": "en-bt-b1-28",
+      "level": "B1",
+      "topic": "past_perfect",
+      "kind": "gap",
+      "lines": [
+        "– I didn't recognise Sam.",
+        "– He ___ a lot since I last saw him."
+      ],
+      "options": [
+        "has changed",
+        "had changed",
+        "changed",
+        "was changing"
+      ],
+      "correct": 1,
+      "why": "Change before a past moment: had changed."
+    },
+    {
+      "id": "en-bt-b1-29",
+      "level": "B1",
+      "topic": "used_to",
+      "kind": "gap",
+      "lines": [
+        "– Do you still play the guitar?",
+        "– No, I ___ play it every day, but not now."
+      ],
+      "options": [
+        "use to",
+        "was used",
+        "used to",
+        "am used to"
+      ],
+      "correct": 2,
+      "why": "A past habit that stopped: used to + base verb."
+    },
+    {
+      "id": "en-bt-b1-30",
+      "level": "B1",
+      "topic": "used_to",
+      "kind": "gap",
+      "lines": [
+        "– Did you ___ live in Quito?",
+        "– Yes, for ten years."
+      ],
+      "options": [
+        "use to",
+        "used to",
+        "using to",
+        "used"
+      ],
+      "correct": 0,
+      "why": "After did we use use to."
+    },
+    {
+      "id": "en-bt-b1-31",
+      "level": "B1",
+      "topic": "used_to",
+      "kind": "gap",
+      "lines": [
+        "– My grandfather ___ smoke, but he stopped last year."
+      ],
+      "options": [
+        "is used to",
+        "uses to",
+        "use to",
+        "used to"
+      ],
+      "correct": 3,
+      "why": "A finished past habit: used to."
+    },
+    {
+      "id": "en-bt-b1-32",
+      "level": "B1",
+      "topic": "used_to",
+      "kind": "gap",
+      "lines": [
+        "– She is used to ___ up early."
+      ],
+      "options": [
+        "get",
+        "getting",
+        "got",
+        "gets"
+      ],
+      "correct": 1,
+      "why": "Be used to + -ing means being accustomed."
+    },
+    {
+      "id": "en-bt-b1-33",
+      "level": "B1",
+      "topic": "defining_relative_clauses",
+      "kind": "gap",
+      "lines": [
+        "– Who is Marta?",
+        "– She is the girl ___ lives next door."
+      ],
+      "options": [
+        "which",
+        "whose",
+        "who",
+        "what"
+      ],
+      "correct": 2,
+      "why": "For a person as subject we use who."
+    },
+    {
+      "id": "en-bt-b1-34",
+      "level": "B1",
+      "topic": "defining_relative_clauses",
+      "kind": "gap",
+      "lines": [
+        "– Is this the book ___ you told me about?",
+        "– Yes, it is."
+      ],
+      "options": [
+        "that",
+        "who",
+        "whose",
+        "where"
+      ],
+      "correct": 0,
+      "why": "For a thing we use that or which."
+    },
+    {
+      "id": "en-bt-b1-35",
+      "level": "B1",
+      "topic": "defining_relative_clauses",
+      "kind": "gap",
+      "lines": [
+        "– What is a baker?",
+        "– It is a person ___ makes bread."
+      ],
+      "options": [
+        "which",
+        "where",
+        "whose",
+        "who"
+      ],
+      "correct": 3,
+      "why": "A person is described with who."
+    },
+    {
+      "id": "en-bt-b1-36",
+      "level": "B1",
+      "topic": "defining_relative_clauses",
+      "kind": "gap",
+      "lines": [
+        "– This is the city ___ I was born."
+      ],
+      "options": [
+        "who",
+        "where",
+        "which",
+        "whose"
+      ],
+      "correct": 1,
+      "why": "For a place we use where."
+    },
+    {
+      "id": "en-bt-b1-37",
+      "level": "B1",
+      "topic": "gerund_vs_infinitive",
+      "kind": "gap",
+      "lines": [
+        "– Do you like cooking?",
+        "– Yes, I enjoy ___ for my friends."
+      ],
+      "options": [
+        "to cook",
+        "cook",
+        "cooking",
+        "cooked"
+      ],
+      "correct": 2,
+      "why": "Enjoy is followed by the -ing form."
+    },
+    {
+      "id": "en-bt-b1-38",
+      "level": "B1",
+      "topic": "gerund_vs_infinitive",
+      "kind": "gap",
+      "lines": [
+        "– I decided ___ a new job last month."
+      ],
+      "options": [
+        "to look for",
+        "looking for",
+        "look for",
+        "looked for"
+      ],
+      "correct": 0,
+      "why": "Decide is followed by the to-infinitive."
+    },
+    {
+      "id": "en-bt-b1-39",
+      "level": "B1",
+      "topic": "gerund_vs_infinitive",
+      "kind": "gap",
+      "lines": [
+        "– Why are you late?",
+        "– Sorry, I forgot ___ my alarm."
+      ],
+      "options": [
+        "setting",
+        "set",
+        "to setting",
+        "to set"
+      ],
+      "correct": 3,
+      "why": "Forget + to-infinitive means we did not do the task."
+    },
+    {
+      "id": "en-bt-b1-40",
+      "level": "B1",
+      "topic": "gerund_vs_infinitive",
+      "kind": "gap",
+      "lines": [
+        "– Would you mind ___ the door?",
+        "– Not at all."
+      ],
+      "options": [
+        "to close",
+        "closing",
+        "close",
+        "closed"
+      ],
+      "correct": 1,
+      "why": "Mind is followed by the -ing form."
+    },
+    {
+      "id": "en-bt-b1-41",
+      "level": "B1",
+      "topic": "question_tags",
+      "kind": "gap",
+      "lines": [
+        "– It's a lovely day, ___?",
+        "– Yes, it is."
+      ],
+      "options": [
+        "is it",
+        "doesn't it",
+        "isn't it",
+        "aren't it"
+      ],
+      "correct": 2,
+      "why": "A positive statement takes a negative tag with the same verb: isn't it."
+    },
+    {
+      "id": "en-bt-b1-42",
+      "level": "B1",
+      "topic": "question_tags",
+      "kind": "gap",
+      "lines": [
+        "– You haven't seen my keys, ___?",
+        "– No, sorry."
+      ],
+      "options": [
+        "have you",
+        "haven't you",
+        "did you",
+        "do you"
+      ],
+      "correct": 0,
+      "why": "A negative statement takes a positive tag: have you."
+    },
+    {
+      "id": "en-bt-b1-43",
+      "level": "B1",
+      "topic": "question_tags",
+      "kind": "gap",
+      "lines": [
+        "– She speaks French, ___?",
+        "– Yes, very well."
+      ],
+      "options": [
+        "isn't she",
+        "does she",
+        "didn't she",
+        "doesn't she"
+      ],
+      "correct": 3,
+      "why": "Present simple positive takes doesn't she."
+    },
+    {
+      "id": "en-bt-b1-44",
+      "level": "B1",
+      "topic": "question_tags",
+      "kind": "gap",
+      "lines": [
+        "– Let's go to the beach, ___?",
+        "– Good idea."
+      ],
+      "options": [
+        "will we",
+        "shall we",
+        "don't we",
+        "let us"
+      ],
+      "correct": 1,
+      "why": "After Let's the tag is shall we."
+    },
+    {
+      "id": "en-bt-b1-45",
+      "level": "B1",
+      "topic": "reported_speech",
+      "kind": "gap",
+      "lines": [
+        "– What did Tom say?",
+        "– He said that he ___ tired."
+      ],
+      "options": [
+        "is",
+        "has been",
+        "was",
+        "will be"
+      ],
+      "correct": 2,
+      "why": "In reported speech the present moves back to the past: was."
+    },
+    {
+      "id": "en-bt-b1-46",
+      "level": "B1",
+      "topic": "reported_speech",
+      "kind": "gap",
+      "lines": [
+        "– What did she ask you?",
+        "– She asked me where I ___."
+      ],
+      "options": [
+        "lived",
+        "do live",
+        "live",
+        "was lived"
+      ],
+      "correct": 0,
+      "why": "Reported questions use statement order and a past tense: lived."
+    },
+    {
+      "id": "en-bt-b1-47",
+      "level": "B1",
+      "topic": "reported_speech",
+      "kind": "gap",
+      "lines": [
+        "– What did the teacher tell you?",
+        "– She told me ___ the book home."
+      ],
+      "options": [
+        "taking",
+        "take",
+        "that take",
+        "to take"
+      ],
+      "correct": 3,
+      "why": "Tell + person + to-infinitive reports an order."
+    },
+    {
+      "id": "en-bt-b1-48",
+      "level": "B1",
+      "topic": "reported_speech",
+      "kind": "gap",
+      "lines": [
+        "– \"I will call you tomorrow,\" he said.",
+        "– He said he ___ me the next day."
+      ],
+      "options": [
+        "will call",
+        "would call",
+        "calls",
+        "called to"
+      ],
+      "correct": 1,
+      "why": "Will becomes would in reported speech."
+    },
+    {
+      "id": "en-bt-b2-01",
+      "level": "B2",
+      "topic": "third_conditional",
+      "kind": "gap",
+      "lines": [
+        "– I missed the train, so I was late.",
+        "– If you ___ earlier, you wouldn't have missed it."
+      ],
+      "options": [
+        "left",
+        "would have left",
+        "had left",
+        "have left"
+      ],
+      "correct": 2,
+      "why": "The if-clause of the third conditional takes the past perfect."
+    },
+    {
+      "id": "en-bt-b2-02",
+      "level": "B2",
+      "topic": "third_conditional",
+      "kind": "gap",
+      "lines": [
+        "– If it hadn't rained, we ___ to the beach."
+      ],
+      "options": [
+        "would have gone",
+        "would go",
+        "had gone",
+        "will have gone"
+      ],
+      "correct": 0,
+      "why": "A past unreal result: would have + past participle."
+    },
+    {
+      "id": "en-bt-b2-03",
+      "level": "B2",
+      "topic": "third_conditional",
+      "kind": "which",
+      "lines": [
+        "If she would have asked me, I would have helped her.",
+        "If she had asked me, I would have helped her."
+      ],
+      "correct": 1,
+      "why": "Not would have in the if-clause: had asked."
+    },
+    {
+      "id": "en-bt-b2-04",
+      "level": "B2",
+      "topic": "third_conditional",
+      "kind": "which",
+      "lines": [
+        "If they hadn't missed the bus, they would have been on time.",
+        "If they hadn't missed the bus, they would be on time."
+      ],
+      "correct": 0,
+      "why": "A wholly past situation needs would have been."
+    },
+    {
+      "id": "en-bt-b2-05",
+      "level": "B2",
+      "topic": "wish_if_only",
+      "kind": "gap",
+      "lines": [
+        "– It is so cold in this flat.",
+        "– I wish it ___ warmer here."
+      ],
+      "options": [
+        "is",
+        "would be",
+        "will be",
+        "were"
+      ],
+      "correct": 3,
+      "why": "A wish about the present takes the past form: were."
+    },
+    {
+      "id": "en-bt-b2-06",
+      "level": "B2",
+      "topic": "wish_if_only",
+      "kind": "gap",
+      "lines": [
+        "– He didn't call me back.",
+        "– If only he ___ me yesterday."
+      ],
+      "options": [
+        "called",
+        "had called",
+        "would call",
+        "has called"
+      ],
+      "correct": 1,
+      "why": "A regret about the past: if only + past perfect."
+    },
+    {
+      "id": "en-bt-b2-07",
+      "level": "B2",
+      "topic": "wish_if_only",
+      "kind": "which",
+      "lines": [
+        "I wish I would have more free time.",
+        "I wish I had more free time."
+      ],
+      "correct": 1,
+      "why": "A wish about the present takes the past simple: had."
+    },
+    {
+      "id": "en-bt-b2-08",
+      "level": "B2",
+      "topic": "wish_if_only",
+      "kind": "which",
+      "lines": [
+        "If only I had listened to her.",
+        "If only I would listen to her yesterday."
+      ],
+      "correct": 0,
+      "why": "A past regret: if only + past perfect."
+    },
+    {
+      "id": "en-bt-b2-09",
+      "level": "B2",
+      "topic": "passive_advanced",
+      "kind": "gap",
+      "lines": [
+        "– The new bridge ___ next year."
+      ],
+      "options": [
+        "will finish",
+        "is finishing",
+        "will be finished",
+        "finishes"
+      ],
+      "correct": 2,
+      "why": "Future passive: will be + past participle."
+    },
+    {
+      "id": "en-bt-b2-10",
+      "level": "B2",
+      "topic": "passive_advanced",
+      "kind": "gap",
+      "lines": [
+        "– The room ___ right now, so please wait outside."
+      ],
+      "options": [
+        "is being cleaned",
+        "is cleaned",
+        "is cleaning",
+        "cleans"
+      ],
+      "correct": 0,
+      "why": "Present continuous passive: is being + past participle."
+    },
+    {
+      "id": "en-bt-b2-11",
+      "level": "B2",
+      "topic": "passive_advanced",
+      "kind": "gap",
+      "lines": [
+        "– He is said ___ a fortune."
+      ],
+      "options": [
+        "to make",
+        "he made",
+        "making",
+        "to have made"
+      ],
+      "correct": 3,
+      "why": "A past event after is said: to have + past participle."
+    },
+    {
+      "id": "en-bt-b2-12",
+      "level": "B2",
+      "topic": "passive_advanced",
+      "kind": "gap",
+      "lines": [
+        "– I don't like ___ what to do."
+      ],
+      "options": [
+        "telling",
+        "being told",
+        "to tell",
+        "be told"
+      ],
+      "correct": 1,
+      "why": "After like in the passive we use being + past participle."
+    },
+    {
+      "id": "en-bt-b2-13",
+      "level": "B2",
+      "topic": "reporting_verbs",
+      "kind": "gap",
+      "lines": [
+        "– What did the manager say?",
+        "– He ___ me of being late."
+      ],
+      "options": [
+        "suggested",
+        "promised",
+        "accused",
+        "admitted"
+      ],
+      "correct": 2,
+      "why": "Accuse someone of doing something."
+    },
+    {
+      "id": "en-bt-b2-14",
+      "level": "B2",
+      "topic": "reporting_verbs",
+      "kind": "gap",
+      "lines": [
+        "– Did Lucy break the vase?",
+        "– Yes, she ___ breaking it."
+      ],
+      "options": [
+        "admitted",
+        "suggested",
+        "persuaded",
+        "warned"
+      ],
+      "correct": 0,
+      "why": "Admit is followed by the -ing form."
+    },
+    {
+      "id": "en-bt-b2-15",
+      "level": "B2",
+      "topic": "reporting_verbs",
+      "kind": "which",
+      "lines": [
+        "She suggested me to go to the park.",
+        "She suggested going to the park."
+      ],
+      "correct": 1,
+      "why": "Suggest is not followed by a person + to-infinitive."
+    },
+    {
+      "id": "en-bt-b2-16",
+      "level": "B2",
+      "topic": "reporting_verbs",
+      "kind": "which",
+      "lines": [
+        "He warned me not to touch the wire.",
+        "He warned me to not touching the wire."
+      ],
+      "correct": 0,
+      "why": "Warn + person + (not) to-infinitive."
+    },
+    {
+      "id": "en-bt-b2-17",
+      "level": "B2",
+      "topic": "conditional_connectors",
+      "kind": "gap",
+      "lines": [
+        "– Can I borrow your car?",
+        "– Yes, ___ you drive carefully."
+      ],
+      "options": [
+        "despite",
+        "unless",
+        "although",
+        "provided that"
+      ],
+      "correct": 3,
+      "why": "Provided that means only if."
+    },
+    {
+      "id": "en-bt-b2-18",
+      "level": "B2",
+      "topic": "conditional_connectors",
+      "kind": "gap",
+      "lines": [
+        "– We will have the picnic ___ it rains."
+      ],
+      "options": [
+        "if not",
+        "unless",
+        "although",
+        "despite"
+      ],
+      "correct": 1,
+      "why": "Unless means if not, so it needs a positive verb."
+    },
+    {
+      "id": "en-bt-b2-19",
+      "level": "B2",
+      "topic": "conditional_connectors",
+      "kind": "gap",
+      "lines": [
+        "– Take an umbrella ___ it rains."
+      ],
+      "options": [
+        "unless",
+        "as long as",
+        "in case",
+        "despite"
+      ],
+      "correct": 2,
+      "why": "In case means as a precaution."
+    },
+    {
+      "id": "en-bt-b2-20",
+      "level": "B2",
+      "topic": "conditional_connectors",
+      "kind": "gap",
+      "lines": [
+        "– ___ you hurry, you will miss the train."
+      ],
+      "options": [
+        "Unless",
+        "Provided",
+        "In case",
+        "Despite"
+      ],
+      "correct": 0,
+      "why": "Unless you hurry means if you don't hurry."
+    },
+    {
+      "id": "en-bt-b2-21",
+      "level": "B2",
+      "topic": "causative_have",
+      "kind": "gap",
+      "lines": [
+        "– Your hair looks great!",
+        "– Thanks, I ___ it cut yesterday."
+      ],
+      "options": [
+        "have",
+        "did",
+        "was",
+        "had"
+      ],
+      "correct": 3,
+      "why": "Causative: have + object + past participle."
+    },
+    {
+      "id": "en-bt-b2-22",
+      "level": "B2",
+      "topic": "causative_have",
+      "kind": "gap",
+      "lines": [
+        "– Who fixed your car?",
+        "– I ___ it fixed at the garage."
+      ],
+      "options": [
+        "did",
+        "had",
+        "made",
+        "got to"
+      ],
+      "correct": 1,
+      "why": "Someone else did the work: had it fixed."
+    },
+    {
+      "id": "en-bt-b2-23",
+      "level": "B2",
+      "topic": "causative_have",
+      "kind": "gap",
+      "lines": [
+        "– We are going to ___ the house painted next week."
+      ],
+      "options": [
+        "do",
+        "make",
+        "have",
+        "be"
+      ],
+      "correct": 2,
+      "why": "Causative: have + object + past participle."
+    },
+    {
+      "id": "en-bt-b2-24",
+      "level": "B2",
+      "topic": "causative_have",
+      "kind": "gap",
+      "lines": [
+        "– She ___ her photo taken by a professional."
+      ],
+      "options": [
+        "had",
+        "did",
+        "made",
+        "got to"
+      ],
+      "correct": 0,
+      "why": "Causative past: had + object + past participle."
+    },
+    {
+      "id": "en-bt-b2-25",
+      "level": "B2",
+      "topic": "non_defining_relative",
+      "kind": "gap",
+      "lines": [
+        "– My brother, ___ lives in Chile, is visiting."
+      ],
+      "options": [
+        "that",
+        "which",
+        "whose",
+        "who"
+      ],
+      "correct": 3,
+      "why": "Non-defining clauses cannot use that; a person takes who."
+    },
+    {
+      "id": "en-bt-b2-26",
+      "level": "B2",
+      "topic": "non_defining_relative",
+      "kind": "gap",
+      "lines": [
+        "– The Eiffel Tower, ___ was built in 1889, is in Paris."
+      ],
+      "options": [
+        "that",
+        "which",
+        "who",
+        "whose"
+      ],
+      "correct": 1,
+      "why": "A thing in a non-defining clause takes which."
+    },
+    {
+      "id": "en-bt-b2-27",
+      "level": "B2",
+      "topic": "non_defining_relative",
+      "kind": "gap",
+      "lines": [
+        "– Our teacher, ___ car broke down, was late."
+      ],
+      "options": [
+        "who",
+        "which",
+        "whose",
+        "that"
+      ],
+      "correct": 2,
+      "why": "Whose shows possession."
+    },
+    {
+      "id": "en-bt-b2-28",
+      "level": "B2",
+      "topic": "non_defining_relative",
+      "kind": "gap",
+      "lines": [
+        "– We stayed in Lisbon, ___ we met some old friends."
+      ],
+      "options": [
+        "where",
+        "which",
+        "that",
+        "who"
+      ],
+      "correct": 0,
+      "why": "A place in a non-defining clause takes where."
+    },
+    {
+      "id": "en-bt-b2-29",
+      "level": "B2",
+      "topic": "quantifiers",
+      "kind": "gap",
+      "lines": [
+        "– Is there any coffee left?",
+        "– Only ___ little."
+      ],
+      "options": [
+        "few",
+        "an",
+        "the",
+        "a"
+      ],
+      "correct": 3,
+      "why": "Little is uncountable; a little means some."
+    },
+    {
+      "id": "en-bt-b2-30",
+      "level": "B2",
+      "topic": "quantifiers",
+      "kind": "gap",
+      "lines": [
+        "– How many friends did you invite?",
+        "– Not many, only ___ few."
+      ],
+      "options": [
+        "the",
+        "a",
+        "one",
+        "an"
+      ],
+      "correct": 1,
+      "why": "A few means some (countable)."
+    },
+    {
+      "id": "en-bt-b2-31",
+      "level": "B2",
+      "topic": "quantifiers",
+      "kind": "gap",
+      "lines": [
+        "– We have ___ time. Let's hurry!"
+      ],
+      "options": [
+        "few",
+        "many",
+        "little",
+        "a few"
+      ],
+      "correct": 2,
+      "why": "Little means almost none for uncountable nouns."
+    },
+    {
+      "id": "en-bt-b2-32",
+      "level": "B2",
+      "topic": "quantifiers",
+      "kind": "gap",
+      "lines": [
+        "– I have ___ of work today."
+      ],
+      "options": [
+        "a lot",
+        "much",
+        "many",
+        "a few"
+      ],
+      "correct": 0,
+      "why": "A lot of works with uncountable nouns in positive sentences."
+    },
+    {
+      "id": "en-bt-b2-33",
+      "level": "B2",
+      "topic": "linking_contrast",
+      "kind": "gap",
+      "lines": [
+        "– ___ the rain, we went for a walk."
+      ],
+      "options": [
+        "Although",
+        "However",
+        "Whereas",
+        "Despite"
+      ],
+      "correct": 3,
+      "why": "Despite is followed by a noun."
+    },
+    {
+      "id": "en-bt-b2-34",
+      "level": "B2",
+      "topic": "linking_contrast",
+      "kind": "gap",
+      "lines": [
+        "– ___ it was cold, he wore a T-shirt."
+      ],
+      "options": [
+        "Despite",
+        "Although",
+        "In spite",
+        "However"
+      ],
+      "correct": 1,
+      "why": "Although is followed by a clause."
+    },
+    {
+      "id": "en-bt-b2-35",
+      "level": "B2",
+      "topic": "linking_contrast",
+      "kind": "gap",
+      "lines": [
+        "– I like him. ___, I don't trust him."
+      ],
+      "options": [
+        "Although",
+        "Despite",
+        "However",
+        "In spite"
+      ],
+      "correct": 2,
+      "why": "However links two separate sentences."
+    },
+    {
+      "id": "en-bt-b2-36",
+      "level": "B2",
+      "topic": "linking_contrast",
+      "kind": "gap",
+      "lines": [
+        "– She works hard, ___ her sister is lazy."
+      ],
+      "options": [
+        "whereas",
+        "despite",
+        "in spite",
+        "however"
+      ],
+      "correct": 0,
+      "why": "Whereas contrasts two clauses."
+    },
+    {
+      "id": "en-bt-b2-37",
+      "level": "B2",
+      "topic": "past_perfect_continuous",
+      "kind": "gap",
+      "lines": [
+        "– Why were your eyes red?",
+        "– I ___ for an hour."
+      ],
+      "options": [
+        "was crying",
+        "have cried",
+        "had cry",
+        "had been crying"
+      ],
+      "correct": 3,
+      "why": "An action lasting up to a past moment: had been + -ing."
+    },
+    {
+      "id": "en-bt-b2-38",
+      "level": "B2",
+      "topic": "past_perfect_continuous",
+      "kind": "gap",
+      "lines": [
+        "– They ___ for two hours when the bus finally came."
+      ],
+      "options": [
+        "were waited",
+        "had been waiting",
+        "have been waiting",
+        "had waited to"
+      ],
+      "correct": 1,
+      "why": "Duration before a past moment: had been waiting."
+    },
+    {
+      "id": "en-bt-b2-39",
+      "level": "B2",
+      "topic": "past_perfect_continuous",
+      "kind": "gap",
+      "lines": [
+        "– He was out of breath because he ___."
+      ],
+      "options": [
+        "has been running",
+        "was ran",
+        "had been running",
+        "had been run"
+      ],
+      "correct": 2,
+      "why": "Cause in the past: had been running."
+    },
+    {
+      "id": "en-bt-b2-40",
+      "level": "B2",
+      "topic": "past_perfect_continuous",
+      "kind": "gap",
+      "lines": [
+        "– How long ___ you been studying when she called?",
+        "– Almost three hours."
+      ],
+      "options": [
+        "had",
+        "have",
+        "were",
+        "did"
+      ],
+      "correct": 0,
+      "why": "Past perfect continuous question: had you been."
+    },
+    {
+      "id": "en-bt-b2-41",
+      "level": "B2",
+      "topic": "comparison_advanced",
+      "kind": "gap",
+      "lines": [
+        "– The more you practise, ___ you will be."
+      ],
+      "options": [
+        "better",
+        "the best",
+        "more good",
+        "the better"
+      ],
+      "correct": 3,
+      "why": "The more ... the + comparative."
+    },
+    {
+      "id": "en-bt-b2-42",
+      "level": "B2",
+      "topic": "comparison_advanced",
+      "kind": "gap",
+      "lines": [
+        "– This exam is ___ difficult as the last one."
+      ],
+      "options": [
+        "no more",
+        "not as",
+        "less than",
+        "not so than"
+      ],
+      "correct": 1,
+      "why": "Not as ... as shows a lower degree."
+    },
+    {
+      "id": "en-bt-b2-43",
+      "level": "B2",
+      "topic": "comparison_advanced",
+      "kind": "gap",
+      "lines": [
+        "– Her English is getting ___ every day."
+      ],
+      "options": [
+        "more good",
+        "best",
+        "better and better",
+        "the better"
+      ],
+      "correct": 2,
+      "why": "Repeated comparative shows gradual change."
+    },
+    {
+      "id": "en-bt-b2-44",
+      "level": "B2",
+      "topic": "comparison_advanced",
+      "kind": "gap",
+      "lines": [
+        "– It is twice ___ as expensive as the other one."
+      ],
+      "options": [
+        "as",
+        "more",
+        "than",
+        "much"
+      ],
+      "correct": 0,
+      "why": "Twice as + adjective + as."
+    },
+    {
+      "id": "en-bt-c1-01",
+      "level": "C1",
+      "topic": "negative_inversion",
+      "kind": "gap",
+      "lines": [
+        "– Never ___ such a beautiful view."
+      ],
+      "options": [
+        "I have seen",
+        "did I saw",
+        "have I seen",
+        "I saw"
+      ],
+      "correct": 2,
+      "why": "After Never at the start, the auxiliary comes before the subject."
+    },
+    {
+      "id": "en-bt-c1-02",
+      "level": "C1",
+      "topic": "negative_inversion",
+      "kind": "gap",
+      "lines": [
+        "– Not only ___ late, but he also forgot the documents."
+      ],
+      "options": [
+        "did he arrive",
+        "he arrived",
+        "arrived he",
+        "he did arrive"
+      ],
+      "correct": 0,
+      "why": "Not only at the start takes inversion with did."
+    },
+    {
+      "id": "en-bt-c1-03",
+      "level": "C1",
+      "topic": "negative_inversion",
+      "kind": "gap",
+      "lines": [
+        "– Hardly ___ the house when it started to rain."
+      ],
+      "options": [
+        "we had left",
+        "we left",
+        "did we left",
+        "had we left"
+      ],
+      "correct": 3,
+      "why": "Hardly requires inversion: had we left."
+    },
+    {
+      "id": "en-bt-c1-04",
+      "level": "C1",
+      "topic": "negative_inversion",
+      "kind": "gap",
+      "lines": [
+        "– Rarely ___ such a talented player."
+      ],
+      "options": [
+        "we see",
+        "do we see",
+        "see we",
+        "we do see"
+      ],
+      "correct": 1,
+      "why": "Rarely at the start takes do/does + subject."
+    },
+    {
+      "id": "en-bt-c1-05",
+      "level": "C1",
+      "topic": "cleft_sentences",
+      "kind": "gap",
+      "lines": [
+        "– It was in Cusco ___ we first met."
+      ],
+      "options": [
+        "what",
+        "who",
+        "that",
+        "which is"
+      ],
+      "correct": 2,
+      "why": "An it-cleft for a place uses that."
+    },
+    {
+      "id": "en-bt-c1-06",
+      "level": "C1",
+      "topic": "cleft_sentences",
+      "kind": "gap",
+      "lines": [
+        "– ___ annoys me is his constant lateness."
+      ],
+      "options": [
+        "What",
+        "It",
+        "That",
+        "Which is"
+      ],
+      "correct": 0,
+      "why": "What starts a wh-cleft."
+    },
+    {
+      "id": "en-bt-c1-07",
+      "level": "C1",
+      "topic": "cleft_sentences",
+      "kind": "which",
+      "lines": [
+        "What I need it is a long holiday.",
+        "What I need is a long holiday."
+      ],
+      "correct": 1,
+      "why": "A what-cleft needs no extra pronoun before is."
+    },
+    {
+      "id": "en-bt-c1-08",
+      "level": "C1",
+      "topic": "cleft_sentences",
+      "kind": "which",
+      "lines": [
+        "It was Maria who solved the problem.",
+        "It was Maria who she solved the problem."
+      ],
+      "correct": 0,
+      "why": "In an it-cleft the relative pronoun replaces the subject."
+    },
+    {
+      "id": "en-bt-c1-09",
+      "level": "C1",
+      "topic": "conditional_inversion",
+      "kind": "gap",
+      "lines": [
+        "– ___ I known earlier, I would have acted differently."
+      ],
+      "options": [
+        "If had",
+        "Have",
+        "Should",
+        "Had"
+      ],
+      "correct": 3,
+      "why": "Had + subject replaces if + had."
+    },
+    {
+      "id": "en-bt-c1-10",
+      "level": "C1",
+      "topic": "conditional_inversion",
+      "kind": "gap",
+      "lines": [
+        "– ___ you need any help, don't hesitate to ask."
+      ],
+      "options": [
+        "Would",
+        "Should",
+        "Do",
+        "Had"
+      ],
+      "correct": 1,
+      "why": "Should + subject replaces if you should."
+    },
+    {
+      "id": "en-bt-c1-11",
+      "level": "C1",
+      "topic": "conditional_inversion",
+      "kind": "gap",
+      "lines": [
+        "– ___ it not for her support, I would have quit."
+      ],
+      "options": [
+        "Had",
+        "Was",
+        "Were",
+        "Should"
+      ],
+      "correct": 2,
+      "why": "Were it not for = if it were not for."
+    },
+    {
+      "id": "en-bt-c1-12",
+      "level": "C1",
+      "topic": "conditional_inversion",
+      "kind": "gap",
+      "lines": [
+        "– ___ he to apologise, I might forgive him."
+      ],
+      "options": [
+        "Were",
+        "Had",
+        "Should",
+        "Did"
+      ],
+      "correct": 0,
+      "why": "Were + subject + to replaces if he were to."
+    },
+    {
+      "id": "en-bt-c1-13",
+      "level": "C1",
+      "topic": "subjunctive_hypothetical",
+      "kind": "gap",
+      "lines": [
+        "– It's high time we ___ the problem seriously."
+      ],
+      "options": [
+        "take",
+        "will take",
+        "are taking",
+        "took"
+      ],
+      "correct": 3,
+      "why": "It's high time takes the past simple."
+    },
+    {
+      "id": "en-bt-c1-14",
+      "level": "C1",
+      "topic": "subjunctive_hypothetical",
+      "kind": "gap",
+      "lines": [
+        "– I'd rather you ___ in here."
+      ],
+      "options": [
+        "don't smoke",
+        "didn't smoke",
+        "wouldn't smoke",
+        "not smoked"
+      ],
+      "correct": 1,
+      "why": "I'd rather + subject takes the past simple."
+    },
+    {
+      "id": "en-bt-c1-15",
+      "level": "C1",
+      "topic": "subjunctive_hypothetical",
+      "kind": "which",
+      "lines": [
+        "I suggest that he takes a break.",
+        "I suggest that he take a break."
+      ],
+      "correct": 1,
+      "why": "After suggest that, the subjunctive uses the base form."
+    },
+    {
+      "id": "en-bt-c1-16",
+      "level": "C1",
+      "topic": "subjunctive_hypothetical",
+      "kind": "which",
+      "lines": [
+        "It is essential that she be present.",
+        "It is essential that she is being present."
+      ],
+      "correct": 0,
+      "why": "After essential that we use the base verb be."
+    },
+    {
+      "id": "en-bt-c1-17",
+      "level": "C1",
+      "topic": "discourse_markers",
+      "kind": "register",
+      "options": [
+        "Hey, can we move the meeting?",
+        "Let's move the meeting, OK?",
+        "Would it be possible to reschedule the meeting?",
+        "Can you change the meeting?"
+      ],
+      "correct": 2,
+      "why": "The impersonal conditional with a formal verb is the most formal request."
+    },
+    {
+      "id": "en-bt-c1-18",
+      "level": "C1",
+      "topic": "discourse_markers",
+      "kind": "register",
+      "options": [
+        "I would like to express my sincere gratitude.",
+        "Thanks a lot for that.",
+        "Thanks heaps!",
+        "Cheers, mate!"
+      ],
+      "correct": 0,
+      "why": "The formal noun phrase is the most formal way to thank."
+    },
+    {
+      "id": "en-bt-c1-19",
+      "level": "C1",
+      "topic": "discourse_markers",
+      "kind": "register",
+      "options": [
+        "I'm writing to let you know your order is late.",
+        "Just so you know, your order is late.",
+        "Hey, your order is a bit late.",
+        "I am writing to inform you that your order has been delayed."
+      ],
+      "correct": 3,
+      "why": "Inform you + has been delayed is the most formal."
+    },
+    {
+      "id": "en-bt-c1-20",
+      "level": "C1",
+      "topic": "discourse_markers",
+      "kind": "register",
+      "options": [
+        "Sorry, I can't come.",
+        "I regret to inform you that I will be unable to attend.",
+        "Sorry, no can do.",
+        "I'm not coming, sorry."
+      ],
+      "correct": 1,
+      "why": "Regret to inform you is the most formal way to decline."
+    }
+  ]
+}
