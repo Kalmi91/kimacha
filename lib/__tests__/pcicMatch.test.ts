@@ -246,3 +246,28 @@ describe('gradePcicAnswer, empty Spanish answer and Spain-only forms', () => {
     expect(gradePcicAnswer('', 'descomponerse / estropearse').best).toBe('estropearse');
   });
 });
+
+// A keyboard or a paste can send an accented letter decomposed (base letter + combining mark, NFD).
+// It looks the same on screen, so it is graded like the composed (NFC) letter. The strings use
+// escapes so the form of each letter is visible: é is the composed é, é the decomposed one.
+describe('gradePcicAnswer, decomposed (NFD) accents', () => {
+  it('a decomposed accent in the typed answer is exact, with strict accents on or off', () => {
+    expect(gradePcicAnswer('café', 'café', true).match).toBe('exact');
+    expect(gradePcicAnswer('mañana', 'mañana', true).match).toBe('exact');
+    expect(gradePcicAnswer('está aquí', 'está aquí', false).match).toBe('exact');
+  });
+
+  it('a decomposed accent in the stored answer is exact too', () => {
+    expect(gradePcicAnswer('café', 'café', true).match).toBe('exact');
+  });
+
+  it('Hungarian: a decomposed long vowel is exact, a different accent is still wrong', () => {
+    expect(gradePcicAnswer('őt', 'őt', false, 'hu').match).toBe('exact');
+    expect(gradePcicAnswer('öt', 'őt', false, 'hu').match).toBe('wrong');
+  });
+
+  it('a missing accent is still judged by the strict-accents switch', () => {
+    expect(gradePcicAnswer('cafe', 'café', true).match).toBe('wrong');
+    expect(gradePcicAnswer('cafe', 'café', false)).toMatchObject({ match: 'near', accentOnly: true });
+  });
+});
