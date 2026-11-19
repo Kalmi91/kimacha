@@ -843,6 +843,418 @@
           "en": "next Monday"
         }
       ]
+    },
+    {
+      "id": "gg-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "I ___ going to visit my aunt this weekend. She ___ going to cook for us.",
+      "answers": [
+        "am",
+        "is"
+      ],
+      "tr": {
+        "en": "I am going to visit my aunt this weekend. She is going to cook for us.",
+        "es": "Voy a visitar a mi tía este fin de semana. Ella va a cocinar para nosotros."
+      },
+      "why": {
+        "en": "Choose am / is / are for the subject: I am, he / she / it is, you / we / they are.",
+        "es": "Elige am / is / are según el sujeto: I am, he / she / it is, you / we / they are."
+      }
+    },
+    {
+      "id": "gg-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Look at those black clouds! It ___ going to ___ (rain).",
+      "answers": [
+        "is",
+        "rain"
+      ],
+      "tr": {
+        "en": "Look at those black clouds! It is going to rain.",
+        "es": "¡Mira esas nubes negras! Va a llover."
+      },
+      "why": {
+        "en": "We use going to for a prediction based on what we see now: black clouds → it is going to rain.",
+        "es": "Usamos going to para una predicción basada en lo que vemos ahora: nubes negras → it is going to rain."
+      }
+    },
+    {
+      "id": "gg-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "We ___ not going to ___ (watch) TV tonight. We are going to read.",
+      "answers": [
+        "are",
+        "watch"
+      ],
+      "tr": {
+        "en": "We are not going to watch TV tonight. We are going to read.",
+        "es": "Esta noche no vamos a ver la tele. Vamos a leer."
+      },
+      "why": {
+        "en": "Negative: am / is / are + not + going to + base verb (we are not going to watch).",
+        "es": "Negativa: am / is / are + not + going to + verbo base (we are not going to watch)."
+      }
+    },
+    {
+      "id": "gg-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "___ you going to buy a car? No, I ___ not.",
+      "answers": [
+        "Are",
+        "am"
+      ],
+      "tr": {
+        "en": "Are you going to buy a car? No, I am not.",
+        "es": "¿Vas a comprar un coche? No, no voy a comprarlo."
+      },
+      "why": {
+        "en": "Question: Am / Is / Are + subject + going to + base verb? Short answer: No, I am not.",
+        "es": "Pregunta: Am / Is / Are + sujeto + going to + verbo base? Respuesta corta: No, I am not."
+      }
+    },
+    {
+      "id": "gg-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "My friends ___ going to ___ (travel) to Peru in July.",
+      "answers": [
+        "are",
+        "travel"
+      ],
+      "tr": {
+        "en": "My friends are going to travel to Peru in July.",
+        "es": "Mis amigos van a viajar a Perú en julio."
+      },
+      "why": {
+        "en": "After “going to” the verb stays in the base form: no -s, no -ing (going to visit).",
+        "es": "Después de «going to» el verbo se queda en forma base: sin -s ni -ing (going to visit)."
+      }
+    },
+    {
+      "id": "gg-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "I am going to visits my aunt.",
+      "wrongIndex": 4,
+      "answer": "visit",
+      "explain": {
+        "en": "After “going to” the verb stays in the base form: no -s, no -ing (going to visit).",
+        "es": "Después de «going to» el verbo se queda en forma base: sin -s ni -ing (going to visit)."
+      },
+      "tr": {
+        "en": "I am going to visit my aunt.",
+        "es": "Voy a visitar a mi tía."
+      }
+    },
+    {
+      "id": "gg-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "She are going to buy a new phone.",
+      "wrongIndex": 1,
+      "answer": "is",
+      "explain": {
+        "en": "Choose am / is / are for the subject: I am, he / she / it is, you / we / they are.",
+        "es": "Elige am / is / are según el sujeto: I am, he / she / it is, you / we / they are."
+      },
+      "tr": {
+        "en": "She is going to buy a new phone.",
+        "es": "Ella va a comprar un teléfono nuevo."
+      }
+    },
+    {
+      "id": "gg-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "Is you going to call her?",
+      "wrongIndex": 0,
+      "answer": "Are",
+      "explain": {
+        "en": "Choose am / is / are for the subject: I am, he / she / it is, you / we / they are.",
+        "es": "Elige am / is / are según el sujeto: I am, he / she / it is, you / we / they are."
+      },
+      "tr": {
+        "en": "Are you going to call her?",
+        "es": "¿Vas a llamarla?"
+      }
+    },
+    {
+      "id": "gg-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "He is going for watch a film tonight.",
+      "wrongIndex": 3,
+      "answer": "to",
+      "explain": {
+        "en": "The structure is always “going to” + verb: He is going to watch a film.",
+        "es": "La estructura es siempre «going to» + verbo: He is going to watch a film."
+      },
+      "tr": {
+        "en": "He is going to watch a film tonight.",
+        "es": "Esta noche va a ver una película."
+      }
+    },
+    {
+      "id": "gg-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "It’s going to raining tomorrow.",
+      "wrongIndex": 3,
+      "answer": "rain",
+      "explain": {
+        "en": "After “going to” the verb stays in the base form: no -s, no -ing (going to visit).",
+        "es": "Después de «going to» el verbo se queda en forma base: sin -s ni -ing (going to visit)."
+      },
+      "tr": {
+        "en": "It’s going to rain tomorrow.",
+        "es": "Mañana va a llover."
+      }
+    },
+    {
+      "id": "gg-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "is",
+        "am",
+        "are"
+      ],
+      "es": "She ___ going to study tonight.",
+      "word": "is",
+      "answer": "is",
+      "tr": {
+        "en": "She is going to study tonight.",
+        "es": "Esta noche va a estudiar."
+      },
+      "why": {
+        "en": "Choose am / is / are for the subject: I am, he / she / it is, you / we / they are.",
+        "es": "Elige am / is / are según el sujeto: I am, he / she / it is, you / we / they are."
+      }
+    },
+    {
+      "id": "gg-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "am",
+        "is",
+        "are"
+      ],
+      "es": "I ___ going to call my mother later.",
+      "word": "am",
+      "answer": "am",
+      "tr": {
+        "en": "I am going to call my mother later.",
+        "es": "Voy a llamar a mi madre más tarde."
+      },
+      "why": {
+        "en": "Choose am / is / are for the subject: I am, he / she / it is, you / we / they are.",
+        "es": "Elige am / is / are según el sujeto: I am, he / she / it is, you / we / they are."
+      }
+    },
+    {
+      "id": "gg-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "are",
+        "is",
+        "am"
+      ],
+      "es": "We ___ going to have a party on Saturday.",
+      "word": "are",
+      "answer": "are",
+      "tr": {
+        "en": "We are going to have a party on Saturday.",
+        "es": "El sábado vamos a hacer una fiesta."
+      },
+      "why": {
+        "en": "Choose am / is / are for the subject: I am, he / she / it is, you / we / they are.",
+        "es": "Elige am / is / are según el sujeto: I am, he / she / it is, you / we / they are."
+      }
+    },
+    {
+      "id": "gg-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "rain",
+        "sing",
+        "dance"
+      ],
+      "es": "Take an umbrella. It is going to ___.",
+      "word": "rain",
+      "answer": "rain",
+      "tr": {
+        "en": "Take an umbrella. It is going to rain.",
+        "es": "Lleva un paraguas. Va a llover."
+      },
+      "why": {
+        "en": "We use going to for a prediction based on what we see now: black clouds → it is going to rain.",
+        "es": "Usamos going to para una predicción basada en lo que vemos ahora: nubes negras → it is going to rain."
+      }
+    },
+    {
+      "id": "gg-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "call",
+        "wear",
+        "sleep"
+      ],
+      "es": "I am going to ___ my grandmother tonight.",
+      "word": "call",
+      "answer": "call",
+      "tr": {
+        "en": "I am going to call my grandmother tonight.",
+        "es": "Esta noche voy a llamar a mi abuela."
+      },
+      "why": {
+        "en": "Going to expresses a plan: something we have already decided to do.",
+        "es": "Going to expresa un plan: algo que ya hemos decidido hacer."
+      }
+    },
+    {
+      "id": "gg-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "I am going to visit my aunt tomorrow.",
+        "es": "Mañana voy a visitar a mi tía."
+      },
+      "es": "I am going to visit my aunt tomorrow.",
+      "accept": [
+        "Tomorrow I am going to visit my aunt."
+      ]
+    },
+    {
+      "id": "gg-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "She is not going to wait for us.",
+        "es": "Ella no va a esperarnos."
+      },
+      "es": "She is not going to wait for us."
+    },
+    {
+      "id": "gg-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "Are you going to buy a car?",
+        "es": "¿Vas a comprar un coche?"
+      },
+      "es": "Are you going to buy a car?"
+    },
+    {
+      "id": "gg-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "They are going to travel in July.",
+        "es": "Van a viajar en julio."
+      },
+      "es": "They are going to travel in July.",
+      "accept": [
+        "In July they are going to travel."
+      ]
+    },
+    {
+      "id": "gg-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "It is going to rain this afternoon.",
+        "es": "Esta tarde va a llover."
+      },
+      "es": "It is going to rain this afternoon.",
+      "accept": [
+        "This afternoon it is going to rain."
+      ]
+    },
+    {
+      "kind": "why",
+      "id": "gg-why-01",
+      "es": "I am going to start a new job.",
+      "target": "going to",
+      "tr": {
+        "en": "I am going to start a new job.",
+        "es": "Voy a empezar un trabajo nuevo."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "a decision made right now: will",
+            "es": "una decisión tomada ahora mismo: will"
+          },
+          "wrong": {
+            "en": "A job you are going to start is a plan you already have; a decision made on the spot uses “will”.",
+            "es": "Un trabajo que vas a empezar es un plan que ya tienes; una decisión del momento usa «will»."
+          }
+        },
+        {
+          "text": {
+            "en": "a plan or intention for the future",
+            "es": "un plan o una intención para el futuro"
+          }
+        },
+        {
+          "text": {
+            "en": "something that happens every day: present simple",
+            "es": "algo que pasa todos los días: presente simple"
+          },
+          "wrong": {
+            "en": "The job has not started yet, and “going to” talks about the future, not about a routine.",
+            "es": "El trabajo aún no ha empezado, y «going to» habla del futuro, no de una rutina."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "gg-why-02",
+      "es": "Look at those clouds! It is going to rain.",
+      "target": "going to",
+      "tr": {
+        "en": "Look at those clouds! It is going to rain.",
+        "es": "¡Mira esas nubes! Va a llover."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "a habit",
+            "es": "un hábito"
+          },
+          "wrong": {
+            "en": "A habit uses the present simple; here the clouds are the evidence for a prediction.",
+            "es": "Un hábito usa el presente simple; aquí las nubes son la prueba de una predicción."
+          }
+        },
+        {
+          "text": {
+            "en": "an offer made at the moment of speaking: will",
+            "es": "un ofrecimiento hecho en el momento de hablar: will"
+          },
+          "wrong": {
+            "en": "Nobody is offering anything; we predict from what we can see.",
+            "es": "Nadie ofrece nada; predecimos a partir de lo que vemos."
+          }
+        },
+        {
+          "text": {
+            "en": "a prediction based on evidence we can see",
+            "es": "una predicción basada en una prueba que vemos"
+          }
+        }
+      ],
+      "correctIndex": 2
     }
   ]
 }

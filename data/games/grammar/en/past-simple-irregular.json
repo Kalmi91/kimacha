@@ -977,6 +977,418 @@
           "en": "made"
         }
       ]
+    },
+    {
+      "id": "pi-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Last summer we ___ (go) to the beach and ___ (eat) fish.",
+      "answers": [
+        "went",
+        "ate"
+      ],
+      "tr": {
+        "en": "Last summer we went to the beach and ate fish.",
+        "es": "El verano pasado fuimos a la playa y comimos pescado."
+      },
+      "why": {
+        "en": "Irregular verbs have their own past form that you have to learn: go → went, eat → ate, take → took.",
+        "es": "Los verbos irregulares tienen su propia forma de pasado que hay que aprender: go → went, eat → ate, take → took."
+      }
+    },
+    {
+      "id": "pi-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "We ___ (take) a taxi and ___ (get) home at ten.",
+      "answers": [
+        "took",
+        "got"
+      ],
+      "tr": {
+        "en": "We took a taxi and got home at ten.",
+        "es": "Tomamos un taxi y llegamos a casa a las diez."
+      },
+      "why": {
+        "en": "Irregular verbs have their own past form that you have to learn: go → went, eat → ate, take → took.",
+        "es": "Los verbos irregulares tienen su propia forma de pasado que hay que aprender: go → went, eat → ate, take → took."
+      }
+    },
+    {
+      "id": "pi-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "I ___ at home yesterday, but my parents ___ at work.",
+      "answers": [
+        "was",
+        "were"
+      ],
+      "tr": {
+        "en": "I was at home yesterday, but my parents were at work.",
+        "es": "Ayer yo estuve en casa, pero mis padres estuvieron en el trabajo."
+      },
+      "why": {
+        "en": "The past of be: was for I / he / she / it, were for you / we / they.",
+        "es": "El pasado de be: was para I / he / she / it, were para you / we / they."
+      }
+    },
+    {
+      "id": "pi-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "He ___ not go to school. He ___ (have) a cold.",
+      "answers": [
+        "did",
+        "had"
+      ],
+      "tr": {
+        "en": "He did not go to school. He had a cold.",
+        "es": "No fue a la escuela. Tenía un resfriado."
+      },
+      "why": {
+        "en": "Negative past: did not + base verb (did not go); the affirmative irregular verb has its own form (had).",
+        "es": "Negativa en pasado: did not + verbo base (did not go); el verbo irregular afirmativo tiene su propia forma (had)."
+      }
+    },
+    {
+      "id": "pi-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "___ you see the film last night? No, I ___ not.",
+      "answers": [
+        "Did",
+        "did"
+      ],
+      "tr": {
+        "en": "Did you see the film last night? No, I did not.",
+        "es": "¿Viste la película anoche? No, no la vi."
+      },
+      "why": {
+        "en": "Past question: Did + subject + base verb; short answer: No, I didn’t.",
+        "es": "Pregunta en pasado: Did + sujeto + verbo base; respuesta corta: No, I didn’t."
+      }
+    },
+    {
+      "id": "pi-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "Last year we goed to Mexico.",
+      "wrongIndex": 3,
+      "answer": "went",
+      "explain": {
+        "en": "Irregular verbs do not take -ed: the past of go is “went”, not “goed”.",
+        "es": "Los verbos irregulares no llevan -ed: el pasado de go es «went», no «goed»."
+      },
+      "tr": {
+        "en": "Last year we went to Mexico.",
+        "es": "El año pasado fuimos a México."
+      }
+    },
+    {
+      "id": "pi-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "She buyed a red dress.",
+      "wrongIndex": 1,
+      "answer": "bought",
+      "explain": {
+        "en": "Buy is irregular: its past is “bought”, not “buyed”.",
+        "es": "Buy es irregular: su pasado es «bought», no «buyed»."
+      },
+      "tr": {
+        "en": "She bought a red dress.",
+        "es": "Ella compró un vestido rojo."
+      }
+    },
+    {
+      "id": "pi-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "He didn’t went to the party.",
+      "wrongIndex": 2,
+      "answer": "go",
+      "explain": {
+        "en": "After did / didn’t the verb is in the base form: didn’t go, not “didn’t went”.",
+        "es": "Después de did / didn’t el verbo va en forma base: didn’t go, no «didn’t went»."
+      },
+      "tr": {
+        "en": "He didn’t go to the party.",
+        "es": "No fue a la fiesta."
+      }
+    },
+    {
+      "id": "pi-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "They was at home last night.",
+      "wrongIndex": 1,
+      "answer": "were",
+      "explain": {
+        "en": "The past of be: was for I / he / she / it, were for you / we / they.",
+        "es": "El pasado de be: was para I / he / she / it, were para you / we / they."
+      },
+      "tr": {
+        "en": "They were at home last night.",
+        "es": "Anoche estaban en casa."
+      }
+    },
+    {
+      "id": "pi-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "Did you saw my brother yesterday?",
+      "wrongIndex": 2,
+      "answer": "see",
+      "explain": {
+        "en": "After did / didn’t the verb is in the base form: didn’t go, not “didn’t went”.",
+        "es": "Después de did / didn’t el verbo va en forma base: didn’t go, no «didn’t went»."
+      },
+      "tr": {
+        "en": "Did you see my brother yesterday?",
+        "es": "¿Viste ayer a mi hermano?"
+      }
+    },
+    {
+      "id": "pi-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "go",
+        "sing",
+        "wash"
+      ],
+      "es": "We ___ to the cinema last night.",
+      "word": "go",
+      "answer": "went",
+      "tr": {
+        "en": "We went to the cinema last night.",
+        "es": "Anoche fuimos al cine."
+      },
+      "why": {
+        "en": "Irregular verbs have their own past form that you have to learn: go → went, eat → ate, take → took.",
+        "es": "Los verbos irregulares tienen su propia forma de pasado que hay que aprender: go → went, eat → ate, take → took."
+      }
+    },
+    {
+      "id": "pi-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "buy",
+        "swim",
+        "sleep"
+      ],
+      "es": "She ___ some bread at the shop.",
+      "word": "buy",
+      "answer": "bought",
+      "tr": {
+        "en": "She bought some bread at the shop.",
+        "es": "Compró pan en la tienda."
+      },
+      "why": {
+        "en": "Irregular verbs have their own past form that you have to learn: go → went, eat → ate, take → took.",
+        "es": "Los verbos irregulares tienen su propia forma de pasado que hay que aprender: go → went, eat → ate, take → took."
+      }
+    },
+    {
+      "id": "pi-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "eat",
+        "sing",
+        "dance"
+      ],
+      "es": "I ___ a sandwich for lunch.",
+      "word": "eat",
+      "answer": "ate",
+      "tr": {
+        "en": "I ate a sandwich for lunch.",
+        "es": "Comí un sándwich para almorzar."
+      },
+      "why": {
+        "en": "Irregular verbs have their own past form that you have to learn: go → went, eat → ate, take → took.",
+        "es": "Los verbos irregulares tienen su propia forma de pasado que hay que aprender: go → went, eat → ate, take → took."
+      }
+    },
+    {
+      "id": "pi-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "see",
+        "sleep",
+        "swim"
+      ],
+      "es": "We ___ a beautiful bird in the park.",
+      "word": "see",
+      "answer": "saw",
+      "tr": {
+        "en": "We saw a beautiful bird in the park.",
+        "es": "Vimos un pájaro precioso en el parque."
+      },
+      "why": {
+        "en": "Irregular verbs have their own past form that you have to learn: go → went, eat → ate, take → took.",
+        "es": "Los verbos irregulares tienen su propia forma de pasado que hay que aprender: go → went, eat → ate, take → took."
+      }
+    },
+    {
+      "id": "pi-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "write",
+        "drink",
+        "run"
+      ],
+      "es": "She ___ a long email to her boss.",
+      "word": "write",
+      "answer": "wrote",
+      "tr": {
+        "en": "She wrote a long email to her boss.",
+        "es": "Escribió un correo largo a su jefe."
+      },
+      "why": {
+        "en": "Irregular verbs have their own past form that you have to learn: go → went, eat → ate, take → took.",
+        "es": "Los verbos irregulares tienen su propia forma de pasado que hay que aprender: go → went, eat → ate, take → took."
+      }
+    },
+    {
+      "id": "pi-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "We went to the beach last summer.",
+        "es": "Fuimos a la playa el verano pasado."
+      },
+      "es": "We went to the beach last summer.",
+      "accept": [
+        "Last summer we went to the beach."
+      ]
+    },
+    {
+      "id": "pi-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "She didn’t buy the red bag.",
+        "es": "No compró el bolso rojo."
+      },
+      "es": "She didn’t buy the red bag."
+    },
+    {
+      "id": "pi-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "I saw your sister at the market.",
+        "es": "Vi a tu hermana en el mercado."
+      },
+      "es": "I saw your sister at the market."
+    },
+    {
+      "id": "pi-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "They were at home yesterday.",
+        "es": "Ayer estaban en casa."
+      },
+      "es": "They were at home yesterday.",
+      "accept": [
+        "Yesterday they were at home."
+      ]
+    },
+    {
+      "id": "pi-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "He had a big breakfast this morning.",
+        "es": "Esta mañana desayunó mucho."
+      },
+      "es": "He had a big breakfast this morning.",
+      "accept": [
+        "This morning he had a big breakfast."
+      ]
+    },
+    {
+      "kind": "why",
+      "id": "pi-why-01",
+      "es": "She bought a new bag.",
+      "target": "bought",
+      "tr": {
+        "en": "She bought a new bag.",
+        "es": "Compró un bolso nuevo."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "the base verb + -ed",
+            "es": "el verbo base + -ed"
+          },
+          "wrong": {
+            "en": "This verb is irregular: the past is a different word, not the base form with -ed.",
+            "es": "Este verbo es irregular: el pasado es otra palabra, no la forma base con -ed."
+          }
+        },
+        {
+          "text": {
+            "en": "the present with -s",
+            "es": "el presente con -s"
+          },
+          "wrong": {
+            "en": "The form with -s is the present for he / she / it; this sentence is in the past.",
+            "es": "La forma con -s es el presente de he / she / it; esta frase está en pasado."
+          }
+        },
+        {
+          "text": {
+            "en": "an irregular past form: a different word",
+            "es": "una forma irregular de pasado: otra palabra"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "pi-why-02",
+      "es": "They were tired after the trip.",
+      "target": "were",
+      "tr": {
+        "en": "They were tired after the trip.",
+        "es": "Estaban cansados después del viaje."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "the past of be for you / we / they",
+            "es": "el pasado de be para you / we / they"
+          }
+        },
+        {
+          "text": {
+            "en": "the past of be for I / he / she / it",
+            "es": "el pasado de be para I / he / she / it"
+          },
+          "wrong": {
+            "en": "“Was” goes with I / he / she / it; “they” takes “were”.",
+            "es": "«Was» va con I / he / she / it; «they» lleva «were»."
+          }
+        },
+        {
+          "text": {
+            "en": "the present of be: are",
+            "es": "el presente de be: are"
+          },
+          "wrong": {
+            "en": "“Are” is the present; “were” is its past form.",
+            "es": "«Are» es el presente; «were» es su forma de pasado."
+          }
+        }
+      ],
+      "correctIndex": 0
     }
   ]
 }
