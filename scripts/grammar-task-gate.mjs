@@ -55,7 +55,8 @@ function main() {
   // `exempt`: { topicId: [type, ...] } the type is not required for that topic (a decision for the lesson, e.g. no typed form drill)
   const exempt = config.exempt ?? {};
   for (const [topicId, types] of Object.entries(exempt)) {
-    if (!syllabus.some((t) => t.id === topicId)) errors.push(`exempt: unknown topic "${topicId}"`);
+    // an English topic (lesson file data/games/grammar/en/<id with - for _>.json) is known too; only the Spanish syllabus is measured below
+    if (!syllabus.some((t) => t.id === topicId) && !fs.existsSync(path.join(ROOT, 'data', 'games', 'grammar', 'en', `${topicId.replace(/_/g, '-')}.json`))) errors.push(`exempt: unknown topic "${topicId}"`);
     for (const type of types) if (!config.types[type]) errors.push(`exempt: unknown type "${type}" for topic "${topicId}"`);
   }
 

@@ -306,10 +306,39 @@ const GRAMMAR_TIER: Record<string, GrammarTier> = {
   'modalpartikeln': 'full',
   'modalverben-vermutung': 'exam',
   'konjunktiv-irreale-vergleiche': 'exam',
+  // --- English course (target en), core+ and core; every other English topic is 'exam' (see getGrammarTier) ---
+  to_be: 'core-plus',
+  present_simple: 'core-plus',
+  present_continuous: 'core-plus',
+  can_ability: 'core-plus',
+  past_simple_regular: 'core-plus',
+  past_simple_irregular: 'core-plus',
+  going_to: 'core-plus',
+  will: 'core-plus',
+  present_perfect_vs_past: 'core-plus',
+  first_conditional: 'core-plus',
+  basic_verbs: 'core',
+  articles: 'core',
+  plurals: 'core',
+  possessives: 'core',
+  there_is_are: 'core',
+  question_words: 'core',
+  present_perfect: 'core',
+  comparatives: 'core',
+  must_have_to: 'core',
+  past_continuous: 'core',
+  second_conditional: 'core',
+  modals_obligation_advice: 'core',
+  passive_voice: 'core',
+  third_conditional: 'core',
+  wish_if_only: 'core',
+  passive_advanced: 'core',
+  reporting_verbs: 'core',
+  discourse_markers: 'core',
 };
 
 export function getGrammarTier(topicId: string): GrammarTier {
-  return GRAMMAR_TIER[topicId] ?? 'full';
+  return GRAMMAR_TIER[topicId] ?? (EN_SYLLABUS.some((t) => t.id === topicId) ? 'exam' : 'full');
 }
 
 /** The exam tiers: core+, core and exam (the tiers are cumulative, full and perfect are beyond the exam). */

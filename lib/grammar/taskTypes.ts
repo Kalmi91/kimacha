@@ -30,7 +30,9 @@ export function taskConfigForLevel(level: Level): { enabled: boolean; types: Tas
 
 /** The exempt entries that name a topic not in the syllabus or an unknown type (must be empty). */
 export function exemptErrors(exempt: Record<string, string[]> = FILE.exempt ?? {}, topicIds?: string[]): string[] {
-  const known = new Set(topicIds ?? (Object.keys(FILE.levels) as Level[]).flatMap((l) => syllabusForLevel(l).map((t) => t.id)));
+  const known = new Set(
+    topicIds ?? (Object.keys(FILE.levels) as Level[]).flatMap((l) => [...syllabusForLevel(l), ...syllabusForLevel(l, 'en')].map((t) => t.id))
+  );
   const errors: string[] = [];
   for (const [topic, types] of Object.entries(exempt)) {
     if (!known.has(topic)) errors.push(`unknown topic ${topic}`);
