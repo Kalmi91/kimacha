@@ -331,7 +331,7 @@ export function TransformDrillItem({
           docked ? null : <BrutalInkButton g={g} testID="transform-check" label={s.grammar.check} onPress={check} />
         ) : (
           <>
-            <BrutalFeedback correct={result === 'ok'} title={result === 'ok' ? s.grammar.correct : s.grammar.correctAnswer}>
+            <BrutalFeedback correct={result === 'ok'} title={result === 'ok' ? s.grammar.correct : s.games.wrongFeedback}>
               {result === 'bad' ? (
                 <AnswerCompare typed={input} correct={closest} g={g} onFill />
               ) : null}
@@ -404,7 +404,7 @@ export function TransformDrillItem({
             </>
           ) : (
             <>
-              <ResultBadge correct={false} label={s.grammar.correctAnswer} />
+              <ResultBadge correct={false} label={s.games.wrongFeedback} />
               <AnswerCompare typed={input} correct={closest} g={g} />
               <Text style={[styles.explainText, { color: colors.text }]}>{item.why[contentLang] ?? item.why.en}</Text>
             </>
