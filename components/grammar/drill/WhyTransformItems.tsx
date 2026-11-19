@@ -16,7 +16,7 @@ import { useDockedAction } from '@/components/learn/DockSlot';
 import { BrutalBox, resultInk } from '@/components/grammar/Brutal';
 import AnswerCompare from '@/components/grammar/AnswerCompare';
 import { charDiff } from '@/lib/charDiff';
-import MistypedButton from '@/components/grammar/MistypedButton';
+import MistypedButton, { mistypedDock } from '@/components/grammar/MistypedButton';
 import ResultBadge from '@/components/ResultBadge';
 import SpeakButton from '@/components/SpeakButton';
 import { useGrammarColors } from '@/lib/grammarColors';
@@ -283,7 +283,7 @@ export function TransformDrillItem({
   const { docked, padBottom } = useDockedAction(
     result === null
       ? { label: `✓ ${s.grammar.check}`, tone: 'check', testID: 'transform-check', onPress: check }
-      : { label: s.grammar.next, tone: 'next', testID: 'transform-next', onPress: () => onDone(result === 'ok') }
+      : { label: s.grammar.next, tone: 'next', testID: 'transform-next', onPress: () => onDone(result === 'ok'), secondary: mistypedDock(result === 'bad', () => onDone(true)) }
   );
 
   // brutalist sentence transformation: the sentence in a box, the F button a small box, the
@@ -337,7 +337,7 @@ export function TransformDrillItem({
               ) : null}
               <Text style={[styles.explainText, { color: resultInk(g, result === 'ok') }]}>{item.why[contentLang] ?? item.why.en}</Text>
             </BrutalFeedback>
-            {result === 'bad' ? <MistypedButton onPress={() => onDone(true)} /> : null}
+            {result === 'bad' && !docked ? <MistypedButton onPress={() => onDone(true)} /> : null}
             {docked ? null : <BrutalInkButton g={g} testID="transform-next" label={s.grammar.next} onPress={() => onDone(result === 'ok')} />}
           </>
         )}
@@ -412,7 +412,7 @@ export function TransformDrillItem({
         </View>
       )}
 
-      {result === 'bad' ? <MistypedButton onPress={() => onDone(true)} /> : null}
+      {result === 'bad' && !docked ? <MistypedButton onPress={() => onDone(true)} /> : null}
 
       {result !== null && !docked ? (
         <Pressable testID="transform-next" style={[styles.btn, { backgroundColor: colors.text }]} onPress={() => onDone(result === 'ok')}>
