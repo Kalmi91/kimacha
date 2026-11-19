@@ -71,11 +71,11 @@ describe('big test thresholds', () => {
     expect([BIG_TEST_MAIN, BIG_TEST_PASS, BIG_TEST_FAIL, BIG_TEST_QUICK, BIG_TEST_FOLLOW]).toEqual([9, 7, 3, 5, 2]);
   });
 
-  it('has data for Spanish only', () => {
+  it('has data for Spanish and English, none for German', () => {
     expect(hasBigTest('es')).toBe(true);
-    expect(hasBigTest('en')).toBe(false);
-    expect(bigTestItems('en', 'A1')).toEqual([]);
-    expect(bigTestPool('en')).toEqual([]);
+    expect(hasBigTest('de')).toBe(false);
+    expect(bigTestItems('de', 'A1')).toEqual([]);
+    expect(bigTestPool('de')).toEqual([]);
     expect(bigTestItems('es', 'A1').length).toBeGreaterThan(0);
   });
 });
@@ -481,7 +481,7 @@ describe('big test persistence', () => {
     expect(parseBigTestRun({ ...good, seed: 'x' }, real)).toBeNull();
     expect(parseBigTestRun('junk', real)).toBeNull();
     expect(parseBigTestRun(null, real)).toBeNull();
-    expect(parseBigTestRun(good, bigTestPool('en'))).toBeNull();
+    expect(parseBigTestRun(good, bigTestPool('de'))).toBeNull();
   });
 
   it('drops an old v1 run (the 45-question one)', () => {

@@ -38,6 +38,7 @@ interface BigTestData {
 // One line per language with a data file; Metro needs the require path to be a literal, hence the map of loaders.
 const LOADERS: Record<string, () => BigTestData> = {
   es: () => require('@/data/grammar/big-test/es.json'),
+  en: () => require('@/data/grammar/big-test/en.json'),
 };
 
 export function hasBigTest(learnedLang: string): boolean {
