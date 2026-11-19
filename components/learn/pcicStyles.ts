@@ -2,6 +2,9 @@ import { StyleSheet } from 'react-native';
 
 // The Learn header's level chip and the compact 💬 button share this size (dp); FeedbackModal.tsx reads it.
 export const HEADER_CHIP = { width: 56, height: 30 };
+// A top row that has the 💬 in the screen's top right corner (placement 'corner') ends with a gap this wide, so the row's own
+// right end (a badge, a clock, an empty spacer) never sits under it: the button + its 2 px shadow + the 8 px corner margin.
+export const FEEDBACK_CORNER_CLEAR = HEADER_CHIP.width + 2 + 8;
 
 export const styles = StyleSheet.create({
   container: {

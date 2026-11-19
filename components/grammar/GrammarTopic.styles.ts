@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
+import { FEEDBACK_CORNER_CLEAR } from '@/components/learn/pcicStyles';
 
-import { FEEDBACK_FAB_SIZE } from '@/constants/FeedbackFab';
 
 export const styles = StyleSheet.create({
   container: { flex: 1 },
@@ -15,11 +15,13 @@ export const styles = StyleSheet.create({
   back: { fontSize: 22 },
   title: { flex: 1, textAlign: 'center', fontSize: 17, fontWeight: '700', paddingHorizontal: 8 },
   levelTag: { fontSize: 13, fontWeight: '800', width: 28, textAlign: 'right' },
+  // keeps the header's right end clear of the corner 💬 (8 = a gap; the header's own 16 padding covers the rest).
+  cornerClear: { width: FEEDBACK_CORNER_CLEAR - 8 },
   body: { padding: 16, paddingBottom: 100, gap: 8 },
   sectionLabel: { fontSize: 12, fontWeight: '800', textTransform: 'uppercase', letterSpacing: 0.6, marginTop: 10 },
   card: { borderRadius: 14, padding: 14, gap: 6 },
   // paddingRight: the floating 💬 button would cover the 🔊 at the row's right edge when the page scrolls under it.
-  exampleRow: { flexDirection: 'row', alignItems: 'center', gap: 8, paddingRight: FEEDBACK_FAB_SIZE },
+  exampleRow: { flexDirection: 'row', alignItems: 'center', gap: 8 },
   exampleText: { fontSize: 17, fontWeight: '600', flex: 1, lineHeight: 25 },
   exampleWhy: { fontSize: 13, lineHeight: 19 },
   speak: { fontSize: 18 },

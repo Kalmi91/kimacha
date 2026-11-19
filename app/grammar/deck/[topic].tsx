@@ -38,6 +38,7 @@ import {
   type DeckState,
 } from '@/lib/grammar/tableDeck';
 import ScreenFeedback from '@/lib/screenFeedback';
+import { FEEDBACK_CORNER_CLEAR } from '@/components/learn/pcicStyles';
 import FitText from '@/components/FitText';
 import SpeakButton from '@/components/SpeakButton';
 import { isInfinitive } from '@/lib/grammar/tableShape';
@@ -230,7 +231,7 @@ export default function TableDeckScreen() {
   const header = (
     <View style={[styles.header, brutalHeaderRowStyle(g)]}>
       <BackButton testID="tabledeck-back" onPress={() => router.back()} arrowStyle={[styles.back, { color: colors.text }]} />
-      <FitText variant="title" base={17} maxLines={2} reserve={g.brutal ? 190 : 150} caps={g.brutal} style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]}>
+      <FitText variant="title" base={17} maxLines={2} reserve={(g.brutal ? 190 : 150) + FEEDBACK_CORNER_CLEAR} caps={g.brutal} style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]}>
         {lessonTitle}
       </FitText>
       <Badge
@@ -239,6 +240,7 @@ export default function TableDeckScreen() {
         classicStyle={[styles.progressChip, { backgroundColor: colors.tint }]}
         classicTextStyle={[styles.progressChipText, { color: colors.onTint }]}
       />
+      <View style={styles.cornerClear} />
     </View>
   );
 
@@ -400,7 +402,6 @@ export default function TableDeckScreen() {
         level={level}
         languagePair={deckPair}
         currentCard={`grammar:${topicId}:tabledeck:${current.id}`}
-        bottomOffset={dockH + dockLift}
       />
     </KeyboardAvoidingView>
   );
@@ -421,6 +422,7 @@ const styles = StyleSheet.create({
   brutalTitle: { textTransform: 'uppercase', fontWeight: '500' },
   brutalBar: { marginBottom: 16 },
   brutalBtn: { alignSelf: 'stretch', marginTop: 10 },
+  cornerClear: { width: FEEDBACK_CORNER_CLEAR },
   progressChip: { paddingHorizontal: 10, paddingVertical: 4, borderRadius: 999 },
   progressChipText: { fontSize: 13, fontWeight: '700', color: '#FFFFFF' },
   progressTrack: { height: 6, borderRadius: 3, overflow: 'hidden', marginBottom: 16 },

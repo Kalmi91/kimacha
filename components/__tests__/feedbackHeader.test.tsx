@@ -2,9 +2,11 @@
 // with the screen's own context (level, language pair, card), so it never floats over a row or a toggle; with no
 // navigator around (jest renders the screens bare) it sits in the screen's top right corner; 'inline' is a header-sized
 // button in the normal layout flow (the Learn tab and the neo-brutalist Course tab draw their own top row); the default
-// stays the floating button of the screens without a header.
+// is that same button in the top right corner (E206: one standard, the Learn card's size, never floating or at the bottom).
+// Pinned: every placement is the level chip's size (HEADER_CHIP), the corner one sits inside the top safe area.
 import { act, fireEvent, render, waitFor } from '@testing-library/react-native';
 import { StyleSheet } from 'react-native';
+import { HEADER_CHIP } from '@/components/learn/pcicStyles';
 import type { ReactNode } from 'react';
 
 import { FeedbackHeaderProvider } from '@/lib/feedbackHeader';
@@ -45,8 +47,8 @@ describe('FeedbackButton placement', () => {
     const header = mountHeader();
     const fab = styleOf(header.getByLabelText('Feedback'));
     expect(fab.position).not.toBe('absolute');
-    expect(fab.width).toBe(40);
-    expect(fab.height).toBe(40);
+    expect(fab.width).toBe(HEADER_CHIP.width);
+    expect(fab.height).toBe(HEADER_CHIP.height);
     // clear of the screen edge (the native header has no padding of its own at its right end)
     expect(styleOf(header.getByTestId('feedback-header-end')).marginRight).toBe(16);
   });
@@ -87,7 +89,7 @@ describe('FeedbackButton placement', () => {
   it('header, no navigator around: the button sits in the top right corner of the screen, header-sized', () => {
     const screen = render(<FeedbackButton placement="header" level="-" languagePair="en-es" currentCard="stats-tab" />);
     const fab = styleOf(screen.getByLabelText('Feedback'));
-    expect(fab).toMatchObject({ position: 'absolute', top: 8, right: 8, width: 40, height: 40 });
+    expect(fab).toMatchObject({ position: 'absolute', top: 8, right: 8, width: HEADER_CHIP.width, height: HEADER_CHIP.height });
     expect(fab.bottom).toBeUndefined();
     expect(mockSetOptions).not.toHaveBeenCalled();
   });
@@ -96,12 +98,12 @@ describe('FeedbackButton placement', () => {
     const screen = render(<FeedbackButton placement="inline" level="A1" languagePair="en-es" currentCard="pcic" />);
     const fab = styleOf(screen.getByLabelText('Feedback'));
     expect(fab.position).not.toBe('absolute');
-    expect(fab).toMatchObject({ width: 40, height: 40 });
+    expect(fab).toMatchObject({ width: HEADER_CHIP.width, height: HEADER_CHIP.height });
     expect(mockSetOptions).not.toHaveBeenCalled();
   });
 
-  it('default: the floating button over the bottom right corner stays for the screens without a header', () => {
+  it('default: the standard, the top right corner, the Learn card button size (no floating button at the bottom)', () => {
     const screen = render(<FeedbackButton level="A1" languagePair="en-es" currentCard="exam:A1:1" />);
-    expect(styleOf(screen.getByLabelText('Feedback'))).toMatchObject({ position: 'absolute', bottom: 24, right: 24 });
+    expect(styleOf(screen.getByLabelText('Feedback'))).toMatchObject({ position: 'absolute', top: 8, right: 8, width: HEADER_CHIP.width, height: HEADER_CHIP.height });
   });
 });

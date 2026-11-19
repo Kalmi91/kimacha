@@ -210,7 +210,6 @@ export default function RandomRoundScreen() {
           level={data.userLevel}
           languagePair={`${data.contentLang}→${data.learnedLang}`}
           currentCard={`grammar-random:${part}`}
-          bottomOffset={bottomOffset}
         />
       ) : null}
     </View>

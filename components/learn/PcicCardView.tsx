@@ -175,7 +175,7 @@ export default function PcicCardView({
             <Text style={styles.resetIcon}>↶</Text>
           </Pressable>
         )}
-        <ScreenFeedback placement="inline" compact level={level} languagePair={languagePair} currentCard={feedbackCard} />
+        <ScreenFeedback placement="inline" level={level} languagePair={languagePair} currentCard={feedbackCard} />
       </View>
     </View>
     {!webKeyboardOpen && !compactTyping && (

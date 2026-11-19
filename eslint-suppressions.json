@@ -4,11 +4,6 @@
       "count": 5
     }
   },
-  "components/settings/SettingsScreen.tsx": {
-    "no-restricted-syntax": {
-      "count": 1
-    }
-  },
   "app/(tabs)/stats.tsx": {
     "no-restricted-syntax": {
       "count": 4
@@ -46,7 +41,7 @@
   },
   "components/FeedbackModal.tsx": {
     "no-restricted-syntax": {
-      "count": 4
+      "count": 3
     }
   },
   "components/LevelRow.tsx": {
@@ -132,6 +127,11 @@
   "components/learn/pcicStyles.ts": {
     "no-restricted-syntax": {
       "count": 5
+    }
+  },
+  "components/settings/SettingsScreen.tsx": {
+    "no-restricted-syntax": {
+      "count": 1
     }
   },
   "components/skins/csillampony.tsx": {

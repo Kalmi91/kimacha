@@ -1,8 +1,8 @@
 // the 💬 is on EVERY part of the grammar lesson flow, and the card id
 // says which part it is (grammar:<lesson>:<part>): the Grammar tab list, lesson overview,
 // during a task, task END (done), lesson test (question / exit / result), deck (card / end /
-// empty), and the page of a not-yet-written lesson. On a type-in question the 💬 sits above the docked Check bar
-// (bottomOffset). Pattern: app/__tests__/examFeedback.test.tsx + lessonTest.test.tsx + tableDeck.play.test.tsx.
+// empty), and the page of a not-yet-written lesson. On a type-in question the 💬 stays in the top right corner
+// (no bottomOffset since E206). Pattern: app/__tests__/examFeedback.test.tsx + lessonTest.test.tsx + tableDeck.play.test.tsx.
 
 jest.mock('expo-speech', () => ({
   speak: jest.fn(),
@@ -28,8 +28,8 @@ jest.mock('@/components/FeedbackModal', () => {
   const { Text } = require('react-native');
   return {
     __esModule: true,
-    default: (p: { currentCard: string; languagePair: string; level: string; bottomOffset?: number }) => (
-      <Text testID="fb-card">{`${p.currentCard} | ${p.languagePair} | ${p.level} | ${p.bottomOffset ?? '-'}`}</Text>
+    default: (p: { currentCard: string; languagePair: string; level: string }) => (
+      <Text testID="fb-card">{`${p.currentCard} | ${p.languagePair} | ${p.level}`}</Text>
     ),
   };
 });
@@ -126,7 +126,7 @@ describe.each(['brand', 'classic'] as const)('grammar lesson: 💬 on every part
       </ThemeProvider>
     );
     await flush();
-    expect(card()).toBe('grammar-syllabus | en→es | A1 | -');
+    expect(card()).toBe('grammar-syllabus | en→es | A1');
     view.unmount();
   });
 
@@ -138,7 +138,7 @@ describe.each(['brand', 'classic'] as const)('grammar lesson: 💬 on every part
       </ThemeProvider>
     );
     await flush();
-    expect(card()).toBe('grammar:no-such-lesson:soon | en→es | A1 | -');
+    expect(card()).toBe('grammar:no-such-lesson:soon | en→es | A1');
     view.unmount();
   });
 
@@ -150,17 +150,17 @@ describe.each(['brand', 'classic'] as const)('grammar lesson: 💬 on every part
       </ThemeProvider>
     );
     await flush();
-    expect(card()).toBe(`grammar:${TOPIC}:lesson | en→es | A1 | -`);
+    expect(card()).toBe(`grammar:${TOPIC}:lesson | en→es | A1`);
     await press('grammar-start-choice');
-    expect(card()).toMatch(new RegExp(`^grammar:${TOPIC}:drill(:.+)? \\| en→es \\| A1 \\| (-|\\d+)$`));
+    expect(card()).toMatch(new RegExp(`^grammar:${TOPIC}:drill(:.+)? \\| en→es \\| A1$`));
     await answerChoiceRound();
     // this was missing: there was no 💬 at the end of a task (result page).
     expect(screen.getByTestId('grammar-practice-again')).toBeTruthy();
-    expect(card()).toBe(`grammar:${TOPIC}:done | en→es | A1 | -`);
+    expect(card()).toBe(`grammar:${TOPIC}:done | en→es | A1`);
     view.unmount();
   });
 
-  it('lesson test: question (above the docked bar for typed ones), exit, back, result', async () => {
+  it('lesson test: question (same corner for typed ones), exit, back, result', async () => {
     await seedBest(['match', 'form', 'why', 'transform']);
     let view = render(
       <ThemeProvider>
@@ -180,24 +180,21 @@ describe.each(['brand', 'classic'] as const)('grammar lesson: 💬 on every part
     await press('grammar-lesson-start-lessontest');
 
     const qs = expectedQuestions();
-    const prefix = (i: number) => `grammar:${TOPIC}:lessontest:q${i + 1}:${qs[i].id} | en→es | A1 | `;
+    const prefix = (i: number) => `grammar:${TOPIC}:lessontest:q${i + 1}:${qs[i].id} | en→es | A1`;
     expect(card().startsWith(prefix(0))).toBe(true);
 
     // Exit confirmation, then back to the same question.
     await press('lesson-test-close');
-    expect(card()).toBe(`grammar:${TOPIC}:lessontest:leave | en→es | A1 | -`);
+    expect(card()).toBe(`grammar:${TOPIC}:lessontest:leave | en→es | A1`);
     await press('lesson-test-keep-going');
     expect(card().startsWith(prefix(0))).toBe(true);
 
     for (let i = 0; i < qs.length; i++) {
-      // On a type-in question there is a docked Check bar: the 💬 sits higher by the bar's height; otherwise the default position.
       expect(card().startsWith(prefix(i))).toBe(true);
-      const offset = card().slice(prefix(i).length);
-      if (qs[i].view.card === 'type') expect(offset).toMatch(/^[1-9]\d*$/);
-      else expect(offset).toBe('-');
+      expect(card().slice(prefix(i).length)).toBe('');
       await solveOk(qs[i]);
     }
-    expect(card()).toBe(`grammar:${TOPIC}:lessontest:result | en→es | A1 | -`);
+    expect(card()).toBe(`grammar:${TOPIC}:lessontest:result | en→es | A1`);
     view.unmount();
   });
 });
@@ -214,11 +211,11 @@ describe('grammar deck: 💬 on a card, at the end of the deck, on an empty shee
     await db.resetGameProgress(GRAMMAR_PROGRESS_KEY);
   });
 
-  it('card: grammar:<lesson>:tabledeck:<cell>, above the docked bar', async () => {
+  it('card: grammar:<lesson>:tabledeck:<cell>', async () => {
     mockTopicId = 'ser-estar';
     const view = render(<TableDeckScreen />);
     await flush();
-    expect(card()).toMatch(/^grammar:ser-estar:tabledeck:.+ \| en→es \| A1 \| [1-9]\d*$/);
+    expect(card()).toMatch(/^grammar:ser-estar:tabledeck:.+ \| en→es \| A1$/);
     view.unmount();
   });
 
@@ -232,7 +229,7 @@ describe('grammar deck: 💬 on a card, at the end of the deck, on an empty shee
     const view = render(<TableDeckScreen />);
     await flush();
     expect(screen.getByTestId('tabledeck-start-again')).toBeTruthy();
-    expect(card()).toBe('grammar:ser-estar:tabledeck | en→es | A1 | -');
+    expect(card()).toBe('grammar:ser-estar:tabledeck | en→es | A1');
     view.unmount();
   });
 
@@ -240,7 +237,7 @@ describe('grammar deck: 💬 on a card, at the end of the deck, on an empty shee
     mockTopicId = 'no-such-lesson';
     const view = render(<TableDeckScreen />);
     await flush();
-    expect(card()).toBe('grammar:no-such-lesson:tabledeck:empty | en→es | A1 | -');
+    expect(card()).toBe('grammar:no-such-lesson:tabledeck:empty | en→es | A1');
     view.unmount();
   });
 });

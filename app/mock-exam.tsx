@@ -18,6 +18,7 @@ import { useSingleFlight } from '@/lib/useSingleFlight';
 import { Card } from '@/components/grammar/Brutal';
 import ExamButton from '@/components/exam/ExamButton';
 import ScreenFeedback from '@/lib/screenFeedback';
+import { FEEDBACK_CORNER_CLEAR } from '@/components/learn/pcicStyles';
 import { FAB_CLEARANCE } from '@/components/learn/DockedAction';
 import { DockSlotProvider, useDockSlot } from '@/components/learn/DockSlot';
 import { useDockLift } from '@/components/learn/useDockLift';
@@ -289,7 +290,7 @@ export default function MockExamScreen() {
   const shell = (children: ReactNode, part?: string, bottomOffset?: number) => (
     <View style={[styles.screen, { backgroundColor: colors.background }]}>
       {children}
-      {part ? <ScreenFeedback level={level} languagePair={pair} currentCard={`mock-exam:${level}:${part}`} bottomOffset={bottomOffset} /> : null}
+      {part ? <ScreenFeedback level={level} languagePair={pair} currentCard={`mock-exam:${level}:${part}`} /> : null}
     </View>
   );
   const card = (children: ReactNode) => (
@@ -434,6 +435,7 @@ export default function MockExamScreen() {
           <Text testID="mock-clock" style={[styles.clock, { color: left <= CLOCK_WARNING_SECONDS ? colors.warning : colors.tint }]}>
             ⏱ {formatClock(left)}
           </Text>
+          <View style={styles.cornerClear} />
         </View>
         <Text testID="mock-task-counter" style={[styles.counter, { color: colors.textMuted }]}>
           {s.taskOf(taskIdx + 1, paper.tasks.length)}
@@ -493,5 +495,6 @@ const styles = StyleSheet.create({
   close: { fontSize: fontSize.xl, fontWeight: fontWeight.bold },
   paperName: { flex: 1, fontSize: fontSize.md, fontWeight: fontWeight.semibold, textAlign: 'center' },
   clock: { fontSize: fontSize.md, fontWeight: fontWeight.bold },
+  cornerClear: { width: FEEDBACK_CORNER_CLEAR - 16 },
   counter: { fontSize: fontSize.sm, textAlign: 'center', paddingTop: spacing.xs },
 });

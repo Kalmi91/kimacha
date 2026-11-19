@@ -69,15 +69,9 @@ describe('phone browser keyboard open', () => {
     const button = () => <FeedbackButton level="B1" languagePair="es-en" currentCard="pcic" />;
     const display = (view: ReturnType<typeof render>) => StyleSheet.flatten(view.getByLabelText('Feedback', { includeHiddenElements: true }).props.style).display;
 
-    it('the floating one hides while typing, so it does not cover the field', () => {
+    it('the corner one stays while typing: at the top it covers no field (E206: no floating button)', () => {
       const view = render(button());
-      expect(display(view)).toBeUndefined();
-
       keyboard(true);
-      view.rerender(button());
-      expect(display(view)).toBe('none');
-
-      keyboard(false);
       view.rerender(button());
       expect(display(view)).toBeUndefined();
     });
@@ -94,7 +88,7 @@ describe('phone browser keyboard open', () => {
 
     it('the one in a header row stays: it covers nothing', () => {
       keyboard(true);
-      const view = render(<FeedbackButton placement="inline" compact level="B1" languagePair="es-en" currentCard="pcic" />);
+      const view = render(<FeedbackButton placement="inline" level="B1" languagePair="es-en" currentCard="pcic" />);
       expect(display(view)).toBeUndefined();
     });
   });

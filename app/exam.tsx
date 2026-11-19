@@ -234,7 +234,7 @@ export default function ExamScreen() {
   const shell = (children: ReactNode, part?: string, bottomOffset?: number) => (
     <View style={[styles.screen, { backgroundColor: colors.background }]}>
       {children}
-      {part ? <ScreenFeedback level={level} languagePair={pair} currentCard={`exam:${level}:${part}`} bottomOffset={bottomOffset} /> : null}
+      {part ? <ScreenFeedback level={level} languagePair={pair} currentCard={`exam:${level}:${part}`} /> : null}
     </View>
   );
 

@@ -3,7 +3,6 @@ import { Pressable, StyleSheet, useWindowDimensions, View } from 'react-native';
 import { Text } from '@/components/KText';
 
 import Colors, { isDarkTheme } from '@/constants/Colors';
-import { FEEDBACK_FAB_SIZE } from '@/constants/FeedbackFab';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { Card } from '@/components/grammar/Brutal';
@@ -407,7 +406,7 @@ const styles = StyleSheet.create({
   pointText: { fontSize: 14, lineHeight: 21 },
   exampleBlock: { marginTop: 2 },
   // paddingRight: the floating 💬 button would cover the 🔊 at the row's right edge when the page scrolls under it.
-  exampleRow: { flexDirection: 'row', alignItems: 'center', gap: 8, paddingRight: FEEDBACK_FAB_SIZE },
+  exampleRow: { flexDirection: 'row', alignItems: 'center', gap: 8 },
   exampleEs: { fontSize: 15, fontWeight: '700', flex: 1 },
   exampleTr: { fontSize: 13 },
   speak: { fontSize: 16 },

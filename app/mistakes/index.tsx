@@ -19,6 +19,7 @@ import { cardsForBatches, pickMistakeSession } from '@/lib/mistakes/deck';
 import { Card } from '@/components/grammar/Brutal';
 import { brutalHeaderRowStyle } from '@/lib/brutalHeader';
 import ScreenFeedback from '@/lib/screenFeedback';
+import { FEEDBACK_CORNER_CLEAR } from '@/components/learn/pcicStyles';
 import type { Level } from '@/data/words';
 
 // one row per loaded batch (newest
@@ -196,7 +197,7 @@ const styles = StyleSheet.create({
   centered: { justifyContent: 'center' },
   headerRow: { flexDirection: 'row', alignItems: 'center', marginBottom: 12 },
   back: { fontSize: 22, width: 32 },
-  backSpacer: { width: 32 },
+  backSpacer: { width: FEEDBACK_CORNER_CLEAR },
   title: { flex: 1, textAlign: 'center', fontSize: 17, fontWeight: '700' },
   emptyText: { fontSize: 15, textAlign: 'center', marginTop: 24 },
   body: { paddingBottom: 40, gap: 14 },

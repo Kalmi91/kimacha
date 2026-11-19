@@ -8,23 +8,23 @@ jest.mock('@/components/FeedbackModal', () => {
   const { Text } = require('react-native');
   return {
     __esModule: true,
-    default: (p: { currentCard: string; placement?: string; bottomOffset?: number }) => (
-      <Text testID="fb">{`${p.placement ?? 'fab'} | ${p.currentCard} | ${p.bottomOffset ?? '-'}`}</Text>
+    default: (p: { currentCard: string; placement?: string }) => (
+      <Text testID="fb">{`${p.placement ?? 'corner'} | ${p.currentCard}`}</Text>
     ),
   };
 });
 
-const card = (currentCard: string, extra: { placement?: 'header' | 'inline'; bottomOffset?: number } = {}) => (
+const card = (currentCard: string, extra: { placement?: 'header' | 'inline' } = {}) => (
   <ScreenFeedback level="A1" languagePair="en→es" currentCard={currentCard} {...extra} />
 );
 const shown = (r: ReturnType<typeof render>) => r.queryAllByTestId('fb').map((n) => n.props.children);
 
 describe('screen feedback frame', () => {
   it('draws one button for the card a screen names, and follows the card when it changes', () => {
-    const r = render(<ScreenFeedbackFrame>{card('a:1', { bottomOffset: 40 })}</ScreenFeedbackFrame>);
-    expect(shown(r)).toEqual(['fab | a:1 | 40']);
+    const r = render(<ScreenFeedbackFrame>{card('a:1')}</ScreenFeedbackFrame>);
+    expect(shown(r)).toEqual(['corner | a:1']);
     r.rerender(<ScreenFeedbackFrame>{card('a:2')}</ScreenFeedbackFrame>);
-    expect(shown(r)).toEqual(['fab | a:2 | -']);
+    expect(shown(r)).toEqual(['corner | a:2']);
   });
 
   it('a screen opened over another (nested stack) takes the button, and gives it back when it closes', () => {
@@ -35,9 +35,9 @@ describe('screen feedback frame', () => {
         {card('deck')}
       </ScreenFeedbackFrame>,
     );
-    expect(shown(r)).toEqual(['fab | deck | -']);
+    expect(shown(r)).toEqual(['corner | deck']);
     r.rerender(<ScreenFeedbackFrame>{card('lesson')}</ScreenFeedbackFrame>);
-    expect(shown(r)).toEqual(['fab | lesson | -']);
+    expect(shown(r)).toEqual(['corner | lesson']);
   });
 
   it('a screen that unmounts takes its button with it', () => {
@@ -48,11 +48,11 @@ describe('screen feedback frame', () => {
 
   it('an inline button stays in the screen row, the frame draws no second one', () => {
     const r = render(<ScreenFeedbackFrame>{card('pcic', { placement: 'inline' })}</ScreenFeedbackFrame>);
-    expect(shown(r)).toEqual(['inline | pcic | -']);
+    expect(shown(r)).toEqual(['inline | pcic']);
   });
 
   it('without a frame (a screen rendered bare) the button is drawn in place', () => {
     const r = render(card('bare', { placement: 'header' }));
-    expect(shown(r)).toEqual(['header | bare | -']);
+    expect(shown(r)).toEqual(['header | bare']);
   });
 });

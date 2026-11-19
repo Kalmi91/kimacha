@@ -33,6 +33,7 @@ import { BrutalBox } from '@/components/grammar/Brutal';
 import { brutalHeaderRowStyle } from '@/lib/brutalHeader';
 import { useDiffStyles } from '@/lib/useDiffStyles';
 import ScreenFeedback from '@/lib/screenFeedback';
+import { FEEDBACK_CORNER_CLEAR } from '@/components/learn/pcicStyles';
 import type { Level } from '@/data/words';
 
 // the PCIC card surface (CardShell,
@@ -270,7 +271,7 @@ export default function MistakesDeckScreen() {
         onHeight={setDockH}
       />
 
-      <ScreenFeedback level={level} languagePair={pairOf(getPcicTarget())} currentCard={`mistakes:deck:${currentCard.cardId}`} bottomOffset={dockH + dockLift} />
+      <ScreenFeedback level={level} languagePair={pairOf(getPcicTarget())} currentCard={`mistakes:deck:${currentCard.cardId}`} />
     </KeyboardAvoidingView>
   );
 }
@@ -280,7 +281,7 @@ const styles = StyleSheet.create({
   centered: { justifyContent: 'center' },
   header: { flexDirection: 'row', alignItems: 'center', marginBottom: 12 },
   back: { fontSize: 22, width: 32 },
-  backSpacer: { width: 32 },
+  backSpacer: { width: FEEDBACK_CORNER_CLEAR },
   brutalGrade: { flex: 1 },
   brutalGradeBox: { paddingVertical: 8, alignItems: 'center', justifyContent: 'center' },
   brutalDone: { alignSelf: 'stretch', marginTop: 10 },
