@@ -1449,6 +1449,105 @@
         "es": "El profesor tiene una bolsa roja."
       },
       "es": "The teacher has a red bag."
+    },
+    {
+      "id": "ar-transform-01",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-negative"
+      },
+      "prompt": {
+        "en": "She has a car.",
+        "es": "Ella tiene un coche."
+      },
+      "answer": "She does not have a car.",
+      "accept": [
+        "She doesn't have a car."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "With have the negative needs does not (doesn’t) and the base verb, and the article stays: a car stays a car.",
+        "es": "Con have la negación necesita does not (doesn’t) y el verbo base, y el artículo se queda: a car sigue siendo a car."
+      }
+    },
+    {
+      "id": "ar-transform-02",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-negative"
+      },
+      "prompt": {
+        "en": "I am an engineer.",
+        "es": "Soy ingeniero."
+      },
+      "answer": "I am not an engineer.",
+      "accept": [
+        "I'm not an engineer."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "With to be, put not after am / is / are. “An” stays before a vowel sound: an engineer, not “a engineer”.",
+        "es": "Con to be, not va después de am / is / are. «An» se queda ante sonido vocal: an engineer, no «a engineer»."
+      }
+    },
+    {
+      "id": "ar-transform-03",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-question"
+      },
+      "prompt": {
+        "en": "You have a pen.",
+        "es": "Tienes un bolígrafo."
+      },
+      "answer": "Do you have a pen?",
+      "wordIds": [],
+      "why": {
+        "en": "A question starts with Do / Does and the article stays with its noun: Do you have a pen? (not “Do you have pen?”).",
+        "es": "La pregunta empieza con Do / Does y el artículo se queda con su sustantivo: Do you have a pen? (no «Do you have pen?»)."
+      }
+    },
+    {
+      "id": "ar-transform-04",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-question"
+      },
+      "prompt": {
+        "en": "There is an apple on the table.",
+        "es": "Hay una manzana en la mesa."
+      },
+      "answer": "Is there an apple on the table?",
+      "wordIds": [],
+      "why": {
+        "en": "With there is, the question starts with Is there. The article stays: an apple (an before a vowel sound).",
+        "es": "Con there is, la pregunta empieza con Is there. El artículo se mantiene: an apple (an ante sonido vocal)."
+      }
+    },
+    {
+      "id": "ar-transform-05",
+      "kind": "transform",
+      "tense": {
+        "from": "en-i-you-we-they",
+        "to": "en-he-she-it"
+      },
+      "prompt": {
+        "en": "I eat an apple.",
+        "es": "Como una manzana."
+      },
+      "answer": "She eats an apple.",
+      "accept": [
+        "He eats an apple."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "With he / she / it the verb takes -s: eat → eats. The article an stays the same before apple.",
+        "es": "Con he / she / it el verbo lleva -s: eat → eats. El artículo an no cambia ante apple."
+      }
     }
   ]
 }

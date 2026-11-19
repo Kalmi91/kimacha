@@ -1293,6 +1293,105 @@
       "person": "they",
       "answer": "have to",
       "table": "mh-forms"
+    },
+    {
+      "id": "mh-transform-01",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-negative"
+      },
+      "prompt": {
+        "en": "You must park here.",
+        "es": "Debes aparcar aquí."
+      },
+      "answer": "You must not park here.",
+      "accept": [
+        "You mustn't park here."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "Must not (mustn’t) means it is forbidden. It does not take do / does, and the verb stays in the base form.",
+        "es": "Must not (mustn’t) significa que está prohibido. No lleva do / does y el verbo queda en forma base."
+      }
+    },
+    {
+      "id": "mh-transform-02",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-negative"
+      },
+      "prompt": {
+        "en": "I have to work tomorrow.",
+        "es": "Tengo que trabajar mañana."
+      },
+      "answer": "I do not have to work tomorrow.",
+      "accept": [
+        "I don't have to work tomorrow."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "Have to needs do / does in the negative: do not (don’t) have to. It means “it is not necessary”, which is different from mustn’t.",
+        "es": "Have to necesita do / does en la negación: do not (don’t) have to. Significa «no es necesario», que es distinto de mustn’t."
+      }
+    },
+    {
+      "id": "mh-transform-03",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-question"
+      },
+      "prompt": {
+        "en": "She has to wear a uniform.",
+        "es": "Ella tiene que llevar uniforme."
+      },
+      "answer": "Does she have to wear a uniform?",
+      "wordIds": [],
+      "why": {
+        "en": "Question with have to: Does she have to…? Does takes the -s, so have stays in the base form (not “Does she has to”).",
+        "es": "Pregunta con have to: Does she have to…? Does lleva la -s, así que have queda en forma base (no «Does she has to»)."
+      }
+    },
+    {
+      "id": "mh-transform-04",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-question"
+      },
+      "prompt": {
+        "en": "We have to leave now.",
+        "es": "Tenemos que irnos ahora."
+      },
+      "answer": "Do we have to leave now?",
+      "wordIds": [],
+      "why": {
+        "en": "With we / you / they the question is Do + subject + have to + base verb.",
+        "es": "Con we / you / they la pregunta es Do + sujeto + have to + verbo base."
+      }
+    },
+    {
+      "id": "mh-transform-05",
+      "kind": "transform",
+      "tense": {
+        "from": "en-i-you-we-they",
+        "to": "en-he-she-it"
+      },
+      "prompt": {
+        "en": "I have to study tonight.",
+        "es": "Tengo que estudiar esta noche."
+      },
+      "answer": "She has to study tonight.",
+      "accept": [
+        "He has to study tonight."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "Have changes to has with he / she / it: I have to study → she has to study. The verb after to stays in the base form.",
+        "es": "Have pasa a has con he / she / it: I have to study → she has to study. El verbo después de to queda en forma base."
+      }
     }
   ]
 }

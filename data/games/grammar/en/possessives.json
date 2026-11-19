@@ -1260,6 +1260,107 @@
       "person": "you",
       "answer": "your",
       "table": "po-forms"
+    },
+    {
+      "id": "po-transform-01",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-negative"
+      },
+      "prompt": {
+        "en": "He likes his car.",
+        "es": "A él le gusta su coche."
+      },
+      "answer": "He does not like his car.",
+      "accept": [
+        "He doesn't like his car."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "Negation: does not (doesn’t) + the base verb with he / she / it. The possessive stays: his car stays his car.",
+        "es": "Negación: does not (doesn’t) + verbo base con he / she / it. El posesivo no cambia: his car sigue siendo his car."
+      }
+    },
+    {
+      "id": "po-transform-02",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-question"
+      },
+      "prompt": {
+        "en": "They have their keys.",
+        "es": "Ellos tienen sus llaves."
+      },
+      "answer": "Do they have their keys?",
+      "wordIds": [],
+      "why": {
+        "en": "Question: Do + they + have + their keys. The possessive follows the subject: they → their.",
+        "es": "Pregunta: Do + they + have + their keys. El posesivo sigue al sujeto: they → their."
+      }
+    },
+    {
+      "id": "po-transform-03",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-question"
+      },
+      "prompt": {
+        "en": "This is your bag.",
+        "es": "Esta es tu bolsa."
+      },
+      "answer": "Is this your bag?",
+      "wordIds": [],
+      "why": {
+        "en": "With to be the question swaps the subject and is: this is → is this. The possessive stays: your bag.",
+        "es": "Con to be la pregunta invierte el sujeto e is: this is → is this. El posesivo se mantiene: your bag."
+      }
+    },
+    {
+      "id": "po-transform-04",
+      "kind": "transform",
+      "tense": {
+        "from": "en-i-you-we-they",
+        "to": "en-he-she-it"
+      },
+      "prompt": {
+        "en": "I love my dog.",
+        "es": "Quiero a mi perro."
+      },
+      "answer": "She loves her dog.",
+      "accept": [
+        "He loves his dog."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "When the subject changes, the possessive changes too: I … my → she … her, and the verb takes -s: love → loves.",
+        "es": "Cuando cambia el sujeto, también cambia el posesivo: I … my → she … her, y el verbo lleva -s: love → loves."
+      }
+    },
+    {
+      "id": "po-transform-05",
+      "kind": "transform",
+      "tense": {
+        "from": "en-he-she-it",
+        "to": "en-i-you-we-they"
+      },
+      "prompt": {
+        "en": "He washes his hands.",
+        "es": "Él se lava las manos."
+      },
+      "answer": "We wash our hands.",
+      "accept": [
+        "They wash their hands.",
+        "You wash your hands.",
+        "I wash my hands."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "With we / they the verb loses its -s (washes → wash) and the possessive follows the subject: he … his → we … our.",
+        "es": "Con we / they el verbo pierde la -s (washes → wash) y el posesivo sigue al sujeto: he … his → we … our."
+      }
     }
   ]
 }

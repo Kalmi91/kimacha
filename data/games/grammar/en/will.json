@@ -1260,6 +1260,105 @@
       "person": "I",
       "answer": "will not",
       "table": "wl-forms"
+    },
+    {
+      "id": "wl-transform-01",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-negative"
+      },
+      "prompt": {
+        "en": "I will help you.",
+        "es": "Te ayudaré."
+      },
+      "answer": "I will not help you.",
+      "accept": [
+        "I won't help you."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "Negation: will + not = will not, short form won’t (not “willn’t”). The verb after it stays in the base form.",
+        "es": "Negación: will + not = will not, forma corta won’t (no «willn’t»). El verbo siguiente queda en forma base."
+      }
+    },
+    {
+      "id": "wl-transform-02",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-negative"
+      },
+      "prompt": {
+        "en": "She will come to the party.",
+        "es": "Ella vendrá a la fiesta."
+      },
+      "answer": "She will not come to the party.",
+      "accept": [
+        "She won't come to the party."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "Will is the same for every person and takes no -s: she will not come, not “she will not comes”.",
+        "es": "Will es igual para todas las personas y no lleva -s: she will not come, no «she will not comes»."
+      }
+    },
+    {
+      "id": "wl-transform-03",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-question"
+      },
+      "prompt": {
+        "en": "You will call me tomorrow.",
+        "es": "Me llamarás mañana."
+      },
+      "answer": "Will you call me tomorrow?",
+      "wordIds": [],
+      "why": {
+        "en": "Question: put will before the subject: you will call → will you call? No do / does.",
+        "es": "Pregunta: will va antes del sujeto: you will call → will you call? Sin do / does."
+      }
+    },
+    {
+      "id": "wl-transform-04",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-question"
+      },
+      "prompt": {
+        "en": "It will rain tonight.",
+        "es": "Esta noche lloverá."
+      },
+      "answer": "Will it rain tonight?",
+      "wordIds": [],
+      "why": {
+        "en": "Will works the same with it as with every subject, and the verb stays in the base form: Will it rain, not “Will it rains”.",
+        "es": "Will funciona igual con it que con cualquier sujeto, y el verbo queda en forma base: Will it rain, no «Will it rains»."
+      }
+    },
+    {
+      "id": "wl-transform-05",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-negative"
+      },
+      "prompt": {
+        "en": "They will arrive on time.",
+        "es": "Llegarán a tiempo."
+      },
+      "answer": "They will not arrive on time.",
+      "accept": [
+        "They won't arrive on time."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "Will is the only helper here. Do not add do / does: “they do not will arrive” is wrong.",
+        "es": "Will es el único auxiliar aquí. No añadas do / does: «they do not will arrive» es incorrecto."
+      }
     }
   ]
 }

@@ -1335,6 +1335,107 @@
         "es": "Ellos son mis amigos."
       },
       "es": "They are my friends."
+    },
+    {
+      "id": "tb-transform-01",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-negative"
+      },
+      "prompt": {
+        "en": "She is a teacher.",
+        "es": "Ella es profesora."
+      },
+      "answer": "She is not a teacher.",
+      "accept": [
+        "She isn't a teacher.",
+        "She's not a teacher."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "Negation of to be: put not after am / is / are (I am not, she is not). No do / does is needed. Short forms: isn’t, aren’t, I’m not.",
+        "es": "Negación de to be: not va después de am / is / are (I am not, she is not). No hace falta do / does. Formas cortas: isn’t, aren’t, I’m not."
+      }
+    },
+    {
+      "id": "tb-transform-02",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-negative"
+      },
+      "prompt": {
+        "en": "We are at home.",
+        "es": "Estamos en casa."
+      },
+      "answer": "We are not at home.",
+      "accept": [
+        "We aren't at home.",
+        "We're not at home."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "Negation of to be: put not after am / is / are (I am not, she is not). No do / does is needed. Short forms: isn’t, aren’t, I’m not.",
+        "es": "Negación de to be: not va después de am / is / are (I am not, she is not). No hace falta do / does. Formas cortas: isn’t, aren’t, I’m not."
+      }
+    },
+    {
+      "id": "tb-transform-03",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-question"
+      },
+      "prompt": {
+        "en": "You are tired.",
+        "es": "Estás cansado."
+      },
+      "answer": "Are you tired?",
+      "wordIds": [],
+      "why": {
+        "en": "Question with to be: swap the subject and am / is / are (you are → are you). No do / does here.",
+        "es": "Pregunta con to be: se invierten el sujeto y am / is / are (you are → are you). Aquí no se usa do / does."
+      }
+    },
+    {
+      "id": "tb-transform-04",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-question"
+      },
+      "prompt": {
+        "en": "He is from Spain.",
+        "es": "Él es de España."
+      },
+      "answer": "Is he from Spain?",
+      "wordIds": [],
+      "why": {
+        "en": "Question with to be: swap the subject and am / is / are (you are → are you). No do / does here.",
+        "es": "Pregunta con to be: se invierten el sujeto y am / is / are (you are → are you). Aquí no se usa do / does."
+      }
+    },
+    {
+      "id": "tb-transform-05",
+      "kind": "transform",
+      "tense": {
+        "from": "en-i-you-we-they",
+        "to": "en-he-she-it"
+      },
+      "prompt": {
+        "en": "I am a student.",
+        "es": "Soy estudiante."
+      },
+      "answer": "She is a student.",
+      "accept": [
+        "He is a student."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "The verb to be changes with the person: I uses am, he / she uses is.",
+        "es": "El verbo to be cambia con la persona: I usa am y he / she usa is."
+      }
     }
   ]
 }

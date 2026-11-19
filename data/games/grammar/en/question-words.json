@@ -1254,6 +1254,99 @@
         }
       ],
       "correctIndex": 0
+    },
+    {
+      "id": "qw-transform-01",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-question"
+      },
+      "prompt": {
+        "en": "She lives in Lima. (Where)",
+        "es": "Ella vive en Lima. (Where)"
+      },
+      "answer": "Where does she live?",
+      "wordIds": [],
+      "why": {
+        "en": "A question word comes first, then the auxiliary and the subject: Where does she live? With she the auxiliary is does and the verb loses its -s.",
+        "es": "La palabra interrogativa va primero, luego el auxiliar y el sujeto: Where does she live? Con she el auxiliar es does y el verbo pierde la -s."
+      }
+    },
+    {
+      "id": "qw-transform-02",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-question"
+      },
+      "prompt": {
+        "en": "The party is on Saturday. (When)",
+        "es": "La fiesta es el sábado. (When)"
+      },
+      "answer": "When is the party?",
+      "wordIds": [],
+      "why": {
+        "en": "With to be there is no do / does: the question word comes first, then is and the subject.",
+        "es": "Con to be no hay do / does: primero la palabra interrogativa, luego is y el sujeto."
+      }
+    },
+    {
+      "id": "qw-transform-03",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-question"
+      },
+      "prompt": {
+        "en": "That man is my brother. (Who)",
+        "es": "Ese hombre es mi hermano. (Who)"
+      },
+      "answer": "Who is that man?",
+      "wordIds": [],
+      "why": {
+        "en": "Who asks about a person. With to be, put is before the subject.",
+        "es": "Who pregunta por una persona. Con to be, is va antes del sujeto."
+      }
+    },
+    {
+      "id": "qw-transform-04",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-question"
+      },
+      "prompt": {
+        "en": "They go to school by bus. (How)",
+        "es": "Ellos van a la escuela en autobús. (How)"
+      },
+      "answer": "How do they go to school?",
+      "wordIds": [],
+      "why": {
+        "en": "How asks about the way or manner. With they the auxiliary is do, and the verb stays in the base form.",
+        "es": "How pregunta por la manera. Con they el auxiliar es do, y el verbo queda en forma base."
+      }
+    },
+    {
+      "id": "qw-transform-05",
+      "kind": "transform",
+      "tense": {
+        "from": "en-i-you-we-they",
+        "to": "en-he-she-it"
+      },
+      "prompt": {
+        "en": "Where do you work?",
+        "es": "¿Dónde trabajas?"
+      },
+      "answer": "Where does she work?",
+      "accept": [
+        "Where does he work?"
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "With he / she the auxiliary changes from do to does and the verb stays in the base form: does she work, not “does she works”.",
+        "es": "Con he / she el auxiliar pasa de do a does y el verbo queda en forma base: does she work, no «does she works»."
+      }
     }
   ]
 }

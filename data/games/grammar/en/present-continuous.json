@@ -1391,6 +1391,107 @@
         }
       ],
       "correctIndex": 0
+    },
+    {
+      "id": "pc-transform-01",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-negative"
+      },
+      "prompt": {
+        "en": "She is reading a book.",
+        "es": "Ella está leyendo un libro."
+      },
+      "answer": "She is not reading a book.",
+      "accept": [
+        "She isn't reading a book.",
+        "She's not reading a book."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "Negation: am / is / are + not + verb-ing. Keep the -ing verb and put not after to be: she is not reading, not “she does not reading”.",
+        "es": "Negación: am / is / are + not + verbo-ing. Se mantiene el verbo en -ing: she is not reading, no «she does not reading»."
+      }
+    },
+    {
+      "id": "pc-transform-02",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-negative"
+      },
+      "prompt": {
+        "en": "They are playing football.",
+        "es": "Están jugando al fútbol."
+      },
+      "answer": "They are not playing football.",
+      "accept": [
+        "They aren't playing football.",
+        "They're not playing football."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "Negation: am / is / are + not + verb-ing. Keep the -ing verb and put not after to be: she is not reading, not “she does not reading”.",
+        "es": "Negación: am / is / are + not + verbo-ing. Se mantiene el verbo en -ing: she is not reading, no «she does not reading»."
+      }
+    },
+    {
+      "id": "pc-transform-03",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-question"
+      },
+      "prompt": {
+        "en": "You are working today.",
+        "es": "Hoy estás trabajando."
+      },
+      "answer": "Are you working today?",
+      "wordIds": [],
+      "why": {
+        "en": "Question: move am / is / are before the subject and keep the -ing verb: you are working → are you working?",
+        "es": "Pregunta: am / is / are va antes del sujeto y el verbo sigue en -ing: you are working → are you working?"
+      }
+    },
+    {
+      "id": "pc-transform-04",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-question"
+      },
+      "prompt": {
+        "en": "He is cooking dinner.",
+        "es": "Él está preparando la cena."
+      },
+      "answer": "Is he cooking dinner?",
+      "wordIds": [],
+      "why": {
+        "en": "Question: move am / is / are before the subject and keep the -ing verb: you are working → are you working?",
+        "es": "Pregunta: am / is / are va antes del sujeto y el verbo sigue en -ing: you are working → are you working?"
+      }
+    },
+    {
+      "id": "pc-transform-05",
+      "kind": "transform",
+      "tense": {
+        "from": "en-i-you-we-they",
+        "to": "en-he-she-it"
+      },
+      "prompt": {
+        "en": "I am studying English.",
+        "es": "Estoy estudiando inglés."
+      },
+      "answer": "She is studying English.",
+      "accept": [
+        "He is studying English."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "Only to be changes with the person: I am → she is. The -ing verb stays the same.",
+        "es": "Solo cambia to be con la persona: I am → she is. El verbo en -ing no cambia."
+      }
     }
   ]
 }

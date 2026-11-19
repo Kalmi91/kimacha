@@ -1250,6 +1250,111 @@
       },
       "answer": "there aren't",
       "table": "te-forms"
+    },
+    {
+      "id": "ta-transform-01",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-negative"
+      },
+      "prompt": {
+        "en": "There is a bank near here.",
+        "es": "Hay un banco cerca de aquí."
+      },
+      "answer": "There is not a bank near here.",
+      "accept": [
+        "There isn't a bank near here.",
+        "There's not a bank near here.",
+        "There is no bank near here.",
+        "There's no bank near here."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "Negation: put not after is / are (there isn’t), or use no + noun (there is no bank). Never use do / does.",
+        "es": "Negación: not va después de is / are (there isn’t), o se usa no + sustantivo (there is no bank). Nunca do / does."
+      }
+    },
+    {
+      "id": "ta-transform-02",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-negative"
+      },
+      "prompt": {
+        "en": "There are some chairs in the room.",
+        "es": "Hay unas sillas en la habitación."
+      },
+      "answer": "There are not any chairs in the room.",
+      "accept": [
+        "There aren't any chairs in the room.",
+        "There are no chairs in the room."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "In a negative, some usually becomes any: there are some chairs → there aren’t any chairs. Or use no: there are no chairs.",
+        "es": "En una negación, some suele pasar a any: there are some chairs → there aren’t any chairs. O se usa no: there are no chairs."
+      }
+    },
+    {
+      "id": "ta-transform-03",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-question"
+      },
+      "prompt": {
+        "en": "There is a bathroom in the hotel.",
+        "es": "Hay un baño en el hotel."
+      },
+      "answer": "Is there a bathroom in the hotel?",
+      "wordIds": [],
+      "why": {
+        "en": "Question: swap there and is → Is there a bathroom…? No do / does.",
+        "es": "Pregunta: se invierten there e is → Is there a bathroom…? Sin do / does."
+      }
+    },
+    {
+      "id": "ta-transform-04",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-question"
+      },
+      "prompt": {
+        "en": "There are two dogs in the park.",
+        "es": "Hay dos perros en el parque."
+      },
+      "answer": "Are there two dogs in the park?",
+      "wordIds": [],
+      "why": {
+        "en": "Plural question: Are there + plural noun. Is for one thing, are for several.",
+        "es": "Pregunta en plural: Are there + sustantivo plural. Is para una cosa, are para varias."
+      }
+    },
+    {
+      "id": "ta-transform-05",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-negative"
+      },
+      "prompt": {
+        "en": "There is some milk in the fridge.",
+        "es": "Hay leche en el refrigerador."
+      },
+      "answer": "There is not any milk in the fridge.",
+      "accept": [
+        "There isn't any milk in the fridge.",
+        "There is no milk in the fridge.",
+        "There's no milk in the fridge."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "Milk is uncountable, so it goes with is: there isn’t any milk. Some becomes any in the negative.",
+        "es": "Milk es incontable, así que va con is: there isn’t any milk. Some pasa a any en la negación."
+      }
     }
   ]
 }
