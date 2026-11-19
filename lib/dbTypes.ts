@@ -72,6 +72,8 @@ export interface DB {
   setPcicNewBonus(bonus: number, today: string): Promise<void>;
   addUsageMinute(): Promise<number>;
   getUsageStats(): Promise<UsageStats>;
+  // raw app-wide { date, minutes } rows, for the Stats tab's weekly trend (lib/stats/weeklyTrend.ts).
+  getUsageRows(): Promise<{ date: string; minutes: number }[]>;
   getDayStats(date: string): Promise<{ minutes: number; words: number }>;
   // XP earned on one local calendar day (card grades, lib/dailyXp.ts), app-wide.
   // Stored in integer tenths of an XP (so 0.2 XP steps stay exact): 10 = 1 XP.

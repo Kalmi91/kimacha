@@ -318,6 +318,10 @@ export class DbCore implements DB {
     return summarizeUsage(await this.store.readUsage());
   }
 
+  async getUsageRows(): Promise<{ date: string; minutes: number }[]> {
+    return this.store.readUsage();
+  }
+
   // what one local calendar day added up to, for the midnight celebration.
   // `words` is the number of PCIC words first introduced that local day
   // (introduced_at = date, the same rule as the daily new-word limit), so a
