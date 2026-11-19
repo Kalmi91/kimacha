@@ -33,6 +33,7 @@ import { BrutalBox, Card, Sticker, themedDockPad } from '@/components/grammar/Br
 import { accentColor } from '@/components/grammar/Themed';
 import { DockSlotProvider } from '@/components/learn/DockSlot';
 import { styles } from '@/components/grammar/GrammarTopic.styles';
+import { FEEDBACK_CORNER_CLEAR } from '@/components/learn/pcicStyles';
 
 // One grammar lesson: the rule first, then the practice.
 //
@@ -115,10 +116,10 @@ function GrammarLessonPhases({ topic }: { topic: ReturnType<typeof useGrammarTop
           <Pressable accessibilityRole="button" accessibilityLabel={s.a11y.back} onPress={() => router.back()} hitSlop={12}>
             <Text style={[styles.back, { color: colors.text }]}>←</Text>
           </Pressable>
-          <FitText variant="title" base={17} maxLines={2} reserve={100} style={[styles.title, { color: colors.text }]}>
+          <FitText variant="title" base={17} maxLines={2} reserve={100 + FEEDBACK_CORNER_CLEAR} style={[styles.title, { color: colors.text }]}>
             {entry?.title[contentLang] ?? entry?.title.en ?? String(topicId)}
           </FitText>
-          <View style={{ width: 24 }} />
+          <View style={styles.cornerClear} />
         </View>
         {topic.loaded ? <Text style={[styles.empty, { color: colors.tabIconDefault }]}>{s.grammar.soonLong}</Text> : null}
       </View>
@@ -178,20 +179,22 @@ function GrammarLessonPhases({ topic }: { topic: ReturnType<typeof useGrammarTop
       </BrutalBox>
       {/* a long (Spanish) title wraps onto two lines and shrinks in steps,
           instead of being cut off with "...". */}
-      <FitText variant="title" base={17} maxLines={2} reserve={150} caps style={[styles.title, styles.brutalTitle, { color: g.ink }]}>
+      <FitText variant="title" base={17} maxLines={2} reserve={150 + FEEDBACK_CORNER_CLEAR} caps style={[styles.title, styles.brutalTitle, { color: g.ink }]}>
         {lessonTitle}
       </FitText>
       <Sticker label={lesson.level} fill="a" rotate={5} />
+      <View style={styles.cornerClear} />
     </View>
   ) : (
     <View style={styles.header}>
       <Pressable accessibilityRole="button" accessibilityLabel={s.a11y.back} onPress={() => (phase === 'lesson' ? router.back() : setPhase('lesson'))} hitSlop={12}>
         <Text style={[styles.back, { color: colors.text }]}>←</Text>
       </Pressable>
-      <FitText variant="title" base={17} maxLines={2} reserve={130} style={[styles.title, { color: colors.text }]}>
+      <FitText variant="title" base={17} maxLines={2} reserve={130 + FEEDBACK_CORNER_CLEAR} style={[styles.title, { color: colors.text }]}>
         {lessonTitle}
       </FitText>
       <Text style={[styles.levelTag, { color: colors.tint }]}>{lesson.level}</Text>
+      <View style={styles.cornerClear} />
     </View>
   );
   // the title color on the brutalist palette is ink (the filled a / b colors are unreadable as text on paper).

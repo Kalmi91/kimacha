@@ -1,6 +1,5 @@
 import { useContext, useEffect, useRef, useState, type ReactNode } from 'react';
 import { StyleSheet, View, Pressable, TextInput, Modal, Share, Platform } from 'react-native';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Text } from '@/components/KText';
 import { TitleText, themedInputStyle } from '@/components/grammar/Themed';
 import Colors from '@/constants/Colors';
@@ -30,7 +29,7 @@ interface Props {
   languagePair: string;
   currentCard: string;
   // 'corner' (default, the standard): the Learn card's 💬 (the level chip's size) in the screen's top right corner, inside
-  //   the top safe area; a screen with its own top row keeps that row clear of it.
+  //   the screen's top edge (the root StatusBarStrip already keeps the status bar clear); a screen with its own top row keeps that row clear of it.
   // 'header': in the right end of the tab navigator's header (headerRight); with no navigator around (a test) it sits
   //   in the corner instead. 'inline': the same button in the normal layout flow, at the right end of the screen's own
   //   top row (the Learn tab, the neo-brutalist Course tab).
@@ -66,7 +65,6 @@ function FeedbackControl({ level, languagePair, currentCard, slot }: Omit<Props,
   const [sending, setSending] = useState(false);
   const [showThanks, setShowThanks] = useState(false);
   const [sendError, setSendError] = useState(false);
-  const { top } = useSafeAreaInsets();
 
   const handleSend = async () => {
     if (!text.trim()) return;
@@ -144,7 +142,7 @@ function FeedbackControl({ level, languagePair, currentCard, slot }: Omit<Props,
         hitSlop={4}
         style={[
           styles.slot,
-          slot === 'corner' && [styles.corner, { top: top + 8 }],
+          slot === 'corner' && styles.corner,
           { backgroundColor: colors.tint },
           g.brutal && styles.brutalSlot,
         ]}
