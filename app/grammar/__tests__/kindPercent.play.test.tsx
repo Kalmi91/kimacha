@@ -33,7 +33,8 @@ const flush = makeFlush(3);
 // ser-estar's se-match-01 has 6 pairs; the right column order is a seeded
 // shuffle (no pair in its own row) of the pair indices, keyed by the item's own id (GrammarDrill.tsx
 // MatchDrillItem), so it is exactly reproducible here.
-const RIGHT_ORDER = shuffleNoFixedPoints(6, hashString('se-match-01'));
+// +1: the unmatched extra on the right (taken from the lesson's other match item).
+const RIGHT_ORDER = shuffleNoFixedPoints(7, hashString('se-match-01'));
 
 // ser-estar's 12 form items minus the 2 vosotros ones (se-form-09/10), in authored order, buildGrammarRound does not shuffle form items.
 const FORM_ANSWERS = ['soy', 'estoy', 'eres', 'estás', 'es', 'está', 'somos', 'estamos', 'son', 'están'];

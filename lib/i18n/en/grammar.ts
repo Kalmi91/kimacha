@@ -52,6 +52,7 @@ export default {
     readAloud: 'Read aloud',
     // match/form task kinds.
     matchHint: 'Match the words',
+    matchExtraHint: 'On each side there is one item with no match.',
     formHint: 'Type the correct form',
     showTable: 'Table',
     check: 'Check',
