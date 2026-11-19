@@ -1614,6 +1614,105 @@
       "trial": true,
       "prompt": { "en": "Several cities, such as Rome and Paris, joined.", "es": "Varias ciudades, como Roma y París, se unieron." },
       "es": "Several cities, such as Rome and Paris, joined."
+    },
+    {
+      "id": "dmk-transform-01",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-negative"
+      },
+      "prompt": {
+        "en": "On the other hand, I work from home.",
+        "es": "Por otro lado, yo trabajo desde casa."
+      },
+      "answer": "On the other hand, I do not work from home.",
+      "accept": [
+        "On the other hand, I don't work from home."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "The discourse marker stays at the start, followed by a comma. Only the verb part becomes negative: do not (don’t) + base verb.",
+        "es": "El conector se queda al principio, seguido de coma. Solo la parte del verbo pasa a negativa: do not (don’t) + verbo base."
+      }
+    },
+    {
+      "id": "dmk-transform-02",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-question"
+      },
+      "prompt": {
+        "en": "By the way, you speak French.",
+        "es": "Por cierto, tú hablas francés."
+      },
+      "answer": "By the way, do you speak French?",
+      "wordIds": [],
+      "why": {
+        "en": "The marker stays in front, and the rest becomes a question with do + you + base verb. Keep the comma after the marker.",
+        "es": "El conector se queda delante y el resto pasa a pregunta con do + you + verbo base. Mantén la coma después del conector."
+      }
+    },
+    {
+      "id": "dmk-transform-03",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-question"
+      },
+      "prompt": {
+        "en": "So, you live in Puebla.",
+        "es": "Entonces, tú vives en Puebla."
+      },
+      "answer": "So, do you live in Puebla?",
+      "wordIds": [],
+      "why": {
+        "en": "The marker So stays at the start. The sentence after the comma becomes a question: do + you + base verb (live).",
+        "es": "El conector So se queda al principio. La oración después de la coma pasa a pregunta: do + you + verbo base (live)."
+      }
+    },
+    {
+      "id": "dmk-transform-04",
+      "kind": "transform",
+      "tense": {
+        "from": "en-i-you-we-they",
+        "to": "en-he-she-it"
+      },
+      "prompt": {
+        "en": "In addition, we work on Saturdays.",
+        "es": "Además, nosotros trabajamos los sábados."
+      },
+      "answer": "In addition, she works on Saturdays.",
+      "accept": [
+        "In addition, he works on Saturdays."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "Only the subject and the verb change: with he / she / it the present simple verb takes -s. The marker and its comma stay.",
+        "es": "Solo cambian el sujeto y el verbo: con he / she / it el verbo en presente simple lleva -s. El conector y su coma se quedan."
+      }
+    },
+    {
+      "id": "dmk-transform-05",
+      "kind": "transform",
+      "tense": {
+        "from": "en-he-she-it",
+        "to": "en-i-you-we-they"
+      },
+      "prompt": {
+        "en": "Finally, he finishes the report.",
+        "es": "Finalmente, él termina el informe."
+      },
+      "answer": "Finally, they finish the report.",
+      "accept": [
+        "Finally, we finish the report."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "With they / we / you the verb loses the -s: he finishes becomes they finish. The marker and its comma stay.",
+        "es": "Con they / we / you el verbo pierde la -s: he finishes pasa a they finish. El conector y su coma se quedan."
+      }
     }
   ]
 }

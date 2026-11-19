@@ -1536,6 +1536,105 @@
         }
       ],
       "correctIndex": 1
+    },
+    {
+      "id": "ppvp-transform-01",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-negative"
+      },
+      "prompt": {
+        "en": "I have seen that film.",
+        "es": "Yo he visto esa película."
+      },
+      "answer": "I have not seen that film.",
+      "accept": [
+        "I haven't seen that film."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "Negative present perfect: have not (haven’t) + past participle. Do not add do: not “I don’t have seen”.",
+        "es": "Negativo del present perfect: have not (haven’t) + participio. No se añade do: no «I don’t have seen»."
+      }
+    },
+    {
+      "id": "ppvp-transform-02",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-question"
+      },
+      "prompt": {
+        "en": "You have been to Oaxaca.",
+        "es": "Tú has estado en Oaxaca."
+      },
+      "answer": "Have you been to Oaxaca?",
+      "wordIds": [],
+      "why": {
+        "en": "Present perfect question: Have / Has comes before the subject, and the past participle stays the same: Have you been, not “Do you have been”.",
+        "es": "Pregunta en present perfect: Have / Has va antes del sujeto y el participio no cambia: Have you been, no «Do you have been»."
+      }
+    },
+    {
+      "id": "ppvp-transform-03",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-negative"
+      },
+      "prompt": {
+        "en": "We saw him yesterday.",
+        "es": "Lo vimos ayer."
+      },
+      "answer": "We did not see him yesterday.",
+      "accept": [
+        "We didn't see him yesterday."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "With a finished time (yesterday) the negative is the past simple: did not (didn’t) + base verb. Not “We have not seen him yesterday” and not “did not saw”.",
+        "es": "Con un tiempo terminado (yesterday) la negación es en past simple: did not (didn’t) + verbo base. No «We have not seen him yesterday» ni «did not saw»."
+      }
+    },
+    {
+      "id": "ppvp-transform-04",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-question"
+      },
+      "prompt": {
+        "en": "She arrived on Monday.",
+        "es": "Ella llegó el lunes."
+      },
+      "answer": "Did she arrive on Monday?",
+      "wordIds": [],
+      "why": {
+        "en": "A question about a finished time uses did + subject + base verb. Not “Has she arrived on Monday?” and not “Did she arrived”.",
+        "es": "Una pregunta sobre un tiempo terminado usa did + sujeto + verbo base. No «Has she arrived on Monday?» ni «Did she arrived»."
+      }
+    },
+    {
+      "id": "ppvp-transform-05",
+      "kind": "transform",
+      "tense": {
+        "from": "en-i-you-we-they",
+        "to": "en-he-she-it"
+      },
+      "prompt": {
+        "en": "I have lost my keys.",
+        "es": "He perdido mis llaves."
+      },
+      "answer": "She has lost her keys.",
+      "accept": [
+        "He has lost his keys."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "With he / she / it the helper is has, not have. The participle (lost) stays the same, and the possessive changes with the subject.",
+        "es": "Con he / she / it el auxiliar es has, no have. El participio (lost) no cambia, y el posesivo cambia con el sujeto."
+      }
     }
   ]
 }

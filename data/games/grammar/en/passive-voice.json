@@ -1418,6 +1418,105 @@
       "accept": [
         "Tomorrow the room will be cleaned."
       ]
+    },
+    {
+      "id": "pv-transform-01",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-negative"
+      },
+      "prompt": {
+        "en": "The letter was sent yesterday.",
+        "es": "La carta fue enviada ayer."
+      },
+      "answer": "The letter was not sent yesterday.",
+      "accept": [
+        "The letter wasn't sent yesterday."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "Negative passive: the helper be takes the negative (was not / wasn’t) and the past participle stays: not “was not send”.",
+        "es": "Pasiva negativa: el auxiliar be lleva la negación (was not / wasn’t) y el participio queda igual: no «was not send»."
+      }
+    },
+    {
+      "id": "pv-transform-02",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-question"
+      },
+      "prompt": {
+        "en": "The doors are locked at night.",
+        "es": "Las puertas se cierran con llave por la noche."
+      },
+      "answer": "Are the doors locked at night?",
+      "wordIds": [],
+      "why": {
+        "en": "Passive question: the helper be (are) goes before the subject, and the past participle stays. No do.",
+        "es": "Pregunta en pasiva: el auxiliar be (are) va antes del sujeto y el participio queda igual. Sin do."
+      }
+    },
+    {
+      "id": "pv-transform-03",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-negative"
+      },
+      "prompt": {
+        "en": "This room is cleaned every day.",
+        "es": "Este cuarto se limpia todos los días."
+      },
+      "answer": "This room is not cleaned every day.",
+      "accept": [
+        "This room isn't cleaned every day."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "Negative passive: is not (isn’t) + past participle. Not “This room does not cleaned”.",
+        "es": "Pasiva negativa: is not (isn’t) + participio. No «This room does not cleaned»."
+      }
+    },
+    {
+      "id": "pv-transform-04",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-question"
+      },
+      "prompt": {
+        "en": "The bridge was built in 1990.",
+        "es": "El puente fue construido en 1990."
+      },
+      "answer": "Was the bridge built in 1990?",
+      "wordIds": [],
+      "why": {
+        "en": "Question: was goes before the subject, and built (the past participle) stays. Not “Did the bridge built”.",
+        "es": "Pregunta: was va antes del sujeto y built (el participio) queda igual. No «Did the bridge built»."
+      }
+    },
+    {
+      "id": "pv-transform-05",
+      "kind": "transform",
+      "tense": {
+        "from": "en-i-you-we-they",
+        "to": "en-he-she-it"
+      },
+      "prompt": {
+        "en": "We were invited to the party.",
+        "es": "Nos invitaron a la fiesta."
+      },
+      "answer": "She was invited to the party.",
+      "accept": [
+        "He was invited to the party."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "The helper changes: we were becomes she was. The past participle (invited) stays the same.",
+        "es": "El auxiliar cambia: we were pasa a she was. El participio (invited) no cambia."
+      }
     }
   ]
 }

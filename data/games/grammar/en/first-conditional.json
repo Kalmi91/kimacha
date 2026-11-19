@@ -1385,6 +1385,109 @@
       "accept": [
         "Unless you come with me I will not go."
       ]
+    },
+    {
+      "id": "fc-transform-01",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-negative"
+      },
+      "prompt": {
+        "en": "If it rains, we will stay at home.",
+        "es": "Si llueve, nos quedaremos en casa."
+      },
+      "answer": "If it rains, we will not stay at home.",
+      "accept": [
+        "If it rains, we won't stay at home."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "Negative result: will not (won’t) + base verb in the main clause. The if-clause stays in the present: not “If it will rain”.",
+        "es": "Resultado negativo: will not (won’t) + verbo base en la oración principal. La cláusula con if sigue en presente: no «If it will rain»."
+      }
+    },
+    {
+      "id": "fc-transform-02",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-question"
+      },
+      "prompt": {
+        "en": "If you call her, she will answer.",
+        "es": "Si la llamas, ella contestará."
+      },
+      "answer": "If you call her, will she answer?",
+      "wordIds": [],
+      "why": {
+        "en": "Question about the result: will goes before the subject in the main clause. The if-clause does not change and has no will.",
+        "es": "Pregunta sobre el resultado: will va antes del sujeto en la oración principal. La cláusula con if no cambia y no lleva will."
+      }
+    },
+    {
+      "id": "fc-transform-03",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-negative"
+      },
+      "prompt": {
+        "en": "If you leave now, you will miss the bus.",
+        "es": "Si te vas ahora, perderás el autobús."
+      },
+      "answer": "If you leave now, you will not miss the bus.",
+      "accept": [
+        "If you leave now, you won't miss the bus."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "Negate only the main clause: will not (won’t) + base verb. The if-clause keeps the simple present: not “If you will leave”.",
+        "es": "Niega solo la oración principal: will not (won’t) + verbo base. La cláusula con if mantiene el presente simple: no «If you will leave»."
+      }
+    },
+    {
+      "id": "fc-transform-04",
+      "kind": "transform",
+      "tense": {
+        "from": "en-he-she-it",
+        "to": "en-i-you-we-they"
+      },
+      "prompt": {
+        "en": "If she finds a job, she will move to Monterrey.",
+        "es": "Si ella encuentra trabajo, se mudará a Monterrey."
+      },
+      "answer": "If I find a job, I will move to Monterrey.",
+      "accept": [
+        "If we find a job, we will move to Monterrey.",
+        "If they find a job, they will move to Monterrey."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "In the if-clause the -s of the simple present disappears with I, we, they: she finds becomes I find. After will the verb stays in the base form.",
+        "es": "En la cláusula con if desaparece la -s del presente simple con I, we, they: she finds pasa a I find. Después de will el verbo queda en forma base."
+      }
+    },
+    {
+      "id": "fc-transform-05",
+      "kind": "transform",
+      "tense": {
+        "from": "en-i-you-we-they",
+        "to": "en-he-she-it"
+      },
+      "prompt": {
+        "en": "If I miss the bus, I will take a taxi.",
+        "es": "Si pierdo el autobús, tomaré un taxi."
+      },
+      "answer": "If she misses the bus, she will take a taxi.",
+      "accept": [
+        "If he misses the bus, he will take a taxi."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "With he / she / it the simple present verb in the if-clause takes -s: she misses. After will there is no -s: will take.",
+        "es": "Con he / she / it el verbo en presente simple de la cláusula con if lleva -s: she misses. Después de will no hay -s: will take."
+      }
     }
   ]
 }

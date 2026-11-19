@@ -1499,6 +1499,105 @@
       "accept": [
         "Today we do not have to pay."
       ]
+    },
+    {
+      "id": "moa-transform-01",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-negative"
+      },
+      "prompt": {
+        "en": "You must park here.",
+        "es": "Debes estacionar aquí."
+      },
+      "answer": "You must not park here.",
+      "accept": [
+        "You mustn't park here."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "Must not (mustn’t) means it is forbidden. The verb after must stays in the base form, and there is no do: not “You don’t must park”.",
+        "es": "Must not (mustn’t) significa que está prohibido. El verbo tras must queda en forma base y no lleva do: no «You don’t must park»."
+      }
+    },
+    {
+      "id": "moa-transform-02",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-question"
+      },
+      "prompt": {
+        "en": "I should call my mother.",
+        "es": "Debería llamar a mi madre."
+      },
+      "answer": "Should I call my mother?",
+      "wordIds": [],
+      "why": {
+        "en": "A modal makes the question by itself: Should goes before the subject. No do: not “Do I should call”.",
+        "es": "El modal forma la pregunta solo: Should va antes del sujeto. Sin do: no «Do I should call»."
+      }
+    },
+    {
+      "id": "moa-transform-03",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-negative"
+      },
+      "prompt": {
+        "en": "You should tell him the truth.",
+        "es": "Deberías decirle la verdad."
+      },
+      "answer": "You should not tell him the truth.",
+      "accept": [
+        "You shouldn't tell him the truth."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "Negative advice: should not (shouldn’t) + base verb. There is no do, and no -ing or to after should.",
+        "es": "Consejo negativo: should not (shouldn’t) + verbo base. No hay do, ni -ing ni to después de should."
+      }
+    },
+    {
+      "id": "moa-transform-04",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-question"
+      },
+      "prompt": {
+        "en": "We have to leave early.",
+        "es": "Tenemos que salir temprano."
+      },
+      "answer": "Do we have to leave early?",
+      "wordIds": [],
+      "why": {
+        "en": "Have to is not a modal, so the question needs do / does: Do we have to … ? Not “Have we to leave”.",
+        "es": "Have to no es un modal, así que la pregunta necesita do / does: Do we have to …? No «Have we to leave»."
+      }
+    },
+    {
+      "id": "moa-transform-05",
+      "kind": "transform",
+      "tense": {
+        "from": "en-i-you-we-they",
+        "to": "en-he-she-it"
+      },
+      "prompt": {
+        "en": "I have to work on Saturday.",
+        "es": "Tengo que trabajar el sábado."
+      },
+      "answer": "She has to work on Saturday.",
+      "accept": [
+        "He has to work on Saturday."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "Have to changes with he / she / it: has to. The verb after it stays in the base form: not “She has to works”.",
+        "es": "Have to cambia con he / she / it: has to. El verbo después queda en forma base: no «She has to works»."
+      }
     }
   ]
 }

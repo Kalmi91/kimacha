@@ -1511,6 +1511,105 @@
       "trial": true,
       "prompt": { "en": "She hopes to be chosen for the team.", "es": "Ella espera ser elegida para el equipo." },
       "es": "She hopes to be chosen for the team."
+    },
+    {
+      "id": "pas-transform-01",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-negative"
+      },
+      "prompt": {
+        "en": "The invoice has been paid.",
+        "es": "La factura ha sido pagada."
+      },
+      "answer": "The invoice has not been paid.",
+      "accept": [
+        "The invoice hasn't been paid."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "Negative: put not after the first helper: has not been + past participle. Not “has been not paid”.",
+        "es": "Negativo: pon not después del primer auxiliar: has not been + participio. No «has been not paid»."
+      }
+    },
+    {
+      "id": "pas-transform-02",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-question"
+      },
+      "prompt": {
+        "en": "The windows can be opened.",
+        "es": "Las ventanas se pueden abrir."
+      },
+      "answer": "Can the windows be opened?",
+      "wordIds": [],
+      "why": {
+        "en": "Question: the modal (can) goes before the subject, then be + past participle. No do.",
+        "es": "Pregunta: el modal (can) va antes del sujeto, luego be + participio. Sin do."
+      }
+    },
+    {
+      "id": "pas-transform-03",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-negative"
+      },
+      "prompt": {
+        "en": "The new bridge will be opened next year.",
+        "es": "El nuevo puente será inaugurado el año que viene."
+      },
+      "answer": "The new bridge will not be opened next year.",
+      "accept": [
+        "The new bridge won't be opened next year."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "Negative: will not (won’t) + be + past participle. The negative goes after will, before be.",
+        "es": "Negativo: will not (won’t) + be + participio. La negación va después de will, antes de be."
+      }
+    },
+    {
+      "id": "pas-transform-04",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-question"
+      },
+      "prompt": {
+        "en": "The documents have been signed.",
+        "es": "Los documentos han sido firmados."
+      },
+      "answer": "Have the documents been signed?",
+      "wordIds": [],
+      "why": {
+        "en": "Question: Have goes before the subject, and been + past participle stays after it. Not “Did the documents been signed”.",
+        "es": "Pregunta: Have va antes del sujeto y been + participio queda después. No «Did the documents been signed»."
+      }
+    },
+    {
+      "id": "pas-transform-05",
+      "kind": "transform",
+      "tense": {
+        "from": "en-i-you-we-they",
+        "to": "en-he-she-it"
+      },
+      "prompt": {
+        "en": "We have been told to wait.",
+        "es": "Nos han dicho que esperemos."
+      },
+      "answer": "She has been told to wait.",
+      "accept": [
+        "He has been told to wait."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "With he / she / it the first helper is has, not have. Been and the past participle (told) stay the same.",
+        "es": "Con he / she / it el primer auxiliar es has, no have. Been y el participio (told) no cambian."
+      }
     }
   ]
 }

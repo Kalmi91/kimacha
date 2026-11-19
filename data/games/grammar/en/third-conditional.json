@@ -1399,6 +1399,105 @@
       "trial": true,
       "prompt": { "en": "If they had told us, we could have helped.", "es": "Si nos lo hubieran dicho, habríamos podido ayudar." },
       "es": "If they had told us, we could have helped."
+    },
+    {
+      "id": "tcn-transform-01",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-negative"
+      },
+      "prompt": {
+        "en": "If he had known, he would have told us.",
+        "es": "Si él lo hubiera sabido, nos lo habría dicho."
+      },
+      "answer": "If he had known, he would not have told us.",
+      "accept": [
+        "If he had known, he wouldn't have told us."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "Negative result: would not (wouldn’t) have + past participle. The if-clause stays in the past perfect: had known.",
+        "es": "Resultado negativo: would not (wouldn’t) have + participio. La cláusula con if sigue en past perfect: had known."
+      }
+    },
+    {
+      "id": "tcn-transform-02",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-question"
+      },
+      "prompt": {
+        "en": "If you had called, she would have answered.",
+        "es": "Si hubieras llamado, ella habría contestado."
+      },
+      "answer": "If you had called, would she have answered?",
+      "wordIds": [],
+      "why": {
+        "en": "Question about the result: would goes before the subject, then have + past participle. The if-clause does not change.",
+        "es": "Pregunta sobre el resultado: would va antes del sujeto, luego have + participio. La cláusula con if no cambia."
+      }
+    },
+    {
+      "id": "tcn-transform-03",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-negative"
+      },
+      "prompt": {
+        "en": "If I had known about the party, I would have gone.",
+        "es": "Si yo hubiera sabido de la fiesta, habría ido."
+      },
+      "answer": "If I had known about the party, I would not have gone.",
+      "accept": [
+        "If I had known about the party, I wouldn't have gone."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "Negate the main clause: would not (wouldn’t) have + past participle. Not “would not had gone”.",
+        "es": "Niega la oración principal: would not (wouldn’t) have + participio. No «would not had gone»."
+      }
+    },
+    {
+      "id": "tcn-transform-04",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-question"
+      },
+      "prompt": {
+        "en": "If she had saved money, she would have bought a car.",
+        "es": "Si ella hubiera ahorrado dinero, habría comprado un coche."
+      },
+      "answer": "If she had saved money, would she have bought a car?",
+      "wordIds": [],
+      "why": {
+        "en": "Question: would + she + have + bought. The if-clause stays in the past perfect (had saved), without would.",
+        "es": "Pregunta: would + she + have + bought. La cláusula con if sigue en past perfect (had saved), sin would."
+      }
+    },
+    {
+      "id": "tcn-transform-05",
+      "kind": "transform",
+      "tense": {
+        "from": "en-i-you-we-they",
+        "to": "en-he-she-it"
+      },
+      "prompt": {
+        "en": "If I had left earlier, I would have caught the train.",
+        "es": "Si hubiera salido antes, habría alcanzado el tren."
+      },
+      "answer": "If she had left earlier, she would have caught the train.",
+      "accept": [
+        "If he had left earlier, he would have caught the train."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "Nothing in the verbs changes: had left and would have caught are the same for every person. Only the pronouns change.",
+        "es": "Nada cambia en los verbos: had left y would have caught son iguales para todas las personas. Solo cambian los pronombres."
+      }
     }
   ]
 }
