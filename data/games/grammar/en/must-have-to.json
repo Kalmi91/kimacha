@@ -857,6 +857,442 @@
           "en": "Do I have to?"
         }
       ]
+    },
+    {
+      "id": "mh-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "You ___ not park here. It is forbidden.",
+      "answers": [
+        "must"
+      ],
+      "accept": [
+        [
+          "can",
+          "may",
+          "could"
+        ]
+      ],
+      "tr": {
+        "en": "You must not park here. It is forbidden.",
+        "es": "No debes aparcar aquí. Está prohibido."
+      },
+      "why": {
+        "en": "Mustn’t = it is forbidden. In a rule or sign: You must not park here.",
+        "es": "Mustn’t = está prohibido. En una norma o un cartel: You must not park here."
+      }
+    },
+    {
+      "id": "mh-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "You ___ not have to pay. It is free today. My brother ___ to work every Saturday.",
+      "answers": [
+        "do",
+        "has"
+      ],
+      "accept": [
+        [],
+        [
+          "had"
+        ]
+      ],
+      "tr": {
+        "en": "You do not have to pay. It is free today. My brother has to work every Saturday.",
+        "es": "No tienes que pagar. Hoy es gratis. Mi hermano tiene que trabajar todos los sábados."
+      },
+      "why": {
+        "en": "Don’t / doesn’t have to = it is not necessary: You do not have to pay.",
+        "es": "Don’t / doesn’t have to = no es necesario: You do not have to pay."
+      }
+    },
+    {
+      "id": "mh-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "___ she have to wear a uniform? Yes, she ___.",
+      "answers": [
+        "Does",
+        "does"
+      ],
+      "tr": {
+        "en": "Does she have to wear a uniform? Yes, she does.",
+        "es": "¿Tiene que llevar uniforme? Sí, tiene que llevarlo."
+      },
+      "why": {
+        "en": "Question with have to: Do / Does + subject + have to + base verb? Short answer: Yes, she does.",
+        "es": "Pregunta con have to: Do / Does + sujeto + have to + verbo base? Respuesta corta: Yes, she does."
+      }
+    },
+    {
+      "id": "mh-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Yesterday I ___ to work late. Tomorrow I ___ to get up early.",
+      "answers": [
+        "had",
+        "have"
+      ],
+      "tr": {
+        "en": "Yesterday I had to work late. Tomorrow I have to get up early.",
+        "es": "Ayer tuve que trabajar hasta tarde. Mañana tengo que levantarme temprano."
+      },
+      "why": {
+        "en": "Must has no past: we use had to (I had to work). Tomorrow: I have to / I will have to.",
+        "es": "Must no tiene pasado: se usa had to (I had to work). Mañana: I have to / I will have to."
+      }
+    },
+    {
+      "id": "mh-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "___ I wear a tie at the interview? Yes, you ___.",
+      "answers": [
+        "Must",
+        "must"
+      ],
+      "accept": [
+        [
+          "Should",
+          "Can",
+          "May"
+        ],
+        [
+          "should"
+        ]
+      ],
+      "tr": {
+        "en": "Must I wear a tie at the interview? Yes, you must.",
+        "es": "¿Debo llevar corbata en la entrevista? Sí, debes llevarla."
+      },
+      "why": {
+        "en": "Must is a strong obligation from a rule or from the speaker: You must be quiet in the library.",
+        "es": "Must es una obligación fuerte de una norma o del hablante: You must be quiet in the library."
+      }
+    },
+    {
+      "id": "mh-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "She must goes to the doctor.",
+      "wrongIndex": 2,
+      "answer": "go",
+      "explain": {
+        "en": "After must the base verb follows directly: she must go (no -es, no “to”).",
+        "es": "Después de must va directamente el verbo base: she must go (sin -es, sin «to»)."
+      },
+      "tr": {
+        "en": "She must go to the doctor.",
+        "es": "Tiene que ir al médico."
+      }
+    },
+    {
+      "id": "mh-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "He have to work on Saturday.",
+      "wrongIndex": 1,
+      "answer": "has",
+      "explain": {
+        "en": "Have to is a normal verb: he / she / it has to, I / you / we / they have to.",
+        "es": "Have to es un verbo normal: he / she / it has to, I / you / we / they have to."
+      },
+      "tr": {
+        "en": "He has to work on Saturday.",
+        "es": "Tiene que trabajar el sábado."
+      }
+    },
+    {
+      "id": "mh-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "We doesn’t have to pay.",
+      "wrongIndex": 1,
+      "answer": "don’t",
+      "explain": {
+        "en": "With we / you / they we use don’t have to; doesn’t is only for he / she / it.",
+        "es": "Con we / you / they se usa don’t have to; doesn’t es solo para he / she / it."
+      },
+      "tr": {
+        "en": "We don’t have to pay.",
+        "es": "No tenemos que pagar."
+      }
+    },
+    {
+      "id": "mh-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "I had to worked late yesterday.",
+      "wrongIndex": 3,
+      "answer": "work",
+      "explain": {
+        "en": "After had to the verb is in the base form: I had to work, not “had to worked”.",
+        "es": "Después de had to el verbo va en forma base: I had to work, no «had to worked»."
+      },
+      "tr": {
+        "en": "I had to work late yesterday.",
+        "es": "Ayer tuve que trabajar hasta tarde."
+      }
+    },
+    {
+      "id": "mh-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "You must not parks here.",
+      "wrongIndex": 3,
+      "answer": "park",
+      "explain": {
+        "en": "After must the base verb follows directly: she must go (no -es, no “to”).",
+        "es": "Después de must va directamente el verbo base: she must go (sin -es, sin «to»)."
+      },
+      "tr": {
+        "en": "You must not park here.",
+        "es": "Aquí no se puede aparcar."
+      }
+    },
+    {
+      "id": "mh-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "have",
+        "pay",
+        "dance"
+      ],
+      "es": "She ___ to wear a uniform at school.",
+      "word": "have",
+      "answer": "has",
+      "tr": {
+        "en": "She has to wear a uniform at school.",
+        "es": "Tiene que llevar uniforme en el colegio."
+      },
+      "why": {
+        "en": "Have to is a normal verb: he / she / it has to, I / you / we / they have to.",
+        "es": "Have to es un verbo normal: he / she / it has to, I / you / we / they have to."
+      }
+    },
+    {
+      "id": "mh-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "have",
+        "go",
+        "ask"
+      ],
+      "es": "We ___ to be at school at eight.",
+      "word": "have",
+      "answer": "have",
+      "tr": {
+        "en": "We have to be at school at eight.",
+        "es": "Tenemos que estar en la escuela a las ocho."
+      },
+      "why": {
+        "en": "Have to is a normal verb: he / she / it has to, I / you / we / they have to.",
+        "es": "Have to es un verbo normal: he / she / it has to, I / you / we / they have to."
+      }
+    },
+    {
+      "id": "mh-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "park",
+        "wait",
+        "dance"
+      ],
+      "es": "You must not ___ your car in front of the door. It is forbidden.",
+      "word": "park",
+      "answer": "park",
+      "tr": {
+        "en": "You must not park your car in front of the door. It is forbidden.",
+        "es": "No debes aparcar el coche delante de la puerta. Está prohibido."
+      },
+      "why": {
+        "en": "After must the base verb follows directly: she must go (no -es, no “to”).",
+        "es": "Después de must va directamente el verbo base: she must go (sin -es, sin «to»)."
+      }
+    },
+    {
+      "id": "mh-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "wear",
+        "sing",
+        "swim"
+      ],
+      "es": "At school you must ___ a uniform.",
+      "word": "wear",
+      "answer": "wear",
+      "tr": {
+        "en": "At school you must wear a uniform.",
+        "es": "En el colegio hay que llevar uniforme."
+      },
+      "why": {
+        "en": "Must is a strong obligation from a rule or from the speaker: You must be quiet in the library.",
+        "es": "Must es una obligación fuerte de una norma o del hablante: You must be quiet in the library."
+      }
+    },
+    {
+      "id": "mh-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "be",
+        "go",
+        "study"
+      ],
+      "es": "You must ___ quiet in the library.",
+      "word": "be",
+      "answer": "be",
+      "tr": {
+        "en": "You must be quiet in the library.",
+        "es": "En la biblioteca hay que estar en silencio."
+      },
+      "why": {
+        "en": "Must is a strong obligation from a rule or from the speaker: You must be quiet in the library.",
+        "es": "Must es una obligación fuerte de una norma o del hablante: You must be quiet in the library."
+      }
+    },
+    {
+      "id": "mh-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "You must not park here.",
+        "es": "No debes aparcar aquí."
+      },
+      "es": "You must not park here."
+    },
+    {
+      "id": "mh-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "She has to wear a uniform.",
+        "es": "Tiene que llevar uniforme."
+      },
+      "es": "She has to wear a uniform."
+    },
+    {
+      "id": "mh-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "Do I have to pay?",
+        "es": "¿Tengo que pagar?"
+      },
+      "es": "Do I have to pay?"
+    },
+    {
+      "id": "mh-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "We don’t have to work today.",
+        "es": "Hoy no tenemos que trabajar."
+      },
+      "es": "We don’t have to work today.",
+      "accept": [
+        "Today we don’t have to work."
+      ]
+    },
+    {
+      "id": "mh-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "I had to wait for an hour.",
+        "es": "Tuve que esperar una hora."
+      },
+      "es": "I had to wait for an hour."
+    },
+    {
+      "kind": "why",
+      "id": "mh-why-01",
+      "es": "You mustn’t park here.",
+      "target": "mustn’t",
+      "tr": {
+        "en": "You mustn’t park here.",
+        "es": "No debes aparcar aquí."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "it is forbidden",
+            "es": "está prohibido"
+          }
+        },
+        {
+          "text": {
+            "en": "it is not necessary",
+            "es": "no es necesario"
+          },
+          "wrong": {
+            "en": "That meaning is “don’t have to”; mustn’t is stronger: it is forbidden.",
+            "es": "Ese significado es «don’t have to»; mustn’t es más fuerte: está prohibido."
+          }
+        },
+        {
+          "text": {
+            "en": "you are not able to",
+            "es": "no eres capaz de"
+          },
+          "wrong": {
+            "en": "Not being able is “can’t”; mustn’t is a prohibition.",
+            "es": "No poder es «can’t»; mustn’t es una prohibición."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "mh-why-02",
+      "es": "You don’t have to pay.",
+      "target": "don’t have to",
+      "tr": {
+        "en": "You don’t have to pay.",
+        "es": "No tienes que pagar."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "it is forbidden",
+            "es": "está prohibido"
+          },
+          "wrong": {
+            "en": "That would be mustn’t; “don’t have to” means paying is not required.",
+            "es": "Eso sería mustn’t; «don’t have to» significa que pagar no es obligatorio."
+          }
+        },
+        {
+          "text": {
+            "en": "it is not necessary",
+            "es": "no es necesario"
+          }
+        },
+        {
+          "text": {
+            "en": "you are not able to",
+            "es": "no eres capaz de"
+          },
+          "wrong": {
+            "en": "Being unable is “can’t”; “don’t have to” is about necessity.",
+            "es": "No poder es «can’t»; «don’t have to» trata de la necesidad."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "mh-form-01",
+      "kind": "form",
+      "verb": "have to",
+      "person": "they",
+      "answer": "have to",
+      "table": "mh-forms"
     }
   ]
 }

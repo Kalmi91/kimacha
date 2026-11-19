@@ -955,6 +955,419 @@
           "en": "last Monday"
         }
       ]
+    },
+    {
+      "id": "pr-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Yesterday my mother ___ (walk) to work and ___ (study) English in the evening.",
+      "answers": [
+        "walked",
+        "studied"
+      ],
+      "tr": {
+        "en": "Yesterday my mother walked to work and studied English in the evening.",
+        "es": "Ayer mi madre caminó al trabajo y estudió inglés por la noche."
+      },
+      "why": {
+        "en": "Consonant + y changes to -ied (study → studied); vowel + y just adds -ed (stay → stayed).",
+        "es": "Consonante + y cambia a -ied (study → studied); vocal + y solo añade -ed (stay → stayed)."
+      }
+    },
+    {
+      "id": "pr-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "We ___ (stop) at the shop and ___ (wait) for the bus.",
+      "answers": [
+        "stopped",
+        "waited"
+      ],
+      "tr": {
+        "en": "We stopped at the shop and waited for the bus.",
+        "es": "Nos paramos en la tienda y esperamos el autobús."
+      },
+      "why": {
+        "en": "A short verb ending in one vowel + one consonant doubles the consonant: stop → stopped.",
+        "es": "Un verbo corto que acaba en una vocal + una consonante duplica la consonante: stop → stopped."
+      }
+    },
+    {
+      "id": "pr-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "They ___ not play the game yesterday. They ___ (watch) a film at home.",
+      "answers": [
+        "did",
+        "watched"
+      ],
+      "tr": {
+        "en": "They did not play the game yesterday. They watched a film at home.",
+        "es": "Ayer no jugaron el partido. Vieron una película en casa."
+      },
+      "why": {
+        "en": "Negative past: did not + base verb (did not play); an affirmative regular verb takes -ed (watched).",
+        "es": "Negativa en pasado: did not + verbo base (did not play); un verbo regular afirmativo lleva -ed (watched)."
+      }
+    },
+    {
+      "id": "pr-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "___ you visit your grandmother last week? Yes, I ___.",
+      "answers": [
+        "Did",
+        "did"
+      ],
+      "tr": {
+        "en": "Did you visit your grandmother last week? Yes, I did.",
+        "es": "¿Visitaste a tu abuela la semana pasada? Sí, la visité."
+      },
+      "why": {
+        "en": "Past question: Did + subject + base verb; short answer: Yes, I did.",
+        "es": "Pregunta en pasado: Did + sujeto + verbo base; respuesta corta: Yes, I did."
+      }
+    },
+    {
+      "id": "pr-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "The film ___ (start) at eight and ___ (finish) at ten. We ___ (like) it.",
+      "answers": [
+        "started",
+        "finished",
+        "liked"
+      ],
+      "tr": {
+        "en": "The film started at eight and finished at ten. We liked it.",
+        "es": "La película empezó a las ocho y terminó a las diez. Nos gustó."
+      },
+      "why": {
+        "en": "Most regular verbs add -ed (walked); a verb ending in -e adds only -d (danced).",
+        "es": "La mayoría de los verbos regulares añade -ed (walked); si el verbo acaba en -e, solo se añade -d (danced)."
+      }
+    },
+    {
+      "id": "pr-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "Yesterday I walk to school.",
+      "wrongIndex": 2,
+      "answer": "walked",
+      "explain": {
+        "en": "Yesterday points to the past, so the verb takes -ed: walked.",
+        "es": "Yesterday indica el pasado, por eso el verbo lleva -ed: walked."
+      },
+      "tr": {
+        "en": "Yesterday I walked to school.",
+        "es": "Ayer caminé a la escuela."
+      }
+    },
+    {
+      "id": "pr-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "She didn’t called me last night.",
+      "wrongIndex": 2,
+      "answer": "call",
+      "explain": {
+        "en": "After did / didn’t the verb stays in the base form: didn’t call, not “didn’t called”.",
+        "es": "Después de did / didn’t el verbo se queda en forma base: didn’t call, no «didn’t called»."
+      },
+      "tr": {
+        "en": "She didn’t call me last night.",
+        "es": "Anoche no me llamó."
+      }
+    },
+    {
+      "id": "pr-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "We studyed English last year.",
+      "wrongIndex": 1,
+      "answer": "studied",
+      "explain": {
+        "en": "Consonant + y changes to -ied (study → studied); vowel + y just adds -ed (stay → stayed).",
+        "es": "Consonante + y cambia a -ied (study → studied); vocal + y solo añade -ed (stay → stayed)."
+      },
+      "tr": {
+        "en": "We studied English last year.",
+        "es": "El año pasado estudiamos inglés."
+      }
+    },
+    {
+      "id": "pr-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "They stoped at the corner.",
+      "wrongIndex": 1,
+      "answer": "stopped",
+      "explain": {
+        "en": "A short verb ending in one vowel + one consonant doubles the consonant: stop → stopped.",
+        "es": "Un verbo corto que acaba en una vocal + una consonante duplica la consonante: stop → stopped."
+      },
+      "tr": {
+        "en": "They stopped at the corner.",
+        "es": "Se pararon en la esquina."
+      }
+    },
+    {
+      "id": "pr-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "Did you played the game yesterday?",
+      "wrongIndex": 2,
+      "answer": "play",
+      "explain": {
+        "en": "Past question: Did + subject + base verb; short answer: Yes, I did.",
+        "es": "Pregunta en pasado: Did + sujeto + verbo base; respuesta corta: Yes, I did."
+      },
+      "tr": {
+        "en": "Did you play the game yesterday?",
+        "es": "¿Jugaste el partido ayer?"
+      }
+    },
+    {
+      "id": "pr-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "cook",
+        "arrive",
+        "dance"
+      ],
+      "es": "The train ___ at six o’clock.",
+      "word": "arrive",
+      "answer": "arrived",
+      "tr": {
+        "en": "The train arrived at six o’clock.",
+        "es": "El tren llegó a las seis."
+      },
+      "why": {
+        "en": "Most regular verbs add -ed (walked); a verb ending in -e adds only -d (danced).",
+        "es": "La mayoría de los verbos regulares añade -ed (walked); si el verbo acaba en -e, solo se añade -d (danced)."
+      }
+    },
+    {
+      "id": "pr-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "rain",
+        "dance",
+        "listen"
+      ],
+      "es": "It ___ all day yesterday, so we stayed home.",
+      "word": "rain",
+      "answer": "rained",
+      "tr": {
+        "en": "It rained all day yesterday, so we stayed home.",
+        "es": "Ayer llovió todo el día, así que nos quedamos en casa."
+      },
+      "why": {
+        "en": "Most regular verbs add -ed (walked); a verb ending in -e adds only -d (danced).",
+        "es": "La mayoría de los verbos regulares añade -ed (walked); si el verbo acaba en -e, solo se añade -d (danced)."
+      }
+    },
+    {
+      "id": "pr-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "study",
+        "sing",
+        "wash"
+      ],
+      "es": "She ___ for the exam all night.",
+      "word": "study",
+      "answer": "studied",
+      "tr": {
+        "en": "She studied for the exam all night.",
+        "es": "Estudió para el examen toda la noche."
+      },
+      "why": {
+        "en": "Consonant + y changes to -ied (study → studied); vowel + y just adds -ed (stay → stayed).",
+        "es": "Consonante + y cambia a -ied (study → studied); vocal + y solo añade -ed (stay → stayed)."
+      }
+    },
+    {
+      "id": "pr-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "stop",
+        "clean",
+        "cook"
+      ],
+      "es": "The bus ___ in front of my house.",
+      "word": "stop",
+      "answer": "stopped",
+      "tr": {
+        "en": "The bus stopped in front of my house.",
+        "es": "El autobús se paró delante de mi casa."
+      },
+      "why": {
+        "en": "A short verb ending in one vowel + one consonant doubles the consonant: stop → stopped.",
+        "es": "Un verbo corto que acaba en una vocal + una consonante duplica la consonante: stop → stopped."
+      }
+    },
+    {
+      "id": "pr-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "want",
+        "play",
+        "listen"
+      ],
+      "es": "We ___ to music in the car.",
+      "word": "listen",
+      "answer": "listened",
+      "tr": {
+        "en": "We listened to music in the car.",
+        "es": "Escuchamos música en el coche."
+      },
+      "why": {
+        "en": "Most regular verbs add -ed (walked); a verb ending in -e adds only -d (danced).",
+        "es": "La mayoría de los verbos regulares añade -ed (walked); si el verbo acaba en -e, solo se añade -d (danced)."
+      }
+    },
+    {
+      "id": "pr-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "She watched a film last night.",
+        "es": "Anoche vio una película."
+      },
+      "es": "She watched a film last night.",
+      "accept": [
+        "Last night she watched a film."
+      ]
+    },
+    {
+      "id": "pr-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "We didn’t play the game yesterday.",
+        "es": "Ayer no jugamos el partido."
+      },
+      "es": "We didn’t play the game yesterday.",
+      "accept": [
+        "Yesterday we didn’t play the game."
+      ]
+    },
+    {
+      "id": "pr-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "Did you visit your grandmother?",
+        "es": "¿Visitaste a tu abuela?"
+      },
+      "es": "Did you visit your grandmother?"
+    },
+    {
+      "id": "pr-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "My brother cleaned the kitchen.",
+        "es": "Mi hermano limpió la cocina."
+      },
+      "es": "My brother cleaned the kitchen."
+    },
+    {
+      "id": "pr-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "They lived in Mexico City in 2015.",
+        "es": "Vivían en la Ciudad de México en 2015."
+      },
+      "es": "They lived in Mexico City in 2015.",
+      "accept": [
+        "In 2015 they lived in Mexico City."
+      ]
+    },
+    {
+      "kind": "why",
+      "id": "pr-why-01",
+      "es": "We danced all night.",
+      "target": "danced",
+      "tr": {
+        "en": "We danced all night.",
+        "es": "Bailamos toda la noche."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "base verb + -d: the verb already ends in -e",
+            "es": "verbo base + -d: el verbo ya acaba en -e"
+          }
+        },
+        {
+          "text": {
+            "en": "base verb + -ed, even after -e",
+            "es": "verbo base + -ed, incluso después de -e"
+          },
+          "wrong": {
+            "en": "A verb that already ends in -e adds only -d: danced, not “danceed”.",
+            "es": "Un verbo que ya acaba en -e solo añade -d: danced, no «danceed»."
+          }
+        },
+        {
+          "text": {
+            "en": "a different word: an irregular verb",
+            "es": "otra palabra: un verbo irregular"
+          },
+          "wrong": {
+            "en": "Dance is a regular verb: its past is made by adding -d, not by changing the word.",
+            "es": "Dance es un verbo regular: su pasado se forma añadiendo -d, no cambiando la palabra."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "pr-why-02",
+      "es": "Did she call you yesterday?",
+      "target": "Did",
+      "tr": {
+        "en": "Did she call you yesterday?",
+        "es": "¿Te llamó ayer?"
+      },
+      "options": [
+        {
+          "text": {
+            "en": "the main verb in the past",
+            "es": "el verbo principal en pasado"
+          },
+          "wrong": {
+            "en": "Here “did” is an auxiliary that makes the question; the main verb is “call”.",
+            "es": "Aquí «did» es un auxiliar que forma la pregunta; el verbo principal es «call»."
+          }
+        },
+        {
+          "text": {
+            "en": "an auxiliary: it marks the past, the main verb stays in the base form",
+            "es": "un auxiliar: marca el pasado y el verbo principal queda en forma base"
+          }
+        },
+        {
+          "text": {
+            "en": "the same as “does”, for the present",
+            "es": "lo mismo que «does», para el presente"
+          },
+          "wrong": {
+            "en": "“Does” is the present auxiliary; “did” marks the past for every person.",
+            "es": "«Does» es el auxiliar del presente; «did» marca el pasado para todas las personas."
+          }
+        }
+      ],
+      "correctIndex": 1
     }
   ]
 }

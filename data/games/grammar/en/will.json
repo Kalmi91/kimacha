@@ -818,6 +818,448 @@
           "en": "He won't come."
         }
       ]
+    },
+    {
+      "id": "wl-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "It is Monday. I think it ___ be a busy week.",
+      "answers": [
+        "will"
+      ],
+      "accept": [
+        [
+          "may",
+          "might",
+          "could",
+          "should"
+        ]
+      ],
+      "tr": {
+        "en": "It is Monday. I think it will be a busy week.",
+        "es": "Es lunes. Creo que será una semana ocupada."
+      },
+      "why": {
+        "en": "Will is for predictions based on opinion (I think it will be…); “may / might” would only say it is possible.",
+        "es": "Will sirve para predicciones basadas en una opinión (I think it will be…); «may / might» solo dirían que es posible."
+      }
+    },
+    {
+      "id": "wl-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "I promise I ___ not be late. I ___ call you tomorrow.",
+      "answers": [
+        "will",
+        "will"
+      ],
+      "accept": [
+        [],
+        [
+          "can",
+          "shall"
+        ]
+      ],
+      "tr": {
+        "en": "I promise I will not be late. I will call you tomorrow.",
+        "es": "Te prometo que no llegaré tarde. Mañana te llamaré."
+      },
+      "why": {
+        "en": "Will is also for promises: I will not tell anyone. One form for every person.",
+        "es": "Will sirve también para promesas: I will not tell anyone. Una sola forma para todas las personas."
+      }
+    },
+    {
+      "id": "wl-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "___ you help me with this box, please? Yes, of course I ___.",
+      "answers": [
+        "Will",
+        "will"
+      ],
+      "accept": [
+        [
+          "Can",
+          "Could",
+          "Would"
+        ],
+        [
+          "can"
+        ]
+      ],
+      "tr": {
+        "en": "Will you help me with this box, please? Yes, of course I will.",
+        "es": "¿Me ayudas con esta caja, por favor? Sí, claro que te ayudo."
+      },
+      "why": {
+        "en": "Question: Will + subject + base verb? We use it for a request or an offer; short answer: Yes, I will.",
+        "es": "Pregunta: Will + sujeto + verbo base? Sirve para una petición o un ofrecimiento; respuesta corta: Yes, I will."
+      }
+    },
+    {
+      "id": "wl-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Sorry, I am busy. I ___ not be at the party tomorrow.",
+      "answers": [
+        "will"
+      ],
+      "accept": [
+        [
+          "can",
+          "could",
+          "may",
+          "might"
+        ]
+      ],
+      "tr": {
+        "en": "Sorry, I am busy. I will not be at the party tomorrow.",
+        "es": "Lo siento, estoy ocupado. Mañana no estaré en la fiesta."
+      },
+      "why": {
+        "en": "Negative: will not (won’t) + base verb: it will not rain.",
+        "es": "Negativa: will not (won’t) + verbo base: it will not rain."
+      }
+    },
+    {
+      "id": "wl-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "___ it rain tomorrow? No, it ___ not.",
+      "answers": [
+        "Will",
+        "will"
+      ],
+      "tr": {
+        "en": "Will it rain tomorrow? No, it will not.",
+        "es": "¿Lloverá mañana? No, no lloverá."
+      },
+      "why": {
+        "en": "Question: Will + subject + base verb? Short answer: No, it will not (won’t).",
+        "es": "Pregunta: Will + sujeto + verbo base? Respuesta corta: No, it will not (won’t)."
+      }
+    },
+    {
+      "id": "wl-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "She will helps us tomorrow.",
+      "wrongIndex": 2,
+      "answer": "help",
+      "explain": {
+        "en": "After will the verb stays in the base form: she will help, not “she will helps”.",
+        "es": "Después de will el verbo se queda en forma base: she will help, no «she will helps»."
+      },
+      "tr": {
+        "en": "She will help us tomorrow.",
+        "es": "Ella nos ayudará mañana."
+      }
+    },
+    {
+      "id": "wl-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "He wills come at six.",
+      "wrongIndex": 1,
+      "answer": "will",
+      "explain": {
+        "en": "Will never takes -s: he will, not “he wills”.",
+        "es": "Will nunca lleva -s: he will, no «he wills»."
+      },
+      "tr": {
+        "en": "He will come at six.",
+        "es": "Vendrá a las seis."
+      }
+    },
+    {
+      "id": "wl-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "Will she comes to the party?",
+      "wrongIndex": 2,
+      "answer": "come",
+      "explain": {
+        "en": "After will the verb stays in the base form: she will help, not “she will helps”.",
+        "es": "Después de will el verbo se queda en forma base: she will help, no «she will helps»."
+      },
+      "tr": {
+        "en": "Will she come to the party?",
+        "es": "¿Vendrá a la fiesta?"
+      }
+    },
+    {
+      "id": "wl-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "We will met you at the station.",
+      "wrongIndex": 2,
+      "answer": "meet",
+      "explain": {
+        "en": "After will the verb stays in the base form: she will help, not “she will helps”.",
+        "es": "Después de will el verbo se queda en forma base: she will help, no «she will helps»."
+      },
+      "tr": {
+        "en": "We will meet you at the station.",
+        "es": "Te esperaremos en la estación."
+      }
+    },
+    {
+      "id": "wl-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "She will no help us.",
+      "wrongIndex": 2,
+      "answer": "not",
+      "explain": {
+        "en": "The negative of will is “will not” (short form: won’t), not “will no”.",
+        "es": "La negativa de will es «will not» (forma corta: won’t), no «will no»."
+      },
+      "tr": {
+        "en": "She will not help us.",
+        "es": "Ella no nos ayudará."
+      }
+    },
+    {
+      "id": "wl-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "help",
+        "wait",
+        "cook"
+      ],
+      "es": "Don’t worry. I will ___ you with the bags.",
+      "word": "help",
+      "answer": "help",
+      "tr": {
+        "en": "Don’t worry. I will help you with the bags.",
+        "es": "No te preocupes. Te ayudaré con las bolsas."
+      },
+      "why": {
+        "en": "After will the verb stays in the base form: she will help, not “she will helps”.",
+        "es": "Después de will el verbo se queda en forma base: she will help, no «she will helps»."
+      }
+    },
+    {
+      "id": "wl-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "rain",
+        "sing",
+        "swim"
+      ],
+      "es": "I think it will ___ tomorrow.",
+      "word": "rain",
+      "answer": "rain",
+      "tr": {
+        "en": "I think it will rain tomorrow.",
+        "es": "Creo que mañana lloverá."
+      },
+      "why": {
+        "en": "Will is for predictions based on opinion (I think it will be…); “may / might” would only say it is possible.",
+        "es": "Will sirve para predicciones basadas en una opinión (I think it will be…); «may / might» solo dirían que es posible."
+      }
+    },
+    {
+      "id": "wl-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "be",
+        "buy",
+        "dance"
+      ],
+      "es": "I think the film will ___ very good.",
+      "word": "be",
+      "answer": "be",
+      "tr": {
+        "en": "I think the film will be very good.",
+        "es": "Creo que la película será muy buena."
+      },
+      "why": {
+        "en": "Will is for predictions based on opinion (I think it will be…); “may / might” would only say it is possible.",
+        "es": "Will sirve para predicciones basadas en una opinión (I think it will be…); «may / might» solo dirían que es posible."
+      }
+    },
+    {
+      "id": "wl-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "call",
+        "dance",
+        "sleep"
+      ],
+      "es": "I promise I will ___ you tomorrow.",
+      "word": "call",
+      "answer": "call",
+      "tr": {
+        "en": "I promise I will call you tomorrow.",
+        "es": "Te prometo que te llamaré mañana."
+      },
+      "why": {
+        "en": "Will is also for promises: I will not tell anyone. One form for every person.",
+        "es": "Will sirve también para promesas: I will not tell anyone. Una sola forma para todas las personas."
+      }
+    },
+    {
+      "id": "wl-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "arrive",
+        "sing",
+        "swim"
+      ],
+      "es": "The train will ___ at six o’clock tomorrow.",
+      "word": "arrive",
+      "answer": "arrive",
+      "tr": {
+        "en": "The train will arrive at six o’clock tomorrow.",
+        "es": "El tren llegará mañana a las seis."
+      },
+      "why": {
+        "en": "After will the verb stays in the base form: she will help, not “she will helps”.",
+        "es": "Después de will el verbo se queda en forma base: she will help, no «she will helps»."
+      }
+    },
+    {
+      "id": "wl-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "I will help you with the bags.",
+        "es": "Te ayudaré con las bolsas."
+      },
+      "es": "I will help you with the bags."
+    },
+    {
+      "id": "wl-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "She will not come to the party.",
+        "es": "Ella no vendrá a la fiesta."
+      },
+      "es": "She will not come to the party."
+    },
+    {
+      "id": "wl-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "Will you call me tomorrow?",
+        "es": "¿Me llamarás mañana?"
+      },
+      "es": "Will you call me tomorrow?"
+    },
+    {
+      "id": "wl-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "I think it will rain tonight.",
+        "es": "Creo que esta noche lloverá."
+      },
+      "es": "I think it will rain tonight."
+    },
+    {
+      "id": "wl-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "They will arrive at six o’clock.",
+        "es": "Llegarán a las seis."
+      },
+      "es": "They will arrive at six o’clock."
+    },
+    {
+      "kind": "why",
+      "id": "wl-why-01",
+      "es": "Oh, I forgot my keys! I will go back for them.",
+      "target": "will",
+      "tr": {
+        "en": "Oh, I forgot my keys! I will go back for them.",
+        "es": "¡Ay, olvidé mis llaves! Voy a volver por ellas."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "a decision made at the moment of speaking",
+            "es": "una decisión tomada en el momento de hablar"
+          }
+        },
+        {
+          "text": {
+            "en": "a plan decided earlier: going to",
+            "es": "un plan decidido antes: going to"
+          },
+          "wrong": {
+            "en": "The speaker has just noticed the problem and decides now; a plan made earlier would use going to.",
+            "es": "El hablante acaba de notar el problema y decide ahora; un plan anterior usaría going to."
+          }
+        },
+        {
+          "text": {
+            "en": "a habit: present simple",
+            "es": "un hábito: presente simple"
+          },
+          "wrong": {
+            "en": "This is not a habit but a decision taken right now.",
+            "es": "No es un hábito sino una decisión tomada ahora."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "wl-why-02",
+      "es": "I think it will be a great party.",
+      "target": "will",
+      "tr": {
+        "en": "I think it will be a great party.",
+        "es": "Creo que será una gran fiesta."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "a plan decided earlier: going to",
+            "es": "un plan decidido antes: going to"
+          },
+          "wrong": {
+            "en": "“I think” shows an opinion, not a plan; predictions from opinion use will.",
+            "es": "«I think» muestra una opinión, no un plan; las predicciones basadas en una opinión usan will."
+          }
+        },
+        {
+          "text": {
+            "en": "a prediction based on opinion",
+            "es": "una predicción basada en una opinión"
+          }
+        },
+        {
+          "text": {
+            "en": "an action happening now: present continuous",
+            "es": "una acción que ocurre ahora: presente continuo"
+          },
+          "wrong": {
+            "en": "The party is in the future, so it is not happening now.",
+            "es": "La fiesta es en el futuro, no está ocurriendo ahora."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "wl-form-01",
+      "kind": "form",
+      "verb": "will not",
+      "person": "I",
+      "answer": "will not",
+      "table": "wl-forms"
     }
   ]
 }

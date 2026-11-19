@@ -905,6 +905,408 @@
           "en": "easier"
         }
       ]
+    },
+    {
+      "id": "cm-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "My brother is tall, but my father is ___ (tall) than him.",
+      "answers": [
+        "taller"
+      ],
+      "tr": {
+        "en": "My brother is tall, but my father is taller than him.",
+        "es": "Mi hermano es alto, pero mi padre es más alto que él."
+      },
+      "why": {
+        "en": "Short adjectives add -er and then “than”: tall → taller than.",
+        "es": "Los adjetivos cortos añaden -er y luego «than»: tall → taller than."
+      }
+    },
+    {
+      "id": "cm-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "This phone is ___ (big) than that one, and it is ___ expensive.",
+      "answers": [
+        "bigger",
+        "more"
+      ],
+      "tr": {
+        "en": "This phone is bigger than that one, and it is more expensive.",
+        "es": "Este teléfono es más grande que aquel y es más caro."
+      },
+      "why": {
+        "en": "One vowel + one consonant: double the consonant before -er: big → bigger, hot → hotter.",
+        "es": "Una vocal + una consonante: se duplica la consonante antes de -er: big → bigger, hot → hotter."
+      }
+    },
+    {
+      "id": "cm-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "Summer is ___ (hot) than spring, and the days are ___ (long).",
+      "answers": [
+        "hotter",
+        "longer"
+      ],
+      "tr": {
+        "en": "Summer is hotter than spring, and the days are longer.",
+        "es": "El verano es más caluroso que la primavera y los días son más largos."
+      },
+      "why": {
+        "en": "One vowel + one consonant: double the consonant before -er: big → bigger, hot → hotter.",
+        "es": "Una vocal + una consonante: se duplica la consonante antes de -er: big → bigger, hot → hotter."
+      }
+    },
+    {
+      "id": "cm-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "This film is good, but that one is ___ (good). This chair is bad, and that one is ___ (bad).",
+      "answers": [
+        "better",
+        "worse"
+      ],
+      "tr": {
+        "en": "This film is good, but that one is better. This chair is bad, and that one is worse.",
+        "es": "Esta película es buena, pero aquella es mejor. Esta silla es mala y aquella es peor."
+      },
+      "why": {
+        "en": "Good and bad are irregular: good → better, bad → worse (never “gooder”, “badder”).",
+        "es": "Good y bad son irregulares: good → better, bad → worse (nunca «gooder», «badder»)."
+      }
+    },
+    {
+      "id": "cm-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "My bag is as ___ (heavy) as yours, but mine is ___ (nice).",
+      "answers": [
+        "heavy",
+        "nicer"
+      ],
+      "tr": {
+        "en": "My bag is as heavy as yours, but mine is nicer.",
+        "es": "Mi bolso es tan pesado como el tuyo, pero el mío es más bonito."
+      },
+      "why": {
+        "en": "Equality: as + adjective + as. We do not use “than” here: as tall as.",
+        "es": "Igualdad: as + adjetivo + as. Aquí no se usa «than»: as tall as."
+      }
+    },
+    {
+      "id": "cm-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "My brother is as tall than me.",
+      "wrongIndex": 5,
+      "answer": "as",
+      "explain": {
+        "en": "Equality: as + adjective + as. We do not use “than” here: as tall as.",
+        "es": "Igualdad: as + adjetivo + as. Aquí no se usa «than»: as tall as."
+      },
+      "tr": {
+        "en": "My brother is as tall as me.",
+        "es": "Mi hermano es tan alto como yo."
+      }
+    },
+    {
+      "id": "cm-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "The weather is good than yesterday.",
+      "wrongIndex": 3,
+      "answer": "better",
+      "explain": {
+        "en": "Good and bad are irregular: good → better, bad → worse (never “gooder”, “badder”).",
+        "es": "Good y bad son irregulares: good → better, bad → worse (nunca «gooder», «badder»)."
+      },
+      "tr": {
+        "en": "The weather is better than yesterday.",
+        "es": "Hoy hace mejor tiempo que ayer."
+      }
+    },
+    {
+      "id": "cm-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "She is happy than her sister.",
+      "wrongIndex": 2,
+      "answer": "happier",
+      "explain": {
+        "en": "Consonant + y changes to -ier: happy → happier, easy → easier.",
+        "es": "Consonante + y cambia a -ier: happy → happier, easy → easier."
+      },
+      "tr": {
+        "en": "She is happier than her sister.",
+        "es": "Ella es más feliz que su hermana."
+      }
+    },
+    {
+      "id": "cm-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "My car is older that yours.",
+      "wrongIndex": 4,
+      "answer": "than",
+      "explain": {
+        "en": "After a comparative we use “than” (older than), not “that”.",
+        "es": "Después de un comparativo se usa «than» (older than), no «that»."
+      },
+      "tr": {
+        "en": "My car is older than yours.",
+        "es": "Mi coche es más viejo que el tuyo."
+      }
+    },
+    {
+      "id": "cm-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "Today is hot than yesterday.",
+      "wrongIndex": 2,
+      "answer": "hotter",
+      "explain": {
+        "en": "One vowel + one consonant: double the consonant before -er: big → bigger, hot → hotter.",
+        "es": "Una vocal + una consonante: se duplica la consonante antes de -er: big → bigger, hot → hotter."
+      },
+      "tr": {
+        "en": "Today is hotter than yesterday.",
+        "es": "Hoy hace más calor que ayer."
+      }
+    },
+    {
+      "id": "cm-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "tall",
+        "slow",
+        "cheap"
+      ],
+      "es": "My brother is ___ than me. He is very tall.",
+      "word": "tall",
+      "answer": "taller",
+      "tr": {
+        "en": "My brother is taller than me. He is very tall.",
+        "es": "Mi hermano es más alto que yo. Es muy alto."
+      },
+      "why": {
+        "en": "Short adjectives add -er and then “than”: tall → taller than.",
+        "es": "Los adjetivos cortos añaden -er y luego «than»: tall → taller than."
+      }
+    },
+    {
+      "id": "cm-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "fast",
+        "heavy",
+        "cold"
+      ],
+      "es": "A plane is ___ than a train.",
+      "word": "fast",
+      "answer": "faster",
+      "tr": {
+        "en": "A plane is faster than a train.",
+        "es": "Un avión es más rápido que un tren."
+      },
+      "why": {
+        "en": "Short adjectives add -er and then “than”: tall → taller than.",
+        "es": "Los adjetivos cortos añaden -er y luego «than»: tall → taller than."
+      }
+    },
+    {
+      "id": "cm-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "big",
+        "low",
+        "hot"
+      ],
+      "es": "An elephant is ___ than a dog.",
+      "word": "big",
+      "answer": "bigger",
+      "tr": {
+        "en": "An elephant is bigger than a dog.",
+        "es": "Un elefante es más grande que un perro."
+      },
+      "why": {
+        "en": "One vowel + one consonant: double the consonant before -er: big → bigger, hot → hotter.",
+        "es": "Una vocal + una consonante: se duplica la consonante antes de -er: big → bigger, hot → hotter."
+      }
+    },
+    {
+      "id": "cm-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "happy",
+        "easy",
+        "busy"
+      ],
+      "es": "I was sad last week, but now I am ___.",
+      "word": "happy",
+      "answer": "happier",
+      "tr": {
+        "en": "I was sad last week, but now I am happier.",
+        "es": "La semana pasada estaba triste, pero ahora estoy más contento."
+      },
+      "why": {
+        "en": "Consonant + y changes to -ier: happy → happier, easy → easier.",
+        "es": "Consonante + y cambia a -ier: happy → happier, easy → easier."
+      }
+    },
+    {
+      "id": "cm-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "good",
+        "bad",
+        "far"
+      ],
+      "es": "I study every day, so my English is ___ than last year.",
+      "word": "good",
+      "answer": "better",
+      "tr": {
+        "en": "I study every day, so my English is better than last year.",
+        "es": "Estudio todos los días, así que mi inglés es mejor que el año pasado."
+      },
+      "why": {
+        "en": "Good and bad are irregular: good → better, bad → worse (never “gooder”, “badder”).",
+        "es": "Good y bad son irregulares: good → better, bad → worse (nunca «gooder», «badder»)."
+      }
+    },
+    {
+      "id": "cm-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "My brother is taller than me.",
+        "es": "Mi hermano es más alto que yo."
+      },
+      "es": "My brother is taller than me."
+    },
+    {
+      "id": "cm-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "This phone is more expensive than that one.",
+        "es": "Este teléfono es más caro que aquel."
+      },
+      "es": "This phone is more expensive than that one."
+    },
+    {
+      "id": "cm-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "Summer is hotter than spring.",
+        "es": "El verano es más caluroso que la primavera."
+      },
+      "es": "Summer is hotter than spring."
+    },
+    {
+      "id": "cm-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "My bag is as heavy as yours.",
+        "es": "Mi bolso es tan pesado como el tuyo."
+      },
+      "es": "My bag is as heavy as yours."
+    },
+    {
+      "id": "cm-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "Today is better than yesterday.",
+        "es": "Hoy es mejor que ayer."
+      },
+      "es": "Today is better than yesterday."
+    },
+    {
+      "kind": "why",
+      "id": "cm-why-01",
+      "es": "My sister is taller than me.",
+      "target": "taller",
+      "tr": {
+        "en": "My sister is taller than me.",
+        "es": "Mi hermana es más alta que yo."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "a short adjective + -er, then “than”",
+            "es": "un adjetivo corto + -er y luego «than»"
+          }
+        },
+        {
+          "text": {
+            "en": "“more” + adjective: more tall",
+            "es": "«more» + adjetivo: more tall"
+          },
+          "wrong": {
+            "en": "Short adjectives take -er: taller, not “more tall”.",
+            "es": "Los adjetivos cortos llevan -er: taller, no «more tall»."
+          }
+        },
+        {
+          "text": {
+            "en": "tall + -est: the superlative",
+            "es": "tall + -est: el superlativo"
+          },
+          "wrong": {
+            "en": "-est is for the superlative (the tallest of all); comparing two people uses -er.",
+            "es": "-est es para el superlativo (the tallest de todos); para comparar a dos personas se usa -er."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "cm-why-02",
+      "es": "This book is more interesting than that one.",
+      "target": "more interesting",
+      "tr": {
+        "en": "This book is more interesting than that one.",
+        "es": "Este libro es más interesante que aquel."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "a short adjective: no “more”, just -er",
+            "es": "un adjetivo corto: sin «more», solo -er"
+          },
+          "wrong": {
+            "en": "Long adjectives do not take -er: not “interestinger”.",
+            "es": "Los adjetivos largos no llevan -er: no «interestinger»."
+          }
+        },
+        {
+          "text": {
+            "en": "a long adjective: “more” before it",
+            "es": "un adjetivo largo: «more» delante"
+          }
+        },
+        {
+          "text": {
+            "en": "an irregular comparative: no “more” at all",
+            "es": "un comparativo irregular: sin «more»"
+          },
+          "wrong": {
+            "en": "The irregular ones are few (better, worse); “interesting” is long and regular, so it takes “more”.",
+            "es": "Los irregulares son pocos (better, worse); «interesting» es largo y regular, por eso lleva «more»."
+          }
+        }
+      ],
+      "correctIndex": 1
     }
   ]
 }
