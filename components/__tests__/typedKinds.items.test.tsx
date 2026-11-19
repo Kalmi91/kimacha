@@ -7,6 +7,7 @@ import { fireEvent, render, screen } from '@testing-library/react-native';
 
 import { BankDrillItem, ClozeDrillItem, FixDrillItem, NounDrillItem } from '../grammar/TypedKinds';
 import type { BankItem, ClozeItem, FixItem, NounItem } from '@/lib/grammar/lessonTypes';
+import { speak } from '@/lib/speech';
 
 jest.mock('@/lib/speech', () => require('@/test-utils/mocks').speechMock());
 
@@ -92,6 +93,21 @@ describe.each([
     screen.unmount();
     render(<BankDrillItem item={BANK} learnedLang="es" contentLang="en" strictAccents onDone={onDone} />);
     expect(StyleSheet.flatten(screen.getByTestId('bank-word-0').props.style)?.minHeight).toBeGreaterThanOrEqual(44);
+  });
+
+  it('open cloze: the filled sentence is not read aloud after Check (FB683), right or wrong', () => {
+    (speak as jest.Mock).mockClear();
+    render(<ClozeDrillItem item={CLOZE} learnedLang="es" contentLang="en" strictAccents onDone={onDone} />);
+    CLOZE.answers.forEach((a, i) => fireEvent.changeText(screen.getByTestId(`cloze-input-${i}`), i === 2 ? 'es' : a));
+    fireEvent.press(screen.getByTestId('cloze-check'));
+    expect(screen.getByTestId('cloze-wrong')).toBeTruthy();
+    expect(speak).not.toHaveBeenCalled();
+    screen.unmount();
+    render(<ClozeDrillItem item={CLOZE} learnedLang="es" contentLang="en" strictAccents onDone={onDone} />);
+    CLOZE.answers.forEach((a, i) => fireEvent.changeText(screen.getByTestId(`cloze-input-${i}`), a));
+    fireEvent.press(screen.getByTestId('cloze-check'));
+    expect(screen.getByTestId('cloze-correct')).toBeTruthy();
+    expect(speak).not.toHaveBeenCalled();
   });
 
   it('open cloze: all gaps right', () => {
