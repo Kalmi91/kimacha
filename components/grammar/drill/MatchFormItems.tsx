@@ -70,7 +70,9 @@ export function MatchDrillItem({
   const rightText = (p: MatchItem['pairs'][number]) => (learnedLang === 'en' ? p.en : p.es);
   const leftAt = (li: number) => (li === n ? extra!.left : leftText(item.pairs[li]));
   const rightAt = (id: number) => (id === n ? extra!.right : rightText(item.pairs[id]));
-  const leftIds = Array.from({ length: n + (extra ? 1 : 0) }, (_, i) => i);
+  // the extra sits at a fixed, item.id-based place, not always at the bottom.
+  const leftIds = Array.from({ length: n }, (_, i) => i);
+  if (extra) leftIds.splice(hashString(`${item.id}:extra`) % (n + 1), 0, n);
 
   const done = matched.size === n;
   const lostPairs = [...errLefts].filter((li) => li < n).length;
