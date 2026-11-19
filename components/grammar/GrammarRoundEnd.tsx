@@ -9,9 +9,8 @@ import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
 import type { GrammarKind, GrammarTopicData } from '@/lib/games/content';
 import { nextWrittenTopic } from '@/lib/grammar/syllabus';
-import { TRANSFORM_ROUND_SIZE } from '@/lib/grammar/transformRounds';
 import { LESSON_TEST_PASS_PCT, lessonTestSize, lessonTestUnlocked, type LessonTestResult } from '@/lib/grammar/lessonTest';
-import type { Phase, ProgressRow } from '@/lib/grammar/useGrammarTopic';
+import { KIND_ORDER, type Phase, type ProgressRow } from '@/lib/grammar/useGrammarTopic';
 import type { RoundStats } from '@/components/grammar/GrammarDrill';
 import { BrutalBox, SegmentBar, Sticker, segmentsFilled, mutedColor } from '@/components/grammar/Brutal';
 import { styles } from '@/components/grammar/GrammarTopic.styles';
@@ -34,6 +33,7 @@ interface Props {
   lessonScoreOf: (rows: ProgressRow[]) => number | null;
   setPhase: (phase: Phase) => void;
   setScore: (score: null) => void;
+  setDrillKind: (kind: GrammarKind) => void;
 }
 
 export default function GrammarRoundEnd({
@@ -53,6 +53,7 @@ export default function GrammarRoundEnd({
   lessonScoreOf,
   setPhase,
   setScore,
+  setDrillKind,
 }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
@@ -67,47 +68,39 @@ export default function GrammarRoundEnd({
   // this round's score (which is `pct` above).
   const cumulativePct = lessonScoreOf(progressRows);
   // The test button is the only filled (highlighted) button on the page, the others are secondary (outlined).
-  // The "Lesson test" button on the done page; it is only enabled once a round has been played in every
-  // task kind of the lesson, until then it is grey with the to-do below it. The line under the button is the rule.
+  // The round end has three buttons: retake this kind, back to the course, next test type. The line under them is the
+  // lesson-test rule; the lesson test itself opens only after the last kind (and only once a round was played in every kind).
   const testSize = lessonTestSize(lesson, learnedLang, contentLang);
   const testReady = lessonTestUnlocked(lesson, progressRows, String(topicId));
-  const lessonTestCta =
+  const lessonTestNote =
     testSize > 0 ? (
-      <>
-        {g.brutal ? (
-          <BrutalBox
-            testID="grammar-start-lessontest"
-            fill={testReady ? 'a' : 'paper'}
-            dashed={!testReady}
-            disabled={!testReady}
-            style={styles.brutalBtnWrap}
-            boxStyle={styles.brutalBtn}
-            onPress={onStartTest}
-          >
-            <Text style={[styles.brutalBtnText, { color: testReady ? g.onFill : g.mu }]}>{s.lessonTest.take}</Text>
-          </BrutalBox>
-        ) : (
-          <Pressable
-            testID="grammar-start-lessontest"
-            disabled={!testReady}
-            style={[
-              styles.btn,
-              testReady ? { backgroundColor: colors.tint } : { borderWidth: 1.5, borderColor: colors.tabIconDefault, opacity: 0.5 },
-            ]}
-            onPress={onStartTest}
-          >
-            <Text style={[styles.btnText, testReady ? { color: colors.onTint } : { color: colors.tabIconDefault }]}>{s.lessonTest.take}</Text>
-          </Pressable>
-        )}
-        <Text testID="grammar-lessontest-note" style={[styles.lessonTestNote, { color: mutedColor(g, colors.tabIconDefault) }]}>
-          {!testReady
-            ? s.lessonTest.finishFirst
-            : lessonTestResult?.passed
-              ? s.lessonTest.passedBest(lessonTestResult.best)
-              : s.lessonTest.rules(testSize, LESSON_TEST_PASS_PCT)}
-        </Text>
-      </>
+      <Text testID="grammar-lessontest-note" style={[styles.lessonTestNote, { color: mutedColor(g, colors.tabIconDefault) }]}>
+        {!testReady
+          ? s.lessonTest.finishFirst
+          : lessonTestResult?.passed
+            ? s.lessonTest.passedBest(lessonTestResult.best)
+            : s.lessonTest.rules(testSize, LESSON_TEST_PASS_PCT)}
+      </Text>
     ) : null;
+  const retake = () => {
+    setScore(null);
+    setPhase('drill');
+  };
+  // "Next test type": the lesson's next kind in KIND_ORDER (started as the lesson page's kind buttons do), after the last
+  // one the lesson test (if ready), else the next topic; if none of these exist the button is not shown.
+  const availableKinds = KIND_ORDER.filter((k) => kindCounts[k] > 0);
+  const nextKind = availableKinds[availableKinds.indexOf(drillKind) + 1] as GrammarKind | undefined;
+  const nextStep: (() => void) | null = nextKind
+    ? () => {
+        setScore(null);
+        setDrillKind(nextKind);
+        setPhase('drill');
+      }
+    : testSize > 0 && testReady
+      ? onStartTest
+      : next
+        ? () => router.replace(`/grammar/${next.id}` as never)
+        : null;
   // Neo-brutalist: big
   // correct-ratio in the filled box + combo sticker, 3 small boxes, "practice
   // this" with the wrong sentence, topic progress in segments, buttons.
@@ -166,47 +159,18 @@ export default function GrammarRoundEnd({
             </BrutalBox>
           ) : null}
 
-          {lessonTestCta}
-          {next ? (
-            <BrutalBox
-              testID="grammar-next-topic"
-              style={styles.brutalBtnWrap}
-              boxStyle={styles.brutalBtn}
-              onPress={() => router.replace(`/grammar/${next.id}` as never)}
-            >
-              <Text style={[styles.brutalBtnText, { color: g.ink }]}>{s.grammar.nextTopic} →</Text>
-            </BrutalBox>
-          ) : null}
-          <BrutalBox style={styles.brutalBtnWrap} boxStyle={styles.brutalBtn} onPress={() => setPhase('lesson')}>
-            <Text style={[styles.brutalBtnText, { color: g.ink }]}>{s.grammar.backToRule}</Text>
+          <BrutalBox testID="grammar-practice-again" fill="a" style={styles.brutalBtnWrap} boxStyle={styles.brutalBtn} onPress={retake}>
+            <Text style={[styles.brutalBtnText, { color: g.onFill }]}>{s.grammar.retakeTest}</Text>
           </BrutalBox>
-          {drillKind === 'transform' && kindCounts.transform > TRANSFORM_ROUND_SIZE ? (
-            <BrutalBox
-              testID="grammar-more-round"
-              fill="a"
-              style={styles.brutalBtnWrap}
-              boxStyle={styles.brutalBtn}
-              onPress={() => {
-                setScore(null);
-                setPhase('drill');
-              }}
-            >
-              <Text style={[styles.brutalBtnText, { color: g.onFill }]}>{s.grammar.moreRound(TRANSFORM_ROUND_SIZE)}</Text>
+          <BrutalBox testID="grammar-back-course" style={styles.brutalBtnWrap} boxStyle={styles.brutalBtn} onPress={() => router.back()}>
+            <Text style={[styles.brutalBtnText, { color: g.ink }]}>{s.grammar.backToSyllabus}</Text>
+          </BrutalBox>
+          {nextStep ? (
+            <BrutalBox testID="grammar-next-type" style={styles.brutalBtnWrap} boxStyle={styles.brutalBtn} onPress={nextStep}>
+              <Text style={[styles.brutalBtnText, { color: g.ink }]}>{s.grammar.nextTestType}</Text>
             </BrutalBox>
           ) : null}
-          <Pressable
-            testID="grammar-practice-again"
-            style={styles.ghostBtn}
-            onPress={() => {
-              setScore(null);
-              setPhase('drill');
-            }}
-          >
-            <Text style={[styles.brutalUnderline, { color: g.ink }]}>{s.grammar.oneMoreRound}</Text>
-          </Pressable>
-          <Pressable style={styles.ghostBtn} onPress={() => router.back()}>
-            <Text style={[styles.ghostBtnText, { color: g.mu }]}>{s.grammar.backToSyllabus}</Text>
-          </Pressable>
+          {lessonTestNote}
         </ScrollView>
       </View>
     );
@@ -227,60 +191,22 @@ export default function GrammarRoundEnd({
             {s.grammar.lessonPercent(cumulativePct)}
           </Text>
         ) : null}
-        {lessonTestCta}
-        {next ? (
-          <Pressable
-            testID="grammar-next-topic"
-            style={[styles.btn, { borderWidth: 1.5, borderColor: colors.tint }]}
-            onPress={() => router.replace(`/grammar/${next.id}` as never)}
-          >
-            <Text style={[styles.btnText, { color: colors.tint }]}>{s.grammar.nextTopic}</Text>
-          </Pressable>
-        ) : null}
-        <Pressable
-          style={[
-            styles.btn,
-            (pct >= 80 && next) || testSize > 0 ? { borderWidth: 1.5, borderColor: colors.tint } : { backgroundColor: colors.tint },
-          ]}
-          onPress={() => setPhase('lesson')}
-        >
-          <Text
-            style={[
-              styles.btnText,
-              (pct >= 80 && next) || testSize > 0 ? { color: colors.tint } : { color: colors.onTint },
-            ]}
-          >
-            {s.grammar.backToRule}
-          </Text>
-        </Pressable>
         <Pressable
           testID="grammar-practice-again"
-          style={[styles.btn, { borderWidth: 1.5, borderColor: colors.tint }]}
-          onPress={() => {
-            setScore(null);
-            setPhase('drill');
-          }}
+          style={[styles.btn, { backgroundColor: colors.tint }]}
+          onPress={retake}
         >
-          <Text style={[styles.btnText, { color: colors.tint }]}>{s.grammar.practiceAgain}</Text>
+          <Text style={[styles.btnText, { color: colors.onTint }]}>{s.grammar.retakeTest}</Text>
         </Pressable>
-        {/* on a big (>10 items) transform lesson, a separate button for the
-            next round of 10, the same tangible step as
-            "Practice again", plus the fresh `transformSeen` map reflects it. */}
-        {drillKind === 'transform' && kindCounts.transform > TRANSFORM_ROUND_SIZE ? (
-          <Pressable
-            testID="grammar-more-round"
-            style={[styles.btn, { backgroundColor: colors.tint }]}
-            onPress={() => {
-              setScore(null);
-              setPhase('drill');
-            }}
-          >
-            <Text style={[styles.btnText, { color: colors.onTint }]}>{s.grammar.moreRound(TRANSFORM_ROUND_SIZE)}</Text>
+        <Pressable testID="grammar-back-course" style={[styles.btn, { borderWidth: 1.5, borderColor: colors.tint }]} onPress={() => router.back()}>
+          <Text style={[styles.btnText, { color: colors.tint }]}>{s.grammar.backToSyllabus}</Text>
+        </Pressable>
+        {nextStep ? (
+          <Pressable testID="grammar-next-type" style={[styles.btn, { borderWidth: 1.5, borderColor: colors.tint }]} onPress={nextStep}>
+            <Text style={[styles.btnText, { color: colors.tint }]}>{s.grammar.nextTestType}</Text>
           </Pressable>
         ) : null}
-        <Pressable style={styles.ghostBtn} onPress={() => router.back()}>
-          <Text style={[styles.ghostBtnText, { color: colors.tabIconDefault }]}>{s.grammar.backToSyllabus}</Text>
-        </Pressable>
+        {lessonTestNote}
       </View>
     </View>
   );

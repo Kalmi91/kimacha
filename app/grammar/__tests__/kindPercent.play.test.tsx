@@ -91,7 +91,9 @@ describe('grammar lesson screen: lesson % = average of ALL kinds', () => {
 
     // 6/6 pairs = 100% for the kind, but the lesson average is over all kinds: 100 / KIND_COUNT
     expect(screen.getByTestId('grammar-lesson-percent')).toHaveTextContent(`So far: ${Math.round(100 / KIND_COUNT)}% correct`);
-    fireEvent.press(screen.getByText('Read the rule again'));
+    // the done page no longer has a way back to the lesson (E205); reopen the lesson screen, the progress is saved
+    screen.unmount();
+    render(<GrammarLessonScreen />);
     await flush(1);
     expect(screen.getByTestId('grammar-kind-percent-match')).toHaveTextContent('So far: 100% correct');
     expect(screen.queryByTestId('grammar-kind-percent-form')).toBeNull();
@@ -105,7 +107,9 @@ describe('grammar lesson screen: lesson % = average of ALL kinds', () => {
     await flush(1);
     await solveMatch(true);
 
-    fireEvent.press(screen.getByText('Read the rule again'));
+    // the done page no longer has a way back to the lesson (E205); reopen the lesson screen, the progress is saved
+    screen.unmount();
+    render(<GrammarLessonScreen />);
     await flush(1);
     expect(screen.getByTestId('grammar-kind-percent-match')).toHaveTextContent('So far: 83% correct');
   });
@@ -137,7 +141,9 @@ describe('grammar lesson screen: a half-done round is saved and resumed', () => 
 
     // 9/10 = 90%: the end of the round, the kind's best
     expect(screen.getByText('9 / 10')).toBeTruthy();
-    fireEvent.press(screen.getByText('Read the rule again'));
+    // the done page no longer has a way back to the lesson (E205); reopen the lesson screen, the progress is saved
+    screen.unmount();
+    render(<GrammarLessonScreen />);
     await flush(1);
     expect(screen.getByTestId('grammar-kind-percent-form')).toHaveTextContent('So far: 90% correct');
 

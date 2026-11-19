@@ -97,7 +97,7 @@ describe('grammar lesson screen: per-kind drill buttons', () => {
   // the UI language is en in this test environment), and at the end of a round a button
   // mentioning "10" offers to continue. 4 of the 50 used to be vosotros,
   // since then they are ustedes items, so the round denominator is 50.
-  it('indefinido-10-verbos (50 transform items) shows a 10/50 round button, and finishing a round offers 10 more', async () => {
+  it('indefinido-10-verbos (50 transform items) shows a 10/50 round button, and finishing a round offers a retake', async () => {
     mockTopicId = 'indefinido-10-verbos';
     const now = 1700000000000;
     jest.spyOn(Date, 'now').mockReturnValue(now);
@@ -125,7 +125,7 @@ describe('grammar lesson screen: per-kind drill buttons', () => {
       await flush(1);
     }
 
-    expect(within(screen.getByTestId('grammar-more-round')).getByText(/10/)).toBeTruthy();
+    expect(screen.getByTestId('grammar-practice-again')).toBeTruthy(); // the "more" round folded into "Retake the test" (E205)
 
     // the round's 10 items count as "practiced", with one write at the end of the round.
     const rows = await getDb().getGameProgress(GRAMMAR_PROGRESS_KEY);

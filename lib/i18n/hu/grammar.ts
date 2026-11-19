@@ -43,6 +43,8 @@ const hu: typeof en = {
     practiceAgain: 'Gyakorlás újra',
     nextTopic: 'Következő téma',
     backToSyllabus: 'Vissza a tanfolyamhoz',
+    retakeTest: 'Teszt újra',
+    nextTestType: 'Következő tesztfajta',
     doneGood: 'Ez a szabály ül.',
     doneAgain: 'Érdemes még egyszer elolvasni a szabályt, mielőtt továbblépsz.',
     readAloud: 'Felolvasás',
