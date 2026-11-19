@@ -1552,6 +1552,105 @@
         "es": "Mi perro duerme en el sofá."
       },
       "es": "My dog sleeps on the sofa."
+    },
+    {
+      "id": "ps-transform-01",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-negative"
+      },
+      "prompt": {
+        "en": "She works in a bank.",
+        "es": "Ella trabaja en un banco."
+      },
+      "answer": "She does not work in a bank.",
+      "accept": [
+        "She doesn't work in a bank."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "Negation: does not (doesn’t) + the base verb. The -s moves to does: she does not work, not “she does not works”.",
+        "es": "Negación: does not (doesn’t) + verbo base. La -s pasa a does: she does not work, no «she does not works»."
+      }
+    },
+    {
+      "id": "ps-transform-02",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-negative"
+      },
+      "prompt": {
+        "en": "They like coffee.",
+        "es": "Les gusta el café."
+      },
+      "answer": "They do not like coffee.",
+      "accept": [
+        "They don't like coffee."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "With I, you, we, they the negative is do not (don’t) + the base verb.",
+        "es": "Con I, you, we, they la negación es do not (don’t) + verbo base."
+      }
+    },
+    {
+      "id": "ps-transform-03",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-question"
+      },
+      "prompt": {
+        "en": "You live in Mexico City.",
+        "es": "Tú vives en la Ciudad de México."
+      },
+      "answer": "Do you live in Mexico City?",
+      "wordIds": [],
+      "why": {
+        "en": "A question needs Do (I, you, we, they) + subject + the base verb. The main verb does not change.",
+        "es": "La pregunta lleva Do (I, you, we, they) + sujeto + verbo base. El verbo principal no cambia."
+      }
+    },
+    {
+      "id": "ps-transform-04",
+      "kind": "transform",
+      "tense": {
+        "from": "en-statement",
+        "to": "en-question"
+      },
+      "prompt": {
+        "en": "He plays football.",
+        "es": "Él juega al fútbol."
+      },
+      "answer": "Does he play football?",
+      "wordIds": [],
+      "why": {
+        "en": "With he / she / it the question starts with Does, and the -s leaves the verb: Does he play, not “Does he plays”.",
+        "es": "Con he / she / it la pregunta empieza con Does y la -s desaparece del verbo: Does he play, no «Does he plays»."
+      }
+    },
+    {
+      "id": "ps-transform-05",
+      "kind": "transform",
+      "tense": {
+        "from": "en-i-you-we-they",
+        "to": "en-he-she-it"
+      },
+      "prompt": {
+        "en": "I study English.",
+        "es": "Yo estudio inglés."
+      },
+      "answer": "She studies English.",
+      "accept": [
+        "He studies English."
+      ],
+      "wordIds": [],
+      "why": {
+        "en": "With he / she / it the verb takes -s. Study ends in consonant + y, so the y becomes -ies: studies.",
+        "es": "Con he / she / it el verbo lleva -s. Study termina en consonante + y, así que la y pasa a -ies: studies."
+      }
     }
   ]
 }

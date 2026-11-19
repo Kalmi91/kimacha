@@ -250,18 +250,20 @@ function toQuestion(r: GrammarRoundItem, ctx: Ctx): LessonTestQuestion | null {
   }
   if (isTransformItem(item)) {
     const tense = pick(TENSE_NAMES[item.tense.to]);
+    // an English lesson: the sentence to rewrite is prompt.en, prompt.es is only its Spanish translation
+    const sentence = ctx.learnedLang === 'en' ? item.prompt.en : item.prompt.es;
     return {
       id: item.id,
       kind,
       view: {
         card: 'type',
-        prompt: item.prompt.es,
+        prompt: sentence,
         hint: s.grammar.rewriteTo(`*${tense}*`),
         answer: item.answer,
         accept: item.accept,
         sentence: true,
       },
-      review: { question: item.prompt.es, answer: item.answer, why: pick(item.why) },
+      review: { question: sentence, answer: item.answer, why: pick(item.why) },
       say: item.answer,
     };
   }

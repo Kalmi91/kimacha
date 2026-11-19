@@ -34,7 +34,13 @@ export type TenseId =
   | 'imperativo-negativo'
   | 'pluscuamperfecto'
   | 'subjuntivo-perfecto'
-  | 'futuro-condicional-perfecto';
+  | 'futuro-condicional-perfecto'
+  // English lessons (E195): the forms a sentence is rewritten between
+  | 'en-statement'
+  | 'en-negative'
+  | 'en-question'
+  | 'en-i-you-we-they'
+  | 'en-he-she-it';
 
 export const TENSE_IDS: readonly TenseId[] = [
   'presente',
@@ -49,6 +55,11 @@ export const TENSE_IDS: readonly TenseId[] = [
   'pluscuamperfecto',
   'subjuntivo-perfecto',
   'futuro-condicional-perfecto',
+  'en-statement',
+  'en-negative',
+  'en-question',
+  'en-i-you-we-they',
+  'en-he-she-it',
 ];
 
 // The tense name shown on the badge; `es` is the Spanish grammatical term, the others
@@ -81,6 +92,11 @@ export const TENSE_NAMES: Record<TenseId, Lang4> = {
     hu: 'befejezett jövő idő és feltételes múlt',
     de: 'Futur II und Konditional II',
   },
+  'en-statement': { en: 'statement', es: 'afirmación', hu: 'állító mondat', de: 'Aussagesatz' },
+  'en-negative': { en: 'negative sentence', es: 'negación', hu: 'tagadó mondat', de: 'verneinter Satz' },
+  'en-question': { en: 'question', es: 'pregunta', hu: 'kérdő mondat', de: 'Fragesatz' },
+  'en-i-you-we-they': { en: 'I / you / we / they', es: 'I / you / we / they', hu: 'I / you / we / they', de: 'I / you / we / they' },
+  'en-he-she-it': { en: 'he / she / it', es: 'he / she / it', hu: 'he / she / it', de: 'he / she / it' },
 };
 
 // A Spanish sentence + translation; `es` is the sentence itself (or a paraphrase of it when
