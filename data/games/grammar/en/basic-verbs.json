@@ -1258,6 +1258,84 @@
         "es": "Mis amigos van al mercado."
       },
       "es": "My friends go to the market."
+    },
+    {
+      "kind": "why",
+      "id": "bv-27",
+      "es": "They have a big house.",
+      "target": "have",
+      "tr": {
+        "en": "They have a big house.",
+        "es": "Tienen una casa grande."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "with they, the verb stays in the base form",
+            "es": "con they, el verbo queda en la forma base"
+          }
+        },
+        {
+          "text": {
+            "en": "with they, the verb takes -s: haves",
+            "es": "con they, el verbo lleva -s: haves"
+          },
+          "wrong": {
+            "en": "Even with he / she / it, have becomes has, never haves; with they it takes no ending at all.",
+            "es": "Incluso con he / she / it, have pasa a has, nunca haves; con they no lleva ninguna terminación."
+          }
+        },
+        {
+          "text": {
+            "en": "have is a form of to be",
+            "es": "have es una forma de to be"
+          },
+          "wrong": {
+            "en": "To be is am / is / are. Have is a different verb: it says what someone owns.",
+            "es": "To be es am / is / are. Have es otro verbo: dice lo que alguien posee."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "bv-28",
+      "es": "He wants a coffee.",
+      "target": "wants",
+      "tr": {
+        "en": "He wants a coffee.",
+        "es": "Él quiere un café."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "he / she / it: the base form + -s",
+            "es": "he / she / it: la forma base + -s"
+          }
+        },
+        {
+          "text": {
+            "en": "the base form is used with every person: He want",
+            "es": "la forma base se usa con todas las personas: He want"
+          },
+          "wrong": {
+            "en": "In the present, he / she / it adds -s: he wants, not he want.",
+            "es": "En presente, he / she / it añade -s: he wants, no he want."
+          }
+        },
+        {
+          "text": {
+            "en": "the past tense of want",
+            "es": "el pasado de want"
+          },
+          "wrong": {
+            "en": "The past would be wanted. Wants is the present, with the -s of he / she / it.",
+            "es": "El pasado sería wanted. Wants es el presente, con la -s de he / she / it."
+          }
+        }
+      ],
+      "correctIndex": 0
     }
   ]
 }

@@ -1174,6 +1174,92 @@
         "es": "Su perro duerme en el sofá."
       },
       "es": "Her dog sleeps on the sofa."
+    },
+    {
+      "kind": "why",
+      "id": "po-25",
+      "es": "Their house is big.",
+      "target": "Their",
+      "tr": {
+        "en": "Their house is big.",
+        "es": "Su casa es grande."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "possessive: the owners are they",
+            "es": "posesivo: los dueños son they"
+          }
+        },
+        {
+          "text": {
+            "en": "there: a word for a place",
+            "es": "there: una palabra de lugar"
+          },
+          "wrong": {
+            "en": "Their (of them) and there (in that place) sound the same. Here someone owns the house, so it is their.",
+            "es": "Their (de ellos) y there (allí) suenan igual. Aquí alguien es dueño de la casa, así que es their."
+          }
+        },
+        {
+          "text": {
+            "en": "they're: the short form of they are",
+            "es": "they're: la forma corta de they are"
+          },
+          "wrong": {
+            "en": "They're means they are. They are house is big makes no sense: we need a word that says whose house it is.",
+            "es": "They're significa they are. They are house is big no tiene sentido: hace falta una palabra que diga de quién es la casa."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "po-26",
+      "es": "Anna and I love our city.",
+      "target": "our",
+      "tr": {
+        "en": "Anna and I love our city.",
+        "es": "Anna y yo amamos nuestra ciudad."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "possessive for the owners we, two people",
+            "es": "posesivo de los dueños we, dos personas"
+          }
+        },
+        {
+          "text": {
+            "en": "the owner is one person: my",
+            "es": "el dueño es una sola persona: my"
+          },
+          "wrong": {
+            "en": "Anna and I are two people, so my does not fit: we say our.",
+            "es": "Anna y yo somos dos personas, así que my no sirve: decimos our."
+          }
+        },
+        {
+          "text": {
+            "en": "the verb are: Are city",
+            "es": "el verbo are: Are city"
+          },
+          "wrong": {
+            "en": "Are is a verb. Our is the word that says whose city it is.",
+            "es": "Are es un verbo. Our es la palabra que dice de quién es la ciudad."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "po-24",
+      "kind": "form",
+      "verb": "possessive",
+      "person": "you",
+      "answer": "your",
+      "table": "po-forms"
     }
   ]
 }

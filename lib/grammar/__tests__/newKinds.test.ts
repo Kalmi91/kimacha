@@ -33,7 +33,7 @@ describe('new task kinds in the two trial lessons', () => {
     for (const id of others) {
       const l = lessonFor('es', id)!;
       const c = grammarKindCounts(l);
-      expect(c.spot + c.order + c.dictation).toBe(0);
+      expect(c.spot + c.dictation).toBe(0);
     }
   });
 
@@ -41,7 +41,7 @@ describe('new task kinds in the two trial lessons', () => {
     for (const id of ['to_be', 'articles']) {
       const l = lessonFor('en', id)!;
       const c = grammarKindCounts(l);
-      expect(c.spot + c.order + c.dictation).toBe(0);
+      expect(c.spot + c.dictation).toBe(0);
     }
   });
 

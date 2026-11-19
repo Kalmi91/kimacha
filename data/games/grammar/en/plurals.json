@@ -1239,6 +1239,96 @@
         "es": "Tengo los pies fríos."
       },
       "es": "My feet are cold."
+    },
+    {
+      "kind": "why",
+      "id": "pl-26",
+      "es": "There are three buses.",
+      "target": "buses",
+      "tr": {
+        "en": "There are three buses.",
+        "es": "Hay tres autobuses."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "a noun that ends in -s adds -es",
+            "es": "un nombre que termina en -s añade -es"
+          }
+        },
+        {
+          "text": {
+            "en": "just add -s: buss",
+            "es": "solo se añade -s: buss"
+          },
+          "wrong": {
+            "en": "After -s, -x, -ch and -sh we add -es, so the plural can be said: bus, buses.",
+            "es": "Tras -s, -x, -ch y -sh se añade -es, para poder pronunciar el plural: bus, buses."
+          }
+        },
+        {
+          "text": {
+            "en": "an irregular plural, like children",
+            "es": "un plural irregular, como children"
+          },
+          "wrong": {
+            "en": "Buses is regular: it only needs -es. Irregular plurals change the word itself, like man, men.",
+            "es": "Buses es regular: solo necesita -es. Los plurales irregulares cambian la palabra, como man, men."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "pl-27",
+      "es": "The men are tired.",
+      "target": "men",
+      "tr": {
+        "en": "The men are tired.",
+        "es": "Los hombres están cansados."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "an irregular plural: the word itself changes",
+            "es": "un plural irregular: cambia la palabra"
+          }
+        },
+        {
+          "text": {
+            "en": "a regular plural with -s: mans",
+            "es": "un plural regular con -s: mans"
+          },
+          "wrong": {
+            "en": "Man has an irregular plural, men. Mans does not exist.",
+            "es": "Man tiene un plural irregular, men. Mans no existe."
+          }
+        },
+        {
+          "text": {
+            "en": "a singular noun: it takes is",
+            "es": "un nombre singular: lleva is"
+          },
+          "wrong": {
+            "en": "Men means several people, so the verb is are: the men are.",
+            "es": "Men son varias personas, así que el verbo es are: the men are."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "pl-25",
+      "kind": "form",
+      "verb": "plural",
+      "person": "bus",
+      "q": {
+        "en": "What is the plural of \"bus\"?",
+        "es": "¿Cuál es el plural de «bus»?"
+      },
+      "answer": "buses",
+      "table": "pl-forms"
     }
   ]
 }
