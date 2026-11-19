@@ -75,6 +75,8 @@ const LANGS = ['en', 'es'];
 const NEUTRAL_TARGETS = new Set(['hu', 'de']);
 // words that can stand twice in a row in a correct sentence ("She had had enough."), for the fix-item check
 const FIX_DOUBLED_OK = new Set(['had', 'that']);
+// words that come twice in one correct sentence by design ("as tall as"), for the softer fix-item hint
+const FIX_REPEAT_OK = new Set(['as']);
 const LEVELS = ['A0', 'A1', 'A2', 'B1', 'B2', 'C1']; // C2 frozen, excluded
 
 // ---------------------------------------------------------------------------
@@ -1042,7 +1044,7 @@ function auditTypedKindItem(item, itemPath, topic, checkWords) {
       let to = item.wrongIndex;
       while (to < words.length - 1 && !/[.!?]$/.test(words[to])) to += 1;
       const elsewhere = words.some((w, i) => i !== item.wrongIndex && i >= from && i <= to && bare(w) === answer);
-      if (answer !== '' && !doubled && elsewhere) {
+      if (answer !== '' && !doubled && elsewhere && !FIX_REPEAT_OK.has(answer)) {
         p2.push({ path: itemPath, issue: `fix answer "${item.answer}" is already in the sentence: read the corrected sentence` });
       }
     }
