@@ -851,6 +851,331 @@
           "en": "how many"
         }
       ]
+    },
+    {
+      "id": "qw-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "___ is your name? ___ are you from?",
+      "answers": [
+        "What",
+        "Where"
+      ],
+      "tr": {
+        "en": "What is your name? Where are you from?",
+        "es": "¿Cómo te llamas? ¿De dónde eres?"
+      },
+      "why": {
+        "en": "“What” asks about a thing; “where” asks about a place.",
+        "es": "«What» pregunta por una cosa; «where» pregunta por un lugar."
+      }
+    },
+    {
+      "id": "qw-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "___ is that man? He is my brother. ___ is he? He is a doctor.",
+      "answers": [
+        "Who",
+        "What"
+      ],
+      "tr": {
+        "en": "Who is that man? He is my brother. What is he? He is a doctor.",
+        "es": "¿Quién es ese hombre? Es mi hermano. ¿Qué hace? Es doctor."
+      },
+      "why": {
+        "en": "“Who” asks about a person.",
+        "es": "«Who» pregunta por una persona."
+      }
+    },
+    {
+      "id": "qw-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "___ do you work? At eight o’clock. ___ do you work? In a bank.",
+      "answers": [
+        "When",
+        "Where"
+      ],
+      "tr": {
+        "en": "When do you work? At eight o’clock. Where do you work? In a bank.",
+        "es": "¿Cuándo trabajas? A las ocho. ¿Dónde trabajas? En un banco."
+      },
+      "why": {
+        "en": "“When” asks about time; “where” asks about a place.",
+        "es": "«When» pregunta por el tiempo; «where» pregunta por un lugar."
+      }
+    },
+    {
+      "id": "qw-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "___ do you go to school? By bus. ___ do you go? Because I like it.",
+      "answers": [
+        "How",
+        "Why"
+      ],
+      "tr": {
+        "en": "How do you go to school? By bus. Why do you go? Because I like it.",
+        "es": "¿Cómo vas a la escuela? En autobús. ¿Por qué vas? Porque me gusta."
+      },
+      "why": {
+        "en": "“How” asks about the way; “why” asks about the reason.",
+        "es": "«How» pregunta por la manera; «why» pregunta por la razón."
+      }
+    },
+    {
+      "id": "qw-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "___ phone is this? ___ books do you have?",
+      "answers": [
+        "Whose",
+        "How many"
+      ],
+      "tr": {
+        "en": "Whose phone is this? How many books do you have?",
+        "es": "¿De quién es este teléfono? ¿Cuántos libros tienes?"
+      },
+      "why": {
+        "en": "“Whose” asks who owns something; “how many” asks for a number.",
+        "es": "«Whose» pregunta de quién es algo; «how many» pregunta por un número."
+      }
+    },
+    {
+      "id": "qw-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "Where is your name?",
+      "wrongIndex": 0,
+      "answer": "What",
+      "explain": {
+        "en": "A name is a thing, so ask with “What”: What is your name?",
+        "es": "Un nombre es una cosa, así que se pregunta con «What»: What is your name?"
+      },
+      "tr": {
+        "en": "What is your name?",
+        "es": "¿Cómo te llamas?"
+      }
+    },
+    {
+      "id": "qw-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "Who do you live?",
+      "wrongIndex": 0,
+      "answer": "Where",
+      "explain": {
+        "en": "To ask about a place, use “Where”: Where do you live?",
+        "es": "Para preguntar por un lugar se usa «Where»: Where do you live?"
+      },
+      "tr": {
+        "en": "Where do you live?",
+        "es": "¿Dónde vives?"
+      }
+    },
+    {
+      "id": "qw-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "How old are your brother?",
+      "wrongIndex": 2,
+      "answer": "is",
+      "explain": {
+        "en": "“Your brother” is one person, so use “is”: How old is your brother?",
+        "es": "«Your brother» es una persona, así que se usa «is»: How old is your brother?"
+      },
+      "tr": {
+        "en": "How old is your brother?",
+        "es": "¿Cuántos años tiene tu hermano?"
+      }
+    },
+    {
+      "id": "qw-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "Why does you go to school by bus?",
+      "wrongIndex": 1,
+      "answer": "do",
+      "explain": {
+        "en": "“You” goes with “do”: Why do you go to school by bus?",
+        "es": "«You» va con «do»: Why do you go to school by bus?"
+      },
+      "tr": {
+        "en": "Why do you go to school by bus?",
+        "es": "¿Por qué vas a la escuela en autobús?"
+      }
+    },
+    {
+      "id": "qw-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "What time do she work?",
+      "wrongIndex": 2,
+      "answer": "does",
+      "explain": {
+        "en": "“She” goes with “does”: What time does she work?",
+        "es": "«She» va con «does»: What time does she work?"
+      },
+      "tr": {
+        "en": "What time does she work?",
+        "es": "¿A qué hora trabaja ella?"
+      }
+    },
+    {
+      "id": "qw-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "What",
+        "Where",
+        "Who"
+      ],
+      "es": "___ is your phone number?",
+      "word": "What",
+      "answer": "What",
+      "tr": {
+        "en": "What is your phone number?",
+        "es": "¿Cuál es tu número de teléfono?"
+      },
+      "why": {
+        "en": "A number is a thing, so ask with “What”.",
+        "es": "Un número es una cosa, así que se pregunta con «What»."
+      }
+    },
+    {
+      "id": "qw-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "Where",
+        "Who",
+        "When"
+      ],
+      "es": "___ is the bathroom?",
+      "word": "Where",
+      "answer": "Where",
+      "tr": {
+        "en": "Where is the bathroom?",
+        "es": "¿Dónde está el baño?"
+      },
+      "why": {
+        "en": "“Where” asks about a place.",
+        "es": "«Where» pregunta por un lugar."
+      }
+    },
+    {
+      "id": "qw-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "Who",
+        "What",
+        "Why"
+      ],
+      "es": "___ is that woman? She is my mother.",
+      "word": "Who",
+      "answer": "Who",
+      "tr": {
+        "en": "Who is that woman? She is my mother.",
+        "es": "¿Quién es esa mujer? Es mi madre."
+      },
+      "why": {
+        "en": "“Who” asks about a person.",
+        "es": "«Who» pregunta por una persona."
+      }
+    },
+    {
+      "id": "qw-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "When",
+        "Where",
+        "How"
+      ],
+      "es": "___ is your class? At nine o’clock.",
+      "word": "When",
+      "answer": "When",
+      "tr": {
+        "en": "When is your class? At nine o’clock.",
+        "es": "¿Cuándo es tu clase? A las nueve."
+      },
+      "why": {
+        "en": "“When” asks about time.",
+        "es": "«When» pregunta por el tiempo."
+      }
+    },
+    {
+      "id": "qw-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "How many",
+        "How much",
+        "How old"
+      ],
+      "es": "___ brothers do you have?",
+      "word": "How many",
+      "answer": "How many",
+      "tr": {
+        "en": "How many brothers do you have?",
+        "es": "¿Cuántos hermanos tienes?"
+      },
+      "why": {
+        "en": "Use “how many” with things you can count (brothers).",
+        "es": "Se usa «how many» con cosas que se pueden contar (brothers)."
+      }
+    },
+    {
+      "id": "qw-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "What is your name?",
+        "es": "¿Cómo te llamas?"
+      },
+      "es": "What is your name?"
+    },
+    {
+      "id": "qw-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "Where do you live?",
+        "es": "¿Dónde vives?"
+      },
+      "es": "Where do you live?"
+    },
+    {
+      "id": "qw-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "How old is your brother?",
+        "es": "¿Cuántos años tiene tu hermano?"
+      },
+      "es": "How old is your brother?"
+    },
+    {
+      "id": "qw-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "Why do you go to school by bus?",
+        "es": "¿Por qué vas a la escuela en autobús?"
+      },
+      "es": "Why do you go to school by bus?"
+    },
+    {
+      "id": "qw-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "When does the bank open?",
+        "es": "¿Cuándo abre el banco?"
+      },
+      "es": "When does the bank open?"
     }
   ]
 }

@@ -914,6 +914,331 @@
           "en": "the cities"
         }
       ]
+    },
+    {
+      "id": "pl-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "One cat, two ___. One box, two ___.",
+      "answers": [
+        "cats",
+        "boxes"
+      ],
+      "tr": {
+        "en": "One cat, two cats. One box, two boxes.",
+        "es": "Un gato, dos gatos. Una caja, dos cajas."
+      },
+      "why": {
+        "en": "Most nouns add -s (cats); nouns ending in -x, -s, -sh, -ch add -es (boxes).",
+        "es": "La mayoría de los sustantivos añade -s (cats); los que acaban en -x, -s, -sh, -ch añaden -es (boxes)."
+      }
+    },
+    {
+      "id": "pl-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "One baby, two ___. One city, three ___.",
+      "answers": [
+        "babies",
+        "cities"
+      ],
+      "tr": {
+        "en": "One baby, two babies. One city, three cities.",
+        "es": "Un bebé, dos bebés. Una ciudad, tres ciudades."
+      },
+      "why": {
+        "en": "Consonant + y changes to -ies: baby → babies, city → cities.",
+        "es": "Consonante + y cambia a -ies: baby → babies, city → cities."
+      }
+    },
+    {
+      "id": "pl-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "One man, two ___. One woman, two ___.",
+      "answers": [
+        "men",
+        "women"
+      ],
+      "tr": {
+        "en": "One man, two men. One woman, two women.",
+        "es": "Un hombre, dos hombres. Una mujer, dos mujeres."
+      },
+      "why": {
+        "en": "Some plurals are irregular and must be learned: man → men, woman → women.",
+        "es": "Algunos plurales son irregulares y hay que aprenderlos: man → men, woman → women."
+      }
+    },
+    {
+      "id": "pl-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "One child, two ___. One foot, two ___.",
+      "answers": [
+        "children",
+        "feet"
+      ],
+      "tr": {
+        "en": "One child, two children. One foot, two feet.",
+        "es": "Un niño, dos niños. Un pie, dos pies."
+      },
+      "why": {
+        "en": "More irregular plurals: child → children, foot → feet.",
+        "es": "Más plurales irregulares: child → children, foot → feet."
+      }
+    },
+    {
+      "id": "pl-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "One knife, two ___. One leaf, three ___.",
+      "answers": [
+        "knives",
+        "leaves"
+      ],
+      "tr": {
+        "en": "One knife, two knives. One leaf, three leaves.",
+        "es": "Un cuchillo, dos cuchillos. Una hoja, tres hojas."
+      },
+      "why": {
+        "en": "Many nouns ending in -f or -fe change to -ves: knife → knives, leaf → leaves.",
+        "es": "Muchos sustantivos que acaban en -f o -fe cambian a -ves: knife → knives, leaf → leaves."
+      }
+    },
+    {
+      "id": "pl-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "Three cat live here.",
+      "wrongIndex": 1,
+      "answer": "cats",
+      "explain": {
+        "en": "After a number above one, the noun is plural: three cats.",
+        "es": "Después de un número mayor que uno, el sustantivo va en plural: three cats."
+      },
+      "tr": {
+        "en": "Three cats live here.",
+        "es": "Aquí viven tres gatos."
+      }
+    },
+    {
+      "id": "pl-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "My two childs are at school.",
+      "wrongIndex": 2,
+      "answer": "children",
+      "explain": {
+        "en": "“Child” has an irregular plural: children.",
+        "es": "«Child» tiene un plural irregular: children."
+      },
+      "tr": {
+        "en": "My two children are at school.",
+        "es": "Mis dos hijos están en la escuela."
+      }
+    },
+    {
+      "id": "pl-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "Two womans work in this office.",
+      "wrongIndex": 1,
+      "answer": "women",
+      "explain": {
+        "en": "“Woman” has an irregular plural: women.",
+        "es": "«Woman» tiene un plural irregular: women."
+      },
+      "tr": {
+        "en": "Two women work in this office.",
+        "es": "Dos mujeres trabajan en esta oficina."
+      }
+    },
+    {
+      "id": "pl-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "The boxs are on the table.",
+      "wrongIndex": 1,
+      "answer": "boxes",
+      "explain": {
+        "en": "Nouns ending in -x take -es: boxes.",
+        "es": "Los sustantivos que acaban en -x llevan -es: boxes."
+      },
+      "tr": {
+        "en": "The boxes are on the table.",
+        "es": "Las cajas están sobre la mesa."
+      }
+    },
+    {
+      "id": "pl-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "My feets are cold.",
+      "wrongIndex": 1,
+      "answer": "feet",
+      "explain": {
+        "en": "“Foot” has an irregular plural: feet.",
+        "es": "«Foot» tiene un plural irregular: feet."
+      },
+      "tr": {
+        "en": "My feet are cold.",
+        "es": "Tengo los pies fríos."
+      }
+    },
+    {
+      "id": "pl-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "city",
+        "baby",
+        "day"
+      ],
+      "es": "I like big ___.",
+      "word": "city",
+      "answer": "cities",
+      "tr": {
+        "en": "I like big cities.",
+        "es": "Me gustan las ciudades grandes."
+      },
+      "why": {
+        "en": "Consonant + y changes to -ies: city → cities.",
+        "es": "Consonante + y cambia a -ies: city → cities."
+      }
+    },
+    {
+      "id": "pl-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "box",
+        "bus",
+        "book"
+      ],
+      "es": "I have three ___ in my bag.",
+      "word": "book",
+      "answer": "books",
+      "tr": {
+        "en": "I have three books in my bag.",
+        "es": "Tengo tres libros en mi bolso."
+      },
+      "why": {
+        "en": "Most nouns just add -s: books.",
+        "es": "La mayoría de los sustantivos solo añade -s: books."
+      }
+    },
+    {
+      "id": "pl-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "man",
+        "woman",
+        "child"
+      ],
+      "es": "Two ___ are in the office.",
+      "word": "man",
+      "answer": "men",
+      "tr": {
+        "en": "Two men are in the office.",
+        "es": "Dos hombres están en la oficina."
+      },
+      "why": {
+        "en": "“Man” has an irregular plural: men.",
+        "es": "«Man» tiene un plural irregular: men."
+      }
+    },
+    {
+      "id": "pl-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "tooth",
+        "foot",
+        "mouse"
+      ],
+      "es": "I brush my ___ every morning.",
+      "word": "tooth",
+      "answer": "teeth",
+      "tr": {
+        "en": "I brush my teeth every morning.",
+        "es": "Me cepillo los dientes cada mañana."
+      },
+      "why": {
+        "en": "“Tooth” has an irregular plural: teeth.",
+        "es": "«Tooth» tiene un plural irregular: teeth."
+      }
+    },
+    {
+      "id": "pl-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "knife",
+        "leaf",
+        "wife"
+      ],
+      "es": "The ___ are green.",
+      "word": "leaf",
+      "answer": "leaves",
+      "tr": {
+        "en": "The leaves are green.",
+        "es": "Las hojas son verdes."
+      },
+      "why": {
+        "en": "Nouns ending in -f change to -ves: leaf → leaves.",
+        "es": "Los sustantivos que acaban en -f cambian a -ves: leaf → leaves."
+      }
+    },
+    {
+      "id": "pl-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "My brother has two cats.",
+        "es": "Mi hermano tiene dos gatos."
+      },
+      "es": "My brother has two cats."
+    },
+    {
+      "id": "pl-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "The children are at school.",
+        "es": "Los niños están en la escuela."
+      },
+      "es": "The children are at school."
+    },
+    {
+      "id": "pl-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "Two women work in this office.",
+        "es": "Dos mujeres trabajan en esta oficina."
+      },
+      "es": "Two women work in this office."
+    },
+    {
+      "id": "pl-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "These boxes are very big.",
+        "es": "Estas cajas son muy grandes."
+      },
+      "es": "These boxes are very big."
+    },
+    {
+      "id": "pl-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "My feet are cold.",
+        "es": "Tengo los pies fríos."
+      },
+      "es": "My feet are cold."
     }
   ]
 }

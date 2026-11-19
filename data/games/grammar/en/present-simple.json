@@ -1227,6 +1227,331 @@
           "en": "We don't speak English."
         }
       ]
+    },
+    {
+      "id": "ps-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "My sister ___ in a bank. She ___ English.",
+      "answers": [
+        "works",
+        "speaks"
+      ],
+      "tr": {
+        "en": "My sister works in a bank. She speaks English.",
+        "es": "Mi hermana trabaja en un banco. Habla inglés."
+      },
+      "why": {
+        "en": "With he, she or it, add -s to the verb: works, speaks, sleeps.",
+        "es": "Con he, she o it, se añade -s al verbo: works, speaks, sleeps."
+      }
+    },
+    {
+      "id": "ps-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "I ___ not like coffee. My brother ___ not like tea.",
+      "answers": [
+        "do",
+        "does"
+      ],
+      "tr": {
+        "en": "I do not like coffee. My brother does not like tea.",
+        "es": "No me gusta el café. A mi hermano no le gusta el té."
+      },
+      "why": {
+        "en": "Negatives: “do not” with I, you, we, they; “does not” with he, she, it.",
+        "es": "Negativas: «do not» con I, you, we, they; «does not» con he, she, it."
+      }
+    },
+    {
+      "id": "ps-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "___ you live in a house? Yes, I ___.",
+      "answers": [
+        "Do",
+        "do"
+      ],
+      "tr": {
+        "en": "Do you live in a house? Yes, I do.",
+        "es": "¿Vives en una casa? Sí, vivo."
+      },
+      "why": {
+        "en": "Questions start with “do” (I, you, we, they); the short answer repeats it: “Yes, I do.”",
+        "es": "Las preguntas empiezan con «do» (I, you, we, they); la respuesta corta lo repite: «Yes, I do.»"
+      }
+    },
+    {
+      "id": "ps-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "___ your mother work? No, she ___ not.",
+      "answers": [
+        "Does",
+        "does"
+      ],
+      "tr": {
+        "en": "Does your mother work? No, she does not.",
+        "es": "¿Trabaja tu madre? No, no trabaja."
+      },
+      "why": {
+        "en": "“Your mother” is “she”, so the question and the short answer use “does”.",
+        "es": "«Your mother» es «she», así que la pregunta y la respuesta corta usan «does»."
+      }
+    },
+    {
+      "id": "ps-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "He ___ not eat meat. He ___ fish.",
+      "answers": [
+        "does",
+        "eats"
+      ],
+      "tr": {
+        "en": "He does not eat meat. He eats fish.",
+        "es": "Él no come carne. Come pescado."
+      },
+      "why": {
+        "en": "After “does not” the verb has no -s (eat); in a positive sentence it takes -s (eats).",
+        "es": "Después de «does not» el verbo no lleva -s (eat); en una frase afirmativa sí (eats)."
+      }
+    },
+    {
+      "id": "ps-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "My brother work in an office.",
+      "wrongIndex": 2,
+      "answer": "works",
+      "explain": {
+        "en": "“My brother” is “he”, so the verb takes -s: My brother works in an office.",
+        "es": "«My brother» es «he», así que el verbo lleva -s: My brother works in an office."
+      },
+      "tr": {
+        "en": "My brother works in an office.",
+        "es": "Mi hermano trabaja en una oficina."
+      }
+    },
+    {
+      "id": "ps-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "She don’t like tea.",
+      "wrongIndex": 1,
+      "answer": "doesn’t",
+      "explain": {
+        "en": "With “she”, the negative is “doesn’t”: She doesn’t like tea.",
+        "es": "Con «she», la negación es «doesn’t»: She doesn’t like tea."
+      },
+      "tr": {
+        "en": "She doesn’t like tea.",
+        "es": "A ella no le gusta el té."
+      }
+    },
+    {
+      "id": "ps-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "Do he speak English?",
+      "wrongIndex": 0,
+      "answer": "Does",
+      "explain": {
+        "en": "A question with “he” starts with “Does”: Does he speak English?",
+        "es": "Una pregunta con «he» empieza con «Does»: Does he speak English?"
+      },
+      "tr": {
+        "en": "Does he speak English?",
+        "es": "¿Habla inglés?"
+      }
+    },
+    {
+      "id": "ps-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "He doesn’t likes coffee.",
+      "wrongIndex": 2,
+      "answer": "like",
+      "explain": {
+        "en": "After “doesn’t” the verb has no -s: He doesn’t like coffee.",
+        "es": "Después de «doesn’t» el verbo no lleva -s: He doesn’t like coffee."
+      },
+      "tr": {
+        "en": "He doesn’t like coffee.",
+        "es": "No le gusta el café."
+      }
+    },
+    {
+      "id": "ps-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "We goes to school by bus.",
+      "wrongIndex": 1,
+      "answer": "go",
+      "explain": {
+        "en": "With “we”, the verb has no -s: We go to school by bus.",
+        "es": "Con «we», el verbo no lleva -s: We go to school by bus."
+      },
+      "tr": {
+        "en": "We go to school by bus.",
+        "es": "Vamos a la escuela en autobús."
+      }
+    },
+    {
+      "id": "ps-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "work",
+        "study",
+        "live"
+      ],
+      "es": "My father ___ in a hospital.",
+      "word": "work",
+      "answer": "works",
+      "tr": {
+        "en": "My father works in a hospital.",
+        "es": "Mi padre trabaja en un hospital."
+      },
+      "why": {
+        "en": "With he, she or it, add -s to the verb: works, speaks, sleeps.",
+        "es": "Con he, she o it, se añade -s al verbo: works, speaks, sleeps."
+      }
+    },
+    {
+      "id": "ps-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "watch",
+        "play",
+        "go"
+      ],
+      "es": "She ___ TV every day.",
+      "word": "watch",
+      "answer": "watches",
+      "tr": {
+        "en": "She watches TV every day.",
+        "es": "Ella ve la tele todos los días."
+      },
+      "why": {
+        "en": "Verbs ending in -ch, -sh, -s, -x take -es with he, she, it: watches.",
+        "es": "Los verbos que acaban en -ch, -sh, -s, -x llevan -es con he, she, it: watches."
+      }
+    },
+    {
+      "id": "ps-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "study",
+        "play",
+        "wash"
+      ],
+      "es": "He ___ English at school.",
+      "word": "study",
+      "answer": "studies",
+      "tr": {
+        "en": "He studies English at school.",
+        "es": "Él estudia inglés en la escuela."
+      },
+      "why": {
+        "en": "A verb ending in consonant + y changes to -ies with he, she, it: studies.",
+        "es": "Un verbo que acaba en consonante + y cambia a -ies con he, she, it: studies."
+      }
+    },
+    {
+      "id": "ps-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "work",
+        "like",
+        "have"
+      ],
+      "es": "I ___ coffee in the morning.",
+      "word": "like",
+      "answer": "like",
+      "tr": {
+        "en": "I like coffee in the morning.",
+        "es": "Me gusta el café por la mañana."
+      },
+      "why": {
+        "en": "With “I” the verb stays in its base form, with no -s.",
+        "es": "Con «I» el verbo queda en su forma base, sin -s."
+      }
+    },
+    {
+      "id": "ps-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "go",
+        "eat",
+        "sleep"
+      ],
+      "es": "The baby ___ in the afternoon.",
+      "word": "sleep",
+      "answer": "sleeps",
+      "tr": {
+        "en": "The baby sleeps in the afternoon.",
+        "es": "El bebé duerme por la tarde."
+      },
+      "why": {
+        "en": "With he, she or it, add -s to the verb: works, speaks, sleeps.",
+        "es": "Con he, she o it, se añade -s al verbo: works, speaks, sleeps."
+      }
+    },
+    {
+      "id": "ps-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "My sister works in a bank.",
+        "es": "Mi hermana trabaja en un banco."
+      },
+      "es": "My sister works in a bank."
+    },
+    {
+      "id": "ps-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "Does your brother live here?",
+        "es": "¿Vive tu hermano aquí?"
+      },
+      "es": "Does your brother live here?"
+    },
+    {
+      "id": "ps-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "He does not like coffee.",
+        "es": "No le gusta el café."
+      },
+      "es": "He does not like coffee."
+    },
+    {
+      "id": "ps-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "We study English at school.",
+        "es": "Estudiamos inglés en la escuela."
+      },
+      "es": "We study English at school."
+    },
+    {
+      "id": "ps-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": {
+        "en": "My dog sleeps on the sofa.",
+        "es": "Mi perro duerme en el sofá."
+      },
+      "es": "My dog sleeps on the sofa."
     }
   ]
 }

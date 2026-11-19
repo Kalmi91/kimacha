@@ -48,6 +48,16 @@
     "tener-expresiones": ["transform","order"],
     "tu-usted": ["transform","order"],
     "verbos-diptongo": ["transform","order"],
-    "verbos-reflexivos": ["transform","order"]
+    "verbos-reflexivos": ["transform","order"],
+    "to_be": ["opencloze","fix","bank"],
+    "articles": ["opencloze","fix","bank"],
+    "basic_verbs": ["opencloze","fix","bank","order"],
+    "present_simple": ["opencloze","fix","bank","order"],
+    "plurals": ["opencloze","fix","bank","order"],
+    "possessives": ["opencloze","fix","bank","order"],
+    "there_is_are": ["opencloze","fix","bank","order"],
+    "can_ability": ["opencloze","fix","bank","order"],
+    "question_words": ["opencloze","fix","bank","order"],
+    "present_continuous": ["opencloze","fix","bank","order"]
   }
 }
