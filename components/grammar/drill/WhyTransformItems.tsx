@@ -14,6 +14,8 @@ import { optionHint } from '@/lib/grammar/optionHints';
 import { hashString, shuffleOptions } from '@/lib/shuffle';
 import { useDockedAction } from '@/components/learn/DockSlot';
 import { BrutalBox, resultInk } from '@/components/grammar/Brutal';
+import AnswerCompare from '@/components/grammar/AnswerCompare';
+import { charDiff } from '@/lib/charDiff';
 import MistypedButton from '@/components/grammar/MistypedButton';
 import ResultBadge from '@/components/ResultBadge';
 import SpeakButton from '@/components/SpeakButton';
@@ -269,6 +271,12 @@ export function TransformDrillItem({
     speak(item.answer, speechLang(typeLang));
   };
 
+  // with several accepted forms the learner's answer is compared to the nearest one.
+  const closest = [item.answer, ...(item.accept ?? [])].reduce((best, c) => {
+    const wrongCount = (x: string) => charDiff(input, x, { case: true, accents: false }).filter((d) => d.wrong).length;
+    return wrongCount(c) < wrongCount(best) ? c : best;
+  });
+
   const inputBorder = result === 'ok' ? colors.successFill : result === 'bad' ? '#EF4444' : colors.tabIconDefault;
 
   // Check (and then Next) is a bar docked above the keyboard, as on the word card (DockSlot).
@@ -323,9 +331,9 @@ export function TransformDrillItem({
           docked ? null : <BrutalInkButton g={g} testID="transform-check" label={s.grammar.check} onPress={check} />
         ) : (
           <>
-            <BrutalFeedback correct={result === 'ok'} title={result === 'ok' ? s.grammar.correct : s.grammar.correctAnswer}>
+            <BrutalFeedback correct={result === 'ok'} title={result === 'ok' ? s.grammar.correct : s.games.wrongFeedback}>
               {result === 'bad' ? (
-                <Text style={[styles.brutalAnswer, { backgroundColor: g.a, color: g.onFill }]}> {item.answer} </Text>
+                <AnswerCompare typed={input} correct={closest} g={g} onFill />
               ) : null}
               <Text style={[styles.explainText, { color: resultInk(g, result === 'ok') }]}>{item.why[contentLang] ?? item.why.en}</Text>
             </BrutalFeedback>
@@ -396,8 +404,8 @@ export function TransformDrillItem({
             </>
           ) : (
             <>
-              <ResultBadge correct={false} label={s.grammar.correctAnswer} />
-              <Text style={[styles.transformAnswer, { color: colors.text }]}>{item.answer}</Text>
+              <ResultBadge correct={false} label={s.games.wrongFeedback} />
+              <AnswerCompare typed={input} correct={closest} g={g} />
               <Text style={[styles.explainText, { color: colors.text }]}>{item.why[contentLang] ?? item.why.en}</Text>
             </>
           )}
