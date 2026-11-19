@@ -71,7 +71,7 @@ describe('big test thresholds', () => {
     expect([BIG_TEST_MAIN, BIG_TEST_PASS, BIG_TEST_FAIL, BIG_TEST_QUICK, BIG_TEST_FOLLOW]).toEqual([9, 7, 3, 5, 2]);
   });
 
-  it('has data for Spanish only', () => {
+  it('has data for Spanish and English, none for German', () => {
     expect(hasBigTest('es')).toBe(true);
     expect(hasBigTest('de')).toBe(false);
     expect(bigTestItems('de', 'A1')).toEqual([]);

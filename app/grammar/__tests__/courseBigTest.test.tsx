@@ -84,7 +84,7 @@ describe.each([
     expect(screen.queryByTestId('big-test-start')).toBeNull();
   });
 
-  it('a course that has lessons but no Big test data (Spanish speaker learning English): the normal list, no card', async () => {
+  it('a course that has lessons but no Big test data (Spanish speaker learning German): the normal list, no card', async () => {
     await getDb().setOnboarding('es', 'de');
     await open();
     expect(screen.getByTestId('grammar-random-start')).toBeTruthy();
