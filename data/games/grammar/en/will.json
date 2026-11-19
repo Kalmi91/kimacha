@@ -993,14 +993,14 @@
       "kind": "fix",
       "trial": true,
       "es": "We will met you at the station.",
-      "wrongIndex": 3,
+      "wrongIndex": 2,
       "answer": "meet",
       "explain": {
         "en": "After will the verb stays in the base form: she will help, not “she will helps”.",
         "es": "Después de will el verbo se queda en forma base: she will help, no «she will helps»."
       },
       "tr": {
-        "en": "We will met meet at the station.",
+        "en": "We will meet you at the station.",
         "es": "Te esperaremos en la estación."
       }
     },
