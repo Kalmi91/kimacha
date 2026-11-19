@@ -38,7 +38,7 @@ const POSITION_SHARE = [0.2, 0.47];
 const MAX_SAME_POSITION_IN_TEXT = 3;
 // words per text (markers not counted), per level; a level without a band is an error
 const WORD_BANDS = { a1: [55, 95] };
-// the syllabus file of each learned language (the English syllabus is built in code and has no file here)
+// the syllabus file of each learned language (English has none here: its topics come from data/topics/en, see writtenTopics)
 const SYLLABUS = { es: 'syllabus.json', hu: 'syllabus-hu.json', de: 'syllabus-de.json' };
 
 // es norm (same patterns as scripts/mock-exam-check.mjs ES_BLACKLIST): Mexican usage, no vosotros, no Spain-only words
@@ -66,6 +66,14 @@ if (files.length === 0 && fs.existsSync(DIR)) {
 const syllabusCache = new Map();
 /** The topics of a level in the language's syllabus that have a written lesson, or null when there is no syllabus. */
 function writtenTopics(lang, level) {
+  if (lang === 'en') {
+    // English: the grammar topics of data/topics/en/<level>.json; the lesson file has hyphens for the id's underscores
+    const topicFile = path.join(ROOT, 'data', 'topics', 'en', `${level.toLowerCase()}.json`);
+    if (!fs.existsSync(topicFile)) return null;
+    return JSON.parse(fs.readFileSync(topicFile, 'utf8'))
+      .filter((tp) => tp.type === 'grammar' && fs.existsSync(path.join(ROOT, 'data', 'games', 'grammar', 'en', `${tp.id.replace(/_/g, '-')}.json`)))
+      .map((tp) => tp.id);
+  }
   const file = SYLLABUS[lang];
   if (!file) return null;
   if (!syllabusCache.has(lang)) syllabusCache.set(lang, JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'grammar', file), 'utf8')).topics);

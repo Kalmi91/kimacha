@@ -1,0 +1,738 @@
+{
+  "lang": "en",
+  "level": "A1",
+  "texts": [
+    {
+      "id": "en-a1-01",
+      "title": "A new friend",
+      "text": "Hi, my name {{1}} Ben and I live in a small town. {{2}} brother is a student, and he {{3}} to the university by bus. We have two {{4}} at home, one white and one black. {{5}} is my dog, Rex, here next to me. Every day I eat {{6}} apple after school and then I play in the park. My family is very kind to me.",
+      "gaps": [
+        {
+          "options": [
+            "is",
+            "am",
+            "are"
+          ],
+          "correct": 0,
+          "topic": "to_be"
+        },
+        {
+          "options": [
+            "Me",
+            "My",
+            "Mine"
+          ],
+          "correct": 1,
+          "topic": "possessives"
+        },
+        {
+          "options": [
+            "go",
+            "going",
+            "goes"
+          ],
+          "correct": 2,
+          "topic": "present_simple"
+        },
+        {
+          "options": [
+            "cat",
+            "cates",
+            "cats"
+          ],
+          "correct": 2,
+          "topic": "plurals"
+        },
+        {
+          "options": [
+            "This",
+            "These",
+            "Those"
+          ],
+          "correct": 0,
+          "topic": "this_that"
+        },
+        {
+          "options": [
+            "a",
+            "an",
+            "two"
+          ],
+          "correct": 1,
+          "topic": "articles"
+        }
+      ]
+    },
+    {
+      "id": "en-a1-02",
+      "title": "School lunch",
+      "text": "My school lunch is at twelve. My friends and I {{1}} sandwiches from home. {{2}} girls over there are Ana and Eva, my best friends. Eva has {{3}} orange in her bag. There {{4}} two tables in the school garden, and we eat there. Ana's lunch box has two {{5}} and some bread. Eva says, \"The red lunch box is not {{6}}, it is Ana's.\"",
+      "gaps": [
+        {
+          "options": [
+            "brings",
+            "bring",
+            "bringing"
+          ],
+          "correct": 1,
+          "topic": "present_simple"
+        },
+        {
+          "options": [
+            "Those",
+            "That",
+            "This"
+          ],
+          "correct": 0,
+          "topic": "this_that"
+        },
+        {
+          "options": [
+            "an",
+            "a",
+            "two"
+          ],
+          "correct": 0,
+          "topic": "articles"
+        },
+        {
+          "options": [
+            "is",
+            "am",
+            "are"
+          ],
+          "correct": 2,
+          "topic": "there_is_are"
+        },
+        {
+          "options": [
+            "tomato",
+            "tomatoes",
+            "tomatos"
+          ],
+          "correct": 1,
+          "topic": "plurals"
+        },
+        {
+          "options": [
+            "my",
+            "I",
+            "mine"
+          ],
+          "correct": 2,
+          "topic": "possessives"
+        }
+      ]
+    },
+    {
+      "id": "en-a1-03",
+      "title": "My day starts early",
+      "text": "My day starts early. I get up {{1}} six o'clock, and my sister {{2}} breakfast for us. We eat two {{3}} and drink milk. Look at {{4}} cake on the table! It is for my mother. My father puts on {{5}} blue coat, and then we go out. There {{6}} a bus stop near our house, and the bus comes at seven.",
+      "gaps": [
+        {
+          "options": [
+            "in",
+            "on",
+            "at"
+          ],
+          "correct": 2,
+          "topic": "prepositions"
+        },
+        {
+          "options": [
+            "make",
+            "making",
+            "makes"
+          ],
+          "correct": 2,
+          "topic": "present_simple"
+        },
+        {
+          "options": [
+            "egg",
+            "eggs",
+            "eggies"
+          ],
+          "correct": 1,
+          "topic": "plurals"
+        },
+        {
+          "options": [
+            "this",
+            "these",
+            "those"
+          ],
+          "correct": 0,
+          "topic": "this_that"
+        },
+        {
+          "options": [
+            "he",
+            "his",
+            "him"
+          ],
+          "correct": 1,
+          "topic": "possessives"
+        },
+        {
+          "options": [
+            "is",
+            "are",
+            "be"
+          ],
+          "correct": 0,
+          "topic": "there_is_are"
+        }
+      ]
+    },
+    {
+      "id": "en-a1-04",
+      "title": "Our town",
+      "text": "Our town has two big {{1}}, and many people walk there every day. {{2}} building over there is the library. My cousins live near it, and {{3}} house is very old. There {{4}} a cinema in our town, so we go to the next city. We go {{5}} bus on Saturdays. My uncle {{6}} a big car, so on Sundays he takes us.",
+      "gaps": [
+        {
+          "options": [
+            "park",
+            "parks",
+            "parkes"
+          ],
+          "correct": 1,
+          "topic": "plurals"
+        },
+        {
+          "options": [
+            "Those",
+            "These",
+            "That"
+          ],
+          "correct": 2,
+          "topic": "this_that"
+        },
+        {
+          "options": [
+            "their",
+            "they",
+            "them"
+          ],
+          "correct": 0,
+          "topic": "possessives"
+        },
+        {
+          "options": [
+            "aren't",
+            "isn't",
+            "don't"
+          ],
+          "correct": 1,
+          "topic": "there_is_are"
+        },
+        {
+          "options": [
+            "in",
+            "at",
+            "by"
+          ],
+          "correct": 2,
+          "topic": "prepositions"
+        },
+        {
+          "options": [
+            "has got",
+            "have got",
+            "is got"
+          ],
+          "correct": 0,
+          "topic": "have_got"
+        }
+      ]
+    },
+    {
+      "id": "en-a1-05",
+      "title": "Saturday with Leo",
+      "text": "{{1}} Saturday I visit my friend Leo. He {{2}} a big garden with a pool. There {{3}} three dogs in the garden. Leo plays with {{4}} dogs every day. He {{5}} run very fast, but I am slow. I love {{6}} big black dog over there, because it is very friendly. After lunch we watch a funny film together and drink hot chocolate.",
+      "gaps": [
+        {
+          "options": [
+            "On",
+            "In",
+            "At"
+          ],
+          "correct": 0,
+          "topic": "prepositions"
+        },
+        {
+          "options": [
+            "have got",
+            "is got",
+            "has got"
+          ],
+          "correct": 2,
+          "topic": "have_got"
+        },
+        {
+          "options": [
+            "is",
+            "are",
+            "am"
+          ],
+          "correct": 1,
+          "topic": "there_is_are"
+        },
+        {
+          "options": [
+            "he",
+            "his",
+            "him"
+          ],
+          "correct": 1,
+          "topic": "possessives"
+        },
+        {
+          "options": [
+            "can",
+            "cans",
+            "can to"
+          ],
+          "correct": 0,
+          "topic": "can_ability"
+        },
+        {
+          "options": [
+            "those",
+            "these",
+            "that"
+          ],
+          "correct": 2,
+          "topic": "this_that"
+        }
+      ]
+    },
+    {
+      "id": "en-a1-06",
+      "title": "A new class",
+      "text": "This is my friend Mia. {{1}} sister is in my class too. There {{2}} twenty students in our class. We start English {{3}} nine o'clock. I {{4}} a new pen and a red notebook. Mia {{5}} sing very well, so the teacher likes her. My friend asks, \"{{6}} old is your teacher?\" \"She is thirty,\" I say. After class we walk home together and talk about our day.",
+      "gaps": [
+        {
+          "options": [
+            "She",
+            "Hers",
+            "Her"
+          ],
+          "correct": 2,
+          "topic": "possessives"
+        },
+        {
+          "options": [
+            "are",
+            "is",
+            "be"
+          ],
+          "correct": 0,
+          "topic": "there_is_are"
+        },
+        {
+          "options": [
+            "in",
+            "on",
+            "at"
+          ],
+          "correct": 2,
+          "topic": "prepositions"
+        },
+        {
+          "options": [
+            "has got",
+            "have got",
+            "am got"
+          ],
+          "correct": 1,
+          "topic": "have_got"
+        },
+        {
+          "options": [
+            "can",
+            "cans",
+            "is can"
+          ],
+          "correct": 0,
+          "topic": "can_ability"
+        },
+        {
+          "options": [
+            "What",
+            "How",
+            "Who"
+          ],
+          "correct": 1,
+          "topic": "question_words"
+        }
+      ]
+    },
+    {
+      "id": "en-a1-07",
+      "title": "Sunday in the park",
+      "text": "It is Sunday and we are in the park. My dad {{1}} a ball with my brother. A boy asks me, \"{{2}} do you live?\" \"Near here,\" I say. There {{3}} a lake in the park, and the park is open from eight {{4}} six. My friend {{5}} a small dog. The dog {{6}} jump very high, and we all laugh.",
+      "gaps": [
+        {
+          "options": [
+            "is kicking",
+            "kicking",
+            "kick"
+          ],
+          "correct": 0,
+          "topic": "present_continuous"
+        },
+        {
+          "options": [
+            "What",
+            "Where",
+            "Who"
+          ],
+          "correct": 1,
+          "topic": "question_words"
+        },
+        {
+          "options": [
+            "are",
+            "have",
+            "is"
+          ],
+          "correct": 2,
+          "topic": "there_is_are"
+        },
+        {
+          "options": [
+            "at",
+            "on",
+            "to"
+          ],
+          "correct": 2,
+          "topic": "prepositions"
+        },
+        {
+          "options": [
+            "has got",
+            "have got",
+            "is got"
+          ],
+          "correct": 0,
+          "topic": "have_got"
+        },
+        {
+          "options": [
+            "does can",
+            "can",
+            "cans"
+          ],
+          "correct": 1,
+          "topic": "can_ability"
+        }
+      ]
+    },
+    {
+      "id": "en-a1-08",
+      "title": "My mother works",
+      "text": "My mother {{1}} a nurse. She works {{2}} the morning and she goes home at two. She {{3}} got a big car, so she takes the bus. I {{4}} drive yet, but I can ride a bike. Right now she {{5}} a letter at the table. Her boss asks me, \"{{6}} many hours does she work?\" \"Six,\" I say. In the evening she is tired but happy.",
+      "gaps": [
+        {
+          "options": [
+            "are",
+            "is",
+            "am"
+          ],
+          "correct": 1,
+          "topic": "to_be"
+        },
+        {
+          "options": [
+            "in",
+            "at",
+            "on"
+          ],
+          "correct": 0,
+          "topic": "prepositions"
+        },
+        {
+          "options": [
+            "hasn't",
+            "haven't",
+            "isn't"
+          ],
+          "correct": 0,
+          "topic": "have_got"
+        },
+        {
+          "options": [
+            "cannot to",
+            "isn't",
+            "can't"
+          ],
+          "correct": 2,
+          "topic": "can_ability"
+        },
+        {
+          "options": [
+            "writing",
+            "is writing",
+            "write"
+          ],
+          "correct": 1,
+          "topic": "present_continuous"
+        },
+        {
+          "options": [
+            "What",
+            "Who",
+            "How"
+          ],
+          "correct": 2,
+          "topic": "question_words"
+        }
+      ]
+    },
+    {
+      "id": "en-a1-09",
+      "title": "My neighbors",
+      "text": "My neighbors {{1}} very nice. Mr Brown is {{2}} old man, and he {{3}} two cats and a bird. His wife {{4}} speak four languages. Today they {{5}} a cake in the kitchen. I ask, \"{{6}} time is the party?\" \"At six,\" she says, \"come and eat with us!\" I say thank you, and I go home to tell my family about the party. It is going to be a lot of fun.",
+      "gaps": [
+        {
+          "options": [
+            "is",
+            "am",
+            "are"
+          ],
+          "correct": 2,
+          "topic": "to_be"
+        },
+        {
+          "options": [
+            "a",
+            "two",
+            "an"
+          ],
+          "correct": 2,
+          "topic": "articles"
+        },
+        {
+          "options": [
+            "have got",
+            "has got",
+            "is got"
+          ],
+          "correct": 1,
+          "topic": "have_got"
+        },
+        {
+          "options": [
+            "can",
+            "does can",
+            "cans"
+          ],
+          "correct": 0,
+          "topic": "can_ability"
+        },
+        {
+          "options": [
+            "is making",
+            "are making",
+            "making"
+          ],
+          "correct": 1,
+          "topic": "present_continuous"
+        },
+        {
+          "options": [
+            "What",
+            "Who",
+            "Where"
+          ],
+          "correct": 0,
+          "topic": "question_words"
+        }
+      ]
+    },
+    {
+      "id": "en-a1-10",
+      "title": "Two brothers",
+      "text": "Sam and Eli {{1}} twin brothers. Sam {{2}} football on Saturdays with his friends. Eli {{3}} play football, but he draws very well. He wants to be {{4}} artist. Look! He {{5}} a picture of the dog now. I ask him, \"{{6}} color do you like best?\" He thinks for a minute and says that he likes green, but he uses his black pencil more than the others.",
+      "gaps": [
+        {
+          "options": [
+            "is",
+            "are",
+            "am"
+          ],
+          "correct": 1,
+          "topic": "to_be"
+        },
+        {
+          "options": [
+            "play",
+            "playing",
+            "plays"
+          ],
+          "correct": 2,
+          "topic": "present_simple"
+        },
+        {
+          "options": [
+            "can't",
+            "don't can",
+            "isn't"
+          ],
+          "correct": 0,
+          "topic": "can_ability"
+        },
+        {
+          "options": [
+            "a",
+            "an",
+            "two"
+          ],
+          "correct": 1,
+          "topic": "articles"
+        },
+        {
+          "options": [
+            "drawing",
+            "draw",
+            "is drawing"
+          ],
+          "correct": 2,
+          "topic": "present_continuous"
+        },
+        {
+          "options": [
+            "What",
+            "Where",
+            "Who"
+          ],
+          "correct": 0,
+          "topic": "question_words"
+        }
+      ]
+    },
+    {
+      "id": "en-a1-11",
+      "title": "Cooking with Ana",
+      "text": "Ana is at my house today. We {{1}} in the kitchen right now. I ask, \"{{2}} many eggs do we need?\" \"Six,\" she says. The eggs {{3}} in the fridge, so I get them. I take {{4}} onion and some tomatoes too. Ana always {{5}} a lot of salt in the soup. Then we put the soup in two {{6}}. It smells very good, and we are both hungry.",
+      "gaps": [
+        {
+          "options": [
+            "are cooking",
+            "is cooking",
+            "cooking"
+          ],
+          "correct": 0,
+          "topic": "present_continuous"
+        },
+        {
+          "options": [
+            "What",
+            "Who",
+            "How"
+          ],
+          "correct": 2,
+          "topic": "question_words"
+        },
+        {
+          "options": [
+            "is",
+            "are",
+            "am"
+          ],
+          "correct": 1,
+          "topic": "to_be"
+        },
+        {
+          "options": [
+            "a",
+            "an",
+            "two"
+          ],
+          "correct": 1,
+          "topic": "articles"
+        },
+        {
+          "options": [
+            "uses",
+            "use",
+            "using"
+          ],
+          "correct": 0,
+          "topic": "present_simple"
+        },
+        {
+          "options": [
+            "dish",
+            "dishs",
+            "dishes"
+          ],
+          "correct": 2,
+          "topic": "plurals"
+        }
+      ]
+    },
+    {
+      "id": "en-a1-12",
+      "title": "At the market",
+      "text": "My mother and I {{1}} at the market now. It {{2}} Saturday and the market is full of people. My mother wants to buy {{3}} umbrella because it is raining today. The man at the shop {{4}} fruit and vegetables. I want five {{5}} for the soup. My mother asks, \"How much are {{6}} apples?\" and the man says, \"Two dollars.\" We pay and walk home with the bags. It is a nice morning.",
+      "gaps": [
+        {
+          "options": [
+            "is shopping",
+            "shopping",
+            "are shopping"
+          ],
+          "correct": 2,
+          "topic": "present_continuous"
+        },
+        {
+          "options": [
+            "is",
+            "are",
+            "am"
+          ],
+          "correct": 0,
+          "topic": "to_be"
+        },
+        {
+          "options": [
+            "a",
+            "two",
+            "an"
+          ],
+          "correct": 2,
+          "topic": "articles"
+        },
+        {
+          "options": [
+            "sell",
+            "sells",
+            "selling"
+          ],
+          "correct": 1,
+          "topic": "present_simple"
+        },
+        {
+          "options": [
+            "potatoes",
+            "potato",
+            "potatos"
+          ],
+          "correct": 0,
+          "topic": "plurals"
+        },
+        {
+          "options": [
+            "this",
+            "these",
+            "that"
+          ],
+          "correct": 1,
+          "topic": "this_that"
+        }
+      ]
+    }
+  ]
+}

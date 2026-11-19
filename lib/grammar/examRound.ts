@@ -35,6 +35,7 @@ export const ROUND_TEXTS = 2;
 // The shipped files, a static require map (Metro needs literal paths). Add a line per file.
 const FILES: Record<string, () => ExamRoundFile> = {
   'es-a1': () => require('@/data/grammar/exam-round/es-a1.json') as ExamRoundFile,
+  'en-a1': () => require('@/data/grammar/exam-round/en-a1.json') as ExamRoundFile,
 };
 
 const fileKey = (lang: string, level: string) => `${lang}-${level.toLowerCase()}`;
