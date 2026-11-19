@@ -75,7 +75,7 @@ describe.each([
     fireEvent.press(screen.getByTestId('write-check'));
     expect(screen.getByTestId('write-wrong')).toBeTruthy();
     fireEvent.press(screen.getByTestId('grammar-mistyped'));
-    expect(onDone).toHaveBeenCalledWith(true);
+    expect(onDone).toHaveBeenCalledWith(true, true); // flagged as mistyped, so a test can settle it like its own button
   });
 
   it('error correction: a typo in the fix offers "I mistyped"; the right fix has none', () => {
@@ -85,7 +85,7 @@ describe.each([
     fireEvent.press(screen.getByTestId('fix-check'));
     expect(screen.getByTestId('fix-wrong')).toBeTruthy();
     fireEvent.press(screen.getByTestId('grammar-mistyped'));
-    expect(onDone).toHaveBeenCalledWith(true);
+    expect(onDone).toHaveBeenCalledWith(true, true);
     unmount();
     render(<FixDrillItem item={FIX} learnedLang="es" contentLang="en" strictAccents onDone={onDone} />);
     fireEvent.press(screen.getByTestId('fix-word-2'));

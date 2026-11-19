@@ -330,7 +330,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
             contentLang={contentLang as ContentLang}
             strictAccents={strictAccents}
             lessonItems={topic.items}
-            onDone={completeItem}
+            onDone={(ok) => completeItem(ok)}
           />
         )}
       </ScrollView>

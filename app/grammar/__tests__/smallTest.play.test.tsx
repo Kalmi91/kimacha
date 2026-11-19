@@ -493,4 +493,16 @@ describe.each([
     expect(st.run!.current!.qid).not.toBe(before);
     expect(text('small-test-header')).toBe('B1 topic test · 2/10');
   });
+
+  // E201 (FB684): the "I mistyped" button is on the item's own feedback, and counts the answer as right AND mistyped
+  (kind === 'opencloze' ? it : it.skip)('a wrong typed answer offers "I mistyped" on the item; pressing it settles right + mistyped', async () => {
+    await open();
+    await press('small-test-start');
+    await answerWrong();
+    expect(has('grammar-mistyped')).toBe(true);
+    await press('grammar-mistyped');
+    expect(text('small-test-header')).toBe('B1 topic test · 2/10');
+    const st = await loadSmallState(getDb(), 'en→es', 'B1');
+    expect(st.run!.answers[0]).toMatchObject({ ok: true, mistyped: true });
+  });
 });

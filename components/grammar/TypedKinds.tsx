@@ -4,7 +4,7 @@ import { Text } from '@/components/KText';
 
 import AnswerCompare from '@/components/grammar/AnswerCompare';
 import { BrutalBox, inkButtonText, resultFill, resultInk } from '@/components/grammar/Brutal';
-import MistypedButton from '@/components/grammar/MistypedButton';
+import MistypedButton, { mistypedDock } from '@/components/grammar/MistypedButton';
 import { tapTarget } from '@/constants/Theme';
 import { useDockedAction } from '@/components/learn/DockSlot';
 import { useGrammarColors } from '@/lib/grammarColors';
@@ -67,7 +67,7 @@ function TypedItem({
   extra?: string;
   learnedLang: string;
   strictAccents: boolean;
-  onDone: (correct: boolean) => void;
+  onDone: (correct: boolean, mistyped?: boolean) => void;
   /** The answer is checked (its feedback is on screen), before Next. */
   onShown?: (correct: boolean) => void;
 }) {
@@ -93,7 +93,7 @@ function TypedItem({
     !enabled
       ? null
       : result
-        ? { label: s.grammar.nextArrow, tone: 'next', testID: 'grammar-next', onPress: () => onDone(result.correct) }
+        ? { label: s.grammar.nextArrow, tone: 'next', testID: 'grammar-next', onPress: () => onDone(result.correct), secondary: mistypedDock(!result.typedRight, () => onDone(true, true)) }
         : { label: `✓ ${s.grammar.check}`, tone: 'check', testID: `${prefix}-check`, onPress: check }
   );
 
@@ -129,12 +129,12 @@ function TypedItem({
                 ) : (
                   <AnswerCompare typed={typed} correct={answer} g={g} onFill />
                 )}
+                {!result.typedRight && !docked ? <MistypedButton onPress={() => onDone(true, true)} /> : null}
                 <Text testID={whyId} style={[styles.explain, { color: resultInk(g, result.correct) }]}>
                   {why}
                 </Text>
                 {extra ? <Text style={[styles.translation, { color: resultInk(g, result.correct) }]}>{extra}</Text> : null}
               </BrutalBox>
-              {!result.typedRight ? <MistypedButton onPress={() => onDone(true)} /> : null}
               {docked ? null : (
                 <BrutalBox testID="grammar-next" fill="ink" boxStyle={styles.next} onPress={() => onDone(result.correct)}>
                   <Text style={[styles.nextText, { color: inkButtonText(g) }]}>{s.grammar.nextArrow}</Text>
@@ -163,7 +163,7 @@ type TypedProps<T> = {
   learnedLang: string;
   contentLang: Lang;
   strictAccents: boolean;
-  onDone: (correct: boolean) => void;
+  onDone: (correct: boolean, mistyped?: boolean) => void;
   onShown?: (correct: boolean) => void;
 };
 
@@ -204,7 +204,7 @@ export function ClozeDrillItem({ item, learnedLang, contentLang, strictAccents, 
 
   const { docked, padBottom } = useDockedAction(
     result
-      ? { label: s.grammar.nextArrow, tone: 'next', testID: 'grammar-next', onPress: () => onDone(allRight) }
+      ? { label: s.grammar.nextArrow, tone: 'next', testID: 'grammar-next', onPress: () => onDone(allRight), secondary: mistypedDock(!allRight, () => onDone(true, true)) }
       : { label: `✓ ${s.grammar.check}`, tone: 'check', testID: 'cloze-check', onPress: check }
   );
 
@@ -250,6 +250,7 @@ export function ClozeDrillItem({ item, learnedLang, contentLang, strictAccents, 
         <>
           <BrutalBox testID={allRight ? 'cloze-correct' : 'cloze-wrong'} fill={resultFill(allRight)} boxStyle={styles.feedback}>
             <Text style={[styles.fixedLine, { color: resultInk(g, allRight) }]}>{allRight ? s.grammar.correct : s.games.wrongFeedback}</Text>
+            {!allRight && !docked ? <MistypedButton onPress={() => onDone(true, true)} /> : null}
             <Text testID="cloze-sentence" style={[styles.writeSentence, { color: resultInk(g, allRight) }]}>
               {filledCloze(item.text, item.answers)}
             </Text>
@@ -258,7 +259,6 @@ export function ClozeDrillItem({ item, learnedLang, contentLang, strictAccents, 
             </Text>
             <Text style={[styles.translation, { color: resultInk(g, allRight) }]}>{item.tr[contentLang] ?? item.tr.en}</Text>
           </BrutalBox>
-          {!allRight ? <MistypedButton onPress={() => onDone(true)} /> : null}
           {docked ? null : (
             <BrutalBox testID="grammar-next" fill="ink" boxStyle={styles.next} onPress={() => onDone(allRight)}>
               <Text style={[styles.nextText, { color: inkButtonText(g) }]}>{s.grammar.nextArrow}</Text>
