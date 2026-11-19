@@ -54,7 +54,7 @@ const bestRows = async () => (await getDb().getGameProgress(GRAMMAR_PROGRESS_KEY
 // Plays through a "choice" round (picks the first option) until the done page appears.
 const playChoiceRound = async () => {
   await press('grammar-start-choice');
-  for (let i = 0; i < 40 && !screen.queryByTestId('grammar-start-lessontest'); i++) {
+  for (let i = 0; i < 40 && !screen.queryByTestId('grammar-practice-again'); i++) {
     const opt = screen.queryAllByTestId('grammar-option')[0];
     if (opt) {
       fireEvent.press(opt);
@@ -125,35 +125,40 @@ describe.each(['brand', 'classic'] as const)('end-of-lesson test (%s palette)', 
     await flush();
   };
 
+  // the done page no longer holds the lesson-test button (E205: three buttons); the test is started from the lesson page.
+  const startLessonTest = async () => {
+    screen.unmount();
+    await open();
+    await press('grammar-lesson-start-lessontest');
+  };
+
   it('B1 b: until a round of every kind is done, the button is grey and states what to do', async () => {
     await seedBest(['match', 'form']); // "why" is missing, "choice" is just being finished
     await open();
-    expect(screen.queryByTestId('grammar-start-lessontest')).toBeNull(); // not on the lesson page, only on the done page
     await playChoiceRound();
-    expect(screen.getByTestId('grammar-start-lessontest')).toBeDisabled();
     expect(screen.getByTestId('grammar-lessontest-note')).toHaveTextContent('Finish all practice types first');
-    await press('grammar-start-lessontest');
-    expect(screen.queryByTestId('lesson-test-counter')).toBeNull();
+    screen.unmount();
+    await open();
+    expect(screen.getByTestId('grammar-lesson-start-lessontest')).toBeDisabled();
   });
 
   it('B1 b: once a round of every kind is done, the button is live, with "10 questions, pass 80%" under it', async () => {
     await seedBest(['match', 'form', 'why', 'transform']);
     await open();
     await playChoiceRound();
-    expect(screen.getByTestId('grammar-start-lessontest')).not.toBeDisabled();
     expect(screen.getByTestId('grammar-lessontest-note')).toHaveTextContent('10 questions, pass 80%');
   });
 
-  it('on the done page the test button is the only filled button, "Next topic" is secondary (outlined)', async () => {
+  it('on the done page "Retake the test" is the only filled button, "Back to the course" is secondary (outlined)', async () => {
     await seedBest(['match', 'form', 'why', 'transform']);
     await open();
     await playChoiceRound();
     const fill = (id: string) => StyleSheet.flatten(screen.getByTestId(id).props.style)?.backgroundColor;
-    const test = fill('grammar-start-lessontest');
+    const test = fill('grammar-practice-again');
     expect(test).toBeTruthy();
-    expect(fill('grammar-next-topic')).not.toBe(test);
+    expect(fill('grammar-back-course')).not.toBe(test);
     if (palette === 'brand') expect(test).toBe(PALETTE_FILLS.brand.a);
-    else expect(fill('grammar-next-topic')).toBeUndefined();
+    else expect(fill('grammar-back-course')).toBeUndefined();
   });
 
   it('B2 a + 80%: 10 questions, no feedback after a correct one; 10/10 passed, saved, "Next topic"', async () => {
@@ -161,7 +166,7 @@ describe.each(['brand', 'classic'] as const)('end-of-lesson test (%s palette)', 
     await open();
     await playChoiceRound();
     const before = await bestRows();
-    await press('grammar-start-lessontest');
+    await startLessonTest();
     expect(expectedQuestions()).toHaveLength(10);
     await runTest([]);
     expect(screen.getByTestId('lesson-test-verdict')).toHaveTextContent(/Lesson test passed$/);
@@ -187,7 +192,7 @@ describe.each(['brand', 'classic'] as const)('end-of-lesson test (%s palette)', 
     await open();
     await playChoiceRound();
     const before = await bestRows();
-    await press('grammar-start-lessontest');
+    await startLessonTest();
     await runTest([1, 4, 8]);
     expect(screen.getByTestId('lesson-test-verdict')).toHaveTextContent(/Not yet$/);
     expect(screen.getByTestId('lesson-test-score')).toHaveTextContent(/^7 \/ 10/);
@@ -208,7 +213,7 @@ describe.each(['brand', 'classic'] as const)('end-of-lesson test (%s palette)', 
     await seedBest(['match', 'form', 'why', 'transform']);
     await open();
     await playChoiceRound();
-    await press('grammar-start-lessontest');
+    await startLessonTest();
     const qs = expectedQuestions();
     await runTest(qs.map((_, i) => i)); // every question wrong
     const why = qs.filter((q) => q.kind === 'why');
@@ -221,7 +226,7 @@ describe.each(['brand', 'classic'] as const)('end-of-lesson test (%s palette)', 
     await seedBest(['match', 'form', 'why', 'transform']);
     await open();
     await playChoiceRound();
-    await press('grammar-start-lessontest');
+    await startLessonTest();
     await runTest([0, 5]);
     expect(screen.getByTestId('lesson-test-verdict')).toHaveTextContent(/Lesson test passed$/);
     expect(screen.getByTestId('lesson-test-score')).toHaveTextContent(/^8 \/ 10/);
@@ -231,7 +236,7 @@ describe.each(['brand', 'classic'] as const)('end-of-lesson test (%s palette)', 
     await seedBest(['match', 'form', 'why', 'transform']);
     await open();
     await playChoiceRound();
-    await press('grammar-start-lessontest');
+    await startLessonTest();
     await press('lesson-test-close');
     await press('lesson-test-keep-going');
     expect(screen.getByTestId('lesson-test-counter')).toBeTruthy();

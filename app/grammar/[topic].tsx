@@ -303,6 +303,7 @@ function GrammarLessonPhases({ topic }: { topic: ReturnType<typeof useGrammarTop
         lessonScoreOf={lessonScoreOf}
         setPhase={setPhase}
         setScore={setScore}
+        setDrillKind={setDrillKind}
       />
     );
   }

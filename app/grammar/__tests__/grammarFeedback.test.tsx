@@ -68,7 +68,7 @@ const seedBest = async (kinds: string[]) => {
 
 // Plays through a "choice" round (picks the first option) until the done page appears.
 const answerChoiceRound = async () => {
-  for (let i = 0; i < 40 && !screen.queryByTestId('grammar-start-lessontest'); i++) {
+  for (let i = 0; i < 40 && !screen.queryByTestId('grammar-practice-again'); i++) {
     const opt = screen.queryAllByTestId('grammar-option')[0];
     if (opt) {
       fireEvent.press(opt);
@@ -144,7 +144,7 @@ describe.each(['brand', 'classic'] as const)('grammar lesson: 💬 on every part
 
   it('overview, during an exercise, exercise END (done): all with their own identifier', async () => {
     await seedBest(['match', 'form', 'why', 'transform']);
-    const view = render(
+    let view = render(
       <ThemeProvider>
         <GrammarLessonScreen />
       </ThemeProvider>
@@ -155,21 +155,29 @@ describe.each(['brand', 'classic'] as const)('grammar lesson: 💬 on every part
     expect(card()).toMatch(new RegExp(`^grammar:${TOPIC}:drill(:.+)? \\| en→es \\| A1 \\| (-|\\d+)$`));
     await answerChoiceRound();
     // this was missing: there was no 💬 at the end of a task (result page).
-    expect(screen.getByTestId('grammar-start-lessontest')).toBeTruthy();
+    expect(screen.getByTestId('grammar-practice-again')).toBeTruthy();
     expect(card()).toBe(`grammar:${TOPIC}:done | en→es | A1 | -`);
     view.unmount();
   });
 
   it('lesson test: question (above the docked bar for typed ones), exit, back, result', async () => {
     await seedBest(['match', 'form', 'why', 'transform']);
-    const view = render(
+    let view = render(
       <ThemeProvider>
         <GrammarLessonScreen />
       </ThemeProvider>
     );
     await flush();
     await playChoiceRound();
-    await press('grammar-start-lessontest');
+    // the done page has no lesson-test button (E205); start it from the lesson page
+    view.unmount();
+    view = render(
+      <ThemeProvider>
+        <GrammarLessonScreen />
+      </ThemeProvider>
+    );
+    await flush();
+    await press('grammar-lesson-start-lessontest');
 
     const qs = expectedQuestions();
     const prefix = (i: number) => `grammar:${TOPIC}:lessontest:q${i + 1}:${qs[i].id} | en→es | A1 | `;

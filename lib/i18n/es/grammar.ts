@@ -43,6 +43,8 @@ const es: typeof en = {
     practiceAgain: 'Practicar otra vez',
     nextTopic: 'Siguiente tema',
     backToSyllabus: 'Volver al curso',
+    retakeTest: 'Repetir la prueba',
+    nextTestType: 'Siguiente tipo de prueba',
     doneGood: 'Esa regla ya la dominas.',
     doneAgain: 'Vale la pena leer la regla una vez más antes de seguir.',
     readAloud: 'Leer en voz alta',

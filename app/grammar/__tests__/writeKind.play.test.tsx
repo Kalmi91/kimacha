@@ -244,7 +244,9 @@ describe('write: the saved result and the way back', () => {
     const rows = await getDb().getGameProgress(GRAMMAR_PROGRESS_KEY);
     expect(rows.find((r) => r.itemId === 'por-para:write:best')?.data).toEqual({ correct: 11, total: 12 });
 
-    fireEvent.press(screen.getByText('Read the rule again'));
+    // the done page no longer has a way back to the lesson (E205); reopen the lesson screen, the progress is saved
+    screen.unmount();
+    render(<GrammarLessonScreen />);
     await flush(2);
     expect(screen.getByTestId('grammar-kind-percent-write')).toHaveTextContent('So far: 92% correct');
     // the lesson % is the average of the scored kinds only: the write result is not in it

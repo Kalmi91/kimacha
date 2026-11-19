@@ -46,6 +46,8 @@ export default {
     practiceAgain: 'Practice again',
     nextTopic: 'Next topic',
     backToSyllabus: 'Back to the course',
+    retakeTest: 'Retake the test',
+    nextTestType: 'Next test type',
     doneGood: 'You have that rule down.',
     doneAgain: 'Worth reading the rule once more before the next one.',
     // mixed-language read-aloud of the lesson text.

@@ -43,6 +43,8 @@ const de: typeof en = {
     practiceAgain: 'Noch einmal üben',
     nextTopic: 'Nächstes Thema',
     backToSyllabus: 'Zurück zum Kurs',
+    retakeTest: 'Test wiederholen',
+    nextTestType: 'Nächste Testart',
     doneGood: 'Diese Regel sitzt.',
     doneAgain: 'Lies die Regel lieber noch einmal, bevor es weitergeht.',
     readAloud: 'Vorlesen',
