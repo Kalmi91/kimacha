@@ -1,7 +1,7 @@
 import { View } from 'react-native';
 import { Text } from '@/components/KText';
 import Colors from '@/constants/Colors';
-import { TENSE_NAMES, type TenseId } from '@/lib/grammar/lessonTypes';
+import { TENSE_NAMES, type ContentLang, type TenseId } from '@/lib/grammar/lessonTypes';
 import { BrutalBox, Sticker, inkButtonText, resultFill } from '@/components/grammar/Brutal';
 import ResultBadge from '@/components/ResultBadge';
 import { useGrammarColors, type GrammarColors } from '@/lib/grammarColors';
@@ -34,15 +34,26 @@ export function BrutalInkButton({ g, testID, label, onPress }: { g: GrammarColor
 
 // tense badge, shown on every kind
 // where the item has a `tense` field (choice/form/why/transform).
-export function TenseBadge({ tense, colors }: { tense: { from: TenseId; to: TenseId }; colors: (typeof Colors)['light'] }) {
+export function TenseBadge({
+  tense,
+  colors,
+  lang = 'es',
+}: {
+  tense: { from: TenseId; to: TenseId };
+  colors: (typeof Colors)['light'];
+  // the language of the badge text: the Spanish term for a Spanish lesson (default), the learner's own for an English one
+  lang?: ContentLang;
+}) {
   const g = useGrammarColors();
+  const fromName = TENSE_NAMES[tense.from][lang] ?? TENSE_NAMES[tense.from].en;
+  const toName = TENSE_NAMES[tense.to][lang] ?? TENSE_NAMES[tense.to].en;
   if (g.brutal) {
-    return <Sticker label={`${TENSE_NAMES[tense.from].es} → ${TENSE_NAMES[tense.to].es}`} fill="b" rotate={-3} />;
+    return <Sticker label={`${fromName} → ${toName}`} fill="b" rotate={-3} />;
   }
   return (
     <View style={[styles.tenseBadge, { backgroundColor: colors.tint + '22' }]}>
       <Text style={[styles.tenseBadgeText, { color: colors.tint }]}>
-        {TENSE_NAMES[tense.from].es} → {TENSE_NAMES[tense.to].es}
+        {fromName} → {toName}
       </Text>
     </View>
   );

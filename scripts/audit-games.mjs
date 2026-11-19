@@ -860,6 +860,11 @@ const TENSE_IDS = [
   'pluscuamperfecto',
   'subjuntivo-perfecto',
   'futuro-condicional-perfecto',
+  'en-statement',
+  'en-negative',
+  'en-question',
+  'en-i-you-we-they',
+  'en-he-she-it',
 ];
 
 // Card id (the `order` of words-open, as a string) -> level, built once from the words-open files, for the
@@ -1035,12 +1040,14 @@ function auditTypedKindItem(item, itemPath, topic, checkWords) {
   }
 }
 
-function auditTransformItem(item, itemPath, topic) {
+function auditTransformItem(item, itemPath, topic, lang = 'es') {
   auditTenseField(item.tense, itemPath);
   checkLangs(item.prompt, `${itemPath} prompt`);
   if (!item.answer) p1.push({ path: itemPath, issue: 'transform item missing answer' });
-  if (item.prompt?.es && item.answer && item.prompt.es === item.answer) {
-    p1.push({ path: itemPath, issue: 'transform prompt.es must differ from answer' });
+  // English lessons: the sentence to rewrite is prompt.en (the learned language), prompt.es its Spanish translation.
+  const promptSentence = lang === 'en' ? item.prompt?.en : item.prompt?.es;
+  if (promptSentence && item.answer && promptSentence === item.answer) {
+    p1.push({ path: itemPath, issue: `transform prompt.${lang === 'en' ? 'en' : 'es'} must differ from answer` });
   }
   if (item.accept !== undefined) {
     if (!Array.isArray(item.accept)) {
@@ -1048,13 +1055,16 @@ function auditTransformItem(item, itemPath, topic) {
     } else {
       for (const alt of item.accept) {
         if (alt === item.answer) p1.push({ path: itemPath, issue: `transform accept entry equals answer: "${alt}"` });
-        if (item.prompt?.es && alt === item.prompt.es) {
-          p1.push({ path: itemPath, issue: `transform accept entry equals prompt.es: "${alt}"` });
+        if (promptSentence && alt === promptSentence) {
+          p1.push({ path: itemPath, issue: `transform accept entry equals prompt.${lang === 'en' ? 'en' : 'es'}: "${alt}"` });
         }
       }
     }
   }
-  if (!Array.isArray(item.wordIds) || item.wordIds.length === 0) {
+  // wordIds are the Spanish word cards of the tense drill; an English lesson has none (it must still be an array).
+  if (lang === 'en') {
+    if (!Array.isArray(item.wordIds)) p1.push({ path: itemPath, issue: 'transform wordIds must be an array' });
+  } else if (!Array.isArray(item.wordIds) || item.wordIds.length === 0) {
     p1.push({ path: itemPath, issue: 'transform wordIds must be a non-empty array' });
   } else {
     const levelIdx = LEVELS.indexOf(topic.level);
@@ -1129,7 +1139,7 @@ function auditGrammarTopic(topic, filePath, lang = 'es') {
     }
     if (item.kind === 'transform') {
       if (isHu) p1.push({ path: itemPath, issue: 'transform items (Spanish tense gate, wordIds) are not part of the hu course' });
-      else auditTransformItem(item, itemPath, topic);
+      else auditTransformItem(item, itemPath, topic, lang);
       continue;
     }
     // error spotting / word order / dictation / sentence writing, temporary ("trial") items.

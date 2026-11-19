@@ -229,6 +229,7 @@ export function WhyDrillItem({
 // so the input field starts empty on the next item.
 export function TransformDrillItem({
   item,
+  learnedLang = 'es',
   contentLang,
   strictAccents,
   colors,
@@ -236,6 +237,7 @@ export function TransformDrillItem({
   onDone,
 }: {
   item: TransformItem;
+  learnedLang?: string;
   contentLang: ContentLang;
   strictAccents: boolean;
   colors: (typeof Colors)['light'];
@@ -249,13 +251,22 @@ export function TransformDrillItem({
   const inputRef = useRef<TextInput>(null);
   useFocusOnNewCard(inputRef, true, item.id);
 
+  // An English lesson (E195): the sentence to rewrite is `prompt.en` (the learned language), `prompt.es/hu/de` its
+  // translation for the F button, the answer is typed and spoken in English. Any other lesson is the Spanish drill.
+  const learnedIsEn = learnedLang === 'en';
+  const typeLang = learnedIsEn ? 'en' : 'es';
+  const sentence = learnedIsEn ? item.prompt.en : item.prompt.es;
+  const translation = learnedIsEn ? (item.prompt[contentLang] ?? item.prompt.es) : (item.prompt[contentLang] ?? item.prompt.en);
+  const tenseName = (id: TransformItem['tense']['to']) => TENSE_NAMES[id][contentLang] ?? TENSE_NAMES[id].en;
+  const badgeLang = learnedIsEn ? contentLang : undefined;
+
   const check = () => {
     Keyboard.dismiss();
     const candidates = [item.answer, ...(item.accept ?? [])];
     const ok = candidates.some((c) => strictAnswerMatch(input, c, { strictAccents }));
     setResult(ok ? 'ok' : 'bad');
     // the correct sentence is spoken, after right and wrong answers alike.
-    speak(item.answer, speechLang('es'));
+    speak(item.answer, speechLang(typeLang));
   };
 
   const inputBorder = result === 'ok' ? colors.successFill : result === 'bad' ? '#EF4444' : colors.tabIconDefault;
@@ -272,11 +283,11 @@ export function TransformDrillItem({
   if (g.brutal) {
     return (
       <View style={styles.transformBody}>
-        <TenseBadge tense={item.tense} colors={colors} />
+        <TenseBadge tense={item.tense} colors={colors} lang={badgeLang} />
 
         <BrutalBox boxStyle={styles.brutalSentenceBox}>
           <View style={styles.transformCardRow}>
-            <Text style={[styles.transformSentence, { color: g.ink }]}>{item.prompt.es}</Text>
+            <Text style={[styles.transformSentence, { color: g.ink }]}>{sentence}</Text>
             <BrutalBox
               testID="transform-f"
               accessibilityLabel={s.grammar.showTranslation}
@@ -289,13 +300,11 @@ export function TransformDrillItem({
             </BrutalBox>
           </View>
           {showF ? (
-            <Text style={[styles.transformTranslation, { color: g.mu }]}>{item.prompt[contentLang] ?? item.prompt.en}</Text>
+            <Text style={[styles.transformTranslation, { color: g.mu }]}>{translation}</Text>
           ) : null}
         </BrutalBox>
 
-        <Text style={[styles.brutalQuestion, { color: g.ink }]}>
-          {s.grammar.rewriteTo(TENSE_NAMES[item.tense.to][contentLang] ?? TENSE_NAMES[item.tense.to].en)}
-        </Text>
+        <Text style={[styles.brutalQuestion, { color: g.ink }]}>{s.grammar.rewriteTo(tenseName(item.tense.to))}</Text>
         <BrutalBox dashed={result === 'bad'} style={result === 'bad' ? styles.brutalDim : undefined} boxStyle={styles.brutalInputBox}>
           <TextInput
             ref={inputRef}
@@ -305,7 +314,7 @@ export function TransformDrillItem({
             value={input}
             onChangeText={setInput}
             editable={result === null}
-            placeholder={s.card.typeIn('es')}
+            placeholder={s.card.typeIn(typeLang)}
             placeholderTextColor={g.mu}
           />
         </BrutalBox>
@@ -333,11 +342,11 @@ export function TransformDrillItem({
 
   return (
     <View style={styles.transformBody}>
-      <TenseBadge tense={item.tense} colors={colors} />
+      <TenseBadge tense={item.tense} colors={colors} lang={badgeLang} />
 
       <View style={[styles.transformCard, { backgroundColor: colors.card }]}>
         <View style={styles.transformCardRow}>
-          <Text style={[styles.transformSentence, { color: colors.text }]}>{item.prompt.es}</Text>
+          <Text style={[styles.transformSentence, { color: colors.text }]}>{sentence}</Text>
           <Pressable
             testID="transform-f"
             accessibilityLabel={s.grammar.showTranslation}
@@ -348,15 +357,11 @@ export function TransformDrillItem({
           </Pressable>
         </View>
         {showF ? (
-          <Text style={[styles.transformTranslation, { color: colors.tabIconDefault }]}>
-            {item.prompt[contentLang] ?? item.prompt.en}
-          </Text>
+          <Text style={[styles.transformTranslation, { color: colors.tabIconDefault }]}>{translation}</Text>
         ) : null}
       </View>
 
-      <Text style={[styles.transformLabel, { color: colors.text }]}>
-        {s.grammar.rewriteTo(TENSE_NAMES[item.tense.to][contentLang] ?? TENSE_NAMES[item.tense.to].en)}
-      </Text>
+      <Text style={[styles.transformLabel, { color: colors.text }]}>{s.grammar.rewriteTo(tenseName(item.tense.to))}</Text>
       <TextInput
         ref={inputRef}
         testID="transform-input"
@@ -365,7 +370,7 @@ export function TransformDrillItem({
         value={input}
         onChangeText={setInput}
         editable={result === null}
-        placeholder={s.card.typeIn('es')}
+        placeholder={s.card.typeIn(typeLang)}
         placeholderTextColor={colors.tabIconDefault}
       />
 

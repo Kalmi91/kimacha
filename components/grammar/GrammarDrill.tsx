@@ -315,6 +315,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
           <TransformDrillItem
             key={roundItem.item.id}
             item={roundItem.item}
+            learnedLang={learnedLang}
             contentLang={contentLang as ContentLang}
             strictAccents={strictAccents}
             colors={colors}
