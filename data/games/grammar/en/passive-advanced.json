@@ -1250,6 +1250,267 @@
           "en": "by the director"
         }
       ]
+    },
+    {
+      "id": "pas-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "The new bridge ___ built right now.",
+      "answers": [
+        "is being"
+      ],
+      "tr": { "en": "The new bridge is being built right now.", "es": "El nuevo puente se está construyendo ahora mismo." },
+      "why": {
+        "en": "For something in progress, the passive uses is/are being + participle.",
+        "es": "Para algo en curso, la pasiva usa is/are being + participio."
+      }
+    },
+    {
+      "id": "pas-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "The report must ___ checked before Friday.",
+      "answers": [
+        "be"
+      ],
+      "tr": { "en": "The report must be checked before Friday.", "es": "El informe debe revisarse antes del viernes." },
+      "why": {
+        "en": "A modal passive is modal + be + participle: must be checked.",
+        "es": "La pasiva con modal es modal + be + participio: must be checked."
+      }
+    },
+    {
+      "id": "pas-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "The painting is believed to ___ stolen last year.",
+      "answers": [
+        "have been"
+      ],
+      "tr": { "en": "The painting is believed to have been stolen last year.", "es": "Se cree que el cuadro fue robado el año pasado." },
+      "why": {
+        "en": "For an earlier event, use to have been + participle: believed to have been stolen.",
+        "es": "Para un hecho anterior, usa to have been + participio: believed to have been stolen."
+      }
+    },
+    {
+      "id": "pas-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "The case ___ ___ discussed for hours.",
+      "answers": [
+        "has",
+        "been"
+      ],
+      "tr": { "en": "The case has been discussed for hours.", "es": "El caso se lleva discutiendo horas." },
+      "why": {
+        "en": "The present perfect passive is has/have been + participle.",
+        "es": "La pasiva del present perfect es has/have been + participio."
+      }
+    },
+    {
+      "id": "pas-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "I enjoy ___ invited to parties.",
+      "answers": [
+        "being"
+      ],
+      "tr": { "en": "I enjoy being invited to parties.", "es": "Disfruto de que me inviten a fiestas." },
+      "why": {
+        "en": "After enjoy, the passive uses being + participle.",
+        "es": "Después de enjoy, la pasiva usa being + participio."
+      }
+    },
+    {
+      "id": "pas-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "The bridge is being build now.",
+      "wrongIndex": 4,
+      "answer": "built",
+      "explain": {
+        "en": "After is being comes the participle: built, not build.",
+        "es": "Después de is being va el participio: built, no build."
+      },
+      "tr": { "en": "The bridge is being built now.", "es": "El puente se está construyendo ahora." }
+    },
+    {
+      "id": "pas-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "The report must been checked today.",
+      "wrongIndex": 3,
+      "answer": "be",
+      "explain": {
+        "en": "After a modal verb we use be, not been: must be checked.",
+        "es": "Después de un verbo modal usamos be, no been: must be checked."
+      },
+      "tr": { "en": "The report must be checked today.", "es": "El informe debe revisarse hoy." }
+    },
+    {
+      "id": "pas-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "The painting is believed to has been stolen.",
+      "wrongIndex": 5,
+      "answer": "have",
+      "explain": {
+        "en": "After to we use the base form: to have been, not to has been.",
+        "es": "Después de to usamos la forma base: to have been, no to has been."
+      },
+      "tr": { "en": "The painting is believed to have been stolen.", "es": "Se cree que el cuadro fue robado." }
+    },
+    {
+      "id": "pas-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "A gift was gave to me by my boss.",
+      "wrongIndex": 3,
+      "answer": "given",
+      "explain": {
+        "en": "The passive needs the participle: was given, not was gave.",
+        "es": "La pasiva necesita el participio: was given, no was gave."
+      },
+      "tr": { "en": "A gift was given to me by my boss.", "es": "Mi jefe me dio un regalo." }
+    },
+    {
+      "id": "pas-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "He is say to be very rich.",
+      "wrongIndex": 2,
+      "answer": "said",
+      "explain": {
+        "en": "In this passive the verb is a participle: is said to be.",
+        "es": "En esta pasiva el verbo va en participio: is said to be."
+      },
+      "tr": { "en": "He is said to be very rich.", "es": "Se dice que es muy rico." }
+    },
+    {
+      "id": "pas-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "built",
+        "chosen",
+        "served"
+      ],
+      "es": "The bridge was ___ in 2010.",
+      "word": "built",
+      "answer": "built",
+      "tr": { "en": "The bridge was built in 2010.", "es": "El puente fue construido en 2010." },
+      "why": {
+        "en": "The past passive is was/were + participle: build → built.",
+        "es": "La pasiva en pasado es was/were + participio: build → built."
+      }
+    },
+    {
+      "id": "pas-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "caught",
+        "served",
+        "sold"
+      ],
+      "es": "The thief was ___ by the police last night.",
+      "word": "caught",
+      "answer": "caught",
+      "tr": { "en": "The thief was caught by the police last night.", "es": "El ladrón fue atrapado por la policía anoche." },
+      "why": {
+        "en": "The participle of catch is irregular: catch → caught.",
+        "es": "El participio de catch es irregular: catch → caught."
+      }
+    },
+    {
+      "id": "pas-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "be",
+        "been",
+        "being"
+      ],
+      "es": "The room must ___ cleaned today.",
+      "word": "be",
+      "answer": "be",
+      "tr": { "en": "The room must be cleaned today.", "es": "La habitación debe limpiarse hoy." },
+      "why": {
+        "en": "After a modal verb use the base form be: must be cleaned.",
+        "es": "Después de un verbo modal usa la forma base be: must be cleaned."
+      }
+    },
+    {
+      "id": "pas-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "been",
+        "being",
+        "was"
+      ],
+      "es": "The case has ___ discussed all week.",
+      "word": "been",
+      "answer": "been",
+      "tr": { "en": "The case has been discussed all week.", "es": "El caso se ha discutido toda la semana." },
+      "why": {
+        "en": "The present perfect passive is has been + participle.",
+        "es": "La pasiva del present perfect es has been + participio."
+      }
+    },
+    {
+      "id": "pas-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "show",
+        "give",
+        "know"
+      ],
+      "es": "The film is ___ in a big cinema now.",
+      "word": "show",
+      "answer": "shown",
+      "tr": { "en": "The film is shown in a big cinema now.", "es": "La película se muestra ahora en un cine grande." },
+      "why": {
+        "en": "The participle of show is shown: is shown.",
+        "es": "El participio de show es shown: is shown."
+      }
+    },
+    {
+      "id": "pas-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "The bridge is being built right now.", "es": "El puente se está construyendo ahora mismo." },
+      "es": "The bridge is being built right now."
+    },
+    {
+      "id": "pas-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "The report must be checked today.", "es": "El informe debe revisarse hoy." },
+      "es": "The report must be checked today."
+    },
+    {
+      "id": "pas-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "Several houses have been sold this year.", "es": "Varias casas se han vendido este año." },
+      "es": "Several houses have been sold this year."
+    },
+    {
+      "id": "pas-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "The thieves are thought to have escaped by car.", "es": "Se cree que los ladrones escaparon en coche." },
+      "es": "The thieves are thought to have escaped by car."
+    },
+    {
+      "id": "pas-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "She hopes to be chosen for the team.", "es": "Ella espera ser elegida para el equipo." },
+      "es": "She hopes to be chosen for the team."
     }
   ]
 }

@@ -1111,6 +1111,271 @@
           "en": "if only I had"
         }
       ]
+    },
+    {
+      "id": "wsh-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "I wish I ___ more free time.",
+      "answers": [
+        "had"
+      ],
+      "tr": { "en": "I wish I had more free time.", "es": "Ojalá tuviera más tiempo libre." },
+      "why": {
+        "en": "After wish, a present situation takes the past simple: I wish I had.",
+        "es": "Después de wish, una situación del presente lleva el pasado simple: I wish I had."
+      }
+    },
+    {
+      "id": "wsh-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "She wishes she ___ the invitation last week.",
+      "answers": [
+        "had accepted"
+      ],
+      "tr": { "en": "She wishes she had accepted the invitation last week.", "es": "Ella desearía haber aceptado la invitación la semana pasada." },
+      "why": {
+        "en": "A regret about the past takes wish + past perfect: had accepted.",
+        "es": "Un arrepentimiento sobre el pasado lleva wish + past perfect: had accepted."
+      }
+    },
+    {
+      "id": "wsh-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "I wish you ___ so much. It is annoying.",
+      "answers": [
+        "wouldn’t talk"
+      ],
+      "accept": [
+        [
+          "would not talk"
+        ]
+      ],
+      "tr": { "en": "I wish you wouldn’t talk so much. It is annoying.", "es": "Ojalá no hablaras tanto. Es molesto." },
+      "why": {
+        "en": "Wish + would + base verb complains about something that annoys us.",
+        "es": "Wish + would + verbo base expresa queja por algo que nos molesta."
+      }
+    },
+    {
+      "id": "wsh-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "If only I ___ harder last year.",
+      "answers": [
+        "had studied"
+      ],
+      "tr": { "en": "If only I had studied harder last year.", "es": "Ojalá hubiera estudiado más el año pasado." },
+      "why": {
+        "en": "If only works like wish: if only + past perfect for a regret about the past.",
+        "es": "If only funciona como wish: if only + past perfect para un arrepentimiento del pasado."
+      }
+    },
+    {
+      "id": "wsh-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "I wish I ___ swim, but I never learned.",
+      "answers": [
+        "could"
+      ],
+      "tr": { "en": "I wish I could swim, but I never learned.", "es": "Ojalá supiera nadar, pero nunca aprendí." },
+      "why": {
+        "en": "Use could after wish for an ability you do not have now: I wish I could swim.",
+        "es": "Usa could después de wish para una habilidad que no tienes ahora: I wish I could swim."
+      }
+    },
+    {
+      "id": "wsh-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "I wish I have more time.",
+      "wrongIndex": 3,
+      "answer": "had",
+      "explain": {
+        "en": "After wish the verb moves one step back: have becomes had.",
+        "es": "Después de wish el verbo retrocede un paso: have pasa a had."
+      },
+      "tr": { "en": "I wish I had more time.", "es": "Ojalá tuviera más tiempo." }
+    },
+    {
+      "id": "wsh-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "If only I have listened to you.",
+      "wrongIndex": 3,
+      "answer": "had",
+      "explain": {
+        "en": "A regret about the past after if only needs the past perfect: had listened, not have listened.",
+        "es": "Un arrepentimiento sobre el pasado después de if only necesita el past perfect: had listened, no have listened."
+      },
+      "tr": { "en": "If only I had listened to you.", "es": "Ojalá te hubiera escuchado." }
+    },
+    {
+      "id": "wsh-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "I wish it will stop raining.",
+      "wrongIndex": 3,
+      "answer": "would",
+      "explain": {
+        "en": "After wish we do not use will; we use would for something we want to change.",
+        "es": "Después de wish no usamos will; usamos would para algo que queremos cambiar."
+      },
+      "tr": { "en": "I wish it would stop raining.", "es": "Ojalá dejara de llover." }
+    },
+    {
+      "id": "wsh-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "I wish I can speak French.",
+      "wrongIndex": 3,
+      "answer": "could",
+      "explain": {
+        "en": "After wish, can becomes could: I wish I could speak French.",
+        "es": "Después de wish, can pasa a could: I wish I could speak French."
+      },
+      "tr": { "en": "I wish I could speak French.", "es": "Ojalá supiera hablar francés." }
+    },
+    {
+      "id": "wsh-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "He wishes he had went to the party.",
+      "wrongIndex": 4,
+      "answer": "gone",
+      "explain": {
+        "en": "After had comes the participle: gone, not the past form went.",
+        "es": "Después de had va el participio: gone, no la forma de pasado went."
+      },
+      "tr": { "en": "He wishes he had gone to the party.", "es": "Ojalá hubiera ido a la fiesta." }
+    },
+    {
+      "id": "wsh-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "had",
+        "have",
+        "would"
+      ],
+      "es": "I wish I ___ a bigger flat.",
+      "word": "had",
+      "answer": "had",
+      "tr": { "en": "I wish I had a bigger flat.", "es": "Ojalá tuviera un piso más grande." },
+      "why": {
+        "en": "A wish about the present takes the past simple: I wish I had.",
+        "es": "Un deseo sobre el presente lleva el pasado simple: I wish I had."
+      }
+    },
+    {
+      "id": "wsh-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "see",
+        "eat",
+        "take"
+      ],
+      "es": "I wish I had ___ the doctor last week.",
+      "word": "see",
+      "answer": "seen",
+      "tr": { "en": "I wish I had seen the doctor last week.", "es": "Ojalá hubiera visto al médico la semana pasada." },
+      "why": {
+        "en": "After had comes the participle: see → seen.",
+        "es": "Después de had va el participio: see → seen."
+      }
+    },
+    {
+      "id": "wsh-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "would",
+        "had",
+        "did"
+      ],
+      "es": "I wish my brother ___ stop shouting.",
+      "word": "would",
+      "answer": "would",
+      "tr": { "en": "I wish my brother would stop shouting.", "es": "Ojalá mi hermano dejara de gritar." },
+      "why": {
+        "en": "Wish + would + base verb: we want someone else’s behaviour to change.",
+        "es": "Wish + would + verbo base: queremos que cambie el comportamiento de otra persona."
+      }
+    },
+    {
+      "id": "wsh-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "could",
+        "can",
+        "would"
+      ],
+      "es": "I wish I ___ dance well.",
+      "word": "could",
+      "answer": "could",
+      "tr": { "en": "I wish I could dance well.", "es": "Ojalá supiera bailar bien." },
+      "why": {
+        "en": "An ability you lack now: wish + could.",
+        "es": "Una habilidad que no tienes ahora: wish + could."
+      }
+    },
+    {
+      "id": "wsh-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "know",
+        "knew",
+        "knows"
+      ],
+      "es": "I wish I ___ his phone number.",
+      "word": "knew",
+      "answer": "knew",
+      "tr": { "en": "I wish I knew his phone number.", "es": "Ojalá supiera su número de teléfono." },
+      "why": {
+        "en": "After wish, a present situation takes the past simple: knew, not know.",
+        "es": "Después de wish, una situación del presente lleva el pasado simple: knew, no know."
+      }
+    },
+    {
+      "id": "wsh-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "I wish I had more time to read.", "es": "Ojalá tuviera más tiempo para leer." },
+      "es": "I wish I had more time to read."
+    },
+    {
+      "id": "wsh-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "If only we had stayed at home.", "es": "Ojalá nos hubiéramos quedado en casa." },
+      "es": "If only we had stayed at home."
+    },
+    {
+      "id": "wsh-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "I wish you would help me more.", "es": "Ojalá me ayudaras más." },
+      "es": "I wish you would help me more."
+    },
+    {
+      "id": "wsh-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "She wishes she could speak French.", "es": "Ojalá ella supiera hablar francés." },
+      "es": "She wishes she could speak French."
+    },
+    {
+      "id": "wsh-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "They wish they had stayed at home.", "es": "Ojalá se hubieran quedado en casa." },
+      "es": "They wish they had stayed at home."
     }
   ]
 }

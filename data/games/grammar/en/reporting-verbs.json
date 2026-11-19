@@ -1221,6 +1221,266 @@
           "en": "thanked him for helping"
         }
       ]
+    },
+    {
+      "id": "rep-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "He denied ___ the money.",
+      "answers": [
+        "taking"
+      ],
+      "tr": { "en": "He denied taking the money.", "es": "Negó haber cogido el dinero." },
+      "why": {
+        "en": "Deny is followed by the -ing form: denied taking.",
+        "es": "Deny va seguido de la forma en -ing: denied taking."
+      }
+    },
+    {
+      "id": "rep-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "The doctor advised me ___ more water.",
+      "answers": [
+        "to drink"
+      ],
+      "tr": { "en": "The doctor advised me to drink more water.", "es": "El médico me aconsejó beber más agua." },
+      "why": {
+        "en": "Advise + person + to + base verb: advised me to drink.",
+        "es": "Advise + persona + to + verbo base: advised me to drink."
+      }
+    },
+    {
+      "id": "rep-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "They accused him ___ lying.",
+      "answers": [
+        "of"
+      ],
+      "tr": { "en": "They accused him of lying.", "es": "Lo acusaron de mentir." },
+      "why": {
+        "en": "Accuse someone of + -ing: accused him of lying.",
+        "es": "Accuse lleva de + -ing: accused him of lying."
+      }
+    },
+    {
+      "id": "rep-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "He apologized ___ being late.",
+      "answers": [
+        "for"
+      ],
+      "tr": { "en": "He apologized for being late.", "es": "Se disculpó por llegar tarde." },
+      "why": {
+        "en": "Apologize for + -ing: apologized for being late.",
+        "es": "Apologize for + -ing: apologized for being late."
+      }
+    },
+    {
+      "id": "rep-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "She suggested ___ to the beach.",
+      "answers": [
+        "going"
+      ],
+      "tr": { "en": "She suggested going to the beach.", "es": "Sugirió ir a la playa." },
+      "why": {
+        "en": "Suggest is followed by the -ing form: suggested going.",
+        "es": "Suggest va seguido de la forma en -ing: suggested going."
+      }
+    },
+    {
+      "id": "rep-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "He denied take the money.",
+      "wrongIndex": 2,
+      "answer": "taking",
+      "explain": {
+        "en": "After denied the verb takes -ing: denied taking, not denied take.",
+        "es": "Después de denied el verbo lleva -ing: denied taking, no denied take."
+      },
+      "tr": { "en": "He denied taking the money.", "es": "Negó haber cogido el dinero." }
+    },
+    {
+      "id": "rep-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "They accused him for lying.",
+      "wrongIndex": 3,
+      "answer": "of",
+      "explain": {
+        "en": "The preposition after accuse is of: accused him of lying.",
+        "es": "La preposición después de accuse es of: accused him of lying."
+      },
+      "tr": { "en": "They accused him of lying.", "es": "Lo acusaron de mentir." }
+    },
+    {
+      "id": "rep-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "The doctor advised me to drinking more water.",
+      "wrongIndex": 5,
+      "answer": "drink",
+      "explain": {
+        "en": "After advised me to the verb is the base form: to drink, not to drinking.",
+        "es": "Después de advised me to el verbo va en forma base: to drink, no to drinking."
+      },
+      "tr": { "en": "The doctor advised me to drink more water.", "es": "El médico me aconsejó beber más agua." }
+    },
+    {
+      "id": "rep-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "He apologized of being late.",
+      "wrongIndex": 2,
+      "answer": "for",
+      "explain": {
+        "en": "The preposition after apologize is for: apologized for being late.",
+        "es": "La preposición después de apologize es for: apologized for being late."
+      },
+      "tr": { "en": "He apologized for being late.", "es": "Se disculpó por llegar tarde." }
+    },
+    {
+      "id": "rep-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "She insisted in paying for dinner.",
+      "wrongIndex": 2,
+      "answer": "on",
+      "explain": {
+        "en": "The preposition after insist is on: insisted on paying.",
+        "es": "La preposición después de insist es on: insisted on paying."
+      },
+      "tr": { "en": "She insisted on paying for dinner.", "es": "Insistió en pagar la cena." }
+    },
+    {
+      "id": "rep-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "of",
+        "for",
+        "to"
+      ],
+      "es": "They accused the man ___ stealing.",
+      "word": "of",
+      "answer": "of",
+      "tr": { "en": "They accused the man of stealing.", "es": "Acusaron al hombre de robar." },
+      "why": {
+        "en": "Accuse takes of: accused the man of stealing.",
+        "es": "Accuse lleva of: accused the man of stealing."
+      }
+    },
+    {
+      "id": "rep-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "stealing",
+        "stay",
+        "to take"
+      ],
+      "es": "He admitted ___ the bike.",
+      "word": "stealing",
+      "answer": "stealing",
+      "tr": { "en": "He admitted stealing the bike.", "es": "Admitió haber robado la bici." },
+      "why": {
+        "en": "Admit is followed by the -ing form: admitted stealing.",
+        "es": "Admit va seguido de la forma en -ing: admitted stealing."
+      }
+    },
+    {
+      "id": "rep-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "to call",
+        "calling",
+        "call"
+      ],
+      "es": "He threatened ___ the police if we did not leave.",
+      "word": "to call",
+      "answer": "to call",
+      "tr": { "en": "He threatened to call the police if we did not leave.", "es": "Amenazó con llamar a la policía si no nos íbamos." },
+      "why": {
+        "en": "Threaten takes to + base verb: threatened to call.",
+        "es": "Threaten lleva to + verbo base: threatened to call."
+      }
+    },
+    {
+      "id": "rep-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "to arrive",
+        "arriving",
+        "arrive"
+      ],
+      "es": "He promised ___ on time.",
+      "word": "to arrive",
+      "answer": "to arrive",
+      "tr": { "en": "He promised to arrive on time.", "es": "Prometió llegar a tiempo." },
+      "why": {
+        "en": "Promise takes to + base verb: promised to arrive.",
+        "es": "Promise lleva to + verbo base: promised to arrive."
+      }
+    },
+    {
+      "id": "rep-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "on",
+        "in",
+        "about"
+      ],
+      "es": "She insisted ___ paying for the tickets.",
+      "word": "on",
+      "answer": "on",
+      "tr": { "en": "She insisted on paying for the tickets.", "es": "Insistió en pagar las entradas." },
+      "why": {
+        "en": "Insist is followed by on + -ing: insisted on paying.",
+        "es": "Insist va seguido de on + -ing: insisted on paying."
+      }
+    },
+    {
+      "id": "rep-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "She admitted breaking the window.", "es": "Admitió haber roto la ventana." },
+      "es": "She admitted breaking the window."
+    },
+    {
+      "id": "rep-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "The teacher warned us not to be late.", "es": "El profesor nos advirtió que no llegáramos tarde." },
+      "es": "The teacher warned us not to be late."
+    },
+    {
+      "id": "rep-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "He pretended to be asleep.", "es": "Fingió estar dormido." },
+      "es": "He pretended to be asleep."
+    },
+    {
+      "id": "rep-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "They urged us to stay at home.", "es": "Nos instaron a quedarnos en casa." },
+      "es": "They urged us to stay at home."
+    },
+    {
+      "id": "rep-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "She apologized for the mistake.", "es": "Se disculpó por el error." },
+      "es": "She apologized for the mistake."
     }
   ]
 }

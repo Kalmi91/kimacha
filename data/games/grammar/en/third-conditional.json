@@ -1128,6 +1128,277 @@
           "en": "had I known"
         }
       ]
+    },
+    {
+      "id": "tcn-cloze-01",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "If I ___ the news, I would have called you.",
+      "answers": [
+        "had read"
+      ],
+      "tr": { "en": "If I had read the news, I would have called you.", "es": "Si hubiera leído la noticia, te habría llamado." },
+      "why": {
+        "en": "The if-clause of the third conditional takes the past perfect: had + participle.",
+        "es": "La cláusula con if del tercer condicional lleva el past perfect: had + participio."
+      }
+    },
+    {
+      "id": "tcn-cloze-02",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "She ___ the exam if she had studied harder.",
+      "answers": [
+        "would have passed"
+      ],
+      "tr": { "en": "She would have passed the exam if she had studied harder.", "es": "Habría aprobado el examen si hubiera estudiado más." },
+      "why": {
+        "en": "The result uses would have + participle: would have passed.",
+        "es": "El resultado usa would have + participio: would have passed."
+      }
+    },
+    {
+      "id": "tcn-cloze-03",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "If we ___ the map, we ___ the hotel.",
+      "answers": [
+        "had brought",
+        "would have found"
+      ],
+      "tr": { "en": "If we had brought the map, we would have found the hotel.", "es": "Si hubiéramos traído el mapa, habríamos encontrado el hotel." },
+      "why": {
+        "en": "Both parts talk about the past: had + participle in the if-clause, would have + participle in the result.",
+        "es": "Las dos partes hablan del pasado: had + participio en la cláusula con if, would have + participio en el resultado."
+      }
+    },
+    {
+      "id": "tcn-cloze-04",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "If he ___ so late, he ___ the train.",
+      "answers": [
+        "hadn’t left",
+        "wouldn’t have missed"
+      ],
+      "accept": [
+        [
+          "had not left"
+        ],
+        [
+          "would not have missed"
+        ]
+      ],
+      "tr": { "en": "If he hadn’t left so late, he wouldn’t have missed the train.", "es": "Si no hubiera salido tan tarde, no habría perdido el tren." },
+      "why": {
+        "en": "The negative uses hadn’t in the if-clause and wouldn’t have in the result.",
+        "es": "La negación usa hadn’t en la cláusula con if y wouldn’t have en el resultado."
+      }
+    },
+    {
+      "id": "tcn-cloze-05",
+      "kind": "opencloze",
+      "trial": true,
+      "text": "If I ___ more money, I ___ the bike.",
+      "answers": [
+        "had had",
+        "could have bought"
+      ],
+      "tr": { "en": "If I had had more money, I could have bought the bike.", "es": "Si hubiera tenido más dinero, habría podido comprar la bicicleta." },
+      "why": {
+        "en": "Could have + participle says that something was possible but did not happen; had had is the past perfect of have.",
+        "es": "Could have + participio dice que algo era posible pero no ocurrió; had had es el past perfect de have."
+      }
+    },
+    {
+      "id": "tcn-fix-01",
+      "kind": "fix",
+      "trial": true,
+      "es": "If I have known, I would have called you.",
+      "wrongIndex": 2,
+      "answer": "had",
+      "explain": {
+        "en": "The if-clause needs the past perfect, so it takes had, not have.",
+        "es": "La cláusula con if necesita el past perfect, así que lleva had, no have."
+      },
+      "tr": { "en": "If I had known, I would have called you.", "es": "Si lo hubiera sabido, te habría llamado." }
+    },
+    {
+      "id": "tcn-fix-02",
+      "kind": "fix",
+      "trial": true,
+      "es": "If she had studied, she will have passed the exam.",
+      "wrongIndex": 5,
+      "answer": "would",
+      "explain": {
+        "en": "The result of a third conditional takes would, not will.",
+        "es": "El resultado de un tercer condicional lleva would, no will."
+      },
+      "tr": { "en": "If she had studied, she would have passed the exam.", "es": "Si hubiera estudiado, habría aprobado el examen." }
+    },
+    {
+      "id": "tcn-fix-03",
+      "kind": "fix",
+      "trial": true,
+      "es": "If they had told us, we would have came.",
+      "wrongIndex": 8,
+      "answer": "come",
+      "explain": {
+        "en": "After would have comes the participle: come, not the past form came.",
+        "es": "Después de would have va el participio: come, no la forma de pasado came."
+      },
+      "tr": { "en": "If they had told us, we would have come.", "es": "Si nos lo hubieran dicho, habríamos venido." }
+    },
+    {
+      "id": "tcn-fix-04",
+      "kind": "fix",
+      "trial": true,
+      "es": "If she had listened, she wouldn’t have make that mistake.",
+      "wrongIndex": 7,
+      "answer": "made",
+      "explain": {
+        "en": "After wouldn’t have the verb is a participle: make → made.",
+        "es": "Después de wouldn’t have el verbo va en participio: make → made."
+      },
+      "tr": { "en": "If she had listened, she wouldn’t have made that mistake.", "es": "Si hubiera escuchado, no habría cometido ese error." }
+    },
+    {
+      "id": "tcn-fix-05",
+      "kind": "fix",
+      "trial": true,
+      "es": "If we had known about the party, we would of come.",
+      "wrongIndex": 9,
+      "answer": "have",
+      "explain": {
+        "en": "It is would have, not would of: we only say “of” because would’ve sounds the same.",
+        "es": "Es would have, no would of: se oye «of» solo porque would’ve suena igual."
+      },
+      "tr": { "en": "If we had known about the party, we would have come.", "es": "Si hubiéramos sabido de la fiesta, habríamos venido." }
+    },
+    {
+      "id": "tcn-bank-01",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "miss",
+        "wash",
+        "cook"
+      ],
+      "es": "If you had left earlier, you wouldn’t have ___ the bus.",
+      "word": "miss",
+      "answer": "missed",
+      "tr": { "en": "If you had left earlier, you wouldn’t have missed the bus.", "es": "Si hubieras salido antes, no habrías perdido el autobús." },
+      "why": {
+        "en": "After wouldn’t have, use the participle: miss → missed.",
+        "es": "Después de wouldn’t have, usa el participio: miss → missed."
+      }
+    },
+    {
+      "id": "tcn-bank-02",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "win",
+        "carry",
+        "wash"
+      ],
+      "es": "If our team had played better, we would have ___ the match.",
+      "word": "win",
+      "answer": "won",
+      "tr": { "en": "If our team had played better, we would have won the match.", "es": "Si nuestro equipo hubiera jugado mejor, habríamos ganado el partido." },
+      "why": {
+        "en": "The participle of win is irregular: win → won.",
+        "es": "El participio de win es irregular: win → won."
+      }
+    },
+    {
+      "id": "tcn-bank-03",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "take",
+        "write",
+        "drink"
+      ],
+      "es": "If I had had a car, I wouldn’t have ___ a taxi.",
+      "word": "take",
+      "answer": "taken",
+      "tr": { "en": "If I had had a car, I wouldn’t have taken a taxi.", "es": "Si hubiera tenido coche, no habría tomado un taxi." },
+      "why": {
+        "en": "The participle of take is irregular: take → taken.",
+        "es": "El participio de take es irregular: take → taken."
+      }
+    },
+    {
+      "id": "tcn-bank-04",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "had",
+        "would",
+        "have"
+      ],
+      "es": "If she ___ been there, she would have helped us.",
+      "word": "had",
+      "answer": "had",
+      "tr": { "en": "If she had been there, she would have helped us.", "es": "Si hubiera estado allí, nos habría ayudado." },
+      "why": {
+        "en": "The if-clause starts with had + participle: had been.",
+        "es": "La cláusula con if empieza con had + participio: had been."
+      }
+    },
+    {
+      "id": "tcn-bank-05",
+      "kind": "bank",
+      "trial": true,
+      "bank": [
+        "would",
+        "had",
+        "has"
+      ],
+      "es": "She ___ have come if we had invited her.",
+      "word": "would",
+      "answer": "would",
+      "tr": { "en": "She would have come if we had invited her.", "es": "Habría venido si la hubiéramos invitado." },
+      "why": {
+        "en": "The result clause has would + have + participle; had belongs to the if-clause.",
+        "es": "La cláusula del resultado lleva would + have + participio; had pertenece a la cláusula con if."
+      }
+    },
+    {
+      "id": "tcn-order-01",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "If we had left earlier, we would have been on time.", "es": "Si hubiéramos salido antes, habríamos llegado a tiempo." },
+      "es": "If we had left earlier, we would have been on time."
+    },
+    {
+      "id": "tcn-order-02",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "I would have helped you if you had asked me.", "es": "Te habría ayudado si me lo hubieras pedido." },
+      "es": "I would have helped you if you had asked me."
+    },
+    {
+      "id": "tcn-order-03",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "If it hadn’t rained, we would have gone to the beach.", "es": "Si no hubiera llovido, habríamos ido a la playa." },
+      "es": "If it hadn’t rained, we would have gone to the beach."
+    },
+    {
+      "id": "tcn-order-04",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "He wouldn’t have been late if he had taken a taxi.", "es": "No habría llegado tarde si hubiera tomado un taxi." },
+      "es": "He wouldn’t have been late if he had taken a taxi."
+    },
+    {
+      "id": "tcn-order-05",
+      "kind": "order",
+      "trial": true,
+      "prompt": { "en": "If they had told us, we could have helped.", "es": "Si nos lo hubieran dicho, habríamos podido ayudar." },
+      "es": "If they had told us, we could have helped."
     }
   ]
 }
