@@ -46,7 +46,7 @@ import { styles } from '@/components/grammar/GrammarTopic.styles';
 // The test phase is the exception, its card carries the question's part and lives in LessonTest.
 export default function GrammarLessonScreen() {
   const topic = useGrammarTopic();
-  const { topicId, level, contentLang, learnedLang, lesson, phase, score, drillItemId, dock } = topic;
+  const { topicId, level, contentLang, learnedLang, lesson, phase, score, drillItemId } = topic;
   const feedbackPhase = !lesson
     ? 'soon'
     : phase === 'test'
@@ -64,7 +64,6 @@ export default function GrammarLessonScreen() {
           level={level}
           languagePair={`${contentLang}→${learnedLang}`}
           currentCard={`grammar:${topicId}:${feedbackPhase}`}
-          bottomOffset={lesson && phase === 'drill' ? dock.bottomOffset : undefined}
         />
       ) : null}
     </>

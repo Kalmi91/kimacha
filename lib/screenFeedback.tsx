@@ -3,9 +3,10 @@ import { createContext, useContext, useEffect, useId, useMemo, useState, type Co
 import FeedbackButton from '@/components/FeedbackModal';
 
 // The 💬 button is mounted once per screen frame, not by every screen. A screen only says which card it is on
-// (<ScreenFeedback level languagePair currentCard />, plus bottomOffset / placement where it had them); the frame
+// (<ScreenFeedback level languagePair currentCard />, plus placement where it sits in the screen's own row); the frame
 // (<ScreenFeedbackFrame>, wired into the root stack's and the tab navigator's screenLayout) draws the one button
-// from the newest card registered in it. A screen in a nested stack (grammar, mistakes) registers into the same
+// from the newest card registered in it, in the screen's top right corner (the Learn card's button, the one standard
+// place; there is no floating / draggable button any more). A screen in a nested stack (grammar, mistakes) registers into the same
 // frame as the screen under it: the top one wins, and it hands the button back when it closes.
 //
 // `placement="inline"` is the exception: that button sits in the screen's own row, so ScreenFeedback renders it in
@@ -41,13 +42,13 @@ export function ScreenFeedbackFrame({ children }: { children: ReactNode }) {
 export default function ScreenFeedback(props: ScreenFeedbackCard) {
   const registry = useContext(ScreenFeedbackContext);
   const id = useId();
-  const { placement = 'fab', level, languagePair, currentCard, draggable, bottomOffset } = props;
+  const { placement = 'corner', level, languagePair, currentCard } = props;
   const hosted = registry !== null && placement !== 'inline';
 
   useEffect(() => {
     if (!registry || !hosted) return;
-    registry.set(id, { placement, level, languagePair, currentCard, draggable, bottomOffset });
-  }, [registry, hosted, id, placement, level, languagePair, currentCard, draggable, bottomOffset]);
+    registry.set(id, { placement, level, languagePair, currentCard });
+  }, [registry, hosted, id, placement, level, languagePair, currentCard]);
   useEffect(() => {
     if (!registry) return;
     return () => registry.clear(id);

@@ -1,4 +1,4 @@
-// The compact Learn header's parts: the `compact` 💬 button (level-chip sized, every other caller unchanged),
+// The compact Learn header's parts: the 💬 button (level-chip sized everywhere since E206),
 // BadgeRow `singleLine`, and the continuous progress bar (ProgressBar `continuous`).
 
 jest.mock('@/lib/speech', () => require('@/test-utils/mocks').speechMock());
@@ -32,9 +32,9 @@ const rowStyleOf = (label: TestNode) => {
 const items = [{ label: 'total 12' }, { label: 'due 3', tone: 'blue' as const }, { label: 'XP 10/50', tone: 'accent' as const, tabular: true }];
 
 describe('compact 💬 button', () => {
-  it('compact is the level chip size, a button without it keeps 40x40', async () => {
+  it('every placement is the level chip size (the Learn card button)', async () => {
     await getDb().setGrammarPalette('brand');
-    const compact = render(wrap(<FeedbackButton placement="inline" compact level="B1" languagePair="es-en" currentCard="pcic" />));
+    const compact = render(wrap(<FeedbackButton placement="inline" level="B1" languagePair="es-en" currentCard="pcic" />));
     await waitFor(() => {
       const box = StyleSheet.flatten(compact.getByTestId('feedback-fab').props.style);
       expect(box.width).toBe(HEADER_CHIP.width);
@@ -42,18 +42,18 @@ describe('compact 💬 button', () => {
     }, SETTLE);
     compact.unmount();
 
-    const plain = render(wrap(<FeedbackButton placement="inline" level="B1" languagePair="es-en" currentCard="pcic" />));
+    const plain = render(wrap(<FeedbackButton level="B1" languagePair="es-en" currentCard="pcic" />));
     await waitFor(() => {
       const box = StyleSheet.flatten(plain.getByTestId('feedback-fab').props.style);
-      expect(box.width).toBe(40);
-      expect(box.height).toBe(40);
+      expect(box.width).toBe(HEADER_CHIP.width);
+      expect(box.height).toBe(HEADER_CHIP.height);
     }, SETTLE);
     plain.unmount();
   });
 
   it('classic palette: compact is a pill the size of the level chip', async () => {
     await getDb().setGrammarPalette('classic');
-    const view = render(wrap(<FeedbackButton placement="inline" compact level="B1" languagePair="es-en" currentCard="pcic" />));
+    const view = render(wrap(<FeedbackButton placement="inline" level="B1" languagePair="es-en" currentCard="pcic" />));
     await waitFor(() => {
       const button = StyleSheet.flatten(view.getByLabelText('Feedback').props.style);
       expect(button.width).toBe(HEADER_CHIP.width);

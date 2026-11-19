@@ -1,9 +1,9 @@
 import { useContext, useEffect, useRef, useState, type ReactNode } from 'react';
-import { StyleSheet, View, Pressable, TextInput, Modal, PanResponder, Dimensions, Share, Platform } from 'react-native';
+import { StyleSheet, View, Pressable, TextInput, Modal, Share, Platform } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Text } from '@/components/KText';
 import { TitleText, themedInputStyle } from '@/components/grammar/Themed';
 import Colors from '@/constants/Colors';
-import { FEEDBACK_FAB_MARGIN, FEEDBACK_FAB_SIZE } from '@/constants/FeedbackFab';
 import { dismissKeyboardOnTap } from '@/lib/keyboardTap';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
@@ -11,12 +11,10 @@ import { BrutalBox, BrutalButton } from '@/components/grammar/Brutal';
 import CheckMark from '@/components/CheckMark';
 import { t } from '@/lib/i18n';
 import { useFocusOnNewCard } from '@/lib/learn/useFocusOnNewCard';
-import { useLearner } from '@/lib/learner';
 import { feedbackBuildTag } from '@/lib/appBuild';
 import { IS_PLAY_BUILD, FEEDBACK_URL } from '@/lib/buildFlavor';
 import { FeedbackHeaderContext } from '@/lib/feedbackHeader';
 import { HEADER_CHIP } from '@/components/learn/pcicStyles';
-import { useWebKeyboardOpen } from '@/lib/webKeyboard';
 import { loadSession } from '@/lib/cloud/session';
 
 // Maintainer: "if feedback comes from the web, show the account it was sent from".
@@ -31,23 +29,16 @@ interface Props {
   level: string;
   languagePair: string;
   currentCard: string;
-  // tree tab only, lets the user drag the button to the other side of
-  // the screen; the chosen side persists (learn_settings.feedback_btn_side).
-  draggable?: boolean;
-  // extra room under the button, for screens that dock something along the
-  // bottom edge (the learn card's Check bar) which the button would otherwise cover.
-  bottomOffset?: number;
-  // 'fab' (default): the round button floating over the screen's bottom right corner (screens without a header).
+  // 'corner' (default, the standard): the Learn card's 💬 (the level chip's size) in the screen's top right corner, inside
+  //   the top safe area; a screen with its own top row keeps that row clear of it.
   // 'header': in the right end of the tab navigator's header (headerRight); with no navigator around (a test) it sits
-  //   in the screen's top right corner instead. 'inline': a header-sized button in the normal layout flow, for a screen
-  //   that draws its own top row (the Learn tab, the neo-brutalist Course tab).
-  placement?: 'fab' | 'header' | 'inline';
-  // the Learn header's 💬 is the size of the level chip (HEADER_CHIP); only for the 'inline' / corner slots, never the fab.
-  compact?: boolean;
+  //   in the corner instead. 'inline': the same button in the normal layout flow, at the right end of the screen's own
+  //   top row (the Learn tab, the neo-brutalist Course tab).
+  placement?: 'corner' | 'header' | 'inline';
 }
 
-// `corner`: the 'header' button of a screen without a navigator header around it (jest renders the screens bare).
-type Slot = 'fab' | 'inline' | 'corner';
+// `corner`: the standard top right placement, also the 'header' button of a screen without a navigator header around it.
+type Slot = 'inline' | 'corner';
 
 // The modal's box is a BrutalBox on the brutalist palette, today's card on the classic palette.
 function ModalBox({ children }: { children: ReactNode }) {
@@ -62,7 +53,7 @@ function ModalBox({ children }: { children: ReactNode }) {
   return <View style={[styles.modal, { backgroundColor: g.paper }]}>{children}</View>;
 }
 
-function FeedbackControl({ level, languagePair, currentCard, draggable = false, bottomOffset = 0, compact = false, slot }: Omit<Props, 'placement'> & { slot: Slot }) {
+function FeedbackControl({ level, languagePair, currentCard, slot }: Omit<Props, 'placement'> & { slot: Slot }) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const g = useGrammarColors();
@@ -75,29 +66,7 @@ function FeedbackControl({ level, languagePair, currentCard, draggable = false, 
   const [sending, setSending] = useState(false);
   const [showThanks, setShowThanks] = useState(false);
   const [sendError, setSendError] = useState(false);
-  const { feedbackBtnSide: side, refresh, setFeedbackBtnSide } = useLearner();
-  const webKeyboardOpen = useWebKeyboardOpen();
-
-  useEffect(() => {
-    if (!draggable) return;
-    void refresh(['feedbackBtnSide']);
-  }, [draggable, refresh]);
-
-  // Lazy useState rather than useRef().current: the responder must survive
-  // re-renders, but reading a ref during render is not allowed.
-  const [panResponder] = useState(() =>
-    PanResponder.create({
-      // Only claim the gesture once the finger has actually moved (|dx|>10);
-      // small movements/taps fall through to the Pressable's onPress.
-      onMoveShouldSetPanResponder: (_evt, gestureState) => Math.abs(gestureState.dx) > 10,
-      onPanResponderRelease: (evt, _gestureState) => {
-        const screenWidth = Dimensions.get('window').width;
-        const releasedX = evt.nativeEvent.pageX;
-        const newSide: 'left' | 'right' = releasedX < screenWidth / 2 ? 'left' : 'right';
-        void setFeedbackBtnSide(newSide);
-      },
-    })
-  );
+  const { top } = useSafeAreaInsets();
 
   const handleSend = async () => {
     if (!text.trim()) return;
@@ -167,41 +136,27 @@ function FeedbackControl({ level, languagePair, currentCard, draggable = false, 
     setTimeout(() => setShowThanks(false), 2000);
   };
 
-  const small = compact && slot !== 'fab';
-
   return (
     <>
       <Pressable
         accessibilityRole="button"
         accessibilityLabel={s.feedback.button}
-        hitSlop={slot === 'fab' ? undefined : 4}
+        hitSlop={4}
         style={[
-          slot === 'fab' ? styles.fab : small ? styles.compactSlot : styles.slot,
-          slot === 'corner' && styles.corner,
+          styles.slot,
+          slot === 'corner' && [styles.corner, { top: top + 8 }],
           { backgroundColor: colors.tint },
-          g.brutal && (slot === 'fab' ? styles.brutalFab : small ? styles.brutalCompactSlot : styles.brutalSlot),
-          slot === 'fab' && draggable && (side === 'left' ? styles.fabLeft : styles.fabRight),
-          slot === 'fab' && bottomOffset > 0 && { bottom: FEEDBACK_FAB_MARGIN + bottomOffset },
-          // In a short window the floating button lands on the field being typed in. Hidden, not unmounted: the feedback
-          // form below lives in this component, and its own field is what opens the keyboard.
-          slot === 'fab' && webKeyboardOpen && styles.fabHidden,
+          g.brutal && styles.brutalSlot,
         ]}
         onPress={() => setVisible(true)}
-        {...(draggable ? panResponder.panHandlers : {})}
       >
         {g.brutal ? (
-          // A square BrutalBox with the fill instead of the circle.
-          <BrutalBox
-            testID="feedback-fab"
-            fill="a"
-            // the compact box uses the same offset as the Learn level chip's BrutalBox, so the two shadows match
-            offset={small ? 2 : undefined}
-            boxStyle={slot === 'fab' ? styles.brutalFabBox : small ? styles.brutalCompactBox : styles.brutalSlotBox}
-          >
-            <Text style={slot === 'fab' ? styles.fabText : small ? styles.compactText : styles.slotText}>💬</Text>
+          // A square BrutalBox with the fill instead of the circle; the offset is the Learn level chip's, so the shadows match.
+          <BrutalBox testID="feedback-fab" fill="a" offset={2} boxStyle={styles.brutalSlotBox}>
+            <Text style={styles.slotText}>💬</Text>
           </BrutalBox>
         ) : (
-          <Text style={slot === 'fab' ? styles.fabText : small ? styles.compactText : styles.slotText}>💬</Text>
+          <Text style={styles.slotText}>💬</Text>
         )}
       </Pressable>
 
@@ -268,7 +223,7 @@ function FeedbackControl({ level, languagePair, currentCard, draggable = false, 
 }
 
 export default function FeedbackButton(props: Props) {
-  const { placement = 'fab', level, languagePair, currentCard, draggable, bottomOffset, compact } = props;
+  const { placement = 'corner', level, languagePair, currentCard } = props;
   // Set by the tabs layout around every screen; null where there is no navigator header (a test renders the screen bare).
   const setHeaderRight = useContext(FeedbackHeaderContext);
   const inHeader = placement === 'header' && setHeaderRight !== null;
@@ -293,72 +248,24 @@ export default function FeedbackButton(props: Props) {
       level={level}
       languagePair={languagePair}
       currentCard={currentCard}
-      draggable={draggable}
-      bottomOffset={bottomOffset}
-      compact={compact}
-      slot={placement === 'header' ? 'corner' : placement}
+      slot={placement === 'inline' ? 'inline' : 'corner'}
     />
   );
 }
 
 const styles = StyleSheet.create({
   sendError: { color: '#EF4444', fontWeight: '600', marginBottom: 8 },
-  fab: {
-    position: 'absolute',
-    bottom: FEEDBACK_FAB_MARGIN,
-    right: FEEDBACK_FAB_MARGIN,
-    width: 52,
-    height: 52,
-    borderRadius: 26,
-    alignItems: 'center',
-    justifyContent: 'center',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.25,
-    shadowRadius: 8,
-    elevation: 6,
-    zIndex: 100,
-  },
-  // draggable tree-tab button only, override fab's default right:24
-  // to switch sides (left clears the inherited right, and vice versa).
-  fabHidden: { display: 'none' },
-  fabLeft: {
-    left: FEEDBACK_FAB_MARGIN,
-    right: undefined,
-  },
-  fabRight: {
-    right: FEEDBACK_FAB_MARGIN,
-    left: undefined,
-  },
-  // The Pressable is a transparent holder, the box is the BrutalBox (52 + 3 px shadow).
-  brutalFab: {
-    width: FEEDBACK_FAB_SIZE,
-    height: FEEDBACK_FAB_SIZE,
-    borderRadius: 0,
-    backgroundColor: 'transparent',
-    shadowOpacity: 0,
-    elevation: 0,
-  },
-  brutalFabBox: { width: 52, height: 52, alignItems: 'center', justifyContent: 'center' },
-  // The header-sized button (placement 'header' / 'inline'): 40 px, in the layout flow, no shadow.
-  slot: { width: 40, height: 40, borderRadius: 20, alignItems: 'center', justifyContent: 'center' },
+  // The Learn card's button (the level chip's size, HEADER_CHIP): in the layout flow, no shadow. The brutal holder adds the box's 2 px shadow.
+  slot: { width: HEADER_CHIP.width, height: HEADER_CHIP.height, borderRadius: HEADER_CHIP.height / 2, alignItems: 'center', justifyContent: 'center' },
   corner: { position: 'absolute', top: 8, right: 8, zIndex: 100 },
   // the native header has no padding at its right end (the web one does): the button's shadow would sit on the screen edge.
   headerEnd: { marginRight: Platform.OS === 'web' ? 0 : 16 },
-  brutalSlot: { width: 44, height: 44, borderRadius: 0, backgroundColor: 'transparent' },
-  brutalSlotBox: { width: 40, height: 40, alignItems: 'center', justifyContent: 'center' },
-  slotText: { fontSize: 20 },
-  // Learn header, `compact`: the level chip's size. The brutal holder adds the box's 2 px shadow to the box size.
-  compactSlot: { width: HEADER_CHIP.width, height: HEADER_CHIP.height, borderRadius: HEADER_CHIP.height / 2, alignItems: 'center', justifyContent: 'center' },
-  brutalCompactSlot: { width: HEADER_CHIP.width + 2, height: HEADER_CHIP.height + 2, borderRadius: 0, backgroundColor: 'transparent' },
-  brutalCompactBox: { width: HEADER_CHIP.width, height: HEADER_CHIP.height, alignItems: 'center', justifyContent: 'center' },
-  compactText: { fontSize: 15 },
+  brutalSlot: { width: HEADER_CHIP.width + 2, height: HEADER_CHIP.height + 2, borderRadius: 0, backgroundColor: 'transparent' },
+  brutalSlotBox: { width: HEADER_CHIP.width, height: HEADER_CHIP.height, alignItems: 'center', justifyContent: 'center' },
+  slotText: { fontSize: 15 },
   brutalModalOuter: {},
   brutalModal: { padding: 24 },
   brutalModalBtn: { flex: 1 },
-  fabText: {
-    fontSize: 24,
-  },
   overlay: {
     flex: 1,
     backgroundColor: 'rgba(0,0,0,0.5)',

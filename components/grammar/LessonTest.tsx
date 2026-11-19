@@ -161,7 +161,6 @@ export default function LessonTest({
           level={level}
           languagePair={`${contentLang}→${learnedLang}`}
           currentCard={`grammar:${topicId}:lessontest:${part}`}
-          bottomOffset={bottomOffset}
         />
       ) : null}
     </View>

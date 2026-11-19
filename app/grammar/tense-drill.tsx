@@ -24,6 +24,7 @@ import type { DeLevel } from '@/lib/deForms';
 import type { DeDrillTense } from '@/lib/deConjugate';
 import { DE_DRILL_LEVELS, buildTenseRound, gradeTense, tensesAtLevel, type TenseQuestion } from '@/lib/games/deTenseDrill';
 import ScreenFeedback from '@/lib/screenFeedback';
+import { FEEDBACK_CORNER_CLEAR } from '@/components/learn/pcicStyles';
 import XpChip from '@/components/XpChip';
 import { awardXpThen } from '@/lib/xpAward';
 import FitText from '@/components/FitText';
@@ -134,7 +135,7 @@ export default function TenseDrillScreen() {
   const header = (
     <View style={[styles.header, brutalHeaderRowStyle(g)]}>
       <BackButton testID="tensedrill-back" onPress={() => (phase === 'play' ? setPhase('setup') : router.back())} arrowStyle={[styles.back, { color: colors.text }]} />
-      <FitText variant="title" base={17} maxLines={2} reserve={g.brutal ? 190 : 150} caps={g.brutal} style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]}>
+      <FitText variant="title" base={17} maxLines={2} reserve={(g.brutal ? 190 : 150) + FEEDBACK_CORNER_CLEAR} caps={g.brutal} style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]}>
         {d.title}
       </FitText>
       {phase === 'play' ? (
@@ -144,9 +145,8 @@ export default function TenseDrillScreen() {
           classicStyle={[styles.progressChip, { backgroundColor: colors.tint }]}
           classicTextStyle={[styles.progressChipText, { color: colors.onTint }]}
         />
-      ) : (
-        <View style={styles.headerSpacer} />
-      )}
+      ) : null}
+      <View style={styles.headerSpacer} />
     </View>
   );
 
@@ -312,7 +312,7 @@ export default function TenseDrillScreen() {
         onHeight={setDockH}
       />
 
-      <ScreenFeedback level={level} languagePair={`${contentLang}→de`} currentCard={`grammar:tense-drill:${current.id}`} bottomOffset={dockH + dockLift} />
+      <ScreenFeedback level={level} languagePair={`${contentLang}→de`} currentCard={`grammar:tense-drill:${current.id}`} />
     </KeyboardAvoidingView>
   );
 }
@@ -321,7 +321,7 @@ const styles = StyleSheet.create({
   container: { flex: 1, padding: 20, justifyContent: 'flex-start' },
   centered: { justifyContent: 'center' },
   header: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 8, marginBottom: 12 },
-  headerSpacer: { width: 24 },
+  headerSpacer: { width: FEEDBACK_CORNER_CLEAR },
   back: { fontSize: 22 },
   title: { flex: 1, textAlign: 'center', fontSize: 17, fontWeight: '700', paddingHorizontal: 8 },
   brutalTitle: { textTransform: 'uppercase', fontWeight: '500' },
