@@ -24,8 +24,10 @@ export interface LearnSessionOptions {
 export function pickLearnSession(cards: Sm2Card[], order: string[], opts: LearnSessionOptions): Sm2Card[] {
   const queue = pickSm2Session(cards, order, opts.srsDay, opts.newLimit, opts.calendarDay)
     .filter((c) => !opts.parked?.includes(c.itemId));
-  const reviews = queue.filter((c) => c.state !== 'new');
-  return opts.noPileUp && reviews.length > 0 ? reviews : queue;
+  // A new word missed earlier today belongs to the new-word phase, not to the leftover reviews, so rebuilding the
+  // queue (tab switch, reopening the app) keeps the rest of the day's new words next to it.
+  const hasReviews = queue.some((c) => isReview(c, opts.calendarDay));
+  return opts.noPileUp && hasReviews ? queue.filter((c) => c.state !== 'new') : queue;
 }
 
 /** Add the remaining daily budget as soon as the reviews finish, including after a parked miss. */
@@ -35,6 +37,13 @@ export function continueLearnSession(queue: QueuedSm2Card[], cards: Sm2Card[], o
   // Undoing the last review hides the fresh cards again; misses in the new-word phase keep their existing gate.
   if (active.some((c) => c.state !== 'new' && reviewIds.has(c.itemId))) return active.filter((c) => c.state !== 'new');
   return active.length > 0 ? active : pickLearnSession(cards, order, opts);
+}
+
+/** "Don't learn this" on a new word: the day's next new word takes its place, so the skip does not shrink the day's batch. */
+export function skipReplacement(queue: QueuedSm2Card[], cards: Sm2Card[], order: string[], opts: LearnSessionOptions): Sm2Card | null {
+  const inQueue = new Set(queue.map((c) => c.itemId));
+  return pickSm2Session(cards, order, opts.srsDay, opts.newLimit, opts.calendarDay)
+    .find((c) => c.state === 'new' && !inQueue.has(c.itemId) && !opts.parked?.includes(c.itemId)) ?? null;
 }
 
 export const DEFAULT_AGAIN_DELAY_SEC = 60;

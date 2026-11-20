@@ -256,7 +256,8 @@ describe('sm2MarkKnown', () => {
     expect(known.due).toBe(addDays(TODAY, KNOWN_INTERVAL_DAYS));
     expect(known.ease).toBe(2.5);
     expect(known.known).toBe(true);
-    expect(known.introducedAt).toBe(TODAY);
+    // Never introduced: it does not use up the day's new-word budget.
+    expect(known.introducedAt).toBeNull();
   });
 
   it('for a review card the ease stays', () => {

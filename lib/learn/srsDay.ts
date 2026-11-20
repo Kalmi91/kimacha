@@ -26,10 +26,11 @@ export function readSrsDay(value: unknown, calendarDay: string): SrsDayState {
 export function stepSrsDay(value: unknown, calendarDay: string, hasReviews: boolean, enabled = true): SrsDayState {
   const state = readSrsDay(value, calendarDay);
   if (!enabled) return { srsDay: calendarDay, srsDayStepOn: calendarDay };
-  if (state.srsDayStepOn < calendarDay && !hasReviews) {
-    return { srsDay: state.srsDay < calendarDay ? addDays(state.srsDay, 1) : calendarDay, srsDayStepOn: calendarDay };
-  }
-  return state;
+  if (state.srsDayStepOn >= calendarDay) return state;
+  // The first Learn load of the calendar day decides the day's step, so finishing the leftover reviews
+  // later the same day does not step the clock (the relearned cards would come back the same day).
+  const stepped = state.srsDay < calendarDay ? addDays(state.srsDay, 1) : calendarDay;
+  return { srsDay: hasReviews ? state.srsDay : stepped, srsDayStepOn: calendarDay };
 }
 
 /** Read only: Practice, Sentences and counters never advance the learning clock. */
@@ -39,8 +40,13 @@ export async function loadSrsDay(db: Pick<DB, 'getSrsDay' | 'getNoPileUp'>, cale
 
 /** Only Learn calls this, after filtering cards to its current level and corpus. */
 export async function advanceLearnSrsDay(db: SrsDayStore, calendarDay: string, cards: Sm2Card[], parked: readonly string[] = []): Promise<string> {
-  if (!await db.getNoPileUp()) return calendarDay;
   const saved = await db.getSrsDay();
+  if (!await db.getNoPileUp()) {
+    // While the setting is off the clock follows the calendar, so turning it back on does not bring back an old lag.
+    const off = stepSrsDay(saved, calendarDay, false, false);
+    if (saved?.srsDay !== off.srsDay || saved?.srsDayStepOn !== off.srsDayStepOn) await db.setSrsDay(off);
+    return calendarDay;
+  }
   const day = readSrsDay(saved, calendarDay).srsDay;
   const hasReviews = pickSm2Session(cards, [], day, 0).some((card) => !parked.includes(card.itemId));
   const next = stepSrsDay(saved, calendarDay, hasReviews);

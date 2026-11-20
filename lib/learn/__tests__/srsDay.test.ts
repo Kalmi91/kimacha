@@ -1,7 +1,7 @@
 import { MemoryDB } from '@/lib/database.web';
 import { advanceLearnSrsDay, loadSrsDay, readSrsDay, stepSrsDay } from '../srsDay';
 import { addDays, sm2NewCard, sm2Review, sm2MarkKnown } from '@/lib/sm2';
-import { continueLearnSession, pickLearnSession, requeueAfterGrade, requeueAfterUndo } from '@/lib/pcicSession';
+import { continueLearnSession, pickLearnSession, requeueAfterGrade, requeueAfterUndo, skipReplacement } from '@/lib/pcicSession';
 import { arrangeQueue, emptyFatigue } from '../fatigue';
 import { DEFAULT_DAILY_NEW_LIMIT } from '@/lib/usageStats';
 
@@ -20,8 +20,11 @@ describe('the learning clock', () => {
     expect(stepSrsDay(next, '2026-11-09', false).srsDay).toBe('2026-11-09');
   });
 
-  it('does not advance an unfinished review day', () => {
-    expect(stepSrsDay(saved, calendarDay, true)).toEqual(saved);
+  it('does not advance an unfinished review day, and finishing it later the same day does not step either', () => {
+    const blocked = stepSrsDay(saved, calendarDay, true);
+    expect(blocked).toEqual({ srsDay, srsDayStepOn: calendarDay });
+    expect(stepSrsDay(blocked, calendarDay, false)).toEqual(blocked);
+    expect(stepSrsDay(blocked, addDays(calendarDay, 1), false)).toEqual({ srsDay: '2026-11-08', srsDayStepOn: addDays(calendarDay, 1) });
   });
 
   it('adds exactly one day after ten missed days, never twice on the same calendar day', () => {
@@ -46,8 +49,8 @@ describe('the learning clock', () => {
     await db.setSrsDay(saved);
     expect(await loadSrsDay(db, calendarDay)).toBe(srsDay);
     expect(await db.getSrsDay()).toEqual(saved);
-    expect(await advanceLearnSrsDay(db, calendarDay, [review('due')])).toBe(srsDay);
     expect(await advanceLearnSrsDay(db, calendarDay, [review('due')], ['due'])).toBe('2026-11-08');
+    expect(await advanceLearnSrsDay(db, calendarDay, [review('due', '2026-11-08')])).toBe('2026-11-08');
     expect(await advanceLearnSrsDay(db, calendarDay, [])).toBe('2026-11-08');
     await db.setOnboarding('hu', 'es');
     expect(await db.getSrsDay()).toBeNull();
@@ -57,7 +60,21 @@ describe('the learning clock', () => {
     await db.setNoPileUp(false);
     expect(await advanceLearnSrsDay(db, calendarDay, [review('due')])).toBe(calendarDay);
     expect(await loadSrsDay(db, calendarDay)).toBe(calendarDay);
-    expect((await db.getSrsDay())?.srsDay).toBe('2026-11-08');
+    // Switched off, the clock follows the calendar; switching back on does not bring the old lag back.
+    expect(await db.getSrsDay()).toEqual({ srsDay: calendarDay, srsDayStepOn: calendarDay });
+    await db.setNoPileUp(true);
+    expect(await loadSrsDay(db, calendarDay)).toBe(calendarDay);
+    expect(await advanceLearnSrsDay(db, calendarDay, [review('due')])).toBe(calendarDay);
+  });
+
+  it('a Learn load on a blocked day stamps the day, so a refocus after the last review keeps the clock', async () => {
+    const db = new MemoryDB();
+    await db.setOnboarding('en', 'es');
+    await db.setSrsDay(saved);
+    expect(await advanceLearnSrsDay(db, calendarDay, [review('due')])).toBe(srsDay);
+    expect(await db.getSrsDay()).toEqual({ srsDay, srsDayStepOn: calendarDay });
+    expect(await advanceLearnSrsDay(db, calendarDay, [review('relearned', addDays(srsDay, 1))])).toBe(srsDay);
+    expect(await advanceLearnSrsDay(db, addDays(calendarDay, 1), [review('relearned', addDays(srsDay, 2))])).toBe('2026-11-08');
   });
 });
 
@@ -94,10 +111,22 @@ describe('reviews before new words', () => {
     expect(continueLearnSession(legacy, [], order, { ...opts, noPileUp: false }, new Set(['due']))).toBe(legacy);
   });
 
+  it('a skipped new word ("Don\'t learn this") keeps the budget and the next new word takes its place', () => {
+    const newOrder = order.slice(1);
+    const queue = pickLearnSession([], newOrder, opts);
+    expect(queue.map((c) => c.itemId)).toEqual(newOrder.slice(0, 5));
+    const known = sm2MarkKnown(queue[0], srsDay, calendarDay);
+    const rest = requeueAfterGrade(queue, known, srsDay);
+    expect(pickLearnSession([known], newOrder, opts).map((c) => c.itemId)).toEqual(newOrder.slice(1, 6));
+    expect(skipReplacement(rest, [known], newOrder, opts)?.itemId).toBe('new-5');
+    expect(skipReplacement(rest, [known], newOrder.slice(0, 5), opts)).toBeNull();
+  });
+
   it('schedules against the learning clock but records introductions and reviews on the calendar', async () => {
     const card = sm2Review(sm2NewCard('new'), 'good', srsDay, calendarDay);
     expect(card).toMatchObject({ due: addDays(srsDay, 1), lastReview: calendarDay, introducedAt: calendarDay });
-    expect(sm2MarkKnown(sm2NewCard('known'), srsDay, calendarDay)).toMatchObject({ due: addDays(srsDay, 60), lastReview: calendarDay, introducedAt: calendarDay });
+    expect(sm2MarkKnown(sm2NewCard('known'), srsDay, calendarDay)).toMatchObject({ due: addDays(srsDay, 60), lastReview: calendarDay, introducedAt: null });
+    expect(sm2MarkKnown(card, srsDay, addDays(calendarDay, 3)).introducedAt).toBe(calendarDay);
     expect(DEFAULT_DAILY_NEW_LIMIT).toBe(5);
     const db = new MemoryDB();
     expect(await db.getDailyNewLimit()).toBe(5);
