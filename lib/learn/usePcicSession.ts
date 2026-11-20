@@ -156,6 +156,16 @@ export function usePcicSession() {
   // In-flight guard of handleGrade: a double tap must not grade the same card twice.
   const gradingRef = useRef(false);
   const pendingSkipRef = useRef(0);
+  const actedRef = useRef<string | null>(null);
+  const pendingRef = useRef(new Set<Promise<unknown>>());
+  const mutationSeqRef = useRef(0);
+  const track = useCallback(<T,>(p: Promise<T>): Promise<T> => {
+    mutationSeqRef.current += 1;
+    pendingRef.current.add(p);
+    const done = () => { pendingRef.current.delete(p); };
+    p.then(done, done);
+    return p;
+  }, []);
   // The input field REMOUNTS on every new card
   // (the TextInput `key` contains this counter). Reason: after Check the field
   // became `editable={false}`, then editable again after Next, on the same
@@ -170,7 +180,9 @@ export function usePcicSession() {
   // `overrideLevel` for the immediate switch coming from the level picker sheet,
   // so that there is no need to wait a render round for setLevel (the new level is
   // already in the db, load() just re-reads it with it).
-  const load = useCallback(async (overrideLevel?: PcicLevel) => {
+  const loadOnce = useCallback(async (overrideLevel?: PcicLevel, final = false): Promise<boolean> => {
+    while (pendingRef.current.size > 0) await Promise.allSettled([...pendingRef.current]);
+    const seq = mutationSeqRef.current;
     const db = getDb();
     const day = localDateString();
     // The target language of the active pair decides which direction's
@@ -235,8 +247,12 @@ export function usePcicSession() {
     // Card-level resume: the saved order and the "again" timers are put back on the rebuilt queue (invalid after a day change / level change).
     const resume = await loadLearnResume(db);
     const picked = pickLearnSession(cards, pcicIntroOrder(newOrder), { srsDay: reviewDay, calendarDay: day, noPileUp, parked, newLimit: pcicSessionNewLimit({ limit: newLimit, bonus, introducedAllLevels, introducedThisLevel: introducedToday }) });
+    const prevReviewIds = reviewIdsRef.current;
     reviewIdsRef.current = new Set(picked.filter((c) => isFatigueReview(c, day)).map((c) => c.itemId));
-    const resumed = arrangeQueue(applyLearnResume(picked, resume, day, lvl), day, loadedFatigue, { ...loadedOptions, mixNew: true });
+    const restored = applyLearnResume(picked, resume, day, lvl);
+    // The card that was on top before leaving stays on top (tired mode, the new-word gate or an expired timer must not re-sort it away).
+    const keepFirst = isLearnResumeFor(resume, day, lvl) && restored[0]?.itemId === resume.order[0];
+    const resumed = arrangeQueue(restored, day, loadedFatigue, { ...loadedOptions, mixNew: true, keepFirst });
     if (fatigueDetector && !loadedFatigue.tired) {
       const run = currentRun(answerLog.recent(pairOf(dir, sourceFor(dir, src)), FATIGUE_DETECTOR.MAX_RUN_ANSWERS), Date.now());
       // Replay this run so an unanswered offer survives reopening even after later answers improve.
@@ -249,6 +265,7 @@ export function usePcicSession() {
     }
     // FB542: reviews left with the new-word budget used up: ask about more new words (lib/pcicSession.ts shouldAskMoreNew).
     const declinedDay = await loadNewDeclinedDay(db, lvl);
+    if (!final && seq !== mutationSeqRef.current) return false;
     setNewDeclinedDay(declinedDay);
     setAskMoreNew(!noPileUp && shouldAskMoreNew(resumed, cards, pcicIntroOrder(newOrder), day, { limit: newLimit, bonus, introducedAllLevels, introducedThisLevel: introducedToday }, declinedDay));
     // A refocus on the same day, level and language pair (tab switch, back from another screen) keeps the session as it
@@ -257,17 +274,20 @@ export function usePcicSession() {
     const sessionKey = `${day}|${lvl}|${src}|${dir}`;
     const sameSession = !overrideLevel && sessionKeyRef.current === sessionKey;
     const sameCard = sameSession && isLearnResumeFor(resume, day, lvl) && resume.order[0] === resumed[0]?.itemId;
+    // The day's reviews stay reviews for the undo gate after a tab switch (C06).
+    if (sameSession) reviewIdsRef.current = new Set([...reviewIdsRef.current, ...prevReviewIds]);
     sessionKeyRef.current = sessionKey;
     const stored = new Map(cards.map((c) => [c.itemId, c]));
     const untouched = (c: Sm2Card) => {
       const s = stored.get(c.itemId);
       return s !== undefined && s.state === c.state && s.due === c.due && s.reps === c.reps && !!s.known === !!c.known;
     };
-    setQueue(resumed, { mixNew: false });
+    setQueue(resumed, { mixNew: false, keepFirst });
     if (isLearnResumeFor(resume, day, lvl) && resume.base !== null) setBatchBase({ day, level: lvl, n: resume.base });
     if (!sameCard) {
       setTypedAnswer('');
       setGrade(null);
+      setArticlePick('');
     }
     if (!sameSession) {
       setSessionAnswered(0);
@@ -278,11 +298,17 @@ export function usePcicSession() {
     setPcicBonus(bonus);
     setLoading(false);
     setLoadSeq((n) => n + 1);
+    return true;
     // setTypedAnswer is listed because the React Compiler infers it as a
     // dependency of this async callback; it
     // is stable, so nothing changes at runtime, but an empty array here counts
     // as broken memoization.
   }, [setTypedAnswer, refresh, setQueue]);
+
+  const load = useCallback(async (overrideLevel?: PcicLevel) => {
+    for (let i = 0; i < 2; i++) if (await loadOnce(overrideLevel)) return;
+    await loadOnce(overrideLevel, true);
+  }, [loadOnce]);
 
   // A refocus with the deck already on screen refreshes it without the spinner.
   useScreenLoad(load, { hasData: !loading, setLoading });
@@ -537,7 +563,7 @@ export function usePcicSession() {
     const top = newTopUp(queue, activeCards, pcicIntroOrder(newOrder), today, { limit: dailyNewLimit, bonus: pcicBonus, introducedAllLevels, introducedThisLevel }, step);
     if (!top) return;
     setPcicBonus(top.bonus);
-    getDb().setPcicNewBonus(top.bonus, today).catch(() => {
+    track(getDb().setPcicNewBonus(top.bonus, today)).catch(() => {
       // the bonus is already in state; a failed write only means it is not remembered
     });
     setQueue((prev) => [...prev, ...top.fresh.filter((c) => !prev.some((p) => p.itemId === c.itemId))]);
@@ -601,23 +627,32 @@ export function usePcicSession() {
   };
 
   const handleGrade = async (g: Sm2Grade) => {
-    if (gradingRef.current) return;
+    if (!current || gradingRef.current || pendingSkipRef.current > 0) return;
+    const key = `${cardSeq}|${loadSeq}`;
+    if (actedRef.current === key) return;
+    actedRef.current = key;
     gradingRef.current = true;
     try {
-      await gradeOnce(g);
+      const advanced = await track(gradeOnce(g));
+      if (!advanced) actedRef.current = null;
+    } catch (e) {
+      actedRef.current = null;
+      throw e;
     } finally {
       gradingRef.current = false;
     }
   };
 
-  const gradeOnce = async (g: Sm2Grade) => {
+  const gradeOnce = async (g: Sm2Grade): Promise<boolean> => {
     const next = await commitGrade(g);
-    if (!next) return;
+    if (!next) return false;
     advance(next, g); noteCardGraded(); // web guest mode counts the cards for its save offer (lib/cloud/guest.ts)
+    return true;
   };
 
   const handleUndo = async () => {
     if (!lastGraded) return;
+    const inner = async () => {
     await getDb().upsertPcicCard(lastGraded.before);
     // Take the grade's XP back, so undo + grade again cannot farm it.
     if (lastGraded.xp) setDailyXp(await addXp(-lastGraded.xp.points, lastGraded.xp.date));
@@ -642,30 +677,41 @@ export function usePcicSession() {
     setGrade(lastGraded.grade);
     setLastGraded(null);
     setAskMoreNew(false);
+    };
+    await track(inner());
   };
 
   const handleDontLearn = async () => {
-    if (!current) return;
-    const before = { ...current };
-    const next = sm2MarkKnown(current, srsDay, today);
-    pendingSkipRef.current += 1;
-    try {
-      await getDb().upsertPcicCard(next);
-    } finally {
-      pendingSkipRef.current -= 1;
-    }
-    setAllCards((prev) => new Map(prev).set(next.itemId, next));
-    const cards = new Map(allCards).set(next.itemId, next);
-    const added = before.state === 'new' ? skipReplacement(queue, [...cards.values()], pcicIntroOrder(newOrder), sessionOpts(cards)) : null;
-    setLastGraded({ before, after: next, typed: typedAnswer, grade, wasNew: false, g: 'good', counted: false, added: added?.itemId });
-    setQueue((prev) => {
-      const requeued = requeueAfterGrade(prev, next, srsDay);
-      return afterReviews(added && !requeued.some((c) => c.itemId === added.itemId) ? [...requeued, added] : requeued, next);
-    });
-    setTypedAnswer('');
-    setArticlePick('');
-    setGrade(null);
-    setCardSeq((n) => n + 1);
+    if (!current || gradingRef.current || pendingSkipRef.current > 0) return;
+    const key = `${cardSeq}|${loadSeq}`;
+    if (actedRef.current === key) return;
+    actedRef.current = key;
+    const inner = async () => {
+      const before = { ...current };
+      const next = sm2MarkKnown(current, srsDay, today);
+      pendingSkipRef.current += 1;
+      try {
+        await getDb().upsertPcicCard(next);
+      } catch (e) {
+        actedRef.current = null;
+        throw e;
+      } finally {
+        pendingSkipRef.current -= 1;
+      }
+      setAllCards((prev) => new Map(prev).set(next.itemId, next));
+      const cards = new Map(allCards).set(next.itemId, next);
+      const added = before.state === 'new' ? skipReplacement(queue, [...cards.values()], pcicIntroOrder(newOrder), sessionOpts(cards)) : null;
+      setLastGraded({ before, after: next, typed: typedAnswer, grade, wasNew: false, g: 'good', counted: false, added: added?.itemId });
+      setQueue((prev) => {
+        const requeued = requeueAfterGrade(prev, next, srsDay);
+        return afterReviews(added && !requeued.some((c) => c.itemId === added.itemId) ? [...requeued, added] : requeued, next);
+      });
+      setTypedAnswer('');
+      setArticlePick('');
+      setGrade(null);
+      setCardSeq((n) => n + 1);
+    };
+    await track(inner());
   };
 
   // Progress reset (the old 🗑️) moved to the Settings tab.
@@ -680,7 +726,7 @@ export function usePcicSession() {
     const next = nextPcicNewBonus({ limit: dailyNewLimit, bonus: pcicBonus, introducedToday: introducedAllLevels }, step);
     setPcicBonus(next);
     setBatchBase({ day: today, level, n: countFinishedToday(activeCards, progressQueue, today) });
-    getDb().setPcicNewBonus(next, today).catch(() => {
+    track(getDb().setPcicNewBonus(next, today)).catch(() => {
       // the bonus is already in state; a failed write only means it is not remembered
     });
     setQueue(
