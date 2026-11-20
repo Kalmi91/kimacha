@@ -16,7 +16,8 @@ const mockPlayer = {
   shouldCorrectPitch: false,
   addListener: jest.fn(() => ({ remove: jest.fn() })),
 };
-jest.mock('@/lib/listeningPlayer', () => ({ makeListeningPlayer: () => mockPlayer }));
+const mockMakePlayer = jest.fn((_lang: string) => mockPlayer);
+jest.mock('@/lib/listeningPlayer', () => ({ makeListeningPlayer: (lang: string) => mockMakePlayer(lang) }));
 
 import { act, fireEvent, render } from '@testing-library/react-native';
 import { BackHandler } from 'react-native';
@@ -25,7 +26,7 @@ import SpeechTab from '@/components/speech/SpeechTab';
 import { getDb } from '@/lib/database';
 import { setLanguage, t } from '@/lib/i18n';
 import { loadResumeValue, saveResumeValue } from '@/lib/resumeStore';
-import { GREETINGS, LISTENING_PROGRESS_KEY, LISTENING_RATE_KEY, LISTENING_RUN_KEY } from '@/lib/speech/listening';
+import { GREETINGS, GREETINGS_EN, LISTENING_PROGRESS_KEY, LISTENING_RATE_KEY, runKeyFor } from '@/lib/speech/listening';
 import { ThemeProvider } from '@/lib/ThemeContext';
 import { makeFlush } from '@/test-utils/flush';
 
@@ -65,10 +66,11 @@ const matchAll = async (view: View) => {
 
 beforeEach(async () => {
   jest.spyOn(BackHandler, 'addEventListener').mockImplementation(() => ({ remove: jest.fn() }));
+  mockMakePlayer.mockClear();
   for (const fn of [mockPlayer.play, mockPlayer.pause, mockPlayer.seekTo, mockPlayer.setPlaybackRate, mockPlayer.remove]) fn.mockClear();
   await getDb().setOnboarding('en', 'es');
   await getDb().resetGameProgress(LISTENING_PROGRESS_KEY);
-  for (const key of [LISTENING_RATE_KEY, LISTENING_RUN_KEY]) await saveResumeValue(getDb(), key, null);
+  for (const key of [LISTENING_RATE_KEY, runKeyFor('es'), runKeyFor('en')]) await saveResumeValue(getDb(), key, null);
 });
 afterEach(() => {
   jest.useRealTimers();
@@ -77,16 +79,39 @@ afterEach(() => {
 });
 
 describe('Speak tab: greetings listening', () => {
-  it('the card is on the list for Spanish only', async () => {
+  it('the card is on the list for Spanish and English, not for other targets', async () => {
     const view = await mount();
     expect(view.getByText(sx.greetTitle)).toBeTruthy();
     expect(view.queryByTestId('speech-listen-done')).toBeNull();
     if (GREETINGS.durationSec > 0) expect(view.getByTestId('speech-listen-length')).toBeTruthy();
     view.unmount();
     await getDb().setOnboarding('es', 'en');
+    const en = await mount();
+    expect(en.getByTestId('speech-listen-card')).toBeTruthy();
+    expect(en.getByText(sx.greetTeaserEn)).toBeTruthy();
+    en.unmount();
+    await getDb().setOnboarding('en', 'hu');
     const other = await mount();
     expect(other.queryByTestId('speech-listen-card')).toBeNull();
     other.unmount();
+  });
+
+  it('English: Play makes the English player, all pairs write the en-greetings row, the runs are kept apart', async () => {
+    await getDb().setOnboarding('es', 'en');
+    const view = await open();
+    await press(view, 'speech-listen-play');
+    expect(mockMakePlayer).toHaveBeenCalledWith('en');
+    expect(view.getByText(sx.matchInstructionEn)).toBeTruthy();
+    const n = GREETINGS_EN.pairs.length;
+    for (let i = 0; i < n; i++) await match(view, i);
+    const rows = await getDb().getGameProgress(LISTENING_PROGRESS_KEY);
+    expect(rows.find((r) => r.itemId === 'en-greetings')?.state).toBe('done');
+    expect(rows.find((r) => r.itemId === GREETINGS.id)).toBeUndefined();
+    view.unmount();
+    const esRun = { seed: 5, matched: [0], mistakes: 0 };
+    await saveResumeValue(getDb(), runKeyFor('es'), esRun);
+    expect(await loadResumeValue(getDb(), runKeyFor('es'))).toEqual(esRun);
+    expect((await loadResumeValue(getDb(), runKeyFor('en')) as { matched: number[] }).matched.length).toBe(n);
   });
 
   it('a saved done row gives the tick', async () => {

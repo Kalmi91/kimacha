@@ -1,4 +1,6 @@
 import greetings from '@/data/listening/greetings-es.json';
+import greetingsEn from '@/data/listening/greetings-en.json';
+import type { PcicTarget } from '@/data/pcic';
 import { shuffleNoFixedPoints } from '@/lib/shuffle';
 
 // The "Greetings: listening" step of the Speak tab: a recording the learner listens to and a matching task (place <-> greeting).
@@ -19,11 +21,19 @@ export interface ListeningData {
 }
 
 export const GREETINGS: ListeningData = greetings;
+export const GREETINGS_EN: ListeningData = greetingsEn;
+
+/** The listening step of a target language (undefined = that target has none). */
+export function listeningFor(target: PcicTarget): ListeningData | undefined {
+  return target === 'es' ? GREETINGS : target === 'en' ? GREETINGS_EN : undefined;
+}
 
 /** The `game_progress` game of the finished listening steps (the item is the data id). */
 export const LISTENING_PROGRESS_KEY = 'speech-listening';
 export const LISTENING_RATE_KEY = 'speech-listen-rate';
 export const LISTENING_RUN_KEY = 'speech-listen-run';
+/** The resume key of the saved run per language (Spanish keeps the original key, so saved runs still work). */
+export const runKeyFor = (lang: string): string => (lang === 'es' ? LISTENING_RUN_KEY : `${LISTENING_RUN_KEY}-${lang}`);
 
 export const RATES: readonly number[] = [0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5];
 export const DEFAULT_RATE = 1;

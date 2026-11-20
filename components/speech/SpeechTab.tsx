@@ -40,7 +40,7 @@ import {
   type StoryRun,
   type StoryWord,
 } from '@/lib/speech/stories';
-import { GREETINGS, LISTENING_PROGRESS_KEY } from '@/lib/speech/listening';
+import { LISTENING_PROGRESS_KEY, listeningFor } from '@/lib/speech/listening';
 import { localDateString } from '@/lib/usageStats';
 import { useLoadOnMount } from '@/lib/useLoadOnMount';
 import { useScreenLoad } from '@/lib/useScreenLoad';
@@ -123,8 +123,9 @@ export default function SpeechTab() {
     const learner = await refresh(['direction', 'strictAccents']);
     setStrictAccents(learner.strictAccents);
     setProgress(progressById(await db.getGameProgress(SPEECH_PROGRESS_KEY)));
-    setListenDone((await db.getGameProgress(LISTENING_PROGRESS_KEY)).some((r) => r.itemId === GREETINGS.id && r.state === 'done'));
     const dir = learner.target;
+    const listenId = listeningFor(dir)?.id;
+    setListenDone(listenId !== undefined && (await db.getGameProgress(LISTENING_PROGRESS_KEY)).some((r) => r.itemId === listenId && r.state === 'done'));
     const pair = pairOf(dir);
     if (shownPair.current === pair) return;
     shownPair.current = pair;

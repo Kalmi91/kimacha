@@ -1,4 +1,4 @@
-import { GREETINGS, RATES, clock, isComplete, newRun, parseRate, parseRun, pick, rightOrder, serializeRun } from '@/lib/speech/listening';
+import { GREETINGS, GREETINGS_EN, RATES, clock, isComplete, newRun, parseRate, parseRun, pick, listeningFor, rightOrder, runKeyFor, serializeRun } from '@/lib/speech/listening';
 
 describe('listening data', () => {
   it('has pairs of a place and a greeting, and a known shape', () => {
@@ -8,6 +8,22 @@ describe('listening data', () => {
       expect(p.greeting).toBeTruthy();
     }
     expect(GREETINGS.durationSec).toBeGreaterThanOrEqual(0);
+  });
+
+  it('English: 12 unique pairs, its own id; other targets have none', () => {
+    expect(GREETINGS_EN.id).toBe('en-greetings');
+    expect(GREETINGS_EN.pairs).toHaveLength(12);
+    expect(new Set(GREETINGS_EN.pairs.map((p) => p.place)).size).toBe(12);
+    expect(new Set(GREETINGS_EN.pairs.map((p) => p.greeting)).size).toBe(12);
+    expect(listeningFor('es')).toBe(GREETINGS);
+    expect(listeningFor('en')).toBe(GREETINGS_EN);
+    expect(listeningFor('hu')).toBeUndefined();
+    expect(listeningFor('de')).toBeUndefined();
+  });
+
+  it('the run key: Spanish keeps the original, English differs', () => {
+    expect(runKeyFor('es')).toBe('speech-listen-run');
+    expect(runKeyFor('en')).not.toBe(runKeyFor('es'));
   });
 });
 
