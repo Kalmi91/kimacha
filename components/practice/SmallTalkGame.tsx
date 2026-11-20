@@ -136,6 +136,7 @@ export default function SmallTalkGame() {
   const submitOwn = (text: string) => {
     rec.abort();
     submitText(text);
+    setHeard(null); // "I heard" is only for the microphone
   };
   // a new item: the tiles, the typed text, the verdict, the microphone and its error are cleared
   const reset = () => {
