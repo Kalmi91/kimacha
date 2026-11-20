@@ -63,7 +63,7 @@ describe.each([
     expect(screen.getByTestId('cloze-why')).toHaveTextContent(CLOZE.why.en);
     expect(screen.getByTestId('cloze-input-0').props.editable).toBe(false);
     fireEvent.press(screen.getByTestId('grammar-next'));
-    expect(onDone).toHaveBeenCalledWith(false);
+    expect(onDone).toHaveBeenCalledWith(false, undefined, expect.any(String));
   });
 
   it('open cloze: Enter moves to the next empty gap (keyboard stays), on the last one it checks', () => {
@@ -116,7 +116,7 @@ describe.each([
     fireEvent.press(screen.getByTestId('cloze-check'));
     expect(screen.getByTestId('cloze-correct')).toBeTruthy();
     fireEvent.press(screen.getByTestId('grammar-next'));
-    expect(onDone).toHaveBeenCalledWith(true);
+    expect(onDone).toHaveBeenCalledWith(true, undefined, expect.any(String));
   });
 
   it('open cloze: a missing accent is wrong on the strict setting, right on the lenient one', () => {
@@ -141,7 +141,7 @@ describe.each([
     expect(screen.getByTestId('fix-correct')).toBeTruthy();
     expect(screen.getByTestId('fix-explain')).toHaveTextContent(FIX.explain.en);
     fireEvent.press(screen.getByTestId('grammar-next'));
-    expect(onDone).toHaveBeenCalledWith(true);
+    expect(onDone).toHaveBeenCalledWith(true, undefined, expect.any(String));
   });
 
   it('fix: a wrong tap on the way makes the item wrong even with the right fix typed', () => {
@@ -170,7 +170,7 @@ describe.each([
     expect(screen.getByTestId('bank-wrong')).toBeTruthy();
     expect(screen.getByTestId('bank-why')).toHaveTextContent(BANK.why.en);
     fireEvent.press(screen.getByTestId('grammar-next'));
-    expect(onDone).toHaveBeenCalledWith(false);
+    expect(onDone).toHaveBeenCalledWith(false, undefined, expect.any(String));
   });
 
   it('word bank: the agreed form is right', () => {
@@ -195,6 +195,6 @@ describe.each([
     fireEvent.press(screen.getByTestId('noun-check'));
     expect(screen.getByTestId('noun-correct')).toBeTruthy();
     fireEvent.press(screen.getByTestId('grammar-next'));
-    expect(onDone).toHaveBeenCalledWith(true);
+    expect(onDone).toHaveBeenCalledWith(true, undefined, expect.any(String));
   });
 });

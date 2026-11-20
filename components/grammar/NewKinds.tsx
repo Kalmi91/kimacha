@@ -53,7 +53,7 @@ export function SpotDrillItem({
   item: SpotItem;
   learnedLang: string;
   contentLang: Lang;
-  onDone: (correct: boolean) => void;
+  onDone: (correct: boolean, mistyped?: boolean, given?: string) => void;
 }) {
   const g = useGrammarColors();
   const s = t();
@@ -132,7 +132,7 @@ export function SpotDrillItem({
             <Text style={[styles.explain, { color: resultInk(g, correct) }]}>{item.explain[contentLang] ?? item.explain.en}</Text>
             <Text style={[styles.translation, { color: resultInk(g, correct) }]}>{item.tr[contentLang] ?? item.tr.en}</Text>
           </BrutalBox>
-          <BrutalBox testID="grammar-next" fill="ink" boxStyle={styles.next} onPress={() => onDone(correct)}>
+          <BrutalBox testID="grammar-next" fill="ink" boxStyle={styles.next} onPress={() => onDone(correct, undefined, picked !== null ? shuffled.options[picked] : undefined)}>
             <Text style={[styles.nextText, { color: inkButtonText(g) }]}>{s.grammar.nextArrow}</Text>
           </BrutalBox>
         </>
@@ -156,9 +156,10 @@ export function OrderDrillItem({
   contentLang: Lang;
   /** The items of the item's lesson: the unneeded tiles are words of their sentences. */
   lessonItems?: readonly unknown[];
-  onDone: (correct: boolean) => void;
+  onDone: (correct: boolean, mistyped?: boolean, given?: string) => void;
 }) {
   const s = t();
+  const built = useRef('');
   return (
     <View style={styles.body} testID="order-item">
       <ItemHead title={s.grammar.orderHint} />
@@ -168,7 +169,10 @@ export function OrderDrillItem({
         targetWords={tileWords(item.es)}
         acceptWords={item.accept?.map(tileWords)}
         trapWords={orderDistractors(item, lessonItems)}
-        onResult={onDone}
+        onBuilt={(b) => {
+          built.current = b;
+        }}
+        onResult={(ok) => onDone(ok, undefined, built.current)}
       />
     </View>
   );
@@ -186,7 +190,7 @@ export function DictationDrillItem({
   learnedLang: string;
   contentLang: Lang;
   strictAccents: boolean;
-  onDone: (correct: boolean, mistyped?: boolean) => void;
+  onDone: (correct: boolean, mistyped?: boolean, given?: string) => void;
 }) {
   const g = useGrammarColors();
   const s = t();
@@ -217,7 +221,7 @@ export function DictationDrillItem({
   // Check (and then Next) is a bar docked above the keyboard, as on the word card (DockSlot).
   const { docked, padBottom } = useDockedAction(
     result
-      ? { label: s.grammar.nextArrow, tone: 'next', testID: 'grammar-next', onPress: () => onDone(result.correct), secondary: mistypedDock(!result.correct, () => onDone(true, true)) }
+      ? { label: s.grammar.nextArrow, tone: 'next', testID: 'grammar-next', onPress: () => onDone(result.correct, undefined, typed), secondary: mistypedDock(!result.correct, () => onDone(true, true)) }
       : { label: `✓ ${s.grammar.check}`, tone: 'check', testID: 'dictation-check', onPress: check }
   );
 
@@ -266,7 +270,7 @@ export function DictationDrillItem({
           </BrutalBox>
           {!result.correct && !docked ? <MistypedButton onPress={() => onDone(true, true)} /> : null}
           {docked ? null : (
-            <BrutalBox testID="grammar-next" fill="ink" boxStyle={styles.next} onPress={() => onDone(result.correct)}>
+            <BrutalBox testID="grammar-next" fill="ink" boxStyle={styles.next} onPress={() => onDone(result.correct, undefined, typed)}>
               <Text style={[styles.nextText, { color: inkButtonText(g) }]}>{s.grammar.nextArrow}</Text>
             </BrutalBox>
           )}
@@ -293,7 +297,7 @@ export function WriteDrillItem({
   learnedLang: string;
   contentLang: Lang;
   strictAccents: boolean;
-  onDone: (correct: boolean, mistyped?: boolean) => void;
+  onDone: (correct: boolean, mistyped?: boolean, given?: string) => void;
 }) {
   const g = useGrammarColors();
   const s = t();
@@ -316,7 +320,7 @@ export function WriteDrillItem({
   // Check (and then Next) is a bar docked above the keyboard, as on the dictation (DockSlot).
   const { docked, padBottom } = useDockedAction(
     result
-      ? { label: s.grammar.nextArrow, tone: 'next', testID: 'grammar-next', onPress: () => onDone(result.correct), secondary: mistypedDock(!result.correct, () => onDone(true, true)) }
+      ? { label: s.grammar.nextArrow, tone: 'next', testID: 'grammar-next', onPress: () => onDone(result.correct, undefined, typed), secondary: mistypedDock(!result.correct, () => onDone(true, true)) }
       : { label: `✓ ${s.grammar.check}`, tone: 'check', testID: 'write-check', onPress: check }
   );
 
@@ -366,7 +370,7 @@ export function WriteDrillItem({
           </BrutalBox>
           {!result.correct && !docked ? <MistypedButton onPress={() => onDone(true, true)} /> : null}
           {docked ? null : (
-            <BrutalBox testID="grammar-next" fill="ink" boxStyle={styles.next} onPress={() => onDone(result.correct)}>
+            <BrutalBox testID="grammar-next" fill="ink" boxStyle={styles.next} onPress={() => onDone(result.correct, undefined, typed)}>
               <Text style={[styles.nextText, { color: inkButtonText(g) }]}>{s.grammar.nextArrow}</Text>
             </BrutalBox>
           )}
@@ -402,7 +406,7 @@ export function NewKindDrillItem({
   strictAccents: boolean;
   /** The items of the lesson (the word order task takes its unneeded tiles from them). */
   lessonItems?: readonly unknown[];
-  onDone: (correct: boolean, mistyped?: boolean) => void;
+  onDone: (correct: boolean, mistyped?: boolean, given?: string) => void;
   /** The typed kinds: the answer is checked and its feedback is on screen, before Next. */
   onShown?: (correct: boolean) => void;
 }) {

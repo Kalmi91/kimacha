@@ -113,6 +113,6 @@ describe('DockSlot: dictation in the grammar drill', () => {
     expect(within(screen.getByTestId('learn-dock')).getByTestId('grammar-next')).toBeTruthy();
     expect(screen.getAllByTestId('grammar-next')).toHaveLength(1);
     fireEvent.press(screen.getByTestId('grammar-next'));
-    expect(onDone).toHaveBeenCalledWith(true);
+    expect(onDone).toHaveBeenCalledWith(true, undefined, expect.any(String));
   });
 });

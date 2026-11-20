@@ -20,34 +20,39 @@ const replaceWord = (sentence: string, index: number, word: string): string => {
 };
 
 /** The task and the right solution of a mistaken non-choice item; null where there is nothing sensible to list (matching). */
-export function missOfItem(item: GrammarRoundItem['item'], contentLang: string): GrammarMiss | null {
+export function missOfItem(item: GrammarRoundItem['item'], contentLang: string, given?: string): GrammarMiss | null {
+  const g = given && given.trim() !== '' ? given.trim() : null;
   switch (item.kind) {
     case 'match':
       return null;
     case 'form':
-      return { prompt: `${item.person} · ${item.verb}`, given: null, correct: item.answer };
+      return { prompt: `${item.person} · ${item.verb}`, given: g, correct: item.answer };
     case 'why':
-      return { prompt: item.es, given: null, correct: loc(item.options[item.correctIndex].text, contentLang) };
+      return { prompt: item.es, given: g, correct: loc(item.options[item.correctIndex].text, contentLang) };
     case 'transform':
-      return { prompt: loc(item.prompt, contentLang), given: null, correct: item.answer };
+      return { prompt: loc(item.prompt, contentLang), given: g, correct: item.answer };
     case 'write':
-      return { prompt: loc(item.prompt, contentLang), given: null, correct: item.es };
+      return { prompt: loc(item.prompt, contentLang), given: g, correct: item.es };
     case 'order':
-      return { prompt: loc(item.prompt, contentLang), given: null, correct: item.es };
+      return { prompt: loc(item.prompt, contentLang), given: g, correct: item.es };
     case 'dictation':
-      return { prompt: loc(item.tr, contentLang), given: null, correct: item.es };
-    case 'spot':
-      return { prompt: item.es, given: null, correct: replaceWord(item.es, item.wrongIndex, item.options[item.correctIndex]) };
+      return { prompt: loc(item.tr, contentLang), given: g, correct: item.es };
+    case 'spot': {
+      const correct = replaceWord(item.es, item.wrongIndex, item.options[item.correctIndex]);
+      // given is the option picked; the sentence as the learner left it
+      const left = given === undefined ? null : replaceWord(item.es, item.wrongIndex, given);
+      return { prompt: item.es, given: left !== null && left !== correct ? left : null, correct };
+    }
     case 'fix':
-      return { prompt: item.es, given: null, correct: replaceWord(item.es, item.wrongIndex, item.answer) };
+      return { prompt: item.es, given: g === null ? null : replaceWord(item.es, item.wrongIndex, g), correct: replaceWord(item.es, item.wrongIndex, item.answer) };
     case 'opencloze': {
       let n = 0;
-      return { prompt: item.text, given: null, correct: item.text.replace(/___/g, () => item.answers[n++] ?? '___') };
+      return { prompt: item.text, given: g, correct: item.text.replace(/___/g, () => item.answers[n++] ?? '___') };
     }
     case 'bank':
-      return { prompt: item.es, given: null, correct: item.es.replace('___', item.answer) };
+      return { prompt: item.es, given: g === null ? null : item.es.replace('___', g), correct: item.es.replace('___', item.answer) };
     case 'noun':
-      return { prompt: item.base, given: null, correct: item.answer };
+      return { prompt: item.base, given: g, correct: item.answer };
     default:
       return null;
   }

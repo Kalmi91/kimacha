@@ -48,6 +48,7 @@ import TestQuestionView from '@/components/grammar/TestQuestionView';
 import XpChip from '@/components/XpChip';
 import { awardXpThen } from '@/lib/xpAward';
 import ExamButton from '@/components/exam/ExamButton';
+import type { GrammarMiss } from '@/lib/grammar/roundMiss';
 import GrammarResult from '@/components/grammar/GrammarResult';
 import { DockSlotProvider, useDockSlot } from '@/components/learn/DockSlot';
 import { FAB_CLEARANCE } from '@/components/learn/DockedAction';
@@ -98,6 +99,8 @@ export default function LevelTestScreen() {
   // the XP the answer on the result card gave (FB591); 0 shows nothing
   const [earned, setEarned] = useState(0);
   const [round, setRound] = useState<LevelRound>({ n: 0, right: 0, startPct: 0 });
+  // the wrong answers of the round on screen, for the round-end Mistakes list (not kept over an app kill)
+  const [misses, setMisses] = useState<GrammarMiss[]>([]);
   const [doneOpen, setDoneOpen] = useState(false);
   // the level's standing on the bar (FB593/594): never sinks, +0.3 per right answer; saved per pair and level, like the round
   const [shown, setShown] = useState(0);
@@ -203,6 +206,7 @@ export default function LevelTestScreen() {
     };
     setRound(nextRound);
     saveRound(nextRound);
+    if (!ok) setMisses((m) => [...m, { prompt: pendingQ.review.question, given: given ?? null, correct: pendingQ.review.answer }]);
     const nextShown = nextShownPct(shown, levelPercent(ids, nextEvidence), ok);
     if (nextShown !== shown) {
       setShown(nextShown);
@@ -341,8 +345,9 @@ export default function LevelTestScreen() {
           correct={round.right}
           total={LEVEL_ROUND_SIZE}
           scoreTestID="level-test-round-score"
-          misses={[]}
+          misses={misses}
           onRetake={() => {
+            setMisses([]);
             const fresh = { n: 0, right: 0, startPct: shownPctOf(shown, pct) };
             setRound(fresh);
             saveRound(fresh);

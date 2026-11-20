@@ -301,6 +301,16 @@ describe.each(['brand', 'classic'] as const)('grammar small test (%s palette)', 
     expect((await stateNow()).run).toBeNull();
   });
 
+  it('one miss: the end card lists it with the learner answer (FB692)', async () => {
+    await start();
+    await answerNext(false);
+    for (let i = 0; i < 30 && !has('small-test-end'); i++) await answerNext(true);
+    expect(has('small-test-end')).toBe(true);
+    expect(screen.getAllByTestId('grammar-mistake')).toHaveLength(1);
+    expect(screen.getByTestId('grammar-mistake-given')).toBeTruthy();
+    expect(screen.getByTestId('grammar-mistake-correct')).toBeTruthy();
+  });
+
   it('a whole round: the end card with the score, topic statuses, the level line and the round chart; New round and Done', async () => {
     await start();
     for (let i = 0; i < 10; i++) await answerNext(true);

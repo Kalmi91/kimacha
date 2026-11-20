@@ -590,6 +590,15 @@ describe.each(['brand', 'classic'] as const)('grammar level test (%s palette)', 
       expect(screen.queryByTestId('exam-text')).toBeNull();
     });
 
+    it('a wrong answer in the round appears in the "Mistakes:" list of the round end (FB692)', async () => {
+      await nearEnd();
+      await open();
+      await answer(false);
+      await next();
+      expect(screen.getAllByTestId('grammar-mistake')).toHaveLength(1);
+      expect(screen.getByTestId('grammar-mistake-correct')).toBeTruthy();
+    });
+
     it('the round end uses the standing the bar shows, at the start and now, not the real percent (FB593, FB594)', async () => {
       await saveResumeValue(getDb(), KEY, { n: 19, right: 10, startPct: 40.2, topics: { 'lt-2': { n: 19, right: 10, start: 50 } } });
       await saveResumeValue(getDb(), shownKey('A1'), 41.5);

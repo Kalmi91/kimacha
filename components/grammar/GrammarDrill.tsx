@@ -241,8 +241,9 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
   // so correctCount's state update has not landed yet; the final tally is
   // computed locally instead of trusted from the (possibly stale) closure.
   // `correctUnits` is the partial credit (matching's right pairs); without it the item is 1 unit, right or not.
-  const completeItem = (wasCorrect: boolean, correctUnits?: number) => {
-    noteResult(wasCorrect, wasCorrect ? null : missOfItem(roundItem.item, contentLang));
+  // given is what the learner answered (typed text, the picked option, the built sentence), for the Mistakes list.
+  const completeItem = (wasCorrect: boolean, correctUnits?: number, given?: string) => {
+    noteResult(wasCorrect, wasCorrect ? null : missOfItem(roundItem.item, contentLang, given));
     const finalCount = correctCount + (correctUnits ?? (wasCorrect ? 1 : 0));
     if (finalCount !== correctCount) setCorrectCount(finalCount);
     advance(finalCount);
@@ -292,7 +293,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
             strictAccents={strictAccents}
             colors={colors}
             s={s}
-            onDone={completeItem}
+            onDone={(ok, given) => completeItem(ok, undefined, given)}
           />
         ) : isWhyItem(roundItem.item) ? (
           <WhyDrillItem
@@ -302,7 +303,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
             contentLang={contentLang as ContentLang}
             colors={colors}
             s={s}
-            onDone={completeItem}
+            onDone={(ok, given) => completeItem(ok, undefined, given)}
           />
         ) : isTransformItem(roundItem.item) ? (
           <TransformDrillItem
@@ -313,7 +314,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
             strictAccents={strictAccents}
             colors={colors}
             s={s}
-            onDone={completeItem}
+            onDone={(ok, given) => completeItem(ok, undefined, given)}
           />
         ) : (
           <NewKindDrillItem
@@ -323,7 +324,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
             contentLang={contentLang as ContentLang}
             strictAccents={strictAccents}
             lessonItems={topic.items}
-            onDone={(ok) => completeItem(ok)}
+            onDone={(ok, _mistyped, given) => completeItem(ok, undefined, given)}
           />
         )}
       </ScrollView>

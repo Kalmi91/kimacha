@@ -45,6 +45,7 @@ import LevelTestFeedback from '@/components/grammar/LevelTestFeedback';
 import { ProgressBar } from '@/components/grammar/Themed';
 import TestQuestionView from '@/components/grammar/TestQuestionView';
 import ExamButton from '@/components/exam/ExamButton';
+import { missOfItem, type GrammarMiss } from '@/lib/grammar/roundMiss';
 import GrammarResult from '@/components/grammar/GrammarResult';
 import { DockSlotProvider, useDockSlot } from '@/components/learn/DockSlot';
 import { FAB_CLEARANCE } from '@/components/learn/DockedAction';
@@ -103,6 +104,8 @@ export default function SmallTestScreen() {
   const [st, setSt] = useState<SmallState | null>(null);
   const [empty, setEmpty] = useState(false);
   const [result, setResult] = useState<Result | null>(null);
+  // the wrong answers of the round on screen, for the end screen's Mistakes list (not kept over an app kill)
+  const [misses, setMisses] = useState<GrammarMiss[]>([]);
   const stRef = useRef<SmallState | null>(null);
   const viewRef = useRef<SmallView | null>(null);
   const evRef = useRef<Map<string, TopicEvidence>>(new Map());
@@ -281,6 +284,11 @@ export default function SmallTestScreen() {
       evRef.current = written.map;
       enqueue(() => getDb().setGameProgress(GRAMMAR_RANDOM_KEY, cur.topic, 'evidence', written.topicEvidence));
     }
+    if (!ok && !mistyped && cur.role !== 'mini') {
+      const f = v.find(cur.topic, cur.qid);
+      const miss: GrammarMiss | null = f?.q ? { prompt: f.q.review.question, given: result?.given ?? null, correct: f.q.review.answer } : f?.item ? missOfItem(f.item, data.contentLang, result?.given) : null;
+      if (miss) setMisses((m) => [...m, miss]);
+    }
     Keyboard.dismiss();
     setResult(null);
     commit(resolveAnswer(stRef.current, v.pool, ok, mistyped));
@@ -380,8 +388,11 @@ export default function SmallTestScreen() {
           correct={right}
           total={run.answers.length}
           scoreTestID="small-test-end-title"
-          misses={[]}
-          onRetake={() => commit(startRound(closeRound(st), view.topics, view.pool, (Date.now() + st.rounds * 7919) % 2147483647))}
+          misses={misses}
+          onRetake={() => {
+            setMisses([]);
+            commit(startRound(closeRound(st), view.topics, view.pool, (Date.now() + st.rounds * 7919) % 2147483647));
+          }}
           onBack={() => {
             commit(closeRound(st));
             router.back();
@@ -512,7 +523,7 @@ export default function SmallTestScreen() {
                 contentLang={data.contentLang as never}
                 strictAccents={strictAccents}
                 onShown={(ok) => guardOpen() && stRef.current && commit(markShown(stRef.current, ok))}
-                onDone={(ok, mistyped) => (!guardOpen() ? setRedo((n) => n + 1) : ok ? settle(true, !!mistyped) : show(cur, false))}
+                onDone={(ok, mistyped, given) => (!guardOpen() ? setRedo((n) => n + 1) : ok ? settle(true, !!mistyped) : show(cur, false, given))}
               />
             </ScrollView>
           )}

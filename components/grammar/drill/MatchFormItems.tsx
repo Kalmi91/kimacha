@@ -240,7 +240,7 @@ export function FormDrillItem({
   strictAccents?: boolean;
   colors: (typeof Colors)['light'];
   s: ReturnType<typeof t>;
-  onDone: (correct: boolean) => void;
+  onDone: (correct: boolean, given?: string) => void;
 }) {
   const [tableOpen, setTableOpen] = useState(false);
   // the question label ("Sustantivo") is Spanish, while the hint table's column header
@@ -279,7 +279,7 @@ export function FormDrillItem({
   // Check (and then Next) is a bar docked above the keyboard, as on the word card (DockSlot).
   const { docked, padBottom } = useDockedAction(
     checked
-      ? { label: g.brutal ? s.grammar.nextArrow : s.games.understood, tone: 'next', testID: 'grammar-next', onPress: () => onDone(correct), secondary: mistypedDock(!correct, () => onDone(true)) }
+      ? { label: g.brutal ? s.grammar.nextArrow : s.games.understood, tone: 'next', testID: 'grammar-next', onPress: () => onDone(correct, value), secondary: mistypedDock(!correct, () => onDone(true)) }
       : { label: `✓ ${s.grammar.check}`, tone: 'check', testID: 'formCheck', onPress: check }
   );
 
@@ -329,7 +329,7 @@ export function FormDrillItem({
             </BrutalFeedback>
             <SpeakButton testID="form-speak" onPress={() => speak(item.answer, speechLang(learnedLang))} brutalStyle={styles.formSpeakBrutal} />
             {!correct && !docked ? <MistypedButton onPress={() => onDone(true)} /> : null}
-            {docked ? null : <BrutalInkButton g={g} testID="grammar-next" label={s.grammar.nextArrow} onPress={() => onDone(correct)} />}
+            {docked ? null : <BrutalInkButton g={g} testID="grammar-next" label={s.grammar.nextArrow} onPress={() => onDone(correct, value)} />}
           </>
         )}
         {docked ? <View style={{ height: padBottom }} /> : null}
@@ -380,7 +380,7 @@ export function FormDrillItem({
           <SpeakButton testID="form-speak" onPress={() => speak(item.answer, speechLang(learnedLang))} style={styles.formSpeak} iconStyle={styles.formSpeakIcon} />
           {!correct && !docked ? <MistypedButton onPress={() => onDone(true)} /> : null}
           {docked ? null : (
-            <Pressable testID="grammar-next" style={[styles.btn, { backgroundColor: colors.tint, marginTop: 12 }]} onPress={() => onDone(correct)}>
+            <Pressable testID="grammar-next" style={[styles.btn, { backgroundColor: colors.tint, marginTop: 12 }]} onPress={() => onDone(correct, value)}>
               <Text style={[styles.btnText, { color: colors.onTint }]}>{s.games.understood}</Text>
             </Pressable>
           )}
