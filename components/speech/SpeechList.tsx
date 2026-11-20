@@ -9,6 +9,7 @@ import { PCIC_LEVELS, type PcicLevel, type PcicTarget } from '@/data/pcic';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
 import type { Lang } from '@/lib/languagePair';
+import { GREETINGS, clock } from '@/lib/speech/listening';
 import { storiesOfLevel, type SpeechStory, type StoryProgress } from '@/lib/speech/stories';
 import { useTheme } from '@/lib/ThemeContext';
 
@@ -26,9 +27,12 @@ interface Props {
   /** The story that has an open run. */
   openId: string | null;
   onOpen: (id: string) => void;
+  /** The listening step has been finished once (the done tick). */
+  listenDone: boolean;
+  onListen: () => void;
 }
 
-export default function SpeechList({ target, source, hasStories, level, onLevel, progress, openId, onOpen }: Props) {
+export default function SpeechList({ target, source, hasStories, level, onLevel, progress, openId, onOpen, listenDone, onListen }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const g = useGrammarColors();
@@ -69,6 +73,22 @@ export default function SpeechList({ target, source, hasStories, level, onLevel,
             );
           })}
         </View>
+        {target === 'es' && (
+          <Pressable testID="speech-listen-card" accessibilityRole="button" onPress={onListen}>
+            <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
+              <View style={styles.cardText}>
+                <Text style={[styles.title, { color: colors.text }]}>{sx.greetTitle}</Text>
+                <Text style={[styles.teaser, { color: colors.textMuted }]}>{sx.greetTeaser}</Text>
+                {GREETINGS.durationSec > 0 && <Text testID="speech-listen-length" style={[styles.teaser, { color: colors.textMuted }]}>{clock(GREETINGS.durationSec)}</Text>}
+              </View>
+              {listenDone && (
+                <Text testID="speech-listen-done" accessibilityLabel={sx.greetDoneA11y} style={[styles.badge, { color: colors.success }]}>
+                  ✓
+                </Text>
+              )}
+            </Card>
+          </Pressable>
+        )}
         {stories.length === 0 && <Text testID="speech-empty-level" style={[styles.emptyLevel, { color: colors.textMuted }]}>{sx.emptyLevel}</Text>}
         {stories.map((story) => {
           const best = progress.get(story.id);

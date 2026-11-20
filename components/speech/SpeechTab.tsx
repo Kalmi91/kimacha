@@ -4,6 +4,7 @@ import { useFocusEffect } from 'expo-router';
 import SpeechDone from '@/components/speech/SpeechDone';
 import { awardXpThen } from '@/lib/xpAward';
 import SpeechIntro from '@/components/speech/SpeechIntro';
+import SpeechListen from '@/components/speech/SpeechListen';
 import SpeechList from '@/components/speech/SpeechList';
 import SpeechPlay from '@/components/speech/SpeechPlay';
 import SpeechPrep from '@/components/speech/SpeechPrep';
@@ -39,6 +40,7 @@ import {
   type StoryRun,
   type StoryWord,
 } from '@/lib/speech/stories';
+import { GREETINGS, LISTENING_PROGRESS_KEY } from '@/lib/speech/listening';
 import { localDateString } from '@/lib/usageStats';
 import { useLoadOnMount } from '@/lib/useLoadOnMount';
 import { useScreenLoad } from '@/lib/useScreenLoad';
@@ -48,7 +50,7 @@ import { useScreenLoad } from '@/lib/useScreenLoad';
 // direction, the open run (kept in the resume store after every answer, so leaving the tab and coming back, also after the app was
 // killed, continues where the learner was) and the finished stories (the `game_progress` table). No SRS writes; a finished story pays XP once (lib/xpAward.ts).
 
-type Screen = 'list' | 'intro' | 'prep' | 'play' | 'done';
+type Screen = 'list' | 'intro' | 'prep' | 'play' | 'done' | 'listen';
 
 const isLevel = (x: unknown): x is PcicLevel => typeof x === 'string' && (PCIC_LEVELS as string[]).includes(x);
 
@@ -88,6 +90,8 @@ export default function SpeechTab() {
   const [micOk, setMicOk] = useState(true);
   const [strictAccents, setStrictAccents] = useState(false);
   const [progress, setProgress] = useState<ReadonlyMap<string, StoryProgress>>(new Map());
+  // the greetings listening step has been matched once (its progress row)
+  const [listenDone, setListenDone] = useState(false);
   const [introWords, setIntroWords] = useState<readonly StoryWord[]>([]);
   // a new run remounts the story screen; `fresh` = its first line is read aloud (a resumed run is silent)
   const [runKey, setRunKey] = useState(0);
@@ -119,6 +123,7 @@ export default function SpeechTab() {
     const learner = await refresh(['direction', 'strictAccents']);
     setStrictAccents(learner.strictAccents);
     setProgress(progressById(await db.getGameProgress(SPEECH_PROGRESS_KEY)));
+    setListenDone((await db.getGameProgress(LISTENING_PROGRESS_KEY)).some((r) => r.itemId === GREETINGS.id && r.state === 'done'));
     const dir = learner.target;
     const pair = pairOf(dir);
     if (shownPair.current === pair) return;
@@ -153,6 +158,10 @@ export default function SpeechTab() {
   const backRef = useRef<() => boolean>(() => false);
   useEffect(() => {
     backRef.current = () => {
+      if (screen === 'listen') {
+        setScreen('list');
+        return true;
+      }
       if (!story || screen === 'list') return false;
       if (screen === 'done') setRun(null);
       setScreen(screen === 'prep' ? 'intro' : 'list');
@@ -219,6 +228,7 @@ export default function SpeechTab() {
     setScreen('done');
   };
 
+  if (screen === 'listen') return <SpeechListen target={target} onBack={toList} onFinished={() => setListenDone(true)} />;
   if (!story || screen === 'list') {
     return (
       <SpeechList
@@ -230,6 +240,8 @@ export default function SpeechTab() {
         progress={progress}
         openId={openId}
         onOpen={(id) => void openStory(id)}
+        listenDone={listenDone}
+        onListen={() => setScreen('listen')}
       />
     );
   }
