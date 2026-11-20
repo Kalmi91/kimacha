@@ -19,6 +19,17 @@ describe('the XP table', () => {
     expect(await payouts('grammar', 'g1', 4)).toEqual([2, 0.5, 0, 0]);
   });
 
+  it('generated el / la noun item (art-n-*): 0.2 per right answer, first and repeated, then nothing (FB690)', async () => {
+    expect(await payouts('grammar', 'art-n-a1-12', 4)).toEqual([0.2, 0.2, 0, 0]);
+    expect((await getXp(DAY)).xp).toBeGreaterThanOrEqual(0.4);
+  });
+
+  it('another grammar item keeps the old payout next to a noun item (FB690)', async () => {
+    expect(await payouts('grammar', 'ag-02', 3, '2031-03-05')).toEqual([2, 0.5, 0]);
+    expect(await payouts('grammar', 'art-n-a1-13', 1, '2031-03-05')).toEqual([0.2]);
+    expect((await getXp('2031-03-05')).xp).toBeCloseTo(2.7, 5);
+  });
+
   it('level practice: 0.5, then nothing', async () => {
     expect(await payouts('levelPractice', 'p1', 3)).toEqual([0.5, 0, 0]);
   });

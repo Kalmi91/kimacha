@@ -2,6 +2,7 @@
   "schema": 2,
   "topic": "articulos-genero",
   "level": "A1",
+  "noWordDeck": true,
   "title": {
     "en": "Articles: el, la, un, una",
     "es": "Artículos: el, la, un, una"
@@ -719,55 +720,6 @@
       "tr": { "en": "The Spanish language is difficult for me.", "es": "El idioma español es difícil para mí." }
     },
     {
-      "id": "ag-match-01",
-      "kind": "match",
-      "pairs": [
-        {
-          "es": "el perro",
-          "en": "the dog"
-        },
-        {
-          "es": "la casa",
-          "en": "the house"
-        },
-        {
-          "es": "un libro",
-          "en": "a book"
-        },
-        {
-          "es": "una hermana",
-          "en": "a sister"
-        },
-        {
-          "es": "el agua",
-          "en": "the water"
-        },
-        {
-          "es": "el día",
-          "en": "the day"
-        }
-      ]
-    },
-    {
-      "id": "ag-form-01",
-      "kind": "form",
-      "verb": "Determinado plural",
-      "person": "el libro",
-      "q": { "en": "What is the plural of \"el libro\", with the definite article?", "es": "¿Cuál es el plural de «el libro», con el artículo determinado?" },
-      "answer": "los libros",
-      "table": "articulos",
-      "wrong": {
-        "los libro": {
-          "en": "In the plural the noun changes too, not only the article: libro becomes libros.",
-          "es": "En plural cambia también el sustantivo, no solo el artículo: libro pasa a libros."
-        },
-        "las libros": {
-          "en": "Libro is masculine, so its article is los, not las: los libros.",
-          "es": "Libro es masculino, así que su artículo es los, no las: los libros."
-        }
-      }
-    },
-    {
       "id": "ag-form-02",
       "kind": "form",
       "verb": "Determinado plural",
@@ -983,45 +935,6 @@
           "es": "En plural cambia también el sustantivo, no solo el artículo: clase pasa a clases."
         }
       }
-    },
-    {
-      "id": "ag-why-01",
-      "kind": "why",
-      "es": "El perro corre en el parque.",
-      "target": "perro",
-      "tr": {
-        "en": "The dog runs in the park.",
-        "es": "El perro corre en el parque."
-      },
-      "options": [
-        {
-          "text": {
-            "en": "-o masculine / -a feminine",
-            "es": "-o masculino / -a femenino"
-          }
-        },
-        {
-          "text": {
-            "en": "stressed a- start: el",
-            "es": "a tónica inicial: el"
-          },
-          "wrong": {
-            "en": "Perro does not start with a stressed a-, this rule does not apply to it, only the plain -o/-a rule does.",
-            "es": "Perro no empieza con a tónica, esta regla no se le aplica, sino la regla simple en -o/-a."
-          }
-        },
-        {
-          "text": {
-            "en": "exception, not predictable from the ending",
-            "es": "excepción, no se deduce de la terminación"
-          },
-          "wrong": {
-            "en": "Perro gets exactly the gender its -o ending predicts, so it is not an exception.",
-            "es": "Perro tiene exactamente el género que predice su terminación en -o, así que no es una excepción."
-          }
-        }
-      ],
-      "correctIndex": 0
     },
     {
       "id": "ag-why-02",

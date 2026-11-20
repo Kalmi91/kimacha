@@ -5,16 +5,20 @@ import { localDateString } from './usageStats';
 // XP for the grammar, Sentences and speech sources (FB591, FB600, FB601, FB606). Per item per day:
 // the first right answer pays the first number, the second the second, then nothing, so practising the
 // same thing over and over earns less and less. These sources work for everyone.
-export type XpKind = 'grammar' | 'levelTest' | 'levelPractice' | 'sentence' | 'sentenceHard' | 'speech';
+export type XpKind = 'grammar' | 'grammarNoun' | 'levelTest' | 'levelPractice' | 'sentence' | 'sentenceHard' | 'speech';
 
 export const XP_TABLE: Record<XpKind, readonly number[]> = {
   grammar: [2, 0.5],
+  grammarNoun: [0.2, 0.2], // the generated el / la noun items (art-n-*), FB690: 0.2 XP per right answer, first and repeated
+
   levelTest: [0.5],
   levelPractice: [0.5],
   sentence: [1],
   sentenceHard: [2],
   speech: [3, 0.5],
 };
+
+const NOUN_ITEM_PREFIX = 'art-n-';
 
 // XP of the n-th (0-based) payout of `kind` for one item on one day.
 export function xpForRepeat(kind: XpKind, timesToday: number): number {
@@ -44,11 +48,13 @@ let chain: Promise<unknown> = Promise.resolve();
 export function awardXp(kind: XpKind, itemKey: string, date: string = localDateString()): Promise<number> {
   const run = async (): Promise<number> => {
     const db = getDb();
-    const key = kind === 'grammar' ? itemKey : `${kind}:${itemKey}`;
+    // the generated el / la noun items pay the small noun amount wherever they are answered (FB690)
+    const payKind: XpKind = kind === 'grammar' && itemKey.startsWith(NOUN_ITEM_PREFIX) ? 'grammarNoun' : kind;
+    const key = payKind === 'grammar' || payKind === 'grammarNoun' ? itemKey : `${kind}:${itemKey}`;
     const row = (await db.getGameProgress(XP_ITEMS_GAME)).find((r) => r.itemId === TODAY_ROW);
     const day = readCounts(row?.data, date);
     const before = day.counts[key] ?? 0;
-    const points = xpForRepeat(kind, before);
+    const points = xpForRepeat(payKind, before);
     day.counts[key] = before + 1;
     await db.setGameProgress(XP_ITEMS_GAME, TODAY_ROW, date, day);
     if (points > 0) await addXp(points, date);

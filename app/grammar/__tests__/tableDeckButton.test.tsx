@@ -88,12 +88,12 @@ describe('grammar lesson screen: table-deck button', () => {
 
   // The deck of articulos-genero is the lesson's own table nouns (with their article, "la casa"),
   // not the earlier deck built from all the app's nouns; it has no conjugation table deck.
-  it('articulos-genero (its article nouns reach the threshold) gets a word-deck entry, no table deck', async () => {
+  it('articulos-genero has no word-deck entry (noWordDeck, FB696) and no table deck', async () => {
     mockTopicId = 'articulos-genero';
     const view = render(<GrammarLessonScreen />);
     await flush();
 
-    expect(screen.getByTestId('grammar-start-worddeck')).toBeTruthy();
+    expect(screen.queryByTestId('grammar-start-worddeck')).toBeFalsy();
     expect(screen.queryByTestId('grammar-start-tabledeck')).toBeFalsy();
 
     view.unmount();

@@ -157,6 +157,7 @@ describe.each(lessons)('%s is a valid LessonV2', (_file, lesson) => {
     // a transform lesson (e.g. indefinido-10-verbos) has no gap-based content,
     // hence no match pair either; the older lessons keep the strict rule.
     if (lesson.items.some((i) => i.kind === 'transform')) return;
+    if (lesson.topic === 'articulos-genero') return; // its match task was removed on purpose (FB689)
     const matchItems = lesson.items.filter((i) => i.kind === 'match');
     expect(matchItems.length).toBeGreaterThanOrEqual(1);
     expect(matchItems.length).toBeLessThanOrEqual(2);

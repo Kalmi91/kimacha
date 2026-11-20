@@ -3,12 +3,13 @@
 import { buildGrammarRound, grammarRoundItemKind } from '@/lib/games/grammarChoice';
 import { isArticleSetItem } from '@/lib/games/content';
 import { lessonFor, lessonKinds } from '@/lib/grammar/syllabus';
-import { tableCellsForLesson, wordCellsForLesson, WORD_DECK_MIN_CARDS } from '@/lib/grammar/tableDeck';
+import { tableCellsForLesson, wordCellsForLesson } from '@/lib/grammar/tableDeck';
 import {
   ARTICLE_LESSON_ID,
   ARTICLE_ROUND_SIZE,
   articleNounItems,
   articleNouns,
+  articleTaskSentence,
 } from '@/lib/grammar/nounArticles';
 import type { LessonV2 } from '@/lib/grammar/lessonTypes';
 
@@ -38,7 +39,8 @@ describe('articleNounItems', () => {
     expect(items).toHaveLength(nouns.length);
     items.forEach((it, i) => {
       expect(it.set).toBe('article');
-      expect(it.sentence).toBe(`___ ${nouns[i].noun}`);
+      expect(it.sentence).toBe(articleTaskSentence(nouns[i]));
+      expect(it.sentence).toContain('___');
       expect(it.options).toEqual(['el', 'la']);
       expect(it.options[it.correct]).toBe(nouns[i].article);
     });
@@ -62,7 +64,7 @@ describe('articleNounItems', () => {
     for (const it of items) {
       for (const lang of LANGS) expect(it.tr?.[lang]?.trim()).toBeTruthy();
     }
-    const agua = items.find((i) => i.sentence === '___ agua')!;
+    const agua = items.find((i) => i.id === `art-n-${articleNouns().find((n) => n.noun === 'agua')!.id}`)!;
     expect(agua.tr?.en).toBe('water');
     expect(agua.tr?.es).toBe('water');
     expect(agua.tr?.hu).toBe('víz');
@@ -73,12 +75,12 @@ describe('articleNounItems', () => {
       const wrongOpt = it.options[1 - it.correct];
       expect(it.why.hu).not.toBe(it.why.en);
       expect(it.wrong[wrongOpt].hu).not.toBe(it.wrong[wrongOpt].en);
-      expect(it.why.hu).toContain(`${it.options[it.correct]} ${it.sentence.replace('___ ', '')}`);
+      expect(it.why.hu).toContain(`${it.options[it.correct]} ${articleNouns().find((n) => `art-n-${n.id}` === it.id)!.noun}`);
     }
   });
 
   it('the explanation of agua states the exception', () => {
-    const agua = items.find((i) => i.sentence === '___ agua')!;
+    const agua = items.find((i) => i.id === `art-n-${articleNouns().find((n) => n.noun === 'agua')!.id}`)!;
     expect(agua.why.en).toMatch(/feminine/);
     expect(agua.options[agua.correct]).toBe('el');
   });
@@ -103,6 +105,25 @@ describe('the articulos-genero lesson', () => {
     expect(count(2)).not.toEqual(a);
   });
 
+  it('the form, why and match tasks FB687-689 removed are gone, the lesson has noWordDeck and no word deck (FB696)', () => {
+    const ids = lesson.items.map((i) => (i as { id: string }).id);
+    for (const id of ['ag-form-01', 'ag-why-01', 'ag-match-01']) expect(ids).not.toContain(id);
+    expect(lessonKinds('es', ARTICLE_LESSON_ID)).not.toContain('match');
+    expect(lesson.noWordDeck).toBe(true);
+    expect(wordCellsForLesson(lesson, 'es')).toEqual([]);
+  });
+
+  it('two runs with different seeds pick different nouns (FB686), and the noun tasks of A1/A2 words are sentences', () => {
+    const ids = (seed: number) =>
+      buildGrammarRound(lesson, seed).filter((r) => grammarRoundItemKind(r) === 'article').map((r) => (r.item as { id: string }).id);
+    expect(ids(11)).toEqual(ids(11));
+    expect(ids(11)).not.toEqual(ids(12));
+    const items = articleNounItems();
+    const sentences = items.filter((i) => !/^___ \S+$/.test(i.sentence));
+    expect(sentences.length).toBeGreaterThan(100);
+    for (const it of items) expect(it.sentence.match(/___/g)).toHaveLength(1);
+  });
+
   it('it does not touch another lesson: the el / la set of sustantivo-numero stays complete', () => {
     const sn = lessonFor('es', 'sustantivo-numero') as LessonV2;
     const round = buildGrammarRound(sn, 1).filter((r) => grammarRoundItemKind(r) === 'article');
@@ -111,7 +132,7 @@ describe('the articulos-genero lesson', () => {
 
   it("no app-wide noun deck, the lesson deck is the lesson's own table words, and no table deck either", () => {
     const cards = wordCellsForLesson(lesson, 'es');
-    expect(cards.length).toBeGreaterThanOrEqual(WORD_DECK_MIN_CARDS);
+    expect(cards).toHaveLength(0); // noWordDeck (FB696)
     expect(cards.some((c) => c.id.startsWith('noun::'))).toBe(false);
     expect(tableCellsForLesson(lesson)).toHaveLength(0);
   });
