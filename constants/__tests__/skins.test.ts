@@ -32,7 +32,8 @@ const MIN = 4.5;
 // Exemptions: pairs that actually fail and are therefore recorded here (the test checks that they still
 // fail; if one gets fixed, the exemption must be deleted). Empty since then: the classic dark onA / a
 // (white on #3B82F6 is 3.68) got the dark base color instead of white (4.85).
-const KNOWN_EXEMPT = new Set<string>();
+// night / dark onA / a: white on pink #EC4899 is 3.53, taken 1:1 from the spanyol-hibak web game's look.
+const KNOWN_EXEMPT = new Set<string>(['night/dark onA/a']);
 
 function pairs(c: SkinColors): [string, string, string][] {
   const list: [string, string, string][] = [
@@ -103,8 +104,8 @@ describe('contrast gate (theme spec)', () => {
 });
 
 describe('theme list', () => {
-  it('24 themes, each has an en + es name, and so does Custom mix', () => {
-    expect(SKIN_IDS).toHaveLength(24);
+  it('25 themes, each has an en + es name, and so does Custom mix', () => {
+    expect(SKIN_IDS).toHaveLength(25);
     for (const id of [...SKIN_IDS, 'mix'] as const) {
       expect(en.skins.names[id]).toBeTruthy();
       expect(es.skins.names[id]).toBeTruthy();
@@ -127,9 +128,9 @@ describe('theme list', () => {
     expect(DEFAULT_SKIN).toBe('brutal');
   });
 
-  it("the groups together cover exactly the 24 ids, without repetition, and a theme's own group matches", () => {
+  it("the groups together cover exactly the 25 ids, without repetition, and a theme's own group matches", () => {
     const flat = SKIN_GROUPS.flatMap((g) => g.skins);
-    expect(flat).toHaveLength(24);
+    expect(flat).toHaveLength(25);
     expect([...flat].sort()).toEqual([...SKIN_IDS].sort());
     for (const group of SKIN_GROUPS) {
       for (const id of group.skins) expect(SKINS[id].group).toBe(group.id);
@@ -155,10 +156,10 @@ describe('theme list', () => {
     expect(SKINS.brutal.fonts).toEqual({ title: null, word: null, body: null });
   });
 
-  it('single-mode themes: loteria, retro95, y2k, kawaii, gamer, szocreal, plakat, csillampony, bauhaus, popart, szecesszio, kalocsai, memphis, kodex, graffiti', () => {
+  it('single-mode themes: loteria, retro95, y2k, kawaii, gamer, night, szocreal, plakat, csillampony, bauhaus, popart, szecesszio, kalocsai, memphis, kodex, graffiti', () => {
     const single = SKIN_IDS.filter((id) => SKINS[id].modes.length === 1).sort();
     expect(single).toEqual(
-      ['loteria', 'retro95', 'y2k', 'kawaii', 'gamer', 'szocreal', 'plakat', 'csillampony', 'bauhaus', 'popart', 'szecesszio', 'kalocsai', 'memphis', 'kodex', 'graffiti'].sort()
+      ['loteria', 'retro95', 'y2k', 'kawaii', 'gamer', 'night', 'szocreal', 'plakat', 'csillampony', 'bauhaus', 'popart', 'szecesszio', 'kalocsai', 'memphis', 'kodex', 'graffiti'].sort()
     );
     expect(SKINS.gamer.modes).toEqual(['dark']);
     expect(SKINS.graffiti.modes).toEqual(['dark']);

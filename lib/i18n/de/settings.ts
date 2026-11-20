@@ -132,6 +132,7 @@ const de: typeof en = {
       y2k: 'Y2K',
       kawaii: 'Kawaii',
       gamer: 'Gamer',
+      night: 'Nacht',
       botanikus: 'Botanisch',
       zen: 'Zen',
       diszlexia: 'Legasthenie-Schrift',

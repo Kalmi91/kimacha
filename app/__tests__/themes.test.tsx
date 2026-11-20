@@ -1,4 +1,4 @@
-// The Themes screen (app/themes.tsx): the grid shows 24 themes + the My mix entry,
+// The Themes screen (app/themes.tsx): the grid shows 25 themes + the My mix entry,
 // by group in the spec's order; tapping saves immediately; a single-mode theme has no mode selector.
 
 const mockPush = jest.fn();
@@ -55,7 +55,7 @@ describe('Themes screen', () => {
   });
   afterEach(() => scheme.mockRestore());
 
-  it('24 themes + Custom mix entry, per group in spec order', async () => {
+  it('25 themes + Custom mix entry, per group in spec order', async () => {
     const view = await mount();
 
     expect(view.getByTestId('themes-mix-entry')).toBeTruthy();
@@ -67,7 +67,7 @@ describe('Themes screen', () => {
       const tiles = within(view.getByTestId(`themes-group-${group.id}`)).getAllByTestId(/^theme-tile-/);
       expect(idsOf(tiles, 'theme-tile-')).toEqual(group.skins);
     }
-    expect(view.getAllByTestId(/^theme-tile-/)).toHaveLength(24);
+    expect(view.getAllByTestId(/^theme-tile-/)).toHaveLength(25);
 
     // group and theme names from i18n
     expect(view.getByText('Recommended')).toBeTruthy();

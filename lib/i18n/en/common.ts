@@ -32,7 +32,7 @@ export default {
   onboardingTheme: {
     title: 'Pick a look',
     know: 'I know',
-    later: 'Later you can pick from 24 in Settings.',
+    later: 'Later you can pick from 25 in Settings.',
     next: 'Continue',
   },
   tabs: {

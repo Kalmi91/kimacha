@@ -31,7 +31,7 @@ const de: typeof en = {
   onboardingTheme: {
     title: 'Such dir ein Aussehen aus',
     know: 'Weiß ich',
-    later: 'Später kannst du in den Einstellungen aus 24 wählen.',
+    later: 'Später kannst du in den Einstellungen aus 25 wählen.',
     next: 'Weiter',
   },
   tabs: {

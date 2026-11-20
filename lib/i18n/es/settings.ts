@@ -137,6 +137,7 @@ const es: typeof en = {
       y2k: 'Y2K',
       kawaii: 'Kawaii',
       gamer: 'Gamer',
+      night: 'Noche',
       botanikus: 'Botánico',
       zen: 'Zen',
       diszlexia: 'Fuente para dislexia',

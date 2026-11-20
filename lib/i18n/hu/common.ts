@@ -31,7 +31,7 @@ const hu: typeof en = {
   onboardingTheme: {
     title: 'Válassz egy stílust',
     know: 'Tudom',
-    later: 'Később 24 közül választhatsz a Beállításokban.',
+    later: 'Később 25 közül választhatsz a Beállításokban.',
     next: 'Tovább',
   },
   tabs: {

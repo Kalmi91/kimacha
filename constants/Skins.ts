@@ -10,7 +10,7 @@ export type SkinId =
   | 'brutal' | 'deco' | 'loteria' | 'senior' | 'konnyu' | 'retro95' | 'y2k' | 'kawaii'
   | 'gamer' | 'botanikus' | 'zen' | 'diszlexia' | 'szocreal' | 'plakat' | 'csillampony'
   | 'bauhaus' | 'popart' | 'szecesszio' | 'kalocsai' | 'memphis' | 'kodex' | 'graffiti'
-  | 'ukiyoe' | 'classic';
+  | 'ukiyoe' | 'night' | 'classic';
 
 export type SkinGroupId = 'ajanlott' | 'muveszet' | 'kultura' | 'hangulat' | 'olvasas';
 
@@ -53,6 +53,9 @@ export type SkinShape = {
   buttonsStacked?: boolean;
   // kalocsai: the frame of the secondary (paper-filled) button in this color; default: shape.borderColor.
   secondaryBorderColor?: ColorRole;
+  // night: the continuous progress bar's height and corner (read with colors.extra.progressTrack / progressFill).
+  barHeight?: number;
+  barRadius?: number;
 };
 
 export type SkinFonts = { title: string | null; word: string | null; body: string | null };
@@ -224,6 +227,22 @@ export const SKINS: Record<SkinId, Skin> = {
     fontScale: 1,
     letterSpacing: 0,
     uppercaseTitle: true,
+  },
+  // The look of the spanyol-hibak web game: night purple, pink + cyan; extra = the progress bar and the semantic colors.
+  night: {
+    id: 'night',
+    group: 'hangulat',
+    modes: ['dark'],
+    colors: {
+      dark: {
+        bg: '#150A29', paper: '#2C1852', ink: '#FFFFFF', mu: '#CFC6E4', a: '#EC4899', onA: '#FFFFFF', b: '#22D3EE', border: '#3D2668',
+        extra: { progressTrack: '#22113F', progressFill: '#EC4899', success: '#34D399', danger: '#F87171', warning: '#FBBF24' },
+      },
+    },
+    shape: { borderWidth: 1, borderStyle: 'solid', radius: 16, buttonRadius: 14, shadowOffset: 0, borderColor: 'border', barHeight: 6, barRadius: 3 },
+    fonts: { title: null, word: null, body: null },
+    fontScale: 1,
+    letterSpacing: 0,
   },
   botanikus: {
     id: 'botanikus',
@@ -442,7 +461,7 @@ export const SKIN_GROUPS: { id: SkinGroupId; skins: SkinId[] }[] = [
   { id: 'ajanlott', skins: ['brutal', 'deco', 'szocreal', 'csillampony', 'ukiyoe'] },
   { id: 'muveszet', skins: ['plakat', 'bauhaus', 'popart', 'szecesszio', 'memphis', 'kodex', 'graffiti'] },
   { id: 'kultura', skins: ['loteria', 'kalocsai'] },
-  { id: 'hangulat', skins: ['retro95', 'y2k', 'kawaii', 'gamer', 'botanikus', 'zen', 'classic'] },
+  { id: 'hangulat', skins: ['retro95', 'y2k', 'kawaii', 'gamer', 'night', 'botanikus', 'zen', 'classic'] },
   { id: 'olvasas', skins: ['senior', 'konnyu', 'diszlexia'] },
 ];
 

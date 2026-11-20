@@ -141,6 +141,7 @@ export default {
       y2k: 'Y2K',
       kawaii: 'Kawaii',
       gamer: 'Gamer',
+      night: 'Night',
       botanikus: 'Botanical',
       zen: 'Zen',
       diszlexia: 'Dyslexia font',
