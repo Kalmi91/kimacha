@@ -146,6 +146,26 @@ function wrongText(n: ArticleNoun, wrongArticle: 'el' | 'la'): Lang4 {
   };
 }
 
+/**
+ * The task text of a noun: the word's own example sentence with the article blanked ("Ellos viven en ___ ciudad.",
+ * FB686: sentences, not bare words) when the A1/A2 sentence has exactly one lowercase "el|la noun"; else "___ noun".
+ */
+export function articleTaskSentence(n: ArticleNoun): string {
+  const lvl = n.id.split('-')[0];
+  if ((lvl === 'a1' || lvl === 'a2') && n.sentence) {
+    const re = new RegExp(`(^|[^\\p{L}])${n.article} ${n.noun}(?![\\p{L}])`, 'gu');
+    if ([...n.sentence.matchAll(re)].length === 1) {
+      return n.sentence.replace(re, (_m, pre: string) => `${pre}___ ${n.noun}`);
+    }
+  }
+  return `___ ${n.noun}`;
+}
+
+/** True when the el / la item asks in an example sentence (FB686), false for the bare "___ noun" task. */
+export function isArticleSentenceItem(item: { sentence?: string }): boolean {
+  return !!item.sentence && !/^___ \S+$/.test(item.sentence);
+}
+
 /** The items of the el / la chooser: "___ agua" -> el. Members of the `article` set of GrammarGapItem. */
 export function articleNounItems(): GrammarGapItem[] {
   return articleNouns().map((n) => {
@@ -153,7 +173,7 @@ export function articleNounItems(): GrammarGapItem[] {
     return {
       id: `art-n-${n.id}`,
       set: 'article',
-      sentence: `___ ${n.noun}`,
+      sentence: articleTaskSentence(n),
       options: ['el', 'la'],
       correct: n.article === 'el' ? 0 : 1,
       why: whyText(n),

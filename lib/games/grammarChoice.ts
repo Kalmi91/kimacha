@@ -30,7 +30,7 @@ import {
 import type { BankItem, ClozeItem, DictationItem, FixItem, FormItem, MatchItem, NounItem, OrderItem, SpotItem, TransformItem, WhyItem, WriteItem } from '../grammar/lessonTypes';
 import { markAnswerIndex, markTokens } from './grammarMark';
 import { filterVosotros, filterVosotrosPairs } from '../grammar/vosotros';
-import { ARTICLE_ROUND_SIZE, isArticleLesson } from '../grammar/nounArticles';
+import { ARTICLE_ROUND_SIZE, isArticleLesson, isArticleSentenceItem } from '../grammar/nounArticles';
 
 // A gap/mark item always gets an option list (gap: the offered answers in shuffled
 // order; mark: the sentence's words, in order) and a correct index;
@@ -129,7 +129,13 @@ export function buildGrammarRound(topic: GrammarTopicData, seed: number): Gramma
   if (isArticleLesson(topic.topic)) {
     const articleItems = allChoiceItems.filter((item) => isArticleSetItem(item));
     if (articleItems.length > ARTICLE_ROUND_SIZE) {
-      const keep = new Set(shuffleArray(articleItems, seed).slice(0, ARTICLE_ROUND_SIZE).map((item) => item.id));
+      // example-sentence items first (seeded), the bare "___ noun" ones only fill up what is missing (FB686)
+      const shuffled = shuffleArray(articleItems, seed);
+      const picked = [
+        ...shuffled.filter((item) => isArticleSentenceItem(item as { sentence?: string })),
+        ...shuffled.filter((item) => !isArticleSentenceItem(item as { sentence?: string })),
+      ].slice(0, ARTICLE_ROUND_SIZE);
+      const keep = new Set(picked.map((item) => item.id));
       choiceItems = allChoiceItems.filter((item) => !isArticleSetItem(item) || keep.has(item.id));
     }
   }

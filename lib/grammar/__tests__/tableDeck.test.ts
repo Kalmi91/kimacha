@@ -373,12 +373,11 @@ describe('wordCellsForLesson (only the table words)', () => {
     expect(wordCellsForLesson(lessonFor('es', 'clases-de-palabras')).length).toBeGreaterThanOrEqual(WORD_DECK_MIN_CARDS);
   });
 
-  it('articulos-genero and sustantivo-numero: the article nouns of their tables give a word deck, with the article on the card', () => {
-    for (const id of ['articulos-genero', 'sustantivo-numero']) {
-      const cards = wordCellsForLesson(lessonFor('es', id));
-      expect(cards.length).toBeGreaterThanOrEqual(WORD_DECK_MIN_CARDS);
-      expect(cards.some((c) => /^(?:el|la|los|las) /i.test(c.es))).toBe(true);
-    }
+  it('sustantivo-numero: the article nouns of its tables give a word deck, with the article on the card; articulos-genero has none (noWordDeck, FB696)', () => {
+    const cards = wordCellsForLesson(lessonFor('es', 'sustantivo-numero'));
+    expect(cards.length).toBeGreaterThanOrEqual(WORD_DECK_MIN_CARDS);
+    expect(cards.some((c) => /^(?:el|la|los|las) /i.test(c.es))).toBe(true);
+    expect(wordCellsForLesson(lessonFor('es', 'articulos-genero'))).toEqual([]);
   });
 
   it('no word deck even on bad input', () => {
