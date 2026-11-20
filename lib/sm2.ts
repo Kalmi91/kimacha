@@ -209,7 +209,8 @@ export function sm2MarkKnown(card: Sm2Card, today: string, calendarDay: string =
     interval: KNOWN_INTERVAL_DAYS,
     due: addDays(today, KNOWN_INTERVAL_DAYS),
     lastReview: calendarDay,
-    introducedAt: card.introducedAt ?? calendarDay,
+    // A word marked known before it was ever introduced stays unintroduced, so it does not use up the day's new-word budget.
+    introducedAt: card.introducedAt,
     known: true,
   };
 }

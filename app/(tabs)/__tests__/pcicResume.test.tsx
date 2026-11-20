@@ -95,7 +95,7 @@ describe('PCIC tab: on reopening, the round resumes where it left off', () => {
       await flush();
     }
     const before = StyleSheet.flatten(first.getByTestId('learn-progress-fill').props.style).width;
-    expect(parseFloat(before as string)).toBeCloseTo((2 / 4) * 100, 1); // 2 done, 3 to go: 2 / (5 - 1)
+    expect(parseFloat(before as string)).toBeCloseTo((2 / 6) * 100, 1); // 2 skipped, each brought in the next new word, 5 to go: 2 / (7 - 1)
     first.unmount();
 
     const second = render(<PcicScreen />);

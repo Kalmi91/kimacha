@@ -15,7 +15,7 @@ import { pcicItemsForLevel, findPcicItem, type PcicLevel, type PcicTarget } from
 import { gradePcicAnswer, gradeSentenceAnswer, type PcicGrade } from '@/lib/pcicMatch';
 import { articleOf, composeAnswer, type ArticlePick } from '@/lib/articlePicker';
 import { sm2Review, sm2MarkKnown, type Sm2Card, type Sm2Grade } from '@/lib/sm2';
-import { pickLearnSession, continueLearnSession } from '@/lib/pcicSession';
+import { pickLearnSession, continueLearnSession, skipReplacement, type LearnSessionOptions } from '@/lib/pcicSession';
 import { advanceLearnSrsDay } from '@/lib/learn/srsDay';
 import { countDoneToday, countIntroducedTodayByKind, requeueAfterGrade, requeueAfterUndo, newTopUp, shouldAskMoreNew, nextPcicNewBonus, pcicSessionNewLimit, practiceTopUpStep, PCIC_NEW_BONUS_STEP, thinSentences, dropOrphanCards, countFinishedToday } from '@/lib/pcicSession';
 import { cardsForLevel } from '@/lib/pcicLevels';
@@ -58,6 +58,8 @@ interface UndoEntry {
   fatigueMiss?: { day: string; parked: boolean };
   answerPair?: string;
   answerThinkMs?: number;
+  // "Don't learn this" on a new word: the new word that took its place (undo takes it back out).
+  added?: string;
 }
 
 // The PCIC tab's learning session: state, SRS stepping (SM-2), XP and streak writes,
@@ -74,6 +76,8 @@ export function usePcicSession() {
   const [srsDay, setSrsDay] = useState('');
   const noPileUpRef = useRef(true);
   const reviewIdsRef = useRef<ReadonlySet<string>>(new Set());
+  // day|level|source|target of the last load: a refocus of the same session keeps its screen state (load()).
+  const sessionKeyRef = useRef('');
   const [level, setLevel] = useState<PcicLevel>('B1');
   // The target language of the active pair (onboarding.target);
   // it decides the card's prompt/answer direction, the TTS locale and how the
@@ -231,7 +235,7 @@ export function usePcicSession() {
     // Card-level resume: the saved order and the "again" timers are put back on the rebuilt queue (invalid after a day change / level change).
     const resume = await loadLearnResume(db);
     const picked = pickLearnSession(cards, pcicIntroOrder(newOrder), { srsDay: reviewDay, calendarDay: day, noPileUp, parked, newLimit: pcicSessionNewLimit({ limit: newLimit, bonus, introducedAllLevels, introducedThisLevel: introducedToday }) });
-    reviewIdsRef.current = new Set(picked.filter((c) => c.state !== 'new').map((c) => c.itemId));
+    reviewIdsRef.current = new Set(picked.filter((c) => isFatigueReview(c, day)).map((c) => c.itemId));
     const resumed = arrangeQueue(applyLearnResume(picked, resume, day, lvl), day, loadedFatigue, { ...loadedOptions, mixNew: true });
     if (fatigueDetector && !loadedFatigue.tired) {
       const run = currentRun(answerLog.recent(pairOf(dir, sourceFor(dir, src)), FATIGUE_DETECTOR.MAX_RUN_ANSWERS), Date.now());
@@ -247,14 +251,30 @@ export function usePcicSession() {
     const declinedDay = await loadNewDeclinedDay(db, lvl);
     setNewDeclinedDay(declinedDay);
     setAskMoreNew(!noPileUp && shouldAskMoreNew(resumed, cards, pcicIntroOrder(newOrder), day, { limit: newLimit, bonus, introducedAllLevels, introducedThisLevel: introducedToday }, declinedDay));
+    // A refocus on the same day, level and language pair (tab switch, back from another screen) keeps the session as it
+    // was: the tiles and the undo (while its card is unchanged in the DB), and the typed or revealed answer while the
+    // same card is on top. A level switch, a new day or a pair change starts fresh.
+    const sessionKey = `${day}|${lvl}|${src}|${dir}`;
+    const sameSession = !overrideLevel && sessionKeyRef.current === sessionKey;
+    const sameCard = sameSession && isLearnResumeFor(resume, day, lvl) && resume.order[0] === resumed[0]?.itemId;
+    sessionKeyRef.current = sessionKey;
+    const stored = new Map(cards.map((c) => [c.itemId, c]));
+    const untouched = (c: Sm2Card) => {
+      const s = stored.get(c.itemId);
+      return s !== undefined && s.state === c.state && s.due === c.due && s.reps === c.reps && !!s.known === !!c.known;
+    };
     setQueue(resumed, { mixNew: false });
     if (isLearnResumeFor(resume, day, lvl) && resume.base !== null) setBatchBase({ day, level: lvl, n: resume.base });
-    setTypedAnswer('');
-    setGrade(null);
-    setSessionAnswered(0);
-    setSessionNew(0);
-    setSessionAgain(0);
-    setLastGraded(null);
+    if (!sameCard) {
+      setTypedAnswer('');
+      setGrade(null);
+    }
+    if (!sameSession) {
+      setSessionAnswered(0);
+      setSessionNew(0);
+      setSessionAgain(0);
+    }
+    setLastGraded((prev) => (sameSession && prev !== null && untouched(prev.after) ? prev : null));
     setPcicBonus(bonus);
     setLoading(false);
     setLoadSeq((n) => n + 1);
@@ -490,16 +510,20 @@ export function usePcicSession() {
     setAskMoreNew(!noPileUpRef.current && shouldAskMoreNew(queueAfter, activeCards, pcicIntroOrder(newOrder), today, { limit: dailyNewLimit, bonus: pcicBonus, introducedAllLevels, introducedThisLevel }, newDeclinedDay));
   };
 
-  const afterReviews = (queueAfter: Sm2Card[], changed: Sm2Card) => {
-    const cards = new Map(allCards).set(changed.itemId, changed);
+  const sessionOpts = (cards: Map<string, Sm2Card>): LearnSessionOptions => {
     const activeCards = [...cards.values()];
     const introducedThisLevel = activeCards.filter((c) => c.introducedAt === today).length;
     const introducedAllLevels = [...activeCards, ...allLevelCards.filter((c) => !cards.has(c.itemId) && findPcicItem(c.itemId) !== undefined)].filter((c) => c.introducedAt === today).length;
-    return continueLearnSession(queueAfter, activeCards, pcicIntroOrder(newOrder), {
+    return {
       srsDay, calendarDay: today, noPileUp: noPileUpRef.current,
       parked: fatigueOptionsRef.current.missCap ? fatigueRef.current.parked : [],
       newLimit: pcicSessionNewLimit({ limit: dailyNewLimit, bonus: pcicBonus, introducedAllLevels, introducedThisLevel }),
-    }, reviewIdsRef.current);
+    };
+  };
+
+  const afterReviews = (queueAfter: Sm2Card[], changed: Sm2Card) => {
+    const cards = new Map(allCards).set(changed.itemId, changed);
+    return continueLearnSession(queueAfter, [...cards.values()], pcicIntroOrder(newOrder), sessionOpts(cards), reviewIdsRef.current);
   };
 
   // FB542: "+N" on the question: the same budget step as the done screen's buttons, the fresh cards one at a time among
@@ -601,7 +625,10 @@ export function usePcicSession() {
     if (lastGraded.fatigueMiss?.day === todayRef.current) {
       await persistFatigue(undoMiss(fatigueRef.current, todayRef.current, lastGraded.before.itemId, lastGraded.fatigueMiss.parked));
     }
-    setQueue((prev) => afterReviews(requeueAfterUndo(prev, lastGraded.before, lastGraded.after, srsDay), lastGraded.before), { keepFirst: true });
+    // Undoing a skip takes back the new word that took the skipped one's place, while it is still unseen.
+    const { added } = lastGraded;
+    setQueue((prev) => afterReviews(requeueAfterUndo(added ? prev.filter((c) => c.itemId !== added || c.state !== 'new') : prev,
+      lastGraded.before, lastGraded.after, srsDay), lastGraded.before), { keepFirst: true });
     // The floor is 0 because it can be pressed during a session reset (load) too.
     if (lastGraded.counted) {
       answerLog.removeLast(lastGraded.answerPair ?? languagePair, lastGraded.before.itemId);
@@ -628,8 +655,13 @@ export function usePcicSession() {
       pendingSkipRef.current -= 1;
     }
     setAllCards((prev) => new Map(prev).set(next.itemId, next));
-    setLastGraded({ before, after: next, typed: typedAnswer, grade, wasNew: false, g: 'good', counted: false });
-    setQueue((prev) => afterReviews(requeueAfterGrade(prev, next, srsDay), next));
+    const cards = new Map(allCards).set(next.itemId, next);
+    const added = before.state === 'new' ? skipReplacement(queue, [...cards.values()], pcicIntroOrder(newOrder), sessionOpts(cards)) : null;
+    setLastGraded({ before, after: next, typed: typedAnswer, grade, wasNew: false, g: 'good', counted: false, added: added?.itemId });
+    setQueue((prev) => {
+      const requeued = requeueAfterGrade(prev, next, srsDay);
+      return afterReviews(added && !requeued.some((c) => c.itemId === added.itemId) ? [...requeued, added] : requeued, next);
+    });
     setTypedAnswer('');
     setArticlePick('');
     setGrade(null);

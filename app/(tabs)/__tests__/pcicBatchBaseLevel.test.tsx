@@ -74,8 +74,8 @@ describe('PCIC tab: the progress bar also advances on the other level', () => {
       await flush();
     }
     const width = StyleSheet.flatten(getByTestId('learn-progress-fill').props.style).width as string;
-    // 5 done, 10 to go: 5 / (15 - 1).
-    expect(parseFloat(width)).toBeCloseTo((5 / 14) * 100, 1);
+    // 5 skipped, each brought in the next new word, 15 to go: 5 / (20 - 1).
+    expect(parseFloat(width)).toBeCloseTo((5 / 19) * 100, 1);
   });
 
   it('the +N batch base stays on its own level: after +15 on A1, staying on A1 the bar starts from 0%', async () => {
