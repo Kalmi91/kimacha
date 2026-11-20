@@ -10,6 +10,7 @@ import {
   articleNounItems,
   articleNouns,
   articleTaskSentence,
+  isArticleSentenceItem,
 } from '@/lib/grammar/nounArticles';
 import type { LessonV2 } from '@/lib/grammar/lessonTypes';
 
@@ -103,6 +104,17 @@ describe('the articulos-genero lesson', () => {
     expect(a).toHaveLength(ARTICLE_ROUND_SIZE);
     expect(count(1)).toEqual(a);
     expect(count(2)).not.toEqual(a);
+  });
+
+  it('the round takes example sentences first: all 20 el / la items are sentences, seeded, different seeds differ (FB686)', () => {
+    const ids = (seed: number) =>
+      buildGrammarRound(lesson, seed).filter((r) => grammarRoundItemKind(r) === 'article').map((r) => r.item as { id: string; sentence: string });
+    const a = ids(5);
+    expect(a).toHaveLength(ARTICLE_ROUND_SIZE);
+    expect(a.every((i) => isArticleSentenceItem(i))).toBe(true);
+    expect(ids(5).map((i) => i.id)).toEqual(a.map((i) => i.id));
+    expect(ids(6).map((i) => i.id)).not.toEqual(a.map((i) => i.id));
+    expect(isArticleSentenceItem({ sentence: '___ agua' })).toBe(false);
   });
 
   it('the form, why and match tasks FB687-689 removed are gone, the lesson has noWordDeck and no word deck (FB696)', () => {

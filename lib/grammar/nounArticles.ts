@@ -161,6 +161,11 @@ export function articleTaskSentence(n: ArticleNoun): string {
   return `___ ${n.noun}`;
 }
 
+/** True when the el / la item asks in an example sentence (FB686), false for the bare "___ noun" task. */
+export function isArticleSentenceItem(item: { sentence?: string }): boolean {
+  return !!item.sentence && !/^___ \S+$/.test(item.sentence);
+}
+
 /** The items of the el / la chooser: "___ agua" -> el. Members of the `article` set of GrammarGapItem. */
 export function articleNounItems(): GrammarGapItem[] {
   return articleNouns().map((n) => {
