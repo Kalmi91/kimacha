@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
 import type { AudioPlayer } from 'expo-audio';
 import { useFocusEffect } from 'expo-router';
@@ -19,7 +19,8 @@ import {
   GREETINGS,
   LISTENING_PROGRESS_KEY,
   LISTENING_RATE_KEY,
-  LISTENING_RUN_KEY,
+  listeningFor,
+  runKeyFor,
   RATES,
   clock,
   isComplete,
@@ -46,7 +47,6 @@ interface Props {
 }
 
 const WRONG_MS = 700;
-const pairs = GREETINGS.pairs;
 const freshSeed = () => Math.floor(Math.random() * 2147483647) + 1;
 
 export default function SpeechListen({ target, onBack, onFinished }: Props) {
@@ -54,6 +54,10 @@ export default function SpeechListen({ target, onBack, onFinished }: Props) {
   const colors = Colors[theme];
   const g = useGrammarColors();
   const sx = t().speechTab;
+  const data = listeningFor(target) ?? GREETINGS;
+  const pairs = data.pairs;
+  const n = pairs.length;
+  const runKey = runKeyFor(data.lang);
 
   const player = useRef<AudioPlayer | null>(null);
   const [playing, setPlaying] = useState(false);
@@ -78,7 +82,7 @@ export default function SpeechListen({ target, onBack, onFinished }: Props) {
 
   useEffect(() => {
     let alive = true;
-    const p = makeListeningPlayer();
+    const p = makeListeningPlayer(target === 'en' ? 'en' : 'es');
     player.current = p;
     p.shouldCorrectPitch = true;
     const sub = p.addListener('playbackStatusUpdate', (s) => {
@@ -90,7 +94,7 @@ export default function SpeechListen({ target, onBack, onFinished }: Props) {
     void (async () => {
       const db = getDb();
       const saved = parseRate(await loadResumeValue(db, LISTENING_RATE_KEY));
-      const savedRun = parseRun(await loadResumeValue(db, LISTENING_RUN_KEY), pairs.length);
+      const savedRun = parseRun(await loadResumeValue(db, runKey), n);
       if (!alive) return;
       rateRef.current = saved;
       setRate(saved);
@@ -98,7 +102,7 @@ export default function SpeechListen({ target, onBack, onFinished }: Props) {
       if (savedRun) {
         setRun(savedRun);
         // a finished run is already reported: the restore writes no second progress row
-        reported.current = isComplete(savedRun, pairs.length);
+        reported.current = isComplete(savedRun, n);
       }
       setRestored(true);
     })();
@@ -114,7 +118,7 @@ export default function SpeechListen({ target, onBack, onFinished }: Props) {
       }
       player.current = null;
     };
-  }, []);
+  }, [n, runKey, target]);
 
   // another tab (the screen stays mounted) pauses the recording
   useFocusEffect(
@@ -126,7 +130,7 @@ export default function SpeechListen({ target, onBack, onFinished }: Props) {
     ),
   );
 
-  const total = length > 0 ? length : GREETINGS.durationSec;
+  const total = length > 0 ? length : data.durationSec;
   const play = () => {
     const p = player.current;
     if (!p) return;
@@ -165,7 +169,7 @@ export default function SpeechListen({ target, onBack, onFinished }: Props) {
   };
   const shownFraction = dragFraction ?? (total > 0 ? Math.min(1, position / total) : 0);
 
-  const order = useMemo(() => rightOrder(pairs.length, run.seed), [run.seed]);
+  const order = rightOrder(n, run.seed);
   const complete = isComplete(run, pairs.length);
 
   const tryPair = (l: number, r: number) => {
@@ -174,12 +178,12 @@ export default function SpeechListen({ target, onBack, onFinished }: Props) {
     setRight(null);
     setRun(next);
     if (correct) {
-      void saveResumeValue(getDb(), LISTENING_RUN_KEY, serializeRun(next));
+      void saveResumeValue(getDb(), runKey, serializeRun(next));
       if (isComplete(next, pairs.length) && !reported.current) {
         reported.current = true;
         void (async () => {
           try {
-            await getDb().setGameProgress(LISTENING_PROGRESS_KEY, GREETINGS.id, 'done', { mistakes: next.mistakes, at: localDateString() });
+            await getDb().setGameProgress(LISTENING_PROGRESS_KEY, data.id, 'done', { mistakes: next.mistakes, at: localDateString() });
           } catch (e) {
             console.warn('listen: could not write the progress', e);
           }
@@ -208,7 +212,7 @@ export default function SpeechListen({ target, onBack, onFinished }: Props) {
     setLeft(null);
     setRight(null);
     setWrong(null);
-    void saveResumeValue(getDb(), LISTENING_RUN_KEY, serializeRun(next));
+    void saveResumeValue(getDb(), runKey, serializeRun(next));
   };
 
   const cell = (side: 'left' | 'right', i: number, label: string) => {
@@ -350,7 +354,7 @@ export default function SpeechListen({ target, onBack, onFinished }: Props) {
         {restored && (
           <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
             <Text style={[styles.matchTitle, { color: colors.text }]}>{sx.matchTitle}</Text>
-            <Text style={[styles.instruction, { color: colors.textMuted }]}>{sx.matchInstruction}</Text>
+            <Text style={[styles.instruction, { color: colors.textMuted }]}>{target === 'en' ? sx.matchInstructionEn : sx.matchInstruction}</Text>
             <View style={styles.columns}>
               <View style={styles.column}>{pairs.map((p, i) => cell('left', i, p.place))}</View>
               <View style={styles.column}>{order.map((i) => cell('right', i, pairs[i].greeting))}</View>
