@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react';
-import { ActivityIndicator, Keyboard, KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { ActivityIndicator, Keyboard, KeyboardAvoidingView, Platform, Pressable, StyleSheet, Text, View } from 'react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 
 import Colors from '@/constants/Colors';
@@ -48,6 +48,8 @@ import TestQuestionView from '@/components/grammar/TestQuestionView';
 import XpChip from '@/components/XpChip';
 import { awardXpThen } from '@/lib/xpAward';
 import ExamButton from '@/components/exam/ExamButton';
+import type { GrammarMiss } from '@/lib/grammar/roundMiss';
+import GrammarResult from '@/components/grammar/GrammarResult';
 import { DockSlotProvider, useDockSlot } from '@/components/learn/DockSlot';
 import { FAB_CLEARANCE } from '@/components/learn/DockedAction';
 import ScreenFeedback from '@/lib/screenFeedback';
@@ -97,6 +99,8 @@ export default function LevelTestScreen() {
   // the XP the answer on the result card gave (FB591); 0 shows nothing
   const [earned, setEarned] = useState(0);
   const [round, setRound] = useState<LevelRound>({ n: 0, right: 0, startPct: 0 });
+  // the wrong answers of the round on screen, for the round-end Mistakes list (not kept over an app kill)
+  const [misses, setMisses] = useState<GrammarMiss[]>([]);
   const [doneOpen, setDoneOpen] = useState(false);
   // the level's standing on the bar (FB593/594): never sinks, +0.3 per right answer; saved per pair and level, like the round
   const [shown, setShown] = useState(0);
@@ -202,6 +206,7 @@ export default function LevelTestScreen() {
     };
     setRound(nextRound);
     saveRound(nextRound);
+    if (!ok) setMisses((m) => [...m, { prompt: pendingQ.review.question, given: given ?? null, correct: pendingQ.review.answer }]);
     const nextShown = nextShownPct(shown, levelPercent(ids, nextEvidence), ok);
     if (nextShown !== shown) {
       setShown(nextShown);
@@ -335,10 +340,28 @@ export default function LevelTestScreen() {
       <View style={styles.flex}>
         {headerFor('round-end')}
         {progress}
-        <ScrollView testID="level-test-round-scroll" contentContainerStyle={styles.body}>
+        <View testID="level-test-round-scroll" style={styles.flex}>
+        <GrammarResult
+          correct={round.right}
+          total={LEVEL_ROUND_SIZE}
+          scoreTestID="level-test-round-score"
+          misses={misses}
+          onRetake={() => {
+            setMisses([]);
+            const fresh = { n: 0, right: 0, startPct: shownPctOf(shown, pct) };
+            setRound(fresh);
+            saveRound(fresh);
+          }}
+          onBack={() => {
+            saveRound(null);
+            router.back();
+          }}
+          retakeLabel={s.nextRound(LEVEL_ROUND_SIZE)}
+          retakeTestID="level-test-round-next"
+          backLabel={t().exam.leave}
+          backTestID="level-test-round-leave"
+        >
           <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
-            <Text style={[styles.line, { color: colors.textMuted }]}>{s.roundDone}</Text>
-            <Text testID="level-test-round-score" style={[styles.title, { color: colors.text }]}>{s.roundScore(round.right, LEVEL_ROUND_SIZE)}</Text>
             <Text testID="level-test-round-levels" style={[styles.line, { color: colors.text }]}>{s.roundLevels(level, shownLabel(round.startPct), shownLabel(shownPctOf(shown, pct)))}</Text>
           </Card>
           {rows.length > 0 ? (
@@ -371,25 +394,8 @@ export default function LevelTestScreen() {
               <Text testID="level-test-round-weakest" style={[styles.line, { color: colors.text }]}>{s.weakestLine(titleOf(weak.id), weak.pct)}</Text>
             </Card>
           ) : null}
-          <ExamButton
-            testID="level-test-round-next"
-            label={s.nextRound(LEVEL_ROUND_SIZE)}
-            onPress={() => {
-              const fresh = { n: 0, right: 0, startPct: shownPctOf(shown, pct) };
-              setRound(fresh);
-              saveRound(fresh);
-            }}
-          />
-          <ExamButton
-            testID="level-test-round-leave"
-            secondary
-            label={t().exam.leave}
-            onPress={() => {
-              saveRound(null);
-              router.back();
-            }}
-          />
-        </ScrollView>
+        </GrammarResult>
+        </View>
       </View>,
       doneFor('round-end')
     );

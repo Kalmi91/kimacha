@@ -34,8 +34,8 @@ describe('lesson practice (OrderDrillItem)', () => {
     return onDone;
   };
 
-  it('the main order is right', () => expect(run(['ayer', 'hablé'])).toHaveBeenCalledWith(true));
-  it('an accept order is right', () => expect(run(['hablé', 'ayer'])).toHaveBeenCalledWith(true));
+  it('the main order is right', () => expect(run(['ayer', 'hablé'])).toHaveBeenCalledWith(true, undefined, expect.any(String)));
+  it('an accept order is right', () => expect(run(['hablé', 'ayer'])).toHaveBeenCalledWith(true, undefined, expect.any(String)));
   it('another order is still wrong', () => {
     const wrong: OrderItem = { ...item, es: 'Yo hablé ayer.', accept: ['Ayer yo hablé.'] };
     const onDone = jest.fn();
@@ -43,7 +43,7 @@ describe('lesson practice (OrderDrillItem)', () => {
     for (const w of ['hablé', 'yo', 'ayer']) fireEvent.press(screen.getAllByText(w)[0]);
     fireEvent.press(screen.getByText('Check'));
     fireEvent.press(screen.getByText(/Next/));
-    expect(onDone).toHaveBeenCalledWith(false);
+    expect(onDone).toHaveBeenCalledWith(false, undefined, expect.any(String));
   });
 });
 

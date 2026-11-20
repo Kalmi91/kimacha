@@ -113,7 +113,7 @@ describe('the drill reads nothing aloud (FB671)', () => {
     for (const w of [...tileWords(item.es), extra[0]]) fireEvent.press(screen.getAllByText(w)[0]);
     fireEvent.press(screen.getByText('Check'));
     fireEvent.press(screen.getByText(/Next/));
-    expect(onDone).toHaveBeenCalledWith(false);
+    expect(onDone).toHaveBeenCalledWith(false, undefined, expect.any(String));
     expect(speak).not.toHaveBeenCalled();
   });
 
@@ -124,7 +124,7 @@ describe('the drill reads nothing aloud (FB671)', () => {
     for (const w of tileWords(item.es)) fireEvent.press(screen.getAllByText(w)[0]);
     fireEvent.press(screen.getByText('Check'));
     fireEvent.press(screen.getByText(/Next/));
-    expect(onDone).toHaveBeenCalledWith(true);
+    expect(onDone).toHaveBeenCalledWith(true, undefined, expect.any(String));
     expect(speak).not.toHaveBeenCalled();
   });
 });

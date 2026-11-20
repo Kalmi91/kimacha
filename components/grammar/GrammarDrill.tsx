@@ -15,12 +15,12 @@ import {
   isMatchItem,
   isTransformItem,
   isWhyItem,
-  isWriteItem,
   type GrammarKind,
   type GrammarMarkItem,
   type GrammarTopicData,
 } from '@/lib/games/content';
 import { type ContentLang, type LessonBlock } from '@/lib/grammar/lessonTypes';
+import { missOfItem, type GrammarMiss } from '@/lib/grammar/roundMiss';
 import { markTokens } from '@/lib/games/grammarMark';
 import { speak } from '@/lib/speech';
 import { speechLang } from '@/lib/languages';
@@ -85,8 +85,8 @@ interface Props {
 export interface RoundStats {
   bestCombo: number;
   seconds: number;
-  /** The first mistaken sentence with the correct form (only for gap/mark and transform items). */
-  miss: { sentence: string; highlight: string } | null;
+  /** Every mistaken answer of the round (task, what the learner gave, right solution), for the "Mistakes:" list. */
+  misses: GrammarMiss[];
 }
 
 const CHOICE_ONLY: readonly GrammarKind[] = ['choice'];
@@ -180,14 +180,14 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
   const [combo, setCombo] = useState(0);
   const comboRef = useRef(0);
   const bestComboRef = useRef(0);
-  const missRef = useRef<RoundStats['miss']>(null);
+  const missesRef = useRef<GrammarMiss[]>([]);
   const [startedAt] = useState(() => Date.now());
-  const noteResult = (wasCorrect: boolean, miss?: RoundStats['miss']) => {
+  const noteResult = (wasCorrect: boolean, miss?: GrammarMiss | null) => {
     comboRef.current = wasCorrect ? comboRef.current + 1 : 0;
     bestComboRef.current = Math.max(bestComboRef.current, comboRef.current);
     setCombo(comboRef.current);
     onAnswer?.(round[index].item.id, wasCorrect);
-    if (!wasCorrect && miss && !missRef.current) missRef.current = miss;
+    if (!wasCorrect && miss) missesRef.current.push(miss);
   };
   // the Settings accent-strictness switch, fetched once, only if the round needs it (transform, dictation, write, a German form:
   // there it decides whether the digraph spelling counts for the umlaut and the ß).
@@ -224,7 +224,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
     onRoundStats?.({
       bestCombo: bestComboRef.current,
       seconds: secondsSince(startedAt),
-      miss: missRef.current,
+      misses: missesRef.current,
     });
     if (useTransformRounds) {
       onFinish(finalCorrectCount, totalUnits, round.map((r) => r.item.id));
@@ -241,15 +241,9 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
   // so correctCount's state update has not landed yet; the final tally is
   // computed locally instead of trusted from the (possibly stale) closure.
   // `correctUnits` is the partial credit (matching's right pairs); without it the item is 1 unit, right or not.
-  const completeItem = (wasCorrect: boolean, correctUnits?: number) => {
-    noteResult(
-      wasCorrect,
-      isTransformItem(roundItem.item)
-        ? { sentence: roundItem.item.answer, highlight: roundItem.item.answer }
-        : isWriteItem(roundItem.item)
-          ? { sentence: roundItem.item.es, highlight: roundItem.item.es }
-          : undefined
-    );
+  // given is what the learner answered (typed text, the picked option, the built sentence), for the Mistakes list.
+  const completeItem = (wasCorrect: boolean, correctUnits?: number, given?: string) => {
+    noteResult(wasCorrect, wasCorrect ? null : missOfItem(roundItem.item, contentLang, given));
     const finalCount = correctCount + (correctUnits ?? (wasCorrect ? 1 : 0));
     if (finalCount !== correctCount) setCorrectCount(finalCount);
     advance(finalCount);
@@ -299,7 +293,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
             strictAccents={strictAccents}
             colors={colors}
             s={s}
-            onDone={completeItem}
+            onDone={(ok, given) => completeItem(ok, undefined, given)}
           />
         ) : isWhyItem(roundItem.item) ? (
           <WhyDrillItem
@@ -309,7 +303,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
             contentLang={contentLang as ContentLang}
             colors={colors}
             s={s}
-            onDone={completeItem}
+            onDone={(ok, given) => completeItem(ok, undefined, given)}
           />
         ) : isTransformItem(roundItem.item) ? (
           <TransformDrillItem
@@ -320,7 +314,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
             strictAccents={strictAccents}
             colors={colors}
             s={s}
-            onDone={completeItem}
+            onDone={(ok, given) => completeItem(ok, undefined, given)}
           />
         ) : (
           <NewKindDrillItem
@@ -330,7 +324,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
             contentLang={contentLang as ContentLang}
             strictAccents={strictAccents}
             lessonItems={topic.items}
-            onDone={(ok) => completeItem(ok)}
+            onDone={(ok, _mistyped, given) => completeItem(ok, undefined, given)}
           />
         )}
       </ScrollView>
@@ -365,15 +359,11 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
       marking ? current.item.sentence : current.item.sentence.replace('___', current.options[current.correctIndex]),
       speechLang(learnedLang)
     );
-    noteResult(
-      optIdx === current.correctIndex,
-      marking
-        ? { sentence: (current.item as GrammarMarkItem).sentence, highlight: current.options[current.correctIndex] }
-        : {
-            sentence: current.item.sentence.replace('___', current.options[current.correctIndex]),
-            highlight: current.options[current.correctIndex],
-          }
-    );
+    noteResult(optIdx === current.correctIndex, {
+      prompt: current.item.sentence,
+      given: current.options[optIdx],
+      correct: marking ? current.options[current.correctIndex] : current.item.sentence.replace('___', current.options[current.correctIndex]),
+    });
   };
 
   // the badge only shows on the gap branch (choice); the mark item

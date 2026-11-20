@@ -67,7 +67,7 @@ function TypedItem({
   extra?: string;
   learnedLang: string;
   strictAccents: boolean;
-  onDone: (correct: boolean, mistyped?: boolean) => void;
+  onDone: (correct: boolean, mistyped?: boolean, given?: string) => void;
   /** The answer is checked (its feedback is on screen), before Next. */
   onShown?: (correct: boolean) => void;
 }) {
@@ -93,7 +93,7 @@ function TypedItem({
     !enabled
       ? null
       : result
-        ? { label: s.grammar.nextArrow, tone: 'next', testID: 'grammar-next', onPress: () => onDone(result.correct), secondary: mistypedDock(!result.typedRight, () => onDone(true, true)) }
+        ? { label: s.grammar.nextArrow, tone: 'next', testID: 'grammar-next', onPress: () => onDone(result.correct, undefined, typed), secondary: mistypedDock(!result.typedRight, () => onDone(true, true)) }
         : { label: `✓ ${s.grammar.check}`, tone: 'check', testID: `${prefix}-check`, onPress: check }
   );
 
@@ -136,7 +136,7 @@ function TypedItem({
                 {extra ? <Text style={[styles.translation, { color: resultInk(g, result.correct) }]}>{extra}</Text> : null}
               </BrutalBox>
               {docked ? null : (
-                <BrutalBox testID="grammar-next" fill="ink" boxStyle={styles.next} onPress={() => onDone(result.correct)}>
+                <BrutalBox testID="grammar-next" fill="ink" boxStyle={styles.next} onPress={() => onDone(result.correct, undefined, typed)}>
                   <Text style={[styles.nextText, { color: inkButtonText(g) }]}>{s.grammar.nextArrow}</Text>
                 </BrutalBox>
               )}
@@ -163,7 +163,7 @@ type TypedProps<T> = {
   learnedLang: string;
   contentLang: Lang;
   strictAccents: boolean;
-  onDone: (correct: boolean, mistyped?: boolean) => void;
+  onDone: (correct: boolean, mistyped?: boolean, given?: string) => void;
   onShown?: (correct: boolean) => void;
 };
 
@@ -202,7 +202,7 @@ export function ClozeDrillItem({ item, learnedLang, contentLang, strictAccents, 
 
   const { docked, padBottom } = useDockedAction(
     result
-      ? { label: s.grammar.nextArrow, tone: 'next', testID: 'grammar-next', onPress: () => onDone(allRight), secondary: mistypedDock(!allRight, () => onDone(true, true)) }
+      ? { label: s.grammar.nextArrow, tone: 'next', testID: 'grammar-next', onPress: () => onDone(allRight, undefined, filledCloze(item.text, typed)), secondary: mistypedDock(!allRight, () => onDone(true, true)) }
       : { label: `✓ ${s.grammar.check}`, tone: 'check', testID: 'cloze-check', onPress: check }
   );
 
@@ -258,7 +258,7 @@ export function ClozeDrillItem({ item, learnedLang, contentLang, strictAccents, 
             <Text style={[styles.translation, { color: resultInk(g, allRight) }]}>{item.tr[contentLang] ?? item.tr.en}</Text>
           </BrutalBox>
           {docked ? null : (
-            <BrutalBox testID="grammar-next" fill="ink" boxStyle={styles.next} onPress={() => onDone(allRight)}>
+            <BrutalBox testID="grammar-next" fill="ink" boxStyle={styles.next} onPress={() => onDone(allRight, undefined, filledCloze(item.text, typed))}>
               <Text style={[styles.nextText, { color: inkButtonText(g) }]}>{s.grammar.nextArrow}</Text>
             </BrutalBox>
           )}

@@ -1,6 +1,4 @@
-// the round-end screen (screen 3): big correct-ratio + combo sticker,
-// 3 small boxes, "practice this" with the wrong sentence, topic progress in segments,
-// no XP. Mock pattern: lessonV2.play.test.tsx.
+// the round-end screen (FB691-FB695): the result as one number, the "Mistakes:" list, topic progress, no XP. Mock pattern: lessonV2.play.test.tsx.
 
 jest.mock('expo-speech', () => ({
   speak: jest.fn(),
@@ -61,25 +59,25 @@ describe('round end, neo-brutalist', () => {
     return round.length;
   };
 
-  it('everything correct: large ratio, combo sticker with the best streak, no "practice this"', async () => {
+  it('everything correct: one number, no Time / Correct boxes, no mistakes list, two buttons', async () => {
     const total = await play(null);
-    expect(screen.getByTestId('grammar-score')).toHaveTextContent(new RegExp(`^${total}/${total}`));
-    expect(screen.queryByText(`combo x${total}`)).toBeTruthy();
-    expect(screen.queryByTestId('grammar-practice-this')).toBeNull();
-    expect(screen.queryByText('correct')).toBeTruthy();
-    expect(screen.queryByText('time')).toBeTruthy();
-    expect(screen.queryByText('streak')).toBeNull();
+    expect(screen.getByTestId('grammar-score')).toHaveTextContent(`${total}/${total}`);
+    expect(screen.queryByTestId('grammar-mistakes')).toBeNull();
+    expect(screen.queryByText('correct')).toBeNull();
+    expect(screen.queryByText('time')).toBeNull();
     expect(screen.queryByTestId('grammar-practice-again')).toBeTruthy();
+    expect(screen.queryByTestId('grammar-back-course')).toBeTruthy();
+    expect(screen.queryByTestId('grammar-next-type')).toBeNull();
     expect(screen.queryByTestId('grammar-lesson-percent')).toBeTruthy();
-    // No XP: only the correct-ratio is in the big box.
+    // No XP: only the result number.
     expect(screen.queryByText(/XP/)).toBeNull();
   });
 
-  it('one mistake: the combo is the best streak before / after the mistake, the mistaken sentence is in the "practice this" box', async () => {
+  it('one mistake: the "Mistakes:" list holds what was picked and the right solution', async () => {
     const total = await play(2);
-    expect(screen.getByTestId('grammar-score')).toHaveTextContent(new RegExp(`^${total - 1}/${total}`));
-    expect(screen.queryByTestId('grammar-practice-this')).toBeTruthy();
-    expect(screen.queryByText('practice this')).toBeTruthy();
-    expect(screen.queryByText(`combo x${Math.max(2, total - 3)}`)).toBeTruthy();
-  });
-});
+    expect(screen.getByTestId('grammar-score')).toHaveTextContent(`${total - 1}/${total}`);
+    expect(screen.queryByText('Mistakes:')).toBeTruthy();
+    expect(screen.getAllByTestId('grammar-mistake')).toHaveLength(1);
+    expect(screen.getAllByTestId('grammar-mistake-given')).toHaveLength(1);
+    expect(screen.getAllByTestId('grammar-mistake-correct')).toHaveLength(1);
+  });});

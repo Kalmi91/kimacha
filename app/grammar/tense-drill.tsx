@@ -23,6 +23,8 @@ import { useFocusOnNewCard } from '@/lib/learn/useFocusOnNewCard';
 import type { DeLevel } from '@/lib/deForms';
 import type { DeDrillTense } from '@/lib/deConjugate';
 import { DE_DRILL_LEVELS, buildTenseRound, gradeTense, tensesAtLevel, type TenseQuestion } from '@/lib/games/deTenseDrill';
+import type { GrammarMiss } from '@/lib/grammar/roundMiss';
+import GrammarResult from '@/components/grammar/GrammarResult';
 import ScreenFeedback from '@/lib/screenFeedback';
 import { FEEDBACK_CORNER_CLEAR } from '@/components/learn/pcicStyles';
 import XpChip from '@/components/XpChip';
@@ -68,6 +70,8 @@ export default function TenseDrillScreen() {
   const [round, setRound] = useState<TenseQuestion[]>([]);
   const [index, setIndex] = useState(0);
   const [right, setRight] = useState(0);
+  // every wrong answer of the round, for the "Mistakes:" list of the end screen
+  const [misses, setMisses] = useState<GrammarMiss[]>([]);
   const [typed, setTyped] = useState('');
   const [checked, setChecked] = useState<{ correct: boolean } | null>(null);
   // the XP the checked answer gave (FB591); 0 shows nothing
@@ -99,6 +103,7 @@ export default function TenseDrillScreen() {
     setRound(questions);
     setIndex(0);
     setRight(0);
+    setMisses([]);
     setTyped('');
     setChecked(null);
     setSeq((n) => n + 1);
@@ -115,6 +120,7 @@ export default function TenseDrillScreen() {
     const correct = gradeTense(typed, current, { strictAccents });
     setChecked({ correct });
     setEarned(0);
+    if (!correct) setMisses((m) => [...m, { prompt: `${current.personLabel} · ${current.infinitive}`, given: typed.trim() || null, correct: current.answer }]);
     if (correct) awardXpThen('grammar', current.id, setEarned);
     speak(current.answer, speechLang('de'));
   };
@@ -208,35 +214,17 @@ export default function TenseDrillScreen() {
   if (phase === 'done') {
     return (
       <View style={[styles.container, { backgroundColor: colors.background }]}>
-        {header}
-        <ProgressBar testID="tensedrill-segments" pct={100} brutalStyle={styles.brutalBar} trackStyle={styles.progressTrack} trackColor={colors.card} fillStyle={styles.progressFill} fillColor={colors.successFill} />
-        <View style={styles.doneBody}>
-          <Text style={styles.doneEmoji}>{right === round.length ? '🎉' : '👍'}</Text>
-          <Text testID="tensedrill-result" variant="title" style={[styles.doneTitle, { color: colors.text }]}>{d.resultTitle(right, round.length)}</Text>
-          <ActionButton
-            testID="tensedrill-again"
-            fill="a"
-            label={d.again}
-            onPress={begin}
-            brutalStyle={styles.brutalBtn}
-            classicStyle={[styles.btn, { backgroundColor: colors.tint }]}
-            classicTextStyle={[styles.btnTextOnTint, { color: colors.onTint }]}
-            classicRole={null}
-          />
-          <ActionButton
-            testID="tensedrill-change"
-            fill="paper"
-            label={d.changeChoice}
-            onPress={() => setPhase('setup')}
-            brutalStyle={styles.brutalBtn}
-            classicStyle={[styles.btn, styles.btnOutline, { borderColor: colors.tint }]}
-            classicTextStyle={[styles.btnTextOnTint, { color: colors.tint }]}
-            classicRole={null}
-          />
-          <Pressable style={styles.ghostBtn} onPress={() => router.back()}>
-            <Text style={[styles.ghostBtnText, { color: colors.tabIconDefault }]}>{d.backToCourse}</Text>
-          </Pressable>
-        </View>
+        <GrammarResult
+          correct={right}
+          total={round.length}
+          scoreTestID="tensedrill-result"
+          misses={misses}
+          onRetake={begin}
+          onBack={() => router.back()}
+          retakeTestID="tensedrill-again"
+          backTestID="tensedrill-back-course"
+          header={header}
+        />
         {feedback}
       </View>
     );

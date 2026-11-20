@@ -26,9 +26,7 @@ export default {
     perfect: 'perfect!',
     nextArrow: 'next →',
     // brutalist round end.
-    statCorrect: 'correct',
-    statTime: 'time',
-    practiceThis: 'practice this',
+    mistakesTitle: 'Mistakes:',
     progressChange: (from: number | null, to: number) => (from === null ? `${to}%` : `${from}% → ${to}%`),
     oneMoreRound: 'one more round',
     soonLong: 'This lesson has not been written yet. It is on the list, and the rest of the level is already open.',
@@ -47,7 +45,7 @@ export default {
     nextTopic: 'Next topic',
     backToSyllabus: 'Back to the course',
     retakeTest: 'Retake the test',
-    nextTestType: 'Next test type',
+    backToGrammar: 'Back to grammar',
     doneGood: 'You have that rule down.',
     doneAgain: 'Worth reading the rule once more before the next one.',
     // mixed-language read-aloud of the lesson text.

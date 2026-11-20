@@ -9,10 +9,11 @@ import { speak, stopSpeaking } from '@/lib/speech';
 import { t } from '@/lib/i18n';
 import { useTheme } from '@/lib/ThemeContext';
 import type { LessonTestQuestion } from '@/lib/grammar/lessonTest';
+import type { GrammarMiss } from '@/lib/grammar/roundMiss';
 import { Card } from '@/components/grammar/Brutal';
+import GrammarResult from '@/components/grammar/GrammarResult';
 import LevelTestFeedback, { TableView } from '@/components/grammar/LevelTestFeedback';
 import TestQuestionView from '@/components/grammar/TestQuestionView';
-import ExamButton from '@/components/exam/ExamButton';
 import { DockSlotProvider, useDockSlot } from '@/components/learn/DockSlot';
 import { FAB_CLEARANCE } from '@/components/learn/DockedAction';
 import ScreenFeedback from '@/lib/screenFeedback';
@@ -66,6 +67,8 @@ export default function LevelPractice({
   // the XP the answer on screen gave (FB591); 0 shows nothing
   const [earned, setEarned] = useState(0);
   const [result, setResult] = useState<{ ok: boolean; given?: string } | null>(null);
+  // every wrong answer of the run, for the "Mistakes:" list of the end screen
+  const [misses, setMisses] = useState<GrammarMiss[]>([]);
   const retried = useRef(new Set<string>());
   const ruleScroll = useRef<ScrollView>(null);
   const [keyboardOpen, setKeyboardOpen] = useState(false);
@@ -86,6 +89,7 @@ export default function LevelPractice({
     if (!cur) return;
     Keyboard.dismiss();
     setResult({ ok, given });
+    if (!ok) setMisses((m) => [...m, { prompt: cur.q.review.question, given: given ?? null, correct: cur.q.review.answer }]);
     setEarned(0);
     if (ok) {
       setRight((n) => n + 1);
@@ -96,6 +100,16 @@ export default function LevelPractice({
     };
     if (ok) playChime(say);
     else say();
+  };
+
+  // Retake: the same tasks again from the start, the counts and the mistakes cleared
+  const retake = () => {
+    retried.current = new Set();
+    setQueue(tasks.map((q) => ({ q, retry: false })));
+    setIndex(0);
+    setRight(0);
+    setMisses([]);
+    setResult(null);
   };
 
   const next = () => {
@@ -160,14 +174,16 @@ export default function LevelPractice({
   let body;
   if (done) {
     body = (
-      <View style={styles.body}>
-        <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
-          <Text testID="level-practice-end" style={[styles.title, { color: colors.text }]}>
-            {s.practiceEnd(right, queue.length)}
-          </Text>
-        </Card>
-        <ExamButton testID="level-practice-back" label={s.backToTest} onPress={onExit} />
-      </View>
+      <GrammarResult
+        correct={right}
+        total={queue.length}
+        scoreTestID="level-practice-end"
+        misses={misses}
+        onRetake={retake}
+        onBack={onExit}
+        backLabel={s.backToTest}
+        backTestID="level-practice-back"
+      />
     );
   } else if (result && cur) {
     body = (

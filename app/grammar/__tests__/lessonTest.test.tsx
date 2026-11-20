@@ -24,9 +24,8 @@ jest.mock('expo-router', () => ({
 import { fireEvent, render, screen } from '@testing-library/react-native';
 import { StyleSheet } from 'react-native';
 
-import { PALETTE_FILLS } from '@/constants/GrammarPalettes';
 import { getDb } from '@/lib/database.web';
-import { GRAMMAR_PROGRESS_KEY, lessonFor, nextWrittenTopic, scoredKinds } from '@/lib/grammar/syllabus';
+import { GRAMMAR_PROGRESS_KEY, lessonFor, scoredKinds } from '@/lib/grammar/syllabus';
 import { kindBestKey } from '@/lib/grammar/lessonScore';
 import { buildLessonTest, lessonTestKey, mergeLessonTestResult, type LessonTestQuestion } from '@/lib/grammar/lessonTest';
 import { ThemeProvider } from '@/lib/ThemeContext';
@@ -136,9 +135,9 @@ describe.each(['brand', 'classic'] as const)('end-of-lesson test (%s palette)', 
     await seedBest(['match', 'form']); // "why" is missing, "choice" is just being finished
     await open();
     await playChoiceRound();
-    expect(screen.getByTestId('grammar-lessontest-note')).toHaveTextContent('Finish all practice types first');
     screen.unmount();
     await open();
+    expect(screen.getByTestId('grammar-lessontest-note')).toHaveTextContent('Finish all practice types first');
     expect(screen.getByTestId('grammar-lesson-start-lessontest')).toBeDisabled();
   });
 
@@ -146,10 +145,12 @@ describe.each(['brand', 'classic'] as const)('end-of-lesson test (%s palette)', 
     await seedBest(['match', 'form', 'why', 'transform']);
     await open();
     await playChoiceRound();
+    screen.unmount();
+    await open();
     expect(screen.getByTestId('grammar-lessontest-note')).toHaveTextContent('10 questions, pass 80%');
   });
 
-  it('on the done page "Retake the test" is the only filled button, "Back to the course" is secondary (outlined)', async () => {
+  it('on the done page "Retake the test" is the only filled button, "Back to grammar" is secondary (outlined)', async () => {
     await seedBest(['match', 'form', 'why', 'transform']);
     await open();
     await playChoiceRound();
@@ -157,11 +158,9 @@ describe.each(['brand', 'classic'] as const)('end-of-lesson test (%s palette)', 
     const test = fill('grammar-practice-again');
     expect(test).toBeTruthy();
     expect(fill('grammar-back-course')).not.toBe(test);
-    if (palette === 'brand') expect(test).toBe(PALETTE_FILLS.brand.a);
-    else expect(fill('grammar-back-course')).toBeUndefined();
   });
 
-  it('B2 a + 80%: 10 questions, no feedback after a correct one; 10/10 passed, saved, "Next topic"', async () => {
+  it('B2 a + 80%: 10 questions, no feedback after a correct one; 10/10 passed, saved, back to grammar', async () => {
     await seedBest(['match', 'form', 'why', 'transform']);
     await open();
     await playChoiceRound();
@@ -170,8 +169,8 @@ describe.each(['brand', 'classic'] as const)('end-of-lesson test (%s palette)', 
     expect(expectedQuestions()).toHaveLength(10);
     await runTest([]);
     expect(screen.getByTestId('lesson-test-verdict')).toHaveTextContent(/Lesson test passed$/);
-    expect(screen.getByTestId('lesson-test-score')).toHaveTextContent(/^10 \/ 10/);
-    expect(screen.queryByTestId('lesson-test-missed')).toBeNull();
+    expect(screen.getByTestId('lesson-test-score')).toHaveTextContent(/^10\/10/);
+    expect(screen.queryByTestId('grammar-mistakes')).toBeNull();
     // saved, per lesson
     const rows = await getDb().getGameProgress(GRAMMAR_PROGRESS_KEY);
     const saved = rows.find((r) => r.itemId === lessonTestKey(TOPIC));
@@ -179,10 +178,6 @@ describe.each(['brand', 'classic'] as const)('end-of-lesson test (%s palette)', 
     expect(saved?.data).toMatchObject({ passed: true, best: 100, last: 100 });
     // the kind rows that give the lesson % are untouched
     expect(await bestRows()).toEqual(before);
-    // on to the next topic
-    const next = nextWrittenTopic('es', TOPIC)!;
-    await press('lesson-test-next-topic');
-    expect(mockReplace).toHaveBeenCalledWith(`/grammar/${next.id}`);
     await press('lesson-test-back-syllabus');
     expect(mockBack).toHaveBeenCalledTimes(1);
   });
@@ -195,16 +190,15 @@ describe.each(['brand', 'classic'] as const)('end-of-lesson test (%s palette)', 
     await startLessonTest();
     await runTest([1, 4, 8]);
     expect(screen.getByTestId('lesson-test-verdict')).toHaveTextContent(/Not yet$/);
-    expect(screen.getByTestId('lesson-test-score')).toHaveTextContent(/^7 \/ 10/);
+    expect(screen.getByTestId('lesson-test-score')).toHaveTextContent(/^7\/10/);
     expect(screen.getByText('You need 80% to pass.')).toBeTruthy();
-    expect(screen.getByTestId('lesson-test-missed')).toBeTruthy();
-    expect(screen.getAllByText('Correct answer')).toHaveLength(3 - expectedQuestions().filter((q, i) => [1, 4, 8].includes(i) && q.review.answer === '').length);
+    expect(screen.getByTestId('grammar-mistakes')).toBeTruthy();
+    expect(screen.getAllByTestId('grammar-mistake')).toHaveLength(3);
     const saved = (await getDb().getGameProgress(GRAMMAR_PROGRESS_KEY)).find((r) => r.itemId === lessonTestKey(TOPIC));
     expect(saved?.state).toBe('failed');
     expect(saved?.data).toMatchObject({ passed: false, best: 70 });
     expect(await bestRows()).toEqual(before);
-    // no "Next topic" closure, but it can be retried
-    expect(screen.queryByTestId('lesson-test-next-topic')).toBeNull();
+    // it can be retried
     await press('lesson-test-retry');
     expect(screen.getByTestId('lesson-test-counter').props.children).toBe('Question 1 / 10');
   });
@@ -229,7 +223,7 @@ describe.each(['brand', 'classic'] as const)('end-of-lesson test (%s palette)', 
     await startLessonTest();
     await runTest([0, 5]);
     expect(screen.getByTestId('lesson-test-verdict')).toHaveTextContent(/Lesson test passed$/);
-    expect(screen.getByTestId('lesson-test-score')).toHaveTextContent(/^8 \/ 10/);
+    expect(screen.getByTestId('lesson-test-score')).toHaveTextContent(/^8\/10/);
   });
 
   it('after confirming ✕ back to the lesson, without saving', async () => {

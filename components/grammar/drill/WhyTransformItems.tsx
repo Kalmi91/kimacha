@@ -40,7 +40,7 @@ export function WhyDrillItem({
   contentLang: ContentLang;
   colors: (typeof Colors)['light'];
   s: ReturnType<typeof t>;
-  onDone: (correct: boolean) => void;
+  onDone: (correct: boolean, given?: string) => void;
 }) {
   const [selected, setSelected] = useState<number | null>(null);
   const [showTr, setShowTr] = useState(false);
@@ -48,6 +48,7 @@ export function WhyDrillItem({
   const [shown] = useState(() => shuffleOptions(item.options, item.correctIndex, hashString(item.id)));
   const answered = selected !== null;
   const isCorrect = answered && selected === shown.correctIndex;
+  const pickedText = answered ? (shown.options[selected].text[contentLang] ?? shown.options[selected].text.en) : undefined;
   const g = useGrammarColors();
 
   const select = (i: number) => {
@@ -134,7 +135,7 @@ export function WhyDrillItem({
                 </Text>
               ) : null}
             </BrutalFeedback>
-            <BrutalInkButton g={g} testID="grammar-next" label={s.grammar.nextArrow} onPress={() => onDone(isCorrect)} />
+            <BrutalInkButton g={g} testID="grammar-next" label={s.grammar.nextArrow} onPress={() => onDone(isCorrect, pickedText)} />
           </>
         ) : null}
       </View>
@@ -217,7 +218,7 @@ export function WhyDrillItem({
               {shown.options[selected].wrong?.[contentLang] ?? shown.options[selected].wrong?.en ?? ''}
             </Text>
           ) : null}
-          <Pressable testID="grammar-next" style={[styles.btn, { backgroundColor: colors.tint, marginTop: 12 }]} onPress={() => onDone(isCorrect)}>
+          <Pressable testID="grammar-next" style={[styles.btn, { backgroundColor: colors.tint, marginTop: 12 }]} onPress={() => onDone(isCorrect, pickedText)}>
             <Text style={[styles.btnText, { color: colors.onTint }]}>{s.games.understood}</Text>
           </Pressable>
         </View>
@@ -244,7 +245,7 @@ export function TransformDrillItem({
   strictAccents: boolean;
   colors: (typeof Colors)['light'];
   s: ReturnType<typeof t>;
-  onDone: (correct: boolean) => void;
+  onDone: (correct: boolean, given?: string) => void;
 }) {
   const [showF, setShowF] = useState(false);
   const [input, setInput] = useState('');
@@ -283,7 +284,7 @@ export function TransformDrillItem({
   const { docked, padBottom } = useDockedAction(
     result === null
       ? { label: `✓ ${s.grammar.check}`, tone: 'check', testID: 'transform-check', onPress: check }
-      : { label: s.grammar.next, tone: 'next', testID: 'transform-next', onPress: () => onDone(result === 'ok'), secondary: mistypedDock(result === 'bad', () => onDone(true)) }
+      : { label: s.grammar.next, tone: 'next', testID: 'transform-next', onPress: () => onDone(result === 'ok', input), secondary: mistypedDock(result === 'bad', () => onDone(true)) }
   );
 
   // brutalist sentence transformation: the sentence in a box, the F button a small box, the
@@ -338,7 +339,7 @@ export function TransformDrillItem({
               <Text style={[styles.explainText, { color: resultInk(g, result === 'ok') }]}>{item.why[contentLang] ?? item.why.en}</Text>
             </BrutalFeedback>
             {result === 'bad' && !docked ? <MistypedButton onPress={() => onDone(true)} /> : null}
-            {docked ? null : <BrutalInkButton g={g} testID="transform-next" label={s.grammar.next} onPress={() => onDone(result === 'ok')} />}
+            {docked ? null : <BrutalInkButton g={g} testID="transform-next" label={s.grammar.next} onPress={() => onDone(result === 'ok', input)} />}
           </>
         )}
 
@@ -415,7 +416,7 @@ export function TransformDrillItem({
       {result === 'bad' && !docked ? <MistypedButton onPress={() => onDone(true)} /> : null}
 
       {result !== null && !docked ? (
-        <Pressable testID="transform-next" style={[styles.btn, { backgroundColor: colors.text }]} onPress={() => onDone(result === 'ok')}>
+        <Pressable testID="transform-next" style={[styles.btn, { backgroundColor: colors.text }]} onPress={() => onDone(result === 'ok', input)}>
           <Text style={[styles.btnText, { color: colors.background }]}>{s.grammar.next}</Text>
         </Pressable>
       ) : null}

@@ -26,6 +26,8 @@ interface Props {
   acceptWords?: string[][];
   trapWords: string[];
   onResult: (correct: boolean) => void;
+  // The tiles as built (joined), handed over right before onResult fires: the grammar result screen lists a wrong build.
+  onBuilt?: (built: string) => void;
   // speech locale of the learned language, so a placed tile can be heard.
   speechLocale?: string;
   // The prompt sentence (in the source language) is spoken when the card opens,
@@ -49,7 +51,7 @@ interface Props {
   speakOnPress?: boolean;
 }
 
-export default function EasySentenceCard({ sourceSentence, targetWords, acceptWords, trapWords, onResult, speechLocale, sourceSpeechLocale, gradeButtons = false, sourceHints, onSourceHint, speakerGender, spokenSentence, speakOnPress = false }: Props) {
+export default function EasySentenceCard({ sourceSentence, targetWords, acceptWords, trapWords, onResult, onBuilt, speechLocale, sourceSpeechLocale, gradeButtons = false, sourceHints, onSourceHint, speakerGender, spokenSentence, speakOnPress = false }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const g = useGrammarColors();
@@ -242,7 +244,10 @@ export default function EasySentenceCard({ sourceSentence, targetWords, acceptWo
         <ActionButton
           label={`${s.card.next} →`}
           fill="a"
-          onPress={() => onResult(result === 'correct')}
+          onPress={() => {
+            onBuilt?.(placed.map((i) => bank[i]).join(' '));
+            onResult(result === 'correct');
+          }}
           brutalStyle={styles.brutalBtn}
           classicStyle={[styles.checkBtn, { backgroundColor: result === 'correct' ? colors.successFill : colors.danger }]}
           classicTextStyle={styles.checkBtnText}

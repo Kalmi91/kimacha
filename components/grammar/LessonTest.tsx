@@ -1,7 +1,7 @@
 import { useEffect, useState, type ReactNode } from 'react';
 import XpChip from '@/components/XpChip';
 import { awardXpThen } from '@/lib/xpAward';
-import { ActivityIndicator, KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { ActivityIndicator, KeyboardAvoidingView, Platform, Pressable, StyleSheet, Text, View } from 'react-native';
 
 import Colors from '@/constants/Colors';
 import { fontSize, fontWeight, radius, spacing } from '@/constants/Theme';
@@ -26,6 +26,7 @@ import TestQuestionView from '@/components/grammar/TestQuestionView';
 import { DockSlotProvider, useDockSlot } from '@/components/learn/DockSlot';
 import { FAB_CLEARANCE } from '@/components/learn/DockedAction';
 import ScreenFeedback from '@/lib/screenFeedback';
+import GrammarResult from '@/components/grammar/GrammarResult';
 
 // the end-of-lesson test screen of a grammar lesson. There is no intro
 // (under the lesson's done-page button it says "10 questions, pass 80%"): questions (no lives;
@@ -53,10 +54,8 @@ interface Props {
   level: string;
   /** The previous saved result (missed items move to the front, the best score is kept). */
   previous: LessonTestResult | null;
-  hasNextTopic: boolean;
   onSave: (result: LessonTestResult) => void;
-  onNextTopic: () => void;
-  onBackToRule: () => void;
+  /** Back to the grammar part (the lesson test is started from the lesson page, so there is no "next topic" here). */
   onBackToSyllabus: () => void;
   /** After confirming the ✕: back to the lesson, without saving. */
   onLeave: () => void;
@@ -69,10 +68,7 @@ export default function LessonTest({
   contentLang,
   level,
   previous,
-  hasNextTopic,
   onSave,
-  onNextTopic,
-  onBackToRule,
   onBackToSyllabus,
   onLeave,
 }: Props) {
@@ -168,47 +164,23 @@ export default function LessonTest({
 
   if (phase === 'result' && summary) {
     return shell(
-      <ScrollView contentContainerStyle={styles.body}>
-        <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
-          <ResultBadge
-            testID="lesson-test-verdict"
-            correct={summary.passed}
-            label={summary.passed ? s.lessonTest.verdictPassed : s.exam.notYet}
-          />
-          <Text testID="lesson-test-score" style={[styles.title, { color: colors.text }]}>
-            {s.exam.score(summary.correct, summary.total, summary.pct)}
-          </Text>
-          {!summary.passed && <Text style={[styles.line, { color: colors.textMuted }]}>{s.exam.needPass(LESSON_TEST_PASS_PCT)}</Text>}
-        </Card>
-        {summary.missed.length > 0 && (
-          <View testID="lesson-test-missed" style={styles.missedList}>
-            <Text style={[styles.sectionTitle, { color: colors.textMuted }]}>{s.lessonTest.missedTitle}</Text>
-            {summary.missed.map((m, i) => (
-              <Card key={i} classicStyle={styles.card} boxStyle={styles.brutalCard}>
-                <Text style={[styles.missedQuestion, { color: colors.text }]}>{m.question}</Text>
-                {m.answer !== '' && (
-                  <>
-                    <Text style={[styles.missedLabel, { color: colors.textMuted }]}>{s.exam.correctAnswer}</Text>
-                    <Text style={[styles.missedAnswer, { color: colors.success }]}>{m.answer}</Text>
-                  </>
-                )}
-                {m.why ? <Text style={[styles.missedWhy, { color: colors.textMuted }]}>{m.why}</Text> : null}
-              </Card>
-            ))}
-          </View>
-        )}
-        {summary.passed ? (
-          <>
-            {hasNextTopic && <ExamButton testID="lesson-test-next-topic" label={s.grammar.nextTopic} onPress={onNextTopic} />}
-            <ExamButton testID="lesson-test-back-syllabus" secondary={hasNextTopic} label={s.grammar.backToSyllabus} onPress={onBackToSyllabus} />
-          </>
-        ) : (
-          <>
-            <ExamButton testID="lesson-test-back-rule" label={s.grammar.backToRule} onPress={onBackToRule} />
-            <ExamButton testID="lesson-test-retry" secondary label={s.exam.tryAgain} onPress={retry} />
-          </>
-        )}
-      </ScrollView>,
+      <GrammarResult
+        correct={summary.correct}
+        total={summary.total}
+        scoreTestID="lesson-test-score"
+        misses={summary.missed.map((m) => ({ prompt: m.question, given: null, correct: m.answer }))}
+        onRetake={retry}
+        onBack={onBackToSyllabus}
+        retakeTestID="lesson-test-retry"
+        backTestID="lesson-test-back-syllabus"
+      >
+        <ResultBadge
+          testID="lesson-test-verdict"
+          correct={summary.passed}
+          label={summary.passed ? s.lessonTest.verdictPassed : s.exam.notYet}
+        />
+        {!summary.passed && <Text style={[styles.line, { color: colors.textMuted }]}>{s.exam.needPass(LESSON_TEST_PASS_PCT)}</Text>}
+      </GrammarResult>,
       'result'
     );
   }
@@ -273,10 +245,4 @@ const styles = StyleSheet.create({
   track: { height: 8, borderRadius: radius.xs, marginHorizontal: spacing.lg, marginTop: spacing.sm, overflow: 'hidden' },
   fill: { height: '100%', borderRadius: radius.xs },
   brutalProgress: { marginHorizontal: spacing.lg, marginTop: spacing.sm },
-  missedList: { gap: spacing.md },
-  sectionTitle: { fontSize: fontSize.sm, fontWeight: fontWeight.bold, textTransform: 'uppercase' },
-  missedQuestion: { fontSize: fontSize.md, fontWeight: fontWeight.semibold },
-  missedLabel: { fontSize: fontSize.sm, textAlign: 'center' },
-  missedAnswer: { fontSize: fontSize.md, fontWeight: fontWeight.semibold, textAlign: 'center' },
-  missedWhy: { fontSize: fontSize.sm },
 });
