@@ -238,10 +238,13 @@ export default function SmallTalkGame() {
 
   return (
     <GameFrame
+      // a new question opens at its top, so the question stays in view while the tiles are tapped (emulator 2026-11-19)
+      key={part === 'build' ? part : `${part}${state.index}`}
       {...frame}
       progress={{ text: s.practiceTab.progress(position, size), label: sx.stepLabel(titles[part], position, size) }}
       dock={dock}
-      scrollKey={part === 'build' ? `${state.index}:${cardH}` : `${part}${state.index}:${state.done}:${placed.length}`}
+      scrollKey={part === 'build' ? `${state.index}:${cardH}` : undefined}
+      scrollToEndOnDock={!answering}
     >
       <View style={styles.box}>
         <Text style={[styles.caption, { color: colors.tint }]}>{titles[part]}</Text>
