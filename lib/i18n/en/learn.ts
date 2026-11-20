@@ -253,7 +253,7 @@ export default {
       stepLabel: (step: string, n: number, total: number) => `${step}: ${n} of ${total}`,
       answerIt: 'Answer it',
       askIt: 'Ask it in Spanish',
-      answered: 'It answered',
+      answered: 'The app answered',
       tilesHint: 'Tap the words in order. Tap a placed word to take it back.',
       rightAnswers: 'Right answers',
       rightQuestion: 'The right question',

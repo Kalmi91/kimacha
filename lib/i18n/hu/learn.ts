@@ -223,7 +223,7 @@ const hu: typeof en = {
       stepLabel: (step: string, n: number, total: number) => `${step}: ${n} / ${total}`,
       answerIt: 'Válaszolj rá',
       askIt: 'Kérdezd meg spanyolul',
-      answered: 'Ő válaszolt',
+      answered: 'Az app válaszolt',
       tilesHint: 'Koppints a szavakra sorrendben. Koppints egy lerakott szóra, hogy visszavedd.',
       rightAnswers: 'Jó válaszok',
       rightQuestion: 'A jó kérdés',

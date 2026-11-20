@@ -226,7 +226,7 @@ const es: typeof en = {
       stepLabel: (step: string, n: number, total: number) => `${step}: ${n} de ${total}`,
       answerIt: 'Respóndele',
       askIt: 'Pregúntalo en español',
-      answered: 'Respondió',
+      answered: 'La app respondió',
       tilesHint: 'Toca las palabras en orden. Toca una palabra puesta para quitarla.',
       rightAnswers: 'Respuestas correctas',
       rightQuestion: 'La pregunta correcta',
