@@ -31,7 +31,7 @@ const es: typeof en = {
   onboardingTheme: {
     title: 'Elige un estilo',
     know: 'Lo sé',
-    later: 'Después puedes elegir entre 24 en Ajustes.',
+    later: 'Después puedes elegir entre 25 en Ajustes.',
     next: 'Continuar',
   },
   tabs: {

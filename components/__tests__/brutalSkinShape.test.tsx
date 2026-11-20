@@ -7,7 +7,7 @@ import { render, screen } from '@testing-library/react-native';
 import { Text, View } from 'react-native';
 import * as RN from 'react-native';
 
-import { BrutalBox, BrutalButton, BrutalSwitch, SegmentBar, Sticker, inkButtonText, textOnFill } from '@/components/grammar/Brutal';
+import { BrutalBox, BrutalButton, BrutalSwitch, ContinuousBar, SegmentBar, Sticker, inkButtonText, textOnFill } from '@/components/grammar/Brutal';
 import type { SkinId } from '@/constants/Skins';
 import { getDb } from '@/lib/database';
 import { grammarColorsFor } from '@/lib/grammarColors';
@@ -44,6 +44,30 @@ describe('Brutal components: the shape comes from the theme', () => {
     expect(flat('box')).toMatchObject({ borderWidth: 1, borderColor: '#8B6D24', borderStyle: 'solid' });
     expect(flat('box').borderRadius).toBeUndefined();
     expect(shadows()).toHaveLength(0);
+  });
+
+  it('night: 1 px #3D2668 border, card corner 16, button corner 14, no shadow, a 6 px borderless bar with a pink fill', async () => {
+    await renderWithSkin(
+      'night',
+      <View>
+        <BrutalBox testID="card"><Text>x</Text></BrutalBox>
+        <BrutalButton testID="btn" label="ok" onPress={() => {}} />
+        <ContinuousBar testID="bar" fillTestID="fill" pct={40} />
+      </View>
+    );
+    expect(flat('card')).toMatchObject({ borderWidth: 1, borderColor: '#3D2668', borderRadius: 16 });
+    expect(flat('btn')).toMatchObject({ borderWidth: 1, borderColor: '#3D2668', borderRadius: 14 });
+    expect(shadows()).toHaveLength(0);
+    expect(flat('bar')).toMatchObject({ height: 6, borderRadius: 3, backgroundColor: '#22113F' });
+    expect(flat('bar').borderWidth).toBeUndefined();
+    expect(flat('fill')).toMatchObject({ width: '40%', backgroundColor: '#EC4899' });
+  });
+
+  it('the other themes keep the 10 px bordered progress bar with an ink fill', async () => {
+    await renderWithSkin('brutal', <ContinuousBar testID="bar" fillTestID="fill" pct={40} />);
+    expect(flat('bar')).toMatchObject({ height: 10, borderWidth: 2, borderColor: '#111111' });
+    expect(flat('bar').backgroundColor).toBeUndefined();
+    expect(flat('fill')).toMatchObject({ width: '40%', backgroundColor: '#111111' });
   });
 
   it('memphis: 6 px shadow in the b color, the button corner 999 (pill), the card one 0', async () => {

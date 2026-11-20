@@ -40,7 +40,8 @@ function brutalColors(id: FillPaletteId, mode: 'light' | 'dark') {
 // the same kind of Colors entry for the themes of the theme engine (constants/Skins.ts),
 // under the key `<theme-id>-<mode>`. tint/accent = a, secondary = b (if missing: a), card = paper,
 // border = the frame's own color (if missing: ink), onTint = onA; the semantic colors
-// (success / danger / warning / info / overlay) come from the brutalist set.
+// (success / danger / warning / info / overlay) come from the brutalist set; a theme may override
+// success / danger / warning through `extra` (night does), the fills stay global (colorsFills.test.ts).
 function skinColors(id: SkinId, mode: SkinMode) {
   const c = skinColorsFor(SKINS[id], mode);
   const { success, successFill, danger, warning, warningFill, info, overlay } = brutalColors('brand', mode);
@@ -54,10 +55,10 @@ function skinColors(id: SkinId, mode: SkinMode) {
     accent: c.a,
     secondary: c.b ?? c.a,
     textMuted: c.mu,
-    success,
+    success: c.extra?.success ?? success,
     successFill,
-    danger,
-    warning,
+    danger: c.extra?.danger ?? danger,
+    warning: c.extra?.warning ?? warning,
     warningFill,
     info,
     border: c.border ?? c.ink,
@@ -91,6 +92,7 @@ export default {
   'y2k-light': skinColors('y2k', 'light'),
   'kawaii-light': skinColors('kawaii', 'light'),
   'gamer-dark': skinColors('gamer', 'dark'),
+  'night-dark': skinColors('night', 'dark'),
   'botanikus-light': skinColors('botanikus', 'light'),
   'botanikus-dark': skinColors('botanikus', 'dark'),
   'zen-light': skinColors('zen', 'light'),

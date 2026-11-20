@@ -455,6 +455,7 @@ export function SegmentBar({
 }
 
 // Continuous progress: one track with the same border look as a SegmentBar block, the ink fill = pct (0-100).
+// A theme with extra.progressTrack (night) gets a borderless filled track of shape.barHeight and fill extra.progressFill.
 export function ContinuousBar({
   pct,
   style,
@@ -468,16 +469,19 @@ export function ContinuousBar({
 }) {
   const g = useGrammarColors();
   const { shape } = useSkin().skin;
+  const track = g.extra.progressTrack;
   return (
     <View
       testID={testID}
       style={[
         styles.continuousTrack,
-        { borderColor: roleColor(g, shape.borderColor), borderWidth: Math.min(2, shape.borderWidth), ...smallRadius(shape, 4) },
+        track
+          ? { backgroundColor: track, ...(shape.barHeight ? { height: shape.barHeight } : null), ...radiusStyle(shape.barRadius ?? 0) }
+          : { borderColor: roleColor(g, shape.borderColor), borderWidth: Math.min(2, shape.borderWidth), ...smallRadius(shape, 4) },
         style,
       ]}
     >
-      <View testID={fillTestID} style={{ width: `${Math.max(0, Math.min(100, pct))}%`, height: '100%', backgroundColor: g.ink }} />
+      <View testID={fillTestID} style={{ width: `${Math.max(0, Math.min(100, pct))}%`, height: '100%', backgroundColor: g.extra.progressFill ?? g.ink }} />
     </View>
   );
 }

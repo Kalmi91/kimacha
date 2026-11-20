@@ -137,6 +137,7 @@ const hu: typeof en = {
       y2k: 'Y2K',
       kawaii: 'Kawaii',
       gamer: 'Gamer',
+      night: 'Éjszaka',
       botanikus: 'Botanikus',
       zen: 'Zen',
       diszlexia: 'Diszlexia-betűtípus',

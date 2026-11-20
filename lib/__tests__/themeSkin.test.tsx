@@ -105,6 +105,26 @@ describe('theme engine through the context', () => {
     expect(sk.colors).toMatchObject({ brutal: true, bg: '#EFE6D2', extra: { seal: '#C0392B', wave: '#1F3A5F' } });
   });
 
+  it('night: dark-only, the colours / semantic colours / shape of the spanyol-hibak web game', async () => {
+    render(<ThemeProvider><Probe /></ThemeProvider>);
+    await flush();
+    act(() => ctx.setSkin('night'));
+    await flush();
+    expect(ctx.theme).toBe('night-dark');
+    expect(sk.modeLocked).toBe(true);
+    expect(sk.colors).toMatchObject({
+      brutal: true, bg: '#150A29', paper: '#2C1852', ink: '#FFFFFF', mu: '#CFC6E4', a: '#EC4899', onA: '#FFFFFF', b: '#22D3EE', border: '#3D2668',
+      extra: { progressTrack: '#22113F', progressFill: '#EC4899' },
+    });
+    expect(Colors['night-dark']).toMatchObject({
+      background: '#150A29', card: '#2C1852', text: '#FFFFFF', textMuted: '#CFC6E4', tint: '#EC4899', onTint: '#FFFFFF',
+      secondary: '#22D3EE', border: '#3D2668', success: '#34D399', danger: '#F87171', warning: '#FBBF24',
+    });
+    expect(sk.skin.shape).toMatchObject({ borderWidth: 1, borderStyle: 'solid', radius: 16, buttonRadius: 14, shadowOffset: 0, barHeight: 6, barRadius: 3 });
+    expect(sk.skin.fonts).toEqual({ title: null, word: null, body: null });
+    expect(sk.skin.uppercaseTitle).toBeUndefined();
+  });
+
   it('for a dual-mode theme Auto / Light / Dark, for a single-mode one the theme mode stays', async () => {
     render(<ThemeProvider><Probe /></ThemeProvider>);
     await flush();

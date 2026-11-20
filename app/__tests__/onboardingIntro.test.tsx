@@ -78,7 +78,7 @@ describe('Onboarding: intro + theme step', () => {
     fireEvent.press(screen.getByText("Let's start"));
     expect(screen.getByTestId('onboarding-theme')).toBeTruthy();
     expect(screen.queryByText('Choose level')).toBeNull();
-    expect(screen.getByText('Later you can pick from 24 in Settings.')).toBeTruthy();
+    expect(screen.getByText('Later you can pick from 25 in Settings.')).toBeTruthy();
   });
 
   it('the theme step shows exactly the 5 recommended rows, with the sample word and the "I know" pill', async () => {
@@ -103,7 +103,7 @@ describe('Onboarding: intro + theme step', () => {
     fireEvent.press(screen.getByText('Empecemos'));
     expect(screen.getAllByText('the car')).toHaveLength(5);
     expect(screen.getAllByText('Lo sé')).toHaveLength(5);
-    expect(screen.getByText('Después puedes elegir entre 24 en Ajustes.')).toBeTruthy();
+    expect(screen.getByText('Después puedes elegir entre 25 en Ajustes.')).toBeTruthy();
   });
 
   it('the sample word is in the learned language: "az autó" when learning Hungarian, "the car" on hu→en', async () => {

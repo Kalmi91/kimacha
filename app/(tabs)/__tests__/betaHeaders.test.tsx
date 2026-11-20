@@ -117,7 +117,7 @@ describe('beta tab headers', () => {
   });
 
   it.each(skins.filter((id) => !SKIN_DECOR[id]?.HeaderOrnament))('%s preserves the native title styling', (skin) => {
-    selectSkin(skin);
+    selectSkin(skin, SKINS[skin].modes.includes('light') ? 'light' : 'dark');
     const g = grammarColorsFor(mockTheme);
     const options = brutalHeaderOptions(g, SKINS[skin]);
     const view = render(
