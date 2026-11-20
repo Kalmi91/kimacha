@@ -53,7 +53,7 @@ it('keeps the loaded day and the exact legacy queue after midnight with both set
   await getDb().setNoPileUp(false);
   const screen = render(<PcicScreen />);
   await flush();
-  const before = (await loadLearnResume(getDb()))!;
+  const before = (await loadLearnResume(getDb(), 'A1'))!;
   const cards = new Map((await getDb().getPcicCards()).map((c) => [c.itemId, c]));
   const queue = before.order.map((id) => cards.get(id) ?? sm2NewCard(id));
   expect(queue[0].itemId).toBe('a1-w0');
@@ -68,7 +68,7 @@ it('keeps the loaded day and the exact legacy queue after midnight with both set
   await flush();
   fireEvent.press(screen.getByText('Next → Knew it'));
   await flush();
-  const resumed = (await loadLearnResume(getDb()))!;
+  const resumed = (await loadLearnResume(getDb(), 'A1'))!;
   expect(resumed.day).toBe(day);
   expect(resumed.order).toEqual(expected);
   expect(await loadResumeValue(getDb(), 'fatigue')).toBeNull();

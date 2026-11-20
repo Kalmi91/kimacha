@@ -91,10 +91,10 @@ it('persists decline, queue and progress through remount, then waits the full co
   const screen = render(<PcicScreen />); await flush(); await trigger(screen);
   fireEvent.press(screen.getByTestId('learn-fatigue-offer-no')); await flush();
   expect(screen.queryByTestId('learn-fatigue-offer')).toBeNull();
-  const resume = await loadLearnResume(getDb());
+  const resume = await loadLearnResume(getDb(), 'A1');
   screen.unmount();
   const reopened = render(<PcicScreen />); await flush();
-  expect(await loadLearnResume(getDb())).toEqual(resume);
+  expect(await loadLearnResume(getDb(), 'A1')).toEqual(resume);
   expect(reopened.queryByTestId('learn-fatigue-offer')).toBeNull();
   for (let i = 0; i < F.COOLDOWN_ANSWERS - 1; i++) {
     await miss(reopened); expect(reopened.queryByTestId('learn-fatigue-offer')).toBeNull();
@@ -109,7 +109,7 @@ it('logs while disabled without writing offer state or changing scheduling', asy
   expect(off.queryByTestId('learn-fatigue-offer')).toBeNull();
   expect(answerLog.recent('en\u2192es', MAX_ANSWER_ROWS)).toHaveLength(F.REPEAT_MISSES + 2);
   expect(await loadResumeValue(getDb(), FATIGUE_OFFER_KEY)).toBeNull();
-  const cards = await getDb().getPcicCards(); const resume = await loadLearnResume(getDb());
+  const cards = await getDb().getPcicCards(); const resume = await loadLearnResume(getDb(), 'A1');
   off.unmount();
   await getDb().resetPcicCards(); await getDb().resetGameProgress(RESUME_GAME_ID); await seed();
   await getDb().setFatigueDetector(true);
@@ -117,7 +117,7 @@ it('logs while disabled without writing offer state or changing scheduling', asy
   clock = started;
   const on = render(<PcicScreen />); await flush(); await trigger(on);
   expect(await getDb().getPcicCards()).toEqual(cards);
-  expect(await loadLearnResume(getDb())).toEqual(resume);
+  expect(await loadLearnResume(getDb(), 'A1')).toEqual(resume);
 });
 it('measures until reveal, clamps long waits and removes counted answers on undo', async () => {
   const screen = render(<PcicScreen />); await flush();

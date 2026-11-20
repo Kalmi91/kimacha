@@ -16,7 +16,7 @@ import { getDb } from '@/lib/database';
 import { RESUME_GAME_ID } from '@/lib/resumeRoute';
 import { sm2NewCard, sm2Review } from '@/lib/sm2';
 import { localDateString } from '@/lib/usageStats';
-import { saveResumeValue } from '@/lib/resumeStore';
+import { loadResumeValue, saveResumeValue } from '@/lib/resumeStore';
 import { emptyFatigue, FATIGUE_KEY } from '../fatigue';
 import { usePcicSession } from '../usePcicSession';
 
@@ -81,7 +81,7 @@ it('advances once after a long break, filtering higher-level and orphan cards ex
   first.unmount();
   const second = await open();
   expect(second.result.current.srsDay).toBe('2026-01-02');
-  expect((await db.getSrsDay())?.srsDayStepOn).toBe(day);
+  expect(((await loadResumeValue(db, 'srs-day:A1')) as { srsDayStepOn?: string } | null)?.srsDayStepOn).toBe(day);
 });
 
 it('releases the budget on a parked last miss and makes that review return after undo', async () => {

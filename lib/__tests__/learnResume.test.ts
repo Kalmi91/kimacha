@@ -53,15 +53,15 @@ describe('save and read back', () => {
   });
 
   it('null without a save, readable back after saving', async () => {
-    expect(await loadLearnResume(getDb())).toBeNull();
+    expect(await loadLearnResume(getDb(), 'B1')).toBeNull();
     const saved = buildLearnResume(q(['d', 'a'], { a: 99 }), DAY, 'B1', 7);
     await saveLearnResume(getDb(), saved);
-    expect(await loadLearnResume(getDb())).toEqual(saved);
+    expect(await loadLearnResume(getDb(), 'B1')).toEqual(saved);
   });
 
   it('a corrupt save (wrong shape) is null', async () => {
     await getDb().setGameProgress(RESUME_GAME_ID, 'learn', 'saved', { day: 5, order: 'x' });
-    expect(await loadLearnResume(getDb())).toBeNull();
+    expect(await loadLearnResume(getDb(), 'B1')).toBeNull();
   });
 });
 
@@ -92,8 +92,8 @@ describe('drillResume', () => {
 describe('clearLearnResume', () => {
   it('after resetting progress the snapshot is gone', async () => {
     await saveLearnResume(getDb(), buildLearnResume(q(['d']), DAY, 'A1', null));
-    expect(await loadLearnResume(getDb())).not.toBeNull();
+    expect(await loadLearnResume(getDb(), 'A1')).not.toBeNull();
     await clearLearnResume(getDb());
-    expect(await loadLearnResume(getDb())).toBeNull();
+    expect(await loadLearnResume(getDb(), 'A1')).toBeNull();
   });
 });

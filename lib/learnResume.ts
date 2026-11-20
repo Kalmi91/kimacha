@@ -1,6 +1,7 @@
 import type { DB } from '@/lib/database';
 import type { QueuedSm2Card } from '@/lib/pcicSession';
 import { loadResumeValue, saveResumeValue } from '@/lib/resumeStore';
+import { PCIC_LEVELS } from '@/data/pcic';
 
 // Card-level resume: the Learn round continues where it was left off when the app was closed. The queue
 // is rebuilt from the saved SRS state anyway (the rated cards are saved); this snapshot puts the ORDER
@@ -9,7 +10,9 @@ import { loadResumeValue, saveResumeValue } from '@/lib/resumeStore';
 // On a day change and a level change the snapshot is invalid (the queue is built the normal way); whatever
 // is no longer due or no longer exists is not in the rebuilt queue either, so it drops out.
 
+// The old single-snapshot key; read as a fallback, one snapshot per level now (`learn:<level>`).
 const LEARN_KEY = 'learn';
+const levelKey = (level: string) => `${LEARN_KEY}:${level}`;
 
 interface LearnResume {
   day: string;
@@ -63,17 +66,21 @@ function parseLearnResume(raw: unknown): LearnResume | null {
   return { day: r.day, level: r.level, order: r.order, returns, base: typeof r.base === 'number' ? r.base : null };
 }
 
-export async function loadLearnResume(db: DB): Promise<LearnResume | null> {
-  return parseLearnResume(await loadResumeValue(db, LEARN_KEY));
+export async function loadLearnResume(db: DB, level: string): Promise<LearnResume | null> {
+  const own = parseLearnResume(await loadResumeValue(db, levelKey(level)));
+  if (own) return own;
+  const old = parseLearnResume(await loadResumeValue(db, LEARN_KEY));
+  return old !== null && old.level === level ? old : null;
 }
 
 export async function saveLearnResume(db: DB, resume: LearnResume): Promise<void> {
-  await saveResumeValue(db, LEARN_KEY, resume);
+  await saveResumeValue(db, levelKey(resume.level), resume);
 }
 
-/** After the progress is reset the snapshot referred to the old state, so it is dropped. */
+/** After the progress is reset the snapshot referred to the old state, so it is dropped (the old key and every level's). */
 export async function clearLearnResume(db: DB): Promise<void> {
   await saveResumeValue(db, LEARN_KEY, null);
+  for (const level of PCIC_LEVELS) await saveResumeValue(db, levelKey(level), null);
 }
 
 // FB542: the day on which the learner answered "No, only reviews" to the more-new-words question; the question does
