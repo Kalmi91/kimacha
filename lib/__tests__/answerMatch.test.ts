@@ -288,3 +288,46 @@ describe('FB619: the "ni … ni" pair (neg-form-09) takes dots, spaces and marks
     expect(strictAnswerMatch('ni ... o', 'ni … ni', { strictAccents: true })).toBe(false);
   });
 });
+
+describe('apostrophe variants and English contractions', () => {
+  const ok = (a: string, c: string, o = {}) => expect(strictAnswerMatch(a, c, o)).toBe(true);
+  const no = (a: string, c: string, o = {}) => expect(strictAnswerMatch(a, c, o)).toBe(false);
+
+  it('reads a contraction and its long form as the same', () => {
+    ok('i don\'t work', 'I do not work');
+    ok('I do not work', 'I don\'t work');
+    ok('I could not open the door', 'I couldn\'t open the door.');
+    ok('I couldn\'t open the door', 'I could not open the door.');
+  });
+
+  it.each(['’', '‘', 'ʼ', '´', '`', '′'])('takes apostrophe %j as the straight one', (ap) => {
+    ok(`isn${ap}t`, 'isn\'t');
+    ok(`isn${ap}t`, 'isn\'t', { strictAccents: true });
+    ok(`isn${ap}t`, 'is not');
+  });
+
+  it('can\'t, cannot and can not agree; won\'t is will not', () => {
+    for (const a of ['can\'t', 'cannot', 'can not']) {
+      for (const c of ['can\'t', 'cannot', 'can not']) ok(a, c);
+    }
+    ok('won\'t', 'will not');
+    ok('shan\'t', 'shall not');
+  });
+
+  it('reads \'s and \'d both ways, keeps the possessive', () => {
+    ok('it\'s', 'it is');
+    ok('it\'s', 'it has');
+    ok('she\'d', 'she would');
+    ok('she\'d', 'she had');
+    ok('I am', 'I\'m');
+    ok('they are', 'they\'re');
+    ok('John\'s car', 'John\'s car');
+  });
+
+  it('still rejects grammar errors', () => {
+    no('she speak', 'She speaks');
+    no('I do work', 'I don\'t work');
+    no('I am', 'I was');
+    no('he is', 'he was');
+  });
+});

@@ -33,9 +33,14 @@ function withSwappedArticle(text: string): string | null {
   return swapped && rest.length > 0 ? [swapped, ...rest].join(' ') : null;
 }
 
+// phone keyboards type a curly or look-alike apostrophe; it is the same as the straight one
+function straightApostrophes(text: string): string {
+  return text.replace(/[’‘ʼ´`′]/g, "'");
+}
+
 function normalizeWords(text: string, strictAccents = false): string[] {
   if (strictAccents) return normalizeKeepingAccents(text);
-  return text
+  return straightApostrophes(text)
     .toLowerCase()
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '')
@@ -49,7 +54,7 @@ function normalizeWords(text: string, strictAccents = false): string[] {
 // strict accents on, "como estas" no longer passes for "Cómo estás"; case and
 // punctuation stay forgiven either way.
 function normalizeKeepingAccents(text: string): string[] {
-  return text
+  return straightApostrophes(text)
     .toLowerCase()
     .normalize('NFC')
     .replace(/[.,!?;:¡¿…"'()]/g, ' ')
@@ -137,12 +142,45 @@ const ALTERNATE_READINGS: Record<string, (text: string) => string[]> = {
 // Hungarian accents are phonemic (kor/kór, öt/őt: different words), so they are never forgiven, whatever the
 // Settings switch says. Case and punctuation stay forgiven; ¿ and ¡ are Spanish marks and are not stripped.
 function normalizeHungarian(text: string): string[] {
-  return text
+  return straightApostrophes(text)
     .toLowerCase()
     .normalize('NFC')
     .replace(/[.,!?;:…"'()]/g, ' ')
     .split(/\s+/)
     .filter(Boolean);
+}
+
+// English contractions are forgiven both ways ("don't" = "do not"), grammar is not. 's and 'd are
+// ambiguous (is/has, would/had), so each combination is its own reading; the original stays one
+// too (possessive "John's", "let's"). Spanish text never has these patterns, so it passes unchanged.
+export function englishContractionReadings(text: string): string[] {
+  const base = straightApostrophes(text);
+  const expanded = base
+    .replace(/\bcan't\b/gi, 'can not')
+    .replace(/\bcannot\b/gi, 'can not')
+    .replace(/\bwon't\b/gi, 'will not')
+    .replace(/\bshan't\b/gi, 'shall not')
+    .replace(/\b([a-z]+)n't\b/gi, '$1 not')
+    .replace(/\b([a-z]+)'re\b/gi, '$1 are')
+    .replace(/\b([a-z]+)'ve\b/gi, '$1 have')
+    .replace(/\b([a-z]+)'ll\b/gi, '$1 will')
+    .replace(/\b([a-z]+)'m\b/gi, '$1 am');
+  const out = [base];
+  const add = (r: string) => {
+    if (!out.includes(r)) out.push(r);
+  };
+  add(expanded);
+  const hasS = /\b[a-z]+'s\b/i.test(expanded);
+  const hasD = /\b[a-z]+'d\b/i.test(expanded);
+  for (const s of hasS ? ['is', 'has'] : [null]) {
+    for (const d of hasD ? ['would', 'had'] : [null]) {
+      let r = expanded;
+      if (s) r = r.replace(/\b([a-z]+)'s\b/gi, `$1 ${s}`);
+      if (d) r = r.replace(/\b([a-z]+)'d\b/gi, `$1 ${d}`);
+      add(r);
+    }
+  }
+  return out;
 }
 
 function normalizedForms(text: string, opts: MatchOptions): string[][] {
@@ -153,6 +191,17 @@ function normalizedForms(text: string, opts: MatchOptions): string[][] {
   const readings = opts.lang ? ALTERNATE_READINGS[opts.lang] : undefined;
   if (readings && !opts.strictAccents) {
     return readings(text).map((reading) => normalizeWords(reading, false));
+  }
+  if (opts.lang !== 'hu' && opts.lang !== 'de') {
+    const seen = new Set<string>();
+    return englishContractionReadings(text)
+      .map((reading) => normalizeWords(reading, opts.strictAccents))
+      .filter((words) => {
+        const key = words.join(' ');
+        if (seen.has(key)) return false;
+        seen.add(key);
+        return true;
+      });
   }
   return [normalizeWords(text, opts.strictAccents)];
 }
