@@ -43,9 +43,10 @@ import {
   type RoundStep,
   type TopicEvidence,
 } from '@/lib/grammar/randomRound';
-import { advance, isResultPause, makeCtx, phaseLabel, questionsOf, topicKindCount, type RoundData } from '@/lib/grammar/randomRoundView';
+import { advance, isResultPause, makeCtx, phaseLabel, questionsOf, runMisses, topicKindCount, type RoundData } from '@/lib/grammar/randomRoundView';
 import { Card } from '@/components/grammar/Brutal';
 import RandomOtherWrong from '@/components/grammar/RandomOtherWrong';
+import GrammarResult from '@/components/grammar/GrammarResult';
 import { ProgressBar, themedEdgeStyle } from '@/components/grammar/Themed';
 import TestQuestionView from '@/components/grammar/TestQuestionView';
 import XpChip from '@/components/XpChip';
@@ -429,7 +430,17 @@ export default function RandomRoundScreen() {
       .filter((x) => x.steps.length > 0);
     const touched = [...new Set(run.steps.map((st) => st.topicId))];
     return shell(
-      <ScrollView contentContainerStyle={styles.body}>
+      <GrammarResult
+        correct={run.steps.filter((st) => st.ok).length}
+        total={run.steps.length}
+        scoreTestID="random-end-score"
+        misses={runMisses(data, run)}
+        onRetake={() => startRound(nextMode(metaRef.current))}
+        onBack={onDone}
+        retakeLabel={s.anotherRound}
+        retakeTestID="random-another"
+        backTestID="random-done"
+      >
         <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
           {lines.map(({ p, steps }) => (
             <Text key={p} testID={`random-end-${p}`} style={[styles.endLine, { color: colors.text }]}>
@@ -485,9 +496,7 @@ export default function RandomRoundScreen() {
           </View>
         )}
         {run.mode === 'mixed' && <RandomOtherWrong run={run} titleOf={titleOf} />}
-        <ExamButton testID="random-another" label={s.anotherRound} onPress={() => startRound(nextMode(metaRef.current))} />
-        <ExamButton testID="random-done" secondary label={s.done} onPress={onDone} />
-      </ScrollView>,
+      </GrammarResult>,
       'end:'
     );
   }

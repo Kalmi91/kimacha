@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react';
-import { ActivityIndicator, Keyboard, KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { ActivityIndicator, Keyboard, KeyboardAvoidingView, Platform, Pressable, StyleSheet, Text, View } from 'react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 
 import Colors from '@/constants/Colors';
@@ -48,6 +48,7 @@ import TestQuestionView from '@/components/grammar/TestQuestionView';
 import XpChip from '@/components/XpChip';
 import { awardXpThen } from '@/lib/xpAward';
 import ExamButton from '@/components/exam/ExamButton';
+import GrammarResult from '@/components/grammar/GrammarResult';
 import { DockSlotProvider, useDockSlot } from '@/components/learn/DockSlot';
 import { FAB_CLEARANCE } from '@/components/learn/DockedAction';
 import ScreenFeedback from '@/lib/screenFeedback';
@@ -335,10 +336,27 @@ export default function LevelTestScreen() {
       <View style={styles.flex}>
         {headerFor('round-end')}
         {progress}
-        <ScrollView testID="level-test-round-scroll" contentContainerStyle={styles.body}>
+        <View testID="level-test-round-scroll" style={styles.flex}>
+        <GrammarResult
+          correct={round.right}
+          total={LEVEL_ROUND_SIZE}
+          scoreTestID="level-test-round-score"
+          misses={[]}
+          onRetake={() => {
+            const fresh = { n: 0, right: 0, startPct: shownPctOf(shown, pct) };
+            setRound(fresh);
+            saveRound(fresh);
+          }}
+          onBack={() => {
+            saveRound(null);
+            router.back();
+          }}
+          retakeLabel={s.nextRound(LEVEL_ROUND_SIZE)}
+          retakeTestID="level-test-round-next"
+          backLabel={t().exam.leave}
+          backTestID="level-test-round-leave"
+        >
           <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
-            <Text style={[styles.line, { color: colors.textMuted }]}>{s.roundDone}</Text>
-            <Text testID="level-test-round-score" style={[styles.title, { color: colors.text }]}>{s.roundScore(round.right, LEVEL_ROUND_SIZE)}</Text>
             <Text testID="level-test-round-levels" style={[styles.line, { color: colors.text }]}>{s.roundLevels(level, shownLabel(round.startPct), shownLabel(shownPctOf(shown, pct)))}</Text>
           </Card>
           {rows.length > 0 ? (
@@ -371,25 +389,8 @@ export default function LevelTestScreen() {
               <Text testID="level-test-round-weakest" style={[styles.line, { color: colors.text }]}>{s.weakestLine(titleOf(weak.id), weak.pct)}</Text>
             </Card>
           ) : null}
-          <ExamButton
-            testID="level-test-round-next"
-            label={s.nextRound(LEVEL_ROUND_SIZE)}
-            onPress={() => {
-              const fresh = { n: 0, right: 0, startPct: shownPctOf(shown, pct) };
-              setRound(fresh);
-              saveRound(fresh);
-            }}
-          />
-          <ExamButton
-            testID="level-test-round-leave"
-            secondary
-            label={t().exam.leave}
-            onPress={() => {
-              saveRound(null);
-              router.back();
-            }}
-          />
-        </ScrollView>
+        </GrammarResult>
+        </View>
       </View>,
       doneFor('round-end')
     );

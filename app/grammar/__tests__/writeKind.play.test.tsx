@@ -239,7 +239,7 @@ describe('write: the saved result and the way back', () => {
       await typeAndCheck(i === 1 ? 'xxx' : POR_PARA[i].es);
       await next();
     }
-    expect(screen.getByText('11 / 12')).toBeTruthy();
+    expect(screen.getByText('11/12')).toBeTruthy();
 
     const rows = await getDb().getGameProgress(GRAMMAR_PROGRESS_KEY);
     expect(rows.find((r) => r.itemId === 'por-para:write:best')?.data).toEqual({ correct: 11, total: 12 });

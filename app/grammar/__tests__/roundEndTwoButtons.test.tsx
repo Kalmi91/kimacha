@@ -1,16 +1,10 @@
-// E205: the round-end ("done") screen has exactly three buttons, in both skins: 1. Retake the test (a new round of the same
-// kind), 2. Back to the course, 3. Next test type (the lesson's next kind; after the last one the lesson test, else the next
-// topic, else no button). The score and the lesson-test note stay.
+// FB691-FB695: the round-end ("done") screen of a lesson drill, both skins: the result as one number ("4/5"), the
+// "Mistakes:" list with every wrong answer (what the learner gave and the right solution), and exactly two buttons:
+// Retake and back to the grammar part. No Time / Correct boxes, no "next test type", no lesson-test line.
 
 const mockBack = jest.fn();
-const mockReplace = jest.fn();
 jest.mock('expo-router', () => ({
-  useRouter: () => ({ back: mockBack, push: jest.fn(), replace: mockReplace }),
-}));
-let mockUnlocked = false;
-jest.mock('@/lib/grammar/lessonTest', () => ({
-  ...jest.requireActual('@/lib/grammar/lessonTest'),
-  lessonTestUnlocked: () => mockUnlocked,
+  useRouter: () => ({ back: mockBack, push: jest.fn(), replace: jest.fn() }),
 }));
 let mockTheme = 'light';
 jest.mock('@/lib/ThemeContext', () => ({
@@ -21,102 +15,70 @@ import { View } from 'react-native';
 import { fireEvent, render, screen } from '@testing-library/react-native';
 
 import GrammarRoundEnd from '@/components/grammar/GrammarRoundEnd';
-import { lessonFor } from '@/lib/grammar/syllabus';
-import { KIND_ORDER } from '@/lib/grammar/useGrammarTopic';
-import type { GrammarKind } from '@/lib/games/content';
+import type { RoundStats } from '@/components/grammar/GrammarDrill';
+import type { GrammarMiss } from '@/lib/grammar/roundMiss';
 import { t } from '@/lib/i18n';
-
-const TOPIC = 'presente-regular';
-const counts = (kinds: GrammarKind[]) =>
-  Object.fromEntries(KIND_ORDER.map((k) => [k, kinds.includes(k) ? 5 : 0])) as Record<GrammarKind, number>;
 
 const setPhase = jest.fn();
 const setScore = jest.fn();
-const setDrillKind = jest.fn();
-const onStartTest = jest.fn();
 
-const show = (drillKind: GrammarKind, kinds: GrammarKind[], topicId = TOPIC) =>
-  render(
+const miss = (n: number): GrammarMiss => ({ prompt: `Prompt ${n} ___`, given: `wrong${n}`, correct: `right${n}` });
+const show = (misses: GrammarMiss[]) => {
+  const roundStats: RoundStats = { bestCombo: 0, seconds: 42, misses };
+  return render(
     <GrammarRoundEnd
       score={{ correct: 4, total: 5 }}
-      topicId={topicId}
-      learnedLang="es"
-      contentLang="en"
-      lesson={lessonFor('es', topicId)!}
       progressRows={[]}
-      roundStats={null}
+      roundStats={roundStats}
       prevPct={null}
-      drillKind={drillKind}
-      kindCounts={counts(kinds)}
-      lessonTestResult={null}
-      onStartTest={onStartTest}
       header={<View />}
       lessonScoreOf={() => 80}
       setPhase={setPhase}
       setScore={setScore}
-      setDrillKind={setDrillKind}
     />
   );
-
-const order = () => {
-  const json = JSON.stringify(screen.toJSON());
-  return ['grammar-practice-again', 'grammar-back-course', 'grammar-next-type'].filter((id) => json.includes(`"${id}"`));
 };
 
 describe.each([
   ['classic', 'light'],
   ['brutal', 'brand-light'],
-])('round end, three buttons, %s skin', (_skin, theme) => {
+])('round end, two buttons, %s skin', (_skin, theme) => {
   beforeEach(() => {
     mockTheme = theme;
-    mockUnlocked = false;
     jest.clearAllMocks();
   });
 
-  it('exactly three buttons in order; the old ones are gone; score and test note stay', () => {
-    show('choice', ['choice', 'match']);
-    expect(order()).toEqual(['grammar-practice-again', 'grammar-back-course', 'grammar-next-type']);
+  it('one number, exactly two buttons, nothing of the old boxes', () => {
+    show([]);
     const s = t().grammar;
+    expect(screen.getByTestId('grammar-score')).toHaveTextContent('4/5');
     expect(screen.getByText(s.retakeTest)).toBeTruthy();
-    expect(screen.getByText(s.backToSyllabus)).toBeTruthy();
-    expect(screen.getByText(s.nextTestType)).toBeTruthy();
-    for (const gone of ['grammar-start-lessontest', 'grammar-next-topic', 'grammar-more-round']) expect(screen.queryByTestId(gone)).toBeNull();
-    expect(screen.queryByText(s.backToRule)).toBeNull();
-    expect(screen.queryByText(s.oneMoreRound)).toBeNull();
-    expect(screen.getByTestId('grammar-lessontest-note')).toBeTruthy();
-    expect(screen.getByText(/4\s*\/\s*5/)).toBeTruthy();
+    expect(screen.getByText(s.backToGrammar)).toBeTruthy();
+    for (const id of ['grammar-practice-again', 'grammar-back-course']) expect(screen.getByTestId(id)).toBeTruthy();
+    for (const gone of ['grammar-next-type', 'grammar-lessontest-note', 'grammar-start-lessontest', 'grammar-practice-this']) {
+      expect(screen.queryByTestId(gone)).toBeNull();
+    }
+    expect(screen.queryByText('time')).toBeNull();
+    expect(screen.queryByText('correct')).toBeNull();
+    expect(screen.queryByText(s.mistakesTitle)).toBeNull();
   });
 
-  it('retake starts a new round of the same kind; back goes back', () => {
-    show('choice', ['choice', 'match']);
+  it.each([1, 3])('lists %i mistakes with the given answer and the right solution', (n) => {
+    show(Array.from({ length: n }, (_, i) => miss(i + 1)));
+    expect(screen.getByText(t().grammar.mistakesTitle)).toBeTruthy();
+    expect(screen.getAllByTestId('grammar-mistake')).toHaveLength(n);
+    for (let i = 1; i <= n; i++) {
+      expect(screen.getByText(`wrong${i}`)).toBeTruthy();
+      expect(screen.getByText(`right${i}`)).toBeTruthy();
+    }
+  });
+
+  it('retake starts a new round; back goes back', () => {
+    show([]);
     fireEvent.press(screen.getByTestId('grammar-practice-again'));
     expect(setScore).toHaveBeenCalledWith(null);
     expect(setPhase).toHaveBeenCalledWith('drill');
-    expect(setDrillKind).not.toHaveBeenCalled();
     fireEvent.press(screen.getByTestId('grammar-back-course'));
     expect(mockBack).toHaveBeenCalledTimes(1);
-  });
-
-  it('next test type starts the next kind of the lesson', () => {
-    show('choice', ['choice', 'match', 'why']);
-    fireEvent.press(screen.getByTestId('grammar-next-type'));
-    expect(setDrillKind).toHaveBeenCalledWith('match');
-    expect(setScore).toHaveBeenCalledWith(null);
-    expect(setPhase).toHaveBeenCalledWith('drill');
-  });
-
-  it('after the last kind it starts the lesson test (if ready)', () => {
-    mockUnlocked = true;
-    show('match', ['choice', 'match']);
-    fireEvent.press(screen.getByTestId('grammar-next-type'));
-    expect(onStartTest).toHaveBeenCalledTimes(1);
-    expect(setDrillKind).not.toHaveBeenCalled();
-  });
-
-  it('after the last kind, lesson test not ready: next topic', () => {
-    show('match', ['choice', 'match']);
-    fireEvent.press(screen.getByTestId('grammar-next-type'));
-    expect(onStartTest).not.toHaveBeenCalled();
-    expect(mockReplace).toHaveBeenCalledWith(expect.stringMatching(/^\/grammar\//));
   });
 });

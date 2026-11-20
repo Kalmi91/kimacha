@@ -123,7 +123,7 @@ describe('the German tense drill', () => {
       }
       await next();
     }
-    expect(screen.getByTestId('tensedrill-result').props.children).toBe('9 de 10 correctas');
+    expect(screen.getByTestId('tensedrill-result').props.children).toBe('9/10');
     fireEvent.press(screen.getByTestId('tensedrill-again'));
     await flush(4);
     expect(screen.getByText('1 / 10')).toBeTruthy();

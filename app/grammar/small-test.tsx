@@ -45,6 +45,7 @@ import LevelTestFeedback from '@/components/grammar/LevelTestFeedback';
 import { ProgressBar } from '@/components/grammar/Themed';
 import TestQuestionView from '@/components/grammar/TestQuestionView';
 import ExamButton from '@/components/exam/ExamButton';
+import GrammarResult from '@/components/grammar/GrammarResult';
 import { DockSlotProvider, useDockSlot } from '@/components/learn/DockSlot';
 import { FAB_CLEARANCE } from '@/components/learn/DockedAction';
 import ScreenFeedback from '@/lib/screenFeedback';
@@ -374,8 +375,21 @@ export default function SmallTestScreen() {
       <View style={styles.flex}>
         {headerFor('end')}
         {progress}
-        <ScrollView testID="small-test-end" contentContainerStyle={styles.body}>
-          <Text testID="small-test-end-title" style={[styles.title, { color: colors.text }]}>{s.endTitle(right, run.answers.length)}</Text>
+        <View testID="small-test-end" style={styles.flex}>
+        <GrammarResult
+          correct={right}
+          total={run.answers.length}
+          scoreTestID="small-test-end-title"
+          misses={[]}
+          onRetake={() => commit(startRound(closeRound(st), view.topics, view.pool, (Date.now() + st.rounds * 7919) % 2147483647))}
+          onBack={() => {
+            commit(closeRound(st));
+            router.back();
+          }}
+          retakeLabel={s.newRound}
+          retakeTestID="small-test-end-new"
+          backTestID="small-test-end-done"
+        >
           <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
             {rows.map((r) => (
               <Pressable
@@ -422,21 +436,8 @@ export default function SmallTestScreen() {
               ))}
             </View>
           </Card>
-          <ExamButton
-            testID="small-test-end-new"
-            label={s.newRound}
-            onPress={() => commit(startRound(closeRound(st), view.topics, view.pool, (Date.now() + st.rounds * 7919) % 2147483647))}
-          />
-          <ExamButton
-            testID="small-test-end-done"
-            secondary
-            label={s.done}
-            onPress={() => {
-              commit(closeRound(st));
-              router.back();
-            }}
-          />
-        </ScrollView>
+        </GrammarResult>
+        </View>
       </View>,
     );
   }

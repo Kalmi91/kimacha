@@ -306,7 +306,7 @@ describe.each(['brand', 'classic'] as const)('grammar small test (%s palette)', 
     for (let i = 0; i < 10; i++) await answerNext(true);
     expect(has('small-test-end')).toBe(true);
     expect(text('small-test-header')).toBe('A1 topic test · round 1');
-    expect(text('small-test-end-title')).toBe('Round done · 10 of 10');
+    expect(text('small-test-end-title')).toBe('10/10');
     expect(text('fb-card')).toBe('grammar-small-test:A1:end | en→es | A1');
     // 3 right answers in a row learn a topic: the topics asked 3+ times are learned, the others need one more round
     const asked = (id: string) => ((state) => state.run!.answers.filter((a) => a.topic === id).length)(round1);

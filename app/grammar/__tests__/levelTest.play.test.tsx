@@ -572,7 +572,7 @@ describe.each(['brand', 'classic'] as const)('grammar level test (%s palette)', 
       expect(text('level-test-header')).toMatch(/· 20\/20$/);
       expect(screen.queryByTestId('level-test-round-score')).toBeNull(); // the 20th result card first
       await next();
-      expect(text('level-test-round-score')).toBe('11 / 20');
+      expect(text('level-test-round-score')).toBe('11/20');
       const after = /→ (\d+)%/.exec(text('level-test-round-levels'))![1];
       expect(text('level-test-round-levels')).toBe(`A1 level: 60% → ${after}%`);
       // one row per topic asked in this round, the weakest first; a tap opens that topic's lesson
@@ -643,7 +643,7 @@ describe.each(['brand', 'classic'] as const)('grammar level test (%s palette)', 
 
       await saveResumeValue(getDb(), KEY, { n: 20, right: 12, startPct: 30 });
       await open();
-      expect(text('level-test-round-score')).toBe('12 / 20'); // killed on the 20th card: the summary is still due
+      expect(text('level-test-round-score')).toBe('12/20'); // killed on the 20th card: the summary is still due
       await press('level-test-round-leave');
       expect(mockBack).toHaveBeenCalledTimes(1);
       expect(await saved()).toBeNull();
@@ -660,7 +660,7 @@ describe.each(['brand', 'classic'] as const)('grammar level test (%s palette)', 
       await press('level-test-done-keep');
       expect(screen.getByTestId('level-test-feedback-badge')).toBeTruthy();
       await next();
-      expect(text('level-test-round-score')).toBe('20 / 20');
+      expect(text('level-test-round-score')).toBe('20/20');
       expect(screen.queryByTestId('level-test-done')).toBeNull(); // once
     });
   });
@@ -742,7 +742,7 @@ describe.each(['brand', 'classic'] as const)('grammar level test (%s palette)', 
         await press('exam-dont-know');
         await press('level-test-next');
       }
-      expect(text('level-practice-end')).toBe('0 of 16 right');
+      expect(text('level-practice-end')).toBe('0/16');
       await press('level-practice-back');
       expect(screen.queryByTestId('level-practice-end')).toBeNull();
       expect(text('level-test-header')).toMatch(/· 2\/20$/);

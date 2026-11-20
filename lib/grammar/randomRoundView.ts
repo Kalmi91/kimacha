@@ -2,6 +2,7 @@ import type { Level } from '@/data/words';
 import { buildLessonTest, type LessonTestQuestion } from '@/lib/grammar/lessonTest';
 import { getGrammarTier, lessonFor, type SyllabusTopic } from '@/lib/grammar/syllabus';
 import { t } from '@/lib/i18n';
+import type { GrammarMiss } from '@/lib/grammar/roundMiss';
 import {
   type AskPhase,
   currentPhase,
@@ -113,4 +114,14 @@ export function phaseLabel(s: ReturnType<typeof t>['randomRound'], phase: AskPha
     case 'full':
       return s.phaseFull(i, n);
   }
+}
+
+/** Every wrong answer of the run, as the end screen's "Mistakes:" list (the task and the right solution). */
+export function runMisses(d: RoundData, run: RoundRun): GrammarMiss[] {
+  return run.steps
+    .filter((st) => !st.ok)
+    .flatMap((st) => {
+      const q = questionsOf(d, run.seed, st.topicId).find((x) => x.id === st.qid);
+      return q ? [{ prompt: q.review.question, given: null, correct: q.review.answer }] : [];
+    });
 }

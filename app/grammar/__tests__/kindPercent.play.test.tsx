@@ -141,7 +141,7 @@ describe('grammar lesson screen: a half-done round is saved and resumed', () => 
     for (let i = 3; i < 10; i++) await answerForm(i, true);
 
     // 9/10 = 90%: the end of the round, the kind's best
-    expect(screen.getByText('9 / 10')).toBeTruthy();
+    expect(screen.getByText('9/10')).toBeTruthy();
     // the done page no longer has a way back to the lesson (E205); reopen the lesson screen, the progress is saved
     screen.unmount();
     render(<GrammarLessonScreen />);

@@ -9,12 +9,12 @@ import { normalizeWordToken } from '@/data/words';
 import { cumulativeCorpusWordIds, grammarKindCounts, type GrammarGapItem, type GrammarItem } from '@/lib/games/content';
 import { buildGlossMap } from '@/lib/games/gloss';
 import type { ContentLang } from '@/lib/grammar/lessonTypes';
-import { nextWrittenTopic, syllabusTopic } from '@/lib/grammar/syllabus';
+import { syllabusTopic } from '@/lib/grammar/syllabus';
 import { kindPercent, kindProgressFromRows, kindRunKey, runSummary, type KindRun } from '@/lib/grammar/lessonScore';
 import { tableCellsForLesson, wordCellsForLesson, WORD_DECK_MIN_CARDS } from '@/lib/grammar/tableDeck';
 import { TRANSFORM_ROUND_SIZE } from '@/lib/grammar/transformRounds';
 import { ARTICLE_ROUND_SIZE, isArticleLesson } from '@/lib/grammar/nounArticles';
-import { lessonTestFromRows, lessonTestKey, lessonTestSize, lessonTestUnlocked } from '@/lib/grammar/lessonTest';
+import { LESSON_TEST_PASS_PCT, lessonTestFromRows, lessonTestKey, lessonTestSize, lessonTestUnlocked } from '@/lib/grammar/lessonTest';
 import { KIND_ORDER, useGrammarTopic } from '@/lib/grammar/useGrammarTopic';
 import { getScrollY, setScrollY } from '@/lib/grammar/scrollMemory';
 import { speak } from '@/lib/speech';
@@ -240,13 +240,7 @@ function GrammarLessonPhases({ topic }: { topic: ReturnType<typeof useGrammarTop
           contentLang={contentLang}
           level={level}
           previous={lessonTestResult}
-          hasNextTopic={!!nextWrittenTopic(learnedLang, String(topicId))}
           onSave={(r) => saveRow(lessonTestKey(String(topicId)), r.passed ? 'passed' : 'failed', r)}
-          onNextTopic={() => {
-            const nextTopic = nextWrittenTopic(learnedLang, String(topicId));
-            if (nextTopic) router.replace(`/grammar/${nextTopic.id}` as never);
-          }}
-          onBackToRule={() => setPhase('lesson')}
           onBackToSyllabus={() => router.back()}
           onLeave={() => setPhase('lesson')}
         />
@@ -290,22 +284,13 @@ function GrammarLessonPhases({ topic }: { topic: ReturnType<typeof useGrammarTop
     return (
       <GrammarRoundEnd
         score={score}
-        topicId={String(topicId)}
-        learnedLang={learnedLang}
-        contentLang={contentLang}
-        lesson={lesson}
         progressRows={progressRows}
         roundStats={roundStats}
         prevPct={prevPct}
-        drillKind={drillKind}
-        kindCounts={kindCounts}
-        lessonTestResult={lessonTestResult}
-        onStartTest={startTest}
         header={header}
         lessonScoreOf={lessonScoreOf}
         setPhase={setPhase}
         setScore={setScore}
-        setDrillKind={setDrillKind}
       />
     );
   }
@@ -364,11 +349,9 @@ function GrammarLessonPhases({ topic }: { topic: ReturnType<typeof useGrammarTop
         {lessonTestSize(lesson, learnedLang, contentLang) > 0 ? (
           <>
             {lessonButton('grammar-lesson-start-lessontest', s.lessonTest.take, startTest, testReady, true, !testReady)}
-            {!testReady ? (
-              <Text style={[styles.lessonTestNote, { color: g.brutal ? g.mu : colors.tabIconDefault }]}>
-                {s.lessonTest.finishFirst}
-              </Text>
-            ) : null}
+            <Text testID="grammar-lessontest-note" style={[styles.lessonTestNote, { color: g.brutal ? g.mu : colors.tabIconDefault }]}>
+              {testReady ? s.lessonTest.rules(lessonTestSize(lesson, learnedLang, contentLang), LESSON_TEST_PASS_PCT) : s.lessonTest.finishFirst}
+            </Text>
           </>
         ) : null}
         {availableKinds.map((kind, i) => {
