@@ -241,6 +241,6 @@ const styles = StyleSheet.create({
   headerTitle: { flexShrink: 1, minWidth: 0 },
   // the place React Navigation gives the icon (uikit variant, 31 x 28), so the icon sits where it did before
   iconSlot: { width: 31, height: 28, alignItems: 'center', justifyContent: 'center' },
-  iconSlotAlt: { width: 54, height: 34 },
-  capsule: { width: 54, height: 34, borderRadius: 17, alignItems: 'center', justifyContent: 'center' },
+  iconSlotAlt: { width: 46, height: 32 },
+  capsule: { width: 46, height: 32, borderRadius: 16, alignItems: 'center', justifyContent: 'center' },
 });

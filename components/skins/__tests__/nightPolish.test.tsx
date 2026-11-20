@@ -101,7 +101,7 @@ describe('Night polish', () => {
     expect(flat('status-bar-strip').borderBottomWidth).toBeUndefined();
   });
 
-  it('tab layout: Night shows the school icon in a 17-radius capsule; brutal keeps the list icon', async () => {
+  it('tab layout: Night shows the school icon in a 16-radius capsule; brutal keeps the list icon', async () => {
     const press = (focused: boolean) => {
       const Btn = captured.screens[0].options.tabBarButton as (p: Record<string, unknown>) => React.ReactElement;
       return render(<Btn aria-selected={focused} />);
@@ -110,7 +110,7 @@ describe('Night polish', () => {
     await waitFor(() => expect(captured.screens.length).toBeGreaterThan(0));
     const active = press(true);
     expect(active.getByTestId('sym-school')).toBeTruthy();
-    expect(StyleSheet.flatten(active.getByTestId('tab-icon-active').props.style)).toMatchObject({ borderRadius: 17, width: 54, height: 34 });
+    expect(StyleSheet.flatten(active.getByTestId('tab-icon-active').props.style)).toMatchObject({ borderRadius: 16, width: 46, height: 32 });
     expect(JSON.stringify(StyleSheet.flatten(active.getByTestId('tab-icon-active').props.style))).toContain('#EC4899');
     active.unmount();
     night.unmount();
