@@ -23,7 +23,9 @@ function fakeDb(rows: Row[] = [], opts: { failSet?: boolean; failGet?: boolean }
     expect(gameId).toBe(RESUME_GAME_ID);
     return rows;
   });
-  return { db: { setGameProgress, getGameProgress } as unknown as DB, setGameProgress, rows };
+  // No onboarding yet: the web keys stay unscoped.
+  const getOnboarding = jest.fn(async () => null);
+  return { db: { setGameProgress, getGameProgress, getOnboarding } as unknown as DB, setGameProgress, rows };
 }
 
 let warn: jest.SpyInstance;

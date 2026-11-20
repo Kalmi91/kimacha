@@ -308,8 +308,7 @@ it('C09 Language pair switch and back: the other pair\'s order and timers leak i
   expect(tiles(hook)).toEqual([0, 0, 0]);
 });
 
-// Waiting on a product decision: one learning clock per language pair vs per level.
-it.skip('C10 First open of the day on another level steps the clock past an unfinished level', async () => {
+it('C10 First open of the day on another level steps the clock past an unfinished level', async () => {
   const db = getDb();
   const yesterday = addDays(day, -1);
   await db.setPcicLevel('B1');

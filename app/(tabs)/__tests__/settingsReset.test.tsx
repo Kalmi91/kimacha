@@ -124,7 +124,7 @@ describe('Settings: progress reset', () => {
     openReset(r);
     fireEvent.press(r.getByText('🗑️ Reset progress (A1)'));
     await confirmAlert(alertSpy);
-    expect(await loadLearnResume(getDb())).toBeNull();
+    expect(await loadLearnResume(getDb(), 'A1')).toBeNull();
   });
 
   it('without confirmation (Cancel) nothing is deleted', async () => {

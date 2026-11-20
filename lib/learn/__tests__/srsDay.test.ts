@@ -76,6 +76,26 @@ describe('the learning clock', () => {
     expect(await advanceLearnSrsDay(db, calendarDay, [review('relearned', addDays(srsDay, 1))])).toBe(srsDay);
     expect(await advanceLearnSrsDay(db, addDays(calendarDay, 1), [review('relearned', addDays(srsDay, 2))])).toBe('2026-11-08');
   });
+
+  it('keeps one clock per level: A1 leftover reviews stay, the first B1 load of the day steps to the calendar day', async () => {
+    const db = new MemoryDB();
+    await db.setOnboarding('en', 'es');
+    await db.setSrsDay(saved);
+    expect(await advanceLearnSrsDay(db, calendarDay, [review('due')], [], 'A1')).toBe(srsDay);
+    expect(await advanceLearnSrsDay(db, calendarDay, [], [], 'B1')).toBe('2026-11-08');
+    expect(await advanceLearnSrsDay(db, calendarDay, [review('due')], [], 'A1')).toBe(srsDay);
+    expect(await db.getSrsDay()).toEqual(saved);
+  });
+
+  it('a level without its own clock is seeded from the legacy value and steps once', async () => {
+    const db = new MemoryDB();
+    await db.setOnboarding('en', 'es');
+    await db.setSrsDay(saved);
+    expect(await advanceLearnSrsDay(db, calendarDay, [], [], 'A1')).toBe('2026-11-08');
+    expect(await advanceLearnSrsDay(db, calendarDay, [], [], 'A1')).toBe('2026-11-08');
+    await db.setPcicLevel('A1');
+    expect(await loadSrsDay(db, calendarDay)).toBe('2026-11-08');
+  });
 });
 
 describe('reviews before new words', () => {

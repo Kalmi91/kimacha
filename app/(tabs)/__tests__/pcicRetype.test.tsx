@@ -27,7 +27,7 @@ const snapshot = async () => JSON.stringify({
   cards: await getDb().getPcicCards(),
   xp: await getXp(day),
   log: answerLog.recent('en→es', 500),
-  resume: await loadLearnResume(getDb()),
+  resume: await loadLearnResume(getDb(), 'A1'),
   mistakes: [await getDb().getMistakeCards(), await getDb().getMistakeBatches()],
   usage: await getDb().getUsageStats(),
 });
