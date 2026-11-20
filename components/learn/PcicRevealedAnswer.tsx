@@ -212,7 +212,7 @@ export default function PcicRevealedAnswer({
                 <Text
                   style={[
                     styles.gradeLabel,
-                    { color: labelColor, fontWeight: '500', textTransform: 'uppercase' },
+                    { color: labelColor, fontWeight: g.soft ? '600' : '500', textTransform: g.soft ? 'none' : 'uppercase' },
                     variant === 'text' && gr === 'good' && styles.gradeUnderline,
                   ]}
                 >

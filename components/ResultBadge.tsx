@@ -36,6 +36,9 @@ export default function ResultBadge({
   // "large" text (no bold with a custom font), so 4.5 is needed: there white (4.8:1) is better.
   const ink = bestOn(fill, [ON_FILL, '#FFFFFF']);
   const text = label ?? (correct ? s.games.correctFeedback : s.games.wrongFeedback);
+  // Night (g.soft): a dark green badge with a mint label, rounded corners; wrong keeps its colour + dashed frame.
+  const soft = g.soft && correct && g.extra.okBadgeBg ? { backgroundColor: g.extra.okBadgeBg, borderColor: g.extra.success, borderWidth: 1.5 } : null;
+  const softInk = soft ? g.extra.okBadgeInk ?? ink : ink;
   return (
     <View
       testID={testID}
@@ -45,11 +48,13 @@ export default function ResultBadge({
         { backgroundColor: fill, borderColor: g.ink },
         correct ? styles.solid : styles.dashed,
         !g.brutal && styles.rounded,
+        soft,
+        g.soft && { borderRadius: g.soft.radius },
         { alignSelf: align },
       ]}
     >
-      <Text style={[styles.glyph, { color: ink }]}>{correct ? '✓' : '✗'}</Text>
-      <Text style={[styles.label, { color: ink }]}>{text}</Text>
+      <Text style={[styles.glyph, { color: softInk }]}>{correct ? '✓' : '✗'}</Text>
+      <Text style={[styles.label, { color: softInk }]}>{text}</Text>
     </View>
   );
 }

@@ -27,7 +27,11 @@ export default function StatusBarStrip() {
     });
   }, []);
 
+  // Night: a fixed flat strip (extra.statusBar), no tint cycle.
+  const fixed = g.extra.statusBar;
+
   const cycle = () => {
+    if (fixed) return;
     const next = nextTintIndex(tint);
     setTint(next);
     getDb().setStatusBarTint(next).catch(() => {
@@ -47,9 +51,9 @@ export default function StatusBarStrip() {
         onPress={cycle}
         style={[
           styles.band,
-          { height: BAND_HEIGHT, backgroundColor: tintColor(tint) },
+          { height: BAND_HEIGHT, backgroundColor: fixed ?? tintColor(tint) },
           // brutalist palette: a 2.5 px ink line at the bottom of the band.
-          g.brutal && { borderBottomWidth: 2.5, borderBottomColor: g.ink },
+          g.brutal && !fixed && { borderBottomWidth: 2.5, borderBottomColor: g.ink },
         ]}
         testID="status-bar-strip"
       />

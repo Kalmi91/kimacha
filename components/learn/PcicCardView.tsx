@@ -117,7 +117,7 @@ export default function PcicCardView({
   // above the keys before they open (otherwise the window pans and the header slides under the status bar).
   const scrollRef = useRef<ScrollView>(null), promptRef = useRef<View>(null);
   const [retypeOpenKey, setRetypeOpenKey] = useState(''); const retypeRef = useRef<RetypeHandle>(null); const [retypePending, setRetypePending] = useState(false);
-  const [retypeFocused, setRetypeFocused] = useState(false); const rowScroll = useRetypeRowScroll(scrollRef);
+  const [answerFocused, setAnswerFocused] = useState(false); const [retypeFocused, setRetypeFocused] = useState(false); const rowScroll = useRetypeRowScroll(scrollRef);
   const { height: windowH } = useWindowDimensions();
   const fieldBesidePrompt = Platform.OS === 'android' && shortWindow(windowH);
   const compactTyping = Platform.OS === 'android' && !grade && compactTypingNeeded(windowH, kbHeight, dockLift);
@@ -380,8 +380,8 @@ export default function PcicCardView({
   // The keyed field stays mounted beside the prompt while optional details move below it on short screens.
   const answerField = <TextInput
     key={`pcic-in-${current.itemId}-${cardSeq}`} ref={inputRef} onLayout={onFieldLayout}
-    style={[styles.input, { color: colors.text, borderColor: colors.tabIconDefault }, themedInputStyle(g), fieldBesidePrompt && { marginTop: 8 }]}
-    value={typedAnswer} onChangeText={setTypedAnswer}
+    style={[styles.input, { color: colors.text, borderColor: colors.tabIconDefault }, themedInputStyle(g), g.soft && answerFocused && { borderColor: g.b, borderWidth: 2 }, fieldBesidePrompt && { marginTop: 8 }]}
+    value={typedAnswer} onChangeText={setTypedAnswer} onFocus={() => setAnswerFocused(true)} onBlur={() => setAnswerFocused(false)}
     onSubmitEditing={grade ? () => nextGrade && handleGrade(nextGrade) : handleCheck}
     returnKeyType={compactTyping ? 'done' : undefined} editable={!grade}
     placeholder={s.card.typeIn(target)} placeholderTextColor={colors.tabIconDefault}

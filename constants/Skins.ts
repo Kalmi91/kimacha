@@ -83,6 +83,10 @@ export type Skin = {
   displayScale?: number;
   // plakat: rotation of the word (variant 'word') in degrees.
   wordRotate?: number;
+  // Night: rounding of the small square elements (label, field, badge, active tab) on the brutal palette; Night only.
+  soft?: { radius: number };
+  // Night: the alternative tab icon set + capsule (app/(tabs)/_layout.tsx).
+  tabIcons?: 'alt';
 };
 
 // The ShipporiMincho TTF is too large (8.6 MB), so Spectral-Light is registered instead
@@ -236,13 +240,18 @@ export const SKINS: Record<SkinId, Skin> = {
     colors: {
       dark: {
         bg: '#150A29', paper: '#2C1852', ink: '#FFFFFF', mu: '#CFC6E4', a: '#EC4899', onA: '#FFFFFF', b: '#22D3EE', border: '#3D2668',
-        extra: { progressTrack: '#22113F', progressFill: '#EC4899', success: '#34D399', danger: '#F87171', warning: '#FBBF24' },
+        extra: {
+          progressTrack: '#3D2668', progressFill: '#EC4899', progressFill2: '#22D3EE', success: '#34D399', danger: '#F87171', warning: '#FBBF24',
+          okBadgeBg: '#14532D', okBadgeInk: '#6EE7B7', statusBar: '#150A29', tabBar: '#22113F',
+        },
       },
     },
     shape: { borderWidth: 1, borderStyle: 'solid', radius: 16, buttonRadius: 14, shadowOffset: 0, borderColor: 'border', barHeight: 6, barRadius: 3 },
     fonts: { title: null, word: null, body: null },
     fontScale: 1,
     letterSpacing: 0,
+    soft: { radius: 12 },
+    tabIcons: 'alt',
   },
   botanikus: {
     id: 'botanikus',

@@ -23,6 +23,8 @@ export type GrammarColors = {
   border: string;
   onInk: string;
   extra: Record<string, string>;
+  // Night only: rounding of the small elements; null on every other theme.
+  soft: { radius: number } | null;
 };
 
 // keys for the grammar screens, built from the theme key (`<palette>-light|dark` or the
@@ -50,6 +52,7 @@ export function grammarColorsFor(theme: ThemeKey): GrammarColors {
       border: c.text,
       onInk: c.accent,
       extra: {},
+      soft: null,
     };
   }
   const mode = isDarkTheme(theme) ? 'dark' : 'light';
@@ -74,6 +77,7 @@ export function grammarColorsFor(theme: ThemeKey): GrammarColors {
       border: c.border ?? c.ink,
       onInk: c.bg,
       extra: c.extra ?? {},
+      soft: SKINS[id].soft ?? null,
     };
   }
   const base = BASE[mode];
@@ -90,6 +94,7 @@ export function grammarColorsFor(theme: ThemeKey): GrammarColors {
     border: base.ink,
     onInk: mode === 'dark' ? base.bg : fills.b,
     extra: {},
+    soft: null,
   };
 }
 
@@ -97,6 +102,6 @@ export function useGrammarColors(): GrammarColors {
   const { theme, skin, skinMix } = useTheme();
   const g = grammarColorsFor(theme);
   // Own mix: the shape comes from the `shape` theme; classic shape = today's look (not brutalist).
-  if (skin === 'mix' && skinMix) return { ...g, brutal: skinMix.shape !== 'classic' };
+  if (skin === 'mix' && skinMix) return { ...g, brutal: skinMix.shape !== 'classic', soft: null };
   return g;
 }

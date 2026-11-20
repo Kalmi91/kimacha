@@ -26,16 +26,19 @@ const EDGE_BRUTAL: ViewStyle = { borderRadius: 0, borderWidth: 2 };
 
 // The square 2 px edge of the small chips / option cards on the brutalist palette, nothing on classic.
 export function themedEdgeStyle(g: GrammarColors): ViewStyle | null {
+  if (g.soft) return { borderRadius: g.soft.radius, borderWidth: 1 };
   return g.brutal ? EDGE_BRUTAL : null;
 }
 
 // The bottom sheet card: square top corners, a 2.5 px ink top edge on the brutalist palette.
 export function themedSheetStyle(g: GrammarColors): ViewStyle | null {
+  if (g.soft) return { borderTopLeftRadius: 20, borderTopRightRadius: 20, borderTopWidth: 1, borderColor: g.border };
   return g.brutal ? { borderTopLeftRadius: 0, borderTopRightRadius: 0, borderTopWidth: 2.5, borderColor: g.ink } : null;
 }
 
 // The square 2 px ink edge (small boxes, table cells, tabs, POS chip) on the brutalist palette, nothing on classic.
 export function themedInkEdgeStyle(g: GrammarColors): ViewStyle | null {
+  if (g.soft) return { borderRadius: g.soft.radius, borderWidth: 1, borderColor: g.border };
   return g.brutal ? { borderRadius: 0, borderWidth: 2, borderColor: g.ink } : null;
 }
 

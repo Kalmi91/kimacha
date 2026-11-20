@@ -9,6 +9,7 @@ import { ON_FILL } from '@/constants/GrammarPalettes';
 import type { ColorRole, CornerRadii, SkinShape } from '@/constants/Skins';
 import { useGrammarColors, type GrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
+import { gradientStyle } from '@/lib/gradientStyle';
 import { useSkin } from '@/lib/useSkin';
 import { useTheme } from '@/lib/ThemeContext';
 
@@ -297,6 +298,7 @@ export function BrutalButton({
   // zen: the text of the main (the a-filled, "Knew it") button underlined; retro95: the first
   // letter of the button underlined.
   const underlineAll = variant === 'text' && fill === 'a';
+  const softLabel: TextStyle | null = g.soft ? { textTransform: 'none', fontWeight: '600' } : null;
   const text =
     variant === 'bevel' && label ? (
       <>
@@ -324,6 +326,7 @@ export function BrutalButton({
         style={[
           styles.buttonText,
           { color: actionTextColor(g, fill, variant) },
+          softLabel,
           underlineAll ? styles.underline : null,
         ]}
       >
@@ -336,6 +339,7 @@ export function BrutalButton({
 // input field on the brutalist palette: 2.5 px ink border, corner 0, paper background.
 export function brutalInputStyle(g: GrammarColors): TextStyle {
   // the theme's own input-field colour (retro95: white "field"), if it has one; otherwise the paper.
+  if (g.soft) return { borderWidth: 1, borderColor: g.border, borderRadius: g.soft.radius, backgroundColor: g.bg, color: g.ink };
   return { borderWidth: 2.5, borderColor: g.ink, borderRadius: 0, backgroundColor: g.extra.field ?? g.paper, color: g.ink };
 }
 
@@ -481,7 +485,14 @@ export function ContinuousBar({
         style,
       ]}
     >
-      <View testID={fillTestID} style={{ width: `${Math.max(0, Math.min(100, pct))}%`, height: '100%', backgroundColor: g.extra.progressFill ?? g.ink }} />
+      <View
+        testID={fillTestID}
+        style={[
+          { width: `${Math.max(0, Math.min(100, pct))}%`, height: '100%', backgroundColor: g.extra.progressFill ?? g.ink },
+          g.extra.progressFill2 && g.extra.progressFill ? gradientStyle(g.extra.progressFill, g.extra.progressFill2) : null,
+          g.extra.progressFill2 ? radiusStyle(shape.barRadius ?? 0) : null,
+        ]}
+      />
     </View>
   );
 }
