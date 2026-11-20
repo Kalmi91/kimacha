@@ -23,7 +23,9 @@ export interface LearnSessionOptions {
 /** Reviews use the learning clock; the new-word budget always uses the calendar. */
 export function pickLearnSession(cards: Sm2Card[], order: string[], opts: LearnSessionOptions): Sm2Card[] {
   const queue = pickSm2Session(cards, order, opts.srsDay, opts.newLimit, opts.calendarDay)
-    .filter((c) => !opts.parked?.includes(c.itemId));
+    .filter((c) => !opts.parked?.includes(c.itemId))
+    // Switching noPileUp off moves the clock to the calendar day, and a word graded today against the lagging clock must not come back today (C07).
+    .filter((c) => !(c.state === 'review' && c.lastReview === opts.calendarDay));
   // A new word missed earlier today belongs to the new-word phase, not to the leftover reviews, so rebuilding the
   // queue (tab switch, reopening the app) keeps the rest of the day's new words next to it.
   const hasReviews = queue.some((c) => isReview(c, opts.calendarDay));
@@ -88,7 +90,7 @@ export function requeueAfterGrade(
   now: number = Date.now(),
   delaySec: number = DEFAULT_AGAIN_DELAY_SEC
 ): QueuedSm2Card[] {
-  const rest = queue.slice(1);
+  const rest = queue.filter((c) => c.itemId !== next.itemId);
   // FB535: a graduating card also lets an expired missed card back to the front (before, only a
   // card staying today did, so after right answers the missed new word waited for the queue's end).
   if (next.due !== today) return reorderForReturn(rest, now);
@@ -112,7 +114,7 @@ export function requeueAfterUndo(
   graded: Sm2Card,
   today: string
 ): QueuedSm2Card[] {
-  const rest = graded.due === today ? queue.filter((c) => c.itemId !== graded.itemId) : queue;
+  const rest = queue.filter((c) => c.itemId !== graded.itemId);
   return [before, ...rest];
 }
 
