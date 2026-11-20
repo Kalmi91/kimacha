@@ -1,0 +1,236 @@
+[
+  {
+    "id": "saludos",
+    "target": "es",
+    "title": {
+      "en": "Greetings",
+      "es": "Saludos",
+      "hu": "Köszönés",
+      "de": "Begrüßung"
+    },
+    "pairs": [
+      {
+        "q": {
+          "es": "¿Cómo estás?",
+          "en": "How are you?"
+        },
+        "answers": [
+          {
+            "es": "Muy bien, gracias. ¿Y tú?",
+            "en": "Very well, thanks. And you?",
+            "tone": "pos"
+          },
+          {
+            "es": "Bien, aquí nomás.",
+            "en": "Fine, just hanging around.",
+            "tone": "pos"
+          },
+          {
+            "es": "Más o menos, estoy un poco cansado.",
+            "en": "So-so, I'm a bit tired.",
+            "tone": "neg"
+          },
+          {
+            "es": "Mal, me duele la cabeza.",
+            "en": "Bad, I have a headache.",
+            "tone": "neg"
+          }
+        ]
+      },
+      {
+        "q": {
+          "es": "¿Qué tal?",
+          "en": "How's it going?"
+        },
+        "answers": [
+          {
+            "es": "Todo bien, ¿y tú?",
+            "en": "All good, and you?",
+            "tone": "pos"
+          },
+          {
+            "es": "Ahí la llevo.",
+            "en": "Getting by.",
+            "tone": "pos"
+          },
+          {
+            "es": "Con mucho trabajo.",
+            "en": "Lots of work.",
+            "tone": "neg"
+          },
+          {
+            "es": "Fatal, perdí mi celular.",
+            "en": "Terrible, I lost my phone.",
+            "tone": "neg"
+          }
+        ]
+      },
+      {
+        "q": {
+          "es": "¿Qué onda?",
+          "en": "What's up?"
+        },
+        "answers": [
+          {
+            "es": "Nada, aquí. ¿Qué onda contigo?",
+            "en": "Nothing, just here. What's up with you?",
+            "tone": "pos"
+          },
+          {
+            "es": "¡Qué onda! ¿Cómo estás?",
+            "en": "Hey! How are you?",
+            "tone": "pos"
+          },
+          {
+            "es": "Todo tranquilo.",
+            "en": "All calm.",
+            "tone": "pos"
+          },
+          {
+            "es": "Nada nuevo, lo de siempre.",
+            "en": "Nothing new, same old.",
+            "tone": "neg"
+          }
+        ]
+      },
+      {
+        "q": {
+          "es": "¿Cómo te llamas?",
+          "en": "What's your name?"
+        },
+        "answers": [
+          {
+            "es": "Me llamo Ana. ¿Y tú?",
+            "en": "My name is Ana. And you?",
+            "tone": "pos"
+          },
+          {
+            "es": "Soy Pedro, mucho gusto.",
+            "en": "I'm Pedro, nice to meet you.",
+            "tone": "pos"
+          },
+          {
+            "es": "Me llamo Guadalupe, pero me dicen Lupe.",
+            "en": "My name is Guadalupe, but people call me Lupe.",
+            "tone": "pos"
+          },
+          {
+            "es": "Adivina.",
+            "en": "Guess.",
+            "tone": "odd"
+          }
+        ]
+      },
+      {
+        "q": {
+          "es": "Mucho gusto.",
+          "en": "Nice to meet you."
+        },
+        "answers": [
+          {
+            "es": "Igualmente.",
+            "en": "Likewise.",
+            "tone": "pos"
+          },
+          {
+            "es": "El gusto es mío.",
+            "en": "The pleasure is mine.",
+            "tone": "pos"
+          }
+        ]
+      },
+      {
+        "q": {
+          "es": "¿Cómo te va?",
+          "en": "How's it going for you?"
+        },
+        "answers": [
+          {
+            "es": "Me va muy bien, gracias.",
+            "en": "It's going very well, thanks.",
+            "tone": "pos"
+          },
+          {
+            "es": "Regular, nada especial.",
+            "en": "So-so, nothing special.",
+            "tone": "neg"
+          },
+          {
+            "es": "Me va mal, perdí el trabajo.",
+            "en": "Badly, I lost my job.",
+            "tone": "neg"
+          }
+        ]
+      },
+      {
+        "q": {
+          "es": "¿Cómo amaneciste?",
+          "en": "How did you wake up?"
+        },
+        "answers": [
+          {
+            "es": "Bien, dormí muy bien.",
+            "en": "Good, I slept very well.",
+            "tone": "pos"
+          },
+          {
+            "es": "Con sueño, dormí poco.",
+            "en": "Sleepy, I slept little.",
+            "tone": "neg"
+          },
+          {
+            "es": "Con hambre de tiburón.",
+            "en": "Hungry as a shark.",
+            "tone": "odd"
+          }
+        ]
+      },
+      {
+        "q": {
+          "es": "¿Cómo has estado?",
+          "en": "How have you been?"
+        },
+        "answers": [
+          {
+            "es": "Muy bien, ¿y tú?",
+            "en": "Very well, and you?",
+            "tone": "pos"
+          },
+          {
+            "es": "Ocupado, con mucho trabajo.",
+            "en": "Busy, lots of work.",
+            "tone": "neg"
+          },
+          {
+            "es": "Enfermo, pero ya estoy mejor.",
+            "en": "Sick, but I'm better now.",
+            "tone": "neg"
+          }
+        ]
+      },
+      {
+        "q": {
+          "es": "¿Qué hay de nuevo?",
+          "en": "What's new?"
+        },
+        "answers": [
+          {
+            "es": "Tengo un trabajo nuevo.",
+            "en": "I have a new job.",
+            "tone": "pos"
+          },
+          {
+            "es": "Nada, todo igual.",
+            "en": "Nothing, everything's the same.",
+            "tone": "neg"
+          },
+          {
+            "es": "Me voy a casar mañana.",
+            "en": "I'm getting married tomorrow.",
+            "tone": "odd"
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -11,12 +11,14 @@ import MatchGame from '@/components/practice/MatchGame';
 import OppositesGame from '@/components/practice/OppositesGame';
 import ScrambleGame from '@/components/practice/ScrambleGame';
 import SituationGame from '@/components/practice/SituationGame';
+import SmallTalkGame from '@/components/practice/SmallTalkGame';
 import type { t } from '@/lib/i18n';
 import { DICTATION_MODE } from '@/lib/practice/dictation';
 import { MATCH_MODE } from '@/lib/practice/match';
 import { OPPOSITES_MODE } from '@/lib/practice/opposites';
 import { SCRAMBLE_MODE } from '@/lib/practice/scramble';
 import { SITUATIONS_MODE } from '@/lib/practice/situations';
+import { SMALLTALK_MODE } from '@/lib/practice/smalltalk';
 import { loadPracticeMode, resolvePracticeMode, savePracticeMode } from '@/lib/practice/practiceMode';
 import { useLoadOnMount } from '@/lib/useLoadOnMount';
 
@@ -34,6 +36,7 @@ export const PRACTICE_MODES: readonly PracticeMode[] = [
   { id: MATCH_MODE, title: (s) => s.practiceTab.modeMatch, Component: MatchGame },
   { id: OPPOSITES_MODE, title: (s) => s.practiceTab.modeOpposites, Component: OppositesGame },
   { id: SITUATIONS_MODE, title: (s) => s.practiceTab.modeSituations, Component: SituationGame },
+  { id: SMALLTALK_MODE, title: (s) => s.practiceTab.modeSmallTalk, Component: SmallTalkGame },
 ];
 
 /**
