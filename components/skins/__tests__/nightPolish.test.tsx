@@ -2,6 +2,9 @@
 // fixed status strip, alternative tab icons + capsule. The other themes keep today's look.
 jest.mock('@/lib/buildFlavor', () => ({ IS_PLAY_BUILD: false, FEEDBACK_URL: 'https://example.test/feedback' }));
 jest.mock('@/lib/speech', () => require('@/test-utils/mocks').speechMock());
+jest.mock('@/lib/screenFeedback', () => ({ __esModule: true, default: () => null }));
+jest.mock('@/components/learn/MistakesEntry', () => ({ __esModule: true, default: () => null }));
+jest.mock('@/components/LevelPickerSheet', () => ({ __esModule: true, default: () => null }));
 jest.mock('expo-status-bar', () => ({ StatusBar: () => null }));
 jest.mock('expo-symbols', () => {
   const { View } = require('react-native');
@@ -25,10 +28,13 @@ jest.mock('expo-router', () => {
 });
 
 import { fireEvent, render, screen, waitFor } from '@testing-library/react-native';
-import { StyleSheet, View } from 'react-native';
+import { Platform, StyleSheet, TextInput, View } from 'react-native';
 import * as RN from 'react-native';
 
 import TabLayout from '@/app/(tabs)/_layout';
+import PcicCardView, { type PcicCardViewProps } from '@/components/learn/PcicCardView';
+import type { Sm2Card } from '@/lib/sm2';
+import { noWebOutline } from '@/lib/gradientStyle';
 import ResultBadge from '@/components/ResultBadge';
 import StatusBarStrip from '@/components/StatusBarStrip';
 import { ContinuousBar } from '@/components/grammar/Brutal';
@@ -119,5 +125,50 @@ describe('Night polish', () => {
     const other = press(true);
     expect(other.getByTestId('sym-list')).toBeTruthy();
     expect(other.queryByTestId('sym-school')).toBeNull();
+  });
+
+  const card: Sm2Card = { itemId: 'e1', state: 'new', step: 0, ease: 2.5, interval: 0, reps: 0, lapses: 0, due: '', lastReview: null, introducedAt: null };
+  const noop = () => {};
+  const asyncNoop = async () => {};
+  const cardProps: PcicCardViewProps = {
+    loading: false, level: 'B1', newOrder: [], dueRemaining: 0, newRemaining: 1, doneToday: 0, xpToday: 0,
+    target: 'en', sourceLang: 'es', dockLift: 0, kbHeight: 0, dockH: 0, languagePair: 'es→en',
+    current: card, currentItem: { id: 'e1', es: 'leer', en: 'read', kind: 'word', section: '', order: 1 },
+    allLevelCards: [], allCards: new Map([[card.itemId, card]]), queue: [card], today: '2026-11-16',
+    batchBase: { day: '', level: '', n: 0 }, answerText: 'read', promptSource: 'leer',
+    grade: null, articlePick: '', typedAnswer: '', cardSeq: 0, inputRef: { current: null },
+    setLevelSheetOpen: noop, lastGraded: { itemId: 'e1' } as unknown as PcicCardViewProps['lastGraded'], handleUndo: asyncNoop,
+    introducedTodayByKind: { words: 0, sentences: 0 }, todayNewBudget: 0,
+    askMoreNew: false, handleAskMoreNew: noop, handleDeclineMoreNew: noop, levelSheetOpen: false,
+    examRow: [], openPlacement: noop, handleSelectLevel: asyncNoop, strictAccents: false,
+    setDockH: noop, sessionAnswered: 0, sessionNew: 0, sessionAgain: 0, handleMoreNew: noop,
+    noteOpenFor: null, setNoteOpenFor: noop, setArticlePick: noop, setTypedAnswer: noop,
+    handleCheck: asyncNoop, handleGrade: asyncNoop, handleDontLearn: asyncNoop,
+    tired: false, showTired: false, handleTired: asyncNoop, parkedCards: [], progressQueue: [card],
+    fatigueOffer: null, handleFatigueOfferAccept: asyncNoop, handleFatigueOfferDecline: asyncNoop,
+  };
+
+  it('answer field: Night focus is the cyan 2 px border only, no focus on brutal; undo glyph has the text colour', async () => {
+    const night = await renderWithSkin('night', <PcicCardView {...cardProps} />);
+    await waitFor(() => expect(night.UNSAFE_getByType(TextInput)).toBeTruthy());
+    expect(StyleSheet.flatten(night.getByText('↶').props.style).color).toBe('#FFFFFF');
+    const input = night.UNSAFE_getByType(TextInput);
+    fireEvent(input, 'focus');
+    await flush();
+    expect(StyleSheet.flatten(night.UNSAFE_getByType(TextInput).props.style)).toMatchObject({ borderColor: '#22D3EE', borderWidth: 2 });
+    night.unmount();
+    const brutal = await renderWithSkin('brutal', <PcicCardView {...cardProps} />);
+    await waitFor(() => expect(brutal.UNSAFE_getByType(TextInput)).toBeTruthy());
+    fireEvent(brutal.UNSAFE_getByType(TextInput), 'focus');
+    await flush();
+    expect(StyleSheet.flatten(brutal.UNSAFE_getByType(TextInput).props.style).borderColor).not.toBe('#22D3EE');
+    expect(StyleSheet.flatten(brutal.getByText('↶').props.style).color).toBeTruthy();
+  });
+
+  it('noWebOutline turns the browser focus ring off on web only', () => {
+    expect(noWebOutline()).toEqual({});
+    const spy = jest.replaceProperty(Platform, 'OS', 'web');
+    expect(noWebOutline()).toEqual({ outlineStyle: 'none' });
+    spy.restore();
   });
 });

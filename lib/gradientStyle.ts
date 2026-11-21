@@ -10,3 +10,6 @@ export function gradientStyle(from: string, to: string): ViewStyle {
     default: { experimental_backgroundImage: css },
   }) as ViewStyle;
 }
+
+// Web only: drop the browser's own focus ring (RN types lack outlineStyle 'none'; react-native-web passes it through).
+export const noWebOutline = (): ViewStyle => (Platform.OS === 'web' ? ({ outlineStyle: 'none' } as unknown as ViewStyle) : {});

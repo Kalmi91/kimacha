@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import { View, Pressable, TextInput, ScrollView, KeyboardAvoidingView, Platform, ActivityIndicator, useWindowDimensions } from 'react-native';
-import { Text } from '@/components/KText';
+import { Text } from '@/components/KText'; import { noWebOutline } from '@/lib/gradientStyle';
 import { TitleText, themedInkEdgeStyle, themedInputStyle, ProgressBar, ActionButton } from '@/components/grammar/Themed';
 import { dismissKeyboardOnTap, keyboardDismissOnDrag } from '@/lib/keyboardTap';
 import { useWebKeyboardOpen, WEB_TYPING_PADDING } from '@/lib/webKeyboard';
@@ -172,7 +172,7 @@ export default function PcicCardView({
       <View style={styles.headerIcons}>
         {lastGraded && (
           <Pressable onPress={handleUndo} hitSlop={12} style={styles.resetBtn} accessibilityLabel={s.pcic.undo}>
-            <Text style={styles.resetIcon}>↶</Text>
+            <Text style={[styles.resetIcon, { color: colors.text }]}>↶</Text>
           </Pressable>
         )}
         <ScreenFeedback placement="inline" level={level} languagePair={languagePair} currentCard={feedbackCard} />
@@ -380,7 +380,7 @@ export default function PcicCardView({
   // The keyed field stays mounted beside the prompt while optional details move below it on short screens.
   const answerField = <TextInput
     key={`pcic-in-${current.itemId}-${cardSeq}`} ref={inputRef} onLayout={onFieldLayout}
-    style={[styles.input, { color: colors.text, borderColor: colors.tabIconDefault }, themedInputStyle(g), g.soft && answerFocused && { borderColor: g.b, borderWidth: 2 }, fieldBesidePrompt && { marginTop: 8 }]}
+    style={[styles.input, { color: colors.text, borderColor: colors.tabIconDefault }, themedInputStyle(g), g.soft && answerFocused && { borderColor: g.b, borderWidth: 2, ...noWebOutline() }, fieldBesidePrompt && { marginTop: 8 }]}
     value={typedAnswer} onChangeText={setTypedAnswer} onFocus={() => setAnswerFocused(true)} onBlur={() => setAnswerFocused(false)}
     onSubmitEditing={grade ? () => nextGrade && handleGrade(nextGrade) : handleCheck}
     returnKeyType={compactTyping ? 'done' : undefined} editable={!grade}
