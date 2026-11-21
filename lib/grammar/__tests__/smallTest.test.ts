@@ -459,6 +459,35 @@ describe('small test: the weak and the other topics come in', () => {
     // a 4th answer in a topic above the line is not weak: 4 of 5 is exactly 80%
     expect(startRound({ ...st, gaps: {}, log: { t6: [1, 1, 1, 1, 0] } }, TOPICS, pool, 1).run!.topics.every((tp) => tp.why === 'repeat')).toBe(true);
   });
+  it('seen unlearned core topics: the one with an open miss and the weak one are picked among more than 6', () => {
+    const ids = TOPICS.map((tp) => tp.id);
+    const core = ids.map((id) => ({ id, core: true }));
+    const st: SmallState = {
+      ...newSmallState(),
+      rounds: 3,
+      seen: ids,
+      gaps: { 't7:choice:1': { topic: 't7', right: 0, round: 2 } },
+      log: { t8: [1, 0, 0, 1, 1] },
+      last: Object.fromEntries(ids.map((id) => [id, 2])),
+    };
+    for (let seed = 1; seed <= 8; seed++) {
+      const run = startRound(st, core, pool, seed).run!;
+      const why = Object.fromEntries(run.topics.map((tp) => [tp.id, tp.why]));
+      expect(run.topics).toHaveLength(6);
+      expect(why.t7).toBe('gap');
+      expect(why.t8).toBe('weak');
+    }
+  });
+
+  it('an unseen core topic still comes before a seen one with an open miss when the places are short', () => {
+    const ids = Array.from({ length: 7 }, (_, i) => `u${i}`);
+    const core = ids.map((id) => ({ id, core: true }));
+    const st: SmallState = { ...newSmallState(), rounds: 1, seen: ['u6'], gaps: { [`u6:${TYPES[0]}:1`]: { topic: 'u6', right: 0, round: 1 } } };
+    for (let seed = 1; seed <= 8; seed++) {
+      expect(startRound(st, core, pool, seed).run!.topics.map((tp) => tp.id)).not.toContain('u6');
+    }
+  });
+
   it('topicWhy falls back to isNew for a run saved before the miss log', () => {
     expect(topicWhy({ isNew: true })).toBe('new');
     expect(topicWhy({ isNew: false })).toBe('repeat');

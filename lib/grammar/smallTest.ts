@@ -236,7 +236,8 @@ const openGaps = (st: SmallState, topic: string): number => Object.values(st.gap
 export const topicWhy = (tp: { isNew: boolean; why?: TopicWhy }): TopicWhy => tp.why ?? (tp.isNew ? 'new' : 'repeat');
 
 /**
- * A new round (phase 'intro'): up to SMALL_TEST_TOPICS topics. First the unlearned core topics (new ones first), then all the
+ * A new round (phase 'intro'): up to SMALL_TEST_TOPICS topics. First the unlearned core topics (unseen first, then more open
+ * misses, weak topics with the lower accuracy first, the one in a round longest ago), then all the
  * others (learned core and non-core) in one list: more open misses, weak topics (lower accuracy first), never seen, seen but
  * not learned, the one that was in a round longest ago; a tie is a seeded shuffle.
  */
@@ -249,8 +250,17 @@ export function startRound(st: SmallState, topics: SmallTopicInfo[], pool: Small
   const cur: SmallState = { ...st, gaps };
   const group = (list: SmallTopicInfo[], salt: number) =>
     shuffleArray(list, seed + salt)
-      .map((tp, i) => ({ tp, i }))
-      .sort((a, b) => Number(seen.has(a.tp.id)) - Number(seen.has(b.tp.id)) || a.i - b.i)
+      .map((tp, i) => ({ tp, i, open: openGaps(cur, tp.id), acc: topicAccuracy(cur, tp.id) }))
+      .map((x) => ({ ...x, weak: x.acc !== null && x.acc < WEAK_BELOW }))
+      .sort(
+        (a, b) =>
+          Number(seen.has(a.tp.id)) - Number(seen.has(b.tp.id)) ||
+          b.open - a.open ||
+          Number(b.weak) - Number(a.weak) ||
+          (a.weak && b.weak ? a.acc! - b.acc! : 0) ||
+          (st.last[a.tp.id] ?? 0) - (st.last[b.tp.id] ?? 0) ||
+          a.i - b.i,
+      )
       .map((x) => x.tp);
   const rest = shuffleArray(usable.filter((tp) => !(tp.core && !learned.has(tp.id))), seed + 2)
     .map((tp, i) => ({ tp, i, open: openGaps(cur, tp.id), acc: topicAccuracy(cur, tp.id) }))
