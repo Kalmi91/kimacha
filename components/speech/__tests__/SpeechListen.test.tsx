@@ -93,7 +93,9 @@ describe('Speak tab: greetings listening', () => {
     const view = await mount();
     expect(view.getByText(sx.greetTitle)).toBeTruthy();
     expect(view.getByText(sx.taxiTitle)).toBeTruthy();
+    expect(view.getByText(sx.loTitle)).toBeTruthy();
     expect(view.getByTestId(`speech-listen-card-${TAXI.id}`)).toBeTruthy();
+    expect(view.getByTestId('speech-listen-card-es-lo')).toBeTruthy();
     expect(view.queryByTestId(`speech-listen-done-${GREETINGS.id}`)).toBeNull();
     if (GREETINGS.durationSec > 0) expect(view.getByTestId(`speech-listen-length-${GREETINGS.id}`)).toBeTruthy();
     view.unmount();

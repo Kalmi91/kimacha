@@ -288,6 +288,8 @@ const de: typeof en = {
     greetTeaserEn: "Zwei Freunde sprechen darüber, wie man in der englischsprachigen Welt 'how are you?' sagt, von Irland bis zum König",
     taxiTitle: 'Im Taxi: Hören',
     taxiTeaser: 'Sofía kommt in Mexiko-Stadt an und unterhält sich mit ihrem Taxifahrer, don Ramón. Hör zu und beantworte die Fragen.',
+    loTitle: 'Das neutrale lo: Hören',
+    loTeaser: 'Marta erzählt Diego von ihrem Wochenende in Oaxaca, dann schauen sie sich an, wie sie «lo» benutzt haben. Hör zu und beantworte die Fragen.',
     quizTitle: 'Fragen',
     quizInstruction: 'Die Antwort ist in der Aufnahme. Wähle die richtige.',
     quizResult: (right: number, total: number) => `${right} / ${total} richtig`,

@@ -3,6 +3,9 @@ import {
   GREETINGS_EN,
   RATES,
   TAXI,
+  LO,
+  listenTitle,
+  listenTeaser,
   answerQuiz,
   clock,
   isComplete,
@@ -44,8 +47,11 @@ describe('listening data', () => {
     expect(listeningItems('de')).toEqual([]);
   });
 
-  it('Spanish has the greetings and the taxi, in that order', () => {
-    expect(listeningItems('es')).toEqual([GREETINGS, TAXI]);
+  it('Spanish has the greetings, the taxi and the lo, in that order', () => {
+    expect(listeningItems('es')).toEqual([GREETINGS, TAXI, LO]);
+    expect(LO.id).toBe('es-lo');
+    expect(LO.pairs).toHaveLength(0);
+    expect(LO.questions).toHaveLength(12);
     expect(TAXI.id).toBe('es-taxi');
     expect(TAXI.pairs).toHaveLength(0);
   });
@@ -55,10 +61,23 @@ describe('listening data', () => {
     expect(runKeyFor(GREETINGS_EN)).toBe('speech-listen-run-en');
     expect(runKeyFor(TAXI)).toBe('speech-listen-run-es-taxi');
     expect(quizKeyFor(TAXI)).toBe('speech-listen-quiz-es-taxi');
+    expect(runKeyFor(LO)).toBe('speech-listen-run-es-lo');
+    expect(quizKeyFor(LO)).toBe('speech-listen-quiz-es-lo');
+  });
+
+  it('title and teaser per item id', () => {
+    const sx = { greetTitle: 'g', taxiTitle: 't', loTitle: 'l', greetTeaser: 'gt', greetTeaserEn: 'ge', taxiTeaser: 'tt', loTeaser: 'lt' };
+    expect(listenTitle('es-greetings', sx)).toBe('g');
+    expect(listenTitle('es-taxi', sx)).toBe('t');
+    expect(listenTitle('es-lo', sx)).toBe('l');
+    expect(listenTeaser('es-greetings', 'es', sx)).toBe('gt');
+    expect(listenTeaser('en-greetings', 'en', sx)).toBe('ge');
+    expect(listenTeaser('es-taxi', 'es', sx)).toBe('tt');
+    expect(listenTeaser('es-lo', 'es', sx)).toBe('lt');
   });
 
   it('the questions of every item: unique ids, 3 distinct options, the answer in range', () => {
-    for (const item of [GREETINGS, GREETINGS_EN, TAXI]) {
+    for (const item of [GREETINGS, GREETINGS_EN, TAXI, LO]) {
       const qs = item.questions ?? [];
       expect(new Set(qs.map((q) => q.id)).size).toBe(qs.length);
       for (const q of qs) {

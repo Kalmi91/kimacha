@@ -289,6 +289,8 @@ const hu: typeof en = {
     greetTeaserEn: "Két barát arról beszélget, hogyan kérdezik, hogy 'how are you?' az angol nyelvű világban, Írországtól a királyig",
     taxiTitle: 'Taxiban: hallgatás',
     taxiTeaser: 'Sofía megérkezik Mexikóvárosba, és a taxissal, don Ramónnal beszélget. Hallgasd meg, aztán válaszolj a kérdésekre.',
+    loTitle: 'A semleges lo: hallgatás',
+    loTeaser: 'Marta Oaxacában töltött hétvégéjéről mesél Diegónak, aztán sorra veszik, hányféleképpen használták a «lo»-t. Hallgasd meg, aztán válaszolj a kérdésekre.',
     quizTitle: 'Kérdések',
     quizInstruction: 'A válasz elhangzik a felvételen. Válaszd ki a helyeset.',
     quizResult: (right: number, total: number) => `${right} / ${total} helyes`,

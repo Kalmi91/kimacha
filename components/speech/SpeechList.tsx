@@ -9,7 +9,7 @@ import { PCIC_LEVELS, type PcicLevel, type PcicTarget } from '@/data/pcic';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
 import type { Lang } from '@/lib/languagePair';
-import { clock, listeningItems } from '@/lib/speech/listening';
+import { clock, listenTeaser, listenTitle, listeningItems } from '@/lib/speech/listening';
 import { storiesOfLevel, type SpeechStory, type StoryProgress } from '@/lib/speech/stories';
 import { useTheme } from '@/lib/ThemeContext';
 
@@ -41,9 +41,9 @@ export default function SpeechList({ target, source, hasStories, level, onLevel,
         <Pressable key={listening.id} testID={`speech-listen-card-${listening.id}`} accessibilityRole="button" onPress={() => onListen(listening.id)}>
           <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
             <View style={styles.cardText}>
-              <Text style={[styles.title, { color: colors.text }]}>{listening.id === 'es-taxi' ? sx.taxiTitle : sx.greetTitle}</Text>
+              <Text style={[styles.title, { color: colors.text }]}>{listenTitle(listening.id, sx)}</Text>
               <Text style={[styles.teaser, { color: colors.textMuted }]}>
-                {listening.id === 'es-taxi' ? sx.taxiTeaser : target === 'en' ? sx.greetTeaserEn : sx.greetTeaser}
+                {listenTeaser(listening.id, target, sx)}
               </Text>
               {listening.durationSec > 0 && <Text testID={`speech-listen-length-${listening.id}`} style={[styles.teaser, { color: colors.textMuted }]}>{clock(listening.durationSec)}</Text>}
             </View>
