@@ -37,8 +37,9 @@ import type { Sm2Card } from '@/lib/sm2';
 import { noWebOutline } from '@/lib/gradientStyle';
 import ResultBadge from '@/components/ResultBadge';
 import StatusBarStrip from '@/components/StatusBarStrip';
-import { ContinuousBar } from '@/components/grammar/Brutal';
-import { themedInkEdgeStyle } from '@/components/grammar/Themed';
+import { ContinuousBar, softCaseStyle, softEdgeStyle, softTitleStyle } from '@/components/grammar/Brutal';
+import { BrutalInkButton } from '@/components/grammar/drill/shared';
+import { TitleText, themedInkEdgeStyle } from '@/components/grammar/Themed';
 import type { SkinId } from '@/constants/Skins';
 import { getDb } from '@/lib/database';
 import { useGrammarColors } from '@/lib/grammarColors';
@@ -52,6 +53,19 @@ const flat = (id: string) => StyleSheet.flatten(screen.getByTestId(id).props.sty
 function Pos() {
   const g = useGrammarColors();
   return <View testID="pos" style={themedInkEdgeStyle(g)} />;
+}
+
+function SoftProbe() {
+  const g = useGrammarColors();
+  return (
+    <>
+      <View testID="soft-title" style={softTitleStyle(g) ?? { opacity: 1 }} />
+      <View testID="soft-case" style={softCaseStyle(g) ?? { opacity: 1 }} />
+      <View testID="soft-edge" style={softEdgeStyle(g) ?? { opacity: 1 }} />
+      <TitleText testID="title-text">Title</TitleText>
+      <BrutalInkButton g={g} testID="ink-btn" label="Next" onPress={() => {}} />
+    </>
+  );
 }
 
 async function renderWithSkin(skin: SkinId, ui: React.ReactElement) {
@@ -167,6 +181,23 @@ describe('Night polish', () => {
     await flush();
     expect(StyleSheet.flatten(brutal.UNSAFE_getByType(TextInput).props.style).borderColor).not.toBe('#22D3EE');
     expect(StyleSheet.flatten(brutal.getByText('↶').props.style).color).toBeTruthy();
+  });
+
+  it('soft helpers, TitleText and a grammar button label: lower case on Night, upper case on brutal', async () => {
+    const night = await renderWithSkin('night', <SoftProbe />);
+    expect(flat('soft-title')).toMatchObject({ textTransform: 'none', fontWeight: '600' });
+    expect(flat('soft-case')).toMatchObject({ textTransform: 'none', letterSpacing: 0 });
+    expect(flat('soft-edge')).toMatchObject({ borderWidth: 1 });
+    expect(flat('soft-edge').borderRadius).toBeGreaterThan(0);
+    expect(StyleSheet.flatten(night.getByText('Title').props.style).textTransform).toBe('none');
+    expect(StyleSheet.flatten(night.getByText('Next').props.style).textTransform).toBe('none');
+    night.unmount();
+    const brutal = await renderWithSkin('brutal', <SoftProbe />);
+    expect(flat('soft-title')).toEqual({ opacity: 1 });
+    expect(flat('soft-case')).toEqual({ opacity: 1 });
+    expect(flat('soft-edge')).toEqual({ opacity: 1 });
+    expect(StyleSheet.flatten(brutal.getByText('Title').props.style).textTransform).toBe('uppercase');
+    expect(StyleSheet.flatten(brutal.getByText('Next').props.style).textTransform).toBe('uppercase');
   });
 
   it('noWebOutline turns the browser focus ring off on web only', () => {

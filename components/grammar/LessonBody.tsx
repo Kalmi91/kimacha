@@ -5,7 +5,7 @@ import { Text } from '@/components/KText';
 import Colors, { isDarkTheme } from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
-import { Card } from '@/components/grammar/Brutal';
+import { Card, softCaseStyle } from '@/components/grammar/Brutal';
 import { accentColor, themedInkEdgeStyle } from '@/components/grammar/Themed';
 import SpeakButton from '@/components/SpeakButton';
 import { speak } from '@/lib/speech';
@@ -270,7 +270,7 @@ function TableTabs({ tables, contentLang, colors, isDark, titleColor }: {
         })}
       </View>
       <View style={styles.section} testID={`table-${cur.id}`}>
-        <Text variant="title" style={[styles.sectionTitle, { color: titleColor }]}>{cur.title[contentLang] ?? cur.title.en}</Text>
+        <Text variant="title" style={[styles.sectionTitle, { color: titleColor }, softCaseStyle(g)]}>{cur.title[contentLang] ?? cur.title.en}</Text>
         <CompactVerbTable header={cur.header} rows={cur.rows} colors={colors} isDark={isDark} />
       </View>
     </View>
@@ -324,7 +324,7 @@ export default function LessonBody({ blocks, contentLang, learnedLang }: Props) 
           return (
             <View key={i} style={styles.section}>
               {block.title ? (
-                <Text variant="title" style={[styles.sectionTitle, { color: titleColor }]}>{block.title[contentLang] ?? block.title.en}</Text>
+                <Text variant="title" style={[styles.sectionTitle, { color: titleColor }, softCaseStyle(g)]}>{block.title[contentLang] ?? block.title.en}</Text>
               ) : null}
               {points.map((point, pi) => (
                 <Card key={pi} classicStyle={styles.card}>
@@ -345,7 +345,7 @@ export default function LessonBody({ blocks, contentLang, learnedLang }: Props) 
           const conjugation = isConjugationTable(block.header, block.rows);
           return (
             <View key={i} style={styles.section} testID={`table-${block.id}`}>
-              <Text variant="title" style={[styles.sectionTitle, { color: titleColor }]}>{block.title[contentLang] ?? block.title.en}</Text>
+              <Text variant="title" style={[styles.sectionTitle, { color: titleColor }, softCaseStyle(g)]}>{block.title[contentLang] ?? block.title.en}</Text>
               {conjugation ? (
                 <ConjugationTable
                   header={block.header}
@@ -370,7 +370,7 @@ export default function LessonBody({ blocks, contentLang, learnedLang }: Props) 
           return (
             <View key={i} style={styles.section}>
               {block.title ? (
-                <Text variant="title" style={[styles.sectionTitle, { color: titleColor }]}>{block.title[contentLang] ?? block.title.en}</Text>
+                <Text variant="title" style={[styles.sectionTitle, { color: titleColor }, softCaseStyle(g)]}>{block.title[contentLang] ?? block.title.en}</Text>
               ) : null}
               {block.pairs.map((pair, pi) => (
                 <Card key={pi} classicStyle={styles.card}>

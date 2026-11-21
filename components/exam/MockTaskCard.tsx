@@ -22,6 +22,8 @@ import PickStatementsTask from './mock/PickStatementsTask';
 import SpeakingTask from './mock/SpeakingTask';
 import TransformTask from './mock/TransformTask';
 
+import { softCaseStyle } from '@/components/grammar/Brutal';
+import { useGrammarColors } from '@/lib/grammarColors';
 // one mock-exam task on screen. The structure of the old (4afeb8c^) components/exam/ExamTaskCard.tsx:
 // the instruction in the TARGET language, as on a real paper (a short help in the interface
 // language under it), then the items. Nothing says whether an answer is right: that only comes out
@@ -51,6 +53,7 @@ type Props = {
 export default function MockTaskCard({ task, answer, onAnswer, target, canSpeak, glossary, inheritedChoice, onHoldClock, onNextTask, lastTask, onScrollTo }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
+  const g = useGrammarColors();
   const s = t().mockExam;
 
   const [plays, setPlays] = useState(0);
@@ -170,7 +173,7 @@ export default function MockTaskCard({ task, answer, onAnswer, target, canSpeak,
       testID="mock-text-box"
       style={[styles.box, styles.textBox, { backgroundColor: colors.background, borderColor: colors.border, borderLeftColor: colors.tint }]}
     >
-      <Text style={[styles.textLabel, { color: colors.tint }]}>{label}</Text>
+      <Text style={[styles.textLabel, { color: colors.tint }, softCaseStyle(g)]}>{label}</Text>
       {children}
     </View>
   );

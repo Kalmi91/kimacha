@@ -10,7 +10,7 @@ import { t } from '@/lib/i18n';
 import type { ProgressRow, Phase } from '@/lib/grammar/useGrammarTopic';
 import type { RoundStats } from '@/components/grammar/GrammarDrill';
 import GrammarResult from '@/components/grammar/GrammarResult';
-import { BrutalBox, SegmentBar, segmentsFilled, mutedColor } from '@/components/grammar/Brutal';
+import { BrutalBox, SegmentBar, segmentsFilled, mutedColor, softTitleStyle } from '@/components/grammar/Brutal';
 import { styles } from '@/components/grammar/GrammarTopic.styles';
 
 // The round-end ("done") screen of a grammar lesson (FB691-FB695): the result as "14/20", the lesson progress, the
@@ -47,8 +47,8 @@ export default function GrammarRoundEnd({ score, progressRows, roundStats, prevP
     cumulativePct === null ? null : g.brutal ? (
       <BrutalBox boxStyle={styles.brutalProgressBox}>
         <SegmentBar segments={8} filled={segmentsFilled(cumulativePct, 8)} />
-        <Text style={[styles.brutalStatLabel, { color: g.ink }]}>{s.grammar.progressChange(prevPct, cumulativePct)}</Text>
-        <Text testID="grammar-lesson-percent" style={[styles.brutalStatLabel, { color: g.mu }]}>
+        <Text style={[styles.brutalStatLabel, { color: g.ink }, softTitleStyle(g)]}>{s.grammar.progressChange(prevPct, cumulativePct)}</Text>
+        <Text testID="grammar-lesson-percent" style={[styles.brutalStatLabel, { color: g.mu }, softTitleStyle(g)]}>
           {s.grammar.lessonPercent(cumulativePct)}
         </Text>
       </BrutalBox>

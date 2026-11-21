@@ -11,7 +11,7 @@ import { pairOf, type Lang } from '@/lib/languagePair';
 import { languages } from '@/lib/languages';
 import { daysUntil, type ScheduleBucketKey } from '@/lib/schedulePreview';
 import ScreenFeedback from '@/lib/screenFeedback';
-import { Card } from '@/components/grammar/Brutal';
+import { Card, softCaseStyle, softEdgeStyle } from '@/components/grammar/Brutal';
 import { SkinBackdrop } from '@/components/skins/Slots';
 import MockExamCard from '@/components/exam/MockExamCard';
 import LevelCard from '@/components/stats/LevelCard';
@@ -78,7 +78,7 @@ export default function StatsScreen() {
 
       {/* badge of the PCIC level + known/total (interval
           >= 21 days), below it the known count of the other 3 PCIC levels. */}
-      <Text style={[styles.sectionLabel, { color: colors.tabIconDefault }]}>{s.progress.wordsKnown}</Text>
+      <Text style={[styles.sectionLabel, { color: colors.tabIconDefault }, softCaseStyle(g)]}>{s.progress.wordsKnown}</Text>
       <Card classicStyle={styles.levelCard} style={styles.gapBottom}>
         <View style={styles.levelCardHead}>
           <Badge
@@ -148,7 +148,7 @@ export default function StatsScreen() {
 
       {/* weekly goal, the rolling 7-day total measured against the target
           set in Settings, with an explicit warning while it's still short. */}
-      <Text style={[styles.sectionLabel, { color: colors.tabIconDefault }]}>{s.stats.weeklyGoal}</Text>
+      <Text style={[styles.sectionLabel, { color: colors.tabIconDefault }, softCaseStyle(g)]}>{s.stats.weeklyGoal}</Text>
       <Card classicStyle={styles.goalCard} boxStyle={styles.goalBox} style={styles.goalOuter}>
         <Text style={[styles.goalValue, { color: colors.text }, g.brutal && styles.brutalValue]}>
           {s.stats.goalProgress(hours(usage.thisWeek), hours(weeklyGoal))}
@@ -175,7 +175,7 @@ export default function StatsScreen() {
       </Card>
 
       {/* weekly trend: last 6 rolling 7-day windows (same week as above), oldest left, current right. */}
-      <Text style={[styles.sectionLabel, { color: colors.tabIconDefault }]}>{s.stats.weeklyTrend}</Text>
+      <Text style={[styles.sectionLabel, { color: colors.tabIconDefault }, softCaseStyle(g)]}>{s.stats.weeklyTrend}</Text>
       <Card classicStyle={styles.goalCard} boxStyle={styles.goalBox} style={styles.goalOuter}>
         {([['words', s.stats.trendWords], ['minutes', s.stats.trendMinutes]] as const).map(([key, label]) => {
           const max = Math.max(1, ...trend.weeks.map(w => w[key]));
@@ -208,7 +208,7 @@ export default function StatsScreen() {
         </Text>
       </Card>
 
-      <Text style={[styles.sectionLabel, { color: colors.tabIconDefault }]}>{s.stats.last7Days}</Text>
+      <Text style={[styles.sectionLabel, { color: colors.tabIconDefault }, softCaseStyle(g)]}>{s.stats.last7Days}</Text>
       {!hasChartData ? (
         <Text style={[styles.noData, { color: colors.tabIconDefault }]}>{s.stats.noData}</Text>
       ) : (
@@ -224,6 +224,7 @@ export default function StatsScreen() {
                       height: `${Math.max(4, Math.round((day.minutes / maxMinutes) * 100))}%`,
                     },
                     g.brutal && { backgroundColor: g.a, borderWidth: 2.5, borderColor: g.ink, borderRadius: 0 },
+                    softEdgeStyle(g, 6),
                   ]}
                 />
               </View>
@@ -236,7 +237,7 @@ export default function StatsScreen() {
         </Pressable>
       )}
 
-      <Text style={[styles.sectionLabel, { color: colors.tabIconDefault, marginTop: 24 }]}>
+      <Text style={[styles.sectionLabel, { color: colors.tabIconDefault, marginTop: 24 }, softCaseStyle(g)]}>
         {s.stats.learningProgress}
       </Text>
       <View style={styles.tileRow}>
@@ -258,7 +259,7 @@ export default function StatsScreen() {
 
       {/* where the words went, how many wait now and how many sit in
           each distance bucket, plus the moment the queue next refills. */}
-      <Text style={[styles.sectionLabel, { color: colors.tabIconDefault, marginTop: 24 }]}>
+      <Text style={[styles.sectionLabel, { color: colors.tabIconDefault, marginTop: 24 }, softCaseStyle(g)]}>
         {s.stats.schedule}
       </Text>
       {schedule.dueNow === 0 && schedule.scheduled === 0 ? (

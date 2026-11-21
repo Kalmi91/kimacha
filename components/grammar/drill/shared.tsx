@@ -2,7 +2,7 @@ import { View } from 'react-native';
 import { Text } from '@/components/KText';
 import Colors from '@/constants/Colors';
 import { TENSE_NAMES, type ContentLang, type TenseId } from '@/lib/grammar/lessonTypes';
-import { BrutalBox, Sticker, inkButtonText, resultFill } from '@/components/grammar/Brutal';
+import { BrutalBox, Sticker, inkButtonText, resultFill, softTitleStyle } from '@/components/grammar/Brutal';
 import ResultBadge from '@/components/ResultBadge';
 import { useGrammarColors, type GrammarColors } from '@/lib/grammarColors';
 import { styles } from '@/components/grammar/GrammarDrill.styles';
@@ -27,7 +27,7 @@ export function BrutalFeedback({ title, correct, children }: { title: string; co
 export function BrutalInkButton({ g, testID, label, onPress }: { g: GrammarColors; testID: string; label: string; onPress: () => void }) {
   return (
     <BrutalBox testID={testID} fill="ink" boxStyle={styles.brutalNext} onPress={onPress}>
-      <Text style={[styles.brutalNextText, { color: inkButtonText(g) }]}>{label}</Text>
+      <Text style={[styles.brutalNextText, { color: inkButtonText(g) }, softTitleStyle(g)]}>{label}</Text>
     </BrutalBox>
   );
 }

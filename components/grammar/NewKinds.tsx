@@ -6,7 +6,7 @@ import EasySentenceCard from '@/components/EasySentenceCard';
 import ResultBadge from '@/components/ResultBadge';
 import AnswerCompare from '@/components/grammar/AnswerCompare';
 import SpeakButton from '@/components/SpeakButton';
-import { BrutalBox, inkButtonText, resultFill, resultInk } from '@/components/grammar/Brutal';
+import { BrutalBox, inkButtonText, resultFill, resultInk, softCaseStyle } from '@/components/grammar/Brutal';
 import MistypedButton, { mistypedDock } from '@/components/grammar/MistypedButton';
 import { useDockedAction } from '@/components/learn/DockSlot';
 import { useGrammarColors } from '@/lib/grammarColors';
@@ -38,7 +38,7 @@ function ItemHead({ title }: { title: string }) {
   const g = useGrammarColors();
   return (
     <View style={styles.head}>
-      <Text style={[styles.headText, { color: g.mu }]}>{title}</Text>
+      <Text style={[styles.headText, { color: g.mu }, softCaseStyle(g)]}>{title}</Text>
     </View>
   );
 }
@@ -133,7 +133,7 @@ export function SpotDrillItem({
             <Text style={[styles.translation, { color: resultInk(g, correct) }]}>{item.tr[contentLang] ?? item.tr.en}</Text>
           </BrutalBox>
           <BrutalBox testID="grammar-next" fill="ink" boxStyle={styles.next} onPress={() => onDone(correct, undefined, picked !== null ? shuffled.options[picked] : undefined)}>
-            <Text style={[styles.nextText, { color: inkButtonText(g) }]}>{s.grammar.nextArrow}</Text>
+            <Text style={[styles.nextText, { color: inkButtonText(g) }, softCaseStyle(g)]}>{s.grammar.nextArrow}</Text>
           </BrutalBox>
         </>
       ) : null}
@@ -271,13 +271,13 @@ export function DictationDrillItem({
           {!result.correct && !docked ? <MistypedButton onPress={() => onDone(true, true)} /> : null}
           {docked ? null : (
             <BrutalBox testID="grammar-next" fill="ink" boxStyle={styles.next} onPress={() => onDone(result.correct, undefined, typed)}>
-              <Text style={[styles.nextText, { color: inkButtonText(g) }]}>{s.grammar.nextArrow}</Text>
+              <Text style={[styles.nextText, { color: inkButtonText(g) }, softCaseStyle(g)]}>{s.grammar.nextArrow}</Text>
             </BrutalBox>
           )}
         </>
       ) : docked ? null : (
         <BrutalBox testID="dictation-check" fill="ink" boxStyle={styles.next} onPress={check}>
-          <Text style={[styles.nextText, { color: inkButtonText(g) }]}>{s.grammar.check}</Text>
+          <Text style={[styles.nextText, { color: inkButtonText(g) }, softCaseStyle(g)]}>{s.grammar.check}</Text>
         </BrutalBox>
       )}
       {docked ? <View style={{ height: padBottom }} /> : null}
@@ -371,13 +371,13 @@ export function WriteDrillItem({
           {!result.correct && !docked ? <MistypedButton onPress={() => onDone(true, true)} /> : null}
           {docked ? null : (
             <BrutalBox testID="grammar-next" fill="ink" boxStyle={styles.next} onPress={() => onDone(result.correct, undefined, typed)}>
-              <Text style={[styles.nextText, { color: inkButtonText(g) }]}>{s.grammar.nextArrow}</Text>
+              <Text style={[styles.nextText, { color: inkButtonText(g) }, softCaseStyle(g)]}>{s.grammar.nextArrow}</Text>
             </BrutalBox>
           )}
         </>
       ) : docked ? null : (
         <BrutalBox testID="write-check" fill="ink" boxStyle={styles.next} onPress={check}>
-          <Text style={[styles.nextText, { color: inkButtonText(g) }]}>{s.grammar.check}</Text>
+          <Text style={[styles.nextText, { color: inkButtonText(g) }, softCaseStyle(g)]}>{s.grammar.check}</Text>
         </BrutalBox>
       )}
       {!strictAccents ? (

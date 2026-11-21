@@ -6,9 +6,10 @@ import { fontSize, fontWeight, spacing } from '@/constants/Theme';
 import { t } from '@/lib/i18n';
 import type { GrammarMiss } from '@/lib/grammar/roundMiss';
 import { useTheme } from '@/lib/ThemeContext';
-import { Card } from '@/components/grammar/Brutal';
+import { Card, softCaseStyle } from '@/components/grammar/Brutal';
 import ExamButton from '@/components/exam/ExamButton';
 
+import { useGrammarColors } from '@/lib/grammarColors';
 // The one end-of-practice template of the grammar part (FB691-FB695): the result as one number ("14/20"), the
 // "Mistakes:" list (what the learner gave struck through, the right solution under it), then exactly two buttons:
 // Retake (filled) and back to the grammar part. Screens with an extra result line of their own (a level, a verdict, a
@@ -48,6 +49,7 @@ export default function GrammarResult({
 }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
+  const g = useGrammarColors();
   const s = t().grammar;
   return (
     <View style={[styles.screen, { backgroundColor: colors.background }]}>
@@ -61,7 +63,7 @@ export default function GrammarResult({
         {children}
         {misses.length > 0 ? (
           <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
-            <Text testID="grammar-mistakes" style={[styles.title, { color: colors.textMuted }]}>
+            <Text testID="grammar-mistakes" style={[styles.title, { color: colors.textMuted }, softCaseStyle(g)]}>
               {s.mistakesTitle}
             </Text>
             {misses.map((m, i) => (

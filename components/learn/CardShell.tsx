@@ -5,7 +5,7 @@ import { Text } from '@/components/KText';
 import Colors from '@/constants/Colors';
 import { legibleOn } from '@/constants/Skins';
 import { useGrammarColors } from '@/lib/grammarColors';
-import { BrutalBox, Sticker } from '@/components/grammar/Brutal';
+import { BrutalBox, Sticker, softCaseStyle } from '@/components/grammar/Brutal';
 import { SkinCardFrame } from '@/components/skins/Slots';
 
 type ColorScheme = (typeof Colors)['light'];
@@ -51,7 +51,7 @@ function CardBody({ compact, chip, chipTone = 'neutral', onPress, colors, childr
     >
       {chip && (
         <View style={[styles.lapChip, { backgroundColor: colors.background }]}>
-          <Text style={[styles.lapChipText, { color: chipTone === 'new' ? legibleOn(colors.successFill, colors.background) : colors.tabIconDefault }]}>
+          <Text style={[styles.lapChipText, { color: chipTone === 'new' ? legibleOn(colors.successFill, colors.background) : colors.tabIconDefault }, softCaseStyle(g)]}>
             {chip}
           </Text>
         </View>

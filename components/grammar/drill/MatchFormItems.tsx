@@ -14,7 +14,7 @@ import { hashString, shuffleNoFixedPoints } from '@/lib/shuffle';
 import { useDockedAction } from '@/components/learn/DockSlot';
 import { useFocusOnNewCard } from '@/lib/learn/useFocusOnNewCard';
 import LessonBody from '@/components/grammar/LessonBody';
-import { BrutalBox } from '@/components/grammar/Brutal';
+import { BrutalBox, softTitleStyle } from '@/components/grammar/Brutal';
 import AnswerCompare from '@/components/grammar/AnswerCompare';
 import MistypedButton, { mistypedDock } from '@/components/grammar/MistypedButton';
 import ResultBadge from '@/components/ResultBadge';
@@ -127,8 +127,8 @@ export function MatchDrillItem({
     );
     return (
       <View style={styles.matchBody}>
-        <Text style={[styles.brutalHint, { color: g.mu }]}>{s.grammar.matchHint}</Text>
-        {extra ? <Text testID="match-extra-hint" style={[styles.brutalHint, { color: g.mu }]}>{s.grammar.matchExtraHint}</Text> : null}
+        <Text style={[styles.brutalHint, { color: g.mu }, softTitleStyle(g)]}>{s.grammar.matchHint}</Text>
+        {extra ? <Text testID="match-extra-hint" style={[styles.brutalHint, { color: g.mu }, softTitleStyle(g)]}>{s.grammar.matchExtraHint}</Text> : null}
         <View style={styles.matchColumns}>
           <View style={styles.matchColumn}>
             {leftIds.map((li) =>
@@ -292,7 +292,7 @@ export function FormDrillItem({
         {table ? (
           <>
             <Pressable onPress={() => setTableOpen((v) => !v)} hitSlop={8}>
-              <Text style={[styles.moreToggle, styles.brutalUnderline, { color: g.ink }]}>
+              <Text style={[styles.moreToggle, styles.brutalUnderline, { color: g.ink }, softTitleStyle(g)]}>
                 {tableOpen ? `▾ ${s.grammar.showTable}` : `▸ ${s.grammar.showTable}`}
               </Text>
             </Pressable>
@@ -300,7 +300,7 @@ export function FormDrillItem({
           </>
         ) : null}
 
-        <Text style={[styles.brutalHint, { color: g.mu }]}>{s.grammar.formHint}</Text>
+        <Text style={[styles.brutalHint, { color: g.mu }, softTitleStyle(g)]}>{s.grammar.formHint}</Text>
         <BrutalBox boxStyle={styles.brutalSentenceBox}>
           <Text style={[styles.formPrompt, { color: g.ink }]}>
             {verbLabel} · {item.person}

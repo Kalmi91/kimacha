@@ -29,7 +29,7 @@ import LessonTest from '@/components/grammar/LessonTest';
 import ScreenFeedback from '@/lib/screenFeedback';
 import FitText from '@/components/FitText';
 import SpeakButton from '@/components/SpeakButton';
-import { BrutalBox, Card, Sticker, themedDockPad } from '@/components/grammar/Brutal';
+import { BrutalBox, Card, Sticker, themedDockPad, softTitleStyle, softCaseStyle } from '@/components/grammar/Brutal';
 import { accentColor } from '@/components/grammar/Themed';
 import { DockSlotProvider } from '@/components/learn/DockSlot';
 import { styles } from '@/components/grammar/GrammarTopic.styles';
@@ -179,7 +179,7 @@ function GrammarLessonPhases({ topic }: { topic: ReturnType<typeof useGrammarTop
       </BrutalBox>
       {/* a long (Spanish) title wraps onto two lines and shrinks in steps,
           instead of being cut off with "...". */}
-      <FitText variant="title" base={17} maxLines={2} reserve={150 + FEEDBACK_CORNER_CLEAR} caps style={[styles.title, styles.brutalTitle, { color: g.ink }]}>
+      <FitText variant="title" base={17} maxLines={2} reserve={150 + FEEDBACK_CORNER_CLEAR} caps style={[styles.title, styles.brutalTitle, { color: g.ink }, softTitleStyle(g)]}>
         {lessonTitle}
       </FitText>
       <Sticker label={lesson.level} fill="a" rotate={5} />
@@ -212,7 +212,7 @@ function GrammarLessonPhases({ topic }: { topic: ReturnType<typeof useGrammarTop
         boxStyle={styles.brutalBtn}
         onPress={onPress}
       >
-        <Text style={[styles.brutalBtnText, { color: disabled ? g.mu : filled ? g.onFill : g.ink }]}>{label}</Text>
+        <Text style={[styles.brutalBtnText, { color: disabled ? g.mu : filled ? g.onFill : g.ink }, softTitleStyle(g)]}>{label}</Text>
       </BrutalBox>
     ) : (
       <Pressable
@@ -307,7 +307,7 @@ function GrammarLessonPhases({ topic }: { topic: ReturnType<typeof useGrammarTop
       >
         {/* the body blocks alternate with the rule/more prose, and
             lesson.speak is read aloud with a single play<->stop button. */}
-        <Text style={[styles.sectionLabel, { color: accentText }]}>{s.grammar.ruleLabel}</Text>
+        <Text style={[styles.sectionLabel, { color: accentText }, softCaseStyle(g)]}>{s.grammar.ruleLabel}</Text>
         <SpeakButton
           testID="speakToggle"
           speaking={speaking}
@@ -321,7 +321,7 @@ function GrammarLessonPhases({ topic }: { topic: ReturnType<typeof useGrammarTop
         />
         <LessonBody blocks={lesson.body} contentLang={contentLang as ContentLang} learnedLang={learnedLang} />
 
-        <Text style={[styles.sectionLabel, { color: accentText }]}>{s.grammar.examplesLabel}</Text>
+        <Text style={[styles.sectionLabel, { color: accentText }, softCaseStyle(g)]}>{s.grammar.examplesLabel}</Text>
         {worked.map((w, i) => (
           <Card key={i} classicStyle={styles.card}>
             <View style={styles.exampleRow}>
