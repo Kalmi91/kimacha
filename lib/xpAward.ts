@@ -5,7 +5,7 @@ import { localDateString } from './usageStats';
 // XP for the grammar, Sentences and speech sources (FB591, FB600, FB601, FB606). Per item per day:
 // the first right answer pays the first number, the second the second, then nothing, so practising the
 // same thing over and over earns less and less. These sources work for everyone.
-export type XpKind = 'grammar' | 'grammarNoun' | 'levelTest' | 'levelPractice' | 'sentence' | 'sentenceHard' | 'speech';
+export type XpKind = 'grammar' | 'grammarNoun' | 'levelTest' | 'levelPractice' | 'sentence' | 'sentenceHard' | 'speech' | 'listening';
 
 export const XP_TABLE: Record<XpKind, readonly number[]> = {
   grammar: [2, 0.5],
@@ -16,6 +16,7 @@ export const XP_TABLE: Record<XpKind, readonly number[]> = {
   sentence: [1],
   sentenceHard: [2],
   speech: [3, 0.5],
+  listening: [1, 0.5, 0.25],
 };
 
 const NOUN_ITEM_PREFIX = 'art-n-';

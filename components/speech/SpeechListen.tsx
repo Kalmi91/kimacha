@@ -8,6 +8,7 @@ import { fontSize, fontWeight, radius, spacing, tapTarget } from '@/constants/Th
 import { Card } from '@/components/grammar/Brutal';
 import { BackButton, themedEdgeStyle } from '@/components/grammar/Themed';
 import GameFrame from '@/components/practice/GameFrame';
+import XpChip from '@/components/XpChip';
 import type { PcicTarget } from '@/data/pcic';
 import { getDb } from '@/lib/database';
 import { useGrammarColors } from '@/lib/grammarColors';
@@ -16,22 +17,33 @@ import { makeListeningPlayer } from '@/lib/listeningPlayer';
 import { loadResumeValue, saveResumeValue } from '@/lib/resumeStore';
 import {
   DEFAULT_RATE,
-  GREETINGS,
   LISTENING_PROGRESS_KEY,
   LISTENING_RATE_KEY,
-  listeningFor,
+  quizKeyFor,
   runKeyFor,
   RATES,
+  answerQuiz,
   clock,
   isComplete,
+  itemComplete,
+  newQuiz,
   newRun,
+  optionOrder,
+  parseQuiz,
   parseRate,
   parseRun,
   pick,
+  quizComplete,
+  quizRight,
   rightOrder,
+  serializeQuiz,
   serializeRun,
+  type ListeningData,
+  type ListeningQuestion,
   type MatchRun,
+  type QuizRun,
 } from '@/lib/speech/listening';
+import { awardXpThen } from '@/lib/xpAward';
 import { useTheme } from '@/lib/ThemeContext';
 import { localDateString } from '@/lib/usageStats';
 
@@ -40,24 +52,28 @@ import { localDateString } from '@/lib/usageStats';
 // complete run writes the progress row the list shows as a tick. Leaving the screen or the tab pauses the recording.
 
 interface Props {
-  target: PcicTarget;
+  item: ListeningData;
   onBack: () => void;
-  /** The first time all pairs are matched (the progress row is written). */
+  /** The first time every part of the item is finished (the progress row is written). */
   onFinished: () => void;
 }
 
 const WRONG_MS = 700;
+const NO_QUESTIONS: ListeningQuestion[] = [];
 const freshSeed = () => Math.floor(Math.random() * 2147483647) + 1;
 
-export default function SpeechListen({ target, onBack, onFinished }: Props) {
+export default function SpeechListen({ item, onBack, onFinished }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const g = useGrammarColors();
   const sx = t().speechTab;
-  const data = listeningFor(target) ?? GREETINGS;
+  const data = item;
+  const target = data.lang as PcicTarget;
   const pairs = data.pairs;
   const n = pairs.length;
-  const runKey = runKeyFor(data.lang);
+  const questions = data.questions ?? NO_QUESTIONS;
+  const runKey = runKeyFor(data);
+  const quizKey = quizKeyFor(data);
 
   const player = useRef<AudioPlayer | null>(null);
   const [playing, setPlaying] = useState(false);
@@ -68,6 +84,9 @@ export default function SpeechListen({ target, onBack, onFinished }: Props) {
   const [dragFraction, setDragFraction] = useState<number | null>(null);
 
   const [run, setRun] = useState<MatchRun>(() => newRun(freshSeed()));
+  const [quiz, setQuiz] = useState<QuizRun>(() => newQuiz(questions.length, freshSeed()));
+  // the latest quiz run, set before the state: two fast taps on one question must not pay twice
+  const quizRef = useRef(quiz);
   const [restored, setRestored] = useState(false);
   const [left, setLeft] = useState<number | null>(null);
   const [right, setRight] = useState<number | null>(null);
@@ -82,7 +101,7 @@ export default function SpeechListen({ target, onBack, onFinished }: Props) {
 
   useEffect(() => {
     let alive = true;
-    const p = makeListeningPlayer(target === 'en' ? 'en' : 'es');
+    const p = makeListeningPlayer(data.id);
     player.current = p;
     p.shouldCorrectPitch = true;
     const sub = p.addListener('playbackStatusUpdate', (s) => {
@@ -95,15 +114,18 @@ export default function SpeechListen({ target, onBack, onFinished }: Props) {
       const db = getDb();
       const saved = parseRate(await loadResumeValue(db, LISTENING_RATE_KEY));
       const savedRun = parseRun(await loadResumeValue(db, runKey), n);
+      const savedQuiz = parseQuiz(await loadResumeValue(db, quizKey), questions);
       if (!alive) return;
       rateRef.current = saved;
       setRate(saved);
       if (saved !== DEFAULT_RATE) applyRate(p, saved);
-      if (savedRun) {
-        setRun(savedRun);
-        // a finished run is already reported: the restore writes no second progress row
-        reported.current = isComplete(savedRun, n);
+      if (savedRun) setRun(savedRun);
+      if (savedQuiz) {
+        quizRef.current = savedQuiz;
+        setQuiz(savedQuiz);
       }
+      // a finished item is already reported: the restore writes no second progress row
+      reported.current = itemComplete(data, savedRun ?? newRun(0), savedQuiz ?? newQuiz(questions.length, 0));
       setRestored(true);
     })();
     return () => {
@@ -118,7 +140,7 @@ export default function SpeechListen({ target, onBack, onFinished }: Props) {
       }
       player.current = null;
     };
-  }, [n, runKey, target]);
+  }, [data, n, questions, runKey, quizKey]);
 
   // another tab (the screen stays mounted) pauses the recording
   useFocusEffect(
@@ -172,6 +194,22 @@ export default function SpeechListen({ target, onBack, onFinished }: Props) {
   const order = rightOrder(n, run.seed);
   const complete = isComplete(run, pairs.length);
 
+  // the first time every part of the item is finished: the progress row (an existing one stays as it is) and onFinished
+  const finishIfComplete = (nextRun: MatchRun, nextQuiz: QuizRun) => {
+    if (!itemComplete(data, nextRun, nextQuiz) || reported.current) return;
+    reported.current = true;
+    void (async () => {
+      try {
+        const db = getDb();
+        const known = (await db.getGameProgress(LISTENING_PROGRESS_KEY)).some((r) => r.itemId === data.id && r.state === 'done');
+        if (!known) await db.setGameProgress(LISTENING_PROGRESS_KEY, data.id, 'done', { mistakes: nextRun.mistakes, at: localDateString() });
+      } catch (e) {
+        console.warn('listen: could not write the progress', e);
+      }
+      onFinished();
+    })();
+  };
+
   const tryPair = (l: number, r: number) => {
     const { run: next, correct } = pick(run, l, r);
     setLeft(null);
@@ -179,17 +217,7 @@ export default function SpeechListen({ target, onBack, onFinished }: Props) {
     setRun(next);
     if (correct) {
       void saveResumeValue(getDb(), runKey, serializeRun(next));
-      if (isComplete(next, pairs.length) && !reported.current) {
-        reported.current = true;
-        void (async () => {
-          try {
-            await getDb().setGameProgress(LISTENING_PROGRESS_KEY, data.id, 'done', { mistakes: next.mistakes, at: localDateString() });
-          } catch (e) {
-            console.warn('listen: could not write the progress', e);
-          }
-          onFinished();
-        })();
-      }
+      finishIfComplete(next, quiz);
     } else {
       setWrong({ left: l, right: r });
       if (wrongTimer.current) clearTimeout(wrongTimer.current);
@@ -213,6 +241,54 @@ export default function SpeechListen({ target, onBack, onFinished }: Props) {
     setRight(null);
     setWrong(null);
     void saveResumeValue(getDb(), runKey, serializeRun(next));
+  };
+
+  const answer = (qi: number, option: number) => {
+    const base = quizRef.current;
+    const next = answerQuiz(base, qi, option);
+    if (next === base) return;
+    quizRef.current = next;
+    setQuiz(next);
+    void saveResumeValue(getDb(), quizKey, serializeQuiz(next));
+    if (option === questions[qi].answer) {
+      awardXpThen('listening', `${data.id}:${questions[qi].id}`, (points) => {
+        // the paid XP goes into the run it was earned in; a run started since (Try again) keeps its own sum
+        const cur = quizRef.current;
+        if (cur.seed !== next.seed) return;
+        const paid = { ...cur, earned: cur.earned + points };
+        quizRef.current = paid;
+        setQuiz(paid);
+        void saveResumeValue(getDb(), quizKey, serializeQuiz(paid));
+      });
+    }
+    finishIfComplete(run, next);
+  };
+  const quizAgain = () => {
+    const next = newQuiz(questions.length, freshSeed());
+    quizRef.current = next;
+    setQuiz(next);
+    void saveResumeValue(getDb(), quizKey, serializeQuiz(next));
+  };
+
+  const optionButton = (qi: number, k: number) => {
+    const q = questions[qi];
+    const chosen = quiz.answers[qi];
+    const answered = chosen >= 0;
+    const picked = chosen === k;
+    const right = k === q.answer;
+    const edge = answered && right ? colors.success : picked ? colors.danger : colors.border;
+    return (
+      <Pressable
+        key={`q${qi}-${k}`}
+        testID={`speech-listen-q-${qi}-opt-${k}`}
+        accessibilityRole="button"
+        accessibilityState={{ disabled: answered, selected: picked }}
+        onPress={() => answer(qi, k)}
+        style={[styles.cell, themedEdgeStyle(g), { backgroundColor: colors.card, borderColor: edge }, answered && (right || picked) && styles.cellOn]}
+      >
+        <Text style={[styles.cellText, { color: answered && right ? colors.success : picked ? colors.danger : colors.text }]}>{q.options[k]}</Text>
+      </Pressable>
+    );
   };
 
   const cell = (side: 'left' | 'right', i: number, label: string) => {
@@ -252,7 +328,7 @@ export default function SpeechListen({ target, onBack, onFinished }: Props) {
     <GameFrame
       testID="speech-listen-screen"
       target={target}
-      currentCard="speech-listen"
+      currentCard={`speech-listen:${data.id}`}
       hideLevelCounter
       scrollToEndOnDock={false}
       top={
@@ -266,11 +342,12 @@ export default function SpeechListen({ target, onBack, onFinished }: Props) {
             pressStyle={styles.backPress}
             arrowStyle={[styles.backArrow, { color: colors.text }]}
           />
-          <Text style={[styles.heading, { color: colors.text }]}>{sx.greetTitle}</Text>
+          <Text style={[styles.heading, { color: colors.text }]}>{data.id === 'es-taxi' ? sx.taxiTitle : sx.greetTitle}</Text>
         </View>
       }
     >
       <View style={styles.box}>
+        <XpChip flush />
         <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
           <Pressable
             testID="speech-listen-play"
@@ -351,7 +428,7 @@ export default function SpeechListen({ target, onBack, onFinished }: Props) {
           </View>
         </Card>
 
-        {restored && (
+        {restored && n > 0 && (
           <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
             <Text style={[styles.matchTitle, { color: colors.text }]}>{sx.matchTitle}</Text>
             <Text style={[styles.instruction, { color: colors.textMuted }]}>{target === 'en' ? sx.matchInstructionEn : sx.matchInstruction}</Text>
@@ -382,6 +459,41 @@ export default function SpeechListen({ target, onBack, onFinished }: Props) {
               </View>
             )}
           </Card>
+        )}
+
+        {restored && questions.length > 0 && (
+          <View testID="speech-listen-quiz">
+          <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
+            <Text style={[styles.matchTitle, { color: colors.text }]}>{sx.quizTitle}</Text>
+            <Text style={[styles.instruction, { color: colors.textMuted }]}>{sx.quizInstruction}</Text>
+            {questions.map((q, qi) => (
+              <View key={q.id} style={styles.question}>
+                <Text testID={`speech-listen-q-${qi}`} style={[styles.cellText, { color: colors.text }]}>{`${qi + 1}. ${q.q}`}</Text>
+                {optionOrder(qi, q.options.length, quiz.seed).map((k) => optionButton(qi, k))}
+              </View>
+            ))}
+            {quizComplete(quiz) && (
+              <View style={styles.result}>
+                <Text testID="speech-listen-quiz-result" style={[styles.resultText, { color: colors.success }]}>
+                  {sx.quizResult(quizRight(quiz, questions), questions.length)}
+                </Text>
+                {quiz.earned > 0 && (
+                  <Text testID="speech-listen-quiz-xp" style={[styles.resultText, { color: colors.success }]}>
+                    {sx.quizXp(quiz.earned)}
+                  </Text>
+                )}
+                <Pressable
+                  testID="speech-listen-quiz-again"
+                  accessibilityRole="button"
+                  onPress={quizAgain}
+                  style={[styles.replay, themedEdgeStyle(g), { borderColor: colors.border, backgroundColor: colors.card }]}
+                >
+                  <Text style={[styles.chipText, { color: colors.text }]}>{sx.tryAgain}</Text>
+                </Pressable>
+              </View>
+            )}
+          </Card>
+          </View>
         )}
       </View>
     </GameFrame>
@@ -447,6 +559,8 @@ const styles = StyleSheet.create({
   instruction: { fontSize: fontSize.sm },
   columns: { flexDirection: 'row', gap: spacing.md },
   column: { flex: 1, gap: spacing.sm },
+  // one question with its options, stacked in the questions card (no flex: the card has no fixed height)
+  question: { gap: spacing.sm },
   cell: {
     minHeight: tapTarget,
     borderRadius: radius.md,

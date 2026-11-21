@@ -40,7 +40,7 @@ import {
   type StoryRun,
   type StoryWord,
 } from '@/lib/speech/stories';
-import { LISTENING_PROGRESS_KEY, listeningFor } from '@/lib/speech/listening';
+import { LISTENING_PROGRESS_KEY, listeningItems } from '@/lib/speech/listening';
 import { localDateString } from '@/lib/usageStats';
 import { useLoadOnMount } from '@/lib/useLoadOnMount';
 import { useScreenLoad } from '@/lib/useScreenLoad';
@@ -90,8 +90,9 @@ export default function SpeechTab() {
   const [micOk, setMicOk] = useState(true);
   const [strictAccents, setStrictAccents] = useState(false);
   const [progress, setProgress] = useState<ReadonlyMap<string, StoryProgress>>(new Map());
-  // the greetings listening step has been matched once (its progress row)
-  const [listenDone, setListenDone] = useState(false);
+  // the listening items that have been finished once (their progress rows) and the one that is open
+  const [listenDone, setListenDone] = useState<ReadonlySet<string>>(new Set());
+  const [listenId, setListenId] = useState<string | null>(null);
   const [introWords, setIntroWords] = useState<readonly StoryWord[]>([]);
   // a new run remounts the story screen; `fresh` = its first line is read aloud (a resumed run is silent)
   const [runKey, setRunKey] = useState(0);
@@ -124,8 +125,8 @@ export default function SpeechTab() {
     setStrictAccents(learner.strictAccents);
     setProgress(progressById(await db.getGameProgress(SPEECH_PROGRESS_KEY)));
     const dir = learner.target;
-    const listenId = listeningFor(dir)?.id;
-    setListenDone(listenId !== undefined && (await db.getGameProgress(LISTENING_PROGRESS_KEY)).some((r) => r.itemId === listenId && r.state === 'done'));
+    const ids = listeningItems(dir).map((x) => x.id);
+    setListenDone(new Set((await db.getGameProgress(LISTENING_PROGRESS_KEY)).filter((r) => r.state === 'done' && ids.includes(r.itemId)).map((r) => r.itemId)));
     const pair = pairOf(dir);
     if (shownPair.current === pair) return;
     shownPair.current = pair;
@@ -229,7 +230,10 @@ export default function SpeechTab() {
     setScreen('done');
   };
 
-  if (screen === 'listen') return <SpeechListen target={target} onBack={toList} onFinished={() => setListenDone(true)} />;
+  const listenItem = listeningItems(target).find((x) => x.id === listenId);
+  if (screen === 'listen' && listenItem) {
+    return <SpeechListen key={listenItem.id} item={listenItem} onBack={toList} onFinished={() => setListenDone((s) => new Set(s).add(listenItem.id))} />;
+  }
   if (!story || screen === 'list') {
     return (
       <SpeechList
@@ -242,7 +246,10 @@ export default function SpeechTab() {
         openId={openId}
         onOpen={(id) => void openStory(id)}
         listenDone={listenDone}
-        onListen={() => setScreen('listen')}
+        onListen={(id) => {
+          setListenId(id);
+          setScreen('listen');
+        }}
       />
     );
   }

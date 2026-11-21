@@ -52,5 +52,19 @@
       "place": "Chile",
       "greeting": "¿Cómo estái?"
     }
+  ],
+  "questions": [
+    { "id": "g1", "q": "¿A qué país fue Ana primero?", "options": ["A México", "A España", "A Cuba"], "answer": 1 },
+    { "id": "g2", "q": "En España, ¿qué significa \"tío\"?", "options": ["Amigo", "Abuelo", "Vecino"], "answer": 0 },
+    { "id": "g3", "q": "¿Qué pensó Ana cuando su amiga Laura le dijo \"¿Qué más?\"?", "options": ["Que quería ir a casa", "Que quería más tacos", "Que quería más café"], "answer": 2 },
+    { "id": "g4", "q": "¿Quién saludó a Ana en Medellín?", "options": ["Un taxista", "Un mesero", "Un policía"], "answer": 0 },
+    { "id": "g5", "q": "En República Dominicana, ¿qué letras escriben en el celular para decir \"¿Qué lo qué?\"?", "options": ["tqm", "klk", "xfa"], "answer": 1 },
+    { "id": "g6", "q": "¿Quién es de Cuba en la familia de Luis?", "options": ["Su tío", "Su hermana", "Su abuela"], "answer": 2 },
+    { "id": "g7", "q": "¿Cuál fue el último país del viaje de Ana?", "options": ["Panamá", "Chile", "Costa Rica"], "answer": 0 },
+    { "id": "g8", "q": "Después del viaje, ¿dónde buscó Ana otros saludos?", "options": ["En un libro", "En internet y en videos", "En la escuela"], "answer": 1 },
+    { "id": "g9", "q": "En Argentina, ¿qué palabra usan en lugar de \"tú\"?", "options": ["Usted", "Tío", "Vos"], "answer": 2 },
+    { "id": "g10", "q": "¿Cuántos lugares son, según Luis?", "options": ["Ocho", "Doce", "Diez"], "answer": 1 },
+    { "id": "g11", "q": "¿Qué van a comer Ana y Luis?", "options": ["Tacos", "Pizza", "Arepas"], "answer": 0 },
+    { "id": "g12", "q": "¿Cómo saludan en la familia de Ana?", "options": ["¿Qué onda?", "¡Pura vida!", "Hola, ¿cómo estás?"], "answer": 2 }
   ]
 }
