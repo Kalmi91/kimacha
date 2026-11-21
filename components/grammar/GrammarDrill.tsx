@@ -468,7 +468,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
                   (marking ? s.games.grammarChoice.markWrong : '')}
               </Text>
             ) : null}
-            {current.item.examples.map((ex, i) => (
+            {(current.item.examples ?? []).map((ex, i) => (
               <GlossText
                 key={i}
                 text={ex}
@@ -581,7 +581,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
                 (marking ? s.games.grammarChoice.markWrong : '')}
             </Text>
           ) : null}
-          {current.item.examples.map((ex, i) => (
+          {(current.item.examples ?? []).map((ex, i) => (
             <GlossText
               key={i}
               text={ex}
