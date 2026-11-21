@@ -399,6 +399,7 @@ export function NewKindDrillItem({
   lessonItems,
   onDone,
   onShown,
+  endOnMiss,
 }: {
   item: SpotItem | OrderItem | DictationItem | WriteItem | ClozeItem | FixItem | BankItem | NounItem;
   learnedLang: string;
@@ -409,6 +410,8 @@ export function NewKindDrillItem({
   onDone: (correct: boolean, mistyped?: boolean, given?: string) => void;
   /** The typed kinds: the answer is checked and its feedback is on screen, before Next. */
   onShown?: (correct: boolean) => void;
+  /** The typed kinds: a wrong answer ends the task at once, without its own feedback card. */
+  endOnMiss?: boolean;
 }) {
   switch (item.kind) {
     case 'spot':
@@ -420,13 +423,13 @@ export function NewKindDrillItem({
     case 'write':
       return <WriteDrillItem item={item} learnedLang={learnedLang} contentLang={contentLang} strictAccents={strictAccents} onDone={onDone} />;
     case 'opencloze':
-      return <ClozeDrillItem item={item} learnedLang={learnedLang} contentLang={contentLang} strictAccents={strictAccents} onDone={onDone} onShown={onShown} />;
+      return <ClozeDrillItem item={item} learnedLang={learnedLang} contentLang={contentLang} strictAccents={strictAccents} onDone={onDone} onShown={onShown} endOnMiss={endOnMiss} />;
     case 'fix':
-      return <FixDrillItem item={item} learnedLang={learnedLang} contentLang={contentLang} strictAccents={strictAccents} onDone={onDone} onShown={onShown} />;
+      return <FixDrillItem item={item} learnedLang={learnedLang} contentLang={contentLang} strictAccents={strictAccents} onDone={onDone} onShown={onShown} endOnMiss={endOnMiss} />;
     case 'bank':
-      return <BankDrillItem item={item} learnedLang={learnedLang} contentLang={contentLang} strictAccents={strictAccents} onDone={onDone} onShown={onShown} />;
+      return <BankDrillItem item={item} learnedLang={learnedLang} contentLang={contentLang} strictAccents={strictAccents} onDone={onDone} onShown={onShown} endOnMiss={endOnMiss} />;
     case 'noun':
-      return <NounDrillItem item={item} learnedLang={learnedLang} contentLang={contentLang} strictAccents={strictAccents} onDone={onDone} onShown={onShown} />;
+      return <NounDrillItem item={item} learnedLang={learnedLang} contentLang={contentLang} strictAccents={strictAccents} onDone={onDone} onShown={onShown} endOnMiss={endOnMiss} />;
   }
 }
 

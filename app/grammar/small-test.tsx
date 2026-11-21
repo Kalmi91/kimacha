@@ -491,9 +491,13 @@ export default function SmallTestScreen() {
         <ScrollView testID="small-test-miss" contentContainerStyle={styles.body}>
           <Text style={[styles.title, { color: colors.text }]}>{s.missTitle}</Text>
           <Text style={[styles.line, { color: colors.textMuted }]}>{titleOf(cur.topic)}</Text>
+          {result.given ? (
+            <Text testID="small-test-miss-given" style={[styles.line, { color: colors.danger }]}>{`${t().levelTest.youTyped}: ${result.given}`}</Text>
+          ) : null}
           {found.item ? <ItemAnswer item={found.item} contentLang={data.contentLang as never} /> : null}
           {mistypedButton}
           <ExamButton testID="small-test-miss-next" label={s.next} onPress={() => settle(false)} />
+          <ExamButton testID="small-test-miss-lesson" secondary label={t().levelTest.openLesson} onPress={() => router.push(`/grammar/${cur.topic}` as never)} />
         </ScrollView>
       </View>,
     );
@@ -522,6 +526,7 @@ export default function SmallTestScreen() {
                 learnedLang={data.learnedLang}
                 contentLang={data.contentLang as never}
                 strictAccents={strictAccents}
+                endOnMiss
                 onShown={(ok) => guardOpen() && stRef.current && commit(markShown(stRef.current, ok))}
                 onDone={(ok, mistyped, given) => (!guardOpen() ? setRedo((n) => n + 1) : ok ? settle(true, !!mistyped) : show(cur, false, given))}
               />
