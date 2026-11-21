@@ -568,7 +568,9 @@ describe('small test: the practice after a round', () => {
     const gone = d.run!.current!.qid;
     const noGone: SmallPool = (topic) => pool(topic).filter((q) => q.id !== gone);
     const fixed = repairSmallRun(loaded, noGone);
-    expect(fixed.run!.drill!.i).toBe(1);
+    // the question that left the content is dropped from the list, so the count only holds questions really asked
+    expect(fixed.run!.drill!.i).toBe(0);
+    expect(fixed.run!.drill!.list).toHaveLength(d.run!.drill!.list.length - 1);
     expect(fixed.run!.current).toEqual(d.run!.drill!.list[1]);
     // all of them left: the practice ends
     const nothing: SmallPool = () => [];
@@ -583,6 +585,109 @@ describe('small test: the practice after a round', () => {
 
   it('the logic has no randomness of its own: the same input gives the same practice', () => {
     expect(drillList(missed().s, pool)).toEqual(drillList(missed().s, pool));
+  });
+});
+
+describe('small test: review fixes', () => {
+  const wrongRound = () => {
+    const s0 = begin(3, newSmallState(), T5);
+    return play(s0, (n, cur) => !(n === 0 || cur.role === 'f2'));
+  };
+
+  it('of two weak topics the one with the lower accuracy is taken first (one place left in the round)', () => {
+    const ids = ['t1', 't2', 't3', 't4', 't5', 't6', 't7'];
+    const topics = ids.map((id) => ({ id, core: false }));
+    // 5 topics have an open miss, t1 (1 of 4) and t2 (3 of 5) are weak and compete for the last place; t2 is listed first
+    const gaps = Object.fromEntries(['t3', 't4', 't5', 't6', 't7'].map((t) => [`${t}:${TYPES[0]}:1`, { topic: t, right: 0, round: 1 }]));
+    const st: SmallState = { ...newSmallState(), rounds: 2, learned: ids, seen: ids, gaps, log: { t1: [1, 0, 0, 0], t2: [1, 1, 1, 0, 0] } };
+    for (let seed = 1; seed <= 6; seed++) {
+      const got = startRound(st, [topics[1], topics[0], ...topics.slice(2)], pool, seed).run!.topics.map((tp) => tp.id);
+      expect(got).toContain('t1');
+      expect(got).not.toContain('t2');
+    }
+  });
+
+  it('a miss-log question is the base question even when it is in `recent` and the type rotation would give another', () => {
+    const gapType = TYPES.find((ty) => !HARD_TYPES.includes(ty)) ?? TYPES[0];
+    const qid = `t1:${gapType}:2`;
+    const st: SmallState = { ...newSmallState(), rounds: 1, learned: ['t1'], seen: ['t1'], recent: [qid], gaps: { [qid]: { topic: 't1', right: 0, round: 1 } } };
+    for (let seed = 1; seed <= 6; seed++) {
+      const s = begin(seed, st, [{ id: 't1', core: true }]);
+      expect(s.run!.current).toMatchObject({ qid, role: 'base' });
+    }
+  });
+
+  it('a stopped topic: the practice has the wrong quick-check answer after the last miss, extras skip the quick-check questions', () => {
+    const s0 = begin(4);
+    const t = firstTopic(s0);
+    let s = play(s0, (_n, cur) => cur.topic !== t);
+    s = finishLesson(openLesson(s), pool);
+    const asked = s.run!.mini!.cur.map((q) => q.qid);
+    const miniWrong = asked[0];
+    for (let i = 0; i < MINI_CHECK_SIZE; i++) s = resolveAnswer(s, pool, i !== 0);
+    const done = play(s, () => true);
+    expect(done.run!.phase).toBe('end');
+    expect(done.run!.mini).toBeNull();
+    expect(done.run!.miniAnswers).toHaveLength(MINI_CHECK_SIZE);
+    const list = drillList(done, pool).map((c) => c.qid);
+    const misses = done.run!.answers.filter((a) => !a.ok).map((a) => a.qid);
+    expect(misses).toHaveLength(3);
+    expect(list.slice(0, 3)).toEqual(misses);
+    expect(list[3]).toBe(miniWrong);
+    expect(list.length).toBeGreaterThan(4);
+    for (const q of list.slice(4)) expect(asked).not.toContain(q);
+    expect(new Set(list).size).toBe(list.length);
+    // the answers of the round are untouched
+    expect(done.run!.answers).toHaveLength(SMALL_TEST_SIZE);
+  });
+
+  it('a miss in the practice does not let the log grow over GAPS_MAX', () => {
+    const d = startDrill(wrongRound(), pool);
+    const many = Object.fromEntries(Array.from({ length: GAPS_MAX }, (_, i) => [`old${i}`, { topic: 'tx', right: 0, round: i === 0 ? 0 : 1 }]));
+    const after = resolveDrill({ ...d, gaps: many }, pool, false);
+    expect(Object.keys(after.gaps)).toHaveLength(GAPS_MAX);
+    expect(after.gaps.old0).toBeUndefined();
+    expect(after.gaps[d.run!.current!.qid]).toBeDefined();
+  });
+
+  it('a damaged practice in a save: bad list items drop out, a bad index or an empty list ends it, a bad `drilled` is dropped', () => {
+    const d = startDrill(wrongRound(), pool);
+    const raw = () => JSON.parse(JSON.stringify(d));
+    const items = d.run!.drill!.list.length;
+    const bad = raw();
+    bad.run.drill.list = ['x', null, { topic: 't1' }, ...bad.run.drill.list];
+    const a = parseSmallState(bad);
+    expect(a.run!.phase).toBe('drill');
+    expect(a.run!.drill!.list).toHaveLength(items);
+    expect(a.run!.drill!.i).toBe(0);
+    for (const patch of [{ i: -1 }, { i: 99 }, { i: 'x' }, { right: -2 }, { right: null }, { list: [] }]) {
+      const r = raw();
+      Object.assign(r.run.drill, patch);
+      const e = parseSmallState(r);
+      expect(e.run!.phase).toBe('end');
+      expect(e.run!.current).toBeNull();
+      expect(e.run!.drill).toBeUndefined();
+    }
+    let fin = startDrill(wrongRound(), pool);
+    for (let i = 0; i < items; i++) fin = resolveDrill(fin, pool, true);
+    expect(parseSmallState(JSON.parse(JSON.stringify(fin))).run!.drilled).toEqual({ right: items, total: items });
+    for (const drilled of [{ right: 'x', total: 3 }, { right: 1, total: -1 }, { right: 1 }, 'no']) {
+      const r = JSON.parse(JSON.stringify(fin));
+      r.run.drilled = drilled;
+      const e = parseSmallState(r);
+      expect(e.run!.phase).toBe('end');
+      expect(e.run!.drilled).toBeUndefined();
+    }
+  });
+
+  it('an old save without `miniAnswers` keeps its run', () => {
+    const s = begin(3, newSmallState(), T5);
+    const raw = JSON.parse(JSON.stringify(s));
+    delete raw.run.miniAnswers;
+    const loaded = parseSmallState(raw);
+    expect(loaded.run).not.toBeNull();
+    expect(loaded.run!.phase).toBe('ask');
+    expect(drillList(loaded, pool)).toEqual([]);
   });
 });
 

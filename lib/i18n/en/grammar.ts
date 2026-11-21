@@ -300,6 +300,16 @@ export default {
     newRound: 'New round',
     done: 'Done',
     progressLabel: (n: number, total: number) => `Question ${n} of ${total}`,
+    tagMissed: 'missed',
+    tagWeak: 'weak',
+    introReview: 'Review round: your weak spots first.',
+    endGaps: (open: number, fixed: number) => `Gaps: ${open} open · ${fixed} fixed`,
+    endClean: (lvl: string) => `No gaps left on ${lvl}.`,
+    endDrill: (n: number) => `Practise your misses · ${n}`,
+    endNext: (lvl: string) => `Start ${lvl} test`,
+    endReview: 'Review round',
+    endDrilled: (right: number, total: number) => `Practice: ${right} of ${total}`,
+    drillHeader: (lvl: string, i: number, n: number) => `${lvl} topic test · practice ${i}/${n}`,
   },
   // The Grammar tab's level buttons, overall bar and per-level test rows.
   levelTabs: {

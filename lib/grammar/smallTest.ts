@@ -111,6 +111,8 @@ export interface SmallRun {
   drill?: { list: SmallCur[]; i: number; right: number };
   /** The finished practice. */
   drilled?: { right: number; total: number };
+  /** The answers of the quick check after a lesson (kept for the practice list; not in `answers`, which counts the test). Missing in an older save. */
+  miniAnswers?: SmallAnswer[];
 }
 
 export interface SmallGap {
@@ -150,12 +152,19 @@ export const smallKey = (pair: string, level: string): string => `grammar-small-
 
 const strings = (x: unknown): string[] => (Array.isArray(x) ? x.filter((v): v is string => typeof v === 'string') : []);
 
-// a saved run in the drill phase needs its drill list; without it the run is on the end screen
+// A saved run's practice and quick-check fields are checked item by item (a damaged item drops out). A drill phase without a
+// usable drill list (empty, or its index outside it) is on the end screen.
 function fixDrill(run: SmallRun): SmallRun {
+  const num = (x: unknown): x is number => typeof x === 'number' && Number.isFinite(x) && x >= 0;
+  const item = (c: unknown): c is SmallCur => !!c && typeof c === 'object' && typeof (c as SmallCur).topic === 'string' && typeof (c as SmallCur).qid === 'string';
   const d = run.drill;
-  const okDrill = !!d && typeof d === 'object' && Array.isArray(d.list) && typeof d.i === 'number' && typeof d.right === 'number';
-  if (run.phase === 'drill' && !okDrill) return { ...run, phase: 'end', current: null, drill: undefined };
-  return okDrill || d === undefined ? run : { ...run, drill: undefined };
+  const list = d && typeof d === 'object' && Array.isArray(d.list) ? d.list.filter(item) : [];
+  const i = d && num(d.i) && Array.isArray(d.list) ? d.list.slice(0, d.i).filter(item).length : -1;
+  const okDrill = !!d && num(d.right) && i >= 0 && i < list.length;
+  const dd = run.drilled as Partial<NonNullable<SmallRun['drilled']>> | undefined;
+  const miniAnswers = Array.isArray(run.miniAnswers) ? run.miniAnswers.filter((a) => item(a) && typeof a.ok === 'boolean') : undefined;
+  const fixed: SmallRun = { ...run, drill: okDrill ? { list, i, right: d!.right } : undefined, drilled: dd && num(dd.right) && num(dd.total) ? { right: dd.right, total: dd.total } : undefined, miniAnswers };
+  return run.phase === 'drill' && !okDrill ? { ...fixed, phase: 'end', current: null } : fixed;
 }
 
 /** A saved state, or a fresh one when the value is missing or damaged. */
@@ -313,9 +322,11 @@ export function repairSmallRun(st: SmallState, pool: SmallPool): SmallState {
   }
   if (run.phase === 'drill') {
     if (!run.drill) return { ...st, run: { ...run, phase: 'end', current: null } };
-    if (run.current && has(run.current)) return st;
-    // the missing question is skipped: on to the next one that exists
-    return nextDrill(st, { ...run, shown: undefined }, pool, run.drill.i, run.drill.right);
+    const { list, i, right } = run.drill;
+    if (list.every(has)) return run.current && has(run.current) ? st : nextDrill(st, { ...run, shown: undefined }, pool, i, right);
+    // the questions that left the content drop out of the list (the index follows), so the count is of the asked ones
+    const kept = list.filter(has);
+    return nextDrill(st, { ...run, shown: undefined, drill: { list: kept, i: list.slice(0, i).filter(has).length, right } }, pool, list.slice(0, i).filter(has).length, right);
   }
   return st;
 }
@@ -419,20 +430,22 @@ function hasBaseElsewhere(run: SmallRun, prev: string, pool: SmallPool): boolean
 
 const wrongIn = (answers: SmallAnswer[], topic: string): number => answers.filter((a) => a.topic === topic && !a.ok).length;
 
+// A miss-log item is made or reset; over GAPS_MAX the oldest round drops out (the one place that cuts the log).
+function addGap(gaps: Record<string, SmallGap>, cur: SmallCur, round: number): Record<string, SmallGap> {
+  const out = { ...gaps, [cur.qid]: { topic: cur.topic, right: 0, round } };
+  const keys = Object.keys(out);
+  if (keys.length > GAPS_MAX) delete out[keys.map((k, i) => ({ k, i, round: out[k].round })).sort((a, b) => a.round - b.round || a.i - b.i)[0].k];
+  return out;
+}
+
 // A miss makes (or resets) its miss-log item; a right answer in a later round than the miss counts towards closing it (a
 // right answer in the miss's own round does not). Every answer goes into the topic's log.
 function record(st: SmallState, run: SmallRun, cur: SmallCur, ok: boolean): SmallState {
-  const gaps = { ...st.gaps };
+  let gaps = { ...st.gaps };
   let fixed = st.fixed;
   const g = gaps[cur.qid];
-  if (!ok) {
-    gaps[cur.qid] = { topic: cur.topic, right: 0, round: run.round };
-    const keys = Object.keys(gaps);
-    if (keys.length > GAPS_MAX) {
-      const oldest = keys.map((k, i) => ({ k, i, round: gaps[k].round })).sort((a, b) => a.round - b.round || a.i - b.i)[0].k;
-      delete gaps[oldest];
-    }
-  } else if (g && g.round < run.round) {
+  if (!ok) gaps = addGap(gaps, cur, run.round);
+  else if (g && g.round < run.round) {
     if (g.right + 1 >= GAP_RIGHT) {
       delete gaps[cur.qid];
       fixed += 1;
@@ -505,7 +518,8 @@ function resolveMini(st: SmallState, run: SmallRun, pool: SmallPool, ok: boolean
     return { ...st, run: { ...run, mini: { ...mini, answers }, current: mini.cur[answers.length] } };
   }
   const topicRuns = { ...run.topicRuns, [topic]: { ...tr, mini: { right: answers.filter(Boolean).length, asked: answers.length } } };
-  return withNext(st, { ...run, topicRuns, mini: null, stopTopic: null, current: null }, pool);
+  const miniAnswers = [...(run.miniAnswers ?? []), ...mini.cur.map((c, i) => ({ ...c, ok: answers[i] }))];
+  return withNext(st, { ...run, topicRuns, miniAnswers, mini: null, stopTopic: null, current: null }, pool);
 }
 
 /** From the stop screen to the lesson (the screen opens the lesson route). */
@@ -586,7 +600,8 @@ function endRound(st: SmallState, run: SmallRun): SmallState {
 export function drillList(st: SmallState, pool: SmallPool): SmallCur[] {
   const run = st.run;
   if (!run) return [];
-  const asked = new Set(run.answers.map((a) => a.qid));
+  const mini = (run.miniAnswers ?? []).filter((a) => !a.ok);
+  const asked = new Set([...run.answers, ...(run.miniAnswers ?? [])].map((a) => a.qid));
   const misses = run.answers.filter((a) => !a.ok);
   const lastMiss = (topic: string) => {
     let at = -1;
@@ -597,11 +612,18 @@ export function drillList(st: SmallState, pool: SmallPool): SmallCur[] {
   };
   const list: SmallCur[] = [];
   const taken = new Set<string>();
+  // the wrong answers of the topic's quick check come after its misses of the round, before the new questions
+  const addMini = (topic: string) =>
+    mini.filter((m) => m.topic === topic && !taken.has(m.qid) && pool(topic).some((q) => q.id === m.qid)).forEach((m) => {
+      taken.add(m.qid);
+      list.push({ topic, qid: m.qid, type: m.type, role: 'drill' });
+    });
   misses.forEach((m, i) => {
     if (!taken.has(m.qid) && pool(m.topic).some((q) => q.id === m.qid)) {
       taken.add(m.qid);
       list.push({ topic: m.topic, qid: m.qid, type: m.type, role: 'drill' });
     }
+    if (lastMiss(m.topic) === i) addMini(m.topic);
     if (lastMiss(m.topic) === i && wrongIn(run.answers, m.topic) >= 2) {
       const fresh = shuffleArray(pool(m.topic).filter((q) => !asked.has(q.id) && !taken.has(q.id)), run.seed * 19 + i)
         .map((q, k) => ({ q, k, hard: HARD_TYPES.includes(q.type) ? 0 : 1 }))
@@ -613,6 +635,7 @@ export function drillList(st: SmallState, pool: SmallPool): SmallCur[] {
       }
     }
   });
+  for (const topic of new Set(mini.map((m) => m.topic))) if (lastMiss(topic) < 0) addMini(topic);
   return list.slice(0, DRILL_MAX);
 }
 
@@ -639,11 +662,11 @@ export function resolveDrill(st: SmallState, pool: SmallPool, ok: boolean): Smal
   const run = st.run && st.run.shown ? { ...st.run, shown: undefined } : st.run;
   if (!run || run.phase !== 'drill' || !run.drill || !run.current) return st;
   const cur = run.current;
-  const gaps = ok ? st.gaps : { ...st.gaps, [cur.qid]: { topic: cur.topic, right: 0, round: run.round } };
+  const gaps = ok ? st.gaps : addGap(st.gaps, cur, run.round);
   return nextDrill({ ...st, gaps }, run, pool, run.drill.i + 1, run.drill.right + (ok ? 1 : 0));
 }
 
-export type RowStatus ='learned' | 'more' | 'lesson';
+export type RowStatus = 'learned' | 'more' | 'lesson';
 
 export interface SmallRow {
   id: string;

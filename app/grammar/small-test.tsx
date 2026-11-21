@@ -20,7 +20,10 @@ import {
   abandonRound,
   beginRound,
   closeRound,
+  drillList,
   finishLesson,
+  gapCount,
+  isLevelClean,
   isLevelDone,
   levelProgress,
   loadSmallState,
@@ -32,11 +35,14 @@ import {
   roundRight,
   roundRows,
   saveSmallState,
+  startDrill,
   startRound,
+  topicWhy,
   type RowStatus,
   type SmallCur,
   type SmallState,
 } from '@/lib/grammar/smallTest';
+import { hasSmallTest, levelTestRoute } from '@/lib/grammar/levelTestRoute';
 import { smallTestView, type SmallView } from '@/lib/grammar/smallTestView';
 import { Card } from '@/components/grammar/Brutal';
 import { NewKindDrillItem } from '@/components/grammar/NewKinds';
@@ -76,7 +82,7 @@ const STATUS_COLOR: Record<RowStatus, 'success' | 'warning' | 'danger'> = { lear
 
 // The one place a settled main question becomes the topic's evidence (Next and the load of a run left on a result card).
 function evidenceOf(d: RoundData, seed: number, v: SmallView, ev: Map<string, TopicEvidence>, cur: SmallCur, ok: boolean) {
-  if (cur.role === 'mini') return null;
+  if (cur.role === 'mini' || cur.role === 'drill') return null;
   const found = v.find(cur.topic, cur.qid);
   const kind = found?.q?.kind ?? found?.item?.kind;
   if (!kind) return null;
@@ -89,7 +95,12 @@ function evidenceOf(d: RoundData, seed: number, v: SmallView, ev: Map<string, To
   return { topicEvidence, map: new Map(ev).set(cur.topic, topicEvidence) };
 }
 
+// the route keeps one screen when only `level` changes (the next-level button), so the level is the key: a new level rebuilds it
 export default function SmallTestScreen() {
+  return <SmallTestLevel key={String(useLocalSearchParams<{ level?: string }>().level ?? '').toLowerCase()} />;
+}
+
+function SmallTestLevel() {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const s = t().smallTest;
@@ -246,9 +257,11 @@ export default function SmallTestScreen() {
       ? s.header(level, run.answers.length + 1, SMALL_TEST_SIZE)
       : run.phase === 'mini'
         ? s.miniHeader((run.mini?.answers.length ?? 0) + 1, MINI_CHECK_SIZE)
-        : run.phase === 'stop' || run.phase === 'lesson'
-          ? s.header(level, run.answers.length, SMALL_TEST_SIZE)
-          : s.headerRound(level, run.round);
+        : run.phase === 'drill'
+          ? s.drillHeader(level, (run.drill?.i ?? 0) + 1, run.drill?.list.length ?? 0)
+          : run.phase === 'stop' || run.phase === 'lesson'
+            ? s.header(level, run.answers.length, SMALL_TEST_SIZE)
+            : s.headerRound(level, run.round);
   const headerFor = (part: string) => (
     <View style={styles.header}>
       <Pressable testID="small-test-close" accessibilityRole="button" accessibilityLabel={s.leave} hitSlop={12} onPress={() => router.back()}>
@@ -258,7 +271,7 @@ export default function SmallTestScreen() {
       <ScreenFeedback placement="inline" level={data.userLevel} languagePair={pair} currentCard={`grammar-small-test:${level}:${part}`} />
     </View>
   );
-  const progressPct = run.phase === 'end' || run.phase === 'intro' ? (run.phase === 'end' ? 100 : 0) : (run.answers.length / SMALL_TEST_SIZE) * 100;
+  const progressPct = run.phase === 'drill' ? ((run.drill?.i ?? 0) / Math.max(1, run.drill?.list.length ?? 1)) * 100 : run.phase === 'end' || run.phase === 'intro' ? (run.phase === 'end' ? 100 : 0) : (run.answers.length / SMALL_TEST_SIZE) * 100;
   const progress = (
     <ProgressBar
       testID="small-test-progress"
@@ -284,7 +297,7 @@ export default function SmallTestScreen() {
       evRef.current = written.map;
       enqueue(() => getDb().setGameProgress(GRAMMAR_RANDOM_KEY, cur.topic, 'evidence', written.topicEvidence));
     }
-    if (!ok && !mistyped && cur.role !== 'mini') {
+    if (!ok && !mistyped && cur.role !== 'mini' && cur.role !== 'drill') {
       const f = v.find(cur.topic, cur.qid);
       const miss: GrammarMiss | null = f?.q ? { prompt: f.q.review.question, given: result?.given ?? null, correct: f.q.review.answer } : f?.item ? missOfItem(f.item, data.contentLang, result?.given) : null;
       if (miss) setMisses((m) => [...m, miss]);
@@ -308,6 +321,7 @@ export default function SmallTestScreen() {
         {progress}
         <ScrollView testID="small-test-intro" contentContainerStyle={styles.body}>
           <Text testID="small-test-intro-title" style={[styles.title, { color: colors.text }]}>{s.introTitle(SMALL_TEST_SIZE)}</Text>
+          {isLevelDone(st, view.coreIds) ? <Text testID="small-test-intro-review" style={[styles.note, { color: colors.textMuted }]}>{s.introReview}</Text> : null}
           <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
             <Text style={[styles.rowsTitle, { color: colors.textMuted }]}>{s.introTopics}</Text>
             {run.topics.map((tp) => (
@@ -315,9 +329,9 @@ export default function SmallTestScreen() {
                 <Text style={[styles.topicName, { color: colors.text }]} numberOfLines={2}>{titleOf(tp.id)}</Text>
                 <Text
                   testID={`small-test-intro-tag-${tp.id}`}
-                  style={[styles.tag, tp.isNew ? { color: colors.tint, fontWeight: fontWeight.bold } : { color: colors.textMuted }]}
+                  style={[styles.tag, { color: { gap: colors.danger, weak: colors.warning, new: colors.tint, repeat: colors.textMuted }[topicWhy(tp)] }, topicWhy(tp) !== 'repeat' && { fontWeight: fontWeight.bold }]}
                 >
-                  {tp.isNew ? s.tagNew : s.tagRepeat}
+                  {{ gap: s.tagMissed, weak: s.tagWeak, new: s.tagNew, repeat: s.tagRepeat }[topicWhy(tp)]}
                 </Text>
               </View>
             ))}
@@ -379,6 +393,12 @@ export default function SmallTestScreen() {
     const right = roundRight(run);
     const prog = levelProgress(st, view.coreIds);
     const label = (r: RowStatus) => (r === 'learned' ? s.statusLearned : r === 'lesson' ? s.statusLesson : s.statusMore);
+    const newRound = () => (setMisses([]), commit(startRound(closeRound(st), view.topics, view.pool, (Date.now() + st.rounds * 7919) % 2147483647)));
+    const drillN = !run.drilled ? drillList(st, view.pool).length : 0;
+    const nextLevel = data.levels[data.levels.indexOf(level) + 1];
+    const goNext = isLevelDone(st, view.coreIds) && nextLevel && hasSmallTest(nextLevel) ? nextLevel : null;
+    const clean = isLevelClean(st, view.topics.filter((tp) => view.pool(tp.id).length > 0).map((tp) => tp.id), view.coreIds);
+    const gapsLine = gapCount(st) + st.fixed > 0;
     return shell(
       <View style={styles.flex}>
         {headerFor('end')}
@@ -390,16 +410,17 @@ export default function SmallTestScreen() {
           scoreTestID="small-test-end-title"
           misses={misses}
           onRetake={() => {
-            setMisses([]);
-            commit(startRound(closeRound(st), view.topics, view.pool, (Date.now() + st.rounds * 7919) % 2147483647));
+            if (drillN > 0) commit(startDrill(st, view.pool));
+            else if (goNext) {
+              commit(closeRound(st));
+              router.replace(levelTestRoute(goNext) as never);
+            } else newRound();
           }}
-          onBack={() => {
-            commit(closeRound(st));
-            router.back();
-          }}
-          retakeLabel={s.newRound}
-          retakeTestID="small-test-end-new"
+          onBack={() => (commit(closeRound(st)), router.back())}
+          retakeLabel={drillN > 0 ? s.endDrill(drillN) : goNext ? s.endNext(goNext) : s.newRound}
+          retakeTestID={drillN > 0 ? 'small-test-end-drill' : goNext ? 'small-test-end-next' : 'small-test-end-new'}
           backTestID="small-test-end-done"
+          middle={drillN > 0 || goNext ? <ExamButton testID="small-test-end-new" secondary label={drillN > 0 ? s.newRound : s.endReview} onPress={newRound} /> : null}
         >
           <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
             {rows.map((r) => (
@@ -416,6 +437,13 @@ export default function SmallTestScreen() {
               </Pressable>
             ))}
           </Card>
+          {gapsLine || clean || run.drilled ? (
+            <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
+              {gapsLine ? <Text testID="small-test-end-gaps" style={[styles.line, { color: colors.text }]}>{s.endGaps(gapCount(st), st.fixed)}</Text> : null}
+              {clean ? <Text testID="small-test-end-clean" style={[styles.line, { color: colors.success }]}>{s.endClean(level)}</Text> : null}
+              {run.drilled ? <Text testID="small-test-end-drilled" style={[styles.line, { color: colors.text }]}>{s.endDrilled(run.drilled.right, run.drilled.total)}</Text> : null}
+            </Card>
+          ) : null}
           <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
             <Text testID="small-test-end-level" style={[styles.line, { color: colors.text }]}>{s.levelLine(level, prog.learned, prog.total)}</Text>
             <ProgressBar
@@ -457,7 +485,7 @@ export default function SmallTestScreen() {
   const cur = run.current;
   const found = cur ? view.find(cur.topic, cur.qid) : null;
   if (!cur || !found) return waiting();
-  const part = `${inMini ? 'mini:' : ''}${cur.qid}`;
+  const part = `${inMini ? 'mini:' : run.phase === 'drill' ? 'drill:' : ''}${cur.qid}`;
   const guardOpen = () => Date.now() >= tapGuardUntil.current;
   // a typed answer: "I mistyped"; a tapped one (choice, tiles, match, spot, order, why): "I misclicked"
   const typedTask = found.q ? found.q.view.card === 'type' : !!found.item && ['form', 'transform', 'dictation', 'write', 'opencloze', 'fix', 'bank', 'noun'].includes(found.item.kind);
@@ -507,7 +535,11 @@ export default function SmallTestScreen() {
     <KeyboardAvoidingView style={styles.flex} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
       {headerFor(part)}
       {progress}
-      <View testID="small-test-question" style={styles.flex} accessibilityLabel={s.progressLabel(run.answers.length + 1, SMALL_TEST_SIZE)}>
+      <View
+        testID={run.phase === 'drill' ? 'small-test-drill' : 'small-test-question'}
+        style={styles.flex}
+        accessibilityLabel={run.phase === 'drill' ? headerText : s.progressLabel(run.answers.length + 1, SMALL_TEST_SIZE)}
+      >
         <DockSlotProvider host={dock}>
           {found.q ? (
             <TestQuestionView

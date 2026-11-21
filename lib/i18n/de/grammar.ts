@@ -278,6 +278,16 @@ const de: typeof en = {
     newRound: 'Neue Runde',
     done: 'Fertig',
     progressLabel: (n: number, total: number) => `Frage ${n} von ${total}`,
+    tagMissed: 'verfehlt',
+    tagWeak: 'schwach',
+    introReview: 'Wiederholungsrunde: zuerst deine schwachen Stellen.',
+    endGaps: (open: number, fixed: number) => `Lücken: ${open} offen · ${fixed} geschlossen`,
+    endClean: (lvl: string) => `Keine Lücken mehr auf ${lvl}.`,
+    endDrill: (n: number) => `Übe deine Fehler · ${n}`,
+    endNext: (lvl: string) => `${lvl}-Test starten`,
+    endReview: 'Wiederholungsrunde',
+    endDrilled: (right: number, total: number) => `Übung: ${right} von ${total}`,
+    drillHeader: (lvl: string, i: number, n: number) => `${lvl}-Thementest · Übung ${i}/${n}`,
   },
   // The Grammar tab's level buttons, overall bar and per-level test rows.
   levelTabs: {

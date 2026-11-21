@@ -13,14 +13,17 @@ jest.mock('@/lib/speech', () => require('@/test-utils/mocks').speechMock());
 jest.mock('@/lib/chime', () => ({ playChime: jest.fn((done?: () => void) => done?.()) }));
 const mockBack = jest.fn();
 const mockPush = jest.fn();
+const mockReplace = jest.fn();
 // which typed task kind the B1 topic lt-5 holds (the resume test below plays each of them)
 let mockB1Kind = 'opencloze';
 let mockParams: { level?: string } = { level: 'a1' };
+// the levels the course offers (the next-level button of the end card reads them)
+let mockLevels = ['A1', 'A2', 'B1', 'C1'];
 // the focus hook is driven by hand: `blur()` / `focus()` play leaving the screen for the lesson and coming back
 let mockFocusCb: (() => void | (() => void)) | null = null;
 let mockFocusCleanup: void | (() => void) = undefined;
 jest.mock('expo-router', () => ({
-  useRouter: () => ({ back: mockBack, push: mockPush, replace: jest.fn() }),
+  useRouter: () => ({ back: mockBack, push: mockPush, replace: mockReplace }),
   usePathname: () => '/grammar',
   useFocusEffect: (cb: () => void | (() => void)) => {
     const { useEffect } = require('react');
@@ -80,7 +83,7 @@ jest.mock('@/lib/grammar/syllabus', () => {
   const topics = defs.map((d) => ({ id: d.id, level: d.level, unit: 'u', title: { en: d.title }, blurb: { en: '' } }));
   return {
     ...actual,
-    syllabusLevels: () => ['A1', 'A2', 'B1', 'C1'],
+    syllabusLevels: () => mockLevels,
     syllabusForLevel: (level: string) => topics.filter((tp) => tp.level === level),
     hasLesson: (_lang: string, id: string) => id in lessons,
     lessonFor: (_lang: string, id: string) => {
@@ -538,5 +541,156 @@ describe.each([
     expect(text('small-test-header')).toBe('B1 topic test · 2/10');
     const st = await loadSmallState(getDb(), 'en→es', 'B1');
     expect(st.run!.answers[0]).toMatchObject({ ok: true, mistyped: true });
+  });
+});
+
+// The miss log in the screen: the practice after a round, the next level when the level is done, the round start marks.
+describe('grammar small test: the practice, the next level, the round marks', () => {
+  beforeEach(async () => {
+    jest.clearAllMocks();
+    mockParams = { level: 'a1' };
+    mockLevels = ['A1', 'A2', 'B1', 'C1'];
+    mockFocusCb = null;
+    mockFocusCleanup = undefined;
+    mockNow = NOW;
+    jest.spyOn(Date, 'now').mockImplementation(() => mockNow);
+    const db = getDb();
+    await db.setOnboarding('en', 'es');
+    (db as any).__setLevelForTest('A1');
+    await db.setGrammarPalette('brand');
+    await db.resetGameProgress(GRAMMAR_RANDOM_KEY);
+    for (const lvl of ['A1', 'A2']) await saveResumeValue(db, smallKey('en→es', lvl), null);
+    questions = buildAll();
+  });
+  afterEach(() => (Date.now as jest.Mock).mockRestore());
+
+  const open = async () => {
+    const view = render(
+      <ThemeProvider>
+        <SmallTestScreen />
+      </ThemeProvider>
+    );
+    await flush();
+    return view;
+  };
+  const start = async () => {
+    const view = await open();
+    await press('small-test-start');
+    return view;
+  };
+  // a round with one miss on the first question, then all right, up to the end card
+  const roundWithMiss = async () => {
+    const view = await start();
+    const missed = await answerNext(false);
+    for (let i = 0; i < 30 && !has('small-test-end'); i++) await answerNext(true);
+    return { view, missed };
+  };
+
+  it('a round with a miss: the practice is the main button, then New round, then Done; the gaps line is there', async () => {
+    await roundWithMiss();
+    expect(has('small-test-end')).toBe(true);
+    expect(screen.getByTestId('small-test-end-drill')).toHaveTextContent('Practise your misses · 1');
+    expect(screen.getByTestId('small-test-end-new')).toHaveTextContent('New round');
+    expect(has('small-test-end-done')).toBe(true);
+    expect(text('small-test-end-gaps')).toBe('Gaps: 1 open · 0 fixed');
+    expect(has('small-test-end-drilled')).toBe(false);
+    expect(has('small-test-end-next')).toBe(false);
+  });
+
+  it('the practice: the same question card with the header and the feedback card; "I mistyped" counts; then the Practice line and New round as the main button', async () => {
+    const { missed } = await roundWithMiss();
+    await press('small-test-end-drill');
+    expect(has('small-test-drill')).toBe(true);
+    expect(text('small-test-header')).toBe('A1 topic test · practice 1/1');
+    expect(text('fb-card')).toBe(`grammar-small-test:A1:drill:${missed.q.id} | en→es | A1`);
+    expect(onScreen().q.id).toBe(missed.q.id);
+    await answer(false);
+    expect(has('small-test-mistyped')).toBe(true);
+    expect(text('level-test-feedback-answer')).toBeTruthy();
+    await press('small-test-mistyped');
+    expect(has('small-test-end')).toBe(true);
+    expect(text('small-test-end-drilled')).toBe('Practice: 1 of 1');
+    expect(has('small-test-end-drill')).toBe(false);
+    expect(has('small-test-end-new')).toBe(true);
+    const st = await stateNow();
+    expect(st.run!.drilled).toEqual({ right: 1, total: 1 });
+    expect(Object.keys(st.gaps)).toEqual([missed.q.id]); // the practice answer in the round of the miss does not close it
+  });
+
+  it('a wrong answer in the practice keeps the item in the miss log; leaving with the X and coming back continues on the same question', async () => {
+    const { view, missed } = await roundWithMiss();
+    await press('small-test-end-drill');
+    await press('small-test-close');
+    expect(mockBack).toHaveBeenCalledTimes(1);
+    view.unmount();
+    mockNow = NOW; // the same seed as before, so the options are in the same order
+    await open();
+    expect(has('small-test-drill')).toBe(true);
+    expect(text('small-test-header')).toBe('A1 topic test · practice 1/1');
+    expect(onScreen().q.id).toBe(missed.q.id);
+    await answerNext(false);
+    expect(text('small-test-end-drilled')).toBe('Practice: 0 of 1');
+    expect((await stateNow()).gaps[missed.q.id]).toMatchObject({ right: 0, round: 1 });
+  });
+
+  it('the next round starts with the missed topic marked "missed"', async () => {
+    const { missed } = await roundWithMiss();
+    await press('small-test-end-new');
+    expect(has('small-test-intro')).toBe(true);
+    expect(text(`small-test-intro-tag-${missed.topic}`)).toBe('missed');
+    expect(has('small-test-intro-review')).toBe(false);
+  });
+
+  it('a done level: the next level is the main button, Review round under it, Done last; it opens the next level test', async () => {
+    await start();
+    for (let i = 0; i < 10; i++) await answerNext(true);
+    await press('small-test-end-new');
+    await press('small-test-start');
+    for (let i = 0; i < 10; i++) await answerNext(true);
+    expect(has('small-test-end-level-done')).toBe(true);
+    expect(has('small-test-end-drill')).toBe(false);
+    expect(screen.getByTestId('small-test-end-next')).toHaveTextContent('Start A2 test');
+    expect(screen.getByTestId('small-test-end-new')).toHaveTextContent('Review round');
+    expect(has('small-test-end-done')).toBe(true);
+    await press('small-test-end-next');
+    expect(mockReplace).toHaveBeenCalledWith('/grammar/small-test?level=a2');
+    expect((await stateNow()).run).toBeNull();
+  });
+
+  it('a done level: Review round starts a round whose start card says so', async () => {
+    await start();
+    for (let i = 0; i < 10; i++) await answerNext(true);
+    await press('small-test-end-new');
+    await press('small-test-start');
+    for (let i = 0; i < 10; i++) await answerNext(true);
+    await press('small-test-end-new');
+    expect(text('small-test-intro-review')).toBe('Review round: your weak spots first.');
+  });
+
+  it('a new `level` param on the same screen loads the state of the new level', async () => {
+    const tree = () => (
+      <ThemeProvider>
+        <SmallTestScreen />
+      </ThemeProvider>
+    );
+    const view = render(tree());
+    await flush();
+    expect(text('small-test-header')).toBe('A1 topic test · round 1');
+    mockParams = { level: 'a2' };
+    view.rerender(tree());
+    await flush();
+    expect(text('small-test-header')).toBe('A2 topic test · round 1');
+  });
+
+  it('the last offered level has no next-level button', async () => {
+    mockLevels = ['A1'];
+    await start();
+    for (let i = 0; i < 10; i++) await answerNext(true);
+    await press('small-test-end-new');
+    await press('small-test-start');
+    for (let i = 0; i < 10; i++) await answerNext(true);
+    expect(has('small-test-end-level-done')).toBe(true);
+    expect(has('small-test-end-next')).toBe(false);
+    expect(screen.getByTestId('small-test-end-new')).toHaveTextContent('New round');
   });
 });
