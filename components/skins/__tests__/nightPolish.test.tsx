@@ -27,11 +27,16 @@ jest.mock('expo-router', () => {
   return { Tabs, router: { replace: jest.fn(), push: jest.fn() } };
 });
 
-import { fireEvent, render, screen, waitFor } from '@testing-library/react-native';
+import { fireEvent, render, screen, waitFor, within } from '@testing-library/react-native';
 import { Platform, StyleSheet, TextInput, View } from 'react-native';
 import * as RN from 'react-native';
 
 import TabLayout from '@/app/(tabs)/_layout';
+import GrammarDrill from '@/components/grammar/GrammarDrill';
+import lessonJson from '@/data/games/grammar/es/presente-irregular.json';
+import type { LessonV2 } from '@/lib/grammar/lessonTypes';
+import { buildGrammarRound, isChoiceRoundItem } from '@/lib/games/grammarChoice';
+import { hashString } from '@/lib/shuffle';
 import PcicCardView, { type PcicCardViewProps } from '@/components/learn/PcicCardView';
 import type { Sm2Card } from '@/lib/sm2';
 import { noWebOutline } from '@/lib/gradientStyle';
@@ -122,6 +127,7 @@ describe('Night polish', () => {
     // Native gets the solid pink (the RN 0.85 native gradient crashed 4.2.11); the web keeps the gradient.
     expect(flat('ok')).toMatchObject({ backgroundColor: '#EC4899' });
     expect(JSON.stringify(flat('ok'))).not.toContain('experimental_');
+    expect(screen.getByTestId('result-badge-gradient')).toBeTruthy();
     expect(StyleSheet.flatten(screen.getByText('Correct!').props.style).color).toBe('#FFFFFF');
     expect(StyleSheet.flatten(screen.getByText('✓').props.style).color).toBe('#FFFFFF');
     expect(flat('bad')).toMatchObject({ borderRadius: 12, borderStyle: 'dashed' });
@@ -131,6 +137,7 @@ describe('Night polish', () => {
     await waitFor(() => expect(flat('ok').borderWidth).toBe(2.5));
     expect(JSON.stringify(flat('ok'))).not.toContain('gradient');
     expect(flat('ok').borderRadius).toBeUndefined();
+    expect(screen.queryByTestId('result-badge-gradient')).toBeNull();
   });
 
   it('ContinuousBar: gradient on Night, none on brutal', async () => {
@@ -138,10 +145,44 @@ describe('Night polish', () => {
     await waitFor(() => expect(flat('fill')).toMatchObject({ width: '40%', borderRadius: 3 }));
     expect(flat('fill')).toMatchObject({ backgroundColor: '#EC4899' });
     expect(JSON.stringify(flat('fill'))).not.toContain('experimental_');
+    expect(screen.getByTestId('fill-gradient')).toBeTruthy();
     night.unmount();
     await renderWithSkin('brutal', <ContinuousBar testID="bar" fillTestID="fill" pct={40} />);
     await waitFor(() => expect(flat('fill').backgroundColor).toBe('#111111'));
     expect(JSON.stringify(flat('fill'))).not.toContain('gradient');
+    expect(screen.queryByTestId('fill-gradient')).toBeNull();
+  });
+
+  describe('drill blank', () => {
+    const lesson = lessonJson as unknown as LessonV2;
+    const now = 1700000000000;
+    const drill = () => (
+      <GrammarDrill topic={lesson} learnedLang="es" contentLang="en" onFinish={jest.fn()} kinds={['choice']} />
+    );
+    const first = () => buildGrammarRound(lesson, hashString(`${lesson.topic}:${now}`)).filter(isChoiceRoundItem)[0];
+    beforeEach(() => jest.spyOn(Date, 'now').mockReturnValue(now));
+    afterEach(() => (Date.now as jest.Mock).mockRestore());
+
+    it('Night: cyan frame unanswered, gradient + white text when correct', async () => {
+      const night = await renderWithSkin('night', drill());
+      await waitFor(() => expect(screen.getByTestId('drill-blank')).toBeTruthy());
+      expect(flat('drill-blank')).toMatchObject({ borderWidth: 1.5, borderColor: '#22D3EE', backgroundColor: 'transparent' });
+      expect(screen.queryByTestId('drill-blank-gradient')).toBeNull();
+      fireEvent.press(screen.getAllByTestId('grammar-option')[first().correctIndex]);
+      await flush();
+      expect(screen.getByTestId('drill-blank-gradient')).toBeTruthy();
+      expect(flat('drill-blank')).toMatchObject({ borderWidth: 0 });
+      const label = within(screen.getByTestId('drill-blank')).getByText(first().options[first().correctIndex]);
+      expect(StyleSheet.flatten(label.props.style).color).toBe('#FFFFFF');
+      night.unmount();
+    });
+
+    it('brutal: the blank is still a Text with no border', async () => {
+      const brutal = await renderWithSkin('brutal', drill());
+      await waitFor(() => expect(screen.getAllByTestId('grammar-option').length).toBeGreaterThan(0));
+      expect(screen.queryByTestId('drill-blank')).toBeNull();
+      brutal.unmount();
+    });
   });
 
   it('StatusBarStrip: Night is #150A29 and a tap does not change it', async () => {
@@ -162,7 +203,8 @@ describe('Night polish', () => {
     await waitFor(() => expect(captured.screens.length).toBeGreaterThan(0));
     const active = press(true);
     expect(active.getByTestId('sym-school')).toBeTruthy();
-    expect(StyleSheet.flatten(active.getByTestId('tab-icon-active').props.style)).toMatchObject({ borderRadius: 16, width: 46, height: 32 });
+    expect(StyleSheet.flatten(active.getByTestId('tab-icon-active').props.style)).toMatchObject({ borderRadius: 17, width: 54, height: 34 });
+    expect(active.getByTestId('tab-icon-gradient')).toBeTruthy();
     expect(JSON.stringify(StyleSheet.flatten(active.getByTestId('tab-icon-active').props.style))).toContain('#EC4899');
     active.unmount();
     night.unmount();

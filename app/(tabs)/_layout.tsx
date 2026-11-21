@@ -6,6 +6,7 @@ import { HeaderTitle, useRoute } from 'expo-router/react-navigation';
 import { SymbolView, type SymbolViewProps } from 'expo-symbols';
 
 import { BetaSticker } from '@/components/BetaSticker';
+import GradientFill from '@/components/GradientFill';
 import Colors from '@/constants/Colors';
 import lightWeight from 'expo-symbols/androidWeights/light';
 
@@ -78,6 +79,7 @@ export default function TabLayout() {
       if (!focused) return <SymbolView name={name} tintColor={g.mu} size={28} weight={light} />;
       return (
         <View testID="tab-icon-active" style={[styles.capsule, gradientStyle(g.a, g.b)]}>
+          <GradientFill from={g.a} to={g.b} testID="tab-icon-gradient" />
           <SymbolView name={name} tintColor={g.onA} size={28} weight={light} />
         </View>
       );
@@ -243,6 +245,6 @@ const styles = StyleSheet.create({
   headerTitle: { flexShrink: 1, minWidth: 0 },
   // the place React Navigation gives the icon (uikit variant, 31 x 28), so the icon sits where it did before
   iconSlot: { width: 31, height: 28, alignItems: 'center', justifyContent: 'center' },
-  iconSlotAlt: { width: 46, height: 32 },
-  capsule: { width: 46, height: 32, borderRadius: 16, alignItems: 'center', justifyContent: 'center' },
+  iconSlotAlt: { width: 54, height: 34 },
+  capsule: { width: 54, height: 34, borderRadius: 17, overflow: 'hidden', alignItems: 'center', justifyContent: 'center' },
 });
