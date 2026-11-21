@@ -3,7 +3,7 @@ import { Pressable, StyleSheet, View } from 'react-native';
 import { useRouter } from 'expo-router';
 
 import { Text } from '@/components/KText';
-import { BrutalBox } from '@/components/grammar/Brutal';
+import { BrutalBox, softTitleStyle } from '@/components/grammar/Brutal';
 import Colors from '@/constants/Colors';
 import type { Level } from '@/data/words';
 import type { PcicTarget } from '@/data/pcic';
@@ -50,7 +50,7 @@ function StripButton({
           disabled={disabled}
           boxStyle={styles.brutalButton}
         >
-          <Text variant="title" style={[styles.brutalButtonText, { color: highlight ? g.onFill : g.ink }]}>{label}</Text>
+          <Text variant="title" style={[styles.brutalButtonText, { color: highlight ? g.onFill : g.ink }, softTitleStyle(g)]}>{label}</Text>
         </BrutalBox>
       </View>
     );

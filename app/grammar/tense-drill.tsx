@@ -7,6 +7,7 @@ import Colors from '@/constants/Colors';
 import { dismissKeyboardOnTap, keyboardDismissOnDrag } from '@/lib/keyboardTap';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
+import { softTitleStyle, softCaseStyle } from '@/components/grammar/Brutal';
 import { brutalHeaderRowStyle } from '@/lib/brutalHeader';
 import { themedInputStyle, themedEdgeStyle, BackButton, ProgressBar, ActionButton, Badge } from '@/components/grammar/Themed';
 import { t } from '@/lib/i18n';
@@ -141,7 +142,7 @@ export default function TenseDrillScreen() {
   const header = (
     <View style={[styles.header, brutalHeaderRowStyle(g)]}>
       <BackButton testID="tensedrill-back" onPress={() => (phase === 'play' ? setPhase('setup') : router.back())} arrowStyle={[styles.back, { color: colors.text }]} />
-      <FitText variant="title" base={17} maxLines={2} reserve={(g.brutal ? 190 : 150) + FEEDBACK_CORNER_CLEAR} caps={g.brutal} style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]}>
+      <FitText variant="title" base={17} maxLines={2} reserve={(g.brutal ? 190 : 150) + FEEDBACK_CORNER_CLEAR} caps={g.brutal} style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle, softTitleStyle(g)]}>
         {d.title}
       </FitText>
       {phase === 'play' ? (
@@ -185,11 +186,11 @@ export default function TenseDrillScreen() {
       <View style={[styles.container, { backgroundColor: colors.background }]}>
         {header}
         <ScrollView contentContainerStyle={styles.setupBody} keyboardShouldPersistTaps="handled">
-          <Text style={[styles.setupLabel, { color: colors.tabIconDefault }]}>{d.levelLabel}</Text>
+          <Text style={[styles.setupLabel, { color: colors.tabIconDefault }, softCaseStyle(g)]}>{d.levelLabel}</Text>
           <View style={styles.chipRow}>
             {DE_DRILL_LEVELS.map((lvl) => chip(`tensedrill-level-${lvl}`, lvl, level === lvl, () => chooseLevel(lvl)))}
           </View>
-          <Text style={[styles.setupLabel, { color: colors.tabIconDefault }]}>{d.tenseLabel}</Text>
+          <Text style={[styles.setupLabel, { color: colors.tabIconDefault }, softCaseStyle(g)]}>{d.tenseLabel}</Text>
           <View style={styles.chipColumn}>
             {chip('tensedrill-tense-mixed', d.mixed, tense === 'mixed', () => setTense('mixed'))}
             {tensesAtLevel(level).map((tn) => chip(`tensedrill-tense-${tn}`, d.tenseNames[tn], tense === tn, () => setTense(tn), d.tenseHints[tn]))}

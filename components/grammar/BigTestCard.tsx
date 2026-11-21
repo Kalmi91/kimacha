@@ -2,7 +2,7 @@ import { Pressable, StyleSheet, View } from 'react-native';
 import { useRouter } from 'expo-router';
 
 import { Text } from '@/components/KText';
-import { BrutalBox } from '@/components/grammar/Brutal';
+import { BrutalBox, softEdgeStyle } from '@/components/grammar/Brutal';
 import Colors from '@/constants/Colors';
 import { fontSize, fontWeight, radius, spacing, tapTarget } from '@/constants/Theme';
 import { useGrammarColors } from '@/lib/grammarColors';
@@ -39,7 +39,7 @@ export default function BigTestCard({ learnedLang, running, level, ready }: { le
         testID="big-test-start"
         accessibilityRole="button"
         accessibilityLabel={label}
-        style={[styles.button, g.brutal && styles.brutalButton, { backgroundColor: colors.tint }]}
+        style={[styles.button, g.brutal && styles.brutalButton, softEdgeStyle(g), { backgroundColor: colors.tint }]}
         // until the saved state is loaded the tap must not drop a run in progress: without ?new=1 the screen resumes the run,
         // shows the stored result or starts a new run by itself
         onPress={() => router.push((running || !ready ? '/grammar/big-test' : '/grammar/big-test?new=1') as never)}

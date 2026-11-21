@@ -12,6 +12,7 @@ import lightWeight from 'expo-symbols/androidWeights/light';
 import { useTheme } from '@/lib/ThemeContext';
 import { gradientStyle } from '@/lib/gradientStyle';
 import { useGrammarColors } from '@/lib/grammarColors';
+import { softTitleStyle } from '@/components/grammar/Brutal';
 import { useSkin } from '@/lib/useSkin';
 import { brutalHeaderOptions } from '@/lib/brutalHeader';
 import { useSkinDecor } from '@/components/skins';
@@ -39,6 +40,7 @@ function TabHeaderTitle({ onLayout, ...props }: ComponentProps<typeof HeaderTitl
           g.brutal
             ? { color: g.ink, fontSize: 17, fontWeight: '500', textTransform: 'uppercase' }
             : { color: Colors[theme].text, fontSize: 17, fontWeight: '600' },
+          softTitleStyle(g),
           beta && styles.headerTitle,
         ]}
       >

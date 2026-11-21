@@ -234,7 +234,7 @@ export function Sticker({
         style,
       ]}
     >
-      <Text style={[styles.stickerText, { color: textOnFill(g, fill) }, textStyle]}>{label}</Text>
+      <Text style={[styles.stickerText, { color: textOnFill(g, fill) }, softTitleStyle(g), textStyle]}>{label}</Text>
     </View>
   );
 }
@@ -298,7 +298,7 @@ export function BrutalButton({
   // zen: the text of the main (the a-filled, "Knew it") button underlined; retro95: the first
   // letter of the button underlined.
   const underlineAll = variant === 'text' && fill === 'a';
-  const softLabel: TextStyle | null = g.soft ? { textTransform: 'none', fontWeight: '600' } : null;
+  const softLabel = softTitleStyle(g);
   const text =
     variant === 'bevel' && label ? (
       <>
@@ -334,6 +334,21 @@ export function BrutalButton({
       </Text>
     </BrutalBox>
   );
+}
+
+// Night skin (g.soft): titles / button labels drop the uppercase + weight 500 of the brutalist look.
+export function softTitleStyle(g: GrammarColors): TextStyle | null {
+  return g.soft ? { textTransform: 'none', fontWeight: '600' } : null;
+}
+
+// Night skin: small labels / section titles drop the uppercase and the letter spacing (weight stays).
+export function softCaseStyle(g: GrammarColors): TextStyle | null {
+  return g.soft ? { textTransform: 'none', letterSpacing: 0 } : null;
+}
+
+// Night skin: a rounded 1 px edge instead of the square 2-2.5 px ink edge.
+export function softEdgeStyle(g: GrammarColors, radius?: number): ViewStyle | null {
+  return g.soft ? { borderRadius: radius ?? g.soft.radius, borderWidth: 1, borderColor: g.border } : null;
 }
 
 // input field on the brutalist palette: 2.5 px ink border, corner 0, paper background.

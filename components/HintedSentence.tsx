@@ -4,6 +4,7 @@ import { StyleSheet, View, type StyleProp, type TextStyle } from 'react-native';
 import { Text } from '@/components/KText';
 import Colors from '@/constants/Colors';
 import { useGrammarColors } from '@/lib/grammarColors';
+import { softEdgeStyle } from '@/components/grammar/Brutal';
 import type { HintPiece, SentenceHint } from '@/lib/sentenceHint';
 import { t } from '@/lib/i18n';
 import { useTheme } from '@/lib/ThemeContext';
@@ -55,7 +56,7 @@ export default function HintedSentence({ text, pieces, style, onHint }: Props) {
       {open && (
         <View
           testID="sentence-hint-bubble"
-          style={[styles.bubble, { backgroundColor: colors.card, borderColor: g.brutal ? g.ink : colors.tabIconDefault }, g.brutal && styles.brutalBubble]}
+          style={[styles.bubble, { backgroundColor: colors.card, borderColor: g.brutal ? g.ink : colors.tabIconDefault }, g.brutal && styles.brutalBubble, softEdgeStyle(g)]}
         >
           <Text style={[styles.bubbleText, { color: colors.text }]}>{open.es}</Text>
           <Text style={[styles.bubbleMark, { color: colors.tabIconDefault }]}>{s.sentenceTab.hintUsed}</Text>

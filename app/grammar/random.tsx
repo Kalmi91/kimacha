@@ -44,7 +44,7 @@ import {
   type TopicEvidence,
 } from '@/lib/grammar/randomRound';
 import { advance, isResultPause, makeCtx, phaseLabel, questionsOf, runMisses, topicKindCount, type RoundData } from '@/lib/grammar/randomRoundView';
-import { Card } from '@/components/grammar/Brutal';
+import { Card, softCaseStyle, softEdgeStyle } from '@/components/grammar/Brutal';
 import RandomOtherWrong from '@/components/grammar/RandomOtherWrong';
 import GrammarResult from '@/components/grammar/GrammarResult';
 import { ProgressBar, themedEdgeStyle } from '@/components/grammar/Themed';
@@ -332,7 +332,7 @@ export default function RandomRoundScreen() {
                 <Text style={[styles.missedLabel, { color: colors.textMuted, textAlign: 'center' }]}>{t().exam.correctAnswer}</Text>
                 <View
                   testID={ok ? 'random-feedback-green' : undefined}
-                  style={ok ? [styles.greenMark, { backgroundColor: colors.successFill, borderColor: g.ink }] : undefined}
+                  style={ok ? [styles.greenMark, { backgroundColor: colors.successFill, borderColor: g.ink }, softEdgeStyle(g)] : undefined}
                 >
                   <Text
                     testID="random-feedback-answer"
@@ -386,7 +386,7 @@ export default function RandomRoundScreen() {
         </Card>
         {hasWeak ? (
           <View testID="random-weak-list" style={styles.list}>
-            <Text style={[styles.sectionTitle, { color: colors.textMuted }]}>{s.weakTitle}</Text>
+            <Text style={[styles.sectionTitle, { color: colors.textMuted }, softCaseStyle(g)]}>{s.weakTitle}</Text>
             {run.weak.map((id) => {
               const asked = checkSteps.filter((st) => st.topicId === id);
               return lessonRow(
@@ -450,7 +450,7 @@ export default function RandomRoundScreen() {
         </Card>
         {run.mode === 'mixed' ? (
           <View testID="random-weak-list" style={styles.list}>
-            <Text style={[styles.sectionTitle, { color: colors.textMuted }]}>{s.weakTitle}</Text>
+            <Text style={[styles.sectionTitle, { color: colors.textMuted }, softCaseStyle(g)]}>{s.weakTitle}</Text>
             {run.weak.map((id) =>
               lessonRow(
                 id,

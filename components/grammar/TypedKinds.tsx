@@ -3,7 +3,7 @@ import { Keyboard, StyleSheet, TextInput, View } from 'react-native';
 import { Text } from '@/components/KText';
 
 import AnswerCompare from '@/components/grammar/AnswerCompare';
-import { BrutalBox, inkButtonText, resultFill, resultInk } from '@/components/grammar/Brutal';
+import { BrutalBox, inkButtonText, resultFill, resultInk, softCaseStyle } from '@/components/grammar/Brutal';
 import MistypedButton, { mistypedDock } from '@/components/grammar/MistypedButton';
 import { tapTarget } from '@/constants/Theme';
 import { useDockedAction } from '@/components/learn/DockSlot';
@@ -23,7 +23,7 @@ function ItemHead({ title }: { title: string }) {
   const g = useGrammarColors();
   return (
     <View style={styles.head}>
-      <Text style={[styles.headText, { color: g.mu }]}>{title}</Text>
+      <Text style={[styles.headText, { color: g.mu }, softCaseStyle(g)]}>{title}</Text>
     </View>
   );
 }
@@ -137,13 +137,13 @@ function TypedItem({
               </BrutalBox>
               {docked ? null : (
                 <BrutalBox testID="grammar-next" fill="ink" boxStyle={styles.next} onPress={() => onDone(result.correct, undefined, typed)}>
-                  <Text style={[styles.nextText, { color: inkButtonText(g) }]}>{s.grammar.nextArrow}</Text>
+                  <Text style={[styles.nextText, { color: inkButtonText(g) }, softCaseStyle(g)]}>{s.grammar.nextArrow}</Text>
                 </BrutalBox>
               )}
             </>
           ) : docked ? null : (
             <BrutalBox testID={`${prefix}-check`} fill="ink" boxStyle={styles.next} onPress={check}>
-              <Text style={[styles.nextText, { color: inkButtonText(g) }]}>{s.grammar.check}</Text>
+              <Text style={[styles.nextText, { color: inkButtonText(g) }, softCaseStyle(g)]}>{s.grammar.check}</Text>
             </BrutalBox>
           )}
           {!strictAccents && !result ? (
@@ -259,13 +259,13 @@ export function ClozeDrillItem({ item, learnedLang, contentLang, strictAccents, 
           </BrutalBox>
           {docked ? null : (
             <BrutalBox testID="grammar-next" fill="ink" boxStyle={styles.next} onPress={() => onDone(allRight, undefined, filledCloze(item.text, typed))}>
-              <Text style={[styles.nextText, { color: inkButtonText(g) }]}>{s.grammar.nextArrow}</Text>
+              <Text style={[styles.nextText, { color: inkButtonText(g) }, softCaseStyle(g)]}>{s.grammar.nextArrow}</Text>
             </BrutalBox>
           )}
         </>
       ) : docked ? null : (
         <BrutalBox testID="cloze-check" fill="ink" boxStyle={styles.next} onPress={check}>
-          <Text style={[styles.nextText, { color: inkButtonText(g) }]}>{s.grammar.check}</Text>
+          <Text style={[styles.nextText, { color: inkButtonText(g) }, softCaseStyle(g)]}>{s.grammar.check}</Text>
         </BrutalBox>
       )}
       {!strictAccents && !result ? (

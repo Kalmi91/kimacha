@@ -1,7 +1,7 @@
 import { Pressable, View, type StyleProp, type TextStyle, type ViewProps, type ViewStyle } from 'react-native';
 import { Text, type KTextProps } from '@/components/KText';
 
-import { BrutalBackButton, BrutalButton, ContinuousBar, SegmentBar, Sticker, brutalInputStyle, segmentsFilled, type BrutalFill } from '@/components/grammar/Brutal';
+import { BrutalBackButton, BrutalButton, ContinuousBar, SegmentBar, Sticker, brutalInputStyle, segmentsFilled, softTitleStyle, type BrutalFill } from '@/components/grammar/Brutal';
 import { useGrammarColors, type GrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
 
@@ -14,7 +14,7 @@ const TITLE_BRUTAL: TextStyle = { textTransform: 'uppercase', fontWeight: '500' 
 // A title / heading: uppercase, weight 500 on the brutalist palette, the caller's style otherwise.
 export function TitleText({ style, ...rest }: KTextProps) {
   const g = useGrammarColors();
-  return <Text {...rest} style={[style, g.brutal && TITLE_BRUTAL]} />;
+  return <Text {...rest} style={[style, g.brutal && TITLE_BRUTAL, softTitleStyle(g)]} />;
 }
 
 // The input field style: the brutalist field (ink border, corner 0, paper), nothing on the classic palette.

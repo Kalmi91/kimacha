@@ -5,7 +5,7 @@ import { router } from 'expo-router';
 
 import Colors from '@/constants/Colors';
 import { useGrammarColors } from '@/lib/grammarColors';
-import { BrutalBox, textOnFill } from '@/components/grammar/Brutal';
+import { BrutalBox, textOnFill, softTitleStyle } from '@/components/grammar/Brutal';
 import { t } from '@/lib/i18n';
 import { getDb } from '@/lib/database';
 import { useLoadOnMount } from '@/lib/useLoadOnMount';
@@ -56,7 +56,7 @@ export default function MistakesEntry({ colors }: { colors: ColorScheme }) {
   if (g.brutal) {
     return (
       <BrutalBox testID="mistakes-entry" fill="a" style={styles.brutalWrap} boxStyle={styles.brutalRow} onPress={() => router.push('/mistakes' as never)}>
-        <Text style={[styles.brutalLabel, { color: textOnFill(g, 'a') }]}>{t().mistakes.entry(dueCount)}</Text>
+        <Text style={[styles.brutalLabel, { color: textOnFill(g, 'a') }, softTitleStyle(g)]}>{t().mistakes.entry(dueCount)}</Text>
       </BrutalBox>
     );
   }

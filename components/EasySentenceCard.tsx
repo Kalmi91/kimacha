@@ -7,7 +7,7 @@ import Colors from '@/constants/Colors';
 import { ON_FILL } from '@/constants/GrammarPalettes';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
-import { BrutalBox, Card } from '@/components/grammar/Brutal';
+import { BrutalBox, Card, softEdgeStyle } from '@/components/grammar/Brutal';
 import { ActionButton } from '@/components/grammar/Themed';
 import ResultBadge from '@/components/ResultBadge';
 import SentenceGradeRow from '@/components/learn/SentenceGradeRow';
@@ -172,7 +172,7 @@ export default function EasySentenceCard({ sourceSentence, targetWords, acceptWo
       <HintedSentence text={sourceSentence} pieces={sourceHints} onHint={onSourceHint} style={[styles.sourceText, { color: colors.text }]} />
       {speakOnPress && <SpeakButton testID="sentence-speak" onPress={speakShown} style={styles.speakBtn} iconStyle={styles.speakIcon} brutalStyle={styles.speakBrutal} />}
 
-      <View style={[styles.placedArea, { borderColor: result === 'correct' ? colors.successFill : result === 'wrong' ? colors.danger : colors.tabIconDefault, borderStyle: result === 'correct' ? 'solid' : 'dashed' }, g.brutal && styles.brutalPlaced]}>
+      <View style={[styles.placedArea, { borderColor: result === 'correct' ? colors.successFill : result === 'wrong' ? colors.danger : colors.tabIconDefault, borderStyle: result === 'correct' ? 'solid' : 'dashed' }, g.brutal && styles.brutalPlaced, softEdgeStyle(g, 12)]}>
         {placed.length === 0 ? (
           <Text style={[styles.placeholder, { color: colors.tabIconDefault }]}>...</Text>
         ) : (
@@ -208,7 +208,7 @@ export default function EasySentenceCard({ sourceSentence, targetWords, acceptWo
         {bank.map((w, idx) =>
           usedSet.has(idx) ? (
             // Same-size dashed slot keeps the layout fixed while the word is in use.
-            <View key={`slot-${idx}`} style={[styles.wordChip, styles.emptySlot, { borderColor: colors.tabIconDefault }, g.brutal && styles.brutalSlot]}>
+            <View key={`slot-${idx}`} style={[styles.wordChip, styles.emptySlot, { borderColor: colors.tabIconDefault }, g.brutal && styles.brutalSlot, softEdgeStyle(g, 10)]}>
               <Text style={[styles.chipText, styles.hiddenText]}>{w}</Text>
             </View>
           ) : (

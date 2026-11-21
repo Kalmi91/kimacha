@@ -13,7 +13,7 @@ import { findWholeWord } from '@/lib/grammar/whyTarget';
 import { optionHint } from '@/lib/grammar/optionHints';
 import { hashString, shuffleOptions } from '@/lib/shuffle';
 import { useDockedAction } from '@/components/learn/DockSlot';
-import { BrutalBox, resultInk } from '@/components/grammar/Brutal';
+import { BrutalBox, resultInk, softTitleStyle } from '@/components/grammar/Brutal';
 import AnswerCompare from '@/components/grammar/AnswerCompare';
 import { charDiff } from '@/lib/charDiff';
 import MistypedButton, { mistypedDock } from '@/components/grammar/MistypedButton';
@@ -88,12 +88,12 @@ export function WhyDrillItem({
             <Text style={[styles.whyTranslation, { color: g.mu }]}>{item.tr[contentLang] ?? item.tr.en}</Text>
           ) : (
             <Pressable testID="why-show-translation" onPress={() => setShowTr(true)} style={styles.whyTrButton}>
-              <Text style={[styles.whyTrButtonText, styles.brutalUnderline, { color: g.ink }]}>{s.grammar.showTranslation}</Text>
+              <Text style={[styles.whyTrButtonText, styles.brutalUnderline, { color: g.ink }, softTitleStyle(g)]}>{s.grammar.showTranslation}</Text>
             </Pressable>
           )}
         </BrutalBox>
         {item.target ? (
-          <Text style={[styles.brutalQuestion, { color: g.ink }]}>{s.games.grammarChoice.whyQuestion(item.target)}</Text>
+          <Text style={[styles.brutalQuestion, { color: g.ink }, softTitleStyle(g)]}>{s.games.grammarChoice.whyQuestion(item.target)}</Text>
         ) : null}
 
         <View style={styles.brutalWhyOptions}>
@@ -313,7 +313,7 @@ export function TransformDrillItem({
           ) : null}
         </BrutalBox>
 
-        <Text style={[styles.brutalQuestion, { color: g.ink }]}>{s.grammar.rewriteTo(tenseName(item.tense.to))}</Text>
+        <Text style={[styles.brutalQuestion, { color: g.ink }, softTitleStyle(g)]}>{s.grammar.rewriteTo(tenseName(item.tense.to))}</Text>
         <BrutalBox dashed={result === 'bad'} style={result === 'bad' ? styles.brutalDim : undefined} boxStyle={styles.brutalInputBox}>
           <TextInput
             ref={inputRef}

@@ -4,7 +4,7 @@ import { Text } from '@/components/KText';
 import Colors from '@/constants/Colors';
 import { t } from '@/lib/i18n';
 import { useGrammarColors } from '@/lib/grammarColors';
-import { BrutalBox, SegmentBar, segmentsFilled } from '@/components/grammar/Brutal';
+import { BrutalBox, SegmentBar, segmentsFilled, softTitleStyle } from '@/components/grammar/Brutal';
 import { ON_FILL } from '@/constants/GrammarPalettes';
 import type { PcicLevel } from '@/data/pcic';
 
@@ -43,7 +43,7 @@ export default function LevelRow({ level, label, introduced, total, active, done
         onPress={onPress}
       >
         <View style={styles.topLine}>
-          <Text style={[styles.label, { color: ink, fontWeight: '500', textTransform: 'uppercase' }]}>{`${level} · ${label}`}</Text>
+          <Text style={[styles.label, { color: ink, fontWeight: '500', textTransform: 'uppercase' }, softTitleStyle(g)]}>{`${level} · ${label}`}</Text>
           {(active || done) && <Text testID={done ? `level-row-done-${level}` : undefined} style={[styles.check, done && styles.doneCheck, { color: ink }]}>✓</Text>}
         </View>
         <SegmentBar filled={segmentsFilled(pct, 8)} segments={8} style={styles.brutalBar} />

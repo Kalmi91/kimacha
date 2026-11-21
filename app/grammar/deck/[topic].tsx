@@ -9,6 +9,7 @@ import Colors from '@/constants/Colors';
 import { dismissKeyboardOnTap, keyboardDismissOnDrag } from '@/lib/keyboardTap';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
+import { softTitleStyle } from '@/components/grammar/Brutal';
 import { brutalHeaderRowStyle } from '@/lib/brutalHeader';
 import { themedInputStyle, BackButton, ProgressBar, ActionButton, Badge } from '@/components/grammar/Themed';
 import { t } from '@/lib/i18n';
@@ -231,7 +232,7 @@ export default function TableDeckScreen() {
   const header = (
     <View style={[styles.header, brutalHeaderRowStyle(g)]}>
       <BackButton testID="tabledeck-back" onPress={() => router.back()} arrowStyle={[styles.back, { color: colors.text }]} />
-      <FitText variant="title" base={17} maxLines={2} reserve={(g.brutal ? 190 : 150) + FEEDBACK_CORNER_CLEAR} caps={g.brutal} style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]}>
+      <FitText variant="title" base={17} maxLines={2} reserve={(g.brutal ? 190 : 150) + FEEDBACK_CORNER_CLEAR} caps={g.brutal} style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle, softTitleStyle(g)]}>
         {lessonTitle}
       </FitText>
       <Badge

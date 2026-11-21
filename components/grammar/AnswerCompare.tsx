@@ -4,6 +4,7 @@ import { Text } from '@/components/KText';
 import { charDiff } from '@/lib/charDiff';
 import { t } from '@/lib/i18n';
 import type { GrammarColors } from '@/lib/grammarColors';
+import { softCaseStyle } from '@/components/grammar/Brutal';
 
 // on a wrong answer the learner's own answer and the correct one appear one under the other, with
 // the difference highlighted in both rows: in the own row the wrong letters on an inverted (dark)
@@ -36,7 +37,7 @@ export default function AnswerCompare({
 
   return (
     <View style={styles.wrap}>
-      <Text style={[styles.label, { color: muted }]}>{s.grammar.yourAnswer}</Text>
+      <Text style={[styles.label, { color: muted }, softCaseStyle(g)]}>{s.grammar.yourAnswer}</Text>
       <Text testID="answer-compare-typed" style={[styles.line, { color: base }]}>
         {typedChars.length === 0 ? ', ' : null}
         {typedChars.map((d, i) => (
@@ -48,7 +49,7 @@ export default function AnswerCompare({
           </Text>
         ))}
       </Text>
-      <Text style={[styles.label, { color: muted }]}>{s.grammar.correctAnswer}</Text>
+      <Text style={[styles.label, { color: muted }, softCaseStyle(g)]}>{s.grammar.correctAnswer}</Text>
       <Text testID="answer-compare-correct" style={[styles.line, { color: base }]}>
         {correctChars.map((d, i) => (
           <Text

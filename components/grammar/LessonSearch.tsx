@@ -4,6 +4,7 @@ import { Text } from '@/components/KText';
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
+import { softEdgeStyle } from '@/components/grammar/Brutal';
 import { t } from '@/lib/i18n';
 
 // The search field of the Grammar tab. It sits above the scrolling list (not inside it), so it stays
@@ -22,6 +23,7 @@ export default function LessonSearch({ value, onChange }: { value: string; onCha
         g.brutal
           ? { backgroundColor: g.bg, borderColor: g.ink, borderWidth: 2 }
           : { backgroundColor: colors.card, borderColor: colors.tabIconDefault, borderWidth: 1 },
+        softEdgeStyle(g),
       ]}
     >
       <TextInput

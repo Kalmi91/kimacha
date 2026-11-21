@@ -31,7 +31,7 @@ import { useGrammarRoundProgress } from '@/lib/grammar/useGrammarRoundProgress';
 import { buildGlossMap } from '@/lib/games/gloss';
 import { hashString } from '@/lib/shuffle';
 import GlossText from '@/components/games/GlossText';
-import { BrutalBox, SegmentBar, Sticker, inkButtonText, resultFill, resultInk, segmentsFilled, textOnFill, mutedColor, themedDockPad } from '@/components/grammar/Brutal';
+import { BrutalBox, SegmentBar, Sticker, inkButtonText, resultFill, resultInk, segmentsFilled, textOnFill, mutedColor, themedDockPad, softTitleStyle, softCaseStyle } from '@/components/grammar/Brutal';
 import ResultBadge from '@/components/ResultBadge';
 import { NewKindDrillItem } from '@/components/grammar/NewKinds';
 import { useGrammarColors, type GrammarColors } from '@/lib/grammarColors';
@@ -267,7 +267,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
         />
         {combo >= 2 ? <Sticker testID="grammar-combo" label={s.grammar.comboLabel(combo)} fill="b" rotate={5} /> : null}
       </View>
-      <Text testID="grammar-drill-progress" style={[styles.brutalProgress, { color: g.mu }]}>
+      <Text testID="grammar-drill-progress" style={[styles.brutalProgress, { color: g.mu }, softTitleStyle(g)]}>
         {progressText}
       </Text>
     </View>
@@ -384,7 +384,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
         {badgeTense ? <TenseBadge tense={badgeTense} colors={colors} /> : null}
 
         {marking ? (
-          <Text style={[styles.markPrompt, { color: g.ink, textTransform: 'uppercase' }]}>
+          <Text style={[styles.markPrompt, { color: g.ink, textTransform: 'uppercase' }, softCaseStyle(g)]}>
             {s.games.grammarChoice.markPrompt(
               s.games.grammarChoice.wordClass[(current.item as GrammarMarkItem).target] ??
                 (current.item as GrammarMarkItem).target
@@ -481,7 +481,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
         ) : null}
         {answered ? (
           <BrutalBox testID="grammar-next" fill="ink" boxStyle={styles.brutalNext} onPress={next}>
-            <Text style={[styles.brutalNextText, { color: inkButtonText(g) }]}>{s.grammar.nextArrow}</Text>
+            <Text style={[styles.brutalNextText, { color: inkButtonText(g) }, softTitleStyle(g)]}>{s.grammar.nextArrow}</Text>
           </BrutalBox>
         ) : null}
         {answered ? footer : null}

@@ -20,7 +20,7 @@ const mockMakePlayer = jest.fn((_lang: string) => mockPlayer);
 jest.mock('@/lib/listeningPlayer', () => ({ makeListeningPlayer: (lang: string) => mockMakePlayer(lang) }));
 
 import { act, fireEvent, render } from '@testing-library/react-native';
-import { BackHandler } from 'react-native';
+import { BackHandler, ScrollView, StyleSheet } from 'react-native';
 
 import SpeechTab from '@/components/speech/SpeechTab';
 import { getDb } from '@/lib/database';
@@ -128,6 +128,13 @@ describe('Speak tab: greetings listening', () => {
     await press(view, 'speech-back');
     expect(view.getByTestId('speech-listen-card')).toBeTruthy();
     expect(mockPlayer.pause).toHaveBeenCalled();
+    view.unmount();
+  });
+
+  it('no empty band above the tab bar: without a dock the scroller keeps no room for one', async () => {
+    const view = await open();
+    const scroller = view.getByTestId('speech-listen-screen').findAllByType(ScrollView)[0];
+    expect(StyleSheet.flatten(scroller.props.style).marginBottom).toBe(0);
     view.unmount();
   });
 

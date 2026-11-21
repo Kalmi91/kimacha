@@ -47,7 +47,7 @@ import { LevelButtons, LevelTestRows, OverallBar } from '@/components/grammar/Gr
 import LessonSearch from '@/components/grammar/LessonSearch';
 import { styles } from '@/components/grammar/courseStyles';
 import { filterTopicsBySearch, normalizeSearch } from '@/lib/grammar/lessonSearch';
-import { BrutalBox, SegmentBar, Sticker, segmentsFilled } from '@/components/grammar/Brutal';
+import { BrutalBox, SegmentBar, Sticker, segmentsFilled, softCaseStyle, softTitleStyle } from '@/components/grammar/Brutal';
 import { ExamRoundButton, LevelTestButton } from '@/components/grammar/ExamStrip';
 import { examRoundAvailable } from '@/lib/grammar/examRound';
 import LevelStanding from '@/components/grammar/LevelStanding';
@@ -243,7 +243,7 @@ export default function GrammarSyllabusScreen() {
         <View style={styles.brutalHeaderWrap}>
           <SkinHeader>
             <View style={styles.brutalHeader}>
-              <Text variant="title" style={[styles.brutalTitle, narrow && styles.brutalTitleNarrow, { color: g.ink }]}>{s.tabs.grammar}</Text>
+              <Text variant="title" style={[styles.brutalTitle, narrow && styles.brutalTitleNarrow, { color: g.ink }, softTitleStyle(g)]}>{s.tabs.grammar}</Text>
               <View style={styles.brutalHeaderRight}>
                 <ScreenFeedback placement="inline" level={level} languagePair={`${contentLang}→${learnedLang}`} currentCard="grammar-syllabus" />
               </View>
@@ -267,7 +267,7 @@ export default function GrammarSyllabusScreen() {
             onPress={() => router.push('/grammar/random' as never)}
             boxStyle={styles.brutalTopic}
           >
-            <Text variant="title" style={[styles.brutalTopicTitle, { color: g.onFill }]}>{randomTitle}</Text>
+            <Text variant="title" style={[styles.brutalTopicTitle, { color: g.onFill }, softTitleStyle(g)]}>{randomTitle}</Text>
             <Text style={[styles.brutalBlurb, { color: g.onFill }]}>{randomScore}</Text>
           </BrutalBox>
 
@@ -278,7 +278,7 @@ export default function GrammarSyllabusScreen() {
               onPress={() => router.push('/grammar/tense-drill' as never)}
               boxStyle={styles.brutalTopic}
             >
-              <Text variant="title" style={[styles.brutalTopicTitle, { color: g.ink }]}>{`🔤 ${s.tenseDrill.start}`}</Text>
+              <Text variant="title" style={[styles.brutalTopicTitle, { color: g.ink }, softTitleStyle(g)]}>{`🔤 ${s.tenseDrill.start}`}</Text>
               <Text style={[styles.brutalBlurb, { color: g.ink }]}>{s.tenseDrill.blurb}</Text>
             </BrutalBox>
           ) : null}
@@ -298,7 +298,7 @@ export default function GrammarSyllabusScreen() {
           {groups.map((unit) => (
             <View key={unit.id} style={styles.brutalUnit}>
               {unit.name ? (
-                <Text style={[styles.brutalUnitName, { color: g.mu }]}>
+                <Text style={[styles.brutalUnitName, { color: g.mu }, softTitleStyle(g)]}>
                   {unit.name}
                 </Text>
               ) : null}
@@ -339,7 +339,7 @@ export default function GrammarSyllabusScreen() {
                     boxStyle={styles.brutalTopic}
                   >
                     <View style={styles.brutalTopicTop}>
-                      <Text variant="title" style={[styles.brutalTopicTitle, { color: textColor }]}>
+                      <Text variant="title" style={[styles.brutalTopicTitle, { color: textColor }, softTitleStyle(g)]}>
                         {`${topic.title[contentLang] ?? topic.title.en}${levelTag(topic)}`}
                       </Text>
                     </View>
@@ -366,7 +366,7 @@ export default function GrammarSyllabusScreen() {
                     {inProgress && badgePct !== null ? (
                       <SegmentBar segments={6} filled={segmentsFilled(badgePct, 6)} style={styles.brutalBar} />
                     ) : null}
-                    <Text testID={`grammar-percent-${topic.id}`} style={[styles.brutalBadge, { color: textColor }]}>
+                    <Text testID={`grammar-percent-${topic.id}`} style={[styles.brutalBadge, { color: textColor }, softTitleStyle(g)]}>
                       {badge}
                     </Text>
                   </BrutalBox>
@@ -380,8 +380,8 @@ export default function GrammarSyllabusScreen() {
           {!searching ? (
           <>
           <BrutalBox style={styles.brutalGoal} boxStyle={styles.brutalTopic}>
-            <Text style={[styles.brutalUnitName, { color: g.ink }]}>{s.grammar.weeklyGoalTitle}</Text>
-            <Text style={[styles.brutalBadge, { color: g.ink }]}>
+            <Text style={[styles.brutalUnitName, { color: g.ink }, softTitleStyle(g)]}>{s.grammar.weeklyGoalTitle}</Text>
+            <Text style={[styles.brutalBadge, { color: g.ink }, softTitleStyle(g)]}>
               {s.grammar.weeklyGoalValue(
                 String(Math.round((weekMinutes / 60) * 10) / 10),
                 String(Math.round(weeklyGoal / 60))
@@ -483,7 +483,7 @@ export default function GrammarSyllabusScreen() {
                 ? groups.map((unit) => (
                     <View key={unit.id} style={styles.unitBlock}>
                       {unit.name ? (
-                        <Text style={[styles.unitName, { color: colors.tint }]}>
+                        <Text style={[styles.unitName, { color: colors.tint }, softCaseStyle(g)]}>
                           {unit.name}
                         </Text>
                       ) : null}
@@ -542,11 +542,11 @@ export default function GrammarSyllabusScreen() {
                                   {`${topic.title[contentLang] ?? topic.title.en}${levelTag(topic)}`}
                                 </Text>
                                 {getGrammarTier(topic.id) === 'core-plus' ? (
-                                  <Text testID={`grammar-core-plus-${topic.id}`} style={tagStyles.corePlusTag}>
+                                  <Text testID={`grammar-core-plus-${topic.id}`} style={[tagStyles.corePlusTag, softCaseStyle(g)]}>
                                     {s.grammar.corePlusTag}
                                   </Text>
                                 ) : getGrammarTier(topic.id) === 'core' ? (
-                                  <Text testID={`grammar-core-${topic.id}`} style={[tagStyles.coreTag, { color: legibleOn('#7C3AED', colors.card) }]}>
+                                  <Text testID={`grammar-core-${topic.id}`} style={[tagStyles.coreTag, { color: legibleOn('#7C3AED', colors.card) }, softCaseStyle(g)]}>
                                     {s.grammar.coreTag}
                                   </Text>
                                 ) : getGrammarTier(topic.id) === 'exam' ? (

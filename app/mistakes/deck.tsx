@@ -29,7 +29,7 @@ import { cardsForBatches, pickMistakeSession, suggestedMistakeGrade, type Mistak
 import CardShell from '@/components/learn/CardShell';
 import DockedAction, { DOCK_RESERVE } from '@/components/learn/DockedAction';
 import { useDockLift } from '@/components/learn/useDockLift';
-import { BrutalBox } from '@/components/grammar/Brutal';
+import { BrutalBox, softTitleStyle } from '@/components/grammar/Brutal';
 import { brutalHeaderRowStyle } from '@/lib/brutalHeader';
 import { useDiffStyles } from '@/lib/useDiffStyles';
 import ScreenFeedback from '@/lib/screenFeedback';
@@ -235,7 +235,7 @@ export default function MistakesDeckScreen() {
                       boxStyle={styles.brutalGradeBox}
                       onPress={() => handleGrade(gr)}
                     >
-                      <Text style={[styles.gradeLabel, { color: gr === 'good' ? g.onA : g.onB, fontWeight: '500', textTransform: 'uppercase' }]}>{s.pcic[gr]}</Text>
+                      <Text style={[styles.gradeLabel, { color: gr === 'good' ? g.onA : g.onB, fontWeight: '500', textTransform: 'uppercase' }, softTitleStyle(g)]}>{s.pcic[gr]}</Text>
                     </BrutalBox>
                   );
                 }
