@@ -21,6 +21,7 @@ const flat = (id: string) => RN.StyleSheet.flatten(screen.getByTestId(id).props.
 const shadows = () =>
   screen
     .UNSAFE_getAllByType(View)
+    .filter((v) => !String(v.props.testID ?? '').endsWith('gradient'))
     .map((v) => RN.StyleSheet.flatten(v.props.style))
     .filter((st) => st?.position === 'absolute');
 
