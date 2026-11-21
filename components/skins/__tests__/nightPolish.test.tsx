@@ -119,7 +119,9 @@ describe('Night polish', () => {
   it('ResultBadge: Night correct is a pink-cyan gradient with radius 12, wrong keeps dashed; brutal is unchanged', async () => {
     const night = await renderWithSkin('night', <View><ResultBadge correct testID="ok" /><ResultBadge correct={false} testID="bad" /></View>);
     await waitFor(() => expect(flat('ok')).toMatchObject({ borderRadius: 12, borderWidth: 0 }));
-    expect(JSON.stringify(flat('ok'))).toContain('linear-gradient(90deg, #EC4899, #22D3EE)');
+    // Native gets the solid pink (the RN 0.85 native gradient crashed 4.2.11); the web keeps the gradient.
+    expect(flat('ok')).toMatchObject({ backgroundColor: '#EC4899' });
+    expect(JSON.stringify(flat('ok'))).not.toContain('experimental_');
     expect(StyleSheet.flatten(screen.getByText('Correct!').props.style).color).toBe('#FFFFFF');
     expect(StyleSheet.flatten(screen.getByText('✓').props.style).color).toBe('#FFFFFF');
     expect(flat('bad')).toMatchObject({ borderRadius: 12, borderStyle: 'dashed' });
@@ -134,7 +136,8 @@ describe('Night polish', () => {
   it('ContinuousBar: gradient on Night, none on brutal', async () => {
     const night = await renderWithSkin('night', <ContinuousBar testID="bar" fillTestID="fill" pct={40} />);
     await waitFor(() => expect(flat('fill')).toMatchObject({ width: '40%', borderRadius: 3 }));
-    expect(JSON.stringify(flat('fill'))).toContain('linear-gradient(90deg, #EC4899, #22D3EE)');
+    expect(flat('fill')).toMatchObject({ backgroundColor: '#EC4899' });
+    expect(JSON.stringify(flat('fill'))).not.toContain('experimental_');
     night.unmount();
     await renderWithSkin('brutal', <ContinuousBar testID="bar" fillTestID="fill" pct={40} />);
     await waitFor(() => expect(flat('fill').backgroundColor).toBe('#111111'));
