@@ -27,6 +27,7 @@ import {
   isComplete,
   itemComplete,
   newQuiz,
+  listenTitle,
   newRun,
   optionOrder,
   parseQuiz,
@@ -342,7 +343,7 @@ export default function SpeechListen({ item, onBack, onFinished }: Props) {
             pressStyle={styles.backPress}
             arrowStyle={[styles.backArrow, { color: colors.text }]}
           />
-          <Text style={[styles.heading, { color: colors.text }]}>{data.id === 'es-taxi' ? sx.taxiTitle : sx.greetTitle}</Text>
+          <Text style={[styles.heading, { color: colors.text }]}>{listenTitle(data.id, sx)}</Text>
         </View>
       }
     >

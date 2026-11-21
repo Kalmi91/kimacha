@@ -320,6 +320,8 @@ export default {
     greetTeaserEn: "Two friends talk about how people say 'how are you?' across the English-speaking world, from Ireland to meeting the King",
     taxiTitle: 'In the taxi: listening',
     taxiTeaser: 'Sofía arrives in Mexico City and chats with her taxi driver, don Ramón. Listen, then answer the questions.',
+    loTitle: 'The neuter lo: listening',
+    loTeaser: 'Marta tells Diego about her weekend in Oaxaca, then they look at all the ways they used «lo». Listen, then answer the questions.',
     quizTitle: 'Questions',
     quizInstruction: 'The answer is in the recording. Pick the right one.',
     quizResult: (right: number, total: number) => `${right} / ${total} correct`,

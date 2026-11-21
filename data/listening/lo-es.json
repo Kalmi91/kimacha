@@ -1,0 +1,21 @@
+{
+  "id": "es-lo",
+  "lang": "es",
+  "level": "B1",
+  "durationSec": 153,
+  "pairs": [],
+  "questions": [
+    { "id": "l1", "q": "¿Qué fue lo mejor del viaje de Marta?", "options": ["La comida", "El hotel", "El camión"], "answer": 0 },
+    { "id": "l2", "q": "¿Por qué no fue Marta en avión?", "options": ["Le da miedo volar", "Los boletos estaban carísimos", "No había vuelos"], "answer": 1 },
+    { "id": "l3", "q": "¿Qué fue lo que más le gustó a Marta, aparte de la comida?", "options": ["El mercado", "El mezcal", "Monte Albán"], "answer": 2 },
+    { "id": "l4", "q": "Según Marta, ¿qué es lo importante en Monte Albán?", "options": ["Llevar agua y sombrero", "Llegar muy temprano", "Ir con un guía"], "answer": 0 },
+    { "id": "l5", "q": "¿Por qué no fue Lucía a Oaxaca?", "options": ["Porque estaba enferma", "Por lo del trabajo", "Por lo de su mudanza"], "answer": 1 },
+    { "id": "l6", "q": "¿Qué es lo bueno del departamento nuevo de Lucía?", "options": ["Es muy grande", "Es barato", "Está cerca de su oficina"], "answer": 2 },
+    { "id": "l7", "q": "¿Qué le compró Marta a Diego?", "options": ["Una botella de mezcal", "Un alebrije", "Un sombrero"], "answer": 0 },
+    { "id": "l8", "q": "¿Qué fue lo más curioso del hotel?", "options": ["No tenía agua caliente", "No tenía televisión", "Estaba lejos del centro"], "answer": 1 },
+    { "id": "l9", "q": "Completa lo que dice Diego: «___ que necesito ahora es un café.»", "options": ["Qué", "Cuál", "Lo"], "answer": 2 },
+    { "id": "l10", "q": "Según Marta, ¿qué significa «lo bueno»?", "options": ["La parte buena", "Él es bueno", "Lo hace bien"], "answer": 0 },
+    { "id": "l11", "q": "Según Marta, ¿qué significa «lo que»?", "options": ["Porque", "La cosa que", "Él que"], "answer": 1 },
+    { "id": "l12", "q": "¿Por qué dice Marta «lo cansada» y Diego «lo cansado»?", "options": ["«Lo» cambia según la persona", "Diego no sabe la regla", "El adjetivo concuerda con la persona"], "answer": 2 }
+  ]
+}

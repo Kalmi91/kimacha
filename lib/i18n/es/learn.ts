@@ -293,6 +293,8 @@ const es: typeof en = {
     greetTeaserEn: "Dos amigos hablan de cómo se dice 'how are you?' en el mundo de habla inglesa, de Irlanda a un encuentro con el rey",
     taxiTitle: 'En el taxi: escuchar',
     taxiTeaser: 'Sofía llega a la Ciudad de México y platica con su taxista, don Ramón. Escucha y responde las preguntas.',
+    loTitle: 'El lo neutro: escuchar',
+    loTeaser: 'Marta le cuenta a Diego su fin de semana en Oaxaca y luego repasan todas las formas en que usaron «lo». Escucha y responde las preguntas.',
     quizTitle: 'Preguntas',
     quizInstruction: 'La respuesta está en la grabación. Elige la correcta.',
     quizResult: (right: number, total: number) => `${right} / ${total} correctas`,
