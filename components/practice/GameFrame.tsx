@@ -60,7 +60,10 @@ export default function GameFrame({ testID, target, currentCard, creditSeq = 0, 
   const { dockLift, kbHeight } = useDockLift();
   const [dockH, setDockH] = useState(DOCK_RESERVE);
   const [footerH, setFooterH] = useState(DOCK_RESERVE);
-  const insets = dockScrollInsets(footer ? footerH : dockH, dockLift, kbHeight > 0);
+  // Without a dock or a footer nothing sits at the bottom, so no room is kept for one there (the Speak tab's listening
+  // round showed a ~120 dp empty band above the tab bar: the dock reserve plus the navigation-bar inset).
+  const docked = Boolean(dock || footer);
+  const insets = dockScrollInsets(footer ? footerH : docked ? dockH : 0, docked || kbHeight > 0 ? dockLift : 0, kbHeight > 0);
   const scroll = useRef<ScrollView>(null);
   // A new dock action (e.g. Next after an answer) scrolls to the end, so the feedback under the options is not left
   // behind the dock (emulator 2026-10-22: "The opposite: …" half hidden under Next). So does a change of `scrollKey`.
