@@ -110,6 +110,13 @@ async function findNode(match, what, swipes = 0) {
   if (crashOf() || !appPid()) await alive(`looking for ${what}`);
   return cannotRun(`${what} not found on screen`);
 }
+// The learn card focuses its answer field, and the open keyboard hides the tab bar: BACK closes only the keyboard.
+async function hideKeyboard() {
+  if (/mInputShown=true/.test(adb(['shell', 'dumpsys', 'input_method']))) {
+    adb(['shell', 'input', 'keyevent', '4']);
+    await sleep(600);
+  }
+}
 const byId = (id) => (n) => n.id === id;
 const byLabel = (labels) => (n) => labels.includes(n.desc);
 
@@ -135,13 +142,16 @@ await sleep(5000);
 await alive('at start (with the theme the app had)');
 
 const visit = async (id) => {
+  await hideKeyboard();
   tap(await findNode(byLabel(SETTINGS), 'the Settings tab'));
   await sleep(800);
   tap(await findNode(byId('settings-theme-row'), 'settings-theme-row', 8));
   await sleep(1200);
   tap(await findNode(byId(`theme-tile-${id}`), `theme-tile-${id}`, 12));
   await sleep(800);
-  tap(await findNode(byId('themes-back'), 'themes-back'));
+  // The classic-look back button carries no testID (Ukiyo-e, Classic): there the system BACK leaves the screen.
+  const back = nodes().find(byId('themes-back'));
+  if (back) tap(back); else adb(['shell', 'input', 'keyevent', '4']);
   await alive(`theme ${id}, Settings tab`);
   tap(await findNode(byLabel(WORDS), 'the Words tab'));
   await alive(`theme ${id}, Words tab`);
