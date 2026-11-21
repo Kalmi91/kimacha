@@ -175,6 +175,7 @@ const de: typeof en = {
     doneBody: 'Du kannst jetzt aufhören oder weiterüben.',
     keepPractising: 'Weiterüben',
     formQuestionVerb: (verb: string, person: string) => `Wie lautet die Form von ${verb} für ${person}?`,
+    formQuestionTense: (tense: string, verb: string, person: string) => `${tense}: Wie lautet die Form von ${verb} für ${person}?`,
     formQuestionColumn: (asked: string, person: string, title: string) => `Was ist „${asked}” für ${person}? (${title})`,
     otherForm: (label: string) => `Das ist eine andere Form: ${label}.`,
     youChose: 'Du hast gewählt',

@@ -4,15 +4,15 @@
   "level": "A2",
   "focusTopic": "indefinido_10_verbos",
   "title": {
-    "en": "Preterite, the 10 most frequent verbs",
-    "es": "Pretérito perfecto simple, los 10 verbos más frecuentes"
+    "en": "Preterite, the 11 most frequent verbs",
+    "es": "Pretérito perfecto simple, los 11 verbos más frecuentes"
   },
   "body": [
     {
       "kind": "text",
       "text": {
-        "en": "These ten verbs are the backbone of spoken Spanish: they are the ones you reach for most when telling a finished, closed event in the past. The ten tables below show the full conjugation of five irregular verbs (estar, ir, tener, saber, poder) and five regular -ar verbs (mirar, pasar, esperar, necesitar, gustar).",
-        "es": "Estos diez verbos son la columna vertebral del español hablado: son los que más usas para contar un hecho terminado en el pasado. Las diez tablas siguientes muestran la conjugación completa de cinco verbos irregulares (estar, ir, tener, saber, poder) y cinco verbos regulares en -ar (mirar, pasar, esperar, necesitar, gustar)."
+        "en": "These eleven verbs are the backbone of spoken Spanish: they are the ones you reach for most when telling a finished, closed event in the past. The eleven tables below show the full conjugation of six irregular verbs (estar, ir, ser, tener, saber, poder) and five regular -ar verbs (mirar, pasar, esperar, necesitar, gustar). Ir and ser look the same in the preterite (fui, fuiste, fue, fuimos, fueron): the sentence tells you which one is meant.",
+        "es": "Estos once verbos son la columna vertebral del español hablado: son los que más usas para contar un hecho terminado en el pasado. Las once tablas siguientes muestran la conjugación completa de seis verbos irregulares (estar, ir, ser, tener, saber, poder) y cinco verbos regulares en -ar (mirar, pasar, esperar, necesitar, gustar). Ir y ser son iguales en el perfecto simple (fui, fuiste, fue, fuimos, fueron): la frase te dice cuál de los dos es."
       }
     },
     {
@@ -117,6 +117,58 @@
         ["we went"],
         ["you all went"],
         ["they went"]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "ind10-ser",
+      "title": {
+        "en": "ser (preterite)",
+        "es": "ser (perfecto simple)"
+      },
+      "header": [
+        {
+          "en": "Person",
+          "es": "Persona"
+        },
+        {
+          "en": "ser",
+          "es": "ser"
+        }
+      ],
+      "rows": [
+        [
+          "yo",
+          "fui"
+        ],
+        [
+          "tú",
+          "fuiste"
+        ],
+        [
+          "él/ella/usted",
+          "fue"
+        ],
+        [
+          "nosotros",
+          "fuimos"
+        ],
+        [
+          "vosotros",
+          "fuisteis"
+        ],
+        [
+          "ellos/ellas/ustedes",
+          "fueron"
+        ]
+      ],
+      "enPrompt": [
+        ["I was (ser)"],
+        ["you were (ser)"],
+        ["she was (ser)"],
+        ["we were (ser)"],
+        ["you all were (ser)"],
+        ["they were (ser)"]
       ]
     },
     {
@@ -544,8 +596,8 @@
     }
   ],
   "speak": {
-    "en": "This lesson drills the preterite forms of the ten most frequent Spanish verbs. Five of them are irregular, the ones meaning to be somewhere, to go, to have, to know and to be able, and their forms carry no accent mark. The other five, meaning to look, to stop by, to wait, to need and to please, are regular verbs ending in ar and take the usual endings. The form for I and the form for he or she are often told apart only by the accent. In every sentence you rewrite the present-tense verb into its matching past form. In Mexico the form used in Spain for you all is never used.",
-    "es": "Esta lección practica las formas del pretérito de los diez verbos más frecuentes del español. Cinco son irregulares, los que significan estar, ir, tener, saber y poder, y sus formas no llevan tilde. Los otros cinco, que significan mirar, pasar, esperar, necesitar y gustar, son verbos regulares en ar y toman las terminaciones habituales. La forma de yo y la de él o ella se distinguen muchas veces solo por la tilde. En cada oración reescribes el verbo de presente en su forma de pasado correspondiente. En México nunca se usa la forma para vosotros."
+    "en": "This lesson drills the preterite forms of the eleven most frequent Spanish verbs. Six of them are irregular, the ones meaning to be somewhere, to go, to be, to have, to know and to be able, and their forms carry no accent mark. The forms of to go and to be are identical. The other five, meaning to look, to stop by, to wait, to need and to please, are regular verbs ending in ar and take the usual endings. The form for I and the form for he or she are often told apart only by the accent. In every sentence you rewrite the present-tense verb into its matching past form. In Mexico the form used in Spain for you all is never used.",
+    "es": "Esta lección practica las formas del pretérito de los once verbos más frecuentes del español. Seis son irregulares, los que significan estar, ir, ser, tener, saber y poder, y sus formas no llevan tilde. Las formas de ir y de ser son idénticas. Los otros cinco, que significan mirar, pasar, esperar, necesitar y gustar, son verbos regulares en ar y toman las terminaciones habituales. La forma de yo y la de él o ella se distinguen muchas veces solo por la tilde. En cada oración reescribes el verbo de presente en su forma de pasado correspondiente. En México nunca se usa la forma para vosotros."
   },
   "items": [
     {
@@ -1849,6 +1901,15 @@
     {"id":"i10-order-02","kind":"order","trial":true,"prompt":{"en":"Did you have time to wait?","es":"¿Tuviste tiempo para esperar?"},"es":"¿Tuviste tiempo para esperar?"},
     {"id":"i10-order-03","kind":"order","trial":true,"prompt":{"en":"We stopped by the store.","es":"Pasamos por la tienda."},"es":"Pasamos por la tienda."},
     {"id":"i10-order-04","kind":"order","trial":true,"prompt":{"en":"We did not know anything.","es":"No supimos nada."},"es":"No supimos nada."},
-    {"id":"i10-order-05","kind":"order","trial":true,"prompt":{"en":"My mother liked the party.","es":"A mi madre le gustó la fiesta."},"es":"A mi madre le gustó la fiesta.","accept":["La fiesta le gustó a mi madre.","Le gustó la fiesta a mi madre."]}
+    {"id":"i10-order-05","kind":"order","trial":true,"prompt":{"en":"My mother liked the party.","es":"A mi madre le gustó la fiesta."},"es":"A mi madre le gustó la fiesta.","accept":["La fiesta le gustó a mi madre.","Le gustó la fiesta a mi madre."]},
+    {"id":"i10-tr-51","kind":"transform","tense":{"from":"presente","to":"indefinido"},"prompt":{"es":"El examen es difícil.","en":"The exam is difficult."},"answer":"El examen fue difícil.","wordIds":["610","11","140"],"why":{"en":"A finished state: indefinido. Ser is irregular, él: fue (the same as ir).","es":"Un estado terminado: perfecto simple. Ser es irregular, él: fue (igual que ir)."}},
+    {"id":"i10-tr-52","kind":"transform","tense":{"from":"presente","to":"indefinido"},"prompt":{"es":"Eres mi amigo.","en":"You are my friend."},"answer":"Fuiste mi amigo.","accept":["Tú fuiste mi amigo."],"wordIds":["11","40"],"why":{"en":"A finished state: indefinido. Ser is irregular, tú: fuiste (the same as ir).","es":"Un estado terminado: perfecto simple. Ser es irregular, tú: fuiste (igual que ir)."}},
+    {"id":"i10-tr-53","kind":"transform","tense":{"from":"presente","to":"indefinido"},"prompt":{"es":"Es un día largo.","en":"It is a long day."},"answer":"Fue un día largo.","wordIds":["11","53","290"],"why":{"en":"A finished day: indefinido. Ser is irregular, él: fue (the same as ir).","es":"Un día terminado: perfecto simple. Ser es irregular, él: fue (igual que ir)."}},
+    {"id":"i10-tr-54","kind":"transform","tense":{"from":"presente","to":"indefinido"},"prompt":{"es":"Somos estudiantes.","en":"We are students."},"answer":"Fuimos estudiantes.","accept":["Nosotros fuimos estudiantes."],"wordIds":["11","382"],"why":{"en":"A finished state: indefinido. Ser is irregular, nosotros: fuimos (the same as ir).","es":"Un estado terminado: perfecto simple. Ser es irregular, nosotros: fuimos (igual que ir)."}},
+    {"id":"i10-tr-55","kind":"transform","tense":{"from":"presente","to":"indefinido"},"prompt":{"es":"Son vecinos.","en":"They are neighbors."},"answer":"Fueron vecinos.","accept":["Ellos fueron vecinos.","Ellas fueron vecinos.","Ustedes fueron vecinos."],"wordIds":["11","385"],"why":{"en":"A finished state: indefinido. Ser is irregular, ellos: fueron (the same as ir).","es":"Un estado terminado: perfecto simple. Ser es irregular, ellos: fueron (igual que ir)."}},
+    {"id":"i10-06","sentence":"Anoche la fiesta ___ muy larga.","options":["fue","es","fueron"],"correct":0,"why":{"en":"Anoche is a finished past, and la fiesta is singular: fue (ser).","es":"Anoche es un pasado terminado, y la fiesta es singular: fue (ser)."},"wrong":{"es":{"en":"«Es» is the present tense: it is. Anoche asks for the past: fue.","es":"«Es» es el presente: es. Anoche pide el pasado: fue."},"fueron":{"en":"«Fueron» is plural: the party is one thing, so the form is singular: fue.","es":"«Fueron» es plural: la fiesta es una sola cosa, así que la forma es singular: fue."}},"tr":{"en":"Last night the party was very long.","es":"Anoche la fiesta fue muy larga."}},
+    {"id":"i10-form-06","kind":"form","verb":"ser","person":"nosotros","answer":"fuimos","table":"ind10-ser","tense":{"from":"presente","to":"indefinido"},"wrong":{"somos":{"en":"Somos is in the present tense. This task asks for the preterite (indefinido): fuimos.","es":"Somos está en presente. Esta tarea pide pretérito indefinido: fuimos."},"ser":{"en":"The infinitive does not change with the person. Conjugate ser for nosotros: fuimos.","es":"El infinitivo no cambia con la persona. Conjuga ser para nosotros: fuimos."}}},
+    {"kind":"why","id":"i10-why-06","es":"Fue un día largo.","target":"Fue","tr":{"en":"It was a long day.","es":"Fue un día largo."},"options":[{"text":{"en":"present tense: it is","es":"presente: es"},"wrong":{"en":"«Es» is the present: it is. This sentence tells what happened, a finished action.","es":"«Es» es el presente: es. Esta frase cuenta lo que pasó, una acción terminada."}},{"text":{"en":"ser: its preterite is the same as ir","es":"ser: su perfecto simple es igual al de ir"}},{"text":{"en":"regular -AR verb, he: -ó","es":"verbo regular en -AR, él: -ó"},"wrong":{"en":"Ser is irregular: its preterite does not end in -ó. It is the same as that of ir: fue.","es":"Ser es irregular: su perfecto simple no termina en -ó. Es igual al de ir: fue."}}],"correctIndex":1},
+    {"id":"i10-cloze-06","kind":"opencloze","trial":true,"text":"Ayer la clase ___ (ser) larga y nosotros ___ (estar) cansados.","answers":["fue","estuvimos"],"tr":{"en":"Yesterday the class was long and we were tired.","es":"Ayer la clase fue (ser) larga y nosotros estuvimos (estar) cansados."},"why":{"en":"Ser is irregular: la clase fue (as ir). Estar has a strong stem: nosotros estuvimos.","es":"Ser es irregular: la clase fue (igual que ir). Estar tiene raíz fuerte: nosotros estuvimos."}}
   ]
 }

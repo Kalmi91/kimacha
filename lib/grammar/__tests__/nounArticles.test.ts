@@ -66,9 +66,21 @@ describe('articleNounItems', () => {
       for (const lang of LANGS) expect(it.tr?.[lang]?.trim()).toBeTruthy();
     }
     const agua = items.find((i) => i.id === `art-n-${articleNouns().find((n) => n.noun === 'agua')!.id}`)!;
-    expect(agua.tr?.en).toBe('water');
-    expect(agua.tr?.es).toBe('water');
-    expect(agua.tr?.hu).toBe('víz');
+    // FB698: the meaning line is followed by the translation of the sentence of the task
+    expect(agua.tr?.en?.split('\n')[0]).toBe('water');
+    expect(agua.tr?.es?.split('\n')[0]).toBe('water');
+    expect(agua.tr?.hu?.split('\n')[0]).toBe('víz');
+  });
+
+  it('FB698: after the answer the translation of the task sentence is shown too (a second line), in every language', () => {
+    for (const n of articleNouns()) {
+      expect(n.sentenceTr?.en?.trim()).toBeTruthy();
+    }
+    for (const it of items) {
+      for (const lang of LANGS) expect((it.tr?.[lang] ?? '').split('\n').length).toBeGreaterThanOrEqual(2);
+    }
+    const agua = items.find((i) => i.id === `art-n-${articleNouns().find((n) => n.noun === 'agua')!.id}`)!;
+    expect(agua.tr?.en).toBe('water\nHe wants water at home.');
   });
 
   it('the Hungarian texts are written out, not the English ones copied', () => {
@@ -93,7 +105,9 @@ describe('the articulos-genero lesson', () => {
   it('among the lesson items is the noun set, the authored items are present', () => {
     const article = lesson.items.filter((i) => isArticleSetItem(i as never));
     expect(article.length).toBe(articleNouns().length);
-    expect(lesson.items.length).toBeGreaterThan(article.length + 20);
+    expect(lesson.items.length).toBeGreaterThan(article.length + 10);
+    // FB697: the long-form ag-form items are gone
+    expect(lesson.items.some((i) => /^ag-form-/.test((i as { id: string }).id))).toBe(false);
     expect(lessonKinds('es', ARTICLE_LESSON_ID)).toContain('article');
   });
 

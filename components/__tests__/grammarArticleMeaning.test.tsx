@@ -1,6 +1,6 @@
 // User feedback: "the words should be in English here too, so I know what they mean when I guessed": for an el / la item the noun's
 // meaning (tr) appears on its own after the answer (in the translation row behind the F button), and is closed again on the next item;
-// for a plain choice item the translation still opens only on the F button.
+// FB698: a plain choice item that has a translation opens it by itself after the answer too (the F button also shows it before).
 
 import { fireEvent, render, screen } from '@testing-library/react-native';
 
@@ -103,7 +103,7 @@ describe.each([
     expect(screen.queryByTestId('choice-translation')).toBeNull();
   });
 
-  it('on a plain choice item the translation opens only on the F button even after answering', async () => {
+  it('on a plain choice item the sentence translation is hidden before answering and opens by itself after the answer (FB698)', async () => {
     render(
       <ThemeProvider>
         <GrammarDrill topic={plainGapTopic} learnedLang="es" contentLang="en" onFinish={jest.fn()} kinds={['choice']} />
@@ -111,9 +111,8 @@ describe.each([
     );
     await flush();
 
-    fireEvent.press(screen.getAllByTestId('grammar-option')[0]);
     expect(screen.queryByTestId('choice-translation')).toBeNull();
-    fireEvent.press(screen.getByTestId('choice-f'));
-    expect(screen.getByTestId('choice-translation')).toBeTruthy();
+    fireEvent.press(screen.getAllByTestId('grammar-option')[0]);
+    expect(screen.getByTestId('choice-translation')).toHaveTextContent('As a child, my grandmother always baked bread on Sundays.');
   });
 });

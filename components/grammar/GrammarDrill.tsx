@@ -351,8 +351,9 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
   const selectOption = (optIdx: number) => {
     if (answered) return;
     setSelected(optIdx);
-    // for the el / la item the noun's meaning (tr) opens by itself after the answer; the F button still toggles.
-    if (isArticleSetItem(current.item)) setShowTr(true);
+    // the translation (tr: for the el / la item the noun's meaning and the sentence's translation) opens by itself after the
+    // answer, FB698; the F button still toggles.
+    if (current.item.tr || isArticleSetItem(current.item)) setShowTr(true);
     if (recordChoice(current.item.id, optIdx === current.correctIndex, index, correctCount)) setCorrectCount((c) => c + 1);
     // the correct, filled-in sentence is spoken, after right and wrong answers alike.
     speak(

@@ -179,6 +179,7 @@ const hu: typeof en = {
     doneBody: 'Kiléphetsz, vagy gyakorolhatsz tovább.',
     keepPractising: 'Gyakorlok tovább',
     formQuestionVerb: (verb: string, person: string) => `Mi a(z) ${verb} alakja ennél: ${person}?`,
+    formQuestionTense: (tense: string, verb: string, person: string) => `${tense}: mi a(z) ${verb} alakja ennél: ${person}?`,
     formQuestionColumn: (asked: string, person: string, title: string) => `Mi a(z) „${asked}” ennél: ${person}? (${title})`,
     otherForm: (label: string) => `Ez egy másik alak: ${label}.`,
     youChose: 'Ezt választottad',

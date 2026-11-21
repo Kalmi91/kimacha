@@ -29,6 +29,7 @@ interface OpenWord {
   en: string;
   de?: string;
   sentence_es?: string;
+  sentence_en?: string;
 }
 
 /** The Hungarian meaning of a card by `${level}-${order}` (the ArticleNoun id). */
@@ -39,6 +40,35 @@ function huGlossById(): Map<string, string> {
     for (const c of cards as { k: number; hu?: string }[]) if (c.hu?.trim()) out.set(`${level}-${c.k}`, c.hu.trim());
   }
   return out;
+}
+
+/** The Hungarian translation of a card's example sentence by `${level}-${order}`. */
+function huSentenceById(): Map<string, string> {
+  const out = new Map<string, string>();
+  const files: [string, unknown][] = [['a1', glossA1], ['a2', glossA2], ['b1', glossB1], ['b2', glossB2], ['c1', glossC1]];
+  for (const [level, cards] of files) {
+    for (const c of cards as { k: number; sentence_hu?: string }[]) if (c.sentence_hu?.trim()) out.set(`${level}-${c.k}`, c.sentence_hu.trim());
+  }
+  return out;
+}
+
+/**
+ * What the el / la item shows after the answer (FB698): the noun's meaning and, below it, the translation of the example
+ * sentence, in the interface language (English where the sentence has no translation in that language).
+ */
+export function withSentenceTranslation(meaning: Lang4, sentenceTr: Lang4 | undefined): Lang4 {
+  if (!sentenceTr) return meaning;
+  const join = (lang: 'en' | 'es' | 'hu' | 'de') => {
+    const m = meaning[lang] ?? meaning.en;
+    const s = sentenceTr[lang] ?? sentenceTr.en;
+    return s ? `${m}\n${s}` : m;
+  };
+  return {
+    en: join('en'),
+    es: join('es'),
+    ...(meaning.hu || sentenceTr.hu ? { hu: join('hu') } : {}),
+    ...(meaning.de || sentenceTr.de ? { de: join('de') } : {}),
+  };
 }
 
 export const ARTICLE_LESSON_ID = 'articulos-genero';
@@ -55,6 +85,8 @@ interface ArticleNoun {
   /** the meaning of the noun in the interface language (words-open hu / en / de; English for es); visible after the answer. */
   tr: Lang4;
   sentence?: string;
+  /** the translation of `sentence` (words-open sentence_en; Hungarian from the gloss sidecar where it exists). */
+  sentenceTr?: Lang4;
 }
 
 // Feminine nouns that take «el» in the singular before a stressed a-.
@@ -68,6 +100,7 @@ export function articleNouns(): ArticleNoun[] {
   const out: ArticleNoun[] = [];
   const seen = new Set<string>();
   const hu = huGlossById();
+  const huSentence = huSentenceById();
   for (const words of [openA1, openA2, openB1, openB2, openC1] as unknown as OpenWord[][]) {
     for (const w of words) {
       if (w.pos !== 'noun') continue;
@@ -79,7 +112,9 @@ export function articleNouns(): ArticleNoun[] {
       seen.add(noun);
       const id = `${w.level.toLowerCase()}-${w.order}`;
       const huMeaning = hu.get(id);
-      out.push({ id, noun, article: m[1] as 'el' | 'la', es: w.es, en: w.en, tr: { en: w.en, es: w.en, ...(huMeaning ? { hu: huMeaning } : {}) }, sentence: w.sentence_es });
+      const huSen = huSentence.get(id);
+      const sentenceTr = w.sentence_en ? { en: w.sentence_en, es: w.sentence_en, ...(huSen ? { hu: huSen } : {}) } : undefined;
+      out.push({ id, noun, article: m[1] as 'el' | 'la', es: w.es, en: w.en, tr: { en: w.en, es: w.en, ...(huMeaning ? { hu: huMeaning } : {}) }, sentence: w.sentence_es, sentenceTr });
     }
   }
   cache = out;
@@ -179,7 +214,7 @@ export function articleNounItems(): GrammarGapItem[] {
       why: whyText(n),
       wrong: { [wrong]: wrongText(n, wrong) },
       examples: n.sentence ? [n.sentence] : [],
-      tr: n.tr,
+      tr: withSentenceTranslation(n.tr, n.sentenceTr),
     };
   });
 }
