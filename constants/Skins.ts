@@ -242,7 +242,7 @@ export const SKINS: Record<SkinId, Skin> = {
         bg: '#150A29', paper: '#2C1852', ink: '#FFFFFF', mu: '#CFC6E4', a: '#EC4899', onA: '#FFFFFF', b: '#22D3EE', border: '#3D2668',
         extra: {
           progressTrack: '#3D2668', progressFill: '#EC4899', progressFill2: '#22D3EE', success: '#34D399', danger: '#F87171', warning: '#FBBF24',
-          okBadgeBg: '#14532D', okBadgeInk: '#6EE7B7', statusBar: '#150A29', tabBar: '#22113F',
+          statusBar: '#150A29', tabBar: '#22113F',
         },
       },
     },

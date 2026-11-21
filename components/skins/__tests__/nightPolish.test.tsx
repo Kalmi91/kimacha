@@ -77,14 +77,18 @@ describe('Night polish', () => {
     await waitFor(() => expect(flat('pos')).toMatchObject({ borderRadius: 0, borderWidth: 2 }));
   });
 
-  it('ResultBadge: Night correct is dark green with radius 12, wrong keeps dashed; brutal is unchanged', async () => {
+  it('ResultBadge: Night correct is a pink-cyan gradient with radius 12, wrong keeps dashed; brutal is unchanged', async () => {
     const night = await renderWithSkin('night', <View><ResultBadge correct testID="ok" /><ResultBadge correct={false} testID="bad" /></View>);
-    await waitFor(() => expect(flat('ok')).toMatchObject({ backgroundColor: '#14532D', borderRadius: 12, borderColor: '#34D399' }));
+    await waitFor(() => expect(flat('ok')).toMatchObject({ borderRadius: 12, borderWidth: 0 }));
+    expect(JSON.stringify(flat('ok'))).toContain('linear-gradient(90deg, #EC4899, #22D3EE)');
+    expect(StyleSheet.flatten(screen.getByText('Correct!').props.style).color).toBe('#FFFFFF');
+    expect(StyleSheet.flatten(screen.getByText('✓').props.style).color).toBe('#FFFFFF');
     expect(flat('bad')).toMatchObject({ borderRadius: 12, borderStyle: 'dashed' });
-    expect(flat('bad').backgroundColor).not.toBe('#14532D');
+    expect(JSON.stringify(flat('bad'))).not.toContain('gradient');
     night.unmount();
     await renderWithSkin('brutal', <ResultBadge correct testID="ok" />);
-    await waitFor(() => expect(flat('ok').backgroundColor).not.toBe('#14532D'));
+    await waitFor(() => expect(flat('ok').borderWidth).toBe(2.5));
+    expect(JSON.stringify(flat('ok'))).not.toContain('gradient');
     expect(flat('ok').borderRadius).toBeUndefined();
   });
 
