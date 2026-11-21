@@ -41,6 +41,7 @@ import { ContinuousBar, softCaseStyle, softEdgeStyle, softTitleStyle } from '@/c
 import { BrutalInkButton } from '@/components/grammar/drill/shared';
 import { TitleText, themedInkEdgeStyle } from '@/components/grammar/Themed';
 import type { SkinId } from '@/constants/Skins';
+import { brutalHeaderOptions, brutalHeaderRowStyle } from '@/lib/brutalHeader';
 import { getDb } from '@/lib/database';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { ThemeProvider } from '@/lib/ThemeContext';
@@ -68,6 +69,18 @@ function SoftProbe() {
   );
 }
 
+function HeaderProbe() {
+  const g = useGrammarColors();
+  const options = brutalHeaderOptions(g);
+  return (
+    <>
+      <View testID="hdr" style={options.headerStyle} />
+      <View testID="hdr-title" style={options.headerTitleStyle as object} />
+      <View testID="hdr-row" style={brutalHeaderRowStyle(g)} />
+    </>
+  );
+}
+
 async function renderWithSkin(skin: SkinId, ui: React.ReactElement) {
   await getDb().setGrammarPalette('brand');
   await getDb().setSkin(skin);
@@ -89,6 +102,18 @@ describe('Night polish', () => {
     night.unmount();
     await renderWithSkin('brutal', <Pos />);
     await waitFor(() => expect(flat('pos')).toMatchObject({ borderRadius: 0, borderWidth: 2 }));
+  });
+
+  it('screen header: Night has a 1 px border line and a normal-case title; brutal keeps the 2.5 px ink line and capitals', async () => {
+    const night = await renderWithSkin('night', <HeaderProbe />);
+    await waitFor(() => expect(flat('hdr')).toMatchObject({ borderBottomWidth: 1 }));
+    expect(flat('hdr-title')).toMatchObject({ textTransform: 'none', fontWeight: '600' });
+    expect(flat('hdr-row')).toMatchObject({ borderBottomWidth: 1 });
+    night.unmount();
+    await renderWithSkin('brutal', <HeaderProbe />);
+    await waitFor(() => expect(flat('hdr')).toMatchObject({ borderBottomWidth: 2.5 }));
+    expect(flat('hdr-title')).toMatchObject({ textTransform: 'uppercase', fontWeight: '500' });
+    expect(flat('hdr-row')).toMatchObject({ borderBottomWidth: 2.5 });
   });
 
   it('ResultBadge: Night correct is a pink-cyan gradient with radius 12, wrong keeps dashed; brutal is unchanged', async () => {

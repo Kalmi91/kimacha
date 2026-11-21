@@ -30,6 +30,11 @@ export function brutalHeaderOptions(
         headerTitleStyle: { color: g.ink, fontWeight: '500', textTransform: 'uppercase' },
       }
     : {};
+  // Night (g.soft): a 1 px border-colour line and a normal-case 600 title instead of the ink line and the capitals.
+  if (g.brutal && g.soft) {
+    base.headerStyle = { ...base.headerStyle, borderBottomWidth: 1, borderBottomColor: g.border };
+    base.headerTitleStyle = { ...base.headerTitleStyle, fontWeight: '600', textTransform: 'none' };
+  }
   if (!skin) return base;
   const title: TextStyle = { ...base.headerTitleStyle };
   if (skin.fonts.title) {
@@ -44,5 +49,6 @@ export function brutalHeaderOptions(
 
 // Bottom line of the inner header row (drawn into the screen) on the brutalist palette.
 export function brutalHeaderRowStyle(g: GrammarColors): ViewStyle | null {
-  return g.brutal ? { borderBottomWidth: 2.5, borderBottomColor: g.ink, paddingBottom: 12 } : null;
+  if (!g.brutal) return null;
+  return g.soft ? { borderBottomWidth: 1, borderBottomColor: g.border, paddingBottom: 12 } : { borderBottomWidth: 2.5, borderBottomColor: g.ink, paddingBottom: 12 };
 }
