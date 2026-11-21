@@ -11,7 +11,7 @@ module.exports = {
   testTimeout: 20000,
   // Transpile the RN/Expo ESM packages that ship untranspiled.
   transformIgnorePatterns: [
-    'node_modules/(?!((jest-)?react-native|@react-native(-community)?|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules))',
+    'node_modules/(?!((jest-)?react-native|@react-native(-community)?|expo(nent)?|@expo(nent)?/.*|@expo-google-fonts/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules))',
   ],
   collectCoverageFrom: [
     'lib/**/*.{ts,tsx}',

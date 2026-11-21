@@ -7,7 +7,10 @@ import { SymbolView, type SymbolViewProps } from 'expo-symbols';
 
 import { BetaSticker } from '@/components/BetaSticker';
 import Colors from '@/constants/Colors';
+import lightWeight from 'expo-symbols/androidWeights/light';
+
 import { useTheme } from '@/lib/ThemeContext';
+import { gradientStyle } from '@/lib/gradientStyle';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { useSkin } from '@/lib/useSkin';
 import { brutalHeaderOptions } from '@/lib/brutalHeader';
@@ -65,7 +68,18 @@ export default function TabLayout() {
   const webKeyboardOpen = useWebKeyboardOpen();
 
   // On the brutalist palette the active icon sits on a filled square with an ink border.
+  // Night (skin.tabIcons 'alt'): Light-weight alternative icons, the active one in a pink-cyan capsule.
+  const alt = skin.tabIcons === 'alt' && !!g.soft;
   const tabIcon = (name: SymbolViewProps['name'], color: ColorValue, focused: boolean) => {
+    if (alt) {
+      const light = { ios: 'light', android: lightWeight } as const;
+      if (!focused) return <SymbolView name={name} tintColor={g.mu} size={28} weight={light} />;
+      return (
+        <View testID="tab-icon-active" style={[styles.capsule, gradientStyle(g.a, g.b)]}>
+          <SymbolView name={name} tintColor={g.onA} size={28} weight={light} />
+        </View>
+      );
+    }
     const symbol = <SymbolView name={name} tintColor={g.brutal && focused ? g.onFill : color} size={28} />;
     if (!g.brutal) return symbol;
     return (
@@ -82,12 +96,13 @@ export default function TabLayout() {
   // Fabric flattens and rebuilds those wrappers on each tab switch, and a switch during a busy render crashed the app
   // ("Unable to find viewState for tag", emulator 2026-10-22: 3 of 8 switches, 0 of 12 without the wrappers).
   // React Navigation calls it as a function (button(props)), so it is not a component of its own.
-  const tabButton = (name: SymbolViewProps['name']) =>
+  const tabButton = (baseName: SymbolViewProps['name'], altName?: string) =>
     function TabBarButton({ children: _drawnTwice, style, href: _href, ref: _ref, ...rest }: TabButtonProps) {
       const focused = rest['aria-selected'] === true;
+      const name: SymbolViewProps['name'] = alt && altName && typeof baseName === 'object' ? { ...baseName, android: altName, web: altName } as SymbolViewProps['name'] : baseName;
       return (
         <Pressable {...rest} style={style}>
-          <View style={styles.iconSlot}>{tabIcon(name, focused ? colors.tint : colors.tabIconDefault, focused)}</View>
+          <View style={[styles.iconSlot, alt && styles.iconSlotAlt]}>{tabIcon(name, focused ? colors.tint : colors.tabIconDefault, focused)}</View>
         </Pressable>
       );
     };
@@ -109,6 +124,8 @@ export default function TabLayout() {
           borderTopColor: colors.card,
           // On the brutalist palette a 2.5 px ink line at the top.
           ...(g.brutal ? { borderTopColor: g.ink, borderTopWidth: 2.5 } : null),
+          // Night: its own bar colour, a 1 px border line and rounded top corners.
+          ...(alt ? { backgroundColor: g.extra.tabBar ?? colors.background, borderTopColor: g.border, borderTopWidth: 1, borderTopLeftRadius: 20, borderTopRightRadius: 20 } : null),
           // tabBarHideOnKeyboard listens for Keyboard events, which the web build never gets.
           ...(webKeyboardOpen ? { display: 'none' } : null),
         },
@@ -142,7 +159,7 @@ export default function TabLayout() {
           tabBarAccessibilityLabel: s.tabs.pcic,
           // Draws its own header, as before.
           headerShown: false,
-          tabBarButton: tabButton({ ios: 'list.bullet', android: 'list', web: 'list' }),
+          tabBarButton: tabButton({ ios: 'list.bullet', android: 'list', web: 'list' }, 'school'),
         }}
       />
       <Tabs.Screen
@@ -152,7 +169,7 @@ export default function TabLayout() {
           tabBarAccessibilityLabel: s.tabs.grammar,
           // the brutalist course list draws its own header (title + streak sticker).
           headerShown: grammarPalette === 'classic',
-          tabBarButton: tabButton({ ios: 'book.fill', android: 'book', web: 'book' }),
+          tabBarButton: tabButton({ ios: 'book.fill', android: 'book', web: 'book' }, 'menu_book'),
         }}
       />
       <Tabs.Screen
@@ -160,7 +177,7 @@ export default function TabLayout() {
         options={{
           title: s.tabs.sentences,
           tabBarAccessibilityLabel: s.tabs.sentences,
-          tabBarButton: tabButton({ ios: 'text.bubble.fill', android: 'chat', web: 'chat' }),
+          tabBarButton: tabButton({ ios: 'text.bubble.fill', android: 'chat', web: 'chat' }, 'forum'),
         }}
       />
       <Tabs.Screen
@@ -168,7 +185,7 @@ export default function TabLayout() {
         options={{
           title: s.tabs.speak,
           tabBarAccessibilityLabel: s.tabs.speak,
-          tabBarButton: tabButton({ ios: 'mic.fill', android: 'mic', web: 'mic' }),
+          tabBarButton: tabButton({ ios: 'mic.fill', android: 'mic', web: 'mic' }, 'record_voice_over'),
         }}
       />
       <Tabs.Screen
@@ -185,7 +202,7 @@ export default function TabLayout() {
         options={{
           title: s.tabs.practice,
           tabBarAccessibilityLabel: s.tabs.practice,
-          tabBarButton: tabButton({ ios: 'dumbbell.fill', android: 'fitness_center', web: 'fitness_center' }),
+          tabBarButton: tabButton({ ios: 'dumbbell.fill', android: 'fitness_center', web: 'fitness_center' }, 'exercise'),
         }}
       />
       <Tabs.Screen
@@ -196,7 +213,7 @@ export default function TabLayout() {
           // draws its own header (band + title + feedback button)
           headerShown: false,
           // a guest on web has no cloud account, so no board (the same condition the old Stats card hid itself with)
-          ...(Platform.OS === 'web' && !hasSession ? { href: null } : { tabBarButton: tabButton({ ios: 'trophy.fill', android: 'emoji_events', web: 'emoji_events' }) }),
+          ...(Platform.OS === 'web' && !hasSession ? { href: null } : { tabBarButton: tabButton({ ios: 'trophy.fill', android: 'emoji_events', web: 'emoji_events' }, 'trophy') }),
         }}
       />
       <Tabs.Screen
@@ -204,7 +221,7 @@ export default function TabLayout() {
         options={{
           title: s.tabs.stats,
           tabBarAccessibilityLabel: s.tabs.stats,
-          tabBarButton: tabButton({ ios: 'chart.bar.fill', android: 'bar_chart', web: 'bar_chart' }),
+          tabBarButton: tabButton({ ios: 'chart.bar.fill', android: 'bar_chart', web: 'bar_chart' }, 'monitoring'),
         }}
       />
       <Tabs.Screen
@@ -212,7 +229,7 @@ export default function TabLayout() {
         options={{
           title: s.tabs.settings,
           tabBarAccessibilityLabel: s.tabs.settings,
-          tabBarButton: tabButton({ ios: 'gearshape.fill', android: 'settings', web: 'settings' }),
+          tabBarButton: tabButton({ ios: 'gearshape.fill', android: 'settings', web: 'settings' }, 'tune'),
         }}
       />
     </Tabs>
@@ -224,4 +241,6 @@ const styles = StyleSheet.create({
   headerTitle: { flexShrink: 1, minWidth: 0 },
   // the place React Navigation gives the icon (uikit variant, 31 x 28), so the icon sits where it did before
   iconSlot: { width: 31, height: 28, alignItems: 'center', justifyContent: 'center' },
+  iconSlotAlt: { width: 46, height: 32 },
+  capsule: { width: 46, height: 32, borderRadius: 16, alignItems: 'center', justifyContent: 'center' },
 });

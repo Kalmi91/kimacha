@@ -114,7 +114,7 @@ describe('theme engine through the context', () => {
     expect(sk.modeLocked).toBe(true);
     expect(sk.colors).toMatchObject({
       brutal: true, bg: '#150A29', paper: '#2C1852', ink: '#FFFFFF', mu: '#CFC6E4', a: '#EC4899', onA: '#FFFFFF', b: '#22D3EE', border: '#3D2668',
-      extra: { progressTrack: '#22113F', progressFill: '#EC4899' },
+      extra: { progressTrack: '#3D2668', progressFill: '#EC4899' },
     });
     expect(Colors['night-dark']).toMatchObject({
       background: '#150A29', card: '#2C1852', text: '#FFFFFF', textMuted: '#CFC6E4', tint: '#EC4899', onTint: '#FFFFFF',

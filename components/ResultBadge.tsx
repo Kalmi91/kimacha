@@ -5,6 +5,7 @@ import Colors from '@/constants/Colors';
 import { ON_FILL } from '@/constants/GrammarPalettes';
 import { bestOn } from '@/constants/Skins';
 import { useGrammarColors } from '@/lib/grammarColors';
+import { gradientStyle } from '@/lib/gradientStyle';
 import { useTheme } from '@/lib/ThemeContext';
 import { t } from '@/lib/i18n';
 
@@ -36,6 +37,10 @@ export default function ResultBadge({
   // "large" text (no bold with a custom font), so 4.5 is needed: there white (4.8:1) is better.
   const ink = bestOn(fill, [ON_FILL, '#FFFFFF']);
   const text = label ?? (correct ? s.games.correctFeedback : s.games.wrongFeedback);
+  // Night (g.soft): the correct badge is the progress bar's pink-cyan gradient, borderless, white text, rounded corners; wrong keeps its colour + dashed frame.
+  const grad = g.soft && correct && g.extra.progressFill && g.extra.progressFill2;
+  const soft = grad ? { backgroundColor: g.extra.progressFill, borderWidth: 0, ...gradientStyle(g.extra.progressFill, g.extra.progressFill2) } : null;
+  const softInk = soft ? g.onA : ink;
   return (
     <View
       testID={testID}
@@ -45,11 +50,13 @@ export default function ResultBadge({
         { backgroundColor: fill, borderColor: g.ink },
         correct ? styles.solid : styles.dashed,
         !g.brutal && styles.rounded,
+        soft,
+        g.soft && { borderRadius: g.soft.radius },
         { alignSelf: align },
       ]}
     >
-      <Text style={[styles.glyph, { color: ink }]}>{correct ? '✓' : '✗'}</Text>
-      <Text style={[styles.label, { color: ink }]}>{text}</Text>
+      <Text style={[styles.glyph, { color: softInk }]}>{correct ? '✓' : '✗'}</Text>
+      <Text style={[styles.label, { color: softInk }]}>{text}</Text>
     </View>
   );
 }

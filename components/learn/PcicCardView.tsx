@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import { View, Pressable, TextInput, ScrollView, KeyboardAvoidingView, Platform, ActivityIndicator, useWindowDimensions } from 'react-native';
-import { Text } from '@/components/KText';
+import { Text } from '@/components/KText'; import { noWebOutline } from '@/lib/gradientStyle';
 import { TitleText, themedInkEdgeStyle, themedInputStyle, ProgressBar, ActionButton } from '@/components/grammar/Themed';
 import { dismissKeyboardOnTap, keyboardDismissOnDrag } from '@/lib/keyboardTap';
 import { useWebKeyboardOpen, WEB_TYPING_PADDING } from '@/lib/webKeyboard';
@@ -117,7 +117,7 @@ export default function PcicCardView({
   // above the keys before they open (otherwise the window pans and the header slides under the status bar).
   const scrollRef = useRef<ScrollView>(null), promptRef = useRef<View>(null);
   const [retypeOpenKey, setRetypeOpenKey] = useState(''); const retypeRef = useRef<RetypeHandle>(null); const [retypePending, setRetypePending] = useState(false);
-  const [retypeFocused, setRetypeFocused] = useState(false); const rowScroll = useRetypeRowScroll(scrollRef);
+  const [answerFocused, setAnswerFocused] = useState(false); const [retypeFocused, setRetypeFocused] = useState(false); const rowScroll = useRetypeRowScroll(scrollRef);
   const { height: windowH } = useWindowDimensions();
   const fieldBesidePrompt = Platform.OS === 'android' && shortWindow(windowH);
   const compactTyping = Platform.OS === 'android' && !grade && compactTypingNeeded(windowH, kbHeight, dockLift);
@@ -172,7 +172,7 @@ export default function PcicCardView({
       <View style={styles.headerIcons}>
         {lastGraded && (
           <Pressable onPress={handleUndo} hitSlop={12} style={styles.resetBtn} accessibilityLabel={s.pcic.undo}>
-            <Text style={styles.resetIcon}>↶</Text>
+            <Text style={[styles.resetIcon, { color: colors.text }]}>↶</Text>
           </Pressable>
         )}
         <ScreenFeedback placement="inline" level={level} languagePair={languagePair} currentCard={feedbackCard} />
@@ -380,8 +380,8 @@ export default function PcicCardView({
   // The keyed field stays mounted beside the prompt while optional details move below it on short screens.
   const answerField = <TextInput
     key={`pcic-in-${current.itemId}-${cardSeq}`} ref={inputRef} onLayout={onFieldLayout}
-    style={[styles.input, { color: colors.text, borderColor: colors.tabIconDefault }, themedInputStyle(g), fieldBesidePrompt && { marginTop: 8 }]}
-    value={typedAnswer} onChangeText={setTypedAnswer}
+    style={[styles.input, { color: colors.text, borderColor: colors.tabIconDefault }, themedInputStyle(g), g.soft && answerFocused && { borderColor: g.b, borderWidth: 2, ...noWebOutline() }, fieldBesidePrompt && { marginTop: 8 }]}
+    value={typedAnswer} onChangeText={setTypedAnswer} onFocus={() => setAnswerFocused(true)} onBlur={() => setAnswerFocused(false)}
     onSubmitEditing={grade ? () => nextGrade && handleGrade(nextGrade) : handleCheck}
     returnKeyType={compactTyping ? 'done' : undefined} editable={!grade}
     placeholder={s.card.typeIn(target)} placeholderTextColor={colors.tabIconDefault}

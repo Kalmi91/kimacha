@@ -58,7 +58,7 @@ describe('Brutal components: the shape comes from the theme', () => {
     expect(flat('card')).toMatchObject({ borderWidth: 1, borderColor: '#3D2668', borderRadius: 16 });
     expect(flat('btn')).toMatchObject({ borderWidth: 1, borderColor: '#3D2668', borderRadius: 14 });
     expect(shadows()).toHaveLength(0);
-    expect(flat('bar')).toMatchObject({ height: 6, borderRadius: 3, backgroundColor: '#22113F' });
+    expect(flat('bar')).toMatchObject({ height: 6, borderRadius: 3, backgroundColor: '#3D2668' });
     expect(flat('bar').borderWidth).toBeUndefined();
     expect(flat('fill')).toMatchObject({ width: '40%', backgroundColor: '#EC4899' });
   });
