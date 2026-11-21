@@ -30,6 +30,8 @@ interface Props {
   /** a header drawn above the body (the lesson's title row) */
   header?: ReactNode;
   children?: ReactNode;
+  /** extra buttons between Retake and Back (the Small test's practice end screen) */
+  middle?: ReactNode;
 }
 
 export default function GrammarResult({
@@ -46,6 +48,7 @@ export default function GrammarResult({
   backTestID = 'grammar-back-course',
   header,
   children,
+  middle,
 }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
@@ -82,6 +85,7 @@ export default function GrammarResult({
           </Card>
         ) : null}
         <ExamButton testID={retakeTestID} label={retakeLabel ?? s.retakeTest} onPress={onRetake} />
+        {middle}
         <ExamButton testID={backTestID} secondary label={backLabel ?? s.backToGrammar} onPress={onBack} />
       </ScrollView>
     </View>

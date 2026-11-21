@@ -282,6 +282,16 @@ const hu: typeof en = {
     newRound: 'Új kör',
     done: 'Kész',
     progressLabel: (n: number, total: number) => `${n}. kérdés ${total}-ből`,
+    tagMissed: 'hibázott',
+    tagWeak: 'gyenge',
+    introReview: 'Átismétlő kör: először a gyenge pontjaid.',
+    endGaps: (open: number, fixed: number) => `Lyukak: ${open} nyitott · ${fixed} javítva`,
+    endClean: (lvl: string) => `Nincs több lyuk a(z) ${lvl} szinten.`,
+    endDrill: (n: number) => `Gyakorold a hibáidat · ${n}`,
+    endNext: (lvl: string) => `${lvl} teszt indítása`,
+    endReview: 'Átismétlő kör',
+    endDrilled: (right: number, total: number) => `Gyakorlás: ${right} / ${total}`,
+    drillHeader: (lvl: string, i: number, n: number) => `${lvl} témazáró · gyakorlás ${i}/${n}`,
   },
   // The Grammar tab's level buttons, overall bar and per-level test rows.
   levelTabs: {
