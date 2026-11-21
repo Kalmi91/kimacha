@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Pressable, ScrollView, View } from 'react-native';
-import { NightBlank } from '@/components/grammar/drill/NightBlank';
+import { NightSentence } from '@/components/grammar/drill/NightBlank';
 import { Text } from '@/components/KText';
 
 import Colors from '@/constants/Colors';
@@ -420,16 +420,14 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
                 );
               })}
             </Text>
+          ) : g.soft ? (
+            <NightSentence g={g} before={before} after={after} answered={answered} isCorrect={isCorrect} text={pickedText} />
           ) : (
             <Text style={[styles.sentence, { color: g.ink }]}>
               {before}
-              {g.soft ? (
-                <NightBlank g={g} answered={answered} isCorrect={isCorrect} text={pickedText} />
-              ) : (
-                <Text style={{ backgroundColor: blankFill, color: blankColor, fontWeight: '500' }}>
-                  {` ${answered ? pickedText : '____'} `}
-                </Text>
-              )}
+              <Text style={{ backgroundColor: blankFill, color: blankColor, fontWeight: '500' }}>
+                {` ${answered ? pickedText : '____'} `}
+              </Text>
               {after}
             </Text>
           )}

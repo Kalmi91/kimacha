@@ -10,7 +10,7 @@ import type { ColorRole, CornerRadii, SkinShape } from '@/constants/Skins';
 import { useGrammarColors, type GrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
 import { gradientStyle } from '@/lib/gradientStyle';
-import GradientFill from '@/components/GradientFill';
+import GradientFill, { mixHex } from '@/components/GradientFill';
 import { useSkin } from '@/lib/useSkin';
 import { useTheme } from '@/lib/ThemeContext';
 
@@ -453,6 +453,9 @@ export function SegmentBar({
 }) {
   const g = useGrammarColors();
   const { shape } = useSkin().skin;
+  const { progressFill: from, progressFill2: to } = g.extra;
+  // Night (progressFill2): a done block takes its colour from the pink-cyan run across the row; others stay ink.
+  const doneColor = (i: number) => (from && to ? mixHex(from, to, segments > 1 ? i / (segments - 1) : 0) : g.ink);
   return (
     <View testID={testID} style={[styles.segmentRow, style]}>
       {Array.from({ length: segments }, (_, i) => (
@@ -464,7 +467,7 @@ export function SegmentBar({
             {
               borderColor: roleColor(g, shape.borderColor),
               borderWidth: Math.min(2, shape.borderWidth),
-              backgroundColor: i < filled ? g.ink : 'transparent',
+              backgroundColor: i < filled ? doneColor(i) : 'transparent',
               ...smallRadius(shape, 4),
             },
           ]}

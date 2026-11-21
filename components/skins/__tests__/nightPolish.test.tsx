@@ -42,7 +42,7 @@ import type { Sm2Card } from '@/lib/sm2';
 import { noWebOutline } from '@/lib/gradientStyle';
 import ResultBadge from '@/components/ResultBadge';
 import StatusBarStrip from '@/components/StatusBarStrip';
-import { ContinuousBar, softCaseStyle, softEdgeStyle, softTitleStyle } from '@/components/grammar/Brutal';
+import { ContinuousBar, SegmentBar, softCaseStyle, softEdgeStyle, softTitleStyle } from '@/components/grammar/Brutal';
 import { BrutalInkButton } from '@/components/grammar/drill/shared';
 import { TitleText, themedInkEdgeStyle } from '@/components/grammar/Themed';
 import type { SkinId } from '@/constants/Skins';
@@ -151,6 +151,17 @@ describe('Night polish', () => {
     await waitFor(() => expect(flat('fill').backgroundColor).toBe('#111111'));
     expect(JSON.stringify(flat('fill'))).not.toContain('gradient');
     expect(screen.queryByTestId('fill-gradient')).toBeNull();
+  });
+
+  it('SegmentBar: Night done blocks run pink to cyan, brutal keeps ink', async () => {
+    const night = await renderWithSkin('night', <SegmentBar testID="seg" filled={8} segments={8} />);
+    await waitFor(() => expect(flat('seg-0').backgroundColor).toBe('#EC4899'));
+    expect(flat('seg-7').backgroundColor).toBe('#22D3EE');
+    night.unmount();
+    await renderWithSkin('brutal', <SegmentBar testID="seg" filled={2} segments={8} />);
+    await waitFor(() => expect(flat('seg-0').backgroundColor).toBe('#111111'));
+    expect(flat('seg-1').backgroundColor).toBe('#111111');
+    expect(flat('seg-2').backgroundColor).toBe('transparent');
   });
 
   describe('drill blank', () => {

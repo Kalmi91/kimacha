@@ -21,7 +21,8 @@ export default function GradientFill({ from, to, testID }: { from: string; to: s
   return (
     <View pointerEvents="none" testID={testID} style={[StyleSheet.absoluteFill, { flexDirection: 'row' }]}>
       {Array.from({ length: N }, (_, i) => (
-        <View key={i} style={{ flex: 1, backgroundColor: mixHex(from, to, i / (N - 1)) }} />
+        // marginRight -1: each slice runs 1 dp under the next one, so no hairline seam shows between them (seen on the emulator).
+        <View key={i} style={{ flex: 1, marginRight: i < N - 1 ? -1 : 0, backgroundColor: mixHex(from, to, i / (N - 1)) }} />
       ))}
     </View>
   );

@@ -17,6 +17,9 @@ describe('GradientFill', () => {
     expect(slices).toHaveLength(40);
     expect(StyleSheet.flatten(slices[0].props.style).backgroundColor).toBe('#EC4899');
     expect(StyleSheet.flatten(slices[39].props.style).backgroundColor).toBe('#22D3EE');
+    // slices overlap by 1 dp so no seam shows; the last one ends flush
+    expect(StyleSheet.flatten(slices[0].props.style).marginRight).toBe(-1);
+    expect(StyleSheet.flatten(slices[39].props.style).marginRight).toBe(0);
     expect(JSON.stringify(StyleSheet.flatten(root.props.style))).not.toContain('experimental_');
   });
 
