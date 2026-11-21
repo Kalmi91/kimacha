@@ -1,6 +1,6 @@
 {
   "adjetivo-concordancia": { "required": ["choice","match","form","why"], "scored": ["choice","match","form","why"] },
-  "articulos-genero": { "required": ["choice","article","form","why"], "scored": ["choice","article","form","why"] },
+  "articulos-genero": { "required": ["choice","article","why"], "scored": ["choice","article","why"] },
   "clases-de-palabras": { "required": ["choice","match","form","why"], "scored": ["choice","match","form","why"] },
   "combinacion-pronombres": { "required": ["choice","match","form","why"], "scored": ["choice","match","form","why"] },
   "comparativos-superlativos": { "required": ["choice","match","form","why"], "scored": ["choice","match","form","why"] },

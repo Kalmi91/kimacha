@@ -144,16 +144,16 @@ describe('indefinido-10-verbos (real lesson)', () => {
   if (!lesson) throw new Error('indefinido-10-verbos lesson not found');
 
   // the 4 vosotros transform items became ustedes items, nothing is dropped any more.
-  it('has no vosotros transform item left, all 50 are played', () => {
+  it('has no vosotros transform item left, all 55 are played', () => {
     const all = (lesson.items as TransformItem[]).filter((i) => i.kind === 'transform');
-    expect(all).toHaveLength(50);
-    expect(filterVosotros(all)).toHaveLength(50);
+    expect(all).toHaveLength(55);
+    expect(filterVosotros(all)).toHaveLength(55);
   });
 
   it('grammarKindCounts and buildGrammarRound agree on the count', () => {
     const counts = grammarKindCounts(lesson);
-    expect(counts.transform).toBe(50);
+    expect(counts.transform).toBe(55);
     const round = buildGrammarRound(lesson, 1).filter((r) => 'item' in r && r.item.kind === 'transform');
-    expect(round).toHaveLength(50);
+    expect(round).toHaveLength(55);
   });
 });

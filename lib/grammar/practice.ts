@@ -64,6 +64,8 @@ export function buildPractice(
         ...(mine && row[0] === item.person && item.wrong ? { wrong: item.wrong } : {}),
         // the missed row is asked in the same words as the item
         ...(mine && row[0] === item.person && item.q ? { q: item.q } : {}),
+        // the same tense cue (FB700) as the item, so the missed row is asked in the same words
+        ...(mine && item.tense ? { tense: item.tense } : {}),
       };
       // the Mexican norm has no vosotros: such a row is no task (the real items are filtered the same way)
       if (learnedLang === 'es' && isVosotrosItem(gen)) return null;

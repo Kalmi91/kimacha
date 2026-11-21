@@ -1,4 +1,4 @@
-// Coverage check for the 50 transform items of the `indefinido-10-verbos`
+// Coverage check for the 55 transform items of the `indefinido-10-verbos`
 // lesson. The sentences are built only from the
 // lesson's 28 words, with every main person of the 10 verbs. This test measures this
 // coverage, not grammatical correctness (that is provided by audit-games.mjs +
@@ -20,6 +20,8 @@ const transformItems = lesson.items.filter(isTransformItem);
 const ALLOWED_WORD_IDS = [
   '119', '123', '129', '143', '150', '16', '174', '2', '208', '220', '254', '259', '283', '284', '285', '286',
   '33', '391', '51', '52', '610', '632', '74', '77', '88',
+  // FB704: the verb ser and its five sentences add these (ser = 11, plus the words of the new sentences)
+  '11', '140', '290', '382', '385', '40', '53',
 ];
 
 // 10 verbs x 6 forms; the person is decided from the answer text (word-boundary
@@ -67,11 +69,11 @@ function classify(answer: string): { verb: string; person: string } | null {
 }
 
 describe('indefinido-10-verbos coverage', () => {
-  it('has exactly 50 transform items', () => {
-    expect(transformItems.length).toBe(50);
+  it('has exactly 55 transform items', () => {
+    expect(transformItems.length).toBe(55);
   });
 
-  it('wordIds union is exactly the 25 taught card ids (28 words), no more, no less', () => {
+  it('wordIds union is exactly the 32 taught card ids, no more, no less', () => {
     const used = new Set<string>();
     for (const item of transformItems) {
       for (const id of item.wordIds) used.add(id);

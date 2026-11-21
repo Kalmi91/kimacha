@@ -179,6 +179,7 @@ const es: typeof en = {
     doneBody: 'Puedes salir ahora o seguir practicando.',
     keepPractising: 'Seguir practicando',
     formQuestionVerb: (verb: string, person: string) => `¿Cuál es la forma de ${verb} para ${person}?`,
+    formQuestionTense: (tense: string, verb: string, person: string) => `${tense}: ¿cuál es la forma de ${verb} para ${person}?`,
     formQuestionColumn: (asked: string, person: string, title: string) => `¿Cuál es «${asked}» para ${person}? (${title})`,
     otherForm: (label: string) => `Esa es otra forma: ${label}.`,
     youChose: 'Elegiste',

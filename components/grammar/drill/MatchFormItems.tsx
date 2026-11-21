@@ -4,6 +4,7 @@ import { Text } from '@/components/KText';
 import Colors from '@/constants/Colors';
 import { t } from '@/lib/i18n';
 import { type ContentLang, type FormItem, type LessonBlock, type MatchItem } from '@/lib/grammar/lessonTypes';
+import { formTenseCue } from '@/lib/grammar/formTenseCue';
 import { speak } from '@/lib/speech';
 import SpeakButton from '@/components/SpeakButton';
 import { speechLang } from '@/lib/languages';
@@ -249,6 +250,8 @@ export function FormDrillItem({
   const headerCell = table?.header.find((h) => h.es === item.verb);
   const localizedVerb = headerCell ? (headerCell[contentLang] ?? headerCell.en) : undefined;
   const verbLabel = localizedVerb && localizedVerb !== item.verb ? `${item.verb} (${localizedVerb})` : item.verb;
+  // FB700 + FB705: which tense is asked, in everyday words, plus a sample sentence with a time adverb
+  const cue = formTenseCue(item, (l) => l[contentLang] ?? l.en);
   const [value, setValue] = useState('');
   const [checked, setChecked] = useState(false);
   const [correct, setCorrect] = useState(false);
@@ -301,6 +304,13 @@ export function FormDrillItem({
         ) : null}
 
         <Text style={[styles.brutalHint, { color: g.mu }, softTitleStyle(g)]}>{s.grammar.formHint}</Text>
+        {cue ? (
+          <Text testID="form-tense-cue" style={[styles.brutalHint, { color: g.ink }, softTitleStyle(g)]}>
+            {cue.label}
+            {'\n'}
+            {cue.sentence}
+          </Text>
+        ) : null}
         <BrutalBox boxStyle={styles.brutalSentenceBox}>
           <Text style={[styles.formPrompt, { color: g.ink }]}>
             {verbLabel} · {item.person}
@@ -352,6 +362,13 @@ export function FormDrillItem({
       ) : null}
 
       <Text style={[styles.hint, { color: colors.tabIconDefault }]}>{s.grammar.formHint}</Text>
+      {cue ? (
+        <Text testID="form-tense-cue" style={[styles.hint, { color: colors.text }]}>
+          {cue.label}
+          {'\n'}
+          {cue.sentence}
+        </Text>
+      ) : null}
       <Text style={[styles.formPrompt, { color: colors.text }]}>
         {verbLabel} · {item.person}
       </Text>

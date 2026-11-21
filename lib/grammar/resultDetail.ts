@@ -4,6 +4,7 @@
 
 import type { LessonBlock, FormItem, Lang4 } from '@/lib/grammar/lessonTypes';
 import { currentLanguage, t } from '@/lib/i18n';
+import { formTenseCue } from '@/lib/grammar/formTenseCue';
 
 type TableBlock = Extract<LessonBlock, { kind: 'table' }>;
 type Pick = (l: Record<string, string>) => string;
@@ -80,6 +81,9 @@ export function formTask(item: FormItem, table: TableBlock | undefined, pick: Pi
     const headerCell = table ? table.header.find((h) => h.es === item.verb) : undefined;
     const localized = headerCell ? pick(headerCell) : undefined;
     const verbLabel = localized && localized !== item.verb ? `${item.verb} (${localized})` : item.verb;
+    // FB700 + FB705: a tense form item names the asked tense in everyday words and gives a sample sentence with a time adverb
+    const cue = formTenseCue(item, pick);
+    if (cue) return { question: `${s.formQuestionTense(cue.label, verbLabel, person)}\n${cue.sentence}` };
     return { question: s.formQuestionVerb(verbLabel, person) };
   }
   const ci = askedColumn(table, item.verb);

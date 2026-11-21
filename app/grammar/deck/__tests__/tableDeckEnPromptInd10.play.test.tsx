@@ -38,7 +38,7 @@ describe('indefinido-10-verbos table deck: English prompt', () => {
   });
 
   it('every cell has its own English prompt, and yo + ir is "I went"', () => {
-    expect(cells).toHaveLength(50);
+    expect(cells).toHaveLength(55);
     expect(cells.every((c) => typeof c.enPrompt === 'string' && c.enPrompt.length > 0)).toBe(true);
     expect(new Set(cells.map((c) => c.enPrompt)).size).toBe(cells.length);
     expect(cells.find((c) => c.verb === 'ir' && c.person === 'yo')?.enPrompt).toBe('I went');

@@ -1,4 +1,4 @@
-// the ten single-verb tables of indefinido-10-verbos form one tabbed, compact group: one table
+// the eleven single-verb tables of indefinido-10-verbos form one tabbed, compact group: one table
 // is visible at a time, with 2-column cells.
 import { fireEvent, render, screen } from '@testing-library/react-native';
 
@@ -16,12 +16,12 @@ const ind10 = ind10Json as unknown as LessonV2;
 const serEstar = serEstarJson as unknown as LessonV2;
 
 describe('groupTableRuns', () => {
-  it('turns the ten consecutive single-verb tables into one tabs entry', () => {
+  it('turns the eleven consecutive single-verb tables into one tabs entry', () => {
     const entries = groupTableRuns(ind10.body);
     const tabs = entries.filter((e) => e.kind === 'tabs');
     expect(tabs).toHaveLength(1);
     if (tabs[0].kind !== 'tabs') return;
-    expect(tabs[0].tables).toHaveLength(10);
+    expect(tabs[0].tables).toHaveLength(11);
     // the text + the tip stay a separate block
     expect(entries.filter((e) => e.kind === 'block')).toHaveLength(2);
   });

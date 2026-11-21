@@ -216,9 +216,9 @@ describe('every item kind turns into an exam card', () => {
     expect(why.some((q) => /^Why «/.test(q.review.question))).toBe(true);
   });
 
-  it('a test also comes from the transform-heavy lesson (indefinido-10-verbos: 50 transform + 5 choice, form and why each; trial kinds are left out)', () => {
+  it('a test also comes from the transform-heavy lesson (indefinido-10-verbos: 55 transform + 6 choice, form and why each; trial kinds are left out)', () => {
     const qs = all('indefinido-10-verbos');
-    expect(qs.length).toBe(65);
+    expect(qs.length).toBe(73);
     expect(buildLessonTest(lessonFor('es', 'indefinido-10-verbos')!, opts()).length).toBe(LESSON_TEST_SIZE);
   });
 });
@@ -302,7 +302,8 @@ describe('form tasks and result data', () => {
             expect(v.prompt).toBe(item.q.en);
           } else {
             // generated: a question, with the person or cell in it
-            expect(v.prompt).toMatch(/^What is the .*\?( \(.*\))?$/);
+            // FB700: a tense item starts with its everyday tense name and ends with the time-adverb sample sentence
+            expect(v.prompt).toMatch(/^(What is the|[^\n:]+: what is the) [^\n]*\?( \([^\n]*\))?(\n[^\n]+)?$/);
             expect(v.prompt).toContain(item.person.replace(/[.!?]+$/, ''));
           }
           if (q.detail?.table) tables++;
@@ -310,7 +311,7 @@ describe('form tasks and result data', () => {
       }
     }
     expect(checked).toBeGreaterThan(2000);
-    expect(own).toBe(669); // 73 + the 140 non-verb A1 form tasks of the Spanish course (E122) + the 5 estar forms of hay-estar (E132) + 449 of the German, English and Hungarian courses (E137) + 3 non-verb form tasks of the English A1 lessons (E194) - 1 (articulos-genero ag-form-01 removed, FB687)
+    expect(own).toBe(658); // 73 + the 140 non-verb A1 form tasks of the Spanish course (E122) + the 5 estar forms of hay-estar (E132) + 449 of the German, English and Hungarian courses (E137) + 3 non-verb form tasks of the English A1 lessons (E194) - 1 (articulos-genero ag-form-01 removed, FB687) - 11 (ag-form-02..12 removed, FB697)
     expect(tables).toBeGreaterThan(checked / 2);
   });
 

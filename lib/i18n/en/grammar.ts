@@ -196,6 +196,8 @@ export default {
     doneBody: 'You can leave now or keep practising.',
     keepPractising: 'Keep practising',
     formQuestionVerb: (verb: string, person: string) => `What is the form of ${verb} for ${person}?`,
+    // FB700 + FB705: the tense in everyday words in front of the question ("Past (finished action): what is the form of poder for ...?")
+    formQuestionTense: (tense: string, verb: string, person: string) => `${tense}: what is the form of ${verb} for ${person}?`,
     formQuestionColumn: (asked: string, person: string, title: string) => `What is the ${asked} for ${person}? (${title})`,
     otherForm: (label: string) => `That is another form: ${label}.`,
     youChose: 'You chose',

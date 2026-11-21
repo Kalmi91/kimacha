@@ -92,12 +92,12 @@ describe('grammar lesson screen: per-kind drill buttons', () => {
     view.unmount();
   });
 
-  // the 50-transform-item lesson shows the round-based "10 / 50" button instead of the old
+  // the 55-transform-item lesson shows the round-based "10 / 55" button instead of the old
   // "Rewrite (n)" (the number pair is language-independent,
   // the UI language is en in this test environment), and at the end of a round a button
   // mentioning "10" offers to continue. 4 of the 50 used to be vosotros,
-  // since then they are ustedes items, so the round denominator is 50.
-  it('indefinido-10-verbos (50 transform items) shows a 10/50 round button, and finishing a round offers a retake', async () => {
+  // since then they are ustedes items, so the round denominator is 55.
+  it('indefinido-10-verbos (55 transform items) shows a 10/55 round button, and finishing a round offers a retake', async () => {
     mockTopicId = 'indefinido-10-verbos';
     const now = 1700000000000;
     jest.spyOn(Date, 'now').mockReturnValue(now);
@@ -112,7 +112,7 @@ describe('grammar lesson screen: per-kind drill buttons', () => {
     const view = render(<GrammarLessonScreen />);
     await flush(4);
 
-    expect(within(screen.getByTestId('grammar-start-transform')).getByText(/10.*50/)).toBeTruthy();
+    expect(within(screen.getByTestId('grammar-start-transform')).getByText(/10.*55/)).toBeTruthy();
 
     fireEvent.press(screen.getByTestId('grammar-start-transform'));
     await flush(1);
