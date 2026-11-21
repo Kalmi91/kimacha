@@ -4,9 +4,12 @@ import {
   RATES,
   TAXI,
   LO,
+  GUSTAR,
   listenTitle,
   listenTeaser,
   answerQuiz,
+  checkQuiz,
+  quizAllMarked,
   clock,
   isComplete,
   itemComplete,
@@ -47,8 +50,13 @@ describe('listening data', () => {
     expect(listeningItems('de')).toEqual([]);
   });
 
-  it('Spanish has the greetings, the taxi and the lo, in that order', () => {
-    expect(listeningItems('es')).toEqual([GREETINGS, TAXI, LO]);
+  it('Spanish has the greetings, the taxi, the lo and the gustar, in that order', () => {
+    expect(listeningItems('es')).toEqual([GREETINGS, TAXI, LO, GUSTAR]);
+    expect(GUSTAR.id).toBe('es-gustar');
+    expect(GUSTAR.pairs).toHaveLength(0);
+    expect(GUSTAR.questions).toHaveLength(8);
+    expect(runKeyFor(GUSTAR)).toBe('speech-listen-run-es-gustar');
+    expect(quizKeyFor(GUSTAR)).toBe('speech-listen-quiz-es-gustar');
     expect(LO.id).toBe('es-lo');
     expect(LO.pairs).toHaveLength(0);
     expect(LO.questions).toHaveLength(12);
@@ -66,18 +74,20 @@ describe('listening data', () => {
   });
 
   it('title and teaser per item id', () => {
-    const sx = { greetTitle: 'g', taxiTitle: 't', loTitle: 'l', greetTeaser: 'gt', greetTeaserEn: 'ge', taxiTeaser: 'tt', loTeaser: 'lt' };
+    const sx = { greetTitle: 'g', taxiTitle: 't', loTitle: 'l', gustarTitle: 'gu', greetTeaser: 'gt', greetTeaserEn: 'ge', taxiTeaser: 'tt', loTeaser: 'lt', gustarTeaser: 'gut' };
     expect(listenTitle('es-greetings', sx)).toBe('g');
     expect(listenTitle('es-taxi', sx)).toBe('t');
     expect(listenTitle('es-lo', sx)).toBe('l');
+    expect(listenTitle('es-gustar', sx)).toBe('gu');
     expect(listenTeaser('es-greetings', 'es', sx)).toBe('gt');
     expect(listenTeaser('en-greetings', 'en', sx)).toBe('ge');
     expect(listenTeaser('es-taxi', 'es', sx)).toBe('tt');
     expect(listenTeaser('es-lo', 'es', sx)).toBe('lt');
+    expect(listenTeaser('es-gustar', 'es', sx)).toBe('gut');
   });
 
   it('the questions of every item: unique ids, 3 distinct options, the answer in range', () => {
-    for (const item of [GREETINGS, GREETINGS_EN, TAXI, LO]) {
+    for (const item of [GREETINGS, GREETINGS_EN, TAXI, LO, GUSTAR]) {
       const qs = item.questions ?? [];
       expect(new Set(qs.map((q) => q.id)).size).toBe(qs.length);
       for (const q of qs) {
@@ -95,22 +105,33 @@ describe('listening data', () => {
 
 describe('questions run', () => {
   const qs = TAXI.questions ?? [];
-  it('answers once, a second answer on the same question changes nothing', () => {
+  it('a re-pick replaces the mark, the same option changes nothing, a checked run is locked', () => {
     const run = newQuiz(qs.length, 5);
     expect(run.answers.every((a) => a === -1)).toBe(true);
     const one = answerQuiz(run, 0, 2);
     expect(one.answers[0]).toBe(2);
-    expect(answerQuiz(one, 0, 1)).toBe(one);
+    expect(answerQuiz(one, 0, 2)).toBe(one);
+    expect(answerQuiz(one, 0, 1).answers[0]).toBe(1);
+    const all = qs.reduce((r, q, i) => answerQuiz(r, i, q.answer), run);
+    const done = checkQuiz(all);
+    expect(answerQuiz(done, 0, (qs[0].answer + 1) % 3)).toBe(done);
     expect(answerQuiz(run, -1, 0)).toBe(run);
     expect(answerQuiz(run, qs.length, 0)).toBe(run);
   });
-  it('complete when every question is answered; counts the right ones', () => {
+  it('checkQuiz needs every question marked; complete = checked; counts the right ones', () => {
     let run = newQuiz(qs.length, 5);
     expect(quizComplete(run)).toBe(false);
+    expect(run.checked).toBe(false);
+    expect(checkQuiz(run)).toBe(run);
     qs.forEach((q, i) => {
       run = answerQuiz(run, i, i === 0 ? (q.answer + 1) % 3 : q.answer);
     });
-    expect(quizComplete(run)).toBe(true);
+    expect(quizAllMarked(run)).toBe(true);
+    expect(quizComplete(run)).toBe(false);
+    const done = checkQuiz(run);
+    expect(done.checked).toBe(true);
+    expect(quizComplete(done)).toBe(true);
+    expect(checkQuiz(done)).toBe(done);
     expect(quizRight(run, qs)).toBe(qs.length - 1);
     expect(quizComplete(newQuiz(0, 1))).toBe(false);
   });
@@ -133,6 +154,15 @@ describe('questions run', () => {
     expect(parseQuiz({ seed: 1, answers: qs.map(() => 3) }, qs)).toBeNull();
     expect(parseQuiz({ seed: 1, answers: qs.map(() => -2) }, qs)).toBeNull();
   });
+  it('parses the checked flag; a legacy row counts as graded only when fully answered', () => {
+    const full = qs.map((q) => q.answer);
+    const part = qs.map((_q, i) => (i === 0 ? -1 : 0));
+    expect(parseQuiz({ seed: 1, answers: full, checked: true }, qs)?.checked).toBe(true);
+    expect(parseQuiz({ seed: 1, answers: full, checked: false }, qs)?.checked).toBe(false);
+    expect(parseQuiz({ seed: 1, answers: full, checked: 'yes' }, qs)?.checked).toBe(false);
+    expect(parseQuiz({ seed: 1, answers: full }, qs)?.checked).toBe(true);
+    expect(parseQuiz({ seed: 1, answers: part }, qs)?.checked).toBe(false);
+  });
   it('keeps the paid XP with the run; a missing or bad sum reads as 0', () => {
     const run = { ...answerQuiz(newQuiz(qs.length, 9), 0, qs[0].answer), earned: 1.5 };
     expect(parseQuiz(JSON.parse(JSON.stringify(serializeQuiz(run))), qs)?.earned).toBe(1.5);
@@ -146,18 +176,20 @@ describe('itemComplete', () => {
   const matched = (item: typeof GREETINGS) => item.pairs.reduce((run, _p, i) => pick(run, i, i).run, newRun(1));
   const answered = (item: typeof GREETINGS) =>
     (item.questions ?? []).reduce((run, q, i) => answerQuiz(run, i, q.answer), newQuiz((item.questions ?? []).length, 1));
+  const graded = (item: typeof GREETINGS) => checkQuiz(answered(item));
   it('pairs only (English): the matching is enough', () => {
     expect(itemComplete(GREETINGS_EN, newRun(1), newQuiz(0, 1))).toBe(false);
     expect(itemComplete(GREETINGS_EN, matched(GREETINGS_EN), newQuiz(0, 1))).toBe(true);
   });
   it('questions only (taxi): the questions are enough', () => {
     expect(itemComplete(TAXI, newRun(1), newQuiz(12, 1))).toBe(false);
-    expect(itemComplete(TAXI, newRun(1), answered(TAXI))).toBe(true);
+    expect(itemComplete(TAXI, newRun(1), graded(TAXI))).toBe(true);
+    expect(itemComplete(TAXI, newRun(1), answered(TAXI))).toBe(false);
   });
   it('both (Spanish greetings): needs both', () => {
     expect(itemComplete(GREETINGS, matched(GREETINGS), newQuiz(GREETINGS.questions?.length ?? 0, 1))).toBe(false);
     expect(itemComplete(GREETINGS, newRun(1), answered(GREETINGS))).toBe(false);
-    expect(itemComplete(GREETINGS, matched(GREETINGS), answered(GREETINGS))).toBe(true);
+    expect(itemComplete(GREETINGS, matched(GREETINGS), graded(GREETINGS))).toBe(true);
   });
 });
 

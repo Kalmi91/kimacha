@@ -2,6 +2,7 @@ import greetings from '@/data/listening/greetings-es.json';
 import greetingsEn from '@/data/listening/greetings-en.json';
 import taxi from '@/data/listening/taxi-es.json';
 import lo from '@/data/listening/lo-es.json';
+import gustar from '@/data/listening/gustar-es.json';
 import type { PcicTarget } from '@/data/pcic';
 import { shuffleArray, shuffleNoFixedPoints } from '@/lib/shuffle';
 
@@ -35,24 +36,25 @@ export const GREETINGS: ListeningData = greetings;
 export const GREETINGS_EN: ListeningData = greetingsEn;
 export const TAXI: ListeningData = taxi;
 export const LO: ListeningData = lo;
+export const GUSTAR: ListeningData = gustar;
 
 /** The listening items of a target language, in the order of the list (empty = that target has none). */
 export function listeningItems(target: PcicTarget): ListeningData[] {
-  return target === 'es' ? [GREETINGS, TAXI, LO] : target === 'en' ? [GREETINGS_EN] : [];
+  return target === 'es' ? [GREETINGS, TAXI, LO, GUSTAR] : target === 'en' ? [GREETINGS_EN] : [];
 }
 
 /** The title of a listening item (the greetings are the default). */
-export function listenTitle(id: string, sx: { taxiTitle: string; loTitle: string; greetTitle: string }): string {
-  return id === 'es-taxi' ? sx.taxiTitle : id === 'es-lo' ? sx.loTitle : sx.greetTitle;
+export function listenTitle(id: string, sx: { taxiTitle: string; loTitle: string; gustarTitle: string; greetTitle: string }): string {
+  return id === 'es-taxi' ? sx.taxiTitle : id === 'es-lo' ? sx.loTitle : id === 'es-gustar' ? sx.gustarTitle : sx.greetTitle;
 }
 
 /** The teaser of a listening item (the greetings are the default, English has its own). */
 export function listenTeaser(
   id: string,
   target: PcicTarget,
-  sx: { taxiTeaser: string; loTeaser: string; greetTeaser: string; greetTeaserEn: string },
+  sx: { taxiTeaser: string; loTeaser: string; gustarTeaser: string; greetTeaser: string; greetTeaserEn: string },
 ): string {
-  return id === 'es-taxi' ? sx.taxiTeaser : id === 'es-lo' ? sx.loTeaser : target === 'en' ? sx.greetTeaserEn : sx.greetTeaser;
+  return id === 'es-taxi' ? sx.taxiTeaser : id === 'es-lo' ? sx.loTeaser : id === 'es-gustar' ? sx.gustarTeaser : target === 'en' ? sx.greetTeaserEn : sx.greetTeaser;
 }
 
 /** The `game_progress` game of the finished listening steps (the item is the data id). */
@@ -116,29 +118,46 @@ export interface QuizRun {
   answers: number[];
   /** The XP the right answers of this run paid (kept with the run, so a re-entry shows the whole sum). */
   earned: number;
+  /** The run was graded with the check button; the answers are locked then. */
+  checked: boolean;
 }
 
-export const newQuiz = (count: number, seed: number): QuizRun => ({ seed, answers: Array.from({ length: count }, () => -1), earned: 0 });
+export const newQuiz = (count: number, seed: number): QuizRun => ({
+  seed,
+  answers: Array.from({ length: count }, () => -1),
+  earned: 0,
+  checked: false,
+});
 
 /** The display order of the options of a question (indexes into `options`): seeded, stable for the same seed. */
 export function optionOrder(questionIndex: number, optionCount: number, seed: number): number[] {
   return shuffleArray(Array.from({ length: optionCount }, (_, i) => i), seed + questionIndex * 7919);
 }
 
-/** The option `option` chosen for question `questionIndex`; an answered question or an index out of range changes nothing. */
+/** Marks option `option` for question `questionIndex` (a re-pick replaces the earlier mark); a checked run, the same option or an index out of range changes nothing. */
 export function answerQuiz(run: QuizRun, questionIndex: number, option: number): QuizRun {
   if (!Number.isInteger(questionIndex) || questionIndex < 0 || questionIndex >= run.answers.length) return run;
-  if (!Number.isInteger(option) || option < 0 || run.answers[questionIndex] !== -1) return run;
+  if (run.checked || !Number.isInteger(option) || option < 0 || run.answers[questionIndex] === option) return run;
   return { ...run, answers: run.answers.map((a, i) => (i === questionIndex ? option : a)) };
 }
 
-export const quizComplete = (run: QuizRun): boolean => run.answers.length > 0 && run.answers.every((a) => a >= 0);
+/** Every question has a mark (not graded yet). */
+export const quizAllMarked = (run: QuizRun): boolean => run.answers.length > 0 && run.answers.every((a) => a >= 0);
+
+/** The run is graded (and every question was marked). */
+export const quizComplete = (run: QuizRun): boolean => run.checked && quizAllMarked(run);
+
+/** Grades the run with the check button: needs every question marked; a checked or incomplete run is returned unchanged. */
+export function checkQuiz(run: QuizRun): QuizRun {
+  if (run.checked || !quizAllMarked(run)) return run;
+  return { ...run, checked: true };
+}
 
 /** How many questions are answered right. */
 export const quizRight = (run: QuizRun, questions: readonly ListeningQuestion[]): number =>
   questions.filter((q, i) => run.answers[i] === q.answer).length;
 
-export const serializeQuiz = (run: QuizRun): QuizRun => ({ seed: run.seed, answers: [...run.answers], earned: run.earned });
+export const serializeQuiz = (run: QuizRun): QuizRun => ({ seed: run.seed, answers: [...run.answers], earned: run.earned, checked: run.checked });
 
 /** A saved questions run back, or null when it is not one of these questions (wrong shape, wrong length, an option out of range). */
 export function parseQuiz(raw: unknown, questions: readonly ListeningQuestion[]): QuizRun | null {
@@ -147,7 +166,9 @@ export function parseQuiz(raw: unknown, questions: readonly ListeningQuestion[])
   if (!Number.isInteger(r.seed) || !Array.isArray(r.answers) || r.answers.length !== questions.length) return null;
   const ok = r.answers.every((a, i) => Number.isInteger(a) && a >= -1 && a < questions[i].options.length);
   const earned = typeof r.earned === 'number' && Number.isFinite(r.earned) && r.earned >= 0 ? r.earned : 0;
-  return ok ? { seed: r.seed as number, answers: [...r.answers], earned } : null;
+  // A legacy row without the flag was graded per tap: it counts as checked when every question has an answer.
+  const checked = 'checked' in r ? r.checked === true : r.answers.every((a) => a >= 0);
+  return ok ? { seed: r.seed as number, answers: [...r.answers], earned, checked } : null;
 }
 
 /** Every part the item has is finished: all pairs matched (if it has pairs) and all questions answered (if it has questions). */
