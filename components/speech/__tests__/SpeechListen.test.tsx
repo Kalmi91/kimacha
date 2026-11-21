@@ -60,8 +60,13 @@ const open = async (item: ListeningData = GREETINGS) => {
 // question qi: tap its right option (the test ids carry the option index of the data) or a wrong one
 const answerRight = async (view: View, item: ListeningData, qi: number) => press(view, `speech-listen-q-${qi}-opt-${item.questions![qi].answer}`);
 const answerWrong = async (view: View, item: ListeningData, qi: number) => press(view, `speech-listen-q-${qi}-opt-${(item.questions![qi].answer + 1) % 3}`);
-const answerAll = async (view: View, item: ListeningData) => {
+const markAllRight = async (view: View, item: ListeningData) => {
   for (let i = 0; i < item.questions!.length; i++) await answerRight(view, item, i);
+};
+// mark every question right, then grade with the check button
+const answerAll = async (view: View, item: ListeningData) => {
+  await markAllRight(view, item);
+  await press(view, 'speech-listen-quiz-check');
 };
 const xpNow = async () => (await getXp()).xp;
 // the pair i, right: tap its place and its greeting (the test ids are the pair indexes, the column order is the screen's business)
@@ -244,48 +249,78 @@ describe('Speak tab: greetings listening', () => {
     view.unmount();
   });
 
-  it('XP: a right answer pays 1, again after Try again 0.5, a wrong answer nothing, a locked question nothing', async () => {
+  it('marking gives no XP, no result and no colour; a re-pick replaces the mark; the check button waits for all', async () => {
+    const view = await open(TAXI);
+    const before = await xpNow();
+    const right = TAXI.questions![0].answer;
+    const wrong = (right + 1) % 3;
+    await answerRight(view, TAXI, 0);
+    expect(await xpNow()).toBe(before);
+    expect(view.queryByTestId('speech-listen-quiz-result')).toBeNull();
+    expect(view.getByTestId(`speech-listen-q-0-opt-${right}`).props.accessibilityState).toEqual({ disabled: false, selected: true });
+    await press(view, `speech-listen-q-0-opt-${wrong}`);
+    expect(view.getByTestId(`speech-listen-q-0-opt-${right}`).props.accessibilityState.selected).toBe(false);
+    expect(view.getByTestId(`speech-listen-q-0-opt-${wrong}`).props.accessibilityState.selected).toBe(true);
+    expect(view.getByTestId('speech-listen-quiz-marked').props.children).toBe(sx.quizMarked(1, 12));
+    expect(view.getByTestId('speech-listen-quiz-check').props.accessibilityState.disabled).toBe(true);
+    fireEvent.press(view.getByTestId('speech-listen-quiz-check'));
+    await flush();
+    expect(view.queryByTestId('speech-listen-quiz-result')).toBeNull();
+    for (let i = 1; i < 12; i++) await answerRight(view, TAXI, i);
+    expect(view.getByTestId('speech-listen-quiz-check').props.accessibilityState.disabled).toBe(false);
+    expect(await xpNow()).toBe(before);
+    view.unmount();
+  });
+
+  it('XP: check pays 1 per right answer, again after Try again 0.5, a wrong answer nothing, answers locked after', async () => {
     const view = await open(TAXI);
     const before = await xpNow();
     await answerWrong(view, TAXI, 0);
-    expect(await xpNow()).toBe(before);
+    for (let i = 1; i < 12; i++) await answerRight(view, TAXI, i);
+    await press(view, 'speech-listen-quiz-check');
+    expect(await xpNow()).toBe(before + 11);
+    expect(view.getByTestId('speech-listen-quiz-result').props.children).toBe(sx.quizResult(11, 12));
     expect(view.getByTestId(`speech-listen-q-0-opt-${TAXI.questions![0].answer}`).props.accessibilityState.disabled).toBe(true);
     await press(view, `speech-listen-q-0-opt-${TAXI.questions![0].answer}`);
-    expect(await xpNow()).toBe(before);
-    await answerRight(view, TAXI, 1);
-    expect(await xpNow()).toBe(before + 1);
-    for (let i = 2; i < 12; i++) await answerRight(view, TAXI, i);
+    expect(await xpNow()).toBe(before + 11);
+    expect(view.queryByTestId('speech-listen-quiz-check')).toBeNull();
     await press(view, 'speech-listen-quiz-again');
     expect(view.queryByTestId('speech-listen-quiz-result')).toBeNull();
-    await answerRight(view, TAXI, 1);
-    expect(await xpNow()).toBe(before + 1 + 10 + 0.5);
+    expect(view.getByTestId('speech-listen-quiz-check').props.accessibilityState.disabled).toBe(true);
+    await answerAll(view, TAXI);
+    expect(await xpNow()).toBe(before + 11 + 6.5);
     view.unmount();
   });
 
-  it('two fast taps on the right option pay once', async () => {
+  it('two fast presses of the check button pay once', async () => {
     const view = await open(TAXI);
     const before = await xpNow();
-    const id = `speech-listen-q-0-opt-${TAXI.questions![0].answer}`;
-    fireEvent.press(view.getByTestId(id));
-    fireEvent.press(view.getByTestId(id));
+    await markAllRight(view, TAXI);
+    const btn = view.getByTestId('speech-listen-quiz-check');
+    fireEvent.press(btn);
+    fireEvent.press(btn);
     await flush();
-    expect(await xpNow()).toBe(before + 1);
+    expect(await xpNow()).toBe(before + 12);
     view.unmount();
   });
 
-  it('answered questions survive a re-mount and pay nothing again', async () => {
+  it('marks survive a re-mount unchecked; a checked run restores with the result and pays nothing again', async () => {
     const view = await open(TAXI);
     await answerRight(view, TAXI, 0);
     await answerWrong(view, TAXI, 1);
-    const after = await xpNow();
     view.unmount();
     const back = await open(TAXI);
-    expect(await xpNow()).toBe(after);
-    expect(back.getByTestId(`speech-listen-q-0-opt-${TAXI.questions![0].answer}`).props.accessibilityState.disabled).toBe(true);
-    expect(back.getByTestId(`speech-listen-q-2-opt-0`).props.accessibilityState.disabled).toBe(false);
-    await answerRight(back, TAXI, 0);
-    expect(await xpNow()).toBe(after);
+    expect(back.getByTestId(`speech-listen-q-0-opt-${TAXI.questions![0].answer}`).props.accessibilityState).toEqual({ disabled: false, selected: true });
+    expect(back.getByTestId('speech-listen-quiz-marked').props.children).toBe(sx.quizMarked(2, 12));
+    for (let i = 2; i < 12; i++) await answerRight(back, TAXI, i);
+    await press(back, 'speech-listen-quiz-check');
+    const after = await xpNow();
     back.unmount();
+    const again = await open(TAXI);
+    expect(await xpNow()).toBe(after);
+    expect(again.getByTestId('speech-listen-quiz-result').props.children).toBe(sx.quizResult(11, 12));
+    expect(again.getByTestId(`speech-listen-q-2-opt-0`).props.accessibilityState.disabled).toBe(true);
+    again.unmount();
   });
 
   it('the XP line of the result counts the whole run across a re-mount, and Try again starts it from 0', async () => {
@@ -295,11 +330,12 @@ describe('Speak tab: greetings listening', () => {
     view.unmount();
     const back = await open(TAXI);
     for (let i = 1; i < 12; i++) await answerRight(back, TAXI, i);
+    await press(back, 'speech-listen-quiz-check');
     const paid = (await xpNow()) - before;
     expect(paid).toBe(12);
     expect(back.getByTestId('speech-listen-quiz-xp').props.children).toBe(sx.quizXp(paid));
     await press(back, 'speech-listen-quiz-again');
-    for (let i = 0; i < 12; i++) await answerRight(back, TAXI, i);
+    await answerAll(back, TAXI);
     expect(back.getByTestId('speech-listen-quiz-xp').props.children).toBe(sx.quizXp(6));
     back.unmount();
   });

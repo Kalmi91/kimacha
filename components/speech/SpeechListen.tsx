@@ -23,6 +23,7 @@ import {
   runKeyFor,
   RATES,
   answerQuiz,
+  checkQuiz,
   clock,
   isComplete,
   itemComplete,
@@ -34,6 +35,7 @@ import {
   parseRate,
   parseRun,
   pick,
+  quizAllMarked,
   quizComplete,
   quizRight,
   rightOrder,
@@ -251,9 +253,16 @@ export default function SpeechListen({ item, onBack, onFinished }: Props) {
     quizRef.current = next;
     setQuiz(next);
     void saveResumeValue(getDb(), quizKey, serializeQuiz(next));
-    if (option === questions[qi].answer) {
-      awardXpThen('listening', `${data.id}:${questions[qi].id}`, (points) => {
-        // the paid XP goes into the run it was earned in; a run started since (Try again) keeps its own sum
+  };
+  const check = () => {
+    const next = checkQuiz(quizRef.current);
+    if (next === quizRef.current) return;
+    quizRef.current = next;
+    setQuiz(next);
+    void saveResumeValue(getDb(), quizKey, serializeQuiz(next));
+    questions.forEach((q, i) => {
+      if (next.answers[i] !== q.answer) return;
+      awardXpThen('listening', `${data.id}:${q.id}`, (points) => {
         const cur = quizRef.current;
         if (cur.seed !== next.seed) return;
         const paid = { ...cur, earned: cur.earned + points };
@@ -261,7 +270,7 @@ export default function SpeechListen({ item, onBack, onFinished }: Props) {
         setQuiz(paid);
         void saveResumeValue(getDb(), quizKey, serializeQuiz(paid));
       });
-    }
+    });
     finishIfComplete(run, next);
   };
   const quizAgain = () => {
@@ -274,10 +283,10 @@ export default function SpeechListen({ item, onBack, onFinished }: Props) {
   const optionButton = (qi: number, k: number) => {
     const q = questions[qi];
     const chosen = quiz.answers[qi];
-    const answered = chosen >= 0;
+    const answered = quiz.checked;
     const picked = chosen === k;
     const right = k === q.answer;
-    const edge = answered && right ? colors.success : picked ? colors.danger : colors.border;
+    const edge = answered ? (right ? colors.success : picked ? colors.danger : colors.border) : picked ? colors.tint : colors.border;
     return (
       <Pressable
         key={`q${qi}-${k}`}
@@ -285,9 +294,9 @@ export default function SpeechListen({ item, onBack, onFinished }: Props) {
         accessibilityRole="button"
         accessibilityState={{ disabled: answered, selected: picked }}
         onPress={() => answer(qi, k)}
-        style={[styles.cell, themedEdgeStyle(g), { backgroundColor: colors.card, borderColor: edge }, answered && (right || picked) && styles.cellOn]}
+        style={[styles.cell, themedEdgeStyle(g), { backgroundColor: colors.card, borderColor: edge }, (answered ? right || picked : picked) && styles.cellOn]}
       >
-        <Text style={[styles.cellText, { color: answered && right ? colors.success : picked ? colors.danger : colors.text }]}>{q.options[k]}</Text>
+        <Text style={[styles.cellText, { color: answered ? (right ? colors.success : picked ? colors.danger : colors.text) : picked ? colors.tint : colors.text }]}>{q.options[k]}</Text>
       </Pressable>
     );
   };
@@ -473,6 +482,20 @@ export default function SpeechListen({ item, onBack, onFinished }: Props) {
                 {optionOrder(qi, q.options.length, quiz.seed).map((k) => optionButton(qi, k))}
               </View>
             ))}
+            {!quiz.checked && (
+              <View style={styles.result}>
+                <Text testID="speech-listen-quiz-marked" style={[styles.instruction, { color: colors.textMuted }]}>{sx.quizMarked(quiz.answers.filter((a) => a >= 0).length, questions.length)}</Text>
+                <Pressable
+                  testID="speech-listen-quiz-check"
+                  accessibilityRole="button"
+                  disabled={!quizAllMarked(quiz)}
+                  onPress={check}
+                  style={[styles.replay, themedEdgeStyle(g), { borderColor: colors.border, backgroundColor: colors.card, opacity: quizAllMarked(quiz) ? 1 : 0.5 }]}
+                >
+                  <Text style={[styles.chipText, { color: colors.text }]}>{sx.quizCheck}</Text>
+                </Pressable>
+              </View>
+            )}
             {quizComplete(quiz) && (
               <View style={styles.result}>
                 <Text testID="speech-listen-quiz-result" style={[styles.resultText, { color: colors.success }]}>
