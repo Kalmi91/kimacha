@@ -49,6 +49,7 @@ function TypedItem({
   strictAccents,
   onDone,
   onShown,
+  endOnMiss,
 }: {
   prefix: string;
   itemId: string;
@@ -70,6 +71,8 @@ function TypedItem({
   onDone: (correct: boolean, mistyped?: boolean, given?: string) => void;
   /** The answer is checked (its feedback is on screen), before Next. */
   onShown?: (correct: boolean) => void;
+  /** A wrong answer ends the task at once (no feedback of its own): the caller shows the one page for the miss. */
+  endOnMiss?: boolean;
 }) {
   const g = useGrammarColors();
   const s = t();
@@ -84,6 +87,7 @@ function TypedItem({
     if (result || typed.trim() === '') return;
     Keyboard.dismiss(); // the feedback (right answer, why) must not sit behind the keyboard
     const typedRight = isRight(typed);
+    if (endOnMiss && !(typedRight && !forceWrong)) return onDone(false, undefined, typed);
     setResult({ correct: typedRight && !forceWrong, typedRight });
     onShown?.(typedRight && !forceWrong);
     speak(filled, locale);
@@ -165,10 +169,11 @@ type TypedProps<T> = {
   strictAccents: boolean;
   onDone: (correct: boolean, mistyped?: boolean, given?: string) => void;
   onShown?: (correct: boolean) => void;
+  endOnMiss?: boolean;
 };
 
 // ---------------------------------------------------------------- open cloze
-export function ClozeDrillItem({ item, learnedLang, contentLang, strictAccents, onDone, onShown }: TypedProps<ClozeItem>) {
+export function ClozeDrillItem({ item, learnedLang, contentLang, strictAccents, onDone, onShown, endOnMiss }: TypedProps<ClozeItem>) {
   const g = useGrammarColors();
   const s = t();
   const parts = useMemo(() => clozeParts(item.text), [item.text]);
@@ -196,6 +201,7 @@ export function ClozeDrillItem({ item, learnedLang, contentLang, strictAccents, 
     if (result || typed.some((x) => x.trim() === '')) return;
     Keyboard.dismiss();
     const graded = gradeCloze(item, typed, strictAccents);
+    if (endOnMiss && !graded.every(Boolean)) return onDone(false, undefined, filledCloze(item.text, typed));
     setResult(graded);
     onShown?.(graded.every(Boolean));
   };
@@ -279,7 +285,7 @@ export function ClozeDrillItem({ item, learnedLang, contentLang, strictAccents, 
 }
 
 // ---------------------------------------------------------------- error correction: find AND type the fix
-export function FixDrillItem({ item, learnedLang, contentLang, strictAccents, onDone, onShown }: TypedProps<FixItem>) {
+export function FixDrillItem({ item, learnedLang, contentLang, strictAccents, onDone, onShown, endOnMiss }: TypedProps<FixItem>) {
   const g = useGrammarColors();
   const s = t();
   const words = useMemo(() => item.es.split(/\s+/).filter(Boolean), [item.es]);
@@ -336,12 +342,13 @@ export function FixDrillItem({ item, learnedLang, contentLang, strictAccents, on
       strictAccents={strictAccents}
       onDone={onDone}
       onShown={onShown}
+      endOnMiss={endOnMiss}
     />
   );
 }
 
 // ---------------------------------------------------------------- word bank
-export function BankDrillItem({ item, learnedLang, contentLang, strictAccents, onDone, onShown }: TypedProps<BankItem>) {
+export function BankDrillItem({ item, learnedLang, contentLang, strictAccents, onDone, onShown, endOnMiss }: TypedProps<BankItem>) {
   const g = useGrammarColors();
   const s = t();
   const head = (
@@ -376,12 +383,13 @@ export function BankDrillItem({ item, learnedLang, contentLang, strictAccents, o
       strictAccents={strictAccents}
       onDone={onDone}
       onShown={onShown}
+      endOnMiss={endOnMiss}
     />
   );
 }
 
 // ---------------------------------------------------------------- typed noun form (article + plural)
-export function NounDrillItem({ item, learnedLang, contentLang, strictAccents, onDone, onShown }: TypedProps<NounItem>) {
+export function NounDrillItem({ item, learnedLang, contentLang, strictAccents, onDone, onShown, endOnMiss }: TypedProps<NounItem>) {
   const g = useGrammarColors();
   const head = (
     <>
@@ -407,6 +415,7 @@ export function NounDrillItem({ item, learnedLang, contentLang, strictAccents, o
       strictAccents={strictAccents}
       onDone={onDone}
       onShown={onShown}
+      endOnMiss={endOnMiss}
     />
   );
 }

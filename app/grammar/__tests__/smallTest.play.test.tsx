@@ -428,19 +428,43 @@ describe.each(['brand', 'classic'] as const)('grammar small test (%s palette)', 
     expect(text('fb-card')).toMatch(/^grammar-small-test:A2:lt-4-b\d \| en→es \| A1$/);
     fireEvent.changeText(screen.getByTestId('bank-input'), 'rojo');
     await press('bank-check');
-    await press('grammar-next');
+    // FB701-703: one page after a miss, no feedback card of the item before it
+    expect(has('bank-wrong')).toBe(false);
+    expect(has('grammar-next')).toBe(false);
     expect(has('small-test-miss')).toBe(true);
+    expect(text('small-test-miss-given')).toBe('You typed: rojo');
     expect(text('small-test-miss-answer')).toMatch(/^Los coches \d son rojos\.$/);
     expect(text('small-test-miss-why')).toBe('Agrees in number.');
+    expect(has('small-test-miss-lesson')).toBe(true);
+    expect(has('small-test-miss-next')).toBe(true);
+    // the lesson button opens the topic of the question
+    mockPush.mockClear();
+    await press('small-test-miss-lesson');
+    expect(mockPush).toHaveBeenCalledWith('/grammar/lt-4');
+    expect(has('small-test-miss')).toBe(true); // back from the lesson: the same page
     await press('small-test-mistyped');
     expect(text('small-test-header')).toBe('A2 topic test · 2/10');
     const st = await loadSmallState(getDb(), 'en→es', 'A2');
     expect(st.run!.answers[0]).toMatchObject({ ok: true, mistyped: true, type: 'bank' });
-    // a right typed answer goes straight on
+    // a right typed answer goes straight on: its own card, no miss page
     fireEvent.changeText(screen.getByTestId('bank-input'), 'rojos');
     await press('bank-check');
+    expect(has('small-test-miss')).toBe(false);
     await press('grammar-next');
     expect(text('small-test-header')).toBe('A2 topic test · 3/10');
+  });
+
+  it('a miss page: Next goes to the next item and counts the miss', async () => {
+    mockParams = { level: 'a2' };
+    await open();
+    await press('small-test-start');
+    fireEvent.changeText(screen.getByTestId('bank-input'), 'rojo');
+    await press('bank-check');
+    await press('small-test-miss-next');
+    expect(has('small-test-miss')).toBe(false);
+    expect(text('small-test-header')).toBe('A2 topic test · 2/10');
+    const st = await loadSmallState(getDb(), 'en→es', 'A2');
+    expect(st.run!.answers[0]).toMatchObject({ ok: false, type: 'bank' });
   });
 });
 
@@ -504,13 +528,13 @@ describe.each([
     expect(text('small-test-header')).toBe('B1 topic test · 2/10');
   });
 
-  // E201 (FB684): the "I mistyped" button is on the item's own feedback, and counts the answer as right AND mistyped
-  (kind === 'opencloze' ? it : it.skip)('a wrong typed answer offers "I mistyped" on the item; pressing it settles right + mistyped', async () => {
+  // E201 (FB684): the "I mistyped" button counts the answer as right AND mistyped (FB701: it is on the one miss page)
+  (kind === 'opencloze' ? it : it.skip)('a wrong typed answer offers "I mistyped" on the miss page; pressing it settles right + mistyped', async () => {
     await open();
     await press('small-test-start');
     await answerWrong();
-    expect(has('grammar-mistyped')).toBe(true);
-    await press('grammar-mistyped');
+    expect(has('small-test-mistyped')).toBe(true);
+    await press('small-test-mistyped');
     expect(text('small-test-header')).toBe('B1 topic test · 2/10');
     const st = await loadSmallState(getDb(), 'en→es', 'B1');
     expect(st.run!.answers[0]).toMatchObject({ ok: true, mistyped: true });
