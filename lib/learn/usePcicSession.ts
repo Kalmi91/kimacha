@@ -17,7 +17,7 @@ import { articleOf, composeAnswer, type ArticlePick } from '@/lib/articlePicker'
 import { sm2Review, sm2MarkKnown, type Sm2Card, type Sm2Grade } from '@/lib/sm2';
 import { pickLearnSession, continueLearnSession, skipReplacement, type LearnSessionOptions } from '@/lib/pcicSession';
 import { advanceLearnSrsDay } from '@/lib/learn/srsDay';
-import { countDoneToday, countIntroducedTodayByKind, requeueAfterGrade, requeueAfterUndo, newTopUp, shouldAskMoreNew, nextPcicNewBonus, pcicSessionNewLimit, practiceTopUpStep, PCIC_NEW_BONUS_STEP, thinSentences, dropOrphanCards, countFinishedToday } from '@/lib/pcicSession';
+import { countDoneToday, countIntroducedTodayByKind, dayBatchDone, requeueAfterGrade, requeueAfterUndo, newTopUp, shouldAskMoreNew, nextPcicNewBonus, pcicSessionNewLimit, practiceTopUpStep, PCIC_NEW_BONUS_STEP, thinSentences, dropOrphanCards, countFinishedToday } from '@/lib/pcicSession';
 import { cardsForLevel } from '@/lib/pcicLevels';
 import { applyLearnResume, buildLearnResume, isLearnResumeFor, loadLearnResume, loadNewDeclinedDay, saveLearnResume, saveNewDeclinedDay } from '@/lib/learnResume';
 import { DOCK_RESERVE } from '@/components/learn/DockedAction';
@@ -524,6 +524,7 @@ export function usePcicSession() {
   });
   const introducedTodayByKind = countIntroducedTodayByKind(cardsAllLevels, today, (id) => findPcicItem(id)?.kind);
   const todayNewBudget = dailyNewLimit + pcicBonus;
+  const dayDone = dayBatchDone(introducedTodayByKind.words + introducedTodayByKind.sentences, dailyNewLimit);
 
   // The DB write + counters are here, the queue step (advance) is in the
   // caller handleGrade, separately.
@@ -828,6 +829,7 @@ export function usePcicSession() {
     handleUndo,
     introducedTodayByKind,
     todayNewBudget,
+    dayDone,
     askMoreNew,
     handleAskMoreNew,
     handleDeclineMoreNew,

@@ -43,7 +43,7 @@ import { styles } from './pcicStyles';
 import { spainFormsInAnswer, spainFormsInCardSentence } from '@/lib/spainForms';
 
 // Everything the PCIC card view reads from the session hook (lib/learn/usePcicSession.ts).
-export type PcicCardViewProps = Omit<ReturnType<typeof usePcicSession>, 'srsDay'> & { srsDay?: string };
+export type PcicCardViewProps = Omit<ReturnType<typeof usePcicSession>, 'srsDay' | 'dayDone'> & { srsDay?: string; dayDone?: boolean };
 
 export default function PcicCardView({
   loading,
@@ -55,7 +55,7 @@ export default function PcicCardView({
   doneToday,
   xpToday,
   lastGraded,
-  handleUndo,
+  handleUndo, dayDone,
   askMoreNew,
   handleAskMoreNew,
   handleDeclineMoreNew,
@@ -221,7 +221,7 @@ export default function PcicCardView({
           title={s.pcic.chooseLevel}
           target={target}
           exam={examRow}
-          onPlacement={openPlacement}
+          onPlacement={openPlacement} dayDone={dayDone}
           onSelect={handleSelectLevel}
           onClose={() => setLevelSheetOpen(false)}
         />
@@ -243,7 +243,7 @@ export default function PcicCardView({
           title={s.pcic.chooseLevel}
           target={target}
           exam={examRow}
-          onPlacement={openPlacement}
+          onPlacement={openPlacement} dayDone={dayDone}
           onSelect={handleSelectLevel}
           onClose={() => setLevelSheetOpen(false)}
         />
@@ -269,7 +269,7 @@ export default function PcicCardView({
           title={s.pcic.chooseLevel}
           target={target}
           exam={examRow}
-          onPlacement={openPlacement}
+          onPlacement={openPlacement} dayDone={dayDone}
           onSelect={handleSelectLevel}
           onClose={() => setLevelSheetOpen(false)}
         />
@@ -403,7 +403,7 @@ export default function PcicCardView({
         title={s.pcic.chooseLevel}
         target={target}
         exam={examRow}
-        onPlacement={openPlacement}
+        onPlacement={openPlacement} dayDone={dayDone}
         onSelect={handleSelectLevel}
         onClose={() => setLevelSheetOpen(false)}
       />
