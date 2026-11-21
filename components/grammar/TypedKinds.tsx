@@ -15,6 +15,7 @@ import { speechLang } from '@/lib/languages';
 import { fixedSentence } from '@/lib/grammar/fixedSentence';
 import type { BankItem, ClozeItem, ContentLang, FixItem, NounItem } from '@/lib/grammar/lessonTypes';
 import { clozeParts, filledCloze, filledSentence, gradeCloze, isBankAnswerRight, isFixAnswerRight, isNounAnswerRight } from '@/lib/grammar/typedKinds';
+import { hashString, shuffleArray } from '@/lib/shuffle';
 import { speak, stopSpeaking } from '@/lib/speech';
 
 type Lang = ContentLang;
@@ -348,14 +349,20 @@ export function FixDrillItem({ item, learnedLang, contentLang, strictAccents, on
 }
 
 // ---------------------------------------------------------------- word bank
+/** The bank words in a seeded mixed order (the data lists the right word first in most items). */
+export function bankDisplayOrder(item: Pick<BankItem, 'id' | 'bank'>): string[] {
+  return shuffleArray(item.bank, hashString(item.id));
+}
+
 export function BankDrillItem({ item, learnedLang, contentLang, strictAccents, onDone, onShown, endOnMiss }: TypedProps<BankItem>) {
   const g = useGrammarColors();
   const s = t();
+  const shownBank = useMemo(() => bankDisplayOrder(item), [item]);
   const head = (
     <>
       <ItemHead title={s.grammar.bankHint} />
       <View style={styles.wordRow}>
-        {item.bank.map((w, i) => (
+        {shownBank.map((w, i) => (
           <BrutalBox key={`${w}-${i}`} testID={`bank-word-${i}`} fill="paper" offset={2} boxStyle={styles.chip}>
             <Text style={[styles.chipText, { color: g.ink }]}>{w}</Text>
           </BrutalBox>
