@@ -50,6 +50,10 @@ describe('the XP table', () => {
     expect(await payouts('speech', 'a1-restaurante', 4)).toEqual([3, 0.5, 0, 0]);
   });
 
+  it('listening pays 1, 0.5, 0.25, then nothing', () => {
+    expect([0, 1, 2, 3].map((i) => xpForRepeat('listening', i))).toEqual([1, 0.5, 0.25, 0]);
+  });
+
   it('xpForRepeat reads the table and is 0 past its end', () => {
     for (const kind of Object.keys(XP_TABLE) as XpKind[]) {
       XP_TABLE[kind].forEach((points, i) => expect(xpForRepeat(kind, i)).toBe(points));

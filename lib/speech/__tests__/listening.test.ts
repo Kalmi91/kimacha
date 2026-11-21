@@ -1,4 +1,28 @@
-import { GREETINGS, GREETINGS_EN, RATES, clock, isComplete, newRun, parseRate, parseRun, pick, listeningFor, rightOrder, runKeyFor, serializeRun } from '@/lib/speech/listening';
+import {
+  GREETINGS,
+  GREETINGS_EN,
+  RATES,
+  TAXI,
+  answerQuiz,
+  clock,
+  isComplete,
+  itemComplete,
+  listeningItems,
+  newQuiz,
+  newRun,
+  optionOrder,
+  parseQuiz,
+  parseRate,
+  parseRun,
+  pick,
+  quizComplete,
+  quizKeyFor,
+  quizRight,
+  rightOrder,
+  runKeyFor,
+  serializeQuiz,
+  serializeRun,
+} from '@/lib/speech/listening';
 
 describe('listening data', () => {
   it('has pairs of a place and a greeting, and a known shape', () => {
@@ -15,15 +39,106 @@ describe('listening data', () => {
     expect(GREETINGS_EN.pairs).toHaveLength(12);
     expect(new Set(GREETINGS_EN.pairs.map((p) => p.place)).size).toBe(12);
     expect(new Set(GREETINGS_EN.pairs.map((p) => p.greeting)).size).toBe(12);
-    expect(listeningFor('es')).toBe(GREETINGS);
-    expect(listeningFor('en')).toBe(GREETINGS_EN);
-    expect(listeningFor('hu')).toBeUndefined();
-    expect(listeningFor('de')).toBeUndefined();
+    expect(listeningItems('en')).toEqual([GREETINGS_EN]);
+    expect(listeningItems('hu')).toEqual([]);
+    expect(listeningItems('de')).toEqual([]);
   });
 
-  it('the run key: Spanish keeps the original, English differs', () => {
-    expect(runKeyFor('es')).toBe('speech-listen-run');
-    expect(runKeyFor('en')).not.toBe(runKeyFor('es'));
+  it('Spanish has the greetings and the taxi, in that order', () => {
+    expect(listeningItems('es')).toEqual([GREETINGS, TAXI]);
+    expect(TAXI.id).toBe('es-taxi');
+    expect(TAXI.pairs).toHaveLength(0);
+  });
+
+  it('the run key: the two greetings keep their original keys, others get their id', () => {
+    expect(runKeyFor(GREETINGS)).toBe('speech-listen-run');
+    expect(runKeyFor(GREETINGS_EN)).toBe('speech-listen-run-en');
+    expect(runKeyFor(TAXI)).toBe('speech-listen-run-es-taxi');
+    expect(quizKeyFor(TAXI)).toBe('speech-listen-quiz-es-taxi');
+  });
+
+  it('the questions of every item: unique ids, 3 distinct options, the answer in range', () => {
+    for (const item of [GREETINGS, GREETINGS_EN, TAXI]) {
+      const qs = item.questions ?? [];
+      expect(new Set(qs.map((q) => q.id)).size).toBe(qs.length);
+      for (const q of qs) {
+        expect(q.q.trim()).toBeTruthy();
+        expect(q.options).toHaveLength(3);
+        expect(q.options.every((o) => o.trim().length > 0)).toBe(true);
+        expect(new Set(q.options).size).toBe(3);
+        expect(Number.isInteger(q.answer) && q.answer >= 0 && q.answer < 3).toBe(true);
+      }
+    }
+    expect(GREETINGS_EN.questions ?? []).toHaveLength(0);
+    expect(TAXI.questions).toHaveLength(12);
+  });
+});
+
+describe('questions run', () => {
+  const qs = TAXI.questions ?? [];
+  it('answers once, a second answer on the same question changes nothing', () => {
+    const run = newQuiz(qs.length, 5);
+    expect(run.answers.every((a) => a === -1)).toBe(true);
+    const one = answerQuiz(run, 0, 2);
+    expect(one.answers[0]).toBe(2);
+    expect(answerQuiz(one, 0, 1)).toBe(one);
+    expect(answerQuiz(run, -1, 0)).toBe(run);
+    expect(answerQuiz(run, qs.length, 0)).toBe(run);
+  });
+  it('complete when every question is answered; counts the right ones', () => {
+    let run = newQuiz(qs.length, 5);
+    expect(quizComplete(run)).toBe(false);
+    qs.forEach((q, i) => {
+      run = answerQuiz(run, i, i === 0 ? (q.answer + 1) % 3 : q.answer);
+    });
+    expect(quizComplete(run)).toBe(true);
+    expect(quizRight(run, qs)).toBe(qs.length - 1);
+    expect(quizComplete(newQuiz(0, 1))).toBe(false);
+  });
+  it('optionOrder is a stable permutation', () => {
+    for (let seed = 1; seed <= 20; seed++) {
+      for (let i = 0; i < 4; i++) {
+        const order = optionOrder(i, 3, seed);
+        expect(order).toEqual(optionOrder(i, 3, seed));
+        expect([...order].sort()).toEqual([0, 1, 2]);
+      }
+    }
+  });
+  it('round-trips and rejects what does not fit', () => {
+    const run = answerQuiz(newQuiz(qs.length, 9), 3, 1);
+    expect(parseQuiz(JSON.parse(JSON.stringify(serializeQuiz(run))), qs)).toEqual(run);
+    expect(parseQuiz(null, qs)).toBeNull();
+    expect(parseQuiz('x', qs)).toBeNull();
+    expect(parseQuiz({ seed: 1, answers: [-1] }, qs)).toBeNull();
+    expect(parseQuiz({ seed: 'x', answers: qs.map(() => -1) }, qs)).toBeNull();
+    expect(parseQuiz({ seed: 1, answers: qs.map(() => 3) }, qs)).toBeNull();
+    expect(parseQuiz({ seed: 1, answers: qs.map(() => -2) }, qs)).toBeNull();
+  });
+  it('keeps the paid XP with the run; a missing or bad sum reads as 0', () => {
+    const run = { ...answerQuiz(newQuiz(qs.length, 9), 0, qs[0].answer), earned: 1.5 };
+    expect(parseQuiz(JSON.parse(JSON.stringify(serializeQuiz(run))), qs)?.earned).toBe(1.5);
+    expect(newQuiz(qs.length, 1).earned).toBe(0);
+    expect(parseQuiz({ seed: 1, answers: qs.map(() => -1) }, qs)?.earned).toBe(0);
+    expect(parseQuiz({ seed: 1, answers: qs.map(() => -1), earned: -1 }, qs)?.earned).toBe(0);
+  });
+});
+
+describe('itemComplete', () => {
+  const matched = (item: typeof GREETINGS) => item.pairs.reduce((run, _p, i) => pick(run, i, i).run, newRun(1));
+  const answered = (item: typeof GREETINGS) =>
+    (item.questions ?? []).reduce((run, q, i) => answerQuiz(run, i, q.answer), newQuiz((item.questions ?? []).length, 1));
+  it('pairs only (English): the matching is enough', () => {
+    expect(itemComplete(GREETINGS_EN, newRun(1), newQuiz(0, 1))).toBe(false);
+    expect(itemComplete(GREETINGS_EN, matched(GREETINGS_EN), newQuiz(0, 1))).toBe(true);
+  });
+  it('questions only (taxi): the questions are enough', () => {
+    expect(itemComplete(TAXI, newRun(1), newQuiz(12, 1))).toBe(false);
+    expect(itemComplete(TAXI, newRun(1), answered(TAXI))).toBe(true);
+  });
+  it('both (Spanish greetings): needs both', () => {
+    expect(itemComplete(GREETINGS, matched(GREETINGS), newQuiz(GREETINGS.questions?.length ?? 0, 1))).toBe(false);
+    expect(itemComplete(GREETINGS, newRun(1), answered(GREETINGS))).toBe(false);
+    expect(itemComplete(GREETINGS, matched(GREETINGS), answered(GREETINGS))).toBe(true);
   });
 });
 

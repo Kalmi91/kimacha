@@ -9,7 +9,7 @@ import { PCIC_LEVELS, type PcicLevel, type PcicTarget } from '@/data/pcic';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
 import type { Lang } from '@/lib/languagePair';
-import { clock, listeningFor } from '@/lib/speech/listening';
+import { clock, listeningItems } from '@/lib/speech/listening';
 import { storiesOfLevel, type SpeechStory, type StoryProgress } from '@/lib/speech/stories';
 import { useTheme } from '@/lib/ThemeContext';
 
@@ -27,9 +27,9 @@ interface Props {
   /** The story that has an open run. */
   openId: string | null;
   onOpen: (id: string) => void;
-  /** The listening step has been finished once (the done tick). */
-  listenDone: boolean;
-  onListen: () => void;
+  /** The ids of the listening items that have been finished once (the done tick). */
+  listenDone: ReadonlySet<string>;
+  onListen: (id: string) => void;
 }
 
 export default function SpeechList({ target, source, hasStories, level, onLevel, progress, openId, onOpen, listenDone, onListen }: Props) {
@@ -37,23 +37,24 @@ export default function SpeechList({ target, source, hasStories, level, onLevel,
   const colors = Colors[theme];
   const g = useGrammarColors();
   const sx = t().speechTab;
-  const listening = listeningFor(target);
-  const listenCard = listening && (
-        <Pressable testID="speech-listen-card" accessibilityRole="button" onPress={onListen}>
+  const listenCard = listeningItems(target).map((listening) => (
+        <Pressable key={listening.id} testID={`speech-listen-card-${listening.id}`} accessibilityRole="button" onPress={() => onListen(listening.id)}>
           <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
             <View style={styles.cardText}>
-              <Text style={[styles.title, { color: colors.text }]}>{sx.greetTitle}</Text>
-              <Text style={[styles.teaser, { color: colors.textMuted }]}>{target === 'en' ? sx.greetTeaserEn : sx.greetTeaser}</Text>
-              {listening.durationSec > 0 && <Text testID="speech-listen-length" style={[styles.teaser, { color: colors.textMuted }]}>{clock(listening.durationSec)}</Text>}
+              <Text style={[styles.title, { color: colors.text }]}>{listening.id === 'es-taxi' ? sx.taxiTitle : sx.greetTitle}</Text>
+              <Text style={[styles.teaser, { color: colors.textMuted }]}>
+                {listening.id === 'es-taxi' ? sx.taxiTeaser : target === 'en' ? sx.greetTeaserEn : sx.greetTeaser}
+              </Text>
+              {listening.durationSec > 0 && <Text testID={`speech-listen-length-${listening.id}`} style={[styles.teaser, { color: colors.textMuted }]}>{clock(listening.durationSec)}</Text>}
             </View>
-            {listenDone && (
-              <Text testID="speech-listen-done" accessibilityLabel={sx.greetDoneA11y} style={[styles.badge, { color: colors.success }]}>
+            {listenDone.has(listening.id) && (
+              <Text testID={`speech-listen-done-${listening.id}`} accessibilityLabel={sx.listenDoneA11y} style={[styles.badge, { color: colors.success }]}>
                 ✓
               </Text>
             )}
           </Card>
         </Pressable>
-  );
+  ));
   const frame = { testID: 'speech-screen', target, currentCard: 'speech-list', hideLevelCounter: true } as const;
 
   if (!hasStories) {
