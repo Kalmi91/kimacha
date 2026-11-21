@@ -409,13 +409,7 @@ function SmallTestLevel() {
           total={run.answers.length}
           scoreTestID="small-test-end-title"
           misses={misses}
-          onRetake={() => {
-            if (drillN > 0) commit(startDrill(st, view.pool));
-            else if (goNext) {
-              commit(closeRound(st));
-              router.replace(levelTestRoute(goNext) as never);
-            } else newRound();
-          }}
+          onRetake={() => (drillN > 0 ? commit(startDrill(st, view.pool)) : goNext ? (commit(closeRound(st)), router.replace(levelTestRoute(goNext) as never)) : newRound())}
           onBack={() => (commit(closeRound(st)), router.back())}
           retakeLabel={drillN > 0 ? s.endDrill(drillN) : goNext ? s.endNext(goNext) : s.newRound}
           retakeTestID={drillN > 0 ? 'small-test-end-drill' : goNext ? 'small-test-end-next' : 'small-test-end-new'}
