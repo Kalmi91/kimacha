@@ -290,6 +290,8 @@ const de: typeof en = {
     taxiTeaser: 'Sofía kommt in Mexiko-Stadt an und unterhält sich mit ihrem Taxifahrer, don Ramón. Hör zu und beantworte die Fragen.',
     loTitle: 'Das neutrale lo: Hören',
     loTeaser: 'Marta erzählt Diego von ihrem Wochenende in Oaxaca, dann schauen sie sich an, wie sie «lo» benutzt haben. Hör zu und beantworte die Fragen.',
+    gustarTitle: 'Gustar und Co.: Hören',
+    gustarTeaser: 'Marta und Diego helfen Sam, einem amerikanischen Lerner, in einer Taquería zu sagen, was ihm gefällt: gusta oder gustan, le oder les, a mí también. Hör zu und beantworte die Fragen.',
     quizTitle: 'Fragen',
     quizInstruction: 'Die Antworten sind in der Aufnahme. Markiere alle, dann drück Auswerten.',
     quizResult: (right: number, total: number) => `${right} / ${total} richtig`,

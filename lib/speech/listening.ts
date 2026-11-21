@@ -2,6 +2,7 @@ import greetings from '@/data/listening/greetings-es.json';
 import greetingsEn from '@/data/listening/greetings-en.json';
 import taxi from '@/data/listening/taxi-es.json';
 import lo from '@/data/listening/lo-es.json';
+import gustar from '@/data/listening/gustar-es.json';
 import type { PcicTarget } from '@/data/pcic';
 import { shuffleArray, shuffleNoFixedPoints } from '@/lib/shuffle';
 
@@ -35,24 +36,25 @@ export const GREETINGS: ListeningData = greetings;
 export const GREETINGS_EN: ListeningData = greetingsEn;
 export const TAXI: ListeningData = taxi;
 export const LO: ListeningData = lo;
+export const GUSTAR: ListeningData = gustar;
 
 /** The listening items of a target language, in the order of the list (empty = that target has none). */
 export function listeningItems(target: PcicTarget): ListeningData[] {
-  return target === 'es' ? [GREETINGS, TAXI, LO] : target === 'en' ? [GREETINGS_EN] : [];
+  return target === 'es' ? [GREETINGS, TAXI, LO, GUSTAR] : target === 'en' ? [GREETINGS_EN] : [];
 }
 
 /** The title of a listening item (the greetings are the default). */
-export function listenTitle(id: string, sx: { taxiTitle: string; loTitle: string; greetTitle: string }): string {
-  return id === 'es-taxi' ? sx.taxiTitle : id === 'es-lo' ? sx.loTitle : sx.greetTitle;
+export function listenTitle(id: string, sx: { taxiTitle: string; loTitle: string; gustarTitle: string; greetTitle: string }): string {
+  return id === 'es-taxi' ? sx.taxiTitle : id === 'es-lo' ? sx.loTitle : id === 'es-gustar' ? sx.gustarTitle : sx.greetTitle;
 }
 
 /** The teaser of a listening item (the greetings are the default, English has its own). */
 export function listenTeaser(
   id: string,
   target: PcicTarget,
-  sx: { taxiTeaser: string; loTeaser: string; greetTeaser: string; greetTeaserEn: string },
+  sx: { taxiTeaser: string; loTeaser: string; gustarTeaser: string; greetTeaser: string; greetTeaserEn: string },
 ): string {
-  return id === 'es-taxi' ? sx.taxiTeaser : id === 'es-lo' ? sx.loTeaser : target === 'en' ? sx.greetTeaserEn : sx.greetTeaser;
+  return id === 'es-taxi' ? sx.taxiTeaser : id === 'es-lo' ? sx.loTeaser : id === 'es-gustar' ? sx.gustarTeaser : target === 'en' ? sx.greetTeaserEn : sx.greetTeaser;
 }
 
 /** The `game_progress` game of the finished listening steps (the item is the data id). */

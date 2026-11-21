@@ -291,6 +291,8 @@ const hu: typeof en = {
     taxiTeaser: 'Sofía megérkezik Mexikóvárosba, és a taxissal, don Ramónnal beszélget. Hallgasd meg, aztán válaszolj a kérdésekre.',
     loTitle: 'A semleges lo: hallgatás',
     loTeaser: 'Marta Oaxacában töltött hétvégéjéről mesél Diegónak, aztán sorra veszik, hányféleképpen használták a «lo»-t. Hallgasd meg, aztán válaszolj a kérdésekre.',
+    gustarTitle: 'A gustar és társai: hallgatás',
+    gustarTeaser: 'Marta és Diego egy taquériában segít Samnek, az amerikai tanulónak, elmondani, mit szeret: gusta vagy gustan, le vagy les, a mí también. Hallgasd meg, aztán válaszolj a kérdésekre.',
     quizTitle: 'Kérdések',
     quizInstruction: 'A válaszok elhangzanak a felvételen. Jelöld be mindet, aztán nyomd meg a Javítást.',
     quizResult: (right: number, total: number) => `${right} / ${total} helyes`,

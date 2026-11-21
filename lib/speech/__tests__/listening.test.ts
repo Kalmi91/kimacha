@@ -4,6 +4,7 @@ import {
   RATES,
   TAXI,
   LO,
+  GUSTAR,
   listenTitle,
   listenTeaser,
   answerQuiz,
@@ -49,8 +50,13 @@ describe('listening data', () => {
     expect(listeningItems('de')).toEqual([]);
   });
 
-  it('Spanish has the greetings, the taxi and the lo, in that order', () => {
-    expect(listeningItems('es')).toEqual([GREETINGS, TAXI, LO]);
+  it('Spanish has the greetings, the taxi, the lo and the gustar, in that order', () => {
+    expect(listeningItems('es')).toEqual([GREETINGS, TAXI, LO, GUSTAR]);
+    expect(GUSTAR.id).toBe('es-gustar');
+    expect(GUSTAR.pairs).toHaveLength(0);
+    expect(GUSTAR.questions).toHaveLength(8);
+    expect(runKeyFor(GUSTAR)).toBe('speech-listen-run-es-gustar');
+    expect(quizKeyFor(GUSTAR)).toBe('speech-listen-quiz-es-gustar');
     expect(LO.id).toBe('es-lo');
     expect(LO.pairs).toHaveLength(0);
     expect(LO.questions).toHaveLength(12);
@@ -68,18 +74,20 @@ describe('listening data', () => {
   });
 
   it('title and teaser per item id', () => {
-    const sx = { greetTitle: 'g', taxiTitle: 't', loTitle: 'l', greetTeaser: 'gt', greetTeaserEn: 'ge', taxiTeaser: 'tt', loTeaser: 'lt' };
+    const sx = { greetTitle: 'g', taxiTitle: 't', loTitle: 'l', gustarTitle: 'gu', greetTeaser: 'gt', greetTeaserEn: 'ge', taxiTeaser: 'tt', loTeaser: 'lt', gustarTeaser: 'gut' };
     expect(listenTitle('es-greetings', sx)).toBe('g');
     expect(listenTitle('es-taxi', sx)).toBe('t');
     expect(listenTitle('es-lo', sx)).toBe('l');
+    expect(listenTitle('es-gustar', sx)).toBe('gu');
     expect(listenTeaser('es-greetings', 'es', sx)).toBe('gt');
     expect(listenTeaser('en-greetings', 'en', sx)).toBe('ge');
     expect(listenTeaser('es-taxi', 'es', sx)).toBe('tt');
     expect(listenTeaser('es-lo', 'es', sx)).toBe('lt');
+    expect(listenTeaser('es-gustar', 'es', sx)).toBe('gut');
   });
 
   it('the questions of every item: unique ids, 3 distinct options, the answer in range', () => {
-    for (const item of [GREETINGS, GREETINGS_EN, TAXI, LO]) {
+    for (const item of [GREETINGS, GREETINGS_EN, TAXI, LO, GUSTAR]) {
       const qs = item.questions ?? [];
       expect(new Set(qs.map((q) => q.id)).size).toBe(qs.length);
       for (const q of qs) {

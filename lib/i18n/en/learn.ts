@@ -322,6 +322,8 @@ export default {
     taxiTeaser: 'Sofía arrives in Mexico City and chats with her taxi driver, don Ramón. Listen, then answer the questions.',
     loTitle: 'The neuter lo: listening',
     loTeaser: 'Marta tells Diego about her weekend in Oaxaca, then they look at all the ways they used «lo». Listen, then answer the questions.',
+    gustarTitle: 'Gustar and friends: listening',
+    gustarTeaser: 'Marta and Diego help Sam, an American learner, say what he likes at a taquería: gusta or gustan, le or les, a mí también. Listen, then answer the questions.',
     quizTitle: 'Questions',
     quizInstruction: 'The answers are in the recording. Mark them all, then press Check.',
     quizResult: (right: number, total: number) => `${right} / ${total} correct`,

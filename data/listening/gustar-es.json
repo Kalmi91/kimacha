@@ -1,0 +1,17 @@
+{
+  "id": "es-gustar",
+  "lang": "es",
+  "level": "B1",
+  "durationSec": 170,
+  "pairs": [],
+  "questions": [
+    { "id": "g1", "q": "¿Qué tacos le gustan a Sam?", "options": ["Los de pastor", "Los de suadero", "Los de pescado"], "answer": 0 },
+    { "id": "g2", "q": "¿Cómo corrige Marta la frase «Yo gusto mucho los tacos»?", "options": ["Me gusta mucho los tacos", "Me gustan mucho los tacos", "Yo me gustan los tacos"], "answer": 1 },
+    { "id": "g3", "q": "Según Marta, ¿por qué se dice «me gustan los tacos»?", "options": ["Porque los tacos son plural", "Porque Sam habla de sí mismo", "Porque es una pregunta"], "answer": 0 },
+    { "id": "g4", "q": "Según Marta, ¿qué se dice con dos verbos?", "options": ["Me gustan cocinar y bailar", "Me gusto cocinar y bailar", "Me gusta cocinar y bailar"], "answer": 2 },
+    { "id": "g5", "q": "Diego dice «A mí me encanta el picante». ¿Qué contesta Sam para decir que a él también?", "options": ["A mí también", "Yo también", "Me también"], "answer": 0 },
+    { "id": "g6", "q": "¿Qué le duele a Sam?", "options": ["El estómago", "La espalda", "Los pies y un poco la cabeza"], "answer": 2 },
+    { "id": "g7", "q": "¿Cuánto dinero le falta a Diego?", "options": ["Trescientos pesos", "Veinte pesos", "Cien pesos"], "answer": 1 },
+    { "id": "g8", "q": "Según Diego, ¿qué significa «me gustas»?", "options": ["Que alguien es un buen amigo", "Que te gusta su comida", "Que alguien te atrae"], "answer": 2 }
+  ]
+}

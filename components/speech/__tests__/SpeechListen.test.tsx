@@ -99,6 +99,8 @@ describe('Speak tab: greetings listening', () => {
     expect(view.getByText(sx.greetTitle)).toBeTruthy();
     expect(view.getByText(sx.taxiTitle)).toBeTruthy();
     expect(view.getByText(sx.loTitle)).toBeTruthy();
+    expect(view.getByText(sx.gustarTitle)).toBeTruthy();
+    expect(view.getByTestId('speech-listen-card-es-gustar')).toBeTruthy();
     expect(view.getByTestId(`speech-listen-card-${TAXI.id}`)).toBeTruthy();
     expect(view.getByTestId('speech-listen-card-es-lo')).toBeTruthy();
     expect(view.queryByTestId(`speech-listen-done-${GREETINGS.id}`)).toBeNull();

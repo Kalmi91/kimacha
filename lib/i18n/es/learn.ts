@@ -295,6 +295,8 @@ const es: typeof en = {
     taxiTeaser: 'Sofía llega a la Ciudad de México y platica con su taxista, don Ramón. Escucha y responde las preguntas.',
     loTitle: 'El lo neutro: escuchar',
     loTeaser: 'Marta le cuenta a Diego su fin de semana en Oaxaca y luego repasan todas las formas en que usaron «lo». Escucha y responde las preguntas.',
+    gustarTitle: 'Gustar y compañía: escuchar',
+    gustarTeaser: 'Marta y Diego ayudan a Sam, un estudiante estadounidense, a decir lo que le gusta en una taquería: gusta o gustan, le o les, a mí también. Escucha y responde las preguntas.',
     quizTitle: 'Preguntas',
     quizInstruction: 'Las respuestas están en la grabación. Márcalas todas y luego pulsa Corregir.',
     quizResult: (right: number, total: number) => `${right} / ${total} correctas`,
