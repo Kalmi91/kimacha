@@ -53,7 +53,7 @@ export function TenseBadge({
   return (
     <View style={[styles.tenseBadge, { backgroundColor: colors.tint + '22' }]}>
       <Text style={[styles.tenseBadgeText, { color: colors.tint }]}>
-        {fromName} → {toName}
+        {fromName} → <Text style={styles.tenseBadgeTarget}>{toName}</Text>
       </Text>
     </View>
   );

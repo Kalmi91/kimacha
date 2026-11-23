@@ -102,6 +102,8 @@ export default function TableDeckScreen() {
   const [deck, setDeck] = useState<DeckState>({ cells: [], resetCount: 0, shuffled: false });
   const [typed, setTyped] = useState('');
   const [checked, setChecked] = useState<{ correct: boolean } | null>(null);
+  // every wrong answer of this visit, listed on the end screen (FB708); "I mistyped" does not count
+  const [misses, setMisses] = useState<{ prompt: string; given: string; correct: string }[]>([]);
   // the XP the last right answer gave (FB591); the chip fades it
   const [earned, setEarned] = useState(0);
   // id of the cell for which the hint button was pressed
@@ -195,10 +197,12 @@ export default function TableDeckScreen() {
     speak(current.answer, speechLang(learnedLang));
   };
 
-  const handleNext = () => {
+  // `asRight` = the "I mistyped" button: a wrong answer counts as right (FB723).
+  const advance = (asRight: boolean) => {
     if (!current || !checked) return;
+    if (!asRight && !checked.correct) setMisses((m) => [...m, { prompt: current.enPrompt ? `${current.enPrompt}${current.verb ? ` (${current.verb})` : ''}` : current.promptBig, given: typed.trim(), correct: current.answer }]);
     const nowMs = Date.now();
-    const next = answerCell(deck, current.id, checked.correct, nowMs, againDelaySec * 1000);
+    const next = answerCell(deck, current.id, asRight || checked.correct, nowMs, againDelaySec * 1000);
     setDeck(next);
     persist(next);
     void countLearningToday();
@@ -207,9 +211,11 @@ export default function TableDeckScreen() {
     setNow(nowMs);
     setCellSeq((n) => n + 1);
   };
+  const handleNext = () => advance(false);
 
   const handleStartAgain = () => {
     const fresh = resetDeckInOrder(items);
+    setMisses([]);
     setDeck(fresh);
     persist(fresh);
     setTyped('');
@@ -221,6 +227,7 @@ export default function TableDeckScreen() {
   // (resetDeckInOrder above is the plain restart, in the deck's own order).
   const handleHarder = () => {
     const fresh = resetDeckShuffled(items, String(topicId), deck.resetCount);
+    setMisses([]);
     setDeck(fresh);
     persist(fresh);
     setTyped('');
@@ -264,7 +271,7 @@ export default function TableDeckScreen() {
       <View style={[styles.container, { backgroundColor: colors.background }]}>
         {header}
         {progressBar}
-        <View style={styles.doneBody}>
+        <ScrollView contentContainerStyle={styles.doneBody}>
           <Text style={styles.doneEmoji}>🎉</Text>
           <Text variant="title" style={[styles.doneTitle, { color: colors.text }]}>{s.tableDeck.completeTitle(items.length)}</Text>
           <ActionButton
@@ -292,7 +299,19 @@ export default function TableDeckScreen() {
           <Pressable style={styles.ghostBtn} onPress={() => router.back()}>
             <Text style={[styles.ghostBtnText, { color: colors.tabIconDefault }]}>{s.tableDeck.backToLesson}</Text>
           </Pressable>
-        </View>
+          {misses.length > 0 ? (
+            <View testID="tabledeck-mistakes" style={styles.missList}>
+              <Text style={[styles.missTitle, { color: colors.tabIconDefault }]}>{s.grammar.mistakesTitle}</Text>
+              {misses.map((m, i) => (
+                <View key={i} testID="tabledeck-mistake" style={styles.miss}>
+                  <Text style={[styles.missPrompt, { color: colors.text }]}>{m.prompt}</Text>
+                  {m.given ? <Text style={[styles.missPrompt, { color: colors.danger, textDecorationLine: 'line-through' }]}>{m.given}</Text> : null}
+                  <Text style={[styles.missPrompt, { color: colors.success }]}>{m.correct}</Text>
+                </View>
+              ))}
+            </View>
+          ) : null}
+        </ScrollView>
         <ScreenFeedback level={level} languagePair={deckPair} currentCard={`grammar:${topicId}:tabledeck`} />
       </View>
     );
@@ -397,6 +416,7 @@ export default function TableDeckScreen() {
         bottom={dockLift}
         colors={colors}
         onHeight={setDockH}
+        secondary={checked && !checked.correct ? { label: s.grammar.mistyped, testID: 'grammar-mistyped', onPress: () => advance(true) } : undefined}
       />
 
       <ScreenFeedback
@@ -447,7 +467,11 @@ const styles = StyleSheet.create({
   correctAnswer: { flex: 1, flexShrink: 1, fontSize: 22, fontWeight: '600', textAlign: 'center' },
   speakBtn: { padding: 4, flexShrink: 0 },
   speakIcon: { fontSize: 22 },
-  doneBody: { flex: 1, alignItems: 'center', justifyContent: 'center', gap: 12 },
+  doneBody: { flexGrow: 1, alignItems: 'center', justifyContent: 'center', gap: 12, paddingBottom: 40 },
+  missList: { alignSelf: 'stretch', paddingHorizontal: 20, gap: 10 },
+  missTitle: { fontSize: 13, fontWeight: '700', textTransform: 'uppercase' },
+  miss: { gap: 2 },
+  missPrompt: { fontSize: 16, fontWeight: '600' },
   doneEmoji: { fontSize: 52 },
   doneTitle: { fontSize: 20, fontWeight: '700', textAlign: 'center' },
   btn: {

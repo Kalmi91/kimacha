@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 
 import type { KindRun } from '@/lib/grammar/lessonScore';
+import type { GrammarMiss } from '@/lib/grammar/roundMiss';
 
 export function useGrammarRoundProgress({
   seed,
@@ -23,8 +24,19 @@ export function useGrammarRoundProgress({
     resume.ids.every((id, i) => id === ids[i]);
   const mistakes = useRef(new Set(resumeOk ? resume.mistakes ?? [] : []));
 
+  // the round's mistakes list; a resumed round starts from the saved one
+  const misses = useRef<GrammarMiss[]>(resumeOk ? [...(resume.misses ?? [])] : []);
+
   const saveProgress = (index: number, correct: number) => {
-    onProgress?.({ seed, ids, index, correct, total, ...(mistakes.current.size ? { mistakes: [...mistakes.current] } : {}) });
+    onProgress?.({
+      seed,
+      ids,
+      index,
+      correct,
+      total,
+      ...(mistakes.current.size ? { mistakes: [...mistakes.current] } : {}),
+      ...(misses.current.length ? { misses: misses.current } : {}),
+    });
   };
 
   const recordChoice = (id: string, correct: boolean, index: number, dismissedCorrect: number) => {
@@ -38,6 +50,7 @@ export function useGrammarRoundProgress({
   return {
     initialIndex: resumeOk ? resume.index : 0,
     initialCorrect: resumeOk ? resume.correct : 0,
+    misses,
     saveProgress,
     recordChoice,
   };

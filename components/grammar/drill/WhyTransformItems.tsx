@@ -6,6 +6,7 @@ import { t } from '@/lib/i18n';
 import { strictAnswerMatch } from '@/lib/answerMatch';
 import { answerInputProps } from '@/lib/inputProps';
 import { useFocusOnNewCard } from '@/lib/learn/useFocusOnNewCard';
+import { TENSE_EVERYDAY } from '@/lib/grammar/formTenseCue';
 import { TENSE_NAMES, type ContentLang, type TransformItem, type WhyItem } from '@/lib/grammar/lessonTypes';
 import { speak } from '@/lib/speech';
 import { speechLang } from '@/lib/languages';
@@ -260,7 +261,12 @@ export function TransformDrillItem({
   const typeLang = learnedIsEn ? 'en' : 'es';
   const sentence = learnedIsEn ? item.prompt.en : item.prompt.es;
   const translation = learnedIsEn ? (item.prompt[contentLang] ?? item.prompt.es) : (item.prompt[contentLang] ?? item.prompt.en);
-  const tenseName = (id: TransformItem['tense']['to']) => TENSE_NAMES[id][contentLang] ?? TENSE_NAMES[id].en;
+  // FB714: the asked tense is named in everyday words too (FB700's map), so it is clear which tense to rewrite into.
+  const tenseName = (id: TransformItem['tense']['to']) => {
+    const name = TENSE_NAMES[id][contentLang] ?? TENSE_NAMES[id].en;
+    const everyday = TENSE_EVERYDAY[id];
+    return everyday ? `${name} · ${everyday[contentLang] ?? everyday.en}` : name;
+  };
   const badgeLang = learnedIsEn ? contentLang : undefined;
 
   const check = () => {

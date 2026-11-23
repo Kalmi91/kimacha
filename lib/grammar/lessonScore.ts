@@ -90,6 +90,8 @@ export interface KindRun {
   total: number;
   /** Mistaken items keep their original score if feedback is left before Next and the item is answered again. */
   mistakes?: string[];
+  /** The mistakes list of the answered items, so a resumed round's end screen still shows ALL of them (FB708). */
+  misses?: { prompt: string; given: string | null; correct: string }[];
 }
 
 export interface KindProgress {

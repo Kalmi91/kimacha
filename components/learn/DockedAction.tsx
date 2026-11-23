@@ -53,7 +53,11 @@ export default function DockedAction({ label, onPress, tone, color, bottom, colo
       style={[styles.dockedAction, { bottom, backgroundColor: colors.background }]}
       onLayout={onHeight ? (e: LayoutChangeEvent) => onHeight(e.nativeEvent.layout.height) : undefined}
     >
-      {secondary ? <ExamButton testID={secondary.testID} secondary label={secondary.label} onPress={secondary.onPress} /> : null}
+      {secondary ? (
+        <View style={styles.secondaryGap}>
+          <ExamButton testID={secondary.testID} secondary label={secondary.label} onPress={secondary.onPress} />
+        </View>
+      ) : null}
       {g.brutal ? (
         // Check = ink fill, Next = the fill.
         <BrutalButton testID={testID ?? 'learn-docked-action'} label={label} fill={tone === 'next' ? 'a' : checkFill ?? 'ink'} icon={tone === 'next' ? '→' : '✓'} disabled={disabled} onPress={onPress} />
@@ -91,6 +95,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  // Room between the quiet "I mistyped" and the main button (FB718).
+  secondaryGap: { marginBottom: 12 },
   disabled: { opacity: 0.4 },
   inlineCheckText: {
     color: '#fff',

@@ -171,7 +171,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
   // pairs (the partial credit is the ratio of right pairs, so the round total is in pairs too).
   const roundIds = useMemo(() => round.map((r) => r.item.id), [round]);
   const totalUnits = useMemo(() => round.reduce((n, r) => n + (isMatchItem(r.item) ? r.item.pairs.length : 1), 0), [round]);
-  const { initialIndex, initialCorrect, recordChoice, saveProgress } = useGrammarRoundProgress({ seed, ids: roundIds, total: totalUnits, resume, onProgress });
+  const { initialIndex, initialCorrect, recordChoice, saveProgress, misses: missesRef } = useGrammarRoundProgress({ seed, ids: roundIds, total: totalUnits, resume, onProgress });
   const [index, setIndex] = useState(initialIndex);
   const [selected, setSelected] = useState<number | null>(null);
   const [correctCount, setCorrectCount] = useState(initialCorrect);
@@ -181,7 +181,6 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
   const [combo, setCombo] = useState(0);
   const comboRef = useRef(0);
   const bestComboRef = useRef(0);
-  const missesRef = useRef<GrammarMiss[]>([]);
   const [startedAt] = useState(() => Date.now());
   const noteResult = (wasCorrect: boolean, miss?: GrammarMiss | null) => {
     comboRef.current = wasCorrect ? comboRef.current + 1 : 0;
@@ -280,7 +279,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
 
   if (!isChoiceRoundItem(roundItem)) {
     return (
-      <ScrollView contentContainerStyle={[styles.body, themedDockPad(g)]} keyboardShouldPersistTaps="handled">
+      <ScrollView testID="grammar-drill-scroll" style={{ backgroundColor: colors.background }} contentContainerStyle={[styles.body, themedDockPad(g)]} keyboardShouldPersistTaps="handled">
         {header}
         {isMatchItem(roundItem.item) ? (
           <MatchDrillItem key={roundItem.item.id} item={roundItem.item} lesson={topic} contentLang={contentLang} learnedLang={learnedLang} colors={colors} s={s} onDone={completeItem} />
@@ -381,7 +380,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
     const blankFill = answered ? (isCorrect ? g.a : g.ink) : g.b;
     const blankColor = answered ? (isCorrect ? g.onA : g.bg) : g.onB;
     return (
-      <ScrollView contentContainerStyle={[styles.body, themedDockPad(g)]} keyboardShouldPersistTaps="handled">
+      <ScrollView testID="grammar-drill-scroll" style={{ backgroundColor: colors.background }} contentContainerStyle={[styles.body, themedDockPad(g)]} keyboardShouldPersistTaps="handled">
         {header}
         {badgeTense ? <TenseBadge tense={badgeTense} colors={colors} /> : null}
 
@@ -494,7 +493,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
   }
 
   return (
-    <ScrollView contentContainerStyle={[styles.body, themedDockPad(g)]} keyboardShouldPersistTaps="handled">
+    <ScrollView testID="grammar-drill-scroll" style={{ backgroundColor: colors.background }} contentContainerStyle={[styles.body, themedDockPad(g)]} keyboardShouldPersistTaps="handled">
       <Text testID="grammar-drill-progress" style={[styles.progress, { color: colors.tabIconDefault }]}>
         {s.games.grammarChoice.progress(index + 1, round.length)}
       </Text>
