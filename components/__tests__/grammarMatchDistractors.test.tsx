@@ -50,4 +50,30 @@ describe('match drill extras', () => {
     expect(item.pairs.map((p) => p.es.toLowerCase())).not.toContain(a.right.toLowerCase());
     expect(pickMatchDistractors(item, undefined, 'es', l, r)).toBeNull();
   });
+
+  it('extras are no longer than the item pairs: sentences are skipped, null when only sentences exist', () => {
+    const l = (p: MatchItem['pairs'][number]) => p.en;
+    const r = (p: MatchItem['pairs'][number]) => p.es;
+    const mk = (id: string, en: string, es: string) => ({ en, es }) as MatchItem['pairs'][number];
+    const own = { id: 'x-match-01', kind: 'match', pairs: [mk('', 'she ordered', 'pidió'), mk('', 'he left', 'salió')] } as unknown as MatchItem;
+    const other = (pairs: MatchItem['pairs']) =>
+      ({ topic: 'x-fake', level: 'A2', items: [own, { id: 'x-match-02', kind: 'match', pairs }] }) as unknown as typeof lesson;
+    const sentence = (n: number) => mk('', `Did you work yesterday ${n}?`, `Él estudió inglés ${n}`);
+    const mixed = other([sentence(1), sentence(2), sentence(3), mk('', 'to run', 'correr'), mk('', 'to jump', 'saltar')]);
+    const got = pickMatchDistractors(own, mixed, 'xx', l, r)!;
+    expect(got.left.split(/\s+/).length).toBeLessThanOrEqual(2);
+    expect(got.right.split(/\s+/)).toHaveLength(1);
+    const onlySentences = other([sentence(1), sentence(2), sentence(3)]);
+    expect(pickMatchDistractors(own, onlySentences, 'xx', l, r)).toBeNull();
+  });
+
+  it('icr-match-01 (es lesson indefinido-cambios-raiz): extras are null or short', () => {
+    const icr = getGrammarTopic('es', 'indefinido-cambios-raiz')!;
+    const it = icr.items.find((i) => i.id === 'icr-match-01') as MatchItem;
+    const got = pickMatchDistractors(it, icr, 'es', (p) => p.en, (p) => p.es);
+    if (got) {
+      expect(got.left.trim().split(/\s+/).length).toBeLessThanOrEqual(2);
+      expect(got.right.trim().split(/\s+/)).toHaveLength(1);
+    }
+  });
 });

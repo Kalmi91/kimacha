@@ -19,6 +19,7 @@ function matchPairs(lesson: GrammarTopicData, exceptId: string): Pair[] {
 
 // One similar-but-unneeded element per side. The source is the lesson's other match items, else
 // another lesson of the same level; deterministic (from the item id). Null when nothing fits.
+// Extras are no longer (in words) than the item's own pairs.
 export function pickMatchDistractors(
   item: MatchItem,
   lesson: GrammarTopicData | undefined,
@@ -29,16 +30,19 @@ export function pickMatchDistractors(
   if (!lesson) return null;
   const lefts = new Set(item.pairs.map((p) => norm(leftOf(p))));
   const rights = new Set(item.pairs.map((p) => norm(rightOf(p))));
+  const words = (s: string) => s.trim().split(/\s+/).filter(Boolean).length;
+  const maxLeft = Math.max(...item.pairs.map((p) => words(leftOf(p))));
+  const maxRight = Math.max(...item.pairs.map((p) => words(rightOf(p))));
   const seed = hashString(item.id);
   const tryPool = (pool: Pair[]): MatchDistractors | null => {
     const n = pool.length;
     if (n < 2) return null;
     for (let i = 0; i < n; i++) {
       const a = pool[(seed + i) % n];
-      if (lefts.has(norm(leftOf(a)))) continue;
+      if (lefts.has(norm(leftOf(a))) || words(leftOf(a)) > maxLeft) continue;
       for (let j = 1; j < n; j++) {
         const b = pool[(seed + i + j) % n];
-        if (norm(leftOf(b)) === norm(leftOf(a)) || rights.has(norm(rightOf(b))) || norm(rightOf(b)) === norm(rightOf(a))) continue;
+        if (words(rightOf(b)) > maxRight || norm(leftOf(b)) ===norm(leftOf(a)) || rights.has(norm(rightOf(b))) || norm(rightOf(b)) === norm(rightOf(a))) continue;
         return { left: leftOf(a), right: rightOf(b) };
       }
     }
