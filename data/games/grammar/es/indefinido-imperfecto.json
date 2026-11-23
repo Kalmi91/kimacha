@@ -1362,6 +1362,40 @@
       }
     },
     {
+      "id": "ii2-match-02",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "salí ayer",
+          "en": "I left yesterday"
+        },
+        {
+          "es": "salía siempre",
+          "en": "I always went out"
+        },
+        {
+          "es": "tuve miedo",
+          "en": "I got scared"
+        },
+        {
+          "es": "tenía miedo",
+          "en": "I was afraid"
+        },
+        {
+          "es": "fue una vez",
+          "en": "she went once"
+        },
+        {
+          "es": "iba mucho",
+          "en": "she often went"
+        }
+      ],
+      "tense": {
+        "from": "imperfecto",
+        "to": "indefinido"
+      }
+    },
+    {
       "kind": "why",
       "id": "iii-why-01",
       "es": "El lunes salí temprano.",
@@ -1657,6 +1691,221 @@
         }
       ],
       "correctIndex": 1,
+      "tense": {
+        "from": "imperfecto",
+        "to": "indefinido"
+      }
+    },
+    {
+      "kind": "why",
+      "id": "iii-why-08",
+      "es": "Ayer llegué tarde a la escuela.",
+      "target": "llegué",
+      "tr": {
+        "en": "Yesterday I arrived late at school.",
+        "es": "Ayer llegué tarde a la escuela."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "habit, repeated in the past",
+            "es": "costumbre repetida"
+          },
+          "wrong": {
+            "en": "A habit would mean I arrived late EVERY day (\"Siempre llegaba tarde\"); here \"ayer\" (yesterday) names ONE day.",
+            "es": "La costumbre significaría que llegaba tarde TODOS los días (\"Siempre llegaba tarde\"); aquí \"ayer\" señala UN día."
+          }
+        },
+        {
+          "text": {
+            "en": "one-time, closed event",
+            "es": "hecho único y cerrado"
+          }
+        },
+        {
+          "text": {
+            "en": "description: background, circumstance",
+            "es": "descripción: fondo, circunstancia"
+          },
+          "wrong": {
+            "en": "A description would say how things were (\"Era tarde\", it was late); here I DID something, I arrived, on one day.",
+            "es": "La descripción diría cómo eran las cosas (\"Era tarde\"); aquí HICE algo, llegué, un día concreto."
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "tense": {
+        "from": "imperfecto",
+        "to": "indefinido"
+      }
+    },
+    {
+      "kind": "why",
+      "id": "iii-why-09",
+      "es": "Mi abuela me llamaba por teléfono cada semana.",
+      "target": "llamaba",
+      "tr": {
+        "en": "My grandmother called me every week.",
+        "es": "Mi abuela me llamaba por teléfono cada semana."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "one-time, closed event",
+            "es": "hecho único y cerrado"
+          },
+          "wrong": {
+            "en": "A one-time event would be \"Mi abuela me llamó ayer\" (once); \"cada semana\" (every week) shows it was REPEATED.",
+            "es": "El hecho único sería \"Mi abuela me llamó ayer\" (una vez); \"cada semana\" muestra que fue REPETIDO."
+          }
+        },
+        {
+          "text": {
+            "en": "description: background, circumstance",
+            "es": "descripción: fondo, circunstancia"
+          },
+          "wrong": {
+            "en": "A description would say how she was (\"Mi abuela era alta\"); here it tells what she regularly DID.",
+            "es": "La descripción diría cómo era ella (\"Mi abuela era alta\"); aquí se cuenta lo que HACÍA con regularidad."
+          }
+        },
+        {
+          "text": {
+            "en": "habit, repeated in the past",
+            "es": "costumbre repetida"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "tense": {
+        "from": "imperfecto",
+        "to": "indefinido"
+      }
+    },
+    {
+      "kind": "why",
+      "id": "iii-why-10",
+      "es": "Hacía mucho calor en la playa.",
+      "target": "Hacía",
+      "tr": {
+        "en": "It was very hot at the beach.",
+        "es": "Hacía mucho calor en la playa."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "description: background, circumstance",
+            "es": "descripción: fondo, circunstancia"
+          }
+        },
+        {
+          "text": {
+            "en": "habit, repeated in the past",
+            "es": "costumbre repetida"
+          },
+          "wrong": {
+            "en": "A habit would need a repeat marker (\"Todos los veranos hacía calor\"); here the sentence only says how the weather WAS.",
+            "es": "La costumbre necesitaría una marca de repetición (\"Todos los veranos hacía calor\"); aquí la frase solo dice cómo ERA el tiempo."
+          }
+        },
+        {
+          "text": {
+            "en": "one-time, closed event",
+            "es": "hecho único y cerrado"
+          },
+          "wrong": {
+            "en": "A one-time event would be something that happened (\"Ayer llegó mi tío\"); the weather here is the background, not an action.",
+            "es": "El hecho único sería algo que pasó (\"Ayer llegó mi tío\"); el tiempo aquí es el fondo, no una acción."
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "tense": {
+        "from": "imperfecto",
+        "to": "indefinido"
+      }
+    },
+    {
+      "kind": "why",
+      "id": "iii-why-11",
+      "es": "Dormía cuando sonó el teléfono.",
+      "target": "sonó",
+      "tr": {
+        "en": "I was sleeping when the phone rang.",
+        "es": "Dormía cuando sonó el teléfono."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "description: background, circumstance",
+            "es": "descripción: fondo, circunstancia"
+          },
+          "wrong": {
+            "en": "A description fits \"dormía\" (the background that is going on); \"sonó\" is the short event that INTERRUPTS it.",
+            "es": "La descripción encaja con \"dormía\" (el fondo en curso); \"sonó\" es el suceso corto que lo INTERRUMPE."
+          }
+        },
+        {
+          "text": {
+            "en": "habit, repeated in the past",
+            "es": "costumbre repetida"
+          },
+          "wrong": {
+            "en": "A habit would be \"Siempre sonaba el teléfono\"; here the phone rang ONCE, at one moment.",
+            "es": "La costumbre sería \"Siempre sonaba el teléfono\"; aquí el teléfono sonó UNA vez, en un momento."
+          }
+        },
+        {
+          "text": {
+            "en": "sudden event, interrupts the background",
+            "es": "suceso repentino que interrumpe"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "tense": {
+        "from": "imperfecto",
+        "to": "indefinido"
+      }
+    },
+    {
+      "kind": "why",
+      "id": "iii-why-12",
+      "es": "Eran las tres de la tarde.",
+      "target": "Eran",
+      "tr": {
+        "en": "It was three in the afternoon.",
+        "es": "Eran las tres de la tarde."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "age and time in the past",
+            "es": "edad y hora en el pasado"
+          }
+        },
+        {
+          "text": {
+            "en": "one-time, closed event",
+            "es": "hecho único y cerrado"
+          },
+          "wrong": {
+            "en": "A one-time event would be something that HAPPENED; telling the time describes the moment, it is not an action.",
+            "es": "El hecho único sería algo que PASÓ; decir la hora describe el momento, no es una acción."
+          }
+        },
+        {
+          "text": {
+            "en": "habit, repeated in the past",
+            "es": "costumbre repetida"
+          },
+          "wrong": {
+            "en": "A habit needs a repeat marker (\"siempre\", \"todos los días\"); here the time is a single background fact.",
+            "es": "La costumbre necesita una marca de repetición (\"siempre\", \"todos los días\"); aquí la hora es un solo dato de fondo."
+          }
+        }
+      ],
+      "correctIndex": 0,
       "tense": {
         "from": "imperfecto",
         "to": "indefinido"
@@ -2989,20 +3238,48 @@
     {"id":"ii2-cloze-03","kind":"opencloze","trial":true,"text":"Antes, todos los días yo ___ (ir) al parque. Ayer ___ (ir) con mi amigo y ___ (ver) a mi profesor.","answers":["iba","fui","vi"],"tr":{"en":"In the past, I went to the park every day. Yesterday I went with my friend and saw my teacher.","es":"Antes, todos los días yo iba (ir) al parque. Ayer fui (ir) con mi amigo y vi (ver) a mi profesor."},"why":{"en":"Todos los días is a habit: iba (imperfect). Ayer is one finished day: fui, vi (preterite).","es":"Todos los días es una costumbre: iba (imperfecto). Ayer es un día terminado: fui, vi (perfecto simple)."}},
     {"id":"ii2-cloze-04","kind":"opencloze","trial":true,"text":"Anoche nosotros ___ (cenar) en casa cuando ___ (llegar) mis primos. Ellos ___ (tener) hambre y ___ (comer) con nosotros.","answers":["cenábamos","llegaron","tenían","comieron"],"tr":{"en":"Last night we were having dinner at home when my cousins arrived. They were hungry and ate with us.","es":"Anoche nosotros cenábamos (cenar) en casa cuando llegaron (llegar) mis primos. Ellos tenían (tener) hambre y comieron (comer) con nosotros."},"why":{"en":"The dinner was in progress (cenábamos) and the cousins were hungry (tenían): imperfect. Their arrival and meal are finished events: llegaron, comieron.","es":"La cena estaba en curso (cenábamos) y los primos tenían hambre (tenían): imperfecto. Su llegada y su comida son hechos terminados: llegaron, comieron."}},
     {"id":"ii2-cloze-05","kind":"opencloze","trial":true,"text":"El lunes mi madre ___ (salir) de casa a las ocho. Antes ___ (trabajar) cerca, pero ese día ___ (viajar) a otra ciudad.","answers":["salió","trabajaba","viajó"],"tr":{"en":"On Monday my mother left home at eight. Before, she used to work nearby, but that day she traveled to another city.","es":"El lunes mi madre salió (salir) de casa a las ocho. Antes trabajaba (trabajar) cerca, pero ese día viajó (viajar) a otra ciudad."},"why":{"en":"El lunes and ese día are single days: salió, viajó (preterite). Antes marks what used to be: trabajaba (imperfect).","es":"El lunes y ese día son días concretos: salió, viajó (perfecto simple). Antes marca lo que era costumbre: trabajaba (imperfecto)."}},
+    {"id":"ii2-cloze-06","kind":"opencloze","trial":true,"text":"De niña, Ana ___ (vivir) en Oaxaca. Un día ___ (viajar) a otra ciudad y ___ (conocer) a un amigo.","answers":["vivía","viajó","conoció"],"tr":{"en":"As a child, Ana lived in Oaxaca. One day she traveled to another city and met a friend.","es":"De niña, Ana vivía (vivir) en Oaxaca. Un día viajó (viajar) a otra ciudad y conoció (conocer) a un amigo."},"why":{"en":"De niña describes how things were: vivía (imperfect). Un día starts single events: viajó, conoció (preterite).","es":"De niña describe cómo eran las cosas: vivía (imperfecto). Un día abre hechos únicos: viajó, conoció (perfecto simple)."}},
+    {"id":"ii2-cloze-07","kind":"opencloze","trial":true,"text":"Anoche yo ___ (leer) en mi cuarto cuando ___ (sonar) el teléfono. Yo ___ (contestar) rápido.","answers":["leía","sonó","contesté"],"tr":{"en":"Last night I was reading in my room when the phone rang. I answered quickly.","es":"Anoche yo leía (leer) en mi cuarto cuando sonó (sonar) el teléfono. Yo contesté (contestar) rápido."},"why":{"en":"Leía is the action in progress (imperfect); sonó interrupts it (preterite); contesté is a finished action (preterite).","es":"Leía es la acción en curso (imperfecto); sonó la interrumpe (perfecto simple); contesté es una acción terminada (perfecto simple)."}},
+    {"id":"ii2-cloze-08","kind":"opencloze","trial":true,"text":"Cuando nosotros ___ (ser) jóvenes, ___ (bailar) todos los sábados. Una noche ___ (conocer) a unos amigos.","answers":["éramos","bailábamos","conocimos"],"tr":{"en":"When we were young, we danced every Saturday. One night we met some friends.","es":"Cuando nosotros éramos (ser) jóvenes, bailábamos (bailar) todos los sábados. Una noche conocimos (conocer) a unos amigos."},"why":{"en":"Cuando ... jóvenes and todos los sábados give the background and a habit: éramos, bailábamos (imperfect). Una noche is a single event: conocimos (preterite).","es":"Cuando ... jóvenes y todos los sábados dan el fondo y una costumbre: éramos, bailábamos (imperfecto). Una noche es un hecho único: conocimos (perfecto simple)."}},
+    {"id":"ii2-cloze-09","kind":"opencloze","trial":true,"text":"Mientras yo ___ (estudiar), mi hermana ___ (escuchar) música. De repente ___ (llegar) mi padre.","answers":["estudiaba","escuchaba","llegó"],"tr":{"en":"While I was studying, my sister was listening to music. Suddenly my father arrived.","es":"Mientras yo estudiaba (estudiar), mi hermana escuchaba (escuchar) música. De repente llegó (llegar) mi padre."},"why":{"en":"Mientras joins two actions in progress: estudiaba, escuchaba (imperfect). De repente brings a sudden event: llegó (preterite).","es":"Mientras une dos acciones en curso: estudiaba, escuchaba (imperfecto). De repente trae un suceso repentino: llegó (perfecto simple)."}},
+    {"id":"ii2-cloze-10","kind":"opencloze","trial":true,"text":"Mi abuelo ___ (tener) un perro grande. Un día el perro ___ (salir) de la casa y no ___ (volver).","answers":["tenía","salió","volvió"],"tr":{"en":"My grandfather had a big dog. One day the dog left the house and did not come back.","es":"Mi abuelo tenía (tener) un perro grande. Un día el perro salió (salir) de la casa y no volvió (volver)."},"why":{"en":"Tenía describes what he had, a lasting state (imperfect). Un día starts the single events: salió, volvió (preterite).","es":"Tenía describe lo que tenía, un estado duradero (imperfecto). Un día abre los hechos únicos: salió, volvió (perfecto simple)."}},
+    {"id":"ii2-cloze-11","kind":"opencloze","trial":true,"text":"Cuando yo ___ (tener) doce años, mi familia ___ (viajar) a Guadalajara. Allí yo ___ (ver) a mi tía por primera vez.","answers":["tenía","viajó","vi"],"tr":{"en":"When I was twelve, my family traveled to Guadalajara. There I saw my aunt for the first time.","es":"Cuando yo tenía (tener) doce años, mi familia viajó (viajar) a Guadalajara. Allí yo vi (ver) a mi tía por primera vez."},"why":{"en":"Age in the past is a description: tenía (imperfect). The trip and the first time are closed events: viajó, vi (preterite).","es":"La edad en el pasado es una descripción: tenía (imperfecto). El viaje y la primera vez son hechos cerrados: viajó, vi (perfecto simple)."}},
+    {"id":"ii2-cloze-12","kind":"opencloze","trial":true,"text":"Los domingos mi tía ___ (preparar) sopa. El domingo pasado ___ (preparar) pan y nosotros ___ (comer) mucho.","answers":["preparaba","preparó","comimos"],"tr":{"en":"On Sundays my aunt used to make soup. Last Sunday she made bread and we ate a lot.","es":"Los domingos mi tía preparaba (preparar) sopa. El domingo pasado preparó (preparar) pan y nosotros comimos (comer) mucho."},"why":{"en":"Los domingos is a habit: preparaba (imperfect). El domingo pasado is one specific day: preparó, comimos (preterite).","es":"Los domingos es una costumbre: preparaba (imperfecto). El domingo pasado es un día concreto: preparó, comimos (perfecto simple)."}},
     {"id":"ii2-fix-01","kind":"fix","trial":true,"es":"Todos los sábados fuimos al parque.","wrongIndex":3,"answer":"íbamos","explain":{"en":"Todos los sábados marks a habit in the past: the imperfect, íbamos.","es":"Todos los sábados marca una costumbre en el pasado: el imperfecto, íbamos."},"tr":{"en":"Every Saturday we went to the park.","es":"Todos los sábados íbamos al parque."}},
     {"id":"ii2-fix-02","kind":"fix","trial":true,"es":"El lunes pasado mi madre iba al mercado.","wrongIndex":5,"answer":"fue","explain":{"en":"El lunes pasado is one specific day, a single finished event: the preterite, fue.","es":"El lunes pasado es un día concreto, un hecho único y terminado: el perfecto simple, fue."},"tr":{"en":"Last Monday my mother went to the market.","es":"El lunes pasado mi madre fue al mercado."}},
     {"id":"ii2-fix-03","kind":"fix","trial":true,"es":"Mientras mi madre cocinó, mi padre ponía la mesa.","wrongIndex":3,"answer":"cocinaba","explain":{"en":"Both actions were going on at the same time, so both are imperfect: cocinaba, ponía.","es":"Las dos acciones ocurrían al mismo tiempo, así que las dos van en imperfecto: cocinaba, ponía."},"tr":{"en":"While my mother was cooking, my father was setting the table.","es":"Mientras mi madre cocinaba, mi padre ponía la mesa."}},
     {"id":"ii2-fix-04","kind":"fix","trial":true,"es":"Mis padres tenía un carro viejo.","wrongIndex":2,"answer":"tenían","explain":{"en":"Mis padres is plural, so the imperfect ending is -ían: tenían.","es":"Mis padres es plural, así que la terminación del imperfecto es -ían: tenían."},"tr":{"en":"My parents had an old car.","es":"Mis padres tenían un carro viejo."}},
     {"id":"ii2-fix-05","kind":"fix","trial":true,"es":"De repente llegaba mi tía.","wrongIndex":2,"answer":"llegó","explain":{"en":"De repente introduces a sudden, single event: the preterite, llegó.","es":"De repente introduce un hecho repentino y único: el perfecto simple, llegó."},"tr":{"en":"Suddenly my aunt arrived.","es":"De repente llegó mi tía."}},
+    {"id":"ii2-fix-06","kind":"fix","trial":true,"es":"Cuando era niño, jugó en la calle todos los días.","wrongIndex":3,"answer":"jugaba","explain":{"en":"Todos los días marks a habit in the past: the imperfect, jugaba.","es":"Todos los días marca una costumbre en el pasado: el imperfecto, jugaba."},"tr":{"en":"When I was a child, I played in the street every day.","es":"Cuando era niño, jugaba en la calle todos los días."}},
+    {"id":"ii2-fix-07","kind":"fix","trial":true,"es":"Hace dos días mi tío compraba un carro nuevo.","wrongIndex":5,"answer":"compró","explain":{"en":"Hace dos días points to one finished event: the preterite, compró.","es":"Hace dos días señala un hecho único y terminado: el perfecto simple, compró."},"tr":{"en":"Two days ago my uncle bought a new car.","es":"Hace dos días mi tío compró un carro nuevo."}},
+    {"id":"ii2-fix-08","kind":"fix","trial":true,"es":"La casa fue muy grande y tenía un jardín.","wrongIndex":2,"answer":"era","explain":{"en":"Describing how the house was calls for the imperfect: era, tenía.","es":"Describir cómo era la casa pide el imperfecto: era, tenía."},"tr":{"en":"The house was very big and had a garden.","es":"La casa era muy grande y tenía un jardín."}},
+    {"id":"ii2-fix-09","kind":"fix","trial":true,"es":"Nosotros hablaba con la abuela los domingos.","wrongIndex":1,"answer":"hablábamos","explain":{"en":"Nosotros asks for the nosotros ending: hablábamos (with the accent on the á).","es":"Nosotros pide la terminación de nosotros: hablábamos (con acento en la á)."},"tr":{"en":"We used to talk to our grandmother on Sundays.","es":"Nosotros hablábamos con la abuela los domingos."}},
+    {"id":"ii2-fix-10","kind":"fix","trial":true,"es":"Ayer conocía a tu hermano en la fiesta.","wrongIndex":1,"answer":"conocí","explain":{"en":"Meeting someone for the first time is a single event: ayer + conocí (preterite).","es":"Conocer a alguien por primera vez es un hecho único: ayer + conocí (perfecto simple)."},"tr":{"en":"Yesterday I met your brother at the party.","es":"Ayer conocí a tu hermano en la fiesta."}},
+    {"id":"ii2-fix-11","kind":"fix","trial":true,"es":"Cuando tuve cinco años, vivíamos en Puebla.","wrongIndex":1,"answer":"tenía","explain":{"en":"Age in the past describes how things were: the imperfect, tenía.","es":"La edad en el pasado describe cómo eran las cosas: el imperfecto, tenía."},"tr":{"en":"When I was five years old, we lived in Puebla.","es":"Cuando tenía cinco años, vivíamos en Puebla."}},
+    {"id":"ii2-fix-12","kind":"fix","trial":true,"es":"Antes yo vía mucho la tele.","wrongIndex":2,"answer":"veía","explain":{"en":"Ver is irregular in the imperfect: veía (not vía).","es":"Ver es irregular en el imperfecto: veía (no vía)."},"tr":{"en":"I used to watch TV a lot.","es":"Antes yo veía mucho la tele."}},
     {"id":"ii2-bank-01","kind":"bank","trial":true,"bank":["ser","ir","hacer"],"es":"Cuando yo ___ niño, vivía en Puebla.","word":"ser","answer":"era","tr":{"en":"When I was a child, I lived in Puebla.","es":"Cuando yo era niño, vivía en Puebla."},"why":{"en":"Cuando gives the background: the imperfect, era.","es":"Cuando da el fondo: el imperfecto, era."}},
     {"id":"ii2-bank-02","kind":"bank","trial":true,"bank":["llegar","estar","vivir"],"es":"De repente mi tía ___ a la fiesta.","word":"llegar","answer":"llegó","tr":{"en":"Suddenly my aunt arrived at the party.","es":"De repente mi tía llegó a la fiesta."},"why":{"en":"De repente introduces a single event: the preterite, llegó.","es":"De repente introduce un hecho único: el perfecto simple, llegó."}},
     {"id":"ii2-bank-03","kind":"bank","trial":true,"bank":["cocinar","escribir","salir"],"es":"Mientras mi madre ___ la cena, yo ponía la mesa.","word":"cocinar","answer":"cocinaba","tr":{"en":"While my mother was cooking dinner, I was setting the table.","es":"Mientras mi madre cocinaba la cena, yo ponía la mesa."},"why":{"en":"Mientras gives an action in progress: the imperfect, cocinaba.","es":"Mientras da una acción en curso: el imperfecto, cocinaba."}},
     {"id":"ii2-bank-04","kind":"bank","trial":true,"bank":["hacer","ir","ser"],"es":"Antes, todos los domingos mi abuelo ___ pan en casa.","word":"hacer","answer":"hacía","tr":{"en":"In the past, every Sunday my grandfather made bread at home.","es":"Antes, todos los domingos mi abuelo hacía pan en casa."},"why":{"en":"Todos los domingos marks a habit: the imperfect, hacía.","es":"Todos los domingos marca una costumbre: el imperfecto, hacía."}},
     {"id":"ii2-bank-05","kind":"bank","trial":true,"bank":["ver","comer","ir"],"es":"Ayer yo ___ a mi profesor en el parque.","word":"ver","answer":"vi","tr":{"en":"Yesterday I saw my teacher in the park.","es":"Ayer yo vi a mi profesor en el parque."},"why":{"en":"Ayer marks a finished event: the preterite, vi (ver is irregular).","es":"Ayer marca un hecho terminado: el perfecto simple, vi (ver es irregular)."}},
+    {"id":"ii2-bank-06","kind":"bank","trial":true,"bank":["vivir","abrir","vender"],"es":"Cuando éramos niños, ___ en un pueblo pequeño.","word":"vivir","answer":"vivíamos","tr":{"en":"When we were children, we lived in a small town.","es":"Cuando éramos niños, vivíamos en un pueblo pequeño."},"why":{"en":"Cuando éramos niños sets the background: the imperfect, vivíamos.","es":"Cuando éramos niños marca el fondo: el imperfecto, vivíamos."}},
+    {"id":"ii2-bank-07","kind":"bank","trial":true,"bank":["nadar","escribir","cerrar"],"es":"El sábado pasado mi primo ___ en el mar.","word":"nadar","answer":"nadó","tr":{"en":"Last Saturday my cousin swam in the sea.","es":"El sábado pasado mi primo nadó en el mar."},"why":{"en":"El sábado pasado is one finished day: the preterite, nadó.","es":"El sábado pasado es un día terminado: el perfecto simple, nadó."}},
+    {"id":"ii2-bank-08","kind":"bank","trial":true,"bank":["beber","correr","abrir"],"es":"Cada mañana mi padre ___ café.","word":"beber","answer":"bebía","tr":{"en":"Every morning my father drank coffee.","es":"Cada mañana mi padre bebía café."},"why":{"en":"Cada mañana marks a habit: the imperfect, bebía.","es":"Cada mañana marca una costumbre: el imperfecto, bebía."}},
+    {"id":"ii2-bank-09","kind":"bank","trial":true,"bank":["salir","tener","ser"],"es":"Ayer mis amigos ___ muy tarde de la fiesta.","word":"salir","answer":"salieron","tr":{"en":"Yesterday my friends left the party very late.","es":"Ayer mis amigos salieron muy tarde de la fiesta."},"why":{"en":"Ayer marks a finished event: the preterite, salieron.","es":"Ayer marca un hecho terminado: el perfecto simple, salieron."}},
+    {"id":"ii2-bank-10","kind":"bank","trial":true,"bank":["jugar","cerrar","vender"],"es":"Cuando yo era pequeño, ___ mucho en el parque.","word":"jugar","answer":"jugaba","tr":{"en":"When I was little, I played a lot in the park.","es":"Cuando yo era pequeño, jugaba mucho en el parque."},"why":{"en":"Cuando yo era pequeño gives the background: the imperfect, jugaba.","es":"Cuando yo era pequeño da el fondo: el imperfecto, jugaba."}},
+    {"id":"ii2-bank-11","kind":"bank","trial":true,"bank":["viajar","beber","dormir"],"es":"El año pasado nosotros ___ a México por primera vez.","word":"viajar","answer":"viajamos","tr":{"en":"Last year we traveled to Mexico for the first time.","es":"El año pasado nosotros viajamos a México por primera vez."},"why":{"en":"El año pasado is a finished period: the preterite, viajamos.","es":"El año pasado es un periodo terminado: el perfecto simple, viajamos."}},
+    {"id":"ii2-bank-12","kind":"bank","trial":true,"bank":["trabajar","llover","cerrar"],"es":"En aquella época mi tío ___ en un banco.","word":"trabajar","answer":"trabajaba","tr":{"en":"Back then my uncle worked at a bank.","es":"En aquella época mi tío trabajaba en un banco."},"why":{"en":"En aquella época sets the background: the imperfect, trabajaba.","es":"En aquella época marca el fondo: el imperfecto, trabajaba."}},
     {"id":"ii2-order-01","kind":"order","trial":true,"prompt":{"en":"My cousins arrived at my house.","es":"Mis primos llegaron a mi casa."},"es":"Mis primos llegaron a mi casa."},
     {"id":"ii2-order-02","kind":"order","trial":true,"prompt":{"en":"I was very small.","es":"Yo era muy pequeño."},"es":"Yo era muy pequeño."},
     {"id":"ii2-order-03","kind":"order","trial":true,"prompt":{"en":"What were you doing in the park?","es":"¿Qué hacías en el parque?"},"es":"¿Qué hacías en el parque?"},
     {"id":"ii2-order-04","kind":"order","trial":true,"prompt":{"en":"My aunt did not come to the party.","es":"Mi tía no vino a la fiesta."},"es":"Mi tía no vino a la fiesta."},
-    {"id":"ii2-order-05","kind":"order","trial":true,"prompt":{"en":"We went to the movies.","es":"Fuimos al cine."},"es":"Fuimos al cine."}
+    {"id":"ii2-order-05","kind":"order","trial":true,"prompt":{"en":"We went to the movies.","es":"Fuimos al cine."},"es":"Fuimos al cine."},
+    {"id":"ii2-order-06","kind":"order","trial":true,"prompt":{"en":"My grandmother lived in a big house.","es":"Mi abuela vivía en una casa grande."},"es":"Mi abuela vivía en una casa grande."},
+    {"id":"ii2-order-07","kind":"order","trial":true,"prompt":{"en":"Yesterday we swam in the sea.","es":"Ayer nadamos en el mar."},"es":"Ayer nadamos en el mar."},
+    {"id":"ii2-order-08","kind":"order","trial":true,"prompt":{"en":"When I arrived, it was already raining.","es":"Cuando llegué, ya llovía."},"es":"Cuando llegué, ya llovía."},
+    {"id":"ii2-order-09","kind":"order","trial":true,"prompt":{"en":"My friends played in the street.","es":"Mis amigos jugaban en la calle."},"es":"Mis amigos jugaban en la calle."},
+    {"id":"ii2-order-10","kind":"order","trial":true,"prompt":{"en":"Where were you last night?","es":"¿Dónde estabas anoche?"},"es":"¿Dónde estabas anoche?"},
+    {"id":"ii2-order-11","kind":"order","trial":true,"prompt":{"en":"She did not have time.","es":"Ella no tenía tiempo."},"es":"Ella no tenía tiempo."},
+    {"id":"ii2-order-12","kind":"order","trial":true,"prompt":{"en":"On Sunday we ate with my aunt and uncle.","es":"El domingo comimos con mis tíos."},"es":"El domingo comimos con mis tíos."}
   ]
 }
