@@ -28,7 +28,7 @@
   "imperativo-pronombres": { "required": ["choice","match","form","why"], "scored": ["choice","match","form","why"] },
   "imperfecto": { "required": ["choice","match","form","why","transform"], "scored": ["choice","match","form","why","transform"] },
   "indefinido-10-verbos": { "required": ["transform"], "scored": ["transform"] },
-  "indefinido-cambios-raiz": { "required": ["choice","match","form","why","transform"], "scored": ["choice","match","form","why","transform"] },
+  "indefinido-cambios-raiz": { "required": ["choice","match","form","transform"], "scored": ["choice","match","form","transform"] },
   "indefinido-imperfecto": { "required": ["choice","match","why","transform"], "scored": ["choice","match","why","transform"] },
   "indefinido-irregular": { "required": ["choice","match","form","why"], "scored": ["choice","match","form","why"] },
   "indefinido-regular": { "required": ["choice","match","form","transform"], "scored": ["choice","match","form","transform"] },

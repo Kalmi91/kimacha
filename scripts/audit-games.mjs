@@ -28,6 +28,9 @@
  *     audit-games-match-debt.json and audit-games-match-debt-en.json, P2, shrink-only)
  *   - an es-track drill item that names vosotros (pronoun, vuestro, a vosotros
  *     verb form; legacy items in audit-games-vosotros-debt.json, same rule)
+ *   - an es-track lesson whose transform items (at least 10 name a target person in `why`) have yo and tú
+ *     more than 1 apart, the same target person twice in a row, or a noun card in over 20% of the items
+ *     (legacy lessons in audit-games-transform-debt.json, P2, shrink-only)
  *   - a confusables drill whose `correct` is not one of the set's own
  *     `members[].word`, or a 'gap'/'listening' drill with no `sentence`
  *   - a myth item missing an id/level/track/claim/verdict, or a `source`
@@ -874,9 +877,11 @@ const TENSE_IDS = [
 // Card id (the `order` of words-open, as a string) -> level, built once from the words-open files, for the
 // level check of the `wordIds` of transform items.
 const wordLevelById = new Map();
+const wordPosById = new Map(); // card id -> part of speech, for the noun-repeat check of the transform items
 for (const lvl of LEVELS) {
   for (const card of loadLevelWords(lvl)) {
     wordLevelById.set(String(card.order), lvl); // words-open: the card id is the `order`
+    wordPosById.set(String(card.order), card.pos);
   }
 }
 
@@ -1113,6 +1118,68 @@ function auditTransformItem(item, itemPath, topic, lang = 'es') {
   checkLangs(item.why, `${itemPath} why`);
 }
 
+// Variety of the transform items of one lesson (FB716, FB717): the target person is read from the `why` text
+// ("-AR verb, yo: hablo -> hable"), so only items that name a person count. A lesson with at least 10 such items
+// needs (a) yo and tu within 1 of each other, (b) no two transform items in a row with the same target person,
+// (c) no noun card (wordIds) in more than 20% of the transform items. The lessons that broke it before this gate
+// are on `audit-games-transform-debt.json` (P2, shrink-only); whatever is not on the list is P1, and a listed
+// lesson that is clean now is P1 too (remove it from the list).
+const TRANSFORM_DEBT_FILE = 'scripts/audit-games-transform-debt.json';
+const TRANSFORM_DEBT = new Set(JSON.parse(readFileSync(join(ROOT, TRANSFORM_DEBT_FILE), 'utf8')));
+let transformDebtSeen = 0;
+const PERSON_OF_LABEL = {
+  yo: 'yo', 'tú': 'tú', 'él': 'él', ella: 'él', 'él/ella': 'él', usted: 'él',
+  nosotros: 'nosotros', nosotras: 'nosotros',
+  ellos: 'ellos', ellas: 'ellos', ustedes: 'ellos', 'ellos/ellas/ustedes': 'ellos',
+};
+const transformPerson = (item) => {
+  const m = /, ([^,:]{1,40}): /.exec(item?.why?.en ?? '');
+  return m ? (PERSON_OF_LABEL[m[1].trim().toLowerCase()] ?? null) : null;
+};
+
+function transformVarietyIssues(topic) {
+  const tr = (topic.items ?? []).filter((i) => i.kind === 'transform');
+  const persons = tr.map(transformPerson);
+  if (persons.filter(Boolean).length < 10) return [];
+  const issues = [];
+  const count = (p) => persons.filter((x) => x === p).length;
+  if (Math.abs(count('yo') - count('tú')) > 1) issues.push(`yo (${count('yo')}) and tú (${count('tú')}) differ by more than 1`);
+  for (let i = 1; i < persons.length; i++) {
+    if (persons[i] && persons[i] === persons[i - 1]) {
+      issues.push(`${tr[i - 1].id} and ${tr[i].id} have the same target person (${persons[i]})`);
+      break;
+    }
+  }
+  const nounUses = new Map();
+  for (const item of tr) {
+    for (const id of new Set((item.wordIds ?? []).map(String))) {
+      if (wordPosById.get(id) === 'noun') nounUses.set(id, (nounUses.get(id) ?? 0) + 1);
+    }
+  }
+  const cap = Math.floor(tr.length * 0.2);
+  for (const [id, n] of nounUses) {
+    if (n > cap) {
+      issues.push(`noun card ${id} is in ${n} of ${tr.length} transform items (at most ${cap})`);
+      break;
+    }
+  }
+  return issues;
+}
+
+function auditTransformVariety(topic, filePath, path) {
+  const issues = transformVarietyIssues(topic);
+  const inDebt = TRANSFORM_DEBT.has(filePath);
+  if (issues.length === 0) {
+    if (inDebt) p1.push({ path, issue: `transform items are varied now, remove "${filePath}" from ${TRANSFORM_DEBT_FILE}` });
+    return;
+  }
+  if (inDebt) {
+    transformDebtSeen += 1;
+    return;
+  }
+  p1.push({ path, issue: `transform items not varied enough: ${issues.join('; ')}` });
+}
+
 function auditGrammarTopic(topic, filePath, lang = 'es') {
   const path = `grammar/${filePath}`;
   if (!topic.topic) p1.push({ path, issue: 'missing topic id' });
@@ -1275,6 +1342,7 @@ function auditGrammarTopic(topic, filePath, lang = 'es') {
       }
     }
   }
+  if (lang === 'es') auditTransformVariety(topic, filePath, path);
 }
 
 // ---------------------------------------------------------------------------
@@ -1301,6 +1369,9 @@ function runGrammar() {
 runGrammar();
 if (vosotrosDebtSeen > 0) {
   p2.push({ path: 'grammar/es', issue: `${vosotrosDebtSeen} legacy drill items still name vosotros (scripts/audit-games-vosotros-debt.json)` });
+}
+if (transformDebtSeen > 0) {
+  p2.push({ path: 'grammar/es', issue: `${transformDebtSeen} lessons still have unbalanced transform items (${TRANSFORM_DEBT_FILE})` });
 }
 for (const track of ['es', 'en']) {
   if (matchDebtSeen[track] > 0) {
