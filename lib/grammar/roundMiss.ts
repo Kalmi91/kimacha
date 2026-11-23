@@ -24,7 +24,8 @@ export function missOfItem(item: GrammarRoundItem['item'], contentLang: string, 
   const g = given && given.trim() !== '' ? given.trim() : null;
   switch (item.kind) {
     case 'match':
-      return null;
+      // a match item has no single answer: the task is the Spanish side, the solution is every pair
+      return { prompt: item.pairs.map((p) => p.es).join(' · '), given: null, correct: item.pairs.map((p) => `${p.es} = ${p.en}`).join(' · ') };
     case 'form':
       return { prompt: `${item.person} · ${item.verb}`, given: g, correct: item.answer };
     case 'why':

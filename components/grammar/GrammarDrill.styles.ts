@@ -71,6 +71,8 @@ export const styles = StyleSheet.create({
   // tense badge + sentence transformation drill.
   tenseBadge: { alignSelf: 'flex-start', paddingVertical: 6, paddingHorizontal: 12, borderRadius: 999 },
   tenseBadgeText: { fontSize: 13, fontWeight: '700' },
+  // the TARGET tense on the badge stands out from the source (FB714)
+  tenseBadgeTarget: { fontSize: 15, fontWeight: '900', textDecorationLine: 'underline' },
   transformBody: { gap: 12 },
   transformCard: { borderRadius: 16, padding: 18, gap: 10 },
   transformCardRow: { flexDirection: 'row', alignItems: 'flex-start', gap: 12 },
