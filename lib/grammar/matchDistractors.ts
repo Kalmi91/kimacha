@@ -42,7 +42,7 @@ export function pickMatchDistractors(
       if (lefts.has(norm(leftOf(a))) || words(leftOf(a)) > maxLeft) continue;
       for (let j = 1; j < n; j++) {
         const b = pool[(seed + i + j) % n];
-        if (words(rightOf(b)) > maxRight || norm(leftOf(b)) ===norm(leftOf(a)) || rights.has(norm(rightOf(b))) || norm(rightOf(b)) === norm(rightOf(a))) continue;
+        if (words(rightOf(b)) > maxRight || norm(leftOf(b)) === norm(leftOf(a)) || rights.has(norm(rightOf(b))) || norm(rightOf(b)) === norm(rightOf(a))) continue;
         return { left: leftOf(a), right: rightOf(b) };
       }
     }
