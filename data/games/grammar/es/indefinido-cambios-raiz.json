@@ -1146,27 +1146,27 @@
       "pairs": [
         {
           "es": "pidió",
-          "en": "she asked for"
+          "en": "she ordered"
         },
         {
-          "es": "durmieron",
-          "en": "they slept"
+          "es": "durmió",
+          "en": "he slept"
         },
         {
           "es": "sintió",
-          "en": "he felt"
+          "en": "she felt"
         },
         {
           "es": "leyó",
-          "en": "she read"
+          "en": "he read"
         },
         {
-          "es": "oyeron",
-          "en": "they heard"
+          "es": "oyó",
+          "en": "she heard"
         },
         {
-          "es": "se cayó",
-          "en": "he fell down"
+          "es": "cayó",
+          "en": "he fell"
         }
       ],
       "tense": {
@@ -1436,307 +1436,6 @@
           "en": "Oíamos is in the imperfect. This task asks for the preterite (indefinido): oímos.",
           "es": "Oíamos está en imperfecto. Esta tarea pide pretérito indefinido: oímos."
         }
-      }
-    },
-    {
-      "kind": "why",
-      "id": "icr-why-01",
-      "es": "Ella pidió una pizza.",
-      "target": "pidió",
-      "tr": {
-        "en": "She ordered a pizza.",
-        "es": "Ella pidió una pizza."
-      },
-      "options": [
-        {
-          "text": {
-            "en": "Stem change e→i or o→u",
-            "es": "Cambio de raíz e→i, o→u"
-          }
-        },
-        {
-          "text": {
-            "en": "The i between vowels becomes y",
-            "es": "La i entre vocales pasa a y"
-          },
-          "wrong": {
-            "en": "The y rule needs a vowel before the ending, as in leyó; in pidió there is a d, so the ending keeps its i.",
-            "es": "La regla de la y necesita una vocal antes de la terminación, como en leyó; en pidió hay una d, así que la terminación conserva su i."
-          }
-        },
-        {
-          "text": {
-            "en": "Regular form, no change",
-            "es": "Forma regular, sin cambio"
-          },
-          "wrong": {
-            "en": "A regular form would keep the e of the infinitive: pedió. Pidió has an i because pedir changes e→i in the third person.",
-            "es": "Una forma regular conservaría la e del infinitivo: pedió. Pidió tiene i porque pedir cambia e→i en la tercera persona."
-          }
-        }
-      ],
-      "correctIndex": 0,
-      "tense": {
-        "from": "presente",
-        "to": "indefinido"
-      }
-    },
-    {
-      "kind": "why",
-      "id": "icr-why-02",
-      "es": "Mi hermano leyó el mensaje.",
-      "target": "leyó",
-      "tr": {
-        "en": "My brother read the message.",
-        "es": "Mi hermano leyó el mensaje."
-      },
-      "options": [
-        {
-          "text": {
-            "en": "Stem change e→i or o→u",
-            "es": "Cambio de raíz e→i, o→u"
-          },
-          "wrong": {
-            "en": "Leer has no e→i change: its stem le- stays. What changes is the ending, -ió becomes -yó after a vowel.",
-            "es": "Leer no tiene cambio e→i: su raíz le- se queda. Lo que cambia es la terminación, -ió pasa a -yó después de una vocal."
-          }
-        },
-        {
-          "text": {
-            "en": "The i between vowels becomes y",
-            "es": "La i entre vocales pasa a y"
-          }
-        },
-        {
-          "text": {
-            "en": "Regular form, no change",
-            "es": "Forma regular, sin cambio"
-          },
-          "wrong": {
-            "en": "A fully regular form would be leió, which Spanish does not write: between two vowels the i becomes y, so leyó.",
-            "es": "Una forma totalmente regular sería leió, que el español no escribe: entre dos vocales la i pasa a y, y queda leyó."
-          }
-        }
-      ],
-      "correctIndex": 1,
-      "tense": {
-        "from": "presente",
-        "to": "indefinido"
-      }
-    },
-    {
-      "kind": "why",
-      "id": "icr-why-03",
-      "es": "Tú pediste la cuenta.",
-      "target": "pediste",
-      "tr": {
-        "en": "You asked for the bill.",
-        "es": "Tú pediste la cuenta."
-      },
-      "options": [
-        {
-          "text": {
-            "en": "Stem change e→i or o→u",
-            "es": "Cambio de raíz e→i, o→u"
-          },
-          "wrong": {
-            "en": "The e→i change happens only in the third person (pidió, pidieron); with tú the stem keeps its e: pediste.",
-            "es": "El cambio e→i ocurre solo en la tercera persona (pidió, pidieron); con tú la raíz conserva su e: pediste."
-          }
-        },
-        {
-          "text": {
-            "en": "The i between vowels becomes y",
-            "es": "La i entre vocales pasa a y"
-          },
-          "wrong": {
-            "en": "The y rule needs a vowel before the ending, as in leyó; pediste has a d, so the ending stays: pediste.",
-            "es": "La regla de la y necesita una vocal antes de la terminación, como en leyó; pediste tiene una d, así que la terminación se queda: pediste."
-          }
-        },
-        {
-          "text": {
-            "en": "Regular form, no change",
-            "es": "Forma regular, sin cambio"
-          }
-        }
-      ],
-      "correctIndex": 2,
-      "tense": {
-        "from": "presente",
-        "to": "indefinido"
-      }
-    },
-    {
-      "kind": "why",
-      "id": "icr-why-04",
-      "es": "Anoche los niños durmieron bien.",
-      "target": "durmieron",
-      "tr": {
-        "en": "Last night the children slept well.",
-        "es": "Anoche los niños durmieron bien."
-      },
-      "options": [
-        {
-          "text": {
-            "en": "The i between vowels becomes y",
-            "es": "La i entre vocales pasa a y"
-          },
-          "wrong": {
-            "en": "No y appears here: durmieron has the stem change o→u, not the i→y of leyeron.",
-            "es": "Aquí no aparece ninguna y: durmieron tiene el cambio de raíz o→u, no la i→y de leyeron."
-          }
-        },
-        {
-          "text": {
-            "en": "Stem change e→i or o→u",
-            "es": "Cambio de raíz e→i, o→u"
-          }
-        },
-        {
-          "text": {
-            "en": "Regular form, no change",
-            "es": "Forma regular, sin cambio"
-          },
-          "wrong": {
-            "en": "A regular form would be dormieron; the third person of dormir changes o→u, so durmieron.",
-            "es": "Una forma regular sería dormieron; la tercera persona de dormir cambia o→u, y queda durmieron."
-          }
-        }
-      ],
-      "correctIndex": 1,
-      "tense": {
-        "from": "presente",
-        "to": "indefinido"
-      }
-    },
-    {
-      "kind": "why",
-      "id": "icr-why-05",
-      "es": "Ellos oyeron un ruido.",
-      "target": "oyeron",
-      "tr": {
-        "en": "They heard a noise.",
-        "es": "Ellos oyeron un ruido."
-      },
-      "options": [
-        {
-          "text": {
-            "en": "Regular form, no change",
-            "es": "Forma regular, sin cambio"
-          },
-          "wrong": {
-            "en": "A regular form would be oieron, with the i between two vowels; Spanish writes y there: oyeron.",
-            "es": "Una forma regular sería oieron, con la i entre dos vocales; el español escribe y ahí: oyeron."
-          }
-        },
-        {
-          "text": {
-            "en": "The i between vowels becomes y",
-            "es": "La i entre vocales pasa a y"
-          }
-        },
-        {
-          "text": {
-            "en": "Stem change e→i or o→u",
-            "es": "Cambio de raíz e→i, o→u"
-          },
-          "wrong": {
-            "en": "Oír has no e→i or o→u change; its stem o- stays, and the ending -ieron becomes -yeron after the vowel o.",
-            "es": "Oír no tiene cambio e→i ni o→u; su raíz o- se queda, y la terminación -ieron pasa a -yeron después de la vocal o."
-          }
-        }
-      ],
-      "correctIndex": 1,
-      "tense": {
-        "from": "presente",
-        "to": "indefinido"
-      }
-    },
-    {
-      "kind": "why",
-      "id": "icr-why-06",
-      "es": "Leímos la receta.",
-      "target": "Leímos",
-      "tr": {
-        "en": "We read the recipe.",
-        "es": "Leímos la receta."
-      },
-      "options": [
-        {
-          "text": {
-            "en": "The i between vowels becomes y",
-            "es": "La i entre vocales pasa a y"
-          },
-          "wrong": {
-            "en": "The y rule only applies in the third person (leyó, leyeron); nosotros keeps the i, with an accent mark: leímos.",
-            "es": "La regla de la y solo se aplica en la tercera persona (leyó, leyeron); nosotros conserva la i, con tilde: leímos."
-          }
-        },
-        {
-          "text": {
-            "en": "Stem change e→i or o→u",
-            "es": "Cambio de raíz e→i, o→u"
-          },
-          "wrong": {
-            "en": "There is no stem change here: leer has no e→i, and nosotros is never affected. The form is leímos.",
-            "es": "Aquí no hay cambio de raíz: leer no tiene e→i, y nosotros nunca se afecta. La forma es leímos."
-          }
-        },
-        {
-          "text": {
-            "en": "Regular form, no change",
-            "es": "Forma regular, sin cambio"
-          }
-        }
-      ],
-      "correctIndex": 2,
-      "tense": {
-        "from": "presente",
-        "to": "indefinido"
-      }
-    },
-    {
-      "kind": "why",
-      "id": "icr-why-07",
-      "es": "Los niños se vistieron de azul.",
-      "target": "vistieron",
-      "tr": {
-        "en": "The children got dressed in blue.",
-        "es": "Los niños se vistieron de azul."
-      },
-      "options": [
-        {
-          "text": {
-            "en": "Regular form, no change",
-            "es": "Forma regular, sin cambio"
-          },
-          "wrong": {
-            "en": "A regular form would be vestieron; vestirse changes e→i in the third person, so se vistieron.",
-            "es": "Una forma regular sería vestieron; vestirse cambia e→i en la tercera persona, y queda se vistieron."
-          }
-        },
-        {
-          "text": {
-            "en": "Stem change e→i or o→u",
-            "es": "Cambio de raíz e→i, o→u"
-          }
-        },
-        {
-          "text": {
-            "en": "The i between vowels becomes y",
-            "es": "La i entre vocales pasa a y"
-          },
-          "wrong": {
-            "en": "No y appears here: vistieron comes from the e→i change of vestirse, not from a vowel before the ending.",
-            "es": "Aquí no aparece ninguna y: vistieron viene del cambio e→i de vestirse, no de una vocal antes de la terminación."
-          }
-        }
-      ],
-      "correctIndex": 1,
-      "tense": {
-        "from": "presente",
-        "to": "indefinido"
       }
     },
     {

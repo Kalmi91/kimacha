@@ -2413,24 +2413,24 @@
         "to": "indefinido"
       },
       "prompt": {
-        "es": "Hoy hablo con mi madre.",
-        "en": "Today I talk to my mother."
+        "es": "Llego a la escuela temprano esta mañana.",
+        "en": "I arrive at school early this morning."
       },
-      "answer": "Hoy hablé con mi madre.",
+      "answer": "Llegué a la escuela temprano esta mañana.",
       "accept": [
-        "Hoy yo hablé con mi madre.",
-        "Yo hoy hablé con mi madre.",
-        "Hablé con mi madre hoy.",
-        "Yo hablé con mi madre hoy."
+        "Yo llegué a la escuela temprano esta mañana.",
+        "Esta mañana llegué a la escuela temprano.",
+        "Esta mañana yo llegué a la escuela temprano."
       ],
       "wordIds": [
-        "52",
-        "47",
-        "38"
+        "149",
+        "118",
+        "176",
+        "173"
       ],
       "why": {
-        "en": "A finished past action: indefinido. Hoy still works because the day isn't over yet. -AR verb, yo: hablo → hablé.",
-        "es": "Una acción pasada y terminada: perfecto simple. Hoy sigue funcionando porque el día no ha terminado. Verbo en -AR, yo: hablo → hablé."
+        "en": "A finished past action: indefinido. llegar, yo: llego → llegué (g becomes gu before é).",
+        "es": "Una acción pasada y terminada: perfecto simple. llegar, yo: llego → llegué (la g cambia a gu delante de é)."
       }
     },
     {
@@ -2441,24 +2441,24 @@
         "to": "indefinido"
       },
       "prompt": {
-        "es": "Hoy comes en casa.",
-        "en": "Today you eat at home."
+        "es": "Por la tarde compras pan en el mercado.",
+        "en": "In the afternoon you buy bread at the market."
       },
-      "answer": "Hoy comiste en casa.",
+      "answer": "Por la tarde compraste pan en el mercado.",
       "accept": [
-        "Hoy tú comiste en casa.",
-        "Tú hoy comiste en casa.",
-        "Comiste en casa hoy.",
-        "Tú comiste en casa hoy."
+        "Por la tarde tú compraste pan en el mercado.",
+        "Compraste pan en el mercado por la tarde.",
+        "Tú compraste pan en el mercado por la tarde."
       ],
       "wordIds": [
-        "52",
-        "25",
-        "19"
+        "174",
+        "144",
+        "27",
+        "257"
       ],
       "why": {
-        "en": "A finished past action: indefinido. Hoy still works because the day isn't over yet. -ER verb, tú: comes → comiste.",
-        "es": "Una acción pasada y terminada: perfecto simple. Hoy sigue funcionando porque el día no ha terminado. Verbo en -ER, tú: comes → comiste."
+        "en": "A finished past action: indefinido. -AR verb, tú: compras → compraste.",
+        "es": "Una acción pasada y terminada: perfecto simple. Verbo en -AR, tú: compras → compraste."
       }
     },
     {
@@ -2469,25 +2469,23 @@
         "to": "indefinido"
       },
       "prompt": {
-        "es": "Hoy escribe una carta.",
-        "en": "Today she writes a letter."
+        "es": "Mi hermana abre la ventana de la cocina.",
+        "en": "My sister opens the kitchen window."
       },
-      "answer": "Hoy escribió una carta.",
+      "answer": "Mi hermana abrió la ventana de la cocina.",
       "accept": [
-        "Hoy ella escribió una carta.",
-        "Hoy él escribió una carta.",
-        "Hoy usted escribió una carta.",
-        "Escribió una carta hoy.",
-        "Ella escribió una carta hoy."
+        "Ella abrió la ventana de la cocina.",
+        "Abrió la ventana de la cocina."
       ],
       "wordIds": [
-        "52",
-        "146",
-        "274"
+        "4368",
+        "147",
+        "270",
+        "269"
       ],
       "why": {
-        "en": "A finished past action: indefinido. Hoy still works because the day isn't over yet. -IR verb, él/ella: escribe → escribió.",
-        "es": "Una acción pasada y terminada: perfecto simple. Hoy sigue funcionando porque el día no ha terminado. Verbo en -IR, él/ella: escribe → escribió."
+        "en": "A finished past action: indefinido. -IR verb, él/ella: abre → abrió.",
+        "es": "Una acción pasada y terminada: perfecto simple. Verbo en -IR, él/ella: abre → abrió."
       }
     },
     {
@@ -2498,24 +2496,22 @@
         "to": "indefinido"
       },
       "prompt": {
-        "es": "Hoy comemos en un restaurante.",
-        "en": "Today we eat at a restaurant."
+        "es": "Vendemos la casa vieja a un vecino.",
+        "en": "We sell the old house to a neighbor."
       },
-      "answer": "Hoy comimos en un restaurante.",
+      "answer": "Vendimos la casa vieja a un vecino.",
       "accept": [
-        "Hoy nosotros comimos en un restaurante.",
-        "Nosotros hoy comimos en un restaurante.",
-        "Comimos en un restaurante hoy.",
-        "Nosotros comimos en un restaurante hoy."
+        "Nosotros vendimos la casa vieja a un vecino."
       ],
       "wordIds": [
-        "52",
-        "25",
-        "256"
+        "238",
+        "19",
+        "68",
+        "385"
       ],
       "why": {
-        "en": "A finished past action: indefinido. Hoy still works because the day isn't over yet. -ER verb, nosotros: comemos → comimos.",
-        "es": "Una acción pasada y terminada: perfecto simple. Hoy sigue funcionando porque el día no ha terminado. Verbo en -ER, nosotros: comemos → comimos."
+        "en": "A finished past action: indefinido. -ER verb, nosotros: vendemos → vendimos.",
+        "es": "Una acción pasada y terminada: perfecto simple. Verbo en -ER, nosotros: vendemos → vendimos."
       }
     },
     {
@@ -2526,16 +2522,17 @@
         "to": "indefinido"
       },
       "prompt": {
-        "es": "Ustedes escriben un correo.",
-        "en": "You all write an email."
+        "es": "Ustedes escriben un correo a la maestra.",
+        "en": "You all write an email to the teacher."
       },
-      "answer": "Ustedes escribieron un correo.",
+      "answer": "Ustedes escribieron un correo a la maestra.",
       "accept": [
-        "Escribieron un correo."
+        "Escribieron un correo a la maestra."
       ],
       "wordIds": [
         "146",
-        "754"
+        "754",
+        "4383"
       ],
       "why": {
         "en": "A finished past action: indefinido. -IR verb, ustedes: escriben → escribieron.",
@@ -2550,24 +2547,21 @@
         "to": "indefinido"
       },
       "prompt": {
-        "es": "Hoy trabajan en la oficina.",
-        "en": "Today they work in the office."
+        "es": "Busco mis llaves en la mochila.",
+        "en": "I look for my keys in the backpack."
       },
-      "answer": "Hoy trabajaron en la oficina.",
+      "answer": "Busqué mis llaves en la mochila.",
       "accept": [
-        "Hoy ellos trabajaron en la oficina.",
-        "Hoy ellas trabajaron en la oficina.",
-        "Hoy ustedes trabajaron en la oficina.",
-        "Trabajaron en la oficina hoy."
+        "Yo busqué mis llaves en la mochila."
       ],
       "wordIds": [
-        "52",
-        "49",
-        "258"
+        "206",
+        "271",
+        "666"
       ],
       "why": {
-        "en": "A finished past action: indefinido. Hoy still works because the day isn't over yet. -AR verb, ellos/ellas/ustedes: trabajan → trabajaron.",
-        "es": "Una acción pasada y terminada: perfecto simple. Hoy sigue funcionando porque el día no ha terminado. Verbo en -AR, ellos/ellas/ustedes: trabajan → trabajaron."
+        "en": "A finished past action: indefinido. buscar, yo: busco → busqué (c becomes qu before é).",
+        "es": "Una acción pasada y terminada: perfecto simple. buscar, yo: busco → busqué (la c cambia a qu delante de é)."
       }
     },
     {
@@ -2578,24 +2572,21 @@
         "to": "indefinido"
       },
       "prompt": {
-        "es": "Hoy llego temprano.",
-        "en": "Today I arrive early."
+        "es": "El profesor termina la clase a las dos.",
+        "en": "The teacher finishes the class at two."
       },
-      "answer": "Hoy llegué temprano.",
+      "answer": "El profesor terminó la clase a las dos.",
       "accept": [
-        "Hoy yo llegué temprano.",
-        "Yo hoy llegué temprano.",
-        "Llegué temprano hoy.",
-        "Yo llegué temprano hoy."
+        "Terminó la clase a las dos."
       ],
       "wordIds": [
-        "52",
-        "149",
-        "176"
+        "245",
+        "219",
+        "246"
       ],
       "why": {
-        "en": "A finished past action: indefinido. Hoy still works because the day isn't over yet. llegar, yo: llego → llegué (g becomes gu before é).",
-        "es": "Una acción pasada y terminada: perfecto simple. Hoy sigue funcionando porque el día no ha terminado. llegar, yo: llego → llegué (la g cambia a gu delante de é)."
+        "en": "A finished past action: indefinido. -AR verb, él/ella: termina → terminó.",
+        "es": "Una acción pasada y terminada: perfecto simple. Verbo en -AR, él/ella: termina → terminó."
       }
     },
     {
@@ -2606,24 +2597,22 @@
         "to": "indefinido"
       },
       "prompt": {
-        "es": "Hoy busco mis llaves.",
-        "en": "Today I look for my keys."
+        "es": "Comemos tacos con amigos en el parque.",
+        "en": "We eat tacos with friends in the park."
       },
-      "answer": "Hoy busqué mis llaves.",
+      "answer": "Comimos tacos con amigos en el parque.",
       "accept": [
-        "Hoy yo busqué mis llaves.",
-        "Yo hoy busqué mis llaves.",
-        "Busqué mis llaves hoy.",
-        "Yo busqué mis llaves hoy."
+        "Nosotros comimos tacos con amigos en el parque."
       ],
       "wordIds": [
-        "52",
-        "206",
-        "271"
+        "25",
+        "939",
+        "40",
+        "254"
       ],
       "why": {
-        "en": "A finished past action: indefinido. Hoy still works because the day isn't over yet. buscar, yo: busco → busqué (c becomes qu before é).",
-        "es": "Una acción pasada y terminada: perfecto simple. Hoy sigue funcionando porque el día no ha terminado. buscar, yo: busco → busqué (la c cambia a qu delante de é)."
+        "en": "A finished past action: indefinido. -ER verb, nosotros: comemos → comimos.",
+        "es": "Una acción pasada y terminada: perfecto simple. Verbo en -ER, nosotros: comemos → comimos."
       }
     },
     {
@@ -2634,24 +2623,22 @@
         "to": "indefinido"
       },
       "prompt": {
-        "es": "Hoy empiezo a trabajar.",
-        "en": "Today I start to work."
+        "es": "Cenas con tu madre por la noche.",
+        "en": "You have dinner with your mother at night."
       },
-      "answer": "Hoy empecé a trabajar.",
+      "answer": "Cenaste con tu madre por la noche.",
       "accept": [
-        "Hoy yo empecé a trabajar.",
-        "Yo hoy empecé a trabajar.",
-        "Empecé a trabajar hoy.",
-        "Yo empecé a trabajar hoy."
+        "Tú cenaste con tu madre por la noche.",
+        "Por la noche cenaste con tu madre."
       ],
       "wordIds": [
-        "52",
-        "218",
-        "49"
+        "877",
+        "38",
+        "55"
       ],
       "why": {
-        "en": "A finished past action: indefinido. Hoy still works because the day isn't over yet. empezar, yo: empiezo → empecé (the stem change disappears, z becomes c before é).",
-        "es": "Una acción pasada y terminada: perfecto simple. Hoy sigue funcionando porque el día no ha terminado. empezar, yo: empiezo → empecé (desaparece el cambio de raíz y la z cambia a c delante de é)."
+        "en": "A finished past action: indefinido. -AR verb, tú: cenas → cenaste.",
+        "es": "Una acción pasada y terminada: perfecto simple. Verbo en -AR, tú: cenas → cenaste."
       }
     },
     {
@@ -2662,24 +2649,19 @@
         "to": "indefinido"
       },
       "prompt": {
-        "es": "Hoy cenas con tu amigo.",
-        "en": "Today you have dinner with your friend."
+        "es": "Mis abuelos viven en un edificio nuevo.",
+        "en": "My grandparents live in a new building."
       },
-      "answer": "Hoy cenaste con tu amigo.",
-      "accept": [
-        "Hoy tú cenaste con tu amigo.",
-        "Tú hoy cenaste con tu amigo.",
-        "Cenaste con tu amigo hoy.",
-        "Tú cenaste con tu amigo hoy."
-      ],
+      "answer": "Mis abuelos vivieron en un edificio nuevo.",
       "wordIds": [
-        "52",
-        "40",
-        "877"
+        "619",
+        "48",
+        "392",
+        "67"
       ],
       "why": {
-        "en": "A finished past action: indefinido. Hoy still works because the day isn't over yet. -AR verb, tú: cenas → cenaste.",
-        "es": "Una acción pasada y terminada: perfecto simple. Hoy sigue funcionando porque el día no ha terminado. Verbo en -AR, tú: cenas → cenaste."
+        "en": "A finished past action: indefinido. -IR verb, ellos/ellas/ustedes: viven → vivieron.",
+        "es": "Una acción pasada y terminada: perfecto simple. Verbo en -IR, ellos/ellas/ustedes: viven → vivieron."
       }
     },
     {"kind":"why","id":"ir-why-01","es":"Hablé con mi madre ayer.","target":"Hablé","tr":{"en":"I talked to my mother yesterday.","es":"Hablé con mi madre ayer."},"options":[{"text":{"en":"-AR verb, yo: -é","es":"verbo en -AR, yo: -é"}},{"text":{"en":"-ER/-IR verb, yo: -í","es":"verbo en -ER/-IR, yo: -í"},"wrong":{"en":"-í is the yo ending of -er/-ir verbs (comí, viví); hablar is an -ar verb, so yo takes -é.","es":"-í es la terminación de yo de los verbos en -er/-ir (comí, viví); hablar es un verbo en -ar, así que yo lleva -é."}},{"text":{"en":"present tense, yo: -o","es":"presente, yo: -o"},"wrong":{"en":"-o is the present (hablo: what I usually do or do now); the accented -é marks one finished action.","es":"-o es el presente (hablo: lo que hago normalmente o ahora); la -é con tilde marca una acción terminada."}}],"correctIndex":0},
