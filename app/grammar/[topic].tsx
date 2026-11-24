@@ -73,6 +73,54 @@ export default function GrammarLessonScreen() {
   );
 }
 
+// FB724: the collapsible "Words in the exercises" list, closed by default. Its open state lives here,
+// so a toggle redraws only this section, not the whole lesson page.
+function ExerciseWordsSection({
+  count,
+  text,
+  label,
+  accentText,
+  textColor,
+  g,
+  learnedLang,
+  contentLang,
+  knownIds,
+  overrides,
+}: {
+  count: number;
+  text: string;
+  label: string;
+  accentText: string;
+  textColor: string;
+  g: ReturnType<typeof useGrammarColors>;
+  learnedLang: Parameters<typeof buildGlossMap>[1]['learnedLang'];
+  contentLang: string;
+  knownIds: Parameters<typeof buildGlossMap>[1]['knownWordIds'];
+  overrides: Parameters<typeof buildGlossMap>[1]['overrides'];
+}) {
+  const [open, setOpen] = useState(false);
+  const glosses = useMemo(
+    () => (open ? buildGlossMap(text, { learnedLang, nativeLang: contentLang, knownWordIds: knownIds, overrides }) : undefined),
+    [open, text, learnedLang, contentLang, knownIds, overrides],
+  );
+  return (
+    <>
+      <Pressable testID="grammar-exercise-words-toggle" accessibilityRole="button" onPress={() => setOpen((o) => !o)} hitSlop={10}>
+        <Text style={[styles.sectionLabel, { color: accentText }, softCaseStyle(g)]}>
+          {`${label} (${count})`} {open ? '▾' : '▸'}
+        </Text>
+      </Pressable>
+      {open && glosses ? (
+        <Card classicStyle={styles.card}>
+          <View testID="grammar-exercise-words">
+            <GlossText text={text} glosses={glosses} learnedLang={learnedLang} style={[styles.exampleText, { color: textColor }]} />
+          </View>
+        </Card>
+      ) : null}
+    </>
+  );
+}
+
 function GrammarLessonPhases({ topic }: { topic: ReturnType<typeof useGrammarTopic> }) {
   const {
     colors,
@@ -103,8 +151,6 @@ function GrammarLessonPhases({ topic }: { topic: ReturnType<typeof useGrammarTop
   } = topic;
   // the XP the last right drill answer gave (FB591), shown while that item is on screen
   const [earned, setEarned] = useState<{ id: string; points: number } | null>(null);
-  // FB724: the collapsible "Words in the exercises" list, closed by default
-  const [exerciseWordsOpen, setExerciseWordsOpen] = useState(false);
   // a stable array: GrammarDrill's round memo and its onItemChange effect depend on `kinds`.
   const drillKinds = useMemo(() => [drillKind], [drillKind]);
   const g = useGrammarColors();
@@ -349,28 +395,18 @@ function GrammarLessonPhases({ topic }: { topic: ReturnType<typeof useGrammarTop
 
         {exerciseWordList.length > 0 ? (
           <>
-            <Pressable
-              testID="grammar-exercise-words-toggle"
-              accessibilityRole="button"
-              onPress={() => setExerciseWordsOpen((o) => !o)}
-              hitSlop={10}
-            >
-              <Text style={[styles.sectionLabel, { color: accentText }, softCaseStyle(g)]}>
-                {`${s.grammar.exerciseWordsLabel} (${exerciseWordList.length})`} {exerciseWordsOpen ? '▾' : '▸'}
-              </Text>
-            </Pressable>
-            {exerciseWordsOpen ? (
-              <Card classicStyle={styles.card}>
-                <View testID="grammar-exercise-words">
-                  <GlossText
-                    text={exerciseWordsText}
-                    glosses={buildGlossMap(exerciseWordsText, { learnedLang, nativeLang: contentLang, knownWordIds: knownIds, overrides })}
-                    learnedLang={learnedLang}
-                    style={[styles.exampleText, { color: colors.text }]}
-                  />
-                </View>
-              </Card>
-            ) : null}
+            <ExerciseWordsSection
+              count={exerciseWordList.length}
+              text={exerciseWordsText}
+              label={s.grammar.exerciseWordsLabel}
+              accentText={accentText}
+              textColor={colors.text}
+              g={g}
+              learnedLang={learnedLang}
+              contentLang={contentLang}
+              knownIds={knownIds}
+              overrides={overrides}
+            />
           </>
         ) : null}
 
