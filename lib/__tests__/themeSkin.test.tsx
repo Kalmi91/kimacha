@@ -105,7 +105,7 @@ describe('theme engine through the context', () => {
     expect(sk.colors).toMatchObject({ brutal: true, bg: '#EFE6D2', extra: { seal: '#C0392B', wave: '#1F3A5F' } });
   });
 
-  it('night: dark-only, the colours / semantic colours / shape of the spanyol-hibak web game', async () => {
+  it('night: dark-only, the colours / semantic colours / shape of the PC look (FB721)', async () => {
     render(<ThemeProvider><Probe /></ThemeProvider>);
     await flush();
     act(() => ctx.setSkin('night'));
@@ -113,12 +113,12 @@ describe('theme engine through the context', () => {
     expect(ctx.theme).toBe('night-dark');
     expect(sk.modeLocked).toBe(true);
     expect(sk.colors).toMatchObject({
-      brutal: true, bg: '#150A29', paper: '#2C1852', ink: '#FFFFFF', mu: '#CFC6E4', a: '#EC4899', onA: '#FFFFFF', b: '#22D3EE', border: '#3D2668',
-      extra: { progressTrack: '#3D2668', progressFill: '#EC4899' },
+      brutal: true, bg: '#0F172A', paper: '#1E293B', ink: '#FFFFFF', mu: '#CBD5E1', a: '#F472B6', onA: '#1F0A16', b: '#22D3EE', border: '#334155',
+      extra: { progressTrack: '#334155', progressFill: '#F472B6' },
     });
     expect(Colors['night-dark']).toMatchObject({
-      background: '#150A29', card: '#2C1852', text: '#FFFFFF', textMuted: '#CFC6E4', tint: '#EC4899', onTint: '#FFFFFF',
-      secondary: '#22D3EE', border: '#3D2668', success: '#34D399', danger: '#F87171', warning: '#FBBF24',
+      background: '#0F172A', card: '#1E293B', text: '#FFFFFF', textMuted: '#CBD5E1', tint: '#F472B6', onTint: '#1F0A16',
+      secondary: '#22D3EE', border: '#334155', success: '#34D399', danger: '#F87171', warning: '#FBBF24',
     });
     expect(sk.skin.shape).toMatchObject({ borderWidth: 1, borderStyle: 'solid', radius: 16, buttonRadius: 14, shadowOffset: 0, barHeight: 6, barRadius: 3 });
     expect(sk.skin.fonts).toEqual({ title: null, word: null, body: null });

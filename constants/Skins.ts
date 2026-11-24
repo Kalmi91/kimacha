@@ -232,17 +232,17 @@ export const SKINS: Record<SkinId, Skin> = {
     letterSpacing: 0,
     uppercaseTitle: true,
   },
-  // The look of the spanyol-hibak web game: night purple, pink + cyan; extra = the progress bar and the semantic colors.
+  // Night: navy and soft pink (FB721, the PC look), cyan second accent; extra = the progress bar and the semantic colors.
   night: {
     id: 'night',
     group: 'hangulat',
     modes: ['dark'],
     colors: {
       dark: {
-        bg: '#150A29', paper: '#2C1852', ink: '#FFFFFF', mu: '#CFC6E4', a: '#EC4899', onA: '#FFFFFF', b: '#22D3EE', border: '#3D2668',
+        bg: '#0F172A', paper: '#1E293B', ink: '#FFFFFF', mu: '#CBD5E1', a: '#F472B6', onA: '#1F0A16', b: '#22D3EE', border: '#334155',
         extra: {
-          progressTrack: '#3D2668', progressFill: '#EC4899', progressFill2: '#22D3EE', success: '#34D399', danger: '#F87171', warning: '#FBBF24',
-          statusBar: '#150A29', tabBar: '#22113F',
+          progressTrack: '#334155', progressFill: '#F472B6', progressFill2: '#22D3EE', success: '#34D399', danger: '#F87171', warning: '#FBBF24',
+          statusBar: '#0F172A', tabBar: '#172033',
         },
       },
     },
