@@ -14,15 +14,17 @@ type Props = {
   onPress: () => void;
   disabled?: boolean;
   secondary?: boolean;
+  // on the brutalist palette the primary button gets the accent fill instead of ink (the table deck, FB722)
+  accent?: boolean;
   testID?: string;
 };
 
-export default function ExamButton({ label, onPress, disabled, secondary, testID }: Props) {
+export default function ExamButton({ label, onPress, disabled, secondary, accent, testID }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const g = useGrammarColors();
   if (g.brutal) {
-    return <BrutalButton testID={testID} label={label} onPress={onPress} disabled={disabled} fill={secondary ? 'paper' : 'ink'} style={styles.stretch} />;
+    return <BrutalButton testID={testID} label={label} onPress={onPress} disabled={disabled} fill={secondary ? 'paper' : accent ? 'a' : 'ink'} style={styles.stretch} />;
   }
   return (
     <Pressable

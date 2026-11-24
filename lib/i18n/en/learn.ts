@@ -425,6 +425,7 @@ export default {
     // caption for a cell with an English prompt (translate to Spanish).
     promptCaptionEn: 'translate to Spanish',
     // on the conjugation card the infinitive is hidden, the hint button shows it.
+    youWrote: 'You wrote',
     showVerb: 'Show the verb',
     progress: (done: number, total: number) => `${done} / ${total} done`,
     completeTitle: (n: number) => `All ${n} cells done 🎉`,

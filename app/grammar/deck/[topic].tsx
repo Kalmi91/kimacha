@@ -1,4 +1,3 @@
-import XpChip from '@/components/XpChip';
 import { awardXpThen } from '@/lib/xpAward';
 import { useCallback, useRef, useState } from 'react';
 import { ActivityIndicator, KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, TextInput, View } from 'react-native';
@@ -11,7 +10,7 @@ import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { softTitleStyle } from '@/components/grammar/Brutal';
 import { brutalHeaderRowStyle } from '@/lib/brutalHeader';
-import { themedInputStyle, BackButton, ProgressBar, ActionButton, Badge } from '@/components/grammar/Themed';
+import { themedInputStyle, themedEdgeStyle, BackButton, ProgressBar, ActionButton } from '@/components/grammar/Themed';
 import { t } from '@/lib/i18n';
 import { getDb } from '@/lib/database';
 import { useLearner } from '@/lib/learner';
@@ -19,7 +18,6 @@ import { useLoadOnMount } from '@/lib/useLoadOnMount';
 import { useSessionProgress } from '@/lib/useSessionProgress';
 import { countLearningToday } from '@/lib/learningDay';
 import type { Level } from '@/data/words';
-import { charDiff } from '@/lib/charDiff';
 import { strictAnswerMatch } from '@/lib/answerMatch';
 import { speak } from '@/lib/speech';
 import { activeSourceFor, pairOf, type Lang } from '@/lib/languagePair';
@@ -43,9 +41,11 @@ import { FEEDBACK_CORNER_CLEAR } from '@/components/learn/pcicStyles';
 import FitText from '@/components/FitText';
 import SpeakButton from '@/components/SpeakButton';
 import { isInfinitive } from '@/lib/grammar/tableShape';
-import { useDiffStyles } from '@/lib/useDiffStyles';
 import CardShell from '@/components/learn/CardShell';
-import DockedAction, { DOCK_RESERVE, FAB_CLEARANCE } from '@/components/learn/DockedAction';
+import { FAB_CLEARANCE } from '@/components/learn/DockedAction';
+import ExamButton from '@/components/exam/ExamButton';
+import { DAILY_XP_GOAL } from '@/lib/dailyXp';
+import { useXpToday } from '@/lib/useXpToday';
 import { useDockLift } from '@/components/learn/useDockLift';
 import { useWebKeyboardOpen, WEB_TYPING_PADDING } from '@/lib/webKeyboard';
 
@@ -85,7 +85,7 @@ export default function TableDeckScreen() {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const g = useGrammarColors();
-  const diff = useDiffStyles();
+  const xpToday = useXpToday();
   const s = t();
   const router = useRouter();
   const { persistRow } = useSessionProgress();
@@ -105,7 +105,7 @@ export default function TableDeckScreen() {
   // every wrong answer of this visit, listed on the end screen (FB708); "I mistyped" does not count
   const [misses, setMisses] = useState<{ prompt: string; given: string; correct: string }[]>([]);
   // the XP the last right answer gave (FB591); the chip fades it
-  const [earned, setEarned] = useState(0);
+  const [, setEarned] = useState(0);
   // id of the cell for which the hint button was pressed
   // (derived as "not pressed" on a card change, so no reset effect).
   const [hintFor, setHintFor] = useState<string | null>(null);
@@ -115,7 +115,6 @@ export default function TableDeckScreen() {
   // re-enabled, the keyboard does not come up after Next. Same cause and
   // fix as on the PCIC card (app/(tabs)/index.tsx cardSeq).
   const [cellSeq, setCellSeq] = useState(0);
-  const [dockH, setDockH] = useState(DOCK_RESERVE);
   const { dockLift } = useDockLift();
   const webKeyboardOpen = useWebKeyboardOpen();
   // React Compiler purity rule: Date.now() may not be called during render
@@ -235,19 +234,13 @@ export default function TableDeckScreen() {
     setNow(Date.now());
   };
 
-  // on the brutalist palette a back box, uppercase title, the progress sticker.
+  // one line: back, title (shrinks, then ellipsis), room for the feedback button (FB722).
   const header = (
     <View style={[styles.header, brutalHeaderRowStyle(g)]}>
       <BackButton testID="tabledeck-back" onPress={() => router.back()} arrowStyle={[styles.back, { color: colors.text }]} />
-      <FitText variant="title" base={17} maxLines={2} reserve={(g.brutal ? 190 : 150) + FEEDBACK_CORNER_CLEAR} caps={g.brutal} style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle, softTitleStyle(g)]}>
+      <FitText variant="title" base={17} maxLines={1} numberOfLines={1} reserve={(g.brutal ? 90 : 60) + FEEDBACK_CORNER_CLEAR} caps={g.brutal} style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle, softTitleStyle(g)]}>
         {lessonTitle}
       </FitText>
-      <Badge
-        label={s.tableDeck.progress(doneCount(deck), items.length)}
-        rotate={4}
-        classicStyle={[styles.progressChip, { backgroundColor: colors.tint }]}
-        classicTextStyle={[styles.progressChipText, { color: colors.onTint }]}
-      />
       <View style={styles.cornerClear} />
     </View>
   );
@@ -266,11 +259,20 @@ export default function TableDeckScreen() {
     <ProgressBar testID="tabledeck-segments" pct={pct} brutalStyle={styles.brutalBar} trackStyle={styles.progressTrack} trackColor={colors.card} fillStyle={styles.progressFill} fillColor={colors.successFill} />
   );
 
+  // "2 / 130 done" left, "XP 2/50" right, under the bar (FB722).
+  const metaRow = (
+    <View style={styles.metaRow}>
+      <Text style={[styles.metaText, { color: colors.tabIconDefault }]}>{s.tableDeck.progress(doneCount(deck), items.length)}</Text>
+      <Text style={[styles.metaText, { color: colors.tabIconDefault }]}>{s.pcic.badgeXp(xpToday, DAILY_XP_GOAL)}</Text>
+    </View>
+  );
+
   if (complete) {
     return (
       <View style={[styles.container, { backgroundColor: colors.background }]}>
         {header}
         {progressBar}
+        {metaRow}
         <ScrollView contentContainerStyle={styles.doneBody}>
           <Text style={styles.doneEmoji}>🎉</Text>
           <Text variant="title" style={[styles.doneTitle, { color: colors.text }]}>{s.tableDeck.completeTitle(items.length)}</Text>
@@ -332,25 +334,21 @@ export default function TableDeckScreen() {
   return (
     <KeyboardAvoidingView style={[styles.container, { backgroundColor: colors.background }, webKeyboardOpen && WEB_TYPING_PADDING]} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
       {header}
-      {!webKeyboardOpen && <XpChip earned={earned} />}
       {!webKeyboardOpen && progressBar}
+      {metaRow}
 
       <ScrollView
         style={styles.cardScroll}
-        contentContainerStyle={[styles.cardScrollContent, { paddingBottom: FAB_CLEARANCE + dockH + dockLift }]}
+        contentContainerStyle={[styles.cardScrollContent, { paddingBottom: FAB_CLEARANCE + dockLift }]}
         keyboardShouldPersistTaps="handled"
         keyboardDismissMode={keyboardDismissOnDrag()}
       >
-        <CardShell compact colors={colors} chip={mode === 'table' ? s.tableDeck.chip : s.tableDeck.wordChip} onPress={dismissKeyboardOnTap}>
-          <Text style={[styles.promptCaption, { color: colors.tabIconDefault }]}>
-            {mode === 'table'
-              ? current.enPrompt
-                ? s.tableDeck.promptCaptionEn
-                : s.tableDeck.promptCaption
-              : learnedLang === 'en'
-                ? s.tableDeck.wordPromptCaptionEn
-                : s.tableDeck.wordPromptCaption}
-          </Text>
+        <CardShell compact colors={colors} onPress={dismissKeyboardOnTap}>
+          {mode === 'word' ? (
+            <Text style={[styles.promptCaption, { color: colors.tabIconDefault }]}>
+              {learnedLang === 'en' ? s.tableDeck.wordPromptCaptionEn : s.tableDeck.wordPromptCaption}
+            </Text>
+          ) : null}
           <FitText variant="word" base={32} maxLines={3} reserve={100} style={[styles.promptBig, { color: colors.text }]}>
             {current.promptBig}
           </FitText>
@@ -368,7 +366,9 @@ export default function TableDeckScreen() {
               labelStyle={[styles.hintLabel, { color: colors.tint }]}
             />
           ) : (current.hintVerb || current.enPrompt) && current.verb ? (
-            <Text style={[styles.promptInfinitive, { color: colors.tabIconDefault }]}>{current.verb}</Text>
+            <View testID="tabledeck-infinitive" style={[styles.infChip, { backgroundColor: colors.background, borderColor: colors.tabIconDefault }, themedEdgeStyle(g)]}>
+              <Text style={[styles.infChipText, { color: colors.text }]}>{current.verb}</Text>
+            </View>
           ) : null}
 
           <TextInput
@@ -386,38 +386,43 @@ export default function TableDeckScreen() {
           />
 
           {checked && (
-            <View style={styles.resultSection}>
+            <View testID="tabledeck-result" style={styles.resultSection}>
               {checked.correct ? (
-                <Text style={styles.correctLine}>{`✓ ${current.answer}`}</Text>
+                <>
+                  <Text style={[styles.resultHead, { color: colors.success }]}>{`✓ ${s.grammar.correct}`}</Text>
+                  <Text variant="word" style={[styles.correctAnswer, { color: colors.text }]}>{current.answer}</Text>
+                </>
               ) : (
                 <>
-                  <Text style={styles.diffLine}>
-                    {charDiff(typed, current.answer, { case: true, accents: false }).map((d, i) => (
-                      <Text key={i} style={d.missing ? diff.missing : d.wrong ? diff.wrong : { color: colors.text }}>
-                        {d.ch}
-                      </Text>
-                    ))}
-                  </Text>
+                  <Text style={[styles.resultHead, { color: colors.danger }]}>{`✕ ${s.randomRound.wrong}`}</Text>
                   <View style={styles.frontRow}>
-                    <Text variant="word" style={[styles.correctAnswer, { color: colors.tint }]}>{current.answer}</Text>
+                    <Text variant="word" style={[styles.correctAnswer, { color: colors.success }]}>{current.answer}</Text>
                     <SpeakButton onPress={() => speak(current.answer, speechLang(learnedLang))} style={styles.speakBtn} iconStyle={styles.speakIcon} />
                   </View>
+                  {typed.trim() ? (
+                    <Text style={[styles.youWrote, { color: colors.tabIconDefault }]}>
+                      {`${s.tableDeck.youWrote}: `}
+                      <Text style={{ textDecorationLine: 'line-through', color: colors.danger }}>{typed.trim()}</Text>
+                    </Text>
+                  ) : null}
                 </>
               )}
             </View>
           )}
         </CardShell>
-      </ScrollView>
 
-      <DockedAction
-        label={checked ? `${s.grammar.next} →` : `✓ ${s.card.check}`}
-        onPress={checked ? handleNext : handleCheck}
-        tone={checked ? 'next' : 'check'}
-        bottom={dockLift}
-        colors={colors}
-        onHeight={setDockH}
-        secondary={checked && !checked.correct ? { label: s.grammar.mistyped, testID: 'grammar-mistyped', onPress: () => advance(true) } : undefined}
-      />
+        {/* the buttons sit right under the card, no dock gap (FB722) */}
+        <View style={styles.buttonRow}>
+          {checked && !checked.correct ? (
+            <View style={styles.buttonSecondary}>
+              <ExamButton testID="grammar-mistyped" secondary label={s.grammar.mistyped} onPress={() => advance(true)} />
+            </View>
+          ) : null}
+          <View style={styles.buttonPrimary}>
+            <ExamButton testID="learn-docked-action" accent label={checked ? `${s.grammar.next} →` : `✓ ${s.card.check}`} onPress={checked ? handleNext : handleCheck} />
+          </View>
+        </View>
+      </ScrollView>
 
       <ScreenFeedback
         level={level}
@@ -444,27 +449,30 @@ const styles = StyleSheet.create({
   brutalBar: { marginBottom: 16 },
   brutalBtn: { alignSelf: 'stretch', marginTop: 10 },
   cornerClear: { width: FEEDBACK_CORNER_CLEAR },
-  progressChip: { paddingHorizontal: 10, paddingVertical: 4, borderRadius: 999 },
-  progressChipText: { fontSize: 13, fontWeight: '700', color: '#FFFFFF' },
+  metaRow: { flexDirection: 'row', justifyContent: 'space-between', marginTop: -8, marginBottom: 8 },
+  metaText: { fontSize: 13, fontVariant: ['tabular-nums'] },
   progressTrack: { height: 6, borderRadius: 3, overflow: 'hidden', marginBottom: 16 },
   progressFill: { height: '100%', borderRadius: 3 },
   cardScroll: { flex: 1, width: '100%' },
   cardScrollContent: { flexGrow: 1, justifyContent: 'flex-start', paddingTop: 8 },
   promptCaption: { fontSize: 13, textAlign: 'center', marginBottom: 8 },
-  promptBig: { fontSize: 32, fontWeight: '700', textAlign: 'center', marginBottom: 20 },
-  // the infinitive under the English prompt, pulled up into promptBig's
-  // bottom margin so the two read as one prompt block.
-  promptInfinitive: { fontSize: 15, fontStyle: 'italic', textAlign: 'center', marginTop: -12, marginBottom: 12 },
+  promptBig: { fontSize: 32, fontWeight: '700', textAlign: 'center', marginBottom: 12 },
+  // the infinitive chip under the prompt (replaces the TABLE chip and the caption).
+  infChip: { alignSelf: 'center', paddingHorizontal: 14, paddingVertical: 4, borderRadius: 999, borderWidth: 1, marginBottom: 14 },
+  infChipText: { fontSize: 15, fontStyle: 'italic' },
   // The hidden infinitive's hint button: centered under the prompt.
-  hintBtn: { flexDirection: 'row', alignSelf: 'center', alignItems: 'center', gap: 6, paddingVertical: 4, paddingHorizontal: 10, marginTop: -8, marginBottom: 12 },
-  hintBtnBrutal: { alignSelf: 'center', marginTop: -8, marginBottom: 12 },
+  hintBtn: { flexDirection: 'row', alignSelf: 'center', alignItems: 'center', gap: 6, paddingVertical: 4, paddingHorizontal: 10, marginBottom: 8 },
+  hintBtnBrutal: { alignSelf: 'center', marginBottom: 8 },
   hintLabel: { fontSize: 14, fontWeight: '600' },
   input: { width: '100%', borderWidth: 2, borderRadius: 12, padding: 14, fontSize: 18, textAlign: 'center' },
-  resultSection: { alignItems: 'center', marginTop: 16 },
-  correctLine: { fontSize: 22, fontWeight: '700', textAlign: 'center', color: '#22C55E' },
-  diffLine: { fontSize: 20, fontWeight: '700', textAlign: 'center', letterSpacing: 1, marginBottom: 6 },
-  frontRow: { flexDirection: 'row', alignItems: 'flex-start', gap: 8, marginTop: 8 },
-  correctAnswer: { flex: 1, flexShrink: 1, fontSize: 22, fontWeight: '600', textAlign: 'center' },
+  resultSection: { alignItems: 'center', marginTop: 16, gap: 4 },
+  resultHead: { fontSize: 16, fontWeight: '700', textAlign: 'center' },
+  frontRow: { flexDirection: 'row', alignItems: 'center', gap: 8 },
+  correctAnswer: { flexShrink: 1, fontSize: 26, fontWeight: '700', textAlign: 'center' },
+  youWrote: { fontSize: 13, textAlign: 'center' },
+  buttonRow: { flexDirection: 'row', gap: 10, marginTop: 12 },
+  buttonSecondary: { flex: 1 },
+  buttonPrimary: { flex: 1.4 },
   speakBtn: { padding: 4, flexShrink: 0 },
   speakIcon: { fontSize: 22 },
   doneBody: { flexGrow: 1, alignItems: 'center', justifyContent: 'center', gap: 12, paddingBottom: 40 },

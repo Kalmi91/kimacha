@@ -57,7 +57,8 @@ describe('word practice screen, es→en direction', () => {
     fireEvent.press(screen.getByText('✓ Comprobar'));
     await flush();
 
-    expect(screen.getByText('✓ I am')).toBeTruthy();
+    expect(screen.getByText('✓ Correcto')).toBeTruthy();
+    expect(screen.getByText('I am')).toBeTruthy();
     expect(speech.speak).toHaveBeenCalledWith('I am', 'en-US');
 
     fireEvent.press(screen.getByText('Siguiente →'));

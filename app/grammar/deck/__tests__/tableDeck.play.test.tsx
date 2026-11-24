@@ -74,12 +74,13 @@ describe('table-deck screen: ser-estar playthrough', () => {
     expect(cells[0]).toMatchObject({ person: 'yo', verb: 'ser', answer: 'soy' });
   });
 
-  it('shows the first cell in the table order, its prompt caption, and the TABLE chip', async () => {
+  it('shows the first cell in the table order and the one-line meta row (done left, XP right), no TABLE chip or caption', async () => {
     const view = render(<TableDeckScreen />);
     await flush();
 
-    expect(screen.getByText('translate to Spanish')).toBeTruthy();
-    expect(screen.getByText('TABLE')).toBeTruthy();
+    expect(screen.queryByText('translate to Spanish')).toBeNull();
+    expect(screen.queryByText('TABLE')).toBeNull();
+    expect(screen.getByText(/^XP \d+\/\d+/)).toBeTruthy();
     expect(screen.getByText(promptOf(cellAt(0)))).toBeTruthy();
     expect(screen.getByText('0 / 10 done')).toBeTruthy();
 
@@ -126,6 +127,10 @@ describe('table-deck screen: ser-estar playthrough', () => {
     fireEvent.press(screen.getByText('✓ Check'));
     await flush();
     expect(screen.getByText(cellAt(0).answer)).toBeTruthy();
+    // the result sits inside the card: signal, and what was typed, struck through (FB722)
+    expect(screen.getByText('✕ Not quite')).toBeTruthy();
+    expect(screen.getByText(/You wrote/)).toBeTruthy();
+    expect(screen.getByText('nope').props.style).toEqual(expect.objectContaining({ textDecorationLine: 'line-through' }));
     expect(screen.getByText('0 / 10 done')).toBeTruthy();
     fireEvent.press(screen.getByText('Next →'));
     await flush();
@@ -137,7 +142,8 @@ describe('table-deck screen: ser-estar playthrough', () => {
     fireEvent.changeText(screen.getByTestId('tabledeck-input'), cellAt(1).answer);
     fireEvent.press(screen.getByText('✓ Check'));
     await flush();
-    expect(screen.getByText(`✓ ${cellAt(1).answer}`)).toBeTruthy();
+    expect(screen.getByText('✓ Correct')).toBeTruthy();
+    expect(screen.getByText(cellAt(1).answer)).toBeTruthy();
     fireEvent.press(screen.getByText('Next →'));
     await flush();
     expect(screen.getByText('1 / 10 done')).toBeTruthy();

@@ -52,11 +52,12 @@ describe('table-deck screen: enPrompt', () => {
 
     const first = cells.find((c) => screen.queryByText(c.enPrompt!) !== null);
     expect(first).toBeTruthy();
-    expect(screen.getByText('translate to Spanish')).toBeTruthy();
+    expect(screen.queryByText('translate to Spanish')).toBeNull();
     // the infinitive is hidden by default, the hint button shows it.
     expect(screen.queryByText(first!.verb)).toBeNull();
     fireEvent.press(screen.getByTestId('tabledeck-hint'));
     expect(screen.getByText(first!.verb)).toBeTruthy();
+    expect(screen.getByTestId('tabledeck-infinitive')).toBeTruthy();
     // The old bare caption/prompt style is not used for an enPrompt cell.
     expect(screen.queryByText('person · verb')).toBeNull();
     expect(screen.queryByText(`${first!.person} · ${first!.verb}`)).toBeNull();
@@ -70,6 +71,7 @@ describe('table-deck screen: enPrompt', () => {
     fireEvent.changeText(screen.getByTestId('tabledeck-input'), first.answer);
     fireEvent.press(screen.getByText('✓ Check'));
     await flush();
-    expect(screen.getByText(`✓ ${first.answer}`)).toBeTruthy();
+    expect(screen.getByText('✓ Correct')).toBeTruthy();
+    expect(screen.getByText(first.answer)).toBeTruthy();
   });
 });

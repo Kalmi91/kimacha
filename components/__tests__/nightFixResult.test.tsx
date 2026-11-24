@@ -32,7 +32,7 @@ describe('Night result card on the typed tasks', () => {
 
   it('right answer: green border card, check heading, fixed word in green', () => {
     answer('está');
-    expect(flat('fix-correct')).toMatchObject({ borderColor: '#34D399', backgroundColor: '#2C1852' });
+    expect(flat('fix-correct')).toMatchObject({ borderColor: '#34D399', backgroundColor: '#1E293B' });
     expect(screen.getByText('✓ Correct')).toBeTruthy();
     expect(StyleSheet.flatten(screen.getByText('está').props.style).color).toBe('#34D399');
     expect(screen.getByTestId('fix-explain')).toBeTruthy();
@@ -40,7 +40,7 @@ describe('Night result card on the typed tasks', () => {
 
   it('wrong answer: red border card, cross heading, typed word struck through', () => {
     answer('estan');
-    expect(flat('fix-wrong')).toMatchObject({ borderColor: '#F87171', backgroundColor: '#2C1852' });
+    expect(flat('fix-wrong')).toMatchObject({ borderColor: '#F87171', backgroundColor: '#1E293B' });
     expect(screen.getByText(/✕ Not quite/)).toBeTruthy();
     expect(flat('answer-compare-typed')).toMatchObject({ color: '#F87171', textDecorationLine: 'line-through' });
     expect(screen.getByTestId('grammar-mistyped')).toBeTruthy();
@@ -51,7 +51,7 @@ describe('Night result card on the typed tasks', () => {
     mockTheme = 'brand-light';
     answer('está');
     expect(flat('fix-correct').borderColor).not.toBe('#34D399');
-    expect(flat('fix-correct').backgroundColor).not.toBe('#2C1852');
+    expect(flat('fix-correct').backgroundColor).not.toBe('#1E293B');
     expect(screen.queryByText('✓ Correct')).toBeNull();
   });
 });

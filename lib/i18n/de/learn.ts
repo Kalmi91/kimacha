@@ -374,6 +374,7 @@ const de: typeof en = {
     wordPromptCaption: 'Bedeutung',
     wordPromptCaptionEn: 'Wie sagt man das auf Englisch?',
     promptCaptionEn: 'ins Spanische übersetzen',
+    youWrote: 'Du hast geschrieben',
     showVerb: 'Verb zeigen',
     progress: (done: number, total: number) => `${done} / ${total} geschafft`,
     completeTitle: (n: number) => `Alle ${n} Felder geschafft 🎉`,
