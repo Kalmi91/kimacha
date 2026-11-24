@@ -382,6 +382,7 @@ const es: typeof en = {
     wordPromptCaptionEn: '¿Cómo se dice en inglés?',
     promptCaptionEn: 'traducir al español',
     // on the conjugation card the infinitive is hidden, the hint button shows it.
+    youWrote: 'Escribiste',
     showVerb: 'Ver el verbo',
     progress: (done: number, total: number) => `${done} / ${total} hechas`,
     completeTitle: (n: number) => `Las ${n} celdas hechas 🎉`,

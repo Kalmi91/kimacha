@@ -183,7 +183,7 @@ function RootLayoutNav() {
           <Stack.Screen name="mock-exam" options={{ headerShown: false }} />
         </Stack>
         <SpeechFeedback />
-        <UsageToast hidden={(segments as string[])[0] === 'onboarding'} />
+        <UsageToast hidden={(segments as string[])[0] === 'onboarding'} low={(segments as string[])[0] === 'grammar' && (segments as string[])[1] === 'deck'} />
       </View>
     </NavThemeProvider>
   );

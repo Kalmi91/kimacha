@@ -376,6 +376,7 @@ const hu: typeof en = {
     wordPromptCaptionEn: 'Hogy mondják angolul?',
     promptCaptionEn: 'fordítsd le spanyolra',
     // on the conjugation card the infinitive is hidden, the hint button shows it.
+    youWrote: 'Ezt írtad',
     showVerb: 'Az ige mutatása',
     progress: (done: number, total: number) => `${done} / ${total} kész`,
     completeTitle: (n: number) => `Kész: ${n} cella 🎉`,
