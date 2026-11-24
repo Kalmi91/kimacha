@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState, type SetStateAction } from 'react';
 import { Keyboard, TextInput } from 'react-native';
-import { router } from 'expo-router';
+import { router, useFocusEffect } from 'expo-router';
 import { speak, speakAuto, speakSequence, stopSpeaking } from '@/lib/speech';
 import { getDb } from '@/lib/database';
 import { useLearner } from '@/lib/learner';
@@ -332,6 +332,13 @@ export function usePcicSession() {
     await loadOnce(overrideLevel, true, gen);
   }, [loadOnce]);
 
+  // The tab mounts at launch: no read-aloud while it is hidden (declared before useScreenLoad on purpose, tests keep the last focus callback).
+  const focusedRef = useRef(false);
+  useFocusEffect(useCallback(() => {
+    focusedRef.current = true;
+    return () => { focusedRef.current = false; };
+  }, []));
+
   // A refocus with the deck already on screen refreshes it without the spinner.
   useScreenLoad(load, { hasData: !loading, setLoading });
 
@@ -467,7 +474,7 @@ export function usePcicSession() {
   // changes) it should not repeat.
   // The prompt waits while the more-new-words question (FB542) replaces the card.
   useEffect(() => {
-    if (!loading && !askMoreNew && !fatigueOffer && currentItem && promptSource && !grade) {
+    if (focusedRef.current && !loading && !askMoreNew && !fatigueOffer && currentItem && promptSource && !grade) {
       speakAuto(promptSource, speechLang(sourceLang)); // silent right after the app opens (lib/speech.ts)
     }
     // On a card change, any read-aloud in progress
