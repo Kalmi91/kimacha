@@ -419,7 +419,7 @@ export default function TableDeckScreen() {
             </View>
           ) : null}
           <View style={styles.buttonPrimary}>
-            <ExamButton testID="learn-docked-action" label={checked ? `${s.grammar.next} →` : `✓ ${s.card.check}`} onPress={checked ? handleNext : handleCheck} />
+            <ExamButton testID="learn-docked-action" accent label={checked ? `${s.grammar.next} →` : `✓ ${s.card.check}`} onPress={checked ? handleNext : handleCheck} />
           </View>
         </View>
       </ScrollView>
