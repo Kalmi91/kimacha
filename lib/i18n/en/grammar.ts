@@ -34,6 +34,7 @@ export default {
     footNote: 'The whole grammar of the language, A1 to C1, in teaching order. Lessons marked "coming" are planned, not written yet.',
     ruleLabel: 'The rule',
     examplesLabel: 'Examples',
+    exerciseWordsLabel: 'Words in the exercises',
     // one button per kind instead of `startDrill` (all at once).
     startChoice: (n: number) => `Sentences (${n})`,
     startMatch: (n: number) => `Matching (${n})`,

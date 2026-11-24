@@ -8,6 +8,8 @@ import { t } from '@/lib/i18n';
 import { normalizeWordToken } from '@/data/words';
 import { cumulativeCorpusWordIds, grammarKindCounts, type GrammarGapItem, type GrammarItem } from '@/lib/games/content';
 import { buildGlossMap } from '@/lib/games/gloss';
+import { exerciseWords } from '@/lib/grammar/exerciseWords';
+import { formGlosses } from '@/lib/grammar/formGlosses';
 import type { ContentLang } from '@/lib/grammar/lessonTypes';
 import { syllabusTopic } from '@/lib/grammar/syllabus';
 import { kindPercent, kindProgressFromRows, kindRunKey, runSummary, type KindRun } from '@/lib/grammar/lessonScore';
@@ -101,6 +103,8 @@ function GrammarLessonPhases({ topic }: { topic: ReturnType<typeof useGrammarTop
   } = topic;
   // the XP the last right drill answer gave (FB591), shown while that item is on screen
   const [earned, setEarned] = useState<{ id: string; points: number } | null>(null);
+  // FB724: the collapsible "Words in the exercises" list, closed by default
+  const [exerciseWordsOpen, setExerciseWordsOpen] = useState(false);
   // a stable array: GrammarDrill's round memo and its onItemChange effect depend on `kinds`.
   const drillKinds = useMemo(() => [drillKind], [drillKind]);
   const g = useGrammarColors();
@@ -130,7 +134,11 @@ function GrammarLessonPhases({ topic }: { topic: ReturnType<typeof useGrammarTop
   // LessonV2's Lang4 does not allow an arbitrary string index, hence the cast.
   const lessonTitle = (lesson.title as Record<string, string>)[contentLang] ?? lesson.title.en;
   const knownIds = cumulativeCorpusWordIds(lesson.level, learnedLang);
-  const overrides = Object.fromEntries((lesson.glossary ?? []).map((g) => [normalizeWordToken(g.word), g.gloss]));
+  // the lesson's own glossary wins over the shared per-language form glosses
+  const overrides = {
+    ...formGlosses(learnedLang),
+    ...Object.fromEntries((lesson.glossary ?? []).map((g) => [normalizeWordToken(g.word), g.gloss])),
+  };
   // a button only for the kinds that have items in the lesson
   // (e.g. hay-estar gets no conjugation button, since it has no form item).
   const kindCounts = grammarKindCounts(lesson);
@@ -165,6 +173,8 @@ function GrammarLessonPhases({ topic }: { topic: ReturnType<typeof useGrammarTop
       filled: item.sentence.replace('___', item.options[item.correct]),
       why: item.why[contentLang] ?? item.why.en,
     }));
+  const exerciseWordList = exerciseWords(lesson, learnedLang, worked.map((w) => w.filled));
+  const exerciseWordsText = exerciseWordList.map((w) => w.display).join(', ');
 
   // on the brutalist palette the back button sits in a box, the title is uppercase, the level is a sticker.
   const header = g.brutal ? (
@@ -336,6 +346,33 @@ function GrammarLessonPhases({ topic }: { topic: ReturnType<typeof useGrammarTop
             <Text style={[styles.exampleWhy, { color: colors.tabIconDefault }]}>{w.why}</Text>
           </Card>
         ))}
+
+        {exerciseWordList.length > 0 ? (
+          <>
+            <Pressable
+              testID="grammar-exercise-words-toggle"
+              accessibilityRole="button"
+              onPress={() => setExerciseWordsOpen((o) => !o)}
+              hitSlop={10}
+            >
+              <Text style={[styles.sectionLabel, { color: accentText }, softCaseStyle(g)]}>
+                {`${s.grammar.exerciseWordsLabel} (${exerciseWordList.length})`} {exerciseWordsOpen ? '▾' : '▸'}
+              </Text>
+            </Pressable>
+            {exerciseWordsOpen ? (
+              <Card classicStyle={styles.card}>
+                <View testID="grammar-exercise-words">
+                  <GlossText
+                    text={exerciseWordsText}
+                    glosses={buildGlossMap(exerciseWordsText, { learnedLang, nativeLang: contentLang, knownWordIds: knownIds, overrides })}
+                    learnedLang={learnedLang}
+                    style={[styles.exampleText, { color: colors.text }]}
+                  />
+                </View>
+              </Card>
+            ) : null}
+          </>
+        ) : null}
 
         {/* one button per kind, so that sentences / matching / conjugation can be
             started separately, not the whole lesson at once.

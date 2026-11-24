@@ -33,6 +33,7 @@ const hu: typeof en = {
     footNote: 'A nyelv teljes nyelvtana A1-től C1-ig, tanulási sorrendben. A „hamarosan” jelzésű leckék tervben vannak, de még nincsenek megírva.',
     ruleLabel: 'A szabály',
     examplesLabel: 'Példák',
+    exerciseWordsLabel: 'Szavak a feladatokban',
     startChoice: (n: number) => `Mondatok (${n})`,
     startMatch: (n: number) => `Párosítás (${n})`,
     startForm: (n: number) => `Ragozás (${n})`,
