@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { memo, useEffect, useMemo, useState } from 'react';
 import { Pressable, ScrollView, View } from 'react-native';
 import { Text } from '@/components/KText';
 import { useRouter } from 'expo-router';
@@ -75,9 +75,29 @@ export default function GrammarLessonScreen() {
 
 // FB724: the collapsible "Words in the exercises" list, closed by default. Its open state lives here,
 // so a toggle redraws only this section, not the whole lesson page.
+// Groups by letter, mounted one per tick so the first appears at once.
+const ExerciseWordGroup = memo(function ExerciseWordGroup({
+  text,
+  glosses,
+  learnedLang,
+  textColor,
+}: {
+  text: string;
+  glosses: NonNullable<ReturnType<typeof buildGlossMap>>;
+  learnedLang: Parameters<typeof buildGlossMap>[1]['learnedLang'];
+  textColor: string;
+}) {
+  const style = useMemo(() => [styles.exampleText, { color: textColor, marginBottom: 6 }], [textColor]);
+  return (
+    <View testID="grammar-exercise-words-group">
+      <GlossText text={text} glosses={glosses} learnedLang={learnedLang} style={style} />
+    </View>
+  );
+});
+
 function ExerciseWordsSection({
   count,
-  text,
+  words,
   label,
   accentText,
   textColor,
@@ -88,7 +108,7 @@ function ExerciseWordsSection({
   overrides,
 }: {
   count: number;
-  text: string;
+  words: string[];
   label: string;
   accentText: string;
   textColor: string;
@@ -99,13 +119,34 @@ function ExerciseWordsSection({
   overrides: Parameters<typeof buildGlossMap>[1]['overrides'];
 }) {
   const [open, setOpen] = useState(false);
+  const [shown, setShown] = useState(1);
+  const text = useMemo(() => words.join(', '), [words]);
+  const groups = useMemo(() => {
+    const out: string[][] = [];
+    let prev = '';
+    for (const w of words) {
+      const key = w.normalize('NFD').replace(/\p{M}/gu, '').charAt(0).toLowerCase();
+      if (out.length === 0 || key !== prev) out.push([]);
+      out[out.length - 1].push(w);
+      prev = key;
+    }
+    return out.map((grp) => grp.join(', '));
+  }, [words]);
   const glosses = useMemo(
     () => (open ? buildGlossMap(text, { learnedLang, nativeLang: contentLang, knownWordIds: knownIds, overrides }) : undefined),
     [open, text, learnedLang, contentLang, knownIds, overrides],
   );
+  useEffect(() => {
+    if (!open || shown >= groups.length) return;
+    const id = setTimeout(() => setShown((n) => n + 1), 0);
+    return () => clearTimeout(id);
+  }, [open, shown, groups.length]);
   return (
     <>
-      <Pressable testID="grammar-exercise-words-toggle" accessibilityRole="button" onPress={() => setOpen((o) => !o)} hitSlop={10}>
+      <Pressable testID="grammar-exercise-words-toggle" accessibilityRole="button" onPress={() => {
+          setShown(1);
+          setOpen((o) => !o);
+        }} hitSlop={10}>
         <Text style={[styles.sectionLabel, { color: accentText }, softCaseStyle(g)]}>
           {`${label} (${count})`} {open ? '▾' : '▸'}
         </Text>
@@ -113,7 +154,9 @@ function ExerciseWordsSection({
       {open && glosses ? (
         <Card classicStyle={styles.card}>
           <View testID="grammar-exercise-words">
-            <GlossText text={text} glosses={glosses} learnedLang={learnedLang} style={[styles.exampleText, { color: textColor }]} />
+            {groups.slice(0, shown).map((grp) => (
+              <ExerciseWordGroup key={grp} text={grp} glosses={glosses} learnedLang={learnedLang} textColor={textColor} />
+            ))}
           </View>
         </Card>
       ) : null}
@@ -220,7 +263,6 @@ function GrammarLessonPhases({ topic }: { topic: ReturnType<typeof useGrammarTop
       why: item.why[contentLang] ?? item.why.en,
     }));
   const exerciseWordList = exerciseWords(lesson, learnedLang, worked.map((w) => w.filled));
-  const exerciseWordsText = exerciseWordList.map((w) => w.display).join(', ');
 
   // on the brutalist palette the back button sits in a box, the title is uppercase, the level is a sticker.
   const header = g.brutal ? (
@@ -397,7 +439,7 @@ function GrammarLessonPhases({ topic }: { topic: ReturnType<typeof useGrammarTop
           <>
             <ExerciseWordsSection
               count={exerciseWordList.length}
-              text={exerciseWordsText}
+              words={exerciseWordList.map((w) => w.display)}
               label={s.grammar.exerciseWordsLabel}
               accentText={accentText}
               textColor={colors.text}

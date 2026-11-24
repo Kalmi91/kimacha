@@ -18,7 +18,7 @@ jest.mock('expo-router', () => ({
   useLocalSearchParams: () => ({ topic: mockTopicId }),
 }));
 
-import { fireEvent, render, screen } from '@testing-library/react-native';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react-native';
 
 import { getDb } from '@/lib/database.web';
 import GrammarLessonScreen from '../[topic]';
@@ -45,6 +45,32 @@ describe('grammar lesson screen: exercise words toggle', () => {
 
     fireEvent.press(screen.getByTestId('grammar-exercise-words-toggle'));
     expect(screen.queryByTestId('grammar-exercise-words')).toBeFalsy();
+
+    view.unmount();
+  });
+
+  it('mounts the list letter by letter, and again after a close and reopen', async () => {
+    const view = render(<GrammarLessonScreen />);
+    await flush();
+
+    fireEvent.press(screen.getByTestId('grammar-exercise-words-toggle'));
+    expect(screen.getAllByTestId('grammar-exercise-words-group').length).toBeGreaterThanOrEqual(1);
+    await waitFor(() => expect(screen.getAllByTestId('grammar-exercise-words-group').length).toBeGreaterThan(1));
+    let full = 0;
+    await waitFor(() => {
+      const n = screen.getAllByTestId('grammar-exercise-words-group').length;
+      const stable = n === full;
+      full = n;
+      expect(stable).toBe(true);
+    }, { timeout: 5000, interval: 50 });
+    expect(full).toBeGreaterThan(1);
+
+    fireEvent.press(screen.getByTestId('grammar-exercise-words-toggle'));
+    expect(screen.queryByTestId('grammar-exercise-words')).toBeFalsy();
+
+    fireEvent.press(screen.getByTestId('grammar-exercise-words-toggle'));
+    expect(screen.getByTestId('grammar-exercise-words')).toBeTruthy();
+    await waitFor(() => expect(screen.getAllByTestId('grammar-exercise-words-group').length).toBe(full));
 
     view.unmount();
   });
