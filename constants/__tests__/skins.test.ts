@@ -32,8 +32,8 @@ const MIN = 4.5;
 // Exemptions: pairs that actually fail and are therefore recorded here (the test checks that they still
 // fail; if one gets fixed, the exemption must be deleted). Empty since then: the classic dark onA / a
 // (white on #3B82F6 is 3.68) got the dark base color instead of white (4.85).
-// night / dark onA / a: white on pink #EC4899 is 3.53, taken 1:1 from the spanyol-hibak web game's look.
-const KNOWN_EXEMPT = new Set<string>(['night/dark onA/a']);
+// The night / dark onA / a pair (white on #EC4899, 3.53) is fixed too: FB721 put #1F0A16 on #F472B6 (7.12).
+const KNOWN_EXEMPT = new Set<string>();
 
 function pairs(c: SkinColors): [string, string, string][] {
   const list: [string, string, string][] = [

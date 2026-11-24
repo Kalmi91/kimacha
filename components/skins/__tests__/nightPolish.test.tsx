@@ -125,11 +125,11 @@ describe('Night polish', () => {
     const night = await renderWithSkin('night', <View><ResultBadge correct testID="ok" /><ResultBadge correct={false} testID="bad" /></View>);
     await waitFor(() => expect(flat('ok')).toMatchObject({ borderRadius: 12, borderWidth: 0 }));
     // Native gets the solid pink (the RN 0.85 native gradient crashed 4.2.11); the web keeps the gradient.
-    expect(flat('ok')).toMatchObject({ backgroundColor: '#EC4899' });
+    expect(flat('ok')).toMatchObject({ backgroundColor: '#F472B6' });
     expect(JSON.stringify(flat('ok'))).not.toContain('experimental_');
     expect(screen.getByTestId('result-badge-gradient')).toBeTruthy();
-    expect(StyleSheet.flatten(screen.getByText('Correct!').props.style).color).toBe('#FFFFFF');
-    expect(StyleSheet.flatten(screen.getByText('✓').props.style).color).toBe('#FFFFFF');
+    expect(StyleSheet.flatten(screen.getByText('Correct!').props.style).color).toBe('#1F0A16');
+    expect(StyleSheet.flatten(screen.getByText('✓').props.style).color).toBe('#1F0A16');
     expect(flat('bad')).toMatchObject({ borderRadius: 12, borderStyle: 'dashed' });
     expect(JSON.stringify(flat('bad'))).not.toContain('gradient');
     night.unmount();
@@ -143,7 +143,7 @@ describe('Night polish', () => {
   it('ContinuousBar: gradient on Night, none on brutal', async () => {
     const night = await renderWithSkin('night', <ContinuousBar testID="bar" fillTestID="fill" pct={40} />);
     await waitFor(() => expect(flat('fill')).toMatchObject({ width: '40%', borderRadius: 3 }));
-    expect(flat('fill')).toMatchObject({ backgroundColor: '#EC4899' });
+    expect(flat('fill')).toMatchObject({ backgroundColor: '#F472B6' });
     expect(JSON.stringify(flat('fill'))).not.toContain('experimental_');
     expect(screen.getByTestId('fill-gradient')).toBeTruthy();
     night.unmount();
@@ -155,7 +155,7 @@ describe('Night polish', () => {
 
   it('SegmentBar: Night done blocks run pink to cyan, brutal keeps ink', async () => {
     const night = await renderWithSkin('night', <SegmentBar testID="seg" filled={8} segments={8} />);
-    await waitFor(() => expect(flat('seg-0').backgroundColor).toBe('#EC4899'));
+    await waitFor(() => expect(flat('seg-0').backgroundColor).toBe('#F472B6'));
     expect(flat('seg-7').backgroundColor).toBe('#22D3EE');
     night.unmount();
     await renderWithSkin('brutal', <SegmentBar testID="seg" filled={2} segments={8} />);
@@ -174,7 +174,7 @@ describe('Night polish', () => {
     beforeEach(() => jest.spyOn(Date, 'now').mockReturnValue(now));
     afterEach(() => (Date.now as jest.Mock).mockRestore());
 
-    it('Night: cyan frame unanswered, gradient + white text when correct', async () => {
+    it('Night: cyan frame unanswered, gradient + dark on-accent text when correct', async () => {
       const night = await renderWithSkin('night', drill());
       await waitFor(() => expect(screen.getByTestId('drill-blank')).toBeTruthy());
       expect(flat('drill-blank')).toMatchObject({ borderWidth: 1.5, borderColor: '#22D3EE', backgroundColor: 'transparent' });
@@ -184,7 +184,7 @@ describe('Night polish', () => {
       expect(screen.getByTestId('drill-blank-gradient')).toBeTruthy();
       expect(flat('drill-blank')).toMatchObject({ borderWidth: 0 });
       const label = within(screen.getByTestId('drill-blank')).getByText(first().options[first().correctIndex]);
-      expect(StyleSheet.flatten(label.props.style).color).toBe('#FFFFFF');
+      expect(StyleSheet.flatten(label.props.style).color).toBe('#1F0A16');
       night.unmount();
     });
 
@@ -196,12 +196,12 @@ describe('Night polish', () => {
     });
   });
 
-  it('StatusBarStrip: Night is #150A29 and a tap does not change it', async () => {
+  it('StatusBarStrip: Night is #0F172A and a tap does not change it', async () => {
     await renderWithSkin('night', <StatusBarStrip />);
-    await waitFor(() => expect(flat('status-bar-strip').backgroundColor).toBe('#150A29'));
+    await waitFor(() => expect(flat('status-bar-strip').backgroundColor).toBe('#0F172A'));
     fireEvent.press(screen.getByTestId('status-bar-strip'));
     await flush();
-    expect(flat('status-bar-strip').backgroundColor).toBe('#150A29');
+    expect(flat('status-bar-strip').backgroundColor).toBe('#0F172A');
     expect(flat('status-bar-strip').borderBottomWidth).toBeUndefined();
   });
 
@@ -216,7 +216,7 @@ describe('Night polish', () => {
     expect(active.getByTestId('sym-school')).toBeTruthy();
     expect(StyleSheet.flatten(active.getByTestId('tab-icon-active').props.style)).toMatchObject({ borderRadius: 17, width: 54, height: 34 });
     expect(active.getByTestId('tab-icon-gradient')).toBeTruthy();
-    expect(JSON.stringify(StyleSheet.flatten(active.getByTestId('tab-icon-active').props.style))).toContain('#EC4899');
+    expect(JSON.stringify(StyleSheet.flatten(active.getByTestId('tab-icon-active').props.style))).toContain('#F472B6');
     active.unmount();
     night.unmount();
     await renderWithSkin('brutal', <TabLayout />);

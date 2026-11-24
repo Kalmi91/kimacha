@@ -47,7 +47,7 @@ describe('Brutal components: the shape comes from the theme', () => {
     expect(shadows()).toHaveLength(0);
   });
 
-  it('night: 1 px #3D2668 border, card corner 16, button corner 14, no shadow, a 6 px borderless bar with a pink fill', async () => {
+  it('night: 1 px #334155 border, card corner 16, button corner 14, no shadow, a 6 px borderless bar with a pink fill', async () => {
     await renderWithSkin(
       'night',
       <View>
@@ -56,12 +56,12 @@ describe('Brutal components: the shape comes from the theme', () => {
         <ContinuousBar testID="bar" fillTestID="fill" pct={40} />
       </View>
     );
-    expect(flat('card')).toMatchObject({ borderWidth: 1, borderColor: '#3D2668', borderRadius: 16 });
-    expect(flat('btn')).toMatchObject({ borderWidth: 1, borderColor: '#3D2668', borderRadius: 14 });
+    expect(flat('card')).toMatchObject({ borderWidth: 1, borderColor: '#334155', borderRadius: 16 });
+    expect(flat('btn')).toMatchObject({ borderWidth: 1, borderColor: '#334155', borderRadius: 14 });
     expect(shadows()).toHaveLength(0);
-    expect(flat('bar')).toMatchObject({ height: 6, borderRadius: 3, backgroundColor: '#3D2668' });
+    expect(flat('bar')).toMatchObject({ height: 6, borderRadius: 3, backgroundColor: '#334155' });
     expect(flat('bar').borderWidth).toBeUndefined();
-    expect(flat('fill')).toMatchObject({ width: '40%', backgroundColor: '#EC4899' });
+    expect(flat('fill')).toMatchObject({ width: '40%', backgroundColor: '#F472B6' });
   });
 
   it('the other themes keep the 10 px bordered progress bar with an ink fill', async () => {
