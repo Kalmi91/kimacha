@@ -5,9 +5,13 @@ import { Text } from '@/components/KText';
 import AnswerCompare from '@/components/grammar/AnswerCompare';
 import { BrutalBox, inkButtonText, resultFill, resultInk, softCaseStyle } from '@/components/grammar/Brutal';
 import MistypedButton, { mistypedDock } from '@/components/grammar/MistypedButton';
+import Colors from '@/constants/Colors';
+import { ON_FILL } from '@/constants/GrammarPalettes';
 import { tapTarget } from '@/constants/Theme';
 import { useDockedAction } from '@/components/learn/DockSlot';
-import { useGrammarColors } from '@/lib/grammarColors';
+import { useGrammarColors, type GrammarColors } from '@/lib/grammarColors';
+import { charDiff } from '@/lib/charDiff';
+import { useSkin } from '@/lib/useSkin';
 import { t } from '@/lib/i18n';
 import { answerInputProps } from '@/lib/inputProps';
 import { useFocusOnNewCard } from '@/lib/learn/useFocusOnNewCard';
@@ -32,6 +36,69 @@ function ItemHead({ title }: { title: string }) {
 // The typed task kinds of the grammar tests, in their own file (NewKinds.tsx hands the round items over, see NewKindDrillItem).
 // Open cloze, error correction by typing, word bank and the typed noun form. All four are 1 unit in scoring (right
 // or not), the typing rules are those of the sentence writing, the right sentence is spoken after the answer.
+
+/** Night only (FB719/720): a paper card with a green (right) or red (wrong) border instead of the filled box. */
+function NightResult({ prefix, g, correct, typedRight, typed, answer, filled, why, whyId, extra }: {
+  prefix: string;
+  g: GrammarColors;
+  correct: boolean;
+  typedRight: boolean;
+  typed: string;
+  answer: string;
+  filled: string;
+  why: string;
+  whyId: string;
+  extra?: string;
+}) {
+  const s = t();
+  const { skin } = useSkin();
+  const ok = g.extra.success ?? Colors.dark.successFill;
+  const bad = g.extra.danger ?? Colors.dark.danger;
+  const tone = correct ? ok : bad;
+  const at = correct ? filled.indexOf(answer) : -1;
+  const rightChars = charDiff(answer, typed, { case: true, accents: false }).filter((d) => !d.missing);
+  return (
+    <View testID={`${prefix}-${correct ? 'correct' : 'wrong'}`} style={[styles.nightCard, { backgroundColor: g.paper, borderColor: tone, borderRadius: typeof skin.shape.radius === 'number' ? skin.shape.radius : 16 }]}>
+      <Text style={[styles.fixedLine, { color: tone }]}>{correct ? `✓ ${s.grammar.correct}` : `✕ ${s.games.wrongFeedback.replace(/[!.]$/, '')}`}</Text>
+      {typedRight ? (
+        <Text testID={`${prefix}-sentence`} style={[styles.writeSentence, { color: g.ink }]}>
+          {at >= 0 ? (
+            <>
+              {filled.slice(0, at)}
+              <Text style={{ color: ok }}>{answer}</Text>
+              {filled.slice(at + answer.length)}
+            </>
+          ) : (
+            filled
+          )}
+        </Text>
+      ) : (
+        <>
+          <View style={styles.nightRow}>
+            <Text style={[styles.nightLabel, { color: g.mu }]}>{s.grammar.yourAnswer}</Text>
+            <Text testID="answer-compare-typed" style={[styles.nightBig, { color: bad, textDecorationLine: 'line-through' }]}>
+              {typed}
+            </Text>
+          </View>
+          <View style={styles.nightRow}>
+            <Text style={[styles.nightLabel, { color: g.mu }]}>{s.grammar.correctAnswer}</Text>
+            <Text testID="answer-compare-correct" style={[styles.nightBig, { color: ok }]}>
+              {rightChars.map((d, i) => (
+                <Text key={i} style={d.wrong ? { backgroundColor: ok, color: ON_FILL } : undefined}>
+                  {d.ch}
+                </Text>
+              ))}
+            </Text>
+          </View>
+        </>
+      )}
+      <Text testID={whyId} style={[styles.explain, { color: g.mu }]}>
+        {why}
+      </Text>
+      {extra ? <Text style={[styles.translation, { color: g.mu }]}>{extra}</Text> : null}
+    </View>
+  );
+}
 
 /** One typed answer with its Check / Next bar and feedback box; the item's own head (what is asked) comes in as `head`. */
 function TypedItem({
@@ -76,6 +143,7 @@ function TypedItem({
   endOnMiss?: boolean;
 }) {
   const g = useGrammarColors();
+  const night = g.soft !== null;
   const s = t();
   const locale = speechLang(learnedLang);
   const [typed, setTyped] = useState('');
@@ -123,6 +191,9 @@ function TypedItem({
           </BrutalBox>
           {result ? (
             <>
+              {night ? (
+                <NightResult prefix={prefix} g={g} correct={result.correct} typedRight={result.typedRight} typed={typed} answer={answer} filled={filled} why={why} whyId={whyId} extra={extra} />
+              ) : (
               <BrutalBox testID={`${prefix}-${result.correct ? 'correct' : 'wrong'}`} fill={resultFill(result.correct)} boxStyle={styles.feedback}>
                 {result.typedRight ? (
                   <>
@@ -140,6 +211,8 @@ function TypedItem({
                 </Text>
                 {extra ? <Text style={[styles.translation, { color: resultInk(g, result.correct) }]}>{extra}</Text> : null}
               </BrutalBox>
+              )}
+              {night && !result.typedRight && !docked ? <MistypedButton onPress={() => onDone(true, true)} /> : null}
               {docked ? null : (
                 <BrutalBox testID="grammar-next" fill="ink" boxStyle={styles.next} onPress={() => onDone(result.correct, undefined, typed)}>
                   <Text style={[styles.nextText, { color: inkButtonText(g) }, softCaseStyle(g)]}>{s.grammar.nextArrow}</Text>
@@ -438,6 +511,10 @@ const styles = StyleSheet.create({
   dim: { opacity: 0.55 },
   note: { fontSize: 13, textAlign: 'center' },
   feedback: { padding: 14, gap: 6 },
+  nightCard: { borderWidth: 2, padding: 12, gap: 6 },
+  nightRow: { flexDirection: 'row', alignItems: 'baseline', gap: 8 },
+  nightLabel: { fontSize: 11, fontWeight: '700', textTransform: 'uppercase', minWidth: 70 },
+  nightBig: { fontSize: 18, fontWeight: '700', flexShrink: 1 },
   fixedLine: { fontSize: 20, fontWeight: '700' },
   writeSentence: { fontSize: 17, lineHeight: 24, fontWeight: '600' },
   explain: { fontSize: 14, lineHeight: 20 },
