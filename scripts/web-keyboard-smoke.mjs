@@ -556,13 +556,15 @@ class Session {
   // Page load. A returning visitor without a sign-in lands on the welcome screen first (components/cloud/CloudGate.tsx).
   async open(route, expected) {
     const welcome = testId('cloud-welcome');
+    const howto = testId('howto-skip');
     await this.cdp.send('Page.navigate', { url: this.base + route });
     const arrived = await until(
-      () => this.ev(`window.__kbd.find(${JSON.stringify(welcome)}) ? 'welcome' : window.__kbd.find(${JSON.stringify(expected)}) ? 'there' : null`),
+      () => this.ev(`window.__kbd.find(${JSON.stringify(howto)}) ? 'howto' : window.__kbd.find(${JSON.stringify(welcome)}) ? 'welcome' : window.__kbd.find(${JSON.stringify(expected)}) ? 'there' : null`),
       FIND_MS,
     );
     if (!arrived) throw new CannotRun(`${route} did not show up in ${FIND_MS / 1000} s`);
     await this.measure();
+    if (arrived === 'howto') await this.tap(howto, 'Skip on the how-to screen');
     if (arrived === 'welcome' && expected.sel !== welcome.sel) await this.tap(testId('cloud-welcome-third'), 'Skip on the welcome screen');
   }
 

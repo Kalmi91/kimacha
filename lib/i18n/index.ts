@@ -77,3 +77,7 @@ export function notifyLanguageChange() {
 export function stringsFor(code: string): Pick<Strings, 'usage'> {
   return LANGS[code] ?? es;
 }
+
+export function cloudStringsFor(code: string): Strings['cloud'] {
+  return (LANGS[code] ?? en).cloud;
+}

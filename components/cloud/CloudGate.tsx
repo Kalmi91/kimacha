@@ -5,6 +5,7 @@ import { Text } from '@/components/KText';
 
 import CloudLogin from '@/components/cloud/CloudLogin';
 import CloudWelcome from '@/components/cloud/CloudWelcome';
+import HowtoIntro from '@/components/cloud/HowtoIntro';
 import { ActionButton, TitleText } from '@/components/grammar/Themed';
 import Colors from '@/constants/Colors';
 import { FONT_FILES } from '@/constants/Fonts';
@@ -24,10 +25,10 @@ import { ThemeProvider, useTheme } from '@/lib/ThemeContext';
 
 // The web gate above the whole app (app/_layout.tsx, web only): with a session there is no app tree until the saved
 // progress is in the local DB, so the app's own DB start-up already sees it. Then the sync runs for as long as the page lives.
-// Without a session the visitor is a guest (lib/cloud/guest.ts): a first visit goes straight into the app, a later one meets
+// Without a session the visitor is a guest (lib/cloud/guest.ts): a first visit sees the how-to video first, a later one meets
 // the welcome screen first (Sign in / Create account / Skip). A guest has no restore and no sync; a modal over the app offers
 // the save after a few cards, and the Settings row opens the sign-in chooser.
-type Phase = 'boot' | 'contentError' | 'welcome' | 'guest' | 'loading' | 'error' | 'ready';
+type Phase = 'boot' | 'contentError' | 'howto' | 'welcome' | 'guest' | 'loading' | 'error' | 'ready';
 type GuestStep = 'ask' | 'create' | 'declined' | 'choose';
 
 // The web DB lives in memory and still holds the old account's progress, so the way back to a clean sign-in is a page restart.
@@ -169,7 +170,7 @@ export default function CloudGate({ children }: { children: ReactNode }) {
     // from now on this browser is a returning one, with or without a session (a dead token then lands on the welcome screen)
     markVisited();
     if (token.current) void restore(token.current);
-    else setPhase(returning ? 'welcome' : 'guest');
+    else setPhase(returning ? 'welcome' : 'howto');
   }, [restore]);
 
   useEffect(() => {
@@ -240,6 +241,7 @@ export default function CloudGate({ children }: { children: ReactNode }) {
           <NoticeButton testID="cloud-retry" label={s.retry} onPress={retry} />
         </Notice>
       ) : null}
+      {phase === 'howto' ? <HowtoIntro onDone={() => setPhase('guest')} onSignIn={() => setPhase('welcome')} /> : null}
       {phase === 'welcome' ? <CloudWelcome onLoggedIn={onLoggedIn} thirdLabel={s.welcomeSkip} onThird={() => setPhase('guest')} /> : null}
       {phase === 'loading' ? <Notice text={s.loading} spinner /> : null}
       {phase === 'error' ? (

@@ -863,6 +863,9 @@ async function main() {
       await loaded;
       // the app has rendered (empty until the fonts load)
       if (!(await poll('document.body.innerText.trim().length > 0', 30000))) throw new Error('nem renderelt semmit');
+      await poll(`!!document.querySelector('[data-testid="howto-skip"]') || !document.querySelector('[data-testid="cloud-notice"]')`, 30000);
+      const howto = await cdp.evaluate(`(${pageFindTarget})({ testId: 'howto-skip' })`);
+      if (howto) await click(howto);
     };
     // Types the text into the Learn answer field, presses Check, waits for the revealed state.
     const typeAndCheck = async (text) => {

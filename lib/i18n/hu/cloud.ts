@@ -2,6 +2,11 @@ import type en from '../en/cloud';
 
 const hu: typeof en = {
   cloud: {
+    howtoTitle: 'Így kezdj a Kimachával',
+    howtoPlay: 'Lejátszás',
+    howtoSkip: 'Kihagyás',
+    howtoContinue: 'Tovább az appba',
+    howtoFailed: 'A videó nem töltődött be. Kihagyhatod.',
     signinTitle: 'Bejelentkezés',
     signinHint: 'Írd be a nevet és a 4 jegyű PIN-t, amivel a fiókodat létrehoztad.',
     signinSubmit: 'Belépés',
