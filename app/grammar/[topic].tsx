@@ -381,6 +381,8 @@ function GrammarLessonPhases({ topic }: { topic: ReturnType<typeof useGrammarTop
   if (phase === 'done' && score) {
     return (
       <GrammarRoundEnd
+        topicId={String(topicId)}
+        learnedLang={learnedLang}
         score={score}
         progressRows={progressRows}
         roundStats={roundStats}

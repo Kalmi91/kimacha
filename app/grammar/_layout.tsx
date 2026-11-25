@@ -20,6 +20,7 @@ export default function GrammarLayout() {
       <Stack.Screen name="[topic]" />
       {/* the table-deck practice screen. */}
       <Stack.Screen name="deck/[topic]" />
+      <Stack.Screen name="form-check/[topic]" />
     </Stack>
   );
 }
