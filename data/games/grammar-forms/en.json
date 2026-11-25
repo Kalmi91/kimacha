@@ -145,7 +145,7 @@
     "de": "verabredete (Vergangenheit von arrange)"
   },
   "arrived": {
-    "es": "llegado / llegamos (de arrive)",
+    "es": "llegado (participio de arrive)",
     "hu": "megérkezett (az arrive igeneve)",
     "de": "angekommen (von arrive)"
   },
@@ -400,7 +400,7 @@
     "de": "Katzen"
   },
   "caught": {
-    "es": "tomé / atrapó (pasado de catch)",
+    "es": "atrapó / atrapado (de catch)",
     "hu": "elkapott (a catch igeneve)",
     "de": "erwischt (von catch)"
   },
@@ -666,7 +666,7 @@
   },
   "drank": {
     "es": "bebió (pasado de drink)",
-    "hu": "ivott (az drink múlt ideje)",
+    "hu": "ivott (a drink múlt ideje)",
     "de": "trank (Vergangenheit von drink)"
   },
   "drinking": {
@@ -991,7 +991,7 @@
   },
   "going": {
     "es": "yendo / va a (de go)",
-    "hu": "menő / fog (a go -ing alakja)",
+    "hu": "megy / fog (a go -ing alakja)",
     "de": "gehend / wird (von go)"
   },
   "got": {
@@ -1046,7 +1046,7 @@
   },
   "hasnt": {
     "es": "no ha / no tiene (has not)",
-    "hu": "nem volt / nincs (has not)",
+    "hu": "nincs neki (has not)",
     "de": "hat nicht (has not)"
   },
   "havent": {
@@ -1077,11 +1077,11 @@
   "hers": {
     "es": "suyo (de ella)",
     "hu": "az övé (nőé)",
-    "de": "ihrs / ihre"
+    "de": "ihrer / ihre / ihres"
   },
   "hes": {
     "es": "él es / él está (he is)",
-    "hu": "ő van / ő (he is)",
+    "hu": "ő … / ő … van (he is)",
     "de": "er ist (he is)"
   },
   "him": {
@@ -1251,7 +1251,7 @@
   },
   "known": {
     "es": "sabido (participio de know)",
-    "hu": "tudott (a know igeneve)",
+    "hu": "ismert (a know igeneve)",
     "de": "gewusst (Partizip von know)"
   },
   "knows": {
@@ -1375,7 +1375,7 @@
     "de": "gelegen"
   },
   "lonely": {
-    "es": "solitario",
+    "es": "solo / solitario",
     "hu": "magányos",
     "de": "einsam"
   },
@@ -1845,8 +1845,8 @@
     "de": "Rechte"
   },
   "rooms": {
-    "es": "espacios / lugares (cuartos)",
-    "hu": "helyiségek / termek",
+    "es": "cuartos / habitaciones",
+    "hu": "szobák / helyiségek",
     "de": "Räume"
   },
   "ruled": {
@@ -1926,7 +1926,7 @@
   },
   "shes": {
     "es": "ella es / ella está (she is)",
-    "hu": "ő (nő) van / az (she is)",
+    "hu": "ő (nő) … / ő … van (she is)",
     "de": "sie ist (she is)"
   },
   "shocked": {
@@ -2066,7 +2066,7 @@
   },
   "sons": {
     "es": "hijos",
-    "hu": "fiúgyermekek (fiai)",
+    "hu": "fiúk / fiai",
     "de": "Söhne"
   },
   "spain": {
@@ -2405,9 +2405,9 @@
     "de": "versuchend (von try)"
   },
   "turned": {
-    "es": "apagado (turned off, de turn)",
-    "hu": "lekapcsolva (turned off, a turn alakja)",
-    "de": "ausgeschaltet (turned off, von turn)"
+    "es": "convertido / apagado (de turn)",
+    "hu": "átalakított / lekapcsolt (a turn igeneve)",
+    "de": "umgewandelt / ausgeschaltet (von turn)"
   },
   "turning": {
     "es": "girándose (de turn)",
