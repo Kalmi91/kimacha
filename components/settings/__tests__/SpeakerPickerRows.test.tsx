@@ -72,7 +72,7 @@ describe('SpeakerPickerRows', () => {
     expect(rowIds(view, 'de')).toHaveLength(2);
     for (const text of ['Español', 'English', 'Magyar', 'Deutsch']) expect(view.getByText(text)).toBeTruthy();
     for (const label of [
-      'Claude, female', 'Ald, male', 'Dora, female', 'Alex, male', 'Kristin, female', 'John, male', 'Heart, female', 'Michael, male',
+      'Clara, female', 'Ald, male', 'Dora, female', 'Alex, male', 'Kristin, female', 'John, male', 'Heart, female', 'Michael, male',
       'Berta, female', 'Imre, male', 'Kerstin, female', 'Thorsten, male',
     ]) {
       const row = view.getByRole('radio', { name: label });

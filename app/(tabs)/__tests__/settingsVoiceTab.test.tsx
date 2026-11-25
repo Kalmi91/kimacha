@@ -137,7 +137,7 @@ describe.each(['brand', 'classic'] as const)('Settings folders on %s', palette =
 
   it('shows the current voices and tap hint on Home, including a changed speaker', async () => {
     const home = await show();
-    expect(home.getByText('Español: Claude · English: Kristin')).toBeTruthy();
+    expect(home.getByText('Español: Clara · English: Kristin')).toBeTruthy();
     expect(home.getByText('Tap to change the voice')).toBeTruthy();
     expect(home.queryByText(t().settings.folders.voiceHint)).toBeNull();
     home.unmount();
@@ -161,7 +161,7 @@ describe.each(['brand', 'classic'] as const)('Settings folders on %s', palette =
     const view = await show();
     expect(view.getByText(t().settings.folders.voiceHint)).toBeTruthy();
     expect(view.queryByText('Tap to change the voice')).toBeNull();
-    expect(view.queryByText('Español: Claude · English: Kristin')).toBeNull();
+    expect(view.queryByText('Español: Clara · English: Kristin')).toBeNull();
   });
 
   it('persists a daily limit after reopening Learning and refreshes the home subtitle', async () => {
