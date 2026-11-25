@@ -99,6 +99,26 @@ function textIndexFor(lang: string, field: string): Map<string, WordEntry> {
   return textIndex[cacheKey];
 }
 
+// Multi-word keys bucketed by their last word: a full scan per token made a long word list take seconds on the phone.
+const tailIndex: Record<string, Map<string, [string, WordEntry][]>> = {};
+
+function tailIndexFor(lang: string, field: string): Map<string, [string, WordEntry][]> {
+  const cacheKey = `${lang}|${field}`;
+  if (!tailIndex[cacheKey]) {
+    const map = new Map<string, [string, WordEntry][]>();
+    for (const [key, entry] of textIndexFor(lang, field)) {
+      const cut = key.lastIndexOf(' ');
+      if (cut < 0) continue;
+      const tail = key.slice(cut + 1);
+      const bucket = map.get(tail);
+      if (bucket) bucket.push([key, entry]);
+      else map.set(tail, [[key, entry]]);
+    }
+    tailIndex[cacheKey] = map;
+  }
+  return tailIndex[cacheKey];
+}
+
 // The multi-word headwords of the Hungarian deck are mostly phrases ("a fű a kertben"), and the tail of a phrase is
 // not its meaning: of them only "pronoun + verb" (én vagyok) is the card of its verb form.
 const HU_PRONOUN_HEAD = /^(én|te|ő|mi|ti|ők|ön|önök) $/;
@@ -121,7 +141,7 @@ export function findWordByText(token: string, field: string, lang: string = 'es'
   if (direct) return direct;
   // A sentence writes "hablas", the card is headed "tú hablas": a token that is
   // the last word of a multi-word headword still belongs to that card.
-  for (const [key, entry] of map) {
+  for (const [key, entry] of tailIndexFor(lang, field).get(norm.slice(norm.lastIndexOf(' ') + 1)) ?? []) {
     if (key.endsWith(` ${norm}`) && tailBelongsToCard(key, norm, lang)) return entry;
   }
   // An inflected/plural/gendered form belongs to the base-form words-open card (Spanish only, never in the German course).

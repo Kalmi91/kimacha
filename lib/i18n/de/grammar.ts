@@ -33,6 +33,7 @@ const de: typeof en = {
     footNote: 'Die ganze Grammatik der Sprache, von A1 bis C1, in Lernreihenfolge. Mit „bald“ markierte Lektionen sind geplant, aber noch nicht geschrieben.',
     ruleLabel: 'Die Regel',
     examplesLabel: 'Beispiele',
+    exerciseWordsLabel: 'Wörter in den Übungen',
     startChoice: (n: number) => `Sätze (${n})`,
     startMatch: (n: number) => `Zuordnen (${n})`,
     startForm: (n: number) => `Formen (${n})`,

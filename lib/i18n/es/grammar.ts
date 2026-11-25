@@ -33,6 +33,7 @@ const es: typeof en = {
     footNote: 'Toda la gramática del idioma, de A1 a C1, en el orden en que se enseña. Las lecciones marcadas "próximamente" están planeadas, pero todavía no escritas.',
     ruleLabel: 'La regla',
     examplesLabel: 'Ejemplos',
+    exerciseWordsLabel: 'Palabras de los ejercicios',
     startChoice: (n: number) => `Oraciones (${n})`,
     startMatch: (n: number) => `Relacionar (${n})`,
     startForm: (n: number) => `Formas (${n})`,
