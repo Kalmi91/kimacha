@@ -481,10 +481,8 @@ function SmallTestLevel() {
   if (!cur || !found) return waiting();
   const part = `${inMini ? 'mini:' : run.phase === 'drill' ? 'drill:' : ''}${cur.qid}`;
   const guardOpen = () => Date.now() >= tapGuardUntil.current;
-  // a typed answer: "I mistyped"; a tapped one (choice, tiles, match, spot, order, why): "I misclicked"
-  const typedTask = found.q ? found.q.view.card === 'type' : !!found.item && ['form', 'transform', 'dictation', 'write', 'opencloze', 'fix', 'bank', 'noun'].includes(found.item.kind);
   const mistypedButton = (
-    <ExamButton testID="small-test-mistyped" secondary label={typedTask ? s.mistyped : s.misclicked} onPress={() => settle(true, true)} />
+    <ExamButton testID="small-test-mistyped" secondary label={s.acceptRight} onPress={() => settle(true, true)} />
   );
 
   // the answer is in: the level test's result card (a typed kind shows its own, then a short card for a miss)

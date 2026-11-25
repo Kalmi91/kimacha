@@ -1,4 +1,4 @@
-// FB729 / FB730: a wrong answer on the typed `form` question of the Small test must always offer the "I mistyped" button
+// FB729 / FB730: a wrong answer on the typed `form` question of the Small test must always offer the "Accept as correct" button
 // that counts the answer as right: after a wrong typed answer, after "I don't know", and with the keyboard open.
 // The lessons are mocked (one A1 topic with 8 form items); the engine is the real one. Mock pattern: smallTest.play.test.tsx.
 
@@ -102,24 +102,24 @@ describe('grammar small test: the typed form question (FB729, FB730)', () => {
     expect(has('exam-input')).toBe(true); // the typed form card
   };
 
-  it('a wrong typed answer shows the "I mistyped" button; pressing it counts the answer as right and mistyped', async () => {
+  it('a wrong typed answer shows the "Accept as correct" button; pressing it counts the answer as right and mistyped', async () => {
     await startForm();
     fireEvent.changeText(screen.getByTestId('exam-input'), 'zzz');
     await press('exam-check');
     expect(has('small-test-mistyped')).toBe(true);
-    expect(screen.getByTestId('small-test-mistyped')).toHaveTextContent('I mistyped');
+    expect(screen.getByTestId('small-test-mistyped')).toHaveTextContent('Accept as correct');
     await press('small-test-mistyped');
     const st = await loadSmallState(getDb(), 'en→es', 'A1');
     expect(st.run!.answers[0]).toMatchObject({ ok: true, mistyped: true, type: 'form' });
   });
 
-  it('"I don\'t know" on the typed form card also shows the "I mistyped" button', async () => {
+  it('"I don\'t know" on the typed form card also shows the "Accept as correct" button', async () => {
     await startForm();
     await press('exam-dont-know');
     expect(has('small-test-mistyped')).toBe(true);
   });
 
-  it('a right typed answer has no "I mistyped" button', async () => {
+  it('a right typed answer has no "Accept as correct" button', async () => {
     await startForm();
     const prompt = screen.getByTestId('exam-prompt').props.children as string;
     const n = /(\d+)/.exec(prompt)?.[1] ?? /(\d)/.exec(String(prompt))?.[1];

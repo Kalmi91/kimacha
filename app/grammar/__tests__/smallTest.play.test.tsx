@@ -1,5 +1,5 @@
 // The grammar Small test screen played the way a learner plays it: the round start with the new / repeat topic list, the
-// questions, "I mistyped", the stop after a topic's repeated misses (lesson, quick check, back in the test), the end of the
+// questions, "Accept as correct", the stop after a topic's repeated misses (lesson, quick check, back in the test), the end of the
 // round with the level line and the round chart, leaving and coming back, and a typed task kind (word bank) on the card.
 // The lessons are mocked (four topics at A1 built from the legacy fixture, one A2 topic with word-bank items); the engine is
 // the real one. Mock pattern: levelTest.play.test.tsx.
@@ -155,7 +155,7 @@ const answer = async (ok: boolean) => {
   await press(`exam-option-${ok ? v.correctIndex : (v.correctIndex + 1) % v.options.length}`);
   return found;
 };
-// the answer, then Next on the result card (a wrong one: not "I mistyped")
+// the answer, then Next on the result card (a wrong one: not "Accept as correct")
 const answerNext = async (ok: boolean) => {
   const found = await answer(ok);
   await press('level-test-next');
@@ -219,7 +219,7 @@ describe.each(['brand', 'classic'] as const)('grammar small test (%s palette)', 
     expect(text('small-test-header')).toBe('A1 topic test · 2/10');
   });
 
-  it('a wrong answer: the card shows "I mistyped"; pressing it counts the answer as right, in the run and in the topic evidence', async () => {
+  it('a wrong answer: the card shows "Accept as correct"; pressing it counts the answer as right, in the run and in the topic evidence', async () => {
     await start();
     const { q, topic } = await answer(false);
     expect(has('small-test-mistyped')).toBe(true);
@@ -233,14 +233,14 @@ describe.each(['brand', 'classic'] as const)('grammar small test (%s palette)', 
     expect(ev.get(topic)?.answers).toEqual([{ id: q.id, kind: q.kind, ok: true, at: expect.any(String) }]);
   });
 
-  it('a wrong tapped (choice) answer offers "I misclicked", not "I mistyped"', async () => {
+  it('a wrong tapped (choice) answer also offers "Accept as correct"', async () => {
     await start();
     await answer(false);
-    expect(screen.getByTestId('small-test-mistyped')).toHaveTextContent('I misclicked');
+    expect(screen.getByTestId('small-test-mistyped')).toHaveTextContent('Accept as correct');
     expect(screen.queryByText('I mistyped')).toBeNull();
   });
 
-  it('a right answer has no "I mistyped"; a wrong one without it is a miss: the same topic comes back within 5 questions', async () => {
+  it('a right answer has no "Accept as correct"; a wrong one without it is a miss: the same topic comes back within 5 questions', async () => {
     await start();
     const first = await answer(true);
     expect(has('small-test-mistyped')).toBe(false);
@@ -421,7 +421,7 @@ describe.each(['brand', 'classic'] as const)('grammar small test (%s palette)', 
     expect((await stateNow()).run!.current!.qid).not.toBe('gone-after-update');
   });
 
-  it('a typed task kind (word bank, A2): its own card; a wrong answer gets the short miss card with "I mistyped"', async () => {
+  it('a typed task kind (word bank, A2): its own card; a wrong answer gets the short miss card with "Accept as correct"', async () => {
     mockParams = { level: 'a2' };
     await open();
     expect(text('small-test-header')).toBe('A2 topic test · round 1');
@@ -531,8 +531,8 @@ describe.each([
     expect(text('small-test-header')).toBe('B1 topic test · 2/10');
   });
 
-  // E201 (FB684): the "I mistyped" button counts the answer as right AND mistyped (FB701: it is on the one miss page)
-  (kind === 'opencloze' ? it : it.skip)('a wrong typed answer offers "I mistyped" on the miss page; pressing it settles right + mistyped', async () => {
+  // E201 (FB684): the "Accept as correct" button counts the answer as right AND mistyped (FB701: it is on the one miss page)
+  (kind === 'opencloze' ? it : it.skip)('a wrong typed answer offers "Accept as correct" on the miss page; pressing it settles right + mistyped', async () => {
     await open();
     await press('small-test-start');
     await answerWrong();
@@ -597,7 +597,7 @@ describe('grammar small test: the practice, the next level, the round marks', ()
     expect(has('small-test-end-next')).toBe(false);
   });
 
-  it('the practice: the same question card with the header and the feedback card; "I mistyped" counts; then the Practice line and New round as the main button', async () => {
+  it('the practice: the same question card with the header and the feedback card; "Accept as correct" counts; then the Practice line and New round as the main button', async () => {
     const { missed } = await roundWithMiss();
     await press('small-test-end-drill');
     expect(has('small-test-drill')).toBe(true);
