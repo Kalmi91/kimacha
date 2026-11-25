@@ -2,6 +2,15 @@ import type en from '../en/grammar';
 
 const hu: typeof en = {
   grammar: {
+    formCheck: {
+      title: 'Igealak-felmérés',
+      subtitle: (n: number) => `${n} alak, begépelve`,
+      continue: (n: number) => `Folytatás: még ${n} alak`,
+      practice: (n: number) => `Gyakorold a hiányzókat (${n})`,
+      allKnown: 'Minden igealakot tudsz.',
+      complete: 'Minden hiányzó igealakot begyakoroltál.',
+      startAgain: 'Új felmérés indítása',
+    },
     mistyped: 'Elgépeltem',
     coverage: (done: number, written: number, planned: number) =>
       `${done} lecke kész · ${written} / ${planned} megírva`,

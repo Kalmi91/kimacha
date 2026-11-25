@@ -1,5 +1,14 @@
 export default {
   grammar: {
+    formCheck: {
+      title: 'Verb form check',
+      subtitle: (n: number) => `${n} forms, typed`,
+      continue: (n: number) => `Continue: ${n} forms left`,
+      practice: (n: number) => `Practise the missing ones (${n})`,
+      allKnown: 'You know every form.',
+      complete: 'All missing forms practised.',
+      startAgain: 'Start a new check',
+    },
     mistyped: 'I mistyped',
     coverage: (done: number, written: number, planned: number) =>
       `${done} lessons finished · ${written} of ${planned} written`,

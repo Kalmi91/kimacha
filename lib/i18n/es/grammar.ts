@@ -2,6 +2,15 @@ import type en from '../en/grammar';
 
 const es: typeof en = {
   grammar: {
+    formCheck: {
+      title: 'Prueba de formas verbales',
+      subtitle: (n: number) => `${n} formas para escribir`,
+      continue: (n: number) => `Continuar: quedan ${n} formas`,
+      practice: (n: number) => `Practica las que te faltan (${n})`,
+      allKnown: 'Conoces todas las formas verbales.',
+      complete: 'Has practicado todas las formas que te faltaban.',
+      startAgain: 'Iniciar una nueva prueba',
+    },
     mistyped: 'Me equivoqué al escribir',
     coverage: (done: number, written: number, planned: number) =>
       `${done} lecciones terminadas · ${written} de ${planned} escritas`,

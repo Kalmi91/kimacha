@@ -2,6 +2,15 @@ import type en from '../en/grammar';
 
 const de: typeof en = {
   grammar: {
+    formCheck: {
+      title: 'Verbformen-Test',
+      subtitle: (n: number) => `${n} Formen zum Eintippen`,
+      continue: (n: number) => `Fortsetzen: noch ${n} Formen`,
+      practice: (n: number) => `Übe die fehlenden Formen (${n})`,
+      allKnown: 'Du kennst jede Verbform.',
+      complete: 'Alle fehlenden Verbformen geübt.',
+      startAgain: 'Neuen Test starten',
+    },
     mistyped: 'Vertippt',
     coverage: (done: number, written: number, planned: number) =>
       `${done} Lektionen abgeschlossen · ${written} von ${planned} geschrieben`,
