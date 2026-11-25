@@ -4,7 +4,7 @@ import { shuffleArray } from '@/lib/shuffle';
 import type { GrammarKind } from '@/lib/games/content';
 import { TASK_TYPE_IDS, type TaskTypeId } from './taskTypes';
 
-// The grammar Small test (one per level, "A1 test"): 10 questions per round, every round a new mix of the level's topics
+// The grammar Small test (one per level, "A1 test"): 10 or 20 questions per round, every round a new mix of the level's topics
 // (the core topics first), adaptive: a miss brings 2 more questions of that topic within the next 5 (never right after each
 // other); both right -> a 3rd, right -> learned; mixed -> a 3rd; both wrong -> the test stops, the lesson opens, a 3-question
 // check follows and the test goes on where it was. The level is done when every core topic is learned. Everything here is
@@ -15,6 +15,7 @@ import { TASK_TYPE_IDS, type TaskTypeId } from './taskTypes';
 // never be learned otherwise; a miss resets the count). A topic that stops the test loses its learned mark.
 
 export const SMALL_TEST_SIZE = 10;
+export const LONG_TEST_SIZE = 20;
 export const SMALL_TEST_TOPICS = 6;
 export const MINI_CHECK_SIZE = 3;
 const RECENT_TYPES = 6;
@@ -99,8 +100,10 @@ export interface SmallRun {
   round: number;
   seed: number;
   phase: SmallPhase;
+  /** Missing in a run saved before the length choice. */
+  size?: typeof SMALL_TEST_SIZE | typeof LONG_TEST_SIZE;
   /** `why` is missing in a run saved before the miss log (then `isNew` tells). */
-  topics: { id: string; isNew: boolean; why?: TopicWhy }[];
+  topics: { id: string; isNew: boolean; why?: TopicWhy; core?: boolean }[];
   topicRuns: Record<string, TopicRun>;
   answers: SmallAnswer[];
   pending: Pending[];
@@ -150,6 +153,8 @@ export interface SmallState {
 
 export const newSmallState = (): SmallState => ({ v: 1, learned: [], clean: {}, seen: [], history: [], recent: [], rounds: 0, run: null, gaps: {}, fixed: 0, log: {}, last: {} });
 
+export const runSize = (run: SmallRun): typeof SMALL_TEST_SIZE | typeof LONG_TEST_SIZE => run.size === LONG_TEST_SIZE ? LONG_TEST_SIZE : SMALL_TEST_SIZE;
+
 export const smallKey = (pair: string, level: string): string => `grammar-small-test:${pair}:${level}`;
 
 const strings = (x: unknown): string[] => (Array.isArray(x) ? x.filter((v): v is string => typeof v === 'string') : []);
@@ -196,7 +201,7 @@ export function parseSmallState(raw: unknown): SmallState {
     history: (r.history as unknown[]).filter((v): v is number => typeof v === 'number').slice(-HISTORY_MAX),
     recent: strings(r.recent),
     rounds: typeof r.rounds === 'number' ? r.rounds : 0,
-    run: okRun && whole ? fixDrill({ ...(run as SmallRun), pending: Array.isArray(run!.pending) ? run!.pending : [], mini: run!.mini ?? null, stopTopic: run!.stopTopic ?? null, current: run!.current ?? null }) : null,
+    run: okRun && whole ? fixDrill({ ...(run as SmallRun), size: runSize(run!), pending: Array.isArray(run!.pending) ? run!.pending : [], mini: run!.mini ?? null, stopTopic: run!.stopTopic ?? null, current: run!.current ?? null }) : null,
     gaps,
     fixed: typeof r.fixed === 'number' && Number.isFinite(r.fixed) && r.fixed > 0 ? r.fixed : 0,
     log,
@@ -285,7 +290,7 @@ export function startRound(st: SmallState, topics: SmallTopicInfo[], pool: Small
     round: st.rounds + 1,
     seed,
     phase: 'intro',
-    topics: picked.map((tp) => ({ id: tp.id, isNew: !seen.has(tp.id), why: why(tp.id) })),
+    topics: picked.map((tp) => ({ id: tp.id, isNew: !seen.has(tp.id), why: why(tp.id), core: tp.core })),
     topicRuns: Object.fromEntries(picked.map((tp) => [tp.id, { stage: 'base' as TopicStage, fu: [], asked: 0, right: 0 }])),
     answers: [],
     pending: [],
@@ -344,9 +349,9 @@ export function repairSmallRun(st: SmallState, pool: SmallPool): SmallState {
 }
 
 /** From the intro to the first question. */
-export function beginRound(st: SmallState, pool: SmallPool): SmallState {
+export function beginRound(st: SmallState, pool: SmallPool, size: typeof SMALL_TEST_SIZE | typeof LONG_TEST_SIZE = SMALL_TEST_SIZE): SmallState {
   if (!st.run || st.run.phase !== 'intro') return st;
-  return withNext(st, { ...st.run, phase: 'ask' }, pool);
+  return withNext(st, { ...st.run, phase: 'ask', size }, pool);
 }
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -364,8 +369,14 @@ function pickQuestion(
   extraTypes: TaskTypeId[],
   salt: number,
 ): SmallCur | null {
-  const all = pool(topic);
+  let all = pool(topic);
   const used = new Set([...run.answers.map((a) => a.qid), ...taken]);
+  if (runSize(run) === LONG_TEST_SIZE && role === 'base') {
+    all = all.filter((q) => !used.has(q.id));
+    const types = new Set(run.answers.filter((a) => a.topic === topic).map((a) => a.type));
+    const otherTypes = all.filter((q) => !types.has(q.type));
+    if (otherTypes.length > 0) all = otherTypes;
+  }
   // a base question of a topic with an open miss: the miss is asked again (the oldest first), before any other rule, but as a
   // sibling (another question of the topic with the same task type, the one asked longest ago); the missed question itself
   // only when the topic has no other of that type. A right answer to the sibling closes the miss (`gap` names it).
@@ -414,6 +425,15 @@ function pickQuestion(
   return { topic, qid: q.id, type: q.type, role };
 }
 
+// Keep long-round base questions within the intro topics' budgets; follow-ups have their own schedule.
+function hasBaseQuestion(st: SmallState, run: SmallRun, topic: string, pool: SmallPool): boolean {
+  if (runSize(run) !== LONG_TEST_SIZE) return pool(topic).length > 0;
+  const tp = run.topics.find((tp) => tp.id === topic)!;
+  const limit = topicWhy(tp) !== 'repeat' || (tp.core && !st.learned.includes(topic)) ? 3 : 2;
+  const asked = run.answers.filter((a) => a.topic === topic && a.role === 'base').length;
+  return asked < limit && pool(topic).some((q) => !run.answers.some((a) => a.qid === q.id));
+}
+
 // The next question of the round: a due follow-up (never of the topic that was just asked, when something else can come),
 // else the next base question: the round's topic with the fewest answers that is still in its base stage.
 function pickNext(st: SmallState, run: SmallRun, pool: SmallPool): SmallCur | null {
@@ -423,14 +443,14 @@ function pickNext(st: SmallState, run: SmallRun, pool: SmallPool): SmallCur | nu
     .filter((p) => p.due <= n && !(p.role === 'f2' && run.pending.some((o) => o.topic === p.topic && o.role === 'f1')))
     .sort((a, b) => a.due - b.due);
   const other = due.filter((p) => p.topic !== prev);
-  const wantsFollow = other.length > 0 ? other : due.length > 0 && !hasBaseElsewhere(run, prev, pool) ? due : [];
+  const wantsFollow = other.length > 0 ? other : due.length > 0 && !hasBaseElsewhere(st, run, prev, pool) ? due : [];
   for (const p of wantsFollow) {
     const first = run.answers.find((a) => a.topic === p.topic);
     const cur = pickQuestion(st, run, p.topic, p.role, pool, [], first ? [first.type] : [], n);
     if (cur) return cur;
   }
   const order = run.topics.map((tp) => tp.id);
-  const eligible = order.filter((id) => run.topicRuns[id].stage === 'base' && pool(id).length > 0);
+  const eligible = order.filter((id) => run.topicRuns[id].stage === 'base' && hasBaseQuestion(st, run, id, pool));
   const ranked = (list: string[]) => list.map((id, i) => ({ id, i, asked: run.topicRuns[id].asked })).sort((a, b) => a.asked - b.asked || a.i - b.i).map((x) => x.id);
   const away = ranked(eligible.filter((id) => id !== prev));
   for (const id of [...away, ...ranked(eligible.filter((id) => id === prev))]) {
@@ -438,15 +458,31 @@ function pickNext(st: SmallState, run: SmallRun, pool: SmallPool): SmallCur | nu
     if (cur) return cur;
   }
   // nothing in a base stage is left: any topic of the round that still has an unasked question
-  for (const id of ranked(order.filter((x) => x !== prev).concat(order.filter((x) => x === prev)))) {
+  const remaining = runSize(run) === LONG_TEST_SIZE ? order.filter((id) => hasBaseQuestion(st, run, id, pool)) : order;
+  const fallback = runSize(run) === LONG_TEST_SIZE
+    ? [...ranked(remaining.filter((id) => id !== prev)), ...ranked(remaining.filter((id) => id === prev))]
+    : ranked(remaining.filter((id) => id !== prev).concat(remaining.filter((id) => id === prev)));
+  for (const id of fallback) {
     const cur = pickQuestion(st, run, id, 'base', pool, [], [], n);
     if (cur) return cur;
+  }
+  // long round, every budget spent: the budgets only set the order, so top up to 20 from any round topic that still has an
+  // unasked question (base stage first, the topic just asked last)
+  if (runSize(run) === LONG_TEST_SIZE) {
+    const open = order
+      .map((id, i) => ({ id, i, asked: run.topicRuns[id].asked, k: (id === prev ? 2 : 0) + (run.topicRuns[id].stage === 'base' ? 0 : 1) }))
+      .filter((x) => pool(x.id).some((q) => !run.answers.some((a) => a.qid === q.id)))
+      .sort((a, b) => a.k - b.k || a.asked - b.asked || a.i - b.i);
+    for (const { id } of open) {
+      const cur = pickQuestion(st, run, id, 'base', pool, [], [], n);
+      if (cur) return cur;
+    }
   }
   return null;
 }
 
-function hasBaseElsewhere(run: SmallRun, prev: string, pool: SmallPool): boolean {
-  return run.topics.some((tp) => tp.id !== prev && run.topicRuns[tp.id].stage === 'base' && pool(tp.id).length > 0);
+function hasBaseElsewhere(st: SmallState, run: SmallRun, prev: string, pool: SmallPool): boolean {
+  return run.topics.some((tp) => tp.id !== prev && run.topicRuns[tp.id].stage === 'base' && hasBaseQuestion(st, run, tp.id, pool));
 }
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -481,7 +517,7 @@ function record(st: SmallState, run: SmallRun, cur: SmallCur, ok: boolean): Smal
 }
 
 function withNext(st: SmallState, run: SmallRun, pool: SmallPool): SmallState {
-  if (run.answers.length >= SMALL_TEST_SIZE) return endRound(st, run);
+  if (run.answers.length >= runSize(run)) return endRound(st, run);
   const cur = pickNext(st, run, pool);
   if (!cur) return endRound(st, run);
   return { ...st, run: { ...run, phase: 'ask', current: cur } };

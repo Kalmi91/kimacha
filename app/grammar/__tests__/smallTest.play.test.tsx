@@ -196,10 +196,10 @@ describe.each(['brand', 'classic'] as const)('grammar small test (%s palette)', 
     return view;
   };
 
-  it('opens on the round start: the 10-question title, the round topics with new / repeat tags, the 💬 on the start card', async () => {
+  it('opens on the round start: the topic title, the round topics with new / repeat tags, the 💬 on the start card', async () => {
     await open();
     expect(text('small-test-header')).toBe('A1 topic test · round 1');
-    expect(text('small-test-intro-title')).toBe('This round: 10 questions');
+    expect(text('small-test-intro-title')).toBe("This round's topics");
     for (const id of TOPICS) {
       expect(has(`small-test-intro-topic-${id}`)).toBe(true);
       expect(text(`small-test-intro-tag-${id}`)).toBe('new');
