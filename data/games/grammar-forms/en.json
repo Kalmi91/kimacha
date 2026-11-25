@@ -1,1 +1,2682 @@
-{}
+{
+  "above": {
+    "es": "encima / arriba",
+    "hu": "fent / fölött",
+    "de": "oben / über"
+  },
+  "abroad": {
+    "es": "en el extranjero",
+    "hu": "külföldön",
+    "de": "im Ausland"
+  },
+  "accent": {
+    "es": "acento",
+    "hu": "akcentus, kiejtés",
+    "de": "Akzent"
+  },
+  "accepted": {
+    "es": "aceptado (participio de accept)",
+    "hu": "elfogadott (az accept igeneve)",
+    "de": "akzeptiert (Partizip von accept)"
+  },
+  "account": {
+    "es": "cuenta / motivo (on account of)",
+    "hu": "számla / ok (on account of)",
+    "de": "Konto / Grund (on account of)"
+  },
+  "accounts": {
+    "es": "explica (él/ella, de account for)",
+    "hu": "magyaráz (account for, E/3.)",
+    "de": "erklärt (er/sie, von account for)"
+  },
+  "acts": {
+    "es": "actúa (él/ella, de act)",
+    "hu": "viselkedik (az act E/3.)",
+    "de": "verhält sich (er/sie, von act)"
+  },
+  "admit": {
+    "es": "admitir, reconocer",
+    "hu": "beismer",
+    "de": "zugeben"
+  },
+  "affects": {
+    "es": "afecta (él/ella, de affect)",
+    "hu": "befolyásol (az affect E/3.)",
+    "de": "beeinflusst (er/sie, von affect)"
+  },
+  "afford": {
+    "es": "permitirse (pagar)",
+    "hu": "megengedhet magának",
+    "de": "sich leisten"
+  },
+  "afraid": {
+    "es": "temeroso / me temo que",
+    "hu": "fél / sajnálom, de",
+    "de": "ängstlich / leider"
+  },
+  "afternoon": {
+    "es": "tarde",
+    "hu": "délután",
+    "de": "Nachmittag"
+  },
+  "agrees": {
+    "es": "está de acuerdo (él/ella, de agree)",
+    "hu": "egyetért (az agree E/3.)",
+    "de": "stimmt zu (er/sie, von agree)"
+  },
+  "all": {
+    "es": "todo / todos",
+    "hu": "minden, egész",
+    "de": "alle / ganz"
+  },
+  "allow": {
+    "es": "permitir",
+    "hu": "megenged",
+    "de": "erlauben"
+  },
+  "allowed": {
+    "es": "permitido (de allow)",
+    "hu": "megengedett (az allow igeneve)",
+    "de": "erlaubt (von allow)"
+  },
+  "am": {
+    "es": "soy / estoy (de be)",
+    "hu": "vagyok (a be E/1.)",
+    "de": "bin (von be)"
+  },
+  "ana": {
+    "es": "Ana (nombre)",
+    "hu": "Ana (név)",
+    "de": "Ana (Name)"
+  },
+  "anna": {
+    "es": "Anna (nombre)",
+    "hu": "Anna (név)",
+    "de": "Anna (Name)"
+  },
+  "annoys": {
+    "es": "molesta (él/ella, de annoy)",
+    "hu": "idegesít (az annoy E/3.)",
+    "de": "nervt (er/sie, von annoy)"
+  },
+  "answered": {
+    "es": "contestó (pasado de answer)",
+    "hu": "válaszolt (az answer múlt ideje)",
+    "de": "antwortete (Vergangenheit von answer)"
+  },
+  "answering": {
+    "es": "contestando (de answer)",
+    "hu": "válaszol (az answer -ing alakja)",
+    "de": "antwortend (von answer)"
+  },
+  "anymore": {
+    "es": "ya no / más",
+    "hu": "már nem",
+    "de": "nicht mehr"
+  },
+  "anything": {
+    "es": "nada / algo / cualquier cosa",
+    "hu": "bármi / semmi",
+    "de": "irgendetwas / nichts"
+  },
+  "apples": {
+    "es": "manzanas",
+    "hu": "almák",
+    "de": "Äpfel"
+  },
+  "applied": {
+    "es": "solicité / me inscribí (pasado de apply)",
+    "hu": "jelentkezett (az apply múlt ideje)",
+    "de": "bewarb sich (Vergangenheit von apply)"
+  },
+  "are": {
+    "es": "son / están / eres (de be)",
+    "hu": "vannak, vagy (a be alakja)",
+    "de": "sind / bist (von be)"
+  },
+  "arent": {
+    "es": "no son / no están (are not)",
+    "hu": "nem vannak / nem vagy (are not)",
+    "de": "sind nicht / bist nicht (are not)"
+  },
+  "arranged": {
+    "es": "acordó / quedó (pasado de arrange)",
+    "hu": "megbeszélt (az arrange múlt ideje)",
+    "de": "verabredete (Vergangenheit von arrange)"
+  },
+  "arrived": {
+    "es": "llegado / llegamos (de arrive)",
+    "hu": "megérkezett (az arrive igeneve)",
+    "de": "angekommen (von arrive)"
+  },
+  "arriving": {
+    "es": "llegando (de arrive)",
+    "hu": "megérkezve (az arrive -ing alakja)",
+    "de": "ankommend (von arrive)"
+  },
+  "asked": {
+    "es": "preguntó / pidió (pasado de ask)",
+    "hu": "kérdezett (az ask múlt ideje)",
+    "de": "fragte (Vergangenheit von ask)"
+  },
+  "asking": {
+    "es": "preguntando / pidiendo (de ask)",
+    "hu": "kérdezés (az ask -ing alakja)",
+    "de": "fragen (von ask)"
+  },
+  "ate": {
+    "es": "comimos / comió (pasado de eat)",
+    "hu": "evett (az eat múlt ideje)",
+    "de": "aß / aßen (Vergangenheit von eat)"
+  },
+  "attending": {
+    "es": "que asisten (de attend)",
+    "hu": "részt vevő (az attend -ing alakja)",
+    "de": "teilnehmend (von attend)"
+  },
+  "babies": {
+    "es": "bebés",
+    "hu": "babák",
+    "de": "Babys"
+  },
+  "badly": {
+    "es": "mal",
+    "hu": "rosszul",
+    "de": "schlecht"
+  },
+  "bag": {
+    "es": "bolso / bolsa",
+    "hu": "táska",
+    "de": "Tasche"
+  },
+  "bags": {
+    "es": "bolsas / bolsos",
+    "hu": "táskák",
+    "de": "Taschen"
+  },
+  "base": {
+    "es": "base",
+    "hu": "alap-",
+    "de": "Grund-"
+  },
+  "beautiful": {
+    "es": "hermoso / bonito",
+    "hu": "gyönyörű",
+    "de": "schön"
+  },
+  "beds": {
+    "es": "camas",
+    "hu": "ágyak",
+    "de": "Betten"
+  },
+  "been": {
+    "es": "sido / estado (participio de be)",
+    "hu": "volt (a be igeneve)",
+    "de": "gewesen (Partizip von be)"
+  },
+  "before": {
+    "es": "antes (de)",
+    "hu": "előtt / korábban",
+    "de": "vor / bevor"
+  },
+  "behaves": {
+    "es": "se comporta (él/ella, de behave)",
+    "hu": "viselkedik (a behave E/3.)",
+    "de": "verhält sich (er/sie, von behave)"
+  },
+  "being": {
+    "es": "siendo / estando (de be)",
+    "hu": "lévén (a be -ing alakja)",
+    "de": "seiend (von be)"
+  },
+  "better": {
+    "es": "mejor",
+    "hu": "jobb",
+    "de": "besser"
+  },
+  "between": {
+    "es": "entre",
+    "hu": "között",
+    "de": "zwischen"
+  },
+  "big": {
+    "es": "grande",
+    "hu": "nagy",
+    "de": "groß"
+  },
+  "bigger": {
+    "es": "más grande",
+    "hu": "nagyobb",
+    "de": "größer"
+  },
+  "biggest": {
+    "es": "el más grande",
+    "hu": "a legnagyobb",
+    "de": "am größten"
+  },
+  "bike": {
+    "es": "bicicleta",
+    "hu": "bicikli",
+    "de": "Fahrrad"
+  },
+  "bikes": {
+    "es": "bicicletas",
+    "hu": "biciklik",
+    "de": "Fahrräder"
+  },
+  "birds": {
+    "es": "pájaros / aves",
+    "hu": "madarak",
+    "de": "Vögel"
+  },
+  "blamed": {
+    "es": "culpó (pasado de blame)",
+    "hu": "hibáztatott (a blame múlt ideje)",
+    "de": "beschuldigte (Vergangenheit von blame)"
+  },
+  "books": {
+    "es": "libros",
+    "hu": "könyvek",
+    "de": "Bücher"
+  },
+  "bothers": {
+    "es": "molesta (él/ella, de bother)",
+    "hu": "zavar (a bother E/3.)",
+    "de": "stört (er/sie, von bother)"
+  },
+  "bought": {
+    "es": "compré (pasado de buy)",
+    "hu": "vett (a buy múlt ideje)",
+    "de": "kaufte (Vergangenheit von buy)"
+  },
+  "boxes": {
+    "es": "cajas",
+    "hu": "dobozok",
+    "de": "Kisten"
+  },
+  "breaking": {
+    "es": "romper / romperse (de break)",
+    "hu": "megszegés (a break -ing alakja)",
+    "de": "brechen (von break)"
+  },
+  "breath": {
+    "es": "aliento / respiración",
+    "hu": "lélegzet",
+    "de": "Atem"
+  },
+  "broken": {
+    "es": "roto (participio de break)",
+    "hu": "eltört (a break igeneve)",
+    "de": "gebrochen (Partizip von break)"
+  },
+  "brothers": {
+    "es": "hermanos",
+    "hu": "fiútestvérek, fivérek",
+    "de": "Brüder"
+  },
+  "brought": {
+    "es": "trajo (pasado de bring)",
+    "hu": "hozott (a bring múlt ideje)",
+    "de": "brachte (Vergangenheit von bring)"
+  },
+  "burns": {
+    "es": "arde / se quema (de burn)",
+    "hu": "ég (a burn E/3.)",
+    "de": "brennt (er/sie/es, von burn)"
+  },
+  "buses": {
+    "es": "autobuses",
+    "hu": "buszok",
+    "de": "Busse"
+  },
+  "by": {
+    "es": "en / por / cerca de",
+    "hu": "-val, -vel / mellett",
+    "de": "mit / von / bei"
+  },
+  "calling": {
+    "es": "llamar / llamada (de call)",
+    "hu": "hívás (a call -ing alakja)",
+    "de": "anrufen (von call)"
+  },
+  "calls": {
+    "es": "llama (él/ella, de call)",
+    "hu": "hív (a call E/3.)",
+    "de": "ruft an (er/sie, von call)"
+  },
+  "calm": {
+    "es": "tranquilo",
+    "hu": "nyugodt",
+    "de": "ruhig"
+  },
+  "came": {
+    "es": "vino (pasado de come)",
+    "hu": "jött (a come múlt ideje)",
+    "de": "kam (Vergangenheit von come)"
+  },
+  "canceled": {
+    "es": "canceló (pasado de cancel)",
+    "hu": "lemondott (a cancel múlt ideje)",
+    "de": "sagte ab (Vergangenheit von cancel)"
+  },
+  "cannot": {
+    "es": "no puede / no sabe (can not)",
+    "hu": "nem tud / nem képes (can not)",
+    "de": "kann nicht (can not)"
+  },
+  "cans": {
+    "es": "forma incorrecta de can (puede)",
+    "hu": "hibás alak: can (tud)",
+    "de": "falsche Form von can (kann)"
+  },
+  "cant": {
+    "es": "no puede / no sabe (can not)",
+    "hu": "nem tud / nem képes (can not)",
+    "de": "kann nicht (can not)"
+  },
+  "care": {
+    "es": "cuidado / cuidar",
+    "hu": "gondozás / törődés",
+    "de": "Pflege / Sorge"
+  },
+  "carlos": {
+    "es": "Carlos (nombre)",
+    "hu": "Carlos (név)",
+    "de": "Carlos (Name)"
+  },
+  "carry": {
+    "es": "llevar / cargar (carry on: seguir)",
+    "hu": "visz (carry on: folytat)",
+    "de": "tragen (carry on: weitermachen)"
+  },
+  "cars": {
+    "es": "coches / carros",
+    "hu": "autók",
+    "de": "Autos"
+  },
+  "cats": {
+    "es": "gatos",
+    "hu": "macskák",
+    "de": "Katzen"
+  },
+  "caught": {
+    "es": "tomé / atrapó (pasado de catch)",
+    "hu": "elkapott (a catch igeneve)",
+    "de": "erwischt (von catch)"
+  },
+  "chairs": {
+    "es": "sillas",
+    "hu": "székek",
+    "de": "Stühle"
+  },
+  "changed": {
+    "es": "cambiado (participio de change)",
+    "hu": "megváltozott (a change igeneve)",
+    "de": "verändert (Partizip von change)"
+  },
+  "cheaper": {
+    "es": "más barato",
+    "hu": "olcsóbb",
+    "de": "billiger"
+  },
+  "cheapest": {
+    "es": "el más barato",
+    "hu": "a legolcsóbb",
+    "de": "am billigsten"
+  },
+  "child": {
+    "es": "niño / niña",
+    "hu": "gyerek",
+    "de": "Kind"
+  },
+  "children": {
+    "es": "niños",
+    "hu": "gyerekek",
+    "de": "Kinder"
+  },
+  "cinema": {
+    "es": "cine",
+    "hu": "mozi",
+    "de": "Kino"
+  },
+  "cities": {
+    "es": "ciudades",
+    "hu": "városok",
+    "de": "Städte"
+  },
+  "claims": {
+    "es": "afirma (él/ella, de claim)",
+    "hu": "állítja (a claim E/3.)",
+    "de": "behauptet (er/sie, von claim)"
+  },
+  "classes": {
+    "es": "clases",
+    "hu": "órák, osztályok",
+    "de": "Kurse / Klassen"
+  },
+  "cleaned": {
+    "es": "limpiado (participio de clean)",
+    "hu": "megtisztított (a clean igeneve)",
+    "de": "geputzt (Partizip von clean)"
+  },
+  "cleaning": {
+    "es": "limpiar / limpieza (de clean)",
+    "hu": "takarítás (a clean -ing alakja)",
+    "de": "putzen (von clean)"
+  },
+  "clear": {
+    "es": "claro",
+    "hu": "egyértelmű",
+    "de": "klar"
+  },
+  "clouds": {
+    "es": "nubes",
+    "hu": "felhők",
+    "de": "Wolken"
+  },
+  "colder": {
+    "es": "más frío",
+    "hu": "hidegebb",
+    "de": "kälter"
+  },
+  "coldest": {
+    "es": "el más frío",
+    "hu": "a leghidegebb",
+    "de": "am kältesten"
+  },
+  "comes": {
+    "es": "viene (él/ella, de come)",
+    "hu": "jön (a come E/3.)",
+    "de": "kommt (er/sie, von come)"
+  },
+  "commas": {
+    "es": "comas",
+    "hu": "vesszők",
+    "de": "Kommas"
+  },
+  "comparative": {
+    "es": "comparativo",
+    "hu": "középfok",
+    "de": "Komparativ"
+  },
+  "complaining": {
+    "es": "quejarse (de complain)",
+    "hu": "panaszkodás (a complain -ing alakja)",
+    "de": "sich beschweren (von complain)"
+  },
+  "conditional": {
+    "es": "condicional",
+    "hu": "feltételes",
+    "de": "Konditional"
+  },
+  "confident": {
+    "es": "seguro de sí mismo",
+    "hu": "magabiztos",
+    "de": "selbstbewusst"
+  },
+  "contact": {
+    "es": "contactar",
+    "hu": "felveszi a kapcsolatot",
+    "de": "kontaktieren"
+  },
+  "cooked": {
+    "es": "cocinó (pasado de cook)",
+    "hu": "főzött (a cook múlt ideje)",
+    "de": "kochte (Vergangenheit von cook)"
+  },
+  "cooking": {
+    "es": "cocinar / cocina (de cook)",
+    "hu": "főzés (a cook -ing alakja)",
+    "de": "Kochen (von cook)"
+  },
+  "cooks": {
+    "es": "cocina (él/ella, de cook)",
+    "hu": "főz (a cook E/3.)",
+    "de": "kocht (er/sie, von cook)"
+  },
+  "could": {
+    "es": "pudo / podría (pasado de can)",
+    "hu": "tudott / lehetne (a can múltja)",
+    "de": "konnte / könnte (von can)"
+  },
+  "countries": {
+    "es": "países",
+    "hu": "országok",
+    "de": "Länder"
+  },
+  "crucial": {
+    "es": "crucial",
+    "hu": "döntő fontosságú",
+    "de": "entscheidend"
+  },
+  "damage": {
+    "es": "daño",
+    "hu": "kár",
+    "de": "Schaden"
+  },
+  "damaged": {
+    "es": "dañado (participio de damage)",
+    "hu": "megrongált (a damage igeneve)",
+    "de": "beschädigt (Partizip von damage)"
+  },
+  "danced": {
+    "es": "bailó (pasado de dance)",
+    "hu": "táncolt (a dance múlt ideje)",
+    "de": "tanzte (Vergangenheit von dance)"
+  },
+  "dancing": {
+    "es": "bailando (de dance)",
+    "hu": "táncol (a dance -ing alakja)",
+    "de": "tanzend (von dance)"
+  },
+  "days": {
+    "es": "días",
+    "hu": "napok",
+    "de": "Tage"
+  },
+  "decided": {
+    "es": "decidimos (pasado de decide)",
+    "hu": "elhatározta (a decide múlt ideje)",
+    "de": "entschied (Vergangenheit von decide)"
+  },
+  "delay": {
+    "es": "retraso",
+    "hu": "késés",
+    "de": "Verzögerung"
+  },
+  "delayed": {
+    "es": "retrasado (participio de delay)",
+    "hu": "késleltetett (a delay igeneve)",
+    "de": "verzögert (Partizip von delay)"
+  },
+  "delays": {
+    "es": "retrasos",
+    "hu": "késések",
+    "de": "Verzögerungen"
+  },
+  "delivered": {
+    "es": "entregado (participio de deliver)",
+    "hu": "kiszállított (a deliver igeneve)",
+    "de": "geliefert (Partizip von deliver)"
+  },
+  "demanded": {
+    "es": "exigió (pasado de demand)",
+    "hu": "követelt (a demand múlt ideje)",
+    "de": "verlangte (Vergangenheit von demand)"
+  },
+  "did": {
+    "es": "hizo (pasado de do)",
+    "hu": "csinált (a do múlt ideje)",
+    "de": "tat (Vergangenheit von do)"
+  },
+  "didnt": {
+    "es": "no hizo / no (did not)",
+    "hu": "nem (did not)",
+    "de": "tat nicht (did not)"
+  },
+  "diego": {
+    "es": "Diego (nombre)",
+    "hu": "Diego (név)",
+    "de": "Diego (Name)"
+  },
+  "dishes": {
+    "es": "platos / trastes",
+    "hu": "edények",
+    "de": "Geschirr"
+  },
+  "doctors": {
+    "es": "médicos / doctores",
+    "hu": "orvosok",
+    "de": "Ärzte"
+  },
+  "documents": {
+    "es": "documentos",
+    "hu": "dokumentumok",
+    "de": "Dokumente"
+  },
+  "does": {
+    "es": "hace (él/ella, de do)",
+    "hu": "csinál (a do E/3.)",
+    "de": "tut (er/sie, von do)"
+  },
+  "doesnt": {
+    "es": "no hace / no (does not)",
+    "hu": "nem (does not)",
+    "de": "tut nicht (does not)"
+  },
+  "dogs": {
+    "es": "perros",
+    "hu": "kutyák",
+    "de": "Hunde"
+  },
+  "doing": {
+    "es": "haciendo (de do)",
+    "hu": "csinál (a do -ing alakja)",
+    "de": "tuend (von do)"
+  },
+  "dont": {
+    "es": "no hago / no (do not)",
+    "hu": "nem (do not)",
+    "de": "tue nicht (do not)"
+  },
+  "doors": {
+    "es": "puertas",
+    "hu": "ajtók",
+    "de": "Türen"
+  },
+  "drank": {
+    "es": "bebió (pasado de drink)",
+    "hu": "ivott (az drink múlt ideje)",
+    "de": "trank (Vergangenheit von drink)"
+  },
+  "drinking": {
+    "es": "bebiendo (de drink)",
+    "hu": "iszik (a drink -ing alakja)",
+    "de": "trinkend (von drink)"
+  },
+  "drinks": {
+    "es": "bebe (él/ella, de drink)",
+    "hu": "iszik (a drink E/3.)",
+    "de": "trinkt (er/sie, von drink)"
+  },
+  "driving": {
+    "es": "manejando (de drive)",
+    "hu": "vezet (a drive -ing alakja)",
+    "de": "fahrend (von drive)"
+  },
+  "drove": {
+    "es": "manejó (pasado de drive)",
+    "hu": "vezetett (a drive múlt ideje)",
+    "de": "fuhr (Vergangenheit von drive)"
+  },
+  "each": {
+    "es": "cada",
+    "hu": "minden egyes",
+    "de": "jeder / jede"
+  },
+  "easier": {
+    "es": "más fácil",
+    "hu": "könnyebb",
+    "de": "einfacher"
+  },
+  "easiest": {
+    "es": "el más fácil",
+    "hu": "a legkönnyebb",
+    "de": "am einfachsten"
+  },
+  "eaten": {
+    "es": "comido (participio de eat)",
+    "hu": "megevett (az eat igeneve)",
+    "de": "gegessen (Partizip von eat)"
+  },
+  "eating": {
+    "es": "comiendo (de eat)",
+    "hu": "eszik (az eat -ing alakja)",
+    "de": "essend (von eat)"
+  },
+  "eats": {
+    "es": "come (él/ella, de eat)",
+    "hu": "eszik (az eat E/3.)",
+    "de": "isst (er/sie, von eat)"
+  },
+  "economic": {
+    "es": "económico",
+    "hu": "gazdasági",
+    "de": "wirtschaftlich"
+  },
+  "elena": {
+    "es": "Elena (nombre)",
+    "hu": "Elena (név)",
+    "de": "Elena (Name)"
+  },
+  "elephants": {
+    "es": "elefantes",
+    "hu": "elefántok",
+    "de": "Elefanten"
+  },
+  "email": {
+    "es": "correo electrónico",
+    "hu": "e-mail",
+    "de": "E-Mail"
+  },
+  "emails": {
+    "es": "correos electrónicos",
+    "hu": "e-mailek",
+    "de": "E-Mails"
+  },
+  "ended": {
+    "es": "terminó (pasado de end)",
+    "hu": "véget ért (az end múlt ideje)",
+    "de": "endete (Vergangenheit von end)"
+  },
+  "entirely": {
+    "es": "totalmente",
+    "hu": "teljesen",
+    "de": "völlig"
+  },
+  "escaped": {
+    "es": "escapado (participio de escape)",
+    "hu": "megszökött (az escape igeneve)",
+    "de": "entkommen (Partizip von escape)"
+  },
+  "ever": {
+    "es": "alguna vez",
+    "hu": "valaha",
+    "de": "jemals"
+  },
+  "everyone": {
+    "es": "todos / todo el mundo",
+    "hu": "mindenki",
+    "de": "jeder / alle"
+  },
+  "everything": {
+    "es": "todo",
+    "hu": "minden",
+    "de": "alles"
+  },
+  "evidence": {
+    "es": "evidencia / pruebas",
+    "hu": "bizonyíték",
+    "de": "Beweis"
+  },
+  "explained": {
+    "es": "explicó (pasado de explain)",
+    "hu": "elmagyarázta (az explain múlt ideje)",
+    "de": "erklärte (Vergangenheit von explain)"
+  },
+  "eyes": {
+    "es": "ojos",
+    "hu": "szemek",
+    "de": "Augen"
+  },
+  "failed": {
+    "es": "fallado (participio de fail)",
+    "hu": "kudarcot vallott (a fail igeneve)",
+    "de": "gescheitert (Partizip von fail)"
+  },
+  "fails": {
+    "es": "falla (él/ella, de fail)",
+    "hu": "kudarcot vall (a fail E/3.)",
+    "de": "scheitert (er/sie, von fail)"
+  },
+  "families": {
+    "es": "familias",
+    "hu": "családok",
+    "de": "Familien"
+  },
+  "fast": {
+    "es": "rápido",
+    "hu": "gyors",
+    "de": "schnell"
+  },
+  "faster": {
+    "es": "más rápido",
+    "hu": "gyorsabb",
+    "de": "schneller"
+  },
+  "fastest": {
+    "es": "el más rápido",
+    "hu": "a leggyorsabb",
+    "de": "am schnellsten"
+  },
+  "feel": {
+    "es": "sentir / sentirse",
+    "hu": "érez",
+    "de": "fühlen"
+  },
+  "feet": {
+    "es": "pies",
+    "hu": "lábak (lábfejek)",
+    "de": "Füße"
+  },
+  "felt": {
+    "es": "sintió (pasado de feel)",
+    "hu": "érzett (a feel múlt ideje)",
+    "de": "fühlte (Vergangenheit von feel)"
+  },
+  "file": {
+    "es": "archivo",
+    "hu": "fájl",
+    "de": "Datei"
+  },
+  "finally": {
+    "es": "por fin / finalmente",
+    "hu": "végül",
+    "de": "schließlich"
+  },
+  "finding": {
+    "es": "encontrar (de find)",
+    "hu": "megtalálás (a find -ing alakja)",
+    "de": "finden (von find)"
+  },
+  "finds": {
+    "es": "encuentra (él/ella, de find)",
+    "hu": "talál (a find E/3.)",
+    "de": "findet (er/sie, von find)"
+  },
+  "finish": {
+    "es": "terminar",
+    "hu": "befejez",
+    "de": "beenden"
+  },
+  "finished": {
+    "es": "terminado (participio de finish)",
+    "hu": "befejezett (a finish igeneve)",
+    "de": "beendet (Partizip von finish)"
+  },
+  "finishes": {
+    "es": "termina (él/ella, de finish)",
+    "hu": "befejez (a finish E/3.)",
+    "de": "beendet (er/sie, von finish)"
+  },
+  "fix": {
+    "es": "arreglar",
+    "hu": "megjavít",
+    "de": "reparieren"
+  },
+  "fixed": {
+    "es": "arreglado (participio de fix)",
+    "hu": "megjavított (a fix igeneve)",
+    "de": "repariert (Partizip von fix)"
+  },
+  "flew": {
+    "es": "voló (pasado de fly)",
+    "hu": "repült (a fly múlt ideje)",
+    "de": "flog (Vergangenheit von fly)"
+  },
+  "floods": {
+    "es": "inundaciones",
+    "hu": "árvizek",
+    "de": "Überschwemmungen"
+  },
+  "flu": {
+    "es": "gripe",
+    "hu": "influenza",
+    "de": "Grippe"
+  },
+  "flying": {
+    "es": "volando (de fly)",
+    "hu": "repül (a fly -ing alakja)",
+    "de": "fliegend (von fly)"
+  },
+  "football": {
+    "es": "fútbol",
+    "hu": "foci",
+    "de": "Fußball"
+  },
+  "forgets": {
+    "es": "olvida (él/ella, de forget)",
+    "hu": "elfelejt (ő, a forget alakja)",
+    "de": "vergisst (er/sie, von forget)"
+  },
+  "forgot": {
+    "es": "olvidó (pasado de forget)",
+    "hu": "elfelejtett (a forget múlt ideje)",
+    "de": "vergaß (Vergangenheit von forget)"
+  },
+  "fresh": {
+    "es": "fresco",
+    "hu": "friss",
+    "de": "frisch"
+  },
+  "fridays": {
+    "es": "los viernes",
+    "hu": "péntekenként",
+    "de": "freitags"
+  },
+  "fridge": {
+    "es": "refrigerador / nevera",
+    "hu": "hűtőszekrény",
+    "de": "Kühlschrank"
+  },
+  "friends": {
+    "es": "amigos",
+    "hu": "barátok",
+    "de": "Freunde"
+  },
+  "front": {
+    "es": "frente (delante de)",
+    "hu": "eleje (in front of: előtt)",
+    "de": "Vorderseite (in front of: vor)"
+  },
+  "fruits": {
+    "es": "frutas",
+    "hu": "gyümölcsök",
+    "de": "Früchte"
+  },
+  "games": {
+    "es": "juegos",
+    "hu": "játékok",
+    "de": "Spiele"
+  },
+  "gave": {
+    "es": "dio (pasado de give)",
+    "hu": "adott (a give múlt ideje)",
+    "de": "gab (Vergangenheit von give)"
+  },
+  "generally": {
+    "es": "en general",
+    "hu": "általában",
+    "de": "im Allgemeinen"
+  },
+  "gerund": {
+    "es": "gerundio",
+    "hu": "gerundium",
+    "de": "Gerundium"
+  },
+  "gets": {
+    "es": "se vuelve / obtiene (de get)",
+    "hu": "lesz / kap (ő, a get alakja)",
+    "de": "wird / bekommt (von get)"
+  },
+  "given": {
+    "es": "dado (participio de give)",
+    "hu": "adott (a give igeneve)",
+    "de": "gegeben (Partizip von give)"
+  },
+  "gives": {
+    "es": "da (él/ella, de give)",
+    "hu": "ad (ő, a give alakja)",
+    "de": "gibt (er/sie, von give)"
+  },
+  "giving": {
+    "es": "dando (de give)",
+    "hu": "adva / adás (a give -ing alakja)",
+    "de": "gebend (von give)"
+  },
+  "goes": {
+    "es": "va (él/ella, de go)",
+    "hu": "megy (ő, a go alakja)",
+    "de": "geht (er/sie, von go)"
+  },
+  "going": {
+    "es": "yendo / va a (de go)",
+    "hu": "menő / fog (a go -ing alakja)",
+    "de": "gehend / wird (von go)"
+  },
+  "got": {
+    "es": "obtuvo / consiguió (pasado de get)",
+    "hu": "kapott / szerzett (a get múlt ideje)",
+    "de": "bekam (Vergangenheit von get)"
+  },
+  "governments": {
+    "es": "gobiernos",
+    "hu": "kormányok",
+    "de": "Regierungen"
+  },
+  "grass": {
+    "es": "pasto / césped",
+    "hu": "fű",
+    "de": "Gras"
+  },
+  "groups": {
+    "es": "grupos",
+    "hu": "csoportok",
+    "de": "Gruppen"
+  },
+  "had": {
+    "es": "tuvo / había (pasado de have)",
+    "hu": "volt / birtokolt (a have múlt ideje)",
+    "de": "hatte (Vergangenheit von have)"
+  },
+  "hands": {
+    "es": "manos",
+    "hu": "kezek",
+    "de": "Hände"
+  },
+  "happened": {
+    "es": "ocurrió / pasó (pasado de happen)",
+    "hu": "történt (a happen múlt ideje)",
+    "de": "geschah (Vergangenheit von happen)"
+  },
+  "happiest": {
+    "es": "el más feliz",
+    "hu": "legboldogabb",
+    "de": "am glücklichsten"
+  },
+  "hardly": {
+    "es": "apenas",
+    "hu": "alig",
+    "de": "kaum"
+  },
+  "has": {
+    "es": "tiene (él/ella, de have)",
+    "hu": "van neki / birtokol (ő, a have alakja)",
+    "de": "hat (er/sie, von have)"
+  },
+  "hasnt": {
+    "es": "no ha / no tiene (has not)",
+    "hu": "nem volt / nincs (has not)",
+    "de": "hat nicht (has not)"
+  },
+  "havent": {
+    "es": "no he / no han (have not)",
+    "hu": "nem (have not)",
+    "de": "haben nicht (have not)"
+  },
+  "having": {
+    "es": "teniendo (de have)",
+    "hu": "birtokolva / van (a have -ing alakja)",
+    "de": "habend (von have)"
+  },
+  "helped": {
+    "es": "ayudó (pasado de help)",
+    "hu": "segített (a help múlt ideje)",
+    "de": "half (Vergangenheit von help)"
+  },
+  "helping": {
+    "es": "ayudando (de help)",
+    "hu": "segítve / segítés (a help -ing alakja)",
+    "de": "helfend (von help)"
+  },
+  "helps": {
+    "es": "ayuda (él/ella, de help)",
+    "hu": "segít (ő, a help alakja)",
+    "de": "hilft (er/sie, von help)"
+  },
+  "hers": {
+    "es": "suyo (de ella)",
+    "hu": "az övé (nőé)",
+    "de": "ihrs / ihre"
+  },
+  "hes": {
+    "es": "él es / él está (he is)",
+    "hu": "ő van / ő (he is)",
+    "de": "er ist (he is)"
+  },
+  "him": {
+    "es": "a él / lo",
+    "hu": "őt / neki",
+    "de": "ihn / ihm"
+  },
+  "his": {
+    "es": "su (de él)",
+    "hu": "az ő (férfi birtokos)",
+    "de": "sein"
+  },
+  "hopes": {
+    "es": "espera (él/ella, de hope)",
+    "hu": "remél (ő, a hope alakja)",
+    "de": "hofft (er/sie, von hope)"
+  },
+  "hot": {
+    "es": "caliente / caluroso",
+    "hu": "forró / meleg",
+    "de": "heiß"
+  },
+  "hotter": {
+    "es": "más caliente (de hot)",
+    "hu": "forróbb (a hot fokozása)",
+    "de": "heißer (von hot)"
+  },
+  "hottest": {
+    "es": "el más caliente (de hot)",
+    "hu": "legforróbb (a hot fokozása)",
+    "de": "am heißesten (von hot)"
+  },
+  "hour": {
+    "es": "hora",
+    "hu": "óra",
+    "de": "Stunde"
+  },
+  "houses": {
+    "es": "casas",
+    "hu": "házak",
+    "de": "Häuser"
+  },
+  "hurried": {
+    "es": "se apresuró (pasado de hurry)",
+    "hu": "sietett (a hurry múlt ideje)",
+    "de": "beeilte sich (von hurry)"
+  },
+  "id": {
+    "es": "yo había / yo habría (I had / I would)",
+    "hu": "én (I had / I would)",
+    "de": "ich hatte / ich würde (I had / I would)"
+  },
+  "im": {
+    "es": "yo soy / estoy (I am)",
+    "hu": "én vagyok (I am)",
+    "de": "ich bin (I am)"
+  },
+  "imperative": {
+    "es": "imperativo",
+    "hu": "felszólító mód",
+    "de": "Imperativ"
+  },
+  "improved": {
+    "es": "mejoró (pasado de improve)",
+    "hu": "javult (az improve múlt ideje)",
+    "de": "verbesserte sich (von improve)"
+  },
+  "infinitive": {
+    "es": "infinitivo",
+    "hu": "főnévi igenév",
+    "de": "Infinitiv"
+  },
+  "insisted": {
+    "es": "insistió (pasado de insist)",
+    "hu": "ragaszkodott (az insist múlt ideje)",
+    "de": "bestand darauf (von insist)"
+  },
+  "interested": {
+    "es": "interesado",
+    "hu": "érdeklődő",
+    "de": "interessiert"
+  },
+  "introduction": {
+    "es": "introducción",
+    "hu": "bevezetés",
+    "de": "Einführung"
+  },
+  "invited": {
+    "es": "invitado (participio de invite)",
+    "hu": "meghívott (az invite igeneve)",
+    "de": "eingeladen (Partizip von invite)"
+  },
+  "is": {
+    "es": "es / está (de be)",
+    "hu": "van / -(a)z (a be alakja)",
+    "de": "ist (von be)"
+  },
+  "isnt": {
+    "es": "no es / no está (is not)",
+    "hu": "nem (is not)",
+    "de": "ist nicht (is not)"
+  },
+  "itd": {
+    "es": "eso habría / había (it would / it had)",
+    "hu": "az lenne / volt (it would / it had)",
+    "de": "es würde / hatte (it would / it had)"
+  },
+  "itll": {
+    "es": "eso va a (it will)",
+    "hu": "az fog (it will)",
+    "de": "es wird (it will)"
+  },
+  "its": {
+    "es": "su (de eso)",
+    "hu": "annak a",
+    "de": "sein / seine (von es)"
+  },
+  "ive": {
+    "es": "yo he (I have)",
+    "hu": "én (I have)",
+    "de": "ich habe (I have)"
+  },
+  "jazz": {
+    "es": "jazz",
+    "hu": "dzsessz",
+    "de": "Jazz"
+  },
+  "jobs": {
+    "es": "empleos / trabajos",
+    "hu": "munkahelyek",
+    "de": "Arbeitsplätze"
+  },
+  "judging": {
+    "es": "a juzgar (de judge)",
+    "hu": "ítélve (a judge -ing alakja)",
+    "de": "nach ... zu urteilen (von judge)"
+  },
+  "kept": {
+    "es": "siguió / mantuvo (pasado de keep)",
+    "hu": "tartott / folytatta (a keep múlt ideje)",
+    "de": "behielt / machte weiter (von keep)"
+  },
+  "keys": {
+    "es": "llaves",
+    "hu": "kulcsok",
+    "de": "Schlüssel"
+  },
+  "kids": {
+    "es": "niños",
+    "hu": "gyerekek",
+    "de": "Kinder"
+  },
+  "knives": {
+    "es": "cuchillos",
+    "hu": "kések",
+    "de": "Messer"
+  },
+  "knocked": {
+    "es": "tocó / llamó (pasado de knock)",
+    "hu": "kopogott (a knock múlt ideje)",
+    "de": "klopfte (Vergangenheit von knock)"
+  },
+  "knowing": {
+    "es": "sabiendo (de know)",
+    "hu": "tudva (a know -ing alakja)",
+    "de": "wissend (von know)"
+  },
+  "known": {
+    "es": "sabido (participio de know)",
+    "hu": "tudott (a know igeneve)",
+    "de": "gewusst (Partizip von know)"
+  },
+  "knows": {
+    "es": "sabe (él/ella, de know)",
+    "hu": "tud (ő, a know alakja)",
+    "de": "weiß (er/sie, von know)"
+  },
+  "languages": {
+    "es": "idiomas",
+    "hu": "nyelvek",
+    "de": "Sprachen"
+  },
+  "later": {
+    "es": "más tarde",
+    "hu": "később",
+    "de": "später"
+  },
+  "laughed": {
+    "es": "se rió (pasado de laugh)",
+    "hu": "nevetett (a laugh múlt ideje)",
+    "de": "lachte (Vergangenheit von laugh)"
+  },
+  "laughing": {
+    "es": "riendo (de laugh)",
+    "hu": "nevetve / nevetés (a laugh -ing alakja)",
+    "de": "lachend (von laugh)"
+  },
+  "laura": {
+    "es": "Laura (nombre)",
+    "hu": "Laura (név)",
+    "de": "Laura (Name)"
+  },
+  "learned": {
+    "es": "aprendió / aprendido (de learn)",
+    "hu": "tanult (a learn múlt ideje)",
+    "de": "lernte / gelernt (von learn)"
+  },
+  "least": {
+    "es": "menos / el menos",
+    "hu": "legkevésbé",
+    "de": "am wenigsten"
+  },
+  "leaves": {
+    "es": "sale / tiene que ir (de leave)",
+    "hu": "indul (ő, a leave alakja)",
+    "de": "fährt ab / verlässt (von leave)"
+  },
+  "leaving": {
+    "es": "saliendo / dejar (de leave)",
+    "hu": "elhagyva / indulás (a leave -ing alakja)",
+    "de": "verlassend (von leave)"
+  },
+  "lied": {
+    "es": "mintió (pasado de lie)",
+    "hu": "hazudott (a lie múlt ideje)",
+    "de": "log (Vergangenheit von lie)"
+  },
+  "lights": {
+    "es": "luces",
+    "hu": "lámpák / fények",
+    "de": "Lichter"
+  },
+  "liked": {
+    "es": "le gustó (pasado de like)",
+    "hu": "szeretett / tetszett (a like múlt ideje)",
+    "de": "mochte (Vergangenheit von like)"
+  },
+  "likes": {
+    "es": "le gusta (él/ella, de like)",
+    "hu": "szeret (ő, a like alakja)",
+    "de": "mag (er/sie, von like)"
+  },
+  "lima": {
+    "es": "Lima (ciudad)",
+    "hu": "Lima (város)",
+    "de": "Lima (Stadt)"
+  },
+  "limited": {
+    "es": "limitado",
+    "hu": "korlátozott",
+    "de": "begrenzt"
+  },
+  "listened": {
+    "es": "escuchó (pasado de listen)",
+    "hu": "hallgatott (a listen múlt ideje)",
+    "de": "hörte zu (Vergangenheit von listen)"
+  },
+  "listening": {
+    "es": "escuchando (de listen)",
+    "hu": "hallgatva (a listen -ing alakja)",
+    "de": "zuhörend (von listen)"
+  },
+  "listens": {
+    "es": "escucha (él/ella, de listen)",
+    "hu": "hallgat (ő, a listen alakja)",
+    "de": "hört zu (er/sie, von listen)"
+  },
+  "little": {
+    "es": "poco",
+    "hu": "kevés",
+    "de": "wenig"
+  },
+  "lived": {
+    "es": "vivió (pasado de live)",
+    "hu": "élt / lakott (a live múlt ideje)",
+    "de": "lebte (Vergangenheit von live)"
+  },
+  "lives": {
+    "es": "vive (él/ella, de live)",
+    "hu": "él / lakik (ő, a live alakja)",
+    "de": "lebt (er/sie, von live)"
+  },
+  "living": {
+    "es": "viviendo (de live)",
+    "hu": "élve / lakva (a live -ing alakja)",
+    "de": "lebend (von live)"
+  },
+  "located": {
+    "es": "ubicado",
+    "hu": "elhelyezkedő",
+    "de": "gelegen"
+  },
+  "lonely": {
+    "es": "solitario",
+    "hu": "magányos",
+    "de": "einsam"
+  },
+  "longer": {
+    "es": "más largo / más tiempo",
+    "hu": "hosszabb / tovább",
+    "de": "länger"
+  },
+  "looked": {
+    "es": "se veía / miró (pasado de look)",
+    "hu": "kinézett / nézett (a look múlt ideje)",
+    "de": "sah aus / schaute (von look)"
+  },
+  "looking": {
+    "es": "mirando (de look)",
+    "hu": "nézve (a look -ing alakja)",
+    "de": "schauend (von look)"
+  },
+  "looks": {
+    "es": "se ve / parece (de look)",
+    "hu": "néz / tűnik (ő, a look alakja)",
+    "de": "sieht aus (er/sie, von look)"
+  },
+  "loud": {
+    "es": "fuerte (ruidoso)",
+    "hu": "hangos",
+    "de": "laut"
+  },
+  "loved": {
+    "es": "amó / le encantó (pasado de love)",
+    "hu": "szeretett (a love múlt ideje)",
+    "de": "liebte (Vergangenheit von love)"
+  },
+  "low": {
+    "es": "bajo",
+    "hu": "alacsony",
+    "de": "niedrig"
+  },
+  "luis": {
+    "es": "Luis (nombre)",
+    "hu": "Luis (név)",
+    "de": "Luis (Name)"
+  },
+  "made": {
+    "es": "hizo (pasado de make)",
+    "hu": "csinált (a make múlt ideje)",
+    "de": "machte (Vergangenheit von make)"
+  },
+  "madrid": {
+    "es": "Madrid (ciudad)",
+    "hu": "Madrid (város)",
+    "de": "Madrid (Stadt)"
+  },
+  "making": {
+    "es": "haciendo (de make)",
+    "hu": "csinálva (a make -ing alakja)",
+    "de": "machend (von make)"
+  },
+  "maria": {
+    "es": "María (nombre)",
+    "hu": "Maria (név)",
+    "de": "Maria (Name)"
+  },
+  "math": {
+    "es": "matemáticas",
+    "hu": "matek",
+    "de": "Mathe"
+  },
+  "meet": {
+    "es": "encontrarse / conocer",
+    "hu": "találkozik",
+    "de": "treffen"
+  },
+  "meetings": {
+    "es": "reuniones",
+    "hu": "megbeszélések",
+    "de": "Besprechungen"
+  },
+  "melts": {
+    "es": "se derrite (de melt)",
+    "hu": "olvad (ő, a melt alakja)",
+    "de": "schmilzt (von melt)"
+  },
+  "men": {
+    "es": "hombres",
+    "hu": "férfiak",
+    "de": "Männer"
+  },
+  "mentioned": {
+    "es": "mencionó (pasado de mention)",
+    "hu": "megemlített (a mention múlt ideje)",
+    "de": "erwähnte (von mention)"
+  },
+  "mess": {
+    "es": "desorden / lío",
+    "hu": "rendetlenség",
+    "de": "Durcheinander"
+  },
+  "met": {
+    "es": "conoció / se vieron (pasado de meet)",
+    "hu": "találkozott (a meet múlt ideje)",
+    "de": "traf (Vergangenheit von meet)"
+  },
+  "missed": {
+    "es": "perdió / extrañó (pasado de miss)",
+    "hu": "lekésett (a miss múlt ideje)",
+    "de": "verpasste (Vergangenheit von miss)"
+  },
+  "misses": {
+    "es": "pierde (él/ella, de miss)",
+    "hu": "lekésik (ő, a miss alakja)",
+    "de": "verpasst (er/sie, von miss)"
+  },
+  "monterrey": {
+    "es": "Monterrey (ciudad)",
+    "hu": "Monterrey (város)",
+    "de": "Monterrey (Stadt)"
+  },
+  "months": {
+    "es": "meses",
+    "hu": "hónapok",
+    "de": "Monate"
+  },
+  "most": {
+    "es": "la mayoría / más",
+    "hu": "a legtöbb",
+    "de": "die meisten"
+  },
+  "moved": {
+    "es": "se mudó (pasado de move)",
+    "hu": "költözött (a move múlt ideje)",
+    "de": "zog um (Vergangenheit von move)"
+  },
+  "movie": {
+    "es": "película",
+    "hu": "film",
+    "de": "Film"
+  },
+  "must": {
+    "es": "debe / debes",
+    "hu": "kell / muszáj",
+    "de": "muss"
+  },
+  "mustnt": {
+    "es": "no debe (must not)",
+    "hu": "nem szabad (must not)",
+    "de": "darf nicht (must not)"
+  },
+  "near": {
+    "es": "cerca de",
+    "hu": "közel",
+    "de": "nahe bei"
+  },
+  "needing": {
+    "es": "necesitando (de need)",
+    "hu": "szükséges (a need -ing alakja)",
+    "de": "brauchend (von need)"
+  },
+  "needs": {
+    "es": "necesita (él/ella, de need)",
+    "hu": "szüksége van (ő, a need alakja)",
+    "de": "braucht (er/sie, von need)"
+  },
+  "neighbors": {
+    "es": "vecinos",
+    "hu": "szomszédok",
+    "de": "Nachbarn"
+  },
+  "no": {
+    "es": "no",
+    "hu": "nem",
+    "de": "nein"
+  },
+  "noon": {
+    "es": "mediodía",
+    "hu": "dél",
+    "de": "Mittag"
+  },
+  "normally": {
+    "es": "normalmente",
+    "hu": "általában",
+    "de": "normalerweise"
+  },
+  "nowhere": {
+    "es": "en ningún lugar",
+    "hu": "sehol sem",
+    "de": "nirgendwo"
+  },
+  "oaxaca": {
+    "es": "Oaxaca (estado/ciudad)",
+    "hu": "Oaxaca (állam/város)",
+    "de": "Oaxaca (Bundesstaat/Stadt)"
+  },
+  "oclock": {
+    "es": "en punto (o'clock)",
+    "hu": "óra (o'clock)",
+    "de": "Uhr (o'clock)"
+  },
+  "oh": {
+    "es": "oh / ah",
+    "hu": "ó / jaj",
+    "de": "oh / ach"
+  },
+  "only": {
+    "es": "solo / apenas",
+    "hu": "csak",
+    "de": "nur"
+  },
+  "opened": {
+    "es": "abrió (pasado de open)",
+    "hu": "kinyitotta (az open múlt ideje)",
+    "de": "öffnete (Vergangenheit von open)"
+  },
+  "ordered": {
+    "es": "pidió (pasado de order)",
+    "hu": "rendelt (az order múlt ideje)",
+    "de": "bestellte (Vergangenheit von order)"
+  },
+  "otherwise": {
+    "es": "de lo contrario",
+    "hu": "különben",
+    "de": "andernfalls"
+  },
+  "ours": {
+    "es": "nuestro",
+    "hu": "miénk",
+    "de": "unserer / unsere"
+  },
+  "owing": {
+    "es": "debido (a)",
+    "hu": "miatt (owing to)",
+    "de": "aufgrund (owing to)"
+  },
+  "owned": {
+    "es": "poseyó (pasado de own)",
+    "hu": "birtokolt (az own múlt ideje)",
+    "de": "besaß (Vergangenheit von own)"
+  },
+  "pages": {
+    "es": "páginas",
+    "hu": "oldalak",
+    "de": "Seiten"
+  },
+  "paid": {
+    "es": "pagó (pasado de pay)",
+    "hu": "fizetett (a pay múlt ideje)",
+    "de": "zahlte (Vergangenheit von pay)"
+  },
+  "parents": {
+    "es": "padres",
+    "hu": "szülők",
+    "de": "Eltern"
+  },
+  "parking": {
+    "es": "estacionamiento",
+    "hu": "parkolás",
+    "de": "Parken"
+  },
+  "participle": {
+    "es": "participio",
+    "hu": "igenév",
+    "de": "Partizip"
+  },
+  "parties": {
+    "es": "fiestas",
+    "hu": "bulik / partik",
+    "de": "Partys"
+  },
+  "passed": {
+    "es": "aprobó / pasó (pasado de pass)",
+    "hu": "átment (a pass múlt ideje)",
+    "de": "bestand (Vergangenheit von pass)"
+  },
+  "passing": {
+    "es": "aprobar (de pass)",
+    "hu": "átmenni (a pass -ing alakja)",
+    "de": "bestehen (von pass)"
+  },
+  "paying": {
+    "es": "pagando (de pay)",
+    "hu": "fizetve / fizetés (a pay -ing alakja)",
+    "de": "zahlend (von pay)"
+  },
+  "peru": {
+    "es": "Perú (país)",
+    "hu": "Peru (ország)",
+    "de": "Peru (Land)"
+  },
+  "phones": {
+    "es": "teléfonos",
+    "hu": "telefonok",
+    "de": "Telefone"
+  },
+  "photos": {
+    "es": "fotos",
+    "hu": "fotók",
+    "de": "Fotos"
+  },
+  "plane": {
+    "es": "avión",
+    "hu": "repülőgép",
+    "de": "Flugzeug"
+  },
+  "plans": {
+    "es": "planes",
+    "hu": "tervek",
+    "de": "Pläne"
+  },
+  "played": {
+    "es": "jugó (pasado de play)",
+    "hu": "játszott (a play múlt ideje)",
+    "de": "spielte (Vergangenheit von play)"
+  },
+  "playing": {
+    "es": "jugando (de play)",
+    "hu": "játszva (a play -ing alakja)",
+    "de": "spielend (von play)"
+  },
+  "plays": {
+    "es": "juega (él/ella, de play)",
+    "hu": "játszik (ő, a play alakja)",
+    "de": "spielt (er/sie, von play)"
+  },
+  "plural": {
+    "es": "plural",
+    "hu": "többes szám",
+    "de": "Plural"
+  },
+  "police": {
+    "es": "policía",
+    "hu": "rendőrség",
+    "de": "Polizei"
+  },
+  "possessive": {
+    "es": "posesivo",
+    "hu": "birtokos",
+    "de": "Possessiv"
+  },
+  "practiced": {
+    "es": "practicó (pasado de practice)",
+    "hu": "gyakorolt (a practice múlt ideje)",
+    "de": "übte (Vergangenheit von practice)"
+  },
+  "preparing": {
+    "es": "preparando (de prepare)",
+    "hu": "előkészítve (a prepare -ing alakja)",
+    "de": "vorbereitend (von prepare)"
+  },
+  "prices": {
+    "es": "precios",
+    "hu": "árak",
+    "de": "Preise"
+  },
+  "promised": {
+    "es": "prometió (pasado de promise)",
+    "hu": "megígért (a promise múlt ideje)",
+    "de": "versprach (Vergangenheit von promise)"
+  },
+  "proof": {
+    "es": "prueba",
+    "hu": "bizonyíték",
+    "de": "Beweis"
+  },
+  "proposed": {
+    "es": "propuso (pasado de propose)",
+    "hu": "javasolt (a propose múlt ideje)",
+    "de": "schlug vor (Vergangenheit von propose)"
+  },
+  "protests": {
+    "es": "protestas",
+    "hu": "tiltakozások",
+    "de": "Proteste"
+  },
+  "puebla": {
+    "es": "Puebla (ciudad)",
+    "hu": "Puebla (város)",
+    "de": "Puebla (Stadt)"
+  },
+  "puts": {
+    "es": "pone (él/ella, de put)",
+    "hu": "tesz (ő, a put alakja)",
+    "de": "legt / stellt (er/sie, von put)"
+  },
+  "rained": {
+    "es": "llovió (pasado de rain)",
+    "hu": "esett (az eső) (a rain múlt ideje)",
+    "de": "regnete (Vergangenheit von rain)"
+  },
+  "raining": {
+    "es": "lloviendo (de rain)",
+    "hu": "esik (az eső) (a rain -ing alakja)",
+    "de": "regnend (von rain)"
+  },
+  "rains": {
+    "es": "llueve (de rain)",
+    "hu": "esik (az eső) (a rain alakja)",
+    "de": "regnet (von rain)"
+  },
+  "ran": {
+    "es": "corrió (pasado de run)",
+    "hu": "futott (a run múlt ideje)",
+    "de": "lief (Vergangenheit von run)"
+  },
+  "rapid": {
+    "es": "rápido",
+    "hu": "gyors",
+    "de": "schnell"
+  },
+  "reached": {
+    "es": "alcanzó (pasado de reach)",
+    "hu": "elért (a reach múlt ideje)",
+    "de": "erreichte (Vergangenheit von reach)"
+  },
+  "reads": {
+    "es": "lee (él/ella, de read)",
+    "hu": "olvas (ő, a read alakja)",
+    "de": "liest (er/sie, von read)"
+  },
+  "ready": {
+    "es": "listo / preparado",
+    "hu": "kész / felkészült",
+    "de": "bereit / fertig"
+  },
+  "recommended": {
+    "es": "recomendó (pasado de recommend)",
+    "hu": "ajánlott (a recommend múlt ideje)",
+    "de": "empfahl (Vergangenheit von recommend)"
+  },
+  "refused": {
+    "es": "rechazó / se negó (de refuse)",
+    "hu": "visszautasította (a refuse múlt ideje)",
+    "de": "weigerte sich (Vergangenheit von refuse)"
+  },
+  "remembers": {
+    "es": "recuerda (él/ella, de remember)",
+    "hu": "emlékszik (ő, a remember alakja)",
+    "de": "erinnert sich (er/sie, von remember)"
+  },
+  "repaired": {
+    "es": "reparado (participio de repair)",
+    "hu": "megjavított (a repair igeneve)",
+    "de": "repariert (Partizip von repair)"
+  },
+  "reports": {
+    "es": "informes",
+    "hu": "jelentések",
+    "de": "Berichte"
+  },
+  "rests": {
+    "es": "descansa (él/ella, de rest)",
+    "hu": "pihen (ő, a rest alakja)",
+    "de": "ruht sich aus (er/sie, von rest)"
+  },
+  "results": {
+    "es": "resultados",
+    "hu": "eredmények",
+    "de": "Ergebnisse"
+  },
+  "ride": {
+    "es": "montar / andar (en bici)",
+    "hu": "biciklizik / lovagol",
+    "de": "fahren / reiten"
+  },
+  "rights": {
+    "es": "derechos",
+    "hu": "jogok",
+    "de": "Rechte"
+  },
+  "rooms": {
+    "es": "espacios / lugares (cuartos)",
+    "hu": "helyiségek / termek",
+    "de": "Räume"
+  },
+  "ruled": {
+    "es": "descartó (ruled out, de rule)",
+    "hu": "kizárt (a rule múlt ideje)",
+    "de": "schloss (aus) (von rule)"
+  },
+  "runs": {
+    "es": "corre (él/ella, de run)",
+    "hu": "fut (ő, a run alakja)",
+    "de": "läuft (er/sie, von run)"
+  },
+  "said": {
+    "es": "dijo (pasado de say)",
+    "hu": "mondta (a say múlt ideje)",
+    "de": "sagte (Vergangenheit von say)"
+  },
+  "sales": {
+    "es": "ventas",
+    "hu": "eladások",
+    "de": "Verkäufe"
+  },
+  "sat": {
+    "es": "se sentó (pasado de sit)",
+    "hu": "leült (a sit múlt ideje)",
+    "de": "setzte sich (Vergangenheit von sit)"
+  },
+  "saturdays": {
+    "es": "los sábados",
+    "hu": "szombatonként",
+    "de": "samstags"
+  },
+  "saved": {
+    "es": "salvado / guardado (de save)",
+    "hu": "megmentett (a save igeneve)",
+    "de": "gerettet (Partizip von save)"
+  },
+  "savings": {
+    "es": "ahorros",
+    "hu": "megtakarítások",
+    "de": "Ersparnisse"
+  },
+  "say": {
+    "es": "decir",
+    "hu": "mond",
+    "de": "sagen"
+  },
+  "saying": {
+    "es": "diciendo (de say)",
+    "hu": "mondva (a say -ing alakja)",
+    "de": "sagend (von say)"
+  },
+  "says": {
+    "es": "dice (él/ella, de say)",
+    "hu": "mondja (ő, a say alakja)",
+    "de": "sagt (er/sie, von say)"
+  },
+  "seeing": {
+    "es": "viendo (de see)",
+    "hu": "látva (a see -ing alakja)",
+    "de": "sehend (von see)"
+  },
+  "seen": {
+    "es": "visto (participio de see)",
+    "hu": "látott (a see igeneve)",
+    "de": "gesehen (Partizip von see)"
+  },
+  "sent": {
+    "es": "enviado (participio de send)",
+    "hu": "elküldött (a send igeneve)",
+    "de": "gesendet (Partizip von send)"
+  },
+  "several": {
+    "es": "varios",
+    "hu": "több / számos",
+    "de": "mehrere"
+  },
+  "shes": {
+    "es": "ella es / ella está (she is)",
+    "hu": "ő (nő) van / az (she is)",
+    "de": "sie ist (she is)"
+  },
+  "shocked": {
+    "es": "conmocionado / sorprendido",
+    "hu": "megrökönyödött",
+    "de": "schockiert"
+  },
+  "shoes": {
+    "es": "zapatos",
+    "hu": "cipők",
+    "de": "Schuhe"
+  },
+  "shops": {
+    "es": "tiendas",
+    "hu": "üzletek",
+    "de": "Geschäfte"
+  },
+  "should": {
+    "es": "debería",
+    "hu": "kellene",
+    "de": "sollte"
+  },
+  "shouldnt": {
+    "es": "no debería (should not)",
+    "hu": "nem kellene (should not)",
+    "de": "sollte nicht (should not)"
+  },
+  "shouldve": {
+    "es": "debería haber (should have)",
+    "hu": "kellett volna (should have)",
+    "de": "hätte sollen (should have)"
+  },
+  "shouting": {
+    "es": "gritando (de shout)",
+    "hu": "kiabálva (a shout -ing alakja)",
+    "de": "schreiend (von shout)"
+  },
+  "signed": {
+    "es": "firmado (participio de sign)",
+    "hu": "aláírt (a sign igeneve)",
+    "de": "unterschrieben (Partizip von sign)"
+  },
+  "signs": {
+    "es": "señales",
+    "hu": "jelek",
+    "de": "Zeichen"
+  },
+  "since": {
+    "es": "desde",
+    "hu": "óta / mióta",
+    "de": "seit"
+  },
+  "singing": {
+    "es": "cantando (de sing)",
+    "hu": "éneklő (a sing -ing alakja)",
+    "de": "singend (von sing)"
+  },
+  "sings": {
+    "es": "canta (él/ella, de sing)",
+    "hu": "énekel (ő, a sing alakja)",
+    "de": "singt (er/sie, von sing)"
+  },
+  "singular": {
+    "es": "singular",
+    "hu": "egyes szám",
+    "de": "Singular"
+  },
+  "sisters": {
+    "es": "hermanas",
+    "hu": "nővérek / húgok",
+    "de": "Schwestern"
+  },
+  "sleeping": {
+    "es": "durmiendo (de sleep)",
+    "hu": "alvó (a sleep -ing alakja)",
+    "de": "schlafend (von sleep)"
+  },
+  "sleeps": {
+    "es": "duerme (él/ella, de sleep)",
+    "hu": "alszik (ő, a sleep alakja)",
+    "de": "schläft (er/sie, von sleep)"
+  },
+  "slept": {
+    "es": "durmió (pasado de sleep)",
+    "hu": "aludt (a sleep múlt ideje)",
+    "de": "schlief (Vergangenheit von sleep)"
+  },
+  "slightly": {
+    "es": "ligeramente",
+    "hu": "kissé",
+    "de": "leicht / etwas"
+  },
+  "slowed": {
+    "es": "se desaceleró (de slow)",
+    "hu": "lelassult (a slow múlt ideje)",
+    "de": "verlangsamte sich (von slow)"
+  },
+  "smiled": {
+    "es": "sonrió (pasado de smile)",
+    "hu": "mosolygott (a smile múlt ideje)",
+    "de": "lächelte (Vergangenheit von smile)"
+  },
+  "smiling": {
+    "es": "sonriendo (de smile)",
+    "hu": "mosolyogva (a smile -ing alakja)",
+    "de": "lächelnd (von smile)"
+  },
+  "smoking": {
+    "es": "fumar / el tabaquismo",
+    "hu": "dohányzás",
+    "de": "Rauchen"
+  },
+  "snowed": {
+    "es": "nevó (pasado de snow)",
+    "hu": "havazott (a snow múlt ideje)",
+    "de": "schneite (Vergangenheit von snow)"
+  },
+  "snowing": {
+    "es": "nevando (de snow)",
+    "hu": "havazik (a snow -ing alakja)",
+    "de": "schneit (von snow)"
+  },
+  "snows": {
+    "es": "nieva (de snow)",
+    "hu": "havazik (a snow alakja)",
+    "de": "schneit (von snow)"
+  },
+  "sofa": {
+    "es": "sofá",
+    "hu": "kanapé",
+    "de": "Sofa"
+  },
+  "sold": {
+    "es": "vendido (participio de sell)",
+    "hu": "eladott (a sell igeneve)",
+    "de": "verkauft (Partizip von sell)"
+  },
+  "sons": {
+    "es": "hijos",
+    "hu": "fiúgyermekek (fiai)",
+    "de": "Söhne"
+  },
+  "spain": {
+    "es": "España (país)",
+    "hu": "Spanyolország (ország)",
+    "de": "Spanien (Land)"
+  },
+  "speak": {
+    "es": "hablar",
+    "hu": "beszél",
+    "de": "sprechen"
+  },
+  "speaking": {
+    "es": "hablando (de speak)",
+    "hu": "beszélve (a speak -ing alakja)",
+    "de": "sprechend (von speak)"
+  },
+  "speaks": {
+    "es": "habla (él/ella, de speak)",
+    "hu": "beszél (ő, a speak alakja)",
+    "de": "spricht (er/sie, von speak)"
+  },
+  "spend": {
+    "es": "gastar / pasar (tiempo)",
+    "hu": "költ / tölt (időt)",
+    "de": "ausgeben / verbringen"
+  },
+  "spends": {
+    "es": "pasa / gasta (él/ella, de spend)",
+    "hu": "tölt / költ (ő, a spend alakja)",
+    "de": "verbringt (er/sie, von spend)"
+  },
+  "spoke": {
+    "es": "habló (pasado de speak)",
+    "hu": "beszélt (a speak múlt ideje)",
+    "de": "sprach (Vergangenheit von speak)"
+  },
+  "started": {
+    "es": "empezó (pasado de start)",
+    "hu": "elkezdte (a start múlt ideje)",
+    "de": "begann (Vergangenheit von start)"
+  },
+  "statement": {
+    "es": "afirmación / enunciado",
+    "hu": "kijelentés",
+    "de": "Aussagesatz"
+  },
+  "stayed": {
+    "es": "se quedó (pasado de stay)",
+    "hu": "maradt (a stay múlt ideje)",
+    "de": "blieb (Vergangenheit von stay)"
+  },
+  "stolen": {
+    "es": "robado (participio de steal)",
+    "hu": "ellopott (a steal igeneve)",
+    "de": "gestohlen (Partizip von steal)"
+  },
+  "stood": {
+    "es": "se puso de pie (de stand)",
+    "hu": "állt (a stand múlt ideje)",
+    "de": "stand (Vergangenheit von stand)"
+  },
+  "stops": {
+    "es": "se detiene (él/ella, de stop)",
+    "hu": "megáll (ő, a stop alakja)",
+    "de": "hört auf (er/sie, von stop)"
+  },
+  "stories": {
+    "es": "historias / cuentos",
+    "hu": "történetek",
+    "de": "Geschichten"
+  },
+  "strange": {
+    "es": "extraño",
+    "hu": "furcsa",
+    "de": "seltsam"
+  },
+  "streets": {
+    "es": "calles",
+    "hu": "utcák",
+    "de": "Straßen"
+  },
+  "stuck": {
+    "es": "atorado",
+    "hu": "beragadt",
+    "de": "klemmte / steckte fest"
+  },
+  "students": {
+    "es": "estudiantes",
+    "hu": "diákok",
+    "de": "Studenten"
+  },
+  "studied": {
+    "es": "estudió (pasado de study)",
+    "hu": "tanult (a study múlt ideje)",
+    "de": "studierte (Vergangenheit von study)"
+  },
+  "studies": {
+    "es": "estudia (él/ella, de study)",
+    "hu": "tanul (ő, a study alakja)",
+    "de": "studiert (er/sie, von study)"
+  },
+  "studying": {
+    "es": "estudiando (de study)",
+    "hu": "tanulva (a study -ing alakja)",
+    "de": "studierend (von study)"
+  },
+  "sun": {
+    "es": "sol",
+    "hu": "nap (égitest)",
+    "de": "Sonne"
+  },
+  "sundays": {
+    "es": "los domingos",
+    "hu": "vasárnaponként",
+    "de": "sonntags"
+  },
+  "superlative": {
+    "es": "superlativo",
+    "hu": "felsőfok",
+    "de": "Superlativ"
+  },
+  "supposing": {
+    "es": "suponiendo que",
+    "hu": "feltéve, hogy",
+    "de": "angenommen"
+  },
+  "sure": {
+    "es": "seguro",
+    "hu": "biztos",
+    "de": "sicher"
+  },
+  "swims": {
+    "es": "nada (él/ella, de swim)",
+    "hu": "úszik (ő, a swim alakja)",
+    "de": "schwimmt (er/sie, von swim)"
+  },
+  "swum": {
+    "es": "nadado (participio de swim)",
+    "hu": "úszott (a swim igeneve)",
+    "de": "geschwommen (Partizip von swim)"
+  },
+  "taken": {
+    "es": "tomado (participio de take)",
+    "hu": "vett (a take igeneve)",
+    "de": "genommen (Partizip von take)"
+  },
+  "takes": {
+    "es": "toma / se encarga (de take)",
+    "hu": "vesz / gondoskodik (a take alakja)",
+    "de": "nimmt (er/sie, von take)"
+  },
+  "taking": {
+    "es": "tomando (de take)",
+    "hu": "véve (a take -ing alakja)",
+    "de": "nehmend (von take)"
+  },
+  "talked": {
+    "es": "habló (pasado de talk)",
+    "hu": "beszélt (a talk múlt ideje)",
+    "de": "sprach (Vergangenheit von talk)"
+  },
+  "talks": {
+    "es": "habla (él/ella, de talk)",
+    "hu": "beszél (ő, a talk alakja)",
+    "de": "redet (er/sie, von talk)"
+  },
+  "tall": {
+    "es": "alto",
+    "hu": "magas",
+    "de": "groß"
+  },
+  "taller": {
+    "es": "más alto",
+    "hu": "magasabb",
+    "de": "größer"
+  },
+  "taxes": {
+    "es": "impuestos",
+    "hu": "adók",
+    "de": "Steuern"
+  },
+  "taxis": {
+    "es": "taxis",
+    "hu": "taxik",
+    "de": "Taxis"
+  },
+  "teachers": {
+    "es": "maestros / profesores",
+    "hu": "tanárok",
+    "de": "Lehrer"
+  },
+  "teaches": {
+    "es": "enseña (él/ella, de teach)",
+    "hu": "tanít (ő, a teach alakja)",
+    "de": "unterrichtet (er/sie, von teach)"
+  },
+  "teaching": {
+    "es": "enseñando (de teach)",
+    "hu": "tanítva (a teach -ing alakja)",
+    "de": "unterrichtend (von teach)"
+  },
+  "teeth": {
+    "es": "dientes",
+    "hu": "fogak",
+    "de": "Zähne"
+  },
+  "telling": {
+    "es": "contando (de tell)",
+    "hu": "mesélő (a tell -ing alakja)",
+    "de": "erzählend (von tell)"
+  },
+  "tend": {
+    "es": "tender a / soler",
+    "hu": "hajlamos rá / szokott",
+    "de": "neigen zu"
+  },
+  "tested": {
+    "es": "examinado (participio de test)",
+    "hu": "megvizsgált (a test igeneve)",
+    "de": "getestet (Partizip von test)"
+  },
+  "thank": {
+    "es": "agradecer",
+    "hu": "megköszön",
+    "de": "danken"
+  },
+  "thanked": {
+    "es": "agradeció (pasado de thank)",
+    "hu": "megköszönte (a thank múlt ideje)",
+    "de": "dankte (Vergangenheit von thank)"
+  },
+  "thanks": {
+    "es": "gracias",
+    "hu": "köszönöm / köszi",
+    "de": "danke"
+  },
+  "thats": {
+    "es": "eso es (that is)",
+    "hu": "az az / ez az (that is)",
+    "de": "das ist (that is)"
+  },
+  "their": {
+    "es": "su / sus (de ellos)",
+    "hu": "az ő (többes szám)",
+    "de": "ihr / ihre"
+  },
+  "them": {
+    "es": "los / las / les (ellos)",
+    "hu": "őket / nekik",
+    "de": "sie / ihnen"
+  },
+  "theres": {
+    "es": "hay (there is)",
+    "hu": "van (there is)",
+    "de": "es gibt (there is)"
+  },
+  "these": {
+    "es": "estos / estas",
+    "hu": "ezek",
+    "de": "diese"
+  },
+  "theyd": {
+    "es": "ellos habían / harían (they would)",
+    "hu": "ők (they would / they had)",
+    "de": "sie würden / hatten (they would)"
+  },
+  "thinking": {
+    "es": "pensando (de think)",
+    "hu": "gondolkodva (a think -ing alakja)",
+    "de": "denkend (von think)"
+  },
+  "those": {
+    "es": "esos / esas",
+    "hu": "azok",
+    "de": "jene / diese"
+  },
+  "tickets": {
+    "es": "boletos / entradas",
+    "hu": "jegyek",
+    "de": "Karten / Tickets"
+  },
+  "times": {
+    "es": "veces",
+    "hu": "alkalommal / szor",
+    "de": "Mal"
+  },
+  "toinfinitive": {
+    "es": "infinitivo con to",
+    "hu": "to-s főnévi igenév",
+    "de": "to-Infinitiv"
+  },
+  "told": {
+    "es": "dijo / le dijo (pasado de tell)",
+    "hu": "mondta (a tell múlt ideje)",
+    "de": "sagte / erzählte (von tell)"
+  },
+  "tonight": {
+    "es": "esta noche",
+    "hu": "ma éjjel / ma este",
+    "de": "heute Nacht / heute Abend"
+  },
+  "took": {
+    "es": "tomó / llevó (pasado de take)",
+    "hu": "vitt / vett (a take múlt ideje)",
+    "de": "nahm (Vergangenheit von take)"
+  },
+  "top": {
+    "es": "cima",
+    "hu": "csúcs / tetején",
+    "de": "Gipfel / Spitze"
+  },
+  "touch": {
+    "es": "tocar",
+    "hu": "megérint",
+    "de": "berühren"
+  },
+  "trains": {
+    "es": "trenes",
+    "hu": "vonatok",
+    "de": "Züge"
+  },
+  "traveling": {
+    "es": "viajando (de travel)",
+    "hu": "utazó (a travel -ing alakja)",
+    "de": "reisend (von travel)"
+  },
+  "trouble": {
+    "es": "problemas / apuros",
+    "hu": "baj / gond",
+    "de": "Schwierigkeiten / Ärger"
+  },
+  "trying": {
+    "es": "intentando (de try)",
+    "hu": "próbálva (a try -ing alakja)",
+    "de": "versuchend (von try)"
+  },
+  "turned": {
+    "es": "apagado (turned off, de turn)",
+    "hu": "lekapcsolva (turned off, a turn alakja)",
+    "de": "ausgeschaltet (turned off, von turn)"
+  },
+  "turning": {
+    "es": "girándose (de turn)",
+    "hu": "megfordulva (a turn -ing alakja)",
+    "de": "sich umdrehend (von turn)"
+  },
+  "tv": {
+    "es": "televisión (TV)",
+    "hu": "tévé (TV)",
+    "de": "Fernseher (TV)"
+  },
+  "umbrellas": {
+    "es": "paraguas",
+    "hu": "esernyők",
+    "de": "Regenschirme"
+  },
+  "under": {
+    "es": "bajo / debajo de",
+    "hu": "alatt",
+    "de": "unter"
+  },
+  "until": {
+    "es": "hasta",
+    "hu": "ig / addig, amíg",
+    "de": "bis"
+  },
+  "upset": {
+    "es": "molesto / disgustado",
+    "hu": "ideges / felzaklatott",
+    "de": "verärgert"
+  },
+  "used": {
+    "es": "acostumbrado (used to)",
+    "hu": "hozzászokott (used to)",
+    "de": "gewöhnt (used to)"
+  },
+  "using": {
+    "es": "usando (de use)",
+    "hu": "használva (a use -ing alakja)",
+    "de": "benutzend (von use)"
+  },
+  "visited": {
+    "es": "visitó (pasado de visit)",
+    "hu": "meglátogatott (a visit múlt ideje)",
+    "de": "besuchte (Vergangenheit von visit)"
+  },
+  "wait": {
+    "es": "esperar",
+    "hu": "vár",
+    "de": "warten"
+  },
+  "waited": {
+    "es": "esperó (pasado de wait)",
+    "hu": "várt (a wait múlt ideje)",
+    "de": "wartete (Vergangenheit von wait)"
+  },
+  "wake": {
+    "es": "despertar(se)",
+    "hu": "felébred",
+    "de": "aufwachen"
+  },
+  "waking": {
+    "es": "despertando (de wake)",
+    "hu": "ébredve (a wake -ing alakja)",
+    "de": "aufwachend (von wake)"
+  },
+  "walked": {
+    "es": "caminó (pasado de walk)",
+    "hu": "sétált (a walk múlt ideje)",
+    "de": "ging zu Fuß (von walk)"
+  },
+  "walking": {
+    "es": "caminando (de walk)",
+    "hu": "sétálva (a walk -ing alakja)",
+    "de": "gehend (von walk)"
+  },
+  "walks": {
+    "es": "camina (él/ella, de walk)",
+    "hu": "sétál (ő, a walk alakja)",
+    "de": "geht (er/sie, von walk)"
+  },
+  "want": {
+    "es": "querer",
+    "hu": "akar",
+    "de": "wollen"
+  },
+  "wanted": {
+    "es": "quiso / quería (de want)",
+    "hu": "akarta (a want múlt ideje)",
+    "de": "wollte (Vergangenheit von want)"
+  },
+  "wanting": {
+    "es": "queriendo (de want)",
+    "hu": "akarva (a want -ing alakja)",
+    "de": "wollend (von want)"
+  },
+  "wants": {
+    "es": "quiere (él/ella, de want)",
+    "hu": "akar (ő, a want alakja)",
+    "de": "will (er/sie, von want)"
+  },
+  "warned": {
+    "es": "advertido (participio de warn)",
+    "hu": "figyelmeztetett (a warn igeneve)",
+    "de": "gewarnt (Partizip von warn)"
+  },
+  "was": {
+    "es": "era / estaba / fue (de be)",
+    "hu": "volt / -t (a be múlt ideje)",
+    "de": "war (Vergangenheit von be)"
+  },
+  "washed": {
+    "es": "lavado (participio de wash)",
+    "hu": "megmosott (a wash igeneve)",
+    "de": "gewaschen (Partizip von wash)"
+  },
+  "washes": {
+    "es": "lava (él/ella, de wash)",
+    "hu": "mos (ő, a wash alakja)",
+    "de": "wäscht (er/sie, von wash)"
+  },
+  "washing": {
+    "es": "lavando (de wash)",
+    "hu": "mosva (a wash -ing alakja)",
+    "de": "waschend (von wash)"
+  },
+  "wasnt": {
+    "es": "no era / no estaba (was not)",
+    "hu": "nem volt (was not)",
+    "de": "war nicht (was not)"
+  },
+  "watched": {
+    "es": "vio / miró (pasado de watch)",
+    "hu": "nézett (a watch múlt ideje)",
+    "de": "sah an (Vergangenheit von watch)"
+  },
+  "watches": {
+    "es": "ve / mira (él/ella, de watch)",
+    "hu": "néz (ő, a watch alakja)",
+    "de": "schaut (er/sie, von watch)"
+  },
+  "weekend": {
+    "es": "fin de semana",
+    "hu": "hétvége",
+    "de": "Wochenende"
+  },
+  "went": {
+    "es": "fue (pasado de go)",
+    "hu": "ment (a go múlt ideje)",
+    "de": "ging (Vergangenheit von go)"
+  },
+  "were": {
+    "es": "eran / estaban / fueron (de be)",
+    "hu": "voltak (a be múlt ideje)",
+    "de": "waren (Vergangenheit von be)"
+  },
+  "werent": {
+    "es": "no eran / no estaban (were not)",
+    "hu": "nem voltak (were not)",
+    "de": "waren nicht (were not)"
+  },
+  "whats": {
+    "es": "qué es (what is)",
+    "hu": "mi az (what is)",
+    "de": "was ist (what is)"
+  },
+  "why": {
+    "es": "por qué",
+    "hu": "miért",
+    "de": "warum"
+  },
+  "will": {
+    "es": "futuro (will)",
+    "hu": "fogja (jövő idő)",
+    "de": "werden (Futur)"
+  },
+  "windows": {
+    "es": "ventanas",
+    "hu": "ablakok",
+    "de": "Fenster"
+  },
+  "wins": {
+    "es": "gana (él/ella, de win)",
+    "hu": "nyer (ő, a win alakja)",
+    "de": "gewinnt (er/sie, von win)"
+  },
+  "wish": {
+    "es": "desear / querer",
+    "hu": "kíván / szeretne",
+    "de": "wünschen"
+  },
+  "wishing": {
+    "es": "deseando (de wish)",
+    "hu": "kívánva (a wish -ing alakja)",
+    "de": "wünschend (von wish)"
+  },
+  "women": {
+    "es": "mujeres",
+    "hu": "nők",
+    "de": "Frauen"
+  },
+  "won": {
+    "es": "ganó (pasado de win)",
+    "hu": "nyert (a win múlt ideje)",
+    "de": "gewann (Vergangenheit von win)"
+  },
+  "wondering": {
+    "es": "preguntándose (de wonder)",
+    "hu": "tűnődve (a wonder -ing alakja)",
+    "de": "sich fragend (von wonder)"
+  },
+  "wont": {
+    "es": "no (will not)",
+    "hu": "nem fog (will not)",
+    "de": "werde nicht (will not)"
+  },
+  "words": {
+    "es": "palabras",
+    "hu": "szavak",
+    "de": "Wörter"
+  },
+  "worked": {
+    "es": "funcionó / trabajó (de work)",
+    "hu": "működött (a work múlt ideje)",
+    "de": "funktionierte (von work)"
+  },
+  "works": {
+    "es": "trabaja (él/ella, de work)",
+    "hu": "dolgozik (ő, a work alakja)",
+    "de": "arbeitet (er/sie, von work)"
+  },
+  "worries": {
+    "es": "preocupa (él/ella, de worry)",
+    "hu": "aggaszt (ő, a worry alakja)",
+    "de": "beunruhigt (er/sie, von worry)"
+  },
+  "worrying": {
+    "es": "preocupando(se) (de worry)",
+    "hu": "aggódva (a worry -ing alakja)",
+    "de": "sich sorgend (von worry)"
+  },
+  "writing": {
+    "es": "escribiendo (de write)",
+    "hu": "írva (a write -ing alakja)",
+    "de": "schreibend (von write)"
+  },
+  "written": {
+    "es": "escrito (participio de write)",
+    "hu": "írt (a write igeneve)",
+    "de": "geschrieben (Partizip von write)"
+  },
+  "wrote": {
+    "es": "escribió (pasado de write)",
+    "hu": "írt (a write múlt ideje)",
+    "de": "schrieb (Vergangenheit von write)"
+  },
+  "years": {
+    "es": "años",
+    "hu": "évek",
+    "de": "Jahre"
+  },
+  "youd": {
+    "es": "tú habrías (you would)",
+    "hu": "te (you would / you had)",
+    "de": "du würdest (you would)"
+  },
+  "youre": {
+    "es": "tú eres / estás (you are)",
+    "hu": "te vagy (you are)",
+    "de": "du bist (you are)"
+  }
+}
