@@ -3,14 +3,18 @@ import path from 'path';
 
 // FB726: a gap whose right answer is a number word ("treinta y ___ años") must say which number, as "(31)", in the sentence
 // of the gap; nothing else in the sentence tells it. Checked on every Spanish lesson's opencloze and bank items.
-const DIR = path.join(__dirname, '..', '..', '..', 'data', 'games', 'grammar', 'es');
+const ROOT = path.join(__dirname, '..', '..', '..', 'data', 'games', 'grammar');
+const DIRS = ['es', 'en'].map((lang) => path.join(ROOT, lang));
 const NUM = /^(un|uno|una|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce|trece|catorce|quince|diecis[eé]is|diecisiete|dieciocho|diecinueve|veinte|veinti\p{L}*|treinta|cuarenta|cincuenta|sesenta|setenta|ochenta|noventa|cien|ciento|mil|mill[oó]n|\p{L}*cientos|primer[oa]?|segund[oa]|tercer[oa]?|cuart[oa]|quint[oa]|sext[oa]|s[eé]ptim[oa]|octav[oa]|noven[oa]|d[eé]cim[oa]|\d+)$/iu;
+
+const NUM_EN = /^(one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety|(twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety)-(one|two|three|four|five|six|seven|eight|nine)|hundred|thousand|million|first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|twelfth|twentieth|\d+)$/i;
 
 // items whose number needs no digit cue, with the reason
 const ALLOW: Record<string, string> = {
   'nh-bank-01': 'the choice is the gender form of one (un/una/uno), "amiga" decides it, not a number to guess',
   'nh-bank-02': 'cien/ciento: the next word "veinte" in the sentence shows the number',
   'nh-bank-03': 'primero/primer: the choice is the form of the ordinal, the date is in the sentence ("de mayo")',
+  'ta-bank-04': '"There are" + plural "taxis" rules out "a" and "one", so no digit cue is needed',
 };
 
 type Item = { id?: string; kind?: string; text?: string; es?: string; answers?: string[]; answer?: string };
@@ -25,7 +29,7 @@ function items(): Item[] {
       Object.values(o).forEach(walk);
     }
   };
-  for (const f of fs.readdirSync(DIR)) walk(JSON.parse(fs.readFileSync(path.join(DIR, f), 'utf8')));
+  for (const dir of DIRS) for (const f of fs.readdirSync(dir)) walk(JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8')));
   return out;
 }
 
@@ -37,7 +41,7 @@ describe('number-word gaps carry a digit cue (FB726)', () => {
       const answers = it.kind === 'bank' ? [it.answer ?? ''] : it.answers ?? [];
       const parts = text.split('___');
       answers.forEach((a, i) => {
-        if (!NUM.test(a.trim()) || ALLOW[it.id!]) return;
+        if (!(NUM.test(a.trim()) || NUM_EN.test(a.trim())) || ALLOW[it.id!]) return;
         // the rest of the gap's sentence (up to the next sentence end)
         const after = (parts[i + 1] ?? '').split(/[.!?]/)[0];
         if (!/\(\s*\d[\d:.,]*\s*\)/.test(after) && !/\d/.test(parts[i] ?? '')) bad.push(`${it.id}: "${a}"`);
