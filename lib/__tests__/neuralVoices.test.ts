@@ -258,7 +258,7 @@ describe('the speaker choice of Settings -> Voice', () => {
 
   it('voiceName: the first name of every voice of both engines, as Settings shows it', () => {
     expect([...KOKORO_VOICES.es, ...KOKORO_VOICES.en].map(voiceName)).toEqual(['Dora', 'Alex', 'Heart', 'Michael']);
-    expect([...PIPER_VOICES.es, ...PIPER_VOICES.en, ...PIPER_VOICES.hu].map(voiceName)).toEqual(['Claude', 'Ald', 'Kristin', 'John', 'Berta', 'Imre']);
+    expect([...PIPER_VOICES.es, ...PIPER_VOICES.en, ...PIPER_VOICES.hu].map(voiceName)).toEqual(['Clara', 'Ald', 'Kristin', 'John', 'Berta', 'Imre']);
   });
 });
 

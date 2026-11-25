@@ -162,8 +162,13 @@ export function normalizeSpeakers(raw: Partial<Record<NeuralLang, unknown>> | nu
   return { es: speakerOf(raw?.es), en: speakerOf(raw?.en), hu: speakerOf(raw?.hu), de: speakerOf(raw?.de) };
 }
 
-// The person's first name, for Settings: "ef_dora" -> "Dora", "es_MX-claude-high" -> "Claude".
+// A voice whose model name should not reach the screen gets its own display name.
+const DISPLAY_NAMES: Record<string, string> = { 'es_MX-claude-high': 'Clara' };
+
+// The person's first name, for Settings: "ef_dora" -> "Dora", "es_MX-ald-medium" -> "Ald", "es_MX-claude-high" -> "Clara".
 export function voiceName(voice: NeuralVoice): string {
+  const shown = DISPLAY_NAMES[voice.id];
+  if (shown) return shown;
   const raw = (voice.engine === 'kokoro' ? voice.id.split('_').pop() : voice.id.split('-')[1]) ?? voice.id;
   return raw.charAt(0).toUpperCase() + raw.slice(1);
 }
