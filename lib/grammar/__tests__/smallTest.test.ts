@@ -32,7 +32,7 @@ import {
   type SmallPool,
   type SmallState,
 } from '../smallTest';
-import { TASK_TYPE_IDS } from '../taskTypes';
+import { TASK_TYPE_IDS, type TaskTypeId } from '../taskTypes';
 import { getDb } from '@/lib/database.web';
 
 // A small sample set: 8 topics (core first), every topic has 4 task types with 4 questions each.
@@ -342,17 +342,20 @@ describe('small test: the miss log', () => {
     expect(typo.log[cur.topic]).toEqual([1]);
   });
 
-  it('the miss comes back as the topic base question, and two right answers in two later rounds close it', () => {
+  it('the miss comes back as a sibling (same topic and type, another question) as the topic base question, and two right answers in two later rounds close it', () => {
     const r1 = play(begin(2, newSmallState(), T5), (n) => n !== 0);
     const miss = firstWrong(r1);
     expect(r1.gaps[miss.qid]).toEqual({ topic: miss.topic, right: 0, round: 1 });
     const r2 = play(next(r1, 5), () => true);
-    expect(r2.run!.answers.find((a) => a.topic === miss.topic)!.qid).toBe(miss.qid);
-    expect(r2.run!.answers.find((a) => a.topic === miss.topic)!.role).toBe('base');
+    const a2 = r2.run!.answers.find((a) => a.topic === miss.topic)!;
+    expect(a2.qid).not.toBe(miss.qid);
+    expect(a2).toMatchObject({ type: miss.type, role: 'base', gap: miss.qid });
     expect(r2.gaps[miss.qid]).toEqual({ topic: miss.topic, right: 1, round: 2 });
     expect(r2.fixed).toBe(0);
     const r3 = play(next(r2, 9), () => true);
-    expect(r3.run!.answers.find((a) => a.topic === miss.topic)!.qid).toBe(miss.qid);
+    const a3 = r3.run!.answers.find((a) => a.topic === miss.topic)!;
+    expect(a3.qid).not.toBe(miss.qid);
+    expect(a3).toMatchObject({ type: miss.type, gap: miss.qid });
     expect(r3.gaps[miss.qid]).toBeUndefined();
     expect(r3.fixed).toBe(1);
     expect(gapCount(r3)).toBe(0);
@@ -367,7 +370,7 @@ describe('small test: the miss log', () => {
     const miss = firstWrong(r1);
     const r2 = play(next(r1, 5), () => true);
     expect(r2.gaps[miss.qid].right).toBe(1);
-    const r3 = play(next(r2, 9), (n, c) => c.qid !== miss.qid);
+    const r3 = play(next(r2, 9), (n, c) => c.gap !== miss.qid && c.qid !== miss.qid);
     expect(r3.gaps[miss.qid]).toEqual({ topic: miss.topic, right: 0, round: 3 });
     expect(r3.fixed).toBe(0);
   });
@@ -636,14 +639,50 @@ describe('small test: review fixes', () => {
     }
   });
 
-  it('a miss-log question is the base question even when it is in `recent` and the type rotation would give another', () => {
+  it('a miss-log question is asked first as a base question (as its sibling of the same type) even when it is in `recent` and the type rotation would give another', () => {
     const gapType = TYPES.find((ty) => !HARD_TYPES.includes(ty)) ?? TYPES[0];
     const qid = `t1:${gapType}:2`;
     const st: SmallState = { ...newSmallState(), rounds: 1, learned: ['t1'], seen: ['t1'], recent: [qid], gaps: { [qid]: { topic: 't1', right: 0, round: 1 } } };
     for (let seed = 1; seed <= 6; seed++) {
       const s = begin(seed, st, [{ id: 't1', core: true }]);
-      expect(s.run!.current).toMatchObject({ qid, role: 'base' });
+      expect(s.run!.current).toMatchObject({ type: gapType, role: 'base', gap: qid });
+      expect(s.run!.current!.qid).not.toBe(qid);
     }
+  });
+
+  it('a topic with only the missed question of that type asks the missed question itself', () => {
+    const one: SmallPool = (topic) => [{ id: `${topic}:form:1`, type: 'form' }, ...[1, 2].map((n) => ({ id: `${topic}:choice:${n}`, type: TYPES[0] }))];
+    const st: SmallState = { ...newSmallState(), rounds: 1, seen: ['t1'], gaps: { 't1:form:1': { topic: 't1', right: 0, round: 1 } } };
+    const s = beginRound(startRound(st, [{ id: 't1', core: true }], one, 3), one);
+    expect(s.run!.current).toMatchObject({ qid: 't1:form:1', role: 'base' });
+    expect(s.run!.current!.gap).toBeUndefined();
+  });
+
+  it('a learner who always misses one form question never gets the same question twice in a row while a sibling is left', () => {
+    const forms: SmallPool = (topic) => [1, 2, 3, 4].map((n) => ({ id: `${topic}:form:${n}`, type: 'form' as TaskTypeId }));
+    const topics = [{ id: 't1', core: true }];
+    const target = 't1:form:1';
+    let st: SmallState = newSmallState();
+    const asked: string[] = [];
+    const firsts: { qid: string; gap?: string }[] = [];
+    for (let round = 0; round < 5; round++) {
+      let s = beginRound(startRound({ ...st, run: null }, topics, forms, 20 + round), forms);
+      firsts.push(s.run!.current!);
+      // the learner misses the target question or its stand-in, everything else is right
+      let guard = 0;
+      while (s.run && s.run.phase === 'ask' && guard++ < 40) {
+        const c = s.run.current!;
+        asked.push(c.qid);
+        s = resolveAnswer(s, forms, !(c.qid === target || c.gap === target));
+      }
+      st = s;
+    }
+    expect(asked.length).toBeGreaterThan(0);
+    for (let i = 1; i < asked.length; i++) expect(asked[i]).not.toBe(asked[i - 1]);
+    // from round 2 the open miss opens the round as a sibling, never as the missed question itself
+    expect(firsts).toHaveLength(5);
+    for (const f of firsts.slice(1)) expect(f).toMatchObject({ gap: target });
+    for (const f of firsts.slice(1)) expect(f.qid).not.toBe(target);
   });
 
   it('a stopped topic: the practice has the wrong quick-check answer after the last miss, extras skip the quick-check questions', () => {
