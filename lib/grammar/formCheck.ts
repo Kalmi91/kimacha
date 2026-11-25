@@ -3,15 +3,43 @@ import { tableCellsForLesson } from './tableDeck';
 import { isConjugationTable } from './tableShape';
 
 export const FORM_CHECK_TOPICS = ['indefinido-irregular'] as const;
+const FORM_CHECK_TOPICS_BY_LANG: Record<string, readonly string[]> = {
+  es: FORM_CHECK_TOPICS,
+  en: ['past_simple_irregular', 'past-simple-irregular'],
+};
 
 export function formCheckEnabled(topicId: string, learnedLang: string): boolean {
-  return learnedLang === 'es' && FORM_CHECK_TOPICS.some((id) => id === topicId);
+  return (FORM_CHECK_TOPICS_BY_LANG[learnedLang] ?? []).includes(topicId);
 }
 
 const PERSONS = new Set(['yo', 'tú', 'él/ella/usted', 'nosotros', 'ellos/ellas/ustedes']);
 
-export function formCheckCells(lesson: GrammarTopicData | null | undefined) {
+// English lesson tables: [verb, past] rows, or the `be` table's [person, form] rows.
+function englishFormCheckCells(lesson: GrammarTopicData) {
+  const cells: { id: string; person: string; verb: string; answer: string }[] = [];
+  const seen = new Set<string>();
+  lesson.body.forEach((block, index) => {
+    if (block.kind !== 'table' || block.header.length !== 2) return;
+    const first = block.header[0].en;
+    const second = block.header[1].en;
+    if (first !== 'Verb' && first !== 'Person') return;
+    for (const row of block.rows) {
+      const [left, right] = row.map((cell) => String(cell ?? '').trim());
+      if (!left || !right) continue;
+      const verb = first === 'Verb' ? left : second;
+      const person = first === 'Verb' ? second : left;
+      const id = `${block.id ?? index}::${person}::${verb}`.toLowerCase();
+      if (seen.has(id)) continue;
+      seen.add(id);
+      cells.push({ id, person, verb, answer: right });
+    }
+  });
+  return cells;
+}
+
+export function formCheckCells(lesson: GrammarTopicData | null | undefined, learnedLang = 'es') {
   if (!lesson) return [];
+  if (learnedLang === 'en') return englishFormCheckCells(lesson);
   // Filter tables before extraction so a reference table cannot shadow a conjugation cell.
   return tableCellsForLesson({
     ...lesson,

@@ -63,7 +63,7 @@ export default function FormCheckScreen() {
     const { target } = await refresh(['direction', 'strictAccents']);
     const db = getDb();
     const levelData = await db.getLevel();
-    const items = formCheckEnabled(topicId, target) ? formCheckCells(lessonFor(target, topicId)) : [];
+    const items = formCheckEnabled(topicId, target) ? formCheckCells(lessonFor(target, topicId), target) : [];
     const rows = await db.getGameProgress(GRAMMAR_PROGRESS_KEY);
     const saved = parseFormCheckState(rows.find((row) => row.itemId === formCheckProgressKey(topicId))?.data, items);
     const next = saved.phase === 'practiceEnd' || (saved.phase === 'checkEnd' && saved.wrong.length === 0) ? freshFormCheckState(items) : saved;

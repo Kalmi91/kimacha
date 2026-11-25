@@ -73,26 +73,26 @@ export default function GrammarRoundEnd({ topicId, learnedLang = 'es', score, pr
     >
       <View>{note}</View>
       {progress}
-      {topicId && formCheckEnabled(topicId, learnedLang) ? <FormCheckCard topicId={topicId} /> : null}
+      {topicId && formCheckEnabled(topicId, learnedLang) ? <FormCheckCard topicId={topicId} learnedLang={learnedLang} /> : null}
     </GrammarResult>
   );
 }
 
-function FormCheckCard({ topicId }: { topicId: string }) {
+function FormCheckCard({ topicId, learnedLang }: { topicId: string; learnedLang: string }) {
   const router = useRouter();
   const { theme } = useTheme();
   const colors = Colors[theme];
   const labels = t().grammar.formCheck;
   const [saved, setSaved] = useState<FormCheckState | null>(null);
-  const cells = formCheckCells(lessonFor('es', topicId));
+  const cells = formCheckCells(lessonFor(learnedLang, topicId), learnedLang);
   useFocusEffect(useCallback(() => {
     let active = true;
     void getDb().getGameProgress(GRAMMAR_PROGRESS_KEY).then((rows) => {
-      const state = parseFormCheckState(rows.find((row) => row.itemId === formCheckProgressKey(topicId))?.data, formCheckCells(lessonFor('es', topicId)));
+      const state = parseFormCheckState(rows.find((row) => row.itemId === formCheckProgressKey(topicId))?.data, formCheckCells(lessonFor(learnedLang, topicId), learnedLang));
       if (active) setSaved(state);
     }).catch(() => {});
     return () => { active = false; };
-  }, [topicId]));
+  }, [topicId, learnedLang]));
   // a check left mid-way and an unpractised wrong list both resume on tap, so the card says so
   const left = !saved ? null : saved.phase === 'practice' ? saved.queue.length
     : saved.phase === 'check' && (saved.index > 0 || saved.result) ? saved.order.length - saved.index : null;

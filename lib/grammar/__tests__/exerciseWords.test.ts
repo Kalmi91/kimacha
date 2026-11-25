@@ -73,7 +73,7 @@ describe('exerciseWords', () => {
 describe('exercise words content gate', () => {
   const root = path.join(__dirname, '..', '..', '..', 'data', 'games', 'grammar');
   // Ratchet for en/de/hu: lower these as the form glosses (data/games/grammar-forms/*.json) are filled.
-  const MAX_UNRESOLVED: Record<string, number> = { en: 1777, de: 729, hu: 3649 };
+  const MAX_UNRESOLVED: Record<string, number> = { en: 43, de: 729, hu: 3649 };
 
   function unresolved(lang: string): Record<string, string[]> {
     const out: Record<string, string[]> = {};

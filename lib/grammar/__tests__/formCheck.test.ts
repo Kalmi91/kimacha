@@ -19,6 +19,21 @@ describe('verb form check', () => {
     expect(formCheckEnabled('ser-estar', 'es')).toBe(false);
   });
 
+  it('enables the English irregular past only for English learners', () => {
+    expect(formCheckEnabled('past_simple_irregular', 'en')).toBe(true);
+    expect(formCheckEnabled('past-simple-irregular', 'en')).toBe(true);
+    expect(formCheckEnabled('past-simple-irregular', 'es')).toBe(false);
+    expect(formCheckEnabled('indefinido-irregular', 'en')).toBe(false);
+  });
+
+  it('extracts 25 English cells: 20 verb pairs and the 5 be forms', () => {
+    const en = formCheckCells(lessonFor('en', 'past_simple_irregular'), 'en');
+    expect(en).toHaveLength(25);
+    expect(new Set(en.map((cell) => cell.id)).size).toBe(25);
+    expect(en[0]).toMatchObject({ verb: 'go', person: 'past', answer: 'went' });
+    expect(en).toContainEqual(expect.objectContaining({ verb: 'be', person: 'I', answer: 'was' }));
+  });
+
   it('extracts exactly 11 verbs × 5 persons in table order, never vosotros', () => {
     expect(cells).toHaveLength(55);
     expect(new Set(ids).size).toBe(55);
