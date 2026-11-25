@@ -62,6 +62,8 @@ export interface SmallCur {
   qid: string;
   type: TaskTypeId;
   role: SmallRole;
+  /** The open miss this sibling question stands for: its answer closes (or renews) that miss. */
+  gap?: string;
 }
 
 export interface SmallAnswer extends SmallCur {
@@ -364,13 +366,25 @@ function pickQuestion(
 ): SmallCur | null {
   const all = pool(topic);
   const used = new Set([...run.answers.map((a) => a.qid), ...taken]);
-  // a base question of a topic with an open miss: the missed question comes again (the oldest first), before any other rule
+  // a base question of a topic with an open miss: the miss is asked again (the oldest first), before any other rule, but as a
+  // sibling (another question of the topic with the same task type, the one asked longest ago); the missed question itself
+  // only when the topic has no other of that type. A right answer to the sibling closes the miss (`gap` names it).
   if (role === 'base') {
     const open = all.filter((q) => !used.has(q.id) && st.gaps[q.id]?.topic === topic && st.gaps[q.id].round < run.round);
     if (open.length > 0) {
       const q = shuffleArray(open, run.seed * 13 + salt)
         .map((m, i) => ({ m, i, round: st.gaps[m.id].round }))
         .sort((a, b) => a.round - b.round || a.i - b.i)[0].m;
+      const sibs = all.filter((s) => s.type === q.type && s.id !== q.id && !used.has(s.id));
+      const calm = sibs.filter((s) => !st.gaps[s.id]);
+      const pickFrom = calm.length > 0 ? calm : sibs;
+      if (pickFrom.length > 0) {
+        const age = (id: string) => st.recent.lastIndexOf(id);
+        const s = shuffleArray(pickFrom, run.seed * 7 + salt)
+          .map((m, i) => ({ m, i, age: age(m.id) }))
+          .sort((a, b) => a.age - b.age || a.i - b.i)[0].m;
+        return { topic, qid: s.id, type: s.type, role, gap: q.id };
+      }
       return { topic, qid: q.id, type: q.type, role };
     }
   }
@@ -453,13 +467,14 @@ function addGap(gaps: Record<string, SmallGap>, cur: SmallCur, round: number): R
 function record(st: SmallState, run: SmallRun, cur: SmallCur, ok: boolean): SmallState {
   let gaps = { ...st.gaps };
   let fixed = st.fixed;
-  const g = gaps[cur.qid];
-  if (!ok) gaps = addGap(gaps, cur, run.round);
+  const key = cur.gap && gaps[cur.gap] ? cur.gap : cur.qid;
+  const g = gaps[key];
+  if (!ok) gaps = addGap(gaps, { ...cur, qid: key }, run.round);
   else if (g && g.round < run.round) {
     if (g.right + 1 >= GAP_RIGHT) {
-      delete gaps[cur.qid];
+      delete gaps[key];
       fixed += 1;
-    } else gaps[cur.qid] = { ...g, right: g.right + 1, round: run.round };
+    } else gaps[key] = { ...g, right: g.right + 1, round: run.round };
   }
   const log = { ...st.log, [cur.topic]: [...(st.log[cur.topic] ?? []), ok ? 1 : 0].slice(-TOPIC_LOG) };
   return { ...st, gaps, fixed, log };

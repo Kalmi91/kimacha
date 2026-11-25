@@ -1242,14 +1242,14 @@
       "id": "nh-cloze-02",
       "kind": "opencloze",
       "trial": true,
-      "text": "Tengo veintiún ___ de edad. Mi hermano tiene treinta y ___ años.",
+      "text": "Tengo veintiún ___ de edad. Mi hermano tiene treinta y ___ años (31).",
       "answers": [
         "años",
         "un"
       ],
       "tr": {
         "en": "I am twenty-one years old. My brother is thirty-one years old.",
-        "es": "Tengo veintiún años de edad. Mi hermano tiene treinta y un años."
+        "es": "Tengo veintiún años de edad. Mi hermano tiene treinta y un años (31)."
       },
       "why": {
         "en": "Uno shortens to un before a masculine noun: veintiún años, treinta y un años.",
