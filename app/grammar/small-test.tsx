@@ -16,7 +16,7 @@ import { GRAMMAR_RANDOM_KEY, appendEvidence, evidenceFromRows, type TopicEvidenc
 import { questionsOf, type RoundData } from '@/lib/grammar/randomRoundView';
 import {
   MINI_CHECK_SIZE,
-  SMALL_TEST_SIZE,
+  LONG_TEST_SIZE,
   abandonRound,
   beginRound,
   closeRound,
@@ -34,6 +34,7 @@ import {
   resolveAnswer,
   roundRight,
   roundRows,
+  runSize,
   saveSmallState,
   startDrill,
   startRound,
@@ -57,7 +58,7 @@ import { DockSlotProvider, useDockSlot } from '@/components/learn/DockSlot';
 import { FAB_CLEARANCE } from '@/components/learn/DockedAction';
 import ScreenFeedback from '@/lib/screenFeedback';
 
-// The grammar Small test ("A1 test" .. "C1 test", route /grammar/small-test?level=a1 .. c1): 10 adaptive questions per round, the level's
+// The grammar Small test ("A1 test" .. "C1 test", route /grammar/small-test?level=a1 .. c1): 10 or 20 adaptive questions per round, the level's
 // topics (core first), the engine and the saved run are lib/grammar/smallTest.ts. Screens: the round start (topic list with
 // new / repeat), the questions (the level test's question cards; the four typed kinds use the drill components), the stop
 // after a topic's repeated misses (lesson, then a 3-question check), the end of the round. Every wrong answer has an "I
@@ -245,6 +246,7 @@ function SmallTestLevel() {
   if (!data || !view || !st || !st.run) return waiting();
 
   const run = st.run;
+  const size = runSize(run);
   const pair = `${data.contentLang}→${data.learnedLang}`;
   const titleOf = (id: string) => {
     const tp = data.topics.find((x) => x.id === id);
@@ -254,13 +256,13 @@ function SmallTestLevel() {
 
   const headerText =
     run.phase === 'ask'
-      ? s.header(level, run.answers.length + 1, SMALL_TEST_SIZE)
+      ? s.header(level, run.answers.length + 1, size)
       : run.phase === 'mini'
         ? s.miniHeader((run.mini?.answers.length ?? 0) + 1, MINI_CHECK_SIZE)
         : run.phase === 'drill'
           ? s.drillHeader(level, (run.drill?.i ?? 0) + 1, run.drill?.list.length ?? 0)
           : run.phase === 'stop' || run.phase === 'lesson'
-            ? s.header(level, run.answers.length, SMALL_TEST_SIZE)
+            ? s.header(level, run.answers.length, size)
             : s.headerRound(level, run.round);
   const headerFor = (part: string) => (
     <View style={styles.header}>
@@ -271,7 +273,7 @@ function SmallTestLevel() {
       <ScreenFeedback placement="inline" level={data.userLevel} languagePair={pair} currentCard={`grammar-small-test:${level}:${part}`} />
     </View>
   );
-  const progressPct = run.phase === 'drill' ? ((run.drill?.i ?? 0) / Math.max(1, run.drill?.list.length ?? 1)) * 100 : run.phase === 'end' || run.phase === 'intro' ? (run.phase === 'end' ? 100 : 0) : (run.answers.length / SMALL_TEST_SIZE) * 100;
+  const progressPct = run.phase === 'drill' ? ((run.drill?.i ?? 0) / Math.max(1, run.drill?.list.length ?? 1)) * 100 : run.phase === 'end' || run.phase === 'intro' ? (run.phase === 'end' ? 100 : 0) : (run.answers.length / size) * 100;
   const progress = (
     <ProgressBar
       testID="small-test-progress"
@@ -320,7 +322,7 @@ function SmallTestLevel() {
         {headerFor('intro')}
         {progress}
         <ScrollView testID="small-test-intro" contentContainerStyle={styles.body}>
-          <Text testID="small-test-intro-title" style={[styles.title, { color: colors.text }]}>{s.introTitle(SMALL_TEST_SIZE)}</Text>
+          <Text testID="small-test-intro-title" style={[styles.title, { color: colors.text }]}>{s.introTitle}</Text>
           {isLevelDone(st, view.coreIds) ? <Text testID="small-test-intro-review" style={[styles.note, { color: colors.textMuted }]}>{s.introReview}</Text> : null}
           <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
             <Text style={[styles.rowsTitle, { color: colors.textMuted }]}>{s.introTopics}</Text>
@@ -338,6 +340,7 @@ function SmallTestLevel() {
           </Card>
           <Text style={[styles.note, { color: colors.textMuted }]}>{s.introNote}</Text>
           <ExamButton testID="small-test-start" label={s.start} onPress={() => commit(beginRound(st, view.pool))} />
+          <ExamButton testID="small-test-start-long" label={s.startLong} onPress={() => commit(beginRound(st, view.pool, LONG_TEST_SIZE))} />
         </ScrollView>
       </View>,
     );
@@ -363,7 +366,7 @@ function SmallTestLevel() {
             <Text style={[styles.step, { color: colors.text }]}>✅ {s.stepCheck(MINI_CHECK_SIZE)}</Text>
           </Card>
           <Text testID="small-test-stop-then" style={[styles.note, { color: colors.textMuted }]}>
-            {run.answers.length >= SMALL_TEST_SIZE ? s.stopThenEnd : s.stopThen(run.answers.length + 1)}
+            {run.answers.length >= size ? s.stopThenEnd : s.stopThen(run.answers.length + 1)}
           </Text>
           <ExamButton
             testID="small-test-stop-open"
@@ -530,7 +533,7 @@ function SmallTestLevel() {
       <View
         testID={run.phase === 'drill' ? 'small-test-drill' : 'small-test-question'}
         style={styles.flex}
-        accessibilityLabel={run.phase === 'drill' ? headerText : s.progressLabel(run.answers.length + 1, SMALL_TEST_SIZE)}
+        accessibilityLabel={run.phase === 'drill' ? headerText : s.progressLabel(run.answers.length + 1, size)}
       >
         <DockSlotProvider host={dock}>
           {found.q ? (
