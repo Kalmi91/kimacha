@@ -1,10 +1,12 @@
-// The web gate's guest mode: a first visit plays at once, a later one meets the welcome screen, the save offer comes after
+// The web gate's guest mode: a first visit sees the how-to video, a later one meets the welcome screen, the save offer comes after
 // five graded cards, and a guest who signs in keeps the cards. Mock pattern: lib/cloud/__tests__/sync.test.ts.
-import { act, fireEvent, render, screen } from '@testing-library/react-native';
+import { act, fireEvent, render, renderHook, screen } from '@testing-library/react-native';
 import { Text } from 'react-native';
 
 import CloudGate from '@/components/cloud/CloudGate';
-import { GUEST_OFFER_AFTER, OFFER_DONE_KEY, VISITED_KEY, noteCardGraded, requestCloudSignIn, resetGuestStateForTests } from '@/lib/cloud/guest';
+import HowtoIntro from '@/components/cloud/HowtoIntro';
+import { GUEST_OFFER_AFTER, OFFER_DONE_KEY, VISITED_KEY, noteCardGraded, requestCloudSignIn, resetGuestStateForTests, useIsCloudGuest } from '@/lib/cloud/guest';
+import * as howto from '@/lib/cloud/howto';
 import { SESSION_KEY, loadSession } from '@/lib/cloud/session';
 import { makeFlush } from '@/test-utils/flush';
 import { UI_LANG_KEY, rememberedLanguage, setLanguage } from '@/lib/i18n';
@@ -110,7 +112,8 @@ describe('CloudGate: the lesson packs', () => {
 
     await act(async () => done());
     await flush();
-    expect(screen.getByTestId('app')).toBeTruthy();
+    expect(screen.getByTestId('howto-screen')).toBeTruthy();
+    expect(screen.queryByTestId('app')).toBeNull();
     expect(store.map.has(VISITED_KEY)).toBe(true);
   });
 
@@ -128,28 +131,75 @@ describe('CloudGate: the lesson packs', () => {
     });
     await flush();
     expect(mockPrefetch).toHaveBeenCalledTimes(2);
+    expect(screen.getByTestId('howto-screen')).toBeTruthy();
+    fireEvent.press(screen.getByTestId('howto-skip'));
     expect(screen.getByTestId('app')).toBeTruthy();
   });
 });
 
 describe('CloudGate: the first visit', () => {
-  it('shows the app at once, with no sign-in screen, and remembers the visit', async () => {
+  it('shows the how-to video first, remembers the visit, and Skip opens the app as a guest', async () => {
     const store = memoryStorage();
+    const guest = renderHook(useIsCloudGuest);
     gate();
     await flush();
-    expect(screen.getByTestId('app')).toBeTruthy();
+    expect(screen.getByTestId('howto-screen')).toBeTruthy();
+    expect(screen.queryByTestId('app')).toBeNull();
+    expect(guest.result.current).toBe(false);
     expect(screen.queryByTestId('cloud-login')).toBeNull();
     expect(screen.queryByTestId('cloud-welcome')).toBeNull();
     expect(store.map.has(VISITED_KEY)).toBe(true);
+    fireEvent.press(screen.getByTestId('howto-skip'));
+    expect(screen.getByTestId('app')).toBeTruthy();
+    expect(screen.queryByTestId('howto-screen')).toBeNull();
+    expect(guest.result.current).toBe(true);
     // a guest: no restore, no sync
     expect(mockGetProgress).not.toHaveBeenCalled();
     expect(mockStartSync).not.toHaveBeenCalled();
+  });
+
+  it('the video ending opens the app as a guest', async () => {
+    memoryStorage();
+    const guest = renderHook(useIsCloudGuest);
+    gate();
+    await flush();
+    fireEvent(screen.root.findByType('video'), 'ended');
+    expect(screen.getByTestId('app')).toBeTruthy();
+    expect(screen.queryByTestId('howto-screen')).toBeNull();
+    expect(guest.result.current).toBe(true);
+    expect(mockGetProgress).not.toHaveBeenCalled();
+    expect(mockStartSync).not.toHaveBeenCalled();
+  });
+
+  it('Sign in on the how-to screen opens the welcome screen, not the app', async () => {
+    memoryStorage();
+    const guest = renderHook(useIsCloudGuest);
+    gate();
+    await flush();
+    fireEvent.press(screen.getByTestId('howto-signin'));
+    expect(screen.getByTestId('cloud-welcome')).toBeTruthy();
+    expect(screen.queryByTestId('howto-screen')).toBeNull();
+    expect(screen.queryByTestId('app')).toBeNull();
+    expect(guest.result.current).toBe(false);
+  });
+
+  it('reloading during the video goes to the returning visitor welcome screen', async () => {
+    memoryStorage();
+    const first = gate();
+    await flush();
+    expect(screen.getByTestId('howto-screen')).toBeTruthy();
+    first.unmount();
+    gate();
+    await flush();
+    expect(screen.getByTestId('cloud-welcome')).toBeTruthy();
+    expect(screen.queryByTestId('howto-screen')).toBeNull();
   });
 
   it('offers the save after five graded cards; No explains the Settings route and the offer never comes back', async () => {
     const store = memoryStorage();
     gate();
     await flush();
+    fireEvent.press(screen.getByTestId('howto-skip'));
     await gradeCards(GUEST_OFFER_AFTER - 1);
     expect(screen.queryByText('Save your progress?')).toBeNull();
 
@@ -170,6 +220,7 @@ describe('CloudGate: the first visit', () => {
     memoryStorage();
     gate();
     await flush();
+    fireEvent.press(screen.getByTestId('howto-skip'));
     await gradeCards(GUEST_OFFER_AFTER);
 
     fireEvent.press(screen.getByTestId('cloud-ask-yes'));
@@ -184,6 +235,7 @@ describe('CloudGate: the first visit', () => {
     memoryStorage();
     gate();
     await flush();
+    fireEvent.press(screen.getByTestId('howto-skip'));
     act(() => requestCloudSignIn());
     expect(screen.getByTestId('cloud-welcome')).toBeTruthy();
     expect(screen.getByText('Cancel')).toBeTruthy();
@@ -191,6 +243,53 @@ describe('CloudGate: the first visit', () => {
     fireEvent.press(screen.getByTestId('cloud-welcome-third'));
     expect(screen.queryByTestId('cloud-welcome')).toBeNull();
     expect(screen.getByTestId('app')).toBeTruthy();
+  });
+});
+
+describe('HowtoIntro', () => {
+  afterEach(() => {
+    jest.restoreAllMocks();
+    setLanguage('en');
+  });
+
+  it.each([false, true])('starts only on Play and keeps controls after a rejected play: %s', async (reject) => {
+    const play = jest.fn(() => reject ? Promise.reject(new Error('blocked')) : Promise.resolve());
+    const pause = jest.fn();
+    const onDone = jest.fn();
+    const intro = render(<HowtoIntro onDone={onDone} onSignIn={jest.fn()} />, {
+      createNodeMock: (element) => element.type === 'video' ? { play, pause } : null,
+    });
+    expect(play).not.toHaveBeenCalled();
+    expect(screen.root.findByType('video').props.controls).toBe(false);
+    fireEvent.press(screen.getByTestId('howto-play'));
+    await flush();
+    expect(play).toHaveBeenCalledTimes(1);
+    expect(screen.root.findByType('video').props.controls).toBe(true);
+    expect(screen.queryByTestId('howto-play')).toBeNull();
+    expect(screen.getByText(en.cloud.howtoContinue)).toBeTruthy();
+    fireEvent.press(screen.getByTestId('howto-skip'));
+    expect(onDone).toHaveBeenCalledTimes(1);
+    intro.unmount();
+    expect(pause).toHaveBeenCalledTimes(1);
+  });
+
+  it('a failed video keeps Skip available', () => {
+    const onDone = jest.fn();
+    render(<HowtoIntro onDone={onDone} onSignIn={jest.fn()} />);
+    fireEvent(screen.root.findByType('video'), 'error');
+    expect(screen.getByText(en.cloud.howtoFailed)).toBeTruthy();
+    fireEvent.press(screen.getByTestId('howto-skip'));
+    expect(onDone).toHaveBeenCalledTimes(1);
+  });
+
+  it('uses the browser language for the video and labels, without changing the UI language', () => {
+    jest.spyOn(howto, 'browserLanguage').mockReturnValue('es-MX');
+    setLanguage('hu');
+    render(<HowtoIntro onDone={jest.fn()} onSignIn={jest.fn()} />);
+    expect(screen.getByText('Cómo empezar con Kimacha')).toBeTruthy();
+    expect(screen.root.findByType('video').props.src).toBe(`${howto.HOWTO_BASE}howto-es.mp4`);
+    expect(screen.root.findAllByType('track')).toHaveLength(0);
+    expect(screen.queryByText(hu.cloud.howtoTitle)).toBeNull();
   });
 });
 
@@ -203,6 +302,7 @@ describe('CloudGate: a returning visitor without a saved sign-in', () => {
     expect(screen.getByTestId('cloud-welcome-signin')).toBeTruthy();
     expect(screen.getByTestId('cloud-welcome-create')).toBeTruthy();
     expect(screen.getByText('Skip')).toBeTruthy();
+    expect(screen.queryByTestId('howto-screen')).toBeNull();
     expect(screen.queryByTestId('app')).toBeNull();
   });
 
@@ -250,6 +350,7 @@ describe('CloudGate: a saved session', () => {
     gate();
     await flush();
     expect(mockGetProgress).toHaveBeenCalledWith('tok');
+    expect(screen.queryByTestId('howto-screen')).toBeNull();
     expect(mockStartSync).toHaveBeenCalledWith('tok', 'snap', expect.any(Function), 2);
     expect(screen.getByTestId('app')).toBeTruthy();
     expect(screen.queryByTestId('cloud-welcome')).toBeNull();
@@ -263,6 +364,7 @@ describe('CloudGate: a saved session', () => {
     gate();
     await flush();
     expect(screen.getByTestId('cloud-welcome')).toBeTruthy();
+    expect(screen.queryByTestId('howto-screen')).toBeNull();
   });
 });
 
@@ -270,6 +372,7 @@ describe('CloudGate: a guest signs in', () => {
   async function toCreateForm() {
     gate();
     await flush();
+    fireEvent.press(screen.getByTestId('howto-skip'));
     await gradeCards(GUEST_OFFER_AFTER);
     fireEvent.press(screen.getByTestId('cloud-ask-yes'));
   }

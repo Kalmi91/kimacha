@@ -2,6 +2,11 @@ import type en from '../en/cloud';
 
 const es: typeof en = {
   cloud: {
+    howtoTitle: 'Cómo empezar con Kimacha',
+    howtoPlay: 'Reproducir',
+    howtoSkip: 'Omitir',
+    howtoContinue: 'Ir a la app',
+    howtoFailed: 'No se pudo cargar el video. Puedes omitirlo.',
     signinTitle: 'Iniciar sesión',
     signinHint: 'Escribe el nombre y el PIN de 4 dígitos con los que creaste tu cuenta.',
     signinSubmit: 'Entrar',

@@ -2,6 +2,11 @@
 // (CloudWelcome.tsx, CloudGate.tsx) and the progress loading around them.
 export default {
   cloud: {
+    howtoTitle: 'How to start with Kimacha',
+    howtoPlay: 'Play',
+    howtoSkip: 'Skip',
+    howtoContinue: 'Go to the app',
+    howtoFailed: 'The video could not load. You can skip it.',
     signinTitle: 'Sign in',
     signinHint: 'Enter the name and the 4-digit PIN you created your account with.',
     signinSubmit: 'Sign in',

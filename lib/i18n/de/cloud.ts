@@ -2,6 +2,11 @@ import type en from '../en/cloud';
 
 const de: typeof en = {
   cloud: {
+    howtoTitle: 'So startest du mit Kimacha',
+    howtoPlay: 'Abspielen',
+    howtoSkip: 'Überspringen',
+    howtoContinue: 'Zur App',
+    howtoFailed: 'Das Video konnte nicht geladen werden. Du kannst es überspringen.',
     signinTitle: 'Anmelden',
     signinHint: 'Gib den Namen und die 4-stellige PIN ein, mit denen du dein Konto angelegt hast.',
     signinSubmit: 'Anmelden',
