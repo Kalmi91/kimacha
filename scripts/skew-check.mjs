@@ -357,6 +357,14 @@ async function runWorker(pairs, ctx) {
 async function enterCourse(page, pair, ctx) {
   const [src, tgt] = pair.split('-');
   await page.open(`${ctx.url}/`);
+  // a first visit opens the how-to video before the onboarding (components/cloud/HowtoIntro.tsx, since #177); older
+  // bundles go straight to the onboarding, so wait for either, after the pack prefetch of the gate
+  await page.poll(`!!document.querySelector('[data-testid="howto-skip"], [data-testid="onboarding-lang-${src}"]')`, 60000);
+  const skip = await page.find({ testId: 'howto-skip' }, 0);
+  if (skip) {
+    await page.click(skip);
+    await page.settle();
+  }
   const steps = [`onboarding-lang-${src}`, `onboarding-target-${tgt}`, 'onboarding-start', 'onboarding-intro-start', 'onboarding-theme-next', 'level-row-A1'];
   for (const [i, testId] of steps.entries()) {
     // the first step waits for the pack prefetch of the gate (components/cloud/CloudGate.tsx)
