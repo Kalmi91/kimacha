@@ -495,8 +495,9 @@ function SmallTestLevel() {
         <View style={styles.flex}>
           {headerFor(part)}
           {progress}
-          {!result.ok ? <View style={styles.mistypedBar}>{mistypedButton}</View> : null}
           <LevelTestFeedback
+            onAccept={() => settle(true, true)}
+            acceptTestID="small-test-mistyped"
             q={found.q}
             topicTitle={titleOf(cur.topic)}
             ok={result.ok}
@@ -514,10 +515,9 @@ function SmallTestLevel() {
         <ScrollView testID="small-test-miss" contentContainerStyle={styles.body}>
           <Text style={[styles.title, { color: colors.text }]}>{s.missTitle}</Text>
           <Text style={[styles.line, { color: colors.textMuted }]}>{titleOf(cur.topic)}</Text>
-          {result.given ? (
+          {found.item ? <ItemAnswer item={found.item} contentLang={data.contentLang as never} given={result.given} /> : result.given ? (
             <Text testID="small-test-miss-given" style={[styles.line, { color: colors.danger }]}>{`${t().levelTest.youTyped}: ${result.given}`}</Text>
           ) : null}
-          {found.item ? <ItemAnswer item={found.item} contentLang={data.contentLang as never} /> : null}
           {mistypedButton}
           <ExamButton testID="small-test-miss-next" label={s.next} onPress={() => settle(false)} />
           <ExamButton testID="small-test-miss-lesson" secondary label={t().levelTest.openLesson} onPress={() => router.push(`/grammar/${cur.topic}` as never)} />
@@ -591,7 +591,6 @@ const styles = StyleSheet.create({
   misses: { fontSize: fontSize.md, fontWeight: fontWeight.bold, textAlign: 'center' },
   topicHead: { fontSize: fontSize.lg, fontWeight: fontWeight.bold, textAlign: 'center' },
   step: { fontSize: fontSize.md },
-  mistypedBar: { paddingHorizontal: spacing.lg, paddingTop: spacing.sm },
   chart: { flexDirection: 'row', alignItems: 'flex-end', gap: spacing.sm, minHeight: 90 },
   barCol: { alignItems: 'center', justifyContent: 'flex-end', gap: 2 },
   bar: { width: 22, borderRadius: radius.xs },

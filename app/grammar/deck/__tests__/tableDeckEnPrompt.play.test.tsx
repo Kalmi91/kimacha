@@ -71,7 +71,7 @@ describe('table-deck screen: enPrompt', () => {
     fireEvent.changeText(screen.getByTestId('tabledeck-input'), first.answer);
     fireEvent.press(screen.getByText('✓ Check'));
     await flush();
-    expect(screen.getByText('✓ Correct')).toBeTruthy();
+    expect(screen.getByText('Correct')).toBeTruthy();
     expect(screen.getByText(first.answer)).toBeTruthy();
   });
 });

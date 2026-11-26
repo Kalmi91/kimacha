@@ -1,6 +1,6 @@
 // FB641: after the check the item's `why` stands under the correct answer in the success colour, right or wrong.
 
-import { render, screen, within } from '@testing-library/react-native';
+import { fireEvent, render, screen, within } from '@testing-library/react-native';
 import { StyleSheet, Text } from 'react-native';
 
 import LevelTestFeedback from '@/components/grammar/LevelTestFeedback';
@@ -58,6 +58,30 @@ describe('the reason under the correct answer (FB641)', () => {
     screen.unmount();
     show(q, false);
     expect(screen.queryByTestId('level-test-feedback-why')).toBeNull();
+  });
+});
+
+describe('Accept as correct (FB732)', () => {
+  it('a wrong answer with onAccept shows the button above Next, and pressing it calls onAccept', () => {
+    const onAccept = jest.fn();
+    render(
+      <ThemeProvider>
+        <LevelTestFeedback q={od01()} topicTitle="Direct object" ok={false} given="La" onNext={jest.fn()} onRule={jest.fn()} onAccept={onAccept} />
+      </ThemeProvider>
+    );
+    fireEvent.press(screen.getByTestId('level-test-accept'));
+    expect(onAccept).toHaveBeenCalledTimes(1);
+  });
+  it('a right answer, or a screen without onAccept, has no such button', () => {
+    const { unmount } = render(
+      <ThemeProvider>
+        <LevelTestFeedback q={od01()} topicTitle="Direct object" ok onNext={jest.fn()} onRule={jest.fn()} onAccept={jest.fn()} />
+      </ThemeProvider>
+    );
+    expect(screen.queryByTestId('level-test-accept')).toBeNull();
+    unmount();
+    show(od01(), false);
+    expect(screen.queryByTestId('level-test-accept')).toBeNull();
   });
 });
 

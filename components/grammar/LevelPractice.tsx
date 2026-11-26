@@ -124,6 +124,15 @@ export default function LevelPractice({
     setIndex(index + 1);
   };
 
+  // "Accept as correct": a typo the learner owns up to counts as right, is not listed under Mistakes and does not come back
+  const accept = () => {
+    if (!cur || !result || result.ok) return;
+    setMisses((m) => m.slice(0, -1));
+    setRight((n) => n + 1);
+    setResult(null);
+    setIndex(index + 1);
+  };
+
   const header = (
     <View style={styles.header}>
       <Pressable testID="level-practice-close" accessibilityRole="button" accessibilityLabel={s.leave} hitSlop={12} onPress={onExit}>
@@ -187,7 +196,7 @@ export default function LevelPractice({
     );
   } else if (result && cur) {
     body = (
-      <LevelTestFeedback q={cur.q} topicTitle={topicTitle} ok={result.ok} given={result.given} onNext={next} onRule={onRule} />
+      <LevelTestFeedback q={cur.q} topicTitle={topicTitle} ok={result.ok} given={result.given} onNext={next} onRule={onRule} onAccept={accept} acceptTestID="level-practice-accept" />
     );
   } else if (cur) {
     body = (

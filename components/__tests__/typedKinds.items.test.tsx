@@ -66,6 +66,17 @@ describe.each([
     expect(onDone).toHaveBeenCalledWith(false, undefined, expect.any(String));
   });
 
+  it('open cloze: a wrong answer gets the shared centered badge and the letter comparison of the whole sentence (FB735, FB745)', () => {
+    render(<ClozeDrillItem item={CLOZE} learnedLang="es" contentLang="en" strictAccents onDone={onDone} />);
+    fireEvent.changeText(screen.getByTestId('cloze-input-0'), 'soy');
+    fireEvent.changeText(screen.getByTestId('cloze-input-1'), 'tengo');
+    fireEvent.changeText(screen.getByTestId('cloze-input-2'), 'es');
+    fireEvent.press(screen.getByTestId('cloze-check'));
+    expect(screen.getByText('Not quite!')).toBeTruthy();
+    expect(screen.getByTestId('answer-compare-typed')).toHaveTextContent('Me llamo Ana. soy de México y tengo 25 años. Mi casa es cerca del centro.');
+    expect(screen.getByTestId('answer-compare-correct')).toHaveTextContent('Me llamo Ana. soy de México y tengo 25 años. Mi casa está cerca del centro.');
+  });
+
   it('open cloze: Enter moves to the next empty gap (keyboard stays), on the last one it checks', () => {
     const focus = jest.spyOn(TextInput.prototype as unknown as { focus: () => void }, 'focus').mockImplementation(() => {});
     render(<ClozeDrillItem item={CLOZE} learnedLang="es" contentLang="en" strictAccents onDone={onDone} />);

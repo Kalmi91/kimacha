@@ -456,15 +456,15 @@ describe.each(['brand', 'classic'] as const)('grammar level test (%s palette)', 
       expect(q.view).toMatchObject({ card: 'type' });
     });
 
-    it("a typed mistake: 'You typed' and the right answer have the differing words marked, the item's own text, the table with the asked cell", async () => {
+    it("a typed mistake: your answer and the right answer have the differing LETTERS marked (as under a word card), the item's own text, the table with the asked cell", async () => {
       mockParams = { level: 'B1' };
       await open();
       const { q } = formOnScreen();
       await typeIn('los gustan');
-      expect(screen.getByTestId('level-test-feedback-given')).toHaveTextContent('You typed: los gustan');
-      expect(flat('level-test-feedback-answer')).toBe(q.review.answer);
-      // the differing word is struck in what was typed and bold in the right answer; the other word is plain
-      const given = screen.getByTestId('level-test-feedback-given');
+      expect(flat('answer-compare-typed')).toBe('los gustan');
+      expect(flat('answer-compare-correct')).toBe(q.review.answer);
+      // the wrong letters are struck in what was typed, the missing ones underlined in the right answer
+      const given = screen.getByTestId('answer-compare-typed');
       const struck = given.findAll((n) => n.props.style?.textDecorationLine === 'line-through' && n.props.children !== undefined);
       expect(struck.length).toBeGreaterThan(0);
       expect(screen.getByTestId('level-test-feedback-typed')).toHaveTextContent('Los is a direct object pronoun.');
@@ -736,6 +736,22 @@ describe.each(['brand', 'classic'] as const)('grammar level test (%s palette)', 
         await press('level-test-next');
       }
       expect(new Set(seen).size).toBe(3);
+    });
+
+    it('Practice: "Accept as correct" counts a typo as right (no retry, no Mistakes row), the main test card has no such button (FB732)', async () => {
+      await typeWrongForm();
+      expect(screen.queryByTestId('level-practice-accept')).toBeNull();
+      await press('level-test-practice');
+      fireEvent.changeText(screen.getByTestId('exam-input'), 'zzz');
+      await press('exam-check');
+      await press('level-practice-accept');
+      expect(text('level-practice-header')).toBe('Practice · 2/8');
+      for (let i = 0; i < 30 && !screen.queryByTestId('level-practice-end'); i++) {
+        await press('exam-dont-know');
+        await press('level-test-next');
+      }
+      // 8 tasks + the 7 missed ones that come back once; only the accepted one counted as right
+      expect(text('level-practice-end')).toBe('1/15');
     });
 
     it('a wrong task comes back once, the total grows by one; the end says "x of N right" and Back to the test returns', async () => {

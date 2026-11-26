@@ -7,7 +7,9 @@ import { t } from '@/lib/i18n';
 import { useTheme } from '@/lib/ThemeContext';
 import type { LessonTestQuestion } from '@/lib/grammar/lessonTest';
 import { diffWords, type ResultTable } from '@/lib/grammar/resultDetail';
+import AnswerCompare from '@/components/grammar/AnswerCompare';
 import { Card } from '@/components/grammar/Brutal';
+import { useGrammarColors } from '@/lib/grammarColors';
 import ResultBadge from '@/components/ResultBadge';
 import ExamButton from '@/components/exam/ExamButton';
 import { FAB_CLEARANCE } from '@/components/learn/DockedAction';
@@ -26,6 +28,8 @@ export default function LevelTestFeedback({
   onRule,
   practiceCount = 0,
   onPractice,
+  onAccept,
+  acceptTestID = 'level-test-accept',
 }: {
   q: LessonTestQuestion;
   topicTitle: string;
@@ -37,9 +41,13 @@ export default function LevelTestFeedback({
   /** The test's wrong-answer card: "Practice this · N" below Next (the Practice run itself passes none). */
   practiceCount?: number;
   onPractice?: () => void;
+  /** "Accept as correct" above Next after a wrong answer: the learner owns up to a typo, the answer counts as right. */
+  onAccept?: () => void;
+  acceptTestID?: string;
 }) {
   const { theme } = useTheme();
   const colors = Colors[theme];
+  const g = useGrammarColors();
   const s = t().randomRound;
   const l = t().levelTest;
   const [whyNotOpen, setWhyNotOpen] = useState(false);
@@ -47,7 +55,9 @@ export default function LevelTestFeedback({
   const card = q.view.card;
   const marks = card === 'type' || card === 'tiles';
   const diff = !ok && marks && given !== undefined && q.review.answer !== '' ? diffWords(given, q.review.answer) : null;
-  const givenLabel = card === 'type' ? l.youTyped : card === 'tiles' ? l.youBuilt : l.youChose;
+  // a typed answer: the wrong letters are marked, as under a word card (a tiles answer keeps the word marks)
+  const letterDiff = !ok && card === 'type' && given !== undefined && given.trim() !== '' && q.review.answer !== '';
+  const givenLabel =card === 'type' ? l.youTyped : card === 'tiles' ? l.youBuilt : l.youChose;
   const hasWhyNot = !!d?.whyNot && d.whyNot.length > 0;
   // after a wrong typed answer: its own text, or which other form it is, else the rule before the table
   const typedText = !ok && card === 'type' ? (given !== undefined ? d?.explainTyped?.(given) : null) || (d?.table ? undefined : d?.rule) : undefined;
@@ -102,13 +112,16 @@ export default function LevelTestFeedback({
               {q.review.question}
             </Text>
           )}
-          {!ok && given !== undefined && given !== '' ? (
+          {letterDiff ? (
+            <AnswerCompare typed={given ?? ''} correct={q.review.answer} g={g} />
+          ) : null}
+          {!letterDiff && !ok && given !== undefined && given !== '' ? (
             <Text testID="level-test-feedback-given" style={[styles.line, { color: colors.text }]}>
               {`${givenLabel}: `}
               {diff ? words(diff.typed, true) : <Text style={{ color: colors.danger, textDecorationLine: 'line-through' }}>{given}</Text>}
             </Text>
           ) : null}
-          {q.review.answer !== '' && (ok ? !d?.filled : true) ? (
+          {!letterDiff && q.review.answer !== '' && (ok ? !d?.filled : true) ? (
             <>
               <Text style={[styles.label, { color: colors.textMuted, textAlign: 'center' }]}>{t().exam.correctAnswer}</Text>
               <Text testID="level-test-feedback-answer" style={[styles.answer, { color: colors.success }]}>
@@ -145,6 +158,7 @@ export default function LevelTestFeedback({
         </Card>
       </ScrollView>
       <View style={styles.buttons}>
+        {!ok && onAccept ? <ExamButton testID={acceptTestID} secondary label={t().smallTest.acceptRight} onPress={onAccept} /> : null}
         <ExamButton testID="level-test-next" label={s.next} onPress={onNext} />
         {!ok && onPractice && practiceCount > 0 ? (
           <ExamButton testID="level-test-practice" secondary label={l.practiceButton(practiceCount)} onPress={onPractice} />
