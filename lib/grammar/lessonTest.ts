@@ -371,5 +371,18 @@ export function buildLessonTest(lesson: GrammarTopicData, opts: BuildLessonTestO
 
 /** How many questions the lesson's test has (for the line under the button): `LESSON_TEST_SIZE`, or fewer if the lesson has fewer items. */
 export function lessonTestSize(lesson: GrammarTopicData, learnedLang: string, contentLang: string): number {
-  return buildLessonTest(lesson, { seed: 1, learnedLang, contentLang }).length;
+  // the lesson screen asks on every render, and building the test walks every item (30-100 ms for articulos-genero on the emulator)
+  let byLangs = testSizeCache.get(lesson);
+  if (!byLangs) {
+    byLangs = new Map();
+    testSizeCache.set(lesson, byLangs);
+  }
+  const key = `${learnedLang}/${contentLang}`;
+  let size = byLangs.get(key);
+  if (size === undefined) {
+    size = buildLessonTest(lesson, { seed: 1, learnedLang, contentLang }).length;
+    byLangs.set(key, size);
+  }
+  return size;
 }
+const testSizeCache = new WeakMap<GrammarTopicData, Map<string, number>>();

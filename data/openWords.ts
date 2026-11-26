@@ -112,37 +112,76 @@ export function getOpenWordsUpToLevel(level: Level): OpenWord[] {
 const FORM_ARTICLE = /^(el|la|los|las|un|una|unos|unas)\s+/;
 const FORM_DEPS = { conjugate, TENSES, esPlural, esFeminine };
 
-let formIndex: Map<string, OpenWord> | null = null;
+// Accents dropped (NFD, combining marks removed). On Hermes (Android) `normalize` goes through the platform, about 15 µs a call
+// on the emulator, and the index folds every form (141K): that took seconds at the app's first gloss lookup (a grammar lesson
+// opening). So the Spanish letters fold from a table, an ASCII string is left as it is, and only another character is normalized.
+const FOLD: Record<string, string> = {
+  á: 'a', à: 'a', â: 'a', ä: 'a', é: 'e', è: 'e', ê: 'e', ë: 'e', í: 'i', ì: 'i', î: 'i', ï: 'i',
+  ó: 'o', ò: 'o', ô: 'o', ö: 'o', ú: 'u', ù: 'u', û: 'u', ü: 'u', ñ: 'n', ç: 'c',
+};
+const NON_ASCII = /[\u0080-\u{10ffff}]/u;
+const NON_ASCII_ALL = /[\u0080-\u{10ffff}]/gu;
+const foldChar = (c: string) => FOLD[c] ?? c.normalize('NFD').replace(/[̀-ͯ]/g, '');
+export const foldAccents = (s: string): string => (NON_ASCII.test(s) ? s.replace(NON_ASCII_ALL, foldChar) : s);
+
+// The index grows a slice of cards at a time, in card order, only as far as a lookup needs, so the first card still wins. The
+// worked examples of a lesson mostly hit an A1 card: a lesson opening indexes a few hundred cards, not all 4683 (141K forms, about
+// 0.8 s on the emulator). A form no card has, and the pronoun lookup, still index every card.
+const SLICE = 256;
+const formIndex = new Map<string, OpenWord>();
+let indexedCards = 0;
 let foldedIndex: Map<string, OpenWord> | null = null;
 
-const foldAccents = (s: string) => s.normalize('NFD').replace(/[̀-ͯ]/g, '');
-
-function buildFormIndex(): Map<string, OpenWord> {
-  const index = new Map<string, OpenWord>();
-  const folded = new Map<string, OpenWord>();
+function indexNextSlice(cards: readonly OpenWord[]): void {
   const add = (form: string | null, card: OpenWord) => {
     const key = form?.trim().toLowerCase();
     // The first card wins, so the lower level owns a form shared by several cards.
-    if (key && !index.has(key)) index.set(key, card);
-    if (key && !folded.has(foldAccents(key))) folded.set(foldAccents(key), card);
+    if (key && !formIndex.has(key)) formIndex.set(key, card);
   };
-  for (const card of getOpenWords()) {
+  const end = Math.min(indexedCards + SLICE, cards.length);
+  for (let i = indexedCards; i < end; i++) {
+    const card = cards[i];
     for (const f of formsOfCard(card.es, card.openPos, FORM_DEPS)) add(f, card);
     // the pronoun written onto the verb has to be cut off the infinitive too (verlo): the head word also goes into the accent-free index
     if (card.openPos === 'verb') for (const alt of card.es.split(' / ')) add(alt, card);
   }
-  foldedIndex = folded;
-  return index;
+  indexedCards = end;
+}
+
+/** The card of an indexed form; indexes further slices until it is found or every card is in. */
+function lookupForm(key: string): OpenWord | undefined {
+  const cards = getOpenWords();
+  for (;;) {
+    const hit = formIndex.get(key);
+    if (hit || indexedCards >= cards.length) return hit;
+    indexNextSlice(cards);
+  }
+}
+
+// The accent-free index of the pronoun lookup (verlo, ayúdame), built from the form index on the first such lookup: a gloss
+// lookup mostly ends before it. Walking the index in insertion order keeps the first card of every folded key, as before.
+function getFoldedIndex(index: Map<string, OpenWord>): Map<string, OpenWord> {
+  if (!foldedIndex) {
+    foldedIndex = new Map();
+    for (const [key, card] of index) {
+      const fold = foldAccents(key);
+      if (!foldedIndex.has(fold)) foldedIndex.set(fold, card);
+    }
+  }
+  return foldedIndex;
 }
 
 /** The words-open card of an inflected, plural or gendered form (the caller has already looked up the base form); Spanish only. */
 export function findOpenWordByForm(norm: string): OpenWord | undefined {
-  if (!formIndex) formIndex = buildFormIndex();
-  const direct = formIndex.get(norm) ?? formIndex.get(norm.replace(FORM_ARTICLE, ''));
+  // a miss of the first lookup has indexed every card, so the second one and the pronoun lookup see the whole index
+  const direct = lookupForm(norm) ?? lookupForm(norm.replace(FORM_ARTICLE, ''));
   if (direct) return direct;
   // verlo, ayúdame, repetirlo: the base verb form without the pronoun (looked up without accents)
-  for (const base of encliticBases(norm)) {
-    const hit = foldedIndex?.get(foldAccents(base));
+  const bases = encliticBases(norm);
+  if (bases.length === 0) return undefined;
+  const folded = getFoldedIndex(formIndex);
+  for (const base of bases) {
+    const hit = folded.get(foldAccents(base));
     if (hit && hit.openPos === 'verb') return hit;
   }
   return undefined;

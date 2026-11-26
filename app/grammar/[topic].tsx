@@ -8,7 +8,7 @@ import { t } from '@/lib/i18n';
 import { normalizeWordToken } from '@/data/words';
 import { cumulativeCorpusWordIds, grammarKindCounts, type GrammarGapItem, type GrammarItem } from '@/lib/games/content';
 import { buildGlossMap } from '@/lib/games/gloss';
-import { exerciseWords } from '@/lib/grammar/exerciseWords';
+import { exerciseWordCount, exerciseWords, type ExerciseWord } from '@/lib/grammar/exerciseWords';
 import { formGlosses } from '@/lib/grammar/formGlosses';
 import type { ContentLang } from '@/lib/grammar/lessonTypes';
 import { syllabusTopic } from '@/lib/grammar/syllabus';
@@ -95,9 +95,11 @@ const ExerciseWordGroup = memo(function ExerciseWordGroup({
   );
 });
 
+const NO_WORDS: readonly ExerciseWord[] = [];
+
 function ExerciseWordsSection({
   count,
-  words,
+  getWords,
   label,
   accentText,
   textColor,
@@ -108,7 +110,7 @@ function ExerciseWordsSection({
   overrides,
 }: {
   count: number;
-  words: string[];
+  getWords: () => readonly ExerciseWord[];
   label: string;
   accentText: string;
   textColor: string;
@@ -120,18 +122,21 @@ function ExerciseWordsSection({
 }) {
   const [open, setOpen] = useState(false);
   const [shown, setShown] = useState(1);
-  const text = useMemo(() => words.join(', '), [words]);
+  // Only while open: articulos-genero lists 4K words, and the section starts closed (the list is cached).
+  const words = open ? getWords() : NO_WORDS;
+  const text = useMemo(() => (open ? words.map((w) => w.display).join(', ') : ''), [open, words]);
   const groups = useMemo(() => {
+    if (!open) return [];
     const out: string[][] = [];
     let prev = '';
-    for (const w of words) {
+    for (const { display: w } of words) {
       const key = w.normalize('NFD').replace(/\p{M}/gu, '').charAt(0).toLowerCase();
       if (out.length === 0 || key !== prev) out.push([]);
       out[out.length - 1].push(w);
       prev = key;
     }
     return out.map((grp) => grp.join(', '));
-  }, [words]);
+  }, [open, words]);
   const glosses = useMemo(
     () => (open ? buildGlossMap(text, { learnedLang, nativeLang: contentLang, knownWordIds: knownIds, overrides }) : undefined),
     [open, text, learnedLang, contentLang, knownIds, overrides],
@@ -262,7 +267,8 @@ function GrammarLessonPhases({ topic }: { topic: ReturnType<typeof useGrammarTop
       filled: item.sentence.replace('___', item.options[item.correct]),
       why: item.why[contentLang] ?? item.why.en,
     }));
-  const exerciseWordList = exerciseWords(lesson, learnedLang, worked.map((w) => w.filled));
+  const shownTexts = worked.map((w) => w.filled);
+  const exerciseWordTotal = exerciseWordCount(lesson, learnedLang, shownTexts);
 
   // on the brutalist palette the back button sits in a box, the title is uppercase, the level is a sticker.
   const header = g.brutal ? (
@@ -437,11 +443,11 @@ function GrammarLessonPhases({ topic }: { topic: ReturnType<typeof useGrammarTop
           </Card>
         ))}
 
-        {exerciseWordList.length > 0 ? (
+        {exerciseWordTotal > 0 ? (
           <>
             <ExerciseWordsSection
-              count={exerciseWordList.length}
-              words={exerciseWordList.map((w) => w.display)}
+              count={exerciseWordTotal}
+              getWords={() => exerciseWords(lesson, learnedLang, shownTexts)}
               label={s.grammar.exerciseWordsLabel}
               accentText={accentText}
               textColor={colors.text}

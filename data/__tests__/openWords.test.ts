@@ -1,5 +1,8 @@
 // The WordEntry-shaped view of words-open (data/openWords.ts).
-import { getOpenWordsForLevel, getOpenWordsUpToLevel, getOpenWords, openLevelOf } from '../openWords';
+import { esFeminine, esPlural } from '@/lib/esInflect';
+import { formsOfCard } from '@/lib/esForms';
+import { conjugate, TENSES } from '@/lib/games/conjugate';
+import { findOpenWordByForm, foldAccents, getOpenWordsForLevel, getOpenWordsUpToLevel, getOpenWords, openLevelOf } from '../openWords';
 
 describe('data/openWords.ts', () => {
   it('4683 cards, unique id (= order), A1-C1 512-1379-1620-892-280', () => {
@@ -38,5 +41,31 @@ describe('data/openWords.ts', () => {
     expect(getOpenWordsUpToLevel('B2')).toHaveLength(4403);
     expect(getOpenWordsUpToLevel('C1')).toHaveLength(4683);
     expect(getOpenWordsUpToLevel('C2')).toHaveLength(4683);
+  });
+
+  it('foldAccents is NFD without combining marks, for every form the index folds (the table only skips normalize)', () => {
+    const nfd = (x: string) => x.normalize('NFD').replace(/[̀-ͯ]/g, ''); // the fold before the table
+    const deps = { conjugate, TENSES, esPlural, esFeminine };
+    const forms = getOpenWords().flatMap((c) => [...formsOfCard(c.es, c.openPos, deps), c.es]).map((f) => f.trim().toLowerCase());
+    expect(forms.length).toBeGreaterThan(100000);
+    expect(forms.filter((f) => foldAccents(f) !== nfd(f))).toEqual([]);
+    expect(['ayúdame', 'pingüino', 'año', 'ÉL', 'café', 'ångström', 'plain'].map(foldAccents)).toEqual(['ayudame', 'pinguino', 'ano', 'EL', 'cafe', 'angstrom', 'plain']);
+  });
+
+  it('the form index grown slice by slice answers as the whole index: the first card of a form wins, a miss is a miss', () => {
+    const deps = { conjugate, TENSES, esPlural, esFeminine };
+    const whole = new Map<string, number>();
+    for (const c of getOpenWords()) {
+      const forms = [...formsOfCard(c.es, c.openPos, deps), ...(c.openPos === 'verb' ? c.es.split(' / ') : [])];
+      for (const f of forms) {
+        const key = f.trim().toLowerCase();
+        if (key && !whole.has(key)) whole.set(key, c.id);
+      }
+    }
+    const keys = [...whole.keys()];
+    // an early form first (only the first slice is indexed), then forms of every level, a miss, a form with an article
+    const sample = [keys[3], ...keys.filter((_, i) => i % 499 === 0), keys[keys.length - 1], 'zzzqx', `el ${keys[7]}`];
+    expect(sample.map((k) => findOpenWordByForm(k)?.id)).toEqual(sample.map((k) => whole.get(k.replace(/^el /, ''))));
+    expect(findOpenWordByForm('verlo')?.es).toBe('ver');
   });
 });

@@ -228,7 +228,13 @@ export function isTransformItem(item: GrammarItem): item is TransformItem {
 // items marked `set: 'article'`, on their own button, not among the sentence exercises.
 export type GrammarKind = 'choice' | 'article' | 'match' | 'form' | 'why' | 'transform' | 'spot' | 'order' | 'dictation' | 'write' | 'opencloze' | 'fix' | 'bank' | 'noun';
 
+// Lessons are cached app-wide (getGrammarTopic), so the counts are computed once per lesson: the lesson screen asks on every
+// render, and articulos-genero (2740 items) took 20-30 ms each time on the emulator. Shared between calls: do not mutate.
+const kindCountsCache = new WeakMap<GrammarTopicData, Record<GrammarKind, number>>();
+
 export function grammarKindCounts(topic: GrammarTopicData): Record<GrammarKind, number> {
+  const cached = kindCountsCache.get(topic);
+  if (cached) return cached;
   const counts: Record<GrammarKind, number> = { choice: 0, article: 0, match: 0, form: 0, why: 0, transform: 0, spot: 0, order: 0, dictation: 0, write: 0, opencloze: 0, fix: 0, bank: 0, noun: 0 };
   // the button label counts the round the learner actually plays, so a
   // vosotros item dropped from buildGrammarRound (lib/games/grammarChoice.ts)
@@ -250,6 +256,7 @@ export function grammarKindCounts(topic: GrammarTopicData): Record<GrammarKind, 
     else if (isArticleSetItem(item)) counts.article++;
     else counts.choice++;
   }
+  kindCountsCache.set(topic, counts);
   return counts;
 }
 
