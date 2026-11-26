@@ -15,6 +15,15 @@ describe('expo-speech Android patch (FB529)', () => {
     expect(moduleSource).toContain('_textToSpeech?.shutdown()');
   });
 
+  it('stop() clears pending speech but calls the engine outside the module lock (no ANR at launch)', () => {
+    const stop = moduleSource.slice(moduleSource.indexOf('AsyncFunction<Unit>("stop")'));
+    const body = stop.slice(0, stop.indexOf('\n    }\n') + 6);
+    expect(body).toContain('delayedUtterances.clear()');
+    expect(body).toContain('tts?.stop()');
+    expect(body).not.toContain('textToSpeech.stop()');
+    expect(body.indexOf('tts?.stop()')).toBeGreaterThan(body.indexOf('\n      }\n'));
+  });
+
   it('Gradle builds expo-speech from the patched source, not from the prebuilt AAR', () => {
     const pkg = JSON.parse(readFileSync(join(__dirname, '../../package.json'), 'utf8'));
     expect(pkg.expo.autolinking.android.buildFromSource).toContain('expo-speech');

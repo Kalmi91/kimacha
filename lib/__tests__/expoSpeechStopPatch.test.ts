@@ -20,8 +20,9 @@ it('stops utterances queued before Android TTS initialization, with an idempoten
       return readFileSync(native, 'utf8');
     };
     const patched = run();
-    // Initialization drains this queue under the same lock, so a stop cannot race that drain.
-    expect(patched).toMatch(/AsyncFunction<Unit>\("stop"\)\s*\{\s*synchronized\(this@SpeechModule\)\s*\{\s*delayedUtterances\.clear\(\)\s*textToSpeech\.stop\(\)/);
+    // Initialization drains this queue under the same lock, so a stop cannot race that drain; the
+    // engine's own stop runs after the lock is released, or it deadlocks with onInit (ANR).
+    expect(patched).toMatch(/AsyncFunction<Unit>\("stop"\)\s*\{\s*val tts = synchronized\(this@SpeechModule\)\s*\{\s*delayedUtterances\.clear\(\)\s*_textToSpeech\s*\}\s*tts\?\.stop\(\)/);
     expect(run()).toBe(patched);
   } finally {
     if (!resolve(fixture).startsWith(`${resolve(__dirname)}${sep}`)) throw new Error('Unexpected fixture path');
