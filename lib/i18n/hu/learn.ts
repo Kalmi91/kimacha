@@ -288,7 +288,7 @@ const hu: typeof en = {
     greetTeaser: "Két barát arról beszél, hogyan mondják a spanyol nyelvű világban, hogy 'hogy vagy?'",
     greetTeaserEn: "Két barát arról beszélget, hogyan kérdezik, hogy 'how are you?' az angol nyelvű világban, Írországtól a királyig",
     taxiTitle: 'Taxiban: hallgatás',
-    taxiTeaser: 'Sofía megérkezik Mexikóvárosba, és a taxissal, don Ramónnal beszélget. Hallgasd meg, aztán válaszolj a kérdésekre.',
+    taxiTeaser: 'Sofía megérkezik Mexikóvárosba, és a taxissal, don Joséval beszélget. Hallgasd meg, aztán válaszolj a kérdésekre.',
     loTitle: 'A semleges lo: hallgatás',
     loTeaser: 'Marta Oaxacában töltött hétvégéjéről mesél Diegónak, aztán sorra veszik, hányféleképpen használták a «lo»-t. Hallgasd meg, aztán válaszolj a kérdésekre.',
     gustarTitle: 'A gustar és társai: hallgatás',
