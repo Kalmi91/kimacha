@@ -38,23 +38,34 @@ if (!existsSync(file)) {
 
 // FB675: stop() must also drop speech waiting for TextToSpeech initialization; otherwise onInit speaks it
 // after the learner has already stopped it or started a word-pack recording. Share onInit's lock.
+// The engine's own stop() runs outside that lock: Android calls onInit on the main thread while it holds
+// TextToSpeech's start lock, and stop() needs the same start lock, so holding the module lock across it
+// froze the app (ANR on the 4.2.16 release smoke: stop() at launch while the engine was still starting).
+// Before the engine exists there is nothing to stop, so stop() does not create it.
 const stopBefore = `    AsyncFunction<Unit>("stop") {
       textToSpeech.stop()
     }`;
-const stopAfter = `    AsyncFunction<Unit>("stop") {
+const stopLocked = `    AsyncFunction<Unit>("stop") {
       synchronized(this@SpeechModule) {
         delayedUtterances.clear()
         textToSpeech.stop()
       }
+    }`;
+const stopAfter = `    AsyncFunction<Unit>("stop") {
+      val tts = synchronized(this@SpeechModule) {
+        delayedUtterances.clear()
+        _textToSpeech
+      }
+      tts?.stop()
     }`;
 
 if (existsSync(file)) {
   const source = readFileSync(file, 'utf8').replace(/\r\n/g, '\n');
   if (source.includes(stopAfter)) {
     console.log('patch-expo-speech: pending speech stop already patched');
-  } else if (source.includes(stopBefore)) {
-    writeFileSync(file, source.replace(stopBefore, stopAfter));
-    console.log('patch-expo-speech: stop now clears pending speech');
+  } else if (source.includes(stopBefore) || source.includes(stopLocked)) {
+    writeFileSync(file, source.replace(source.includes(stopBefore) ? stopBefore : stopLocked, stopAfter));
+    console.log('patch-expo-speech: stop now clears pending speech without holding the lock over the engine');
   } else {
     throw new Error('patch-expo-speech: stop block changed; pending speech cancellation was not patched');
   }
