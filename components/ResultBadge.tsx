@@ -20,7 +20,7 @@ import { t } from '@/lib/i18n';
 export default function ResultBadge({
   correct,
   label,
-  align = 'flex-start',
+  align = 'center',
   testID,
 }: {
   correct: boolean;
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
   badge: {
     flexDirection: 'row',
     alignItems: 'center',
-    alignSelf: 'flex-start',
+    alignSelf: 'center',
     gap: 8,
     borderWidth: 2.5,
     paddingVertical: 6,

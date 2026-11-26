@@ -150,7 +150,8 @@ describe('write: playing the por-para round', () => {
   it('the right sentence: the Correct box with the why, no comparison', async () => {
     await openWriteRound();
     await typeAndCheck(POR_PARA[0].es);
-    expect(screen.getByTestId('write-correct')).toHaveTextContent(/^Correct/);
+    expect(screen.getByTestId('write-correct')).toBeTruthy();
+    expect(screen.getByText('Correct')).toBeTruthy(); // the shared green badge above the box
     expect(screen.getByTestId('write-sentence')).toHaveTextContent(POR_PARA[0].es);
     expect(screen.getByTestId('write-why')).toHaveTextContent(POR_PARA[0].why.en);
     expect(screen.queryByTestId('answer-compare-typed')).toBeNull();

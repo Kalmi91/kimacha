@@ -42,8 +42,9 @@ import FitText from '@/components/FitText';
 import SpeakButton from '@/components/SpeakButton';
 import { isInfinitive } from '@/lib/grammar/tableShape';
 import CardShell from '@/components/learn/CardShell';
-import { FAB_CLEARANCE } from '@/components/learn/DockedAction';
-import ExamButton from '@/components/exam/ExamButton';
+import DockedAction, { DOCK_RESERVE, FAB_CLEARANCE } from '@/components/learn/DockedAction';
+import AnswerCompare from '@/components/grammar/AnswerCompare';
+import ResultBadge from '@/components/ResultBadge';
 import { DAILY_XP_GOAL } from '@/lib/dailyXp';
 import { useXpToday } from '@/lib/useXpToday';
 import { useDockLift } from '@/components/learn/useDockLift';
@@ -116,6 +117,7 @@ export default function TableDeckScreen() {
   // fix as on the PCIC card (app/(tabs)/index.tsx cardSeq).
   const [cellSeq, setCellSeq] = useState(0);
   const { dockLift } = useDockLift();
+  const [dockH, setDockH] = useState(DOCK_RESERVE);
   const webKeyboardOpen = useWebKeyboardOpen();
   // React Compiler purity rule: Date.now() may not be called during render
   // (lib/grammar/tableDeck.ts's nextCellId needs "now" to pick the due
@@ -339,7 +341,7 @@ export default function TableDeckScreen() {
 
       <ScrollView
         style={styles.cardScroll}
-        contentContainerStyle={[styles.cardScrollContent, { paddingBottom: FAB_CLEARANCE + dockLift }]}
+        contentContainerStyle={[styles.cardScrollContent, { paddingBottom: FAB_CLEARANCE + dockH + dockLift }]}
         keyboardShouldPersistTaps="handled"
         keyboardDismissMode={keyboardDismissOnDrag()}
       >
@@ -389,40 +391,36 @@ export default function TableDeckScreen() {
             <View testID="tabledeck-result" style={styles.resultSection}>
               {checked.correct ? (
                 <>
-                  <Text style={[styles.resultHead, { color: colors.success }]}>{`✓ ${s.grammar.correct}`}</Text>
+                  <ResultBadge correct label={s.grammar.correct} />
                   <Text variant="word" style={[styles.correctAnswer, { color: colors.text }]}>{current.answer}</Text>
                 </>
               ) : (
                 <>
-                  <Text style={[styles.resultHead, { color: colors.danger }]}>{`✕ ${s.randomRound.wrong}`}</Text>
-                  <View style={styles.frontRow}>
-                    <Text variant="word" style={[styles.correctAnswer, { color: colors.success }]}>{current.answer}</Text>
-                    <SpeakButton onPress={() => speak(current.answer, speechLang(learnedLang))} style={styles.speakBtn} iconStyle={styles.speakIcon} />
-                  </View>
+                  <ResultBadge correct={false} label={s.randomRound.wrong} />
                   {typed.trim() ? (
-                    <Text style={[styles.youWrote, { color: colors.tabIconDefault }]}>
-                      {`${s.tableDeck.youWrote}: `}
-                      <Text style={{ textDecorationLine: 'line-through', color: colors.danger }}>{typed.trim()}</Text>
-                    </Text>
-                  ) : null}
+                    <AnswerCompare typed={typed.trim()} correct={current.answer} g={g} />
+                  ) : (
+                    <Text variant="word" style={[styles.correctAnswer, { color: colors.success }]}>{current.answer}</Text>
+                  )}
+                  <SpeakButton onPress={() => speak(current.answer, speechLang(learnedLang))} style={styles.speakBtn} iconStyle={styles.speakIcon} />
                 </>
               )}
             </View>
           )}
         </CardShell>
-
-        {/* the buttons sit right under the card, no dock gap (FB722) */}
-        <View style={styles.buttonRow}>
-          {checked && !checked.correct ? (
-            <View style={styles.buttonSecondary}>
-              <ExamButton testID="grammar-mistyped" secondary label={s.grammar.mistyped} onPress={() => advance(true)} />
-            </View>
-          ) : null}
-          <View style={styles.buttonPrimary}>
-            <ExamButton testID="learn-docked-action" accent label={checked ? `${s.grammar.next} →` : `✓ ${s.card.check}`} onPress={checked ? handleNext : handleCheck} />
-          </View>
-        </View>
       </ScrollView>
+
+      {/* Check / Next on the docked bar above the keyboard, like every other grammar and word card (FB747, FB748) */}
+      <DockedAction
+        testID="learn-docked-action"
+        tone={checked ? 'next' : 'check'}
+        label={checked ? `${s.grammar.next} →` : `✓ ${s.card.check}`}
+        onPress={checked ? handleNext : handleCheck}
+        secondary={checked && !checked.correct ? { label: s.grammar.mistyped, testID: 'grammar-mistyped', onPress: () => advance(true) } : undefined}
+        bottom={dockLift}
+        colors={colors}
+        onHeight={setDockH}
+      />
 
       <ScreenFeedback
         level={level}

@@ -352,10 +352,10 @@ export function WriteDrillItem({
       </BrutalBox>
       {result ? (
         <>
+          <ResultBadge correct={result.correct} label={result.correct ? s.grammar.correct : s.games.wrongFeedback} />
           <BrutalBox testID={result.correct ? 'write-correct' : 'write-wrong'} fill={resultFill(result.correct)} boxStyle={styles.feedback}>
             {result.correct ? (
               <>
-                <Text style={[styles.fixedLine, { color: resultInk(g, true) }]}>{s.grammar.correct}</Text>
                 {/* the lesson's own form, with its accents: the learner may have typed another accepted one */}
                 <Text testID="write-sentence" style={[styles.writeSentence, { color: resultInk(g, true) }]}>
                   {item.es}

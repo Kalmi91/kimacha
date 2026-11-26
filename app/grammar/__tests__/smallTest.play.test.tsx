@@ -435,7 +435,8 @@ describe.each(['brand', 'classic'] as const)('grammar small test (%s palette)', 
     expect(has('bank-wrong')).toBe(false);
     expect(has('grammar-next')).toBe(false);
     expect(has('small-test-miss')).toBe(true);
-    expect(text('small-test-miss-given')).toBe('You typed: rojo');
+    // FB735/745/749: the wrong letters are marked, the same comparison as under a word card
+    expect(screen.getByTestId('answer-compare-typed')).toHaveTextContent('rojo');
     expect(text('small-test-miss-answer')).toMatch(/^Los coches \d son rojos\.$/);
     expect(text('small-test-miss-why')).toBe('Agrees in number.');
     expect(has('small-test-miss-lesson')).toBe(true);

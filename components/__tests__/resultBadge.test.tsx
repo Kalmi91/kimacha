@@ -57,6 +57,14 @@ describe('ResultBadge', () => {
     expect(ok.borderStyle).not.toBe(bad.borderStyle);
   });
 
+  it('Correct and Not quite are centered by default (FB737)', () => {
+    const { unmount } = render(<ResultBadge correct testID="ok" />);
+    expect(style('ok').alignSelf).toBe('center');
+    unmount();
+    render(<ResultBadge correct={false} testID="bad" />);
+    expect(style('bad').alignSelf).toBe('center');
+  });
+
   it('a custom label overrides the default text', () => {
     render(<ResultBadge correct label="perfect!" />);
     expect(screen.getByText('perfect!')).toBeTruthy();

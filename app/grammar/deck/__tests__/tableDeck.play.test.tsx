@@ -20,7 +20,7 @@ jest.mock('expo-router', () => ({
   useLocalSearchParams: () => ({ topic: 'ser-estar' }),
 }));
 
-import { fireEvent, render, screen } from '@testing-library/react-native';
+import { fireEvent, render, screen, within } from '@testing-library/react-native';
 
 import { getDb } from '@/lib/database.web';
 import { GRAMMAR_PROGRESS_KEY, lessonFor } from '@/lib/grammar/syllabus';
@@ -126,11 +126,12 @@ describe('table-deck screen: ser-estar playthrough', () => {
     fireEvent.changeText(screen.getByTestId('tabledeck-input'), 'nope');
     fireEvent.press(screen.getByText('✓ Check'));
     await flush();
-    expect(screen.getByText(cellAt(0).answer)).toBeTruthy();
-    // the result sits inside the card: signal, and what was typed, struck through (FB722)
-    expect(screen.getByText('✕ Not quite')).toBeTruthy();
-    expect(screen.getByText(/You wrote/)).toBeTruthy();
-    expect(screen.getByText('nope').props.style).toEqual(expect.objectContaining({ textDecorationLine: 'line-through' }));
+    // the result sits inside the card: the shared badge (centered), and the letter comparison of the word cards (FB746)
+    expect(screen.getByText('Not quite')).toBeTruthy();
+    expect(screen.getByTestId('answer-compare-correct')).toHaveTextContent(cellAt(0).answer);
+    expect(screen.getByTestId('answer-compare-typed')).toHaveTextContent('nope');
+    // Check / Next sit on the docked bar above the keyboard (FB747)
+    expect(within(screen.getByTestId('learn-dock')).getByTestId('learn-docked-action')).toBeTruthy();
     expect(screen.getByText('0 / 10 done')).toBeTruthy();
     fireEvent.press(screen.getByText('Next →'));
     await flush();
@@ -142,7 +143,7 @@ describe('table-deck screen: ser-estar playthrough', () => {
     fireEvent.changeText(screen.getByTestId('tabledeck-input'), cellAt(1).answer);
     fireEvent.press(screen.getByText('✓ Check'));
     await flush();
-    expect(screen.getByText('✓ Correct')).toBeTruthy();
+    expect(screen.getByText('Correct')).toBeTruthy();
     expect(screen.getByText(cellAt(1).answer)).toBeTruthy();
     fireEvent.press(screen.getByText('Next →'));
     await flush();

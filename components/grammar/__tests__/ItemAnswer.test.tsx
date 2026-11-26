@@ -40,6 +40,30 @@ describe.each(['brand', 'classic'] as const)('ItemAnswer (%s palette)', (palette
     expect(screen.getByTestId('small-test-miss-answer')).toHaveTextContent(answer);
     expect(screen.getByTestId('small-test-miss-why')).toHaveTextContent(why);
   });
+  it('a typed answer is compared letter by letter, as under a word card (FB735, FB745, FB749)', async () => {
+    render(
+      <ThemeProvider>
+        <ItemAnswer item={cloze} contentLang="en" given="Ayer pidio y durmió mucho." />
+      </ThemeProvider>
+    );
+    await flush();
+    expect(screen.getByTestId('answer-compare-typed')).toHaveTextContent('Ayer pidio y durmió mucho.');
+    expect(screen.getByTestId('answer-compare-correct')).toHaveTextContent('Ayer pidió y durmió mucho.');
+    // the wrong letter is struck in the typed row, the rest of the long sentence is plain
+    const struck = screen.getByTestId('answer-compare-typed').findAll((n) => n.props.style?.textDecorationLine === 'line-through' && n.props.children === 'o');
+    expect(struck.length).toBeGreaterThan(0);
+    expect(screen.getByTestId('small-test-miss-why')).toHaveTextContent('Past: e>i.');
+  });
+  it('a typed word of a bank item is compared with the right word, the full sentence stays', async () => {
+    render(
+      <ThemeProvider>
+        <ItemAnswer item={bank} contentLang="en" given="rojo" />
+      </ThemeProvider>
+    );
+    await flush();
+    expect(screen.getByTestId('answer-compare-correct')).toHaveTextContent('rojos');
+    expect(screen.getByTestId('small-test-miss-answer')).toHaveTextContent('Los coches son rojos.');
+  });
   it('the why is in the UI language', async () => {
     render(
       <ThemeProvider>

@@ -5,6 +5,7 @@ import { Text } from '@/components/KText';
 import AnswerCompare from '@/components/grammar/AnswerCompare';
 import { BrutalBox, inkButtonText, resultFill, resultInk, softCaseStyle } from '@/components/grammar/Brutal';
 import MistypedButton, { mistypedDock } from '@/components/grammar/MistypedButton';
+import ResultBadge from '@/components/ResultBadge';
 import Colors from '@/constants/Colors';
 import { ON_FILL } from '@/constants/GrammarPalettes';
 import { tapTarget } from '@/constants/Theme';
@@ -194,10 +195,11 @@ function TypedItem({
               {night ? (
                 <NightResult prefix={prefix} g={g} correct={result.correct} typedRight={result.typedRight} typed={typed} answer={answer} filled={filled} why={why} whyId={whyId} extra={extra} />
               ) : (
+              <>
+              <ResultBadge correct={result.correct} label={result.correct ? s.grammar.correct : s.games.wrongFeedback} />
               <BrutalBox testID={`${prefix}-${result.correct ? 'correct' : 'wrong'}`} fill={resultFill(result.correct)} boxStyle={styles.feedback}>
                 {result.typedRight ? (
                   <>
-                    <Text style={[styles.fixedLine, { color: resultInk(g, result.correct) }]}>{result.correct ? s.grammar.correct : s.games.wrongFeedback}</Text>
                     <Text testID={`${prefix}-sentence`} style={[styles.writeSentence, { color: resultInk(g, result.correct) }]}>
                       {filled}
                     </Text>
@@ -211,6 +213,7 @@ function TypedItem({
                 </Text>
                 {extra ? <Text style={[styles.translation, { color: resultInk(g, result.correct) }]}>{extra}</Text> : null}
               </BrutalBox>
+              </>
               )}
               {night && !result.typedRight && !docked ? <MistypedButton onPress={() => onDone(true, true)} /> : null}
               {docked ? null : (
@@ -326,12 +329,16 @@ export function ClozeDrillItem({ item, learnedLang, contentLang, strictAccents, 
       </BrutalBox>
       {result ? (
         <>
+          <ResultBadge correct={allRight} label={allRight ? s.grammar.correct : s.games.wrongFeedback} />
           <BrutalBox testID={allRight ? 'cloze-correct' : 'cloze-wrong'} fill={resultFill(allRight)} boxStyle={styles.feedback}>
-            <Text style={[styles.fixedLine, { color: resultInk(g, allRight) }]}>{allRight ? s.grammar.correct : s.games.wrongFeedback}</Text>
             {!allRight && !docked ? <MistypedButton onPress={() => onDone(true, true)} /> : null}
-            <Text testID="cloze-sentence" style={[styles.writeSentence, { color: resultInk(g, allRight) }]}>
-              {filledCloze(item.text, item.answers)}
-            </Text>
+            {allRight ? (
+              <Text testID="cloze-sentence" style={[styles.writeSentence, { color: resultInk(g, allRight) }]}>
+                {filledCloze(item.text, item.answers)}
+              </Text>
+            ) : (
+              <AnswerCompare typed={filledCloze(item.text, typed)} correct={filledCloze(item.text, item.answers)} g={g} onFill />
+            )}
             <Text testID="cloze-why" style={[styles.explain, { color: resultInk(g, allRight) }]}>
               {item.why[contentLang] ?? item.why.en}
             </Text>
