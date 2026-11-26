@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { findWordByText, normalizeWordToken } from '@/data/words';
-import { exerciseWords, exerciseTexts } from '../exerciseWords';
+import { exerciseWordCount, exerciseWords, exerciseTexts } from '../exerciseWords';
 import { formGlosses } from '../formGlosses';
 
 type L = Parameters<typeof exerciseWords>[0];
@@ -68,6 +68,56 @@ describe('exerciseWords', () => {
     expect(w.map((x) => x.display)).toEqual(['Ana', 'árbol', 'come', 'de', 'hablaba', 'México', 'zorro']);
     expect(w.find((x) => x.key === 'con')).toBeUndefined();
   });
+
+  it('sorts with a cached collator, never localeCompare per comparison (on Hermes that cost 4-6 s per lesson open)', () => {
+    const spy = jest.spyOn(String.prototype, 'localeCompare');
+    const l = lesson([{ kind: 'dictation', id: '1', es: 'El niño y la niña comen ñame, nada más.' }]);
+    expect(exerciseWords(l, 'es', []).map((x) => x.display)).toEqual(['comen', 'El', 'la', 'más', 'nada', 'niña', 'niño', 'ñame', 'y']);
+    expect(spy).not.toHaveBeenCalled();
+    spy.mockRestore();
+  });
+
+  it('words equal for the collator keep their first order, as the collator sort keeps them', () => {
+    const order = (es: string) => exerciseWords(lesson([{ kind: 'dictation', id: '1', es }]), 'es', []).map((x) => x.display);
+    expect(order('papá papa')).toEqual(['papá', 'papa']);
+    expect(order('papa papá')).toEqual(['papa', 'papá']);
+    expect(order('sí si Sí')).toEqual(['sí', 'si']);
+  });
+
+  it('sorts exactly as a stable collator sort: ñ after n in Spanish, hyphens and other letters merged in, ties in first order', () => {
+    const cases: [string, string][] = [
+      ['es', 'o ñame co-op año ano niño nzz ça ca zeta n2o árbol arbol'],
+      ['es', 'ca ça arbol árbol Ñu nu ñ n'],
+      ['en', 'niño nino café cafe co-op zinc'],
+    ];
+    for (const [lang, es] of cases) {
+      const collator = new Intl.Collator(lang, { sensitivity: 'base' });
+      const got = exerciseWords(lesson([{ kind: 'dictation', id: '1', es }]), lang, []).map((x) => x.display);
+      expect(got).toEqual(es.split(' ').sort(collator.compare));
+    }
+  });
+
+  it('plain words with edge punctuation give the same word as any other piece: stripped, case kept only when always capitalized', () => {
+    const l = lesson([{ kind: 'dictation', id: '1', es: '¿Qué? «pista» Hola, (perro), "Ñu"! casa… ¡qué! ‘Casa’ -ma' }]);
+    expect(exerciseWords(l, 'es', []).map((x) => x.display)).toEqual(['casa', 'Hola', 'Ñu', 'perro', 'qué']);
+    const m = lesson([{ kind: 'dictation', id: '1', es: '“Árbol” Árbol. [Perro] Perro' }]);
+    expect(exerciseWords(m, 'es', []).map((x) => x.display)).toEqual(['Árbol', 'Perro']);
+  });
+
+  it('computes once per lesson and arguments (the lesson screen asks on every render)', () => {
+    const l = lesson([{ kind: 'dictation', id: '1', es: 'Hablaba con Ana.' }]);
+    const first = exerciseWords(l, 'es', ['Con']);
+    expect(exerciseWords(l, 'es', ['Con'])).toBe(first);
+    expect(exerciseWords(l, 'es', []).map((x) => x.key)).toEqual(['ana', 'con', 'hablaba']);
+    expect(exerciseWords(lesson([{ kind: 'dictation', id: '1', es: 'Hablaba con Ana.' }]), 'es', ['Con'])).not.toBe(first);
+  });
+
+  it('the count, which the closed section shows, is the length of the list', () => {
+    const l = lesson([{ kind: 'dictation', id: '1', es: 'Hablaba con Ana. Ana habla, ¿con quién?' }]);
+    expect(exerciseWordCount(l, 'es', ['Con'])).toBe(4);
+    expect(exerciseWords(l, 'es', ['Con'])).toHaveLength(4);
+    expect(exerciseWordCount(l, 'es', [])).toBe(exerciseWords(l, 'es', []).length);
+  });
 });
 
 describe('exercise words content gate', () => {
@@ -96,6 +146,20 @@ describe('exercise words content gate', () => {
   }
   const total = (r: Record<string, string[]>) => Object.values(r).reduce((n, a) => n + a.length, 0);
   const report = (r: Record<string, string[]>) => Object.entries(r).map(([f, w]) => `${f}: ${w.join(', ')}`).join('\n');
+
+  it('every lesson list is in the collator order (the plain-word keys of es and en never reorder it)', () => {
+    for (const lang of ['es', 'en', 'de', 'hu']) {
+      const collator = new Intl.Collator(lang, { sensitivity: 'base' });
+      const dir = path.join(root, lang);
+      for (const file of fs.readdirSync(dir).filter((f) => f.endsWith('.json'))) {
+        const data = JSON.parse(fs.readFileSync(path.join(dir, file), 'utf8'));
+        if (!Array.isArray(data.items)) continue;
+        const words = exerciseWords({ items: data.items }, lang, []).map((w) => w.display);
+        const unsorted = words.filter((w, i) => i > 0 && collator.compare(words[i - 1], w) > 0);
+        expect([lang, file, unsorted]).toEqual([lang, file, []]);
+      }
+    }
+  });
 
   it('es: every task word resolves', () => {
     const r = unresolved('es');
