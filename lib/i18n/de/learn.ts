@@ -287,7 +287,7 @@ const de: typeof en = {
     greetTeaser: "Zwei Freunde sprechen darüber, wie man in der spanischsprachigen Welt 'Wie geht's?' sagt",
     greetTeaserEn: "Zwei Freunde sprechen darüber, wie man in der englischsprachigen Welt 'how are you?' sagt, von Irland bis zum König",
     taxiTitle: 'Im Taxi: Hören',
-    taxiTeaser: 'Sofía kommt in Mexiko-Stadt an und unterhält sich mit ihrem Taxifahrer, don Ramón. Hör zu und beantworte die Fragen.',
+    taxiTeaser: 'Sofía kommt in Mexiko-Stadt an und unterhält sich mit ihrem Taxifahrer, don José. Hör zu und beantworte die Fragen.',
     loTitle: 'Das neutrale lo: Hören',
     loTeaser: 'Marta erzählt Diego von ihrem Wochenende in Oaxaca, dann schauen sie sich an, wie sie «lo» benutzt haben. Hör zu und beantworte die Fragen.',
     gustarTitle: 'Gustar und Co.: Hören',

@@ -2,20 +2,20 @@
   "id": "es-taxi",
   "lang": "es",
   "level": "A2",
-  "durationSec": 162,
+  "durationSec": 157,
   "pairs": [],
   "questions": [
     { "id": "t1", "q": "¿A dónde va Sofía?", "options": ["Al aeropuerto", "A un hotel en el centro", "A un hospital"], "answer": 1 },
     { "id": "t2", "q": "¿De dónde es Sofía?", "options": ["De Colombia", "De México", "De Argentina"], "answer": 0 },
     { "id": "t3", "q": "¿En cuánto tiempo van a llegar al hotel?", "options": ["En unos veinte minutos", "En unos treinta minutos", "En unos cuarenta minutos"], "answer": 2 },
-    { "id": "t4", "q": "¿Qué música escucha don Ramón?", "options": ["Salsa", "Cumbia", "Rock"], "answer": 1 },
-    { "id": "t5", "q": "¿De dónde es don Ramón?", "options": ["De Puebla", "De Bogotá", "De la Ciudad de México"], "answer": 0 },
-    { "id": "t6", "q": "¿Desde hace cuántos años es taxista don Ramón?", "options": ["Treinta", "Cuarenta", "Veinte"], "answer": 2 },
-    { "id": "t7", "q": "¿Cuántos hijos tiene don Ramón?", "options": ["Dos", "Tres", "Uno"], "answer": 1 },
+    { "id": "t4", "q": "¿Qué música escucha don José?", "options": ["Salsa", "Cumbia", "Rock"], "answer": 1 },
+    { "id": "t5", "q": "¿De dónde es don José?", "options": ["De Puebla", "De Bogotá", "De la Ciudad de México"], "answer": 0 },
+    { "id": "t6", "q": "¿Desde hace cuántos años es taxista don José?", "options": ["Treinta", "Cuarenta", "Veinte"], "answer": 2 },
+    { "id": "t7", "q": "¿Cuántos hijos tiene don José?", "options": ["Dos", "Tres", "Uno"], "answer": 1 },
     { "id": "t8", "q": "¿Por qué viene Sofía a México?", "options": ["Para visitar a su hermana", "Por trabajo", "Para estudiar"], "answer": 0 },
     { "id": "t9", "q": "¿Dónde trabaja la hermana de Sofía?", "options": ["En un hotel", "En un museo", "En un hospital"], "answer": 2 },
     { "id": "t10", "q": "¿Cuánto tiempo se queda Sofía?", "options": ["Un mes", "Una semana", "Tres días"], "answer": 1 },
-    { "id": "t11", "q": "¿Qué comida tiene que probar Sofía, según don Ramón?", "options": ["Tacos al pastor", "Arepas", "Pizza"], "answer": 0 },
+    { "id": "t11", "q": "¿Qué comida tiene que probar Sofía, según don José?", "options": ["Tacos al pastor", "Arepas", "Pizza"], "answer": 0 },
     { "id": "t12", "q": "¿Cuánto cuesta el viaje en taxi?", "options": ["Doscientos pesos", "Cuarenta pesos", "Trescientos pesos"], "answer": 2 }
   ]
 }
