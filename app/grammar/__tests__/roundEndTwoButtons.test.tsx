@@ -1,6 +1,6 @@
 // FB691-FB695: the round-end ("done") screen of a lesson drill, both skins: the result as one number ("4/5"), the
-// "Mistakes:" list with every wrong answer (what the learner gave and the right solution), and exactly two buttons:
-// Retake and back to the grammar part. No Time / Correct boxes, no "next test type", no lesson-test line.
+// "Mistakes:" list with every wrong answer (what the learner gave and the right solution), and exactly three buttons:
+// Retake, back to the lesson (FB742), and back to the grammar part. No Time / Correct boxes, no "next test type", no lesson-test line.
 
 const mockBack = jest.fn();
 jest.mock('expo-router', () => ({
@@ -42,19 +42,22 @@ const show = (misses: GrammarMiss[]) => {
 describe.each([
   ['classic', 'light'],
   ['brutal', 'brand-light'],
-])('round end, two buttons, %s skin', (_skin, theme) => {
+])('round end, three buttons, %s skin', (_skin, theme) => {
   beforeEach(() => {
     mockTheme = theme;
     jest.clearAllMocks();
   });
 
-  it('one number, exactly two buttons, nothing of the old boxes', () => {
+  it('one number, exactly three ordered buttons, nothing of the old boxes', () => {
     show([]);
     const s = t().grammar;
     expect(screen.getByTestId('grammar-score')).toHaveTextContent('4/5');
     expect(screen.getByText(s.retakeTest)).toBeTruthy();
+    expect(screen.getByTestId('grammar-back-to-lesson')).toHaveTextContent(t().tableDeck.backToLesson);
     expect(screen.getByText(s.backToGrammar)).toBeTruthy();
-    for (const id of ['grammar-practice-again', 'grammar-back-course']) expect(screen.getByTestId(id)).toBeTruthy();
+    expect(screen.getAllByRole('button').map((button) => button.props.testID)).toEqual([
+      'grammar-practice-again', 'grammar-back-to-lesson', 'grammar-back-course',
+    ]);
     for (const gone of ['grammar-next-type', 'grammar-lessontest-note', 'grammar-start-lessontest', 'grammar-practice-this']) {
       expect(screen.queryByTestId(gone)).toBeNull();
     }
@@ -80,5 +83,13 @@ describe.each([
     expect(setPhase).toHaveBeenCalledWith('drill');
     fireEvent.press(screen.getByTestId('grammar-back-course'));
     expect(mockBack).toHaveBeenCalledTimes(1);
+  });
+
+  it('back to the lesson opens the lesson without resetting the score or leaving the topic', () => {
+    show([]);
+    fireEvent.press(screen.getByTestId('grammar-back-to-lesson'));
+    expect(setPhase).toHaveBeenCalledWith('lesson');
+    expect(setScore).not.toHaveBeenCalled();
+    expect(mockBack).not.toHaveBeenCalled();
   });
 });

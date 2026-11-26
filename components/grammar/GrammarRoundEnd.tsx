@@ -10,6 +10,7 @@ import { t } from '@/lib/i18n';
 import type { ProgressRow, Phase } from '@/lib/grammar/useGrammarTopic';
 import type { RoundStats } from '@/components/grammar/GrammarDrill';
 import GrammarResult from '@/components/grammar/GrammarResult';
+import ExamButton from '@/components/exam/ExamButton';
 import { BrutalBox, Card, SegmentBar, segmentsFilled, mutedColor, softTitleStyle } from '@/components/grammar/Brutal';
 import { styles } from '@/components/grammar/GrammarTopic.styles';
 import { getDb } from '@/lib/database';
@@ -17,7 +18,7 @@ import { GRAMMAR_PROGRESS_KEY, lessonFor } from '@/lib/grammar/syllabus';
 import { formCheckCells, formCheckEnabled, formCheckProgressKey, parseFormCheckState, type FormCheckState } from '@/lib/grammar/formCheck';
 
 // The round-end ("done") screen of a grammar lesson (FB691-FB695): the result as "14/20", the lesson progress, the
-// "Mistakes:" list with every wrong answer of the round, and exactly two buttons: Retake and back to the grammar part.
+// "Mistakes:" list with every wrong answer of the round, and three buttons: Retake, back to the lesson, and back to the grammar part.
 // The lesson test is started from the lesson page, not from here.
 interface Props {
   topicId?: string;
@@ -70,6 +71,7 @@ export default function GrammarRoundEnd({ topicId, learnedLang = 'es', score, pr
       onRetake={retake}
       onBack={() => router.back()}
       header={header}
+      middle={<ExamButton testID="grammar-back-to-lesson" secondary label={s.tableDeck.backToLesson} onPress={() => setPhase('lesson')} />}
     >
       <View>{note}</View>
       {progress}

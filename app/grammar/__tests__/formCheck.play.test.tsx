@@ -204,14 +204,15 @@ const showDone = (topic?: string, learnedLang = 'es') => render(
 );
 
 describe('done-screen form check card', () => {
-  it.each(['light', 'brand-light'])('opens the check while keeping the two existing buttons (%s)', async (theme) => {
+  it.each(['light', 'brand-light'])('opens the check while keeping the three result buttons (%s)', async (theme) => {
     mockTheme = theme;
     showDone(topicId);
     await flush();
     expect(screen.getByText('55 forms, typed')).toBeTruthy();
     expect(screen.getByTestId('grammar-practice-again')).toBeTruthy();
+    expect(screen.getByTestId('grammar-back-to-lesson')).toBeTruthy();
     expect(screen.getByTestId('grammar-back-course')).toBeTruthy();
-    expect(screen.getAllByRole('button')).toHaveLength(2);
+    expect(screen.getAllByRole('button')).toHaveLength(3);
     fireEvent.press(screen.getByTestId('grammar-formcheck-card'));
     expect(mockPush).toHaveBeenCalledWith(`/grammar/form-check/${topicId}`);
   });
