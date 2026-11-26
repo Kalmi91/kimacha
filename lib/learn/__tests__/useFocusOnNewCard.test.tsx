@@ -1,7 +1,7 @@
 // The first focus of a cold start can be lost: the hook tries again (3 tries within 2.5 s) until the field has the focus.
 import { act, render } from '@testing-library/react-native';
 import { useRef } from 'react';
-import { Keyboard, TextInput } from 'react-native';
+import { Keyboard, Platform, TextInput } from 'react-native';
 
 import { useFocusOnNewCard } from '../useFocusOnNewCard';
 
@@ -60,6 +60,17 @@ describe('useFocusOnNewCard retry', () => {
     advance(5000);
     expect(blur).toHaveBeenCalledTimes(1);
     expect(focus).toHaveBeenCalledTimes(2);
+  });
+
+  it('on the web, where the keyboard is not visible to the app, a focused field is never blurred', () => {
+    jest.replaceProperty(Platform, 'OS', 'web');
+    const blur = jest.spyOn(TextInput.prototype as unknown as { blur: () => void }, 'blur').mockImplementation(() => {});
+    blur.mockClear(); // the spy of the test above can come back with its call still counted
+    focus.mockImplementation(() => { focused = true; });
+    render(<Field />);
+    advance(5000);
+    expect(blur).not.toHaveBeenCalled();
+    expect(focus).toHaveBeenCalledTimes(1);
   });
 
   it('stops retrying once the keyboard is up', () => {
