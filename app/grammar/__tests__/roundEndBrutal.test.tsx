@@ -29,13 +29,13 @@ import { makeFlush } from '@/test-utils/flush';
 
 const flush = makeFlush(4);
 
-describe('round end, neo-brutalist', () => {
+describe.each(['classic', 'brand'] as const)('round end, %s palette', (palette) => {
   const now = 1700000000000;
   beforeEach(async () => {
     const db = getDb();
     await db.setOnboarding('en', 'es');
     (db as any).__setLevelForTest('A1');
-    await db.setGrammarPalette('brand');
+    await db.setGrammarPalette(palette);
     jest.spyOn(Date, 'now').mockReturnValue(now);
   });
   afterEach(() => (Date.now as jest.Mock).mockRestore());
@@ -59,19 +59,42 @@ describe('round end, neo-brutalist', () => {
     return round.length;
   };
 
-  it('everything correct: one number, no Time / Correct boxes, no mistakes list, two buttons', async () => {
+  it('everything correct: one number, no Time / Correct boxes, no mistakes list, three buttons', async () => {
     const total = await play(null);
     expect(screen.getByTestId('grammar-score')).toHaveTextContent(`${total}/${total}`);
     expect(screen.queryByTestId('grammar-mistakes')).toBeNull();
     expect(screen.queryByText('correct')).toBeNull();
     expect(screen.queryByText('time')).toBeNull();
     expect(screen.queryByTestId('grammar-practice-again')).toBeTruthy();
+    expect(screen.getByTestId('grammar-back-to-lesson')).toBeTruthy();
     expect(screen.queryByTestId('grammar-back-course')).toBeTruthy();
     expect(screen.queryByTestId('grammar-next-type')).toBeNull();
     expect(screen.queryByTestId('grammar-lesson-percent')).toBeTruthy();
     // No XP: only the result number.
     expect(screen.queryByText(/XP/)).toBeNull();
   });
+
+  it('back to the lesson restores the lesson text from the result screen', async () => {
+    await play(null);
+    expect(screen.queryByTestId('table-ser-presente')).toBeNull();
+    fireEvent.press(screen.getByTestId('grammar-back-to-lesson'));
+    await flush();
+    expect(screen.getByTestId('table-ser-presente')).toHaveTextContent(/soy/);
+    expect(screen.getByTestId('grammar-start-choice')).toBeTruthy();
+    expect(screen.queryByTestId('grammar-score')).toBeNull();
+  });
+
+  if (palette === 'brand') {
+    it('centers the header arrow inside its box', async () => {
+      await play(null);
+      expect(screen.getByTestId('grammar-back')).toHaveStyle({
+        alignItems: 'center', justifyContent: 'center', minWidth: 44, minHeight: 44,
+      });
+      expect(screen.getByText('←')).toHaveStyle({
+        textAlign: 'center', textAlignVertical: 'center', includeFontPadding: false,
+      });
+    });
+  }
 
   it('one mistake: the "Mistakes:" list holds what was picked and the right solution', async () => {
     const total = await play(2);

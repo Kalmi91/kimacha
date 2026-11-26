@@ -12,7 +12,7 @@ export const styles = StyleSheet.create({
     paddingTop: 12,
     paddingBottom: 6,
   },
-  back: { fontSize: 22 },
+  back: { fontSize: 22, textAlign: 'center', textAlignVertical: 'center', includeFontPadding: false },
   title: { flex: 1, textAlign: 'center', fontSize: 17, fontWeight: '700', paddingHorizontal: 8 },
   levelTag: { fontSize: 13, fontWeight: '800', width: 28, textAlign: 'right' },
   // keeps the header's right end clear of the corner 💬 (8 = a gap; the header's own 16 padding covers the rest).
@@ -48,7 +48,7 @@ export const styles = StyleSheet.create({
   btnTextOnTint: { color: '#FFFFFF' },
   // neo-brutalist buttons, title (uppercase, weight 500).
   // The last button also scrolls clear of the chat button (FAB).
-  brutalBack: { paddingVertical: 4, paddingHorizontal: 10 },
+  brutalBack: { minWidth: 44, minHeight: 44, paddingVertical: 4, paddingHorizontal: 10, alignItems: 'center', justifyContent: 'center' },
   brutalTitle: { fontWeight: '500', textTransform: 'uppercase' },
   brutalBtnWrap: { marginTop: 10, alignSelf: 'stretch' },
   brutalBtn: { paddingVertical: 14, alignItems: 'center' },
