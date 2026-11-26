@@ -273,7 +273,9 @@ function SmallTestLevel() {
       <ScreenFeedback placement="inline" level={data.userLevel} languagePair={pair} currentCard={`grammar-small-test:${level}:${part}`} />
     </View>
   );
-  const progressPct = run.phase === 'drill' ? ((run.drill?.i ?? 0) / Math.max(1, run.drill?.list.length ?? 1)) * 100 : run.phase === 'end' || run.phase === 'intro' ? (run.phase === 'end' ? 100 : 0) : (run.answers.length / size) * 100;
+  const prog = levelProgress(st, view.coreIds);
+  const levelPct = prog.total ? (prog.learned / prog.total) * 100 : 0;
+  const progressPct = run.phase === 'drill' ? ((run.drill?.i ?? 0) / Math.max(1, run.drill?.list.length ?? 1)) * 100 : run.phase === 'end' || run.phase === 'intro' ? (run.phase === 'end' ? levelPct : 0) : (run.answers.length / size) * 100;
   const progress = (
     <ProgressBar
       testID="small-test-progress"
@@ -394,7 +396,6 @@ function SmallTestLevel() {
   if (run.phase === 'end') {
     const rows = roundRows(st);
     const right = roundRight(run);
-    const prog = levelProgress(st, view.coreIds);
     const label = (r: RowStatus) => (r === 'learned' ? s.statusLearned : r === 'lesson' ? s.statusLesson : s.statusMore);
     const newRound = () => (setMisses([]), commit(startRound(closeRound(st), view.topics, view.pool, (Date.now() + st.rounds * 7919) % 2147483647)));
     const drillN = !run.drilled ? drillList(st, view.pool).length : 0;
@@ -448,7 +449,7 @@ function SmallTestLevel() {
               continuous
               trackProps={{ testID: 'small-test-end-level-bar' }}
               fillProps={{ testID: 'small-test-end-level-fill' }}
-              pct={prog.total ? (prog.learned / prog.total) * 100 : 0}
+              pct={levelPct}
               brutalStyle={styles.brutalProgress}
               trackStyle={styles.levelTrack}
               trackColor={colors.card}

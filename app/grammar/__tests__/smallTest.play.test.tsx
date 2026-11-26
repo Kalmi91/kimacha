@@ -346,6 +346,33 @@ describe.each(['brand', 'classic'] as const)('grammar small test (%s palette)', 
     expect((await stateNow()).run).toBeNull();
   });
 
+  it('FB744: the top end bar shows learned core topics and grows after the next round', async () => {
+    const progressWidth = () => StyleSheet.flatten(screen.getByTestId('small-test-progress-fill').props.style).width;
+    await start();
+    await answerNext(true);
+    expect(progressWidth()).toBe('10%');
+    for (let i = 1; i < 10; i++) await answerNext(true);
+    expect(has('small-test-end')).toBe(true);
+    const first = await stateNow();
+    const learned = ['lt-0', 'lt-1'].filter((id) => first.learned.includes(id)).length;
+    expect(learned).toBeGreaterThan(0);
+    expect(learned).toBeLessThan(2);
+    const firstPct = (learned / 2) * 100;
+    expect(progressWidth()).toBe(`${firstPct}%`);
+    expect(progressWidth()).toBe(StyleSheet.flatten(screen.getByTestId('small-test-end-level-fill').props.style).width);
+
+    await press('small-test-end-new');
+    expect(progressWidth()).toBe('0%');
+    await press('small-test-start');
+    await answerNext(true);
+    expect(progressWidth()).toBe('10%');
+    for (let i = 1; i < 10; i++) await answerNext(true);
+    expect(has('small-test-end')).toBe(true);
+    expect(text('small-test-end-level')).toBe('A1 level · 2 of 2 core topics learned');
+    expect(progressWidth()).toBe('100%');
+    expect(Number.parseFloat(String(progressWidth()))).toBeGreaterThan(firstPct);
+  });
+
   it('FB678: every lesson row of the end card (learned or not) opens that lesson; the end card stays under it', async () => {
     await start();
     for (let i = 0; i < 10; i++) await answerNext(true);
