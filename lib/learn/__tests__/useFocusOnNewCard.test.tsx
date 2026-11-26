@@ -1,4 +1,4 @@
-// The first focus of a cold start can be lost: the hook tries again (3 tries in about a second) until the field has the focus.
+// The first focus of a cold start can be lost: the hook tries again (3 tries within 2.5 s) until the field has the focus.
 import { act, render } from '@testing-library/react-native';
 import { useRef } from 'react';
 import { Keyboard, TextInput } from 'react-native';
@@ -38,21 +38,28 @@ describe('useFocusOnNewCard retry', () => {
     expect(focus).toHaveBeenCalledTimes(1);
     advance(300);
     expect(focus).toHaveBeenCalledTimes(2);
-    advance(550);
+    advance(2049);
+    expect(focus).toHaveBeenCalledTimes(2);
+    advance(1);
     expect(focus).toHaveBeenCalledTimes(3);
     advance(5000);
     expect(focus).toHaveBeenCalledTimes(3);
   });
 
-  it('a field that counts as focused but has no keyboard is blurred and focused again (the show request was lost)', () => {
+  it('a field that counts as focused but has no keyboard is left alone while its show can still come, and blurred and focused again only on the last try', () => {
     const blur = jest.spyOn(TextInput.prototype as unknown as { blur: () => void }, 'blur').mockImplementation(() => {});
     focus.mockImplementation(() => { focused = true; });
     render(<Field />);
     advance(150);
+    advance(2349);
     expect(blur).not.toHaveBeenCalled();
+    expect(focus).toHaveBeenCalledTimes(1);
+    advance(1);
+    expect(blur).toHaveBeenCalledTimes(1);
+    expect(focus).toHaveBeenCalledTimes(2);
     advance(5000);
-    expect(blur).toHaveBeenCalledTimes(2);
-    expect(focus).toHaveBeenCalledTimes(3);
+    expect(blur).toHaveBeenCalledTimes(1);
+    expect(focus).toHaveBeenCalledTimes(2);
   });
 
   it('stops retrying once the keyboard is up', () => {

@@ -1,5 +1,5 @@
 import { useContext, useEffect, useRef, useState, type ReactNode } from 'react';
-import { StyleSheet, View, Pressable, TextInput, Modal, Share, Platform } from 'react-native';
+import { StyleSheet, View, Pressable, TextInput, Modal, Share, Platform, Keyboard } from 'react-native';
 import { Text } from '@/components/KText';
 import { TitleText, themedInputStyle } from '@/components/grammar/Themed';
 import Colors from '@/constants/Colors';
@@ -59,8 +59,29 @@ function FeedbackControl({ level, languagePair, currentCard, slot }: Omit<Props,
   const s = t();
 
   const [visible, setVisible] = useState(false);
+  // The modal is its own window on Android: its field asks for the keyboard only once that window is up (onShow),
+  // a request before that was not served and the keyboard stayed up on a dead connection (11-25).
+  const [shown, setShown] = useState(false);
+  const hide = () => { setVisible(false); setShown(false); };
   const inputRef = useRef<TextInput>(null);
-  useFocusOnNewCard(inputRef, visible, 'feedback');
+  useFocusOnNewCard(inputRef, visible && shown, 'feedback');
+
+  // Phone, 11-25: with the card's keyboard up, the letters typed into the opened modal reached only Gboard's
+  // suggestion bar, the field stayed empty and Send grey. So that keyboard is closed first, the modal opens once it is down.
+  const open = () => {
+    if (!Keyboard.isVisible()) { setVisible(true); return; }
+    let done = false;
+    const go = () => {
+      if (done) return;
+      done = true;
+      sub.remove();
+      clearTimeout(fallback);
+      setVisible(true);
+    };
+    const sub = Keyboard.addListener('keyboardDidHide', go);
+    const fallback = setTimeout(go, 600);
+    Keyboard.dismiss();
+  };
   const [text, setText] = useState('');
   const [sending, setSending] = useState(false);
   const [showThanks, setShowThanks] = useState(false);
@@ -129,7 +150,7 @@ function FeedbackControl({ level, languagePair, currentCard, slot }: Omit<Props,
 
     setSending(false);
     setText('');
-    setVisible(false);
+    hide();
     setShowThanks(true);
     setTimeout(() => setShowThanks(false), 2000);
   };
@@ -146,7 +167,7 @@ function FeedbackControl({ level, languagePair, currentCard, slot }: Omit<Props,
           { backgroundColor: colors.tint },
           g.brutal && styles.brutalSlot,
         ]}
-        onPress={() => setVisible(true)}
+        onPress={open}
       >
         {g.brutal ? (
           // A square BrutalBox with the fill instead of the circle; the offset is the Learn level chip's, so the shadows match.
@@ -169,7 +190,7 @@ function FeedbackControl({ level, languagePair, currentCard, slot }: Omit<Props,
         </View>
       </Modal>
 
-      <Modal visible={visible} transparent animationType="fade">
+      <Modal visible={visible} transparent animationType="fade" onShow={() => setShown(true)}>
         {/* the dimmed area around the box is the "beside" the learner
             taps, so it closes the keyboard (the modal itself stays open, Cancel
             closes that). */}
@@ -193,14 +214,14 @@ function FeedbackControl({ level, languagePair, currentCard, slot }: Omit<Props,
 
             {g.brutal ? (
               <View style={styles.modalButtons}>
-                <BrutalButton label={s.feedback.cancel} fill="paper" onPress={() => { setVisible(false); setText(''); setSendError(false); }} style={styles.brutalModalBtn} />
+                <BrutalButton label={s.feedback.cancel} fill="paper" onPress={() => { hide(); setText(''); setSendError(false); }} style={styles.brutalModalBtn} />
                 <BrutalButton label={sending ? '...' : s.feedback.send} fill="a" onPress={handleSend} disabled={!text.trim() || sending} style={styles.brutalModalBtn} />
               </View>
             ) : (
             <View style={styles.modalButtons}>
               <Pressable
                 style={[styles.modalBtn, { backgroundColor: colors.border }]}
-                onPress={() => { setVisible(false); setText(''); setSendError(false); }}
+                onPress={() => { hide(); setText(''); setSendError(false); }}
               >
                 <Text style={[styles.modalBtnText, { color: colors.text }]}>{s.feedback.cancel}</Text>
               </Pressable>
