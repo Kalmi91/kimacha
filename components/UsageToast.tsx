@@ -29,8 +29,7 @@ const ROLLOVER_VISIBLE_MS = 8000;
 const ANIM_MS = 250;
 
 // `hidden` (during onboarding) draws nothing, so it does not cover the title.
-// `low` (the table-deck screen, FB722): the pill sits at the bottom, not over the header.
-export default function UsageToast({ hidden = false, low = false }: { hidden?: boolean; low?: boolean }) {
+export default function UsageToast({ hidden = false }: { hidden?: boolean }) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const g = useGrammarColors();
@@ -142,7 +141,7 @@ export default function UsageToast({ hidden = false, low = false }: { hidden?: b
   if (g.brutal) {
     const fill = isMilestone ? 'b' : 'a';
     return (
-      <Animated.View pointerEvents="none" testID="usage-toast" style={[styles.brutalToast, low && styles.low, { opacity, transform: [{ translateY }] }]}>
+      <Animated.View pointerEvents="none" testID="usage-toast" style={[styles.brutalToast, { opacity, transform: [{ translateY }] }]}>
         <BrutalBox fill={fill} boxStyle={isMilestone ? styles.brutalMilestoneBox : styles.brutalBox}>
           <Text style={[styles.brutalText, { color: textOnFill(g, fill) }, isMilestone && styles.milestoneText]}>{message}</Text>
         </BrutalBox>
@@ -156,7 +155,6 @@ export default function UsageToast({ hidden = false, low = false }: { hidden?: b
       testID="usage-toast-pill"
       style={[
         styles.pill,
-        low && styles.low,
         { backgroundColor: isMilestone ? legibleOn(colors.successFill, '#FFFFFF') : colors.tint, opacity, transform: [{ translateY }] },
         isMilestone && styles.milestonePill,
       ]}
@@ -180,7 +178,6 @@ const styles = StyleSheet.create({
     shadowRadius: 6,
     elevation: 4,
   },
-  low: { top: undefined, bottom: 28 },
   brutalToast: { position: 'absolute', top: 56, alignSelf: 'center', maxWidth: '90%' },
   brutalBox: { paddingHorizontal: 18, paddingVertical: 10 },
   brutalMilestoneBox: { paddingHorizontal: 22, paddingVertical: 14 },
