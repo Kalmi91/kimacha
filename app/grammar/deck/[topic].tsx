@@ -44,7 +44,7 @@ import { isInfinitive } from '@/lib/grammar/tableShape';
 import CardShell from '@/components/learn/CardShell';
 import DockedAction, { DOCK_RESERVE, FAB_CLEARANCE } from '@/components/learn/DockedAction';
 import AnswerCompare from '@/components/grammar/AnswerCompare';
-import ResultBadge from '@/components/ResultBadge';
+import AnswerFeedbackBox from '@/components/grammar/AnswerFeedbackBox';
 import { DAILY_XP_GOAL } from '@/lib/dailyXp';
 import { useXpToday } from '@/lib/useXpToday';
 import { useDockLift } from '@/components/learn/useDockLift';
@@ -388,15 +388,17 @@ export default function TableDeckScreen() {
           />
 
           {checked && (
-            <View testID="tabledeck-result" style={styles.resultSection}>
+            <AnswerFeedbackBox
+              testID="tabledeck-result"
+              correct={checked.correct}
+              badgeLabel={checked.correct ? s.grammar.correct : s.randomRound.wrong}
+              badgeTestID="tabledeck-result-badge"
+              style={styles.resultSection}
+            >
               {checked.correct ? (
-                <>
-                  <ResultBadge correct label={s.grammar.correct} />
-                  <Text variant="word" style={[styles.correctAnswer, { color: colors.text }]}>{current.answer}</Text>
-                </>
+                <Text variant="word" style={[styles.correctAnswer, { color: colors.text }]}>{current.answer}</Text>
               ) : (
                 <>
-                  <ResultBadge correct={false} label={s.randomRound.wrong} />
                   {typed.trim() ? (
                     <AnswerCompare typed={typed.trim()} correct={current.answer} g={g} />
                   ) : (
@@ -405,7 +407,7 @@ export default function TableDeckScreen() {
                   <SpeakButton onPress={() => speak(current.answer, speechLang(learnedLang))} style={styles.speakBtn} iconStyle={styles.speakIcon} />
                 </>
               )}
-            </View>
+            </AnswerFeedbackBox>
           )}
         </CardShell>
       </ScrollView>

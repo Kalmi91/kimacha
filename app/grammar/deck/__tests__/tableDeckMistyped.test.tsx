@@ -20,7 +20,10 @@ jest.mock('expo-router', () => ({
   useLocalSearchParams: () => ({ topic: 'ser-estar' }),
 }));
 
-import { fireEvent, render, screen } from '@testing-library/react-native';
+import { fireEvent, render, screen, within } from '@testing-library/react-native';
+import { StyleSheet } from 'react-native';
+
+import Colors from '@/constants/Colors';
 
 import { getDb } from '@/lib/database.web';
 import { GRAMMAR_PROGRESS_KEY, lessonFor } from '@/lib/grammar/syllabus';
@@ -55,6 +58,10 @@ describe('table-deck screen: "I mistyped" (FB723)', () => {
     fireEvent.press(screen.getByText('✓ Check'));
     await flush();
     expect(screen.queryByTestId('grammar-mistyped')).toBeNull();
+    const box = StyleSheet.flatten(screen.getByTestId('tabledeck-result').props.style);
+    expect(within(screen.getByTestId('tabledeck-result')).getByTestId('tabledeck-result-badge')).toBeTruthy();
+    expect(box.borderColor).toBe(Colors.dark.success);
+    expect(box.borderStyle).toBe('solid');
     view.unmount();
   });
 
@@ -65,6 +72,10 @@ describe('table-deck screen: "I mistyped" (FB723)', () => {
     fireEvent.press(screen.getByText('✓ Check'));
     await flush();
     expect(screen.getByText('0 / 10 done')).toBeTruthy();
+    const box = StyleSheet.flatten(screen.getByTestId('tabledeck-result').props.style);
+    expect(within(screen.getByTestId('tabledeck-result')).getByTestId('tabledeck-result-badge')).toBeTruthy();
+    expect(box.borderColor).toBe(Colors.dark.danger);
+    expect(box.borderStyle).toBe('dashed');
     fireEvent.press(screen.getByTestId('grammar-mistyped'));
     await flush();
     expect(screen.getByText('1 / 10 done')).toBeTruthy();

@@ -28,7 +28,8 @@ export default function AnswerFeedbackBox({
   const g = useGrammarColors();
   const { theme } = useTheme();
   const colors = Colors[theme];
-  const tone = correct ? colors.success : colors.danger;
+  // Same source as the Night result rows (TypedKinds): the skin's own success / danger, else the theme's.
+  const tone = correct ? (g.extra?.success ?? colors.success) : (g.extra?.danger ?? colors.danger);
   const border: ViewStyle = {
     borderColor: tone,
     borderTopColor: tone,

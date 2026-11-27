@@ -10,7 +10,6 @@ const OWNER = 'components/grammar/AnswerFeedbackBox.tsx';
 const BARE_BADGES: Record<string, string> = {
   'components/grammar/LessonTest.tsx': 'the lesson test verdict (passed / not yet) on the result screen, not an answer box',
   'app/grammar/random.tsx': 'the floating right-mark over the next question (the answer box itself uses AnswerFeedbackBox)',
-  'app/grammar/deck/[topic].tsx': 'the table deck shows the bare Correct / Wrong badge above the answer, no box',
 };
 
 function walk(dir: string): string[] {
@@ -33,7 +32,7 @@ const files = [...walk(path.join(ROOT, 'components', 'grammar')), ...walk(path.j
 describe('one answer feedback box', () => {
   it('ResultBadge is imported only by AnswerFeedbackBox and the listed bare badges', () => {
     const bad = files
-      .filter((f) => /import\s[^;]*?from\s*['"][^'"]*\/ResultBadge['"]/.test(f.src) && f.rel !== OWNER && !(f.rel in BARE_BADGES))
+      .filter((f) => /(?:import|export)\s[^;]*?from\s*['"][^'"]*\/ResultBadge['"]|require\(\s*['"][^'"]*\/ResultBadge['"]\s*\)/.test(f.src) && f.rel !== OWNER && !(f.rel in BARE_BADGES))
       .map((f) => `${f.rel}: use AnswerFeedbackBox`);
     expect(bad).toEqual([]);
   });
