@@ -68,8 +68,8 @@ export default function ExamSpeakCard({ prompt, expected, mode, targetLang, stri
   // Check (and Next after a wrong answer) is a bar docked above the keyboard, as on the word card (DockSlot).
   const { docked, padBottom } = useDockedAction(
     missed
-      ? { label: `${s.card.next} →`, tone: 'next', testID: 'exam-next', onPress: () => onDone(false) }
-      : { label: `✓ ${s.card.check}`, tone: 'check', testID: 'exam-check', disabled: typed.trim().length === 0, onPress: check }
+      ? { tone: 'next', testID: 'exam-next', onPress: () => onDone(false) }
+      : { tone: 'check', testID: 'exam-check', disabled: typed.trim().length === 0, onPress: check }
   );
 
   return (

@@ -192,7 +192,7 @@ export default function SituationGame() {
     questions: sx.stepQuestions,
   };
   const step = state.step;
-  const nextDock: GameDock = { testID: 'situations-next', label: `${s.card.next} →`, tone: 'next', onPress: goNext };
+  const nextDock: GameDock = { testID: 'situations-next', tone: 'next', onPress: goNext };
   const frame = { testID: 'situations-screen', target, currentCard: `practice-situations:${state.id}:${step}${state.index}` };
 
   if (step === 'summary') {
@@ -224,7 +224,7 @@ export default function SituationGame() {
   let dock: GameDock | undefined;
   if (step === 'words' || step === 'patterns' || state.done) dock = nextDock;
   else if (speaking && typing) {
-    dock = { testID: 'situations-check', label: `✓ ${s.card.check}`, tone: 'check', onPress: () => submitTyped(typed), disabled: !typed.trim() };
+    dock = { testID: 'situations-check', tone: 'check', onPress: () => submitTyped(typed), disabled: !typed.trim() };
   }
 
   const card = { classicStyle: styles.card, boxStyle: styles.brutalCard };

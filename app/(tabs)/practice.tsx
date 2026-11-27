@@ -207,7 +207,7 @@ function ReadingMode() {
       />
     </View>
   );
-  const dockAction = (testID: string, label: string, onPress: () => void) => (
+  const dockAction = (testID: string, label: string | undefined, onPress: () => void) => (
     <DockedAction testID={testID} label={label} onPress={onPress} tone="next" bottom={dockLift} colors={colors} onHeight={setDockH} />
   );
   const scroll = (children: ReactNode) => (
@@ -261,7 +261,7 @@ function ReadingMode() {
         </Card>
         </View>,
       ),
-      dockAction('practice-action', `${s.card.next} →`, () => goTo(1)),
+      dockAction('practice-action', undefined, () => goTo(1)),
     );
   }
 
@@ -332,7 +332,7 @@ function ReadingMode() {
         )}
       </View>,
     ),
-    answered ? dockAction('practice-action', `${s.card.next} →`, () => goTo(step + 1)) : undefined,
+    answered ? dockAction('practice-action', undefined, () => goTo(step + 1)) : undefined,
   );
 }
 

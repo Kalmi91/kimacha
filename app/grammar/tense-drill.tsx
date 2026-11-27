@@ -293,7 +293,6 @@ export default function TenseDrillScreen() {
 
       <DockedAction
         testID="tensedrill-dock"
-        label={checked ? `${s.grammar.next} →` : `✓ ${s.card.check}`}
         onPress={checked ? handleNext : handleCheck}
         tone={checked ? 'next' : 'check'}
         bottom={dockLift}

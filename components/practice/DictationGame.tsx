@@ -121,8 +121,8 @@ export default function DictationGame() {
       progress={{ text: s.practiceTab.progress(position, round.items.length), label: s.practiceTab.game.progressLabel(position, round.items.length) }}
       dock={
         checked
-          ? { testID: 'dictation-next', label: `${s.card.next} →`, tone: 'next', onPress: next }
-          : { testID: 'dictation-check', label: `✓ ${s.card.check}`, tone: 'check', onPress: check, disabled: !typed.trim() }
+          ? { testID: 'dictation-next', tone: 'next', onPress: next }
+          : { testID: 'dictation-check', tone: 'check', onPress: check, disabled: !typed.trim() }
       }
     >
       <View style={styles.box}>

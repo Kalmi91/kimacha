@@ -160,7 +160,7 @@ export default function SmallTalkGame() {
     apply(nextSmallTalk(state, topic));
   };
   const titles: Record<SmallTalkPart, string> = { build: sx.stepBuild, asks: sx.stepAsks, swap: sx.stepSwap };
-  const nextDock: GameDock = { testID: 'smalltalk-next', label: `${s.card.next} →`, tone: 'next', onPress: goNext };
+  const nextDock: GameDock = { testID: 'smalltalk-next', tone: 'next', onPress: goNext };
   const frame = { testID: 'smalltalk-screen', target, currentCard: `practice-smalltalk:${state.id}:${state.step}${state.index}` };
 
   if (state.step === 'summary') {
@@ -194,7 +194,7 @@ export default function SmallTalkGame() {
   const ownText = typing && typed.trim() ? typed : builtText;
   let dock: GameDock | undefined;
   if (part !== 'build' && state.done) dock = nextDock;
-  else if (answering) dock = { testID: 'smalltalk-check', label: `✓ ${s.card.check}`, tone: 'check', onPress: () => submitOwn(ownText), disabled: !ownText.trim() };
+  else if (answering) dock = { testID: 'smalltalk-check', tone: 'check', onPress: () => submitOwn(ownText), disabled: !ownText.trim() };
 
   const card = { classicStyle: styles.card, boxStyle: styles.brutalCard };
   const item = part === 'build' ? buildItems(topic)[state.index] : null;

@@ -416,7 +416,6 @@ export default function TableDeckScreen() {
       <DockedAction
         testID="learn-docked-action"
         tone={checked ? 'next' : 'check'}
-        label={checked ? `${s.grammar.next} →` : `✓ ${s.card.check}`}
         onPress={checked ? handleNext : handleCheck}
         secondary={checked && !checked.correct ? { label: s.grammar.mistyped, testID: 'grammar-mistyped', onPress: () => advance(true) } : undefined}
         bottom={dockLift}
