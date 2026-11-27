@@ -180,7 +180,7 @@ export default function ScrambleGame() {
       currentCard={`practice-scramble:${item.id}`}
       creditSeq={creditSeq}
       progress={{ text: s.practiceTab.progress(position, round.items.length), label: s.practiceTab.game.progressLabel(position, round.items.length) }}
-      dock={state.finished ? { testID: 'scramble-next', label: `${s.card.next} →`, tone: 'next', onPress: next } : undefined}
+      dock={state.finished ? { testID: 'scramble-next', tone: 'next', onPress: next } : undefined}
     >
       <View style={styles.box}>
         <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>

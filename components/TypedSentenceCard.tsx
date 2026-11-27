@@ -265,7 +265,6 @@ export default function TypedSentenceCard({
       </ScrollView>
 
       <DockedAction
-        label={result ? `${s.card.next} →` : `✓ ${s.card.check}`}
         onPress={result ? () => onResult(result === 'correct', typed) : handleCheck}
         tone={result ? 'next' : 'check'}
         color={result ? (result === 'correct' ? colors.successFill : colors.danger) : undefined}

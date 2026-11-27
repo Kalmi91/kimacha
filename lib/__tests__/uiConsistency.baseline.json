@@ -106,19 +106,11 @@
     }
   },
   "check-label": {
-    "app/grammar/deck/[topic].tsx": {
-      "count": 1,
-      "reason": "convert to the shared action button (DockedAction / InlineAction)"
-    },
     "app/grammar/exam-round.tsx": {
       "count": 1,
       "reason": "convert to the shared action button (DockedAction / InlineAction)"
     },
     "app/grammar/form-check/[topic].tsx": {
-      "count": 1,
-      "reason": "convert to the shared action button (DockedAction / InlineAction)"
-    },
-    "app/grammar/tense-drill.tsx": {
       "count": 1,
       "reason": "convert to the shared action button (DockedAction / InlineAction)"
     },
@@ -130,16 +122,12 @@
       "count": 1,
       "reason": "convert to the shared action button (DockedAction / InlineAction)"
     },
-    "components/TypedSentenceCard.tsx": {
-      "count": 1,
-      "reason": "convert to the shared action button (DockedAction / InlineAction)"
-    },
     "components/exam/ExamMatchCard.tsx": {
       "count": 1,
       "reason": "convert to the shared action button (DockedAction / InlineAction)"
     },
     "components/exam/ExamSpeakCard.tsx": {
-      "count": 2,
+      "count": 1,
       "reason": "convert to the shared action button (DockedAction / InlineAction)"
     },
     "components/exam/ExamTilesCard.tsx": {
@@ -147,7 +135,7 @@
       "reason": "convert to the shared action button (DockedAction / InlineAction)"
     },
     "components/exam/ExamTypeCard.tsx": {
-      "count": 2,
+      "count": 1,
       "reason": "convert to the shared action button (DockedAction / InlineAction)"
     },
     "components/grammar/NewKinds.tsx": {
@@ -167,18 +155,6 @@
       "reason": "convert to the shared action button (DockedAction / InlineAction)"
     },
     "components/learn/PcicCardView.tsx": {
-      "count": 1,
-      "reason": "convert to the shared action button (DockedAction / InlineAction)"
-    },
-    "components/practice/DictationGame.tsx": {
-      "count": 1,
-      "reason": "convert to the shared action button (DockedAction / InlineAction)"
-    },
-    "components/practice/SituationGame.tsx": {
-      "count": 1,
-      "reason": "convert to the shared action button (DockedAction / InlineAction)"
-    },
-    "components/practice/SmallTalkGame.tsx": {
       "count": 1,
       "reason": "convert to the shared action button (DockedAction / InlineAction)"
     },
@@ -242,15 +218,7 @@
     }
   },
   "next-label": {
-    "app/(tabs)/practice.tsx": {
-      "count": 2,
-      "reason": "convert to the shared action button (DockedAction / InlineAction)"
-    },
     "app/grammar/big-test.tsx": {
-      "count": 1,
-      "reason": "convert to the shared action button (DockedAction / InlineAction)"
-    },
-    "app/grammar/deck/[topic].tsx": {
       "count": 1,
       "reason": "convert to the shared action button (DockedAction / InlineAction)"
     },
@@ -266,10 +234,6 @@
       "count": 1,
       "reason": "convert to the shared action button (DockedAction / InlineAction)"
     },
-    "app/grammar/tense-drill.tsx": {
-      "count": 1,
-      "reason": "convert to the shared action button (DockedAction / InlineAction)"
-    },
     "app/mock-exam.tsx": {
       "count": 1,
       "reason": "own Next task button (ExamButton with s.nextTask); convert to the shared action button (DockedAction / InlineAction)"
@@ -282,10 +246,6 @@
       "count": 1,
       "reason": "convert to the shared action button (DockedAction / InlineAction)"
     },
-    "components/TypedSentenceCard.tsx": {
-      "count": 1,
-      "reason": "convert to the shared action button (DockedAction / InlineAction)"
-    },
     "components/exam/ExamChoiceCard.tsx": {
       "count": 1,
       "reason": "convert to the shared action button (DockedAction / InlineAction)"
@@ -295,7 +255,7 @@
       "reason": "convert to the shared action button (DockedAction / InlineAction)"
     },
     "components/exam/ExamSpeakCard.tsx": {
-      "count": 2,
+      "count": 1,
       "reason": "convert to the shared action button (DockedAction / InlineAction)"
     },
     "components/exam/ExamTilesCard.tsx": {
@@ -303,7 +263,7 @@
       "reason": "convert to the shared action button (DockedAction / InlineAction)"
     },
     "components/exam/ExamTypeCard.tsx": {
-      "count": 2,
+      "count": 1,
       "reason": "convert to the shared action button (DockedAction / InlineAction)"
     },
     "components/exam/mock/SpeakingTask.tsx": {
@@ -332,26 +292,6 @@
     },
     "components/grammar/drill/WhyTransformItems.tsx": {
       "count": 4,
-      "reason": "convert to the shared action button (DockedAction / InlineAction)"
-    },
-    "components/practice/DictationGame.tsx": {
-      "count": 1,
-      "reason": "convert to the shared action button (DockedAction / InlineAction)"
-    },
-    "components/practice/OppositesGame.tsx": {
-      "count": 1,
-      "reason": "convert to the shared action button (DockedAction / InlineAction)"
-    },
-    "components/practice/ScrambleGame.tsx": {
-      "count": 1,
-      "reason": "convert to the shared action button (DockedAction / InlineAction)"
-    },
-    "components/practice/SituationGame.tsx": {
-      "count": 1,
-      "reason": "convert to the shared action button (DockedAction / InlineAction)"
-    },
-    "components/practice/SmallTalkGame.tsx": {
-      "count": 1,
       "reason": "convert to the shared action button (DockedAction / InlineAction)"
     },
     "components/speech/SpeechPlay.tsx": {

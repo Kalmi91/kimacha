@@ -20,7 +20,7 @@ import { useTheme } from '@/lib/ThemeContext';
 // and the 💬 feedback button with the card id. Plus the two shared screens: GameEmpty and GameSummary.
 
 export interface GameDock {
-  label: string;
+  label?: string;
   onPress: () => void;
   tone: DockedActionTone;
   testID: string;
