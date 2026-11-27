@@ -728,6 +728,7 @@
       "q": { "en": "What is the feminine form of the adjective \"lento\"?", "es": "¿Cuál es la forma femenina del adjetivo «lento»?" },
       "answer": "lenta",
       "table": "derivacion",
+      "examples": ["El tren es *lento*.", "La tortuga es *lenta*.", "Camina *lentamente*."],
       "wrong": {
         "lento": {
           "en": "That is the masculine form. For the feminine, -o becomes -a: lenta.",

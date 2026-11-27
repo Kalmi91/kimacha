@@ -764,6 +764,11 @@ function auditFormItem(item, itemPath, topic, tableIds, lang = 'es') {
   }
   // the old one-line hint is not shown any more: an item with an sk needs its q, or the instruction is lost
   if (item.ask !== undefined && item.q === undefined) p1.push({ path: itemPath, issue: 'form item has an ask but no q (the ask is not shown any more)' });
+  // optional example sentences shown after the answer: non-empty strings, each with at least one *highlighted* pair
+  if (item.examples !== undefined) {
+    if (!Array.isArray(item.examples)) p1.push({ path: itemPath, issue: 'form examples must be an array' });
+    else for (const ex of item.examples) if (typeof ex !== 'string' || !/\*[^*]+\*/.test(ex)) p1.push({ path: itemPath, issue: `form example needs a non-empty string with a *...* pair: ${JSON.stringify(ex)}` });
+  }
   // optional whole question of the level test (FB642-646): { en, es }, a question that does not give the answer away
   if (item.q !== undefined) {
     checkLangs(item.q, `${itemPath} q`);
