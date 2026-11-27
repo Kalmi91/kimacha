@@ -12,6 +12,7 @@
 // Pure module: no database, no loaded corpus, the caller supplies the data.
 
 import { ES_A1_READING_SIGNS, ES_A1_READING_TEXTS, ES_A1_TRUE_FALSE_TEXTS } from '@/data/exams/mock/es-a1-reading-texts';
+import { ES_A1_LISTENING_DIALOGUES, ES_A1_LISTENING_TEXTS, type A1ListeningText } from '@/data/exams/mock/es-a1-listening-texts';
 import type { PcicItem } from '@/data/pcic';
 import { wordIn } from '@/lib/pcicItemText';
 import { hashString, shuffleArray, shuffleOptions } from '@/lib/shuffle';
@@ -338,6 +339,23 @@ export function buildMockExam(input: MockBuildInput): MockExam {
     return draft('listening', kind, body);
   };
 
+  // The authored A1 listening (es): ONE coherent text is read aloud and the Spanish questions follow its order (not a translation per line).
+  const authoredListen = (kind: 'listen_mc' | 'listen_dialogue', texts: A1ListeningText[], n: number, part: string): Draft => {
+    const t = shuffleArray(texts, rank(part))[0];
+    const picked = t.questions.slice(0, n);
+    const body: Omit<MockListenTask, 'id' | 'instruction' | 'skill'> = {
+      kind,
+      audio: t.lines,
+      plays: DEFAULT_PLAYS,
+      questions: picked.map((q, i) => choice(q.correct, q.wrong, `${part}o:${t.id}:${i}`)),
+      prompts: picked.map((q) => q.question),
+      lineOf: picked.map((q) => q.line),
+    };
+    return draft('listening', kind === 'listen_mc' ? 'listen_mc_q' : kind, body);
+  };
+  const authoredListenMc = (): Draft => authoredListen('listen_mc', ES_A1_LISTENING_TEXTS, c.listenMc, 'a1lm');
+  const authoredListenDialogue = (): Draft => authoredListen('listen_dialogue', ES_A1_LISTENING_DIALOGUES, c.listenDialogue, 'a1ld');
+
   // Dictation: the sentences must be written down verbatim (counts as a listening AND a writing mark).
   const dictation = (plays: number): Draft | null => {
     if (c.dictationSentences <= 0) return null;
@@ -358,9 +376,9 @@ export function buildMockExam(input: MockBuildInput): MockExam {
     const a1 = level === 'A1';
     drafts.reading = [a1 ? authoredReadMc() : readMc(), a1 ? authoredMatch() : matchDraft('match', c.readMatch, 'rm'), a1 ? authoredTrueFalse() : trueFalse(), gapMc()];
     drafts.listening = [
-      listenDraft('listen_mc', c.listenMc, 'lm', DEFAULT_PLAYS),
+      a1 ? authoredListenMc() : listenDraft('listen_mc', c.listenMc, 'lm', DEFAULT_PLAYS),
       matchDraft('listen_match', c.listenMatch, 'lx'),
-      listenDraft('listen_dialogue', c.listenDialogue, 'ld', DEFAULT_PLAYS),
+      a1 ? authoredListenDialogue() : listenDraft('listen_dialogue', c.listenDialogue, 'ld', DEFAULT_PLAYS),
     ];
   } else if (bp.plan === 'en-a1') {
     // The first part of listening can be heard once, the dictation and the gaps twice; paper order: listening, reading, writing.

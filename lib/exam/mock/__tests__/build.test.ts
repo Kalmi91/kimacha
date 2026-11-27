@@ -172,11 +172,12 @@ describe('buildMockExam: es A1 (an English speaker learns Spanish)', () => {
     expect(tf.statements.filter((s) => !s.answer)).toHaveLength(2);
   });
 
-  it('the listening questions: one question per row, 3 different answers, the right one is the translation of the heard sentence', () => {
-    const lm = paper(e, 'listening').tasks[0];
+  it('the generated listening questions (A2; the A1 listening is authored, a1Listening.test.ts): one question per row, 3 different answers, the right one is the translation of the heard sentence', () => {
+    const a2 = exam('es', 'A2');
+    const lm = paper(a2.exam, 'listening').tasks[0];
     if (lm.kind !== 'listen_mc') throw new Error('nincs listen_mc');
     expect(lm.questions).toHaveLength(lm.audio.length);
-    const byTarget = new Map(items.map((i) => [i.exampleEs?.trim(), i.exampleEn?.trim()]));
+    const byTarget = new Map(a2.items.map((i) => [i.exampleEs?.trim(), i.exampleEn?.trim()]));
     lm.questions.forEach((q, i) => {
       expect(q.options).toHaveLength(3);
       expect(new Set(q.options).size).toBe(3);

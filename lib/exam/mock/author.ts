@@ -14,6 +14,7 @@ export type MockInstructionKind =
   | 'gap_mc'
   | 'gap_type'
   | 'listen_mc'
+  | 'listen_mc_q'
   | 'listen_match'
   | 'listen_dialogue'
   | 'listen_fill'
@@ -28,6 +29,7 @@ const INSTRUCTIONS: Record<MockTarget, Record<MockInstructionKind, string>> = {
     gap_mc: 'Complete las frases. Elija la opción correcta para cada hueco.',
     gap_type: 'Complete las frases con una palabra.',
     listen_mc: 'Va a escuchar unas frases. Se escuchan {times}. Marque la opción correcta.',
+    listen_mc_q: 'Va a escuchar un texto corto. Se escucha {times}. Conteste a las preguntas.',
     listen_match: 'Va a escuchar unas frases. Relacione cada una con su significado. Hay más significados que frases.',
     listen_dialogue: 'Va a escuchar una conversación. Se escucha {times}. Conteste a las preguntas.',
     listen_fill: 'Va a escuchar unas frases. Se escuchan {times}. Escriba la palabra que falta.',
@@ -40,6 +42,7 @@ const INSTRUCTIONS: Record<MockTarget, Record<MockInstructionKind, string>> = {
     gap_mc: 'Complete the sentences. Choose the correct word for each gap.',
     gap_type: 'Complete the sentences with one word.',
     listen_mc: 'You will hear some sentences. You hear them {times}. Choose the correct option.',
+    listen_mc_q: 'You will hear a short text. You hear it {times}. Answer the questions.',
     listen_match: 'You will hear some sentences. Match each one with its meaning. There are more meanings than sentences.',
     listen_dialogue: 'You will hear a conversation. You hear it {times}. Answer the questions.',
     listen_fill: 'You will hear some sentences. You hear them {times}. Write the missing word.',
@@ -53,6 +56,7 @@ const INSTRUCTIONS: Record<MockTarget, Record<MockInstructionKind, string>> = {
     gap_mc: 'Egészítse ki a mondatokat. Minden hiányzó szóhoz válassza ki a helyes lehetőséget.',
     gap_type: 'Egészítse ki a mondatokat egy-egy szóval.',
     listen_mc: 'Néhány mondatot fog hallani. Ezeket {times} hallja. Válassza ki a helyes választ.',
+    listen_mc_q: 'Egy rövid szöveget fog hallani. Ezt {times} hallja. Válaszoljon a kérdésekre.',
     listen_match: 'Néhány mondatot fog hallani. Párosítsa mindegyiket a jelentésével. Több jelentés van, mint mondat.',
     listen_dialogue: 'Egy beszélgetést fog hallani. Ezt {times} hallja. Válaszoljon a kérdésekre.',
     listen_fill: 'Néhány mondatot fog hallani. Ezeket {times} hallja. Írja be a hiányzó szót.',
@@ -66,6 +70,7 @@ const INSTRUCTIONS: Record<MockTarget, Record<MockInstructionKind, string>> = {
     gap_mc: 'Ergänzen Sie die Sätze. Wählen Sie für jede Lücke die richtige Lösung.',
     gap_type: 'Ergänzen Sie die Sätze mit je einem Wort.',
     listen_mc: 'Sie hören einige Sätze. Sie hören jeden Satz {times}. Wählen Sie die richtige Lösung.',
+    listen_mc_q: 'Sie hören einen kurzen Text. Sie hören ihn {times}. Beantworten Sie die Fragen.',
     listen_match: 'Sie hören einige Sätze. Ordnen Sie jedem Satz die passende Bedeutung zu. Es gibt mehr Bedeutungen als Sätze.',
     listen_dialogue: 'Sie hören ein Gespräch. Sie hören es {times}. Beantworten Sie die Fragen.',
     listen_fill: 'Sie hören einige Sätze. Sie hören jeden Satz {times}. Schreiben Sie das fehlende Wort.',

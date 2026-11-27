@@ -93,9 +93,13 @@ export interface MockDictationTask extends MockTaskBase, MockPlays {
 
 export interface MockListenTask extends MockTaskBase, MockPlays {
   kind: 'listen_mc' | 'listen_dialogue';
-  /** What the recording says; it is spoken with TTS in the target language. One question per line. */
+  /** What the recording says; it is spoken with TTS in the target language. One question per line (the generated tasks), or ONE coherent text (the authored A1 tasks: see `prompts`). */
   audio: string[];
   questions: MockChoice[];
+  /** The authored A1 task: the question text of each question (target language); absent = the generic "what did you hear" label. */
+  prompts?: string[];
+  /** The authored A1 task: per question, the index of the audio line that holds the answer; absent = question `i` belongs to line `i`. */
+  lineOf?: number[];
 }
 
 export type MockFormCheck = 'fullname' | 'word' | 'address' | 'age' | 'phone' | 'email' | 'level';

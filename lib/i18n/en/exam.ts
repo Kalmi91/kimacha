@@ -145,6 +145,8 @@ export default {
       listen_mc: 'Listen to the sentences (twice) and choose what you heard.',
       listen_match: 'Listen (twice) and match each recording with its meaning. There is one meaning too many.',
       listen_dialogue: 'Listen to the conversation (twice) and choose what was said in each line.',
+      listen_mc_q: 'Listen to the text (twice) and answer the questions.',
+      listen_dialogue_q: 'Listen to the conversation (twice) and answer the questions.',
       form_fill: 'Fill in every field.',
       short_message: 'Write the message the task describes. Reach the minimum word count and cover every point.',
       gap_type: 'Type the missing word in each gap.',
