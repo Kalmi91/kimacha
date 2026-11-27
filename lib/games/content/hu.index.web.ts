@@ -6,6 +6,7 @@ import { packEntry } from './webPacks';
 
 export const HU_GRAMMAR_INDEX: GrammarIndexEntry[] = [
   { id: 'kiejtes-abc', load: () => packEntry('grammar-hu', 'kiejtes-abc') },
+  { id: 'betuzes', load: () => packEntry('grammar-hu', 'betuzes') },
   { id: 'hangrend', load: () => packEntry('grammar-hu', 'hangrend') },
   { id: 'lenni-van', load: () => packEntry('grammar-hu', 'lenni-van') },
   { id: 'nevelok', load: () => packEntry('grammar-hu', 'nevelok') },

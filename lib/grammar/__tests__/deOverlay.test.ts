@@ -156,7 +156,7 @@ describe('German syllabus titles', () => {
     const units = syllabusLevels('hu').flatMap((l) => unitsForLevel(l, 'hu'));
     const topics = syllabusLevels('hu').flatMap((l) => syllabusForLevel(l, 'hu'));
     expect(units).toHaveLength(18);
-    expect(topics).toHaveLength(75);
+    expect(topics).toHaveLength(76);
     for (const u of units) expect(u.title.de?.trim()).toBeTruthy();
     for (const t of topics) {
       expect(t.title.de?.trim()).toBeTruthy();

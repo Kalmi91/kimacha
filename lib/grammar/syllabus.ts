@@ -148,6 +148,7 @@ const GRAMMAR_TIER: Record<string, GrammarTier> = {
   'marcadores-discursivos': 'core',
   // --- Hungarian course (target hu), band from HU-TANTERV; A1 ---
   'kiejtes-abc': 'core',
+  'betuzes': 'core',
   hangrend: 'core-plus',
   'lenni-van': 'core-plus',
   nevelok: 'core',

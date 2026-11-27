@@ -311,7 +311,7 @@ describe('form tasks and result data', () => {
       }
     }
     expect(checked).toBeGreaterThan(2000);
-    expect(own).toBe(658); // 73 + the 140 non-verb A1 form tasks of the Spanish course (E122) + the 5 estar forms of hay-estar (E132) + 449 of the German, English and Hungarian courses (E137) + 3 non-verb form tasks of the English A1 lessons (E194) - 1 (articulos-genero ag-form-01 removed, FB687) - 11 (ag-form-02..12 removed, FB697)
+    expect(own).toBe(670); // 73 + the 140 non-verb A1 form tasks of the Spanish course (E122) + the 5 estar forms of hay-estar (E132) + 449 of the German, English and Hungarian courses (E137) + 3 non-verb form tasks of the English A1 lessons (E194) - 1 (articulos-genero ag-form-01 removed, FB687) - 11 (ag-form-02..12 removed, FB697) + 12 (the hu betuzes lesson, each with its own q)
     expect(tables).toBeGreaterThan(checked / 2);
   });
 

@@ -5,6 +5,7 @@ import { packEntry } from './webPacks';
 
 export const HU_GRAMMAR_DE: Record<string, () => Record<string, string>> = {
   'kiejtes-abc': () => packEntry('grammar-de-hu', 'kiejtes-abc'),
+  'betuzes': () => packEntry('grammar-de-hu', 'betuzes'),
   'hangrend': () => packEntry('grammar-de-hu', 'hangrend'),
   'lenni-van': () => packEntry('grammar-de-hu', 'lenni-van'),
   'nevelok': () => packEntry('grammar-de-hu', 'nevelok'),

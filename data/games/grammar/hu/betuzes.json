@@ -1,0 +1,1582 @@
+{
+  "schema": 2,
+  "topic": "betuzes",
+  "level": "A1",
+  "title": {
+    "en": "Spelling: letter names, your name, your email",
+    "es": "Deletrear: los nombres de las letras, tu nombre, tu correo"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "In Hungarian we spell with letter names. A vowel is said the way it sounds (a, á, e, é ... ű), so a long vowel has its own name. Most consonants are the consonant plus é (bé, cé, csé, dé, dzé, dzsé, gé, gyé, jé, pé, té, tyé, vé, zé, zsé). A few are e plus the consonant (ef, el, em, en, eny, er, es, esz). Three are different: há, ká, kú. The foreign letters have their own names: q is kú, w is dupla vé, x is iksz, y is ipszilon. A letter written with two or three signs (cs, sz, gy, ny, ty, ly, zs, dz, dzs) is ONE letter with ONE name: the name of sz is esz, not \"es, zé\".",
+        "es": "En húngaro se deletrea con los nombres de las letras. Una vocal se dice como suena (a, á, e, é ... ű), así que la vocal larga tiene su propio nombre. La mayoría de las consonantes son la consonante más é (bé, cé, csé, dé, dzé, dzsé, gé, gyé, jé, pé, té, tyé, vé, zé, zsé). Unas pocas son e más la consonante (ef, el, em, en, eny, er, es, esz). Tres son distintas: há, ká, kú. Las letras extranjeras tienen su propio nombre: q es kú, w es dupla vé, x es iksz, y es ipszilon. Una letra escrita con dos o tres signos (cs, sz, gy, ny, ty, ly, zs, dz, dzs) es UNA letra con UN nombre: el nombre de sz es esz, no «es, zé»."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "letter-names",
+      "noTableDeck": true,
+      "title": {
+        "en": "The letter names",
+        "es": "Los nombres de las letras"
+      },
+      "header": [
+        {
+          "en": "Letter",
+          "es": "Letra"
+        },
+        {
+          "en": "Name",
+          "es": "Nombre"
+        },
+        {
+          "en": "Example",
+          "es": "Ejemplo"
+        }
+      ],
+      "rows": [
+        [
+          "a",
+          "a",
+          "alma"
+        ],
+        [
+          "á",
+          "á",
+          "ágy"
+        ],
+        [
+          "b",
+          "bé",
+          "bor"
+        ],
+        [
+          "c",
+          "cé",
+          "cukor"
+        ],
+        [
+          "cs",
+          "csé",
+          "csirke"
+        ],
+        [
+          "d",
+          "dé",
+          "kedd"
+        ],
+        [
+          "dz",
+          "dzé",
+          "bodza"
+        ],
+        [
+          "dzs",
+          "dzsé",
+          "dzsem"
+        ],
+        [
+          "e",
+          "e",
+          "egy"
+        ],
+        [
+          "é",
+          "é",
+          "kéz"
+        ],
+        [
+          "f",
+          "ef",
+          "fül"
+        ],
+        [
+          "g",
+          "gé",
+          "Gábor"
+        ],
+        [
+          "gy",
+          "gyé",
+          "gyerek"
+        ],
+        [
+          "h",
+          "há",
+          "hó"
+        ],
+        [
+          "i",
+          "i",
+          "ing"
+        ],
+        [
+          "í",
+          "í",
+          "híd"
+        ],
+        [
+          "j",
+          "jé",
+          "jó"
+        ],
+        [
+          "k",
+          "ká",
+          "kert"
+        ],
+        [
+          "l",
+          "el",
+          "lakik"
+        ],
+        [
+          "ly",
+          "elipszilon",
+          "folyó"
+        ],
+        [
+          "m",
+          "em",
+          "magyar"
+        ],
+        [
+          "n",
+          "en",
+          "nagy"
+        ],
+        [
+          "ny",
+          "eny",
+          "nyár"
+        ],
+        [
+          "o",
+          "o",
+          "orvos"
+        ],
+        [
+          "ó",
+          "ó",
+          "só"
+        ],
+        [
+          "ö",
+          "ö",
+          "öt"
+        ],
+        [
+          "ő",
+          "ő",
+          "nő"
+        ],
+        [
+          "p",
+          "pé",
+          "pék"
+        ],
+        [
+          "q",
+          "kú",
+          "Aquincum"
+        ],
+        [
+          "r",
+          "er",
+          "rizs"
+        ],
+        [
+          "s",
+          "es",
+          "sapka"
+        ],
+        [
+          "sz",
+          "esz",
+          "szék"
+        ],
+        [
+          "t",
+          "té",
+          "tea"
+        ],
+        [
+          "ty",
+          "tyé",
+          "kutya"
+        ],
+        [
+          "u",
+          "u",
+          "utca"
+        ],
+        [
+          "ú",
+          "ú",
+          "út"
+        ],
+        [
+          "ü",
+          "ü",
+          "üveg"
+        ],
+        [
+          "ű",
+          "ű",
+          "fű"
+        ],
+        [
+          "v",
+          "vé",
+          "víz"
+        ],
+        [
+          "w",
+          "dupla vé",
+          "watt"
+        ],
+        [
+          "x",
+          "iksz",
+          "taxi"
+        ],
+        [
+          "y",
+          "ipszilon",
+          "Ady"
+        ],
+        [
+          "z",
+          "zé",
+          "zöld"
+        ],
+        [
+          "zs",
+          "zsé",
+          "zseb"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "How to spell a name",
+        "es": "Cómo deletrear un nombre"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "Say the letter names one by one, with a comma between them.",
+            "es": "Di los nombres de las letras una por una, con una pausa entre ellas."
+          },
+          "examples": [
+            {
+              "es": "Szabó: esz, á, bé, ó.",
+              "tr": {
+                "en": "Szabó: esz, á, bé, ó.",
+                "es": "Szabó: esz, á, bé, ó."
+              }
+            },
+            {
+              "es": "Kovács: ká, o, vé, á, csé.",
+              "tr": {
+                "en": "Kovács: ká, o, vé, á, csé.",
+                "es": "Kovács: ká, o, vé, á, csé."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "A letter of two or three signs is one letter: gy is one, so you say gyé once.",
+            "es": "Una letra de dos o tres signos es una sola letra: gy es una, así que dices gyé una vez."
+          },
+          "examples": [
+            {
+              "es": "Nagy: en, a, gyé.",
+              "tr": {
+                "en": "Nagy: en, a, gyé.",
+                "es": "Nagy: en, a, gyé."
+              }
+            },
+            {
+              "es": "Zsófia: zsé, ó, ef, i, a.",
+              "tr": {
+                "en": "Zsófia: zsé, ó, ef, i, a.",
+                "es": "Zsófia: zsé, ó, ef, i, a."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "The letters j and ly sound the same, so when you spell, the name tells which one it is: jé or elipszilon.",
+            "es": "Las letras j y ly suenan igual, por eso al deletrear el nombre dice cuál es: jé o elipszilon."
+          },
+          "examples": [
+            {
+              "es": "Gergely: gé, e, er, gé, e, elipszilon.",
+              "tr": {
+                "en": "Gergely: gé, e, er, gé, e, elipszilon.",
+                "es": "Gergely: gé, e, er, gé, e, elipszilon."
+              }
+            },
+            {
+              "es": "Judit: jé, u, dé, i, té.",
+              "tr": {
+                "en": "Judit: jé, u, dé, i, té.",
+                "es": "Judit: jé, u, dé, i, té."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "If the listener is unsure, you can say \"hosszú\" (long) before a long vowel and \"rövid\" (short) before a short one.",
+            "es": "Si quien escucha no está seguro, puedes decir «hosszú» (largo) antes de una vocal larga y «rövid» (corto) antes de una corta."
+          },
+          "examples": [
+            {
+              "es": "Szabó: esz, á, bé, hosszú ó.",
+              "tr": {
+                "en": "Szabó: esz, á, bé, long ó.",
+                "es": "Szabó: esz, á, bé, ó larga."
+              }
+            },
+            {
+              "es": "Kovács: ká, rövid o, vé, á, csé.",
+              "tr": {
+                "en": "Kovács: ká, short o, vé, á, csé.",
+                "es": "Kovács: ká, o corta, vé, á, csé."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Several letters have two accepted names: ef or eff, el or ell, em or emm, en or enn, eny or enny, er or err, es or ess, esz or essz. Both are right.",
+            "es": "Varias letras tienen dos nombres aceptados: ef o eff, el o ell, em o emm, en o enn, eny o enny, er o err, es o ess, esz o essz. Las dos son correctas."
+          },
+          "examples": [
+            {
+              "es": "Ferenc: ef, e, er, e, en, cé.",
+              "tr": {
+                "en": "Ferenc: ef, e, er, e, en, cé.",
+                "es": "Ferenc: ef, e, er, e, en, cé."
+              }
+            },
+            {
+              "es": "Ferenc: eff, e, err, e, enn, cé.",
+              "tr": {
+                "en": "Ferenc: eff, e, err, e, enn, cé (same name, other form).",
+                "es": "Ferenc: eff, e, err, e, enn, cé (el mismo nombre, otra forma)."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "Email and web addresses",
+        "es": "Correo y direcciones web"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "The sign @ is called kukac. The words gmail and com are said as whole words, not spelled letter by letter.",
+            "es": "El signo @ se llama kukac. Las palabras gmail y com se dicen enteras, no se deletrean letra por letra."
+          },
+          "examples": [
+            {
+              "es": "anna.kovacs@gmail.com: anna pont kovacs kukac gmail pont com.",
+              "tr": {
+                "en": "anna.kovacs@gmail.com: anna dot kovacs at gmail dot com.",
+                "es": "anna.kovacs@gmail.com: anna punto kovacs arroba gmail punto com."
+              }
+            },
+            {
+              "es": "kovacs kukac gmail pont com",
+              "tr": {
+                "en": "kovacs at gmail dot com",
+                "es": "kovacs arroba gmail punto com"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "The dot is pont.",
+            "es": "El punto se dice pont."
+          },
+          "examples": [
+            {
+              "es": "anna pont kovacs",
+              "tr": {
+                "en": "anna dot kovacs",
+                "es": "anna punto kovacs"
+              }
+            },
+            {
+              "es": "gmail pont com",
+              "tr": {
+                "en": "gmail dot com",
+                "es": "gmail punto com"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "The hyphen is kötőjel.",
+            "es": "El guion se dice kötőjel."
+          },
+          "examples": [
+            {
+              "es": "anna kötőjel kovacs",
+              "tr": {
+                "en": "anna hyphen kovacs",
+                "es": "anna guion kovacs"
+              }
+            },
+            {
+              "es": "anna kötőjel kovacs kukac gmail pont com",
+              "tr": {
+                "en": "anna hyphen kovacs at gmail dot com",
+                "es": "anna guion kovacs arroba gmail punto com"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "The underscore is alulvonás.",
+            "es": "El guion bajo se dice alulvonás."
+          },
+          "examples": [
+            {
+              "es": "anna alulvonás kovacs",
+              "tr": {
+                "en": "anna underscore kovacs",
+                "es": "anna guion bajo kovacs"
+              }
+            },
+            {
+              "es": "anna alulvonás kovacs kukac gmail pont com",
+              "tr": {
+                "en": "anna underscore kovacs at gmail dot com",
+                "es": "anna guion bajo kovacs arroba gmail punto com"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Asking and answering",
+        "es": "Preguntar y responder"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "\"Hogy írják?\" asks how something is written. Use it to ask how a name or a word is spelled.",
+            "es": "«Hogy írják?» pregunta cómo se escribe algo. Sirve para preguntar cómo se escribe un nombre o una palabra."
+          },
+          "examples": [
+            {
+              "es": "Hogy írják a nevét?",
+              "tr": {
+                "en": "How is your name written? (formal)",
+                "es": "¿Cómo se escribe su nombre? (formal)"
+              }
+            },
+            {
+              "es": "Hogy írják ezt a szót?",
+              "tr": {
+                "en": "How is this word written?",
+                "es": "¿Cómo se escribe esta palabra?"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "\"Betűzné, kérem?\" asks politely (formal, magázó) for the spelling.",
+            "es": "«Betűzné, kérem?» pide el deletreo con cortesía (formal, magázó)."
+          },
+          "examples": [
+            {
+              "es": "Betűzné, kérem?",
+              "tr": {
+                "en": "Could you spell it, please? (formal)",
+                "es": "¿Podría deletrearlo, por favor? (formal)"
+              }
+            },
+            {
+              "es": "Betűzné a nevét, kérem?",
+              "tr": {
+                "en": "Could you spell your name, please? (formal)",
+                "es": "¿Podría deletrear su nombre, por favor? (formal)"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "\"Betűzd, légy szíves!\" is the informal (tegező) way to ask a friend.",
+            "es": "«Betűzd, légy szíves!» es la forma informal (tegező) para pedírselo a un amigo."
+          },
+          "examples": [
+            {
+              "es": "Betűzd, légy szíves!",
+              "tr": {
+                "en": "Spell it, please! (informal)",
+                "es": "¡Deletréalo, por favor! (informal)"
+              }
+            },
+            {
+              "es": "Betűzd a nevedet, légy szíves!",
+              "tr": {
+                "en": "Spell your name, please! (informal)",
+                "es": "¡Deletrea tu nombre, por favor! (informal)"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "If you did not catch it, ask for it again or more slowly.",
+            "es": "Si no lo entendiste, pide que lo repitan o que lo digan más despacio."
+          },
+          "examples": [
+            {
+              "es": "Még egyszer, kérem.",
+              "tr": {
+                "en": "Once more, please.",
+                "es": "Una vez más, por favor."
+              }
+            },
+            {
+              "es": "Lassabban, kérem.",
+              "tr": {
+                "en": "More slowly, please.",
+                "es": "Más despacio, por favor."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "In Hungarian the family name comes first, then the given name.",
+            "es": "En húngaro primero va el apellido y después el nombre de pila."
+          },
+          "examples": [
+            {
+              "es": "Kovács Anna vagyok.",
+              "tr": {
+                "en": "I am Anna Kovács.",
+                "es": "Soy Anna Kovács."
+              }
+            },
+            {
+              "es": "Szabó Gergely vagyok.",
+              "tr": {
+                "en": "I am Gergely Szabó.",
+                "es": "Soy Gergely Szabó."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Letters that get mixed up",
+        "es": "Letras que se confunden"
+      },
+      "pairs": [
+        {
+          "a": "es",
+          "b": "esz",
+          "note": {
+            "en": "es is the letter s (the \"sh\" sound); esz is the letter sz (the \"s\" sound).",
+            "es": "es es la letra s (el sonido «sh»); esz es la letra sz (el sonido «s»)."
+          },
+          "examples": [
+            {
+              "es": "Só: es, ó.",
+              "tr": {
+                "en": "Só: es, ó.",
+                "es": "Só: es, ó."
+              }
+            },
+            {
+              "es": "Szia: esz, i, a.",
+              "tr": {
+                "en": "Szia: esz, i, a.",
+                "es": "Szia: esz, i, a."
+              }
+            }
+          ]
+        },
+        {
+          "a": "cé",
+          "b": "csé",
+          "note": {
+            "en": "cé is the letter c (the \"ts\" sound); csé is the letter cs (the \"ch\" sound).",
+            "es": "cé es la letra c (el sonido «ts»); csé es la letra cs (el sonido «ch»)."
+          },
+          "examples": [
+            {
+              "es": "Cukor: cé, u, ká, o, er.",
+              "tr": {
+                "en": "Cukor: cé, u, ká, o, er.",
+                "es": "Cukor: cé, u, ká, o, er."
+              }
+            },
+            {
+              "es": "Csirke: csé, i, er, ká, e.",
+              "tr": {
+                "en": "Csirke: csé, i, er, ká, e.",
+                "es": "Csirke: csé, i, er, ká, e."
+              }
+            }
+          ]
+        },
+        {
+          "a": "gé",
+          "b": "gyé",
+          "note": {
+            "en": "gé is the letter g (always hard); gyé is the letter gy, one soft letter.",
+            "es": "gé es la letra g (siempre fuerte); gyé es la letra gy, una sola letra suave."
+          },
+          "examples": [
+            {
+              "es": "Gábor: gé, á, bé, o, er.",
+              "tr": {
+                "en": "Gábor: gé, á, bé, o, er.",
+                "es": "Gábor: gé, á, bé, o, er."
+              }
+            },
+            {
+              "es": "Gyerek: gyé, e, er, e, ká.",
+              "tr": {
+                "en": "Gyerek: gyé, e, er, e, ká.",
+                "es": "Gyerek: gyé, e, er, e, ká."
+              }
+            }
+          ]
+        },
+        {
+          "a": "jé",
+          "b": "elipszilon",
+          "note": {
+            "en": "jé is the letter j; elipszilon is the letter ly. They are different letters, but they sound the same.",
+            "es": "jé es la letra j; elipszilon es la letra ly. Son letras distintas, pero suenan igual."
+          },
+          "examples": [
+            {
+              "es": "Jó: jé, ó.",
+              "tr": {
+                "en": "Jó: jé, ó.",
+                "es": "Jó: jé, ó."
+              }
+            },
+            {
+              "es": "Folyó: ef, o, elipszilon, ó.",
+              "tr": {
+                "en": "Folyó: ef, o, elipszilon, ó.",
+                "es": "Folyó: ef, o, elipszilon, ó."
+              }
+            }
+          ]
+        },
+        {
+          "a": "ipszilon",
+          "b": "elipszilon",
+          "note": {
+            "en": "ipszilon is the letter y; elipszilon is the letter ly. The names are close, so listen to the first syllable.",
+            "es": "ipszilon es la letra y; elipszilon es la letra ly. Los nombres se parecen, así que fíjate en la primera sílaba."
+          },
+          "examples": [
+            {
+              "es": "Ady: á, dé, ipszilon.",
+              "tr": {
+                "en": "Ady: á, dé, ipszilon.",
+                "es": "Ady: á, dé, ipszilon."
+              }
+            },
+            {
+              "es": "Melyik: em, e, elipszilon, i, ká.",
+              "tr": {
+                "en": "Melyik: em, e, elipszilon, i, ká.",
+                "es": "Melyik: em, e, elipszilon, i, ká."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Trap for English speakers: the English letter names do not work here. The English E (\"ee\") sounds like the Hungarian í to a Hungarian ear, the English A (\"ay\") is close to é, and the English I (\"eye\") is not a Hungarian letter name at all. Say the Hungarian name.",
+        "es": "Trampa para quien habla inglés: los nombres ingleses de las letras no sirven aquí. La E inglesa («ii») suena a í para un oído húngaro, la A inglesa («ei») se parece a é, y la I inglesa («ai») no es un nombre de letra húngaro. Di el nombre húngaro."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Trap for Spanish speakers: the Spanish names change. jota is jé, hache is há, ce is cé (and c sounds like \"ts\"), doble ve is dupla vé, i griega (ye) is ipszilon, equis is iksz, cu is kú.",
+        "es": "Trampa para quien habla español: los nombres españoles cambian. jota es jé, hache es há, ce es cé (y la c suena «ts»), doble ve es dupla vé, i griega (ye) es ipszilon, equis es iksz, cu es kú."
+      }
+    }
+  ],
+  "speak": {
+    "en": "In Hungarian we spell with letter names. A vowel is said the way it sounds: «a», «á», «e», «é», and so on up to «ű», so a long vowel has its own name. Most consonants are the consonant plus é: «bé», «cé», «csé», but «ef», «el», «esz» are different. The sign «sz» is one letter, and its name is «esz». Here is a whole name spelled: «Szabó: esz, á, bé, ó.» The letters «j» and «ly» sound the same, but their names differ: «jé» and «elipszilon». In an email, the @ sign is «kukac» and the dot is «pont». To ask for a spelling, say «Hogy írják?» or «Betűzné, kérem?»",
+    "es": "En húngaro se deletrea con los nombres de las letras. Una vocal se dice como suena: «a», «á», «e», «é», y así hasta «ű», así que la vocal larga tiene su propio nombre. La mayoría de las consonantes son la consonante más é: «bé», «cé», «csé», pero «ef», «el», «esz» son distintas. El signo «sz» es una sola letra, y su nombre es «esz». Aquí hay un nombre completo deletreado: «Szabó: esz, á, bé, ó.» Las letras «j» y «ly» suenan igual, pero sus nombres son distintos: «jé» y «elipszilon». En un correo, el signo @ es «kukac» y el punto es «pont». Para pedir un deletreo, di «Hogy írják?» o «Betűzné, kérem?»"
+  },
+  "glossary": [
+    {
+      "word": "betű",
+      "gloss": {
+        "en": "letter",
+        "es": "letra"
+      }
+    },
+    {
+      "word": "betűzni",
+      "gloss": {
+        "en": "to spell",
+        "es": "deletrear"
+      }
+    },
+    {
+      "word": "kukac",
+      "gloss": {
+        "en": "@ sign",
+        "es": "arroba (@)"
+      }
+    },
+    {
+      "word": "pont",
+      "gloss": {
+        "en": "dot, period",
+        "es": "punto"
+      }
+    },
+    {
+      "word": "kötőjel",
+      "gloss": {
+        "en": "hyphen",
+        "es": "guion"
+      }
+    },
+    {
+      "word": "alulvonás",
+      "gloss": {
+        "en": "underscore",
+        "es": "guion bajo"
+      }
+    },
+    {
+      "word": "hosszú",
+      "gloss": {
+        "en": "long",
+        "es": "largo"
+      }
+    },
+    {
+      "word": "rövid",
+      "gloss": {
+        "en": "short",
+        "es": "corto"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "betuzes-c01",
+      "sentence": "Kovács: ká, o, vé, á, ___.",
+      "options": [
+        "csé",
+        "cé",
+        "esz"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The last letter is cs, one letter with one name: csé.",
+        "es": "La última letra es cs, una sola letra con un solo nombre: csé."
+      },
+      "wrong": {
+        "cé": {
+          "en": "With cé the spelling would give: Kovác, with a plain c.",
+          "es": "Con cé el deletreo daría: Kovác, con una c simple."
+        },
+        "esz": {
+          "en": "With esz the spelling would give: Kovász, a different word.",
+          "es": "Con esz el deletreo daría: Kovász, otra palabra."
+        }
+      },
+      "examples": [
+        "Cukor: cé, u, ká, o, er.",
+        "Csirke: csé, i, er, ká, e."
+      ],
+      "tr": {
+        "en": "Spelling the name Kovács.",
+        "es": "Deletreo del apellido Kovács."
+      }
+    },
+    {
+      "id": "betuzes-f01",
+      "kind": "form",
+      "verb": "sz",
+      "person": "név",
+      "q": {
+        "en": "What is the Hungarian name of the letter «sz»?",
+        "es": "¿Cuál es el nombre húngaro de la letra «sz»?"
+      },
+      "answer": "esz",
+      "accept": [
+        "essz"
+      ],
+      "table": "letter-names"
+    },
+    {
+      "id": "betuzes-c02",
+      "sentence": "Szabó: ___, á, bé, ó.",
+      "options": [
+        "es",
+        "zé",
+        "esz"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The first letter is sz, one letter, and its name is esz.",
+        "es": "La primera letra es sz, una sola letra, y su nombre es esz."
+      },
+      "wrong": {
+        "es": {
+          "en": "With es the spelling would give: Sabó, because es is the letter s.",
+          "es": "Con es el deletreo daría: Sabó, porque es es la letra s."
+        },
+        "zé": {
+          "en": "With zé the spelling would give: Zabó, with a z.",
+          "es": "Con zé el deletreo daría: Zabó, con una z."
+        }
+      },
+      "examples": [
+        "Szia: esz, i, a.",
+        "Szék: esz, é, ká."
+      ],
+      "tr": {
+        "en": "Spelling the name Szabó.",
+        "es": "Deletreo del apellido Szabó."
+      }
+    },
+    {
+      "id": "betuzes-f02",
+      "kind": "form",
+      "verb": "cs",
+      "person": "név",
+      "q": {
+        "en": "What is the Hungarian name of the letter «cs»?",
+        "es": "¿Cuál es el nombre húngaro de la letra «cs»?"
+      },
+      "answer": "csé",
+      "table": "letter-names"
+    },
+    {
+      "id": "betuzes-c03",
+      "sentence": "Nagy: en, a, ___.",
+      "options": [
+        "gé",
+        "jé",
+        "gyé"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The ending gy is one letter with one name: gyé.",
+        "es": "El final gy es una sola letra con un solo nombre: gyé."
+      },
+      "wrong": {
+        "gé": {
+          "en": "With gé the spelling would give: Nag, with a hard g.",
+          "es": "Con gé el deletreo daría: Nag, con g fuerte."
+        },
+        "jé": {
+          "en": "With jé the spelling would give: Naj, with a j.",
+          "es": "Con jé el deletreo daría: Naj, con una j."
+        }
+      },
+      "examples": [
+        "Gyerek: gyé, e, er, e, ká.",
+        "Ágy: á, gyé."
+      ],
+      "tr": {
+        "en": "Spelling the name Nagy.",
+        "es": "Deletreo del apellido Nagy."
+      }
+    },
+    {
+      "id": "betuzes-f03",
+      "kind": "form",
+      "verb": "ká, á, vé, é",
+      "person": "szó",
+      "q": {
+        "en": "Write the word that is spelled: «ká, á, vé, é».",
+        "es": "Escribe la palabra que se deletrea: «ká, á, vé, é»."
+      },
+      "answer": "kávé",
+      "accept": [
+        "Kávé"
+      ],
+      "table": "letter-names"
+    },
+    {
+      "id": "betuzes-w01",
+      "kind": "why",
+      "es": "Szabó: esz, á, bé, ó.",
+      "target": "esz",
+      "tr": {
+        "en": "Szabó: esz, á, bé, ó.",
+        "es": "Szabó: esz, á, bé, ó."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "sz is one letter, so it has one name: esz",
+            "es": "sz es una letra, así que tiene un solo nombre: esz"
+          }
+        },
+        {
+          "text": {
+            "en": "The name esz is made of two names, es and then zé",
+            "es": "El nombre esz se forma con dos nombres, es y luego zé"
+          },
+          "wrong": {
+            "en": "With this rule Szabó would have five letters, but sz is one letter with one name, esz.",
+            "es": "Con esta regla Szabó tendría cinco letras, pero sz es una letra con un solo nombre, esz."
+          }
+        },
+        {
+          "text": {
+            "en": "The name esz is the same as the name of the letter s",
+            "es": "El nombre esz es el mismo que el de la letra s"
+          },
+          "wrong": {
+            "en": "With this rule you would spell Sabó; s and sz are different letters, and only sz is esz.",
+            "es": "Con esta regla deletrearías Sabó; s y sz son letras distintas, y solo sz es esz."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "betuzes-c04",
+      "sentence": "Zsófia: ___, ó, ef, i, a.",
+      "options": [
+        "zé",
+        "zsé",
+        "esz"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The first letter is zs, one letter with one name: zsé.",
+        "es": "La primera letra es zs, una sola letra con un solo nombre: zsé."
+      },
+      "wrong": {
+        "zé": {
+          "en": "With zé the spelling would give: Zófia, with a plain z.",
+          "es": "Con zé el deletreo daría: Zófia, con una z simple."
+        },
+        "esz": {
+          "en": "With esz the spelling would give: Szófia, a different name.",
+          "es": "Con esz el deletreo daría: Szófia, otro nombre."
+        }
+      },
+      "examples": [
+        "Zseb: zsé, e, bé.",
+        "Zsemle: zsé, e, em, el, e."
+      ],
+      "tr": {
+        "en": "Spelling the name Zsófia.",
+        "es": "Deletreo del nombre Zsófia."
+      }
+    },
+    {
+      "id": "betuzes-f04",
+      "kind": "form",
+      "verb": "ly",
+      "person": "név",
+      "q": {
+        "en": "What is the Hungarian name of the letter «ly»?",
+        "es": "¿Cuál es el nombre húngaro de la letra «ly»?"
+      },
+      "answer": "elipszilon",
+      "accept": [
+        "ellipszilon",
+        "el-ipszilon"
+      ],
+      "table": "letter-names"
+    },
+    {
+      "id": "betuzes-c05",
+      "sentence": "anna.kovacs@gmail.com: anna ___ kovacs kukac gmail pont com.",
+      "options": [
+        "kötőjel",
+        "alulvonás",
+        "pont"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Between anna and kovacs there is a dot: pont.",
+        "es": "Entre anna y kovacs hay un punto: pont."
+      },
+      "wrong": {
+        "kötőjel": {
+          "en": "With kötőjel the address would be: anna-kovacs@gmail.com.",
+          "es": "Con kötőjel la dirección sería: anna-kovacs@gmail.com."
+        },
+        "alulvonás": {
+          "en": "With alulvonás the address would be: anna_kovacs@gmail.com.",
+          "es": "Con alulvonás la dirección sería: anna_kovacs@gmail.com."
+        }
+      },
+      "examples": [
+        "anna pont kovacs",
+        "gmail pont com"
+      ],
+      "tr": {
+        "en": "anna.kovacs@gmail.com, said aloud.",
+        "es": "anna.kovacs@gmail.com, dicho en voz alta."
+      }
+    },
+    {
+      "id": "betuzes-f05",
+      "kind": "form",
+      "verb": "esz, é, ká",
+      "person": "szó",
+      "q": {
+        "en": "Write the word that is spelled: «esz, é, ká».",
+        "es": "Escribe la palabra que se deletrea: «esz, é, ká»."
+      },
+      "answer": "szék",
+      "accept": [
+        "Szék"
+      ],
+      "table": "letter-names"
+    },
+    {
+      "id": "betuzes-c06",
+      "sentence": "anna.kovacs@gmail.com: anna pont kovacs ___ gmail pont com.",
+      "options": [
+        "kukac",
+        "pont",
+        "kötőjel"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The sign @ is called kukac.",
+        "es": "El signo @ se llama kukac."
+      },
+      "wrong": {
+        "pont": {
+          "en": "With pont the address would be: anna.kovacs.gmail.com, with no @.",
+          "es": "Con pont la dirección sería: anna.kovacs.gmail.com, sin @."
+        },
+        "kötőjel": {
+          "en": "With kötőjel the address would be: anna.kovacs-gmail.com, with no @.",
+          "es": "Con kötőjel la dirección sería: anna.kovacs-gmail.com, sin @."
+        }
+      },
+      "examples": [
+        "kovacs kukac gmail pont com",
+        "anna pont kovacs kukac gmail pont com"
+      ],
+      "tr": {
+        "en": "anna.kovacs@gmail.com, said aloud.",
+        "es": "anna.kovacs@gmail.com, dicho en voz alta."
+      }
+    },
+    {
+      "id": "betuzes-f06",
+      "kind": "form",
+      "verb": "w",
+      "person": "név",
+      "q": {
+        "en": "What is the Hungarian name of the letter «w»?",
+        "es": "¿Cuál es el nombre húngaro de la letra «w»?"
+      },
+      "answer": "dupla vé",
+      "accept": [
+        "duplavé",
+        "kettős vé"
+      ],
+      "table": "letter-names"
+    },
+    {
+      "id": "betuzes-c07",
+      "sentence": "Hogy ___ a nevét?",
+      "options": [
+        "írnak",
+        "írják",
+        "írsz"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "\"A nevét\" is a definite object, so the verb takes the definite form: írják.",
+        "es": "«A nevét» es un objeto definido, así que el verbo toma la forma definida: írják."
+      },
+      "wrong": {
+        "írnak": {
+          "en": "With írnak the question would use the indefinite form, which does not go with \"a nevét\".",
+          "es": "Con írnak la pregunta usaría la forma indefinida, que no va con «a nevét»."
+        },
+        "írsz": {
+          "en": "With írsz the question would use the indefinite form, which does not go with \"a nevét\".",
+          "es": "Con írsz la pregunta usaría la forma indefinida, que no va con «a nevét»."
+        }
+      },
+      "examples": [
+        "Hogy írják ezt a szót?",
+        "Hogy írják a nevét?"
+      ],
+      "tr": {
+        "en": "How is your name written?",
+        "es": "¿Cómo se escribe su nombre?"
+      }
+    },
+    {
+      "id": "betuzes-w02",
+      "kind": "why",
+      "es": "Gergely: gé, e, er, gé, e, elipszilon.",
+      "target": "elipszilon",
+      "tr": {
+        "en": "Gergely: gé, e, er, gé, e, elipszilon.",
+        "es": "Gergely: gé, e, er, gé, e, elipszilon."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "The last letter is jé, not elipszilon, because the word ends in a y sound",
+            "es": "La última letra es jé, no elipszilon, porque la palabra termina en un sonido y"
+          },
+          "wrong": {
+            "en": "With jé you would spell Gergej; j and ly sound the same, but this name is written with ly.",
+            "es": "Con jé deletrearías Gergej; j y ly suenan igual, pero este nombre se escribe con ly."
+          }
+        },
+        {
+          "text": {
+            "en": "The last letter is ipszilon, because elipszilon is only a longer name for y",
+            "es": "La última letra es ipszilon, porque elipszilon es solo un nombre más largo de la y"
+          },
+          "wrong": {
+            "en": "With ipszilon you would spell Gergey; ipszilon is the letter y, not ly.",
+            "es": "Con ipszilon deletrearías Gergey; ipszilon es la letra y, no ly."
+          }
+        },
+        {
+          "text": {
+            "en": "j and ly sound the same, so the name elipszilon tells you it is ly",
+            "es": "j y ly suenan igual, así que el nombre elipszilon te dice que es ly"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "betuzes-c08",
+      "sentence": "A w betű neve ___.",
+      "options": [
+        "iksz",
+        "dupla vé",
+        "vé"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The letter w is called dupla vé.",
+        "es": "La letra w se llama dupla vé."
+      },
+      "wrong": {
+        "iksz": {
+          "en": "With iksz you would name the letter x, not w.",
+          "es": "Con iksz nombrarías la letra x, no la w."
+        },
+        "vé": {
+          "en": "With vé you would name the letter v, not w.",
+          "es": "Con vé nombrarías la letra v, no la w."
+        }
+      },
+      "examples": [
+        "Watt: dupla vé, a, té, té.",
+        "Víz: vé, í, zé."
+      ],
+      "tr": {
+        "en": "What the letter w is called.",
+        "es": "Cómo se llama la letra w."
+      }
+    },
+    {
+      "id": "betuzes-f07",
+      "kind": "form",
+      "verb": "gyé, e, er, e, ká",
+      "person": "szó",
+      "q": {
+        "en": "Write the word that is spelled: «gyé, e, er, e, ká».",
+        "es": "Escribe la palabra que se deletrea: «gyé, e, er, e, ká»."
+      },
+      "answer": "gyerek",
+      "accept": [
+        "Gyerek"
+      ],
+      "table": "letter-names"
+    },
+    {
+      "id": "betuzes-c09",
+      "sentence": "Az x betű neve ___.",
+      "options": [
+        "iksz",
+        "kú",
+        "ipszilon"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The letter x is called iksz.",
+        "es": "La letra x se llama iksz."
+      },
+      "wrong": {
+        "kú": {
+          "en": "With kú you would name the letter q, not x.",
+          "es": "Con kú nombrarías la letra q, no la x."
+        },
+        "ipszilon": {
+          "en": "With ipszilon you would name the letter y, not x.",
+          "es": "Con ipszilon nombrarías la letra y, no la x."
+        }
+      },
+      "examples": [
+        "Taxi: té, a, iksz, i.",
+        "Mexikó: em, e, iksz, i, ká, ó."
+      ],
+      "tr": {
+        "en": "What the letter x is called.",
+        "es": "Cómo se llama la letra x."
+      }
+    },
+    {
+      "id": "betuzes-f08",
+      "kind": "form",
+      "verb": "y",
+      "person": "név",
+      "q": {
+        "en": "What is the Hungarian name of the letter «y»?",
+        "es": "¿Cuál es el nombre húngaro de la letra «y»?"
+      },
+      "answer": "ipszilon",
+      "table": "letter-names"
+    },
+    {
+      "id": "betuzes-c10",
+      "sentence": "Az y betű neve ___.",
+      "options": [
+        "ipszilon",
+        "elipszilon",
+        "kú"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The letter y is called ipszilon.",
+        "es": "La letra y se llama ipszilon."
+      },
+      "wrong": {
+        "elipszilon": {
+          "en": "With elipszilon you would name the letter ly, not y.",
+          "es": "Con elipszilon nombrarías la letra ly, no la y."
+        },
+        "kú": {
+          "en": "With kú you would name the letter q, not y.",
+          "es": "Con kú nombrarías la letra q, no la y."
+        }
+      },
+      "examples": [
+        "Ady: á, dé, ipszilon.",
+        "Az y neve ipszilon."
+      ],
+      "tr": {
+        "en": "What the letter y is called.",
+        "es": "Cómo se llama la letra y."
+      }
+    },
+    {
+      "id": "betuzes-f09",
+      "kind": "form",
+      "verb": "en, a, gyé",
+      "person": "név",
+      "q": {
+        "en": "Write the word that is spelled: «en, a, gyé».",
+        "es": "Escribe la palabra que se deletrea: «en, a, gyé»."
+      },
+      "answer": "Nagy",
+      "accept": [
+        "nagy"
+      ],
+      "table": "letter-names"
+    },
+    {
+      "id": "betuzes-c11",
+      "sentence": "A q betű neve ___.",
+      "options": [
+        "ká",
+        "kú",
+        "há"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The letter q is called kú.",
+        "es": "La letra q se llama kú."
+      },
+      "wrong": {
+        "ká": {
+          "en": "With ká you would name the letter k, not q.",
+          "es": "Con ká nombrarías la letra k, no la q."
+        },
+        "há": {
+          "en": "With há you would name the letter h, not q.",
+          "es": "Con há nombrarías la letra h, no la q."
+        }
+      },
+      "examples": [
+        "Aquincum: a, kú, u, i, en, cé, u, em.",
+        "A q neve kú."
+      ],
+      "tr": {
+        "en": "What the letter q is called.",
+        "es": "Cómo se llama la letra q."
+      }
+    },
+    {
+      "id": "betuzes-f10",
+      "kind": "form",
+      "verb": "gy",
+      "person": "név",
+      "q": {
+        "en": "What is the Hungarian name of the letter «gy»?",
+        "es": "¿Cuál es el nombre húngaro de la letra «gy»?"
+      },
+      "answer": "gyé",
+      "table": "letter-names"
+    },
+    {
+      "id": "betuzes-w03",
+      "kind": "why",
+      "es": "anna.kovacs@gmail.com: anna pont kovacs kukac gmail pont com.",
+      "target": "kukac",
+      "tr": {
+        "en": "anna.kovacs@gmail.com: anna dot kovacs at gmail dot com.",
+        "es": "anna.kovacs@gmail.com: anna punto kovacs arroba gmail punto com."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "The sign @ is called kukac, and we say it as one word",
+            "es": "El signo @ se llama kukac, y se dice como una palabra"
+          }
+        },
+        {
+          "text": {
+            "en": "kukac is the dot between the words",
+            "es": "kukac es el punto entre las palabras"
+          },
+          "wrong": {
+            "en": "With this rule the dot would be kukac; the dot is pont, and @ is kukac.",
+            "es": "Con esta regla el punto sería kukac; el punto es pont, y @ es kukac."
+          }
+        },
+        {
+          "text": {
+            "en": "kukac is the hyphen",
+            "es": "kukac es el guion"
+          },
+          "wrong": {
+            "en": "With this rule the hyphen would be kukac; the hyphen is kötőjel, and @ is kukac.",
+            "es": "Con esta regla el guion sería kukac; el guion es kötőjel, y @ es kukac."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "betuzes-c12",
+      "sentence": "Gergely: gé, e, er, gé, e, ___.",
+      "options": [
+        "jé",
+        "ipszilon",
+        "elipszilon"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The ending ly is one letter, and its name is elipszilon.",
+        "es": "El final ly es una sola letra, y su nombre es elipszilon."
+      },
+      "wrong": {
+        "jé": {
+          "en": "With jé the spelling would give: Gergej, with a j.",
+          "es": "Con jé el deletreo daría: Gergej, con una j."
+        },
+        "ipszilon": {
+          "en": "With ipszilon the spelling would give: Gergey, with a y.",
+          "es": "Con ipszilon el deletreo daría: Gergey, con una y."
+        }
+      },
+      "examples": [
+        "Folyó: ef, o, elipszilon, ó.",
+        "Melyik: em, e, elipszilon, i, ká."
+      ],
+      "tr": {
+        "en": "Spelling the name Gergely.",
+        "es": "Deletreo del nombre Gergely."
+      }
+    },
+    {
+      "id": "betuzes-f11",
+      "kind": "form",
+      "verb": "esz, á, bé, ó",
+      "person": "név",
+      "q": {
+        "en": "Write the word that is spelled: «esz, á, bé, ó».",
+        "es": "Escribe la palabra que se deletrea: «esz, á, bé, ó»."
+      },
+      "answer": "Szabó",
+      "accept": [
+        "szabó"
+      ],
+      "table": "letter-names"
+    },
+    {
+      "id": "betuzes-c13",
+      "sentence": "Szabó: esz, á, bé, ___ ó.",
+      "options": [
+        "rövid",
+        "hosszú",
+        "gyors"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The ó of Szabó is long, so you can say hosszú ó.",
+        "es": "La ó de Szabó es larga, así que puedes decir hosszú ó."
+      },
+      "wrong": {
+        "rövid": {
+          "en": "With rövid the spelling would point to a short o: Szabo.",
+          "es": "Con rövid el deletreo apuntaría a una o corta: Szabo."
+        },
+        "gyors": {
+          "en": "gyors means fast; it says nothing about the length of the vowel.",
+          "es": "gyors significa rápido; no dice nada sobre la duración de la vocal."
+        }
+      },
+      "examples": [
+        "Hó: há, hosszú ó.",
+        "Út: hosszú ú, té."
+      ],
+      "tr": {
+        "en": "Spelling Szabó for someone who is unsure.",
+        "es": "Deletreo de Szabó para alguien que no está seguro."
+      }
+    },
+    {
+      "id": "betuzes-f12",
+      "kind": "form",
+      "verb": "zsé, ó, ef, i, a",
+      "person": "név",
+      "q": {
+        "en": "Write the word that is spelled: «zsé, ó, ef, i, a».",
+        "es": "Escribe la palabra que se deletrea: «zsé, ó, ef, i, a»."
+      },
+      "answer": "Zsófia",
+      "accept": [
+        "zsófia"
+      ],
+      "table": "letter-names"
+    },
+    {
+      "id": "betuzes-c14",
+      "sentence": "Hó: ___, ó.",
+      "options": [
+        "ká",
+        "jé",
+        "há"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The first letter of hó is h, and its name is há.",
+        "es": "La primera letra de hó es h, y su nombre es há."
+      },
+      "wrong": {
+        "ká": {
+          "en": "With ká the spelling would give: Kó, with a k.",
+          "es": "Con ká el deletreo daría: Kó, con una k."
+        },
+        "jé": {
+          "en": "With jé the spelling would give: Jó, with a j.",
+          "es": "Con jé el deletreo daría: Jó, con una j."
+        }
+      },
+      "examples": [
+        "Hal: há, a, el.",
+        "Híd: há, í, dé."
+      ],
+      "tr": {
+        "en": "Spelling the word hó (snow).",
+        "es": "Deletreo de la palabra hó (nieve)."
+      }
+    },
+    {
+      "id": "betuzes-w04",
+      "kind": "why",
+      "es": "Kovács Anna vagyok.",
+      "target": "Kovács",
+      "tr": {
+        "en": "I am Anna Kovács.",
+        "es": "Soy Anna Kovács."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "The given name comes first, so Kovács is the first name",
+            "es": "Primero va el nombre de pila, así que Kovács es el nombre de pila"
+          },
+          "wrong": {
+            "en": "With this rule you would say Anna Kovács vagyok, the English order; Hungarian puts the family name first.",
+            "es": "Con esta regla dirías Anna Kovács vagyok, el orden inglés; el húngaro pone primero el apellido."
+          }
+        },
+        {
+          "text": {
+            "en": "The family name comes first, so Kovács is the family name",
+            "es": "Primero va el apellido, así que Kovács es el apellido"
+          }
+        },
+        {
+          "text": {
+            "en": "Either order is the same, so Kovács can be the first name too",
+            "es": "Cualquier orden es igual, así que Kovács también puede ser el nombre de pila"
+          },
+          "wrong": {
+            "en": "With this rule Kovács could be the given name; in Hungarian the order is fixed: family name first.",
+            "es": "Con esta regla Kovács podría ser el nombre de pila; en húngaro el orden es fijo: primero el apellido."
+          }
+        }
+      ],
+      "correctIndex": 1
+    }
+  ]
+}
