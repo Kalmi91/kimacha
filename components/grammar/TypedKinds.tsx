@@ -3,16 +3,15 @@ import { Keyboard, StyleSheet, TextInput, View } from 'react-native';
 import { Text } from '@/components/KText';
 
 import AnswerCompare from '@/components/grammar/AnswerCompare';
-import { BrutalBox, inkButtonText, resultFill, resultInk, softCaseStyle } from '@/components/grammar/Brutal';
+import AnswerFeedbackBox from '@/components/grammar/AnswerFeedbackBox';
+import { BrutalBox, inkButtonText, softCaseStyle } from '@/components/grammar/Brutal';
 import MistypedButton, { mistypedDock } from '@/components/grammar/MistypedButton';
-import ResultBadge from '@/components/ResultBadge';
 import Colors from '@/constants/Colors';
 import { ON_FILL } from '@/constants/GrammarPalettes';
 import { tapTarget } from '@/constants/Theme';
 import { useDockedAction } from '@/components/learn/DockSlot';
 import { useGrammarColors, type GrammarColors } from '@/lib/grammarColors';
 import { charDiff } from '@/lib/charDiff';
-import { useSkin } from '@/lib/useSkin';
 import { t } from '@/lib/i18n';
 import { answerInputProps } from '@/lib/inputProps';
 import { useFocusOnNewCard } from '@/lib/learn/useFocusOnNewCard';
@@ -38,7 +37,7 @@ function ItemHead({ title }: { title: string }) {
 // Open cloze, error correction by typing, word bank and the typed noun form. All four are 1 unit in scoring (right
 // or not), the typing rules are those of the sentence writing, the right sentence is spoken after the answer.
 
-/** Night only (FB719/720): a paper card with a green (right) or red (wrong) border instead of the filled box. */
+/** Night only (FB719/720): the result content with its own rows (your answer / correct answer), inside the shared AnswerFeedbackBox. */
 function NightResult({ prefix, g, correct, typedRight, typed, answer, filled, why, whyId, extra }: {
   prefix: string;
   g: GrammarColors;
@@ -52,15 +51,12 @@ function NightResult({ prefix, g, correct, typedRight, typed, answer, filled, wh
   extra?: string;
 }) {
   const s = t();
-  const { skin } = useSkin();
   const ok = g.extra.success ?? Colors.dark.successFill;
   const bad = g.extra.danger ?? Colors.dark.danger;
-  const tone = correct ? ok : bad;
   const at = correct ? filled.indexOf(answer) : -1;
   const rightChars = charDiff(answer, typed, { case: true, accents: false }).filter((d) => !d.missing);
   return (
-    <View testID={`${prefix}-${correct ? 'correct' : 'wrong'}`} style={[styles.nightCard, { backgroundColor: g.paper, borderColor: tone, borderRadius: typeof skin.shape.radius === 'number' ? skin.shape.radius : 16 }]}>
-      <Text style={[styles.fixedLine, { color: tone }]}>{correct ? `✓ ${s.grammar.correct}` : `✕ ${s.games.wrongFeedback.replace(/[!.]$/, '')}`}</Text>
+    <AnswerFeedbackBox correct={correct} testID={`${prefix}-${correct ? 'correct' : 'wrong'}`} badgeLabel={correct ? s.grammar.correct : s.games.wrongFeedback.replace(/[!.]$/, '')} style={styles.nightCard}>
       {typedRight ? (
         <Text testID={`${prefix}-sentence`} style={[styles.writeSentence, { color: g.ink }]}>
           {at >= 0 ? (
@@ -97,7 +93,7 @@ function NightResult({ prefix, g, correct, typedRight, typed, answer, filled, wh
         {why}
       </Text>
       {extra ? <Text style={[styles.translation, { color: g.mu }]}>{extra}</Text> : null}
-    </View>
+    </AnswerFeedbackBox>
   );
 }
 
@@ -196,23 +192,22 @@ function TypedItem({
                 <NightResult prefix={prefix} g={g} correct={result.correct} typedRight={result.typedRight} typed={typed} answer={answer} filled={filled} why={why} whyId={whyId} extra={extra} />
               ) : (
               <>
-              <ResultBadge correct={result.correct} label={result.correct ? s.grammar.correct : s.games.wrongFeedback} />
-              <BrutalBox testID={`${prefix}-${result.correct ? 'correct' : 'wrong'}`} fill={resultFill(result.correct)} boxStyle={styles.feedback}>
+              <AnswerFeedbackBox correct={result.correct} badgeLabel={result.correct ? s.grammar.correct : s.games.wrongFeedback} testID={`${prefix}-${result.correct ? 'correct' : 'wrong'}`} style={styles.feedback}>
                 {result.typedRight ? (
                   <>
-                    <Text testID={`${prefix}-sentence`} style={[styles.writeSentence, { color: resultInk(g, result.correct) }]}>
+                    <Text testID={`${prefix}-sentence`} style={[styles.writeSentence, { color: g.ink }]}>
                       {filled}
                     </Text>
                   </>
                 ) : (
-                  <AnswerCompare typed={typed} correct={answer} g={g} onFill />
+                  <AnswerCompare typed={typed} correct={answer} g={g} />
                 )}
                 {!result.typedRight && !docked ? <MistypedButton onPress={() => onDone(true, true)} /> : null}
-                <Text testID={whyId} style={[styles.explain, { color: resultInk(g, result.correct) }]}>
+                <Text testID={whyId} style={[styles.explain, { color: g.ink }]}>
                   {why}
                 </Text>
-                {extra ? <Text style={[styles.translation, { color: resultInk(g, result.correct) }]}>{extra}</Text> : null}
-              </BrutalBox>
+                {extra ? <Text style={[styles.translation, { color: g.ink }]}>{extra}</Text> : null}
+              </AnswerFeedbackBox>
               </>
               )}
               {night && !result.typedRight && !docked ? <MistypedButton onPress={() => onDone(true, true)} /> : null}
@@ -329,21 +324,20 @@ export function ClozeDrillItem({ item, learnedLang, contentLang, strictAccents, 
       </BrutalBox>
       {result ? (
         <>
-          <ResultBadge correct={allRight} label={allRight ? s.grammar.correct : s.games.wrongFeedback} />
-          <BrutalBox testID={allRight ? 'cloze-correct' : 'cloze-wrong'} fill={resultFill(allRight)} boxStyle={styles.feedback}>
+          <AnswerFeedbackBox correct={allRight} badgeLabel={allRight ? s.grammar.correct : s.games.wrongFeedback} testID={allRight ? 'cloze-correct' : 'cloze-wrong'} style={styles.feedback}>
             {!allRight && !docked ? <MistypedButton onPress={() => onDone(true, true)} /> : null}
             {allRight ? (
-              <Text testID="cloze-sentence" style={[styles.writeSentence, { color: resultInk(g, allRight) }]}>
+              <Text testID="cloze-sentence" style={[styles.writeSentence, { color: g.ink }]}>
                 {filledCloze(item.text, item.answers)}
               </Text>
             ) : (
-              <AnswerCompare typed={filledCloze(item.text, typed)} correct={filledCloze(item.text, item.answers)} g={g} onFill />
+              <AnswerCompare typed={filledCloze(item.text, typed)} correct={filledCloze(item.text, item.answers)} g={g} />
             )}
-            <Text testID="cloze-why" style={[styles.explain, { color: resultInk(g, allRight) }]}>
+            <Text testID="cloze-why" style={[styles.explain, { color: g.ink }]}>
               {item.why[contentLang] ?? item.why.en}
             </Text>
-            <Text style={[styles.translation, { color: resultInk(g, allRight) }]}>{item.tr[contentLang] ?? item.tr.en}</Text>
-          </BrutalBox>
+            <Text style={[styles.translation, { color: g.ink }]}>{item.tr[contentLang] ?? item.tr.en}</Text>
+          </AnswerFeedbackBox>
           {docked ? null : (
             <BrutalBox testID="grammar-next" fill="ink" boxStyle={styles.next} onPress={() => onDone(allRight, undefined, filledCloze(item.text, typed))}>
               <Text style={[styles.nextText, { color: inkButtonText(g) }, softCaseStyle(g)]}>{s.grammar.nextArrow}</Text>
@@ -518,7 +512,7 @@ const styles = StyleSheet.create({
   dim: { opacity: 0.55 },
   note: { fontSize: 13, textAlign: 'center' },
   feedback: { padding: 14, gap: 6 },
-  nightCard: { borderWidth: 2, padding: 12, gap: 6 },
+  nightCard: { padding: 12, gap: 6 },
   nightRow: { flexDirection: 'row', alignItems: 'baseline', gap: 8 },
   nightLabel: { fontSize: 11, fontWeight: '700', textTransform: 'uppercase', minWidth: 70 },
   nightBig: { fontSize: 18, fontWeight: '700', flexShrink: 1 },

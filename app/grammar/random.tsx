@@ -3,8 +3,6 @@ import { ActivityIndicator, KeyboardAvoidingView, Platform, Pressable, ScrollVie
 import { useRouter } from 'expo-router';
 
 import Colors from '@/constants/Colors';
-import { ON_FILL } from '@/constants/GrammarPalettes';
-import { bestOn } from '@/constants/Skins';
 import { fontSize, fontWeight, radius, spacing } from '@/constants/Theme';
 import type { Level } from '@/data/words';
 import { getDb } from '@/lib/database';
@@ -44,7 +42,7 @@ import {
   type TopicEvidence,
 } from '@/lib/grammar/randomRound';
 import { advance, isResultPause, makeCtx, phaseLabel, questionsOf, runMisses, topicKindCount, type RoundData } from '@/lib/grammar/randomRoundView';
-import { Card, softCaseStyle, softEdgeStyle } from '@/components/grammar/Brutal';
+import { Card, softCaseStyle } from '@/components/grammar/Brutal';
 import RandomOtherWrong from '@/components/grammar/RandomOtherWrong';
 import GrammarResult from '@/components/grammar/GrammarResult';
 import { ProgressBar, themedEdgeStyle } from '@/components/grammar/Themed';
@@ -52,6 +50,7 @@ import TestQuestionView from '@/components/grammar/TestQuestionView';
 import XpChip from '@/components/XpChip';
 import { awardXpThen } from '@/lib/xpAward';
 import ResultBadge from '@/components/ResultBadge';
+import AnswerFeedbackBox from '@/components/grammar/AnswerFeedbackBox';
 import ExamButton from '@/components/exam/ExamButton';
 import { DockSlotProvider, useDockSlot } from '@/components/learn/DockSlot';
 import { FAB_CLEARANCE } from '@/components/learn/DockedAction';
@@ -322,22 +321,15 @@ export default function RandomRoundScreen() {
           <Text testID="random-practice-title" style={[styles.topicTitle, { color: colors.text }]}>
             {titleOf(topicId)}
           </Text>
-          <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
-            <ResultBadge testID="random-feedback-badge" correct={ok} label={ok ? s.correct : s.wrong} />
+          <AnswerFeedbackBox correct={ok} badgeLabel={ok ? s.correct : s.wrong} badgeTestID="random-feedback-badge" style={styles.brutalCard}>
             <Text testID="random-feedback-question" style={[styles.missedQuestion, { color: colors.text }]}>
               {q.review.question}
             </Text>
             {q.review.answer !== '' && (
               <>
                 <Text style={[styles.missedLabel, { color: colors.textMuted, textAlign: 'center' }]}>{t().exam.correctAnswer}</Text>
-                <View
-                  testID={ok ? 'random-feedback-green' : undefined}
-                  style={ok ? [styles.greenMark, { backgroundColor: colors.successFill, borderColor: g.ink }, softEdgeStyle(g)] : undefined}
-                >
-                  <Text
-                    testID="random-feedback-answer"
-                    style={[styles.missedAnswer, { color: ok ? bestOn(colors.successFill, [ON_FILL, colors.onTint]) : colors.success }]}
-                  >
+                <View testID={ok ? 'random-feedback-green' : undefined}>
+                  <Text testID="random-feedback-answer" style={[styles.missedAnswer, { color: colors.success }]}>
                     {q.review.answer}
                   </Text>
                 </View>
@@ -348,7 +340,7 @@ export default function RandomRoundScreen() {
                 {q.review.why}
               </Text>
             ) : null}
-          </Card>
+          </AnswerFeedbackBox>
           <ExamButton testID="random-next" label={s.next} onPress={() => setFeedback(null)} />
           <ExamButton testID="random-rule" secondary label={s.rule} onPress={() => router.push(`/grammar/${topicId}` as never)} />
         </ScrollView>
@@ -593,7 +585,6 @@ const styles = StyleSheet.create({
   missedQuestion: { fontSize: fontSize.md, fontWeight: fontWeight.semibold },
   missedLabel: { fontSize: fontSize.sm },
   missedAnswer: { fontSize: fontSize.md, fontWeight: fontWeight.semibold, textAlign: 'center' },
-  greenMark: { borderWidth: 2.5, borderRadius: radius.sm, paddingVertical: spacing.sm, paddingHorizontal: spacing.md },
   rightMarkAnchor: { height: 0, zIndex: 10 },
   rightMark: { position: 'absolute', top: spacing.sm, left: 0, right: 0, alignItems: 'center' },
   missedWhy: { fontSize: fontSize.sm },

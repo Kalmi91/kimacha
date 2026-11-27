@@ -17,17 +17,14 @@ export default function AnswerCompare({
   typed,
   correct,
   g,
-  onFill = false,
 }: {
   typed: string;
   correct: string;
   g: GrammarColors;
-  // true if it sits inside a box with a coloured fill (e.g. b): the text uses the on-fill colour.
-  onFill?: boolean;
 }) {
   const s = t();
-  const base = onFill ? g.onB : g.ink;
-  const muted = onFill ? g.onB : g.mu;
+  const base = g.ink;
+  const muted = g.mu;
   const fold = { case: true, accents: false };
   // The own row: the non-matching letters are marked; the omitted letters (missing) are not the
   // learner's writing, so they do not appear here, only in the correct row.

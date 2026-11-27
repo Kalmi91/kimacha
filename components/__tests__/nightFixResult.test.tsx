@@ -1,5 +1,5 @@
-// FB719 / FB720: in Night the typed-task result is a paper card with a green (right) or red (wrong) border;
-// every other skin keeps the filled box.
+// FB719 / FB720 / FB754: in Night the typed-task result is the shared AnswerFeedbackBox (paper surface, green or red
+// border, badge inside) with its own answer rows; other skins get the same box with their own colours.
 
 import { StyleSheet } from 'react-native';
 import { fireEvent, render, screen } from '@testing-library/react-native';
@@ -30,24 +30,26 @@ describe('Night result card on the typed tasks', () => {
     mockTheme = 'night-dark';
   });
 
-  it('right answer: green border card, check heading, fixed word in green', () => {
+  it('right answer: green border box, Correct badge, fixed word in green', () => {
     answer('está');
     expect(flat('fix-correct')).toMatchObject({ borderColor: '#34D399', backgroundColor: '#1E293B' });
-    expect(screen.getByText('✓ Correct')).toBeTruthy();
+    expect(screen.getByText('Correct')).toBeTruthy();
+    expect(screen.getByText('✓')).toBeTruthy();
     expect(StyleSheet.flatten(screen.getByText('está').props.style).color).toBe('#34D399');
     expect(screen.getByTestId('fix-explain')).toBeTruthy();
   });
 
-  it('wrong answer: red border card, cross heading, typed word struck through', () => {
+  it('wrong answer: red border box, Not quite badge, typed word struck through', () => {
     answer('estan');
     expect(flat('fix-wrong')).toMatchObject({ borderColor: '#F87171', backgroundColor: '#1E293B' });
-    expect(screen.getByText(/✕ Not quite/)).toBeTruthy();
+    expect(screen.getByText('Not quite')).toBeTruthy();
+    expect(screen.getByText('✗')).toBeTruthy();
     expect(flat('answer-compare-typed')).toMatchObject({ color: '#F87171', textDecorationLine: 'line-through' });
     expect(screen.getByTestId('grammar-mistyped')).toBeTruthy();
     expect(screen.getByTestId('grammar-next')).toBeTruthy();
   });
 
-  it('a non-Night skin still renders the old filled box', () => {
+  it('a non-Night skin gets the box in its own colours, not the Night ones', () => {
     mockTheme = 'brand-light';
     answer('está');
     expect(flat('fix-correct').borderColor).not.toBe('#34D399');

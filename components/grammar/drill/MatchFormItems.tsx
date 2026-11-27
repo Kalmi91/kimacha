@@ -18,9 +18,9 @@ import LessonBody from '@/components/grammar/LessonBody';
 import { BrutalBox, softTitleStyle } from '@/components/grammar/Brutal';
 import AnswerCompare from '@/components/grammar/AnswerCompare';
 import MistypedButton, { mistypedDock } from '@/components/grammar/MistypedButton';
-import ResultBadge from '@/components/ResultBadge';
+import AnswerFeedbackBox from '@/components/grammar/AnswerFeedbackBox';
 import { useGrammarColors } from '@/lib/grammarColors';
-import { BrutalFeedback, BrutalInkButton, TenseBadge } from '@/components/grammar/drill/shared';
+import { BrutalInkButton, TenseBadge } from '@/components/grammar/drill/shared';
 import { styles } from '@/components/grammar/GrammarDrill.styles';
 
 // matching. The left column (English) stays in authored order,
@@ -156,7 +156,7 @@ export function MatchDrillItem({
         </View>
         {done ? (
           <>
-            <BrutalFeedback correct={!hadWrong} title={hadWrong ? s.games.wrongFeedback : s.games.correctFeedback} />
+            <AnswerFeedbackBox correct={!hadWrong} badgeLabel={hadWrong ? s.games.wrongFeedback : s.games.correctFeedback} style={styles.brutalFeedback} />
             <BrutalInkButton g={g} testID="grammar-next" label={s.grammar.nextArrow} onPress={() => onDone(!hadWrong, n - lostPairs)} />
           </>
         ) : null}
@@ -210,12 +210,11 @@ export function MatchDrillItem({
         </View>
       </View>
       {done ? (
-        <View style={[styles.explainCard, { backgroundColor: colors.card }]}>
-          <ResultBadge correct={!hadWrong} label={hadWrong ? s.games.wrongFeedback : s.games.correctFeedback} />
+        <AnswerFeedbackBox correct={!hadWrong} badgeLabel={hadWrong ? s.games.wrongFeedback : s.games.correctFeedback} style={styles.explainCard}>
           <Pressable testID="grammar-next" style={[styles.btn, { backgroundColor: colors.tint, marginTop: 12 }]} onPress={() => onDone(!hadWrong, n - lostPairs)}>
             <Text style={[styles.btnText, { color: colors.onTint }]}>{s.games.understood}</Text>
           </Pressable>
-        </View>
+        </AnswerFeedbackBox>
       ) : null}
     </View>
   );
@@ -334,9 +333,9 @@ export function FormDrillItem({
           docked ? null : <BrutalInkButton g={g} testID="formCheck" label={s.grammar.check} onPress={check} />
         ) : (
           <>
-            <BrutalFeedback correct={correct} title={correct ? s.games.correctFeedback : s.games.wrongFeedback}>
-              {!correct ? <AnswerCompare typed={value} correct={item.answer} g={g} onFill /> : null}
-            </BrutalFeedback>
+            <AnswerFeedbackBox correct={correct} badgeLabel={correct ? s.games.correctFeedback : s.games.wrongFeedback} style={styles.brutalFeedback}>
+              {!correct ? <AnswerCompare typed={value} correct={item.answer} g={g} /> : null}
+            </AnswerFeedbackBox>
             <SpeakButton testID="form-speak" onPress={() => speak(item.answer, speechLang(learnedLang))} brutalStyle={styles.formSpeakBrutal} />
             {!correct && !docked ? <MistypedButton onPress={() => onDone(true)} /> : null}
             {docked ? null : <BrutalInkButton g={g} testID="grammar-next" label={s.grammar.nextArrow} onPress={() => onDone(correct, value)} />}
@@ -391,8 +390,7 @@ export function FormDrillItem({
           </Pressable>
         )
       ) : (
-        <View style={[styles.explainCard, { backgroundColor: colors.card }]}>
-          <ResultBadge correct={correct} label={correct ? s.games.correctFeedback : s.games.wrongFeedback} />
+        <AnswerFeedbackBox correct={correct} badgeLabel={correct ? s.games.correctFeedback : s.games.wrongFeedback} style={styles.explainCard}>
           {!correct ? <AnswerCompare typed={value} correct={item.answer} g={g} /> : null}
           <SpeakButton testID="form-speak" onPress={() => speak(item.answer, speechLang(learnedLang))} style={styles.formSpeak} iconStyle={styles.formSpeakIcon} />
           {!correct && !docked ? <MistypedButton onPress={() => onDone(true)} /> : null}
@@ -401,7 +399,7 @@ export function FormDrillItem({
               <Text style={[styles.btnText, { color: colors.onTint }]}>{s.games.understood}</Text>
             </Pressable>
           )}
-        </View>
+        </AnswerFeedbackBox>
       )}
       {docked ? <View style={{ height: padBottom }} /> : null}
     </View>

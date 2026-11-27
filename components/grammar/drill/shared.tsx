@@ -2,28 +2,12 @@ import { View } from 'react-native';
 import { Text } from '@/components/KText';
 import Colors from '@/constants/Colors';
 import { TENSE_NAMES, type ContentLang, type TenseId } from '@/lib/grammar/lessonTypes';
-import { BrutalBox, Sticker, inkButtonText, resultFill, softTitleStyle } from '@/components/grammar/Brutal';
-import ResultBadge from '@/components/ResultBadge';
+import { BrutalBox, Sticker, inkButtonText, softTitleStyle } from '@/components/grammar/Brutal';
 import { useGrammarColors, type GrammarColors } from '@/lib/grammarColors';
 import { styles } from '@/components/grammar/GrammarDrill.styles';
 
-// shared brutalist elements of the non-choice kinds: the b-filled feedback
-// box (uppercase title + one sentence) and the ink-filled button.
-// The right / wrong signal is the shared ResultBadge (colour + shape + ✓/✗ + text)
-// above the box; the b-filled box only carries the explanation (if there is one).
-export function BrutalFeedback({ title, correct, children }: { title: string; correct: boolean; children?: React.ReactNode }) {
-  return (
-    <>
-      <ResultBadge correct={correct} label={title} />
-      {children ? (
-        <BrutalBox fill={resultFill(correct)} boxStyle={styles.brutalFeedback}>
-          {children}
-        </BrutalBox>
-      ) : null}
-    </>
-  );
-}
-
+// shared brutalist elements of the non-choice kinds: the ink-filled button.
+// (The after-answer box is components/grammar/AnswerFeedbackBox.)
 export function BrutalInkButton({ g, testID, label, onPress }: { g: GrammarColors; testID: string; label: string; onPress: () => void }) {
   return (
     <BrutalBox testID={testID} fill="ink" boxStyle={styles.brutalNext} onPress={onPress}>
