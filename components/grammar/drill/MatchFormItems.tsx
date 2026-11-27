@@ -5,6 +5,7 @@ import Colors from '@/constants/Colors';
 import { t } from '@/lib/i18n';
 import { type ContentLang, type FormItem, type LessonBlock, type MatchItem } from '@/lib/grammar/lessonTypes';
 import { formTenseCue } from '@/lib/grammar/formTenseCue';
+import { starSegments } from '@/lib/grammar/starSegments';
 import { speak } from '@/lib/speech';
 import SpeakButton from '@/components/SpeakButton';
 import { speechLang } from '@/lib/languages';
@@ -58,6 +59,8 @@ export function MatchDrillItem({
   // index n = the extra element (left and right), which belongs to no pair.
   const [rightOrder] = useState(() => shuffleNoFixedPoints(n + (extra ? 1 : 0), hashString(item.id)));
   const [selectedLeft, setSelectedLeft] = useState<number | null>(null);
+  // the right column can be picked first too (position in the shuffled column)
+  const [selectedRight, setSelectedRight] = useState<number | null>(null);
   const [matched, setMatched] = useState<Set<number>>(new Set());
   const [wrongPair, setWrongPair] = useState<{ left: number; right: number } | null>(null);
   const [hadWrong, setHadWrong] = useState(false);
@@ -78,28 +81,44 @@ export function MatchDrillItem({
   const done = matched.size === n;
   const lostPairs = [...errLefts].filter((li) => li < n).length;
 
+  // a pair attempt: one left cell and one right cell, whichever side was picked first (FB760).
+  const attempt = (left: number, pos: number) => {
+    const pairId = rightOrder[pos];
+    if (left === pairId && pairId < n) {
+      const next = new Set(matched);
+      next.add(pairId);
+      setMatched(next);
+      setSelectedLeft(null);
+      setSelectedRight(null);
+      setWrongPair(null);
+    } else {
+      setWrongPair({ left, right: pos });
+      setHadWrong(true);
+      setErrLefts((prev) => new Set(prev).add(left));
+      setSelectedLeft(null);
+      setSelectedRight(null);
+    }
+  };
+
   const pressLeft = (li: number) => {
     if (matched.has(li) || done) return;
+    if (selectedRight !== null) {
+      attempt(li, selectedRight);
+      return;
+    }
     setWrongPair(null);
     setSelectedLeft(li);
   };
 
   const pressRight = (pos: number) => {
-    if (done || selectedLeft === null) return;
-    const pairId = rightOrder[pos];
-    if (matched.has(pairId)) return;
-    if (selectedLeft === pairId && pairId < n) {
-      const next = new Set(matched);
-      next.add(pairId);
-      setMatched(next);
-      setSelectedLeft(null);
-      setWrongPair(null);
-    } else {
-      setWrongPair({ left: selectedLeft, right: pos });
-      setHadWrong(true);
-      setErrLefts((prev) => new Set(prev).add(selectedLeft));
-      setSelectedLeft(null);
+    if (done) return;
+    if (matched.has(rightOrder[pos])) return;
+    if (selectedLeft !== null) {
+      attempt(selectedLeft, pos);
+      return;
     }
+    setWrongPair(null);
+    setSelectedRight(pos);
   };
 
   // brutalist matching: cell = box, matched = fill + tick,
@@ -148,7 +167,7 @@ export function MatchDrillItem({
                 `r${pos}`,
                 `match-right-${pos}`,
                 rightAt(pairId),
-                matched.has(pairId) ? 'matched' : wrongPair?.right === pos ? 'wrong' : 'idle',
+                matched.has(pairId) ? 'matched' : wrongPair?.right === pos ? 'wrong' : selectedRight === pos ? 'selected' : 'idle',
                 () => pressRight(pos)
               )
             )}
@@ -193,8 +212,9 @@ export function MatchDrillItem({
           {rightOrder.map((pairId, pos) => {
             const isMatched = matched.has(pairId);
             const isWrong = wrongPair?.right === pos;
-            const bg = isMatched ? colors.successFill + '22' : isWrong ? '#EF444422' : colors.card;
-            const border = isMatched ? colors.successFill : isWrong ? '#EF4444' : colors.tabIconDefault;
+            const isSelected = selectedRight === pos;
+            const bg = isMatched ? colors.successFill + '22' : isWrong ? '#EF444422' : isSelected ? colors.tint + '22' : colors.card;
+            const border = isMatched ? colors.successFill : isWrong ? '#EF4444' : isSelected ? colors.tint : colors.tabIconDefault;
             return (
               <Pressable
                 key={pos}
@@ -216,6 +236,20 @@ export function MatchDrillItem({
           </Pressable>
         </AnswerFeedbackBox>
       ) : null}
+    </View>
+  );
+}
+
+// FB753: the example sentences of a form item, one per line, the `*starred*` part bold in the accent colour.
+// Without `accent` (the brutal skin, whose accents are fills, not text colours) the part is ink, heavier and underlined.
+function FormExamples({ examples, textColor, accent }: { examples: string[]; textColor: string; accent?: string }) {
+  return (
+    <View testID="form-examples">
+      {examples.map((ex, i) => (
+        <Text key={i} testID={`form-example-${i}`} style={[styles.example, { color: textColor }]}>
+          {starSegments(ex).map((seg, j) => (seg.bold ? <Text key={j} style={accent ? { color: accent, fontWeight: '700' } : { color: textColor, fontWeight: '900', textDecorationLine: 'underline' }}>{seg.text}</Text> : seg.text))}
+        </Text>
+      ))}
     </View>
   );
 }
@@ -335,6 +369,7 @@ export function FormDrillItem({
           <>
             <AnswerFeedbackBox correct={correct} badgeLabel={correct ? s.games.correctFeedback : s.games.wrongFeedback} style={styles.brutalFeedback}>
               {!correct ? <AnswerCompare typed={value} correct={item.answer} g={g} /> : null}
+              {item.examples?.length ? <FormExamples examples={item.examples} textColor={g.ink} /> : null}
             </AnswerFeedbackBox>
             <SpeakButton testID="form-speak" onPress={() => speak(item.answer, speechLang(learnedLang))} brutalStyle={styles.formSpeakBrutal} />
             {!correct && !docked ? <MistypedButton onPress={() => onDone(true)} /> : null}
@@ -392,6 +427,7 @@ export function FormDrillItem({
       ) : (
         <AnswerFeedbackBox correct={correct} badgeLabel={correct ? s.games.correctFeedback : s.games.wrongFeedback} style={styles.explainCard}>
           {!correct ? <AnswerCompare typed={value} correct={item.answer} g={g} /> : null}
+          {item.examples?.length ? <FormExamples examples={item.examples} textColor={colors.text} accent={colors.tint} /> : null}
           <SpeakButton testID="form-speak" onPress={() => speak(item.answer, speechLang(learnedLang))} style={styles.formSpeak} iconStyle={styles.formSpeakIcon} />
           {!correct && !docked ? <MistypedButton onPress={() => onDone(true)} /> : null}
           {docked ? null : (

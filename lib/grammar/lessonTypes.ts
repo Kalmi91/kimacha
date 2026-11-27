@@ -164,6 +164,8 @@ export interface FormItem {
   // optional: a typical wrong typed answer -> why it is wrong ({en, es}); the level test's result card looks the
   // typed answer up here (lowercase, accents removed). Where it is missing the card shows the table and the rule.
   wrong?: Record<string, Record<string, string>>;
+  // optional: example sentences in the lesson's target language shown after the answer; `*...*` marks the form to highlight.
+  examples?: string[];
 }
 
 // "Why this sentence": the
