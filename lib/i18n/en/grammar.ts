@@ -304,6 +304,7 @@ export default {
     statusLesson: 'Lesson →',
     topicRowLabel: (title: string, status: string) => `${title}, ${status}`,
     levelLine: (lvl: string, learned: number, total: number) => `${lvl} level · ${learned} of ${total} core topics learned`,
+    endGain: (lvl: string, from: number, to: number) => `${lvl}: ${from}% → ${to}%`,
     levelDone: (lvl: string) => `${lvl} level done: every core topic is learned`,
     yourRounds: 'Your rounds',
     barLabel: (pct: number) => `${pct}%`,

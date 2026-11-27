@@ -4,7 +4,9 @@ import type { BankItem, ClozeItem, FixItem, NounItem } from '@/lib/grammar/lesso
 import type { LessonTestQuestion } from '@/lib/grammar/lessonTest';
 import { questionsOf, type RoundData } from '@/lib/grammar/randomRoundView';
 import { lessonFor } from '@/lib/grammar/syllabus';
-import { taskTypeOfKind, type PoolQ, type SmallPool, type SmallTopicInfo } from '@/lib/grammar/smallTest';
+import { taskTypeOfKind, type PoolQ, type SmallCur, type SmallPool, type SmallTopicInfo } from '@/lib/grammar/smallTest';
+import { appendEvidence, type TopicEvidence } from '@/lib/grammar/randomRound';
+import { localDateString } from '@/lib/usageStats';
 import { coreTopicsForLevel, taskConfigForLevel } from '@/lib/grammar/taskTypes';
 
 // The non-visual part of the Small test screen (app/grammar/small-test.tsx): the question pool over the level's written
@@ -65,4 +67,19 @@ export function smallTestView(d: RoundData, seed: number, level: Level): SmallVi
     topics,
     coreIds: topics.filter((tp) => tp.core && of(tp.id).pool.length > 0).map((tp) => tp.id),
   };
+}
+
+// The one place a settled main question becomes the topic's evidence (Next and the load of a run left on a result card).
+export function evidenceOf(d: RoundData, seed: number, v: SmallView, ev: Map<string, TopicEvidence>, cur: SmallCur, ok: boolean) {
+  if (cur.role === 'mini' || cur.role === 'drill') return null;
+  const found = v.find(cur.topic, cur.qid);
+  const kind = found?.q?.kind ?? found?.item?.kind;
+  if (!kind) return null;
+  const topicEvidence = appendEvidence(
+    ev.get(cur.topic),
+    { id: cur.qid, kind, ok, at: localDateString() },
+    undefined,
+    questionsOf(d, seed, cur.topic).map((x) => x.id),
+  );
+  return { topicEvidence, map: new Map(ev).set(cur.topic, topicEvidence) };
 }

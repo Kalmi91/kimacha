@@ -118,6 +118,8 @@ export interface SmallRun {
   drilled?: { right: number; total: number };
   /** The answers of the quick check after a lesson (kept for the practice list; not in `answers`, which counts the test). Missing in an older save. */
   miniAnswers?: SmallAnswer[];
+  /** The level's shown percent when the round began (the end screen's "from" number). Missing in an older save. */
+  startPct?: number;
 }
 
 export interface SmallGap {
@@ -201,7 +203,7 @@ export function parseSmallState(raw: unknown): SmallState {
     history: (r.history as unknown[]).filter((v): v is number => typeof v === 'number').slice(-HISTORY_MAX),
     recent: strings(r.recent),
     rounds: typeof r.rounds === 'number' ? r.rounds : 0,
-    run: okRun && whole ? fixDrill({ ...(run as SmallRun), size: runSize(run!), pending: Array.isArray(run!.pending) ? run!.pending : [], mini: run!.mini ?? null, stopTopic: run!.stopTopic ?? null, current: run!.current ?? null }) : null,
+    run: okRun && whole ? fixDrill({ ...(run as SmallRun), size: runSize(run!), pending: Array.isArray(run!.pending) ? run!.pending : [], mini: run!.mini ?? null, stopTopic: run!.stopTopic ?? null, current: run!.current ?? null, startPct: typeof run!.startPct === 'number' && Number.isFinite(run!.startPct) && run!.startPct >= 0 && run!.startPct <= 100 ? run!.startPct : undefined }) : null,
     gaps,
     fixed: typeof r.fixed === 'number' && Number.isFinite(r.fixed) && r.fixed > 0 ? r.fixed : 0,
     log,
@@ -300,6 +302,12 @@ export function startRound(st: SmallState, topics: SmallTopicInfo[], pool: Small
   };
   const last = { ...st.last, ...Object.fromEntries(picked.map((tp) => [tp.id, run.round])) };
   return { ...st, rounds: st.rounds + 1, seen: [...new Set([...st.seen, ...picked.map((tp) => tp.id)])], run, gaps, last };
+}
+
+/** Keeps the level's shown percent at the start of the round with the run (saved and restored with it). */
+export function setStartPct(st: SmallState, pct: number): SmallState {
+  if (!st.run) return st;
+  return { ...st, run: { ...st.run, startPct: pct } };
 }
 
 /** The answer is on the result card: it is saved, so leaving before Next does not lose it. */

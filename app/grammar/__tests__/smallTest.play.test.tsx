@@ -110,7 +110,8 @@ import { lessonFor } from '@/lib/grammar/syllabus';
 import { buildLessonTest, type LessonTestQuestion } from '@/lib/grammar/lessonTest';
 import { GRAMMAR_RANDOM_KEY, evidenceFromRows } from '@/lib/grammar/randomRound';
 import { loadSmallState, smallKey } from '@/lib/grammar/smallTest';
-import { saveResumeValue } from '@/lib/resumeStore';
+import { levelPercent, levelShownKey, parseShownPct, shownLabel, shownPctOf } from '@/lib/grammar/levelTest';
+import { loadResumeValue, saveResumeValue } from '@/lib/resumeStore';
 import { ThemeProvider } from '@/lib/ThemeContext';
 import SmallTestScreen from '../small-test';
 import { makeFlush } from '@/test-utils/flush';
@@ -162,6 +163,12 @@ const answerNext = async (ok: boolean) => {
   return found;
 };
 const stateNow = () => loadSmallState(getDb(), 'en→es', 'A1');
+// the percent the Grammar tab shows for the level: the stored standing or the real percent of the level's topics, the larger
+const levelShownNow = async () =>
+  shownPctOf(
+    parseShownPct(await loadResumeValue(getDb(), levelShownKey('en→es', 'A1'))),
+    levelPercent(TOPICS, evidenceFromRows(await getDb().getGameProgress(GRAMMAR_RANDOM_KEY)))
+  );
 
 describe.each(['brand', 'classic'] as const)('grammar small test (%s palette)', (palette) => {
   beforeEach(async () => {
@@ -357,7 +364,7 @@ describe.each(['brand', 'classic'] as const)('grammar small test (%s palette)', 
     const learned = ['lt-0', 'lt-1'].filter((id) => first.learned.includes(id)).length;
     expect(learned).toBeGreaterThan(0);
     expect(learned).toBeLessThan(2);
-    const firstPct = (learned / 2) * 100;
+    const firstPct = await levelShownNow();
     expect(progressWidth()).toBe(`${firstPct}%`);
     expect(progressWidth()).toBe(StyleSheet.flatten(screen.getByTestId('small-test-end-level-fill').props.style).width);
 
@@ -369,8 +376,46 @@ describe.each(['brand', 'classic'] as const)('grammar small test (%s palette)', 
     for (let i = 1; i < 10; i++) await answerNext(true);
     expect(has('small-test-end')).toBe(true);
     expect(text('small-test-end-level')).toBe('A1 level · 2 of 2 core topics learned');
-    expect(progressWidth()).toBe('100%');
+    expect(progressWidth()).toBe(`${await levelShownNow()}%`);
     expect(Number.parseFloat(String(progressWidth()))).toBeGreaterThan(firstPct);
+  });
+
+  it('FB761: a question shows its topic title above it; after the answer only the result card title is on screen', async () => {
+    await start();
+    const { topic } = onScreen();
+    expect(text('small-test-topic')).toBe(TITLES[topic]);
+    expect(screen.queryAllByTestId('level-test-topic')).toHaveLength(0);
+    await answer(true);
+    expect(screen.queryAllByTestId('small-test-topic')).toHaveLength(0);
+    expect(screen.queryAllByTestId('level-test-topic')).toHaveLength(1);
+    expect(text('level-test-topic')).toBe(TITLES[topic]);
+  });
+
+  it('FB756: the end card shows "A1: from% -> to%" and both bars carry the Grammar tab number; the start survives leaving and coming back', async () => {
+    await saveResumeValue(getDb(), levelShownKey('en→es', 'A1'), 12.5);
+    const first = await start();
+    expect((await stateNow()).run!.startPct).toBe(12.5);
+    for (let i = 0; i < 10; i++) await answerNext(true);
+    const now = await levelShownNow();
+    expect(now).toBeGreaterThanOrEqual(12.5);
+    const gain = `A1: 12% → ${shownLabel(now)}%`;
+    expect(text('small-test-end-gain')).toBe(gain);
+    expect(StyleSheet.flatten(screen.getByTestId('small-test-progress-fill').props.style).width).toBe(`${now}%`);
+    expect(StyleSheet.flatten(screen.getByTestId('small-test-end-level-fill').props.style).width).toBe(`${now}%`);
+    first.unmount();
+    await open();
+    expect(has('small-test-end')).toBe(true);
+    expect((await stateNow()).run!.startPct).toBe(12.5);
+    expect(text('small-test-end-gain')).toBe(gain);
+    await saveResumeValue(getDb(), levelShownKey('en→es', 'A1'), null);
+  });
+
+  it('FB756: nothing changed still shows both numbers', async () => {
+    await saveResumeValue(getDb(), levelShownKey('en→es', 'A1'), 99);
+    await start();
+    for (let i = 0; i < 10; i++) await answerNext(true);
+    expect(text('small-test-end-gain')).toBe('A1: 99% → 99%');
+    await saveResumeValue(getDb(), levelShownKey('en→es', 'A1'), null);
   });
 
   it('FB678: every lesson row of the end card (learned or not) opens that lesson; the end card stays under it', async () => {

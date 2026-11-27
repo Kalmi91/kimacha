@@ -282,6 +282,7 @@ const de: typeof en = {
     statusLesson: 'Lektion →',
     topicRowLabel: (title: string, status: string) => `${title}, ${status}`,
     levelLine: (lvl: string, learned: number, total: number) => `${lvl}-Niveau · ${learned} von ${total} Kernthemen gelernt`,
+    endGain: (lvl: string, from: number, to: number) => `${lvl}: ${from}% → ${to}%`,
     levelDone: (lvl: string) => `${lvl}-Niveau geschafft: alle Kernthemen gelernt`,
     yourRounds: 'Deine Runden',
     barLabel: (pct: number) => `${pct}%`,
