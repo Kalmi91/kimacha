@@ -37,7 +37,6 @@ import {
   type RoundRun,
   type TopicEvidence,
 } from '@/lib/grammar/randomRound';
-import { DEFAULT_WEEKLY_GOAL_MINUTES } from '@/lib/usageStats';
 import ScreenFeedback from '@/lib/screenFeedback';
 import { loadBigTestCard, loadBigTestKnownTopics } from '@/lib/grammar/bigTest';
 import { grammarTabLevelKey, parseTabLevel } from '@/lib/grammar/levelTestRoute';
@@ -97,9 +96,6 @@ export default function GrammarSyllabusScreen() {
   const [bigTest, setBigTest] = useState<{ running: boolean; level: string | null; ready: boolean }>({ running: false, level: null, ready: false });
   // Strong topics of the last Big test: a mark only, no evidence, no percent.
   const [knownFromTest, setKnownFromTest] = useState<Set<string>>(new Set());
-  // weekly goal box (from the existing weekly goal / usage values).
-  const [weeklyGoal, setWeeklyGoal] = useState(DEFAULT_WEEKLY_GOAL_MINUTES);
-  const [weekMinutes, setWeekMinutes] = useState(0);
   // the lesson search text; while it is not empty the list shows the matching lessons of every level.
   const [query, setQuery] = useState('');
   // the target of the previous load: another direction must not keep the old direction's open level.
@@ -139,8 +135,6 @@ export default function GrammarSyllabusScreen() {
     const saved = parseTabLevel(await loadResumeValue(db, grammarTabLevelKey(pair)), tabLevels);
     const fallback = [card.level, lvl, tabLevels[0]].find((l): l is Level => !!l && tabLevels.includes(l)) ?? 'A1';
     setOpenLevel((current) => (directionChanged ? null : current) ?? (saved as Level | null) ?? fallback);
-    setWeeklyGoal(await db.getWeeklyGoalMinutes());
-    setWeekMinutes((await db.getUsageStats()).thisWeek);
   }, [refresh]);
 
   useFocusEffect(
@@ -379,21 +373,6 @@ export default function GrammarSyllabusScreen() {
 
           {!searching ? (
           <>
-          <BrutalBox style={styles.brutalGoal} boxStyle={styles.brutalTopic}>
-            <Text style={[styles.brutalUnitName, { color: g.ink }, softTitleStyle(g)]}>{s.grammar.weeklyGoalTitle}</Text>
-            <Text style={[styles.brutalBadge, { color: g.ink }, softTitleStyle(g)]}>
-              {s.grammar.weeklyGoalValue(
-                String(Math.round((weekMinutes / 60) * 10) / 10),
-                String(Math.round(weeklyGoal / 60))
-              )}
-            </Text>
-            <SegmentBar
-              segments={7}
-              filled={segmentsFilled(weeklyGoal > 0 ? Math.min(100, (weekMinutes / weeklyGoal) * 100) : 0, 7)}
-              style={styles.brutalBar}
-            />
-          </BrutalBox>
-
           <Text style={[styles.footNote, { color: g.mu }]}>{s.grammar.footNote}</Text>
           </>
           ) : null}

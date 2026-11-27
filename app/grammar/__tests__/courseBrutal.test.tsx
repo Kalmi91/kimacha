@@ -41,7 +41,7 @@ describe('course list, neo-brutalist', () => {
     await db.setGrammarPalette('brand');
   });
 
-  it('no streak sticker, active level box with a, core sticker, weekly goal box', async () => {
+  it('no streak sticker, active level box with a, core sticker, no weekly goal box', async () => {
     await getDb().updateStreak();
     const view = render(<ThemeProvider><GrammarSyllabusScreen /></ThemeProvider>);
     await flush();
@@ -50,7 +50,7 @@ describe('course list, neo-brutalist', () => {
     expect(style('grammar-level-A1').backgroundColor).toBe(PALETTE_FILLS.brand.a);
     expect(style('grammar-level-A2').backgroundColor).toBe('#FFFFFF');
     expect(screen.queryAllByTestId(/^grammar-core(-plus)?-/).length).toBeGreaterThan(0);
-    expect(screen.queryByText('Weekly goal')).toBeTruthy();
+    expect(screen.queryByText('Weekly goal')).toBeNull();
     fireEvent.press(screen.getByTestId('grammar-level-A2'));
     await flush(1);
     expect(screen.queryByTestId('grammar-topic-futuro-simple')).toBeTruthy();

@@ -29,8 +29,6 @@ const es: typeof en = {
     doneTag: 'listo',
     knownFromTestTag: 'Lo sabes por el test',
     continueTag: 'continuar →',
-    weeklyGoalTitle: 'Objetivo semanal',
-    weeklyGoalValue: (done: string, goal: string) => `${done} h / ${goal} h`,
     comboLabel: (n: number) => `combo x${n}`,
     perfect: '¡perfecto!',
     nextArrow: 'siguiente →',

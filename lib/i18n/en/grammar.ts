@@ -28,8 +28,6 @@ export default {
     doneTag: 'done',
     knownFromTestTag: 'Known from the test',
     continueTag: 'continue →',
-    weeklyGoalTitle: 'Weekly goal',
-    weeklyGoalValue: (done: string, goal: string) => `${done} h / ${goal} h`,
     // brutalist drill.
     comboLabel: (n: number) => `combo x${n}`,
     perfect: 'perfect!',
