@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 
 import Colors from '@/constants/Colors';
-import DockedAction, { DOCK_RESERVE, FAB_CLEARANCE, type DockedActionTone } from '@/components/learn/DockedAction';
+import DockedAction, { DOCK_RESERVE, FAB_CLEARANCE, defaultActionLabel, type DockedActionTone } from '@/components/learn/DockedAction';
 import { useDockLift } from '@/components/learn/useDockLift';
 
 type ColorScheme = (typeof Colors)['light'];
@@ -80,7 +80,8 @@ export function useDockedAction(spec: DockSpec | null): { docked: boolean; padBo
   useEffect(() => {
     latest.current = spec;
   });
-  const key = spec ? `${spec.label ?? ''}|${spec.tone}|${spec.color ?? ''}|${spec.testID ?? ''}|${spec.disabled ? 1 : 0}|${spec.secondary?.label ?? ''}` : '';
+  const resolvedLabel = spec ? spec.label ?? defaultActionLabel(spec.tone) : '';
+  const key = spec ? `${resolvedLabel}|${spec.tone}|${spec.color ?? ''}|${spec.testID ?? ''}|${spec.disabled ? 1 : 0}|${spec.secondary?.label ?? ''}` : '';
   useEffect(() => {
     if (!register) return;
     const cur = latest.current;

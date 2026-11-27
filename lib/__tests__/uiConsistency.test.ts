@@ -13,7 +13,11 @@
 // - focus stolen without the prop: `ref.focus()` in an effect;
 // - a re-exported or aliased TextInput (`import { TextInput as Input }`, a wrapper component);
 // - i18n strings reached through a name that is not `t()` / `s` / `string(s)` (or an alias const of those), and labels built
-//   from pieces at run time.
+//   from pieces at run time;
+// - one hit is counted per line: removing one hit and adding another in the same file with the same count passes;
+// - a bare `//` inside JSX text blanks the rest of that line (stripComments reads it as a comment);
+// - the alias match on `s.` is a plain regex (any variable named `s` counts, whatever it holds);
+// - "Continue", "Finish" and "Done" buttons are not covered by next-label.
 import fs from 'fs';
 import path from 'path';
 
@@ -181,6 +185,34 @@ function tagsNamed(src: string, name: string): { start: number; end: number; att
   return out;
 }
 
+// [start, end) of the `prop=value` attribute (name included, as a hit can start at the name) of each `<name ...>` tag (a `{...}` or a quoted value), top level only.
+function propValueRanges(src: string, name: string, prop: string): [number, number][] {
+  const out: [number, number][] = [];
+  for (const t of tagsNamed(src, name)) {
+    let j = t.start + name.length + 1;
+    while (j < t.end - 1) {
+      const c = src[j];
+      if (c === '{') j = skipBraces(src, j + 1);
+      else if (c === '"' || c === "'") j = skipQuoted(src, j);
+      else {
+        const re = /([\w-]+)\s*=\s*/y;
+        re.lastIndex = j;
+        const m = re.exec(src);
+        if (!m) {
+          j++;
+          continue;
+        }
+        const from = j;
+        j += m[0].length;
+        const end = src[j] === '{' ? skipBraces(src, j + 1) : src[j] === '"' || src[j] === "'" ? skipQuoted(src, j) : j;
+        if (m[1] === prop) out.push([from, end]);
+        j = end;
+      }
+    }
+  }
+  return out;
+}
+
 // A label made of these words: i18n key references plus hard-coded literals.
 function labelDetector(values: string[], words: string[]): Detector {
   const trails = keysWithValue(values);
@@ -221,11 +253,11 @@ const GLYPH = '[✕×✖]';
 
 const DETECTORS: Record<string, Detector> = {
   'check-label': labelDetector(['check'], ['Check']),
-  'next-label': labelDetector(['next'], ['Next']),
-  // a label handed to the shared <ResultBadge>, or to <AnswerFeedbackBox> (which draws that badge), is the badge's own business
+  'next-label': labelDetector(['next', 'next task'], ['Next', 'Next task']),
+  // a label handed to the shared <ResultBadge> (`label`), or to <AnswerFeedbackBox> (`badgeLabel`, which draws that badge), is the badge's own business
   'result-label': (src) => {
-    const badge = [...tagsNamed(src, 'ResultBadge'), ...tagsNamed(src, 'AnswerFeedbackBox')];
-    return labelDetector(['correct', 'wrong', 'not quite'], ['Correct', 'Not quite', 'Wrong'])(src).filter((h) => !badge.some((b) => h.index >= b.start && h.index < b.end));
+    const given = [...propValueRanges(src, 'ResultBadge', 'label'), ...propValueRanges(src, 'AnswerFeedbackBox', 'badgeLabel')];
+    return labelDetector(['correct', 'wrong', 'not quite'], ['Correct', 'Not quite', 'Wrong'])(src).filter((h) => !given.some(([a, b]) => h.index >= a && h.index < b));
   },
   'exit-glyph': (src) => perLine([...allHits(src, new RegExp(`(['"\`])\\s*${GLYPH}\\s*\\1`)), ...allHits(src, new RegExp(`>\\s*${GLYPH}\\s*<`))]),
   'no-autofocus': (src) => perLine(allHits(src, /\bautoFocus\b(?!\s*=\s*\{\s*false\s*\})/)),
@@ -426,6 +458,7 @@ describe('UI consistency gate: calibration (the detectors flag the known own var
     'app/grammar/random.tsx',
     'app/grammar/small-test.tsx',
     'app/grammar/big-test.tsx',
+    'app/mock-exam.tsx',
   ])('next-label flags %s', (file) => {
     expect(flagged('next-label', file)).toBe(true);
   });
@@ -490,11 +523,16 @@ describe('UI consistency gate: the detectors (one bad and one good snippet per r
     expect(run('check-label', 'const c = t().card;\nconst l = c.check;')).toHaveLength(1);
     expect(run('check-label', 'const { check } = t().card;')).toHaveLength(1);
     expect(run('next-label', 'const x = foo.card.next;')).toEqual([]);
+    expect(run('next-label', "const l = 'Next task';")).toHaveLength(1);
+    expect(run('next-label', 'const l = <Text>{s.nextTask}</Text>;')).toHaveLength(1);
   });
 
   it('a label passed to <ResultBadge> is not flagged', () => {
     expect(run('result-label', "<ResultBadge label={'Correct'} onPress={() => go()} />")).toEqual([]);
     expect(run('result-label', "<AnswerFeedbackBox correct badgeLabel={'Correct'} />")).toEqual([]);
+    expect(run('result-label', "<ResultBadge label={'Wrong'} />")).toEqual([]);
+    expect(run('result-label', "<ResultBadge label={x} hint={'Wrong'} />")).toHaveLength(1);
+    expect(run('result-label', '<AnswerFeedbackBox correct>Correct</AnswerFeedbackBox>')).toHaveLength(1);
     expect(run('result-label', "<Text>{'Correct'}</Text>")).toHaveLength(1);
   });
 });

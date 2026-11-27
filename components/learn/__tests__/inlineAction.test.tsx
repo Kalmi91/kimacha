@@ -1,8 +1,8 @@
 import { StyleSheet } from 'react-native';
-import { render, screen } from '@testing-library/react-native';
+import { fireEvent, render, screen } from '@testing-library/react-native';
 
 import Colors from '@/constants/Colors';
-import DockedAction, { defaultActionLabel } from '@/components/learn/DockedAction';
+import DockedAction, { DockActionButton, defaultActionLabel } from '@/components/learn/DockedAction';
 import InlineAction from '@/components/learn/InlineAction';
 import { t } from '@/lib/i18n';
 
@@ -30,14 +30,13 @@ describe.each(SKINS)('InlineAction vs DockedAction, skin %s', (_name, theme) => 
     const docked = render(<DockedAction testID={ID} tone={tone} onPress={onPress} bottom={0} colors={Colors.light} />);
     const dockedBtn = screen.getByTestId(ID);
     const dockedStyle = flat(dockedBtn.props.style);
-    const dockedLabel = docked.toJSON();
+    expect(docked.UNSAFE_getByType(DockActionButton)).toBeTruthy();
     docked.unmount();
 
     const inline = render(<InlineAction testID={ID} tone={tone} onPress={onPress} />);
     const inlineBtn = screen.getByTestId(ID);
     expect(flat(inlineBtn.props.style)).toEqual(dockedStyle);
-    expect(inline.toJSON()).not.toBeNull();
-    expect(dockedLabel).not.toBeNull();
+    expect(inline.UNSAFE_getByType(DockActionButton)).toBeTruthy();
 
     const label = defaultActionLabel(tone);
     expect(label).toBe(tone === 'next' ? `${t().card.next} →` : `✓ ${t().card.check}`);
@@ -45,6 +44,26 @@ describe.each(SKINS)('InlineAction vs DockedAction, skin %s', (_name, theme) => 
 
     const root = inline.toJSON() as { props: { style?: unknown } };
     expect(flat(root.props.style).position).not.toBe('absolute');
+  });
+
+  it('a custom label is drawn instead of the default', () => {
+    render(<InlineAction testID={ID} tone="check" label="Custom go" onPress={jest.fn()} />);
+    expect(screen.getAllByText('Custom go', { exact: false }).length).toBeGreaterThan(0);
+    expect(screen.queryByText(defaultActionLabel('check'), { exact: false })).toBeNull();
+  });
+
+  it('disabled: pressing does not call onPress', () => {
+    const onPress = jest.fn();
+    render(<InlineAction testID={ID} tone="check" disabled onPress={onPress} />);
+    fireEvent.press(screen.getByTestId(ID));
+    expect(onPress).not.toHaveBeenCalled();
+  });
+
+  it('enabled: pressing calls onPress once', () => {
+    const onPress = jest.fn();
+    render(<InlineAction testID={ID} tone="check" onPress={onPress} />);
+    fireEvent.press(screen.getByTestId(ID));
+    expect(onPress).toHaveBeenCalledTimes(1);
   });
 
   it.each(['check', 'next'] as const)('tone %s: the label text styles are equal', (tone) => {

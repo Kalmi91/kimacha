@@ -33,7 +33,7 @@ export function defaultActionLabel(tone: Tone): string {
   return tone === 'next' ? `${s.card.next} →` : `✓ ${s.card.check}`;
 }
 
-export type ActionButtonProps = {
+export type DockActionButtonProps = {
   /** Default per tone (see defaultActionLabel). */
   label?: string;
   onPress: () => void;
@@ -47,7 +47,7 @@ export type ActionButtonProps = {
 
 // The one Check / Next button, shared by the docked bar (DockedAction) and the inline twin (InlineAction),
 // so the two cannot drift. Moved here 1:1 from DockedAction (the `inlineCheckBtn` style values are unchanged).
-export function ActionButton({ label, onPress, tone, color, testID, disabled }: ActionButtonProps) {
+export function DockActionButton({ label, onPress, tone, color, testID, disabled }: DockActionButtonProps) {
   const g = useGrammarColors();
   const checkFill = useSkinDecor().checkFill;
   const text = label ?? defaultActionLabel(tone);
@@ -67,7 +67,7 @@ export function ActionButton({ label, onPress, tone, color, testID, disabled }: 
 }
 
 type Props = {
-  /** Default per tone (the words card's Check / the plain Next), see ActionButton. */
+  /** Default per tone (the words card's Check / the plain Next), see DockActionButton. */
   label?: string;
   onPress: () => void;
   tone: Tone;
@@ -97,7 +97,7 @@ export default function DockedAction({ label, onPress, tone, color, bottom, colo
           <ExamButton testID={secondary.testID} secondary label={secondary.label} onPress={secondary.onPress} />
         </View>
       ) : null}
-      <ActionButton testID={testID} label={label} tone={tone} color={color} disabled={disabled} onPress={onPress} />
+      <DockActionButton testID={testID} label={label} tone={tone} color={color} disabled={disabled} onPress={onPress} />
     </View>
   );
 }

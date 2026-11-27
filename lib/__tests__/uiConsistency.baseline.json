@@ -108,87 +108,87 @@
   "check-label": {
     "app/grammar/deck/[topic].tsx": {
       "count": 1,
-      "reason": "wave 2: convert to the shared action button"
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
     },
     "app/grammar/exam-round.tsx": {
       "count": 1,
-      "reason": "wave 2: convert to the shared action button"
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
     },
     "app/grammar/form-check/[topic].tsx": {
       "count": 1,
-      "reason": "wave 2: convert to the shared action button"
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
     },
     "app/grammar/tense-drill.tsx": {
       "count": 1,
-      "reason": "wave 2: convert to the shared action button"
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
     },
     "app/mistakes/deck.tsx": {
       "count": 1,
-      "reason": "wave 2: convert to the shared action button"
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
     },
     "components/EasySentenceCard.tsx": {
       "count": 1,
-      "reason": "wave 2: convert to the shared action button"
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
     },
     "components/TypedSentenceCard.tsx": {
       "count": 1,
-      "reason": "wave 2: convert to the shared action button"
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
     },
     "components/exam/ExamMatchCard.tsx": {
       "count": 1,
-      "reason": "wave 2: convert to the shared action button"
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
     },
     "components/exam/ExamSpeakCard.tsx": {
       "count": 2,
-      "reason": "wave 2: convert to the shared action button"
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
     },
     "components/exam/ExamTilesCard.tsx": {
       "count": 1,
-      "reason": "wave 2: convert to the shared action button"
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
     },
     "components/exam/ExamTypeCard.tsx": {
       "count": 2,
-      "reason": "wave 2: convert to the shared action button"
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
     },
     "components/grammar/NewKinds.tsx": {
       "count": 4,
-      "reason": "wave 2: convert to the shared action button"
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
     },
     "components/grammar/TypedKinds.tsx": {
       "count": 4,
-      "reason": "wave 2: convert to the shared action button"
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
     },
     "components/grammar/drill/MatchFormItems.tsx": {
       "count": 3,
-      "reason": "wave 2: convert to the shared action button"
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
     },
     "components/grammar/drill/WhyTransformItems.tsx": {
       "count": 3,
-      "reason": "wave 2: convert to the shared action button"
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
     },
     "components/learn/PcicCardView.tsx": {
       "count": 1,
-      "reason": "wave 2: convert to the shared action button"
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
     },
     "components/practice/DictationGame.tsx": {
       "count": 1,
-      "reason": "wave 2: convert to the shared action button"
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
     },
     "components/practice/SituationGame.tsx": {
       "count": 1,
-      "reason": "wave 2: convert to the shared action button"
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
     },
     "components/practice/SmallTalkGame.tsx": {
       "count": 1,
-      "reason": "wave 2: convert to the shared action button"
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
     },
     "components/speech/SpeechListen.tsx": {
       "count": 1,
-      "reason": "wave 2: convert to the shared action button"
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
     },
     "components/speech/SpeechPlay.tsx": {
       "count": 1,
-      "reason": "wave 2: convert to the shared action button"
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
     }
   },
   "exit-glyph": {
@@ -244,111 +244,119 @@
   "next-label": {
     "app/(tabs)/practice.tsx": {
       "count": 2,
-      "reason": "wave 2: convert to the shared action button"
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
     },
     "app/grammar/big-test.tsx": {
       "count": 1,
-      "reason": "wave 2: convert to the shared action button"
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
     },
     "app/grammar/deck/[topic].tsx": {
       "count": 1,
-      "reason": "wave 2: convert to the shared action button"
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
     },
     "app/grammar/form-check/[topic].tsx": {
       "count": 1,
-      "reason": "wave 2: convert to the shared action button"
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
     },
     "app/grammar/random.tsx": {
       "count": 1,
-      "reason": "wave 2: convert to the shared action button"
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
     },
     "app/grammar/small-test.tsx": {
       "count": 1,
-      "reason": "wave 2: convert to the shared action button"
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
     },
     "app/grammar/tense-drill.tsx": {
       "count": 1,
-      "reason": "wave 2: convert to the shared action button"
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
+    },
+    "app/mock-exam.tsx": {
+      "count": 1,
+      "reason": "own Next task button (ExamButton with s.nextTask); convert to the shared action button (DockedAction / InlineAction)"
     },
     "components/EasySentenceCard.tsx": {
       "count": 1,
-      "reason": "wave 2: convert to the shared action button"
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
     },
     "components/NewWordCard.tsx": {
       "count": 1,
-      "reason": "wave 2: convert to the shared action button"
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
     },
     "components/TypedSentenceCard.tsx": {
       "count": 1,
-      "reason": "wave 2: convert to the shared action button"
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
     },
     "components/exam/ExamChoiceCard.tsx": {
       "count": 1,
-      "reason": "wave 2: convert to the shared action button"
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
     },
     "components/exam/ExamMatchCard.tsx": {
       "count": 1,
-      "reason": "wave 2: convert to the shared action button"
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
     },
     "components/exam/ExamSpeakCard.tsx": {
       "count": 2,
-      "reason": "wave 2: convert to the shared action button"
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
     },
     "components/exam/ExamTilesCard.tsx": {
       "count": 1,
-      "reason": "wave 2: convert to the shared action button"
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
     },
     "components/exam/ExamTypeCard.tsx": {
       "count": 2,
-      "reason": "wave 2: convert to the shared action button"
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
+    },
+    "components/exam/mock/SpeakingTask.tsx": {
+      "count": 1,
+      "reason": "own Next task label passed to the speaking task button; convert to the shared action button (DockedAction / InlineAction)"
     },
     "components/grammar/GrammarDrill.tsx": {
       "count": 1,
-      "reason": "wave 2: convert to the shared action button"
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
     },
     "components/grammar/LevelTestFeedback.tsx": {
       "count": 1,
-      "reason": "wave 2: convert to the shared action button"
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
     },
     "components/grammar/NewKinds.tsx": {
       "count": 5,
-      "reason": "wave 2: convert to the shared action button"
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
     },
     "components/grammar/TypedKinds.tsx": {
       "count": 4,
-      "reason": "wave 2: convert to the shared action button"
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
     },
     "components/grammar/drill/MatchFormItems.tsx": {
       "count": 3,
-      "reason": "wave 2: convert to the shared action button"
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
     },
     "components/grammar/drill/WhyTransformItems.tsx": {
       "count": 4,
-      "reason": "wave 2: convert to the shared action button"
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
     },
     "components/practice/DictationGame.tsx": {
       "count": 1,
-      "reason": "wave 2: convert to the shared action button"
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
     },
     "components/practice/OppositesGame.tsx": {
       "count": 1,
-      "reason": "wave 2: convert to the shared action button"
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
     },
     "components/practice/ScrambleGame.tsx": {
       "count": 1,
-      "reason": "wave 2: convert to the shared action button"
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
     },
     "components/practice/SituationGame.tsx": {
       "count": 1,
-      "reason": "wave 2: convert to the shared action button"
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
     },
     "components/practice/SmallTalkGame.tsx": {
       "count": 1,
-      "reason": "wave 2: convert to the shared action button"
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
     },
     "components/speech/SpeechPlay.tsx": {
       "count": 2,
-      "reason": "wave 2: convert to the shared action button"
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
     }
   },
   "result-label": {
