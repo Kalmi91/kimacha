@@ -66,6 +66,19 @@ export function awardXp(kind: XpKind, itemKey: string, date: string = localDateS
   return result;
 }
 
+// XP for reading a grammar lesson (FB750): 0.5 for every active minute on the lesson view. No per-item count, no daily cap.
+export const READING_XP_PER_MINUTE = 0.5;
+
+export function awardReadingXp(date: string = localDateString()): Promise<number> {
+  const run = async (): Promise<number> => {
+    await addXp(READING_XP_PER_MINUTE, date);
+    return READING_XP_PER_MINUTE;
+  };
+  const result = chain.then(run, run);
+  chain = result.catch(() => undefined);
+  return result;
+}
+
 const WORDS_FOR_HARD = 8;
 
 // A "hard" Sentences-tab sentence (FB601): 8 or more words, or a sentence of a level above the learner's own.

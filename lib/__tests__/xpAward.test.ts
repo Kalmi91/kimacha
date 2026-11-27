@@ -4,7 +4,7 @@
 import { exportWebState, getDb } from '../database.web';
 import { getXp } from '../dailyXp';
 import { PCIC_LEVELS } from '../../data/pcic';
-import { XP_TABLE, awardXp, isHardSentence, xpForRepeat, type XpKind } from '../xpAward';
+import { XP_TABLE, awardReadingXp, awardXp, isHardSentence, xpForRepeat, type XpKind } from '../xpAward';
 
 const DAY = '2031-03-01';
 
@@ -116,6 +116,20 @@ describe('one row, bounded by a day', () => {
     expect(await awardXp('grammar', 'shared-q', '2031-04-03')).toBe(2);
     expect(await awardXp('grammar', 'shared-q', '2031-04-03')).toBe(0.5);
     expect(await awardXp('levelPractice', 'shared-q', '2031-04-03')).toBe(0.5);
+  });
+});
+
+describe('awardReadingXp (FB750)', () => {
+  it('adds 0.5 on every call, with no cap and no per-item count', async () => {
+    const day = '2031-05-01';
+    await awardXp('grammar', 'read-a', day);
+    const rowBefore = (await getDb().getGameProgress('xp-items')).find((r) => r.itemId === 'today');
+    const before = (await getXp(day)).xp;
+    expect(await Promise.all([awardReadingXp(day), awardReadingXp(day)])).toEqual([0.5, 0.5]);
+    expect(await awardReadingXp(day)).toBe(0.5);
+    expect((await getXp(day)).xp - before).toBeCloseTo(1.5, 10);
+    const rowAfter = (await getDb().getGameProgress('xp-items')).find((r) => r.itemId === 'today');
+    expect(rowAfter?.data).toEqual(rowBefore?.data);
   });
 });
 

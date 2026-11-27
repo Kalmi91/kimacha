@@ -1,7 +1,7 @@
-import { memo, useEffect, useMemo, useState } from 'react';
+import { memo, useCallback, useEffect, useMemo, useState } from 'react';
 import { Pressable, ScrollView, View } from 'react-native';
 import { Text } from '@/components/KText';
-import { useRouter } from 'expo-router';
+import { useFocusEffect, useRouter } from 'expo-router';
 
 import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
@@ -24,7 +24,8 @@ import { speechLang } from '@/lib/languages';
 import GlossText from '@/components/games/GlossText';
 import GrammarDrill from '@/components/grammar/GrammarDrill';
 import XpChip from '@/components/XpChip';
-import { awardXpThen } from '@/lib/xpAward';
+import { awardReadingXp, awardXpThen } from '@/lib/xpAward';
+import { onActiveMinute } from '@/lib/usageTimer';
 import GrammarRoundEnd from '@/components/grammar/GrammarRoundEnd';
 import LessonBody from '@/components/grammar/LessonBody';
 import LessonTest from '@/components/grammar/LessonTest';
@@ -199,6 +200,16 @@ function GrammarLessonPhases({ topic }: { topic: ReturnType<typeof useGrammarTop
   } = topic;
   // the XP the last right drill answer gave (FB591), shown while that item is on screen
   const [earned, setEarned] = useState<{ id: string; points: number } | null>(null);
+  // FB750: 0.5 XP for every active minute spent on the lesson (reading) view, only while this screen is focused
+  const reading = phase === 'lesson' && !!lesson;
+  useFocusEffect(
+    useCallback(() => {
+      if (!reading) return undefined;
+      return onActiveMinute(() => {
+        awardReadingXp().catch(() => undefined);
+      });
+    }, [reading]),
+  );
   // a stable array: GrammarDrill's round memo and its onItemChange effect depend on `kinds`.
   const drillKinds = useMemo(() => [drillKind], [drillKind]);
   const g = useGrammarColors();
@@ -404,6 +415,9 @@ function GrammarLessonPhases({ topic }: { topic: ReturnType<typeof useGrammarTop
   return (
     <View style={[styles.container, { backgroundColor: colors.background }]}>
       {header}
+      <View testID="lesson-reading-xp">
+        <XpChip />
+      </View>
       <ScrollView
         ref={scrollRef}
         contentContainerStyle={[styles.body, themedDockPad(g)]}

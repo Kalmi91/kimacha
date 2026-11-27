@@ -7,6 +7,10 @@ jest.mock('@/lib/speech', () => require('@/test-utils/mocks').speechMock());
 jest.mock('expo-router', () => ({
   useRouter: () => ({ back: jest.fn(), push: jest.fn() }),
   usePathname: () => '/grammar',
+  useFocusEffect: (cb: () => void) => {
+    const { useEffect } = require('react');
+    useEffect(cb, []);
+  },
   useLocalSearchParams: () => ({ topic: 'basic_verbs' }),
 }));
 
