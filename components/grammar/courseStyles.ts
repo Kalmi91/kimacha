@@ -35,6 +35,5 @@ export const styles = StyleSheet.create({
   brutalBlurb: { fontSize: 12, lineHeight: 17 },
   brutalBar: { marginTop: 2 },
   brutalBadge: { fontSize: 12, fontWeight: '500', textTransform: 'uppercase' },
-  brutalGoal: { marginTop: 10 },
   footNote: { fontSize: 12, textAlign: 'center', marginTop: 18, lineHeight: 17 },
 });

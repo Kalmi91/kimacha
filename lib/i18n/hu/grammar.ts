@@ -29,8 +29,6 @@ const hu: typeof en = {
     doneTag: 'kész',
     knownFromTestTag: 'A tesztből tudod',
     continueTag: 'folytatás →',
-    weeklyGoalTitle: 'Heti cél',
-    weeklyGoalValue: (done: string, goal: string) => `${done} ó / ${goal} ó`,
     comboLabel: (n: number) => `kombó x${n}`,
     perfect: 'tökéletes!',
     nextArrow: 'tovább →',
