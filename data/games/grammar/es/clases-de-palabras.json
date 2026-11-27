@@ -625,6 +625,7 @@
       "q": { "en": "What is the adverb of \"rápido\"?", "es": "¿Cuál es el adverbio de «rápido»?" },
       "answer": "rápidamente",
       "table": "derivacion",
+      "examples": ["El tren es *rápido*.", "La moto es *rápida*.", "Ella corre *rápidamente*.", "La *rapidez* es útil."],
       "wrong": {
         "rápidomente": {
           "en": "The ending -mente is added to the feminine form (rápida), not the masculine one: rápidamente.",
@@ -644,6 +645,7 @@
       "q": { "en": "What is the noun that goes with the adjective \"feliz\"?", "es": "¿Cuál es el sustantivo que corresponde al adjetivo «feliz»?" },
       "answer": "felicidad",
       "table": "derivacion",
+      "examples": ["El niño es *feliz*.", "La niña es *feliz*.", "Viven *felizmente*.", "La *felicidad* es importante."],
       "wrong": {
         "felizdad": {
           "en": "The noun needs the suffix -idad, and the z of feliz turns into c before i: felicidad.",
@@ -667,6 +669,7 @@
       "q": { "en": "What is the feminine form of the adjective \"tranquilo\"?", "es": "¿Cuál es la forma femenina del adjetivo «tranquilo»?" },
       "answer": "tranquila",
       "table": "derivacion",
+      "examples": ["El lago es *tranquilo*.", "La casa es *tranquila*.", "Duerme *tranquilamente*.", "La *tranquilidad* es buena."],
       "wrong": {
         "tranquilo": {
           "en": "That is the masculine form. For a feminine noun the ending -o becomes -a: tranquila.",
@@ -690,6 +693,7 @@
       "q": { "en": "What is the noun that goes with the adjective \"fácil\"?", "es": "¿Cuál es el sustantivo que corresponde al adjetivo «fácil»?" },
       "answer": "facilidad",
       "table": "derivacion",
+      "examples": ["El examen es *fácil*.", "La tarea es *fácil*.", "Aprende *fácilmente*.", "La *facilidad* ayuda mucho."],
       "wrong": {
         "facildad": {
           "en": "The suffix is -idad, and the i must stay: fácil becomes facilidad.",
@@ -709,6 +713,7 @@
       "q": { "en": "What is the adverb of \"claro\"?", "es": "¿Cuál es el adverbio de «claro»?" },
       "answer": "claramente",
       "table": "derivacion",
+      "examples": ["El mensaje es *claro*.", "La respuesta es *clara*.", "Habla *claramente*.", "La *claridad* es importante."],
       "wrong": {
         "claromente": {
           "en": "-mente is added to the feminine form, not to the masculine: clara + mente.",
@@ -728,7 +733,7 @@
       "q": { "en": "What is the feminine form of the adjective \"lento\"?", "es": "¿Cuál es la forma femenina del adjetivo «lento»?" },
       "answer": "lenta",
       "table": "derivacion",
-      "examples": ["El tren es *lento*.", "La tortuga es *lenta*.", "Camina *lentamente*."],
+      "examples": ["El tren es *lento*.", "La tortuga es *lenta*.", "Camina *lentamente*.", "La *lentitud* es un problema."],
       "wrong": {
         "lento": {
           "en": "That is the masculine form. For the feminine, -o becomes -a: lenta.",
@@ -748,6 +753,7 @@
       "q": { "en": "What is the noun that goes with the adjective \"fuerte\"?", "es": "¿Cuál es el sustantivo que corresponde al adjetivo «fuerte»?" },
       "answer": "fuerza",
       "table": "derivacion",
+      "examples": ["El viento es *fuerte*.", "La lluvia es *fuerte*.", "Llueve *fuertemente*.", "La *fuerza* es útil."],
       "wrong": {
         "fuerteza": {
           "en": "The noun of fuerte is irregular: it has a different stem, fuerza.",
@@ -767,6 +773,7 @@
       "q": { "en": "What is the adverb of \"triste\"?", "es": "¿Cuál es el adverbio de «triste»?" },
       "answer": "tristemente",
       "table": "derivacion",
+      "examples": ["El niño está *triste*.", "La niña está *triste*.", "Canta *tristemente*.", "La *tristeza* pasa pronto."],
       "wrong": {
         "tristamente": {
           "en": "Adjectives in -e have one form for both genders, so -mente is added directly: tristemente.",
@@ -786,6 +793,7 @@
       "q": { "en": "What is the feminine form of the adjective \"seguro\"?", "es": "¿Cuál es la forma femenina del adjetivo «seguro»?" },
       "answer": "segura",
       "table": "derivacion",
+      "examples": ["El camino es *seguro*.", "La casa es *segura*.", "*Seguramente* llega hoy.", "La *seguridad* es importante."],
       "wrong": {
         "seguro": {
           "en": "That is the masculine form. For the feminine, -o becomes -a: segura.",
@@ -805,6 +813,7 @@
       "q": { "en": "What is the noun that goes with the adjective \"difícil\"?", "es": "¿Cuál es el sustantivo que corresponde al adjetivo «difícil»?" },
       "answer": "dificultad",
       "table": "derivacion",
+      "examples": ["El examen es *difícil*.", "La tarea es *difícil*.", "*Difícilmente* llega a tiempo.", "La *dificultad* es normal."],
       "wrong": {
         "dificilidad": {
           "en": "By analogy with facilidad it looks right, but the noun of difícil is irregular: dificultad.",
@@ -824,6 +833,7 @@
       "q": { "en": "What is the adverb of \"amable\"?", "es": "¿Cuál es el adverbio de «amable»?" },
       "answer": "amablemente",
       "table": "derivacion",
+      "examples": ["El vecino es *amable*.", "La vecina es *amable*.", "Responde *amablemente*.", "La *amabilidad* es importante."],
       "wrong": {
         "amablamente": {
           "en": "An adjective in -e has one form for both genders, so -mente is added to amable as it is: amablemente.",
@@ -843,6 +853,7 @@
       "q": { "en": "What is the feminine form of the adjective meaning \"free\"?", "es": "¿Cuál es la forma femenina del adjetivo que significa «free»?" },
       "answer": "libre",
       "table": "derivacion",
+      "examples": ["El lugar está *libre*.", "La mesa está *libre*.", "Vive *libremente*.", "La *libertad* es importante."],
       "wrong": {
         "libra": {
           "en": "Adjectives in -e do not change in the feminine, so the form stays libre. Libra is a different word (the pound or the zodiac sign).",
