@@ -139,6 +139,8 @@ const hu: typeof en = {
       listen_mc: 'Hallgasd meg a mondatokat (kétszer), és válaszd ki, mit hallottál.',
       listen_match: 'Hallgasd meg (kétszer), és párosíts minden felvételt a jelentésével. Egy jelentés felesleges.',
       listen_dialogue: 'Hallgasd meg a beszélgetést (kétszer), és válaszd ki, mi hangzott el az egyes sorokban.',
+      listen_mc_q: 'Hallgasd meg a szöveget (kétszer), és válaszolj a kérdésekre.',
+      listen_dialogue_q: 'Hallgasd meg a beszélgetést (kétszer), és válaszolj a kérdésekre.',
       form_fill: 'Töltsd ki az összes mezőt.',
       short_message: 'Írd meg az üzenetet, amit a feladat leír. Érd el a minimális szószámot, és térj ki minden pontra.',
       gap_type: 'Írd be a hiányzó szót minden hézagba.',

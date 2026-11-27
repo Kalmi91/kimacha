@@ -139,6 +139,8 @@ const es: typeof en = {
       listen_mc: 'Escucha las oraciones (dos veces) y elige lo que oíste.',
       listen_match: 'Escucha (dos veces) y relaciona cada grabación con su significado. Sobra un significado.',
       listen_dialogue: 'Escucha la conversación (dos veces) y elige lo que se dijo en cada frase.',
+      listen_mc_q: 'Escucha el texto (dos veces) y contesta las preguntas.',
+      listen_dialogue_q: 'Escucha la conversación (dos veces) y contesta las preguntas.',
       form_fill: 'Llena todos los campos.',
       short_message: 'Escribe el mensaje que pide la tarea. Llega al mínimo de palabras y cubre todos los puntos.',
       gap_type: 'Escribe la palabra que falta en cada hueco.',

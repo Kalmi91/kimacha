@@ -141,6 +141,8 @@ const de: typeof en = {
       listen_mc: 'Höre dir die Sätze (zweimal) an und wähle, was du gehört hast.',
       listen_match: 'Höre (zweimal) zu und ordne jeder Aufnahme ihre Bedeutung zu. Es gibt eine Bedeutung zu viel.',
       listen_dialogue: 'Höre dir das Gespräch (zweimal) an und wähle, was in jeder Zeile gesagt wurde.',
+      listen_mc_q: 'Höre dir den Text (zweimal) an und beantworte die Fragen.',
+      listen_dialogue_q: 'Höre dir das Gespräch (zweimal) an und beantworte die Fragen.',
       form_fill: 'Fülle jedes Feld aus.',
       short_message: 'Schreibe die Nachricht, die die Aufgabe beschreibt. Erreiche die Mindestwortzahl und gehe auf jeden Punkt ein.',
       gap_type: 'Tippe in jede Lücke das fehlende Wort.',

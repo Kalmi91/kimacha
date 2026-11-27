@@ -255,7 +255,7 @@ ${p.question}` : p.text, p.options, p.correct, answer[String(i)])));
       break;
     case 'listen_mc':
     case 'listen_dialogue':
-      task.questions.forEach((q, i) => items.push(choiceItem(task.audio[i] ?? '', q.options, q.correct, answer[String(i)])));
+      task.questions.forEach((q, i) => items.push(choiceItem(task.audio[task.lineOf?.[i] ?? i] ?? '', q.options, q.correct, answer[String(i)])));
       break;
     case 'true_false':
       task.statements.forEach((st, i) => {

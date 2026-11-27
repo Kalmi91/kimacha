@@ -109,7 +109,9 @@ export default function MockTaskCard({ task, answer, onAnswer, target, canSpeak,
         ? 'read_mc_q'
         : task.kind === 'match' && task.optionsInTarget
           ? 'match_text'
-          : task.kind;
+          : (task.kind === 'listen_mc' || task.kind === 'listen_dialogue') && task.prompts
+            ? (`${task.kind}_q` as const)
+            : task.kind;
   const isDialogue = task.kind === 'listen_dialogue';
 
   const playAudio = () => {
@@ -235,7 +237,7 @@ export default function MockTaskCard({ task, answer, onAnswer, target, canSpeak,
         task.questions.map((q, i) => (
           <View key={`q-${i}`} style={styles.item}>
             <Text style={[styles.question, { color: colors.text }]}>
-              {i + 1}. {task.kind === 'listen_dialogue' ? s.lineQuestion(i + 1) : s.whatHeard}
+              {i + 1}. {task.prompts?.[i] ?? (task.kind === 'listen_dialogue' ? s.lineQuestion(i + 1) : s.whatHeard)}
             </Text>
             {optionRow(q.options, answer[String(i)], (idx) => onAnswer(String(i), idx), `l${i}`)}
           </View>
