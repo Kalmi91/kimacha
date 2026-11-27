@@ -1542,6 +1542,206 @@
         "es": "Los veo."
       },
       "es": "Los veo."
+    },
+    {
+      "id": "qq-13",
+      "sentence": "Tú ___ das un libro a ella.",
+      "options": ["le", "te", "me"],
+      "correct": 0,
+      "why": {
+        "en": "Das says you give. The recipient is a ella, so le.",
+        "es": "Das dice TÚ das. El destinatario es a ella, por eso le."
+      },
+      "wrong": {
+        "te": {
+          "en": "Te means to you, but you are the one giving here; the recipient is a ella, so le is needed: te would be correct if I gave the book to you: Yo te doy un libro.",
+          "es": "Te significa a ti, pero aquí tú eres quien da; el destinatario es a ella, así que hace falta le: te sería correcto si yo te diera el libro a ti: Yo te doy un libro."
+        },
+        "me": {
+          "en": "Me means to me, but the recipient is a ella, so le is needed: me would be correct if you gave the book to me: Tú me das un libro.",
+          "es": "Me significa a mí, pero el destinatario es a ella, así que hace falta le: me sería correcto si tú me dieras el libro a mí: Tú me das un libro."
+        }
+      },
+      "examples": ["Tú le das un libro a ella.", "Le das un libro."],
+      "tr": { "en": "You give her a book.", "es": "Tú le das un libro a ella." }
+    },
+    {
+      "id": "qq-14",
+      "sentence": "A mí ella ___ ayuda con la tarea.",
+      "options": ["me", "te", "nos"],
+      "correct": 0,
+      "why": {
+        "en": "A mí says I am the target, so me. Ayuda says: she helps.",
+        "es": "A mí dice que yo soy el destino, por eso me. Ayuda dice: ella ayuda."
+      },
+      "wrong": {
+        "te": {
+          "en": "Te means you, but the target here is a mí, so me is needed: te would be correct if she helped you: A ti ella te ayuda con la tarea.",
+          "es": "Te significa a ti, pero el destino aquí es a mí, así que hace falta me: te sería correcto si ella te ayudara a ti: A ti ella te ayuda con la tarea."
+        },
+        "nos": {
+          "en": "Nos means us, but the target here is a mí, so me is needed: nos would be correct if she helped us: A nosotros ella nos ayuda con la tarea.",
+          "es": "Nos significa a nosotros, pero el destino aquí es a mí, así que hace falta me: nos sería correcto si ella nos ayudara a nosotros: A nosotros ella nos ayuda con la tarea."
+        }
+      },
+      "examples": ["A mí ella me ayuda con la tarea.", "Ella me ayuda."],
+      "tr": { "en": "She helps me with the homework.", "es": "A mí ella me ayuda con la tarea." }
+    },
+    {
+      "id": "qq-15",
+      "sentence": "A ellos ___ doy mi número.",
+      "options": ["les", "le", "nos"],
+      "correct": 0,
+      "why": {
+        "en": "Doy says I give. The recipients are a ellos (several people), so les.",
+        "es": "Doy dice YO doy. Los destinatarios son a ellos (varias personas), por eso les."
+      },
+      "wrong": {
+        "le": {
+          "en": "Le means to one person, but a ellos is several people, so les is needed: le would be correct for one person: A él le doy mi número.",
+          "es": "Le significa a una sola persona, pero a ellos son varias personas, así que hace falta les: le sería correcto para una sola persona: A él le doy mi número."
+        },
+        "nos": {
+          "en": "Nos means to us, but the recipients are a ellos, not we, so les is needed: nos would be correct if the number came to us: Ella nos da su número.",
+          "es": "Nos significa a nosotros, pero los destinatarios son a ellos, no nosotros, así que hace falta les: nos sería correcto si el número fuera para nosotros: Ella nos da su número."
+        }
+      },
+      "examples": ["A ellos les doy mi número.", "Les doy mi número."],
+      "tr": { "en": "I give them my number.", "es": "A ellos les doy mi número." }
+    },
+    {
+      "id": "qq-match-02",
+      "kind": "match",
+      "pairs": [
+        { "es": "me", "en": "me, to me" },
+        { "es": "te", "en": "you, to you" },
+        { "es": "le", "en": "to him or her" },
+        { "es": "nos", "en": "us, to us" },
+        { "es": "les", "en": "to them" },
+        { "es": "lo", "en": "him, it" }
+      ]
+    },
+    {
+      "id": "qq-match-03",
+      "kind": "match",
+      "pairs": [
+        { "es": "amo", "en": "I love" },
+        { "es": "amas", "en": "you love" },
+        { "es": "ama", "en": "he or she loves" },
+        { "es": "doy", "en": "I give" },
+        { "es": "das", "en": "you give" },
+        { "es": "da", "en": "he or she gives" }
+      ]
+    },
+    {
+      "id": "qq-match-04",
+      "kind": "match",
+      "pairs": [
+        { "es": "me ayudas", "en": "you help me" },
+        { "es": "te veo", "en": "I see you" },
+        { "es": "me llama", "en": "she calls me" },
+        { "es": "te doy agua", "en": "I give you water" },
+        { "es": "le escribo", "en": "I write him" },
+        { "es": "nos dice", "en": "she tells us" }
+      ]
+    },
+    {
+      "id": "qq-spot-01",
+      "kind": "spot",
+      "trial": true,
+      "es": "Tú me amo.",
+      "wrongIndex": 2,
+      "options": ["amas", "ama", "aman"],
+      "correctIndex": 0,
+      "explain": {
+        "en": "The subject is tú, so the verb ends in -as: tú me amas.",
+        "es": "El sujeto es tú, así que el verbo termina en -as: tú me amas."
+      },
+      "tr": { "en": "You love me.", "es": "Tú me amas." }
+    },
+    {
+      "id": "qq-spot-02",
+      "kind": "spot",
+      "trial": true,
+      "es": "Ella me dice la verdad a nosotros.",
+      "wrongIndex": 1,
+      "options": ["nos", "les", "te"],
+      "correctIndex": 0,
+      "explain": {
+        "en": "The target is nosotros, so the pronoun is nos, not me.",
+        "es": "El destino es nosotros, así que el pronombre es nos, no me."
+      },
+      "tr": { "en": "She tells us the truth.", "es": "Ella nos dice la verdad a nosotros." }
+    },
+    {
+      "id": "qq-spot-03",
+      "kind": "spot",
+      "trial": true,
+      "es": "A él lo escribo un mensaje.",
+      "wrongIndex": 2,
+      "options": ["le", "les", "nos"],
+      "correctIndex": 0,
+      "explain": {
+        "en": "He is the recipient of the message, so the pronoun is le.",
+        "es": "Él es el destinatario del mensaje, así que el pronombre es le."
+      },
+      "tr": { "en": "I write him a message.", "es": "A él le escribo un mensaje." }
+    },
+    {
+      "id": "qq-spot-04",
+      "kind": "spot",
+      "trial": true,
+      "es": "Yo te da un libro.",
+      "wrongIndex": 2,
+      "options": ["doy", "das", "dan"],
+      "correctIndex": 0,
+      "explain": {
+        "en": "The subject is yo, so the verb is doy, not da.",
+        "es": "El sujeto es yo, así que el verbo es doy, no da."
+      },
+      "tr": { "en": "I give you a book.", "es": "Yo te doy un libro." }
+    },
+    {
+      "id": "qq-spot-05",
+      "kind": "spot",
+      "trial": true,
+      "es": "A ellos le escribo.",
+      "wrongIndex": 2,
+      "options": ["les", "me", "te"],
+      "correctIndex": 0,
+      "explain": {
+        "en": "A ellos is several people, so the pronoun is les, not le.",
+        "es": "A ellos son varias personas, así que el pronombre es les, no le."
+      },
+      "tr": { "en": "I write to them.", "es": "A ellos les escribo." }
+    },
+    {
+      "id": "qq-dict-01",
+      "kind": "dictation",
+      "trial": true,
+      "es": "Te amo mucho.",
+      "tr": { "en": "I love you a lot.", "es": "Te amo mucho." }
+    },
+    {
+      "id": "qq-dict-02",
+      "kind": "dictation",
+      "trial": true,
+      "es": "Ella me llama todos los días.",
+      "tr": { "en": "She calls me every day.", "es": "Ella me llama todos los días." }
+    },
+    {
+      "id": "qq-dict-03",
+      "kind": "dictation",
+      "trial": true,
+      "es": "A ellos les escribo.",
+      "tr": { "en": "I write to them.", "es": "A ellos les escribo." }
+    },
+    {
+      "id": "qq-dict-04",
+      "kind": "dictation",
+      "trial": true,
+      "es": "¿Me ayudas con la tarea?",
+      "tr": { "en": "Will you help me with the homework?", "es": "¿Me ayudas con la tarea?" }
     }
   ]
 }
