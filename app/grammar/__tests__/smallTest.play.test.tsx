@@ -113,6 +113,7 @@ import { loadSmallState, smallKey } from '@/lib/grammar/smallTest';
 import { levelPercent, levelShownKey, parseShownPct, shownLabel, shownPctOf } from '@/lib/grammar/levelTest';
 import { loadResumeValue, saveResumeValue } from '@/lib/resumeStore';
 import { ThemeProvider } from '@/lib/ThemeContext';
+import AnswerFeedbackBox from '@/components/grammar/AnswerFeedbackBox';
 import SmallTestScreen from '../small-test';
 import { makeFlush } from '@/test-utils/flush';
 
@@ -495,6 +496,17 @@ describe.each(['brand', 'classic'] as const)('grammar small test (%s palette)', 
 
   it('a typed task kind (word bank, A2): its own card; a wrong answer gets the short miss card with "Accept as correct"', async () => {
     mockParams = { level: 'a2' };
+    // the border colours of the shared answer box in this palette, read before the screen is rendered
+    const ref = render(
+      <ThemeProvider>
+        <AnswerFeedbackBox correct={false} testID="ref-wrong" />
+        <AnswerFeedbackBox correct testID="ref-right" />
+      </ThemeProvider>
+    );
+    await flush();
+    const wrongBorder = StyleSheet.flatten(ref.getByTestId('ref-wrong').props.style).borderColor;
+    const rightBorder = StyleSheet.flatten(ref.getByTestId('ref-right').props.style).borderColor;
+    ref.unmount();
     await open();
     expect(text('small-test-header')).toBe('A2 topic test · round 1');
     await press('small-test-start');
@@ -507,6 +519,12 @@ describe.each(['brand', 'classic'] as const)('grammar small test (%s palette)', 
     expect(has('bank-wrong')).toBe(false);
     expect(has('grammar-next')).toBe(false);
     expect(has('small-test-miss')).toBe(true);
+    // B2: the miss card is the shared answer box: danger dashed border, the wrong wording once, as the badge
+    const missStyle = StyleSheet.flatten(screen.getByTestId('small-test-miss').props.style);
+    expect(missStyle.borderStyle).toBe('dashed');
+    expect(screen.getAllByText('Not quite')).toHaveLength(1);
+    expect(missStyle.borderColor).toBe(wrongBorder);
+    expect(wrongBorder).not.toBe(rightBorder);
     // FB735/745/749: the wrong letters are marked, the same comparison as under a word card
     expect(screen.getByTestId('answer-compare-typed')).toHaveTextContent('rojo');
     expect(text('small-test-miss-answer')).toMatch(/^Los coches \d son rojos\.$/);
