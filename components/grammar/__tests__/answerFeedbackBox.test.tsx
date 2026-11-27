@@ -57,6 +57,38 @@ describe.each([
   });
 });
 
+describe('AnswerFeedbackBox, caller style and padding', () => {
+  const callerStyle = { marginTop: 16, padding: 20, alignItems: 'center' } as const;
+
+  it('brutal, no style: the front box has the default padding 16', () => {
+    mockTheme = 'brand-light';
+    render(<AnswerFeedbackBox correct testID="box" />);
+    expect(StyleSheet.flatten(screen.getByTestId('box').props.style).padding).toBe(16);
+  });
+
+  it('brutal: the caller margin goes to the outer wrapper, the rest stays on the front box', () => {
+    mockTheme = 'brand-light';
+    render(<AnswerFeedbackBox correct testID="box" style={callerStyle} />);
+    const box = screen.getByTestId('box');
+    const inner = StyleSheet.flatten(box.props.style);
+    expect(inner.padding).toBe(20);
+    expect(inner.alignItems).toBe('center');
+    expect(inner.marginTop).toBeUndefined();
+    // the outer wrapper is the next host view above the front box
+    let outer = box.parent;
+    while (outer && typeof outer.type !== 'string') outer = outer.parent;
+    expect(StyleSheet.flatten(outer?.props.style).marginTop).toBe(16);
+  });
+
+  it('classic: the caller style stays on the one box', () => {
+    mockTheme = 'light';
+    render(<AnswerFeedbackBox correct testID="box" style={callerStyle} />);
+    const style = StyleSheet.flatten(screen.getByTestId('box').props.style);
+    expect(style.marginTop).toBe(16);
+    expect(style.padding).toBe(20);
+  });
+});
+
 describe('AnswerFeedbackBox, retro95 light skin', () => {
   beforeEach(() => {
     mockTheme = 'retro95-light';
