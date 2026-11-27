@@ -286,6 +286,7 @@ const hu: typeof en = {
     statusLesson: 'Lecke →',
     topicRowLabel: (title: string, status: string) => `${title}, ${status}`,
     levelLine: (lvl: string, learned: number, total: number) => `${lvl} szint · ${learned} / ${total} alap téma megtanulva`,
+    endGain: (lvl: string, from: number, to: number) => `${lvl}: ${from}% → ${to}%`,
     levelDone: (lvl: string) => `${lvl} szint kész: minden alap téma megtanulva`,
     yourRounds: 'A köreid',
     barLabel: (pct: number) => `${pct}%`,

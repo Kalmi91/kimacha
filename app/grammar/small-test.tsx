@@ -10,10 +10,9 @@ import { useLearner } from '@/lib/learner';
 import { sourceFor } from '@/lib/languagePair';
 import { t } from '@/lib/i18n';
 import { useTheme } from '@/lib/ThemeContext';
-import { localDateString } from '@/lib/usageStats';
 import { syllabusForLevel, syllabusLevels, hasLesson } from '@/lib/grammar/syllabus';
-import { GRAMMAR_RANDOM_KEY, appendEvidence, evidenceFromRows, type TopicEvidence } from '@/lib/grammar/randomRound';
-import { questionsOf, type RoundData } from '@/lib/grammar/randomRoundView';
+import { GRAMMAR_RANDOM_KEY, evidenceFromRows, type TopicEvidence } from '@/lib/grammar/randomRound';
+import type { RoundData } from '@/lib/grammar/randomRoundView';
 import {
   MINI_CHECK_SIZE,
   LONG_TEST_SIZE,
@@ -36,6 +35,7 @@ import {
   roundRows,
   runSize,
   saveSmallState,
+  setStartPct,
   startDrill,
   startRound,
   topicWhy,
@@ -43,8 +43,10 @@ import {
   type SmallCur,
   type SmallState,
 } from '@/lib/grammar/smallTest';
+import { levelPercent, levelShownKey, parseShownPct, shownLabel, shownPctOf } from '@/lib/grammar/levelTest';
+import { loadResumeValue } from '@/lib/resumeStore';
 import { hasSmallTest, levelTestRoute } from '@/lib/grammar/levelTestRoute';
-import { smallTestView, type SmallView } from '@/lib/grammar/smallTestView';
+import { evidenceOf, smallTestView, type SmallView } from '@/lib/grammar/smallTestView';
 import { Card } from '@/components/grammar/Brutal';
 import { NewKindDrillItem } from '@/components/grammar/NewKinds';
 import ItemAnswer from '@/components/grammar/ItemAnswer';
@@ -81,21 +83,6 @@ const asLevel = (raw: unknown): Level => (['A1', 'A2', 'B1', 'B2', 'C1'] as Leve
 
 const STATUS_COLOR: Record<RowStatus, 'success' | 'warning' | 'danger'> = { learned: 'success', more: 'warning', lesson: 'danger' };
 
-// The one place a settled main question becomes the topic's evidence (Next and the load of a run left on a result card).
-function evidenceOf(d: RoundData, seed: number, v: SmallView, ev: Map<string, TopicEvidence>, cur: SmallCur, ok: boolean) {
-  if (cur.role === 'mini' || cur.role === 'drill') return null;
-  const found = v.find(cur.topic, cur.qid);
-  const kind = found?.q?.kind ?? found?.item?.kind;
-  if (!kind) return null;
-  const topicEvidence = appendEvidence(
-    ev.get(cur.topic),
-    { id: cur.qid, kind, ok, at: localDateString() },
-    undefined,
-    questionsOf(d, seed, cur.topic).map((x) => x.id),
-  );
-  return { topicEvidence, map: new Map(ev).set(cur.topic, topicEvidence) };
-}
-
 // the route keeps one screen when only `level` changes (the next-level button), so the level is the key: a new level rebuilds it
 export default function SmallTestScreen() {
   return <SmallTestLevel key={String(useLocalSearchParams<{ level?: string }>().level ?? '').toLowerCase()} />;
@@ -121,6 +108,8 @@ function SmallTestLevel() {
   const stRef = useRef<SmallState | null>(null);
   const viewRef = useRef<SmallView | null>(null);
   const evRef = useRef<Map<string, TopicEvidence>>(new Map());
+  // what the Grammar tab's level number is made of: the level test's stored standing and the evidence of the level's topics
+  const [standing, setStanding] = useState<{ shown: number | null; ev: Map<string, TopicEvidence> }>({ shown: null, ev: new Map() });
   const pairRef = useRef('');
   const levelRef = useRef<Level>(asLevel(params.level));
   const seedRef = useRef(0);
@@ -165,6 +154,7 @@ function SmallTestLevel() {
       const ev = evidenceFromRows(await db.getGameProgress(GRAMMAR_RANDOM_KEY));
       const pair = `${d.contentLang}→${d.learnedLang}`;
       let state = await loadSmallState(db, pair, lvl);
+      const savedShown = parseShownPct(await loadResumeValue(db, levelShownKey(pair, lvl)).catch(() => null));
       if (!alive) return;
       if (v.topics.every((tp) => v.pool(tp.id).length === 0)) {
         setEmpty(true);
@@ -188,6 +178,7 @@ function SmallTestLevel() {
       seedRef.current = seed;
       viewRef.current = v;
       evRef.current = evNow;
+      setStanding({ shown: savedShown, ev: evNow });
       stRef.current = state;
       tapGuardUntil.current = Date.now() + TAP_GUARD_MS;
       enqueue(async () => void (await saveSmallState(db, pair, lvl, state)));
@@ -274,7 +265,8 @@ function SmallTestLevel() {
     </View>
   );
   const prog = levelProgress(st, view.coreIds);
-  const levelPct = prog.total ? (prog.learned / prog.total) * 100 : 0;
+  // the Grammar tab's level number (LevelStanding.tsx, useLevelShown): the larger of the stored standing and levelPercent; labelled with shownLabel
+  const levelPct = shownPctOf(standing.shown, levelPercent(data.topics.map((tp) => tp.id), standing.ev));
   const progressPct = run.phase === 'drill' ? ((run.drill?.i ?? 0) / Math.max(1, run.drill?.list.length ?? 1)) * 100 : run.phase === 'end' || run.phase === 'intro' ? (run.phase === 'end' ? levelPct : 0) : (run.answers.length / size) * 100;
   const progress = (
     <ProgressBar
@@ -299,6 +291,7 @@ function SmallTestLevel() {
     const written = evidenceOf(data, seedRef.current, v, evRef.current, cur, ok);
     if (written) {
       evRef.current = written.map;
+      setStanding((p) => ({ ...p, ev: written.map }));
       enqueue(() => getDb().setGameProgress(GRAMMAR_RANDOM_KEY, cur.topic, 'evidence', written.topicEvidence));
     }
     if (!ok && !mistyped && cur.role !== 'mini' && cur.role !== 'drill') {
@@ -341,8 +334,8 @@ function SmallTestLevel() {
             ))}
           </Card>
           <Text style={[styles.note, { color: colors.textMuted }]}>{s.introNote}</Text>
-          <ExamButton testID="small-test-start" label={s.start} onPress={() => commit(beginRound(st, view.pool))} />
-          <ExamButton testID="small-test-start-long" label={s.startLong} onPress={() => commit(beginRound(st, view.pool, LONG_TEST_SIZE))} />
+          <ExamButton testID="small-test-start" label={s.start} onPress={() => commit(setStartPct(beginRound(st, view.pool), levelPct))} />
+          <ExamButton testID="small-test-start-long" label={s.startLong} onPress={() => commit(setStartPct(beginRound(st, view.pool, LONG_TEST_SIZE), levelPct))} />
         </ScrollView>
       </View>,
     );
@@ -456,6 +449,7 @@ function SmallTestLevel() {
               fillStyle={styles.fill}
               fillColor={colors.success}
             />
+            <Text testID="small-test-end-gain" style={[styles.line, { color: colors.text }]}>{s.endGain(level, shownLabel(run.startPct ?? levelPct), shownLabel(levelPct))}</Text>
             {isLevelDone(st, view.coreIds) ? <Text testID="small-test-end-level-done" style={[styles.line, { color: colors.success }]}>{s.levelDone(level)}</Text> : null}
           </Card>
           <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
@@ -536,6 +530,7 @@ function SmallTestLevel() {
         style={styles.flex}
         accessibilityLabel={run.phase === 'drill' ? headerText : s.progressLabel(run.answers.length + 1, size)}
       >
+        <Text testID="small-test-topic" style={[styles.questionTopic, { color: colors.text }]}>{titleOf(cur.topic)}</Text>
         <DockSlotProvider host={dock}>
           {found.q ? (
             <TestQuestionView
@@ -592,6 +587,7 @@ const styles = StyleSheet.create({
   misses: { fontSize: fontSize.md, fontWeight: fontWeight.bold, textAlign: 'center' },
   topicHead: { fontSize: fontSize.lg, fontWeight: fontWeight.bold, textAlign: 'center' },
   step: { fontSize: fontSize.md },
+  questionTopic: { fontSize: fontSize.lg, fontWeight: fontWeight.semibold, textAlign: 'center', marginTop: spacing.sm },
   chart: { flexDirection: 'row', alignItems: 'flex-end', gap: spacing.sm, minHeight: 90 },
   barCol: { alignItems: 'center', justifyContent: 'flex-end', gap: 2 },
   bar: { width: 22, borderRadius: radius.xs },
