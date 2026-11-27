@@ -258,7 +258,7 @@ describe('TypedSentenceCard (type-it)', () => {
     const bar = getByText('✓ Check');
     expect(bar).toBeTruthy();
     const docked = UNSAFE_getByProps({ bottom: 300 });
-    expect(docked.props.label).toBe('✓ Check');
+    expect(docked.props.label).toBeUndefined(); // the shared default label is drawn (asserted above)
     expect(docked.props.tone).toBe('check');
   });
 });
