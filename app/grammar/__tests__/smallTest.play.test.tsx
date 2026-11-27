@@ -522,6 +522,7 @@ describe.each(['brand', 'classic'] as const)('grammar small test (%s palette)', 
     // B2: the miss card is the shared answer box: danger dashed border, the wrong wording once, as the badge
     const missStyle = StyleSheet.flatten(screen.getByTestId('small-test-miss').props.style);
     expect(missStyle.borderStyle).toBe('dashed');
+    expect(missStyle.padding).toBeGreaterThan(0); // the content does not sit on the border
     expect(screen.getAllByText('Not quite')).toHaveLength(1);
     expect(missStyle.borderColor).toBe(wrongBorder);
     expect(wrongBorder).not.toBe(rightBorder);

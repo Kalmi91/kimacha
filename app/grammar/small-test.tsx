@@ -509,7 +509,7 @@ function SmallTestLevel() {
         {headerFor(part)}
         {progress}
         <ScrollView contentContainerStyle={styles.body}>
-          <AnswerFeedbackBox correct={false} badgeLabel={s.missTitle} testID="small-test-miss">
+          <AnswerFeedbackBox correct={false} badgeLabel={s.missTitle} testID="small-test-miss" style={styles.brutalCard}>
             <Text style={[styles.line, { color: colors.textMuted }]}>{titleOf(cur.topic)}</Text>
             {found.item ? <ItemAnswer item={found.item} contentLang={data.contentLang as never} given={result.given} /> : result.given ? (
               <Text testID="small-test-miss-given" style={[styles.line, { color: colors.danger }]}>{`${t().levelTest.youTyped}: ${result.given}`}</Text>
