@@ -241,12 +241,13 @@ export function MatchDrillItem({
 }
 
 // FB753: the example sentences of a form item, one per line, the `*starred*` part bold in the accent colour.
-function FormExamples({ examples, textColor, accent }: { examples: string[]; textColor: string; accent: string }) {
+// Without `accent` (the brutal skin, whose accents are fills, not text colours) the part is ink, heavier and underlined.
+function FormExamples({ examples, textColor, accent }: { examples: string[]; textColor: string; accent?: string }) {
   return (
     <View testID="form-examples">
       {examples.map((ex, i) => (
         <Text key={i} testID={`form-example-${i}`} style={[styles.example, { color: textColor }]}>
-          {starSegments(ex).map((seg, j) => (seg.bold ? <Text key={j} style={{ color: accent, fontWeight: '700' }}>{seg.text}</Text> : seg.text))}
+          {starSegments(ex).map((seg, j) => (seg.bold ? <Text key={j} style={accent ? { color: accent, fontWeight: '700' } : { color: textColor, fontWeight: '900', textDecorationLine: 'underline' }}>{seg.text}</Text> : seg.text))}
         </Text>
       ))}
     </View>
@@ -368,7 +369,7 @@ export function FormDrillItem({
           <>
             <AnswerFeedbackBox correct={correct} badgeLabel={correct ? s.games.correctFeedback : s.games.wrongFeedback} style={styles.brutalFeedback}>
               {!correct ? <AnswerCompare typed={value} correct={item.answer} g={g} /> : null}
-              {item.examples?.length ? <FormExamples examples={item.examples} textColor={g.ink} accent={g.a} /> : null}
+              {item.examples?.length ? <FormExamples examples={item.examples} textColor={g.ink} /> : null}
             </AnswerFeedbackBox>
             <SpeakButton testID="form-speak" onPress={() => speak(item.answer, speechLang(learnedLang))} brutalStyle={styles.formSpeakBrutal} />
             {!correct && !docked ? <MistypedButton onPress={() => onDone(true)} /> : null}
