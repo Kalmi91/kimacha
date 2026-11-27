@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useState } from 'react';
 import { getDb } from '@/lib/database';
 import { useLearner } from '@/lib/learner';
 import {
@@ -6,9 +6,7 @@ import {
   DEFAULT_WEEKLY_GOAL_MINUTES,
   localDateString,
   type UsageStats,
-  type UsageDayRow,
 } from '@/lib/usageStats';
-import { buildWeeklyTrend } from '@/lib/stats/weeklyTrend';
 import { buildSchedulePreview, type SchedulePreview } from '@/lib/schedulePreview';
 import { PCIC_VIEW_LEVELS, pcicItemsForLevel, type PcicLevel } from '@/data/pcic';
 import { cardsForLevel } from '@/lib/pcicLevels';
@@ -64,10 +62,6 @@ export function useStatsScreen() {
   // The daily bar is shown in hours above 60 minutes, and switches to minutes on tap.
   const [chartInMinutes, setChartInMinutes] = useState(false);
 
-  // Raw inputs of the weekly-trend card (lib/stats/weeklyTrend.ts): app-wide minutes, active pair's introduced_at dates.
-  const [usageRows, setUsageRows] = useState<UsageDayRow[]>([]);
-  const [introducedAt, setIntroducedAt] = useState<(string | null)[]>([]);
-
   const { refresh } = useLearner();
 
   // Refresh every time the tab gains focus so numbers stay current across app-wide activity.
@@ -75,7 +69,6 @@ export function useStatsScreen() {
     const db = getDb();
     return Promise.all([
       db.getUsageStats().then(setUsage),
-      db.getUsageRows().then(setUsageRows),
       db.getWeeklyGoalMinutes().then(setWeeklyGoal),
       refresh(['direction']).then(ob => {
         setTargetLang(ob.target);
@@ -95,7 +88,6 @@ export function useStatsScreen() {
         setPcicLevel(lvl);
         const cards = await db.getPcicCards();
         const today = localDateString();
-        setIntroducedAt(cards.map(c => c.introducedAt));
         setReviewsToday(countDoneToday(cards, today));
         setKnown(countKnown(cards));
         setGraduated(countGraduated(cards));
@@ -117,10 +109,8 @@ export function useStatsScreen() {
   const maxMinutes = Math.max(1, ...usage.last7Days.map(d => d.minutes));
   const hasChartData = usage.last7Days.some(d => d.minutes > 0);
   const goal = weeklyGoalProgress(usage.thisWeek, weeklyGoal);
-  const trend = useMemo(() => buildWeeklyTrend(usageRows, introducedAt), [usageRows, introducedAt]);
 
   return {
-    trend,
     usage,
     known,
     graduated,
