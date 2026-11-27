@@ -52,6 +52,7 @@ import TestQuestionView from '@/components/grammar/TestQuestionView';
 import XpChip from '@/components/XpChip';
 import { awardXpThen } from '@/lib/xpAward';
 import ResultBadge from '@/components/ResultBadge';
+import AnswerFeedbackBox from '@/components/grammar/AnswerFeedbackBox';
 import ExamButton from '@/components/exam/ExamButton';
 import { DockSlotProvider, useDockSlot } from '@/components/learn/DockSlot';
 import { FAB_CLEARANCE } from '@/components/learn/DockedAction';
@@ -322,8 +323,7 @@ export default function RandomRoundScreen() {
           <Text testID="random-practice-title" style={[styles.topicTitle, { color: colors.text }]}>
             {titleOf(topicId)}
           </Text>
-          <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
-            <ResultBadge testID="random-feedback-badge" correct={ok} label={ok ? s.correct : s.wrong} />
+          <AnswerFeedbackBox correct={ok} badgeLabel={ok ? s.correct : s.wrong} badgeTestID="random-feedback-badge" style={styles.brutalCard}>
             <Text testID="random-feedback-question" style={[styles.missedQuestion, { color: colors.text }]}>
               {q.review.question}
             </Text>
@@ -348,7 +348,7 @@ export default function RandomRoundScreen() {
                 {q.review.why}
               </Text>
             ) : null}
-          </Card>
+          </AnswerFeedbackBox>
           <ExamButton testID="random-next" label={s.next} onPress={() => setFeedback(null)} />
           <ExamButton testID="random-rule" secondary label={s.rule} onPress={() => router.push(`/grammar/${topicId}` as never)} />
         </ScrollView>

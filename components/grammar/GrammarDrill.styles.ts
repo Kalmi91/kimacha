@@ -84,7 +84,7 @@ export const styles = StyleSheet.create({
   choiceTrText: { flex: 1 },
   transformLabel: { fontSize: 14, fontWeight: '700' },
   transformInput: { borderWidth: 1.5, borderRadius: 12, paddingVertical: 12, paddingHorizontal: 14, fontSize: 17 },
-  transformResultBox: { borderRadius: 14, borderWidth: 1, padding: 16, gap: 8 },
+  transformResultBox: { padding: 16, gap: 8 },
   transformAnswer: { fontSize: 20, fontWeight: '700' },
   accentHint: { fontSize: 12, textAlign: 'center' },
 });

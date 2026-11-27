@@ -14,14 +14,14 @@ import { findWholeWord } from '@/lib/grammar/whyTarget';
 import { optionHint } from '@/lib/grammar/optionHints';
 import { hashString, shuffleOptions } from '@/lib/shuffle';
 import { useDockedAction } from '@/components/learn/DockSlot';
-import { BrutalBox, resultInk, softTitleStyle } from '@/components/grammar/Brutal';
+import { BrutalBox, softTitleStyle } from '@/components/grammar/Brutal';
 import AnswerCompare from '@/components/grammar/AnswerCompare';
 import { charDiff } from '@/lib/charDiff';
 import MistypedButton, { mistypedDock } from '@/components/grammar/MistypedButton';
-import ResultBadge from '@/components/ResultBadge';
+import AnswerFeedbackBox from '@/components/grammar/AnswerFeedbackBox';
 import SpeakButton from '@/components/SpeakButton';
 import { useGrammarColors } from '@/lib/grammarColors';
-import { BrutalFeedback, BrutalInkButton, TenseBadge } from '@/components/grammar/drill/shared';
+import { BrutalInkButton, TenseBadge } from '@/components/grammar/drill/shared';
 import { styles } from '@/components/grammar/GrammarDrill.styles';
 
 // "Why this sentence?": the learner does not choose the missing word
@@ -129,13 +129,13 @@ export function WhyDrillItem({
 
         {answered ? (
           <>
-            <BrutalFeedback correct={isCorrect} title={isCorrect ? s.games.correctFeedback : s.games.wrongFeedback}>
+            <AnswerFeedbackBox correct={isCorrect} badgeLabel={isCorrect ? s.games.correctFeedback : s.games.wrongFeedback} style={styles.brutalFeedback}>
               {!isCorrect ? (
-                <Text style={[styles.explainText, { color: g.onB }]}>
+                <Text style={[styles.explainText, { color: g.ink }]}>
                   {shown.options[selected].wrong?.[contentLang] ?? shown.options[selected].wrong?.en ?? ''}
                 </Text>
               ) : null}
-            </BrutalFeedback>
+            </AnswerFeedbackBox>
             <BrutalInkButton g={g} testID="grammar-next" label={s.grammar.nextArrow} onPress={() => onDone(isCorrect, pickedText)} />
           </>
         ) : null}
@@ -212,8 +212,7 @@ export function WhyDrillItem({
       </View>
 
       {answered ? (
-        <View style={[styles.explainCard, { backgroundColor: colors.card }]}>
-          <ResultBadge correct={isCorrect} label={isCorrect ? s.games.correctFeedback : s.games.wrongFeedback} />
+        <AnswerFeedbackBox correct={isCorrect} badgeLabel={isCorrect ? s.games.correctFeedback : s.games.wrongFeedback} style={styles.explainCard}>
           {!isCorrect ? (
             <Text style={[styles.explainText, { color: colors.text }]}>
               {shown.options[selected].wrong?.[contentLang] ?? shown.options[selected].wrong?.en ?? ''}
@@ -222,7 +221,7 @@ export function WhyDrillItem({
           <Pressable testID="grammar-next" style={[styles.btn, { backgroundColor: colors.tint, marginTop: 12 }]} onPress={() => onDone(isCorrect, pickedText)}>
             <Text style={[styles.btnText, { color: colors.onTint }]}>{s.games.understood}</Text>
           </Pressable>
-        </View>
+        </AnswerFeedbackBox>
       ) : null}
     </View>
   );
@@ -338,12 +337,12 @@ export function TransformDrillItem({
           docked ? null : <BrutalInkButton g={g} testID="transform-check" label={s.grammar.check} onPress={check} />
         ) : (
           <>
-            <BrutalFeedback correct={result === 'ok'} title={result === 'ok' ? s.grammar.correct : s.games.wrongFeedback}>
+            <AnswerFeedbackBox correct={result === 'ok'} badgeLabel={result === 'ok' ? s.grammar.correct : s.games.wrongFeedback} style={styles.brutalFeedback}>
               {result === 'bad' ? (
-                <AnswerCompare typed={input} correct={closest} g={g} onFill />
+                <AnswerCompare typed={input} correct={closest} g={g} />
               ) : null}
-              <Text style={[styles.explainText, { color: resultInk(g, result === 'ok') }]}>{item.why[contentLang] ?? item.why.en}</Text>
-            </BrutalFeedback>
+              <Text style={[styles.explainText, { color: g.ink }]}>{item.why[contentLang] ?? item.why.en}</Text>
+            </AnswerFeedbackBox>
             {result === 'bad' && !docked ? <MistypedButton onPress={() => onDone(true)} /> : null}
             {docked ? null : <BrutalInkButton g={g} testID="transform-next" label={s.grammar.next} onPress={() => onDone(result === 'ok', input)} />}
           </>
@@ -396,27 +395,10 @@ export function TransformDrillItem({
           </Pressable>
         )
       ) : (
-        <View
-          style={[
-            styles.transformResultBox,
-            result === 'ok'
-              ? { backgroundColor: colors.successFill + '22', borderColor: colors.successFill }
-              : { backgroundColor: '#EF444422', borderColor: '#EF4444' },
-          ]}
-        >
-          {result === 'ok' ? (
-            <>
-              <ResultBadge correct label={s.grammar.correct} />
-              <Text style={[styles.explainText, { color: colors.text }]}>{item.why[contentLang] ?? item.why.en}</Text>
-            </>
-          ) : (
-            <>
-              <ResultBadge correct={false} label={s.games.wrongFeedback} />
-              <AnswerCompare typed={input} correct={closest} g={g} />
-              <Text style={[styles.explainText, { color: colors.text }]}>{item.why[contentLang] ?? item.why.en}</Text>
-            </>
-          )}
-        </View>
+        <AnswerFeedbackBox correct={result === 'ok'} badgeLabel={result === 'ok' ? s.grammar.correct : s.games.wrongFeedback} style={styles.transformResultBox}>
+          {result === 'ok' ? null : <AnswerCompare typed={input} correct={closest} g={g} />}
+          <Text style={[styles.explainText, { color: colors.text }]}>{item.why[contentLang] ?? item.why.en}</Text>
+        </AnswerFeedbackBox>
       )}
 
       {result === 'bad' && !docked ? <MistypedButton onPress={() => onDone(true)} /> : null}

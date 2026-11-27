@@ -8,9 +8,8 @@ import { useTheme } from '@/lib/ThemeContext';
 import type { LessonTestQuestion } from '@/lib/grammar/lessonTest';
 import { diffWords, type ResultTable } from '@/lib/grammar/resultDetail';
 import AnswerCompare from '@/components/grammar/AnswerCompare';
-import { Card } from '@/components/grammar/Brutal';
+import AnswerFeedbackBox from '@/components/grammar/AnswerFeedbackBox';
 import { useGrammarColors } from '@/lib/grammarColors';
-import ResultBadge from '@/components/ResultBadge';
 import ExamButton from '@/components/exam/ExamButton';
 import { FAB_CLEARANCE } from '@/components/learn/DockedAction';
 
@@ -99,8 +98,7 @@ export default function LevelTestFeedback({
         <Text testID="level-test-topic" style={[styles.topicTitle, { color: colors.text }]}>
           {topicTitle}
         </Text>
-        <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
-          <ResultBadge testID="level-test-feedback-badge" correct={ok} label={ok ? s.correct : s.wrong} />
+        <AnswerFeedbackBox correct={ok} badgeLabel={ok ? s.correct : s.wrong} badgeTestID="level-test-feedback-badge" style={styles.brutalCard}>
           {ok && d?.filled ? (
             <Text testID="level-test-feedback-sentence" style={[styles.question, { color: colors.text }]}>
               {d.filled.before}
@@ -155,7 +153,7 @@ export default function LevelTestFeedback({
             )
           ) : null}
           {!ok && d?.table ? <TableView table={d.table} /> : null}
-        </Card>
+        </AnswerFeedbackBox>
       </ScrollView>
       <View style={styles.buttons}>
         {!ok && onAccept ? <ExamButton testID={acceptTestID} secondary label={t().smallTest.acceptRight} onPress={onAccept} /> : null}
@@ -217,7 +215,6 @@ export function TableView({
 const styles = StyleSheet.create({
   flex: { flex: 1 },
   body: { padding: spacing.lg, gap: spacing.md },
-  card: { borderRadius: radius.lg, padding: spacing.lg, gap: spacing.md },
   brutalCard: { padding: spacing.lg, gap: spacing.md },
   topicTitle: { fontSize: fontSize.lg, fontWeight: fontWeight.semibold, textAlign: 'center', marginTop: spacing.sm },
   question: { fontSize: fontSize.md, fontWeight: fontWeight.semibold },

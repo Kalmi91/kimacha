@@ -3,10 +3,10 @@ import { Keyboard, StyleSheet, TextInput, View } from 'react-native';
 import { Text } from '@/components/KText';
 
 import EasySentenceCard from '@/components/EasySentenceCard';
-import ResultBadge from '@/components/ResultBadge';
+import AnswerFeedbackBox from '@/components/grammar/AnswerFeedbackBox';
 import AnswerCompare from '@/components/grammar/AnswerCompare';
 import SpeakButton from '@/components/SpeakButton';
-import { BrutalBox, inkButtonText, resultFill, resultInk, softCaseStyle } from '@/components/grammar/Brutal';
+import { BrutalBox, inkButtonText, softCaseStyle } from '@/components/grammar/Brutal';
 import MistypedButton, { mistypedDock } from '@/components/grammar/MistypedButton';
 import { useDockedAction } from '@/components/learn/DockSlot';
 import { useGrammarColors } from '@/lib/grammarColors';
@@ -126,12 +126,11 @@ export function SpotDrillItem({
 
       {phase === 'done' ? (
         <>
-          <ResultBadge correct={correct} testID="spot-result" />
-          <BrutalBox fill={resultFill(correct)} boxStyle={styles.feedback}>
-            <Text style={[styles.fixedLine, { color: resultInk(g, correct) }]}>{fixed}</Text>
-            <Text style={[styles.explain, { color: resultInk(g, correct) }]}>{item.explain[contentLang] ?? item.explain.en}</Text>
-            <Text style={[styles.translation, { color: resultInk(g, correct) }]}>{item.tr[contentLang] ?? item.tr.en}</Text>
-          </BrutalBox>
+          <AnswerFeedbackBox correct={correct} badgeTestID="spot-result" style={styles.feedback}>
+            <Text style={[styles.fixedLine, { color: g.ink }]}>{fixed}</Text>
+            <Text style={[styles.explain, { color: g.ink }]}>{item.explain[contentLang] ?? item.explain.en}</Text>
+            <Text style={[styles.translation, { color: g.ink }]}>{item.tr[contentLang] ?? item.tr.en}</Text>
+          </AnswerFeedbackBox>
           <BrutalBox testID="grammar-next" fill="ink" boxStyle={styles.next} onPress={() => onDone(correct, undefined, picked !== null ? shuffled.options[picked] : undefined)}>
             <Text style={[styles.nextText, { color: inkButtonText(g) }, softCaseStyle(g)]}>{s.grammar.nextArrow}</Text>
           </BrutalBox>
@@ -263,11 +262,10 @@ export function DictationDrillItem({
       </BrutalBox>
       {result ? (
         <>
-          <ResultBadge correct={result.correct} testID="dictation-result" />
-          <BrutalBox fill={resultFill(result.correct)} boxStyle={styles.feedback}>
-            {!result.correct ? <AnswerCompare typed={typed} correct={item.es} g={g} onFill /> : <Text style={[styles.fixedLine, { color: resultInk(g, true) }]}>{item.es}</Text>}
-            <Text style={[styles.translation, { color: resultInk(g, result.correct) }]}>{item.tr[contentLang] ?? item.tr.en}</Text>
-          </BrutalBox>
+          <AnswerFeedbackBox correct={result.correct} badgeTestID="dictation-result" style={styles.feedback}>
+            {!result.correct ? <AnswerCompare typed={typed} correct={item.es} g={g} /> : <Text style={[styles.fixedLine, { color: g.ink }]}>{item.es}</Text>}
+            <Text style={[styles.translation, { color: g.ink }]}>{item.tr[contentLang] ?? item.tr.en}</Text>
+          </AnswerFeedbackBox>
           {!result.correct && !docked ? <MistypedButton onPress={() => onDone(true, true)} /> : null}
           {docked ? null : (
             <BrutalBox testID="grammar-next" fill="ink" boxStyle={styles.next} onPress={() => onDone(result.correct, undefined, typed)}>
@@ -352,22 +350,21 @@ export function WriteDrillItem({
       </BrutalBox>
       {result ? (
         <>
-          <ResultBadge correct={result.correct} label={result.correct ? s.grammar.correct : s.games.wrongFeedback} />
-          <BrutalBox testID={result.correct ? 'write-correct' : 'write-wrong'} fill={resultFill(result.correct)} boxStyle={styles.feedback}>
+          <AnswerFeedbackBox correct={result.correct} badgeLabel={result.correct ? s.grammar.correct : s.games.wrongFeedback} testID={result.correct ? 'write-correct' : 'write-wrong'} style={styles.feedback}>
             {result.correct ? (
               <>
                 {/* the lesson's own form, with its accents: the learner may have typed another accepted one */}
-                <Text testID="write-sentence" style={[styles.writeSentence, { color: resultInk(g, true) }]}>
+                <Text testID="write-sentence" style={[styles.writeSentence, { color: g.ink }]}>
                   {item.es}
                 </Text>
               </>
             ) : (
-              <AnswerCompare typed={typed} correct={item.es} g={g} onFill />
+              <AnswerCompare typed={typed} correct={item.es} g={g} />
             )}
-            <Text testID="write-why" style={[styles.explain, { color: resultInk(g, result.correct) }]}>
+            <Text testID="write-why" style={[styles.explain, { color: g.ink }]}>
               {why}
             </Text>
-          </BrutalBox>
+          </AnswerFeedbackBox>
           {!result.correct && !docked ? <MistypedButton onPress={() => onDone(true, true)} /> : null}
           {docked ? null : (
             <BrutalBox testID="grammar-next" fill="ink" boxStyle={styles.next} onPress={() => onDone(result.correct, undefined, typed)}>

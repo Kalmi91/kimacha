@@ -135,8 +135,8 @@ describe('GrammarDrill, neo-brutalist', () => {
     expect(dashedCount()).toBe(0);
     fireEvent.press(screen.getByTestId('formCheck'));
     expect(screen.queryByText('Not quite!')).toBeTruthy();
-    // the input box + the ✗ badge with a dashed border (the wrong answer differs in shape too)
-    expect(dashedCount()).toBe(2);
+    // the input box + the feedback box + the ✗ badge with a dashed border (the wrong answer differs in shape too)
+    expect(dashedCount()).toBe(3);
     fireEvent.press(screen.getByTestId('grammar-next'));
     expect(onFinish).not.toHaveBeenCalled();
     expect(screen.queryByTestId('formCheck')).toBeTruthy();
@@ -181,8 +181,8 @@ describe('GrammarDrill, neo-brutalist', () => {
     fireEvent.changeText(screen.getByTestId('transform-input'), 'nope');
     expect(dashedCount()).toBe(0);
     fireEvent.press(screen.getByTestId('transform-check'));
-    // the input box + the ✗ badge with a dashed border
-    expect(dashedCount()).toBe(2);
+    // the input box + the feedback box + the ✗ badge with a dashed border
+    expect(dashedCount()).toBe(3);
     expect(screen.queryByText('Correct answer')).toBeTruthy();
     expect(StyleSheet.flatten(screen.getByTestId('transform-next').props.style).backgroundColor).toBe('#111111');
     fireEvent.press(screen.getByTestId('transform-next'));

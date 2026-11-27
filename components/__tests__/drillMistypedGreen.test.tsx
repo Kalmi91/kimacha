@@ -95,11 +95,12 @@ describe.each([
     expect(screen.queryByTestId('grammar-mistyped')).toBeNull();
   });
 
-  it('a right typed answer: the feedback box is the success green, a wrong one is not', () => {
+  it('a right typed answer: the feedback box has a success green border on the neutral surface (not a green fill)', () => {
     const green = Colors[theme as 'light'].successFill;
     render(<WriteDrillItem item={WRITE} learnedLang="es" contentLang="en" strictAccents onDone={onDone} />);
     fireEvent.changeText(screen.getByTestId('write-input'), 'Estoy cansado.');
     fireEvent.press(screen.getByTestId('write-check'));
-    expect(bg('write-correct')).toBe(green);
+    expect(bg('write-correct')).not.toBe(green);
+    expect(StyleSheet.flatten(screen.getByTestId('write-correct').props.style).borderColor).toBe(Colors[theme as 'light'].success);
   });
 });

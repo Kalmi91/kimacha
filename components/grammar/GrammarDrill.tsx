@@ -32,8 +32,8 @@ import { useGrammarRoundProgress } from '@/lib/grammar/useGrammarRoundProgress';
 import { buildGlossMap } from '@/lib/games/gloss';
 import { hashString } from '@/lib/shuffle';
 import GlossText from '@/components/games/GlossText';
-import { BrutalBox, SegmentBar, Sticker, inkButtonText, resultFill, resultInk, segmentsFilled, textOnFill, mutedColor, themedDockPad, softTitleStyle, softCaseStyle } from '@/components/grammar/Brutal';
-import ResultBadge from '@/components/ResultBadge';
+import { BrutalBox, SegmentBar, Sticker, inkButtonText, segmentsFilled, textOnFill, mutedColor, themedDockPad, softTitleStyle, softCaseStyle } from '@/components/grammar/Brutal';
+import AnswerFeedbackBox from '@/components/grammar/AnswerFeedbackBox';
 import { NewKindDrillItem } from '@/components/grammar/NewKinds';
 import { useGrammarColors, type GrammarColors } from '@/lib/grammarColors';
 import { MatchDrillItem, FormDrillItem } from '@/components/grammar/drill/MatchFormItems';
@@ -461,11 +461,10 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
 
         {answered ? (
           <>
-          <ResultBadge correct={isCorrect} label={isCorrect ? s.grammar.perfect : s.games.wrongFeedback} />
-          <BrutalBox fill={resultFill(isCorrect)} boxStyle={styles.brutalFeedback}>
-            <Text style={[styles.explainText, { color: resultInk(g, isCorrect) }]}>{current.item.why[contentLang] ?? current.item.why.en}</Text>
+          <AnswerFeedbackBox correct={isCorrect} badgeLabel={isCorrect ? s.grammar.perfect : s.games.wrongFeedback} style={styles.brutalFeedback}>
+            <Text style={[styles.explainText, { color: g.ink }]}>{current.item.why[contentLang] ?? current.item.why.en}</Text>
             {!isCorrect && pickedText !== undefined ? (
-              <Text style={[styles.explainText, { color: g.onB }]}>
+              <Text style={[styles.explainText, { color: g.ink }]}>
                 {wrongExplanation(current.item, pickedText, contentLang) ??
                   (marking ? s.games.grammarChoice.markWrong : '')}
               </Text>
@@ -476,10 +475,10 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
                 text={ex}
                 glosses={buildGlossMap(ex, { learnedLang, nativeLang: contentLang, knownWordIds: knownIds, overrides })}
                 learnedLang={learnedLang}
-                style={[styles.example, { color: resultInk(g, isCorrect) }]}
+                style={[styles.example, { color: g.ink }]}
               />
             ))}
-          </BrutalBox>
+          </AnswerFeedbackBox>
           </>
         ) : null}
         {answered ? (
@@ -572,8 +571,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
       </View>
 
       {answered ? (
-        <View style={[styles.explainCard, { backgroundColor: colors.card }]}>
-          <ResultBadge correct={isCorrect} label={isCorrect ? s.games.correctFeedback : s.games.wrongFeedback} />
+        <AnswerFeedbackBox correct={isCorrect} badgeLabel={isCorrect ? s.games.correctFeedback : s.games.wrongFeedback} style={styles.explainCard}>
           <Text style={[styles.explainText, { color: colors.text }]}>{current.item.why[contentLang] ?? current.item.why.en}</Text>
           {!isCorrect && pickedText !== undefined ? (
             <Text style={[styles.explainText, { color: colors.tabIconDefault }]}>
@@ -596,7 +594,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
             <Text style={[styles.btnText, { color: colors.onTint }]}>{s.games.understood}</Text>
           </Pressable>
           {footer}
-        </View>
+        </AnswerFeedbackBox>
       ) : null}
     </ScrollView>
   );

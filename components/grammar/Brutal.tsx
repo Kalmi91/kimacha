@@ -42,15 +42,6 @@ export function textOnFill(g: GrammarColors, fill: BrutalFill): string {
   return g.ink;
 }
 
-// A feedback box is green after a right answer (fill 'ok'), the b accent after a wrong one / for plain explanations.
-export function resultFill(correct: boolean): BrutalFill {
-  return correct ? 'ok' : 'b';
-}
-
-export function resultInk(g: GrammarColors, correct: boolean): string {
-  return correct ? ON_FILL : g.onB;
-}
-
 // The text of the main button (ink fill): in Neo-brutal light mode the b colour, in dark mode (where
 // the ink is light) the dark base so that it stays readable (grammarColorsFor onInk); on the other themes the bg.
 export function inkButtonText(g: GrammarColors): string {
