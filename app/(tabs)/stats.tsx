@@ -25,7 +25,7 @@ export default function StatsScreen() {
   const {
     usage, known, graduated, reviewsToday, weeklyGoal, schedule, pcicLevel, levelKnown, levelTotal,
     otherLevels, targetLang, sourceLang, mockLevels, mockOverview, mockOfficial, progressLevel,
-    chartInMinutes, setChartInMinutes, maxMinutes, hasChartData, goal, trend,
+    chartInMinutes, setChartInMinutes, maxMinutes, hasChartData, goal,
   } = useStatsScreen();
 
   const targetLangInfo = languages.find(l => l.code === targetLang);
@@ -40,8 +40,6 @@ export default function StatsScreen() {
     const value = Math.round((minutes / 60) * 10) / 10;
     return Number.isInteger(value) ? String(value) : value.toFixed(1);
   };
-
-  const signed = (n: number) => (n > 0 ? `+${n}` : String(n));
 
   // dateStr is local YYYY-MM-DD (see lib/usageStats.ts); a short weekday
   // label for the bar chart, built from Date's own locale formatting so we
@@ -172,40 +170,6 @@ export default function StatsScreen() {
             <Text variant="title" style={[styles.goalDoneTitle, { color: colors.success }]}>{s.stats.goalReached}</Text>
           </>
         )}
-      </Card>
-
-      {/* weekly trend: last 6 rolling 7-day windows (same week as above), oldest left, current right. */}
-      <Text style={[styles.sectionLabel, { color: colors.tabIconDefault }, softCaseStyle(g)]}>{s.stats.weeklyTrend}</Text>
-      <Card classicStyle={styles.goalCard} boxStyle={styles.goalBox} style={styles.goalOuter}>
-        {([['words', s.stats.trendWords], ['minutes', s.stats.trendMinutes]] as const).map(([key, label]) => {
-          const max = Math.max(1, ...trend.weeks.map(w => w[key]));
-          return (
-            <View key={key} testID={`stats-trend-${key}`}>
-              <Text style={[styles.tileLabel, { color: colors.tabIconDefault }]}>{label}</Text>
-              <View style={styles.trendRow}>
-                {trend.weeks.map((w, i) => {
-                  const current = i === trend.weeks.length - 1;
-                  return (
-                    <View key={w.start} style={styles.barColumn}>
-                      <Text style={[styles.barValue, { color: current ? colors.tint : colors.text }, current && styles.trendCurrent]}>{w[key]}</Text>
-                      <View style={styles.trendTrack}>
-                        <View
-                          style={[
-                            styles.bar,
-                            { backgroundColor: current ? colors.tint : colors.tabIconDefault, height: `${Math.max(4, Math.round((w[key] / max) * 100))}%` },
-                          ]}
-                        />
-                      </View>
-                    </View>
-                  );
-                })}
-              </View>
-            </View>
-          );
-        })}
-        <Text testID="stats-trend-delta" style={[styles.goalStatus, { color: colors.text }]}>
-          {s.stats.trendDelta(signed(trend.deltaWords), signed(trend.deltaMinutes))}
-        </Text>
       </Card>
 
       <Text style={[styles.sectionLabel, { color: colors.tabIconDefault }, softCaseStyle(g)]}>{s.stats.last7Days}</Text>
@@ -421,9 +385,6 @@ const styles = StyleSheet.create({
     fontSize: 13,
     fontWeight: '600',
   },
-  trendRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-end', marginTop: 6 },
-  trendTrack: { width: 18, height: 40, justifyContent: 'flex-end' },
-  trendCurrent: { fontWeight: '800' },
   noData: {
     fontSize: 14,
     marginBottom: 20,

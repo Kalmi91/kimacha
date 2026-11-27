@@ -72,7 +72,7 @@ export interface DB {
   setPcicNewBonus(bonus: number, today: string): Promise<void>;
   addUsageMinute(): Promise<number>;
   getUsageStats(): Promise<UsageStats>;
-  // raw app-wide { date, minutes } rows, for the Stats tab's weekly trend (lib/stats/weeklyTrend.ts).
+  // raw app-wide { date, minutes } rows.
   getUsageRows(): Promise<{ date: string; minutes: number }[]>;
   getDayStats(date: string): Promise<{ minutes: number; words: number }>;
   // XP earned on one local calendar day (card grades, lib/dailyXp.ts), app-wide.

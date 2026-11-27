@@ -1,4 +1,4 @@
-// Stats: the weekly-trend card shows 6 weeks of new words and minutes, and still shows zeros with no data.
+// Stats: the weekly-trend card is gone (FB758); the goal card stays.
 
 jest.mock('expo-router', () => ({
   useRouter: () => ({ push: jest.fn(), navigate: jest.fn(), back: jest.fn() }),
@@ -19,8 +19,8 @@ jest.setTimeout(30000);
 
 const flush = makeFlush(8);
 
-describe('Stats tab: weekly trend card', () => {
-  it('renders 6 weeks per row with zeros when there is no data, and a delta line', async () => {
+describe('Stats tab: no weekly trend card', () => {
+  it('renders without the trend delta and keeps the goal bar', async () => {
     await getDb().setOnboarding('en', 'es');
     const view = render(
       <ThemeProvider>
@@ -28,11 +28,9 @@ describe('Stats tab: weekly trend card', () => {
       </ThemeProvider>,
     );
     await flush();
-    expect(view.getByText('Weekly trend')).toBeTruthy();
-    expect(view.getByText('New words')).toBeTruthy();
-    expect(view.getByTestId('stats-trend-words')).toBeTruthy();
-    expect(view.getByTestId('stats-trend-minutes')).toBeTruthy();
-    expect(view.getByTestId('stats-trend-delta').props.children).toBe('vs previous week: 0 words, 0 min');
+    expect(view.queryByTestId('stats-trend-delta')).toBeNull();
+    expect(view.queryByText('Weekly trend')).toBeNull();
+    expect(view.getByTestId('stats-goal-bar')).toBeTruthy();
     view.unmount();
   });
 });
