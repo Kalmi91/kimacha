@@ -1,0 +1,398 @@
+{
+  "answer-input": {
+    "app/grammar/deck/[topic].tsx": {
+      "count": 1,
+      "reason": "decision pending: one answer input"
+    },
+    "app/grammar/form-check/[topic].tsx": {
+      "count": 1,
+      "reason": "decision pending: one answer input"
+    },
+    "app/grammar/tense-drill.tsx": {
+      "count": 1,
+      "reason": "decision pending: one answer input"
+    },
+    "app/mistakes/deck.tsx": {
+      "count": 1,
+      "reason": "decision pending: one answer input"
+    },
+    "components/FeedbackModal.tsx": {
+      "count": 1,
+      "reason": "feedback text box, not an answer input"
+    },
+    "components/TypedSentenceCard.tsx": {
+      "count": 1,
+      "reason": "decision pending: one answer input"
+    },
+    "components/board/BoardScreen.tsx": {
+      "count": 1,
+      "reason": "decision pending: one answer input"
+    },
+    "components/cloud/CloudLogin.tsx": {
+      "count": 2,
+      "reason": "login field, not an answer input"
+    },
+    "components/exam/ExamSpeakCard.tsx": {
+      "count": 1,
+      "reason": "decision pending: one answer input"
+    },
+    "components/exam/ExamTypeCard.tsx": {
+      "count": 1,
+      "reason": "decision pending: one answer input"
+    },
+    "components/exam/MockTaskCard.tsx": {
+      "count": 4,
+      "reason": "decision pending: one answer input"
+    },
+    "components/exam/mock/ClozeTask.tsx": {
+      "count": 1,
+      "reason": "decision pending: one answer input"
+    },
+    "components/exam/mock/EssayTask.tsx": {
+      "count": 1,
+      "reason": "decision pending: one answer input"
+    },
+    "components/exam/mock/SpeakingTask.tsx": {
+      "count": 2,
+      "reason": "decision pending: one answer input"
+    },
+    "components/exam/mock/TransformTask.tsx": {
+      "count": 1,
+      "reason": "decision pending: one answer input"
+    },
+    "components/grammar/LessonSearch.tsx": {
+      "count": 1,
+      "reason": "search field, not an answer input"
+    },
+    "components/grammar/NewKinds.tsx": {
+      "count": 2,
+      "reason": "decision pending: one answer input"
+    },
+    "components/grammar/TypedKinds.tsx": {
+      "count": 2,
+      "reason": "decision pending: one answer input"
+    },
+    "components/grammar/drill/MatchFormItems.tsx": {
+      "count": 2,
+      "reason": "decision pending: one answer input"
+    },
+    "components/grammar/drill/WhyTransformItems.tsx": {
+      "count": 2,
+      "reason": "decision pending: one answer input"
+    },
+    "components/learn/PcicCardView.tsx": {
+      "count": 1,
+      "reason": "decision pending: one answer input"
+    },
+    "components/learn/RetypePractice.tsx": {
+      "count": 1,
+      "reason": "decision pending: one answer input"
+    },
+    "components/practice/DictationGame.tsx": {
+      "count": 1,
+      "reason": "decision pending: one answer input"
+    },
+    "components/practice/SituationGame.tsx": {
+      "count": 1,
+      "reason": "decision pending: one answer input"
+    },
+    "components/practice/SmallTalkGame.tsx": {
+      "count": 1,
+      "reason": "decision pending: one answer input"
+    },
+    "components/speech/SpeechPlay.tsx": {
+      "count": 1,
+      "reason": "decision pending: one answer input"
+    }
+  },
+  "check-label": {
+    "app/grammar/deck/[topic].tsx": {
+      "count": 1,
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
+    },
+    "app/grammar/exam-round.tsx": {
+      "count": 1,
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
+    },
+    "app/grammar/form-check/[topic].tsx": {
+      "count": 1,
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
+    },
+    "app/grammar/tense-drill.tsx": {
+      "count": 1,
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
+    },
+    "app/mistakes/deck.tsx": {
+      "count": 1,
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
+    },
+    "components/EasySentenceCard.tsx": {
+      "count": 1,
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
+    },
+    "components/TypedSentenceCard.tsx": {
+      "count": 1,
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
+    },
+    "components/exam/ExamMatchCard.tsx": {
+      "count": 1,
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
+    },
+    "components/exam/ExamSpeakCard.tsx": {
+      "count": 2,
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
+    },
+    "components/exam/ExamTilesCard.tsx": {
+      "count": 1,
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
+    },
+    "components/exam/ExamTypeCard.tsx": {
+      "count": 2,
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
+    },
+    "components/grammar/NewKinds.tsx": {
+      "count": 4,
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
+    },
+    "components/grammar/TypedKinds.tsx": {
+      "count": 4,
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
+    },
+    "components/grammar/drill/MatchFormItems.tsx": {
+      "count": 3,
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
+    },
+    "components/grammar/drill/WhyTransformItems.tsx": {
+      "count": 3,
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
+    },
+    "components/learn/PcicCardView.tsx": {
+      "count": 1,
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
+    },
+    "components/practice/DictationGame.tsx": {
+      "count": 1,
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
+    },
+    "components/practice/SituationGame.tsx": {
+      "count": 1,
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
+    },
+    "components/practice/SmallTalkGame.tsx": {
+      "count": 1,
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
+    },
+    "components/speech/SpeechListen.tsx": {
+      "count": 1,
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
+    },
+    "components/speech/SpeechPlay.tsx": {
+      "count": 1,
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
+    }
+  },
+  "exit-glyph": {
+    "app/exam.tsx": {
+      "count": 1,
+      "reason": "decision pending: one exit button"
+    },
+    "app/grammar/big-test.tsx": {
+      "count": 1,
+      "reason": "decision pending: one exit button"
+    },
+    "app/grammar/exam-round.tsx": {
+      "count": 2,
+      "reason": "decision pending: one exit button"
+    },
+    "app/grammar/level-test.tsx": {
+      "count": 1,
+      "reason": "decision pending: one exit button"
+    },
+    "app/grammar/random.tsx": {
+      "count": 1,
+      "reason": "decision pending: one exit button"
+    },
+    "app/grammar/small-test.tsx": {
+      "count": 3,
+      "reason": "decision pending: one exit button"
+    },
+    "app/mock-exam.tsx": {
+      "count": 1,
+      "reason": "decision pending: one exit button"
+    },
+    "app/placement.tsx": {
+      "count": 1,
+      "reason": "decision pending: one exit button"
+    },
+    "components/grammar/GrammarDrill.tsx": {
+      "count": 1,
+      "reason": "decision pending: one exit button"
+    },
+    "components/grammar/LessonSearch.tsx": {
+      "count": 1,
+      "reason": "the ✕ clears the search, it is not an exit"
+    },
+    "components/grammar/LessonTest.tsx": {
+      "count": 1,
+      "reason": "decision pending: one exit button"
+    },
+    "components/grammar/LevelPractice.tsx": {
+      "count": 1,
+      "reason": "decision pending: one exit button"
+    }
+  },
+  "next-label": {
+    "app/(tabs)/practice.tsx": {
+      "count": 2,
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
+    },
+    "app/grammar/big-test.tsx": {
+      "count": 1,
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
+    },
+    "app/grammar/deck/[topic].tsx": {
+      "count": 1,
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
+    },
+    "app/grammar/form-check/[topic].tsx": {
+      "count": 1,
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
+    },
+    "app/grammar/random.tsx": {
+      "count": 1,
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
+    },
+    "app/grammar/small-test.tsx": {
+      "count": 1,
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
+    },
+    "app/grammar/tense-drill.tsx": {
+      "count": 1,
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
+    },
+    "app/mock-exam.tsx": {
+      "count": 1,
+      "reason": "own Next task button (ExamButton with s.nextTask); convert to the shared action button (DockedAction / InlineAction)"
+    },
+    "components/EasySentenceCard.tsx": {
+      "count": 1,
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
+    },
+    "components/NewWordCard.tsx": {
+      "count": 1,
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
+    },
+    "components/TypedSentenceCard.tsx": {
+      "count": 1,
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
+    },
+    "components/exam/ExamChoiceCard.tsx": {
+      "count": 1,
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
+    },
+    "components/exam/ExamMatchCard.tsx": {
+      "count": 1,
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
+    },
+    "components/exam/ExamSpeakCard.tsx": {
+      "count": 2,
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
+    },
+    "components/exam/ExamTilesCard.tsx": {
+      "count": 1,
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
+    },
+    "components/exam/ExamTypeCard.tsx": {
+      "count": 2,
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
+    },
+    "components/exam/mock/SpeakingTask.tsx": {
+      "count": 1,
+      "reason": "own Next task label passed to the speaking task button; convert to the shared action button (DockedAction / InlineAction)"
+    },
+    "components/grammar/GrammarDrill.tsx": {
+      "count": 1,
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
+    },
+    "components/grammar/LevelTestFeedback.tsx": {
+      "count": 1,
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
+    },
+    "components/grammar/NewKinds.tsx": {
+      "count": 5,
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
+    },
+    "components/grammar/TypedKinds.tsx": {
+      "count": 4,
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
+    },
+    "components/grammar/drill/MatchFormItems.tsx": {
+      "count": 3,
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
+    },
+    "components/grammar/drill/WhyTransformItems.tsx": {
+      "count": 4,
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
+    },
+    "components/practice/DictationGame.tsx": {
+      "count": 1,
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
+    },
+    "components/practice/OppositesGame.tsx": {
+      "count": 1,
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
+    },
+    "components/practice/ScrambleGame.tsx": {
+      "count": 1,
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
+    },
+    "components/practice/SituationGame.tsx": {
+      "count": 1,
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
+    },
+    "components/practice/SmallTalkGame.tsx": {
+      "count": 1,
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
+    },
+    "components/speech/SpeechPlay.tsx": {
+      "count": 2,
+      "reason": "convert to the shared action button (DockedAction / InlineAction)"
+    }
+  },
+  "result-label": {
+    "app/(tabs)/practice.tsx": {
+      "count": 1,
+      "reason": "decision pending: one correct/wrong wording"
+    },
+    "app/grammar/form-check/[topic].tsx": {
+      "count": 1,
+      "reason": "decision pending: one correct/wrong wording"
+    },
+    "app/grammar/small-test.tsx": {
+      "count": 1,
+      "reason": "decision pending: one correct/wrong wording"
+    },
+    "components/learn/RetypePractice.tsx": {
+      "count": 1,
+      "reason": "decision pending: one correct/wrong wording"
+    }
+  },
+  "speak-glyph": {
+    "components/exam/MockTaskCard.tsx": {
+      "count": 1,
+      "reason": "decision pending: one speak button"
+    },
+    "components/exam/mock/MockPlayer.tsx": {
+      "count": 1,
+      "reason": "decision pending: one speak button"
+    },
+    "components/exam/mock/SpeakingTask.tsx": {
+      "count": 1,
+      "reason": "decision pending: one speak button"
+    },
+    "components/grammar/NewKinds.tsx": {
+      "count": 1,
+      "reason": "decision pending: one speak button"
+    }
+  }
+}

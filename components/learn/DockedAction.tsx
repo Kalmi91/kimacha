@@ -7,6 +7,7 @@ import { BrutalButton } from '@/components/grammar/Brutal';
 import ExamButton from '@/components/exam/ExamButton';
 import { useSkinDecor } from '@/components/skins';
 import { legibleOn } from '@/constants/Skins';
+import { t } from '@/lib/i18n';
 
 type ColorScheme = (typeof Colors)['light'];
 
@@ -26,8 +27,48 @@ const TONE_COLOR: Record<Tone, string> = {
   next: '#1D4ED8',
 };
 
+/** The default label of a tone: the words card's Check, and the plain Next. */
+export function defaultActionLabel(tone: Tone): string {
+  const s = t();
+  return tone === 'next' ? `${s.card.next} →` : `✓ ${s.card.check}`;
+}
+
+export type DockActionButtonProps = {
+  /** Default per tone (see defaultActionLabel). */
+  label?: string;
+  onPress: () => void;
+  tone: Tone;
+  /** The caller can override the tone's base colour with this (Learn passes its own logic here, which depends on whether the prediction came true). */
+  color?: string;
+  /** The button's id (default on the brutal skins: `learn-docked-action`). */
+  testID?: string;
+  disabled?: boolean;
+};
+
+// The one Check / Next button, shared by the docked bar (DockedAction) and the inline twin (InlineAction),
+// so the two cannot drift. Moved here 1:1 from DockedAction (the `inlineCheckBtn` style values are unchanged).
+export function DockActionButton({ label, onPress, tone, color, testID, disabled }: DockActionButtonProps) {
+  const g = useGrammarColors();
+  const checkFill = useSkinDecor().checkFill;
+  const text = label ?? defaultActionLabel(tone);
+  return g.brutal ? (
+    // Check = ink fill, Next = the fill.
+    <BrutalButton testID={testID ?? 'learn-docked-action'} label={text} fill={tone === 'next' ? 'a' : checkFill ?? 'ink'} icon={tone === 'next' ? '→' : '✓'} disabled={disabled} onPress={onPress} />
+  ) : (
+    <Pressable
+      testID={testID}
+      disabled={disabled}
+      style={[styles.inlineCheckBtn, { backgroundColor: legibleOn(color ?? TONE_COLOR[tone], '#FFFFFF') }, disabled && styles.disabled]}
+      onPress={onPress}
+    >
+      <Text style={styles.inlineCheckText}>{text}</Text>
+    </Pressable>
+  );
+}
+
 type Props = {
-  label: string;
+  /** Default per tone (the words card's Check / the plain Next), see DockActionButton. */
+  label?: string;
   onPress: () => void;
   tone: Tone;
   /** The caller can override the tone's base colour with this (Learn passes its own logic here, which depends on whether the prediction came true). */
@@ -45,8 +86,6 @@ type Props = {
 };
 
 export default function DockedAction({ label, onPress, tone, color, bottom, colors, onHeight, testID, disabled, secondary }: Props) {
-  const g = useGrammarColors();
-  const checkFill = useSkinDecor().checkFill;
   return (
     <View
       testID="learn-dock"
@@ -58,19 +97,7 @@ export default function DockedAction({ label, onPress, tone, color, bottom, colo
           <ExamButton testID={secondary.testID} secondary label={secondary.label} onPress={secondary.onPress} />
         </View>
       ) : null}
-      {g.brutal ? (
-        // Check = ink fill, Next = the fill.
-        <BrutalButton testID={testID ?? 'learn-docked-action'} label={label} fill={tone === 'next' ? 'a' : checkFill ?? 'ink'} icon={tone === 'next' ? '→' : '✓'} disabled={disabled} onPress={onPress} />
-      ) : (
-        <Pressable
-          testID={testID}
-          disabled={disabled}
-          style={[styles.inlineCheckBtn, { backgroundColor: legibleOn(color ?? TONE_COLOR[tone], '#FFFFFF') }, disabled && styles.disabled]}
-          onPress={onPress}
-        >
-          <Text style={styles.inlineCheckText}>{label}</Text>
-        </Pressable>
-      )}
+      <DockActionButton testID={testID} label={label} tone={tone} color={color} disabled={disabled} onPress={onPress} />
     </View>
   );
 }
@@ -95,12 +122,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  // Room between the quiet "I mistyped" and the main button (FB718).
-  secondaryGap: { marginBottom: 12 },
   disabled: { opacity: 0.4 },
   inlineCheckText: {
     color: '#fff',
     fontSize: 18,
     fontWeight: '700',
   },
+  // Room between the quiet "I mistyped" and the main button (FB718).
+  secondaryGap: { marginBottom: 12 },
 });
