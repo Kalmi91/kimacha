@@ -151,7 +151,7 @@
       "header": [
         { "en": "Adjective (masculine)", "es": "Adjetivo (masculino)" },
         { "en": "Adjective (feminine)", "es": "Adjetivo (femenino)" },
-        { "en": "Adverb (-mente)", "es": "Adverbio (-mente)" },
+        { "en": "Adverb", "es": "Adverbio" },
         { "en": "Noun", "es": "Sustantivo" }
       ],
       "rows": [
@@ -167,6 +167,48 @@
         ["difícil", "difícil", "difícilmente", "dificultad"],
         ["amable", "amable", "amablemente", "amabilidad"],
         ["libre", "libre", "libremente", "libertad"]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "palabras-por-clase",
+      "noTableDeck": true,
+      "title": {
+        "en": "Example words: noun, verb, adverb",
+        "es": "Palabras de ejemplo: sustantivo, verbo, adverbio"
+      },
+      "header": [
+        { "en": "Noun", "es": "Sustantivo" },
+        { "en": "Verb", "es": "Verbo" },
+        { "en": "Adverb", "es": "Adverbio" }
+      ],
+      "rows": [
+        ["casa", "hablar", "bien"],
+        ["perro", "comer", "hoy"],
+        ["mesa", "vivir", "aquí"],
+        ["libro", "trabajar", "mucho"],
+        ["ciudad", "estudiar", "poco"],
+        ["amigo", "escribir", "siempre"]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "palabras-funcionales",
+      "noTableDeck": true,
+      "title": {
+        "en": "Example words: pronoun, preposition, conjunction",
+        "es": "Palabras de ejemplo: pronombre, preposición, conjunción"
+      },
+      "header": [
+        { "en": "Pronoun", "es": "Pronombre" },
+        { "en": "Preposition", "es": "Preposición" },
+        { "en": "Conjunction", "es": "Conjunción" }
+      ],
+      "rows": [
+        ["él", "en", "y"],
+        ["ella", "de", "pero"],
+        ["mía", "a", "o"],
+        ["mío", "con", "porque"]
       ]
     },
     {
@@ -246,7 +288,17 @@
         "en": "quickly (adverb)",
         "es": "de manera rápida (adverbio)"
       }
-    }
+    },
+    { "word": "él", "gloss": { "en": "he" } },
+    { "word": "ella", "gloss": { "en": "she" } },
+    { "word": "en", "gloss": { "en": "in, on, at" } },
+    { "word": "de", "gloss": { "en": "of, from" } },
+    { "word": "a", "gloss": { "en": "to, at" } },
+    { "word": "con", "gloss": { "en": "with" } },
+    { "word": "y", "gloss": { "en": "and" } },
+    { "word": "pero", "gloss": { "en": "but" } },
+    { "word": "o", "gloss": { "en": "or" } },
+    { "word": "porque", "gloss": { "en": "because" } }
   ],
   "items": [
     {
@@ -568,9 +620,9 @@
     {
       "id": "cp-form-01",
       "kind": "form",
-      "verb": "Adverbio (-mente)",
+      "verb": "Adverbio",
       "person": "rápido",
-      "q": { "en": "What is the adverb (-mente) of \"rápido\"?", "es": "¿Cuál es el adverbio (-mente) de «rápido»?" },
+      "q": { "en": "What is the adverb of \"rápido\"?", "es": "¿Cuál es el adverbio de «rápido»?" },
       "answer": "rápidamente",
       "table": "derivacion",
       "wrong": {
@@ -652,9 +704,9 @@
     {
       "id": "cp-form-05",
       "kind": "form",
-      "verb": "Adverbio (-mente)",
+      "verb": "Adverbio",
       "person": "claro",
-      "q": { "en": "What is the adverb (-mente) of \"claro\"?", "es": "¿Cuál es el adverbio (-mente) de «claro»?" },
+      "q": { "en": "What is the adverb of \"claro\"?", "es": "¿Cuál es el adverbio de «claro»?" },
       "answer": "claramente",
       "table": "derivacion",
       "wrong": {
@@ -709,9 +761,9 @@
     {
       "id": "cp-form-08",
       "kind": "form",
-      "verb": "Adverbio (-mente)",
+      "verb": "Adverbio",
       "person": "triste",
-      "q": { "en": "What is the adverb (-mente) of \"triste\"?", "es": "¿Cuál es el adverbio (-mente) de «triste»?" },
+      "q": { "en": "What is the adverb of \"triste\"?", "es": "¿Cuál es el adverbio de «triste»?" },
       "answer": "tristemente",
       "table": "derivacion",
       "wrong": {
@@ -766,9 +818,9 @@
     {
       "id": "cp-form-11",
       "kind": "form",
-      "verb": "Adverbio (-mente)",
+      "verb": "Adverbio",
       "person": "amable",
-      "q": { "en": "What is the adverb (-mente) of \"amable\"?", "es": "¿Cuál es el adverbio (-mente) de «amable»?" },
+      "q": { "en": "What is the adverb of \"amable\"?", "es": "¿Cuál es el adverbio de «amable»?" },
       "answer": "amablemente",
       "table": "derivacion",
       "wrong": {
