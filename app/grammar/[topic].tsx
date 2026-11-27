@@ -201,13 +201,12 @@ function GrammarLessonPhases({ topic }: { topic: ReturnType<typeof useGrammarTop
   // the XP the last right drill answer gave (FB591), shown while that item is on screen
   const [earned, setEarned] = useState<{ id: string; points: number } | null>(null);
   // FB750: 0.5 XP for every active minute spent on the lesson (reading) view, only while this screen is focused
-  const [readingXp, setReadingXp] = useState(false);
   const reading = phase === 'lesson' && !!lesson;
   useFocusEffect(
     useCallback(() => {
       if (!reading) return undefined;
       return onActiveMinute(() => {
-        awardReadingXp().then(() => setReadingXp(true), () => undefined);
+        awardReadingXp().catch(() => undefined);
       });
     }, [reading]),
   );
@@ -416,11 +415,9 @@ function GrammarLessonPhases({ topic }: { topic: ReturnType<typeof useGrammarTop
   return (
     <View style={[styles.container, { backgroundColor: colors.background }]}>
       {header}
-      {readingXp ? (
-        <View testID="lesson-reading-xp">
-          <XpChip />
-        </View>
-      ) : null}
+      <View testID="lesson-reading-xp">
+        <XpChip />
+      </View>
       <ScrollView
         ref={scrollRef}
         contentContainerStyle={[styles.body, themedDockPad(g)]}

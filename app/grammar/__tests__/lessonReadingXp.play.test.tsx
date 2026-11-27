@@ -10,9 +10,13 @@ jest.mock('expo-router', () => ({
   useRouter: () => ({ back: jest.fn(), push: jest.fn() }),
   usePathname: () => '/grammar',
   // like the real hook: runs again when the callback changes, and cleans up on unmount
-  useFocusEffect: (cb: () => void) => {
+  useFocusEffect: (cb: () => (() => void) | undefined) => {
     const { useEffect } = require('react');
-    useEffect(cb, [cb]);
+    useEffect(() => {
+      const cleanup = cb();
+      (globalThis as { __blur?: () => void }).__blur = cleanup;
+      return cleanup;
+    }, [cb]);
   },
   useLocalSearchParams: () => ({ topic: 'ser-estar' }),
 }));
@@ -53,10 +57,10 @@ describe('grammar lesson screen: XP for reading (FB750)', () => {
     (db as any).__setLevelForTest('A1');
   });
 
-  it('one fired minute gives one award and shows the chip, two give two', async () => {
+  it('the chip is there from the start, one fired minute gives one award, two give two', async () => {
     const view = render(<GrammarLessonScreen />);
     await flush(4);
-    expect(screen.queryByTestId('lesson-reading-xp')).toBeFalsy();
+    expect(screen.queryByTestId('lesson-reading-xp')).toBeTruthy();
 
     act(() => fireMinute());
     await flush(2);
@@ -78,6 +82,18 @@ describe('grammar lesson screen: XP for reading (FB750)', () => {
     await flush(3);
     expect(screen.queryByTestId('grammar-start-choice')).toBeFalsy();
 
+    act(() => fireMinute());
+    await flush(2);
+    expect(awardReadingXp).not.toHaveBeenCalled();
+
+    view.unmount();
+  });
+
+  it('pays nothing after the screen loses focus (blur)', async () => {
+    const view = render(<GrammarLessonScreen />);
+    await flush(4);
+
+    act(() => (globalThis as { __blur?: () => void }).__blur?.());
     act(() => fireMinute());
     await flush(2);
     expect(awardReadingXp).not.toHaveBeenCalled();
