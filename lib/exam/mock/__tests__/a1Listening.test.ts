@@ -59,6 +59,20 @@ describe('authored A1 listening data: all texts', () => {
     }
   });
 
+  // A wrong option is made only of words that are heard in that text (plus these few function words), so it cannot be ruled out
+  // because its words never occur; no nouns, numbers or names here.
+  const FUNCTION_WORDS = new Set(['el', 'la', 'los', 'las', 'un', 'una', 'unos', 'unas', 'de', 'del', 'a', 'al', 'en', 'y', 'no', 'con', 'por', 'para']);
+  const wordsOf = (s: string) => s.toLowerCase().replace(/[¿?¡!.,;:]/g, ' ').split(/\s+/).filter(Boolean);
+
+  it('every word of every wrong option is heard in the text (or is a listed function word)', () => {
+    const missing: string[] = [];
+    for (const t of ALL) {
+      const heard = new Set(t.lines.flatMap(wordsOf));
+      for (const q of t.questions) for (const w of q.wrong) for (const word of wordsOf(w)) if (!heard.has(word) && !FUNCTION_WORDS.has(word)) missing.push(`${t.id}: "${w}" -> ${word}`);
+    }
+    expect(missing).toEqual([]);
+  });
+
   it('the right answer is not simply a heard line', () => {
     for (const t of ALL) for (const q of t.questions) expect(t.lines).not.toContain(q.correct);
   });

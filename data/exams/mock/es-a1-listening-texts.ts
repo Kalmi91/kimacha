@@ -10,7 +10,7 @@ export interface A1ListeningQuestion {
   question: string;
   /** The right answer, in Spanish. */
   correct: string;
-  /** Two wrong answers, in Spanish; built from words that are heard in the text, so a word search does not find the answer. */
+  /** Two wrong answers, in Spanish; made only of words that are heard in the text (a test checks it), of the same kind as the right one. */
   wrong: [string, string];
   /** Index of the line in `lines` that holds the answer. */
   line: number;
@@ -31,34 +31,34 @@ export const ES_A1_LISTENING_TEXTS: A1ListeningText[] = [
       'Atención, por favor. Este es un aviso de la biblioteca.',
       'Hoy la biblioteca abre a las nueve de la mañana y cierra a las cinco de la tarde.',
       'Mañana vamos a cerrar a la una porque hay una reunión.',
-      'Si quiere llevar un libro a su casa, necesita su credencial.',
+      'Si quiere llevar un libro a su casa, necesita su credencial. No necesita un permiso.',
       'Puede llevar tres libros por dos semanas.',
       'Gracias por su visita.',
     ],
     questions: [
       { question: '¿A qué hora cierra hoy la biblioteca?', correct: 'A las cinco de la tarde.', wrong: ['A las nueve de la mañana.', 'A la una de la tarde.'], line: 1 },
       { question: '¿Qué pasa mañana?', correct: 'La biblioteca cierra a la una.', wrong: ['La biblioteca abre a la una.', 'La biblioteca cierra a las cinco.'], line: 2 },
-      { question: '¿Qué necesita para llevar un libro a su casa?', correct: 'Necesita su credencial.', wrong: ['Necesita tres libros.', 'Necesita dos semanas.'], line: 3 },
+      { question: '¿Qué necesita para llevar un libro a su casa?', correct: 'Necesita su credencial.', wrong: ['Necesita un libro.', 'Necesita un permiso.'], line: 3 },
       { question: '¿Cuántos libros puede llevar?', correct: 'Tres libros.', wrong: ['Dos libros.', 'Cinco libros.'], line: 4 },
-      { question: '¿Por cuánto tiempo puede tener los libros?', correct: 'Por dos semanas.', wrong: ['Por tres semanas.', 'Por una semana.'], line: 4 },
+      { question: '¿Por cuánto tiempo puede tener los libros?', correct: 'Por dos semanas.', wrong: ['Por tres semanas.', 'Por cinco semanas.'], line: 4 },
     ],
   },
   {
     id: 'mensaje-carmen',
     lines: [
       'Hola, Luis, soy Carmen.',
-      'Te llamo porque mañana voy a ir al cine con mi hermana.',
+      'Te llamo desde mi casa porque mañana voy al cine con mi hermana.',
       'La película empieza a las siete de la noche.',
       'Primero vamos a comer unos tacos cerca del cine.',
-      '¿Quieres venir con nosotras?',
-      'Llámame antes de las cinco, por favor.',
+      '¿Quieres venir con nosotras? Mi mamá no va.',
+      'Llámame antes de las cinco, por favor. Después de las cinco no puedo hablar.',
     ],
     questions: [
-      { question: '¿Con quién va Carmen al cine mañana?', correct: 'Con su hermana.', wrong: ['Con Luis.', 'Sola.'], line: 1 },
+      { question: '¿Con quién va Carmen al cine?', correct: 'Con su hermana.', wrong: ['Con Luis.', 'Con mi mamá.'], line: 1 },
       { question: '¿A qué hora empieza la película?', correct: 'A las siete de la noche.', wrong: ['A las cinco de la noche.', 'A las siete de la mañana.'], line: 2 },
-      { question: '¿Dónde van a comer los tacos?', correct: 'Cerca del cine.', wrong: ['En el cine.', 'Con su hermana.'], line: 3 },
-      { question: '¿Qué le pregunta Carmen a Luis?', correct: 'Si quiere ir con ellas.', wrong: ['Si quiere llamar a Carmen.', 'Si quiere ir al cine solo.'], line: 4 },
-      { question: '¿Cuándo debe llamar Luis a Carmen?', correct: 'Antes de las cinco.', wrong: ['Después de las cinco.', 'Después de las siete.'], line: 5 },
+      { question: '¿Dónde van a comer los tacos?', correct: 'Cerca del cine.', wrong: ['En el cine.', 'En mi casa.'], line: 3 },
+      { question: '¿Quién no va al cine?', correct: 'Su mamá.', wrong: ['Carmen.', 'La hermana.'], line: 4 },
+      { question: '¿Cuándo debe llamar Luis?', correct: 'Antes de las cinco.', wrong: ['Después de las cinco.', 'Después de las siete.'], line: 5 },
     ],
   },
   {
@@ -66,18 +66,18 @@ export const ES_A1_LISTENING_TEXTS: A1ListeningText[] = [
     lines: [
       'Me llamo Pablo y trabajo en una tienda de ropa.',
       'Me levanto a las seis y media de la mañana.',
-      'Desayuno en mi casa y voy al trabajo en autobús.',
+      'Desayuno en mi casa y voy al trabajo en autobús, no en coche ni en bicicleta.',
       'Trabajo de nueve a cinco y como con mis compañeros.',
       'Por la tarde voy al parque con mi perro.',
       'En la noche veo la televisión y me acuesto a las diez.',
     ],
     questions: [
-      { question: '¿Dónde trabaja Pablo?', correct: 'En una tienda de ropa.', wrong: ['En un parque.', 'En un autobús.'], line: 0 },
+      { question: '¿Dónde trabaja Pablo?', correct: 'En una tienda de ropa.', wrong: ['En un parque.', 'En mi casa.'], line: 0 },
       { question: '¿A qué hora se levanta Pablo?', correct: 'A las seis y media.', wrong: ['A las nueve y media.', 'A las diez y media.'], line: 1 },
-      { question: '¿Cómo va Pablo al trabajo?', correct: 'En autobús.', wrong: ['Con su perro.', 'Con sus compañeros.'], line: 2 },
+      { question: '¿Cómo va Pablo al trabajo?', correct: 'En autobús.', wrong: ['En coche.', 'En bicicleta.'], line: 2 },
       { question: '¿Adónde va Pablo con su perro?', correct: 'Al parque.', wrong: ['A la tienda.', 'Al trabajo.'], line: 4 },
-      { question: '¿Qué hace Pablo en la noche?', correct: 'Ve la televisión.', wrong: ['Va al parque.', 'Trabaja en una tienda.'], line: 5 },
-      { question: '¿A qué hora se acuesta Pablo?', correct: 'A las diez.', wrong: ['A las seis.', 'A las cinco.'], line: 5 },
+      { question: '¿Qué ve Pablo en la noche?', correct: 'La televisión.', wrong: ['Un perro.', 'La tienda.'], line: 5 },
+      { question: '¿A qué hora se acuesta Pablo?', correct: 'A las diez.', wrong: ['A las seis.', 'A las nueve.'], line: 5 },
     ],
   },
   {
@@ -88,7 +88,7 @@ export const ES_A1_LISTENING_TEXTS: A1ListeningText[] = [
       'Hoy sale de la puerta número tres.',
       'El boleto cuesta ciento cincuenta pesos.',
       'Los niños pequeños no pagan.',
-      'Por favor, lleguen diez minutos antes.',
+      'Por favor, lleguen diez minutos antes, no después.',
     ],
     questions: [
       { question: '¿A qué hora sale el autobús?', correct: 'A las ocho y cuarto.', wrong: ['A las diez y cuarto.', 'A las tres y cuarto.'], line: 1 },
@@ -115,7 +115,7 @@ export const ES_A1_LISTENING_DIALOGUES: A1ListeningText[] = [
     ],
     questions: [
       { question: '¿Qué quiere comprar la persona primero?', correct: 'Un kilo de manzanas.', wrong: ['Dos mangos.', 'Un kilo de mangos.'], line: 1 },
-      { question: '¿Cuántos mangos compra?', correct: 'Dos mangos.', wrong: ['Un mango.', 'Veinte mangos.'], line: 3 },
+      { question: '¿Cuántos mangos compra?', correct: 'Dos mangos.', wrong: ['Veinte mangos.', 'Treinta mangos.'], line: 3 },
       { question: '¿Cuánto cuestan las manzanas?', correct: 'Treinta pesos.', wrong: ['Veinte pesos.', 'Cincuenta pesos.'], line: 4 },
       { question: '¿Cuánto paga en total?', correct: 'Cincuenta pesos.', wrong: ['Treinta pesos.', 'Veinte pesos.'], line: 4 },
     ],
@@ -123,7 +123,7 @@ export const ES_A1_LISTENING_DIALOGUES: A1ListeningText[] = [
   {
     id: 'amigos-sabado',
     lines: [
-      'Hola, Sofía. ¿Qué vas a hacer el sábado?',
+      'Hola, Sofía, soy Miguel. ¿Qué vas a hacer el sábado?',
       'Voy a visitar a mis abuelos. Ellos viven en Querétaro.',
       '¡Qué bien! ¿Cómo vas a viajar?',
       'Voy en autobús. Salgo a las ocho de la mañana.',
@@ -132,9 +132,9 @@ export const ES_A1_LISTENING_DIALOGUES: A1ListeningText[] = [
       'A las cuatro de la tarde. Nos vemos el domingo.',
     ],
     questions: [
-      { question: '¿A quién va a visitar Sofía?', correct: 'A sus abuelos.', wrong: ['A sus amigos.', 'A Miguel.'], line: 1 },
+      { question: '¿A quién va a visitar Sofía?', correct: 'A sus abuelos.', wrong: ['A Miguel.', 'A mis amigos.'], line: 1 },
       { question: '¿A qué hora sale Sofía?', correct: 'A las ocho de la mañana.', wrong: ['A las cuatro de la mañana.', 'A las ocho de la tarde.'], line: 3 },
-      { question: '¿Qué va a hacer Miguel el sábado?', correct: 'Va a jugar futbol.', wrong: ['Va a visitar a sus abuelos.', 'Va a viajar en autobús.'], line: 4 },
+      { question: '¿Qué va a hacer Miguel el sábado?', correct: 'Jugar futbol.', wrong: ['Visitar a mis abuelos.', 'Viajar en autobús.'], line: 4 },
       { question: '¿A qué hora juegan?', correct: 'A las cuatro de la tarde.', wrong: ['A las ocho de la mañana.', 'A las cuatro de la mañana.'], line: 6 },
     ],
   },
@@ -143,17 +143,17 @@ export const ES_A1_LISTENING_DIALOGUES: A1ListeningText[] = [
     lines: [
       'Buenas tardes. Habla el hotel. ¿En qué le puedo ayudar?',
       'Quiero un cuarto para dos personas, por favor.',
-      '¿Para qué días?',
+      '¿Para qué días? Tenemos cuartos el jueves, el viernes y el sábado.',
       'Para el viernes y el sábado.',
       'Tenemos un cuarto con baño por mil doscientos pesos la noche.',
       'Está bien. ¿El desayuno está incluido?',
       'Sí, el desayuno es de siete a diez de la mañana.',
     ],
     questions: [
-      { question: '¿Para cuántas personas es el cuarto?', correct: 'Para dos personas.', wrong: ['Para una persona.', 'Para tres personas.'], line: 1 },
-      { question: '¿Para qué días quiere el cuarto?', correct: 'El viernes y el sábado.', wrong: ['El sábado y el domingo.', 'El jueves y el viernes.'], line: 3 },
+      { question: '¿Qué quiere la persona?', correct: 'Un cuarto.', wrong: ['Un baño.', 'Un desayuno.'], line: 1 },
+      { question: '¿Para qué días quiere el cuarto?', correct: 'El viernes y el sábado.', wrong: ['El jueves y el viernes.', 'El jueves y el sábado.'], line: 3 },
       { question: '¿Cuánto cuesta el cuarto?', correct: 'Mil doscientos pesos la noche.', wrong: ['Mil pesos la noche.', 'Doscientos pesos la noche.'], line: 4 },
-      { question: '¿Hasta qué hora es el desayuno?', correct: 'Hasta las diez de la mañana.', wrong: ['Hasta las siete de la mañana.', 'Hasta las diez de la noche.'], line: 6 },
+      { question: '¿A qué hora termina el desayuno?', correct: 'A las diez de la mañana.', wrong: ['A las siete de la mañana.', 'A las diez de la noche.'], line: 6 },
     ],
   },
   {
@@ -163,14 +163,14 @@ export const ES_A1_LISTENING_DIALOGUES: A1ListeningText[] = [
       'Un café con leche y un pan dulce, por favor.',
       'Lo siento, hoy no hay pan dulce. Hay galletas.',
       'Está bien. Una galleta, por favor.',
-      'Son cuarenta pesos. ¿Para tomar aquí o para llevar?',
+      'El café cuesta veinticinco pesos y la galleta quince. Son cuarenta pesos. ¿Para tomar aquí o para llevar?',
       'Para tomar aquí. ¿Dónde puedo sentarme?',
-      'Hay una mesa libre junto a la ventana.',
+      'Hay una mesa libre junto a la ventana, no junto a la puerta.',
     ],
     questions: [
       { question: '¿Qué pide la persona para tomar?', correct: 'Un café con leche.', wrong: ['Un pan dulce.', 'Una galleta.'], line: 1 },
       { question: '¿Qué no hay hoy?', correct: 'Pan dulce.', wrong: ['Galletas.', 'Café con leche.'], line: 2 },
-      { question: '¿Cuánto cuesta todo?', correct: 'Cuarenta pesos.', wrong: ['Catorce pesos.', 'Cuatrocientos pesos.'], line: 4 },
+      { question: '¿Cuánto cuesta todo?', correct: 'Cuarenta pesos.', wrong: ['Veinticinco pesos.', 'Quince pesos.'], line: 4 },
       { question: '¿Dónde hay una mesa libre?', correct: 'Junto a la ventana.', wrong: ['Junto a la puerta.', 'Junto al café.'], line: 6 },
     ],
   },

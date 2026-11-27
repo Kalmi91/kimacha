@@ -71,9 +71,11 @@ export function mockTaskTexts(task: MockTask): string[] {
     case 'gap_type':
       // The gap sentence is visible (the missing word is not); the read-aloud lines are not.
       return task.gaps.map((g) => g.text.replace('___', ' '));
-    case 'dictation':
     case 'listen_mc':
     case 'listen_dialogue':
+      // The authored A1 listening shows its Spanish questions and options on screen (never the heard lines: the transcript is hidden).
+      return task.prompts ? [...task.prompts, ...task.questions.flatMap((q) => q.options)] : [];
+    case 'dictation':
     case 'listen_match':
       return [];
     case 'form_fill':

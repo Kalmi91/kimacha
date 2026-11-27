@@ -81,7 +81,24 @@ describe('mockGlossary: on a real task set', () => {
     expect(none.length).toBeGreaterThan(0);
     const allLearned = new Set(items.map((i) => i.id));
     expect(mockGlossary(reading, index, allLearned)).toEqual([]);
-    for (const t of exam.papers[2].tasks) expect(mockGlossary(t, index, new Set())).toEqual([]);
+    // The authored A1 listening shows its Spanish questions and options, so it has a glossary; the other listening tasks have none.
+    const authored = (t: MockTask) => (t.kind === 'listen_mc' || t.kind === 'listen_dialogue') && !!t.prompts;
+    for (const t of exam.papers[2].tasks) if (!authored(t)) expect(mockGlossary(t, index, new Set())).toEqual([]);
+    expect(exam.papers[2].tasks.filter(authored)).toHaveLength(2);
+  });
+
+  it('an authored A1 listening task: the on-screen questions and options are glossed, the heard lines are not', () => {
+    const listen: MockTask = {
+      id: 'l',
+      skill: 'listening',
+      kind: 'listen_mc',
+      instruction: '',
+      audio: ['La casa es bonita.'],
+      questions: [{ options: ['La ventana.', 'La casa.'], correct: 1 }],
+      prompts: ['¿Qué es bonita?'],
+      lineOf: [0],
+    };
+    expect(mockTaskTexts(listen)).toEqual(['¿Qué es bonita?', 'La ventana.', 'La casa.']);
   });
 });
 
