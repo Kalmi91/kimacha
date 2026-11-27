@@ -15,7 +15,7 @@ type ColorScheme = (typeof Colors)['light'];
 // Without a host (standalone render, tests) the item draws the old inline button.
 
 interface DockSpec {
-  label: string;
+  label?: string;
   onPress: () => void;
   tone: DockedActionTone;
   color?: string;
@@ -80,7 +80,7 @@ export function useDockedAction(spec: DockSpec | null): { docked: boolean; padBo
   useEffect(() => {
     latest.current = spec;
   });
-  const key = spec ? `${spec.label}|${spec.tone}|${spec.color ?? ''}|${spec.testID ?? ''}|${spec.disabled ? 1 : 0}|${spec.secondary?.label ?? ''}` : '';
+  const key = spec ? `${spec.label ?? ''}|${spec.tone}|${spec.color ?? ''}|${spec.testID ?? ''}|${spec.disabled ? 1 : 0}|${spec.secondary?.label ?? ''}` : '';
   useEffect(() => {
     if (!register) return;
     const cur = latest.current;
