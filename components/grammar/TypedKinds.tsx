@@ -11,6 +11,7 @@ import { ON_FILL } from '@/constants/GrammarPalettes';
 import { tapTarget } from '@/constants/Theme';
 import { useDockedAction } from '@/components/learn/DockSlot';
 import { useGrammarColors, type GrammarColors } from '@/lib/grammarColors';
+import { useTheme } from '@/lib/ThemeContext';
 import { charDiff } from '@/lib/charDiff';
 import { t } from '@/lib/i18n';
 import { answerInputProps } from '@/lib/inputProps';
@@ -366,6 +367,10 @@ export function FixDrillItem({ item, learnedLang, contentLang, strictAccents, on
   const words = useMemo(() => item.es.split(/\s+/).filter(Boolean), [item.es]);
   const [wrongTaps, setWrongTaps] = useState<Set<number>>(new Set());
   const [found, setFound] = useState(false);
+  // The right pick: the skin's neutral chip with a success BORDER (same source as AnswerFeedbackBox), never an accent fill.
+  const { theme } = useTheme();
+  const ok = g.extra?.success ?? Colors[theme].success;
+  const foundBorder = { borderColor: ok, borderTopColor: ok, borderRightColor: ok, borderBottomColor: ok, borderLeftColor: ok, borderStyle: 'solid' } as const;
   const tapWord = (i: number) => {
     if (found) return;
     if (i === item.wrongIndex) setFound(true);
@@ -383,15 +388,15 @@ export function FixDrillItem({ item, learnedLang, contentLang, strictAccents, on
               <BrutalBox
                 key={i}
                 testID={`fix-word-${i}`}
-                fill={found && isWrong ? 'b' : 'paper'}
+                fill="paper"
                 dashed={missed}
                 offset={2}
                 style={missed ? styles.dim : undefined}
-                boxStyle={styles.chip}
+                boxStyle={found && isWrong ? [styles.chip, foundBorder] : styles.chip}
                 onPress={() => tapWord(i)}
                 disabled={found}
               >
-                <Text style={[styles.chipText, { color: found && isWrong ? g.onB : g.ink }]}>{w}</Text>
+                <Text style={[styles.chipText, { color: g.ink }]}>{w}</Text>
               </BrutalBox>
             );
           })}

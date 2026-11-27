@@ -155,6 +155,28 @@ describe.each([
     expect(onDone).toHaveBeenCalledWith(true, undefined, expect.any(String));
   });
 
+  it('fix: the found word is a paper chip with a solid success border, never an accent fill (FB665)', () => {
+    render(<FixDrillItem item={FIX} learnedLang="es" contentLang="en" strictAccents onDone={onDone} />);
+    const flat = (id: string) => StyleSheet.flatten(screen.getByTestId(id).props.style);
+    const before = flat('fix-word-2');
+    fireEvent.press(screen.getByTestId('fix-word-0'));
+    const missed = flat('fix-word-0');
+    fireEvent.press(screen.getByTestId('fix-word-2'));
+    const found = flat('fix-word-2');
+    const untouched = flat('fix-word-1');
+    expect(found.backgroundColor).toBe(before.backgroundColor);
+    expect(found.backgroundColor).toBe(untouched.backgroundColor);
+    for (const side of ['borderColor', 'borderTopColor', 'borderRightColor', 'borderBottomColor', 'borderLeftColor'] as const) {
+      expect(found[side]).toBeTruthy();
+    }
+    expect(found.borderTopColor).toBe(found.borderLeftColor);
+    expect(found.borderTopColor).not.toBe(untouched.borderColor);
+    expect(found.borderStyle).toBe('solid');
+    expect(missed.borderStyle).toBe('dashed');
+    expect(untouched.borderStyle).not.toBe('dashed');
+    expect(flat('fix-word-1').borderTopColor).toBe(untouched.borderTopColor);
+  });
+
   it('fix: a wrong tap on the way makes the item wrong even with the right fix typed', () => {
     render(<FixDrillItem item={FIX} learnedLang="es" contentLang="en" strictAccents onDone={onDone} />);
     fireEvent.press(screen.getByTestId('fix-word-0'));
