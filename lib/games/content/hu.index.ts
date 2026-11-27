@@ -5,6 +5,7 @@ import type { GrammarIndexEntry } from '../content';
 
 export const HU_GRAMMAR_INDEX: GrammarIndexEntry[] = [
   { id: 'kiejtes-abc', load: () => require('@/data/games/grammar/hu/kiejtes-abc.json') },
+  { id: 'betuzes', load: () => require('@/data/games/grammar/hu/betuzes.json') },
   { id: 'hangrend', load: () => require('@/data/games/grammar/hu/hangrend.json') },
   { id: 'lenni-van', load: () => require('@/data/games/grammar/hu/lenni-van.json') },
   { id: 'nevelok', load: () => require('@/data/games/grammar/hu/nevelok.json') },

@@ -1,4 +1,4 @@
-// The Hungarian grammar course (target hu: es→hu and en→hu): the syllabus lists exactly the 75
+// The Hungarian grammar course (target hu: es→hu and en→hu): the syllabus lists exactly the 76
 // lesson files, every lesson loads, levels A1 to C1, the derived decks are off, the read-aloud text
 // uses the Hungarian voice for the «...» snippets.
 
@@ -34,14 +34,14 @@ const files = readdirSync(DATA)
 const topics = () => syllabusLevels('hu').flatMap((l) => syllabusForLevel(l, 'hu'));
 
 describe('Hungarian grammar syllabus (lang = hu)', () => {
-  it('has the levels A1 to C1, 24 + 16 + 17 + 12 + 6 topics', () => {
+  it('has the levels A1 to C1, 25 + 16 + 17 + 12 + 6 topics', () => {
     expect(syllabusLevels('hu')).toEqual(['A1', 'A2', 'B1', 'B2', 'C1']);
-    expect(syllabusForLevel('A1', 'hu')).toHaveLength(24);
+    expect(syllabusForLevel('A1', 'hu')).toHaveLength(25);
     expect(syllabusForLevel('A2', 'hu')).toHaveLength(16);
     expect(syllabusForLevel('B1', 'hu')).toHaveLength(17);
     expect(syllabusForLevel('B2', 'hu')).toHaveLength(12);
     expect(syllabusForLevel('C1', 'hu')).toHaveLength(6);
-    expect(lessonCoverage('hu')).toEqual({ written: 75, planned: 75 });
+    expect(lessonCoverage('hu')).toEqual({ written: 76, planned: 76 });
   });
 
   it('groups the topics into the eighteen units, each with topics and a title in both languages', () => {
@@ -64,10 +64,10 @@ describe('Hungarian grammar syllabus (lang = hu)', () => {
     }
   });
 
-  it('lists exactly the 75 lesson files, in the registry order (none missing, none orphaned)', () => {
+  it('lists exactly the 76 lesson files, in the registry order (none missing, none orphaned)', () => {
     const ids = topics().map((t) => t.id);
-    expect(ids).toHaveLength(75);
-    expect(new Set(ids).size).toBe(75);
+    expect(ids).toHaveLength(76);
+    expect(new Set(ids).size).toBe(76);
     expect([...ids].sort()).toEqual([...files].sort());
     expect(getGrammarTopicIds('hu')).toEqual(ids);
     expect(HU_GRAMMAR_INDEX.map((e) => e.id)).toEqual(ids);
@@ -83,7 +83,7 @@ describe('Hungarian grammar syllabus (lang = hu)', () => {
       expect(lesson.level).toBe(t.level);
       expect(lessonKinds('hu', t.id)).toEqual(['choice', 'form', 'why']);
     }
-    expect(getGrammarTopics('hu')).toHaveLength(75);
+    expect(getGrammarTopics('hu')).toHaveLength(76);
   });
 
   it('every topic has a band (not the default, bar the one C1 lesson set to full) and the A1 → C1 chain of next lessons is unbroken', () => {

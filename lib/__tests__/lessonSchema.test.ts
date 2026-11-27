@@ -275,8 +275,8 @@ const huLessons: [string, LessonV2][] = fs
   .map((f) => [f, JSON.parse(fs.readFileSync(path.join(HU_DIR, f), 'utf8')) as LessonV2] as [string, LessonV2]);
 
 describe('Hungarian course lessons', () => {
-  it('are the 75 lessons of the course', () => {
-    expect(huLessons).toHaveLength(75);
+  it('are the 76 lessons of the course', () => {
+    expect(huLessons).toHaveLength(76);
   });
 });
 

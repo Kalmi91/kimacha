@@ -3,6 +3,7 @@
 
 export const HU_GRAMMAR_DE: Record<string, () => Record<string, string>> = {
   'kiejtes-abc': () => require('@/data/games/grammar-de/hu/kiejtes-abc.json'),
+  'betuzes': () => require('@/data/games/grammar-de/hu/betuzes.json'),
   'hangrend': () => require('@/data/games/grammar-de/hu/hangrend.json'),
   'lenni-van': () => require('@/data/games/grammar-de/hu/lenni-van.json'),
   'nevelok': () => require('@/data/games/grammar-de/hu/nevelok.json'),

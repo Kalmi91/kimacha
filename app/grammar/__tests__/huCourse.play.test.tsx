@@ -1,5 +1,5 @@
 // The Hungarian grammar course, walked the way a learner walks it (es→hu and en→hu): the grammar tab
-// lists the 75 topics (A1 to C1) instead of a coming-soon note, a lesson opens with its explanation in the
+// lists the 76 topics (A1 to C1) instead of a coming-soon note, a lesson opens with its explanation in the
 // learner's own language, and everything Hungarian is read with the Hungarian voice.
 
 jest.mock('expo-speech', () => ({
@@ -49,13 +49,13 @@ describe.each([
     (speakSequence as jest.Mock).mockClear();
   });
 
-  it('the grammar tab lists the course, A1 with 24 topics, A2 16, B1 17, B2 12, C1 6, units titled in the learner\'s language', async () => {
+  it('the grammar tab lists the course, A1 with 25 topics, A2 16, B1 17, B2 12, C1 6, units titled in the learner\'s language', async () => {
     const view = render(<GrammarSyllabusScreen />);
     await flush(4);
 
     expect(screen.queryByTestId('grammar-coming-soon')).toBeNull();
     expect(screen.queryByText(unitTitle)).toBeTruthy();
-    expect(screen.getAllByTestId(/^grammar-topic-/)).toHaveLength(24);
+    expect(screen.getAllByTestId(/^grammar-topic-/)).toHaveLength(25);
     expect(screen.getAllByTestId(/^grammar-level-[ABC][12]$/)).toHaveLength(5);
 
     fireEvent.press(screen.getByTestId('grammar-level-A2'));
