@@ -385,3 +385,44 @@ export function rankBoard(entries: BoardEntry[], weekStart: string, callerOwner:
   const at = ranked.findIndex((e) => e.owner === callerOwner);
   return { rows, me: at < 0 ? null : { rank: at + 1, xp: ranked[at].xp, minutes: ranked[at].minutes, name: ranked[at].name } };
 }
+
+// Anonymous funnel counters (POST /api/event): daily totals per shared-link label and step, no identifier, no address.
+export const FUNNEL_EVENTS = ['site', 'open', 'start', 'cards5', 'account', 'return'] as const;
+export type FunnelEvent = (typeof FUNNEL_EVENTS)[number];
+export const FUNNEL_SRC_DEFAULT = 'direct';
+export const FUNNEL_SRC_OVERFLOW = 'other';
+export const FUNNEL_MAX_SRC_PER_DAY = 40; // distinct src values stored per UTC day; a new one beyond it is counted as 'other'
+export const FUNNEL_MAX_EVENTS_PER_DAY = 20_000; // sum of counts per UTC day; beyond it events are dropped (answer stays 200)
+
+/** The link label: 1-24 of a-z, 0-9, '-' as is, anything else (missing, wrong type, uppercase, too long) is 'direct'. */
+export function parseFunnelSrc(raw: unknown): string {
+  return typeof raw === 'string' && /^[a-z0-9-]{1,24}$/.test(raw) ? raw : FUNNEL_SRC_DEFAULT;
+}
+
+export function parseFunnelEvent(body: unknown): { event: FunnelEvent; src: string } | null {
+  if (typeof body !== 'object' || body === null || Array.isArray(body)) return null;
+  const { event, src } = body as Record<string, unknown>;
+  const known = FUNNEL_EVENTS.find((e) => e === event);
+  return known ? { event: known, src: parseFunnelSrc(src) } : null;
+}
+
+export type FunnelRow = { day: string; src: string; event: string; count: number };
+export type FunnelStat = { src: string; site: number; open: number; start: number; cards5: number; account: number; return: number; firstDay: string; lastDay: string };
+
+/** The funnel rows as one line per src (counts summed over all days), the most opens first, then by src. */
+export function toFunnelStats(rows: FunnelRow[]): FunnelStat[] {
+  const bySrc = new Map<string, FunnelStat>();
+  for (const r of rows) {
+    const known = FUNNEL_EVENTS.find((e) => e === r.event);
+    if (!known) continue;
+    let s = bySrc.get(r.src);
+    if (!s) {
+      s = { src: r.src, site: 0, open: 0, start: 0, cards5: 0, account: 0, return: 0, firstDay: r.day, lastDay: r.day };
+      bySrc.set(r.src, s);
+    }
+    s[known] += r.count;
+    if (r.day < s.firstDay) s.firstDay = r.day;
+    if (r.day > s.lastDay) s.lastDay = r.day;
+  }
+  return [...bySrc.values()].sort((a, b) => b.open - a.open || (a.src < b.src ? -1 : a.src > b.src ? 1 : 0));
+}

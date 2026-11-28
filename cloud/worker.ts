@@ -6,8 +6,8 @@
 import { DurableObject } from 'cloudflare:workers';
 import { nameKey } from '../lib/cloud/validate';
 import { ADMIN_PAGE } from './admin';
-import { BOARD_JOINS_PER_DAY, BOARD_RETENTION_DAYS, adminAuthorized, afterBadPin, afterBadPinForName, bearerToken, boardToday, clientIp, displayName, lockRemainingSec, mergeBoardMinutes, parseBaseRev, parseBoardDays, parseBoardMetric, parseBoardMinutes, parseBoardName, parseLogin, parsePayload, rankBoard, safeEqual, secondsToNextUtcDay, toAdminStats, toHex, weekStartOf } from './logic';
-import type { AdminUserRow } from './logic';
+import { BOARD_JOINS_PER_DAY, BOARD_RETENTION_DAYS, FUNNEL_MAX_EVENTS_PER_DAY, FUNNEL_MAX_SRC_PER_DAY, FUNNEL_SRC_OVERFLOW, adminAuthorized, afterBadPin, afterBadPinForName, bearerToken, boardToday, clientIp, displayName, lockRemainingSec, mergeBoardMinutes, parseBaseRev, parseBoardDays, parseBoardMetric, parseBoardMinutes, parseBoardName, parseFunnelEvent, parseLogin, parsePayload, rankBoard, safeEqual, secondsToNextUtcDay, toAdminStats, toFunnelStats, toHex, weekStartOf } from './logic';
+import type { AdminUserRow, FunnelRow } from './logic';
 
 interface Env {
   ASSETS: Fetcher;
@@ -90,6 +90,8 @@ export class KimachaUsers extends DurableObject<Env> {
     sql.exec('CREATE TABLE IF NOT EXISTS board_joins (ip TEXT NOT NULL, day TEXT NOT NULL, count INTEGER NOT NULL DEFAULT 0, PRIMARY KEY (ip, day))');
     // An account that left the board (DELETE /api/board/me) stays off it: its next automatic push would otherwise put it back.
     sql.exec('CREATE TABLE IF NOT EXISTS board_optout (name_key TEXT PRIMARY KEY)');
+    // Anonymous daily totals per shared-link label; no identifier, no address.
+    sql.exec('CREATE TABLE IF NOT EXISTS funnel (day TEXT NOT NULL, src TEXT NOT NULL, event TEXT NOT NULL, count INTEGER NOT NULL DEFAULT 0, PRIMARY KEY (day, src, event))');
   }
 
   async fetch(req: Request): Promise<Response> {
@@ -107,6 +109,7 @@ export class KimachaUsers extends DurableObject<Env> {
       if (pathname === '/api/board/me') return req.method === 'DELETE' ? await this.deleteBoardMe(req) : this.wrongMethod();
       if (pathname === '/api/board') return req.method === 'GET' ? await this.getBoard(req) : this.wrongMethod();
       if (pathname === '/api/admin/stats') return req.method === 'GET' ? this.adminStats(req) : this.wrongMethod();
+      if (pathname === '/api/event') return req.method === 'POST' ? this.funnelEvent(await readJson(req)) : this.wrongMethod();
       return json({ error: 'not_found' }, 404);
     } catch {
       return json({ error: 'server_error' }, 500);
@@ -357,7 +360,26 @@ export class KimachaUsers extends DurableObject<Env> {
         FROM users u LEFT JOIN tokens t ON t.name_key = u.name_key GROUP BY u.name_key`,
       )
       .toArray();
-    return json({ users: toAdminStats(rows, new Date().toISOString().slice(0, 10)) });
+    const funnel = this.ctx.storage.sql.exec<FunnelRow>('SELECT day, src, event, count FROM funnel').toArray();
+    return json({ users: toAdminStats(rows, new Date().toISOString().slice(0, 10)), funnel: toFunnelStats(funnel) });
+  }
+
+  // Counts one step for a shared-link label. Reads and stores nothing about the caller (no address, no header), and does not log.
+  private funnelEvent(body: unknown): Response {
+    const parsed = parseFunnelEvent(body);
+    if (!parsed) return json({ error: 'bad_input' }, 400);
+    const sql = this.ctx.storage.sql;
+    const day = new Date().toISOString().slice(0, 10);
+    const total = sql.exec<{ total: number | null }>('SELECT SUM(count) AS total FROM funnel WHERE day = ?', day).toArray()[0]?.total ?? 0;
+    if (total >= FUNNEL_MAX_EVENTS_PER_DAY) return json({});
+    let src = parsed.src;
+    const known = sql.exec<{ n: number }>('SELECT COUNT(*) AS n FROM funnel WHERE day = ? AND src = ?', day, src).toArray()[0]?.n ?? 0;
+    if (known === 0) {
+      const distinct = sql.exec<{ n: number }>('SELECT COUNT(DISTINCT src) AS n FROM funnel WHERE day = ?', day).toArray()[0]?.n ?? 0;
+      if (distinct >= FUNNEL_MAX_SRC_PER_DAY) src = FUNNEL_SRC_OVERFLOW;
+    }
+    sql.exec('INSERT INTO funnel (day, src, event, count) VALUES (?, ?, ?, 1) ON CONFLICT(day, src, event) DO UPDATE SET count = count + 1', day, src, parsed.event);
+    return json({});
   }
 }
 
