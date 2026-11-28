@@ -12,6 +12,7 @@ import { speechLang } from '@/lib/languages';
 import type { GrammarTopicData } from '@/lib/games/content';
 import { pickMatchDistractors } from '@/lib/grammar/matchDistractors';
 import { strictAnswerMatch } from '@/lib/answerMatch';
+import { bestOn } from '@/constants/Skins';
 import { hashString, shuffleNoFixedPoints } from '@/lib/shuffle';
 import { useDockedAction } from '@/components/learn/DockSlot';
 import { useFocusOnNewCard } from '@/lib/learn/useFocusOnNewCard';
@@ -80,6 +81,13 @@ export function MatchDrillItem({
 
   const done = matched.size === n;
   const lostPairs = [...errLefts].filter((li) => li < n).length;
+  // a solved pair is the success colour (the same token as the AnswerFeedbackBox's right answer), the selected tile the accent.
+  const success = g.extra?.success ?? colors.success;
+  const onSuccess = bestOn(success, [g.ink, g.bg]);
+  // Next is a bar docked at the bottom (DockSlot), as everywhere; without a host the item draws the inline button.
+  const { docked, padBottom } = useDockedAction(
+    done ? { tone: 'next', testID: 'grammar-next', onPress: () => onDone(!hadWrong, n - lostPairs) } : null
+  );
 
   // a pair attempt: one left cell and one right cell, whichever side was picked first (FB760).
   const attempt = (left: number, pos: number) => {
@@ -134,15 +142,15 @@ export function MatchDrillItem({
       <BrutalBox
         key={key}
         testID={testID}
-        fill={state === 'matched' ? 'a' : state === 'selected' ? 'b' : 'paper'}
+        fill={state === 'selected' ? 'b' : 'paper'}
         dashed={state === 'wrong'}
         style={state === 'wrong' ? styles.brutalDim : undefined}
-        boxStyle={styles.brutalMatchInner}
+        boxStyle={[styles.brutalMatchInner, state === 'matched' ? { backgroundColor: success } : null]}
         onPress={onPress}
         disabled={state === 'matched'}
       >
-        <Text style={[styles.matchCellText, { color: state === 'matched' ? g.onA : state === 'selected' ? g.onB : g.ink }]}>{text}</Text>
-        {state === 'matched' ? <Text style={[styles.matchCellText, { color: g.onFill }]}> ✓</Text> : null}
+        <Text style={[styles.matchCellText, { color: state === 'matched' ? onSuccess : state === 'selected' ? g.onB : g.ink }]}>{text}</Text>
+        {state === 'matched' ? <Text style={[styles.matchCellText, { color: onSuccess }]}> ✓</Text> : null}
       </BrutalBox>
     );
     return (
@@ -176,9 +184,10 @@ export function MatchDrillItem({
         {done ? (
           <>
             <AnswerFeedbackBox correct={!hadWrong} badgeLabel={hadWrong ? s.games.wrongFeedback : s.games.correctFeedback} style={styles.brutalFeedback} />
-            <BrutalInkButton g={g} testID="grammar-next" label={s.grammar.nextArrow} onPress={() => onDone(!hadWrong, n - lostPairs)} />
+            {docked ? null : <BrutalInkButton g={g} testID="grammar-next" label={s.grammar.nextArrow} onPress={() => onDone(!hadWrong, n - lostPairs)} />}
           </>
         ) : null}
+        {docked ? <View style={{ height: padBottom }} /> : null}
       </View>
     );
   }
@@ -193,8 +202,8 @@ export function MatchDrillItem({
             const isMatched = matched.has(li);
             const isSelected = selectedLeft === li;
             const isWrong = wrongPair?.left === li;
-            const bg = isMatched ? colors.successFill + '22' : isWrong ? '#EF444422' : isSelected ? colors.tint + '22' : colors.card;
-            const border = isMatched ? colors.successFill : isWrong ? '#EF4444' : isSelected ? colors.tint : colors.tabIconDefault;
+            const bg = isMatched ? success + '22' : isWrong ? '#EF444422' : isSelected ? colors.tint + '22' : colors.card;
+            const border = isMatched ? success : isWrong ? '#EF4444' : isSelected ? colors.tint : colors.tabIconDefault;
             return (
               <Pressable
                 key={li}
@@ -213,8 +222,8 @@ export function MatchDrillItem({
             const isMatched = matched.has(pairId);
             const isWrong = wrongPair?.right === pos;
             const isSelected = selectedRight === pos;
-            const bg = isMatched ? colors.successFill + '22' : isWrong ? '#EF444422' : isSelected ? colors.tint + '22' : colors.card;
-            const border = isMatched ? colors.successFill : isWrong ? '#EF4444' : isSelected ? colors.tint : colors.tabIconDefault;
+            const bg = isMatched ? success + '22' : isWrong ? '#EF444422' : isSelected ? colors.tint + '22' : colors.card;
+            const border = isMatched ? success : isWrong ? '#EF4444' : isSelected ? colors.tint : colors.tabIconDefault;
             return (
               <Pressable
                 key={pos}
@@ -231,11 +240,14 @@ export function MatchDrillItem({
       </View>
       {done ? (
         <AnswerFeedbackBox correct={!hadWrong} badgeLabel={hadWrong ? s.games.wrongFeedback : s.games.correctFeedback} style={styles.explainCard}>
-          <Pressable testID="grammar-next" style={[styles.btn, { backgroundColor: colors.tint, marginTop: 12 }]} onPress={() => onDone(!hadWrong, n - lostPairs)}>
-            <Text style={[styles.btnText, { color: colors.onTint }]}>{s.games.understood}</Text>
-          </Pressable>
+          {docked ? null : (
+            <Pressable testID="grammar-next" style={[styles.btn, { backgroundColor: colors.tint, marginTop: 12 }]} onPress={() => onDone(!hadWrong, n - lostPairs)}>
+              <Text style={[styles.btnText, { color: colors.onTint }]}>{s.games.understood}</Text>
+            </Pressable>
+          )}
         </AnswerFeedbackBox>
       ) : null}
+      {docked ? <View style={{ height: padBottom }} /> : null}
     </View>
   );
 }
@@ -315,8 +327,10 @@ export function FormDrillItem({
   // Check (and then Next) is a bar docked above the keyboard, as on the word card (DockSlot).
   const { docked, padBottom } = useDockedAction(
     checked
-      ? { label: g.brutal ? s.grammar.nextArrow : s.games.understood, tone: 'next', testID: 'grammar-next', onPress: () => onDone(correct, value), secondary: mistypedDock(!correct, () => onDone(true)) }
-      : { label: `✓ ${s.grammar.check}`, tone: 'check', testID: 'formCheck', onPress: check }
+      ? { tone: 'next', testID: 'grammar-next', onPress: () => onDone(correct, value), secondary: mistypedDock(!correct, () => onDone(true)) }
+      : tableOpen
+        ? null
+        : { label: `✓ ${s.grammar.check}`, tone: 'check', testID: 'formCheck', onPress: check }
   );
 
   // brutalist inflection drill: the prompt in a box, the input field has a 2.5 px ink
