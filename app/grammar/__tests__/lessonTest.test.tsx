@@ -87,10 +87,10 @@ const solve = async (q: LessonTestQuestion, ok: boolean) => {
     throw new Error('presente-regular nem tartalmaz ilyen kártyát');
   }
   if (!ok) {
-    expect(screen.getByText('Not quite!')).toBeTruthy();
+    expect(screen.getByText('Not quite')).toBeTruthy();
     await press('exam-next');
   } else {
-    expect(screen.queryByText('Not quite!')).toBeNull();
+    expect(screen.queryByText('Not quite')).toBeNull();
   }
 };
 

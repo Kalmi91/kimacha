@@ -138,7 +138,7 @@ describe('Practice tab: the Opposites mode', () => {
     await startOpposites(view);
     const { id, question } = await headWord();
     await press(view, `opposites-option-${await rightIndex()}`);
-    expect(view.getByText('Correct!')).toBeTruthy();
+    expect(view.getByText('Correct')).toBeTruthy();
     expect(view.getByTestId('opposites-result')).toBeTruthy();
     expect(await halves(id)).toBe(1);
     // a second tap on the same word changes and credits nothing
@@ -159,7 +159,7 @@ describe('Practice tab: the Opposites mode', () => {
     const { id, question } = await headWord();
     const before = await getDb().getPcicCard(id);
     await press(view, `opposites-option-${await wrongIndex()}`);
-    expect(view.getByText('Wrong')).toBeTruthy();
+    expect(view.getByText('Not quite')).toBeTruthy();
     expect(view.getByTestId('opposites-answer').props.children).toBe(`The opposite: ${oppositeText(findPcicItem(question.answer)!)}`);
     const after = await getDb().getPcicCard(id);
     expect(after).toMatchObject({ halfSteps: 0, wrongStreak: 0, state: before!.state, interval: before!.interval, due: before!.due });

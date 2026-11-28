@@ -96,11 +96,11 @@ const runExam = async (screen: Screen, wrong: number[] = []) => {
     await steps[i](screen, ok);
     if (!ok) {
       // After a wrong answer the correct one is shown, and only Next moves on.
-      expect(screen.getByText('Not quite!')).toBeTruthy();
+      expect(screen.getByText('Not quite')).toBeTruthy();
       await press(screen, 'exam-next');
     } else if (i < steps.length - 1) {
       // After a correct answer there is no feedback, the exam goes on.
-      expect(screen.queryByText('Not quite!')).toBeNull();
+      expect(screen.queryByText('Not quite')).toBeNull();
       expect(screen.queryByTestId('exam-next')).toBeNull();
     }
   }
@@ -475,7 +475,7 @@ describe('level exam: spoken item with the keyboard microphone', () => {
     await press(screen, 'exam-start');
     await dictate(screen, 'yo como en casa');
     expect(screen.getByTestId('exam-counter').props.children).toBe('Question 2 / 2');
-    expect(screen.queryByText('Not quite!')).toBeNull();
+    expect(screen.queryByText('Not quite')).toBeNull();
     await solve.choice(screen, true);
 
     expect(screen.getByTestId('exam-score').props.children).toBe('2 / 2 · 100%');

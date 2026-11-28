@@ -3,8 +3,8 @@ import type en from '../en/learn';
 const de: typeof en = {
   card: {
     check: 'Prüfen',
-    correct: 'Richtig!',
-    wrong: 'Falsch',
+    correct: 'Richtig',
+    wrong: 'Nicht ganz',
     next: 'Weiter',
     typeSentence: 'Tippe den Satz ein',
     typeIn: (lang: string): string =>
@@ -12,8 +12,8 @@ const de: typeof en = {
   },
   games: {
     understood: 'Verstanden',
-    correctFeedback: 'Richtig!',
-    wrongFeedback: 'Nicht ganz!',
+    correctFeedback: 'Richtig',
+    wrongFeedback: 'Nicht ganz',
     grammarChoice: {
       progress: (current: number, total: number) => `${current} / ${total}`,
       markPrompt: (wordClass: string) => `Tippe im Satz auf: ${wordClass}.`,

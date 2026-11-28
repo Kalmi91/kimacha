@@ -72,7 +72,7 @@ describe.each([
     fireEvent.changeText(screen.getByTestId('cloze-input-1'), 'tengo');
     fireEvent.changeText(screen.getByTestId('cloze-input-2'), 'es');
     fireEvent.press(screen.getByTestId('cloze-check'));
-    expect(screen.getByText('Not quite!')).toBeTruthy();
+    expect(screen.getByText('Not quite')).toBeTruthy();
     expect(screen.getByTestId('answer-compare-typed')).toHaveTextContent('Me llamo Ana. soy de México y tengo 25 años. Mi casa es cerca del centro.');
     expect(screen.getByTestId('answer-compare-correct')).toHaveTextContent('Me llamo Ana. soy de México y tengo 25 años. Mi casa está cerca del centro.');
   });

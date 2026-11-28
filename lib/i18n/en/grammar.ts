@@ -30,7 +30,7 @@ export default {
     continueTag: 'continue →',
     // brutalist drill.
     comboLabel: (n: number) => `combo x${n}`,
-    perfect: 'perfect!',
+    perfect: 'Correct',
     nextArrow: 'next →',
     // brutalist round end.
     mistakesTitle: 'Mistakes:',

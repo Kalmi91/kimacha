@@ -65,7 +65,7 @@ describe('GrammarDrill: match item', () => {
     fireEvent.press(screen.getByTestId('match-left-1')); // we are
     fireEvent.press(screen.getByText('somos'));
 
-    expect(screen.queryByText('Correct!')).toBeTruthy();
+    expect(screen.queryByText('Correct')).toBeTruthy();
     fireEvent.press(screen.getByTestId('grammar-next'));
 
     // Then the form item follows (spec order: gap/mark, match, form).

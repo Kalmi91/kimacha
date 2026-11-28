@@ -12,7 +12,7 @@ import { pcicAlternatives, type PcicGrade } from '@/lib/pcicMatch';
 import { sourceFor, type Lang } from '@/lib/languagePair';
 import { exampleIn, wordIn } from '@/lib/pcicItemText';
 import { sm2PreviewDays, type Sm2Card, type Sm2Grade } from '@/lib/sm2';
-import ResultBadge from '@/components/ResultBadge';
+import AnswerFeedbackBox from '@/components/grammar/AnswerFeedbackBox';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { BrutalBox, actionTextColor, useButtonVariant } from '@/components/grammar/Brutal';
 import SpeakButton from '@/components/SpeakButton';
@@ -106,9 +106,8 @@ export default function PcicRevealedAnswer({
 
   return (
     <>
-      <View style={styles.resultSection}>
-        {/* a single right / wrong signal, identical on every card (colour + shape + ✓/✗ + text). */}
-        <ResultBadge correct={nextGrade === 'good'} align="center" testID="pcic-result-badge" />
+      {/* a single right / wrong signal, identical on every card: the answer box (border + ✓/✗ + text). */}
+      <AnswerFeedbackBox correct={nextGrade === 'good'} testID="pcic-result-box" badgeTestID="pcic-result-badge" style={styles.resultSection}>
         {!typedExact && (
         <Text testID="pcic-diff-line" style={styles.diffLine}>
           {charDiff(typedAnswer, grade.best, { case: true, accents: false }).map((d, i) => (
@@ -183,7 +182,7 @@ export default function PcicRevealedAnswer({
             {target !== 'es' && <SpainFormLabel forms={sentenceForms} label={s.pcic.spainLabel} color={colors.text} testID="pcic-example-gloss-spain" />}
           </>
         )}
-      </View>
+      </AnswerFeedbackBox>
 
       {/* the old (pre-PR #27) Knew it / Didn't know
           button row is back, with the interval preview; the tap decides and

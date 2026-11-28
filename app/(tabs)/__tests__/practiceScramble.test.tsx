@@ -146,7 +146,7 @@ describe('Practice tab: the Scramble mode', () => {
     expect(mockSpeak).not.toHaveBeenCalled();
     await tapRight(view);
     expect(mockSpeak).toHaveBeenLastCalledWith(word.say, speechLang('es'));
-    expect(view.getByText('Correct!')).toBeTruthy();
+    expect(view.getByText('Correct')).toBeTruthy();
     expect(await halves(id)).toBe(1);
     await press(view, 'scramble-next');
     expect(view.getByText('2/8')).toBeTruthy();

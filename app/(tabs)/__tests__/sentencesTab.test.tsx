@@ -375,7 +375,7 @@ describe('FB502: the "Correct" feedback is centered', () => {
     await flush();
     build(r, SENT[current(r)].tiles);
     check(r);
-    expect(r.getByText('Correct!')).toBeTruthy();
+    expect(r.getByText('Correct')).toBeTruthy();
     expect(r.UNSAFE_getByType(ResultBadge).props.align).toBe('center');
     r.unmount();
     await clearSentenceRound(getDb());
@@ -383,7 +383,7 @@ describe('FB502: the "Correct" feedback is centered', () => {
     const typing = render(<SentencesScreen />);
     await flush();
     typeIt(typing, SENT[current(typing)].typed);
-    expect(typing.getByText('Correct!')).toBeTruthy();
+    expect(typing.getByText('Correct')).toBeTruthy();
     expect(typing.UNSAFE_getByType(ResultBadge).props.align).toBe('center');
   });
 });
@@ -912,7 +912,7 @@ describe('rung 2: listen and type (FB523/FB524, always on since FB570)', () => {
     expect(mockSpeak).not.toHaveBeenCalledWith('The cat.', expect.any(String), expect.anything());
     typeIt(r, 'el gato');
     expect(r.getByText('The cat.')).toBeTruthy(); // shown after the check
-    expect(r.getByText('Correct!')).toBeTruthy();
+    expect(r.getByText('Correct')).toBeTruthy();
     next(r);
     await flush(24);
     expect(mockRecord).not.toHaveBeenCalled(); // nothing is credited

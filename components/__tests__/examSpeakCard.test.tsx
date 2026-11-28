@@ -62,14 +62,14 @@ describe('ExamSpeakCard', () => {
     say(screen, 'yo como en casa');
     expect(screen.onDone).toHaveBeenCalledWith(true);
     expect(screen.queryByTestId('exam-next')).toBeNull();
-    expect(screen.queryByText('Not quite!')).toBeNull();
+    expect(screen.queryByText('Not quite')).toBeNull();
   });
 
   it('wrong dictation: the differing words are highlighted on both sides, Next advances', () => {
     const screen = renderCard();
     say(screen, 'yo bebo en casa');
     expect(screen.onDone).not.toHaveBeenCalled();
-    expect(screen.getByText('Not quite!')).toBeTruthy();
+    expect(screen.getByText('Not quite')).toBeTruthy();
     expect(screen.getByText('You said')).toBeTruthy();
     expect(screen.getAllByTestId('exam-speak-extra').map((n) => n.props.children.join(''))).toEqual([' bebo']);
     expect(screen.getAllByTestId('exam-speak-missing').map((n) => n.props.children.join(''))).toEqual([' como']);

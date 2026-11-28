@@ -128,7 +128,7 @@ describe('Night polish', () => {
     expect(flat('ok')).toMatchObject({ backgroundColor: '#F472B6' });
     expect(JSON.stringify(flat('ok'))).not.toContain('experimental_');
     expect(screen.getByTestId('result-badge-gradient')).toBeTruthy();
-    expect(StyleSheet.flatten(screen.getByText('Correct!').props.style).color).toBe('#1F0A16');
+    expect(StyleSheet.flatten(screen.getByText('Correct').props.style).color).toBe('#1F0A16');
     expect(StyleSheet.flatten(screen.getByText('✓').props.style).color).toBe('#1F0A16');
     expect(flat('bad')).toMatchObject({ borderRadius: 12, borderStyle: 'dashed' });
     expect(JSON.stringify(flat('bad'))).not.toContain('gradient');

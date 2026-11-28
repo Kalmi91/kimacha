@@ -144,12 +144,12 @@ describe('Practice tab keeps its round across blur and focus', () => {
     const view = await mount();
     await next(view);
     await answer(view, 1);
-    expect(view.getByText('Correct!')).toBeTruthy();
+    expect(view.getByText('Correct')).toBeTruthy();
 
     await refocus();
 
     expect(view.getByText('1/5')).toBeTruthy();
-    expect(view.getByText('Correct!')).toBeTruthy();
+    expect(view.getByText('Correct')).toBeTruthy();
     await next(view);
     expect(view.getByText('2/5')).toBeTruthy();
     view.unmount();

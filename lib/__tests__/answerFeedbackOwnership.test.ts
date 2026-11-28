@@ -42,6 +42,27 @@ describe('one answer feedback box', () => {
     expect(stale).toEqual([]);
   });
 
+  // Q5 (2026-11-27): the word card, the random round and the tense drill show a result in the same box.
+  it.each(['app/grammar/random.tsx', 'app/grammar/tense-drill.tsx', 'components/learn/PcicRevealedAnswer.tsx'])(
+    '%s shows its result in AnswerFeedbackBox',
+    (rel) => {
+      const src = fs.readFileSync(path.join(ROOT, rel), 'utf8');
+      expect(/import\s+AnswerFeedbackBox\s+from\s*['"][^'"]*\/AnswerFeedbackBox['"]/.test(src)).toBe(true);
+      expect(src.includes('<AnswerFeedbackBox')).toBe(true);
+    }
+  );
+
+  it('components/learn renders no bare ResultBadge', () => {
+    const bad = walk(path.join(ROOT, 'components', 'learn'))
+      .filter((f) => fs.readFileSync(f, 'utf8').includes('<ResultBadge'))
+      .map((f) => path.relative(ROOT, f).split(path.sep).join('/'));
+    expect(bad).toEqual([]);
+  });
+
+  it('tense-drill renders no bare ResultBadge', () => {
+    expect(files.find((f) => f.rel === 'app/grammar/tense-drill.tsx')?.src.includes('<ResultBadge')).toBe(false);
+  });
+
   it('no filled result box (resultFill) and no BrutalFeedback remains', () => {
     const bad = files.filter((f) => /\bresultFill\(|\bBrutalFeedback\b/.test(f.src)).map((f) => `${f.rel}: use AnswerFeedbackBox`);
     expect(bad).toEqual([]);
