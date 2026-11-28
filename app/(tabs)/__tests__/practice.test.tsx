@@ -251,10 +251,10 @@ describe('Practice tab: the questions', () => {
     await toQuestions(view);
     const q = (await questions())[0];
     await answer(view, 1);
-    expect(view.getByText('Correct!')).toBeTruthy();
+    expect(view.getByText('Correct')).toBeTruthy();
     if (q.kind === 'meaning') {
       expect(view.getByTestId('practice-explanation').props.children).toBe(`“${q.word}” means ${q.options[q.correct]}`);
-      expect(view.getByTestId(`practice-option-${q.correct}`).props.accessibilityLabel).toBe(`${q.options[q.correct]}, Correct!`);
+      expect(view.getByTestId(`practice-option-${q.correct}`).props.accessibilityLabel).toBe(`${q.options[q.correct]}, Correct`);
     }
     expect(view.getByText('Next →')).toBeTruthy();
     view.unmount();
@@ -266,11 +266,11 @@ describe('Practice tab: the questions', () => {
     await toQuestions(view);
     const q = (await questions())[0];
     await answer(view, 1, false);
-    expect(view.getByText('Wrong')).toBeTruthy();
-    expect(view.queryByText('Correct!')).toBeNull();
+    expect(view.getByText('Not quite')).toBeTruthy();
+    expect(view.queryByText('Correct')).toBeNull();
     // a second tap on the right option changes nothing
     await press(view, `practice-option-${q.correct}`);
-    expect(view.getByText('Wrong')).toBeTruthy();
+    expect(view.getByText('Not quite')).toBeTruthy();
     expect((await saved())!.picks[0]).toBe((q.correct + 1) % optionCount(q));
     view.unmount();
   });
@@ -436,7 +436,7 @@ describe('Practice tab: the round survives leaving the tab and the app', () => {
 
     const second = await mount();
     expect(second.getByText('1/5')).toBeTruthy();
-    expect(second.getByText('Wrong')).toBeTruthy();
+    expect(second.getByText('Not quite')).toBeTruthy();
     expect(second.getByText('Next →')).toBeTruthy();
     await next(second);
     expect(second.getByText('2/5')).toBeTruthy();

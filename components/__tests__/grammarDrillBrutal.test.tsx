@@ -47,7 +47,7 @@ describe('GrammarDrill, neo-brutalist', () => {
     // correct = the fill + a check mark, feedback box + next button
     const options = screen.getAllByTestId('grammar-option');
     expect(StyleSheet.flatten(options[items[0].correctIndex].props.style).backgroundColor).toBe(PALETTE_FILLS.brand.a);
-    expect(screen.queryByText('perfect!')).toBeTruthy();
+    expect(screen.queryByText('Correct')).toBeTruthy();
     // the shared "right" badge (ResultBadge) also shows a ✓, so we look inside the correct option.
     expect(within(options[items[0].correctIndex]).queryByText(' ✓')).toBeTruthy();
     expect(screen.queryByTestId('grammar-combo')).toBeNull();
@@ -60,7 +60,7 @@ describe('GrammarDrill, neo-brutalist', () => {
     const wrong = (items[2].correctIndex + 1) % items[2].options.length;
     pick(wrong);
     expect(screen.queryByTestId('grammar-combo')).toBeNull();
-    expect(screen.queryByText('Not quite!')).toBeTruthy();
+    expect(screen.queryByText('Not quite')).toBeTruthy();
     view.unmount();
   });
 
@@ -111,7 +111,7 @@ describe('GrammarDrill, neo-brutalist', () => {
     });
     expect(front('match-left-0').backgroundColor).toBe(PALETTE_FILLS.brand.a);
     expect(screen.queryAllByText(' ✓').length).toBeGreaterThan(0);
-    expect(screen.queryByText('Not quite!')).toBeTruthy();
+    expect(screen.queryByText('Not quite')).toBeTruthy();
     fireEvent.press(screen.getByTestId('grammar-next'));
     // the lesson has two matching items; we solve the second one without mistakes.
     const second = items.map((r) => r.item).filter((i) => (i as { kind?: string }).kind === 'match')[1] as unknown as {
@@ -134,7 +134,7 @@ describe('GrammarDrill, neo-brutalist', () => {
     fireEvent.changeText(screen.getByTestId('formInput'), 'zzz');
     expect(dashedCount()).toBe(0);
     fireEvent.press(screen.getByTestId('formCheck'));
-    expect(screen.queryByText('Not quite!')).toBeTruthy();
+    expect(screen.queryByText('Not quite')).toBeTruthy();
     // the input box + the feedback box + the ✗ badge with a dashed border (the wrong answer differs in shape too)
     expect(dashedCount()).toBe(3);
     fireEvent.press(screen.getByTestId('grammar-next'));
@@ -151,7 +151,7 @@ describe('GrammarDrill, neo-brutalist', () => {
     const picked = options.findIndex((_, i) => i !== item.correctIndex);
     fireEvent.press(options[picked]);
     expect(StyleSheet.flatten(screen.getAllByTestId('grammar-option')[picked].props.style).borderStyle).toBe('dashed');
-    expect(screen.queryByText('Not quite!')).toBeTruthy();
+    expect(screen.queryByText('Not quite')).toBeTruthy();
     fireEvent.press(screen.getByTestId('grammar-next'));
     view.unmount();
   });

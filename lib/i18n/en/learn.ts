@@ -5,8 +5,8 @@ export default {
   // PCIC screen's feedback.
   card: {
     check: 'Check',
-    correct: 'Correct!',
-    wrong: 'Wrong',
+    correct: 'Correct',
+    wrong: 'Not quite',
     next: 'Next',
     typeSentence: 'Type the sentence',
     // the grey placeholder of the answer input field, with the name of the target language.
@@ -17,8 +17,8 @@ export default {
   // (the hub/confusables/myth/… keys went).
   games: {
     understood: 'Got it',
-    correctFeedback: 'Correct!',
-    wrongFeedback: 'Not quite!',
+    correctFeedback: 'Correct',
+    wrongFeedback: 'Not quite',
     grammarChoice: {
       progress: (current: number, total: number) => `${current} / ${total}`,
       markPrompt: (wordClass: string) => `Tap the ${wordClass} in the sentence.`,

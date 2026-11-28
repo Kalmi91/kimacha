@@ -24,10 +24,11 @@ jest.mock('expo-router', () => ({
   useLocalSearchParams: () => ({}),
 }));
 
-import { fireEvent, render, screen } from '@testing-library/react-native';
+import { fireEvent, render, screen, within } from '@testing-library/react-native';
+import { StyleSheet } from 'react-native';
 
 import { getDb } from '@/lib/database.web';
-import { setLanguage } from '@/lib/i18n';
+import { setLanguage, t } from '@/lib/i18n';
 import { speak } from '@/lib/speech';
 import { buildTenseRound } from '@/lib/games/deTenseDrill';
 import GrammarSyllabusScreen from '@/app/(tabs)/course';
@@ -127,6 +128,25 @@ describe('the German tense drill', () => {
     fireEvent.press(screen.getByTestId('tensedrill-again'));
     await flush(4);
     expect(screen.getByText('1 / 10')).toBeTruthy();
+  });
+
+  it('shows the result in the answer box: solid with the badge when right, dashed with the badge and the right form when wrong', async () => {
+    await open('en', 'A1');
+    fireEvent.press(screen.getByTestId('tensedrill-tense-praesens'));
+    fireEvent.press(screen.getByTestId('tensedrill-begin'));
+    await flush(4);
+    const round = buildTenseRound({ level: 'A1', tense: 'praesens', seed: NOW % 2147483647 });
+    await answer(round[0].answer);
+    let box = screen.getByTestId('tensedrill-result');
+    expect(within(box).getByText(t().grammar.correct)).toBeTruthy();
+    expect(within(box).getByTestId('tensedrill-correct')).toBeTruthy();
+    expect(StyleSheet.flatten(box.props.style).borderStyle).toBe('solid');
+    await next();
+    await answer('ich xyz');
+    box = screen.getByTestId('tensedrill-result');
+    expect(within(box).getByText(t().randomRound.wrong)).toBeTruthy();
+    expect(within(box).getByTestId('tensedrill-answer').props.children).toBe(round[1].answer);
+    expect(StyleSheet.flatten(box.props.style).borderStyle).toBe('dashed');
   });
 
   it('grades the umlaut: a form without its dots is wrong', async () => {

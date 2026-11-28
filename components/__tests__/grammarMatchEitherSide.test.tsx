@@ -65,7 +65,7 @@ describe('GrammarDrill: match item from either side', () => {
     fireEvent.press(screen.getByTestId('match-left-0'));
     fireEvent.press(screen.getByText('somos'));
     fireEvent.press(screen.getByTestId('match-left-1'));
-    expect(screen.queryByText('Correct!')).toBeTruthy();
+    expect(screen.queryByText('Correct')).toBeTruthy();
     fireEvent.press(screen.getByTestId('grammar-next'));
     expect(onFinish).toHaveBeenCalledTimes(1);
   });
@@ -111,7 +111,7 @@ describe('GrammarDrill: match item from either side', () => {
     fireEvent.press(screen.getByTestId('match-left-1')); // we are + somos = right pair
     fireEvent.press(screen.getByTestId('match-left-0'));
     fireEvent.press(screen.getByText('soy'));
-    expect(screen.queryByText('Correct!')).toBeTruthy(); // no wrong attempt happened
+    expect(screen.queryByText('Correct')).toBeTruthy(); // no wrong attempt happened
     fireEvent.press(screen.getByTestId('grammar-next'));
     expect(onFinish).toHaveBeenCalledTimes(1);
   });

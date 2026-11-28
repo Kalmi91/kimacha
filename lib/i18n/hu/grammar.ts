@@ -30,7 +30,7 @@ const hu: typeof en = {
     knownFromTestTag: 'A tesztből tudod',
     continueTag: 'folytatás →',
     comboLabel: (n: number) => `kombó x${n}`,
-    perfect: 'tökéletes!',
+    perfect: 'Helyes',
     nextArrow: 'tovább →',
     mistakesTitle: 'Rontott:',
     progressChange: (from: number | null, to: number) => (from === null ? `${to}%` : `${from}% → ${to}%`),

@@ -26,6 +26,7 @@ import type { DeDrillTense } from '@/lib/deConjugate';
 import { DE_DRILL_LEVELS, buildTenseRound, gradeTense, tensesAtLevel, type TenseQuestion } from '@/lib/games/deTenseDrill';
 import type { GrammarMiss } from '@/lib/grammar/roundMiss';
 import GrammarResult from '@/components/grammar/GrammarResult';
+import AnswerFeedbackBox from '@/components/grammar/AnswerFeedbackBox';
 import ScreenFeedback from '@/lib/screenFeedback';
 import { FEEDBACK_CORNER_CLEAR } from '@/components/learn/pcicStyles';
 import XpChip from '@/components/XpChip';
@@ -268,7 +269,7 @@ export default function TenseDrillScreen() {
           />
 
           {checked && (
-            <View style={styles.resultSection}>
+            <AnswerFeedbackBox correct={checked.correct} testID="tensedrill-result" badgeLabel={checked.correct ? s.grammar.correct : s.randomRound.wrong} style={styles.resultSection}>
               {checked.correct ? (
                 <Text testID="tensedrill-correct" style={[styles.correctLine, { color: colors.success }]}>{`✓ ${current.answer}`}</Text>
               ) : (
@@ -286,7 +287,7 @@ export default function TenseDrillScreen() {
                   </View>
                 </>
               )}
-            </View>
+            </AnswerFeedbackBox>
           )}
         </CardShell>
       </ScrollView>

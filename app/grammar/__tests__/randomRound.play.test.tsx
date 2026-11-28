@@ -52,9 +52,11 @@ jest.mock('@/lib/grammar/syllabus', () => {
   };
 });
 
-import { fireEvent, render, screen } from '@testing-library/react-native';
+import { fireEvent, render, screen, within } from '@testing-library/react-native';
+import { StyleSheet } from 'react-native';
 
 import { getDb } from '@/lib/database.web';
+import { t } from '@/lib/i18n';
 import { playChime } from '@/lib/chime';
 import { speak } from '@/lib/speech';
 import { lessonFor } from '@/lib/grammar/syllabus';
@@ -208,6 +210,24 @@ describe.each(['brand', 'classic'] as const)('random grammar round (%s palette)'
       expect(mockChime).toHaveBeenCalledTimes(1);
       expect(mockSpeak).toHaveBeenLastCalledWith(wrong.q.say, 'es-MX');
     });
+
+    it('practice: the result is the answer box, with the badge and the answer in it, dashed when wrong and solid when right', async () => {
+      await mixedNext();
+      await open();
+      for (let i = 0; i < 10; i++) await answer(i >= 4);
+      await press('random-practice-these');
+      const right = await answer(true, true);
+      let box = screen.getByTestId('random-feedback-box');
+      expect(within(box).getByTestId('random-feedback-badge')).toHaveTextContent(new RegExp(t().randomRound.correct));
+      expect(within(box).getByTestId('random-feedback-answer')).toBeTruthy();
+      expect(right.q.review.answer).toBeTruthy();
+      expect(StyleSheet.flatten(box.props.style).borderStyle).toBe('solid');
+      await press('random-next');
+      await answer(false, true);
+      box = screen.getByTestId('random-feedback-box');
+      expect(within(box).getByTestId('random-feedback-badge')).toHaveTextContent(new RegExp(t().randomRound.wrong));
+      expect(StyleSheet.flatten(box.props.style).borderStyle).toBe('dashed');
+    });
   });
 
   it('a full round to the end: topics with their percent or the answers so far, then another round is a mixed one', async () => {
@@ -335,7 +355,7 @@ describe.each(['brand', 'classic'] as const)('random grammar round (%s palette)'
       const { topic, q } = await answer(i !== 0, true);
       // only the explanation card: no "Not quite!" reveal and no Next of the exam card on top of it
       expect(screen.queryByTestId('exam-next')).toBeNull();
-      expect(screen.queryByText('Not quite!')).toBeNull();
+      expect(screen.queryAllByText('Not quite').length).toBeLessThanOrEqual(1); // the explanation box's own badge, no exam reveal
       expect(text('random-counter')).toBe(`Practice ${i + 1}/8`);
       expect(text('random-feedback-question')).toBe(q.review.question);
       expect(text('random-feedback-answer')).toBe(q.review.answer);

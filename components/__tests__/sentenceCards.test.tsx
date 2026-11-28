@@ -279,11 +279,11 @@ describe('Didn\'t know / Knew it on the sentence cards', () => {
     expect(r.queryByTestId('sentence-grades')).toBeNull();
     fireEvent.press(r.getAllByText('mesa')[0]);
     fireEvent.press(r.getByText('Check'));
-    expect(r.getByText('Wrong')).toBeTruthy();
+    expect(r.getByText('Not quite')).toBeTruthy();
     expect(r.getByText("Didn't know")).toBeTruthy();
     fireEvent.press(r.getByText('Knew it'));
-    expect(r.getByText('Correct!')).toBeTruthy();
-    expect(r.queryByText('Wrong')).toBeNull();
+    expect(r.getByText('Correct')).toBeTruthy();
+    expect(r.queryByText('Not quite')).toBeNull();
     // the correct sentence is still shown after the override
     expect(r.getByText('el libro y la mesa')).toBeTruthy();
     fireEvent.press(r.getByText(/Next/));
@@ -295,9 +295,9 @@ describe('Didn\'t know / Knew it on the sentence cards', () => {
     const r = render(<EasySentenceCard {...easy} onResult={onResult} gradeButtons />);
     for (const w of easy.targetWords) fireEvent.press(r.getAllByText(w)[0]);
     fireEvent.press(r.getByText('Check'));
-    expect(r.getByText('Correct!')).toBeTruthy();
+    expect(r.getByText('Correct')).toBeTruthy();
     fireEvent.press(r.getByText("Didn't know"));
-    expect(r.getByText('Wrong')).toBeTruthy();
+    expect(r.getByText('Not quite')).toBeTruthy();
     fireEvent.press(r.getByText(/Next/));
     expect(onResult).toHaveBeenCalledWith(false);
   });
@@ -308,11 +308,11 @@ describe('Didn\'t know / Knew it on the sentence cards', () => {
     expect(r.queryByTestId('sentence-grades')).toBeNull();
     fireEvent.changeText(r.getByPlaceholderText('Type the sentence'), 'el gato');
     fireEvent.press(r.getByText('✓ Check'));
-    expect(r.getByText('Wrong')).toBeTruthy();
+    expect(r.getByText('Not quite')).toBeTruthy();
     expect(r.getByText("Didn't know")).toBeTruthy();
     fireEvent.press(r.getByText('Knew it'));
-    expect(r.getByText('Correct!')).toBeTruthy();
-    expect(r.queryByText('Wrong')).toBeNull();
+    expect(r.getByText('Correct')).toBeTruthy();
+    expect(r.queryByText('Not quite')).toBeNull();
     expect(r.getByText('El libro y la mesa.')).toBeTruthy();
     fireEvent.press(r.getByText(/Next/));
     expect(onResult).toHaveBeenCalledWith(true, 'el gato');
@@ -323,9 +323,9 @@ describe('Didn\'t know / Knew it on the sentence cards', () => {
     const r = render(<TypedSentenceCard {...typed} onResult={onResult} gradeButtons />);
     fireEvent.changeText(r.getByPlaceholderText('Type the sentence'), 'el libro y la mesa');
     fireEvent.press(r.getByText('✓ Check'));
-    expect(r.getByText('Correct!')).toBeTruthy();
+    expect(r.getByText('Correct')).toBeTruthy();
     fireEvent.press(r.getByText("Didn't know"));
-    expect(r.getByText('Wrong')).toBeTruthy();
+    expect(r.getByText('Not quite')).toBeTruthy();
     fireEvent.press(r.getByText(/Next/));
     expect(onResult).toHaveBeenCalledWith(false, 'el libro y la mesa');
   });

@@ -243,12 +243,12 @@ describe('Situations: say it', () => {
     expect(view.queryByTestId('situations-type-input')).toBeNull();
     await press(view, 'situations-type');
     await type(view, 'tienes amigos');
-    expect(view.getByText('Wrong')).toBeTruthy();
+    expect(view.getByText('Not quite')).toBeTruthy();
     expect(view.getAllByTestId('situations-said-right')).toHaveLength(1);
     expect(view.getAllByTestId('situations-said-wrong')).toHaveLength(1);
     expect(view.queryByTestId('situations-next')).toBeNull();
     await type(view, 'tienes hermanos');
-    expect(view.getByText('Correct!')).toBeTruthy();
+    expect(view.getByText('Correct')).toBeTruthy();
     expect(view.getAllByTestId('situations-said-right')).toHaveLength(2);
     expect(await savedRun()).toMatchObject({ step: 'say', index: 0, done: true, wrong: 1, scores: { say: 0 } });
     await press(view, 'situations-next');
@@ -269,7 +269,7 @@ describe('Situations: say it', () => {
     await emit('start');
     expect(view.getByText('Listening… tap to stop')).toBeTruthy();
     await heardFinal('sí tengo un hermano y una hermana');
-    expect(view.getByText('Correct!')).toBeTruthy();
+    expect(view.getByText('Correct')).toBeTruthy();
     expect(view.getByTestId('situations-next')).toBeTruthy();
     expect(await savedRun()).toMatchObject({ index: 1, done: true, scores: { say: 1 } });
     view.unmount();
@@ -313,10 +313,10 @@ describe('Situations: say it', () => {
     await emit('start');
     await press(view, 'situations-type');
     await type(view, 'tienes hermanos');
-    expect(view.getByText('Correct!')).toBeTruthy();
+    expect(view.getByText('Correct')).toBeTruthy();
     expect(ExpoSpeechRecognitionModule.abort).toHaveBeenCalled();
     await heardFinal('hola que tal');
-    expect(view.getByText('Correct!')).toBeTruthy();
+    expect(view.getByText('Correct')).toBeTruthy();
     expect(await savedRun()).toMatchObject({ index: 0, done: true, wrong: 0, scores: { say: 1 } });
     // an error of this line is not shown on the next one
     await emit('error', { error: 'not-allowed', message: 'denied' });
@@ -331,10 +331,10 @@ describe('Situations: say it', () => {
     const view = await mount();
     await press(view, 'situations-type');
     await type(view, 'mi hermano tiene 2 años');
-    expect(view.getByText('Wrong')).toBeTruthy();
+    expect(view.getByText('Not quite')).toBeTruthy();
     expect(view.getAllByTestId('situations-said-wrong')).toHaveLength(1);
     await type(view, 'mi hermano tiene 30 años');
-    expect(view.getByText('Correct!')).toBeTruthy();
+    expect(view.getByText('Correct')).toBeTruthy();
     view.unmount();
   });
 
@@ -364,21 +364,21 @@ describe('Situations: questions', () => {
     expect(view.getByLabelText(t().feedback.button)).toBeTruthy();
     await press(view, 'situations-type');
     await type(view, 'hola');
-    expect(view.getByText('Wrong')).toBeTruthy();
+    expect(view.getByText('Not quite')).toBeTruthy();
     expect(view.getByTestId('situations-model').props.children).toBe('A good answer: Sí, tengo un hermano y una hermana.');
     expect(view.queryByTestId('situations-next')).toBeNull();
     await type(view, 'sí tengo un hermano');
-    expect(view.getByText('Correct!')).toBeTruthy();
+    expect(view.getByText('Correct')).toBeTruthy();
     expect(await savedRun()).toMatchObject({ step: 'questions', index: 0, done: true, scores: { questions: 0 } });
     await press(view, 'situations-next');
     expect(view.getByTestId('situations-line-text').props.children).toBe('¿Dónde viven tus papás?');
     expect(mockSpeak).toHaveBeenCalledWith('¿Dónde viven tus papás?', 'es-MX');
     await type(view, 'viven en México');
-    expect(view.getByText('Correct!')).toBeTruthy();
+    expect(view.getByText('Correct')).toBeTruthy();
     expect(await savedRun()).toMatchObject({ index: 1, done: true, scores: { questions: 1 } });
     await press(view, 'situations-next');
     await type(view, 'tiene 5 años');
-    expect(view.getByText('Correct!')).toBeTruthy();
+    expect(view.getByText('Correct')).toBeTruthy();
     expect(await savedRun()).toMatchObject({ index: 2, done: true, scores: { questions: 2 } });
     view.unmount();
   });
@@ -474,7 +474,7 @@ describe('Situations: what is needed to answer is on screen without scrolling', 
     fireEvent.changeText(input, 'sí tengo un hermano');
     fireEvent(input, 'submitEditing');
     await flush();
-    expect(view.getByText('Correct!')).toBeTruthy();
+    expect(view.getByText('Correct')).toBeTruthy();
     expect(await savedRun()).toMatchObject({ step: 'questions', index: 0, done: true, wrong: 0, scores: { questions: 1 } });
     view.unmount();
   });
@@ -543,7 +543,7 @@ describe('Situations in German', () => {
     expect(ExpoSpeechRecognitionModule.start).toHaveBeenCalledWith(expect.objectContaining({ lang: 'de-DE', interimResults: false }));
     await emit('start');
     await heardFinal('Mein Bruder ist 30 Jahre alt');
-    expect(view.getByText('Correct!')).toBeTruthy();
+    expect(view.getByText('Correct')).toBeTruthy();
     expect(await savedRun()).toMatchObject({ index: 5, done: true, scores: { say: 1 } });
     view.unmount();
     await saveRun(atDe('say', { index: 5 }));
@@ -551,10 +551,10 @@ describe('Situations in German', () => {
     await press(typed, 'situations-type');
     expect(typed.getByPlaceholderText('Type in German')).toBeTruthy();
     await type(typed, 'mein bruder ist dreissig jahre');
-    expect(typed.getByText('Wrong')).toBeTruthy();
+    expect(typed.getByText('Not quite')).toBeTruthy();
     expect(typed.getAllByTestId('situations-said-wrong')).toHaveLength(1);
     await type(typed, 'Mein Bruder ist dreissig Jahre alt');
-    expect(typed.getByText('Correct!')).toBeTruthy();
+    expect(typed.getByText('Correct')).toBeTruthy();
     typed.unmount();
   });
 
@@ -567,14 +567,14 @@ describe('Situations in German', () => {
     await type(view, 'hallo');
     expect(view.getByTestId('situations-model').props.children).toBe('A good answer: Ja, ich habe einen Bruder und eine Schwester.');
     await type(view, 'ja ich habe zwei brueder');
-    expect(view.getByText('Correct!')).toBeTruthy();
+    expect(view.getByText('Correct')).toBeTruthy();
     await press(view, 'situations-next');
     expect(mockSpeak).toHaveBeenCalledWith('Wo wohnen deine Eltern?', 'de-DE');
     await type(view, 'sie wohnen in deutschland');
-    expect(view.getByText('Correct!')).toBeTruthy();
+    expect(view.getByText('Correct')).toBeTruthy();
     await press(view, 'situations-next');
     await type(view, 'er ist 30');
-    expect(view.getByText('Correct!')).toBeTruthy();
+    expect(view.getByText('Correct')).toBeTruthy();
     expect(await savedRun()).toMatchObject({ step: 'questions', index: 2, done: true, scores: { questions: 2 } });
     view.unmount();
   });

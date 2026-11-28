@@ -99,17 +99,17 @@ describe('Practice tab, German as the learned language', () => {
     expect(mockSpeak).toHaveBeenLastCalledWith('die Straße', 'de-DE');
     expect(view.getByPlaceholderText('Type in German')).toBeTruthy();
     await answer(view, 'die strasse');
-    expect(view.getByText('Correct!')).toBeTruthy();
+    expect(view.getByText('Correct')).toBeTruthy();
     expect(await halves(pcicItemsForLevel('A1').find((i) => i.de === 'die Straße')!.id)).toBe(1);
     await press(view, 'dictation-next');
     expect(mockSpeak).toHaveBeenLastCalledWith('das Mädchen', 'de-DE');
     await answer(view, 'das Maedchen');
-    expect(view.getByText('Correct!')).toBeTruthy();
+    expect(view.getByText('Correct')).toBeTruthy();
     await press(view, 'dictation-next');
     // what is read aloud and graded has no bracketed gloss: "die Leute", the (Pl.) is optional
     expect(mockSpeak).toHaveBeenLastCalledWith('die Leute', 'de-DE');
     await answer(view, 'die Leute');
-    expect(view.getByText('Correct!')).toBeTruthy();
+    expect(view.getByText('Correct')).toBeTruthy();
     view.unmount();
   });
 
@@ -119,12 +119,12 @@ describe('Practice tab, German as the learned language', () => {
     const view = await mount();
     await press(view, 'practice-mode-dictation');
     await answer(view, 'die Strasse');
-    expect(view.getByText('Wrong')).toBeTruthy();
+    expect(view.getByText('Not quite')).toBeTruthy();
     expect(text(view, 'dictation-answer')).toBe('die Straße');
     expect(text(view, 'dictation-meaning')).toBe('Means: utca');
     await press(view, 'dictation-next');
     await answer(view, 'der Auto');
-    expect(view.getByText('Wrong')).toBeTruthy();
+    expect(view.getByText('Not quite')).toBeTruthy();
     expect(text(view, 'dictation-answer')).toBe('das Auto');
     view.unmount();
   });
@@ -186,7 +186,7 @@ describe('Practice tab, German as the learned language', () => {
     });
     expect(question.options.map((o) => findPcicItem(o)!.pos)).toEqual(Array(4).fill(findPcicItem(id)!.pos));
     await press(view, `opposites-option-${question.options.indexOf(question.answer)}`);
-    expect(view.getByText('Correct!')).toBeTruthy();
+    expect(view.getByText('Correct')).toBeTruthy();
     expect(await halves(id)).toBe(1);
     await press(view, 'opposites-next');
     const next = ((await loadSavedGame('opposites'))!.state as OppositesState).queue[0];
@@ -202,7 +202,7 @@ describe('Practice tab, German as the learned language', () => {
     const id = state.queue[0];
     const question = state.questions[id];
     await press(view, `opposites-option-${question.options.findIndex((o) => o !== question.answer)}`);
-    expect(view.getByText('Wrong')).toBeTruthy();
+    expect(view.getByText('Not quite')).toBeTruthy();
     expect(text(view, 'opposites-answer')).toBe(`The opposite: ${oppositeText(findPcicItem(question.answer)!, 'de')}`);
     expect(await halves(id)).toBe(0);
     view.unmount();

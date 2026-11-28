@@ -49,7 +49,7 @@ describe('error spotting (spot)', () => {
     fireEvent.press(screen.getByText('nada'));
 
     expect(screen.getByTestId('spot-result')).toBeTruthy();
-    expect(screen.getByText('Correct!')).toBeTruthy();
+    expect(screen.getByText('Correct')).toBeTruthy();
     expect(screen.getByText('No veo nada.')).toBeTruthy();
     expect(speech.speak).toHaveBeenCalledWith('No veo nada.', 'es-MX');
 
@@ -65,7 +65,7 @@ describe('error spotting (spot)', () => {
     expect(screen.getByText('That word is fine. Look again.')).toBeTruthy();
     fireEvent.press(screen.getByTestId('spot-word-2'));
     fireEvent.press(screen.getByText('nada'));
-    expect(screen.getByText('Not quite!')).toBeTruthy();
+    expect(screen.getByText('Not quite')).toBeTruthy();
     fireEvent.press(screen.getByTestId('grammar-next'));
     expect(onFinish).toHaveBeenCalledWith(0, 1);
   });
@@ -76,7 +76,7 @@ describe('error spotting (spot)', () => {
     await flush();
     fireEvent.press(screen.getByTestId('spot-word-2'));
     fireEvent.press(screen.getByText('nunca'));
-    expect(screen.getByText('Not quite!')).toBeTruthy();
+    expect(screen.getByText('Not quite')).toBeTruthy();
     fireEvent.press(screen.getByTestId('grammar-next'));
     expect(onFinish).toHaveBeenCalledWith(0, 1);
   });
@@ -127,7 +127,7 @@ describe('dictation (dictation)', () => {
     fireEvent.changeText(screen.getByTestId('dictation-input'), 'estoy en casa');
     fireEvent.press(screen.getByTestId('dictation-check'));
     expect(screen.getByTestId('dictation-result')).toBeTruthy();
-    expect(screen.getByText('Correct!')).toBeTruthy();
+    expect(screen.getByText('Correct')).toBeTruthy();
     expect(screen.getByText('I am at home.')).toBeTruthy();
 
     fireEvent.press(screen.getByTestId('grammar-next'));
@@ -140,7 +140,7 @@ describe('dictation (dictation)', () => {
     await flush();
     fireEvent.changeText(screen.getByTestId('dictation-input'), 'estoy a casa');
     fireEvent.press(screen.getByTestId('dictation-check'));
-    expect(screen.getByText('Not quite!')).toBeTruthy();
+    expect(screen.getByText('Not quite')).toBeTruthy();
     expect(screen.getByText('Your answer')).toBeTruthy();
     expect(screen.getByTestId('answer-compare-correct')).toBeTruthy();
     fireEvent.press(screen.getByTestId('grammar-next'));

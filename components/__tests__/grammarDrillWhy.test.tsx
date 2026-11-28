@@ -50,7 +50,7 @@ describe('GrammarDrill: why item', () => {
     render(<GrammarDrill topic={lesson} learnedLang="es" contentLang="en" onFinish={onFinish} kinds={['why']} />);
 
     fireEvent.press(screen.getByText('profession'));
-    expect(screen.queryByText('Correct!')).toBeTruthy();
+    expect(screen.queryByText('Correct')).toBeTruthy();
 
     fireEvent.press(screen.getByTestId('grammar-next'));
     expect(onFinish).toHaveBeenCalledWith(1, 1);
@@ -115,6 +115,6 @@ describe('GrammarDrill: why option order (R21)', () => {
     render(<GrammarDrill topic={topic} learnedLang="es" contentLang="en" onFinish={onFinish} kinds={['why']} />);
     expect(screen.getAllByTestId('grammar-option').findIndex((o) => within(o).queryByText('profession') !== null)).toBe(first);
     fireEvent.press(screen.getByText('profession'));
-    expect(screen.queryByText('Correct!')).toBeTruthy();
+    expect(screen.queryByText('Correct')).toBeTruthy();
   });
 });

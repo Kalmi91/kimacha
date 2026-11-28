@@ -30,7 +30,7 @@ const de: typeof en = {
     knownFromTestTag: 'Aus dem Test bekannt',
     continueTag: 'weiter →',
     comboLabel: (n: number) => `${n} in Folge`,
-    perfect: 'perfekt!',
+    perfect: 'Richtig',
     nextArrow: 'weiter →',
     mistakesTitle: 'Fehler:',
     progressChange: (from: number | null, to: number) => (from === null ? `${to}%` : `${from}% → ${to}%`),

@@ -158,7 +158,7 @@ describe('Dictation', () => {
     await flush();
     expect(view.queryByTestId('dictation-result')).toBeNull();
     await answerRight(view);
-    expect(view.getByText('Correct!')).toBeTruthy();
+    expect(view.getByText('Correct')).toBeTruthy();
     expect(view.getByTestId('dictation-answer').props.children).toBe(findPcicItem(due[0])!.es);
     expect(view.getByTestId('dictation-meaning').props.children).toBe(`Means: ${findPcicItem(due[0])!.en}`);
     expect(await halves(due[0])).toBe(1);
@@ -174,7 +174,7 @@ describe('Dictation', () => {
     const view = await mount();
     await startDictation(view);
     await answer(view, 'qqqqqqq');
-    expect(view.getByText('Wrong')).toBeTruthy();
+    expect(view.getByText('Not quite')).toBeTruthy();
     expect(view.getByTestId('dictation-answer').props.children).toBe(findPcicItem(due[0])!.es);
     expect(await halves(due[0])).toBe(0);
     expect((await getDb().getPcicCard(due[0]))?.wrongStreak).toBe(1);
@@ -265,7 +265,7 @@ describe('Dictation', () => {
       await press(view, 'dictation-next');
     }
     await answer(view, folded(accented!.id));
-    expect(view.getByText('Wrong')).toBeTruthy();
+    expect(view.getByText('Not quite')).toBeTruthy();
     view.unmount();
   });
 

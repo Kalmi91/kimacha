@@ -321,7 +321,7 @@ export default function RandomRoundScreen() {
           <Text testID="random-practice-title" style={[styles.topicTitle, { color: colors.text }]}>
             {titleOf(topicId)}
           </Text>
-          <AnswerFeedbackBox correct={ok} badgeLabel={ok ? s.correct : s.wrong} badgeTestID="random-feedback-badge" style={styles.brutalCard}>
+          <AnswerFeedbackBox correct={ok} testID="random-feedback-box" badgeLabel={ok ? s.correct : s.wrong} badgeTestID="random-feedback-badge" style={styles.brutalCard}>
             <Text testID="random-feedback-question" style={[styles.missedQuestion, { color: colors.text }]}>
               {q.review.question}
             </Text>

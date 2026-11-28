@@ -23,7 +23,7 @@ describe('ResultBadge', () => {
     expect(st.backgroundColor).toBe(Colors['brand-light'].successFill);
     expect(st.borderStyle).toBe('solid');
     expect(screen.getByText('✓')).toBeTruthy();
-    expect(screen.getByText('Correct!')).toBeTruthy();
+    expect(screen.getByText('Correct')).toBeTruthy();
   });
 
   it('incorrect: red fill from a token, dashed border, ✗ and text', () => {
@@ -32,18 +32,18 @@ describe('ResultBadge', () => {
     expect(st.backgroundColor).toBe(Colors['brand-light'].danger);
     expect(st.borderStyle).toBe('dashed');
     expect(screen.getByText('✗')).toBeTruthy();
-    expect(screen.getByText('Not quite!')).toBeTruthy();
+    expect(screen.getByText('Not quite')).toBeTruthy();
   });
 
   it('the label and the mark are legible on the fill (WCAG 4.5), in both states', () => {
     const { unmount } = render(<ResultBadge correct testID="ok" />);
     const okFill = Colors['brand-light'].successFill;
-    expect(contrastRatio(StyleSheet.flatten(screen.getByText('Correct!').props.style).color, okFill)).toBeGreaterThanOrEqual(4.5);
+    expect(contrastRatio(StyleSheet.flatten(screen.getByText('Correct').props.style).color, okFill)).toBeGreaterThanOrEqual(4.5);
     expect(contrastRatio(StyleSheet.flatten(screen.getByText('✓').props.style).color, okFill)).toBeGreaterThanOrEqual(4.5);
     unmount();
     render(<ResultBadge correct={false} testID="bad" />);
     const badFill = Colors['brand-light'].danger;
-    expect(contrastRatio(StyleSheet.flatten(screen.getByText('Not quite!').props.style).color, badFill)).toBeGreaterThanOrEqual(4.5);
+    expect(contrastRatio(StyleSheet.flatten(screen.getByText('Not quite').props.style).color, badFill)).toBeGreaterThanOrEqual(4.5);
     expect(contrastRatio(StyleSheet.flatten(screen.getByText('✗').props.style).color, badFill)).toBeGreaterThanOrEqual(4.5);
   });
 

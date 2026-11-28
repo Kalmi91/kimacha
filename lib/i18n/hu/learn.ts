@@ -3,8 +3,8 @@ import type en from '../en/learn';
 const hu: typeof en = {
   card: {
     check: 'Ellenőrzés',
-    correct: 'Helyes!',
-    wrong: 'Hibás',
+    correct: 'Helyes',
+    wrong: 'Nem egészen',
     next: 'Tovább',
     typeSentence: 'Írd be a mondatot',
     // the grey placeholder of the answer input field, with the name of the target language.
@@ -12,8 +12,8 @@ const hu: typeof en = {
   },
   games: {
     understood: 'Értem',
-    correctFeedback: 'Helyes!',
-    wrongFeedback: 'Majdnem!',
+    correctFeedback: 'Helyes',
+    wrongFeedback: 'Nem egészen',
     grammarChoice: {
       progress: (current: number, total: number) => `${current} / ${total}`,
       markPrompt: (wordClass: string) => `Koppints a mondat ${wordClass} szavára.`,

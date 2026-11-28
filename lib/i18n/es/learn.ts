@@ -3,8 +3,8 @@ import type en from '../en/learn';
 const es: typeof en = {
   card: {
     check: 'Comprobar',
-    correct: '¡Correcto!',
-    wrong: 'Incorrecto',
+    correct: 'Correcto',
+    wrong: 'Casi',
     next: 'Siguiente',
     typeSentence: 'Escribe la oración',
     // the grey placeholder of the answer input field, with the name of the target language.
@@ -12,8 +12,8 @@ const es: typeof en = {
   },
   games: {
     understood: 'Entendido',
-    correctFeedback: '¡Correcto!',
-    wrongFeedback: '¡Casi!',
+    correctFeedback: 'Correcto',
+    wrongFeedback: 'Casi',
     grammarChoice: {
       progress: (current: number, total: number) => `${current} / ${total}`,
       markPrompt: (wordClass: string) => `Toca ${wordClass} en la oración.`,
