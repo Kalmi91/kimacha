@@ -7,6 +7,7 @@ import { StyleSheet, View } from 'react-native';
 
 import GrammarDrill from '../grammar/GrammarDrill';
 import { PALETTE_FILLS } from '@/constants/GrammarPalettes';
+import Colors from '@/constants/Colors';
 import lessonJson from '@/data/games/grammar/es/presente-irregular.json';
 import type { LessonV2 } from '@/lib/grammar/lessonTypes';
 import { buildGrammarRound, isChoiceRoundItem } from '@/lib/games/grammarChoice';
@@ -109,7 +110,8 @@ describe('GrammarDrill, neo-brutalist', () => {
       fireEvent.press(screen.getByTestId(`match-left-${li}`));
       fireEvent.press(screen.getByTestId(`match-right-${rightOrder.indexOf(li)}`));
     });
-    expect(front('match-left-0').backgroundColor).toBe(PALETTE_FILLS.brand.a);
+    // Q7 (2026-11-27): a solved pair is the success colour, not the palette's a fill.
+    expect(front('match-left-0').backgroundColor).toBe(Colors.light.success);
     expect(screen.queryAllByText(' ✓').length).toBeGreaterThan(0);
     expect(screen.queryByText('Not quite!')).toBeTruthy();
     fireEvent.press(screen.getByTestId('grammar-next'));

@@ -51,6 +51,10 @@ export function WhyDrillItem({
   const isCorrect = answered && selected === shown.correctIndex;
   const pickedText = answered ? (shown.options[selected].text[contentLang] ?? shown.options[selected].text.en) : undefined;
   const g = useGrammarColors();
+  // Next is a bar docked at the bottom (DockSlot); without a host the item draws the inline button.
+  const { docked, padBottom } = useDockedAction(
+    answered ? { tone: 'next', testID: 'grammar-next', onPress: () => onDone(isCorrect, pickedText) } : null
+  );
 
   const select = (i: number) => {
     if (answered) return;
@@ -136,9 +140,10 @@ export function WhyDrillItem({
                 </Text>
               ) : null}
             </AnswerFeedbackBox>
-            <BrutalInkButton g={g} testID="grammar-next" label={s.grammar.nextArrow} onPress={() => onDone(isCorrect, pickedText)} />
+            {docked ? null : <BrutalInkButton g={g} testID="grammar-next" label={s.grammar.nextArrow} onPress={() => onDone(isCorrect, pickedText)} />}
           </>
         ) : null}
+        {docked ? <View style={{ height: padBottom }} /> : null}
       </View>
     );
   }
@@ -218,11 +223,14 @@ export function WhyDrillItem({
               {shown.options[selected].wrong?.[contentLang] ?? shown.options[selected].wrong?.en ?? ''}
             </Text>
           ) : null}
-          <Pressable testID="grammar-next" style={[styles.btn, { backgroundColor: colors.tint, marginTop: 12 }]} onPress={() => onDone(isCorrect, pickedText)}>
-            <Text style={[styles.btnText, { color: colors.onTint }]}>{s.games.understood}</Text>
-          </Pressable>
+          {docked ? null : (
+            <Pressable testID="grammar-next" style={[styles.btn, { backgroundColor: colors.tint, marginTop: 12 }]} onPress={() => onDone(isCorrect, pickedText)}>
+              <Text style={[styles.btnText, { color: colors.onTint }]}>{s.games.understood}</Text>
+            </Pressable>
+          )}
         </AnswerFeedbackBox>
       ) : null}
+      {docked ? <View style={{ height: padBottom }} /> : null}
     </View>
   );
 }
@@ -289,7 +297,7 @@ export function TransformDrillItem({
   const { docked, padBottom } = useDockedAction(
     result === null
       ? { label: `✓ ${s.grammar.check}`, tone: 'check', testID: 'transform-check', onPress: check }
-      : { label: s.grammar.next, tone: 'next', testID: 'transform-next', onPress: () => onDone(result === 'ok', input), secondary: mistypedDock(result === 'bad', () => onDone(true)) }
+      : { tone: 'next', testID: 'transform-next', onPress: () => onDone(result === 'ok', input), secondary: mistypedDock(result === 'bad', () => onDone(true)) }
   );
 
   // brutalist sentence transformation: the sentence in a box, the F button a small box, the

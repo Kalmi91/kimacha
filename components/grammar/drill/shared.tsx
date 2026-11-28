@@ -1,5 +1,7 @@
+import type { ReactNode } from 'react';
 import { View } from 'react-native';
 import { Text } from '@/components/KText';
+import { useDockedAction } from '@/components/learn/DockSlot';
 import Colors from '@/constants/Colors';
 import { TENSE_NAMES, type ContentLang, type TenseId } from '@/lib/grammar/lessonTypes';
 import { BrutalBox, Sticker, inkButtonText, softTitleStyle } from '@/components/grammar/Brutal';
@@ -14,6 +16,14 @@ export function BrutalInkButton({ g, testID, label, onPress }: { g: GrammarColor
       <Text style={[styles.brutalNextText, { color: inkButtonText(g) }, softTitleStyle(g)]}>{label}</Text>
     </BrutalBox>
   );
+}
+
+// The choice item's Next: a bar docked at the bottom (DockSlot, tone next, default label); without a host
+// (standalone render, tests) the `inline` button is drawn. `spacer` leaves room under the content for the bar.
+export function DockedNext({ onPress, inline, spacer }: { onPress: () => void; inline: ReactNode; spacer?: boolean }) {
+  const { docked, padBottom } = useDockedAction({ tone: 'next', testID: 'grammar-next', onPress });
+  if (!docked) return <>{inline}</>;
+  return spacer ? <View style={{ height: padBottom }} /> : null;
 }
 
 // tense badge, shown on every kind

@@ -32,13 +32,13 @@ import { useGrammarRoundProgress } from '@/lib/grammar/useGrammarRoundProgress';
 import { buildGlossMap } from '@/lib/games/gloss';
 import { hashString } from '@/lib/shuffle';
 import GlossText from '@/components/games/GlossText';
-import { BrutalBox, SegmentBar, Sticker, inkButtonText, segmentsFilled, textOnFill, mutedColor, themedDockPad, softTitleStyle, softCaseStyle } from '@/components/grammar/Brutal';
+import { BrutalBox, SegmentBar, Sticker, segmentsFilled, textOnFill, mutedColor, themedDockPad, softTitleStyle, softCaseStyle } from '@/components/grammar/Brutal';
 import AnswerFeedbackBox from '@/components/grammar/AnswerFeedbackBox';
 import { NewKindDrillItem } from '@/components/grammar/NewKinds';
 import { useGrammarColors, type GrammarColors } from '@/lib/grammarColors';
 import { MatchDrillItem, FormDrillItem } from '@/components/grammar/drill/MatchFormItems';
 import { WhyDrillItem, TransformDrillItem } from '@/components/grammar/drill/WhyTransformItems';
-import { TenseBadge } from '@/components/grammar/drill/shared';
+import { BrutalInkButton, DockedNext, TenseBadge } from '@/components/grammar/drill/shared';
 import { styles } from '@/components/grammar/GrammarDrill.styles';
 
 // The "which one is right, and why" drill, shared by the grammar course
@@ -482,9 +482,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
           </>
         ) : null}
         {answered ? (
-          <BrutalBox testID="grammar-next" fill="ink" boxStyle={styles.brutalNext} onPress={next}>
-            <Text style={[styles.brutalNextText, { color: inkButtonText(g) }, softTitleStyle(g)]}>{s.grammar.nextArrow}</Text>
-          </BrutalBox>
+          <DockedNext onPress={next} inline={<BrutalInkButton g={g} testID="grammar-next" label={s.grammar.nextArrow} onPress={next} />} />
         ) : null}
         {answered ? footer : null}
       </ScrollView>
@@ -590,11 +588,19 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
               style={[styles.example, { color: colors.text }]}
             />
           ))}
-          <Pressable testID="grammar-next" style={[styles.btn, { backgroundColor: colors.tint, marginTop: 12 }]} onPress={next}>
-            <Text style={[styles.btnText, { color: colors.onTint }]}>{s.games.understood}</Text>
-          </Pressable>
           {footer}
         </AnswerFeedbackBox>
+      ) : null}
+      {answered ? (
+        <DockedNext
+          onPress={next}
+          spacer
+          inline={
+            <Pressable testID="grammar-next" style={[styles.btn, { backgroundColor: colors.tint, marginTop: 12 }]} onPress={next}>
+              <Text style={[styles.btnText, { color: colors.onTint }]}>{s.games.understood}</Text>
+            </Pressable>
+          }
+        />
       ) : null}
     </ScrollView>
   );
