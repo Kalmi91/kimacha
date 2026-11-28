@@ -4,6 +4,7 @@ import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import Colors from '@/constants/Colors';
 import { fontSize, fontWeight, lineHeight, radius, spacing, tapTarget } from '@/constants/Theme';
 import { FAB_CLEARANCE } from '@/components/learn/DockedAction';
+import { useDockedAction } from '@/components/learn/DockSlot';
 import { Card } from '@/components/grammar/Brutal';
 import { themedEdgeStyle } from '@/components/grammar/Themed';
 import ResultBadge from '@/components/ResultBadge';
@@ -41,8 +42,13 @@ export default function ExamChoiceCard({ heading, text, options, correctIndex, i
     else setPicked(i);
   };
 
+  // Next after a wrong tap is a bar docked at the bottom (DockSlot); without a host the inline button stays.
+  const { docked, padBottom } = useDockedAction(
+    picked !== null ? { tone: 'next', testID: 'exam-next', onPress: () => onDone(false, options[picked]) } : null
+  );
+
   return (
-    <ScrollView contentContainerStyle={styles.scroll} keyboardShouldPersistTaps="handled">
+    <ScrollView contentContainerStyle={[styles.scroll, docked ? { paddingBottom: padBottom } : null]} keyboardShouldPersistTaps="handled">
       <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
         <Text style={[styles.heading, { color: colors.textMuted }]}>{heading}</Text>
         <Text testID="exam-text" style={[styles.text, { color: colors.text }]}>{text}</Text>
@@ -74,7 +80,7 @@ export default function ExamChoiceCard({ heading, text, options, correctIndex, i
           );
         })}
       </View>
-      {picked !== null && <ExamButton testID="exam-next" label={`${s.card.next} →`} onPress={() => onDone(false, picked !== null ? options[picked] : undefined)} />}
+      {picked !== null && !docked && <ExamButton testID="exam-next" label={`${s.card.next} →`} onPress={() => onDone(false, picked !== null ? options[picked] : undefined)} />}
     </ScrollView>
   );
 }

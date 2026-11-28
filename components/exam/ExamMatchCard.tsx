@@ -4,6 +4,7 @@ import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import Colors from '@/constants/Colors';
 import { fontSize, fontWeight, radius, spacing, tapTarget } from '@/constants/Theme';
 import { FAB_CLEARANCE } from '@/components/learn/DockedAction';
+import { useDockedAction } from '@/components/learn/DockSlot';
 import { Card } from '@/components/grammar/Brutal';
 import { themedEdgeStyle } from '@/components/grammar/Themed';
 import ResultBadge from '@/components/ResultBadge';
@@ -62,8 +63,15 @@ export default function ExamMatchCard({ pairs, onDone }: Props) {
     else setMissed(true);
   };
 
+  // Check (and Next after a wrong pairing) is a bar docked at the bottom (DockSlot); without a host the inline button stays.
+  const { docked, padBottom } = useDockedAction(
+    missed
+      ? { tone: 'next', testID: 'exam-next', onPress: () => onDone(false) }
+      : { tone: 'check', testID: 'exam-check', disabled: !allAssigned, onPress: check }
+  );
+
   return (
-    <ScrollView contentContainerStyle={styles.scroll}>
+    <ScrollView contentContainerStyle={[styles.scroll, docked ? { paddingBottom: padBottom } : null]}>
       <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
         <Text style={[styles.label, { color: colors.textMuted }]}>{s.exam.matchPairs}</Text>
         {pairs.map((pair, i) => (
@@ -114,7 +122,7 @@ export default function ExamMatchCard({ pairs, onDone }: Props) {
           </View>
         )}
       </Card>
-      {missed ? (
+      {docked ? null : missed ? (
         <ExamButton testID="exam-next" label={`${s.card.next} →`} onPress={() => onDone(false)} />
       ) : (
         <ExamButton testID="exam-check" label={s.card.check} onPress={check} disabled={!allAssigned} />
