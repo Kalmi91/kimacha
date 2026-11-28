@@ -5,9 +5,10 @@ import { useLocalSearchParams, useRouter } from 'expo-router';
 import Colors from '@/constants/Colors';
 import { fontSize, fontWeight, radius, spacing } from '@/constants/Theme';
 import { Card } from '@/components/grammar/Brutal';
-import ExamButton from '@/components/exam/ExamButton';
+import ExamDockAction from '@/components/exam/ExamDockAction';
 import ClozeTask from '@/components/exam/mock/ClozeTask';
 import { FAB_CLEARANCE } from '@/components/learn/DockedAction';
+import { DockSlotProvider, useDockSlot } from '@/components/learn/DockSlot';
 import { pcicItemsForLevel, type PcicLevel, type PcicTarget } from '@/data/pcic';
 import { getDb } from '@/lib/database';
 import { buildGlossaryIndex, mockGlossary, type GlossaryEntry } from '@/lib/exam/mock/glossary';
@@ -68,6 +69,8 @@ export default function ExamRoundScreen() {
   const router = useRouter();
   const params = useLocalSearchParams<{ level?: string }>();
   const { refresh } = useLearner();
+  // Check / Next / Done dock at the bottom (components/learn/DockSlot.tsx).
+  const dock = useDockSlot(colors);
 
   // 'loading' | 'empty' | the loaded round
   const [state, setState] = useState<'loading' | 'empty' | Loaded>('loading');
@@ -242,18 +245,21 @@ export default function ExamRoundScreen() {
     return shell(
       <View style={styles.flex}>
         {header}
-        <ScrollView key={part} testID="exam-round-scroll" contentContainerStyle={styles.body}>
-          <ClozeTask
-            key={text.id}
-            task={task}
-            answer={run.answers as ExamAnswers}
-            onAnswer={answered}
-            target={loaded.learnedLang as PcicTarget}
-            canSpeak={false}
-            glossary={glossary}
-          />
-          <ExamButton testID="exam-round-check" label={s.check} disabled={!complete} onPress={check} />
-        </ScrollView>
+        <DockSlotProvider host={dock}>
+          <ScrollView key={part} testID="exam-round-scroll" style={{ marginBottom: dock.bottomOffset }} contentContainerStyle={styles.body}>
+            <ClozeTask
+              key={text.id}
+              task={task}
+              answer={run.answers as ExamAnswers}
+              onAnswer={answered}
+              target={loaded.learnedLang as PcicTarget}
+              canSpeak={false}
+              glossary={glossary}
+            />
+            <ExamDockAction tone="check" testID="exam-round-check" disabled={!complete} onPress={check} />
+          </ScrollView>
+        </DockSlotProvider>
+        {dock.node}
       </View>,
     );
   }
@@ -265,7 +271,8 @@ export default function ExamRoundScreen() {
   return shell(
     <View style={styles.flex}>
       {header}
-      <ScrollView key={part} testID="exam-round-scroll" contentContainerStyle={styles.body}>
+      <DockSlotProvider host={dock}>
+      <ScrollView key={part} testID="exam-round-scroll" style={{ marginBottom: dock.bottomOffset }} contentContainerStyle={styles.body}>
         <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
           <Text testID="exam-round-score" style={[styles.title, { color: colors.text }]}>{s.score(right, rows.length)}</Text>
         </Card>
@@ -303,11 +310,13 @@ export default function ExamRoundScreen() {
         ) : null}
         <Text style={[styles.note, { color: colors.textMuted }]}>{s.countsNote}</Text>
         {last ? (
-          <ExamButton testID="exam-round-done" label={s.done} onPress={finish} />
+          <ExamDockAction tone="next" testID="exam-round-done" label={s.done} onPress={finish} />
         ) : (
-          <ExamButton testID="exam-round-next" label={s.nextText} onPress={nextText} />
+          <ExamDockAction tone="next" testID="exam-round-next" onPress={nextText} />
         )}
       </ScrollView>
+      </DockSlotProvider>
+      {dock.node}
     </View>,
   );
 }

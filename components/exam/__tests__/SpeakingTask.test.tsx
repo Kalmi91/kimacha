@@ -219,7 +219,7 @@ describe('the examiner turns', () => {
     expect(view.getByTestId('mock-speaking-turn-counter').props.children).toBe('Question 2 / 2');
     expect(view.getByTestId('mock-speaking-ask').props.children).toBe('Did you like it?');
     expect(speak).toHaveBeenLastCalledWith('Did you like it?', 'en-US');
-    expect(view.getByText('Next task')).toBeTruthy();
+    expect(view.getByText('Next →')).toBeTruthy();
     fireEvent.changeText(view.getByTestId('mock-speaking-answer'), 'second answer');
     press('mock-speaking-prev');
     expect(view.getByTestId('mock-speaking-answer').props.value).toBe('first answer');

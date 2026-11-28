@@ -17,6 +17,7 @@ import { localDateString } from '@/lib/usageStats';
 import { useSingleFlight } from '@/lib/useSingleFlight';
 import { Card } from '@/components/grammar/Brutal';
 import ExamButton from '@/components/exam/ExamButton';
+import ExamDockAction from '@/components/exam/ExamDockAction';
 import ScreenFeedback from '@/lib/screenFeedback';
 import { FEEDBACK_CORNER_CLEAR } from '@/components/learn/pcicStyles';
 import { FAB_CLEARANCE } from '@/components/learn/DockedAction';
@@ -57,7 +58,7 @@ export default function MockExamScreen() {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const s = t().mockExam;
-  // The speaking task's primary button docks above the keyboard (components/learn/DockSlot.tsx); the other kinds keep their inline button.
+  // The task's primary button (Next / Finish; the speaking task's own) docks at the bottom (components/learn/DockSlot.tsx).
   const dock = useDockSlot(colors);
   // The Android window does not resize for the keyboard (edge-to-edge), so the scroller would run on under it: what is typed would sit
   // behind the keyboard or the docked bar, and the system would not scroll to it. It ends above the docked bar, or above the keyboard.
@@ -468,7 +469,7 @@ export default function MockExamScreen() {
               onScrollTo={(y) => scrollRef.current?.scrollTo({ y: Math.max(0, y + spacing.lg - spacing.sm), animated: true })}
             />
             {/* a speaking task has its own primary button (it follows the step of the task and docks above the keyboard) */}
-            {task.kind !== 'speaking' && <ExamButton testID="mock-next-task" label={last ? s.finishPaper : s.nextTask} onPress={nextTask} />}
+            {task.kind !== 'speaking' && <ExamDockAction tone="next" testID="mock-next-task" label={last ? s.finishPaper : undefined} onPress={nextTask} />}
           </ScrollView>
         </DockSlotProvider>
         {dock.node}

@@ -440,7 +440,6 @@ describe('UI consistency gate: calibration (the detectors flag the known own var
     'components/grammar/TypedKinds.tsx',
     'components/grammar/drill/MatchFormItems.tsx',
     'components/grammar/drill/WhyTransformItems.tsx',
-    'app/grammar/exam-round.tsx',
     'app/grammar/form-check/[topic].tsx',
     'components/exam/ExamTypeCard.tsx',
     'components/exam/ExamMatchCard.tsx',
@@ -458,7 +457,6 @@ describe('UI consistency gate: calibration (the detectors flag the known own var
     'app/grammar/random.tsx',
     'app/grammar/small-test.tsx',
     'app/grammar/big-test.tsx',
-    'app/mock-exam.tsx',
   ])('next-label flags %s', (file) => {
     expect(flagged('next-label', file)).toBe(true);
   });

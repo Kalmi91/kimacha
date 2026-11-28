@@ -165,17 +165,17 @@ describe('Mock exam: a speaking paper with tasks', () => {
     s.unmount();
   });
 
-  it('the other typed tasks (the essay has no docked bar) get the same: the scroller ends above the keyboard, and only then', async () => {
+  it('the other typed tasks (the essay has the docked Next too) get the same: the scroller ends above the docked bar and the keyboard', async () => {
     const s = await mount();
     await press(s, 'mock-begin');
     for (let k = 0; k < 14 && !s.queryByTestId('mock-essay-text'); k++) await press(s, s.queryByTestId('mock-start-paper') ? 'mock-start-paper' : 'mock-next-task');
     expect(s.getByTestId('mock-essay-text')).toBeTruthy();
-    expect(bottomOf(s)).toBe(0);
+    expect(bottomOf(s)).toBe(DOCK_RESERVE);
     expect(scroller(s).props.keyboardDismissMode).toBe('on-drag');
     await keyboard(300);
-    expect(bottomOf(s)).toBe(300);
+    expect(bottomOf(s)).toBe(DOCK_RESERVE + 300);
     await keyboard(null);
-    expect(bottomOf(s)).toBe(0);
+    expect(bottomOf(s)).toBe(DOCK_RESERVE);
     s.unmount();
   });
 
@@ -241,7 +241,7 @@ describe('Mock exam: a speaking paper with tasks', () => {
     await press(s, 'mock-speaking-primary');
     expect(speak).toHaveBeenCalledWith('Did you like it?', 'en-US');
     await type(s, 'mock-speaking-answer', 'Yes I liked it very much');
-    expect(s.getByText(s_.nextTask)).toBeTruthy();
+    expect(s.getByText('Next →')).toBeTruthy();
     await press(s, 'mock-speaking-primary');
 
     // task 2 follows task 1: no chooser, the holiday sheet, no preparation

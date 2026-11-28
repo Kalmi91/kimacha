@@ -4,6 +4,7 @@ import { Keyboard, Pressable, StyleSheet, Text, TextInput, View } from 'react-na
 import Colors from '@/constants/Colors';
 import { lineHeight, spacing } from '@/constants/Theme';
 import SpeakButton from '@/components/SpeakButton';
+import { defaultActionLabel } from '@/components/learn/DockedAction';
 import { useDockedAction } from '@/components/learn/DockSlot';
 import { countWords } from '@/lib/exam/mock/score';
 import { formatClock } from '@/lib/exam/mock/session';
@@ -163,7 +164,7 @@ export default function SpeakingTask({ task, answer, onAnswer, target, canSpeak,
         ? { label: s.speakStart, disabled: false, onPress: () => setStep('turns') }
         : !lastTurn
           ? { label: s.speakNextQuestion, disabled: false, onPress: () => setTurnIdx(turnIdx + 1) }
-          : { label: lastTask ? s.finishPaper : s.nextTask, disabled: false, onPress: () => onNextTask?.() };
+          : { label: lastTask ? s.finishPaper : defaultActionLabel('next'), disabled: false, onPress: () => onNextTask?.() };
   const { docked } = useDockedAction({ label: primary.label, tone: 'next', testID: 'mock-speaking-primary', disabled: primary.disabled, onPress: primary.onPress });
 
   const hint = step === 'choose' ? s.speakHintChoose : step === 'sheet' ? (prep > 0 ? s.speakHintPrep : s.speakHintSheet) : s.speakHintTurns;
