@@ -77,3 +77,13 @@ export function putProgress(token: string, payload: string, keepalive = false, b
     keepalive: keepalive && body.length <= KEEPALIVE_MAX_CHARS,
   });
 }
+
+// Anonymous funnel counter (cloud/worker.ts POST /api/event): the step name and the shared-link label, nothing else.
+export async function sendEvent(event: string, src: string): Promise<boolean> {
+  try {
+    const res = await fetch('/api/event', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ event, src }), keepalive: true });
+    return res.ok;
+  } catch {
+    return false;
+  }
+}

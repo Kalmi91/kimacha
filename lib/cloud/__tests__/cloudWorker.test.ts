@@ -6,7 +6,7 @@
 // code does not have yet: they pass while the gap exists and go red the day it is fixed, so the `.failing` has to come off then.
 import { createHash } from 'crypto';
 import { SESSION_KEY } from '../session';
-import { LOCK_SEC, MAX_FAILS, MAX_NAME_FAILS, MAX_PAYLOAD_CHARS, usageSummary } from '../../../cloud/logic';
+import { FUNNEL_MAX_EVENTS_PER_DAY, FUNNEL_MAX_SRC_PER_DAY, LOCK_SEC, MAX_FAILS, MAX_NAME_FAILS, MAX_PAYLOAD_CHARS, usageSummary } from '../../../cloud/logic';
 
 jest.mock(
   'cloudflare:workers',
@@ -35,6 +35,7 @@ function makeSql(legacy = false) {
   const users = new Map<string, Row>();
   const tokens = new Map<string, Row>();
   const fails = new Map<string, Row>();
+  const funnel = new Map<string, Row>(); // key day|src|event
   let columns: Set<string> | null = null;
   if (legacy) {
     columns = new Set(OLD_COLUMNS);
@@ -128,9 +129,23 @@ function makeSql(legacy = false) {
         }),
       );
     }
+    if (q === 'select sum(count) as total from funnel where day = ?') {
+      const own = [...funnel.values()].filter((r) => r.day === b[0]);
+      return cursor([{ total: own.length ? own.reduce((n, r) => n + r.count, 0) : null }]);
+    }
+    if (q === 'select count(*) as n from funnel where day = ? and src = ?') return cursor([{ n: [...funnel.values()].filter((r) => r.day === b[0] && r.src === b[1]).length }]);
+    if (q === 'select count(distinct src) as n from funnel where day = ?') return cursor([{ n: new Set([...funnel.values()].filter((r) => r.day === b[0]).map((r) => r.src)).size }]);
+    if (q === 'insert into funnel (day, src, event, count) values (?, ?, ?, 1) on conflict(day, src, event) do update set count = count + 1') {
+      const k = b.join('|');
+      const r = funnel.get(k);
+      if (r) r.count += 1;
+      else funnel.set(k, { day: b[0], src: b[1], event: b[2], count: 1 });
+      return cursor([]);
+    }
+    if (q === 'select day, src, event, count from funnel') return cursor([...funnel.values()].map((r) => ({ ...r })));
     throw new Error('fake sql: unsupported statement: ' + q.slice(0, 80));
   };
-  return { exec, users, tokens, fails, columns: () => columns };
+  return { exec, users, tokens, fails, funnel, columns: () => columns };
 }
 
 type Reply = { status: number; body: any; text: string };
@@ -597,6 +612,90 @@ describe('the admin route', () => {
       expect(r.status).toBe(405);
       expect(r.text).not.toContain('Ana');
     }
+  });
+});
+
+describe('the funnel counters', () => {
+  const KEY = 'k'.repeat(32);
+  const today = () => new Date().toISOString().slice(0, 10);
+  const count = (cloud: Cloud, src: string, event: string) => cloud.sql.funnel.get(`${today()}|${src}|${event}`)?.count;
+  const send = (cloud: Cloud, body: unknown, o: CallOptions = {}) => cloud.call('POST', '/api/event', { body, ...o });
+
+  it('counts 1, then 2 for the same day, src and event', async () => {
+    const cloud = startCloud();
+    expect((await send(cloud, { event: 'open', src: 'grp-a' })).body).toEqual({});
+    expect(count(cloud, 'grp-a', 'open')).toBe(1);
+    await send(cloud, { event: 'open', src: 'grp-a' });
+    expect(count(cloud, 'grp-a', 'open')).toBe(2);
+    expect(count(cloud, 'grp-a', 'start')).toBeUndefined();
+  });
+
+  it('accepts a text/plain body (navigator.sendBeacon)', async () => {
+    const cloud = startCloud();
+    const r = await cloud.call('POST', '/api/event', { raw: JSON.stringify({ event: 'site', src: 'x1' }) });
+    expect(r.status).toBe(200);
+    expect(count(cloud, 'x1', 'site')).toBe(1);
+  });
+
+  it('answers 400 bad_input for an unknown event or a body that is not an object', async () => {
+    const cloud = startCloud();
+    for (const body of [{ event: 'nope', src: 'a' }, {}, [], 'open', null]) {
+      const r = await send(cloud, body);
+      expect(r.status).toBe(400);
+      expect(r.body).toEqual({ error: 'bad_input' });
+    }
+    expect(cloud.sql.funnel.size).toBe(0);
+  });
+
+  it('answers 405 to GET', async () => {
+    const cloud = startCloud();
+    const r = await cloud.call('GET', '/api/event');
+    expect(r.status).toBe(405);
+    expect(r.body).toEqual({ error: 'method_not_allowed' });
+  });
+
+  it('counts an invalid src as direct', async () => {
+    const cloud = startCloud();
+    await send(cloud, { event: 'open', src: 'Bad Label' });
+    await send(cloud, { event: 'open' });
+    expect(count(cloud, 'direct', 'open')).toBe(2);
+  });
+
+  it('puts the 41st distinct src of a day into other, while a known src keeps counting', async () => {
+    const cloud = startCloud();
+    for (let i = 0; i < FUNNEL_MAX_SRC_PER_DAY; i++) await send(cloud, { event: 'open', src: 's' + i });
+    await send(cloud, { event: 'open', src: 'late' });
+    await send(cloud, { event: 'open', src: 's0' });
+    expect(count(cloud, 'late', 'open')).toBeUndefined();
+    expect(count(cloud, 'other', 'open')).toBe(1);
+    expect(count(cloud, 's0', 'open')).toBe(2);
+  });
+
+  it('writes nothing over the daily total cap and still answers 200', async () => {
+    const cloud = startCloud();
+    cloud.sql.funnel.set(`${today()}|big|open`, { day: today(), src: 'big', event: 'open', count: FUNNEL_MAX_EVENTS_PER_DAY });
+    const r = await send(cloud, { event: 'open', src: 'big' });
+    expect(r.status).toBe(200);
+    expect(r.body).toEqual({});
+    expect(count(cloud, 'big', 'open')).toBe(FUNNEL_MAX_EVENTS_PER_DAY);
+    expect(cloud.sql.funnel.size).toBe(1);
+  });
+
+  it('shows the admin key the totals next to the users, and 401 without it', async () => {
+    const cloud = startCloud({ ADMIN_KEY: KEY });
+    await cloud.login('Ana', '4821');
+    await send(cloud, { event: 'open', src: 'grp-a' });
+    await send(cloud, { event: 'open', src: 'grp-a' });
+    await send(cloud, { event: 'start', src: 'grp-a' });
+    await send(cloud, { event: 'open', src: 'grp-b' });
+    const r = await cloud.call('GET', '/api/admin/stats', { token: KEY });
+    expect(r.status).toBe(200);
+    expect(r.body.users).toHaveLength(1);
+    expect(r.body.funnel).toEqual([
+      { src: 'grp-a', site: 0, open: 2, start: 1, cards5: 0, account: 0, return: 0, firstDay: today(), lastDay: today() },
+      { src: 'grp-b', site: 0, open: 1, start: 0, cards5: 0, account: 0, return: 0, firstDay: today(), lastDay: today() },
+    ]);
+    expect((await cloud.call('GET', '/api/admin/stats')).status).toBe(401);
   });
 });
 

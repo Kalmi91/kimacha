@@ -12,6 +12,7 @@ import { FONT_FILES } from '@/constants/Fonts';
 import { fontSize, fontWeight, lineHeight, radius, spacing, tapTarget } from '@/constants/Theme';
 import { getProgress, putProgress, type LoginData } from '@/lib/cloud/api';
 import { GUEST_OFFER_AFTER, hasVisited, isOfferDone, markOfferDone, markVisited, setCloudGuest, subscribeCardsGraded, subscribeSignInRequests } from '@/lib/cloud/guest';
+import { initFunnel, noteFunnel } from '@/lib/cloud/funnel';
 import { mergeCloudPayloads } from '@/lib/cloud/merge';
 import { clearSession, loadSession, saveSession } from '@/lib/cloud/session';
 import { reloadIfStale } from '@/lib/cloud/staleBundle';
@@ -169,6 +170,7 @@ export default function CloudGate({ children }: { children: ReactNode }) {
     if (lang) setLanguage(lang);
     // from now on this browser is a returning one, with or without a session (a dead token then lands on the welcome screen)
     markVisited();
+    initFunnel();
     if (token.current) void restore(token.current);
     else setPhase(returning ? 'welcome' : 'howto');
   }, [restore]);
@@ -187,7 +189,13 @@ export default function CloudGate({ children }: { children: ReactNode }) {
     return () => setCloudGuest(false);
   }, [phase]);
 
+  // the first time app content is visible (past the intro), once per browser
+  useEffect(() => {
+    if (phase === 'guest' || phase === 'ready') noteFunnel('start');
+  }, [phase]);
+
   const onLoggedIn = (data: LoginData) => {
+    if (data.created) noteFunnel('account');
     saveSession({ name: data.displayName, token: data.token });
     token.current = data.token;
     setPhase('loading');
@@ -199,6 +207,7 @@ export default function CloudGate({ children }: { children: ReactNode }) {
   // FIRST argument that have no rule), the guest's cards melt into it, and the restart loads the result through the restore path.
   // If the upload fails the guest's cards are lost and the account stays as it was.
   const onGuestLoggedIn = async (data: LoginData) => {
+    if (data.created) noteFunnel('account');
     if (data.payload === null) {
       saveSession({ name: data.displayName, token: data.token });
       token.current = data.token;

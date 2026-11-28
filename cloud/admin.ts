@@ -41,6 +41,7 @@ body {
 }
 main { max-width: 960px; margin: 0 auto; }
 h1 { font-size: 1.4rem; margin: 0 0 16px; }
+h2 { font-size: 1.1rem; margin: 24px 0 8px; }
 form { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
 label { flex: 1 1 100%; color: var(--muted); font-size: 0.9rem; }
 input {
@@ -88,6 +89,13 @@ th.num, td.num { text-align: right; }
 <tr><th>Név</th><th>Nyelvpár</th><th>Szint</th><th class="num">Perc (7 nap)</th><th class="num">Perc összesen</th><th class="num">Aktív napok</th><th>Utolsó aktív nap</th><th class="num">XP</th><th class="num">Sorozat (most/max)</th><th class="num">Belépések</th><th>Utolsó belépés</th><th>Első belépés</th><th>Utolsó mentés</th><th class="num">Haladás (KB)</th></tr>
 </thead>
 <tbody id="rows"></tbody>
+</table>
+<h2>Források (megosztott linkek)</h2>
+<table>
+<thead>
+<tr><th>src</th><th class="num">site</th><th class="num">open</th><th class="num">start</th><th class="num">cards5</th><th class="num">account</th><th class="num">return</th><th>Első nap</th><th>Utolsó nap</th></tr>
+</thead>
+<tbody id="funnelRows"></tbody>
 </table>
 </div>
 </main>
@@ -149,6 +157,23 @@ th.num, td.num { text-align: right; }
     });
     wrap.hidden = false;
   }
+  function showFunnel(funnel) {
+    var el = document.getElementById('funnelRows');
+    el.textContent = '';
+    (funnel || []).forEach(function (f) {
+      var tr = document.createElement('tr');
+      cell(tr, f.src);
+      cell(tr, String(f.site), 'num');
+      cell(tr, String(f.open), 'num');
+      cell(tr, String(f.start), 'num');
+      cell(tr, String(f.cards5), 'num');
+      cell(tr, String(f.account), 'num');
+      cell(tr, String(f['return']), 'num');
+      cell(tr, day(f.firstDay));
+      cell(tr, day(f.lastDay));
+      el.appendChild(tr);
+    });
+  }
   function load(key) {
     wrap.hidden = true;
     say('Betöltés...', false);
@@ -167,7 +192,10 @@ th.num, td.num { text-align: right; }
         return res.json();
       })
       .then(function (data) {
-        if (data) show(data.users);
+        if (data) {
+          show(data.users);
+          showFunnel(data.funnel);
+        }
       })
       .catch(function () {
         say('Hiba: hálózat', true);
